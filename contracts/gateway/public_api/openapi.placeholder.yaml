@@ -15,7 +15,7 @@ tags:
   - name: ResolutionJobs
     description: Draft bounded resolution job submission and read operations.
   - name: ResolutionActions
-    description: Draft bounded action discovery and manifest export operations for resolved targets.
+    description: Draft bounded action discovery plus manifest and portable-bundle export operations for resolved targets.
   - name: Search
     description: Draft deterministic search operations over the bounded software-first corpus.
 paths:
@@ -118,6 +118,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResolutionManifestExport'
+        '404':
+          description: Draft blocked or unavailable export envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionBlockedEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/resolution/actions/export-bundle:
+    get:
+      tags:
+        - ResolutionActions
+      summary: Export a bounded resolution bundle
+      description: >
+        Draft public boundary for exporting a deterministic portable bundle derived
+        from a resolved synthetic target. This is not a final snapshot, restore, or
+        reconstruction contract.
+      operationId: exportResolutionBundle
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+      responses:
+        '200':
+          description: Draft deterministic portable bundle export
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
         '404':
           description: Draft blocked or unavailable export envelope
           content:
@@ -466,7 +498,7 @@ components:
     ActionBlockedEnvelope:
       type: object
       additionalProperties: false
-      description: Draft blocked or unavailable action envelope for export attempts.
+      description: Draft blocked or unavailable action envelope for manifest or bundle export attempts.
       properties:
         action_id:
           type: string

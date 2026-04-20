@@ -13,6 +13,7 @@ normal_path:
     - GET /v0/resolution/jobs/{job_id}
     - GET /v0/resolution/actions?target_ref={target_ref}
     - GET /v0/resolution/actions/export-manifest?target_ref={target_ref}
+    - GET /v0/resolution/actions/export-bundle?target_ref={target_ref}
   shared_view_models:
     - contracts/ui/view_models/workbench_session.view_model.yaml
     - contracts/ui/view_models/resolution_actions.view_model.yaml
@@ -35,5 +36,5 @@ surface_split:
 deferred_topics:
   - explicit offline native mode and any resulting sdk usage
   - public read contracts beyond the current bounded resolution job draft
-  - final action-panel behavior, export affordances, and download semantics
+  - final action-panel behavior, export affordances, and download or restore semantics
   - finalized surface-specific navigation or shell behavior

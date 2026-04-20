@@ -21,5 +21,6 @@ Current thin-slice behavior:
 - deterministic search over a tiny bounded set of normalized fields using stable catalog order
 - bounded object-summary mapping aligned to the gateway public API draft
 - bounded resolution-manifest export from already-normalized records under `actions/`
+- bounded portable resolution-bundle export from already-normalized records under `snapshots/`
 
-This slice does not settle connector strategy, ranking, fuzzy resolution, installer behavior, or broader archive semantics.
+This slice does not settle connector strategy, ranking, fuzzy resolution, installer behavior, restore behavior, or broader archive semantics.

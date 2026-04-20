@@ -17,3 +17,4 @@ These questions are intentionally left open during bootstrap:
 13. Which deterministic search fields and ordering guarantees should survive once the synthetic corpus is replaced by the first real acquisition-backed dataset?
 14. Which parts of the bootstrap `resolution_manifest` should survive into a durable manifest or snapshot contract, and which parts should remain explicitly local-export metadata only?
 15. Should future bounded actions hang directly off `target_ref`, off read-job results, or off a more explicit resolved-resource identifier once the public API grows beyond the current local deterministic slice?
+16. Which parts of the bootstrap `resolution_bundle` should survive into a durable portable bundle or snapshot contract, and which parts should remain explicitly local-export packaging only?

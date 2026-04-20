@@ -22,7 +22,7 @@ The roadmap is intentionally staged and bounded. Bootstrap work should make late
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: five local deterministic thin slices now exist in the Python stdlib bootstrap lane. The first proved fixture input to engine to gateway bounded-job flow. The second moved governed synthetic fixture access behind a local connector-shaped source path and proved ingest, extract, normalize, engine resolve, and gateway job flow without introducing real external connectors. The third added a transport-neutral public submit and read boundary plus shared workbench-session mapping without introducing real HTTP serving or UI shells. The fourth added deterministic search over the small governed synthetic corpus plus a transport-neutral public search boundary and shared search-results view model. The fifth adds bounded engine action behavior plus a transport-neutral public action boundary for deterministic resolution-manifest export.
+Current status within this stage: six local deterministic thin slices now exist in the Python stdlib bootstrap lane. The first proved fixture input to engine to gateway bounded-job flow. The second moved governed synthetic fixture access behind a local connector-shaped source path and proved ingest, extract, normalize, engine resolve, and gateway job flow without introducing real external connectors. The third added a transport-neutral public submit and read boundary plus shared workbench-session mapping without introducing real HTTP serving or UI shells. The fourth added deterministic search over the small governed synthetic corpus plus a transport-neutral public search boundary and shared search-results view model. The fifth added bounded engine action behavior plus a transport-neutral public action boundary for deterministic resolution-manifest export. The sixth adds a deterministic portable resolution-bundle export under `runtime/engine/snapshots/` plus the corresponding public bundle-export seam.
 
 ## Stage 3: Surface Skeletons
 
@@ -30,7 +30,7 @@ Current status within this stage: five local deterministic thin slices now exist
 - add native shell scaffolding with offline-path boundaries still explicitly gated
 - add basic cross-component verification paths
 
-Current status within this stage: `surfaces/web/` now contains the first compatibility-first exact-resolution workbench page, the first deterministic search-and-absence page, and a bounded action panel plus manifest-export route for resolved targets. These slices are stdlib-only, local-only, server-rendered, and consume transport-neutral gateway boundaries plus shared surface view models without importing engine internals.
+Current status within this stage: `surfaces/web/` now contains the first compatibility-first exact-resolution workbench page, the first deterministic search-and-absence page, and a bounded action panel plus manifest-export and bundle-export routes for resolved targets. These slices are stdlib-only, local-only, server-rendered, and consume transport-neutral gateway boundaries plus shared surface view models without importing engine internals.
 
 ## Stage 4: Bounded Product Work
 

@@ -12,11 +12,11 @@ Current thin-slice behavior:
 
 - transport-neutral public submit and read boundary over an in-memory job service
 - transport-neutral public search boundary over normalized synthetic records
-- transport-neutral public action boundary for bounded manifest discovery and export
+- transport-neutral public action boundary for bounded manifest and bundle discovery and export
 - submit returns an accepted public envelope while read returns the current bounded job envelope
 - deterministic job envelopes for known and unknown local synthetic targets
 - deterministic search results or a structured absence report for bounded queries
-- deterministic manifest export for known synthetic targets plus blocked export responses for misses
+- deterministic manifest and bundle export for known synthetic targets plus blocked export responses for misses
 - gateway composes with engine service interfaces over normalized records and does not read governed fixtures directly
 - shared workbench-session, search-results, and resolution-actions mappings are exercised without implementing web or native shells
 - no broker, relay, worker, scheduler, auth, or persistence implementation

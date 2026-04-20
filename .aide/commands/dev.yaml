@@ -26,6 +26,10 @@ steps:
     run: python scripts/demo_web_workbench.py fixture:software/synthetic-demo-app@1.0.0 --export-manifest
   - id: web_manifest_unknown
     run: python scripts/demo_web_workbench.py fixture:software/missing-demo-app@0.0.1 --export-manifest
+  - id: web_bundle_known
+    run: python -c "from pathlib import Path; import subprocess, sys, tempfile, zipfile; bundle = Path(tempfile.gettempdir()) / 'eureka-demo-bundle.zip'; bundle.write_bytes(subprocess.check_output([sys.executable, 'scripts/demo_web_workbench.py', 'fixture:software/synthetic-demo-app@1.0.0', '--export-bundle'])); print(bundle); zf = zipfile.ZipFile(bundle); print('\\n'.join(zf.namelist())); zf.close()"
+  - id: web_bundle_unknown
+    run: python scripts/demo_web_workbench.py fixture:software/missing-demo-app@0.0.1 --export-bundle
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
@@ -33,4 +37,5 @@ notes:
   - The web workbench demo uses a tiny stdlib local server only for bootstrap proof and does not imply a deployment choice.
   - Search semantics remain bootstrap-scale deterministic matching over a small synthetic corpus and do not imply final retrieval or ranking behavior.
   - Manifest export remains a bounded local action over deterministic synthetic results and does not imply installer, download, or durable snapshot semantics.
+  - Bundle export remains a bounded local action over deterministic synthetic results and does not imply restore, import, installer, or final snapshot semantics.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

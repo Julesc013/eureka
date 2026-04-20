@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus six executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus seven executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -24,6 +24,7 @@ Current status: foundational scaffold plus six executable local deterministic th
 - tiny stdlib local server entrypoint for the compatibility-first web workbench page
 - first deterministic search-and-absence web slice that renders result lists and no-match reports and links back into exact resolution flow
 - first bounded action/export slice that exposes a manifest-export action through the public boundary and returns deterministic JSON for known synthetic targets
+- first portable bundle/export slice that exposes a deterministic self-contained resolution bundle through the public boundary and returns ZIP content for known synthetic targets
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -33,11 +34,11 @@ Current status: foundational scaffold plus six executable local deterministic th
 - finalized archive schema meaning
 - automated dependency-policy enforcement tooling
 - mature gateway API semantics, wider public read coverage, and durable submit versus read guarantees
-- final action semantics, installer behavior, download handling, and durable manifest guarantees
+- final action semantics, installer behavior, download handling, restore/import handling, and durable manifest or bundle guarantees
 - mature search semantics, ranking, and broader retrieval architecture
 - real web application structure, browser-side behavior, authentication, and deployment assumptions
 - real external connectors, ranking, retrieval, and broader provenance or trust semantics
 - persistence, background workers, and async orchestration
-- richer web routing and page structure beyond the bootstrap compatibility-first workbench, search, and manifest-export pages, plus native runtime behavior
+- richer web routing and page structure beyond the bootstrap compatibility-first workbench, search, manifest-export, and bundle-export pages, plus native runtime behavior
 - native offline mode decisions
 - release automation and packaging implementation
