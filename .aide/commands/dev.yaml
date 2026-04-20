@@ -16,9 +16,16 @@ steps:
     run: python scripts/demo_web_workbench.py --render-once
   - id: web_surface_unknown_html
     run: python scripts/demo_web_workbench.py fixture:software/missing-demo-app@0.0.1 --render-once
+  - id: web_search_multi
+    run: python scripts/demo_web_workbench.py --render-once --search-query synthetic
+  - id: web_search_single
+    run: python scripts/demo_web_workbench.py --render-once --search-query compatibility
+  - id: web_search_absent
+    run: python scripts/demo_web_workbench.py --render-once --search-query missing
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
   - Submit and read remain in-memory bootstrap semantics; no real HTTP server or async worker exists yet.
   - The web workbench demo uses a tiny stdlib local server only for bootstrap proof and does not imply a deployment choice.
+  - Search semantics remain bootstrap-scale deterministic matching over a small synthetic corpus and do not imply final retrieval or ranking behavior.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

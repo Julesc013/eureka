@@ -18,6 +18,7 @@ Current thin-slice behavior:
 - governed local synthetic fixture access is kept behind `runtime/connectors/synthetic_software/`
 - bootstrap normalization currently flows through `interfaces/ingest/`, `interfaces/extract/`, and `interfaces/normalize/`
 - exact-match resolution for bounded `target_ref` values only
+- deterministic search over a tiny bounded set of normalized fields using stable catalog order
 - bounded object-summary mapping aligned to the gateway public API draft
 
 This slice does not settle connector strategy, ranking, fuzzy resolution, or broader archive semantics.

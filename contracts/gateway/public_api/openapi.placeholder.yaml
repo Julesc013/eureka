@@ -14,6 +14,8 @@ servers:
 tags:
   - name: ResolutionJobs
     description: Draft bounded resolution job submission and read operations.
+  - name: Search
+    description: Draft deterministic search operations over the bounded software-first corpus.
 paths:
   /v0/resolution/jobs:
     post:
@@ -48,7 +50,7 @@ paths:
   /v0/search/software:
     get:
       tags:
-        - ResolutionJobs
+        - Search
       summary: Search the bounded synthetic software corpus
       description: >
         Draft public search boundary for deterministic, bounded software-first lookup

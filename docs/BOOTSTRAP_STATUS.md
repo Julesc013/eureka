@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus four executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus five executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -15,10 +15,13 @@ Current status: foundational scaffold plus four executable local deterministic t
 - ingest, extract, and normalize boundary types for the bootstrap execution lane
 - exact-match engine resolution over normalized records plus bounded object-summary mapping
 - transport-neutral gateway submit and read boundary over an in-memory job service
+- transport-neutral public search boundary over the governed synthetic software corpus
 - shared workbench-session view-model mapping exercised without implementing web or native shells
+- shared search-results view-model mapping exercised without implementing web or native shells
 - local demo command that shows submit, read, and optional shared view-model output over the connector-shaped path
 - first server-rendered web workbench slice under `surfaces/web/` that consumes the public gateway boundary and shared workbench session without engine coupling
 - tiny stdlib local server entrypoint for the compatibility-first web workbench page
+- first deterministic search-and-absence web slice that renders result lists and no-match reports and links back into exact resolution flow
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -28,6 +31,7 @@ Current status: foundational scaffold plus four executable local deterministic t
 - finalized archive schema meaning
 - automated dependency-policy enforcement tooling
 - mature gateway API semantics, wider public read coverage, and durable submit versus read guarantees
+- mature search semantics, ranking, and broader retrieval architecture
 - real web application structure, browser-side behavior, authentication, and deployment assumptions
 - real external connectors, ranking, retrieval, and broader provenance or trust semantics
 - persistence, background workers, and async orchestration

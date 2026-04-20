@@ -14,3 +14,4 @@ These questions are intentionally left open during bootstrap:
 10. If job execution later becomes asynchronous, which parts of the current bounded job envelope should remain stable?
 11. Should submit and read remain one shared public envelope shape, or should they diverge into distinct durable contract types before any real HTTP boundary is introduced?
 12. How long should the web workbench remain compatibility-first and server-rendered before any browser-side behavior is introduced, and which view-model fields must stay stable when that happens?
+13. Which deterministic search fields and ordering guarantees should survive once the synthetic corpus is replaced by the first real acquisition-backed dataset?
