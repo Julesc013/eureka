@@ -6,5 +6,7 @@ These questions are intentionally left open during bootstrap:
 2. Which trust semantics need to be normative in `contracts/archive/trust` for v1?
 3. How narrow should the future `runtime/engine/sdk` exposure be if native offline mode exists at all?
 4. Which gateway operations belong in the public API versus internal runtime protocols?
-5. What is the first durable versioning strategy for archive contracts and migration metadata?
+5. Which draft job statuses, notices, and result envelope fields should become durable public compatibility promises?
 6. Which shared UI state should be standardized across web and native without over-constraining either surface?
+7. What is the first durable versioning strategy for archive contracts, gateway contracts, and migration metadata?
+8. When should the advisory path-based dependency policy become mechanically enforced, and by what repo-local check?
