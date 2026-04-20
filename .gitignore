@@ -1,0 +1,32 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Environment and logs
+.env
+.env.*
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# JavaScript and web tooling
+node_modules/
+.next/
+.turbo/
+
+# Build, coverage, and temp outputs
+build/
+dist/
+out/
+coverage/
+.coverage
+target/
+tmp/
+

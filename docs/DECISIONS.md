@@ -1,0 +1,38 @@
+# Decisions
+
+## ADR-001: Use One Eureka Monorepo
+
+- Status: accepted
+- Decision: Eureka lives in one product monorepo.
+- Why: the founding contracts, runtime components, and user surfaces need explicit shared boundaries from the start.
+
+## ADR-002: Keep AIDE Separate from Product Runtime
+
+- Status: accepted
+- Decision: AIDE remains a separate project or repo and is used here only as a pinned repo operating layer.
+- Why: repo operations, policy, and compatibility metadata must not become product runtime glue.
+
+## ADR-003: Split the Repo into Control, Contracts, Runtime, and Surfaces
+
+- Status: accepted
+- Decision: the top-level product structure is `control/`, `contracts/`, `runtime/`, and `surfaces/`.
+- Why: governance material, governed meaning, execution behavior, and user-facing surfaces need distinct ownership and dependency boundaries.
+
+## ADR-004: Web Uses the Gateway Public API by Default
+
+- Status: accepted
+- Decision: the normal web path goes through `contracts/gateway/public_api` and gateway-facing contracts rather than engine internals.
+- Why: web should consume product contracts, not runtime implementation detail.
+
+## ADR-005: Schemas and Protocols Are Governed Assets
+
+- Status: accepted
+- Decision: schemas, protocols, public APIs, and shared UI contracts are treated as first-class governed assets.
+- Why: Eureka depends on stable, inspectable meaning rather than implicit model drift.
+
+## ADR-006: Version 1 Is Software-First
+
+- Status: accepted
+- Decision: v1 focuses on software resolution, preservation, compatibility, and reconstruction.
+- Why: a narrower domain is needed before broader artifact classes can be governed well.
+

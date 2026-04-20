@@ -1,0 +1,38 @@
+# Roadmap
+
+The roadmap is intentionally staged and bounded. Bootstrap work should make later implementation easier to govern, not attempt to deliver the full product in one pass.
+
+## Stage 0: Bootstrap and Repo Contract
+
+- establish the monorepo structure
+- write founding documentation
+- pin minimal AIDE repo-operating metadata
+- create the initial contract, runtime, surface, test, and eval scaffolding
+
+## Stage 1: Contract Hardening
+
+- refine archive schema placeholders into governed draft contracts
+- define the first public gateway contract set
+- define shared UI contract and view-model boundaries
+- add compatibility and migration rules for contract evolution
+
+## Stage 2: Runtime Skeletons
+
+- add engine service interfaces without full product logic
+- add gateway service boundaries and internal implementation seams
+- scaffold connector adapters against narrow ingest, extract, and normalize interfaces
+
+## Stage 3: Surface Skeletons
+
+- add the initial web workbench shell against gateway public contracts
+- add native shell scaffolding with offline-path boundaries still explicitly gated
+- add basic cross-component verification paths
+
+## Stage 4: Bounded Product Work
+
+- begin software-first resolution, preservation, and reconstruction implementation
+- add real evidence handling, compatibility reasoning, and snapshot workflows
+- expand only where contract governance and architectural boundaries already exist
+
+Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
+
