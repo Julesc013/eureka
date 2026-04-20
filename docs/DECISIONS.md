@@ -47,3 +47,9 @@
 - Status: accepted
 - Decision: the first executable slice resolves governed synthetic software fixtures through an engine service and an in-memory gateway bounded-job service.
 - Why: this proves the core boundary model without prematurely committing to connectors, ranking, persistence, or async orchestration.
+
+## ADR-009: Put Synthetic Fixture Access Behind a Connector-Shaped Boundary
+
+- Status: accepted
+- Decision: governed synthetic fixture access now lives under `runtime/connectors/synthetic_software/`, while the engine consumes only normalized records through `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`.
+- Why: this proves the intended connector-to-engine boundary early without implying real external acquisition, connector-owned object truth, or finalized ingestion architecture.
