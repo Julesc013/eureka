@@ -6,7 +6,7 @@ from surfaces.web.workbench import render_resolution_workspace_html
 
 
 class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
-    def test_known_target_rendering_includes_completed_status_selected_object_and_action_link(self) -> None:
+    def test_known_target_rendering_includes_completed_status_selected_object_and_export_links(self) -> None:
         html = render_resolution_workspace_html(
             {
                 "session_id": "session.known",
@@ -29,6 +29,12 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "label": "Export resolution manifest",
                         "availability": "available",
                         "href": "/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0",
+                    },
+                    {
+                        "action_id": "export_resolution_bundle",
+                        "label": "Export resolution bundle",
+                        "availability": "available",
+                        "href": "/actions/export-resolution-bundle?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0",
                     }
                 ],
             },
@@ -40,6 +46,8 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("Synthetic Demo App", html)
         self.assertIn("Export resolution manifest", html)
         self.assertIn("/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
+        self.assertIn("Export resolution bundle", html)
+        self.assertIn("/actions/export-resolution-bundle?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
 
     def test_unknown_target_rendering_includes_blocked_status_notice_and_unavailable_action_state(self) -> None:
         html = render_resolution_workspace_html(
@@ -65,11 +73,21 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "action_id": "export_resolution_manifest",
                         "label": "Export resolution manifest",
                         "availability": "unavailable",
+                    },
+                    {
+                        "action_id": "export_resolution_bundle",
+                        "label": "Export resolution bundle",
+                        "availability": "unavailable",
                     }
                 ],
                 "notices": [
                     {
                         "code": "resolution_manifest_not_available",
+                        "severity": "warning",
+                        "message": "No resolved synthetic record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
+                    },
+                    {
+                        "code": "resolution_bundle_not_available",
                         "severity": "warning",
                         "message": "No resolved synthetic record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
                     }
@@ -83,4 +101,6 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("No governed synthetic record matched target_ref", html)
         self.assertIn("No available actions are exposed for this target.", html)
         self.assertIn("Export resolution manifest (unavailable)", html)
+        self.assertIn("Export resolution bundle (unavailable)", html)
         self.assertIn("resolution_manifest_not_available", html)
+        self.assertIn("resolution_bundle_not_available", html)

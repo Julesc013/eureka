@@ -4,10 +4,11 @@ import ast
 import json
 from io import BytesIO
 from pathlib import Path
+import zipfile
 from urllib.parse import quote
 import unittest
 
-from runtime.gateway.public_api import PublicApiResponse
+from runtime.gateway.public_api import PublicApiResponse, PublicArtifactResponse
 from surfaces.web.server import WorkbenchWsgiApp, render_resolution_workspace_page, render_search_results_page
 
 
@@ -93,11 +94,21 @@ class FakeResolutionActionsPublicApi:
                             "action_id": "export_resolution_manifest",
                             "label": "Export resolution manifest",
                             "availability": "unavailable",
+                        },
+                        {
+                            "action_id": "export_resolution_bundle",
+                            "label": "Export resolution bundle",
+                            "availability": "unavailable",
                         }
                     ],
                     "notices": [
                         {
                             "code": "resolution_manifest_not_available",
+                            "severity": "warning",
+                            "message": f"No resolved synthetic record matched target_ref '{request.target_ref}'.",
+                        },
+                        {
+                            "code": "resolution_bundle_not_available",
                             "severity": "warning",
                             "message": f"No resolved synthetic record matched target_ref '{request.target_ref}'.",
                         }
@@ -114,6 +125,12 @@ class FakeResolutionActionsPublicApi:
                         "label": "Export resolution manifest",
                         "availability": "available",
                         "href": f"/actions/export-resolution-manifest?target_ref={quote(request.target_ref, safe='')}",
+                    },
+                    {
+                        "action_id": "export_resolution_bundle",
+                        "label": "Export resolution bundle",
+                        "availability": "available",
+                        "href": f"/actions/export-resolution-bundle?target_ref={quote(request.target_ref, safe='')}",
                     }
                 ],
                 "notices": [],
@@ -146,6 +163,37 @@ class FakeResolutionActionsPublicApi:
                 },
                 "notices": [],
             },
+        )
+
+    def export_resolution_bundle(self, request) -> PublicArtifactResponse:
+        self.export_target_refs.append(request.target_ref)
+        if request.target_ref == "fixture:software/missing-demo-app@0.0.1":
+            return PublicArtifactResponse(
+                status_code=404,
+                content_type="application/json; charset=utf-8",
+                payload=(
+                    json.dumps(
+                        {
+                            "action_id": "export_resolution_bundle",
+                            "status": "blocked",
+                            "target_ref": request.target_ref,
+                            "code": "resolution_bundle_not_available",
+                            "message": f"No resolved synthetic record matched target_ref '{request.target_ref}'.",
+                        },
+                        sort_keys=True,
+                    )
+                    + "\n"
+                ).encode("utf-8"),
+            )
+        buffer = BytesIO()
+        with zipfile.ZipFile(buffer, mode="w") as archive:
+            archive.writestr("bundle.json", json.dumps({"target_ref": request.target_ref}, sort_keys=True))
+            archive.writestr("manifest.json", json.dumps({"manifest_kind": "eureka.resolution_manifest"}, sort_keys=True))
+        return PublicArtifactResponse(
+            status_code=200,
+            content_type="application/zip",
+            filename="eureka-resolution-bundle-fixture-software-synthetic-demo-app-1.0.0.zip",
+            payload=buffer.getvalue(),
         )
 
 
@@ -214,6 +262,8 @@ class WorkbenchServerTestCase(unittest.TestCase):
         self.assertIn("Synthetic Demo App", html)
         self.assertIn("Export resolution manifest", html)
         self.assertIn("/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
+        self.assertIn("Export resolution bundle", html)
+        self.assertIn("/actions/export-resolution-bundle?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
 
     def test_server_renders_search_results_via_public_search_boundary(self) -> None:
         public_api = FakeSearchPublicApi()
@@ -262,6 +312,10 @@ class WorkbenchServerTestCase(unittest.TestCase):
         self.assertIn("No available actions are exposed for this target.", body)
         self.assertNotIn(
             "<a href=\"/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fmissing-demo-app%400.0.1\">",
+            body,
+        )
+        self.assertNotIn(
+            "<a href=\"/actions/export-resolution-bundle?target_ref=fixture%3Asoftware%2Fmissing-demo-app%400.0.1\">",
             body,
         )
 
@@ -362,6 +416,72 @@ class WorkbenchServerTestCase(unittest.TestCase):
         self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
         payload = json.loads(body)
         self.assertEqual(payload["code"], "resolution_manifest_not_available")
+        self.assertEqual(payload["status"], "blocked")
+
+    def test_wsgi_app_serves_bundle_export_zip_for_known_target(self) -> None:
+        app = WorkbenchWsgiApp(
+            FakeResolutionJobsPublicApi(),
+            actions_public_api=FakeResolutionActionsPublicApi(),
+            search_public_api=FakeSearchPublicApi(),
+            default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
+        )
+
+        captured: dict[str, object] = {}
+
+        def start_response(status: str, headers: list[tuple[str, str]]) -> None:
+            captured["status"] = status
+            captured["headers"] = headers
+
+        body = b"".join(
+            app(
+                {
+                    "REQUEST_METHOD": "GET",
+                    "PATH_INFO": "/actions/export-resolution-bundle",
+                    "QUERY_STRING": f"target_ref={quote('fixture:software/synthetic-demo-app@1.0.0')}",
+                    "wsgi.input": BytesIO(b""),
+                },
+                start_response,
+            )
+        )
+
+        self.assertEqual(captured["status"], "200 OK")
+        headers = dict(captured["headers"])
+        self.assertEqual(headers["Content-Type"], "application/zip")
+        self.assertIn("eureka-resolution-bundle-fixture-software-synthetic-demo-app-1.0.0.zip", headers["Content-Disposition"])
+        with zipfile.ZipFile(BytesIO(body)) as bundle:
+            self.assertEqual(bundle.namelist(), ["bundle.json", "manifest.json"])
+
+    def test_wsgi_app_serves_blocked_bundle_export_json_for_unknown_target(self) -> None:
+        app = WorkbenchWsgiApp(
+            FakeResolutionJobsPublicApi(),
+            actions_public_api=FakeResolutionActionsPublicApi(),
+            search_public_api=FakeSearchPublicApi(),
+            default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
+        )
+
+        captured: dict[str, object] = {}
+
+        def start_response(status: str, headers: list[tuple[str, str]]) -> None:
+            captured["status"] = status
+            captured["headers"] = headers
+
+        body = b"".join(
+            app(
+                {
+                    "REQUEST_METHOD": "GET",
+                    "PATH_INFO": "/actions/export-resolution-bundle",
+                    "QUERY_STRING": f"target_ref={quote('fixture:software/missing-demo-app@0.0.1')}",
+                    "wsgi.input": BytesIO(b""),
+                },
+                start_response,
+            )
+        ).decode("utf-8")
+
+        self.assertEqual(captured["status"], "404 Not Found")
+        headers = dict(captured["headers"])
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["code"], "resolution_bundle_not_available")
         self.assertEqual(payload["status"], "blocked")
 
     def test_web_surface_modules_do_not_import_engine_or_connector_internals(self) -> None:
