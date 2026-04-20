@@ -1,0 +1,77 @@
+from __future__ import annotations
+
+from copy import deepcopy
+from dataclasses import dataclass
+from typing import Any, Sequence
+
+from runtime.engine.interfaces.public import ResolutionRequest
+from runtime.engine.interfaces.service import ResolutionOutcome, ResolutionService
+from runtime.engine.resolve import build_default_resolution_service
+
+
+@dataclass(frozen=True)
+class SubmitResolutionJobRequest:
+    target_ref: str
+    requested_outputs: tuple[str, ...] = ()
+
+    @classmethod
+    def from_parts(
+        cls,
+        target_ref: str,
+        requested_outputs: Sequence[str] | None = None,
+    ) -> "SubmitResolutionJobRequest":
+        normalized_target_ref = target_ref.strip()
+        if not normalized_target_ref:
+            raise ValueError("target_ref must be a non-empty string.")
+        return cls(
+            target_ref=normalized_target_ref,
+            requested_outputs=tuple(requested_outputs or ()),
+        )
+
+    def to_engine_request(self) -> ResolutionRequest:
+        return ResolutionRequest.from_parts(
+            target_ref=self.target_ref,
+            requested_outputs=self.requested_outputs,
+        )
+
+
+class InMemoryResolutionJobService:
+    def __init__(self, resolution_service: ResolutionService) -> None:
+        self._resolution_service = resolution_service
+        self._jobs: dict[str, dict[str, Any]] = {}
+        self._job_counter = 0
+
+    def submit_resolution_job(self, request: SubmitResolutionJobRequest) -> dict[str, Any]:
+        self._job_counter += 1
+        job_id = f"job-{self._job_counter:04d}"
+        outcome = self._resolution_service.resolve(request.to_engine_request())
+        job = self._build_job_envelope(job_id, request, outcome)
+        self._jobs[job_id] = job
+        return deepcopy(job)
+
+    def get_resolution_job(self, job_id: str) -> dict[str, Any]:
+        try:
+            return deepcopy(self._jobs[job_id])
+        except KeyError as exc:
+            raise KeyError(f"Unknown resolution job_id '{job_id}'.") from exc
+
+    def _build_job_envelope(
+        self,
+        job_id: str,
+        request: SubmitResolutionJobRequest,
+        outcome: ResolutionOutcome,
+    ) -> dict[str, Any]:
+        job: dict[str, Any] = {
+            "job_id": job_id,
+            "status": outcome.status,
+            "target_ref": request.target_ref,
+            "requested_outputs": list(request.requested_outputs),
+            "notices": [notice.to_dict() for notice in outcome.notices],
+        }
+        if outcome.result is not None:
+            job["result"] = outcome.result.to_dict()
+        return job
+
+
+def build_demo_resolution_job_service() -> InMemoryResolutionJobService:
+    return InMemoryResolutionJobService(build_default_resolution_service())
