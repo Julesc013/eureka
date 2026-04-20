@@ -2,12 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
-from runtime.engine.core import NormalizedCatalog
-from runtime.engine.interfaces.extract import extract_synthetic_source_record
-from runtime.engine.interfaces.normalize import normalize_extracted_record
-from runtime.engine.resolve import ExactMatchResolutionService
-from runtime.gateway.public_api import InMemoryResolutionJobService, SubmitResolutionJobRequest
+from runtime.gateway import build_demo_resolution_jobs_public_api
+from runtime.gateway.public_api import SubmitResolutionJobRequest
 
 
 KNOWN_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
@@ -16,54 +12,67 @@ UNKNOWN_TARGET_REF = "fixture:software/missing-demo-app@0.0.1"
 
 class ResolutionJobServiceTestCase(unittest.TestCase):
     def setUp(self) -> None:
-        source_records = SyntheticSoftwareConnector().load_source_records()
-        normalized_records = tuple(
-            normalize_extracted_record(extract_synthetic_source_record(record))
-            for record in source_records
-        )
-        resolution_service = ExactMatchResolutionService(NormalizedCatalog(normalized_records))
-        self.service = InMemoryResolutionJobService(resolution_service)
+        self.public_api = build_demo_resolution_jobs_public_api()
 
-    def test_known_target_returns_completed_job(self) -> None:
-        job = self.service.submit_resolution_job(
+    def test_submit_boundary_returns_accepted_envelope(self) -> None:
+        response = self.public_api.submit_resolution_job(
             SubmitResolutionJobRequest.from_parts(KNOWN_TARGET_REF),
         )
 
-        self.assertEqual(job["status"], "completed")
-        self.assertEqual(job["target_ref"], KNOWN_TARGET_REF)
-        self.assertEqual(job["notices"], [])
+        self.assertEqual(response.status_code, 202)
         self.assertEqual(
-            job["result"]["primary_object"],
+            response.body,
+            {
+                "job_id": "job-0001",
+                "status": "accepted",
+                "target_ref": KNOWN_TARGET_REF,
+                "requested_outputs": [],
+                "notices": [],
+            },
+        )
+
+    def test_read_boundary_returns_completed_job_for_known_target(self) -> None:
+        submit_response = self.public_api.submit_resolution_job(
+            SubmitResolutionJobRequest.from_parts(KNOWN_TARGET_REF),
+        )
+
+        response = self.public_api.read_resolution_job(submit_response.body["job_id"])
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.body["status"], "completed")
+        self.assertEqual(response.body["target_ref"], KNOWN_TARGET_REF)
+        self.assertEqual(response.body["notices"], [])
+        self.assertEqual(
+            response.body["result"]["primary_object"],
             {
                 "id": "obj.synthetic-demo-app",
                 "kind": "software",
                 "label": "Synthetic Demo App",
             },
         )
-        self.assertEqual(self.service.get_resolution_job(job["job_id"]), job)
 
-    def test_unknown_target_returns_blocked_job(self) -> None:
-        job = self.service.submit_resolution_job(
+    def test_read_boundary_returns_blocked_job_for_unknown_target(self) -> None:
+        submit_response = self.public_api.submit_resolution_job(
             SubmitResolutionJobRequest.from_parts(UNKNOWN_TARGET_REF),
         )
 
-        self.assertEqual(job["status"], "blocked")
-        self.assertEqual(job["target_ref"], UNKNOWN_TARGET_REF)
-        self.assertNotIn("result", job)
-        self.assertEqual(job["notices"][0]["code"], "fixture_target_not_found")
-        self.assertEqual(job["notices"][0]["severity"], "warning")
+        response = self.public_api.read_resolution_job(submit_response.body["job_id"])
 
-    def test_completed_job_envelope_shape_is_stable(self) -> None:
-        job = self.service.submit_resolution_job(
-            SubmitResolutionJobRequest.from_parts(
-                KNOWN_TARGET_REF,
-                requested_outputs=("primary_object",),
-            ),
-        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.body["status"], "blocked")
+        self.assertEqual(response.body["target_ref"], UNKNOWN_TARGET_REF)
+        self.assertNotIn("result", response.body)
+        self.assertEqual(response.body["notices"][0]["code"], "fixture_target_not_found")
+        self.assertEqual(response.body["notices"][0]["severity"], "warning")
 
+    def test_read_boundary_returns_not_found_for_missing_job_id(self) -> None:
+        response = self.public_api.read_resolution_job("job-9999")
+
+        self.assertEqual(response.status_code, 404)
         self.assertEqual(
-            list(job.keys()),
-            ["job_id", "status", "target_ref", "requested_outputs", "notices", "result"],
+            response.body,
+            {
+                "code": "resolution_job_not_found",
+                "message": "Unknown resolution job_id 'job-9999'.",
+            },
         )
-        self.assertEqual(job["requested_outputs"], ["primary_object"])
-        self.assertEqual(list(job["result"].keys()), ["notices", "primary_object"])

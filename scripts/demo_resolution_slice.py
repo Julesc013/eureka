@@ -10,21 +10,8 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
-from runtime.engine.core import NormalizedCatalog
-from runtime.engine.interfaces.extract import extract_synthetic_source_record
-from runtime.engine.interfaces.normalize import normalize_extracted_record
-from runtime.engine.resolve import ExactMatchResolutionService
-from runtime.gateway.public_api import InMemoryResolutionJobService, SubmitResolutionJobRequest
-
-
-def build_demo_resolution_job_service() -> InMemoryResolutionJobService:
-    connector = SyntheticSoftwareConnector()
-    normalized_records = tuple(
-        normalize_extracted_record(extract_synthetic_source_record(record))
-        for record in connector.load_source_records()
-    )
-    resolution_service = ExactMatchResolutionService(NormalizedCatalog(normalized_records))
-    return InMemoryResolutionJobService(resolution_service)
+from runtime.gateway import build_demo_resolution_jobs_public_api
+from runtime.gateway.public_api import SubmitResolutionJobRequest
 
 
 def main() -> int:
@@ -48,16 +35,24 @@ def main() -> int:
     connector = SyntheticSoftwareConnector()
     target_ref = args.target_ref or connector.default_target_ref()
 
-    service = build_demo_resolution_job_service()
-    submitted_job = service.submit_resolution_job(
+    public_api = build_demo_resolution_jobs_public_api()
+    submit_response = public_api.submit_resolution_job(
         SubmitResolutionJobRequest.from_parts(
             target_ref=target_ref,
             requested_outputs=args.requested_outputs,
         )
     )
-    resolved_job = service.get_resolution_job(submitted_job["job_id"])
+    read_response = public_api.read_resolution_job(submit_response.body["job_id"])
 
-    json.dump(resolved_job, sys.stdout, indent=2, sort_keys=True)
+    json.dump(
+        {
+            "submit_response": submit_response.to_dict(),
+            "read_response": read_response.to_dict(),
+        },
+        sys.stdout,
+        indent=2,
+        sort_keys=True,
+    )
     sys.stdout.write("\n")
     return 0
 

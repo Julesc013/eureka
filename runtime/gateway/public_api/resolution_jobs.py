@@ -1,10 +1,9 @@
 from __future__ import annotations
 
-from copy import deepcopy
 from dataclasses import dataclass
-from typing import Any, Sequence
+from typing import Sequence
 
-from runtime.engine.interfaces.public import ResolutionRequest
+from runtime.engine.interfaces.public import Notice, ResolutionRequest, ResolutionResult
 from runtime.engine.interfaces.service import ResolutionOutcome, ResolutionService
 
 
@@ -34,39 +33,47 @@ class SubmitResolutionJobRequest:
         )
 
 
+@dataclass(frozen=True)
+class ResolutionJobRecord:
+    job_id: str
+    status: str
+    target_ref: str
+    requested_outputs: tuple[str, ...] = ()
+    notices: tuple[Notice, ...] = ()
+    result: ResolutionResult | None = None
+
+
 class InMemoryResolutionJobService:
     def __init__(self, resolution_service: ResolutionService) -> None:
         self._resolution_service = resolution_service
-        self._jobs: dict[str, dict[str, Any]] = {}
+        self._jobs: dict[str, ResolutionJobRecord] = {}
         self._job_counter = 0
 
-    def submit_resolution_job(self, request: SubmitResolutionJobRequest) -> dict[str, Any]:
+    def submit_resolution_job(self, request: SubmitResolutionJobRequest) -> ResolutionJobRecord:
         self._job_counter += 1
         job_id = f"job-{self._job_counter:04d}"
         outcome = self._resolution_service.resolve(request.to_engine_request())
-        job = self._build_job_envelope(job_id, request, outcome)
+        job = self._build_job_record(job_id, request, outcome)
         self._jobs[job_id] = job
-        return deepcopy(job)
+        return job
 
-    def get_resolution_job(self, job_id: str) -> dict[str, Any]:
+    def get_resolution_job(self, job_id: str) -> ResolutionJobRecord:
         try:
-            return deepcopy(self._jobs[job_id])
+            return self._jobs[job_id]
         except KeyError as exc:
             raise KeyError(f"Unknown resolution job_id '{job_id}'.") from exc
 
-    def _build_job_envelope(
+    def _build_job_record(
         self,
         job_id: str,
         request: SubmitResolutionJobRequest,
         outcome: ResolutionOutcome,
-    ) -> dict[str, Any]:
-        job: dict[str, Any] = {
-            "job_id": job_id,
-            "status": outcome.status,
-            "target_ref": request.target_ref,
-            "requested_outputs": list(request.requested_outputs),
-            "notices": [notice.to_dict() for notice in outcome.notices],
-        }
-        if outcome.result is not None:
-            job["result"] = outcome.result.to_dict()
-        return job
+    ) -> ResolutionJobRecord:
+        return ResolutionJobRecord(
+            job_id=job_id,
+            status=outcome.status,
+            target_ref=request.target_ref,
+            requested_outputs=request.requested_outputs,
+            notices=outcome.notices,
+            result=outcome.result,
+        )
