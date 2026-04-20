@@ -7,10 +7,19 @@ from runtime.engine.interfaces.service.bundle_inspection_service import (
     ResolutionBundleInspectionService,
 )
 from runtime.engine.interfaces.service.action_service import ResolutionManifestService
+from runtime.engine.interfaces.service.export_store_service import (
+    ExportStoreService,
+    StoredArtifactContentResult,
+    StoredArtifactListResult,
+    StoredArtifactLookupResult,
+    StoredArtifactMetadata,
+    StoredArtifactWriteResult,
+)
 from runtime.engine.interfaces.service.resolution_service import ResolutionOutcome, ResolutionService
 from runtime.engine.interfaces.service.search_service import SearchService
 
 __all__ = [
+    "ExportStoreService",
     "ResolutionBundleArtifact",
     "ResolutionBundleInspectionRequest",
     "ResolutionBundleInspectionResult",
@@ -20,4 +29,9 @@ __all__ = [
     "ResolutionOutcome",
     "ResolutionService",
     "SearchService",
+    "StoredArtifactContentResult",
+    "StoredArtifactListResult",
+    "StoredArtifactLookupResult",
+    "StoredArtifactMetadata",
+    "StoredArtifactWriteResult",
 ]
