@@ -1,0 +1,32 @@
+name: SearchResults
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that submit bounded
+  search queries through the gateway public search boundary and render deterministic
+  result lists or structured absence reports.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/search/software?q={query}
+  shared_view_models:
+    - contracts/ui/view_models/search_results.view_model.yaml
+  shared_result_shapes:
+    - SearchResultsEnvelope
+surface_expectations:
+  - surfaces search through the public gateway boundary and do not assume engine-local search internals
+  - surfaces render deterministic ordered result lists from governed contracts
+  - surfaces render structured absence reports honestly when no results are found
+  - surfaces link search results into exact resolution flow through target references rather than bypassing the gateway boundary
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - ranking, fuzzy matching, and retrieval expansion
+  - pagination and broader search navigation
+  - finalized surface-specific search interaction behavior

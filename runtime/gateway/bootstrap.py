@@ -4,16 +4,27 @@ from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.extract import extract_synthetic_source_record
 from runtime.engine.interfaces.normalize import normalize_extracted_record
-from runtime.engine.resolve import ExactMatchResolutionService
-from runtime.gateway.public_api import InMemoryResolutionJobService, ResolutionJobsPublicApi
+from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
+from runtime.gateway.public_api import InMemoryResolutionJobService, ResolutionJobsPublicApi, SearchPublicApi
 
 
 def build_demo_resolution_jobs_public_api() -> ResolutionJobsPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    resolution_service = ExactMatchResolutionService(catalog)
+    job_service = InMemoryResolutionJobService(resolution_service)
+    return ResolutionJobsPublicApi(job_service)
+
+
+def build_demo_search_public_api() -> SearchPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    search_service = DeterministicSearchService(catalog)
+    return SearchPublicApi(search_service)
+
+
+def _build_demo_normalized_catalog() -> NormalizedCatalog:
     connector = SyntheticSoftwareConnector()
     normalized_records = tuple(
         normalize_extracted_record(extract_synthetic_source_record(record))
         for record in connector.load_source_records()
     )
-    resolution_service = ExactMatchResolutionService(NormalizedCatalog(normalized_records))
-    job_service = InMemoryResolutionJobService(resolution_service)
-    return ResolutionJobsPublicApi(job_service)
+    return NormalizedCatalog(normalized_records)

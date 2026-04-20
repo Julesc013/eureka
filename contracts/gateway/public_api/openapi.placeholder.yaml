@@ -45,6 +45,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/search/software:
+    get:
+      tags:
+        - ResolutionJobs
+      summary: Search the bounded synthetic software corpus
+      description: >
+        Draft public search boundary for deterministic, bounded software-first lookup
+        over the current governed synthetic corpus. Ranking and broader retrieval
+        semantics remain unresolved.
+      operationId: searchSoftware
+      parameters:
+        - $ref: '#/components/parameters/SearchQuery'
+      responses:
+        '200':
+          description: Draft deterministic search results envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResultsEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
   /v0/resolution/jobs/{job_id}:
     get:
       tags:
@@ -82,6 +107,13 @@ components:
       in: path
       required: true
       description: Draft identifier of a bounded resolution job.
+      schema:
+        type: string
+    SearchQuery:
+      name: q
+      in: query
+      required: true
+      description: Draft bounded search query string.
       schema:
         type: string
   schemas:
@@ -202,5 +234,51 @@ components:
           description: Optional human-readable error message.
       required:
         - code
+    SearchResultsEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft deterministic search results envelope exposed through the public API.
+      properties:
+        query:
+          type: string
+          description: Draft bounded query string echoed for the surface.
+        result_count:
+          type: integer
+          minimum: 0
+          description: Draft count of returned results.
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResultEntry'
+        absence:
+          $ref: '#/components/schemas/SearchAbsence'
+      required:
+        - query
+        - result_count
+        - results
+    SearchResultEntry:
+      type: object
+      additionalProperties: false
+      description: Draft deterministic search hit summary suitable for shared surfaces.
+      properties:
+        target_ref:
+          type: string
+        object:
+          $ref: '#/components/schemas/ObjectSummary'
+      required:
+        - target_ref
+        - object
+    SearchAbsence:
+      type: object
+      additionalProperties: false
+      description: Draft structured absence report for zero-result search responses.
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+      required:
+        - code
+        - message
 x-eureka-boundary: public-api
 x-eureka-status: draft

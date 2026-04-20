@@ -1,0 +1,56 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/search_results.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
+title: SearchResults
+description: Draft shared surface-facing search results model aligned with the gateway public search boundary.
+type: object
+additionalProperties: false
+properties:
+  query:
+    type: string
+    description: Draft bounded query string echoed for the surface.
+  result_count:
+    type: integer
+    minimum: 0
+    description: Draft count of returned result summaries.
+  results:
+    type: array
+    description: Draft ordered result summaries in deterministic catalog order.
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        target_ref:
+          type: string
+        object:
+          type: object
+          additionalProperties: false
+          properties:
+            id:
+              type: string
+            kind:
+              type: string
+            label:
+              type: string
+          required:
+            - id
+      required:
+        - target_ref
+        - object
+  absence:
+    type: object
+    additionalProperties: false
+    description: Draft structured absence report for zero-result searches.
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    required:
+      - code
+      - message
+required:
+  - query
+  - result_count
+  - results
+x-eureka-status: draft
