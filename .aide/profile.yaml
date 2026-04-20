@@ -7,6 +7,18 @@ summary: >
   Repo operating profile for the Eureka monorepo. This profile governs repo identity,
   component inventory, ownership, dependency policy, commands, eval grouping, and
   compatibility metadata only.
+adoption:
+  mode: contract-first
+  execution_posture: harness-oriented-preparation
+  local_aide_runtime: not-present-in-repo
+bootstrap_seed:
+  repo_kind: product_monorepo
+  domain: software resolution, preservation, machine reconstruction
+  v1_focus: software-first
+  bootstrap_execution_lane: python3-stdlib-only
+  safety_posture: review-required-bounded-bootstrap
+  aide_posture: contract-first-harness-later
+  current_executable_scope: local-deterministic-thin-slice-demo-and-tests
 governed_components:
   - archive-contracts
   - engine
@@ -33,4 +45,6 @@ scope:
     - action recipe semantics
     - snapshot semantics
     - public product compatibility promises
-
+notes:
+  - .aide metadata in this repo describes repo contract posture only.
+  - Presence of .aide does not imply a local AIDE host, runtime, service, or product CLI.
