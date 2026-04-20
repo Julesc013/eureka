@@ -1,0 +1,17 @@
+name: ActionRecipe
+status: draft-placeholder
+normativity: non-normative
+summary: Declares a reconstructive or preservation-oriented action pattern without fixing implementation behavior yet.
+future_required_concepts:
+  - intended outcome
+  - required inputs
+  - execution constraints
+non_goals:
+  - concrete runtime scheduling
+  - engine orchestration semantics
+open_questions:
+  - What is the minimum declarative recipe shape that remains useful across engine and gateway layers?
+example_shape:
+  id: recipe.placeholder
+  kind: reconstruct_binary
+

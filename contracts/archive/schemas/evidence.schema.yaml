@@ -1,0 +1,17 @@
+name: Evidence
+status: draft-placeholder
+normativity: non-normative
+summary: Captures observed material that supports, contradicts, or contextualizes a claim.
+future_required_concepts:
+  - provenance
+  - observation timestamp or capture boundary
+  - linkable artifact reference
+non_goals:
+  - connector-owned truth decisions
+  - ranking logic
+open_questions:
+  - What evidence granularity is necessary for software-first reconstruction workflows?
+example_shape:
+  id: ev.placeholder
+  kind: repository_metadata
+

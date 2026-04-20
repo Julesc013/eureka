@@ -1,0 +1,17 @@
+name: Claim
+status: draft-placeholder
+normativity: non-normative
+summary: Expresses a statement about an object, representation, or state that can be supported or challenged by evidence.
+future_required_concepts:
+  - subject reference
+  - predicate or assertion type
+  - confidence or standing
+non_goals:
+  - final trust model
+  - transport-specific encoding
+open_questions:
+  - How should draft confidence be represented without hard-coding a final trust system?
+example_shape:
+  id: claim.placeholder
+  kind: identifies_subject
+

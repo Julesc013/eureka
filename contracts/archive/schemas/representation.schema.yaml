@@ -1,0 +1,17 @@
+name: Representation
+status: draft-placeholder
+normativity: non-normative
+summary: Describes one machine-usable or human-usable form in which an object can appear.
+future_required_concepts:
+  - representation type
+  - format declaration
+  - derivation relationship
+non_goals:
+  - storage backend detail
+  - packaging policy
+open_questions:
+  - How should source, binary, disk image, and reconstructed forms relate without overfitting v1?
+example_shape:
+  id: rep.placeholder
+  kind: source_bundle
+

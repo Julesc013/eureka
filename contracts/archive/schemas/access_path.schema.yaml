@@ -1,0 +1,17 @@
+name: AccessPath
+status: draft-placeholder
+normativity: non-normative
+summary: Describes a way to reach or obtain an object, representation, or evidence source.
+future_required_concepts:
+  - path type
+  - access location
+  - acquisition conditions
+non_goals:
+  - connector-specific client configuration
+  - secret material
+open_questions:
+  - How much of access policy belongs in contract space versus operator configuration?
+example_shape:
+  id: ap.placeholder
+  kind: repository_url
+

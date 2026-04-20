@@ -1,0 +1,17 @@
+name: Object
+status: draft-placeholder
+normativity: non-normative
+summary: Canonical subject record for a software artifact or another governed archive subject.
+future_required_concepts:
+  - stable identity
+  - subject classification
+  - relationship anchors
+non_goals:
+  - connector-specific fields
+  - runtime execution behavior
+open_questions:
+  - What is the minimum stable identity shape for bundled or composite software artifacts?
+example_shape:
+  id: obj.placeholder
+  kind: software
+

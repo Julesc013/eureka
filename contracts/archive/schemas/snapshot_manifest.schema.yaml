@@ -1,0 +1,17 @@
+name: SnapshotManifest
+status: draft-placeholder
+normativity: non-normative
+summary: Enumerates the preserved contents and capture context of a snapshot boundary.
+future_required_concepts:
+  - snapshot identity
+  - member listing
+  - capture provenance
+non_goals:
+  - storage layout
+  - distribution packaging rules
+open_questions:
+  - How should partial, reconstructed, and operator-authored snapshots be distinguished?
+example_shape:
+  id: snap.placeholder
+  kind: preserved_capture
+

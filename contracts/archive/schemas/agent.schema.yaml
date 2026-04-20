@@ -1,0 +1,17 @@
+name: Agent
+status: draft-placeholder
+normativity: non-normative
+summary: Identifies a person, organization, system, or automated process acting within the archive record.
+future_required_concepts:
+  - agent type
+  - identifier strategy
+  - role or participation context
+non_goals:
+  - authentication model
+  - permission semantics
+open_questions:
+  - Which agent distinctions matter in v1 beyond human, organization, and automated process?
+example_shape:
+  id: ag.placeholder
+  kind: automated_process
+

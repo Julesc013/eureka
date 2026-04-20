@@ -1,0 +1,17 @@
+name: State
+status: draft-placeholder
+normativity: non-normative
+summary: Records a bounded condition or availability state associated with an object or representation.
+future_required_concepts:
+  - state type
+  - scope
+  - supporting evidence links
+non_goals:
+  - mutable runtime session state
+  - connector-local flags
+open_questions:
+  - Which preservation and compatibility states should be first-class versus derived?
+example_shape:
+  id: state.placeholder
+  kind: compatibility_observation
+
