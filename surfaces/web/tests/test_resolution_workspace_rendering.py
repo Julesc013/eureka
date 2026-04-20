@@ -6,7 +6,7 @@ from surfaces.web.workbench import render_resolution_workspace_html
 
 
 class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
-    def test_known_target_rendering_includes_completed_status_selected_object_and_export_links(self) -> None:
+    def test_known_target_rendering_includes_completed_status_selected_object_export_links_and_stored_exports(self) -> None:
         html = render_resolution_workspace_html(
             {
                 "session_id": "session.known",
@@ -38,6 +38,34 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                     }
                 ],
             },
+            stored_exports={
+                "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+                "store_actions": [
+                    {
+                        "action_id": "store_resolution_manifest",
+                        "label": "Store resolution manifest locally",
+                        "availability": "available",
+                        "href": "/store/manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0",
+                    },
+                    {
+                        "action_id": "store_resolution_bundle",
+                        "label": "Store resolution bundle locally",
+                        "availability": "available",
+                        "href": "/store/bundle?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0",
+                    },
+                ],
+                "artifacts": [
+                    {
+                        "artifact_id": "sha256:1234",
+                        "artifact_kind": "resolution_manifest",
+                        "content_type": "application/json; charset=utf-8",
+                        "byte_length": 128,
+                        "availability": "available",
+                        "href": "/stored/artifact?artifact_id=sha256%3A1234",
+                        "filename": "eureka-resolution-manifest-demo.json",
+                    }
+                ],
+            },
         )
 
         self.assertIn("fixture:software/synthetic-demo-app@1.0.0", html)
@@ -48,8 +76,13 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
         self.assertIn("Export resolution bundle", html)
         self.assertIn("/actions/export-resolution-bundle?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
+        self.assertIn("Store resolution manifest locally", html)
+        self.assertIn("/store/manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
+        self.assertIn("Stored Exports", html)
+        self.assertIn("sha256:1234", html)
+        self.assertIn("/stored/artifact?artifact_id=sha256%3A1234", html)
 
-    def test_unknown_target_rendering_includes_blocked_status_notice_and_unavailable_action_state(self) -> None:
+    def test_unknown_target_rendering_includes_blocked_status_notice_and_unavailable_store_state(self) -> None:
         html = render_resolution_workspace_html(
             {
                 "session_id": "session.blocked",
@@ -93,6 +126,29 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                     }
                 ],
             },
+            stored_exports={
+                "target_ref": "fixture:software/missing-demo-app@0.0.1",
+                "store_actions": [
+                    {
+                        "action_id": "store_resolution_manifest",
+                        "label": "Store resolution manifest locally",
+                        "availability": "unavailable",
+                    },
+                    {
+                        "action_id": "store_resolution_bundle",
+                        "label": "Store resolution bundle locally",
+                        "availability": "unavailable",
+                    }
+                ],
+                "artifacts": [],
+                "notices": [
+                    {
+                        "code": "stored_exports_target_not_available",
+                        "severity": "warning",
+                        "message": "No resolved synthetic record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
+                    }
+                ],
+            },
         )
 
         self.assertIn("fixture:software/missing-demo-app@0.0.1", html)
@@ -104,3 +160,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("Export resolution bundle (unavailable)", html)
         self.assertIn("resolution_manifest_not_available", html)
         self.assertIn("resolution_bundle_not_available", html)
+        self.assertIn("No local store actions are exposed for this target.", html)
+        self.assertIn("Store resolution manifest locally (unavailable)", html)
+        self.assertIn("Store resolution bundle locally (unavailable)", html)
+        self.assertIn("stored_exports_target_not_available", html)

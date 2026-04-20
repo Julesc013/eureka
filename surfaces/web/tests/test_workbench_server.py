@@ -333,14 +333,202 @@ class FakeResolutionBundleInspectionPublicApi:
         )
 
 
+class FakeStoredExportsPublicApi:
+    def __init__(self) -> None:
+        self.list_target_refs: list[str] = []
+        self.store_manifest_target_refs: list[str] = []
+        self.store_bundle_target_refs: list[str] = []
+        self.artifact_ids: list[str] = []
+
+    def list_stored_exports(self, request) -> PublicApiResponse:
+        self.list_target_refs.append(request.target_ref)
+        if request.target_ref == "fixture:software/missing-demo-app@0.0.1":
+            return PublicApiResponse(
+                status_code=404,
+                body={
+                    "target_ref": request.target_ref,
+                    "store_actions": [
+                        {
+                            "action_id": "store_resolution_manifest",
+                            "label": "Store resolution manifest locally",
+                            "availability": "unavailable",
+                        },
+                        {
+                            "action_id": "store_resolution_bundle",
+                            "label": "Store resolution bundle locally",
+                            "availability": "unavailable",
+                        },
+                    ],
+                    "artifacts": [],
+                    "notices": [
+                        {
+                            "code": "stored_exports_target_not_available",
+                            "severity": "warning",
+                            "message": f"No resolved synthetic record matched target_ref '{request.target_ref}'.",
+                        }
+                    ],
+                },
+            )
+        return PublicApiResponse(
+            status_code=200,
+            body={
+                "target_ref": request.target_ref,
+                "store_actions": [
+                    {
+                        "action_id": "store_resolution_manifest",
+                        "label": "Store resolution manifest locally",
+                        "availability": "available",
+                        "href": f"/store/manifest?target_ref={quote(request.target_ref, safe='')}",
+                    },
+                    {
+                        "action_id": "store_resolution_bundle",
+                        "label": "Store resolution bundle locally",
+                        "availability": "available",
+                        "href": f"/store/bundle?target_ref={quote(request.target_ref, safe='')}",
+                    },
+                ],
+                "artifacts": [
+                    {
+                        "artifact_id": "sha256:manifest-demo",
+                        "artifact_kind": "resolution_manifest",
+                        "content_type": "application/json; charset=utf-8",
+                        "byte_length": 128,
+                        "availability": "available",
+                        "href": "/stored/artifact?artifact_id=sha256%3Amanifest-demo",
+                        "filename": "eureka-resolution-manifest-demo.json",
+                    },
+                    {
+                        "artifact_id": "sha256:bundle-demo",
+                        "artifact_kind": "resolution_bundle",
+                        "content_type": "application/zip",
+                        "byte_length": 256,
+                        "availability": "available",
+                        "href": "/stored/artifact?artifact_id=sha256%3Abundle-demo",
+                        "filename": "eureka-resolution-bundle-demo.zip",
+                    },
+                ],
+                "notices": [],
+            },
+        )
+
+    def store_resolution_manifest(self, request) -> PublicApiResponse:
+        self.store_manifest_target_refs.append(request.target_ref)
+        if request.target_ref == "fixture:software/missing-demo-app@0.0.1":
+            return PublicApiResponse(
+                status_code=404,
+                body={
+                    "action_id": "store_resolution_manifest",
+                    "status": "blocked",
+                    "target_ref": request.target_ref,
+                    "code": "store_resolution_manifest_not_available",
+                    "message": f"No resolved synthetic record matched target_ref '{request.target_ref}'.",
+                },
+            )
+        return PublicApiResponse(
+            status_code=200,
+            body={
+                "status": "stored",
+                "artifact": {
+                    "artifact_id": "sha256:manifest-demo",
+                    "artifact_kind": "resolution_manifest",
+                    "content_type": "application/json; charset=utf-8",
+                    "byte_length": 128,
+                    "store_path": "objects/sha256/ma/nifest-demo",
+                    "created_by_slice": "local_export_store",
+                    "source_action": "store_resolution_manifest",
+                    "target_ref": request.target_ref,
+                },
+                "notices": [],
+            },
+        )
+
+    def store_resolution_bundle(self, request) -> PublicApiResponse:
+        self.store_bundle_target_refs.append(request.target_ref)
+        if request.target_ref == "fixture:software/missing-demo-app@0.0.1":
+            return PublicApiResponse(
+                status_code=404,
+                body={
+                    "action_id": "store_resolution_bundle",
+                    "status": "blocked",
+                    "target_ref": request.target_ref,
+                    "code": "store_resolution_bundle_not_available",
+                    "message": f"No resolved synthetic record matched target_ref '{request.target_ref}'.",
+                },
+            )
+        return PublicApiResponse(
+            status_code=200,
+            body={
+                "status": "stored",
+                "artifact": {
+                    "artifact_id": "sha256:bundle-demo",
+                    "artifact_kind": "resolution_bundle",
+                    "content_type": "application/zip",
+                    "byte_length": 256,
+                    "store_path": "objects/sha256/bu/ndle-demo",
+                    "created_by_slice": "local_export_store",
+                    "source_action": "store_resolution_bundle",
+                    "target_ref": request.target_ref,
+                },
+                "notices": [],
+            },
+        )
+
+    def get_stored_artifact_content(self, request) -> PublicArtifactResponse:
+        self.artifact_ids.append(request.artifact_id)
+        if request.artifact_id == "sha256:missing-demo":
+            return PublicArtifactResponse(
+                status_code=404,
+                content_type="application/json; charset=utf-8",
+                payload=(
+                    json.dumps(
+                        {
+                            "artifact_id": request.artifact_id,
+                            "status": "blocked",
+                            "code": "stored_artifact_not_found",
+                            "message": f"Unknown stored artifact_id '{request.artifact_id}'.",
+                        },
+                        sort_keys=True,
+                    )
+                    + "\n"
+                ).encode("utf-8"),
+            )
+        if request.artifact_id == "sha256:bundle-demo":
+            buffer = BytesIO()
+            with zipfile.ZipFile(buffer, mode="w") as archive:
+                archive.writestr("bundle.json", json.dumps({"artifact_id": request.artifact_id}, sort_keys=True))
+            return PublicArtifactResponse(
+                status_code=200,
+                content_type="application/zip",
+                filename="eureka-resolution-bundle-demo.zip",
+                payload=buffer.getvalue(),
+            )
+        return PublicArtifactResponse(
+            status_code=200,
+            content_type="application/json; charset=utf-8",
+            filename="eureka-resolution-manifest-demo.json",
+            payload=(
+                json.dumps(
+                    {
+                        "manifest_kind": "eureka.resolution_manifest",
+                        "artifact_id": request.artifact_id,
+                    },
+                    sort_keys=True,
+                )
+                + "\n"
+            ).encode("utf-8"),
+        )
+
+
 class WorkbenchServerTestCase(unittest.TestCase):
     def test_server_renders_workspace_via_public_submit_read_and_action_boundaries(self) -> None:
         public_api = FakeResolutionJobsPublicApi()
         actions_public_api = FakeResolutionActionsPublicApi()
+        stored_exports_public_api = FakeStoredExportsPublicApi()
         html = render_resolution_workspace_page(
             public_api,
             "fixture:software/synthetic-demo-app@1.0.0",
             actions_public_api=actions_public_api,
+            stored_exports_public_api=stored_exports_public_api,
         )
 
         self.assertEqual(
@@ -354,6 +542,11 @@ class WorkbenchServerTestCase(unittest.TestCase):
         self.assertIn("/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
         self.assertIn("Export resolution bundle", html)
         self.assertIn("/actions/export-resolution-bundle?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
+        self.assertEqual(stored_exports_public_api.list_target_refs, ["fixture:software/synthetic-demo-app@1.0.0"])
+        self.assertIn("Store resolution manifest locally", html)
+        self.assertIn("Store resolution bundle locally", html)
+        self.assertIn("sha256:manifest-demo", html)
+        self.assertIn("/stored/artifact?artifact_id=sha256%3Amanifest-demo", html)
 
     def test_server_renders_search_results_via_public_search_boundary(self) -> None:
         public_api = FakeSearchPublicApi()
@@ -378,11 +571,13 @@ class WorkbenchServerTestCase(unittest.TestCase):
         resolution_public_api = FakeResolutionJobsPublicApi()
         actions_public_api = FakeResolutionActionsPublicApi()
         bundle_inspection_public_api = FakeResolutionBundleInspectionPublicApi()
+        stored_exports_public_api = FakeStoredExportsPublicApi()
         search_public_api = FakeSearchPublicApi()
         app = WorkbenchWsgiApp(
             resolution_public_api,
             actions_public_api=actions_public_api,
             bundle_inspection_public_api=bundle_inspection_public_api,
+            stored_exports_public_api=stored_exports_public_api,
             search_public_api=search_public_api,
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
@@ -412,6 +607,7 @@ class WorkbenchServerTestCase(unittest.TestCase):
         )
         self.assertIn("fixture:software/missing-demo-app@0.0.1", body)
         self.assertIn("No available actions are exposed for this target.", body)
+        self.assertIn("No local store actions are exposed for this target.", body)
         self.assertNotIn(
             "<a href=\"/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fmissing-demo-app%400.0.1\">",
             body,
@@ -655,6 +851,144 @@ class WorkbenchServerTestCase(unittest.TestCase):
         self.assertIn("blocked", body)
         self.assertIn("bundle_archive_invalid", body)
         self.assertIn("Bundle payload is not a valid ZIP archive.", body)
+
+    def test_wsgi_app_serves_store_manifest_json_for_known_target(self) -> None:
+        app = WorkbenchWsgiApp(
+            FakeResolutionJobsPublicApi(),
+            actions_public_api=FakeResolutionActionsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
+            stored_exports_public_api=FakeStoredExportsPublicApi(),
+            search_public_api=FakeSearchPublicApi(),
+            default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
+        )
+
+        captured: dict[str, object] = {}
+
+        def start_response(status: str, headers: list[tuple[str, str]]) -> None:
+            captured["status"] = status
+            captured["headers"] = headers
+
+        body = b"".join(
+            app(
+                {
+                    "REQUEST_METHOD": "GET",
+                    "PATH_INFO": "/store/manifest",
+                    "QUERY_STRING": f"target_ref={quote('fixture:software/synthetic-demo-app@1.0.0')}",
+                    "wsgi.input": BytesIO(b""),
+                },
+                start_response,
+            )
+        ).decode("utf-8")
+
+        self.assertEqual(captured["status"], "200 OK")
+        headers = dict(captured["headers"])
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["status"], "stored")
+        self.assertEqual(payload["artifact"]["artifact_kind"], "resolution_manifest")
+
+    def test_wsgi_app_serves_stored_manifest_json_for_known_artifact(self) -> None:
+        app = WorkbenchWsgiApp(
+            FakeResolutionJobsPublicApi(),
+            actions_public_api=FakeResolutionActionsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
+            stored_exports_public_api=FakeStoredExportsPublicApi(),
+            search_public_api=FakeSearchPublicApi(),
+            default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
+        )
+
+        captured: dict[str, object] = {}
+
+        def start_response(status: str, headers: list[tuple[str, str]]) -> None:
+            captured["status"] = status
+            captured["headers"] = headers
+
+        body = b"".join(
+            app(
+                {
+                    "REQUEST_METHOD": "GET",
+                    "PATH_INFO": "/stored/artifact",
+                    "QUERY_STRING": f"artifact_id={quote('sha256:manifest-demo')}",
+                    "wsgi.input": BytesIO(b""),
+                },
+                start_response,
+            )
+        ).decode("utf-8")
+
+        self.assertEqual(captured["status"], "200 OK")
+        headers = dict(captured["headers"])
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["artifact_id"], "sha256:manifest-demo")
+        self.assertEqual(payload["manifest_kind"], "eureka.resolution_manifest")
+
+    def test_wsgi_app_serves_stored_bundle_zip_for_known_artifact(self) -> None:
+        app = WorkbenchWsgiApp(
+            FakeResolutionJobsPublicApi(),
+            actions_public_api=FakeResolutionActionsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
+            stored_exports_public_api=FakeStoredExportsPublicApi(),
+            search_public_api=FakeSearchPublicApi(),
+            default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
+        )
+
+        captured: dict[str, object] = {}
+
+        def start_response(status: str, headers: list[tuple[str, str]]) -> None:
+            captured["status"] = status
+            captured["headers"] = headers
+
+        body = b"".join(
+            app(
+                {
+                    "REQUEST_METHOD": "GET",
+                    "PATH_INFO": "/stored/artifact",
+                    "QUERY_STRING": f"artifact_id={quote('sha256:bundle-demo')}",
+                    "wsgi.input": BytesIO(b""),
+                },
+                start_response,
+            )
+        )
+
+        self.assertEqual(captured["status"], "200 OK")
+        headers = dict(captured["headers"])
+        self.assertEqual(headers["Content-Type"], "application/zip")
+        with zipfile.ZipFile(BytesIO(body)) as bundle:
+            self.assertEqual(bundle.namelist(), ["bundle.json"])
+
+    def test_wsgi_app_returns_blocked_json_for_unknown_stored_artifact(self) -> None:
+        app = WorkbenchWsgiApp(
+            FakeResolutionJobsPublicApi(),
+            actions_public_api=FakeResolutionActionsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
+            stored_exports_public_api=FakeStoredExportsPublicApi(),
+            search_public_api=FakeSearchPublicApi(),
+            default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
+        )
+
+        captured: dict[str, object] = {}
+
+        def start_response(status: str, headers: list[tuple[str, str]]) -> None:
+            captured["status"] = status
+            captured["headers"] = headers
+
+        body = b"".join(
+            app(
+                {
+                    "REQUEST_METHOD": "GET",
+                    "PATH_INFO": "/stored/artifact",
+                    "QUERY_STRING": f"artifact_id={quote('sha256:missing-demo')}",
+                    "wsgi.input": BytesIO(b""),
+                },
+                start_response,
+            )
+        ).decode("utf-8")
+
+        self.assertEqual(captured["status"], "404 Not Found")
+        headers = dict(captured["headers"])
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["code"], "stored_artifact_not_found")
 
     def test_web_surface_modules_do_not_import_engine_or_connector_internals(self) -> None:
         for path in SURFACE_WEB_ROOT.rglob("*.py"):
