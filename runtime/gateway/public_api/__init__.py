@@ -31,6 +31,14 @@ from runtime.gateway.public_api.resolution_jobs import (
 from runtime.gateway.public_api.resolution_actions_view_models import (
     resolution_actions_envelope_to_view_model,
 )
+from runtime.gateway.public_api.bundle_inspection_view_models import (
+    bundle_inspection_envelope_to_view_model,
+)
+from runtime.gateway.public_api.resolution_bundle_inspection import (
+    InspectResolutionBundleRequest,
+    ResolutionBundleInspectionPublicApi,
+    bundle_inspection_result_to_public_envelope,
+)
 from runtime.gateway.public_api.search_boundary import (
     SearchCatalogRequest,
     SearchPublicApi,
@@ -51,7 +59,9 @@ __all__ = [
     "EXPORT_RESOLUTION_MANIFEST_LABEL",
     "EXPORT_RESOLUTION_MANIFEST_ROUTE",
     "InMemoryResolutionJobService",
+    "InspectResolutionBundleRequest",
     "ResolutionActionRequest",
+    "ResolutionBundleInspectionPublicApi",
     "ResolutionJobRecord",
     "ResolutionActionsPublicApi",
     "ResolutionJobsPublicApi",
@@ -60,6 +70,8 @@ __all__ = [
     "SubmitResolutionJobRequest",
     "accepted_resolution_job_to_public_envelope",
     "available_resolution_actions_to_public_envelope",
+    "bundle_inspection_envelope_to_view_model",
+    "bundle_inspection_result_to_public_envelope",
     "resolution_actions_to_public_envelope",
     "resolution_bundle_not_available_error",
     "resolution_job_not_found_error",
