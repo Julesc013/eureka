@@ -11,7 +11,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.gateway import build_demo_resolution_jobs_public_api
-from runtime.gateway.public_api import SubmitResolutionJobRequest
+from runtime.gateway.public_api import SubmitResolutionJobRequest, resolution_job_envelope_to_workbench_session
 
 
 def main() -> int:
@@ -30,6 +30,16 @@ def main() -> int:
         default=[],
         help="Optional bounded output label to include in the request envelope.",
     )
+    parser.add_argument(
+        "--include-workbench-session",
+        action="store_true",
+        help="Also map the read job envelope into the shared workbench session view model.",
+    )
+    parser.add_argument(
+        "--session-id",
+        default="session.synthetic-demo",
+        help="Session identifier to use when emitting a workbench session view model.",
+    )
     args = parser.parse_args()
 
     connector = SyntheticSoftwareConnector()
@@ -44,15 +54,17 @@ def main() -> int:
     )
     read_response = public_api.read_resolution_job(submit_response.body["job_id"])
 
-    json.dump(
-        {
-            "submit_response": submit_response.to_dict(),
-            "read_response": read_response.to_dict(),
-        },
-        sys.stdout,
-        indent=2,
-        sort_keys=True,
-    )
+    payload = {
+        "submit_response": submit_response.to_dict(),
+        "read_response": read_response.to_dict(),
+    }
+    if args.include_workbench_session:
+        payload["workbench_session"] = resolution_job_envelope_to_workbench_session(
+            read_response.body,
+            session_id=args.session_id,
+        )
+
+    json.dump(payload, sys.stdout, indent=2, sort_keys=True)
     sys.stdout.write("\n")
     return 0
 

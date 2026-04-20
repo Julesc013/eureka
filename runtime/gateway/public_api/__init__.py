@@ -12,6 +12,7 @@ from runtime.gateway.public_api.resolution_jobs import (
     ResolutionJobRecord,
     SubmitResolutionJobRequest,
 )
+from runtime.gateway.public_api.workbench_sessions import resolution_job_envelope_to_workbench_session
 
 __all__ = [
     "PublicApiResponse",
@@ -22,4 +23,5 @@ __all__ = [
     "accepted_resolution_job_to_public_envelope",
     "resolution_job_not_found_error",
     "resolution_job_to_public_envelope",
+    "resolution_job_envelope_to_workbench_session",
 ]
