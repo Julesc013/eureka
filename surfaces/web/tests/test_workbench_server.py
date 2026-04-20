@@ -9,7 +9,12 @@ from urllib.parse import quote
 import unittest
 
 from runtime.gateway.public_api import PublicApiResponse, PublicArtifactResponse
-from surfaces.web.server import WorkbenchWsgiApp, render_resolution_workspace_page, render_search_results_page
+from surfaces.web.server import (
+    WorkbenchWsgiApp,
+    render_bundle_inspection_page,
+    render_resolution_workspace_page,
+    render_search_results_page,
+)
 
 
 SURFACE_WEB_ROOT = Path(__file__).resolve().parents[1]
@@ -243,6 +248,91 @@ class FakeSearchPublicApi:
         )
 
 
+class FakeResolutionBundleInspectionPublicApi:
+    def __init__(self) -> None:
+        self.bundle_paths: list[str] = []
+
+    def inspect_bundle(self, request) -> PublicApiResponse:
+        assert request.bundle_path is not None
+        self.bundle_paths.append(request.bundle_path)
+        if request.bundle_path == "C:/tmp/missing-bundle.zip":
+            return PublicApiResponse(
+                status_code=404,
+                body={
+                    "status": "blocked",
+                    "inspection_mode": "local_offline",
+                    "source": {
+                        "kind": "local_path",
+                        "locator": request.bundle_path,
+                    },
+                    "notices": [
+                        {
+                            "code": "bundle_path_not_found",
+                            "severity": "error",
+                            "message": f"Bundle path '{request.bundle_path}' was not found.",
+                        }
+                    ],
+                },
+            )
+        if request.bundle_path == "C:/tmp/bad-bundle.zip":
+            return PublicApiResponse(
+                status_code=422,
+                body={
+                    "status": "blocked",
+                    "inspection_mode": "local_offline",
+                    "source": {
+                        "kind": "local_path",
+                        "locator": request.bundle_path,
+                    },
+                    "notices": [
+                        {
+                            "code": "bundle_archive_invalid",
+                            "severity": "error",
+                            "message": "Bundle payload is not a valid ZIP archive.",
+                        }
+                    ],
+                },
+            )
+        return PublicApiResponse(
+            status_code=200,
+            body={
+                "status": "inspected",
+                "inspection_mode": "local_offline",
+                "source": {
+                    "kind": "local_path",
+                    "locator": request.bundle_path,
+                },
+                "bundle": {
+                    "bundle_kind": "eureka.resolution_bundle",
+                    "bundle_version": "0.1.0-draft",
+                    "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+                    "member_list": [
+                        "README.txt",
+                        "bundle.json",
+                        "manifest.json",
+                        "records/normalized_record.json",
+                    ],
+                },
+                "primary_object": {
+                    "id": "obj.synthetic-demo-app",
+                    "kind": "software",
+                    "label": "Synthetic Demo App",
+                },
+                "normalized_record": {
+                    "record_kind": "normalized_resolution_record",
+                    "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+                },
+                "notices": [
+                    {
+                        "code": "bundle_inspected_locally_offline",
+                        "severity": "info",
+                        "message": "Inspected bundle locally and offline without live fixture access.",
+                    }
+                ],
+            },
+        )
+
+
 class WorkbenchServerTestCase(unittest.TestCase):
     def test_server_renders_workspace_via_public_submit_read_and_action_boundaries(self) -> None:
         public_api = FakeResolutionJobsPublicApi()
@@ -274,13 +364,25 @@ class WorkbenchServerTestCase(unittest.TestCase):
         self.assertIn("Synthetic Demo Suite", html)
         self.assertIn("/?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
 
+    def test_server_renders_bundle_inspection_page_via_public_inspection_boundary(self) -> None:
+        public_api = FakeResolutionBundleInspectionPublicApi()
+
+        html = render_bundle_inspection_page(public_api, "C:/tmp/demo-bundle.zip")
+
+        self.assertEqual(public_api.bundle_paths, ["C:/tmp/demo-bundle.zip"])
+        self.assertIn("fixture:software/synthetic-demo-app@1.0.0", html)
+        self.assertIn("obj.synthetic-demo-app", html)
+        self.assertIn("bundle.json", html)
+
     def test_wsgi_app_handles_query_driven_get_request(self) -> None:
         resolution_public_api = FakeResolutionJobsPublicApi()
         actions_public_api = FakeResolutionActionsPublicApi()
+        bundle_inspection_public_api = FakeResolutionBundleInspectionPublicApi()
         search_public_api = FakeSearchPublicApi()
         app = WorkbenchWsgiApp(
             resolution_public_api,
             actions_public_api=actions_public_api,
+            bundle_inspection_public_api=bundle_inspection_public_api,
             search_public_api=search_public_api,
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
@@ -322,10 +424,12 @@ class WorkbenchServerTestCase(unittest.TestCase):
     def test_wsgi_app_handles_search_requests(self) -> None:
         resolution_public_api = FakeResolutionJobsPublicApi()
         actions_public_api = FakeResolutionActionsPublicApi()
+        bundle_inspection_public_api = FakeResolutionBundleInspectionPublicApi()
         search_public_api = FakeSearchPublicApi()
         app = WorkbenchWsgiApp(
             resolution_public_api,
             actions_public_api=actions_public_api,
+            bundle_inspection_public_api=bundle_inspection_public_api,
             search_public_api=search_public_api,
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
@@ -356,6 +460,7 @@ class WorkbenchServerTestCase(unittest.TestCase):
         app = WorkbenchWsgiApp(
             FakeResolutionJobsPublicApi(),
             actions_public_api=FakeResolutionActionsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
             search_public_api=FakeSearchPublicApi(),
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
@@ -389,6 +494,7 @@ class WorkbenchServerTestCase(unittest.TestCase):
         app = WorkbenchWsgiApp(
             FakeResolutionJobsPublicApi(),
             actions_public_api=FakeResolutionActionsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
             search_public_api=FakeSearchPublicApi(),
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
@@ -422,6 +528,7 @@ class WorkbenchServerTestCase(unittest.TestCase):
         app = WorkbenchWsgiApp(
             FakeResolutionJobsPublicApi(),
             actions_public_api=FakeResolutionActionsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
             search_public_api=FakeSearchPublicApi(),
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
@@ -455,6 +562,7 @@ class WorkbenchServerTestCase(unittest.TestCase):
         app = WorkbenchWsgiApp(
             FakeResolutionJobsPublicApi(),
             actions_public_api=FakeResolutionActionsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
             search_public_api=FakeSearchPublicApi(),
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
@@ -483,6 +591,70 @@ class WorkbenchServerTestCase(unittest.TestCase):
         payload = json.loads(body)
         self.assertEqual(payload["code"], "resolution_bundle_not_available")
         self.assertEqual(payload["status"], "blocked")
+
+    def test_wsgi_app_serves_valid_bundle_inspection_page(self) -> None:
+        app = WorkbenchWsgiApp(
+            FakeResolutionJobsPublicApi(),
+            actions_public_api=FakeResolutionActionsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
+            search_public_api=FakeSearchPublicApi(),
+            default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
+        )
+
+        captured: dict[str, object] = {}
+
+        def start_response(status: str, headers: list[tuple[str, str]]) -> None:
+            captured["status"] = status
+            captured["headers"] = headers
+
+        body = b"".join(
+            app(
+                {
+                    "REQUEST_METHOD": "GET",
+                    "PATH_INFO": "/inspect/bundle",
+                    "QUERY_STRING": f"bundle_path={quote('C:/tmp/demo-bundle.zip')}",
+                    "wsgi.input": BytesIO(b""),
+                },
+                start_response,
+            )
+        ).decode("utf-8")
+
+        self.assertEqual(captured["status"], "200 OK")
+        self.assertIn("fixture:software/synthetic-demo-app@1.0.0", body)
+        self.assertIn("obj.synthetic-demo-app", body)
+        self.assertIn("records/normalized_record.json", body)
+
+    def test_wsgi_app_serves_invalid_bundle_inspection_page(self) -> None:
+        app = WorkbenchWsgiApp(
+            FakeResolutionJobsPublicApi(),
+            actions_public_api=FakeResolutionActionsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
+            search_public_api=FakeSearchPublicApi(),
+            default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
+        )
+
+        captured: dict[str, object] = {}
+
+        def start_response(status: str, headers: list[tuple[str, str]]) -> None:
+            captured["status"] = status
+            captured["headers"] = headers
+
+        body = b"".join(
+            app(
+                {
+                    "REQUEST_METHOD": "GET",
+                    "PATH_INFO": "/inspect/bundle",
+                    "QUERY_STRING": f"bundle_path={quote('C:/tmp/bad-bundle.zip')}",
+                    "wsgi.input": BytesIO(b""),
+                },
+                start_response,
+            )
+        ).decode("utf-8")
+
+        self.assertEqual(captured["status"], "200 OK")
+        self.assertIn("blocked", body)
+        self.assertIn("bundle_archive_invalid", body)
+        self.assertIn("Bundle payload is not a valid ZIP archive.", body)
 
     def test_web_surface_modules_do_not_import_engine_or_connector_internals(self) -> None:
         for path in SURFACE_WEB_ROOT.rglob("*.py"):
