@@ -10,3 +10,5 @@ These questions are intentionally left open during bootstrap:
 6. Which shared UI state should be standardized across web and native without over-constraining either surface?
 7. What is the first durable versioning strategy for archive contracts, gateway contracts, and migration metadata?
 8. When should the advisory path-based dependency policy become mechanically enforced, and by what repo-local check?
+9. When should the current fixture-backed exact-match resolver expand beyond governed synthetic fixtures into real acquisition paths?
+10. If job execution later becomes asynchronous, which parts of the current bounded job envelope should remain stable?

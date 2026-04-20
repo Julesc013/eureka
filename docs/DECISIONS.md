@@ -36,3 +36,14 @@
 - Decision: v1 focuses on software resolution, preservation, compatibility, and reconstruction.
 - Why: a narrower domain is needed before broader artifact classes can be governed well.
 
+## ADR-007: Use Python Standard Library Only for the Bootstrap Execution Lane
+
+- Status: accepted
+- Decision: the first executable thin slice uses Python 3 standard library only.
+- Why: the bootstrap lane should stay easy to inspect, dependency-light, and replaceable later without implying a final stack commitment.
+
+## ADR-008: Keep the First Executable Slice Local, Deterministic, and Fixture-Backed
+
+- Status: accepted
+- Decision: the first executable slice resolves governed synthetic software fixtures through an engine service and an in-memory gateway bounded-job service.
+- Why: this proves the core boundary model without prematurely committing to connectors, ranking, persistence, or async orchestration.

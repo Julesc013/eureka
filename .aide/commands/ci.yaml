@@ -1,11 +1,15 @@
 command: ci
-status: bootstrap
-description: Minimal repo-consistency checks available in an otherwise empty bootstrap repo.
+status: bootstrap-executable-thin-slice
+description: Minimal repo-consistency and thin-slice test checks for the current bootstrap repo.
 steps:
   - id: whitespace
     run: git diff --check
   - id: repo_contract
     run: rg -n "governed component|Dependency Law|AIDE" README.md AGENTS.md docs .aide
+  - id: runtime_tests
+    run: python -m unittest discover -s runtime -t .
+  - id: integration_tests
+    run: python -m unittest discover -s tests -t .
 notes:
-  - Product build and runtime checks are intentionally absent until scaffolding exists.
-
+  - Checks run only against the local deterministic Python stdlib thin slice.
+  - This command contract is repo-operating metadata, not proof of a local AIDE product CLI.
