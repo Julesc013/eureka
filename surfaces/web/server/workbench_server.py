@@ -13,11 +13,15 @@ from runtime.gateway.public_api import (
     ResolutionJobsPublicApi,
     SearchCatalogRequest,
     SearchPublicApi,
+    StoredArtifactRequest,
+    StoredExportsPublicApi,
+    StoredExportsTargetRequest,
     SubmitResolutionJobRequest,
     bundle_inspection_envelope_to_view_model,
     resolution_actions_envelope_to_view_model,
     resolution_job_envelope_to_workbench_session,
     search_response_envelope_to_search_results_view_model,
+    stored_exports_envelope_to_view_model,
 )
 from surfaces.web.workbench import (
     render_bundle_inspection_html,
@@ -31,6 +35,7 @@ def render_resolution_workspace_page(
     target_ref: str,
     *,
     actions_public_api: ResolutionActionsPublicApi | None = None,
+    stored_exports_public_api: StoredExportsPublicApi | None = None,
     session_id: str = "session.web-workbench",
 ) -> str:
     submit_response = resolution_public_api.submit_resolution_job(
@@ -55,9 +60,15 @@ def render_resolution_workspace_page(
         resolution_actions = resolution_actions_envelope_to_view_model(
             actions_public_api.list_resolution_actions(ResolutionActionRequest.from_parts(target_ref)).body
         )
+    stored_exports = None
+    if stored_exports_public_api is not None:
+        stored_exports = stored_exports_envelope_to_view_model(
+            stored_exports_public_api.list_stored_exports(StoredExportsTargetRequest.from_parts(target_ref)).body
+        )
     return render_resolution_workspace_html(
         workbench_session,
         resolution_actions=resolution_actions,
+        stored_exports=stored_exports,
     )
 
 
@@ -68,6 +79,7 @@ class WorkbenchWsgiApp:
         *,
         actions_public_api: ResolutionActionsPublicApi | None = None,
         bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None = None,
+        stored_exports_public_api: StoredExportsPublicApi | None = None,
         search_public_api: SearchPublicApi,
         default_target_ref: str,
         session_id: str = "session.web-workbench",
@@ -75,6 +87,7 @@ class WorkbenchWsgiApp:
         self._resolution_public_api = resolution_public_api
         self._actions_public_api = actions_public_api
         self._bundle_inspection_public_api = bundle_inspection_public_api
+        self._stored_exports_public_api = stored_exports_public_api
         self._search_public_api = search_public_api
         self._default_target_ref = default_target_ref
         self._session_id = session_id
@@ -104,6 +117,9 @@ class WorkbenchWsgiApp:
             "/inspect/bundle",
             "/actions/export-resolution-manifest",
             "/actions/export-resolution-bundle",
+            "/store/manifest",
+            "/store/bundle",
+            "/stored/artifact",
         }:
             return self._respond(
                 start_response,
@@ -114,7 +130,8 @@ class WorkbenchWsgiApp:
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
                         "'/inspect/bundle', '/actions/export-resolution-manifest', and "
-                        "'/actions/export-resolution-bundle'."
+                        "'/actions/export-resolution-bundle', '/store/manifest', "
+                        "'/store/bundle', and '/stored/artifact'."
                     ),
                 ),
             )
@@ -126,6 +143,7 @@ class WorkbenchWsgiApp:
                 self._resolution_public_api,
                 target_ref,
                 actions_public_api=self._actions_public_api,
+                stored_exports_public_api=self._stored_exports_public_api,
                 session_id=self._session_id,
             )
             return self._respond(start_response, status="200 OK", body=page)
@@ -146,35 +164,97 @@ class WorkbenchWsgiApp:
 
         target_ref = self._resolve_target_ref(query_string)
         if self._actions_public_api is None:
-            return self._respond(
-                start_response,
-                status="404 Not Found",
-                body=_render_error_page(
-                    title="Eureka Compatibility Workbench",
-                    heading="Resolution Export Unavailable",
-                    message="This bootstrap workbench was not configured with a public action boundary.",
-                ),
-            )
-        request = ResolutionActionRequest.from_parts(target_ref)
+            if path in {"/actions/export-resolution-manifest", "/actions/export-resolution-bundle"}:
+                return self._respond(
+                    start_response,
+                    status="404 Not Found",
+                    body=_render_error_page(
+                        title="Eureka Compatibility Workbench",
+                        heading="Resolution Export Unavailable",
+                        message="This bootstrap workbench was not configured with a public action boundary.",
+                    ),
+                )
         if path == "/actions/export-resolution-manifest":
+            request = ResolutionActionRequest.from_parts(target_ref)
             export_response = self._actions_public_api.export_resolution_manifest(request)
             return self._respond_json(
                 start_response,
                 status="200 OK" if export_response.status_code == 200 else "404 Not Found",
                 payload=export_response.body,
             )
+        if path == "/actions/export-resolution-bundle":
+            request = ResolutionActionRequest.from_parts(target_ref)
+            bundle_response = self._actions_public_api.export_resolution_bundle(request)
+            extra_headers: list[tuple[str, str]] = []
+            if bundle_response.filename is not None:
+                extra_headers.append(
+                    ("Content-Disposition", f"attachment; filename=\"{bundle_response.filename}\""),
+                )
+            return self._respond_bytes(
+                start_response,
+                status="200 OK" if bundle_response.status_code == 200 else "404 Not Found",
+                payload=bundle_response.payload,
+                content_type=bundle_response.content_type,
+                extra_headers=extra_headers,
+            )
 
-        bundle_response = self._actions_public_api.export_resolution_bundle(request)
+        if path in {"/store/manifest", "/store/bundle"}:
+            if self._stored_exports_public_api is None:
+                return self._respond_json(
+                    start_response,
+                    status="503 Service Unavailable",
+                    payload={
+                        "status": "blocked",
+                        "code": "export_store_unavailable",
+                        "message": "Provide a local store root to enable bootstrap stored-export routes.",
+                    },
+                )
+            store_request = StoredExportsTargetRequest.from_parts(target_ref)
+            if path == "/store/manifest":
+                store_response = self._stored_exports_public_api.store_resolution_manifest(store_request)
+            else:
+                store_response = self._stored_exports_public_api.store_resolution_bundle(store_request)
+            return self._respond_json(
+                start_response,
+                status="200 OK" if store_response.status_code == 200 else "404 Not Found",
+                payload=store_response.body,
+            )
+
+        artifact_id = self._resolve_artifact_id(query_string)
+        if not artifact_id:
+            return self._respond_json(
+                start_response,
+                status="404 Not Found",
+                payload={
+                    "status": "blocked",
+                    "code": "stored_artifact_id_required",
+                    "message": "Provide an artifact_id query parameter to fetch a stored artifact in this bootstrap demo.",
+                },
+            )
+        if self._stored_exports_public_api is None:
+            return self._respond_json(
+                start_response,
+                status="503 Service Unavailable",
+                payload={
+                    "status": "blocked",
+                    "artifact_id": artifact_id,
+                    "code": "export_store_unavailable",
+                    "message": "Provide a local store root to enable bootstrap stored-artifact routes.",
+                },
+            )
+        artifact_response = self._stored_exports_public_api.get_stored_artifact_content(
+            StoredArtifactRequest.from_parts(artifact_id),
+        )
         extra_headers: list[tuple[str, str]] = []
-        if bundle_response.filename is not None:
+        if artifact_response.filename is not None:
             extra_headers.append(
-                ("Content-Disposition", f"attachment; filename=\"{bundle_response.filename}\""),
+                ("Content-Disposition", f"attachment; filename=\"{artifact_response.filename}\""),
             )
         return self._respond_bytes(
             start_response,
-            status="200 OK" if bundle_response.status_code == 200 else "404 Not Found",
-            payload=bundle_response.payload,
-            content_type=bundle_response.content_type,
+            status="200 OK" if artifact_response.status_code == 200 else "404 Not Found",
+            payload=artifact_response.payload,
+            content_type=artifact_response.content_type,
             extra_headers=extra_headers,
         )
 
@@ -192,6 +272,11 @@ class WorkbenchWsgiApp:
         query = parse_qs(query_string, keep_blank_values=False)
         raw_bundle_path = query.get("bundle_path", [""])[0].strip()
         return raw_bundle_path
+
+    def _resolve_artifact_id(self, query_string: str) -> str:
+        query = parse_qs(query_string, keep_blank_values=False)
+        raw_artifact_id = query.get("artifact_id", [""])[0].strip()
+        return raw_artifact_id
 
     def _respond(
         self,

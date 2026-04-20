@@ -8,6 +8,7 @@ def render_resolution_workspace_html(
     workbench_session: Mapping[str, Any],
     *,
     resolution_actions: Mapping[str, Any] | None = None,
+    stored_exports: Mapping[str, Any] | None = None,
 ) -> str:
     active_job = _require_mapping(workbench_session.get("active_job"), "workbench_session.active_job")
     target_ref = _require_string(active_job.get("target_ref"), "workbench_session.active_job.target_ref")
@@ -19,6 +20,22 @@ def render_resolution_workspace_html(
     actions_model = _optional_mapping(resolution_actions, "resolution_actions")
     actions = _action_list(actions_model.get("actions")) if actions_model is not None else []
     action_notices = _notice_list(actions_model.get("notices")) if actions_model is not None else []
+    stored_exports_model = _optional_mapping(stored_exports, "stored_exports")
+    store_actions = (
+        _action_list(stored_exports_model.get("store_actions"))
+        if stored_exports_model is not None
+        else []
+    )
+    stored_artifacts = (
+        _stored_artifact_list(stored_exports_model.get("artifacts"))
+        if stored_exports_model is not None
+        else []
+    )
+    stored_export_notices = (
+        _notice_list(stored_exports_model.get("notices"))
+        if stored_exports_model is not None
+        else []
+    )
 
     parts = [
         "<!doctype html>",
@@ -137,6 +154,74 @@ def render_resolution_workspace_html(
         parts.append("        </ul>")
     parts.append("      </section>")
 
+    if stored_exports_model is not None:
+        parts.extend(
+            [
+                "      <section>",
+                "        <h2>Stored Exports</h2>",
+            ]
+        )
+
+        available_store_actions = [action for action in store_actions if action["availability"] == "available"]
+        if available_store_actions:
+            parts.append("        <ul>")
+            for action in available_store_actions:
+                parts.append(
+                    "          "
+                    f"<li><a href=\"{escape(_require_string(action.get('href'), 'store_action.href'), quote=True)}\">"
+                    f"{escape(_require_string(action.get('label'), 'store_action.label'))}</a></li>"
+                )
+            parts.append("        </ul>")
+        else:
+            parts.append("        <p>No local store actions are exposed for this target.</p>")
+
+        unavailable_store_actions = [
+            action for action in store_actions if action["availability"] != "available"
+        ]
+        if unavailable_store_actions:
+            parts.append("        <ul>")
+            for action in unavailable_store_actions:
+                parts.append(
+                    "          "
+                    f"<li>{escape(_require_string(action.get('label'), 'store_action.label'))} "
+                    f"({escape(_require_string(action.get('availability'), 'store_action.availability'))})</li>"
+                )
+            parts.append("        </ul>")
+
+        if stored_artifacts:
+            parts.append("        <ul>")
+            for artifact in stored_artifacts:
+                item = (
+                    "          <li>"
+                    f"{escape(_require_string(artifact.get('artifact_kind'), 'stored_artifact.artifact_kind'))}: "
+                    f"<a href=\"{escape(_require_string(artifact.get('href'), 'stored_artifact.href'), quote=True)}\">"
+                    f"{escape(_require_string(artifact.get('artifact_id'), 'stored_artifact.artifact_id'))}</a>"
+                    f" ({escape(str(_require_int(artifact.get('byte_length'), 'stored_artifact.byte_length')))} bytes, "
+                    f"{escape(_require_string(artifact.get('content_type'), 'stored_artifact.content_type'))})"
+                )
+                filename = _optional_string(artifact.get("filename"), "stored_artifact.filename")
+                if filename is not None:
+                    item += f" [{escape(filename)}]"
+                item += "</li>"
+                parts.append(item)
+            parts.append("        </ul>")
+        else:
+            parts.append("        <p>No local stored exports are indexed for this target yet.</p>")
+
+        if stored_export_notices:
+            parts.append("        <ul>")
+            for notice in stored_export_notices:
+                code = _require_string(notice.get("code"), "stored_export_notice.code")
+                severity = _require_string(notice.get("severity"), "stored_export_notice.severity")
+                message = _optional_string(notice.get("message"), "stored_export_notice.message")
+                item = f"          <li><strong>{escape(code)}</strong> ({escape(severity)})"
+                if message is not None:
+                    item += f": {escape(message)}"
+                item += "</li>"
+                parts.append(item)
+            parts.append("        </ul>")
+        parts.append("      </section>")
+
     if notices:
         parts.extend(
             [
@@ -210,6 +295,17 @@ def _action_list(value: Any) -> list[Mapping[str, Any]]:
     return actions
 
 
+def _stored_artifact_list(value: Any) -> list[Mapping[str, Any]]:
+    if not isinstance(value, list):
+        raise ValueError("stored_exports.artifacts must be a list when provided.")
+    artifacts: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"stored_exports.artifacts[{index}] must be an object.")
+        artifacts.append(item)
+    return artifacts
+
+
 def _require_string(value: Any, field_name: str) -> str:
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field_name} must be a non-empty string.")
@@ -221,4 +317,10 @@ def _optional_string(value: Any, field_name: str) -> str | None:
         return None
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field_name} must be a non-empty string when provided.")
+    return value
+
+
+def _require_int(value: Any, field_name: str) -> int:
+    if not isinstance(value, int) or value < 0:
+        raise ValueError(f"{field_name} must be a non-negative integer.")
     return value

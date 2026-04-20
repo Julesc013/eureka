@@ -17,8 +17,14 @@ from runtime.gateway import (
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
+    build_demo_stored_exports_public_api,
 )
-from runtime.gateway.public_api import InspectResolutionBundleRequest, ResolutionActionRequest
+from runtime.gateway.public_api import (
+    InspectResolutionBundleRequest,
+    ResolutionActionRequest,
+    StoredArtifactRequest,
+    StoredExportsTargetRequest,
+)
 from surfaces.web.server import (
     WorkbenchWsgiApp,
     render_bundle_inspection_page,
@@ -66,6 +72,31 @@ def main() -> int:
         help="Render the compatibility-first bundle inspection page for a local bundle path.",
     )
     parser.add_argument(
+        "--store-root",
+        metavar="PATH",
+        help="Local bootstrap store root used for storing, listing, and reading exported artifacts.",
+    )
+    parser.add_argument(
+        "--store-manifest",
+        action="store_true",
+        help="Store the bounded resolution manifest for the selected target in the local export store.",
+    )
+    parser.add_argument(
+        "--store-bundle",
+        action="store_true",
+        help="Store the deterministic resolution bundle for the selected target in the local export store.",
+    )
+    parser.add_argument(
+        "--list-stored",
+        action="store_true",
+        help="List stored exports for the selected target from the local export store.",
+    )
+    parser.add_argument(
+        "--read-stored",
+        metavar="ARTIFACT_ID",
+        help="Read a stored artifact by artifact identity from the local export store.",
+    )
+    parser.add_argument(
         "--host",
         default="127.0.0.1",
         help="Host interface for the local bootstrap server.",
@@ -84,10 +115,15 @@ def main() -> int:
             args.export_bundle,
             args.inspect_bundle is not None,
             args.render_inspection is not None,
+            args.store_manifest,
+            args.store_bundle,
+            args.list_stored,
+            args.read_stored is not None,
         )
     ) > 1:
         parser.error(
-            "--export-manifest, --export-bundle, --inspect-bundle, and --render-inspection are mutually exclusive."
+            "--export-manifest, --export-bundle, --inspect-bundle, --render-inspection, "
+            "--store-manifest, --store-bundle, --list-stored, and --read-stored are mutually exclusive."
         )
 
     target_ref = args.target_ref or SyntheticSoftwareConnector().default_target_ref()
@@ -95,6 +131,9 @@ def main() -> int:
     bundle_inspection_public_api = build_demo_resolution_bundle_inspection_public_api()
     resolution_public_api = build_demo_resolution_jobs_public_api()
     search_public_api = build_demo_search_public_api()
+    stored_exports_public_api = (
+        build_demo_stored_exports_public_api(args.store_root) if args.store_root is not None else None
+    )
 
     if args.export_manifest:
         response = actions_public_api.export_resolution_manifest(
@@ -130,6 +169,48 @@ def main() -> int:
         sys.stdout.write(html)
         return 0
 
+    if args.store_manifest:
+        if stored_exports_public_api is None:
+            return _write_store_unavailable()
+        response = stored_exports_public_api.store_resolution_manifest(
+            StoredExportsTargetRequest.from_parts(target_ref)
+        )
+        sys.stdout.write(json.dumps(response.body, indent=2, sort_keys=True))
+        sys.stdout.write("\n")
+        return 0
+
+    if args.store_bundle:
+        if stored_exports_public_api is None:
+            return _write_store_unavailable()
+        response = stored_exports_public_api.store_resolution_bundle(
+            StoredExportsTargetRequest.from_parts(target_ref)
+        )
+        sys.stdout.write(json.dumps(response.body, indent=2, sort_keys=True))
+        sys.stdout.write("\n")
+        return 0
+
+    if args.list_stored:
+        if stored_exports_public_api is None:
+            return _write_store_unavailable()
+        response = stored_exports_public_api.list_stored_exports(
+            StoredExportsTargetRequest.from_parts(target_ref)
+        )
+        sys.stdout.write(json.dumps(response.body, indent=2, sort_keys=True))
+        sys.stdout.write("\n")
+        return 0
+
+    if args.read_stored is not None:
+        if stored_exports_public_api is None:
+            return _write_store_unavailable()
+        response = stored_exports_public_api.get_stored_artifact_content(
+            StoredArtifactRequest.from_parts(args.read_stored)
+        )
+        if response.status_code == 200 and not response.content_type.startswith("application/json"):
+            sys.stdout.buffer.write(response.payload)
+            return 0
+        sys.stdout.write(response.payload.decode("utf-8"))
+        return 0
+
     if args.render_once:
         if args.search_query is not None:
             html = render_search_results_page(search_public_api, args.search_query)
@@ -138,6 +219,7 @@ def main() -> int:
                 resolution_public_api,
                 target_ref,
                 actions_public_api=actions_public_api,
+                stored_exports_public_api=stored_exports_public_api,
             )
         sys.stdout.write(html)
         return 0
@@ -146,24 +228,51 @@ def main() -> int:
         resolution_public_api,
         actions_public_api=actions_public_api,
         bundle_inspection_public_api=bundle_inspection_public_api,
+        stored_exports_public_api=stored_exports_public_api,
         search_public_api=search_public_api,
         default_target_ref=target_ref,
     )
     with make_server(args.host, args.port, app) as httpd:
-        sys.stdout.write(
+        lines = [
             "Serving Eureka compatibility workbench at "
-            f"http://{args.host}:{args.port}/?target_ref={quote(target_ref, safe='')}\n"
+            f"http://{args.host}:{args.port}/?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka compatibility search at "
-            f"http://{args.host}:{args.port}/search?q={quote('synthetic', safe='')}\n"
+            f"http://{args.host}:{args.port}/search?q={quote('synthetic', safe='')}",
             "Serving Eureka manifest export at "
-            f"http://{args.host}:{args.port}/actions/export-resolution-manifest?target_ref={quote(target_ref, safe='')}\n"
+            f"http://{args.host}:{args.port}/actions/export-resolution-manifest?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bundle export at "
-            f"http://{args.host}:{args.port}/actions/export-resolution-bundle?target_ref={quote(target_ref, safe='')}\n"
+            f"http://{args.host}:{args.port}/actions/export-resolution-bundle?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bundle inspection at "
-            f"http://{args.host}:{args.port}/inspect/bundle?bundle_path={quote(str((Path.cwd() / 'example-resolution-bundle.zip')), safe='')}\n"
-        )
+            f"http://{args.host}:{args.port}/inspect/bundle?bundle_path={quote(str((Path.cwd() / 'example-resolution-bundle.zip')), safe='')}",
+        ]
+        if args.store_root is not None:
+            lines.extend(
+                [
+                    "Serving Eureka local manifest store action at "
+                    f"http://{args.host}:{args.port}/store/manifest?target_ref={quote(target_ref, safe='')}",
+                    "Serving Eureka local bundle store action at "
+                    f"http://{args.host}:{args.port}/store/bundle?target_ref={quote(target_ref, safe='')}",
+                ]
+            )
+        sys.stdout.write("\n".join(lines) + "\n")
         sys.stdout.flush()
         httpd.serve_forever()
+    return 0
+
+
+def _write_store_unavailable() -> int:
+    sys.stdout.write(
+        json.dumps(
+            {
+                "status": "blocked",
+                "code": "export_store_unavailable",
+                "message": "Provide --store-root to enable bootstrap stored-export operations.",
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    sys.stdout.write("\n")
     return 0
 
 
