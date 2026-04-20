@@ -14,7 +14,7 @@ from runtime.engine.interfaces.service import ResolutionBundleArtifact
 
 
 _FIXED_ZIP_DATETIME = (1980, 1, 1, 0, 0, 0)
-_BUNDLE_ENTRY_ORDER = (
+RESOLUTION_BUNDLE_MEMBER_ORDER = (
     "README.txt",
     "bundle.json",
     "manifest.json",
@@ -62,7 +62,7 @@ def _bundle_metadata(record: NormalizedResolutionRecord) -> dict[str, Any]:
         },
         "target_ref": record.target_ref,
         "created_by_slice": "portable_bundle_export",
-        "entries": list(_BUNDLE_ENTRY_ORDER),
+        "entries": list(RESOLUTION_BUNDLE_MEMBER_ORDER),
     }
 
 
