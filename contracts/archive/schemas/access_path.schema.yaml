@@ -1,17 +1,20 @@
-name: AccessPath
-status: draft-placeholder
-normativity: non-normative
-summary: Describes a way to reach or obtain an object, representation, or evidence source.
-future_required_concepts:
-  - path type
-  - access location
-  - acquisition conditions
-non_goals:
-  - connector-specific client configuration
-  - secret material
-open_questions:
-  - How much of access policy belongs in contract space versus operator configuration?
-example_shape:
-  id: ap.placeholder
-  kind: repository_url
-
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/archive/access_path.schema.yaml
+$comment: Provisional draft skeleton only. Not yet a finalized semantic contract or compatibility promise.
+title: AccessPath
+description: Draft canonical record for a way to reach or obtain an object, representation, or evidence source.
+type: object
+additionalProperties: false
+properties:
+  id:
+    type: string
+    description: Draft canonical identifier for the access path record.
+  kind:
+    type: string
+    description: Draft access path classification label.
+  locator:
+    type: string
+    description: Draft location or lookup token.
+required:
+  - id
+x-eureka-status: draft

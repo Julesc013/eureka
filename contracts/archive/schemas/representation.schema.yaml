@@ -1,17 +1,23 @@
-name: Representation
-status: draft-placeholder
-normativity: non-normative
-summary: Describes one machine-usable or human-usable form in which an object can appear.
-future_required_concepts:
-  - representation type
-  - format declaration
-  - derivation relationship
-non_goals:
-  - storage backend detail
-  - packaging policy
-open_questions:
-  - How should source, binary, disk image, and reconstructed forms relate without overfitting v1?
-example_shape:
-  id: rep.placeholder
-  kind: source_bundle
-
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/archive/representation.schema.yaml
+$comment: Provisional draft skeleton only. Not yet a finalized semantic contract or compatibility promise.
+title: Representation
+description: Draft canonical record for one machine-usable or human-usable form of an archive object.
+type: object
+additionalProperties: false
+properties:
+  id:
+    type: string
+    description: Draft canonical identifier for the representation record.
+  object_id:
+    type: string
+    description: Draft identifier of the object this representation belongs to.
+  kind:
+    type: string
+    description: Draft representation classification label.
+  format:
+    type: string
+    description: Optional draft format declaration.
+required:
+  - id
+x-eureka-status: draft

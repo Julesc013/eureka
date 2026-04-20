@@ -1,17 +1,20 @@
-name: Agent
-status: draft-placeholder
-normativity: non-normative
-summary: Identifies a person, organization, system, or automated process acting within the archive record.
-future_required_concepts:
-  - agent type
-  - identifier strategy
-  - role or participation context
-non_goals:
-  - authentication model
-  - permission semantics
-open_questions:
-  - Which agent distinctions matter in v1 beyond human, organization, and automated process?
-example_shape:
-  id: ag.placeholder
-  kind: automated_process
-
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/archive/agent.schema.yaml
+$comment: Provisional draft skeleton only. Not yet a finalized semantic contract or compatibility promise.
+title: Agent
+description: Draft canonical record for a person, organization, system, or automated process acting within the archive record.
+type: object
+additionalProperties: false
+properties:
+  id:
+    type: string
+    description: Draft canonical identifier for the agent record.
+  kind:
+    type: string
+    description: Draft agent classification label.
+  name:
+    type: string
+    description: Optional human-readable agent name.
+required:
+  - id
+x-eureka-status: draft

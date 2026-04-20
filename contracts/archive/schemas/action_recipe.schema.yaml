@@ -1,17 +1,25 @@
-name: ActionRecipe
-status: draft-placeholder
-normativity: non-normative
-summary: Declares a reconstructive or preservation-oriented action pattern without fixing implementation behavior yet.
-future_required_concepts:
-  - intended outcome
-  - required inputs
-  - execution constraints
-non_goals:
-  - concrete runtime scheduling
-  - engine orchestration semantics
-open_questions:
-  - What is the minimum declarative recipe shape that remains useful across engine and gateway layers?
-example_shape:
-  id: recipe.placeholder
-  kind: reconstruct_binary
-
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/archive/action_recipe.schema.yaml
+$comment: Provisional draft skeleton only. Not yet a finalized semantic contract or compatibility promise.
+title: ActionRecipe
+description: Draft canonical declaration of a reconstruction-oriented or preservation-oriented action pattern.
+type: object
+additionalProperties: false
+properties:
+  id:
+    type: string
+    description: Draft canonical identifier for the action recipe record.
+  kind:
+    type: string
+    description: Draft recipe classification label.
+  requested_outcome:
+    type: string
+    description: Draft outcome label for the recipe.
+  input_refs:
+    type: array
+    description: Optional draft references to required input records.
+    items:
+      type: string
+required:
+  - id
+x-eureka-status: draft

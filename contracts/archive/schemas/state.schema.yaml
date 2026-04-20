@@ -1,17 +1,23 @@
-name: State
-status: draft-placeholder
-normativity: non-normative
-summary: Records a bounded condition or availability state associated with an object or representation.
-future_required_concepts:
-  - state type
-  - scope
-  - supporting evidence links
-non_goals:
-  - mutable runtime session state
-  - connector-local flags
-open_questions:
-  - Which preservation and compatibility states should be first-class versus derived?
-example_shape:
-  id: state.placeholder
-  kind: compatibility_observation
-
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/archive/state.schema.yaml
+$comment: Provisional draft skeleton only. Not yet a finalized semantic contract or compatibility promise.
+title: State
+description: Draft canonical record for a bounded condition associated with an object or representation.
+type: object
+additionalProperties: false
+properties:
+  id:
+    type: string
+    description: Draft canonical identifier for the state record.
+  subject_id:
+    type: string
+    description: Draft identifier of the subject this state describes.
+  kind:
+    type: string
+    description: Draft state classification label.
+  standing:
+    type: string
+    description: Optional draft standing or availability label.
+required:
+  - id
+x-eureka-status: draft

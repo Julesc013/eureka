@@ -1,17 +1,25 @@
-name: SnapshotManifest
-status: draft-placeholder
-normativity: non-normative
-summary: Enumerates the preserved contents and capture context of a snapshot boundary.
-future_required_concepts:
-  - snapshot identity
-  - member listing
-  - capture provenance
-non_goals:
-  - storage layout
-  - distribution packaging rules
-open_questions:
-  - How should partial, reconstructed, and operator-authored snapshots be distinguished?
-example_shape:
-  id: snap.placeholder
-  kind: preserved_capture
-
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/archive/snapshot_manifest.schema.yaml
+$comment: Provisional draft skeleton only. Not yet a finalized semantic contract or compatibility promise.
+title: SnapshotManifest
+description: Draft canonical manifest for the contents and capture context of a snapshot boundary.
+type: object
+additionalProperties: false
+properties:
+  id:
+    type: string
+    description: Draft canonical identifier for the snapshot manifest.
+  captured_at:
+    type: string
+    description: Optional draft capture timestamp or bounded capture label.
+  member_refs:
+    type: array
+    description: Optional draft references to included members.
+    items:
+      type: string
+  source_ref:
+    type: string
+    description: Optional draft reference to the source or origin boundary.
+required:
+  - id
+x-eureka-status: draft

@@ -1,17 +1,20 @@
-name: Object
-status: draft-placeholder
-normativity: non-normative
-summary: Canonical subject record for a software artifact or another governed archive subject.
-future_required_concepts:
-  - stable identity
-  - subject classification
-  - relationship anchors
-non_goals:
-  - connector-specific fields
-  - runtime execution behavior
-open_questions:
-  - What is the minimum stable identity shape for bundled or composite software artifacts?
-example_shape:
-  id: obj.placeholder
-  kind: software
-
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/archive/object.schema.yaml
+$comment: Provisional draft skeleton only. Not yet a finalized semantic contract or compatibility promise.
+title: Object
+description: Draft canonical subject record for a governed archive object.
+type: object
+additionalProperties: false
+properties:
+  id:
+    type: string
+    description: Draft canonical identifier for the object record.
+  kind:
+    type: string
+    description: Draft object classification label.
+  label:
+    type: string
+    description: Optional human-readable summary label.
+required:
+  - id
+x-eureka-status: draft
