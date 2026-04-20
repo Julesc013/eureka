@@ -23,5 +23,6 @@ Current thin-slice behavior:
 - bounded resolution-manifest export from already-normalized records under `actions/`
 - bounded portable resolution-bundle export from already-normalized records under `snapshots/`
 - bounded portable bundle inspection from local bytes or a local file path under `snapshots/`, without live fixture dependence
+- bounded deterministic local artifact storage and retrieval under `store/`, with stable `sha256:<hex>` artifact identity
 
-This slice does not settle connector strategy, ranking, fuzzy resolution, installer behavior, restore behavior, or broader archive semantics.
+This slice does not settle connector strategy, ranking, fuzzy resolution, installer behavior, restore behavior, durable cache semantics, or broader archive semantics.

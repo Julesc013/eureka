@@ -292,6 +292,17 @@ class ResolutionExportStoreEngineService:
     def get_artifact_metadata(self, artifact_id: str) -> StoredArtifactLookupResult:
         try:
             artifact = self._store.get_artifact_metadata(artifact_id)
+        except ValueError:
+            return StoredArtifactLookupResult(
+                status="blocked",
+                notices=(
+                    Notice(
+                        code="stored_artifact_id_invalid",
+                        severity="error",
+                        message="artifact_id must match 'sha256:<64 lowercase hex characters>'.",
+                    ),
+                ),
+            )
         except ExportStoreDataError as error:
             return StoredArtifactLookupResult(status="blocked", notices=(_store_error_notice(error),))
         if artifact is None:
@@ -322,6 +333,17 @@ class ResolutionExportStoreEngineService:
                     ),
                 )
             payload = self._store.get_artifact_bytes(artifact_id)
+        except ValueError:
+            return StoredArtifactContentResult(
+                status="blocked",
+                notices=(
+                    Notice(
+                        code="stored_artifact_id_invalid",
+                        severity="error",
+                        message="artifact_id must match 'sha256:<64 lowercase hex characters>'.",
+                    ),
+                ),
+            )
         except ExportStoreDataError as error:
             return StoredArtifactContentResult(status="blocked", notices=(_store_error_notice(error),))
         if payload is None:

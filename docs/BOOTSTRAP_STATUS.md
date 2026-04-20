@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus eight executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus nine executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -26,6 +26,7 @@ Current status: foundational scaffold plus eight executable local deterministic 
 - first bounded action/export slice that exposes a manifest-export action through the public boundary and returns deterministic JSON for known synthetic targets
 - first portable bundle/export slice that exposes a deterministic self-contained resolution bundle through the public boundary and returns ZIP content for known synthetic targets
 - first portable bundle inspection/readback slice that inspects a previously exported bundle through a public boundary and renders a compatibility-first HTML inspection page without live fixture dependence
+- first deterministic local store/cache seam that assigns stable artifact identity, stores exported manifest and bundle artifacts in a local content-addressed store, and reads them back through the public boundary
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -35,11 +36,11 @@ Current status: foundational scaffold plus eight executable local deterministic 
 - finalized archive schema meaning
 - automated dependency-policy enforcement tooling
 - mature gateway API semantics, wider public read coverage, and durable submit versus read guarantees
-- final action semantics, installer behavior, download handling, restore/import handling, and durable manifest, bundle, or inspection guarantees
+- final action semantics, installer behavior, download handling, restore/import handling, and durable manifest, bundle, inspection, or store guarantees
 - mature search semantics, ranking, and broader retrieval architecture
 - real web application structure, browser-side behavior, authentication, and deployment assumptions
 - real external connectors, ranking, retrieval, and broader provenance or trust semantics
-- persistence, background workers, and async orchestration
-- richer web routing and page structure beyond the bootstrap compatibility-first workbench, search, manifest-export, bundle-export, and bundle-inspection pages, plus native runtime behavior
+- persistence beyond the local bootstrap filesystem store, background workers, and async orchestration
+- richer web routing and page structure beyond the bootstrap compatibility-first workbench, search, manifest-export, bundle-export, stored-export, and bundle-inspection pages, plus native runtime behavior
 - native offline mode decisions
 - release automation and packaging implementation

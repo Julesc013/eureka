@@ -11,6 +11,8 @@ Current bootstrap scope:
 - list bounded manifest-export and bundle-export actions for a resolved synthetic target
 - export a deterministic machine-readable resolution manifest through the public boundary
 - export a deterministic portable resolution bundle through the public boundary
+- store deterministic manifest and bundle exports in a local bootstrap content-addressed store
+- list stored exports for a target and read stored artifact content by stable artifact identity
 - inspect a deterministic portable resolution bundle from local bytes or a local bundle path through a transport-neutral public boundary
 - translate internal gateway job state into public contract-facing envelopes
 - map public job envelopes into the shared `WorkbenchSession` view model without
@@ -19,6 +21,8 @@ Current bootstrap scope:
   implementing a web or native shell
 - map public action envelopes into a shared action-panel view model without
   implementing a web or native shell
+- map public stored-export envelopes into a shared stored-exports view model without
+  implementing a web or native shell
 - map public bundle inspection envelopes into a shared inspection view model without
   implementing a web or native shell
 
@@ -26,7 +30,7 @@ Out of scope here:
 
 - real HTTP serving
 - async workers or orchestration
-- persistence
+- persistence beyond the local bootstrap filesystem store
 - installers, downloads from external sources, import, restore, or rollback behavior
 - ranking, fuzzy matching, or broader retrieval semantics
 - finalized public API guarantees

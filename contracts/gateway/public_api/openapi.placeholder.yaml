@@ -16,6 +16,8 @@ tags:
     description: Draft bounded resolution job submission and read operations.
   - name: ResolutionActions
     description: Draft bounded action discovery plus manifest and portable-bundle export operations for resolved targets.
+  - name: StoredExports
+    description: Draft local bootstrap storage, listing, and retrieval operations for deterministic exported artifacts.
   - name: BundleInspection
     description: Draft local bootstrap inspection operations for previously exported deterministic bundles.
   - name: Search
@@ -164,6 +166,97 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/resolution/stored-exports:
+    get:
+      tags:
+        - StoredExports
+      summary: List deterministic local stored exports for a target
+      description: >
+        Draft public boundary for listing deterministic local exported artifacts for a
+        bounded target under a caller-provided bootstrap store root. This is not a
+        final database, cache, or preservation contract.
+      operationId: listStoredExports
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+      responses:
+        '200':
+          description: Draft stored-exports envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoredExportsEnvelope'
+        '404':
+          description: Draft blocked or unavailable stored-exports envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoredExportsEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/resolution/stored-exports/store-manifest:
+    get:
+      tags:
+        - StoredExports
+      summary: Store a deterministic local manifest export
+      description: >
+        Draft public boundary for storing a deterministic manifest export in a local
+        bootstrap content-addressed store. This is not a final cache or database contract.
+      operationId: storeResolutionManifest
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+      responses:
+        '200':
+          description: Draft stored manifest result envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoredArtifactStoredEnvelope'
+        '404':
+          description: Draft blocked or unavailable store envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionBlockedEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/resolution/stored-exports/store-bundle:
+    get:
+      tags:
+        - StoredExports
+      summary: Store a deterministic local bundle export
+      description: >
+        Draft public boundary for storing a deterministic portable bundle in a local
+        bootstrap content-addressed store. This is not a final cache or database contract.
+      operationId: storeResolutionBundle
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+      responses:
+        '200':
+          description: Draft stored bundle result envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoredArtifactStoredEnvelope'
+        '404':
+          description: Draft blocked or unavailable store envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionBlockedEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
   /v0/resolution/bundles/inspect:
     get:
       tags:
@@ -195,6 +288,71 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BundleInspectionEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/resolution/stored-artifact:
+    get:
+      tags:
+        - StoredExports
+      summary: Read a stored artifact by stable artifact identity
+      description: >
+        Draft public boundary for reading a previously stored deterministic exported
+        artifact by artifact identity. The returned content type depends on the stored
+        artifact kind and remains bootstrap-scale only.
+      operationId: getStoredArtifact
+      parameters:
+        - $ref: '#/components/parameters/ArtifactId'
+      responses:
+        '200':
+          description: Draft stored artifact content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResolutionManifestExport'
+            application/zip:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: Draft missing or blocked stored-artifact envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoredArtifactBlockedEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/resolution/stored-artifact/metadata:
+    get:
+      tags:
+        - StoredExports
+      summary: Read stored artifact metadata by stable artifact identity
+      description: >
+        Draft public boundary for reading bounded metadata for a previously stored
+        deterministic exported artifact.
+      operationId: getStoredArtifactMetadata
+      parameters:
+        - $ref: '#/components/parameters/ArtifactId'
+      responses:
+        '200':
+          description: Draft stored artifact metadata envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoredArtifactLookupEnvelope'
+        '404':
+          description: Draft missing or blocked stored-artifact envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoredArtifactBlockedEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -252,6 +410,13 @@ components:
       in: query
       required: true
       description: Draft local bundle path used only for bootstrap inspection demos.
+      schema:
+        type: string
+    ArtifactId:
+      name: artifact_id
+      in: query
+      required: true
+      description: Draft stable local artifact identity for a stored export.
       schema:
         type: string
     SearchQuery:
@@ -558,10 +723,160 @@ components:
           type: string
         message:
           type: string
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
       required:
         - action_id
         - status
         - target_ref
+        - code
+    StoredExportsEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft local stored-exports envelope for deterministic exported artifacts.
+      properties:
+        target_ref:
+          type: string
+        store_actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResolutionActionEntry'
+        artifacts:
+          type: array
+          items:
+            $ref: '#/components/schemas/StoredArtifactSummary'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - target_ref
+        - store_actions
+        - artifacts
+    StoredArtifactSummary:
+      type: object
+      additionalProperties: false
+      description: Draft stored artifact summary suitable for shared surfaces.
+      properties:
+        artifact_id:
+          type: string
+        artifact_kind:
+          type: string
+        content_type:
+          type: string
+        byte_length:
+          type: integer
+          minimum: 0
+        availability:
+          type: string
+          enum:
+            - available
+            - unavailable
+        href:
+          type: string
+        filename:
+          type: string
+      required:
+        - artifact_id
+        - artifact_kind
+        - content_type
+        - byte_length
+        - availability
+    StoredArtifactMetadata:
+      type: object
+      additionalProperties: false
+      description: Draft bounded metadata record for a locally stored deterministic export artifact.
+      properties:
+        artifact_id:
+          type: string
+        artifact_kind:
+          type: string
+        target_ref:
+          type: string
+        content_type:
+          type: string
+        byte_length:
+          type: integer
+          minimum: 0
+        store_path:
+          type: string
+        created_by_slice:
+          type: string
+        source_action:
+          type: string
+        filename:
+          type: string
+        primary_object:
+          $ref: '#/components/schemas/ObjectSummary'
+      required:
+        - artifact_id
+        - artifact_kind
+        - target_ref
+        - content_type
+        - byte_length
+        - store_path
+        - created_by_slice
+        - source_action
+    StoredArtifactStoredEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft stored-artifact result envelope for local manifest or bundle storage actions.
+      properties:
+        status:
+          type: string
+          enum:
+            - stored
+        artifact:
+          $ref: '#/components/schemas/StoredArtifactMetadata'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - artifact
+    StoredArtifactLookupEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft lookup envelope for bounded stored artifact metadata.
+      properties:
+        status:
+          type: string
+          enum:
+            - available
+        artifact:
+          $ref: '#/components/schemas/StoredArtifactMetadata'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - artifact
+    StoredArtifactBlockedEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft blocked or missing stored-artifact envelope.
+      properties:
+        artifact_id:
+          type: string
+        status:
+          type: string
+          enum:
+            - blocked
+        code:
+          type: string
+        message:
+          type: string
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - artifact_id
+        - status
         - code
     BundleInspectionEnvelope:
       type: object

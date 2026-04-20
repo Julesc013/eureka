@@ -19,3 +19,4 @@ These questions are intentionally left open during bootstrap:
 15. Should future bounded actions hang directly off `target_ref`, off read-job results, or off a more explicit resolved-resource identifier once the public API grows beyond the current local deterministic slice?
 16. Which parts of the bootstrap `resolution_bundle` should survive into a durable portable bundle or snapshot contract, and which parts should remain explicitly local-export packaging only?
 17. When the bundle inspection path stops using a local filesystem path for demos, what durable upload or import boundary should replace it without overcommitting restore semantics?
+18. Which local store semantics should remain durable if the bootstrap content-addressed store later grows into a broader cache or database layer, and which parts should stay explicitly demo-only?

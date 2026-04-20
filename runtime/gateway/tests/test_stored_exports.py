@@ -63,3 +63,10 @@ class StoredExportsPublicApiTestCase(unittest.TestCase):
             "stored_artifact_not_found",
         )
 
+    def test_public_store_boundary_returns_blocked_results_for_invalid_artifact_id(self) -> None:
+        metadata_response = self.public_api.get_stored_artifact_metadata(
+            StoredArtifactRequest.from_parts("not-a-content-address")
+        )
+
+        self.assertEqual(metadata_response.status_code, 404)
+        self.assertEqual(metadata_response.body["code"], "stored_artifact_id_invalid")

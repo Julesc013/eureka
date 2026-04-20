@@ -1,0 +1,88 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/stored_exports.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
+title: StoredExports
+description: Draft shared surface-facing model for local bootstrap stored exports aligned with the gateway public store boundary.
+type: object
+additionalProperties: false
+properties:
+  target_ref:
+    type: string
+  store_actions:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        action_id:
+          type: string
+        label:
+          type: string
+        availability:
+          type: string
+          enum:
+            - available
+            - unavailable
+        href:
+          type: string
+      required:
+        - action_id
+        - label
+        - availability
+  artifacts:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        artifact_id:
+          type: string
+        artifact_kind:
+          type: string
+          enum:
+            - resolution_manifest
+            - resolution_bundle
+        content_type:
+          type: string
+        byte_length:
+          type: integer
+          minimum: 0
+        availability:
+          type: string
+          enum:
+            - available
+            - unavailable
+        href:
+          type: string
+        filename:
+          type: string
+      required:
+        - artifact_id
+        - artifact_kind
+        - content_type
+        - byte_length
+        - availability
+  notices:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+        severity:
+          type: string
+          enum:
+            - info
+            - warning
+            - error
+        message:
+          type: string
+      required:
+        - code
+        - severity
+required:
+  - target_ref
+  - store_actions
+  - artifacts
+x-eureka-status: draft

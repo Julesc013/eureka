@@ -1,0 +1,36 @@
+name: StoredExports
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that store, list,
+  and read deterministic local exported artifacts through a public stored-exports
+  boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/resolution/stored-exports?target_ref={target_ref}
+    - GET /v0/resolution/stored-exports/store-manifest?target_ref={target_ref}
+    - GET /v0/resolution/stored-exports/store-bundle?target_ref={target_ref}
+    - GET /v0/resolution/stored-artifact?artifact_id={artifact_id}
+  shared_view_models:
+    - contracts/ui/view_models/stored_exports.view_model.yaml
+  shared_result_shapes:
+    - StoredExportsEnvelope
+    - StoredArtifactStoredEnvelope
+    - StoredArtifactMetadata
+surface_expectations:
+  - surfaces store and retrieve exported artifacts through the public boundary rather than by importing engine store behavior
+  - surfaces present stable artifact identity, local retrieval state, and missing-artifact failures honestly
+  - local store root configuration is a bootstrap-only demo choice and does not define a final deployment, multi-user cache, or database contract
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - durable database or cache semantics
+  - multi-user coordination, locking, and eviction policy
+  - restore, import, installer, and preservation behavior
