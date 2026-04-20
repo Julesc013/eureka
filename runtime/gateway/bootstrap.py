@@ -7,12 +7,14 @@ from runtime.engine.interfaces.extract import extract_synthetic_source_record
 from runtime.engine.interfaces.normalize import normalize_extracted_record
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
 from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBundleInspectionEngineService
+from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
 from runtime.gateway.public_api import (
     InMemoryResolutionJobService,
     ResolutionBundleInspectionPublicApi,
     ResolutionActionsPublicApi,
     ResolutionJobsPublicApi,
     SearchPublicApi,
+    StoredExportsPublicApi,
 )
 
 
@@ -42,6 +44,18 @@ def build_demo_resolution_actions_public_api() -> ResolutionActionsPublicApi:
 def build_demo_resolution_bundle_inspection_public_api() -> ResolutionBundleInspectionPublicApi:
     inspection_service = ResolutionBundleInspectionEngineService()
     return ResolutionBundleInspectionPublicApi(inspection_service)
+
+
+def build_demo_stored_exports_public_api(store_root: str) -> StoredExportsPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    manifest_service = ResolutionManifestExportService(catalog)
+    bundle_service = ResolutionBundleExportService(catalog)
+    store_service = ResolutionExportStoreEngineService(
+        manifest_service=manifest_service,
+        bundle_service=bundle_service,
+        store=LocalExportStore(store_root),
+    )
+    return StoredExportsPublicApi(store_service)
 
 
 def _build_demo_normalized_catalog() -> NormalizedCatalog:

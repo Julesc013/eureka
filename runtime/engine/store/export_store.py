@@ -2,10 +2,19 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
 from typing import Any
 
-from runtime.engine.interfaces.public.resolution import ObjectSummary
-from runtime.engine.interfaces.service.export_store_service import StoredArtifactMetadata
+from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary
+from runtime.engine.interfaces.service.action_service import ResolutionManifestService
+from runtime.engine.interfaces.service.bundle_service import ResolutionBundleService
+from runtime.engine.interfaces.service.export_store_service import (
+    StoredArtifactContentResult,
+    StoredArtifactListResult,
+    StoredArtifactLookupResult,
+    StoredArtifactMetadata,
+    StoredArtifactWriteResult,
+)
 from runtime.engine.store.artifact_identity import (
     artifact_id_for_bytes,
     artifact_id_to_metadata_relpath,
@@ -177,6 +186,158 @@ class LocalExportStore:
         )
 
 
+class ResolutionExportStoreEngineService:
+    def __init__(
+        self,
+        *,
+        manifest_service: ResolutionManifestService,
+        bundle_service: ResolutionBundleService,
+        store: LocalExportStore,
+    ) -> None:
+        self._manifest_service = manifest_service
+        self._bundle_service = bundle_service
+        self._store = store
+
+    def has_manifest_store_available(self, target_ref: str) -> bool:
+        return self._manifest_service.has_manifest_available(target_ref)
+
+    def has_bundle_store_available(self, target_ref: str) -> bool:
+        return self._bundle_service.has_bundle_available(target_ref)
+
+    def store_manifest(self, target_ref: str) -> StoredArtifactWriteResult:
+        manifest = self._manifest_service.export_manifest(target_ref)
+        if manifest is None:
+            return StoredArtifactWriteResult(
+                status="blocked",
+                notices=(
+                    Notice(
+                        code="store_resolution_manifest_not_available",
+                        severity="warning",
+                        message=f"No resolved synthetic record matched target_ref '{target_ref}'.",
+                    ),
+                ),
+            )
+        try:
+            artifact = self._store.store_artifact(
+                artifact_kind="resolution_manifest",
+                target_ref=target_ref,
+                content_type="application/json; charset=utf-8",
+                payload=_json_bytes(manifest),
+                source_action="store_resolution_manifest",
+                filename=_manifest_filename(target_ref),
+                primary_object=_manifest_primary_object(manifest),
+            )
+        except ExportStoreDataError as error:
+            return StoredArtifactWriteResult(status="blocked", notices=(_store_error_notice(error),))
+        return StoredArtifactWriteResult(status="stored", artifact=artifact)
+
+    def store_bundle(self, target_ref: str) -> StoredArtifactWriteResult:
+        bundle = self._bundle_service.export_bundle(target_ref)
+        if bundle is None:
+            return StoredArtifactWriteResult(
+                status="blocked",
+                notices=(
+                    Notice(
+                        code="store_resolution_bundle_not_available",
+                        severity="warning",
+                        message=f"No resolved synthetic record matched target_ref '{target_ref}'.",
+                    ),
+                ),
+            )
+        manifest = self._manifest_service.export_manifest(target_ref)
+        try:
+            artifact = self._store.store_artifact(
+                artifact_kind="resolution_bundle",
+                target_ref=target_ref,
+                content_type=bundle.content_type,
+                payload=bundle.payload,
+                source_action="store_resolution_bundle",
+                filename=bundle.filename,
+                primary_object=_manifest_primary_object(manifest) if manifest is not None else None,
+            )
+        except ExportStoreDataError as error:
+            return StoredArtifactWriteResult(status="blocked", notices=(_store_error_notice(error),))
+        return StoredArtifactWriteResult(status="stored", artifact=artifact)
+
+    def list_artifacts(self, target_ref: str) -> StoredArtifactListResult:
+        try:
+            artifacts = self._store.list_artifacts_for_target(target_ref)
+        except ExportStoreDataError as error:
+            return StoredArtifactListResult(
+                status="blocked",
+                target_ref=target_ref,
+                notices=(_store_error_notice(error),),
+            )
+
+        if artifacts:
+            return StoredArtifactListResult(
+                status="available",
+                target_ref=target_ref,
+                artifacts=artifacts,
+            )
+        if self.has_manifest_store_available(target_ref) or self.has_bundle_store_available(target_ref):
+            return StoredArtifactListResult(status="available", target_ref=target_ref, artifacts=())
+        return StoredArtifactListResult(
+            status="blocked",
+            target_ref=target_ref,
+            notices=(
+                Notice(
+                    code="stored_exports_target_not_available",
+                    severity="warning",
+                    message=f"No resolved synthetic record matched target_ref '{target_ref}'.",
+                ),
+            ),
+        )
+
+    def get_artifact_metadata(self, artifact_id: str) -> StoredArtifactLookupResult:
+        try:
+            artifact = self._store.get_artifact_metadata(artifact_id)
+        except ExportStoreDataError as error:
+            return StoredArtifactLookupResult(status="blocked", notices=(_store_error_notice(error),))
+        if artifact is None:
+            return StoredArtifactLookupResult(
+                status="blocked",
+                notices=(
+                    Notice(
+                        code="stored_artifact_not_found",
+                        severity="error",
+                        message=f"Unknown stored artifact_id '{artifact_id}'.",
+                    ),
+                ),
+            )
+        return StoredArtifactLookupResult(status="available", artifact=artifact)
+
+    def get_artifact_content(self, artifact_id: str) -> StoredArtifactContentResult:
+        try:
+            artifact = self._store.get_artifact_metadata(artifact_id)
+            if artifact is None:
+                return StoredArtifactContentResult(
+                    status="blocked",
+                    notices=(
+                        Notice(
+                            code="stored_artifact_not_found",
+                            severity="error",
+                            message=f"Unknown stored artifact_id '{artifact_id}'.",
+                        ),
+                    ),
+                )
+            payload = self._store.get_artifact_bytes(artifact_id)
+        except ExportStoreDataError as error:
+            return StoredArtifactContentResult(status="blocked", notices=(_store_error_notice(error),))
+        if payload is None:
+            return StoredArtifactContentResult(
+                status="blocked",
+                notices=(
+                    Notice(
+                        code="stored_artifact_not_found",
+                        severity="error",
+                        message=f"Unknown stored artifact_id '{artifact_id}'.",
+                    ),
+                ),
+            )
+        return StoredArtifactContentResult(status="available", artifact=artifact, payload=payload)
+
+
 def _write_bytes_if_missing(path: Path, payload: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists():
@@ -235,6 +396,32 @@ def _load_json(path: Path, *, code: str) -> Any:
 
 def _json_bytes(payload: dict[str, Any]) -> bytes:
     return f"{json.dumps(payload, indent=2, sort_keys=True)}\n".encode("utf-8")
+
+
+def _manifest_primary_object(manifest: dict[str, Any]) -> ObjectSummary | None:
+    primary_object = manifest.get("primary_object")
+    if not isinstance(primary_object, dict):
+        return None
+    object_id = primary_object.get("id")
+    if not isinstance(object_id, str) or not object_id:
+        return None
+    object_kind = primary_object.get("kind")
+    object_label = primary_object.get("label")
+    return ObjectSummary(
+        id=object_id,
+        kind=object_kind if isinstance(object_kind, str) and object_kind else None,
+        label=object_label if isinstance(object_label, str) and object_label else None,
+    )
+
+
+def _manifest_filename(target_ref: str) -> str:
+    normalized = re.sub(r"[^A-Za-z0-9.]+", "-", target_ref).strip("-")
+    normalized = re.sub(r"-{2,}", "-", normalized)
+    return f"eureka-resolution-manifest-{normalized}.json"
+
+
+def _store_error_notice(error: ExportStoreDataError) -> Notice:
+    return Notice(code=error.code, severity="error", message=error.message)
 
 
 def _require_string(value: Any, field_name: str) -> str:

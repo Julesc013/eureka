@@ -5,6 +5,7 @@ from runtime.gateway.bootstrap import (
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
+    build_demo_stored_exports_public_api,
 )
 
 __all__ = [
@@ -12,4 +13,5 @@ __all__ = [
     "build_demo_resolution_bundle_inspection_public_api",
     "build_demo_resolution_jobs_public_api",
     "build_demo_search_public_api",
+    "build_demo_stored_exports_public_api",
 ]
