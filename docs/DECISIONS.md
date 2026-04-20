@@ -53,3 +53,15 @@
 - Status: accepted
 - Decision: governed synthetic fixture access now lives under `runtime/connectors/synthetic_software/`, while the engine consumes only normalized records through `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`.
 - Why: this proves the intended connector-to-engine boundary early without implying real external acquisition, connector-owned object truth, or finalized ingestion architecture.
+
+## ADR-010: Keep the Gateway Public Boundary Separate from the In-Memory Job Service
+
+- Status: accepted
+- Decision: the bootstrap gateway now exposes a transport-neutral public submit and read boundary that translates in-memory job service state into public envelopes, while submit returns an accepted envelope and read returns the current job state.
+- Why: this proves the declared public API boundary more honestly without introducing a real HTTP server, async workers, or persistence.
+
+## ADR-011: Exercise Shared Surface Contracts Through a Workbench Session Mapping
+
+- Status: accepted
+- Decision: bootstrap now maps public gateway job envelopes into the shared `WorkbenchSession` view model without implementing browser-owned or native-owned UI behavior.
+- Why: this proves the shared surface-contract boundary while keeping runtime behavior replaceable and keeping surface implementation decisions deferred.

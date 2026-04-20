@@ -2,7 +2,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 $id: https://schemas.eureka.invalid/ui/workbench_session.view_model.yaml
 $comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
 title: WorkbenchSession
-description: Draft shared surface-facing session model aligned with the gateway public API job envelope.
+description: Draft shared surface-facing session model aligned with gateway public API read envelopes and shared across web and native surfaces.
 type: object
 additionalProperties: false
 properties:

@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus two executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus three executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -14,7 +14,9 @@ Current status: foundational scaffold plus two executable local deterministic th
 - connector-shaped local source loading for governed synthetic software fixtures
 - ingest, extract, and normalize boundary types for the bootstrap execution lane
 - exact-match engine resolution over normalized records plus bounded object-summary mapping
-- in-memory gateway bounded-job service plus a local demo command over the connector-shaped path
+- transport-neutral gateway submit and read boundary over an in-memory job service
+- shared workbench-session view-model mapping exercised without implementing web or native shells
+- local demo command that shows submit, read, and optional shared view-model output over the connector-shaped path
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -23,7 +25,7 @@ Current status: foundational scaffold plus two executable local deterministic th
 
 - finalized archive schema meaning
 - automated dependency-policy enforcement tooling
-- mature gateway API semantics and wider public read coverage
+- mature gateway API semantics, wider public read coverage, and durable submit versus read guarantees
 - real external connectors, ranking, retrieval, and broader provenance or trust semantics
 - persistence, background workers, and async orchestration
 - web routes, web pages, and native runtime behavior

@@ -12,3 +12,4 @@ These questions are intentionally left open during bootstrap:
 8. When should the advisory path-based dependency policy become mechanically enforced, and by what repo-local check?
 9. When should the current synthetic connector and normalized-record path expand beyond governed local fixtures into the first real acquisition adapter, and which normalized fields should remain stable when it does?
 10. If job execution later becomes asynchronous, which parts of the current bounded job envelope should remain stable?
+11. Should submit and read remain one shared public envelope shape, or should they diverge into distinct durable contract types before any real HTTP boundary is introduced?

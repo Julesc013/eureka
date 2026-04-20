@@ -10,7 +10,10 @@ steps:
     run: python scripts/demo_resolution_slice.py
   - id: thin_slice_unknown
     run: python scripts/demo_resolution_slice.py fixture:software/missing-demo-app@0.0.1
+  - id: thin_slice_workbench
+    run: python scripts/demo_resolution_slice.py --include-workbench-session
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
+  - Submit and read remain in-memory bootstrap semantics; no real HTTP server or async worker exists yet.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

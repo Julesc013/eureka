@@ -22,7 +22,9 @@ paths:
       summary: Submit a bounded resolution job
       description: >
         Draft public boundary for a surface to request bounded resolution work through
-        the gateway. This operation does not expose internal orchestration protocols.
+        the gateway. This operation does not expose internal orchestration protocols and
+        returns an accepted envelope only; current job state is read through the
+        corresponding GET operation.
       operationId: submitResolutionJob
       requestBody:
         required: true
@@ -32,7 +34,7 @@ paths:
               $ref: '#/components/schemas/SubmitResolutionJobRequest'
       responses:
         '202':
-          description: Draft accepted job envelope
+          description: Draft accepted job envelope for follow-up read access
           content:
             application/json:
               schema:
@@ -101,7 +103,9 @@ components:
     ResolutionJob:
       type: object
       additionalProperties: false
-      description: Draft bounded job envelope exposed through the public API.
+      description: >
+        Draft bounded job envelope exposed through the public API. During bootstrap this
+        shape is used both for accepted submit responses and for read responses.
       properties:
         job_id:
           type: string

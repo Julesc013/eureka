@@ -22,7 +22,7 @@ The roadmap is intentionally staged and bounded. Bootstrap work should make late
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: two local deterministic thin slices now exist in the Python stdlib bootstrap lane. The first proved fixture input to engine to gateway bounded-job flow. The second moves governed synthetic fixture access behind a local connector-shaped source path and proves ingest, extract, normalize, engine resolve, and gateway job flow without introducing real external connectors.
+Current status within this stage: three local deterministic thin slices now exist in the Python stdlib bootstrap lane. The first proved fixture input to engine to gateway bounded-job flow. The second moved governed synthetic fixture access behind a local connector-shaped source path and proved ingest, extract, normalize, engine resolve, and gateway job flow without introducing real external connectors. The third adds a transport-neutral public submit and read boundary plus shared workbench-session mapping without introducing real HTTP serving or UI shells.
 
 ## Stage 3: Surface Skeletons
 

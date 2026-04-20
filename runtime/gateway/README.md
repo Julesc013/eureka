@@ -10,9 +10,11 @@ Boundary notes:
 
 Current thin-slice behavior:
 
-- synchronous in-memory bounded-job submission and read-back
+- transport-neutral public submit and read boundary over an in-memory job service
+- submit returns an accepted public envelope while read returns the current bounded job envelope
 - deterministic job envelopes for known and unknown local synthetic targets
 - gateway composes with engine service interfaces over normalized records and does not read governed fixtures directly
+- shared workbench-session mapping is exercised without implementing web or native shells
 - no broker, relay, worker, scheduler, auth, or persistence implementation
 
 This slice proves the public boundary shape without implying that async gateway infrastructure already exists.
