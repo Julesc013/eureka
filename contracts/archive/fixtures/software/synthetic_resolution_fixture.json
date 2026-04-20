@@ -1,0 +1,29 @@
+{
+  "fixtures": [
+    {
+      "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+      "object": {
+        "id": "obj.synthetic-demo-app",
+        "kind": "software",
+        "label": "Synthetic Demo App"
+      },
+      "state": {
+        "id": "state.synthetic-demo-app.release",
+        "subject_id": "obj.synthetic-demo-app",
+        "kind": "release",
+        "standing": "available"
+      },
+      "representation": {
+        "id": "rep.synthetic-demo-app.source",
+        "object_id": "obj.synthetic-demo-app",
+        "kind": "source_archive",
+        "format": "application/vnd.eureka.synthetic.bundle"
+      },
+      "access_path": {
+        "id": "access.synthetic-demo-app.fixture",
+        "kind": "fixture_path",
+        "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+      }
+    }
+  ]
+}

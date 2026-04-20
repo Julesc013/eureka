@@ -1,6 +1,12 @@
 # Archive Fixtures
 
-This directory is reserved for governed fixture material used to exercise archive contracts.
+This directory holds governed fixture material used to exercise archive contracts.
 
-Bootstrap starts with no normative fixtures because the contracts are still placeholders.
+Current scope is intentionally small:
+
+- synthetic, rights-safe local fixtures only
+- deterministic inputs for bootstrap runtime and gateway slices
+- no external acquisition and no real archive corpus
+
+These fixtures support inspection and harness-oriented testing. They do not settle broader connector, trust, or provenance strategy.
 
