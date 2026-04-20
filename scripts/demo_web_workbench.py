@@ -11,8 +11,8 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
-from runtime.gateway import build_demo_resolution_jobs_public_api
-from surfaces.web.server import WorkbenchWsgiApp, render_resolution_workspace_page
+from runtime.gateway import build_demo_resolution_jobs_public_api, build_demo_search_public_api
+from surfaces.web.server import WorkbenchWsgiApp, render_resolution_workspace_page, render_search_results_page
 
 
 def main() -> int:
@@ -23,6 +23,10 @@ def main() -> int:
         "target_ref",
         nargs="?",
         help="Bounded target reference to resolve. Defaults to the known synthetic fixture target.",
+    )
+    parser.add_argument(
+        "--search-query",
+        help="Render or demo the deterministic search page for a bounded query.",
     )
     parser.add_argument(
         "--render-once",
@@ -43,18 +47,28 @@ def main() -> int:
     args = parser.parse_args()
 
     target_ref = args.target_ref or SyntheticSoftwareConnector().default_target_ref()
-    public_api = build_demo_resolution_jobs_public_api()
+    resolution_public_api = build_demo_resolution_jobs_public_api()
+    search_public_api = build_demo_search_public_api()
 
     if args.render_once:
-        html = render_resolution_workspace_page(public_api, target_ref)
+        if args.search_query is not None:
+            html = render_search_results_page(search_public_api, args.search_query)
+        else:
+            html = render_resolution_workspace_page(resolution_public_api, target_ref)
         sys.stdout.write(html)
         return 0
 
-    app = WorkbenchWsgiApp(public_api, default_target_ref=target_ref)
+    app = WorkbenchWsgiApp(
+        resolution_public_api,
+        search_public_api=search_public_api,
+        default_target_ref=target_ref,
+    )
     with make_server(args.host, args.port, app) as httpd:
         sys.stdout.write(
             "Serving Eureka compatibility workbench at "
             f"http://{args.host}:{args.port}/?target_ref={quote(target_ref, safe='')}\n"
+            "Serving Eureka compatibility search at "
+            f"http://{args.host}:{args.port}/search?q={quote('synthetic', safe='')}\n"
         )
         sys.stdout.flush()
         httpd.serve_forever()

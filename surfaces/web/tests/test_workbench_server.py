@@ -7,7 +7,7 @@ from urllib.parse import quote
 import unittest
 
 from runtime.gateway.public_api import PublicApiResponse
-from surfaces.web.server import WorkbenchWsgiApp, render_resolution_workspace_page
+from surfaces.web.server import WorkbenchWsgiApp, render_resolution_workspace_page, render_search_results_page
 
 
 SURFACE_WEB_ROOT = Path(__file__).resolve().parents[1]
@@ -53,6 +53,52 @@ class FakeResolutionJobsPublicApi:
         )
 
 
+class FakeSearchPublicApi:
+    def __init__(self) -> None:
+        self.queries: list[str] = []
+
+    def search_records(self, request) -> PublicApiResponse:
+        self.queries.append(request.query)
+        if request.query == "synthetic":
+            return PublicApiResponse(
+                status_code=200,
+                body={
+                    "query": "synthetic",
+                    "result_count": 2,
+                    "results": [
+                        {
+                            "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+                            "object": {
+                                "id": "obj.synthetic-demo-app",
+                                "kind": "software",
+                                "label": "Synthetic Demo App",
+                            },
+                        },
+                        {
+                            "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+                            "object": {
+                                "id": "obj.synthetic-demo-suite",
+                                "kind": "software",
+                                "label": "Synthetic Demo Suite",
+                            },
+                        },
+                    ],
+                },
+            )
+        return PublicApiResponse(
+            status_code=200,
+            body={
+                "query": request.query,
+                "result_count": 0,
+                "results": [],
+                "absence": {
+                    "code": "search_no_matches",
+                    "message": f"No governed synthetic records matched query '{request.query}'.",
+                },
+            },
+        )
+
+
 class WorkbenchServerTestCase(unittest.TestCase):
     def test_server_renders_workspace_via_public_submit_and_read_boundary(self) -> None:
         public_api = FakeResolutionJobsPublicApi()
@@ -68,10 +114,21 @@ class WorkbenchServerTestCase(unittest.TestCase):
         self.assertEqual(public_api.read_job_ids, ["job-fake-0001"])
         self.assertIn("Synthetic Demo App", html)
 
+    def test_server_renders_search_results_via_public_search_boundary(self) -> None:
+        public_api = FakeSearchPublicApi()
+
+        html = render_search_results_page(public_api, "synthetic")
+
+        self.assertEqual(public_api.queries, ["synthetic"])
+        self.assertIn("Synthetic Demo Suite", html)
+        self.assertIn("/?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
+
     def test_wsgi_app_handles_query_driven_get_request(self) -> None:
-        public_api = FakeResolutionJobsPublicApi()
+        resolution_public_api = FakeResolutionJobsPublicApi()
+        search_public_api = FakeSearchPublicApi()
         app = WorkbenchWsgiApp(
-            public_api,
+            resolution_public_api,
+            search_public_api=search_public_api,
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
 
@@ -95,10 +152,41 @@ class WorkbenchServerTestCase(unittest.TestCase):
 
         self.assertEqual(captured["status"], "200 OK")
         self.assertEqual(
-            public_api.submit_target_refs,
+            resolution_public_api.submit_target_refs,
             ["fixture:software/missing-demo-app@0.0.1"],
         )
         self.assertIn("fixture:software/synthetic-demo-app@1.0.0", body)
+
+    def test_wsgi_app_handles_search_requests(self) -> None:
+        resolution_public_api = FakeResolutionJobsPublicApi()
+        search_public_api = FakeSearchPublicApi()
+        app = WorkbenchWsgiApp(
+            resolution_public_api,
+            search_public_api=search_public_api,
+            default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
+        )
+
+        captured: dict[str, object] = {}
+
+        def start_response(status: str, headers: list[tuple[str, str]]) -> None:
+            captured["status"] = status
+            captured["headers"] = headers
+
+        body = b"".join(
+            app(
+                {
+                    "REQUEST_METHOD": "GET",
+                    "PATH_INFO": "/search",
+                    "QUERY_STRING": "q=synthetic",
+                    "wsgi.input": BytesIO(b""),
+                },
+                start_response,
+            )
+        ).decode("utf-8")
+
+        self.assertEqual(captured["status"], "200 OK")
+        self.assertEqual(search_public_api.queries, ["synthetic"])
+        self.assertIn("Synthetic Demo Suite", body)
 
     def test_web_surface_modules_do_not_import_engine_or_connector_internals(self) -> None:
         for path in SURFACE_WEB_ROOT.rglob("*.py"):

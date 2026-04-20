@@ -4,7 +4,7 @@ from io import BytesIO
 import unittest
 from urllib.parse import quote
 
-from runtime.gateway import build_demo_resolution_jobs_public_api
+from runtime.gateway import build_demo_resolution_jobs_public_api, build_demo_search_public_api
 from surfaces.web.server import WorkbenchWsgiApp
 
 
@@ -12,6 +12,7 @@ class WebSurfaceSliceIntegrationTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.app = WorkbenchWsgiApp(
             build_demo_resolution_jobs_public_api(),
+            search_public_api=build_demo_search_public_api(),
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
 
