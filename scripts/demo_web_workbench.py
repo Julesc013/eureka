@@ -45,6 +45,11 @@ def main() -> int:
         help="Export the bounded resolution manifest for the selected target and print JSON to stdout.",
     )
     parser.add_argument(
+        "--export-bundle",
+        action="store_true",
+        help="Export the deterministic resolution bundle ZIP for the selected target to stdout.",
+    )
+    parser.add_argument(
         "--host",
         default="127.0.0.1",
         help="Host interface for the local bootstrap server.",
@@ -56,6 +61,8 @@ def main() -> int:
         help="Port for the local bootstrap server.",
     )
     args = parser.parse_args()
+    if args.export_manifest and args.export_bundle:
+        parser.error("--export-manifest and --export-bundle cannot be used together.")
 
     target_ref = args.target_ref or SyntheticSoftwareConnector().default_target_ref()
     actions_public_api = build_demo_resolution_actions_public_api()
@@ -68,6 +75,16 @@ def main() -> int:
         )
         sys.stdout.write(json.dumps(response.body, indent=2, sort_keys=True))
         sys.stdout.write("\n")
+        return 0
+
+    if args.export_bundle:
+        response = actions_public_api.export_resolution_bundle(
+            ResolutionActionRequest.from_parts(target_ref)
+        )
+        if response.status_code == 200:
+            sys.stdout.buffer.write(response.payload)
+            return 0
+        sys.stdout.write(response.payload.decode("utf-8"))
         return 0
 
     if args.render_once:
@@ -96,6 +113,8 @@ def main() -> int:
             f"http://{args.host}:{args.port}/search?q={quote('synthetic', safe='')}\n"
             "Serving Eureka manifest export at "
             f"http://{args.host}:{args.port}/actions/export-resolution-manifest?target_ref={quote(target_ref, safe='')}\n"
+            "Serving Eureka bundle export at "
+            f"http://{args.host}:{args.port}/actions/export-resolution-bundle?target_ref={quote(target_ref, safe='')}\n"
         )
         sys.stdout.flush()
         httpd.serve_forever()

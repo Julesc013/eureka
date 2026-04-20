@@ -89,14 +89,22 @@ class WorkbenchWsgiApp:
             )
 
         path = str(environ.get("PATH_INFO") or "/")
-        if path not in {"/", "/search", "/actions/export-resolution-manifest"}:
+        if path not in {
+            "/",
+            "/search",
+            "/actions/export-resolution-manifest",
+            "/actions/export-resolution-bundle",
+        }:
             return self._respond(
                 start_response,
                 status="404 Not Found",
                 body=_render_error_page(
                     title="Eureka Compatibility Workbench",
                     heading="Page Not Found",
-                    message="This bootstrap workbench serves compatibility-first pages at '/', '/search', and '/actions/export-resolution-manifest'.",
+                    message=(
+                        "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
+                        "'/actions/export-resolution-manifest', and '/actions/export-resolution-bundle'."
+                    ),
                 ),
             )
 
@@ -125,18 +133,31 @@ class WorkbenchWsgiApp:
                 status="404 Not Found",
                 body=_render_error_page(
                     title="Eureka Compatibility Workbench",
-                    heading="Manifest Export Unavailable",
+                    heading="Resolution Export Unavailable",
                     message="This bootstrap workbench was not configured with a public action boundary.",
                 ),
             )
+        request = ResolutionActionRequest.from_parts(target_ref)
+        if path == "/actions/export-resolution-manifest":
+            export_response = self._actions_public_api.export_resolution_manifest(request)
+            return self._respond_json(
+                start_response,
+                status="200 OK" if export_response.status_code == 200 else "404 Not Found",
+                payload=export_response.body,
+            )
 
-        export_response = self._actions_public_api.export_resolution_manifest(
-            ResolutionActionRequest.from_parts(target_ref),
-        )
-        return self._respond_json(
+        bundle_response = self._actions_public_api.export_resolution_bundle(request)
+        extra_headers: list[tuple[str, str]] = []
+        if bundle_response.filename is not None:
+            extra_headers.append(
+                ("Content-Disposition", f"attachment; filename=\"{bundle_response.filename}\""),
+            )
+        return self._respond_bytes(
             start_response,
-            status="200 OK" if export_response.status_code == 200 else "404 Not Found",
-            payload=export_response.body,
+            status="200 OK" if bundle_response.status_code == 200 else "404 Not Found",
+            payload=bundle_response.payload,
+            content_type=bundle_response.content_type,
+            extra_headers=extra_headers,
         )
 
     def _resolve_target_ref(self, query_string: str) -> str:
@@ -182,6 +203,24 @@ class WorkbenchWsgiApp:
         ]
         start_response(status, headers)
         return [encoded]
+
+    def _respond_bytes(
+        self,
+        start_response: Callable[[str, list[tuple[str, str]]], object],
+        *,
+        status: str,
+        payload: bytes,
+        content_type: str,
+        extra_headers: list[tuple[str, str]] | None = None,
+    ) -> list[bytes]:
+        headers = [
+            ("Content-Type", content_type),
+            ("Content-Length", str(len(payload))),
+        ]
+        if extra_headers:
+            headers.extend(extra_headers)
+        start_response(status, headers)
+        return [payload]
 
 
 def _render_error_page(*, title: str, heading: str, message: str) -> str:
