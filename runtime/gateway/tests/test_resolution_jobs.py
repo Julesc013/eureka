@@ -2,7 +2,12 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.gateway.public_api import SubmitResolutionJobRequest, build_demo_resolution_job_service
+from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
+from runtime.engine.core import NormalizedCatalog
+from runtime.engine.interfaces.extract import extract_synthetic_source_record
+from runtime.engine.interfaces.normalize import normalize_extracted_record
+from runtime.engine.resolve import ExactMatchResolutionService
+from runtime.gateway.public_api import InMemoryResolutionJobService, SubmitResolutionJobRequest
 
 
 KNOWN_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
@@ -11,7 +16,13 @@ UNKNOWN_TARGET_REF = "fixture:software/missing-demo-app@0.0.1"
 
 class ResolutionJobServiceTestCase(unittest.TestCase):
     def setUp(self) -> None:
-        self.service = build_demo_resolution_job_service()
+        source_records = SyntheticSoftwareConnector().load_source_records()
+        normalized_records = tuple(
+            normalize_extracted_record(extract_synthetic_source_record(record))
+            for record in source_records
+        )
+        resolution_service = ExactMatchResolutionService(NormalizedCatalog(normalized_records))
+        self.service = InMemoryResolutionJobService(resolution_service)
 
     def test_known_target_returns_completed_job(self) -> None:
         job = self.service.submit_resolution_job(

@@ -6,7 +6,6 @@ from typing import Any, Sequence
 
 from runtime.engine.interfaces.public import ResolutionRequest
 from runtime.engine.interfaces.service import ResolutionOutcome, ResolutionService
-from runtime.engine.resolve import build_default_resolution_service
 
 
 @dataclass(frozen=True)
@@ -71,7 +70,3 @@ class InMemoryResolutionJobService:
         if outcome.result is not None:
             job["result"] = outcome.result.to_dict()
         return job
-
-
-def build_demo_resolution_job_service() -> InMemoryResolutionJobService:
-    return InMemoryResolutionJobService(build_default_resolution_service())

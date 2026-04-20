@@ -12,7 +12,7 @@ DEMO_SCRIPT = REPO_ROOT / "scripts" / "demo_resolution_slice.py"
 
 
 class ResolutionSliceIntegrationTestCase(unittest.TestCase):
-    def test_demo_command_exercises_known_and_unknown_targets(self) -> None:
+    def test_demo_command_exercises_connector_to_gateway_path_for_known_and_unknown_targets(self) -> None:
         with self.subTest(target_ref="fixture:software/synthetic-demo-app@1.0.0"):
             payload = self._run_demo("fixture:software/synthetic-demo-app@1.0.0")
             self.assertEqual(payload["status"], "completed")

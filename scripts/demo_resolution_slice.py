@@ -9,8 +9,22 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.engine.core import load_default_fixture_catalog
-from runtime.gateway.public_api import SubmitResolutionJobRequest, build_demo_resolution_job_service
+from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
+from runtime.engine.core import NormalizedCatalog
+from runtime.engine.interfaces.extract import extract_synthetic_source_record
+from runtime.engine.interfaces.normalize import normalize_extracted_record
+from runtime.engine.resolve import ExactMatchResolutionService
+from runtime.gateway.public_api import InMemoryResolutionJobService, SubmitResolutionJobRequest
+
+
+def build_demo_resolution_job_service() -> InMemoryResolutionJobService:
+    connector = SyntheticSoftwareConnector()
+    normalized_records = tuple(
+        normalize_extracted_record(extract_synthetic_source_record(record))
+        for record in connector.load_source_records()
+    )
+    resolution_service = ExactMatchResolutionService(NormalizedCatalog(normalized_records))
+    return InMemoryResolutionJobService(resolution_service)
 
 
 def main() -> int:
@@ -31,8 +45,8 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    fixture_catalog = load_default_fixture_catalog()
-    target_ref = args.target_ref or fixture_catalog.default_target_ref
+    connector = SyntheticSoftwareConnector()
+    target_ref = args.target_ref or connector.default_target_ref()
 
     service = build_demo_resolution_job_service()
     submitted_job = service.submit_resolution_job(
