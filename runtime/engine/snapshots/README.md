@@ -5,7 +5,8 @@
 Current bootstrap scope:
 
 - build a deterministic, self-contained resolution bundle ZIP for an already-normalized synthetic match
+- inspect a previously exported deterministic resolution bundle from local bytes or a local file path
 - keep bundle contents local, inspectable, and stdlib-only
 - avoid restore, import, installer, or durable preservation semantics
 
-This is the first portable offline export seam only. It does not define a final snapshot or reconstruction contract.
+This is the first portable offline export and readback seam only. It does not define a final snapshot, import, restore, or reconstruction contract.

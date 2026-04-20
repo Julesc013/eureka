@@ -1,0 +1,31 @@
+name: BundleInspection
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that inspect a
+  previously exported deterministic resolution bundle through a public bundle
+  inspection boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/resolution/bundles/inspect?bundle_path={bundle_path}
+  shared_view_models:
+    - contracts/ui/view_models/bundle_inspection.view_model.yaml
+  shared_result_shapes:
+    - BundleInspectionEnvelope
+surface_expectations:
+  - surfaces inspect bundles through the public boundary rather than by importing engine snapshot inspection behavior
+  - surfaces present bundle inspection state, member lists, and notices honestly
+  - local path-based inspection is a bootstrap-only demo choice and does not define a final upload, import, or restore contract
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - durable upload or import boundaries for portable bundles
+  - finalized snapshot verification semantics
+  - restore, import, installer, and runtime execution behavior

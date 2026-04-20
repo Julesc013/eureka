@@ -16,6 +16,8 @@ tags:
     description: Draft bounded resolution job submission and read operations.
   - name: ResolutionActions
     description: Draft bounded action discovery plus manifest and portable-bundle export operations for resolved targets.
+  - name: BundleInspection
+    description: Draft local bootstrap inspection operations for previously exported deterministic bundles.
   - name: Search
     description: Draft deterministic search operations over the bounded software-first corpus.
 paths:
@@ -162,6 +164,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/resolution/bundles/inspect:
+    get:
+      tags:
+        - BundleInspection
+      summary: Inspect a previously exported deterministic bundle
+      description: >
+        Draft public boundary for local bootstrap inspection of a previously exported
+        deterministic bundle. The current `bundle_path` query parameter is a
+        bootstrap-only demo choice and not a final upload, import, or restore contract.
+      operationId: inspectResolutionBundle
+      parameters:
+        - $ref: '#/components/parameters/BundlePath'
+      responses:
+        '200':
+          description: Draft bundle inspection envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BundleInspectionEnvelope'
+        '404':
+          description: Draft not found inspection envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BundleInspectionEnvelope'
+        '422':
+          description: Draft invalid or blocked inspection envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BundleInspectionEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
   /v0/resolution/jobs/{job_id}:
     get:
       tags:
@@ -206,6 +245,13 @@ components:
       in: query
       required: true
       description: Draft bounded subject selector or governed target reference.
+      schema:
+        type: string
+    BundlePath:
+      name: bundle_path
+      in: query
+      required: true
+      description: Draft local bundle path used only for bootstrap inspection demos.
       schema:
         type: string
     SearchQuery:
@@ -517,5 +563,58 @@ components:
         - status
         - target_ref
         - code
+    BundleInspectionEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft local bootstrap envelope for inspecting a previously exported deterministic bundle.
+      properties:
+        status:
+          type: string
+          enum:
+            - inspected
+            - blocked
+        inspection_mode:
+          type: string
+        source:
+          type: object
+          additionalProperties: false
+          properties:
+            kind:
+              type: string
+            locator:
+              type: string
+          required:
+            - kind
+            - locator
+        bundle:
+          type: object
+          additionalProperties: false
+          properties:
+            bundle_kind:
+              type: string
+            bundle_version:
+              type: string
+            target_ref:
+              type: string
+            member_list:
+              type: array
+              items:
+                type: string
+          required:
+            - member_list
+        primary_object:
+          $ref: '#/components/schemas/ObjectSummary'
+        normalized_record:
+          type: object
+          additionalProperties: true
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - inspection_mode
+        - source
+        - notices
 x-eureka-boundary: public-api
 x-eureka-status: draft

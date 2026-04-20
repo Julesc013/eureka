@@ -9,3 +9,4 @@ Current bootstrap shared models cover:
 - `WorkbenchSession` for exact-resolution job state and object summaries
 - `SearchResults` for deterministic search result lists and structured absence reports
 - `ResolutionActions` for bounded action availability and manifest-plus-bundle export affordances
+- `BundleInspection` for local bootstrap readback of previously exported deterministic bundles

@@ -22,5 +22,6 @@ Current thin-slice behavior:
 - bounded object-summary mapping aligned to the gateway public API draft
 - bounded resolution-manifest export from already-normalized records under `actions/`
 - bounded portable resolution-bundle export from already-normalized records under `snapshots/`
+- bounded portable bundle inspection from local bytes or a local file path under `snapshots/`, without live fixture dependence
 
 This slice does not settle connector strategy, ranking, fuzzy resolution, installer behavior, restore behavior, or broader archive semantics.

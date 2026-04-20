@@ -1,0 +1,82 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/bundle_inspection.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
+title: BundleInspection
+description: Draft shared surface-facing bundle inspection model aligned with the gateway public bundle inspection boundary.
+type: object
+additionalProperties: false
+properties:
+  status:
+    type: string
+    enum:
+      - inspected
+      - blocked
+  inspection_mode:
+    type: string
+  source:
+    type: object
+    additionalProperties: false
+    properties:
+      kind:
+        type: string
+      locator:
+        type: string
+    required:
+      - kind
+      - locator
+  bundle:
+    type: object
+    additionalProperties: false
+    properties:
+      bundle_kind:
+        type: string
+      bundle_version:
+        type: string
+      target_ref:
+        type: string
+      member_list:
+        type: array
+        items:
+          type: string
+    required:
+      - member_list
+  primary_object:
+    type: object
+    additionalProperties: false
+    properties:
+      id:
+        type: string
+      kind:
+        type: string
+      label:
+        type: string
+    required:
+      - id
+  normalized_record:
+    type: object
+    additionalProperties: true
+  notices:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+        severity:
+          type: string
+          enum:
+            - info
+            - warning
+            - error
+        message:
+          type: string
+      required:
+        - code
+        - severity
+required:
+  - status
+  - inspection_mode
+  - source
+  - notices
+x-eureka-status: draft
