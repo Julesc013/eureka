@@ -1,0 +1,33 @@
+name: ResolutionActions
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that discover bounded
+  resolution actions through the gateway public boundary and present honest availability
+  state before any local export is attempted.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/resolution/actions?target_ref={target_ref}
+    - GET /v0/resolution/actions/export-manifest?target_ref={target_ref}
+  shared_view_models:
+    - contracts/ui/view_models/resolution_actions.view_model.yaml
+  shared_result_shapes:
+    - ResolutionActionsEnvelope
+    - ResolutionManifestExport
+surface_expectations:
+  - surfaces discover bounded actions through the public gateway boundary rather than by importing engine action behavior
+  - surfaces present available and unavailable action state honestly
+  - surfaces keep bootstrap export behavior local and deterministic without implying broader installer or reconstruction workflows
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - installer, download, and rollback behavior
+  - broader action registries or workflow orchestration
+  - finalized snapshot and reconstruction semantics

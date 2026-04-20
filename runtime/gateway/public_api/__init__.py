@@ -7,10 +7,23 @@ from runtime.gateway.public_api.resolution_boundary import (
     resolution_job_not_found_error,
     resolution_job_to_public_envelope,
 )
+from runtime.gateway.public_api.resolution_actions import (
+    EXPORT_RESOLUTION_MANIFEST_ACTION_ID,
+    EXPORT_RESOLUTION_MANIFEST_LABEL,
+    EXPORT_RESOLUTION_MANIFEST_ROUTE,
+    ResolutionActionRequest,
+    ResolutionActionsPublicApi,
+    available_resolution_actions_to_public_envelope,
+    resolution_manifest_not_available_error,
+    unavailable_resolution_actions_to_public_envelope,
+)
 from runtime.gateway.public_api.resolution_jobs import (
     InMemoryResolutionJobService,
     ResolutionJobRecord,
     SubmitResolutionJobRequest,
+)
+from runtime.gateway.public_api.resolution_actions_view_models import (
+    resolution_actions_envelope_to_view_model,
 )
 from runtime.gateway.public_api.search_boundary import (
     SearchCatalogRequest,
@@ -24,16 +37,25 @@ from runtime.gateway.public_api.workbench_sessions import resolution_job_envelop
 
 __all__ = [
     "PublicApiResponse",
+    "EXPORT_RESOLUTION_MANIFEST_ACTION_ID",
+    "EXPORT_RESOLUTION_MANIFEST_LABEL",
+    "EXPORT_RESOLUTION_MANIFEST_ROUTE",
     "InMemoryResolutionJobService",
+    "ResolutionActionRequest",
     "ResolutionJobRecord",
+    "ResolutionActionsPublicApi",
     "ResolutionJobsPublicApi",
     "SearchCatalogRequest",
     "SearchPublicApi",
     "SubmitResolutionJobRequest",
     "accepted_resolution_job_to_public_envelope",
+    "available_resolution_actions_to_public_envelope",
     "resolution_job_not_found_error",
     "resolution_job_to_public_envelope",
+    "resolution_actions_envelope_to_view_model",
+    "resolution_manifest_not_available_error",
     "search_response_envelope_to_search_results_view_model",
     "search_response_to_public_envelope",
+    "unavailable_resolution_actions_to_public_envelope",
     "resolution_job_envelope_to_workbench_session",
 ]

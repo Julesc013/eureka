@@ -1,0 +1,56 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/resolution_actions.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
+title: ResolutionActions
+description: Draft shared surface-facing action panel model aligned with the gateway public action boundary.
+type: object
+additionalProperties: false
+properties:
+  target_ref:
+    type: string
+    description: Draft bounded target reference used to derive the current action panel.
+  actions:
+    type: array
+    description: Draft ordered action entries exposed for the current target.
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        action_id:
+          type: string
+        label:
+          type: string
+        availability:
+          type: string
+          enum:
+            - available
+            - unavailable
+        href:
+          type: string
+      required:
+        - action_id
+        - label
+        - availability
+  notices:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+        severity:
+          type: string
+          enum:
+            - info
+            - warning
+            - error
+        message:
+          type: string
+      required:
+        - code
+        - severity
+required:
+  - target_ref
+  - actions
+x-eureka-status: draft
