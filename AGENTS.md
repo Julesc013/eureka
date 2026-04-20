@@ -16,9 +16,9 @@
 
 - `control/` holds governance and planning material, not product runtime behavior.
 - `contracts/` holds governed schemas, protocols, public API contracts, and shared UI contracts.
-- `runtime/engine` owns engine behavior and service interfaces.
-- `runtime/gateway` owns gateway-facing runtime behavior and depends on contracts plus engine-facing service interfaces.
-- `runtime/connectors` implements bounded ingest, extract, and normalize adapters only.
+- `runtime/engine` owns engine behavior plus the concrete interface boundaries under `runtime/engine/interfaces/`.
+- `runtime/gateway` owns gateway-facing runtime behavior and depends on contracts plus `runtime/engine/interfaces/public/**` and `runtime/engine/interfaces/service/**`.
+- `runtime/connectors` implements bounded acquisition adapters and may depend only on `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**` plus governed archive contracts.
 - `surfaces/web` and `surfaces/native` are user-facing surfaces.
 - `.aide/` owns repo operating metadata only.
 
@@ -27,6 +27,8 @@
 - Web uses gateway public APIs and contracts in the normal path.
 - Native uses contracts and gateway public APIs in the normal path.
 - Native may use `runtime/engine/sdk` only if an explicit offline or local mode is deliberately adopted later.
+- Gateway may depend only on `runtime/engine/interfaces/public/**`, `runtime/engine/interfaces/service/**`, and governed contract paths.
+- Connectors may depend only on `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, `runtime/engine/interfaces/normalize/**`, and governed archive contract paths.
 - Engine must not depend on `surfaces/*`.
 - Web must not depend on engine internals in the normal path.
 - Connectors must not invent object truth.
@@ -40,4 +42,3 @@
 - When a task crosses component boundaries, name the boundary crossing in the plan and in the final report.
 - If verification cannot be completed, say so plainly and list the reason.
 - If follow-up work is intentionally deferred, list it under a clear deferred or open-items heading.
-

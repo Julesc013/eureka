@@ -4,7 +4,6 @@
 
 Boundary notes:
 
-- connectors may depend on narrow ingest, extract, and normalize interfaces plus governed contracts
+- connectors may depend only on `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, `runtime/engine/interfaces/normalize/**`, and governed archive contracts
 - connectors must not define their own canonical object model
 - connectors must not own trust semantics
-

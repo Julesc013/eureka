@@ -1,40 +1,50 @@
 policy: dependencies
-status: bootstrap
+status: bootstrap-hardened
+enforcement:
+  status: advisory
+  detail: Concrete path globs are defined here for future mechanical enforcement, but no automated checker is wired yet.
 allowed:
-  - from: surfaces/web
+  - from: surfaces/web/**
     to:
-      - contracts/*
-      - contracts/gateway/public_api
-  - from: surfaces/native
+      - contracts/archive/**
+      - contracts/gateway/public_api/**
+      - contracts/ui/**
+    condition: normal online path
+  - from: surfaces/native/**
     to:
-      - contracts/*
-      - contracts/gateway/public_api
-  - from: surfaces/native
+      - contracts/archive/**
+      - contracts/gateway/public_api/**
+      - contracts/ui/**
+    condition: normal online path
+  - from: surfaces/native/**
     to:
-      - runtime/engine/sdk
+      - runtime/engine/sdk/**
     condition: future explicit offline-or-local mode only
-  - from: runtime/gateway
+  - from: runtime/gateway/**
     to:
-      - runtime/engine public or service interfaces
-      - contracts/*
-  - from: runtime/connectors
+      - runtime/engine/interfaces/public/**
+      - runtime/engine/interfaces/service/**
+      - contracts/archive/**
+      - contracts/gateway/public_api/**
+  - from: runtime/connectors/**
     to:
-      - runtime/engine narrow ingest, extract, and normalize interfaces
-      - contracts/*
+      - runtime/engine/interfaces/ingest/**
+      - runtime/engine/interfaces/extract/**
+      - runtime/engine/interfaces/normalize/**
+      - contracts/archive/**
 forbidden:
-  - from: runtime/engine
+  - from: runtime/engine/**
     to: surfaces/*
     reason: engine must remain surface-independent
-  - from: surfaces/web
+  - from: surfaces/web/**
     to: runtime/engine internals
     reason: web uses gateway public contracts in the normal path
-  - from: runtime/connectors
+  - from: runtime/connectors/**
     to: connector-owned object model
     reason: connectors must not invent object truth
-  - from: runtime/connectors
+  - from: runtime/connectors/**
     to: connector-owned trust semantics
     reason: trust semantics belong under governed contracts, not connectors
-  - from: .aide
+  - from: .aide/**
     to: product semantics or runtime behavior
     reason: AIDE is a repo operating layer only
-

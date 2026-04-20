@@ -28,20 +28,22 @@ The current governed component set is intentionally small:
 
 ## Dependency Law
 
+The current dependency policy is now expressed as concrete path globs in `.aide/policies/dependencies.yaml`. It is specific enough for future mechanical enforcement, but it is still advisory today.
+
 Allowed:
 
-- `surfaces/web` depends on `contracts/*` and `contracts/gateway/public_api`
-- `surfaces/native` depends on `contracts/*` and `contracts/gateway/public_api`
-- `surfaces/native` may depend on `runtime/engine/sdk` only as a future explicitly bounded offline path
-- `runtime/gateway` depends on `runtime/engine` public or service interfaces and `contracts/*`
-- `runtime/connectors` depends on narrow ingest, extract, and normalize interfaces plus `contracts/*`
+- `surfaces/web/**` depends on `contracts/archive/**`, `contracts/gateway/public_api/**`, and `contracts/ui/**` in the normal path
+- `surfaces/native/**` depends on `contracts/archive/**`, `contracts/gateway/public_api/**`, and `contracts/ui/**` in the normal path
+- `surfaces/native/**` may depend on `runtime/engine/sdk/**` only as a future explicitly bounded offline path
+- `runtime/gateway/**` depends on `runtime/engine/interfaces/public/**`, `runtime/engine/interfaces/service/**`, `contracts/archive/**`, and `contracts/gateway/public_api/**`
+- `runtime/connectors/**` depends on `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, `runtime/engine/interfaces/normalize/**`, and `contracts/archive/**`
 
 Forbidden:
 
-- `runtime/engine` depends on `surfaces/*`
-- `surfaces/web` depends on `runtime/engine` internals in the normal path
-- `runtime/connectors` defines its own object model
-- `runtime/connectors` owns trust semantics
+- `runtime/engine/**` depends on `surfaces/*`
+- `surfaces/web/**` depends on `runtime/engine` internals in the normal path
+- `runtime/connectors/**` defines its own object model
+- `runtime/connectors/**` owns trust semantics
 - `.aide/` defines product semantics or runtime behavior
 
 ## Current Unresolved Questions
@@ -51,4 +53,3 @@ Forbidden:
 - How narrow should the future offline native path be before `runtime/engine/sdk` is exposed?
 - Which gateway operations should be public product contracts versus internal broker or worker protocols?
 - What packaging forms matter in v1 beyond software archives and repositories?
-

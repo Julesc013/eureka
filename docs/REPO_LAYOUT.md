@@ -31,11 +31,14 @@ eureka/
   docs/
   runtime/
     engine/
+      interfaces/
+        public/
+        service/
+        ingest/
+        extract/
+        normalize/
       core/
-      ingest/
-      extract/
       identify/
-      normalize/
       resolve/
       index/
       actions/
@@ -106,3 +109,5 @@ eureka/
 Component-local tests live inside the component they validate, such as `runtime/engine/tests`, `runtime/gateway/tests`, `runtime/connectors/tests`, `surfaces/web/tests`, or `surfaces/native/tests`. These should stay close to the implementation boundary they exercise.
 
 Root `tests/` is reserved for cross-component integration and end-to-end coverage. Root `evals/` is reserved for system-level and replay-style evaluation, not unit-style component checks.
+
+`runtime/engine/interfaces/` is reserved for concrete dependency boundary paths that other runtime components may rely on. Those boundary directories are real repo paths, but the policy is still advisory until tooling enforces it.

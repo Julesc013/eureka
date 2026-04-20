@@ -18,9 +18,9 @@ The roadmap is intentionally staged and bounded. Bootstrap work should make late
 
 ## Stage 2: Runtime Skeletons
 
-- add engine service interfaces without full product logic
+- add engine interface boundaries without full product logic
 - add gateway service boundaries and internal implementation seams
-- scaffold connector adapters against narrow ingest, extract, and normalize interfaces
+- scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
 ## Stage 3: Surface Skeletons
 
@@ -35,4 +35,3 @@ The roadmap is intentionally staged and bounded. Bootstrap work should make late
 - expand only where contract governance and architectural boundaries already exist
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
-
