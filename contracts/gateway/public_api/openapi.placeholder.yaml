@@ -1,0 +1,81 @@
+openapi: 3.1.0
+info:
+  title: Eureka Gateway Public API
+  version: 0.0.0-draft
+  description: >
+    Bootstrap placeholder for the Eureka gateway public API. This file is descriptive,
+    incomplete, and not yet a product compatibility promise.
+servers:
+  - url: https://gateway.example.invalid
+    description: Placeholder only
+paths:
+  /v0/resolution/jobs:
+    post:
+      summary: Submit a bounded resolution job request
+      description: >
+        Placeholder operation for a surface to request resolution or reconstruction work
+        through the gateway boundary.
+      operationId: createResolutionJob
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResolutionJobRequest'
+      responses:
+        '202':
+          description: Draft accepted response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResolutionJob'
+  /v0/resolution/jobs/{job_id}:
+    get:
+      summary: Read draft job status
+      operationId: getResolutionJob
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Draft job record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResolutionJob'
+components:
+  schemas:
+    ResolutionJobRequest:
+      type: object
+      additionalProperties: false
+      description: Placeholder request shape. Fields remain provisional.
+      properties:
+        target:
+          type: string
+          description: Draft subject selector or access path reference.
+        requested_outputs:
+          type: array
+          items:
+            type: string
+        mode:
+          type: string
+          description: Draft execution mode label.
+    ResolutionJob:
+      type: object
+      additionalProperties: false
+      description: Placeholder job envelope for the public API.
+      properties:
+        job_id:
+          type: string
+        status:
+          type: string
+          description: Draft status label only.
+        links:
+          type: object
+          additionalProperties:
+            type: string
+x-eureka-status: draft-placeholder
+

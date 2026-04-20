@@ -1,0 +1,20 @@
+name: WorkbenchSession
+status: draft-placeholder
+normativity: non-normative
+summary: Surface-facing session model for a web or native workbench experience.
+fields:
+  - name: session_id
+    meaning: Draft surface session identifier
+  - name: selected_subject
+    meaning: Draft selected object or target reference
+  - name: active_job
+    meaning: Draft gateway job summary
+  - name: visible_claims
+    meaning: Draft claim list prepared for presentation
+  - name: notices
+    meaning: Draft warnings, blockers, or operator notes
+constraints:
+  - Derived from governed contracts and gateway outputs, not engine internals.
+open_questions:
+  - Which view-model fields should stay shared across web and native surfaces?
+

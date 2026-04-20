@@ -1,0 +1,12 @@
+name: ResolutionWorkspace
+status: draft-placeholder
+normativity: non-normative
+summary: Shared interaction contract for a surface that initiates and observes resolution work.
+surface_expectations:
+  - surfaces submit work through the gateway public API in the normal path
+  - surfaces render claim and evidence material from governed contracts
+  - surfaces disclose blocked or deferred work rather than inventing completion
+deferred_topics:
+  - offline native interactions
+  - optimistic local execution
+  - finalized navigation semantics
