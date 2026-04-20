@@ -1,16 +1,20 @@
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from typing import Any
 from urllib.parse import quote
 
-from runtime.engine.interfaces.service import ResolutionManifestService
+from runtime.engine.interfaces.service import ResolutionBundleService, ResolutionManifestService
 from runtime.gateway.public_api.resolution_boundary import PublicApiResponse
 
 
 EXPORT_RESOLUTION_MANIFEST_ACTION_ID = "export_resolution_manifest"
 EXPORT_RESOLUTION_MANIFEST_LABEL = "Export resolution manifest"
 EXPORT_RESOLUTION_MANIFEST_ROUTE = "/actions/export-resolution-manifest"
+EXPORT_RESOLUTION_BUNDLE_ACTION_ID = "export_resolution_bundle"
+EXPORT_RESOLUTION_BUNDLE_LABEL = "Export resolution bundle"
+EXPORT_RESOLUTION_BUNDLE_ROUTE = "/actions/export-resolution-bundle"
 
 
 @dataclass(frozen=True)
@@ -25,20 +29,37 @@ class ResolutionActionRequest:
         return cls(target_ref=normalized_target_ref)
 
 
+@dataclass(frozen=True)
+class PublicArtifactResponse:
+    status_code: int
+    content_type: str
+    payload: bytes
+    filename: str | None = None
+
+    def json_body(self) -> dict[str, Any]:
+        return json.loads(self.payload.decode("utf-8"))
+
+
 class ResolutionActionsPublicApi:
-    def __init__(self, manifest_service: ResolutionManifestService) -> None:
+    def __init__(
+        self,
+        *,
+        manifest_service: ResolutionManifestService,
+        bundle_service: ResolutionBundleService,
+    ) -> None:
         self._manifest_service = manifest_service
+        self._bundle_service = bundle_service
 
     def list_resolution_actions(self, request: ResolutionActionRequest) -> PublicApiResponse:
-        if self._manifest_service.has_manifest_available(request.target_ref):
-            return PublicApiResponse(
-                status_code=200,
-                body=available_resolution_actions_to_public_envelope(request.target_ref),
-            )
-
+        manifest_available = self._manifest_service.has_manifest_available(request.target_ref)
+        bundle_available = self._bundle_service.has_bundle_available(request.target_ref)
         return PublicApiResponse(
             status_code=200,
-            body=unavailable_resolution_actions_to_public_envelope(request.target_ref),
+            body=resolution_actions_to_public_envelope(
+                request.target_ref,
+                manifest_available=manifest_available,
+                bundle_available=bundle_available,
+            ),
         )
 
     def export_resolution_manifest(self, request: ResolutionActionRequest) -> PublicApiResponse:
@@ -50,40 +71,57 @@ class ResolutionActionsPublicApi:
             )
         return PublicApiResponse(status_code=200, body=manifest)
 
+    def export_resolution_bundle(self, request: ResolutionActionRequest) -> PublicArtifactResponse:
+        bundle = self._bundle_service.export_bundle(request.target_ref)
+        if bundle is None:
+            return PublicArtifactResponse(
+                status_code=404,
+                content_type="application/json; charset=utf-8",
+                payload=_json_bytes(resolution_bundle_not_available_error(request.target_ref)),
+            )
+        return PublicArtifactResponse(
+            status_code=200,
+            content_type=bundle.content_type,
+            payload=bundle.payload,
+            filename=bundle.filename,
+        )
 
-def available_resolution_actions_to_public_envelope(target_ref: str) -> dict[str, Any]:
+def resolution_actions_to_public_envelope(
+    target_ref: str,
+    *,
+    manifest_available: bool,
+    bundle_available: bool,
+) -> dict[str, Any]:
+    actions = [
+        _manifest_action_entry(target_ref, available=manifest_available),
+        _bundle_action_entry(target_ref, available=bundle_available),
+    ]
+    notices: list[dict[str, str]] = []
+    if not manifest_available:
+        notices.append(_manifest_not_available_notice(target_ref))
+    if not bundle_available:
+        notices.append(_bundle_not_available_notice(target_ref))
     return {
         "target_ref": target_ref,
-        "actions": [
-            {
-                "action_id": EXPORT_RESOLUTION_MANIFEST_ACTION_ID,
-                "label": EXPORT_RESOLUTION_MANIFEST_LABEL,
-                "availability": "available",
-                "href": _manifest_export_href(target_ref),
-            }
-        ],
-        "notices": [],
+        "actions": actions,
+        "notices": notices,
     }
+
+
+def available_resolution_actions_to_public_envelope(target_ref: str) -> dict[str, Any]:
+    return resolution_actions_to_public_envelope(
+        target_ref,
+        manifest_available=True,
+        bundle_available=True,
+    )
 
 
 def unavailable_resolution_actions_to_public_envelope(target_ref: str) -> dict[str, Any]:
-    return {
-        "target_ref": target_ref,
-        "actions": [
-            {
-                "action_id": EXPORT_RESOLUTION_MANIFEST_ACTION_ID,
-                "label": EXPORT_RESOLUTION_MANIFEST_LABEL,
-                "availability": "unavailable",
-            }
-        ],
-        "notices": [
-            {
-                "code": "resolution_manifest_not_available",
-                "severity": "warning",
-                "message": f"No resolved synthetic record matched target_ref '{target_ref}'.",
-            }
-        ],
-    }
+    return resolution_actions_to_public_envelope(
+        target_ref,
+        manifest_available=False,
+        bundle_available=False,
+    )
 
 
 def resolution_manifest_not_available_error(target_ref: str) -> dict[str, str]:
@@ -96,5 +134,61 @@ def resolution_manifest_not_available_error(target_ref: str) -> dict[str, str]:
     }
 
 
+def resolution_bundle_not_available_error(target_ref: str) -> dict[str, str]:
+    return {
+        "action_id": EXPORT_RESOLUTION_BUNDLE_ACTION_ID,
+        "status": "blocked",
+        "target_ref": target_ref,
+        "code": "resolution_bundle_not_available",
+        "message": f"No resolved synthetic record matched target_ref '{target_ref}'.",
+    }
+
+
 def _manifest_export_href(target_ref: str) -> str:
     return f"{EXPORT_RESOLUTION_MANIFEST_ROUTE}?target_ref={quote(target_ref, safe='')}"
+
+
+def _bundle_export_href(target_ref: str) -> str:
+    return f"{EXPORT_RESOLUTION_BUNDLE_ROUTE}?target_ref={quote(target_ref, safe='')}"
+
+
+def _manifest_action_entry(target_ref: str, *, available: bool) -> dict[str, str]:
+    action = {
+        "action_id": EXPORT_RESOLUTION_MANIFEST_ACTION_ID,
+        "label": EXPORT_RESOLUTION_MANIFEST_LABEL,
+        "availability": "available" if available else "unavailable",
+    }
+    if available:
+        action["href"] = _manifest_export_href(target_ref)
+    return action
+
+
+def _bundle_action_entry(target_ref: str, *, available: bool) -> dict[str, str]:
+    action = {
+        "action_id": EXPORT_RESOLUTION_BUNDLE_ACTION_ID,
+        "label": EXPORT_RESOLUTION_BUNDLE_LABEL,
+        "availability": "available" if available else "unavailable",
+    }
+    if available:
+        action["href"] = _bundle_export_href(target_ref)
+    return action
+
+
+def _manifest_not_available_notice(target_ref: str) -> dict[str, str]:
+    return {
+        "code": "resolution_manifest_not_available",
+        "severity": "warning",
+        "message": f"No resolved synthetic record matched target_ref '{target_ref}'.",
+    }
+
+
+def _bundle_not_available_notice(target_ref: str) -> dict[str, str]:
+    return {
+        "code": "resolution_bundle_not_available",
+        "severity": "warning",
+        "message": f"No resolved synthetic record matched target_ref '{target_ref}'.",
+    }
+
+
+def _json_bytes(payload: dict[str, Any]) -> bytes:
+    return f"{json.dumps(payload, indent=2, sort_keys=True)}\n".encode("utf-8")

@@ -8,12 +8,18 @@ from runtime.gateway.public_api.resolution_boundary import (
     resolution_job_to_public_envelope,
 )
 from runtime.gateway.public_api.resolution_actions import (
+    EXPORT_RESOLUTION_BUNDLE_ACTION_ID,
+    EXPORT_RESOLUTION_BUNDLE_LABEL,
+    EXPORT_RESOLUTION_BUNDLE_ROUTE,
     EXPORT_RESOLUTION_MANIFEST_ACTION_ID,
     EXPORT_RESOLUTION_MANIFEST_LABEL,
     EXPORT_RESOLUTION_MANIFEST_ROUTE,
+    PublicArtifactResponse,
     ResolutionActionRequest,
     ResolutionActionsPublicApi,
     available_resolution_actions_to_public_envelope,
+    resolution_actions_to_public_envelope,
+    resolution_bundle_not_available_error,
     resolution_manifest_not_available_error,
     unavailable_resolution_actions_to_public_envelope,
 )
@@ -37,6 +43,10 @@ from runtime.gateway.public_api.workbench_sessions import resolution_job_envelop
 
 __all__ = [
     "PublicApiResponse",
+    "PublicArtifactResponse",
+    "EXPORT_RESOLUTION_BUNDLE_ACTION_ID",
+    "EXPORT_RESOLUTION_BUNDLE_LABEL",
+    "EXPORT_RESOLUTION_BUNDLE_ROUTE",
     "EXPORT_RESOLUTION_MANIFEST_ACTION_ID",
     "EXPORT_RESOLUTION_MANIFEST_LABEL",
     "EXPORT_RESOLUTION_MANIFEST_ROUTE",
@@ -50,6 +60,8 @@ __all__ = [
     "SubmitResolutionJobRequest",
     "accepted_resolution_job_to_public_envelope",
     "available_resolution_actions_to_public_envelope",
+    "resolution_actions_to_public_envelope",
+    "resolution_bundle_not_available_error",
     "resolution_job_not_found_error",
     "resolution_job_to_public_envelope",
     "resolution_actions_envelope_to_view_model",

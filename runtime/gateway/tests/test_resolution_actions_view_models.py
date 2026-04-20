@@ -27,6 +27,12 @@ class ResolutionActionsViewModelTestCase(unittest.TestCase):
                         "label": "Export resolution manifest",
                         "availability": "available",
                         "href": "/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0",
+                    },
+                    {
+                        "action_id": "export_resolution_bundle",
+                        "label": "Export resolution bundle",
+                        "availability": "available",
+                        "href": "/actions/export-resolution-bundle?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0",
                     }
                 ],
             },
@@ -39,5 +45,11 @@ class ResolutionActionsViewModelTestCase(unittest.TestCase):
 
         view_model = resolution_actions_envelope_to_view_model(response.body)
 
-        self.assertEqual(view_model["actions"][0]["availability"], "unavailable")
-        self.assertEqual(view_model["notices"][0]["code"], "resolution_manifest_not_available")
+        self.assertEqual(
+            [action["availability"] for action in view_model["actions"]],
+            ["unavailable", "unavailable"],
+        )
+        self.assertEqual(
+            [notice["code"] for notice in view_model["notices"]],
+            ["resolution_manifest_not_available", "resolution_bundle_not_available"],
+        )
