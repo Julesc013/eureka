@@ -15,3 +15,5 @@ These questions are intentionally left open during bootstrap:
 11. Should submit and read remain one shared public envelope shape, or should they diverge into distinct durable contract types before any real HTTP boundary is introduced?
 12. How long should the web workbench remain compatibility-first and server-rendered before any browser-side behavior is introduced, and which view-model fields must stay stable when that happens?
 13. Which deterministic search fields and ordering guarantees should survive once the synthetic corpus is replaced by the first real acquisition-backed dataset?
+14. Which parts of the bootstrap `resolution_manifest` should survive into a durable manifest or snapshot contract, and which parts should remain explicitly local-export metadata only?
+15. Should future bounded actions hang directly off `target_ref`, off read-job results, or off a more explicit resolved-resource identifier once the public API grows beyond the current local deterministic slice?

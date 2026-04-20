@@ -14,6 +14,8 @@ servers:
 tags:
   - name: ResolutionJobs
     description: Draft bounded resolution job submission and read operations.
+  - name: ResolutionActions
+    description: Draft bounded action discovery and manifest export operations for resolved targets.
   - name: Search
     description: Draft deterministic search operations over the bounded software-first corpus.
 paths:
@@ -72,6 +74,62 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/resolution/actions:
+    get:
+      tags:
+        - ResolutionActions
+      summary: List bounded resolution actions
+      description: >
+        Draft public boundary for discovering bounded actions that are currently
+        available for a deterministic resolved target. This operation does not imply
+        installers, downloads, or broader workflow orchestration.
+      operationId: listResolutionActions
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+      responses:
+        '200':
+          description: Draft resolution actions envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResolutionActionsEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/resolution/actions/export-manifest:
+    get:
+      tags:
+        - ResolutionActions
+      summary: Export a bounded resolution manifest
+      description: >
+        Draft public boundary for exporting a machine-readable manifest derived from a
+        deterministic resolved synthetic target. This is not a final snapshot or
+        reconstruction contract.
+      operationId: exportResolutionManifest
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+      responses:
+        '200':
+          description: Draft resolution manifest export
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResolutionManifestExport'
+        '404':
+          description: Draft blocked or unavailable export envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionBlockedEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
   /v0/resolution/jobs/{job_id}:
     get:
       tags:
@@ -109,6 +167,13 @@ components:
       in: path
       required: true
       description: Draft identifier of a bounded resolution job.
+      schema:
+        type: string
+    TargetRef:
+      name: target_ref
+      in: query
+      required: true
+      description: Draft bounded subject selector or governed target reference.
       schema:
         type: string
     SearchQuery:
@@ -282,5 +347,143 @@ components:
       required:
         - code
         - message
+    ResolutionActionsEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft bounded action-discovery envelope for a resolved target.
+      properties:
+        target_ref:
+          type: string
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResolutionActionEntry'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - target_ref
+        - actions
+    ResolutionActionEntry:
+      type: object
+      additionalProperties: false
+      description: Draft action summary suitable for shared surfaces.
+      properties:
+        action_id:
+          type: string
+        label:
+          type: string
+        availability:
+          type: string
+          enum:
+            - available
+            - unavailable
+        href:
+          type: string
+      required:
+        - action_id
+        - label
+        - availability
+    ResolutionManifestExport:
+      type: object
+      additionalProperties: false
+      description: Draft machine-readable manifest derived from a deterministic resolved synthetic target.
+      properties:
+        manifest_kind:
+          type: string
+        manifest_version:
+          type: string
+        generated_from:
+          type: object
+          additionalProperties: false
+          properties:
+            kind:
+              type: string
+            source_name:
+              type: string
+            source_locator:
+              type: string
+          required:
+            - kind
+            - source_name
+            - source_locator
+        target_ref:
+          type: string
+        primary_object:
+          $ref: '#/components/schemas/ObjectSummary'
+        matched_state:
+          type: object
+          additionalProperties: false
+          properties:
+            id:
+              type: string
+            kind:
+              type: string
+        representations:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              id:
+                type: string
+              kind:
+                type: string
+              access_path:
+                type: object
+                additionalProperties: false
+                properties:
+                  id:
+                    type: string
+                  kind:
+                    type: string
+                  locator:
+                    type: string
+        source_fixture:
+          type: object
+          additionalProperties: false
+          properties:
+            kind:
+              type: string
+            locator:
+              type: string
+          required:
+            - kind
+            - locator
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - manifest_kind
+        - manifest_version
+        - generated_from
+        - target_ref
+        - primary_object
+        - source_fixture
+        - notices
+    ActionBlockedEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft blocked or unavailable action envelope for export attempts.
+      properties:
+        action_id:
+          type: string
+        status:
+          type: string
+          enum:
+            - blocked
+        target_ref:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+      required:
+        - action_id
+        - status
+        - target_ref
+        - code
 x-eureka-boundary: public-api
 x-eureka-status: draft
