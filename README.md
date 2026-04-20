@@ -32,5 +32,4 @@ AIDE is not the Eureka runtime. It does not define archive object semantics, sch
 - Schemas and protocols are first-class governed assets.
 - Connectors do not define object truth and do not own trust semantics.
 
-See [VISION.md](/d:/Projects/Eureka/eureka/docs/VISION.md), [ARCHITECTURE.md](/d:/Projects/Eureka/eureka/docs/ARCHITECTURE.md), and [REPO_LAYOUT.md](/d:/Projects/Eureka/eureka/docs/REPO_LAYOUT.md) for the founding bootstrap documents.
-
+See [VISION.md](docs/VISION.md), [ARCHITECTURE.md](docs/ARCHITECTURE.md), and [REPO_LAYOUT.md](docs/REPO_LAYOUT.md) for the founding bootstrap documents.
