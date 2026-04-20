@@ -1,0 +1,9 @@
+component: engine
+status: bootstrap
+owned_paths:
+  - runtime/engine/**
+purpose: Hold engine implementation space and engine-facing service interfaces.
+does_not_own:
+  - surface behavior
+  - gateway public product semantics
+

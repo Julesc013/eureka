@@ -1,0 +1,50 @@
+policy: ownership
+status: bootstrap
+governed_components:
+  - archive-contracts
+  - engine
+  - gateway
+  - workbench-web
+  - app-native
+  - connectors
+shared_paths:
+  - path: contracts/ui/**
+    owners:
+      - workbench-web
+      - app-native
+    rule: Shared surface-contract area for cross-surface view models and ui contracts.
+  - path: control/**
+    owners:
+      - archive-contracts
+      - engine
+      - gateway
+      - workbench-web
+      - app-native
+      - connectors
+    rule: Repo-governance material may affect multiple components.
+  - path: docs/**
+    owners:
+      - archive-contracts
+      - engine
+      - gateway
+      - workbench-web
+      - app-native
+      - connectors
+    rule: Founding documentation is repo-wide and boundary-sensitive.
+  - path: tests/**
+    owners:
+      - engine
+      - gateway
+      - workbench-web
+      - app-native
+      - connectors
+    rule: Root integration and end-to-end tests are cross-component.
+  - path: evals/**
+    owners:
+      - engine
+      - gateway
+      - workbench-web
+      - app-native
+      - connectors
+    rule: Root evaluations measure cross-component behavior.
+

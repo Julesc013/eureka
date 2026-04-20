@@ -1,0 +1,9 @@
+component: connectors
+status: bootstrap
+owned_paths:
+  - runtime/connectors/**
+purpose: Hold external acquisition adapters that feed governed ingest, extract, and normalize interfaces.
+does_not_own:
+  - canonical object semantics
+  - trust semantics
+

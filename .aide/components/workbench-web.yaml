@@ -1,0 +1,9 @@
+component: workbench-web
+status: bootstrap
+owned_paths:
+  - surfaces/web/**
+purpose: Hold the web-facing workbench surface and its direct implementation assets.
+does_not_own:
+  - engine internals
+  - archive contract semantics
+

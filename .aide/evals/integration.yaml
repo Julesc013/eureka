@@ -1,0 +1,9 @@
+suite: integration
+status: bootstrap
+scope:
+  - root integration test scaffolding
+  - cross-component contract presence
+  - gateway and surface contract alignment
+notes:
+  - Real integration behavior remains deferred until runtime and surface logic exists.
+

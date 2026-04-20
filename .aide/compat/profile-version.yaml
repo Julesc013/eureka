@@ -1,0 +1,6 @@
+profile_name: eureka-bootstrap
+current_version: 0.1.0
+compatibility_notes:
+  - Profile metadata versioning is separate from product contract versioning.
+  - Public product compatibility promises do not originate from .aide metadata.
+

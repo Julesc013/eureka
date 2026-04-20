@@ -1,0 +1,40 @@
+policy: dependencies
+status: bootstrap
+allowed:
+  - from: surfaces/web
+    to:
+      - contracts/*
+      - contracts/gateway/public_api
+  - from: surfaces/native
+    to:
+      - contracts/*
+      - contracts/gateway/public_api
+  - from: surfaces/native
+    to:
+      - runtime/engine/sdk
+    condition: future explicit offline-or-local mode only
+  - from: runtime/gateway
+    to:
+      - runtime/engine public or service interfaces
+      - contracts/*
+  - from: runtime/connectors
+    to:
+      - runtime/engine narrow ingest, extract, and normalize interfaces
+      - contracts/*
+forbidden:
+  - from: runtime/engine
+    to: surfaces/*
+    reason: engine must remain surface-independent
+  - from: surfaces/web
+    to: runtime/engine internals
+    reason: web uses gateway public contracts in the normal path
+  - from: runtime/connectors
+    to: connector-owned object model
+    reason: connectors must not invent object truth
+  - from: runtime/connectors
+    to: connector-owned trust semantics
+    reason: trust semantics belong under governed contracts, not connectors
+  - from: .aide
+    to: product semantics or runtime behavior
+    reason: AIDE is a repo operating layer only
+

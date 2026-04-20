@@ -1,0 +1,9 @@
+format: aide-toolchain-lock
+version: 1
+repo: eureka
+pins:
+  profile_contract: 0.1.0
+  command_contract: bootstrap
+  policy_contract: bootstrap
+notes:
+  - This lock covers repo-operating metadata only.

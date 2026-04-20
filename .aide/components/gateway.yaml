@@ -1,0 +1,10 @@
+component: gateway
+status: bootstrap
+owned_paths:
+  - contracts/gateway/public_api/**
+  - runtime/gateway/**
+purpose: Govern gateway public contracts and gateway runtime implementation space.
+does_not_own:
+  - engine internals beyond declared service interfaces
+  - surface-specific presentation logic
+

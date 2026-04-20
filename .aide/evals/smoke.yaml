@@ -1,0 +1,10 @@
+suite: smoke
+status: bootstrap
+scope:
+  - repo identity and profile presence
+  - founding docs presence
+  - governed component inventory presence
+  - dependency policy presence
+notes:
+  - Smoke coverage is structural only at bootstrap time.
+

@@ -1,0 +1,12 @@
+command: dev
+status: bootstrap
+description: Lightweight repo-orientation command set for the bootstrap monorepo.
+steps:
+  - id: repo_status
+    run: git status --short --branch
+  - id: repo_inventory
+    run: rg --files
+notes:
+  - No product dev server is defined yet.
+  - This command contract is repo-operating metadata, not runtime behavior.
+

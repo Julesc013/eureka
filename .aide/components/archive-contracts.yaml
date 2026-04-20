@@ -1,0 +1,9 @@
+component: archive-contracts
+status: bootstrap
+owned_paths:
+  - contracts/archive/**
+purpose: Govern canonical archive-facing schemas, protocols, versions, fixtures, and trust assets.
+does_not_own:
+  - runtime behavior
+  - surface behavior
+

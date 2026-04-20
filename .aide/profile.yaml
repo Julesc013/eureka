@@ -1,0 +1,36 @@
+profile_version: 1
+repo:
+  name: Eureka
+  namespace: eureka
+  stage: bootstrap-pre-product
+summary: >
+  Repo operating profile for the Eureka monorepo. This profile governs repo identity,
+  component inventory, ownership, dependency policy, commands, eval grouping, and
+  compatibility metadata only.
+governed_components:
+  - archive-contracts
+  - engine
+  - gateway
+  - workbench-web
+  - app-native
+  - connectors
+scope:
+  owns:
+    - repo identity
+    - governed component list
+    - owned paths
+    - dependency policies
+    - commands
+    - policy declarations
+    - eval grouping
+    - generated agent-facing surfaces
+    - repo-contract compatibility and migration metadata
+  does_not_own:
+    - archive object semantics
+    - schema meaning
+    - protocol meaning
+    - runtime behavior
+    - action recipe semantics
+    - snapshot semantics
+    - public product compatibility promises
+

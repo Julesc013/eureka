@@ -1,0 +1,11 @@
+command: ci
+status: bootstrap
+description: Minimal repo-consistency checks available in an otherwise empty bootstrap repo.
+steps:
+  - id: whitespace
+    run: git diff --check
+  - id: repo_contract
+    run: rg -n "governed component|Dependency Law|AIDE" README.md AGENTS.md docs .aide
+notes:
+  - Product build and runtime checks are intentionally absent until scaffolding exists.
+
