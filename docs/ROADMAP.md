@@ -30,6 +30,8 @@ Current status within this stage: three local deterministic thin slices now exis
 - add native shell scaffolding with offline-path boundaries still explicitly gated
 - add basic cross-component verification paths
 
+Current status within this stage: the first compatibility-first web surface slice now exists under `surfaces/web/`. It is stdlib-only, local-only, server-rendered, and consumes the transport-neutral gateway submit/read boundary plus the shared `WorkbenchSession` view model without importing engine internals.
+
 ## Stage 4: Bounded Product Work
 
 - begin software-first resolution, preservation, and reconstruction implementation

@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus three executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus four executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -17,6 +17,8 @@ Current status: foundational scaffold plus three executable local deterministic 
 - transport-neutral gateway submit and read boundary over an in-memory job service
 - shared workbench-session view-model mapping exercised without implementing web or native shells
 - local demo command that shows submit, read, and optional shared view-model output over the connector-shaped path
+- first server-rendered web workbench slice under `surfaces/web/` that consumes the public gateway boundary and shared workbench session without engine coupling
+- tiny stdlib local server entrypoint for the compatibility-first web workbench page
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -26,8 +28,9 @@ Current status: foundational scaffold plus three executable local deterministic 
 - finalized archive schema meaning
 - automated dependency-policy enforcement tooling
 - mature gateway API semantics, wider public read coverage, and durable submit versus read guarantees
+- real web application structure, browser-side behavior, authentication, and deployment assumptions
 - real external connectors, ranking, retrieval, and broader provenance or trust semantics
 - persistence, background workers, and async orchestration
-- web routes, web pages, and native runtime behavior
+- richer web routing and page structure beyond the bootstrap compatibility-first workbench page, plus native runtime behavior
 - native offline mode decisions
 - release automation and packaging implementation
