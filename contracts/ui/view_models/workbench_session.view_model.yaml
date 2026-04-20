@@ -1,20 +1,66 @@
-name: WorkbenchSession
-status: draft-placeholder
-normativity: non-normative
-summary: Surface-facing session model for a web or native workbench experience.
-fields:
-  - name: session_id
-    meaning: Draft surface session identifier
-  - name: selected_subject
-    meaning: Draft selected object or target reference
-  - name: active_job
-    meaning: Draft gateway job summary
-  - name: visible_claims
-    meaning: Draft claim list prepared for presentation
-  - name: notices
-    meaning: Draft warnings, blockers, or operator notes
-constraints:
-  - Derived from governed contracts and gateway outputs, not engine internals.
-open_questions:
-  - Which view-model fields should stay shared across web and native surfaces?
-
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/workbench_session.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
+title: WorkbenchSession
+description: Draft shared surface-facing session model aligned with the gateway public API job envelope.
+type: object
+additionalProperties: false
+properties:
+  session_id:
+    type: string
+    description: Draft surface session identifier.
+  active_job:
+    type: object
+    additionalProperties: false
+    description: Draft active job summary aligned with the gateway ResolutionJob envelope.
+    properties:
+      job_id:
+        type: string
+      status:
+        type: string
+        enum:
+          - accepted
+          - running
+          - blocked
+          - completed
+          - failed
+      target_ref:
+        type: string
+    required:
+      - job_id
+      - status
+  selected_object:
+    type: object
+    additionalProperties: false
+    description: Draft selected object summary aligned with the gateway result envelope.
+    properties:
+      id:
+        type: string
+      kind:
+        type: string
+      label:
+        type: string
+    required:
+      - id
+  notices:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+        severity:
+          type: string
+          enum:
+            - info
+            - warning
+            - error
+        message:
+          type: string
+      required:
+        - code
+        - severity
+required:
+  - session_id
+x-eureka-status: draft

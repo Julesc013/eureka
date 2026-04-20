@@ -1,81 +1,202 @@
 openapi: 3.1.0
+jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
 info:
   title: Eureka Gateway Public API
-  version: 0.0.0-draft
+  version: 0.1.0-draft
+  summary: Draft gateway boundary for the normal online surface path.
   description: >
-    Bootstrap placeholder for the Eureka gateway public API. This file is descriptive,
-    incomplete, and not yet a product compatibility promise.
+    Draft public API contract for web and native surfaces in the normal online path.
+    Internal broker, relay, worker, scheduler, and auth protocols are intentionally
+    excluded from this document.
 servers:
   - url: https://gateway.example.invalid
-    description: Placeholder only
+    description: Non-routable placeholder endpoint for draft contract work.
+tags:
+  - name: ResolutionJobs
+    description: Draft bounded resolution job submission and read operations.
 paths:
   /v0/resolution/jobs:
     post:
-      summary: Submit a bounded resolution job request
+      tags:
+        - ResolutionJobs
+      summary: Submit a bounded resolution job
       description: >
-        Placeholder operation for a surface to request resolution or reconstruction work
-        through the gateway boundary.
-      operationId: createResolutionJob
+        Draft public boundary for a surface to request bounded resolution work through
+        the gateway. This operation does not expose internal orchestration protocols.
+      operationId: submitResolutionJob
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ResolutionJobRequest'
+              $ref: '#/components/schemas/SubmitResolutionJobRequest'
       responses:
         '202':
-          description: Draft accepted response
+          description: Draft accepted job envelope
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResolutionJob'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
   /v0/resolution/jobs/{job_id}:
     get:
-      summary: Read draft job status
+      tags:
+        - ResolutionJobs
+      summary: Read a bounded resolution job
+      description: >
+        Draft read boundary for job state and any bounded result summary. Internal
+        broker and worker topology remains hidden.
       operationId: getResolutionJob
       parameters:
-        - name: job_id
-          in: path
-          required: true
-          schema:
-            type: string
+        - $ref: '#/components/parameters/JobId'
       responses:
         '200':
-          description: Draft job record
+          description: Draft job envelope
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResolutionJob'
+        '404':
+          description: Draft not found envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
 components:
+  parameters:
+    JobId:
+      name: job_id
+      in: path
+      required: true
+      description: Draft identifier of a bounded resolution job.
+      schema:
+        type: string
   schemas:
-    ResolutionJobRequest:
+    SubmitResolutionJobRequest:
       type: object
       additionalProperties: false
-      description: Placeholder request shape. Fields remain provisional.
+      description: Draft request envelope for bounded resolution work.
       properties:
-        target:
+        target_ref:
           type: string
-          description: Draft subject selector or access path reference.
+          description: Draft subject selector, access path, or archive reference.
         requested_outputs:
           type: array
+          description: Optional draft output labels requested by the surface.
           items:
             type: string
-        mode:
-          type: string
-          description: Draft execution mode label.
+      required:
+        - target_ref
     ResolutionJob:
       type: object
       additionalProperties: false
-      description: Placeholder job envelope for the public API.
+      description: Draft bounded job envelope exposed through the public API.
       properties:
         job_id:
           type: string
+          description: Draft job identifier.
         status:
           type: string
-          description: Draft status label only.
-        links:
-          type: object
-          additionalProperties:
+          description: Draft job status label.
+          enum:
+            - accepted
+            - running
+            - blocked
+            - completed
+            - failed
+        target_ref:
+          type: string
+          description: Draft subject selector or access path reference copied from the request.
+        requested_outputs:
+          type: array
+          description: Optional draft output labels copied from the request.
+          items:
             type: string
-x-eureka-status: draft-placeholder
-
+        submitted_at:
+          type: string
+          description: Optional draft submission timestamp.
+        result:
+          $ref: '#/components/schemas/ResolutionResultEnvelope'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - job_id
+        - status
+    ResolutionResultEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft bounded result summary returned as part of a resolution job.
+      properties:
+        primary_object:
+          $ref: '#/components/schemas/ObjectSummary'
+        snapshot_manifest_id:
+          type: string
+          description: Optional draft reference to a snapshot manifest.
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+    ObjectSummary:
+      type: object
+      additionalProperties: false
+      description: Draft public summary of an archive object suitable for surfaces.
+      properties:
+        id:
+          type: string
+          description: Draft object identifier.
+        kind:
+          type: string
+          description: Draft object classification label.
+        label:
+          type: string
+          description: Optional human-readable object label.
+      required:
+        - id
+    Notice:
+      type: object
+      additionalProperties: false
+      description: Draft surface-safe notice emitted through the public API boundary.
+      properties:
+        code:
+          type: string
+          description: Draft machine-readable notice code.
+        severity:
+          type: string
+          enum:
+            - info
+            - warning
+            - error
+        message:
+          type: string
+          description: Optional human-readable notice message.
+      required:
+        - code
+        - severity
+    ErrorEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft error envelope for public API failures.
+      properties:
+        code:
+          type: string
+          description: Draft machine-readable error code.
+        message:
+          type: string
+          description: Optional human-readable error message.
+      required:
+        - code
+x-eureka-boundary: public-api
+x-eureka-status: draft

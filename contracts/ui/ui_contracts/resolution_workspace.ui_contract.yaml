@@ -1,12 +1,33 @@
 name: ResolutionWorkspace
-status: draft-placeholder
-normativity: non-normative
-summary: Shared interaction contract for a surface that initiates and observes resolution work.
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that submit bounded
+  resolution work and observe draft results through the gateway public API boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - POST /v0/resolution/jobs
+    - GET /v0/resolution/jobs/{job_id}
+  shared_view_models:
+    - contracts/ui/view_models/workbench_session.view_model.yaml
+  shared_result_shapes:
+    - ResolutionJob
+    - ResolutionResultEnvelope
+    - ObjectSummary
 surface_expectations:
-  - surfaces submit work through the gateway public API in the normal path
-  - surfaces render claim and evidence material from governed contracts
+  - surfaces submit bounded work through the public gateway boundary and do not assume internal broker, relay, worker, or scheduler topology
+  - surfaces render draft job state, object summaries, and notices from governed contracts
   - surfaces disclose blocked or deferred work rather than inventing completion
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
 deferred_topics:
-  - offline native interactions
-  - optimistic local execution
-  - finalized navigation semantics
+  - explicit offline native mode and any resulting sdk usage
+  - public read contracts beyond the current bounded resolution job draft
+  - finalized surface-specific navigation or shell behavior
