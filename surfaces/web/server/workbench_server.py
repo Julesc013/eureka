@@ -6,17 +6,24 @@ from typing import Callable
 from urllib.parse import parse_qs
 
 from runtime.gateway.public_api import (
+    InspectResolutionBundleRequest,
     ResolutionActionRequest,
+    ResolutionBundleInspectionPublicApi,
     ResolutionActionsPublicApi,
     ResolutionJobsPublicApi,
     SearchCatalogRequest,
     SearchPublicApi,
     SubmitResolutionJobRequest,
+    bundle_inspection_envelope_to_view_model,
     resolution_actions_envelope_to_view_model,
     resolution_job_envelope_to_workbench_session,
     search_response_envelope_to_search_results_view_model,
 )
-from surfaces.web.workbench import render_resolution_workspace_html, render_search_results_html
+from surfaces.web.workbench import (
+    render_bundle_inspection_html,
+    render_resolution_workspace_html,
+    render_search_results_html,
+)
 
 
 def render_resolution_workspace_page(
@@ -60,12 +67,14 @@ class WorkbenchWsgiApp:
         resolution_public_api: ResolutionJobsPublicApi,
         *,
         actions_public_api: ResolutionActionsPublicApi | None = None,
+        bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None = None,
         search_public_api: SearchPublicApi,
         default_target_ref: str,
         session_id: str = "session.web-workbench",
     ) -> None:
         self._resolution_public_api = resolution_public_api
         self._actions_public_api = actions_public_api
+        self._bundle_inspection_public_api = bundle_inspection_public_api
         self._search_public_api = search_public_api
         self._default_target_ref = default_target_ref
         self._session_id = session_id
@@ -92,6 +101,7 @@ class WorkbenchWsgiApp:
         if path not in {
             "/",
             "/search",
+            "/inspect/bundle",
             "/actions/export-resolution-manifest",
             "/actions/export-resolution-bundle",
         }:
@@ -103,7 +113,8 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/actions/export-resolution-manifest', and '/actions/export-resolution-bundle'."
+                        "'/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/actions/export-resolution-bundle'."
                     ),
                 ),
             )
@@ -123,6 +134,13 @@ class WorkbenchWsgiApp:
             page = render_search_results_page(
                 self._search_public_api,
                 query,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/inspect/bundle":
+            bundle_path = self._resolve_bundle_path(query_string)
+            page = render_bundle_inspection_page(
+                self._bundle_inspection_public_api,
+                bundle_path,
             )
             return self._respond(start_response, status="200 OK", body=page)
 
@@ -169,6 +187,11 @@ class WorkbenchWsgiApp:
         query = parse_qs(query_string, keep_blank_values=False)
         raw_query = query.get("q", [""])[0].strip()
         return raw_query
+
+    def _resolve_bundle_path(self, query_string: str) -> str:
+        query = parse_qs(query_string, keep_blank_values=False)
+        raw_bundle_path = query.get("bundle_path", [""])[0].strip()
+        return raw_bundle_path
 
     def _respond(
         self,
@@ -256,3 +279,53 @@ def render_search_results_page(
     response = public_api.search_records(SearchCatalogRequest.from_parts(normalized_query))
     search_results = search_response_envelope_to_search_results_view_model(response.body)
     return render_search_results_html(search_results)
+
+
+def render_bundle_inspection_page(
+    public_api: ResolutionBundleInspectionPublicApi | None,
+    bundle_path: str,
+) -> str:
+    normalized_bundle_path = bundle_path.strip()
+    if not normalized_bundle_path:
+        return render_bundle_inspection_html(
+            {
+                "status": "blocked",
+                "inspection_mode": "local_offline",
+                "source": {
+                    "kind": "local_path",
+                    "locator": "(not provided)",
+                },
+                "notices": [
+                    {
+                        "code": "bundle_path_required",
+                        "severity": "error",
+                        "message": "Provide a local bundle_path query parameter to inspect a bundle in this bootstrap demo.",
+                    }
+                ],
+            }
+        )
+
+    if public_api is None:
+        return render_bundle_inspection_html(
+            {
+                "status": "blocked",
+                "inspection_mode": "local_offline",
+                "source": {
+                    "kind": "local_path",
+                    "locator": normalized_bundle_path,
+                },
+                "notices": [
+                    {
+                        "code": "bundle_inspection_unavailable",
+                        "severity": "error",
+                        "message": "This bootstrap workbench was not configured with a public bundle inspection boundary.",
+                    }
+                ],
+            }
+        )
+
+    response = public_api.inspect_bundle(
+        InspectResolutionBundleRequest.from_bundle_path(normalized_bundle_path),
+    )
+    bundle_inspection = bundle_inspection_envelope_to_view_model(response.body)
+    return render_bundle_inspection_html(bundle_inspection)

@@ -14,11 +14,17 @@ if str(REPO_ROOT) not in sys.path:
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.gateway import (
     build_demo_resolution_actions_public_api,
+    build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
 )
-from runtime.gateway.public_api import ResolutionActionRequest
-from surfaces.web.server import WorkbenchWsgiApp, render_resolution_workspace_page, render_search_results_page
+from runtime.gateway.public_api import InspectResolutionBundleRequest, ResolutionActionRequest
+from surfaces.web.server import (
+    WorkbenchWsgiApp,
+    render_bundle_inspection_page,
+    render_resolution_workspace_page,
+    render_search_results_page,
+)
 
 
 def main() -> int:
@@ -50,6 +56,16 @@ def main() -> int:
         help="Export the deterministic resolution bundle ZIP for the selected target to stdout.",
     )
     parser.add_argument(
+        "--inspect-bundle",
+        metavar="PATH",
+        help="Inspect a local resolution bundle path and print the public inspection envelope as JSON.",
+    )
+    parser.add_argument(
+        "--render-inspection",
+        metavar="PATH",
+        help="Render the compatibility-first bundle inspection page for a local bundle path.",
+    )
+    parser.add_argument(
         "--host",
         default="127.0.0.1",
         help="Host interface for the local bootstrap server.",
@@ -61,11 +77,22 @@ def main() -> int:
         help="Port for the local bootstrap server.",
     )
     args = parser.parse_args()
-    if args.export_manifest and args.export_bundle:
-        parser.error("--export-manifest and --export-bundle cannot be used together.")
+    if sum(
+        int(flag)
+        for flag in (
+            args.export_manifest,
+            args.export_bundle,
+            args.inspect_bundle is not None,
+            args.render_inspection is not None,
+        )
+    ) > 1:
+        parser.error(
+            "--export-manifest, --export-bundle, --inspect-bundle, and --render-inspection are mutually exclusive."
+        )
 
     target_ref = args.target_ref or SyntheticSoftwareConnector().default_target_ref()
     actions_public_api = build_demo_resolution_actions_public_api()
+    bundle_inspection_public_api = build_demo_resolution_bundle_inspection_public_api()
     resolution_public_api = build_demo_resolution_jobs_public_api()
     search_public_api = build_demo_search_public_api()
 
@@ -87,6 +114,22 @@ def main() -> int:
         sys.stdout.write(response.payload.decode("utf-8"))
         return 0
 
+    if args.inspect_bundle is not None:
+        response = bundle_inspection_public_api.inspect_bundle(
+            InspectResolutionBundleRequest.from_bundle_path(args.inspect_bundle)
+        )
+        sys.stdout.write(json.dumps(response.body, indent=2, sort_keys=True))
+        sys.stdout.write("\n")
+        return 0
+
+    if args.render_inspection is not None:
+        html = render_bundle_inspection_page(
+            bundle_inspection_public_api,
+            args.render_inspection,
+        )
+        sys.stdout.write(html)
+        return 0
+
     if args.render_once:
         if args.search_query is not None:
             html = render_search_results_page(search_public_api, args.search_query)
@@ -102,6 +145,7 @@ def main() -> int:
     app = WorkbenchWsgiApp(
         resolution_public_api,
         actions_public_api=actions_public_api,
+        bundle_inspection_public_api=bundle_inspection_public_api,
         search_public_api=search_public_api,
         default_target_ref=target_ref,
     )
@@ -115,6 +159,8 @@ def main() -> int:
             f"http://{args.host}:{args.port}/actions/export-resolution-manifest?target_ref={quote(target_ref, safe='')}\n"
             "Serving Eureka bundle export at "
             f"http://{args.host}:{args.port}/actions/export-resolution-bundle?target_ref={quote(target_ref, safe='')}\n"
+            "Serving Eureka bundle inspection at "
+            f"http://{args.host}:{args.port}/inspect/bundle?bundle_path={quote(str((Path.cwd() / 'example-resolution-bundle.zip')), safe='')}\n"
         )
         sys.stdout.flush()
         httpd.serve_forever()
