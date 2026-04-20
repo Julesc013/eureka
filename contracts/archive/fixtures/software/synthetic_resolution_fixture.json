@@ -24,6 +24,81 @@
         "kind": "fixture_path",
         "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
       }
+    },
+    {
+      "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+      "object": {
+        "id": "obj.synthetic-demo-suite",
+        "kind": "software",
+        "label": "Synthetic Demo Suite"
+      },
+      "state": {
+        "id": "state.synthetic-demo-suite.release",
+        "subject_id": "obj.synthetic-demo-suite",
+        "kind": "release",
+        "standing": "available"
+      },
+      "representation": {
+        "id": "rep.synthetic-demo-suite.source",
+        "object_id": "obj.synthetic-demo-suite",
+        "kind": "source_archive",
+        "format": "application/vnd.eureka.synthetic.bundle"
+      },
+      "access_path": {
+        "id": "access.synthetic-demo-suite.fixture",
+        "kind": "fixture_path",
+        "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+      }
+    },
+    {
+      "target_ref": "fixture:software/compatibility-lab@3.2.1",
+      "object": {
+        "id": "obj.compatibility-lab",
+        "kind": "software",
+        "label": "Compatibility Lab"
+      },
+      "state": {
+        "id": "state.compatibility-lab.release",
+        "subject_id": "obj.compatibility-lab",
+        "kind": "release",
+        "standing": "available"
+      },
+      "representation": {
+        "id": "rep.compatibility-lab.source",
+        "object_id": "obj.compatibility-lab",
+        "kind": "source_archive",
+        "format": "application/vnd.eureka.synthetic.bundle"
+      },
+      "access_path": {
+        "id": "access.compatibility-lab.fixture",
+        "kind": "fixture_path",
+        "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+      }
+    },
+    {
+      "target_ref": "fixture:software/archive-viewer@0.9.0",
+      "object": {
+        "id": "obj.archive-viewer",
+        "kind": "software",
+        "label": "Archive Viewer"
+      },
+      "state": {
+        "id": "state.archive-viewer.release",
+        "subject_id": "obj.archive-viewer",
+        "kind": "release",
+        "standing": "available"
+      },
+      "representation": {
+        "id": "rep.archive-viewer.source",
+        "object_id": "obj.archive-viewer",
+        "kind": "source_archive",
+        "format": "application/vnd.eureka.synthetic.bundle"
+      },
+      "access_path": {
+        "id": "access.archive-viewer.fixture",
+        "kind": "fixture_path",
+        "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+      }
     }
   ]
 }

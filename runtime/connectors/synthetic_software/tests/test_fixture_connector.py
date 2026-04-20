@@ -6,11 +6,19 @@ from runtime.connectors.synthetic_software import SyntheticSoftwareConnector, lo
 
 
 class SyntheticSoftwareConnectorTestCase(unittest.TestCase):
-    def test_source_loading_returns_governed_fixture_records(self) -> None:
+    def test_source_loading_returns_a_small_governed_fixture_corpus(self) -> None:
         records = load_synthetic_source_records()
 
-        self.assertEqual(len(records), 1)
-        self.assertEqual(records[0].target_ref, "fixture:software/synthetic-demo-app@1.0.0")
+        self.assertEqual(len(records), 4)
+        self.assertEqual(
+            [record.target_ref for record in records],
+            [
+                "fixture:software/synthetic-demo-app@1.0.0",
+                "fixture:software/synthetic-demo-suite@2.0.0",
+                "fixture:software/compatibility-lab@3.2.1",
+                "fixture:software/archive-viewer@0.9.0",
+            ],
+        )
         self.assertEqual(records[0].source_name, "synthetic_software_fixture")
         self.assertEqual(
             records[0].source_locator,
