@@ -8,8 +8,10 @@ steps:
     run: rg -n "governed component|Dependency Law|AIDE" README.md AGENTS.md docs .aide
   - id: runtime_tests
     run: python -m unittest discover -s runtime -t .
+  - id: surface_tests
+    run: python -m unittest discover -s surfaces -t .
   - id: integration_tests
     run: python -m unittest discover -s tests -t .
 notes:
-  - Checks run only against the local deterministic Python stdlib thin slice.
+  - Checks run only against the local deterministic Python stdlib thin slices.
   - This command contract is repo-operating metadata, not proof of a local AIDE product CLI.
