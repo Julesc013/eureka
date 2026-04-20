@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 import sys
 from urllib.parse import quote
@@ -11,7 +12,12 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
-from runtime.gateway import build_demo_resolution_jobs_public_api, build_demo_search_public_api
+from runtime.gateway import (
+    build_demo_resolution_actions_public_api,
+    build_demo_resolution_jobs_public_api,
+    build_demo_search_public_api,
+)
+from runtime.gateway.public_api import ResolutionActionRequest
 from surfaces.web.server import WorkbenchWsgiApp, render_resolution_workspace_page, render_search_results_page
 
 
@@ -34,6 +40,11 @@ def main() -> int:
         help="Render one HTML page to stdout and exit instead of starting the local server.",
     )
     parser.add_argument(
+        "--export-manifest",
+        action="store_true",
+        help="Export the bounded resolution manifest for the selected target and print JSON to stdout.",
+    )
+    parser.add_argument(
         "--host",
         default="127.0.0.1",
         help="Host interface for the local bootstrap server.",
@@ -47,19 +58,33 @@ def main() -> int:
     args = parser.parse_args()
 
     target_ref = args.target_ref or SyntheticSoftwareConnector().default_target_ref()
+    actions_public_api = build_demo_resolution_actions_public_api()
     resolution_public_api = build_demo_resolution_jobs_public_api()
     search_public_api = build_demo_search_public_api()
+
+    if args.export_manifest:
+        response = actions_public_api.export_resolution_manifest(
+            ResolutionActionRequest.from_parts(target_ref)
+        )
+        sys.stdout.write(json.dumps(response.body, indent=2, sort_keys=True))
+        sys.stdout.write("\n")
+        return 0
 
     if args.render_once:
         if args.search_query is not None:
             html = render_search_results_page(search_public_api, args.search_query)
         else:
-            html = render_resolution_workspace_page(resolution_public_api, target_ref)
+            html = render_resolution_workspace_page(
+                resolution_public_api,
+                target_ref,
+                actions_public_api=actions_public_api,
+            )
         sys.stdout.write(html)
         return 0
 
     app = WorkbenchWsgiApp(
         resolution_public_api,
+        actions_public_api=actions_public_api,
         search_public_api=search_public_api,
         default_target_ref=target_ref,
     )
@@ -69,6 +94,8 @@ def main() -> int:
             f"http://{args.host}:{args.port}/?target_ref={quote(target_ref, safe='')}\n"
             "Serving Eureka compatibility search at "
             f"http://{args.host}:{args.port}/search?q={quote('synthetic', safe='')}\n"
+            "Serving Eureka manifest export at "
+            f"http://{args.host}:{args.port}/actions/export-resolution-manifest?target_ref={quote(target_ref, safe='')}\n"
         )
         sys.stdout.flush()
         httpd.serve_forever()

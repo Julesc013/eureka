@@ -4,7 +4,11 @@ from html import escape
 from typing import Any, Mapping
 
 
-def render_resolution_workspace_html(workbench_session: Mapping[str, Any]) -> str:
+def render_resolution_workspace_html(
+    workbench_session: Mapping[str, Any],
+    *,
+    resolution_actions: Mapping[str, Any] | None = None,
+) -> str:
     active_job = _require_mapping(workbench_session.get("active_job"), "workbench_session.active_job")
     target_ref = _require_string(active_job.get("target_ref"), "workbench_session.active_job.target_ref")
     status = _require_string(active_job.get("status"), "workbench_session.active_job.status")
@@ -12,6 +16,9 @@ def render_resolution_workspace_html(workbench_session: Mapping[str, Any]) -> st
 
     selected_object = _optional_mapping(workbench_session.get("selected_object"), "workbench_session.selected_object")
     notices = _notice_list(workbench_session.get("notices"))
+    actions_model = _optional_mapping(resolution_actions, "resolution_actions")
+    actions = _action_list(actions_model.get("actions")) if actions_model is not None else []
+    action_notices = _notice_list(actions_model.get("notices")) if actions_model is not None else []
 
     parts = [
         "<!doctype html>",
@@ -86,6 +93,50 @@ def render_resolution_workspace_html(workbench_session: Mapping[str, Any]) -> st
             ]
         )
 
+    parts.extend(
+        [
+            "      <section>",
+            "        <h2>Actions</h2>",
+        ]
+    )
+    available_actions = [action for action in actions if action["availability"] == "available"]
+    if available_actions:
+        parts.append("        <ul>")
+        for action in available_actions:
+            parts.append(
+                "          "
+                f"<li><a href=\"{escape(_require_string(action.get('href'), 'action.href'), quote=True)}\">"
+                f"{escape(_require_string(action.get('label'), 'action.label'))}</a></li>"
+            )
+        parts.append("        </ul>")
+    else:
+        parts.append("        <p>No available actions are exposed for this target.</p>")
+
+    unavailable_actions = [action for action in actions if action["availability"] != "available"]
+    if unavailable_actions:
+        parts.append("        <ul>")
+        for action in unavailable_actions:
+            parts.append(
+                "          "
+                f"<li>{escape(_require_string(action.get('label'), 'action.label'))} "
+                f"({escape(_require_string(action.get('availability'), 'action.availability'))})</li>"
+            )
+        parts.append("        </ul>")
+
+    if action_notices:
+        parts.append("        <ul>")
+        for notice in action_notices:
+            code = _require_string(notice.get("code"), "action_notice.code")
+            severity = _require_string(notice.get("severity"), "action_notice.severity")
+            message = _optional_string(notice.get("message"), "action_notice.message")
+            item = f"          <li><strong>{escape(code)}</strong> ({escape(severity)})"
+            if message is not None:
+                item += f": {escape(message)}"
+            item += "</li>"
+            parts.append(item)
+        parts.append("        </ul>")
+    parts.append("      </section>")
+
     if notices:
         parts.extend(
             [
@@ -146,6 +197,17 @@ def _notice_list(value: Any) -> list[Mapping[str, Any]]:
             raise ValueError(f"workbench_session.notices[{index}] must be an object.")
         notices.append(item)
     return notices
+
+
+def _action_list(value: Any) -> list[Mapping[str, Any]]:
+    if not isinstance(value, list):
+        raise ValueError("resolution_actions.actions must be a list when provided.")
+    actions: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"resolution_actions.actions[{index}] must be an object.")
+        actions.append(item)
+    return actions
 
 
 def _require_string(value: Any, field_name: str) -> str:
