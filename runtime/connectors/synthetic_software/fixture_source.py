@@ -42,5 +42,5 @@ def _coerce_source_record(raw_entry: Any, fixture_path: Path, index: int) -> Syn
         target_ref=target_ref,
         source_name="synthetic_software_fixture",
         payload=dict(raw_entry),
-        source_locator=str(fixture_path.relative_to(REPO_ROOT)),
+        source_locator=fixture_path.relative_to(REPO_ROOT).as_posix(),
     )
