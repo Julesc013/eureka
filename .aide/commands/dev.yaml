@@ -6,6 +6,8 @@ steps:
     run: git status --short --branch
   - id: repo_inventory
     run: rg --files
+  - id: architecture_boundaries
+    run: python scripts/check_architecture_boundaries.py
   - id: thin_slice_known
     run: python scripts/demo_resolution_slice.py
   - id: thin_slice_unknown
@@ -59,6 +61,7 @@ steps:
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
+  - The architecture-boundary check is a narrow repo-local Python import guardrail, not a universal policy engine.
   - Submit and read remain in-memory bootstrap semantics; no real HTTP server or async worker exists yet.
   - The web workbench demo uses a tiny stdlib local server only for bootstrap proof and does not imply a deployment choice.
   - Search semantics remain bootstrap-scale deterministic matching over a small synthetic corpus and do not imply final retrieval or ranking behavior.
