@@ -9,7 +9,7 @@ These questions are intentionally left open during bootstrap:
 5. Which draft job statuses, notices, and result envelope fields should become durable public compatibility promises?
 6. Which shared UI state should be standardized across web and native without over-constraining either surface?
 7. What is the first durable versioning strategy for archive contracts, gateway contracts, and migration metadata?
-8. When should the advisory path-based dependency policy become mechanically enforced, and by what repo-local check?
+8. How far should the current narrow Python import checker grow beyond the bootstrap rules it enforces today, and which additional boundaries are worth checking before it becomes noisy or overcommitted?
 9. When should the current synthetic connector and normalized-record path expand beyond governed local fixtures into the first real acquisition adapter, and which normalized fields should remain stable when it does?
 10. If job execution later becomes asynchronous, which parts of the current bounded job envelope should remain stable?
 11. Should submit and read remain one shared public envelope shape, or should they diverge into distinct durable contract types before any real HTTP boundary is introduced?

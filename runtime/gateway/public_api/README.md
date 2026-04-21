@@ -26,6 +26,8 @@ Current bootstrap scope:
   implementing a web or native shell
 - map public bundle inspection envelopes into a shared inspection view model without
   implementing a web or native shell
+- expose narrow bootstrap demo composition helpers so current surfaces can bootstrap public APIs without importing non-public gateway modules directly
+- stay mechanically separated from `surfaces/**` by the repo-local architecture-boundary checker
 
 Out of scope here:
 

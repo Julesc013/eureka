@@ -29,6 +29,7 @@ Current status: foundational scaffold plus eleven executable local deterministic
 - first deterministic local store/cache seam that assigns stable artifact identity, stores exported manifest and bundle artifacts in a local content-addressed store, and reads them back through the public boundary
 - first stable resolved-resource identity seam that derives a deterministic bootstrap `resolved_resource_id` and propagates it across resolution, search, action, export, store, inspection, and compatibility-first surface projection
 - first non-web local CLI surface under `surfaces/native/cli/` that reuses the same gateway public boundary and shared surface-neutral mappings already proven by the web surface for exact resolution, deterministic search, export, inspection, and stored-export flows
+- first repo-local architectural-boundary checker under `scripts/check_architecture_boundaries.py` that enforces the current Python import layering between surfaces, `runtime/gateway/public_api`, connectors, and engine
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -36,7 +37,7 @@ Current status: foundational scaffold plus eleven executable local deterministic
 ## Intentionally Deferred
 
 - finalized archive schema meaning
-- automated dependency-policy enforcement tooling
+- broader automated dependency-policy enforcement tooling beyond the current narrow Python import checker
 - mature gateway API semantics, wider public read coverage, and durable submit versus read guarantees
 - final action semantics, installer behavior, download handling, restore/import handling, and durable manifest, bundle, inspection, or store guarantees
 - final global identity semantics, cross-source merge behavior, and any durable resource-identity guarantees beyond the current bootstrap seam

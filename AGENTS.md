@@ -40,5 +40,6 @@
 - Keep changes narrowly scoped to the requested boundary.
 - Prefer governed contract edits over hidden coupling.
 - When a task crosses component boundaries, name the boundary crossing in the plan and in the final report.
+- Run `python scripts/check_architecture_boundaries.py` when Python-layering changes could affect runtime, gateway, connector, or surface boundaries.
 - If verification cannot be completed, say so plainly and list the reason.
 - If follow-up work is intentionally deferred, list it under a clear deferred or open-items heading.
