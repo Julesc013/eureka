@@ -4,6 +4,7 @@ from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.public import Notice, ResolutionRequest, ResolutionResult
 from runtime.engine.interfaces.service import ResolutionOutcome, ResolutionService
 from runtime.engine.resolve.object_summary import normalized_record_to_object_summary
+from runtime.engine.resolve.resolved_resource_identity import resolved_resource_id_for_record
 
 
 class ExactMatchResolutionService(ResolutionService):
@@ -26,5 +27,8 @@ class ExactMatchResolutionService(ResolutionService):
 
         return ResolutionOutcome(
             status="completed",
-            result=ResolutionResult(primary_object=normalized_record_to_object_summary(record)),
+            result=ResolutionResult(
+                resolved_resource_id=resolved_resource_id_for_record(record),
+                primary_object=normalized_record_to_object_summary(record),
+            ),
         )

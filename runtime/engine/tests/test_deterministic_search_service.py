@@ -7,17 +7,17 @@ from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.extract import extract_synthetic_source_record
 from runtime.engine.interfaces.normalize import normalize_extracted_record
 from runtime.engine.interfaces.public import SearchRequest
-from runtime.engine.resolve import DeterministicSearchService
+from runtime.engine.resolve import DeterministicSearchService, resolved_resource_id_for_record
 
 
 class DeterministicSearchServiceTestCase(unittest.TestCase):
     def setUp(self) -> None:
         source_records = SyntheticSoftwareConnector().load_source_records()
-        normalized_records = tuple(
+        self.normalized_records = tuple(
             normalize_extracted_record(extract_synthetic_source_record(record))
             for record in source_records
         )
-        self.service = DeterministicSearchService(NormalizedCatalog(normalized_records))
+        self.service = DeterministicSearchService(NormalizedCatalog(self.normalized_records))
 
     def test_search_returns_multiple_matches_in_catalog_order(self) -> None:
         response = self.service.search(SearchRequest.from_parts("synthetic"))
@@ -27,6 +27,13 @@ class DeterministicSearchServiceTestCase(unittest.TestCase):
             [
                 "fixture:software/synthetic-demo-app@1.0.0",
                 "fixture:software/synthetic-demo-suite@2.0.0",
+            ],
+        )
+        self.assertEqual(
+            [result.resolved_resource_id for result in response.results],
+            [
+                resolved_resource_id_for_record(self.normalized_records[0]),
+                resolved_resource_id_for_record(self.normalized_records[1]),
             ],
         )
         self.assertIsNone(response.absence)

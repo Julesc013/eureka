@@ -54,12 +54,15 @@ class Notice:
 
 @dataclass(frozen=True)
 class ResolutionResult:
+    resolved_resource_id: str | None = None
     primary_object: ObjectSummary | None = None
     snapshot_manifest_id: str | None = None
     notices: tuple[Notice, ...] = ()
 
     def to_dict(self) -> dict[str, Any]:
         payload: dict[str, Any] = {"notices": [notice.to_dict() for notice in self.notices]}
+        if self.resolved_resource_id is not None:
+            payload["resolved_resource_id"] = self.resolved_resource_id
         if self.primary_object is not None:
             payload["primary_object"] = self.primary_object.to_dict()
         if self.snapshot_manifest_id is not None:

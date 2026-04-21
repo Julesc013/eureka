@@ -3,9 +3,15 @@
 from runtime.engine.resolve.deterministic_search_service import DeterministicSearchService
 from runtime.engine.resolve.exact_match_resolution_service import ExactMatchResolutionService
 from runtime.engine.resolve.object_summary import normalized_record_to_object_summary
+from runtime.engine.resolve.resolved_resource_identity import (
+    resolved_resource_id_for_record,
+    resolved_resource_id_for_values,
+)
 
 __all__ = [
     "DeterministicSearchService",
     "ExactMatchResolutionService",
     "normalized_record_to_object_summary",
+    "resolved_resource_id_for_record",
+    "resolved_resource_id_for_values",
 ]

@@ -21,6 +21,7 @@ class SearchRequest:
 class SearchResultEntry:
     target_ref: str
     object_summary: ObjectSummary
+    resolved_resource_id: str | None = None
 
 
 @dataclass(frozen=True)

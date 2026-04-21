@@ -4,6 +4,7 @@ from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.public import Notice, SearchRequest, SearchResponse, SearchResultEntry
 from runtime.engine.interfaces.service import SearchService
 from runtime.engine.resolve.object_summary import normalized_record_to_object_summary
+from runtime.engine.resolve.resolved_resource_identity import resolved_resource_id_for_record
 
 
 class DeterministicSearchService(SearchService):
@@ -17,6 +18,7 @@ class DeterministicSearchService(SearchService):
             SearchResultEntry(
                 target_ref=record.target_ref,
                 object_summary=normalized_record_to_object_summary(record),
+                resolved_resource_id=resolved_resource_id_for_record(record),
             )
             for record in self._catalog.records
             if _record_matches(record.target_ref, record.object_label, normalized_query)

@@ -5,7 +5,11 @@ import unittest
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.normalize import NormalizedResolutionRecord
 from runtime.engine.interfaces.public import ResolutionRequest
-from runtime.engine.resolve import ExactMatchResolutionService, normalized_record_to_object_summary
+from runtime.engine.resolve import (
+    ExactMatchResolutionService,
+    normalized_record_to_object_summary,
+    resolved_resource_id_for_record,
+)
 
 
 KNOWN_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
@@ -36,6 +40,10 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
 
         self.assertEqual(outcome.status, "completed")
         assert outcome.result is not None
+        self.assertEqual(
+            outcome.result.resolved_resource_id,
+            resolved_resource_id_for_record(self.record),
+        )
         self.assertEqual(
             outcome.result.primary_object.to_dict(),
             {
