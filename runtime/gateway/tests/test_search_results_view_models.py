@@ -18,6 +18,10 @@ class SearchResultsViewModelTestCase(unittest.TestCase):
         self.assertEqual(view_model["query"], "synthetic")
         self.assertEqual(view_model["result_count"], 2)
         self.assertEqual(view_model["results"][0]["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
+        self.assertEqual(
+            view_model["results"][0]["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        )
         self.assertNotIn("absence", view_model)
 
     def test_empty_search_response_maps_to_absence_view_model(self) -> None:

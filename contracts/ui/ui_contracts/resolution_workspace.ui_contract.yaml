@@ -30,7 +30,7 @@ normal_path:
     - ObjectSummary
 surface_expectations:
   - surfaces submit bounded work through the public gateway boundary and do not assume internal broker, relay, worker, or scheduler topology
-  - surfaces derive shared workbench session state from public read envelopes rather than from engine internals or browser-owned state
+  - surfaces derive shared workbench session state, including any bootstrap `resolved_resource_id`, from public read envelopes rather than from engine internals or browser-owned state
   - surfaces render draft job state, object summaries, bounded action availability, stored-export state, and notices from governed contracts
   - surfaces disclose blocked or deferred work rather than inventing completion
 surface_split:

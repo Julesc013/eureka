@@ -16,6 +16,12 @@ def resolution_job_envelope_to_workbench_session(
             "target_ref": _require_string(job_envelope.get("target_ref"), "job_envelope.target_ref"),
         },
     }
+    resolved_resource_id = _optional_string(
+        job_envelope.get("resolved_resource_id"),
+        "job_envelope.resolved_resource_id",
+    )
+    if resolved_resource_id is not None:
+        workbench_session["resolved_resource_id"] = resolved_resource_id
 
     selected_object = _extract_primary_object(job_envelope)
     if selected_object is not None:

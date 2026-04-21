@@ -53,12 +53,14 @@ class ResolutionActionsPublicApi:
     def list_resolution_actions(self, request: ResolutionActionRequest) -> PublicApiResponse:
         manifest_available = self._manifest_service.has_manifest_available(request.target_ref)
         bundle_available = self._bundle_service.has_bundle_available(request.target_ref)
+        manifest = self._manifest_service.export_manifest(request.target_ref) if manifest_available else None
         return PublicApiResponse(
             status_code=200,
             body=resolution_actions_to_public_envelope(
                 request.target_ref,
                 manifest_available=manifest_available,
                 bundle_available=bundle_available,
+                resolved_resource_id=_manifest_resolved_resource_id(manifest),
             ),
         )
 
@@ -91,6 +93,7 @@ def resolution_actions_to_public_envelope(
     *,
     manifest_available: bool,
     bundle_available: bool,
+    resolved_resource_id: str | None = None,
 ) -> dict[str, Any]:
     actions = [
         _manifest_action_entry(target_ref, available=manifest_available),
@@ -101,11 +104,14 @@ def resolution_actions_to_public_envelope(
         notices.append(_manifest_not_available_notice(target_ref))
     if not bundle_available:
         notices.append(_bundle_not_available_notice(target_ref))
-    return {
+    envelope = {
         "target_ref": target_ref,
         "actions": actions,
         "notices": notices,
     }
+    if resolved_resource_id is not None:
+        envelope["resolved_resource_id"] = resolved_resource_id
+    return envelope
 
 
 def available_resolution_actions_to_public_envelope(target_ref: str) -> dict[str, Any]:
@@ -192,3 +198,12 @@ def _bundle_not_available_notice(target_ref: str) -> dict[str, str]:
 
 def _json_bytes(payload: dict[str, Any]) -> bytes:
     return f"{json.dumps(payload, indent=2, sort_keys=True)}\n".encode("utf-8")
+
+
+def _manifest_resolved_resource_id(manifest: dict[str, Any] | None) -> str | None:
+    if not isinstance(manifest, dict):
+        return None
+    resolved_resource_id = manifest.get("resolved_resource_id")
+    if not isinstance(resolved_resource_id, str) or not resolved_resource_id:
+        return None
+    return resolved_resource_id

@@ -46,13 +46,17 @@ class ResolutionJobsPublicApi:
 
 
 def accepted_resolution_job_to_public_envelope(job: ResolutionJobRecord) -> dict[str, Any]:
-    return {
+    envelope = {
         "job_id": job.job_id,
         "status": "accepted",
         "target_ref": job.target_ref,
         "requested_outputs": list(job.requested_outputs),
         "notices": [],
     }
+    resolved_resource_id = _job_resolved_resource_id(job)
+    if resolved_resource_id is not None:
+        envelope["resolved_resource_id"] = resolved_resource_id
+    return envelope
 
 
 def resolution_job_to_public_envelope(job: ResolutionJobRecord) -> dict[str, Any]:
@@ -63,6 +67,9 @@ def resolution_job_to_public_envelope(job: ResolutionJobRecord) -> dict[str, Any
         "requested_outputs": list(job.requested_outputs),
         "notices": [notice.to_dict() for notice in job.notices],
     }
+    resolved_resource_id = _job_resolved_resource_id(job)
+    if resolved_resource_id is not None:
+        envelope["resolved_resource_id"] = resolved_resource_id
     if job.result is not None:
         envelope["result"] = job.result.to_dict()
     return envelope
@@ -73,3 +80,9 @@ def resolution_job_not_found_error(job_id: str) -> dict[str, str]:
         "code": "resolution_job_not_found",
         "message": f"Unknown resolution job_id '{job_id}'.",
     }
+
+
+def _job_resolved_resource_id(job: ResolutionJobRecord) -> str | None:
+    if job.result is None:
+        return None
+    return job.result.resolved_resource_id

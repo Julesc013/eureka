@@ -146,7 +146,7 @@ def stored_exports_to_public_envelope(
     if not bundle_store_available:
         envelope_notices.append(_store_bundle_not_available_notice(target_ref).to_dict())
 
-    return {
+    envelope = {
         "target_ref": target_ref,
         "store_actions": [
             _store_manifest_action_entry(target_ref, available=manifest_store_available),
@@ -155,6 +155,10 @@ def stored_exports_to_public_envelope(
         "artifacts": [_stored_artifact_entry(artifact) for artifact in artifacts],
         "notices": envelope_notices,
     }
+    resolved_resource_id = _resolved_resource_id_for_artifacts(artifacts)
+    if resolved_resource_id is not None:
+        envelope["resolved_resource_id"] = resolved_resource_id
+    return envelope
 
 
 def stored_artifact_not_found_envelope(
@@ -227,6 +231,8 @@ def _stored_artifact_entry(artifact: StoredArtifactMetadata) -> dict[str, Any]:
         "availability": "available",
         "href": f"{STORED_ARTIFACT_ROUTE}?artifact_id={quote(artifact.artifact_id, safe='')}",
     }
+    if artifact.resolved_resource_id is not None:
+        entry["resolved_resource_id"] = artifact.resolved_resource_id
     if artifact.filename is not None:
         entry["filename"] = artifact.filename
     return entry
@@ -250,3 +256,10 @@ def _store_bundle_not_available_notice(target_ref: str) -> Notice:
 
 def _json_bytes(payload: dict[str, Any]) -> bytes:
     return f"{json.dumps(payload, indent=2, sort_keys=True)}\n".encode("utf-8")
+
+
+def _resolved_resource_id_for_artifacts(artifacts: tuple[StoredArtifactMetadata, ...]) -> str | None:
+    for artifact in artifacts:
+        if artifact.resolved_resource_id is not None:
+            return artifact.resolved_resource_id
+    return None

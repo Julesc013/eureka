@@ -40,6 +40,10 @@ class BundleInspectionViewModelTestCase(unittest.TestCase):
         view_model = bundle_inspection_envelope_to_view_model(response.body)
 
         self.assertEqual(view_model["status"], "inspected")
+        self.assertEqual(
+            view_model["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        )
         self.assertEqual(view_model["bundle"]["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
         self.assertEqual(view_model["primary_object"]["id"], "obj.synthetic-demo-app")
 

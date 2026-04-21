@@ -11,6 +11,12 @@ def stored_exports_envelope_to_view_model(
         "store_actions": _coerce_store_actions(stored_exports_envelope.get("store_actions")),
         "artifacts": _coerce_artifacts(stored_exports_envelope.get("artifacts")),
     }
+    resolved_resource_id = _optional_string(
+        stored_exports_envelope.get("resolved_resource_id"),
+        "stored_exports.resolved_resource_id",
+    )
+    if resolved_resource_id is not None:
+        view_model["resolved_resource_id"] = resolved_resource_id
 
     notices = _coerce_notice_list(stored_exports_envelope.get("notices"), "stored_exports.notices")
     if notices:
@@ -57,6 +63,12 @@ def _coerce_artifacts(value: Any) -> list[dict[str, Any]]:
                 f"stored_exports.artifacts[{index}].availability",
             ),
         }
+        resolved_resource_id = _optional_string(
+            item.get("resolved_resource_id"),
+            f"stored_exports.artifacts[{index}].resolved_resource_id",
+        )
+        if resolved_resource_id is not None:
+            artifact["resolved_resource_id"] = resolved_resource_id
         href = _optional_string(item.get("href"), f"stored_exports.artifacts[{index}].href")
         if href is not None:
             artifact["href"] = href

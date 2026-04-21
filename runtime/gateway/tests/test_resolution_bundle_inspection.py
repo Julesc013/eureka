@@ -36,6 +36,10 @@ class ResolutionBundleInspectionPublicApiTestCase(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.body["status"], "inspected")
+        self.assertEqual(
+            response.body["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        )
         self.assertEqual(response.body["bundle"]["bundle_kind"], "eureka.resolution_bundle")
         self.assertEqual(response.body["bundle"]["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
         self.assertEqual(response.body["primary_object"]["id"], "obj.synthetic-demo-app")

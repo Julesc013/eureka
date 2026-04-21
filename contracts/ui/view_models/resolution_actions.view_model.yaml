@@ -9,6 +9,11 @@ properties:
   target_ref:
     type: string
     description: Draft bounded target reference used to derive the current action panel.
+  resolved_resource_id:
+    type: string
+    description: >
+      Optional bootstrap deterministic resolved-resource identifier for the current
+      resolved target. This remains provisional and is not a final global identity model.
   actions:
     type: array
     description: Draft ordered action entries exposed for the current target.

@@ -15,6 +15,12 @@ def bundle_inspection_envelope_to_view_model(
         "source": _coerce_source(inspection_envelope.get("source")),
         "notices": _coerce_notices(inspection_envelope.get("notices")),
     }
+    resolved_resource_id = _optional_string(
+        inspection_envelope.get("resolved_resource_id"),
+        "inspection_envelope.resolved_resource_id",
+    )
+    if resolved_resource_id is not None:
+        view_model["resolved_resource_id"] = resolved_resource_id
 
     bundle_summary = inspection_envelope.get("bundle")
     if bundle_summary is not None:
@@ -86,6 +92,12 @@ def _coerce_normalized_record(value: Any) -> dict[str, Any]:
             "inspection_envelope.normalized_record.target_ref",
         ),
     }
+    resolved_resource_id = _optional_string(
+        value.get("resolved_resource_id"),
+        "inspection_envelope.normalized_record.resolved_resource_id",
+    )
+    if resolved_resource_id is not None:
+        result["resolved_resource_id"] = resolved_resource_id
     for field_name in ("source", "object", "state", "representation"):
         field_value = value.get(field_name)
         if field_value is not None:

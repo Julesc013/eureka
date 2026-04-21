@@ -70,6 +70,8 @@ def bundle_inspection_result_to_public_envelope(result) -> dict[str, Any]:
         },
         "notices": [notice.to_dict() for notice in result.notices],
     }
+    if result.resolved_resource_id is not None:
+        envelope["resolved_resource_id"] = result.resolved_resource_id
     if result.member_list or result.bundle_kind is not None or result.target_ref is not None:
         bundle_summary: dict[str, Any] = {
             "member_list": list(result.member_list),

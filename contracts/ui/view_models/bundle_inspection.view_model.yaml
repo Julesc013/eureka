@@ -11,6 +11,11 @@ properties:
     enum:
       - inspected
       - blocked
+  resolved_resource_id:
+    type: string
+    description: >
+      Optional bootstrap deterministic resolved-resource identifier recovered from the
+      inspected bundle. This is not a final long-term identity model.
   inspection_mode:
     type: string
   source:

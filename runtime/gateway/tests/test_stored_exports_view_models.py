@@ -27,9 +27,17 @@ class StoredExportsViewModelsTestCase(unittest.TestCase):
         view_model = stored_exports_envelope_to_view_model(envelope)
 
         self.assertEqual(view_model["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
+        self.assertEqual(
+            view_model["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        )
         self.assertEqual(len(view_model["store_actions"]), 2)
         self.assertEqual(len(view_model["artifacts"]), 1)
         self.assertEqual(view_model["artifacts"][0]["artifact_kind"], "resolution_manifest")
+        self.assertEqual(
+            view_model["artifacts"][0]["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        )
 
     def test_shared_stored_exports_view_model_maps_empty_or_blocked_result(self) -> None:
         envelope = self.public_api.list_stored_exports(
@@ -48,4 +56,3 @@ class StoredExportsViewModelsTestCase(unittest.TestCase):
                 "store_resolution_bundle_not_available",
             ],
         )
-

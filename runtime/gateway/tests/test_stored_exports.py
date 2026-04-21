@@ -29,6 +29,10 @@ class StoredExportsPublicApiTestCase(unittest.TestCase):
         self.assertEqual(bundle_response.status_code, 200)
         self.assertEqual(listed.status_code, 200)
         self.assertEqual(
+            manifest_response.body["artifact"]["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        )
+        self.assertEqual(
             [artifact["artifact_kind"] for artifact in listed.body["artifacts"]],
             ["resolution_bundle", "resolution_manifest"],
         )

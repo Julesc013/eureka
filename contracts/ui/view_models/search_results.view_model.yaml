@@ -22,6 +22,11 @@ properties:
       properties:
         target_ref:
           type: string
+        resolved_resource_id:
+          type: string
+          description: >
+            Optional bootstrap deterministic resolved-resource identifier for the
+            matched result summary.
         object:
           type: object
           additionalProperties: false

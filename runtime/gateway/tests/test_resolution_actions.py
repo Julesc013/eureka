@@ -20,6 +20,7 @@ class ResolutionActionsPublicApiTestCase(unittest.TestCase):
             response.body,
             {
                 "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+                "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
                 "actions": [
                     {
                         "action_id": "export_resolution_manifest",
@@ -61,6 +62,10 @@ class ResolutionActionsPublicApiTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.body["manifest_kind"], "eureka.resolution_manifest")
         self.assertEqual(response.body["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
+        self.assertEqual(
+            response.body["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        )
 
     def test_public_action_boundary_returns_blocked_export_for_unknown_target(self) -> None:
         response = self.public_api.export_resolution_manifest(

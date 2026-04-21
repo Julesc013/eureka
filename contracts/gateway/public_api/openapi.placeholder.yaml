@@ -427,6 +427,11 @@ components:
       schema:
         type: string
   schemas:
+    ResolvedResourceId:
+      type: string
+      description: >
+        Bootstrap deterministic resolved-resource identifier derived from already-normalized
+        or already-resolved data. This is not yet Eureka's final global identity or merge model.
     SubmitResolutionJobRequest:
       type: object
       additionalProperties: false
@@ -464,6 +469,8 @@ components:
         target_ref:
           type: string
           description: Draft subject selector or access path reference copied from the request.
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
         requested_outputs:
           type: array
           description: Optional draft output labels copied from the request.
@@ -488,6 +495,8 @@ components:
       properties:
         primary_object:
           $ref: '#/components/schemas/ObjectSummary'
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
         snapshot_manifest_id:
           type: string
           description: Optional draft reference to a snapshot manifest.
@@ -573,6 +582,8 @@ components:
       properties:
         target_ref:
           type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
         object:
           $ref: '#/components/schemas/ObjectSummary'
       required:
@@ -597,6 +608,8 @@ components:
       properties:
         target_ref:
           type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
         actions:
           type: array
           items:
@@ -653,6 +666,8 @@ components:
             - source_locator
         target_ref:
           type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
         primary_object:
           $ref: '#/components/schemas/ObjectSummary'
         matched_state:
@@ -739,6 +754,8 @@ components:
       properties:
         target_ref:
           type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
         store_actions:
           type: array
           items:
@@ -764,6 +781,8 @@ components:
           type: string
         artifact_kind:
           type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
         content_type:
           type: string
         byte_length:
@@ -795,6 +814,8 @@ components:
           type: string
         target_ref:
           type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
         content_type:
           type: string
         byte_length:
@@ -888,6 +909,8 @@ components:
           enum:
             - inspected
             - blocked
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
         inspection_mode:
           type: string
         source:

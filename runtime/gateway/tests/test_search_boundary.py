@@ -29,17 +29,16 @@ class SearchPublicApiTestCase(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.body["result_count"], 1)
+        self.assertEqual(response.body["results"][0]["target_ref"], "fixture:software/compatibility-lab@3.2.1")
         self.assertEqual(
-            response.body["results"][0],
+            response.body["results"][0]["object"],
             {
-                "target_ref": "fixture:software/compatibility-lab@3.2.1",
-                "object": {
-                    "id": "obj.compatibility-lab",
-                    "kind": "software",
-                    "label": "Compatibility Lab",
-                },
+                "id": "obj.compatibility-lab",
+                "kind": "software",
+                "label": "Compatibility Lab",
             },
         )
+        self.assertTrue(response.body["results"][0]["resolved_resource_id"].startswith("resolved:sha256:"))
 
     def test_public_search_boundary_returns_structured_absence_for_no_matches(self) -> None:
         response = self.public_api.search_records(SearchCatalogRequest.from_parts("missing"))

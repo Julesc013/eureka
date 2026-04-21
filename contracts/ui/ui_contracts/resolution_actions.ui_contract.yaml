@@ -21,7 +21,7 @@ normal_path:
     - ActionBlockedEnvelope
 surface_expectations:
   - surfaces discover bounded actions through the public gateway boundary rather than by importing engine action behavior
-  - surfaces present available and unavailable action state honestly
+  - surfaces present available and unavailable action state honestly, and may display a bootstrap `resolved_resource_id` when the public boundary provides one
   - surfaces keep bootstrap manifest and bundle export behavior local and deterministic without implying broader installer, restore, or reconstruction workflows
 surface_split:
   web:

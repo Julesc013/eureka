@@ -26,6 +26,7 @@ class ResolutionJobServiceTestCase(unittest.TestCase):
                 "job_id": "job-0001",
                 "status": "accepted",
                 "target_ref": KNOWN_TARGET_REF,
+                "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
                 "requested_outputs": [],
                 "notices": [],
             },
@@ -41,6 +42,10 @@ class ResolutionJobServiceTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.body["status"], "completed")
         self.assertEqual(response.body["target_ref"], KNOWN_TARGET_REF)
+        self.assertEqual(
+            response.body["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        )
         self.assertEqual(response.body["notices"], [])
         self.assertEqual(
             response.body["result"]["primary_object"],
@@ -49,6 +54,10 @@ class ResolutionJobServiceTestCase(unittest.TestCase):
                 "kind": "software",
                 "label": "Synthetic Demo App",
             },
+        )
+        self.assertEqual(
+            response.body["result"]["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
         )
 
     def test_read_boundary_returns_blocked_job_for_unknown_target(self) -> None:

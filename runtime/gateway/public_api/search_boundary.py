@@ -50,7 +50,10 @@ def search_response_to_public_envelope(response: SearchResponse) -> dict[str, An
 
 
 def search_result_to_public_entry(result) -> dict[str, Any]:
-    return {
+    entry = {
         "target_ref": result.target_ref,
         "object": result.object_summary.to_dict(),
     }
+    if result.resolved_resource_id is not None:
+        entry["resolved_resource_id"] = result.resolved_resource_id
+    return entry

@@ -9,6 +9,11 @@ properties:
   session_id:
     type: string
     description: Draft surface session identifier.
+  resolved_resource_id:
+    type: string
+    description: >
+      Optional bootstrap deterministic resolved-resource identifier propagated from
+      public resolution results. This is not yet Eureka's final global identity model.
   active_job:
     type: object
     additionalProperties: false

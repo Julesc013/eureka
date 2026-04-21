@@ -31,6 +31,12 @@ def _coerce_results(value: Any) -> list[dict[str, Any]]:
             "target_ref": _require_string(item.get("target_ref"), f"search_envelope.results[{index}].target_ref"),
             "object": _coerce_object_summary(item.get("object"), f"search_envelope.results[{index}].object"),
         }
+        resolved_resource_id = _optional_string(
+            item.get("resolved_resource_id"),
+            f"search_envelope.results[{index}].resolved_resource_id",
+        )
+        if resolved_resource_id is not None:
+            result["resolved_resource_id"] = resolved_resource_id
         results.append(result)
     return results
 

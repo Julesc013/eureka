@@ -29,6 +29,7 @@ class WorkbenchSessionMappingTestCase(unittest.TestCase):
             workbench_session,
             {
                 "session_id": "session.synthetic-known",
+                "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
                 "active_job": {
                     "job_id": "job-0001",
                     "status": "completed",

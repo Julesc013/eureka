@@ -21,6 +21,7 @@ class ResolutionActionsViewModelTestCase(unittest.TestCase):
             view_model,
             {
                 "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+                "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
                 "actions": [
                     {
                         "action_id": "export_resolution_manifest",

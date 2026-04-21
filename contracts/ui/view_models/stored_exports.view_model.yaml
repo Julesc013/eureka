@@ -8,6 +8,11 @@ additionalProperties: false
 properties:
   target_ref:
     type: string
+  resolved_resource_id:
+    type: string
+    description: >
+      Optional bootstrap deterministic resolved-resource identifier associated with the
+      current stored-export list.
   store_actions:
     type: array
     items:
@@ -42,6 +47,11 @@ properties:
           enum:
             - resolution_manifest
             - resolution_bundle
+        resolved_resource_id:
+          type: string
+          description: >
+            Optional bootstrap deterministic resolved-resource identifier associated with
+            the stored artifact payload.
         content_type:
           type: string
         byte_length:

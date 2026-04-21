@@ -10,6 +10,12 @@ def resolution_actions_envelope_to_view_model(
         "target_ref": _require_string(actions_envelope.get("target_ref"), "actions_envelope.target_ref"),
         "actions": _coerce_actions(actions_envelope.get("actions")),
     }
+    resolved_resource_id = _optional_string(
+        actions_envelope.get("resolved_resource_id"),
+        "actions_envelope.resolved_resource_id",
+    )
+    if resolved_resource_id is not None:
+        view_model["resolved_resource_id"] = resolved_resource_id
 
     notices = _coerce_notice_list(actions_envelope.get("notices"), "actions_envelope.notices")
     if notices:
