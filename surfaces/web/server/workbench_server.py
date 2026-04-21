@@ -11,17 +11,15 @@ from runtime.gateway.public_api import (
     ResolutionBundleInspectionPublicApi,
     ResolutionActionsPublicApi,
     ResolutionJobsPublicApi,
+    ResolutionWorkspaceReadError,
     SearchCatalogRequest,
     SearchPublicApi,
     StoredArtifactRequest,
     StoredExportsPublicApi,
     StoredExportsTargetRequest,
-    SubmitResolutionJobRequest,
+    build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
-    resolution_actions_envelope_to_view_model,
-    resolution_job_envelope_to_workbench_session,
     search_response_envelope_to_search_results_view_model,
-    stored_exports_envelope_to_view_model,
 )
 from surfaces.web.workbench import (
     render_bundle_inspection_html,
@@ -38,37 +36,24 @@ def render_resolution_workspace_page(
     stored_exports_public_api: StoredExportsPublicApi | None = None,
     session_id: str = "session.web-workbench",
 ) -> str:
-    submit_response = resolution_public_api.submit_resolution_job(
-        SubmitResolutionJobRequest.from_parts(target_ref),
-    )
-    job_id = submit_response.body["job_id"]
-    read_response = resolution_public_api.read_resolution_job(job_id)
-
-    if read_response.status_code != 200:
+    try:
+        workspace = build_resolution_workspace_view_models(
+            resolution_public_api,
+            target_ref,
+            actions_public_api=actions_public_api,
+            stored_exports_public_api=stored_exports_public_api,
+            session_id=session_id,
+        )
+    except ResolutionWorkspaceReadError as error:
         return _render_error_page(
             title="Eureka Compatibility Workbench",
             heading="Resolution Job Not Found",
-            message=read_response.body.get("message", "No job state was available for the requested work."),
-        )
-
-    workbench_session = resolution_job_envelope_to_workbench_session(
-        read_response.body,
-        session_id=session_id,
-    )
-    resolution_actions = None
-    if actions_public_api is not None:
-        resolution_actions = resolution_actions_envelope_to_view_model(
-            actions_public_api.list_resolution_actions(ResolutionActionRequest.from_parts(target_ref)).body
-        )
-    stored_exports = None
-    if stored_exports_public_api is not None:
-        stored_exports = stored_exports_envelope_to_view_model(
-            stored_exports_public_api.list_stored_exports(StoredExportsTargetRequest.from_parts(target_ref)).body
+            message=str(error),
         )
     return render_resolution_workspace_html(
-        workbench_session,
-        resolution_actions=resolution_actions,
-        stored_exports=stored_exports,
+        workspace.workbench_session,
+        resolution_actions=workspace.resolution_actions,
+        stored_exports=workspace.stored_exports,
     )
 
 

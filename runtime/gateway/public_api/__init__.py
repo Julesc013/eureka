@@ -34,6 +34,11 @@ from runtime.gateway.public_api.resolution_actions_view_models import (
 from runtime.gateway.public_api.bundle_inspection_view_models import (
     bundle_inspection_envelope_to_view_model,
 )
+from runtime.gateway.public_api.resolution_workspace import (
+    ResolutionWorkspaceReadError,
+    ResolutionWorkspaceViewModels,
+    build_resolution_workspace_view_models,
+)
 from runtime.gateway.public_api.resolution_bundle_inspection import (
     InspectResolutionBundleRequest,
     ResolutionBundleInspectionPublicApi,
@@ -82,6 +87,8 @@ __all__ = [
     "ResolutionJobRecord",
     "ResolutionActionsPublicApi",
     "ResolutionJobsPublicApi",
+    "ResolutionWorkspaceReadError",
+    "ResolutionWorkspaceViewModels",
     "SearchCatalogRequest",
     "SearchPublicApi",
     "STORE_RESOLUTION_BUNDLE_ACTION_ID",
@@ -97,6 +104,7 @@ __all__ = [
     "SubmitResolutionJobRequest",
     "accepted_resolution_job_to_public_envelope",
     "available_resolution_actions_to_public_envelope",
+    "build_resolution_workspace_view_models",
     "bundle_inspection_envelope_to_view_model",
     "bundle_inspection_result_to_public_envelope",
     "resolution_actions_to_public_envelope",
