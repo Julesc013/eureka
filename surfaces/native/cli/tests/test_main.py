@@ -1,0 +1,273 @@
+from __future__ import annotations
+
+import ast
+import json
+from io import StringIO
+from pathlib import Path
+import tempfile
+import unittest
+
+from surfaces.native.cli.main import main
+
+
+KNOWN_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
+UNKNOWN_TARGET_REF = "fixture:software/missing-demo-app@0.0.1"
+SURFACE_NATIVE_CLI_ROOT = Path(__file__).resolve().parents[1]
+
+
+def run_cli(*args: str) -> tuple[int, str]:
+    output = StringIO()
+    exit_code = main(list(args), stdout=output)
+    return exit_code, output.getvalue()
+
+
+class NativeCliMainTestCase(unittest.TestCase):
+    def test_resolve_known_target_returns_readable_output_with_resolved_resource_id(self) -> None:
+        exit_code, output = run_cli("resolve", KNOWN_TARGET_REF)
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Resolution", output)
+        self.assertIn(f"target_ref: {KNOWN_TARGET_REF}", output)
+        self.assertIn("resolved_resource_id: resolved:sha256:", output)
+        self.assertIn("Synthetic Demo App", output)
+
+    def test_resolve_unknown_target_returns_honest_blocked_outcome(self) -> None:
+        exit_code, output = run_cli("resolve", UNKNOWN_TARGET_REF)
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn(f"target_ref: {UNKNOWN_TARGET_REF}", output)
+        self.assertIn("status: blocked", output)
+        self.assertIn("fixture_target_not_found", output)
+
+    def test_search_returns_deterministic_results_and_resolved_resource_ids(self) -> None:
+        exit_code, output = run_cli("search", "synthetic")
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("result_count: 2", output)
+        self.assertLess(output.index("Synthetic Demo App"), output.index("Synthetic Demo Suite"))
+        self.assertIn("resolved_resource_id: resolved:sha256:", output)
+
+    def test_manifest_export_returns_known_manifest_json(self) -> None:
+        exit_code, output = run_cli("export-manifest", KNOWN_TARGET_REF, "--json")
+        payload = json.loads(output)
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(payload["manifest_kind"], "eureka.resolution_manifest")
+        self.assertEqual(payload["target_ref"], KNOWN_TARGET_REF)
+        self.assertEqual(
+            payload["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        )
+
+    def test_bundle_export_returns_structured_summary_for_known_target(self) -> None:
+        exit_code, output = run_cli("export-bundle", KNOWN_TARGET_REF, "--json")
+        payload = json.loads(output)
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(payload["status"], "exported")
+        self.assertEqual(payload["target_ref"], KNOWN_TARGET_REF)
+        self.assertEqual(payload["content_type"], "application/zip")
+        self.assertEqual(payload["bundle_inspection"]["status"], "inspected")
+        self.assertEqual(payload["bundle_inspection"]["bundle"]["target_ref"], KNOWN_TARGET_REF)
+
+    def test_bundle_inspection_succeeds_for_valid_bundle_and_fails_honestly_for_missing_path(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            store_exit_code, store_output = run_cli(
+                "store-bundle",
+                KNOWN_TARGET_REF,
+                "--store-root",
+                temp_dir,
+                "--json",
+            )
+            store_payload = json.loads(store_output)
+            bundle_path = Path(temp_dir) / store_payload["artifact"]["store_path"]
+
+            inspect_exit_code, inspect_output = run_cli("inspect-bundle", str(bundle_path), "--json")
+            inspect_payload = json.loads(inspect_output)
+
+            missing_exit_code, missing_output = run_cli(
+                "inspect-bundle",
+                str(Path(temp_dir) / "missing-bundle.zip"),
+                "--json",
+            )
+            missing_payload = json.loads(missing_output)
+
+        self.assertEqual(store_exit_code, 0)
+        self.assertEqual(inspect_exit_code, 0)
+        self.assertEqual(inspect_payload["status"], "inspected")
+        self.assertEqual(inspect_payload["bundle"]["target_ref"], KNOWN_TARGET_REF)
+        self.assertEqual(missing_exit_code, 0)
+        self.assertEqual(missing_payload["status"], "blocked")
+        self.assertEqual(missing_payload["notices"][0]["code"], "bundle_path_not_found")
+
+    def test_store_list_and_read_commands_cover_manifest_and_bundle(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            manifest_output = json.loads(
+                run_cli(
+                    "store-manifest",
+                    KNOWN_TARGET_REF,
+                    "--store-root",
+                    temp_dir,
+                    "--json",
+                )[1]
+            )
+            bundle_output = json.loads(
+                run_cli(
+                    "store-bundle",
+                    KNOWN_TARGET_REF,
+                    "--store-root",
+                    temp_dir,
+                    "--json",
+                )[1]
+            )
+            listed_output = json.loads(
+                run_cli(
+                    "list-stored",
+                    KNOWN_TARGET_REF,
+                    "--store-root",
+                    temp_dir,
+                    "--json",
+                )[1]
+            )
+            read_manifest_output = json.loads(
+                run_cli(
+                    "read-stored",
+                    manifest_output["artifact"]["artifact_id"],
+                    "--store-root",
+                    temp_dir,
+                    "--json",
+                )[1]
+            )
+            read_bundle_output = json.loads(
+                run_cli(
+                    "read-stored",
+                    bundle_output["artifact"]["artifact_id"],
+                    "--store-root",
+                    temp_dir,
+                    "--json",
+                )[1]
+            )
+
+        self.assertEqual(manifest_output["status"], "stored")
+        self.assertEqual(bundle_output["status"], "stored")
+        self.assertEqual(
+            [artifact["artifact_kind"] for artifact in listed_output["artifacts"]],
+            ["resolution_bundle", "resolution_manifest"],
+        )
+        self.assertEqual(
+            read_manifest_output["content"]["resolved_resource_id"],
+            "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        )
+        self.assertEqual(read_bundle_output["artifact"]["artifact_kind"], "resolution_bundle")
+        self.assertEqual(read_bundle_output["bundle_inspection"]["status"], "inspected")
+
+    def test_store_list_and_read_plain_text_include_artifact_and_resolved_resource_ids(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            manifest_exit_code, manifest_output = run_cli(
+                "store-manifest",
+                KNOWN_TARGET_REF,
+                "--store-root",
+                temp_dir,
+            )
+            bundle_output = json.loads(
+                run_cli(
+                    "store-bundle",
+                    KNOWN_TARGET_REF,
+                    "--store-root",
+                    temp_dir,
+                    "--json",
+                )[1]
+            )
+            artifact_id = bundle_output["artifact"]["artifact_id"]
+            list_exit_code, list_output = run_cli(
+                "list-stored",
+                KNOWN_TARGET_REF,
+                "--store-root",
+                temp_dir,
+            )
+            read_exit_code, read_output = run_cli(
+                "read-stored",
+                artifact_id,
+                "--store-root",
+                temp_dir,
+            )
+
+        self.assertEqual(manifest_exit_code, 0)
+        self.assertEqual(list_exit_code, 0)
+        self.assertEqual(read_exit_code, 0)
+        self.assertIn("artifact_id: sha256:", manifest_output)
+        self.assertIn("resolved_resource_id: resolved:sha256:", manifest_output)
+        self.assertIn(artifact_id, list_output)
+        self.assertIn("resolved_resource_id: resolved:sha256:", list_output)
+        self.assertIn(f"artifact_id: {artifact_id}", read_output)
+        self.assertIn("resolved_resource_id: resolved:sha256:", read_output)
+
+    def test_cli_surface_end_to_end_flow_uses_public_boundary_only(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            resolve_payload = json.loads(run_cli("resolve", KNOWN_TARGET_REF, "--json")[1])
+            search_payload = json.loads(run_cli("search", "synthetic", "--json")[1])
+            export_payload = json.loads(run_cli("export-manifest", KNOWN_TARGET_REF, "--json")[1])
+            store_payload = json.loads(
+                run_cli(
+                    "store-bundle",
+                    KNOWN_TARGET_REF,
+                    "--store-root",
+                    temp_dir,
+                    "--json",
+                )[1]
+            )
+            bundle_path = Path(temp_dir) / store_payload["artifact"]["store_path"]
+            list_payload = json.loads(
+                run_cli(
+                    "list-stored",
+                    KNOWN_TARGET_REF,
+                    "--store-root",
+                    temp_dir,
+                    "--json",
+                )[1]
+            )
+            inspect_payload = json.loads(run_cli("inspect-bundle", str(bundle_path), "--json")[1])
+            read_payload = json.loads(
+                run_cli(
+                    "read-stored",
+                    store_payload["artifact"]["artifact_id"],
+                    "--store-root",
+                    temp_dir,
+                    "--json",
+                )[1]
+            )
+
+        self.assertEqual(resolve_payload["workbench_session"]["active_job"]["status"], "completed")
+        self.assertEqual(search_payload["result_count"], 2)
+        self.assertEqual(export_payload["manifest_kind"], "eureka.resolution_manifest")
+        self.assertEqual(store_payload["artifact"]["artifact_kind"], "resolution_bundle")
+        self.assertEqual(len(list_payload["artifacts"]), 1)
+        self.assertEqual(inspect_payload["status"], "inspected")
+        self.assertEqual(read_payload["bundle_inspection"]["status"], "inspected")
+
+    def test_cli_surface_modules_do_not_import_engine_or_connector_internals(self) -> None:
+        for path in SURFACE_NATIVE_CLI_ROOT.rglob("*.py"):
+            if path.name.startswith("test_"):
+                continue
+
+            module = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+            for node in ast.walk(module):
+                if isinstance(node, ast.Import):
+                    for alias in node.names:
+                        self.assertFalse(
+                            alias.name.startswith("runtime.engine"),
+                            f"{path} imports engine internals: {alias.name}",
+                        )
+                        self.assertFalse(
+                            alias.name.startswith("runtime.connectors"),
+                            f"{path} imports connector internals: {alias.name}",
+                        )
+                if isinstance(node, ast.ImportFrom) and node.module is not None:
+                    self.assertFalse(
+                        node.module.startswith("runtime.engine"),
+                        f"{path} imports engine internals: {node.module}",
+                    )
+                    self.assertFalse(
+                        node.module.startswith("runtime.connectors"),
+                        f"{path} imports connector internals: {node.module}",
+                    )
