@@ -14,6 +14,7 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
                 "results": [
                     {
                         "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+                        "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
                         "object": {
                             "id": "obj.synthetic-demo-app",
                             "kind": "software",
@@ -22,6 +23,7 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
                     },
                     {
                         "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+                        "resolved_resource_id": "resolved:sha256:bca010feded957f303baabe8a1fdadc726ab844d4197b9e2761cf0eaf083eb31",
                         "object": {
                             "id": "obj.synthetic-demo-suite",
                             "kind": "software",
@@ -37,6 +39,7 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
         self.assertIn("Synthetic Demo App", html)
         self.assertIn("Synthetic Demo Suite", html)
         self.assertIn("/?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
+        self.assertIn("resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2", html)
 
     def test_empty_results_render_query_and_absence_report(self) -> None:
         html = render_search_results_html(

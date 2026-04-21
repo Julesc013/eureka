@@ -47,11 +47,15 @@ class StoredExportsSliceIntegrationTestCase(unittest.TestCase):
         bundle_payload = json.loads(bundle_body)
         manifest_artifact_id = manifest_payload["artifact"]["artifact_id"]
         bundle_artifact_id = bundle_payload["artifact"]["artifact_id"]
+        resolved_resource_id = "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2"
+        self.assertEqual(manifest_payload["artifact"]["resolved_resource_id"], resolved_resource_id)
+        self.assertEqual(bundle_payload["artifact"]["resolved_resource_id"], resolved_resource_id)
 
         listed = self.stored_exports_public_api.list_stored_exports(
             StoredExportsTargetRequest.from_parts("fixture:software/synthetic-demo-app@1.0.0")
         )
         self.assertEqual(listed.status_code, 200)
+        self.assertEqual(listed.body["resolved_resource_id"], resolved_resource_id)
         self.assertEqual(
             {artifact["artifact_id"] for artifact in listed.body["artifacts"]},
             {manifest_artifact_id, bundle_artifact_id},
@@ -64,6 +68,7 @@ class StoredExportsSliceIntegrationTestCase(unittest.TestCase):
         self.assertEqual(manifest_read_headers["Content-Type"], "application/json; charset=utf-8")
         manifest_document = json.loads(manifest_read_body.decode("utf-8"))
         self.assertEqual(manifest_document["manifest_kind"], "eureka.resolution_manifest")
+        self.assertEqual(manifest_document["resolved_resource_id"], resolved_resource_id)
 
         bundle_read_status, bundle_read_headers, bundle_read_body = self._fetch_stored_artifact(
             bundle_artifact_id
@@ -86,6 +91,7 @@ class StoredExportsSliceIntegrationTestCase(unittest.TestCase):
         self.assertIn("Stored Exports", page_body)
         self.assertIn(manifest_artifact_id, page_body)
         self.assertIn(bundle_artifact_id, page_body)
+        self.assertIn(resolved_resource_id, page_body)
         self.assertIn("Store resolution manifest locally", page_body)
         self.assertIn("Store resolution bundle locally", page_body)
 
@@ -131,4 +137,3 @@ class StoredExportsSliceIntegrationTestCase(unittest.TestCase):
             )
         )
         return str(captured["status"]), dict(captured["headers"]), body
-

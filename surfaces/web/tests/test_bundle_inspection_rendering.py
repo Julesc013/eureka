@@ -11,6 +11,7 @@ class BundleInspectionRenderingTestCase(unittest.TestCase):
             {
                 "status": "inspected",
                 "inspection_mode": "local_offline",
+                "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
                 "source": {
                     "kind": "local_path",
                     "locator": "C:/tmp/demo-bundle.zip",
@@ -44,6 +45,7 @@ class BundleInspectionRenderingTestCase(unittest.TestCase):
         self.assertIn("fixture:software/synthetic-demo-app@1.0.0", html)
         self.assertIn("obj.synthetic-demo-app", html)
         self.assertIn("Synthetic Demo App", html)
+        self.assertIn("resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2", html)
         self.assertIn("bundle.json", html)
         self.assertIn("records/normalized_record.json", html)
 

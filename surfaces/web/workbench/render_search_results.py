@@ -76,13 +76,19 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
                 f"results[{index}].object.label",
                 allow_empty=False,
             )
+            resolved_resource_id = _optional_string(
+                result.get("resolved_resource_id"),
+                f"results[{index}].resolved_resource_id",
+            )
             link = "/?target_ref=" + quote(target_ref, safe="")
             item = (
                 "          <li>"
                 f"<a href=\"{escape(link, quote=True)}\">{escape(object_label)}</a> "
                 f"<span>({escape(target_ref)})</span>"
-                "</li>"
             )
+            if resolved_resource_id is not None:
+                item += f" <span>[{escape(resolved_resource_id)}]</span>"
+            item += "</li>"
             parts.append(item)
         parts.extend(
             [
@@ -150,3 +156,9 @@ def _require_int(value: Any, field_name: str) -> int:
     if not isinstance(value, int) or value < 0:
         raise ValueError(f"{field_name} must be a non-negative integer.")
     return value
+
+
+def _optional_string(value: Any, field_name: str) -> str | None:
+    if value is None:
+        return None
+    return _require_string(value, field_name)

@@ -6,6 +6,7 @@ bootstrap artifacts.
 Current bootstrap scope:
 
 - compute stable content-addressed artifact identities using `sha256:<hex>`
+- record the bootstrap `resolved_resource_id` associated with stored manifest and bundle artifacts
 - store exported manifest JSON and bundle ZIP payloads in a small local filesystem layout
 - keep metadata, object paths, and target indexes deterministic and easy to inspect
 - support local list and readback by target ref or artifact identity

@@ -21,8 +21,9 @@ Current thin-slice behavior:
 - deterministic manifest and bundle export for known synthetic targets plus blocked export responses for misses
 - deterministic local stored-export identity, listing, and readback through a caller-provided store root
 - deterministic local bundle inspection without live fixture dependence
+- bootstrap deterministic `resolved_resource_id` propagation across resolution, search, action, storage, inspection, and shared-surface mappings
 - gateway composes with engine service interfaces over normalized records and does not read governed fixtures directly
 - shared workbench-session, search-results, resolution-actions, stored-exports, and bundle-inspection mappings are exercised without implementing web or native shells
 - no broker, relay, worker, scheduler, auth, or persistence implementation
 
-This slice proves the public boundary shape without implying that async gateway infrastructure already exists.
+This slice proves the public boundary shape without implying that async gateway infrastructure already exists. The current `resolved_resource_id` is intentionally a bootstrap deterministic seam, not a final global identity registry or merge model.

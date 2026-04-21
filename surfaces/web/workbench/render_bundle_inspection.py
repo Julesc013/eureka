@@ -14,6 +14,10 @@ def render_bundle_inspection_html(bundle_inspection: Mapping[str, Any]) -> str:
     source = _require_mapping(bundle_inspection.get("source"), "bundle_inspection.source")
     source_kind = _require_string(source.get("kind"), "bundle_inspection.source.kind")
     source_locator = _require_string(source.get("locator"), "bundle_inspection.source.locator")
+    resolved_resource_id = _optional_string(
+        bundle_inspection.get("resolved_resource_id"),
+        "bundle_inspection.resolved_resource_id",
+    )
     notices = _notice_list(bundle_inspection.get("notices"))
     bundle_summary = _optional_mapping(bundle_inspection.get("bundle"), "bundle_inspection.bundle")
     primary_object = _optional_mapping(bundle_inspection.get("primary_object"), "bundle_inspection.primary_object")
@@ -54,9 +58,15 @@ def render_bundle_inspection_html(bundle_inspection: Mapping[str, Any]) -> str:
         f"          <dt>Mode</dt><dd>{escape(inspection_mode)}</dd>",
         f"          <dt>Source kind</dt><dd>{escape(source_kind)}</dd>",
         f"          <dt>Source locator</dt><dd>{escape(source_locator)}</dd>",
-        "        </dl>",
-        "      </section>",
     ]
+    if resolved_resource_id is not None:
+        parts.append(f"          <dt>Resolved resource ID</dt><dd>{escape(resolved_resource_id)}</dd>")
+    parts.extend(
+        [
+            "        </dl>",
+            "      </section>",
+        ]
+    )
 
     if bundle_summary is not None:
         parts.extend(

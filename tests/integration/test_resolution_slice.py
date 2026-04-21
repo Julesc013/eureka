@@ -17,15 +17,31 @@ class ResolutionSliceIntegrationTestCase(unittest.TestCase):
             payload = self._run_demo("fixture:software/synthetic-demo-app@1.0.0", include_workbench_session=True)
             self.assertEqual(payload["submit_response"]["status_code"], 202)
             self.assertEqual(payload["submit_response"]["body"]["status"], "accepted")
+            self.assertEqual(
+                payload["submit_response"]["body"]["resolved_resource_id"],
+                "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+            )
             self.assertEqual(payload["read_response"]["status_code"], 200)
             self.assertEqual(payload["read_response"]["body"]["status"], "completed")
+            self.assertEqual(
+                payload["read_response"]["body"]["resolved_resource_id"],
+                "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+            )
             self.assertEqual(
                 payload["read_response"]["body"]["result"]["primary_object"]["id"],
                 "obj.synthetic-demo-app",
             )
             self.assertEqual(
+                payload["read_response"]["body"]["result"]["resolved_resource_id"],
+                "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+            )
+            self.assertEqual(
                 payload["workbench_session"]["selected_object"]["id"],
                 "obj.synthetic-demo-app",
+            )
+            self.assertEqual(
+                payload["workbench_session"]["resolved_resource_id"],
+                "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
             )
             self.assertEqual(payload["workbench_session"]["active_job"]["status"], "completed")
 

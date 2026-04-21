@@ -20,9 +20,13 @@ Current thin-slice behavior:
 - exact-match resolution for bounded `target_ref` values only
 - deterministic search over a tiny bounded set of normalized fields using stable catalog order
 - bounded object-summary mapping aligned to the gateway public API draft
+- bootstrap deterministic `resolved_resource_id` derivation for already-normalized or already-resolved records
 - bounded resolution-manifest export from already-normalized records under `actions/`
 - bounded portable resolution-bundle export from already-normalized records under `snapshots/`
 - bounded portable bundle inspection from local bytes or a local file path under `snapshots/`, without live fixture dependence
 - bounded deterministic local artifact storage and retrieval under `store/`, with stable `sha256:<hex>` artifact identity
+- propagation of bootstrap `resolved_resource_id` through resolution, search, export, inspection, and local stored-artifact metadata
+
+The current `resolved_resource_id` is a bootstrap deterministic seam only. It hardens propagation beyond raw `target_ref`, but it does not yet define Eureka's final global identity or cross-source merge model.
 
 This slice does not settle connector strategy, ranking, fuzzy resolution, installer behavior, restore behavior, durable cache semantics, or broader archive semantics.

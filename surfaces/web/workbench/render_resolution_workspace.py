@@ -14,6 +14,10 @@ def render_resolution_workspace_html(
     target_ref = _require_string(active_job.get("target_ref"), "workbench_session.active_job.target_ref")
     status = _require_string(active_job.get("status"), "workbench_session.active_job.status")
     job_id = _require_string(active_job.get("job_id"), "workbench_session.active_job.job_id")
+    resolved_resource_id = _optional_string(
+        workbench_session.get("resolved_resource_id"),
+        "workbench_session.resolved_resource_id",
+    )
 
     selected_object = _optional_mapping(workbench_session.get("selected_object"), "workbench_session.selected_object")
     notices = _notice_list(workbench_session.get("notices"))
@@ -75,9 +79,15 @@ def render_resolution_workspace_html(
         f"          <dt>Target ref</dt><dd>{escape(target_ref)}</dd>",
         f"          <dt>Status</dt><dd>{escape(status)}</dd>",
         f"          <dt>Job ID</dt><dd>{escape(job_id)}</dd>",
-        "        </dl>",
-        "      </section>",
     ]
+    if resolved_resource_id is not None:
+        parts.append(f"          <dt>Resolved resource ID</dt><dd>{escape(resolved_resource_id)}</dd>")
+    parts.extend(
+        [
+            "        </dl>",
+            "      </section>",
+        ]
+    )
 
     if selected_object is not None:
         parts.extend(
@@ -202,6 +212,12 @@ def render_resolution_workspace_html(
                 filename = _optional_string(artifact.get("filename"), "stored_artifact.filename")
                 if filename is not None:
                     item += f" [{escape(filename)}]"
+                artifact_resolved_resource_id = _optional_string(
+                    artifact.get("resolved_resource_id"),
+                    "stored_artifact.resolved_resource_id",
+                )
+                if artifact_resolved_resource_id is not None:
+                    item += f" [resolved resource: {escape(artifact_resolved_resource_id)}]"
                 item += "</li>"
                 parts.append(item)
             parts.append("        </ul>")

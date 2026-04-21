@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus nine executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus ten executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -27,6 +27,7 @@ Current status: foundational scaffold plus nine executable local deterministic t
 - first portable bundle/export slice that exposes a deterministic self-contained resolution bundle through the public boundary and returns ZIP content for known synthetic targets
 - first portable bundle inspection/readback slice that inspects a previously exported bundle through a public boundary and renders a compatibility-first HTML inspection page without live fixture dependence
 - first deterministic local store/cache seam that assigns stable artifact identity, stores exported manifest and bundle artifacts in a local content-addressed store, and reads them back through the public boundary
+- first stable resolved-resource identity seam that derives a deterministic bootstrap `resolved_resource_id` and propagates it across resolution, search, action, export, store, inspection, and compatibility-first surface projection
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -37,6 +38,7 @@ Current status: foundational scaffold plus nine executable local deterministic t
 - automated dependency-policy enforcement tooling
 - mature gateway API semantics, wider public read coverage, and durable submit versus read guarantees
 - final action semantics, installer behavior, download handling, restore/import handling, and durable manifest, bundle, inspection, or store guarantees
+- final global identity semantics, cross-source merge behavior, and any durable resource-identity guarantees beyond the current bootstrap seam
 - mature search semantics, ranking, and broader retrieval architecture
 - real web application structure, browser-side behavior, authentication, and deployment assumptions
 - real external connectors, ranking, retrieval, and broader provenance or trust semantics

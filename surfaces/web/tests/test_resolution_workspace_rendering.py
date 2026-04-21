@@ -10,6 +10,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         html = render_resolution_workspace_html(
             {
                 "session_id": "session.known",
+                "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
                 "active_job": {
                     "job_id": "job-0001",
                     "status": "completed",
@@ -58,6 +59,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                     {
                         "artifact_id": "sha256:1234",
                         "artifact_kind": "resolution_manifest",
+                        "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
                         "content_type": "application/json; charset=utf-8",
                         "byte_length": 128,
                         "availability": "available",
@@ -72,6 +74,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("completed", html)
         self.assertIn("obj.synthetic-demo-app", html)
         self.assertIn("Synthetic Demo App", html)
+        self.assertIn("resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2", html)
         self.assertIn("Export resolution manifest", html)
         self.assertIn("/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
         self.assertIn("Export resolution bundle", html)

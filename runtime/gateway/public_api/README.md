@@ -14,6 +14,7 @@ Current bootstrap scope:
 - store deterministic manifest and bundle exports in a local bootstrap content-addressed store
 - list stored exports for a target and read stored artifact content by stable artifact identity
 - inspect a deterministic portable resolution bundle from local bytes or a local bundle path through a transport-neutral public boundary
+- surface a bootstrap deterministic `resolved_resource_id` across resolution, search, actions, stored exports, and bundle inspection where available
 - translate internal gateway job state into public contract-facing envelopes
 - map public job envelopes into the shared `WorkbenchSession` view model without
   implementing a web or native shell
@@ -34,3 +35,4 @@ Out of scope here:
 - installers, downloads from external sources, import, restore, or rollback behavior
 - ranking, fuzzy matching, or broader retrieval semantics
 - finalized public API guarantees
+- finalized global identity or cross-source merge semantics

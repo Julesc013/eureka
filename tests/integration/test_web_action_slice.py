@@ -29,6 +29,7 @@ class WebActionSliceIntegrationTestCase(unittest.TestCase):
             self.assertEqual(status, "200 OK")
             self.assertIn("Export resolution manifest", body)
             self.assertIn("Export resolution bundle", body)
+            self.assertIn("resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2", body)
             self.assertIn(
                 "/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0",
                 body,
@@ -47,6 +48,10 @@ class WebActionSliceIntegrationTestCase(unittest.TestCase):
             manifest = json.loads(export_body)
             self.assertEqual(manifest["manifest_kind"], "eureka.resolution_manifest")
             self.assertEqual(manifest["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
+            self.assertEqual(
+                manifest["resolved_resource_id"],
+                "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+            )
             self.assertEqual(manifest["primary_object"]["id"], "obj.synthetic-demo-app")
 
             bundle_status, bundle_headers, bundle_body = self._fetch_binary(
@@ -72,6 +77,14 @@ class WebActionSliceIntegrationTestCase(unittest.TestCase):
                 manifest_from_bundle = json.loads(bundle.read("manifest.json").decode("utf-8"))
                 bundle_metadata = json.loads(bundle.read("bundle.json").decode("utf-8"))
             self.assertEqual(manifest_from_bundle["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
+            self.assertEqual(
+                manifest_from_bundle["resolved_resource_id"],
+                "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+            )
+            self.assertEqual(
+                bundle_metadata["resolved_resource_id"],
+                "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+            )
             self.assertEqual(bundle_metadata["bundle_kind"], "eureka.resolution_bundle")
 
         with self.subTest(target_ref="fixture:software/missing-demo-app@0.0.1"):

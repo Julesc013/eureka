@@ -20,3 +20,5 @@ These questions are intentionally left open during bootstrap:
 16. Which parts of the bootstrap `resolution_bundle` should survive into a durable portable bundle or snapshot contract, and which parts should remain explicitly local-export packaging only?
 17. When the bundle inspection path stops using a local filesystem path for demos, what durable upload or import boundary should replace it without overcommitting restore semantics?
 18. Which local store semantics should remain durable if the bootstrap content-addressed store later grows into a broader cache or database layer, and which parts should stay explicitly demo-only?
+19. Which inputs should continue to participate in bootstrap `resolved_resource_id` derivation once real external sources arrive, and which parts of that derivation should remain local implementation detail rather than contract?
+20. At what point should `resolved_resource_id` become a first-class public compatibility promise rather than a bootstrap deterministic seam carried opportunistically through current envelopes?
