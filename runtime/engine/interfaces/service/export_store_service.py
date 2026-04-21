@@ -16,6 +16,7 @@ class StoredArtifactMetadata:
     store_path: str
     created_by_slice: str
     source_action: str
+    resolved_resource_id: str | None = None
     filename: str | None = None
     primary_object: ObjectSummary | None = None
 
@@ -30,6 +31,8 @@ class StoredArtifactMetadata:
             "created_by_slice": self.created_by_slice,
             "source_action": self.source_action,
         }
+        if self.resolved_resource_id is not None:
+            payload["resolved_resource_id"] = self.resolved_resource_id
         if self.filename is not None:
             payload["filename"] = self.filename
         if self.primary_object is not None:

@@ -27,6 +27,7 @@ class LocalExportStoreTestCase(unittest.TestCase):
             metadata = store.store_artifact(
                 artifact_kind="resolution_manifest",
                 target_ref="fixture:software/synthetic-demo-app@1.0.0",
+                resolved_resource_id="resolved:sha256:demo-resource",
                 content_type="application/json; charset=utf-8",
                 payload=payload,
                 source_action="store_resolution_manifest",
@@ -52,6 +53,7 @@ class LocalExportStoreTestCase(unittest.TestCase):
             self.assertTrue(metadata_path.exists())
             metadata_payload = json.loads(metadata_path.read_text(encoding="utf-8"))
             self.assertEqual(metadata_payload["artifact_id"], metadata.artifact_id)
+            self.assertEqual(metadata_payload["resolved_resource_id"], "resolved:sha256:demo-resource")
             self.assertEqual(metadata_payload["primary_object"]["id"], "obj.synthetic-demo-app")
 
     def test_store_reuses_the_same_artifact_identity_for_same_payload(self) -> None:
@@ -79,4 +81,3 @@ class LocalExportStoreTestCase(unittest.TestCase):
             self.assertEqual(first.artifact_id, second.artifact_id)
             artifacts = store.list_artifacts_for_target("fixture:software/synthetic-demo-app@1.0.0")
             self.assertEqual(len(artifacts), 1)
-

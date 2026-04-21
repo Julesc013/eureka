@@ -44,6 +44,7 @@ class LocalExportStore:
         *,
         artifact_kind: str,
         target_ref: str,
+        resolved_resource_id: str | None = None,
         content_type: str,
         payload: bytes,
         source_action: str,
@@ -66,6 +67,7 @@ class LocalExportStore:
             artifact_id=artifact_id,
             artifact_kind=artifact_kind,
             target_ref=target_ref,
+            resolved_resource_id=resolved_resource_id,
             content_type=content_type,
             byte_length=len(payload),
             store_path=object_relpath.replace("\\", "/"),
@@ -221,6 +223,7 @@ class ResolutionExportStoreEngineService:
             artifact = self._store.store_artifact(
                 artifact_kind="resolution_manifest",
                 target_ref=target_ref,
+                resolved_resource_id=_manifest_resolved_resource_id(manifest),
                 content_type="application/json; charset=utf-8",
                 payload=_json_bytes(manifest),
                 source_action="store_resolution_manifest",
@@ -249,6 +252,7 @@ class ResolutionExportStoreEngineService:
             artifact = self._store.store_artifact(
                 artifact_kind="resolution_bundle",
                 target_ref=target_ref,
+                resolved_resource_id=_manifest_resolved_resource_id(manifest),
                 content_type=bundle.content_type,
                 payload=bundle.payload,
                 source_action="store_resolution_bundle",
@@ -397,6 +401,10 @@ def _stored_artifact_metadata_from_dict(payload: Any) -> StoredArtifactMetadata:
         artifact_id=_require_string(payload.get("artifact_id"), "stored_artifact.artifact_id"),
         artifact_kind=_require_string(payload.get("artifact_kind"), "stored_artifact.artifact_kind"),
         target_ref=_require_string(payload.get("target_ref"), "stored_artifact.target_ref"),
+        resolved_resource_id=_optional_string(
+            payload.get("resolved_resource_id"),
+            "stored_artifact.resolved_resource_id",
+        ),
         content_type=_require_string(payload.get("content_type"), "stored_artifact.content_type"),
         byte_length=_require_int(payload.get("byte_length"), "stored_artifact.byte_length"),
         store_path=_require_string(payload.get("store_path"), "stored_artifact.store_path"),
@@ -434,6 +442,13 @@ def _manifest_primary_object(manifest: dict[str, Any]) -> ObjectSummary | None:
         kind=object_kind if isinstance(object_kind, str) and object_kind else None,
         label=object_label if isinstance(object_label, str) and object_label else None,
     )
+
+
+def _manifest_resolved_resource_id(manifest: dict[str, Any]) -> str | None:
+    resolved_resource_id = manifest.get("resolved_resource_id")
+    if not isinstance(resolved_resource_id, str) or not resolved_resource_id:
+        return None
+    return resolved_resource_id
 
 
 def _manifest_filename(target_ref: str) -> str:

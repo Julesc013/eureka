@@ -40,6 +40,7 @@ class ResolutionBundleInspectionResult:
     source_kind: str
     source_locator: str
     inspected_offline: bool
+    resolved_resource_id: str | None = None
     bundle_kind: str | None = None
     bundle_version: str | None = None
     target_ref: str | None = None

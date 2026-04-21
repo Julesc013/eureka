@@ -7,16 +7,17 @@ from runtime.engine.actions import ResolutionManifestExportService
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.extract import extract_synthetic_source_record
 from runtime.engine.interfaces.normalize import normalize_extracted_record
+from runtime.engine.resolve import resolved_resource_id_for_record
 
 
 class ResolutionManifestExportServiceTestCase(unittest.TestCase):
     def setUp(self) -> None:
         source_records = SyntheticSoftwareConnector().load_source_records()
-        normalized_records = tuple(
+        self.normalized_records = tuple(
             normalize_extracted_record(extract_synthetic_source_record(record))
             for record in source_records
         )
-        self.service = ResolutionManifestExportService(NormalizedCatalog(normalized_records))
+        self.service = ResolutionManifestExportService(NormalizedCatalog(self.normalized_records))
 
     def test_manifest_export_for_known_target_is_deterministic(self) -> None:
         manifest = self.service.export_manifest("fixture:software/synthetic-demo-app@1.0.0")
@@ -32,6 +33,7 @@ class ResolutionManifestExportServiceTestCase(unittest.TestCase):
                     "source_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
                 },
                 "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+                "resolved_resource_id": resolved_resource_id_for_record(self.normalized_records[0]),
                 "primary_object": {
                     "id": "obj.synthetic-demo-app",
                     "kind": "software",

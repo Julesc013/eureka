@@ -11,6 +11,7 @@ from runtime.engine.actions import build_resolution_manifest
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.normalize import NormalizedResolutionRecord
 from runtime.engine.interfaces.service import ResolutionBundleArtifact
+from runtime.engine.resolve import resolved_resource_id_for_record
 
 
 _FIXED_ZIP_DATETIME = (1980, 1, 1, 0, 0, 0)
@@ -61,6 +62,7 @@ def _bundle_metadata(record: NormalizedResolutionRecord) -> dict[str, Any]:
             "source_locator": record.source_locator,
         },
         "target_ref": record.target_ref,
+        "resolved_resource_id": resolved_resource_id_for_record(record),
         "created_by_slice": "portable_bundle_export",
         "entries": list(RESOLUTION_BUNDLE_MEMBER_ORDER),
     }
@@ -71,6 +73,7 @@ def _normalized_record_export(record: NormalizedResolutionRecord) -> dict[str, A
     return {
         "record_kind": "normalized_resolution_record",
         "target_ref": values["target_ref"],
+        "resolved_resource_id": resolved_resource_id_for_record(record),
         "source": _compact_mapping(
             {
                 "name": values["source_name"],

@@ -9,17 +9,18 @@ from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.extract import extract_synthetic_source_record
 from runtime.engine.interfaces.normalize import normalize_extracted_record
+from runtime.engine.resolve import resolved_resource_id_for_record
 from runtime.engine.snapshots import ResolutionBundleExportService
 
 
 class ResolutionBundleExportServiceTestCase(unittest.TestCase):
     def setUp(self) -> None:
         source_records = SyntheticSoftwareConnector().load_source_records()
-        normalized_records = tuple(
+        self.normalized_records = tuple(
             normalize_extracted_record(extract_synthetic_source_record(record))
             for record in source_records
         )
-        self.service = ResolutionBundleExportService(NormalizedCatalog(normalized_records))
+        self.service = ResolutionBundleExportService(NormalizedCatalog(self.normalized_records))
 
     def test_bundle_export_for_known_target_is_deterministic(self) -> None:
         first = self.service.export_bundle("fixture:software/synthetic-demo-app@1.0.0")
@@ -58,10 +59,22 @@ class ResolutionBundleExportServiceTestCase(unittest.TestCase):
 
         self.assertEqual(bundle_json["bundle_kind"], "eureka.resolution_bundle")
         self.assertEqual(bundle_json["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
+        self.assertEqual(
+            bundle_json["resolved_resource_id"],
+            resolved_resource_id_for_record(self.normalized_records[0]),
+        )
         self.assertEqual(manifest_json["manifest_kind"], "eureka.resolution_manifest")
         self.assertEqual(manifest_json["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
+        self.assertEqual(
+            manifest_json["resolved_resource_id"],
+            resolved_resource_id_for_record(self.normalized_records[0]),
+        )
         self.assertEqual(normalized_record_json["record_kind"], "normalized_resolution_record")
         self.assertEqual(normalized_record_json["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
+        self.assertEqual(
+            normalized_record_json["resolved_resource_id"],
+            resolved_resource_id_for_record(self.normalized_records[0]),
+        )
         self.assertIn("not a final snapshot, restore, or installer contract", readme_text)
 
     def test_bundle_export_for_unknown_target_returns_none(self) -> None:

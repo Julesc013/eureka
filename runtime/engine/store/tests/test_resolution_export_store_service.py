@@ -11,6 +11,7 @@ from runtime.engine.actions import ResolutionManifestExportService
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.extract import extract_synthetic_source_record
 from runtime.engine.interfaces.normalize import normalize_extracted_record
+from runtime.engine.resolve import resolved_resource_id_for_record
 from runtime.engine.snapshots import ResolutionBundleExportService
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
 
@@ -18,11 +19,11 @@ from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineSe
 class ResolutionExportStoreEngineServiceTestCase(unittest.TestCase):
     def setUp(self) -> None:
         connector = SyntheticSoftwareConnector()
-        records = tuple(
+        self.records = tuple(
             normalize_extracted_record(extract_synthetic_source_record(record))
             for record in connector.load_source_records()
         )
-        catalog = NormalizedCatalog(records)
+        catalog = NormalizedCatalog(self.records)
         self.temp_dir = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp_dir.cleanup)
         self.service = ResolutionExportStoreEngineService(
@@ -41,6 +42,10 @@ class ResolutionExportStoreEngineServiceTestCase(unittest.TestCase):
         self.assertEqual(first.artifact.artifact_kind, "resolution_manifest")
         self.assertEqual(first.artifact.content_type, "application/json; charset=utf-8")
         self.assertEqual(first.artifact.artifact_id, second.artifact.artifact_id if second.artifact else None)
+        self.assertEqual(
+            first.artifact.resolved_resource_id,
+            resolved_resource_id_for_record(self.records[0]),
+        )
 
     def test_bundle_store_operation_for_known_target_returns_stable_artifact_metadata_and_zip_bytes(self) -> None:
         result = self.service.store_bundle("fixture:software/synthetic-demo-app@1.0.0")
@@ -49,6 +54,10 @@ class ResolutionExportStoreEngineServiceTestCase(unittest.TestCase):
         content = self.service.get_artifact_content(result.artifact.artifact_id)
         self.assertEqual(result.status, "stored")
         self.assertEqual(result.artifact.artifact_kind, "resolution_bundle")
+        self.assertEqual(
+            result.artifact.resolved_resource_id,
+            resolved_resource_id_for_record(self.records[0]),
+        )
         self.assertEqual(content.status, "available")
         self.assertEqual(content.artifact, result.artifact)
         assert content.payload is not None
@@ -92,4 +101,7 @@ class ResolutionExportStoreEngineServiceTestCase(unittest.TestCase):
         manifest = json.loads(content.payload.decode("utf-8"))
         self.assertEqual(manifest["manifest_kind"], "eureka.resolution_manifest")
         self.assertEqual(manifest["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
-
+        self.assertEqual(
+            manifest["resolved_resource_id"],
+            resolved_resource_id_for_record(self.records[0]),
+        )

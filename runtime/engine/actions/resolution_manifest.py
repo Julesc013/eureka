@@ -5,6 +5,7 @@ from typing import Any
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.normalize import NormalizedResolutionRecord
 from runtime.engine.resolve.object_summary import normalized_record_to_object_summary
+from runtime.engine.resolve.resolved_resource_identity import resolved_resource_id_for_record
 
 
 class ResolutionManifestExportService:
@@ -31,6 +32,7 @@ def build_resolution_manifest(record: NormalizedResolutionRecord) -> dict[str, A
             "source_locator": record.source_locator,
         },
         "target_ref": record.target_ref,
+        "resolved_resource_id": resolved_resource_id_for_record(record),
         "primary_object": normalized_record_to_object_summary(record).to_dict(),
         "source_fixture": {
             "kind": "synthetic_fixture",

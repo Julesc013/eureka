@@ -109,7 +109,15 @@ class ResolutionBundleInspectionEngineService:
             bundle_kind = _require_string(bundle_metadata.get("bundle_kind"), "bundle.json.bundle_kind")
             bundle_version = _require_string(bundle_metadata.get("bundle_version"), "bundle.json.bundle_version")
             target_ref = _require_string(bundle_metadata.get("target_ref"), "bundle.json.target_ref")
+            resolved_resource_id = _require_string(
+                bundle_metadata.get("resolved_resource_id"),
+                "bundle.json.resolved_resource_id",
+            )
             manifest_kind = _require_string(manifest.get("manifest_kind"), "manifest.json.manifest_kind")
+            manifest_resolved_resource_id = _require_string(
+                manifest.get("resolved_resource_id"),
+                "manifest.json.resolved_resource_id",
+            )
             primary_object = _coerce_primary_object(manifest.get("primary_object"))
             normalized_record_summary = _coerce_normalized_record_summary(normalized_record)
         except ValueError as exc:
@@ -137,12 +145,21 @@ class ResolutionBundleInspectionEngineService:
                 message="manifest.json.manifest_kind must equal 'eureka.resolution_manifest'.",
                 member_list=member_list,
             )
+        if manifest_resolved_resource_id != resolved_resource_id:
+            return _blocked_result(
+                source_kind=source_kind,
+                source_locator=source_locator,
+                code="bundle_structure_invalid",
+                message="bundle.json.resolved_resource_id and manifest.json.resolved_resource_id must match.",
+                member_list=member_list,
+            )
 
         return ResolutionBundleInspectionResult(
             status="inspected",
             source_kind=source_kind,
             source_locator=source_locator,
             inspected_offline=True,
+            resolved_resource_id=resolved_resource_id,
             bundle_kind=bundle_kind,
             bundle_version=bundle_version,
             target_ref=target_ref,
@@ -197,6 +214,10 @@ def _coerce_normalized_record_summary(value: object) -> dict[str, object]:
     return {
         "record_kind": record_kind,
         "target_ref": target_ref,
+        "resolved_resource_id": _optional_string(
+            value.get("resolved_resource_id"),
+            "records/normalized_record.json.resolved_resource_id",
+        ),
         "source": source,
         "object": object_summary,
         "state": state,
