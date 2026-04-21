@@ -44,6 +44,18 @@ steps:
     run: python scripts/demo_web_workbench.py --store-root .demo-store --list-stored fixture:software/synthetic-demo-app@1.0.0
   - id: web_read_stored_unknown
     run: python scripts/demo_web_workbench.py --store-root .demo-store --read-stored sha256:0000000000000000000000000000000000000000000000000000000000000000
+  - id: native_cli_resolve_known
+    run: python scripts/demo_cli_workbench.py resolve fixture:software/synthetic-demo-app@1.0.0
+  - id: native_cli_resolve_unknown
+    run: python scripts/demo_cli_workbench.py resolve fixture:software/missing-demo-app@0.0.1
+  - id: native_cli_search_multi
+    run: python scripts/demo_cli_workbench.py search synthetic
+  - id: native_cli_manifest_known
+    run: python scripts/demo_cli_workbench.py export-manifest fixture:software/synthetic-demo-app@1.0.0 --json
+  - id: native_cli_bundle_known
+    run: python scripts/demo_cli_workbench.py export-bundle fixture:software/synthetic-demo-app@1.0.0 --json
+  - id: native_cli_store_bundle_known
+    run: python scripts/demo_cli_workbench.py store-bundle fixture:software/synthetic-demo-app@1.0.0 --store-root .demo-store --json
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
@@ -54,4 +66,5 @@ notes:
   - Bundle export remains a bounded local action over deterministic synthetic results and does not imply restore, import, installer, or final snapshot semantics.
   - Stored exports remain a bounded local bootstrap filesystem store with stable artifact identity and do not imply a final cache, database, or preservation contract.
   - Bundle inspection remains a local bootstrap readback seam; path-based inspection is a demo choice and not a final upload or import contract.
+  - The native CLI proof remains bootstrap-scale and does not imply a final CLI, TUI, GUI, or packaging direction.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

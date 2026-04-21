@@ -2,8 +2,7 @@ component: app-native
 status: bootstrap
 owned_paths:
   - surfaces/native/**
-purpose: Hold the native-facing application surface and explicitly bounded local-mode integrations.
+purpose: Hold the native-facing application surface, including the first bootstrap CLI proof and any explicitly bounded future local-mode integrations.
 does_not_own:
   - engine internals outside a future narrow sdk boundary
   - archive contract semantics
-
