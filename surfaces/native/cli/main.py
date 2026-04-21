@@ -6,14 +6,12 @@ from dataclasses import dataclass
 import sys
 from typing import Any, Mapping, Sequence, TextIO
 
-from runtime.gateway import (
+from runtime.gateway.public_api import (
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
     build_demo_stored_exports_public_api,
-)
-from runtime.gateway.public_api import (
     InspectResolutionBundleRequest,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
