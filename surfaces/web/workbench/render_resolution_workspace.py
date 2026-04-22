@@ -23,6 +23,7 @@ def render_resolution_workspace_html(
     selected_object = _optional_mapping(workbench_session.get("selected_object"), "workbench_session.selected_object")
     source = _optional_mapping(workbench_session.get("source"), "workbench_session.source")
     evidence = _evidence_list(workbench_session.get("evidence"))
+    representations = _representation_list(workbench_session.get("representations"))
     notices = _notice_list(workbench_session.get("notices"))
     actions_model = _optional_mapping(resolution_actions, "resolution_actions")
     actions = _action_list(actions_model.get("actions")) if actions_model is not None else []
@@ -173,6 +174,54 @@ def render_resolution_workspace_html(
                 "      </section>",
             ]
         )
+
+    parts.extend(
+        [
+            "      <section>",
+            "        <h2>Known Representations/Access Paths</h2>",
+        ]
+    )
+    if representations:
+        parts.append("        <ul>")
+        for entry in representations:
+            parts.append("          <li>")
+            parts.append(
+                f"            <strong>{escape(_require_string(entry.get('label'), 'representation.label'))}</strong>"
+            )
+            parts.append("            <dl>")
+            parts.append(
+                f"              <dt>Representation kind</dt><dd>{escape(_require_string(entry.get('representation_kind'), 'representation.representation_kind'))}</dd>"
+            )
+            parts.append(
+                f"              <dt>Access kind</dt><dd>{escape(_require_string(entry.get('access_kind'), 'representation.access_kind'))}</dd>"
+            )
+            parts.append(
+                f"              <dt>Source family</dt><dd>{escape(_require_string(entry.get('source_family'), 'representation.source_family'))}</dd>"
+            )
+            source_label = _optional_string(entry.get("source_label"), "representation.source_label")
+            if source_label is not None:
+                parts.append(f"              <dt>Source label</dt><dd>{escape(source_label)}</dd>")
+            content_type = _optional_string(entry.get("content_type"), "representation.content_type")
+            if content_type is not None:
+                parts.append(f"              <dt>Content type</dt><dd>{escape(content_type)}</dd>")
+            byte_length = _optional_int(entry.get("byte_length"), "representation.byte_length")
+            if byte_length is not None:
+                parts.append(f"              <dt>Byte length</dt><dd>{byte_length}</dd>")
+            access_locator = _optional_string(entry.get("access_locator"), "representation.access_locator")
+            if access_locator is not None:
+                parts.append(f"              <dt>Access locator</dt><dd>{escape(access_locator)}</dd>")
+            source_locator = _optional_string(entry.get("source_locator"), "representation.source_locator")
+            if source_locator is not None:
+                parts.append(f"              <dt>Source locator</dt><dd>{escape(source_locator)}</dd>")
+            is_direct = entry.get("is_direct")
+            if isinstance(is_direct, bool):
+                parts.append(f"              <dt>Direct</dt><dd>{escape(str(is_direct).lower())}</dd>")
+            parts.append("            </dl>")
+            parts.append("          </li>")
+        parts.append("        </ul>")
+    else:
+        parts.append("        <p>No bounded representations or access paths are available for this target.</p>")
+    parts.append("      </section>")
 
     parts.extend(
         [
@@ -389,6 +438,19 @@ def _evidence_list(value: Any) -> list[Mapping[str, Any]]:
     return evidence
 
 
+def _representation_list(value: Any) -> list[Mapping[str, Any]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError("workbench_session.representations must be a list when provided.")
+    representations: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"workbench_session.representations[{index}] must be an object.")
+        representations.append(item)
+    return representations
+
+
 def _require_string(value: Any, field_name: str) -> str:
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field_name} must be a non-empty string.")
@@ -407,6 +469,12 @@ def _require_int(value: Any, field_name: str) -> int:
     if not isinstance(value, int) or value < 0:
         raise ValueError(f"{field_name} must be a non-negative integer.")
     return value
+
+
+def _optional_int(value: Any, field_name: str) -> int | None:
+    if value is None:
+        return None
+    return _require_int(value, field_name)
 
 
 def _evidence_text(entry: Mapping[str, Any]) -> str:

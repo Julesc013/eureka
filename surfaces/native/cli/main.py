@@ -13,6 +13,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
+    build_demo_representations_public_api,
     build_demo_search_public_api,
     build_demo_stored_exports_public_api,
     build_demo_subject_states_public_api,
@@ -21,6 +22,8 @@ from runtime.gateway.public_api import (
     CompareTargetsRequest,
     ComparisonPublicApi,
     InspectResolutionBundleRequest,
+    RepresentationCatalogRequest,
+    RepresentationsPublicApi,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
     ResolutionJobsPublicApi,
@@ -36,6 +39,7 @@ from runtime.gateway.public_api import (
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
+    representations_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     stored_exports_envelope_to_view_model,
     subject_states_envelope_to_view_model,
@@ -47,6 +51,7 @@ from surfaces.native.cli.formatters import (
     format_bundle_inspection,
     format_comparison,
     format_manifest_export,
+    format_representations,
     format_resolution_workspace,
     format_search_results,
     format_store_result,
@@ -69,6 +74,7 @@ class CliContext:
     absence_public_api: AbsencePublicApi
     comparison_public_api: ComparisonPublicApi
     subject_states_public_api: SubjectStatesPublicApi
+    representations_public_api: RepresentationsPublicApi
     stored_exports_public_api: StoredExportsPublicApi | None = None
     session_id: str = DEFAULT_SESSION_ID
 
@@ -147,6 +153,18 @@ def main(
             )
             subject_states = subject_states_envelope_to_view_model(response.body)
             return _emit(output, args.json, subject_states, format_subject_states(subject_states))
+
+        if args.command == "representations":
+            response = cli_context.representations_public_api.list_representations(
+                RepresentationCatalogRequest.from_parts(args.target_ref),
+            )
+            representations = representations_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                representations,
+                format_representations(representations),
+            )
 
         if args.command == "export-manifest":
             response = cli_context.actions_public_api.export_resolution_manifest(
@@ -280,6 +298,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     states_parser.add_argument("subject_key")
 
+    representations_parser = subparsers.add_parser(
+        "representations",
+        parents=[json_parent],
+        help="List bounded known representations/access paths for one resolved target through the public boundary.",
+    )
+    representations_parser.add_argument("target_ref")
+
     export_manifest_parser = subparsers.add_parser(
         "export-manifest",
         parents=[json_parent],
@@ -342,6 +367,7 @@ def build_cli_context(*, store_root: str | None) -> CliContext:
         absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
+        representations_public_api=build_demo_representations_public_api(),
         stored_exports_public_api=(
             build_demo_stored_exports_public_api(store_root) if store_root is not None else None
         ),

@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
+from surfaces.native.cli.formatters.representations import format_representation_lines
+
 
 def format_resolution_workspace(
     workbench_session: Mapping[str, Any],
@@ -52,6 +54,11 @@ def format_resolution_workspace(
     if isinstance(evidence, list) and evidence:
         lines.extend(["", "Evidence"])
         lines.extend(f"- {_format_evidence_entry(entry)}" for entry in evidence if isinstance(entry, Mapping))
+
+    representations = workbench_session.get("representations")
+    if isinstance(representations, list) and representations:
+        lines.extend(["", "Known representations/access paths"])
+        lines.extend(format_representation_lines(representations))
 
     if resolution_actions is not None:
         actions = resolution_actions.get("actions", [])

@@ -15,6 +15,7 @@ from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     InspectResolutionBundleRequest,
+    build_demo_representations_public_api,
     ResolutionActionRequest,
     StoredArtifactRequest,
     StoredExportsTargetRequest,
@@ -233,6 +234,7 @@ def main() -> int:
         absence_public_api=absence_public_api,
         comparison_public_api=comparison_public_api,
         subject_states_public_api=build_demo_subject_states_public_api(),
+        representations_public_api=build_demo_representations_public_api(),
         actions_public_api=actions_public_api,
         bundle_inspection_public_api=bundle_inspection_public_api,
         stored_exports_public_api=stored_exports_public_api,
@@ -253,6 +255,10 @@ def main() -> int:
             f"http://{args.host}:{args.port}/compare?left={quote('fixture:software/archivebox@0.8.5', safe='')}&right={quote('github-release:archivebox/archivebox@v0.8.5', safe='')}",
             "Serving Eureka bootstrap HTTP API compare route at "
             f"http://{args.host}:{args.port}/api/compare?left={quote('fixture:software/archivebox@0.8.5', safe='')}&right={quote('github-release:archivebox/archivebox@v0.8.5', safe='')}",
+            "Serving Eureka representations page at "
+            f"http://{args.host}:{args.port}/representations?target_ref={quote(target_ref, safe='')}",
+            "Serving Eureka bootstrap HTTP API representations route at "
+            f"http://{args.host}:{args.port}/api/representations?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka subject states page at "
             f"http://{args.host}:{args.port}/subject?key={quote('archivebox', safe='')}",
             "Serving Eureka bootstrap HTTP API subject states route at "

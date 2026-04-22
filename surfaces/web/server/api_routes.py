@@ -10,6 +10,8 @@ from runtime.gateway.public_api import (
     ExplainResolveMissRequest,
     ExplainSearchMissRequest,
     InspectResolutionBundleRequest,
+    RepresentationCatalogRequest,
+    RepresentationsPublicApi,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
     ResolutionActionsPublicApi,
@@ -26,6 +28,7 @@ from runtime.gateway.public_api import (
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
+    representations_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     stored_exports_envelope_to_view_model,
     subject_states_envelope_to_view_model,
@@ -54,6 +57,12 @@ def build_api_index_document() -> dict[str, Any]:
                 "path": "/api/compare",
                 "method": "GET",
                 "query_parameters": ["left", "right"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/representations",
+                "method": "GET",
+                "query_parameters": ["target_ref"],
                 "response_content_types": ["application/json"],
             },
             {
@@ -140,6 +149,7 @@ def handle_api_request(
     absence_public_api: AbsencePublicApi | None,
     comparison_public_api: ComparisonPublicApi | None,
     subject_states_public_api: SubjectStatesPublicApi | None,
+    representations_public_api: RepresentationsPublicApi | None,
     actions_public_api: ResolutionActionsPublicApi | None,
     bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None,
     search_public_api: SearchPublicApi,
@@ -226,6 +236,23 @@ def handle_api_request(
         return json_response(
             response.status_code,
             subject_states_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/representations":
+        if representations_public_api is None:
+            return _service_unavailable(
+                "representations_unavailable",
+                "This bootstrap HTTP API was not configured with a public representations boundary.",
+            )
+        target_ref = _required_query_value(query, "target_ref")
+        if target_ref is None:
+            return _missing_query_value("target_ref")
+        response = representations_public_api.list_representations(
+            RepresentationCatalogRequest.from_parts(target_ref),
+        )
+        return json_response(
+            response.status_code,
+            representations_envelope_to_view_model(response.body),
         )
 
     if path == "/api/search":

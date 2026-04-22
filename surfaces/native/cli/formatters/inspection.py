@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from typing import Any, Mapping
 
+from surfaces.native.cli.formatters.representations import format_representation_lines
+
 
 def format_bundle_inspection(bundle_inspection: Mapping[str, Any]) -> str:
     source = bundle_inspection.get("source", {})
@@ -54,6 +56,10 @@ def format_bundle_inspection(bundle_inspection: Mapping[str, Any]) -> str:
 
     normalized_record = bundle_inspection.get("normalized_record")
     if isinstance(normalized_record, Mapping):
+        representations = normalized_record.get("representations")
+        if isinstance(representations, list) and representations:
+            lines.extend(["", "Normalized record representations"])
+            lines.extend(format_representation_lines(representations))
         lines.extend(
             [
                 "",
