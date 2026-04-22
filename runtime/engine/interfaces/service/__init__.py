@@ -18,6 +18,7 @@ from runtime.engine.interfaces.service.export_store_service import (
 )
 from runtime.engine.interfaces.service.resolution_service import ResolutionOutcome, ResolutionService
 from runtime.engine.interfaces.service.search_service import SearchService
+from runtime.engine.interfaces.service.subject_states_service import SubjectStatesService
 
 __all__ = [
     "ComparisonService",
@@ -36,4 +37,5 @@ __all__ = [
     "StoredArtifactLookupResult",
     "StoredArtifactMetadata",
     "StoredArtifactWriteResult",
+    "SubjectStatesService",
 ]

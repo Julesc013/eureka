@@ -21,6 +21,21 @@
         "html_url": "https://github.com/archivebox/archivebox"
       },
       "release": {
+        "tag_name": "v0.8.4",
+        "name": "ArchiveBox v0.8.4",
+        "html_url": "https://github.com/archivebox/archivebox/releases/tag/v0.8.4",
+        "url": "https://api.github.com/repos/archivebox/archivebox/releases/tags/v0.8.4",
+        "published_at": "2024-07-10T00:00:00Z",
+        "draft": false,
+        "prerelease": false
+      }
+    },
+    {
+      "repository": {
+        "full_name": "archivebox/archivebox",
+        "html_url": "https://github.com/archivebox/archivebox"
+      },
+      "release": {
         "tag_name": "v0.8.5",
         "name": "ArchiveBox v0.8.5",
         "html_url": "https://github.com/archivebox/archivebox/releases/tag/v0.8.5",

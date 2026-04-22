@@ -16,6 +16,12 @@ from runtime.engine.interfaces.public.resolution import (
     SourceSummary,
 )
 from runtime.engine.interfaces.public.search import SearchRequest, SearchResponse, SearchResultEntry
+from runtime.engine.interfaces.public.subject_states import (
+    SubjectStateSummary,
+    SubjectStatesRequest,
+    SubjectStatesResult,
+    SubjectSummary,
+)
 
 __all__ = [
     "EvidenceSummary",
@@ -32,4 +38,8 @@ __all__ = [
     "SearchRequest",
     "SearchResponse",
     "SearchResultEntry",
+    "SubjectStateSummary",
+    "SubjectStatesRequest",
+    "SubjectStatesResult",
+    "SubjectSummary",
 ]
