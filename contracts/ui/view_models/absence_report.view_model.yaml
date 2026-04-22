@@ -1,0 +1,146 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/absence_report.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
+title: AbsenceReport
+description: Draft shared bounded absence-report model aligned with the gateway public absence boundary.
+type: object
+additionalProperties: false
+properties:
+  request_kind:
+    type: string
+    enum:
+      - resolve
+      - search
+  requested_value:
+    type: string
+  status:
+    type: string
+    enum:
+      - explained
+      - not_absent
+  checked_source_families:
+    type: array
+    items:
+      type: string
+  checked_record_count:
+    type: integer
+    minimum: 0
+  checked_subject_count:
+    type: integer
+    minimum: 0
+  likely_reason_code:
+    type: string
+  reason_message:
+    type: string
+  near_matches:
+    type: array
+    items:
+      $ref: '#/$defs/absence_near_match'
+  next_steps:
+    type: array
+    items:
+      type: string
+  notices:
+    type: array
+    items:
+      $ref: '#/$defs/notice'
+required:
+  - request_kind
+  - requested_value
+  - status
+  - checked_source_families
+  - checked_record_count
+  - checked_subject_count
+  - likely_reason_code
+  - reason_message
+  - near_matches
+  - next_steps
+  - notices
+$defs:
+  absence_near_match:
+    type: object
+    additionalProperties: false
+    properties:
+      match_kind:
+        type: string
+      target_ref:
+        type: string
+      resolved_resource_id:
+        type: string
+      object:
+        type: object
+        additionalProperties: false
+        properties:
+          id:
+            type: string
+          kind:
+            type: string
+          label:
+            type: string
+        required:
+          - id
+      source:
+        type: object
+        additionalProperties: false
+        properties:
+          family:
+            type: string
+          label:
+            type: string
+          locator:
+            type: string
+        required:
+          - family
+      subject_key:
+        type: string
+      version_or_state:
+        type: string
+      normalized_version_or_state:
+        type: string
+      evidence:
+        type: array
+        items:
+          $ref: '#/$defs/evidence_summary'
+    required:
+      - match_kind
+      - target_ref
+      - resolved_resource_id
+      - object
+  evidence_summary:
+    type: object
+    additionalProperties: false
+    properties:
+      claim_kind:
+        type: string
+      claim_value:
+        type: string
+      asserted_by_family:
+        type: string
+      asserted_by_label:
+        type: string
+      evidence_kind:
+        type: string
+      evidence_locator:
+        type: string
+      asserted_at:
+        type: string
+    required:
+      - claim_kind
+      - claim_value
+      - asserted_by_family
+      - evidence_kind
+      - evidence_locator
+  notice:
+    type: object
+    additionalProperties: false
+    properties:
+      code:
+        type: string
+      severity:
+        type: string
+      message:
+        type: string
+    required:
+      - code
+      - severity
+x-eureka-status: draft

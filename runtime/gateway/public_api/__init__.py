@@ -1,5 +1,14 @@
 """Public gateway helpers for the Eureka thin slice."""
 
+from runtime.gateway.public_api.absence_boundary import (
+    AbsencePublicApi,
+    ExplainResolveMissRequest,
+    ExplainSearchMissRequest,
+    absence_report_to_public_envelope,
+)
+from runtime.gateway.public_api.absence_view_models import (
+    absence_envelope_to_view_model,
+)
 from runtime.gateway.public_api.comparison_boundary import (
     CompareTargetsRequest,
     ComparisonPublicApi,
@@ -51,6 +60,7 @@ from runtime.gateway.public_api.bundle_inspection_view_models import (
     bundle_inspection_envelope_to_view_model,
 )
 from runtime.gateway.public_api.demo_support import (
+    build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -99,8 +109,11 @@ from runtime.gateway.public_api.workbench_sessions import resolution_job_envelop
 __all__ = [
     "PublicApiResponse",
     "PublicArtifactResponse",
+    "AbsencePublicApi",
     "CompareTargetsRequest",
     "ComparisonPublicApi",
+    "ExplainResolveMissRequest",
+    "ExplainSearchMissRequest",
     "EXPORT_RESOLUTION_BUNDLE_ACTION_ID",
     "EXPORT_RESOLUTION_BUNDLE_LABEL",
     "EXPORT_RESOLUTION_BUNDLE_ROUTE",
@@ -133,6 +146,9 @@ __all__ = [
     "SubmitResolutionJobRequest",
     "accepted_resolution_job_to_public_envelope",
     "available_resolution_actions_to_public_envelope",
+    "absence_envelope_to_view_model",
+    "absence_report_to_public_envelope",
+    "build_demo_absence_public_api",
     "build_demo_comparison_public_api",
     "build_demo_resolution_actions_public_api",
     "build_demo_resolution_bundle_inspection_public_api",

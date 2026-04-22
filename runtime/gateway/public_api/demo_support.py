@@ -3,6 +3,7 @@ from __future__ import annotations
 from runtime.connectors.github_releases import GitHubReleasesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.actions import ResolutionManifestExportService
+from runtime.engine.absence import DeterministicAbsenceService
 from runtime.engine.compare import DeterministicComparisonService
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.extract import (
@@ -17,6 +18,7 @@ from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolut
 from runtime.engine.states import DeterministicSubjectStatesService
 from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBundleInspectionEngineService
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
+from runtime.gateway.public_api.absence_boundary import AbsencePublicApi
 from runtime.gateway.public_api.comparison_boundary import ComparisonPublicApi
 from runtime.gateway.public_api.resolution_actions import ResolutionActionsPublicApi
 from runtime.gateway.public_api.resolution_boundary import ResolutionJobsPublicApi
@@ -38,6 +40,18 @@ def build_demo_search_public_api() -> SearchPublicApi:
     catalog = _build_demo_normalized_catalog()
     search_service = DeterministicSearchService(catalog)
     return SearchPublicApi(search_service)
+
+
+def build_demo_absence_public_api() -> AbsencePublicApi:
+    catalog = _build_demo_normalized_catalog()
+    resolution_service = ExactMatchResolutionService(catalog)
+    search_service = DeterministicSearchService(catalog)
+    absence_service = DeterministicAbsenceService(
+        catalog,
+        resolution_service=resolution_service,
+        search_service=search_service,
+    )
+    return AbsencePublicApi(absence_service)
 
 
 def build_demo_comparison_public_api() -> ComparisonPublicApi:

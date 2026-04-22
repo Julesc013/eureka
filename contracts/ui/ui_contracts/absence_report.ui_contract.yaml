@@ -1,0 +1,32 @@
+name: AbsenceReport
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that explain
+  bounded resolution or search misses through the gateway public absence boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/absence/resolve?target_ref={target_ref}
+    - GET /v0/absence/search?q={query}
+  shared_view_models:
+    - contracts/ui/view_models/absence_report.view_model.yaml
+  shared_result_shapes:
+    - AbsenceReportEnvelope
+surface_expectations:
+  - surfaces explain misses through the public gateway boundary and do not assume engine-local diagnostic internals
+  - surfaces show the requested value, likely reason, checked source families, bounded near matches, and compact next steps
+  - surfaces preserve compact source and evidence summaries on near matches when the bounded corpus supports them
+  - surfaces do not fabricate certainty, ranking, trust scores, or final truth-selection behavior
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - final absence or diagnostic semantics
+  - ranking, fuzzy retrieval, and broader suggestion behavior
+  - trust, provenance, or merge reasoning beyond the current bounded miss-explanation seam

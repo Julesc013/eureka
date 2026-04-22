@@ -16,6 +16,8 @@ servers:
 tags:
   - name: ResolutionJobs
     description: Draft bounded resolution job submission and read operations.
+  - name: Absence
+    description: Draft bounded miss-explanation operations for deterministic resolution and search misses.
   - name: Comparison
     description: Draft side-by-side comparison operations for two bounded resolved targets.
   - name: SubjectStates
@@ -78,6 +80,56 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SearchResultsEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/absence/resolve:
+    get:
+      tags:
+        - Absence
+      summary: Explain a bounded exact-resolution miss
+      description: >
+        Draft public absence boundary for explaining a bounded exact-resolution miss
+        using the current deterministic local corpus. This is not a final diagnostic,
+        ranking, or trust-reasoning contract.
+      operationId: explainResolveMiss
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+      responses:
+        '200':
+          description: Draft bounded absence report envelope for an exact-resolution request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AbsenceReportEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/absence/search:
+    get:
+      tags:
+        - Absence
+      summary: Explain a bounded search miss
+      description: >
+        Draft public absence boundary for explaining a deterministic bounded search
+        miss using the current local corpus. This is not a final ranking, fuzzy
+        retrieval, or trust-reasoning contract.
+      operationId: explainSearchMiss
+      parameters:
+        - $ref: '#/components/parameters/SearchQuery'
+      responses:
+        '200':
+          description: Draft bounded absence report envelope for a deterministic search request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AbsenceReportEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -746,6 +798,93 @@ components:
       required:
         - code
         - message
+    AbsenceReportEnvelope:
+      type: object
+      additionalProperties: false
+      description: >
+        Draft bounded absence-report envelope for deterministic resolution or search
+        misses. This is not a final diagnostic, ranking, or trust-reasoning contract.
+      properties:
+        request_kind:
+          type: string
+          enum:
+            - resolve
+            - search
+        requested_value:
+          type: string
+        status:
+          type: string
+          enum:
+            - explained
+            - not_absent
+        checked_source_families:
+          type: array
+          items:
+            type: string
+        checked_record_count:
+          type: integer
+          minimum: 0
+        checked_subject_count:
+          type: integer
+          minimum: 0
+        likely_reason_code:
+          type: string
+        reason_message:
+          type: string
+        near_matches:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbsenceNearMatch'
+        next_steps:
+          type: array
+          items:
+            type: string
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - request_kind
+        - requested_value
+        - status
+        - checked_source_families
+        - checked_record_count
+        - checked_subject_count
+        - likely_reason_code
+        - reason_message
+        - near_matches
+        - next_steps
+        - notices
+    AbsenceNearMatch:
+      type: object
+      additionalProperties: false
+      description: Draft compact near-match summary used within a bounded absence report.
+      properties:
+        match_kind:
+          type: string
+        target_ref:
+          type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
+        object:
+          $ref: '#/components/schemas/ObjectSummary'
+        source:
+          $ref: '#/components/schemas/SourceSummary'
+        subject_key:
+          type: string
+        version_or_state:
+          type: string
+        normalized_version_or_state:
+          type: string
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
+      required:
+        - match_kind
+        - target_ref
+        - resolved_resource_id
+        - object
     ComparisonEnvelope:
       type: object
       additionalProperties: false
