@@ -9,6 +9,8 @@ class NormalizedResolutionRecord:
     source_name: str
     source_locator: str
     object_id: str
+    source_family: str = "synthetic_fixture"
+    source_family_label: str | None = None
     object_kind: str | None = None
     object_label: str | None = None
     state_id: str | None = None

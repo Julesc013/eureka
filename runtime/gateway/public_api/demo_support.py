@@ -1,10 +1,17 @@
 from __future__ import annotations
 
+from runtime.connectors.github_releases import GitHubReleasesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.actions import ResolutionManifestExportService
 from runtime.engine.core import NormalizedCatalog
-from runtime.engine.interfaces.extract import extract_synthetic_source_record
-from runtime.engine.interfaces.normalize import normalize_extracted_record
+from runtime.engine.interfaces.extract import (
+    extract_github_release_source_record,
+    extract_synthetic_source_record,
+)
+from runtime.engine.interfaces.normalize import (
+    normalize_extracted_record,
+    normalize_github_release_record,
+)
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
 from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBundleInspectionEngineService
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
@@ -57,9 +64,14 @@ def build_demo_stored_exports_public_api(store_root: str) -> StoredExportsPublic
 
 
 def _build_demo_normalized_catalog() -> NormalizedCatalog:
-    connector = SyntheticSoftwareConnector()
-    normalized_records = tuple(
+    synthetic_connector = SyntheticSoftwareConnector()
+    github_connector = GitHubReleasesConnector()
+    synthetic_records = tuple(
         normalize_extracted_record(extract_synthetic_source_record(record))
-        for record in connector.load_source_records()
+        for record in synthetic_connector.load_source_records()
     )
-    return NormalizedCatalog(normalized_records)
+    github_records = tuple(
+        normalize_github_release_record(extract_github_release_source_record(record))
+        for record in github_connector.load_source_records()
+    )
+    return NormalizedCatalog(synthetic_records + github_records)

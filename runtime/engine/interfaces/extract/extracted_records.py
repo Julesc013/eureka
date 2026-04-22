@@ -13,3 +13,12 @@ class ExtractedSyntheticRecord:
     state_record: dict[str, Any]
     representation_record: dict[str, Any]
     access_path_record: dict[str, Any]
+
+
+@dataclass(frozen=True)
+class ExtractedGitHubReleaseRecord:
+    target_ref: str
+    source_name: str
+    source_locator: str
+    repository_record: dict[str, Any]
+    release_record: dict[str, Any]

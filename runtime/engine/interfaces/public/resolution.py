@@ -40,6 +40,21 @@ class ObjectSummary:
 
 
 @dataclass(frozen=True)
+class SourceSummary:
+    family: str
+    label: str | None = None
+    locator: str | None = None
+
+    def to_dict(self) -> dict[str, str]:
+        payload = {"family": self.family}
+        if self.label is not None:
+            payload["label"] = self.label
+        if self.locator is not None:
+            payload["locator"] = self.locator
+        return payload
+
+
+@dataclass(frozen=True)
 class Notice:
     code: str
     severity: str
@@ -56,6 +71,7 @@ class Notice:
 class ResolutionResult:
     resolved_resource_id: str | None = None
     primary_object: ObjectSummary | None = None
+    source: SourceSummary | None = None
     snapshot_manifest_id: str | None = None
     notices: tuple[Notice, ...] = ()
 
@@ -65,6 +81,8 @@ class ResolutionResult:
             payload["resolved_resource_id"] = self.resolved_resource_id
         if self.primary_object is not None:
             payload["primary_object"] = self.primary_object.to_dict()
+        if self.source is not None:
+            payload["source"] = self.source.to_dict()
         if self.snapshot_manifest_id is not None:
             payload["snapshot_manifest_id"] = self.snapshot_manifest_id
         return payload

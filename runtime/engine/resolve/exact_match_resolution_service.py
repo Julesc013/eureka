@@ -5,6 +5,7 @@ from runtime.engine.interfaces.public import Notice, ResolutionRequest, Resoluti
 from runtime.engine.interfaces.service import ResolutionOutcome, ResolutionService
 from runtime.engine.resolve.object_summary import normalized_record_to_object_summary
 from runtime.engine.resolve.resolved_resource_identity import resolved_resource_id_for_record
+from runtime.engine.resolve.source_summary import normalized_record_to_source_summary
 
 
 class ExactMatchResolutionService(ResolutionService):
@@ -18,9 +19,9 @@ class ExactMatchResolutionService(ResolutionService):
                 status="blocked",
                 notices=(
                     Notice(
-                        code="fixture_target_not_found",
+                        code="target_ref_not_found",
                         severity="warning",
-                        message=f"No governed synthetic record matched target_ref '{request.target_ref}'.",
+                        message=f"No bounded record matched target_ref '{request.target_ref}'.",
                     ),
                 ),
             )
@@ -30,5 +31,6 @@ class ExactMatchResolutionService(ResolutionService):
             result=ResolutionResult(
                 resolved_resource_id=resolved_resource_id_for_record(record),
                 primary_object=normalized_record_to_object_summary(record),
+                source=normalized_record_to_source_summary(record),
             ),
         )

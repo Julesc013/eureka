@@ -10,3 +10,11 @@ class SyntheticSourceRecord:
     source_name: str
     payload: dict[str, Any]
     source_locator: str
+
+
+@dataclass(frozen=True)
+class GitHubReleaseSourceRecord:
+    target_ref: str
+    source_name: str
+    payload: dict[str, Any]
+    source_locator: str
