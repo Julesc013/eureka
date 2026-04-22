@@ -23,7 +23,35 @@
         "id": "access.synthetic-demo-app.fixture",
         "kind": "fixture_path",
         "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
-      }
+      },
+      "representations": [
+        {
+          "id": "rep.synthetic-demo-app.source",
+          "kind": "fixture_artifact",
+          "label": "Synthetic demo app fixture artifact",
+          "content_type": "application/vnd.eureka.synthetic.bundle",
+          "byte_length": 4096,
+          "access_path": {
+            "id": "access.synthetic-demo-app.fixture",
+            "kind": "inspect",
+            "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+            "is_direct": false
+          }
+        },
+        {
+          "id": "rep.synthetic-demo-app.fixture-record",
+          "kind": "fixture_record",
+          "label": "Synthetic demo app fixture record",
+          "content_type": "application/json",
+          "byte_length": 1024,
+          "access_path": {
+            "id": "access.synthetic-demo-app.fixture-record",
+            "kind": "view",
+            "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
+            "is_direct": false
+          }
+        }
+      ]
     },
     {
       "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",

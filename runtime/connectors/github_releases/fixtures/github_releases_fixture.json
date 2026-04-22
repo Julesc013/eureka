@@ -12,7 +12,21 @@
         "url": "https://api.github.com/repos/cli/cli/releases/tags/v2.65.0",
         "published_at": "2024-11-13T00:00:00Z",
         "draft": false,
-        "prerelease": false
+        "prerelease": false,
+        "assets": [
+          {
+            "name": "gh_2.65.0_windows_amd64.msi",
+            "browser_download_url": "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",
+            "content_type": "application/x-msi",
+            "size": 12123904
+          },
+          {
+            "name": "gh_2.65.0_checksums.txt",
+            "browser_download_url": "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_checksums.txt",
+            "content_type": "text/plain",
+            "size": 2048
+          }
+        ]
       }
     },
     {
@@ -27,7 +41,15 @@
         "url": "https://api.github.com/repos/archivebox/archivebox/releases/tags/v0.8.4",
         "published_at": "2024-07-10T00:00:00Z",
         "draft": false,
-        "prerelease": false
+        "prerelease": false,
+        "assets": [
+          {
+            "name": "archivebox-v0.8.4.tar.gz",
+            "browser_download_url": "https://github.com/archivebox/archivebox/releases/download/v0.8.4/archivebox-v0.8.4.tar.gz",
+            "content_type": "application/gzip",
+            "size": 7340032
+          }
+        ]
       }
     },
     {
@@ -42,7 +64,15 @@
         "url": "https://api.github.com/repos/archivebox/archivebox/releases/tags/v0.8.5",
         "published_at": "2024-09-02T00:00:00Z",
         "draft": false,
-        "prerelease": false
+        "prerelease": false,
+        "assets": [
+          {
+            "name": "archivebox-v0.8.5.tar.gz",
+            "browser_download_url": "https://github.com/archivebox/archivebox/releases/download/v0.8.5/archivebox-v0.8.5.tar.gz",
+            "content_type": "application/gzip",
+            "size": 7602176
+          }
+        ]
       }
     }
   ]
