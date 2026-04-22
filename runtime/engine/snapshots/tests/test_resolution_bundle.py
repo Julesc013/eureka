@@ -69,12 +69,16 @@ class ResolutionBundleExportServiceTestCase(unittest.TestCase):
             manifest_json["resolved_resource_id"],
             resolved_resource_id_for_record(self.normalized_records[0]),
         )
+        self.assertEqual(manifest_json["evidence"][0]["claim_kind"], "label")
+        self.assertEqual(manifest_json["evidence"][0]["claim_value"], "Synthetic Demo App")
+        self.assertEqual(bundle_json["evidence"], manifest_json["evidence"])
         self.assertEqual(normalized_record_json["record_kind"], "normalized_resolution_record")
         self.assertEqual(normalized_record_json["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
         self.assertEqual(
             normalized_record_json["resolved_resource_id"],
             resolved_resource_id_for_record(self.normalized_records[0]),
         )
+        self.assertEqual(normalized_record_json["evidence"], manifest_json["evidence"])
         self.assertIn("not a final snapshot, restore, or installer contract", readme_text)
 
     def test_bundle_export_for_unknown_target_returns_none(self) -> None:

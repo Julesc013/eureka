@@ -56,6 +56,9 @@ class ResolutionBundleInspectionEngineServiceTestCase(unittest.TestCase):
             ),
         )
         self.assertEqual(result.primary_object.id, "obj.synthetic-demo-app")
+        self.assertEqual(result.evidence[0].claim_kind, "label")
+        self.assertEqual(result.evidence[0].claim_value, "Synthetic Demo App")
+        self.assertEqual(result.normalized_record_summary["evidence"][0]["claim_kind"], "label")
         self.assertEqual(result.notices[0].code, "bundle_inspected_locally_offline")
 
     def test_bundle_inspection_fails_cleanly_for_malformed_zip(self) -> None:

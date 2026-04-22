@@ -16,6 +16,7 @@ Current bootstrap scope:
 - inspect a deterministic portable resolution bundle from local bytes or a local bundle path through a transport-neutral public boundary
 - surface a bootstrap deterministic `resolved_resource_id` across resolution, search, actions, stored exports, and bundle inspection where available
 - surface bounded source-family and source-origin summaries across resolution, search, export, and stored-export metadata where available
+- surface bounded evidence summaries across resolution, search, export, stored-export metadata, and bundle inspection where available
 - translate internal gateway job state into public contract-facing envelopes
 - map public job envelopes into the shared `WorkbenchSession` view model without
   implementing a web or native shell
@@ -36,6 +37,7 @@ Out of scope here:
 - async workers or orchestration
 - persistence beyond the local bootstrap filesystem store
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
+- final provenance graph, trust scoring, or cross-source merge behavior beyond the current bounded evidence summary seam
 - installers, downloads from external sources, import, restore, or rollback behavior
 - ranking, fuzzy matching, or broader retrieval semantics
 - finalized public API guarantees

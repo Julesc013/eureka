@@ -22,4 +22,4 @@ Current enforced checker rules:
 
 These scripts are bootstrap utilities and repo-local checks, not stable product CLIs, durable network tooling, or a finalized policy stack.
 
-Deterministic tests and demo flows now cover a bounded mixed corpus composed from governed synthetic fixtures plus small recorded GitHub Releases fixtures. Live GitHub acquisition remains intentionally deferred.
+Deterministic tests and demo flows now cover a bounded mixed corpus composed from governed synthetic fixtures plus small recorded GitHub Releases fixtures. They also surface the first bounded evidence-summary seam without implying a final provenance or trust architecture. Live GitHub acquisition remains intentionally deferred.

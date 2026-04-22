@@ -43,6 +43,7 @@ class ResolutionBundleInspectionPublicApiTestCase(unittest.TestCase):
         self.assertEqual(response.body["bundle"]["bundle_kind"], "eureka.resolution_bundle")
         self.assertEqual(response.body["bundle"]["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
         self.assertEqual(response.body["primary_object"]["id"], "obj.synthetic-demo-app")
+        self.assertEqual(response.body["evidence"][0]["claim_kind"], "label")
 
     def test_public_inspection_boundary_returns_structured_error_for_missing_path(self) -> None:
         response = self.public_api.inspect_bundle(

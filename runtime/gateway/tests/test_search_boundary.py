@@ -40,6 +40,7 @@ class SearchPublicApiTestCase(unittest.TestCase):
         )
         self.assertTrue(response.body["results"][0]["resolved_resource_id"].startswith("resolved:sha256:"))
         self.assertEqual(response.body["results"][0]["source"]["label"], "Synthetic Fixture")
+        self.assertEqual(response.body["results"][0]["evidence"][0]["claim_kind"], "label")
 
     def test_public_search_boundary_surfaces_github_release_source_labels(self) -> None:
         response = self.public_api.search_records(SearchCatalogRequest.from_parts("archive"))
@@ -53,6 +54,8 @@ class SearchPublicApiTestCase(unittest.TestCase):
             response.body["results"][1]["source"]["locator"],
             "https://github.com/archivebox/archivebox/releases/tag/v0.8.5",
         )
+        self.assertEqual(response.body["results"][1]["evidence"][1]["claim_kind"], "version")
+        self.assertEqual(response.body["results"][1]["evidence"][1]["claim_value"], "v0.8.5")
 
     def test_public_search_boundary_returns_structured_absence_for_no_matches(self) -> None:
         response = self.public_api.search_records(SearchCatalogRequest.from_parts("missing"))

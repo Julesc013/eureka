@@ -23,3 +23,4 @@ These questions are intentionally left open during bootstrap:
 19. Which inputs should continue to participate in bootstrap `resolved_resource_id` derivation as more real external sources arrive after GitHub Releases, and which parts of that derivation should remain local implementation detail rather than contract?
 20. At what point should `resolved_resource_id` become a first-class public compatibility promise rather than a bootstrap deterministic seam carried opportunistically through current envelopes?
 21. How should the current local `/api/...` bootstrap routes relate to the draft `/v0/...` public API contract paths if Eureka later promotes this slice beyond a local stdlib proof?
+22. Which bounded evidence-summary fields introduced in the current bootstrap seam should survive into a durable provenance or claim contract, and which should remain explicitly replaceable implementation detail?

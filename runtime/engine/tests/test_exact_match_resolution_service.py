@@ -5,6 +5,7 @@ import unittest
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.normalize import NormalizedResolutionRecord
 from runtime.engine.interfaces.public import ResolutionRequest
+from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.resolve import (
     ExactMatchResolutionService,
     normalized_record_to_object_summary,
@@ -31,6 +32,16 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
             access_path_id="access.synthetic-demo-app.fixture",
             access_path_kind="fixture_path",
             access_path_locator="contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+            evidence=(
+                EvidenceSummary(
+                    claim_kind="label",
+                    claim_value="Synthetic Demo App",
+                    asserted_by_family="synthetic_fixture",
+                    asserted_by_label="Synthetic Fixture",
+                    evidence_kind="recorded_fixture",
+                    evidence_locator="contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                ),
+            ),
         )
         self.catalog = NormalizedCatalog((self.record,))
         self.service = ExactMatchResolutionService(self.catalog)
@@ -52,6 +63,8 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
                 "label": "Synthetic Demo App",
             },
         )
+        self.assertEqual(outcome.result.evidence[0].claim_kind, "label")
+        self.assertEqual(outcome.result.evidence[0].claim_value, "Synthetic Demo App")
         self.assertEqual(outcome.notices, ())
 
     def test_missing_target_returns_blocked_notice(self) -> None:

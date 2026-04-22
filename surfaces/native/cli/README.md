@@ -8,6 +8,7 @@ This bootstrap CLI:
 - uses `runtime/gateway/public_api/` plus shared surface-neutral mappings
 - remains local, deterministic, stdlib-only, and bounded
 - shows bounded source-family and source-origin summaries for synthetic fixtures and recorded GitHub Releases-backed results
+- shows bounded evidence summaries for exact resolution, search, inspection, and stored-export flows
 - does not settle the long-term CLI, TUI, or native-shell architecture
 
 Commands currently exposed:

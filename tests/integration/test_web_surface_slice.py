@@ -24,6 +24,8 @@ class WebSurfaceSliceIntegrationTestCase(unittest.TestCase):
             self.assertIn("completed", body)
             self.assertIn("obj.synthetic-demo-app", body)
             self.assertIn("resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2", body)
+            self.assertIn("Evidence", body)
+            self.assertIn("label = Synthetic Demo App", body)
 
         with self.subTest(target_ref="fixture:software/missing-demo-app@0.0.1"):
             status, body = self._fetch("fixture:software/missing-demo-app@0.0.1")

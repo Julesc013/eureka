@@ -6,6 +6,7 @@ import tempfile
 import unittest
 
 from runtime.engine.interfaces.public.resolution import ObjectSummary
+from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.store import LocalExportStore, artifact_id_for_bytes
 
 
@@ -37,6 +38,16 @@ class LocalExportStoreTestCase(unittest.TestCase):
                     kind="software",
                     label="Synthetic Demo App",
                 ),
+                evidence=(
+                    EvidenceSummary(
+                        claim_kind="label",
+                        claim_value="Synthetic Demo App",
+                        asserted_by_family="synthetic_fixture",
+                        asserted_by_label="Synthetic Fixture",
+                        evidence_kind="recorded_fixture",
+                        evidence_locator="contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                    ),
+                ),
             )
 
             self.assertEqual(metadata.artifact_id, artifact_id_for_bytes(payload))
@@ -55,6 +66,11 @@ class LocalExportStoreTestCase(unittest.TestCase):
             self.assertEqual(metadata_payload["artifact_id"], metadata.artifact_id)
             self.assertEqual(metadata_payload["resolved_resource_id"], "resolved:sha256:demo-resource")
             self.assertEqual(metadata_payload["primary_object"]["id"], "obj.synthetic-demo-app")
+            self.assertEqual(metadata_payload["evidence"][0]["claim_kind"], "label")
+            self.assertEqual(
+                store.get_artifact_metadata(metadata.artifact_id).evidence[0].claim_value,
+                "Synthetic Demo App",
+            )
 
     def test_store_reuses_the_same_artifact_identity_for_same_payload(self) -> None:
         payload = b"synthetic bundle payload"

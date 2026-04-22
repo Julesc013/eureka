@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus thirteen executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus fourteen executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -32,6 +32,7 @@ Current status: foundational scaffold plus thirteen executable local determinist
 - first repo-local architectural-boundary checker under `scripts/check_architecture_boundaries.py` that enforces the current Python import layering between surfaces, `runtime/gateway/public_api`, connectors, and engine
 - first local stdlib machine-readable HTTP API slice under `surfaces/web/server/` that exposes exact resolution, deterministic search, manifest export, bundle export, bundle inspection, and local stored-export flows as JSON or ZIP responses over the same transport-neutral public boundary already consumed by the HTML and CLI surfaces
 - first bounded real external-source connector slice under `runtime/connectors/github_releases/` that loads small recorded GitHub Releases fixtures, normalizes them into the existing engine path, and exposes source-family visibility through the public boundary plus current web, CLI, and HTTP API surfaces
+- first bounded provenance and evidence seam under `runtime/engine/provenance/` that carries compact source-backed evidence summaries from normalize through exact resolution, deterministic search, export, storage, bundle inspection, and current surfaces without forcing a final truth, trust, or merge model
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -44,6 +45,7 @@ Current status: foundational scaffold plus thirteen executable local determinist
 - final HTTP API route naming, auth, HTTPS/TLS, deployment topology, and multi-user semantics beyond the current local bootstrap slice
 - final action semantics, installer behavior, download handling, restore/import handling, and durable manifest, bundle, inspection, or store guarantees
 - final global identity semantics, cross-source merge behavior, and any durable resource-identity guarantees beyond the current bootstrap seam
+- final provenance graph semantics, trust scoring, and broader evidence or claim ontology work beyond the current bounded summary seam
 - mature search semantics, ranking, and broader retrieval architecture
 - real web application structure, browser-side behavior, authentication, and deployment assumptions
 - broader live external-source federation, live GitHub acquisition, ranking, retrieval, and broader provenance or trust semantics

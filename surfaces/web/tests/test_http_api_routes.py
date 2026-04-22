@@ -47,6 +47,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             payload["workbench_session"]["resolved_resource_id"],
             EXPECTED_RESOLVED_RESOURCE_ID,
         )
+        self.assertEqual(payload["workbench_session"]["evidence"][0]["claim_kind"], "label")
         self.assertEqual(
             payload["resolution_actions"]["resolved_resource_id"],
             EXPECTED_RESOLVED_RESOURCE_ID,
@@ -83,6 +84,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
                 payload["results"][0]["resolved_resource_id"],
                 EXPECTED_RESOLVED_RESOURCE_ID,
             )
+            self.assertEqual(payload["results"][0]["evidence"][0]["claim_kind"], "label")
 
         with self.subTest(query="missing"):
             status, _, body = self._request("/api/search", {"q": "missing"})
@@ -102,6 +104,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         payload = json.loads(body)
         self.assertEqual(payload["manifest_kind"], "eureka.resolution_manifest")
         self.assertEqual(payload["resolved_resource_id"], EXPECTED_RESOLVED_RESOURCE_ID)
+        self.assertEqual(payload["evidence"][0]["claim_kind"], "label")
 
     def test_bundle_export_endpoint_returns_zip_bytes(self) -> None:
         status, headers, body = self._request(
@@ -142,6 +145,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(payload["status"], "inspected")
         self.assertEqual(payload["bundle"]["target_ref"], DEFAULT_TARGET_REF)
         self.assertIn("manifest.json", payload["bundle"]["member_list"])
+        self.assertEqual(payload["evidence"][0]["claim_kind"], "label")
 
     def test_store_list_and_read_endpoints_work_for_local_store(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -156,6 +160,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
                 manifest_store_payload["artifact"]["resolved_resource_id"],
                 EXPECTED_RESOLVED_RESOURCE_ID,
             )
+            self.assertEqual(manifest_store_payload["artifact"]["evidence"][0]["claim_kind"], "label")
 
             status, _, body = self._request(
                 "/api/store/bundle",
@@ -168,6 +173,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
                 bundle_store_payload["artifact"]["resolved_resource_id"],
                 EXPECTED_RESOLVED_RESOURCE_ID,
             )
+            self.assertEqual(bundle_store_payload["artifact"]["evidence"][0]["claim_kind"], "label")
 
             status, headers, body = self._request(
                 "/api/stored",
@@ -181,6 +187,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
                 {artifact["artifact_id"] for artifact in stored_payload["artifacts"]},
                 {manifest_artifact_id, bundle_artifact_id},
             )
+            self.assertEqual(stored_payload["artifacts"][0]["evidence"][0]["claim_kind"], "label")
 
             status, headers, body = self._request(
                 "/api/stored/artifact",
@@ -191,6 +198,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             manifest_payload = json.loads(body)
             self.assertEqual(manifest_payload["manifest_kind"], "eureka.resolution_manifest")
             self.assertEqual(manifest_payload["resolved_resource_id"], EXPECTED_RESOLVED_RESOURCE_ID)
+            self.assertEqual(manifest_payload["evidence"][0]["claim_kind"], "label")
 
             status, headers, body = self._request(
                 "/api/stored/artifact",

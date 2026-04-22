@@ -62,3 +62,5 @@ class BundleInspectionSliceIntegrationTestCase(unittest.TestCase):
         self.assertIn("obj.synthetic-demo-app", body)
         self.assertIn("bundle.json", body)
         self.assertIn("bundle_inspected_locally_offline", body)
+        self.assertIn("Evidence", body)
+        self.assertIn("label = Synthetic Demo App", body)

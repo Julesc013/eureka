@@ -61,6 +61,8 @@ class ResolutionJobServiceTestCase(unittest.TestCase):
             "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
         )
         self.assertEqual(response.body["result"]["source"]["label"], "Synthetic Fixture")
+        self.assertEqual(response.body["result"]["evidence"][0]["claim_kind"], "label")
+        self.assertEqual(response.body["result"]["evidence"][0]["claim_value"], "Synthetic Demo App")
 
     def test_read_boundary_returns_completed_job_for_known_github_release_target(self) -> None:
         submit_response = self.public_api.submit_resolution_job(
@@ -79,6 +81,8 @@ class ResolutionJobServiceTestCase(unittest.TestCase):
             response.body["result"]["source"]["locator"],
             "https://github.com/cli/cli/releases/tag/v2.65.0",
         )
+        self.assertEqual(response.body["result"]["evidence"][1]["claim_kind"], "version")
+        self.assertEqual(response.body["result"]["evidence"][1]["claim_value"], "v2.65.0")
 
     def test_read_boundary_returns_blocked_job_for_unknown_target(self) -> None:
         submit_response = self.public_api.submit_resolution_job(

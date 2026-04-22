@@ -44,6 +44,24 @@ class ResolutionManifestExportServiceTestCase(unittest.TestCase):
                     "label": "Synthetic Fixture",
                     "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
                 },
+                "evidence": [
+                    {
+                        "claim_kind": "label",
+                        "claim_value": "Synthetic Demo App",
+                        "asserted_by_family": "synthetic_fixture",
+                        "asserted_by_label": "Synthetic Fixture",
+                        "evidence_kind": "recorded_fixture",
+                        "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                    },
+                    {
+                        "claim_kind": "source_locator",
+                        "claim_value": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                        "asserted_by_family": "synthetic_fixture",
+                        "asserted_by_label": "Synthetic Fixture",
+                        "evidence_kind": "recorded_fixture",
+                        "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                    },
+                ],
                 "matched_state": {
                     "id": "state.synthetic-demo-app.release",
                     "kind": "release",

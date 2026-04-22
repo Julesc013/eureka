@@ -23,6 +23,7 @@ Current thin-slice behavior:
 - bounded object-summary mapping aligned to the gateway public API draft
 - bootstrap deterministic `resolved_resource_id` derivation for already-normalized or already-resolved records
 - bounded source-family and source-origin summaries propagated from normalized records into resolution, search, export, and local store metadata
+- bounded evidence summaries propagated from normalized records into exact resolution, deterministic search, export, local storage, and bundle inspection without implying a final provenance graph, trust model, or merge contract
 - bounded resolution-manifest export from already-normalized records under `actions/`
 - bounded portable resolution-bundle export from already-normalized records under `snapshots/`
 - bounded portable bundle inspection from local bytes or a local file path under `snapshots/`, without live fixture dependence
@@ -31,4 +32,4 @@ Current thin-slice behavior:
 
 The current `resolved_resource_id` is a bootstrap deterministic seam only. It hardens propagation beyond raw `target_ref`, but it does not yet define Eureka's final global identity or cross-source merge model.
 
-This slice does not settle broader live-source federation, provenance or trust semantics, ranking, fuzzy resolution, installer behavior, restore behavior, durable cache semantics, or broader archive semantics.
+This slice does not settle broader live-source federation, provenance graphs, trust semantics, ranking, fuzzy resolution, installer behavior, restore behavior, durable cache semantics, or broader archive semantics.

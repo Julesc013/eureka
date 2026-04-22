@@ -38,6 +38,7 @@ class StoredExportsViewModelsTestCase(unittest.TestCase):
             view_model["artifacts"][0]["resolved_resource_id"],
             "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
         )
+        self.assertEqual(view_model["artifacts"][0]["evidence"][0]["claim_kind"], "label")
 
     def test_shared_stored_exports_view_model_maps_empty_or_blocked_result(self) -> None:
         envelope = self.public_api.list_stored_exports(

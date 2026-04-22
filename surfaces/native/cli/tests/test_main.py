@@ -30,6 +30,8 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn(f"target_ref: {KNOWN_TARGET_REF}", output)
         self.assertIn("resolved_resource_id: resolved:sha256:", output)
         self.assertIn("Synthetic Demo App", output)
+        self.assertIn("Evidence", output)
+        self.assertIn("label = Synthetic Demo App", output)
 
     def test_resolve_unknown_target_returns_honest_blocked_outcome(self) -> None:
         exit_code, output = run_cli("resolve", UNKNOWN_TARGET_REF)
@@ -48,6 +50,7 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("family: github_releases", output)
         self.assertIn("label: GitHub Releases", output)
         self.assertIn("origin: https://github.com/cli/cli/releases/tag/v2.65.0", output)
+        self.assertIn("version = v2.65.0", output)
 
     def test_search_returns_deterministic_results_and_resolved_resource_ids(self) -> None:
         exit_code, output = run_cli("search", "synthetic")
@@ -66,6 +69,7 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("ArchiveBox v0.8.5", output)
         self.assertIn("source: Synthetic Fixture", output)
         self.assertIn("source: GitHub Releases", output)
+        self.assertIn("evidence: label via", output)
 
     def test_manifest_export_returns_known_manifest_json(self) -> None:
         exit_code, output = run_cli("export-manifest", KNOWN_TARGET_REF, "--json")
@@ -105,6 +109,8 @@ class NativeCliMainTestCase(unittest.TestCase):
             inspect_exit_code, inspect_output = run_cli("inspect-bundle", str(bundle_path), "--json")
             inspect_payload = json.loads(inspect_output)
 
+            inspect_text_exit_code, inspect_text_output = run_cli("inspect-bundle", str(bundle_path))
+
             missing_exit_code, missing_output = run_cli(
                 "inspect-bundle",
                 str(Path(temp_dir) / "missing-bundle.zip"),
@@ -114,8 +120,12 @@ class NativeCliMainTestCase(unittest.TestCase):
 
         self.assertEqual(store_exit_code, 0)
         self.assertEqual(inspect_exit_code, 0)
+        self.assertEqual(inspect_text_exit_code, 0)
         self.assertEqual(inspect_payload["status"], "inspected")
         self.assertEqual(inspect_payload["bundle"]["target_ref"], KNOWN_TARGET_REF)
+        self.assertEqual(inspect_payload["evidence"][0]["claim_kind"], "label")
+        self.assertIn("Evidence", inspect_text_output)
+        self.assertIn("label = Synthetic Demo App", inspect_text_output)
         self.assertEqual(missing_exit_code, 0)
         self.assertEqual(missing_payload["status"], "blocked")
         self.assertEqual(missing_payload["notices"][0]["code"], "bundle_path_not_found")
@@ -219,8 +229,11 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("resolved_resource_id: resolved:sha256:", manifest_output)
         self.assertIn(artifact_id, list_output)
         self.assertIn("resolved_resource_id: resolved:sha256:", list_output)
+        self.assertIn("evidence: label via", list_output)
         self.assertIn(f"artifact_id: {artifact_id}", read_output)
         self.assertIn("resolved_resource_id: resolved:sha256:", read_output)
+        self.assertIn("Evidence", read_output)
+        self.assertIn("label = Synthetic Demo App", read_output)
 
     def test_cli_surface_end_to_end_flow_uses_public_boundary_only(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

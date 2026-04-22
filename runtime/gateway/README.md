@@ -23,6 +23,7 @@ Current thin-slice behavior:
 - deterministic local bundle inspection without live fixture dependence
 - bootstrap deterministic `resolved_resource_id` propagation across resolution, search, action, storage, inspection, and shared-surface mappings
 - bounded source-family visibility propagated across resolution, search, export, storage, inspection, and shared-surface mappings where the public boundary provides it
+- bounded evidence summaries propagated across resolution, search, export, storage, inspection, and shared-surface mappings where the public boundary provides them
 - gateway composes with engine service interfaces over normalized records and does not read governed fixtures directly
 - shared workbench-session, search-results, resolution-actions, stored-exports, and bundle-inspection mappings are exercised without implementing web or native shells
 - no broker, relay, worker, scheduler, auth, or persistence implementation

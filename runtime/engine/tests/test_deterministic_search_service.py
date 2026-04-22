@@ -36,6 +36,9 @@ class DeterministicSearchServiceTestCase(unittest.TestCase):
                 resolved_resource_id_for_record(self.normalized_records[1]),
             ],
         )
+        self.assertEqual(response.results[0].evidence[0].claim_kind, "label")
+        self.assertEqual(response.results[0].evidence[0].claim_value, "Synthetic Demo App")
+        self.assertEqual(response.results[0].evidence[0].asserted_by_label, "Synthetic Fixture")
         self.assertIsNone(response.absence)
 
     def test_search_returns_one_match_for_specific_query(self) -> None:
@@ -54,6 +57,7 @@ class DeterministicSearchServiceTestCase(unittest.TestCase):
                 "label": "Compatibility Lab",
             },
         )
+        self.assertEqual(response.results[0].evidence[0].claim_kind, "label")
         self.assertIsNone(response.absence)
 
     def test_search_returns_zero_matches_and_structured_absence(self) -> None:

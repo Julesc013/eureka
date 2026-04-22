@@ -36,6 +36,8 @@ class GitHubReleaseHttpApiSliceIntegrationTestCase(unittest.TestCase):
             ],
         )
         self.assertEqual(search_payload["results"][1]["source"]["label"], "GitHub Releases")
+        self.assertEqual(search_payload["results"][1]["evidence"][1]["claim_kind"], "version")
+        self.assertEqual(search_payload["results"][1]["evidence"][1]["claim_value"], "v0.8.5")
 
         resolve_status, _, resolve_body = self._request(
             "/api/resolve",
@@ -50,6 +52,8 @@ class GitHubReleaseHttpApiSliceIntegrationTestCase(unittest.TestCase):
             resolve_payload["workbench_session"]["source"]["locator"],
             "https://github.com/cli/cli/releases/tag/v2.65.0",
         )
+        self.assertEqual(resolve_payload["workbench_session"]["evidence"][1]["claim_kind"], "version")
+        self.assertEqual(resolve_payload["workbench_session"]["evidence"][1]["claim_value"], "v2.65.0")
 
     def _request(
         self,

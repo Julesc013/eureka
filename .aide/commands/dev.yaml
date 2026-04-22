@@ -93,6 +93,7 @@ notes:
   - Search semantics remain bootstrap-scale deterministic matching over a small bounded corpus composed from synthetic fixtures plus recorded GitHub Releases fixtures and do not imply final retrieval or ranking behavior.
   - Manifest export remains a bounded local action over deterministic synthetic and recorded GitHub Releases-backed results and does not imply installer, download, provenance, or durable snapshot semantics.
   - Bundle export remains a bounded local action over deterministic synthetic and recorded GitHub Releases-backed results and does not imply restore, import, installer, or final snapshot semantics.
+  - Bounded evidence summaries now surface through current demos and public boundaries, but they do not imply a final provenance graph, trust model, or merge contract.
   - Stored exports remain a bounded local bootstrap filesystem store with stable artifact identity and do not imply a final cache, database, or preservation contract.
   - Bundle inspection remains a local bootstrap readback seam; path-based inspection is a demo choice and not a final upload or import contract.
   - The native CLI proof remains bootstrap-scale and does not imply a final CLI, TUI, GUI, or packaging direction.

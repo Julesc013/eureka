@@ -44,6 +44,7 @@ class ResolutionSliceIntegrationTestCase(unittest.TestCase):
                 "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
             )
             self.assertEqual(payload["workbench_session"]["active_job"]["status"], "completed")
+            self.assertEqual(payload["workbench_session"]["evidence"][0]["claim_kind"], "label")
 
         with self.subTest(target_ref="fixture:software/missing-demo-app@0.0.1"):
             payload = self._run_demo("fixture:software/missing-demo-app@0.0.1", include_workbench_session=True)

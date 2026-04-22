@@ -46,6 +46,7 @@ class BundleInspectionViewModelTestCase(unittest.TestCase):
         )
         self.assertEqual(view_model["bundle"]["target_ref"], "fixture:software/synthetic-demo-app@1.0.0")
         self.assertEqual(view_model["primary_object"]["id"], "obj.synthetic-demo-app")
+        self.assertEqual(view_model["evidence"][0]["claim_kind"], "label")
 
     def test_invalid_bundle_maps_to_shared_bundle_inspection_view_model(self) -> None:
         response = self.public_api.inspect_bundle(

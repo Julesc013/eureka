@@ -26,6 +26,16 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                     "label": "Synthetic Fixture",
                     "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
                 },
+                "evidence": [
+                    {
+                        "claim_kind": "label",
+                        "claim_value": "Synthetic Demo App",
+                        "asserted_by_family": "synthetic_fixture",
+                        "asserted_by_label": "Synthetic Fixture",
+                        "evidence_kind": "recorded_fixture",
+                        "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                    }
+                ],
             },
             resolution_actions={
                 "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
@@ -82,6 +92,8 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2", html)
         self.assertIn("Synthetic Fixture", html)
         self.assertIn("contracts/archive/fixtures/software/synthetic_resolution_fixture.json", html)
+        self.assertIn("Evidence", html)
+        self.assertIn("label = Synthetic Demo App", html)
         self.assertIn("Export resolution manifest", html)
         self.assertIn("/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
         self.assertIn("Export resolution bundle", html)
@@ -195,6 +207,17 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                     "label": "GitHub Releases",
                     "locator": "https://github.com/cli/cli/releases/tag/v2.65.0",
                 },
+                "evidence": [
+                    {
+                        "claim_kind": "version",
+                        "claim_value": "v2.65.0",
+                        "asserted_by_family": "github_releases",
+                        "asserted_by_label": "GitHub Releases",
+                        "evidence_kind": "recorded_source_payload",
+                        "evidence_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
+                        "asserted_at": "2024-11-13T00:00:00Z",
+                    }
+                ],
             }
         )
 
@@ -202,3 +225,4 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("GitHub CLI 2.65.0", html)
         self.assertIn("GitHub Releases", html)
         self.assertIn("https://github.com/cli/cli/releases/tag/v2.65.0", html)
+        self.assertIn("version = v2.65.0", html)

@@ -32,10 +32,18 @@ class StoredExportsPublicApiTestCase(unittest.TestCase):
             manifest_response.body["artifact"]["resolved_resource_id"],
             "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
         )
+        self.assertEqual(manifest_response.body["artifact"]["evidence"][0]["claim_kind"], "label")
         self.assertEqual(
             [artifact["artifact_kind"] for artifact in listed.body["artifacts"]],
             ["resolution_bundle", "resolution_manifest"],
         )
+        self.assertEqual(listed.body["artifacts"][0]["evidence"][0]["claim_kind"], "label")
+
+        metadata_response = self.public_api.get_stored_artifact_metadata(
+            StoredArtifactRequest.from_parts(manifest_response.body["artifact"]["artifact_id"])
+        )
+        self.assertEqual(metadata_response.status_code, 200)
+        self.assertEqual(metadata_response.body["artifact"]["evidence"][0]["claim_kind"], "label")
 
     def test_public_store_boundary_returns_blocked_results_for_unknown_target(self) -> None:
         manifest_response = self.public_api.store_resolution_manifest(

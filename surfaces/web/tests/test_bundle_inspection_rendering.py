@@ -32,6 +32,16 @@ class BundleInspectionRenderingTestCase(unittest.TestCase):
                     "kind": "software",
                     "label": "Synthetic Demo App",
                 },
+                "evidence": [
+                    {
+                        "claim_kind": "label",
+                        "claim_value": "Synthetic Demo App",
+                        "asserted_by_family": "synthetic_fixture",
+                        "asserted_by_label": "Synthetic Fixture",
+                        "evidence_kind": "recorded_fixture",
+                        "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                    }
+                ],
                 "notices": [
                     {
                         "code": "bundle_inspected_locally_offline",
@@ -48,6 +58,8 @@ class BundleInspectionRenderingTestCase(unittest.TestCase):
         self.assertIn("resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2", html)
         self.assertIn("bundle.json", html)
         self.assertIn("records/normalized_record.json", html)
+        self.assertIn("Evidence", html)
+        self.assertIn("label = Synthetic Demo App", html)
 
     def test_invalid_bundle_inspection_rendering_includes_honest_error_content(self) -> None:
         html = render_bundle_inspection_html(

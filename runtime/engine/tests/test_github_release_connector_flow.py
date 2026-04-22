@@ -44,6 +44,12 @@ class GitHubReleaseConnectorFlowTestCase(unittest.TestCase):
             first.access_path_locator,
             "https://github.com/cli/cli/releases/tag/v2.65.0",
         )
+        self.assertEqual(
+            [summary.claim_kind for summary in first.evidence],
+            ["label", "version", "source_locator"],
+        )
+        self.assertEqual(first.evidence[1].claim_value, "v2.65.0")
+        self.assertEqual(first.evidence[1].asserted_at, "2024-11-13T00:00:00Z")
 
     def test_deterministic_search_returns_mixed_synthetic_and_github_results(self) -> None:
         service = DeterministicSearchService(self.catalog)
@@ -59,6 +65,8 @@ class GitHubReleaseConnectorFlowTestCase(unittest.TestCase):
         )
         self.assertEqual(response.results[1].source.family, "github_releases")
         self.assertEqual(response.results[1].source.label, "GitHub Releases")
+        self.assertEqual(response.results[1].evidence[0].claim_kind, "label")
+        self.assertEqual(response.results[1].evidence[0].asserted_by_label, "GitHub Releases")
         self.assertIsNone(response.absence)
 
     def test_exact_resolution_can_resolve_known_github_release_target(self) -> None:
@@ -75,6 +83,8 @@ class GitHubReleaseConnectorFlowTestCase(unittest.TestCase):
             outcome.result.source.locator,
             "https://github.com/cli/cli/releases/tag/v2.65.0",
         )
+        self.assertEqual(outcome.result.evidence[1].claim_kind, "version")
+        self.assertEqual(outcome.result.evidence[1].claim_value, "v2.65.0")
 
     def test_no_result_search_remains_honest_for_mixed_corpus(self) -> None:
         service = DeterministicSearchService(self.catalog)

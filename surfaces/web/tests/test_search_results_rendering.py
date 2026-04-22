@@ -24,6 +24,16 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
                             "family": "synthetic_fixture",
                             "label": "Synthetic Fixture",
                         },
+                        "evidence": [
+                            {
+                                "claim_kind": "label",
+                                "claim_value": "Archive Viewer",
+                                "asserted_by_family": "synthetic_fixture",
+                                "asserted_by_label": "Synthetic Fixture",
+                                "evidence_kind": "recorded_fixture",
+                                "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                            }
+                        ],
                     },
                     {
                         "target_ref": "github-release:archivebox/archivebox@v0.8.5",
@@ -37,6 +47,16 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
                             "family": "github_releases",
                             "label": "GitHub Releases",
                         },
+                        "evidence": [
+                            {
+                                "claim_kind": "label",
+                                "claim_value": "ArchiveBox v0.8.5",
+                                "asserted_by_family": "github_releases",
+                                "asserted_by_label": "GitHub Releases",
+                                "evidence_kind": "recorded_source_payload",
+                                "evidence_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
+                            }
+                        ],
                     },
                 ],
             }
@@ -49,6 +69,7 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
         self.assertIn("/?target_ref=github-release%3Aarchivebox%2Farchivebox%40v0.8.5", html)
         self.assertIn("[source: GitHub Releases]", html)
         self.assertIn("[source: Synthetic Fixture]", html)
+        self.assertIn("[evidence: label via GitHub Releases]", html)
 
     def test_empty_results_render_query_and_absence_report(self) -> None:
         html = render_search_results_html(

@@ -50,6 +50,8 @@ class StoredExportsSliceIntegrationTestCase(unittest.TestCase):
         resolved_resource_id = "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2"
         self.assertEqual(manifest_payload["artifact"]["resolved_resource_id"], resolved_resource_id)
         self.assertEqual(bundle_payload["artifact"]["resolved_resource_id"], resolved_resource_id)
+        self.assertEqual(manifest_payload["artifact"]["evidence"][0]["claim_kind"], "label")
+        self.assertEqual(bundle_payload["artifact"]["evidence"][0]["claim_kind"], "label")
 
         listed = self.stored_exports_public_api.list_stored_exports(
             StoredExportsTargetRequest.from_parts("fixture:software/synthetic-demo-app@1.0.0")
@@ -69,6 +71,7 @@ class StoredExportsSliceIntegrationTestCase(unittest.TestCase):
         manifest_document = json.loads(manifest_read_body.decode("utf-8"))
         self.assertEqual(manifest_document["manifest_kind"], "eureka.resolution_manifest")
         self.assertEqual(manifest_document["resolved_resource_id"], resolved_resource_id)
+        self.assertEqual(manifest_document["evidence"][0]["claim_kind"], "label")
 
         bundle_read_status, bundle_read_headers, bundle_read_body = self._fetch_stored_artifact(
             bundle_artifact_id
