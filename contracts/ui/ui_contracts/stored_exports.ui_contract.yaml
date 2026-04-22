@@ -22,7 +22,7 @@ normal_path:
     - StoredArtifactMetadata
 surface_expectations:
   - surfaces store and retrieve exported artifacts through the public boundary rather than by importing engine store behavior
-  - surfaces present stable artifact identity, associated bootstrap `resolved_resource_id`, local retrieval state, and missing-artifact failures honestly
+  - surfaces present stable artifact identity, associated bootstrap `resolved_resource_id`, bounded source and evidence summaries, local retrieval state, and missing-artifact failures honestly
   - local store root configuration is a bootstrap-only demo choice and does not define a final deployment, multi-user cache, or database contract
 surface_split:
   web:

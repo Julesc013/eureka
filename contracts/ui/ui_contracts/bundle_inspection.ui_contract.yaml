@@ -17,7 +17,7 @@ normal_path:
     - BundleInspectionEnvelope
 surface_expectations:
   - surfaces inspect bundles through the public boundary rather than by importing engine snapshot inspection behavior
-  - surfaces present bundle inspection state, recovered bootstrap `resolved_resource_id`, member lists, and notices honestly
+  - surfaces present bundle inspection state, recovered bootstrap `resolved_resource_id`, bounded evidence summaries, member lists, and notices honestly
   - local path-based inspection is a bootstrap-only demo choice and does not define a final upload, import, or restore contract
 surface_split:
   web:

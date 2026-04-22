@@ -85,6 +85,8 @@ def bundle_inspection_result_to_public_envelope(result) -> dict[str, Any]:
         envelope["bundle"] = bundle_summary
     if result.primary_object is not None:
         envelope["primary_object"] = result.primary_object.to_dict()
+    if result.evidence:
+        envelope["evidence"] = [summary.to_dict() for summary in result.evidence]
     if result.normalized_record_summary is not None:
         envelope["normalized_record"] = dict(result.normalized_record_summary)
     return envelope

@@ -450,6 +450,33 @@ components:
         - family
         - label
         - locator
+    EvidenceSummary:
+      type: object
+      additionalProperties: false
+      description: >
+        Draft bounded evidence summary surfaced through current public envelopes.
+        This is not a final provenance graph, trust score, or merge contract.
+      properties:
+        claim_kind:
+          type: string
+        claim_value:
+          type: string
+        asserted_by_family:
+          type: string
+        asserted_by_label:
+          type: string
+        evidence_kind:
+          type: string
+        evidence_locator:
+          type: string
+        asserted_at:
+          type: string
+      required:
+        - claim_kind
+        - claim_value
+        - asserted_by_family
+        - evidence_kind
+        - evidence_locator
     SubmitResolutionJobRequest:
       type: object
       additionalProperties: false
@@ -515,6 +542,10 @@ components:
           $ref: '#/components/schemas/ObjectSummary'
         source:
           $ref: '#/components/schemas/SourceSummary'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
         resolved_resource_id:
           $ref: '#/components/schemas/ResolvedResourceId'
         snapshot_manifest_id:
@@ -608,6 +639,10 @@ components:
           $ref: '#/components/schemas/ObjectSummary'
         source:
           $ref: '#/components/schemas/SourceSummary'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
       required:
         - target_ref
         - object
@@ -694,6 +729,10 @@ components:
           $ref: '#/components/schemas/ObjectSummary'
         source:
           $ref: '#/components/schemas/SourceSummary'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
         matched_state:
           type: object
           additionalProperties: false
@@ -823,6 +862,10 @@ components:
           type: string
         source:
           $ref: '#/components/schemas/SourceSummary'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
       required:
         - artifact_id
         - artifact_kind
@@ -859,6 +902,10 @@ components:
           $ref: '#/components/schemas/ObjectSummary'
         source:
           $ref: '#/components/schemas/SourceSummary'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
       required:
         - artifact_id
         - artifact_kind
@@ -970,6 +1017,10 @@ components:
             - member_list
         primary_object:
           $ref: '#/components/schemas/ObjectSummary'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
         normalized_record:
           type: object
           additionalProperties: true

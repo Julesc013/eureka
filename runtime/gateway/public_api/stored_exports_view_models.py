@@ -78,6 +78,9 @@ def _coerce_artifacts(value: Any) -> list[dict[str, Any]]:
         source = _optional_source_summary(item.get("source"), f"stored_exports.artifacts[{index}].source")
         if source is not None:
             artifact["source"] = source
+        evidence = _optional_evidence_list(item.get("evidence"), f"stored_exports.artifacts[{index}].evidence")
+        if evidence:
+            artifact["evidence"] = evidence
         artifacts.append(artifact)
     return artifacts
 
@@ -135,3 +138,36 @@ def _optional_source_summary(value: Any, field_name: str) -> dict[str, str] | No
     if locator is not None:
         source["locator"] = locator
     return source
+
+
+def _optional_evidence_list(value: Any, field_name: str) -> list[dict[str, str]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    return [_coerce_evidence_summary(item, f"{field_name}[{index}]") for index, item in enumerate(value)]
+
+
+def _coerce_evidence_summary(value: Any, field_name: str) -> dict[str, str]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    evidence = {
+        "claim_kind": _require_string(value.get("claim_kind"), f"{field_name}.claim_kind"),
+        "claim_value": _require_string(value.get("claim_value"), f"{field_name}.claim_value"),
+        "asserted_by_family": _require_string(
+            value.get("asserted_by_family"),
+            f"{field_name}.asserted_by_family",
+        ),
+        "evidence_kind": _require_string(value.get("evidence_kind"), f"{field_name}.evidence_kind"),
+        "evidence_locator": _require_string(
+            value.get("evidence_locator"),
+            f"{field_name}.evidence_locator",
+        ),
+    }
+    asserted_by_label = _optional_string(value.get("asserted_by_label"), f"{field_name}.asserted_by_label")
+    asserted_at = _optional_string(value.get("asserted_at"), f"{field_name}.asserted_at")
+    if asserted_by_label is not None:
+        evidence["asserted_by_label"] = asserted_by_label
+    if asserted_at is not None:
+        evidence["asserted_at"] = asserted_at
+    return evidence

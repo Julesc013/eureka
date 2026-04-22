@@ -237,6 +237,8 @@ def _stored_artifact_entry(artifact: StoredArtifactMetadata) -> dict[str, Any]:
         entry["filename"] = artifact.filename
     if artifact.source is not None:
         entry["source"] = artifact.source.to_dict()
+    if artifact.evidence:
+        entry["evidence"] = [summary.to_dict() for summary in artifact.evidence]
     return entry
 
 

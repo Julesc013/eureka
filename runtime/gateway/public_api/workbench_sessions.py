@@ -30,6 +30,9 @@ def resolution_job_envelope_to_workbench_session(
     source = _extract_source_summary(job_envelope)
     if source is not None:
         workbench_session["source"] = source
+    evidence = _extract_evidence_list(job_envelope)
+    if evidence:
+        workbench_session["evidence"] = evidence
 
     notices = _collect_notices(job_envelope)
     if notices:
@@ -86,6 +89,13 @@ def _extract_source_summary(job_envelope: Mapping[str, Any]) -> dict[str, str] |
     return summary
 
 
+def _extract_evidence_list(job_envelope: Mapping[str, Any]) -> list[dict[str, str]]:
+    result = job_envelope.get("result")
+    if not isinstance(result, Mapping):
+        return []
+    return _coerce_evidence_list(result.get("evidence"), "result.evidence")
+
+
 def _coerce_notice_list(value: Any, field_name: str) -> list[dict[str, str]]:
     if value is None:
         return []
@@ -107,6 +117,39 @@ def _coerce_notice(value: Any, field_name: str) -> dict[str, str]:
     if message is not None:
         notice["message"] = message
     return notice
+
+
+def _coerce_evidence_list(value: Any, field_name: str) -> list[dict[str, str]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list when provided.")
+    return [_coerce_evidence(item, f"{field_name}[{index}]") for index, item in enumerate(value)]
+
+
+def _coerce_evidence(value: Any, field_name: str) -> dict[str, str]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    evidence = {
+        "claim_kind": _require_string(value.get("claim_kind"), f"{field_name}.claim_kind"),
+        "claim_value": _require_string(value.get("claim_value"), f"{field_name}.claim_value"),
+        "asserted_by_family": _require_string(
+            value.get("asserted_by_family"),
+            f"{field_name}.asserted_by_family",
+        ),
+        "evidence_kind": _require_string(value.get("evidence_kind"), f"{field_name}.evidence_kind"),
+        "evidence_locator": _require_string(
+            value.get("evidence_locator"),
+            f"{field_name}.evidence_locator",
+        ),
+    }
+    asserted_by_label = _optional_string(value.get("asserted_by_label"), f"{field_name}.asserted_by_label")
+    asserted_at = _optional_string(value.get("asserted_at"), f"{field_name}.asserted_at")
+    if asserted_by_label is not None:
+        evidence["asserted_by_label"] = asserted_by_label
+    if asserted_at is not None:
+        evidence["asserted_at"] = asserted_at
+    return evidence
 
 
 def _require_string(value: Any, field_name: str) -> str:

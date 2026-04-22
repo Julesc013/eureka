@@ -58,4 +58,6 @@ def search_result_to_public_entry(result) -> dict[str, Any]:
         entry["resolved_resource_id"] = result.resolved_resource_id
     if result.source is not None:
         entry["source"] = result.source.to_dict()
+    if result.evidence:
+        entry["evidence"] = [summary.to_dict() for summary in result.evidence]
     return entry

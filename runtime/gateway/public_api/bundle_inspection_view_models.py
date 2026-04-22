@@ -21,6 +21,9 @@ def bundle_inspection_envelope_to_view_model(
     )
     if resolved_resource_id is not None:
         view_model["resolved_resource_id"] = resolved_resource_id
+    evidence = _coerce_evidence_list(inspection_envelope.get("evidence"), "inspection_envelope.evidence")
+    if evidence:
+        view_model["evidence"] = evidence
 
     bundle_summary = inspection_envelope.get("bundle")
     if bundle_summary is not None:
@@ -104,6 +107,9 @@ def _coerce_normalized_record(value: Any) -> dict[str, Any]:
             if not isinstance(field_value, Mapping):
                 raise ValueError(f"inspection_envelope.normalized_record.{field_name} must be an object when provided.")
             result[field_name] = dict(field_value)
+    evidence = _coerce_evidence_list(value.get("evidence"), "inspection_envelope.normalized_record.evidence")
+    if evidence:
+        result["evidence"] = evidence
     expected_member_order = value.get("expected_member_order")
     if expected_member_order is not None:
         result["expected_member_order"] = _coerce_member_list(expected_member_order)
@@ -140,6 +146,39 @@ def _coerce_notices(value: Any) -> list[dict[str, str]]:
             notice["message"] = message
         notices.append(notice)
     return notices
+
+
+def _coerce_evidence_list(value: Any, field_name: str) -> list[dict[str, str]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list when provided.")
+    return [_coerce_evidence_summary(item, f"{field_name}[{index}]") for index, item in enumerate(value)]
+
+
+def _coerce_evidence_summary(value: Any, field_name: str) -> dict[str, str]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    evidence = {
+        "claim_kind": _require_string(value.get("claim_kind"), f"{field_name}.claim_kind"),
+        "claim_value": _require_string(value.get("claim_value"), f"{field_name}.claim_value"),
+        "asserted_by_family": _require_string(
+            value.get("asserted_by_family"),
+            f"{field_name}.asserted_by_family",
+        ),
+        "evidence_kind": _require_string(value.get("evidence_kind"), f"{field_name}.evidence_kind"),
+        "evidence_locator": _require_string(
+            value.get("evidence_locator"),
+            f"{field_name}.evidence_locator",
+        ),
+    }
+    asserted_by_label = _optional_string(value.get("asserted_by_label"), f"{field_name}.asserted_by_label")
+    asserted_at = _optional_string(value.get("asserted_at"), f"{field_name}.asserted_at")
+    if asserted_by_label is not None:
+        evidence["asserted_by_label"] = asserted_by_label
+    if asserted_at is not None:
+        evidence["asserted_at"] = asserted_at
+    return evidence
 
 
 def _require_string(value: Any, field_name: str) -> str:

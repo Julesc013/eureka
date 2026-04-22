@@ -47,6 +47,48 @@ properties:
         type: string
     required:
       - id
+  source:
+    type: object
+    additionalProperties: false
+    description: Draft bounded source-family summary aligned with gateway public resolution results.
+    properties:
+      family:
+        type: string
+      label:
+        type: string
+      locator:
+        type: string
+    required:
+      - family
+  evidence:
+    type: array
+    description: >
+      Draft bounded evidence summaries surfaced for the selected result without
+      implying a final provenance graph, trust model, or merge contract.
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        claim_kind:
+          type: string
+        claim_value:
+          type: string
+        asserted_by_family:
+          type: string
+        asserted_by_label:
+          type: string
+        evidence_kind:
+          type: string
+        evidence_locator:
+          type: string
+        asserted_at:
+          type: string
+      required:
+        - claim_kind
+        - claim_value
+        - asserted_by_family
+        - evidence_kind
+        - evidence_locator
   notices:
     type: array
     items:

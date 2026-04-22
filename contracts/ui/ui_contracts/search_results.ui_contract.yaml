@@ -17,7 +17,7 @@ normal_path:
     - SearchResultsEnvelope
 surface_expectations:
   - surfaces search through the public gateway boundary and do not assume engine-local search internals
-  - surfaces render deterministic ordered result lists plus any bootstrap `resolved_resource_id` summaries from governed contracts
+  - surfaces render deterministic ordered result lists plus any bootstrap `resolved_resource_id`, bounded source summaries, and compact evidence summaries from governed contracts
   - surfaces render structured absence reports honestly when no results are found
   - surfaces link search results into exact resolution flow through target references rather than bypassing the gateway boundary
 surface_split:

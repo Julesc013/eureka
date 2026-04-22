@@ -66,6 +66,45 @@ properties:
           type: string
         filename:
           type: string
+        source:
+          type: object
+          additionalProperties: false
+          properties:
+            family:
+              type: string
+            label:
+              type: string
+            locator:
+              type: string
+          required:
+            - family
+        evidence:
+          type: array
+          description: Draft bounded evidence summaries preserved on stored artifact metadata.
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              claim_kind:
+                type: string
+              claim_value:
+                type: string
+              asserted_by_family:
+                type: string
+              asserted_by_label:
+                type: string
+              evidence_kind:
+                type: string
+              evidence_locator:
+                type: string
+              asserted_at:
+                type: string
+            required:
+              - claim_kind
+              - claim_value
+              - asserted_by_family
+              - evidence_kind
+              - evidence_locator
       required:
         - artifact_id
         - artifact_kind
