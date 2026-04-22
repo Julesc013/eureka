@@ -56,4 +56,6 @@ def search_result_to_public_entry(result) -> dict[str, Any]:
     }
     if result.resolved_resource_id is not None:
         entry["resolved_resource_id"] = result.resolved_resource_id
+    if result.source is not None:
+        entry["source"] = result.source.to_dict()
     return entry

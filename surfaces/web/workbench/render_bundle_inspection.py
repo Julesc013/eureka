@@ -39,7 +39,7 @@ def render_bundle_inspection_html(bundle_inspection: Mapping[str, Any]) -> str:
         "      <p>Compatibility-first local inspection of a previously exported deterministic bundle.</p>",
         "      <nav>",
         "        <a href=\"/\">Open exact resolution workbench</a>",
-        "        <a href=\"/search\">Search the synthetic corpus</a>",
+        "        <a href=\"/search\">Search the bounded corpus</a>",
         "      </nav>",
         "    </header>",
         "    <main>",

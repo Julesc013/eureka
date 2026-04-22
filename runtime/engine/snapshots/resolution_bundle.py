@@ -63,6 +63,11 @@ def _bundle_metadata(record: NormalizedResolutionRecord) -> dict[str, Any]:
         },
         "target_ref": record.target_ref,
         "resolved_resource_id": resolved_resource_id_for_record(record),
+        "source": {
+            "family": record.source_family,
+            "label": record.source_family_label or record.source_family,
+            "locator": record.access_path_locator or record.source_locator,
+        },
         "created_by_slice": "portable_bundle_export",
         "entries": list(RESOLUTION_BUNDLE_MEMBER_ORDER),
     }
@@ -76,6 +81,8 @@ def _normalized_record_export(record: NormalizedResolutionRecord) -> dict[str, A
         "resolved_resource_id": resolved_resource_id_for_record(record),
         "source": _compact_mapping(
             {
+                "family": values["source_family"],
+                "label": values["source_family_label"],
                 "name": values["source_name"],
                 "locator": values["source_locator"],
             }

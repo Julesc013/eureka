@@ -37,6 +37,9 @@ def _coerce_results(value: Any) -> list[dict[str, Any]]:
         )
         if resolved_resource_id is not None:
             result["resolved_resource_id"] = resolved_resource_id
+        source = _optional_source_summary(item.get("source"), f"search_envelope.results[{index}].source")
+        if source is not None:
+            result["source"] = source
         results.append(result)
     return results
 
@@ -62,6 +65,23 @@ def _coerce_absence(value: Any) -> dict[str, str]:
         "code": _require_string(value.get("code"), "search_envelope.absence.code"),
         "message": _require_string(value.get("message"), "search_envelope.absence.message"),
     }
+
+
+def _optional_source_summary(value: Any, field_name: str) -> dict[str, str] | None:
+    if value is None:
+        return None
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    source = {
+        "family": _require_string(value.get("family"), f"{field_name}.family"),
+    }
+    label = _optional_string(value.get("label"), f"{field_name}.label")
+    locator = _optional_string(value.get("locator"), f"{field_name}.locator")
+    if label is not None:
+        source["label"] = label
+    if locator is not None:
+        source["locator"] = locator
+    return source
 
 
 def _require_string(value: Any, field_name: str) -> str:

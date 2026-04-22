@@ -46,6 +46,11 @@ def format_stored_exports_listing(stored_exports: Mapping[str, Any]) -> str:
                 lines.append(f"  filename: {artifact['filename']}")
             if artifact.get("resolved_resource_id"):
                 lines.append(f"  resolved_resource_id: {artifact['resolved_resource_id']}")
+            source = artifact.get("source")
+            if isinstance(source, Mapping):
+                source_label = source.get("label") or source.get("family")
+                if source_label:
+                    lines.append(f"  source: {source_label}")
     else:
         lines.append("(no stored artifacts)")
 
@@ -119,6 +124,11 @@ def _artifact_header_lines(artifact: Mapping[str, Any]) -> list[str]:
     ]
     if artifact.get("resolved_resource_id"):
         lines.append(f"resolved_resource_id: {artifact['resolved_resource_id']}")
+    source = artifact.get("source")
+    if isinstance(source, Mapping):
+        source_label = source.get("label") or source.get("family")
+        if source_label:
+            lines.append(f"source: {source_label}")
     if artifact.get("filename"):
         lines.append(f"filename: {artifact['filename']}")
     if artifact.get("store_path"):

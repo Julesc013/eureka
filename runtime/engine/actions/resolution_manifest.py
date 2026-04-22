@@ -34,12 +34,18 @@ def build_resolution_manifest(record: NormalizedResolutionRecord) -> dict[str, A
         "target_ref": record.target_ref,
         "resolved_resource_id": resolved_resource_id_for_record(record),
         "primary_object": normalized_record_to_object_summary(record).to_dict(),
-        "source_fixture": {
-            "kind": "synthetic_fixture",
-            "locator": record.source_locator,
+        "source": {
+            "family": record.source_family,
+            "label": record.source_family_label or record.source_family,
+            "locator": record.access_path_locator or record.source_locator,
         },
         "notices": [],
     }
+    if record.source_family == "synthetic_fixture":
+        manifest["source_fixture"] = {
+            "kind": "synthetic_fixture",
+            "locator": record.source_locator,
+        }
     matched_state = _compact_mapping(
         {
             "id": record.state_id,

@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Protocol
 
-from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary
+from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary, SourceSummary
 
 
 @dataclass(frozen=True)
@@ -19,6 +19,7 @@ class StoredArtifactMetadata:
     resolved_resource_id: str | None = None
     filename: str | None = None
     primary_object: ObjectSummary | None = None
+    source: SourceSummary | None = None
 
     def to_dict(self) -> dict[str, Any]:
         payload: dict[str, Any] = {
@@ -37,6 +38,8 @@ class StoredArtifactMetadata:
             payload["filename"] = self.filename
         if self.primary_object is not None:
             payload["primary_object"] = self.primary_object.to_dict()
+        if self.source is not None:
+            payload["source"] = self.source.to_dict()
         return payload
 
 

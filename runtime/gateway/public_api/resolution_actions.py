@@ -136,7 +136,7 @@ def resolution_manifest_not_available_error(target_ref: str) -> dict[str, str]:
         "status": "blocked",
         "target_ref": target_ref,
         "code": "resolution_manifest_not_available",
-        "message": f"No resolved synthetic record matched target_ref '{target_ref}'.",
+        "message": f"No resolved bounded record matched target_ref '{target_ref}'.",
     }
 
 
@@ -146,7 +146,7 @@ def resolution_bundle_not_available_error(target_ref: str) -> dict[str, str]:
         "status": "blocked",
         "target_ref": target_ref,
         "code": "resolution_bundle_not_available",
-        "message": f"No resolved synthetic record matched target_ref '{target_ref}'.",
+        "message": f"No resolved bounded record matched target_ref '{target_ref}'.",
     }
 
 
@@ -184,7 +184,7 @@ def _manifest_not_available_notice(target_ref: str) -> dict[str, str]:
     return {
         "code": "resolution_manifest_not_available",
         "severity": "warning",
-        "message": f"No resolved synthetic record matched target_ref '{target_ref}'.",
+        "message": f"No resolved bounded record matched target_ref '{target_ref}'.",
     }
 
 
@@ -192,7 +192,7 @@ def _bundle_not_available_notice(target_ref: str) -> dict[str, str]:
     return {
         "code": "resolution_bundle_not_available",
         "severity": "warning",
-        "message": f"No resolved synthetic record matched target_ref '{target_ref}'.",
+        "message": f"No resolved bounded record matched target_ref '{target_ref}'.",
     }
 
 

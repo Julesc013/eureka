@@ -20,6 +20,7 @@ def render_resolution_workspace_html(
     )
 
     selected_object = _optional_mapping(workbench_session.get("selected_object"), "workbench_session.selected_object")
+    source = _optional_mapping(workbench_session.get("source"), "workbench_session.source")
     notices = _notice_list(workbench_session.get("notices"))
     actions_model = _optional_mapping(resolution_actions, "resolution_actions")
     actions = _action_list(actions_model.get("actions")) if actions_model is not None else []
@@ -53,7 +54,7 @@ def render_resolution_workspace_html(
         "      <h1>Eureka Compatibility Workbench</h1>",
         "      <p>Compatibility-first resolution workspace rendered from shared gateway and session contracts.</p>",
         "      <nav>",
-        "        <a href=\"/search\">Search the synthetic corpus</a>",
+        "        <a href=\"/search\">Search the bounded corpus</a>",
         "      </nav>",
         "    </header>",
         "    <main>",
@@ -116,6 +117,28 @@ def render_resolution_workspace_html(
                 "      <section>",
                 "        <h2>Selected Object</h2>",
                 "        <p>No selected object summary is available for this job.</p>",
+                "      </section>",
+            ]
+        )
+
+    if source is not None:
+        parts.extend(
+            [
+                "      <section>",
+                "        <h2>Source</h2>",
+                "        <dl>",
+                f"          <dt>Family</dt><dd>{escape(_require_string(source.get('family'), 'source.family'))}</dd>",
+            ]
+        )
+        source_label = _optional_string(source.get("label"), "source.label")
+        if source_label is not None:
+            parts.append(f"          <dt>Label</dt><dd>{escape(source_label)}</dd>")
+        source_locator = _optional_string(source.get("locator"), "source.locator")
+        if source_locator is not None:
+            parts.append(f"          <dt>Origin</dt><dd>{escape(source_locator)}</dd>")
+        parts.extend(
+            [
+                "        </dl>",
                 "      </section>",
             ]
         )

@@ -21,7 +21,7 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
         "  <body>",
         "    <header>",
         "      <h1>Eureka Compatibility Search</h1>",
-        "      <p>Compatibility-first deterministic search over the governed synthetic software corpus.</p>",
+        "      <p>Compatibility-first deterministic search over the bounded demo corpus of governed synthetic fixtures and recorded GitHub releases.</p>",
         "      <nav>",
         "        <a href=\"/\">Open exact resolution workbench</a>",
         "      </nav>",
@@ -54,7 +54,7 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
             [
                 "      <section>",
                 "        <h2>Search State</h2>",
-                "        <p>Enter a bounded query to search the governed synthetic software corpus.</p>",
+                "        <p>Enter a bounded query to search the bounded demo corpus.</p>",
                 "      </section>",
             ]
         )
@@ -80,12 +80,19 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
                 result.get("resolved_resource_id"),
                 f"results[{index}].resolved_resource_id",
             )
+            source = _optional_mapping(result.get("source"), f"results[{index}].source")
             link = "/?target_ref=" + quote(target_ref, safe="")
             item = (
                 "          <li>"
                 f"<a href=\"{escape(link, quote=True)}\">{escape(object_label)}</a> "
                 f"<span>({escape(target_ref)})</span>"
             )
+            if source is not None:
+                source_label = _require_string(
+                    source.get("label") or source.get("family"),
+                    f"results[{index}].source.label",
+                )
+                item += f" <span>[source: {escape(source_label)}]</span>"
             if resolved_resource_id is not None:
                 item += f" <span>[{escape(resolved_resource_id)}]</span>"
             item += "</li>"

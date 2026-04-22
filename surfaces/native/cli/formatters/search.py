@@ -20,6 +20,11 @@ def format_search_results(search_results: Mapping[str, Any]) -> str:
             lines.append(f"   object_id: {object_summary.get('id', '(unknown)')}")
             if object_summary.get("kind"):
                 lines.append(f"   object_kind: {object_summary['kind']}")
+            source = result.get("source")
+            if isinstance(source, Mapping):
+                source_label = source.get("label") or source.get("family")
+                if source_label:
+                    lines.append(f"   source: {source_label}")
             resolved_resource_id = result.get("resolved_resource_id")
             if isinstance(resolved_resource_id, str) and resolved_resource_id:
                 lines.append(f"   resolved_resource_id: {resolved_resource_id}")

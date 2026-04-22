@@ -34,6 +34,20 @@ def format_resolution_workspace(
         if selected_object.get("label"):
             lines.append(f"label: {selected_object['label']}")
 
+    source = workbench_session.get("source")
+    if isinstance(source, Mapping):
+        lines.extend(
+            [
+                "",
+                "Source",
+                f"family: {source.get('family', '(unknown)')}",
+            ]
+        )
+        if source.get("label"):
+            lines.append(f"label: {source['label']}")
+        if source.get("locator"):
+            lines.append(f"origin: {source['locator']}")
+
     if resolution_actions is not None:
         actions = resolution_actions.get("actions", [])
         lines.extend(["", "Actions"])

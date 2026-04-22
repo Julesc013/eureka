@@ -188,7 +188,7 @@ def _blocked_store_action_envelope(
     primary_notice = notices[0] if notices else Notice(
         code=f"{action_id}_not_available",
         severity="warning",
-        message=f"No resolved synthetic record matched target_ref '{target_ref}'.",
+        message=f"No resolved bounded record matched target_ref '{target_ref}'.",
     )
     return {
         "action_id": action_id,
@@ -235,6 +235,8 @@ def _stored_artifact_entry(artifact: StoredArtifactMetadata) -> dict[str, Any]:
         entry["resolved_resource_id"] = artifact.resolved_resource_id
     if artifact.filename is not None:
         entry["filename"] = artifact.filename
+    if artifact.source is not None:
+        entry["source"] = artifact.source.to_dict()
     return entry
 
 
@@ -242,7 +244,7 @@ def _store_manifest_not_available_notice(target_ref: str) -> Notice:
     return Notice(
         code="store_resolution_manifest_not_available",
         severity="warning",
-        message=f"No resolved synthetic record matched target_ref '{target_ref}'.",
+        message=f"No resolved bounded record matched target_ref '{target_ref}'.",
     )
 
 
@@ -250,7 +252,7 @@ def _store_bundle_not_available_notice(target_ref: str) -> Notice:
     return Notice(
         code="store_resolution_bundle_not_available",
         severity="warning",
-        message=f"No resolved synthetic record matched target_ref '{target_ref}'.",
+        message=f"No resolved bounded record matched target_ref '{target_ref}'.",
     )
 
 

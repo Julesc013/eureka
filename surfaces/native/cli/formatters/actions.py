@@ -14,6 +14,13 @@ def format_manifest_export(manifest: Mapping[str, Any]) -> str:
     resolved_resource_id = manifest.get("resolved_resource_id")
     if isinstance(resolved_resource_id, str) and resolved_resource_id:
         lines.append(f"resolved_resource_id: {resolved_resource_id}")
+    source = manifest.get("source")
+    if isinstance(source, Mapping):
+        source_label = source.get("label") or source.get("family")
+        if source_label:
+            lines.append(f"source: {source_label}")
+        if source.get("locator"):
+            lines.append(f"source_origin: {source['locator']}")
 
     primary_object = manifest.get("primary_object")
     if isinstance(primary_object, Mapping):
@@ -88,6 +95,11 @@ def format_store_result(store_result: Mapping[str, Any]) -> str:
     ]
     if artifact.get("resolved_resource_id"):
         lines.append(f"resolved_resource_id: {artifact['resolved_resource_id']}")
+    source = artifact.get("source")
+    if isinstance(source, Mapping):
+        source_label = source.get("label") or source.get("family")
+        if source_label:
+            lines.append(f"source: {source_label}")
     if artifact.get("filename"):
         lines.append(f"filename: {artifact['filename']}")
     if artifact.get("store_path"):

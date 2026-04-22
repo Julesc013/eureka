@@ -27,6 +27,10 @@ def resolution_job_envelope_to_workbench_session(
     if selected_object is not None:
         workbench_session["selected_object"] = selected_object
 
+    source = _extract_source_summary(job_envelope)
+    if source is not None:
+        workbench_session["source"] = source
+
     notices = _collect_notices(job_envelope)
     if notices:
         workbench_session["notices"] = notices
@@ -62,6 +66,24 @@ def _collect_notices(job_envelope: Mapping[str, Any]) -> list[dict[str, str]]:
         notices.extend(_coerce_notice_list(result.get("notices"), "result.notices"))
 
     return notices
+
+
+def _extract_source_summary(job_envelope: Mapping[str, Any]) -> dict[str, str] | None:
+    result = job_envelope.get("result")
+    if not isinstance(result, Mapping):
+        return None
+    source = result.get("source")
+    if not isinstance(source, Mapping):
+        return None
+
+    summary = {"family": _require_string(source.get("family"), "result.source.family")}
+    label = _optional_string(source.get("label"), "result.source.label")
+    locator = _optional_string(source.get("locator"), "result.source.locator")
+    if label is not None:
+        summary["label"] = label
+    if locator is not None:
+        summary["locator"] = locator
+    return summary
 
 
 def _coerce_notice_list(value: Any, field_name: str) -> list[dict[str, str]]:

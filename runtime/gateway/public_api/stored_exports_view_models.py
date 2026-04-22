@@ -75,6 +75,9 @@ def _coerce_artifacts(value: Any) -> list[dict[str, Any]]:
         filename = _optional_string(item.get("filename"), f"stored_exports.artifacts[{index}].filename")
         if filename is not None:
             artifact["filename"] = filename
+        source = _optional_source_summary(item.get("source"), f"stored_exports.artifacts[{index}].source")
+        if source is not None:
+            artifact["source"] = source
         artifacts.append(artifact)
     return artifacts
 
@@ -115,3 +118,20 @@ def _require_int(value: Any, field_name: str) -> int:
     if not isinstance(value, int) or value < 0:
         raise ValueError(f"{field_name} must be a non-negative integer.")
     return value
+
+
+def _optional_source_summary(value: Any, field_name: str) -> dict[str, str] | None:
+    if value is None:
+        return None
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    source = {
+        "family": _require_string(value.get("family"), f"{field_name}.family"),
+    }
+    label = _optional_string(value.get("label"), f"{field_name}.label")
+    locator = _optional_string(value.get("locator"), f"{field_name}.locator")
+    if label is not None:
+        source["label"] = label
+    if locator is not None:
+        source["locator"] = locator
+    return source

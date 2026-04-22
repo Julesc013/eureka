@@ -5,7 +5,7 @@ from pathlib import Path
 import re
 from typing import Any
 
-from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary
+from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary, SourceSummary
 from runtime.engine.interfaces.service.action_service import ResolutionManifestService
 from runtime.engine.interfaces.service.bundle_service import ResolutionBundleService
 from runtime.engine.interfaces.service.export_store_service import (
@@ -50,6 +50,7 @@ class LocalExportStore:
         source_action: str,
         filename: str | None = None,
         primary_object: ObjectSummary | None = None,
+        source: SourceSummary | None = None,
     ) -> StoredArtifactMetadata:
         if not artifact_kind:
             raise ValueError("artifact_kind must be a non-empty string.")
@@ -75,6 +76,7 @@ class LocalExportStore:
             source_action=source_action,
             filename=filename,
             primary_object=primary_object,
+            source=source,
         )
 
         _write_bytes_if_missing(object_path, payload)
@@ -215,7 +217,7 @@ class ResolutionExportStoreEngineService:
                     Notice(
                         code="store_resolution_manifest_not_available",
                         severity="warning",
-                        message=f"No resolved synthetic record matched target_ref '{target_ref}'.",
+                        message=f"No resolved bounded record matched target_ref '{target_ref}'.",
                     ),
                 ),
             )
@@ -229,6 +231,7 @@ class ResolutionExportStoreEngineService:
                 source_action="store_resolution_manifest",
                 filename=_manifest_filename(target_ref),
                 primary_object=_manifest_primary_object(manifest),
+                source=_manifest_source(manifest),
             )
         except ExportStoreDataError as error:
             return StoredArtifactWriteResult(status="blocked", notices=(_store_error_notice(error),))
@@ -243,7 +246,7 @@ class ResolutionExportStoreEngineService:
                     Notice(
                         code="store_resolution_bundle_not_available",
                         severity="warning",
-                        message=f"No resolved synthetic record matched target_ref '{target_ref}'.",
+                        message=f"No resolved bounded record matched target_ref '{target_ref}'.",
                     ),
                 ),
             )
@@ -258,6 +261,7 @@ class ResolutionExportStoreEngineService:
                 source_action="store_resolution_bundle",
                 filename=bundle.filename,
                 primary_object=_manifest_primary_object(manifest) if manifest is not None else None,
+                source=_manifest_source(manifest) if manifest is not None else None,
             )
         except ExportStoreDataError as error:
             return StoredArtifactWriteResult(status="blocked", notices=(_store_error_notice(error),))
@@ -285,13 +289,13 @@ class ResolutionExportStoreEngineService:
             status="blocked",
             target_ref=target_ref,
             notices=(
-                Notice(
-                    code="stored_exports_target_not_available",
-                    severity="warning",
-                    message=f"No resolved synthetic record matched target_ref '{target_ref}'.",
+                    Notice(
+                        code="stored_exports_target_not_available",
+                        severity="warning",
+                        message=f"No resolved bounded record matched target_ref '{target_ref}'.",
+                    ),
                 ),
-            ),
-        )
+            )
 
     def get_artifact_metadata(self, artifact_id: str) -> StoredArtifactLookupResult:
         try:
@@ -397,6 +401,20 @@ def _stored_artifact_metadata_from_dict(payload: Any) -> StoredArtifactMetadata:
             label=_optional_string(primary_object_payload.get("label"), "stored_artifact.primary_object.label"),
         )
 
+    source_payload = payload.get("source")
+    source = None
+    if source_payload is not None:
+        if not isinstance(source_payload, dict):
+            raise ExportStoreDataError(
+                code="stored_artifact_metadata_invalid",
+                message="stored_artifact.source must be a JSON object when provided.",
+            )
+        source = SourceSummary(
+            family=_require_string(source_payload.get("family"), "stored_artifact.source.family"),
+            label=_optional_string(source_payload.get("label"), "stored_artifact.source.label"),
+            locator=_optional_string(source_payload.get("locator"), "stored_artifact.source.locator"),
+        )
+
     return StoredArtifactMetadata(
         artifact_id=_require_string(payload.get("artifact_id"), "stored_artifact.artifact_id"),
         artifact_kind=_require_string(payload.get("artifact_kind"), "stored_artifact.artifact_kind"),
@@ -412,6 +430,7 @@ def _stored_artifact_metadata_from_dict(payload: Any) -> StoredArtifactMetadata:
         source_action=_require_string(payload.get("source_action"), "stored_artifact.source_action"),
         filename=_optional_string(payload.get("filename"), "stored_artifact.filename"),
         primary_object=primary_object,
+        source=source,
     )
 
 
@@ -459,6 +478,22 @@ def _manifest_filename(target_ref: str) -> str:
 
 def _store_error_notice(error: ExportStoreDataError) -> Notice:
     return Notice(code=error.code, severity="error", message=error.message)
+
+
+def _manifest_source(manifest: dict[str, Any]) -> SourceSummary | None:
+    source = manifest.get("source")
+    if not isinstance(source, dict):
+        return None
+    family = source.get("family")
+    if not isinstance(family, str) or not family:
+        return None
+    label = source.get("label")
+    locator = source.get("locator")
+    return SourceSummary(
+        family=family,
+        label=label if isinstance(label, str) and label else None,
+        locator=locator if isinstance(locator, str) and locator else None,
+    )
 
 
 def _require_string(value: Any, field_name: str) -> str:
