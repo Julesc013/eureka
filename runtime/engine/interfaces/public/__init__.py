@@ -1,6 +1,12 @@
 """Public engine request and result shapes for the Eureka thin slice."""
 
 from runtime.engine.provenance import EvidenceSummary
+from runtime.engine.interfaces.public.absence import (
+    AbsenceNearMatch,
+    AbsenceReport,
+    ResolveAbsenceRequest,
+    SearchAbsenceRequest,
+)
 from runtime.engine.interfaces.public.comparison import (
     ComparisonAgreement,
     ComparisonDisagreement,
@@ -25,6 +31,10 @@ from runtime.engine.interfaces.public.subject_states import (
 
 __all__ = [
     "EvidenceSummary",
+    "AbsenceNearMatch",
+    "AbsenceReport",
+    "ResolveAbsenceRequest",
+    "SearchAbsenceRequest",
     "ComparisonAgreement",
     "ComparisonDisagreement",
     "ComparisonRequest",
