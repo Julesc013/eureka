@@ -13,6 +13,7 @@ Current thin-slice behavior:
 - transport-neutral public submit and read boundary over an in-memory job service
 - transport-neutral public search boundary over a bounded normalized corpus composed from synthetic fixtures plus recorded GitHub Releases records
 - transport-neutral public comparison boundary for side-by-side comparison of exactly two resolved targets with explicit agreements and disagreements
+- transport-neutral public subject/state boundary for listing bounded ordered states under one bootstrap `subject_key`
 - transport-neutral public action boundary for bounded manifest and bundle discovery and export
 - transport-neutral public stored-exports boundary for local deterministic artifact storage, listing, and retrieval
 - transport-neutral public bundle inspection boundary for local bootstrap readback of exported bundles
@@ -26,6 +27,7 @@ Current thin-slice behavior:
 - bounded source-family visibility propagated across resolution, search, export, storage, inspection, and shared-surface mappings where the public boundary provides it
 - bounded evidence summaries propagated across resolution, search, export, storage, inspection, and shared-surface mappings where the public boundary provides them
 - bounded comparison and disagreement summaries propagated across the public boundary and shared-surface mappings without implying merge logic or trust selection
+- bounded subject/state grouping propagated across the public boundary as a compact timeline/list seam without implying a final global object identity or temporal graph
 - gateway composes with engine service interfaces over normalized records and does not read governed fixtures directly
 - shared workbench-session, search-results, resolution-actions, stored-exports, and bundle-inspection mappings are exercised without implementing web or native shells
 - no broker, relay, worker, scheduler, auth, or persistence implementation

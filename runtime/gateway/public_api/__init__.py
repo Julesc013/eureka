@@ -8,6 +8,14 @@ from runtime.gateway.public_api.comparison_boundary import (
 from runtime.gateway.public_api.comparison_view_models import (
     comparison_envelope_to_view_model,
 )
+from runtime.gateway.public_api.subject_states_boundary import (
+    SubjectStatesCatalogRequest,
+    SubjectStatesPublicApi,
+    subject_states_result_to_public_envelope,
+)
+from runtime.gateway.public_api.subject_states_view_models import (
+    subject_states_envelope_to_view_model,
+)
 from runtime.gateway.public_api.resolution_boundary import (
     PublicApiResponse,
     ResolutionJobsPublicApi,
@@ -49,6 +57,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
     build_demo_stored_exports_public_api,
+    build_demo_subject_states_public_api,
 )
 from runtime.gateway.public_api.resolution_workspace import (
     ResolutionWorkspaceReadError,
@@ -109,6 +118,8 @@ __all__ = [
     "ResolutionWorkspaceViewModels",
     "SearchCatalogRequest",
     "SearchPublicApi",
+    "SubjectStatesCatalogRequest",
+    "SubjectStatesPublicApi",
     "STORE_RESOLUTION_BUNDLE_ACTION_ID",
     "STORE_RESOLUTION_BUNDLE_LABEL",
     "STORE_RESOLUTION_BUNDLE_ROUTE",
@@ -128,6 +139,7 @@ __all__ = [
     "build_demo_resolution_jobs_public_api",
     "build_demo_search_public_api",
     "build_demo_stored_exports_public_api",
+    "build_demo_subject_states_public_api",
     "build_resolution_workspace_view_models",
     "bundle_inspection_envelope_to_view_model",
     "bundle_inspection_result_to_public_envelope",
@@ -144,6 +156,8 @@ __all__ = [
     "stored_artifact_not_found_envelope",
     "stored_exports_envelope_to_view_model",
     "stored_exports_to_public_envelope",
+    "subject_states_envelope_to_view_model",
+    "subject_states_result_to_public_envelope",
     "unavailable_resolution_actions_to_public_envelope",
     "resolution_job_envelope_to_workbench_session",
 ]

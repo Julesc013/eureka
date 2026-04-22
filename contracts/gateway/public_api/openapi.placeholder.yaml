@@ -18,6 +18,8 @@ tags:
     description: Draft bounded resolution job submission and read operations.
   - name: Comparison
     description: Draft side-by-side comparison operations for two bounded resolved targets.
+  - name: SubjectStates
+    description: Draft bounded subject/state listing operations for one bootstrap subject key.
   - name: ResolutionActions
     description: Draft bounded action discovery plus manifest and portable-bundle export operations for resolved targets.
   - name: StoredExports
@@ -108,6 +110,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ComparisonEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/states:
+    get:
+      tags:
+        - SubjectStates
+      summary: List bounded ordered states for one bootstrap subject key
+      description: >
+        Draft public subject/state boundary for listing bounded ordered states grouped
+        by one bootstrap `subject_key`. This is not a final global object identity,
+        timeline graph, merge engine, or trust-selection contract.
+      operationId: listSubjectStates
+      parameters:
+        - $ref: '#/components/parameters/SubjectKey'
+      responses:
+        '200':
+          description: Draft subject/state listing envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubjectStatesEnvelope'
+        '404':
+          description: Draft blocked subject/state listing envelope for unknown subjects
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubjectStatesEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -455,6 +488,13 @@ components:
       description: Draft right-side bounded target reference for side-by-side comparison.
       schema:
         type: string
+    SubjectKey:
+      name: subject
+      in: query
+      required: true
+      description: Draft bootstrap subject-grouping key for bounded state listing.
+      schema:
+        type: string
     BundlePath:
       name: bundle_path
       in: query
@@ -796,6 +836,76 @@ components:
         - category
         - left_value
         - right_value
+    SubjectStatesEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft bounded subject/state listing envelope for one bootstrap subject key.
+      properties:
+        status:
+          type: string
+          enum:
+            - listed
+            - blocked
+        requested_subject_key:
+          type: string
+        subject:
+          $ref: '#/components/schemas/SubjectSummary'
+        states:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubjectStateSummary'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - requested_subject_key
+        - states
+        - notices
+    SubjectSummary:
+      type: object
+      additionalProperties: false
+      description: Draft bootstrap subject summary used in the subject/state listing envelope.
+      properties:
+        subject_key:
+          type: string
+        subject_label:
+          type: string
+        state_count:
+          type: integer
+          minimum: 0
+        source_family_hint:
+          type: string
+      required:
+        - subject_key
+        - subject_label
+        - state_count
+    SubjectStateSummary:
+      type: object
+      additionalProperties: false
+      description: Draft bounded state summary used in the subject/state listing envelope.
+      properties:
+        target_ref:
+          type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
+        object:
+          $ref: '#/components/schemas/ObjectSummary'
+        version_or_state:
+          type: string
+        normalized_version_or_state:
+          type: string
+        source:
+          $ref: '#/components/schemas/SourceSummary'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
+      required:
+        - target_ref
+        - resolved_resource_id
+        - object
     ResolutionActionsEnvelope:
       type: object
       additionalProperties: false

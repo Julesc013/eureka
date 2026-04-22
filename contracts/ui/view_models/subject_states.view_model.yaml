@@ -1,0 +1,130 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/subject_states.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
+title: SubjectStates
+description: Draft shared subject/state listing model aligned with the gateway public subject/state boundary.
+type: object
+additionalProperties: false
+properties:
+  status:
+    type: string
+    enum:
+      - listed
+      - blocked
+  requested_subject_key:
+    type: string
+  subject:
+    $ref: '#/$defs/subject_summary'
+  states:
+    type: array
+    items:
+      $ref: '#/$defs/subject_state'
+  notices:
+    type: array
+    items:
+      $ref: '#/$defs/notice'
+required:
+  - status
+  - requested_subject_key
+  - states
+  - notices
+$defs:
+  subject_summary:
+    type: object
+    additionalProperties: false
+    properties:
+      subject_key:
+        type: string
+      subject_label:
+        type: string
+      state_count:
+        type: integer
+        minimum: 0
+      source_family_hint:
+        type: string
+    required:
+      - subject_key
+      - subject_label
+      - state_count
+  subject_state:
+    type: object
+    additionalProperties: false
+    properties:
+      target_ref:
+        type: string
+      resolved_resource_id:
+        type: string
+      object:
+        type: object
+        additionalProperties: false
+        properties:
+          id:
+            type: string
+          kind:
+            type: string
+          label:
+            type: string
+        required:
+          - id
+      version_or_state:
+        type: string
+      normalized_version_or_state:
+        type: string
+      source:
+        type: object
+        additionalProperties: false
+        properties:
+          family:
+            type: string
+          label:
+            type: string
+          locator:
+            type: string
+        required:
+          - family
+      evidence:
+        type: array
+        items:
+          $ref: '#/$defs/evidence_summary'
+    required:
+      - target_ref
+      - resolved_resource_id
+      - object
+  evidence_summary:
+    type: object
+    additionalProperties: false
+    properties:
+      claim_kind:
+        type: string
+      claim_value:
+        type: string
+      asserted_by_family:
+        type: string
+      asserted_by_label:
+        type: string
+      evidence_kind:
+        type: string
+      evidence_locator:
+        type: string
+      asserted_at:
+        type: string
+    required:
+      - claim_kind
+      - claim_value
+      - asserted_by_family
+      - evidence_kind
+      - evidence_locator
+  notice:
+    type: object
+    additionalProperties: false
+    properties:
+      code:
+        type: string
+      severity:
+        type: string
+      message:
+        type: string
+    required:
+      - code
+      - severity
+x-eureka-status: draft

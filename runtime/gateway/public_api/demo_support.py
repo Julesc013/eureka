@@ -14,6 +14,7 @@ from runtime.engine.interfaces.normalize import (
     normalize_github_release_record,
 )
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
+from runtime.engine.states import DeterministicSubjectStatesService
 from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBundleInspectionEngineService
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
 from runtime.gateway.public_api.comparison_boundary import ComparisonPublicApi
@@ -23,6 +24,7 @@ from runtime.gateway.public_api.resolution_bundle_inspection import ResolutionBu
 from runtime.gateway.public_api.resolution_jobs import InMemoryResolutionJobService
 from runtime.gateway.public_api.search_boundary import SearchPublicApi
 from runtime.gateway.public_api.stored_exports import StoredExportsPublicApi
+from runtime.gateway.public_api.subject_states_boundary import SubjectStatesPublicApi
 
 
 def build_demo_resolution_jobs_public_api() -> ResolutionJobsPublicApi:
@@ -46,6 +48,12 @@ def build_demo_comparison_public_api() -> ComparisonPublicApi:
         resolution_service=resolution_service,
     )
     return ComparisonPublicApi(comparison_service)
+
+
+def build_demo_subject_states_public_api() -> SubjectStatesPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    subject_states_service = DeterministicSubjectStatesService(catalog)
+    return SubjectStatesPublicApi(subject_states_service)
 
 
 def build_demo_resolution_actions_public_api() -> ResolutionActionsPublicApi:

@@ -1,0 +1,31 @@
+name: SubjectStates
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that list bounded
+  ordered states for one bootstrap subject key through the gateway public subject/state boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/states?subject={subject_key}
+  shared_view_models:
+    - contracts/ui/view_models/subject_states.view_model.yaml
+  shared_result_shapes:
+    - SubjectStatesEnvelope
+surface_expectations:
+  - surfaces list subject states through the public gateway boundary and do not assume engine-local grouping internals
+  - surfaces render a subject summary plus an ordered state list without implying a final global object or state identity model
+  - surfaces preserve compact source and evidence summaries per state instead of silently collapsing multiple states into one answer
+  - surfaces handle missing subjects honestly without implying merge, trust, or broader temporal-graph behavior
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - final subject or object identity semantics
+  - final state identity and ordering semantics
+  - merge or truth-selection behavior across states
