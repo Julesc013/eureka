@@ -7,14 +7,15 @@ Current bootstrap scope:
 
 - submit bounded resolution work and return an accepted envelope with a `job_id`
 - read the current in-memory job envelope by `job_id`
-- search the governed synthetic software corpus through a deterministic public search boundary
-- list bounded manifest-export and bundle-export actions for a resolved synthetic target
+- search the bounded software-first corpus through a deterministic public search boundary
+- list bounded manifest-export and bundle-export actions for a resolved bounded target
 - export a deterministic machine-readable resolution manifest through the public boundary
 - export a deterministic portable resolution bundle through the public boundary
 - store deterministic manifest and bundle exports in a local bootstrap content-addressed store
 - list stored exports for a target and read stored artifact content by stable artifact identity
 - inspect a deterministic portable resolution bundle from local bytes or a local bundle path through a transport-neutral public boundary
 - surface a bootstrap deterministic `resolved_resource_id` across resolution, search, actions, stored exports, and bundle inspection where available
+- surface bounded source-family and source-origin summaries across resolution, search, export, and stored-export metadata where available
 - translate internal gateway job state into public contract-facing envelopes
 - map public job envelopes into the shared `WorkbenchSession` view model without
   implementing a web or native shell
@@ -31,9 +32,10 @@ Current bootstrap scope:
 
 Out of scope here:
 
-- real HTTP serving
+- owning HTTP serving directly inside gateway; the current local stdlib HTTP API slice remains surface-owned under `surfaces/web/server/`
 - async workers or orchestration
 - persistence beyond the local bootstrap filesystem store
+- live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
 - installers, downloads from external sources, import, restore, or rollback behavior
 - ranking, fuzzy matching, or broader retrieval semantics
 - finalized public API guarantees

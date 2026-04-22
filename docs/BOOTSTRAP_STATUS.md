@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus twelve executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus thirteen executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -31,6 +31,7 @@ Current status: foundational scaffold plus twelve executable local deterministic
 - first non-web local CLI surface under `surfaces/native/cli/` that reuses the same gateway public boundary and shared surface-neutral mappings already proven by the web surface for exact resolution, deterministic search, export, inspection, and stored-export flows
 - first repo-local architectural-boundary checker under `scripts/check_architecture_boundaries.py` that enforces the current Python import layering between surfaces, `runtime/gateway/public_api`, connectors, and engine
 - first local stdlib machine-readable HTTP API slice under `surfaces/web/server/` that exposes exact resolution, deterministic search, manifest export, bundle export, bundle inspection, and local stored-export flows as JSON or ZIP responses over the same transport-neutral public boundary already consumed by the HTML and CLI surfaces
+- first bounded real external-source connector slice under `runtime/connectors/github_releases/` that loads small recorded GitHub Releases fixtures, normalizes them into the existing engine path, and exposes source-family visibility through the public boundary plus current web, CLI, and HTTP API surfaces
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -45,7 +46,7 @@ Current status: foundational scaffold plus twelve executable local deterministic
 - final global identity semantics, cross-source merge behavior, and any durable resource-identity guarantees beyond the current bootstrap seam
 - mature search semantics, ranking, and broader retrieval architecture
 - real web application structure, browser-side behavior, authentication, and deployment assumptions
-- real external connectors, ranking, retrieval, and broader provenance or trust semantics
+- broader live external-source federation, live GitHub acquisition, ranking, retrieval, and broader provenance or trust semantics
 - persistence beyond the local bootstrap filesystem store, background workers, and async orchestration
 - richer web routing and page structure beyond the bootstrap compatibility-first workbench, search, manifest-export, bundle-export, stored-export, bundle-inspection, and local HTTP API slices, plus native runtime behavior
 - final native CLI, TUI, GUI, and offline mode decisions

@@ -10,6 +10,8 @@ steps:
     run: python scripts/check_architecture_boundaries.py
   - id: thin_slice_known
     run: python scripts/demo_resolution_slice.py
+  - id: thin_slice_github_release_known
+    run: python scripts/demo_resolution_slice.py github-release:cli/cli@v2.65.0
   - id: thin_slice_unknown
     run: python scripts/demo_resolution_slice.py fixture:software/missing-demo-app@0.0.1
   - id: thin_slice_workbench
@@ -20,6 +22,8 @@ steps:
     run: python scripts/demo_web_workbench.py fixture:software/missing-demo-app@0.0.1 --render-once
   - id: web_search_multi
     run: python scripts/demo_web_workbench.py --render-once --search-query synthetic
+  - id: web_search_mixed
+    run: python scripts/demo_web_workbench.py --render-once --search-query archive
   - id: web_search_single
     run: python scripts/demo_web_workbench.py --render-once --search-query compatibility
   - id: web_search_absent
@@ -48,10 +52,14 @@ steps:
     run: python scripts/demo_web_workbench.py --store-root .demo-store --read-stored sha256:0000000000000000000000000000000000000000000000000000000000000000
   - id: native_cli_resolve_known
     run: python scripts/demo_cli_workbench.py resolve fixture:software/synthetic-demo-app@1.0.0
+  - id: native_cli_resolve_github_release
+    run: python scripts/demo_cli_workbench.py resolve github-release:cli/cli@v2.65.0
   - id: native_cli_resolve_unknown
     run: python scripts/demo_cli_workbench.py resolve fixture:software/missing-demo-app@0.0.1
   - id: native_cli_search_multi
     run: python scripts/demo_cli_workbench.py search synthetic
+  - id: native_cli_search_mixed
+    run: python scripts/demo_cli_workbench.py search archive
   - id: native_cli_manifest_known
     run: python scripts/demo_cli_workbench.py export-manifest fixture:software/synthetic-demo-app@1.0.0 --json
   - id: native_cli_bundle_known
@@ -62,10 +70,14 @@ steps:
     run: python scripts/demo_http_api.py index
   - id: http_api_resolve_known
     run: python scripts/demo_http_api.py resolve fixture:software/synthetic-demo-app@1.0.0
+  - id: http_api_resolve_github_release
+    run: python scripts/demo_http_api.py resolve github-release:cli/cli@v2.65.0
   - id: http_api_resolve_unknown
     run: python scripts/demo_http_api.py resolve fixture:software/missing-demo-app@0.0.1
   - id: http_api_search_multi
     run: python scripts/demo_http_api.py search synthetic
+  - id: http_api_search_mixed
+    run: python scripts/demo_http_api.py search archive
   - id: http_api_manifest_known
     run: python scripts/demo_http_api.py export-manifest fixture:software/synthetic-demo-app@1.0.0
   - id: http_api_bundle_known
@@ -78,11 +90,12 @@ notes:
   - The architecture-boundary check is a narrow repo-local Python import guardrail, not a universal policy engine.
   - Submit and read remain in-memory bootstrap semantics; no real HTTP server or async worker exists yet.
   - The web workbench demo uses a tiny stdlib local server only for bootstrap proof and does not imply a deployment choice.
-  - Search semantics remain bootstrap-scale deterministic matching over a small synthetic corpus and do not imply final retrieval or ranking behavior.
-  - Manifest export remains a bounded local action over deterministic synthetic results and does not imply installer, download, or durable snapshot semantics.
-  - Bundle export remains a bounded local action over deterministic synthetic results and does not imply restore, import, installer, or final snapshot semantics.
+  - Search semantics remain bootstrap-scale deterministic matching over a small bounded corpus composed from synthetic fixtures plus recorded GitHub Releases fixtures and do not imply final retrieval or ranking behavior.
+  - Manifest export remains a bounded local action over deterministic synthetic and recorded GitHub Releases-backed results and does not imply installer, download, provenance, or durable snapshot semantics.
+  - Bundle export remains a bounded local action over deterministic synthetic and recorded GitHub Releases-backed results and does not imply restore, import, installer, or final snapshot semantics.
   - Stored exports remain a bounded local bootstrap filesystem store with stable artifact identity and do not imply a final cache, database, or preservation contract.
   - Bundle inspection remains a local bootstrap readback seam; path-based inspection is a demo choice and not a final upload or import contract.
   - The native CLI proof remains bootstrap-scale and does not imply a final CLI, TUI, GUI, or packaging direction.
   - The local stdlib HTTP API proof remains bootstrap-scale and does not imply final auth, HTTPS/TLS, deployment, or durable public route semantics.
+  - Deterministic tests and demos use recorded GitHub Releases fixtures only; live GitHub acquisition is not required and remains deferred.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

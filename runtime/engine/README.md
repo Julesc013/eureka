@@ -9,18 +9,20 @@ Boundary notes:
 - `interfaces/public/` and `interfaces/service/` are the only engine-facing paths that gateway may consume
 - `interfaces/ingest/`, `interfaces/extract/`, and `interfaces/normalize/` are the only engine-facing paths that connectors may consume
 - `sdk/` is reserved for a future narrow offline boundary and is intentionally empty
-- these interface paths are concrete and advisory today; enforcement tooling is still deferred
+- these interface paths are concrete today; wider enforcement remains intentionally deferred beyond the current narrow repo-local Python import checker
 
 Current thin-slice behavior:
 
 - Python 3 standard library only
 - engine consumes normalized records only
 - governed local synthetic fixture access is kept behind `runtime/connectors/synthetic_software/`
+- recorded GitHub Releases source loading is kept behind `runtime/connectors/github_releases/`
 - bootstrap normalization currently flows through `interfaces/ingest/`, `interfaces/extract/`, and `interfaces/normalize/`
 - exact-match resolution for bounded `target_ref` values only
-- deterministic search over a tiny bounded set of normalized fields using stable catalog order
+- deterministic search over a tiny bounded set of normalized fields using stable catalog order across synthetic fixtures and recorded GitHub Releases records
 - bounded object-summary mapping aligned to the gateway public API draft
 - bootstrap deterministic `resolved_resource_id` derivation for already-normalized or already-resolved records
+- bounded source-family and source-origin summaries propagated from normalized records into resolution, search, export, and local store metadata
 - bounded resolution-manifest export from already-normalized records under `actions/`
 - bounded portable resolution-bundle export from already-normalized records under `snapshots/`
 - bounded portable bundle inspection from local bytes or a local file path under `snapshots/`, without live fixture dependence
@@ -29,4 +31,4 @@ Current thin-slice behavior:
 
 The current `resolved_resource_id` is a bootstrap deterministic seam only. It hardens propagation beyond raw `target_ref`, but it does not yet define Eureka's final global identity or cross-source merge model.
 
-This slice does not settle connector strategy, ranking, fuzzy resolution, installer behavior, restore behavior, durable cache semantics, or broader archive semantics.
+This slice does not settle broader live-source federation, provenance or trust semantics, ranking, fuzzy resolution, installer behavior, restore behavior, durable cache semantics, or broader archive semantics.

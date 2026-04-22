@@ -23,7 +23,7 @@ tags:
   - name: BundleInspection
     description: Draft local bootstrap inspection operations for previously exported deterministic bundles.
   - name: Search
-    description: Draft deterministic search operations over the bounded software-first corpus.
+    description: Draft deterministic search operations over the bounded software-first corpus, currently composed from synthetic fixtures plus recorded GitHub Releases fixtures.
 paths:
   /v0/resolution/jobs:
     post:
@@ -59,11 +59,11 @@ paths:
     get:
       tags:
         - Search
-      summary: Search the bounded synthetic software corpus
+      summary: Search the bounded software-first corpus
       description: >
         Draft public search boundary for deterministic, bounded software-first lookup
-        over the current governed synthetic corpus. Ranking and broader retrieval
-        semantics remain unresolved.
+        over the current synthetic-plus-recorded-GitHub-Releases corpus. Ranking and
+        broader retrieval semantics remain unresolved.
       operationId: searchSoftware
       parameters:
         - $ref: '#/components/parameters/SearchQuery'
@@ -112,8 +112,8 @@ paths:
       summary: Export a bounded resolution manifest
       description: >
         Draft public boundary for exporting a machine-readable manifest derived from a
-        deterministic resolved synthetic target. This is not a final snapshot or
-        reconstruction contract.
+        deterministic resolved bounded target. This is not a final snapshot,
+        reconstruction, provenance, or trust contract.
       operationId: exportResolutionManifest
       parameters:
         - $ref: '#/components/parameters/TargetRef'
@@ -143,8 +143,8 @@ paths:
       summary: Export a bounded resolution bundle
       description: >
         Draft public boundary for exporting a deterministic portable bundle derived
-        from a resolved synthetic target. This is not a final snapshot, restore, or
-        reconstruction contract.
+        from a resolved bounded target. This is not a final snapshot, restore,
+        provenance, or reconstruction contract.
       operationId: exportResolutionBundle
       parameters:
         - $ref: '#/components/parameters/TargetRef'
@@ -433,7 +433,23 @@ components:
       type: string
       description: >
         Bootstrap deterministic resolved-resource identifier derived from already-normalized
-        or already-resolved data. This is not yet Eureka's final global identity or merge model.
+        or already-resolved data. This is not yet Eureka's final global identity,
+        provenance, or merge model.
+    SourceSummary:
+      type: object
+      additionalProperties: false
+      description: Draft bounded source-family summary surfaced through the public boundary.
+      properties:
+        family:
+          type: string
+        label:
+          type: string
+        locator:
+          type: string
+      required:
+        - family
+        - label
+        - locator
     SubmitResolutionJobRequest:
       type: object
       additionalProperties: false
@@ -497,6 +513,8 @@ components:
       properties:
         primary_object:
           $ref: '#/components/schemas/ObjectSummary'
+        source:
+          $ref: '#/components/schemas/SourceSummary'
         resolved_resource_id:
           $ref: '#/components/schemas/ResolvedResourceId'
         snapshot_manifest_id:
@@ -588,6 +606,8 @@ components:
           $ref: '#/components/schemas/ResolvedResourceId'
         object:
           $ref: '#/components/schemas/ObjectSummary'
+        source:
+          $ref: '#/components/schemas/SourceSummary'
       required:
         - target_ref
         - object
@@ -646,7 +666,7 @@ components:
     ResolutionManifestExport:
       type: object
       additionalProperties: false
-      description: Draft machine-readable manifest derived from a deterministic resolved synthetic target.
+      description: Draft machine-readable manifest derived from a deterministic resolved bounded target.
       properties:
         manifest_kind:
           type: string
@@ -672,6 +692,8 @@ components:
           $ref: '#/components/schemas/ResolvedResourceId'
         primary_object:
           $ref: '#/components/schemas/ObjectSummary'
+        source:
+          $ref: '#/components/schemas/SourceSummary'
         matched_state:
           type: object
           additionalProperties: false
@@ -721,7 +743,7 @@ components:
         - generated_from
         - target_ref
         - primary_object
-        - source_fixture
+        - source
         - notices
     ActionBlockedEnvelope:
       type: object
@@ -799,6 +821,8 @@ components:
           type: string
         filename:
           type: string
+        source:
+          $ref: '#/components/schemas/SourceSummary'
       required:
         - artifact_id
         - artifact_kind
@@ -833,6 +857,8 @@ components:
           type: string
         primary_object:
           $ref: '#/components/schemas/ObjectSummary'
+        source:
+          $ref: '#/components/schemas/SourceSummary'
       required:
         - artifact_id
         - artifact_kind

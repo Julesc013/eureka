@@ -10,6 +10,7 @@ Current bootstrap slice:
 - consumes the transport-neutral gateway public submit/read and search boundaries
 - renders exact resolution from the shared `WorkbenchSession` view model rather than engine-owned state
 - renders the bootstrap `resolved_resource_id` for known resolved targets without importing engine internals
+- renders bounded source-family and source-origin summaries for resolved and searched records from synthetic fixtures and recorded GitHub Releases fixtures
 - renders a bounded action panel from the shared `ResolutionActions` view model and exposes JSON manifest export plus ZIP bundle export routes
 - renders local stored-export actions plus a stored-exports section from a shared `StoredExports` model and exposes stored-artifact retrieval routes
 - renders a compatibility-first bundle inspection page from a shared bundle-inspection model through a local-path bootstrap route

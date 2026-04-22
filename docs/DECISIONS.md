@@ -125,3 +125,9 @@
 - Status: accepted
 - Decision: Eureka now exposes a first local stdlib machine-readable HTTP API slice under `surfaces/web/server/` that serves JSON and ZIP responses for exact resolution, deterministic search, manifest export, bundle export, bundle inspection, and local stored-export flows by reusing `runtime/gateway/public_api/**` rather than duplicating runtime logic or importing engine internals directly.
 - Why: this proves protocol-level reuse over the same transport-neutral public-boundary logic already consumed by the compatibility-first HTML workbench and the native CLI without prematurely committing to a production HTTP stack, auth model, HTTPS/TLS, deployment topology, or final durable route semantics.
+
+## ADR-022: Prove the First Real External-Source Connector Through a Bounded GitHub Releases Slice
+
+- Status: accepted
+- Decision: Eureka now includes a bounded `runtime/connectors/github_releases/` connector family that loads small recorded GitHub Releases fixtures, passes them through the existing ingest, extract, and normalize seams, and exposes the resulting normalized records through the current engine, gateway public boundary, and web, CLI, plus HTTP API surfaces with minimal source-family visibility.
+- Why: this proves the current architecture against one real source family without introducing live crawling, auth, download or installer behavior, new persistence architecture, or premature provenance and trust commitments.
