@@ -155,3 +155,9 @@
 - Status: accepted
 - Decision: Eureka now explains exact-resolution misses and deterministic search no-result cases through a bounded engine absence service and a transport-neutral public absence boundary, preserving checked source-family summaries plus compact near matches where the current corpus supports them and surfacing that explanation through current web, CLI, and HTTP API surfaces.
 - Why: this proves the architecture can explain a miss in a source-aware and evidence-aware way without prematurely introducing ranking, fuzzy retrieval, trust scoring, merge logic, or a final diagnostic engine.
+
+## ADR-027: Add a Bounded Representation and Access-Path Seam Without Choosing Final Actions
+
+- Status: accepted
+- Decision: Eureka now carries bounded representation and access-path summaries from normalize through exact resolution, a transport-neutral public representations boundary, and current web, CLI, plus HTTP API surfaces, while preserving multiple known source-backed paths for one resolved target side by side.
+- Why: this proves the architecture can expose concrete known representations without silently turning them into final download, install, import, restore, or representation-selection semantics.

@@ -12,6 +12,7 @@ Current bootstrap slice:
 - renders side-by-side comparison at `/compare?left=...&right=...` from a shared comparison view model rather than engine-owned compare state
 - renders bounded subject-state listing at `/subject?key=...` from a shared subject-state view model rather than engine-owned grouping state
 - renders bounded miss explanations at `/absence/resolve?target_ref=...` and `/absence/search?q=...` from a shared absence-report view model rather than engine-owned diagnostic state
+- renders bounded known representations and access paths in the exact-resolution page and at `/representations?target_ref=...` from shared public-boundary data rather than engine-owned artifact logic
 - renders the bootstrap `resolved_resource_id` for known resolved targets without importing engine internals
 - renders bounded source-family and source-origin summaries for resolved and searched records from synthetic fixtures and recorded GitHub Releases fixtures
 - renders bounded evidence summaries for resolved, searched, and inspected records without implying a final provenance or trust model
@@ -26,10 +27,11 @@ Current bootstrap slice:
 - exposes `/api/compare?left=...&right=...` for machine-readable comparison over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/states?subject=...` for machine-readable bounded subject-state listing over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/absence/resolve?target_ref=...` and `/api/absence/search?q=...` for machine-readable bounded miss explanations over the same transport-neutral public boundary already reused by the HTML workbench and CLI
+- exposes `/api/representations?target_ref=...` for machine-readable bounded representation and access-path listing over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - does not imply a real framework choice, browser-side JavaScript dependency, routing tree, authentication layer, or deployment model
 - does not settle final HTTP API route naming, auth, HTTPS/TLS, deployment, or multi-user semantics
 - local store root configuration is a bootstrap-only demo choice, not a final deployment or multi-user storage contract
 - local path-based bundle inspection is a bootstrap-only demo choice, not a production upload or import contract
-- does not settle final download, installer, restore, durable cache, or persistence behavior
+- does not settle final download, installer, restore, durable cache, persistence, or representation-selection behavior
 - does not settle final object/state identity presentation, state ordering semantics, or global merge behavior
 - does not settle final diagnostic, ranking, trust, or absence-reasoning semantics beyond the current bounded miss-explanation seam

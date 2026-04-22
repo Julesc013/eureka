@@ -60,6 +60,8 @@ steps:
     run: python scripts/demo_cli_workbench.py search synthetic
   - id: native_cli_search_mixed
     run: python scripts/demo_cli_workbench.py search archive
+  - id: native_cli_representations_known
+    run: python scripts/demo_cli_workbench.py representations github-release:cli/cli@v2.65.0 --json
   - id: native_cli_explain_resolve_miss
     run: python scripts/demo_cli_workbench.py explain-resolve-miss fixture:software/archivebox@9.9.9
   - id: native_cli_explain_search_miss
@@ -90,6 +92,8 @@ steps:
     run: python scripts/demo_http_api.py search synthetic
   - id: http_api_search_mixed
     run: python scripts/demo_http_api.py search archive
+  - id: http_api_representations_known
+    run: python scripts/demo_http_api.py representations github-release:cli/cli@v2.65.0
   - id: http_api_explain_resolve_miss
     run: python scripts/demo_http_api.py explain-resolve-miss fixture:software/archivebox@9.9.9
   - id: http_api_explain_search_miss
@@ -122,4 +126,5 @@ notes:
   - The native CLI proof remains bootstrap-scale and does not imply a final CLI, TUI, GUI, or packaging direction.
   - The local stdlib HTTP API proof remains bootstrap-scale and does not imply final auth, HTTPS/TLS, deployment, or durable public route semantics.
   - Deterministic tests and demos use recorded GitHub Releases fixtures only; live GitHub acquisition is not required and remains deferred.
+  - The bounded representations proof remains bootstrap-scale and does not imply final download, install, import, restore, or representation-selection semantics.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

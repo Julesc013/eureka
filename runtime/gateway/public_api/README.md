@@ -11,6 +11,7 @@ Current bootstrap scope:
 - explain bounded exact-resolution and deterministic search misses through a dedicated public absence boundary
 - compare exactly two bounded resolved targets through a deterministic public comparison boundary
 - list bounded ordered states for one bootstrap subject key through a deterministic public subject/state boundary
+- list bounded known representations and access paths for one resolved target through a deterministic public representations boundary
 - list bounded manifest-export and bundle-export actions for a resolved bounded target
 - export a deterministic machine-readable resolution manifest through the public boundary
 - export a deterministic portable resolution bundle through the public boundary
@@ -31,6 +32,8 @@ Current bootstrap scope:
   implementing a web or native shell
 - map public subject/state envelopes into a shared subject/state view model without
   implementing a web or native shell
+- map public representations envelopes into a shared representations view model without
+  implementing a web or native shell
 - map public action envelopes into a shared action-panel view model without
   implementing a web or native shell
 - map public stored-export envelopes into a shared stored-exports view model without
@@ -50,7 +53,7 @@ Out of scope here:
 - final comparison, merge, or truth-selection behavior beyond the current bounded disagreement seam
 - final object, subject, or state identity behavior beyond the current bounded timeline seam
 - final diagnostic or absence-reasoning behavior beyond the current bounded miss-explanation seam
-- installers, downloads from external sources, import, restore, or rollback behavior
+- installers, downloads from external sources, import, restore, rollback behavior, or final representation-selection semantics
 - ranking, fuzzy matching, or broader retrieval semantics
 - finalized public API guarantees
 - finalized global identity or cross-source merge semantics

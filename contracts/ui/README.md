@@ -12,7 +12,8 @@ Current bootstrap shared models cover:
 - `ResolutionActions` for bounded action availability plus bootstrap resolved-resource identity for the current resolved target
 - `Comparison` for side-by-side left/right summaries, explicit agreements and disagreements, and bounded evidence preserved per side
 - `SubjectStates` for one bootstrap subject summary plus an ordered state list that preserves compact source and evidence summaries per state
+- `Representations` for one resolved target's bounded representation and access-path list, including compact access kind plus source-family summaries without implying final download or install behavior
 - `BundleInspection` for local bootstrap readback of previously exported deterministic bundles, any recovered bootstrap resolved-resource identity, and bounded evidence summaries
 - `StoredExports` for local bootstrap storage, listing, retrieval of deterministic exported artifacts, associated bootstrap resolved-resource identity, and bounded evidence summaries
 
-This shared-contract layer now carries the first bounded provenance and evidence seam, the first bounded comparison and disagreement seam, the first bounded object/state timeline seam, and the first bounded absence-reasoning seam. It is not a final provenance graph, trust model, object identity model, merge contract, truth-selection engine, or diagnostic engine.
+This shared-contract layer now carries the first bounded provenance and evidence seam, the first bounded comparison and disagreement seam, the first bounded object/state timeline seam, the first bounded absence-reasoning seam, and the first bounded representation/access-path seam. It is not a final provenance graph, trust model, object identity model, representation or action model, merge contract, truth-selection engine, or diagnostic engine.
