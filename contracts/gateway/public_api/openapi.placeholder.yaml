@@ -7,7 +7,9 @@ info:
   description: >
     Draft public API contract for web and native surfaces in the normal online path.
     Internal broker, relay, worker, scheduler, and auth protocols are intentionally
-    excluded from this document.
+    excluded from this document. Eureka also has a local stdlib bootstrap HTTP API
+    slice under `/api/...` as a protocol-level proof over the same public boundary,
+    but that slice does not settle final durable route naming or deployment semantics.
 servers:
   - url: https://gateway.example.invalid
     description: Non-routable placeholder endpoint for draft contract work.

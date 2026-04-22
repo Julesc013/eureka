@@ -58,6 +58,20 @@ steps:
     run: python scripts/demo_cli_workbench.py export-bundle fixture:software/synthetic-demo-app@1.0.0 --json
   - id: native_cli_store_bundle_known
     run: python scripts/demo_cli_workbench.py store-bundle fixture:software/synthetic-demo-app@1.0.0 --store-root .demo-store --json
+  - id: http_api_index
+    run: python scripts/demo_http_api.py index
+  - id: http_api_resolve_known
+    run: python scripts/demo_http_api.py resolve fixture:software/synthetic-demo-app@1.0.0
+  - id: http_api_resolve_unknown
+    run: python scripts/demo_http_api.py resolve fixture:software/missing-demo-app@0.0.1
+  - id: http_api_search_multi
+    run: python scripts/demo_http_api.py search synthetic
+  - id: http_api_manifest_known
+    run: python scripts/demo_http_api.py export-manifest fixture:software/synthetic-demo-app@1.0.0
+  - id: http_api_bundle_known
+    run: python -c "from pathlib import Path; import subprocess, sys, tempfile, zipfile; bundle = Path(tempfile.gettempdir()) / 'eureka-http-api-demo-bundle.zip'; bundle.write_bytes(subprocess.check_output([sys.executable, 'scripts/demo_http_api.py', 'export-bundle', 'fixture:software/synthetic-demo-app@1.0.0'])); print(bundle); zf = zipfile.ZipFile(bundle); print('\\n'.join(zf.namelist())); zf.close()"
+  - id: http_api_store_bundle_known
+    run: python scripts/demo_http_api.py store-bundle fixture:software/synthetic-demo-app@1.0.0 --store-root .demo-store
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
@@ -70,4 +84,5 @@ notes:
   - Stored exports remain a bounded local bootstrap filesystem store with stable artifact identity and do not imply a final cache, database, or preservation contract.
   - Bundle inspection remains a local bootstrap readback seam; path-based inspection is a demo choice and not a final upload or import contract.
   - The native CLI proof remains bootstrap-scale and does not imply a final CLI, TUI, GUI, or packaging direction.
+  - The local stdlib HTTP API proof remains bootstrap-scale and does not imply final auth, HTTPS/TLS, deployment, or durable public route semantics.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.
