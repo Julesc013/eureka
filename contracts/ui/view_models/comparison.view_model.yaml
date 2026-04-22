@@ -1,0 +1,147 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/comparison.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
+title: Comparison
+description: Draft shared side-by-side comparison model aligned with the gateway public comparison boundary.
+type: object
+additionalProperties: false
+properties:
+  status:
+    type: string
+    enum:
+      - compared
+      - blocked
+  left:
+    $ref: '#/$defs/comparison_side'
+  right:
+    $ref: '#/$defs/comparison_side'
+  agreements:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        category:
+          type: string
+        value:
+          type: string
+      required:
+        - category
+        - value
+  disagreements:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        category:
+          type: string
+        left_value:
+          type: string
+        right_value:
+          type: string
+      required:
+        - category
+        - left_value
+        - right_value
+  notices:
+    type: array
+    items:
+      $ref: '#/$defs/notice'
+required:
+  - status
+  - left
+  - right
+  - agreements
+  - disagreements
+  - notices
+$defs:
+  comparison_side:
+    type: object
+    additionalProperties: false
+    properties:
+      target_ref:
+        type: string
+      status:
+        type: string
+        enum:
+          - completed
+          - blocked
+      resolved_resource_id:
+        type: string
+      object:
+        type: object
+        additionalProperties: false
+        properties:
+          id:
+            type: string
+          kind:
+            type: string
+          label:
+            type: string
+        required:
+          - id
+      source:
+        type: object
+        additionalProperties: false
+        properties:
+          family:
+            type: string
+          label:
+            type: string
+          locator:
+            type: string
+        required:
+          - family
+      version_or_state:
+        type: string
+      evidence:
+        type: array
+        items:
+          $ref: '#/$defs/evidence_summary'
+      notices:
+        type: array
+        items:
+          $ref: '#/$defs/notice'
+    required:
+      - target_ref
+      - status
+      - notices
+  evidence_summary:
+    type: object
+    additionalProperties: false
+    properties:
+      claim_kind:
+        type: string
+      claim_value:
+        type: string
+      asserted_by_family:
+        type: string
+      asserted_by_label:
+        type: string
+      evidence_kind:
+        type: string
+      evidence_locator:
+        type: string
+      asserted_at:
+        type: string
+    required:
+      - claim_kind
+      - claim_value
+      - asserted_by_family
+      - evidence_kind
+      - evidence_locator
+  notice:
+    type: object
+    additionalProperties: false
+    properties:
+      code:
+        type: string
+      severity:
+        type: string
+      message:
+        type: string
+    required:
+      - code
+      - severity
+x-eureka-status: draft

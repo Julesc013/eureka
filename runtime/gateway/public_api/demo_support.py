@@ -3,6 +3,7 @@ from __future__ import annotations
 from runtime.connectors.github_releases import GitHubReleasesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.actions import ResolutionManifestExportService
+from runtime.engine.compare import DeterministicComparisonService
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.extract import (
     extract_github_release_source_record,
@@ -15,6 +16,7 @@ from runtime.engine.interfaces.normalize import (
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
 from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBundleInspectionEngineService
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
+from runtime.gateway.public_api.comparison_boundary import ComparisonPublicApi
 from runtime.gateway.public_api.resolution_actions import ResolutionActionsPublicApi
 from runtime.gateway.public_api.resolution_boundary import ResolutionJobsPublicApi
 from runtime.gateway.public_api.resolution_bundle_inspection import ResolutionBundleInspectionPublicApi
@@ -34,6 +36,16 @@ def build_demo_search_public_api() -> SearchPublicApi:
     catalog = _build_demo_normalized_catalog()
     search_service = DeterministicSearchService(catalog)
     return SearchPublicApi(search_service)
+
+
+def build_demo_comparison_public_api() -> ComparisonPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    resolution_service = ExactMatchResolutionService(catalog)
+    comparison_service = DeterministicComparisonService(
+        catalog,
+        resolution_service=resolution_service,
+    )
+    return ComparisonPublicApi(comparison_service)
 
 
 def build_demo_resolution_actions_public_api() -> ResolutionActionsPublicApi:

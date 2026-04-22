@@ -1,0 +1,31 @@
+name: Comparison
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that compare two
+  bounded resolved targets side by side through the gateway public comparison boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/compare?left={left_target_ref}&right={right_target_ref}
+  shared_view_models:
+    - contracts/ui/view_models/comparison.view_model.yaml
+  shared_result_shapes:
+    - ComparisonEnvelope
+surface_expectations:
+  - surfaces compare targets through the public gateway boundary and do not assume engine-local compare or merge internals
+  - surfaces render left and right summaries side by side with explicit agreements and disagreements
+  - surfaces preserve bounded evidence summaries per side instead of collapsing multiple source-backed claims into one silent answer
+  - surfaces handle unresolved sides honestly without implying trust scores, merge behavior, or final truth selection
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - merge or conflict-resolution behavior
+  - trust scoring or ranking
+  - final comparison semantics and broader side-by-side workflows

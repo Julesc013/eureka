@@ -16,6 +16,8 @@ servers:
 tags:
   - name: ResolutionJobs
     description: Draft bounded resolution job submission and read operations.
+  - name: Comparison
+    description: Draft side-by-side comparison operations for two bounded resolved targets.
   - name: ResolutionActions
     description: Draft bounded action discovery plus manifest and portable-bundle export operations for resolved targets.
   - name: StoredExports
@@ -74,6 +76,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SearchResultsEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/compare:
+    get:
+      tags:
+        - Comparison
+      summary: Compare two bounded resolved targets
+      description: >
+        Draft public comparison boundary for side-by-side comparison of exactly two
+        bounded targets. This is not a merge engine, trust selector, or global
+        truth-resolution contract.
+      operationId: compareTargets
+      parameters:
+        - $ref: '#/components/parameters/LeftTargetRef'
+        - $ref: '#/components/parameters/RightTargetRef'
+      responses:
+        '200':
+          description: Draft comparison envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ComparisonEnvelope'
+        '404':
+          description: Draft blocked comparison envelope when one or both sides cannot be resolved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ComparisonEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -407,6 +441,20 @@ components:
       description: Draft bounded subject selector or governed target reference.
       schema:
         type: string
+    LeftTargetRef:
+      name: left
+      in: query
+      required: true
+      description: Draft left-side bounded target reference for side-by-side comparison.
+      schema:
+        type: string
+    RightTargetRef:
+      name: right
+      in: query
+      required: true
+      description: Draft right-side bounded target reference for side-by-side comparison.
+      schema:
+        type: string
     BundlePath:
       name: bundle_path
       in: query
@@ -658,6 +706,96 @@ components:
       required:
         - code
         - message
+    ComparisonEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft side-by-side comparison envelope for exactly two bounded targets.
+      properties:
+        status:
+          type: string
+          enum:
+            - compared
+            - blocked
+        left:
+          $ref: '#/components/schemas/ComparisonSide'
+        right:
+          $ref: '#/components/schemas/ComparisonSide'
+        agreements:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonAgreement'
+        disagreements:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonDisagreement'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - left
+        - right
+        - agreements
+        - disagreements
+        - notices
+    ComparisonSide:
+      type: object
+      additionalProperties: false
+      description: Draft side summary used within the public comparison envelope.
+      properties:
+        target_ref:
+          type: string
+        status:
+          type: string
+          enum:
+            - completed
+            - blocked
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
+        object:
+          $ref: '#/components/schemas/ObjectSummary'
+        source:
+          $ref: '#/components/schemas/SourceSummary'
+        version_or_state:
+          type: string
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - target_ref
+        - status
+        - notices
+    ComparisonAgreement:
+      type: object
+      additionalProperties: false
+      properties:
+        category:
+          type: string
+        value:
+          type: string
+      required:
+        - category
+        - value
+    ComparisonDisagreement:
+      type: object
+      additionalProperties: false
+      properties:
+        category:
+          type: string
+        left_value:
+          type: string
+        right_value:
+          type: string
+      required:
+        - category
+        - left_value
+        - right_value
     ResolutionActionsEnvelope:
       type: object
       additionalProperties: false
