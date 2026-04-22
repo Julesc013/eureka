@@ -25,6 +25,8 @@ class SyntheticSoftwareConnectorTestCase(unittest.TestCase):
             records[0].source_locator,
             "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
         )
+        self.assertEqual(len(records[0].payload["representations"]), 2)
+        self.assertEqual(records[0].payload["representations"][0]["access_path"]["kind"], "inspect")
 
     def test_connector_reports_default_target_ref_from_loaded_source(self) -> None:
         connector = SyntheticSoftwareConnector()

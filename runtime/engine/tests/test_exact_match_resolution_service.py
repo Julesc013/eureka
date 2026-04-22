@@ -6,6 +6,7 @@ from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.normalize import NormalizedResolutionRecord
 from runtime.engine.interfaces.public import ResolutionRequest
 from runtime.engine.provenance import EvidenceSummary
+from runtime.engine.representations import RepresentationSummary
 from runtime.engine.resolve import (
     ExactMatchResolutionService,
     normalized_record_to_object_summary,
@@ -32,6 +33,36 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
             access_path_id="access.synthetic-demo-app.fixture",
             access_path_kind="fixture_path",
             access_path_locator="contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+            representations=(
+                RepresentationSummary(
+                    representation_id="rep.synthetic-demo-app.source",
+                    representation_kind="fixture_artifact",
+                    label="Synthetic demo app fixture artifact",
+                    content_type="application/vnd.eureka.synthetic.bundle",
+                    byte_length=4096,
+                    source_family="synthetic_fixture",
+                    source_label="Synthetic Fixture",
+                    source_locator="contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                    access_path_id="access.synthetic-demo-app.fixture",
+                    access_kind="inspect",
+                    access_locator="contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                    is_direct=False,
+                ),
+                RepresentationSummary(
+                    representation_id="rep.synthetic-demo-app.fixture-record",
+                    representation_kind="fixture_record",
+                    label="Synthetic demo app fixture record",
+                    content_type="application/json",
+                    byte_length=1024,
+                    source_family="synthetic_fixture",
+                    source_label="Synthetic Fixture",
+                    source_locator="contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                    access_path_id="access.synthetic-demo-app.fixture-record",
+                    access_kind="view",
+                    access_locator="contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
+                    is_direct=False,
+                ),
+            ),
             evidence=(
                 EvidenceSummary(
                     claim_kind="label",
@@ -65,6 +96,9 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
         )
         self.assertEqual(outcome.result.evidence[0].claim_kind, "label")
         self.assertEqual(outcome.result.evidence[0].claim_value, "Synthetic Demo App")
+        self.assertEqual(len(outcome.result.representations), 2)
+        self.assertEqual(outcome.result.representations[0].representation_kind, "fixture_artifact")
+        self.assertEqual(outcome.result.representations[1].access_kind, "view")
         self.assertEqual(outcome.notices, ())
 
     def test_missing_target_returns_blocked_notice(self) -> None:

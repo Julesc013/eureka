@@ -15,6 +15,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
+    build_demo_representations_public_api,
     build_demo_search_public_api,
     build_demo_subject_states_public_api,
 )
@@ -36,6 +37,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             absence_public_api=build_demo_absence_public_api(),
             comparison_public_api=build_demo_comparison_public_api(),
             subject_states_public_api=build_demo_subject_states_public_api(),
+            representations_public_api=build_demo_representations_public_api(),
             actions_public_api=build_demo_resolution_actions_public_api(),
             bundle_inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
             search_public_api=build_demo_search_public_api(),
@@ -53,6 +55,8 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             payload["workbench_session"]["resolved_resource_id"],
             EXPECTED_RESOLVED_RESOURCE_ID,
         )
+        self.assertEqual(payload["workbench_session"]["representations"][0]["representation_kind"], "fixture_artifact")
+        self.assertEqual(payload["workbench_session"]["representations"][1]["access_kind"], "view")
         self.assertEqual(payload["workbench_session"]["evidence"][0]["claim_kind"], "label")
         self.assertEqual(
             payload["resolution_actions"]["resolved_resource_id"],
@@ -181,6 +185,26 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(blocked_payload["status"], "blocked")
         self.assertEqual(blocked_payload["notices"][0]["code"], "subject_not_found")
 
+    def test_representations_endpoint_returns_machine_readable_representation_listing(self) -> None:
+        status, headers, body = self._request(
+            "/api/representations",
+            {"target_ref": "github-release:cli/cli@v2.65.0"},
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["status"], "available")
+        self.assertEqual(payload["target_ref"], "github-release:cli/cli@v2.65.0")
+        self.assertEqual(payload["primary_object"]["label"], "GitHub CLI 2.65.0")
+        self.assertEqual(len(payload["representations"]), 3)
+        self.assertEqual(payload["representations"][0]["representation_kind"], "release_page")
+        self.assertEqual(payload["representations"][1]["access_kind"], "download")
+        self.assertEqual(
+            payload["representations"][1]["access_locator"],
+            "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",
+        )
+
     def test_manifest_export_endpoint_returns_json_with_resolved_resource_id(self) -> None:
         status, headers, body = self._request(
             "/api/export/manifest",
@@ -193,6 +217,8 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(payload["manifest_kind"], "eureka.resolution_manifest")
         self.assertEqual(payload["resolved_resource_id"], EXPECTED_RESOLVED_RESOURCE_ID)
         self.assertEqual(payload["evidence"][0]["claim_kind"], "label")
+        self.assertEqual(payload["representations"][0]["representation_kind"], "fixture_artifact")
+        self.assertEqual(payload["representations"][1]["access_kind"], "view")
 
     def test_bundle_export_endpoint_returns_zip_bytes(self) -> None:
         status, headers, body = self._request(
@@ -234,6 +260,8 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(payload["bundle"]["target_ref"], DEFAULT_TARGET_REF)
         self.assertIn("manifest.json", payload["bundle"]["member_list"])
         self.assertEqual(payload["evidence"][0]["claim_kind"], "label")
+        self.assertEqual(payload["normalized_record"]["representations"][0]["representation_kind"], "fixture_artifact")
+        self.assertEqual(payload["normalized_record"]["representations"][1]["access_kind"], "view")
 
     def test_store_list_and_read_endpoints_work_for_local_store(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

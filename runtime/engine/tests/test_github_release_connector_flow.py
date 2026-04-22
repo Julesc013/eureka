@@ -39,11 +39,16 @@ class GitHubReleaseConnectorFlowTestCase(unittest.TestCase):
         self.assertEqual(first.object_id, "obj.github-release.cli.cli")
         self.assertEqual(first.object_label, "GitHub CLI 2.65.0")
         self.assertEqual(first.state_kind, "release")
-        self.assertEqual(first.representation_kind, "release_metadata")
+        self.assertEqual(first.representation_kind, "release_page")
         self.assertEqual(
             first.access_path_locator,
             "https://github.com/cli/cli/releases/tag/v2.65.0",
         )
+        self.assertEqual(len(first.representations), 3)
+        self.assertEqual(first.representations[0].representation_kind, "release_page")
+        self.assertEqual(first.representations[1].representation_kind, "release_asset")
+        self.assertEqual(first.representations[1].access_kind, "download")
+        self.assertEqual(first.representations[1].byte_length, 12123904)
         self.assertEqual(
             [summary.claim_kind for summary in first.evidence],
             ["label", "version", "source_locator"],
@@ -85,6 +90,9 @@ class GitHubReleaseConnectorFlowTestCase(unittest.TestCase):
             outcome.result.source.locator,
             "https://github.com/cli/cli/releases/tag/v2.65.0",
         )
+        self.assertEqual(len(outcome.result.representations), 3)
+        self.assertEqual(outcome.result.representations[0].label, "GitHub CLI 2.65.0 release page")
+        self.assertEqual(outcome.result.representations[2].label, "gh_2.65.0_checksums.txt")
         self.assertEqual(outcome.result.evidence[1].claim_kind, "version")
         self.assertEqual(outcome.result.evidence[1].claim_value, "v2.65.0")
 

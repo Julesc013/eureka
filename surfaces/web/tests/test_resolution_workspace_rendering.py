@@ -36,6 +36,36 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
                     }
                 ],
+                "representations": [
+                    {
+                        "representation_id": "rep.synthetic-demo-app.source",
+                        "representation_kind": "fixture_artifact",
+                        "label": "Synthetic demo app fixture artifact",
+                        "content_type": "application/vnd.eureka.synthetic.bundle",
+                        "byte_length": 4096,
+                        "source_family": "synthetic_fixture",
+                        "source_label": "Synthetic Fixture",
+                        "source_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                        "access_path_id": "access.synthetic-demo-app.fixture",
+                        "access_kind": "inspect",
+                        "access_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                        "is_direct": False,
+                    },
+                    {
+                        "representation_id": "rep.synthetic-demo-app.fixture-record",
+                        "representation_kind": "fixture_record",
+                        "label": "Synthetic demo app fixture record",
+                        "content_type": "application/json",
+                        "byte_length": 1024,
+                        "source_family": "synthetic_fixture",
+                        "source_label": "Synthetic Fixture",
+                        "source_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                        "access_path_id": "access.synthetic-demo-app.fixture-record",
+                        "access_kind": "view",
+                        "access_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
+                        "is_direct": False,
+                    },
+                ],
             },
             resolution_actions={
                 "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
@@ -94,6 +124,12 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("contracts/archive/fixtures/software/synthetic_resolution_fixture.json", html)
         self.assertIn("Evidence", html)
         self.assertIn("label = Synthetic Demo App", html)
+        self.assertIn("Known Representations/Access Paths", html)
+        self.assertIn("Synthetic demo app fixture artifact", html)
+        self.assertIn("fixture_artifact", html)
+        self.assertIn("inspect", html)
+        self.assertIn("Synthetic demo app fixture record", html)
+        self.assertIn("contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0", html)
         self.assertIn("Export resolution manifest", html)
         self.assertIn("/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
         self.assertIn("Export resolution bundle", html)
@@ -219,6 +255,35 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "asserted_at": "2024-11-13T00:00:00Z",
                     }
                 ],
+                "representations": [
+                    {
+                        "representation_id": "rep.github-release.cli.cli.v2.65.0.release-page",
+                        "representation_kind": "release_page",
+                        "label": "GitHub CLI 2.65.0 release page",
+                        "content_type": "text/html",
+                        "source_family": "github_releases",
+                        "source_label": "GitHub Releases",
+                        "source_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
+                        "access_path_id": "access.github-release.cli.cli.v2.65.0.release",
+                        "access_kind": "view",
+                        "access_locator": "https://github.com/cli/cli/releases/tag/v2.65.0",
+                        "is_direct": False,
+                    },
+                    {
+                        "representation_id": "rep.github-release.cli.cli.v2.65.0.asset.0",
+                        "representation_kind": "release_asset",
+                        "label": "gh_2.65.0_windows_amd64.msi",
+                        "content_type": "application/x-msi",
+                        "byte_length": 12123904,
+                        "source_family": "github_releases",
+                        "source_label": "GitHub Releases",
+                        "source_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
+                        "access_path_id": "access.github-release.cli.cli.v2.65.0.asset.0",
+                        "access_kind": "download",
+                        "access_locator": "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",
+                        "is_direct": True,
+                    },
+                ],
             }
         )
 
@@ -227,3 +292,6 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("GitHub Releases", html)
         self.assertIn("https://github.com/cli/cli/releases/tag/v2.65.0", html)
         self.assertIn("version = v2.65.0", html)
+        self.assertIn("Known Representations/Access Paths", html)
+        self.assertIn("GitHub CLI 2.65.0 release page", html)
+        self.assertIn("gh_2.65.0_windows_amd64.msi", html)

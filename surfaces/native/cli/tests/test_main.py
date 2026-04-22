@@ -32,6 +32,8 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("Synthetic Demo App", output)
         self.assertIn("Evidence", output)
         self.assertIn("label = Synthetic Demo App", output)
+        self.assertIn("Known representations/access paths", output)
+        self.assertIn("Synthetic demo app fixture artifact", output)
 
     def test_resolve_unknown_target_returns_honest_blocked_outcome(self) -> None:
         exit_code, output = run_cli("resolve", UNKNOWN_TARGET_REF)
@@ -51,6 +53,8 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("label: GitHub Releases", output)
         self.assertIn("origin: https://github.com/cli/cli/releases/tag/v2.65.0", output)
         self.assertIn("version = v2.65.0", output)
+        self.assertIn("GitHub CLI 2.65.0 release page", output)
+        self.assertIn("gh_2.65.0_windows_amd64.msi", output)
 
     def test_search_returns_deterministic_results_and_resolved_resource_ids(self) -> None:
         exit_code, output = run_cli("search", "synthetic")
@@ -123,6 +127,19 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertEqual(payload["requested_subject_key"], "missing-subject")
         self.assertEqual(payload["notices"][0]["code"], "subject_not_found")
 
+    def test_representations_command_renders_bounded_representation_list(self) -> None:
+        exit_code, output = run_cli("representations", "github-release:cli/cli@v2.65.0")
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Representations", output)
+        self.assertIn("status: available", output)
+        self.assertIn("target_ref: github-release:cli/cli@v2.65.0", output)
+        self.assertIn("GitHub CLI 2.65.0 release page", output)
+        self.assertIn("representation_kind: release_page", output)
+        self.assertIn("gh_2.65.0_windows_amd64.msi", output)
+        self.assertIn("access_kind: download", output)
+        self.assertIn("source_family: github_releases", output)
+
     def test_compare_command_renders_agreements_disagreements_and_evidence(self) -> None:
         exit_code, output = run_cli(
             "compare",
@@ -169,6 +186,8 @@ class NativeCliMainTestCase(unittest.TestCase):
             payload["resolved_resource_id"],
             "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
         )
+        self.assertEqual(payload["representations"][0]["representation_kind"], "fixture_artifact")
+        self.assertEqual(payload["representations"][1]["access_kind"], "view")
 
     def test_bundle_export_returns_structured_summary_for_known_target(self) -> None:
         exit_code, output = run_cli("export-bundle", KNOWN_TARGET_REF, "--json")
@@ -211,6 +230,7 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertEqual(inspect_payload["status"], "inspected")
         self.assertEqual(inspect_payload["bundle"]["target_ref"], KNOWN_TARGET_REF)
         self.assertEqual(inspect_payload["evidence"][0]["claim_kind"], "label")
+        self.assertEqual(inspect_payload["normalized_record"]["representations"][0]["representation_kind"], "fixture_artifact")
         self.assertIn("Evidence", inspect_text_output)
         self.assertIn("label = Synthetic Demo App", inspect_text_output)
         self.assertEqual(missing_exit_code, 0)
@@ -275,8 +295,13 @@ class NativeCliMainTestCase(unittest.TestCase):
             read_manifest_output["content"]["resolved_resource_id"],
             "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
         )
+        self.assertEqual(read_manifest_output["content"]["representations"][0]["representation_kind"], "fixture_artifact")
         self.assertEqual(read_bundle_output["artifact"]["artifact_kind"], "resolution_bundle")
         self.assertEqual(read_bundle_output["bundle_inspection"]["status"], "inspected")
+        self.assertEqual(
+            read_bundle_output["bundle_inspection"]["normalized_record"]["representations"][0]["representation_kind"],
+            "fixture_artifact",
+        )
 
     def test_store_list_and_read_plain_text_include_artifact_and_resolved_resource_ids(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

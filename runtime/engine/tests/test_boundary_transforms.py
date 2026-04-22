@@ -17,8 +17,10 @@ class BoundaryTransformTestCase(unittest.TestCase):
         self.assertEqual(extracted.target_ref, "fixture:software/synthetic-demo-app@1.0.0")
         self.assertEqual(extracted.object_record["id"], "obj.synthetic-demo-app")
         self.assertEqual(extracted.state_record["kind"], "release")
-        self.assertEqual(extracted.representation_record["kind"], "source_archive")
-        self.assertEqual(extracted.access_path_record["kind"], "fixture_path")
+        self.assertEqual(extracted.representation_record["kind"], "fixture_artifact")
+        self.assertEqual(extracted.access_path_record["kind"], "inspect")
+        self.assertEqual(len(extracted.representation_records), 2)
+        self.assertEqual(extracted.representation_records[1]["kind"], "fixture_record")
 
     def test_normalize_step_emits_engine_consumable_record(self) -> None:
         extracted = extract_synthetic_source_record(self.source_record)
@@ -29,7 +31,9 @@ class BoundaryTransformTestCase(unittest.TestCase):
         self.assertEqual(normalized.object_kind, "software")
         self.assertEqual(normalized.object_label, "Synthetic Demo App")
         self.assertEqual(normalized.state_kind, "release")
-        self.assertEqual(normalized.representation_kind, "source_archive")
+        self.assertEqual(normalized.representation_kind, "fixture_artifact")
+        self.assertEqual(len(normalized.representations), 2)
+        self.assertEqual(normalized.representations[1].representation_kind, "fixture_record")
         self.assertEqual(
             normalized.access_path_locator,
             "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",

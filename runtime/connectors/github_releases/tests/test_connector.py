@@ -27,6 +27,11 @@ class GitHubReleasesConnectorTestCase(unittest.TestCase):
             records[0].source_locator,
             "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
         )
+        self.assertEqual(len(records[0].payload["release"]["assets"]), 2)
+        self.assertEqual(
+            records[0].payload["release"]["assets"][0]["browser_download_url"],
+            "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",
+        )
 
     def test_connector_reports_default_target_ref_from_loaded_source(self) -> None:
         connector = GitHubReleasesConnector()
