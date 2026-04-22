@@ -177,6 +177,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("blocked", html)
         self.assertIn("fixture_target_not_found", html)
         self.assertIn("No governed synthetic record matched target_ref", html)
+        self.assertIn("/absence/resolve?target_ref=fixture%3Asoftware%2Fmissing-demo-app%400.0.1", html)
         self.assertIn("No available actions are exposed for this target.", html)
         self.assertIn("Export resolution manifest (unavailable)", html)
         self.assertIn("Export resolution bundle (unavailable)", html)

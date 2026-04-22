@@ -10,6 +10,7 @@ import unittest
 import zipfile
 
 from runtime.gateway.public_api import (
+    build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -32,6 +33,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.app = WorkbenchWsgiApp(
             build_demo_resolution_jobs_public_api(),
+            absence_public_api=build_demo_absence_public_api(),
             comparison_public_api=build_demo_comparison_public_api(),
             subject_states_public_api=build_demo_subject_states_public_api(),
             actions_public_api=build_demo_resolution_actions_public_api(),
@@ -96,6 +98,30 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             payload = json.loads(body)
             self.assertEqual(payload["result_count"], 0)
             self.assertEqual(payload["absence"]["code"], "search_no_matches")
+
+    def test_absence_endpoints_return_machine_readable_reports(self) -> None:
+        resolve_status, headers, resolve_body = self._request(
+            "/api/absence/resolve",
+            {"target_ref": "fixture:software/archivebox@9.9.9"},
+        )
+        self.assertEqual(resolve_status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        resolve_payload = json.loads(resolve_body)
+        self.assertEqual(resolve_payload["request_kind"], "resolve")
+        self.assertEqual(resolve_payload["status"], "explained")
+        self.assertEqual(resolve_payload["likely_reason_code"], "known_subject_different_state")
+        self.assertEqual(resolve_payload["near_matches"][0]["subject_key"], "archivebox")
+
+        search_status, _, search_body = self._request(
+            "/api/absence/search",
+            {"q": "archive box"},
+        )
+        self.assertEqual(search_status, "200 OK")
+        search_payload = json.loads(search_body)
+        self.assertEqual(search_payload["request_kind"], "search")
+        self.assertEqual(search_payload["status"], "explained")
+        self.assertEqual(search_payload["likely_reason_code"], "related_subjects_exist")
+        self.assertGreaterEqual(len(search_payload["near_matches"]), 3)
 
     def test_compare_endpoint_returns_machine_readable_comparison_and_blocked_shape(self) -> None:
         status, headers, body = self._request(

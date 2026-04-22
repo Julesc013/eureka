@@ -88,3 +88,4 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
         self.assertIn("No Results", html)
         self.assertIn("search_no_matches", html)
         self.assertIn("No bounded records matched query", html)
+        self.assertIn("/absence/search?q=missing", html)

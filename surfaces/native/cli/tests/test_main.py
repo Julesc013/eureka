@@ -73,6 +73,31 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("source: GitHub Releases", output)
         self.assertIn("evidence: label via", output)
 
+    def test_explain_resolve_miss_renders_compact_absence_report(self) -> None:
+        exit_code, output = run_cli("explain-resolve-miss", "fixture:software/archivebox@9.9.9")
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Absence report", output)
+        self.assertIn("request_kind: resolve", output)
+        self.assertIn("requested_value: fixture:software/archivebox@9.9.9", output)
+        self.assertIn("likely_reason_code: known_subject_different_state", output)
+        self.assertIn("checked_source_families: synthetic_fixture, github_releases", output)
+        self.assertIn("Near matches", output)
+        self.assertIn("fixture:software/archivebox@0.8.5", output)
+        self.assertIn("github-release:archivebox/archivebox@v0.8.5", output)
+
+    def test_explain_search_miss_returns_structured_absence_report(self) -> None:
+        exit_code, output = run_cli("explain-search-miss", "archive box", "--json")
+        payload = json.loads(output)
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(payload["request_kind"], "search")
+        self.assertEqual(payload["status"], "explained")
+        self.assertEqual(payload["likely_reason_code"], "related_subjects_exist")
+        self.assertEqual(payload["checked_source_families"], ["synthetic_fixture", "github_releases"])
+        self.assertGreaterEqual(len(payload["near_matches"]), 3)
+        self.assertEqual(payload["near_matches"][0]["subject_key"], "archivebox")
+
     def test_states_command_renders_ordered_state_list_with_source_and_resolved_ids(self) -> None:
         exit_code, output = run_cli("states", "archivebox")
 
