@@ -107,6 +107,12 @@ def _coerce_normalized_record(value: Any) -> dict[str, Any]:
             if not isinstance(field_value, Mapping):
                 raise ValueError(f"inspection_envelope.normalized_record.{field_name} must be an object when provided.")
             result[field_name] = dict(field_value)
+    representations = value.get("representations")
+    if representations is not None:
+        result["representations"] = _coerce_representation_list(
+            representations,
+            "inspection_envelope.normalized_record.representations",
+        )
     evidence = _coerce_evidence_list(value.get("evidence"), "inspection_envelope.normalized_record.evidence")
     if evidence:
         result["evidence"] = evidence
@@ -181,6 +187,53 @@ def _coerce_evidence_summary(value: Any, field_name: str) -> dict[str, str]:
     return evidence
 
 
+def _coerce_representation_list(value: Any, field_name: str) -> list[dict[str, Any]]:
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    representations: list[dict[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"{field_name}[{index}] must be an object.")
+        representation: dict[str, Any] = {
+            "representation_id": _require_string(
+                item.get("representation_id"),
+                f"{field_name}[{index}].representation_id",
+            ),
+            "representation_kind": _require_string(
+                item.get("representation_kind"),
+                f"{field_name}[{index}].representation_kind",
+            ),
+            "label": _require_string(item.get("label"), f"{field_name}[{index}].label"),
+            "source_family": _require_string(
+                item.get("source_family"),
+                f"{field_name}[{index}].source_family",
+            ),
+            "access_kind": _require_string(
+                item.get("access_kind"),
+                f"{field_name}[{index}].access_kind",
+            ),
+            "is_direct": _require_bool(item.get("is_direct"), f"{field_name}[{index}].is_direct"),
+        }
+        for key in (
+            "content_type",
+            "source_label",
+            "source_locator",
+            "access_path_id",
+            "access_locator",
+        ):
+            optional = _optional_string(item.get(key), f"{field_name}[{index}].{key}")
+            if optional is not None:
+                representation[key] = optional
+        byte_length = _optional_non_negative_int(
+            item.get("byte_length"),
+            f"{field_name}[{index}].byte_length",
+        )
+        if byte_length is not None:
+            representation["byte_length"] = byte_length
+        representations.append(representation)
+    return representations
+
+
 def _require_string(value: Any, field_name: str) -> str:
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field_name} must be a non-empty string.")
@@ -192,4 +245,18 @@ def _optional_string(value: Any, field_name: str) -> str | None:
         return None
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field_name} must be a non-empty string when provided.")
+    return value
+
+
+def _require_bool(value: Any, field_name: str) -> bool:
+    if not isinstance(value, bool):
+        raise ValueError(f"{field_name} must be a boolean.")
+    return value
+
+
+def _optional_non_negative_int(value: Any, field_name: str) -> int | None:
+    if value is None:
+        return None
+    if not isinstance(value, int) or value < 0:
+        raise ValueError(f"{field_name} must be a non-negative integer when provided.")
     return value

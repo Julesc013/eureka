@@ -31,7 +31,7 @@ normal_path:
 surface_expectations:
   - surfaces submit bounded work through the public gateway boundary and do not assume internal broker, relay, worker, or scheduler topology
   - surfaces derive shared workbench session state, including any bootstrap `resolved_resource_id`, bounded source summaries, and bounded evidence summaries, from public read envelopes rather than from engine internals or browser-owned state
-  - surfaces render draft job state, object summaries, bounded action availability, stored-export state, bounded evidence summaries, and notices from governed contracts
+  - surfaces render draft job state, object summaries, bounded action availability, stored-export state, bounded evidence summaries, bounded representation and access-path summaries, and notices from governed contracts
   - surfaces disclose blocked or deferred work rather than inventing completion
 surface_split:
   web:
@@ -42,5 +42,5 @@ surface_split:
 deferred_topics:
   - explicit offline native mode and any resulting sdk usage
   - public read contracts beyond the current bounded resolution job draft
-  - final action-panel behavior, local store affordances, and download or restore semantics
+  - final action-panel behavior, local store affordances, and download, install, import, or restore semantics
   - finalized surface-specific navigation or shell behavior

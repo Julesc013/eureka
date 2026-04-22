@@ -89,6 +89,48 @@ properties:
         - asserted_by_family
         - evidence_kind
         - evidence_locator
+  representations:
+    type: array
+    description: >
+      Draft bounded representation and access-path summaries surfaced for the
+      selected result without implying final download, install, import, or restore
+      semantics.
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        representation_id:
+          type: string
+        representation_kind:
+          type: string
+        label:
+          type: string
+        content_type:
+          type: string
+        byte_length:
+          type: integer
+          minimum: 0
+        source_family:
+          type: string
+        source_label:
+          type: string
+        source_locator:
+          type: string
+        access_path_id:
+          type: string
+        access_kind:
+          type: string
+        access_locator:
+          type: string
+        is_direct:
+          type: boolean
+      required:
+        - representation_id
+        - representation_kind
+        - label
+        - source_family
+        - access_kind
+        - is_direct
   notices:
     type: array
     items:

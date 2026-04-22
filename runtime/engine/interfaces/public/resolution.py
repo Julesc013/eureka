@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Any, Sequence
 
 from runtime.engine.provenance import EvidenceSummary
+from runtime.engine.representations import RepresentationSummary
 
 
 @dataclass(frozen=True)
@@ -74,6 +75,7 @@ class ResolutionResult:
     resolved_resource_id: str | None = None
     primary_object: ObjectSummary | None = None
     source: SourceSummary | None = None
+    representations: tuple[RepresentationSummary, ...] = ()
     evidence: tuple[EvidenceSummary, ...] = ()
     snapshot_manifest_id: str | None = None
     notices: tuple[Notice, ...] = ()
@@ -86,6 +88,8 @@ class ResolutionResult:
             payload["primary_object"] = self.primary_object.to_dict()
         if self.source is not None:
             payload["source"] = self.source.to_dict()
+        if self.representations:
+            payload["representations"] = [summary.to_dict() for summary in self.representations]
         if self.evidence:
             payload["evidence"] = [summary.to_dict() for summary in self.evidence]
         if self.snapshot_manifest_id is not None:

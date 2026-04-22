@@ -226,6 +226,10 @@ def _coerce_normalized_record_summary(value: object) -> dict[str, object]:
         value.get("representation"),
         "records/normalized_record.json.representation",
     )
+    representations = _optional_mapping_sequence(
+        value.get("representations"),
+        "records/normalized_record.json.representations",
+    )
     return {
         "record_kind": record_kind,
         "target_ref": target_ref,
@@ -238,6 +242,7 @@ def _coerce_normalized_record_summary(value: object) -> dict[str, object]:
         "object": object_summary,
         "state": state,
         "representation": representation,
+        "representations": representations,
         "expected_member_order": list(RESOLUTION_BUNDLE_MEMBER_ORDER),
     }
 
@@ -280,6 +285,19 @@ def _optional_mapping(value: object, field_name: str) -> dict[str, object] | Non
     if not isinstance(value, dict):
         raise ValueError(f"{field_name} must be an object when provided.")
     return dict(value)
+
+
+def _optional_mapping_sequence(value: object, field_name: str) -> list[dict[str, object]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list when provided.")
+    result: list[dict[str, object]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, dict):
+            raise ValueError(f"{field_name}[{index}] must be an object.")
+        result.append(dict(item))
+    return result
 
 
 def _coerce_evidence_list(value: object, field_name: str) -> tuple[EvidenceSummary, ...]:

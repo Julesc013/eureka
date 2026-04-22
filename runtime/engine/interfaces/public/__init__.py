@@ -21,6 +21,10 @@ from runtime.engine.interfaces.public.resolution import (
     ResolutionResult,
     SourceSummary,
 )
+from runtime.engine.interfaces.public.representations import (
+    RepresentationsRequest,
+    RepresentationsResult,
+)
 from runtime.engine.interfaces.public.search import SearchRequest, SearchResponse, SearchResultEntry
 from runtime.engine.interfaces.public.subject_states import (
     SubjectStateSummary,
@@ -45,6 +49,8 @@ __all__ = [
     "ResolutionRequest",
     "ResolutionResult",
     "SourceSummary",
+    "RepresentationsRequest",
+    "RepresentationsResult",
     "SearchRequest",
     "SearchResponse",
     "SearchResultEntry",

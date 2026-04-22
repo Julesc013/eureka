@@ -32,6 +32,7 @@ class ExactMatchResolutionService(ResolutionService):
                 resolved_resource_id=resolved_resource_id_for_record(record),
                 primary_object=normalized_record_to_object_summary(record),
                 source=normalized_record_to_source_summary(record),
+                representations=record.representations,
                 evidence=record.evidence,
             ),
         )

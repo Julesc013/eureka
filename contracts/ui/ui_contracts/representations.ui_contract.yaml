@@ -1,0 +1,32 @@
+name: Representations
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that list bounded
+  known representations and access paths for one resolved target through the gateway
+  public representations boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/representations?target_ref={target_ref}
+  shared_view_models:
+    - contracts/ui/view_models/representations.view_model.yaml
+  shared_result_shapes:
+    - RepresentationsEnvelope
+surface_expectations:
+  - surfaces list known representations through the public gateway boundary and do not assume engine-local artifact or packaging internals
+  - surfaces render a bounded representation and access-path list without silently selecting one representation as the single truth
+  - surfaces preserve access kind, source-family visibility, and bounded locator hints without implying final download, install, import, or restore semantics
+  - surfaces handle unresolved targets honestly without fabricating representation or access-path availability
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - final download, install, import, or restore semantics
+  - final object or representation identity semantics
+  - broader representation graphs or selection behavior

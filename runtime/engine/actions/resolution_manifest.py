@@ -56,21 +56,24 @@ def build_resolution_manifest(record: NormalizedResolutionRecord) -> dict[str, A
     if matched_state:
         manifest["matched_state"] = matched_state
 
-    representation = _compact_mapping(
-        {
-            "id": record.representation_id,
-            "kind": record.representation_kind,
-            "access_path": _compact_mapping(
-                {
-                    "id": record.access_path_id,
-                    "kind": record.access_path_kind,
-                    "locator": record.access_path_locator,
-                }
-            ),
-        }
-    )
-    if representation:
-        manifest["representations"] = [representation]
+    if record.representations:
+        manifest["representations"] = [summary.to_dict() for summary in record.representations]
+    else:
+        representation = _compact_mapping(
+            {
+                "id": record.representation_id,
+                "kind": record.representation_kind,
+                "access_path": _compact_mapping(
+                    {
+                        "id": record.access_path_id,
+                        "kind": record.access_path_kind,
+                        "locator": record.access_path_locator,
+                    }
+                ),
+            }
+        )
+        if representation:
+            manifest["representations"] = [representation]
     return manifest
 
 

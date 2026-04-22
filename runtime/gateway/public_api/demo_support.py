@@ -14,6 +14,7 @@ from runtime.engine.interfaces.normalize import (
     normalize_extracted_record,
     normalize_github_release_record,
 )
+from runtime.engine.representations.service import DeterministicRepresentationsService
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
 from runtime.engine.states import DeterministicSubjectStatesService
 from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBundleInspectionEngineService
@@ -24,6 +25,7 @@ from runtime.gateway.public_api.resolution_actions import ResolutionActionsPubli
 from runtime.gateway.public_api.resolution_boundary import ResolutionJobsPublicApi
 from runtime.gateway.public_api.resolution_bundle_inspection import ResolutionBundleInspectionPublicApi
 from runtime.gateway.public_api.resolution_jobs import InMemoryResolutionJobService
+from runtime.gateway.public_api.representations_boundary import RepresentationsPublicApi
 from runtime.gateway.public_api.search_boundary import SearchPublicApi
 from runtime.gateway.public_api.stored_exports import StoredExportsPublicApi
 from runtime.gateway.public_api.subject_states_boundary import SubjectStatesPublicApi
@@ -68,6 +70,16 @@ def build_demo_subject_states_public_api() -> SubjectStatesPublicApi:
     catalog = _build_demo_normalized_catalog()
     subject_states_service = DeterministicSubjectStatesService(catalog)
     return SubjectStatesPublicApi(subject_states_service)
+
+
+def build_demo_representations_public_api() -> RepresentationsPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    resolution_service = ExactMatchResolutionService(catalog)
+    representations_service = DeterministicRepresentationsService(
+        catalog,
+        resolution_service=resolution_service,
+    )
+    return RepresentationsPublicApi(representations_service)
 
 
 def build_demo_resolution_actions_public_api() -> ResolutionActionsPublicApi:

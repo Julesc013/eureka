@@ -115,6 +115,7 @@ def _normalized_record_export(record: NormalizedResolutionRecord) -> dict[str, A
                 ),
             }
         ),
+        "representations": [summary.to_dict() for summary in record.representations],
     }
 
 

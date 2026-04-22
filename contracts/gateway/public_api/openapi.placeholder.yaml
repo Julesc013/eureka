@@ -22,6 +22,8 @@ tags:
     description: Draft side-by-side comparison operations for two bounded resolved targets.
   - name: SubjectStates
     description: Draft bounded subject/state listing operations for one bootstrap subject key.
+  - name: Representations
+    description: Draft bounded representation and access-path listing operations for one resolved target.
   - name: ResolutionActions
     description: Draft bounded action discovery plus manifest and portable-bundle export operations for resolved targets.
   - name: StoredExports
@@ -193,6 +195,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SubjectStatesEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/representations:
+    get:
+      tags:
+        - Representations
+      summary: List bounded known representations and access paths for one resolved target
+      description: >
+        Draft public boundary for listing bounded representation and access-path
+        summaries for one resolved target. This is not a final download, install,
+        import, restore, or representation-selection contract.
+      operationId: listRepresentations
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+      responses:
+        '200':
+          description: Draft representations envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepresentationsEnvelope'
+        '404':
+          description: Draft blocked representations envelope for an unresolved target
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepresentationsEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -686,6 +719,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/EvidenceSummary'
+        representations:
+          type: array
+          items:
+            $ref: '#/components/schemas/RepresentationSummary'
         resolved_resource_id:
           $ref: '#/components/schemas/ResolvedResourceId'
         snapshot_manifest_id:
@@ -1045,6 +1082,74 @@ components:
         - target_ref
         - resolved_resource_id
         - object
+    RepresentationsEnvelope:
+      type: object
+      additionalProperties: false
+      description: Draft bounded representation and access-path listing envelope for one resolved target.
+      properties:
+        status:
+          type: string
+          enum:
+            - available
+            - blocked
+        target_ref:
+          type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
+        primary_object:
+          $ref: '#/components/schemas/ObjectSummary'
+        source:
+          $ref: '#/components/schemas/SourceSummary'
+        representations:
+          type: array
+          items:
+            $ref: '#/components/schemas/RepresentationSummary'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - target_ref
+        - representations
+        - notices
+    RepresentationSummary:
+      type: object
+      additionalProperties: false
+      description: Draft bounded representation and access-path summary for one resolved target.
+      properties:
+        representation_id:
+          type: string
+        representation_kind:
+          type: string
+        label:
+          type: string
+        content_type:
+          type: string
+        byte_length:
+          type: integer
+          minimum: 0
+        source_family:
+          type: string
+        source_label:
+          type: string
+        source_locator:
+          type: string
+        access_path_id:
+          type: string
+        access_kind:
+          type: string
+        access_locator:
+          type: string
+        is_direct:
+          type: boolean
+      required:
+        - representation_id
+        - representation_kind
+        - label
+        - source_family
+        - access_kind
+        - is_direct
     ResolutionActionsEnvelope:
       type: object
       additionalProperties: false
@@ -1131,23 +1236,7 @@ components:
         representations:
           type: array
           items:
-            type: object
-            additionalProperties: false
-            properties:
-              id:
-                type: string
-              kind:
-                type: string
-              access_path:
-                type: object
-                additionalProperties: false
-                properties:
-                  id:
-                    type: string
-                  kind:
-                    type: string
-                  locator:
-                    type: string
+            $ref: '#/components/schemas/RepresentationSummary'
         source_fixture:
           type: object
           additionalProperties: false

@@ -22,8 +22,16 @@ from runtime.gateway.public_api.subject_states_boundary import (
     SubjectStatesPublicApi,
     subject_states_result_to_public_envelope,
 )
+from runtime.gateway.public_api.representations_boundary import (
+    RepresentationCatalogRequest,
+    RepresentationsPublicApi,
+    representations_result_to_public_envelope,
+)
 from runtime.gateway.public_api.subject_states_view_models import (
     subject_states_envelope_to_view_model,
+)
+from runtime.gateway.public_api.representations_view_models import (
+    representations_envelope_to_view_model,
 )
 from runtime.gateway.public_api.resolution_boundary import (
     PublicApiResponse,
@@ -65,6 +73,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
+    build_demo_representations_public_api,
     build_demo_search_public_api,
     build_demo_stored_exports_public_api,
     build_demo_subject_states_public_api,
@@ -129,6 +138,8 @@ __all__ = [
     "ResolutionJobsPublicApi",
     "ResolutionWorkspaceReadError",
     "ResolutionWorkspaceViewModels",
+    "RepresentationCatalogRequest",
+    "RepresentationsPublicApi",
     "SearchCatalogRequest",
     "SearchPublicApi",
     "SubjectStatesCatalogRequest",
@@ -153,6 +164,7 @@ __all__ = [
     "build_demo_resolution_actions_public_api",
     "build_demo_resolution_bundle_inspection_public_api",
     "build_demo_resolution_jobs_public_api",
+    "build_demo_representations_public_api",
     "build_demo_search_public_api",
     "build_demo_stored_exports_public_api",
     "build_demo_subject_states_public_api",
@@ -161,6 +173,8 @@ __all__ = [
     "bundle_inspection_result_to_public_envelope",
     "comparison_envelope_to_view_model",
     "comparison_result_to_public_envelope",
+    "representations_envelope_to_view_model",
+    "representations_result_to_public_envelope",
     "resolution_actions_to_public_envelope",
     "resolution_bundle_not_available_error",
     "resolution_job_not_found_error",
