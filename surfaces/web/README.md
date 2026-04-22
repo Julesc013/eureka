@@ -9,6 +9,7 @@ Current bootstrap slice:
 - stdlib-only, local-only, server-rendered compatibility-first workbench page
 - consumes the transport-neutral gateway public submit/read and search boundaries
 - renders exact resolution from the shared `WorkbenchSession` view model rather than engine-owned state
+- renders side-by-side comparison at `/compare?left=...&right=...` from a shared comparison view model rather than engine-owned compare state
 - renders the bootstrap `resolved_resource_id` for known resolved targets without importing engine internals
 - renders bounded source-family and source-origin summaries for resolved and searched records from synthetic fixtures and recorded GitHub Releases fixtures
 - renders bounded evidence summaries for resolved, searched, and inspected records without implying a final provenance or trust model
@@ -19,6 +20,7 @@ Current bootstrap slice:
 - renders `resolved_resource_id` in search results, stored-export summaries, and bundle inspection when the public boundary provides it
 - links search results back into the exact-resolution workbench flow through target references
 - exposes the first local stdlib machine-readable HTTP API slice under `/api/...` for exact resolution, deterministic search, manifest export, bundle export, bundle inspection, and local stored-export actions by reusing the same transport-neutral gateway public boundary already consumed by the HTML workbench and CLI
+- exposes `/api/compare?left=...&right=...` for machine-readable comparison over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - does not imply a real framework choice, browser-side JavaScript dependency, routing tree, authentication layer, or deployment model
 - does not settle final HTTP API route naming, auth, HTTPS/TLS, deployment, or multi-user semantics
 - local store root configuration is a bootstrap-only demo choice, not a final deployment or multi-user storage contract

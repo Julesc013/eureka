@@ -8,6 +8,7 @@ Current bootstrap scope:
 - submit bounded resolution work and return an accepted envelope with a `job_id`
 - read the current in-memory job envelope by `job_id`
 - search the bounded software-first corpus through a deterministic public search boundary
+- compare exactly two bounded resolved targets through a deterministic public comparison boundary
 - list bounded manifest-export and bundle-export actions for a resolved bounded target
 - export a deterministic machine-readable resolution manifest through the public boundary
 - export a deterministic portable resolution bundle through the public boundary
@@ -21,6 +22,8 @@ Current bootstrap scope:
 - map public job envelopes into the shared `WorkbenchSession` view model without
   implementing a web or native shell
 - map public search envelopes into a shared search-results view model without
+  implementing a web or native shell
+- map public comparison envelopes into a shared comparison view model without
   implementing a web or native shell
 - map public action envelopes into a shared action-panel view model without
   implementing a web or native shell
@@ -38,6 +41,7 @@ Out of scope here:
 - persistence beyond the local bootstrap filesystem store
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
 - final provenance graph, trust scoring, or cross-source merge behavior beyond the current bounded evidence summary seam
+- final comparison, merge, or truth-selection behavior beyond the current bounded disagreement seam
 - installers, downloads from external sources, import, restore, or rollback behavior
 - ranking, fuzzy matching, or broader retrieval semantics
 - finalized public API guarantees

@@ -137,3 +137,9 @@
 - Status: accepted
 - Decision: Eureka now carries compact source-backed evidence summaries from normalize through exact resolution, deterministic search, manifest export, portable bundle export and inspection, local stored-export metadata, and current web, CLI, plus HTTP API surfaces.
 - Why: this proves the architecture can preserve bounded provenance and evidence visibility without prematurely introducing a provenance graph, trust scoring, cross-source merge engine, or a final claim ontology.
+
+## ADR-024: Add a Bounded Side-by-Side Comparison Seam Without Merging Results
+
+- Status: accepted
+- Decision: Eureka now compares exactly two resolved targets side by side through a bounded engine comparison service and a transport-neutral public comparison boundary, preserving evidence summaries per side and surfacing explicit agreements plus disagreements through current web, CLI, and HTTP API surfaces.
+- Why: this proves the architecture can keep multiple source-backed claims visible together without silently collapsing them into one answer or prematurely introducing merge logic, trust ranking, or global truth selection.

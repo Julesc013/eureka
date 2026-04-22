@@ -9,7 +9,8 @@ Current bootstrap shared models cover:
 - `WorkbenchSession` for exact-resolution job state, object summaries, and bootstrap resolved-resource identity
 - `SearchResults` for deterministic search result lists, bootstrap resolved-resource identity, bounded source summaries, and structured absence reports
 - `ResolutionActions` for bounded action availability plus bootstrap resolved-resource identity for the current resolved target
+- `Comparison` for side-by-side left/right summaries, explicit agreements and disagreements, and bounded evidence preserved per side
 - `BundleInspection` for local bootstrap readback of previously exported deterministic bundles, any recovered bootstrap resolved-resource identity, and bounded evidence summaries
 - `StoredExports` for local bootstrap storage, listing, retrieval of deterministic exported artifacts, associated bootstrap resolved-resource identity, and bounded evidence summaries
 
-This shared-contract layer now carries the first bounded provenance and evidence seam. It is not a final provenance graph, trust model, or merge contract.
+This shared-contract layer now carries the first bounded provenance and evidence seam plus the first bounded comparison and disagreement seam. It is not a final provenance graph, trust model, merge contract, or truth-selection engine.

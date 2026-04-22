@@ -60,6 +60,10 @@ steps:
     run: python scripts/demo_cli_workbench.py search synthetic
   - id: native_cli_search_mixed
     run: python scripts/demo_cli_workbench.py search archive
+  - id: native_cli_compare_overlap
+    run: python scripts/demo_cli_workbench.py compare fixture:software/archivebox@0.8.5 github-release:archivebox/archivebox@v0.8.5
+  - id: native_cli_compare_blocked
+    run: python scripts/demo_cli_workbench.py compare fixture:software/archivebox@0.8.5 fixture:software/missing-demo-app@0.0.1 --json
   - id: native_cli_manifest_known
     run: python scripts/demo_cli_workbench.py export-manifest fixture:software/synthetic-demo-app@1.0.0 --json
   - id: native_cli_bundle_known
@@ -78,6 +82,8 @@ steps:
     run: python scripts/demo_http_api.py search synthetic
   - id: http_api_search_mixed
     run: python scripts/demo_http_api.py search archive
+  - id: http_api_compare_overlap
+    run: python scripts/demo_http_api.py compare fixture:software/archivebox@0.8.5 github-release:archivebox/archivebox@v0.8.5
   - id: http_api_manifest_known
     run: python scripts/demo_http_api.py export-manifest fixture:software/synthetic-demo-app@1.0.0
   - id: http_api_bundle_known
@@ -91,6 +97,7 @@ notes:
   - Submit and read remain in-memory bootstrap semantics; no real HTTP server or async worker exists yet.
   - The web workbench demo uses a tiny stdlib local server only for bootstrap proof and does not imply a deployment choice.
   - Search semantics remain bootstrap-scale deterministic matching over a small bounded corpus composed from synthetic fixtures plus recorded GitHub Releases fixtures and do not imply final retrieval or ranking behavior.
+  - Comparison semantics remain bootstrap-scale side-by-side summaries of explicit agreements and disagreements and do not imply merge, trust ranking, or truth-selection behavior.
   - Manifest export remains a bounded local action over deterministic synthetic and recorded GitHub Releases-backed results and does not imply installer, download, provenance, or durable snapshot semantics.
   - Bundle export remains a bounded local action over deterministic synthetic and recorded GitHub Releases-backed results and does not imply restore, import, installer, or final snapshot semantics.
   - Bounded evidence summaries now surface through current demos and public boundaries, but they do not imply a final provenance graph, trust model, or merge contract.
