@@ -4,6 +4,7 @@ from surfaces.native.cli.formatters.actions import (
     format_manifest_export,
     format_store_result,
 )
+from surfaces.native.cli.formatters.comparison import format_comparison
 from surfaces.native.cli.formatters.inspection import format_bundle_inspection
 from surfaces.native.cli.formatters.resolution import format_resolution_workspace
 from surfaces.native.cli.formatters.search import format_search_results
@@ -16,6 +17,7 @@ from surfaces.native.cli.formatters.stored_exports import (
 __all__ = [
     "format_blocked_response",
     "format_bundle_export_summary",
+    "format_comparison",
     "format_bundle_inspection",
     "format_manifest_export",
     "format_resolution_workspace",

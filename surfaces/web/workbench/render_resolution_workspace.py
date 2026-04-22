@@ -56,6 +56,7 @@ def render_resolution_workspace_html(
         "      <p>Compatibility-first resolution workspace rendered from shared gateway and session contracts.</p>",
         "      <nav>",
         "        <a href=\"/search\">Search the bounded corpus</a>",
+        "        <a href=\"/compare\">Compare two targets</a>",
         "      </nav>",
         "    </header>",
         "    <main>",

@@ -24,6 +24,7 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
         "      <p>Compatibility-first deterministic search over the bounded demo corpus of governed synthetic fixtures and recorded GitHub releases.</p>",
         "      <nav>",
         "        <a href=\"/\">Open exact resolution workbench</a>",
+        "        <a href=\"/compare\">Compare two targets</a>",
         "      </nav>",
         "    </header>",
         "    <main>",

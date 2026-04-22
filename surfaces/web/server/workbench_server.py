@@ -6,6 +6,8 @@ from typing import Callable
 from urllib.parse import parse_qs
 
 from runtime.gateway.public_api import (
+    CompareTargetsRequest,
+    ComparisonPublicApi,
     InspectResolutionBundleRequest,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
@@ -19,12 +21,14 @@ from runtime.gateway.public_api import (
     StoredExportsTargetRequest,
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
+    comparison_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
 )
 from surfaces.web.server.api_routes import handle_api_request
 from surfaces.web.server.api_serialization import SerializedHttpResponse
 from surfaces.web.workbench import (
     render_bundle_inspection_html,
+    render_comparison_html,
     render_resolution_workspace_html,
     render_search_results_html,
 )
@@ -64,6 +68,7 @@ class WorkbenchWsgiApp:
         self,
         resolution_public_api: ResolutionJobsPublicApi,
         *,
+        comparison_public_api: ComparisonPublicApi | None = None,
         actions_public_api: ResolutionActionsPublicApi | None = None,
         bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None = None,
         stored_exports_public_api: StoredExportsPublicApi | None = None,
@@ -72,6 +77,7 @@ class WorkbenchWsgiApp:
         session_id: str = "session.web-workbench",
     ) -> None:
         self._resolution_public_api = resolution_public_api
+        self._comparison_public_api = comparison_public_api
         self._actions_public_api = actions_public_api
         self._bundle_inspection_public_api = bundle_inspection_public_api
         self._stored_exports_public_api = stored_exports_public_api
@@ -92,6 +98,7 @@ class WorkbenchWsgiApp:
             path,
             query_string,
             resolution_public_api=self._resolution_public_api,
+            comparison_public_api=self._comparison_public_api,
             actions_public_api=self._actions_public_api,
             bundle_inspection_public_api=self._bundle_inspection_public_api,
             search_public_api=self._search_public_api,
@@ -114,6 +121,7 @@ class WorkbenchWsgiApp:
 
         if path not in {
             "/",
+            "/compare",
             "/search",
             "/inspect/bundle",
             "/actions/export-resolution-manifest",
@@ -130,7 +138,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/compare', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -145,6 +153,15 @@ class WorkbenchWsgiApp:
                 actions_public_api=self._actions_public_api,
                 stored_exports_public_api=self._stored_exports_public_api,
                 session_id=self._session_id,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/compare":
+            left_target_ref = self._resolve_left_target_ref(query_string)
+            right_target_ref = self._resolve_right_target_ref(query_string)
+            page = render_comparison_page(
+                self._comparison_public_api,
+                left_target_ref,
+                right_target_ref,
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/search":
@@ -268,6 +285,14 @@ class WorkbenchWsgiApp:
         raw_query = query.get("q", [""])[0].strip()
         return raw_query
 
+    def _resolve_left_target_ref(self, query_string: str) -> str:
+        query = parse_qs(query_string, keep_blank_values=False)
+        return query.get("left", [""])[0].strip()
+
+    def _resolve_right_target_ref(self, query_string: str) -> str:
+        query = parse_qs(query_string, keep_blank_values=False)
+        return query.get("right", [""])[0].strip()
+
     def _resolve_bundle_path(self, query_string: str) -> str:
         query = parse_qs(query_string, keep_blank_values=False)
         raw_bundle_path = query.get("bundle_path", [""])[0].strip()
@@ -377,6 +402,40 @@ def render_search_results_page(
     response = public_api.search_records(SearchCatalogRequest.from_parts(normalized_query))
     search_results = search_response_envelope_to_search_results_view_model(response.body)
     return render_search_results_html(search_results)
+
+
+def render_comparison_page(
+    public_api: ComparisonPublicApi | None,
+    left_target_ref: str,
+    right_target_ref: str,
+) -> str:
+    left = left_target_ref.strip()
+    right = right_target_ref.strip()
+    if not left or not right:
+        return render_comparison_html(
+            None,
+            left_target_ref=left,
+            right_target_ref=right,
+            message=(
+                "Provide both left and right target references to compare two bounded results side by side."
+            ),
+        )
+
+    if public_api is None:
+        return render_comparison_html(
+            None,
+            left_target_ref=left,
+            right_target_ref=right,
+            message="This bootstrap workbench was not configured with a public comparison boundary.",
+        )
+
+    response = public_api.compare_targets(CompareTargetsRequest.from_parts(left, right))
+    comparison = comparison_envelope_to_view_model(response.body)
+    return render_comparison_html(
+        comparison,
+        left_target_ref=left,
+        right_target_ref=right,
+    )
 
 
 def render_bundle_inspection_page(

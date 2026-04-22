@@ -7,11 +7,14 @@ import sys
 from typing import Any, Mapping, Sequence, TextIO
 
 from runtime.gateway.public_api import (
+    build_demo_comparison_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
     build_demo_stored_exports_public_api,
+    CompareTargetsRequest,
+    ComparisonPublicApi,
     InspectResolutionBundleRequest,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
@@ -25,6 +28,7 @@ from runtime.gateway.public_api import (
     StoredExportsTargetRequest,
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
+    comparison_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     stored_exports_envelope_to_view_model,
 )
@@ -32,6 +36,7 @@ from surfaces.native.cli.formatters import (
     format_blocked_response,
     format_bundle_export_summary,
     format_bundle_inspection,
+    format_comparison,
     format_manifest_export,
     format_resolution_workspace,
     format_search_results,
@@ -51,6 +56,7 @@ class CliContext:
     actions_public_api: ResolutionActionsPublicApi
     inspection_public_api: ResolutionBundleInspectionPublicApi
     search_public_api: SearchPublicApi
+    comparison_public_api: ComparisonPublicApi
     stored_exports_public_api: StoredExportsPublicApi | None = None
     session_id: str = DEFAULT_SESSION_ID
 
@@ -93,6 +99,13 @@ def main(
                 search_results,
                 format_search_results(search_results),
             )
+
+        if args.command == "compare":
+            response = cli_context.comparison_public_api.compare_targets(
+                CompareTargetsRequest.from_parts(args.left_target_ref, args.right_target_ref),
+            )
+            comparison = comparison_envelope_to_view_model(response.body)
+            return _emit(output, args.json, comparison, format_comparison(comparison))
 
         if args.command == "export-manifest":
             response = cli_context.actions_public_api.export_resolution_manifest(
@@ -197,6 +210,14 @@ def build_parser() -> argparse.ArgumentParser:
     )
     search_parser.add_argument("query")
 
+    compare_parser = subparsers.add_parser(
+        "compare",
+        parents=[json_parent],
+        help="Compare two bounded targets side by side through the public boundary.",
+    )
+    compare_parser.add_argument("left_target_ref")
+    compare_parser.add_argument("right_target_ref")
+
     export_manifest_parser = subparsers.add_parser(
         "export-manifest",
         parents=[json_parent],
@@ -256,6 +277,7 @@ def build_cli_context(*, store_root: str | None) -> CliContext:
         actions_public_api=build_demo_resolution_actions_public_api(),
         inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
         search_public_api=build_demo_search_public_api(),
+        comparison_public_api=build_demo_comparison_public_api(),
         stored_exports_public_api=(
             build_demo_stored_exports_public_api(store_root) if store_root is not None else None
         ),

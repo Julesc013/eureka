@@ -4,6 +4,8 @@ from typing import Any, Mapping
 from urllib.parse import parse_qs
 
 from runtime.gateway.public_api import (
+    CompareTargetsRequest,
+    ComparisonPublicApi,
     InspectResolutionBundleRequest,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
@@ -17,6 +19,7 @@ from runtime.gateway.public_api import (
     build_demo_stored_exports_public_api,
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
+    comparison_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     stored_exports_envelope_to_view_model,
 )
@@ -38,6 +41,12 @@ def build_api_index_document() -> dict[str, Any]:
                 "path": "/api/resolve",
                 "method": "GET",
                 "query_parameters": ["target_ref", "store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/compare",
+                "method": "GET",
+                "query_parameters": ["left", "right"],
                 "response_content_types": ["application/json"],
             },
             {
@@ -103,6 +112,7 @@ def handle_api_request(
     query_string: str,
     *,
     resolution_public_api: ResolutionJobsPublicApi,
+    comparison_public_api: ComparisonPublicApi | None,
     actions_public_api: ResolutionActionsPublicApi | None,
     bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None,
     search_public_api: SearchPublicApi,
@@ -153,6 +163,26 @@ def handle_api_request(
         if workspace.stored_exports is not None:
             payload["stored_exports"] = workspace.stored_exports
         return json_response(200, payload)
+
+    if path == "/api/compare":
+        if comparison_public_api is None:
+            return _service_unavailable(
+                "comparison_unavailable",
+                "This bootstrap HTTP API was not configured with a public comparison boundary.",
+            )
+        left_target_ref = _required_query_value(query, "left")
+        if left_target_ref is None:
+            return _missing_query_value("left")
+        right_target_ref = _required_query_value(query, "right")
+        if right_target_ref is None:
+            return _missing_query_value("right")
+        response = comparison_public_api.compare_targets(
+            CompareTargetsRequest.from_parts(left_target_ref, right_target_ref),
+        )
+        return json_response(
+            response.status_code,
+            comparison_envelope_to_view_model(response.body),
+        )
 
     if path == "/api/search":
         query_text = _required_query_value(query, "q")

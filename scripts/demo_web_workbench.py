@@ -12,6 +12,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.gateway.public_api import (
+    build_demo_comparison_public_api,
     InspectResolutionBundleRequest,
     ResolutionActionRequest,
     StoredArtifactRequest,
@@ -128,6 +129,7 @@ def main() -> int:
     target_ref = args.target_ref or DEFAULT_TARGET_REF
     actions_public_api = build_demo_resolution_actions_public_api()
     bundle_inspection_public_api = build_demo_resolution_bundle_inspection_public_api()
+    comparison_public_api = build_demo_comparison_public_api()
     resolution_public_api = build_demo_resolution_jobs_public_api()
     search_public_api = build_demo_search_public_api()
     stored_exports_public_api = (
@@ -225,6 +227,7 @@ def main() -> int:
 
     app = WorkbenchWsgiApp(
         resolution_public_api,
+        comparison_public_api=comparison_public_api,
         actions_public_api=actions_public_api,
         bundle_inspection_public_api=bundle_inspection_public_api,
         stored_exports_public_api=stored_exports_public_api,
@@ -241,6 +244,10 @@ def main() -> int:
             f"http://{args.host}:{args.port}/api",
             "Serving Eureka bootstrap HTTP API resolve route at "
             f"http://{args.host}:{args.port}/api/resolve?target_ref={quote(target_ref, safe='')}",
+            "Serving Eureka comparison page at "
+            f"http://{args.host}:{args.port}/compare?left={quote('fixture:software/archivebox@0.8.5', safe='')}&right={quote('github-release:archivebox/archivebox@v0.8.5', safe='')}",
+            "Serving Eureka bootstrap HTTP API compare route at "
+            f"http://{args.host}:{args.port}/api/compare?left={quote('fixture:software/archivebox@0.8.5', safe='')}&right={quote('github-release:archivebox/archivebox@v0.8.5', safe='')}",
             "Serving Eureka bootstrap HTTP API search route at "
             f"http://{args.host}:{args.port}/api/search?q={quote('synthetic', safe='')}",
             "Serving Eureka manifest export at "

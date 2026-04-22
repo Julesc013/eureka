@@ -41,6 +41,7 @@ def render_bundle_inspection_html(bundle_inspection: Mapping[str, Any]) -> str:
         "      <nav>",
         "        <a href=\"/\">Open exact resolution workbench</a>",
         "        <a href=\"/search\">Search the bounded corpus</a>",
+        "        <a href=\"/compare\">Compare two targets</a>",
         "      </nav>",
         "    </header>",
         "    <main>",
