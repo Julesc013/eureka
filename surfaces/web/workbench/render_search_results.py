@@ -93,6 +93,9 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
                     f"results[{index}].source.label",
                 )
                 item += f" <span>[source: {escape(source_label)}]</span>"
+            evidence = _optional_evidence_list(result.get("evidence"), f"results[{index}].evidence")
+            if evidence:
+                item += f" <span>[evidence: {escape(_compact_evidence_text(evidence[0]))}]</span>"
             if resolved_resource_id is not None:
                 item += f" <span>[{escape(resolved_resource_id)}]</span>"
             item += "</li>"
@@ -151,6 +154,19 @@ def _optional_mapping(value: Any, field_name: str) -> Mapping[str, Any] | None:
     return value
 
 
+def _optional_evidence_list(value: Any, field_name: str) -> list[Mapping[str, Any]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list when provided.")
+    evidence: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"{field_name}[{index}] must be an object.")
+        evidence.append(item)
+    return evidence
+
+
 def _require_string(value: Any, field_name: str, *, allow_empty: bool = False) -> str:
     if not isinstance(value, str):
         raise ValueError(f"{field_name} must be a string.")
@@ -169,3 +185,12 @@ def _optional_string(value: Any, field_name: str) -> str | None:
     if value is None:
         return None
     return _require_string(value, field_name)
+
+
+def _compact_evidence_text(entry: Mapping[str, Any]) -> str:
+    claim_kind = _require_string(entry.get("claim_kind"), "evidence.claim_kind")
+    asserted_by = _optional_string(entry.get("asserted_by_label"), "evidence.asserted_by_label") or _require_string(
+        entry.get("asserted_by_family"),
+        "evidence.asserted_by_family",
+    )
+    return f"{claim_kind} via {asserted_by}"

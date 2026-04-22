@@ -21,6 +21,7 @@ def render_resolution_workspace_html(
 
     selected_object = _optional_mapping(workbench_session.get("selected_object"), "workbench_session.selected_object")
     source = _optional_mapping(workbench_session.get("source"), "workbench_session.source")
+    evidence = _evidence_list(workbench_session.get("evidence"))
     notices = _notice_list(workbench_session.get("notices"))
     actions_model = _optional_mapping(resolution_actions, "resolution_actions")
     actions = _action_list(actions_model.get("actions")) if actions_model is not None else []
@@ -139,6 +140,23 @@ def render_resolution_workspace_html(
         parts.extend(
             [
                 "        </dl>",
+                "      </section>",
+            ]
+        )
+
+    if evidence:
+        parts.extend(
+            [
+                "      <section>",
+                "        <h2>Evidence</h2>",
+                "        <ul>",
+            ]
+        )
+        for entry in evidence:
+            parts.append(f"          <li>{escape(_evidence_text(entry))}</li>")
+        parts.extend(
+            [
+                "        </ul>",
                 "      </section>",
             ]
         )
@@ -345,6 +363,19 @@ def _stored_artifact_list(value: Any) -> list[Mapping[str, Any]]:
     return artifacts
 
 
+def _evidence_list(value: Any) -> list[Mapping[str, Any]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError("workbench_session.evidence must be a list when provided.")
+    evidence: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"workbench_session.evidence[{index}] must be an object.")
+        evidence.append(item)
+    return evidence
+
+
 def _require_string(value: Any, field_name: str) -> str:
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field_name} must be a non-empty string.")
@@ -363,3 +394,19 @@ def _require_int(value: Any, field_name: str) -> int:
     if not isinstance(value, int) or value < 0:
         raise ValueError(f"{field_name} must be a non-negative integer.")
     return value
+
+
+def _evidence_text(entry: Mapping[str, Any]) -> str:
+    claim_kind = _require_string(entry.get("claim_kind"), "evidence.claim_kind")
+    claim_value = _require_string(entry.get("claim_value"), "evidence.claim_value")
+    asserted_by = _optional_string(entry.get("asserted_by_label"), "evidence.asserted_by_label") or _require_string(
+        entry.get("asserted_by_family"),
+        "evidence.asserted_by_family",
+    )
+    evidence_kind = _require_string(entry.get("evidence_kind"), "evidence.evidence_kind")
+    evidence_locator = _require_string(entry.get("evidence_locator"), "evidence.evidence_locator")
+    text = f"{claim_kind} = {claim_value} ({asserted_by}, {evidence_kind}, {evidence_locator})"
+    asserted_at = _optional_string(entry.get("asserted_at"), "evidence.asserted_at")
+    if asserted_at is not None:
+        text += f" @ {asserted_at}"
+    return text

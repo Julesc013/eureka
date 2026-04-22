@@ -21,6 +21,7 @@ def render_bundle_inspection_html(bundle_inspection: Mapping[str, Any]) -> str:
     notices = _notice_list(bundle_inspection.get("notices"))
     bundle_summary = _optional_mapping(bundle_inspection.get("bundle"), "bundle_inspection.bundle")
     primary_object = _optional_mapping(bundle_inspection.get("primary_object"), "bundle_inspection.primary_object")
+    evidence = _evidence_list(bundle_inspection.get("evidence"))
     normalized_record = _optional_mapping(
         bundle_inspection.get("normalized_record"),
         "bundle_inspection.normalized_record",
@@ -135,6 +136,23 @@ def render_bundle_inspection_html(bundle_inspection: Mapping[str, Any]) -> str:
             ]
         )
 
+    if evidence:
+        parts.extend(
+            [
+                "      <section>",
+                "        <h2>Evidence</h2>",
+                "        <ul>",
+            ]
+        )
+        for entry in evidence:
+            parts.append(f"          <li>{escape(_evidence_text(entry))}</li>")
+        parts.extend(
+            [
+                "        </ul>",
+                "      </section>",
+            ]
+        )
+
     if normalized_record is not None:
         parts.extend(
             [
@@ -216,6 +234,19 @@ def _string_list(value: Any, field_name: str) -> list[str]:
     return result
 
 
+def _evidence_list(value: Any) -> list[Mapping[str, Any]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError("bundle_inspection.evidence must be a list when provided.")
+    evidence: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"bundle_inspection.evidence[{index}] must be an object.")
+        evidence.append(item)
+    return evidence
+
+
 def _require_string(value: Any, field_name: str) -> str:
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field_name} must be a non-empty string.")
@@ -228,3 +259,19 @@ def _optional_string(value: Any, field_name: str) -> str | None:
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field_name} must be a non-empty string when provided.")
     return value
+
+
+def _evidence_text(entry: Mapping[str, Any]) -> str:
+    claim_kind = _require_string(entry.get("claim_kind"), "evidence.claim_kind")
+    claim_value = _require_string(entry.get("claim_value"), "evidence.claim_value")
+    asserted_by = _optional_string(entry.get("asserted_by_label"), "evidence.asserted_by_label") or _require_string(
+        entry.get("asserted_by_family"),
+        "evidence.asserted_by_family",
+    )
+    evidence_kind = _require_string(entry.get("evidence_kind"), "evidence.evidence_kind")
+    evidence_locator = _require_string(entry.get("evidence_locator"), "evidence.evidence_locator")
+    text = f"{claim_kind} = {claim_value} ({asserted_by}, {evidence_kind}, {evidence_locator})"
+    asserted_at = _optional_string(entry.get("asserted_at"), "evidence.asserted_at")
+    if asserted_at is not None:
+        text += f" @ {asserted_at}"
+    return text

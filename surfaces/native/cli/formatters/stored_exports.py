@@ -51,6 +51,9 @@ def format_stored_exports_listing(stored_exports: Mapping[str, Any]) -> str:
                 source_label = source.get("label") or source.get("family")
                 if source_label:
                     lines.append(f"  source: {source_label}")
+            evidence = artifact.get("evidence")
+            if isinstance(evidence, list) and evidence:
+                lines.append(f"  evidence: {_compact_evidence_entry(evidence[0])}")
     else:
         lines.append("(no stored artifacts)")
 
@@ -129,6 +132,10 @@ def _artifact_header_lines(artifact: Mapping[str, Any]) -> list[str]:
         source_label = source.get("label") or source.get("family")
         if source_label:
             lines.append(f"source: {source_label}")
+    evidence = artifact.get("evidence")
+    if isinstance(evidence, list) and evidence:
+        lines.extend(["", "Evidence"])
+        lines.extend(f"- {_format_evidence_entry(entry)}" for entry in evidence if isinstance(entry, Mapping))
     if artifact.get("filename"):
         lines.append(f"filename: {artifact['filename']}")
     if artifact.get("store_path"):
@@ -147,3 +154,24 @@ def _format_notice_lines(notices: list[Mapping[str, Any]]) -> list[str]:
             line += f": {message}"
         lines.append(line)
     return lines
+
+
+def _compact_evidence_entry(entry: Any) -> str:
+    if not isinstance(entry, Mapping):
+        return "(unknown)"
+    claim_kind = entry.get("claim_kind", "(unknown)")
+    asserted_by = entry.get("asserted_by_label") or entry.get("asserted_by_family") or "(unknown)"
+    return f"{claim_kind} via {asserted_by}"
+
+
+def _format_evidence_entry(entry: Mapping[str, Any]) -> str:
+    claim_kind = entry.get("claim_kind", "(unknown)")
+    claim_value = entry.get("claim_value", "(unknown)")
+    asserted_by = entry.get("asserted_by_label") or entry.get("asserted_by_family") or "(unknown)"
+    evidence_kind = entry.get("evidence_kind", "(unknown)")
+    evidence_locator = entry.get("evidence_locator", "(unknown)")
+    text = f"{claim_kind} = {claim_value} ({asserted_by}, {evidence_kind}, {evidence_locator})"
+    asserted_at = entry.get("asserted_at")
+    if asserted_at:
+        text += f" @ {asserted_at}"
+    return text

@@ -48,6 +48,11 @@ def format_resolution_workspace(
         if source.get("locator"):
             lines.append(f"origin: {source['locator']}")
 
+    evidence = workbench_session.get("evidence")
+    if isinstance(evidence, list) and evidence:
+        lines.extend(["", "Evidence"])
+        lines.extend(f"- {_format_evidence_entry(entry)}" for entry in evidence if isinstance(entry, Mapping))
+
     if resolution_actions is not None:
         actions = resolution_actions.get("actions", [])
         lines.extend(["", "Actions"])
@@ -93,3 +98,16 @@ def _format_notice_lines(notices: list[Mapping[str, Any]]) -> list[str]:
             line += f": {message}"
         lines.append(line)
     return lines
+
+
+def _format_evidence_entry(entry: Mapping[str, Any]) -> str:
+    claim_kind = entry.get("claim_kind", "(unknown)")
+    claim_value = entry.get("claim_value", "(unknown)")
+    asserted_by = entry.get("asserted_by_label") or entry.get("asserted_by_family") or "(unknown)"
+    evidence_kind = entry.get("evidence_kind", "(unknown)")
+    evidence_locator = entry.get("evidence_locator", "(unknown)")
+    text = f"{claim_kind} = {claim_value} ({asserted_by}, {evidence_kind}, {evidence_locator})"
+    asserted_at = entry.get("asserted_at")
+    if asserted_at:
+        text += f" @ {asserted_at}"
+    return text

@@ -25,6 +25,9 @@ def format_search_results(search_results: Mapping[str, Any]) -> str:
                 source_label = source.get("label") or source.get("family")
                 if source_label:
                     lines.append(f"   source: {source_label}")
+            evidence = result.get("evidence")
+            if isinstance(evidence, list) and evidence:
+                lines.append(f"   evidence: {_compact_evidence_entry(evidence[0])}")
             resolved_resource_id = result.get("resolved_resource_id")
             if isinstance(resolved_resource_id, str) and resolved_resource_id:
                 lines.append(f"   resolved_resource_id: {resolved_resource_id}")
@@ -41,3 +44,11 @@ def format_search_results(search_results: Mapping[str, Any]) -> str:
             )
 
     return "\n".join(lines) + "\n"
+
+
+def _compact_evidence_entry(entry: Any) -> str:
+    if not isinstance(entry, Mapping):
+        return "(unknown)"
+    claim_kind = entry.get("claim_kind", "(unknown)")
+    asserted_by = entry.get("asserted_by_label") or entry.get("asserted_by_family") or "(unknown)"
+    return f"{claim_kind} via {asserted_by}"

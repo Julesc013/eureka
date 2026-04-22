@@ -21,6 +21,9 @@ def format_manifest_export(manifest: Mapping[str, Any]) -> str:
             lines.append(f"source: {source_label}")
         if source.get("locator"):
             lines.append(f"source_origin: {source['locator']}")
+    evidence = manifest.get("evidence")
+    if isinstance(evidence, list) and evidence:
+        lines.append(f"evidence_count: {len(evidence)}")
 
     primary_object = manifest.get("primary_object")
     if isinstance(primary_object, Mapping):
@@ -35,6 +38,10 @@ def format_manifest_export(manifest: Mapping[str, Any]) -> str:
             lines.append(f"kind: {primary_object['kind']}")
         if primary_object.get("label"):
             lines.append(f"label: {primary_object['label']}")
+
+    if isinstance(evidence, list) and evidence:
+        lines.extend(["", "Evidence"])
+        lines.extend(f"- {_format_evidence_entry(entry)}" for entry in evidence if isinstance(entry, Mapping))
 
     notices = manifest.get("notices")
     if isinstance(notices, list) and notices:
@@ -100,6 +107,9 @@ def format_store_result(store_result: Mapping[str, Any]) -> str:
         source_label = source.get("label") or source.get("family")
         if source_label:
             lines.append(f"source: {source_label}")
+    evidence = artifact.get("evidence")
+    if isinstance(evidence, list) and evidence:
+        lines.append(f"evidence_count: {len(evidence)}")
     if artifact.get("filename"):
         lines.append(f"filename: {artifact['filename']}")
     if artifact.get("store_path"):
@@ -158,3 +168,16 @@ def _format_notice_lines(notices: list[Mapping[str, Any]]) -> list[str]:
             line += f": {message}"
         lines.append(line)
     return lines
+
+
+def _format_evidence_entry(entry: Mapping[str, Any]) -> str:
+    claim_kind = entry.get("claim_kind", "(unknown)")
+    claim_value = entry.get("claim_value", "(unknown)")
+    asserted_by = entry.get("asserted_by_label") or entry.get("asserted_by_family") or "(unknown)"
+    evidence_kind = entry.get("evidence_kind", "(unknown)")
+    evidence_locator = entry.get("evidence_locator", "(unknown)")
+    text = f"{claim_kind} = {claim_value} ({asserted_by}, {evidence_kind}, {evidence_locator})"
+    asserted_at = entry.get("asserted_at")
+    if asserted_at:
+        text += f" @ {asserted_at}"
+    return text
