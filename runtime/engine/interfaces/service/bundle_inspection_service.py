@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Protocol
 
+from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.interfaces.public import Notice, ObjectSummary
 
 
@@ -45,6 +46,7 @@ class ResolutionBundleInspectionResult:
     bundle_version: str | None = None
     target_ref: str | None = None
     primary_object: ObjectSummary | None = None
+    evidence: tuple[EvidenceSummary, ...] = ()
     member_list: tuple[str, ...] = ()
     normalized_record_summary: dict[str, Any] | None = None
     notices: tuple[Notice, ...] = ()

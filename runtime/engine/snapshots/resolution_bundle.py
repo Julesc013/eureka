@@ -68,6 +68,7 @@ def _bundle_metadata(record: NormalizedResolutionRecord) -> dict[str, Any]:
             "label": record.source_family_label or record.source_family,
             "locator": record.access_path_locator or record.source_locator,
         },
+        "evidence": [summary.to_dict() for summary in record.evidence],
         "created_by_slice": "portable_bundle_export",
         "entries": list(RESOLUTION_BUNDLE_MEMBER_ORDER),
     }
@@ -87,6 +88,7 @@ def _normalized_record_export(record: NormalizedResolutionRecord) -> dict[str, A
                 "locator": values["source_locator"],
             }
         ),
+        "evidence": [summary.to_dict() for summary in record.evidence],
         "object": _compact_mapping(
             {
                 "id": values["object_id"],

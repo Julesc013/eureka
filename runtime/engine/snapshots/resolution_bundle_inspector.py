@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import zipfile
 
+from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.interfaces.public import Notice, ObjectSummary
 from runtime.engine.interfaces.service import (
     ResolutionBundleInspectionRequest,
@@ -119,7 +120,12 @@ class ResolutionBundleInspectionEngineService:
                 "manifest.json.resolved_resource_id",
             )
             primary_object = _coerce_primary_object(manifest.get("primary_object"))
+            manifest_evidence = _coerce_evidence_list(manifest.get("evidence"), "manifest.json.evidence")
             normalized_record_summary = _coerce_normalized_record_summary(normalized_record)
+            record_evidence = _coerce_evidence_list(
+                normalized_record_summary.get("evidence"),
+                "records/normalized_record.json.evidence",
+            )
         except ValueError as exc:
             return _blocked_result(
                 source_kind=source_kind,
@@ -153,6 +159,14 @@ class ResolutionBundleInspectionEngineService:
                 message="bundle.json.resolved_resource_id and manifest.json.resolved_resource_id must match.",
                 member_list=member_list,
             )
+        if manifest_evidence and record_evidence and manifest_evidence != record_evidence:
+            return _blocked_result(
+                source_kind=source_kind,
+                source_locator=source_locator,
+                code="bundle_structure_invalid",
+                message="manifest.json.evidence and records/normalized_record.json.evidence must match.",
+                member_list=member_list,
+            )
 
         return ResolutionBundleInspectionResult(
             status="inspected",
@@ -164,6 +178,7 @@ class ResolutionBundleInspectionEngineService:
             bundle_version=bundle_version,
             target_ref=target_ref,
             primary_object=primary_object,
+            evidence=manifest_evidence or record_evidence,
             member_list=member_list,
             normalized_record_summary=normalized_record_summary,
             notices=(
@@ -219,6 +234,7 @@ def _coerce_normalized_record_summary(value: object) -> dict[str, object]:
             "records/normalized_record.json.resolved_resource_id",
         ),
         "source": source,
+        "evidence": [summary.to_dict() for summary in _coerce_evidence_list(value.get("evidence"), "records/normalized_record.json.evidence")],
         "object": object_summary,
         "state": state,
         "representation": representation,
@@ -264,3 +280,34 @@ def _optional_mapping(value: object, field_name: str) -> dict[str, object] | Non
     if not isinstance(value, dict):
         raise ValueError(f"{field_name} must be an object when provided.")
     return dict(value)
+
+
+def _coerce_evidence_list(value: object, field_name: str) -> tuple[EvidenceSummary, ...]:
+    if value is None:
+        return ()
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list when provided.")
+    return tuple(_coerce_evidence_summary(item, f"{field_name}[]") for item in value)
+
+
+def _coerce_evidence_summary(value: object, field_name: str) -> EvidenceSummary:
+    if not isinstance(value, dict):
+        raise ValueError(f"{field_name} must be an object.")
+    return EvidenceSummary(
+        claim_kind=_require_string(value.get("claim_kind"), f"{field_name}.claim_kind"),
+        claim_value=_require_string(value.get("claim_value"), f"{field_name}.claim_value"),
+        asserted_by_family=_require_string(
+            value.get("asserted_by_family"),
+            f"{field_name}.asserted_by_family",
+        ),
+        asserted_by_label=_optional_string(
+            value.get("asserted_by_label"),
+            f"{field_name}.asserted_by_label",
+        ),
+        evidence_kind=_require_string(value.get("evidence_kind"), f"{field_name}.evidence_kind"),
+        evidence_locator=_require_string(
+            value.get("evidence_locator"),
+            f"{field_name}.evidence_locator",
+        ),
+        asserted_at=_optional_string(value.get("asserted_at"), f"{field_name}.asserted_at"),
+    )

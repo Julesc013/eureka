@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 from typing import Any
 
+from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary, SourceSummary
 from runtime.engine.interfaces.service.action_service import ResolutionManifestService
 from runtime.engine.interfaces.service.bundle_service import ResolutionBundleService
@@ -51,6 +52,7 @@ class LocalExportStore:
         filename: str | None = None,
         primary_object: ObjectSummary | None = None,
         source: SourceSummary | None = None,
+        evidence: tuple[EvidenceSummary, ...] = (),
     ) -> StoredArtifactMetadata:
         if not artifact_kind:
             raise ValueError("artifact_kind must be a non-empty string.")
@@ -77,6 +79,7 @@ class LocalExportStore:
             filename=filename,
             primary_object=primary_object,
             source=source,
+            evidence=evidence,
         )
 
         _write_bytes_if_missing(object_path, payload)
@@ -232,6 +235,7 @@ class ResolutionExportStoreEngineService:
                 filename=_manifest_filename(target_ref),
                 primary_object=_manifest_primary_object(manifest),
                 source=_manifest_source(manifest),
+                evidence=_manifest_evidence(manifest),
             )
         except ExportStoreDataError as error:
             return StoredArtifactWriteResult(status="blocked", notices=(_store_error_notice(error),))
@@ -262,6 +266,7 @@ class ResolutionExportStoreEngineService:
                 filename=bundle.filename,
                 primary_object=_manifest_primary_object(manifest) if manifest is not None else None,
                 source=_manifest_source(manifest) if manifest is not None else None,
+                evidence=_manifest_evidence(manifest) if manifest is not None else (),
             )
         except ExportStoreDataError as error:
             return StoredArtifactWriteResult(status="blocked", notices=(_store_error_notice(error),))
@@ -415,6 +420,8 @@ def _stored_artifact_metadata_from_dict(payload: Any) -> StoredArtifactMetadata:
             locator=_optional_string(source_payload.get("locator"), "stored_artifact.source.locator"),
         )
 
+    evidence = _coerce_evidence_list(payload.get("evidence"), "stored_artifact.evidence")
+
     return StoredArtifactMetadata(
         artifact_id=_require_string(payload.get("artifact_id"), "stored_artifact.artifact_id"),
         artifact_kind=_require_string(payload.get("artifact_kind"), "stored_artifact.artifact_kind"),
@@ -431,6 +438,7 @@ def _stored_artifact_metadata_from_dict(payload: Any) -> StoredArtifactMetadata:
         filename=_optional_string(payload.get("filename"), "stored_artifact.filename"),
         primary_object=primary_object,
         source=source,
+        evidence=evidence,
     )
 
 
@@ -496,6 +504,10 @@ def _manifest_source(manifest: dict[str, Any]) -> SourceSummary | None:
     )
 
 
+def _manifest_evidence(manifest: dict[str, Any]) -> tuple[EvidenceSummary, ...]:
+    return _coerce_evidence_list(manifest.get("evidence"), "manifest.evidence")
+
+
 def _require_string(value: Any, field_name: str) -> str:
     if not isinstance(value, str) or not value:
         raise ExportStoreDataError(
@@ -518,3 +530,40 @@ def _require_int(value: Any, field_name: str) -> int:
             message=f"{field_name} must be a non-negative integer.",
         )
     return value
+
+
+def _coerce_evidence_list(value: Any, field_name: str) -> tuple[EvidenceSummary, ...]:
+    if value is None:
+        return ()
+    if not isinstance(value, list):
+        raise ExportStoreDataError(
+            code="stored_artifact_metadata_invalid",
+            message=f"{field_name} must be a list when provided.",
+        )
+    return tuple(_coerce_evidence_summary(item, f"{field_name}[]") for item in value)
+
+
+def _coerce_evidence_summary(value: Any, field_name: str) -> EvidenceSummary:
+    if not isinstance(value, dict):
+        raise ExportStoreDataError(
+            code="stored_artifact_metadata_invalid",
+            message=f"{field_name} must be an object.",
+        )
+    return EvidenceSummary(
+        claim_kind=_require_string(value.get("claim_kind"), f"{field_name}.claim_kind"),
+        claim_value=_require_string(value.get("claim_value"), f"{field_name}.claim_value"),
+        asserted_by_family=_require_string(
+            value.get("asserted_by_family"),
+            f"{field_name}.asserted_by_family",
+        ),
+        asserted_by_label=_optional_string(
+            value.get("asserted_by_label"),
+            f"{field_name}.asserted_by_label",
+        ),
+        evidence_kind=_require_string(value.get("evidence_kind"), f"{field_name}.evidence_kind"),
+        evidence_locator=_require_string(
+            value.get("evidence_locator"),
+            f"{field_name}.evidence_locator",
+        ),
+        asserted_at=_optional_string(value.get("asserted_at"), f"{field_name}.asserted_at"),
+    )

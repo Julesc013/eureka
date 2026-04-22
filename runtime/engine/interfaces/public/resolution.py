@@ -3,6 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Sequence
 
+from runtime.engine.provenance import EvidenceSummary
+
 
 @dataclass(frozen=True)
 class ResolutionRequest:
@@ -72,6 +74,7 @@ class ResolutionResult:
     resolved_resource_id: str | None = None
     primary_object: ObjectSummary | None = None
     source: SourceSummary | None = None
+    evidence: tuple[EvidenceSummary, ...] = ()
     snapshot_manifest_id: str | None = None
     notices: tuple[Notice, ...] = ()
 
@@ -83,6 +86,8 @@ class ResolutionResult:
             payload["primary_object"] = self.primary_object.to_dict()
         if self.source is not None:
             payload["source"] = self.source.to_dict()
+        if self.evidence:
+            payload["evidence"] = [summary.to_dict() for summary in self.evidence]
         if self.snapshot_manifest_id is not None:
             payload["snapshot_manifest_id"] = self.snapshot_manifest_id
         return payload

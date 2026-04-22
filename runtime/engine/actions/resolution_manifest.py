@@ -39,6 +39,7 @@ def build_resolution_manifest(record: NormalizedResolutionRecord) -> dict[str, A
             "label": record.source_family_label or record.source_family,
             "locator": record.access_path_locator or record.source_locator,
         },
+        "evidence": [summary.to_dict() for summary in record.evidence],
         "notices": [],
     }
     if record.source_family == "synthetic_fixture":

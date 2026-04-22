@@ -21,6 +21,7 @@ class DeterministicSearchService(SearchService):
                 object_summary=normalized_record_to_object_summary(record),
                 resolved_resource_id=resolved_resource_id_for_record(record),
                 source=normalized_record_to_source_summary(record),
+                evidence=record.evidence,
             )
             for record in self._catalog.records
             if _record_matches(record.target_ref, record.object_label, normalized_query)

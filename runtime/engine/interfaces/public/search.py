@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary, SourceSummary
 
 
@@ -23,6 +24,7 @@ class SearchResultEntry:
     object_summary: ObjectSummary
     resolved_resource_id: str | None = None
     source: SourceSummary | None = None
+    evidence: tuple[EvidenceSummary, ...] = ()
 
 
 @dataclass(frozen=True)

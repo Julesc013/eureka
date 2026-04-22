@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Protocol
 
+from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary, SourceSummary
 
 
@@ -20,6 +21,7 @@ class StoredArtifactMetadata:
     filename: str | None = None
     primary_object: ObjectSummary | None = None
     source: SourceSummary | None = None
+    evidence: tuple[EvidenceSummary, ...] = ()
 
     def to_dict(self) -> dict[str, Any]:
         payload: dict[str, Any] = {
@@ -40,6 +42,8 @@ class StoredArtifactMetadata:
             payload["primary_object"] = self.primary_object.to_dict()
         if self.source is not None:
             payload["source"] = self.source.to_dict()
+        if self.evidence:
+            payload["evidence"] = [summary.to_dict() for summary in self.evidence]
         return payload
 
 
