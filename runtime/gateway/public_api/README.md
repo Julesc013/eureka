@@ -8,6 +8,7 @@ Current bootstrap scope:
 - submit bounded resolution work and return an accepted envelope with a `job_id`
 - read the current in-memory job envelope by `job_id`
 - search the bounded software-first corpus through a deterministic public search boundary
+- explain bounded exact-resolution and deterministic search misses through a dedicated public absence boundary
 - compare exactly two bounded resolved targets through a deterministic public comparison boundary
 - list bounded ordered states for one bootstrap subject key through a deterministic public subject/state boundary
 - list bounded manifest-export and bundle-export actions for a resolved bounded target
@@ -25,6 +26,8 @@ Current bootstrap scope:
 - map public search envelopes into a shared search-results view model without
   implementing a web or native shell
 - map public comparison envelopes into a shared comparison view model without
+  implementing a web or native shell
+- map public absence envelopes into a shared absence-report view model without
   implementing a web or native shell
 - map public subject/state envelopes into a shared subject/state view model without
   implementing a web or native shell
@@ -46,6 +49,7 @@ Out of scope here:
 - final provenance graph, trust scoring, or cross-source merge behavior beyond the current bounded evidence summary seam
 - final comparison, merge, or truth-selection behavior beyond the current bounded disagreement seam
 - final object, subject, or state identity behavior beyond the current bounded timeline seam
+- final diagnostic or absence-reasoning behavior beyond the current bounded miss-explanation seam
 - installers, downloads from external sources, import, restore, or rollback behavior
 - ranking, fuzzy matching, or broader retrieval semantics
 - finalized public API guarantees

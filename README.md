@@ -14,6 +14,7 @@ This repo is not a finished product. It is a working architectural bootstrap tha
 - ingest -> extract -> normalize -> engine flow
 - exact resolution and deterministic search
 - bounded provenance and evidence summaries
+- bounded absence reasoning for misses
 - bounded side-by-side comparison and disagreement
 - bounded subject/state timeline listing
 - manifest export, bundle export, bundle inspection, and local stored exports
@@ -36,7 +37,7 @@ Current repo state:
 
 What is already proven:
 
-- sixteen executable local deterministic thin slices
+- seventeen executable local deterministic thin slices
 - one synthetic connector family
 - one bounded real external-source connector family using recorded GitHub Releases fixtures
 - one transport-neutral gateway public boundary family reused across multiple surfaces
@@ -87,6 +88,8 @@ Useful entry points:
 - Exact resolution: `python scripts/demo_cli_workbench.py resolve fixture:software/synthetic-demo-app@1.0.0`
 - Deterministic search: `python scripts/demo_cli_workbench.py search archive`
 - Subject states: `python scripts/demo_cli_workbench.py states archivebox`
+- Resolve miss explanation: `python scripts/demo_cli_workbench.py explain-resolve-miss fixture:software/archivebox@9.9.9`
+- Search miss explanation: `python scripts/demo_cli_workbench.py explain-search-miss "archive box"`
 - Comparison: `python scripts/demo_cli_workbench.py compare fixture:software/archivebox@0.8.5 github-release:archivebox/archivebox@v0.8.5`
 - Manifest export: `python scripts/demo_cli_workbench.py export-manifest fixture:software/synthetic-demo-app@1.0.0 --json`
 - Bundle export: `python scripts/demo_cli_workbench.py export-bundle fixture:software/synthetic-demo-app@1.0.0 --json`
@@ -99,6 +102,7 @@ The current demos exercise:
 - known synthetic targets
 - known GitHub Releases-backed targets from recorded fixtures
 - missing-target and missing-subject blocked paths
+- bounded miss explanations for known-subject-different-state and no-result search cases
 - bundle export and inspection
 - local stored-export listing and readback
 - shared surface projections over the same public boundary
@@ -123,6 +127,7 @@ Top-level layout:
 - `contracts/ui/`: shared view models and UI contracts used across surfaces
 - `runtime/engine/resolve/`: exact resolution and deterministic search
 - `runtime/engine/provenance/`: bounded evidence summaries
+- `runtime/engine/absence/`: bounded miss explanation
 - `runtime/engine/compare/`: bounded side-by-side comparison
 - `runtime/engine/states/`: bounded subject/state timeline listing
 - `runtime/engine/actions/`: manifest export

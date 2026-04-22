@@ -26,6 +26,7 @@ Current thin-slice behavior:
 - bounded evidence summaries propagated from normalized records into exact resolution, deterministic search, export, local storage, and bundle inspection without implying a final provenance graph, trust model, or merge contract
 - bounded side-by-side comparison of exactly two resolved targets with explicit agreements and disagreements, preserving evidence per side without implying a merge or truth-selection engine
 - bounded subject/state grouping for one bootstrap `subject_key`, with deterministic state ordering and compact per-state source and evidence summaries without implying a final object identity model or timeline graph
+- bounded absence reasoning for exact-resolution misses and deterministic search no-result cases, surfacing checked source families plus compact near matches without implying ranking, fuzzy retrieval, or a final diagnostic engine
 - bounded resolution-manifest export from already-normalized records under `actions/`
 - bounded portable resolution-bundle export from already-normalized records under `snapshots/`
 - bounded portable bundle inspection from local bytes or a local file path under `snapshots/`, without live fixture dependence
@@ -34,4 +35,4 @@ Current thin-slice behavior:
 
 The current `resolved_resource_id` is a bootstrap deterministic seam only. It hardens propagation beyond raw `target_ref`, but it does not yet define Eureka's final global identity or cross-source merge model.
 
-This slice does not settle broader live-source federation, provenance graphs, trust semantics, comparison or merge semantics beyond the current bounded disagreement seam, final object or state identity semantics beyond the current bounded timeline seam, ranking, fuzzy resolution, installer behavior, restore behavior, durable cache semantics, or broader archive semantics.
+This slice does not settle broader live-source federation, provenance graphs, trust semantics, comparison or merge semantics beyond the current bounded disagreement seam, final object or state identity semantics beyond the current bounded timeline seam, final diagnostic or absence-reasoning semantics beyond the current bounded miss-explanation seam, ranking, fuzzy resolution, installer behavior, restore behavior, durable cache semantics, or broader archive semantics.
