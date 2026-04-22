@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from runtime.engine.provenance import EvidenceSummary
+
 
 @dataclass(frozen=True)
 class NormalizedResolutionRecord:
@@ -20,3 +22,4 @@ class NormalizedResolutionRecord:
     access_path_id: str | None = None
     access_path_kind: str | None = None
     access_path_locator: str | None = None
+    evidence: tuple[EvidenceSummary, ...] = ()
