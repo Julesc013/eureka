@@ -99,6 +99,31 @@
         "kind": "fixture_path",
         "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
       }
+    },
+    {
+      "target_ref": "fixture:software/archivebox@0.8.5",
+      "object": {
+        "id": "obj.archivebox.synthetic",
+        "kind": "software",
+        "label": "ArchiveBox 0.8.5"
+      },
+      "state": {
+        "id": "state.archivebox.synthetic.release",
+        "subject_id": "obj.archivebox.synthetic",
+        "kind": "release",
+        "standing": "available"
+      },
+      "representation": {
+        "id": "rep.archivebox.synthetic.source",
+        "object_id": "obj.archivebox.synthetic",
+        "kind": "source_archive",
+        "format": "application/vnd.eureka.synthetic.bundle"
+      },
+      "access_path": {
+        "id": "access.archivebox.synthetic.fixture",
+        "kind": "fixture_path",
+        "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+      }
     }
   ]
 }

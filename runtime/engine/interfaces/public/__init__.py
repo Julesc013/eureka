@@ -1,6 +1,13 @@
 """Public engine request and result shapes for the Eureka thin slice."""
 
 from runtime.engine.provenance import EvidenceSummary
+from runtime.engine.interfaces.public.comparison import (
+    ComparisonAgreement,
+    ComparisonDisagreement,
+    ComparisonRequest,
+    ComparisonResult,
+    ComparisonSide,
+)
 from runtime.engine.interfaces.public.resolution import (
     Notice,
     ObjectSummary,
@@ -12,6 +19,11 @@ from runtime.engine.interfaces.public.search import SearchRequest, SearchRespons
 
 __all__ = [
     "EvidenceSummary",
+    "ComparisonAgreement",
+    "ComparisonDisagreement",
+    "ComparisonRequest",
+    "ComparisonResult",
+    "ComparisonSide",
     "Notice",
     "ObjectSummary",
     "ResolutionRequest",
