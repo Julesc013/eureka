@@ -57,6 +57,7 @@ def render_resolution_workspace_html(
         "      <nav>",
         "        <a href=\"/search\">Search the bounded corpus</a>",
         "        <a href=\"/compare\">Compare two targets</a>",
+        "        <a href=\"/subject\">List subject states</a>",
         "      </nav>",
         "    </header>",
         "    <main>",

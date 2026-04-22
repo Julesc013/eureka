@@ -25,6 +25,7 @@ def render_comparison_html(
         "      <nav>",
         "        <a href=\"/\">Open exact resolution workbench</a>",
         "        <a href=\"/search\">Search the bounded corpus</a>",
+        "        <a href=\"/subject\">List subject states</a>",
         "      </nav>",
         "    </header>",
         "    <main>",

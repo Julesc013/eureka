@@ -14,6 +14,8 @@ from runtime.gateway.public_api import (
     ResolutionWorkspaceReadError,
     SearchCatalogRequest,
     SearchPublicApi,
+    SubjectStatesCatalogRequest,
+    SubjectStatesPublicApi,
     StoredArtifactRequest,
     StoredExportsTargetRequest,
     build_demo_stored_exports_public_api,
@@ -22,6 +24,7 @@ from runtime.gateway.public_api import (
     comparison_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     stored_exports_envelope_to_view_model,
+    subject_states_envelope_to_view_model,
 )
 from surfaces.web.server.api_serialization import (
     SerializedHttpResponse,
@@ -53,6 +56,12 @@ def build_api_index_document() -> dict[str, Any]:
                 "path": "/api/search",
                 "method": "GET",
                 "query_parameters": ["q"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/states",
+                "method": "GET",
+                "query_parameters": ["subject"],
                 "response_content_types": ["application/json"],
             },
             {
@@ -113,6 +122,7 @@ def handle_api_request(
     *,
     resolution_public_api: ResolutionJobsPublicApi,
     comparison_public_api: ComparisonPublicApi | None,
+    subject_states_public_api: SubjectStatesPublicApi | None,
     actions_public_api: ResolutionActionsPublicApi | None,
     bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None,
     search_public_api: SearchPublicApi,
@@ -182,6 +192,23 @@ def handle_api_request(
         return json_response(
             response.status_code,
             comparison_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/states":
+        if subject_states_public_api is None:
+            return _service_unavailable(
+                "subject_states_unavailable",
+                "This bootstrap HTTP API was not configured with a public subject/state boundary.",
+            )
+        subject_key = _required_query_value(query, "subject")
+        if subject_key is None:
+            return _missing_query_value("subject")
+        response = subject_states_public_api.list_subject_states(
+            SubjectStatesCatalogRequest.from_parts(subject_key),
+        )
+        return json_response(
+            response.status_code,
+            subject_states_envelope_to_view_model(response.body),
         )
 
     if path == "/api/search":

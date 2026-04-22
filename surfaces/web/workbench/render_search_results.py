@@ -25,6 +25,7 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
         "      <nav>",
         "        <a href=\"/\">Open exact resolution workbench</a>",
         "        <a href=\"/compare\">Compare two targets</a>",
+        "        <a href=\"/subject\">List subject states</a>",
         "      </nav>",
         "    </header>",
         "    <main>",

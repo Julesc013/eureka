@@ -21,6 +21,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
+    build_demo_subject_states_public_api,
 )
 from surfaces.web.server import WorkbenchWsgiApp
 
@@ -58,6 +59,9 @@ def main(argv: list[str] | None = None) -> int:
     compare_parser = subparsers.add_parser("compare", help="Fetch machine-readable side-by-side comparison.")
     compare_parser.add_argument("left_target_ref")
     compare_parser.add_argument("right_target_ref")
+
+    states_parser = subparsers.add_parser("states", help="Fetch machine-readable bounded subject states.")
+    states_parser.add_argument("subject_key")
 
     export_manifest_parser = subparsers.add_parser("export-manifest", help="Fetch manifest JSON.")
     export_manifest_parser.add_argument(
@@ -107,6 +111,8 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         path = _path("/api/search", q=args.query)
     elif args.command == "compare":
         path = _path("/api/compare", left=args.left_target_ref, right=args.right_target_ref)
+    elif args.command == "states":
+        path = _path("/api/states", subject=args.subject_key)
     elif args.command == "export-manifest":
         path = _path("/api/export/manifest", target_ref=args.target_ref)
     elif args.command == "export-bundle":
@@ -160,6 +166,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
     app = WorkbenchWsgiApp(
         build_demo_resolution_jobs_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
+        subject_states_public_api=build_demo_subject_states_public_api(),
         actions_public_api=build_demo_resolution_actions_public_api(),
         bundle_inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
         search_public_api=build_demo_search_public_api(),

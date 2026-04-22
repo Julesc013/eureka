@@ -16,6 +16,8 @@ from runtime.gateway.public_api import (
     ResolutionWorkspaceReadError,
     SearchCatalogRequest,
     SearchPublicApi,
+    SubjectStatesCatalogRequest,
+    SubjectStatesPublicApi,
     StoredArtifactRequest,
     StoredExportsPublicApi,
     StoredExportsTargetRequest,
@@ -23,6 +25,7 @@ from runtime.gateway.public_api import (
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
+    subject_states_envelope_to_view_model,
 )
 from surfaces.web.server.api_routes import handle_api_request
 from surfaces.web.server.api_serialization import SerializedHttpResponse
@@ -31,6 +34,7 @@ from surfaces.web.workbench import (
     render_comparison_html,
     render_resolution_workspace_html,
     render_search_results_html,
+    render_subject_states_html,
 )
 
 
@@ -63,12 +67,40 @@ def render_resolution_workspace_page(
     )
 
 
+def render_subject_states_page(
+    subject_states_public_api: SubjectStatesPublicApi | None,
+    subject_key: str,
+) -> str:
+    normalized_subject_key = subject_key.strip().casefold()
+    if not normalized_subject_key:
+        return render_subject_states_html(
+            None,
+            subject_key="",
+            message="Provide a bounded subject key to list known states.",
+        )
+    if subject_states_public_api is None:
+        return render_subject_states_html(
+            None,
+            subject_key=normalized_subject_key,
+            message="This bootstrap workbench was not configured with a subject/state boundary.",
+        )
+    response = subject_states_public_api.list_subject_states(
+        SubjectStatesCatalogRequest.from_parts(normalized_subject_key),
+    )
+    subject_states = subject_states_envelope_to_view_model(response.body)
+    return render_subject_states_html(
+        subject_states,
+        subject_key=normalized_subject_key,
+    )
+
+
 class WorkbenchWsgiApp:
     def __init__(
         self,
         resolution_public_api: ResolutionJobsPublicApi,
         *,
         comparison_public_api: ComparisonPublicApi | None = None,
+        subject_states_public_api: SubjectStatesPublicApi | None = None,
         actions_public_api: ResolutionActionsPublicApi | None = None,
         bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None = None,
         stored_exports_public_api: StoredExportsPublicApi | None = None,
@@ -78,6 +110,7 @@ class WorkbenchWsgiApp:
     ) -> None:
         self._resolution_public_api = resolution_public_api
         self._comparison_public_api = comparison_public_api
+        self._subject_states_public_api = subject_states_public_api
         self._actions_public_api = actions_public_api
         self._bundle_inspection_public_api = bundle_inspection_public_api
         self._stored_exports_public_api = stored_exports_public_api
@@ -99,6 +132,7 @@ class WorkbenchWsgiApp:
             query_string,
             resolution_public_api=self._resolution_public_api,
             comparison_public_api=self._comparison_public_api,
+            subject_states_public_api=self._subject_states_public_api,
             actions_public_api=self._actions_public_api,
             bundle_inspection_public_api=self._bundle_inspection_public_api,
             search_public_api=self._search_public_api,
@@ -122,6 +156,7 @@ class WorkbenchWsgiApp:
         if path not in {
             "/",
             "/compare",
+            "/subject",
             "/search",
             "/inspect/bundle",
             "/actions/export-resolution-manifest",
@@ -138,7 +173,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/compare', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/compare', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -162,6 +197,13 @@ class WorkbenchWsgiApp:
                 self._comparison_public_api,
                 left_target_ref,
                 right_target_ref,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/subject":
+            subject_key = self._resolve_subject_key(query_string)
+            page = render_subject_states_page(
+                self._subject_states_public_api,
+                subject_key,
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/search":
@@ -297,6 +339,10 @@ class WorkbenchWsgiApp:
         query = parse_qs(query_string, keep_blank_values=False)
         raw_bundle_path = query.get("bundle_path", [""])[0].strip()
         return raw_bundle_path
+
+    def _resolve_subject_key(self, query_string: str) -> str:
+        query = parse_qs(query_string, keep_blank_values=False)
+        return query.get("key", [""])[0].strip()
 
     def _resolve_artifact_id(self, query_string: str) -> str:
         query = parse_qs(query_string, keep_blank_values=False)

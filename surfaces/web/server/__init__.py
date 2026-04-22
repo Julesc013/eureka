@@ -7,6 +7,7 @@ from surfaces.web.server.workbench_server import (
     render_comparison_page,
     render_resolution_workspace_page,
     render_search_results_page,
+    render_subject_states_page,
 )
 
 __all__ = [
@@ -16,4 +17,5 @@ __all__ = [
     "render_comparison_page",
     "render_resolution_workspace_page",
     "render_search_results_page",
+    "render_subject_states_page",
 ]

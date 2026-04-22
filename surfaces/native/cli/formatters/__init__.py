@@ -13,6 +13,7 @@ from surfaces.native.cli.formatters.stored_exports import (
     format_stored_artifact_json,
     format_stored_exports_listing,
 )
+from surfaces.native.cli.formatters.subject_states import format_subject_states
 
 __all__ = [
     "format_blocked_response",
@@ -26,4 +27,5 @@ __all__ = [
     "format_stored_artifact_bundle",
     "format_stored_artifact_json",
     "format_stored_exports_listing",
+    "format_subject_states",
 ]

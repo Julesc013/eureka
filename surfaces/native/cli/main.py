@@ -13,6 +13,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
     build_demo_stored_exports_public_api,
+    build_demo_subject_states_public_api,
     CompareTargetsRequest,
     ComparisonPublicApi,
     InspectResolutionBundleRequest,
@@ -23,6 +24,8 @@ from runtime.gateway.public_api import (
     ResolutionActionsPublicApi,
     SearchCatalogRequest,
     SearchPublicApi,
+    SubjectStatesCatalogRequest,
+    SubjectStatesPublicApi,
     StoredArtifactRequest,
     StoredExportsPublicApi,
     StoredExportsTargetRequest,
@@ -31,6 +34,7 @@ from runtime.gateway.public_api import (
     comparison_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     stored_exports_envelope_to_view_model,
+    subject_states_envelope_to_view_model,
 )
 from surfaces.native.cli.formatters import (
     format_blocked_response,
@@ -44,6 +48,7 @@ from surfaces.native.cli.formatters import (
     format_stored_artifact_bundle,
     format_stored_artifact_json,
     format_stored_exports_listing,
+    format_subject_states,
 )
 
 
@@ -57,6 +62,7 @@ class CliContext:
     inspection_public_api: ResolutionBundleInspectionPublicApi
     search_public_api: SearchPublicApi
     comparison_public_api: ComparisonPublicApi
+    subject_states_public_api: SubjectStatesPublicApi
     stored_exports_public_api: StoredExportsPublicApi | None = None
     session_id: str = DEFAULT_SESSION_ID
 
@@ -106,6 +112,13 @@ def main(
             )
             comparison = comparison_envelope_to_view_model(response.body)
             return _emit(output, args.json, comparison, format_comparison(comparison))
+
+        if args.command == "states":
+            response = cli_context.subject_states_public_api.list_subject_states(
+                SubjectStatesCatalogRequest.from_parts(args.subject_key),
+            )
+            subject_states = subject_states_envelope_to_view_model(response.body)
+            return _emit(output, args.json, subject_states, format_subject_states(subject_states))
 
         if args.command == "export-manifest":
             response = cli_context.actions_public_api.export_resolution_manifest(
@@ -218,6 +231,13 @@ def build_parser() -> argparse.ArgumentParser:
     compare_parser.add_argument("left_target_ref")
     compare_parser.add_argument("right_target_ref")
 
+    states_parser = subparsers.add_parser(
+        "states",
+        parents=[json_parent],
+        help="List bounded ordered states for one bootstrap subject key through the public boundary.",
+    )
+    states_parser.add_argument("subject_key")
+
     export_manifest_parser = subparsers.add_parser(
         "export-manifest",
         parents=[json_parent],
@@ -278,6 +298,7 @@ def build_cli_context(*, store_root: str | None) -> CliContext:
         inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
         search_public_api=build_demo_search_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
+        subject_states_public_api=build_demo_subject_states_public_api(),
         stored_exports_public_api=(
             build_demo_stored_exports_public_api(store_root) if store_root is not None else None
         ),
