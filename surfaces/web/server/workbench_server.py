@@ -21,6 +21,8 @@ from runtime.gateway.public_api import (
     bundle_inspection_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
 )
+from surfaces.web.server.api_routes import handle_api_request
+from surfaces.web.server.api_serialization import SerializedHttpResponse
 from surfaces.web.workbench import (
     render_bundle_inspection_html,
     render_resolution_workspace_html,
@@ -82,7 +84,22 @@ class WorkbenchWsgiApp:
         environ: dict[str, object],
         start_response: Callable[[str, list[tuple[str, str]]], object],
     ) -> list[bytes]:
+        path = str(environ.get("PATH_INFO") or "/")
         method = str(environ.get("REQUEST_METHOD", "GET")).upper()
+        query_string = str(environ.get("QUERY_STRING", ""))
+        api_response = handle_api_request(
+            method,
+            path,
+            query_string,
+            resolution_public_api=self._resolution_public_api,
+            actions_public_api=self._actions_public_api,
+            bundle_inspection_public_api=self._bundle_inspection_public_api,
+            search_public_api=self._search_public_api,
+            session_id=self._session_id,
+        )
+        if api_response is not None:
+            return self._respond_serialized(start_response, api_response)
+
         if method != "GET":
             return self._respond(
                 start_response,
@@ -95,7 +112,6 @@ class WorkbenchWsgiApp:
                 extra_headers=[("Allow", "GET")],
             )
 
-        path = str(environ.get("PATH_INFO") or "/")
         if path not in {
             "/",
             "/search",
@@ -121,7 +137,6 @@ class WorkbenchWsgiApp:
                 ),
             )
 
-        query_string = str(environ.get("QUERY_STRING", ""))
         if path == "/":
             target_ref = self._resolve_target_ref(query_string)
             page = render_resolution_workspace_page(
@@ -280,6 +295,19 @@ class WorkbenchWsgiApp:
             headers.extend(extra_headers)
         start_response(status, headers)
         return [payload]
+
+    def _respond_serialized(
+        self,
+        start_response: Callable[[str, list[tuple[str, str]]], object],
+        response: SerializedHttpResponse,
+    ) -> list[bytes]:
+        headers = [
+            ("Content-Type", response.content_type),
+            ("Content-Length", str(len(response.payload))),
+        ]
+        headers.extend(response.headers)
+        start_response(response.status, headers)
+        return [response.payload]
 
     def _respond_json(
         self,
