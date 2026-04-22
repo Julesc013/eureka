@@ -9,7 +9,7 @@ class SyntheticSoftwareConnectorTestCase(unittest.TestCase):
     def test_source_loading_returns_a_small_governed_fixture_corpus(self) -> None:
         records = load_synthetic_source_records()
 
-        self.assertEqual(len(records), 4)
+        self.assertEqual(len(records), 5)
         self.assertEqual(
             [record.target_ref for record in records],
             [
@@ -17,6 +17,7 @@ class SyntheticSoftwareConnectorTestCase(unittest.TestCase):
                 "fixture:software/synthetic-demo-suite@2.0.0",
                 "fixture:software/compatibility-lab@3.2.1",
                 "fixture:software/archive-viewer@0.9.0",
+                "fixture:software/archivebox@0.8.5",
             ],
         )
         self.assertEqual(records[0].source_name, "synthetic_software_fixture")

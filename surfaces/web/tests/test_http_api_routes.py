@@ -10,6 +10,7 @@ import unittest
 import zipfile
 
 from runtime.gateway.public_api import (
+    build_demo_comparison_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
@@ -30,6 +31,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.app = WorkbenchWsgiApp(
             build_demo_resolution_jobs_public_api(),
+            comparison_public_api=build_demo_comparison_public_api(),
             actions_public_api=build_demo_resolution_actions_public_api(),
             bundle_inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
             search_public_api=build_demo_search_public_api(),
@@ -92,6 +94,38 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             payload = json.loads(body)
             self.assertEqual(payload["result_count"], 0)
             self.assertEqual(payload["absence"]["code"], "search_no_matches")
+
+    def test_compare_endpoint_returns_machine_readable_comparison_and_blocked_shape(self) -> None:
+        status, headers, body = self._request(
+            "/api/compare",
+            {
+                "left": "fixture:software/archivebox@0.8.5",
+                "right": "github-release:archivebox/archivebox@v0.8.5",
+            },
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["status"], "compared")
+        self.assertEqual(payload["left"]["target_ref"], "fixture:software/archivebox@0.8.5")
+        self.assertEqual(payload["right"]["target_ref"], "github-release:archivebox/archivebox@v0.8.5")
+        self.assertEqual(payload["agreements"][0]["category"], "subject_key")
+        self.assertEqual(payload["disagreements"][0]["category"], "object_label")
+        self.assertEqual(payload["left"]["evidence"][0]["claim_kind"], "label")
+        self.assertEqual(payload["right"]["evidence"][1]["claim_kind"], "version")
+
+        blocked_status, _, blocked_body = self._request(
+            "/api/compare",
+            {
+                "left": "fixture:software/archivebox@0.8.5",
+                "right": MISSING_TARGET_REF,
+            },
+        )
+        self.assertEqual(blocked_status, "404 Not Found")
+        blocked_payload = json.loads(blocked_body)
+        self.assertEqual(blocked_payload["status"], "blocked")
+        self.assertEqual(blocked_payload["notices"][0]["code"], "comparison_right_unresolved")
 
     def test_manifest_export_endpoint_returns_json_with_resolved_resource_id(self) -> None:
         status, headers, body = self._request(

@@ -64,12 +64,48 @@ class NativeCliMainTestCase(unittest.TestCase):
         exit_code, output = run_cli("search", "archive")
 
         self.assertEqual(exit_code, 0)
-        self.assertIn("result_count: 2", output)
+        self.assertIn("result_count: 3", output)
         self.assertIn("Archive Viewer", output)
+        self.assertIn("ArchiveBox 0.8.5", output)
         self.assertIn("ArchiveBox v0.8.5", output)
         self.assertIn("source: Synthetic Fixture", output)
         self.assertIn("source: GitHub Releases", output)
         self.assertIn("evidence: label via", output)
+
+    def test_compare_command_renders_agreements_disagreements_and_evidence(self) -> None:
+        exit_code, output = run_cli(
+            "compare",
+            "fixture:software/archivebox@0.8.5",
+            "github-release:archivebox/archivebox@v0.8.5",
+        )
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Comparison", output)
+        self.assertIn("status: compared", output)
+        self.assertIn("target_ref: fixture:software/archivebox@0.8.5", output)
+        self.assertIn("target_ref: github-release:archivebox/archivebox@v0.8.5", output)
+        self.assertIn("Agreements", output)
+        self.assertIn("subject_key = archivebox", output)
+        self.assertIn("Disagreements", output)
+        self.assertIn("object_label: ArchiveBox 0.8.5 != ArchiveBox v0.8.5", output)
+        self.assertIn("Evidence", output)
+        self.assertIn("version = v0.8.5", output)
+
+    def test_compare_command_returns_blocked_shape_when_one_side_is_missing(self) -> None:
+        exit_code, output = run_cli(
+            "compare",
+            "fixture:software/archivebox@0.8.5",
+            UNKNOWN_TARGET_REF,
+            "--json",
+        )
+        payload = json.loads(output)
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(payload["status"], "blocked")
+        self.assertEqual(payload["left"]["status"], "completed")
+        self.assertEqual(payload["right"]["status"], "blocked")
+        self.assertEqual(payload["notices"][0]["code"], "comparison_right_unresolved")
+        self.assertEqual(payload["right"]["notices"][0]["code"], "target_ref_not_found")
 
     def test_manifest_export_returns_known_manifest_json(self) -> None:
         exit_code, output = run_cli("export-manifest", KNOWN_TARGET_REF, "--json")
