@@ -11,19 +11,16 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
-from runtime.gateway import (
-    build_demo_resolution_actions_public_api,
-    build_demo_resolution_bundle_inspection_public_api,
-    build_demo_resolution_jobs_public_api,
-    build_demo_search_public_api,
-    build_demo_stored_exports_public_api,
-)
 from runtime.gateway.public_api import (
     InspectResolutionBundleRequest,
     ResolutionActionRequest,
     StoredArtifactRequest,
     StoredExportsTargetRequest,
+    build_demo_resolution_actions_public_api,
+    build_demo_resolution_bundle_inspection_public_api,
+    build_demo_resolution_jobs_public_api,
+    build_demo_search_public_api,
+    build_demo_stored_exports_public_api,
 )
 from surfaces.web.server import (
     WorkbenchWsgiApp,
@@ -31,6 +28,8 @@ from surfaces.web.server import (
     render_resolution_workspace_page,
     render_search_results_page,
 )
+
+DEFAULT_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
 
 
 def main() -> int:
@@ -126,7 +125,7 @@ def main() -> int:
             "--store-manifest, --store-bundle, --list-stored, and --read-stored are mutually exclusive."
         )
 
-    target_ref = args.target_ref or SyntheticSoftwareConnector().default_target_ref()
+    target_ref = args.target_ref or DEFAULT_TARGET_REF
     actions_public_api = build_demo_resolution_actions_public_api()
     bundle_inspection_public_api = build_demo_resolution_bundle_inspection_public_api()
     resolution_public_api = build_demo_resolution_jobs_public_api()
@@ -238,12 +237,24 @@ def main() -> int:
             f"http://{args.host}:{args.port}/?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka compatibility search at "
             f"http://{args.host}:{args.port}/search?q={quote('synthetic', safe='')}",
+            "Serving Eureka bootstrap HTTP API index at "
+            f"http://{args.host}:{args.port}/api",
+            "Serving Eureka bootstrap HTTP API resolve route at "
+            f"http://{args.host}:{args.port}/api/resolve?target_ref={quote(target_ref, safe='')}",
+            "Serving Eureka bootstrap HTTP API search route at "
+            f"http://{args.host}:{args.port}/api/search?q={quote('synthetic', safe='')}",
             "Serving Eureka manifest export at "
             f"http://{args.host}:{args.port}/actions/export-resolution-manifest?target_ref={quote(target_ref, safe='')}",
+            "Serving Eureka bootstrap HTTP API manifest export at "
+            f"http://{args.host}:{args.port}/api/export/manifest?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bundle export at "
             f"http://{args.host}:{args.port}/actions/export-resolution-bundle?target_ref={quote(target_ref, safe='')}",
+            "Serving Eureka bootstrap HTTP API bundle export at "
+            f"http://{args.host}:{args.port}/api/export/bundle?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bundle inspection at "
             f"http://{args.host}:{args.port}/inspect/bundle?bundle_path={quote(str((Path.cwd() / 'example-resolution-bundle.zip')), safe='')}",
+            "Serving Eureka bootstrap HTTP API bundle inspection at "
+            f"http://{args.host}:{args.port}/api/inspect/bundle?bundle_path={quote(str((Path.cwd() / 'example-resolution-bundle.zip')), safe='')}",
         ]
         if args.store_root is not None:
             lines.extend(
@@ -252,6 +263,8 @@ def main() -> int:
                     f"http://{args.host}:{args.port}/store/manifest?target_ref={quote(target_ref, safe='')}",
                     "Serving Eureka local bundle store action at "
                     f"http://{args.host}:{args.port}/store/bundle?target_ref={quote(target_ref, safe='')}",
+                    "Serving Eureka bootstrap HTTP API local store listing at "
+                    f"http://{args.host}:{args.port}/api/stored?target_ref={quote(target_ref, safe='')}&store_root={quote(args.store_root, safe='')}",
                 ]
             )
         sys.stdout.write("\n".join(lines) + "\n")
