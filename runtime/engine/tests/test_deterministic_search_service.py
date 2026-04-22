@@ -64,5 +64,5 @@ class DeterministicSearchServiceTestCase(unittest.TestCase):
         self.assertEqual(response.absence.code, "search_no_matches")
         self.assertEqual(
             response.absence.message,
-            "No governed synthetic records matched query 'missing'.",
+            "No bounded records matched query 'missing'.",
         )

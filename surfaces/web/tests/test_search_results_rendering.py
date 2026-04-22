@@ -9,37 +9,46 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
     def test_non_empty_results_render_query_result_list_and_links(self) -> None:
         html = render_search_results_html(
             {
-                "query": "synthetic",
+                "query": "archive",
                 "result_count": 2,
                 "results": [
                     {
-                        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
-                        "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+                        "target_ref": "fixture:software/archive-viewer@0.9.0",
+                        "resolved_resource_id": "resolved:sha256:b38c82f9ca3af117ce8b3984ad311fb4102261c3c1573cd18a8a7db0c760fc81",
                         "object": {
-                            "id": "obj.synthetic-demo-app",
+                            "id": "obj.archive-viewer",
                             "kind": "software",
-                            "label": "Synthetic Demo App",
+                            "label": "Archive Viewer",
+                        },
+                        "source": {
+                            "family": "synthetic_fixture",
+                            "label": "Synthetic Fixture",
                         },
                     },
                     {
-                        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
-                        "resolved_resource_id": "resolved:sha256:bca010feded957f303baabe8a1fdadc726ab844d4197b9e2761cf0eaf083eb31",
+                        "target_ref": "github-release:archivebox/archivebox@v0.8.5",
+                        "resolved_resource_id": "resolved:sha256:4e3bbaf3175192349b3f9d9c978d8a6a25cc306ab8d0f9fe3acab9eeca3b107f",
                         "object": {
-                            "id": "obj.synthetic-demo-suite",
+                            "id": "obj.github-release.archivebox.archivebox",
                             "kind": "software",
-                            "label": "Synthetic Demo Suite",
+                            "label": "ArchiveBox v0.8.5",
+                        },
+                        "source": {
+                            "family": "github_releases",
+                            "label": "GitHub Releases",
                         },
                     },
                 ],
             }
         )
 
-        self.assertIn("synthetic", html)
+        self.assertIn("archive", html)
         self.assertIn("Result count", html)
-        self.assertIn("Synthetic Demo App", html)
-        self.assertIn("Synthetic Demo Suite", html)
-        self.assertIn("/?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
-        self.assertIn("resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2", html)
+        self.assertIn("Archive Viewer", html)
+        self.assertIn("ArchiveBox v0.8.5", html)
+        self.assertIn("/?target_ref=github-release%3Aarchivebox%2Farchivebox%40v0.8.5", html)
+        self.assertIn("[source: GitHub Releases]", html)
+        self.assertIn("[source: Synthetic Fixture]", html)
 
     def test_empty_results_render_query_and_absence_report(self) -> None:
         html = render_search_results_html(
@@ -49,7 +58,7 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
                 "results": [],
                 "absence": {
                     "code": "search_no_matches",
-                    "message": "No governed synthetic records matched query 'missing'.",
+                    "message": "No bounded records matched query 'missing'.",
                 },
             }
         )
@@ -57,4 +66,4 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
         self.assertIn("missing", html)
         self.assertIn("No Results", html)
         self.assertIn("search_no_matches", html)
-        self.assertIn("No governed synthetic records matched query", html)
+        self.assertIn("No bounded records matched query", html)

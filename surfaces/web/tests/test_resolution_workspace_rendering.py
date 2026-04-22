@@ -21,6 +21,11 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                     "kind": "software",
                     "label": "Synthetic Demo App",
                 },
+                "source": {
+                    "family": "synthetic_fixture",
+                    "label": "Synthetic Fixture",
+                    "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                },
             },
             resolution_actions={
                 "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
@@ -75,6 +80,8 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("obj.synthetic-demo-app", html)
         self.assertIn("Synthetic Demo App", html)
         self.assertIn("resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2", html)
+        self.assertIn("Synthetic Fixture", html)
+        self.assertIn("contracts/archive/fixtures/software/synthetic_resolution_fixture.json", html)
         self.assertIn("Export resolution manifest", html)
         self.assertIn("/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
         self.assertIn("Export resolution bundle", html)
@@ -167,3 +174,31 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("Store resolution manifest locally (unavailable)", html)
         self.assertIn("Store resolution bundle locally (unavailable)", html)
         self.assertIn("stored_exports_target_not_available", html)
+
+    def test_resolution_rendering_shows_github_release_source_origin_summary(self) -> None:
+        html = render_resolution_workspace_html(
+            {
+                "session_id": "session.github",
+                "resolved_resource_id": "resolved:sha256:aafe4582e67ab6d1c720388ac70622ba4e6a9797d8e17926ab1458dee78c13d8",
+                "active_job": {
+                    "job_id": "job-0100",
+                    "status": "completed",
+                    "target_ref": "github-release:cli/cli@v2.65.0",
+                },
+                "selected_object": {
+                    "id": "obj.github-release.cli.cli",
+                    "kind": "software",
+                    "label": "GitHub CLI 2.65.0",
+                },
+                "source": {
+                    "family": "github_releases",
+                    "label": "GitHub Releases",
+                    "locator": "https://github.com/cli/cli/releases/tag/v2.65.0",
+                },
+            }
+        )
+
+        self.assertIn("github-release:cli/cli@v2.65.0", html)
+        self.assertIn("GitHub CLI 2.65.0", html)
+        self.assertIn("GitHub Releases", html)
+        self.assertIn("https://github.com/cli/cli/releases/tag/v2.65.0", html)

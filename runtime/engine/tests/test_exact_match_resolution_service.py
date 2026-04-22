@@ -61,7 +61,7 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
 
         self.assertEqual(outcome.status, "blocked")
         self.assertIsNone(outcome.result)
-        self.assertEqual(outcome.notices[0].code, "fixture_target_not_found")
+        self.assertEqual(outcome.notices[0].code, "target_ref_not_found")
 
     def test_normalized_record_maps_to_object_summary(self) -> None:
         summary = normalized_record_to_object_summary(self.record)

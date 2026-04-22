@@ -40,6 +40,11 @@ class WorkbenchSessionMappingTestCase(unittest.TestCase):
                     "kind": "software",
                     "label": "Synthetic Demo App",
                 },
+                "source": {
+                    "family": "synthetic_fixture",
+                    "label": "Synthetic Fixture",
+                    "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                },
             },
         )
 
@@ -65,9 +70,9 @@ class WorkbenchSessionMappingTestCase(unittest.TestCase):
                 },
                 "notices": [
                     {
-                        "code": "fixture_target_not_found",
+                        "code": "target_ref_not_found",
                         "severity": "warning",
-                        "message": "No governed synthetic record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
+                        "message": "No bounded record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
                     }
                 ],
             },

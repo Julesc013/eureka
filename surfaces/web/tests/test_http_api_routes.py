@@ -61,7 +61,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(payload["workbench_session"]["active_job"]["status"], "blocked")
         self.assertEqual(
             payload["workbench_session"]["notices"][0]["code"],
-            "fixture_target_not_found",
+            "target_ref_not_found",
         )
         self.assertNotIn("resolved_resource_id", payload["workbench_session"])
 

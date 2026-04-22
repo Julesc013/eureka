@@ -39,6 +39,11 @@ class ResolutionManifestExportServiceTestCase(unittest.TestCase):
                     "kind": "software",
                     "label": "Synthetic Demo App",
                 },
+                "source": {
+                    "family": "synthetic_fixture",
+                    "label": "Synthetic Fixture",
+                    "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                },
                 "matched_state": {
                     "id": "state.synthetic-demo-app.release",
                     "kind": "release",

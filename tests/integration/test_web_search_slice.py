@@ -36,7 +36,7 @@ class WebSearchSliceIntegrationTestCase(unittest.TestCase):
             status, body = self._fetch("missing")
             self.assertEqual(status, "200 OK")
             self.assertIn("search_no_matches", body)
-            self.assertIn("No governed synthetic records matched query", body)
+            self.assertIn("No bounded records matched query", body)
 
     def _fetch(self, query: str) -> tuple[str, str]:
         captured: dict[str, object] = {}

@@ -37,7 +37,17 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertIn(f"target_ref: {UNKNOWN_TARGET_REF}", output)
         self.assertIn("status: blocked", output)
-        self.assertIn("fixture_target_not_found", output)
+        self.assertIn("target_ref_not_found", output)
+
+    def test_resolve_github_target_includes_source_family_and_origin_summary(self) -> None:
+        exit_code, output = run_cli("resolve", "github-release:cli/cli@v2.65.0")
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("target_ref: github-release:cli/cli@v2.65.0", output)
+        self.assertIn("GitHub CLI 2.65.0", output)
+        self.assertIn("family: github_releases", output)
+        self.assertIn("label: GitHub Releases", output)
+        self.assertIn("origin: https://github.com/cli/cli/releases/tag/v2.65.0", output)
 
     def test_search_returns_deterministic_results_and_resolved_resource_ids(self) -> None:
         exit_code, output = run_cli("search", "synthetic")
@@ -46,6 +56,16 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("result_count: 2", output)
         self.assertLess(output.index("Synthetic Demo App"), output.index("Synthetic Demo Suite"))
         self.assertIn("resolved_resource_id: resolved:sha256:", output)
+
+    def test_search_archive_returns_mixed_results_with_source_labels(self) -> None:
+        exit_code, output = run_cli("search", "archive")
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("result_count: 2", output)
+        self.assertIn("Archive Viewer", output)
+        self.assertIn("ArchiveBox v0.8.5", output)
+        self.assertIn("source: Synthetic Fixture", output)
+        self.assertIn("source: GitHub Releases", output)
 
     def test_manifest_export_returns_known_manifest_json(self) -> None:
         exit_code, output = run_cli("export-manifest", KNOWN_TARGET_REF, "--json")

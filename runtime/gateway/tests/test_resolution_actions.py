@@ -80,7 +80,7 @@ class ResolutionActionsPublicApiTestCase(unittest.TestCase):
                 "status": "blocked",
                 "target_ref": "fixture:software/missing-demo-app@0.0.1",
                 "code": "resolution_manifest_not_available",
-                "message": "No resolved synthetic record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
+                "message": "No resolved bounded record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
             },
         )
 
@@ -111,6 +111,6 @@ class ResolutionActionsPublicApiTestCase(unittest.TestCase):
                 "status": "blocked",
                 "target_ref": "fixture:software/missing-demo-app@0.0.1",
                 "code": "resolution_bundle_not_available",
-                "message": "No resolved synthetic record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
+                "message": "No resolved bounded record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
             },
         )

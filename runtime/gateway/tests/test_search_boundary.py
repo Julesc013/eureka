@@ -39,6 +39,20 @@ class SearchPublicApiTestCase(unittest.TestCase):
             },
         )
         self.assertTrue(response.body["results"][0]["resolved_resource_id"].startswith("resolved:sha256:"))
+        self.assertEqual(response.body["results"][0]["source"]["label"], "Synthetic Fixture")
+
+    def test_public_search_boundary_surfaces_github_release_source_labels(self) -> None:
+        response = self.public_api.search_records(SearchCatalogRequest.from_parts("archive"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.body["result_count"], 2)
+        self.assertEqual(response.body["results"][1]["target_ref"], "github-release:archivebox/archivebox@v0.8.5")
+        self.assertEqual(response.body["results"][1]["source"]["family"], "github_releases")
+        self.assertEqual(response.body["results"][1]["source"]["label"], "GitHub Releases")
+        self.assertEqual(
+            response.body["results"][1]["source"]["locator"],
+            "https://github.com/archivebox/archivebox/releases/tag/v0.8.5",
+        )
 
     def test_public_search_boundary_returns_structured_absence_for_no_matches(self) -> None:
         response = self.public_api.search_records(SearchCatalogRequest.from_parts("missing"))
@@ -52,7 +66,7 @@ class SearchPublicApiTestCase(unittest.TestCase):
                 "results": [],
                 "absence": {
                     "code": "search_no_matches",
-                    "message": "No governed synthetic records matched query 'missing'.",
+                    "message": "No bounded records matched query 'missing'.",
                 },
             },
         )

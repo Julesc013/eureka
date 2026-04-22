@@ -22,6 +22,7 @@ class SearchResultsViewModelTestCase(unittest.TestCase):
             view_model["results"][0]["resolved_resource_id"],
             "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
         )
+        self.assertEqual(view_model["results"][0]["source"]["label"], "Synthetic Fixture")
         self.assertNotIn("absence", view_model)
 
     def test_empty_search_response_maps_to_absence_view_model(self) -> None:
@@ -37,7 +38,7 @@ class SearchResultsViewModelTestCase(unittest.TestCase):
                 "results": [],
                 "absence": {
                     "code": "search_no_matches",
-                    "message": "No governed synthetic records matched query 'missing'.",
+                    "message": "No bounded records matched query 'missing'.",
                 },
             },
         )

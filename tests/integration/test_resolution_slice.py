@@ -53,12 +53,12 @@ class ResolutionSliceIntegrationTestCase(unittest.TestCase):
             self.assertEqual(payload["read_response"]["body"]["status"], "blocked")
             self.assertEqual(
                 payload["read_response"]["body"]["notices"][0]["code"],
-                "fixture_target_not_found",
+                "target_ref_not_found",
             )
             self.assertEqual(payload["workbench_session"]["active_job"]["status"], "blocked")
             self.assertEqual(
                 payload["workbench_session"]["notices"][0]["code"],
-                "fixture_target_not_found",
+                "target_ref_not_found",
             )
 
     def _run_demo(self, target_ref: str, *, include_workbench_session: bool = False) -> dict[str, object]:

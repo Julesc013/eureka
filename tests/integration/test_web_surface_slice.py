@@ -30,7 +30,7 @@ class WebSurfaceSliceIntegrationTestCase(unittest.TestCase):
             self.assertEqual(status, "200 OK")
             self.assertIn("fixture:software/missing-demo-app@0.0.1", body)
             self.assertIn("blocked", body)
-            self.assertIn("fixture_target_not_found", body)
+            self.assertIn("target_ref_not_found", body)
 
     def _fetch(self, target_ref: str) -> tuple[str, str]:
         captured: dict[str, object] = {}
