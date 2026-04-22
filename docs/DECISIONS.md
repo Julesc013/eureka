@@ -143,3 +143,9 @@
 - Status: accepted
 - Decision: Eureka now compares exactly two resolved targets side by side through a bounded engine comparison service and a transport-neutral public comparison boundary, preserving evidence summaries per side and surfacing explicit agreements plus disagreements through current web, CLI, and HTTP API surfaces.
 - Why: this proves the architecture can keep multiple source-backed claims visible together without silently collapsing them into one answer or prematurely introducing merge logic, trust ranking, or global truth selection.
+
+## ADR-025: Add a Bounded Subject-State Timeline Seam Without Finalizing Identity
+
+- Status: accepted
+- Decision: Eureka now groups multiple bounded states under one bootstrap `subject_key` through a deterministic engine state-listing service and a transport-neutral public subject/state boundary, preserving compact source and evidence summaries per state and surfacing the ordered listing through current web, CLI, and HTTP API surfaces.
+- Why: this proves the architecture can expose temporal or release-oriented state listing without silently collapsing multiple states into one answer or prematurely introducing a final global object identity model, merge logic, trust scoring, or a broader temporal graph.

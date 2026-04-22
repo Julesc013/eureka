@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus fifteen executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus sixteen executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -34,6 +34,7 @@ Current status: foundational scaffold plus fifteen executable local deterministi
 - first bounded real external-source connector slice under `runtime/connectors/github_releases/` that loads small recorded GitHub Releases fixtures, normalizes them into the existing engine path, and exposes source-family visibility through the public boundary plus current web, CLI, and HTTP API surfaces
 - first bounded provenance and evidence seam under `runtime/engine/provenance/` that carries compact source-backed evidence summaries from normalize through exact resolution, deterministic search, export, storage, bundle inspection, and current surfaces without forcing a final truth, trust, or merge model
 - first bounded comparison and disagreement seam under `runtime/engine/compare/` that compares exactly two resolved targets side by side, preserves evidence per side, and surfaces explicit agreements and disagreements through the public boundary plus current surfaces without forcing merge or trust-selection behavior
+- first bounded object/state timeline seam under `runtime/engine/states/` that groups multiple bounded states under one bootstrap `subject_key`, orders them deterministically, and surfaces compact source plus evidence summaries through the public boundary plus current surfaces without forcing a final object identity or temporal graph model
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -48,10 +49,11 @@ Current status: foundational scaffold plus fifteen executable local deterministi
 - final global identity semantics, cross-source merge behavior, and any durable resource-identity guarantees beyond the current bootstrap seam
 - final provenance graph semantics, trust scoring, and broader evidence or claim ontology work beyond the current bounded summary seam
 - final comparison semantics, merge behavior, and truth-selection behavior beyond the current bounded disagreement seam
+- final object, subject, and state identity plus ordering semantics beyond the current bounded timeline seam
 - mature search semantics, ranking, and broader retrieval architecture
 - real web application structure, browser-side behavior, authentication, and deployment assumptions
 - broader live external-source federation, live GitHub acquisition, ranking, retrieval, and broader provenance or trust semantics
 - persistence beyond the local bootstrap filesystem store, background workers, and async orchestration
-- richer web routing and page structure beyond the bootstrap compatibility-first workbench, search, manifest-export, bundle-export, stored-export, bundle-inspection, and local HTTP API slices, plus native runtime behavior
+- richer web routing and page structure beyond the bootstrap compatibility-first workbench, search, subject-state, manifest-export, bundle-export, stored-export, bundle-inspection, and local HTTP API slices, plus native runtime behavior
 - final native CLI, TUI, GUI, and offline mode decisions
 - release automation and packaging implementation
