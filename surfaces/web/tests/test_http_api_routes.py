@@ -15,6 +15,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
+    build_demo_subject_states_public_api,
 )
 from surfaces.web.server import WorkbenchWsgiApp
 
@@ -32,6 +33,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.app = WorkbenchWsgiApp(
             build_demo_resolution_jobs_public_api(),
             comparison_public_api=build_demo_comparison_public_api(),
+            subject_states_public_api=build_demo_subject_states_public_api(),
             actions_public_api=build_demo_resolution_actions_public_api(),
             bundle_inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
             search_public_api=build_demo_search_public_api(),
@@ -126,6 +128,32 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         blocked_payload = json.loads(blocked_body)
         self.assertEqual(blocked_payload["status"], "blocked")
         self.assertEqual(blocked_payload["notices"][0]["code"], "comparison_right_unresolved")
+
+    def test_states_endpoint_returns_machine_readable_subject_states_and_missing_shape(self) -> None:
+        status, headers, body = self._request("/api/states", {"subject": "archivebox"})
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["status"], "listed")
+        self.assertEqual(payload["subject"]["subject_key"], "archivebox")
+        self.assertEqual(payload["subject"]["state_count"], 3)
+        self.assertEqual(
+            [entry["target_ref"] for entry in payload["states"]],
+            [
+                "fixture:software/archivebox@0.8.5",
+                "github-release:archivebox/archivebox@v0.8.5",
+                "github-release:archivebox/archivebox@v0.8.4",
+            ],
+        )
+        self.assertEqual(payload["states"][2]["normalized_version_or_state"], "0.8.4")
+        self.assertEqual(payload["states"][1]["evidence"][1]["claim_kind"], "version")
+
+        blocked_status, _, blocked_body = self._request("/api/states", {"subject": "missing-subject"})
+        self.assertEqual(blocked_status, "404 Not Found")
+        blocked_payload = json.loads(blocked_body)
+        self.assertEqual(blocked_payload["status"], "blocked")
+        self.assertEqual(blocked_payload["notices"][0]["code"], "subject_not_found")
 
     def test_manifest_export_endpoint_returns_json_with_resolved_resource_id(self) -> None:
         status, headers, body = self._request(

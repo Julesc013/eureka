@@ -11,6 +11,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
+    build_demo_subject_states_public_api,
 )
 from surfaces.web.server import WorkbenchWsgiApp
 
@@ -20,6 +21,7 @@ class GitHubReleaseHttpApiSliceIntegrationTestCase(unittest.TestCase):
         self.app = WorkbenchWsgiApp(
             build_demo_resolution_jobs_public_api(),
             comparison_public_api=build_demo_comparison_public_api(),
+            subject_states_public_api=build_demo_subject_states_public_api(),
             actions_public_api=build_demo_resolution_actions_public_api(),
             bundle_inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
             search_public_api=build_demo_search_public_api(),
@@ -35,12 +37,13 @@ class GitHubReleaseHttpApiSliceIntegrationTestCase(unittest.TestCase):
             [
                 "fixture:software/archive-viewer@0.9.0",
                 "fixture:software/archivebox@0.8.5",
+                "github-release:archivebox/archivebox@v0.8.4",
                 "github-release:archivebox/archivebox@v0.8.5",
             ],
         )
-        self.assertEqual(search_payload["results"][2]["source"]["label"], "GitHub Releases")
-        self.assertEqual(search_payload["results"][2]["evidence"][1]["claim_kind"], "version")
-        self.assertEqual(search_payload["results"][2]["evidence"][1]["claim_value"], "v0.8.5")
+        self.assertEqual(search_payload["results"][3]["source"]["label"], "GitHub Releases")
+        self.assertEqual(search_payload["results"][3]["evidence"][1]["claim_kind"], "version")
+        self.assertEqual(search_payload["results"][3]["evidence"][1]["claim_value"], "v0.8.5")
 
         resolve_status, _, resolve_body = self._request(
             "/api/resolve",

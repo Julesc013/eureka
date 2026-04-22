@@ -13,11 +13,12 @@ class GitHubReleasesConnectorTestCase(unittest.TestCase):
     def test_source_loading_returns_small_recorded_github_release_corpus(self) -> None:
         records = load_github_release_source_records()
 
-        self.assertEqual(len(records), 2)
+        self.assertEqual(len(records), 3)
         self.assertEqual(
             [record.target_ref for record in records],
             [
                 "github-release:cli/cli@v2.65.0",
+                "github-release:archivebox/archivebox@v0.8.4",
                 "github-release:archivebox/archivebox@v0.8.5",
             ],
         )

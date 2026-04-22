@@ -46,16 +46,16 @@ class SearchPublicApiTestCase(unittest.TestCase):
         response = self.public_api.search_records(SearchCatalogRequest.from_parts("archive"))
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.body["result_count"], 3)
-        self.assertEqual(response.body["results"][2]["target_ref"], "github-release:archivebox/archivebox@v0.8.5")
-        self.assertEqual(response.body["results"][2]["source"]["family"], "github_releases")
-        self.assertEqual(response.body["results"][2]["source"]["label"], "GitHub Releases")
+        self.assertEqual(response.body["result_count"], 4)
+        self.assertEqual(response.body["results"][3]["target_ref"], "github-release:archivebox/archivebox@v0.8.5")
+        self.assertEqual(response.body["results"][3]["source"]["family"], "github_releases")
+        self.assertEqual(response.body["results"][3]["source"]["label"], "GitHub Releases")
         self.assertEqual(
-            response.body["results"][2]["source"]["locator"],
+            response.body["results"][3]["source"]["locator"],
             "https://github.com/archivebox/archivebox/releases/tag/v0.8.5",
         )
-        self.assertEqual(response.body["results"][2]["evidence"][1]["claim_kind"], "version")
-        self.assertEqual(response.body["results"][2]["evidence"][1]["claim_value"], "v0.8.5")
+        self.assertEqual(response.body["results"][3]["evidence"][1]["claim_kind"], "version")
+        self.assertEqual(response.body["results"][3]["evidence"][1]["claim_value"], "v0.8.5")
 
     def test_public_search_boundary_returns_structured_absence_for_no_matches(self) -> None:
         response = self.public_api.search_records(SearchCatalogRequest.from_parts("missing"))

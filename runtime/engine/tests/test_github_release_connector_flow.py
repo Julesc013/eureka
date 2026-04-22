@@ -61,13 +61,14 @@ class GitHubReleaseConnectorFlowTestCase(unittest.TestCase):
             [
                 "fixture:software/archive-viewer@0.9.0",
                 "fixture:software/archivebox@0.8.5",
+                "github-release:archivebox/archivebox@v0.8.4",
                 "github-release:archivebox/archivebox@v0.8.5",
             ],
         )
-        self.assertEqual(response.results[2].source.family, "github_releases")
-        self.assertEqual(response.results[2].source.label, "GitHub Releases")
-        self.assertEqual(response.results[2].evidence[0].claim_kind, "label")
-        self.assertEqual(response.results[2].evidence[0].asserted_by_label, "GitHub Releases")
+        self.assertEqual(response.results[3].source.family, "github_releases")
+        self.assertEqual(response.results[3].source.label, "GitHub Releases")
+        self.assertEqual(response.results[3].evidence[0].claim_kind, "label")
+        self.assertEqual(response.results[3].evidence[0].asserted_by_label, "GitHub Releases")
         self.assertIsNone(response.absence)
 
     def test_exact_resolution_can_resolve_known_github_release_target(self) -> None:

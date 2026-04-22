@@ -64,13 +64,39 @@ class NativeCliMainTestCase(unittest.TestCase):
         exit_code, output = run_cli("search", "archive")
 
         self.assertEqual(exit_code, 0)
-        self.assertIn("result_count: 3", output)
+        self.assertIn("result_count: 4", output)
         self.assertIn("Archive Viewer", output)
         self.assertIn("ArchiveBox 0.8.5", output)
+        self.assertIn("ArchiveBox v0.8.4", output)
         self.assertIn("ArchiveBox v0.8.5", output)
         self.assertIn("source: Synthetic Fixture", output)
         self.assertIn("source: GitHub Releases", output)
         self.assertIn("evidence: label via", output)
+
+    def test_states_command_renders_ordered_state_list_with_source_and_resolved_ids(self) -> None:
+        exit_code, output = run_cli("states", "archivebox")
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Subject states", output)
+        self.assertIn("status: listed", output)
+        self.assertIn("subject_key: archivebox", output)
+        self.assertIn("subject_label: ArchiveBox", output)
+        self.assertIn("state_count: 3", output)
+        self.assertIn("1. ArchiveBox 0.8.5", output)
+        self.assertIn("2. ArchiveBox v0.8.5", output)
+        self.assertIn("3. ArchiveBox v0.8.4", output)
+        self.assertIn("resolved_resource_id: resolved:sha256:", output)
+        self.assertIn("source_family: github_releases", output)
+        self.assertIn("evidence: label via", output)
+
+    def test_states_command_returns_blocked_shape_for_missing_subject(self) -> None:
+        exit_code, output = run_cli("states", "missing-subject", "--json")
+        payload = json.loads(output)
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(payload["status"], "blocked")
+        self.assertEqual(payload["requested_subject_key"], "missing-subject")
+        self.assertEqual(payload["notices"][0]["code"], "subject_not_found")
 
     def test_compare_command_renders_agreements_disagreements_and_evidence(self) -> None:
         exit_code, output = run_cli(
