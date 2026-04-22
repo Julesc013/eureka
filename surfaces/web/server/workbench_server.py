@@ -6,8 +6,11 @@ from typing import Callable
 from urllib.parse import parse_qs
 
 from runtime.gateway.public_api import (
+    AbsencePublicApi,
     CompareTargetsRequest,
     ComparisonPublicApi,
+    ExplainResolveMissRequest,
+    ExplainSearchMissRequest,
     InspectResolutionBundleRequest,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
@@ -22,6 +25,7 @@ from runtime.gateway.public_api import (
     StoredExportsPublicApi,
     StoredExportsTargetRequest,
     build_resolution_workspace_view_models,
+    absence_envelope_to_view_model,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
@@ -30,6 +34,7 @@ from runtime.gateway.public_api import (
 from surfaces.web.server.api_routes import handle_api_request
 from surfaces.web.server.api_serialization import SerializedHttpResponse
 from surfaces.web.workbench import (
+    render_absence_report_html,
     render_bundle_inspection_html,
     render_comparison_html,
     render_resolution_workspace_html,
@@ -94,11 +99,70 @@ def render_subject_states_page(
     )
 
 
+def render_resolve_absence_page(
+    absence_public_api: AbsencePublicApi | None,
+    target_ref: str,
+) -> str:
+    normalized_target_ref = target_ref.strip()
+    if not normalized_target_ref:
+        return render_absence_report_html(
+            None,
+            request_kind="resolve",
+            requested_value="",
+            message="Provide a bounded target ref to explain an exact-resolution miss.",
+        )
+    if absence_public_api is None:
+        return render_absence_report_html(
+            None,
+            request_kind="resolve",
+            requested_value=normalized_target_ref,
+            message="This bootstrap workbench was not configured with a public absence boundary.",
+        )
+    response = absence_public_api.explain_resolution_miss(
+        ExplainResolveMissRequest.from_parts(normalized_target_ref),
+    )
+    return render_absence_report_html(
+        absence_envelope_to_view_model(response.body),
+        request_kind="resolve",
+        requested_value=normalized_target_ref,
+    )
+
+
+def render_search_absence_page(
+    absence_public_api: AbsencePublicApi | None,
+    query: str,
+) -> str:
+    normalized_query = query.strip()
+    if not normalized_query:
+        return render_absence_report_html(
+            None,
+            request_kind="search",
+            requested_value="",
+            message="Provide a bounded query to explain a deterministic search miss.",
+        )
+    if absence_public_api is None:
+        return render_absence_report_html(
+            None,
+            request_kind="search",
+            requested_value=normalized_query,
+            message="This bootstrap workbench was not configured with a public absence boundary.",
+        )
+    response = absence_public_api.explain_search_miss(
+        ExplainSearchMissRequest.from_parts(normalized_query),
+    )
+    return render_absence_report_html(
+        absence_envelope_to_view_model(response.body),
+        request_kind="search",
+        requested_value=normalized_query,
+    )
+
+
 class WorkbenchWsgiApp:
     def __init__(
         self,
         resolution_public_api: ResolutionJobsPublicApi,
         *,
+        absence_public_api: AbsencePublicApi | None = None,
         comparison_public_api: ComparisonPublicApi | None = None,
         subject_states_public_api: SubjectStatesPublicApi | None = None,
         actions_public_api: ResolutionActionsPublicApi | None = None,
@@ -109,6 +173,7 @@ class WorkbenchWsgiApp:
         session_id: str = "session.web-workbench",
     ) -> None:
         self._resolution_public_api = resolution_public_api
+        self._absence_public_api = absence_public_api
         self._comparison_public_api = comparison_public_api
         self._subject_states_public_api = subject_states_public_api
         self._actions_public_api = actions_public_api
@@ -131,6 +196,7 @@ class WorkbenchWsgiApp:
             path,
             query_string,
             resolution_public_api=self._resolution_public_api,
+            absence_public_api=self._absence_public_api,
             comparison_public_api=self._comparison_public_api,
             subject_states_public_api=self._subject_states_public_api,
             actions_public_api=self._actions_public_api,
@@ -155,6 +221,8 @@ class WorkbenchWsgiApp:
 
         if path not in {
             "/",
+            "/absence/resolve",
+            "/absence/search",
             "/compare",
             "/subject",
             "/search",
@@ -173,7 +241,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/compare', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -198,6 +266,14 @@ class WorkbenchWsgiApp:
                 left_target_ref,
                 right_target_ref,
             )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/absence/resolve":
+            target_ref = self._resolve_target_ref(query_string)
+            page = render_resolve_absence_page(self._absence_public_api, target_ref)
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/absence/search":
+            query = self._resolve_search_query(query_string)
+            page = render_search_absence_page(self._absence_public_api, query)
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/subject":
             subject_key = self._resolve_subject_key(query_string)

@@ -4,8 +4,11 @@ from typing import Any, Mapping
 from urllib.parse import parse_qs
 
 from runtime.gateway.public_api import (
+    AbsencePublicApi,
     CompareTargetsRequest,
     ComparisonPublicApi,
+    ExplainResolveMissRequest,
+    ExplainSearchMissRequest,
     InspectResolutionBundleRequest,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
@@ -19,6 +22,7 @@ from runtime.gateway.public_api import (
     StoredArtifactRequest,
     StoredExportsTargetRequest,
     build_demo_stored_exports_public_api,
+    absence_envelope_to_view_model,
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
@@ -54,6 +58,18 @@ def build_api_index_document() -> dict[str, Any]:
             },
             {
                 "path": "/api/search",
+                "method": "GET",
+                "query_parameters": ["q"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/absence/resolve",
+                "method": "GET",
+                "query_parameters": ["target_ref"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/absence/search",
                 "method": "GET",
                 "query_parameters": ["q"],
                 "response_content_types": ["application/json"],
@@ -121,6 +137,7 @@ def handle_api_request(
     query_string: str,
     *,
     resolution_public_api: ResolutionJobsPublicApi,
+    absence_public_api: AbsencePublicApi | None,
     comparison_public_api: ComparisonPublicApi | None,
     subject_states_public_api: SubjectStatesPublicApi | None,
     actions_public_api: ResolutionActionsPublicApi | None,
@@ -219,6 +236,40 @@ def handle_api_request(
         return json_response(
             response.status_code,
             search_response_envelope_to_search_results_view_model(response.body),
+        )
+
+    if path == "/api/absence/resolve":
+        if absence_public_api is None:
+            return _service_unavailable(
+                "absence_unavailable",
+                "This bootstrap HTTP API was not configured with a public absence boundary.",
+            )
+        target_ref = _required_query_value(query, "target_ref")
+        if target_ref is None:
+            return _missing_query_value("target_ref")
+        response = absence_public_api.explain_resolution_miss(
+            ExplainResolveMissRequest.from_parts(target_ref),
+        )
+        return json_response(
+            response.status_code,
+            absence_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/absence/search":
+        if absence_public_api is None:
+            return _service_unavailable(
+                "absence_unavailable",
+                "This bootstrap HTTP API was not configured with a public absence boundary.",
+            )
+        query_text = _required_query_value(query, "q")
+        if query_text is None:
+            return _missing_query_value("q")
+        response = absence_public_api.explain_search_miss(
+            ExplainSearchMissRequest.from_parts(query_text),
+        )
+        return json_response(
+            response.status_code,
+            absence_envelope_to_view_model(response.body),
         )
 
     if path == "/api/export/manifest":

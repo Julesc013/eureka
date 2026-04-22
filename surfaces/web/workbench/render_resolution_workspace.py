@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from html import escape
 from typing import Any, Mapping
+from urllib.parse import quote
 
 
 def render_resolution_workspace_html(
@@ -89,9 +90,19 @@ def render_resolution_workspace_html(
     parts.extend(
         [
             "        </dl>",
-            "      </section>",
+        "      </section>",
         ]
     )
+    if status == "blocked":
+        absence_link = "/absence/resolve?target_ref=" + quote(target_ref, safe="")
+        parts.extend(
+            [
+                "      <section>",
+                "        <h2>Miss explanation</h2>",
+                f"        <p><a href=\"{escape(absence_link, quote=True)}\">Explain this resolution miss</a></p>",
+                "      </section>",
+            ]
+        )
 
     if selected_object is not None:
         parts.extend(

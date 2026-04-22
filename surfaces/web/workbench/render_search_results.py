@@ -111,11 +111,13 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
     elif absence is not None:
         absence_code = _require_string(absence.get("code"), "absence.code")
         absence_message = _require_string(absence.get("message"), "absence.message")
+        absence_link = "/absence/search?q=" + quote(query, safe="")
         parts.extend(
             [
                 "      <section>",
                 "        <h2>No Results</h2>",
                 f"        <p><strong>{escape(absence_code)}</strong>: {escape(absence_message)}</p>",
+                f"        <p><a href=\"{escape(absence_link, quote=True)}\">Explain this search miss</a></p>",
                 "      </section>",
             ]
         )

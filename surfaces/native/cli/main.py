@@ -7,13 +7,17 @@ import sys
 from typing import Any, Mapping, Sequence, TextIO
 
 from runtime.gateway.public_api import (
+    AbsencePublicApi,
     build_demo_comparison_public_api,
+    build_demo_absence_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
     build_demo_stored_exports_public_api,
     build_demo_subject_states_public_api,
+    ExplainResolveMissRequest,
+    ExplainSearchMissRequest,
     CompareTargetsRequest,
     ComparisonPublicApi,
     InspectResolutionBundleRequest,
@@ -37,6 +41,7 @@ from runtime.gateway.public_api import (
     subject_states_envelope_to_view_model,
 )
 from surfaces.native.cli.formatters import (
+    format_absence_report,
     format_blocked_response,
     format_bundle_export_summary,
     format_bundle_inspection,
@@ -61,6 +66,7 @@ class CliContext:
     actions_public_api: ResolutionActionsPublicApi
     inspection_public_api: ResolutionBundleInspectionPublicApi
     search_public_api: SearchPublicApi
+    absence_public_api: AbsencePublicApi
     comparison_public_api: ComparisonPublicApi
     subject_states_public_api: SubjectStatesPublicApi
     stored_exports_public_api: StoredExportsPublicApi | None = None
@@ -104,6 +110,28 @@ def main(
                 args.json,
                 search_results,
                 format_search_results(search_results),
+            )
+
+        if args.command == "explain-resolve-miss":
+            response = cli_context.absence_public_api.explain_resolution_miss(
+                ExplainResolveMissRequest.from_parts(args.target_ref),
+            )
+            return _emit(
+                output,
+                args.json,
+                response.body,
+                format_absence_report(response.body),
+            )
+
+        if args.command == "explain-search-miss":
+            response = cli_context.absence_public_api.explain_search_miss(
+                ExplainSearchMissRequest.from_parts(args.query),
+            )
+            return _emit(
+                output,
+                args.json,
+                response.body,
+                format_absence_report(response.body),
             )
 
         if args.command == "compare":
@@ -223,6 +251,20 @@ def build_parser() -> argparse.ArgumentParser:
     )
     search_parser.add_argument("query")
 
+    explain_resolve_parser = subparsers.add_parser(
+        "explain-resolve-miss",
+        parents=[json_parent],
+        help="Explain an exact-resolution miss through the public absence boundary.",
+    )
+    explain_resolve_parser.add_argument("target_ref")
+
+    explain_search_parser = subparsers.add_parser(
+        "explain-search-miss",
+        parents=[json_parent],
+        help="Explain a deterministic search miss through the public absence boundary.",
+    )
+    explain_search_parser.add_argument("query")
+
     compare_parser = subparsers.add_parser(
         "compare",
         parents=[json_parent],
@@ -297,6 +339,7 @@ def build_cli_context(*, store_root: str | None) -> CliContext:
         actions_public_api=build_demo_resolution_actions_public_api(),
         inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
         search_public_api=build_demo_search_public_api(),
+        absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
         stored_exports_public_api=(

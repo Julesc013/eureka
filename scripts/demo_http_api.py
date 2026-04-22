@@ -16,6 +16,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.gateway.public_api import (
+    build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -55,6 +56,18 @@ def main(argv: list[str] | None = None) -> int:
 
     search_parser = subparsers.add_parser("search", help="Fetch deterministic machine-readable search results.")
     search_parser.add_argument("query")
+
+    explain_resolve_parser = subparsers.add_parser(
+        "explain-resolve-miss",
+        help="Fetch a machine-readable bounded absence report for an exact-resolution miss.",
+    )
+    explain_resolve_parser.add_argument("target_ref")
+
+    explain_search_parser = subparsers.add_parser(
+        "explain-search-miss",
+        help="Fetch a machine-readable bounded absence report for a search miss.",
+    )
+    explain_search_parser.add_argument("query")
 
     compare_parser = subparsers.add_parser("compare", help="Fetch machine-readable side-by-side comparison.")
     compare_parser.add_argument("left_target_ref")
@@ -109,6 +122,10 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         path = _path("/api/resolve", target_ref=args.target_ref, store_root=args.store_root)
     elif args.command == "search":
         path = _path("/api/search", q=args.query)
+    elif args.command == "explain-resolve-miss":
+        path = _path("/api/absence/resolve", target_ref=args.target_ref)
+    elif args.command == "explain-search-miss":
+        path = _path("/api/absence/search", q=args.query)
     elif args.command == "compare":
         path = _path("/api/compare", left=args.left_target_ref, right=args.right_target_ref)
     elif args.command == "states":
@@ -165,6 +182,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
 
     app = WorkbenchWsgiApp(
         build_demo_resolution_jobs_public_api(),
+        absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
         actions_public_api=build_demo_resolution_actions_public_api(),

@@ -12,6 +12,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.gateway.public_api import (
+    build_demo_absence_public_api,
     build_demo_comparison_public_api,
     InspectResolutionBundleRequest,
     ResolutionActionRequest,
@@ -131,6 +132,7 @@ def main() -> int:
     actions_public_api = build_demo_resolution_actions_public_api()
     bundle_inspection_public_api = build_demo_resolution_bundle_inspection_public_api()
     comparison_public_api = build_demo_comparison_public_api()
+    absence_public_api = build_demo_absence_public_api()
     resolution_public_api = build_demo_resolution_jobs_public_api()
     search_public_api = build_demo_search_public_api()
     stored_exports_public_api = (
@@ -228,6 +230,7 @@ def main() -> int:
 
     app = WorkbenchWsgiApp(
         resolution_public_api,
+        absence_public_api=absence_public_api,
         comparison_public_api=comparison_public_api,
         subject_states_public_api=build_demo_subject_states_public_api(),
         actions_public_api=actions_public_api,
@@ -256,6 +259,14 @@ def main() -> int:
             f"http://{args.host}:{args.port}/api/states?subject={quote('archivebox', safe='')}",
             "Serving Eureka bootstrap HTTP API search route at "
             f"http://{args.host}:{args.port}/api/search?q={quote('synthetic', safe='')}",
+            "Serving Eureka resolve miss explanation page at "
+            f"http://{args.host}:{args.port}/absence/resolve?target_ref={quote('fixture:software/archivebox@9.9.9', safe='')}",
+            "Serving Eureka bootstrap HTTP API resolve miss route at "
+            f"http://{args.host}:{args.port}/api/absence/resolve?target_ref={quote('fixture:software/archivebox@9.9.9', safe='')}",
+            "Serving Eureka search miss explanation page at "
+            f"http://{args.host}:{args.port}/absence/search?q={quote('archive box', safe='')}",
+            "Serving Eureka bootstrap HTTP API search miss route at "
+            f"http://{args.host}:{args.port}/api/absence/search?q={quote('archive box', safe='')}",
             "Serving Eureka manifest export at "
             f"http://{args.host}:{args.port}/actions/export-resolution-manifest?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bootstrap HTTP API manifest export at "

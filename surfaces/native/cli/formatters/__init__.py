@@ -4,6 +4,7 @@ from surfaces.native.cli.formatters.actions import (
     format_manifest_export,
     format_store_result,
 )
+from surfaces.native.cli.formatters.absence import format_absence_report
 from surfaces.native.cli.formatters.comparison import format_comparison
 from surfaces.native.cli.formatters.inspection import format_bundle_inspection
 from surfaces.native.cli.formatters.resolution import format_resolution_workspace
@@ -17,6 +18,7 @@ from surfaces.native.cli.formatters.subject_states import format_subject_states
 
 __all__ = [
     "format_blocked_response",
+    "format_absence_report",
     "format_bundle_export_summary",
     "format_comparison",
     "format_bundle_inspection",
