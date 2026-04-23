@@ -167,3 +167,9 @@
 - Status: accepted
 - Decision: Eureka now evaluates one resolved target against one small bootstrap host profile preset through a bounded engine compatibility service and a transport-neutral public compatibility boundary, surfacing compact reasons plus honest `unknown` outcomes through current web, CLI, and HTTP API surfaces.
 - Why: this proves the architecture can expose practical compatibility guidance without prematurely introducing installer logic, runtime routing, trust scoring, or a final compatibility oracle.
+
+## ADR-029: Add a Bounded Action-Routing Seam Without Introducing Execution
+
+- Status: accepted
+- Decision: Eureka now builds one bounded action plan for one resolved target by combining known representations and access paths, an optional bootstrap host-profile compatibility verdict, and bounded local export/store context into explicit recommended, available, and unavailable actions through a transport-neutral public boundary and current web, CLI, plus HTTP API surfaces.
+- Why: this proves the architecture can expose first-class next-step guidance without silently hiding unavailable actions or prematurely introducing execution, installer, orchestration, or final policy-engine semantics.
