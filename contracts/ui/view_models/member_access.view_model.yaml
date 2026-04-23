@@ -1,0 +1,95 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/member_access.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal path.
+title: MemberAccess
+description: Draft shared bounded member-readback and preview model aligned with the gateway public member-access boundary.
+type: object
+additionalProperties: false
+properties:
+  status:
+    type: string
+    enum:
+      - read
+      - previewed
+      - unsupported
+      - unavailable
+      - blocked
+  member_access_status:
+    type: string
+    enum:
+      - read
+      - previewed
+      - unsupported
+      - unavailable
+      - blocked
+  target_ref:
+    type: string
+  representation_id:
+    type: string
+  member_path:
+    type: string
+  resolved_resource_id:
+    type: string
+  representation_kind:
+    type: string
+  label:
+    type: string
+  filename:
+    type: string
+  source_family:
+    type: string
+  source_label:
+    type: string
+  source_locator:
+    type: string
+  access_kind:
+    type: string
+  access_locator:
+    type: string
+  member_kind:
+    type: string
+  content_type:
+    type: string
+  byte_length:
+    type: integer
+    minimum: 0
+  sha256:
+    type: string
+  text_preview:
+    type: string
+  reason_codes:
+    type: array
+    items:
+      type: string
+  reason_messages:
+    type: array
+    items:
+      type: string
+  notices:
+    type: array
+    items:
+      $ref: '#/$defs/notice'
+required:
+  - status
+  - member_access_status
+  - target_ref
+  - representation_id
+  - member_path
+  - reason_codes
+  - reason_messages
+  - notices
+$defs:
+  notice:
+    type: object
+    additionalProperties: false
+    properties:
+      code:
+        type: string
+      severity:
+        type: string
+      message:
+        type: string
+    required:
+      - code
+      - severity
+x-eureka-status: draft

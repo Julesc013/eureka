@@ -4,6 +4,7 @@ from runtime.connectors.github_releases import GitHubReleasesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.acquisition.service import DeterministicAcquisitionService
 from runtime.engine.decomposition.service import DeterministicDecompositionService
+from runtime.engine.members.service import DeterministicMemberAccessService
 from runtime.engine.action_routing.service import DeterministicActionPlanService
 from runtime.engine.actions import ResolutionManifestExportService
 from runtime.engine.absence import DeterministicAbsenceService
@@ -27,6 +28,7 @@ from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineSe
 from runtime.gateway.public_api.action_plan_boundary import ActionPlanPublicApi
 from runtime.gateway.public_api.acquisition_boundary import AcquisitionPublicApi
 from runtime.gateway.public_api.decomposition_boundary import DecompositionPublicApi
+from runtime.gateway.public_api.member_access_boundary import MemberAccessPublicApi
 from runtime.gateway.public_api.absence_boundary import AbsencePublicApi
 from runtime.gateway.public_api.comparison_boundary import ComparisonPublicApi
 from runtime.gateway.public_api.compatibility_boundary import CompatibilityPublicApi
@@ -138,6 +140,21 @@ def build_demo_decomposition_public_api() -> DecompositionPublicApi:
     )
     decomposition_service = DeterministicDecompositionService(acquisition_service)
     return DecompositionPublicApi(decomposition_service)
+
+
+def build_demo_member_access_public_api() -> MemberAccessPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    resolution_service = ExactMatchResolutionService(catalog)
+    acquisition_service = DeterministicAcquisitionService(
+        catalog,
+        resolution_service=resolution_service,
+    )
+    decomposition_service = DeterministicDecompositionService(acquisition_service)
+    member_access_service = DeterministicMemberAccessService(
+        acquisition_service,
+        decomposition_service,
+    )
+    return MemberAccessPublicApi(member_access_service)
 
 
 def build_demo_representation_selection_public_api() -> RepresentationSelectionPublicApi:

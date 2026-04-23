@@ -1,0 +1,33 @@
+name: MemberAccess
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that read one
+  bounded package member from one explicitly chosen representation through the
+  gateway public member-access boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/member-access?target_ref={target_ref}&representation_id={representation_id}&member_path={member_path}
+  shared_view_models:
+    - contracts/ui/view_models/member_access.view_model.yaml
+  shared_result_shapes:
+    - MemberAccessEnvelope
+surface_expectations:
+  - surfaces read bounded package members only through the public gateway boundary and do not reopen representation payloads directly
+  - surfaces preserve the distinction between read, previewed, unsupported, unavailable, and blocked outcomes instead of silently hiding missing or unsupported member cases
+  - surfaces preserve compact representation metadata, member metadata, preview text, and bounded reasons when rendering member-access results
+  - surfaces do not imply installers, extraction-to-disk, import, restore, execution, or broad file-format coverage when rendering this bounded member-access seam
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - broader file-format coverage
+  - default extraction to disk
+  - installer or import semantics
+  - final package and member identity semantics

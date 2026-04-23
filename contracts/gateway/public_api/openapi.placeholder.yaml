@@ -32,6 +32,8 @@ tags:
     description: Draft bounded acquisition and fetch operations for one explicitly chosen representation on one resolved target.
   - name: Decomposition
     description: Draft bounded decomposition and package-member inspection operations for one explicitly chosen fetched representation on one resolved target.
+  - name: MemberAccess
+    description: Draft bounded member-readback and preview operations for one explicitly chosen member inside one explicitly chosen fetched representation on one resolved target.
   - name: ActionPlan
     description: Draft bounded action-plan operations for one resolved target plus optional bootstrap host and strategy presets.
   - name: ResolutionActions
@@ -406,6 +408,56 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DecompositionEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/member-access:
+    get:
+      tags:
+        - MemberAccess
+      summary: Read one bounded member from one explicitly chosen representation
+      description: >
+        Draft public boundary for reading or previewing one explicitly chosen
+        member from one explicitly chosen fetched representation when the outer
+        format is supported. This is not a broad extractor, installer, import
+        system, or final package-management contract.
+      operationId: readMember
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+        - name: representation_id
+          in: query
+          required: true
+          description: Explicit bounded representation identifier containing the member.
+          schema:
+            type: string
+        - name: member_path
+          in: query
+          required: true
+          description: Explicit bounded member path to read or preview.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Draft bounded member-access envelope for a readable member
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberAccessEnvelope'
+        '404':
+          description: Draft blocked member-access envelope for unresolved targets, unknown representations, or unknown member paths
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberAccessEnvelope'
+        '422':
+          description: Draft unsupported or unavailable member-access envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberAccessEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -1856,6 +1908,87 @@ components:
         - target_ref
         - representation_id
         - members
+        - reason_codes
+        - reason_messages
+        - notices
+    MemberAccessEnvelope:
+      type: object
+      additionalProperties: false
+      description: >
+        Draft bounded member-access envelope for reading or previewing one
+        explicitly chosen member from one explicitly chosen fetched
+        representation when the outer format is supported. This is not a broad
+        extractor, installer, import system, or final package-management contract.
+      properties:
+        status:
+          type: string
+          enum:
+            - read
+            - previewed
+            - unsupported
+            - unavailable
+            - blocked
+        member_access_status:
+          type: string
+          enum:
+            - read
+            - previewed
+            - unsupported
+            - unavailable
+            - blocked
+        target_ref:
+          type: string
+        representation_id:
+          type: string
+        member_path:
+          type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
+        representation_kind:
+          type: string
+        label:
+          type: string
+        filename:
+          type: string
+        source_family:
+          type: string
+        source_label:
+          type: string
+        source_locator:
+          type: string
+        access_kind:
+          type: string
+        access_locator:
+          type: string
+        member_kind:
+          type: string
+        content_type:
+          type: string
+        byte_length:
+          type: integer
+          minimum: 0
+        sha256:
+          type: string
+        text_preview:
+          type: string
+        reason_codes:
+          type: array
+          items:
+            type: string
+        reason_messages:
+          type: array
+          items:
+            type: string
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - member_access_status
+        - target_ref
+        - representation_id
+        - member_path
         - reason_codes
         - reason_messages
         - notices
