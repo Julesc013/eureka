@@ -30,6 +30,8 @@ tags:
     description: Draft bounded representation-selection and handoff operations for one resolved target plus optional bootstrap host and strategy presets.
   - name: Acquisition
     description: Draft bounded acquisition and fetch operations for one explicitly chosen representation on one resolved target.
+  - name: Decomposition
+    description: Draft bounded decomposition and package-member inspection operations for one explicitly chosen fetched representation on one resolved target.
   - name: ActionPlan
     description: Draft bounded action-plan operations for one resolved target plus optional bootstrap host and strategy presets.
   - name: ResolutionActions
@@ -360,6 +362,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AcquisitionEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/decomposition:
+    get:
+      tags:
+        - Decomposition
+      summary: Inspect one fetched bounded representation into a compact member listing
+      description: >
+        Draft public boundary for inspecting one explicitly chosen fetched
+        representation into a compact member listing when the format is supported.
+        This is not a broad extractor, installer, import system, or final package
+        management contract.
+      operationId: decomposeRepresentation
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+        - name: representation_id
+          in: query
+          required: true
+          description: Explicit bounded representation identifier to inspect.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Draft bounded decomposition envelope for a supported representation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DecompositionEnvelope'
+        '404':
+          description: Draft blocked decomposition envelope for unresolved targets or unknown representations
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DecompositionEnvelope'
+        '422':
+          description: Draft unsupported or unavailable decomposition envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DecompositionEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -1738,6 +1784,102 @@ components:
         - reason_codes
         - reason_messages
         - notices
+    DecompositionEnvelope:
+      type: object
+      additionalProperties: false
+      description: >
+        Draft bounded decomposition envelope for inspecting one fetched
+        representation into a compact member listing when the format is supported.
+        This is not a broad extractor, installer, import system, or final package
+        management contract.
+      properties:
+        status:
+          type: string
+          enum:
+            - decomposed
+            - unsupported
+            - unavailable
+            - blocked
+        decomposition_status:
+          type: string
+          enum:
+            - decomposed
+            - unsupported
+            - unavailable
+            - blocked
+        target_ref:
+          type: string
+        representation_id:
+          type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
+        representation_kind:
+          type: string
+        label:
+          type: string
+        filename:
+          type: string
+        content_type:
+          type: string
+        byte_length:
+          type: integer
+          minimum: 0
+        source_family:
+          type: string
+        source_label:
+          type: string
+        source_locator:
+          type: string
+        access_kind:
+          type: string
+        access_locator:
+          type: string
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/DecompositionMemberSummary'
+        reason_codes:
+          type: array
+          items:
+            type: string
+        reason_messages:
+          type: array
+          items:
+            type: string
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - decomposition_status
+        - target_ref
+        - representation_id
+        - members
+        - reason_codes
+        - reason_messages
+        - notices
+    DecompositionMemberSummary:
+      type: object
+      additionalProperties: false
+      description: Draft compact member listing entry for a bounded decomposed representation.
+      properties:
+        member_path:
+          type: string
+        member_kind:
+          type: string
+        byte_length:
+          type: integer
+          minimum: 0
+        content_type:
+          type: string
+        sha256:
+          type: string
+        text_hint:
+          type: string
+      required:
+        - member_path
+        - member_kind
     ResolutionActionsEnvelope:
       type: object
       additionalProperties: false

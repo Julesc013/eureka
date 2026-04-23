@@ -9,6 +9,14 @@ from runtime.gateway.public_api.acquisition_boundary import (
 from runtime.gateway.public_api.acquisition_view_models import (
     acquisition_envelope_to_view_model,
 )
+from runtime.gateway.public_api.decomposition_boundary import (
+    DecompositionInspectionRequest,
+    DecompositionPublicApi,
+    decomposition_result_to_public_envelope,
+)
+from runtime.gateway.public_api.decomposition_view_models import (
+    decomposition_envelope_to_view_model,
+)
 from runtime.gateway.public_api.action_plan_boundary import (
     ActionPlanEvaluationRequest,
     ActionPlanPublicApi,
@@ -108,6 +116,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
+    build_demo_decomposition_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -160,6 +169,8 @@ __all__ = [
     "PublicAcquisitionResponse",
     "AcquisitionFetchRequest",
     "AcquisitionPublicApi",
+    "DecompositionInspectionRequest",
+    "DecompositionPublicApi",
     "ActionPlanEvaluationRequest",
     "ActionPlanPublicApi",
     "AbsencePublicApi",
@@ -209,6 +220,8 @@ __all__ = [
     "SubmitResolutionJobRequest",
     "acquisition_envelope_to_view_model",
     "acquisition_result_to_public_envelope",
+    "decomposition_envelope_to_view_model",
+    "decomposition_result_to_public_envelope",
     "accepted_resolution_job_to_public_envelope",
     "available_resolution_actions_to_public_envelope",
     "action_plan_envelope_to_view_model",
@@ -220,6 +233,7 @@ __all__ = [
     "build_demo_absence_public_api",
     "build_demo_comparison_public_api",
     "build_demo_compatibility_public_api",
+    "build_demo_decomposition_public_api",
     "build_demo_representation_selection_public_api",
     "build_demo_resolution_actions_public_api",
     "build_demo_resolution_bundle_inspection_public_api",

@@ -1,0 +1,33 @@
+name: Decomposition
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that inspect one
+  fetched bounded representation into a compact member listing through the gateway
+  public decomposition boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/decomposition?target_ref={target_ref}&representation_id={representation_id}
+  shared_view_models:
+    - contracts/ui/view_models/decomposition.view_model.yaml
+  shared_result_shapes:
+    - DecompositionEnvelope
+surface_expectations:
+  - surfaces inspect bounded representation members through the public gateway boundary and do not unpack local fixture payloads directly
+  - surfaces preserve the distinction between decomposed, unsupported, unavailable, and blocked outcomes instead of silently hiding unsupported formats
+  - surfaces preserve compact representation metadata, member summaries, and bounded reasons when rendering decomposition results
+  - surfaces do not imply installers, import, restore, extraction-to-disk, or broad archive tooling when rendering this bounded decomposition seam
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - broader file-format coverage
+  - member extraction or writing to disk
+  - installer or import semantics
+  - final package and container identity semantics

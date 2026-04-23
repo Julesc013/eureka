@@ -1,0 +1,109 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/decomposition.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal path.
+title: Decomposition
+description: Draft shared bounded decomposition and package-member inspection model aligned with the gateway public decomposition boundary.
+type: object
+additionalProperties: false
+properties:
+  status:
+    type: string
+    enum:
+      - decomposed
+      - unsupported
+      - unavailable
+      - blocked
+  decomposition_status:
+    type: string
+    enum:
+      - decomposed
+      - unsupported
+      - unavailable
+      - blocked
+  target_ref:
+    type: string
+  representation_id:
+    type: string
+  resolved_resource_id:
+    type: string
+  representation_kind:
+    type: string
+  label:
+    type: string
+  filename:
+    type: string
+  content_type:
+    type: string
+  byte_length:
+    type: integer
+    minimum: 0
+  source_family:
+    type: string
+  source_label:
+    type: string
+  source_locator:
+    type: string
+  access_kind:
+    type: string
+  access_locator:
+    type: string
+  members:
+    type: array
+    items:
+      $ref: '#/$defs/member'
+  reason_codes:
+    type: array
+    items:
+      type: string
+  reason_messages:
+    type: array
+    items:
+      type: string
+  notices:
+    type: array
+    items:
+      $ref: '#/$defs/notice'
+required:
+  - status
+  - decomposition_status
+  - target_ref
+  - representation_id
+  - members
+  - reason_codes
+  - reason_messages
+  - notices
+$defs:
+  member:
+    type: object
+    additionalProperties: false
+    properties:
+      member_path:
+        type: string
+      member_kind:
+        type: string
+      byte_length:
+        type: integer
+        minimum: 0
+      content_type:
+        type: string
+      sha256:
+        type: string
+      text_hint:
+        type: string
+    required:
+      - member_path
+      - member_kind
+  notice:
+    type: object
+    additionalProperties: false
+    properties:
+      code:
+        type: string
+      severity:
+        type: string
+      message:
+        type: string
+    required:
+      - code
+      - severity
+x-eureka-status: draft
