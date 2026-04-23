@@ -23,6 +23,33 @@ _DEFAULT_HOST_PROFILE_PRESETS: tuple[dict[str, str], ...] = (
     },
 )
 
+_DEFAULT_STRATEGY_PROFILE_PRESETS: tuple[dict[str, object], ...] = (
+    {
+        "strategy_id": "inspect",
+        "label": "Inspect",
+        "description": "Prioritize bounded source inspection.",
+        "emphasis_hints": ["prioritize_source_inspection"],
+    },
+    {
+        "strategy_id": "preserve",
+        "label": "Preserve",
+        "description": "Prioritize deterministic export and store steps.",
+        "emphasis_hints": ["prioritize_manifest_export", "prioritize_local_store"],
+    },
+    {
+        "strategy_id": "acquire",
+        "label": "Acquire",
+        "description": "Prioritize direct access paths when bounded signals support them.",
+        "emphasis_hints": ["prioritize_direct_access"],
+    },
+    {
+        "strategy_id": "compare",
+        "label": "Compare",
+        "description": "Prioritize subject-state and side-by-side review.",
+        "emphasis_hints": ["prioritize_subject_states", "prioritize_side_by_side_comparison"],
+    },
+)
+
 
 def render_resolution_workspace_html(
     workbench_session: Mapping[str, Any],
@@ -31,6 +58,7 @@ def render_resolution_workspace_html(
     resolution_actions: Mapping[str, Any] | None = None,
     stored_exports: Mapping[str, Any] | None = None,
     host_profile_presets: list[Mapping[str, Any]] | tuple[Mapping[str, Any], ...] = _DEFAULT_HOST_PROFILE_PRESETS,
+    strategy_profile_presets: list[Mapping[str, Any]] | tuple[Mapping[str, Any], ...] = _DEFAULT_STRATEGY_PROFILE_PRESETS,
 ) -> str:
     active_job = _require_mapping(workbench_session.get("active_job"), "workbench_session.active_job")
     target_ref = _require_string(active_job.get("target_ref"), "workbench_session.active_job.target_ref")
@@ -53,6 +81,16 @@ def render_resolution_workspace_html(
         _optional_mapping(action_plan_model.get("host_profile"), "action_plan.host_profile")
         if action_plan_model is not None
         else None
+    )
+    action_plan_strategy_profile = (
+        _optional_mapping(action_plan_model.get("strategy_profile"), "action_plan.strategy_profile")
+        if action_plan_model is not None
+        else None
+    )
+    action_plan_strategy_rationale = (
+        _string_list(action_plan_model.get("strategy_rationale"), "action_plan.strategy_rationale")
+        if action_plan_model is not None
+        else []
     )
     action_plan_compatibility_reasons = (
         _reason_list(action_plan_model.get("compatibility_reasons"))
@@ -265,6 +303,22 @@ def render_resolution_workspace_html(
 
     if action_plan_model is not None:
         action_plan_href = "/action-plan?target_ref=" + quote(target_ref, safe="")
+        if action_plan_host_profile is not None:
+            action_plan_href += "&host=" + quote(
+                _require_string(
+                    action_plan_host_profile.get("host_profile_id"),
+                    "action_plan.host_profile.host_profile_id",
+                ),
+                safe="",
+            )
+        if action_plan_strategy_profile is not None:
+            action_plan_href += "&strategy=" + quote(
+                _require_string(
+                    action_plan_strategy_profile.get("strategy_id"),
+                    "action_plan.strategy_profile.strategy_id",
+                ),
+                safe="",
+            )
         parts.extend(
             [
                 "      <section>",
@@ -272,6 +326,10 @@ def render_resolution_workspace_html(
                 f"        <p><a href=\"{escape(action_plan_href, quote=True)}\">Open the dedicated action-plan page</a></p>",
             ]
         )
+        if action_plan_strategy_profile is not None:
+            parts.append(
+                f"        <p>Strategy: <strong>{escape(_require_string(action_plan_strategy_profile.get('strategy_id'), 'action_plan.strategy_profile.strategy_id'))}</strong></p>"
+            )
         if action_plan_compatibility_status is not None:
             parts.append(
                 f"        <p>Compatibility status: <strong>{escape(action_plan_compatibility_status)}</strong></p>"
@@ -295,6 +353,40 @@ def render_resolution_workspace_html(
                 parts.append(
                     f"          <li><a href=\"{escape(href, quote=True)}\">Plan for {escape(preset_id)}</a></li>"
                 )
+            parts.append("        </ul>")
+        if strategy_profile_presets:
+            parts.append("        <ul>")
+            for preset in strategy_profile_presets:
+                if not isinstance(preset, Mapping):
+                    continue
+                preset_id = _require_string(preset.get("strategy_id"), "strategy_profile_preset.strategy_id")
+                href = (
+                    "/?target_ref="
+                    + quote(target_ref, safe="")
+                    + "&strategy="
+                    + quote(preset_id, safe="")
+                )
+                if action_plan_host_profile is not None:
+                    href += "&host=" + quote(
+                        _require_string(
+                            action_plan_host_profile.get("host_profile_id"),
+                            "action_plan.host_profile.host_profile_id",
+                        ),
+                        safe="",
+                    )
+                parts.append(
+                    f"          <li><a href=\"{escape(href, quote=True)}\">Show {escape(preset_id)} strategy in this workspace</a></li>"
+                )
+            parts.append("        </ul>")
+        if action_plan_strategy_rationale:
+            parts.extend(
+                [
+                    "        <h3>Strategy rationale</h3>",
+                    "        <ul>",
+                ]
+            )
+            for rationale in action_plan_strategy_rationale:
+                parts.append(f"          <li>{escape(rationale)}</li>")
             parts.append("        </ul>")
 
         for heading, status_name in (

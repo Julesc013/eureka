@@ -84,6 +84,11 @@ def main() -> int:
         help="Render the bounded action-plan page for the selected target and optional bootstrap host preset.",
     )
     parser.add_argument(
+        "--action-plan-strategy",
+        metavar="STRATEGY",
+        help="Render the bounded action-plan page or embedded workspace action plan for one bootstrap strategy profile.",
+    )
+    parser.add_argument(
         "--compatibility-host",
         metavar="HOST_PRESET",
         help="Render the compatibility page for the selected target and bootstrap host preset.",
@@ -133,6 +138,7 @@ def main() -> int:
             args.inspect_bundle is not None,
             args.render_inspection is not None,
             args.action_plan_host is not None,
+            args.action_plan_strategy is not None,
             args.compatibility_host is not None,
             args.store_manifest,
             args.store_bundle,
@@ -142,7 +148,7 @@ def main() -> int:
     ) > 1:
         parser.error(
             "--export-manifest, --export-bundle, --inspect-bundle, --render-inspection, "
-            "--action-plan-host, --compatibility-host, "
+            "--action-plan-host, --action-plan-strategy, --compatibility-host, "
             "--store-manifest, --store-bundle, --list-stored, and --read-stored are mutually exclusive."
         )
 
@@ -198,6 +204,18 @@ def main() -> int:
             action_plan_public_api,
             target_ref,
             args.action_plan_host,
+            args.action_plan_strategy,
+            store_actions_enabled=stored_exports_public_api is not None,
+        )
+        sys.stdout.write(html)
+        return 0
+
+    if args.action_plan_strategy is not None:
+        html = render_action_plan_page(
+            action_plan_public_api,
+            target_ref,
+            None,
+            args.action_plan_strategy,
             store_actions_enabled=stored_exports_public_api is not None,
         )
         sys.stdout.write(html)
@@ -264,6 +282,7 @@ def main() -> int:
                 action_plan_public_api=action_plan_public_api,
                 actions_public_api=actions_public_api,
                 stored_exports_public_api=stored_exports_public_api,
+                strategy_id=args.action_plan_strategy,
             )
         sys.stdout.write(html)
         return 0
@@ -298,6 +317,8 @@ def main() -> int:
             f"http://{args.host}:{args.port}/api/compare?left={quote('fixture:software/archivebox@0.8.5', safe='')}&right={quote('github-release:archivebox/archivebox@v0.8.5', safe='')}",
             "Serving Eureka action-plan page at "
             f"http://{args.host}:{args.port}/action-plan?target_ref={quote(target_ref, safe='')}",
+            "Serving Eureka strategy-aware action-plan page at "
+            f"http://{args.host}:{args.port}/action-plan?target_ref={quote(target_ref, safe='')}&strategy={quote('preserve', safe='')}",
             "Serving Eureka bootstrap HTTP API action-plan route at "
             f"http://{args.host}:{args.port}/api/action-plan?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka compatibility page at "

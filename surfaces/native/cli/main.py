@@ -11,6 +11,7 @@ from runtime.gateway.public_api import (
     ActionPlanPublicApi,
     AbsencePublicApi,
     BOOTSTRAP_HOST_PROFILE_PRESETS,
+    BOOTSTRAP_STRATEGY_PROFILES,
     build_demo_action_plan_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
@@ -109,6 +110,7 @@ def main(
                 ActionPlanEvaluationRequest.from_parts(
                     args.target_ref,
                     args.host_profile_id,
+                    args.strategy_id,
                     store_actions_enabled=cli_context.stored_exports_public_api is not None,
                 ),
             )
@@ -306,6 +308,14 @@ def build_parser() -> argparse.ArgumentParser:
             str(profile["host_profile_id"]) for profile in BOOTSTRAP_HOST_PROFILE_PRESETS
         ),
         help="Optional bootstrap host profile preset used to shape host-aware recommendations.",
+    )
+    plan_parser.add_argument(
+        "--strategy",
+        dest="strategy_id",
+        choices=tuple(
+            str(profile["strategy_id"]) for profile in BOOTSTRAP_STRATEGY_PROFILES
+        ),
+        help="Optional bootstrap strategy profile used to vary bounded recommendation emphasis.",
     )
     plan_parser.add_argument(
         "--store-root",

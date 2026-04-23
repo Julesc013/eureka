@@ -8,6 +8,7 @@ from runtime.gateway.public_api import (
     ActionPlanPublicApi,
     AbsencePublicApi,
     BOOTSTRAP_HOST_PROFILE_PRESETS,
+    BOOTSTRAP_STRATEGY_PROFILES,
     CompareTargetsRequest,
     ComparisonPublicApi,
     CompatibilityEvaluationRequest,
@@ -57,13 +58,13 @@ def build_api_index_document() -> dict[str, Any]:
             {
                 "path": "/api/action-plan",
                 "method": "GET",
-                "query_parameters": ["target_ref", "host", "store_root"],
+                "query_parameters": ["target_ref", "host", "strategy", "store_root"],
                 "response_content_types": ["application/json"],
             },
             {
                 "path": "/api/resolve",
                 "method": "GET",
-                "query_parameters": ["target_ref", "store_root"],
+                "query_parameters": ["target_ref", "host", "strategy", "store_root"],
                 "response_content_types": ["application/json"],
             },
             {
@@ -157,6 +158,7 @@ def build_api_index_document() -> dict[str, Any]:
             "store_root and bundle_path remain bootstrap local parameters for deterministic demo-scale flows.",
         ],
         "bootstrap_host_profile_presets": list(BOOTSTRAP_HOST_PROFILE_PRESETS),
+        "bootstrap_strategy_profiles": list(BOOTSTRAP_STRATEGY_PROFILES),
     }
 
 
@@ -206,11 +208,20 @@ def handle_api_request(
                 actions_public_api=actions_public_api,
                 stored_exports_public_api=stored_exports_public_api,
                 session_id=session_id,
+                host_profile_id=_required_query_value(query, "host"),
+                strategy_id=_required_query_value(query, "strategy"),
             )
         except ResolutionWorkspaceReadError as error:
             return error_response(
                 404,
                 code="resolution_job_not_found",
+                message=str(error),
+                extra_fields={"target_ref": target_ref},
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_action_plan_context",
                 message=str(error),
                 extra_fields={"target_ref": target_ref},
             )
@@ -236,18 +247,20 @@ def handle_api_request(
         if target_ref is None:
             return _missing_query_value("target_ref")
         host_profile_id = _required_query_value(query, "host")
+        strategy_id = _required_query_value(query, "strategy")
         try:
             response = action_plan_public_api.plan_actions(
                 ActionPlanEvaluationRequest.from_parts(
                     target_ref,
                     host_profile_id,
+                    strategy_id,
                     store_actions_enabled=_required_query_value(query, "store_root") is not None,
                 )
             )
         except ValueError as error:
             return error_response(
                 400,
-                code="invalid_host_profile",
+                code="invalid_action_plan_request",
                 message=str(error),
             )
         return json_response(

@@ -82,6 +82,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     action_plan_parser.add_argument("target_ref")
     action_plan_parser.add_argument("--host", dest="host_profile_id")
+    action_plan_parser.add_argument("--strategy", dest="strategy_id")
     action_plan_parser.add_argument("--store-root")
 
     compatibility_parser = subparsers.add_parser(
@@ -157,6 +158,7 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
             "/api/action-plan",
             target_ref=args.target_ref,
             host=args.host_profile_id,
+            strategy=args.strategy_id,
             store_root=args.store_root,
         )
     elif args.command == "compatibility":

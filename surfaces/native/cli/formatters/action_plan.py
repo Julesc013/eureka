@@ -18,6 +18,29 @@ def format_action_plan(action_plan: Mapping[str, Any]) -> str:
     if isinstance(compatibility_status, str) and compatibility_status:
         lines.append(f"compatibility_status: {compatibility_status}")
 
+    strategy_profile = action_plan.get("strategy_profile")
+    if isinstance(strategy_profile, Mapping):
+        lines.extend(
+            [
+                "",
+                "Strategy",
+                f"strategy_id: {strategy_profile.get('strategy_id', '(unknown)')}",
+                f"label: {strategy_profile.get('label', '(unknown)')}",
+            ]
+        )
+        description = strategy_profile.get("description")
+        if isinstance(description, str) and description:
+            lines.append(f"description: {description}")
+        emphasis_hints = strategy_profile.get("emphasis_hints")
+        if isinstance(emphasis_hints, list) and emphasis_hints:
+            lines.append(f"emphasis_hints: {', '.join(str(hint) for hint in emphasis_hints)}")
+
+    strategy_rationale = action_plan.get("strategy_rationale")
+    if isinstance(strategy_rationale, list) and strategy_rationale:
+        lines.extend(["", "Strategy rationale"])
+        for rationale in strategy_rationale:
+            lines.append(f"- {rationale}")
+
     host_profile = action_plan.get("host_profile")
     if isinstance(host_profile, Mapping):
         lines.extend(

@@ -10,6 +10,7 @@ from runtime.gateway.public_api import (
     ActionPlanPublicApi,
     AbsencePublicApi,
     BOOTSTRAP_HOST_PROFILE_PRESETS,
+    BOOTSTRAP_STRATEGY_PROFILES,
     CompareTargetsRequest,
     ComparisonPublicApi,
     CompatibilityEvaluationRequest,
@@ -64,6 +65,8 @@ def render_resolution_workspace_page(
     actions_public_api: ResolutionActionsPublicApi | None = None,
     stored_exports_public_api: StoredExportsPublicApi | None = None,
     session_id: str = "session.web-workbench",
+    host_profile_id: str | None = None,
+    strategy_id: str | None = None,
 ) -> str:
     try:
         workspace = build_resolution_workspace_view_models(
@@ -73,11 +76,19 @@ def render_resolution_workspace_page(
             actions_public_api=actions_public_api,
             stored_exports_public_api=stored_exports_public_api,
             session_id=session_id,
+            host_profile_id=host_profile_id,
+            strategy_id=strategy_id,
         )
     except ResolutionWorkspaceReadError as error:
         return _render_error_page(
             title="Eureka Compatibility Workbench",
             heading="Resolution Job Not Found",
+            message=str(error),
+        )
+    except ValueError as error:
+        return _render_error_page(
+            title="Eureka Compatibility Workbench",
+            heading="Invalid Action Plan Request",
             message=str(error),
         )
     return render_resolution_workspace_html(
@@ -86,6 +97,7 @@ def render_resolution_workspace_page(
         resolution_actions=workspace.resolution_actions,
         stored_exports=workspace.stored_exports,
         host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+        strategy_profile_presets=BOOTSTRAP_STRATEGY_PROFILES,
     )
 
 
@@ -93,17 +105,21 @@ def render_action_plan_page(
     public_api: ActionPlanPublicApi | None,
     target_ref: str,
     host_profile_id: str | None,
+    strategy_id: str | None,
     *,
     store_actions_enabled: bool = False,
 ) -> str:
     normalized_target_ref = target_ref.strip()
     normalized_host_profile_id = (host_profile_id or "").strip() or None
+    normalized_strategy_id = (strategy_id or "").strip() or None
     if not normalized_target_ref:
         return render_action_plan_html(
             None,
             target_ref="",
             host_profile_id=normalized_host_profile_id,
+            strategy_id=normalized_strategy_id,
             host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+            strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
             message="Provide a bounded target ref to build an action plan.",
         )
     if public_api is None:
@@ -111,7 +127,9 @@ def render_action_plan_page(
             None,
             target_ref=normalized_target_ref,
             host_profile_id=normalized_host_profile_id,
+            strategy_id=normalized_strategy_id,
             host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+            strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
             message="This bootstrap workbench was not configured with a public action-plan boundary.",
         )
     try:
@@ -119,6 +137,7 @@ def render_action_plan_page(
             ActionPlanEvaluationRequest.from_parts(
                 normalized_target_ref,
                 normalized_host_profile_id,
+                normalized_strategy_id,
                 store_actions_enabled=store_actions_enabled,
             )
         )
@@ -127,14 +146,18 @@ def render_action_plan_page(
             None,
             target_ref=normalized_target_ref,
             host_profile_id=normalized_host_profile_id,
+            strategy_id=normalized_strategy_id,
             host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+            strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
             message=str(error),
         )
     return render_action_plan_html(
         action_plan_envelope_to_view_model(response.body),
         target_ref=normalized_target_ref,
         host_profile_id=normalized_host_profile_id,
+        strategy_id=normalized_strategy_id,
         host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+        strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
     )
 
 
@@ -419,6 +442,8 @@ class WorkbenchWsgiApp:
                 actions_public_api=self._actions_public_api,
                 stored_exports_public_api=self._stored_exports_public_api,
                 session_id=self._session_id,
+                host_profile_id=self._resolve_optional_host_profile_id(query_string),
+                strategy_id=self._resolve_optional_strategy_id(query_string),
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/action-plan":
@@ -428,6 +453,7 @@ class WorkbenchWsgiApp:
                 self._action_plan_public_api,
                 target_ref,
                 host_profile_id,
+                self._resolve_optional_strategy_id(query_string),
                 store_actions_enabled=self._stored_exports_public_api is not None,
             )
             return self._respond(start_response, status="200 OK", body=page)
@@ -609,6 +635,11 @@ class WorkbenchWsgiApp:
         query = parse_qs(query_string, keep_blank_values=False)
         raw_host_profile_id = query.get("host", [""])[0].strip()
         return raw_host_profile_id or None
+
+    def _resolve_optional_strategy_id(self, query_string: str) -> str | None:
+        query = parse_qs(query_string, keep_blank_values=False)
+        raw_strategy_id = query.get("strategy", [""])[0].strip()
+        return raw_strategy_id or None
 
     def _resolve_bundle_path(self, query_string: str) -> str:
         query = parse_qs(query_string, keep_blank_values=False)

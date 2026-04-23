@@ -9,10 +9,13 @@ def render_action_plan_html(
     *,
     target_ref: str,
     host_profile_id: str | None,
+    strategy_id: str | None,
     host_profile_presets: Sequence[Mapping[str, Any]],
+    strategy_profiles: Sequence[Mapping[str, Any]],
     message: str | None = None,
 ) -> str:
     normalized_host_profile_id = host_profile_id or ""
+    normalized_strategy_id = strategy_id or "inspect"
     parts = [
         "<!doctype html>",
         "<html lang=\"en\">",
@@ -53,6 +56,22 @@ def render_action_plan_html(
     parts.extend(
         [
             "          </select>",
+            "          <label for=\"strategy\">Strategy</label>",
+            "          <select id=\"strategy\" name=\"strategy\">",
+        ]
+    )
+    for profile in strategy_profiles:
+        preset_id = _require_string(profile.get("strategy_id"), "strategy_profile.strategy_id")
+        label = _require_string(profile.get("label"), "strategy_profile.label")
+        selected = " selected" if preset_id == normalized_strategy_id else ""
+        parts.append(
+            f"            <option value=\"{escape(preset_id, quote=True)}\"{selected}>"
+            f"{escape(preset_id)} ({escape(label)})"
+            "</option>"
+        )
+    parts.extend(
+        [
+            "          </select>",
             "          <button type=\"submit\">Plan</button>",
             "        </form>",
             "      </section>",
@@ -78,6 +97,14 @@ def render_action_plan_html(
                 f"          <dt>Target ref</dt><dd>{escape(_require_string(action_plan.get('target_ref'), 'action_plan.target_ref'))}</dd>",
             ]
         )
+        strategy_profile = _optional_mapping(
+            action_plan.get("strategy_profile"),
+            "action_plan.strategy_profile",
+        )
+        if strategy_profile is not None:
+            parts.append(
+                f"          <dt>Strategy</dt><dd>{escape(_require_string(strategy_profile.get('strategy_id'), 'action_plan.strategy_profile.strategy_id'))}</dd>"
+            )
         compatibility_status = _optional_string(
             action_plan.get("compatibility_status"),
             "action_plan.compatibility_status",
@@ -96,6 +123,43 @@ def render_action_plan_html(
                 "      </section>",
             ]
         )
+
+        strategy_rationale = _string_list(action_plan.get("strategy_rationale"), "action_plan.strategy_rationale")
+        if strategy_profile is not None:
+            parts.extend(
+                [
+                    "      <section>",
+                    "        <h2>Strategy</h2>",
+                    "        <dl>",
+                    f"          <dt>ID</dt><dd>{escape(_require_string(strategy_profile.get('strategy_id'), 'action_plan.strategy_profile.strategy_id'))}</dd>",
+                    f"          <dt>Label</dt><dd>{escape(_require_string(strategy_profile.get('label'), 'action_plan.strategy_profile.label'))}</dd>",
+                    f"          <dt>Description</dt><dd>{escape(_require_string(strategy_profile.get('description'), 'action_plan.strategy_profile.description'))}</dd>",
+                    "        </dl>",
+                ]
+            )
+            emphasis_hints = _string_list(
+                strategy_profile.get("emphasis_hints"),
+                "action_plan.strategy_profile.emphasis_hints",
+            )
+            if emphasis_hints:
+                parts.extend(
+                    [
+                        "        <ul>",
+                    ]
+                )
+                for hint in emphasis_hints:
+                    parts.append(f"          <li>{escape(hint)}</li>")
+                parts.append("        </ul>")
+            if strategy_rationale:
+                parts.extend(
+                    [
+                        "        <ul>",
+                    ]
+                )
+                for rationale in strategy_rationale:
+                    parts.append(f"          <li>{escape(rationale)}</li>")
+                parts.append("        </ul>")
+            parts.append("      </section>")
 
         host_profile = _optional_mapping(action_plan.get("host_profile"), "action_plan.host_profile")
         if host_profile is not None:
