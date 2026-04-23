@@ -3,6 +3,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from runtime.gateway.public_api.action_plan_boundary import (
+    ActionPlanEvaluationRequest,
+    ActionPlanPublicApi,
+)
+from runtime.gateway.public_api.action_plan_view_models import (
+    action_plan_envelope_to_view_model,
+)
 from runtime.gateway.public_api.resolution_actions import (
     ResolutionActionRequest,
     ResolutionActionsPublicApi,
@@ -27,6 +34,7 @@ from runtime.gateway.public_api.workbench_sessions import (
 @dataclass(frozen=True)
 class ResolutionWorkspaceViewModels:
     workbench_session: dict[str, Any]
+    action_plan: dict[str, Any] | None = None
     resolution_actions: dict[str, Any] | None = None
     stored_exports: dict[str, Any] | None = None
 
@@ -39,9 +47,11 @@ def build_resolution_workspace_view_models(
     resolution_public_api: ResolutionJobsPublicApi,
     target_ref: str,
     *,
+    action_plan_public_api: ActionPlanPublicApi | None = None,
     actions_public_api: ResolutionActionsPublicApi | None = None,
     stored_exports_public_api: StoredExportsPublicApi | None = None,
     session_id: str,
+    host_profile_id: str | None = None,
 ) -> ResolutionWorkspaceViewModels:
     submit_response = resolution_public_api.submit_resolution_job(
         SubmitResolutionJobRequest.from_parts(target_ref),
@@ -53,6 +63,18 @@ def build_resolution_workspace_view_models(
         if not isinstance(message, str) or not message:
             message = "No job state was available for the requested work."
         raise ResolutionWorkspaceReadError(message)
+
+    action_plan = None
+    if action_plan_public_api is not None:
+        action_plan = action_plan_envelope_to_view_model(
+            action_plan_public_api.plan_actions(
+                ActionPlanEvaluationRequest.from_parts(
+                    target_ref,
+                    host_profile_id,
+                    store_actions_enabled=stored_exports_public_api is not None,
+                )
+            ).body
+        )
 
     resolution_actions = None
     if actions_public_api is not None:
@@ -75,6 +97,7 @@ def build_resolution_workspace_view_models(
             read_response.body,
             session_id=session_id,
         ),
+        action_plan=action_plan,
         resolution_actions=resolution_actions,
         stored_exports=stored_exports,
     )

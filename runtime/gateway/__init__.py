@@ -1,6 +1,7 @@
 """Bootstrap gateway package for the Eureka thin slice."""
 
 from runtime.gateway.bootstrap import (
+    build_demo_action_plan_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
@@ -14,6 +15,7 @@ from runtime.gateway.bootstrap import (
 )
 
 __all__ = [
+    "build_demo_action_plan_public_api",
     "build_demo_absence_public_api",
     "build_demo_comparison_public_api",
     "build_demo_compatibility_public_api",

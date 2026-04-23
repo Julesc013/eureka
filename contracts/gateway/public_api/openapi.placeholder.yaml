@@ -26,6 +26,8 @@ tags:
     description: Draft bounded representation and access-path listing operations for one resolved target.
   - name: Compatibility
     description: Draft bounded compatibility operations for one resolved target and one bootstrap host profile preset.
+  - name: ActionPlan
+    description: Draft bounded action-plan operations for one resolved target and an optional bootstrap host profile preset.
   - name: ResolutionActions
     description: Draft bounded action discovery plus manifest and portable-bundle export operations for resolved targets.
   - name: StoredExports
@@ -260,6 +262,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CompatibilityEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/action-plan:
+    get:
+      tags:
+        - ActionPlan
+      summary: Build a bounded action plan for one resolved target
+      description: >
+        Draft public boundary for surfacing a bounded recommendation plan for one
+        resolved target, optionally shaped by one bootstrap host profile preset.
+        This is not an execution engine, installer, or final action-routing policy contract.
+      operationId: planActions
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+        - name: host_profile_id
+          in: query
+          required: false
+          description: Optional bootstrap host profile preset identifier used for bounded host-aware recommendations.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Draft action-plan envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionPlanEnvelope'
+        '404':
+          description: Draft blocked action-plan envelope for an unresolved target
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionPlanEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -1236,6 +1275,103 @@ components:
       required:
         - code
         - message
+    ActionPlanEnvelope:
+      type: object
+      additionalProperties: false
+      description: >
+        Draft bounded action-plan envelope for one resolved target and an optional
+        bootstrap host profile preset. This is not a final execution, installer, or
+        runtime-routing contract.
+      properties:
+        status:
+          type: string
+          enum:
+            - planned
+            - blocked
+        target_ref:
+          type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
+        compatibility_status:
+          type: string
+          enum:
+            - compatible
+            - incompatible
+            - unknown
+        host_profile:
+          $ref: '#/components/schemas/HostProfileSummary'
+        primary_object:
+          $ref: '#/components/schemas/ObjectSummary'
+        source:
+          $ref: '#/components/schemas/SourceSummary'
+        compatibility_reasons:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompatibilityReason'
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionPlanEntry'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - target_ref
+        - compatibility_reasons
+        - actions
+        - notices
+    ActionPlanEntry:
+      type: object
+      additionalProperties: false
+      description: Draft bounded action-plan entry suitable for shared surfaces.
+      properties:
+        action_id:
+          type: string
+        label:
+          type: string
+        kind:
+          type: string
+        status:
+          type: string
+          enum:
+            - recommended
+            - available
+            - unavailable
+        reason_codes:
+          type: array
+          items:
+            type: string
+        reason_messages:
+          type: array
+          items:
+            type: string
+        route_hint:
+          type: string
+        parameter_hint:
+          type: string
+        representation_id:
+          type: string
+        representation_label:
+          type: string
+        representation_kind:
+          type: string
+        access_kind:
+          type: string
+        access_locator:
+          type: string
+        source_family:
+          type: string
+        source_locator:
+          type: string
+      required:
+        - action_id
+        - label
+        - kind
+        - status
+        - reason_codes
+        - reason_messages
     RepresentationSummary:
       type: object
       additionalProperties: false

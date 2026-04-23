@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from runtime.connectors.github_releases import GitHubReleasesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
+from runtime.engine.action_routing.service import DeterministicActionPlanService
 from runtime.engine.actions import ResolutionManifestExportService
 from runtime.engine.absence import DeterministicAbsenceService
 from runtime.engine.compatibility.service import DeterministicCompatibilityService
@@ -20,6 +21,7 @@ from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolut
 from runtime.engine.states import DeterministicSubjectStatesService
 from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBundleInspectionEngineService
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
+from runtime.gateway.public_api.action_plan_boundary import ActionPlanPublicApi
 from runtime.gateway.public_api.absence_boundary import AbsencePublicApi
 from runtime.gateway.public_api.comparison_boundary import ComparisonPublicApi
 from runtime.gateway.public_api.compatibility_boundary import CompatibilityPublicApi
@@ -38,6 +40,21 @@ def build_demo_resolution_jobs_public_api() -> ResolutionJobsPublicApi:
     resolution_service = ExactMatchResolutionService(catalog)
     job_service = InMemoryResolutionJobService(resolution_service)
     return ResolutionJobsPublicApi(job_service)
+
+
+def build_demo_action_plan_public_api() -> ActionPlanPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    resolution_service = ExactMatchResolutionService(catalog)
+    compatibility_service = DeterministicCompatibilityService(
+        catalog,
+        resolution_service=resolution_service,
+    )
+    action_plan_service = DeterministicActionPlanService(
+        catalog,
+        resolution_service=resolution_service,
+        compatibility_service=compatibility_service,
+    )
+    return ActionPlanPublicApi(action_plan_service)
 
 
 def build_demo_search_public_api() -> SearchPublicApi:
