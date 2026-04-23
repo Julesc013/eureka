@@ -65,6 +65,41 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("Unavailable", output)
         self.assertIn("Store resolution manifest locally", output)
 
+    def test_fetch_command_can_write_success_payload_and_report_blocked_cases(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_path = Path(temp_dir) / "synthetic-demo-app.bundle"
+            exit_code, output = run_cli(
+                "fetch",
+                KNOWN_TARGET_REF,
+                "--representation",
+                "rep.synthetic-demo-app.source",
+                "--output",
+                str(output_path),
+            )
+
+            blocked_exit_code, blocked_output = run_cli(
+                "fetch",
+                "github-release:cli/cli@v2.65.0",
+                "--representation",
+                "rep.github-release.cli.cli.release-metadata",
+                "--json",
+            )
+            blocked_payload = json.loads(blocked_output)
+            written_bytes = output_path.read_bytes()
+            output_exists = output_path.is_file()
+
+        self.assertEqual(exit_code, 0)
+        self.assertTrue(output_exists)
+        self.assertIn("Acquisition", output)
+        self.assertIn("status: fetched", output)
+        self.assertIn(f"output_path: {output_path}", output)
+        self.assertIn("synthetic-demo-app.bundle", output)
+        self.assertIn(b"EUREKA-SYNTHETIC-BUNDLE", written_bytes)
+
+        self.assertEqual(blocked_exit_code, 0)
+        self.assertEqual(blocked_payload["acquisition_status"], "unavailable")
+        self.assertEqual(blocked_payload["reason_codes"][0], "representation_not_fetchable")
+
     def test_plan_command_can_render_compare_strategy_emphasis(self) -> None:
         exit_code, output = run_cli(
             "plan",
@@ -175,6 +210,8 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("gh_2.65.0_windows_amd64.msi", output)
         self.assertIn("access_kind: download", output)
         self.assertIn("source_family: github_releases", output)
+        self.assertIn("is_fetchable: true", output)
+        self.assertIn("filename: gh_2.65.0_windows_amd64.msi", output)
 
     def test_handoff_command_renders_preferred_available_and_unsuitable_entries(self) -> None:
         exit_code, output = run_cli(
@@ -199,6 +236,7 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("Unsuitable", output)
         self.assertIn("gh_2.65.0_windows_amd64.msi", output)
         self.assertIn("host_incompatible_for_payload_representation", output)
+        self.assertIn("is_fetchable: true", output)
 
     def test_handoff_command_can_surface_unknown_payload_entries(self) -> None:
         exit_code, output = run_cli(

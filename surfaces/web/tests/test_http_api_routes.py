@@ -10,6 +10,7 @@ import unittest
 import zipfile
 
 from runtime.gateway.public_api import (
+    build_demo_acquisition_public_api,
     build_demo_action_plan_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
@@ -37,6 +38,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.app = WorkbenchWsgiApp(
             build_demo_resolution_jobs_public_api(),
+            acquisition_public_api=build_demo_acquisition_public_api(),
             action_plan_public_api=build_demo_action_plan_public_api(),
             absence_public_api=build_demo_absence_public_api(),
             comparison_public_api=build_demo_comparison_public_api(),
@@ -66,6 +68,8 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         )
         self.assertEqual(payload["workbench_session"]["representations"][0]["representation_kind"], "fixture_artifact")
         self.assertEqual(payload["workbench_session"]["representations"][1]["access_kind"], "view")
+        self.assertTrue(payload["workbench_session"]["representations"][0]["is_fetchable"])
+        self.assertFalse(payload["workbench_session"]["representations"][1]["is_fetchable"])
         self.assertEqual(payload["workbench_session"]["evidence"][0]["claim_kind"], "label")
         self.assertEqual(payload["action_plan"]["status"], "planned")
         self.assertEqual(payload["action_plan"]["strategy_profile"]["strategy_id"], "preserve")
@@ -102,6 +106,59 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         blocked_payload = json.loads(blocked_body)
         self.assertEqual(blocked_payload["status"], "blocked")
         self.assertEqual(blocked_payload["notices"][0]["code"], "target_ref_not_found")
+
+    def test_fetch_endpoint_returns_bytes_for_fetchable_representation_and_json_for_blocked_cases(self) -> None:
+        status, headers, body = self._request(
+            "/api/fetch",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "representation_id": "rep.synthetic-demo-app.source",
+            },
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/vnd.eureka.synthetic.bundle")
+        self.assertIn("synthetic-demo-app.bundle", headers["Content-Disposition"])
+        self.assertIn(b"EUREKA-SYNTHETIC-BUNDLE", body)
+
+        unavailable_status, unavailable_headers, unavailable_body = self._request(
+            "/api/fetch",
+            {
+                "target_ref": "github-release:cli/cli@v2.65.0",
+                "representation_id": "rep.github-release.cli.cli.release-metadata",
+            },
+        )
+        self.assertEqual(unavailable_status, "422 Unprocessable Entity")
+        self.assertEqual(unavailable_headers["Content-Type"], "application/json; charset=utf-8")
+        unavailable_payload = json.loads(unavailable_body)
+        self.assertEqual(unavailable_payload["acquisition_status"], "unavailable")
+        self.assertEqual(unavailable_payload["reason_codes"][0], "representation_not_fetchable")
+
+        blocked_status, _, blocked_body = self._request(
+            "/api/fetch",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "representation_id": "rep.synthetic-demo-app.missing",
+            },
+        )
+        self.assertEqual(blocked_status, "404 Not Found")
+        blocked_payload = json.loads(blocked_body)
+        self.assertEqual(blocked_payload["acquisition_status"], "blocked")
+        self.assertEqual(blocked_payload["reason_codes"][0], "representation_not_found")
+
+    def test_fetch_page_route_returns_bytes_for_fetchable_representation(self) -> None:
+        status, headers, body = self._request(
+            "/fetch",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "representation_id": "rep.synthetic-demo-app.source",
+            },
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/vnd.eureka.synthetic.bundle")
+        self.assertIn("synthetic-demo-app.bundle", headers["Content-Disposition"])
+        self.assertIn(b"EUREKA-SYNTHETIC-BUNDLE", body)
 
     def test_resolve_endpoint_returns_honest_blocked_outcome_for_unknown_target(self) -> None:
         status, headers, body = self._request("/api/resolve", {"target_ref": MISSING_TARGET_REF})
@@ -280,7 +337,10 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(payload["primary_object"]["label"], "GitHub CLI 2.65.0")
         self.assertEqual(len(payload["representations"]), 3)
         self.assertEqual(payload["representations"][0]["representation_kind"], "release_page")
+        self.assertFalse(payload["representations"][0]["is_fetchable"])
         self.assertEqual(payload["representations"][1]["access_kind"], "download")
+        self.assertTrue(payload["representations"][1]["is_fetchable"])
+        self.assertEqual(payload["representations"][1]["filename"], "gh_2.65.0_windows_amd64.msi")
         self.assertEqual(
             payload["representations"][1]["access_locator"],
             "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",

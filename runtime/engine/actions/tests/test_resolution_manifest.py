@@ -73,6 +73,7 @@ class ResolutionManifestExportServiceTestCase(unittest.TestCase):
                         "label": "Synthetic demo app fixture artifact",
                         "content_type": "application/vnd.eureka.synthetic.bundle",
                         "byte_length": 4096,
+                        "filename": "synthetic-demo-app.bundle",
                         "source_family": "synthetic_fixture",
                         "source_label": "Synthetic Fixture",
                         "source_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
@@ -80,6 +81,7 @@ class ResolutionManifestExportServiceTestCase(unittest.TestCase):
                         "access_kind": "inspect",
                         "access_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
                         "is_direct": False,
+                        "is_fetchable": True,
                     },
                     {
                         "representation_id": "rep.synthetic-demo-app.fixture-record",
@@ -94,6 +96,7 @@ class ResolutionManifestExportServiceTestCase(unittest.TestCase):
                         "access_kind": "view",
                         "access_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
                         "is_direct": False,
+                        "is_fetchable": False,
                     }
                 ],
                 "source_fixture": {

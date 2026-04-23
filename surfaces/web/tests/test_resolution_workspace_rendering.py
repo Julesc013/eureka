@@ -43,6 +43,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "label": "Synthetic demo app fixture artifact",
                         "content_type": "application/vnd.eureka.synthetic.bundle",
                         "byte_length": 4096,
+                        "filename": "synthetic-demo-app.bundle",
                         "source_family": "synthetic_fixture",
                         "source_label": "Synthetic Fixture",
                         "source_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
@@ -50,6 +51,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "access_kind": "inspect",
                         "access_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
                         "is_direct": False,
+                        "is_fetchable": True,
                     },
                     {
                         "representation_id": "rep.synthetic-demo-app.fixture-record",
@@ -64,6 +66,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "access_kind": "view",
                         "access_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
                         "is_direct": False,
+                        "is_fetchable": False,
                     },
                 ],
             },
@@ -180,6 +183,8 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("Synthetic demo app fixture artifact", html)
         self.assertIn("fixture_artifact", html)
         self.assertIn("inspect", html)
+        self.assertIn("<dt>Fetchable</dt><dd>true</dd>", html)
+        self.assertIn("/fetch?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&amp;representation_id=rep.synthetic-demo-app.source", html)
         self.assertIn("Synthetic demo app fixture record", html)
         self.assertIn("contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0", html)
         self.assertIn("Recommended Next Steps", html)
@@ -344,6 +349,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "access_kind": "view",
                         "access_locator": "https://github.com/cli/cli/releases/tag/v2.65.0",
                         "is_direct": False,
+                        "is_fetchable": False,
                     },
                     {
                         "representation_id": "rep.github-release.cli.cli.v2.65.0.asset.0",
@@ -351,6 +357,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "label": "gh_2.65.0_windows_amd64.msi",
                         "content_type": "application/x-msi",
                         "byte_length": 12123904,
+                        "filename": "gh_2.65.0_windows_amd64.msi",
                         "source_family": "github_releases",
                         "source_label": "GitHub Releases",
                         "source_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
@@ -358,6 +365,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "access_kind": "download",
                         "access_locator": "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",
                         "is_direct": True,
+                        "is_fetchable": True,
                     },
                 ],
             }
@@ -371,6 +379,8 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("Known Representations/Access Paths", html)
         self.assertIn("GitHub CLI 2.65.0 release page", html)
         self.assertIn("gh_2.65.0_windows_amd64.msi", html)
+        self.assertIn("<dt>Fetchable</dt><dd>true</dd>", html)
+        self.assertIn("/fetch?target_ref=github-release%3Acli%2Fcli%40v2.65.0&amp;representation_id=rep.github-release.cli.cli.v2.65.0.asset.0", html)
 
     def test_resolution_rendering_can_embed_representation_handoff_section(self) -> None:
         html = render_resolution_workspace_html(
@@ -432,6 +442,8 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "access_kind": "download",
                         "source_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
                         "access_locator": "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",
+                        "filename": "gh_2.65.0_windows_amd64.msi",
+                        "is_fetchable": True,
                     },
                     {
                         "representation_id": "rep.github-release.cli.cli.release-metadata",
@@ -446,6 +458,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "access_kind": "view",
                         "source_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
                         "access_locator": "https://github.com/cli/cli/releases/tag/v2.65.0",
+                        "is_fetchable": False,
                     },
                     {
                         "representation_id": "rep.github-release.cli.cli.v2.65.0.asset.1",
@@ -460,6 +473,8 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "access_kind": "download",
                         "source_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
                         "access_locator": "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_checksums.txt",
+                        "filename": "gh_2.65.0_checksums.txt",
+                        "is_fetchable": True,
                     },
                 ],
                 "notices": [],

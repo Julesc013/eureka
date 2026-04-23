@@ -67,7 +67,9 @@ class RepresentationSelectionViewModelsTestCase(unittest.TestCase):
                         "access_locator": "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",
                         "content_type": "application/x-msi",
                         "byte_length": 12123904,
+                        "filename": "gh_2.65.0_windows_amd64.msi",
                         "is_direct": True,
+                        "is_fetchable": True,
                         "host_profile_id": "windows-x86_64",
                         "strategy_id": "acquire",
                     }
@@ -86,6 +88,8 @@ class RepresentationSelectionViewModelsTestCase(unittest.TestCase):
         self.assertEqual(view_model["strategy_profile"]["strategy_id"], "acquire")
         self.assertEqual(view_model["selections"][0]["selection_status"], "preferred")
         self.assertEqual(view_model["selections"][0]["access_kind"], "download")
+        self.assertEqual(view_model["selections"][0]["filename"], "gh_2.65.0_windows_amd64.msi")
+        self.assertTrue(view_model["selections"][0]["is_fetchable"])
 
 
 if __name__ == "__main__":
