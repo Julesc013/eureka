@@ -17,6 +17,7 @@ This bootstrap CLI:
 - shows bounded representation-selection and handoff recommendations for one resolved target, preserving preferred, available, unsuitable, and unknown choices without implying downloads, installers, launches, or final runtime-routing behavior
 - shows bounded acquisition results for one explicitly chosen representation, optionally writing deterministic local fixture bytes to disk without implying live downloading, installers, or execution behavior
 - shows bounded decomposition results for one explicitly chosen fetched representation, including compact ZIP member listings plus explicit unsupported or unavailable outcomes without implying extraction, installers, import, or restore behavior
+- shows bounded member-readback results for one explicitly chosen member inside one explicitly chosen fetched representation, including compact text previews or optional local byte writes without implying extraction-to-disk by default, installers, import, or restore behavior
 - shows bounded recommended, available, and unavailable next-step actions for one resolved target, optionally shaped by one bootstrap host profile preset plus one bootstrap strategy profile, without implying execution, installer, runtime-routing, or personalization behavior
 - does not settle the long-term CLI, TUI, or native-shell architecture
 
@@ -30,6 +31,7 @@ Commands currently exposed:
 - `handoff <target_ref> [--host <host_profile_id>] [--strategy <strategy_id>]`
 - `fetch <target_ref> --representation <representation_id> [--output <path>]`
 - `decompose <target_ref> --representation <representation_id>`
+- `member <target_ref> --representation <representation_id> --member <member_path> [--output <path>]`
 - `explain-resolve-miss <target_ref>`
 - `explain-search-miss <query>`
 - `states <subject_key>`

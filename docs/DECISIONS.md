@@ -197,3 +197,9 @@
 - Status: accepted
 - Decision: Eureka now inspects one explicitly chosen fetched bounded representation into a compact member listing through a transport-neutral public decomposition boundary, supporting ZIP only in this bootstrap slice and surfacing decomposed, unsupported, unavailable, and blocked outcomes through current web, CLI, and HTTP API surfaces.
 - Why: this proves the architecture can move from bounded payload retrieval into bounded package-member inspection without introducing installers, import or restore behavior, extraction to disk, broad format coverage, or a final extractor or package-management model.
+
+## ADR-034: Add a Bounded Member-Readback Seam Without Becoming a General Extractor
+
+- Status: accepted
+- Decision: Eureka now reads one explicitly chosen member from one explicitly chosen fetched representation through a transport-neutral public member-access boundary, supporting ZIP member readback only in this bootstrap slice and surfacing read, previewed, unsupported, unavailable, and blocked outcomes through current web, CLI, and HTTP API surfaces.
+- Why: this proves the architecture can move from bounded package-member listing into bounded inside-the-package member access without introducing extraction-to-disk by default, installers, import or restore behavior, broad format coverage, or a final extraction or package-management model.

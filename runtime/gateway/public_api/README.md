@@ -16,6 +16,7 @@ Current bootstrap scope:
 - select one bounded preferred representation and explicit alternatives for one resolved target through a deterministic public handoff boundary, optionally shaped by one bootstrap host profile preset and one bootstrap strategy profile
 - fetch one explicitly chosen bounded representation payload for one resolved target through a deterministic public acquisition boundary
 - inspect one explicitly chosen fetched bounded representation into a compact member listing through a deterministic public decomposition boundary
+- read one explicitly chosen bounded member from one explicitly chosen fetched representation through a deterministic public member-access boundary
 - build a bounded action plan for one resolved target, optionally shaped by one bootstrap host profile preset, one bootstrap strategy profile, and bounded local store context
 - list bounded manifest-export and bundle-export actions for a resolved bounded target
 - export a deterministic machine-readable resolution manifest through the public boundary
@@ -47,6 +48,8 @@ Current bootstrap scope:
   implementing a web or native shell
 - map public decomposition envelopes into a shared decomposition view model without
   implementing a web or native shell
+- map public member-access envelopes into a shared member-access view model without
+  implementing a web or native shell
 - map public action-plan envelopes into a shared action-plan view model without
   implementing a web or native shell
 - map public action envelopes into a shared action-panel view model without
@@ -68,7 +71,7 @@ Out of scope here:
 - final comparison, merge, or truth-selection behavior beyond the current bounded disagreement seam
 - final object, subject, or state identity behavior beyond the current bounded timeline seam
 - final diagnostic or absence-reasoning behavior beyond the current bounded miss-explanation seam
-- installers, downloads from external sources, import, restore, rollback behavior, or final representation-selection, handoff, acquisition, or decomposition semantics
+- installers, downloads from external sources, import, restore, rollback behavior, or final representation-selection, handoff, acquisition, decomposition, or member-readback semantics
 - final compatibility oracle behavior, richer host profile vocabularies, or runtime-routing behavior
 - final action-routing policy behavior, user-strategy semantics, execution semantics, installers, or workflow orchestration
 - ranking, fuzzy matching, or broader retrieval semantics
