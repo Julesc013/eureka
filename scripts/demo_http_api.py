@@ -22,6 +22,7 @@ from runtime.gateway.public_api import (
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
     build_demo_decomposition_public_api,
+    build_demo_member_access_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -117,6 +118,19 @@ def main(argv: list[str] | None = None) -> int:
     decompose_parser.add_argument("target_ref")
     decompose_parser.add_argument("--representation", dest="representation_id", required=True)
 
+    member_parser = subparsers.add_parser(
+        "member",
+        help="Read one bounded member from one decomposed representation.",
+    )
+    member_parser.add_argument("target_ref")
+    member_parser.add_argument("--representation", dest="representation_id", required=True)
+    member_parser.add_argument("--member", dest="member_path", required=True)
+    member_parser.add_argument(
+        "--raw",
+        action="store_true",
+        help="Return raw member bytes instead of the default JSON envelope.",
+    )
+
     representations_parser = subparsers.add_parser(
         "representations",
         help="Fetch machine-readable bounded known representations/access paths for one target.",
@@ -207,6 +221,14 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
             target_ref=args.target_ref,
             representation_id=args.representation_id,
         )
+    elif args.command == "member":
+        path = _path(
+            "/api/member",
+            target_ref=args.target_ref,
+            representation_id=args.representation_id,
+            member_path=args.member_path,
+            raw="1" if args.raw else None,
+        )
     elif args.command == "representations":
         path = _path("/api/representations", target_ref=args.target_ref)
     elif args.command == "states":
@@ -269,6 +291,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
         comparison_public_api=build_demo_comparison_public_api(),
         compatibility_public_api=build_demo_compatibility_public_api(),
         decomposition_public_api=build_demo_decomposition_public_api(),
+        member_access_public_api=build_demo_member_access_public_api(),
         handoff_public_api=build_demo_representation_selection_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
         representations_public_api=build_demo_representations_public_api(),

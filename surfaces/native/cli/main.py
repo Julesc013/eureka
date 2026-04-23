@@ -37,6 +37,9 @@ from runtime.gateway.public_api import (
     CompatibilityPublicApi,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
+    MemberAccessPublicApi,
+    MemberAccessReadRequest,
+    member_access_envelope_to_view_model,
     InspectResolutionBundleRequest,
     RepresentationSelectionEvaluationRequest,
     RepresentationCatalogRequest,
@@ -57,6 +60,7 @@ from runtime.gateway.public_api import (
     action_plan_envelope_to_view_model,
     build_resolution_workspace_view_models,
     build_demo_decomposition_public_api,
+    build_demo_member_access_public_api,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
     compatibility_envelope_to_view_model,
@@ -77,6 +81,7 @@ from surfaces.native.cli.formatters import (
     format_comparison,
     format_decomposition,
     format_handoff,
+    format_member_access,
     format_manifest_export,
     format_representations,
     format_resolution_workspace,
@@ -97,6 +102,7 @@ class CliContext:
     acquisition_public_api: AcquisitionPublicApi
     action_plan_public_api: ActionPlanPublicApi
     decomposition_public_api: DecompositionPublicApi
+    member_access_public_api: MemberAccessPublicApi
     resolution_public_api: ResolutionJobsPublicApi
     actions_public_api: ResolutionActionsPublicApi
     inspection_public_api: ResolutionBundleInspectionPublicApi
@@ -168,6 +174,32 @@ def main(
                 args.json,
                 decomposition,
                 format_decomposition(decomposition),
+            )
+
+        if args.command == "member":
+            response = cli_context.member_access_public_api.read_member(
+                MemberAccessReadRequest.from_parts(
+                    args.target_ref,
+                    args.representation_id,
+                    args.member_path,
+                )
+            )
+            member_access = member_access_envelope_to_view_model(response.body)
+            emitted_payload: dict[str, Any] = dict(member_access)
+            if response.status_code == 200 and args.output is not None and response.payload is not None:
+                output_path = _write_output_payload(Path(args.output), response.payload)
+                emitted_payload["output_path"] = str(output_path)
+                return _emit(
+                    output,
+                    args.json,
+                    emitted_payload,
+                    format_member_access(member_access, output_path=str(output_path)),
+                )
+            return _emit(
+                output,
+                args.json,
+                emitted_payload,
+                format_member_access(member_access),
             )
 
         if args.command == "resolve":
@@ -497,6 +529,29 @@ def build_parser() -> argparse.ArgumentParser:
         help="Explicit bounded representation_id to inspect.",
     )
 
+    member_parser = subparsers.add_parser(
+        "member",
+        parents=[json_parent],
+        help="Read one bounded member from one decomposed representation through the public boundary.",
+    )
+    member_parser.add_argument("target_ref")
+    member_parser.add_argument(
+        "--representation",
+        dest="representation_id",
+        required=True,
+        help="Explicit bounded representation_id containing the member.",
+    )
+    member_parser.add_argument(
+        "--member",
+        dest="member_path",
+        required=True,
+        help="Explicit bounded member_path to read.",
+    )
+    member_parser.add_argument(
+        "--output",
+        help="Optional local path to write member bytes to instead of only reporting metadata or preview text.",
+    )
+
     export_manifest_parser = subparsers.add_parser(
         "export-manifest",
         parents=[json_parent],
@@ -555,6 +610,7 @@ def build_cli_context(*, store_root: str | None) -> CliContext:
         acquisition_public_api=build_demo_acquisition_public_api(),
         action_plan_public_api=build_demo_action_plan_public_api(),
         decomposition_public_api=build_demo_decomposition_public_api(),
+        member_access_public_api=build_demo_member_access_public_api(),
         resolution_public_api=build_demo_resolution_jobs_public_api(),
         actions_public_api=build_demo_resolution_actions_public_api(),
         inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),

@@ -18,6 +18,9 @@ from runtime.gateway.public_api import (
     DecompositionInspectionRequest,
     DecompositionPublicApi,
     decomposition_envelope_to_view_model,
+    MemberAccessPublicApi,
+    MemberAccessReadRequest,
+    member_access_envelope_to_view_model,
     ExplainResolveMissRequest,
     ExplainSearchMissRequest,
     InspectResolutionBundleRequest,
@@ -75,6 +78,12 @@ def build_api_index_document() -> dict[str, Any]:
                 "method": "GET",
                 "query_parameters": ["target_ref", "representation_id"],
                 "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/member",
+                "method": "GET",
+                "query_parameters": ["target_ref", "representation_id", "member_path", "raw"],
+                "response_content_types": ["application/octet-stream", "application/json"],
             },
             {
                 "path": "/api/action-plan",
@@ -200,6 +209,7 @@ def handle_api_request(
     compatibility_public_api: CompatibilityPublicApi | None,
     acquisition_public_api: AcquisitionPublicApi | None,
     decomposition_public_api: DecompositionPublicApi | None,
+    member_access_public_api: MemberAccessPublicApi | None,
     action_plan_public_api: ActionPlanPublicApi | None,
     handoff_public_api: RepresentationSelectionPublicApi | None,
     subject_states_public_api: SubjectStatesPublicApi | None,
@@ -360,6 +370,48 @@ def handle_api_request(
         return json_response(
             response.status_code,
             decomposition_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/member":
+        if member_access_public_api is None:
+            return _service_unavailable(
+                "member_access_unavailable",
+                "This bootstrap HTTP API was not configured with a public member-access boundary.",
+            )
+        target_ref = _required_query_value(query, "target_ref")
+        if target_ref is None:
+            return _missing_query_value("target_ref")
+        representation_id = _required_query_value(query, "representation_id")
+        if representation_id is None:
+            return _missing_query_value("representation_id")
+        member_path = _required_query_value(query, "member_path")
+        if member_path is None:
+            return _missing_query_value("member_path")
+        try:
+            response = member_access_public_api.read_member(
+                MemberAccessReadRequest.from_parts(target_ref, representation_id, member_path)
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_member_access_request",
+                message=str(error),
+            )
+        if (
+            response.status_code == 200
+            and response.payload is not None
+            and response.content_type is not None
+            and _required_query_value(query, "raw") is not None
+        ):
+            return bytes_response(
+                response.status_code,
+                content_type=response.content_type,
+                payload=response.payload,
+                filename=response.filename,
+            )
+        return json_response(
+            response.status_code,
+            member_access_envelope_to_view_model(response.body),
         )
 
     if path == "/api/handoff":

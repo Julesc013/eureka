@@ -18,6 +18,7 @@ from runtime.gateway.public_api import (
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
     build_demo_decomposition_public_api,
+    build_demo_member_access_public_api,
     build_demo_representation_selection_public_api,
     InspectResolutionBundleRequest,
     build_demo_representations_public_api,
@@ -319,6 +320,7 @@ def main() -> int:
         resolution_public_api,
         acquisition_public_api=acquisition_public_api,
         decomposition_public_api=decomposition_public_api,
+        member_access_public_api=build_demo_member_access_public_api(),
         action_plan_public_api=action_plan_public_api,
         absence_public_api=absence_public_api,
         comparison_public_api=comparison_public_api,
@@ -364,10 +366,14 @@ def main() -> int:
             f"http://{args.host}:{args.port}/fetch?target_ref={quote('github-release:cli/cli@v2.65.0', safe='')}&representation_id={quote('rep.github-release.cli.cli.v2.65.0.asset.1', safe='')}",
             "Serving Eureka bounded decomposition route at "
             f"http://{args.host}:{args.port}/decompose?target_ref={quote('fixture:software/synthetic-demo-app@1.0.0', safe='')}&representation_id={quote('rep.synthetic-demo-app.package', safe='')}",
+            "Serving Eureka bounded member preview route at "
+            f"http://{args.host}:{args.port}/member?target_ref={quote('fixture:software/synthetic-demo-app@1.0.0', safe='')}&representation_id={quote('rep.synthetic-demo-app.package', safe='')}&member_path={quote('README.txt', safe='')}",
             "Serving Eureka bootstrap HTTP API fetch route at "
             f"http://{args.host}:{args.port}/api/fetch?target_ref={quote('github-release:cli/cli@v2.65.0', safe='')}&representation_id={quote('rep.github-release.cli.cli.v2.65.0.asset.1', safe='')}",
             "Serving Eureka bootstrap HTTP API decomposition route at "
             f"http://{args.host}:{args.port}/api/decompose?target_ref={quote('fixture:software/synthetic-demo-app@1.0.0', safe='')}&representation_id={quote('rep.synthetic-demo-app.package', safe='')}",
+            "Serving Eureka bootstrap HTTP API member route at "
+            f"http://{args.host}:{args.port}/api/member?target_ref={quote('fixture:software/synthetic-demo-app@1.0.0', safe='')}&representation_id={quote('rep.synthetic-demo-app.package', safe='')}&member_path={quote('README.txt', safe='')}",
             "Serving Eureka representations page at "
             f"http://{args.host}:{args.port}/representations?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bootstrap HTTP API representations route at "

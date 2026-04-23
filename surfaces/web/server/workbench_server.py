@@ -20,6 +20,9 @@ from runtime.gateway.public_api import (
     DecompositionInspectionRequest,
     DecompositionPublicApi,
     decomposition_envelope_to_view_model,
+    MemberAccessPublicApi,
+    MemberAccessReadRequest,
+    member_access_envelope_to_view_model,
     ExplainResolveMissRequest,
     ExplainSearchMissRequest,
     InspectResolutionBundleRequest,
@@ -62,6 +65,7 @@ from surfaces.web.workbench import (
     render_comparison_html,
     render_decomposition_html,
     render_handoff_html,
+    render_member_access_html,
     render_representations_html,
     render_resolution_workspace_html,
     render_search_results_html,
@@ -344,6 +348,55 @@ def render_decomposition_page(
     )
 
 
+def render_member_access_page(
+    public_api: MemberAccessPublicApi | None,
+    target_ref: str,
+    representation_id: str,
+    member_path: str,
+) -> str:
+    normalized_target_ref = target_ref.strip()
+    normalized_representation_id = representation_id.strip()
+    normalized_member_path = member_path.strip()
+    if not normalized_representation_id or not normalized_member_path:
+        return render_member_access_html(
+            None,
+            target_ref=normalized_target_ref,
+            representation_id=normalized_representation_id,
+            member_path=normalized_member_path,
+            message="Provide bounded representation_id and member_path values to read one listed package member.",
+        )
+    if public_api is None:
+        return render_member_access_html(
+            None,
+            target_ref=normalized_target_ref,
+            representation_id=normalized_representation_id,
+            member_path=normalized_member_path,
+            message="This bootstrap workbench was not configured with a public member-access boundary.",
+        )
+    try:
+        response = public_api.read_member(
+            MemberAccessReadRequest.from_parts(
+                normalized_target_ref,
+                normalized_representation_id,
+                normalized_member_path,
+            )
+        )
+    except ValueError as error:
+        return render_member_access_html(
+            None,
+            target_ref=normalized_target_ref,
+            representation_id=normalized_representation_id,
+            member_path=normalized_member_path,
+            message=str(error),
+        )
+    return render_member_access_html(
+        member_access_envelope_to_view_model(response.body),
+        target_ref=normalized_target_ref,
+        representation_id=normalized_representation_id,
+        member_path=normalized_member_path,
+    )
+
+
 def render_handoff_page(
     public_api: RepresentationSelectionPublicApi | None,
     target_ref: str,
@@ -454,6 +507,7 @@ class WorkbenchWsgiApp:
         compatibility_public_api: CompatibilityPublicApi | None = None,
         acquisition_public_api: AcquisitionPublicApi | None = None,
         decomposition_public_api: DecompositionPublicApi | None = None,
+        member_access_public_api: MemberAccessPublicApi | None = None,
         action_plan_public_api: ActionPlanPublicApi | None = None,
         handoff_public_api: RepresentationSelectionPublicApi | None = None,
         subject_states_public_api: SubjectStatesPublicApi | None = None,
@@ -471,6 +525,7 @@ class WorkbenchWsgiApp:
         self._compatibility_public_api = compatibility_public_api
         self._acquisition_public_api = acquisition_public_api
         self._decomposition_public_api = decomposition_public_api
+        self._member_access_public_api = member_access_public_api
         self._action_plan_public_api = action_plan_public_api
         self._handoff_public_api = handoff_public_api
         self._subject_states_public_api = subject_states_public_api
@@ -500,6 +555,7 @@ class WorkbenchWsgiApp:
             compatibility_public_api=self._compatibility_public_api,
             acquisition_public_api=self._acquisition_public_api,
             decomposition_public_api=self._decomposition_public_api,
+            member_access_public_api=self._member_access_public_api,
             action_plan_public_api=self._action_plan_public_api,
             handoff_public_api=self._handoff_public_api,
             subject_states_public_api=self._subject_states_public_api,
@@ -532,6 +588,7 @@ class WorkbenchWsgiApp:
             "/compatibility",
             "/decompose",
             "/fetch",
+            "/member",
             "/action-plan",
             "/handoff",
             "/representations",
@@ -552,7 +609,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/action-plan', '/handoff', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/action-plan', '/handoff', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -686,6 +743,87 @@ class WorkbenchWsgiApp:
                 self._decomposition_public_api,
                 target_ref,
                 representation_id,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/member":
+            target_ref = self._resolve_target_ref(query_string)
+            representation_id = self._resolve_representation_id(query_string)
+            member_path = self._resolve_member_path(query_string)
+            if self._resolve_raw_requested(query_string):
+                if not representation_id or not member_path:
+                    return self._respond(
+                        start_response,
+                        status="200 OK",
+                        body=render_member_access_html(
+                            None,
+                            target_ref=target_ref,
+                            representation_id=representation_id,
+                            member_path=member_path,
+                            message="Provide bounded representation_id and member_path values to read raw member bytes.",
+                        ),
+                    )
+                if self._member_access_public_api is None:
+                    return self._respond(
+                        start_response,
+                        status="200 OK",
+                        body=render_member_access_html(
+                            None,
+                            target_ref=target_ref,
+                            representation_id=representation_id,
+                            member_path=member_path,
+                            message="This bootstrap workbench was not configured with a public member-access boundary.",
+                        ),
+                    )
+                try:
+                    response = self._member_access_public_api.read_member(
+                        MemberAccessReadRequest.from_parts(target_ref, representation_id, member_path)
+                    )
+                except ValueError as error:
+                    return self._respond(
+                        start_response,
+                        status="200 OK",
+                        body=render_member_access_html(
+                            None,
+                            target_ref=target_ref,
+                            representation_id=representation_id,
+                            member_path=member_path,
+                            message=str(error),
+                        ),
+                    )
+                if response.status_code == 200 and response.payload is not None and response.content_type is not None:
+                    extra_headers: list[tuple[str, str]] = []
+                    if response.filename is not None:
+                        extra_headers.append(
+                            ("Content-Disposition", f"attachment; filename=\"{response.filename}\""),
+                        )
+                    return self._respond_bytes(
+                        start_response,
+                        status="200 OK",
+                        payload=response.payload,
+                        content_type=response.content_type,
+                        extra_headers=extra_headers,
+                    )
+                return self._respond(
+                    start_response,
+                    status=(
+                        "404 Not Found"
+                        if response.status_code == 404
+                        else "422 Unprocessable Entity"
+                        if response.status_code == 422
+                        else "503 Service Unavailable"
+                    ),
+                    body=render_member_access_html(
+                        member_access_envelope_to_view_model(response.body),
+                        target_ref=target_ref,
+                        representation_id=representation_id,
+                        member_path=member_path,
+                    ),
+                )
+            page = render_member_access_page(
+                self._member_access_public_api,
+                target_ref,
+                representation_id,
+                member_path,
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/representations":
@@ -872,6 +1010,15 @@ class WorkbenchWsgiApp:
         query = parse_qs(query_string, keep_blank_values=False)
         raw_representation_id = query.get("representation_id", [""])[0].strip()
         return raw_representation_id
+
+    def _resolve_member_path(self, query_string: str) -> str:
+        query = parse_qs(query_string, keep_blank_values=False)
+        raw_member_path = query.get("member_path", [""])[0].strip()
+        return raw_member_path
+
+    def _resolve_raw_requested(self, query_string: str) -> bool:
+        query = parse_qs(query_string, keep_blank_values=False)
+        return bool(query.get("raw", [""])[0].strip())
 
     def _respond(
         self,
