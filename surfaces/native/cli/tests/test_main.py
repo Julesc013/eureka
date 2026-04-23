@@ -100,6 +100,39 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertEqual(blocked_payload["acquisition_status"], "unavailable")
         self.assertEqual(blocked_payload["reason_codes"][0], "representation_not_fetchable")
 
+    def test_decompose_command_renders_member_listing_and_unsupported_shape(self) -> None:
+        exit_code, output = run_cli(
+            "decompose",
+            KNOWN_TARGET_REF,
+            "--representation",
+            "rep.synthetic-demo-app.package",
+        )
+
+        unsupported_exit_code, unsupported_output = run_cli(
+            "decompose",
+            "github-release:cli/cli@v2.65.0",
+            "--representation",
+            "rep.github-release.cli.cli.v2.65.0.asset.0",
+            "--json",
+        )
+        unsupported_payload = json.loads(unsupported_output)
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Decomposition", output)
+        self.assertIn("status: decomposed", output)
+        self.assertIn("representation_id: rep.synthetic-demo-app.package", output)
+        self.assertIn("Members", output)
+        self.assertIn("config/settings.json", output)
+        self.assertIn("docs/evidence.txt", output)
+        self.assertIn("README.txt", output)
+
+        self.assertEqual(unsupported_exit_code, 0)
+        self.assertEqual(unsupported_payload["decomposition_status"], "unsupported")
+        self.assertEqual(
+            unsupported_payload["reason_codes"][0],
+            "representation_format_unsupported",
+        )
+
     def test_plan_command_can_render_compare_strategy_emphasis(self) -> None:
         exit_code, output = run_cli(
             "plan",

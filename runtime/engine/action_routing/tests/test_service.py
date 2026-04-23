@@ -48,7 +48,7 @@ class DeterministicActionPlanServiceTestCase(unittest.TestCase):
         )
         self.assertEqual(
             next(action for action in result.actions if action.action_id == "access_representation").status,
-            "unavailable",
+            "available",
         )
 
     def test_same_target_produces_different_emphasis_under_two_strategies(self) -> None:
@@ -112,7 +112,7 @@ class DeterministicActionPlanServiceTestCase(unittest.TestCase):
             with self.subTest(strategy_id=strategy_id):
                 result = self.service.plan_actions(
                     ActionPlanRequest.from_parts(
-                        "fixture:software/synthetic-demo-app@1.0.0",
+                        "fixture:software/archivebox@0.8.5",
                         None,
                         strategy_id,
                     )

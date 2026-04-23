@@ -15,6 +15,7 @@ from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
+    build_demo_decomposition_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -43,6 +44,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             absence_public_api=build_demo_absence_public_api(),
             comparison_public_api=build_demo_comparison_public_api(),
             compatibility_public_api=build_demo_compatibility_public_api(),
+            decomposition_public_api=build_demo_decomposition_public_api(),
             handoff_public_api=build_demo_representation_selection_public_api(),
             subject_states_public_api=build_demo_subject_states_public_api(),
             representations_public_api=build_demo_representations_public_api(),
@@ -159,6 +161,74 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(headers["Content-Type"], "application/vnd.eureka.synthetic.bundle")
         self.assertIn("synthetic-demo-app.bundle", headers["Content-Disposition"])
         self.assertIn(b"EUREKA-SYNTHETIC-BUNDLE", body)
+
+    def test_decompose_endpoint_returns_member_listing_for_supported_representation_and_unsupported_shape_for_binary(self) -> None:
+        status, headers, body = self._request(
+            "/api/decompose",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "representation_id": "rep.synthetic-demo-app.package",
+            },
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["decomposition_status"], "decomposed")
+        self.assertEqual(payload["representation_kind"], "fixture_archive")
+        self.assertEqual(
+            [member["member_path"] for member in payload["members"]],
+            [
+                "config/settings.json",
+                "docs/evidence.txt",
+                "README.txt",
+            ],
+        )
+        self.assertEqual(payload["members"][0]["content_type"], "application/json")
+
+        unsupported_status, unsupported_headers, unsupported_body = self._request(
+            "/api/decompose",
+            {
+                "target_ref": "github-release:cli/cli@v2.65.0",
+                "representation_id": "rep.github-release.cli.cli.v2.65.0.asset.0",
+            },
+        )
+        self.assertEqual(unsupported_status, "422 Unprocessable Entity")
+        self.assertEqual(unsupported_headers["Content-Type"], "application/json; charset=utf-8")
+        unsupported_payload = json.loads(unsupported_body)
+        self.assertEqual(unsupported_payload["decomposition_status"], "unsupported")
+        self.assertEqual(
+            unsupported_payload["reason_codes"][0],
+            "representation_format_unsupported",
+        )
+
+        blocked_status, _, blocked_body = self._request(
+            "/api/decompose",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "representation_id": "rep.synthetic-demo-app.unknown",
+            },
+        )
+        self.assertEqual(blocked_status, "404 Not Found")
+        blocked_payload = json.loads(blocked_body)
+        self.assertEqual(blocked_payload["decomposition_status"], "blocked")
+        self.assertEqual(blocked_payload["reason_codes"][0], "representation_not_found")
+
+    def test_decompose_page_route_renders_html_for_supported_representation(self) -> None:
+        status, headers, body = self._request(
+            "/decompose",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "representation_id": "rep.synthetic-demo-app.package",
+            },
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "text/html; charset=utf-8")
+        html = body.decode("utf-8")
+        self.assertIn("Eureka Bounded Decomposition", html)
+        self.assertIn("config/settings.json", html)
+        self.assertIn("README.txt", html)
 
     def test_resolve_endpoint_returns_honest_blocked_outcome_for_unknown_target(self) -> None:
         status, headers, body = self._request("/api/resolve", {"target_ref": MISSING_TARGET_REF})

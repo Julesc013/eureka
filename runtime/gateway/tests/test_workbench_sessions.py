@@ -77,6 +77,22 @@ class WorkbenchSessionMappingTestCase(unittest.TestCase):
                         "is_direct": False,
                         "is_fetchable": False,
                     },
+                    {
+                        "representation_id": "rep.synthetic-demo-app.package",
+                        "representation_kind": "fixture_archive",
+                        "label": "Synthetic demo app package archive",
+                        "content_type": "application/zip",
+                        "byte_length": 501,
+                        "filename": "synthetic-demo-app-package.zip",
+                        "source_family": "synthetic_fixture",
+                        "source_label": "Synthetic Fixture",
+                        "source_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                        "access_path_id": "access.synthetic-demo-app.package",
+                        "access_kind": "download",
+                        "access_locator": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+                        "is_direct": True,
+                        "is_fetchable": True,
+                    },
                 ],
                 "evidence": [
                     {

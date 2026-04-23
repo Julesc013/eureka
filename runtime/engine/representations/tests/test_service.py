@@ -37,9 +37,10 @@ class DeterministicRepresentationsServiceTestCase(unittest.TestCase):
         )
 
         self.assertEqual(result.status, "available")
-        self.assertEqual(len(result.representations), 2)
+        self.assertEqual(len(result.representations), 3)
         self.assertEqual(result.representations[0].representation_kind, "fixture_artifact")
         self.assertEqual(result.representations[0].access_kind, "inspect")
+        self.assertEqual(result.representations[2].representation_kind, "fixture_archive")
         self.assertEqual(
             result.representations[1].access_locator,
             "contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",

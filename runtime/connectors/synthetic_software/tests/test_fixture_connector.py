@@ -25,8 +25,9 @@ class SyntheticSoftwareConnectorTestCase(unittest.TestCase):
             records[0].source_locator,
             "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
         )
-        self.assertEqual(len(records[0].payload["representations"]), 2)
+        self.assertEqual(len(records[0].payload["representations"]), 3)
         self.assertEqual(records[0].payload["representations"][0]["access_path"]["kind"], "inspect")
+        self.assertEqual(records[0].payload["representations"][2]["kind"], "fixture_archive")
         self.assertEqual(records[2].payload["compatibility"]["required_os_families"], ["windows", "linux", "macos"])
         self.assertEqual(records[3].payload["compatibility"]["required_architectures"], ["x86_64"])
 
