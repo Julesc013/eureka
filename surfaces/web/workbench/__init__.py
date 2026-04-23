@@ -1,5 +1,6 @@
 """Workbench rendering helpers for the bootstrap Eureka web surface."""
 
+from surfaces.web.workbench.render_action_plan import render_action_plan_html
 from surfaces.web.workbench.render_absence_report import render_absence_report_html
 from surfaces.web.workbench.render_bundle_inspection import render_bundle_inspection_html
 from surfaces.web.workbench.render_compatibility import render_compatibility_html
@@ -10,6 +11,7 @@ from surfaces.web.workbench.render_representations import render_representations
 from surfaces.web.workbench.render_subject_states import render_subject_states_html
 
 __all__ = [
+    "render_action_plan_html",
     "render_absence_report_html",
     "render_bundle_inspection_html",
     "render_compatibility_html",

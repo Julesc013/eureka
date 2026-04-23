@@ -16,6 +16,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.gateway.public_api import (
+    build_demo_action_plan_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
@@ -74,6 +75,14 @@ def main(argv: list[str] | None = None) -> int:
     compare_parser = subparsers.add_parser("compare", help="Fetch machine-readable side-by-side comparison.")
     compare_parser.add_argument("left_target_ref")
     compare_parser.add_argument("right_target_ref")
+
+    action_plan_parser = subparsers.add_parser(
+        "action-plan",
+        help="Fetch a machine-readable bounded action plan for one resolved target.",
+    )
+    action_plan_parser.add_argument("target_ref")
+    action_plan_parser.add_argument("--host", dest="host_profile_id")
+    action_plan_parser.add_argument("--store-root")
 
     compatibility_parser = subparsers.add_parser(
         "compatibility",
@@ -143,6 +152,13 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         path = _path("/api/absence/search", q=args.query)
     elif args.command == "compare":
         path = _path("/api/compare", left=args.left_target_ref, right=args.right_target_ref)
+    elif args.command == "action-plan":
+        path = _path(
+            "/api/action-plan",
+            target_ref=args.target_ref,
+            host=args.host_profile_id,
+            store_root=args.store_root,
+        )
     elif args.command == "compatibility":
         path = _path("/api/compatibility", target_ref=args.target_ref, host=args.host_profile_id)
     elif args.command == "representations":
@@ -201,6 +217,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
 
     app = WorkbenchWsgiApp(
         build_demo_resolution_jobs_public_api(),
+        action_plan_public_api=build_demo_action_plan_public_api(),
         absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
         compatibility_public_api=build_demo_compatibility_public_api(),

@@ -4,6 +4,8 @@ from typing import Any, Mapping
 from urllib.parse import parse_qs
 
 from runtime.gateway.public_api import (
+    ActionPlanEvaluationRequest,
+    ActionPlanPublicApi,
     AbsencePublicApi,
     BOOTSTRAP_HOST_PROFILE_PRESETS,
     CompareTargetsRequest,
@@ -27,6 +29,7 @@ from runtime.gateway.public_api import (
     StoredArtifactRequest,
     StoredExportsTargetRequest,
     build_demo_stored_exports_public_api,
+    action_plan_envelope_to_view_model,
     absence_envelope_to_view_model,
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
@@ -51,6 +54,12 @@ def build_api_index_document() -> dict[str, Any]:
         "api_version": "0.1.0-draft",
         "status": "local_bootstrap",
         "endpoints": [
+            {
+                "path": "/api/action-plan",
+                "method": "GET",
+                "query_parameters": ["target_ref", "host", "store_root"],
+                "response_content_types": ["application/json"],
+            },
             {
                 "path": "/api/resolve",
                 "method": "GET",
@@ -160,6 +169,7 @@ def handle_api_request(
     absence_public_api: AbsencePublicApi | None,
     comparison_public_api: ComparisonPublicApi | None,
     compatibility_public_api: CompatibilityPublicApi | None,
+    action_plan_public_api: ActionPlanPublicApi | None,
     subject_states_public_api: SubjectStatesPublicApi | None,
     representations_public_api: RepresentationsPublicApi | None,
     actions_public_api: ResolutionActionsPublicApi | None,
@@ -192,6 +202,7 @@ def handle_api_request(
             workspace = build_resolution_workspace_view_models(
                 resolution_public_api,
                 target_ref,
+                action_plan_public_api=action_plan_public_api,
                 actions_public_api=actions_public_api,
                 stored_exports_public_api=stored_exports_public_api,
                 session_id=session_id,
@@ -209,9 +220,40 @@ def handle_api_request(
         }
         if workspace.resolution_actions is not None:
             payload["resolution_actions"] = workspace.resolution_actions
+        if workspace.action_plan is not None:
+            payload["action_plan"] = workspace.action_plan
         if workspace.stored_exports is not None:
             payload["stored_exports"] = workspace.stored_exports
         return json_response(200, payload)
+
+    if path == "/api/action-plan":
+        if action_plan_public_api is None:
+            return _service_unavailable(
+                "action_plan_unavailable",
+                "This bootstrap HTTP API was not configured with a public action-plan boundary.",
+            )
+        target_ref = _required_query_value(query, "target_ref")
+        if target_ref is None:
+            return _missing_query_value("target_ref")
+        host_profile_id = _required_query_value(query, "host")
+        try:
+            response = action_plan_public_api.plan_actions(
+                ActionPlanEvaluationRequest.from_parts(
+                    target_ref,
+                    host_profile_id,
+                    store_actions_enabled=_required_query_value(query, "store_root") is not None,
+                )
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_host_profile",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            action_plan_envelope_to_view_model(response.body),
+        )
 
     if path == "/api/compare":
         if comparison_public_api is None:

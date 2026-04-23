@@ -3,6 +3,7 @@
 from surfaces.web.server.api_routes import build_api_index_document
 from surfaces.web.server.workbench_server import (
     WorkbenchWsgiApp,
+    render_action_plan_page,
     render_resolve_absence_page,
     render_search_absence_page,
     render_bundle_inspection_page,
@@ -17,6 +18,7 @@ from surfaces.web.server.workbench_server import (
 __all__ = [
     "WorkbenchWsgiApp",
     "build_api_index_document",
+    "render_action_plan_page",
     "render_resolve_absence_page",
     "render_search_absence_page",
     "render_bundle_inspection_page",

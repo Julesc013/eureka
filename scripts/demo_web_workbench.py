@@ -12,6 +12,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.gateway.public_api import (
+    build_demo_action_plan_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
@@ -29,6 +30,7 @@ from runtime.gateway.public_api import (
 )
 from surfaces.web.server import (
     WorkbenchWsgiApp,
+    render_action_plan_page,
     render_bundle_inspection_page,
     render_compatibility_page,
     render_resolution_workspace_page,
@@ -75,6 +77,11 @@ def main() -> int:
         "--render-inspection",
         metavar="PATH",
         help="Render the compatibility-first bundle inspection page for a local bundle path.",
+    )
+    parser.add_argument(
+        "--action-plan-host",
+        metavar="HOST_PRESET",
+        help="Render the bounded action-plan page for the selected target and optional bootstrap host preset.",
     )
     parser.add_argument(
         "--compatibility-host",
@@ -125,6 +132,7 @@ def main() -> int:
             args.export_bundle,
             args.inspect_bundle is not None,
             args.render_inspection is not None,
+            args.action_plan_host is not None,
             args.compatibility_host is not None,
             args.store_manifest,
             args.store_bundle,
@@ -134,12 +142,13 @@ def main() -> int:
     ) > 1:
         parser.error(
             "--export-manifest, --export-bundle, --inspect-bundle, --render-inspection, "
-            "--compatibility-host, "
+            "--action-plan-host, --compatibility-host, "
             "--store-manifest, --store-bundle, --list-stored, and --read-stored are mutually exclusive."
         )
 
     target_ref = args.target_ref or DEFAULT_TARGET_REF
     actions_public_api = build_demo_resolution_actions_public_api()
+    action_plan_public_api = build_demo_action_plan_public_api()
     bundle_inspection_public_api = build_demo_resolution_bundle_inspection_public_api()
     comparison_public_api = build_demo_comparison_public_api()
     compatibility_public_api = build_demo_compatibility_public_api()
@@ -180,6 +189,16 @@ def main() -> int:
         html = render_bundle_inspection_page(
             bundle_inspection_public_api,
             args.render_inspection,
+        )
+        sys.stdout.write(html)
+        return 0
+
+    if args.action_plan_host is not None:
+        html = render_action_plan_page(
+            action_plan_public_api,
+            target_ref,
+            args.action_plan_host,
+            store_actions_enabled=stored_exports_public_api is not None,
         )
         sys.stdout.write(html)
         return 0
@@ -242,6 +261,7 @@ def main() -> int:
             html = render_resolution_workspace_page(
                 resolution_public_api,
                 target_ref,
+                action_plan_public_api=action_plan_public_api,
                 actions_public_api=actions_public_api,
                 stored_exports_public_api=stored_exports_public_api,
             )
@@ -250,6 +270,7 @@ def main() -> int:
 
     app = WorkbenchWsgiApp(
         resolution_public_api,
+        action_plan_public_api=action_plan_public_api,
         absence_public_api=absence_public_api,
         comparison_public_api=comparison_public_api,
         compatibility_public_api=compatibility_public_api,
@@ -275,6 +296,10 @@ def main() -> int:
             f"http://{args.host}:{args.port}/compare?left={quote('fixture:software/archivebox@0.8.5', safe='')}&right={quote('github-release:archivebox/archivebox@v0.8.5', safe='')}",
             "Serving Eureka bootstrap HTTP API compare route at "
             f"http://{args.host}:{args.port}/api/compare?left={quote('fixture:software/archivebox@0.8.5', safe='')}&right={quote('github-release:archivebox/archivebox@v0.8.5', safe='')}",
+            "Serving Eureka action-plan page at "
+            f"http://{args.host}:{args.port}/action-plan?target_ref={quote(target_ref, safe='')}",
+            "Serving Eureka bootstrap HTTP API action-plan route at "
+            f"http://{args.host}:{args.port}/api/action-plan?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka compatibility page at "
             f"http://{args.host}:{args.port}/compatibility?target_ref={quote(target_ref, safe='')}&host={quote('windows-x86_64', safe='')}",
             "Serving Eureka bootstrap HTTP API compatibility route at "

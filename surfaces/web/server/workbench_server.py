@@ -6,6 +6,8 @@ from typing import Callable
 from urllib.parse import parse_qs
 
 from runtime.gateway.public_api import (
+    ActionPlanEvaluationRequest,
+    ActionPlanPublicApi,
     AbsencePublicApi,
     BOOTSTRAP_HOST_PROFILE_PRESETS,
     CompareTargetsRequest,
@@ -29,6 +31,7 @@ from runtime.gateway.public_api import (
     StoredArtifactRequest,
     StoredExportsPublicApi,
     StoredExportsTargetRequest,
+    action_plan_envelope_to_view_model,
     build_resolution_workspace_view_models,
     absence_envelope_to_view_model,
     bundle_inspection_envelope_to_view_model,
@@ -41,6 +44,7 @@ from runtime.gateway.public_api import (
 from surfaces.web.server.api_routes import handle_api_request
 from surfaces.web.server.api_serialization import SerializedHttpResponse
 from surfaces.web.workbench import (
+    render_action_plan_html,
     render_absence_report_html,
     render_bundle_inspection_html,
     render_compatibility_html,
@@ -56,6 +60,7 @@ def render_resolution_workspace_page(
     resolution_public_api: ResolutionJobsPublicApi,
     target_ref: str,
     *,
+    action_plan_public_api: ActionPlanPublicApi | None = None,
     actions_public_api: ResolutionActionsPublicApi | None = None,
     stored_exports_public_api: StoredExportsPublicApi | None = None,
     session_id: str = "session.web-workbench",
@@ -64,6 +69,7 @@ def render_resolution_workspace_page(
         workspace = build_resolution_workspace_view_models(
             resolution_public_api,
             target_ref,
+            action_plan_public_api=action_plan_public_api,
             actions_public_api=actions_public_api,
             stored_exports_public_api=stored_exports_public_api,
             session_id=session_id,
@@ -76,8 +82,58 @@ def render_resolution_workspace_page(
         )
     return render_resolution_workspace_html(
         workspace.workbench_session,
+        action_plan=workspace.action_plan,
         resolution_actions=workspace.resolution_actions,
         stored_exports=workspace.stored_exports,
+        host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+    )
+
+
+def render_action_plan_page(
+    public_api: ActionPlanPublicApi | None,
+    target_ref: str,
+    host_profile_id: str | None,
+    *,
+    store_actions_enabled: bool = False,
+) -> str:
+    normalized_target_ref = target_ref.strip()
+    normalized_host_profile_id = (host_profile_id or "").strip() or None
+    if not normalized_target_ref:
+        return render_action_plan_html(
+            None,
+            target_ref="",
+            host_profile_id=normalized_host_profile_id,
+            host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+            message="Provide a bounded target ref to build an action plan.",
+        )
+    if public_api is None:
+        return render_action_plan_html(
+            None,
+            target_ref=normalized_target_ref,
+            host_profile_id=normalized_host_profile_id,
+            host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+            message="This bootstrap workbench was not configured with a public action-plan boundary.",
+        )
+    try:
+        response = public_api.plan_actions(
+            ActionPlanEvaluationRequest.from_parts(
+                normalized_target_ref,
+                normalized_host_profile_id,
+                store_actions_enabled=store_actions_enabled,
+            )
+        )
+    except ValueError as error:
+        return render_action_plan_html(
+            None,
+            target_ref=normalized_target_ref,
+            host_profile_id=normalized_host_profile_id,
+            host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+            message=str(error),
+        )
+    return render_action_plan_html(
+        action_plan_envelope_to_view_model(response.body),
+        target_ref=normalized_target_ref,
+        host_profile_id=normalized_host_profile_id,
         host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
     )
 
@@ -259,6 +315,7 @@ class WorkbenchWsgiApp:
         absence_public_api: AbsencePublicApi | None = None,
         comparison_public_api: ComparisonPublicApi | None = None,
         compatibility_public_api: CompatibilityPublicApi | None = None,
+        action_plan_public_api: ActionPlanPublicApi | None = None,
         subject_states_public_api: SubjectStatesPublicApi | None = None,
         representations_public_api: RepresentationsPublicApi | None = None,
         actions_public_api: ResolutionActionsPublicApi | None = None,
@@ -272,6 +329,7 @@ class WorkbenchWsgiApp:
         self._absence_public_api = absence_public_api
         self._comparison_public_api = comparison_public_api
         self._compatibility_public_api = compatibility_public_api
+        self._action_plan_public_api = action_plan_public_api
         self._subject_states_public_api = subject_states_public_api
         self._representations_public_api = representations_public_api
         self._actions_public_api = actions_public_api
@@ -297,6 +355,7 @@ class WorkbenchWsgiApp:
             absence_public_api=self._absence_public_api,
             comparison_public_api=self._comparison_public_api,
             compatibility_public_api=self._compatibility_public_api,
+            action_plan_public_api=self._action_plan_public_api,
             subject_states_public_api=self._subject_states_public_api,
             representations_public_api=self._representations_public_api,
             actions_public_api=self._actions_public_api,
@@ -325,6 +384,7 @@ class WorkbenchWsgiApp:
             "/absence/search",
             "/compare",
             "/compatibility",
+            "/action-plan",
             "/representations",
             "/subject",
             "/search",
@@ -343,7 +403,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/action-plan', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -355,9 +415,20 @@ class WorkbenchWsgiApp:
             page = render_resolution_workspace_page(
                 self._resolution_public_api,
                 target_ref,
+                action_plan_public_api=self._action_plan_public_api,
                 actions_public_api=self._actions_public_api,
                 stored_exports_public_api=self._stored_exports_public_api,
                 session_id=self._session_id,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/action-plan":
+            target_ref = self._resolve_target_ref(query_string)
+            host_profile_id = self._resolve_optional_host_profile_id(query_string)
+            page = render_action_plan_page(
+                self._action_plan_public_api,
+                target_ref,
+                host_profile_id,
+                store_actions_enabled=self._stored_exports_public_api is not None,
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/compare":
@@ -533,6 +604,11 @@ class WorkbenchWsgiApp:
         query = parse_qs(query_string, keep_blank_values=False)
         raw_host_profile_id = query.get("host", ["windows-x86_64"])[0].strip()
         return raw_host_profile_id or "windows-x86_64"
+
+    def _resolve_optional_host_profile_id(self, query_string: str) -> str | None:
+        query = parse_qs(query_string, keep_blank_values=False)
+        raw_host_profile_id = query.get("host", [""])[0].strip()
+        return raw_host_profile_id or None
 
     def _resolve_bundle_path(self, query_string: str) -> str:
         query = parse_qs(query_string, keep_blank_values=False)

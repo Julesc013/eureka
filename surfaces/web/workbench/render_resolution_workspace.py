@@ -27,6 +27,7 @@ _DEFAULT_HOST_PROFILE_PRESETS: tuple[dict[str, str], ...] = (
 def render_resolution_workspace_html(
     workbench_session: Mapping[str, Any],
     *,
+    action_plan: Mapping[str, Any] | None = None,
     resolution_actions: Mapping[str, Any] | None = None,
     stored_exports: Mapping[str, Any] | None = None,
     host_profile_presets: list[Mapping[str, Any]] | tuple[Mapping[str, Any], ...] = _DEFAULT_HOST_PROFILE_PRESETS,
@@ -45,6 +46,24 @@ def render_resolution_workspace_html(
     evidence = _evidence_list(workbench_session.get("evidence"))
     representations = _representation_list(workbench_session.get("representations"))
     notices = _notice_list(workbench_session.get("notices"))
+    action_plan_model = _optional_mapping(action_plan, "action_plan")
+    planned_actions = _action_plan_entry_list(action_plan_model.get("actions")) if action_plan_model is not None else []
+    action_plan_notices = _notice_list(action_plan_model.get("notices")) if action_plan_model is not None else []
+    action_plan_host_profile = (
+        _optional_mapping(action_plan_model.get("host_profile"), "action_plan.host_profile")
+        if action_plan_model is not None
+        else None
+    )
+    action_plan_compatibility_reasons = (
+        _reason_list(action_plan_model.get("compatibility_reasons"))
+        if action_plan_model is not None
+        else []
+    )
+    action_plan_compatibility_status = (
+        _optional_string(action_plan_model.get("compatibility_status"), "action_plan.compatibility_status")
+        if action_plan_model is not None
+        else None
+    )
     actions_model = _optional_mapping(resolution_actions, "resolution_actions")
     actions = _action_list(actions_model.get("actions")) if actions_model is not None else []
     action_notices = _notice_list(actions_model.get("notices")) if actions_model is not None else []
@@ -78,6 +97,7 @@ def render_resolution_workspace_html(
         "      <p>Compatibility-first resolution workspace rendered from shared gateway and session contracts.</p>",
         "      <nav>",
         "        <a href=\"/search\">Search the bounded corpus</a>",
+        "        <a href=\"/action-plan\">Plan bounded next steps</a>",
         "        <a href=\"/compare\">Compare two targets</a>",
         "        <a href=\"/subject\">List subject states</a>",
         "      </nav>",
@@ -242,6 +262,121 @@ def render_resolution_workspace_html(
     else:
         parts.append("        <p>No bounded representations or access paths are available for this target.</p>")
     parts.append("      </section>")
+
+    if action_plan_model is not None:
+        action_plan_href = "/action-plan?target_ref=" + quote(target_ref, safe="")
+        parts.extend(
+            [
+                "      <section>",
+                "        <h2>Recommended Next Steps</h2>",
+                f"        <p><a href=\"{escape(action_plan_href, quote=True)}\">Open the dedicated action-plan page</a></p>",
+            ]
+        )
+        if action_plan_compatibility_status is not None:
+            parts.append(
+                f"        <p>Compatibility status: <strong>{escape(action_plan_compatibility_status)}</strong></p>"
+            )
+        if action_plan_host_profile is not None:
+            parts.append(
+                f"        <p>Host profile: {escape(_require_string(action_plan_host_profile.get('host_profile_id'), 'action_plan.host_profile.host_profile_id'))}</p>"
+            )
+        if host_profile_presets:
+            parts.append("        <ul>")
+            for preset in host_profile_presets:
+                if not isinstance(preset, Mapping):
+                    continue
+                preset_id = _require_string(preset.get("host_profile_id"), "host_profile_preset.host_profile_id")
+                href = (
+                    "/action-plan?target_ref="
+                    + quote(target_ref, safe="")
+                    + "&host="
+                    + quote(preset_id, safe="")
+                )
+                parts.append(
+                    f"          <li><a href=\"{escape(href, quote=True)}\">Plan for {escape(preset_id)}</a></li>"
+                )
+            parts.append("        </ul>")
+
+        for heading, status_name in (
+            ("Recommended", "recommended"),
+            ("Available", "available"),
+            ("Unavailable", "unavailable"),
+        ):
+            matching = [entry for entry in planned_actions if entry.get("status") == status_name]
+            parts.extend(
+                [
+                    f"        <h3>{escape(heading)}</h3>",
+                ]
+            )
+            if not matching:
+                parts.append("        <p>(none)</p>")
+                continue
+            parts.append("        <ul>")
+            for entry in matching:
+                label = _require_string(entry.get("label"), "action_plan.action.label")
+                route_hint = _optional_string(entry.get("route_hint"), "action_plan.action.route_hint")
+                if route_hint is not None:
+                    parts.append(
+                        "          <li>"
+                        f"<strong><a href=\"{escape(route_hint, quote=True)}\">{escape(label)}</a></strong>"
+                    )
+                else:
+                    parts.append(f"          <li><strong>{escape(label)}</strong>")
+                parts.append("            <dl>")
+                parts.append(
+                    f"              <dt>Kind</dt><dd>{escape(_require_string(entry.get('kind'), 'action_plan.action.kind'))}</dd>"
+                )
+                for key, field_name, label_text in (
+                    ("representation_label", "action_plan.action.representation_label", "Representation"),
+                    ("access_kind", "action_plan.action.access_kind", "Access kind"),
+                    ("source_family", "action_plan.action.source_family", "Source family"),
+                    ("parameter_hint", "action_plan.action.parameter_hint", "Parameter hint"),
+                ):
+                    optional = _optional_string(entry.get(key), field_name)
+                    if optional is not None:
+                        parts.append(f"              <dt>{escape(label_text)}</dt><dd>{escape(optional)}</dd>")
+                parts.append("            </dl>")
+                reason_codes = _string_list(entry.get("reason_codes"), "action_plan.action.reason_codes")
+                reason_messages = _string_list(entry.get("reason_messages"), "action_plan.action.reason_messages")
+                if reason_codes and reason_messages:
+                    parts.append("            <ul>")
+                    for reason_code, reason_message in zip(reason_codes, reason_messages):
+                        parts.append(
+                            "              <li>"
+                            f"<strong>{escape(reason_code)}</strong>: {escape(reason_message)}</li>"
+                        )
+                    parts.append("            </ul>")
+                parts.append("          </li>")
+            parts.append("        </ul>")
+
+        if action_plan_compatibility_reasons:
+            parts.extend(
+                [
+                    "        <h3>Compatibility reasons</h3>",
+                    "        <ul>",
+                ]
+            )
+            for reason in action_plan_compatibility_reasons:
+                parts.append(
+                    "          <li>"
+                    f"<strong>{escape(_require_string(reason.get('code'), 'action_plan.compatibility_reason.code'))}</strong>: "
+                    f"{escape(_require_string(reason.get('message'), 'action_plan.compatibility_reason.message'))}</li>"
+                )
+            parts.append("        </ul>")
+
+        if action_plan_notices:
+            parts.append("        <ul>")
+            for notice in action_plan_notices:
+                code = _require_string(notice.get("code"), "action_plan.notice.code")
+                severity = _require_string(notice.get("severity"), "action_plan.notice.severity")
+                message = _optional_string(notice.get("message"), "action_plan.notice.message")
+                item = f"          <li><strong>{escape(code)}</strong> ({escape(severity)})"
+                if message is not None:
+                    item += f": {escape(message)}"
+                item += "</li>"
+                parts.append(item)
+            parts.append("        </ul>")
+        parts.append("      </section>")
 
     parts.extend(
         [
@@ -467,6 +602,17 @@ def _action_list(value: Any) -> list[Mapping[str, Any]]:
     return actions
 
 
+def _action_plan_entry_list(value: Any) -> list[Mapping[str, Any]]:
+    if not isinstance(value, list):
+        raise ValueError("action_plan.actions must be a list when provided.")
+    actions: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"action_plan.actions[{index}] must be an object.")
+        actions.append(item)
+    return actions
+
+
 def _stored_artifact_list(value: Any) -> list[Mapping[str, Any]]:
     if not isinstance(value, list):
         raise ValueError("stored_exports.artifacts must be a list when provided.")
@@ -489,6 +635,19 @@ def _evidence_list(value: Any) -> list[Mapping[str, Any]]:
             raise ValueError(f"workbench_session.evidence[{index}] must be an object.")
         evidence.append(item)
     return evidence
+
+
+def _reason_list(value: Any) -> list[Mapping[str, Any]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError("action_plan.compatibility_reasons must be a list when provided.")
+    reasons: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"action_plan.compatibility_reasons[{index}] must be an object.")
+        reasons.append(item)
+    return reasons
 
 
 def _representation_list(value: Any) -> list[Mapping[str, Any]]:
@@ -528,6 +687,17 @@ def _optional_int(value: Any, field_name: str) -> int | None:
     if value is None:
         return None
     return _require_int(value, field_name)
+
+
+def _string_list(value: Any, field_name: str) -> list[str]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    values: list[str] = []
+    for index, item in enumerate(value):
+        values.append(_require_string(item, f"{field_name}[{index}]"))
+    return values
 
 
 def _evidence_text(entry: Mapping[str, Any]) -> str:

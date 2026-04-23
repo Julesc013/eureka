@@ -7,10 +7,13 @@ import sys
 from typing import Any, Mapping, Sequence, TextIO
 
 from runtime.gateway.public_api import (
+    ActionPlanEvaluationRequest,
+    ActionPlanPublicApi,
     AbsencePublicApi,
     BOOTSTRAP_HOST_PROFILE_PRESETS,
-    build_demo_comparison_public_api,
+    build_demo_action_plan_public_api,
     build_demo_absence_public_api,
+    build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -40,6 +43,7 @@ from runtime.gateway.public_api import (
     StoredArtifactRequest,
     StoredExportsPublicApi,
     StoredExportsTargetRequest,
+    action_plan_envelope_to_view_model,
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
@@ -50,6 +54,7 @@ from runtime.gateway.public_api import (
     subject_states_envelope_to_view_model,
 )
 from surfaces.native.cli.formatters import (
+    format_action_plan,
     format_absence_report,
     format_blocked_response,
     format_bundle_export_summary,
@@ -73,6 +78,7 @@ DEFAULT_SESSION_ID = "session.native-cli"
 
 @dataclass(frozen=True)
 class CliContext:
+    action_plan_public_api: ActionPlanPublicApi
     resolution_public_api: ResolutionJobsPublicApi
     actions_public_api: ResolutionActionsPublicApi
     inspection_public_api: ResolutionBundleInspectionPublicApi
@@ -98,6 +104,17 @@ def main(
     cli_context = context or build_cli_context(store_root=getattr(args, "store_root", None))
 
     try:
+        if args.command == "plan":
+            response = cli_context.action_plan_public_api.plan_actions(
+                ActionPlanEvaluationRequest.from_parts(
+                    args.target_ref,
+                    args.host_profile_id,
+                    store_actions_enabled=cli_context.stored_exports_public_api is not None,
+                ),
+            )
+            action_plan = action_plan_envelope_to_view_model(response.body)
+            return _emit(output, args.json, action_plan, format_action_plan(action_plan))
+
         if args.command == "resolve":
             workspace = _resolve_workspace(args.target_ref, cli_context)
             payload: dict[str, Any] = {"workbench_session": workspace.workbench_session}
@@ -276,6 +293,25 @@ def build_parser() -> argparse.ArgumentParser:
     )
     resolve_parser.add_argument("target_ref")
 
+    plan_parser = subparsers.add_parser(
+        "plan",
+        parents=[json_parent],
+        help="Build a bounded action plan for one resolved target through the public boundary.",
+    )
+    plan_parser.add_argument("target_ref")
+    plan_parser.add_argument(
+        "--host",
+        dest="host_profile_id",
+        choices=tuple(
+            str(profile["host_profile_id"]) for profile in BOOTSTRAP_HOST_PROFILE_PRESETS
+        ),
+        help="Optional bootstrap host profile preset used to shape host-aware recommendations.",
+    )
+    plan_parser.add_argument(
+        "--store-root",
+        help="Optional local deterministic store root used to mark store actions as available.",
+    )
+
     search_parser = subparsers.add_parser(
         "search",
         parents=[json_parent],
@@ -390,6 +426,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def build_cli_context(*, store_root: str | None) -> CliContext:
     return CliContext(
+        action_plan_public_api=build_demo_action_plan_public_api(),
         resolution_public_api=build_demo_resolution_jobs_public_api(),
         actions_public_api=build_demo_resolution_actions_public_api(),
         inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
