@@ -5,8 +5,11 @@ from urllib.parse import parse_qs
 
 from runtime.gateway.public_api import (
     AbsencePublicApi,
+    BOOTSTRAP_HOST_PROFILE_PRESETS,
     CompareTargetsRequest,
     ComparisonPublicApi,
+    CompatibilityEvaluationRequest,
+    CompatibilityPublicApi,
     ExplainResolveMissRequest,
     ExplainSearchMissRequest,
     InspectResolutionBundleRequest,
@@ -28,6 +31,7 @@ from runtime.gateway.public_api import (
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
+    compatibility_envelope_to_view_model,
     representations_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     stored_exports_envelope_to_view_model,
@@ -57,6 +61,12 @@ def build_api_index_document() -> dict[str, Any]:
                 "path": "/api/compare",
                 "method": "GET",
                 "query_parameters": ["left", "right"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/compatibility",
+                "method": "GET",
+                "query_parameters": ["target_ref", "host"],
                 "response_content_types": ["application/json"],
             },
             {
@@ -137,6 +147,7 @@ def build_api_index_document() -> dict[str, Any]:
             "Route names, auth, HTTPS/TLS, deployment, and multi-user semantics remain intentionally unresolved.",
             "store_root and bundle_path remain bootstrap local parameters for deterministic demo-scale flows.",
         ],
+        "bootstrap_host_profile_presets": list(BOOTSTRAP_HOST_PROFILE_PRESETS),
     }
 
 
@@ -148,6 +159,7 @@ def handle_api_request(
     resolution_public_api: ResolutionJobsPublicApi,
     absence_public_api: AbsencePublicApi | None,
     comparison_public_api: ComparisonPublicApi | None,
+    compatibility_public_api: CompatibilityPublicApi | None,
     subject_states_public_api: SubjectStatesPublicApi | None,
     representations_public_api: RepresentationsPublicApi | None,
     actions_public_api: ResolutionActionsPublicApi | None,
@@ -219,6 +231,33 @@ def handle_api_request(
         return json_response(
             response.status_code,
             comparison_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/compatibility":
+        if compatibility_public_api is None:
+            return _service_unavailable(
+                "compatibility_unavailable",
+                "This bootstrap HTTP API was not configured with a public compatibility boundary.",
+            )
+        target_ref = _required_query_value(query, "target_ref")
+        if target_ref is None:
+            return _missing_query_value("target_ref")
+        host_profile_id = _required_query_value(query, "host")
+        if host_profile_id is None:
+            return _missing_query_value("host")
+        try:
+            response = compatibility_public_api.evaluate_compatibility(
+                CompatibilityEvaluationRequest.from_parts(target_ref, host_profile_id),
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_host_profile",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            compatibility_envelope_to_view_model(response.body),
         )
 
     if path == "/api/states":

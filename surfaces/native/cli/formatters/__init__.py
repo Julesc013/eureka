@@ -6,6 +6,7 @@ from surfaces.native.cli.formatters.actions import (
 )
 from surfaces.native.cli.formatters.absence import format_absence_report
 from surfaces.native.cli.formatters.comparison import format_comparison
+from surfaces.native.cli.formatters.compatibility import format_compatibility
 from surfaces.native.cli.formatters.inspection import format_bundle_inspection
 from surfaces.native.cli.formatters.representations import format_representations
 from surfaces.native.cli.formatters.resolution import format_resolution_workspace
@@ -23,6 +24,7 @@ __all__ = [
     "format_bundle_export_summary",
     "format_comparison",
     "format_bundle_inspection",
+    "format_compatibility",
     "format_manifest_export",
     "format_representations",
     "format_resolution_workspace",

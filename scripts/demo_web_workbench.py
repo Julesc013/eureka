@@ -14,6 +14,7 @@ if str(REPO_ROOT) not in sys.path:
 from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
+    build_demo_compatibility_public_api,
     InspectResolutionBundleRequest,
     build_demo_representations_public_api,
     ResolutionActionRequest,
@@ -29,6 +30,7 @@ from runtime.gateway.public_api import (
 from surfaces.web.server import (
     WorkbenchWsgiApp,
     render_bundle_inspection_page,
+    render_compatibility_page,
     render_resolution_workspace_page,
     render_search_results_page,
 )
@@ -75,6 +77,11 @@ def main() -> int:
         help="Render the compatibility-first bundle inspection page for a local bundle path.",
     )
     parser.add_argument(
+        "--compatibility-host",
+        metavar="HOST_PRESET",
+        help="Render the compatibility page for the selected target and bootstrap host preset.",
+    )
+    parser.add_argument(
         "--store-root",
         metavar="PATH",
         help="Local bootstrap store root used for storing, listing, and reading exported artifacts.",
@@ -118,6 +125,7 @@ def main() -> int:
             args.export_bundle,
             args.inspect_bundle is not None,
             args.render_inspection is not None,
+            args.compatibility_host is not None,
             args.store_manifest,
             args.store_bundle,
             args.list_stored,
@@ -126,6 +134,7 @@ def main() -> int:
     ) > 1:
         parser.error(
             "--export-manifest, --export-bundle, --inspect-bundle, --render-inspection, "
+            "--compatibility-host, "
             "--store-manifest, --store-bundle, --list-stored, and --read-stored are mutually exclusive."
         )
 
@@ -133,6 +142,7 @@ def main() -> int:
     actions_public_api = build_demo_resolution_actions_public_api()
     bundle_inspection_public_api = build_demo_resolution_bundle_inspection_public_api()
     comparison_public_api = build_demo_comparison_public_api()
+    compatibility_public_api = build_demo_compatibility_public_api()
     absence_public_api = build_demo_absence_public_api()
     resolution_public_api = build_demo_resolution_jobs_public_api()
     search_public_api = build_demo_search_public_api()
@@ -170,6 +180,15 @@ def main() -> int:
         html = render_bundle_inspection_page(
             bundle_inspection_public_api,
             args.render_inspection,
+        )
+        sys.stdout.write(html)
+        return 0
+
+    if args.compatibility_host is not None:
+        html = render_compatibility_page(
+            compatibility_public_api,
+            target_ref,
+            args.compatibility_host,
         )
         sys.stdout.write(html)
         return 0
@@ -233,6 +252,7 @@ def main() -> int:
         resolution_public_api,
         absence_public_api=absence_public_api,
         comparison_public_api=comparison_public_api,
+        compatibility_public_api=compatibility_public_api,
         subject_states_public_api=build_demo_subject_states_public_api(),
         representations_public_api=build_demo_representations_public_api(),
         actions_public_api=actions_public_api,
@@ -255,6 +275,10 @@ def main() -> int:
             f"http://{args.host}:{args.port}/compare?left={quote('fixture:software/archivebox@0.8.5', safe='')}&right={quote('github-release:archivebox/archivebox@v0.8.5', safe='')}",
             "Serving Eureka bootstrap HTTP API compare route at "
             f"http://{args.host}:{args.port}/api/compare?left={quote('fixture:software/archivebox@0.8.5', safe='')}&right={quote('github-release:archivebox/archivebox@v0.8.5', safe='')}",
+            "Serving Eureka compatibility page at "
+            f"http://{args.host}:{args.port}/compatibility?target_ref={quote(target_ref, safe='')}&host={quote('windows-x86_64', safe='')}",
+            "Serving Eureka bootstrap HTTP API compatibility route at "
+            f"http://{args.host}:{args.port}/api/compatibility?target_ref={quote(target_ref, safe='')}&host={quote('windows-x86_64', safe='')}",
             "Serving Eureka representations page at "
             f"http://{args.host}:{args.port}/representations?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bootstrap HTTP API representations route at "

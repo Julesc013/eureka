@@ -8,8 +8,10 @@ from typing import Any, Mapping, Sequence, TextIO
 
 from runtime.gateway.public_api import (
     AbsencePublicApi,
+    BOOTSTRAP_HOST_PROFILE_PRESETS,
     build_demo_comparison_public_api,
     build_demo_absence_public_api,
+    build_demo_compatibility_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
@@ -21,6 +23,8 @@ from runtime.gateway.public_api import (
     ExplainSearchMissRequest,
     CompareTargetsRequest,
     ComparisonPublicApi,
+    CompatibilityEvaluationRequest,
+    CompatibilityPublicApi,
     InspectResolutionBundleRequest,
     RepresentationCatalogRequest,
     RepresentationsPublicApi,
@@ -39,6 +43,7 @@ from runtime.gateway.public_api import (
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
+    compatibility_envelope_to_view_model,
     representations_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     stored_exports_envelope_to_view_model,
@@ -49,6 +54,7 @@ from surfaces.native.cli.formatters import (
     format_blocked_response,
     format_bundle_export_summary,
     format_bundle_inspection,
+    format_compatibility,
     format_comparison,
     format_manifest_export,
     format_representations,
@@ -73,6 +79,7 @@ class CliContext:
     search_public_api: SearchPublicApi
     absence_public_api: AbsencePublicApi
     comparison_public_api: ComparisonPublicApi
+    compatibility_public_api: CompatibilityPublicApi
     subject_states_public_api: SubjectStatesPublicApi
     representations_public_api: RepresentationsPublicApi
     stored_exports_public_api: StoredExportsPublicApi | None = None
@@ -146,6 +153,13 @@ def main(
             )
             comparison = comparison_envelope_to_view_model(response.body)
             return _emit(output, args.json, comparison, format_comparison(comparison))
+
+        if args.command == "compatibility":
+            response = cli_context.compatibility_public_api.evaluate_compatibility(
+                CompatibilityEvaluationRequest.from_parts(args.target_ref, args.host_profile_id),
+            )
+            compatibility = compatibility_envelope_to_view_model(response.body)
+            return _emit(output, args.json, compatibility, format_compatibility(compatibility))
 
         if args.command == "states":
             response = cli_context.subject_states_public_api.list_subject_states(
@@ -291,6 +305,22 @@ def build_parser() -> argparse.ArgumentParser:
     compare_parser.add_argument("left_target_ref")
     compare_parser.add_argument("right_target_ref")
 
+    compatibility_parser = subparsers.add_parser(
+        "compatibility",
+        parents=[json_parent],
+        help="Evaluate bounded compatibility for one resolved target against one bootstrap host preset.",
+    )
+    compatibility_parser.add_argument("target_ref")
+    compatibility_parser.add_argument(
+        "--host",
+        dest="host_profile_id",
+        required=True,
+        choices=tuple(
+            str(profile["host_profile_id"]) for profile in BOOTSTRAP_HOST_PROFILE_PRESETS
+        ),
+        help="Bootstrap host profile preset to evaluate against.",
+    )
+
     states_parser = subparsers.add_parser(
         "states",
         parents=[json_parent],
@@ -366,6 +396,7 @@ def build_cli_context(*, store_root: str | None) -> CliContext:
         search_public_api=build_demo_search_public_api(),
         absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
+        compatibility_public_api=build_demo_compatibility_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
         representations_public_api=build_demo_representations_public_api(),
         stored_exports_public_api=(

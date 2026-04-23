@@ -18,6 +18,7 @@ if str(REPO_ROOT) not in sys.path:
 from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
+    build_demo_compatibility_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
@@ -73,6 +74,13 @@ def main(argv: list[str] | None = None) -> int:
     compare_parser = subparsers.add_parser("compare", help="Fetch machine-readable side-by-side comparison.")
     compare_parser.add_argument("left_target_ref")
     compare_parser.add_argument("right_target_ref")
+
+    compatibility_parser = subparsers.add_parser(
+        "compatibility",
+        help="Fetch a machine-readable bounded compatibility verdict for one host preset.",
+    )
+    compatibility_parser.add_argument("target_ref")
+    compatibility_parser.add_argument("--host", dest="host_profile_id", required=True)
 
     representations_parser = subparsers.add_parser(
         "representations",
@@ -135,6 +143,8 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         path = _path("/api/absence/search", q=args.query)
     elif args.command == "compare":
         path = _path("/api/compare", left=args.left_target_ref, right=args.right_target_ref)
+    elif args.command == "compatibility":
+        path = _path("/api/compatibility", target_ref=args.target_ref, host=args.host_profile_id)
     elif args.command == "representations":
         path = _path("/api/representations", target_ref=args.target_ref)
     elif args.command == "states":
@@ -193,6 +203,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
         build_demo_resolution_jobs_public_api(),
         absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
+        compatibility_public_api=build_demo_compatibility_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
         representations_public_api=build_demo_representations_public_api(),
         actions_public_api=build_demo_resolution_actions_public_api(),

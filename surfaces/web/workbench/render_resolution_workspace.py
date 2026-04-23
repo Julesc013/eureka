@@ -5,11 +5,31 @@ from typing import Any, Mapping
 from urllib.parse import quote
 
 
+_DEFAULT_HOST_PROFILE_PRESETS: tuple[dict[str, str], ...] = (
+    {
+        "host_profile_id": "windows-x86_64",
+        "os_family": "windows",
+        "architecture": "x86_64",
+    },
+    {
+        "host_profile_id": "linux-x86_64",
+        "os_family": "linux",
+        "architecture": "x86_64",
+    },
+    {
+        "host_profile_id": "macos-arm64",
+        "os_family": "macos",
+        "architecture": "arm64",
+    },
+)
+
+
 def render_resolution_workspace_html(
     workbench_session: Mapping[str, Any],
     *,
     resolution_actions: Mapping[str, Any] | None = None,
     stored_exports: Mapping[str, Any] | None = None,
+    host_profile_presets: list[Mapping[str, Any]] | tuple[Mapping[str, Any], ...] = _DEFAULT_HOST_PROFILE_PRESETS,
 ) -> str:
     active_job = _require_mapping(workbench_session.get("active_job"), "workbench_session.active_job")
     target_ref = _require_string(active_job.get("target_ref"), "workbench_session.active_job.target_ref")
@@ -265,6 +285,39 @@ def render_resolution_workspace_html(
             item += "</li>"
             parts.append(item)
         parts.append("        </ul>")
+    parts.append("      </section>")
+
+    parts.extend(
+        [
+            "      <section>",
+            "        <h2>Compatibility</h2>",
+            "        <p>Evaluate this resolved target against one bounded bootstrap host profile preset.</p>",
+        ]
+    )
+    if host_profile_presets:
+        parts.append("        <ul>")
+        for preset in host_profile_presets:
+            if not isinstance(preset, Mapping):
+                continue
+            preset_id = _require_string(preset.get("host_profile_id"), "host_profile_preset.host_profile_id")
+            os_family = _optional_string(preset.get("os_family"), "host_profile_preset.os_family")
+            architecture = _optional_string(preset.get("architecture"), "host_profile_preset.architecture")
+            href = (
+                "/compatibility?target_ref="
+                + quote(target_ref, safe="")
+                + "&host="
+                + quote(preset_id, safe="")
+            )
+            label = preset_id
+            if os_family is not None and architecture is not None:
+                label = f"{preset_id} ({os_family}, {architecture})"
+            parts.append(
+                "          "
+                f"<li><a href=\"{escape(href, quote=True)}\">Check {escape(label)}</a></li>"
+            )
+        parts.append("        </ul>")
+    else:
+        parts.append("        <p>No bounded host profile presets are available in this bootstrap slice.</p>")
     parts.append("      </section>")
 
     if stored_exports_model is not None:

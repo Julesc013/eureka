@@ -2,6 +2,7 @@
 
 from surfaces.web.workbench.render_absence_report import render_absence_report_html
 from surfaces.web.workbench.render_bundle_inspection import render_bundle_inspection_html
+from surfaces.web.workbench.render_compatibility import render_compatibility_html
 from surfaces.web.workbench.render_comparison import render_comparison_html
 from surfaces.web.workbench.render_search_results import render_search_results_html
 from surfaces.web.workbench.render_resolution_workspace import render_resolution_workspace_html
@@ -11,6 +12,7 @@ from surfaces.web.workbench.render_subject_states import render_subject_states_h
 __all__ = [
     "render_absence_report_html",
     "render_bundle_inspection_html",
+    "render_compatibility_html",
     "render_comparison_html",
     "render_representations_html",
     "render_resolution_workspace_html",
