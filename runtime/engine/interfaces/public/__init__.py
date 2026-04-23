@@ -3,6 +3,7 @@
 from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.interfaces.public.acquisition import AcquisitionRequest
 from runtime.engine.interfaces.public.decomposition import DecompositionRequest
+from runtime.engine.interfaces.public.member_access import MemberAccessRequest
 from runtime.engine.interfaces.public.action_plan import (
     ActionPlanRequest,
     ActionPlanResult,
@@ -51,6 +52,7 @@ __all__ = [
     "EvidenceSummary",
     "AcquisitionRequest",
     "DecompositionRequest",
+    "MemberAccessRequest",
     "ActionPlanRequest",
     "ActionPlanResult",
     "AbsenceNearMatch",
