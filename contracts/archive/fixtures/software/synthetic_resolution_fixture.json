@@ -31,6 +31,10 @@
           "label": "Synthetic demo app fixture artifact",
           "content_type": "application/vnd.eureka.synthetic.bundle",
           "byte_length": 4096,
+          "payload_fixture": {
+            "locator": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
+            "filename": "synthetic-demo-app.bundle"
+          },
           "access_path": {
             "id": "access.synthetic-demo-app.fixture",
             "kind": "inspect",

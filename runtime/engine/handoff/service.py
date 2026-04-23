@@ -196,7 +196,9 @@ def _entry_from_representation(
         access_locator=representation.access_locator,
         content_type=representation.content_type,
         byte_length=representation.byte_length,
+        filename=representation.filename,
         is_direct=representation.is_direct,
+        is_fetchable=representation.is_fetchable,
         host_profile_id=host_profile.host_profile_id if host_profile is not None else None,
         strategy_id=strategy_profile.strategy_id,
     )

@@ -16,10 +16,12 @@ class RepresentationSelectionEntry:
     access_kind: str
     content_type: str | None = None
     byte_length: int | None = None
+    filename: str | None = None
     source_label: str | None = None
     source_locator: str | None = None
     access_locator: str | None = None
     is_direct: bool = False
+    is_fetchable: bool = False
     host_profile_id: str | None = None
     strategy_id: str | None = None
 
@@ -34,10 +36,12 @@ class RepresentationSelectionEntry:
             "source_family": self.source_family,
             "access_kind": self.access_kind,
             "is_direct": self.is_direct,
+            "is_fetchable": self.is_fetchable,
         }
         for field_name in (
             "content_type",
             "byte_length",
+            "filename",
             "source_label",
             "source_locator",
             "access_locator",

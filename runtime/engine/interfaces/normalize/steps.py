@@ -121,6 +121,10 @@ def _synthetic_representation_summaries(
     summaries: list[RepresentationSummary] = []
     for index, raw_representation in enumerate(raw_representations):
         access_path = _require_mapping(raw_representation.get("access_path"), f"representations[{index}].access_path")
+        payload_fixture = _optional_mapping(
+            raw_representation.get("payload_fixture"),
+            f"representations[{index}].payload_fixture",
+        )
         label = _optional_string(raw_representation.get("label"), f"representations[{index}].label")
         content_type = _optional_string(
             raw_representation.get("content_type"),
@@ -145,6 +149,11 @@ def _synthetic_representation_summaries(
                     raw_representation.get("byte_length"),
                     f"representations[{index}].byte_length",
                 ),
+                filename=_payload_filename(
+                    payload_fixture,
+                    f"representations[{index}].payload_fixture",
+                    fallback_filename=None,
+                ),
                 source_family="synthetic_fixture",
                 source_label="Synthetic Fixture",
                 source_locator=extracted_record.source_locator,
@@ -161,6 +170,15 @@ def _synthetic_representation_summaries(
                     access_path.get("is_direct"),
                     f"representations[{index}].access_path.is_direct",
                 ) or False,
+                is_fetchable=_payload_locator(
+                    payload_fixture,
+                    f"representations[{index}].payload_fixture",
+                )
+                is not None,
+                fetch_locator=_payload_locator(
+                    payload_fixture,
+                    f"representations[{index}].payload_fixture",
+                ),
             )
         )
     return tuple(summaries)
@@ -191,6 +209,7 @@ def _github_release_representation_summaries(
             access_kind="view",
             access_locator=release_locator,
             is_direct=False,
+            is_fetchable=False,
         )
     ]
     for index, asset_record in enumerate(extracted_record.asset_records):
@@ -198,6 +217,10 @@ def _github_release_representation_summaries(
         asset_url = _require_string(
             asset_record.get("browser_download_url"),
             f"release.assets[{index}].browser_download_url",
+        )
+        payload_fixture = _optional_mapping(
+            asset_record.get("payload_fixture"),
+            f"release.assets[{index}].payload_fixture",
         )
         summaries.append(
             RepresentationSummary(
@@ -209,6 +232,11 @@ def _github_release_representation_summaries(
                     f"release.assets[{index}].content_type",
                 ),
                 byte_length=_optional_int(asset_record.get("size"), f"release.assets[{index}].size"),
+                filename=_payload_filename(
+                    payload_fixture,
+                    f"release.assets[{index}].payload_fixture",
+                    fallback_filename=asset_name,
+                ),
                 source_family="github_releases",
                 source_label="GitHub Releases",
                 source_locator=extracted_record.source_locator,
@@ -216,6 +244,15 @@ def _github_release_representation_summaries(
                 access_kind="download",
                 access_locator=asset_url,
                 is_direct=True,
+                is_fetchable=_payload_locator(
+                    payload_fixture,
+                    f"release.assets[{index}].payload_fixture",
+                )
+                is not None,
+                fetch_locator=_payload_locator(
+                    payload_fixture,
+                    f"release.assets[{index}].payload_fixture",
+                ),
             )
         )
     return tuple(summaries)
@@ -318,6 +355,29 @@ def _optional_bool(value: Any, field_name: str) -> bool | None:
     if not isinstance(value, bool):
         raise ValueError(f"{field_name} must be a boolean when provided.")
     return value
+
+
+def _optional_mapping(value: Any, field_name: str) -> dict[str, Any] | None:
+    if value is None:
+        return None
+    return _require_mapping(value, field_name)
+
+
+def _payload_locator(payload_fixture: dict[str, Any] | None, field_name: str) -> str | None:
+    if payload_fixture is None:
+        return None
+    return _optional_string(payload_fixture.get("locator"), f"{field_name}.locator")
+
+
+def _payload_filename(
+    payload_fixture: dict[str, Any] | None,
+    field_name: str,
+    *,
+    fallback_filename: str | None,
+) -> str | None:
+    if payload_fixture is None:
+        return fallback_filename
+    return _optional_string(payload_fixture.get("filename"), f"{field_name}.filename") or fallback_filename
 
 
 def _require_mapping(value: Any, field_name: str) -> dict[str, Any]:

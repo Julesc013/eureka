@@ -1,6 +1,7 @@
 """Public engine request and result shapes for the Eureka thin slice."""
 
 from runtime.engine.provenance import EvidenceSummary
+from runtime.engine.interfaces.public.acquisition import AcquisitionRequest
 from runtime.engine.interfaces.public.action_plan import (
     ActionPlanRequest,
     ActionPlanResult,
@@ -47,6 +48,7 @@ from runtime.engine.interfaces.public.subject_states import (
 
 __all__ = [
     "EvidenceSummary",
+    "AcquisitionRequest",
     "ActionPlanRequest",
     "ActionPlanResult",
     "AbsenceNearMatch",

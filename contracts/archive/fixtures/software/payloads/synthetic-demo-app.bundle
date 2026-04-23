@@ -1,0 +1,4 @@
+EUREKA-SYNTHETIC-BUNDLE
+target_ref=fixture:software/synthetic-demo-app@1.0.0
+kind=fixture_artifact
+note=This is a tiny deterministic synthetic payload for the bounded acquisition slice.
