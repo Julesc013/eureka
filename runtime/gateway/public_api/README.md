@@ -13,7 +13,7 @@ Current bootstrap scope:
 - list bounded ordered states for one bootstrap subject key through a deterministic public subject/state boundary
 - list bounded known representations and access paths for one resolved target through a deterministic public representations boundary
 - evaluate one resolved target against one bootstrap host profile preset through a deterministic public compatibility boundary
-- build a bounded action plan for one resolved target, optionally shaped by one bootstrap host profile preset and bounded local store context
+- build a bounded action plan for one resolved target, optionally shaped by one bootstrap host profile preset, one bootstrap strategy profile, and bounded local store context
 - list bounded manifest-export and bundle-export actions for a resolved bounded target
 - export a deterministic machine-readable resolution manifest through the public boundary
 - export a deterministic portable resolution bundle through the public boundary
@@ -61,7 +61,7 @@ Out of scope here:
 - final diagnostic or absence-reasoning behavior beyond the current bounded miss-explanation seam
 - installers, downloads from external sources, import, restore, rollback behavior, or final representation-selection semantics
 - final compatibility oracle behavior, richer host profile vocabularies, or runtime-routing behavior
-- final action-routing policy behavior, execution semantics, installers, or workflow orchestration
+- final action-routing policy behavior, user-strategy semantics, execution semantics, installers, or workflow orchestration
 - ranking, fuzzy matching, or broader retrieval semantics
 - finalized public API guarantees
 - finalized global identity or cross-source merge semantics

@@ -64,6 +64,12 @@ steps:
     run: python scripts/demo_cli_workbench.py representations github-release:cli/cli@v2.65.0 --json
   - id: native_cli_action_plan_default
     run: python scripts/demo_cli_workbench.py plan fixture:software/synthetic-demo-app@1.0.0 --json
+  - id: native_cli_action_plan_strategy_inspect
+    run: python scripts/demo_cli_workbench.py plan github-release:cli/cli@v2.65.0 --strategy inspect --json
+  - id: native_cli_action_plan_strategy_preserve
+    run: python scripts/demo_cli_workbench.py plan github-release:cli/cli@v2.65.0 --strategy preserve --store-root .demo-store --json
+  - id: native_cli_action_plan_strategy_acquire
+    run: python scripts/demo_cli_workbench.py plan github-release:cli/cli@v2.65.0 --host windows-x86_64 --strategy acquire --json
   - id: native_cli_action_plan_compatible
     run: python scripts/demo_cli_workbench.py plan github-release:cli/cli@v2.65.0 --host windows-x86_64
   - id: native_cli_action_plan_unknown
@@ -108,6 +114,8 @@ steps:
     run: python scripts/demo_http_api.py representations github-release:cli/cli@v2.65.0
   - id: http_api_action_plan_default
     run: python scripts/demo_http_api.py action-plan fixture:software/synthetic-demo-app@1.0.0
+  - id: http_api_action_plan_strategy_compare
+    run: python scripts/demo_http_api.py action-plan fixture:software/archivebox@0.8.5 --strategy compare
   - id: http_api_action_plan_compatible
     run: python scripts/demo_http_api.py action-plan github-release:cli/cli@v2.65.0 --host windows-x86_64
   - id: http_api_compatibility_compatible
@@ -149,4 +157,5 @@ notes:
   - The bounded representations proof remains bootstrap-scale and does not imply final download, install, import, restore, or representation-selection semantics.
   - The bounded compatibility proof remains bootstrap-scale, uses small fixed host profile presets only, and does not imply a final compatibility oracle, installer model, or runtime-routing engine.
   - The bounded action-plan proof remains bootstrap-scale, is recommendation-only, and does not imply final execution, installer, launcher, or workflow-policy semantics.
+  - The bounded strategy-aware action-plan proof remains bootstrap-scale, varies recommendation emphasis only, and does not imply persistence, personalization, ranking, or a final user-model contract.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

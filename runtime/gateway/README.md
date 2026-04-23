@@ -18,7 +18,7 @@ Current thin-slice behavior:
 - transport-neutral public action boundary for bounded manifest and bundle discovery and export
 - transport-neutral public representations boundary for listing bounded known representations and access paths for one resolved target
 - transport-neutral public compatibility boundary for evaluating one resolved target against one bootstrap host profile preset
-- transport-neutral public action-plan boundary for building bounded recommended, available, and unavailable next steps for one resolved target
+- transport-neutral public action-plan boundary for building bounded recommended, available, and unavailable next steps for one resolved target, optionally shaped by one bootstrap host profile preset plus one bootstrap strategy profile
 - transport-neutral public stored-exports boundary for local deterministic artifact storage, listing, and retrieval
 - transport-neutral public bundle inspection boundary for local bootstrap readback of exported bundles
 - submit returns an accepted public envelope while read returns the current bounded job envelope
@@ -35,7 +35,7 @@ Current thin-slice behavior:
 - bounded absence reports propagated across the public boundary as compact miss explanations without implying ranking, trust reasoning, or a final diagnostic engine
 - bounded representation and access-path summaries propagated across the public boundary and shared-surface mappings without implying final download, install, import, restore, or representation-selection semantics
 - bounded compatibility verdicts propagated across the public boundary and shared-surface mappings without implying a final compatibility oracle, installer, or runtime-routing engine
-- bounded action plans propagated across the public boundary and shared-surface mappings without implying execution, installer, launcher, or final policy-engine behavior
+- bounded action plans propagated across the public boundary and shared-surface mappings without implying execution, installer, launcher, final policy-engine behavior, or a final personalization model
 - gateway composes with engine service interfaces over normalized records and does not read governed fixtures directly
 - shared workbench-session, search-results, representations, resolution-actions, stored-exports, and bundle-inspection mappings are exercised without implementing web or native shells
 - no broker, relay, worker, scheduler, auth, or persistence implementation
