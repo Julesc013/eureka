@@ -13,6 +13,7 @@ This bootstrap CLI:
 - shows bounded ordered state listings for one bootstrap subject key with compact source and evidence summaries per state
 - shows bounded side-by-side agreements and disagreements for exactly two compared targets while preserving evidence per side
 - shows bounded known representations and access paths for one resolved target without implying final download, install, import, or restore semantics
+- shows bounded compatibility verdicts for one resolved target against one bootstrap host profile preset without implying a final compatibility oracle, installer, or runtime-routing model
 - does not settle the long-term CLI, TUI, or native-shell architecture
 
 Commands currently exposed:
@@ -20,6 +21,7 @@ Commands currently exposed:
 - `resolve <target_ref>`
 - `search <query>`
 - `representations <target_ref>`
+- `compatibility <target_ref> --host <host_profile_id>`
 - `explain-resolve-miss <target_ref>`
 - `explain-search-miss <query>`
 - `states <subject_key>`

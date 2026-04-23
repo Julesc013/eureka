@@ -8,6 +8,7 @@ This connector:
 - keeps acquisition and source-loading concerns connector-owned
 - feeds bounded source-backed evidence summaries into the existing normalize path
 - feeds bounded release-page and release-asset representation summaries into the existing normalize path without implying actual download behavior
+- may feed small recorded compatibility hints into the existing normalize path without implying a final compatibility oracle or installer decision
 - does not define canonical object truth
 - does not own provenance or trust semantics
 - does not imply broad live federation, downloads, installers, or auth-backed GitHub integration

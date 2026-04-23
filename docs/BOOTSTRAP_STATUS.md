@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus eighteen executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus nineteen executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -37,6 +37,7 @@ Current status: foundational scaffold plus eighteen executable local determinist
 - first bounded object/state timeline seam under `runtime/engine/states/` that groups multiple bounded states under one bootstrap `subject_key`, orders them deterministically, and surfaces compact source plus evidence summaries through the public boundary plus current surfaces without forcing a final object identity or temporal graph model
 - first bounded absence-reasoning seam under `runtime/engine/absence/` that explains exact-resolution misses and deterministic search no-result cases with checked source-family summaries, compact near matches, and bounded next steps through the public boundary plus current surfaces without forcing ranking, trust, or final diagnostic behavior
 - first bounded representation/access-path seam under `runtime/engine/representations/` that carries multiple known source-backed representation and access-path summaries for one resolved target through normalize, exact resolution, public boundaries, and current surfaces without forcing final download, install, import, restore, or representation-selection semantics
+- first bounded compatibility and host-profile seam under `runtime/engine/compatibility/` that evaluates one resolved target against one bootstrap host profile preset, returns compact reasons plus honest `unknown` outcomes, and surfaces the verdict through the public boundary plus current surfaces without forcing installer logic, runtime routing, or a final compatibility oracle
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -54,6 +55,7 @@ Current status: foundational scaffold plus eighteen executable local determinist
 - final object, subject, and state identity plus ordering semantics beyond the current bounded timeline seam
 - final diagnostic and absence-reasoning semantics beyond the current bounded miss-explanation seam
 - final representation, access-path, download, install, import, and restore semantics beyond the current bounded representation seam
+- final compatibility, host-profile, installer, and runtime-routing semantics beyond the current bounded compatibility seam
 - mature search semantics, ranking, and broader retrieval architecture
 - real web application structure, browser-side behavior, authentication, and deployment assumptions
 - broader live external-source federation, live GitHub acquisition, ranking, retrieval, and broader provenance or trust semantics
