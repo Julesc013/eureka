@@ -176,6 +176,54 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("access_kind: download", output)
         self.assertIn("source_family: github_releases", output)
 
+    def test_handoff_command_renders_preferred_available_and_unsuitable_entries(self) -> None:
+        exit_code, output = run_cli(
+            "handoff",
+            "github-release:cli/cli@v2.65.0",
+            "--host",
+            "linux-x86_64",
+            "--strategy",
+            "acquire",
+        )
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Representation handoff", output)
+        self.assertIn("target_ref: github-release:cli/cli@v2.65.0", output)
+        self.assertIn("host_profile_id: linux-x86_64", output)
+        self.assertIn("strategy_id: acquire", output)
+        self.assertIn("compatibility_status: incompatible", output)
+        self.assertIn("Preferred", output)
+        self.assertIn("gh_2.65.0_checksums.txt", output)
+        self.assertIn("Available", output)
+        self.assertIn("GitHub CLI 2.65.0 release page", output)
+        self.assertIn("Unsuitable", output)
+        self.assertIn("gh_2.65.0_windows_amd64.msi", output)
+        self.assertIn("host_incompatible_for_payload_representation", output)
+
+    def test_handoff_command_can_surface_unknown_payload_entries(self) -> None:
+        exit_code, output = run_cli(
+            "handoff",
+            "github-release:archivebox/archivebox@v0.8.5",
+            "--host",
+            "windows-x86_64",
+            "--strategy",
+            "acquire",
+            "--json",
+        )
+        payload = json.loads(output)
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(payload["status"], "available")
+        self.assertEqual(payload["compatibility_status"], "unknown")
+        unknown_entry = next(
+            entry for entry in payload["selections"] if entry["selection_status"] == "unknown"
+        )
+        self.assertEqual(unknown_entry["label"], "archivebox-v0.8.5.tar.gz")
+        self.assertEqual(
+            unknown_entry["reason_codes"][0],
+            "compatibility_unknown_for_payload_representation",
+        )
+
     def test_compare_command_renders_agreements_disagreements_and_evidence(self) -> None:
         exit_code, output = run_cli(
             "compare",

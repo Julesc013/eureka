@@ -14,6 +14,7 @@ from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
+    build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
@@ -40,6 +41,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             absence_public_api=build_demo_absence_public_api(),
             comparison_public_api=build_demo_comparison_public_api(),
             compatibility_public_api=build_demo_compatibility_public_api(),
+            handoff_public_api=build_demo_representation_selection_public_api(),
             subject_states_public_api=build_demo_subject_states_public_api(),
             representations_public_api=build_demo_representations_public_api(),
             actions_public_api=build_demo_resolution_actions_public_api(),
@@ -283,6 +285,37 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             payload["representations"][1]["access_locator"],
             "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",
         )
+
+    def test_handoff_endpoint_returns_machine_readable_selection_listing(self) -> None:
+        status, headers, body = self._request(
+            "/api/handoff",
+            {
+                "target_ref": "github-release:cli/cli@v2.65.0",
+                "host": "windows-x86_64",
+                "strategy": "acquire",
+            },
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["status"], "available")
+        self.assertEqual(payload["compatibility_status"], "compatible")
+        self.assertEqual(payload["preferred_representation_id"], "rep.github-release.cli.cli.v2.65.0.asset.0")
+        preferred = next(
+            entry for entry in payload["selections"] if entry["selection_status"] == "preferred"
+        )
+        self.assertEqual(preferred["label"], "gh_2.65.0_windows_amd64.msi")
+        self.assertEqual(preferred["strategy_id"], "acquire")
+
+        blocked_status, _, blocked_body = self._request(
+            "/api/handoff",
+            {"target_ref": MISSING_TARGET_REF},
+        )
+        self.assertEqual(blocked_status, "404 Not Found")
+        blocked_payload = json.loads(blocked_body)
+        self.assertEqual(blocked_payload["status"], "blocked")
+        self.assertEqual(blocked_payload["notices"][0]["code"], "target_ref_not_found")
 
     def test_manifest_export_endpoint_returns_json_with_resolved_resource_id(self) -> None:
         status, headers, body = self._request(

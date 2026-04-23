@@ -371,3 +371,106 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("Known Representations/Access Paths", html)
         self.assertIn("GitHub CLI 2.65.0 release page", html)
         self.assertIn("gh_2.65.0_windows_amd64.msi", html)
+
+    def test_resolution_rendering_can_embed_representation_handoff_section(self) -> None:
+        html = render_resolution_workspace_html(
+            {
+                "session_id": "session.handoff",
+                "resolved_resource_id": "resolved:sha256:aafe4582e67ab6d1c720388ac70622ba4e6a9797d8e17926ab1458dee78c13d8",
+                "active_job": {
+                    "job_id": "job-0200",
+                    "status": "completed",
+                    "target_ref": "github-release:cli/cli@v2.65.0",
+                },
+                "selected_object": {
+                    "id": "obj.github-release.cli.cli",
+                    "kind": "software",
+                    "label": "GitHub CLI 2.65.0",
+                },
+                "source": {
+                    "family": "github_releases",
+                    "label": "GitHub Releases",
+                    "locator": "https://github.com/cli/cli/releases/tag/v2.65.0",
+                },
+                "evidence": [],
+                "representations": [],
+            },
+            handoff={
+                "status": "available",
+                "target_ref": "github-release:cli/cli@v2.65.0",
+                "preferred_representation_id": "rep.github-release.cli.cli.v2.65.0.asset.0",
+                "compatibility_status": "compatible",
+                "strategy_profile": {
+                    "strategy_id": "acquire",
+                    "label": "Acquire",
+                    "description": "Prioritize direct access paths when bounded signals support them.",
+                    "emphasis_hints": ["prioritize_direct_access"],
+                },
+                "host_profile": {
+                    "host_profile_id": "windows-x86_64",
+                    "os_family": "windows",
+                    "architecture": "x86_64",
+                    "features": [],
+                },
+                "compatibility_reasons": [
+                    {
+                        "code": "os_family_supported",
+                        "message": "Host os_family 'windows' matches the bounded required_os_families.",
+                    }
+                ],
+                "selections": [
+                    {
+                        "representation_id": "rep.github-release.cli.cli.v2.65.0.asset.0",
+                        "representation_kind": "release_asset",
+                        "label": "gh_2.65.0_windows_amd64.msi",
+                        "selection_status": "preferred",
+                        "reason_codes": ["strategy_acquire_prefers_host_fit_payload"],
+                        "reason_messages": [
+                            "The active acquire strategy prefers the bounded payload representation that best fits the selected host profile."
+                        ],
+                        "source_family": "github_releases",
+                        "access_kind": "download",
+                        "source_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
+                        "access_locator": "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",
+                    },
+                    {
+                        "representation_id": "rep.github-release.cli.cli.release-metadata",
+                        "representation_kind": "release_page",
+                        "label": "GitHub CLI 2.65.0 release page",
+                        "selection_status": "available",
+                        "reason_codes": ["metadata_representation_available"],
+                        "reason_messages": [
+                            "This bounded metadata-like representation remains available for inspection and explanation."
+                        ],
+                        "source_family": "github_releases",
+                        "access_kind": "view",
+                        "source_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
+                        "access_locator": "https://github.com/cli/cli/releases/tag/v2.65.0",
+                    },
+                    {
+                        "representation_id": "rep.github-release.cli.cli.v2.65.0.asset.1",
+                        "representation_kind": "release_asset",
+                        "label": "gh_2.65.0_checksums.txt",
+                        "selection_status": "unsuitable",
+                        "reason_codes": ["strategy_not_preferred"],
+                        "reason_messages": [
+                            "This bounded representation remains visible as an alternative rather than the current preferred fit."
+                        ],
+                        "source_family": "github_releases",
+                        "access_kind": "download",
+                        "source_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
+                        "access_locator": "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_checksums.txt",
+                    },
+                ],
+                "notices": [],
+                "evidence": [],
+            },
+        )
+
+        self.assertIn("Representation Handoff", html)
+        self.assertIn("Open the dedicated handoff page", html)
+        self.assertIn("Preferred bounded fit", html)
+        self.assertIn("Available alternatives", html)
+        self.assertIn("Unsuitable choices", html)
+        self.assertIn("gh_2.65.0_windows_amd64.msi", html)
+        self.assertIn("/handoff?target_ref=github-release%3Acli%2Fcli%40v2.65.0&amp;host=windows-x86_64&amp;strategy=acquire", html)
