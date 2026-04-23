@@ -35,6 +35,8 @@ from runtime.gateway.public_api import (
     ComparisonPublicApi,
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
+    DecompositionInspectionRequest,
+    DecompositionPublicApi,
     InspectResolutionBundleRequest,
     RepresentationSelectionEvaluationRequest,
     RepresentationCatalogRequest,
@@ -54,9 +56,11 @@ from runtime.gateway.public_api import (
     StoredExportsTargetRequest,
     action_plan_envelope_to_view_model,
     build_resolution_workspace_view_models,
+    build_demo_decomposition_public_api,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
     compatibility_envelope_to_view_model,
+    decomposition_envelope_to_view_model,
     representations_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     stored_exports_envelope_to_view_model,
@@ -71,6 +75,7 @@ from surfaces.native.cli.formatters import (
     format_bundle_inspection,
     format_compatibility,
     format_comparison,
+    format_decomposition,
     format_handoff,
     format_manifest_export,
     format_representations,
@@ -91,6 +96,7 @@ DEFAULT_SESSION_ID = "session.native-cli"
 class CliContext:
     acquisition_public_api: AcquisitionPublicApi
     action_plan_public_api: ActionPlanPublicApi
+    decomposition_public_api: DecompositionPublicApi
     resolution_public_api: ResolutionJobsPublicApi
     actions_public_api: ResolutionActionsPublicApi
     inspection_public_api: ResolutionBundleInspectionPublicApi
@@ -148,6 +154,21 @@ def main(
                     format_acquisition(acquisition, output_path=str(output_path)),
                 )
             return _emit(output, args.json, emitted_payload, format_acquisition(acquisition))
+
+        if args.command == "decompose":
+            response = cli_context.decomposition_public_api.decompose_representation(
+                DecompositionInspectionRequest.from_parts(
+                    args.target_ref,
+                    args.representation_id,
+                )
+            )
+            decomposition = decomposition_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                decomposition,
+                format_decomposition(decomposition),
+            )
 
         if args.command == "resolve":
             workspace = _resolve_workspace(args.target_ref, cli_context)
@@ -463,6 +484,19 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional local path to write fetched bytes to instead of only reporting metadata.",
     )
 
+    decompose_parser = subparsers.add_parser(
+        "decompose",
+        parents=[json_parent],
+        help="Inspect a bounded fetched representation into a compact member list through the public boundary.",
+    )
+    decompose_parser.add_argument("target_ref")
+    decompose_parser.add_argument(
+        "--representation",
+        dest="representation_id",
+        required=True,
+        help="Explicit bounded representation_id to inspect.",
+    )
+
     export_manifest_parser = subparsers.add_parser(
         "export-manifest",
         parents=[json_parent],
@@ -520,6 +554,7 @@ def build_cli_context(*, store_root: str | None) -> CliContext:
     return CliContext(
         acquisition_public_api=build_demo_acquisition_public_api(),
         action_plan_public_api=build_demo_action_plan_public_api(),
+        decomposition_public_api=build_demo_decomposition_public_api(),
         resolution_public_api=build_demo_resolution_jobs_public_api(),
         actions_public_api=build_demo_resolution_actions_public_api(),
         inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),

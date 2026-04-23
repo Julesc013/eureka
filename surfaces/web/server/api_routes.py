@@ -15,6 +15,9 @@ from runtime.gateway.public_api import (
     ComparisonPublicApi,
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
+    DecompositionInspectionRequest,
+    DecompositionPublicApi,
+    decomposition_envelope_to_view_model,
     ExplainResolveMissRequest,
     ExplainSearchMissRequest,
     InspectResolutionBundleRequest,
@@ -66,6 +69,12 @@ def build_api_index_document() -> dict[str, Any]:
                 "method": "GET",
                 "query_parameters": ["target_ref", "representation_id"],
                 "response_content_types": ["application/octet-stream", "application/json"],
+            },
+            {
+                "path": "/api/decompose",
+                "method": "GET",
+                "query_parameters": ["target_ref", "representation_id"],
+                "response_content_types": ["application/json"],
             },
             {
                 "path": "/api/action-plan",
@@ -190,6 +199,7 @@ def handle_api_request(
     comparison_public_api: ComparisonPublicApi | None,
     compatibility_public_api: CompatibilityPublicApi | None,
     acquisition_public_api: AcquisitionPublicApi | None,
+    decomposition_public_api: DecompositionPublicApi | None,
     action_plan_public_api: ActionPlanPublicApi | None,
     handoff_public_api: RepresentationSelectionPublicApi | None,
     subject_states_public_api: SubjectStatesPublicApi | None,
@@ -323,6 +333,33 @@ def handle_api_request(
         return json_response(
             response.status_code,
             acquisition_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/decompose":
+        if decomposition_public_api is None:
+            return _service_unavailable(
+                "decomposition_unavailable",
+                "This bootstrap HTTP API was not configured with a public decomposition boundary.",
+            )
+        target_ref = _required_query_value(query, "target_ref")
+        if target_ref is None:
+            return _missing_query_value("target_ref")
+        representation_id = _required_query_value(query, "representation_id")
+        if representation_id is None:
+            return _missing_query_value("representation_id")
+        try:
+            response = decomposition_public_api.decompose_representation(
+                DecompositionInspectionRequest.from_parts(target_ref, representation_id)
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_decomposition_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            decomposition_envelope_to_view_model(response.body),
         )
 
     if path == "/api/handoff":

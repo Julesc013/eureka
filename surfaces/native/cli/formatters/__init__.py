@@ -9,6 +9,7 @@ from surfaces.native.cli.formatters.action_plan import format_action_plan
 from surfaces.native.cli.formatters.absence import format_absence_report
 from surfaces.native.cli.formatters.comparison import format_comparison
 from surfaces.native.cli.formatters.compatibility import format_compatibility
+from surfaces.native.cli.formatters.decomposition import format_decomposition
 from surfaces.native.cli.formatters.handoff import format_handoff
 from surfaces.native.cli.formatters.inspection import format_bundle_inspection
 from surfaces.native.cli.formatters.representations import format_representations
@@ -30,6 +31,7 @@ __all__ = [
     "format_comparison",
     "format_bundle_inspection",
     "format_compatibility",
+    "format_decomposition",
     "format_handoff",
     "format_manifest_export",
     "format_representations",

@@ -21,6 +21,7 @@ from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
+    build_demo_decomposition_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -109,6 +110,13 @@ def main(argv: list[str] | None = None) -> int:
     fetch_parser.add_argument("target_ref")
     fetch_parser.add_argument("--representation", dest="representation_id", required=True)
 
+    decompose_parser = subparsers.add_parser(
+        "decompose",
+        help="Inspect a bounded fetched representation into a compact member listing.",
+    )
+    decompose_parser.add_argument("target_ref")
+    decompose_parser.add_argument("--representation", dest="representation_id", required=True)
+
     representations_parser = subparsers.add_parser(
         "representations",
         help="Fetch machine-readable bounded known representations/access paths for one target.",
@@ -193,6 +201,12 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
             target_ref=args.target_ref,
             representation_id=args.representation_id,
         )
+    elif args.command == "decompose":
+        path = _path(
+            "/api/decompose",
+            target_ref=args.target_ref,
+            representation_id=args.representation_id,
+        )
     elif args.command == "representations":
         path = _path("/api/representations", target_ref=args.target_ref)
     elif args.command == "states":
@@ -254,6 +268,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
         absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
         compatibility_public_api=build_demo_compatibility_public_api(),
+        decomposition_public_api=build_demo_decomposition_public_api(),
         handoff_public_api=build_demo_representation_selection_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
         representations_public_api=build_demo_representations_public_api(),

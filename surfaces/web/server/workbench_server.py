@@ -17,6 +17,9 @@ from runtime.gateway.public_api import (
     ComparisonPublicApi,
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
+    DecompositionInspectionRequest,
+    DecompositionPublicApi,
+    decomposition_envelope_to_view_model,
     ExplainResolveMissRequest,
     ExplainSearchMissRequest,
     InspectResolutionBundleRequest,
@@ -57,6 +60,7 @@ from surfaces.web.workbench import (
     render_bundle_inspection_html,
     render_compatibility_html,
     render_comparison_html,
+    render_decomposition_html,
     render_handoff_html,
     render_representations_html,
     render_resolution_workspace_html,
@@ -298,6 +302,48 @@ def render_representations_page(
     return render_representations_html(representations_envelope_to_view_model(response.body))
 
 
+def render_decomposition_page(
+    public_api: DecompositionPublicApi | None,
+    target_ref: str,
+    representation_id: str,
+) -> str:
+    normalized_target_ref = target_ref.strip()
+    normalized_representation_id = representation_id.strip()
+    if not normalized_representation_id:
+        return render_decomposition_html(
+            None,
+            target_ref=normalized_target_ref,
+            representation_id="",
+            message="Provide a bounded representation_id to inspect one fetched representation.",
+        )
+    if public_api is None:
+        return render_decomposition_html(
+            None,
+            target_ref=normalized_target_ref,
+            representation_id=normalized_representation_id,
+            message="This bootstrap workbench was not configured with a public decomposition boundary.",
+        )
+    try:
+        response = public_api.decompose_representation(
+            DecompositionInspectionRequest.from_parts(
+                normalized_target_ref,
+                normalized_representation_id,
+            )
+        )
+    except ValueError as error:
+        return render_decomposition_html(
+            None,
+            target_ref=normalized_target_ref,
+            representation_id=normalized_representation_id,
+            message=str(error),
+        )
+    return render_decomposition_html(
+        decomposition_envelope_to_view_model(response.body),
+        target_ref=normalized_target_ref,
+        representation_id=normalized_representation_id,
+    )
+
+
 def render_handoff_page(
     public_api: RepresentationSelectionPublicApi | None,
     target_ref: str,
@@ -407,6 +453,7 @@ class WorkbenchWsgiApp:
         comparison_public_api: ComparisonPublicApi | None = None,
         compatibility_public_api: CompatibilityPublicApi | None = None,
         acquisition_public_api: AcquisitionPublicApi | None = None,
+        decomposition_public_api: DecompositionPublicApi | None = None,
         action_plan_public_api: ActionPlanPublicApi | None = None,
         handoff_public_api: RepresentationSelectionPublicApi | None = None,
         subject_states_public_api: SubjectStatesPublicApi | None = None,
@@ -423,6 +470,7 @@ class WorkbenchWsgiApp:
         self._comparison_public_api = comparison_public_api
         self._compatibility_public_api = compatibility_public_api
         self._acquisition_public_api = acquisition_public_api
+        self._decomposition_public_api = decomposition_public_api
         self._action_plan_public_api = action_plan_public_api
         self._handoff_public_api = handoff_public_api
         self._subject_states_public_api = subject_states_public_api
@@ -451,6 +499,7 @@ class WorkbenchWsgiApp:
             comparison_public_api=self._comparison_public_api,
             compatibility_public_api=self._compatibility_public_api,
             acquisition_public_api=self._acquisition_public_api,
+            decomposition_public_api=self._decomposition_public_api,
             action_plan_public_api=self._action_plan_public_api,
             handoff_public_api=self._handoff_public_api,
             subject_states_public_api=self._subject_states_public_api,
@@ -481,6 +530,7 @@ class WorkbenchWsgiApp:
             "/absence/search",
             "/compare",
             "/compatibility",
+            "/decompose",
             "/fetch",
             "/action-plan",
             "/handoff",
@@ -502,7 +552,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/fetch', '/action-plan', '/handoff', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/action-plan', '/handoff', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -629,6 +679,15 @@ class WorkbenchWsgiApp:
                     representation_id=representation_id,
                 ),
             )
+        if path == "/decompose":
+            target_ref = self._resolve_target_ref(query_string)
+            representation_id = self._resolve_representation_id(query_string)
+            page = render_decomposition_page(
+                self._decomposition_public_api,
+                target_ref,
+                representation_id,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
         if path == "/representations":
             target_ref = self._resolve_target_ref(query_string)
             page = render_representations_page(

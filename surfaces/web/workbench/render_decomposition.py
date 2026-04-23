@@ -2,11 +2,10 @@ from __future__ import annotations
 
 from html import escape
 from typing import Any, Mapping
-from urllib.parse import quote
 
 
-def render_acquisition_html(
-    acquisition_view_model: Mapping[str, Any] | None,
+def render_decomposition_html(
+    decomposition_view_model: Mapping[str, Any] | None,
     *,
     target_ref: str,
     representation_id: str,
@@ -15,9 +14,13 @@ def render_acquisition_html(
     status = "(not evaluated)"
     reasons: list[str] = []
     notices: list[Mapping[str, Any]] = []
+    members: list[Mapping[str, Any]] = []
     metadata: list[tuple[str, str]] = []
-    if acquisition_view_model is not None:
-        status = _require_string(acquisition_view_model.get("acquisition_status"), "acquisition.acquisition_status")
+    if decomposition_view_model is not None:
+        status = _require_string(
+            decomposition_view_model.get("decomposition_status"),
+            "decomposition.decomposition_status",
+        )
         for key, label in (
             ("representation_kind", "Representation kind"),
             ("label", "Label"),
@@ -31,47 +34,48 @@ def render_acquisition_html(
             ("access_locator", "Access locator"),
             ("resolved_resource_id", "Resolved resource ID"),
         ):
-            value = acquisition_view_model.get(key)
+            value = decomposition_view_model.get(key)
             if value is None:
                 continue
             metadata.append((label, str(value)))
         reason_codes = _string_list(
-            acquisition_view_model.get("reason_codes"),
-            "acquisition.reason_codes",
+            decomposition_view_model.get("reason_codes"),
+            "decomposition.reason_codes",
         )
         reason_messages = _string_list(
-            acquisition_view_model.get("reason_messages"),
-            "acquisition.reason_messages",
+            decomposition_view_model.get("reason_messages"),
+            "decomposition.reason_messages",
         )
-        reasons = [f"{code}: {message}" for code, message in zip(reason_codes, reason_messages)]
-        notices = _notice_list(acquisition_view_model.get("notices"))
+        reasons = [f"{code}: {detail}" for code, detail in zip(reason_codes, reason_messages)]
+        notices = _notice_list(decomposition_view_model.get("notices"))
+        members = _member_list(decomposition_view_model.get("members"))
 
     parts = [
         "<!doctype html>",
         "<html lang=\"en\">",
         "  <head>",
         "    <meta charset=\"utf-8\">",
-        "    <title>Eureka Acquisition</title>",
+        "    <title>Eureka Bounded Decomposition</title>",
         "  </head>",
         "  <body>",
         "    <header>",
-        "      <h1>Eureka Acquisition</h1>",
-        "      <p>Compatibility-first bounded payload retrieval for one explicit representation selection.</p>",
+        "      <h1>Eureka Bounded Decomposition</h1>",
+        "      <p>Inspect one fetched bounded representation into a compact member listing when the format is supported.</p>",
         "      <nav>",
         "        <a href=\"/\">Open exact resolution workbench</a>",
         "        <a href=\"/representations\">List known representations</a>",
-        "        <a href=\"/handoff\">Choose a bounded handoff fit</a>",
+        "        <a href=\"/fetch\">Fetch a bounded payload</a>",
         "      </nav>",
         "    </header>",
         "    <main>",
         "      <section>",
-        "        <h2>Fetch representation</h2>",
-        "        <form method=\"get\" action=\"/fetch\">",
+        "        <h2>Inspect representation members</h2>",
+        "        <form method=\"get\" action=\"/decompose\">",
         "          <label for=\"target_ref\">Target reference</label>",
         f"          <input id=\"target_ref\" name=\"target_ref\" type=\"text\" value=\"{escape(target_ref, quote=True)}\">",
         "          <label for=\"representation_id\">Representation ID</label>",
         f"          <input id=\"representation_id\" name=\"representation_id\" type=\"text\" value=\"{escape(representation_id, quote=True)}\">",
-        "          <button type=\"submit\">Fetch bounded payload</button>",
+        "          <button type=\"submit\">Inspect bounded members</button>",
         "        </form>",
         "      </section>",
     ]
@@ -97,53 +101,82 @@ def render_acquisition_html(
     for label, value in metadata:
         parts.append(f"          <dt>{escape(label)}</dt><dd>{escape(value)}</dd>")
     parts.extend(["        </dl>", "      </section>"])
+
+    parts.extend(["      <section>", "        <h2>Members</h2>"])
+    if members:
+        parts.append("        <ul>")
+        for member in members:
+            member_path = _require_string(member.get("member_path"), "decomposition.member.member_path")
+            member_kind = _require_string(member.get("member_kind"), "decomposition.member.member_kind")
+            parts.append(f"          <li><strong>{escape(member_path)}</strong>")
+            parts.append("            <dl>")
+            parts.append(f"              <dt>Member kind</dt><dd>{escape(member_kind)}</dd>")
+            byte_length = member.get("byte_length")
+            if isinstance(byte_length, int):
+                parts.append(f"              <dt>Byte length</dt><dd>{byte_length}</dd>")
+            content_type = _optional_string(member.get("content_type"), "decomposition.member.content_type")
+            if content_type is not None:
+                parts.append(f"              <dt>Content type</dt><dd>{escape(content_type)}</dd>")
+            sha256 = _optional_string(member.get("sha256"), "decomposition.member.sha256")
+            if sha256 is not None:
+                parts.append(f"              <dt>SHA-256</dt><dd>{escape(sha256)}</dd>")
+            text_hint = _optional_string(member.get("text_hint"), "decomposition.member.text_hint")
+            if text_hint is not None:
+                parts.append(f"              <dt>Text hint</dt><dd>{escape(text_hint)}</dd>")
+            parts.append("            </dl>")
+            parts.append("          </li>")
+        parts.append("        </ul>")
+    else:
+        parts.append("        <p>No bounded member listing is available for this representation.</p>")
+    parts.append("      </section>")
+
     if reasons:
         parts.extend(["      <section>", "        <h2>Reasons</h2>", "        <ul>"])
         for reason in reasons:
             parts.append(f"          <li>{escape(reason)}</li>")
         parts.extend(["        </ul>", "      </section>"])
-    if acquisition_view_model is not None and status == "fetched":
-        decompose_href = (
-            "/decompose?target_ref="
-            + quote(target_ref, safe="")
-            + "&representation_id="
-            + quote(representation_id, safe="")
-        )
-        parts.extend(
-            [
-                "      <section>",
-                "        <h2>Next step</h2>",
-                f"        <p><a href=\"{decompose_href}\">Inspect bounded package members for this representation</a></p>",
-                "      </section>",
-            ]
-        )
+
     if notices:
         parts.extend(["      <section>", "        <h2>Notices</h2>", "        <ul>"])
         for notice in notices:
-            code = _require_string(notice.get("code"), "acquisition.notice.code")
-            severity = _require_string(notice.get("severity"), "acquisition.notice.severity")
-            notice_message = _optional_string(notice.get("message"), "acquisition.notice.message")
+            code = _require_string(notice.get("code"), "decomposition.notice.code")
+            severity = _require_string(notice.get("severity"), "decomposition.notice.severity")
+            notice_message = _optional_string(notice.get("message"), "decomposition.notice.message")
             item = f"          <li><strong>{escape(code)}</strong> ({escape(severity)})"
             if notice_message is not None:
                 item += f": {escape(notice_message)}"
             item += "</li>"
             parts.append(item)
         parts.extend(["        </ul>", "      </section>"])
+
     parts.extend(["    </main>", "  </body>", "</html>", ""])
     return "\n".join(parts)
+
+
+def _member_list(value: Any) -> list[Mapping[str, Any]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError("decomposition.members must be a list when provided.")
+    members: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"decomposition.members[{index}] must be an object.")
+        members.append(item)
+    return members
 
 
 def _notice_list(value: Any) -> list[Mapping[str, Any]]:
     if value is None:
         return []
     if not isinstance(value, list):
-        raise ValueError("acquisition.notices must be a list when provided.")
-    result: list[Mapping[str, Any]] = []
+        raise ValueError("decomposition.notices must be a list when provided.")
+    notices: list[Mapping[str, Any]] = []
     for index, item in enumerate(value):
         if not isinstance(item, Mapping):
-            raise ValueError(f"acquisition.notices[{index}] must be an object.")
-        result.append(item)
-    return result
+            raise ValueError(f"decomposition.notices[{index}] must be an object.")
+        notices.append(item)
+    return notices
 
 
 def _string_list(value: Any, field_name: str) -> list[str]:

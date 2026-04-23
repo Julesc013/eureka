@@ -7,6 +7,7 @@ from surfaces.web.workbench.render_bundle_inspection import render_bundle_inspec
 from surfaces.web.workbench.render_compatibility import render_compatibility_html
 from surfaces.web.workbench.render_comparison import render_comparison_html
 from surfaces.web.workbench.render_handoff import render_handoff_html
+from surfaces.web.workbench.render_decomposition import render_decomposition_html
 from surfaces.web.workbench.render_search_results import render_search_results_html
 from surfaces.web.workbench.render_resolution_workspace import render_resolution_workspace_html
 from surfaces.web.workbench.render_representations import render_representations_html
@@ -19,6 +20,7 @@ __all__ = [
     "render_bundle_inspection_html",
     "render_compatibility_html",
     "render_comparison_html",
+    "render_decomposition_html",
     "render_handoff_html",
     "render_representations_html",
     "render_resolution_workspace_html",

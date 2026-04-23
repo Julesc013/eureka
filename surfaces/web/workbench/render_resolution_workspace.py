@@ -346,6 +346,18 @@ def render_resolution_workspace_html(
                     parts.append(
                         f"              <dt>Bounded fetch</dt><dd><a href=\"{escape(fetch_href, quote=True)}\">Retrieve local fixture payload</a></dd>"
                     )
+                    decompose_href = (
+                        "/decompose?target_ref="
+                        + quote(target_ref, safe="")
+                        + "&representation_id="
+                        + quote(
+                            _require_string(entry.get("representation_id"), "representation.representation_id"),
+                            safe="",
+                        )
+                    )
+                    parts.append(
+                        f"              <dt>Bounded decomposition</dt><dd><a href=\"{escape(decompose_href, quote=True)}\">Inspect bounded package members</a></dd>"
+                    )
             parts.append("            </dl>")
             parts.append("          </li>")
         parts.append("        </ul>")
