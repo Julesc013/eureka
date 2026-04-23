@@ -12,6 +12,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.gateway.public_api import (
+    build_demo_acquisition_public_api,
     build_demo_action_plan_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
@@ -169,6 +170,7 @@ def main() -> int:
     bundle_inspection_public_api = build_demo_resolution_bundle_inspection_public_api()
     comparison_public_api = build_demo_comparison_public_api()
     compatibility_public_api = build_demo_compatibility_public_api()
+    acquisition_public_api = build_demo_acquisition_public_api()
     handoff_public_api = build_demo_representation_selection_public_api()
     absence_public_api = build_demo_absence_public_api()
     resolution_public_api = build_demo_resolution_jobs_public_api()
@@ -313,6 +315,7 @@ def main() -> int:
 
     app = WorkbenchWsgiApp(
         resolution_public_api,
+        acquisition_public_api=acquisition_public_api,
         action_plan_public_api=action_plan_public_api,
         absence_public_api=absence_public_api,
         comparison_public_api=comparison_public_api,
@@ -354,6 +357,10 @@ def main() -> int:
             f"http://{args.host}:{args.port}/handoff?target_ref={quote(target_ref, safe='')}&strategy={quote('inspect', safe='')}",
             "Serving Eureka bootstrap HTTP API handoff route at "
             f"http://{args.host}:{args.port}/api/handoff?target_ref={quote(target_ref, safe='')}&host={quote('windows-x86_64', safe='')}&strategy={quote('acquire', safe='')}",
+            "Serving Eureka bounded fetch route at "
+            f"http://{args.host}:{args.port}/fetch?target_ref={quote('github-release:cli/cli@v2.65.0', safe='')}&representation_id={quote('rep.github-release.cli.cli.v2.65.0.asset.1', safe='')}",
+            "Serving Eureka bootstrap HTTP API fetch route at "
+            f"http://{args.host}:{args.port}/api/fetch?target_ref={quote('github-release:cli/cli@v2.65.0', safe='')}&representation_id={quote('rep.github-release.cli.cli.v2.65.0.asset.1', safe='')}",
             "Serving Eureka representations page at "
             f"http://{args.host}:{args.port}/representations?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bootstrap HTTP API representations route at "

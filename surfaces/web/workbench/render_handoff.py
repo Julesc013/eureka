@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from html import escape
 from typing import Any, Mapping
+from urllib.parse import quote
 
 
 def render_handoff_html(
@@ -189,6 +190,30 @@ def render_handoff_html(
             source_locator = _optional_string(selection.get("source_locator"), "handoff.selection.source_locator")
             if source_locator is not None:
                 parts.append(f"              <dt>Source locator</dt><dd>{escape(source_locator)}</dd>")
+            filename = _optional_string(selection.get("filename"), "handoff.selection.filename")
+            if filename is not None:
+                parts.append(f"              <dt>Filename</dt><dd>{escape(filename)}</dd>")
+            is_fetchable = selection.get("is_fetchable")
+            if isinstance(is_fetchable, bool):
+                parts.append(
+                    f"              <dt>Fetchable</dt><dd>{escape(str(is_fetchable).lower())}</dd>"
+                )
+                if is_fetchable:
+                    fetch_href = (
+                        "/fetch?target_ref="
+                        + quote(target_ref, safe="")
+                        + "&representation_id="
+                        + quote(
+                            _require_string(
+                                selection.get("representation_id"),
+                                "handoff.selection.representation_id",
+                            ),
+                            safe="",
+                        )
+                    )
+                    parts.append(
+                        f"              <dt>Bounded fetch</dt><dd><a href=\"{escape(fetch_href, quote=True)}\">Retrieve local fixture payload</a></dd>"
+                    )
             parts.append("            </dl>")
             reason_codes = _string_list(selection.get("reason_codes"), "handoff.selection.reason_codes")
             reason_messages = _string_list(selection.get("reason_messages"), "handoff.selection.reason_messages")

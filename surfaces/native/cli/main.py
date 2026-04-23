@@ -3,15 +3,20 @@ from __future__ import annotations
 import argparse
 import json
 from dataclasses import dataclass
+from pathlib import Path
 import sys
 from typing import Any, Mapping, Sequence, TextIO
 
 from runtime.gateway.public_api import (
+    AcquisitionFetchRequest,
+    AcquisitionPublicApi,
     ActionPlanEvaluationRequest,
     ActionPlanPublicApi,
     AbsencePublicApi,
     BOOTSTRAP_HOST_PROFILE_PRESETS,
     BOOTSTRAP_STRATEGY_PROFILES,
+    acquisition_envelope_to_view_model,
+    build_demo_acquisition_public_api,
     build_demo_action_plan_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
@@ -58,6 +63,7 @@ from runtime.gateway.public_api import (
     subject_states_envelope_to_view_model,
 )
 from surfaces.native.cli.formatters import (
+    format_acquisition,
     format_action_plan,
     format_absence_report,
     format_blocked_response,
@@ -83,6 +89,7 @@ DEFAULT_SESSION_ID = "session.native-cli"
 
 @dataclass(frozen=True)
 class CliContext:
+    acquisition_public_api: AcquisitionPublicApi
     action_plan_public_api: ActionPlanPublicApi
     resolution_public_api: ResolutionJobsPublicApi
     actions_public_api: ResolutionActionsPublicApi
@@ -121,6 +128,26 @@ def main(
             )
             action_plan = action_plan_envelope_to_view_model(response.body)
             return _emit(output, args.json, action_plan, format_action_plan(action_plan))
+
+        if args.command == "fetch":
+            response = cli_context.acquisition_public_api.fetch_representation(
+                AcquisitionFetchRequest.from_parts(
+                    args.target_ref,
+                    args.representation_id,
+                )
+            )
+            acquisition = acquisition_envelope_to_view_model(response.body)
+            emitted_payload: dict[str, Any] = dict(acquisition)
+            if response.status_code == 200 and args.output is not None and response.payload is not None:
+                output_path = _write_output_payload(Path(args.output), response.payload)
+                emitted_payload["output_path"] = str(output_path)
+                return _emit(
+                    output,
+                    args.json,
+                    emitted_payload,
+                    format_acquisition(acquisition, output_path=str(output_path)),
+                )
+            return _emit(output, args.json, emitted_payload, format_acquisition(acquisition))
 
         if args.command == "resolve":
             workspace = _resolve_workspace(args.target_ref, cli_context)
@@ -419,6 +446,23 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional bootstrap strategy profile used to vary bounded handoff emphasis.",
     )
 
+    fetch_parser = subparsers.add_parser(
+        "fetch",
+        parents=[json_parent],
+        help="Fetch a bounded local payload fixture for one selected representation through the public boundary.",
+    )
+    fetch_parser.add_argument("target_ref")
+    fetch_parser.add_argument(
+        "--representation",
+        dest="representation_id",
+        required=True,
+        help="Explicit bounded representation_id to fetch.",
+    )
+    fetch_parser.add_argument(
+        "--output",
+        help="Optional local path to write fetched bytes to instead of only reporting metadata.",
+    )
+
     export_manifest_parser = subparsers.add_parser(
         "export-manifest",
         parents=[json_parent],
@@ -474,6 +518,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def build_cli_context(*, store_root: str | None) -> CliContext:
     return CliContext(
+        acquisition_public_api=build_demo_acquisition_public_api(),
         action_plan_public_api=build_demo_action_plan_public_api(),
         resolution_public_api=build_demo_resolution_jobs_public_api(),
         actions_public_api=build_demo_resolution_actions_public_api(),
@@ -620,6 +665,15 @@ def _require_store_public_api(context: CliContext) -> StoredExportsPublicApi:
     if context.stored_exports_public_api is None:
         raise ValueError("Provide --store-root to enable bootstrap stored-export operations.")
     return context.stored_exports_public_api
+
+
+def _write_output_payload(output_path: Path, payload: bytes) -> Path:
+    try:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_bytes(payload)
+    except OSError as error:
+        raise ValueError(f"output path '{output_path}' could not be written: {error}.") from error
+    return output_path
 
 
 def _emit(

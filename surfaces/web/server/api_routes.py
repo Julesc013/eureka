@@ -4,6 +4,8 @@ from typing import Any, Mapping
 from urllib.parse import parse_qs
 
 from runtime.gateway.public_api import (
+    AcquisitionFetchRequest,
+    AcquisitionPublicApi,
     ActionPlanEvaluationRequest,
     ActionPlanPublicApi,
     AbsencePublicApi,
@@ -33,6 +35,7 @@ from runtime.gateway.public_api import (
     StoredArtifactRequest,
     StoredExportsTargetRequest,
     build_demo_stored_exports_public_api,
+    acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
     absence_envelope_to_view_model,
     build_resolution_workspace_view_models,
@@ -58,6 +61,12 @@ def build_api_index_document() -> dict[str, Any]:
         "api_version": "0.1.0-draft",
         "status": "local_bootstrap",
         "endpoints": [
+            {
+                "path": "/api/fetch",
+                "method": "GET",
+                "query_parameters": ["target_ref", "representation_id"],
+                "response_content_types": ["application/octet-stream", "application/json"],
+            },
             {
                 "path": "/api/action-plan",
                 "method": "GET",
@@ -180,6 +189,7 @@ def handle_api_request(
     absence_public_api: AbsencePublicApi | None,
     comparison_public_api: ComparisonPublicApi | None,
     compatibility_public_api: CompatibilityPublicApi | None,
+    acquisition_public_api: AcquisitionPublicApi | None,
     action_plan_public_api: ActionPlanPublicApi | None,
     handoff_public_api: RepresentationSelectionPublicApi | None,
     subject_states_public_api: SubjectStatesPublicApi | None,
@@ -279,6 +289,40 @@ def handle_api_request(
         return json_response(
             response.status_code,
             action_plan_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/fetch":
+        if acquisition_public_api is None:
+            return _service_unavailable(
+                "acquisition_unavailable",
+                "This bootstrap HTTP API was not configured with a public acquisition boundary.",
+            )
+        target_ref = _required_query_value(query, "target_ref")
+        if target_ref is None:
+            return _missing_query_value("target_ref")
+        representation_id = _required_query_value(query, "representation_id")
+        if representation_id is None:
+            return _missing_query_value("representation_id")
+        try:
+            response = acquisition_public_api.fetch_representation(
+                AcquisitionFetchRequest.from_parts(target_ref, representation_id)
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_fetch_request",
+                message=str(error),
+            )
+        if response.status_code == 200 and response.payload is not None and response.content_type is not None:
+            return bytes_response(
+                response.status_code,
+                content_type=response.content_type,
+                payload=response.payload,
+                filename=response.filename,
+            )
+        return json_response(
+            response.status_code,
+            acquisition_envelope_to_view_model(response.body),
         )
 
     if path == "/api/handoff":

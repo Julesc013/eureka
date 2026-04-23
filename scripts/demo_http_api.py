@@ -16,6 +16,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.gateway.public_api import (
+    build_demo_acquisition_public_api,
     build_demo_action_plan_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
@@ -101,6 +102,13 @@ def main(argv: list[str] | None = None) -> int:
     handoff_parser.add_argument("--host", dest="host_profile_id")
     handoff_parser.add_argument("--strategy", dest="strategy_id")
 
+    fetch_parser = subparsers.add_parser(
+        "fetch",
+        help="Fetch a bounded local payload fixture for one explicit representation.",
+    )
+    fetch_parser.add_argument("target_ref")
+    fetch_parser.add_argument("--representation", dest="representation_id", required=True)
+
     representations_parser = subparsers.add_parser(
         "representations",
         help="Fetch machine-readable bounded known representations/access paths for one target.",
@@ -179,6 +187,12 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
             host=args.host_profile_id,
             strategy=args.strategy_id,
         )
+    elif args.command == "fetch":
+        path = _path(
+            "/api/fetch",
+            target_ref=args.target_ref,
+            representation_id=args.representation_id,
+        )
     elif args.command == "representations":
         path = _path("/api/representations", target_ref=args.target_ref)
     elif args.command == "states":
@@ -203,7 +217,7 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
     response = _open_url(base_url.rstrip("/") + path)
     content_type = response.headers.get("Content-Type", "")
     payload = response.read()
-    if content_type.startswith("application/zip"):
+    if not content_type.startswith("application/json"):
         sys.stdout.buffer.write(payload)
         return 0
 
@@ -235,6 +249,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
 
     app = WorkbenchWsgiApp(
         build_demo_resolution_jobs_public_api(),
+        acquisition_public_api=build_demo_acquisition_public_api(),
         action_plan_public_api=build_demo_action_plan_public_api(),
         absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),

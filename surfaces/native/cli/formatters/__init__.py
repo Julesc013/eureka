@@ -1,3 +1,4 @@
+from surfaces.native.cli.formatters.acquisition import format_acquisition
 from surfaces.native.cli.formatters.actions import (
     format_blocked_response,
     format_bundle_export_summary,
@@ -21,6 +22,7 @@ from surfaces.native.cli.formatters.stored_exports import (
 from surfaces.native.cli.formatters.subject_states import format_subject_states
 
 __all__ = [
+    "format_acquisition",
     "format_blocked_response",
     "format_action_plan",
     "format_absence_report",

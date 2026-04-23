@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from html import escape
 from typing import Any, Mapping
+from urllib.parse import quote
 
 
 def render_representations_html(representations_view_model: Mapping[str, Any]) -> str:
@@ -75,9 +76,33 @@ def render_representations_html(representations_view_model: Mapping[str, Any]) -
             source_locator = _optional_string(representation.get("source_locator"), "representation.source_locator")
             if source_locator is not None:
                 parts.append(f"              <dt>Source locator</dt><dd>{escape(source_locator)}</dd>")
+            filename = _optional_string(representation.get("filename"), "representation.filename")
+            if filename is not None:
+                parts.append(f"              <dt>Filename</dt><dd>{escape(filename)}</dd>")
             is_direct = representation.get("is_direct")
             if isinstance(is_direct, bool):
                 parts.append(f"              <dt>Direct</dt><dd>{escape(str(is_direct).lower())}</dd>")
+            is_fetchable = representation.get("is_fetchable")
+            if isinstance(is_fetchable, bool):
+                parts.append(
+                    f"              <dt>Fetchable</dt><dd>{escape(str(is_fetchable).lower())}</dd>"
+                )
+                if is_fetchable:
+                    fetch_href = (
+                        "/fetch?target_ref="
+                        + quote(target_ref, safe="")
+                        + "&representation_id="
+                        + quote(
+                            _require_string(
+                                representation.get("representation_id"),
+                                "representation.representation_id",
+                            ),
+                            safe="",
+                        )
+                    )
+                    parts.append(
+                        f"              <dt>Bounded fetch</dt><dd><a href=\"{escape(fetch_href, quote=True)}\">Retrieve local fixture payload</a></dd>"
+                    )
             parts.append("            </dl>")
             parts.append("          </li>")
         parts.append("        </ul>")

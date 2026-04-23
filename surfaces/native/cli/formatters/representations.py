@@ -83,6 +83,9 @@ def format_representation_lines(representations: list[Any]) -> list[str]:
         byte_length = item.get("byte_length")
         if isinstance(byte_length, int):
             lines.append(f"   byte_length: {byte_length}")
+        filename = item.get("filename")
+        if filename:
+            lines.append(f"   filename: {filename}")
         access_locator = item.get("access_locator")
         if access_locator:
             lines.append(f"   access_locator: {access_locator}")
@@ -92,4 +95,7 @@ def format_representation_lines(representations: list[Any]) -> list[str]:
         is_direct = item.get("is_direct")
         if isinstance(is_direct, bool):
             lines.append(f"   is_direct: {str(is_direct).lower()}")
+        is_fetchable = item.get("is_fetchable")
+        if isinstance(is_fetchable, bool):
+            lines.append(f"   is_fetchable: {str(is_fetchable).lower()}")
     return lines

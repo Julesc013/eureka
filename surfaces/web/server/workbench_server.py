@@ -6,6 +6,8 @@ from typing import Callable
 from urllib.parse import parse_qs
 
 from runtime.gateway.public_api import (
+    AcquisitionFetchRequest,
+    AcquisitionPublicApi,
     ActionPlanEvaluationRequest,
     ActionPlanPublicApi,
     AbsencePublicApi,
@@ -35,6 +37,7 @@ from runtime.gateway.public_api import (
     StoredArtifactRequest,
     StoredExportsPublicApi,
     StoredExportsTargetRequest,
+    acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
     build_resolution_workspace_view_models,
     absence_envelope_to_view_model,
@@ -48,6 +51,7 @@ from runtime.gateway.public_api import (
 from surfaces.web.server.api_routes import handle_api_request
 from surfaces.web.server.api_serialization import SerializedHttpResponse
 from surfaces.web.workbench import (
+    render_acquisition_html,
     render_action_plan_html,
     render_absence_report_html,
     render_bundle_inspection_html,
@@ -402,6 +406,7 @@ class WorkbenchWsgiApp:
         absence_public_api: AbsencePublicApi | None = None,
         comparison_public_api: ComparisonPublicApi | None = None,
         compatibility_public_api: CompatibilityPublicApi | None = None,
+        acquisition_public_api: AcquisitionPublicApi | None = None,
         action_plan_public_api: ActionPlanPublicApi | None = None,
         handoff_public_api: RepresentationSelectionPublicApi | None = None,
         subject_states_public_api: SubjectStatesPublicApi | None = None,
@@ -417,6 +422,7 @@ class WorkbenchWsgiApp:
         self._absence_public_api = absence_public_api
         self._comparison_public_api = comparison_public_api
         self._compatibility_public_api = compatibility_public_api
+        self._acquisition_public_api = acquisition_public_api
         self._action_plan_public_api = action_plan_public_api
         self._handoff_public_api = handoff_public_api
         self._subject_states_public_api = subject_states_public_api
@@ -444,6 +450,7 @@ class WorkbenchWsgiApp:
             absence_public_api=self._absence_public_api,
             comparison_public_api=self._comparison_public_api,
             compatibility_public_api=self._compatibility_public_api,
+            acquisition_public_api=self._acquisition_public_api,
             action_plan_public_api=self._action_plan_public_api,
             handoff_public_api=self._handoff_public_api,
             subject_states_public_api=self._subject_states_public_api,
@@ -474,6 +481,7 @@ class WorkbenchWsgiApp:
             "/absence/search",
             "/compare",
             "/compatibility",
+            "/fetch",
             "/action-plan",
             "/handoff",
             "/representations",
@@ -494,7 +502,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/action-plan', '/handoff', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/fetch', '/action-plan', '/handoff', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -553,6 +561,74 @@ class WorkbenchWsgiApp:
                 host_profile_id,
             )
             return self._respond(start_response, status="200 OK", body=page)
+        if path == "/fetch":
+            target_ref = self._resolve_target_ref(query_string)
+            representation_id = self._resolve_representation_id(query_string)
+            if not representation_id:
+                return self._respond(
+                    start_response,
+                    status="200 OK",
+                    body=render_acquisition_html(
+                        None,
+                        target_ref=target_ref,
+                        representation_id="",
+                        message="Provide a bounded representation_id to fetch one local fixture payload.",
+                    ),
+                )
+            if self._acquisition_public_api is None:
+                return self._respond(
+                    start_response,
+                    status="200 OK",
+                    body=render_acquisition_html(
+                        None,
+                        target_ref=target_ref,
+                        representation_id=representation_id,
+                        message="This bootstrap workbench was not configured with a public acquisition boundary.",
+                    ),
+                )
+            try:
+                response = self._acquisition_public_api.fetch_representation(
+                    AcquisitionFetchRequest.from_parts(target_ref, representation_id),
+                )
+            except ValueError as error:
+                return self._respond(
+                    start_response,
+                    status="200 OK",
+                    body=render_acquisition_html(
+                        None,
+                        target_ref=target_ref,
+                        representation_id=representation_id,
+                        message=str(error),
+                    ),
+                )
+            if response.status_code == 200 and response.payload is not None and response.content_type is not None:
+                extra_headers: list[tuple[str, str]] = []
+                if response.filename is not None:
+                    extra_headers.append(
+                        ("Content-Disposition", f"attachment; filename=\"{response.filename}\""),
+                    )
+                return self._respond_bytes(
+                    start_response,
+                    status="200 OK",
+                    payload=response.payload,
+                    content_type=response.content_type,
+                    extra_headers=extra_headers,
+                )
+            return self._respond(
+                start_response,
+                status=(
+                    "404 Not Found"
+                    if response.status_code == 404
+                    else "422 Unprocessable Entity"
+                    if response.status_code == 422
+                    else "503 Service Unavailable"
+                ),
+                body=render_acquisition_html(
+                    acquisition_envelope_to_view_model(response.body),
+                    target_ref=target_ref,
+                    representation_id=representation_id,
+                ),
+            )
         if path == "/representations":
             target_ref = self._resolve_target_ref(query_string)
             page = render_representations_page(
@@ -732,6 +808,11 @@ class WorkbenchWsgiApp:
         query = parse_qs(query_string, keep_blank_values=False)
         raw_artifact_id = query.get("artifact_id", [""])[0].strip()
         return raw_artifact_id
+
+    def _resolve_representation_id(self, query_string: str) -> str:
+        query = parse_qs(query_string, keep_blank_values=False)
+        raw_representation_id = query.get("representation_id", [""])[0].strip()
+        return raw_representation_id
 
     def _respond(
         self,

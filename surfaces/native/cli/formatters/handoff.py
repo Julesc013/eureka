@@ -118,12 +118,18 @@ def _format_selection_lines(selections: list[Mapping[str, Any]]) -> list[str]:
         source_locator = selection.get("source_locator")
         if isinstance(source_locator, str) and source_locator:
             lines.append(f"   source_locator: {source_locator}")
+        filename = selection.get("filename")
+        if isinstance(filename, str) and filename:
+            lines.append(f"   filename: {filename}")
         host_profile_id = selection.get("host_profile_id")
         if isinstance(host_profile_id, str) and host_profile_id:
             lines.append(f"   host_profile_id: {host_profile_id}")
         strategy_id = selection.get("strategy_id")
         if isinstance(strategy_id, str) and strategy_id:
             lines.append(f"   strategy_id: {strategy_id}")
+        is_fetchable = selection.get("is_fetchable")
+        if isinstance(is_fetchable, bool):
+            lines.append(f"   is_fetchable: {str(is_fetchable).lower()}")
         reason_codes = selection.get("reason_codes")
         reason_messages = selection.get("reason_messages")
         if isinstance(reason_codes, list) and isinstance(reason_messages, list):
