@@ -15,6 +15,7 @@ This bootstrap CLI:
 - shows bounded known representations and access paths for one resolved target without implying final download, install, import, or restore semantics
 - shows bounded compatibility verdicts for one resolved target against one bootstrap host profile preset without implying a final compatibility oracle, installer, or runtime-routing model
 - shows bounded representation-selection and handoff recommendations for one resolved target, preserving preferred, available, unsuitable, and unknown choices without implying downloads, installers, launches, or final runtime-routing behavior
+- shows bounded acquisition results for one explicitly chosen representation, optionally writing deterministic local fixture bytes to disk without implying live downloading, installers, or execution behavior
 - shows bounded recommended, available, and unavailable next-step actions for one resolved target, optionally shaped by one bootstrap host profile preset plus one bootstrap strategy profile, without implying execution, installer, runtime-routing, or personalization behavior
 - does not settle the long-term CLI, TUI, or native-shell architecture
 
@@ -26,6 +27,7 @@ Commands currently exposed:
 - `plan <target_ref> [--host <host_profile_id>] [--strategy <strategy_id>] [--store-root <path>]`
 - `compatibility <target_ref> --host <host_profile_id>`
 - `handoff <target_ref> [--host <host_profile_id>] [--strategy <strategy_id>]`
+- `fetch <target_ref> --representation <representation_id> [--output <path>]`
 - `explain-resolve-miss <target_ref>`
 - `explain-search-miss <query>`
 - `states <subject_key>`

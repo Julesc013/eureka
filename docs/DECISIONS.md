@@ -185,3 +185,9 @@
 - Status: accepted
 - Decision: Eureka now selects one bounded preferred representation plus explicit available, unsuitable, and unknown alternatives for one resolved target by combining existing representation summaries with optional bootstrap host-profile compatibility and optional bootstrap strategy emphasis, then surfaces that recommendation through a transport-neutral public boundary plus current web, CLI, and HTTP API surfaces.
 - Why: this proves the architecture can make handoff preference explicit without silently collapsing multiple representations into one hidden choice, while also avoiding downloads, installers, launches, runtime routing, orchestration, or a final policy engine.
+
+## ADR-032: Add a Bounded Acquisition Seam Without Becoming a Downloader
+
+- Status: accepted
+- Decision: Eureka now retrieves tiny deterministic local payload bytes for one explicitly chosen bounded representation on one resolved target through a transport-neutral public acquisition boundary, and surfaces fetched, unavailable, and blocked outcomes through current web, CLI, and HTTP API surfaces.
+- Why: this proves the architecture can move from representation discovery and bounded handoff recommendation into bounded payload retrieval without introducing live downloads, installers, restore/import flows, orchestration, or final acquisition semantics.

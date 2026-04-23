@@ -19,6 +19,7 @@ Current thin-slice behavior:
 - transport-neutral public representations boundary for listing bounded known representations and access paths for one resolved target
 - transport-neutral public compatibility boundary for evaluating one resolved target against one bootstrap host profile preset
 - transport-neutral public handoff boundary for selecting one bounded preferred representation plus explicit alternatives for one resolved target, optionally shaped by one bootstrap host profile preset and one bootstrap strategy profile
+- transport-neutral public acquisition boundary for fetching one explicitly chosen bounded representation payload for one resolved target
 - transport-neutral public action-plan boundary for building bounded recommended, available, and unavailable next steps for one resolved target, optionally shaped by one bootstrap host profile preset plus one bootstrap strategy profile
 - transport-neutral public stored-exports boundary for local deterministic artifact storage, listing, and retrieval
 - transport-neutral public bundle inspection boundary for local bootstrap readback of exported bundles
@@ -37,6 +38,7 @@ Current thin-slice behavior:
 - bounded representation and access-path summaries propagated across the public boundary and shared-surface mappings without implying final download, install, import, restore, or representation-selection semantics
 - bounded compatibility verdicts propagated across the public boundary and shared-surface mappings without implying a final compatibility oracle, installer, or runtime-routing engine
 - bounded representation-selection and handoff summaries propagated across the public boundary and shared-surface mappings without implying downloads, installers, launches, or final runtime-routing semantics
+- bounded acquisition results propagated across the public boundary and shared-surface mappings without implying live downloads, installers, launches, restore flows, or final download semantics
 - bounded action plans propagated across the public boundary and shared-surface mappings without implying execution, installer, launcher, final policy-engine behavior, or a final personalization model
 - gateway composes with engine service interfaces over normalized records and does not read governed fixtures directly
 - shared workbench-session, search-results, representations, resolution-actions, stored-exports, and bundle-inspection mappings are exercised without implementing web or native shells
