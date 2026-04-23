@@ -16,6 +16,7 @@ from runtime.gateway.public_api import (
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
     build_demo_decomposition_public_api,
+    build_demo_member_access_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -45,6 +46,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             comparison_public_api=build_demo_comparison_public_api(),
             compatibility_public_api=build_demo_compatibility_public_api(),
             decomposition_public_api=build_demo_decomposition_public_api(),
+            member_access_public_api=build_demo_member_access_public_api(),
             handoff_public_api=build_demo_representation_selection_public_api(),
             subject_states_public_api=build_demo_subject_states_public_api(),
             representations_public_api=build_demo_representations_public_api(),
@@ -229,6 +231,86 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertIn("Eureka Bounded Decomposition", html)
         self.assertIn("config/settings.json", html)
         self.assertIn("README.txt", html)
+
+    def test_member_endpoint_returns_preview_json_and_raw_bytes_for_known_member(self) -> None:
+        status, headers, body = self._request(
+            "/api/member",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "representation_id": "rep.synthetic-demo-app.package",
+                "member_path": "README.txt",
+            },
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["member_access_status"], "previewed")
+        self.assertEqual(payload["member_path"], "README.txt")
+        self.assertIn("Synthetic Demo App package", payload["text_preview"])
+
+        raw_status, raw_headers, raw_body = self._request(
+            "/api/member",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "representation_id": "rep.synthetic-demo-app.package",
+                "member_path": "README.txt",
+                "raw": "1",
+            },
+        )
+        self.assertEqual(raw_status, "200 OK")
+        self.assertEqual(raw_headers["Content-Type"], "text/plain")
+        self.assertIn("README.txt", raw_headers["Content-Disposition"])
+        self.assertIn(b"Synthetic Demo App package", raw_body)
+
+    def test_member_endpoint_returns_honest_blocked_and_unsupported_shapes(self) -> None:
+        blocked_status, blocked_headers, blocked_body = self._request(
+            "/api/member",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "representation_id": "rep.synthetic-demo-app.package",
+                "member_path": "missing/member.txt",
+            },
+        )
+        self.assertEqual(blocked_status, "404 Not Found")
+        self.assertEqual(blocked_headers["Content-Type"], "application/json; charset=utf-8")
+        blocked_payload = json.loads(blocked_body)
+        self.assertEqual(blocked_payload["member_access_status"], "blocked")
+        self.assertEqual(blocked_payload["reason_codes"][0], "member_not_found")
+
+        unsupported_status, _, unsupported_body = self._request(
+            "/api/member",
+            {
+                "target_ref": "github-release:cli/cli@v2.65.0",
+                "representation_id": "rep.github-release.cli.cli.v2.65.0.asset.0",
+                "member_path": "README.txt",
+            },
+        )
+        self.assertEqual(unsupported_status, "422 Unprocessable Entity")
+        unsupported_payload = json.loads(unsupported_body)
+        self.assertEqual(unsupported_payload["member_access_status"], "unsupported")
+        self.assertEqual(
+            unsupported_payload["reason_codes"][0],
+            "representation_format_unsupported",
+        )
+
+    def test_member_page_route_renders_html_for_previewable_member(self) -> None:
+        status, headers, body = self._request(
+            "/member",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "representation_id": "rep.synthetic-demo-app.package",
+                "member_path": "config/settings.json",
+            },
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "text/html; charset=utf-8")
+        html = body.decode("utf-8")
+        self.assertIn("Eureka Member Access", html)
+        self.assertIn("config/settings.json", html)
+        self.assertIn("Text preview", html)
+        self.assertIn("&quot;mode&quot;: &quot;demo&quot;", html)
 
     def test_resolve_endpoint_returns_honest_blocked_outcome_for_unknown_target(self) -> None:
         status, headers, body = self._request("/api/resolve", {"target_ref": MISSING_TARGET_REF})

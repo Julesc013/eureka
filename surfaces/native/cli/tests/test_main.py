@@ -133,6 +133,38 @@ class NativeCliMainTestCase(unittest.TestCase):
             "representation_format_unsupported",
         )
 
+    def test_member_command_can_preview_member_and_report_blocked_cases(self) -> None:
+        exit_code, output = run_cli(
+            "member",
+            KNOWN_TARGET_REF,
+            "--representation",
+            "rep.synthetic-demo-app.package",
+            "--member",
+            "README.txt",
+        )
+
+        blocked_exit_code, blocked_output = run_cli(
+            "member",
+            KNOWN_TARGET_REF,
+            "--representation",
+            "rep.synthetic-demo-app.package",
+            "--member",
+            "missing/member.txt",
+            "--json",
+        )
+        blocked_payload = json.loads(blocked_output)
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Member access", output)
+        self.assertIn("status: previewed", output)
+        self.assertIn("member_path: README.txt", output)
+        self.assertIn("Preview", output)
+        self.assertIn("Synthetic Demo App package", output)
+
+        self.assertEqual(blocked_exit_code, 0)
+        self.assertEqual(blocked_payload["member_access_status"], "blocked")
+        self.assertEqual(blocked_payload["reason_codes"][0], "member_not_found")
+
     def test_plan_command_can_render_compare_strategy_emphasis(self) -> None:
         exit_code, output = run_cli(
             "plan",
