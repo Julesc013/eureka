@@ -1,0 +1,35 @@
+name: RepresentationSelection
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that project one
+  bounded representation-selection and handoff recommendation for one resolved target,
+  optionally shaped by one bootstrap host profile preset and one bootstrap strategy
+  profile through the gateway public handoff boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/handoff?target_ref={target_ref}
+    - GET /v0/handoff?target_ref={target_ref}&host_profile_id={host_profile_id}
+    - GET /v0/handoff?target_ref={target_ref}&strategy={strategy_id}
+  shared_view_models:
+    - contracts/ui/view_models/representation_selection.view_model.yaml
+  shared_result_shapes:
+    - RepresentationSelectionEnvelope
+surface_expectations:
+  - surfaces evaluate bounded handoff recommendations through the public gateway boundary and do not derive selection logic from engine internals directly
+  - surfaces preserve the distinction between preferred, available, unsuitable, and unknown representations instead of silently hiding alternatives
+  - surfaces preserve compact host-profile, strategy, compatibility, and representation context where the bounded handoff result carries it
+  - surfaces do not imply download, install, launch, or orchestration behavior when rendering this bounded handoff seam
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - final representation-selection policy semantics
+  - installer and runtime-routing semantics
+  - download, launch, and orchestration behavior

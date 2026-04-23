@@ -45,11 +45,19 @@ from runtime.gateway.public_api.representations_boundary import (
     RepresentationsPublicApi,
     representations_result_to_public_envelope,
 )
+from runtime.gateway.public_api.representation_selection_boundary import (
+    RepresentationSelectionEvaluationRequest,
+    RepresentationSelectionPublicApi,
+    representation_selection_result_to_public_envelope,
+)
 from runtime.gateway.public_api.subject_states_view_models import (
     subject_states_envelope_to_view_model,
 )
 from runtime.gateway.public_api.representations_view_models import (
     representations_envelope_to_view_model,
+)
+from runtime.gateway.public_api.representation_selection_view_models import (
+    representation_selection_envelope_to_view_model,
 )
 from runtime.gateway.public_api.resolution_boundary import (
     PublicApiResponse,
@@ -90,6 +98,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
+    build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
@@ -147,6 +156,8 @@ __all__ = [
     "ComparisonPublicApi",
     "CompatibilityEvaluationRequest",
     "CompatibilityPublicApi",
+    "RepresentationSelectionEvaluationRequest",
+    "RepresentationSelectionPublicApi",
     "ExplainResolveMissRequest",
     "ExplainSearchMissRequest",
     "EXPORT_RESOLUTION_BUNDLE_ACTION_ID",
@@ -166,6 +177,8 @@ __all__ = [
     "ResolutionWorkspaceViewModels",
     "RepresentationCatalogRequest",
     "RepresentationsPublicApi",
+    "representation_selection_envelope_to_view_model",
+    "representation_selection_result_to_public_envelope",
     "SearchCatalogRequest",
     "SearchPublicApi",
     "SubjectStatesCatalogRequest",
@@ -191,6 +204,7 @@ __all__ = [
     "build_demo_absence_public_api",
     "build_demo_comparison_public_api",
     "build_demo_compatibility_public_api",
+    "build_demo_representation_selection_public_api",
     "build_demo_resolution_actions_public_api",
     "build_demo_resolution_bundle_inspection_public_api",
     "build_demo_resolution_jobs_public_api",
@@ -205,8 +219,10 @@ __all__ = [
     "comparison_result_to_public_envelope",
     "compatibility_envelope_to_view_model",
     "compatibility_result_to_public_envelope",
+    "representation_selection_result_to_public_envelope",
     "representations_envelope_to_view_model",
     "representations_result_to_public_envelope",
+    "representation_selection_envelope_to_view_model",
     "resolution_actions_to_public_envelope",
     "resolution_bundle_not_available_error",
     "resolution_job_not_found_error",

@@ -8,6 +8,7 @@ from runtime.engine.absence import DeterministicAbsenceService
 from runtime.engine.compatibility.service import DeterministicCompatibilityService
 from runtime.engine.compare import DeterministicComparisonService
 from runtime.engine.core import NormalizedCatalog
+from runtime.engine.handoff.service import DeterministicRepresentationSelectionService
 from runtime.engine.interfaces.extract import (
     extract_github_release_source_record,
     extract_synthetic_source_record,
@@ -30,6 +31,9 @@ from runtime.gateway.public_api.resolution_boundary import ResolutionJobsPublicA
 from runtime.gateway.public_api.resolution_bundle_inspection import ResolutionBundleInspectionPublicApi
 from runtime.gateway.public_api.resolution_jobs import InMemoryResolutionJobService
 from runtime.gateway.public_api.representations_boundary import RepresentationsPublicApi
+from runtime.gateway.public_api.representation_selection_boundary import (
+    RepresentationSelectionPublicApi,
+)
 from runtime.gateway.public_api.search_boundary import SearchPublicApi
 from runtime.gateway.public_api.stored_exports import StoredExportsPublicApi
 from runtime.gateway.public_api.subject_states_boundary import SubjectStatesPublicApi
@@ -109,6 +113,26 @@ def build_demo_representations_public_api() -> RepresentationsPublicApi:
         resolution_service=resolution_service,
     )
     return RepresentationsPublicApi(representations_service)
+
+
+def build_demo_representation_selection_public_api() -> RepresentationSelectionPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    resolution_service = ExactMatchResolutionService(catalog)
+    representations_service = DeterministicRepresentationsService(
+        catalog,
+        resolution_service=resolution_service,
+    )
+    compatibility_service = DeterministicCompatibilityService(
+        catalog,
+        resolution_service=resolution_service,
+    )
+    handoff_service = DeterministicRepresentationSelectionService(
+        catalog,
+        resolution_service=resolution_service,
+        representations_service=representations_service,
+        compatibility_service=compatibility_service,
+    )
+    return RepresentationSelectionPublicApi(handoff_service)
 
 
 def build_demo_resolution_actions_public_api() -> ResolutionActionsPublicApi:

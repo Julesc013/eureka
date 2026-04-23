@@ -1,0 +1,257 @@
+from __future__ import annotations
+
+from typing import Any, Mapping
+
+
+def representation_selection_envelope_to_view_model(
+    envelope: Mapping[str, Any],
+) -> dict[str, Any]:
+    view_model: dict[str, Any] = {
+        "status": _require_string(envelope.get("status"), "handoff.status"),
+        "target_ref": _require_string(envelope.get("target_ref"), "handoff.target_ref"),
+        "evidence": _coerce_evidence(envelope.get("evidence"), "handoff.evidence"),
+        "compatibility_reasons": _coerce_reasons(
+            envelope.get("compatibility_reasons"),
+            "handoff.compatibility_reasons",
+        ),
+        "selections": _coerce_selections(envelope.get("selections"), "handoff.selections"),
+        "notices": _coerce_notice_list(envelope.get("notices"), "handoff.notices"),
+    }
+    for field_name in (
+        "resolved_resource_id",
+        "compatibility_status",
+        "preferred_representation_id",
+    ):
+        optional = _optional_string(envelope.get(field_name), f"handoff.{field_name}")
+        if optional is not None:
+            view_model[field_name] = optional
+    primary_object = envelope.get("primary_object")
+    if primary_object is not None:
+        view_model["primary_object"] = _coerce_object_summary(
+            primary_object,
+            "handoff.primary_object",
+        )
+    source = envelope.get("source")
+    if source is not None:
+        view_model["source"] = _coerce_source_summary(source, "handoff.source")
+    strategy_profile = envelope.get("strategy_profile")
+    if strategy_profile is not None:
+        view_model["strategy_profile"] = _coerce_strategy_profile(
+            strategy_profile,
+            "handoff.strategy_profile",
+        )
+    host_profile = envelope.get("host_profile")
+    if host_profile is not None:
+        view_model["host_profile"] = _coerce_host_profile(host_profile, "handoff.host_profile")
+    return view_model
+
+
+def _coerce_selections(value: Any, field_name: str) -> list[dict[str, Any]]:
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    selections: list[dict[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"{field_name}[{index}] must be an object.")
+        selection: dict[str, Any] = {
+            "representation_id": _require_string(
+                item.get("representation_id"),
+                f"{field_name}[{index}].representation_id",
+            ),
+            "representation_kind": _require_string(
+                item.get("representation_kind"),
+                f"{field_name}[{index}].representation_kind",
+            ),
+            "label": _require_string(item.get("label"), f"{field_name}[{index}].label"),
+            "selection_status": _require_string(
+                item.get("selection_status"),
+                f"{field_name}[{index}].selection_status",
+            ),
+            "reason_codes": _coerce_string_list(
+                item.get("reason_codes"),
+                f"{field_name}[{index}].reason_codes",
+            ),
+            "reason_messages": _coerce_string_list(
+                item.get("reason_messages"),
+                f"{field_name}[{index}].reason_messages",
+            ),
+            "source_family": _require_string(
+                item.get("source_family"),
+                f"{field_name}[{index}].source_family",
+            ),
+            "access_kind": _require_string(
+                item.get("access_kind"),
+                f"{field_name}[{index}].access_kind",
+            ),
+            "is_direct": _require_bool(item.get("is_direct"), f"{field_name}[{index}].is_direct"),
+        }
+        for key in (
+            "content_type",
+            "source_label",
+            "source_locator",
+            "access_locator",
+            "host_profile_id",
+            "strategy_id",
+        ):
+            optional = _optional_string(item.get(key), f"{field_name}[{index}].{key}")
+            if optional is not None:
+                selection[key] = optional
+        byte_length = item.get("byte_length")
+        if byte_length is not None:
+            selection["byte_length"] = _require_int(byte_length, f"{field_name}[{index}].byte_length")
+        selections.append(selection)
+    return selections
+
+
+def _coerce_reasons(value: Any, field_name: str) -> list[dict[str, str]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    reasons: list[dict[str, str]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"{field_name}[{index}] must be an object.")
+        reasons.append(
+            {
+                "code": _require_string(item.get("code"), f"{field_name}[{index}].code"),
+                "message": _require_string(item.get("message"), f"{field_name}[{index}].message"),
+            }
+        )
+    return reasons
+
+
+def _coerce_evidence(value: Any, field_name: str) -> list[dict[str, str]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    evidence: list[dict[str, str]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"{field_name}[{index}] must be an object.")
+        summary = {
+            "claim_kind": _require_string(item.get("claim_kind"), f"{field_name}[{index}].claim_kind"),
+            "claim_value": _require_string(item.get("claim_value"), f"{field_name}[{index}].claim_value"),
+            "asserted_by_family": _require_string(
+                item.get("asserted_by_family"),
+                f"{field_name}[{index}].asserted_by_family",
+            ),
+            "evidence_kind": _require_string(item.get("evidence_kind"), f"{field_name}[{index}].evidence_kind"),
+            "evidence_locator": _require_string(
+                item.get("evidence_locator"),
+                f"{field_name}[{index}].evidence_locator",
+            ),
+        }
+        for key in ("asserted_by_label", "asserted_at"):
+            optional = _optional_string(item.get(key), f"{field_name}[{index}].{key}")
+            if optional is not None:
+                summary[key] = optional
+        evidence.append(summary)
+    return evidence
+
+
+def _coerce_strategy_profile(value: Any, field_name: str) -> dict[str, Any]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    return {
+        "strategy_id": _require_string(value.get("strategy_id"), f"{field_name}.strategy_id"),
+        "label": _require_string(value.get("label"), f"{field_name}.label"),
+        "description": _require_string(value.get("description"), f"{field_name}.description"),
+        "emphasis_hints": _coerce_string_list(value.get("emphasis_hints"), f"{field_name}.emphasis_hints"),
+    }
+
+
+def _coerce_host_profile(value: Any, field_name: str) -> dict[str, Any]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    host_profile = {
+        "host_profile_id": _require_string(value.get("host_profile_id"), f"{field_name}.host_profile_id"),
+        "os_family": _require_string(value.get("os_family"), f"{field_name}.os_family"),
+        "architecture": _require_string(value.get("architecture"), f"{field_name}.architecture"),
+        "features": _coerce_string_list(value.get("features"), f"{field_name}.features"),
+    }
+    runtime_family = _optional_string(value.get("runtime_family"), f"{field_name}.runtime_family")
+    if runtime_family is not None:
+        host_profile["runtime_family"] = runtime_family
+    return host_profile
+
+
+def _coerce_object_summary(value: Any, field_name: str) -> dict[str, str]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    summary = {"id": _require_string(value.get("id"), f"{field_name}.id")}
+    kind = _optional_string(value.get("kind"), f"{field_name}.kind")
+    label = _optional_string(value.get("label"), f"{field_name}.label")
+    if kind is not None:
+        summary["kind"] = kind
+    if label is not None:
+        summary["label"] = label
+    return summary
+
+
+def _coerce_source_summary(value: Any, field_name: str) -> dict[str, str]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    source = {"family": _require_string(value.get("family"), f"{field_name}.family")}
+    label = _optional_string(value.get("label"), f"{field_name}.label")
+    locator = _optional_string(value.get("locator"), f"{field_name}.locator")
+    if label is not None:
+        source["label"] = label
+    if locator is not None:
+        source["locator"] = locator
+    return source
+
+
+def _coerce_notice_list(value: Any, field_name: str) -> list[dict[str, str]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list when provided.")
+    notices: list[dict[str, str]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"{field_name}[{index}] must be an object.")
+        notice = {
+            "code": _require_string(item.get("code"), f"{field_name}[{index}].code"),
+            "severity": _require_string(item.get("severity"), f"{field_name}[{index}].severity"),
+        }
+        message = _optional_string(item.get("message"), f"{field_name}[{index}].message")
+        if message is not None:
+            notice["message"] = message
+        notices.append(notice)
+    return notices
+
+
+def _coerce_string_list(value: Any, field_name: str) -> list[str]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    return [_require_string(item, f"{field_name}[{index}]") for index, item in enumerate(value)]
+
+
+def _require_string(value: Any, field_name: str) -> str:
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"{field_name} must be a non-empty string.")
+    return value
+
+
+def _optional_string(value: Any, field_name: str) -> str | None:
+    if value is None:
+        return None
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"{field_name} must be a non-empty string when provided.")
+    return value
+
+
+def _require_bool(value: Any, field_name: str) -> bool:
+    if not isinstance(value, bool):
+        raise ValueError(f"{field_name} must be a boolean.")
+    return value
+
+
+def _require_int(value: Any, field_name: str) -> int:
+    if not isinstance(value, int) or value < 0:
+        raise ValueError(f"{field_name} must be a non-negative integer.")
+    return value

@@ -10,6 +10,13 @@ from runtime.gateway.public_api.action_plan_boundary import (
 from runtime.gateway.public_api.action_plan_view_models import (
     action_plan_envelope_to_view_model,
 )
+from runtime.gateway.public_api.representation_selection_boundary import (
+    RepresentationSelectionEvaluationRequest,
+    RepresentationSelectionPublicApi,
+)
+from runtime.gateway.public_api.representation_selection_view_models import (
+    representation_selection_envelope_to_view_model,
+)
 from runtime.gateway.public_api.resolution_actions import (
     ResolutionActionRequest,
     ResolutionActionsPublicApi,
@@ -35,6 +42,7 @@ from runtime.gateway.public_api.workbench_sessions import (
 class ResolutionWorkspaceViewModels:
     workbench_session: dict[str, Any]
     action_plan: dict[str, Any] | None = None
+    handoff: dict[str, Any] | None = None
     resolution_actions: dict[str, Any] | None = None
     stored_exports: dict[str, Any] | None = None
 
@@ -48,6 +56,7 @@ def build_resolution_workspace_view_models(
     target_ref: str,
     *,
     action_plan_public_api: ActionPlanPublicApi | None = None,
+    handoff_public_api: RepresentationSelectionPublicApi | None = None,
     actions_public_api: ResolutionActionsPublicApi | None = None,
     stored_exports_public_api: StoredExportsPublicApi | None = None,
     session_id: str,
@@ -78,6 +87,18 @@ def build_resolution_workspace_view_models(
             ).body
         )
 
+    handoff = None
+    if handoff_public_api is not None:
+        handoff = representation_selection_envelope_to_view_model(
+            handoff_public_api.select_representation(
+                RepresentationSelectionEvaluationRequest.from_parts(
+                    target_ref,
+                    host_profile_id,
+                    strategy_id,
+                )
+            ).body
+        )
+
     resolution_actions = None
     if actions_public_api is not None:
         resolution_actions = resolution_actions_envelope_to_view_model(
@@ -100,6 +121,7 @@ def build_resolution_workspace_view_models(
             session_id=session_id,
         ),
         action_plan=action_plan,
+        handoff=handoff,
         resolution_actions=resolution_actions,
         stored_exports=stored_exports,
     )

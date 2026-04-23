@@ -26,6 +26,8 @@ tags:
     description: Draft bounded representation and access-path listing operations for one resolved target.
   - name: Compatibility
     description: Draft bounded compatibility operations for one resolved target and one bootstrap host profile preset.
+  - name: Handoff
+    description: Draft bounded representation-selection and handoff operations for one resolved target plus optional bootstrap host and strategy presets.
   - name: ActionPlan
     description: Draft bounded action-plan operations for one resolved target plus optional bootstrap host and strategy presets.
   - name: ResolutionActions
@@ -262,6 +264,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CompatibilityEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/handoff:
+    get:
+      tags:
+        - Handoff
+      summary: Select a bounded preferred representation and handoff fit for one resolved target
+      description: >
+        Draft public boundary for selecting a bounded preferred representation and
+        explicit alternatives for one resolved target, optionally shaped by one
+        bootstrap host profile preset and one bootstrap strategy profile. This is
+        not a download engine, installer, launcher, or final runtime-routing contract.
+      operationId: selectRepresentation
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+        - name: host_profile_id
+          in: query
+          required: false
+          description: Optional bootstrap host profile preset identifier used for bounded suitability checks.
+          schema:
+            type: string
+        - name: strategy
+          in: query
+          required: false
+          description: Optional bootstrap strategy profile identifier used to vary bounded handoff emphasis without mutating underlying truth.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Draft representation-selection and handoff envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepresentationSelectionEnvelope'
+        '404':
+          description: Draft blocked handoff envelope for an unresolved target
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepresentationSelectionEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -1282,6 +1328,62 @@ components:
       required:
         - code
         - message
+    RepresentationSelectionEnvelope:
+      type: object
+      additionalProperties: false
+      description: >
+        Draft bounded representation-selection and handoff envelope for one resolved
+        target plus optional bootstrap host and strategy presets. This is not a final
+        installer, launcher, download, or runtime-routing contract.
+      properties:
+        status:
+          type: string
+          enum:
+            - available
+            - blocked
+        target_ref:
+          type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
+        preferred_representation_id:
+          type: string
+        strategy_profile:
+          $ref: '#/components/schemas/StrategyProfileSummary'
+        compatibility_status:
+          type: string
+          enum:
+            - compatible
+            - incompatible
+            - unknown
+        host_profile:
+          $ref: '#/components/schemas/HostProfileSummary'
+        primary_object:
+          $ref: '#/components/schemas/ObjectSummary'
+        source:
+          $ref: '#/components/schemas/SourceSummary'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
+        compatibility_reasons:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompatibilityReason'
+        selections:
+          type: array
+          items:
+            $ref: '#/components/schemas/RepresentationSelectionEntry'
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - target_ref
+        - evidence
+        - compatibility_reasons
+        - selections
+        - notices
     ActionPlanEnvelope:
       type: object
       additionalProperties: false
@@ -1447,6 +1549,63 @@ components:
         - representation_id
         - representation_kind
         - label
+        - source_family
+        - access_kind
+        - is_direct
+    RepresentationSelectionEntry:
+      type: object
+      additionalProperties: false
+      description: Draft bounded representation-selection entry suitable for shared surfaces.
+      properties:
+        representation_id:
+          type: string
+        representation_kind:
+          type: string
+        label:
+          type: string
+        selection_status:
+          type: string
+          enum:
+            - preferred
+            - available
+            - unsuitable
+            - unknown
+        reason_codes:
+          type: array
+          items:
+            type: string
+        reason_messages:
+          type: array
+          items:
+            type: string
+        source_family:
+          type: string
+        source_label:
+          type: string
+        source_locator:
+          type: string
+        access_kind:
+          type: string
+        access_locator:
+          type: string
+        content_type:
+          type: string
+        byte_length:
+          type: integer
+          minimum: 0
+        is_direct:
+          type: boolean
+        host_profile_id:
+          type: string
+        strategy_id:
+          type: string
+      required:
+        - representation_id
+        - representation_kind
+        - label
+        - selection_status
+        - reason_codes
+        - reason_messages
         - source_family
         - access_kind
         - is_direct

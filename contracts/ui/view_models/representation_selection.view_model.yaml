@@ -1,0 +1,226 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/representation_selection.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal path.
+title: RepresentationSelection
+description: Draft shared bounded representation-selection and handoff model aligned with the gateway public handoff boundary.
+type: object
+additionalProperties: false
+properties:
+  status:
+    type: string
+    enum:
+      - available
+      - blocked
+  target_ref:
+    type: string
+  resolved_resource_id:
+    type: string
+  preferred_representation_id:
+    type: string
+  compatibility_status:
+    type: string
+    enum:
+      - compatible
+      - incompatible
+      - unknown
+  strategy_profile:
+    $ref: '#/$defs/strategy_profile'
+  host_profile:
+    $ref: '#/$defs/host_profile'
+  primary_object:
+    $ref: '#/$defs/object_summary'
+  source:
+    $ref: '#/$defs/source_summary'
+  evidence:
+    type: array
+    items:
+      $ref: '#/$defs/evidence_summary'
+  compatibility_reasons:
+    type: array
+    items:
+      $ref: '#/$defs/reason'
+  selections:
+    type: array
+    items:
+      $ref: '#/$defs/selection'
+  notices:
+    type: array
+    items:
+      $ref: '#/$defs/notice'
+required:
+  - status
+  - target_ref
+  - evidence
+  - compatibility_reasons
+  - selections
+  - notices
+$defs:
+  strategy_profile:
+    type: object
+    additionalProperties: false
+    properties:
+      strategy_id:
+        type: string
+      label:
+        type: string
+      description:
+        type: string
+      emphasis_hints:
+        type: array
+        items:
+          type: string
+    required:
+      - strategy_id
+      - label
+      - description
+      - emphasis_hints
+  host_profile:
+    type: object
+    additionalProperties: false
+    properties:
+      host_profile_id:
+        type: string
+      os_family:
+        type: string
+      architecture:
+        type: string
+      runtime_family:
+        type: string
+      features:
+        type: array
+        items:
+          type: string
+    required:
+      - host_profile_id
+      - os_family
+      - architecture
+      - features
+  object_summary:
+    type: object
+    additionalProperties: false
+    properties:
+      id:
+        type: string
+      kind:
+        type: string
+      label:
+        type: string
+    required:
+      - id
+  source_summary:
+    type: object
+    additionalProperties: false
+    properties:
+      family:
+        type: string
+      label:
+        type: string
+      locator:
+        type: string
+    required:
+      - family
+  evidence_summary:
+    type: object
+    additionalProperties: false
+    properties:
+      claim_kind:
+        type: string
+      claim_value:
+        type: string
+      asserted_by_family:
+        type: string
+      asserted_by_label:
+        type: string
+      evidence_kind:
+        type: string
+      evidence_locator:
+        type: string
+      asserted_at:
+        type: string
+    required:
+      - claim_kind
+      - claim_value
+      - asserted_by_family
+      - evidence_kind
+      - evidence_locator
+  reason:
+    type: object
+    additionalProperties: false
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    required:
+      - code
+      - message
+  selection:
+    type: object
+    additionalProperties: false
+    properties:
+      representation_id:
+        type: string
+      representation_kind:
+        type: string
+      label:
+        type: string
+      selection_status:
+        type: string
+        enum:
+          - preferred
+          - available
+          - unsuitable
+          - unknown
+      reason_codes:
+        type: array
+        items:
+          type: string
+      reason_messages:
+        type: array
+        items:
+          type: string
+      source_family:
+        type: string
+      source_label:
+        type: string
+      source_locator:
+        type: string
+      access_kind:
+        type: string
+      access_locator:
+        type: string
+      content_type:
+        type: string
+      byte_length:
+        type: integer
+        minimum: 0
+      is_direct:
+        type: boolean
+      host_profile_id:
+        type: string
+      strategy_id:
+        type: string
+    required:
+      - representation_id
+      - representation_kind
+      - label
+      - selection_status
+      - reason_codes
+      - reason_messages
+      - source_family
+      - access_kind
+      - is_direct
+  notice:
+    type: object
+    additionalProperties: false
+    properties:
+      code:
+        type: string
+      severity:
+        type: string
+      message:
+        type: string
+    required:
+      - code
+      - severity
+x-eureka-status: draft
