@@ -10,6 +10,7 @@ import unittest
 import zipfile
 
 from runtime.gateway.public_api import (
+    build_demo_action_plan_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
@@ -35,6 +36,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.app = WorkbenchWsgiApp(
             build_demo_resolution_jobs_public_api(),
+            action_plan_public_api=build_demo_action_plan_public_api(),
             absence_public_api=build_demo_absence_public_api(),
             comparison_public_api=build_demo_comparison_public_api(),
             compatibility_public_api=build_demo_compatibility_public_api(),
@@ -60,10 +62,38 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(payload["workbench_session"]["representations"][0]["representation_kind"], "fixture_artifact")
         self.assertEqual(payload["workbench_session"]["representations"][1]["access_kind"], "view")
         self.assertEqual(payload["workbench_session"]["evidence"][0]["claim_kind"], "label")
+        self.assertEqual(payload["action_plan"]["status"], "planned")
         self.assertEqual(
             payload["resolution_actions"]["resolved_resource_id"],
             EXPECTED_RESOLVED_RESOURCE_ID,
         )
+
+    def test_action_plan_endpoint_returns_machine_readable_bounded_plan(self) -> None:
+        status, headers, body = self._request(
+            "/api/action-plan",
+            {
+                "target_ref": "github-release:cli/cli@v2.65.0",
+                "host": "windows-x86_64",
+            },
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["status"], "planned")
+        self.assertEqual(payload["compatibility_status"], "compatible")
+        self.assertEqual(payload["host_profile"]["host_profile_id"], "windows-x86_64")
+        self.assertEqual(payload["actions"][1]["action_id"], "access_representation")
+        self.assertEqual(payload["actions"][1]["status"], "recommended")
+
+        blocked_status, _, blocked_body = self._request(
+            "/api/action-plan",
+            {"target_ref": MISSING_TARGET_REF},
+        )
+        self.assertEqual(blocked_status, "404 Not Found")
+        blocked_payload = json.loads(blocked_body)
+        self.assertEqual(blocked_payload["status"], "blocked")
+        self.assertEqual(blocked_payload["notices"][0]["code"], "target_ref_not_found")
 
     def test_resolve_endpoint_returns_honest_blocked_outcome_for_unknown_target(self) -> None:
         status, headers, body = self._request("/api/resolve", {"target_ref": MISSING_TARGET_REF})

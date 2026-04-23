@@ -67,6 +67,49 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                     },
                 ],
             },
+            action_plan={
+                "status": "planned",
+                "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+                "actions": [
+                    {
+                        "action_id": "inspect_primary_representation",
+                        "label": "View Synthetic demo app fixture record",
+                        "kind": "view_source_page",
+                        "status": "recommended",
+                        "reason_codes": ["inspect_before_host_specific_choice"],
+                        "reason_messages": [
+                            "No host profile was supplied, so inspecting a bounded source-backed path is recommended before any host-specific choice."
+                        ],
+                        "representation_label": "Synthetic demo app fixture record",
+                        "access_kind": "view",
+                        "source_family": "synthetic_fixture",
+                        "route_hint": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
+                    },
+                    {
+                        "action_id": "export_resolution_manifest",
+                        "label": "Export resolution manifest",
+                        "kind": "export_manifest",
+                        "status": "available",
+                        "reason_codes": ["manifest_export_available_for_inspection"],
+                        "reason_messages": [
+                            "A deterministic manifest export is available as a bounded inspection and evidence-preserving step."
+                        ],
+                        "route_hint": "/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0",
+                    },
+                    {
+                        "action_id": "store_resolution_manifest",
+                        "label": "Store resolution manifest locally",
+                        "kind": "store_manifest",
+                        "status": "unavailable",
+                        "reason_codes": ["store_context_not_configured"],
+                        "reason_messages": [
+                            "No local store context was configured for this action-plan request."
+                        ],
+                    },
+                ],
+                "compatibility_reasons": [],
+                "notices": [],
+            },
             resolution_actions={
                 "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
                 "actions": [
@@ -130,6 +173,11 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("inspect", html)
         self.assertIn("Synthetic demo app fixture record", html)
         self.assertIn("contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0", html)
+        self.assertIn("Recommended Next Steps", html)
+        self.assertIn("View Synthetic demo app fixture record", html)
+        self.assertIn("Export resolution manifest", html)
+        self.assertIn("Store resolution manifest locally", html)
+        self.assertIn("/action-plan?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
         self.assertIn("Export resolution manifest", html)
         self.assertIn("/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
         self.assertIn("Export resolution bundle", html)
@@ -156,6 +204,19 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                         "code": "fixture_target_not_found",
                         "severity": "warning",
                         "message": "No governed synthetic record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
+                    }
+                ],
+            },
+            action_plan={
+                "status": "blocked",
+                "target_ref": "fixture:software/missing-demo-app@0.0.1",
+                "actions": [],
+                "compatibility_reasons": [],
+                "notices": [
+                    {
+                        "code": "target_ref_not_found",
+                        "severity": "warning",
+                        "message": "No bounded record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
                     }
                 ],
             },
@@ -216,6 +277,7 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("fixture_target_not_found", html)
         self.assertIn("No governed synthetic record matched target_ref", html)
         self.assertIn("/absence/resolve?target_ref=fixture%3Asoftware%2Fmissing-demo-app%400.0.1", html)
+        self.assertIn("Recommended Next Steps", html)
         self.assertIn("No available actions are exposed for this target.", html)
         self.assertIn("Export resolution manifest (unavailable)", html)
         self.assertIn("Export resolution bundle (unavailable)", html)

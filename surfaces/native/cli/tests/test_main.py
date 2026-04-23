@@ -43,6 +43,20 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("status: blocked", output)
         self.assertIn("target_ref_not_found", output)
 
+    def test_plan_command_renders_recommended_available_and_unavailable_actions(self) -> None:
+        exit_code, output = run_cli("plan", "github-release:cli/cli@v2.65.0", "--host", "windows-x86_64")
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Action plan", output)
+        self.assertIn("target_ref: github-release:cli/cli@v2.65.0", output)
+        self.assertIn("compatibility_status: compatible", output)
+        self.assertIn("Recommended", output)
+        self.assertIn("Access gh_2.65.0_windows_amd64.msi", output)
+        self.assertIn("Available", output)
+        self.assertIn("Export resolution manifest", output)
+        self.assertIn("Unavailable", output)
+        self.assertIn("Store resolution manifest locally", output)
+
     def test_resolve_github_target_includes_source_family_and_origin_summary(self) -> None:
         exit_code, output = run_cli("resolve", "github-release:cli/cli@v2.65.0")
 
@@ -205,6 +219,22 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertEqual(payload["status"], "evaluated")
         self.assertEqual(payload["compatibility_status"], "unknown")
         self.assertEqual(payload["reasons"][0]["code"], "compatibility_requirements_missing")
+
+    def test_plan_command_can_return_unknown_friendly_json(self) -> None:
+        exit_code, output = run_cli(
+            "plan",
+            KNOWN_TARGET_REF,
+            "--host",
+            "windows-x86_64",
+            "--json",
+        )
+        payload = json.loads(output)
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(payload["status"], "planned")
+        self.assertEqual(payload["compatibility_status"], "unknown")
+        self.assertEqual(payload["compatibility_reasons"][0]["code"], "compatibility_requirements_missing")
+        self.assertEqual(payload["actions"][0]["action_id"], "inspect_primary_representation")
 
     def test_manifest_export_returns_known_manifest_json(self) -> None:
         exit_code, output = run_cli("export-manifest", KNOWN_TARGET_REF, "--json")
