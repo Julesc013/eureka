@@ -1,6 +1,7 @@
 """Service-facing engine interfaces for the Eureka thin slice."""
 
 from runtime.engine.interfaces.service.absence_service import AbsenceService
+from runtime.engine.interfaces.service.action_plan_service import ActionPlanService
 from runtime.engine.interfaces.service.bundle_service import ResolutionBundleArtifact, ResolutionBundleService
 from runtime.engine.interfaces.service.bundle_inspection_service import (
     ResolutionBundleInspectionRequest,
@@ -25,6 +26,7 @@ from runtime.engine.interfaces.service.subject_states_service import SubjectStat
 
 __all__ = [
     "AbsenceService",
+    "ActionPlanService",
     "ComparisonService",
     "CompatibilityService",
     "ExportStoreService",
