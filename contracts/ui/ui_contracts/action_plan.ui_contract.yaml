@@ -4,7 +4,8 @@ x-eureka-status: draft
 description: >
   Draft shared interaction contract for web and native surfaces that project one
   bounded action plan for one resolved target, optionally shaped by one bootstrap
-  host profile preset through the gateway public action-plan boundary.
+  host profile preset and one bootstrap strategy profile through the gateway
+  public action-plan boundary.
 applies_to:
   - surfaces/web
   - surfaces/native
@@ -12,6 +13,7 @@ normal_path:
   gateway_operations:
     - GET /v0/action-plan?target_ref={target_ref}
     - GET /v0/action-plan?target_ref={target_ref}&host_profile_id={host_profile_id}
+    - GET /v0/action-plan?target_ref={target_ref}&strategy={strategy_id}
   shared_view_models:
     - contracts/ui/view_models/action_plan.view_model.yaml
   shared_result_shapes:
@@ -20,6 +22,7 @@ surface_expectations:
   - surfaces evaluate bounded next-step plans through the public gateway boundary and do not derive recommendation logic from engine internals directly
   - surfaces preserve the distinction between recommended, available, and unavailable actions instead of silently hiding blocked paths
   - surfaces preserve compact host-profile, compatibility, and representation context where the bounded action plan carries it
+  - surfaces show the selected bounded strategy profile when it shapes recommendation emphasis
   - surfaces do not imply execution, installer, download, or runtime-routing semantics when rendering this bounded recommendation seam
 surface_split:
   web:
@@ -29,5 +32,6 @@ surface_split:
     deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
 deferred_topics:
   - final action-routing policy semantics
+  - user personalization or persistence semantics
   - execution and orchestration behavior
   - installer, launcher, and runtime-routing semantics

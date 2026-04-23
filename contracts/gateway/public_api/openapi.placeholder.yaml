@@ -27,7 +27,7 @@ tags:
   - name: Compatibility
     description: Draft bounded compatibility operations for one resolved target and one bootstrap host profile preset.
   - name: ActionPlan
-    description: Draft bounded action-plan operations for one resolved target and an optional bootstrap host profile preset.
+    description: Draft bounded action-plan operations for one resolved target plus optional bootstrap host and strategy presets.
   - name: ResolutionActions
     description: Draft bounded action discovery plus manifest and portable-bundle export operations for resolved targets.
   - name: StoredExports
@@ -275,8 +275,9 @@ paths:
       summary: Build a bounded action plan for one resolved target
       description: >
         Draft public boundary for surfacing a bounded recommendation plan for one
-        resolved target, optionally shaped by one bootstrap host profile preset.
-        This is not an execution engine, installer, or final action-routing policy contract.
+        resolved target, optionally shaped by one bootstrap host profile preset
+        and one bootstrap strategy profile. This is not an execution engine,
+        installer, personalization system, or final action-routing policy contract.
       operationId: planActions
       parameters:
         - $ref: '#/components/parameters/TargetRef'
@@ -284,6 +285,12 @@ paths:
           in: query
           required: false
           description: Optional bootstrap host profile preset identifier used for bounded host-aware recommendations.
+          schema:
+            type: string
+        - name: strategy
+          in: query
+          required: false
+          description: Optional bootstrap strategy profile identifier used to vary bounded recommendation emphasis without mutating underlying truth.
           schema:
             type: string
       responses:
@@ -1280,8 +1287,8 @@ components:
       additionalProperties: false
       description: >
         Draft bounded action-plan envelope for one resolved target and an optional
-        bootstrap host profile preset. This is not a final execution, installer, or
-        runtime-routing contract.
+        bootstrap host profile preset plus one bootstrap strategy profile. This is
+        not a final execution, installer, personalization, or runtime-routing contract.
       properties:
         status:
           type: string
@@ -1292,6 +1299,12 @@ components:
           type: string
         resolved_resource_id:
           $ref: '#/components/schemas/ResolvedResourceId'
+        strategy_profile:
+          $ref: '#/components/schemas/StrategyProfileSummary'
+        strategy_rationale:
+          type: array
+          items:
+            type: string
         compatibility_status:
           type: string
           enum:
@@ -1304,6 +1317,10 @@ components:
           $ref: '#/components/schemas/ObjectSummary'
         source:
           $ref: '#/components/schemas/SourceSummary'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceSummary'
         compatibility_reasons:
           type: array
           items:
@@ -1319,9 +1336,31 @@ components:
       required:
         - status
         - target_ref
+        - strategy_rationale
+        - evidence
         - compatibility_reasons
         - actions
         - notices
+    StrategyProfileSummary:
+      type: object
+      additionalProperties: false
+      description: Draft bounded strategy-profile summary used to vary recommendation emphasis.
+      properties:
+        strategy_id:
+          type: string
+        label:
+          type: string
+        description:
+          type: string
+        emphasis_hints:
+          type: array
+          items:
+            type: string
+      required:
+        - strategy_id
+        - label
+        - description
+        - emphasis_hints
     ActionPlanEntry:
       type: object
       additionalProperties: false
@@ -1364,6 +1403,8 @@ components:
         source_family:
           type: string
         source_locator:
+          type: string
+        subject_key:
           type: string
       required:
         - action_id

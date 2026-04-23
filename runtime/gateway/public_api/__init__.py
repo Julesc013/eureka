@@ -3,6 +3,7 @@
 from runtime.gateway.public_api.action_plan_boundary import (
     ActionPlanEvaluationRequest,
     ActionPlanPublicApi,
+    BOOTSTRAP_STRATEGY_PROFILES,
     action_plan_result_to_public_envelope,
 )
 from runtime.gateway.public_api.action_plan_view_models import (
@@ -141,6 +142,7 @@ __all__ = [
     "ActionPlanPublicApi",
     "AbsencePublicApi",
     "BOOTSTRAP_HOST_PROFILE_PRESETS",
+    "BOOTSTRAP_STRATEGY_PROFILES",
     "CompareTargetsRequest",
     "ComparisonPublicApi",
     "CompatibilityEvaluationRequest",

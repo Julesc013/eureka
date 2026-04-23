@@ -15,6 +15,12 @@ properties:
     type: string
   resolved_resource_id:
     type: string
+  strategy_profile:
+    $ref: '#/$defs/strategy_profile'
+  strategy_rationale:
+    type: array
+    items:
+      type: string
   compatibility_status:
     type: string
     enum:
@@ -27,6 +33,10 @@ properties:
     $ref: '#/$defs/object_summary'
   source:
     $ref: '#/$defs/source_summary'
+  evidence:
+    type: array
+    items:
+      $ref: '#/$defs/evidence_summary'
   compatibility_reasons:
     type: array
     items:
@@ -42,10 +52,31 @@ properties:
 required:
   - status
   - target_ref
+  - strategy_rationale
+  - evidence
   - compatibility_reasons
   - actions
   - notices
 $defs:
+  strategy_profile:
+    type: object
+    additionalProperties: false
+    properties:
+      strategy_id:
+        type: string
+      label:
+        type: string
+      description:
+        type: string
+      emphasis_hints:
+        type: array
+        items:
+          type: string
+    required:
+      - strategy_id
+      - label
+      - description
+      - emphasis_hints
   host_profile:
     type: object
     additionalProperties: false
@@ -91,6 +122,30 @@ $defs:
         type: string
     required:
       - family
+  evidence_summary:
+    type: object
+    additionalProperties: false
+    properties:
+      claim_kind:
+        type: string
+      claim_value:
+        type: string
+      asserted_by_family:
+        type: string
+      asserted_by_label:
+        type: string
+      evidence_kind:
+        type: string
+      evidence_locator:
+        type: string
+      asserted_at:
+        type: string
+    required:
+      - claim_kind
+      - claim_value
+      - asserted_by_family
+      - evidence_kind
+      - evidence_locator
   reason:
     type: object
     additionalProperties: false
@@ -143,6 +198,8 @@ $defs:
       source_family:
         type: string
       source_locator:
+        type: string
+      subject_key:
         type: string
     required:
       - action_id

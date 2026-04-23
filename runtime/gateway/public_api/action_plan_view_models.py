@@ -7,6 +7,14 @@ def action_plan_envelope_to_view_model(envelope: Mapping[str, Any]) -> dict[str,
     view_model: dict[str, Any] = {
         "status": _require_string(envelope.get("status"), "action_plan.status"),
         "target_ref": _require_string(envelope.get("target_ref"), "action_plan.target_ref"),
+        "evidence": _coerce_evidence(
+            envelope.get("evidence"),
+            "action_plan.evidence",
+        ),
+        "strategy_rationale": _coerce_string_list(
+            envelope.get("strategy_rationale"),
+            "action_plan.strategy_rationale",
+        ),
         "actions": _coerce_actions(envelope.get("actions"), "action_plan.actions"),
         "compatibility_reasons": _coerce_reasons(
             envelope.get("compatibility_reasons"),
@@ -35,6 +43,12 @@ def action_plan_envelope_to_view_model(envelope: Mapping[str, Any]) -> dict[str,
     source = envelope.get("source")
     if source is not None:
         view_model["source"] = _coerce_source_summary(source, "action_plan.source")
+    strategy_profile = envelope.get("strategy_profile")
+    if strategy_profile is not None:
+        view_model["strategy_profile"] = _coerce_strategy_profile(
+            strategy_profile,
+            "action_plan.strategy_profile",
+        )
     host_profile = envelope.get("host_profile")
     if host_profile is not None:
         view_model["host_profile"] = _coerce_host_profile(host_profile, "action_plan.host_profile")
@@ -72,6 +86,7 @@ def _coerce_actions(value: Any, field_name: str) -> list[dict[str, Any]]:
             "access_locator",
             "source_family",
             "source_locator",
+            "subject_key",
         ):
             optional = _optional_string(item.get(key), f"{field_name}[{index}].{key}")
             if optional is not None:
@@ -96,6 +111,47 @@ def _coerce_reasons(value: Any, field_name: str) -> list[dict[str, str]]:
             }
         )
     return reasons
+
+
+def _coerce_evidence(value: Any, field_name: str) -> list[dict[str, str]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    evidence: list[dict[str, str]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"{field_name}[{index}] must be an object.")
+        summary = {
+            "claim_kind": _require_string(item.get("claim_kind"), f"{field_name}[{index}].claim_kind"),
+            "claim_value": _require_string(item.get("claim_value"), f"{field_name}[{index}].claim_value"),
+            "asserted_by_family": _require_string(
+                item.get("asserted_by_family"),
+                f"{field_name}[{index}].asserted_by_family",
+            ),
+            "evidence_kind": _require_string(item.get("evidence_kind"), f"{field_name}[{index}].evidence_kind"),
+            "evidence_locator": _require_string(
+                item.get("evidence_locator"),
+                f"{field_name}[{index}].evidence_locator",
+            ),
+        }
+        for key in ("asserted_by_label", "asserted_at"):
+            optional = _optional_string(item.get(key), f"{field_name}[{index}].{key}")
+            if optional is not None:
+                summary[key] = optional
+        evidence.append(summary)
+    return evidence
+
+
+def _coerce_strategy_profile(value: Any, field_name: str) -> dict[str, Any]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    return {
+        "strategy_id": _require_string(value.get("strategy_id"), f"{field_name}.strategy_id"),
+        "label": _require_string(value.get("label"), f"{field_name}.label"),
+        "description": _require_string(value.get("description"), f"{field_name}.description"),
+        "emphasis_hints": _coerce_string_list(value.get("emphasis_hints"), f"{field_name}.emphasis_hints"),
+    }
 
 
 def _coerce_host_profile(value: Any, field_name: str) -> dict[str, Any]:

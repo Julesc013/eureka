@@ -52,6 +52,7 @@ def build_resolution_workspace_view_models(
     stored_exports_public_api: StoredExportsPublicApi | None = None,
     session_id: str,
     host_profile_id: str | None = None,
+    strategy_id: str | None = None,
 ) -> ResolutionWorkspaceViewModels:
     submit_response = resolution_public_api.submit_resolution_job(
         SubmitResolutionJobRequest.from_parts(target_ref),
@@ -71,6 +72,7 @@ def build_resolution_workspace_view_models(
                 ActionPlanEvaluationRequest.from_parts(
                     target_ref,
                     host_profile_id,
+                    strategy_id,
                     store_actions_enabled=stored_exports_public_api is not None,
                 )
             ).body
