@@ -72,6 +72,10 @@ steps:
     run: python scripts/demo_cli_workbench.py fetch github-release:cli/cli@v2.65.0 --representation rep.github-release.cli.cli.v2.65.0.asset.0
   - id: native_cli_fetch_unavailable
     run: python scripts/demo_cli_workbench.py fetch github-release:cli/cli@v2.65.0 --representation rep.github-release.cli.cli.release-metadata --json
+  - id: native_cli_decompose_synthetic
+    run: python scripts/demo_cli_workbench.py decompose fixture:software/synthetic-demo-app@1.0.0 --representation rep.synthetic-demo-app.package --json
+  - id: native_cli_decompose_unsupported
+    run: python scripts/demo_cli_workbench.py decompose github-release:cli/cli@v2.65.0 --representation rep.github-release.cli.cli.v2.65.0.asset.0 --json
   - id: native_cli_action_plan_default
     run: python scripts/demo_cli_workbench.py plan fixture:software/synthetic-demo-app@1.0.0 --json
   - id: native_cli_action_plan_strategy_inspect
@@ -130,6 +134,10 @@ steps:
     run: python scripts/demo_http_api.py fetch github-release:cli/cli@v2.65.0 --representation rep.github-release.cli.cli.v2.65.0.asset.0
   - id: http_api_fetch_unavailable
     run: python scripts/demo_http_api.py fetch github-release:cli/cli@v2.65.0 --representation rep.github-release.cli.cli.release-metadata
+  - id: http_api_decompose_synthetic
+    run: python scripts/demo_http_api.py decompose fixture:software/synthetic-demo-app@1.0.0 --representation rep.synthetic-demo-app.package
+  - id: http_api_decompose_unsupported
+    run: python scripts/demo_http_api.py decompose github-release:cli/cli@v2.65.0 --representation rep.github-release.cli.cli.v2.65.0.asset.0
   - id: http_api_action_plan_default
     run: python scripts/demo_http_api.py action-plan fixture:software/synthetic-demo-app@1.0.0
   - id: http_api_action_plan_strategy_compare
@@ -178,4 +186,5 @@ notes:
   - The bounded strategy-aware action-plan proof remains bootstrap-scale, varies recommendation emphasis only, and does not imply persistence, personalization, ranking, or a final user-model contract.
   - The bounded handoff proof remains bootstrap-scale, selects one preferred representation plus explicit alternatives only, and does not imply downloads, installers, launches, orchestration, or a final runtime-routing contract.
   - The bounded acquisition proof remains bootstrap-scale, reads tiny deterministic local payload fixtures only, and does not imply live downloads, installers, restore/import, launches, or final execution semantics.
+  - The bounded decomposition proof remains bootstrap-scale, inspects ZIP payloads only, and does not imply broad extraction, installers, import, restore, or final package-management semantics.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

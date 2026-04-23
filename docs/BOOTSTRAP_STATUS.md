@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus twenty-three executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus twenty-four executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 ## Established
 
@@ -42,6 +42,7 @@ Current status: foundational scaffold plus twenty-three executable local determi
 - first bounded user-strategy and intent-profile seam under `runtime/engine/strategy/` plus `runtime/engine/action_routing/` that lets the same resolved target produce different bounded recommendation emphasis under explicit strategy profiles while preserving underlying identity, evidence, and representation truth through the public boundary plus current surfaces
 - first bounded representation-selection and handoff seam under `runtime/engine/handoff/` that lets one resolved target surface a preferred bounded representation plus explicit available, unsuitable, and unknown alternatives shaped by optional host and strategy input through the public boundary plus current surfaces without forcing downloads, installers, runtime launches, or final routing semantics
 - first bounded acquisition and fetch seam under `runtime/engine/acquisition/` that lets one resolved target plus one explicit bounded representation retrieve tiny deterministic local payload bytes through the public boundary plus current surfaces, while preserving unavailable and blocked outcomes without forcing live downloads, installers, restore flows, or execution semantics
+- first bounded decomposition and package-member seam under `runtime/engine/decomposition/` that lets one resolved target plus one explicit fetched bounded representation surface a compact ZIP member listing through the public boundary plus current surfaces, while returning explicit unsupported, unavailable, and blocked outcomes without forcing extraction, installers, import, or restore semantics
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -60,7 +61,7 @@ Current status: foundational scaffold plus twenty-three executable local determi
 - final diagnostic and absence-reasoning semantics beyond the current bounded miss-explanation seam
 - final representation, access-path, download, install, import, and restore semantics beyond the current bounded representation seam
 - final compatibility, host-profile, installer, and runtime-routing semantics beyond the current bounded compatibility seam
-- final action-routing, representation-selection, handoff, acquisition, strategy, execution, installer, workflow-policy, and personalization semantics beyond the current bounded recommendation seams
+- final action-routing, representation-selection, handoff, acquisition, decomposition, strategy, execution, installer, workflow-policy, extraction, and personalization semantics beyond the current bounded recommendation seams
 - mature search semantics, ranking, and broader retrieval architecture
 - real web application structure, browser-side behavior, authentication, and deployment assumptions
 - broader live external-source federation, live GitHub acquisition, ranking, retrieval, and broader provenance or trust semantics

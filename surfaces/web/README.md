@@ -16,6 +16,7 @@ Current bootstrap slice:
 - renders bounded compatibility evaluation at `/compatibility?target_ref=...&host=...` from a shared compatibility view model rather than engine-owned requirement logic
 - renders bounded representation-selection and handoff guidance in the exact-resolution page and at `/handoff?target_ref=...&host=...&strategy=...` from a shared handoff view model rather than engine-owned routing logic
 - distinguishes fetchable and non-fetchable known representations in the exact-resolution page and handoff guidance, and exposes `/fetch?target_ref=...&representation_id=...` as a bounded local payload-retrieval route over the public acquisition boundary
+- exposes `/decompose?target_ref=...&representation_id=...` as a bounded package-member inspection route over the public decomposition boundary, returning compact member listings for supported fetched formats and explicit unsupported or unavailable explanations otherwise
 - renders bounded recommended, available, and unavailable next-step actions in the exact-resolution page and at `/action-plan?target_ref=...&host=...&strategy=...` from a shared action-plan view model rather than engine-owned policy logic
 - renders the bootstrap `resolved_resource_id` for known resolved targets without importing engine internals
 - renders bounded source-family and source-origin summaries for resolved and searched records from synthetic fixtures and recorded GitHub Releases fixtures
@@ -35,12 +36,13 @@ Current bootstrap slice:
 - exposes `/api/compatibility?target_ref=...&host=...` for machine-readable bounded compatibility evaluation over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/handoff?target_ref=...&host=...&strategy=...` for machine-readable bounded representation-selection and handoff evaluation over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/fetch?target_ref=...&representation_id=...` for bounded payload bytes or structured unavailable and blocked results over the same transport-neutral public boundary already reused by the HTML workbench and CLI
+- exposes `/api/decompose?target_ref=...&representation_id=...` for machine-readable bounded decomposition results over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/action-plan?target_ref=...&host=...&strategy=...` for machine-readable bounded action-plan evaluation over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - does not imply a real framework choice, browser-side JavaScript dependency, routing tree, authentication layer, or deployment model
 - does not settle final HTTP API route naming, auth, HTTPS/TLS, deployment, or multi-user semantics
 - local store root configuration is a bootstrap-only demo choice, not a final deployment or multi-user storage contract
 - local path-based bundle inspection is a bootstrap-only demo choice, not a production upload or import contract
-- does not settle final download, acquisition, installer, restore, durable cache, persistence, representation-selection, or handoff behavior
+- does not settle final download, acquisition, installer, restore, durable cache, persistence, representation-selection, handoff, decomposition, or extraction behavior
 - does not settle final compatibility, host-profile, installer, or runtime-routing behavior
 - does not settle final action-routing, strategy, execution, installer, or runtime-routing behavior
 - does not settle final object/state identity presentation, state ordering semantics, or global merge behavior
