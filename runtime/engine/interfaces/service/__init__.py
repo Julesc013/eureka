@@ -20,6 +20,9 @@ from runtime.engine.interfaces.service.export_store_service import (
     StoredArtifactWriteResult,
 )
 from runtime.engine.interfaces.service.representation_service import RepresentationsService
+from runtime.engine.interfaces.service.representation_selection_service import (
+    RepresentationSelectionService,
+)
 from runtime.engine.interfaces.service.resolution_service import ResolutionOutcome, ResolutionService
 from runtime.engine.interfaces.service.search_service import SearchService
 from runtime.engine.interfaces.service.subject_states_service import SubjectStatesService
@@ -37,6 +40,7 @@ __all__ = [
     "ResolutionBundleService",
     "ResolutionManifestService",
     "RepresentationsService",
+    "RepresentationSelectionService",
     "ResolutionOutcome",
     "ResolutionService",
     "SearchService",

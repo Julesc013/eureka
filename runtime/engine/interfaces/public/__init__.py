@@ -33,6 +33,10 @@ from runtime.engine.interfaces.public.representations import (
     RepresentationsRequest,
     RepresentationsResult,
 )
+from runtime.engine.interfaces.public.representation_selection import (
+    RepresentationSelectionRequest,
+    RepresentationSelectionResult,
+)
 from runtime.engine.interfaces.public.search import SearchRequest, SearchResponse, SearchResultEntry
 from runtime.engine.interfaces.public.subject_states import (
     SubjectStateSummary,
@@ -63,6 +67,8 @@ __all__ = [
     "SourceSummary",
     "RepresentationsRequest",
     "RepresentationsResult",
+    "RepresentationSelectionRequest",
+    "RepresentationSelectionResult",
     "SearchRequest",
     "SearchResponse",
     "SearchResultEntry",
