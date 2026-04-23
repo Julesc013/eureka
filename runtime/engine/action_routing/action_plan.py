@@ -11,6 +11,8 @@ EXPORT_RESOLUTION_BUNDLE_ACTION_ID = "export_resolution_bundle"
 INSPECT_BUNDLE_ACTION_ID = "inspect_bundle"
 STORE_RESOLUTION_MANIFEST_ACTION_ID = "store_resolution_manifest"
 STORE_RESOLUTION_BUNDLE_ACTION_ID = "store_resolution_bundle"
+LIST_SUBJECT_STATES_ACTION_ID = "list_subject_states"
+COMPARE_TARGET_ACTION_ID = "compare_target"
 
 
 @dataclass(frozen=True)
@@ -29,6 +31,7 @@ class ActionPlanEntry:
     access_locator: str | None = None
     source_family: str | None = None
     source_locator: str | None = None
+    subject_key: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         payload: dict[str, Any] = {
@@ -48,6 +51,7 @@ class ActionPlanEntry:
             "access_locator",
             "source_family",
             "source_locator",
+            "subject_key",
         ):
             value = getattr(self, key)
             if value is not None:

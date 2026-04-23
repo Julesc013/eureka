@@ -2,15 +2,18 @@ from __future__ import annotations
 
 from runtime.engine.action_routing.action_plan import (
     ACCESS_REPRESENTATION_ACTION_ID,
+    COMPARE_TARGET_ACTION_ID,
     EXPORT_RESOLUTION_BUNDLE_ACTION_ID,
     EXPORT_RESOLUTION_MANIFEST_ACTION_ID,
     INSPECT_BUNDLE_ACTION_ID,
     INSPECT_PRIMARY_REPRESENTATION_ACTION_ID,
+    LIST_SUBJECT_STATES_ACTION_ID,
     STORE_RESOLUTION_BUNDLE_ACTION_ID,
     STORE_RESOLUTION_MANIFEST_ACTION_ID,
     ActionPlanEntry,
 )
 from runtime.engine.compatibility import CompatibilityReason
+from runtime.engine.compatibility.service import DeterministicCompatibilityService
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.public.action_plan import ActionPlanRequest, ActionPlanResult
 from runtime.engine.interfaces.public.compatibility import CompatibilityRequest
@@ -20,9 +23,10 @@ from runtime.engine.interfaces.service import (
     CompatibilityService,
     ResolutionService,
 )
-from runtime.engine.resolve import ExactMatchResolutionService
-from runtime.engine.compatibility.service import DeterministicCompatibilityService
 from runtime.engine.representations import RepresentationSummary
+from runtime.engine.resolve import ExactMatchResolutionService
+from runtime.engine.states.subject_states import subject_key_for_target_ref
+from runtime.engine.strategy import StrategyProfile, resolve_bootstrap_strategy_profile
 
 
 class DeterministicActionPlanService(ActionPlanService):
@@ -41,11 +45,14 @@ class DeterministicActionPlanService(ActionPlanService):
         )
 
     def plan_actions(self, request: ActionPlanRequest) -> ActionPlanResult:
+        strategy_profile = resolve_bootstrap_strategy_profile(request.strategy_id)
         outcome = self._resolution_service.resolve(ResolutionRequest.from_parts(request.target_ref))
         if outcome.status != "completed" or outcome.result is None:
             return ActionPlanResult(
                 status="blocked",
                 target_ref=request.target_ref,
+                strategy_profile=strategy_profile,
+                strategy_rationale=_strategy_rationale(strategy_profile),
                 notices=outcome.notices,
             )
 
@@ -54,6 +61,9 @@ class DeterministicActionPlanService(ActionPlanService):
             return ActionPlanResult(
                 status="blocked",
                 target_ref=request.target_ref,
+                evidence=outcome.result.evidence,
+                strategy_profile=strategy_profile,
+                strategy_rationale=_strategy_rationale(strategy_profile),
                 notices=(
                     Notice(
                         code="target_ref_not_found",
@@ -75,16 +85,27 @@ class DeterministicActionPlanService(ActionPlanService):
                 return ActionPlanResult(
                     status="blocked",
                     target_ref=request.target_ref,
+                    resolved_resource_id=outcome.result.resolved_resource_id,
+                    primary_object=outcome.result.primary_object,
+                    source=outcome.result.source,
+                    evidence=outcome.result.evidence,
+                    strategy_profile=strategy_profile,
+                    strategy_rationale=_strategy_rationale(strategy_profile),
                     host_profile=host_profile,
                     notices=compatibility.notices,
                 )
             compatibility_status = compatibility.compatibility_status
             compatibility_reasons = compatibility.reasons
 
+        subject_key = subject_key_for_target_ref(request.target_ref)
+        subject_state_count = _subject_state_count(self._catalog, subject_key)
         actions = _build_action_plan_entries(
-            request.target_ref,
+            target_ref=request.target_ref,
             representations=outcome.result.representations,
+            strategy_profile=strategy_profile,
             compatibility_status=compatibility_status,
+            subject_key=subject_key,
+            subject_state_count=subject_state_count,
             store_actions_enabled=request.store_actions_enabled,
         )
         return ActionPlanResult(
@@ -93,6 +114,13 @@ class DeterministicActionPlanService(ActionPlanService):
             resolved_resource_id=outcome.result.resolved_resource_id,
             primary_object=outcome.result.primary_object,
             source=outcome.result.source,
+            evidence=outcome.result.evidence,
+            strategy_profile=strategy_profile,
+            strategy_rationale=_strategy_rationale(
+                strategy_profile,
+                subject_key=subject_key,
+                subject_state_count=subject_state_count,
+            ),
             host_profile=host_profile,
             compatibility_status=compatibility_status,
             compatibility_reasons=compatibility_reasons,
@@ -102,29 +130,35 @@ class DeterministicActionPlanService(ActionPlanService):
 
 
 def _build_action_plan_entries(
-    target_ref: str,
     *,
+    target_ref: str,
     representations: tuple[RepresentationSummary, ...],
+    strategy_profile: StrategyProfile,
     compatibility_status: str | None,
+    subject_key: str | None,
+    subject_state_count: int,
     store_actions_enabled: bool,
 ) -> tuple[ActionPlanEntry, ...]:
     inspect_representation = _select_inspection_representation(representations)
     direct_representation = _select_direct_representation(representations)
 
     return (
-        _inspection_action_entry(inspect_representation, compatibility_status),
-        _direct_access_action_entry(direct_representation, compatibility_status),
-        _manifest_export_action_entry(compatibility_status),
-        _bundle_export_action_entry(compatibility_status),
+        _inspection_action_entry(inspect_representation, compatibility_status, strategy_profile),
+        _direct_access_action_entry(direct_representation, compatibility_status, strategy_profile),
+        _subject_states_action_entry(subject_key, subject_state_count, strategy_profile),
+        _compare_target_action_entry(target_ref, subject_key, subject_state_count, strategy_profile),
+        _manifest_export_action_entry(compatibility_status, strategy_profile),
+        _bundle_export_action_entry(compatibility_status, strategy_profile),
         _bundle_inspection_action_entry(),
-        _store_manifest_action_entry(store_actions_enabled),
-        _store_bundle_action_entry(store_actions_enabled),
+        _store_manifest_action_entry(store_actions_enabled, strategy_profile),
+        _store_bundle_action_entry(store_actions_enabled, strategy_profile),
     )
 
 
 def _inspection_action_entry(
     representation: RepresentationSummary | None,
     compatibility_status: str | None,
+    strategy_profile: StrategyProfile,
 ) -> ActionPlanEntry:
     if representation is None:
         return ActionPlanEntry(
@@ -136,7 +170,13 @@ def _inspection_action_entry(
             reason_messages=("No bounded inspectable or viewable representation is recorded for this target.",),
         )
 
-    if compatibility_status == "compatible" and representation.is_direct:
+    if strategy_profile.strategy_id == "inspect":
+        status = "recommended"
+        reason_codes = ("strategy_inspect_prefers_source_inspection",)
+        reason_messages = (
+            "The active inspect strategy keeps bounded source inspection and evidence-aware review as the preferred next step.",
+        )
+    elif compatibility_status == "compatible" and representation.is_direct:
         status = "available"
         reason_codes = ("compatible_direct_representation_available",)
         reason_messages = (
@@ -183,6 +223,7 @@ def _inspection_action_entry(
 def _direct_access_action_entry(
     representation: RepresentationSummary | None,
     compatibility_status: str | None,
+    strategy_profile: StrategyProfile,
 ) -> ActionPlanEntry:
     if representation is None:
         return ActionPlanEntry(
@@ -194,17 +235,41 @@ def _direct_access_action_entry(
             reason_messages=("No bounded direct representation access path is recorded for this target.",),
         )
 
-    if compatibility_status == "compatible":
-        status = "recommended"
-        reason_codes = ("compatible_host_for_direct_representation",)
-        reason_messages = (
-            "The current host profile is compatible with this bounded target, so the direct representation path is recommended.",
-        )
-    elif compatibility_status == "incompatible":
+    if compatibility_status == "incompatible":
         status = "unavailable"
         reason_codes = ("host_incompatible_for_direct_representation",)
         reason_messages = (
             "The current host profile is incompatible, so Eureka does not recommend direct representation use in this bootstrap slice.",
+        )
+    elif strategy_profile.strategy_id == "acquire" and compatibility_status == "compatible":
+        status = "recommended"
+        reason_codes = ("strategy_acquire_prefers_direct_representation",)
+        reason_messages = (
+            "The active acquire strategy and current compatible host profile make the direct representation path the preferred next step.",
+        )
+    elif strategy_profile.strategy_id == "acquire" and compatibility_status is None:
+        status = "recommended"
+        reason_codes = ("strategy_acquire_prefers_direct_representation_without_host_profile",)
+        reason_messages = (
+            "The active acquire strategy prefers the bounded direct representation path, but no host profile was supplied for compatibility evaluation.",
+        )
+    elif strategy_profile.strategy_id == "acquire" and compatibility_status == "unknown":
+        status = "available"
+        reason_codes = ("strategy_acquire_requires_more_compatibility_confidence",)
+        reason_messages = (
+            "The active acquire strategy prefers direct access, but compatibility is unknown for this host, so the path remains available without being promoted.",
+        )
+    elif strategy_profile.strategy_id in {"inspect", "preserve", "compare"}:
+        status = "available"
+        reason_codes = ("strategy_deprioritizes_direct_representation",)
+        reason_messages = (
+            "The active strategy keeps direct representation access available, but it does not prioritize it as the next bounded step.",
+        )
+    elif compatibility_status == "compatible":
+        status = "recommended"
+        reason_codes = ("compatible_host_for_direct_representation",)
+        reason_messages = (
+            "The current host profile is compatible with this bounded target, so the direct representation path is recommended.",
         )
     elif compatibility_status == "unknown":
         status = "available"
@@ -230,8 +295,96 @@ def _direct_access_action_entry(
     )
 
 
-def _manifest_export_action_entry(compatibility_status: str | None) -> ActionPlanEntry:
-    if compatibility_status in {"incompatible", "unknown"} or compatibility_status is None:
+def _subject_states_action_entry(
+    subject_key: str | None,
+    subject_state_count: int,
+    strategy_profile: StrategyProfile,
+) -> ActionPlanEntry:
+    if subject_key is None:
+        return ActionPlanEntry(
+            action_id=LIST_SUBJECT_STATES_ACTION_ID,
+            label="List known states for this subject",
+            kind="list_subject_states",
+            status="unavailable",
+            reason_codes=("subject_key_unavailable",),
+            reason_messages=("No bounded subject key could be derived for this target.",),
+        )
+
+    if strategy_profile.strategy_id == "compare" and subject_state_count > 1:
+        status = "recommended"
+        reason_codes = ("strategy_compare_prefers_subject_states",)
+        reason_messages = (
+            "The active compare strategy prefers listing bounded subject states because multiple states are known for this subject.",
+        )
+    else:
+        status = "available"
+        reason_codes = ("subject_states_available",)
+        reason_messages = (
+            f"A bounded subject-state listing is available for subject '{subject_key}' with {subject_state_count} known state(s).",
+        )
+    return ActionPlanEntry(
+        action_id=LIST_SUBJECT_STATES_ACTION_ID,
+        label=f"List known states for {subject_key}",
+        kind="list_subject_states",
+        status=status,
+        reason_codes=reason_codes,
+        reason_messages=reason_messages,
+        parameter_hint=f"subject_key={subject_key}",
+        subject_key=subject_key,
+    )
+
+
+def _compare_target_action_entry(
+    target_ref: str,
+    subject_key: str | None,
+    subject_state_count: int,
+    strategy_profile: StrategyProfile,
+) -> ActionPlanEntry:
+    if subject_key is None:
+        return ActionPlanEntry(
+            action_id=COMPARE_TARGET_ACTION_ID,
+            label="Compare this target with another bounded target",
+            kind="compare_target",
+            status="unavailable",
+            reason_codes=("comparison_subject_context_missing",),
+            reason_messages=("No bounded subject context is available to guide a comparison-oriented next step.",),
+        )
+
+    if strategy_profile.strategy_id == "compare" and subject_state_count > 1:
+        status = "recommended"
+        reason_codes = ("strategy_compare_prefers_side_by_side_review",)
+        reason_messages = (
+            "The active compare strategy promotes side-by-side review because other bounded states exist for this subject.",
+        )
+    else:
+        status = "available"
+        reason_codes = ("comparison_available_with_second_target",)
+        reason_messages = (
+            "A bounded comparison route is available once a second target reference is supplied.",
+        )
+    return ActionPlanEntry(
+        action_id=COMPARE_TARGET_ACTION_ID,
+        label="Compare this target with another bounded target",
+        kind="compare_target",
+        status=status,
+        reason_codes=reason_codes,
+        reason_messages=reason_messages,
+        parameter_hint=f"left={target_ref}&right=<second bounded target ref>",
+        subject_key=subject_key,
+    )
+
+
+def _manifest_export_action_entry(
+    compatibility_status: str | None,
+    strategy_profile: StrategyProfile,
+) -> ActionPlanEntry:
+    if strategy_profile.strategy_id == "preserve":
+        status = "recommended"
+        reason_codes = ("strategy_preserve_prefers_manifest_export",)
+        reason_messages = (
+            "The active preserve strategy promotes deterministic manifest export as a bounded preservation step.",
+        )
+    elif compatibility_status in {"incompatible", "unknown"} or compatibility_status is None:
         status = "available"
         reason_codes = ("manifest_export_available_for_inspection",)
         reason_messages = (
@@ -254,25 +407,37 @@ def _manifest_export_action_entry(compatibility_status: str | None) -> ActionPla
     )
 
 
-def _bundle_export_action_entry(compatibility_status: str | None) -> ActionPlanEntry:
-    if compatibility_status == "incompatible":
+def _bundle_export_action_entry(
+    compatibility_status: str | None,
+    strategy_profile: StrategyProfile,
+) -> ActionPlanEntry:
+    if strategy_profile.strategy_id == "preserve":
+        status = "recommended"
+        reason_codes = ("strategy_preserve_prefers_bundle_export",)
+        reason_messages = (
+            "The active preserve strategy promotes deterministic bundle export as a bounded snapshot step.",
+        )
+    elif compatibility_status == "incompatible":
+        status = "available"
         reason_codes = ("bundle_export_available_when_host_incompatible",)
         reason_messages = (
             "A deterministic bundle export remains available even when the current host is incompatible.",
         )
     elif compatibility_status == "unknown":
+        status = "available"
         reason_codes = ("bundle_export_available_when_compatibility_unknown",)
         reason_messages = (
             "A deterministic bundle export remains available when compatibility is unknown.",
         )
     else:
+        status = "available"
         reason_codes = ("bundle_export_available",)
         reason_messages = ("A deterministic bundle export is available for this resolved target.",)
     return ActionPlanEntry(
         action_id=EXPORT_RESOLUTION_BUNDLE_ACTION_ID,
         label="Export resolution bundle",
         kind="export_bundle",
-        status="available",
+        status=status,
         reason_codes=reason_codes,
         reason_messages=reason_messages,
         parameter_hint="target_ref=<resolved target ref>",
@@ -293,7 +458,10 @@ def _bundle_inspection_action_entry() -> ActionPlanEntry:
     )
 
 
-def _store_manifest_action_entry(store_actions_enabled: bool) -> ActionPlanEntry:
+def _store_manifest_action_entry(
+    store_actions_enabled: bool,
+    strategy_profile: StrategyProfile,
+) -> ActionPlanEntry:
     if not store_actions_enabled:
         return ActionPlanEntry(
             action_id=STORE_RESOLUTION_MANIFEST_ACTION_ID,
@@ -305,18 +473,31 @@ def _store_manifest_action_entry(store_actions_enabled: bool) -> ActionPlanEntry
                 "No local store context was configured for this action-plan request.",
             ),
         )
+    if strategy_profile.strategy_id == "preserve":
+        status = "recommended"
+        reason_codes = ("strategy_preserve_prefers_local_manifest_store",)
+        reason_messages = (
+            "The active preserve strategy promotes storing the manifest in the local deterministic export store.",
+        )
+    else:
+        status = "available"
+        reason_codes = ("local_store_available",)
+        reason_messages = ("A local deterministic export store is available for this request.",)
     return ActionPlanEntry(
         action_id=STORE_RESOLUTION_MANIFEST_ACTION_ID,
         label="Store resolution manifest locally",
         kind="store_manifest",
-        status="available",
-        reason_codes=("local_store_available",),
-        reason_messages=("A local deterministic export store is available for this request.",),
+        status=status,
+        reason_codes=reason_codes,
+        reason_messages=reason_messages,
         parameter_hint="store_root=<local deterministic store root>",
     )
 
 
-def _store_bundle_action_entry(store_actions_enabled: bool) -> ActionPlanEntry:
+def _store_bundle_action_entry(
+    store_actions_enabled: bool,
+    strategy_profile: StrategyProfile,
+) -> ActionPlanEntry:
     if not store_actions_enabled:
         return ActionPlanEntry(
             action_id=STORE_RESOLUTION_BUNDLE_ACTION_ID,
@@ -328,13 +509,23 @@ def _store_bundle_action_entry(store_actions_enabled: bool) -> ActionPlanEntry:
                 "No local store context was configured for this action-plan request.",
             ),
         )
+    if strategy_profile.strategy_id == "preserve":
+        status = "recommended"
+        reason_codes = ("strategy_preserve_prefers_local_bundle_store",)
+        reason_messages = (
+            "The active preserve strategy promotes storing the bundle in the local deterministic export store.",
+        )
+    else:
+        status = "available"
+        reason_codes = ("local_store_available",)
+        reason_messages = ("A local deterministic export store is available for this request.",)
     return ActionPlanEntry(
         action_id=STORE_RESOLUTION_BUNDLE_ACTION_ID,
         label="Store resolution bundle locally",
         kind="store_bundle",
-        status="available",
-        reason_codes=("local_store_available",),
-        reason_messages=("A local deterministic export store is available for this request.",),
+        status=status,
+        reason_codes=reason_codes,
+        reason_messages=reason_messages,
         parameter_hint="store_root=<local deterministic store root>",
     )
 
@@ -364,6 +555,45 @@ def _representation_action_entry(
         source_family=representation.source_family,
         source_locator=representation.source_locator,
     )
+
+
+def _subject_state_count(catalog: NormalizedCatalog, subject_key: str | None) -> int:
+    if subject_key is None:
+        return 0
+    return sum(
+        1
+        for record in catalog.records
+        if subject_key_for_target_ref(record.target_ref) == subject_key
+    )
+
+
+def _strategy_rationale(
+    strategy_profile: StrategyProfile,
+    *,
+    subject_key: str | None = None,
+    subject_state_count: int = 0,
+) -> tuple[str, ...]:
+    if strategy_profile.strategy_id == "inspect":
+        return (
+            "Inspect strategy keeps source-backed inspection and evidence-aware review at the front of the bounded plan.",
+        )
+    if strategy_profile.strategy_id == "preserve":
+        return (
+            "Preserve strategy emphasizes deterministic export and local-store steps without changing the resolved truth model.",
+        )
+    if strategy_profile.strategy_id == "acquire":
+        return (
+            "Acquire strategy emphasizes direct bounded access paths where representations and host signals allow it.",
+        )
+    if strategy_profile.strategy_id == "compare":
+        if subject_key is not None and subject_state_count > 1:
+            return (
+                f"Compare strategy emphasizes subject-state listing and side-by-side review because {subject_state_count} bounded states are known for '{subject_key}'.",
+            )
+        return (
+            "Compare strategy emphasizes side-by-side and timeline-oriented review when bounded comparison context is available.",
+        )
+    return ()
 
 
 def _select_inspection_representation(
