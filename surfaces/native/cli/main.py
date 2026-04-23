@@ -16,6 +16,7 @@ from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
+    build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
@@ -30,7 +31,9 @@ from runtime.gateway.public_api import (
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
     InspectResolutionBundleRequest,
+    RepresentationSelectionEvaluationRequest,
     RepresentationCatalogRequest,
+    RepresentationSelectionPublicApi,
     RepresentationsPublicApi,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
@@ -62,6 +65,7 @@ from surfaces.native.cli.formatters import (
     format_bundle_inspection,
     format_compatibility,
     format_comparison,
+    format_handoff,
     format_manifest_export,
     format_representations,
     format_resolution_workspace,
@@ -87,6 +91,7 @@ class CliContext:
     absence_public_api: AbsencePublicApi
     comparison_public_api: ComparisonPublicApi
     compatibility_public_api: CompatibilityPublicApi
+    handoff_public_api: RepresentationSelectionPublicApi
     subject_states_public_api: SubjectStatesPublicApi
     representations_public_api: RepresentationsPublicApi
     stored_exports_public_api: StoredExportsPublicApi | None = None
@@ -179,6 +184,16 @@ def main(
             )
             compatibility = compatibility_envelope_to_view_model(response.body)
             return _emit(output, args.json, compatibility, format_compatibility(compatibility))
+
+        if args.command == "handoff":
+            response = cli_context.handoff_public_api.select_representation(
+                RepresentationSelectionEvaluationRequest.from_parts(
+                    args.target_ref,
+                    args.host_profile_id,
+                    args.strategy_id,
+                )
+            )
+            return _emit(output, args.json, response.body, format_handoff(response.body))
 
         if args.command == "states":
             response = cli_context.subject_states_public_api.list_subject_states(
@@ -381,6 +396,29 @@ def build_parser() -> argparse.ArgumentParser:
     )
     representations_parser.add_argument("target_ref")
 
+    handoff_parser = subparsers.add_parser(
+        "handoff",
+        parents=[json_parent],
+        help="Select a bounded preferred representation/access path for one resolved target through the public boundary.",
+    )
+    handoff_parser.add_argument("target_ref")
+    handoff_parser.add_argument(
+        "--host",
+        dest="host_profile_id",
+        choices=tuple(
+            str(profile["host_profile_id"]) for profile in BOOTSTRAP_HOST_PROFILE_PRESETS
+        ),
+        help="Optional bootstrap host profile preset used to evaluate suitability.",
+    )
+    handoff_parser.add_argument(
+        "--strategy",
+        dest="strategy_id",
+        choices=tuple(
+            str(profile["strategy_id"]) for profile in BOOTSTRAP_STRATEGY_PROFILES
+        ),
+        help="Optional bootstrap strategy profile used to vary bounded handoff emphasis.",
+    )
+
     export_manifest_parser = subparsers.add_parser(
         "export-manifest",
         parents=[json_parent],
@@ -444,6 +482,7 @@ def build_cli_context(*, store_root: str | None) -> CliContext:
         absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
         compatibility_public_api=build_demo_compatibility_public_api(),
+        handoff_public_api=build_demo_representation_selection_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
         representations_public_api=build_demo_representations_public_api(),
         stored_exports_public_api=(

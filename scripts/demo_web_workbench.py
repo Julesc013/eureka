@@ -16,6 +16,7 @@ from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
+    build_demo_representation_selection_public_api,
     InspectResolutionBundleRequest,
     build_demo_representations_public_api,
     ResolutionActionRequest,
@@ -33,6 +34,7 @@ from surfaces.web.server import (
     render_action_plan_page,
     render_bundle_inspection_page,
     render_compatibility_page,
+    render_handoff_page,
     render_resolution_workspace_page,
     render_search_results_page,
 )
@@ -94,6 +96,16 @@ def main() -> int:
         help="Render the compatibility page for the selected target and bootstrap host preset.",
     )
     parser.add_argument(
+        "--handoff-host",
+        metavar="HOST_PRESET",
+        help="Render the bounded handoff page for the selected target and optional bootstrap host preset.",
+    )
+    parser.add_argument(
+        "--handoff-strategy",
+        metavar="STRATEGY",
+        help="Render the bounded handoff page for the selected target and optional bootstrap strategy profile.",
+    )
+    parser.add_argument(
         "--store-root",
         metavar="PATH",
         help="Local bootstrap store root used for storing, listing, and reading exported artifacts.",
@@ -130,25 +142,24 @@ def main() -> int:
         help="Port for the local bootstrap server.",
     )
     args = parser.parse_args()
-    if sum(
-        int(flag)
-        for flag in (
-            args.export_manifest,
-            args.export_bundle,
-            args.inspect_bundle is not None,
-            args.render_inspection is not None,
-            args.action_plan_host is not None,
-            args.action_plan_strategy is not None,
-            args.compatibility_host is not None,
-            args.store_manifest,
-            args.store_bundle,
-            args.list_stored,
-            args.read_stored is not None,
-        )
-    ) > 1:
+    selected_modes = (
+        args.export_manifest,
+        args.export_bundle,
+        args.inspect_bundle is not None,
+        args.render_inspection is not None,
+        args.action_plan_host is not None or args.action_plan_strategy is not None,
+        args.compatibility_host is not None,
+        args.handoff_host is not None or args.handoff_strategy is not None,
+        args.store_manifest,
+        args.store_bundle,
+        args.list_stored,
+        args.read_stored is not None,
+    )
+    if sum(int(flag) for flag in selected_modes) > 1:
         parser.error(
             "--export-manifest, --export-bundle, --inspect-bundle, --render-inspection, "
-            "--action-plan-host, --action-plan-strategy, --compatibility-host, "
+            "--action-plan-host/--action-plan-strategy, --compatibility-host, "
+            "--handoff-host/--handoff-strategy, "
             "--store-manifest, --store-bundle, --list-stored, and --read-stored are mutually exclusive."
         )
 
@@ -158,6 +169,7 @@ def main() -> int:
     bundle_inspection_public_api = build_demo_resolution_bundle_inspection_public_api()
     comparison_public_api = build_demo_comparison_public_api()
     compatibility_public_api = build_demo_compatibility_public_api()
+    handoff_public_api = build_demo_representation_selection_public_api()
     absence_public_api = build_demo_absence_public_api()
     resolution_public_api = build_demo_resolution_jobs_public_api()
     search_public_api = build_demo_search_public_api()
@@ -230,6 +242,16 @@ def main() -> int:
         sys.stdout.write(html)
         return 0
 
+    if args.handoff_host is not None or args.handoff_strategy is not None:
+        html = render_handoff_page(
+            handoff_public_api,
+            target_ref,
+            args.handoff_host,
+            args.handoff_strategy,
+        )
+        sys.stdout.write(html)
+        return 0
+
     if args.store_manifest:
         if stored_exports_public_api is None:
             return _write_store_unavailable()
@@ -280,8 +302,10 @@ def main() -> int:
                 resolution_public_api,
                 target_ref,
                 action_plan_public_api=action_plan_public_api,
+                handoff_public_api=handoff_public_api,
                 actions_public_api=actions_public_api,
                 stored_exports_public_api=stored_exports_public_api,
+                host_profile_id=args.handoff_host,
                 strategy_id=args.action_plan_strategy,
             )
         sys.stdout.write(html)
@@ -293,6 +317,7 @@ def main() -> int:
         absence_public_api=absence_public_api,
         comparison_public_api=comparison_public_api,
         compatibility_public_api=compatibility_public_api,
+        handoff_public_api=handoff_public_api,
         subject_states_public_api=build_demo_subject_states_public_api(),
         representations_public_api=build_demo_representations_public_api(),
         actions_public_api=actions_public_api,
@@ -325,6 +350,10 @@ def main() -> int:
             f"http://{args.host}:{args.port}/compatibility?target_ref={quote(target_ref, safe='')}&host={quote('windows-x86_64', safe='')}",
             "Serving Eureka bootstrap HTTP API compatibility route at "
             f"http://{args.host}:{args.port}/api/compatibility?target_ref={quote(target_ref, safe='')}&host={quote('windows-x86_64', safe='')}",
+            "Serving Eureka handoff page at "
+            f"http://{args.host}:{args.port}/handoff?target_ref={quote(target_ref, safe='')}&strategy={quote('inspect', safe='')}",
+            "Serving Eureka bootstrap HTTP API handoff route at "
+            f"http://{args.host}:{args.port}/api/handoff?target_ref={quote(target_ref, safe='')}&host={quote('windows-x86_64', safe='')}&strategy={quote('acquire', safe='')}",
             "Serving Eureka representations page at "
             f"http://{args.host}:{args.port}/representations?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bootstrap HTTP API representations route at "

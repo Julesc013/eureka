@@ -17,6 +17,9 @@ from runtime.gateway.public_api import (
     ExplainSearchMissRequest,
     InspectResolutionBundleRequest,
     RepresentationCatalogRequest,
+    RepresentationSelectionEvaluationRequest,
+    RepresentationSelectionPublicApi,
+    representation_selection_envelope_to_view_model,
     RepresentationsPublicApi,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
@@ -65,6 +68,12 @@ def build_api_index_document() -> dict[str, Any]:
                 "path": "/api/resolve",
                 "method": "GET",
                 "query_parameters": ["target_ref", "host", "strategy", "store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/handoff",
+                "method": "GET",
+                "query_parameters": ["target_ref", "host", "strategy"],
                 "response_content_types": ["application/json"],
             },
             {
@@ -172,6 +181,7 @@ def handle_api_request(
     comparison_public_api: ComparisonPublicApi | None,
     compatibility_public_api: CompatibilityPublicApi | None,
     action_plan_public_api: ActionPlanPublicApi | None,
+    handoff_public_api: RepresentationSelectionPublicApi | None,
     subject_states_public_api: SubjectStatesPublicApi | None,
     representations_public_api: RepresentationsPublicApi | None,
     actions_public_api: ResolutionActionsPublicApi | None,
@@ -205,6 +215,7 @@ def handle_api_request(
                 resolution_public_api,
                 target_ref,
                 action_plan_public_api=action_plan_public_api,
+                handoff_public_api=handoff_public_api,
                 actions_public_api=actions_public_api,
                 stored_exports_public_api=stored_exports_public_api,
                 session_id=session_id,
@@ -233,6 +244,8 @@ def handle_api_request(
             payload["resolution_actions"] = workspace.resolution_actions
         if workspace.action_plan is not None:
             payload["action_plan"] = workspace.action_plan
+        if workspace.handoff is not None:
+            payload["handoff"] = workspace.handoff
         if workspace.stored_exports is not None:
             payload["stored_exports"] = workspace.stored_exports
         return json_response(200, payload)
@@ -266,6 +279,36 @@ def handle_api_request(
         return json_response(
             response.status_code,
             action_plan_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/handoff":
+        if handoff_public_api is None:
+            return _service_unavailable(
+                "handoff_unavailable",
+                "This bootstrap HTTP API was not configured with a public representation-selection boundary.",
+            )
+        target_ref = _required_query_value(query, "target_ref")
+        if target_ref is None:
+            return _missing_query_value("target_ref")
+        host_profile_id = _required_query_value(query, "host")
+        strategy_id = _required_query_value(query, "strategy")
+        try:
+            response = handoff_public_api.select_representation(
+                RepresentationSelectionEvaluationRequest.from_parts(
+                    target_ref,
+                    host_profile_id,
+                    strategy_id,
+                )
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_handoff_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            representation_selection_envelope_to_view_model(response.body),
         )
 
     if path == "/api/compare":

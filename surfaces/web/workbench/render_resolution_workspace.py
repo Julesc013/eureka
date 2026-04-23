@@ -55,6 +55,7 @@ def render_resolution_workspace_html(
     workbench_session: Mapping[str, Any],
     *,
     action_plan: Mapping[str, Any] | None = None,
+    handoff: Mapping[str, Any] | None = None,
     resolution_actions: Mapping[str, Any] | None = None,
     stored_exports: Mapping[str, Any] | None = None,
     host_profile_presets: list[Mapping[str, Any]] | tuple[Mapping[str, Any], ...] = _DEFAULT_HOST_PROFILE_PRESETS,
@@ -75,6 +76,37 @@ def render_resolution_workspace_html(
     representations = _representation_list(workbench_session.get("representations"))
     notices = _notice_list(workbench_session.get("notices"))
     action_plan_model = _optional_mapping(action_plan, "action_plan")
+    handoff_model = _optional_mapping(handoff, "handoff")
+    handoff_entries = _handoff_selection_list(handoff_model.get("selections")) if handoff_model is not None else []
+    handoff_notices = _notice_list(handoff_model.get("notices")) if handoff_model is not None else []
+    handoff_host_profile = (
+        _optional_mapping(handoff_model.get("host_profile"), "handoff.host_profile")
+        if handoff_model is not None
+        else None
+    )
+    handoff_strategy_profile = (
+        _optional_mapping(handoff_model.get("strategy_profile"), "handoff.strategy_profile")
+        if handoff_model is not None
+        else None
+    )
+    handoff_compatibility_reasons = (
+        _reason_list(handoff_model.get("compatibility_reasons"))
+        if handoff_model is not None
+        else []
+    )
+    handoff_compatibility_status = (
+        _optional_string(handoff_model.get("compatibility_status"), "handoff.compatibility_status")
+        if handoff_model is not None
+        else None
+    )
+    handoff_preferred_representation_id = (
+        _optional_string(
+            handoff_model.get("preferred_representation_id"),
+            "handoff.preferred_representation_id",
+        )
+        if handoff_model is not None
+        else None
+    )
     planned_actions = _action_plan_entry_list(action_plan_model.get("actions")) if action_plan_model is not None else []
     action_plan_notices = _notice_list(action_plan_model.get("notices")) if action_plan_model is not None else []
     action_plan_host_profile = (
@@ -136,6 +168,7 @@ def render_resolution_workspace_html(
         "      <nav>",
         "        <a href=\"/search\">Search the bounded corpus</a>",
         "        <a href=\"/action-plan\">Plan bounded next steps</a>",
+        "        <a href=\"/handoff\">Choose a bounded handoff fit</a>",
         "        <a href=\"/compare\">Compare two targets</a>",
         "        <a href=\"/subject\">List subject states</a>",
         "      </nav>",
@@ -300,6 +333,119 @@ def render_resolution_workspace_html(
     else:
         parts.append("        <p>No bounded representations or access paths are available for this target.</p>")
     parts.append("      </section>")
+
+    if handoff_model is not None:
+        handoff_href = "/handoff?target_ref=" + quote(target_ref, safe="")
+        if handoff_host_profile is not None:
+            handoff_href += "&host=" + quote(
+                _require_string(
+                    handoff_host_profile.get("host_profile_id"),
+                    "handoff.host_profile.host_profile_id",
+                ),
+                safe="",
+            )
+        if handoff_strategy_profile is not None:
+            handoff_href += "&strategy=" + quote(
+                _require_string(
+                    handoff_strategy_profile.get("strategy_id"),
+                    "handoff.strategy_profile.strategy_id",
+                ),
+                safe="",
+            )
+        parts.extend(
+            [
+                "      <section>",
+                "        <h2>Representation Handoff</h2>",
+                f"        <p><a href=\"{escape(handoff_href, quote=True)}\">Open the dedicated handoff page</a></p>",
+            ]
+        )
+        if handoff_strategy_profile is not None:
+            parts.append(
+                f"        <p>Strategy: <strong>{escape(_require_string(handoff_strategy_profile.get('strategy_id'), 'handoff.strategy_profile.strategy_id'))}</strong></p>"
+            )
+        if handoff_compatibility_status is not None:
+            parts.append(
+                f"        <p>Compatibility status: <strong>{escape(handoff_compatibility_status)}</strong></p>"
+            )
+        if handoff_host_profile is not None:
+            parts.append(
+                f"        <p>Host profile: {escape(_require_string(handoff_host_profile.get('host_profile_id'), 'handoff.host_profile.host_profile_id'))}</p>"
+            )
+        if handoff_preferred_representation_id is not None:
+            parts.append(
+                f"        <p>Preferred representation: <strong>{escape(handoff_preferred_representation_id)}</strong></p>"
+            )
+        for status_name, heading in (
+            ("preferred", "Preferred bounded fit"),
+            ("available", "Available alternatives"),
+            ("unsuitable", "Unsuitable choices"),
+            ("unknown", "Unknown choices"),
+        ):
+            matching = [
+                entry for entry in handoff_entries if entry.get("selection_status") == status_name
+            ]
+            parts.append(f"        <h3>{escape(heading)}</h3>")
+            if not matching:
+                parts.append("        <p>(none)</p>")
+                continue
+            parts.append("        <ul>")
+            for entry in matching:
+                label = _require_string(entry.get("label"), "handoff.selection.label")
+                access_locator = _optional_string(entry.get("access_locator"), "handoff.selection.access_locator")
+                if access_locator is not None:
+                    parts.append(
+                        "          <li>"
+                        f"<strong><a href=\"{escape(access_locator, quote=True)}\">{escape(label)}</a></strong>"
+                    )
+                else:
+                    parts.append(f"          <li><strong>{escape(label)}</strong>")
+                parts.append("            <dl>")
+                parts.append(
+                    f"              <dt>Representation kind</dt><dd>{escape(_require_string(entry.get('representation_kind'), 'handoff.selection.representation_kind'))}</dd>"
+                )
+                parts.append(
+                    f"              <dt>Access kind</dt><dd>{escape(_require_string(entry.get('access_kind'), 'handoff.selection.access_kind'))}</dd>"
+                )
+                parts.append(
+                    f"              <dt>Source family</dt><dd>{escape(_require_string(entry.get('source_family'), 'handoff.selection.source_family'))}</dd>"
+                )
+                source_locator = _optional_string(entry.get("source_locator"), "handoff.selection.source_locator")
+                if source_locator is not None:
+                    parts.append(f"              <dt>Source locator</dt><dd>{escape(source_locator)}</dd>")
+                parts.append("            </dl>")
+                reason_codes = _string_list(entry.get("reason_codes"), "handoff.selection.reason_codes")
+                reason_messages = _string_list(entry.get("reason_messages"), "handoff.selection.reason_messages")
+                if reason_codes and reason_messages:
+                    parts.append("            <ul>")
+                    for reason_code, reason_message in zip(reason_codes, reason_messages):
+                        parts.append(
+                            f"              <li><strong>{escape(reason_code)}</strong>: {escape(reason_message)}</li>"
+                        )
+                    parts.append("            </ul>")
+                parts.append("          </li>")
+            parts.append("        </ul>")
+        if handoff_compatibility_reasons:
+            parts.extend(["        <h3>Compatibility reasons</h3>", "        <ul>"])
+            for reason in handoff_compatibility_reasons:
+                parts.append(
+                    "          <li>"
+                    f"<strong>{escape(_require_string(reason.get('code'), 'handoff.compatibility_reason.code'))}</strong>: "
+                    f"{escape(_require_string(reason.get('message'), 'handoff.compatibility_reason.message'))}</li>"
+                )
+            parts.append("        </ul>")
+        if handoff_notices:
+            parts.extend(["        <h3>Notices</h3>", "        <ul>"])
+            for notice in handoff_notices:
+                code = _require_string(notice.get("code"), "handoff.notice.code")
+                severity = _require_string(notice.get("severity"), "handoff.notice.severity")
+                message = _optional_string(notice.get("message"), "handoff.notice.message")
+                item = f"          <li><strong>{escape(code)}</strong> ({escape(severity)})"
+                if message is not None:
+                    item += f": {escape(message)}"
+                item += "</li>"
+                parts.append(item)
+            parts.append("        </ul>")
+        parts.append("      </section>")
 
     if action_plan_model is not None:
         action_plan_href = "/action-plan?target_ref=" + quote(target_ref, safe="")
@@ -703,6 +849,17 @@ def _action_plan_entry_list(value: Any) -> list[Mapping[str, Any]]:
             raise ValueError(f"action_plan.actions[{index}] must be an object.")
         actions.append(item)
     return actions
+
+
+def _handoff_selection_list(value: Any) -> list[Mapping[str, Any]]:
+    if not isinstance(value, list):
+        raise ValueError("handoff.selections must be a list when provided.")
+    selections: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"handoff.selections[{index}] must be an object.")
+        selections.append(item)
+    return selections
 
 
 def _stored_artifact_list(value: Any) -> list[Mapping[str, Any]]:

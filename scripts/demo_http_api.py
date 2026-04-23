@@ -20,6 +20,7 @@ from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
+    build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
@@ -92,6 +93,14 @@ def main(argv: list[str] | None = None) -> int:
     compatibility_parser.add_argument("target_ref")
     compatibility_parser.add_argument("--host", dest="host_profile_id", required=True)
 
+    handoff_parser = subparsers.add_parser(
+        "handoff",
+        help="Fetch a machine-readable bounded representation-selection and handoff recommendation.",
+    )
+    handoff_parser.add_argument("target_ref")
+    handoff_parser.add_argument("--host", dest="host_profile_id")
+    handoff_parser.add_argument("--strategy", dest="strategy_id")
+
     representations_parser = subparsers.add_parser(
         "representations",
         help="Fetch machine-readable bounded known representations/access paths for one target.",
@@ -163,6 +172,13 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         )
     elif args.command == "compatibility":
         path = _path("/api/compatibility", target_ref=args.target_ref, host=args.host_profile_id)
+    elif args.command == "handoff":
+        path = _path(
+            "/api/handoff",
+            target_ref=args.target_ref,
+            host=args.host_profile_id,
+            strategy=args.strategy_id,
+        )
     elif args.command == "representations":
         path = _path("/api/representations", target_ref=args.target_ref)
     elif args.command == "states":
@@ -223,6 +239,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
         absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
         compatibility_public_api=build_demo_compatibility_public_api(),
+        handoff_public_api=build_demo_representation_selection_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
         representations_public_api=build_demo_representations_public_api(),
         actions_public_api=build_demo_resolution_actions_public_api(),

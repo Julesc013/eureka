@@ -19,6 +19,9 @@ from runtime.gateway.public_api import (
     ExplainSearchMissRequest,
     InspectResolutionBundleRequest,
     RepresentationCatalogRequest,
+    RepresentationSelectionEvaluationRequest,
+    RepresentationSelectionPublicApi,
+    representation_selection_envelope_to_view_model,
     RepresentationsPublicApi,
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
@@ -50,6 +53,7 @@ from surfaces.web.workbench import (
     render_bundle_inspection_html,
     render_compatibility_html,
     render_comparison_html,
+    render_handoff_html,
     render_representations_html,
     render_resolution_workspace_html,
     render_search_results_html,
@@ -62,6 +66,7 @@ def render_resolution_workspace_page(
     target_ref: str,
     *,
     action_plan_public_api: ActionPlanPublicApi | None = None,
+    handoff_public_api: RepresentationSelectionPublicApi | None = None,
     actions_public_api: ResolutionActionsPublicApi | None = None,
     stored_exports_public_api: StoredExportsPublicApi | None = None,
     session_id: str = "session.web-workbench",
@@ -73,6 +78,7 @@ def render_resolution_workspace_page(
             resolution_public_api,
             target_ref,
             action_plan_public_api=action_plan_public_api,
+            handoff_public_api=handoff_public_api,
             actions_public_api=actions_public_api,
             stored_exports_public_api=stored_exports_public_api,
             session_id=session_id,
@@ -88,12 +94,13 @@ def render_resolution_workspace_page(
     except ValueError as error:
         return _render_error_page(
             title="Eureka Compatibility Workbench",
-            heading="Invalid Action Plan Request",
+            heading="Invalid Workspace Request",
             message=str(error),
         )
     return render_resolution_workspace_html(
         workspace.workbench_session,
         action_plan=workspace.action_plan,
+        handoff=workspace.handoff,
         resolution_actions=workspace.resolution_actions,
         stored_exports=workspace.stored_exports,
         host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
@@ -287,6 +294,63 @@ def render_representations_page(
     return render_representations_html(representations_envelope_to_view_model(response.body))
 
 
+def render_handoff_page(
+    public_api: RepresentationSelectionPublicApi | None,
+    target_ref: str,
+    host_profile_id: str | None,
+    strategy_id: str | None,
+) -> str:
+    normalized_target_ref = target_ref.strip()
+    normalized_host_profile_id = (host_profile_id or "").strip() or None
+    normalized_strategy_id = (strategy_id or "").strip() or None
+    if not normalized_target_ref:
+        return render_handoff_html(
+            None,
+            target_ref="",
+            host_profile_id=normalized_host_profile_id,
+            strategy_id=normalized_strategy_id,
+            host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+            strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
+            message="Provide a bounded target ref to evaluate a representation handoff recommendation.",
+        )
+    if public_api is None:
+        return render_handoff_html(
+            None,
+            target_ref=normalized_target_ref,
+            host_profile_id=normalized_host_profile_id,
+            strategy_id=normalized_strategy_id,
+            host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+            strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
+            message="This bootstrap workbench was not configured with a public representation-selection boundary.",
+        )
+    try:
+        response = public_api.select_representation(
+            RepresentationSelectionEvaluationRequest.from_parts(
+                normalized_target_ref,
+                normalized_host_profile_id,
+                normalized_strategy_id,
+            )
+        )
+    except ValueError as error:
+        return render_handoff_html(
+            None,
+            target_ref=normalized_target_ref,
+            host_profile_id=normalized_host_profile_id,
+            strategy_id=normalized_strategy_id,
+            host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+            strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
+            message=str(error),
+        )
+    return render_handoff_html(
+        representation_selection_envelope_to_view_model(response.body),
+        target_ref=normalized_target_ref,
+        host_profile_id=normalized_host_profile_id,
+        strategy_id=normalized_strategy_id,
+        host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
+        strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
+    )
+
+
 def render_compatibility_page(
     public_api: CompatibilityPublicApi | None,
     target_ref: str,
@@ -339,6 +403,7 @@ class WorkbenchWsgiApp:
         comparison_public_api: ComparisonPublicApi | None = None,
         compatibility_public_api: CompatibilityPublicApi | None = None,
         action_plan_public_api: ActionPlanPublicApi | None = None,
+        handoff_public_api: RepresentationSelectionPublicApi | None = None,
         subject_states_public_api: SubjectStatesPublicApi | None = None,
         representations_public_api: RepresentationsPublicApi | None = None,
         actions_public_api: ResolutionActionsPublicApi | None = None,
@@ -353,6 +418,7 @@ class WorkbenchWsgiApp:
         self._comparison_public_api = comparison_public_api
         self._compatibility_public_api = compatibility_public_api
         self._action_plan_public_api = action_plan_public_api
+        self._handoff_public_api = handoff_public_api
         self._subject_states_public_api = subject_states_public_api
         self._representations_public_api = representations_public_api
         self._actions_public_api = actions_public_api
@@ -379,6 +445,7 @@ class WorkbenchWsgiApp:
             comparison_public_api=self._comparison_public_api,
             compatibility_public_api=self._compatibility_public_api,
             action_plan_public_api=self._action_plan_public_api,
+            handoff_public_api=self._handoff_public_api,
             subject_states_public_api=self._subject_states_public_api,
             representations_public_api=self._representations_public_api,
             actions_public_api=self._actions_public_api,
@@ -408,6 +475,7 @@ class WorkbenchWsgiApp:
             "/compare",
             "/compatibility",
             "/action-plan",
+            "/handoff",
             "/representations",
             "/subject",
             "/search",
@@ -426,7 +494,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/action-plan', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/action-plan', '/handoff', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -439,6 +507,7 @@ class WorkbenchWsgiApp:
                 self._resolution_public_api,
                 target_ref,
                 action_plan_public_api=self._action_plan_public_api,
+                handoff_public_api=self._handoff_public_api,
                 actions_public_api=self._actions_public_api,
                 stored_exports_public_api=self._stored_exports_public_api,
                 session_id=self._session_id,
@@ -455,6 +524,15 @@ class WorkbenchWsgiApp:
                 host_profile_id,
                 self._resolve_optional_strategy_id(query_string),
                 store_actions_enabled=self._stored_exports_public_api is not None,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/handoff":
+            target_ref = self._resolve_target_ref(query_string)
+            page = render_handoff_page(
+                self._handoff_public_api,
+                target_ref,
+                self._resolve_optional_host_profile_id(query_string),
+                self._resolve_optional_strategy_id(query_string),
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/compare":
