@@ -4,6 +4,7 @@ from runtime.engine.interfaces.service.acquisition_service import AcquisitionSer
 from runtime.engine.interfaces.service.absence_service import AbsenceService
 from runtime.engine.interfaces.service.action_plan_service import ActionPlanService
 from runtime.engine.interfaces.service.bundle_service import ResolutionBundleArtifact, ResolutionBundleService
+from runtime.engine.interfaces.service.decomposition_service import DecompositionService
 from runtime.engine.interfaces.service.bundle_inspection_service import (
     ResolutionBundleInspectionRequest,
     ResolutionBundleInspectionResult,
@@ -34,6 +35,7 @@ __all__ = [
     "ActionPlanService",
     "ComparisonService",
     "CompatibilityService",
+    "DecompositionService",
     "ExportStoreService",
     "ResolutionBundleArtifact",
     "ResolutionBundleInspectionRequest",

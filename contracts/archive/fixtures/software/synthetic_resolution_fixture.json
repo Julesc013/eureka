@@ -54,6 +54,23 @@
             "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
             "is_direct": false
           }
+        },
+        {
+          "id": "rep.synthetic-demo-app.package",
+          "kind": "fixture_archive",
+          "label": "Synthetic demo app package archive",
+          "content_type": "application/zip",
+          "byte_length": 501,
+          "payload_fixture": {
+            "locator": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+            "filename": "synthetic-demo-app-package.zip"
+          },
+          "access_path": {
+            "id": "access.synthetic-demo-app.package",
+            "kind": "download",
+            "locator": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+            "is_direct": true
+          }
         }
       ]
     },
