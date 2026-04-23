@@ -14,6 +14,10 @@ from runtime.engine.interfaces.public.comparison import (
     ComparisonResult,
     ComparisonSide,
 )
+from runtime.engine.interfaces.public.compatibility import (
+    CompatibilityRequest,
+    CompatibilityResult,
+)
 from runtime.engine.interfaces.public.resolution import (
     Notice,
     ObjectSummary,
@@ -44,6 +48,8 @@ __all__ = [
     "ComparisonRequest",
     "ComparisonResult",
     "ComparisonSide",
+    "CompatibilityRequest",
+    "CompatibilityResult",
     "Notice",
     "ObjectSummary",
     "ResolutionRequest",

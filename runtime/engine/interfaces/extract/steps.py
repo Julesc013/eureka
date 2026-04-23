@@ -36,6 +36,7 @@ def extract_synthetic_source_record(source_record: SyntheticSourceRecord) -> Ext
         representation_record=representation_record,
         access_path_record=access_path_record,
         representation_records=representation_records,
+        compatibility_record=_optional_mapping(payload.get("compatibility"), "compatibility"),
     )
 
 
@@ -51,6 +52,7 @@ def extract_github_release_source_record(
         repository_record=_require_mapping(payload.get("repository"), "repository"),
         release_record=release_record,
         asset_records=_require_optional_mapping_sequence(release_record.get("assets"), "release.assets"),
+        compatibility_record=_optional_mapping(payload.get("compatibility"), "compatibility"),
     )
 
 
@@ -70,6 +72,12 @@ def _require_optional_mapping_sequence(value: Any, field_name: str) -> tuple[dic
     if value is None:
         return ()
     return _require_mapping_sequence(value, field_name)
+
+
+def _optional_mapping(value: Any, field_name: str) -> dict[str, Any] | None:
+    if value is None:
+        return None
+    return _require_mapping(value, field_name)
 
 
 def _merge_representation_and_access_path(

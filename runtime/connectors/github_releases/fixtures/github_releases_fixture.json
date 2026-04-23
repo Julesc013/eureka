@@ -5,6 +5,14 @@
         "full_name": "cli/cli",
         "html_url": "https://github.com/cli/cli"
       },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86_64"
+        ]
+      },
       "release": {
         "tag_name": "v2.65.0",
         "name": "GitHub CLI 2.65.0",

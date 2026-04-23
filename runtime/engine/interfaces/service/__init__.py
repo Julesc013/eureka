@@ -9,6 +9,7 @@ from runtime.engine.interfaces.service.bundle_inspection_service import (
 )
 from runtime.engine.interfaces.service.action_service import ResolutionManifestService
 from runtime.engine.interfaces.service.comparison_service import ComparisonService
+from runtime.engine.interfaces.service.compatibility_service import CompatibilityService
 from runtime.engine.interfaces.service.export_store_service import (
     ExportStoreService,
     StoredArtifactContentResult,
@@ -25,6 +26,7 @@ from runtime.engine.interfaces.service.subject_states_service import SubjectStat
 __all__ = [
     "AbsenceService",
     "ComparisonService",
+    "CompatibilityService",
     "ExportStoreService",
     "ResolutionBundleArtifact",
     "ResolutionBundleInspectionRequest",

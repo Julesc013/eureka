@@ -101,6 +101,17 @@
         "id": "access.compatibility-lab.fixture",
         "kind": "fixture_path",
         "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows",
+          "linux",
+          "macos"
+        ],
+        "required_architectures": [
+          "x86_64",
+          "arm64"
+        ]
       }
     },
     {
@@ -126,6 +137,14 @@
         "id": "access.archive-viewer.fixture",
         "kind": "fixture_path",
         "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86_64"
+        ]
       }
     },
     {

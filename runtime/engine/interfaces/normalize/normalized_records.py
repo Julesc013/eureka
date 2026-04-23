@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from runtime.engine.compatibility import CompatibilityRequirements
 from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.representations import RepresentationSummary
 
@@ -24,4 +25,5 @@ class NormalizedResolutionRecord:
     access_path_kind: str | None = None
     access_path_locator: str | None = None
     representations: tuple[RepresentationSummary, ...] = ()
+    compatibility_requirements: CompatibilityRequirements | None = None
     evidence: tuple[EvidenceSummary, ...] = ()

@@ -14,6 +14,7 @@ class ExtractedSyntheticRecord:
     representation_record: dict[str, Any]
     access_path_record: dict[str, Any]
     representation_records: tuple[dict[str, Any], ...] = ()
+    compatibility_record: dict[str, Any] | None = None
 
 
 @dataclass(frozen=True)
@@ -24,3 +25,4 @@ class ExtractedGitHubReleaseRecord:
     repository_record: dict[str, Any]
     release_record: dict[str, Any]
     asset_records: tuple[dict[str, Any], ...] = ()
+    compatibility_record: dict[str, Any] | None = None

@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from runtime.engine.compatibility import CompatibilityRequirements
 from runtime.engine.interfaces.extract import (
     ExtractedGitHubReleaseRecord,
     ExtractedSyntheticRecord,
@@ -40,6 +41,10 @@ def normalize_extracted_record(extracted_record: ExtractedSyntheticRecord) -> No
         access_path_kind=primary_representation.access_kind,
         access_path_locator=primary_representation.access_locator,
         representations=representations,
+        compatibility_requirements=_compatibility_requirements(
+            extracted_record.compatibility_record,
+            "compatibility",
+        ),
         evidence=_synthetic_evidence_summaries(
             source_locator=extracted_record.source_locator,
             object_label=object_label or object_id,
@@ -88,6 +93,10 @@ def normalize_github_release_record(
         access_path_kind=primary_representation.access_kind,
         access_path_locator=primary_representation.access_locator,
         representations=representations,
+        compatibility_requirements=_compatibility_requirements(
+            extracted_record.compatibility_record,
+            "compatibility",
+        ),
         evidence=_github_release_evidence_summaries(
             source_locator=extracted_record.source_locator,
             release_name=release_name or repo_full_name,
@@ -317,5 +326,47 @@ def _require_mapping(value: Any, field_name: str) -> dict[str, Any]:
     return dict(value)
 
 
+def _compatibility_requirements(
+    value: dict[str, Any] | None,
+    field_name: str,
+) -> CompatibilityRequirements | None:
+    if value is None:
+        return None
+    required_os_families = _optional_string_sequence(
+        value.get("required_os_families"),
+        f"{field_name}.required_os_families",
+    )
+    required_architectures = _optional_string_sequence(
+        value.get("required_architectures"),
+        f"{field_name}.required_architectures",
+    )
+    required_runtime_families = _optional_string_sequence(
+        value.get("required_runtime_families"),
+        f"{field_name}.required_runtime_families",
+    )
+    required_features = _optional_string_sequence(
+        value.get("required_features"),
+        f"{field_name}.required_features",
+    )
+    requirements = CompatibilityRequirements(
+        required_os_families=required_os_families,
+        required_architectures=required_architectures,
+        required_runtime_families=required_runtime_families,
+        required_features=required_features,
+    )
+    return requirements if requirements.has_constraints() else None
+
+
 def _normalize_identifier(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", ".", value.casefold()).strip(".")
+
+
+def _optional_string_sequence(value: Any, field_name: str) -> tuple[str, ...]:
+    if value is None:
+        return ()
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list when provided.")
+    normalized: list[str] = []
+    for index, item in enumerate(value):
+        normalized.append(_require_string(item, f"{field_name}[{index}]"))
+    return tuple(normalized)
