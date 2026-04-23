@@ -84,9 +84,14 @@ def _coerce_selections(value: Any, field_name: str) -> list[dict[str, Any]]:
                 f"{field_name}[{index}].access_kind",
             ),
             "is_direct": _require_bool(item.get("is_direct"), f"{field_name}[{index}].is_direct"),
+            "is_fetchable": _require_bool(
+                item.get("is_fetchable"),
+                f"{field_name}[{index}].is_fetchable",
+            ),
         }
         for key in (
             "content_type",
+            "filename",
             "source_label",
             "source_locator",
             "access_locator",

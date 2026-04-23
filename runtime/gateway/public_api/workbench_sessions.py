@@ -183,9 +183,11 @@ def _coerce_representation(value: Any, field_name: str) -> dict[str, Any]:
         "source_family": _require_string(value.get("source_family"), f"{field_name}.source_family"),
         "access_kind": _require_string(value.get("access_kind"), f"{field_name}.access_kind"),
         "is_direct": _require_bool(value.get("is_direct"), f"{field_name}.is_direct"),
+        "is_fetchable": _require_bool(value.get("is_fetchable"), f"{field_name}.is_fetchable"),
     }
     for key in (
         "content_type",
+        "filename",
         "source_label",
         "source_locator",
         "access_path_id",

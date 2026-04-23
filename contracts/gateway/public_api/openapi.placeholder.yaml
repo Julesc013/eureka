@@ -28,6 +28,8 @@ tags:
     description: Draft bounded compatibility operations for one resolved target and one bootstrap host profile preset.
   - name: Handoff
     description: Draft bounded representation-selection and handoff operations for one resolved target plus optional bootstrap host and strategy presets.
+  - name: Acquisition
+    description: Draft bounded acquisition and fetch operations for one explicitly chosen representation on one resolved target.
   - name: ActionPlan
     description: Draft bounded action-plan operations for one resolved target plus optional bootstrap host and strategy presets.
   - name: ResolutionActions
@@ -308,6 +310,56 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RepresentationSelectionEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/acquisition/fetch:
+    get:
+      tags:
+        - Acquisition
+      summary: Fetch a bounded payload for one explicitly chosen representation
+      description: >
+        Draft public boundary for retrieving a small bounded payload fixture for one
+        explicitly chosen representation on one resolved target. This is not a live
+        downloader, installer, launcher, or final restore/import contract.
+      operationId: fetchRepresentation
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+        - name: representation_id
+          in: query
+          required: true
+          description: Explicit bounded representation identifier to retrieve.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Draft bounded acquired payload bytes
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: Draft blocked acquisition envelope for unresolved targets or unknown representations
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcquisitionEnvelope'
+        '422':
+          description: Draft unavailable acquisition envelope for non-fetchable representations
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcquisitionEnvelope'
+        '503':
+          description: Draft blocked acquisition envelope for missing local fixture payloads
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcquisitionEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -1531,6 +1583,8 @@ components:
         byte_length:
           type: integer
           minimum: 0
+        filename:
+          type: string
         source_family:
           type: string
         source_label:
@@ -1545,6 +1599,8 @@ components:
           type: string
         is_direct:
           type: boolean
+        is_fetchable:
+          type: boolean
       required:
         - representation_id
         - representation_kind
@@ -1552,6 +1608,7 @@ components:
         - source_family
         - access_kind
         - is_direct
+        - is_fetchable
     RepresentationSelectionEntry:
       type: object
       additionalProperties: false
@@ -1593,7 +1650,11 @@ components:
         byte_length:
           type: integer
           minimum: 0
+        filename:
+          type: string
         is_direct:
+          type: boolean
+        is_fetchable:
           type: boolean
         host_profile_id:
           type: string
@@ -1609,6 +1670,74 @@ components:
         - source_family
         - access_kind
         - is_direct
+        - is_fetchable
+    AcquisitionEnvelope:
+      type: object
+      additionalProperties: false
+      description: >
+        Draft bounded acquisition envelope for retrieving one small local fixture
+        payload for one explicitly chosen representation on one resolved target.
+        This is not a live downloader, installer, launcher, or final restore/import contract.
+      properties:
+        status:
+          type: string
+          enum:
+            - fetched
+            - unavailable
+            - blocked
+        acquisition_status:
+          type: string
+          enum:
+            - fetched
+            - unavailable
+            - blocked
+        target_ref:
+          type: string
+        representation_id:
+          type: string
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
+        representation_kind:
+          type: string
+        label:
+          type: string
+        filename:
+          type: string
+        content_type:
+          type: string
+        byte_length:
+          type: integer
+          minimum: 0
+        source_family:
+          type: string
+        source_label:
+          type: string
+        source_locator:
+          type: string
+        access_kind:
+          type: string
+        access_locator:
+          type: string
+        reason_codes:
+          type: array
+          items:
+            type: string
+        reason_messages:
+          type: array
+          items:
+            type: string
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - acquisition_status
+        - target_ref
+        - representation_id
+        - reason_codes
+        - reason_messages
+        - notices
     ResolutionActionsEnvelope:
       type: object
       additionalProperties: false

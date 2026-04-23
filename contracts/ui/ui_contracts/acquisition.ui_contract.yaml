@@ -1,0 +1,33 @@
+name: Acquisition
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that fetch one
+  bounded local payload fixture for one explicitly chosen representation through
+  the gateway public acquisition boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/acquisition/fetch?target_ref={target_ref}&representation_id={representation_id}
+  shared_view_models:
+    - contracts/ui/view_models/acquisition.view_model.yaml
+  shared_result_shapes:
+    - AcquisitionEnvelope
+surface_expectations:
+  - surfaces fetch bounded representation payloads through the public gateway boundary and do not read connector or engine-local fixture payloads directly
+  - surfaces preserve the distinction between fetched, unavailable, and blocked acquisition outcomes instead of silently hiding unsuitable representations
+  - surfaces preserve compact representation, source-family, and locator context when rendering bounded acquisition results
+  - surfaces do not imply live downloading, install, execution, import, or restore semantics when rendering this bounded acquisition seam
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - live download semantics
+  - installer or launcher behavior
+  - restore or import semantics
+  - broader acquisition orchestration

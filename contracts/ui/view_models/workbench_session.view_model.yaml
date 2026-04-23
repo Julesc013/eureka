@@ -110,6 +110,8 @@ properties:
         byte_length:
           type: integer
           minimum: 0
+        filename:
+          type: string
         source_family:
           type: string
         source_label:
@@ -124,6 +126,8 @@ properties:
           type: string
         is_direct:
           type: boolean
+        is_fetchable:
+          type: boolean
       required:
         - representation_id
         - representation_kind
@@ -131,6 +135,7 @@ properties:
         - source_family
         - access_kind
         - is_direct
+        - is_fetchable
   notices:
     type: array
     items:

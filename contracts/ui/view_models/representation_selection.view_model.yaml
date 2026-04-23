@@ -194,7 +194,11 @@ $defs:
       byte_length:
         type: integer
         minimum: 0
+      filename:
+        type: string
       is_direct:
+        type: boolean
+      is_fetchable:
         type: boolean
       host_profile_id:
         type: string
@@ -210,6 +214,7 @@ $defs:
       - source_family
       - access_kind
       - is_direct
+      - is_fetchable
   notice:
     type: object
     additionalProperties: false

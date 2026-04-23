@@ -1,5 +1,14 @@
 """Public gateway helpers for the Eureka thin slice."""
 
+from runtime.gateway.public_api.acquisition_boundary import (
+    AcquisitionFetchRequest,
+    AcquisitionPublicApi,
+    PublicAcquisitionResponse,
+    acquisition_result_to_public_envelope,
+)
+from runtime.gateway.public_api.acquisition_view_models import (
+    acquisition_envelope_to_view_model,
+)
 from runtime.gateway.public_api.action_plan_boundary import (
     ActionPlanEvaluationRequest,
     ActionPlanPublicApi,
@@ -94,6 +103,7 @@ from runtime.gateway.public_api.bundle_inspection_view_models import (
     bundle_inspection_envelope_to_view_model,
 )
 from runtime.gateway.public_api.demo_support import (
+    build_demo_acquisition_public_api,
     build_demo_action_plan_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
@@ -147,6 +157,9 @@ from runtime.gateway.public_api.workbench_sessions import resolution_job_envelop
 __all__ = [
     "PublicApiResponse",
     "PublicArtifactResponse",
+    "PublicAcquisitionResponse",
+    "AcquisitionFetchRequest",
+    "AcquisitionPublicApi",
     "ActionPlanEvaluationRequest",
     "ActionPlanPublicApi",
     "AbsencePublicApi",
@@ -194,12 +207,15 @@ __all__ = [
     "StoredExportsPublicApi",
     "StoredExportsTargetRequest",
     "SubmitResolutionJobRequest",
+    "acquisition_envelope_to_view_model",
+    "acquisition_result_to_public_envelope",
     "accepted_resolution_job_to_public_envelope",
     "available_resolution_actions_to_public_envelope",
     "action_plan_envelope_to_view_model",
     "action_plan_result_to_public_envelope",
     "absence_envelope_to_view_model",
     "absence_report_to_public_envelope",
+    "build_demo_acquisition_public_api",
     "build_demo_action_plan_public_api",
     "build_demo_absence_public_api",
     "build_demo_comparison_public_api",
