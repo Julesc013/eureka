@@ -18,6 +18,7 @@ class ActionPlanViewModelTestCase(unittest.TestCase):
             ActionPlanEvaluationRequest.from_parts(
                 "github-release:cli/cli@v2.65.0",
                 "windows-x86_64",
+                "preserve",
                 store_actions_enabled=True,
             )
         )
@@ -26,7 +27,15 @@ class ActionPlanViewModelTestCase(unittest.TestCase):
 
         self.assertEqual(view_model["status"], "planned")
         self.assertEqual(view_model["compatibility_status"], "compatible")
+        self.assertEqual(view_model["strategy_profile"]["strategy_id"], "preserve")
+        self.assertTrue(view_model["strategy_rationale"])
         self.assertEqual(view_model["host_profile"]["host_profile_id"], "windows-x86_64")
-        self.assertEqual(view_model["actions"][1]["action_id"], "access_representation")
-        self.assertEqual(view_model["actions"][1]["status"], "recommended")
-        self.assertEqual(view_model["actions"][5]["route_hint"], "/store/manifest?target_ref=github-release%3Acli%2Fcli%40v2.65.0")
+        store_manifest = next(action for action in view_model["actions"] if action["action_id"] == "store_resolution_manifest")
+        direct_access = next(action for action in view_model["actions"] if action["action_id"] == "access_representation")
+        self.assertEqual(direct_access["status"], "available")
+        self.assertEqual(store_manifest["status"], "recommended")
+        self.assertEqual(
+            store_manifest["route_hint"],
+            "/store/manifest?target_ref=github-release%3Acli%2Fcli%40v2.65.0",
+        )
+        self.assertEqual(view_model["evidence"][0]["claim_kind"], "label")

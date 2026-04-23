@@ -44,11 +44,19 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("target_ref_not_found", output)
 
     def test_plan_command_renders_recommended_available_and_unavailable_actions(self) -> None:
-        exit_code, output = run_cli("plan", "github-release:cli/cli@v2.65.0", "--host", "windows-x86_64")
+        exit_code, output = run_cli(
+            "plan",
+            "github-release:cli/cli@v2.65.0",
+            "--host",
+            "windows-x86_64",
+            "--strategy",
+            "acquire",
+        )
 
         self.assertEqual(exit_code, 0)
         self.assertIn("Action plan", output)
         self.assertIn("target_ref: github-release:cli/cli@v2.65.0", output)
+        self.assertIn("strategy_id: acquire", output)
         self.assertIn("compatibility_status: compatible", output)
         self.assertIn("Recommended", output)
         self.assertIn("Access gh_2.65.0_windows_amd64.msi", output)
@@ -56,6 +64,20 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("Export resolution manifest", output)
         self.assertIn("Unavailable", output)
         self.assertIn("Store resolution manifest locally", output)
+
+    def test_plan_command_can_render_compare_strategy_emphasis(self) -> None:
+        exit_code, output = run_cli(
+            "plan",
+            "fixture:software/archivebox@0.8.5",
+            "--strategy",
+            "compare",
+        )
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("strategy_id: compare", output)
+        self.assertIn("Strategy rationale", output)
+        self.assertIn("List known states for archivebox", output)
+        self.assertIn("Compare this target with another bounded target", output)
 
     def test_resolve_github_target_includes_source_family_and_origin_summary(self) -> None:
         exit_code, output = run_cli("resolve", "github-release:cli/cli@v2.65.0")

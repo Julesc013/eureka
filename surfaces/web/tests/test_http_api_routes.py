@@ -49,7 +49,10 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         )
 
     def test_resolve_endpoint_returns_machine_readable_success_for_known_target(self) -> None:
-        status, headers, body = self._request("/api/resolve", {"target_ref": DEFAULT_TARGET_REF})
+        status, headers, body = self._request(
+            "/api/resolve",
+            {"target_ref": DEFAULT_TARGET_REF, "strategy": "preserve"},
+        )
 
         self.assertEqual(status, "200 OK")
         self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
@@ -63,6 +66,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(payload["workbench_session"]["representations"][1]["access_kind"], "view")
         self.assertEqual(payload["workbench_session"]["evidence"][0]["claim_kind"], "label")
         self.assertEqual(payload["action_plan"]["status"], "planned")
+        self.assertEqual(payload["action_plan"]["strategy_profile"]["strategy_id"], "preserve")
         self.assertEqual(
             payload["resolution_actions"]["resolved_resource_id"],
             EXPECTED_RESOLVED_RESOURCE_ID,
@@ -74,6 +78,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             {
                 "target_ref": "github-release:cli/cli@v2.65.0",
                 "host": "windows-x86_64",
+                "strategy": "acquire",
             },
         )
 
@@ -81,10 +86,11 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
         payload = json.loads(body)
         self.assertEqual(payload["status"], "planned")
+        self.assertEqual(payload["strategy_profile"]["strategy_id"], "acquire")
         self.assertEqual(payload["compatibility_status"], "compatible")
         self.assertEqual(payload["host_profile"]["host_profile_id"], "windows-x86_64")
-        self.assertEqual(payload["actions"][1]["action_id"], "access_representation")
-        self.assertEqual(payload["actions"][1]["status"], "recommended")
+        direct_action = next(action for action in payload["actions"] if action["action_id"] == "access_representation")
+        self.assertEqual(direct_action["status"], "recommended")
 
         blocked_status, _, blocked_body = self._request(
             "/api/action-plan",

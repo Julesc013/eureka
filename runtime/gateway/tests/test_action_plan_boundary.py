@@ -15,14 +15,33 @@ class ActionPlanPublicApiTestCase(unittest.TestCase):
             ActionPlanEvaluationRequest.from_parts(
                 "github-release:cli/cli@v2.65.0",
                 "windows-x86_64",
+                "acquire",
             )
         )
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.body["status"], "planned")
         self.assertEqual(response.body["compatibility_status"], "compatible")
-        self.assertEqual(response.body["actions"][0]["action_id"], "inspect_primary_representation")
-        self.assertIn("route_hint", response.body["actions"][0])
+        self.assertEqual(response.body["strategy_profile"]["strategy_id"], "acquire")
+        self.assertEqual(response.body["actions"][1]["action_id"], "access_representation")
+        self.assertEqual(response.body["actions"][1]["status"], "recommended")
+        self.assertIn("route_hint", response.body["actions"][1])
+        self.assertEqual(response.body["evidence"][0]["claim_kind"], "label")
+
+    def test_public_action_plan_boundary_can_surface_compare_strategy_routes(self) -> None:
+        response = self.public_api.plan_actions(
+            ActionPlanEvaluationRequest.from_parts(
+                "fixture:software/archivebox@0.8.5",
+                None,
+                "compare",
+            )
+        )
+
+        self.assertEqual(response.status_code, 200)
+        compare_action = next(action for action in response.body["actions"] if action["action_id"] == "compare_target")
+        states_action = next(action for action in response.body["actions"] if action["action_id"] == "list_subject_states")
+        self.assertEqual(compare_action["route_hint"], "/compare?left=fixture%3Asoftware%2Farchivebox%400.8.5")
+        self.assertEqual(states_action["route_hint"], "/subject?key=archivebox")
 
     def test_public_action_plan_boundary_returns_blocked_shape_for_missing_target(self) -> None:
         response = self.public_api.plan_actions(

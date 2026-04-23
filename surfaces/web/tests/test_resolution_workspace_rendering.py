@@ -70,6 +70,15 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
             action_plan={
                 "status": "planned",
                 "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+                "strategy_profile": {
+                    "strategy_id": "preserve",
+                    "label": "Preserve",
+                    "description": "Prioritize deterministic export and local preservation steps over more direct use.",
+                    "emphasis_hints": ["prioritize_manifest_export", "prioritize_local_store"],
+                },
+                "strategy_rationale": [
+                    "Preserve strategy emphasizes deterministic export and local-store steps without changing the resolved truth model."
+                ],
                 "actions": [
                     {
                         "action_id": "inspect_primary_representation",
@@ -174,10 +183,13 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("Synthetic demo app fixture record", html)
         self.assertIn("contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0", html)
         self.assertIn("Recommended Next Steps", html)
+        self.assertIn("Strategy: <strong>preserve</strong>", html)
+        self.assertIn("Strategy rationale", html)
         self.assertIn("View Synthetic demo app fixture record", html)
         self.assertIn("Export resolution manifest", html)
         self.assertIn("Store resolution manifest locally", html)
         self.assertIn("/action-plan?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
+        self.assertIn("/?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&amp;strategy=acquire", html)
         self.assertIn("Export resolution manifest", html)
         self.assertIn("/actions/export-resolution-manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
         self.assertIn("Export resolution bundle", html)
