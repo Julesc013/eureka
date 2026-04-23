@@ -62,6 +62,10 @@ steps:
     run: python scripts/demo_cli_workbench.py search archive
   - id: native_cli_representations_known
     run: python scripts/demo_cli_workbench.py representations github-release:cli/cli@v2.65.0 --json
+  - id: native_cli_handoff_default
+    run: python scripts/demo_cli_workbench.py handoff github-release:cli/cli@v2.65.0 --json
+  - id: native_cli_handoff_host_aware
+    run: python scripts/demo_cli_workbench.py handoff github-release:cli/cli@v2.65.0 --host windows-x86_64 --strategy acquire --json
   - id: native_cli_action_plan_default
     run: python scripts/demo_cli_workbench.py plan fixture:software/synthetic-demo-app@1.0.0 --json
   - id: native_cli_action_plan_strategy_inspect
@@ -112,6 +116,8 @@ steps:
     run: python scripts/demo_http_api.py search archive
   - id: http_api_representations_known
     run: python scripts/demo_http_api.py representations github-release:cli/cli@v2.65.0
+  - id: http_api_handoff_known
+    run: python scripts/demo_http_api.py handoff github-release:cli/cli@v2.65.0 --host windows-x86_64 --strategy acquire
   - id: http_api_action_plan_default
     run: python scripts/demo_http_api.py action-plan fixture:software/synthetic-demo-app@1.0.0
   - id: http_api_action_plan_strategy_compare
@@ -158,4 +164,5 @@ notes:
   - The bounded compatibility proof remains bootstrap-scale, uses small fixed host profile presets only, and does not imply a final compatibility oracle, installer model, or runtime-routing engine.
   - The bounded action-plan proof remains bootstrap-scale, is recommendation-only, and does not imply final execution, installer, launcher, or workflow-policy semantics.
   - The bounded strategy-aware action-plan proof remains bootstrap-scale, varies recommendation emphasis only, and does not imply persistence, personalization, ranking, or a final user-model contract.
+  - The bounded handoff proof remains bootstrap-scale, selects one preferred representation plus explicit alternatives only, and does not imply downloads, installers, launches, orchestration, or a final runtime-routing contract.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

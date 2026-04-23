@@ -13,6 +13,7 @@ Current bootstrap scope:
 - list bounded ordered states for one bootstrap subject key through a deterministic public subject/state boundary
 - list bounded known representations and access paths for one resolved target through a deterministic public representations boundary
 - evaluate one resolved target against one bootstrap host profile preset through a deterministic public compatibility boundary
+- select one bounded preferred representation and explicit alternatives for one resolved target through a deterministic public handoff boundary, optionally shaped by one bootstrap host profile preset and one bootstrap strategy profile
 - build a bounded action plan for one resolved target, optionally shaped by one bootstrap host profile preset, one bootstrap strategy profile, and bounded local store context
 - list bounded manifest-export and bundle-export actions for a resolved bounded target
 - export a deterministic machine-readable resolution manifest through the public boundary
@@ -38,6 +39,8 @@ Current bootstrap scope:
   implementing a web or native shell
 - map public compatibility envelopes into a shared compatibility view model without
   implementing a web or native shell
+- map public handoff envelopes into a shared representation-selection view model without
+  implementing a web or native shell
 - map public action-plan envelopes into a shared action-plan view model without
   implementing a web or native shell
 - map public action envelopes into a shared action-panel view model without
@@ -59,7 +62,7 @@ Out of scope here:
 - final comparison, merge, or truth-selection behavior beyond the current bounded disagreement seam
 - final object, subject, or state identity behavior beyond the current bounded timeline seam
 - final diagnostic or absence-reasoning behavior beyond the current bounded miss-explanation seam
-- installers, downloads from external sources, import, restore, rollback behavior, or final representation-selection semantics
+- installers, downloads from external sources, import, restore, rollback behavior, or final representation-selection and handoff semantics
 - final compatibility oracle behavior, richer host profile vocabularies, or runtime-routing behavior
 - final action-routing policy behavior, user-strategy semantics, execution semantics, installers, or workflow orchestration
 - ranking, fuzzy matching, or broader retrieval semantics
