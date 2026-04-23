@@ -175,6 +175,37 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertEqual(payload["notices"][0]["code"], "comparison_right_unresolved")
         self.assertEqual(payload["right"]["notices"][0]["code"], "target_ref_not_found")
 
+    def test_compatibility_command_renders_compatible_verdict(self) -> None:
+        exit_code, output = run_cli(
+            "compatibility",
+            "fixture:software/compatibility-lab@3.2.1",
+            "--host",
+            "windows-x86_64",
+        )
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Compatibility", output)
+        self.assertIn("target_ref: fixture:software/compatibility-lab@3.2.1", output)
+        self.assertIn("host_profile_id: windows-x86_64", output)
+        self.assertIn("compatibility_status: compatible", output)
+        self.assertIn("os_family_supported", output)
+        self.assertIn("architecture_supported", output)
+
+    def test_compatibility_command_can_return_unknown(self) -> None:
+        exit_code, output = run_cli(
+            "compatibility",
+            KNOWN_TARGET_REF,
+            "--host",
+            "windows-x86_64",
+            "--json",
+        )
+        payload = json.loads(output)
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(payload["status"], "evaluated")
+        self.assertEqual(payload["compatibility_status"], "unknown")
+        self.assertEqual(payload["reasons"][0]["code"], "compatibility_requirements_missing")
+
     def test_manifest_export_returns_known_manifest_json(self) -> None:
         exit_code, output = run_cli("export-manifest", KNOWN_TARGET_REF, "--json")
         payload = json.loads(output)

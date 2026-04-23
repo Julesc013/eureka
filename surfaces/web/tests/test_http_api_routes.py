@@ -12,6 +12,7 @@ import zipfile
 from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
+    build_demo_compatibility_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
@@ -36,6 +37,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             build_demo_resolution_jobs_public_api(),
             absence_public_api=build_demo_absence_public_api(),
             comparison_public_api=build_demo_comparison_public_api(),
+            compatibility_public_api=build_demo_compatibility_public_api(),
             subject_states_public_api=build_demo_subject_states_public_api(),
             representations_public_api=build_demo_representations_public_api(),
             actions_public_api=build_demo_resolution_actions_public_api(),
@@ -158,6 +160,47 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         blocked_payload = json.loads(blocked_body)
         self.assertEqual(blocked_payload["status"], "blocked")
         self.assertEqual(blocked_payload["notices"][0]["code"], "comparison_right_unresolved")
+
+    def test_compatibility_endpoint_returns_machine_readable_verdicts(self) -> None:
+        status, headers, body = self._request(
+            "/api/compatibility",
+            {
+                "target_ref": "fixture:software/compatibility-lab@3.2.1",
+                "host": "windows-x86_64",
+            },
+        )
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["status"], "evaluated")
+        self.assertEqual(payload["compatibility_status"], "compatible")
+        self.assertEqual(payload["host_profile"]["host_profile_id"], "windows-x86_64")
+        self.assertEqual(payload["reasons"][0]["code"], "os_family_supported")
+
+        incompatible_status, _, incompatible_body = self._request(
+            "/api/compatibility",
+            {
+                "target_ref": "fixture:software/archive-viewer@0.9.0",
+                "host": "linux-x86_64",
+            },
+        )
+        self.assertEqual(incompatible_status, "200 OK")
+        incompatible_payload = json.loads(incompatible_body)
+        self.assertEqual(incompatible_payload["compatibility_status"], "incompatible")
+        self.assertEqual(incompatible_payload["reasons"][0]["code"], "os_family_not_supported")
+
+        unknown_status, _, unknown_body = self._request(
+            "/api/compatibility",
+            {
+                "target_ref": DEFAULT_TARGET_REF,
+                "host": "windows-x86_64",
+            },
+        )
+        self.assertEqual(unknown_status, "200 OK")
+        unknown_payload = json.loads(unknown_body)
+        self.assertEqual(unknown_payload["compatibility_status"], "unknown")
+        self.assertEqual(unknown_payload["reasons"][0]["code"], "compatibility_requirements_missing")
 
     def test_states_endpoint_returns_machine_readable_subject_states_and_missing_shape(self) -> None:
         status, headers, body = self._request("/api/states", {"subject": "archivebox"})

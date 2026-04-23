@@ -32,6 +32,8 @@ class GitHubReleasesConnectorTestCase(unittest.TestCase):
             records[0].payload["release"]["assets"][0]["browser_download_url"],
             "https://github.com/cli/cli/releases/download/v2.65.0/gh_2.65.0_windows_amd64.msi",
         )
+        self.assertEqual(records[0].payload["compatibility"]["required_os_families"], ["windows"])
+        self.assertEqual(records[0].payload["compatibility"]["required_architectures"], ["x86_64"])
 
     def test_connector_reports_default_target_ref_from_loaded_source(self) -> None:
         connector = GitHubReleasesConnector()

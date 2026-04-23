@@ -136,6 +136,8 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("/actions/export-resolution-bundle?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
         self.assertIn("Store resolution manifest locally", html)
         self.assertIn("/store/manifest?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0", html)
+        self.assertIn("Compatibility", html)
+        self.assertIn("/compatibility?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&amp;host=windows-x86_64", html)
         self.assertIn("Stored Exports", html)
         self.assertIn("sha256:1234", html)
         self.assertIn("/stored/artifact?artifact_id=sha256%3A1234", html)

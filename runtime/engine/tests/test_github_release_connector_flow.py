@@ -55,6 +55,10 @@ class GitHubReleaseConnectorFlowTestCase(unittest.TestCase):
         )
         self.assertEqual(first.evidence[1].claim_value, "v2.65.0")
         self.assertEqual(first.evidence[1].asserted_at, "2024-11-13T00:00:00Z")
+        self.assertIsNotNone(first.compatibility_requirements)
+        assert first.compatibility_requirements is not None
+        self.assertEqual(first.compatibility_requirements.required_os_families, ("windows",))
+        self.assertEqual(first.compatibility_requirements.required_architectures, ("x86_64",))
 
     def test_deterministic_search_returns_mixed_synthetic_and_github_results(self) -> None:
         service = DeterministicSearchService(self.catalog)

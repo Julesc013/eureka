@@ -27,6 +27,9 @@ class SyntheticSoftwareConnectorTestCase(unittest.TestCase):
         )
         self.assertEqual(len(records[0].payload["representations"]), 2)
         self.assertEqual(records[0].payload["representations"][0]["access_path"]["kind"], "inspect")
+        self.assertEqual(records[2].payload["compatibility"]["required_os_families"], ["windows", "linux", "macos"])
+        self.assertEqual(records[3].payload["compatibility"]["required_architectures"], ["x86_64"])
+
 
     def test_connector_reports_default_target_ref_from_loaded_source(self) -> None:
         connector = SyntheticSoftwareConnector()
