@@ -4,6 +4,7 @@ from runtime.connectors.github_releases import GitHubReleasesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.actions import ResolutionManifestExportService
 from runtime.engine.absence import DeterministicAbsenceService
+from runtime.engine.compatibility.service import DeterministicCompatibilityService
 from runtime.engine.compare import DeterministicComparisonService
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.extract import (
@@ -21,6 +22,7 @@ from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBu
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
 from runtime.gateway.public_api.absence_boundary import AbsencePublicApi
 from runtime.gateway.public_api.comparison_boundary import ComparisonPublicApi
+from runtime.gateway.public_api.compatibility_boundary import CompatibilityPublicApi
 from runtime.gateway.public_api.resolution_actions import ResolutionActionsPublicApi
 from runtime.gateway.public_api.resolution_boundary import ResolutionJobsPublicApi
 from runtime.gateway.public_api.resolution_bundle_inspection import ResolutionBundleInspectionPublicApi
@@ -70,6 +72,16 @@ def build_demo_subject_states_public_api() -> SubjectStatesPublicApi:
     catalog = _build_demo_normalized_catalog()
     subject_states_service = DeterministicSubjectStatesService(catalog)
     return SubjectStatesPublicApi(subject_states_service)
+
+
+def build_demo_compatibility_public_api() -> CompatibilityPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    resolution_service = ExactMatchResolutionService(catalog)
+    compatibility_service = DeterministicCompatibilityService(
+        catalog,
+        resolution_service=resolution_service,
+    )
+    return CompatibilityPublicApi(compatibility_service)
 
 
 def build_demo_representations_public_api() -> RepresentationsPublicApi:

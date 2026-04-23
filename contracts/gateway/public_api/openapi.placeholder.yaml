@@ -24,6 +24,8 @@ tags:
     description: Draft bounded subject/state listing operations for one bootstrap subject key.
   - name: Representations
     description: Draft bounded representation and access-path listing operations for one resolved target.
+  - name: Compatibility
+    description: Draft bounded compatibility operations for one resolved target and one bootstrap host profile preset.
   - name: ResolutionActions
     description: Draft bounded action discovery plus manifest and portable-bundle export operations for resolved targets.
   - name: StoredExports
@@ -226,6 +228,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RepresentationsEnvelope'
+        default:
+          description: Draft error envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+  /v0/compatibility:
+    get:
+      tags:
+        - Compatibility
+      summary: Evaluate bounded compatibility for one resolved target and one bootstrap host profile preset
+      description: >
+        Draft public boundary for evaluating one resolved target against one small
+        bootstrap host profile preset. This is not a final compatibility oracle,
+        installer, download, or runtime-routing contract.
+      operationId: evaluateCompatibility
+      parameters:
+        - $ref: '#/components/parameters/TargetRef'
+        - $ref: '#/components/parameters/HostProfileId'
+      responses:
+        '200':
+          description: Draft compatibility envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompatibilityEnvelope'
+        '404':
+          description: Draft blocked compatibility envelope for an unresolved target
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompatibilityEnvelope'
         default:
           description: Draft error envelope
           content:
@@ -578,6 +612,13 @@ components:
       in: query
       required: true
       description: Draft bootstrap subject-grouping key for bounded state listing.
+      schema:
+        type: string
+    HostProfileId:
+      name: host_profile_id
+      in: query
+      required: true
+      description: Draft bootstrap host profile preset identifier for bounded compatibility evaluation.
       schema:
         type: string
     BundlePath:
@@ -1113,6 +1154,88 @@ components:
         - target_ref
         - representations
         - notices
+    CompatibilityEnvelope:
+      type: object
+      additionalProperties: false
+      description: >
+        Draft bounded compatibility verdict envelope for one resolved target and one
+        bootstrap host profile preset. This is not a final compatibility oracle,
+        installer, or runtime-routing contract.
+      properties:
+        status:
+          type: string
+          enum:
+            - evaluated
+            - blocked
+        target_ref:
+          type: string
+        compatibility_status:
+          type: string
+          enum:
+            - compatible
+            - incompatible
+            - unknown
+        resolved_resource_id:
+          $ref: '#/components/schemas/ResolvedResourceId'
+        host_profile:
+          $ref: '#/components/schemas/HostProfileSummary'
+        primary_object:
+          $ref: '#/components/schemas/ObjectSummary'
+        source:
+          $ref: '#/components/schemas/SourceSummary'
+        reasons:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompatibilityReason'
+        next_steps:
+          type: array
+          items:
+            type: string
+        notices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notice'
+      required:
+        - status
+        - target_ref
+        - host_profile
+        - reasons
+        - next_steps
+        - notices
+    HostProfileSummary:
+      type: object
+      additionalProperties: false
+      description: Draft bounded bootstrap host profile preset summary.
+      properties:
+        host_profile_id:
+          type: string
+        os_family:
+          type: string
+        architecture:
+          type: string
+        runtime_family:
+          type: string
+        features:
+          type: array
+          items:
+            type: string
+      required:
+        - host_profile_id
+        - os_family
+        - architecture
+        - features
+    CompatibilityReason:
+      type: object
+      additionalProperties: false
+      description: Draft compact compatibility reason surfaced through the public boundary.
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+      required:
+        - code
+        - message
     RepresentationSummary:
       type: object
       additionalProperties: false

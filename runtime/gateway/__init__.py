@@ -3,6 +3,7 @@
 from runtime.gateway.bootstrap import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
+    build_demo_compatibility_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
@@ -15,6 +16,7 @@ from runtime.gateway.bootstrap import (
 __all__ = [
     "build_demo_absence_public_api",
     "build_demo_comparison_public_api",
+    "build_demo_compatibility_public_api",
     "build_demo_resolution_actions_public_api",
     "build_demo_resolution_bundle_inspection_public_api",
     "build_demo_resolution_jobs_public_api",

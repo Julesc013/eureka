@@ -1,0 +1,32 @@
+name: Compatibility
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that evaluate one
+  bounded resolved target against one bootstrap host profile preset through the
+  gateway public compatibility boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/compatibility?target_ref={target_ref}&host_profile_id={host_profile_id}
+  shared_view_models:
+    - contracts/ui/view_models/compatibility.view_model.yaml
+  shared_result_shapes:
+    - CompatibilityEnvelope
+surface_expectations:
+  - surfaces evaluate compatibility through the public gateway boundary and do not read engine-local requirement logic directly
+  - surfaces preserve the selected host profile preset, compatibility status, and compact reasons without implying installer, download, or runtime-routing behavior
+  - surfaces treat unknown as an honest first-class outcome when bounded requirements are missing or incomplete
+  - surfaces handle unresolved targets honestly without fabricating compatibility verdicts
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - final compatibility oracle semantics
+  - broader host profile vocabularies and runtime matrices
+  - installer, download, or runtime-routing behavior

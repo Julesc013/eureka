@@ -14,8 +14,17 @@ from runtime.gateway.public_api.comparison_boundary import (
     ComparisonPublicApi,
     comparison_result_to_public_envelope,
 )
+from runtime.gateway.public_api.compatibility_boundary import (
+    BOOTSTRAP_HOST_PROFILE_PRESETS,
+    CompatibilityEvaluationRequest,
+    CompatibilityPublicApi,
+    compatibility_result_to_public_envelope,
+)
 from runtime.gateway.public_api.comparison_view_models import (
     comparison_envelope_to_view_model,
+)
+from runtime.gateway.public_api.compatibility_view_models import (
+    compatibility_envelope_to_view_model,
 )
 from runtime.gateway.public_api.subject_states_boundary import (
     SubjectStatesCatalogRequest,
@@ -70,6 +79,7 @@ from runtime.gateway.public_api.bundle_inspection_view_models import (
 from runtime.gateway.public_api.demo_support import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
+    build_demo_compatibility_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
@@ -119,8 +129,11 @@ __all__ = [
     "PublicApiResponse",
     "PublicArtifactResponse",
     "AbsencePublicApi",
+    "BOOTSTRAP_HOST_PROFILE_PRESETS",
     "CompareTargetsRequest",
     "ComparisonPublicApi",
+    "CompatibilityEvaluationRequest",
+    "CompatibilityPublicApi",
     "ExplainResolveMissRequest",
     "ExplainSearchMissRequest",
     "EXPORT_RESOLUTION_BUNDLE_ACTION_ID",
@@ -161,6 +174,7 @@ __all__ = [
     "absence_report_to_public_envelope",
     "build_demo_absence_public_api",
     "build_demo_comparison_public_api",
+    "build_demo_compatibility_public_api",
     "build_demo_resolution_actions_public_api",
     "build_demo_resolution_bundle_inspection_public_api",
     "build_demo_resolution_jobs_public_api",
@@ -173,6 +187,8 @@ __all__ = [
     "bundle_inspection_result_to_public_envelope",
     "comparison_envelope_to_view_model",
     "comparison_result_to_public_envelope",
+    "compatibility_envelope_to_view_model",
+    "compatibility_result_to_public_envelope",
     "representations_envelope_to_view_model",
     "representations_result_to_public_envelope",
     "resolution_actions_to_public_envelope",
