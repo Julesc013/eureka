@@ -32,6 +32,14 @@ from runtime.engine.interfaces.public.resolution import (
     ResolutionResult,
     SourceSummary,
 )
+from runtime.engine.interfaces.public.resolution_run import (
+    CheckedSourceSummary,
+    DeterministicSearchRunRequest,
+    ExactResolutionRunRequest,
+    ResolutionRunRecord,
+    ResolutionRunResultItem,
+    ResolutionRunResultSummary,
+)
 from runtime.engine.interfaces.public.representations import (
     RepresentationsRequest,
     RepresentationsResult,
@@ -75,6 +83,12 @@ __all__ = [
     "RepresentationsResult",
     "RepresentationSelectionRequest",
     "RepresentationSelectionResult",
+    "CheckedSourceSummary",
+    "DeterministicSearchRunRequest",
+    "ExactResolutionRunRequest",
+    "ResolutionRunRecord",
+    "ResolutionRunResultItem",
+    "ResolutionRunResultSummary",
     "SearchRequest",
     "SearchResponse",
     "SearchResultEntry",
