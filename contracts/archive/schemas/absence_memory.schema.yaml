@@ -1,0 +1,59 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka.local/contracts/archive/schemas/absence_memory.schema.yaml"
+title: AbsenceMemory
+type: object
+x-eureka-status: draft
+additionalProperties: false
+required:
+  - memory_id
+  - memory_kind
+  - source_run_id
+  - absence_report
+  - created_at
+  - created_by_slice
+properties:
+  memory_id:
+    type: string
+  memory_kind:
+    type: string
+    const: absence_finding
+  source_run_id:
+    type: string
+  raw_query:
+    type:
+      - string
+      - "null"
+  task_kind:
+    type:
+      - string
+      - "null"
+  requested_value:
+    type:
+      - string
+      - "null"
+  checked_source_ids:
+    type: array
+    items:
+      type: string
+  checked_source_families:
+    type: array
+    items:
+      type: string
+  absence_report:
+    type: object
+  useful_source_ids:
+    type: array
+    items:
+      type: string
+  evidence_summary:
+    type: array
+    items:
+      type: object
+  created_at:
+    type: string
+  created_by_slice:
+    type: string
+  invalidation_hints:
+    type:
+      - object
+      - "null"

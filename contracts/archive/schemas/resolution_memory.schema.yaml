@@ -1,0 +1,90 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka.local/contracts/archive/schemas/resolution_memory.schema.yaml"
+title: ResolutionMemory
+type: object
+x-eureka-status: draft
+additionalProperties: false
+required:
+  - memory_id
+  - memory_kind
+  - source_run_id
+  - created_at
+  - checked_source_ids
+  - checked_source_families
+  - result_summaries
+  - useful_source_ids
+  - evidence_summary
+  - notices
+  - created_by_slice
+properties:
+  memory_id:
+    type: string
+  memory_kind:
+    type: string
+    enum:
+      - successful_resolution
+      - successful_search
+      - absence_finding
+      - source_usefulness
+  source_run_id:
+    type: string
+  raw_query:
+    type:
+      - string
+      - "null"
+  task_kind:
+    type:
+      - string
+      - "null"
+  requested_value:
+    type:
+      - string
+      - "null"
+  resolution_task:
+    type:
+      - object
+      - "null"
+  checked_source_ids:
+    type: array
+    items:
+      type: string
+  checked_source_families:
+    type: array
+    items:
+      type: string
+  checked_sources:
+    type: array
+    items:
+      type: object
+  result_summaries:
+    type: array
+    items:
+      type: object
+  absence_report:
+    type:
+      - object
+      - "null"
+  useful_source_ids:
+    type: array
+    items:
+      type: string
+  primary_resolved_resource_id:
+    type:
+      - string
+      - "null"
+  evidence_summary:
+    type: array
+    items:
+      type: object
+  created_at:
+    type: string
+  notices:
+    type: array
+    items:
+      type: object
+  created_by_slice:
+    type: string
+  invalidation_hints:
+    type:
+      - object
+      - "null"

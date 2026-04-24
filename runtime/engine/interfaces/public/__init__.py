@@ -51,6 +51,13 @@ from runtime.engine.interfaces.public.local_task import (
     LocalTaskRecord,
     LocalTaskRunRequest,
 )
+from runtime.engine.interfaces.public.resolution_memory import (
+    ResolutionMemoryCatalogRequest,
+    ResolutionMemoryCreateRequest,
+    ResolutionMemoryReadRequest,
+    ResolutionMemoryRecord,
+    ResolutionMemoryResultSummary,
+)
 from runtime.engine.interfaces.public.resolution_run import (
     CheckedSourceSummary,
     DeterministicSearchRunRequest,
@@ -106,6 +113,11 @@ __all__ = [
     "LocalTaskReadRequest",
     "LocalTaskRecord",
     "LocalTaskRunRequest",
+    "ResolutionMemoryCatalogRequest",
+    "ResolutionMemoryCreateRequest",
+    "ResolutionMemoryReadRequest",
+    "ResolutionMemoryRecord",
+    "ResolutionMemoryResultSummary",
     "ObjectSummary",
     "QueryPlanRequest",
     "ResolutionTask",

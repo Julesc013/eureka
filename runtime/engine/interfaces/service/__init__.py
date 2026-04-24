@@ -29,6 +29,11 @@ from runtime.engine.interfaces.service.representation_selection_service import (
 from runtime.engine.interfaces.service.query_planner_service import QueryPlannerService
 from runtime.engine.interfaces.service.local_index_service import LocalIndexService
 from runtime.engine.interfaces.service.local_task_service import LocalTaskNotFoundError, LocalTaskService
+from runtime.engine.interfaces.service.resolution_memory_service import (
+    ResolutionMemoryNotFoundError,
+    ResolutionMemoryService,
+    ResolutionMemorySourceRunNotFoundError,
+)
 from runtime.engine.interfaces.service.resolution_run_service import ResolutionRunService
 from runtime.engine.interfaces.service.resolution_service import ResolutionOutcome, ResolutionService
 from runtime.engine.interfaces.service.search_service import SearchService
@@ -55,6 +60,9 @@ __all__ = [
     "LocalIndexService",
     "LocalTaskNotFoundError",
     "LocalTaskService",
+    "ResolutionMemoryNotFoundError",
+    "ResolutionMemoryService",
+    "ResolutionMemorySourceRunNotFoundError",
     "ResolutionRunService",
     "ResolutionOutcome",
     "ResolutionService",
