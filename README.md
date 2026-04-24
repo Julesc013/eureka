@@ -29,7 +29,7 @@ This repository is intentionally:
 | Persistence | Local bounded content-addressed export store only |
 | Identity | Bootstrap deterministic `resolved_resource_id` seam |
 | Architecture enforcement | Repo-local Python import boundary checker |
-| Next implementation milestone | Source Registry v0 |
+| Next implementation milestone | Resolution Run Model v0 |
 
 ## What Eureka Proves Today
 
@@ -46,6 +46,7 @@ The current repo proves a set of bounded executable seams across connectors, eng
 
 - synthetic connector path
 - recorded GitHub Releases connector path
+- Source Registry v0 inventory, loader, and bounded public projection
 - bounded source-family and source-origin visibility
 - bounded provenance and evidence summaries
 - bounded absence reasoning for misses
@@ -104,6 +105,8 @@ It does **not** yet settle:
 ```bash
 python scripts/demo_cli_workbench.py resolve fixture:software/synthetic-demo-app@1.0.0
 python scripts/demo_cli_workbench.py search archive
+python scripts/demo_cli_workbench.py sources
+python scripts/demo_cli_workbench.py source github-releases-recorded-fixtures
 python scripts/demo_cli_workbench.py states archivebox
 python scripts/demo_cli_workbench.py compare fixture:software/archivebox@0.8.5 github-release:archivebox/archivebox@v0.8.5
 python scripts/demo_cli_workbench.py plan github-release:cli/cli@v2.65.0 --strategy acquire --host windows-x86_64 --json
@@ -114,6 +117,8 @@ python scripts/demo_cli_workbench.py explain-resolve-miss fixture:software/archi
 
 ```bash
 python scripts/demo_http_api.py index
+python scripts/demo_http_api.py sources --status active_fixture
+python scripts/demo_http_api.py source github-releases-recorded-fixtures
 python scripts/demo_http_api.py resolve github-release:cli/cli@v2.65.0
 python scripts/demo_http_api.py action-plan github-release:cli/cli@v2.65.0 --strategy preserve
 python scripts/demo_http_api.py states archivebox
@@ -125,7 +130,7 @@ python scripts/demo_http_api.py states archivebox
 python scripts/demo_web_workbench.py
 ```
 
-Then open the local URLs printed by the script, including the exact-resolution workbench, search page, action-plan page, and local HTTP API index.
+Then open the local URLs printed by the script, including the exact-resolution workbench, source-registry page, search page, action-plan page, and local HTTP API index.
 
 #### Architecture Guardrail
 
@@ -189,12 +194,13 @@ Research that remains intentionally non-normative stays under:
 
 ## Current Executable Scope
 
-Current bootstrap status includes **twenty-five executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
+Current bootstrap status includes **twenty-six executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
 
 Important highlights:
 
 - one governed synthetic connector family
 - one bounded real-source connector family using recorded GitHub Releases fixtures
+- one bounded source-registry inventory and public-boundary projection
 - one transport-neutral gateway public boundary family reused across multiple surfaces
 - one compatibility-first HTML surface
 - one bootstrap native CLI surface
@@ -226,10 +232,13 @@ These checks are still bootstrap-scale, but they cover the current runtime, gate
 Useful paths to know:
 
 - `contracts/archive/` — draft archive schemas and governed fixtures
+- `contracts/source_registry/` — draft governed source-registry schemas
 - `contracts/gateway/public_api/` — public API contract placeholders
 - `contracts/ui/` — shared view models and UI contracts
+- `control/inventory/sources/` — governed Source Registry v0 seed records
 - `runtime/connectors/synthetic_software/` — governed synthetic fixture connector
 - `runtime/connectors/github_releases/` — recorded GitHub Releases connector
+- `runtime/source_registry/` — stdlib-only source-registry loader and filter layer
 - `runtime/engine/resolve/` — exact resolution and deterministic search
 - `runtime/engine/provenance/` — bounded evidence summaries
 - `runtime/engine/absence/` — bounded miss explanation

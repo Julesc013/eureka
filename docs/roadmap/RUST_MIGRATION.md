@@ -62,5 +62,7 @@ before replacement.
 
 ## Current Status
 
-The Rust migration is planned but not started. No workspace or crates should be
-introduced as part of doctrine-consolidation work.
+The Rust migration is planned but not started. Source Registry v0 now exists in
+the Python reference lane, but no Rust workspace or crates should be introduced
+until later backend milestones, parity expectations, and migration boundaries
+are clearer.

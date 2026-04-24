@@ -12,6 +12,9 @@ alpha path are stronger.
 Thin host shells may be explored later as experiments, but they should remain
 downstream of stronger backend and public-boundary work.
 
+Source Registry v0 does not change that policy by itself. Backend infrastructure
+still takes priority over host shells.
+
 ## Host-Shell Principle
 
 Future native apps should remain shells over the core. They should consume

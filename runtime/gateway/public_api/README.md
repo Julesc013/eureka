@@ -12,6 +12,7 @@ Current bootstrap scope:
 - compare exactly two bounded resolved targets through a deterministic public comparison boundary
 - list bounded ordered states for one bootstrap subject key through a deterministic public subject/state boundary
 - list bounded known representations and access paths for one resolved target through a deterministic public representations boundary
+- list governed source-registry records and read one source-registry record by id through a deterministic public source-registry boundary
 - evaluate one resolved target against one bootstrap host profile preset through a deterministic public compatibility boundary
 - select one bounded preferred representation and explicit alternatives for one resolved target through a deterministic public handoff boundary, optionally shaped by one bootstrap host profile preset and one bootstrap strategy profile
 - fetch one explicitly chosen bounded representation payload for one resolved target through a deterministic public acquisition boundary
@@ -40,6 +41,8 @@ Current bootstrap scope:
   implementing a web or native shell
 - map public representations envelopes into a shared representations view model without
   implementing a web or native shell
+- map public source-registry envelopes into a shared source-registry view model without
+  implementing a web or native shell
 - map public compatibility envelopes into a shared compatibility view model without
   implementing a web or native shell
 - map public handoff envelopes into a shared representation-selection view model without
@@ -66,6 +69,7 @@ Out of scope here:
 - owning HTTP serving directly inside gateway; the current local stdlib HTTP API slice remains surface-owned under `surfaces/web/server/`
 - async workers or orchestration
 - persistence beyond the local bootstrap filesystem store
+- exposing raw fixture paths or private local paths through the public source-registry boundary
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
 - final provenance graph, trust scoring, or cross-source merge behavior beyond the current bounded evidence summary seam
 - final comparison, merge, or truth-selection behavior beyond the current bounded disagreement seam

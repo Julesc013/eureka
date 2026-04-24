@@ -14,6 +14,7 @@ The repo has already proven:
 - evidence visibility, miss explanation, and action-routing seams
 - decomposition and member-readback seams
 - a first archive-resolution eval packet
+- Source Registry v0 as an explicit source inventory and public labeling plane
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -22,7 +23,7 @@ backend and architectural oracle for the next phase.
 
 The next backend sequence is:
 
-1. Source Registry v0
+1. Source Registry v0 (implemented)
 2. Resolution Run Model v0
 3. Query Planner v0
 4. Local Index v0
@@ -37,14 +38,13 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Source Registry v0
+> Resolution Run Model v0
 
 Why this comes next:
 
-- the repo already has more than one source family
-- future connector growth should be governed rather than one-off
-- source roles, surfaces, trust lanes, and rights notes must be explicit before
-  broader backend infrastructure grows around them
+- Source Registry v0 is now present as the bounded source inventory plane
+- the next operational step is to represent search as a resumable bounded run
+- later planner, index, worker, and memory work need that run envelope more than another inventory slice
 
 ## Explicit Deferrals
 

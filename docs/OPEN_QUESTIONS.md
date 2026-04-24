@@ -39,8 +39,8 @@ These questions are intentionally left open during bootstrap:
 35. If Eureka later introduces shared evidence reuse or resolution memory, which units are safe to share publicly, which must stay local private strategy memory, and where should invalidation rules and freshness dependencies live?
 36. How should the initial hard archive-resolution benchmark under `evals/archive_resolution/` evolve beyond its v0 task set, and which metrics should eventually become the minimum gate for future investigation, ranking, decomposition, compatibility, source-expansion, and absence claims?
 37. Which future planning, extraction, explanation, or reranking tasks should remain deterministic, which may use lightweight ML, and which, if any, should allow optional LLM fallbacks without turning model output into product truth?
-38. What exact field set should Source Registry v0 standardize first, and which source-registry fields must stay descriptive rather than becoming premature contract promises?
-39. Which seed records should be mandatory in Source Registry v0 beyond synthetic fixtures and recorded GitHub Releases, and which candidate source families should remain placeholders until later?
+38. Which Source Registry v0 fields should now stay stable enough for future public projection, and which should remain explicitly descriptive and replaceable rather than becoming premature compatibility promises?
+39. Which additional source-registry seed records should be added beyond the current v0 set, and what minimum runtime or documentation bar should a placeholder source meet before it is promoted into an implemented connector family?
 40. What storage format should Resolution Run Model v0 use first, and which parts of run state should be durable versus explicitly ephemeral?
 41. How broad should Query Planner v0 be before it becomes noisy, and which query families deserve first deterministic support?
 42. What is the best Local Index v0 design around SQLite and FTS, and which record families should be indexed first?

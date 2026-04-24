@@ -239,3 +239,9 @@
 - Status: accepted
 - Decision: Eureka now treats AI as optional helper capability only, bounded by evidence, typed outputs, and replaceable logic, and it forbids model output from becoming canonical truth or hidden trust authority.
 - Why: the product must remain useful without LLMs and must keep source-backed truth, identity, and trust decisions inspectable.
+
+## ADR-041: Add Source Registry v0 as the First Inventory-Backed Source Control Plane
+
+- Status: accepted
+- Decision: Eureka now maintains Source Registry v0 through draft governed source-registry schemas, explicit governed seed records under `control/inventory/sources/`, a stdlib-only runtime loader and filter layer under `runtime/source_registry/`, and a bounded public source-registry boundary reused by current web, CLI, and local HTTP API surfaces.
+- Why: the repo already contains more than one source family, and future source growth needs an explicit, inspectable inventory and policy plane before broader connector work, resolution runs, local indexing, or hosted-alpha preparation continue.

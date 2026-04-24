@@ -65,6 +65,11 @@ Detailed product-architecture direction now lives under `docs/architecture/`:
 These documents describe accepted architecture direction and staging. They do
 not imply that every subsystem is already implemented in the current repo.
 
+One bounded backend step from that architecture is now implemented:
+Source Registry v0 provides explicit governed seed records plus a bounded
+runtime and public projection path without implying live sync, crawling, or
+placeholder connector implementation.
+
 ## Related Standards
 
 The supporting standards and policy guidance for the architecture live under
