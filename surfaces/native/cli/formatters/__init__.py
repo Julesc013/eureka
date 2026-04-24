@@ -15,6 +15,7 @@ from surfaces.native.cli.formatters.inspection import format_bundle_inspection
 from surfaces.native.cli.formatters.member_access import format_member_access
 from surfaces.native.cli.formatters.representations import format_representations
 from surfaces.native.cli.formatters.resolution import format_resolution_workspace
+from surfaces.native.cli.formatters.resolution_runs import format_resolution_runs
 from surfaces.native.cli.formatters.search import format_search_results
 from surfaces.native.cli.formatters.source_registry import format_source_registry
 from surfaces.native.cli.formatters.stored_exports import (
@@ -39,6 +40,7 @@ __all__ = [
     "format_member_access",
     "format_representations",
     "format_resolution_workspace",
+    "format_resolution_runs",
     "format_search_results",
     "format_source_registry",
     "format_store_result",

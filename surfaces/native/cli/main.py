@@ -25,6 +25,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
+    build_demo_resolution_runs_public_api,
     build_demo_representations_public_api,
     build_demo_search_public_api,
     build_demo_source_registry_public_api,
@@ -36,8 +37,10 @@ from runtime.gateway.public_api import (
     ComparisonPublicApi,
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
+    DeterministicSearchRunRequest,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
+    ExactResolutionRunRequest,
     MemberAccessPublicApi,
     MemberAccessReadRequest,
     member_access_envelope_to_view_model,
@@ -49,6 +52,8 @@ from runtime.gateway.public_api import (
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
     ResolutionJobsPublicApi,
+    ResolutionRunReadRequest,
+    ResolutionRunsPublicApi,
     ResolutionWorkspaceViewModels,
     ResolutionActionsPublicApi,
     SearchCatalogRequest,
@@ -70,6 +75,7 @@ from runtime.gateway.public_api import (
     compatibility_envelope_to_view_model,
     decomposition_envelope_to_view_model,
     representations_envelope_to_view_model,
+    resolution_runs_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     source_registry_envelope_to_view_model,
     stored_exports_envelope_to_view_model,
@@ -90,6 +96,7 @@ from surfaces.native.cli.formatters import (
     format_manifest_export,
     format_representations,
     format_resolution_workspace,
+    format_resolution_runs,
     format_search_results,
     format_source_registry,
     format_store_result,
@@ -120,6 +127,7 @@ class CliContext:
     handoff_public_api: RepresentationSelectionPublicApi
     subject_states_public_api: SubjectStatesPublicApi
     representations_public_api: RepresentationsPublicApi
+    resolution_runs_public_api: ResolutionRunsPublicApi | None = None
     stored_exports_public_api: StoredExportsPublicApi | None = None
     session_id: str = DEFAULT_SESSION_ID
 
@@ -133,7 +141,10 @@ def main(
     parser = build_parser()
     args = parser.parse_args(list(argv) if argv is not None else None)
     output = stdout or sys.stdout
-    cli_context = context or build_cli_context(store_root=getattr(args, "store_root", None))
+    cli_context = context or build_cli_context(
+        store_root=getattr(args, "store_root", None),
+        run_store_root=getattr(args, "run_store_root", None),
+    )
 
     try:
         if args.command == "plan":
@@ -234,6 +245,56 @@ def main(
                 args.json,
                 search_results,
                 format_search_results(search_results),
+            )
+
+        if args.command == "run-resolve":
+            runs_public_api = _require_runs_public_api(cli_context)
+            response = runs_public_api.start_exact_resolution_run(
+                ExactResolutionRunRequest.from_parts(args.target_ref),
+            )
+            resolution_runs = resolution_runs_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                resolution_runs,
+                format_resolution_runs(resolution_runs),
+            )
+
+        if args.command == "run-search":
+            runs_public_api = _require_runs_public_api(cli_context)
+            response = runs_public_api.start_deterministic_search_run(
+                DeterministicSearchRunRequest.from_parts(args.query),
+            )
+            resolution_runs = resolution_runs_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                resolution_runs,
+                format_resolution_runs(resolution_runs),
+            )
+
+        if args.command == "run-status":
+            runs_public_api = _require_runs_public_api(cli_context)
+            response = runs_public_api.get_run(
+                ResolutionRunReadRequest.from_parts(args.run_id),
+            )
+            resolution_runs = resolution_runs_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                resolution_runs,
+                format_resolution_runs(resolution_runs),
+            )
+
+        if args.command == "runs":
+            runs_public_api = _require_runs_public_api(cli_context)
+            response = runs_public_api.list_runs()
+            resolution_runs = resolution_runs_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                resolution_runs,
+                format_resolution_runs(resolution_runs),
             )
 
         if args.command == "sources":
@@ -460,6 +521,53 @@ def build_parser() -> argparse.ArgumentParser:
     )
     search_parser.add_argument("query")
 
+    run_resolve_parser = subparsers.add_parser(
+        "run-resolve",
+        parents=[json_parent],
+        help="Start and persist a synchronous exact-resolution run through the public boundary.",
+    )
+    run_resolve_parser.add_argument("target_ref")
+    run_resolve_parser.add_argument(
+        "--run-store-root",
+        required=True,
+        help="Bootstrap local root for persisted resolution-run JSON records.",
+    )
+
+    run_search_parser = subparsers.add_parser(
+        "run-search",
+        parents=[json_parent],
+        help="Start and persist a synchronous deterministic-search run through the public boundary.",
+    )
+    run_search_parser.add_argument("query")
+    run_search_parser.add_argument(
+        "--run-store-root",
+        required=True,
+        help="Bootstrap local root for persisted resolution-run JSON records.",
+    )
+
+    run_status_parser = subparsers.add_parser(
+        "run-status",
+        parents=[json_parent],
+        help="Read one persisted synchronous resolution run by run_id through the public boundary.",
+    )
+    run_status_parser.add_argument("run_id")
+    run_status_parser.add_argument(
+        "--run-store-root",
+        required=True,
+        help="Bootstrap local root for persisted resolution-run JSON records.",
+    )
+
+    runs_parser = subparsers.add_parser(
+        "runs",
+        parents=[json_parent],
+        help="List persisted synchronous resolution runs through the public boundary.",
+    )
+    runs_parser.add_argument(
+        "--run-store-root",
+        required=True,
+        help="Bootstrap local root for persisted resolution-run JSON records.",
+    )
+
     sources_parser = subparsers.add_parser(
         "sources",
         parents=[json_parent],
@@ -658,7 +766,7 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def build_cli_context(*, store_root: str | None) -> CliContext:
+def build_cli_context(*, store_root: str | None, run_store_root: str | None) -> CliContext:
     return CliContext(
         acquisition_public_api=build_demo_acquisition_public_api(),
         action_plan_public_api=build_demo_action_plan_public_api(),
@@ -669,6 +777,11 @@ def build_cli_context(*, store_root: str | None) -> CliContext:
         inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
         search_public_api=build_demo_search_public_api(),
         source_registry_public_api=build_demo_source_registry_public_api(),
+        resolution_runs_public_api=(
+            build_demo_resolution_runs_public_api(run_store_root)
+            if run_store_root is not None
+            else None
+        ),
         absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
         compatibility_public_api=build_demo_compatibility_public_api(),
@@ -810,6 +923,12 @@ def _require_store_public_api(context: CliContext) -> StoredExportsPublicApi:
     if context.stored_exports_public_api is None:
         raise ValueError("Provide --store-root to enable bootstrap stored-export operations.")
     return context.stored_exports_public_api
+
+
+def _require_runs_public_api(context: CliContext) -> ResolutionRunsPublicApi:
+    if context.resolution_runs_public_api is None:
+        raise ValueError("Provide --run-store-root to enable bootstrap resolution-run operations.")
+    return context.resolution_runs_public_api
 
 
 def _write_output_payload(output_path: Path, payload: bytes) -> Path:

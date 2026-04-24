@@ -65,6 +65,33 @@ def main(argv: list[str] | None = None) -> int:
     search_parser = subparsers.add_parser("search", help="Fetch deterministic machine-readable search results.")
     search_parser.add_argument("query")
 
+    runs_parser = subparsers.add_parser(
+        "runs",
+        help="Fetch machine-readable synchronous bootstrap resolution-run listings.",
+    )
+    runs_parser.add_argument("--run-store-root", required=True)
+
+    run_parser = subparsers.add_parser(
+        "run",
+        help="Fetch one machine-readable synchronous bootstrap resolution run by id.",
+    )
+    run_parser.add_argument("run_id")
+    run_parser.add_argument("--run-store-root", required=True)
+
+    run_resolve_parser = subparsers.add_parser(
+        "run-resolve",
+        help="Start one machine-readable synchronous bootstrap exact-resolution run.",
+    )
+    run_resolve_parser.add_argument("target_ref")
+    run_resolve_parser.add_argument("--run-store-root", required=True)
+
+    run_search_parser = subparsers.add_parser(
+        "run-search",
+        help="Start one machine-readable synchronous bootstrap deterministic-search run.",
+    )
+    run_search_parser.add_argument("query")
+    run_search_parser.add_argument("--run-store-root", required=True)
+
     sources_parser = subparsers.add_parser("sources", help="Fetch machine-readable governed source-registry records.")
     sources_parser.add_argument("--status")
     sources_parser.add_argument("--family")
@@ -196,6 +223,22 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         path = _path("/api/resolve", target_ref=args.target_ref, store_root=args.store_root)
     elif args.command == "search":
         path = _path("/api/search", q=args.query)
+    elif args.command == "runs":
+        path = _path("/api/runs", run_store_root=args.run_store_root)
+    elif args.command == "run":
+        path = _path("/api/run", id=args.run_id, run_store_root=args.run_store_root)
+    elif args.command == "run-resolve":
+        path = _path(
+            "/api/run/resolve",
+            target_ref=args.target_ref,
+            run_store_root=args.run_store_root,
+        )
+    elif args.command == "run-search":
+        path = _path(
+            "/api/run/search",
+            q=args.query,
+            run_store_root=args.run_store_root,
+        )
     elif args.command == "sources":
         path = _path(
             "/api/sources",

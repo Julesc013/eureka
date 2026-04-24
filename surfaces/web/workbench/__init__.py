@@ -13,6 +13,7 @@ from surfaces.web.workbench.render_search_results import render_search_results_h
 from surfaces.web.workbench.render_source_registry import render_source_registry_html
 from surfaces.web.workbench.render_resolution_workspace import render_resolution_workspace_html
 from surfaces.web.workbench.render_representations import render_representations_html
+from surfaces.web.workbench.render_resolution_runs import render_resolution_runs_html
 from surfaces.web.workbench.render_subject_states import render_subject_states_html
 
 __all__ = [
@@ -26,6 +27,7 @@ __all__ = [
     "render_handoff_html",
     "render_member_access_html",
     "render_representations_html",
+    "render_resolution_runs_html",
     "render_resolution_workspace_html",
     "render_search_results_html",
     "render_source_registry_html",

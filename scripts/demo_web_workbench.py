@@ -115,6 +115,11 @@ def main() -> int:
         help="Local bootstrap store root used for storing, listing, and reading exported artifacts.",
     )
     parser.add_argument(
+        "--run-store-root",
+        metavar="PATH",
+        help="Local bootstrap run-store root used for synchronous persisted resolution-run pages and API routes.",
+    )
+    parser.add_argument(
         "--store-manifest",
         action="store_true",
         help="Store the bounded resolution manifest for the selected target in the local export store.",
@@ -420,6 +425,23 @@ def main() -> int:
                     f"http://{args.host}:{args.port}/store/bundle?target_ref={quote(target_ref, safe='')}",
                     "Serving Eureka bootstrap HTTP API local store listing at "
                     f"http://{args.host}:{args.port}/api/stored?target_ref={quote(target_ref, safe='')}&store_root={quote(args.store_root, safe='')}",
+                ]
+            )
+        if args.run_store_root is not None:
+            lines.extend(
+                [
+                    "Serving Eureka resolution-runs page at "
+                    f"http://{args.host}:{args.port}/runs?run_store_root={quote(args.run_store_root, safe='')}",
+                    "Serving Eureka exact-resolution run page at "
+                    f"http://{args.host}:{args.port}/run/resolve?target_ref={quote(target_ref, safe='')}&run_store_root={quote(args.run_store_root, safe='')}",
+                    "Serving Eureka deterministic-search run page at "
+                    f"http://{args.host}:{args.port}/run/search?q={quote('archive', safe='')}&run_store_root={quote(args.run_store_root, safe='')}",
+                    "Serving Eureka bootstrap HTTP API resolution-runs route at "
+                    f"http://{args.host}:{args.port}/api/runs?run_store_root={quote(args.run_store_root, safe='')}",
+                    "Serving Eureka bootstrap HTTP API exact-resolution run route at "
+                    f"http://{args.host}:{args.port}/api/run/resolve?target_ref={quote(target_ref, safe='')}&run_store_root={quote(args.run_store_root, safe='')}",
+                    "Serving Eureka bootstrap HTTP API deterministic-search run route at "
+                    f"http://{args.host}:{args.port}/api/run/search?q={quote('archive', safe='')}&run_store_root={quote(args.run_store_root, safe='')}",
                 ]
             )
         sys.stdout.write("\n".join(lines) + "\n")

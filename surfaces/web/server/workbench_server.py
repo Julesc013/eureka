@@ -17,9 +17,11 @@ from runtime.gateway.public_api import (
     ComparisonPublicApi,
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
+    DeterministicSearchRunRequest,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
     decomposition_envelope_to_view_model,
+    ExactResolutionRunRequest,
     MemberAccessPublicApi,
     MemberAccessReadRequest,
     member_access_envelope_to_view_model,
@@ -35,6 +37,7 @@ from runtime.gateway.public_api import (
     ResolutionBundleInspectionPublicApi,
     ResolutionActionsPublicApi,
     ResolutionJobsPublicApi,
+    ResolutionRunReadRequest,
     ResolutionWorkspaceReadError,
     SearchCatalogRequest,
     SearchPublicApi,
@@ -48,12 +51,14 @@ from runtime.gateway.public_api import (
     StoredExportsTargetRequest,
     acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
+    build_demo_resolution_runs_public_api,
     build_resolution_workspace_view_models,
     absence_envelope_to_view_model,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
     compatibility_envelope_to_view_model,
     representations_envelope_to_view_model,
+    resolution_runs_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     source_registry_envelope_to_view_model,
     subject_states_envelope_to_view_model,
@@ -71,6 +76,7 @@ from surfaces.web.workbench import (
     render_handoff_html,
     render_member_access_html,
     render_representations_html,
+    render_resolution_runs_html,
     render_resolution_workspace_html,
     render_search_results_html,
     render_source_registry_html,
@@ -600,8 +606,12 @@ class WorkbenchWsgiApp:
             "/action-plan",
             "/handoff",
             "/representations",
+            "/run",
+            "/run/resolve",
+            "/run/search",
             "/source",
             "/sources",
+            "/runs",
             "/subject",
             "/search",
             "/inspect/bundle",
@@ -619,7 +629,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/action-plan', '/handoff', '/representations', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/action-plan', '/handoff', '/representations', '/runs', '/run', '/run/resolve', '/run/search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -878,6 +888,31 @@ class WorkbenchWsgiApp:
             page = render_source_registry_page(
                 self._source_registry_public_api,
                 source_id=self._resolve_optional_query_value(query_string, "id"),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/runs":
+            page = render_resolution_runs_page(
+                self._resolve_optional_query_value(query_string, "run_store_root"),
+                requested_target_ref=self._resolve_optional_query_value(query_string, "target_ref") or "",
+                requested_query=self._resolve_optional_query_value(query_string, "q") or "",
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/run":
+            page = render_resolution_runs_page(
+                self._resolve_optional_query_value(query_string, "run_store_root"),
+                run_id=self._resolve_optional_query_value(query_string, "id"),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/run/resolve":
+            page = render_exact_resolution_run_page(
+                self._resolve_optional_query_value(query_string, "run_store_root"),
+                self._resolve_optional_query_value(query_string, "target_ref") or "",
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/run/search":
+            page = render_deterministic_search_run_page(
+                self._resolve_optional_query_value(query_string, "run_store_root"),
+                self._resolve_search_query(query_string),
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/inspect/bundle":
@@ -1206,6 +1241,125 @@ def render_source_registry_page(
         )
     )
     return render_source_registry_html(source_registry_envelope_to_view_model(response.body))
+
+
+def render_resolution_runs_page(
+    run_store_root: str | None,
+    *,
+    run_id: str | None = None,
+    requested_target_ref: str = "",
+    requested_query: str = "",
+) -> str:
+    empty_view_model = {
+        "status": "listed",
+        "run_count": 0,
+        "runs": [],
+    }
+    normalized_run_store_root = (run_store_root or "").strip() or None
+    if normalized_run_store_root is None:
+        return render_resolution_runs_html(
+            empty_view_model,
+            requested_target_ref=requested_target_ref,
+            requested_query=requested_query,
+            message="Provide a bootstrap run_store_root to list or inspect persisted resolution runs.",
+        )
+
+    public_api = build_demo_resolution_runs_public_api(normalized_run_store_root)
+    if run_id is not None and run_id.strip():
+        try:
+            response = public_api.get_run(ResolutionRunReadRequest.from_parts(run_id))
+        except ValueError as error:
+            return render_resolution_runs_html(
+                {
+                    "status": "blocked",
+                    "run_count": 0,
+                    "selected_run_id": "",
+                    "runs": [],
+                    "notices": [
+                        {
+                            "code": "invalid_run_request",
+                            "severity": "warning",
+                            "message": str(error),
+                        }
+                    ],
+                },
+                run_store_root=normalized_run_store_root,
+                requested_target_ref=requested_target_ref,
+                requested_query=requested_query,
+            )
+        return render_resolution_runs_html(
+            resolution_runs_envelope_to_view_model(response.body),
+            run_store_root=normalized_run_store_root,
+            requested_target_ref=requested_target_ref,
+            requested_query=requested_query,
+        )
+    response = public_api.list_runs()
+    return render_resolution_runs_html(
+        resolution_runs_envelope_to_view_model(response.body),
+        run_store_root=normalized_run_store_root,
+        requested_target_ref=requested_target_ref,
+        requested_query=requested_query,
+    )
+
+
+def render_exact_resolution_run_page(
+    run_store_root: str | None,
+    target_ref: str,
+) -> str:
+    normalized_target_ref = target_ref.strip()
+    normalized_run_store_root = (run_store_root or "").strip() or None
+    if normalized_target_ref == "":
+        return render_resolution_runs_html(
+            {"status": "listed", "run_count": 0, "runs": []},
+            run_store_root=normalized_run_store_root,
+            requested_target_ref="",
+            message="Provide a bounded target_ref to start an exact-resolution run.",
+        )
+    if normalized_run_store_root is None:
+        return render_resolution_runs_html(
+            {"status": "listed", "run_count": 0, "runs": []},
+            requested_target_ref=normalized_target_ref,
+            message="Provide a bootstrap run_store_root to persist an exact-resolution run.",
+        )
+    public_api = build_demo_resolution_runs_public_api(normalized_run_store_root)
+    response = public_api.start_exact_resolution_run(
+        ExactResolutionRunRequest.from_parts(normalized_target_ref),
+    )
+    return render_resolution_runs_html(
+        resolution_runs_envelope_to_view_model(response.body),
+        run_store_root=normalized_run_store_root,
+        requested_target_ref=normalized_target_ref,
+    )
+
+
+def render_deterministic_search_run_page(
+    run_store_root: str | None,
+    query: str,
+) -> str:
+    normalized_query = query.strip()
+    normalized_run_store_root = (run_store_root or "").strip() or None
+    if normalized_query == "":
+        return render_resolution_runs_html(
+            {"status": "listed", "run_count": 0, "runs": []},
+            run_store_root=normalized_run_store_root,
+            requested_query="",
+            message="Provide a bounded query to start a deterministic-search run.",
+        )
+    if normalized_run_store_root is None:
+        return render_resolution_runs_html(
+            {"status": "listed", "run_count": 0, "runs": []},
+            requested_query=normalized_query,
+            message="Provide a bootstrap run_store_root to persist a deterministic-search run.",
+        )
+    public_api = build_demo_resolution_runs_public_api(normalized_run_store_root)
+    response = public_api.start_deterministic_search_run(
+        DeterministicSearchRunRequest.from_parts(normalized_query),
+    )
+    return render_resolution_runs_html(
+        resolution_runs_envelope_to_view_model(response.body),
+        run_store_root=normalized_run_store_root,
+        requested_query=normalized_query,
+    )
 
 
 def render_comparison_page(

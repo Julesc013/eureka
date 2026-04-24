@@ -15,9 +15,11 @@ from runtime.gateway.public_api import (
     ComparisonPublicApi,
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
+    DeterministicSearchRunRequest,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
     decomposition_envelope_to_view_model,
+    ExactResolutionRunRequest,
     MemberAccessPublicApi,
     MemberAccessReadRequest,
     member_access_envelope_to_view_model,
@@ -33,6 +35,7 @@ from runtime.gateway.public_api import (
     ResolutionBundleInspectionPublicApi,
     ResolutionActionsPublicApi,
     ResolutionJobsPublicApi,
+    ResolutionRunReadRequest,
     ResolutionWorkspaceReadError,
     SearchCatalogRequest,
     SearchPublicApi,
@@ -40,6 +43,7 @@ from runtime.gateway.public_api import (
     SubjectStatesPublicApi,
     StoredArtifactRequest,
     StoredExportsTargetRequest,
+    build_demo_resolution_runs_public_api,
     build_demo_stored_exports_public_api,
     acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
@@ -49,6 +53,7 @@ from runtime.gateway.public_api import (
     comparison_envelope_to_view_model,
     compatibility_envelope_to_view_model,
     representations_envelope_to_view_model,
+    resolution_runs_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     SourceCatalogRequest,
     SourceReadRequest,
@@ -71,6 +76,30 @@ def build_api_index_document() -> dict[str, Any]:
         "api_version": "0.1.0-draft",
         "status": "local_bootstrap",
         "endpoints": [
+            {
+                "path": "/api/runs",
+                "method": "GET",
+                "query_parameters": ["run_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/run",
+                "method": "GET",
+                "query_parameters": ["id", "run_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/run/resolve",
+                "method": "GET",
+                "query_parameters": ["target_ref", "run_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/run/search",
+                "method": "GET",
+                "query_parameters": ["q", "run_store_root"],
+                "response_content_types": ["application/json"],
+            },
             {
                 "path": "/api/fetch",
                 "method": "GET",
@@ -208,6 +237,7 @@ def build_api_index_document() -> dict[str, Any]:
             "This is the first local stdlib HTTP API slice over Eureka's transport-neutral public boundary.",
             "Route names, auth, HTTPS/TLS, deployment, and multi-user semantics remain intentionally unresolved.",
             "store_root and bundle_path remain bootstrap local parameters for deterministic demo-scale flows.",
+            "run_store_root remains a bootstrap/demo local parameter for synchronous persisted resolution runs only.",
         ],
         "bootstrap_host_profile_presets": list(BOOTSTRAP_HOST_PROFILE_PRESETS),
         "bootstrap_strategy_profiles": list(BOOTSTRAP_STRATEGY_PROFILES),
@@ -296,6 +326,80 @@ def handle_api_request(
         if workspace.stored_exports is not None:
             payload["stored_exports"] = workspace.stored_exports
         return json_response(200, payload)
+
+    if path == "/api/runs":
+        runs_public_api = _required_runs_public_api(query)
+        if isinstance(runs_public_api, SerializedHttpResponse):
+            return runs_public_api
+        response = runs_public_api.list_runs()
+        return json_response(
+            response.status_code,
+            resolution_runs_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/run":
+        run_id = _required_query_value(query, "id")
+        if run_id is None:
+            return _missing_query_value("id")
+        runs_public_api = _required_runs_public_api(query)
+        if isinstance(runs_public_api, SerializedHttpResponse):
+            return runs_public_api
+        try:
+            response = runs_public_api.get_run(ResolutionRunReadRequest.from_parts(run_id))
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_run_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            resolution_runs_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/run/resolve":
+        target_ref = _required_query_value(query, "target_ref")
+        if target_ref is None:
+            return _missing_query_value("target_ref")
+        runs_public_api = _required_runs_public_api(query)
+        if isinstance(runs_public_api, SerializedHttpResponse):
+            return runs_public_api
+        try:
+            response = runs_public_api.start_exact_resolution_run(
+                ExactResolutionRunRequest.from_parts(target_ref),
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_run_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            resolution_runs_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/run/search":
+        query_text = _required_query_value(query, "q")
+        if query_text is None:
+            return _missing_query_value("q")
+        runs_public_api = _required_runs_public_api(query)
+        if isinstance(runs_public_api, SerializedHttpResponse):
+            return runs_public_api
+        try:
+            response = runs_public_api.start_deterministic_search_run(
+                DeterministicSearchRunRequest.from_parts(query_text),
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_run_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            resolution_runs_envelope_to_view_model(response.body),
+        )
 
     if path == "/api/action-plan":
         if action_plan_public_api is None:
@@ -768,6 +872,18 @@ def _required_store_public_api(
             message="Provide a local store_root query parameter for this bootstrap local-store API route.",
         )
     return build_demo_stored_exports_public_api(store_root)
+
+
+def _required_runs_public_api(
+    query: Mapping[str, list[str]],
+):
+    run_store_root = _required_query_value(query, "run_store_root")
+    if run_store_root is None:
+        return _missing_query_value(
+            "run_store_root",
+            message="Provide a local run_store_root query parameter for this bootstrap resolution-run API route.",
+        )
+    return build_demo_resolution_runs_public_api(run_store_root)
 
 
 def _missing_query_value(name: str, *, message: str | None = None) -> SerializedHttpResponse:

@@ -1,0 +1,68 @@
+from __future__ import annotations
+
+import json
+import tempfile
+import unittest
+from io import StringIO
+
+from surfaces.native.cli.main import main
+
+
+KNOWN_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
+
+
+def run_cli(*args: str) -> tuple[int, str]:
+    output = StringIO()
+    exit_code = main(list(args), stdout=output)
+    return exit_code, output.getvalue()
+
+
+class ResolutionRunsCliTestCase(unittest.TestCase):
+    def test_run_resolve_and_run_status_render_checked_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            resolve_exit_code, resolve_output = run_cli(
+                "run-resolve",
+                KNOWN_TARGET_REF,
+                "--run-store-root",
+                temp_dir,
+            )
+            status_exit_code, status_output = run_cli(
+                "run-status",
+                "run-exact-resolution-0001",
+                "--run-store-root",
+                temp_dir,
+            )
+            list_exit_code, list_output = run_cli(
+                "runs",
+                "--run-store-root",
+                temp_dir,
+            )
+
+        self.assertEqual(resolve_exit_code, 0)
+        self.assertEqual(status_exit_code, 0)
+        self.assertEqual(list_exit_code, 0)
+        self.assertIn("Resolution runs", resolve_output)
+        self.assertIn("selected_run_id: run-exact-resolution-0001", resolve_output)
+        self.assertIn("checked_source_ids: github-releases-recorded-fixtures, synthetic-fixtures", status_output)
+        self.assertIn("Synthetic Fixtures [active_fixture]", status_output)
+        self.assertIn("run-exact-resolution-0001", list_output)
+
+    def test_run_search_supports_json_output(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            exit_code, output = run_cli(
+                "run-search",
+                "archive",
+                "--run-store-root",
+                temp_dir,
+                "--json",
+            )
+
+        payload = json.loads(output)
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(payload["status"], "available")
+        self.assertEqual(payload["selected_run_id"], "run-deterministic-search-0001")
+        self.assertEqual(payload["runs"][0]["result_summary"]["result_count"], 4)
+
+
+if __name__ == "__main__":
+    unittest.main()
