@@ -23,6 +23,7 @@ from runtime.gateway.public_api import (
     build_demo_compatibility_public_api,
     build_demo_query_planner_public_api,
     build_demo_local_index_public_api,
+    build_demo_local_tasks_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -48,9 +49,13 @@ from runtime.gateway.public_api import (
     LocalIndexPublicApi,
     LocalIndexQueryRequest,
     LocalIndexStatusRequest,
+    LocalTaskReadRequest,
+    LocalTaskRunRequest,
+    LocalTasksPublicApi,
     MemberAccessPublicApi,
     MemberAccessReadRequest,
     local_index_envelope_to_view_model,
+    local_tasks_envelope_to_view_model,
     member_access_envelope_to_view_model,
     InspectResolutionBundleRequest,
     RepresentationSelectionEvaluationRequest,
@@ -104,6 +109,7 @@ from surfaces.native.cli.formatters import (
     format_decomposition,
     format_handoff,
     format_local_index,
+    format_local_tasks,
     format_member_access,
     format_manifest_export,
     format_query_plan,
@@ -142,6 +148,7 @@ class CliContext:
     representations_public_api: RepresentationsPublicApi
     query_planner_public_api: QueryPlannerPublicApi
     local_index_public_api: LocalIndexPublicApi
+    local_tasks_public_api: LocalTasksPublicApi | None = None
     resolution_runs_public_api: ResolutionRunsPublicApi | None = None
     stored_exports_public_api: StoredExportsPublicApi | None = None
     session_id: str = DEFAULT_SESSION_ID
@@ -159,6 +166,7 @@ def main(
     cli_context = context or build_cli_context(
         store_root=getattr(args, "store_root", None),
         run_store_root=getattr(args, "run_store_root", None),
+        task_store_root=getattr(args, "task_store_root", None),
     )
 
     try:
@@ -308,6 +316,48 @@ def main(
                 args.json,
                 local_index,
                 format_local_index(local_index),
+            )
+
+        if args.command == "task-run":
+            tasks_public_api = _require_tasks_public_api(cli_context)
+            requested_inputs: dict[str, Any] = {}
+            if args.index_path is not None:
+                requested_inputs["index_path"] = args.index_path
+            if args.query is not None:
+                requested_inputs["query"] = args.query
+            response = tasks_public_api.run_task(
+                LocalTaskRunRequest.from_parts(args.task_kind, requested_inputs),
+            )
+            local_tasks = local_tasks_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                local_tasks,
+                format_local_tasks(local_tasks),
+            )
+
+        if args.command == "task-status":
+            tasks_public_api = _require_tasks_public_api(cli_context)
+            response = tasks_public_api.get_task(
+                LocalTaskReadRequest.from_parts(args.task_id),
+            )
+            local_tasks = local_tasks_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                local_tasks,
+                format_local_tasks(local_tasks),
+            )
+
+        if args.command == "tasks":
+            tasks_public_api = _require_tasks_public_api(cli_context)
+            response = tasks_public_api.list_tasks()
+            local_tasks = local_tasks_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                local_tasks,
+                format_local_tasks(local_tasks),
             )
 
         if args.command == "run-resolve":
@@ -638,6 +688,52 @@ def build_parser() -> argparse.ArgumentParser:
         help="Bootstrap local SQLite index path.",
     )
 
+    task_run_parser = subparsers.add_parser(
+        "task-run",
+        parents=[json_parent],
+        help="Create, execute, and persist one synchronous bootstrap local task through the public boundary.",
+    )
+    task_run_parser.add_argument(
+        "task_kind",
+        help="Supported task kind, such as validate-source-registry, build-local-index, query-local-index, or validate-archive-resolution-evals.",
+    )
+    task_run_parser.add_argument(
+        "--task-store-root",
+        required=True,
+        help="Bootstrap local root for persisted local-task JSON records.",
+    )
+    task_run_parser.add_argument(
+        "--index-path",
+        help="Bootstrap local SQLite index path for build-local-index or query-local-index.",
+    )
+    task_run_parser.add_argument(
+        "--query",
+        help="Bounded text query for query-local-index.",
+    )
+
+    task_status_parser = subparsers.add_parser(
+        "task-status",
+        parents=[json_parent],
+        help="Read one persisted synchronous bootstrap local task by task_id through the public boundary.",
+    )
+    task_status_parser.add_argument("task_id")
+    task_status_parser.add_argument(
+        "--task-store-root",
+        required=True,
+        help="Bootstrap local root for persisted local-task JSON records.",
+    )
+
+    tasks_parser = subparsers.add_parser(
+        "tasks",
+        parents=[json_parent],
+        help="List persisted synchronous bootstrap local tasks through the public boundary.",
+    )
+    tasks_parser.add_argument(
+        "--task-store-root",
+        required=True,
+        help="Bootstrap local root for persisted local-task JSON records.",
+    )
+
     run_resolve_parser = subparsers.add_parser(
         "run-resolve",
         parents=[json_parent],
@@ -895,7 +991,12 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def build_cli_context(*, store_root: str | None, run_store_root: str | None) -> CliContext:
+def build_cli_context(
+    *,
+    store_root: str | None,
+    run_store_root: str | None,
+    task_store_root: str | None,
+) -> CliContext:
     return CliContext(
         acquisition_public_api=build_demo_acquisition_public_api(),
         action_plan_public_api=build_demo_action_plan_public_api(),
@@ -907,6 +1008,11 @@ def build_cli_context(*, store_root: str | None, run_store_root: str | None) -> 
         search_public_api=build_demo_search_public_api(),
         query_planner_public_api=build_demo_query_planner_public_api(),
         local_index_public_api=build_demo_local_index_public_api(),
+        local_tasks_public_api=(
+            build_demo_local_tasks_public_api(task_store_root)
+            if task_store_root is not None
+            else None
+        ),
         source_registry_public_api=build_demo_source_registry_public_api(),
         resolution_runs_public_api=(
             build_demo_resolution_runs_public_api(run_store_root)
@@ -1060,6 +1166,12 @@ def _require_runs_public_api(context: CliContext) -> ResolutionRunsPublicApi:
     if context.resolution_runs_public_api is None:
         raise ValueError("Provide --run-store-root to enable bootstrap resolution-run operations.")
     return context.resolution_runs_public_api
+
+
+def _require_tasks_public_api(context: CliContext) -> LocalTasksPublicApi:
+    if context.local_tasks_public_api is None:
+        raise ValueError("Provide --task-store-root to enable bootstrap local-task operations.")
+    return context.local_tasks_public_api
 
 
 def _write_output_payload(output_path: Path, payload: bytes) -> Path:

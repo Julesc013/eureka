@@ -22,6 +22,8 @@ from runtime.gateway.public_api import (
     LocalIndexPublicApi,
     LocalIndexQueryRequest,
     LocalIndexStatusRequest,
+    LocalTaskReadRequest,
+    LocalTaskRunRequest,
     PlannedSearchRunRequest,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
@@ -59,6 +61,7 @@ from runtime.gateway.public_api import (
     acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
     build_demo_local_index_public_api,
+    build_demo_local_tasks_public_api,
     build_demo_resolution_runs_public_api,
     build_resolution_workspace_view_models,
     absence_envelope_to_view_model,
@@ -66,6 +69,7 @@ from runtime.gateway.public_api import (
     comparison_envelope_to_view_model,
     compatibility_envelope_to_view_model,
     local_index_envelope_to_view_model,
+    local_tasks_envelope_to_view_model,
     representations_envelope_to_view_model,
     resolution_runs_envelope_to_view_model,
     query_plan_envelope_to_view_model,
@@ -85,6 +89,7 @@ from surfaces.web.workbench import (
     render_decomposition_html,
     render_handoff_html,
     render_local_index_html,
+    render_local_tasks_html,
     render_member_access_html,
     render_query_plan_html,
     render_representations_html,
@@ -628,6 +633,12 @@ class WorkbenchWsgiApp:
             "/index/search",
             "/index/status",
             "/representations",
+            "/task",
+            "/task/run/build-local-index",
+            "/task/run/query-local-index",
+            "/task/run/validate-archive-resolution-evals",
+            "/task/run/validate-source-registry",
+            "/tasks",
             "/run",
             "/run/resolve",
             "/run/search",
@@ -652,7 +663,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/index/build', '/index/status', '/index/search', '/representations', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/index/build', '/index/status', '/index/search', '/representations', '/tasks', '/task', '/task/run/validate-source-registry', '/task/run/build-local-index', '/task/run/query-local-index', '/task/run/validate-archive-resolution-evals', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -923,6 +934,42 @@ class WorkbenchWsgiApp:
                 self._local_index_public_api or build_demo_local_index_public_api(),
                 index_path=self._resolve_optional_query_value(query_string, "index_path") or "",
                 query=self._resolve_search_query(query_string),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/tasks":
+            page = render_local_tasks_page(
+                self._resolve_optional_query_value(query_string, "task_store_root"),
+                requested_index_path=self._resolve_optional_query_value(query_string, "index_path") or "",
+                requested_query=self._resolve_optional_query_value(query_string, "q") or "",
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/task":
+            page = render_local_tasks_page(
+                self._resolve_optional_query_value(query_string, "task_store_root"),
+                task_id=self._resolve_optional_query_value(query_string, "id"),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/task/run/validate-source-registry":
+            page = render_validate_source_registry_task_page(
+                self._resolve_optional_query_value(query_string, "task_store_root"),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/task/run/build-local-index":
+            page = render_build_local_index_task_page(
+                self._resolve_optional_query_value(query_string, "task_store_root"),
+                self._resolve_optional_query_value(query_string, "index_path") or "",
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/task/run/query-local-index":
+            page = render_query_local_index_task_page(
+                self._resolve_optional_query_value(query_string, "task_store_root"),
+                self._resolve_optional_query_value(query_string, "index_path") or "",
+                self._resolve_search_query(query_string),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/task/run/validate-archive-resolution-evals":
+            page = render_validate_archive_resolution_evals_task_page(
+                self._resolve_optional_query_value(query_string, "task_store_root"),
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/sources":
@@ -1425,6 +1472,151 @@ def render_source_registry_page(
         )
     )
     return render_source_registry_html(source_registry_envelope_to_view_model(response.body))
+
+
+def render_local_tasks_page(
+    task_store_root: str | None,
+    *,
+    task_id: str | None = None,
+    requested_index_path: str = "",
+    requested_query: str = "",
+    message: str | None = None,
+) -> str:
+    empty_view_model = {
+        "status": "listed",
+        "task_count": 0,
+        "tasks": [],
+    }
+    normalized_task_store_root = (task_store_root or "").strip() or None
+    if normalized_task_store_root is None:
+        return render_local_tasks_html(
+            empty_view_model,
+            requested_index_path=requested_index_path,
+            requested_query=requested_query,
+            message=message
+            or "Provide a bootstrap task_store_root to list or inspect persisted local tasks.",
+        )
+
+    public_api = build_demo_local_tasks_public_api(normalized_task_store_root)
+    if task_id is not None and task_id.strip():
+        try:
+            response = public_api.get_task(LocalTaskReadRequest.from_parts(task_id))
+        except ValueError as error:
+            return render_local_tasks_html(
+                {
+                    "status": "blocked",
+                    "task_count": 0,
+                    "selected_task_id": "",
+                    "tasks": [],
+                    "notices": [
+                        {
+                            "code": "invalid_task_request",
+                            "severity": "warning",
+                            "message": str(error),
+                        }
+                    ],
+                },
+                task_store_root=normalized_task_store_root,
+                requested_index_path=requested_index_path,
+                requested_query=requested_query,
+            )
+        return render_local_tasks_html(
+            local_tasks_envelope_to_view_model(response.body),
+            task_store_root=normalized_task_store_root,
+            requested_index_path=requested_index_path,
+            requested_query=requested_query,
+        )
+    response = public_api.list_tasks()
+    return render_local_tasks_html(
+        local_tasks_envelope_to_view_model(response.body),
+        task_store_root=normalized_task_store_root,
+        requested_index_path=requested_index_path,
+        requested_query=requested_query,
+        message=message,
+    )
+
+
+def render_validate_source_registry_task_page(task_store_root: str | None) -> str:
+    return _render_run_local_task_page(
+        task_store_root,
+        task_kind="validate-source-registry",
+        requested_inputs={},
+        message_when_missing_root=(
+            "Provide a bootstrap task_store_root to persist a source-registry validation task."
+        ),
+    )
+
+
+def render_build_local_index_task_page(task_store_root: str | None, index_path: str) -> str:
+    normalized_index_path = index_path.strip()
+    return _render_run_local_task_page(
+        task_store_root,
+        task_kind="build-local-index",
+        requested_inputs={"index_path": normalized_index_path},
+        requested_index_path=normalized_index_path,
+        message_when_missing_root=(
+            "Provide a bootstrap task_store_root to persist a local-index build task."
+        ),
+    )
+
+
+def render_query_local_index_task_page(
+    task_store_root: str | None,
+    index_path: str,
+    query: str,
+) -> str:
+    normalized_index_path = index_path.strip()
+    normalized_query = query.strip()
+    return _render_run_local_task_page(
+        task_store_root,
+        task_kind="query-local-index",
+        requested_inputs={"index_path": normalized_index_path, "query": normalized_query},
+        requested_index_path=normalized_index_path,
+        requested_query=normalized_query,
+        message_when_missing_root=(
+            "Provide a bootstrap task_store_root to persist a local-index query task."
+        ),
+    )
+
+
+def render_validate_archive_resolution_evals_task_page(task_store_root: str | None) -> str:
+    return _render_run_local_task_page(
+        task_store_root,
+        task_kind="validate-archive-resolution-evals",
+        requested_inputs={},
+        message_when_missing_root=(
+            "Provide a bootstrap task_store_root to persist an archive-resolution eval validation task."
+        ),
+    )
+
+
+def _render_run_local_task_page(
+    task_store_root: str | None,
+    *,
+    task_kind: str,
+    requested_inputs: dict[str, str],
+    requested_index_path: str = "",
+    requested_query: str = "",
+    message_when_missing_root: str,
+) -> str:
+    normalized_task_store_root = (task_store_root or "").strip() or None
+    if normalized_task_store_root is None:
+        return render_local_tasks_html(
+            {"status": "listed", "task_count": 0, "tasks": []},
+            requested_index_path=requested_index_path,
+            requested_query=requested_query,
+            message=message_when_missing_root,
+        )
+    public_api = build_demo_local_tasks_public_api(normalized_task_store_root)
+    response = public_api.run_task(
+        LocalTaskRunRequest.from_parts(task_kind, requested_inputs),
+    )
+    return render_local_tasks_html(
+        local_tasks_envelope_to_view_model(response.body),
+        task_store_root=normalized_task_store_root,
+        requested_index_path=requested_index_path,
+        requested_query=requested_query,
+    )
 
 
 def render_resolution_runs_page(

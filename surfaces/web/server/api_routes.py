@@ -51,6 +51,7 @@ from runtime.gateway.public_api import (
     StoredArtifactRequest,
     StoredExportsTargetRequest,
     build_demo_resolution_runs_public_api,
+    build_demo_local_tasks_public_api,
     build_demo_local_index_public_api,
     build_demo_stored_exports_public_api,
     acquisition_envelope_to_view_model,
@@ -64,6 +65,9 @@ from runtime.gateway.public_api import (
     resolution_runs_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     local_index_envelope_to_view_model,
+    LocalTaskReadRequest,
+    LocalTaskRunRequest,
+    local_tasks_envelope_to_view_model,
     SourceCatalogRequest,
     SourceReadRequest,
     SourceRegistryPublicApi,
@@ -86,6 +90,42 @@ def build_api_index_document() -> dict[str, Any]:
         "api_version": "0.1.0-draft",
         "status": "local_bootstrap",
         "endpoints": [
+            {
+                "path": "/api/tasks",
+                "method": "GET",
+                "query_parameters": ["task_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/task",
+                "method": "GET",
+                "query_parameters": ["id", "task_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/task/run/validate-source-registry",
+                "method": "GET",
+                "query_parameters": ["task_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/task/run/build-local-index",
+                "method": "GET",
+                "query_parameters": ["task_store_root", "index_path"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/task/run/query-local-index",
+                "method": "GET",
+                "query_parameters": ["task_store_root", "index_path", "q"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/task/run/validate-archive-resolution-evals",
+                "method": "GET",
+                "query_parameters": ["task_store_root"],
+                "response_content_types": ["application/json"],
+            },
             {
                 "path": "/api/index/build",
                 "method": "GET",
@@ -278,6 +318,7 @@ def build_api_index_document() -> dict[str, Any]:
             "Route names, auth, HTTPS/TLS, deployment, and multi-user semantics remain intentionally unresolved.",
             "store_root and bundle_path remain bootstrap local parameters for deterministic demo-scale flows.",
             "run_store_root remains a bootstrap/demo local parameter for synchronous persisted resolution runs only.",
+            "task_store_root remains a bootstrap/demo local parameter for synchronous persisted local tasks only.",
         ],
         "bootstrap_host_profile_presets": list(BOOTSTRAP_HOST_PROFILE_PRESETS),
         "bootstrap_strategy_profiles": list(BOOTSTRAP_STRATEGY_PROFILES),
@@ -346,6 +387,99 @@ def handle_api_request(
         return json_response(
             response.status_code,
             local_index_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/tasks":
+        tasks_public_api = _required_tasks_public_api(query)
+        if isinstance(tasks_public_api, SerializedHttpResponse):
+            return tasks_public_api
+        response = tasks_public_api.list_tasks()
+        return json_response(
+            response.status_code,
+            local_tasks_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/task":
+        task_id = _required_query_value(query, "id")
+        if task_id is None:
+            return _missing_query_value("id")
+        tasks_public_api = _required_tasks_public_api(query)
+        if isinstance(tasks_public_api, SerializedHttpResponse):
+            return tasks_public_api
+        try:
+            response = tasks_public_api.get_task(LocalTaskReadRequest.from_parts(task_id))
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_task_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            local_tasks_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/task/run/validate-source-registry":
+        tasks_public_api = _required_tasks_public_api(query)
+        if isinstance(tasks_public_api, SerializedHttpResponse):
+            return tasks_public_api
+        response = tasks_public_api.run_task(
+            LocalTaskRunRequest.from_parts("validate-source-registry"),
+        )
+        return json_response(
+            response.status_code,
+            local_tasks_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/task/run/build-local-index":
+        index_path = _required_query_value(query, "index_path")
+        if index_path is None:
+            return _missing_query_value("index_path")
+        tasks_public_api = _required_tasks_public_api(query)
+        if isinstance(tasks_public_api, SerializedHttpResponse):
+            return tasks_public_api
+        response = tasks_public_api.run_task(
+            LocalTaskRunRequest.from_parts(
+                "build-local-index",
+                {"index_path": index_path},
+            )
+        )
+        return json_response(
+            response.status_code,
+            local_tasks_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/task/run/query-local-index":
+        index_path = _required_query_value(query, "index_path")
+        if index_path is None:
+            return _missing_query_value("index_path")
+        query_text = _required_query_value(query, "q")
+        if query_text is None:
+            return _missing_query_value("q")
+        tasks_public_api = _required_tasks_public_api(query)
+        if isinstance(tasks_public_api, SerializedHttpResponse):
+            return tasks_public_api
+        response = tasks_public_api.run_task(
+            LocalTaskRunRequest.from_parts(
+                "query-local-index",
+                {"index_path": index_path, "query": query_text},
+            )
+        )
+        return json_response(
+            response.status_code,
+            local_tasks_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/task/run/validate-archive-resolution-evals":
+        tasks_public_api = _required_tasks_public_api(query)
+        if isinstance(tasks_public_api, SerializedHttpResponse):
+            return tasks_public_api
+        response = tasks_public_api.run_task(
+            LocalTaskRunRequest.from_parts("validate-archive-resolution-evals"),
+        )
+        return json_response(
+            response.status_code,
+            local_tasks_envelope_to_view_model(response.body),
         )
 
     if path == "/api/index/status":
@@ -1038,6 +1172,18 @@ def _required_runs_public_api(
             message="Provide a local run_store_root query parameter for this bootstrap resolution-run API route.",
         )
     return build_demo_resolution_runs_public_api(run_store_root)
+
+
+def _required_tasks_public_api(
+    query: Mapping[str, list[str]],
+):
+    task_store_root = _required_query_value(query, "task_store_root")
+    if task_store_root is None:
+        return _missing_query_value(
+            "task_store_root",
+            message="Provide a local task_store_root query parameter for this bootstrap local-task API route.",
+        )
+    return build_demo_local_tasks_public_api(task_store_root)
 
 
 def _missing_query_value(name: str, *, message: str | None = None) -> SerializedHttpResponse:

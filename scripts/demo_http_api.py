@@ -92,6 +92,46 @@ def main(argv: list[str] | None = None) -> int:
     index_query_parser.add_argument("query")
     index_query_parser.add_argument("--index-path", required=True)
 
+    tasks_parser = subparsers.add_parser(
+        "tasks",
+        help="Fetch machine-readable synchronous bootstrap local-task listings.",
+    )
+    tasks_parser.add_argument("--task-store-root", required=True)
+
+    task_parser = subparsers.add_parser(
+        "task",
+        help="Fetch one machine-readable synchronous bootstrap local task by id.",
+    )
+    task_parser.add_argument("task_id")
+    task_parser.add_argument("--task-store-root", required=True)
+
+    task_validate_sources_parser = subparsers.add_parser(
+        "task-run-validate-source-registry",
+        help="Run one machine-readable synchronous bootstrap source-registry validation task.",
+    )
+    task_validate_sources_parser.add_argument("--task-store-root", required=True)
+
+    task_build_index_parser = subparsers.add_parser(
+        "task-run-build-local-index",
+        help="Run one machine-readable synchronous bootstrap local-index build task.",
+    )
+    task_build_index_parser.add_argument("--task-store-root", required=True)
+    task_build_index_parser.add_argument("--index-path", required=True)
+
+    task_query_index_parser = subparsers.add_parser(
+        "task-run-query-local-index",
+        help="Run one machine-readable synchronous bootstrap local-index query task.",
+    )
+    task_query_index_parser.add_argument("--task-store-root", required=True)
+    task_query_index_parser.add_argument("--index-path", required=True)
+    task_query_index_parser.add_argument("--query", required=True)
+
+    task_validate_evals_parser = subparsers.add_parser(
+        "task-run-validate-archive-resolution-evals",
+        help="Run one machine-readable synchronous bootstrap archive-resolution eval validation task.",
+    )
+    task_validate_evals_parser.add_argument("--task-store-root", required=True)
+
     runs_parser = subparsers.add_parser(
         "runs",
         help="Fetch machine-readable synchronous bootstrap resolution-run listings.",
@@ -265,6 +305,33 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         path = _path("/api/index/status", index_path=args.index_path)
     elif args.command == "index-query":
         path = _path("/api/index/query", index_path=args.index_path, q=args.query)
+    elif args.command == "tasks":
+        path = _path("/api/tasks", task_store_root=args.task_store_root)
+    elif args.command == "task":
+        path = _path("/api/task", id=args.task_id, task_store_root=args.task_store_root)
+    elif args.command == "task-run-validate-source-registry":
+        path = _path(
+            "/api/task/run/validate-source-registry",
+            task_store_root=args.task_store_root,
+        )
+    elif args.command == "task-run-build-local-index":
+        path = _path(
+            "/api/task/run/build-local-index",
+            task_store_root=args.task_store_root,
+            index_path=args.index_path,
+        )
+    elif args.command == "task-run-query-local-index":
+        path = _path(
+            "/api/task/run/query-local-index",
+            task_store_root=args.task_store_root,
+            index_path=args.index_path,
+            q=args.query,
+        )
+    elif args.command == "task-run-validate-archive-resolution-evals":
+        path = _path(
+            "/api/task/run/validate-archive-resolution-evals",
+            task_store_root=args.task_store_root,
+        )
     elif args.command == "runs":
         path = _path("/api/runs", run_store_root=args.run_store_root)
     elif args.command == "run":

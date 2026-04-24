@@ -122,6 +122,11 @@ def main() -> int:
         help="Local bootstrap run-store root used for synchronous persisted resolution-run pages and API routes.",
     )
     parser.add_argument(
+        "--task-store-root",
+        metavar="PATH",
+        help="Local bootstrap task-store root used for synchronous persisted local-task pages and API routes.",
+    )
+    parser.add_argument(
         "--store-manifest",
         action="store_true",
         help="Store the bounded resolution manifest for the selected target in the local export store.",
@@ -454,6 +459,21 @@ def main() -> int:
                     f"http://{args.host}:{args.port}/api/run/resolve?target_ref={quote(target_ref, safe='')}&run_store_root={quote(args.run_store_root, safe='')}",
                     "Serving Eureka bootstrap HTTP API deterministic-search run route at "
                     f"http://{args.host}:{args.port}/api/run/search?q={quote('archive', safe='')}&run_store_root={quote(args.run_store_root, safe='')}",
+                ]
+            )
+        if args.task_store_root is not None:
+            lines.extend(
+                [
+                    "Serving Eureka local tasks page at "
+                    f"http://{args.host}:{args.port}/tasks?task_store_root={quote(args.task_store_root, safe='')}",
+                    "Serving Eureka source-registry validation task page at "
+                    f"http://{args.host}:{args.port}/task/run/validate-source-registry?task_store_root={quote(args.task_store_root, safe='')}",
+                    "Serving Eureka local-index build task page at "
+                    f"http://{args.host}:{args.port}/task/run/build-local-index?task_store_root={quote(args.task_store_root, safe='')}&index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}",
+                    "Serving Eureka bootstrap HTTP API local tasks route at "
+                    f"http://{args.host}:{args.port}/api/tasks?task_store_root={quote(args.task_store_root, safe='')}",
+                    "Serving Eureka bootstrap HTTP API local-index query task route at "
+                    f"http://{args.host}:{args.port}/api/task/run/query-local-index?task_store_root={quote(args.task_store_root, safe='')}&index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}&q={quote('archive', safe='')}",
                 ]
             )
         sys.stdout.write("\n".join(lines) + "\n")

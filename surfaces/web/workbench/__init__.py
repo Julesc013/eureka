@@ -8,6 +8,7 @@ from surfaces.web.workbench.render_compatibility import render_compatibility_htm
 from surfaces.web.workbench.render_comparison import render_comparison_html
 from surfaces.web.workbench.render_handoff import render_handoff_html
 from surfaces.web.workbench.render_local_index import render_local_index_html
+from surfaces.web.workbench.render_local_tasks import render_local_tasks_html
 from surfaces.web.workbench.render_decomposition import render_decomposition_html
 from surfaces.web.workbench.render_member_access import render_member_access_html
 from surfaces.web.workbench.render_query_plan import render_query_plan_html
@@ -28,6 +29,7 @@ __all__ = [
     "render_decomposition_html",
     "render_handoff_html",
     "render_local_index_html",
+    "render_local_tasks_html",
     "render_member_access_html",
     "render_query_plan_html",
     "render_representations_html",
