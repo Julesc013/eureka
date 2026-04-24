@@ -1,0 +1,103 @@
+# Physical Subsystems
+
+The long-term backend should be described through five physical subsystems.
+They should be implemented in stages rather than built all at once.
+
+## 1. Blob and CAS Store
+
+Purpose:
+
+- store raw and derived bytes
+- support content-addressed identity
+- preserve downloads, captures, extracted members, manifests, and later OCR or
+  replay artifacts
+
+Typical contents:
+
+- downloads
+- source captures
+- extracted members
+- package payloads
+- metadata snapshots
+- later OCR outputs
+- later WARC or WACZ captures
+
+## 2. Relational Canonical Core
+
+Purpose:
+
+- hold authoritative typed records for normalized objects, states,
+  representations, evidence, access paths, runs, memory, and dependencies
+
+Likely record families:
+
+- sources
+- source records
+- objects
+- representations
+- states
+- agents
+- claims
+- evidence
+- identifiers
+- access paths
+- edges
+- resolution runs
+- resolution memories
+- invalidation dependencies
+
+## 3. Lexical and Search Index
+
+Purpose:
+
+- support title, filename, member-path, full-text, and fielded search
+- support filters and constrained queries over source, time, platform, and
+  actionability
+
+Typical indexed material:
+
+- title text
+- filename text
+- member paths
+- snippets
+- facets
+- constrained fields such as platform, source family, and dates
+
+## 4. Vector and Semantic Recall Index
+
+Purpose:
+
+- optional later support for semantic recall, vague title matching,
+  similar-query memory, alias discovery, and reranking support
+
+This subsystem is explicitly optional later. It is not the source of truth.
+
+## 5. Queue and Worker Plane
+
+Purpose:
+
+- run source sync, extraction, package parsing, index updates, identity
+  clustering, and later deeper work such as OCR or replay processing
+
+Required qualities:
+
+- idempotent
+- checkpointed
+- cancelable
+- resumable
+- priority-aware
+- dependency-tracked
+
+## Staged Implementation Direction
+
+The next backend phase should not attempt all five subsystems at production
+scale immediately.
+
+Near-term staging should look more like:
+
+1. local filesystem CAS and bounded local store behavior
+2. local relational and lexical index, likely SQLite plus FTS first
+3. local worker and task model
+4. durable run and memory models
+5. only later optional vector recall, broader worker orchestration, and shared
+   evidence services

@@ -1,6 +1,7 @@
 # Architecture
 
-Eureka is organized as one product monorepo with four primary product-facing partitions:
+Eureka is organized as one product monorepo with four primary product-facing
+partitions:
 
 - `control/`: repo governance, inventories, matrices, research, and packaging planning
 - `contracts/`: governed schemas, protocols, public APIs, and shared UI contracts
@@ -46,6 +47,33 @@ Forbidden:
 - `runtime/connectors/**` owns trust semantics
 - `.aide/` defines product semantics or runtime behavior
 
+## Accepted Architecture Docs
+
+Detailed product-architecture direction now lives under `docs/architecture/`:
+
+- [Temporal Object Resolver](architecture/TEMPORAL_OBJECT_RESOLVER.md)
+- [Logical Graphs](architecture/LOGICAL_GRAPHS.md)
+- [Physical Subsystems](architecture/PHYSICAL_SUBSYSTEMS.md)
+- [Data Model](architecture/DATA_MODEL.md)
+- [Source Strategy](architecture/SOURCE_STRATEGY.md)
+- [Query Planner](architecture/QUERY_PLANNER.md)
+- [Resolution Memory](architecture/RESOLUTION_MEMORY.md)
+- [Streaming Runs](architecture/STREAMING_RUNS.md)
+- [Action Router](architecture/ACTION_ROUTER.md)
+- [AI Policy](architecture/AI_POLICY.md)
+
+These documents describe accepted architecture direction and staging. They do
+not imply that every subsystem is already implemented in the current repo.
+
+## Related Standards
+
+The supporting standards and policy guidance for the architecture live under
+`docs/standards/`:
+
+- [Source Registry Schema](standards/SOURCE_REGISTRY_SCHEMA.md)
+- [Identifier Policy](standards/IDENTIFIER_POLICY.md)
+- [Privacy And Shared Evidence](standards/PRIVACY_AND_SHARED_EVIDENCE.md)
+
 ## Current Unresolved Questions
 
 - What becomes the minimum normative object identity boundary for bundled or multi-file software artifacts?
@@ -56,4 +84,4 @@ Forbidden:
 
 ## Related Research
 
-- See [control/research/temporal-object-resolution-engine.md](../control/research/temporal-object-resolution-engine.md) for a research-only candidate next operating layer that reframes future search work as resumable investigation plus reusable evidence and resolution memory. This note does not change accepted ADRs or current runtime claims.
+- See [control/research/temporal-object-resolution-engine.md](../control/research/temporal-object-resolution-engine.md) for a research-only candidate next operating layer that informed the accepted doctrine and architecture docs without being silently promoted wholesale into runtime claims.

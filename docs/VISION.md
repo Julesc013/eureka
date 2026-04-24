@@ -1,15 +1,34 @@
 # Vision
 
-Eureka exists to make software artifacts legible, preservable, and reconstructable even when the original distribution context is incomplete. The product thesis is that compatibility work, preservation work, and reconstruction work should be treated as one governed system rather than as disconnected utilities.
+Eureka exists to make software artifacts and related digital objects legible,
+preservable, and actionable even when the original distribution context is
+incomplete.
 
-Version 1 is software-first. The first product horizon focuses on software packages, software-derived metadata, executable compatibility evidence, and machine reconstruction paths that can be expressed with governed contracts.
+The accepted product direction is no longer "archive search" in the flat sense.
+Eureka is a temporal object resolver that should help users find, verify,
+compare, explain, and act on current and archived digital objects with minimal
+detective work.
 
-Within that thesis:
+## Accepted Vision Docs
 
-- resolution identifies what an artifact is, what it relates to, and what evidence supports those claims
-- preservation keeps the artifact record, evidence, provenance, and snapshots durable over time
-- compatibility describes what can still run, be interpreted, or be reconstructed under stated conditions
-- reconstruction turns preserved evidence back into machine-usable outputs without pretending certainty where the evidence is incomplete
+- [Eureka Thesis](vision/EUREKA_THESIS.md)
+- [Product Promise](vision/PRODUCT_PROMISE.md)
+- [Doctrine](vision/DOCTRINE.md)
 
-Eureka should eventually help operators move from “we found something” to “we can explain it, preserve it, and reconstruct a usable form of it” with contracts and policies that remain inspectable.
+## Scope Honesty
 
+These documents record accepted direction and doctrine. They do not claim that
+the current bootstrap repo already implements the full resolver.
+
+The current repo remains:
+
+- bootstrap and pre-product
+- Python stdlib in the executable lane
+- bounded and deterministic
+- explicit about deferred semantics
+
+## Research Kept Separate
+
+Speculative or not-yet-accepted direction remains under
+[control/research/](../control/research/README.md), especially the
+[Temporal Object Resolution Engine research note](../control/research/temporal-object-resolution-engine.md).
