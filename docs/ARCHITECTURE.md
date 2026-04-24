@@ -53,3 +53,7 @@ Forbidden:
 - How narrow should the future offline native path be before `runtime/engine/sdk` is exposed?
 - Which gateway operations should be public product contracts versus internal broker or worker protocols?
 - What packaging forms matter in v1 beyond software archives and repositories?
+
+## Related Research
+
+- See [control/research/temporal-object-resolution-engine.md](../control/research/temporal-object-resolution-engine.md) for a research-only candidate next operating layer that reframes future search work as resumable investigation plus reusable evidence and resolution memory. This note does not change accepted ADRs or current runtime claims.
