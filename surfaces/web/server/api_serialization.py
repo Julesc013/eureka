@@ -9,6 +9,7 @@ _STATUS_LINES = {
     200: "200 OK",
     202: "202 Accepted",
     400: "400 Bad Request",
+    403: "403 Forbidden",
     404: "404 Not Found",
     405: "405 Method Not Allowed",
     422: "422 Unprocessable Entity",
