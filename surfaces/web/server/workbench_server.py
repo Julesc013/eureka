@@ -18,6 +18,10 @@ from runtime.gateway.public_api import (
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
     DeterministicSearchRunRequest,
+    LocalIndexBuildRequest,
+    LocalIndexPublicApi,
+    LocalIndexQueryRequest,
+    LocalIndexStatusRequest,
     PlannedSearchRunRequest,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
@@ -54,12 +58,14 @@ from runtime.gateway.public_api import (
     StoredExportsTargetRequest,
     acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
+    build_demo_local_index_public_api,
     build_demo_resolution_runs_public_api,
     build_resolution_workspace_view_models,
     absence_envelope_to_view_model,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
     compatibility_envelope_to_view_model,
+    local_index_envelope_to_view_model,
     representations_envelope_to_view_model,
     resolution_runs_envelope_to_view_model,
     query_plan_envelope_to_view_model,
@@ -78,6 +84,7 @@ from surfaces.web.workbench import (
     render_comparison_html,
     render_decomposition_html,
     render_handoff_html,
+    render_local_index_html,
     render_member_access_html,
     render_query_plan_html,
     render_representations_html,
@@ -531,6 +538,7 @@ class WorkbenchWsgiApp:
         representations_public_api: RepresentationsPublicApi | None = None,
         actions_public_api: ResolutionActionsPublicApi | None = None,
         bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None = None,
+        local_index_public_api: LocalIndexPublicApi | None = None,
         stored_exports_public_api: StoredExportsPublicApi | None = None,
         search_public_api: SearchPublicApi,
         source_registry_public_api: SourceRegistryPublicApi | None = None,
@@ -551,6 +559,7 @@ class WorkbenchWsgiApp:
         self._representations_public_api = representations_public_api
         self._actions_public_api = actions_public_api
         self._bundle_inspection_public_api = bundle_inspection_public_api
+        self._local_index_public_api = local_index_public_api
         self._stored_exports_public_api = stored_exports_public_api
         self._search_public_api = search_public_api
         self._source_registry_public_api = source_registry_public_api
@@ -583,6 +592,7 @@ class WorkbenchWsgiApp:
             representations_public_api=self._representations_public_api,
             actions_public_api=self._actions_public_api,
             bundle_inspection_public_api=self._bundle_inspection_public_api,
+            local_index_public_api=self._local_index_public_api,
             search_public_api=self._search_public_api,
             source_registry_public_api=self._source_registry_public_api,
             session_id=self._session_id,
@@ -614,6 +624,9 @@ class WorkbenchWsgiApp:
             "/query-plan",
             "/action-plan",
             "/handoff",
+            "/index/build",
+            "/index/search",
+            "/index/status",
             "/representations",
             "/run",
             "/run/resolve",
@@ -639,7 +652,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/representations', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/index/build', '/index/status', '/index/search', '/representations', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -889,6 +902,27 @@ class WorkbenchWsgiApp:
             page = render_search_results_page(
                 self._search_public_api,
                 query,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/index/build":
+            page = render_local_index_page(
+                self._local_index_public_api or build_demo_local_index_public_api(),
+                index_path=self._resolve_optional_query_value(query_string, "index_path") or "",
+                build=True,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/index/status":
+            page = render_local_index_page(
+                self._local_index_public_api or build_demo_local_index_public_api(),
+                index_path=self._resolve_optional_query_value(query_string, "index_path") or "",
+                status_only=True,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/index/search":
+            page = render_local_index_page(
+                self._local_index_public_api or build_demo_local_index_public_api(),
+                index_path=self._resolve_optional_query_value(query_string, "index_path") or "",
+                query=self._resolve_search_query(query_string),
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/sources":
@@ -1230,6 +1264,110 @@ def render_query_plan_page(
         )
     response = public_api.plan_query_text(normalized_query)
     return render_query_plan_html(query_plan_envelope_to_view_model(response.body))
+
+
+def render_local_index_page(
+    public_api: LocalIndexPublicApi | None,
+    *,
+    index_path: str,
+    query: str = "",
+    build: bool = False,
+    status_only: bool = False,
+) -> str:
+    normalized_index_path = index_path.strip()
+    normalized_query = query.strip()
+    if public_api is None:
+        return render_local_index_html(
+            {
+                "status": "blocked",
+                "index": {
+                    "index_path_kind": "bootstrap_local_path",
+                    "index_path": normalized_index_path or None,
+                    "fts_mode": "fallback_like",
+                    "record_count": 0,
+                    "record_kind_counts": {},
+                },
+                "results": [],
+                "notices": [
+                    {
+                        "code": "local_index_unavailable",
+                        "severity": "warning",
+                        "message": "This bootstrap workbench was not configured with a public local-index boundary.",
+                    }
+                ],
+            },
+            requested_index_path=normalized_index_path,
+            requested_query=normalized_query,
+        )
+    if not normalized_index_path:
+        return render_local_index_html(
+            {
+                "status": "blocked",
+                "index": {
+                    "index_path_kind": "bootstrap_local_path",
+                    "index_path": None,
+                    "fts_mode": "fallback_like",
+                    "record_count": 0,
+                    "record_kind_counts": {},
+                },
+                "results": [],
+                "notices": [
+                    {
+                        "code": "index_path_required",
+                        "severity": "warning",
+                        "message": "Provide a bootstrap local index_path to build, inspect, or search the Local Index v0 database.",
+                    }
+                ],
+            },
+            requested_query=normalized_query,
+        )
+    if build:
+        response = public_api.build_index(LocalIndexBuildRequest.from_parts(normalized_index_path))
+        return render_local_index_html(
+            local_index_envelope_to_view_model(response.body),
+            requested_index_path=normalized_index_path,
+            requested_query=normalized_query,
+        )
+    if status_only:
+        response = public_api.get_index_status(LocalIndexStatusRequest.from_parts(normalized_index_path))
+        return render_local_index_html(
+            local_index_envelope_to_view_model(response.body),
+            requested_index_path=normalized_index_path,
+            requested_query=normalized_query,
+        )
+    if not normalized_query:
+        return render_local_index_html(
+            {
+                "status": "available",
+                "index": {
+                    "index_path_kind": "bootstrap_local_path",
+                    "index_path": normalized_index_path,
+                    "fts_mode": "fallback_like",
+                    "record_count": 0,
+                    "record_kind_counts": {},
+                },
+                "results": [],
+                "query": "",
+                "result_count": 0,
+                "notices": [
+                    {
+                        "code": "query_required",
+                        "severity": "warning",
+                        "message": "Provide a bounded text query to search the Local Index v0 database.",
+                    }
+                ],
+            },
+            requested_index_path=normalized_index_path,
+            requested_query=normalized_query,
+        )
+    response = public_api.query_index(
+        LocalIndexQueryRequest.from_parts(normalized_index_path, normalized_query),
+    )
+    return render_local_index_html(
+        local_index_envelope_to_view_model(response.body),
+        requested_index_path=normalized_index_path,
+        requested_query=normalized_query,
+    )
 
 
 def render_source_registry_page(

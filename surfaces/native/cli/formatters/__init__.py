@@ -12,6 +12,7 @@ from surfaces.native.cli.formatters.compatibility import format_compatibility
 from surfaces.native.cli.formatters.decomposition import format_decomposition
 from surfaces.native.cli.formatters.handoff import format_handoff
 from surfaces.native.cli.formatters.inspection import format_bundle_inspection
+from surfaces.native.cli.formatters.local_index import format_local_index
 from surfaces.native.cli.formatters.member_access import format_member_access
 from surfaces.native.cli.formatters.query_plan import format_query_plan
 from surfaces.native.cli.formatters.representations import format_representations
@@ -38,6 +39,7 @@ __all__ = [
     "format_decomposition",
     "format_handoff",
     "format_manifest_export",
+    "format_local_index",
     "format_member_access",
     "format_query_plan",
     "format_representations",

@@ -16,6 +16,10 @@ from runtime.gateway.public_api import (
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
     DeterministicSearchRunRequest,
+    LocalIndexBuildRequest,
+    LocalIndexPublicApi,
+    LocalIndexQueryRequest,
+    LocalIndexStatusRequest,
     PlannedSearchRunRequest,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
@@ -47,6 +51,7 @@ from runtime.gateway.public_api import (
     StoredArtifactRequest,
     StoredExportsTargetRequest,
     build_demo_resolution_runs_public_api,
+    build_demo_local_index_public_api,
     build_demo_stored_exports_public_api,
     acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
@@ -58,6 +63,7 @@ from runtime.gateway.public_api import (
     representations_envelope_to_view_model,
     resolution_runs_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
+    local_index_envelope_to_view_model,
     SourceCatalogRequest,
     SourceReadRequest,
     SourceRegistryPublicApi,
@@ -80,6 +86,24 @@ def build_api_index_document() -> dict[str, Any]:
         "api_version": "0.1.0-draft",
         "status": "local_bootstrap",
         "endpoints": [
+            {
+                "path": "/api/index/build",
+                "method": "GET",
+                "query_parameters": ["index_path"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/index/status",
+                "method": "GET",
+                "query_parameters": ["index_path"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/index/query",
+                "method": "GET",
+                "query_parameters": ["index_path", "q"],
+                "response_content_types": ["application/json"],
+            },
             {
                 "path": "/api/runs",
                 "method": "GET",
@@ -279,6 +303,7 @@ def handle_api_request(
     representations_public_api: RepresentationsPublicApi | None,
     actions_public_api: ResolutionActionsPublicApi | None,
     bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None,
+    local_index_public_api: LocalIndexPublicApi | None,
     search_public_api: SearchPublicApi,
     source_registry_public_api: SourceRegistryPublicApi | None,
     session_id: str,
@@ -296,8 +321,83 @@ def handle_api_request(
         )
 
     query = parse_qs(query_string, keep_blank_values=False)
-    if path in {"/api", "/api/", "/api/index"}:
+    if path in {"/api", "/api/"}:
         return json_response(200, build_api_index_document())
+
+    if path == "/api/index/build":
+        if local_index_public_api is None:
+            return _service_unavailable(
+                "local_index_unavailable",
+                "This bootstrap HTTP API was not configured with a public local-index boundary.",
+            )
+        index_path = _required_query_value(query, "index_path")
+        if index_path is None:
+            return _missing_query_value("index_path")
+        try:
+            response = local_index_public_api.build_index(
+                LocalIndexBuildRequest.from_parts(index_path),
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_local_index_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            local_index_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/index/status":
+        if local_index_public_api is None:
+            return _service_unavailable(
+                "local_index_unavailable",
+                "This bootstrap HTTP API was not configured with a public local-index boundary.",
+            )
+        index_path = _required_query_value(query, "index_path")
+        if index_path is None:
+            return _missing_query_value("index_path")
+        try:
+            response = local_index_public_api.get_index_status(
+                LocalIndexStatusRequest.from_parts(index_path),
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_local_index_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            local_index_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/index/query":
+        if local_index_public_api is None:
+            return _service_unavailable(
+                "local_index_unavailable",
+                "This bootstrap HTTP API was not configured with a public local-index boundary.",
+            )
+        index_path = _required_query_value(query, "index_path")
+        if index_path is None:
+            return _missing_query_value("index_path")
+        query_text = _required_query_value(query, "q")
+        if query_text is None:
+            return _missing_query_value("q")
+        try:
+            response = local_index_public_api.query_index(
+                LocalIndexQueryRequest.from_parts(index_path, query_text),
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_local_index_query",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            local_index_envelope_to_view_model(response.body),
+        )
 
     if path == "/api/resolve":
         target_ref = _required_query_value(query, "target_ref")

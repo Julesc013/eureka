@@ -22,6 +22,7 @@ from runtime.gateway.public_api import (
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
     build_demo_query_planner_public_api,
+    build_demo_local_index_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -43,8 +44,13 @@ from runtime.gateway.public_api import (
     DecompositionInspectionRequest,
     DecompositionPublicApi,
     ExactResolutionRunRequest,
+    LocalIndexBuildRequest,
+    LocalIndexPublicApi,
+    LocalIndexQueryRequest,
+    LocalIndexStatusRequest,
     MemberAccessPublicApi,
     MemberAccessReadRequest,
+    local_index_envelope_to_view_model,
     member_access_envelope_to_view_model,
     InspectResolutionBundleRequest,
     RepresentationSelectionEvaluationRequest,
@@ -97,6 +103,7 @@ from surfaces.native.cli.formatters import (
     format_comparison,
     format_decomposition,
     format_handoff,
+    format_local_index,
     format_member_access,
     format_manifest_export,
     format_query_plan,
@@ -134,6 +141,7 @@ class CliContext:
     subject_states_public_api: SubjectStatesPublicApi
     representations_public_api: RepresentationsPublicApi
     query_planner_public_api: QueryPlannerPublicApi
+    local_index_public_api: LocalIndexPublicApi
     resolution_runs_public_api: ResolutionRunsPublicApi | None = None
     stored_exports_public_api: StoredExportsPublicApi | None = None
     session_id: str = DEFAULT_SESSION_ID
@@ -264,6 +272,42 @@ def main(
                 args.json,
                 query_plan,
                 format_query_plan(query_plan),
+            )
+
+        if args.command == "index-build":
+            response = cli_context.local_index_public_api.build_index(
+                LocalIndexBuildRequest.from_parts(args.index_path),
+            )
+            local_index = local_index_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                local_index,
+                format_local_index(local_index),
+            )
+
+        if args.command == "index-status":
+            response = cli_context.local_index_public_api.get_index_status(
+                LocalIndexStatusRequest.from_parts(args.index_path),
+            )
+            local_index = local_index_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                local_index,
+                format_local_index(local_index),
+            )
+
+        if args.command == "index-query":
+            response = cli_context.local_index_public_api.query_index(
+                LocalIndexQueryRequest.from_parts(args.index_path, args.query),
+            )
+            local_index = local_index_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                local_index,
+                format_local_index(local_index),
             )
 
         if args.command == "run-resolve":
@@ -560,6 +604,40 @@ def build_parser() -> argparse.ArgumentParser:
     )
     query_plan_parser.add_argument("query")
 
+    index_build_parser = subparsers.add_parser(
+        "index-build",
+        parents=[json_parent],
+        help="Build or replace the bootstrap local SQLite index through the public boundary.",
+    )
+    index_build_parser.add_argument(
+        "--index-path",
+        required=True,
+        help="Bootstrap local SQLite index path.",
+    )
+
+    index_status_parser = subparsers.add_parser(
+        "index-status",
+        parents=[json_parent],
+        help="Read bootstrap local index metadata through the public boundary.",
+    )
+    index_status_parser.add_argument(
+        "--index-path",
+        required=True,
+        help="Bootstrap local SQLite index path.",
+    )
+
+    index_query_parser = subparsers.add_parser(
+        "index-query",
+        parents=[json_parent],
+        help="Run one bounded text query against the bootstrap local SQLite index through the public boundary.",
+    )
+    index_query_parser.add_argument("query")
+    index_query_parser.add_argument(
+        "--index-path",
+        required=True,
+        help="Bootstrap local SQLite index path.",
+    )
+
     run_resolve_parser = subparsers.add_parser(
         "run-resolve",
         parents=[json_parent],
@@ -828,6 +906,7 @@ def build_cli_context(*, store_root: str | None, run_store_root: str | None) -> 
         inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
         search_public_api=build_demo_search_public_api(),
         query_planner_public_api=build_demo_query_planner_public_api(),
+        local_index_public_api=build_demo_local_index_public_api(),
         source_registry_public_api=build_demo_source_registry_public_api(),
         resolution_runs_public_api=(
             build_demo_resolution_runs_public_api(run_store_root)

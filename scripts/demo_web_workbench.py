@@ -18,6 +18,7 @@ from runtime.gateway.public_api import (
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
     build_demo_decomposition_public_api,
+    build_demo_local_index_public_api,
     build_demo_member_access_public_api,
     build_demo_query_planner_public_api,
     build_demo_representation_selection_public_api,
@@ -341,6 +342,7 @@ def main() -> int:
         stored_exports_public_api=stored_exports_public_api,
         search_public_api=search_public_api,
         source_registry_public_api=build_demo_source_registry_public_api(),
+        local_index_public_api=build_demo_local_index_public_api(),
         default_target_ref=target_ref,
     )
     with make_server(args.host, args.port, app) as httpd:
@@ -393,6 +395,14 @@ def main() -> int:
             f"http://{args.host}:{args.port}/api/states?subject={quote('archivebox', safe='')}",
             "Serving Eureka bootstrap HTTP API search route at "
             f"http://{args.host}:{args.port}/api/search?q={quote('synthetic', safe='')}",
+            "Serving Eureka local index status page at "
+            f"http://{args.host}:{args.port}/index/status?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}",
+            "Serving Eureka local index search page at "
+            f"http://{args.host}:{args.port}/index/search?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}&q={quote('archive', safe='')}",
+            "Serving Eureka bootstrap HTTP API local index build route at "
+            f"http://{args.host}:{args.port}/api/index/build?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}",
+            "Serving Eureka bootstrap HTTP API local index search route at "
+            f"http://{args.host}:{args.port}/api/index/query?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}&q={quote('archive', safe='')}",
             "Serving Eureka source registry page at "
             f"http://{args.host}:{args.port}/sources",
             "Serving Eureka bootstrap HTTP API source registry route at "

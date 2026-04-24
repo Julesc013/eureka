@@ -22,6 +22,7 @@ from runtime.gateway.public_api import (
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
     build_demo_decomposition_public_api,
+    build_demo_local_index_public_api,
     build_demo_member_access_public_api,
     build_demo_query_planner_public_api,
     build_demo_representation_selection_public_api,
@@ -71,6 +72,25 @@ def main(argv: list[str] | None = None) -> int:
         help="Fetch a machine-readable deterministic query plan.",
     )
     query_plan_parser.add_argument("query")
+
+    index_build_parser = subparsers.add_parser(
+        "index-build",
+        help="Build or replace the bootstrap local SQLite index and return machine-readable status.",
+    )
+    index_build_parser.add_argument("--index-path", required=True)
+
+    index_status_parser = subparsers.add_parser(
+        "index-status",
+        help="Fetch machine-readable bootstrap local index metadata.",
+    )
+    index_status_parser.add_argument("--index-path", required=True)
+
+    index_query_parser = subparsers.add_parser(
+        "index-query",
+        help="Query the bootstrap local SQLite index and return machine-readable results.",
+    )
+    index_query_parser.add_argument("query")
+    index_query_parser.add_argument("--index-path", required=True)
 
     runs_parser = subparsers.add_parser(
         "runs",
@@ -239,6 +259,12 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         path = _path("/api/search", q=args.query)
     elif args.command == "query-plan":
         path = _path("/api/query-plan", q=args.query)
+    elif args.command == "index-build":
+        path = _path("/api/index/build", index_path=args.index_path)
+    elif args.command == "index-status":
+        path = _path("/api/index/status", index_path=args.index_path)
+    elif args.command == "index-query":
+        path = _path("/api/index/query", index_path=args.index_path, q=args.query)
     elif args.command == "runs":
         path = _path("/api/runs", run_store_root=args.run_store_root)
     elif args.command == "run":
@@ -383,6 +409,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
         representations_public_api=build_demo_representations_public_api(),
         actions_public_api=build_demo_resolution_actions_public_api(),
         bundle_inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
+        local_index_public_api=build_demo_local_index_public_api(),
         search_public_api=build_demo_search_public_api(),
         source_registry_public_api=build_demo_source_registry_public_api(),
         default_target_ref=DEFAULT_TARGET_REF,
