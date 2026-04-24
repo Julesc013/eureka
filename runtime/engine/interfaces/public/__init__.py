@@ -32,10 +32,15 @@ from runtime.engine.interfaces.public.resolution import (
     ResolutionResult,
     SourceSummary,
 )
+from runtime.engine.interfaces.public.query_plan import (
+    QueryPlanRequest,
+    ResolutionTask,
+)
 from runtime.engine.interfaces.public.resolution_run import (
     CheckedSourceSummary,
     DeterministicSearchRunRequest,
     ExactResolutionRunRequest,
+    PlannedSearchRunRequest,
     ResolutionRunRecord,
     ResolutionRunResultItem,
     ResolutionRunResultSummary,
@@ -76,6 +81,8 @@ __all__ = [
     "CompatibilityResult",
     "Notice",
     "ObjectSummary",
+    "QueryPlanRequest",
+    "ResolutionTask",
     "ResolutionRequest",
     "ResolutionResult",
     "SourceSummary",
@@ -86,6 +93,7 @@ __all__ = [
     "CheckedSourceSummary",
     "DeterministicSearchRunRequest",
     "ExactResolutionRunRequest",
+    "PlannedSearchRunRequest",
     "ResolutionRunRecord",
     "ResolutionRunResultItem",
     "ResolutionRunResultSummary",

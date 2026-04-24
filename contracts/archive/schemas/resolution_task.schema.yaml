@@ -1,0 +1,74 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/archive/resolution_task.schema.yaml
+$comment: Provisional draft skeleton only. This is not yet a stable compatibility promise.
+title: ResolutionTask
+description: >
+  Draft structured resolution-task contract for deterministic Query Planner v0.
+  This schema models bounded planner output only and does not imply full
+  investigation planning, streaming phases, or worker orchestration.
+type: object
+additionalProperties: false
+properties:
+  raw_query:
+    type: string
+    minLength: 1
+  task_kind:
+    type: string
+    enum:
+      - browse_software
+      - find_software_release
+      - find_driver
+      - find_document_article
+      - find_documentation
+      - generic_search
+      - unknown
+  object_type:
+    type: string
+    enum:
+      - software
+      - software_release
+      - driver
+      - document_article
+      - documentation
+      - unknown
+  constraints:
+    type: object
+    additionalProperties: true
+  prefer:
+    type: array
+    items:
+      type: string
+  exclude:
+    type: array
+    items:
+      type: string
+  action_hints:
+    type: array
+    items:
+      type: string
+  source_hints:
+    type: array
+    items:
+      type: string
+  planner_confidence:
+    type: string
+    enum:
+      - high
+      - medium
+      - low
+  planner_notes:
+    type: array
+    items:
+      type: string
+required:
+  - raw_query
+  - task_kind
+  - object_type
+  - constraints
+  - prefer
+  - exclude
+  - action_hints
+  - source_hints
+  - planner_confidence
+  - planner_notes
+x-eureka-status: draft
