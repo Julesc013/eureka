@@ -1,0 +1,55 @@
+{
+  "source_id": "internet-archive-placeholder",
+  "name": "Internet Archive",
+  "source_family": "internet_archive",
+  "status": "placeholder",
+  "roles": [
+    "preservation_anchor",
+    "discovery_index",
+    "action_provider",
+    "citation_source"
+  ],
+  "surfaces": [
+    "search",
+    "item_record",
+    "artifact_download",
+    "bulk_dump",
+    "delta_feed"
+  ],
+  "trust_lane": "preservation",
+  "authority_class": "public_archive",
+  "protocols": [
+    "http_api"
+  ],
+  "object_types": [
+    "software_release",
+    "manual",
+    "article",
+    "dataset"
+  ],
+  "artifact_types": [
+    "archive_item",
+    "downloadable_file",
+    "metadata_record"
+  ],
+  "identifier_types_emitted": [
+    "archive_org_identifier"
+  ],
+  "connector": {
+    "label": "Internet Archive connector",
+    "status": "unimplemented"
+  },
+  "fixture_paths": [],
+  "live_access": {
+    "mode": "deferred",
+    "notes": "No Internet Archive runtime connector is implemented in Source Registry v0."
+  },
+  "extraction_policy": {
+    "mode": "deferred",
+    "notes": "Decomposition, member listing, and any live source access remain future work."
+  },
+  "rights_notes": "Rights and access vary per item; no runtime policy is implemented yet.",
+  "legal_posture": "deferred_placeholder",
+  "freshness_model": "deferred",
+  "notes": "Planning placeholder only. This record must not be read as an implemented connector."
+}

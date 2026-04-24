@@ -1,0 +1,19 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/source_registry/source_registry.schema.yaml
+$comment: Provisional draft skeleton only. Aggregate shape for governed source-registry listings.
+title: SourceRegistry
+description: Draft aggregate source-registry document for Eureka.
+type: object
+additionalProperties: false
+properties:
+  registry_kind:
+    type: string
+    const: eureka.source_registry
+  sources:
+    type: array
+    items:
+      $ref: https://schemas.eureka.invalid/source_registry/source_record.schema.yaml
+required:
+  - registry_kind
+  - sources
+x-eureka-status: draft

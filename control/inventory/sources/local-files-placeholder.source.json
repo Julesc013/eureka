@@ -1,0 +1,48 @@
+{
+  "source_id": "local-files-placeholder",
+  "name": "Local Files",
+  "source_family": "local_files",
+  "status": "future",
+  "roles": [
+    "action_provider",
+    "citation_source"
+  ],
+  "surfaces": [
+    "item_record",
+    "artifact_download"
+  ],
+  "trust_lane": "unknown",
+  "authority_class": "local_private_user_controlled",
+  "protocols": [
+    "filesystem"
+  ],
+  "object_types": [
+    "software_release",
+    "manual",
+    "dataset"
+  ],
+  "artifact_types": [
+    "local_file",
+    "local_archive"
+  ],
+  "identifier_types_emitted": [
+    "filesystem_path"
+  ],
+  "connector": {
+    "label": "Local files connector",
+    "status": "deferred"
+  },
+  "fixture_paths": [],
+  "live_access": {
+    "mode": "local_private_later",
+    "notes": "Future local-only access may exist later. Source Registry v0 does not enable local-files ingestion."
+  },
+  "extraction_policy": {
+    "mode": "local_private_later",
+    "notes": "Any local-files extraction or ingest behavior remains future work."
+  },
+  "rights_notes": "Local paths and user-controlled material are private by default and must not leak through public surfaces.",
+  "legal_posture": "local_private_user_controlled",
+  "freshness_model": "local_mutable",
+  "notes": "Future local-private source only. No current runtime connector exists, and local path disclosure remains out of bounds."
+}

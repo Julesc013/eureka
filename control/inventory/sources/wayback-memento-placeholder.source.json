@@ -1,0 +1,50 @@
+{
+  "source_id": "wayback-memento-placeholder",
+  "name": "Wayback / Memento",
+  "source_family": "wayback_memento",
+  "status": "placeholder",
+  "roles": [
+    "preservation_anchor",
+    "discovery_index",
+    "citation_source"
+  ],
+  "surfaces": [
+    "item_record",
+    "replay"
+  ],
+  "trust_lane": "preservation",
+  "authority_class": "web_archive",
+  "protocols": [
+    "http_api",
+    "memento"
+  ],
+  "object_types": [
+    "website",
+    "web_page"
+  ],
+  "artifact_types": [
+    "web_capture",
+    "replay_record"
+  ],
+  "identifier_types_emitted": [
+    "url",
+    "capture_datetime"
+  ],
+  "connector": {
+    "label": "Wayback / Memento connector",
+    "status": "unimplemented"
+  },
+  "fixture_paths": [],
+  "live_access": {
+    "mode": "deferred",
+    "notes": "No Wayback or Memento runtime connector is implemented in Source Registry v0."
+  },
+  "extraction_policy": {
+    "mode": "deferred",
+    "notes": "Replay expansion and capture processing remain deferred."
+  },
+  "rights_notes": "Replay availability and access conditions vary by capture and provider.",
+  "legal_posture": "deferred_placeholder",
+  "freshness_model": "deferred",
+  "notes": "Planning placeholder only. This record should guide future registry growth, not imply live replay support."
+}

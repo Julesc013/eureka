@@ -1,0 +1,52 @@
+{
+  "source_id": "synthetic-fixtures",
+  "name": "Synthetic Fixtures",
+  "source_family": "synthetic",
+  "status": "active_fixture",
+  "roles": [
+    "fixture",
+    "discovery_index"
+  ],
+  "surfaces": [
+    "item_record",
+    "artifact_download",
+    "fixture_file"
+  ],
+  "trust_lane": "fixture",
+  "authority_class": "repo_governed_fixture",
+  "protocols": [
+    "fixture_json",
+    "filesystem"
+  ],
+  "object_types": [
+    "software_product",
+    "software_release"
+  ],
+  "artifact_types": [
+    "fixture_artifact",
+    "fixture_archive"
+  ],
+  "identifier_types_emitted": [
+    "target_ref"
+  ],
+  "connector": {
+    "label": "Synthetic software connector",
+    "entrypoint": "runtime.connectors.synthetic_software",
+    "status": "fixture_backed"
+  },
+  "fixture_paths": [
+    "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+  ],
+  "live_access": {
+    "mode": "none",
+    "notes": "Synthetic fixtures are repo-governed only and do not support live network access."
+  },
+  "extraction_policy": {
+    "mode": "fixture_only",
+    "notes": "Records and payloads come from governed local fixtures only."
+  },
+  "rights_notes": "Repo-governed demo fixtures only.",
+  "legal_posture": "repo_governed_fixture",
+  "freshness_model": "static_fixture",
+  "notes": "Active local-only source used for deterministic bootstrap execution, tests, and connector-boundary development."
+}

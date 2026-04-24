@@ -1,0 +1,50 @@
+{
+  "source_id": "software-heritage-placeholder",
+  "name": "Software Heritage",
+  "source_family": "software_heritage",
+  "status": "placeholder",
+  "roles": [
+    "preservation_anchor",
+    "citation_source",
+    "discovery_index"
+  ],
+  "surfaces": [
+    "item_record",
+    "artifact_download"
+  ],
+  "trust_lane": "preservation",
+  "authority_class": "software_preservation_network",
+  "protocols": [
+    "http_api",
+    "git"
+  ],
+  "object_types": [
+    "source_repository",
+    "software_release"
+  ],
+  "artifact_types": [
+    "source_archive",
+    "source_tree_snapshot"
+  ],
+  "identifier_types_emitted": [
+    "swhid",
+    "origin_url"
+  ],
+  "connector": {
+    "label": "Software Heritage connector",
+    "status": "unimplemented"
+  },
+  "fixture_paths": [],
+  "live_access": {
+    "mode": "deferred",
+    "notes": "No Software Heritage runtime connector is implemented in Source Registry v0."
+  },
+  "extraction_policy": {
+    "mode": "deferred",
+    "notes": "Source-tree acquisition, identity bridging, and archive expansion remain deferred."
+  },
+  "rights_notes": "Source preservation and archive access terms vary by origin and snapshot.",
+  "legal_posture": "deferred_placeholder",
+  "freshness_model": "deferred",
+  "notes": "Planning placeholder only. This record identifies a likely future source family without claiming implementation."
+}

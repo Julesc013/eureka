@@ -1,0 +1,57 @@
+{
+  "source_id": "github-releases-recorded-fixtures",
+  "name": "GitHub Releases Recorded Fixtures",
+  "source_family": "github_releases",
+  "status": "active_fixture",
+  "roles": [
+    "discovery_index",
+    "action_provider",
+    "citation_source",
+    "fixture"
+  ],
+  "surfaces": [
+    "search",
+    "item_record",
+    "artifact_download",
+    "fixture_file"
+  ],
+  "trust_lane": "official",
+  "authority_class": "upstream_release_service",
+  "protocols": [
+    "fixture_json",
+    "http_api"
+  ],
+  "object_types": [
+    "software_release",
+    "source_repository"
+  ],
+  "artifact_types": [
+    "release_page",
+    "release_asset"
+  ],
+  "identifier_types_emitted": [
+    "github_repo",
+    "github_release_tag"
+  ],
+  "connector": {
+    "label": "GitHub Releases connector",
+    "entrypoint": "runtime.connectors.github_releases",
+    "status": "fixture_backed"
+  },
+  "fixture_paths": [
+    "runtime/connectors/github_releases/fixtures/github_releases_fixture.json",
+    "runtime/connectors/github_releases/fixtures/payloads"
+  ],
+  "live_access": {
+    "mode": "recorded_fixture_only",
+    "notes": "Current runtime uses recorded fixtures only. Live GitHub acquisition remains deferred."
+  },
+  "extraction_policy": {
+    "mode": "recorded_fixture_only",
+    "notes": "Normalized records and tiny payload fixtures are replayed from recorded snapshots only."
+  },
+  "rights_notes": "Recorded fixture slice only. Live upstream terms and auth handling remain deferred.",
+  "legal_posture": "recorded_public_source",
+  "freshness_model": "recorded_fixture_snapshot",
+  "notes": "Active bounded real-source slice backed by recorded GitHub Releases fixtures, not live network access."
+}

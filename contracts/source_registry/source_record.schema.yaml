@@ -1,0 +1,177 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/source_registry/source_record.schema.yaml
+$comment: Provisional draft skeleton only. Not yet a finalized semantic or compatibility promise.
+title: SourceRecord
+description: Draft governed record for one source-registry entry.
+type: object
+additionalProperties: false
+properties:
+  source_id:
+    type: string
+  name:
+    type: string
+  source_family:
+    type: string
+  status:
+    type: string
+    enum:
+      - active_fixture
+      - placeholder
+      - future
+      - disabled
+  roles:
+    type: array
+    items:
+      type: string
+      enum:
+        - authority
+        - preservation_anchor
+        - discovery_index
+        - action_provider
+        - community_mirror
+        - citation_source
+        - fixture
+    uniqueItems: true
+  surfaces:
+    type: array
+    items:
+      type: string
+      enum:
+        - search
+        - item_record
+        - artifact_download
+        - bulk_dump
+        - delta_feed
+        - replay
+        - fixture_file
+    uniqueItems: true
+  trust_lane:
+    type: string
+    enum:
+      - official
+      - preservation
+      - community
+      - fixture
+      - unknown
+  authority_class:
+    type: string
+  protocols:
+    type: array
+    items:
+      type: string
+      enum:
+        - fixture_json
+        - http_api
+        - memento
+        - oai_pmh
+        - filesystem
+        - git
+    uniqueItems: true
+  object_types:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  artifact_types:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  identifier_types_emitted:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  connector:
+    type: object
+    additionalProperties: false
+    properties:
+      label:
+        type: string
+      entrypoint:
+        type: string
+      status:
+        type: string
+        enum:
+          - fixture_backed
+          - deferred
+          - unimplemented
+          - disabled
+    required:
+      - label
+      - status
+  fixture_paths:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  live_access:
+    type: object
+    additionalProperties: false
+    properties:
+      mode:
+        type: string
+        enum:
+          - none
+          - recorded_fixture_only
+          - deferred
+          - local_private_later
+      notes:
+        type: string
+    required:
+      - mode
+  extraction_policy:
+    type: object
+    additionalProperties: false
+    properties:
+      mode:
+        type: string
+        enum:
+          - fixture_only
+          - recorded_fixture_only
+          - deferred
+          - local_private_later
+      notes:
+        type: string
+    required:
+      - mode
+  rights_notes:
+    type: string
+  legal_posture:
+    type: string
+    enum:
+      - repo_governed_fixture
+      - recorded_public_source
+      - deferred_placeholder
+      - local_private_user_controlled
+  freshness_model:
+    type: string
+    enum:
+      - static_fixture
+      - recorded_fixture_snapshot
+      - deferred
+      - local_mutable
+  notes:
+    type: string
+required:
+  - source_id
+  - name
+  - source_family
+  - status
+  - roles
+  - surfaces
+  - trust_lane
+  - authority_class
+  - protocols
+  - object_types
+  - artifact_types
+  - identifier_types_emitted
+  - connector
+  - fixture_paths
+  - live_access
+  - extraction_policy
+  - rights_notes
+  - legal_posture
+  - freshness_model
+  - notes
+x-eureka-status: draft
