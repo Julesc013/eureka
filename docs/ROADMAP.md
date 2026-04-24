@@ -2,6 +2,19 @@
 
 The roadmap is intentionally staged and bounded. Bootstrap work should make later implementation easier to govern, not attempt to deliver the full product in one pass.
 
+## Detailed Roadmap Docs
+
+Detailed next-phase planning now lives under `docs/roadmap/`:
+
+- [Backend Roadmap](roadmap/BACKEND_ROADMAP.md)
+- [Public Alpha](roadmap/PUBLIC_ALPHA.md)
+- [Rust Migration](roadmap/RUST_MIGRATION.md)
+- [Native Apps Later](roadmap/NATIVE_APPS_LATER.md)
+
+The root roadmap remains the short stage summary. The detailed roadmap docs
+record the accepted transition from bounded architecture proof into operational
+backend development.
+
 ## Stage 0: Bootstrap and Repo Contract
 
 - establish the monorepo structure
@@ -41,3 +54,12 @@ Current status within this stage: `surfaces/web/` now contains the first compati
 Current status within this stage: the first repo-level archive-resolution eval corpus now lives under `evals/archive_resolution/`. It records hard software-resolution queries, explicit bad-result patterns, minimum granularity expectations, expected future result lanes, and allowed absence outcomes as a guardrail for future investigation, ranking, decomposition, source-expansion, and optional AI work without changing current runtime semantics.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
+
+## Immediate Next Milestone
+
+The next implementation milestone is:
+
+> Source Registry v0
+
+That milestone begins the operational backend phase without prematurely jumping
+to public hosting, native app work, or a Rust rewrite.
