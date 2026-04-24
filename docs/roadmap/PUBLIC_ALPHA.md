@@ -14,10 +14,9 @@ The minimum public-alpha entry gate should include:
 - Local Worker and Task Model v0 (implemented)
 - Resolution Memory v0 (implemented, local-only)
 - Archive Resolution Eval Runner v0 (implemented as a local regression guardrail)
-- public-alpha-safe configuration
-- local-path APIs disabled or explicitly restricted
-- safe store-root handling
-- a basic health route
+- Public Alpha Safe Mode v0 (implemented as constrained mode-aware server behavior)
+- local-path APIs disabled or explicitly restricted in public-alpha mode
+- safe status route without private local path disclosure
 - clear alpha disclaimers
 
 ## Public Alpha Safe-Mode Expectations
@@ -42,7 +41,7 @@ A credible small public alpha should be able to expose:
 - miss explanation
 - representation and access-path visibility
 - bounded next-step guidance
-- safe fetch behavior where explicitly allowed
+- safe fixture readback only after a later explicit route review
 
 ## What The Alpha Should Not Include
 
@@ -58,9 +57,9 @@ The public alpha should not yet include:
 
 ## Current Status
 
-Public alpha preparation is the next backend milestone, but public hosting
-itself is not started. Source Registry v0, Resolution Run Model v0, Query
-Planner v0, Local Index v0, Local Worker and Task Model v0, Resolution Memory
-v0, and Archive Resolution Eval Runner v0 now satisfy the backend prerequisite
-set. The hosted-alpha gate is still blocked on public-safe configuration,
-route hardening, and local-path restrictions.
+Public Alpha Safe Mode v0 is now implemented as mode-aware stdlib web/API
+server behavior. `local_dev` preserves trusted local path demos, while
+`public_alpha` blocks arbitrary local path parameters and disables local
+write/readback route groups. Public hosting itself is still not started. The
+hosted-alpha gate remains blocked on real deployment posture, auth/TLS
+decisions, abuse controls, operational monitoring, and final route review.

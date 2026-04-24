@@ -10,6 +10,8 @@ steps:
     run: python scripts/check_architecture_boundaries.py
   - id: archive_resolution_evals
     run: python scripts/run_archive_resolution_evals.py --json
+  - id: public_alpha_status
+    run: python scripts/demo_http_api.py --mode public_alpha status
   - id: runtime_tests
     run: python -m unittest discover -s runtime -t .
   - id: surface_tests

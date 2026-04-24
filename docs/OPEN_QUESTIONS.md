@@ -48,8 +48,9 @@ These questions are intentionally left open during bootstrap:
 44. Which additional indexed record families or fields should follow the current v0 set of resolved-object, state-or-release, representation, member, evidence, and source-record summaries without prematurely turning the index into a ranking or extraction engine?
 45. Which Local Worker and Task Model v0 fields should remain durable if later worker queues, retries, priorities, checkpoints, or distributed orchestration arrive, and which should stay explicitly replaceable bootstrap-local detail?
 46. Now that Resolution Memory v0 exists, which fields should remain local-private by default, which parts of public source-derived memory may later become shareable, and what invalidation boundary should exist before any broader reuse is attempted?
-47. What exact safe-mode rules should govern a future public alpha, especially around local-path access, index-path handling, task-store-root handling, store-root handling, run-store-root handling, and fetch behavior?
+47. Which Public Alpha Safe Mode v0 route-policy decisions should become durable alpha contract, and which blocked local-path, bundle, fetch, task, memory, index, or store behaviors should later gain configured server-owned alternatives?
 48. What should the Rust parity strategy require before any runtime seam is considered safely migrated out of the Python reference lane?
 49. At what milestone should thin native host-shell experiments become worthwhile, and what backend or public-boundary conditions must be true first?
 50. Which additional synchronous local task kinds should follow the current v0 set without prematurely turning the task substrate into a production scheduler or queue system?
 51. Should Archive Resolution Eval Runner v0 become a local task kind later, and if so how should that remain synchronous and local without implying background benchmark workers or production scheduling?
+52. Now that Public Alpha Safe Mode v0 blocks local path controls, what final route inventory, abuse-control posture, and operator checklist are required before any real public-alpha deployment is attempted?

@@ -27,6 +27,9 @@ The repo has already proven:
   archive-resolution eval validation
 - Resolution Memory v0 as the first explicit local reusable investigation
   memory layer derived from persisted completed runs
+- Public Alpha Safe Mode v0 as the first explicit constrained web/API hosting
+  posture that separates trusted local-dev behavior from public-alpha route
+  blocking
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -42,15 +45,16 @@ The next backend sequence is:
 5. Local Worker and Task Model v0 (implemented)
 6. Resolution Memory v0 (implemented)
 7. Archive Resolution Eval Runner v0 (implemented)
-8. Public Hosted Alpha Preparation
-9. Rust Migration Skeleton and Parity Plan
-10. Native App Work Later
+8. Public Alpha Safe Mode v0 (implemented)
+9. Public Alpha Deployment Readiness Review
+10. Rust Migration Skeleton and Parity Plan
+11. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Public Hosted Alpha Preparation
+> Public Alpha Deployment Readiness Review
 
 Why this comes next:
 
@@ -65,8 +69,10 @@ Why this comes next:
 - Resolution Memory v0 now provides the first bounded reusable solved-work layer
 - Archive Resolution Eval Runner v0 now provides the first executable regression
   harness over the hard-query packet, including explicit capability gaps
-- the next backend bottleneck is public-alpha-safe configuration and route
-  hardening, not broader retrieval semantics
+- Public Alpha Safe Mode v0 now blocks arbitrary local-path controls in
+  public-alpha mode while preserving local-dev behavior
+- the next backend bottleneck is final public-alpha deployment-readiness review,
+  not broader retrieval semantics
 
 ## Explicit Deferrals
 
@@ -82,3 +88,4 @@ The backend roadmap intentionally defers:
 - vector-heavy retrieval
 - LLM-heavy planning
 - broad live federation
+- auth, HTTPS/TLS, accounts, and production deployment remain outside this slice

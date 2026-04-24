@@ -7,6 +7,7 @@ The normal web path goes through `contracts/gateway/public_api` and governed sur
 Current bootstrap slice:
 
 - stdlib-only, local-only, server-rendered compatibility-first workbench page
+- explicit `local_dev` and `public_alpha` server modes for the stdlib web/API surface
 - consumes the transport-neutral gateway public submit/read and search boundaries
 - renders exact resolution from the shared `WorkbenchSession` view model rather than engine-owned state
 - renders side-by-side comparison at `/compare?left=...&right=...` from a shared comparison view model rather than engine-owned compare state
@@ -17,6 +18,7 @@ Current bootstrap slice:
 - renders compatibility-first deterministic query planning at `/query-plan?q=...` from a shared query-plan view model rather than engine-owned planner state
 - renders compatibility-first local-index build, status, and search pages at `/index/build?index_path=...`, `/index/status?index_path=...`, and `/index/search?q=...&index_path=...` from a shared local-index view model rather than engine-owned SQLite state
 - renders compatibility-first archive-resolution eval reports at `/evals/archive-resolution?task_id=...&index_path=...` from a shared eval-report view model rather than engine-owned runner state, keeping capability gaps visible for hard fixtures
+- renders mode/capability status at `/status` without disclosing private configured local paths
 - renders compatibility-first synchronous local-task listing at `/tasks?task_store_root=...`, bounded task detail at `/task?id=...&task_store_root=...`, and bounded task-run pages at `/task/run/validate-source-registry?...`, `/task/run/build-local-index?...`, `/task/run/query-local-index?...`, plus `/task/run/validate-archive-resolution-evals?...` without implying background scheduling, retries, or distributed queue behavior
 - renders compatibility-first synchronous resolution-run listing at `/runs?run_store_root=...`, bounded run detail at `/run?id=...&run_store_root=...`, and bounded run-start pages at `/run/resolve?...&run_store_root=...`, `/run/search?...&run_store_root=...`, plus `/run/planned-search?...&run_store_root=...` without implying worker queues, streaming updates, or full investigation planning
 - renders compatibility-first explicit local resolution-memory listing at `/memories?memory_store_root=...`, bounded memory detail at `/memory?id=...&memory_store_root=...`, and bounded create-from-run pages at `/memory/create?...` without implying cloud memory, private user-history tracking, personalization, ranking, or automatic invalidation
@@ -45,6 +47,7 @@ Current bootstrap slice:
 - exposes `/api/query-plan?q=...` for machine-readable deterministic query planning over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/index/build?index_path=...`, `/api/index/status?index_path=...`, and `/api/index/query?index_path=...&q=...` for machine-readable bootstrap local indexing over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/evals/archive-resolution?task_id=...&index_path=...` for machine-readable Archive Resolution Eval Runner v0 reports over the same transport-neutral public boundary already reused by the HTML workbench and CLI
+- exposes `/api/status` for machine-readable mode, safe-mode, enabled-capability, disabled-capability, and configured-root-kind reporting without returning private local path values
 - exposes `/api/tasks?task_store_root=...`, `/api/task?id=...&task_store_root=...`, `/api/task/run/validate-source-registry?task_store_root=...`, `/api/task/run/build-local-index?task_store_root=...&index_path=...`, `/api/task/run/query-local-index?task_store_root=...&index_path=...&q=...`, and `/api/task/run/validate-archive-resolution-evals?task_store_root=...` for machine-readable synchronous bootstrap local tasks over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/runs?run_store_root=...`, `/api/run?id=...&run_store_root=...`, `/api/run/resolve?target_ref=...&run_store_root=...`, `/api/run/search?q=...&run_store_root=...`, and `/api/run/planned-search?q=...&run_store_root=...` for machine-readable bounded synchronous resolution runs over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/memories?memory_store_root=...`, `/api/memory?id=...&memory_store_root=...`, and `/api/memory/create?run_store_root=...&memory_store_root=...&run_id=...` for machine-readable explicit local resolution memory over the same transport-neutral public boundary already reused by the HTML workbench and CLI
@@ -56,6 +59,7 @@ Current bootstrap slice:
 - exposes `/api/action-plan?target_ref=...&host=...&strategy=...` for machine-readable bounded action-plan evaluation over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - does not imply a real framework choice, browser-side JavaScript dependency, routing tree, authentication layer, or deployment model
 - does not settle final HTTP API route naming, auth, HTTPS/TLS, deployment, or multi-user semantics
+- public-alpha mode blocks caller-provided local path parameters and local write/readback route groups, but remains a constrained demo posture rather than production deployment
 - local store root configuration is a bootstrap-only demo choice, not a final deployment or multi-user storage contract
 - run_store_root configuration is a bootstrap-only demo choice for synchronous persisted resolution runs, not a final deployment, worker, or multi-user storage contract
 - task_store_root configuration is a bootstrap-only demo choice for synchronous persisted local tasks, not a final deployment, worker, scheduler, or multi-user storage contract
