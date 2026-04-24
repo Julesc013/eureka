@@ -59,3 +59,12 @@ The planned v0 query planner should be:
 - explicit about what it suppresses and why
 
 It should not require LLMs or semantic infrastructure to be useful.
+
+## Current Dependency
+
+Resolution Run Model v0 is now implemented first as the durable synchronous
+bootstrap envelope for exact-resolution and deterministic-search
+investigations.
+
+Query Planner v0 is still deferred. When it lands, it should fill and shape
+that run envelope rather than replace it.

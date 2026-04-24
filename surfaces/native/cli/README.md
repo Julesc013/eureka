@@ -13,6 +13,7 @@ This bootstrap CLI:
 - shows bounded ordered state listings for one bootstrap subject key with compact source and evidence summaries per state
 - shows bounded side-by-side agreements and disagreements for exactly two compared targets while preserving evidence per side
 - shows bounded source-registry listings and source detail over the public side of the architecture, clearly distinguishing active fixture-backed sources from placeholders and future records
+- shows bounded synchronous resolution-run listings and detail over the public side of the architecture, clearly distinguishing completed exact-resolution and deterministic-search investigation records from any future worker, planner, or streaming semantics
 - shows bounded known representations and access paths for one resolved target without implying final download, install, import, or restore semantics
 - shows bounded compatibility verdicts for one resolved target against one bootstrap host profile preset without implying a final compatibility oracle, installer, or runtime-routing model
 - shows bounded representation-selection and handoff recommendations for one resolved target, preserving preferred, available, unsuitable, and unknown choices without implying downloads, installers, launches, or final runtime-routing behavior
@@ -26,6 +27,10 @@ Commands currently exposed:
 
 - `resolve <target_ref>`
 - `search <query>`
+- `run-resolve <target_ref> --run-store-root <path>`
+- `run-search <query> --run-store-root <path>`
+- `run-status <run_id> --run-store-root <path>`
+- `runs --run-store-root <path>`
 - `sources [--status <status>] [--family <family>] [--role <role>] [--surface <surface>]`
 - `source <source_id>`
 - `representations <target_ref>`
@@ -48,3 +53,7 @@ Commands currently exposed:
 - `read-stored <artifact_id> --store-root <path>`
 
 Each command defaults to readable plain text and accepts `--json` for bounded structured output.
+
+`--run-store-root` is a bootstrap local persistence input only. It does not imply
+async run execution, worker queues, multi-user hosting semantics, or a final
+resolution-run storage contract.

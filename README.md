@@ -26,10 +26,10 @@ This repository is intentionally:
 | Data sources | Governed synthetic fixtures plus recorded GitHub Releases fixtures |
 | Surfaces | HTML workbench, native CLI, local stdlib HTTP API |
 | Search | Deterministic, bounded, no ranking, no fuzzy retrieval |
-| Persistence | Local bounded content-addressed export store only |
+| Persistence | Local bounded content-addressed export store plus local JSON resolution-run store |
 | Identity | Bootstrap deterministic `resolved_resource_id` seam |
 | Architecture enforcement | Repo-local Python import boundary checker |
-| Next implementation milestone | Resolution Run Model v0 |
+| Next implementation milestone | Query Planner v0 |
 
 ## What Eureka Proves Today
 
@@ -47,6 +47,7 @@ The current repo proves a set of bounded executable seams across connectors, eng
 - synthetic connector path
 - recorded GitHub Releases connector path
 - Source Registry v0 inventory, loader, and bounded public projection
+- Resolution Run Model v0 for synchronous local exact-resolution and deterministic-search investigations
 - bounded source-family and source-origin visibility
 - bounded provenance and evidence summaries
 - bounded absence reasoning for misses
@@ -105,6 +106,8 @@ It does **not** yet settle:
 ```bash
 python scripts/demo_cli_workbench.py resolve fixture:software/synthetic-demo-app@1.0.0
 python scripts/demo_cli_workbench.py search archive
+python scripts/demo_cli_workbench.py run-resolve fixture:software/synthetic-demo-app@1.0.0 --run-store-root .demo-runs
+python scripts/demo_cli_workbench.py run-status run-exact-resolution-0001 --run-store-root .demo-runs
 python scripts/demo_cli_workbench.py sources
 python scripts/demo_cli_workbench.py source github-releases-recorded-fixtures
 python scripts/demo_cli_workbench.py states archivebox
@@ -118,6 +121,8 @@ python scripts/demo_cli_workbench.py explain-resolve-miss fixture:software/archi
 ```bash
 python scripts/demo_http_api.py index
 python scripts/demo_http_api.py sources --status active_fixture
+python scripts/demo_http_api.py run-search archive --run-store-root .demo-runs
+python scripts/demo_http_api.py run run-deterministic-search-0001 --run-store-root .demo-runs
 python scripts/demo_http_api.py source github-releases-recorded-fixtures
 python scripts/demo_http_api.py resolve github-release:cli/cli@v2.65.0
 python scripts/demo_http_api.py action-plan github-release:cli/cli@v2.65.0 --strategy preserve
@@ -130,7 +135,7 @@ python scripts/demo_http_api.py states archivebox
 python scripts/demo_web_workbench.py
 ```
 
-Then open the local URLs printed by the script, including the exact-resolution workbench, source-registry page, search page, action-plan page, and local HTTP API index.
+Then open the local URLs printed by the script, including the exact-resolution workbench, source-registry page, search page, resolution-run pages when `--run-store-root` is supplied, action-plan page, and local HTTP API index.
 
 #### Architecture Guardrail
 
@@ -194,13 +199,14 @@ Research that remains intentionally non-normative stays under:
 
 ## Current Executable Scope
 
-Current bootstrap status includes **twenty-six executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
+Current bootstrap status includes **twenty-seven executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
 
 Important highlights:
 
 - one governed synthetic connector family
 - one bounded real-source connector family using recorded GitHub Releases fixtures
 - one bounded source-registry inventory and public-boundary projection
+- one bounded synchronous resolution-run seam with local JSON persistence
 - one transport-neutral gateway public boundary family reused across multiple surfaces
 - one compatibility-first HTML surface
 - one bootstrap native CLI surface
@@ -240,6 +246,7 @@ Useful paths to know:
 - `runtime/connectors/github_releases/` — recorded GitHub Releases connector
 - `runtime/source_registry/` — stdlib-only source-registry loader and filter layer
 - `runtime/engine/resolve/` — exact resolution and deterministic search
+- `runtime/engine/resolution_runs/` — synchronous local investigation records
 - `runtime/engine/provenance/` — bounded evidence summaries
 - `runtime/engine/absence/` — bounded miss explanation
 - `runtime/engine/compare/` — bounded comparison and disagreement

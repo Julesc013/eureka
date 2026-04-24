@@ -8,6 +8,7 @@ Current bootstrap scope:
 - submit bounded resolution work and return an accepted envelope with a `job_id`
 - read the current in-memory job envelope by `job_id`
 - search the bounded software-first corpus through a deterministic public search boundary
+- start, read, and list synchronous local exact-resolution and deterministic-search runs through a deterministic public resolution-runs boundary
 - explain bounded exact-resolution and deterministic search misses through a dedicated public absence boundary
 - compare exactly two bounded resolved targets through a deterministic public comparison boundary
 - list bounded ordered states for one bootstrap subject key through a deterministic public subject/state boundary
@@ -32,6 +33,8 @@ Current bootstrap scope:
 - map public job envelopes into the shared `WorkbenchSession` view model without
   implementing a web or native shell
 - map public search envelopes into a shared search-results view model without
+  implementing a web or native shell
+- map public resolution-runs envelopes into a shared resolution-run view model without
   implementing a web or native shell
 - map public comparison envelopes into a shared comparison view model without
   implementing a web or native shell
@@ -68,7 +71,9 @@ Out of scope here:
 
 - owning HTTP serving directly inside gateway; the current local stdlib HTTP API slice remains surface-owned under `surfaces/web/server/`
 - async workers or orchestration
-- persistence beyond the local bootstrap filesystem store
+- persistence beyond the local bootstrap filesystem store and local bootstrap resolution-run JSON store
+- worker queues, background schedulers, or async orchestration for resolution runs
+- query planning, phases, checkpoints, or streaming transport for resolution runs
 - exposing raw fixture paths or private local paths through the public source-registry boundary
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
 - final provenance graph, trust scoring, or cross-source merge behavior beyond the current bounded evidence summary seam

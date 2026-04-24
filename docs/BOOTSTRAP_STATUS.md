@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus twenty-six executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus twenty-seven executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -49,6 +49,7 @@ architectural oracle rather than as a throwaway scaffold.
 - first bounded member-readback and preview seam under `runtime/engine/members/` that lets one resolved target plus one explicit representation and member path surface compact text previews or bounded byte readback through the public boundary plus current surfaces, while returning explicit unsupported, unavailable, and blocked outcomes without forcing extraction to disk, installers, import, or restore semantics
 - first repo-level archive-resolution eval corpus under `evals/archive_resolution/` that records hard software-resolution queries, explicit bad-result patterns, minimum granularity expectations, expected future result lanes, and allowed absence outcomes before broader investigation, ranking, decomposition, source-expansion, or optional AI claims are introduced
 - first bounded Source Registry v0 seam under `contracts/source_registry/`, `control/inventory/sources/`, and `runtime/source_registry/` that records explicit governed source metadata, validates seed inventory records with stdlib-only runtime checks, and projects bounded source-registry listing plus detail views through the public boundary and current web, CLI, plus local HTTP API surfaces without implying live sync, crawling, health scoring, trust scoring, or implemented placeholder connectors
+- first bounded Resolution Run Model v0 seam under `runtime/engine/resolution_runs/` that records synchronous exact-resolution and deterministic-search investigations as local JSON run records with checked source ids and families, current result summaries or bounded absence reports, and bounded public projection through current web, CLI, plus local HTTP API surfaces without implying query planning, worker queues, streaming phases, or async orchestration
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -81,28 +82,28 @@ The repo still keeps speculative or not-yet-accepted material under:
 
 In particular, the temporal-object-resolution research note remains governed
 research rather than a claim that the current repo already implements shared
-evidence services, durable resolution runs, hosted operation, or production
+evidence services, streaming run phases, hosted operation, or production
 subsystem choices.
 
 ## Next Implementation Milestone
 
 The next implementation milestone is:
 
-> Resolution Run Model v0
+> Query Planner v0
 
-Source Registry v0 is now implemented as the first inventory-backed source
-control plane. The backend program should continue moving from bounded seam
-proof toward operational backend infrastructure in this order:
+Source Registry v0 and Resolution Run Model v0 are now implemented as the
+first inventory-backed source-control plane plus the first synchronous durable
+investigation envelope. The backend program should continue moving from bounded
+seam proof toward operational backend infrastructure in this order:
 
-1. Resolution Run Model v0
-2. Query Planner v0
-3. Local Index v0
-4. Local Worker and Task Model v0
-5. Resolution Memory v0
-6. Eval Harness Upgrade
-7. Public Hosted Alpha Preparation
-8. Rust Migration Skeleton and Parity Plan
-9. Native App Work Later
+1. Query Planner v0
+2. Local Index v0
+3. Local Worker and Task Model v0
+4. Resolution Memory v0
+5. Eval Harness Upgrade
+6. Public Hosted Alpha Preparation
+7. Rust Migration Skeleton and Parity Plan
+8. Native App Work Later
 
 ## Deferred Priorities
 

@@ -24,7 +24,7 @@ backend and architectural oracle for the next phase.
 The next backend sequence is:
 
 1. Source Registry v0 (implemented)
-2. Resolution Run Model v0
+2. Resolution Run Model v0 (implemented)
 3. Query Planner v0
 4. Local Index v0
 5. Local Worker and Task Model v0
@@ -38,13 +38,15 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Resolution Run Model v0
+> Query Planner v0
 
 Why this comes next:
 
 - Source Registry v0 is now present as the bounded source inventory plane
-- the next operational step is to represent search as a resumable bounded run
-- later planner, index, worker, and memory work need that run envelope more than another inventory slice
+- Resolution Run Model v0 now provides a synchronous durable investigation
+  envelope
+- later indexing, worker, and memory work need planner-owned structured intent
+  more than another storage or surface slice
 
 ## Explicit Deferrals
 

@@ -44,6 +44,26 @@ should be resumable and progressively visible.
 
 ## Current Status
 
-The current repo does not yet implement durable resolution runs. This belongs
-to the next backend program after doctrine consolidation and source-registry
-work.
+Resolution Run Model v0 is now implemented as a synchronous local investigation
+record for:
+
+- exact resolution
+- deterministic search
+
+Current v0 behavior is intentionally narrow:
+
+- runs are created and completed synchronously
+- runs are persisted as local JSON records under a caller-provided bootstrap
+  `run_store_root`
+- runs record checked source ids and families through Source Registry v0 where
+  current implemented connectors are actually consulted
+- runs surface one current result summary or one absence report
+
+Still deferred here:
+
+- streaming partial results
+- explicit phases
+- checkpoints and budgets
+- worker queues or async orchestration
+- query-planner-owned run compilation
+- public hosted or multi-user semantics

@@ -12,6 +12,7 @@ Current thin-slice behavior:
 
 - transport-neutral public submit and read boundary over an in-memory job service
 - transport-neutral public search boundary over a bounded normalized corpus composed from synthetic fixtures plus recorded GitHub Releases records
+- transport-neutral public resolution-runs boundary for synchronous exact-resolution and deterministic-search investigation records persisted under a caller-provided local bootstrap run-store root
 - transport-neutral public absence boundary for explaining bounded exact-resolution and deterministic search misses
 - transport-neutral public comparison boundary for side-by-side comparison of exactly two resolved targets with explicit agreements and disagreements
 - transport-neutral public subject/state boundary for listing bounded ordered states under one bootstrap `subject_key`
@@ -33,6 +34,7 @@ Current thin-slice behavior:
 - deterministic local bundle inspection without live fixture dependence
 - bootstrap deterministic `resolved_resource_id` propagation across resolution, search, action, storage, inspection, and shared-surface mappings
 - bounded source-family visibility propagated across resolution, search, export, storage, inspection, and shared-surface mappings where the public boundary provides it
+- bounded checked-source visibility propagated across synchronous resolution runs and shared-surface mappings where the public boundary provides it
 - bounded evidence summaries propagated across resolution, search, export, storage, inspection, and shared-surface mappings where the public boundary provides them
 - bounded comparison and disagreement summaries propagated across the public boundary and shared-surface mappings without implying merge logic or trust selection
 - bounded subject/state grouping propagated across the public boundary as a compact timeline/list seam without implying a final global object identity or temporal graph
@@ -44,8 +46,7 @@ Current thin-slice behavior:
 - bounded decomposition results propagated across the public boundary and shared-surface mappings without implying broad extraction tooling, installers, import, restore, or final package semantics
 - bounded member-access results propagated across the public boundary and shared-surface mappings without implying extraction-to-disk, installers, import, restore, or final package-management semantics
 - bounded action plans propagated across the public boundary and shared-surface mappings without implying execution, installer, launcher, final policy-engine behavior, or a final personalization model
-- gateway composes with engine service interfaces over normalized records and does not read governed fixtures directly
+- gateway composes with engine service interfaces over normalized records and local bootstrap resolution-run records and does not read governed fixtures directly
 - shared workbench-session, search-results, representations, resolution-actions, stored-exports, and bundle-inspection mappings are exercised without implementing web or native shells
-- no broker, relay, worker, scheduler, auth, or persistence implementation
-
-This slice proves the public boundary shape without implying that async gateway infrastructure already exists. The current `resolved_resource_id` is intentionally a bootstrap deterministic seam, not a final global identity registry or merge model.
+- no broker, relay, worker, scheduler, auth, or streaming transport implementation
+This slice proves the public boundary shape without implying that async gateway infrastructure already exists. Local persistence now exists only for deterministic exported artifacts and synchronous bootstrap resolution-run JSON records behind engine-owned services. The current `resolved_resource_id` is intentionally a bootstrap deterministic seam, not a final global identity registry or merge model.
