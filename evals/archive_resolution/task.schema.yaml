@@ -81,6 +81,39 @@
       },
       "minItems": 1
     },
+    "expected_plan": {
+      "type": "object",
+      "description": "Optional bounded expected planner output used by Query Planner v0 tests.",
+      "additionalProperties": false,
+      "properties": {
+        "task_kind": {
+          "type": "string"
+        },
+        "object_type": {
+          "type": "string"
+        },
+        "constraints": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "prefer": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exclude": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "task_kind",
+        "object_type"
+      ]
+    },
     "notes": {
       "type": "string",
       "description": "Optional bounded notes for human readers."

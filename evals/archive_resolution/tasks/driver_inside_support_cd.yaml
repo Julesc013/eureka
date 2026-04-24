@@ -44,5 +44,21 @@
   "allowed_absence_outcomes": [
     "hardware_trace_without_driver_artifact",
     "checked_sources_with_reasoned_absence"
-  ]
+  ],
+  "expected_plan": {
+    "task_kind": "find_driver",
+    "object_type": "driver",
+    "constraints": {
+      "platform": {
+        "marketing_alias": "Windows 2000"
+      },
+      "hardware_hint": "ThinkPad T42 Wi-Fi"
+    },
+    "prefer": [
+      "driver_package"
+    ],
+    "exclude": [
+      "generic_advice_only"
+    ]
+  }
 }

@@ -1,0 +1,31 @@
+name: QueryPlan
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for deterministic Query Planner v0 through
+  the gateway public query-planner boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/query-plan?q={raw_query}
+  shared_view_models:
+    - contracts/ui/view_models/query_plan.view_model.yaml
+  shared_result_shapes:
+    - QueryPlanEnvelope
+surface_expectations:
+  - surfaces project bounded deterministic planner output through the public gateway boundary rather than running planner rules directly
+  - surfaces show task kind, object type, constraints, prefer and exclude hints, action hints, and planner notes compactly
+  - surfaces do not imply LLM use, vector search, fuzzy retrieval, or full investigation planning
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - full investigation planning
+  - planner-driven retrieval routing
+  - LLM-assisted planning
+  - semantic recall and reranking

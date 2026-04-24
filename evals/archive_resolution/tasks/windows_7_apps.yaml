@@ -42,5 +42,20 @@
   "allowed_absence_outcomes": [
     "checked_sources_with_reasoned_absence",
     "near_matches_with_compatibility_trace"
-  ]
+  ],
+  "expected_plan": {
+    "task_kind": "browse_software",
+    "object_type": "software",
+    "constraints": {
+      "platform": {
+        "marketing_alias": "Windows 7"
+      }
+    },
+    "prefer": [
+      "direct_software_artifact"
+    ],
+    "exclude": [
+      "operating_system_image"
+    ]
+  }
 }

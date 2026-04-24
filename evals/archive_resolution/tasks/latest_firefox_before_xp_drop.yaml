@@ -43,5 +43,21 @@
   "allowed_absence_outcomes": [
     "near_match_with_version_window_trace",
     "checked_sources_with_reasoned_absence"
-  ]
+  ],
+  "expected_plan": {
+    "task_kind": "find_software_release",
+    "object_type": "software_release",
+    "constraints": {
+      "platform": {
+        "marketing_alias": "Windows XP"
+      },
+      "product_hint": "Firefox"
+    },
+    "prefer": [
+      "versioned_release_artifact"
+    ],
+    "exclude": [
+      "latest_overall_without_platform_evidence"
+    ]
+  }
 }

@@ -20,6 +20,7 @@ from runtime.engine.interfaces.normalize import (
     normalize_extracted_record,
     normalize_github_release_record,
 )
+from runtime.engine.query_planner import DeterministicQueryPlannerService
 from runtime.engine.resolution_runs import LocalResolutionRunService, LocalResolutionRunStore
 from runtime.engine.representations.service import DeterministicRepresentationsService
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
@@ -38,6 +39,7 @@ from runtime.gateway.public_api.resolution_actions import ResolutionActionsPubli
 from runtime.gateway.public_api.resolution_boundary import ResolutionJobsPublicApi
 from runtime.gateway.public_api.resolution_bundle_inspection import ResolutionBundleInspectionPublicApi
 from runtime.gateway.public_api.resolution_jobs import InMemoryResolutionJobService
+from runtime.gateway.public_api.query_planner_boundary import QueryPlannerPublicApi
 from runtime.gateway.public_api.resolution_runs_boundary import ResolutionRunsPublicApi
 from runtime.gateway.public_api.representations_boundary import RepresentationsPublicApi
 from runtime.gateway.public_api.representation_selection_boundary import (
@@ -81,6 +83,10 @@ def build_demo_source_registry_public_api() -> SourceRegistryPublicApi:
     return SourceRegistryPublicApi(load_source_registry())
 
 
+def build_demo_query_planner_public_api() -> QueryPlannerPublicApi:
+    return QueryPlannerPublicApi(DeterministicQueryPlannerService())
+
+
 def build_demo_resolution_runs_public_api(run_store_root: str) -> ResolutionRunsPublicApi:
     catalog = _build_demo_normalized_catalog()
     source_registry = load_source_registry()
@@ -98,6 +104,7 @@ def build_demo_resolution_runs_public_api(run_store_root: str) -> ResolutionRuns
         search_service=search_service,
         absence_service=absence_service,
         run_store=LocalResolutionRunStore(run_store_root),
+        query_planner=DeterministicQueryPlannerService(),
     )
     return ResolutionRunsPublicApi(run_service)
 

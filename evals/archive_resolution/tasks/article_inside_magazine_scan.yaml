@@ -41,5 +41,20 @@
   "allowed_absence_outcomes": [
     "scan_level_trace_without_article_boundary",
     "checked_sources_with_reasoned_absence"
-  ]
+  ],
+  "expected_plan": {
+    "task_kind": "find_document_article",
+    "object_type": "document_article",
+    "constraints": {
+      "topic_hint": "ray tracing",
+      "date_year_hint": "1994",
+      "document_hint": "magazine"
+    },
+    "prefer": [
+      "article_member"
+    ],
+    "exclude": [
+      "whole_issue_only_without_article_trace"
+    ]
+  }
 }

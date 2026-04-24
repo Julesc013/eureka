@@ -42,5 +42,22 @@
   "allowed_absence_outcomes": [
     "candidate_identity_trace_without_direct_download",
     "checked_sources_with_reasoned_absence"
-  ]
+  ],
+  "expected_plan": {
+    "task_kind": "find_software_release",
+    "object_type": "software_release",
+    "constraints": {
+      "platform": {
+        "marketing_alias": "Windows XP"
+      },
+      "function_hint": "ftp client",
+      "descriptor_hint": "blue"
+    },
+    "prefer": [
+      "named_software_artifact"
+    ],
+    "exclude": [
+      "generic_advice_only"
+    ]
+  }
 }

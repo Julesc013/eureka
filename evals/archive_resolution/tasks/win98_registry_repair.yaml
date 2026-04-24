@@ -41,5 +41,21 @@
   "allowed_absence_outcomes": [
     "checked_sources_with_reasoned_absence",
     "near_matches_with_functional_trace"
-  ]
+  ],
+  "expected_plan": {
+    "task_kind": "find_software_release",
+    "object_type": "software_release",
+    "constraints": {
+      "platform": {
+        "marketing_alias": "Windows 98"
+      },
+      "function_hint": "fix broken registry"
+    },
+    "prefer": [
+      "direct_software_artifact"
+    ],
+    "exclude": [
+      "modern_incompatible_release"
+    ]
+  }
 }
