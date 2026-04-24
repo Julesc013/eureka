@@ -9,6 +9,7 @@ def render_archive_resolution_evals_html(
     *,
     requested_task_id: str = "",
     requested_index_path: str = "",
+    allow_index_path: bool = True,
     message: str | None = None,
 ) -> str:
     suite = _optional_mapping(view_model.get("eval_suite"), "view_model.eval_suite")
@@ -35,12 +36,23 @@ def render_archive_resolution_evals_html(
         "        <form method=\"get\" action=\"/evals/archive-resolution\">",
         "          <label for=\"task-id\">Task id</label>",
         f"          <input id=\"task-id\" name=\"task_id\" type=\"text\" value=\"{escape(requested_task_id, quote=True)}\">",
-        "          <label for=\"index-path\">Index path</label>",
-        f"          <input id=\"index-path\" name=\"index_path\" type=\"text\" value=\"{escape(requested_index_path, quote=True)}\">",
-        "          <button type=\"submit\">Run evals</button>",
-        "        </form>",
-        "      </section>",
     ]
+    if allow_index_path:
+        parts.extend(
+            [
+                "          <label for=\"index-path\">Index path</label>",
+                f"          <input id=\"index-path\" name=\"index_path\" type=\"text\" value=\"{escape(requested_index_path, quote=True)}\">",
+            ]
+        )
+    else:
+        parts.append("          <p>Public-alpha mode uses the server-owned transient index path only.</p>")
+    parts.extend(
+        [
+            "          <button type=\"submit\">Run evals</button>",
+            "        </form>",
+            "      </section>",
+        ]
+    )
     if message:
         parts.extend(
             [

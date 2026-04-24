@@ -11,6 +11,7 @@ def render_decomposition_html(
     target_ref: str,
     representation_id: str,
     message: str | None = None,
+    allow_member_readback: bool = True,
 ) -> str:
     status = "(not evaluated)"
     reasons: list[str] = []
@@ -65,21 +66,28 @@ def render_decomposition_html(
         "      <nav>",
         "        <a href=\"/\">Open exact resolution workbench</a>",
         "        <a href=\"/representations\">List known representations</a>",
-        "        <a href=\"/fetch\">Fetch a bounded payload</a>",
-        "      </nav>",
-        "    </header>",
-        "    <main>",
-        "      <section>",
-        "        <h2>Inspect representation members</h2>",
-        "        <form method=\"get\" action=\"/decompose\">",
-        "          <label for=\"target_ref\">Target reference</label>",
-        f"          <input id=\"target_ref\" name=\"target_ref\" type=\"text\" value=\"{escape(target_ref, quote=True)}\">",
-        "          <label for=\"representation_id\">Representation ID</label>",
-        f"          <input id=\"representation_id\" name=\"representation_id\" type=\"text\" value=\"{escape(representation_id, quote=True)}\">",
-        "          <button type=\"submit\">Inspect bounded members</button>",
-        "        </form>",
-        "      </section>",
     ]
+    if allow_member_readback:
+        parts.append("        <a href=\"/fetch\">Fetch a bounded payload</a>")
+    else:
+        parts.append("        <span>Payload readback disabled in public-alpha mode</span>")
+    parts.extend(
+        [
+            "      </nav>",
+            "    </header>",
+            "    <main>",
+            "      <section>",
+            "        <h2>Inspect representation members</h2>",
+            "        <form method=\"get\" action=\"/decompose\">",
+            "          <label for=\"target_ref\">Target reference</label>",
+            f"          <input id=\"target_ref\" name=\"target_ref\" type=\"text\" value=\"{escape(target_ref, quote=True)}\">",
+            "          <label for=\"representation_id\">Representation ID</label>",
+            f"          <input id=\"representation_id\" name=\"representation_id\" type=\"text\" value=\"{escape(representation_id, quote=True)}\">",
+            "          <button type=\"submit\">Inspect bounded members</button>",
+            "        </form>",
+            "      </section>",
+        ]
+    )
     if message is not None:
         parts.extend(
             [
@@ -124,17 +132,22 @@ def render_decomposition_html(
             text_hint = _optional_string(member.get("text_hint"), "decomposition.member.text_hint")
             if text_hint is not None:
                 parts.append(f"              <dt>Text hint</dt><dd>{escape(text_hint)}</dd>")
-            member_href = (
-                "/member?target_ref="
-                + quote(target_ref, safe="")
-                + "&representation_id="
-                + quote(representation_id, safe="")
-                + "&member_path="
-                + quote(member_path, safe="")
-            )
-            parts.append(
-                f"              <dt>Read member</dt><dd><a href=\"{escape(member_href, quote=True)}\">Open bounded member preview</a></dd>"
-            )
+            if allow_member_readback:
+                member_href = (
+                    "/member?target_ref="
+                    + quote(target_ref, safe="")
+                    + "&representation_id="
+                    + quote(representation_id, safe="")
+                    + "&member_path="
+                    + quote(member_path, safe="")
+                )
+                parts.append(
+                    f"              <dt>Read member</dt><dd><a href=\"{escape(member_href, quote=True)}\">Open bounded member preview</a></dd>"
+                )
+            else:
+                parts.append(
+                    "              <dt>Read member</dt><dd>Disabled in public-alpha mode.</dd>"
+                )
             parts.append("            </dl>")
             parts.append("          </li>")
         parts.append("        </ul>")

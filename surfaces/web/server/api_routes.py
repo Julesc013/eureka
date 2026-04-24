@@ -90,14 +90,29 @@ from surfaces.web.server.api_serialization import (
     error_response,
     json_response,
 )
+from surfaces.web.server.route_policy import PublicAlphaRoutePolicy
+from surfaces.web.server.server_config import WebServerConfig, default_web_server_config
 
 
-def build_api_index_document() -> dict[str, Any]:
+def build_api_index_document(
+    server_config: WebServerConfig | None = None,
+) -> dict[str, Any]:
+    config = server_config or default_web_server_config()
     return {
         "api_kind": "eureka.bootstrap_http_api",
         "api_version": "0.1.0-draft",
         "status": "local_bootstrap",
+        "mode": config.mode,
+        "safe_mode_enabled": config.safe_mode_enabled,
+        "enabled_capabilities": config.to_status_dict()["enabled_capabilities"],
+        "disabled_capabilities": config.to_status_dict()["disabled_capabilities"],
         "endpoints": [
+            {
+                "path": "/api/status",
+                "method": "GET",
+                "query_parameters": [],
+                "response_content_types": ["application/json"],
+            },
             {
                 "path": "/api/tasks",
                 "method": "GET",
@@ -382,9 +397,11 @@ def handle_api_request(
     search_public_api: SearchPublicApi,
     source_registry_public_api: SourceRegistryPublicApi | None,
     session_id: str,
+    server_config: WebServerConfig | None = None,
 ) -> SerializedHttpResponse | None:
     if not path.startswith("/api"):
         return None
+    config = server_config or default_web_server_config()
 
     if method != "GET":
         return error_response(
@@ -396,8 +413,15 @@ def handle_api_request(
         )
 
     query = parse_qs(query_string, keep_blank_values=False)
+    route_decision = PublicAlphaRoutePolicy(config).evaluate_api_request(path, query)
+    if not route_decision.allowed:
+        return json_response(403, route_decision.to_blocked_payload())
+
+    if path == "/api/status":
+        return json_response(200, config.to_status_dict())
+
     if path in {"/api", "/api/"}:
-        return json_response(200, build_api_index_document())
+        return json_response(200, build_api_index_document(config))
 
     if path == "/api/evals/archive-resolution":
         if archive_resolution_evals_public_api is None:

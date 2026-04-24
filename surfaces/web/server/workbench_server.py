@@ -89,6 +89,8 @@ from runtime.gateway.public_api import (
 )
 from surfaces.web.server.api_routes import handle_api_request
 from surfaces.web.server.api_serialization import SerializedHttpResponse
+from surfaces.web.server.route_policy import PublicAlphaRoutePolicy
+from surfaces.web.server.server_config import WebServerConfig, default_web_server_config
 from surfaces.web.workbench import (
     render_acquisition_html,
     render_action_plan_html,
@@ -124,6 +126,7 @@ def render_resolution_workspace_page(
     session_id: str = "session.web-workbench",
     host_profile_id: str | None = None,
     strategy_id: str | None = None,
+    allow_payload_readback: bool = True,
 ) -> str:
     try:
         workspace = build_resolution_workspace_view_models(
@@ -157,6 +160,7 @@ def render_resolution_workspace_page(
         stored_exports=workspace.stored_exports,
         host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
         strategy_profile_presets=BOOTSTRAP_STRATEGY_PROFILES,
+        allow_payload_readback=allow_payload_readback,
     )
 
 
@@ -308,6 +312,8 @@ def render_search_absence_page(
 def render_representations_page(
     public_api: RepresentationsPublicApi | None,
     target_ref: str,
+    *,
+    allow_payload_readback: bool = True,
 ) -> str:
     normalized_target_ref = target_ref.strip()
     if not normalized_target_ref:
@@ -343,13 +349,18 @@ def render_representations_page(
     response = public_api.list_representations(
         RepresentationCatalogRequest.from_parts(normalized_target_ref),
     )
-    return render_representations_html(representations_envelope_to_view_model(response.body))
+    return render_representations_html(
+        representations_envelope_to_view_model(response.body),
+        allow_payload_readback=allow_payload_readback,
+    )
 
 
 def render_decomposition_page(
     public_api: DecompositionPublicApi | None,
     target_ref: str,
     representation_id: str,
+    *,
+    allow_member_readback: bool = True,
 ) -> str:
     normalized_target_ref = target_ref.strip()
     normalized_representation_id = representation_id.strip()
@@ -359,6 +370,7 @@ def render_decomposition_page(
             target_ref=normalized_target_ref,
             representation_id="",
             message="Provide a bounded representation_id to inspect one fetched representation.",
+            allow_member_readback=allow_member_readback,
         )
     if public_api is None:
         return render_decomposition_html(
@@ -366,6 +378,7 @@ def render_decomposition_page(
             target_ref=normalized_target_ref,
             representation_id=normalized_representation_id,
             message="This bootstrap workbench was not configured with a public decomposition boundary.",
+            allow_member_readback=allow_member_readback,
         )
     try:
         response = public_api.decompose_representation(
@@ -380,11 +393,13 @@ def render_decomposition_page(
             target_ref=normalized_target_ref,
             representation_id=normalized_representation_id,
             message=str(error),
+            allow_member_readback=allow_member_readback,
         )
     return render_decomposition_html(
         decomposition_envelope_to_view_model(response.body),
         target_ref=normalized_target_ref,
         representation_id=normalized_representation_id,
+        allow_member_readback=allow_member_readback,
     )
 
 
@@ -442,6 +457,8 @@ def render_handoff_page(
     target_ref: str,
     host_profile_id: str | None,
     strategy_id: str | None,
+    *,
+    allow_payload_readback: bool = True,
 ) -> str:
     normalized_target_ref = target_ref.strip()
     normalized_host_profile_id = (host_profile_id or "").strip() or None
@@ -455,6 +472,7 @@ def render_handoff_page(
             host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
             strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
             message="Provide a bounded target ref to evaluate a representation handoff recommendation.",
+            allow_payload_readback=allow_payload_readback,
         )
     if public_api is None:
         return render_handoff_html(
@@ -465,6 +483,7 @@ def render_handoff_page(
             host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
             strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
             message="This bootstrap workbench was not configured with a public representation-selection boundary.",
+            allow_payload_readback=allow_payload_readback,
         )
     try:
         response = public_api.select_representation(
@@ -483,6 +502,7 @@ def render_handoff_page(
             host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
             strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
             message=str(error),
+            allow_payload_readback=allow_payload_readback,
         )
     return render_handoff_html(
         representation_selection_envelope_to_view_model(response.body),
@@ -491,6 +511,7 @@ def render_handoff_page(
         strategy_id=normalized_strategy_id,
         host_profile_presets=BOOTSTRAP_HOST_PROFILE_PRESETS,
         strategy_profiles=BOOTSTRAP_STRATEGY_PROFILES,
+        allow_payload_readback=allow_payload_readback,
     )
 
 
@@ -562,6 +583,7 @@ class WorkbenchWsgiApp:
         source_registry_public_api: SourceRegistryPublicApi | None = None,
         default_target_ref: str,
         session_id: str = "session.web-workbench",
+        server_config: WebServerConfig | None = None,
     ) -> None:
         self._resolution_public_api = resolution_public_api
         self._absence_public_api = absence_public_api
@@ -584,6 +606,7 @@ class WorkbenchWsgiApp:
         self._source_registry_public_api = source_registry_public_api
         self._default_target_ref = default_target_ref
         self._session_id = session_id
+        self._server_config = server_config or default_web_server_config()
 
     def __call__(
         self,
@@ -616,6 +639,7 @@ class WorkbenchWsgiApp:
             search_public_api=self._search_public_api,
             source_registry_public_api=self._source_registry_public_api,
             session_id=self._session_id,
+            server_config=self._server_config,
         )
         if api_response is not None:
             return self._respond_serialized(start_response, api_response)
@@ -634,6 +658,7 @@ class WorkbenchWsgiApp:
 
         if path not in {
             "/",
+            "/status",
             "/absence/resolve",
             "/absence/search",
             "/compare",
@@ -682,12 +707,28 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/evals/archive-resolution', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/index/build', '/index/status', '/index/search', '/representations', '/tasks', '/task', '/task/run/validate-source-registry', '/task/run/build-local-index', '/task/run/query-local-index', '/task/run/validate-archive-resolution-evals', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/status', '/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/evals/archive-resolution', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/index/build', '/index/status', '/index/search', '/representations', '/tasks', '/task', '/task/run/validate-source-registry', '/task/run/build-local-index', '/task/run/query-local-index', '/task/run/validate-archive-resolution-evals', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', '/stored/artifact', '/memories', '/memory', and "
                         "'/memory/create'."
                     ),
                 ),
+            )
+
+        query = parse_qs(query_string, keep_blank_values=False)
+        route_decision = PublicAlphaRoutePolicy(self._server_config).evaluate_web_request(path, query)
+        if not route_decision.allowed:
+            return self._respond(
+                start_response,
+                status="403 Forbidden",
+                body=_render_blocked_page(route_decision.to_blocked_payload()),
+            )
+
+        if path == "/status":
+            return self._respond(
+                start_response,
+                status="200 OK",
+                body=_render_status_page(self._server_config.to_status_dict()),
             )
 
         if path == "/":
@@ -697,11 +738,20 @@ class WorkbenchWsgiApp:
                 target_ref,
                 action_plan_public_api=self._action_plan_public_api,
                 handoff_public_api=self._handoff_public_api,
-                actions_public_api=self._actions_public_api,
-                stored_exports_public_api=self._stored_exports_public_api,
+                actions_public_api=(
+                    self._actions_public_api
+                    if self._server_config.allow_write_actions
+                    else None
+                ),
+                stored_exports_public_api=(
+                    self._stored_exports_public_api
+                    if self._server_config.allow_write_actions
+                    else None
+                ),
                 session_id=self._session_id,
                 host_profile_id=self._resolve_optional_host_profile_id(query_string),
                 strategy_id=self._resolve_optional_strategy_id(query_string),
+                allow_payload_readback=self._server_config.allow_local_paths,
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/action-plan":
@@ -712,7 +762,10 @@ class WorkbenchWsgiApp:
                 target_ref,
                 host_profile_id,
                 self._resolve_optional_strategy_id(query_string),
-                store_actions_enabled=self._stored_exports_public_api is not None,
+                store_actions_enabled=(
+                    self._stored_exports_public_api is not None
+                    and self._server_config.allow_write_actions
+                ),
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/query-plan":
@@ -726,7 +779,12 @@ class WorkbenchWsgiApp:
                 self._archive_resolution_evals_public_api
                 or build_demo_archive_resolution_evals_public_api(),
                 task_id=self._resolve_optional_query_value(query_string, "task_id"),
-                index_path=self._resolve_optional_query_value(query_string, "index_path"),
+                index_path=(
+                    self._resolve_optional_query_value(query_string, "index_path")
+                    if self._server_config.allow_local_paths
+                    else None
+                ),
+                allow_index_path=self._server_config.allow_local_paths,
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/handoff":
@@ -736,6 +794,7 @@ class WorkbenchWsgiApp:
                 target_ref,
                 self._resolve_optional_host_profile_id(query_string),
                 self._resolve_optional_strategy_id(query_string),
+                allow_payload_readback=self._server_config.allow_local_paths,
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/compare":
@@ -831,6 +890,7 @@ class WorkbenchWsgiApp:
                 self._decomposition_public_api,
                 target_ref,
                 representation_id,
+                allow_member_readback=self._server_config.allow_local_paths,
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/member":
@@ -919,6 +979,7 @@ class WorkbenchWsgiApp:
             page = render_representations_page(
                 self._representations_public_api,
                 target_ref,
+                allow_payload_readback=self._server_config.allow_local_paths,
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/absence/resolve":
@@ -1323,6 +1384,86 @@ def _render_error_page(*, title: str, heading: str, message: str) -> str:
     )
 
 
+def _render_blocked_page(payload: dict[str, object]) -> str:
+    blocked_parameters = payload.get("blocked_parameters")
+    parameter_text = ""
+    if isinstance(blocked_parameters, list) and blocked_parameters:
+        parameter_text = (
+            "      <p>Blocked parameters: "
+            f"{escape(', '.join(str(item) for item in blocked_parameters))}</p>\n"
+        )
+    return (
+        "<!doctype html>\n"
+        "<html lang=\"en\">\n"
+        "  <head>\n"
+        "    <meta charset=\"utf-8\">\n"
+        "    <title>Eureka Public Alpha Blocked</title>\n"
+        "  </head>\n"
+        "  <body>\n"
+        "    <h1>Operation Blocked</h1>\n"
+        f"    <p>{escape(str(payload.get('message') or 'This operation is blocked.'))}</p>\n"
+        f"    <p>Mode: {escape(str(payload.get('mode') or 'unknown'))}</p>\n"
+        f"    <p>Code: {escape(str(payload.get('code') or 'blocked'))}</p>\n"
+        f"{parameter_text}"
+        "    <p><a href=\"/status\">View server status</a></p>\n"
+        "  </body>\n"
+        "</html>\n"
+    )
+
+
+def _render_status_page(status: dict[str, object]) -> str:
+    configured_roots = _string_mapping(status.get("configured_root_kinds"))
+    enabled = _string_list(status.get("enabled_capabilities"))
+    disabled = _string_list(status.get("disabled_capabilities"))
+    notices = status.get("notices")
+    parts = [
+        "<!doctype html>",
+        "<html lang=\"en\">",
+        "  <head>",
+        "    <meta charset=\"utf-8\">",
+        "    <title>Eureka Server Status</title>",
+        "  </head>",
+        "  <body>",
+        "    <h1>Eureka Server Status</h1>",
+        "    <dl>",
+        f"      <dt>Mode</dt><dd>{escape(str(status.get('mode') or 'unknown'))}</dd>",
+        f"      <dt>Safe mode</dt><dd>{escape(str(status.get('safe_mode_enabled')))}</dd>",
+        f"      <dt>Created by</dt><dd>{escape(str(status.get('created_by_slice') or 'unknown'))}</dd>",
+        "    </dl>",
+        "    <h2>Configured Root Kinds</h2>",
+        f"    <p>{escape(configured_roots)}</p>",
+        "    <h2>Enabled Capabilities</h2>",
+        f"    <p>{escape(enabled)}</p>",
+        "    <h2>Disabled Capabilities</h2>",
+        f"    <p>{escape(disabled)}</p>",
+    ]
+    if isinstance(notices, list) and notices:
+        parts.extend(["    <h2>Notices</h2>", "    <ul>"])
+        for item in notices:
+            if isinstance(item, dict):
+                parts.append(
+                    "      <li>"
+                    f"{escape(str(item.get('code') or 'notice'))}: "
+                    f"{escape(str(item.get('message') or ''))}"
+                    "</li>"
+                )
+        parts.append("    </ul>")
+    parts.extend(["  </body>", "</html>", ""])
+    return "\n".join(parts)
+
+
+def _string_mapping(value: object) -> str:
+    if not isinstance(value, dict) or not value:
+        return "(none)"
+    return ", ".join(f"{key}={item}" for key, item in sorted(value.items()))
+
+
+def _string_list(value: object) -> str:
+    if not isinstance(value, list) or not value:
+        return "(none)"
+    return ", ".join(str(item) for item in value)
+
+
 def render_search_results_page(
     public_api: SearchPublicApi,
     query: str,
@@ -1371,6 +1512,7 @@ def render_archive_resolution_evals_page(
     *,
     task_id: str | None = None,
     index_path: str | None = None,
+    allow_index_path: bool = True,
 ) -> str:
     normalized_task_id = (task_id or "").strip()
     normalized_index_path = (index_path or "").strip()
@@ -1389,6 +1531,7 @@ def render_archive_resolution_evals_page(
             },
             requested_task_id=normalized_task_id,
             requested_index_path=normalized_index_path,
+            allow_index_path=allow_index_path,
         )
     request = ArchiveResolutionEvalRunRequest.from_parts(
         task_id=normalized_task_id,
@@ -1399,6 +1542,7 @@ def render_archive_resolution_evals_page(
         archive_resolution_evals_envelope_to_view_model(response.body),
         requested_task_id=normalized_task_id,
         requested_index_path=normalized_index_path,
+        allow_index_path=allow_index_path,
     )
 
 

@@ -14,6 +14,7 @@ def render_handoff_html(
     host_profile_presets: list[Mapping[str, Any]] | tuple[Mapping[str, Any], ...],
     strategy_profiles: list[Mapping[str, Any]] | tuple[Mapping[str, Any], ...],
     message: str | None = None,
+    allow_payload_readback: bool = True,
 ) -> str:
     status = "(not evaluated)"
     preferred_representation_id = None
@@ -198,7 +199,7 @@ def render_handoff_html(
                 parts.append(
                     f"              <dt>Fetchable</dt><dd>{escape(str(is_fetchable).lower())}</dd>"
                 )
-                if is_fetchable:
+                if is_fetchable and allow_payload_readback:
                     fetch_href = (
                         "/fetch?target_ref="
                         + quote(target_ref, safe="")
@@ -213,6 +214,10 @@ def render_handoff_html(
                     )
                     parts.append(
                         f"              <dt>Bounded fetch</dt><dd><a href=\"{escape(fetch_href, quote=True)}\">Retrieve local fixture payload</a></dd>"
+                    )
+                elif is_fetchable:
+                    parts.append(
+                        "              <dt>Bounded fetch</dt><dd>Disabled in public-alpha mode.</dd>"
                     )
             parts.append("            </dl>")
             reason_codes = _string_list(selection.get("reason_codes"), "handoff.selection.reason_codes")

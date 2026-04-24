@@ -5,7 +5,11 @@ from typing import Any, Mapping
 from urllib.parse import quote
 
 
-def render_representations_html(representations_view_model: Mapping[str, Any]) -> str:
+def render_representations_html(
+    representations_view_model: Mapping[str, Any],
+    *,
+    allow_payload_readback: bool = True,
+) -> str:
     status = _require_string(representations_view_model.get("status"), "representations.status")
     target_ref = _require_string(representations_view_model.get("target_ref"), "representations.target_ref")
     representations = _representation_list(representations_view_model.get("representations"))
@@ -87,7 +91,7 @@ def render_representations_html(representations_view_model: Mapping[str, Any]) -
                 parts.append(
                     f"              <dt>Fetchable</dt><dd>{escape(str(is_fetchable).lower())}</dd>"
                 )
-                if is_fetchable:
+                if is_fetchable and allow_payload_readback:
                     fetch_href = (
                         "/fetch?target_ref="
                         + quote(target_ref, safe="")
@@ -102,6 +106,10 @@ def render_representations_html(representations_view_model: Mapping[str, Any]) -
                     )
                     parts.append(
                         f"              <dt>Bounded fetch</dt><dd><a href=\"{escape(fetch_href, quote=True)}\">Retrieve local fixture payload</a></dd>"
+                    )
+                elif is_fetchable:
+                    parts.append(
+                        "              <dt>Bounded fetch</dt><dd>Disabled in public-alpha mode.</dd>"
                     )
             parts.append("            </dl>")
             parts.append("          </li>")

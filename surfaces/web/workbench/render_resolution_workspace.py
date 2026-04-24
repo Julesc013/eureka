@@ -60,6 +60,7 @@ def render_resolution_workspace_html(
     stored_exports: Mapping[str, Any] | None = None,
     host_profile_presets: list[Mapping[str, Any]] | tuple[Mapping[str, Any], ...] = _DEFAULT_HOST_PROFILE_PRESETS,
     strategy_profile_presets: list[Mapping[str, Any]] | tuple[Mapping[str, Any], ...] = _DEFAULT_STRATEGY_PROFILE_PRESETS,
+    allow_payload_readback: bool = True,
 ) -> str:
     active_job = _require_mapping(workbench_session.get("active_job"), "workbench_session.active_job")
     target_ref = _require_string(active_job.get("target_ref"), "workbench_session.active_job.target_ref")
@@ -334,18 +335,23 @@ def render_resolution_workspace_html(
             if isinstance(is_fetchable, bool):
                 parts.append(f"              <dt>Fetchable</dt><dd>{escape(str(is_fetchable).lower())}</dd>")
                 if is_fetchable:
-                    fetch_href = (
-                        "/fetch?target_ref="
-                        + quote(target_ref, safe="")
-                        + "&representation_id="
-                        + quote(
-                            _require_string(entry.get("representation_id"), "representation.representation_id"),
-                            safe="",
+                    if allow_payload_readback:
+                        fetch_href = (
+                            "/fetch?target_ref="
+                            + quote(target_ref, safe="")
+                            + "&representation_id="
+                            + quote(
+                                _require_string(entry.get("representation_id"), "representation.representation_id"),
+                                safe="",
+                            )
                         )
-                    )
-                    parts.append(
-                        f"              <dt>Bounded fetch</dt><dd><a href=\"{escape(fetch_href, quote=True)}\">Retrieve local fixture payload</a></dd>"
-                    )
+                        parts.append(
+                            f"              <dt>Bounded fetch</dt><dd><a href=\"{escape(fetch_href, quote=True)}\">Retrieve local fixture payload</a></dd>"
+                        )
+                    else:
+                        parts.append(
+                            "              <dt>Bounded fetch</dt><dd>Disabled in public-alpha mode.</dd>"
+                        )
                     decompose_href = (
                         "/decompose?target_ref="
                         + quote(target_ref, safe="")
@@ -451,7 +457,7 @@ def render_resolution_workspace_html(
                     parts.append(
                         f"              <dt>Fetchable</dt><dd>{escape(str(is_fetchable).lower())}</dd>"
                     )
-                    if is_fetchable:
+                    if is_fetchable and allow_payload_readback:
                         fetch_href = (
                             "/fetch?target_ref="
                             + quote(target_ref, safe="")
@@ -466,6 +472,10 @@ def render_resolution_workspace_html(
                         )
                         parts.append(
                             f"              <dt>Bounded fetch</dt><dd><a href=\"{escape(fetch_href, quote=True)}\">Retrieve local fixture payload</a></dd>"
+                        )
+                    elif is_fetchable:
+                        parts.append(
+                            "              <dt>Bounded fetch</dt><dd>Disabled in public-alpha mode.</dd>"
                         )
                 parts.append("            </dl>")
                 reason_codes = _string_list(entry.get("reason_codes"), "handoff.selection.reason_codes")
