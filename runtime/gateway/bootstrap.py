@@ -3,6 +3,7 @@ from __future__ import annotations
 from runtime.gateway.public_api.demo_support import (
     build_demo_acquisition_public_api,
     build_demo_action_plan_public_api,
+    build_demo_archive_resolution_evals_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
@@ -27,6 +28,7 @@ from runtime.gateway.public_api.demo_support import (
 __all__ = [
     "build_demo_acquisition_public_api",
     "build_demo_action_plan_public_api",
+    "build_demo_archive_resolution_evals_public_api",
     "build_demo_absence_public_api",
     "build_demo_comparison_public_api",
     "build_demo_compatibility_public_api",

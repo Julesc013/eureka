@@ -13,11 +13,14 @@ from runtime.gateway.public_api import (
     ActionPlanEvaluationRequest,
     ActionPlanPublicApi,
     AbsencePublicApi,
+    ArchiveResolutionEvalRunRequest,
+    ArchiveResolutionEvalsPublicApi,
     BOOTSTRAP_HOST_PROFILE_PRESETS,
     BOOTSTRAP_STRATEGY_PROFILES,
     acquisition_envelope_to_view_model,
     build_demo_acquisition_public_api,
     build_demo_action_plan_public_api,
+    build_demo_archive_resolution_evals_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
@@ -89,6 +92,7 @@ from runtime.gateway.public_api import (
     StoredExportsTargetRequest,
     action_plan_envelope_to_view_model,
     build_resolution_workspace_view_models,
+    archive_resolution_evals_envelope_to_view_model,
     build_demo_decomposition_public_api,
     build_demo_member_access_public_api,
     bundle_inspection_envelope_to_view_model,
@@ -107,6 +111,7 @@ from surfaces.native.cli.formatters import (
     format_acquisition,
     format_action_plan,
     format_absence_report,
+    format_archive_resolution_evals,
     format_blocked_response,
     format_bundle_export_summary,
     format_bundle_inspection,
@@ -140,6 +145,7 @@ DEFAULT_SESSION_ID = "session.native-cli"
 class CliContext:
     acquisition_public_api: AcquisitionPublicApi
     action_plan_public_api: ActionPlanPublicApi
+    archive_resolution_evals_public_api: ArchiveResolutionEvalsPublicApi
     decomposition_public_api: DecompositionPublicApi
     member_access_public_api: MemberAccessPublicApi
     resolution_public_api: ResolutionJobsPublicApi
@@ -289,6 +295,21 @@ def main(
                 args.json,
                 query_plan,
                 format_query_plan(query_plan),
+            )
+
+        if args.command == "evals-archive-resolution":
+            response = cli_context.archive_resolution_evals_public_api.run_suite(
+                ArchiveResolutionEvalRunRequest.from_parts(
+                    task_id=args.task_id,
+                    index_path=args.index_path,
+                )
+            )
+            evals = archive_resolution_evals_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                evals,
+                format_archive_resolution_evals(evals),
             )
 
         if args.command == "index-build":
@@ -707,6 +728,21 @@ def build_parser() -> argparse.ArgumentParser:
     )
     query_plan_parser.add_argument("query")
 
+    evals_archive_resolution_parser = subparsers.add_parser(
+        "evals-archive-resolution",
+        parents=[json_parent],
+        help="Run Archive Resolution Eval Runner v0 through the public boundary.",
+    )
+    evals_archive_resolution_parser.add_argument(
+        "--task",
+        dest="task_id",
+        help="Optional archive-resolution eval task id to run by itself.",
+    )
+    evals_archive_resolution_parser.add_argument(
+        "--index-path",
+        help="Optional explicit bootstrap Local Index v0 SQLite path to build and query.",
+    )
+
     index_build_parser = subparsers.add_parser(
         "index-build",
         parents=[json_parent],
@@ -1082,6 +1118,7 @@ def build_cli_context(
     return CliContext(
         acquisition_public_api=build_demo_acquisition_public_api(),
         action_plan_public_api=build_demo_action_plan_public_api(),
+        archive_resolution_evals_public_api=build_demo_archive_resolution_evals_public_api(),
         decomposition_public_api=build_demo_decomposition_public_api(),
         member_access_public_api=build_demo_member_access_public_api(),
         resolution_public_api=build_demo_resolution_jobs_public_api(),

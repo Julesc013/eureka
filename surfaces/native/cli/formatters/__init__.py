@@ -7,6 +7,7 @@ from surfaces.native.cli.formatters.actions import (
 )
 from surfaces.native.cli.formatters.action_plan import format_action_plan
 from surfaces.native.cli.formatters.absence import format_absence_report
+from surfaces.native.cli.formatters.archive_resolution_evals import format_archive_resolution_evals
 from surfaces.native.cli.formatters.comparison import format_comparison
 from surfaces.native.cli.formatters.compatibility import format_compatibility
 from surfaces.native.cli.formatters.decomposition import format_decomposition
@@ -34,6 +35,7 @@ __all__ = [
     "format_blocked_response",
     "format_action_plan",
     "format_absence_report",
+    "format_archive_resolution_evals",
     "format_bundle_export_summary",
     "format_comparison",
     "format_bundle_inspection",

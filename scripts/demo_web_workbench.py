@@ -14,6 +14,7 @@ if str(REPO_ROOT) not in sys.path:
 from runtime.gateway.public_api import (
     build_demo_acquisition_public_api,
     build_demo_action_plan_public_api,
+    build_demo_archive_resolution_evals_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
@@ -340,6 +341,7 @@ def main() -> int:
         decomposition_public_api=decomposition_public_api,
         member_access_public_api=build_demo_member_access_public_api(),
         action_plan_public_api=action_plan_public_api,
+        archive_resolution_evals_public_api=build_demo_archive_resolution_evals_public_api(),
         absence_public_api=absence_public_api,
         comparison_public_api=comparison_public_api,
         compatibility_public_api=compatibility_public_api,

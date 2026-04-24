@@ -3,6 +3,7 @@
 from surfaces.web.workbench.render_acquisition import render_acquisition_html
 from surfaces.web.workbench.render_action_plan import render_action_plan_html
 from surfaces.web.workbench.render_absence_report import render_absence_report_html
+from surfaces.web.workbench.render_archive_resolution_evals import render_archive_resolution_evals_html
 from surfaces.web.workbench.render_bundle_inspection import render_bundle_inspection_html
 from surfaces.web.workbench.render_compatibility import render_compatibility_html
 from surfaces.web.workbench.render_comparison import render_comparison_html
@@ -24,6 +25,7 @@ __all__ = [
     "render_acquisition_html",
     "render_action_plan_html",
     "render_absence_report_html",
+    "render_archive_resolution_evals_html",
     "render_bundle_inspection_html",
     "render_compatibility_html",
     "render_comparison_html",

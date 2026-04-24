@@ -58,6 +58,15 @@ from runtime.gateway.public_api.absence_boundary import (
 from runtime.gateway.public_api.absence_view_models import (
     absence_envelope_to_view_model,
 )
+from runtime.gateway.public_api.archive_resolution_evals_boundary import (
+    ArchiveResolutionEvalRunRequest,
+    ArchiveResolutionEvalsPublicApi,
+    archive_resolution_eval_not_found_envelope,
+    archive_resolution_eval_suite_to_public_envelope,
+)
+from runtime.gateway.public_api.archive_resolution_evals_view_models import (
+    archive_resolution_evals_envelope_to_view_model,
+)
 from runtime.gateway.public_api.comparison_boundary import (
     CompareTargetsRequest,
     ComparisonPublicApi,
@@ -136,6 +145,7 @@ from runtime.gateway.public_api.bundle_inspection_view_models import (
 from runtime.gateway.public_api.demo_support import (
     build_demo_acquisition_public_api,
     build_demo_action_plan_public_api,
+    build_demo_archive_resolution_evals_public_api,
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
@@ -282,6 +292,8 @@ __all__ = [
     "ActionPlanEvaluationRequest",
     "ActionPlanPublicApi",
     "AbsencePublicApi",
+    "ArchiveResolutionEvalRunRequest",
+    "ArchiveResolutionEvalsPublicApi",
     "BOOTSTRAP_HOST_PROFILE_PRESETS",
     "BOOTSTRAP_STRATEGY_PROFILES",
     "CompareTargetsRequest",
@@ -344,8 +356,12 @@ __all__ = [
     "action_plan_result_to_public_envelope",
     "absence_envelope_to_view_model",
     "absence_report_to_public_envelope",
+    "archive_resolution_eval_not_found_envelope",
+    "archive_resolution_eval_suite_to_public_envelope",
+    "archive_resolution_evals_envelope_to_view_model",
     "build_demo_acquisition_public_api",
     "build_demo_action_plan_public_api",
+    "build_demo_archive_resolution_evals_public_api",
     "build_demo_absence_public_api",
     "build_demo_comparison_public_api",
     "build_demo_compatibility_public_api",

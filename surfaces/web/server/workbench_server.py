@@ -11,6 +11,8 @@ from runtime.gateway.public_api import (
     ActionPlanEvaluationRequest,
     ActionPlanPublicApi,
     AbsencePublicApi,
+    ArchiveResolutionEvalRunRequest,
+    ArchiveResolutionEvalsPublicApi,
     BOOTSTRAP_HOST_PROFILE_PRESETS,
     BOOTSTRAP_STRATEGY_PROFILES,
     CompareTargetsRequest,
@@ -64,8 +66,10 @@ from runtime.gateway.public_api import (
     StoredExportsTargetRequest,
     acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
+    archive_resolution_evals_envelope_to_view_model,
     build_demo_local_index_public_api,
     build_demo_local_tasks_public_api,
+    build_demo_archive_resolution_evals_public_api,
     build_demo_resolution_memory_public_api,
     build_demo_resolution_runs_public_api,
     build_resolution_workspace_view_models,
@@ -89,6 +93,7 @@ from surfaces.web.workbench import (
     render_acquisition_html,
     render_action_plan_html,
     render_absence_report_html,
+    render_archive_resolution_evals_html,
     render_bundle_inspection_html,
     render_compatibility_html,
     render_comparison_html,
@@ -544,6 +549,7 @@ class WorkbenchWsgiApp:
         decomposition_public_api: DecompositionPublicApi | None = None,
         member_access_public_api: MemberAccessPublicApi | None = None,
         action_plan_public_api: ActionPlanPublicApi | None = None,
+        archive_resolution_evals_public_api: ArchiveResolutionEvalsPublicApi | None = None,
         handoff_public_api: RepresentationSelectionPublicApi | None = None,
         query_planner_public_api: QueryPlannerPublicApi | None = None,
         subject_states_public_api: SubjectStatesPublicApi | None = None,
@@ -565,6 +571,7 @@ class WorkbenchWsgiApp:
         self._decomposition_public_api = decomposition_public_api
         self._member_access_public_api = member_access_public_api
         self._action_plan_public_api = action_plan_public_api
+        self._archive_resolution_evals_public_api = archive_resolution_evals_public_api
         self._handoff_public_api = handoff_public_api
         self._query_planner_public_api = query_planner_public_api
         self._subject_states_public_api = subject_states_public_api
@@ -598,6 +605,7 @@ class WorkbenchWsgiApp:
             decomposition_public_api=self._decomposition_public_api,
             member_access_public_api=self._member_access_public_api,
             action_plan_public_api=self._action_plan_public_api,
+            archive_resolution_evals_public_api=self._archive_resolution_evals_public_api,
             handoff_public_api=self._handoff_public_api,
             query_planner_public_api=self._query_planner_public_api,
             subject_states_public_api=self._subject_states_public_api,
@@ -631,6 +639,7 @@ class WorkbenchWsgiApp:
             "/compare",
             "/compatibility",
             "/decompose",
+            "/evals/archive-resolution",
             "/fetch",
             "/member",
             "/query-plan",
@@ -673,7 +682,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/index/build', '/index/status', '/index/search', '/representations', '/tasks', '/task', '/task/run/validate-source-registry', '/task/run/build-local-index', '/task/run/query-local-index', '/task/run/validate-archive-resolution-evals', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/evals/archive-resolution', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/index/build', '/index/status', '/index/search', '/representations', '/tasks', '/task', '/task/run/validate-source-registry', '/task/run/build-local-index', '/task/run/query-local-index', '/task/run/validate-archive-resolution-evals', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', '/stored/artifact', '/memories', '/memory', and "
                         "'/memory/create'."
@@ -710,6 +719,14 @@ class WorkbenchWsgiApp:
             page = render_query_plan_page(
                 self._query_planner_public_api,
                 self._resolve_search_query(query_string),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/evals/archive-resolution":
+            page = render_archive_resolution_evals_page(
+                self._archive_resolution_evals_public_api
+                or build_demo_archive_resolution_evals_public_api(),
+                task_id=self._resolve_optional_query_value(query_string, "task_id"),
+                index_path=self._resolve_optional_query_value(query_string, "index_path"),
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/handoff":
@@ -1347,6 +1364,42 @@ def render_query_plan_page(
         )
     response = public_api.plan_query_text(normalized_query)
     return render_query_plan_html(query_plan_envelope_to_view_model(response.body))
+
+
+def render_archive_resolution_evals_page(
+    public_api: ArchiveResolutionEvalsPublicApi | None,
+    *,
+    task_id: str | None = None,
+    index_path: str | None = None,
+) -> str:
+    normalized_task_id = (task_id or "").strip()
+    normalized_index_path = (index_path or "").strip()
+    if public_api is None:
+        return render_archive_resolution_evals_html(
+            {
+                "status": "blocked",
+                "eval_suite": None,
+                "notices": [
+                    {
+                        "code": "archive_resolution_evals_unavailable",
+                        "severity": "warning",
+                        "message": "This bootstrap workbench was not configured with a public archive-resolution eval boundary.",
+                    }
+                ],
+            },
+            requested_task_id=normalized_task_id,
+            requested_index_path=normalized_index_path,
+        )
+    request = ArchiveResolutionEvalRunRequest.from_parts(
+        task_id=normalized_task_id,
+        index_path=normalized_index_path,
+    )
+    response = public_api.run_task(request) if request.task_id is not None else public_api.run_suite(request)
+    return render_archive_resolution_evals_html(
+        archive_resolution_evals_envelope_to_view_model(response.body),
+        requested_task_id=normalized_task_id,
+        requested_index_path=normalized_index_path,
+    )
 
 
 def render_local_index_page(

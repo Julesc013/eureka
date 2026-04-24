@@ -4,6 +4,7 @@ from runtime.connectors.github_releases import GitHubReleasesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.acquisition.service import DeterministicAcquisitionService
 from runtime.engine.decomposition.service import DeterministicDecompositionService
+from runtime.engine.evals import build_archive_resolution_eval_runner_from_corpus
 from runtime.engine.index import LocalIndexEngineService, LocalIndexSqliteStore
 from runtime.engine.members.service import DeterministicMemberAccessService
 from runtime.engine.memory import (
@@ -36,6 +37,9 @@ from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBu
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
 from runtime.source_registry import load_source_registry
 from runtime.gateway.public_api.action_plan_boundary import ActionPlanPublicApi
+from runtime.gateway.public_api.archive_resolution_evals_boundary import (
+    ArchiveResolutionEvalsPublicApi,
+)
 from runtime.gateway.public_api.acquisition_boundary import AcquisitionPublicApi
 from runtime.gateway.public_api.decomposition_boundary import DecompositionPublicApi
 from runtime.gateway.public_api.member_access_boundary import MemberAccessPublicApi
@@ -98,6 +102,16 @@ def build_demo_local_index_public_api() -> LocalIndexPublicApi:
         sqlite_store=LocalIndexSqliteStore(),
     )
     return LocalIndexPublicApi(index_service)
+
+
+def build_demo_archive_resolution_evals_public_api() -> ArchiveResolutionEvalsPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    source_registry = load_source_registry()
+    eval_runner = build_archive_resolution_eval_runner_from_corpus(
+        catalog,
+        source_registry,
+    )
+    return ArchiveResolutionEvalsPublicApi(eval_runner)
 
 
 def build_demo_local_tasks_public_api(task_store_root: str) -> LocalTasksPublicApi:

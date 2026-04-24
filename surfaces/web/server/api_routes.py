@@ -9,6 +9,8 @@ from runtime.gateway.public_api import (
     ActionPlanEvaluationRequest,
     ActionPlanPublicApi,
     AbsencePublicApi,
+    ArchiveResolutionEvalRunRequest,
+    ArchiveResolutionEvalsPublicApi,
     BOOTSTRAP_HOST_PROFILE_PRESETS,
     BOOTSTRAP_STRATEGY_PROFILES,
     CompareTargetsRequest,
@@ -61,6 +63,7 @@ from runtime.gateway.public_api import (
     acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
     absence_envelope_to_view_model,
+    archive_resolution_evals_envelope_to_view_model,
     build_resolution_workspace_view_models,
     bundle_inspection_envelope_to_view_model,
     comparison_envelope_to_view_model,
@@ -129,6 +132,12 @@ def build_api_index_document() -> dict[str, Any]:
                 "path": "/api/task/run/validate-archive-resolution-evals",
                 "method": "GET",
                 "query_parameters": ["task_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/evals/archive-resolution",
+                "method": "GET",
+                "query_parameters": ["task_id", "index_path"],
                 "response_content_types": ["application/json"],
             },
             {
@@ -362,6 +371,7 @@ def handle_api_request(
     decomposition_public_api: DecompositionPublicApi | None,
     member_access_public_api: MemberAccessPublicApi | None,
     action_plan_public_api: ActionPlanPublicApi | None,
+    archive_resolution_evals_public_api: ArchiveResolutionEvalsPublicApi | None,
     handoff_public_api: RepresentationSelectionPublicApi | None,
     query_planner_public_api: QueryPlannerPublicApi | None,
     subject_states_public_api: SubjectStatesPublicApi | None,
@@ -388,6 +398,26 @@ def handle_api_request(
     query = parse_qs(query_string, keep_blank_values=False)
     if path in {"/api", "/api/"}:
         return json_response(200, build_api_index_document())
+
+    if path == "/api/evals/archive-resolution":
+        if archive_resolution_evals_public_api is None:
+            return _service_unavailable(
+                "archive_resolution_evals_unavailable",
+                "This bootstrap HTTP API was not configured with a public archive-resolution eval boundary.",
+            )
+        request = ArchiveResolutionEvalRunRequest.from_parts(
+            task_id=_optional_query_value(query, "task_id"),
+            index_path=_optional_query_value(query, "index_path"),
+        )
+        response = (
+            archive_resolution_evals_public_api.run_task(request)
+            if request.task_id is not None
+            else archive_resolution_evals_public_api.run_suite(request)
+        )
+        return json_response(
+            response.status_code,
+            archive_resolution_evals_envelope_to_view_model(response.body),
+        )
 
     if path == "/api/index/build":
         if local_index_public_api is None:
