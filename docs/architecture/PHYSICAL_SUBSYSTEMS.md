@@ -63,6 +63,15 @@ Typical indexed material:
 - facets
 - constrained fields such as platform, source family, and dates
 
+Current bootstrap status:
+
+- Local Index v0 is now implemented under `runtime/engine/index/`
+- SQLite is the first local index substrate
+- FTS5 is preferred when available
+- deterministic fallback query behavior exists when FTS5 is unavailable
+- current indexed material is intentionally bounded and compact rather than a
+  final ranking or retrieval engine
+
 ## 4. Vector and Semantic Recall Index
 
 Purpose:

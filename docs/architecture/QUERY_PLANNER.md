@@ -67,6 +67,10 @@ planned-search runs. Query Planner v0 shapes that summary and derives the
 current deterministic search string, but it does not yet own retrieval lanes,
 budgets, source routing, checkpoints, or streaming phases.
 
+Local Index v0 now exists as a separate retrieval substrate, but Query Planner
+v0 does not yet route into it, choose between search modes, or own indexed
+retrieval semantics.
+
 ## Still Deferred
 
 Query Planner v0 does not yet provide:

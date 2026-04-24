@@ -9,6 +9,7 @@ Current bootstrap scope:
 - read the current in-memory job envelope by `job_id`
 - search the bounded software-first corpus through a deterministic public search boundary
 - plan one bounded raw query through a deterministic public query-planner boundary
+- build, inspect, and query one bootstrap local SQLite index through a deterministic public local-index boundary
 - start, read, and list synchronous local exact-resolution, deterministic-search, and planned-search runs through a deterministic public resolution-runs boundary
 - start one synchronous local planned-search run that persists an optional `resolution_task` summary alongside the current deterministic-search investigation record
 - explain bounded exact-resolution and deterministic search misses through a dedicated public absence boundary
@@ -39,6 +40,8 @@ Current bootstrap scope:
 - map public resolution-runs envelopes into a shared resolution-run view model without
   implementing a web or native shell
 - map public query-plan envelopes into a shared query-plan view model without
+  implementing a web or native shell
+- map public local-index envelopes into a shared local-index view model without
   implementing a web or native shell
 - map public comparison envelopes into a shared comparison view model without
   implementing a web or native shell
@@ -75,8 +78,9 @@ Out of scope here:
 
 - owning HTTP serving directly inside gateway; the current local stdlib HTTP API slice remains surface-owned under `surfaces/web/server/`
 - async workers or orchestration
-- persistence beyond the local bootstrap filesystem store and local bootstrap resolution-run JSON store
+- persistence beyond the local bootstrap filesystem store, local bootstrap resolution-run JSON store, and caller-provided bootstrap local SQLite index path
 - worker queues, background schedulers, or async orchestration for resolution runs
+- incremental indexing, ranking, fuzzy matching, vector search, semantic recall, or planner-driven retrieval routing for local index queries
 - full investigation planning, planner-owned retrieval routing, phases, checkpoints, or streaming transport for resolution runs
 - exposing raw fixture paths or private local paths through the public source-registry boundary
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice

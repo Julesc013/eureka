@@ -17,6 +17,9 @@ The repo has already proven:
 - Source Registry v0 as an explicit source inventory and public labeling plane
 - Query Planner v0 as the first deterministic raw-query compiler into structured
   `ResolutionTask` records plus planned-search run summaries
+- Local Index v0 as the first durable local search substrate over the current
+  bounded corpus, with SQLite plus FTS5 preferred and deterministic fallback
+  behavior when FTS5 is unavailable
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -28,7 +31,7 @@ The next backend sequence is:
 1. Source Registry v0 (implemented)
 2. Resolution Run Model v0 (implemented)
 3. Query Planner v0 (implemented)
-4. Local Index v0
+4. Local Index v0 (implemented)
 5. Local Worker and Task Model v0
 6. Resolution Memory v0
 7. Eval Harness Upgrade
@@ -40,7 +43,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Local Index v0
+> Local Worker and Task Model v0
 
 Why this comes next:
 
@@ -49,8 +52,9 @@ Why this comes next:
   envelope
 - Query Planner v0 now provides deterministic structured intent for current
   archive-resolution families
-- later worker and memory work now need a real local index more than another
-  surface or planning slice
+- Local Index v0 now provides the first durable local search substrate
+- later rebuild, extraction, and memory work now need a bounded execution model
+  more than another surface or planning slice
 
 ## Explicit Deferrals
 

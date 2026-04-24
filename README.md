@@ -27,10 +27,11 @@ This repository is intentionally:
 | Surfaces | HTML workbench, native CLI, local stdlib HTTP API |
 | Search | Deterministic, bounded, no ranking, no fuzzy retrieval |
 | Query planning | Deterministic, rule-based, bounded query-family compiler |
+| Local index | SQLite-backed local index with FTS5 preferred and deterministic fallback |
 | Persistence | Local bounded content-addressed export store plus local JSON resolution-run store |
 | Identity | Bootstrap deterministic `resolved_resource_id` seam |
 | Architecture enforcement | Repo-local Python import boundary checker |
-| Next implementation milestone | Local Index v0 |
+| Next implementation milestone | Local Worker and Task Model v0 |
 
 ## What Eureka Proves Today
 
@@ -50,6 +51,7 @@ The current repo proves a set of bounded executable seams across connectors, eng
 - Source Registry v0 inventory, loader, and bounded public projection
 - Resolution Run Model v0 for synchronous local exact-resolution, deterministic-search, and planned-search investigations
 - Query Planner v0 for deterministic bounded raw-query compilation into `ResolutionTask`
+- Local Index v0 for durable local SQLite search over the current bounded corpus, with FTS5 preferred and deterministic fallback when unavailable
 - bounded source-family and source-origin visibility
 - bounded provenance and evidence summaries
 - bounded absence reasoning for misses
@@ -109,6 +111,9 @@ It does **not** yet settle:
 python scripts/demo_cli_workbench.py resolve fixture:software/synthetic-demo-app@1.0.0
 python scripts/demo_cli_workbench.py search archive
 python scripts/demo_cli_workbench.py query-plan "Windows 7 apps"
+python scripts/demo_cli_workbench.py index-build --index-path .demo-index/eureka-local-index.sqlite3
+python scripts/demo_cli_workbench.py index-query archive --index-path .demo-index/eureka-local-index.sqlite3
+python scripts/demo_cli_workbench.py index-status --index-path .demo-index/eureka-local-index.sqlite3
 python scripts/demo_cli_workbench.py run-resolve fixture:software/synthetic-demo-app@1.0.0 --run-store-root .demo-runs
 python scripts/demo_cli_workbench.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs
 python scripts/demo_cli_workbench.py run-status run-exact-resolution-0001 --run-store-root .demo-runs
@@ -125,6 +130,9 @@ python scripts/demo_cli_workbench.py explain-resolve-miss fixture:software/archi
 ```bash
 python scripts/demo_http_api.py index
 python scripts/demo_http_api.py query-plan "Windows 7 apps"
+python scripts/demo_http_api.py index-build --index-path .demo-index/eureka-local-index.sqlite3
+python scripts/demo_http_api.py index-query archive --index-path .demo-index/eureka-local-index.sqlite3
+python scripts/demo_http_api.py index-status --index-path .demo-index/eureka-local-index.sqlite3
 python scripts/demo_http_api.py sources --status active_fixture
 python scripts/demo_http_api.py run-search archive --run-store-root .demo-runs
 python scripts/demo_http_api.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs
@@ -205,7 +213,7 @@ Research that remains intentionally non-normative stays under:
 
 ## Current Executable Scope
 
-Current bootstrap status includes **twenty-eight executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
+Current bootstrap status includes **twenty-nine executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
 
 Important highlights:
 
@@ -214,6 +222,7 @@ Important highlights:
 - one bounded source-registry inventory and public-boundary projection
 - one bounded synchronous resolution-run seam with local JSON persistence
 - one bounded deterministic query-planner seam for selected archive-resolution families
+- one bounded local SQLite index seam with FTS5 preferred and deterministic fallback
 - one transport-neutral gateway public boundary family reused across multiple surfaces
 - one compatibility-first HTML surface
 - one bootstrap native CLI surface
@@ -255,6 +264,7 @@ Useful paths to know:
 - `runtime/engine/resolve/` — exact resolution and deterministic search
 - `runtime/engine/resolution_runs/` — synchronous local investigation records
 - `runtime/engine/query_planner/` — deterministic bounded raw-query compilation
+- `runtime/engine/index/` — durable local SQLite search substrate
 - `runtime/engine/provenance/` — bounded evidence summaries
 - `runtime/engine/absence/` — bounded miss explanation
 - `runtime/engine/compare/` — bounded comparison and disagreement

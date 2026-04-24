@@ -14,6 +14,7 @@ This bootstrap CLI:
 - shows bounded side-by-side agreements and disagreements for exactly two compared targets while preserving evidence per side
 - shows bounded source-registry listings and source detail over the public side of the architecture, clearly distinguishing active fixture-backed sources from placeholders and future records
 - shows bounded deterministic query-plan summaries over the public side of the architecture, clearly distinguishing supported query families from generic fallbacks without implying LLM planning, vector search, fuzzy retrieval, or ranking
+- shows bounded local-index build, status, and query results over the public side of the architecture, clearly distinguishing SQLite FTS5 mode from deterministic fallback mode without implying ranking, fuzzy retrieval, vector search, live sync, or incremental indexing
 - shows bounded synchronous resolution-run listings and detail over the public side of the architecture, clearly distinguishing completed exact-resolution, deterministic-search, and planned-search investigation records from any future worker, full planner, or streaming semantics
 - shows bounded known representations and access paths for one resolved target without implying final download, install, import, or restore semantics
 - shows bounded compatibility verdicts for one resolved target against one bootstrap host profile preset without implying a final compatibility oracle, installer, or runtime-routing model
@@ -29,6 +30,9 @@ Commands currently exposed:
 - `resolve <target_ref>`
 - `search <query>`
 - `query-plan <raw_query>`
+- `index-build --index-path <path>`
+- `index-status --index-path <path>`
+- `index-query <query> --index-path <path>`
 - `run-resolve <target_ref> --run-store-root <path>`
 - `run-search <query> --run-store-root <path>`
 - `run-planned-search <raw_query> --run-store-root <path>`
@@ -62,3 +66,7 @@ async run execution, worker queues, multi-user hosting semantics, or a final
 resolution-run storage contract. Planned-search commands persist a bounded
 `resolution_task` summary, but they do not imply full investigation planning or
 planner-driven retrieval yet.
+
+`--index-path` is a bootstrap local SQLite path only. It does not imply a final
+hosted search service, multi-user index store, background indexing, ranking,
+fuzzy retrieval, vector search, or planner-owned routing behavior.
