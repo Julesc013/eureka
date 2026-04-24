@@ -27,6 +27,7 @@ from runtime.engine.interfaces.service.representation_selection_service import (
     RepresentationSelectionService,
 )
 from runtime.engine.interfaces.service.query_planner_service import QueryPlannerService
+from runtime.engine.interfaces.service.local_index_service import LocalIndexService
 from runtime.engine.interfaces.service.resolution_run_service import ResolutionRunService
 from runtime.engine.interfaces.service.resolution_service import ResolutionOutcome, ResolutionService
 from runtime.engine.interfaces.service.search_service import SearchService
@@ -50,6 +51,7 @@ __all__ = [
     "RepresentationsService",
     "RepresentationSelectionService",
     "QueryPlannerService",
+    "LocalIndexService",
     "ResolutionRunService",
     "ResolutionOutcome",
     "ResolutionService",

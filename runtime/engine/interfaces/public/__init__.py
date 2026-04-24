@@ -36,6 +36,16 @@ from runtime.engine.interfaces.public.query_plan import (
     QueryPlanRequest,
     ResolutionTask,
 )
+from runtime.engine.interfaces.public.local_index import (
+    LocalIndexBuildRequest,
+    LocalIndexBuildResult,
+    LocalIndexMetadata,
+    LocalIndexQueryRequest,
+    LocalIndexQueryResult,
+    LocalIndexRecordSummary,
+    LocalIndexStatusRequest,
+    LocalIndexStatusResult,
+)
 from runtime.engine.interfaces.public.resolution_run import (
     CheckedSourceSummary,
     DeterministicSearchRunRequest,
@@ -80,6 +90,14 @@ __all__ = [
     "CompatibilityRequest",
     "CompatibilityResult",
     "Notice",
+    "LocalIndexBuildRequest",
+    "LocalIndexBuildResult",
+    "LocalIndexMetadata",
+    "LocalIndexQueryRequest",
+    "LocalIndexQueryResult",
+    "LocalIndexRecordSummary",
+    "LocalIndexStatusRequest",
+    "LocalIndexStatusResult",
     "ObjectSummary",
     "QueryPlanRequest",
     "ResolutionTask",

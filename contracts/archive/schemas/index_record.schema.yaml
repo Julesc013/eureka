@@ -1,0 +1,87 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka.local/contracts/archive/schemas/index_record.schema.yaml"
+title: IndexRecord
+type: object
+x-eureka-status: draft
+additionalProperties: false
+required:
+  - index_record_id
+  - record_kind
+  - label
+  - created_by_slice
+properties:
+  index_record_id:
+    type: string
+    minLength: 1
+  record_kind:
+    type: string
+    enum:
+      - resolved_object
+      - state_or_release
+      - representation
+      - member
+      - evidence
+      - source_record
+  label:
+    type: string
+    minLength: 1
+  summary:
+    type:
+      - string
+      - "null"
+  target_ref:
+    type:
+      - string
+      - "null"
+  resolved_resource_id:
+    type:
+      - string
+      - "null"
+  source_id:
+    type:
+      - string
+      - "null"
+  source_family:
+    type:
+      - string
+      - "null"
+  source_label:
+    type:
+      - string
+      - "null"
+  subject_key:
+    type:
+      - string
+      - "null"
+  version_or_state:
+    type:
+      - string
+      - "null"
+  representation_id:
+    type:
+      - string
+      - "null"
+  member_path:
+    type:
+      - string
+      - "null"
+  content_text:
+    type:
+      - string
+      - "null"
+  evidence:
+    type: array
+    items:
+      type: string
+  route_hints:
+    type: object
+    additionalProperties:
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - "null"
+  created_by_slice:
+    type: string
+    minLength: 1
