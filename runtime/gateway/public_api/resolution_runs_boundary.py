@@ -6,6 +6,7 @@ from typing import Any
 from runtime.engine.interfaces.public import (
     DeterministicSearchRunRequest,
     ExactResolutionRunRequest,
+    PlannedSearchRunRequest,
     ResolutionRunRecord,
 )
 from runtime.engine.interfaces.service import ResolutionRunService
@@ -41,6 +42,16 @@ class ResolutionRunsPublicApi:
         request: DeterministicSearchRunRequest,
     ) -> PublicApiResponse:
         run = self._run_service.run_deterministic_search(request)
+        return PublicApiResponse(
+            status_code=200,
+            body=resolution_runs_to_public_envelope((run,), selected_run_id=run.run_id),
+        )
+
+    def start_planned_search_run(
+        self,
+        request: PlannedSearchRunRequest,
+    ) -> PublicApiResponse:
+        run = self._run_service.run_planned_search(request)
         return PublicApiResponse(
             status_code=200,
             body=resolution_runs_to_public_envelope((run,), selected_run_id=run.run_id),
@@ -109,6 +120,7 @@ def resolution_run_to_public_entry(run: ResolutionRunRecord) -> dict[str, Any]:
         "checked_source_ids": list(run.checked_source_ids),
         "checked_source_families": list(run.checked_source_families),
         "checked_sources": [source.to_dict() for source in run.checked_sources],
+        "resolution_task": run.resolution_task.to_dict() if run.resolution_task is not None else None,
         "result_summary": run.result_summary.to_dict() if run.result_summary is not None else None,
         "absence_report": run.absence_report.to_dict() if run.absence_report is not None else None,
         "notices": [notice.to_dict() for notice in run.notices],

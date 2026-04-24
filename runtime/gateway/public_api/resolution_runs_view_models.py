@@ -56,6 +56,12 @@ def _coerce_runs(value: Any, field_name: str) -> list[dict[str, Any]]:
                 f"{field_name}[{index}].created_by_slice",
             ),
         }
+        resolution_task = item.get("resolution_task")
+        if resolution_task is not None:
+            run["resolution_task"] = _coerce_resolution_task(
+                resolution_task,
+                f"{field_name}[{index}].resolution_task",
+            )
         result_summary = item.get("result_summary")
         if result_summary is not None:
             run["result_summary"] = _coerce_result_summary(
@@ -95,6 +101,50 @@ def _coerce_checked_sources(value: Any, field_name: str) -> list[dict[str, str]]
             }
         )
     return sources
+
+
+def _coerce_resolution_task(value: Any, field_name: str) -> dict[str, Any]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    return {
+        "raw_query": _require_string(value.get("raw_query"), f"{field_name}.raw_query"),
+        "task_kind": _require_string(value.get("task_kind"), f"{field_name}.task_kind"),
+        "object_type": _require_string(value.get("object_type"), f"{field_name}.object_type"),
+        "constraints": _coerce_json_object(value.get("constraints"), f"{field_name}.constraints"),
+        "prefer": _coerce_string_list(value.get("prefer"), f"{field_name}.prefer"),
+        "exclude": _coerce_string_list(value.get("exclude"), f"{field_name}.exclude"),
+        "action_hints": _coerce_string_list(value.get("action_hints"), f"{field_name}.action_hints"),
+        "source_hints": _coerce_string_list(value.get("source_hints"), f"{field_name}.source_hints"),
+        "planner_confidence": _require_string(
+            value.get("planner_confidence"),
+            f"{field_name}.planner_confidence",
+        ),
+        "planner_notes": _coerce_string_list(
+            value.get("planner_notes"),
+            f"{field_name}.planner_notes",
+        ),
+    }
+
+
+def _coerce_json_object(value: Any, field_name: str) -> dict[str, Any]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    return _clone_json_like(value, field_name)
+
+
+def _clone_json_like(value: Any, field_name: str) -> Any:
+    if isinstance(value, Mapping):
+        payload: dict[str, Any] = {}
+        for key, item in value.items():
+            if not isinstance(key, str) or not key:
+                raise ValueError(f"{field_name} keys must be non-empty strings.")
+            payload[key] = _clone_json_like(item, f"{field_name}.{key}")
+        return payload
+    if isinstance(value, list):
+        return [_clone_json_like(item, f"{field_name}[]") for item in value]
+    if isinstance(value, (str, int, float, bool)) or value is None:
+        return value
+    raise ValueError(f"{field_name} must contain only JSON-compatible values.")
 
 
 def _coerce_result_summary(value: Any, field_name: str) -> dict[str, Any]:

@@ -61,6 +61,10 @@ properties:
               - source_family
               - status
               - trust_lane
+        resolution_task:
+          type:
+            - object
+            - "null"
         result_summary:
           type:
             - object

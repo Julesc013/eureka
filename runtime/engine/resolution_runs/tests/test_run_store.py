@@ -9,6 +9,7 @@ from runtime.engine.interfaces.public import (
     CheckedSourceSummary,
     Notice,
     ObjectSummary,
+    ResolutionTask,
     ResolutionRunRecord,
     ResolutionRunResultItem,
     ResolutionRunResultSummary,
@@ -39,6 +40,18 @@ class LocalResolutionRunStoreTestCase(unittest.TestCase):
                         trust_lane="fixture",
                     ),
                 ),
+                resolution_task=ResolutionTask(
+                    raw_query="Windows 7 apps",
+                    task_kind="browse_software",
+                    object_type="software",
+                    constraints={"platform": {"marketing_alias": "Windows 7"}},
+                    prefer=("direct_software_artifact",),
+                    exclude=("operating_system_image",),
+                    action_hints=("inspect", "download"),
+                    source_hints=("synthetic", "github_releases"),
+                    planner_confidence="high",
+                    planner_notes=("Stored for test.",),
+                ),
                 result_summary=ResolutionRunResultSummary(
                     result_kind="exact_resolution",
                     result_count=1,
@@ -67,6 +80,7 @@ class LocalResolutionRunStoreTestCase(unittest.TestCase):
 
         self.assertEqual(run_id, "run-exact-resolution-0001")
         self.assertEqual(loaded.run_id, run.run_id)
+        self.assertEqual(loaded.resolution_task.task_kind if loaded.resolution_task else "", "browse_software")
         self.assertEqual(loaded.result_summary.result_count if loaded.result_summary else 0, 1)
         self.assertEqual(len(listed), 1)
         self.assertEqual(raw_record["record_kind"], "eureka.resolution_run")

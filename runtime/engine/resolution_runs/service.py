@@ -9,6 +9,8 @@ from runtime.engine.interfaces.public import (
     CheckedSourceSummary,
     DeterministicSearchRunRequest,
     ExactResolutionRunRequest,
+    PlannedSearchRunRequest,
+    QueryPlanRequest,
     ResolveAbsenceRequest,
     ResolutionRequest,
     ResolutionRunRecord,
@@ -19,10 +21,12 @@ from runtime.engine.interfaces.public import (
 )
 from runtime.engine.interfaces.service import (
     AbsenceService,
+    QueryPlannerService,
     ResolutionRunService,
     ResolutionService,
     SearchService,
 )
+from runtime.engine.query_planner import derive_search_query_from_task
 from runtime.engine.resolve.source_summary import normalized_record_to_source_summary
 from runtime.engine.resolution_runs.run_store import LocalResolutionRunStore
 from runtime.source_registry import SourceRecordNotFoundError, SourceRegistry
@@ -36,6 +40,7 @@ class LocalResolutionRunService(ResolutionRunService):
     search_service: SearchService
     absence_service: AbsenceService
     run_store: LocalResolutionRunStore
+    query_planner: QueryPlannerService | None = None
     created_by_slice: str = "resolution_runs_v0"
     timestamp_factory: Callable[[], datetime | str] | None = None
 
@@ -110,13 +115,42 @@ class LocalResolutionRunService(ResolutionRunService):
         self,
         request: DeterministicSearchRunRequest,
     ) -> ResolutionRunRecord:
-        run_id = self.run_store.allocate_run_id("deterministic_search")
+        return self._run_search(
+            request.query,
+            run_kind="deterministic_search",
+            requested_value=request.query,
+            resolution_task=None,
+        )
+
+    def run_planned_search(self, request: PlannedSearchRunRequest) -> ResolutionRunRecord:
+        if self.query_planner is None:
+            raise ValueError("Query Planner v0 is not configured for planned-search runs.")
+        resolution_task = self.query_planner.plan_query(
+            QueryPlanRequest.from_parts(request.raw_query),
+        )
+        search_query = derive_search_query_from_task(resolution_task)
+        return self._run_search(
+            search_query,
+            run_kind="planned_search",
+            requested_value=request.raw_query,
+            resolution_task=resolution_task,
+        )
+
+    def _run_search(
+        self,
+        search_query: str,
+        *,
+        run_kind: str,
+        requested_value: str,
+        resolution_task,
+    ) -> ResolutionRunRecord:
+        run_id = self.run_store.allocate_run_id(run_kind)
         started_at = self._timestamp()
         checked_sources = _collect_checked_sources(self.catalog, self.source_registry)
         checked_source_ids = tuple(source.source_id for source in checked_sources)
         checked_source_families = tuple(source.source_family for source in checked_sources)
         try:
-            response = self.search_service.search(SearchRequest.from_parts(request.query))
+            response = self.search_service.search(SearchRequest.from_parts(search_query))
             notices = ()
             result_summary = None
             absence_report = None
@@ -137,20 +171,21 @@ class LocalResolutionRunService(ResolutionRunService):
                 )
             else:
                 absence_report = self.absence_service.explain_search_miss(
-                    SearchAbsenceRequest.from_parts(request.query),
+                    SearchAbsenceRequest.from_parts(search_query),
                 )
                 if response.absence is not None:
                     notices = (response.absence,)
             run = ResolutionRunRecord(
                 run_id=run_id,
-                run_kind="deterministic_search",
-                requested_value=request.query,
+                run_kind=run_kind,
+                requested_value=requested_value,
                 status="completed",
                 started_at=started_at,
                 completed_at=self._timestamp(),
                 checked_source_ids=checked_source_ids,
                 checked_source_families=checked_source_families,
                 checked_sources=checked_sources,
+                resolution_task=resolution_task,
                 result_summary=result_summary,
                 absence_report=absence_report,
                 notices=notices,
@@ -159,14 +194,15 @@ class LocalResolutionRunService(ResolutionRunService):
         except Exception as error:
             run = ResolutionRunRecord(
                 run_id=run_id,
-                run_kind="deterministic_search",
-                requested_value=request.query,
+                run_kind=run_kind,
+                requested_value=requested_value,
                 status="failed",
                 started_at=started_at,
                 completed_at=self._timestamp(),
                 checked_source_ids=checked_source_ids,
                 checked_source_families=checked_source_families,
                 checked_sources=checked_sources,
+                resolution_task=resolution_task,
                 notices=(
                     _failure_notice(
                         "resolution_run_failed",

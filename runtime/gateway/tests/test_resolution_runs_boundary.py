@@ -7,6 +7,7 @@ from runtime.gateway import build_demo_resolution_runs_public_api
 from runtime.gateway.public_api import (
     DeterministicSearchRunRequest,
     ExactResolutionRunRequest,
+    PlannedSearchRunRequest,
     ResolutionRunReadRequest,
 )
 
@@ -65,6 +66,19 @@ class ResolutionRunsPublicApiTestCase(unittest.TestCase):
         self.assertIsNone(run["result_summary"])
         self.assertEqual(run["absence_report"]["request_kind"], "resolve")
         self.assertNotIn("internet-archive-placeholder", run["checked_source_ids"])
+
+    def test_planned_search_run_stores_resolution_task_summary(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            public_api = build_demo_resolution_runs_public_api(temp_dir)
+            response = public_api.start_planned_search_run(
+                PlannedSearchRunRequest.from_parts("latest Firefox before XP support ended")
+            )
+
+        self.assertEqual(response.status_code, 200)
+        run = response.body["runs"][0]
+        self.assertEqual(run["run_kind"], "planned_search")
+        self.assertEqual(run["resolution_task"]["task_kind"], "find_software_release")
+        self.assertEqual(run["resolution_task"]["constraints"]["product_hint"], "Firefox")
 
 
 if __name__ == "__main__":

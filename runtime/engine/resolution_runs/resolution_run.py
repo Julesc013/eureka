@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from runtime.engine.interfaces.public.absence import AbsenceNearMatch, AbsenceReport
+from runtime.engine.interfaces.public.query_plan import ResolutionTask
 from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary, SourceSummary
 from runtime.engine.interfaces.public.resolution_run import (
     CheckedSourceSummary,
@@ -12,6 +13,7 @@ from runtime.engine.interfaces.public.resolution_run import (
     ResolutionRunResultSummary,
 )
 from runtime.engine.provenance import EvidenceSummary
+from runtime.engine.query_planner.resolution_task import resolution_task_from_dict
 
 
 class ResolutionRunNotFoundError(LookupError):
@@ -62,6 +64,11 @@ def resolution_run_from_dict(
             "checked_sources",
             source_path,
         ),
+        resolution_task=_coerce_resolution_task(
+            raw_record.get("resolution_task"),
+            "resolution_task",
+            source_path,
+        ),
         result_summary=_coerce_result_summary(
             raw_record.get("result_summary"),
             "result_summary",
@@ -79,6 +86,18 @@ def resolution_run_from_dict(
             source_path,
         ),
     )
+
+
+def _coerce_resolution_task(
+    value: Any,
+    field_name: str,
+    source_path: Path,
+) -> ResolutionTask | None:
+    if value is None:
+        return None
+    if not isinstance(value, Mapping):
+        raise MalformedResolutionRunRecordError(source_path, f"Field '{field_name}' must be an object.")
+    return resolution_task_from_dict(value, source_path=source_path)
 
 
 def _coerce_checked_sources(

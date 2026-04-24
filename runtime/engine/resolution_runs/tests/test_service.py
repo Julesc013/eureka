@@ -18,7 +18,9 @@ from runtime.engine.interfaces.normalize import (
 from runtime.engine.interfaces.public import (
     DeterministicSearchRunRequest,
     ExactResolutionRunRequest,
+    PlannedSearchRunRequest,
 )
+from runtime.engine.query_planner import DeterministicQueryPlannerService
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
 from runtime.engine.resolution_runs import LocalResolutionRunService, LocalResolutionRunStore
 from runtime.source_registry import load_source_registry
@@ -100,6 +102,20 @@ class LocalResolutionRunServiceTestCase(unittest.TestCase):
         self.assertNotIn("wayback-memento-placeholder", run.checked_source_ids)
         self.assertNotIn("software-heritage-placeholder", run.checked_source_ids)
 
+    def test_planned_search_run_records_resolution_task(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            service = self._build_service(temp_dir)
+            run = service.run_planned_search(
+                PlannedSearchRunRequest.from_parts("latest Firefox before XP support ended"),
+            )
+
+        self.assertEqual(run.run_kind, "planned_search")
+        self.assertIsNotNone(run.resolution_task)
+        self.assertEqual(run.resolution_task.task_kind if run.resolution_task else "", "find_software_release")
+        self.assertEqual(run.resolution_task.constraints["product_hint"] if run.resolution_task else "", "Firefox")
+        self.assertIsNone(run.result_summary)
+        self.assertIsNotNone(run.absence_report)
+
     def _build_service(self, root: str) -> LocalResolutionRunService:
         return LocalResolutionRunService(
             catalog=self._catalog,
@@ -108,6 +124,7 @@ class LocalResolutionRunServiceTestCase(unittest.TestCase):
             search_service=self._search_service,
             absence_service=self._absence_service,
             run_store=LocalResolutionRunStore(root),
+            query_planner=DeterministicQueryPlannerService(),
             timestamp_factory=lambda: "2026-04-24T00:00:00+00:00",
         )
 

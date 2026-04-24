@@ -5,6 +5,7 @@ from typing import Protocol
 from runtime.engine.interfaces.public.resolution_run import (
     DeterministicSearchRunRequest,
     ExactResolutionRunRequest,
+    PlannedSearchRunRequest,
     ResolutionRunRecord,
 )
 
@@ -18,6 +19,9 @@ class ResolutionRunService(Protocol):
         request: DeterministicSearchRunRequest,
     ) -> ResolutionRunRecord:
         """Execute one bounded deterministic-search investigation and persist its record."""
+
+    def run_planned_search(self, request: PlannedSearchRunRequest) -> ResolutionRunRecord:
+        """Plan one raw query deterministically, run the current bounded search slice, and persist its record."""
 
     def get_run(self, run_id: str) -> ResolutionRunRecord:
         """Read one persisted resolution run by run_id."""

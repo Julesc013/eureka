@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from runtime.engine.interfaces.public.absence import AbsenceReport
+from runtime.engine.interfaces.public.query_plan import ResolutionTask
 from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary, SourceSummary
 from runtime.engine.provenance import EvidenceSummary
 
@@ -30,6 +31,18 @@ class DeterministicSearchRunRequest:
         if not normalized_query:
             raise ValueError("query must be a non-empty string.")
         return cls(query=normalized_query)
+
+
+@dataclass(frozen=True)
+class PlannedSearchRunRequest:
+    raw_query: str
+
+    @classmethod
+    def from_parts(cls, raw_query: str) -> "PlannedSearchRunRequest":
+        normalized_query = raw_query.strip()
+        if not normalized_query:
+            raise ValueError("raw_query must be a non-empty string.")
+        return cls(raw_query=normalized_query)
 
 
 @dataclass(frozen=True)
@@ -97,6 +110,7 @@ class ResolutionRunRecord:
     checked_source_ids: tuple[str, ...]
     checked_source_families: tuple[str, ...]
     checked_sources: tuple[CheckedSourceSummary, ...] = ()
+    resolution_task: ResolutionTask | None = None
     result_summary: ResolutionRunResultSummary | None = None
     absence_report: AbsenceReport | None = None
     notices: tuple[Notice, ...] = ()
@@ -116,6 +130,8 @@ class ResolutionRunRecord:
             "notices": [notice.to_dict() for notice in self.notices],
             "created_by_slice": self.created_by_slice,
         }
+        if self.resolution_task is not None:
+            payload["resolution_task"] = self.resolution_task.to_dict()
         if self.result_summary is not None:
             payload["result_summary"] = self.result_summary.to_dict()
         if self.absence_report is not None:
