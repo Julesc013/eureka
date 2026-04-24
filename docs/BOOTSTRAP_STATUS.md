@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus twenty-nine executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus thirty executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -52,6 +52,7 @@ architectural oracle rather than as a throwaway scaffold.
 - first bounded Resolution Run Model v0 seam under `runtime/engine/resolution_runs/` that records synchronous exact-resolution, deterministic-search, and planned-search investigations as local JSON run records with checked source ids and families, current result summaries or bounded absence reports, and bounded public projection through current web, CLI, plus local HTTP API surfaces without implying worker queues, streaming phases, or async orchestration
 - first bounded Query Planner v0 seam under `runtime/engine/query_planner/` that deterministically classifies a bounded set of archive-resolution eval query families into structured `ResolutionTask` records with compact platform, product, hardware, date, prefer/exclude, action-hint, and source-hint summaries, and projects those plans through current web, CLI, plus local HTTP API surfaces without implying LLM planning, vector search, fuzzy retrieval, ranking, or full investigation planning
 - first bounded Local Index v0 seam under `runtime/engine/index/` that builds a caller-provided local SQLite index over the current bounded corpus, prefers FTS5 when available and falls back to deterministic non-FTS query behavior otherwise, preserves compact source ids, source families, representation and member text, evidence summaries, source-registry records, and bootstrap `resolved_resource_id` values where available, and projects build, status, plus query results through current web, CLI, plus local HTTP API surfaces without implying ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics
+- first bounded Local Worker and Task Model v0 seam under `runtime/engine/workers/` that records synchronous local validation and indexing tasks as JSON task records under a caller-provided bootstrap `task_store_root`, wraps existing Source Registry v0, Local Index v0, and archive-resolution eval validation behavior through a transport-neutral public boundary reused by current web, CLI, plus local HTTP API surfaces, and does not imply background scheduling, retries, priorities, async orchestration, or distributed queue semantics
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -91,21 +92,21 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Local Worker and Task Model v0
+> Resolution Memory v0
 
-Source Registry v0, Resolution Run Model v0, Query Planner v0, and Local Index
-v0 are now implemented as the first inventory-backed source-control plane, the
-first synchronous durable investigation envelope, the first deterministic
-raw-query compiler, and the first durable local search substrate. The backend
-program should continue moving from bounded seam proof toward operational
-backend infrastructure in this order:
+Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
+and Local Worker and Task Model v0 are now implemented as the first
+inventory-backed source-control plane, the first synchronous durable
+investigation envelope, the first deterministic raw-query compiler, the first
+durable local search substrate, and the first synchronous local execution
+substrate. The backend program should continue moving from bounded seam proof
+toward operational backend infrastructure in this order:
 
-1. Local Worker and Task Model v0
-2. Resolution Memory v0
-3. Eval Harness Upgrade
-4. Public Hosted Alpha Preparation
-5. Rust Migration Skeleton and Parity Plan
-6. Native App Work Later
+1. Resolution Memory v0
+2. Eval Harness Upgrade
+3. Public Hosted Alpha Preparation
+4. Rust Migration Skeleton and Parity Plan
+5. Native App Work Later
 
 ## Deferred Priorities
 

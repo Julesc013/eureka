@@ -61,6 +61,10 @@ Current v0 behavior is intentionally narrow:
 - planned-search runs may persist one bounded `resolution_task` summary from
   Query Planner v0
 - runs surface one current result summary or one absence report
+- Local Worker and Task Model v0 now exists separately for synchronous local
+  prerequisite work such as source-registry validation, local-index build/query,
+  and archive-resolution eval validation, but it does not make resolution runs
+  themselves asynchronous or streaming yet
 
 Still deferred here:
 

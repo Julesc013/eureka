@@ -263,3 +263,9 @@
 - Status: accepted
 - Decision: Eureka now builds, inspects, and queries a caller-provided local SQLite index under `runtime/engine/index/`, preferring FTS5 when available and falling back to deterministic non-FTS query behavior otherwise, while indexing bounded records derived from the current synthetic and recorded GitHub Releases corpus plus Source Registry v0 records and projecting that capability through dedicated gateway public boundaries reused by current web, CLI, and local HTTP API surfaces.
 - Why: Source Registry v0, Resolution Run Model v0, and Query Planner v0 established explicit source inventory, durable synchronous investigation records, and deterministic structured intent, and the next operational backend requirement is a durable local search substrate before worker models, resolution memory, public alpha work, or Rust parity planning continue.
+
+## ADR-045: Add Local Worker and Task Model v0 as the First Synchronous Execution Substrate
+
+- Status: accepted
+- Decision: Eureka now creates, executes, persists, lists, and reads synchronous local task records under `runtime/engine/workers/`, using a caller-provided bootstrap `task_store_root`, wrapping existing Source Registry v0 validation, Local Index v0 build/query behavior, and archive-resolution eval validation through a dedicated gateway public boundary reused by current web, CLI, and local HTTP API surfaces.
+- Why: Source Registry v0, Resolution Run Model v0, Query Planner v0, and Local Index v0 now exist as bounded backend infrastructure, and the next operational requirement is a deterministic local execution substrate before resolution memory, broader worker orchestration, or hosted-alpha safety work continue.

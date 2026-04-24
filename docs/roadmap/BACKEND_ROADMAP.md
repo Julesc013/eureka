@@ -20,6 +20,9 @@ The repo has already proven:
 - Local Index v0 as the first durable local search substrate over the current
   bounded corpus, with SQLite plus FTS5 preferred and deterministic fallback
   behavior when FTS5 is unavailable
+- Local Worker and Task Model v0 as the first synchronous local execution
+  substrate for source-registry validation, local-index build/query, and
+  archive-resolution eval validation
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -32,7 +35,7 @@ The next backend sequence is:
 2. Resolution Run Model v0 (implemented)
 3. Query Planner v0 (implemented)
 4. Local Index v0 (implemented)
-5. Local Worker and Task Model v0
+5. Local Worker and Task Model v0 (implemented)
 6. Resolution Memory v0
 7. Eval Harness Upgrade
 8. Public Hosted Alpha Preparation
@@ -43,7 +46,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Local Worker and Task Model v0
+> Resolution Memory v0
 
 Why this comes next:
 
@@ -53,8 +56,10 @@ Why this comes next:
 - Query Planner v0 now provides deterministic structured intent for current
   archive-resolution families
 - Local Index v0 now provides the first durable local search substrate
-- later rebuild, extraction, and memory work now need a bounded execution model
-  more than another surface or planning slice
+- Local Worker and Task Model v0 now provides the first bounded synchronous
+  execution substrate for repeatable backend jobs
+- later memory, invalidation, and deeper orchestration work now need durable
+  solved-work reuse more than another surface or planning slice
 
 ## Explicit Deferrals
 

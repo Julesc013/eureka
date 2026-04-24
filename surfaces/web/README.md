@@ -16,6 +16,7 @@ Current bootstrap slice:
 - renders compatibility-first source-registry listing at `/sources` and bounded source detail at `/source?id=...` from a shared source-registry view model rather than reading control inventory directly
 - renders compatibility-first deterministic query planning at `/query-plan?q=...` from a shared query-plan view model rather than engine-owned planner state
 - renders compatibility-first local-index build, status, and search pages at `/index/build?index_path=...`, `/index/status?index_path=...`, and `/index/search?q=...&index_path=...` from a shared local-index view model rather than engine-owned SQLite state
+- renders compatibility-first synchronous local-task listing at `/tasks?task_store_root=...`, bounded task detail at `/task?id=...&task_store_root=...`, and bounded task-run pages at `/task/run/validate-source-registry?...`, `/task/run/build-local-index?...`, `/task/run/query-local-index?...`, plus `/task/run/validate-archive-resolution-evals?...` without implying background scheduling, retries, or distributed queue behavior
 - renders compatibility-first synchronous resolution-run listing at `/runs?run_store_root=...`, bounded run detail at `/run?id=...&run_store_root=...`, and bounded run-start pages at `/run/resolve?...&run_store_root=...`, `/run/search?...&run_store_root=...`, plus `/run/planned-search?...&run_store_root=...` without implying worker queues, streaming updates, or full investigation planning
 - renders bounded compatibility evaluation at `/compatibility?target_ref=...&host=...` from a shared compatibility view model rather than engine-owned requirement logic
 - renders bounded representation-selection and handoff guidance in the exact-resolution page and at `/handoff?target_ref=...&host=...&strategy=...` from a shared handoff view model rather than engine-owned routing logic
@@ -41,6 +42,7 @@ Current bootstrap slice:
 - exposes `/api/sources?...` and `/api/source?id=...` for machine-readable bounded source-registry listing and source detail over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/query-plan?q=...` for machine-readable deterministic query planning over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/index/build?index_path=...`, `/api/index/status?index_path=...`, and `/api/index/query?index_path=...&q=...` for machine-readable bootstrap local indexing over the same transport-neutral public boundary already reused by the HTML workbench and CLI
+- exposes `/api/tasks?task_store_root=...`, `/api/task?id=...&task_store_root=...`, `/api/task/run/validate-source-registry?task_store_root=...`, `/api/task/run/build-local-index?task_store_root=...&index_path=...`, `/api/task/run/query-local-index?task_store_root=...&index_path=...&q=...`, and `/api/task/run/validate-archive-resolution-evals?task_store_root=...` for machine-readable synchronous bootstrap local tasks over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/runs?run_store_root=...`, `/api/run?id=...&run_store_root=...`, `/api/run/resolve?target_ref=...&run_store_root=...`, `/api/run/search?q=...&run_store_root=...`, and `/api/run/planned-search?q=...&run_store_root=...` for machine-readable bounded synchronous resolution runs over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/compatibility?target_ref=...&host=...` for machine-readable bounded compatibility evaluation over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/handoff?target_ref=...&host=...&strategy=...` for machine-readable bounded representation-selection and handoff evaluation over the same transport-neutral public boundary already reused by the HTML workbench and CLI
@@ -52,11 +54,13 @@ Current bootstrap slice:
 - does not settle final HTTP API route naming, auth, HTTPS/TLS, deployment, or multi-user semantics
 - local store root configuration is a bootstrap-only demo choice, not a final deployment or multi-user storage contract
 - run_store_root configuration is a bootstrap-only demo choice for synchronous persisted resolution runs, not a final deployment, worker, or multi-user storage contract
+- task_store_root configuration is a bootstrap-only demo choice for synchronous persisted local tasks, not a final deployment, worker, scheduler, or multi-user storage contract
 - index_path configuration is a bootstrap-only demo choice for local SQLite indexing, not a final hosted search, multi-user storage, or deployment contract
 - local path-based bundle inspection is a bootstrap-only demo choice, not a production upload or import contract
 - source-registry pages are inventory and labeling only; placeholder and future sources must remain visibly unimplemented and local private paths must not be exposed
 - query-plan pages are deterministic interpretation aids only; they must not imply LLM reasoning, full investigation planning, or planner-owned retrieval routing yet
 - local-index pages are deterministic local retrieval aids only; they must not imply ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics
+- local-task pages are synchronous local execution aids only; they must not imply async orchestration, background scheduling, retries, priorities, or distributed queue semantics
 - resolution-run pages are investigation records only; they must not imply async progression, streaming partial results, worker orchestration, or full planner-owned reasoning yet
 - does not settle final download, acquisition, installer, restore, durable cache, persistence, representation-selection, handoff, decomposition, member-readback, or extraction behavior
 - does not settle final compatibility, host-profile, installer, or runtime-routing behavior

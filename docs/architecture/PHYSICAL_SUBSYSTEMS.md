@@ -97,6 +97,17 @@ Required qualities:
 - priority-aware
 - dependency-tracked
 
+Current bootstrap status:
+
+- Local Worker and Task Model v0 is now implemented under
+  `runtime/engine/workers/`
+- task execution is synchronous and local only
+- task persistence is JSON under a caller-provided bootstrap `task_store_root`
+- current v0 task kinds wrap Source Registry v0 validation, Local Index v0
+  build/query, and archive-resolution eval validation
+- this is not a distributed queue, background scheduler, retry system, or
+  production worker plane yet
+
 ## Staged Implementation Direction
 
 The next backend phase should not attempt all five subsystems at production
@@ -106,7 +117,7 @@ Near-term staging should look more like:
 
 1. local filesystem CAS and bounded local store behavior
 2. local relational and lexical index, likely SQLite plus FTS first
-3. local worker and task model
+3. local worker and task model (implemented)
 4. durable run and memory models
 5. only later optional vector recall, broader worker orchestration, and shared
    evidence services

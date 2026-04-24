@@ -15,6 +15,7 @@ This bootstrap CLI:
 - shows bounded source-registry listings and source detail over the public side of the architecture, clearly distinguishing active fixture-backed sources from placeholders and future records
 - shows bounded deterministic query-plan summaries over the public side of the architecture, clearly distinguishing supported query families from generic fallbacks without implying LLM planning, vector search, fuzzy retrieval, or ranking
 - shows bounded local-index build, status, and query results over the public side of the architecture, clearly distinguishing SQLite FTS5 mode from deterministic fallback mode without implying ranking, fuzzy retrieval, vector search, live sync, or incremental indexing
+- shows bounded synchronous local-task creation, listing, and inspection over the public side of the architecture, clearly distinguishing completed, blocked, and failed bootstrap local task records without implying background scheduling, retries, priorities, or distributed queue behavior
 - shows bounded synchronous resolution-run listings and detail over the public side of the architecture, clearly distinguishing completed exact-resolution, deterministic-search, and planned-search investigation records from any future worker, full planner, or streaming semantics
 - shows bounded known representations and access paths for one resolved target without implying final download, install, import, or restore semantics
 - shows bounded compatibility verdicts for one resolved target against one bootstrap host profile preset without implying a final compatibility oracle, installer, or runtime-routing model
@@ -33,6 +34,9 @@ Commands currently exposed:
 - `index-build --index-path <path>`
 - `index-status --index-path <path>`
 - `index-query <query> --index-path <path>`
+- `task-run <task_kind> --task-store-root <path> [--index-path <path>] [--query <query>]`
+- `task-status <task_id> --task-store-root <path>`
+- `tasks --task-store-root <path>`
 - `run-resolve <target_ref> --run-store-root <path>`
 - `run-search <query> --run-store-root <path>`
 - `run-planned-search <raw_query> --run-store-root <path>`
@@ -70,3 +74,7 @@ planner-driven retrieval yet.
 `--index-path` is a bootstrap local SQLite path only. It does not imply a final
 hosted search service, multi-user index store, background indexing, ranking,
 fuzzy retrieval, vector search, or planner-owned routing behavior.
+
+`--task-store-root` is a bootstrap local persistence input only. It does not
+imply background scheduling, retries, priorities, worker daemons, distributed
+queues, or a final task-storage contract.

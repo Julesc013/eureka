@@ -10,6 +10,7 @@ Current bootstrap scope:
 - search the bounded software-first corpus through a deterministic public search boundary
 - plan one bounded raw query through a deterministic public query-planner boundary
 - build, inspect, and query one bootstrap local SQLite index through a deterministic public local-index boundary
+- create, read, and list synchronous bootstrap local tasks through a deterministic public local-tasks boundary
 - start, read, and list synchronous local exact-resolution, deterministic-search, and planned-search runs through a deterministic public resolution-runs boundary
 - start one synchronous local planned-search run that persists an optional `resolution_task` summary alongside the current deterministic-search investigation record
 - explain bounded exact-resolution and deterministic search misses through a dedicated public absence boundary
@@ -42,6 +43,8 @@ Current bootstrap scope:
 - map public query-plan envelopes into a shared query-plan view model without
   implementing a web or native shell
 - map public local-index envelopes into a shared local-index view model without
+  implementing a web or native shell
+- map public local-task envelopes into a shared local-task view model without
   implementing a web or native shell
 - map public comparison envelopes into a shared comparison view model without
   implementing a web or native shell
@@ -78,8 +81,9 @@ Out of scope here:
 
 - owning HTTP serving directly inside gateway; the current local stdlib HTTP API slice remains surface-owned under `surfaces/web/server/`
 - async workers or orchestration
-- persistence beyond the local bootstrap filesystem store, local bootstrap resolution-run JSON store, and caller-provided bootstrap local SQLite index path
+- persistence beyond the local bootstrap filesystem store, local bootstrap resolution-run JSON store, local bootstrap task-store JSON records, and caller-provided bootstrap local SQLite index path
 - worker queues, background schedulers, or async orchestration for resolution runs
+- worker queues, background schedulers, retries, priorities, or distributed queue behavior for local tasks
 - incremental indexing, ranking, fuzzy matching, vector search, semantic recall, or planner-driven retrieval routing for local index queries
 - full investigation planning, planner-owned retrieval routing, phases, checkpoints, or streaming transport for resolution runs
 - exposing raw fixture paths or private local paths through the public source-registry boundary

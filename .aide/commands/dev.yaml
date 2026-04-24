@@ -32,6 +32,8 @@ steps:
     run: python scripts/demo_web_workbench.py --render-once --query-plan "Windows 7 apps"
   - id: web_local_index_render
     run: python -c "from pathlib import Path; import tempfile; from runtime.gateway import build_demo_local_index_public_api; from surfaces.web.server.workbench_server import render_local_index_page; td = tempfile.TemporaryDirectory(); index_path = Path(td.name) / 'eureka-local-index.sqlite3'; print(render_local_index_page(build_demo_local_index_public_api(), index_path=str(index_path), build=True)); td.cleanup()"
+  - id: web_local_tasks_render
+    run: python -c "import tempfile; from surfaces.web.server.workbench_server import render_validate_source_registry_task_page; td = tempfile.TemporaryDirectory(); print(render_validate_source_registry_task_page(td.name)); td.cleanup()"
   - id: web_resolution_run_render
     run: python -c "import tempfile; from surfaces.web.server.workbench_server import render_deterministic_search_run_page; td = tempfile.TemporaryDirectory(); print(render_deterministic_search_run_page(td.name, 'archive')); td.cleanup()"
   - id: web_manifest_known
@@ -74,6 +76,12 @@ steps:
     run: python scripts/demo_cli_workbench.py index-status --index-path .demo-index/eureka-local-index.sqlite3 --json
   - id: native_cli_index_query
     run: python scripts/demo_cli_workbench.py index-query archive --index-path .demo-index/eureka-local-index.sqlite3 --json
+  - id: native_cli_task_run_validate_sources
+    run: python scripts/demo_cli_workbench.py task-run validate-source-registry --task-store-root .demo-tasks --json
+  - id: native_cli_task_run_build_index
+    run: python scripts/demo_cli_workbench.py task-run build-local-index --task-store-root .demo-tasks --index-path .demo-index/eureka-local-index.sqlite3 --json
+  - id: native_cli_task_run_query_index
+    run: python scripts/demo_cli_workbench.py task-run query-local-index --task-store-root .demo-tasks --index-path .demo-index/eureka-local-index.sqlite3 --query archive --json
   - id: native_cli_run_planned_search
     run: python scripts/demo_cli_workbench.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs --json
   - id: native_cli_run_resolve_known
@@ -154,6 +162,12 @@ steps:
     run: python scripts/demo_http_api.py index-build --index-path .demo-index/eureka-local-index.sqlite3
   - id: http_api_index_query
     run: python scripts/demo_http_api.py index-query archive --index-path .demo-index/eureka-local-index.sqlite3
+  - id: http_api_task_run_validate_sources
+    run: python scripts/demo_http_api.py task-run-validate-source-registry --task-store-root .demo-tasks
+  - id: http_api_task_run_build_index
+    run: python scripts/demo_http_api.py task-run-build-local-index --task-store-root .demo-tasks --index-path .demo-index/eureka-local-index.sqlite3
+  - id: http_api_task_run_query_index
+    run: python scripts/demo_http_api.py task-run-query-local-index --task-store-root .demo-tasks --index-path .demo-index/eureka-local-index.sqlite3 --query archive
   - id: http_api_run_planned_search
     run: python scripts/demo_http_api.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs
   - id: http_api_run_search_known
@@ -231,4 +245,5 @@ notes:
   - The bounded resolution-run proof remains bootstrap-scale, is synchronous local JSON persistence only, and does not imply worker queues, streaming phases, full investigation planning, or durable hosted run storage.
   - The bounded query-planner proof remains bootstrap-scale, is deterministic and rule-based only, and does not imply LLM planning, vector search, fuzzy retrieval, ranking, or planner-driven retrieval routing.
   - The bounded local-index proof remains bootstrap-scale, uses a caller-provided local SQLite path only, prefers FTS5 when available, falls back deterministically when unavailable, and does not imply ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics.
+  - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.
