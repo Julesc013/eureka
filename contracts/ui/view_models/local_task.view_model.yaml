@@ -1,0 +1,97 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka.local/contracts/ui/view_models/local_task.view_model.yaml"
+title: LocalTaskViewModel
+type: object
+x-eureka-status: draft
+additionalProperties: false
+required:
+  - status
+  - task_count
+  - tasks
+properties:
+  status:
+    type: string
+    enum:
+      - listed
+      - completed
+      - failed
+      - blocked
+      - running
+      - pending
+  task_count:
+    type: integer
+    minimum: 0
+  selected_task_id:
+    type: string
+  requested_task_kind:
+    type: string
+  tasks:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      required:
+        - task_id
+        - task_kind
+        - status
+        - requested_inputs
+        - created_at
+        - notices
+        - created_by_slice
+      properties:
+        task_id:
+          type: string
+        task_kind:
+          type: string
+        status:
+          type: string
+        requested_inputs:
+          type: object
+        created_at:
+          type: string
+        started_at:
+          type: string
+        completed_at:
+          type: string
+        result_summary:
+          type: object
+        error_summary:
+          type: object
+        output_references:
+          type: object
+        notices:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required:
+              - code
+              - severity
+            properties:
+              code:
+                type: string
+              severity:
+                type: string
+              message:
+                type:
+                  - string
+                  - "null"
+        created_by_slice:
+          type: string
+  notices:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      required:
+        - code
+        - severity
+      properties:
+        code:
+          type: string
+        severity:
+          type: string
+        message:
+          type:
+            - string
+            - "null"

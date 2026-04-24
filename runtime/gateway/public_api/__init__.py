@@ -6,6 +6,8 @@ from runtime.engine.interfaces.public import (
     LocalIndexBuildRequest,
     LocalIndexQueryRequest,
     LocalIndexStatusRequest,
+    LocalTaskReadRequest,
+    LocalTaskRunRequest,
     PlannedSearchRunRequest,
     QueryPlanRequest,
 )
@@ -136,6 +138,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_compatibility_public_api,
     build_demo_decomposition_public_api,
     build_demo_local_index_public_api,
+    build_demo_local_tasks_public_api,
     build_demo_member_access_public_api,
     build_demo_query_planner_public_api,
     build_demo_representation_selection_public_api,
@@ -188,6 +191,13 @@ from runtime.gateway.public_api.local_index_boundary import (
     local_index_query_to_public_envelope,
     local_index_status_to_public_envelope,
 )
+from runtime.gateway.public_api.local_tasks_boundary import (
+    LocalTasksPublicApi,
+    local_task_bad_request_envelope,
+    local_task_not_found_envelope,
+    local_task_to_public_entry,
+    local_tasks_to_public_envelope,
+)
 from runtime.gateway.public_api.source_registry_boundary import (
     SourceCatalogRequest,
     SourceReadRequest,
@@ -223,6 +233,9 @@ from runtime.gateway.public_api.query_planner_view_models import (
 from runtime.gateway.public_api.local_index_view_models import (
     local_index_envelope_to_view_model,
 )
+from runtime.gateway.public_api.local_tasks_view_models import (
+    local_tasks_envelope_to_view_model,
+)
 from runtime.gateway.public_api.workbench_sessions import resolution_job_envelope_to_workbench_session
 
 __all__ = [
@@ -239,6 +252,9 @@ __all__ = [
     "LocalIndexPublicApi",
     "LocalIndexQueryRequest",
     "LocalIndexStatusRequest",
+    "LocalTaskReadRequest",
+    "LocalTaskRunRequest",
+    "LocalTasksPublicApi",
     "PlannedSearchRunRequest",
     "QueryPlanRequest",
     "DecompositionPublicApi",
@@ -316,6 +332,7 @@ __all__ = [
     "build_demo_compatibility_public_api",
     "build_demo_decomposition_public_api",
     "build_demo_local_index_public_api",
+    "build_demo_local_tasks_public_api",
     "build_demo_member_access_public_api",
     "build_demo_query_planner_public_api",
     "build_demo_representation_selection_public_api",
@@ -347,6 +364,11 @@ __all__ = [
     "local_index_error_envelope",
     "local_index_query_to_public_envelope",
     "local_index_status_to_public_envelope",
+    "local_task_bad_request_envelope",
+    "local_task_not_found_envelope",
+    "local_task_to_public_entry",
+    "local_tasks_envelope_to_view_model",
+    "local_tasks_to_public_envelope",
     "resolution_actions_to_public_envelope",
     "resolution_bundle_not_available_error",
     "resolution_job_not_found_error",

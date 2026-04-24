@@ -1,0 +1,35 @@
+name: LocalTask
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that create,
+  inspect, and list synchronous bootstrap local tasks through the gateway
+  public local-task boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/tasks
+    - GET /v0/task?id={task_id}
+    - GET /v0/task/run/{task_kind}
+  shared_view_models:
+    - contracts/ui/view_models/local_task.view_model.yaml
+  shared_result_shapes:
+    - LocalTasksEnvelope
+surface_expectations:
+  - surfaces create and inspect synchronous local tasks through the public gateway boundary rather than reading task-store JSON directly
+  - surfaces describe task_store_root as a bootstrap local parameter only
+  - surfaces do not imply background execution, async orchestration, retries, or distributed queue behavior
+  - surfaces show blocked and failed tasks honestly
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - background scheduling
+  - distributed queues
+  - retries, priorities, and cancellation
+  - resolution-memory integration

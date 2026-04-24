@@ -23,6 +23,7 @@ from runtime.engine.interfaces.normalize import (
 )
 from runtime.engine.query_planner import DeterministicQueryPlannerService
 from runtime.engine.resolution_runs import LocalResolutionRunService, LocalResolutionRunStore
+from runtime.engine.workers import LocalTaskRunnerService, LocalTaskStore
 from runtime.engine.representations.service import DeterministicRepresentationsService
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
 from runtime.engine.states import DeterministicSubjectStatesService
@@ -42,6 +43,7 @@ from runtime.gateway.public_api.resolution_bundle_inspection import ResolutionBu
 from runtime.gateway.public_api.resolution_jobs import InMemoryResolutionJobService
 from runtime.gateway.public_api.query_planner_boundary import QueryPlannerPublicApi
 from runtime.gateway.public_api.local_index_boundary import LocalIndexPublicApi
+from runtime.gateway.public_api.local_tasks_boundary import LocalTasksPublicApi
 from runtime.gateway.public_api.resolution_runs_boundary import ResolutionRunsPublicApi
 from runtime.gateway.public_api.representations_boundary import RepresentationsPublicApi
 from runtime.gateway.public_api.representation_selection_boundary import (
@@ -90,6 +92,22 @@ def build_demo_local_index_public_api() -> LocalIndexPublicApi:
         sqlite_store=LocalIndexSqliteStore(),
     )
     return LocalIndexPublicApi(index_service)
+
+
+def build_demo_local_tasks_public_api(task_store_root: str) -> LocalTasksPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    source_registry = load_source_registry()
+    index_service = LocalIndexEngineService(
+        catalog=catalog,
+        source_registry=source_registry,
+        sqlite_store=LocalIndexSqliteStore(),
+    )
+    task_service = LocalTaskRunnerService(
+        task_store=LocalTaskStore(task_store_root),
+        source_registry=source_registry,
+        local_index_service=index_service,
+    )
+    return LocalTasksPublicApi(task_service)
 
 
 def build_demo_source_registry_public_api() -> SourceRegistryPublicApi:
