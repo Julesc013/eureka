@@ -28,10 +28,10 @@ This repository is intentionally:
 | Search | Deterministic, bounded, no ranking, no fuzzy retrieval |
 | Query planning | Deterministic, rule-based, bounded query-family compiler |
 | Local index | SQLite-backed local index with FTS5 preferred and deterministic fallback |
-| Persistence | Local bounded content-addressed export store plus local JSON resolution-run store |
+| Persistence | Local bounded content-addressed export store plus local JSON resolution-run, task, and memory stores |
 | Identity | Bootstrap deterministic `resolved_resource_id` seam |
 | Architecture enforcement | Repo-local Python import boundary checker |
-| Next implementation milestone | Local Worker and Task Model v0 |
+| Next implementation milestone | Eval Harness Upgrade |
 
 ## What Eureka Proves Today
 
@@ -52,6 +52,8 @@ The current repo proves a set of bounded executable seams across connectors, eng
 - Resolution Run Model v0 for synchronous local exact-resolution, deterministic-search, and planned-search investigations
 - Query Planner v0 for deterministic bounded raw-query compilation into `ResolutionTask`
 - Local Index v0 for durable local SQLite search over the current bounded corpus, with FTS5 preferred and deterministic fallback when unavailable
+- Local Worker and Task Model v0 for synchronous local validation and indexing jobs
+- Resolution Memory v0 for explicit local reusable memory records derived from persisted runs
 - bounded source-family and source-origin visibility
 - bounded provenance and evidence summaries
 - bounded absence reasoning for misses
@@ -94,7 +96,7 @@ It does **not** yet settle:
 - production Rust backend migration
 - native app shells or serious Visual Studio/Xcode work
 - final CLI, TUI, or GUI direction
-- personalization, saved user profiles, or durable recommendation memory
+- personalization, saved user profiles, cloud/shared memory, or automatic memory invalidation
 
 ## Quick Start
 
@@ -117,6 +119,9 @@ python scripts/demo_cli_workbench.py index-status --index-path .demo-index/eurek
 python scripts/demo_cli_workbench.py run-resolve fixture:software/synthetic-demo-app@1.0.0 --run-store-root .demo-runs
 python scripts/demo_cli_workbench.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs
 python scripts/demo_cli_workbench.py run-status run-exact-resolution-0001 --run-store-root .demo-runs
+python scripts/demo_cli_workbench.py memory-create --run-store-root .demo-runs --memory-store-root .demo-memory --run-id run-planned-search-0001
+python scripts/demo_cli_workbench.py memories --memory-store-root .demo-memory
+python scripts/demo_cli_workbench.py memory memory-absence-finding-0001 --memory-store-root .demo-memory
 python scripts/demo_cli_workbench.py sources
 python scripts/demo_cli_workbench.py source github-releases-recorded-fixtures
 python scripts/demo_cli_workbench.py states archivebox
@@ -137,6 +142,9 @@ python scripts/demo_http_api.py sources --status active_fixture
 python scripts/demo_http_api.py run-search archive --run-store-root .demo-runs
 python scripts/demo_http_api.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs
 python scripts/demo_http_api.py run run-deterministic-search-0001 --run-store-root .demo-runs
+python scripts/demo_http_api.py memory-create --run-store-root .demo-runs --memory-store-root .demo-memory --run-id run-planned-search-0001
+python scripts/demo_http_api.py memories --memory-store-root .demo-memory
+python scripts/demo_http_api.py memory memory-absence-finding-0001 --memory-store-root .demo-memory
 python scripts/demo_http_api.py source github-releases-recorded-fixtures
 python scripts/demo_http_api.py resolve github-release:cli/cli@v2.65.0
 python scripts/demo_http_api.py action-plan github-release:cli/cli@v2.65.0 --strategy preserve
@@ -149,7 +157,7 @@ python scripts/demo_http_api.py states archivebox
 python scripts/demo_web_workbench.py
 ```
 
-Then open the local URLs printed by the script, including the exact-resolution workbench, query-plan page, source-registry page, search page, resolution-run pages when `--run-store-root` is supplied, action-plan page, and local HTTP API index.
+Then open the local URLs printed by the script, including the exact-resolution workbench, query-plan page, source-registry page, search page, resolution-run pages when `--run-store-root` is supplied, resolution-memory pages when `--memory-store-root` is supplied, action-plan page, and local HTTP API index.
 
 #### Architecture Guardrail
 
@@ -213,7 +221,7 @@ Research that remains intentionally non-normative stays under:
 
 ## Current Executable Scope
 
-Current bootstrap status includes **twenty-nine executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
+Current bootstrap status includes **thirty-one executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
 
 Important highlights:
 
@@ -221,6 +229,7 @@ Important highlights:
 - one bounded real-source connector family using recorded GitHub Releases fixtures
 - one bounded source-registry inventory and public-boundary projection
 - one bounded synchronous resolution-run seam with local JSON persistence
+- one bounded explicit local resolution-memory seam with local JSON persistence
 - one bounded deterministic query-planner seam for selected archive-resolution families
 - one bounded local SQLite index seam with FTS5 preferred and deterministic fallback
 - one transport-neutral gateway public boundary family reused across multiple surfaces

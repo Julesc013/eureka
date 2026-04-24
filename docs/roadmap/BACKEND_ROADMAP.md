@@ -23,6 +23,8 @@ The repo has already proven:
 - Local Worker and Task Model v0 as the first synchronous local execution
   substrate for source-registry validation, local-index build/query, and
   archive-resolution eval validation
+- Resolution Memory v0 as the first explicit local reusable investigation
+  memory layer derived from persisted completed runs
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -36,7 +38,7 @@ The next backend sequence is:
 3. Query Planner v0 (implemented)
 4. Local Index v0 (implemented)
 5. Local Worker and Task Model v0 (implemented)
-6. Resolution Memory v0
+6. Resolution Memory v0 (implemented)
 7. Eval Harness Upgrade
 8. Public Hosted Alpha Preparation
 9. Rust Migration Skeleton and Parity Plan
@@ -46,7 +48,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Resolution Memory v0
+> Eval Harness Upgrade
 
 Why this comes next:
 
@@ -58,8 +60,9 @@ Why this comes next:
 - Local Index v0 now provides the first durable local search substrate
 - Local Worker and Task Model v0 now provides the first bounded synchronous
   execution substrate for repeatable backend jobs
-- later memory, invalidation, and deeper orchestration work now need durable
-  solved-work reuse more than another surface or planning slice
+- Resolution Memory v0 now provides the first bounded reusable solved-work layer
+- the next backend bottleneck is stronger eval and regression coverage across
+  the now-implemented source, run, planner, index, task, and memory seams
 
 ## Explicit Deferrals
 

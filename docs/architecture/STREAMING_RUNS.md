@@ -65,6 +65,9 @@ Current v0 behavior is intentionally narrow:
   prerequisite work such as source-registry validation, local-index build/query,
   and archive-resolution eval validation, but it does not make resolution runs
   themselves asynchronous or streaming yet
+- Resolution Memory v0 now exists separately for explicit local reusable
+  solved-work capture from completed runs, but it does not make run creation,
+  progression, or reuse automatic yet
 
 Still deferred here:
 

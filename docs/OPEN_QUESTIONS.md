@@ -47,7 +47,7 @@ These questions are intentionally left open during bootstrap:
 43. Which Local Index v0 schema details should remain stable enough for public projection, and which should stay explicitly bootstrap-local implementation detail while SQLite remains the first local index substrate?
 44. Which additional indexed record families or fields should follow the current v0 set of resolved-object, state-or-release, representation, member, evidence, and source-record summaries without prematurely turning the index into a ranking or extraction engine?
 45. Which Local Worker and Task Model v0 fields should remain durable if later worker queues, retries, priorities, checkpoints, or distributed orchestration arrive, and which should stay explicitly replaceable bootstrap-local detail?
-46. Which parts of resolution memory should remain local-private by default, and which parts, if any, should later become shareable without leaking personal user behavior?
+46. Now that Resolution Memory v0 exists, which fields should remain local-private by default, which parts of public source-derived memory may later become shareable, and what invalidation boundary should exist before any broader reuse is attempted?
 47. What exact safe-mode rules should govern a future public alpha, especially around local-path access, index-path handling, task-store-root handling, store-root handling, run-store-root handling, and fetch behavior?
 48. What should the Rust parity strategy require before any runtime seam is considered safely migrated out of the Python reference lane?
 49. At what milestone should thin native host-shell experiments become worthwhile, and what backend or public-boundary conditions must be true first?

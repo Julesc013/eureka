@@ -36,6 +36,8 @@ steps:
     run: python -c "import tempfile; from surfaces.web.server.workbench_server import render_validate_source_registry_task_page; td = tempfile.TemporaryDirectory(); print(render_validate_source_registry_task_page(td.name)); td.cleanup()"
   - id: web_resolution_run_render
     run: python -c "import tempfile; from surfaces.web.server.workbench_server import render_deterministic_search_run_page; td = tempfile.TemporaryDirectory(); print(render_deterministic_search_run_page(td.name, 'archive')); td.cleanup()"
+  - id: web_resolution_memory_render
+    run: 'python -c "import tempfile; from runtime.gateway import build_demo_resolution_runs_public_api, build_demo_resolution_memory_public_api; from runtime.gateway.public_api import PlannedSearchRunRequest, ResolutionMemoryCreateRequest; from surfaces.web.server.workbench_server import render_resolution_memory_page; td = tempfile.TemporaryDirectory(); runs = build_demo_resolution_runs_public_api(td.name); runs.start_planned_search_run(PlannedSearchRunRequest.from_parts(''"'"'latest Firefox before XP support ended'"'"''"'"')); memory = build_demo_resolution_memory_public_api(td.name, run_store_root=td.name); memory.create_memory_from_run(ResolutionMemoryCreateRequest.from_parts(''"'"'run-planned-search-0001'"'"''"'"')); print(render_resolution_memory_page(td.name, memory_id=''memory-absence-finding-0001'', run_store_root=td.name)); td.cleanup()"'
   - id: web_manifest_known
     run: python scripts/demo_web_workbench.py fixture:software/synthetic-demo-app@1.0.0 --export-manifest
   - id: web_manifest_unknown
@@ -84,6 +86,10 @@ steps:
     run: python scripts/demo_cli_workbench.py task-run query-local-index --task-store-root .demo-tasks --index-path .demo-index/eureka-local-index.sqlite3 --query archive --json
   - id: native_cli_run_planned_search
     run: python scripts/demo_cli_workbench.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs --json
+  - id: native_cli_memory_create
+    run: python scripts/demo_cli_workbench.py memory-create --run-store-root .demo-runs --memory-store-root .demo-memory --run-id run-planned-search-0001 --json
+  - id: native_cli_memories
+    run: python scripts/demo_cli_workbench.py memories --memory-store-root .demo-memory --json
   - id: native_cli_run_resolve_known
     run: python scripts/demo_cli_workbench.py run-resolve fixture:software/synthetic-demo-app@1.0.0 --run-store-root .demo-runs --json
   - id: native_cli_run_status_known
@@ -170,6 +176,10 @@ steps:
     run: python scripts/demo_http_api.py task-run-query-local-index --task-store-root .demo-tasks --index-path .demo-index/eureka-local-index.sqlite3 --query archive
   - id: http_api_run_planned_search
     run: python scripts/demo_http_api.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs
+  - id: http_api_memory_create
+    run: python scripts/demo_http_api.py memory-create --run-store-root .demo-runs --memory-store-root .demo-memory --run-id run-planned-search-0001
+  - id: http_api_memories
+    run: python scripts/demo_http_api.py memories --memory-store-root .demo-memory
   - id: http_api_run_search_known
     run: python scripts/demo_http_api.py run-search archive --run-store-root .demo-runs
   - id: http_api_run_status_known
@@ -243,6 +253,7 @@ notes:
   - The bounded decomposition proof remains bootstrap-scale, inspects ZIP payloads only, and does not imply broad extraction, installers, import, restore, or final package-management semantics.
   - The bounded member-readback proof remains bootstrap-scale, reads ZIP members only, and does not imply extraction-to-disk by default, installers, import, restore, or final package-management semantics.
   - The bounded resolution-run proof remains bootstrap-scale, is synchronous local JSON persistence only, and does not imply worker queues, streaming phases, full investigation planning, or durable hosted run storage.
+  - The bounded resolution-memory proof remains bootstrap-scale, is explicit local JSON persistence only, and does not imply cloud/shared memory, private user-history tracking, personalization, ranking, or an invalidation engine.
   - The bounded query-planner proof remains bootstrap-scale, is deterministic and rule-based only, and does not imply LLM planning, vector search, fuzzy retrieval, ranking, or planner-driven retrieval routing.
   - The bounded local-index proof remains bootstrap-scale, uses a caller-provided local SQLite path only, prefers FTS5 when available, falls back deterministically when unavailable, and does not imply ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics.
   - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.

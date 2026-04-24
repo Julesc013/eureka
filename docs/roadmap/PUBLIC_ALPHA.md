@@ -25,6 +25,7 @@ A public alpha should assume:
 - no unrestricted filesystem path access
 - no private user memory
 - no hidden access to local store roots outside configured safe paths
+- no hidden access to local memory-store roots outside configured safe paths
 - no assumption that auth or user accounts exist yet
 - no silent escalation from local bootstrap behavior into public network
   behavior
@@ -57,6 +58,7 @@ The public alpha should not yet include:
 
 Public alpha work is planned but not started. Source Registry v0, Resolution
 Run Model v0, Query Planner v0, Local Index v0, and Local Worker and Task
-Model v0 now satisfy the first five listed prerequisites, but the hosted-alpha
-gate is still blocked on public-safe configuration and the remaining backend
-prerequisites.
+Model v0 now satisfy the first five listed prerequisites, and Resolution Memory
+v0 now exists as an explicit local-only reusable memory seam, but the
+hosted-alpha gate is still blocked on public-safe configuration and the
+remaining backend prerequisites.

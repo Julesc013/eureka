@@ -46,6 +46,14 @@ Likely record families:
 - resolution memories
 - invalidation dependencies
 
+Current bootstrap status:
+
+- Resolution Run Model v0 is now implemented locally as JSON-backed run records
+- Resolution Memory v0 is now implemented locally as JSON-backed reusable
+  investigation memory records
+- the relational canonical core remains a later physical subsystem; current run
+  and memory stores are bounded bootstrap-local persistence only
+
 ## 3. Lexical and Search Index
 
 Purpose:
@@ -118,6 +126,6 @@ Near-term staging should look more like:
 1. local filesystem CAS and bounded local store behavior
 2. local relational and lexical index, likely SQLite plus FTS first
 3. local worker and task model (implemented)
-4. durable run and memory models
+4. durable run and memory models (implemented locally as JSON-backed bootstrap seams)
 5. only later optional vector recall, broader worker orchestration, and shared
    evidence services
