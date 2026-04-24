@@ -35,7 +35,7 @@ from runtime.gateway.public_api import (
     build_demo_source_registry_public_api,
     build_demo_subject_states_public_api,
 )
-from surfaces.web.server import WorkbenchWsgiApp
+from surfaces.web.server import WebServerConfig, WorkbenchWsgiApp
 
 DEFAULT_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
 
@@ -53,9 +53,15 @@ def main(argv: list[str] | None = None) -> int:
         "--base-url",
         help="Base URL for an already-running Eureka local server. If omitted, this script starts a temporary local server.",
     )
+    parser.add_argument(
+        "--mode",
+        choices=("local_dev", "public_alpha"),
+        help="Mode for the temporary local server when --base-url is omitted.",
+    )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     subparsers.add_parser("index", help="Fetch the HTTP API index document.")
+    subparsers.add_parser("status", help="Fetch the HTTP API safe-mode status document.")
 
     resolve_parser = subparsers.add_parser("resolve", help="Fetch machine-readable exact resolution.")
     resolve_parser.add_argument(
@@ -312,13 +318,16 @@ def main(argv: list[str] | None = None) -> int:
     read_stored_parser.add_argument("--store-root", required=True)
 
     args = parser.parse_args(argv)
-    with _base_url_context(args.base_url) as base_url:
+    server_config = WebServerConfig.from_environment(mode=args.mode)
+    with _base_url_context(args.base_url, server_config=server_config) as base_url:
         return _fetch_command(base_url, args)
 
 
 def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
     if args.command == "index":
         path = "/api"
+    elif args.command == "status":
+        path = "/api/status"
     elif args.command == "resolve":
         path = _path("/api/resolve", target_ref=args.target_ref, store_root=args.store_root)
     elif args.command == "search":
@@ -504,7 +513,11 @@ def _open_url(url: str):
 
 
 @contextmanager
-def _base_url_context(base_url: str | None) -> Iterator[str]:
+def _base_url_context(
+    base_url: str | None,
+    *,
+    server_config: WebServerConfig,
+) -> Iterator[str]:
     if base_url is not None:
         yield base_url
         return
@@ -529,6 +542,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
         search_public_api=build_demo_search_public_api(),
         source_registry_public_api=build_demo_source_registry_public_api(),
         default_target_ref=DEFAULT_TARGET_REF,
+        server_config=server_config,
     )
     httpd = make_server("127.0.0.1", 0, app, handler_class=_SilentRequestHandler)
     thread = Thread(target=httpd.serve_forever, daemon=True)

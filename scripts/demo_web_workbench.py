@@ -37,6 +37,7 @@ from runtime.gateway.public_api import (
     build_demo_subject_states_public_api,
 )
 from surfaces.web.server import (
+    WebServerConfig,
     WorkbenchWsgiApp,
     render_action_plan_page,
     render_bundle_inspection_page,
@@ -57,6 +58,11 @@ def main() -> int:
         "target_ref",
         nargs="?",
         help="Bounded target reference to resolve. Defaults to the known synthetic fixture target.",
+    )
+    parser.add_argument(
+        "--mode",
+        choices=("local_dev", "public_alpha"),
+        help="Server operating mode. Defaults to EUREKA_WEB_MODE or local_dev.",
     )
     parser.add_argument(
         "--search-query",
@@ -164,6 +170,7 @@ def main() -> int:
         help="Port for the local bootstrap server.",
     )
     args = parser.parse_args()
+    server_config = WebServerConfig.from_environment(mode=args.mode)
     selected_modes = (
         args.export_manifest,
         args.export_bundle,
@@ -184,6 +191,23 @@ def main() -> int:
             "--handoff-host/--handoff-strategy, "
             "--store-manifest, --store-bundle, --list-stored, and --read-stored are mutually exclusive."
         )
+    if server_config.mode == "public_alpha":
+        if args.store_root is not None or args.run_store_root is not None or args.task_store_root is not None or args.memory_store_root is not None:
+            parser.error(
+                "public_alpha mode blocks caller-provided local store/index/run/task/memory roots."
+            )
+        if (
+            args.export_bundle
+            or args.inspect_bundle is not None
+            or args.render_inspection is not None
+            or args.store_manifest
+            or args.store_bundle
+            or args.list_stored
+            or args.read_stored is not None
+        ):
+            parser.error(
+                "public_alpha mode blocks bundle bytes, arbitrary bundle paths, and local stored-export actions."
+            )
 
     target_ref = args.target_ref or DEFAULT_TARGET_REF
     actions_public_api = build_demo_resolution_actions_public_api()
@@ -198,7 +222,9 @@ def main() -> int:
     resolution_public_api = build_demo_resolution_jobs_public_api()
     search_public_api = build_demo_search_public_api()
     stored_exports_public_api = (
-        build_demo_stored_exports_public_api(args.store_root) if args.store_root is not None else None
+        build_demo_stored_exports_public_api(args.store_root)
+        if args.store_root is not None and server_config.allow_write_actions
+        else None
     )
 
     if args.export_manifest:
@@ -241,7 +267,7 @@ def main() -> int:
             target_ref,
             args.action_plan_host,
             args.action_plan_strategy,
-            store_actions_enabled=stored_exports_public_api is not None,
+            store_actions_enabled=stored_exports_public_api is not None and server_config.allow_write_actions,
         )
         sys.stdout.write(html)
         return 0
@@ -252,7 +278,7 @@ def main() -> int:
             target_ref,
             None,
             args.action_plan_strategy,
-            store_actions_enabled=stored_exports_public_api is not None,
+            store_actions_enabled=stored_exports_public_api is not None and server_config.allow_write_actions,
         )
         sys.stdout.write(html)
         return 0
@@ -356,6 +382,7 @@ def main() -> int:
         source_registry_public_api=build_demo_source_registry_public_api(),
         local_index_public_api=build_demo_local_index_public_api(),
         default_target_ref=target_ref,
+        server_config=server_config,
     )
     with make_server(args.host, args.port, app) as httpd:
         lines = [
@@ -365,6 +392,10 @@ def main() -> int:
             f"http://{args.host}:{args.port}/search?q={quote('synthetic', safe='')}",
             "Serving Eureka bootstrap HTTP API index at "
             f"http://{args.host}:{args.port}/api",
+            "Serving Eureka server status at "
+            f"http://{args.host}:{args.port}/status",
+            "Serving Eureka bootstrap HTTP API status at "
+            f"http://{args.host}:{args.port}/api/status",
             "Serving Eureka bootstrap HTTP API resolve route at "
             f"http://{args.host}:{args.port}/api/resolve?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka comparison page at "
@@ -385,18 +416,10 @@ def main() -> int:
             f"http://{args.host}:{args.port}/handoff?target_ref={quote(target_ref, safe='')}&strategy={quote('inspect', safe='')}",
             "Serving Eureka bootstrap HTTP API handoff route at "
             f"http://{args.host}:{args.port}/api/handoff?target_ref={quote(target_ref, safe='')}&host={quote('windows-x86_64', safe='')}&strategy={quote('acquire', safe='')}",
-            "Serving Eureka bounded fetch route at "
-            f"http://{args.host}:{args.port}/fetch?target_ref={quote('github-release:cli/cli@v2.65.0', safe='')}&representation_id={quote('rep.github-release.cli.cli.v2.65.0.asset.1', safe='')}",
             "Serving Eureka bounded decomposition route at "
             f"http://{args.host}:{args.port}/decompose?target_ref={quote('fixture:software/synthetic-demo-app@1.0.0', safe='')}&representation_id={quote('rep.synthetic-demo-app.package', safe='')}",
-            "Serving Eureka bounded member preview route at "
-            f"http://{args.host}:{args.port}/member?target_ref={quote('fixture:software/synthetic-demo-app@1.0.0', safe='')}&representation_id={quote('rep.synthetic-demo-app.package', safe='')}&member_path={quote('README.txt', safe='')}",
-            "Serving Eureka bootstrap HTTP API fetch route at "
-            f"http://{args.host}:{args.port}/api/fetch?target_ref={quote('github-release:cli/cli@v2.65.0', safe='')}&representation_id={quote('rep.github-release.cli.cli.v2.65.0.asset.1', safe='')}",
             "Serving Eureka bootstrap HTTP API decomposition route at "
             f"http://{args.host}:{args.port}/api/decompose?target_ref={quote('fixture:software/synthetic-demo-app@1.0.0', safe='')}&representation_id={quote('rep.synthetic-demo-app.package', safe='')}",
-            "Serving Eureka bootstrap HTTP API member route at "
-            f"http://{args.host}:{args.port}/api/member?target_ref={quote('fixture:software/synthetic-demo-app@1.0.0', safe='')}&representation_id={quote('rep.synthetic-demo-app.package', safe='')}&member_path={quote('README.txt', safe='')}",
             "Serving Eureka representations page at "
             f"http://{args.host}:{args.port}/representations?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bootstrap HTTP API representations route at "
@@ -407,14 +430,6 @@ def main() -> int:
             f"http://{args.host}:{args.port}/api/states?subject={quote('archivebox', safe='')}",
             "Serving Eureka bootstrap HTTP API search route at "
             f"http://{args.host}:{args.port}/api/search?q={quote('synthetic', safe='')}",
-            "Serving Eureka local index status page at "
-            f"http://{args.host}:{args.port}/index/status?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}",
-            "Serving Eureka local index search page at "
-            f"http://{args.host}:{args.port}/index/search?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}&q={quote('archive', safe='')}",
-            "Serving Eureka bootstrap HTTP API local index build route at "
-            f"http://{args.host}:{args.port}/api/index/build?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}",
-            "Serving Eureka bootstrap HTTP API local index search route at "
-            f"http://{args.host}:{args.port}/api/index/query?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}&q={quote('archive', safe='')}",
             "Serving Eureka source registry page at "
             f"http://{args.host}:{args.port}/sources",
             "Serving Eureka bootstrap HTTP API source registry route at "
@@ -431,16 +446,42 @@ def main() -> int:
             f"http://{args.host}:{args.port}/actions/export-resolution-manifest?target_ref={quote(target_ref, safe='')}",
             "Serving Eureka bootstrap HTTP API manifest export at "
             f"http://{args.host}:{args.port}/api/export/manifest?target_ref={quote(target_ref, safe='')}",
-            "Serving Eureka bundle export at "
-            f"http://{args.host}:{args.port}/actions/export-resolution-bundle?target_ref={quote(target_ref, safe='')}",
-            "Serving Eureka bootstrap HTTP API bundle export at "
-            f"http://{args.host}:{args.port}/api/export/bundle?target_ref={quote(target_ref, safe='')}",
-            "Serving Eureka bundle inspection at "
-            f"http://{args.host}:{args.port}/inspect/bundle?bundle_path={quote(str((Path.cwd() / 'example-resolution-bundle.zip')), safe='')}",
-            "Serving Eureka bootstrap HTTP API bundle inspection at "
-            f"http://{args.host}:{args.port}/api/inspect/bundle?bundle_path={quote(str((Path.cwd() / 'example-resolution-bundle.zip')), safe='')}",
         ]
-        if args.store_root is not None:
+        if server_config.allow_write_actions:
+            lines.extend(
+                [
+                    "Serving Eureka bundle export at "
+                    f"http://{args.host}:{args.port}/actions/export-resolution-bundle?target_ref={quote(target_ref, safe='')}",
+                    "Serving Eureka bootstrap HTTP API bundle export at "
+                    f"http://{args.host}:{args.port}/api/export/bundle?target_ref={quote(target_ref, safe='')}",
+                ]
+            )
+        if server_config.allow_local_paths:
+            lines.extend(
+                [
+                    "Serving Eureka bounded fetch route at "
+                    f"http://{args.host}:{args.port}/fetch?target_ref={quote('github-release:cli/cli@v2.65.0', safe='')}&representation_id={quote('rep.github-release.cli.cli.v2.65.0.asset.1', safe='')}",
+                    "Serving Eureka bounded member preview route at "
+                    f"http://{args.host}:{args.port}/member?target_ref={quote('fixture:software/synthetic-demo-app@1.0.0', safe='')}&representation_id={quote('rep.synthetic-demo-app.package', safe='')}&member_path={quote('README.txt', safe='')}",
+                    "Serving Eureka bootstrap HTTP API fetch route at "
+                    f"http://{args.host}:{args.port}/api/fetch?target_ref={quote('github-release:cli/cli@v2.65.0', safe='')}&representation_id={quote('rep.github-release.cli.cli.v2.65.0.asset.1', safe='')}",
+                    "Serving Eureka bootstrap HTTP API member route at "
+                    f"http://{args.host}:{args.port}/api/member?target_ref={quote('fixture:software/synthetic-demo-app@1.0.0', safe='')}&representation_id={quote('rep.synthetic-demo-app.package', safe='')}&member_path={quote('README.txt', safe='')}",
+                    "Serving Eureka local index status page at "
+                    f"http://{args.host}:{args.port}/index/status?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}",
+                    "Serving Eureka local index search page at "
+                    f"http://{args.host}:{args.port}/index/search?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}&q={quote('archive', safe='')}",
+                    "Serving Eureka bootstrap HTTP API local index build route at "
+                    f"http://{args.host}:{args.port}/api/index/build?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}",
+                    "Serving Eureka bootstrap HTTP API local index search route at "
+                    f"http://{args.host}:{args.port}/api/index/query?index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}&q={quote('archive', safe='')}",
+                    "Serving Eureka bundle inspection at "
+                    f"http://{args.host}:{args.port}/inspect/bundle?bundle_path={quote(str((Path.cwd() / 'example-resolution-bundle.zip')), safe='')}",
+                    "Serving Eureka bootstrap HTTP API bundle inspection at "
+                    f"http://{args.host}:{args.port}/api/inspect/bundle?bundle_path={quote(str((Path.cwd() / 'example-resolution-bundle.zip')), safe='')}",
+                ]
+            )
+        if args.store_root is not None and server_config.allow_write_actions:
             lines.extend(
                 [
                     "Serving Eureka local manifest store action at "
@@ -451,7 +492,7 @@ def main() -> int:
                     f"http://{args.host}:{args.port}/api/stored?target_ref={quote(target_ref, safe='')}&store_root={quote(args.store_root, safe='')}",
                 ]
             )
-        if args.run_store_root is not None:
+        if args.run_store_root is not None and server_config.allow_local_paths:
             lines.extend(
                 [
                     "Serving Eureka resolution-runs page at "
@@ -468,7 +509,7 @@ def main() -> int:
                     f"http://{args.host}:{args.port}/api/run/search?q={quote('archive', safe='')}&run_store_root={quote(args.run_store_root, safe='')}",
                 ]
             )
-        if args.task_store_root is not None:
+        if args.task_store_root is not None and server_config.allow_local_paths:
             lines.extend(
                 [
                     "Serving Eureka local tasks page at "
@@ -483,7 +524,7 @@ def main() -> int:
                     f"http://{args.host}:{args.port}/api/task/run/query-local-index?task_store_root={quote(args.task_store_root, safe='')}&index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}&q={quote('archive', safe='')}",
                 ]
             )
-        if args.memory_store_root is not None:
+        if args.memory_store_root is not None and server_config.allow_local_paths:
             lines.extend(
                 [
                     "Serving Eureka resolution-memory listing page at "
