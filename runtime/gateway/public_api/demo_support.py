@@ -25,6 +25,7 @@ from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolut
 from runtime.engine.states import DeterministicSubjectStatesService
 from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBundleInspectionEngineService
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
+from runtime.source_registry import load_source_registry
 from runtime.gateway.public_api.action_plan_boundary import ActionPlanPublicApi
 from runtime.gateway.public_api.acquisition_boundary import AcquisitionPublicApi
 from runtime.gateway.public_api.decomposition_boundary import DecompositionPublicApi
@@ -41,6 +42,7 @@ from runtime.gateway.public_api.representation_selection_boundary import (
     RepresentationSelectionPublicApi,
 )
 from runtime.gateway.public_api.search_boundary import SearchPublicApi
+from runtime.gateway.public_api.source_registry_boundary import SourceRegistryPublicApi
 from runtime.gateway.public_api.stored_exports import StoredExportsPublicApi
 from runtime.gateway.public_api.subject_states_boundary import SubjectStatesPublicApi
 
@@ -71,6 +73,10 @@ def build_demo_search_public_api() -> SearchPublicApi:
     catalog = _build_demo_normalized_catalog()
     search_service = DeterministicSearchService(catalog)
     return SearchPublicApi(search_service)
+
+
+def build_demo_source_registry_public_api() -> SourceRegistryPublicApi:
+    return SourceRegistryPublicApi(load_source_registry())
 
 
 def build_demo_absence_public_api() -> AbsencePublicApi:

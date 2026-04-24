@@ -133,6 +133,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_resolution_jobs_public_api,
     build_demo_representations_public_api,
     build_demo_search_public_api,
+    build_demo_source_registry_public_api,
     build_demo_stored_exports_public_api,
     build_demo_subject_states_public_api,
 )
@@ -168,8 +169,19 @@ from runtime.gateway.public_api.search_boundary import (
     SearchPublicApi,
     search_response_to_public_envelope,
 )
+from runtime.gateway.public_api.source_registry_boundary import (
+    SourceCatalogRequest,
+    SourceReadRequest,
+    SourceRegistryPublicApi,
+    source_record_to_public_entry,
+    source_registry_not_found_envelope,
+    source_registry_to_public_envelope,
+)
 from runtime.gateway.public_api.search_results_view_models import (
     search_response_envelope_to_search_results_view_model,
+)
+from runtime.gateway.public_api.source_registry_view_models import (
+    source_registry_envelope_to_view_model,
 )
 from runtime.gateway.public_api.workbench_sessions import resolution_job_envelope_to_workbench_session
 
@@ -218,6 +230,9 @@ __all__ = [
     "representation_selection_result_to_public_envelope",
     "SearchCatalogRequest",
     "SearchPublicApi",
+    "SourceCatalogRequest",
+    "SourceReadRequest",
+    "SourceRegistryPublicApi",
     "SubjectStatesCatalogRequest",
     "SubjectStatesPublicApi",
     "STORE_RESOLUTION_BUNDLE_ACTION_ID",
@@ -256,6 +271,7 @@ __all__ = [
     "build_demo_resolution_jobs_public_api",
     "build_demo_representations_public_api",
     "build_demo_search_public_api",
+    "build_demo_source_registry_public_api",
     "build_demo_stored_exports_public_api",
     "build_demo_subject_states_public_api",
     "build_resolution_workspace_view_models",
@@ -277,6 +293,10 @@ __all__ = [
     "resolution_manifest_not_available_error",
     "search_response_envelope_to_search_results_view_model",
     "search_response_to_public_envelope",
+    "source_record_to_public_entry",
+    "source_registry_envelope_to_view_model",
+    "source_registry_not_found_envelope",
+    "source_registry_to_public_envelope",
     "stored_artifact_not_found_envelope",
     "stored_exports_envelope_to_view_model",
     "stored_exports_to_public_envelope",

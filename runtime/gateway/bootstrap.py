@@ -14,6 +14,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_resolution_jobs_public_api,
     build_demo_representations_public_api,
     build_demo_search_public_api,
+    build_demo_source_registry_public_api,
     build_demo_stored_exports_public_api,
     build_demo_subject_states_public_api,
 )
@@ -32,6 +33,7 @@ __all__ = [
     "build_demo_resolution_jobs_public_api",
     "build_demo_representations_public_api",
     "build_demo_search_public_api",
+    "build_demo_source_registry_public_api",
     "build_demo_stored_exports_public_api",
     "build_demo_subject_states_public_api",
 ]

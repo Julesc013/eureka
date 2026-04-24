@@ -1,0 +1,34 @@
+name: SourceRegistry
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that list or
+  inspect governed source-registry records through the gateway public
+  source-registry boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/sources
+    - GET /v0/source?id={source_id}
+  shared_view_models:
+    - contracts/ui/view_models/source_registry.view_model.yaml
+  shared_result_shapes:
+    - SourceRegistryEnvelope
+surface_expectations:
+  - surfaces list governed source inventory through the public gateway boundary rather than reading control inventory directly
+  - surfaces show active fixture, placeholder, future, and disabled status honestly
+  - surfaces do not imply placeholder or future sources are implemented connectors
+  - surfaces do not expose private local paths through the shared source registry view model
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - live source sync and crawling
+  - source health or trust scoring
+  - auth and source credential handling
+  - broader source-control policy semantics

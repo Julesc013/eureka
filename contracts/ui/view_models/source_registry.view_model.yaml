@@ -1,0 +1,122 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/source_registry.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
+title: SourceRegistry
+description: Draft shared surface-facing source-registry model aligned with the gateway public source-registry boundary.
+type: object
+additionalProperties: false
+properties:
+  status:
+    type: string
+  source_count:
+    type: integer
+    minimum: 0
+  applied_filters:
+    type: object
+    additionalProperties:
+      type: string
+  selected_source_id:
+    type: string
+  sources:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        source_id:
+          type: string
+        name:
+          type: string
+        source_family:
+          type: string
+        status:
+          type: string
+        status_summary:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
+        surfaces:
+          type: array
+          items:
+            type: string
+        trust_lane:
+          type: string
+        authority_class:
+          type: string
+        object_types:
+          type: array
+          items:
+            type: string
+        artifact_types:
+          type: array
+          items:
+            type: string
+        identifier_types_emitted:
+          type: array
+          items:
+            type: string
+        connector:
+          type: object
+          additionalProperties: false
+          properties:
+            label:
+              type: string
+            status:
+              type: string
+          required:
+            - label
+            - status
+        live_access_mode:
+          type: string
+        extraction_mode:
+          type: string
+        legal_posture:
+          type: string
+        freshness_model:
+          type: string
+        rights_notes:
+          type: string
+        notes:
+          type: string
+      required:
+        - source_id
+        - name
+        - source_family
+        - status
+        - status_summary
+        - roles
+        - surfaces
+        - trust_lane
+        - authority_class
+        - object_types
+        - artifact_types
+        - identifier_types_emitted
+        - connector
+        - live_access_mode
+        - extraction_mode
+        - legal_posture
+        - freshness_model
+        - rights_notes
+        - notes
+  notices:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+        severity:
+          type: string
+        message:
+          type: string
+      required:
+        - code
+        - severity
+required:
+  - status
+  - source_count
+  - sources
+x-eureka-status: draft
