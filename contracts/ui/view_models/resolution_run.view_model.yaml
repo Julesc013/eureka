@@ -1,0 +1,97 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/ui/resolution_run.view_model.yaml
+$comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
+title: ResolutionRun
+description: Draft shared surface-facing resolution-run model aligned with the gateway public resolution-runs boundary.
+type: object
+additionalProperties: false
+properties:
+  status:
+    type: string
+  run_count:
+    type: integer
+    minimum: 0
+  selected_run_id:
+    type: string
+  runs:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        run_id:
+          type: string
+        run_kind:
+          type: string
+        requested_value:
+          type: string
+        status:
+          type: string
+        started_at:
+          type: string
+        completed_at:
+          type: string
+        checked_source_ids:
+          type: array
+          items:
+            type: string
+        checked_source_families:
+          type: array
+          items:
+            type: string
+        checked_sources:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              source_id:
+                type: string
+              name:
+                type: string
+              source_family:
+                type: string
+              status:
+                type: string
+              trust_lane:
+                type: string
+            required:
+              - source_id
+              - name
+              - source_family
+              - status
+              - trust_lane
+        result_summary:
+          type:
+            - object
+            - "null"
+        absence_report:
+          type:
+            - object
+            - "null"
+        notices:
+          type: array
+          items:
+            type: object
+        created_by_slice:
+          type: string
+      required:
+        - run_id
+        - run_kind
+        - requested_value
+        - status
+        - started_at
+        - completed_at
+        - checked_source_ids
+        - checked_source_families
+        - checked_sources
+        - notices
+        - created_by_slice
+  notices:
+    type: array
+    items:
+      type: object
+required:
+  - status
+  - run_count
+  - runs

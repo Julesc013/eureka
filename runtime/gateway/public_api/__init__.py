@@ -1,5 +1,9 @@
 """Public gateway helpers for the Eureka thin slice."""
 
+from runtime.engine.interfaces.public import (
+    DeterministicSearchRunRequest,
+    ExactResolutionRunRequest,
+)
 from runtime.gateway.public_api.acquisition_boundary import (
     AcquisitionFetchRequest,
     AcquisitionPublicApi,
@@ -131,6 +135,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
+    build_demo_resolution_runs_public_api,
     build_demo_representations_public_api,
     build_demo_search_public_api,
     build_demo_source_registry_public_api,
@@ -177,8 +182,18 @@ from runtime.gateway.public_api.source_registry_boundary import (
     source_registry_not_found_envelope,
     source_registry_to_public_envelope,
 )
+from runtime.gateway.public_api.resolution_runs_boundary import (
+    ResolutionRunReadRequest,
+    ResolutionRunsPublicApi,
+    resolution_run_not_found_envelope,
+    resolution_run_to_public_entry,
+    resolution_runs_to_public_envelope,
+)
 from runtime.gateway.public_api.search_results_view_models import (
     search_response_envelope_to_search_results_view_model,
+)
+from runtime.gateway.public_api.resolution_runs_view_models import (
+    resolution_runs_envelope_to_view_model,
 )
 from runtime.gateway.public_api.source_registry_view_models import (
     source_registry_envelope_to_view_model,
@@ -193,6 +208,8 @@ __all__ = [
     "AcquisitionFetchRequest",
     "AcquisitionPublicApi",
     "DecompositionInspectionRequest",
+    "DeterministicSearchRunRequest",
+    "ExactResolutionRunRequest",
     "DecompositionPublicApi",
     "MemberAccessReadRequest",
     "MemberAccessPublicApi",
@@ -222,6 +239,8 @@ __all__ = [
     "ResolutionJobRecord",
     "ResolutionActionsPublicApi",
     "ResolutionJobsPublicApi",
+    "ResolutionRunReadRequest",
+    "ResolutionRunsPublicApi",
     "ResolutionWorkspaceReadError",
     "ResolutionWorkspaceViewModels",
     "RepresentationCatalogRequest",
@@ -269,6 +288,7 @@ __all__ = [
     "build_demo_resolution_actions_public_api",
     "build_demo_resolution_bundle_inspection_public_api",
     "build_demo_resolution_jobs_public_api",
+    "build_demo_resolution_runs_public_api",
     "build_demo_representations_public_api",
     "build_demo_search_public_api",
     "build_demo_source_registry_public_api",
@@ -291,6 +311,10 @@ __all__ = [
     "resolution_job_to_public_envelope",
     "resolution_actions_envelope_to_view_model",
     "resolution_manifest_not_available_error",
+    "resolution_run_not_found_envelope",
+    "resolution_run_to_public_entry",
+    "resolution_runs_envelope_to_view_model",
+    "resolution_runs_to_public_envelope",
     "search_response_envelope_to_search_results_view_model",
     "search_response_to_public_envelope",
     "source_record_to_public_entry",

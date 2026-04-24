@@ -1,0 +1,36 @@
+name: ResolutionRun
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that start,
+  read, and list synchronous local resolution runs through the gateway public
+  resolution-runs boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/runs
+    - GET /v0/run?id={run_id}
+    - GET /v0/run/resolve?target_ref={target_ref}
+    - GET /v0/run/search?q={query}
+  shared_view_models:
+    - contracts/ui/view_models/resolution_run.view_model.yaml
+  shared_result_shapes:
+    - ResolutionRunsEnvelope
+surface_expectations:
+  - surfaces start exact-resolution and deterministic-search runs through the public gateway boundary rather than persisting run records themselves
+  - surfaces present run state as synchronous local bootstrap investigation records, not as workers or streaming progress
+  - surfaces show checked sources, result summaries, and absence reports honestly
+  - surfaces do not imply query planning, async orchestration, or live source sync
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - query planner and run phases
+  - worker queues and async orchestration
+  - streaming partial results
+  - durable multi-user hosting semantics

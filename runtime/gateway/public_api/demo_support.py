@@ -20,6 +20,7 @@ from runtime.engine.interfaces.normalize import (
     normalize_extracted_record,
     normalize_github_release_record,
 )
+from runtime.engine.resolution_runs import LocalResolutionRunService, LocalResolutionRunStore
 from runtime.engine.representations.service import DeterministicRepresentationsService
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
 from runtime.engine.states import DeterministicSubjectStatesService
@@ -37,6 +38,7 @@ from runtime.gateway.public_api.resolution_actions import ResolutionActionsPubli
 from runtime.gateway.public_api.resolution_boundary import ResolutionJobsPublicApi
 from runtime.gateway.public_api.resolution_bundle_inspection import ResolutionBundleInspectionPublicApi
 from runtime.gateway.public_api.resolution_jobs import InMemoryResolutionJobService
+from runtime.gateway.public_api.resolution_runs_boundary import ResolutionRunsPublicApi
 from runtime.gateway.public_api.representations_boundary import RepresentationsPublicApi
 from runtime.gateway.public_api.representation_selection_boundary import (
     RepresentationSelectionPublicApi,
@@ -77,6 +79,27 @@ def build_demo_search_public_api() -> SearchPublicApi:
 
 def build_demo_source_registry_public_api() -> SourceRegistryPublicApi:
     return SourceRegistryPublicApi(load_source_registry())
+
+
+def build_demo_resolution_runs_public_api(run_store_root: str) -> ResolutionRunsPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    source_registry = load_source_registry()
+    resolution_service = ExactMatchResolutionService(catalog)
+    search_service = DeterministicSearchService(catalog)
+    absence_service = DeterministicAbsenceService(
+        catalog,
+        resolution_service=resolution_service,
+        search_service=search_service,
+    )
+    run_service = LocalResolutionRunService(
+        catalog=catalog,
+        source_registry=source_registry,
+        resolution_service=resolution_service,
+        search_service=search_service,
+        absence_service=absence_service,
+        run_store=LocalResolutionRunStore(run_store_root),
+    )
+    return ResolutionRunsPublicApi(run_service)
 
 
 def build_demo_absence_public_api() -> AbsencePublicApi:
