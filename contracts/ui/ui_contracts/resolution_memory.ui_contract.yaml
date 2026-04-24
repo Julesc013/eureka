@@ -1,0 +1,35 @@
+name: ResolutionMemory
+contract_kind: shared-surface-contract
+x-eureka-status: draft
+description: >
+  Draft shared interaction contract for web and native surfaces that create,
+  inspect, and list explicit local resolution-memory records through the
+  gateway public resolution-memory boundary.
+applies_to:
+  - surfaces/web
+  - surfaces/native
+normal_path:
+  gateway_operations:
+    - GET /v0/memories
+    - GET /v0/memory?id={memory_id}
+    - GET /v0/memory/create?run_id={run_id}
+  shared_view_models:
+    - contracts/ui/view_models/resolution_memory.view_model.yaml
+  shared_result_shapes:
+    - ResolutionMemoryEnvelope
+surface_expectations:
+  - surfaces create resolution memory records explicitly from existing persisted resolution runs through the public gateway boundary rather than deriving memory from runtime internals
+  - surfaces present resolution memory as local explicit investigation memory, not as cloud memory, personalization, private user-history tracking, or ranking state
+  - surfaces show checked sources, compact result summaries or absence findings, useful source ids, and invalidation hints honestly
+  - surfaces describe `memory_store_root` and `run_store_root` as bootstrap local parameters only
+surface_split:
+  web:
+    normal_path: public gateway contracts only
+  native:
+    normal_path: public gateway contracts only
+    deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
+deferred_topics:
+  - automatic memory creation
+  - invalidation engine
+  - shared or cloud memory
+  - personalization and user-profile memory

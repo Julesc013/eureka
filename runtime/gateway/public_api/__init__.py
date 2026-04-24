@@ -6,6 +6,9 @@ from runtime.engine.interfaces.public import (
     LocalIndexBuildRequest,
     LocalIndexQueryRequest,
     LocalIndexStatusRequest,
+    ResolutionMemoryCatalogRequest,
+    ResolutionMemoryCreateRequest,
+    ResolutionMemoryReadRequest,
     LocalTaskReadRequest,
     LocalTaskRunRequest,
     PlannedSearchRunRequest,
@@ -141,6 +144,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_local_tasks_public_api,
     build_demo_member_access_public_api,
     build_demo_query_planner_public_api,
+    build_demo_resolution_memory_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -198,6 +202,14 @@ from runtime.gateway.public_api.local_tasks_boundary import (
     local_task_to_public_entry,
     local_tasks_to_public_envelope,
 )
+from runtime.gateway.public_api.resolution_memory_boundary import (
+    ResolutionMemoryPublicApi,
+    resolution_memories_to_public_envelope,
+    resolution_memory_bad_request_envelope,
+    resolution_memory_not_found_envelope,
+    resolution_memory_source_run_not_found_envelope,
+    resolution_memory_to_public_entry,
+)
 from runtime.gateway.public_api.source_registry_boundary import (
     SourceCatalogRequest,
     SourceReadRequest,
@@ -236,6 +248,9 @@ from runtime.gateway.public_api.local_index_view_models import (
 from runtime.gateway.public_api.local_tasks_view_models import (
     local_tasks_envelope_to_view_model,
 )
+from runtime.gateway.public_api.resolution_memory_view_models import (
+    resolution_memory_envelope_to_view_model,
+)
 from runtime.gateway.public_api.workbench_sessions import resolution_job_envelope_to_workbench_session
 
 __all__ = [
@@ -252,9 +267,13 @@ __all__ = [
     "LocalIndexPublicApi",
     "LocalIndexQueryRequest",
     "LocalIndexStatusRequest",
+    "ResolutionMemoryCatalogRequest",
+    "ResolutionMemoryCreateRequest",
+    "ResolutionMemoryReadRequest",
     "LocalTaskReadRequest",
     "LocalTaskRunRequest",
     "LocalTasksPublicApi",
+    "ResolutionMemoryPublicApi",
     "PlannedSearchRunRequest",
     "QueryPlanRequest",
     "DecompositionPublicApi",
@@ -335,6 +354,7 @@ __all__ = [
     "build_demo_local_tasks_public_api",
     "build_demo_member_access_public_api",
     "build_demo_query_planner_public_api",
+    "build_demo_resolution_memory_public_api",
     "build_demo_representation_selection_public_api",
     "build_demo_resolution_actions_public_api",
     "build_demo_resolution_bundle_inspection_public_api",
@@ -369,6 +389,12 @@ __all__ = [
     "local_task_to_public_entry",
     "local_tasks_envelope_to_view_model",
     "local_tasks_to_public_envelope",
+    "resolution_memories_to_public_envelope",
+    "resolution_memory_bad_request_envelope",
+    "resolution_memory_envelope_to_view_model",
+    "resolution_memory_not_found_envelope",
+    "resolution_memory_source_run_not_found_envelope",
+    "resolution_memory_to_public_entry",
     "resolution_actions_to_public_envelope",
     "resolution_bundle_not_available_error",
     "resolution_job_not_found_error",

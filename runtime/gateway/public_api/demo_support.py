@@ -6,6 +6,11 @@ from runtime.engine.acquisition.service import DeterministicAcquisitionService
 from runtime.engine.decomposition.service import DeterministicDecompositionService
 from runtime.engine.index import LocalIndexEngineService, LocalIndexSqliteStore
 from runtime.engine.members.service import DeterministicMemberAccessService
+from runtime.engine.memory import (
+    LocalResolutionMemoryService,
+    LocalResolutionMemoryStore,
+    ResolutionMemoryBuilder,
+)
 from runtime.engine.action_routing.service import DeterministicActionPlanService
 from runtime.engine.actions import ResolutionManifestExportService
 from runtime.engine.absence import DeterministicAbsenceService
@@ -44,6 +49,7 @@ from runtime.gateway.public_api.resolution_jobs import InMemoryResolutionJobServ
 from runtime.gateway.public_api.query_planner_boundary import QueryPlannerPublicApi
 from runtime.gateway.public_api.local_index_boundary import LocalIndexPublicApi
 from runtime.gateway.public_api.local_tasks_boundary import LocalTasksPublicApi
+from runtime.gateway.public_api.resolution_memory_boundary import ResolutionMemoryPublicApi
 from runtime.gateway.public_api.resolution_runs_boundary import ResolutionRunsPublicApi
 from runtime.gateway.public_api.representations_boundary import RepresentationsPublicApi
 from runtime.gateway.public_api.representation_selection_boundary import (
@@ -110,6 +116,23 @@ def build_demo_local_tasks_public_api(task_store_root: str) -> LocalTasksPublicA
     return LocalTasksPublicApi(task_service)
 
 
+def build_demo_resolution_memory_public_api(
+    memory_store_root: str,
+    *,
+    run_store_root: str | None = None,
+) -> ResolutionMemoryPublicApi:
+    memory_service = LocalResolutionMemoryService(
+        memory_store=LocalResolutionMemoryStore(memory_store_root),
+        memory_builder=ResolutionMemoryBuilder(),
+        run_service=(
+            _build_demo_resolution_run_service(run_store_root)
+            if run_store_root is not None
+            else None
+        ),
+    )
+    return ResolutionMemoryPublicApi(memory_service)
+
+
 def build_demo_source_registry_public_api() -> SourceRegistryPublicApi:
     return SourceRegistryPublicApi(load_source_registry())
 
@@ -119,25 +142,7 @@ def build_demo_query_planner_public_api() -> QueryPlannerPublicApi:
 
 
 def build_demo_resolution_runs_public_api(run_store_root: str) -> ResolutionRunsPublicApi:
-    catalog = _build_demo_normalized_catalog()
-    source_registry = load_source_registry()
-    resolution_service = ExactMatchResolutionService(catalog)
-    search_service = DeterministicSearchService(catalog)
-    absence_service = DeterministicAbsenceService(
-        catalog,
-        resolution_service=resolution_service,
-        search_service=search_service,
-    )
-    run_service = LocalResolutionRunService(
-        catalog=catalog,
-        source_registry=source_registry,
-        resolution_service=resolution_service,
-        search_service=search_service,
-        absence_service=absence_service,
-        run_store=LocalResolutionRunStore(run_store_root),
-        query_planner=DeterministicQueryPlannerService(),
-    )
-    return ResolutionRunsPublicApi(run_service)
+    return ResolutionRunsPublicApi(_build_demo_resolution_run_service(run_store_root))
 
 
 def build_demo_absence_public_api() -> AbsencePublicApi:
@@ -283,3 +288,24 @@ def _build_demo_normalized_catalog() -> NormalizedCatalog:
         for record in github_connector.load_source_records()
     )
     return NormalizedCatalog(synthetic_records + github_records)
+
+
+def _build_demo_resolution_run_service(run_store_root: str) -> LocalResolutionRunService:
+    catalog = _build_demo_normalized_catalog()
+    source_registry = load_source_registry()
+    resolution_service = ExactMatchResolutionService(catalog)
+    search_service = DeterministicSearchService(catalog)
+    absence_service = DeterministicAbsenceService(
+        catalog,
+        resolution_service=resolution_service,
+        search_service=search_service,
+    )
+    return LocalResolutionRunService(
+        catalog=catalog,
+        source_registry=source_registry,
+        resolution_service=resolution_service,
+        search_service=search_service,
+        absence_service=absence_service,
+        run_store=LocalResolutionRunStore(run_store_root),
+        query_planner=DeterministicQueryPlannerService(),
+    )
