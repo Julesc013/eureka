@@ -46,6 +46,11 @@ from runtime.engine.interfaces.public.local_index import (
     LocalIndexStatusRequest,
     LocalIndexStatusResult,
 )
+from runtime.engine.interfaces.public.local_task import (
+    LocalTaskReadRequest,
+    LocalTaskRecord,
+    LocalTaskRunRequest,
+)
 from runtime.engine.interfaces.public.resolution_run import (
     CheckedSourceSummary,
     DeterministicSearchRunRequest,
@@ -98,6 +103,9 @@ __all__ = [
     "LocalIndexRecordSummary",
     "LocalIndexStatusRequest",
     "LocalIndexStatusResult",
+    "LocalTaskReadRequest",
+    "LocalTaskRecord",
+    "LocalTaskRunRequest",
     "ObjectSummary",
     "QueryPlanRequest",
     "ResolutionTask",

@@ -1,0 +1,79 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka/contracts/archive/schemas/local_task.schema.yaml"
+title: LocalTask
+description: >
+  Draft Local Worker and Task Model v0 record for synchronous bootstrap-local task
+  execution. This schema is provisional and does not imply async orchestration,
+  retries, priorities, checkpoints, or distributed queue semantics.
+type: object
+additionalProperties: false
+required:
+  - task_id
+  - task_kind
+  - status
+  - requested_inputs
+  - created_at
+  - notices
+  - created_by_slice
+properties:
+  task_id:
+    type: string
+    minLength: 1
+  task_kind:
+    type: string
+    minLength: 1
+  status:
+    type: string
+    enum:
+      - pending
+      - running
+      - completed
+      - failed
+      - blocked
+  requested_inputs:
+    type: object
+  created_at:
+    type: string
+    minLength: 1
+  started_at:
+    type:
+      - string
+      - "null"
+  completed_at:
+    type:
+      - string
+      - "null"
+  result_summary:
+    type:
+      - object
+      - "null"
+  error_summary:
+    type:
+      - object
+      - "null"
+  output_references:
+    type:
+      - object
+      - "null"
+  notices:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      required:
+        - code
+        - severity
+      properties:
+        code:
+          type: string
+          minLength: 1
+        severity:
+          type: string
+          minLength: 1
+        message:
+          type:
+            - string
+            - "null"
+  created_by_slice:
+    type: string
+    minLength: 1
