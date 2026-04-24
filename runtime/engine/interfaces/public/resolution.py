@@ -45,11 +45,14 @@ class ObjectSummary:
 @dataclass(frozen=True)
 class SourceSummary:
     family: str
+    source_id: str | None = None
     label: str | None = None
     locator: str | None = None
 
     def to_dict(self) -> dict[str, str]:
         payload = {"family": self.family}
+        if self.source_id is not None:
+            payload["source_id"] = self.source_id
         if self.label is not None:
             payload["label"] = self.label
         if self.locator is not None:

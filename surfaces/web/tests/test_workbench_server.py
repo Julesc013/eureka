@@ -8,12 +8,14 @@ import zipfile
 from urllib.parse import quote
 import unittest
 
+from runtime.gateway.public_api import build_demo_source_registry_public_api
 from runtime.gateway.public_api import PublicApiResponse, PublicArtifactResponse
 from surfaces.web.server import (
     WorkbenchWsgiApp,
     render_bundle_inspection_page,
     render_resolution_workspace_page,
     render_search_results_page,
+    render_source_registry_page,
 )
 
 
@@ -651,6 +653,48 @@ class WorkbenchServerTestCase(unittest.TestCase):
         self.assertEqual(captured["status"], "200 OK")
         self.assertEqual(search_public_api.queries, ["synthetic"])
         self.assertIn("Synthetic Demo Suite", body)
+
+    def test_server_renders_source_registry_page_via_public_boundary(self) -> None:
+        html = render_source_registry_page(
+            build_demo_source_registry_public_api(),
+            status="active_fixture",
+        )
+
+        self.assertIn("Eureka Source Registry", html)
+        self.assertIn("synthetic-fixtures", html)
+        self.assertIn("github-releases-recorded-fixtures", html)
+        self.assertIn("Active fixture-backed source record.", html)
+
+    def test_wsgi_app_handles_source_registry_requests(self) -> None:
+        app = WorkbenchWsgiApp(
+            FakeResolutionJobsPublicApi(),
+            bundle_inspection_public_api=FakeResolutionBundleInspectionPublicApi(),
+            search_public_api=FakeSearchPublicApi(),
+            source_registry_public_api=build_demo_source_registry_public_api(),
+            default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
+        )
+
+        captured: dict[str, object] = {}
+
+        def start_response(status: str, headers: list[tuple[str, str]]) -> None:
+            captured["status"] = status
+            captured["headers"] = headers
+
+        body = b"".join(
+            app(
+                {
+                    "REQUEST_METHOD": "GET",
+                    "PATH_INFO": "/sources",
+                    "QUERY_STRING": "status=active_fixture",
+                    "wsgi.input": BytesIO(b""),
+                },
+                start_response,
+            )
+        ).decode("utf-8")
+
+        self.assertEqual(captured["status"], "200 OK")
+        self.assertIn("synthetic-fixtures", body)
+        self.assertIn("github-releases-recorded-fixtures", body)
 
     def test_wsgi_app_serves_manifest_export_json_for_known_target(self) -> None:
         app = WorkbenchWsgiApp(

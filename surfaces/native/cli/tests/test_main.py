@@ -213,6 +213,37 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("source: GitHub Releases", output)
         self.assertIn("evidence: label via", output)
 
+    def test_sources_command_lists_active_fixture_and_placeholder_records(self) -> None:
+        exit_code, output = run_cli("sources")
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Source registry", output)
+        self.assertIn("source_count: 6", output)
+        self.assertIn("synthetic-fixtures", output)
+        self.assertIn("github-releases-recorded-fixtures", output)
+        self.assertIn("internet-archive-placeholder", output)
+        self.assertIn("connector: Synthetic software connector [fixture_backed]", output)
+
+    def test_source_commands_support_filters_json_and_not_found(self) -> None:
+        filtered_exit_code, filtered_output = run_cli("sources", "--status", "active_fixture", "--json")
+        filtered_payload = json.loads(filtered_output)
+
+        self.assertEqual(filtered_exit_code, 0)
+        self.assertEqual(filtered_payload["status"], "listed")
+        self.assertEqual(filtered_payload["source_count"], 2)
+        self.assertEqual(filtered_payload["applied_filters"]["status"], "active_fixture")
+
+        detail_exit_code, detail_output = run_cli("source", "local-files-placeholder")
+        self.assertEqual(detail_exit_code, 0)
+        self.assertIn("selected_source_id: local-files-placeholder", detail_output)
+        self.assertIn("rights_notes: Local paths and user-controlled material are private by default", detail_output)
+
+        missing_exit_code, missing_output = run_cli("source", "missing-source", "--json")
+        missing_payload = json.loads(missing_output)
+        self.assertEqual(missing_exit_code, 0)
+        self.assertEqual(missing_payload["status"], "blocked")
+        self.assertEqual(missing_payload["notices"][0]["code"], "source_id_not_found")
+
     def test_explain_resolve_miss_renders_compact_absence_report(self) -> None:
         exit_code, output = run_cli("explain-resolve-miss", "fixture:software/archivebox@9.9.9")
 

@@ -27,6 +27,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_jobs_public_api,
     build_demo_representations_public_api,
     build_demo_search_public_api,
+    build_demo_source_registry_public_api,
     build_demo_stored_exports_public_api,
     build_demo_subject_states_public_api,
     ExplainResolveMissRequest,
@@ -52,6 +53,9 @@ from runtime.gateway.public_api import (
     ResolutionActionsPublicApi,
     SearchCatalogRequest,
     SearchPublicApi,
+    SourceCatalogRequest,
+    SourceReadRequest,
+    SourceRegistryPublicApi,
     SubjectStatesCatalogRequest,
     SubjectStatesPublicApi,
     StoredArtifactRequest,
@@ -67,6 +71,7 @@ from runtime.gateway.public_api import (
     decomposition_envelope_to_view_model,
     representations_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
+    source_registry_envelope_to_view_model,
     stored_exports_envelope_to_view_model,
     subject_states_envelope_to_view_model,
 )
@@ -86,6 +91,7 @@ from surfaces.native.cli.formatters import (
     format_representations,
     format_resolution_workspace,
     format_search_results,
+    format_source_registry,
     format_store_result,
     format_stored_artifact_bundle,
     format_stored_artifact_json,
@@ -107,6 +113,7 @@ class CliContext:
     actions_public_api: ResolutionActionsPublicApi
     inspection_public_api: ResolutionBundleInspectionPublicApi
     search_public_api: SearchPublicApi
+    source_registry_public_api: SourceRegistryPublicApi
     absence_public_api: AbsencePublicApi
     comparison_public_api: ComparisonPublicApi
     compatibility_public_api: CompatibilityPublicApi
@@ -227,6 +234,35 @@ def main(
                 args.json,
                 search_results,
                 format_search_results(search_results),
+            )
+
+        if args.command == "sources":
+            response = cli_context.source_registry_public_api.list_sources(
+                SourceCatalogRequest.from_parts(
+                    status=args.status,
+                    source_family=args.family,
+                    role=args.role,
+                    surface=args.surface,
+                )
+            )
+            source_registry = source_registry_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                source_registry,
+                format_source_registry(source_registry),
+            )
+
+        if args.command == "source":
+            response = cli_context.source_registry_public_api.get_source(
+                SourceReadRequest.from_parts(args.source_id),
+            )
+            source_registry = source_registry_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                source_registry,
+                format_source_registry(source_registry),
             )
 
         if args.command == "explain-resolve-miss":
@@ -424,6 +460,23 @@ def build_parser() -> argparse.ArgumentParser:
     )
     search_parser.add_argument("query")
 
+    sources_parser = subparsers.add_parser(
+        "sources",
+        parents=[json_parent],
+        help="List governed source-registry records through the public boundary.",
+    )
+    sources_parser.add_argument("--status")
+    sources_parser.add_argument("--family", dest="family")
+    sources_parser.add_argument("--role")
+    sources_parser.add_argument("--surface")
+
+    source_parser = subparsers.add_parser(
+        "source",
+        parents=[json_parent],
+        help="Read one governed source-registry record by source_id through the public boundary.",
+    )
+    source_parser.add_argument("source_id")
+
     explain_resolve_parser = subparsers.add_parser(
         "explain-resolve-miss",
         parents=[json_parent],
@@ -615,6 +668,7 @@ def build_cli_context(*, store_root: str | None) -> CliContext:
         actions_public_api=build_demo_resolution_actions_public_api(),
         inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
         search_public_api=build_demo_search_public_api(),
+        source_registry_public_api=build_demo_source_registry_public_api(),
         absence_public_api=build_demo_absence_public_api(),
         comparison_public_api=build_demo_comparison_public_api(),
         compatibility_public_api=build_demo_compatibility_public_api(),

@@ -29,6 +29,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_jobs_public_api,
     build_demo_representations_public_api,
     build_demo_search_public_api,
+    build_demo_source_registry_public_api,
     build_demo_subject_states_public_api,
 )
 from surfaces.web.server import WorkbenchWsgiApp
@@ -63,6 +64,15 @@ def main(argv: list[str] | None = None) -> int:
 
     search_parser = subparsers.add_parser("search", help="Fetch deterministic machine-readable search results.")
     search_parser.add_argument("query")
+
+    sources_parser = subparsers.add_parser("sources", help="Fetch machine-readable governed source-registry records.")
+    sources_parser.add_argument("--status")
+    sources_parser.add_argument("--family")
+    sources_parser.add_argument("--role")
+    sources_parser.add_argument("--surface")
+
+    source_parser = subparsers.add_parser("source", help="Fetch one machine-readable governed source-registry record.")
+    source_parser.add_argument("source_id")
 
     explain_resolve_parser = subparsers.add_parser(
         "explain-resolve-miss",
@@ -186,6 +196,16 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         path = _path("/api/resolve", target_ref=args.target_ref, store_root=args.store_root)
     elif args.command == "search":
         path = _path("/api/search", q=args.query)
+    elif args.command == "sources":
+        path = _path(
+            "/api/sources",
+            status=args.status,
+            family=args.family,
+            role=args.role,
+            surface=args.surface,
+        )
+    elif args.command == "source":
+        path = _path("/api/source", id=args.source_id)
     elif args.command == "explain-resolve-miss":
         path = _path("/api/absence/resolve", target_ref=args.target_ref)
     elif args.command == "explain-search-miss":
@@ -298,6 +318,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
         actions_public_api=build_demo_resolution_actions_public_api(),
         bundle_inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
         search_public_api=build_demo_search_public_api(),
+        source_registry_public_api=build_demo_source_registry_public_api(),
         default_target_ref=DEFAULT_TARGET_REF,
     )
     httpd = make_server("127.0.0.1", 0, app, handler_class=_SilentRequestHandler)

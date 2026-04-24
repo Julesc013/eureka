@@ -38,6 +38,9 @@ from runtime.gateway.public_api import (
     ResolutionWorkspaceReadError,
     SearchCatalogRequest,
     SearchPublicApi,
+    SourceCatalogRequest,
+    SourceReadRequest,
+    SourceRegistryPublicApi,
     SubjectStatesCatalogRequest,
     SubjectStatesPublicApi,
     StoredArtifactRequest,
@@ -52,6 +55,7 @@ from runtime.gateway.public_api import (
     compatibility_envelope_to_view_model,
     representations_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
+    source_registry_envelope_to_view_model,
     subject_states_envelope_to_view_model,
 )
 from surfaces.web.server.api_routes import handle_api_request
@@ -69,6 +73,7 @@ from surfaces.web.workbench import (
     render_representations_html,
     render_resolution_workspace_html,
     render_search_results_html,
+    render_source_registry_html,
     render_subject_states_html,
 )
 
@@ -516,6 +521,7 @@ class WorkbenchWsgiApp:
         bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None = None,
         stored_exports_public_api: StoredExportsPublicApi | None = None,
         search_public_api: SearchPublicApi,
+        source_registry_public_api: SourceRegistryPublicApi | None = None,
         default_target_ref: str,
         session_id: str = "session.web-workbench",
     ) -> None:
@@ -534,6 +540,7 @@ class WorkbenchWsgiApp:
         self._bundle_inspection_public_api = bundle_inspection_public_api
         self._stored_exports_public_api = stored_exports_public_api
         self._search_public_api = search_public_api
+        self._source_registry_public_api = source_registry_public_api
         self._default_target_ref = default_target_ref
         self._session_id = session_id
 
@@ -563,6 +570,7 @@ class WorkbenchWsgiApp:
             actions_public_api=self._actions_public_api,
             bundle_inspection_public_api=self._bundle_inspection_public_api,
             search_public_api=self._search_public_api,
+            source_registry_public_api=self._source_registry_public_api,
             session_id=self._session_id,
         )
         if api_response is not None:
@@ -592,6 +600,8 @@ class WorkbenchWsgiApp:
             "/action-plan",
             "/handoff",
             "/representations",
+            "/source",
+            "/sources",
             "/subject",
             "/search",
             "/inspect/bundle",
@@ -609,7 +619,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/action-plan', '/handoff', '/representations', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/action-plan', '/handoff', '/representations', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -855,6 +865,21 @@ class WorkbenchWsgiApp:
                 query,
             )
             return self._respond(start_response, status="200 OK", body=page)
+        if path == "/sources":
+            page = render_source_registry_page(
+                self._source_registry_public_api,
+                status=self._resolve_optional_query_value(query_string, "status"),
+                source_family=self._resolve_optional_query_value(query_string, "family"),
+                role=self._resolve_optional_query_value(query_string, "role"),
+                surface=self._resolve_optional_query_value(query_string, "surface"),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/source":
+            page = render_source_registry_page(
+                self._source_registry_public_api,
+                source_id=self._resolve_optional_query_value(query_string, "id"),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
         if path == "/inspect/bundle":
             bundle_path = self._resolve_bundle_path(query_string)
             page = render_bundle_inspection_page(
@@ -1001,6 +1026,11 @@ class WorkbenchWsgiApp:
         query = parse_qs(query_string, keep_blank_values=False)
         return query.get("key", [""])[0].strip()
 
+    def _resolve_optional_query_value(self, query_string: str, name: str) -> str | None:
+        query = parse_qs(query_string, keep_blank_values=False)
+        raw_value = query.get(name, [""])[0].strip()
+        return raw_value or None
+
     def _resolve_artifact_id(self, query_string: str) -> str:
         query = parse_qs(query_string, keep_blank_values=False)
         raw_artifact_id = query.get("artifact_id", [""])[0].strip()
@@ -1119,6 +1149,63 @@ def render_search_results_page(
     response = public_api.search_records(SearchCatalogRequest.from_parts(normalized_query))
     search_results = search_response_envelope_to_search_results_view_model(response.body)
     return render_search_results_html(search_results)
+
+
+def render_source_registry_page(
+    public_api: SourceRegistryPublicApi | None,
+    *,
+    source_id: str | None = None,
+    status: str | None = None,
+    source_family: str | None = None,
+    role: str | None = None,
+    surface: str | None = None,
+) -> str:
+    if public_api is None:
+        return render_source_registry_html(
+            {
+                "status": "blocked",
+                "source_count": 0,
+                "sources": [],
+                "notices": [
+                    {
+                        "code": "source_registry_unavailable",
+                        "severity": "warning",
+                        "message": "This bootstrap workbench was not configured with a public source-registry boundary.",
+                    }
+                ],
+            }
+        )
+
+    if source_id is not None and source_id.strip():
+        try:
+            response = public_api.get_source(SourceReadRequest.from_parts(source_id))
+        except ValueError as error:
+            return render_source_registry_html(
+                {
+                    "status": "blocked",
+                    "source_count": 0,
+                    "selected_source_id": "",
+                    "sources": [],
+                    "notices": [
+                        {
+                            "code": "invalid_source_request",
+                            "severity": "warning",
+                            "message": str(error),
+                        }
+                    ],
+                }
+            )
+        return render_source_registry_html(source_registry_envelope_to_view_model(response.body))
+
+    response = public_api.list_sources(
+        SourceCatalogRequest.from_parts(
+            status=status,
+            source_family=source_family,
+            role=role,
+            surface=surface,
+        )
+    )
+    return render_source_registry_html(source_registry_envelope_to_view_model(response.body))
 
 
 def render_comparison_page(

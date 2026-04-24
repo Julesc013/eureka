@@ -23,6 +23,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_jobs_public_api,
     build_demo_representations_public_api,
     build_demo_search_public_api,
+    build_demo_source_registry_public_api,
     build_demo_subject_states_public_api,
 )
 from surfaces.web.server import WorkbenchWsgiApp
@@ -53,6 +54,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             actions_public_api=build_demo_resolution_actions_public_api(),
             bundle_inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
             search_public_api=build_demo_search_public_api(),
+            source_registry_public_api=build_demo_source_registry_public_api(),
             default_target_ref=DEFAULT_TARGET_REF,
         )
 
@@ -351,6 +353,46 @@ class HttpApiRoutesTestCase(unittest.TestCase):
             payload = json.loads(body)
             self.assertEqual(payload["result_count"], 0)
             self.assertEqual(payload["absence"]["code"], "search_no_matches")
+
+    def test_sources_endpoints_return_registry_listing_and_single_source(self) -> None:
+        status, headers, body = self._request("/api/sources", {"status": "active_fixture"})
+
+        self.assertEqual(status, "200 OK")
+        self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
+        payload = json.loads(body)
+        self.assertEqual(payload["status"], "listed")
+        self.assertEqual(payload["source_count"], 2)
+        self.assertEqual(payload["applied_filters"]["status"], "active_fixture")
+        self.assertEqual(
+            {entry["source_id"] for entry in payload["sources"]},
+            {"synthetic-fixtures", "github-releases-recorded-fixtures"},
+        )
+
+        detail_status, _, detail_body = self._request(
+            "/api/source",
+            {"id": "github-releases-recorded-fixtures"},
+        )
+        self.assertEqual(detail_status, "200 OK")
+        detail_payload = json.loads(detail_body)
+        self.assertEqual(detail_payload["status"], "available")
+        self.assertEqual(detail_payload["selected_source_id"], "github-releases-recorded-fixtures")
+        self.assertEqual(detail_payload["sources"][0]["connector"]["status"], "fixture_backed")
+
+    def test_source_endpoint_returns_structured_not_found_and_placeholder_honesty(self) -> None:
+        not_found_status, _, not_found_body = self._request("/api/source", {"id": "missing-source"})
+        self.assertEqual(not_found_status, "404 Not Found")
+        not_found_payload = json.loads(not_found_body)
+        self.assertEqual(not_found_payload["status"], "blocked")
+        self.assertEqual(not_found_payload["notices"][0]["code"], "source_id_not_found")
+
+        placeholder_status, _, placeholder_body = self._request(
+            "/api/source",
+            {"id": "internet-archive-placeholder"},
+        )
+        self.assertEqual(placeholder_status, "200 OK")
+        placeholder_payload = json.loads(placeholder_body)
+        self.assertEqual(placeholder_payload["sources"][0]["status"], "placeholder")
+        self.assertEqual(placeholder_payload["sources"][0]["connector"]["status"], "unimplemented")
 
     def test_absence_endpoints_return_machine_readable_reports(self) -> None:
         resolve_status, headers, resolve_body = self._request(

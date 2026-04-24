@@ -29,6 +29,7 @@ from runtime.gateway.public_api import (
     build_demo_resolution_bundle_inspection_public_api,
     build_demo_resolution_jobs_public_api,
     build_demo_search_public_api,
+    build_demo_source_registry_public_api,
     build_demo_stored_exports_public_api,
     build_demo_subject_states_public_api,
 )
@@ -332,6 +333,7 @@ def main() -> int:
         bundle_inspection_public_api=bundle_inspection_public_api,
         stored_exports_public_api=stored_exports_public_api,
         search_public_api=search_public_api,
+        source_registry_public_api=build_demo_source_registry_public_api(),
         default_target_ref=target_ref,
     )
     with make_server(args.host, args.port, app) as httpd:
@@ -384,6 +386,10 @@ def main() -> int:
             f"http://{args.host}:{args.port}/api/states?subject={quote('archivebox', safe='')}",
             "Serving Eureka bootstrap HTTP API search route at "
             f"http://{args.host}:{args.port}/api/search?q={quote('synthetic', safe='')}",
+            "Serving Eureka source registry page at "
+            f"http://{args.host}:{args.port}/sources",
+            "Serving Eureka bootstrap HTTP API source registry route at "
+            f"http://{args.host}:{args.port}/api/sources",
             "Serving Eureka resolve miss explanation page at "
             f"http://{args.host}:{args.port}/absence/resolve?target_ref={quote('fixture:software/archivebox@9.9.9', safe='')}",
             "Serving Eureka bootstrap HTTP API resolve miss route at "

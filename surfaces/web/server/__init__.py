@@ -15,6 +15,7 @@ from surfaces.web.server.workbench_server import (
     render_representations_page,
     render_resolution_workspace_page,
     render_search_results_page,
+    render_source_registry_page,
     render_subject_states_page,
 )
 
@@ -33,5 +34,6 @@ __all__ = [
     "render_representations_page",
     "render_resolution_workspace_page",
     "render_search_results_page",
+    "render_source_registry_page",
     "render_subject_states_page",
 ]

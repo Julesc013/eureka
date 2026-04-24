@@ -50,6 +50,10 @@ from runtime.gateway.public_api import (
     compatibility_envelope_to_view_model,
     representations_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
+    SourceCatalogRequest,
+    SourceReadRequest,
+    SourceRegistryPublicApi,
+    source_registry_envelope_to_view_model,
     stored_exports_envelope_to_view_model,
     subject_states_envelope_to_view_model,
 )
@@ -125,6 +129,18 @@ def build_api_index_document() -> dict[str, Any]:
                 "path": "/api/search",
                 "method": "GET",
                 "query_parameters": ["q"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/sources",
+                "method": "GET",
+                "query_parameters": ["status", "family", "role", "surface"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/source",
+                "method": "GET",
+                "query_parameters": ["id"],
                 "response_content_types": ["application/json"],
             },
             {
@@ -217,6 +233,7 @@ def handle_api_request(
     actions_public_api: ResolutionActionsPublicApi | None,
     bundle_inspection_public_api: ResolutionBundleInspectionPublicApi | None,
     search_public_api: SearchPublicApi,
+    source_registry_public_api: SourceRegistryPublicApi | None,
     session_id: str,
 ) -> SerializedHttpResponse | None:
     if not path.startswith("/api"):
@@ -533,6 +550,49 @@ def handle_api_request(
         return json_response(
             response.status_code,
             search_response_envelope_to_search_results_view_model(response.body),
+        )
+
+    if path == "/api/sources":
+        if source_registry_public_api is None:
+            return _service_unavailable(
+                "source_registry_unavailable",
+                "This bootstrap HTTP API was not configured with a public source-registry boundary.",
+            )
+        response = source_registry_public_api.list_sources(
+            SourceCatalogRequest.from_parts(
+                status=_required_query_value(query, "status"),
+                source_family=_required_query_value(query, "family"),
+                role=_required_query_value(query, "role"),
+                surface=_required_query_value(query, "surface"),
+            )
+        )
+        return json_response(
+            response.status_code,
+            source_registry_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/source":
+        if source_registry_public_api is None:
+            return _service_unavailable(
+                "source_registry_unavailable",
+                "This bootstrap HTTP API was not configured with a public source-registry boundary.",
+            )
+        source_id = _required_query_value(query, "id")
+        if source_id is None:
+            return _missing_query_value("id")
+        try:
+            response = source_registry_public_api.get_source(
+                SourceReadRequest.from_parts(source_id),
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_source_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            source_registry_envelope_to_view_model(response.body),
         )
 
     if path == "/api/absence/resolve":
