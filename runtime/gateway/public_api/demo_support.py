@@ -4,6 +4,7 @@ from runtime.connectors.github_releases import GitHubReleasesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.acquisition.service import DeterministicAcquisitionService
 from runtime.engine.decomposition.service import DeterministicDecompositionService
+from runtime.engine.index import LocalIndexEngineService, LocalIndexSqliteStore
 from runtime.engine.members.service import DeterministicMemberAccessService
 from runtime.engine.action_routing.service import DeterministicActionPlanService
 from runtime.engine.actions import ResolutionManifestExportService
@@ -40,6 +41,7 @@ from runtime.gateway.public_api.resolution_boundary import ResolutionJobsPublicA
 from runtime.gateway.public_api.resolution_bundle_inspection import ResolutionBundleInspectionPublicApi
 from runtime.gateway.public_api.resolution_jobs import InMemoryResolutionJobService
 from runtime.gateway.public_api.query_planner_boundary import QueryPlannerPublicApi
+from runtime.gateway.public_api.local_index_boundary import LocalIndexPublicApi
 from runtime.gateway.public_api.resolution_runs_boundary import ResolutionRunsPublicApi
 from runtime.gateway.public_api.representations_boundary import RepresentationsPublicApi
 from runtime.gateway.public_api.representation_selection_boundary import (
@@ -77,6 +79,17 @@ def build_demo_search_public_api() -> SearchPublicApi:
     catalog = _build_demo_normalized_catalog()
     search_service = DeterministicSearchService(catalog)
     return SearchPublicApi(search_service)
+
+
+def build_demo_local_index_public_api() -> LocalIndexPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    source_registry = load_source_registry()
+    index_service = LocalIndexEngineService(
+        catalog=catalog,
+        source_registry=source_registry,
+        sqlite_store=LocalIndexSqliteStore(),
+    )
+    return LocalIndexPublicApi(index_service)
 
 
 def build_demo_source_registry_public_api() -> SourceRegistryPublicApi:

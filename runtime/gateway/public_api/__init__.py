@@ -3,6 +3,9 @@
 from runtime.engine.interfaces.public import (
     DeterministicSearchRunRequest,
     ExactResolutionRunRequest,
+    LocalIndexBuildRequest,
+    LocalIndexQueryRequest,
+    LocalIndexStatusRequest,
     PlannedSearchRunRequest,
     QueryPlanRequest,
 )
@@ -132,6 +135,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
     build_demo_decomposition_public_api,
+    build_demo_local_index_public_api,
     build_demo_member_access_public_api,
     build_demo_query_planner_public_api,
     build_demo_representation_selection_public_api,
@@ -177,6 +181,13 @@ from runtime.gateway.public_api.search_boundary import (
     SearchPublicApi,
     search_response_to_public_envelope,
 )
+from runtime.gateway.public_api.local_index_boundary import (
+    LocalIndexPublicApi,
+    local_index_build_to_public_envelope,
+    local_index_error_envelope,
+    local_index_query_to_public_envelope,
+    local_index_status_to_public_envelope,
+)
 from runtime.gateway.public_api.source_registry_boundary import (
     SourceCatalogRequest,
     SourceReadRequest,
@@ -209,6 +220,9 @@ from runtime.gateway.public_api.source_registry_view_models import (
 from runtime.gateway.public_api.query_planner_view_models import (
     query_plan_envelope_to_view_model,
 )
+from runtime.gateway.public_api.local_index_view_models import (
+    local_index_envelope_to_view_model,
+)
 from runtime.gateway.public_api.workbench_sessions import resolution_job_envelope_to_workbench_session
 
 __all__ = [
@@ -221,6 +235,10 @@ __all__ = [
     "DecompositionInspectionRequest",
     "DeterministicSearchRunRequest",
     "ExactResolutionRunRequest",
+    "LocalIndexBuildRequest",
+    "LocalIndexPublicApi",
+    "LocalIndexQueryRequest",
+    "LocalIndexStatusRequest",
     "PlannedSearchRunRequest",
     "QueryPlanRequest",
     "DecompositionPublicApi",
@@ -297,6 +315,7 @@ __all__ = [
     "build_demo_comparison_public_api",
     "build_demo_compatibility_public_api",
     "build_demo_decomposition_public_api",
+    "build_demo_local_index_public_api",
     "build_demo_member_access_public_api",
     "build_demo_query_planner_public_api",
     "build_demo_representation_selection_public_api",
@@ -323,6 +342,11 @@ __all__ = [
     "query_plan_bad_request_envelope",
     "query_plan_envelope_to_view_model",
     "query_plan_to_public_envelope",
+    "local_index_build_to_public_envelope",
+    "local_index_envelope_to_view_model",
+    "local_index_error_envelope",
+    "local_index_query_to_public_envelope",
+    "local_index_status_to_public_envelope",
     "resolution_actions_to_public_envelope",
     "resolution_bundle_not_available_error",
     "resolution_job_not_found_error",

@@ -1,0 +1,142 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka.local/contracts/ui/view_models/local_index.view_model.yaml"
+title: LocalIndexViewModel
+type: object
+x-eureka-status: draft
+additionalProperties: false
+required:
+  - status
+  - index
+properties:
+  status:
+    type: string
+    enum:
+      - built
+      - available
+      - queried
+      - blocked
+  query:
+    type:
+      - string
+      - "null"
+  result_count:
+    type:
+      - integer
+      - "null"
+    minimum: 0
+  results:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      required:
+        - index_record_id
+        - record_kind
+        - label
+      properties:
+        index_record_id:
+          type: string
+        record_kind:
+          type: string
+        label:
+          type: string
+        summary:
+          type:
+            - string
+            - "null"
+        target_ref:
+          type:
+            - string
+            - "null"
+        resolved_resource_id:
+          type:
+            - string
+            - "null"
+        source_id:
+          type:
+            - string
+            - "null"
+        source_family:
+          type:
+            - string
+            - "null"
+        source_label:
+          type:
+            - string
+            - "null"
+        subject_key:
+          type:
+            - string
+            - "null"
+        version_or_state:
+          type:
+            - string
+            - "null"
+        representation_id:
+          type:
+            - string
+            - "null"
+        member_path:
+          type:
+            - string
+            - "null"
+        evidence:
+          type: array
+          items:
+            type: string
+        route_hints:
+          type: object
+          additionalProperties:
+            type:
+              - string
+              - number
+              - integer
+              - boolean
+              - "null"
+  index:
+    type: object
+    additionalProperties: false
+    required:
+      - index_path_kind
+      - fts_mode
+      - record_count
+      - record_kind_counts
+    properties:
+      index_path_kind:
+        type: string
+        enum:
+          - bootstrap_local_path
+      index_path:
+        type:
+          - string
+          - "null"
+      fts_mode:
+        type: string
+        enum:
+          - fts5
+          - fallback_like
+      record_count:
+        type: integer
+        minimum: 0
+      record_kind_counts:
+        type: object
+        additionalProperties:
+          type: integer
+          minimum: 0
+  notices:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      required:
+        - code
+        - severity
+      properties:
+        code:
+          type: string
+        severity:
+          type: string
+        message:
+          type:
+            - string
+            - "null"

@@ -1,0 +1,27 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka.local/contracts/ui/ui_contracts/local_index.ui_contract.yaml"
+title: LocalIndexUiContract
+type: object
+x-eureka-status: draft
+additionalProperties: false
+required:
+  - contract_name
+  - primary_view_model
+  - supported_surfaces
+properties:
+  contract_name:
+    const: LocalIndexUiContract
+  primary_view_model:
+    const: contracts/ui/view_models/local_index.view_model.yaml
+  supported_surfaces:
+    type: array
+    items:
+      type: string
+      enum:
+        - web
+        - native_cli
+        - http_api
+  notes:
+    type: array
+    items:
+      type: string
