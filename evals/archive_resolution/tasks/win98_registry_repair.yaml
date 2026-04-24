@@ -1,0 +1,45 @@
+{
+  "id": "win98_registry_repair",
+  "raw_query": "software to fix broken registry on Windows 98",
+  "query_family": "software_by_function_and_platform",
+  "desired_intent": "find_maintenance_utility",
+  "desired_object_types": [
+    "utility",
+    "application",
+    "portable_package"
+  ],
+  "target_constraints": {
+    "platform": {
+      "os_family": "Windows",
+      "os_version": "98"
+    },
+    "action": "repair_or_maintain"
+  },
+  "bad_result_patterns": [
+    "Windows 98 install media",
+    "generic registry advice without an artifact",
+    "modern registry cleaners without Windows 98 evidence"
+  ],
+  "acceptable_result_patterns": [
+    "direct utility installer or archive",
+    "manual or release note that confirms Windows 98 support and points to a tool",
+    "extracted bundle member that is itself the utility"
+  ],
+  "minimum_granularity": "direct_artifact_or_extracted_member",
+  "required_evidence": [
+    "functional or descriptive clue that the tool repairs registry issues",
+    "Windows 98 compatibility evidence or period-appropriate provenance",
+    "artifact or member locator"
+  ],
+  "expected_lanes": [
+    "best_direct_answer",
+    "installable_or_usable_now",
+    "documentation",
+    "community",
+    "absence_or_next_steps"
+  ],
+  "allowed_absence_outcomes": [
+    "checked_sources_with_reasoned_absence",
+    "near_matches_with_functional_trace"
+  ]
+}

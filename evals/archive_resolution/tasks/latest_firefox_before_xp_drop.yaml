@@ -1,0 +1,47 @@
+{
+  "id": "latest_firefox_before_xp_drop",
+  "raw_query": "latest Firefox before XP support ended",
+  "query_family": "latest_compatible_release",
+  "desired_intent": "find_latest_compatible_release",
+  "desired_object_types": [
+    "software_release",
+    "installer",
+    "release_asset"
+  ],
+  "target_constraints": {
+    "platform": {
+      "os_family": "Windows",
+      "os_version": "XP"
+    },
+    "action": "inspect_or_download",
+    "temporal_goal": "latest_compatible_before_support_end",
+    "product_hint": "Firefox"
+  },
+  "bad_result_patterns": [
+    "latest Firefox release regardless of platform support",
+    "release pages without Windows XP compatibility evidence",
+    "browser collections that do not narrow to one compatible release"
+  ],
+  "acceptable_result_patterns": [
+    "direct installer for the last compatible Firefox release",
+    "release archive page with version evidence and downloadable asset",
+    "archived vendor page plus concrete release asset trace"
+  ],
+  "minimum_granularity": "versioned_release_artifact",
+  "required_evidence": [
+    "version or release identity",
+    "Windows XP compatibility or support-window evidence",
+    "direct artifact or release asset locator"
+  ],
+  "expected_lanes": [
+    "best_direct_answer",
+    "official",
+    "preservation",
+    "documentation",
+    "absence_or_next_steps"
+  ],
+  "allowed_absence_outcomes": [
+    "near_match_with_version_window_trace",
+    "checked_sources_with_reasoned_absence"
+  ]
+}

@@ -38,4 +38,6 @@ Current status within this stage: `surfaces/web/` now contains the first compati
 - add real evidence handling, compatibility reasoning, and snapshot workflows
 - expand only where contract governance and architectural boundaries already exist
 
+Current status within this stage: the first repo-level archive-resolution eval corpus now lives under `evals/archive_resolution/`. It records hard software-resolution queries, explicit bad-result patterns, minimum granularity expectations, expected future result lanes, and allowed absence outcomes as a guardrail for future investigation, ranking, decomposition, source-expansion, and optional AI work without changing current runtime semantics.
+
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.

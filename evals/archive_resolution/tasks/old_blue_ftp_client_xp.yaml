@@ -1,0 +1,46 @@
+{
+  "id": "old_blue_ftp_client_xp",
+  "raw_query": "old blue FTP client for XP",
+  "query_family": "vague_software_identity",
+  "desired_intent": "identify_and_retrieve_software_from_partial_description",
+  "desired_object_types": [
+    "application",
+    "installer",
+    "portable_package"
+  ],
+  "target_constraints": {
+    "platform": {
+      "os_family": "Windows",
+      "os_version": "XP"
+    },
+    "action": "identify_then_install",
+    "appearance_hint": "blue UI"
+  },
+  "bad_result_patterns": [
+    "generic FTP client lists with no concrete artifact",
+    "modern sync tools unrelated to classic FTP clients",
+    "results that match only the color hint without FTP function evidence"
+  ],
+  "acceptable_result_patterns": [
+    "direct installer for a plausible FTP client supported on Windows XP",
+    "archived vendor page or manual trace that narrows identity to a concrete product",
+    "bundle-contained installer with a member path and surrounding evidence"
+  ],
+  "minimum_granularity": "direct_artifact_or_identity_trace",
+  "required_evidence": [
+    "FTP-client function evidence",
+    "Windows XP compatibility evidence or period trace",
+    "artifact locator or concrete product trace"
+  ],
+  "expected_lanes": [
+    "best_direct_answer",
+    "documentation",
+    "community",
+    "mentions_or_traces",
+    "absence_or_next_steps"
+  ],
+  "allowed_absence_outcomes": [
+    "candidate_identity_trace_without_direct_download",
+    "checked_sources_with_reasoned_absence"
+  ]
+}

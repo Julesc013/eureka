@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.eureka.invalid/evals/archive_resolution/task.schema.yaml",
+  "$comment": "Draft repo-level eval schema for hard archive-resolution tasks. Stored as the JSON subset of YAML for stdlib-only loading during bootstrap.",
+  "title": "ArchiveResolutionTask",
+  "description": "Draft benchmark task that records one difficult archive-resolution query, expected answer shapes, bad-result patterns, and acceptable absence outcomes.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable task identifier."
+    },
+    "raw_query": {
+      "type": "string",
+      "description": "Human-facing query phrasing for the benchmark task."
+    },
+    "query_family": {
+      "type": "string",
+      "description": "Draft reusable family label for related tasks."
+    },
+    "desired_intent": {
+      "type": "string",
+      "description": "Draft intended outcome the future resolver should infer."
+    },
+    "desired_object_types": {
+      "type": "array",
+      "description": "One or more acceptable object kinds for successful results.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "target_constraints": {
+      "type": "object",
+      "description": "Draft structured constraints such as platform, time, action, or hardware hints.",
+      "minProperties": 1,
+      "additionalProperties": true
+    },
+    "bad_result_patterns": {
+      "type": "array",
+      "description": "Known misleading result patterns that future ranking or planning should avoid.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "acceptable_result_patterns": {
+      "type": "array",
+      "description": "Broad acceptable answer shapes for the benchmark task.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "minimum_granularity": {
+      "type": "string",
+      "description": "Smallest acceptable answer unit for the task."
+    },
+    "required_evidence": {
+      "type": "array",
+      "description": "Evidence expectations that should accompany successful results.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "expected_lanes": {
+      "type": "array",
+      "description": "Draft future result-lane expectations when the UI grows beyond one flat list.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "allowed_absence_outcomes": {
+      "type": "array",
+      "description": "Absence explanations that still count as useful when direct results are not found.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional bounded notes for human readers."
+    }
+  },
+  "required": [
+    "id",
+    "raw_query",
+    "query_family",
+    "desired_intent",
+    "desired_object_types",
+    "target_constraints",
+    "bad_result_patterns",
+    "acceptable_result_patterns",
+    "minimum_granularity",
+    "required_evidence",
+    "expected_lanes",
+    "allowed_absence_outcomes"
+  ],
+  "x-eureka-status": "draft"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "article_inside_magazine_scan",
+  "raw_query": "article inside 1994 magazine scan about ray tracing",
+  "query_family": "article_inside_scan",
+  "desired_intent": "find_article_or_relevant_page_range",
+  "desired_object_types": [
+    "article",
+    "page_range",
+    "document_section"
+  ],
+  "target_constraints": {
+    "time": {
+      "year": 1994
+    },
+    "action": "read_or_cite",
+    "topic_hint": "ray tracing"
+  },
+  "bad_result_patterns": [
+    "whole magazine issues with no article boundary",
+    "modern ray tracing articles unrelated to the 1994 scan context",
+    "search hits that match only a collection title without page-level evidence"
+  ],
+  "acceptable_result_patterns": [
+    "article-level record with page range",
+    "page-level or section-level trace inside a scanned magazine",
+    "OCR-backed page locator that narrows the scan to a relevant segment"
+  ],
+  "minimum_granularity": "article_or_page_range",
+  "required_evidence": [
+    "topic clue tied to the scan or pages",
+    "page, section, or article locator",
+    "source-family visibility"
+  ],
+  "expected_lanes": [
+    "best_direct_answer",
+    "inside_bundles",
+    "preservation",
+    "documentation",
+    "absence_or_next_steps"
+  ],
+  "allowed_absence_outcomes": [
+    "scan_level_trace_without_article_boundary",
+    "checked_sources_with_reasoned_absence"
+  ]
+}

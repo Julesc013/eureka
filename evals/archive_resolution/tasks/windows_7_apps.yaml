@@ -1,0 +1,46 @@
+{
+  "id": "windows_7_apps",
+  "raw_query": "Windows 7 apps",
+  "query_family": "software_by_platform",
+  "desired_intent": "browse_or_install_compatible_software",
+  "desired_object_types": [
+    "application",
+    "installer",
+    "portable_package"
+  ],
+  "target_constraints": {
+    "platform": {
+      "os_family": "Windows",
+      "os_version": "7"
+    },
+    "action": "browse_or_install"
+  },
+  "bad_result_patterns": [
+    "operating system ISO images",
+    "generic software dumps without member listings",
+    "bundle-only results that do not expose direct installable artifacts"
+  ],
+  "acceptable_result_patterns": [
+    "individual application installers",
+    "portable applications compatible with Windows 7",
+    "extracted bundle members with direct application artifacts",
+    "documentation-backed compatibility traces that point to direct downloads"
+  ],
+  "minimum_granularity": "direct_artifact_or_extracted_member",
+  "required_evidence": [
+    "compatibility clue or platform evidence",
+    "representation or member path",
+    "source-family visibility"
+  ],
+  "expected_lanes": [
+    "best_direct_answer",
+    "installable_or_usable_now",
+    "inside_bundles",
+    "documentation",
+    "absence_or_next_steps"
+  ],
+  "allowed_absence_outcomes": [
+    "checked_sources_with_reasoned_absence",
+    "near_matches_with_compatibility_trace"
+  ]
+}

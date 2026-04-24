@@ -1,0 +1,48 @@
+{
+  "id": "driver_inside_support_cd",
+  "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+  "query_family": "driver_by_hardware_and_platform",
+  "desired_intent": "find_driver_package_or_member",
+  "desired_object_types": [
+    "driver",
+    "installer",
+    "bundle_member"
+  ],
+  "target_constraints": {
+    "platform": {
+      "os_family": "Windows",
+      "os_version": "2000"
+    },
+    "hardware": {
+      "device_family": "ThinkPad T42 Wi-Fi"
+    },
+    "action": "download_or_extract"
+  },
+  "bad_result_patterns": [
+    "whole support CDs without member listings",
+    "manuals or spec sheets with no driver artifact",
+    "drivers for the wrong operating system or wrong hardware variant"
+  ],
+  "acceptable_result_patterns": [
+    "direct driver installer or archive",
+    "INF, CAB, or executable member extracted from a support bundle",
+    "vendor or preservation trace that points to the exact member path"
+  ],
+  "minimum_granularity": "direct_driver_artifact_or_member",
+  "required_evidence": [
+    "hardware match evidence",
+    "Windows 2000 compatibility evidence",
+    "artifact or member locator"
+  ],
+  "expected_lanes": [
+    "best_direct_answer",
+    "inside_bundles",
+    "official",
+    "preservation",
+    "absence_or_next_steps"
+  ],
+  "allowed_absence_outcomes": [
+    "hardware_trace_without_driver_artifact",
+    "checked_sources_with_reasoned_absence"
+  ]
+}

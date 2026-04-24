@@ -65,6 +65,11 @@ The current repo proves a set of bounded executable seams across connectors, eng
 - deterministic local stored-export listing and readback
 - bootstrap `resolved_resource_id` propagation through resolution, search, export, inspection, and storage flows
 
+### Evaluation Guardrails
+
+- first repo-level archive-resolution eval corpus under `evals/archive_resolution/`
+- hard software-resolution queries with explicit bad-result patterns, minimum granularity expectations, and allowed absence outcomes for future investigation and ranking work
+
 ## What Eureka Deliberately Does Not Claim Yet
 
 The repository is intentionally explicit about unresolved scope.
@@ -165,7 +170,7 @@ The repo enforces the current proven Python import layering with:
 
 ## Current Executable Scope
 
-Current bootstrap status includes **twenty-one executable local deterministic thin slices**.
+Current bootstrap status includes **twenty-five executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
 
 Important highlights:
 
@@ -221,6 +226,7 @@ Useful paths to know:
 - `runtime/gateway/public_api/` — transport-neutral public runtime boundary reused by surfaces
 - `surfaces/web/` — compatibility-first HTML workbench plus local stdlib HTTP API
 - `surfaces/native/cli/` — bootstrap CLI surface
+- `evals/archive_resolution/` — hard archive-resolution benchmark tasks and draft schema
 - `scripts/` — demo entry points and repo-local checks
 
 ## Recommended Reading Order
