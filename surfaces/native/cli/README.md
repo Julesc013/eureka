@@ -17,6 +17,7 @@ This bootstrap CLI:
 - shows bounded local-index build, status, and query results over the public side of the architecture, clearly distinguishing SQLite FTS5 mode from deterministic fallback mode without implying ranking, fuzzy retrieval, vector search, live sync, or incremental indexing
 - shows bounded synchronous local-task creation, listing, and inspection over the public side of the architecture, clearly distinguishing completed, blocked, and failed bootstrap local task records without implying background scheduling, retries, priorities, or distributed queue behavior
 - shows bounded synchronous resolution-run listings and detail over the public side of the architecture, clearly distinguishing completed exact-resolution, deterministic-search, and planned-search investigation records from any future worker, full planner, or streaming semantics
+- shows explicit local resolution-memory creation, listing, and inspection over the public side of the architecture, clearly distinguishing successful-resolution, successful-search, and absence-finding memory records derived from persisted runs without implying shared/cloud memory, private user-history tracking, personalization, ranking, or automatic invalidation
 - shows bounded known representations and access paths for one resolved target without implying final download, install, import, or restore semantics
 - shows bounded compatibility verdicts for one resolved target against one bootstrap host profile preset without implying a final compatibility oracle, installer, or runtime-routing model
 - shows bounded representation-selection and handoff recommendations for one resolved target, preserving preferred, available, unsuitable, and unknown choices without implying downloads, installers, launches, or final runtime-routing behavior
@@ -42,6 +43,9 @@ Commands currently exposed:
 - `run-planned-search <raw_query> --run-store-root <path>`
 - `run-status <run_id> --run-store-root <path>`
 - `runs --run-store-root <path>`
+- `memory-create --run-store-root <path> --memory-store-root <path> --run-id <run_id>`
+- `memory <memory_id> --memory-store-root <path>`
+- `memories --memory-store-root <path> [--kind <memory_kind>] [--run-id <run_id>] [--task-kind <task_kind>] [--source-id <source_id>]`
 - `sources [--status <status>] [--family <family>] [--role <role>] [--surface <surface>]`
 - `source <source_id>`
 - `representations <target_ref>`
@@ -78,3 +82,7 @@ fuzzy retrieval, vector search, or planner-owned routing behavior.
 `--task-store-root` is a bootstrap local persistence input only. It does not
 imply background scheduling, retries, priorities, worker daemons, distributed
 queues, or a final task-storage contract.
+
+`--memory-store-root` is a bootstrap local persistence input only. It does not
+imply shared/cloud memory, private user-history tracking, personalization,
+ranking, automatic invalidation, or a final multi-user memory-storage contract.

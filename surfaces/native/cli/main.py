@@ -24,6 +24,7 @@ from runtime.gateway.public_api import (
     build_demo_query_planner_public_api,
     build_demo_local_index_public_api,
     build_demo_local_tasks_public_api,
+    build_demo_resolution_memory_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -49,6 +50,10 @@ from runtime.gateway.public_api import (
     LocalIndexPublicApi,
     LocalIndexQueryRequest,
     LocalIndexStatusRequest,
+    ResolutionMemoryCatalogRequest,
+    ResolutionMemoryCreateRequest,
+    ResolutionMemoryReadRequest,
+    ResolutionMemoryPublicApi,
     LocalTaskReadRequest,
     LocalTaskRunRequest,
     LocalTasksPublicApi,
@@ -56,6 +61,7 @@ from runtime.gateway.public_api import (
     MemberAccessReadRequest,
     local_index_envelope_to_view_model,
     local_tasks_envelope_to_view_model,
+    resolution_memory_envelope_to_view_model,
     member_access_envelope_to_view_model,
     InspectResolutionBundleRequest,
     RepresentationSelectionEvaluationRequest,
@@ -109,6 +115,7 @@ from surfaces.native.cli.formatters import (
     format_decomposition,
     format_handoff,
     format_local_index,
+    format_resolution_memory,
     format_local_tasks,
     format_member_access,
     format_manifest_export,
@@ -148,6 +155,7 @@ class CliContext:
     representations_public_api: RepresentationsPublicApi
     query_planner_public_api: QueryPlannerPublicApi
     local_index_public_api: LocalIndexPublicApi
+    resolution_memory_public_api: ResolutionMemoryPublicApi | None = None
     local_tasks_public_api: LocalTasksPublicApi | None = None
     resolution_runs_public_api: ResolutionRunsPublicApi | None = None
     stored_exports_public_api: StoredExportsPublicApi | None = None
@@ -166,6 +174,7 @@ def main(
     cli_context = context or build_cli_context(
         store_root=getattr(args, "store_root", None),
         run_store_root=getattr(args, "run_store_root", None),
+        memory_store_root=getattr(args, "memory_store_root", None),
         task_store_root=getattr(args, "task_store_root", None),
     )
 
@@ -358,6 +367,50 @@ def main(
                 args.json,
                 local_tasks,
                 format_local_tasks(local_tasks),
+            )
+
+        if args.command == "memory-create":
+            memory_public_api = _require_resolution_memory_public_api(cli_context)
+            response = memory_public_api.create_memory_from_run(
+                ResolutionMemoryCreateRequest.from_parts(args.run_id),
+            )
+            resolution_memory = resolution_memory_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                resolution_memory,
+                format_resolution_memory(resolution_memory),
+            )
+
+        if args.command == "memory":
+            memory_public_api = _require_resolution_memory_public_api(cli_context)
+            response = memory_public_api.get_memory(
+                ResolutionMemoryReadRequest.from_parts(args.memory_id),
+            )
+            resolution_memory = resolution_memory_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                resolution_memory,
+                format_resolution_memory(resolution_memory),
+            )
+
+        if args.command == "memories":
+            memory_public_api = _require_resolution_memory_public_api(cli_context)
+            response = memory_public_api.list_memories(
+                ResolutionMemoryCatalogRequest.from_parts(
+                    memory_kind=args.kind,
+                    source_run_id=args.run_id,
+                    task_kind=args.task_kind,
+                    checked_source_id=args.source_id,
+                )
+            )
+            resolution_memory = resolution_memory_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                resolution_memory,
+                format_resolution_memory(resolution_memory),
             )
 
         if args.command == "run-resolve":
@@ -793,6 +846,34 @@ def build_parser() -> argparse.ArgumentParser:
         help="Bootstrap local root for persisted resolution-run JSON records.",
     )
 
+    memory_create_parser = subparsers.add_parser(
+        "memory-create",
+        parents=[json_parent],
+        help="Create and persist one explicit local resolution-memory record from one existing run through the public boundary.",
+    )
+    memory_create_parser.add_argument("--run-store-root", required=True)
+    memory_create_parser.add_argument("--memory-store-root", required=True)
+    memory_create_parser.add_argument("--run-id", required=True)
+
+    memory_parser = subparsers.add_parser(
+        "memory",
+        parents=[json_parent],
+        help="Read one persisted local resolution-memory record by memory_id through the public boundary.",
+    )
+    memory_parser.add_argument("memory_id")
+    memory_parser.add_argument("--memory-store-root", required=True)
+
+    memories_parser = subparsers.add_parser(
+        "memories",
+        parents=[json_parent],
+        help="List persisted local resolution-memory records through the public boundary.",
+    )
+    memories_parser.add_argument("--memory-store-root", required=True)
+    memories_parser.add_argument("--kind")
+    memories_parser.add_argument("--run-id")
+    memories_parser.add_argument("--task-kind")
+    memories_parser.add_argument("--source-id")
+
     sources_parser = subparsers.add_parser(
         "sources",
         parents=[json_parent],
@@ -995,6 +1076,7 @@ def build_cli_context(
     *,
     store_root: str | None,
     run_store_root: str | None,
+    memory_store_root: str | None,
     task_store_root: str | None,
 ) -> CliContext:
     return CliContext(
@@ -1008,6 +1090,14 @@ def build_cli_context(
         search_public_api=build_demo_search_public_api(),
         query_planner_public_api=build_demo_query_planner_public_api(),
         local_index_public_api=build_demo_local_index_public_api(),
+        resolution_memory_public_api=(
+            build_demo_resolution_memory_public_api(
+                memory_store_root,
+                run_store_root=run_store_root,
+            )
+            if memory_store_root is not None
+            else None
+        ),
         local_tasks_public_api=(
             build_demo_local_tasks_public_api(task_store_root)
             if task_store_root is not None
@@ -1172,6 +1262,14 @@ def _require_tasks_public_api(context: CliContext) -> LocalTasksPublicApi:
     if context.local_tasks_public_api is None:
         raise ValueError("Provide --task-store-root to enable bootstrap local-task operations.")
     return context.local_tasks_public_api
+
+
+def _require_resolution_memory_public_api(context: CliContext) -> ResolutionMemoryPublicApi:
+    if context.resolution_memory_public_api is None:
+        raise ValueError(
+            "Provide --memory-store-root to enable bootstrap resolution-memory operations."
+        )
+    return context.resolution_memory_public_api
 
 
 def _write_output_payload(output_path: Path, payload: bytes) -> Path:

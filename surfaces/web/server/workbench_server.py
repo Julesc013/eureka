@@ -22,6 +22,10 @@ from runtime.gateway.public_api import (
     LocalIndexPublicApi,
     LocalIndexQueryRequest,
     LocalIndexStatusRequest,
+    ResolutionMemoryCatalogRequest,
+    ResolutionMemoryCreateRequest,
+    ResolutionMemoryPublicApi,
+    ResolutionMemoryReadRequest,
     LocalTaskReadRequest,
     LocalTaskRunRequest,
     PlannedSearchRunRequest,
@@ -62,6 +66,7 @@ from runtime.gateway.public_api import (
     action_plan_envelope_to_view_model,
     build_demo_local_index_public_api,
     build_demo_local_tasks_public_api,
+    build_demo_resolution_memory_public_api,
     build_demo_resolution_runs_public_api,
     build_resolution_workspace_view_models,
     absence_envelope_to_view_model,
@@ -70,6 +75,7 @@ from runtime.gateway.public_api import (
     compatibility_envelope_to_view_model,
     local_index_envelope_to_view_model,
     local_tasks_envelope_to_view_model,
+    resolution_memory_envelope_to_view_model,
     representations_envelope_to_view_model,
     resolution_runs_envelope_to_view_model,
     query_plan_envelope_to_view_model,
@@ -89,6 +95,7 @@ from surfaces.web.workbench import (
     render_decomposition_html,
     render_handoff_html,
     render_local_index_html,
+    render_resolution_memory_html,
     render_local_tasks_html,
     render_member_access_html,
     render_query_plan_html,
@@ -632,6 +639,9 @@ class WorkbenchWsgiApp:
             "/index/build",
             "/index/search",
             "/index/status",
+            "/memories",
+            "/memory",
+            "/memory/create",
             "/representations",
             "/task",
             "/task/run/build-local-index",
@@ -665,7 +675,8 @@ class WorkbenchWsgiApp:
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
                         "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/index/build', '/index/status', '/index/search', '/representations', '/tasks', '/task', '/task/run/validate-source-registry', '/task/run/build-local-index', '/task/run/query-local-index', '/task/run/validate-archive-resolution-evals', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
-                        "'/store/bundle', and '/stored/artifact'."
+                        "'/store/bundle', '/stored/artifact', '/memories', '/memory', and "
+                        "'/memory/create'."
                     ),
                 ),
             )
@@ -970,6 +981,31 @@ class WorkbenchWsgiApp:
         if path == "/task/run/validate-archive-resolution-evals":
             page = render_validate_archive_resolution_evals_task_page(
                 self._resolve_optional_query_value(query_string, "task_store_root"),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/memories":
+            page = render_resolution_memory_page(
+                self._resolve_optional_query_value(query_string, "memory_store_root"),
+                run_store_root=self._resolve_optional_query_value(query_string, "run_store_root"),
+                requested_run_id=self._resolve_optional_query_value(query_string, "run_id") or "",
+                memory_kind=self._resolve_optional_query_value(query_string, "kind"),
+                source_run_id=self._resolve_optional_query_value(query_string, "source_run_id"),
+                task_kind=self._resolve_optional_query_value(query_string, "task_kind"),
+                checked_source_id=self._resolve_optional_query_value(query_string, "source_id"),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/memory":
+            page = render_resolution_memory_page(
+                self._resolve_optional_query_value(query_string, "memory_store_root"),
+                memory_id=self._resolve_optional_query_value(query_string, "id"),
+                run_store_root=self._resolve_optional_query_value(query_string, "run_store_root"),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/memory/create":
+            page = render_create_resolution_memory_page(
+                self._resolve_optional_query_value(query_string, "memory_store_root"),
+                run_store_root=self._resolve_optional_query_value(query_string, "run_store_root"),
+                run_id=self._resolve_optional_query_value(query_string, "run_id") or "",
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/sources":
@@ -1616,6 +1652,140 @@ def _render_run_local_task_page(
         task_store_root=normalized_task_store_root,
         requested_index_path=requested_index_path,
         requested_query=requested_query,
+    )
+
+
+def render_resolution_memory_page(
+    memory_store_root: str | None,
+    *,
+    memory_id: str | None = None,
+    run_store_root: str | None = None,
+    requested_run_id: str = "",
+    memory_kind: str | None = None,
+    source_run_id: str | None = None,
+    task_kind: str | None = None,
+    checked_source_id: str | None = None,
+) -> str:
+    empty_view_model = {
+        "status": "listed",
+        "memory_count": 0,
+        "memories": [],
+    }
+    normalized_memory_store_root = (memory_store_root or "").strip() or None
+    normalized_run_store_root = (run_store_root or "").strip() or None
+    if normalized_memory_store_root is None:
+        return render_resolution_memory_html(
+            empty_view_model,
+            run_store_root=normalized_run_store_root,
+            requested_run_id=requested_run_id,
+            message="Provide a bootstrap memory_store_root to list or inspect persisted resolution memory.",
+        )
+
+    public_api = build_demo_resolution_memory_public_api(
+        normalized_memory_store_root,
+        run_store_root=normalized_run_store_root,
+    )
+    if memory_id is not None and memory_id.strip():
+        try:
+            response = public_api.get_memory(ResolutionMemoryReadRequest.from_parts(memory_id))
+        except ValueError as error:
+            return render_resolution_memory_html(
+                {
+                    "status": "blocked",
+                    "memory_count": 0,
+                    "selected_memory_id": "",
+                    "memories": [],
+                    "notices": [
+                        {
+                            "code": "invalid_resolution_memory_request",
+                            "severity": "warning",
+                            "message": str(error),
+                        }
+                    ],
+                },
+                memory_store_root=normalized_memory_store_root,
+                run_store_root=normalized_run_store_root,
+                requested_run_id=requested_run_id,
+            )
+        return render_resolution_memory_html(
+            resolution_memory_envelope_to_view_model(response.body),
+            memory_store_root=normalized_memory_store_root,
+            run_store_root=normalized_run_store_root,
+            requested_run_id=requested_run_id,
+        )
+
+    response = public_api.list_memories(
+        ResolutionMemoryCatalogRequest.from_parts(
+            memory_kind=memory_kind,
+            source_run_id=source_run_id,
+            task_kind=task_kind,
+            checked_source_id=checked_source_id,
+        )
+    )
+    return render_resolution_memory_html(
+        resolution_memory_envelope_to_view_model(response.body),
+        memory_store_root=normalized_memory_store_root,
+        run_store_root=normalized_run_store_root,
+        requested_run_id=requested_run_id,
+    )
+
+
+def render_create_resolution_memory_page(
+    memory_store_root: str | None,
+    *,
+    run_store_root: str | None,
+    run_id: str,
+) -> str:
+    normalized_memory_store_root = (memory_store_root or "").strip() or None
+    normalized_run_store_root = (run_store_root or "").strip() or None
+    if normalized_memory_store_root is None:
+        return render_resolution_memory_html(
+            {
+                "status": "blocked",
+                "memory_count": 0,
+                "memories": [],
+                "notices": [
+                    {
+                        "code": "memory_store_root_required",
+                        "severity": "warning",
+                        "message": "Provide a bootstrap memory_store_root to create a resolution memory record.",
+                    }
+                ],
+            },
+            run_store_root=normalized_run_store_root,
+            requested_run_id=run_id,
+        )
+    public_api = build_demo_resolution_memory_public_api(
+        normalized_memory_store_root,
+        run_store_root=normalized_run_store_root,
+    )
+    try:
+        response = public_api.create_memory_from_run(
+            ResolutionMemoryCreateRequest.from_parts(run_id),
+        )
+    except ValueError as error:
+        return render_resolution_memory_html(
+            {
+                "status": "blocked",
+                "memory_count": 0,
+                "memories": [],
+                "notices": [
+                    {
+                        "code": "invalid_resolution_memory_request",
+                        "severity": "warning",
+                        "message": str(error),
+                    }
+                ],
+            },
+            memory_store_root=normalized_memory_store_root,
+            run_store_root=normalized_run_store_root,
+            requested_run_id=run_id,
+        )
+    return render_resolution_memory_html(
+        resolution_memory_envelope_to_view_model(response.body),
+        memory_store_root=normalized_memory_store_root,
+        run_store_root=normalized_run_store_root,
+        requested_run_id=run_id,
     )
 
 

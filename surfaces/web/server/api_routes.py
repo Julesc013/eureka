@@ -20,6 +20,9 @@ from runtime.gateway.public_api import (
     LocalIndexPublicApi,
     LocalIndexQueryRequest,
     LocalIndexStatusRequest,
+    ResolutionMemoryCatalogRequest,
+    ResolutionMemoryCreateRequest,
+    ResolutionMemoryReadRequest,
     PlannedSearchRunRequest,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
@@ -51,6 +54,7 @@ from runtime.gateway.public_api import (
     StoredArtifactRequest,
     StoredExportsTargetRequest,
     build_demo_resolution_runs_public_api,
+    build_demo_resolution_memory_public_api,
     build_demo_local_tasks_public_api,
     build_demo_local_index_public_api,
     build_demo_stored_exports_public_api,
@@ -63,6 +67,7 @@ from runtime.gateway.public_api import (
     compatibility_envelope_to_view_model,
     representations_envelope_to_view_model,
     resolution_runs_envelope_to_view_model,
+    resolution_memory_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     local_index_envelope_to_view_model,
     LocalTaskReadRequest,
@@ -148,6 +153,24 @@ def build_api_index_document() -> dict[str, Any]:
                 "path": "/api/runs",
                 "method": "GET",
                 "query_parameters": ["run_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/memories",
+                "method": "GET",
+                "query_parameters": ["memory_store_root", "kind", "source_run_id", "task_kind", "source_id"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/memory",
+                "method": "GET",
+                "query_parameters": ["id", "memory_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/memory/create",
+                "method": "GET",
+                "query_parameters": ["run_store_root", "memory_store_root", "run_id"],
                 "response_content_types": ["application/json"],
             },
             {
@@ -318,6 +341,7 @@ def build_api_index_document() -> dict[str, Any]:
             "Route names, auth, HTTPS/TLS, deployment, and multi-user semantics remain intentionally unresolved.",
             "store_root and bundle_path remain bootstrap local parameters for deterministic demo-scale flows.",
             "run_store_root remains a bootstrap/demo local parameter for synchronous persisted resolution runs only.",
+            "memory_store_root remains a bootstrap/demo local parameter for explicit local resolution memory only.",
             "task_store_root remains a bootstrap/demo local parameter for synchronous persisted local tasks only.",
         ],
         "bootstrap_host_profile_presets": list(BOOTSTRAP_HOST_PROFILE_PRESETS),
@@ -397,6 +421,82 @@ def handle_api_request(
         return json_response(
             response.status_code,
             local_tasks_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/memories":
+        memory_store_root = _required_query_value(query, "memory_store_root")
+        if memory_store_root is None:
+            return _missing_query_value("memory_store_root")
+        memory_public_api = build_demo_resolution_memory_public_api(
+            memory_store_root,
+            run_store_root=_optional_query_value(query, "run_store_root"),
+        )
+        response = memory_public_api.list_memories(
+            ResolutionMemoryCatalogRequest.from_parts(
+                memory_kind=_optional_query_value(query, "kind"),
+                source_run_id=_optional_query_value(query, "source_run_id"),
+                task_kind=_optional_query_value(query, "task_kind"),
+                checked_source_id=_optional_query_value(query, "source_id"),
+            )
+        )
+        return json_response(
+            response.status_code,
+            resolution_memory_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/memory":
+        memory_id = _required_query_value(query, "id")
+        if memory_id is None:
+            return _missing_query_value("id")
+        memory_store_root = _required_query_value(query, "memory_store_root")
+        if memory_store_root is None:
+            return _missing_query_value("memory_store_root")
+        memory_public_api = build_demo_resolution_memory_public_api(
+            memory_store_root,
+            run_store_root=_optional_query_value(query, "run_store_root"),
+        )
+        try:
+            response = memory_public_api.get_memory(
+                ResolutionMemoryReadRequest.from_parts(memory_id),
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_resolution_memory_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            resolution_memory_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/memory/create":
+        run_id = _required_query_value(query, "run_id")
+        if run_id is None:
+            return _missing_query_value("run_id")
+        run_store_root = _required_query_value(query, "run_store_root")
+        if run_store_root is None:
+            return _missing_query_value("run_store_root")
+        memory_store_root = _required_query_value(query, "memory_store_root")
+        if memory_store_root is None:
+            return _missing_query_value("memory_store_root")
+        memory_public_api = build_demo_resolution_memory_public_api(
+            memory_store_root,
+            run_store_root=run_store_root,
+        )
+        try:
+            response = memory_public_api.create_memory_from_run(
+                ResolutionMemoryCreateRequest.from_parts(run_id),
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_resolution_memory_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            resolution_memory_envelope_to_view_model(response.body),
         )
 
     if path == "/api/task":
@@ -1136,6 +1236,14 @@ def handle_api_request(
 
 
 def _required_query_value(query: Mapping[str, list[str]], name: str) -> str | None:
+    raw_values = query.get(name)
+    if not raw_values:
+        return None
+    normalized = raw_values[0].strip()
+    return normalized or None
+
+
+def _optional_query_value(query: Mapping[str, list[str]], name: str) -> str | None:
     raw_values = query.get(name)
     if not raw_values:
         return None

@@ -138,6 +138,31 @@ def main(argv: list[str] | None = None) -> int:
     )
     runs_parser.add_argument("--run-store-root", required=True)
 
+    memories_parser = subparsers.add_parser(
+        "memories",
+        help="Fetch machine-readable explicit local resolution-memory listings.",
+    )
+    memories_parser.add_argument("--memory-store-root", required=True)
+    memories_parser.add_argument("--kind")
+    memories_parser.add_argument("--run-id", dest="source_run_id")
+    memories_parser.add_argument("--task-kind")
+    memories_parser.add_argument("--source-id")
+
+    memory_parser = subparsers.add_parser(
+        "memory",
+        help="Fetch one machine-readable explicit local resolution-memory record by id.",
+    )
+    memory_parser.add_argument("memory_id")
+    memory_parser.add_argument("--memory-store-root", required=True)
+
+    memory_create_parser = subparsers.add_parser(
+        "memory-create",
+        help="Create one machine-readable explicit local resolution-memory record from one existing run.",
+    )
+    memory_create_parser.add_argument("--run-store-root", required=True)
+    memory_create_parser.add_argument("--memory-store-root", required=True)
+    memory_create_parser.add_argument("--run-id", required=True)
+
     run_parser = subparsers.add_parser(
         "run",
         help="Fetch one machine-readable synchronous bootstrap resolution run by id.",
@@ -334,6 +359,28 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         )
     elif args.command == "runs":
         path = _path("/api/runs", run_store_root=args.run_store_root)
+    elif args.command == "memories":
+        path = _path(
+            "/api/memories",
+            memory_store_root=args.memory_store_root,
+            kind=args.kind,
+            source_run_id=args.source_run_id,
+            task_kind=args.task_kind,
+            source_id=args.source_id,
+        )
+    elif args.command == "memory":
+        path = _path(
+            "/api/memory",
+            id=args.memory_id,
+            memory_store_root=args.memory_store_root,
+        )
+    elif args.command == "memory-create":
+        path = _path(
+            "/api/memory/create",
+            run_store_root=args.run_store_root,
+            memory_store_root=args.memory_store_root,
+            run_id=args.run_id,
+        )
     elif args.command == "run":
         path = _path("/api/run", id=args.run_id, run_store_root=args.run_store_root)
     elif args.command == "run-resolve":

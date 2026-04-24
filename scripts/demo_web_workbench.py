@@ -127,6 +127,11 @@ def main() -> int:
         help="Local bootstrap task-store root used for synchronous persisted local-task pages and API routes.",
     )
     parser.add_argument(
+        "--memory-store-root",
+        metavar="PATH",
+        help="Local bootstrap memory-store root used for explicit persisted resolution-memory pages and API routes.",
+    )
+    parser.add_argument(
         "--store-manifest",
         action="store_true",
         help="Store the bounded resolution manifest for the selected target in the local export store.",
@@ -474,6 +479,19 @@ def main() -> int:
                     f"http://{args.host}:{args.port}/api/tasks?task_store_root={quote(args.task_store_root, safe='')}",
                     "Serving Eureka bootstrap HTTP API local-index query task route at "
                     f"http://{args.host}:{args.port}/api/task/run/query-local-index?task_store_root={quote(args.task_store_root, safe='')}&index_path={quote(str((Path.cwd() / 'eureka-local-index.sqlite3')), safe='')}&q={quote('archive', safe='')}",
+                ]
+            )
+        if args.memory_store_root is not None:
+            lines.extend(
+                [
+                    "Serving Eureka resolution-memory listing page at "
+                    f"http://{args.host}:{args.port}/memories?memory_store_root={quote(args.memory_store_root, safe='')}",
+                    "Serving Eureka resolution-memory create page at "
+                    f"http://{args.host}:{args.port}/memory/create?memory_store_root={quote(args.memory_store_root, safe='')}&run_store_root={quote(args.run_store_root or '', safe='')}&run_id={quote('run-deterministic-search-0001', safe='')}",
+                    "Serving Eureka bootstrap HTTP API resolution-memory route at "
+                    f"http://{args.host}:{args.port}/api/memories?memory_store_root={quote(args.memory_store_root, safe='')}",
+                    "Serving Eureka bootstrap HTTP API resolution-memory create route at "
+                    f"http://{args.host}:{args.port}/api/memory/create?memory_store_root={quote(args.memory_store_root, safe='')}&run_store_root={quote(args.run_store_root or '', safe='')}&run_id={quote('run-deterministic-search-0001', safe='')}",
                 ]
             )
         sys.stdout.write("\n".join(lines) + "\n")
