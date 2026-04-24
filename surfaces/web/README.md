@@ -14,7 +14,8 @@ Current bootstrap slice:
 - renders bounded miss explanations at `/absence/resolve?target_ref=...` and `/absence/search?q=...` from a shared absence-report view model rather than engine-owned diagnostic state
 - renders bounded known representations and access paths in the exact-resolution page and at `/representations?target_ref=...` from shared public-boundary data rather than engine-owned artifact logic
 - renders compatibility-first source-registry listing at `/sources` and bounded source detail at `/source?id=...` from a shared source-registry view model rather than reading control inventory directly
-- renders compatibility-first synchronous resolution-run listing at `/runs?run_store_root=...`, bounded run detail at `/run?id=...&run_store_root=...`, and bounded run-start pages at `/run/resolve?...&run_store_root=...` plus `/run/search?...&run_store_root=...` without implying worker queues, streaming updates, or query planning
+- renders compatibility-first deterministic query planning at `/query-plan?q=...` from a shared query-plan view model rather than engine-owned planner state
+- renders compatibility-first synchronous resolution-run listing at `/runs?run_store_root=...`, bounded run detail at `/run?id=...&run_store_root=...`, and bounded run-start pages at `/run/resolve?...&run_store_root=...`, `/run/search?...&run_store_root=...`, plus `/run/planned-search?...&run_store_root=...` without implying worker queues, streaming updates, or full investigation planning
 - renders bounded compatibility evaluation at `/compatibility?target_ref=...&host=...` from a shared compatibility view model rather than engine-owned requirement logic
 - renders bounded representation-selection and handoff guidance in the exact-resolution page and at `/handoff?target_ref=...&host=...&strategy=...` from a shared handoff view model rather than engine-owned routing logic
 - distinguishes fetchable and non-fetchable known representations in the exact-resolution page and handoff guidance, and exposes `/fetch?target_ref=...&representation_id=...` as a bounded local payload-retrieval route over the public acquisition boundary
@@ -37,7 +38,8 @@ Current bootstrap slice:
 - exposes `/api/absence/resolve?target_ref=...` and `/api/absence/search?q=...` for machine-readable bounded miss explanations over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/representations?target_ref=...` for machine-readable bounded representation and access-path listing over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/sources?...` and `/api/source?id=...` for machine-readable bounded source-registry listing and source detail over the same transport-neutral public boundary already reused by the HTML workbench and CLI
-- exposes `/api/runs?run_store_root=...`, `/api/run?id=...&run_store_root=...`, `/api/run/resolve?target_ref=...&run_store_root=...`, and `/api/run/search?q=...&run_store_root=...` for machine-readable bounded synchronous resolution runs over the same transport-neutral public boundary already reused by the HTML workbench and CLI
+- exposes `/api/query-plan?q=...` for machine-readable deterministic query planning over the same transport-neutral public boundary already reused by the HTML workbench and CLI
+- exposes `/api/runs?run_store_root=...`, `/api/run?id=...&run_store_root=...`, `/api/run/resolve?target_ref=...&run_store_root=...`, `/api/run/search?q=...&run_store_root=...`, and `/api/run/planned-search?q=...&run_store_root=...` for machine-readable bounded synchronous resolution runs over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/compatibility?target_ref=...&host=...` for machine-readable bounded compatibility evaluation over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/handoff?target_ref=...&host=...&strategy=...` for machine-readable bounded representation-selection and handoff evaluation over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/fetch?target_ref=...&representation_id=...` for bounded payload bytes or structured unavailable and blocked results over the same transport-neutral public boundary already reused by the HTML workbench and CLI
@@ -50,7 +52,8 @@ Current bootstrap slice:
 - run_store_root configuration is a bootstrap-only demo choice for synchronous persisted resolution runs, not a final deployment, worker, or multi-user storage contract
 - local path-based bundle inspection is a bootstrap-only demo choice, not a production upload or import contract
 - source-registry pages are inventory and labeling only; placeholder and future sources must remain visibly unimplemented and local private paths must not be exposed
-- resolution-run pages are investigation records only; they must not imply async progression, streaming partial results, or planner-owned reasoning yet
+- query-plan pages are deterministic interpretation aids only; they must not imply LLM reasoning, full investigation planning, or planner-owned retrieval routing yet
+- resolution-run pages are investigation records only; they must not imply async progression, streaming partial results, worker orchestration, or full planner-owned reasoning yet
 - does not settle final download, acquisition, installer, restore, durable cache, persistence, representation-selection, handoff, decomposition, member-readback, or extraction behavior
 - does not settle final compatibility, host-profile, installer, or runtime-routing behavior
 - does not settle final action-routing, strategy, execution, installer, or runtime-routing behavior

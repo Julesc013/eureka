@@ -251,3 +251,9 @@
 - Status: accepted
 - Decision: Eureka now records synchronous exact-resolution and deterministic-search investigations as local JSON resolution-run records under `runtime/engine/resolution_runs/`, exposes them through a bounded public boundary reused by current web, CLI, and local HTTP API surfaces, and records checked source ids plus source families through Source Registry v0 where current implemented connectors are actually consulted.
 - Why: the repo has now moved beyond isolated request/response seams, and later query-planner, indexing, worker, and resolution-memory work needs an explicit durable investigation envelope before broader backend infrastructure arrives.
+
+## ADR-043: Add Query Planner v0 as the First Deterministic Raw-Query Compiler
+
+- Status: accepted
+- Decision: Eureka now compiles a bounded set of archive-resolution raw queries into structured `ResolutionTask` records through a deterministic stdlib-only Query Planner v0 under `runtime/engine/query_planner/`, projects those plans through a dedicated gateway public boundary reused by current web, CLI, and local HTTP API surfaces, and allows planned-search resolution runs to persist an optional plan summary without changing the underlying deterministic-search retrieval semantics.
+- Why: Source Registry v0 and Resolution Run Model v0 established explicit source inventory plus a durable investigation envelope, and the next operational backend requirement is planner-owned structured intent without prematurely introducing LLM planning, vector search, fuzzy retrieval, ranking, worker queues, or full investigation planning.

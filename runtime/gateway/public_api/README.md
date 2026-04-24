@@ -8,7 +8,9 @@ Current bootstrap scope:
 - submit bounded resolution work and return an accepted envelope with a `job_id`
 - read the current in-memory job envelope by `job_id`
 - search the bounded software-first corpus through a deterministic public search boundary
-- start, read, and list synchronous local exact-resolution and deterministic-search runs through a deterministic public resolution-runs boundary
+- plan one bounded raw query through a deterministic public query-planner boundary
+- start, read, and list synchronous local exact-resolution, deterministic-search, and planned-search runs through a deterministic public resolution-runs boundary
+- start one synchronous local planned-search run that persists an optional `resolution_task` summary alongside the current deterministic-search investigation record
 - explain bounded exact-resolution and deterministic search misses through a dedicated public absence boundary
 - compare exactly two bounded resolved targets through a deterministic public comparison boundary
 - list bounded ordered states for one bootstrap subject key through a deterministic public subject/state boundary
@@ -35,6 +37,8 @@ Current bootstrap scope:
 - map public search envelopes into a shared search-results view model without
   implementing a web or native shell
 - map public resolution-runs envelopes into a shared resolution-run view model without
+  implementing a web or native shell
+- map public query-plan envelopes into a shared query-plan view model without
   implementing a web or native shell
 - map public comparison envelopes into a shared comparison view model without
   implementing a web or native shell
@@ -73,7 +77,7 @@ Out of scope here:
 - async workers or orchestration
 - persistence beyond the local bootstrap filesystem store and local bootstrap resolution-run JSON store
 - worker queues, background schedulers, or async orchestration for resolution runs
-- query planning, phases, checkpoints, or streaming transport for resolution runs
+- full investigation planning, planner-owned retrieval routing, phases, checkpoints, or streaming transport for resolution runs
 - exposing raw fixture paths or private local paths through the public source-registry boundary
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
 - final provenance graph, trust scoring, or cross-source merge behavior beyond the current bounded evidence summary seam
@@ -83,6 +87,6 @@ Out of scope here:
 - installers, downloads from external sources, import, restore, rollback behavior, or final representation-selection, handoff, acquisition, decomposition, or member-readback semantics
 - final compatibility oracle behavior, richer host profile vocabularies, or runtime-routing behavior
 - final action-routing policy behavior, user-strategy semantics, execution semantics, installers, or workflow orchestration
-- ranking, fuzzy matching, or broader retrieval semantics
+- ranking, fuzzy matching, vector retrieval, or broader retrieval semantics
 - finalized public API guarantees
 - finalized global identity or cross-source merge semantics

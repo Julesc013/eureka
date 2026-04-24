@@ -1,6 +1,7 @@
 # Query Planner
 
-Eureka should move from raw-query handling toward compiled resolution tasks.
+Query Planner v0 is now implemented as Eureka's first deterministic rule-based
+compiler from raw user text into a bounded `ResolutionTask`.
 
 ## Why A Planner Exists
 
@@ -15,16 +16,18 @@ task involving:
 
 Without a planner, users must do that investigation work manually.
 
-## Compiled Query Shape
+## Resolution Task Shape
 
-A compiled query should eventually capture structured intent such as:
+The current task shape captures compact structured intent such as:
 
-- desired action
-- desired object type
+- task kind
+- object type
 - platform constraints
-- time constraints
-- aliases
-- explicit suppressions or negative constraints
+- time or year hints
+- product, hardware, or document hints
+- explicit prefer and exclude hints
+- action and source hints
+- planner confidence and notes
 
 Example direction:
 
@@ -38,33 +41,39 @@ raw_query: "Windows NT 6.1 apps"
 -> suppress: operating system ISO images
 ```
 
-## Planner Responsibilities
+## Current v0 Scope
 
-The investigation planner should turn compiled query information into:
-
-- source lanes
-- retrieval lanes
-- bounded budgets
-- remaining work
-- excluded interpretations
-- explanations that can be shown back to the user
-
-## v0 Direction
-
-The planned v0 query planner should be:
+The implemented v0 planner is:
 
 - deterministic
 - rule-based
 - stdlib-compatible in the current lane
-- explicit about what it suppresses and why
+- explicit about what it knows and what it does not know
 
-It should not require LLMs or semantic infrastructure to be useful.
+Supported query families now include:
 
-## Current Dependency
+- platform software search
+- vague software identity
+- latest-compatible release
+- driver and hardware-support lookup
+- bounded manual lookup
+- article-inside-scan and document-member search
+- honest `generic_search` fallback when no bounded family matches
 
-Resolution Run Model v0 is now implemented first as the durable synchronous
-bootstrap envelope for exact-resolution and deterministic-search
-investigations.
+## Current Integration
 
-Query Planner v0 is still deferred. When it lands, it should fill and shape
-that run envelope rather than replace it.
+Resolution Run Model v0 now accepts an optional `resolution_task` summary for
+planned-search runs. Query Planner v0 shapes that summary and derives the
+current deterministic search string, but it does not yet own retrieval lanes,
+budgets, source routing, checkpoints, or streaming phases.
+
+## Still Deferred
+
+Query Planner v0 does not yet provide:
+
+- full investigation planning
+- source-lane or retrieval-lane routing
+- budgets, checkpoints, or remaining-work summaries
+- planner-driven ranking or suppression beyond bounded prefer/exclude hints
+- LLM planning
+- vector or fuzzy retrieval

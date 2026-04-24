@@ -12,7 +12,8 @@ Current thin-slice behavior:
 
 - transport-neutral public submit and read boundary over an in-memory job service
 - transport-neutral public search boundary over a bounded normalized corpus composed from synthetic fixtures plus recorded GitHub Releases records
-- transport-neutral public resolution-runs boundary for synchronous exact-resolution and deterministic-search investigation records persisted under a caller-provided local bootstrap run-store root
+- transport-neutral public query-planner boundary for deterministically compiling a bounded set of raw-query families into shared `ResolutionTask` envelopes
+- transport-neutral public resolution-runs boundary for synchronous exact-resolution, deterministic-search, and planned-search investigation records persisted under a caller-provided local bootstrap run-store root
 - transport-neutral public absence boundary for explaining bounded exact-resolution and deterministic search misses
 - transport-neutral public comparison boundary for side-by-side comparison of exactly two resolved targets with explicit agreements and disagreements
 - transport-neutral public subject/state boundary for listing bounded ordered states under one bootstrap `subject_key`
@@ -35,6 +36,7 @@ Current thin-slice behavior:
 - bootstrap deterministic `resolved_resource_id` propagation across resolution, search, action, storage, inspection, and shared-surface mappings
 - bounded source-family visibility propagated across resolution, search, export, storage, inspection, and shared-surface mappings where the public boundary provides it
 - bounded checked-source visibility propagated across synchronous resolution runs and shared-surface mappings where the public boundary provides it
+- bounded query-plan summaries propagated across the public query-planner boundary and into planned-search resolution runs where the public boundary provides them
 - bounded evidence summaries propagated across resolution, search, export, storage, inspection, and shared-surface mappings where the public boundary provides them
 - bounded comparison and disagreement summaries propagated across the public boundary and shared-surface mappings without implying merge logic or trust selection
 - bounded subject/state grouping propagated across the public boundary as a compact timeline/list seam without implying a final global object identity or temporal graph

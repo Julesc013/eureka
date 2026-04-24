@@ -42,8 +42,8 @@ These questions are intentionally left open during bootstrap:
 38. Which Source Registry v0 fields should now stay stable enough for future public projection, and which should remain explicitly descriptive and replaceable rather than becoming premature compatibility promises?
 39. Which additional source-registry seed records should be added beyond the current v0 set, and what minimum runtime or documentation bar should a placeholder source meet before it is promoted into an implemented connector family?
 40. Now that Resolution Run Model v0 persists synchronous local JSON run records, which fields should remain durable as future planner, phase, checkpoint, or worker semantics arrive, and which should stay explicitly replaceable?
-41. Should future run kinds remain limited to `exact_resolution` and `deterministic_search` until Query Planner v0 lands, or is there a bounded case for adding `subject_states` before planner work?
-42. How broad should Query Planner v0 be before it becomes noisy, and which query families deserve first deterministic support?
+41. Should future run kinds remain limited to `exact_resolution`, `deterministic_search`, and planner-backed `planned_search`, or is there a bounded case for adding `subject_states` before indexing or worker work lands?
+42. Which additional deterministic query families should follow Query Planner v0 beyond the current eval-backed set, and what evidence bar should a family meet before it becomes accepted planner behavior?
 43. What is the best Local Index v0 design around SQLite and FTS, and which record families should be indexed first?
 44. What is the smallest useful local worker or task model that supports indexing, extraction, and run progression without prematurely locking in a production queue design?
 45. Which parts of resolution memory should remain local-private by default, and which parts, if any, should later become shareable without leaking personal user behavior?

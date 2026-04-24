@@ -49,6 +49,7 @@ record for:
 
 - exact resolution
 - deterministic search
+- planned search backed by a bounded deterministic `resolution_task`
 
 Current v0 behavior is intentionally narrow:
 
@@ -57,6 +58,8 @@ Current v0 behavior is intentionally narrow:
   `run_store_root`
 - runs record checked source ids and families through Source Registry v0 where
   current implemented connectors are actually consulted
+- planned-search runs may persist one bounded `resolution_task` summary from
+  Query Planner v0
 - runs surface one current result summary or one absence report
 
 Still deferred here:
@@ -65,5 +68,5 @@ Still deferred here:
 - explicit phases
 - checkpoints and budgets
 - worker queues or async orchestration
-- query-planner-owned run compilation
+- full investigation planning and planner-driven retrieval routing
 - public hosted or multi-user semantics

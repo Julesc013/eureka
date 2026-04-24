@@ -28,6 +28,8 @@ steps:
     run: python scripts/demo_web_workbench.py --render-once --search-query compatibility
   - id: web_search_absent
     run: python scripts/demo_web_workbench.py --render-once --search-query missing
+  - id: web_query_plan_render
+    run: python scripts/demo_web_workbench.py --render-once --query-plan "Windows 7 apps"
   - id: web_resolution_run_render
     run: python -c "import tempfile; from surfaces.web.server.workbench_server import render_deterministic_search_run_page; td = tempfile.TemporaryDirectory(); print(render_deterministic_search_run_page(td.name, 'archive')); td.cleanup()"
   - id: web_manifest_known
@@ -62,6 +64,10 @@ steps:
     run: python scripts/demo_cli_workbench.py search synthetic
   - id: native_cli_search_mixed
     run: python scripts/demo_cli_workbench.py search archive
+  - id: native_cli_query_plan_windows7
+    run: python scripts/demo_cli_workbench.py query-plan "Windows 7 apps"
+  - id: native_cli_run_planned_search
+    run: python scripts/demo_cli_workbench.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs --json
   - id: native_cli_run_resolve_known
     run: python scripts/demo_cli_workbench.py run-resolve fixture:software/synthetic-demo-app@1.0.0 --run-store-root .demo-runs --json
   - id: native_cli_run_status_known
@@ -134,6 +140,10 @@ steps:
     run: python scripts/demo_http_api.py search synthetic
   - id: http_api_search_mixed
     run: python scripts/demo_http_api.py search archive
+  - id: http_api_query_plan
+    run: python scripts/demo_http_api.py query-plan "Windows 7 apps"
+  - id: http_api_run_planned_search
+    run: python scripts/demo_http_api.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs
   - id: http_api_run_search_known
     run: python scripts/demo_http_api.py run-search archive --run-store-root .demo-runs
   - id: http_api_run_status_known
@@ -206,5 +216,6 @@ notes:
   - The bounded acquisition proof remains bootstrap-scale, reads tiny deterministic local payload fixtures only, and does not imply live downloads, installers, restore/import, launches, or final execution semantics.
   - The bounded decomposition proof remains bootstrap-scale, inspects ZIP payloads only, and does not imply broad extraction, installers, import, restore, or final package-management semantics.
   - The bounded member-readback proof remains bootstrap-scale, reads ZIP members only, and does not imply extraction-to-disk by default, installers, import, restore, or final package-management semantics.
-  - The bounded resolution-run proof remains bootstrap-scale, is synchronous local JSON persistence only, and does not imply worker queues, streaming phases, query-planner semantics, or durable hosted run storage.
+  - The bounded resolution-run proof remains bootstrap-scale, is synchronous local JSON persistence only, and does not imply worker queues, streaming phases, full investigation planning, or durable hosted run storage.
+  - The bounded query-planner proof remains bootstrap-scale, is deterministic and rule-based only, and does not imply LLM planning, vector search, fuzzy retrieval, ranking, or planner-driven retrieval routing.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

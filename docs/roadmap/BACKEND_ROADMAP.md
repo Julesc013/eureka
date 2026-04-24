@@ -15,6 +15,8 @@ The repo has already proven:
 - decomposition and member-readback seams
 - a first archive-resolution eval packet
 - Source Registry v0 as an explicit source inventory and public labeling plane
+- Query Planner v0 as the first deterministic raw-query compiler into structured
+  `ResolutionTask` records plus planned-search run summaries
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -25,7 +27,7 @@ The next backend sequence is:
 
 1. Source Registry v0 (implemented)
 2. Resolution Run Model v0 (implemented)
-3. Query Planner v0
+3. Query Planner v0 (implemented)
 4. Local Index v0
 5. Local Worker and Task Model v0
 6. Resolution Memory v0
@@ -38,15 +40,17 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Query Planner v0
+> Local Index v0
 
 Why this comes next:
 
 - Source Registry v0 is now present as the bounded source inventory plane
 - Resolution Run Model v0 now provides a synchronous durable investigation
   envelope
-- later indexing, worker, and memory work need planner-owned structured intent
-  more than another storage or surface slice
+- Query Planner v0 now provides deterministic structured intent for current
+  archive-resolution families
+- later worker and memory work now need a real local index more than another
+  surface or planning slice
 
 ## Explicit Deferrals
 

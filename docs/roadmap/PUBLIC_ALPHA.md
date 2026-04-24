@@ -8,8 +8,8 @@ only after the backend has a safer and more coherent operational shape.
 The minimum public-alpha entry gate should include:
 
 - Source Registry v0 (implemented)
-- Resolution Run Model v0
-- Query Planner v0
+- Resolution Run Model v0 (implemented)
+- Query Planner v0 (implemented)
 - Local Index v0
 - public-alpha-safe configuration
 - local-path APIs disabled or explicitly restricted
@@ -54,6 +54,7 @@ The public alpha should not yet include:
 
 ## Current Status
 
-Public alpha work is planned but not started. Source Registry v0 now satisfies
-the first listed prerequisite, but the hosted-alpha gate is still blocked on
-resolution runs, query planning, local indexing, and public-safe configuration.
+Public alpha work is planned but not started. Source Registry v0, Resolution
+Run Model v0, and Query Planner v0 now satisfy the first three listed
+prerequisites, but the hosted-alpha gate is still blocked on local indexing and
+public-safe configuration.
