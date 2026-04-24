@@ -21,6 +21,7 @@ from runtime.gateway.public_api import (
     build_demo_absence_public_api,
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
+    build_demo_query_planner_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -38,6 +39,7 @@ from runtime.gateway.public_api import (
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
     DeterministicSearchRunRequest,
+    PlannedSearchRunRequest,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
     ExactResolutionRunRequest,
@@ -52,6 +54,8 @@ from runtime.gateway.public_api import (
     ResolutionActionRequest,
     ResolutionBundleInspectionPublicApi,
     ResolutionJobsPublicApi,
+    QueryPlanRequest,
+    QueryPlannerPublicApi,
     ResolutionRunReadRequest,
     ResolutionRunsPublicApi,
     ResolutionWorkspaceViewModels,
@@ -74,6 +78,7 @@ from runtime.gateway.public_api import (
     comparison_envelope_to_view_model,
     compatibility_envelope_to_view_model,
     decomposition_envelope_to_view_model,
+    query_plan_envelope_to_view_model,
     representations_envelope_to_view_model,
     resolution_runs_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
@@ -94,6 +99,7 @@ from surfaces.native.cli.formatters import (
     format_handoff,
     format_member_access,
     format_manifest_export,
+    format_query_plan,
     format_representations,
     format_resolution_workspace,
     format_resolution_runs,
@@ -127,6 +133,7 @@ class CliContext:
     handoff_public_api: RepresentationSelectionPublicApi
     subject_states_public_api: SubjectStatesPublicApi
     representations_public_api: RepresentationsPublicApi
+    query_planner_public_api: QueryPlannerPublicApi
     resolution_runs_public_api: ResolutionRunsPublicApi | None = None
     stored_exports_public_api: StoredExportsPublicApi | None = None
     session_id: str = DEFAULT_SESSION_ID
@@ -247,6 +254,18 @@ def main(
                 format_search_results(search_results),
             )
 
+        if args.command == "query-plan":
+            response = cli_context.query_planner_public_api.plan_query(
+                QueryPlanRequest.from_parts(args.query),
+            )
+            query_plan = query_plan_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                query_plan,
+                format_query_plan(query_plan),
+            )
+
         if args.command == "run-resolve":
             runs_public_api = _require_runs_public_api(cli_context)
             response = runs_public_api.start_exact_resolution_run(
@@ -264,6 +283,19 @@ def main(
             runs_public_api = _require_runs_public_api(cli_context)
             response = runs_public_api.start_deterministic_search_run(
                 DeterministicSearchRunRequest.from_parts(args.query),
+            )
+            resolution_runs = resolution_runs_envelope_to_view_model(response.body)
+            return _emit(
+                output,
+                args.json,
+                resolution_runs,
+                format_resolution_runs(resolution_runs),
+            )
+
+        if args.command == "run-planned-search":
+            runs_public_api = _require_runs_public_api(cli_context)
+            response = runs_public_api.start_planned_search_run(
+                PlannedSearchRunRequest.from_parts(args.query),
             )
             resolution_runs = resolution_runs_envelope_to_view_model(response.body)
             return _emit(
@@ -521,6 +553,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     search_parser.add_argument("query")
 
+    query_plan_parser = subparsers.add_parser(
+        "query-plan",
+        parents=[json_parent],
+        help="Compile one raw query into a bounded deterministic resolution task through the public boundary.",
+    )
+    query_plan_parser.add_argument("query")
+
     run_resolve_parser = subparsers.add_parser(
         "run-resolve",
         parents=[json_parent],
@@ -540,6 +579,18 @@ def build_parser() -> argparse.ArgumentParser:
     )
     run_search_parser.add_argument("query")
     run_search_parser.add_argument(
+        "--run-store-root",
+        required=True,
+        help="Bootstrap local root for persisted resolution-run JSON records.",
+    )
+
+    run_planned_search_parser = subparsers.add_parser(
+        "run-planned-search",
+        parents=[json_parent],
+        help="Plan one raw query deterministically, then persist a synchronous planned-search resolution run through the public boundary.",
+    )
+    run_planned_search_parser.add_argument("query")
+    run_planned_search_parser.add_argument(
         "--run-store-root",
         required=True,
         help="Bootstrap local root for persisted resolution-run JSON records.",
@@ -776,6 +827,7 @@ def build_cli_context(*, store_root: str | None, run_store_root: str | None) -> 
         actions_public_api=build_demo_resolution_actions_public_api(),
         inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
         search_public_api=build_demo_search_public_api(),
+        query_planner_public_api=build_demo_query_planner_public_api(),
         source_registry_public_api=build_demo_source_registry_public_api(),
         resolution_runs_public_api=(
             build_demo_resolution_runs_public_api(run_store_root)

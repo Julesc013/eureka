@@ -30,6 +30,11 @@ def format_resolution_runs(resolution_runs: Mapping[str, Any]) -> str:
                 lines.append(f"   requested_value: {run.get('requested_value', '(unknown)')}")
                 lines.append(f"   status: {run.get('status', '(unknown)')}")
                 lines.append(f"   checked_sources: {_checked_source_text(run.get('checked_sources'))}")
+                resolution_task = run.get("resolution_task")
+                if isinstance(resolution_task, Mapping):
+                    lines.append(
+                        f"   resolution_task: {resolution_task.get('task_kind', '(unknown)')}"
+                    )
                 if isinstance(result_summary, Mapping):
                     lines.append(
                         f"   result_summary: {result_summary.get('result_count', 0)} result(s)"
@@ -66,6 +71,23 @@ def _format_run_detail(run: Mapping[str, Any]) -> list[str]:
         f"checked_sources: {_checked_source_text(run.get('checked_sources'))}",
         f"created_by_slice: {run.get('created_by_slice', '(unknown)')}",
     ]
+    resolution_task = run.get("resolution_task")
+    if isinstance(resolution_task, Mapping):
+        lines.extend(
+            [
+                "",
+                "Resolution task",
+                f"task_kind: {resolution_task.get('task_kind', '(unknown)')}",
+                f"object_type: {resolution_task.get('object_type', '(unknown)')}",
+                f"planner_confidence: {resolution_task.get('planner_confidence', '(unknown)')}",
+                f"constraints: {_mapping_text(resolution_task.get('constraints'))}",
+                f"prefer: {_comma_text(resolution_task.get('prefer'))}",
+                f"exclude: {_comma_text(resolution_task.get('exclude'))}",
+                f"action_hints: {_comma_text(resolution_task.get('action_hints'))}",
+                f"source_hints: {_comma_text(resolution_task.get('source_hints'))}",
+                f"planner_notes: {_comma_text(resolution_task.get('planner_notes'))}",
+            ]
+        )
     result_summary = run.get("result_summary")
     if isinstance(result_summary, Mapping):
         lines.extend(
@@ -142,3 +164,16 @@ def _checked_source_text(value: Any) -> str:
         else:
             labels.append(str(name))
     return ", ".join(labels) if labels else "(none)"
+
+
+def _mapping_text(value: Any) -> str:
+    if not isinstance(value, Mapping) or not value:
+        return "(none)"
+    parts: list[str] = []
+    for key, item in value.items():
+        if isinstance(item, Mapping):
+            nested = ", ".join(f"{nested_key}={nested_value}" for nested_key, nested_value in item.items())
+            parts.append(f"{key}({nested})")
+        else:
+            parts.append(f"{key}={item}")
+    return "; ".join(parts) if parts else "(none)"

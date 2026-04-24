@@ -18,6 +18,7 @@ from runtime.gateway.public_api import (
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
     DeterministicSearchRunRequest,
+    PlannedSearchRunRequest,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
     decomposition_envelope_to_view_model,
@@ -37,6 +38,8 @@ from runtime.gateway.public_api import (
     ResolutionBundleInspectionPublicApi,
     ResolutionActionsPublicApi,
     ResolutionJobsPublicApi,
+    QueryPlanRequest,
+    QueryPlannerPublicApi,
     ResolutionRunReadRequest,
     ResolutionWorkspaceReadError,
     SearchCatalogRequest,
@@ -59,6 +62,7 @@ from runtime.gateway.public_api import (
     compatibility_envelope_to_view_model,
     representations_envelope_to_view_model,
     resolution_runs_envelope_to_view_model,
+    query_plan_envelope_to_view_model,
     search_response_envelope_to_search_results_view_model,
     source_registry_envelope_to_view_model,
     subject_states_envelope_to_view_model,
@@ -75,6 +79,7 @@ from surfaces.web.workbench import (
     render_decomposition_html,
     render_handoff_html,
     render_member_access_html,
+    render_query_plan_html,
     render_representations_html,
     render_resolution_runs_html,
     render_resolution_workspace_html,
@@ -521,6 +526,7 @@ class WorkbenchWsgiApp:
         member_access_public_api: MemberAccessPublicApi | None = None,
         action_plan_public_api: ActionPlanPublicApi | None = None,
         handoff_public_api: RepresentationSelectionPublicApi | None = None,
+        query_planner_public_api: QueryPlannerPublicApi | None = None,
         subject_states_public_api: SubjectStatesPublicApi | None = None,
         representations_public_api: RepresentationsPublicApi | None = None,
         actions_public_api: ResolutionActionsPublicApi | None = None,
@@ -540,6 +546,7 @@ class WorkbenchWsgiApp:
         self._member_access_public_api = member_access_public_api
         self._action_plan_public_api = action_plan_public_api
         self._handoff_public_api = handoff_public_api
+        self._query_planner_public_api = query_planner_public_api
         self._subject_states_public_api = subject_states_public_api
         self._representations_public_api = representations_public_api
         self._actions_public_api = actions_public_api
@@ -571,6 +578,7 @@ class WorkbenchWsgiApp:
             member_access_public_api=self._member_access_public_api,
             action_plan_public_api=self._action_plan_public_api,
             handoff_public_api=self._handoff_public_api,
+            query_planner_public_api=self._query_planner_public_api,
             subject_states_public_api=self._subject_states_public_api,
             representations_public_api=self._representations_public_api,
             actions_public_api=self._actions_public_api,
@@ -603,12 +611,14 @@ class WorkbenchWsgiApp:
             "/decompose",
             "/fetch",
             "/member",
+            "/query-plan",
             "/action-plan",
             "/handoff",
             "/representations",
             "/run",
             "/run/resolve",
             "/run/search",
+            "/run/planned-search",
             "/source",
             "/sources",
             "/runs",
@@ -629,7 +639,7 @@ class WorkbenchWsgiApp:
                     heading="Page Not Found",
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
-                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/action-plan', '/handoff', '/representations', '/runs', '/run', '/run/resolve', '/run/search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
+                        "'/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/representations', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
                         "'/actions/export-resolution-bundle', '/store/manifest', "
                         "'/store/bundle', and '/stored/artifact'."
                     ),
@@ -659,6 +669,12 @@ class WorkbenchWsgiApp:
                 host_profile_id,
                 self._resolve_optional_strategy_id(query_string),
                 store_actions_enabled=self._stored_exports_public_api is not None,
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/query-plan":
+            page = render_query_plan_page(
+                self._query_planner_public_api,
+                self._resolve_search_query(query_string),
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/handoff":
@@ -911,6 +927,12 @@ class WorkbenchWsgiApp:
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/run/search":
             page = render_deterministic_search_run_page(
+                self._resolve_optional_query_value(query_string, "run_store_root"),
+                self._resolve_search_query(query_string),
+            )
+            return self._respond(start_response, status="200 OK", body=page)
+        if path == "/run/planned-search":
+            page = render_planned_search_run_page(
                 self._resolve_optional_query_value(query_string, "run_store_root"),
                 self._resolve_search_query(query_string),
             )
@@ -1186,6 +1208,30 @@ def render_search_results_page(
     return render_search_results_html(search_results)
 
 
+def render_query_plan_page(
+    public_api: QueryPlannerPublicApi | None,
+    query: str,
+) -> str:
+    normalized_query = query.strip()
+    if public_api is None:
+        return render_query_plan_html(
+            {
+                "status": "blocked",
+                "query_plan": None,
+                "raw_query": normalized_query,
+                "notices": [
+                    {
+                        "code": "query_planner_unavailable",
+                        "severity": "warning",
+                        "message": "This bootstrap workbench was not configured with a public query-planner boundary.",
+                    }
+                ],
+            }
+        )
+    response = public_api.plan_query_text(normalized_query)
+    return render_query_plan_html(query_plan_envelope_to_view_model(response.body))
+
+
 def render_source_registry_page(
     public_api: SourceRegistryPublicApi | None,
     *,
@@ -1354,6 +1400,36 @@ def render_deterministic_search_run_page(
     public_api = build_demo_resolution_runs_public_api(normalized_run_store_root)
     response = public_api.start_deterministic_search_run(
         DeterministicSearchRunRequest.from_parts(normalized_query),
+    )
+    return render_resolution_runs_html(
+        resolution_runs_envelope_to_view_model(response.body),
+        run_store_root=normalized_run_store_root,
+        requested_query=normalized_query,
+    )
+
+
+def render_planned_search_run_page(
+    run_store_root: str | None,
+    query: str,
+) -> str:
+    normalized_query = query.strip()
+    normalized_run_store_root = (run_store_root or "").strip() or None
+    if normalized_query == "":
+        return render_resolution_runs_html(
+            {"status": "listed", "run_count": 0, "runs": []},
+            run_store_root=normalized_run_store_root,
+            requested_query="",
+            message="Provide a bounded raw query to start a planned-search run.",
+        )
+    if normalized_run_store_root is None:
+        return render_resolution_runs_html(
+            {"status": "listed", "run_count": 0, "runs": []},
+            requested_query=normalized_query,
+            message="Provide a bootstrap run_store_root to persist a planned-search run.",
+        )
+    public_api = build_demo_resolution_runs_public_api(normalized_run_store_root)
+    response = public_api.start_planned_search_run(
+        PlannedSearchRunRequest.from_parts(normalized_query),
     )
     return render_resolution_runs_html(
         resolution_runs_envelope_to_view_model(response.body),

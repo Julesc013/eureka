@@ -66,6 +66,16 @@ def render_resolution_runs_html(
         "        </form>",
         "      </section>",
         "      <section>",
+        "        <h2>Start Planned Search Run</h2>",
+        "        <form method=\"get\" action=\"/run/planned-search\">",
+        "          <label for=\"run_store_root_planned_search\">Run store root</label>",
+        f"          <input id=\"run_store_root_planned_search\" name=\"run_store_root\" type=\"text\" value=\"{quoted_run_store_root}\">",
+        "          <label for=\"planned_query\">Raw query</label>",
+        f"          <input id=\"planned_query\" name=\"q\" type=\"text\" value=\"{escape(requested_query, quote=True)}\">",
+        "          <button type=\"submit\">Plan and start run</button>",
+        "        </form>",
+        "      </section>",
+        "      <section>",
         "        <h2>Run State</h2>",
         "        <dl>",
         f"          <dt>Status</dt><dd>{escape(status)}</dd>",
@@ -126,6 +136,26 @@ def render_resolution_runs_html(
                 "      </section>",
             ]
         )
+        resolution_task = selected_run.get("resolution_task")
+        if isinstance(resolution_task, Mapping):
+            parts.extend(
+                [
+                    "      <section>",
+                    "        <h2>Resolution Task</h2>",
+                    "        <dl>",
+                    f"          <dt>Task kind</dt><dd>{escape(str(resolution_task.get('task_kind', '(unknown)')))}</dd>",
+                    f"          <dt>Object type</dt><dd>{escape(str(resolution_task.get('object_type', '(unknown)')))}</dd>",
+                    f"          <dt>Planner confidence</dt><dd>{escape(str(resolution_task.get('planner_confidence', '(unknown)')))}</dd>",
+                    f"          <dt>Constraints</dt><dd>{escape(_mapping_text(resolution_task.get('constraints')))}</dd>",
+                    f"          <dt>Prefer</dt><dd>{escape(', '.join(_string_list(resolution_task.get('prefer'))))}</dd>",
+                    f"          <dt>Exclude</dt><dd>{escape(', '.join(_string_list(resolution_task.get('exclude'))))}</dd>",
+                    f"          <dt>Action hints</dt><dd>{escape(', '.join(_string_list(resolution_task.get('action_hints'))))}</dd>",
+                    f"          <dt>Source hints</dt><dd>{escape(', '.join(_string_list(resolution_task.get('source_hints'))))}</dd>",
+                    f"          <dt>Planner notes</dt><dd>{escape(', '.join(_string_list(resolution_task.get('planner_notes'))))}</dd>",
+                    "        </dl>",
+                    "      </section>",
+                ]
+            )
         result_summary = selected_run.get("result_summary")
         if isinstance(result_summary, Mapping):
             parts.extend(
@@ -210,6 +240,9 @@ def _run_summary_text(run: Mapping[str, Any]) -> str:
     result_summary = run.get("result_summary")
     if isinstance(result_summary, Mapping):
         return f"{result_summary.get('result_count', 0)} result(s)"
+    resolution_task = run.get("resolution_task")
+    if isinstance(resolution_task, Mapping):
+        return str(resolution_task.get("task_kind", "planned_search"))
     absence_report = run.get("absence_report")
     if isinstance(absence_report, Mapping):
         return str(absence_report.get("likely_reason_code", "absence_recorded"))
@@ -249,6 +282,9 @@ def _run_entry(value: Mapping[str, Any], field_name: str) -> dict[str, Any]:
         "checked_sources": _checked_sources(value.get("checked_sources"), f"{field_name}.checked_sources"),
         "created_by_slice": _require_string(value.get("created_by_slice"), f"{field_name}.created_by_slice"),
     }
+    resolution_task = value.get("resolution_task")
+    if resolution_task is not None:
+        run["resolution_task"] = _require_mapping(resolution_task, f"{field_name}.resolution_task")
     result_summary = value.get("result_summary")
     if result_summary is not None:
         run["result_summary"] = _require_mapping(result_summary, f"{field_name}.result_summary")
@@ -290,6 +326,19 @@ def _checked_sources_text(value: list[dict[str, str]]) -> str:
     if not value:
         return "(none)"
     return ", ".join(f"{entry['name']} [{entry['status']}]" for entry in value)
+
+
+def _mapping_text(value: Any) -> str:
+    if not isinstance(value, Mapping) or not value:
+        return "(none)"
+    parts: list[str] = []
+    for key, item in value.items():
+        if isinstance(item, Mapping):
+            nested = ", ".join(f"{nested_key}={nested_value}" for nested_key, nested_value in item.items())
+            parts.append(f"{key}({nested})")
+        else:
+            parts.append(f"{key}={item}")
+    return "; ".join(parts)
 
 
 def _string_list(value: Any) -> list[str]:

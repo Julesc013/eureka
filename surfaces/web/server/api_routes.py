@@ -16,6 +16,7 @@ from runtime.gateway.public_api import (
     CompatibilityEvaluationRequest,
     CompatibilityPublicApi,
     DeterministicSearchRunRequest,
+    PlannedSearchRunRequest,
     DecompositionInspectionRequest,
     DecompositionPublicApi,
     decomposition_envelope_to_view_model,
@@ -35,6 +36,8 @@ from runtime.gateway.public_api import (
     ResolutionBundleInspectionPublicApi,
     ResolutionActionsPublicApi,
     ResolutionJobsPublicApi,
+    QueryPlanRequest,
+    QueryPlannerPublicApi,
     ResolutionRunReadRequest,
     ResolutionWorkspaceReadError,
     SearchCatalogRequest,
@@ -59,6 +62,7 @@ from runtime.gateway.public_api import (
     SourceReadRequest,
     SourceRegistryPublicApi,
     source_registry_envelope_to_view_model,
+    query_plan_envelope_to_view_model,
     stored_exports_envelope_to_view_model,
     subject_states_envelope_to_view_model,
 )
@@ -98,6 +102,18 @@ def build_api_index_document() -> dict[str, Any]:
                 "path": "/api/run/search",
                 "method": "GET",
                 "query_parameters": ["q", "run_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/run/planned-search",
+                "method": "GET",
+                "query_parameters": ["q", "run_store_root"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/query-plan",
+                "method": "GET",
+                "query_parameters": ["q"],
                 "response_content_types": ["application/json"],
             },
             {
@@ -258,6 +274,7 @@ def handle_api_request(
     member_access_public_api: MemberAccessPublicApi | None,
     action_plan_public_api: ActionPlanPublicApi | None,
     handoff_public_api: RepresentationSelectionPublicApi | None,
+    query_planner_public_api: QueryPlannerPublicApi | None,
     subject_states_public_api: SubjectStatesPublicApi | None,
     representations_public_api: RepresentationsPublicApi | None,
     actions_public_api: ResolutionActionsPublicApi | None,
@@ -399,6 +416,43 @@ def handle_api_request(
         return json_response(
             response.status_code,
             resolution_runs_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/run/planned-search":
+        query_text = _required_query_value(query, "q")
+        if query_text is None:
+            return _missing_query_value("q")
+        runs_public_api = _required_runs_public_api(query)
+        if isinstance(runs_public_api, SerializedHttpResponse):
+            return runs_public_api
+        try:
+            response = runs_public_api.start_planned_search_run(
+                PlannedSearchRunRequest.from_parts(query_text),
+            )
+        except ValueError as error:
+            return error_response(
+                400,
+                code="invalid_run_request",
+                message=str(error),
+            )
+        return json_response(
+            response.status_code,
+            resolution_runs_envelope_to_view_model(response.body),
+        )
+
+    if path == "/api/query-plan":
+        if query_planner_public_api is None:
+            return _service_unavailable(
+                "query_planner_unavailable",
+                "This bootstrap HTTP API was not configured with a public query-planner boundary.",
+            )
+        query_text = _required_query_value(query, "q")
+        if query_text is None:
+            return _missing_query_value("q")
+        response = query_planner_public_api.plan_query_text(query_text)
+        return json_response(
+            response.status_code,
+            query_plan_envelope_to_view_model(response.body),
         )
 
     if path == "/api/action-plan":

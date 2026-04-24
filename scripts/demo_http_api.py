@@ -23,6 +23,7 @@ from runtime.gateway.public_api import (
     build_demo_compatibility_public_api,
     build_demo_decomposition_public_api,
     build_demo_member_access_public_api,
+    build_demo_query_planner_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
     build_demo_resolution_bundle_inspection_public_api,
@@ -65,6 +66,12 @@ def main(argv: list[str] | None = None) -> int:
     search_parser = subparsers.add_parser("search", help="Fetch deterministic machine-readable search results.")
     search_parser.add_argument("query")
 
+    query_plan_parser = subparsers.add_parser(
+        "query-plan",
+        help="Fetch a machine-readable deterministic query plan.",
+    )
+    query_plan_parser.add_argument("query")
+
     runs_parser = subparsers.add_parser(
         "runs",
         help="Fetch machine-readable synchronous bootstrap resolution-run listings.",
@@ -91,6 +98,13 @@ def main(argv: list[str] | None = None) -> int:
     )
     run_search_parser.add_argument("query")
     run_search_parser.add_argument("--run-store-root", required=True)
+
+    run_planned_search_parser = subparsers.add_parser(
+        "run-planned-search",
+        help="Start one machine-readable synchronous bootstrap planned-search run.",
+    )
+    run_planned_search_parser.add_argument("query")
+    run_planned_search_parser.add_argument("--run-store-root", required=True)
 
     sources_parser = subparsers.add_parser("sources", help="Fetch machine-readable governed source-registry records.")
     sources_parser.add_argument("--status")
@@ -223,6 +237,8 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         path = _path("/api/resolve", target_ref=args.target_ref, store_root=args.store_root)
     elif args.command == "search":
         path = _path("/api/search", q=args.query)
+    elif args.command == "query-plan":
+        path = _path("/api/query-plan", q=args.query)
     elif args.command == "runs":
         path = _path("/api/runs", run_store_root=args.run_store_root)
     elif args.command == "run":
@@ -236,6 +252,12 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
     elif args.command == "run-search":
         path = _path(
             "/api/run/search",
+            q=args.query,
+            run_store_root=args.run_store_root,
+        )
+    elif args.command == "run-planned-search":
+        path = _path(
+            "/api/run/planned-search",
             q=args.query,
             run_store_root=args.run_store_root,
         )
@@ -355,6 +377,7 @@ def _base_url_context(base_url: str | None) -> Iterator[str]:
         compatibility_public_api=build_demo_compatibility_public_api(),
         decomposition_public_api=build_demo_decomposition_public_api(),
         member_access_public_api=build_demo_member_access_public_api(),
+        query_planner_public_api=build_demo_query_planner_public_api(),
         handoff_public_api=build_demo_representation_selection_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
         representations_public_api=build_demo_representations_public_api(),
