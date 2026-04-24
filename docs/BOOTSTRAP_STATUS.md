@@ -101,6 +101,7 @@ backend infrastructure in this order:
 7. Eval Harness Upgrade
 8. Public Hosted Alpha Preparation
 9. Rust Migration Skeleton and Parity Plan
+10. Native App Work Later
 
 ## Deferred Priorities
 

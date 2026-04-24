@@ -177,7 +177,7 @@
 ## ADR-030: Add a Bounded User-Strategy Seam Without Mutating Underlying Truth
 
 - Status: accepted
-- Decision: Eureka now accepts one optional bootstrap strategy profile when building one bounded action plan for one resolved target, and uses that profile only to vary recommendation emphasis, rationale text, and next-step ordering through the transport-neutral public boundary plus current web, CLI, and HTTP API surfaces.
+- Decision: Eureka now accepts one optional bootstrap strategy profile when building one bounded action plan for one resolved target, and uses that profile only to vary recommendation and presentation emphasis, rationale text, and next-step ordering through the transport-neutral public boundary plus current web, CLI, and HTTP API surfaces.
 - Why: this proves the architecture can make user-goal emphasis explicit without silently baking one fixed recommendation posture into the product, while also avoiding personalization, ranking, persistence, or any mutation of the underlying resolved identity, evidence, compatibility, or representation data.
 
 ## ADR-031: Add a Bounded Representation-Selection Seam Without Performing the Handoff

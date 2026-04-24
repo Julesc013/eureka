@@ -74,6 +74,12 @@ The supporting standards and policy guidance for the architecture live under
 - [Identifier Policy](standards/IDENTIFIER_POLICY.md)
 - [Privacy And Shared Evidence](standards/PRIVACY_AND_SHARED_EVIDENCE.md)
 
+## Related Evals
+
+Eval-governed improvement guidance lives under:
+
+- [Search Benchmark Design](evals/SEARCH_BENCHMARK_DESIGN.md)
+
 ## Current Unresolved Questions
 
 - What becomes the minimum normative object identity boundary for bundled or multi-file software artifacts?
