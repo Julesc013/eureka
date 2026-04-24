@@ -22,12 +22,14 @@ This repository is intentionally:
 | --- | --- |
 | Product maturity | Bootstrap / pre-product |
 | Runtime lane | Python 3 standard library only |
+| Backend role | Python reference backend / architectural oracle |
 | Data sources | Governed synthetic fixtures plus recorded GitHub Releases fixtures |
 | Surfaces | HTML workbench, native CLI, local stdlib HTTP API |
 | Search | Deterministic, bounded, no ranking, no fuzzy retrieval |
 | Persistence | Local bounded content-addressed export store only |
 | Identity | Bootstrap deterministic `resolved_resource_id` seam |
 | Architecture enforcement | Repo-local Python import boundary checker |
+| Next implementation milestone | Source Registry v0 |
 
 ## What Eureka Proves Today
 
@@ -82,6 +84,9 @@ It does **not** yet settle:
 - ranking or fuzzy retrieval
 - actual downloads, installers, or restore/import flows
 - async workers, auth, deployment, or production HTTP semantics
+- public hosted alpha readiness
+- production Rust backend migration
+- native app shells or serious Visual Studio/Xcode work
 - final CLI, TUI, or GUI direction
 - personalization, saved user profiles, or durable recommendation memory
 
@@ -168,6 +173,20 @@ The repo enforces the current proven Python import layering with:
 
 - `scripts/check_architecture_boundaries.py`
 
+## North Star Docs
+
+The detailed north-star documentation now lives in:
+
+- `docs/vision/` — accepted product thesis, promise, and doctrine
+- `docs/architecture/` — accepted architecture direction and staging
+- `docs/roadmap/` — backend roadmap, public alpha plan, Rust migration plan, native-apps-later plan
+- `docs/standards/` — source registry, identifier, and privacy/shared-evidence standards
+- `docs/evals/` — benchmark design guidance tied to the archive-resolution eval packet
+
+Research that remains intentionally non-normative stays under:
+
+- `control/research/`
+
 ## Current Executable Scope
 
 Current bootstrap status includes **twenty-five executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
@@ -227,6 +246,11 @@ Useful paths to know:
 - `surfaces/web/` — compatibility-first HTML workbench plus local stdlib HTTP API
 - `surfaces/native/cli/` — bootstrap CLI surface
 - `evals/archive_resolution/` — hard archive-resolution benchmark tasks and draft schema
+- `docs/vision/` — accepted product thesis, promise, and doctrine
+- `docs/architecture/` — accepted architecture direction and staging
+- `docs/roadmap/` — next-phase backend, public-alpha, Rust-migration, and native-app plans
+- `docs/standards/` — source-registry, identifier, and privacy guidance
+- `docs/evals/` — benchmark-design guidance
 - `scripts/` — demo entry points and repo-local checks
 
 ## Recommended Reading Order
@@ -235,19 +259,24 @@ Useful paths to know:
 
 1. `README.md`
 2. `docs/BOOTSTRAP_STATUS.md`
-3. `scripts/README.md`
-4. one CLI or HTTP API demo command
+3. `docs/roadmap/BACKEND_ROADMAP.md`
+4. `scripts/README.md`
+5. one CLI or HTTP API demo command
 
 ### Deeper Architectural Orientation
 
 1. `docs/VISION.md`
 2. `docs/ARCHITECTURE.md`
-3. `docs/REPO_LAYOUT.md`
-4. `docs/BOOTSTRAP_STATUS.md`
-5. `docs/DECISIONS.md`
-6. `runtime/gateway/public_api/README.md`
-7. `surfaces/web/README.md`
-8. `surfaces/native/cli/README.md`
+3. `docs/vision/DOCTRINE.md`
+4. `docs/roadmap/BACKEND_ROADMAP.md`
+5. `docs/standards/SOURCE_REGISTRY_SCHEMA.md`
+6. `docs/evals/SEARCH_BENCHMARK_DESIGN.md`
+7. `docs/REPO_LAYOUT.md`
+8. `docs/BOOTSTRAP_STATUS.md`
+9. `docs/DECISIONS.md`
+10. `runtime/gateway/public_api/README.md`
+11. `surfaces/web/README.md`
+12. `surfaces/native/cli/README.md`
 
 ## AIDE in This Repo
 

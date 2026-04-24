@@ -2,6 +2,9 @@
 
 Current status: foundational scaffold plus twenty-five executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
+The executable lane should now be read as a Python reference backend and
+architectural oracle rather than as a throwaway scaffold.
+
 ## Established
 
 - repo identity and founding docs
@@ -49,6 +52,68 @@ Current status: foundational scaffold plus twenty-five executable local determin
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
 
+## Accepted Doctrine
+
+The repo now accepts doctrine that:
+
+- Eureka is a temporal object resolver rather than flat archive search
+- search is an investigation, not only a query
+- the smallest actionable unit should outrank a bulky parent container when the
+  evidence supports it
+- deterministic identity outranks fuzzy similarity
+- user strategy may shape recommendations but not objective truth
+- AI is optional, evidence-bounded, and non-authoritative
+- the backend should remain useful without LLMs
+- eval-governed improvement is required for future search expansion
+
+Accepted doctrine lives primarily under:
+
+- `docs/vision/`
+- `docs/architecture/`
+- `docs/DECISIONS.md`
+
+## Research Still Separate
+
+The repo still keeps speculative or not-yet-accepted material under:
+
+- `control/research/`
+
+In particular, the temporal-object-resolution research note remains governed
+research rather than a claim that the current repo already implements shared
+evidence services, durable resolution runs, hosted operation, or production
+subsystem choices.
+
+## Next Implementation Milestone
+
+The next implementation milestone is:
+
+> Source Registry v0
+
+The backend program should now move from bounded seam proof toward operational
+backend infrastructure in this order:
+
+1. Source Registry v0
+2. Resolution Run Model v0
+3. Query Planner v0
+4. Local Index v0
+5. Local Worker and Task Model v0
+6. Resolution Memory v0
+7. Eval Harness Upgrade
+8. Public Hosted Alpha Preparation
+9. Rust Migration Skeleton and Parity Plan
+
+## Deferred Priorities
+
+These are intentionally not the next milestone:
+
+- Visual Studio app work
+- Xcode app work
+- full native app work
+- public hosted alpha
+- Rust production rewrite
+- broad live federation
+- installer or restore automation
+
 ## Intentionally Deferred
 
 - finalized archive schema meaning
@@ -70,4 +135,6 @@ Current status: foundational scaffold plus twenty-five executable local determin
 - persistence beyond the local bootstrap filesystem store, background workers, and async orchestration
 - richer web routing and page structure beyond the bootstrap compatibility-first workbench, search, subject-state, representations, manifest-export, bundle-export, stored-export, bundle-inspection, and local HTTP API slices, plus native runtime behavior
 - final native CLI, TUI, GUI, and offline mode decisions
+- serious Visual Studio/Xcode/native app shell work before backend infrastructure is stronger
+- Rust production implementation work before parity planning and backend-roadmap prerequisites are met
 - release automation and packaging implementation

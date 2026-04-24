@@ -209,3 +209,33 @@
 - Status: accepted
 - Decision: Eureka now maintains a small repo-level archive-resolution benchmark corpus under `evals/archive_resolution/` that records hard software-resolution queries, explicit bad-result patterns, acceptable result shapes, minimum granularity expectations, expected future result lanes, and allowed absence outcomes.
 - Why: future investigation, ranking, decomposition, source-expansion, and optional AI work need a governed benchmark before broader search or resolver claims are made.
+
+## ADR-036: Treat Eureka as a Temporal Object Resolver Rather Than Flat Archive Search
+
+- Status: accepted
+- Decision: Eureka now treats its accepted product direction as a temporal object resolver that should find, verify, compare, explain, and route users toward the smallest useful actionable unit, rather than as a flat archive-search surface.
+- Why: the bounded seams already proved by the repo point toward investigation, evidence, compatibility, actionability, and decomposition rather than toward a simple keyword-search product.
+
+## ADR-037: Keep Python as the Reference Backend and Plan Rust as the Production Lane
+
+- Status: accepted
+- Decision: Eureka now treats the current Python stdlib implementation as the reference backend, oracle, tooling lane, and migration harness, while documenting Rust as the intended production backend lane for later work.
+- Why: Python has already proven the architecture and behavior at bootstrap scale, while a later Rust backend remains better aligned with durable production runtime goals.
+
+## ADR-038: Prioritize Backend Infrastructure Before Native Apps
+
+- Status: accepted
+- Decision: Eureka now prioritizes source registry, resolution runs, query planning, local indexing, worker models, and resolution memory ahead of native app shells or serious Visual Studio/Xcode work.
+- Why: the repo has already completed most of the bounded seam-proof phase, and the next constraint is coherent backend operation rather than additional host shells.
+
+## ADR-039: Gate Public Alpha on Source Registry, Resolution Runs, Query Planner, Local Index, and Safe Config
+
+- Status: accepted
+- Decision: Eureka now requires Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0, and public-alpha-safe configuration before public hosted alpha work can be treated as ready to start.
+- Why: hosting the current local bootstrap behavior directly would overstate product maturity and would blur the boundary between local proof paths and safer public operation.
+
+## ADR-040: Keep AI Optional, Evidence-Bounded, and Non-Authoritative
+
+- Status: accepted
+- Decision: Eureka now treats AI as optional helper capability only, bounded by evidence, typed outputs, and replaceable logic, and it forbids model output from becoming canonical truth or hidden trust authority.
+- Why: the product must remain useful without LLMs and must keep source-backed truth, identity, and trust decisions inspectable.
