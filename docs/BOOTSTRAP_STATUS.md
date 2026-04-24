@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus thirty-one executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus thirty-two executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -54,6 +54,7 @@ architectural oracle rather than as a throwaway scaffold.
 - first bounded Local Index v0 seam under `runtime/engine/index/` that builds a caller-provided local SQLite index over the current bounded corpus, prefers FTS5 when available and falls back to deterministic non-FTS query behavior otherwise, preserves compact source ids, source families, representation and member text, evidence summaries, source-registry records, and bootstrap `resolved_resource_id` values where available, and projects build, status, plus query results through current web, CLI, plus local HTTP API surfaces without implying ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics
 - first bounded Local Worker and Task Model v0 seam under `runtime/engine/workers/` that records synchronous local validation and indexing tasks as JSON task records under a caller-provided bootstrap `task_store_root`, wraps existing Source Registry v0, Local Index v0, and archive-resolution eval validation behavior through a transport-neutral public boundary reused by current web, CLI, plus local HTTP API surfaces, and does not imply background scheduling, retries, priorities, async orchestration, or distributed queue semantics
 - first bounded Resolution Memory v0 seam under `runtime/engine/memory/` that derives explicit local reusable successful-resolution, successful-search, and absence-finding memory records from persisted completed resolution runs, stores them as JSON under a caller-provided bootstrap `memory_store_root`, and projects them through a transport-neutral public boundary reused by current web, CLI, plus local HTTP API surfaces without implying cloud memory, private user-history tracking, personalization, ranking, or an invalidation engine
+- first bounded Archive Resolution Eval Runner v0 seam under `runtime/engine/evals/` that executes the governed hard-query packet through Query Planner v0, Local Index v0 or deterministic search fallback, and bounded absence reasoning, then reports stable JSON task and suite results with explicit satisfied, partial, not-satisfied, not-evaluable, and capability-gap checks without implying ranking, fuzzy retrieval, vector search, LLM planning, crawling, live sync, or production relevance evaluation
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -93,21 +94,20 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Eval Harness Upgrade
+> Public Hosted Alpha Preparation
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
-Local Worker and Task Model v0, and Resolution Memory v0 are now implemented as
-the first inventory-backed source-control plane, the first synchronous durable
-investigation envelope, the first deterministic raw-query compiler, the first
-durable local search substrate, the first synchronous local execution
-substrate, and the first explicit local reusable investigation-memory layer.
-The backend program should continue moving from bounded seam proof toward
-operational backend infrastructure in this order:
+Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
+Eval Runner v0 are now implemented as the first inventory-backed source-control
+plane, synchronous durable investigation envelope, deterministic raw-query
+compiler, durable local search substrate, synchronous local execution
+substrate, explicit local reusable investigation-memory layer, and executable
+eval guardrail. The backend program should continue moving from bounded seam
+proof toward operational backend infrastructure in this order:
 
-1. Eval Harness Upgrade
-2. Public Hosted Alpha Preparation
-3. Rust Migration Skeleton and Parity Plan
-4. Native App Work Later
+1. Public Hosted Alpha Preparation
+2. Rust Migration Skeleton and Parity Plan
+3. Native App Work Later
 
 ## Deferred Priorities
 

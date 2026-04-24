@@ -50,6 +50,18 @@ The benchmark should eventually report metrics such as:
 
 ## Current Status
 
-The corpus exists today. A full benchmark runner does not yet exist. That is
-acceptable for the current stage because the repo needed the governed task set
-before it needed a broader scoring harness.
+The corpus now has its first executable guardrail:
+
+- Archive Resolution Eval Runner v0 loads the packet
+- it runs Query Planner v0
+- it builds or uses Local Index v0 when available
+- it falls back to deterministic search when needed
+- it records bounded absence reasoning for no-result cases
+- it emits stable JSON per-task and suite reports
+
+This is not a full relevance benchmark. It does not score ranking, fuzzy
+retrieval, vector or semantic search, LLM planning, crawling, live source sync,
+or production search quality. Many hard tasks should currently report
+`capability_gap`; that is the honest result until the corpus and bounded
+resolver capabilities can satisfy their direct-artifact, member-level, article,
+or evidence expectations.

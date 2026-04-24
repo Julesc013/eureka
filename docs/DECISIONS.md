@@ -275,3 +275,9 @@
 - Status: accepted
 - Decision: Eureka now creates explicit local resolution-memory records from persisted completed resolution runs under `runtime/engine/memory/`, stores them as JSON under a caller-provided bootstrap `memory_store_root`, and exposes create, read, plus list behavior through a dedicated gateway public boundary reused by current web, CLI, and local HTTP API surfaces.
 - Why: Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0, and Local Worker and Task Model v0 now exist as bounded backend infrastructure, and the next operational requirement is durable local reuse of successful and unsuccessful investigation outcomes without prematurely introducing cloud/shared memory, personalization, ranking, or an invalidation engine.
+
+## ADR-047: Add Archive Resolution Eval Runner v0 as the First Executable Benchmark Harness
+
+- Status: accepted
+- Decision: Eureka now executes the governed archive-resolution hard-query packet through a bounded stdlib-only runner under `runtime/engine/evals/`, using Query Planner v0, Local Index v0 or deterministic search fallback, and bounded absence reasoning, then projecting stable JSON suite and task results through script, public gateway, CLI, local HTTP API, and compatibility-first web surfaces.
+- Why: the eval packet already existed as schema and fixtures, but backend progress now needs an honest executable regression guardrail that can show planner satisfaction, absence partials, not-yet-evaluable expectations, and capability gaps without pretending the current corpus solves future-facing hard queries or introducing ranking, fuzzy retrieval, vector search, LLM planning, crawling, live sync, or production relevance evaluation.

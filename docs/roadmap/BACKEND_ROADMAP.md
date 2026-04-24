@@ -14,6 +14,8 @@ The repo has already proven:
 - evidence visibility, miss explanation, and action-routing seams
 - decomposition and member-readback seams
 - a first archive-resolution eval packet
+- Archive Resolution Eval Runner v0 as the first executable regression harness
+  over that hard-query packet
 - Source Registry v0 as an explicit source inventory and public labeling plane
 - Query Planner v0 as the first deterministic raw-query compiler into structured
   `ResolutionTask` records plus planned-search run summaries
@@ -39,7 +41,7 @@ The next backend sequence is:
 4. Local Index v0 (implemented)
 5. Local Worker and Task Model v0 (implemented)
 6. Resolution Memory v0 (implemented)
-7. Eval Harness Upgrade
+7. Archive Resolution Eval Runner v0 (implemented)
 8. Public Hosted Alpha Preparation
 9. Rust Migration Skeleton and Parity Plan
 10. Native App Work Later
@@ -48,7 +50,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Eval Harness Upgrade
+> Public Hosted Alpha Preparation
 
 Why this comes next:
 
@@ -61,8 +63,10 @@ Why this comes next:
 - Local Worker and Task Model v0 now provides the first bounded synchronous
   execution substrate for repeatable backend jobs
 - Resolution Memory v0 now provides the first bounded reusable solved-work layer
-- the next backend bottleneck is stronger eval and regression coverage across
-  the now-implemented source, run, planner, index, task, and memory seams
+- Archive Resolution Eval Runner v0 now provides the first executable regression
+  harness over the hard-query packet, including explicit capability gaps
+- the next backend bottleneck is public-alpha-safe configuration and route
+  hardening, not broader retrieval semantics
 
 ## Explicit Deferrals
 
@@ -74,6 +78,7 @@ The backend roadmap intentionally defers:
 - production Rust rewrite
 - installer or download automation
 - trust scoring
+- production relevance benchmarking
 - vector-heavy retrieval
 - LLM-heavy planning
 - broad live federation

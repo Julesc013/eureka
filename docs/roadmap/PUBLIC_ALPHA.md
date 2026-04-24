@@ -12,6 +12,8 @@ The minimum public-alpha entry gate should include:
 - Query Planner v0 (implemented)
 - Local Index v0 (implemented)
 - Local Worker and Task Model v0 (implemented)
+- Resolution Memory v0 (implemented, local-only)
+- Archive Resolution Eval Runner v0 (implemented as a local regression guardrail)
 - public-alpha-safe configuration
 - local-path APIs disabled or explicitly restricted
 - safe store-root handling
@@ -56,9 +58,9 @@ The public alpha should not yet include:
 
 ## Current Status
 
-Public alpha work is planned but not started. Source Registry v0, Resolution
-Run Model v0, Query Planner v0, Local Index v0, and Local Worker and Task
-Model v0 now satisfy the first five listed prerequisites, and Resolution Memory
-v0 now exists as an explicit local-only reusable memory seam, but the
-hosted-alpha gate is still blocked on public-safe configuration and the
-remaining backend prerequisites.
+Public alpha preparation is the next backend milestone, but public hosting
+itself is not started. Source Registry v0, Resolution Run Model v0, Query
+Planner v0, Local Index v0, Local Worker and Task Model v0, Resolution Memory
+v0, and Archive Resolution Eval Runner v0 now satisfy the backend prerequisite
+set. The hosted-alpha gate is still blocked on public-safe configuration,
+route hardening, and local-path restrictions.

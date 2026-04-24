@@ -72,6 +72,12 @@ steps:
     run: python scripts/demo_cli_workbench.py search archive
   - id: native_cli_query_plan_windows7
     run: python scripts/demo_cli_workbench.py query-plan "Windows 7 apps"
+  - id: archive_resolution_eval_runner
+    run: python scripts/run_archive_resolution_evals.py
+  - id: archive_resolution_eval_runner_json
+    run: python scripts/run_archive_resolution_evals.py --task windows_7_apps --json
+  - id: native_cli_archive_resolution_evals
+    run: python scripts/demo_cli_workbench.py evals-archive-resolution --task windows_7_apps --json
   - id: native_cli_index_build
     run: python scripts/demo_cli_workbench.py index-build --index-path .demo-index/eureka-local-index.sqlite3 --json
   - id: native_cli_index_status
@@ -256,5 +262,6 @@ notes:
   - The bounded resolution-memory proof remains bootstrap-scale, is explicit local JSON persistence only, and does not imply cloud/shared memory, private user-history tracking, personalization, ranking, or an invalidation engine.
   - The bounded query-planner proof remains bootstrap-scale, is deterministic and rule-based only, and does not imply LLM planning, vector search, fuzzy retrieval, ranking, or planner-driven retrieval routing.
   - The bounded local-index proof remains bootstrap-scale, uses a caller-provided local SQLite path only, prefers FTS5 when available, falls back deterministically when unavailable, and does not imply ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics.
+  - The archive-resolution eval runner proof remains bootstrap-scale, reports hard-query capability gaps honestly, and does not imply ranking, fuzzy retrieval, vector search, semantic relevance, LLM planning, crawling, live source sync, or production benchmark semantics.
   - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

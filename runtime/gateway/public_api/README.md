@@ -10,6 +10,7 @@ Current bootstrap scope:
 - search the bounded software-first corpus through a deterministic public search boundary
 - plan one bounded raw query through a deterministic public query-planner boundary
 - build, inspect, and query one bootstrap local SQLite index through a deterministic public local-index boundary
+- run Archive Resolution Eval Runner v0 through a deterministic public eval boundary, returning bounded suite and task result envelopes without implying background execution, ranking, fuzzy retrieval, vector search, LLM planning, crawling, live sync, or production benchmark semantics
 - create, read, and list synchronous bootstrap local tasks through a deterministic public local-tasks boundary
 - start, read, and list synchronous local exact-resolution, deterministic-search, and planned-search runs through a deterministic public resolution-runs boundary
 - create, read, and list explicit local resolution-memory records derived from persisted runs through a deterministic public resolution-memory boundary
@@ -44,6 +45,8 @@ Current bootstrap scope:
 - map public query-plan envelopes into a shared query-plan view model without
   implementing a web or native shell
 - map public local-index envelopes into a shared local-index view model without
+  implementing a web or native shell
+- map public archive-resolution eval envelopes into a shared eval-report view model without
   implementing a web or native shell
 - map public local-task envelopes into a shared local-task view model without
   implementing a web or native shell
@@ -89,6 +92,7 @@ Out of scope here:
 - worker queues, background schedulers, retries, priorities, or distributed queue behavior for local tasks
 - automatic memory creation, shared/cloud memory, invalidation engines, or personalization behavior for resolution memory
 - incremental indexing, ranking, fuzzy matching, vector search, semantic recall, or planner-driven retrieval routing for local index queries
+- ranking, fuzzy matching, vector search, semantic recall, LLM planning, crawling, live source sync, or production relevance claims for archive-resolution eval execution
 - full investigation planning, planner-owned retrieval routing, phases, checkpoints, or streaming transport for resolution runs
 - exposing raw fixture paths or private local paths through the public source-registry boundary
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
