@@ -23,6 +23,9 @@ Each future seam should define:
 
 ## Golden Outputs
 
+Rust Parity Fixture Pack v0 now commits the first Python-oracle golden outputs
+under `tests/parity/golden/python_oracle/v0/`.
+
 Golden outputs should be JSON where possible. They should be:
 
 - generated from existing Python reference behavior
@@ -30,6 +33,18 @@ Golden outputs should be JSON where possible. They should be:
 - stable enough to review in diffs
 - small enough to inspect manually
 - honest about unsupported or capability-gap states
+
+Regenerate or check the current Python-oracle pack with:
+
+```powershell
+python scripts/generate_python_oracle_golden.py
+python scripts/generate_python_oracle_golden.py --check
+```
+
+The v0 pack captures source registry, query planner, resolution run, local
+index, resolution memory, and archive-resolution eval outputs. It normalizes
+timestamps, local index paths, local index FTS mode, and generation metadata so
+the committed JSON stays stable across local environments.
 
 ## Allowed Divergence Records
 
@@ -70,6 +85,7 @@ This order favors smaller, inspectable data contracts before broader behavior.
 
 - no parity runner
 - no Rust behavior port
+- no Rust candidate output generation
 - no Rust gateway
 - no Rust CLI
 - no FFI
