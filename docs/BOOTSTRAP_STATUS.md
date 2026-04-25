@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus thirty-six executable local deterministic thin slices, a placeholder Rust migration skeleton, and the first Python-oracle golden fixture pack, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus thirty-six executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, and the first isolated Rust source-registry parity candidate, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -60,6 +60,7 @@ architectural oracle rather than as a throwaway scaffold.
 - first bounded Public Alpha Hosting Pack v0 seam under `docs/operations/public_alpha_hosting_pack/` plus `scripts/generate_public_alpha_hosting_pack.py` that packages route inventory status, smoke evidence templates, operator signoff, blockers, and a supervised rehearsal runbook without deploying Eureka or adding Docker, nginx, systemd, cloud infrastructure, auth, HTTPS/TLS, rate limiting, production logging, process management, live crawling, or background workers
 - first Rust Migration Skeleton and Parity Plan v0 seam under `crates/`, `docs/architecture/RUST_BACKEND_LANE.md`, and `tests/parity/` that records Rust as the later production backend lane while keeping Python authoritative and requiring seam-by-seam parity before replacement
 - first Rust Parity Fixture Pack v0 seam under `tests/parity/golden/python_oracle/v0/` plus `scripts/generate_python_oracle_golden.py` that captures stable Python-oracle JSON outputs for source registry, query planner, resolution runs, local index, resolution memory, and archive-resolution evals without porting Rust behavior, replacing Python, or adding a Rust parity runner
+- first Rust Source Registry Parity Candidate v0 seam under `crates/eureka-core/` that loads governed source inventory records, validates bounded source fields, detects duplicate source ids, and compares source-registry public envelopes to Python-oracle goldens without wiring Rust into Python runtime, web, CLI, HTTP API, workers, or production paths
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -99,24 +100,25 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Rust Source Registry Parity Candidate v0
+> Rust Query Planner Parity Candidate v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
 Eval Runner v0, Public Alpha Safe Mode v0, and Public Alpha Deployment
 Readiness Review, Public Alpha Hosting Pack v0, and Rust Migration Skeleton and
-Parity Plan v0, and Rust Parity Fixture Pack v0 are now implemented as the first
+Parity Plan v0, Rust Parity Fixture Pack v0, and Rust Source Registry Parity
+Candidate v0 are now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
 synchronous local execution substrate, explicit local reusable investigation
 memory layer, executable eval guardrail, constrained public-demo posture, and
 auditable public-alpha route/smoke checklist plus supervised rehearsal evidence
-packet, non-operational Rust parity lane, and committed Python-oracle golden
-fixture pack.
+packet, committed Python-oracle golden fixture pack, and isolated Rust
+source-registry parity seam.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Rust Source Registry Parity Candidate v0
+1. Rust Query Planner Parity Candidate v0
 2. Native App Work Later
 
 ## Deferred Priorities

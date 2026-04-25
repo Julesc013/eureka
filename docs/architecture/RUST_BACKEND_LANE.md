@@ -1,7 +1,7 @@
 # Rust Backend Lane
 
 Rust is Eureka's intended production backend lane later. The current Rust
-workspace is a migration skeleton only.
+workspace is still not an active backend.
 
 Python remains the executable specification, reference backend, oracle, and
 fixture/eval harness. Current Python CLI, web, and local HTTP API behavior
@@ -11,7 +11,9 @@ explicitly promoted.
 ## Current Status
 
 - `crates/` exists as a minimal Rust workspace skeleton.
-- Initial crates are documented placeholders.
+- `crates/eureka-core/` contains Rust Source Registry Parity Candidate v0, the
+  first isolated Rust behavior seam.
+- The remaining initial crates are documented placeholders.
 - `tests/parity/golden/python_oracle/v0/` contains the first committed
   Python-oracle golden outputs for future Rust parity checks.
 - No Python runtime behavior is replaced.
@@ -30,14 +32,15 @@ explicitly promoted.
 
 ## Initial Crate Responsibilities
 
-- `eureka-core`: future core object, state, representation, evidence, and
-  domain types
+- `eureka-core`: current home of the isolated source-registry parity candidate;
+  future core object, state, representation, evidence, and domain types
 - `eureka-contracts`: future schema-aligned contract structs
 - `eureka-store`: future content-addressed and local store primitives
 - `eureka-resolver`: future resolution, search, and planner logic
 
-These crates do not implement those responsibilities yet. They only reserve the
-first bounded Rust workspace shape.
+Except for the narrow source-registry parity candidate in `eureka-core`, these
+crates do not implement those responsibilities yet. They reserve the first
+bounded Rust workspace shape.
 
 ## Future Crates
 
@@ -83,3 +86,15 @@ python scripts/generate_python_oracle_golden.py --check
 
 These goldens are fixtures and migration evidence only. They do not implement
 Rust behavior and do not make the Rust workspace an active backend.
+
+## Source Registry Candidate
+
+Rust Source Registry Parity Candidate v0 loads `.source.json` records from
+`control/inventory/sources/`, validates required bounded fields, detects
+duplicate `source_id` values, sorts records deterministically by `source_id`,
+and emits the same source-registry public envelope shape captured in the Python
+oracle goldens.
+
+This candidate is tested only inside the Rust workspace. It is not used by
+Python runtime, gateway, web, CLI, HTTP API, local workers, or public-alpha
+paths.

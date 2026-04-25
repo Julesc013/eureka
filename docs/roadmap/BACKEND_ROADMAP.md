@@ -39,6 +39,9 @@ The repo has already proven:
   skeleton, with Python still authoritative
 - Rust Parity Fixture Pack v0 as the first committed Python-oracle golden
   output pack for future Rust seam checks, with no Rust behavior port
+- Rust Source Registry Parity Candidate v0 as the first isolated Rust behavior
+  seam, compared against Python-oracle source-registry goldens and not wired
+  into runtime behavior
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -59,14 +62,15 @@ The next backend sequence is:
 10. Public Alpha Hosting Pack v0 (implemented)
 11. Rust Migration Skeleton and Parity Plan (implemented as skeleton only)
 12. Rust Parity Fixture Pack v0 (implemented as Python-oracle goldens only)
-13. Rust Source Registry Parity Candidate v0
-14. Native App Work Later
+13. Rust Source Registry Parity Candidate v0 (implemented as isolated parity seam)
+14. Rust Query Planner Parity Candidate v0
+15. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Rust Source Registry Parity Candidate v0
+> Rust Query Planner Parity Candidate v0
 
 Why this comes next:
 
@@ -92,8 +96,10 @@ Why this comes next:
   parity documentation without porting behavior or replacing Python
 - Rust Parity Fixture Pack v0 now captures Python oracle outputs as stable
   parity fixtures before any Rust seam ports begin
-- the next migration bottleneck is the first tiny Rust candidate seam, most
-  likely source registry loading, checked against committed Python goldens
+- Rust Source Registry Parity Candidate v0 now proves the first isolated Rust
+  behavior seam against committed Python goldens without replacing Python
+- the next migration bottleneck is the next tiny Rust candidate seam, likely
+  Query Planner v0, checked against committed Python goldens
 
 ## Explicit Deferrals
 

@@ -48,6 +48,8 @@ steps:
     run: python -m unittest tests.parity.test_python_oracle_golden
   - id: rust_workspace_check_optional
     run: cargo check --workspace --manifest-path crates/Cargo.toml
+  - id: rust_workspace_tests_optional
+    run: cargo test --workspace --manifest-path crates/Cargo.toml
   - id: web_query_plan_render
     run: python scripts/demo_web_workbench.py --render-once --query-plan "Windows 7 apps"
   - id: web_local_index_render
@@ -286,7 +288,8 @@ notes:
   - Public Alpha Safe Mode v0 is a constrained demo posture that blocks caller-provided local path controls in public_alpha mode and does not imply auth, HTTPS/TLS, accounts, production deployment, or multi-user hosting.
   - Public Alpha Deployment Readiness Review adds route inventory and smoke checks for the constrained posture, but still does not imply deployment approval or production readiness.
   - Public Alpha Hosting Pack v0 packages route inventory status, smoke evidence templates, operator signoff, blockers, and a supervised rehearsal runbook without adding deployment infrastructure or production-readiness claims.
-  - Rust Migration Skeleton and Parity Plan v0 adds placeholder Rust crates and parity docs only; Python remains the oracle, Rust is not an active backend, and the Rust workspace check is optional because it requires a local Rust toolchain.
+  - Rust Migration Skeleton and Parity Plan v0 established initial Rust crates and parity docs; Python remains the oracle, Rust is not an active backend, and the Rust workspace check is optional because it requires a local Rust toolchain.
   - Rust Parity Fixture Pack v0 adds Python-oracle golden outputs and a stdlib generator/check script only; it does not implement Rust behavior, replace Python runtime paths, or require Rust tooling for normal checks.
+  - Rust Source Registry Parity Candidate v0 is the first isolated Rust behavior seam under `crates/eureka-core`; it is compared to Python-oracle source-registry goldens and is not wired into Python runtime, web, CLI, HTTP API, workers, or production paths.
   - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

@@ -1,8 +1,9 @@
 # Rust Migration
 
-Rust is the intended production backend lane for later. The current milestone
-adds a minimal Rust workspace skeleton and parity plan only. It does not port
-runtime behavior, replace Python, or start a production Rust backend.
+Rust is the intended production backend lane for later. The current Rust lane
+has a minimal workspace, Python-oracle fixtures, and the first isolated source
+registry parity candidate. It does not replace Python runtime behavior or start
+a production Rust backend.
 
 ## Language Policy
 
@@ -32,6 +33,10 @@ Rust Parity Fixture Pack v0 now captures the first committed Python-oracle
 golden outputs under `tests/parity/golden/python_oracle/v0/`. Future Rust
 candidate seams must match those outputs, or record an explicit allowed
 divergence, before replacing any Python behavior.
+
+Rust Source Registry Parity Candidate v0 is the first such candidate. It loads
+the governed source inventory and compares source-registry public envelopes
+against the committed Python-oracle source-registry goldens.
 
 ## Suggested Future Layout
 
@@ -80,13 +85,14 @@ before replacement.
 
 ## Current Status
 
-The Rust migration lane is scaffolded but not operationally started. The
-workspace under `crates/` contains placeholder crates only:
+The Rust migration lane is scaffolded and has one isolated parity candidate. The
+workspace under `crates/` contains:
 
-- `eureka-core`
-- `eureka-contracts`
-- `eureka-store`
-- `eureka-resolver`
+- `eureka-core`: Rust Source Registry Parity Candidate v0 plus future core
+  placeholder scope
+- `eureka-contracts`: placeholder
+- `eureka-store`: placeholder
+- `eureka-resolver`: placeholder
 
 The first Python-oracle golden fixture pack exists for:
 
@@ -99,9 +105,9 @@ The first Python-oracle golden fixture pack exists for:
 
 Current Python CLI, web, and local HTTP API behavior remain authoritative.
 Python remains the executable specification, reference backend, and oracle.
-Rust crates are placeholders until future Rust candidate work begins. No Rust runtime
-logic, gateway, CLI, FFI, or production service is implemented by the fixture
-pack.
+The source-registry candidate is not wired into runtime behavior. No Rust
+gateway, CLI, FFI, worker, connector, production service, resolver, query
+planner, local index, or memory implementation is active.
 
 ## Python Oracle Fixture Pack
 
@@ -122,6 +128,7 @@ If Rust tooling is available, run:
 
 ```powershell
 cargo check --workspace --manifest-path crates/Cargo.toml
+cargo test --workspace --manifest-path crates/Cargo.toml
 ```
 
 Normal Python verification does not require Rust tooling.

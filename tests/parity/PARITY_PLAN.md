@@ -21,6 +21,16 @@ Each future seam should define:
 - allowed divergence records
 - promotion criteria
 
+Rust Source Registry Parity Candidate v0 is the first candidate seam. Its Rust
+tests compare the generated source-registry public envelopes with:
+
+- `tests/parity/golden/python_oracle/v0/source_registry/sources_list.json`
+- `tests/parity/golden/python_oracle/v0/source_registry/source_synthetic_fixtures.json`
+- `tests/parity/golden/python_oracle/v0/source_registry/source_github_releases_recorded_fixtures.json`
+
+Passing those tests does not replace Python behavior. It only proves that this
+isolated Rust candidate can match the committed Python-oracle fixture shape.
+
 ## Golden Outputs
 
 Rust Parity Fixture Pack v0 now commits the first Python-oracle golden outputs
@@ -84,8 +94,9 @@ This order favors smaller, inspectable data contracts before broader behavior.
 ## Non-Goals For This Milestone
 
 - no parity runner
-- no Rust behavior port
-- no Rust candidate output generation
+- no Python runtime replacement
+- no Rust behavior beyond source-registry inventory loading and public-envelope
+  parity
 - no Rust gateway
 - no Rust CLI
 - no FFI

@@ -24,6 +24,10 @@ Rust Parity Fixture Pack v0 also does not change that policy. The Python-oracle
 golden outputs are migration evidence for future backend seams; they are not a
 native SDK, app shell, FFI layer, or runtime replacement.
 
+Rust Source Registry Parity Candidate v0 does not change that policy either. It
+is a crate-local source-registry parity seam, not a native SDK, FFI layer, app
+shell, or runtime replacement.
+
 ## Host-Shell Principle
 
 Future native apps should remain shells over the core. They should consume

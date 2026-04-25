@@ -23,7 +23,7 @@ This repository is intentionally:
 | Product maturity | Bootstrap / pre-product |
 | Runtime lane | Python 3 standard library only |
 | Backend role | Python reference backend / architectural oracle |
-| Rust lane | Workspace skeleton plus Python-oracle golden fixtures; not active backend |
+| Rust lane | Source-registry parity candidate plus Python-oracle golden fixtures; not active backend |
 | Data sources | Governed synthetic fixtures plus recorded GitHub Releases fixtures |
 | Surfaces | HTML workbench, native CLI, local stdlib HTTP API |
 | Search | Deterministic, bounded, no ranking, no fuzzy retrieval |
@@ -32,7 +32,7 @@ This repository is intentionally:
 | Persistence | Local bounded content-addressed export store plus local JSON resolution-run, task, and memory stores |
 | Identity | Bootstrap deterministic `resolved_resource_id` seam |
 | Architecture enforcement | Repo-local Python import boundary checker |
-| Next implementation milestone | Rust Source Registry Parity Candidate v0 |
+| Next implementation milestone | Rust Query Planner Parity Candidate v0 |
 
 ## What Eureka Proves Today
 
@@ -81,6 +81,7 @@ The current repo proves a set of bounded executable seams across connectors, eng
 - first repo-level archive-resolution eval corpus under `evals/archive_resolution/`
 - hard software-resolution queries with explicit bad-result patterns, minimum granularity expectations, and allowed absence outcomes for future investigation and ranking work
 - first Python-oracle golden fixture pack under `tests/parity/golden/python_oracle/v0/` for future Rust seam parity checks
+- first isolated Rust source-registry parity candidate under `crates/eureka-core/`
 
 ## What Eureka Deliberately Does Not Claim Yet
 
@@ -239,7 +240,7 @@ Research that remains intentionally non-normative stays under:
 
 ## Current Executable Scope
 
-Current bootstrap status includes **thirty-six executable local deterministic thin slices**, the first repo-level archive-resolution eval corpus, Public Alpha Hosting Pack v0, a Rust migration skeleton, and the first Python-oracle golden fixture pack.
+Current bootstrap status includes **thirty-six executable local deterministic Python thin slices**, the first repo-level archive-resolution eval corpus, Public Alpha Hosting Pack v0, a Rust migration skeleton, the first Python-oracle golden fixture pack, and the first isolated Rust source-registry parity candidate.
 
 Important highlights:
 
@@ -256,8 +257,8 @@ Important highlights:
 - one local stdlib HTTP API surface
 - one repo-local architecture-boundary checker
 - one committed Python-oracle golden fixture pack for future Rust parity
-- one placeholder Rust workspace under `crates/` that is not yet an active
-  backend
+- one isolated Rust source-registry parity candidate under `crates/eureka-core/`
+  that is not yet an active backend
 
 This means the repo is already useful for:
 
@@ -309,7 +310,7 @@ Useful paths to know:
 - `runtime/gateway/public_api/` — transport-neutral public runtime boundary reused by surfaces
 - `surfaces/web/` — compatibility-first HTML workbench plus local stdlib HTTP API
 - `surfaces/native/cli/` — bootstrap CLI surface
-- `crates/` — placeholder Rust workspace for the future parity-tested backend lane
+- `crates/` — future Rust backend lane, currently isolated source-registry parity candidate plus placeholders
 - `evals/archive_resolution/` — hard archive-resolution benchmark tasks and draft schema
 - `docs/vision/` — accepted product thesis, promise, and doctrine
 - `docs/architecture/` — accepted architecture direction, staging, and Rust backend lane
