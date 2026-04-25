@@ -38,6 +38,10 @@ steps:
     run: python scripts/public_alpha_smoke.py --json
   - id: public_alpha_route_inventory
     run: python -m unittest tests.operations.test_public_alpha_route_inventory
+  - id: public_alpha_hosting_pack_summary
+    run: python scripts/generate_public_alpha_hosting_pack.py --check
+  - id: public_alpha_hosting_pack_tests
+    run: python -m unittest tests.operations.test_public_alpha_hosting_pack
   - id: web_query_plan_render
     run: python scripts/demo_web_workbench.py --render-once --query-plan "Windows 7 apps"
   - id: web_local_index_render
@@ -275,5 +279,6 @@ notes:
   - The archive-resolution eval runner proof remains bootstrap-scale, reports hard-query capability gaps honestly, and does not imply ranking, fuzzy retrieval, vector search, semantic relevance, LLM planning, crawling, live source sync, or production benchmark semantics.
   - Public Alpha Safe Mode v0 is a constrained demo posture that blocks caller-provided local path controls in public_alpha mode and does not imply auth, HTTPS/TLS, accounts, production deployment, or multi-user hosting.
   - Public Alpha Deployment Readiness Review adds route inventory and smoke checks for the constrained posture, but still does not imply deployment approval or production readiness.
+  - Public Alpha Hosting Pack v0 packages route inventory status, smoke evidence templates, operator signoff, blockers, and a supervised rehearsal runbook without adding deployment infrastructure or production-readiness claims.
   - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.
