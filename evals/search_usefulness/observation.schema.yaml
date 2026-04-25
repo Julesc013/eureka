@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.eureka.invalid/evals/search_usefulness/observation.schema.yaml",
+  "$comment": "Stored as the JSON subset of YAML for stdlib-only loading.",
+  "title": "SearchUsefulnessObservation",
+  "description": "Manual or generated per-system observation for Search Usefulness Audit v0.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "query_id": {"type": "string"},
+    "query": {"type": "string"},
+    "system": {"type": "string"},
+    "observation_status": {
+      "type": "string",
+      "enum": ["observed", "pending_manual_observation", "not_applicable", "not_available"]
+    },
+    "top_results": {"type": "array", "items": {"type": "object"}},
+    "first_useful_result_rank": {"type": ["integer", "null"]},
+    "usefulness_scores": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0, "maximum": 5}
+    },
+    "notes": {"type": "array", "items": {"type": "string"}},
+    "failure_modes": {"type": "array", "items": {"type": "string"}},
+    "next_eureka_work": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": [
+    "query_id",
+    "query",
+    "system",
+    "observation_status",
+    "top_results",
+    "notes",
+    "failure_modes",
+    "next_eureka_work"
+  ],
+  "x-eureka-status": "draft"
+}

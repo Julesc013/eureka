@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.eureka.invalid/evals/search_usefulness/query.schema.yaml",
+  "$comment": "Stored as the JSON subset of YAML for stdlib-only loading.",
+  "title": "SearchUsefulnessQuery",
+  "description": "One query fixture for Search Usefulness Audit v0.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string"},
+    "query": {"type": "string"},
+    "query_family": {"type": "string"},
+    "intent": {"type": "string"},
+    "target_object_type": {"type": "string"},
+    "constraints": {"type": "object", "additionalProperties": true},
+    "expected_useful_units": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "known_bad_result_patterns": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "minimum_granularity": {"type": "string"},
+    "target_actions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "expected_eureka_current_status": {
+      "type": "string",
+      "enum": ["covered", "partial", "source_gap", "capability_gap", "not_evaluable", "unknown"]
+    },
+    "audit_tags": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "notes": {"type": "string"},
+    "expected_failure_modes": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": []
+    },
+    "future_work_labels": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": []
+    }
+  },
+  "required": [
+    "id",
+    "query",
+    "query_family",
+    "intent",
+    "target_object_type",
+    "constraints",
+    "expected_useful_units",
+    "known_bad_result_patterns",
+    "minimum_granularity",
+    "target_actions",
+    "expected_eureka_current_status",
+    "audit_tags",
+    "notes"
+  ],
+  "x-eureka-status": "draft"
+}

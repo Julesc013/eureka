@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.eureka.invalid/evals/search_usefulness/report.schema.yaml",
+  "$comment": "Stored as the JSON subset of YAML for stdlib-only loading.",
+  "title": "SearchUsefulnessReport",
+  "description": "Suite report emitted by Search Usefulness Audit v0.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "total_query_count",
+    "query_family_counts",
+    "eureka_status_counts",
+    "external_baseline_pending_counts",
+    "failure_mode_counts",
+    "future_work_recommendations",
+    "query_summaries",
+    "queries",
+    "created_at",
+    "created_by_slice"
+  ],
+  "x-eureka-status": "draft"
+}
