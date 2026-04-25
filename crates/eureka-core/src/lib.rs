@@ -1,8 +1,11 @@
 #![forbid(unsafe_code)]
-#![doc = "Future core domain types for Eureka's Rust backend lane."]
+#![doc = "Core domain candidates for Eureka's Rust backend parity lane."]
+
+pub mod source_registry;
 
 /// Describes the current state of this crate.
 ///
-/// The crate is a placeholder only. Python remains the reference backend and
-/// oracle until a future parity-tested seam is explicitly migrated.
-pub const CRATE_STATUS: &str = "placeholder_only_python_oracle_active";
+/// Python remains the reference backend and oracle. This crate contains the
+/// first isolated Rust parity candidate only; it is not wired into runtime
+/// behavior.
+pub const CRATE_STATUS: &str = "source_registry_parity_candidate_v0_python_oracle_active";
