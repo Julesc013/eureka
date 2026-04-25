@@ -1,0 +1,78 @@
+# Python To Rust Parity Plan
+
+The Rust migration must proceed through parity, not replacement by assertion.
+
+## Rule
+
+Python is the oracle. Rust is the candidate. A Rust seam cannot replace Python
+behavior until parity tests compare both outputs and either match exactly or
+record an explicit allowed divergence.
+
+## Comparison Model
+
+Each future seam should define:
+
+- Python oracle inputs
+- Python oracle outputs
+- Rust candidate inputs
+- Rust candidate outputs
+- stable JSON golden outputs
+- normalization rules for non-semantic ordering or timestamp fields
+- allowed divergence records
+- promotion criteria
+
+## Golden Outputs
+
+Golden outputs should be JSON where possible. They should be:
+
+- generated from existing Python reference behavior
+- committed only when the source fixture and command are clear
+- stable enough to review in diffs
+- small enough to inspect manually
+- honest about unsupported or capability-gap states
+
+## Allowed Divergence Records
+
+When Rust cannot or should not byte-match Python output, the divergence must be
+explicit. A record should include:
+
+- seam name
+- fixture id or task id
+- Python observed output
+- Rust observed output
+- reason for divergence
+- owner or future review note
+- decision status
+
+No undocumented divergence should be treated as parity.
+
+## Seam Order
+
+The recommended migration order is:
+
+1. source registry record loading
+2. query planner
+3. local index record model
+4. resolution run model
+5. resolution memory model
+6. exact resolution
+7. deterministic search
+8. provenance and evidence
+9. representation and access paths
+10. compatibility
+11. action-plan and handoff
+12. acquisition, decomposition, and member access
+13. local store, local index execution, and gateway projection
+
+This order favors smaller, inspectable data contracts before broader behavior.
+
+## Non-Goals For This Milestone
+
+- no parity runner
+- no Rust behavior port
+- no Rust gateway
+- no Rust CLI
+- no FFI
+- no native app shell
+- no production service
+- no replacement of Python behavior
