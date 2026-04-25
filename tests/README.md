@@ -4,6 +4,9 @@
 
 - `architecture/`: repo-local architectural guardrail checks and synthetic violation fixtures for the narrow boundary checker
 - `evals/`: repo-level validation for shared benchmark and evaluation assets
+- `hardening/`: high-risk regression guards for eval truth, public-alpha path
+  safety, route/docs/README drift, parity/golden discipline, and repo
+  operating metadata consistency
 - `integration/`: cross-component checks across contracts, runtime, and surfaces
 - `operations/`: repo-operating checks for public-alpha posture, hosting-pack
   evidence, test/eval operating-layer metadata, and audit packs
