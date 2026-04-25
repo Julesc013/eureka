@@ -1,0 +1,1519 @@
+{
+  "created_at": "<PYTHON_ORACLE_TIMESTAMP>",
+  "created_by_slice": "archive_resolution_eval_runner_v0",
+  "load_errors": [],
+  "notices": [
+    {
+      "code": "transient_local_index",
+      "message": "Built a transient Local Index v0 database for this eval run. The report omits the temporary path so JSON remains inspectable.",
+      "severity": "info"
+    },
+    {
+      "code": "local_index_built_for_eval",
+      "message": "Built Local Index v0 once for this synchronous archive-resolution eval suite.",
+      "severity": "info"
+    }
+  ],
+  "status_counts": {
+    "capability_gap": 6
+  },
+  "task_summaries": [
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "find_document_article",
+      "planner_observed_task_kind": "find_document_article",
+      "planner_status": "satisfied",
+      "query_family": "article_inside_scan",
+      "raw_query": "article inside 1994 magazine scan about ray tracing",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "article_inside_magazine_scan"
+    },
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "find_driver",
+      "planner_observed_task_kind": "find_driver",
+      "planner_status": "satisfied",
+      "query_family": "driver_by_hardware_and_platform",
+      "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "driver_inside_support_cd"
+    },
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "find_software_release",
+      "planner_observed_task_kind": "find_software_release",
+      "planner_status": "satisfied",
+      "query_family": "latest_compatible_release",
+      "raw_query": "latest Firefox before XP support ended",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "latest_firefox_before_xp_drop"
+    },
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "find_software_release",
+      "planner_observed_task_kind": "find_software_release",
+      "planner_status": "satisfied",
+      "query_family": "vague_software_identity",
+      "raw_query": "old blue FTP client for XP",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "old_blue_ftp_client_xp"
+    },
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "find_software_release",
+      "planner_observed_task_kind": "find_software_release",
+      "planner_status": "satisfied",
+      "query_family": "software_by_function_and_platform",
+      "raw_query": "software to fix broken registry on Windows 98",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "win98_registry_repair"
+    },
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "browse_software",
+      "planner_observed_task_kind": "browse_software",
+      "planner_status": "satisfied",
+      "query_family": "software_by_platform",
+      "raw_query": "Windows 7 apps",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "windows_7_apps"
+    }
+  ],
+  "tasks": [
+    {
+      "absence_summary": {
+        "checked_record_count": 8,
+        "checked_source_families": [
+          "synthetic_fixture",
+          "github_releases"
+        ],
+        "checked_subject_count": 6,
+        "likely_reason_code": "query_not_present_in_bounded_corpus",
+        "near_match_count": 0,
+        "next_steps": [
+          "Retry with a different bounded subject, version, or label term.",
+          "Confirm that the expected source family is loaded into the current local corpus."
+        ],
+        "reason_message": "No bounded subject or label related to query 'article inside 1994 magazine scan about ray tracing' was found in the current local corpus.",
+        "status": "explained"
+      },
+      "capability_gaps": [
+        {
+          "expected": {
+            "acceptable_result_patterns": [
+              "article-level record with page range",
+              "page-level or section-level trace inside a scanned magazine",
+              "OCR-backed page locator that narrows the scan to a relevant segment"
+            ],
+            "allowed_absence_outcomes": [
+              "scan_level_trace_without_article_boundary",
+              "checked_sources_with_reasoned_absence"
+            ],
+            "desired_object_types": [
+              "article",
+              "page_range",
+              "document_section"
+            ],
+            "minimum_granularity": "article_or_page_range",
+            "required_evidence": [
+              "topic clue tied to the scan or pages",
+              "page, section, or article locator",
+              "source-family visibility"
+            ]
+          },
+          "message": "No bounded local result matched this hard fixture. Current bootstrap corpus does not contain the direct artifact, member, article, or evidence shape required to satisfy the task.",
+          "name": "search.expected_result_hints",
+          "observed": {
+            "result_count": 0
+          },
+          "status": "capability_gap"
+        }
+      ],
+      "expected_result_hints": {
+        "acceptable_result_patterns": [
+          "article-level record with page range",
+          "page-level or section-level trace inside a scanned magazine",
+          "OCR-backed page locator that narrows the scan to a relevant segment"
+        ],
+        "allowed_absence_outcomes": [
+          "scan_level_trace_without_article_boundary",
+          "checked_sources_with_reasoned_absence"
+        ],
+        "desired_object_types": [
+          "article",
+          "page_range",
+          "document_section"
+        ],
+        "minimum_granularity": "article_or_page_range",
+        "required_evidence": [
+          "topic clue tied to the scan or pages",
+          "page, section, or article locator",
+          "source-family visibility"
+        ]
+      },
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, and absence behavior only; ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        },
+        {
+          "code": "local_index_no_results",
+          "message": "No Local Index v0 records matched 'article inside 1994 magazine scan about ray tracing'.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "capability_gap",
+      "partial_checks": [
+        {
+          "message": "Absence reasoning explained the empty bounded search result.",
+          "name": "absence.reasoning",
+          "observed": {
+            "checked_record_count": 8,
+            "checked_source_families": [
+              "synthetic_fixture",
+              "github_releases"
+            ],
+            "checked_subject_count": 6,
+            "likely_reason_code": "query_not_present_in_bounded_corpus",
+            "near_match_count": 0,
+            "next_steps": [
+              "Retry with a different bounded subject, version, or label term.",
+              "Confirm that the expected source family is loaded into the current local corpus."
+            ],
+            "reason_message": "No bounded subject or label related to query 'article inside 1994 magazine scan about ray tracing' was found in the current local corpus.",
+            "status": "explained"
+          },
+          "status": "partial"
+        }
+      ],
+      "planner_expected_task_kind": "find_document_article",
+      "planner_observed": {
+        "action_hints": [
+          "inspect",
+          "view_read",
+          "cite",
+          "export_manifest"
+        ],
+        "constraints": {
+          "date_year_hint": "1994",
+          "document_hint": "magazine",
+          "topic_hint": "ray tracing"
+        },
+        "exclude": [
+          "whole_issue_only_without_article_trace"
+        ],
+        "object_type": "document_article",
+        "planner_confidence": "high",
+        "planner_notes": [
+          "Recognized an article-inside-scan style query."
+        ],
+        "prefer": [
+          "article_member",
+          "page_range_hit",
+          "ocr_text_snippet"
+        ],
+        "raw_query": "article inside 1994 magazine scan about ray tracing",
+        "source_hints": [],
+        "task_kind": "find_document_article"
+      },
+      "planner_observed_task_kind": "find_document_article",
+      "planner_status": "satisfied",
+      "query_family": "article_inside_scan",
+      "raw_query": "article inside 1994 magazine scan about ray tracing",
+      "satisfied_checks": [
+        {
+          "expected": "find_document_article",
+          "message": "Planner task_kind matched expected_plan.",
+          "name": "planner.task_kind",
+          "observed": "find_document_article",
+          "status": "satisfied"
+        },
+        {
+          "expected": "document_article",
+          "message": "Planner object_type matched expected_plan.",
+          "name": "planner.object_type",
+          "observed": "document_article",
+          "status": "satisfied"
+        },
+        {
+          "expected": "1994",
+          "message": "Planner constraint 'date_year_hint' contains the expected bounded values.",
+          "name": "planner.constraints.date_year_hint",
+          "observed": "1994",
+          "status": "satisfied"
+        },
+        {
+          "expected": "magazine",
+          "message": "Planner constraint 'document_hint' contains the expected bounded values.",
+          "name": "planner.constraints.document_hint",
+          "observed": "magazine",
+          "status": "satisfied"
+        },
+        {
+          "expected": "ray tracing",
+          "message": "Planner constraint 'topic_hint' contains the expected bounded values.",
+          "name": "planner.constraints.topic_hint",
+          "observed": "ray tracing",
+          "status": "satisfied"
+        },
+        {
+          "expected": "article_member",
+          "message": "Planner prefer includes 'article_member'.",
+          "name": "planner.prefer.article_member",
+          "observed": [
+            "article_member",
+            "page_range_hit",
+            "ocr_text_snippet"
+          ],
+          "status": "satisfied"
+        },
+        {
+          "expected": "whole_issue_only_without_article_trace",
+          "message": "Planner exclude includes 'whole_issue_only_without_article_trace'.",
+          "name": "planner.exclude.whole_issue_only_without_article_trace",
+          "observed": [
+            "whole_issue_only_without_article_trace"
+          ],
+          "status": "satisfied"
+        }
+      ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "search_query": "article inside 1994 magazine scan about ray tracing",
+      "skipped_checks": [
+        {
+          "expected": [
+            "best_direct_answer",
+            "inside_bundles",
+            "preservation",
+            "documentation",
+            "absence_or_next_steps"
+          ],
+          "message": "Expected result lanes are recorded but not scored in Eval Runner v0; there is no ranking or lane-placement benchmark yet.",
+          "name": "lanes.expected_lanes",
+          "status": "not_evaluable"
+        },
+        {
+          "expected": [
+            "whole magazine issues with no article boundary",
+            "modern ray tracing articles unrelated to the 1994 scan context",
+            "search hits that match only a collection title without page-level evidence"
+          ],
+          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement ranking, fuzzy, semantic, or vector evaluation.",
+          "name": "ranking.bad_result_patterns",
+          "status": "not_evaluable"
+        }
+      ],
+      "task_id": "article_inside_magazine_scan",
+      "top_results": []
+    },
+    {
+      "absence_summary": {
+        "checked_record_count": 8,
+        "checked_source_families": [
+          "synthetic_fixture",
+          "github_releases"
+        ],
+        "checked_subject_count": 6,
+        "likely_reason_code": "query_not_present_in_bounded_corpus",
+        "near_match_count": 0,
+        "next_steps": [
+          "Retry with a different bounded subject, version, or label term.",
+          "Confirm that the expected source family is loaded into the current local corpus."
+        ],
+        "reason_message": "No bounded subject or label related to query 'ThinkPad T42 Wi-Fi' was found in the current local corpus.",
+        "status": "explained"
+      },
+      "capability_gaps": [
+        {
+          "expected": {
+            "acceptable_result_patterns": [
+              "direct driver installer or archive",
+              "INF, CAB, or executable member extracted from a support bundle",
+              "vendor or preservation trace that points to the exact member path"
+            ],
+            "allowed_absence_outcomes": [
+              "hardware_trace_without_driver_artifact",
+              "checked_sources_with_reasoned_absence"
+            ],
+            "desired_object_types": [
+              "driver",
+              "installer",
+              "bundle_member"
+            ],
+            "minimum_granularity": "direct_driver_artifact_or_member",
+            "required_evidence": [
+              "hardware match evidence",
+              "Windows 2000 compatibility evidence",
+              "artifact or member locator"
+            ]
+          },
+          "message": "No bounded local result matched this hard fixture. Current bootstrap corpus does not contain the direct artifact, member, article, or evidence shape required to satisfy the task.",
+          "name": "search.expected_result_hints",
+          "observed": {
+            "result_count": 0
+          },
+          "status": "capability_gap"
+        }
+      ],
+      "expected_result_hints": {
+        "acceptable_result_patterns": [
+          "direct driver installer or archive",
+          "INF, CAB, or executable member extracted from a support bundle",
+          "vendor or preservation trace that points to the exact member path"
+        ],
+        "allowed_absence_outcomes": [
+          "hardware_trace_without_driver_artifact",
+          "checked_sources_with_reasoned_absence"
+        ],
+        "desired_object_types": [
+          "driver",
+          "installer",
+          "bundle_member"
+        ],
+        "minimum_granularity": "direct_driver_artifact_or_member",
+        "required_evidence": [
+          "hardware match evidence",
+          "Windows 2000 compatibility evidence",
+          "artifact or member locator"
+        ]
+      },
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, and absence behavior only; ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        },
+        {
+          "code": "local_index_no_results",
+          "message": "No Local Index v0 records matched 'ThinkPad T42 Wi-Fi'.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "capability_gap",
+      "partial_checks": [
+        {
+          "message": "Absence reasoning explained the empty bounded search result.",
+          "name": "absence.reasoning",
+          "observed": {
+            "checked_record_count": 8,
+            "checked_source_families": [
+              "synthetic_fixture",
+              "github_releases"
+            ],
+            "checked_subject_count": 6,
+            "likely_reason_code": "query_not_present_in_bounded_corpus",
+            "near_match_count": 0,
+            "next_steps": [
+              "Retry with a different bounded subject, version, or label term.",
+              "Confirm that the expected source family is loaded into the current local corpus."
+            ],
+            "reason_message": "No bounded subject or label related to query 'ThinkPad T42 Wi-Fi' was found in the current local corpus.",
+            "status": "explained"
+          },
+          "status": "partial"
+        }
+      ],
+      "planner_expected_task_kind": "find_driver",
+      "planner_observed": {
+        "action_hints": [
+          "inspect",
+          "download",
+          "export_manifest"
+        ],
+        "constraints": {
+          "hardware_hint": "ThinkPad T42 Wi-Fi",
+          "platform": {
+            "marketing_alias": "Windows 2000",
+            "os_family": "Windows NT",
+            "os_version": "5.0"
+          }
+        },
+        "exclude": [
+          "generic_advice_only",
+          "unrelated_full_os_media"
+        ],
+        "object_type": "driver",
+        "planner_confidence": "high",
+        "planner_notes": [
+          "Recognized a driver lookup query.",
+          "Hardware and platform hints remain bounded extracted constraints only."
+        ],
+        "prefer": [
+          "driver_package",
+          "support_bundle_member",
+          "documentation_with_driver_locator"
+        ],
+        "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+        "source_hints": [],
+        "task_kind": "find_driver"
+      },
+      "planner_observed_task_kind": "find_driver",
+      "planner_status": "satisfied",
+      "query_family": "driver_by_hardware_and_platform",
+      "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+      "satisfied_checks": [
+        {
+          "expected": "find_driver",
+          "message": "Planner task_kind matched expected_plan.",
+          "name": "planner.task_kind",
+          "observed": "find_driver",
+          "status": "satisfied"
+        },
+        {
+          "expected": "driver",
+          "message": "Planner object_type matched expected_plan.",
+          "name": "planner.object_type",
+          "observed": "driver",
+          "status": "satisfied"
+        },
+        {
+          "expected": "ThinkPad T42 Wi-Fi",
+          "message": "Planner constraint 'hardware_hint' contains the expected bounded values.",
+          "name": "planner.constraints.hardware_hint",
+          "observed": "ThinkPad T42 Wi-Fi",
+          "status": "satisfied"
+        },
+        {
+          "expected": {
+            "marketing_alias": "Windows 2000"
+          },
+          "message": "Planner constraint 'platform' contains the expected bounded values.",
+          "name": "planner.constraints.platform",
+          "observed": {
+            "marketing_alias": "Windows 2000",
+            "os_family": "Windows NT",
+            "os_version": "5.0"
+          },
+          "status": "satisfied"
+        },
+        {
+          "expected": "driver_package",
+          "message": "Planner prefer includes 'driver_package'.",
+          "name": "planner.prefer.driver_package",
+          "observed": [
+            "driver_package",
+            "support_bundle_member",
+            "documentation_with_driver_locator"
+          ],
+          "status": "satisfied"
+        },
+        {
+          "expected": "generic_advice_only",
+          "message": "Planner exclude includes 'generic_advice_only'.",
+          "name": "planner.exclude.generic_advice_only",
+          "observed": [
+            "generic_advice_only",
+            "unrelated_full_os_media"
+          ],
+          "status": "satisfied"
+        }
+      ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "search_query": "ThinkPad T42 Wi-Fi",
+      "skipped_checks": [
+        {
+          "expected": [
+            "best_direct_answer",
+            "inside_bundles",
+            "official",
+            "preservation",
+            "absence_or_next_steps"
+          ],
+          "message": "Expected result lanes are recorded but not scored in Eval Runner v0; there is no ranking or lane-placement benchmark yet.",
+          "name": "lanes.expected_lanes",
+          "status": "not_evaluable"
+        },
+        {
+          "expected": [
+            "whole support CDs without member listings",
+            "manuals or spec sheets with no driver artifact",
+            "drivers for the wrong operating system or wrong hardware variant"
+          ],
+          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement ranking, fuzzy, semantic, or vector evaluation.",
+          "name": "ranking.bad_result_patterns",
+          "status": "not_evaluable"
+        }
+      ],
+      "task_id": "driver_inside_support_cd",
+      "top_results": []
+    },
+    {
+      "absence_summary": {
+        "checked_record_count": 8,
+        "checked_source_families": [
+          "synthetic_fixture",
+          "github_releases"
+        ],
+        "checked_subject_count": 6,
+        "likely_reason_code": "query_not_present_in_bounded_corpus",
+        "near_match_count": 0,
+        "next_steps": [
+          "Retry with a different bounded subject, version, or label term.",
+          "Confirm that the expected source family is loaded into the current local corpus."
+        ],
+        "reason_message": "No bounded subject or label related to query 'Firefox' was found in the current local corpus.",
+        "status": "explained"
+      },
+      "capability_gaps": [
+        {
+          "expected": {
+            "acceptable_result_patterns": [
+              "direct installer for the last compatible Firefox release",
+              "release archive page with version evidence and downloadable asset",
+              "archived vendor page plus concrete release asset trace"
+            ],
+            "allowed_absence_outcomes": [
+              "near_match_with_version_window_trace",
+              "checked_sources_with_reasoned_absence"
+            ],
+            "desired_object_types": [
+              "software_release",
+              "installer",
+              "release_asset"
+            ],
+            "minimum_granularity": "versioned_release_artifact",
+            "required_evidence": [
+              "version or release identity",
+              "Windows XP compatibility or support-window evidence",
+              "direct artifact or release asset locator"
+            ]
+          },
+          "message": "No bounded local result matched this hard fixture. Current bootstrap corpus does not contain the direct artifact, member, article, or evidence shape required to satisfy the task.",
+          "name": "search.expected_result_hints",
+          "observed": {
+            "result_count": 0
+          },
+          "status": "capability_gap"
+        }
+      ],
+      "expected_result_hints": {
+        "acceptable_result_patterns": [
+          "direct installer for the last compatible Firefox release",
+          "release archive page with version evidence and downloadable asset",
+          "archived vendor page plus concrete release asset trace"
+        ],
+        "allowed_absence_outcomes": [
+          "near_match_with_version_window_trace",
+          "checked_sources_with_reasoned_absence"
+        ],
+        "desired_object_types": [
+          "software_release",
+          "installer",
+          "release_asset"
+        ],
+        "minimum_granularity": "versioned_release_artifact",
+        "required_evidence": [
+          "version or release identity",
+          "Windows XP compatibility or support-window evidence",
+          "direct artifact or release asset locator"
+        ]
+      },
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, and absence behavior only; ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        },
+        {
+          "code": "local_index_no_results",
+          "message": "No Local Index v0 records matched 'Firefox'.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "capability_gap",
+      "partial_checks": [
+        {
+          "message": "Absence reasoning explained the empty bounded search result.",
+          "name": "absence.reasoning",
+          "observed": {
+            "checked_record_count": 8,
+            "checked_source_families": [
+              "synthetic_fixture",
+              "github_releases"
+            ],
+            "checked_subject_count": 6,
+            "likely_reason_code": "query_not_present_in_bounded_corpus",
+            "near_match_count": 0,
+            "next_steps": [
+              "Retry with a different bounded subject, version, or label term.",
+              "Confirm that the expected source family is loaded into the current local corpus."
+            ],
+            "reason_message": "No bounded subject or label related to query 'Firefox' was found in the current local corpus.",
+            "status": "explained"
+          },
+          "status": "partial"
+        }
+      ],
+      "planner_expected_task_kind": "find_software_release",
+      "planner_observed": {
+        "action_hints": [
+          "inspect",
+          "compare_versions",
+          "download",
+          "export_manifest"
+        ],
+        "constraints": {
+          "platform": {
+            "marketing_alias": "Windows XP",
+            "os_family": "Windows NT",
+            "os_version": "5.1"
+          },
+          "product_hint": "Firefox",
+          "support_window_hint": "latest before xp support ended"
+        },
+        "exclude": [
+          "latest_overall_without_platform_evidence",
+          "operating_system_image"
+        ],
+        "object_type": "software_release",
+        "planner_confidence": "high",
+        "planner_notes": [
+          "Recognized a latest-compatible release query.",
+          "Current retrieval remains bounded deterministic search; planner output is stored for later reuse."
+        ],
+        "prefer": [
+          "versioned_release_artifact",
+          "release_notes_with_support_window",
+          "compatibility_evidence"
+        ],
+        "raw_query": "latest Firefox before XP support ended",
+        "source_hints": [
+          "github_releases"
+        ],
+        "task_kind": "find_software_release"
+      },
+      "planner_observed_task_kind": "find_software_release",
+      "planner_status": "satisfied",
+      "query_family": "latest_compatible_release",
+      "raw_query": "latest Firefox before XP support ended",
+      "satisfied_checks": [
+        {
+          "expected": "find_software_release",
+          "message": "Planner task_kind matched expected_plan.",
+          "name": "planner.task_kind",
+          "observed": "find_software_release",
+          "status": "satisfied"
+        },
+        {
+          "expected": "software_release",
+          "message": "Planner object_type matched expected_plan.",
+          "name": "planner.object_type",
+          "observed": "software_release",
+          "status": "satisfied"
+        },
+        {
+          "expected": {
+            "marketing_alias": "Windows XP"
+          },
+          "message": "Planner constraint 'platform' contains the expected bounded values.",
+          "name": "planner.constraints.platform",
+          "observed": {
+            "marketing_alias": "Windows XP",
+            "os_family": "Windows NT",
+            "os_version": "5.1"
+          },
+          "status": "satisfied"
+        },
+        {
+          "expected": "Firefox",
+          "message": "Planner constraint 'product_hint' contains the expected bounded values.",
+          "name": "planner.constraints.product_hint",
+          "observed": "Firefox",
+          "status": "satisfied"
+        },
+        {
+          "expected": "versioned_release_artifact",
+          "message": "Planner prefer includes 'versioned_release_artifact'.",
+          "name": "planner.prefer.versioned_release_artifact",
+          "observed": [
+            "versioned_release_artifact",
+            "release_notes_with_support_window",
+            "compatibility_evidence"
+          ],
+          "status": "satisfied"
+        },
+        {
+          "expected": "latest_overall_without_platform_evidence",
+          "message": "Planner exclude includes 'latest_overall_without_platform_evidence'.",
+          "name": "planner.exclude.latest_overall_without_platform_evidence",
+          "observed": [
+            "latest_overall_without_platform_evidence",
+            "operating_system_image"
+          ],
+          "status": "satisfied"
+        }
+      ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "search_query": "Firefox",
+      "skipped_checks": [
+        {
+          "expected": [
+            "best_direct_answer",
+            "official",
+            "preservation",
+            "documentation",
+            "absence_or_next_steps"
+          ],
+          "message": "Expected result lanes are recorded but not scored in Eval Runner v0; there is no ranking or lane-placement benchmark yet.",
+          "name": "lanes.expected_lanes",
+          "status": "not_evaluable"
+        },
+        {
+          "expected": [
+            "latest Firefox release regardless of platform support",
+            "release pages without Windows XP compatibility evidence",
+            "browser collections that do not narrow to one compatible release"
+          ],
+          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement ranking, fuzzy, semantic, or vector evaluation.",
+          "name": "ranking.bad_result_patterns",
+          "status": "not_evaluable"
+        }
+      ],
+      "task_id": "latest_firefox_before_xp_drop",
+      "top_results": []
+    },
+    {
+      "absence_summary": {
+        "checked_record_count": 8,
+        "checked_source_families": [
+          "synthetic_fixture",
+          "github_releases"
+        ],
+        "checked_subject_count": 6,
+        "likely_reason_code": "related_subjects_exist",
+        "near_match_count": 1,
+        "next_steps": [
+          "Retry search with one of the near-match target_ref values or object labels.",
+          "Use an existing subject key if you are looking for known states of one bounded subject.",
+          "List known states for subject 'cli'."
+        ],
+        "reason_message": "No deterministic substring match was found for query 'old blue FTP client for XP', but related bounded subjects were found.",
+        "status": "explained"
+      },
+      "capability_gaps": [
+        {
+          "expected": {
+            "acceptable_result_patterns": [
+              "direct installer for a plausible FTP client supported on Windows XP",
+              "archived vendor page or manual trace that narrows identity to a concrete product",
+              "bundle-contained installer with a member path and surrounding evidence"
+            ],
+            "allowed_absence_outcomes": [
+              "candidate_identity_trace_without_direct_download",
+              "checked_sources_with_reasoned_absence"
+            ],
+            "desired_object_types": [
+              "application",
+              "installer",
+              "portable_package"
+            ],
+            "minimum_granularity": "direct_artifact_or_identity_trace",
+            "required_evidence": [
+              "FTP-client function evidence",
+              "Windows XP compatibility evidence or period trace",
+              "artifact locator or concrete product trace"
+            ]
+          },
+          "message": "No bounded local result matched this hard fixture. Current bootstrap corpus does not contain the direct artifact, member, article, or evidence shape required to satisfy the task.",
+          "name": "search.expected_result_hints",
+          "observed": {
+            "result_count": 0
+          },
+          "status": "capability_gap"
+        }
+      ],
+      "expected_result_hints": {
+        "acceptable_result_patterns": [
+          "direct installer for a plausible FTP client supported on Windows XP",
+          "archived vendor page or manual trace that narrows identity to a concrete product",
+          "bundle-contained installer with a member path and surrounding evidence"
+        ],
+        "allowed_absence_outcomes": [
+          "candidate_identity_trace_without_direct_download",
+          "checked_sources_with_reasoned_absence"
+        ],
+        "desired_object_types": [
+          "application",
+          "installer",
+          "portable_package"
+        ],
+        "minimum_granularity": "direct_artifact_or_identity_trace",
+        "required_evidence": [
+          "FTP-client function evidence",
+          "Windows XP compatibility evidence or period trace",
+          "artifact locator or concrete product trace"
+        ]
+      },
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, and absence behavior only; ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        },
+        {
+          "code": "local_index_no_results",
+          "message": "No Local Index v0 records matched 'old blue FTP client for XP'.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "capability_gap",
+      "partial_checks": [
+        {
+          "message": "Absence reasoning explained the empty bounded search result.",
+          "name": "absence.reasoning",
+          "observed": {
+            "checked_record_count": 8,
+            "checked_source_families": [
+              "synthetic_fixture",
+              "github_releases"
+            ],
+            "checked_subject_count": 6,
+            "likely_reason_code": "related_subjects_exist",
+            "near_match_count": 1,
+            "next_steps": [
+              "Retry search with one of the near-match target_ref values or object labels.",
+              "Use an existing subject key if you are looking for known states of one bounded subject.",
+              "List known states for subject 'cli'."
+            ],
+            "reason_message": "No deterministic substring match was found for query 'old blue FTP client for XP', but related bounded subjects were found.",
+            "status": "explained"
+          },
+          "status": "partial"
+        }
+      ],
+      "planner_expected_task_kind": "find_software_release",
+      "planner_observed": {
+        "action_hints": [
+          "inspect",
+          "download",
+          "export_manifest"
+        ],
+        "constraints": {
+          "descriptor_hint": "blue",
+          "function_hint": "ftp client",
+          "platform": {
+            "marketing_alias": "Windows XP",
+            "os_family": "Windows NT",
+            "os_version": "5.1"
+          },
+          "temporal_style_hint": "old"
+        },
+        "exclude": [
+          "generic_advice_only",
+          "operating_system_image"
+        ],
+        "object_type": "software_release",
+        "planner_confidence": "medium",
+        "planner_notes": [
+          "Recognized a vague software identity query with platform and functional hints."
+        ],
+        "prefer": [
+          "named_software_artifact",
+          "descriptive_release_notes",
+          "compatibility_evidence"
+        ],
+        "raw_query": "old blue FTP client for XP",
+        "source_hints": [
+          "github_releases"
+        ],
+        "task_kind": "find_software_release"
+      },
+      "planner_observed_task_kind": "find_software_release",
+      "planner_status": "satisfied",
+      "query_family": "vague_software_identity",
+      "raw_query": "old blue FTP client for XP",
+      "satisfied_checks": [
+        {
+          "expected": "find_software_release",
+          "message": "Planner task_kind matched expected_plan.",
+          "name": "planner.task_kind",
+          "observed": "find_software_release",
+          "status": "satisfied"
+        },
+        {
+          "expected": "software_release",
+          "message": "Planner object_type matched expected_plan.",
+          "name": "planner.object_type",
+          "observed": "software_release",
+          "status": "satisfied"
+        },
+        {
+          "expected": "blue",
+          "message": "Planner constraint 'descriptor_hint' contains the expected bounded values.",
+          "name": "planner.constraints.descriptor_hint",
+          "observed": "blue",
+          "status": "satisfied"
+        },
+        {
+          "expected": "ftp client",
+          "message": "Planner constraint 'function_hint' contains the expected bounded values.",
+          "name": "planner.constraints.function_hint",
+          "observed": "ftp client",
+          "status": "satisfied"
+        },
+        {
+          "expected": {
+            "marketing_alias": "Windows XP"
+          },
+          "message": "Planner constraint 'platform' contains the expected bounded values.",
+          "name": "planner.constraints.platform",
+          "observed": {
+            "marketing_alias": "Windows XP",
+            "os_family": "Windows NT",
+            "os_version": "5.1"
+          },
+          "status": "satisfied"
+        },
+        {
+          "expected": "named_software_artifact",
+          "message": "Planner prefer includes 'named_software_artifact'.",
+          "name": "planner.prefer.named_software_artifact",
+          "observed": [
+            "named_software_artifact",
+            "descriptive_release_notes",
+            "compatibility_evidence"
+          ],
+          "status": "satisfied"
+        },
+        {
+          "expected": "generic_advice_only",
+          "message": "Planner exclude includes 'generic_advice_only'.",
+          "name": "planner.exclude.generic_advice_only",
+          "observed": [
+            "generic_advice_only",
+            "operating_system_image"
+          ],
+          "status": "satisfied"
+        }
+      ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "search_query": "old blue FTP client for XP",
+      "skipped_checks": [
+        {
+          "expected": [
+            "best_direct_answer",
+            "documentation",
+            "community",
+            "mentions_or_traces",
+            "absence_or_next_steps"
+          ],
+          "message": "Expected result lanes are recorded but not scored in Eval Runner v0; there is no ranking or lane-placement benchmark yet.",
+          "name": "lanes.expected_lanes",
+          "status": "not_evaluable"
+        },
+        {
+          "expected": [
+            "generic FTP client lists with no concrete artifact",
+            "modern sync tools unrelated to classic FTP clients",
+            "results that match only the color hint without FTP function evidence"
+          ],
+          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement ranking, fuzzy, semantic, or vector evaluation.",
+          "name": "ranking.bad_result_patterns",
+          "status": "not_evaluable"
+        }
+      ],
+      "task_id": "old_blue_ftp_client_xp",
+      "top_results": []
+    },
+    {
+      "absence_summary": {
+        "checked_record_count": 8,
+        "checked_source_families": [
+          "synthetic_fixture",
+          "github_releases"
+        ],
+        "checked_subject_count": 6,
+        "likely_reason_code": "query_not_present_in_bounded_corpus",
+        "near_match_count": 0,
+        "next_steps": [
+          "Retry with a different bounded subject, version, or label term.",
+          "Confirm that the expected source family is loaded into the current local corpus."
+        ],
+        "reason_message": "No bounded subject or label related to query 'software to fix broken registry on Windows 98' was found in the current local corpus.",
+        "status": "explained"
+      },
+      "capability_gaps": [
+        {
+          "expected": {
+            "acceptable_result_patterns": [
+              "direct utility installer or archive",
+              "manual or release note that confirms Windows 98 support and points to a tool",
+              "extracted bundle member that is itself the utility"
+            ],
+            "allowed_absence_outcomes": [
+              "checked_sources_with_reasoned_absence",
+              "near_matches_with_functional_trace"
+            ],
+            "desired_object_types": [
+              "utility",
+              "application",
+              "portable_package"
+            ],
+            "minimum_granularity": "direct_artifact_or_extracted_member",
+            "required_evidence": [
+              "functional or descriptive clue that the tool repairs registry issues",
+              "Windows 98 compatibility evidence or period-appropriate provenance",
+              "artifact or member locator"
+            ]
+          },
+          "message": "No bounded local result matched this hard fixture. Current bootstrap corpus does not contain the direct artifact, member, article, or evidence shape required to satisfy the task.",
+          "name": "search.expected_result_hints",
+          "observed": {
+            "result_count": 0
+          },
+          "status": "capability_gap"
+        }
+      ],
+      "expected_result_hints": {
+        "acceptable_result_patterns": [
+          "direct utility installer or archive",
+          "manual or release note that confirms Windows 98 support and points to a tool",
+          "extracted bundle member that is itself the utility"
+        ],
+        "allowed_absence_outcomes": [
+          "checked_sources_with_reasoned_absence",
+          "near_matches_with_functional_trace"
+        ],
+        "desired_object_types": [
+          "utility",
+          "application",
+          "portable_package"
+        ],
+        "minimum_granularity": "direct_artifact_or_extracted_member",
+        "required_evidence": [
+          "functional or descriptive clue that the tool repairs registry issues",
+          "Windows 98 compatibility evidence or period-appropriate provenance",
+          "artifact or member locator"
+        ]
+      },
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, and absence behavior only; ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        },
+        {
+          "code": "local_index_no_results",
+          "message": "No Local Index v0 records matched 'software to fix broken registry on Windows 98'.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "capability_gap",
+      "partial_checks": [
+        {
+          "message": "Absence reasoning explained the empty bounded search result.",
+          "name": "absence.reasoning",
+          "observed": {
+            "checked_record_count": 8,
+            "checked_source_families": [
+              "synthetic_fixture",
+              "github_releases"
+            ],
+            "checked_subject_count": 6,
+            "likely_reason_code": "query_not_present_in_bounded_corpus",
+            "near_match_count": 0,
+            "next_steps": [
+              "Retry with a different bounded subject, version, or label term.",
+              "Confirm that the expected source family is loaded into the current local corpus."
+            ],
+            "reason_message": "No bounded subject or label related to query 'software to fix broken registry on Windows 98' was found in the current local corpus.",
+            "status": "explained"
+          },
+          "status": "partial"
+        }
+      ],
+      "planner_expected_task_kind": "find_software_release",
+      "planner_observed": {
+        "action_hints": [
+          "inspect",
+          "download",
+          "export_manifest"
+        ],
+        "constraints": {
+          "function_hint": "fix broken registry",
+          "platform": {
+            "marketing_alias": "Windows 98",
+            "os_family": "Windows",
+            "os_version": "4.1",
+            "platform_family": "Win9x"
+          }
+        },
+        "exclude": [
+          "generic_advice_only",
+          "modern_incompatible_release"
+        ],
+        "object_type": "software_release",
+        "planner_confidence": "medium",
+        "planner_notes": [
+          "Recognized a functional software lookup query."
+        ],
+        "prefer": [
+          "direct_software_artifact",
+          "period_appropriate_utility",
+          "compatibility_evidence"
+        ],
+        "raw_query": "software to fix broken registry on Windows 98",
+        "source_hints": [
+          "synthetic",
+          "github_releases"
+        ],
+        "task_kind": "find_software_release"
+      },
+      "planner_observed_task_kind": "find_software_release",
+      "planner_status": "satisfied",
+      "query_family": "software_by_function_and_platform",
+      "raw_query": "software to fix broken registry on Windows 98",
+      "satisfied_checks": [
+        {
+          "expected": "find_software_release",
+          "message": "Planner task_kind matched expected_plan.",
+          "name": "planner.task_kind",
+          "observed": "find_software_release",
+          "status": "satisfied"
+        },
+        {
+          "expected": "software_release",
+          "message": "Planner object_type matched expected_plan.",
+          "name": "planner.object_type",
+          "observed": "software_release",
+          "status": "satisfied"
+        },
+        {
+          "expected": "fix broken registry",
+          "message": "Planner constraint 'function_hint' contains the expected bounded values.",
+          "name": "planner.constraints.function_hint",
+          "observed": "fix broken registry",
+          "status": "satisfied"
+        },
+        {
+          "expected": {
+            "marketing_alias": "Windows 98"
+          },
+          "message": "Planner constraint 'platform' contains the expected bounded values.",
+          "name": "planner.constraints.platform",
+          "observed": {
+            "marketing_alias": "Windows 98",
+            "os_family": "Windows",
+            "os_version": "4.1",
+            "platform_family": "Win9x"
+          },
+          "status": "satisfied"
+        },
+        {
+          "expected": "direct_software_artifact",
+          "message": "Planner prefer includes 'direct_software_artifact'.",
+          "name": "planner.prefer.direct_software_artifact",
+          "observed": [
+            "direct_software_artifact",
+            "period_appropriate_utility",
+            "compatibility_evidence"
+          ],
+          "status": "satisfied"
+        },
+        {
+          "expected": "modern_incompatible_release",
+          "message": "Planner exclude includes 'modern_incompatible_release'.",
+          "name": "planner.exclude.modern_incompatible_release",
+          "observed": [
+            "generic_advice_only",
+            "modern_incompatible_release"
+          ],
+          "status": "satisfied"
+        }
+      ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "search_query": "software to fix broken registry on Windows 98",
+      "skipped_checks": [
+        {
+          "expected": [
+            "best_direct_answer",
+            "installable_or_usable_now",
+            "documentation",
+            "community",
+            "absence_or_next_steps"
+          ],
+          "message": "Expected result lanes are recorded but not scored in Eval Runner v0; there is no ranking or lane-placement benchmark yet.",
+          "name": "lanes.expected_lanes",
+          "status": "not_evaluable"
+        },
+        {
+          "expected": [
+            "Windows 98 install media",
+            "generic registry advice without an artifact",
+            "modern registry cleaners without Windows 98 evidence"
+          ],
+          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement ranking, fuzzy, semantic, or vector evaluation.",
+          "name": "ranking.bad_result_patterns",
+          "status": "not_evaluable"
+        }
+      ],
+      "task_id": "win98_registry_repair",
+      "top_results": []
+    },
+    {
+      "absence_summary": {
+        "checked_record_count": 8,
+        "checked_source_families": [
+          "synthetic_fixture",
+          "github_releases"
+        ],
+        "checked_subject_count": 6,
+        "likely_reason_code": "query_not_present_in_bounded_corpus",
+        "near_match_count": 0,
+        "next_steps": [
+          "Retry with a different bounded subject, version, or label term.",
+          "Confirm that the expected source family is loaded into the current local corpus."
+        ],
+        "reason_message": "No bounded subject or label related to query 'Windows 7 apps' was found in the current local corpus.",
+        "status": "explained"
+      },
+      "capability_gaps": [
+        {
+          "expected": {
+            "acceptable_result_patterns": [
+              "individual application installers",
+              "portable applications compatible with Windows 7",
+              "extracted bundle members with direct application artifacts",
+              "documentation-backed compatibility traces that point to direct downloads"
+            ],
+            "allowed_absence_outcomes": [
+              "checked_sources_with_reasoned_absence",
+              "near_matches_with_compatibility_trace"
+            ],
+            "desired_object_types": [
+              "application",
+              "installer",
+              "portable_package"
+            ],
+            "minimum_granularity": "direct_artifact_or_extracted_member",
+            "required_evidence": [
+              "compatibility clue or platform evidence",
+              "representation or member path",
+              "source-family visibility"
+            ]
+          },
+          "message": "No bounded local result matched this hard fixture. Current bootstrap corpus does not contain the direct artifact, member, article, or evidence shape required to satisfy the task.",
+          "name": "search.expected_result_hints",
+          "observed": {
+            "result_count": 0
+          },
+          "status": "capability_gap"
+        }
+      ],
+      "expected_result_hints": {
+        "acceptable_result_patterns": [
+          "individual application installers",
+          "portable applications compatible with Windows 7",
+          "extracted bundle members with direct application artifacts",
+          "documentation-backed compatibility traces that point to direct downloads"
+        ],
+        "allowed_absence_outcomes": [
+          "checked_sources_with_reasoned_absence",
+          "near_matches_with_compatibility_trace"
+        ],
+        "desired_object_types": [
+          "application",
+          "installer",
+          "portable_package"
+        ],
+        "minimum_granularity": "direct_artifact_or_extracted_member",
+        "required_evidence": [
+          "compatibility clue or platform evidence",
+          "representation or member path",
+          "source-family visibility"
+        ]
+      },
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, and absence behavior only; ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        },
+        {
+          "code": "local_index_no_results",
+          "message": "No Local Index v0 records matched 'Windows 7 apps'.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "capability_gap",
+      "partial_checks": [
+        {
+          "message": "Absence reasoning explained the empty bounded search result.",
+          "name": "absence.reasoning",
+          "observed": {
+            "checked_record_count": 8,
+            "checked_source_families": [
+              "synthetic_fixture",
+              "github_releases"
+            ],
+            "checked_subject_count": 6,
+            "likely_reason_code": "query_not_present_in_bounded_corpus",
+            "near_match_count": 0,
+            "next_steps": [
+              "Retry with a different bounded subject, version, or label term.",
+              "Confirm that the expected source family is loaded into the current local corpus."
+            ],
+            "reason_message": "No bounded subject or label related to query 'Windows 7 apps' was found in the current local corpus.",
+            "status": "explained"
+          },
+          "status": "partial"
+        }
+      ],
+      "planner_expected_task_kind": "browse_software",
+      "planner_observed": {
+        "action_hints": [
+          "inspect",
+          "download",
+          "export_manifest"
+        ],
+        "constraints": {
+          "platform": {
+            "marketing_alias": "Windows 7",
+            "os_family": "Windows NT",
+            "os_version": "6.1"
+          }
+        },
+        "exclude": [
+          "operating_system_image",
+          "full_os_iso"
+        ],
+        "object_type": "software",
+        "planner_confidence": "high",
+        "planner_notes": [
+          "Recognized a platform-scoped software browsing query."
+        ],
+        "prefer": [
+          "direct_software_artifact",
+          "portable_package",
+          "compatibility_evidence"
+        ],
+        "raw_query": "Windows 7 apps",
+        "source_hints": [
+          "synthetic",
+          "github_releases"
+        ],
+        "task_kind": "browse_software"
+      },
+      "planner_observed_task_kind": "browse_software",
+      "planner_status": "satisfied",
+      "query_family": "software_by_platform",
+      "raw_query": "Windows 7 apps",
+      "satisfied_checks": [
+        {
+          "expected": "browse_software",
+          "message": "Planner task_kind matched expected_plan.",
+          "name": "planner.task_kind",
+          "observed": "browse_software",
+          "status": "satisfied"
+        },
+        {
+          "expected": "software",
+          "message": "Planner object_type matched expected_plan.",
+          "name": "planner.object_type",
+          "observed": "software",
+          "status": "satisfied"
+        },
+        {
+          "expected": {
+            "marketing_alias": "Windows 7"
+          },
+          "message": "Planner constraint 'platform' contains the expected bounded values.",
+          "name": "planner.constraints.platform",
+          "observed": {
+            "marketing_alias": "Windows 7",
+            "os_family": "Windows NT",
+            "os_version": "6.1"
+          },
+          "status": "satisfied"
+        },
+        {
+          "expected": "direct_software_artifact",
+          "message": "Planner prefer includes 'direct_software_artifact'.",
+          "name": "planner.prefer.direct_software_artifact",
+          "observed": [
+            "direct_software_artifact",
+            "portable_package",
+            "compatibility_evidence"
+          ],
+          "status": "satisfied"
+        },
+        {
+          "expected": "operating_system_image",
+          "message": "Planner exclude includes 'operating_system_image'.",
+          "name": "planner.exclude.operating_system_image",
+          "observed": [
+            "operating_system_image",
+            "full_os_iso"
+          ],
+          "status": "satisfied"
+        }
+      ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "search_query": "Windows 7 apps",
+      "skipped_checks": [
+        {
+          "expected": [
+            "best_direct_answer",
+            "installable_or_usable_now",
+            "inside_bundles",
+            "documentation",
+            "absence_or_next_steps"
+          ],
+          "message": "Expected result lanes are recorded but not scored in Eval Runner v0; there is no ranking or lane-placement benchmark yet.",
+          "name": "lanes.expected_lanes",
+          "status": "not_evaluable"
+        },
+        {
+          "expected": [
+            "operating system ISO images",
+            "generic software dumps without member listings",
+            "bundle-only results that do not expose direct installable artifacts"
+          ],
+          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement ranking, fuzzy, semantic, or vector evaluation.",
+          "name": "ranking.bad_result_patterns",
+          "status": "not_evaluable"
+        }
+      ],
+      "task_id": "windows_7_apps",
+      "top_results": []
+    }
+  ],
+  "total_task_count": 6
+}

@@ -1,0 +1,720 @@
+{
+  "body": {
+    "index": {
+      "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
+      "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
+      "index_path_kind": "bootstrap_local_path",
+      "record_count": 58,
+      "record_kind_counts": {
+        "evidence": 19,
+        "member": 3,
+        "representation": 14,
+        "resolved_object": 8,
+        "source_record": 6,
+        "state_or_release": 8
+      }
+    },
+    "query": "archive",
+    "result_count": 32,
+    "results": [
+      {
+        "evidence": [
+          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "resolved_object:fixture:software/archive-viewer@0.9.0",
+        "label": "Archive Viewer",
+        "record_kind": "resolved_object",
+        "resolved_resource_id": "obj.archive-viewer",
+        "route_hints": {
+          "surface_route": "/",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "software from Synthetic Fixture",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.archive-viewer.release",
+        "label": "Archive Viewer 0.9.0",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.archive-viewer",
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "release for Archive Viewer",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:0",
+        "label": "Archive Viewer evidence 1",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archive-viewer",
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:1",
+        "label": "Archive Viewer evidence 2",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archive-viewer",
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "source_archive",
+          "synthetic_resolution_fixture.json"
+        ],
+        "index_record_id": "representation:fixture:software/archive-viewer@0.9.0:rep.archive-viewer.source",
+        "label": "Archive Viewer representation",
+        "record_kind": "representation",
+        "representation_id": "rep.archive-viewer.source",
+        "resolved_resource_id": "obj.archive-viewer",
+        "route_hints": {
+          "representation_id": "rep.archive-viewer.source",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "source_archive representation for Archive Viewer",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "resolved_object:fixture:software/archivebox@0.8.5",
+        "label": "ArchiveBox 0.8.5",
+        "record_kind": "resolved_object",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "route_hints": {
+          "surface_route": "/",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "software from Synthetic Fixture",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.archivebox.synthetic.release",
+        "label": "ArchiveBox 0.8.5 0.8.5",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "release for ArchiveBox 0.8.5",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:0",
+        "label": "ArchiveBox 0.8.5 evidence 1",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:1",
+        "label": "ArchiveBox 0.8.5 evidence 2",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "source_archive",
+          "synthetic_resolution_fixture.json"
+        ],
+        "index_record_id": "representation:fixture:software/archivebox@0.8.5:rep.archivebox.synthetic.source",
+        "label": "ArchiveBox 0.8.5 representation",
+        "record_kind": "representation",
+        "representation_id": "rep.archivebox.synthetic.source",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "route_hints": {
+          "representation_id": "rep.archivebox.synthetic.source",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "source_archive representation for ArchiveBox 0.8.5",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "resolved_object:fixture:software/compatibility-lab@3.2.1",
+        "label": "Compatibility Lab",
+        "record_kind": "resolved_object",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "route_hints": {
+          "surface_route": "/",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "software from Synthetic Fixture",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.compatibility-lab.release",
+        "label": "Compatibility Lab 3.2.1",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "release for Compatibility Lab",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:0",
+        "label": "Compatibility Lab evidence 1",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:1",
+        "label": "Compatibility Lab evidence 2",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "source_archive",
+          "synthetic_resolution_fixture.json"
+        ],
+        "index_record_id": "representation:fixture:software/compatibility-lab@3.2.1:rep.compatibility-lab.source",
+        "label": "Compatibility Lab representation",
+        "record_kind": "representation",
+        "representation_id": "rep.compatibility-lab.source",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "route_hints": {
+          "representation_id": "rep.compatibility-lab.source",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "source_archive representation for Compatibility Lab",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "member_path:docs/evidence.txt"
+        ],
+        "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:docs/evidence.txt",
+        "label": "evidence.txt",
+        "member_path": "docs/evidence.txt",
+        "record_kind": "member",
+        "representation_id": "rep.synthetic-demo-app.package",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "route_hints": {
+          "member_path": "docs/evidence.txt",
+          "representation_id": "rep.synthetic-demo-app.package",
+          "surface_route": "/member",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "member of Synthetic demo app package archive",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "connector:Internet Archive connector",
+          "status:placeholder",
+          "trust_lane:preservation"
+        ],
+        "index_record_id": "source_record:internet-archive-placeholder",
+        "label": "Internet Archive",
+        "record_kind": "source_record",
+        "route_hints": {
+          "source_id": "internet-archive-placeholder",
+          "status": "placeholder",
+          "surface_route": "/source"
+        },
+        "source_family": "internet_archive",
+        "source_id": "internet-archive-placeholder",
+        "source_label": "Internet Archive",
+        "summary": "placeholder preservation source registry record"
+      },
+      {
+        "evidence": [
+          "member_path:README.txt"
+        ],
+        "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:README.txt",
+        "label": "README.txt",
+        "member_path": "README.txt",
+        "record_kind": "member",
+        "representation_id": "rep.synthetic-demo-app.package",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "route_hints": {
+          "member_path": "README.txt",
+          "representation_id": "rep.synthetic-demo-app.package",
+          "surface_route": "/member",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "member of Synthetic demo app package archive",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "member_path:config/settings.json"
+        ],
+        "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:config/settings.json",
+        "label": "settings.json",
+        "member_path": "config/settings.json",
+        "record_kind": "member",
+        "representation_id": "rep.synthetic-demo-app.package",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "route_hints": {
+          "member_path": "config/settings.json",
+          "representation_id": "rep.synthetic-demo-app.package",
+          "surface_route": "/member",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "member of Synthetic demo app package archive",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "connector:Software Heritage connector",
+          "status:placeholder",
+          "trust_lane:preservation"
+        ],
+        "index_record_id": "source_record:software-heritage-placeholder",
+        "label": "Software Heritage",
+        "record_kind": "source_record",
+        "route_hints": {
+          "source_id": "software-heritage-placeholder",
+          "status": "placeholder",
+          "surface_route": "/source"
+        },
+        "source_family": "software_heritage",
+        "source_id": "software-heritage-placeholder",
+        "source_label": "Software Heritage",
+        "summary": "placeholder preservation source registry record"
+      },
+      {
+        "evidence": [
+          "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "resolved_object:fixture:software/synthetic-demo-app@1.0.0",
+        "label": "Synthetic Demo App",
+        "record_kind": "resolved_object",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "route_hints": {
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "software from Synthetic Fixture",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.synthetic-demo-app.release",
+        "label": "Synthetic Demo App 1.0.0",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "release for Synthetic Demo App",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/synthetic-demo-app@1.0.0:0",
+        "label": "Synthetic Demo App evidence 1",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/synthetic-demo-app@1.0.0:1",
+        "label": "Synthetic Demo App evidence 2",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "fixture_artifact",
+          "synthetic-demo-app.bundle"
+        ],
+        "index_record_id": "representation:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.source",
+        "label": "Synthetic demo app fixture artifact",
+        "record_kind": "representation",
+        "representation_id": "rep.synthetic-demo-app.source",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "route_hints": {
+          "representation_id": "rep.synthetic-demo-app.source",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "fixture_artifact representation for Synthetic Demo App",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "fixture_record",
+          "synthetic_resolution_fixture.json"
+        ],
+        "index_record_id": "representation:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.fixture-record",
+        "label": "Synthetic demo app fixture record",
+        "record_kind": "representation",
+        "representation_id": "rep.synthetic-demo-app.fixture-record",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "route_hints": {
+          "representation_id": "rep.synthetic-demo-app.fixture-record",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "fixture_record representation for Synthetic Demo App",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "fixture_archive",
+          "synthetic-demo-app-package.zip"
+        ],
+        "index_record_id": "representation:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package",
+        "label": "Synthetic demo app package archive",
+        "record_kind": "representation",
+        "representation_id": "rep.synthetic-demo-app.package",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "route_hints": {
+          "representation_id": "rep.synthetic-demo-app.package",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "fixture_archive representation for Synthetic Demo App",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "label Synthetic Demo Suite synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "resolved_object:fixture:software/synthetic-demo-suite@2.0.0",
+        "label": "Synthetic Demo Suite",
+        "record_kind": "resolved_object",
+        "resolved_resource_id": "obj.synthetic-demo-suite",
+        "route_hints": {
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-suite",
+        "summary": "software from Synthetic Fixture",
+        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+        "version_or_state": "2.0.0"
+      },
+      {
+        "evidence": [
+          "label Synthetic Demo Suite synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.synthetic-demo-suite.release",
+        "label": "Synthetic Demo Suite 2.0.0",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.synthetic-demo-suite",
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-suite",
+        "summary": "release for Synthetic Demo Suite",
+        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+        "version_or_state": "2.0.0"
+      },
+      {
+        "evidence": [
+          "label Synthetic Demo Suite synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/synthetic-demo-suite@2.0.0:0",
+        "label": "Synthetic Demo Suite evidence 1",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-demo-suite",
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-suite",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+        "version_or_state": "2.0.0"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/synthetic-demo-suite@2.0.0:1",
+        "label": "Synthetic Demo Suite evidence 2",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-demo-suite",
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-suite",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+        "version_or_state": "2.0.0"
+      },
+      {
+        "evidence": [
+          "source_archive",
+          "synthetic_resolution_fixture.json"
+        ],
+        "index_record_id": "representation:fixture:software/synthetic-demo-suite@2.0.0:rep.synthetic-demo-suite.source",
+        "label": "Synthetic Demo Suite representation",
+        "record_kind": "representation",
+        "representation_id": "rep.synthetic-demo-suite.source",
+        "resolved_resource_id": "obj.synthetic-demo-suite",
+        "route_hints": {
+          "representation_id": "rep.synthetic-demo-suite.source",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-suite",
+        "summary": "source_archive representation for Synthetic Demo Suite",
+        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+        "version_or_state": "2.0.0"
+      }
+    ],
+    "status": "queried"
+  },
+  "status_code": 200
+}

@@ -1,0 +1,206 @@
+{
+  "body": {
+    "run_count": 1,
+    "runs": [
+      {
+        "absence_report": null,
+        "checked_source_families": [
+          "github_releases",
+          "synthetic"
+        ],
+        "checked_source_ids": [
+          "github-releases-recorded-fixtures",
+          "synthetic-fixtures"
+        ],
+        "checked_sources": [
+          {
+            "name": "GitHub Releases Recorded Fixtures",
+            "source_family": "github_releases",
+            "source_id": "github-releases-recorded-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "official"
+          },
+          {
+            "name": "Synthetic Fixtures",
+            "source_family": "synthetic",
+            "source_id": "synthetic-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "fixture"
+          }
+        ],
+        "completed_at": "<PYTHON_ORACLE_TIMESTAMP>",
+        "created_by_slice": "resolution_runs_v0",
+        "notices": [],
+        "requested_value": "archive",
+        "resolution_task": null,
+        "result_summary": {
+          "items": [
+            {
+              "evidence": [
+                {
+                  "asserted_by_family": "synthetic_fixture",
+                  "asserted_by_label": "Synthetic Fixture",
+                  "claim_kind": "label",
+                  "claim_value": "Archive Viewer",
+                  "evidence_kind": "recorded_fixture",
+                  "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+                },
+                {
+                  "asserted_by_family": "synthetic_fixture",
+                  "asserted_by_label": "Synthetic Fixture",
+                  "claim_kind": "source_locator",
+                  "claim_value": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                  "evidence_kind": "recorded_fixture",
+                  "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+                }
+              ],
+              "object": {
+                "id": "obj.archive-viewer",
+                "kind": "software",
+                "label": "Archive Viewer"
+              },
+              "resolved_resource_id": "resolved:sha256:b38c82f9ca3af117ce8b3984ad311fb4102261c3c1573cd18a8a7db0c760fc81",
+              "source": {
+                "family": "synthetic_fixture",
+                "label": "Synthetic Fixture",
+                "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                "source_id": "synthetic-fixtures"
+              },
+              "target_ref": "fixture:software/archive-viewer@0.9.0"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_by_family": "synthetic_fixture",
+                  "asserted_by_label": "Synthetic Fixture",
+                  "claim_kind": "label",
+                  "claim_value": "ArchiveBox 0.8.5",
+                  "evidence_kind": "recorded_fixture",
+                  "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+                },
+                {
+                  "asserted_by_family": "synthetic_fixture",
+                  "asserted_by_label": "Synthetic Fixture",
+                  "claim_kind": "source_locator",
+                  "claim_value": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                  "evidence_kind": "recorded_fixture",
+                  "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+                }
+              ],
+              "object": {
+                "id": "obj.archivebox.synthetic",
+                "kind": "software",
+                "label": "ArchiveBox 0.8.5"
+              },
+              "resolved_resource_id": "resolved:sha256:c3cdf00def0c5c099f099f4808785761f653c80d11eeb27c5646a3fe1ae35178",
+              "source": {
+                "family": "synthetic_fixture",
+                "label": "Synthetic Fixture",
+                "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                "source_id": "synthetic-fixtures"
+              },
+              "target_ref": "fixture:software/archivebox@0.8.5"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_at": "2024-07-10T00:00:00Z",
+                  "asserted_by_family": "github_releases",
+                  "asserted_by_label": "GitHub Releases",
+                  "claim_kind": "label",
+                  "claim_value": "ArchiveBox v0.8.4",
+                  "evidence_kind": "recorded_source_payload",
+                  "evidence_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json"
+                },
+                {
+                  "asserted_at": "2024-07-10T00:00:00Z",
+                  "asserted_by_family": "github_releases",
+                  "asserted_by_label": "GitHub Releases",
+                  "claim_kind": "version",
+                  "claim_value": "v0.8.4",
+                  "evidence_kind": "recorded_source_payload",
+                  "evidence_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json"
+                },
+                {
+                  "asserted_at": "2024-07-10T00:00:00Z",
+                  "asserted_by_family": "github_releases",
+                  "asserted_by_label": "GitHub Releases",
+                  "claim_kind": "source_locator",
+                  "claim_value": "https://github.com/archivebox/archivebox/releases/tag/v0.8.4",
+                  "evidence_kind": "recorded_source_payload",
+                  "evidence_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json"
+                }
+              ],
+              "object": {
+                "id": "obj.github-release.archivebox.archivebox",
+                "kind": "software",
+                "label": "ArchiveBox v0.8.4"
+              },
+              "resolved_resource_id": "resolved:sha256:4c60d8106286dec072625d5e202e04f20eec249c5cb924e283e83b3cac18779e",
+              "source": {
+                "family": "github_releases",
+                "label": "GitHub Releases",
+                "locator": "https://github.com/archivebox/archivebox/releases/tag/v0.8.4",
+                "source_id": "github-releases-recorded-fixtures"
+              },
+              "target_ref": "github-release:archivebox/archivebox@v0.8.4"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_at": "2024-09-02T00:00:00Z",
+                  "asserted_by_family": "github_releases",
+                  "asserted_by_label": "GitHub Releases",
+                  "claim_kind": "label",
+                  "claim_value": "ArchiveBox v0.8.5",
+                  "evidence_kind": "recorded_source_payload",
+                  "evidence_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json"
+                },
+                {
+                  "asserted_at": "2024-09-02T00:00:00Z",
+                  "asserted_by_family": "github_releases",
+                  "asserted_by_label": "GitHub Releases",
+                  "claim_kind": "version",
+                  "claim_value": "v0.8.5",
+                  "evidence_kind": "recorded_source_payload",
+                  "evidence_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json"
+                },
+                {
+                  "asserted_at": "2024-09-02T00:00:00Z",
+                  "asserted_by_family": "github_releases",
+                  "asserted_by_label": "GitHub Releases",
+                  "claim_kind": "source_locator",
+                  "claim_value": "https://github.com/archivebox/archivebox/releases/tag/v0.8.5",
+                  "evidence_kind": "recorded_source_payload",
+                  "evidence_locator": "runtime/connectors/github_releases/fixtures/github_releases_fixture.json"
+                }
+              ],
+              "object": {
+                "id": "obj.github-release.archivebox.archivebox",
+                "kind": "software",
+                "label": "ArchiveBox v0.8.5"
+              },
+              "resolved_resource_id": "resolved:sha256:4e3bbaf3175192349b3f9d9c978d8a6a25cc306ab8d0f9fe3acab9eeca3b107f",
+              "source": {
+                "family": "github_releases",
+                "label": "GitHub Releases",
+                "locator": "https://github.com/archivebox/archivebox/releases/tag/v0.8.5",
+                "source_id": "github-releases-recorded-fixtures"
+              },
+              "target_ref": "github-release:archivebox/archivebox@v0.8.5"
+            }
+          ],
+          "result_count": 4,
+          "result_kind": "search_results"
+        },
+        "run_id": "run-deterministic-search-0001",
+        "run_kind": "deterministic_search",
+        "started_at": "<PYTHON_ORACLE_TIMESTAMP>",
+        "status": "completed"
+      }
+    ],
+    "selected_run_id": "run-deterministic-search-0001",
+    "status": "available"
+  },
+  "status_code": 200
+}

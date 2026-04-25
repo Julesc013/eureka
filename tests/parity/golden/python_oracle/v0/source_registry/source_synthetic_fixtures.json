@@ -1,0 +1,49 @@
+{
+  "body": {
+    "selected_source_id": "synthetic-fixtures",
+    "source_count": 1,
+    "sources": [
+      {
+        "artifact_types": [
+          "fixture_artifact",
+          "fixture_archive"
+        ],
+        "authority_class": "repo_governed_fixture",
+        "connector": {
+          "label": "Synthetic software connector",
+          "status": "fixture_backed"
+        },
+        "extraction_mode": "fixture_only",
+        "freshness_model": "static_fixture",
+        "identifier_types_emitted": [
+          "target_ref"
+        ],
+        "legal_posture": "repo_governed_fixture",
+        "live_access_mode": "none",
+        "name": "Synthetic Fixtures",
+        "notes": "Active local-only source used for deterministic bootstrap execution, tests, and connector-boundary development.",
+        "object_types": [
+          "software_product",
+          "software_release"
+        ],
+        "rights_notes": "Repo-governed demo fixtures only.",
+        "roles": [
+          "fixture",
+          "discovery_index"
+        ],
+        "source_family": "synthetic",
+        "source_id": "synthetic-fixtures",
+        "status": "active_fixture",
+        "status_summary": "Active fixture-backed source record.",
+        "surfaces": [
+          "item_record",
+          "artifact_download",
+          "fixture_file"
+        ],
+        "trust_lane": "fixture"
+      }
+    ],
+    "status": "available"
+  },
+  "status_code": 200
+}

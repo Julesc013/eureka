@@ -1,0 +1,75 @@
+{
+  "body": {
+    "memories": [
+      {
+        "absence_report": {
+          "checked_record_count": 8,
+          "checked_source_families": [
+            "synthetic_fixture",
+            "github_releases"
+          ],
+          "checked_subject_count": 6,
+          "likely_reason_code": "subject_unknown_in_bounded_corpus",
+          "near_matches": [],
+          "next_steps": [
+            "Search the current bounded corpus with a broader subject or label term.",
+            "Confirm that the target ref belongs to one of the loaded source families."
+          ],
+          "notices": [],
+          "reason_message": "No bounded subject or state matching 'fixture:software/missing-demo-app@0.0.1' was found in the current local corpus.",
+          "request_kind": "resolve",
+          "requested_value": "fixture:software/missing-demo-app@0.0.1",
+          "status": "explained"
+        },
+        "checked_source_families": [
+          "github_releases",
+          "synthetic"
+        ],
+        "checked_source_ids": [
+          "github-releases-recorded-fixtures",
+          "synthetic-fixtures"
+        ],
+        "checked_sources": [
+          {
+            "name": "GitHub Releases Recorded Fixtures",
+            "source_family": "github_releases",
+            "source_id": "github-releases-recorded-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "official"
+          },
+          {
+            "name": "Synthetic Fixtures",
+            "source_family": "synthetic",
+            "source_id": "synthetic-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "fixture"
+          }
+        ],
+        "created_at": "<PYTHON_ORACLE_TIMESTAMP>",
+        "created_by_slice": "resolution_memory_v0",
+        "evidence_summary": [],
+        "invalidation_hints": {
+          "checked_source_ids": [
+            "github-releases-recorded-fixtures",
+            "synthetic-fixtures"
+          ],
+          "created_from_run": "run-exact-resolution-0001",
+          "invalidation_policy": "future_work"
+        },
+        "memory_id": "memory-absence-finding-0001",
+        "memory_kind": "absence_finding",
+        "notices": [],
+        "requested_value": "fixture:software/missing-demo-app@0.0.1",
+        "result_summaries": [],
+        "source_run_id": "run-exact-resolution-0001",
+        "task_kind": "exact_resolution",
+        "useful_source_ids": []
+      }
+    ],
+    "memory_count": 1,
+    "requested_run_id": "run-exact-resolution-0001",
+    "selected_memory_id": "memory-absence-finding-0001",
+    "status": "available"
+  },
+  "status_code": 200
+}

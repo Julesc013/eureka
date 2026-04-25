@@ -1,0 +1,35 @@
+{
+  "body": {
+    "query_plan": {
+      "action_hints": [
+        "inspect",
+        "view_read",
+        "cite",
+        "export_manifest"
+      ],
+      "constraints": {
+        "date_year_hint": "1994",
+        "document_hint": "magazine",
+        "topic_hint": "ray tracing"
+      },
+      "exclude": [
+        "whole_issue_only_without_article_trace"
+      ],
+      "object_type": "document_article",
+      "planner_confidence": "high",
+      "planner_notes": [
+        "Recognized an article-inside-scan style query."
+      ],
+      "prefer": [
+        "article_member",
+        "page_range_hit",
+        "ocr_text_snippet"
+      ],
+      "raw_query": "article about ray tracing in 1994 magazine",
+      "source_hints": [],
+      "task_kind": "find_document_article"
+    },
+    "status": "planned"
+  },
+  "status_code": 200
+}

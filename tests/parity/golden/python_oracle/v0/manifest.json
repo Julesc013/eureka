@@ -1,0 +1,38 @@
+{
+  "commands_to_regenerate": [
+    "python scripts/generate_python_oracle_golden.py",
+    "python scripts/generate_python_oracle_golden.py --check"
+  ],
+  "created_by_slice": "rust_parity_fixture_pack_v0",
+  "fixture_pack_id": "python_oracle_golden_v0",
+  "fixture_pack_version": "0.1.0",
+  "generated_at": "<DETERMINISTIC_PLACEHOLDER>",
+  "generated_from_commit": "<GENERATED_FROM_COMMIT>",
+  "included_seams": [
+    "source_registry",
+    "query_planner",
+    "resolution_runs",
+    "local_index",
+    "resolution_memory",
+    "archive_resolution_evals"
+  ],
+  "limitations": [
+    "No Rust parity runner is implemented in this milestone.",
+    "Golden outputs are v0 and may evolve through explicit migration updates.",
+    "Local Index FTS mode is normalized because SQLite FTS5 availability can vary by environment.",
+    "Archive-resolution eval outputs intentionally preserve capability gaps and hard-query misses."
+  ],
+  "normalization_policy": {
+    "generated_at": "<DETERMINISTIC_PLACEHOLDER>",
+    "generated_from_commit": "<GENERATED_FROM_COMMIT>",
+    "local_index_fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
+    "local_index_paths": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
+    "timestamps": "<PYTHON_ORACLE_TIMESTAMP>"
+  },
+  "notes": [
+    "Python remains the executable oracle for these fixtures.",
+    "Rust candidate seams must match these outputs before replacement unless an allowed divergence is explicitly recorded.",
+    "This fixture pack captures current bounded behavior only; it does not implement Rust behavior."
+  ],
+  "python_oracle_status": "authoritative_reference_lane"
+}

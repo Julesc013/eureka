@@ -1,0 +1,40 @@
+{
+  "body": {
+    "query_plan": {
+      "action_hints": [
+        "inspect",
+        "download",
+        "export_manifest"
+      ],
+      "constraints": {
+        "platform": {
+          "marketing_alias": "Windows 7",
+          "os_family": "Windows NT",
+          "os_version": "6.1"
+        }
+      },
+      "exclude": [
+        "operating_system_image",
+        "full_os_iso"
+      ],
+      "object_type": "software",
+      "planner_confidence": "high",
+      "planner_notes": [
+        "Recognized a platform-scoped software browsing query."
+      ],
+      "prefer": [
+        "direct_software_artifact",
+        "portable_package",
+        "compatibility_evidence"
+      ],
+      "raw_query": "Windows 7 apps",
+      "source_hints": [
+        "synthetic",
+        "github_releases"
+      ],
+      "task_kind": "browse_software"
+    },
+    "status": "planned"
+  },
+  "status_code": 200
+}

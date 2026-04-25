@@ -1,0 +1,42 @@
+{
+  "body": {
+    "query_plan": {
+      "action_hints": [
+        "inspect",
+        "download",
+        "export_manifest"
+      ],
+      "constraints": {
+        "descriptor_hint": "blue",
+        "function_hint": "ftp client",
+        "platform": {
+          "marketing_alias": "Windows XP",
+          "os_family": "Windows NT",
+          "os_version": "5.1"
+        },
+        "temporal_style_hint": "old"
+      },
+      "exclude": [
+        "generic_advice_only",
+        "operating_system_image"
+      ],
+      "object_type": "software_release",
+      "planner_confidence": "medium",
+      "planner_notes": [
+        "Recognized a vague software identity query with platform and functional hints."
+      ],
+      "prefer": [
+        "named_software_artifact",
+        "descriptive_release_notes",
+        "compatibility_evidence"
+      ],
+      "raw_query": "old blue FTP client for XP",
+      "source_hints": [
+        "github_releases"
+      ],
+      "task_kind": "find_software_release"
+    },
+    "status": "planned"
+  },
+  "status_code": 200
+}

@@ -1,0 +1,43 @@
+{
+  "body": {
+    "query_plan": {
+      "action_hints": [
+        "inspect",
+        "compare_versions",
+        "download",
+        "export_manifest"
+      ],
+      "constraints": {
+        "platform": {
+          "marketing_alias": "Windows XP",
+          "os_family": "Windows NT",
+          "os_version": "5.1"
+        },
+        "product_hint": "Firefox",
+        "support_window_hint": "latest before xp support ended"
+      },
+      "exclude": [
+        "latest_overall_without_platform_evidence",
+        "operating_system_image"
+      ],
+      "object_type": "software_release",
+      "planner_confidence": "high",
+      "planner_notes": [
+        "Recognized a latest-compatible release query.",
+        "Current retrieval remains bounded deterministic search; planner output is stored for later reuse."
+      ],
+      "prefer": [
+        "versioned_release_artifact",
+        "release_notes_with_support_window",
+        "compatibility_evidence"
+      ],
+      "raw_query": "latest Firefox before XP support ended",
+      "source_hints": [
+        "github_releases"
+      ],
+      "task_kind": "find_software_release"
+    },
+    "status": "planned"
+  },
+  "status_code": 200
+}

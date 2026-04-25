@@ -1,0 +1,85 @@
+{
+  "body": {
+    "run_count": 1,
+    "runs": [
+      {
+        "absence_report": null,
+        "checked_source_families": [
+          "github_releases",
+          "synthetic"
+        ],
+        "checked_source_ids": [
+          "github-releases-recorded-fixtures",
+          "synthetic-fixtures"
+        ],
+        "checked_sources": [
+          {
+            "name": "GitHub Releases Recorded Fixtures",
+            "source_family": "github_releases",
+            "source_id": "github-releases-recorded-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "official"
+          },
+          {
+            "name": "Synthetic Fixtures",
+            "source_family": "synthetic",
+            "source_id": "synthetic-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "fixture"
+          }
+        ],
+        "completed_at": "<PYTHON_ORACLE_TIMESTAMP>",
+        "created_by_slice": "resolution_runs_v0",
+        "notices": [],
+        "requested_value": "fixture:software/synthetic-demo-app@1.0.0",
+        "resolution_task": null,
+        "result_summary": {
+          "items": [
+            {
+              "evidence": [
+                {
+                  "asserted_by_family": "synthetic_fixture",
+                  "asserted_by_label": "Synthetic Fixture",
+                  "claim_kind": "label",
+                  "claim_value": "Synthetic Demo App",
+                  "evidence_kind": "recorded_fixture",
+                  "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+                },
+                {
+                  "asserted_by_family": "synthetic_fixture",
+                  "asserted_by_label": "Synthetic Fixture",
+                  "claim_kind": "source_locator",
+                  "claim_value": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                  "evidence_kind": "recorded_fixture",
+                  "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+                }
+              ],
+              "object": {
+                "id": "obj.synthetic-demo-app",
+                "kind": "software",
+                "label": "Synthetic Demo App"
+              },
+              "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+              "source": {
+                "family": "synthetic_fixture",
+                "label": "Synthetic Fixture",
+                "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                "source_id": "synthetic-fixtures"
+              },
+              "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+            }
+          ],
+          "result_count": 1,
+          "result_kind": "exact_resolution"
+        },
+        "run_id": "run-exact-resolution-0001",
+        "run_kind": "exact_resolution",
+        "started_at": "<PYTHON_ORACLE_TIMESTAMP>",
+        "status": "completed"
+      }
+    ],
+    "selected_run_id": "run-exact-resolution-0001",
+    "status": "available"
+  },
+  "status_code": 200
+}

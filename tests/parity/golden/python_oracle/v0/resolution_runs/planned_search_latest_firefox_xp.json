@@ -1,0 +1,107 @@
+{
+  "body": {
+    "run_count": 1,
+    "runs": [
+      {
+        "absence_report": {
+          "checked_record_count": 8,
+          "checked_source_families": [
+            "synthetic_fixture",
+            "github_releases"
+          ],
+          "checked_subject_count": 6,
+          "likely_reason_code": "query_not_present_in_bounded_corpus",
+          "near_matches": [],
+          "next_steps": [
+            "Retry with a different bounded subject, version, or label term.",
+            "Confirm that the expected source family is loaded into the current local corpus."
+          ],
+          "notices": [],
+          "reason_message": "No bounded subject or label related to query 'Firefox' was found in the current local corpus.",
+          "request_kind": "search",
+          "requested_value": "Firefox",
+          "status": "explained"
+        },
+        "checked_source_families": [
+          "github_releases",
+          "synthetic"
+        ],
+        "checked_source_ids": [
+          "github-releases-recorded-fixtures",
+          "synthetic-fixtures"
+        ],
+        "checked_sources": [
+          {
+            "name": "GitHub Releases Recorded Fixtures",
+            "source_family": "github_releases",
+            "source_id": "github-releases-recorded-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "official"
+          },
+          {
+            "name": "Synthetic Fixtures",
+            "source_family": "synthetic",
+            "source_id": "synthetic-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "fixture"
+          }
+        ],
+        "completed_at": "<PYTHON_ORACLE_TIMESTAMP>",
+        "created_by_slice": "resolution_runs_v0",
+        "notices": [
+          {
+            "code": "search_no_matches",
+            "message": "No bounded records matched query 'Firefox'.",
+            "severity": "info"
+          }
+        ],
+        "requested_value": "latest Firefox before XP support ended",
+        "resolution_task": {
+          "action_hints": [
+            "inspect",
+            "compare_versions",
+            "download",
+            "export_manifest"
+          ],
+          "constraints": {
+            "platform": {
+              "marketing_alias": "Windows XP",
+              "os_family": "Windows NT",
+              "os_version": "5.1"
+            },
+            "product_hint": "Firefox",
+            "support_window_hint": "latest before xp support ended"
+          },
+          "exclude": [
+            "latest_overall_without_platform_evidence",
+            "operating_system_image"
+          ],
+          "object_type": "software_release",
+          "planner_confidence": "high",
+          "planner_notes": [
+            "Recognized a latest-compatible release query.",
+            "Current retrieval remains bounded deterministic search; planner output is stored for later reuse."
+          ],
+          "prefer": [
+            "versioned_release_artifact",
+            "release_notes_with_support_window",
+            "compatibility_evidence"
+          ],
+          "raw_query": "latest Firefox before XP support ended",
+          "source_hints": [
+            "github_releases"
+          ],
+          "task_kind": "find_software_release"
+        },
+        "result_summary": null,
+        "run_id": "run-planned-search-0001",
+        "run_kind": "planned_search",
+        "started_at": "<PYTHON_ORACLE_TIMESTAMP>",
+        "status": "completed"
+      }
+    ],
+    "selected_run_id": "run-planned-search-0001",
+    "status": "available"
+  },
+  "status_code": 200
+}

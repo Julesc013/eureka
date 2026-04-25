@@ -1,0 +1,71 @@
+{
+  "body": {
+    "run_count": 1,
+    "runs": [
+      {
+        "absence_report": {
+          "checked_record_count": 8,
+          "checked_source_families": [
+            "synthetic_fixture",
+            "github_releases"
+          ],
+          "checked_subject_count": 6,
+          "likely_reason_code": "subject_unknown_in_bounded_corpus",
+          "near_matches": [],
+          "next_steps": [
+            "Search the current bounded corpus with a broader subject or label term.",
+            "Confirm that the target ref belongs to one of the loaded source families."
+          ],
+          "notices": [],
+          "reason_message": "No bounded subject or state matching 'fixture:software/missing-demo-app@0.0.1' was found in the current local corpus.",
+          "request_kind": "resolve",
+          "requested_value": "fixture:software/missing-demo-app@0.0.1",
+          "status": "explained"
+        },
+        "checked_source_families": [
+          "github_releases",
+          "synthetic"
+        ],
+        "checked_source_ids": [
+          "github-releases-recorded-fixtures",
+          "synthetic-fixtures"
+        ],
+        "checked_sources": [
+          {
+            "name": "GitHub Releases Recorded Fixtures",
+            "source_family": "github_releases",
+            "source_id": "github-releases-recorded-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "official"
+          },
+          {
+            "name": "Synthetic Fixtures",
+            "source_family": "synthetic",
+            "source_id": "synthetic-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "fixture"
+          }
+        ],
+        "completed_at": "<PYTHON_ORACLE_TIMESTAMP>",
+        "created_by_slice": "resolution_runs_v0",
+        "notices": [
+          {
+            "code": "target_ref_not_found",
+            "message": "No bounded record matched target_ref 'fixture:software/missing-demo-app@0.0.1'.",
+            "severity": "warning"
+          }
+        ],
+        "requested_value": "fixture:software/missing-demo-app@0.0.1",
+        "resolution_task": null,
+        "result_summary": null,
+        "run_id": "run-exact-resolution-0001",
+        "run_kind": "exact_resolution",
+        "started_at": "<PYTHON_ORACLE_TIMESTAMP>",
+        "status": "completed"
+      }
+    ],
+    "selected_run_id": "run-exact-resolution-0001",
+    "status": "available"
+  },
+  "status_code": 200
+}

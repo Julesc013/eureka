@@ -1,0 +1,22 @@
+{
+  "body": {
+    "query_plan": {
+      "action_hints": [
+        "inspect"
+      ],
+      "constraints": {},
+      "exclude": [],
+      "object_type": "unknown",
+      "planner_confidence": "low",
+      "planner_notes": [
+        "No bounded Query Planner v0 family matched; keep the request as a generic deterministic search."
+      ],
+      "prefer": [],
+      "raw_query": "ThinkPad T42 wifi driver Windows 2000",
+      "source_hints": [],
+      "task_kind": "generic_search"
+    },
+    "status": "planned"
+  },
+  "status_code": 200
+}

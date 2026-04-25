@@ -1,0 +1,53 @@
+{
+  "body": {
+    "selected_source_id": "github-releases-recorded-fixtures",
+    "source_count": 1,
+    "sources": [
+      {
+        "artifact_types": [
+          "release_page",
+          "release_asset"
+        ],
+        "authority_class": "upstream_release_service",
+        "connector": {
+          "label": "GitHub Releases connector",
+          "status": "fixture_backed"
+        },
+        "extraction_mode": "recorded_fixture_only",
+        "freshness_model": "recorded_fixture_snapshot",
+        "identifier_types_emitted": [
+          "github_repo",
+          "github_release_tag"
+        ],
+        "legal_posture": "recorded_public_source",
+        "live_access_mode": "recorded_fixture_only",
+        "name": "GitHub Releases Recorded Fixtures",
+        "notes": "Active bounded real-source slice backed by recorded GitHub Releases fixtures, not live network access.",
+        "object_types": [
+          "software_release",
+          "source_repository"
+        ],
+        "rights_notes": "Recorded fixture slice only. Live upstream terms and auth handling remain deferred.",
+        "roles": [
+          "discovery_index",
+          "action_provider",
+          "citation_source",
+          "fixture"
+        ],
+        "source_family": "github_releases",
+        "source_id": "github-releases-recorded-fixtures",
+        "status": "active_fixture",
+        "status_summary": "Active fixture-backed source record.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "artifact_download",
+          "fixture_file"
+        ],
+        "trust_lane": "official"
+      }
+    ],
+    "status": "available"
+  },
+  "status_code": 200
+}

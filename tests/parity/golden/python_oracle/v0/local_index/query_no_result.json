@@ -1,0 +1,30 @@
+{
+  "body": {
+    "index": {
+      "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
+      "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
+      "index_path_kind": "bootstrap_local_path",
+      "record_count": 58,
+      "record_kind_counts": {
+        "evidence": 19,
+        "member": 3,
+        "representation": 14,
+        "resolved_object": 8,
+        "source_record": 6,
+        "state_or_release": 8
+      }
+    },
+    "notices": [
+      {
+        "code": "local_index_no_results",
+        "message": "No Local Index v0 records matched 'no-such-record'.",
+        "severity": "info"
+      }
+    ],
+    "query": "no-such-record",
+    "result_count": 0,
+    "results": [],
+    "status": "queried"
+  },
+  "status_code": 200
+}

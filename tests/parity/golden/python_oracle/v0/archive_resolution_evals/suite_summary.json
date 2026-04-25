@@ -1,0 +1,107 @@
+{
+  "created_at": "<PYTHON_ORACLE_TIMESTAMP>",
+  "created_by_slice": "archive_resolution_eval_runner_v0",
+  "notices": [
+    {
+      "code": "transient_local_index",
+      "message": "Built a transient Local Index v0 database for this eval run. The report omits the temporary path so JSON remains inspectable.",
+      "severity": "info"
+    },
+    {
+      "code": "local_index_built_for_eval",
+      "message": "Built Local Index v0 once for this synchronous archive-resolution eval suite.",
+      "severity": "info"
+    }
+  ],
+  "status": "evaluated",
+  "status_counts": {
+    "capability_gap": 6
+  },
+  "task_summaries": [
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "find_document_article",
+      "planner_observed_task_kind": "find_document_article",
+      "planner_status": "satisfied",
+      "query_family": "article_inside_scan",
+      "raw_query": "article inside 1994 magazine scan about ray tracing",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "article_inside_magazine_scan"
+    },
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "find_driver",
+      "planner_observed_task_kind": "find_driver",
+      "planner_status": "satisfied",
+      "query_family": "driver_by_hardware_and_platform",
+      "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "driver_inside_support_cd"
+    },
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "find_software_release",
+      "planner_observed_task_kind": "find_software_release",
+      "planner_status": "satisfied",
+      "query_family": "latest_compatible_release",
+      "raw_query": "latest Firefox before XP support ended",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "latest_firefox_before_xp_drop"
+    },
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "find_software_release",
+      "planner_observed_task_kind": "find_software_release",
+      "planner_status": "satisfied",
+      "query_family": "vague_software_identity",
+      "raw_query": "old blue FTP client for XP",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "old_blue_ftp_client_xp"
+    },
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "find_software_release",
+      "planner_observed_task_kind": "find_software_release",
+      "planner_status": "satisfied",
+      "query_family": "software_by_function_and_platform",
+      "raw_query": "software to fix broken registry on Windows 98",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "win98_registry_repair"
+    },
+    {
+      "capability_gap_count": 1,
+      "failed_check_count": 0,
+      "not_evaluable_check_count": 2,
+      "overall_status": "capability_gap",
+      "planner_expected_task_kind": "browse_software",
+      "planner_observed_task_kind": "browse_software",
+      "planner_status": "satisfied",
+      "query_family": "software_by_platform",
+      "raw_query": "Windows 7 apps",
+      "search_mode": "local_index",
+      "search_observed_result_count": 0,
+      "task_id": "windows_7_apps"
+    }
+  ],
+  "total_task_count": 6
+}

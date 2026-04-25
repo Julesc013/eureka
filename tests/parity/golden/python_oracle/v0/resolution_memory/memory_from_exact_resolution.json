@@ -1,0 +1,92 @@
+{
+  "body": {
+    "memories": [
+      {
+        "checked_source_families": [
+          "github_releases",
+          "synthetic"
+        ],
+        "checked_source_ids": [
+          "github-releases-recorded-fixtures",
+          "synthetic-fixtures"
+        ],
+        "checked_sources": [
+          {
+            "name": "GitHub Releases Recorded Fixtures",
+            "source_family": "github_releases",
+            "source_id": "github-releases-recorded-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "official"
+          },
+          {
+            "name": "Synthetic Fixtures",
+            "source_family": "synthetic",
+            "source_id": "synthetic-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "fixture"
+          }
+        ],
+        "created_at": "<PYTHON_ORACLE_TIMESTAMP>",
+        "created_by_slice": "resolution_memory_v0",
+        "evidence_summary": [
+          {
+            "asserted_by_family": "synthetic_fixture",
+            "asserted_by_label": "Synthetic Fixture",
+            "claim_kind": "label",
+            "claim_value": "Synthetic Demo App",
+            "evidence_kind": "recorded_fixture",
+            "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+          },
+          {
+            "asserted_by_family": "synthetic_fixture",
+            "asserted_by_label": "Synthetic Fixture",
+            "claim_kind": "source_locator",
+            "claim_value": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+            "evidence_kind": "recorded_fixture",
+            "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+          }
+        ],
+        "invalidation_hints": {
+          "checked_source_ids": [
+            "github-releases-recorded-fixtures",
+            "synthetic-fixtures"
+          ],
+          "created_from_run": "run-exact-resolution-0001",
+          "invalidation_policy": "future_work"
+        },
+        "memory_id": "memory-successful-resolution-0001",
+        "memory_kind": "successful_resolution",
+        "notices": [],
+        "primary_resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+        "requested_value": "fixture:software/synthetic-demo-app@1.0.0",
+        "result_summaries": [
+          {
+            "object": {
+              "id": "obj.synthetic-demo-app",
+              "kind": "software",
+              "label": "Synthetic Demo App"
+            },
+            "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
+            "source": {
+              "family": "synthetic_fixture",
+              "label": "Synthetic Fixture",
+              "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+              "source_id": "synthetic-fixtures"
+            },
+            "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+          }
+        ],
+        "source_run_id": "run-exact-resolution-0001",
+        "task_kind": "exact_resolution",
+        "useful_source_ids": [
+          "synthetic-fixtures"
+        ]
+      }
+    ],
+    "memory_count": 1,
+    "requested_run_id": "run-exact-resolution-0001",
+    "selected_memory_id": "memory-successful-resolution-0001",
+    "status": "available"
+  },
+  "status_code": 200
+}

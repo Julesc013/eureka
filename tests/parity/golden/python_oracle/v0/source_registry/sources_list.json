@@ -1,0 +1,256 @@
+{
+  "body": {
+    "source_count": 6,
+    "sources": [
+      {
+        "artifact_types": [
+          "release_page",
+          "release_asset"
+        ],
+        "authority_class": "upstream_release_service",
+        "connector": {
+          "label": "GitHub Releases connector",
+          "status": "fixture_backed"
+        },
+        "extraction_mode": "recorded_fixture_only",
+        "freshness_model": "recorded_fixture_snapshot",
+        "identifier_types_emitted": [
+          "github_repo",
+          "github_release_tag"
+        ],
+        "legal_posture": "recorded_public_source",
+        "live_access_mode": "recorded_fixture_only",
+        "name": "GitHub Releases Recorded Fixtures",
+        "notes": "Active bounded real-source slice backed by recorded GitHub Releases fixtures, not live network access.",
+        "object_types": [
+          "software_release",
+          "source_repository"
+        ],
+        "rights_notes": "Recorded fixture slice only. Live upstream terms and auth handling remain deferred.",
+        "roles": [
+          "discovery_index",
+          "action_provider",
+          "citation_source",
+          "fixture"
+        ],
+        "source_family": "github_releases",
+        "source_id": "github-releases-recorded-fixtures",
+        "status": "active_fixture",
+        "status_summary": "Active fixture-backed source record.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "artifact_download",
+          "fixture_file"
+        ],
+        "trust_lane": "official"
+      },
+      {
+        "artifact_types": [
+          "archive_item",
+          "downloadable_file",
+          "metadata_record"
+        ],
+        "authority_class": "public_archive",
+        "connector": {
+          "label": "Internet Archive connector",
+          "status": "unimplemented"
+        },
+        "extraction_mode": "deferred",
+        "freshness_model": "deferred",
+        "identifier_types_emitted": [
+          "archive_org_identifier"
+        ],
+        "legal_posture": "deferred_placeholder",
+        "live_access_mode": "deferred",
+        "name": "Internet Archive",
+        "notes": "Planning placeholder only. This record must not be read as an implemented connector.",
+        "object_types": [
+          "software_release",
+          "manual",
+          "article",
+          "dataset"
+        ],
+        "rights_notes": "Rights and access vary per item; no runtime policy is implemented yet.",
+        "roles": [
+          "preservation_anchor",
+          "discovery_index",
+          "action_provider",
+          "citation_source"
+        ],
+        "source_family": "internet_archive",
+        "source_id": "internet-archive-placeholder",
+        "status": "placeholder",
+        "status_summary": "Placeholder record only. No runtime connector is implemented yet.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "artifact_download",
+          "bulk_dump",
+          "delta_feed"
+        ],
+        "trust_lane": "preservation"
+      },
+      {
+        "artifact_types": [
+          "local_file",
+          "local_archive"
+        ],
+        "authority_class": "local_private_user_controlled",
+        "connector": {
+          "label": "Local files connector",
+          "status": "deferred"
+        },
+        "extraction_mode": "local_private_later",
+        "freshness_model": "local_mutable",
+        "identifier_types_emitted": [
+          "filesystem_path"
+        ],
+        "legal_posture": "local_private_user_controlled",
+        "live_access_mode": "local_private_later",
+        "name": "Local Files",
+        "notes": "Future local-private source only. No current runtime connector exists, and local path disclosure remains out of bounds.",
+        "object_types": [
+          "software_release",
+          "manual",
+          "dataset"
+        ],
+        "rights_notes": "Local paths and user-controlled material are private by default and must not leak through public surfaces.",
+        "roles": [
+          "action_provider",
+          "citation_source"
+        ],
+        "source_family": "local_files",
+        "source_id": "local-files-placeholder",
+        "status": "future",
+        "status_summary": "Future source record only. Runtime behavior remains deferred.",
+        "surfaces": [
+          "item_record",
+          "artifact_download"
+        ],
+        "trust_lane": "unknown"
+      },
+      {
+        "artifact_types": [
+          "source_archive",
+          "source_tree_snapshot"
+        ],
+        "authority_class": "software_preservation_network",
+        "connector": {
+          "label": "Software Heritage connector",
+          "status": "unimplemented"
+        },
+        "extraction_mode": "deferred",
+        "freshness_model": "deferred",
+        "identifier_types_emitted": [
+          "swhid",
+          "origin_url"
+        ],
+        "legal_posture": "deferred_placeholder",
+        "live_access_mode": "deferred",
+        "name": "Software Heritage",
+        "notes": "Planning placeholder only. This record identifies a likely future source family without claiming implementation.",
+        "object_types": [
+          "source_repository",
+          "software_release"
+        ],
+        "rights_notes": "Source preservation and archive access terms vary by origin and snapshot.",
+        "roles": [
+          "preservation_anchor",
+          "citation_source",
+          "discovery_index"
+        ],
+        "source_family": "software_heritage",
+        "source_id": "software-heritage-placeholder",
+        "status": "placeholder",
+        "status_summary": "Placeholder record only. No runtime connector is implemented yet.",
+        "surfaces": [
+          "item_record",
+          "artifact_download"
+        ],
+        "trust_lane": "preservation"
+      },
+      {
+        "artifact_types": [
+          "fixture_artifact",
+          "fixture_archive"
+        ],
+        "authority_class": "repo_governed_fixture",
+        "connector": {
+          "label": "Synthetic software connector",
+          "status": "fixture_backed"
+        },
+        "extraction_mode": "fixture_only",
+        "freshness_model": "static_fixture",
+        "identifier_types_emitted": [
+          "target_ref"
+        ],
+        "legal_posture": "repo_governed_fixture",
+        "live_access_mode": "none",
+        "name": "Synthetic Fixtures",
+        "notes": "Active local-only source used for deterministic bootstrap execution, tests, and connector-boundary development.",
+        "object_types": [
+          "software_product",
+          "software_release"
+        ],
+        "rights_notes": "Repo-governed demo fixtures only.",
+        "roles": [
+          "fixture",
+          "discovery_index"
+        ],
+        "source_family": "synthetic",
+        "source_id": "synthetic-fixtures",
+        "status": "active_fixture",
+        "status_summary": "Active fixture-backed source record.",
+        "surfaces": [
+          "item_record",
+          "artifact_download",
+          "fixture_file"
+        ],
+        "trust_lane": "fixture"
+      },
+      {
+        "artifact_types": [
+          "web_capture",
+          "replay_record"
+        ],
+        "authority_class": "web_archive",
+        "connector": {
+          "label": "Wayback / Memento connector",
+          "status": "unimplemented"
+        },
+        "extraction_mode": "deferred",
+        "freshness_model": "deferred",
+        "identifier_types_emitted": [
+          "url",
+          "capture_datetime"
+        ],
+        "legal_posture": "deferred_placeholder",
+        "live_access_mode": "deferred",
+        "name": "Wayback / Memento",
+        "notes": "Planning placeholder only. This record should guide future registry growth, not imply live replay support.",
+        "object_types": [
+          "website",
+          "web_page"
+        ],
+        "rights_notes": "Replay availability and access conditions vary by capture and provider.",
+        "roles": [
+          "preservation_anchor",
+          "discovery_index",
+          "citation_source"
+        ],
+        "source_family": "wayback_memento",
+        "source_id": "wayback-memento-placeholder",
+        "status": "placeholder",
+        "status_summary": "Placeholder record only. No runtime connector is implemented yet.",
+        "surfaces": [
+          "item_record",
+          "replay"
+        ],
+        "trust_lane": "preservation"
+      }
+    ],
+    "status": "listed"
+  },
+  "status_code": 200
+}
