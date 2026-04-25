@@ -29,4 +29,5 @@ steps:
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.
+  - Rust workspace checking is intentionally not required here because normal Python verification must not depend on a Rust toolchain; use `cargo check --workspace --manifest-path crates/Cargo.toml` as an optional local check.
   - This command contract is repo-operating metadata, not proof of a local AIDE product CLI.
