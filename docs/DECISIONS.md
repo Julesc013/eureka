@@ -317,3 +317,9 @@
 - Status: accepted
 - Decision: Eureka now implements an isolated Rust source-registry candidate under `crates/eureka-core/` that loads governed `.source.json` inventory records, validates bounded required fields, detects duplicate `source_id` values, and compares generated source-registry public envelopes against the committed Python-oracle golden outputs.
 - Why: source-registry loading is the smallest useful first Rust parity seam and can be checked without replacing Python behavior; the candidate proves one Rust behavior path while keeping Python authoritative and avoiding Rust gateway, CLI, FFI, resolver, query-planner, index, memory, worker, app, network, or production-service scope.
+
+## ADR-054: Add Search Usefulness Audit v0 as an Honest Backlog Generator
+
+- Status: accepted
+- Decision: Eureka now maintains Search Usefulness Audit v0 under `evals/search_usefulness/`, with a 64-query archive-resolution-style pack, JSON-subset YAML schemas, a stdlib runner, a manual baseline-observation helper, and reports that aggregate current Eureka statuses, pending external baselines, failure modes, and future-work labels.
+- Why: archive-resolution progress needs a broad usefulness audit that can show where Eureka's structure helps and where corpus, planner, index, decomposition, representation, compatibility, or UX gaps dominate; external systems must remain pending manual observations unless a human records them, so the repo does not fabricate Google or Internet Archive results or introduce scraping.

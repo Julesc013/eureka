@@ -10,6 +10,8 @@ steps:
     run: python scripts/check_architecture_boundaries.py
   - id: archive_resolution_evals
     run: python scripts/run_archive_resolution_evals.py --json
+  - id: search_usefulness_audit
+    run: python scripts/run_search_usefulness_audit.py --json
   - id: public_alpha_status
     run: python scripts/demo_http_api.py --mode public_alpha status
   - id: public_alpha_smoke
@@ -32,5 +34,6 @@ notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.
   - The Python-oracle golden check is stdlib-only and verifies committed future-Rust parity fixtures without requiring Rust tooling.
+  - The search-usefulness audit is stdlib-only and keeps external baselines as pending manual observations; it does not scrape Google, Internet Archive, or any other external source.
   - Rust workspace checking is intentionally not required here because normal Python verification must not depend on a Rust toolchain; use `cargo check --workspace --manifest-path crates/Cargo.toml` and `cargo test --workspace --manifest-path crates/Cargo.toml` as optional local checks.
   - This command contract is repo-operating metadata, not proof of a local AIDE product CLI.

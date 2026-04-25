@@ -42,6 +42,9 @@ The repo has already proven:
 - Rust Source Registry Parity Candidate v0 as the first isolated Rust behavior
   seam, compared against Python-oracle source-registry goldens and not wired
   into runtime behavior
+- Search Usefulness Audit v0 as the first broad usefulness/backlog audit over
+  64 archive-resolution-style queries, with external baselines left pending
+  manual observation and no scraping or new retrieval semantics
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -63,14 +66,16 @@ The next backend sequence is:
 11. Rust Migration Skeleton and Parity Plan (implemented as skeleton only)
 12. Rust Parity Fixture Pack v0 (implemented as Python-oracle goldens only)
 13. Rust Source Registry Parity Candidate v0 (implemented as isolated parity seam)
-14. Rust Query Planner Parity Candidate v0
-15. Native App Work Later
+14. Search Usefulness Audit v0 (implemented as local audit/backlog generator)
+15. Search Usefulness Backlog Triage v0
+16. Rust Query Planner Parity Candidate v0
+17. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Rust Query Planner Parity Candidate v0
+> Search Usefulness Backlog Triage v0
 
 Why this comes next:
 
@@ -98,8 +103,12 @@ Why this comes next:
   parity fixtures before any Rust seam ports begin
 - Rust Source Registry Parity Candidate v0 now proves the first isolated Rust
   behavior seam against committed Python goldens without replacing Python
-- the next migration bottleneck is the next tiny Rust candidate seam, likely
-  Query Planner v0, checked against committed Python goldens
+- Search Usefulness Audit v0 now shows a broad observed backlog dominated by
+  source coverage, planner/query-interpretation, compatibility evidence,
+  representation, decomposition, and member-access gaps
+- the next backend bottleneck is turning that audit output into a small
+  accepted backlog slice before choosing broader source, planner, or Rust
+  parity work
 
 ## Explicit Deferrals
 
@@ -110,6 +119,7 @@ The backend roadmap intentionally defers:
 - full native app work
 - production Rust rewrite
 - Rust behavior ports that do not match Python-oracle fixtures
+- automated Google or Internet Archive scraping
 - installer or download automation
 - trust scoring
 - production relevance benchmarking

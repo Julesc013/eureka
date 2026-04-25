@@ -19,6 +19,8 @@ The minimum public-alpha entry gate should include:
   smoke checks, and operator checklist)
 - Public Alpha Hosting Pack v0 (implemented as a supervised rehearsal evidence
   packet)
+- Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
+  with no external scraping)
 - local-path APIs disabled or explicitly restricted in public-alpha mode
 - safe status route without private local path disclosure
 - repeatable public-alpha smoke report
@@ -72,4 +74,7 @@ adds `docs/operations/public_alpha_hosting_pack/` plus a route-summary
 generator for supervised rehearsal evidence. Public hosting itself is still not
 started. The hosted-alpha gate remains blocked on real deployment posture,
 externally supplied auth/TLS decisions, abuse controls, operational monitoring,
-and final operator approval.
+and final operator approval. Search Usefulness Audit v0 now provides a broad
+local query/usefulness report that can inform public-alpha demo scope, but its
+external Google and Internet Archive baselines remain pending manual
+observation and it is not public-hosting approval.

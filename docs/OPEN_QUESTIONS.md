@@ -60,3 +60,5 @@ These questions are intentionally left open during bootstrap:
 56. Now that `eureka-core` contains the first Rust source-registry parity candidate, should the next candidate seam be Query Planner v0 or a tiny reusable Rust parity-output harness?
 57. Who accepts allowed divergence records when future Rust candidate output differs from Python oracle output?
 58. Which source-registry fields should graduate from parity fixture shape into longer-lived Rust contract types, and which should remain implementation detail?
+59. Now that Search Usefulness Audit v0 reports broad source, planner, decomposition, representation, compatibility, and UX gaps, which failure family should become the next bounded implementation target?
+60. What process should govern manual Google, Internet Archive metadata, and Internet Archive OCR/full-text baseline observations so they remain evidence records rather than scraped or fabricated comparisons?

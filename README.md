@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. Many archive-resolution eval tasks
@@ -88,6 +88,7 @@ python scripts/check_architecture_boundaries.py
 ```bash
 python scripts/run_archive_resolution_evals.py
 python scripts/run_archive_resolution_evals.py --json
+python scripts/run_search_usefulness_audit.py
 python scripts/public_alpha_smoke.py
 python scripts/generate_python_oracle_golden.py --check
 ```
@@ -185,6 +186,17 @@ python scripts/run_archive_resolution_evals.py --task windows_7_apps
 
 The eval runner reports satisfied, partial, not-satisfied, not-evaluable, and
 capability-gap checks. It is not a ranking benchmark.
+
+### Run the Search Usefulness Audit
+
+```bash
+python scripts/run_search_usefulness_audit.py --query windows_7_apps
+```
+
+The usefulness audit runs a broad local query pack and aggregates source,
+planner, index, decomposition, representation, compatibility, actionability,
+and UX gaps. Google and Internet Archive baselines are pending manual
+observations; the script performs no scraping.
 
 ### Check Public-Alpha Posture
 
@@ -288,6 +300,7 @@ Roadmaps and operations:
 Evals and parity:
 
 - [Archive Resolution Evals](evals/archive_resolution/README.md)
+- [Search Usefulness Audit](evals/search_usefulness/README.md)
 - [Search Benchmark Design](docs/evals/SEARCH_BENCHMARK_DESIGN.md)
 - [Rust Parity Plan](tests/parity/PARITY_PLAN.md)
 - [Python Oracle Golden Fixtures](tests/parity/golden/python_oracle/v0/README.md)
@@ -312,17 +325,19 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Rust Query Planner Parity Candidate v0
+1. Search Usefulness Backlog Triage v0
 
 Broader near-term direction:
 
-1. keep Python as oracle while adding Rust candidates only when parity fixtures
+1. triage Search Usefulness Audit v0 into the next small source, planner,
+   representation, or compatibility backlog slice
+2. keep Python as oracle while adding Rust candidates only when parity fixtures
    exist
-2. preserve public-alpha safety checks and capture rehearsal evidence
-3. expand source and eval coverage without weakening hard queries
-4. harden backend contracts, run models, memory, and local index behavior
-5. move toward hosted alpha only after explicit blockers are resolved
-6. keep native app shells later, after backend infrastructure is stronger
+3. preserve public-alpha safety checks and capture rehearsal evidence
+4. expand source and eval coverage without weakening hard queries
+5. harden backend contracts, run models, memory, and local index behavior
+6. move toward hosted alpha only after explicit blockers are resolved
+7. keep native app shells later, after backend infrastructure is stronger
 
 No exact dates are promised.
 

@@ -6,6 +6,17 @@ Current scripts:
 
 - `check_architecture_boundaries.py`: runs the narrow bootstrap architectural-boundary checker for Python imports and enforces the current proven layering between surfaces, `runtime/gateway/public_api`, connectors, and engine; it emits readable text by default, supports `--json`, and remains a repo-local guardrail rather than a universal policy engine
 - `run_archive_resolution_evals.py`: runs Archive Resolution Eval Runner v0 over `evals/archive_resolution/`, optionally selects one task with `--task`, optionally builds an explicit Local Index v0 path with `--index-path`, writes stable JSON with `--output`, and emits either a plain text summary or `--json`; it is a local deterministic regression harness and not a ranking, fuzzy, vector, semantic, LLM, crawling, or production relevance benchmark
+- `run_search_usefulness_audit.py`: runs Search Usefulness Audit v0 over
+  `evals/search_usefulness/`, optionally selects one query with `--query`,
+  optionally builds an explicit Local Index v0 path with `--index-path`,
+  writes stable JSON with `--output`, and emits either a plain text summary or
+  `--json`; it classifies current Eureka usefulness, failure modes, and
+  future-work labels while marking external baselines as pending manual
+  observations
+- `record_search_baseline_observation.py`: creates or validates manual
+  external-baseline observation JSON for the search-usefulness audit; it does
+  not perform web search, Google scraping, Internet Archive scraping, or
+  network access
 - `public_alpha_smoke.py`: runs the local Public Alpha Deployment Readiness smoke checks directly against the stdlib WSGI app, verifies safe status/source/query/search/eval routes, verifies blocked local-path/readback routes, supports `--json`, and exits nonzero if the constrained public-alpha posture regresses
 - `generate_public_alpha_hosting_pack.py`: reads `control/inventory/public_alpha_routes.json` and emits or checks the Public Alpha Hosting Pack route-safety summary; it supports `--check` for repeatable docs validation and does not deploy, host, or mutate route behavior
 - `generate_python_oracle_golden.py`: generates or checks the Rust Parity Fixture Pack v0 Python-oracle golden outputs under `tests/parity/golden/python_oracle/v0/`; it supports `--check`, optional `--output-root`, and `--json`, normalizes unstable timestamps, local index paths, FTS mode, and generation metadata, and does not implement Rust behavior or replace Python runtime paths

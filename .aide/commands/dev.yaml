@@ -98,6 +98,12 @@ steps:
     run: python scripts/run_archive_resolution_evals.py
   - id: archive_resolution_eval_runner_json
     run: python scripts/run_archive_resolution_evals.py --task windows_7_apps --json
+  - id: search_usefulness_audit
+    run: python scripts/run_search_usefulness_audit.py
+  - id: search_usefulness_audit_json
+    run: python scripts/run_search_usefulness_audit.py --query windows_7_apps --json
+  - id: search_usefulness_manual_baseline_template
+    run: python scripts/record_search_baseline_observation.py --query windows_7_apps --system google
   - id: native_cli_archive_resolution_evals
     run: python scripts/demo_cli_workbench.py evals-archive-resolution --task windows_7_apps --json
   - id: native_cli_index_build
@@ -291,5 +297,6 @@ notes:
   - Rust Migration Skeleton and Parity Plan v0 established initial Rust crates and parity docs; Python remains the oracle, Rust is not an active backend, and the Rust workspace check is optional because it requires a local Rust toolchain.
   - Rust Parity Fixture Pack v0 adds Python-oracle golden outputs and a stdlib generator/check script only; it does not implement Rust behavior, replace Python runtime paths, or require Rust tooling for normal checks.
   - Rust Source Registry Parity Candidate v0 is the first isolated Rust behavior seam under `crates/eureka-core`; it is compared to Python-oracle source-registry goldens and is not wired into Python runtime, web, CLI, HTTP API, workers, or production paths.
+  - Search Usefulness Audit v0 is a local eval/audit harness with pending manual external baselines only; it performs no Google scraping, Internet Archive scraping, live crawling, ranking, fuzzy retrieval, vector search, or LLM planning.
   - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.

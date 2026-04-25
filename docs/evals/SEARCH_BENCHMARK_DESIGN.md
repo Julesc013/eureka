@@ -50,7 +50,7 @@ The benchmark should eventually report metrics such as:
 
 ## Current Status
 
-The corpus now has its first executable guardrail:
+The eval suite now has two executable guardrails:
 
 - Archive Resolution Eval Runner v0 loads the packet
 - it runs Query Planner v0
@@ -58,6 +58,14 @@ The corpus now has its first executable guardrail:
 - it falls back to deterministic search when needed
 - it records bounded absence reasoning for no-result cases
 - it emits stable JSON per-task and suite reports
+- Search Usefulness Audit v0 loads a broader 64-query pack under
+  `evals/search_usefulness/`
+- it records Eureka observations through the same bounded planner/index/search
+  path
+- it marks Google, Internet Archive metadata search, and Internet Archive
+  full-text/OCR search as `pending_manual_observation`
+- it aggregates source, planner, index, decomposition, representation,
+  compatibility, actionability, and UX failure labels into future-work targets
 
 This is not a full relevance benchmark. It does not score ranking, fuzzy
 retrieval, vector or semantic search, LLM planning, crawling, live source sync,
@@ -65,3 +73,8 @@ or production search quality. Many hard tasks should currently report
 `capability_gap`; that is the honest result until the corpus and bounded
 resolver capabilities can satisfy their direct-artifact, member-level, article,
 or evidence expectations.
+
+The usefulness audit is also not an automated Google or Internet Archive
+comparison. External baseline observations are placeholders until a human
+reviewer records them manually. This keeps the audit focused on reproducible
+local Eureka behavior and prevents fabricated external wins or losses.
