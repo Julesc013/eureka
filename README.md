@@ -1,275 +1,80 @@
 # Eureka
 
-## Compatibility-First Resolution for Software Memory
+**Local-first temporal object resolution for archived and current digital
+objects.**
 
-Eureka is a **bootstrap, pre-product monorepo** for a compatibility-first system focused on software resolution, preservation, evidence-aware inspection, and machine reconstruction.
+Eureka is a reference backend prototype for turning vague requests into
+evidence-backed, actionable resolution results. It combines governed source
+registries, deterministic planning, local indexing, resolution runs, bounded
+provenance, evals, and public-alpha safety checks to answer questions like
+"which exact thing should I inspect, fetch, compare, or preserve next?"
 
-This repository is intentionally:
+**Current status:** Python reference backend prototype / not production.
+See [Bootstrap Status](docs/BOOTSTRAP_STATUS.md) and
+[Roadmap](docs/ROADMAP.md).
 
-- local
-- deterministic
-- stdlib-only in the executable lane
-- contract-first
-- architecture-first
-- honest about what is still deferred
+## Why Eureka Exists
 
-> Eureka is **not** a finished product, package manager, installer, downloader, deployment stack, or trust engine.
-> It is a working architectural proof that exercises real runtime seams end to end.
+Archive and software searches often return the wrong unit of work. A user asks
+for an old driver, a pre-support-drop browser release, an app for Windows 7, or
+an article inside a scanned magazine, and gets an ISO, a ZIP, a support CD, a
+dead website, or a noisy result list. The real work is then manual detective
+work:
 
-## Status
+- containers must be opened before the useful member is visible
+- versions, platforms, and compatibility constraints matter
+- metadata is inconsistent or absent
+- sources disagree or preserve different fragments
+- misses rarely explain what was checked
+- provenance is often collapsed into one uninspectable answer
 
-| Area | Current State |
+Eureka treats search as an investigation. Its direction is to find the smallest
+actionable unit supported by evidence, preserve disagreement, explain absence,
+and route the user toward a bounded next step without pretending uncertain
+results are canonical truth.
+
+## What Eureka Is / Is Not
+
+| Eureka is | Eureka is not |
 | --- | --- |
-| Product maturity | Bootstrap / pre-product |
-| Runtime lane | Python 3 standard library only |
-| Backend role | Python reference backend / architectural oracle |
-| Rust lane | Source-registry parity candidate plus Python-oracle golden fixtures; not active backend |
-| Data sources | Governed synthetic fixtures plus recorded GitHub Releases fixtures |
-| Surfaces | HTML workbench, native CLI, local stdlib HTTP API |
-| Search | Deterministic, bounded, no ranking, no fuzzy retrieval |
-| Query planning | Deterministic, rule-based, bounded query-family compiler |
-| Local index | SQLite-backed local index with FTS5 preferred and deterministic fallback |
-| Persistence | Local bounded content-addressed export store plus local JSON resolution-run, task, and memory stores |
-| Identity | Bootstrap deterministic `resolved_resource_id` seam |
-| Architecture enforcement | Repo-local Python import boundary checker |
-| Next implementation milestone | Rust Query Planner Parity Candidate v0 |
+| A temporal object resolver | A production search engine |
+| A local-first Python reference backend | An open-internet hosted service |
+| An evidence-backed archive/search prototype | An app store, installer, or downloader |
+| A governed monorepo for backend, contracts, evals, and surfaces | A native GUI app |
+| An eval-governed research-to-product codebase | An LLM-first search wrapper |
+| A future Rust migration lane with Python-oracle parity fixtures | An active Rust production backend |
 
-## What Eureka Proves Today
+## Current Capabilities
 
-The current repo proves a set of bounded executable seams across connectors, engine, gateway public boundaries, and multiple surfaces.
+| Area | Current bounded capability |
+| --- | --- |
+| Source and ingestion | Source Registry v0, synthetic fixtures, recorded GitHub Releases fixtures, governed source IDs |
+| Resolution and search | exact resolution, deterministic search, query planning, local SQLite index with FTS5 preferred and deterministic fallback |
+| Evidence and explanation | provenance summaries, source summaries, absence reasoning, comparison/disagreement, subject/state timelines |
+| Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
+| Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
+| Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
+| Operations and evals | Archive Resolution Eval Runner v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
-### Resolution and Search
+The current corpus is intentionally small. Many archive-resolution eval tasks
+are expected to report partial results, not-satisfied checks, or capability
+gaps. That honesty is part of the benchmark.
 
-- exact resolution of bounded `target_ref` values
-- deterministic search over a small bounded corpus
-- honest no-result and miss explanation paths
-- shared transport-neutral public boundary reuse across web, CLI, and HTTP API
-
-### Source and Evidence Visibility
-
-- synthetic connector path
-- recorded GitHub Releases connector path
-- Source Registry v0 inventory, loader, and bounded public projection
-- Resolution Run Model v0 for synchronous local exact-resolution, deterministic-search, and planned-search investigations
-- Query Planner v0 for deterministic bounded raw-query compilation into `ResolutionTask`
-- Local Index v0 for durable local SQLite search over the current bounded corpus, with FTS5 preferred and deterministic fallback when unavailable
-- Local Worker and Task Model v0 for synchronous local validation and indexing jobs
-- Resolution Memory v0 for explicit local reusable memory records derived from persisted runs
-- bounded source-family and source-origin visibility
-- bounded provenance and evidence summaries
-- bounded absence reasoning for misses
-
-### Object and State Views
-
-- bounded side-by-side comparison and disagreement
-- bounded subject/state listing
-- bounded representation and access-path summaries
-- bounded compatibility / host-profile verdicts
-- bounded action-routing / recommendation plans
-- bounded user-strategy / intent-profile variation over the same resolved target
-
-### Export, Inspection, and Local Storage
-
-- manifest export
-- bundle export
-- bundle inspection
-- deterministic local stored-export listing and readback
-- bootstrap `resolved_resource_id` propagation through resolution, search, export, inspection, and storage flows
-
-### Evaluation Guardrails
-
-- first repo-level archive-resolution eval corpus under `evals/archive_resolution/`
-- hard software-resolution queries with explicit bad-result patterns, minimum granularity expectations, and allowed absence outcomes for future investigation and ranking work
-- first Python-oracle golden fixture pack under `tests/parity/golden/python_oracle/v0/` for future Rust seam parity checks
-- first isolated Rust source-registry parity candidate under `crates/eureka-core/`
-
-## What Eureka Deliberately Does Not Claim Yet
-
-The repository is intentionally explicit about unresolved scope.
-
-It does **not** yet settle:
-
-- final object or state identity semantics
-- trust scoring or a broader provenance ontology
-- merge logic or truth selection across sources
-- ranking or fuzzy retrieval
-- actual downloads, installers, or restore/import flows
-- async workers, auth, deployment, or production HTTP semantics
-- public hosted alpha readiness
-- active Rust backend behavior or production Rust migration
-- native app shells or serious Visual Studio/Xcode work
-- final CLI, TUI, or GUI direction
-- personalization, saved user profiles, cloud/shared memory, or automatic memory invalidation
-
-## Quick Start
+## Quickstart
 
 ### Requirements
 
 - Python 3
-- no third-party Python dependencies required for the bootstrap lane
-- optional Rust toolchain only for checking the placeholder Rust workspace
-
-### Useful Demo Commands
-
-#### CLI
+- no third-party Python packages for the current executable lane
+- optional Rust toolchain only for the `crates/` workspace checks
 
 ```bash
-python scripts/demo_cli_workbench.py resolve fixture:software/synthetic-demo-app@1.0.0
-python scripts/demo_cli_workbench.py search archive
-python scripts/demo_cli_workbench.py query-plan "Windows 7 apps"
-python scripts/demo_cli_workbench.py index-build --index-path .demo-index/eureka-local-index.sqlite3
-python scripts/demo_cli_workbench.py index-query archive --index-path .demo-index/eureka-local-index.sqlite3
-python scripts/demo_cli_workbench.py index-status --index-path .demo-index/eureka-local-index.sqlite3
-python scripts/demo_cli_workbench.py run-resolve fixture:software/synthetic-demo-app@1.0.0 --run-store-root .demo-runs
-python scripts/demo_cli_workbench.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs
-python scripts/demo_cli_workbench.py run-status run-exact-resolution-0001 --run-store-root .demo-runs
-python scripts/demo_cli_workbench.py memory-create --run-store-root .demo-runs --memory-store-root .demo-memory --run-id run-planned-search-0001
-python scripts/demo_cli_workbench.py memories --memory-store-root .demo-memory
-python scripts/demo_cli_workbench.py memory memory-absence-finding-0001 --memory-store-root .demo-memory
-python scripts/demo_cli_workbench.py sources
-python scripts/demo_cli_workbench.py source github-releases-recorded-fixtures
-python scripts/demo_cli_workbench.py states archivebox
-python scripts/demo_cli_workbench.py compare fixture:software/archivebox@0.8.5 github-release:archivebox/archivebox@v0.8.5
-python scripts/demo_cli_workbench.py plan github-release:cli/cli@v2.65.0 --strategy acquire --host windows-x86_64 --json
-python scripts/demo_cli_workbench.py explain-resolve-miss fixture:software/archivebox@9.9.9
+git clone https://github.com/Julesc013/eureka.git
+cd eureka
 ```
 
-#### HTTP API Helper
-
-```bash
-python scripts/demo_http_api.py index
-python scripts/demo_http_api.py query-plan "Windows 7 apps"
-python scripts/demo_http_api.py index-build --index-path .demo-index/eureka-local-index.sqlite3
-python scripts/demo_http_api.py index-query archive --index-path .demo-index/eureka-local-index.sqlite3
-python scripts/demo_http_api.py index-status --index-path .demo-index/eureka-local-index.sqlite3
-python scripts/demo_http_api.py sources --status active_fixture
-python scripts/demo_http_api.py run-search archive --run-store-root .demo-runs
-python scripts/demo_http_api.py run-planned-search "latest Firefox before XP support ended" --run-store-root .demo-runs
-python scripts/demo_http_api.py run run-deterministic-search-0001 --run-store-root .demo-runs
-python scripts/demo_http_api.py memory-create --run-store-root .demo-runs --memory-store-root .demo-memory --run-id run-planned-search-0001
-python scripts/demo_http_api.py memories --memory-store-root .demo-memory
-python scripts/demo_http_api.py memory memory-absence-finding-0001 --memory-store-root .demo-memory
-python scripts/demo_http_api.py source github-releases-recorded-fixtures
-python scripts/demo_http_api.py resolve github-release:cli/cli@v2.65.0
-python scripts/demo_http_api.py action-plan github-release:cli/cli@v2.65.0 --strategy preserve
-python scripts/demo_http_api.py states archivebox
-```
-
-#### Web Workbench
-
-```bash
-python scripts/demo_web_workbench.py
-```
-
-Then open the local URLs printed by the script, including the exact-resolution workbench, query-plan page, source-registry page, search page, resolution-run pages when `--run-store-root` is supplied, resolution-memory pages when `--memory-store-root` is supplied, action-plan page, and local HTTP API index.
-
-#### Architecture Guardrail
-
-```bash
-python scripts/check_architecture_boundaries.py
-```
-
-#### Python Oracle Golden Fixtures
-
-```bash
-python scripts/generate_python_oracle_golden.py --check
-```
-
-#### Optional Rust Skeleton Check
-
-```bash
-cargo check --workspace --manifest-path crates/Cargo.toml
-```
-
-This checks only the placeholder Rust workspace. It does not run or replace
-Eureka runtime behavior.
-
-## Architecture At a Glance
-
-Normal bounded flow:
-
-```text
-connectors
-  -> ingest / extract / normalize seams
-  -> engine behavior
-  -> gateway public boundary
-  -> shared view models / UI contracts
-  -> web / native / local HTTP API surfaces
-```
-
-High-level component ownership:
-
-| Path | Responsibility |
-| --- | --- |
-| `control/` | Governance and planning material |
-| `contracts/` | Governed schemas, public API contracts, shared UI contracts |
-| `runtime/connectors/` | Bounded acquisition adapters |
-| `runtime/engine/` | Engine behavior and concrete interface boundaries |
-| `runtime/gateway/` | Gateway-facing runtime behavior over engine public/service interfaces |
-| `surfaces/web/` | Compatibility-first HTML workbench plus local HTTP API |
-| `surfaces/native/` | Native surface family, currently CLI-first |
-| `.aide/` | Repo-operating metadata only |
-
-Key dependency law:
-
-- surfaces stay on the public side of the architecture
-- web and native use `runtime/gateway/public_api/**` in the normal path
-- gateway does not depend on surfaces
-- engine does not depend on surfaces
-- connectors do not invent object truth
-- connectors do not own trust semantics
-- `.aide/` does not define runtime behavior
-
-The repo enforces the current proven Python import layering with:
-
-- `scripts/check_architecture_boundaries.py`
-
-## North Star Docs
-
-The detailed north-star documentation now lives in:
-
-- `docs/vision/` — accepted product thesis, promise, and doctrine
-- `docs/architecture/` — accepted architecture direction, staging, and Rust backend lane
-- `docs/roadmap/` — backend roadmap, public alpha plan, Rust migration plan, native-apps-later plan
-- `docs/standards/` — source registry, identifier, and privacy/shared-evidence standards
-- `docs/evals/` — benchmark design guidance tied to the archive-resolution eval packet
-
-Research that remains intentionally non-normative stays under:
-
-- `control/research/`
-
-## Current Executable Scope
-
-Current bootstrap status includes **thirty-six executable local deterministic Python thin slices**, the first repo-level archive-resolution eval corpus, Public Alpha Hosting Pack v0, a Rust migration skeleton, the first Python-oracle golden fixture pack, and the first isolated Rust source-registry parity candidate.
-
-Important highlights:
-
-- one governed synthetic connector family
-- one bounded real-source connector family using recorded GitHub Releases fixtures
-- one bounded source-registry inventory and public-boundary projection
-- one bounded synchronous resolution-run seam with local JSON persistence
-- one bounded explicit local resolution-memory seam with local JSON persistence
-- one bounded deterministic query-planner seam for selected archive-resolution families
-- one bounded local SQLite index seam with FTS5 preferred and deterministic fallback
-- one transport-neutral gateway public boundary family reused across multiple surfaces
-- one compatibility-first HTML surface
-- one bootstrap native CLI surface
-- one local stdlib HTTP API surface
-- one repo-local architecture-boundary checker
-- one committed Python-oracle golden fixture pack for future Rust parity
-- one isolated Rust source-registry parity candidate under `crates/eureka-core/`
-  that is not yet an active backend
-
-This means the repo is already useful for:
-
-- demonstrating architecture reuse across multiple surfaces
-- inspecting current public-boundary shapes
-- validating bounded runtime semantics against deterministic fixtures
-- iterating on contracts and view-model seams without pretending product completeness
-
-## Verification
-
-Common repo verification commands:
+### Verify the Repo
 
 ```bash
 python -m unittest discover -s runtime -t .
@@ -278,100 +83,289 @@ python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
 ```
 
-These checks are still bootstrap-scale, but they cover the current runtime, gateway, surface, and integration seams with deterministic recorded data.
+### Run Evals and Safety Checks
 
-## Repo Map
+```bash
+python scripts/run_archive_resolution_evals.py
+python scripts/run_archive_resolution_evals.py --json
+python scripts/public_alpha_smoke.py
+python scripts/generate_python_oracle_golden.py --check
+```
 
-Useful paths to know:
+### Try the CLI
 
-- `contracts/archive/` — draft archive schemas and governed fixtures
-- `contracts/source_registry/` — draft governed source-registry schemas
-- `contracts/gateway/public_api/` — public API contract placeholders
-- `contracts/ui/` — shared view models and UI contracts
-- `control/inventory/sources/` — governed Source Registry v0 seed records
-- `runtime/connectors/synthetic_software/` — governed synthetic fixture connector
-- `runtime/connectors/github_releases/` — recorded GitHub Releases connector
-- `runtime/source_registry/` — stdlib-only source-registry loader and filter layer
-- `runtime/engine/resolve/` — exact resolution and deterministic search
-- `runtime/engine/resolution_runs/` — synchronous local investigation records
-- `runtime/engine/query_planner/` — deterministic bounded raw-query compilation
-- `runtime/engine/index/` — durable local SQLite search substrate
-- `runtime/engine/provenance/` — bounded evidence summaries
-- `runtime/engine/absence/` — bounded miss explanation
-- `runtime/engine/compare/` — bounded comparison and disagreement
-- `runtime/engine/states/` — bounded subject/state listing
-- `runtime/engine/representations/` — bounded representation and access-path summaries
-- `runtime/engine/compatibility/` — bounded host-profile compatibility
-- `runtime/engine/action_routing/` — bounded next-step planning
-- `runtime/engine/strategy/` — bounded user-strategy profiles
-- `runtime/engine/actions/` — manifest export
-- `runtime/engine/snapshots/` — bundle export and inspection
-- `runtime/engine/store/` — deterministic local content-addressed export store
-- `runtime/gateway/public_api/` — transport-neutral public runtime boundary reused by surfaces
-- `surfaces/web/` — compatibility-first HTML workbench plus local stdlib HTTP API
-- `surfaces/native/cli/` — bootstrap CLI surface
-- `crates/` — future Rust backend lane, currently isolated source-registry parity candidate plus placeholders
-- `evals/archive_resolution/` — hard archive-resolution benchmark tasks and draft schema
-- `docs/vision/` — accepted product thesis, promise, and doctrine
-- `docs/architecture/` — accepted architecture direction, staging, and Rust backend lane
-- `docs/roadmap/` — next-phase backend, public-alpha, Rust-migration, and native-app plans
-- `docs/standards/` — source-registry, identifier, and privacy guidance
-- `docs/evals/` — benchmark-design guidance
-- `scripts/` — demo entry points and repo-local checks
+```bash
+python scripts/demo_cli_workbench.py resolve fixture:software/synthetic-demo-app@1.0.0
+python scripts/demo_cli_workbench.py search archive
+python scripts/demo_cli_workbench.py query-plan "Windows 7 apps"
+python scripts/demo_cli_workbench.py sources
+python scripts/demo_cli_workbench.py evals-archive-resolution --task windows_7_apps --json
+```
 
-## Recommended Reading Order
+### Try the Local HTTP API Helper
 
-### Fastest Practical Orientation
+```bash
+python scripts/demo_http_api.py --mode public_alpha status
+python scripts/demo_http_api.py query-plan "Windows 7 apps"
+python scripts/demo_http_api.py sources
+python scripts/demo_http_api.py resolve github-release:cli/cli@v2.65.0
+```
 
-1. `README.md`
-2. `docs/BOOTSTRAP_STATUS.md`
-3. `docs/roadmap/BACKEND_ROADMAP.md`
-4. `scripts/README.md`
-5. one CLI or HTTP API demo command
+### Try the Web Workbench
 
-### Deeper Architectural Orientation
+Render one page to stdout:
 
-1. `docs/VISION.md`
-2. `docs/ARCHITECTURE.md`
-3. `docs/vision/DOCTRINE.md`
-4. `docs/roadmap/BACKEND_ROADMAP.md`
-5. `docs/standards/SOURCE_REGISTRY_SCHEMA.md`
-6. `docs/evals/SEARCH_BENCHMARK_DESIGN.md`
-7. `docs/REPO_LAYOUT.md`
-8. `docs/BOOTSTRAP_STATUS.md`
-9. `docs/DECISIONS.md`
-10. `runtime/gateway/public_api/README.md`
-11. `surfaces/web/README.md`
-12. `surfaces/native/cli/README.md`
+```bash
+python scripts/demo_web_workbench.py --render-once
+python scripts/demo_web_workbench.py --render-once --search-query archive
+```
 
-## AIDE in This Repo
+Start the local stdlib server in trusted local-dev mode:
 
-AIDE is present here as a **repo-operating layer only**.
+```bash
+python scripts/demo_web_workbench.py --mode local_dev
+```
 
-It helps declare:
+Start the constrained public-alpha mode locally:
 
-- repo identity
-- governed components
-- command metadata
-- ownership and policy hints
+```bash
+python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080
+```
 
-It does **not** define:
+`public_alpha` blocks caller-provided local filesystem controls. It is a
+supervised demo posture, not production hosting.
 
-- archive object semantics
-- protocol meaning
-- runtime behavior
-- trust semantics
-- surface behavior
+### Optional Rust Checks
 
-## Scope Honesty
+Run these only where Cargo is installed:
 
-The current value of this repository is not “feature completeness.”
-It is that the seams are:
+```bash
+cargo check --workspace --manifest-path crates/Cargo.toml
+cargo test --workspace --manifest-path crates/Cargo.toml
+```
 
-- explicit
-- inspectable
-- testable
-- reusable across surfaces
-- replaceable later without hiding coupling
+The Rust workspace is not an active backend. Python remains the reference
+runtime and oracle.
 
-Eureka is intentionally proving the architecture one bounded slice at a time.
+## Example Workflows
+
+### Compile a Hard Archive Query
+
+```bash
+python scripts/demo_cli_workbench.py query-plan "Windows 7 apps"
+```
+
+This runs the deterministic Query Planner v0 and emits the bounded
+`ResolutionTask` shape for a hard archive-resolution query family.
+
+### Build and Query a Local Index
+
+```bash
+python scripts/demo_cli_workbench.py index-build --index-path .demo-index/eureka-local-index.sqlite3 --json
+python scripts/demo_cli_workbench.py index-query archive --index-path .demo-index/eureka-local-index.sqlite3 --json
+```
+
+This is a local-dev workflow. Public-alpha mode blocks arbitrary caller-provided
+local path controls.
+
+### Inspect Source Registry State
+
+```bash
+python scripts/demo_cli_workbench.py sources
+python scripts/demo_cli_workbench.py source github-releases-recorded-fixtures
+```
+
+This shows the governed source inventory through the public boundary.
+
+### Run the Archive Eval Harness
+
+```bash
+python scripts/run_archive_resolution_evals.py --task windows_7_apps
+```
+
+The eval runner reports satisfied, partial, not-satisfied, not-evaluable, and
+capability-gap checks. It is not a ranking benchmark.
+
+### Check Public-Alpha Posture
+
+```bash
+python scripts/public_alpha_smoke.py
+python scripts/demo_http_api.py --mode public_alpha status
+```
+
+These checks exercise safe public-alpha routes and blocked local-path routes
+without deploying anything.
+
+## Architecture At a Glance
+
+```text
+raw query or target_ref
+  -> query planner / exact resolver / deterministic search
+  -> source registry + local corpus + optional local index
+  -> resolution run, evidence, absence, representations, actions
+  -> gateway public boundary
+  -> CLI / HTML / local HTTP API
+  -> memory, evals, public-alpha checks, Python-oracle goldens
+```
+
+Boundary rule of thumb:
+
+```text
+control/       governance and inventories
+contracts/     governed schemas and surface contracts
+runtime/engine engine behavior and interfaces
+runtime/gateway public runtime boundary
+surfaces/      CLI, HTML, and local HTTP API
+crates/        future Rust lane, isolated from active runtime
+```
+
+The accepted architecture frames Eureka through:
+
+- six logical graphs:
+  [object, representation, temporal, claim/provenance, access/action,
+  user/strategy](docs/architecture/LOGICAL_GRAPHS.md)
+- five physical subsystem directions:
+  [CAS store, canonical core, lexical index, semantic recall index,
+  worker plane](docs/architecture/PHYSICAL_SUBSYSTEMS.md)
+
+Only bounded Python reference slices are active today. Vector/semantic recall,
+production queues, and production Rust services remain future work.
+
+## Repository Map
+
+| Path | Purpose |
+| --- | --- |
+| `.aide/` | Repo-operating metadata only; not product runtime behavior |
+| `contracts/` | Governed schemas, protocols, public API contracts, UI contracts |
+| `control/` | Governance material, source inventory, route inventory, research notes |
+| `crates/` | Future Rust backend lane; currently skeleton plus source-registry parity candidate |
+| `docs/` | Vision, architecture, roadmap, operations, standards, decisions |
+| `docs/operations/public_alpha_hosting_pack/` | Supervised public-alpha rehearsal evidence packet |
+| `evals/` | Archive-resolution eval packet and related eval scaffolding |
+| `runtime/` | Python reference engine, connectors, gateway public boundary, source registry |
+| `scripts/` | Demo commands, eval runner, safety checks, golden generators |
+| `surfaces/` | Server-rendered web workbench, local HTTP API, native CLI surface |
+| `tests/` | Integration, operations, parity, architecture, and script tests |
+
+## Documentation Map
+
+Start here:
+
+- [Bootstrap Status](docs/BOOTSTRAP_STATUS.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Decisions](docs/DECISIONS.md)
+- [Open Questions](docs/OPEN_QUESTIONS.md)
+- [Scripts](scripts/README.md)
+
+Product and doctrine:
+
+- [Eureka Thesis](docs/vision/EUREKA_THESIS.md)
+- [Doctrine](docs/vision/DOCTRINE.md)
+- [Product Promise](docs/vision/PRODUCT_PROMISE.md)
+- [Temporal Object Resolver](docs/architecture/TEMPORAL_OBJECT_RESOLVER.md)
+- [Research note: temporal object resolution engine](control/research/temporal-object-resolution-engine.md)
+
+Architecture:
+
+- [Architecture Overview](docs/ARCHITECTURE.md)
+- [Logical Graphs](docs/architecture/LOGICAL_GRAPHS.md)
+- [Physical Subsystems](docs/architecture/PHYSICAL_SUBSYSTEMS.md)
+- [Query Planner](docs/architecture/QUERY_PLANNER.md)
+- [Resolution Memory](docs/architecture/RESOLUTION_MEMORY.md)
+- [AI Policy](docs/architecture/AI_POLICY.md)
+- [Rust Backend Lane](docs/architecture/RUST_BACKEND_LANE.md)
+
+Roadmaps and operations:
+
+- [Backend Roadmap](docs/roadmap/BACKEND_ROADMAP.md)
+- [Public Alpha](docs/roadmap/PUBLIC_ALPHA.md)
+- [Rust Migration](docs/roadmap/RUST_MIGRATION.md)
+- [Native Apps Later](docs/roadmap/NATIVE_APPS_LATER.md)
+- [Public Alpha Safe Mode](docs/operations/PUBLIC_ALPHA_SAFE_MODE.md)
+- [Public Alpha Readiness Review](docs/operations/PUBLIC_ALPHA_READINESS_REVIEW.md)
+- [Public Alpha Hosting Pack](docs/operations/public_alpha_hosting_pack/README.md)
+
+Evals and parity:
+
+- [Archive Resolution Evals](evals/archive_resolution/README.md)
+- [Search Benchmark Design](docs/evals/SEARCH_BENCHMARK_DESIGN.md)
+- [Rust Parity Plan](tests/parity/PARITY_PLAN.md)
+- [Python Oracle Golden Fixtures](tests/parity/golden/python_oracle/v0/README.md)
+
+## Current Maturity
+
+Eureka is substantial, but it is still a prototype/reference backend:
+
+- Python is the executable specification, reference backend, and oracle.
+- Public-alpha safe mode exists, but it is not production deployment.
+- The hosting pack supports supervised rehearsal evidence, not open-internet
+  approval.
+- Rust has a workspace, parity fixtures, and one isolated source-registry
+  candidate. It does not replace Python and is not used by web, CLI, HTTP API,
+  workers, or production paths.
+- Native apps are deferred. The current native surface is a stdlib CLI proof.
+- Live crawling, source sync, ranking, fuzzy retrieval, vector search, LLM
+  planning, auth, accounts, HTTPS/TLS, rate limiting, process supervision, and
+  deployment infrastructure are intentionally out of scope.
+
+## Roadmap
+
+Accepted immediate next milestone:
+
+1. Rust Query Planner Parity Candidate v0
+
+Broader near-term direction:
+
+1. keep Python as oracle while adding Rust candidates only when parity fixtures
+   exist
+2. preserve public-alpha safety checks and capture rehearsal evidence
+3. expand source and eval coverage without weakening hard queries
+4. harden backend contracts, run models, memory, and local index behavior
+5. move toward hosted alpha only after explicit blockers are resolved
+6. keep native app shells later, after backend infrastructure is stronger
+
+No exact dates are promised.
+
+## Development Rules
+
+- Keep the Python executable lane stdlib-only unless the repo deliberately
+  changes that policy.
+- Preserve architecture boundaries; surfaces must not import engine internals.
+- Use gateway public APIs from web, CLI, and HTTP-facing code.
+- Treat evals and Python-oracle goldens as guardrails, not decoration.
+- Do not claim production readiness without evidence and accepted decisions.
+- For nontrivial Codex/agent tasks, work in two passes: implementation, then
+  hardening.
+- Verify before claiming completion.
+- Sync the branch to origin at the end of each completed prompt/task when the
+  environment supports it.
+
+Useful checks:
+
+```bash
+python -m unittest discover -s runtime -t .
+python -m unittest discover -s surfaces -t .
+python -m unittest discover -s tests -t .
+python scripts/check_architecture_boundaries.py
+python scripts/public_alpha_smoke.py
+```
+
+## Contributing
+
+There is not yet a formal open-source contribution process. For now, useful
+contributions should be small, evidence-backed, boundary-preserving, and honest
+about maturity. Start with the docs above, run the verification commands, and
+avoid broadening scope into production deployment, native apps, live crawling,
+or ungoverned retrieval semantics.
+
+## License
+
+No license file is present in this repository yet. Licensing is not finalized.
+
+## Acknowledgements
+
+Eureka is shaped by the archive, preservation, software-history, search,
+package-inspection, and reproducibility ecosystems. This README also borrows
+general quality principles from public README curation projects: strong
+opening identity, honest status, useful quickstart commands, clear navigation,
+and no decorative claims the repo cannot support.
