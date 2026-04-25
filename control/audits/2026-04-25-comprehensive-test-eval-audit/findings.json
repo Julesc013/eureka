@@ -1,0 +1,297 @@
+{
+  "inventory_kind": "eureka.audit_findings",
+  "version": "0.1.0",
+  "created_by_audit": "comprehensive_test_eval_audit_v0",
+  "findings": [
+    {
+      "finding_id": "CTEA-STRUCT-001",
+      "title": "Navigation roots are uneven for docs and AIDE metadata",
+      "severity": "medium",
+      "category": "docs_navigation_gap",
+      "area": "docs,.aide",
+      "status": "accepted",
+      "evidence": [
+        "docs/ had no top-level README.md before this audit.",
+        ".aide/ had no top-level README.md before this audit while command metadata is substantial.",
+        "This audit adds concise top-level README pointers; a drift guard remains future work."
+      ],
+      "impact": "New contributors and agents can miss critical operating guidance.",
+      "recommended_next_test": "Docs link and required index drift guard.",
+      "recommended_next_work": "Add a docs link and command drift guard so navigation roots stay accurate.",
+      "suggested_milestone": "Docs Link/Command Drift Guard v0",
+      "blocked_by": [],
+      "do_not_do": [
+        "Do not make product maturity claims in navigation indexes.",
+        "Do not move runtime files."
+      ],
+      "owner_hint": "docs",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-STRUCT-002",
+      "title": "Command metadata can drift across AIDE, docs, scripts, and registry",
+      "severity": "medium",
+      "category": "structure_gap",
+      "area": ".aide,control/inventory/tests,scripts",
+      "status": "open",
+      "evidence": [
+        ".aide/commands/dev.yaml and ci.yaml are manually maintained.",
+        "control/inventory/tests/test_registry.json now provides a structured command inventory."
+      ],
+      "impact": "Agents may run stale commands or miss required checks.",
+      "recommended_next_test": "Command drift guard for registry ids and script paths.",
+      "recommended_next_work": "Decide command registry source-of-truth boundaries.",
+      "suggested_milestone": "Docs Link/Command Drift Guard v0",
+      "blocked_by": [
+        "Existing AIDE command files are non-JSON YAML"
+      ],
+      "do_not_do": [
+        "Do not make optional Rust commands required.",
+        "Do not delete existing AIDE metadata without a migration task."
+      ],
+      "owner_hint": "repo-operations",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-STRUCT-003",
+      "title": "Route inventory is static and manually curated",
+      "severity": "low",
+      "category": "route_inventory_gap",
+      "area": "control/inventory/public_alpha_routes.json",
+      "status": "monitor",
+      "evidence": [
+        "Route inventory has 89 entries.",
+        "Current tests validate structure and local-path policy but do not discover every server route automatically."
+      ],
+      "impact": "Future route additions could be missed by inventory unless tests or review catch them.",
+      "recommended_next_test": "Route discovery or handler-table comparison when route structure is centralized.",
+      "recommended_next_work": "Keep manual route inventory explicit and add a drift guard later.",
+      "suggested_milestone": "Hard Test Pack v0",
+      "blocked_by": [
+        "No single central route table yet"
+      ],
+      "do_not_do": [
+        "Do not loosen route policy.",
+        "Do not redesign server routing in this audit."
+      ],
+      "owner_hint": "surfaces-web",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-CONTENT-001",
+      "title": "Source coverage is the dominant usefulness blocker",
+      "severity": "high",
+      "category": "source_coverage_gap",
+      "area": "control/inventory/sources,evals/search_usefulness",
+      "status": "open",
+      "evidence": [
+        "The source registry has 6 records.",
+        "Search Usefulness Audit v0 reports 43 source_gap queries out of 64."
+      ],
+      "impact": "Eureka cannot yet satisfy many real archive-resolution queries regardless of planner or index quality.",
+      "recommended_next_test": "Recorded fixture validation for each new source family.",
+      "recommended_next_work": "Add governed recorded fixtures for one or two high-value query families.",
+      "suggested_milestone": "Real Source Coverage Pack v0",
+      "blocked_by": [
+        "No recorded fixtures for legacy browser releases, drivers, OCR scans, or dead-link snapshots"
+      ],
+      "do_not_do": [
+        "Do not add live crawling.",
+        "Do not scrape external search engines."
+      ],
+      "owner_hint": "source-registry",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-CONTENT-002",
+      "title": "Container, member, and article-level queries need resource fixtures",
+      "severity": "high",
+      "category": "decomposition_gap",
+      "area": "evals/search_usefulness,runtime/engine/decomposition,runtime/engine/members",
+      "status": "open",
+      "evidence": [
+        "Search-usefulness query families include article_inside_scan and package_container_member.",
+        "Current decomposition/member behavior is proven only for bounded ZIP fixtures."
+      ],
+      "impact": "Eureka cannot yet prove smallest actionable unit behavior for support media, ISOs, scans, or OCR articles.",
+      "recommended_next_test": "Hard tests that reject parent-container-only success when a member/article is requested.",
+      "recommended_next_work": "Add recorded support-media and OCR snippet fixtures before broader decomposition work.",
+      "suggested_milestone": "Real Source Coverage Pack v0",
+      "blocked_by": [
+        "Missing support-media and OCR fixtures"
+      ],
+      "do_not_do": [
+        "Do not build a broad extractor framework yet.",
+        "Do not claim OCR/full-text coverage."
+      ],
+      "owner_hint": "evals",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-CONTENT-003",
+      "title": "External baseline observations are intentionally pending",
+      "severity": "medium",
+      "category": "eval_truth_gap",
+      "area": "evals/search_usefulness/observations",
+      "status": "open",
+      "evidence": [
+        "Search Usefulness Audit v0 marks Google, Internet Archive metadata, and Internet Archive full-text baselines as pending_manual_observation for all 64 queries.",
+        "No committed external observation records are present."
+      ],
+      "impact": "The repo can compare Eureka's local output dimensions but cannot yet claim observed external wins or losses.",
+      "recommended_next_test": "Reject observed external records that lack manual evidence metadata.",
+      "recommended_next_work": "Define a manual baseline observation acceptance process.",
+      "suggested_milestone": "Manual Baseline Evidence Pack v0",
+      "blocked_by": [
+        "Human observation policy not yet accepted"
+      ],
+      "do_not_do": [
+        "Do not fabricate Google or Internet Archive results.",
+        "Do not scrape external systems."
+      ],
+      "owner_hint": "evals",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-BEHAVIOR-001",
+      "title": "Smallest actionable unit doctrine is only partially proven",
+      "severity": "high",
+      "category": "member_access_gap",
+      "area": "runtime/engine/decomposition,runtime/engine/members,evals",
+      "status": "open",
+      "evidence": [
+        "ZIP member listing and readback are implemented for bounded fixtures.",
+        "Hard evals for driver inside support media and article inside scanned magazine remain gaps."
+      ],
+      "impact": "Eureka's central promise is not yet proven on the hardest archive-resolution object classes.",
+      "recommended_next_test": "Member-level hard evals that distinguish parent container from actionable member.",
+      "recommended_next_work": "Add support-media and scanned-article fixture lanes before expanding behavior.",
+      "suggested_milestone": "Eval Capability Gap Reduction Pack v0",
+      "blocked_by": [
+        "Source/resource fixture gaps"
+      ],
+      "do_not_do": [
+        "Do not mark parent containers as satisfied when member-level evidence is required."
+      ],
+      "owner_hint": "runtime-engine",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-BEHAVIOR-002",
+      "title": "Compatibility clarity lacks source-rich evidence",
+      "severity": "medium",
+      "category": "compatibility_evidence_gap",
+      "area": "runtime/engine/compatibility,evals/search_usefulness",
+      "status": "open",
+      "evidence": [
+        "Compatibility seam exists with fixed host profile presets.",
+        "Search usefulness reports compatibility_evidence_gap across legacy OS queries."
+      ],
+      "impact": "Legacy software queries need source-backed OS/version evidence before recommendations are trustworthy.",
+      "recommended_next_test": "Compatibility verdict tests requiring evidence references for known outcomes.",
+      "recommended_next_work": "Add compatibility evidence fixtures for selected releases and drivers.",
+      "suggested_milestone": "Compatibility Evidence Fixture Pack v0",
+      "blocked_by": [
+        "Missing source-backed compatibility fixtures"
+      ],
+      "do_not_do": [
+        "Do not invent compatibility from names or dates alone."
+      ],
+      "owner_hint": "runtime-engine",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-BEHAVIOR-003",
+      "title": "Identity and disagreement handling needs richer multi-source cases",
+      "severity": "medium",
+      "category": "identity_cluster_gap",
+      "area": "runtime/engine/compare,runtime/engine/states",
+      "status": "open",
+      "evidence": [
+        "Comparison and subject-state seams exist.",
+        "Current corpus has few meaningful multi-source disagreement or ambiguity cases."
+      ],
+      "impact": "The repo cannot yet prove durable handling of ambiguous names, version aliases, or source disagreement.",
+      "recommended_next_test": "Multi-source disagreement fixture with conflicting release metadata.",
+      "recommended_next_work": "Add recorded fixture pairs that disagree without requiring merge/trust ranking.",
+      "suggested_milestone": "Real Source Coverage Pack v0",
+      "blocked_by": [
+        "Limited source corpus"
+      ],
+      "do_not_do": [
+        "Do not introduce trust ranking or fuzzy merge to hide disagreement."
+      ],
+      "owner_hint": "runtime-engine",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-TEST-001",
+      "title": "Hard eval weakening needs an explicit guard",
+      "severity": "high",
+      "category": "eval_truth_gap",
+      "area": "evals,tests/evals",
+      "status": "open",
+      "evidence": [
+        "Archive-resolution and search-usefulness evals are intentionally hard.",
+        "Current tests validate structure and runner output but do not lock every hard expectation against weakening."
+      ],
+      "impact": "Future changes could make evals easier without improving behavior.",
+      "recommended_next_test": "Snapshot hard query ids, expected current statuses, and expected gap classes.",
+      "recommended_next_work": "Implement a Hard Test Pack v0 focused on eval truth preservation.",
+      "suggested_milestone": "Hard Test Pack v0",
+      "blocked_by": [],
+      "do_not_do": [
+        "Do not rewrite hard fixtures to look green."
+      ],
+      "owner_hint": "tests-evals",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-TEST-002",
+      "title": "Docs link and command drift are under-tested",
+      "severity": "medium",
+      "category": "test_coverage_gap",
+      "area": "README.md,docs,scripts,.aide",
+      "status": "open",
+      "evidence": [
+        "README, scripts README, AIDE metadata, and operations docs all reference commands.",
+        "No dedicated link/command existence checker exists."
+      ],
+      "impact": "Repo navigation can silently go stale even while runtime tests pass.",
+      "recommended_next_test": "Stdlib docs command/link drift guard.",
+      "recommended_next_work": "Check required docs links and script file references.",
+      "suggested_milestone": "Docs Link/Command Drift Guard v0",
+      "blocked_by": [],
+      "do_not_do": [
+        "Do not add external markdown tooling unless explicitly accepted."
+      ],
+      "owner_hint": "tests-operations",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-RUST-001",
+      "title": "Rust parity lane is healthy but narrow",
+      "severity": "medium",
+      "category": "rust_parity_gap",
+      "area": "crates,tests/parity",
+      "status": "open",
+      "evidence": [
+        "Rust source-registry candidate exists.",
+        "Python oracle goldens cover more seams than Rust candidate behavior currently implements."
+      ],
+      "impact": "Rust migration cannot safely replace Python behavior until more seam parity exists.",
+      "recommended_next_test": "Rust query-planner JSON parity tests against Python oracle goldens.",
+      "recommended_next_work": "Implement Rust Query Planner Parity Candidate v0 without wiring it into runtime.",
+      "suggested_milestone": "Rust Query Planner Parity Candidate v0",
+      "blocked_by": [
+        "Cargo may be unavailable in some environments"
+      ],
+      "do_not_do": [
+        "Do not replace Python runtime paths.",
+        "Do not add Rust gateway, CLI, FFI, or services."
+      ],
+      "owner_hint": "rust-parity",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    }
+  ]
+}

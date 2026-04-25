@@ -1,0 +1,20 @@
+Prepared final verification command list for this audit:
+
+python -m unittest discover -s runtime -t .
+python -m unittest discover -s surfaces -t .
+python -m unittest discover -s tests -t .
+python scripts/check_architecture_boundaries.py
+python scripts/public_alpha_smoke.py
+python scripts/generate_python_oracle_golden.py --check
+python scripts/run_archive_resolution_evals.py
+python scripts/run_search_usefulness_audit.py
+git diff --check
+git status --short --branch
+
+Optional when Cargo is installed:
+
+cargo check --workspace --manifest-path crates/Cargo.toml
+cargo test --workspace --manifest-path crates/Cargo.toml
+
+Final run results are reported in the task final response.
+

@@ -1,0 +1,79 @@
+{
+  "created_by_audit": "comprehensive_test_eval_audit_v0",
+  "findings": [
+    {
+      "finding_id": "CTEA-STRUCT-001",
+      "title": "Navigation roots are uneven for docs and AIDE metadata",
+      "severity": "medium",
+      "category": "docs_navigation_gap",
+      "area": "docs,.aide",
+      "status": "accepted",
+      "evidence": [
+        "Top-level docs/ had no README.md before this audit.",
+        "Top-level .aide/ had no README.md before this audit, while .aide/commands is a major operating metadata area.",
+        "This audit adds concise top-level README pointers; a drift guard remains future work."
+      ],
+      "impact": "New agents and contributors can miss important operating rules or mistake dense status ledgers for navigation.",
+      "recommended_next_test": "Add a docs link and navigation drift guard that checks required README/index files.",
+      "recommended_next_work": "Add a docs link and command drift guard so the new navigation roots stay accurate.",
+      "suggested_milestone": "Docs Link/Command Drift Guard v0",
+      "blocked_by": [],
+      "do_not_do": [
+        "Do not turn docs indexes into product claims.",
+        "Do not move runtime files as part of a docs navigation fix."
+      ],
+      "owner_hint": "docs",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-STRUCT-002",
+      "title": "Command metadata is manually duplicated across AIDE files and new registry",
+      "severity": "medium",
+      "category": "structure_gap",
+      "area": ".aide,control/inventory/tests",
+      "status": "open",
+      "evidence": [
+        ".aide/commands/dev.yaml contains a long manually maintained command list.",
+        "control/inventory/tests/test_registry.json now records a smaller canonical verification registry."
+      ],
+      "impact": "Commands can drift between AIDE metadata, docs, and actual scripts/tests.",
+      "recommended_next_test": "Add a command drift guard that checks registry commands exist and selected AIDE command ids match registry ids.",
+      "recommended_next_work": "Decide whether the registry becomes the source of truth for verification lanes.",
+      "suggested_milestone": "Docs Link/Command Drift Guard v0",
+      "blocked_by": [
+        "No structured parser for existing non-JSON YAML command metadata"
+      ],
+      "do_not_do": [
+        "Do not replace existing AIDE metadata with generated output without a migration task.",
+        "Do not make optional Cargo commands required."
+      ],
+      "owner_hint": "repo-operations",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    },
+    {
+      "finding_id": "CTEA-STRUCT-003",
+      "title": "Route and command inventories are static rather than discovery-backed",
+      "severity": "low",
+      "category": "route_inventory_gap",
+      "area": "control/inventory,surfaces/web/server",
+      "status": "monitor",
+      "evidence": [
+        "control/inventory/public_alpha_routes.json has 89 manually curated route entries.",
+        "Public-alpha tests validate the inventory structure and policy posture but do not perform complete route discovery."
+      ],
+      "impact": "A future route could be added without being inventoried if tests do not catch it.",
+      "recommended_next_test": "Add route-discovery or handler-table comparison if the server route structure becomes easy to enumerate.",
+      "recommended_next_work": "Keep manual inventory for now and treat route discovery as a future hardening task.",
+      "suggested_milestone": "Hard Test Pack v0",
+      "blocked_by": [
+        "Current stdlib server routes are not yet represented as one central route table"
+      ],
+      "do_not_do": [
+        "Do not redesign the web server just to satisfy inventory discovery.",
+        "Do not loosen public-alpha blocking to simplify inventory."
+      ],
+      "owner_hint": "surfaces-web",
+      "created_by_audit": "comprehensive_test_eval_audit_v0"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "created_by_audit": "comprehensive_test_eval_audit_v0",
+  "items": [
+    {
+      "id": "resource-browser-release-fixtures",
+      "title": "Recorded latest-compatible browser release fixtures",
+      "category": "source_coverage_gap",
+      "priority": 1,
+      "query_families": [
+        "latest_compatible_release",
+        "platform_software"
+      ],
+      "needed_assets": [
+        "recorded release metadata",
+        "release notes snippets",
+        "compatibility/date evidence"
+      ],
+      "first_tests": [
+        "latest Firefox before XP support ended remains source-backed",
+        "last Chrome for Windows XP returns an evidence-backed gap until fixtures exist"
+      ],
+      "do_not_do": [
+        "no live scraping",
+        "no fuzzy latest-version inference"
+      ]
+    },
+    {
+      "id": "resource-driver-support-media-fixtures",
+      "title": "Recorded legacy driver and support-media fixtures",
+      "category": "source_coverage_gap",
+      "priority": 2,
+      "query_families": [
+        "driver_hardware_support",
+        "package_container_member"
+      ],
+      "needed_assets": [
+        "support CD manifests",
+        "driver INF member examples",
+        "platform compatibility notes"
+      ],
+      "first_tests": [
+        "ThinkPad T42 Wi-Fi Windows 2000 driver maps to member-level evidence",
+        "driver inside support CD reports member access gaps honestly"
+      ],
+      "do_not_do": [
+        "no installer execution",
+        "no broad extraction framework"
+      ]
+    },
+    {
+      "id": "resource-magazine-ocr-fixtures",
+      "title": "Recorded magazine issue and OCR snippet fixtures",
+      "category": "decomposition_gap",
+      "priority": 3,
+      "query_families": [
+        "article_inside_scan",
+        "manual_documentation"
+      ],
+      "needed_assets": [
+        "issue metadata",
+        "OCR text snippets",
+        "page or article evidence"
+      ],
+      "first_tests": [
+        "article inside scanned magazine is not satisfied by issue-level metadata alone",
+        "OCR absence remains explicit when no snippet matches"
+      ],
+      "do_not_do": [
+        "no Internet Archive scraping",
+        "no claim of full-text search coverage"
+      ]
+    },
+    {
+      "id": "resource-dead-link-recorded-fixtures",
+      "title": "Recorded dead-link and archived-page fixtures",
+      "category": "live_source_gap",
+      "priority": 4,
+      "query_families": [
+        "web_archive_dead_link"
+      ],
+      "needed_assets": [
+        "archived URL metadata",
+        "snapshot date evidence",
+        "original vendor source hints"
+      ],
+      "first_tests": [
+        "archived Microsoft download center query records snapshot evidence",
+        "dead vendor support page remains pending without recorded snapshot"
+      ],
+      "do_not_do": [
+        "no live Wayback crawling",
+        "no Google scraping"
+      ]
+    }
+  ]
+}
+

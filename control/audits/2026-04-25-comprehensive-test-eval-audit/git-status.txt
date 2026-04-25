@@ -1,0 +1,7 @@
+Final `git status --short --branch` is reported in the task final response
+after commits and origin sync.
+
+This committed file avoids storing a volatile ahead/behind value that changes
+when the audit pack itself is committed. Baseline status before audit work was:
+
+## main...origin/main

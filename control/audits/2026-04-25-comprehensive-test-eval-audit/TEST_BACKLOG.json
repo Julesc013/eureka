@@ -1,0 +1,46 @@
+{
+  "created_by_audit": "comprehensive_test_eval_audit_v0",
+  "items": [
+    {
+      "test_id": "HTP-006",
+      "title": "Hard eval weakening guard",
+      "category": "eval_truth_gap",
+      "severity": "high",
+      "target": "evals/archive_resolution,evals/search_usefulness",
+      "suggested_milestone": "Hard Test Pack v0"
+    },
+    {
+      "test_id": "HTP-007",
+      "title": "External baseline fabrication guard",
+      "category": "eval_truth_gap",
+      "severity": "high",
+      "target": "evals/search_usefulness/observations",
+      "suggested_milestone": "Hard Test Pack v0"
+    },
+    {
+      "test_id": "HTP-004",
+      "title": "Public-alpha local path leakage sentinel test",
+      "category": "public_alpha_safety_gap",
+      "severity": "high",
+      "target": "surfaces/web/server",
+      "suggested_milestone": "Hard Test Pack v0"
+    },
+    {
+      "test_id": "HTP-005",
+      "title": "Docs link and command drift guard",
+      "category": "docs_navigation_gap",
+      "severity": "medium",
+      "target": "README.md,docs,scripts",
+      "suggested_milestone": "Docs Link/Command Drift Guard v0"
+    },
+    {
+      "test_id": "HTP-010",
+      "title": "Planner misclassification hard cases",
+      "category": "planner_gap",
+      "severity": "high",
+      "target": "runtime/engine/query_planner",
+      "suggested_milestone": "Planner Gap Reduction Pack v0"
+    }
+  ]
+}
+
