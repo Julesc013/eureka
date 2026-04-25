@@ -1,0 +1,38 @@
+{
+  "backlog_kind": "eureka.audit_backlog",
+  "version": "0.1.0",
+  "created_by_slice": "comprehensive_test_eval_audit_v0",
+  "items": [
+    {
+      "id": "audit-backlog-hard-tests",
+      "finding_refs": [
+        "CTEA-TEST-001",
+        "CTEA-EVAL-001"
+      ],
+      "title": "Promote hard-test proposals into executable tests",
+      "status": "open",
+      "suggested_milestone": "Hard Test Pack v0"
+    },
+    {
+      "id": "audit-backlog-source-coverage",
+      "finding_refs": [
+        "CTEA-CONTENT-001",
+        "CTEA-CONTENT-002"
+      ],
+      "title": "Prioritize recorded fixture source coverage for source-gap query families",
+      "status": "open",
+      "suggested_milestone": "Real Source Coverage Pack v0"
+    },
+    {
+      "id": "audit-backlog-doc-drift",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Add docs link and command drift guards",
+      "status": "open",
+      "suggested_milestone": "Docs Link/Command Drift Guard v0"
+    }
+  ]
+}
+

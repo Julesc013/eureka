@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Eureka Test Registry Record",
+  "type": "object",
+  "required": [
+    "test_id",
+    "label",
+    "command",
+    "category",
+    "owner_area",
+    "required_for",
+    "requires",
+    "network",
+    "writes",
+    "expected_runtime",
+    "failure_means",
+    "advisory_or_required",
+    "notes"
+  ],
+  "properties": {
+    "test_id": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "command": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "unit",
+        "integration",
+        "architecture",
+        "contract",
+        "eval",
+        "parity",
+        "operations",
+        "public_alpha",
+        "golden",
+        "smoke",
+        "audit",
+        "regression",
+        "hard_query"
+      ]
+    },
+    "owner_area": {
+      "type": "string"
+    },
+    "required_for": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requires": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "network": {
+      "type": "string",
+      "enum": [
+        "none",
+        "optional_manual",
+        "external_tooling"
+      ]
+    },
+    "writes": {
+      "type": "string"
+    },
+    "expected_runtime": {
+      "type": "string"
+    },
+    "failure_means": {
+      "type": "string"
+    },
+    "advisory_or_required": {
+      "type": "string",
+      "enum": [
+        "required",
+        "advisory",
+        "optional"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
+

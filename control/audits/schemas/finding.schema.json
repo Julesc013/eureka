@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Eureka Audit Finding",
+  "type": "object",
+  "required": [
+    "finding_id",
+    "title",
+    "severity",
+    "category",
+    "area",
+    "status",
+    "evidence",
+    "impact",
+    "recommended_next_test",
+    "recommended_next_work",
+    "suggested_milestone",
+    "blocked_by",
+    "do_not_do",
+    "owner_hint",
+    "created_by_audit"
+  ],
+  "properties": {
+    "finding_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "critical",
+        "high",
+        "medium",
+        "low",
+        "info"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "area": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "impact": {
+      "type": "string"
+    },
+    "recommended_next_test": {
+      "type": "string"
+    },
+    "recommended_next_work": {
+      "type": "string"
+    },
+    "suggested_milestone": {
+      "type": "string"
+    },
+    "blocked_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "do_not_do": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner_hint": {
+      "type": "string"
+    },
+    "created_by_audit": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
+

@@ -1,0 +1,41 @@
+{
+  "inventory_kind": "eureka.audit_finding_categories",
+  "version": "0.1.0",
+  "created_by_slice": "comprehensive_test_eval_audit_v0",
+  "severities": [
+    "critical",
+    "high",
+    "medium",
+    "low",
+    "info"
+  ],
+  "categories": [
+    "source_coverage_gap",
+    "planner_gap",
+    "query_interpretation_gap",
+    "index_gap",
+    "decomposition_gap",
+    "member_access_gap",
+    "representation_gap",
+    "compatibility_evidence_gap",
+    "identity_cluster_gap",
+    "ranking_gap",
+    "absence_reasoning_gap",
+    "public_alpha_safety_gap",
+    "rust_parity_gap",
+    "docs_navigation_gap",
+    "test_coverage_gap",
+    "structure_gap",
+    "stale_status",
+    "route_inventory_gap",
+    "eval_truth_gap"
+  ],
+  "statuses": [
+    "open",
+    "accepted",
+    "deferred",
+    "blocked",
+    "monitor"
+  ]
+}
+

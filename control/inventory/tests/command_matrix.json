@@ -1,0 +1,111 @@
+{
+  "inventory_kind": "eureka.command_matrix",
+  "version": "0.1.0",
+  "created_by_slice": "comprehensive_test_eval_audit_v0",
+  "lanes": [
+    {
+      "lane_id": "fast",
+      "purpose": "Quick local sanity before or during a small task.",
+      "commands": [
+        "architecture_boundaries",
+        "docs_diff_check"
+      ],
+      "required_status": "required",
+      "when_to_run": "After small edits that could touch layering or before handing off a partial branch.",
+      "notes": "Fast is not enough for final completion of runtime, eval, or operations tasks."
+    },
+    {
+      "lane_id": "standard",
+      "purpose": "Normal Codex completion checks for most Python/docs/governance tasks.",
+      "commands": [
+        "runtime_tests",
+        "surfaces_tests",
+        "repo_tests",
+        "architecture_boundaries",
+        "operating_layer_validation",
+        "comprehensive_audit_pack_validation",
+        "docs_diff_check"
+      ],
+      "required_status": "required",
+      "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
+      "notes": "This lane stays stdlib/Python-only."
+    },
+    {
+      "lane_id": "full",
+      "purpose": "Pre-sync or pre-PR evidence lane.",
+      "commands": [
+        "runtime_tests",
+        "surfaces_tests",
+        "repo_tests",
+        "architecture_boundaries",
+        "public_alpha_smoke",
+        "hosting_pack_generator_check",
+        "python_oracle_golden_check",
+        "archive_resolution_eval_runner",
+        "search_usefulness_audit_runner",
+        "docs_diff_check"
+      ],
+      "required_status": "required",
+      "when_to_run": "Before origin sync for large repo-wide tasks.",
+      "notes": "Does not include optional Cargo checks."
+    },
+    {
+      "lane_id": "docs_only",
+      "purpose": "Docs, index, README, audit, or command metadata edits.",
+      "commands": [
+        "operating_layer_validation",
+        "comprehensive_audit_pack_validation",
+        "docs_diff_check"
+      ],
+      "required_status": "required",
+      "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
+      "notes": "Use standard/full if docs update accepted status, eval posture, public-alpha safety, or parity claims."
+    },
+    {
+      "lane_id": "public_alpha",
+      "purpose": "Constrained public-alpha route posture checks.",
+      "commands": [
+        "public_alpha_smoke",
+        "route_inventory_validation",
+        "hosting_pack_generator_check"
+      ],
+      "required_status": "required",
+      "when_to_run": "After web/API route-policy, status, route inventory, or hosting-pack changes.",
+      "notes": "This is rehearsal evidence only and not production readiness."
+    },
+    {
+      "lane_id": "parity",
+      "purpose": "Python-oracle and future Rust parity discipline.",
+      "commands": [
+        "python_oracle_golden_check",
+        "source_registry_validation"
+      ],
+      "required_status": "required",
+      "when_to_run": "After Python oracle, source-registry, query-planner, local-index, memory, or Rust parity fixture changes.",
+      "notes": "Rust candidate commands live in rust_optional until Cargo is required."
+    },
+    {
+      "lane_id": "audit",
+      "purpose": "Executable eval/audit guardrails.",
+      "commands": [
+        "archive_resolution_eval_runner",
+        "search_usefulness_audit_runner"
+      ],
+      "required_status": "required",
+      "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
+      "notes": "External baseline observations remain manual and pending unless committed as evidence records."
+    },
+    {
+      "lane_id": "rust_optional",
+      "purpose": "Optional Rust skeleton and candidate seam checks.",
+      "commands": [
+        "cargo_check_optional",
+        "cargo_test_optional"
+      ],
+      "required_status": "optional",
+      "when_to_run": "Only when Cargo is installed in the local environment.",
+      "notes": "Never fail normal Python verification solely because Cargo is unavailable."
+    }
+  ]
+}
+

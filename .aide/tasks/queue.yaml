@@ -1,0 +1,42 @@
+{
+  "queue_kind": "eureka.aide_task_queue",
+  "version": "0.1.0",
+  "created_by_slice": "comprehensive_test_eval_audit_v0",
+  "items": [
+    {
+      "id": "comprehensive_test_eval_audit_v0",
+      "title": "Comprehensive Test/Eval Operating Layer and Repo Audit v0",
+      "status": "completed",
+      "priority": 1,
+      "notes": "Create the reusable operating layer and dated repo audit pack."
+    },
+    {
+      "id": "hard_test_pack_v0",
+      "title": "Hard Test Pack v0",
+      "status": "queued",
+      "priority": 2,
+      "notes": "Turn selected audit hard-test proposals into executable guardrails."
+    },
+    {
+      "id": "rust_query_planner_parity_candidate_v0",
+      "title": "Rust Query Planner Parity Candidate v0",
+      "status": "queued",
+      "priority": 3,
+      "notes": "Implement the next isolated Rust seam only after parity fixtures and hard tests are stable."
+    },
+    {
+      "id": "real_source_coverage_pack_v0",
+      "title": "Real Source Coverage Pack v0",
+      "status": "queued",
+      "priority": 4,
+      "notes": "Add governed recorded fixtures and source records without live crawling."
+    },
+    {
+      "id": "public_alpha_rehearsal_evidence_v0",
+      "title": "Public Alpha Rehearsal Evidence v0",
+      "status": "queued",
+      "priority": 5,
+      "notes": "Capture supervised rehearsal evidence using the hosting pack."
+    }
+  ]
+}

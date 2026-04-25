@@ -1,0 +1,330 @@
+{
+  "inventory_kind": "eureka.test_registry",
+  "version": "0.1.0",
+  "created_by_slice": "comprehensive_test_eval_audit_v0",
+  "records": [
+    {
+      "test_id": "runtime_tests",
+      "label": "Runtime component tests",
+      "command": "python -m unittest discover -s runtime -t .",
+      "category": "unit",
+      "owner_area": "runtime",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where component tests create temp stores",
+      "expected_runtime": "seconds",
+      "failure_means": "A runtime seam or engine/gateway/connector contract regressed.",
+      "advisory_or_required": "required",
+      "notes": "Primary Python reference-backend correctness lane."
+    },
+    {
+      "test_id": "surfaces_tests",
+      "label": "Surface tests",
+      "command": "python -m unittest discover -s surfaces -t .",
+      "category": "unit",
+      "owner_area": "surfaces",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where surface tests create temp stores",
+      "expected_runtime": "seconds",
+      "failure_means": "A web, CLI, or API projection regressed.",
+      "advisory_or_required": "required",
+      "notes": "Surfaces must stay on the public side of the architecture."
+    },
+    {
+      "test_id": "repo_tests",
+      "label": "Repo-level tests",
+      "command": "python -m unittest discover -s tests -t .",
+      "category": "integration",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where integration tests create temp stores",
+      "expected_runtime": "seconds",
+      "failure_means": "A cross-component, operations, eval, architecture, or parity guardrail regressed.",
+      "advisory_or_required": "required",
+      "notes": "Includes architecture, integration, operations, eval, and parity validation."
+    },
+    {
+      "test_id": "architecture_boundaries",
+      "label": "Architecture-boundary checker",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "category": "architecture",
+      "owner_area": "scripts",
+      "required_for": [
+        "fast",
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "A Python import crossed an accepted runtime/gateway/surface/connectors boundary.",
+      "advisory_or_required": "required",
+      "notes": "Narrow repo-local import guardrail, not a universal policy engine."
+    },
+    {
+      "test_id": "public_alpha_smoke",
+      "label": "Public-alpha smoke checks",
+      "command": "python scripts/public_alpha_smoke.py",
+      "category": "public_alpha",
+      "owner_area": "scripts",
+      "required_for": [
+        "public_alpha",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The constrained public-alpha allowed/blocked posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Does not deploy or expose a service."
+    },
+    {
+      "test_id": "hosting_pack_generator_check",
+      "label": "Public-alpha hosting pack summary check",
+      "command": "python scripts/generate_public_alpha_hosting_pack.py --check",
+      "category": "operations",
+      "owner_area": "docs/operations",
+      "required_for": [
+        "public_alpha",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none in check mode",
+      "expected_runtime": "sub-second",
+      "failure_means": "The hosting pack route-safety summary drifted from the route inventory.",
+      "advisory_or_required": "required",
+      "notes": "Documentation consistency check only."
+    },
+    {
+      "test_id": "python_oracle_golden_check",
+      "label": "Python-oracle golden fixture check",
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "category": "golden",
+      "owner_area": "tests/parity",
+      "required_for": [
+        "parity",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary comparison output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Committed Python oracle golden outputs drifted from current reference behavior.",
+      "advisory_or_required": "required",
+      "notes": "Required for Python oracle and future Rust parity discipline."
+    },
+    {
+      "test_id": "archive_resolution_eval_runner",
+      "label": "Archive-resolution eval runner",
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "category": "eval",
+      "owner_area": "evals/archive_resolution",
+      "required_for": [
+        "audit",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary local index unless explicit output path is provided",
+      "expected_runtime": "seconds",
+      "failure_means": "The hard-query archive-resolution guardrail no longer executes or reports honestly.",
+      "advisory_or_required": "required",
+      "notes": "Not a ranking, fuzzy, vector, LLM, crawling, or production relevance benchmark."
+    },
+    {
+      "test_id": "search_usefulness_audit_runner",
+      "label": "Search usefulness audit runner",
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "category": "audit",
+      "owner_area": "evals/search_usefulness",
+      "required_for": [
+        "audit",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary local index unless explicit output path is provided",
+      "expected_runtime": "seconds",
+      "failure_means": "The broad usefulness audit no longer produces local Eureka observations and pending manual baselines.",
+      "advisory_or_required": "required",
+      "notes": "External baselines must remain pending unless a human records observations."
+    },
+    {
+      "test_id": "route_inventory_validation",
+      "label": "Public-alpha route inventory validation",
+      "command": "python -m unittest tests.operations.test_public_alpha_route_inventory",
+      "category": "operations",
+      "owner_area": "control/inventory",
+      "required_for": [
+        "public_alpha",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Public-alpha route inventory structure or local-path classifications regressed.",
+      "advisory_or_required": "required",
+      "notes": "Pairs with public-alpha smoke checks."
+    },
+    {
+      "test_id": "source_registry_validation",
+      "label": "Source registry runtime tests",
+      "command": "python -m unittest runtime.source_registry.tests.test_registry",
+      "category": "contract",
+      "owner_area": "runtime/source_registry",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Source Registry v0 loading, validation, or filtering regressed.",
+      "advisory_or_required": "required",
+      "notes": "Keeps governed source inventory records coherent."
+    },
+    {
+      "test_id": "operating_layer_validation",
+      "label": "Test/eval operating layer validation",
+      "command": "python -m unittest tests.operations.test_test_eval_operating_layer",
+      "category": "operations",
+      "owner_area": "control/inventory/tests",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The test registry, command matrix, or AIDE queue stopped being machine-readable.",
+      "advisory_or_required": "required",
+      "notes": "Added by Comprehensive Test/Eval Operating Layer and Repo Audit v0."
+    },
+    {
+      "test_id": "comprehensive_audit_pack_validation",
+      "label": "Comprehensive audit pack validation",
+      "command": "python -m unittest tests.operations.test_comprehensive_audit_pack",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The comprehensive audit pack lost required files, structured findings, or anti-fake-success guardrails.",
+      "advisory_or_required": "required",
+      "notes": "Validates the repo-native audit outputs from this milestone."
+    },
+    {
+      "test_id": "docs_diff_check",
+      "label": "Whitespace diff check",
+      "command": "git diff --check",
+      "category": "regression",
+      "owner_area": "repo",
+      "required_for": [
+        "docs_only",
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "git"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Whitespace or conflict-marker issues are present in the working diff.",
+      "advisory_or_required": "required",
+      "notes": "Does not validate links; future docs drift guard should cover that."
+    },
+    {
+      "test_id": "cargo_check_optional",
+      "label": "Optional Rust workspace check",
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "category": "parity",
+      "owner_area": "crates",
+      "required_for": [
+        "rust_optional"
+      ],
+      "requires": [
+        "cargo"
+      ],
+      "network": "external_tooling",
+      "writes": "Cargo target artifacts",
+      "expected_runtime": "toolchain-dependent",
+      "failure_means": "The optional Rust skeleton or candidate seam does not compile in an environment with Cargo.",
+      "advisory_or_required": "optional",
+      "notes": "Must not be required for normal Python verification while Cargo availability varies."
+    },
+    {
+      "test_id": "cargo_test_optional",
+      "label": "Optional Rust workspace tests",
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "category": "parity",
+      "owner_area": "crates",
+      "required_for": [
+        "rust_optional"
+      ],
+      "requires": [
+        "cargo"
+      ],
+      "network": "external_tooling",
+      "writes": "Cargo target artifacts",
+      "expected_runtime": "toolchain-dependent",
+      "failure_means": "Optional Rust parity tests failed in an environment with Cargo.",
+      "advisory_or_required": "optional",
+      "notes": "Optional until the repo explicitly requires a Rust toolchain."
+    }
+  ]
+}
+
