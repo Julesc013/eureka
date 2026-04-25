@@ -1,0 +1,1465 @@
+{
+  "classification_values": [
+    "safe_public_alpha",
+    "blocked_public_alpha",
+    "local_dev_only",
+    "review_required",
+    "deferred"
+  ],
+  "created_by_slice": "public_alpha_deployment_readiness_review_v0",
+  "inventory_kind": "eureka.public_alpha_routes",
+  "local_path_parameter_names": [
+    "index_path",
+    "run_store_root",
+    "task_store_root",
+    "memory_store_root",
+    "store_root",
+    "bundle_path",
+    "output"
+  ],
+  "notes": [
+    "This inventory records current stdlib web/API route posture for Public Alpha Deployment Readiness Review.",
+    "Routes with caller-provided local filesystem controls are blocked in public_alpha mode.",
+    "Routes marked safe_public_alpha are safe only for the constrained demo posture; this is not production readiness."
+  ],
+  "routes": [
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Reports mode, configured root kinds, enabled capabilities, and disabled capabilities without private path values.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Status page is read-only and exposes no caller-provided local filesystem controls.",
+      "route_pattern": "/status",
+      "surface_type": "status",
+      "write_read_behavior": "read-only status HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "JSON status response must report root kinds only as configured or not_configured.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Status endpoint is read-only and exposes no caller-provided local filesystem controls.",
+      "route_pattern": "/api/status",
+      "surface_type": "status",
+      "write_read_behavior": "read-only status JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Mode-aware API index; unsafe route entries remain discoverable but policy blocks them in public_alpha.",
+      "owning_module": "surfaces.web.server.api_routes.build_api_index_document",
+      "reason": "API index is read-only and carries capability metadata.",
+      "route_pattern": "/api",
+      "surface_type": "api",
+      "write_read_behavior": "read-only API index JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Exact-resolution workspace disables local write/export controls in public_alpha mode.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Workspace view uses bounded public boundaries without local path parameters.",
+      "route_pattern": "/",
+      "surface_type": "html",
+      "write_read_behavior": "read-only resolution workspace HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Exact-resolution JSON is safe only when store_root is absent.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Exact resolution reads bounded corpus state and does not require local path parameters.",
+      "route_pattern": "/api/resolve",
+      "surface_type": "api",
+      "write_read_behavior": "read-only exact-resolution JSON"
+    },
+    {
+      "classification": "blocked_public_alpha",
+      "local_path_parameters": [
+        "store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Same handler as /api/resolve; the route policy blocks this parameter in public_alpha.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/resolve?store_root",
+      "surface_type": "api",
+      "write_read_behavior": "local write-capable variant"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Rule-based query planning only; no LLM, vector, fuzzy, or ranking behavior.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Query planning is deterministic and read-only.",
+      "route_pattern": "/query-plan",
+      "surface_type": "html",
+      "write_read_behavior": "read-only planner HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Rule-based query planning only; no LLM, vector, fuzzy, or ranking behavior.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Query planning is deterministic and read-only.",
+      "route_pattern": "/api/query-plan",
+      "surface_type": "api",
+      "write_read_behavior": "read-only planner JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Uses current deterministic search over the bounded corpus, not local-index, ranking, fuzzy, vector, or semantic retrieval.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Deterministic search is read-only and uses no arbitrary local path parameter.",
+      "route_pattern": "/search",
+      "surface_type": "html",
+      "write_read_behavior": "read-only search HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Uses current deterministic search over the bounded corpus, not local-index, ranking, fuzzy, vector, or semantic retrieval.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Deterministic search is read-only and uses no arbitrary local path parameter.",
+      "route_pattern": "/api/search",
+      "surface_type": "api",
+      "write_read_behavior": "read-only search JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Source Registry v0 list view; no live source sync or crawling.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Source inventory listing is read-only.",
+      "route_pattern": "/sources",
+      "surface_type": "html",
+      "write_read_behavior": "read-only source list HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Source Registry v0 list endpoint; no live source sync or crawling.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Source inventory listing is read-only.",
+      "route_pattern": "/api/sources",
+      "surface_type": "api",
+      "write_read_behavior": "read-only source list JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Reads one bounded source registry record by source id.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Source detail lookup is read-only.",
+      "route_pattern": "/source",
+      "surface_type": "html",
+      "write_read_behavior": "read-only source detail HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Reads one bounded source registry record by source id.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Source detail lookup is read-only.",
+      "route_pattern": "/api/source",
+      "surface_type": "api",
+      "write_read_behavior": "read-only source detail JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Bounded absence report; no ranking or fuzzy semantics.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Absence explanation reads bounded corpus summaries only.",
+      "route_pattern": "/absence/resolve",
+      "surface_type": "html",
+      "write_read_behavior": "read-only absence HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Bounded absence report; no ranking or fuzzy semantics.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Absence explanation reads bounded corpus summaries only.",
+      "route_pattern": "/api/absence/resolve",
+      "surface_type": "api",
+      "write_read_behavior": "read-only absence JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Bounded absence report; no ranking or fuzzy semantics.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Search absence explanation reads bounded corpus summaries only.",
+      "route_pattern": "/absence/search",
+      "surface_type": "html",
+      "write_read_behavior": "read-only absence HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Bounded absence report; no ranking or fuzzy semantics.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Search absence explanation reads bounded corpus summaries only.",
+      "route_pattern": "/api/absence/search",
+      "surface_type": "api",
+      "write_read_behavior": "read-only absence JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Subject-state grouping remains bootstrap-scale and deterministic.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Subject-state listing is read-only.",
+      "route_pattern": "/subject",
+      "surface_type": "html",
+      "write_read_behavior": "read-only subject-state HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Subject-state grouping remains bootstrap-scale and deterministic.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Subject-state listing is read-only.",
+      "route_pattern": "/api/states",
+      "surface_type": "api",
+      "write_read_behavior": "read-only subject-state JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Side-by-side comparison of explicit targets; no merge or trust ranking.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Comparison reads bounded public results only.",
+      "route_pattern": "/compare",
+      "surface_type": "html",
+      "write_read_behavior": "read-only comparison HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Side-by-side comparison of explicit targets; no merge or trust ranking.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Comparison reads bounded public results only.",
+      "route_pattern": "/api/compare",
+      "surface_type": "api",
+      "write_read_behavior": "read-only comparison JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Bootstrap fixed host profile presets only; no installer or runtime routing.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Compatibility evaluation is read-only and bounded.",
+      "route_pattern": "/compatibility",
+      "surface_type": "html",
+      "write_read_behavior": "read-only compatibility HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Bootstrap fixed host profile presets only; no installer or runtime routing.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Compatibility evaluation is read-only and bounded.",
+      "route_pattern": "/api/compatibility",
+      "surface_type": "api",
+      "write_read_behavior": "read-only compatibility JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public-alpha rendering suppresses links to blocked fetch/member readback routes.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Representation listing is read-only.",
+      "route_pattern": "/representations",
+      "surface_type": "html",
+      "write_read_behavior": "read-only representation listing HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Returns representation metadata only; fetch/member byte routes remain blocked separately.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Representation listing is read-only.",
+      "route_pattern": "/api/representations",
+      "surface_type": "api",
+      "write_read_behavior": "read-only representation listing JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public-alpha rendering suppresses links to blocked fetch/member readback routes.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Handoff recommendation is read-only.",
+      "route_pattern": "/handoff",
+      "surface_type": "html",
+      "write_read_behavior": "read-only handoff HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Representation selection remains recommendation-only.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Handoff recommendation is read-only.",
+      "route_pattern": "/api/handoff",
+      "surface_type": "api",
+      "write_read_behavior": "read-only handoff JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Lists bounded package members without extracting to disk or exposing member bytes.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Decomposition listing is bounded and read-only.",
+      "route_pattern": "/decompose",
+      "surface_type": "html",
+      "write_read_behavior": "read-only decomposition listing HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Lists bounded package members without extracting to disk or exposing member bytes.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Decomposition listing is bounded and read-only.",
+      "route_pattern": "/api/decompose",
+      "surface_type": "api",
+      "write_read_behavior": "read-only decomposition listing JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Store actions are hidden/disabled in public_alpha mode.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Action planning is recommendation-only when no local store root is supplied.",
+      "route_pattern": "/action-plan",
+      "surface_type": "html",
+      "write_read_behavior": "read-only action recommendation HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Safe only without store_root; store-root variant is inventoried separately.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Action planning is recommendation-only when no local store root is supplied.",
+      "route_pattern": "/api/action-plan",
+      "surface_type": "api",
+      "write_read_behavior": "read-only action recommendation JSON"
+    },
+    {
+      "classification": "blocked_public_alpha",
+      "local_path_parameters": [
+        "store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Same handler as /api/action-plan; the route policy blocks this parameter in public_alpha.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/action-plan?store_root",
+      "surface_type": "api",
+      "write_read_behavior": "local write-capable planning variant"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Runs the bounded archive-resolution eval harness with server-owned transient index behavior.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Eval report is local, synchronous, bounded, and does not require a caller-provided path.",
+      "route_pattern": "/evals/archive-resolution",
+      "surface_type": "html",
+      "write_read_behavior": "read-only eval report HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Runs the bounded archive-resolution eval harness with server-owned transient index behavior.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Eval report is local, synchronous, bounded, and does not require a caller-provided path.",
+      "route_pattern": "/api/evals/archive-resolution",
+      "surface_type": "api",
+      "write_read_behavior": "read-only eval report JSON"
+    },
+    {
+      "classification": "blocked_public_alpha",
+      "local_path_parameters": [
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Same handler as /evals/archive-resolution; public_alpha blocks caller-supplied index_path.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "index_path is a caller-provided local filesystem control.",
+      "route_pattern": "/evals/archive-resolution?index_path",
+      "surface_type": "html",
+      "write_read_behavior": "local index path variant"
+    },
+    {
+      "classification": "blocked_public_alpha",
+      "local_path_parameters": [
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Same handler as /api/evals/archive-resolution; public_alpha blocks caller-supplied index_path.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "index_path is a caller-provided local filesystem control.",
+      "route_pattern": "/api/evals/archive-resolution?index_path",
+      "surface_type": "api",
+      "write_read_behavior": "local index path variant"
+    },
+    {
+      "classification": "review_required",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Allowed today because it only returns a bounded JSON manifest, but should be manually reviewed before real hosting.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Response-only manifest export is not a local filesystem write, but it exposes structured resolution metadata.",
+      "route_pattern": "/actions/export-resolution-manifest",
+      "surface_type": "html",
+      "write_read_behavior": "response-only manifest JSON"
+    },
+    {
+      "classification": "review_required",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Allowed today because it only returns a bounded JSON manifest, but should be manually reviewed before real hosting.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Response-only manifest export is not a local filesystem write, but it exposes structured resolution metadata.",
+      "route_pattern": "/api/export/manifest",
+      "surface_type": "api",
+      "write_read_behavior": "response-only manifest JSON"
+    },
+    {
+      "classification": "blocked_public_alpha",
+      "local_path_parameters": [
+        "output"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Generic arbitrary output-path guard. Smoke tests exercise it through /api/status?output=...",
+      "owning_module": "surfaces.web.server.route_policy.PublicAlphaRoutePolicy",
+      "reason": "output is treated as an arbitrary local filesystem control.",
+      "route_pattern": "/*?output",
+      "surface_type": "debug/demo",
+      "write_read_behavior": "arbitrary output path variant"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads deterministic local fixture payload bytes for one representation.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Public-alpha mode does not expose local fixture payload bytes.",
+      "route_pattern": "/fetch",
+      "surface_type": "html",
+      "write_read_behavior": "local fixture byte readback"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads deterministic local fixture payload bytes for one representation.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public-alpha mode does not expose local fixture payload bytes.",
+      "route_pattern": "/api/fetch",
+      "surface_type": "api",
+      "write_read_behavior": "local fixture byte readback"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads a bounded ZIP member preview or raw member bytes.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Public-alpha mode does not expose local fixture member bytes.",
+      "route_pattern": "/member",
+      "surface_type": "html",
+      "write_read_behavior": "local member byte readback"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads a bounded ZIP member preview or raw member bytes.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public-alpha mode does not expose local fixture member bytes.",
+      "route_pattern": "/api/member",
+      "surface_type": "api",
+      "write_read_behavior": "local member byte readback"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Builds a caller-selected SQLite local index path.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "index_path is a caller-provided local filesystem control.",
+      "route_pattern": "/index/build",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Builds a caller-selected SQLite local index path.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "index_path is a caller-provided local filesystem control.",
+      "route_pattern": "/api/index/build",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads metadata from a caller-selected SQLite local index path.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "index_path is a caller-provided local filesystem control.",
+      "route_pattern": "/index/status",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads metadata from a caller-selected SQLite local index path.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "index_path is a caller-provided local filesystem control.",
+      "route_pattern": "/api/index/status",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Queries a caller-selected SQLite local index path.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "index_path is a caller-provided local filesystem control.",
+      "route_pattern": "/index/search",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Queries a caller-selected SQLite local index path.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "index_path is a caller-provided local filesystem control.",
+      "route_pattern": "/api/index/query",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Local Worker and Task Model v0 routes persist synchronous task records under caller-selected roots.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "task_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/tasks",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read/write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Local Worker and Task Model v0 routes persist synchronous task records under caller-selected roots.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "task_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/tasks",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read/write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads one local task record from a caller-selected root.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "task_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/task",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads one local task record from a caller-selected root.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "task_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/task",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a synchronous local validation task record.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "task_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/task/run/validate-source-registry",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a synchronous local validation task record.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "task_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/task/run/validate-source-registry",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root",
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a synchronous local task and targets a caller-selected local index path.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "task_store_root and index_path are caller-provided local filesystem controls.",
+      "route_pattern": "/task/run/build-local-index",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root",
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a synchronous local task and targets a caller-selected local index path.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "task_store_root and index_path are caller-provided local filesystem controls.",
+      "route_pattern": "/api/task/run/build-local-index",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root",
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a synchronous local task and queries a caller-selected local index path.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "task_store_root and index_path are caller-provided local filesystem controls.",
+      "route_pattern": "/task/run/query-local-index",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read/write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root",
+        "index_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a synchronous local task and queries a caller-selected local index path.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "task_store_root and index_path are caller-provided local filesystem controls.",
+      "route_pattern": "/api/task/run/query-local-index",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read/write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a synchronous local archive-resolution eval validation task record.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "task_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/task/run/validate-archive-resolution-evals",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "task_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a synchronous local archive-resolution eval validation task record.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "task_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/task/run/validate-archive-resolution-evals",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Resolution Run Model v0 persists synchronous run records under caller-selected roots.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "run_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/runs",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read/write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Resolution Run Model v0 persists synchronous run records under caller-selected roots.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "run_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/runs",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read/write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads one persisted local resolution run record.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "run_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/run",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads one persisted local resolution run record.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "run_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/run",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a persisted exact-resolution run record under a caller-selected root.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "run_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/run/resolve",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a persisted exact-resolution run record under a caller-selected root.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "run_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/run/resolve",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a persisted deterministic-search run record under a caller-selected root.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "run_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/run/search",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a persisted deterministic-search run record under a caller-selected root.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "run_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/run/search",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a persisted planned-search run record under a caller-selected root.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "run_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/run/planned-search",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a persisted planned-search run record under a caller-selected root.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "run_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/run/planned-search",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "memory_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Resolution Memory v0 persists explicit local memory records under caller-selected roots.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "memory_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/memories",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read/write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "memory_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Resolution Memory v0 persists explicit local memory records under caller-selected roots.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "memory_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/memories",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read/write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "memory_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads one explicit local memory record from a caller-selected root.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "memory_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/memory",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "memory_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads one explicit local memory record from a caller-selected root.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "memory_store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/memory",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "memory_store_root",
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a local memory record from a persisted run.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "memory_store_root and run_store_root are caller-provided local filesystem controls.",
+      "route_pattern": "/memory/create",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "memory_store_root",
+        "run_store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Creates a local memory record from a persisted run.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "memory_store_root and run_store_root are caller-provided local filesystem controls.",
+      "route_pattern": "/api/memory/create",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "bundle_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Inspects a caller-selected local bundle ZIP path.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "bundle_path is a caller-provided local filesystem control.",
+      "route_pattern": "/inspect/bundle",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "bundle_path"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Inspects a caller-selected local bundle ZIP path.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "bundle_path is a caller-provided local filesystem control.",
+      "route_pattern": "/api/inspect/bundle",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Returns a generated ZIP payload for one resolution.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Bundle export is disabled in public_alpha pending route review.",
+      "route_pattern": "/actions/export-resolution-bundle",
+      "surface_type": "html",
+      "write_read_behavior": "response-only bundle bytes"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Returns a generated ZIP payload for one resolution.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Bundle export is disabled in public_alpha pending route review.",
+      "route_pattern": "/api/export/bundle",
+      "surface_type": "api",
+      "write_read_behavior": "response-only bundle bytes"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Writes manifest data under a configured/caller-provided local export store root.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Stored-export routes use local filesystem storage.",
+      "route_pattern": "/store/manifest",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Writes manifest data under a caller-provided local export store root.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/store/manifest",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Writes bundle data under a configured/caller-provided local export store root.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Stored-export routes use local filesystem storage.",
+      "route_pattern": "/store/bundle",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Writes bundle data under a caller-provided local export store root.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/store/bundle",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem write"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Lists stored exports under a caller-provided local export store root.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/stored",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads a stored artifact under a configured/caller-provided local export store root.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Stored-artifact routes use local filesystem storage.",
+      "route_pattern": "/stored/artifact",
+      "surface_type": "html",
+      "write_read_behavior": "local filesystem read"
+    },
+    {
+      "classification": "local_dev_only",
+      "local_path_parameters": [
+        "store_root"
+      ],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "blocked"
+      },
+      "notes": "Reads a stored artifact under a caller-provided local export store root.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "store_root is a caller-provided local filesystem control.",
+      "route_pattern": "/api/stored/artifact",
+      "surface_type": "api",
+      "write_read_behavior": "local filesystem read"
+    }
+  ],
+  "version": "0.1.0"
+}

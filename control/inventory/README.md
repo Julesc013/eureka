@@ -6,6 +6,8 @@ assets without turning them into runtime truth by themselves.
 Current inventory coverage:
 
 - `sources/` for Source Registry v0 seed records
+- `public_alpha_routes.json` for the Public Alpha Deployment Readiness Review
+  route inventory and current safe/blocked route classification
 - `runtime/source_registry/` is the current stdlib-only runtime consumer of those records
 
 Inventory records are:
@@ -22,4 +24,5 @@ They are not:
 - health scores
 - auth configuration
 - background scheduling metadata
+- deployment configuration
 - a substitute for connector implementation
