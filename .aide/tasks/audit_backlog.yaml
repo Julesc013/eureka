@@ -10,7 +10,7 @@
         "CTEA-EVAL-001"
       ],
       "title": "Promote hard-test proposals into executable tests",
-      "status": "open",
+      "status": "addressed_by_hard_test_pack_v0",
       "suggested_milestone": "Hard Test Pack v0"
     },
     {
@@ -30,9 +30,8 @@
         "CTEA-TEST-002"
       ],
       "title": "Add docs link and command drift guards",
-      "status": "open",
+      "status": "addressed_by_hard_test_pack_v0",
       "suggested_milestone": "Docs Link/Command Drift Guard v0"
     }
   ]
 }
-

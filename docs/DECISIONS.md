@@ -329,3 +329,9 @@
 - Status: accepted
 - Decision: Eureka now records a repo-native test/eval operating layer under `control/inventory/tests/`, structured audit finding schemas under `control/audits/schemas/`, a dated comprehensive audit pack under `control/audits/2026-04-25-comprehensive-test-eval-audit/`, and AIDE task/report scaffolding under `.aide/tasks/` and `.aide/reports/`.
 - Why: future backend, eval, public-alpha, and Rust parity work needs modular verification lanes, structured findings, hard-test proposals, and evidence-backed backlog recommendations before implementation broadens; this is governance metadata only and does not add product runtime behavior, source connectors, deployment infrastructure, external scraping, or production-readiness claims.
+
+## ADR-056: Add Hard Test Pack v0 as a High-Risk Regression Guard Lane
+
+- Status: accepted
+- Decision: Eureka now maintains Hard Test Pack v0 under `tests/hardening/`, with stdlib-only guards for hard eval truth, external baseline honesty, public-alpha local path safety, route inventory drift, README command drift, documentation link drift, Python-oracle golden drift, Rust parity structure, source placeholder honesty, resolution-memory path/privacy scope, and AIDE/test registry consistency.
+- Why: the comprehensive audit identified risks that should fail loudly before future work broadens the repo; hardening those risks as tests improves regression discipline without adding product runtime behavior, source connectors, Rust behavior ports, deployment infrastructure, external scraping, native apps, or production-readiness claims.

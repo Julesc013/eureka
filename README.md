@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. Many archive-resolution eval tasks
@@ -91,6 +91,7 @@ python scripts/run_archive_resolution_evals.py --json
 python scripts/run_search_usefulness_audit.py
 python scripts/public_alpha_smoke.py
 python scripts/generate_python_oracle_golden.py --check
+python -m unittest discover -s tests/hardening -t .
 ```
 
 For larger tasks, the command registry and lane guidance live in
@@ -301,6 +302,7 @@ Roadmaps and operations:
 - [Public Alpha Readiness Review](docs/operations/PUBLIC_ALPHA_READINESS_REVIEW.md)
 - [Public Alpha Hosting Pack](docs/operations/public_alpha_hosting_pack/README.md)
 - [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md)
+- [Hard Test Pack](docs/operations/HARD_TEST_PACK.md)
 - [Comprehensive Audit Pack](control/audits/2026-04-25-comprehensive-test-eval-audit/README.md)
 
 Evals and parity:
@@ -332,7 +334,7 @@ Eureka is substantial, but it is still a prototype/reference backend:
 Accepted immediate next milestone:
 
 1. Search Usefulness Backlog Triage v0
-2. Hard Test Pack v0
+2. Real Source Coverage Pack v0
 
 Broader near-term direction:
 
@@ -374,6 +376,7 @@ python -m unittest discover -s surfaces -t .
 python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
 python scripts/public_alpha_smoke.py
+python -m unittest discover -s tests/hardening -t .
 ```
 
 ## Contributing

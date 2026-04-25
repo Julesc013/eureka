@@ -24,6 +24,7 @@
         "architecture_boundaries",
         "operating_layer_validation",
         "comprehensive_audit_pack_validation",
+        "hardening_tests",
         "docs_diff_check"
       ],
       "required_status": "required",
@@ -43,6 +44,7 @@
         "python_oracle_golden_check",
         "archive_resolution_eval_runner",
         "search_usefulness_audit_runner",
+        "hardening_tests",
         "docs_diff_check"
       ],
       "required_status": "required",
@@ -55,6 +57,8 @@
       "commands": [
         "operating_layer_validation",
         "comprehensive_audit_pack_validation",
+        "tests.hardening.docs_link_drift",
+        "tests.hardening.readme_command_drift",
         "docs_diff_check"
       ],
       "required_status": "required",
@@ -67,7 +71,9 @@
       "commands": [
         "public_alpha_smoke",
         "route_inventory_validation",
-        "hosting_pack_generator_check"
+        "hosting_pack_generator_check",
+        "tests.hardening.public_alpha_path_leakage",
+        "tests.hardening.route_inventory_drift"
       ],
       "required_status": "required",
       "when_to_run": "After web/API route-policy, status, route inventory, or hosting-pack changes.",
@@ -78,7 +84,9 @@
       "purpose": "Python-oracle and future Rust parity discipline.",
       "commands": [
         "python_oracle_golden_check",
-        "source_registry_validation"
+        "source_registry_validation",
+        "tests.hardening.python_oracle_golden",
+        "tests.hardening.rust_parity_structure"
       ],
       "required_status": "required",
       "when_to_run": "After Python oracle, source-registry, query-planner, local-index, memory, or Rust parity fixture changes.",
@@ -89,11 +97,33 @@
       "purpose": "Executable eval/audit guardrails.",
       "commands": [
         "archive_resolution_eval_runner",
-        "search_usefulness_audit_runner"
+        "search_usefulness_audit_runner",
+        "tests.hardening.eval_hardness",
+        "tests.hardening.external_baselines"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
       "notes": "External baseline observations remain manual and pending unless committed as evidence records."
+    },
+    {
+      "lane_id": "hardening",
+      "purpose": "High-risk regression guards from Hard Test Pack v0.",
+      "commands": [
+        "tests.hardening.eval_hardness",
+        "tests.hardening.external_baselines",
+        "tests.hardening.public_alpha_path_leakage",
+        "tests.hardening.route_inventory_drift",
+        "tests.hardening.readme_command_drift",
+        "tests.hardening.docs_link_drift",
+        "tests.hardening.python_oracle_golden",
+        "tests.hardening.rust_parity_structure",
+        "tests.hardening.source_placeholder_honesty",
+        "tests.hardening.memory_privacy_paths",
+        "tests.hardening.aide_test_registry_consistency"
+      ],
+      "required_status": "required",
+      "when_to_run": "After eval, public-alpha, README/docs, Python-oracle golden, Rust parity, source registry, memory, AIDE, or test registry changes.",
+      "notes": "This lane is stdlib-only, local, and avoids persistent servers or external searches."
     },
     {
       "lane_id": "rust_optional",
@@ -108,4 +138,3 @@
     }
   ]
 }
-

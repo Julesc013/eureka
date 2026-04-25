@@ -267,6 +267,242 @@
       "notes": "Validates the repo-native audit outputs from this milestone."
     },
     {
+      "test_id": "hardening_tests",
+      "label": "Hard Test Pack v0 aggregate",
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "category": "regression",
+      "owner_area": "tests/hardening",
+      "required_for": [
+        "standard",
+        "full",
+        "hardening"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where called scripts create temp stores",
+      "expected_runtime": "seconds",
+      "failure_means": "A high-risk eval truth, path-safety, drift, parity, source honesty, memory privacy, or repo-operating guard regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Hard Test Pack v0; no product behavior, external scraping, or production-readiness claims."
+    },
+    {
+      "test_id": "tests.hardening.eval_hardness",
+      "label": "Hard eval weakening guard",
+      "command": "python -m unittest tests.hardening.test_eval_hardness_guards",
+      "category": "hard_query",
+      "owner_area": "evals",
+      "required_for": [
+        "hardening"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary local index only through eval/audit scripts",
+      "expected_runtime": "seconds",
+      "failure_means": "Hard archive-resolution or search-usefulness fixtures were weakened, removed, or stopped reporting current hard gaps honestly.",
+      "advisory_or_required": "required",
+      "notes": "Uses minimum thresholds and required IDs so adding harder queries remains allowed."
+    },
+    {
+      "test_id": "tests.hardening.external_baselines",
+      "label": "External baseline fabrication guard",
+      "command": "python -m unittest tests.hardening.test_external_baseline_guards",
+      "category": "eval",
+      "owner_area": "evals/search_usefulness",
+      "required_for": [
+        "hardening"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Google or Internet Archive baselines may have been marked observed without manual evidence, or docs/scripts imply scraping.",
+      "advisory_or_required": "required",
+      "notes": "Does not perform any external lookup."
+    },
+    {
+      "test_id": "tests.hardening.public_alpha_path_leakage",
+      "label": "Public-alpha path leakage guard",
+      "command": "python -m unittest tests.hardening.test_public_alpha_path_leakage",
+      "category": "public_alpha",
+      "owner_area": "surfaces/web",
+      "required_for": [
+        "hardening",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Public-alpha status or blocked responses exposed private local path values or route inventory marked local-path routes safe.",
+      "advisory_or_required": "required",
+      "notes": "Uses sentinel paths and checks names, not values, are returned."
+    },
+    {
+      "test_id": "tests.hardening.route_inventory_drift",
+      "label": "Route inventory drift guard",
+      "command": "python -m unittest tests.hardening.test_route_inventory_drift",
+      "category": "operations",
+      "owner_area": "control/inventory",
+      "required_for": [
+        "hardening",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The public-alpha route inventory drifted from known web/API routes or route-policy blocked constants.",
+      "advisory_or_required": "required",
+      "notes": "Uses bounded static checks and explicit exemptions."
+    },
+    {
+      "test_id": "tests.hardening.readme_command_drift",
+      "label": "README command drift guard",
+      "command": "python -m unittest tests.hardening.test_readme_command_drift",
+      "category": "regression",
+      "owner_area": "README.md",
+      "required_for": [
+        "hardening",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary local index or fixture output only through safe commands",
+      "expected_runtime": "seconds",
+      "failure_means": "README links or representative commands drifted from real repo paths/scripts.",
+      "advisory_or_required": "required",
+      "notes": "Avoids persistent server commands."
+    },
+    {
+      "test_id": "tests.hardening.docs_link_drift",
+      "label": "Documentation link drift guard",
+      "command": "python -m unittest tests.hardening.test_docs_link_drift",
+      "category": "regression",
+      "owner_area": "docs",
+      "required_for": [
+        "hardening",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "A major local Markdown link no longer resolves.",
+      "advisory_or_required": "required",
+      "notes": "External URLs and generated anchors are intentionally out of scope."
+    },
+    {
+      "test_id": "tests.hardening.python_oracle_golden",
+      "label": "Python oracle golden drift guard",
+      "command": "python -m unittest tests.hardening.test_python_oracle_golden_guard",
+      "category": "golden",
+      "owner_area": "tests/parity",
+      "required_for": [
+        "hardening",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary comparison output only through --check",
+      "expected_runtime": "seconds",
+      "failure_means": "Python-oracle goldens drifted, required families disappeared, or private paths leaked into committed goldens.",
+      "advisory_or_required": "required",
+      "notes": "Delegates detailed parity fixture checks to the existing generator."
+    },
+    {
+      "test_id": "tests.hardening.rust_parity_structure",
+      "label": "Rust parity structure guard",
+      "command": "python -m unittest tests.hardening.test_rust_parity_structure_guard",
+      "category": "parity",
+      "owner_area": "crates",
+      "required_for": [
+        "hardening",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Rust parity scaffolding drifted, was wired into Python runtime, or docs started implying active production Rust behavior.",
+      "advisory_or_required": "required",
+      "notes": "Does not require Cargo."
+    },
+    {
+      "test_id": "tests.hardening.source_placeholder_honesty",
+      "label": "Source placeholder honesty guard",
+      "command": "python -m unittest tests.hardening.test_source_placeholder_honesty",
+      "category": "contract",
+      "owner_area": "control/inventory/sources",
+      "required_for": [
+        "hardening"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Placeholder/future source records or public projections may be claiming implemented behavior.",
+      "advisory_or_required": "required",
+      "notes": "Keeps source inventory honesty distinct from future connector work."
+    },
+    {
+      "test_id": "tests.hardening.memory_privacy_paths",
+      "label": "Resolution memory privacy/path guard",
+      "command": "python -m unittest tests.hardening.test_memory_privacy_and_path_guards",
+      "category": "regression",
+      "owner_area": "runtime/engine/memory",
+      "required_for": [
+        "hardening"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Resolution memory docs/goldens/audit outputs may leak private roots or imply cloud/shared/user-tracking behavior.",
+      "advisory_or_required": "required",
+      "notes": "A bounded privacy/path guard, not a complete privacy audit."
+    },
+    {
+      "test_id": "tests.hardening.aide_test_registry_consistency",
+      "label": "AIDE/test registry consistency guard",
+      "command": "python -m unittest tests.hardening.test_aide_test_registry_consistency",
+      "category": "operations",
+      "owner_area": ".aide",
+      "required_for": [
+        "hardening"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "AIDE queue/report scaffolding, test registry, or command matrix references drifted from one another.",
+      "advisory_or_required": "required",
+      "notes": "Does not require a local AIDE runtime."
+    },
+    {
       "test_id": "docs_diff_check",
       "label": "Whitespace diff check",
       "command": "git diff --check",
@@ -327,4 +563,3 @@
     }
   ]
 }
-

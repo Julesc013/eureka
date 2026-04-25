@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus thirty-six executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, and Comprehensive Test/Eval Operating Layer and Repo Audit v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus thirty-six executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -74,6 +74,13 @@ architectural oracle rather than as a throwaway scaffold.
   reusable verification lanes, structured audit finding schemas, a dated
   audit pack, hard-test proposals, and backlog recommendations without adding
   product runtime behavior or production-readiness claims
+- first Hard Test Pack v0 seam under `tests/hardening/` and
+  `docs/operations/HARD_TEST_PACK.md` that turns the highest-risk audit
+  findings into enforceable regression guards for eval hardness, external
+  baseline honesty, public-alpha path safety, route/docs/README drift,
+  Python-oracle golden drift, Rust parity structure, source placeholder
+  honesty, resolution-memory path/privacy scope, and AIDE/test registry
+  consistency without adding product runtime behavior
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -113,7 +120,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Hard Test Pack v0
+> Search Usefulness Backlog Triage v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -121,7 +128,8 @@ Eval Runner v0, Public Alpha Safe Mode v0, and Public Alpha Deployment
 Readiness Review, Public Alpha Hosting Pack v0, Rust Migration Skeleton and
 Parity Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity
 Candidate v0, Search Usefulness Audit v0, and Comprehensive Test/Eval
-Operating Layer and Repo Audit v0 are now implemented as the first
+Operating Layer and Repo Audit v0, plus Hard Test Pack v0, are now implemented
+as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
 synchronous local execution substrate, explicit local reusable investigation
@@ -129,12 +137,12 @@ memory layer, executable eval guardrail, constrained public-demo posture, and
 auditable public-alpha route/smoke checklist plus supervised rehearsal evidence
 packet, committed Python-oracle golden fixture pack, isolated Rust
 source-registry parity seam, broad usefulness-audit backlog generator, and
-repo-native test/eval governance plus audit backlog layer.
+repo-native test/eval governance plus executable hardening guard layer.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Hard Test Pack v0
-2. Search Usefulness Backlog Triage v0
+1. Search Usefulness Backlog Triage v0
+2. Real Source Coverage Pack v0
 3. Rust Query Planner Parity Candidate v0
 4. Native App Work Later
 

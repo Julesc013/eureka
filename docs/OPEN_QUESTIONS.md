@@ -65,3 +65,5 @@ These questions are intentionally left open during bootstrap:
 61. Which audit findings from Comprehensive Test/Eval Operating Layer and Repo Audit v0 should become required hard tests before broader source, planner, public-alpha, or Rust parity work proceeds?
 62. Should `control/inventory/tests/test_registry.json` become the source of truth for future AIDE command metadata, or should it remain a curated verification registry beside `.aide/commands/`?
 63. What minimum evidence should be required before an audit finding can be marked resolved rather than merely deferred or superseded?
+64. Which additional hard tests should graduate into Hard Test Pack v1 after the first source-coverage, planner-gap, or Rust parity follow-up changes land?
+65. How should hardening tests be updated when a real source pack legitimately turns a current capability gap into a covered result without weakening the underlying hard eval fixture?

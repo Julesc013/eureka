@@ -23,6 +23,9 @@ The minimum public-alpha entry gate should include:
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
   structured verification lanes and audit findings; not a hosting approval)
+- Hard Test Pack v0 (implemented as regression guards for path leakage, route
+  inventory drift, external baseline honesty, and docs/command drift; not a
+  hosting approval)
 - local-path APIs disabled or explicitly restricted in public-alpha mode
 - safe status route without private local path disclosure
 - repeatable public-alpha smoke report
@@ -84,3 +87,6 @@ Comprehensive Test/Eval Operating Layer and Repo Audit v0 adds reusable
 public-alpha and full verification lanes plus hard-test proposals for path
 leakage and route inventory drift, but it does not change the public-alpha
 runtime posture or approve public hosting.
+Hard Test Pack v0 now makes the first path-leakage and route-inventory drift
+guards executable, while still avoiding deployment infrastructure, auth, TLS,
+accounts, rate limiting, or production-readiness claims.

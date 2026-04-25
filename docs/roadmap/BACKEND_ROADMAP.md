@@ -48,6 +48,11 @@ The repo has already proven:
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 as the first
   structured verification lane registry, audit finding schema, dated audit
   pack, hard-test proposal set, and next-milestone backlog
+- Hard Test Pack v0 as the first executable high-risk regression guard lane
+  over eval truth, external baseline honesty, public-alpha path safety,
+  route/docs/README drift, Python-oracle golden drift, Rust parity structure,
+  source placeholder honesty, memory path privacy, and AIDE/test registry
+  consistency
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -71,7 +76,7 @@ The next backend sequence is:
 13. Rust Source Registry Parity Candidate v0 (implemented as isolated parity seam)
 14. Search Usefulness Audit v0 (implemented as local audit/backlog generator)
 15. Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as governance/audit layer)
-16. Hard Test Pack v0
+16. Hard Test Pack v0 (implemented as high-risk regression guards)
 17. Search Usefulness Backlog Triage v0
 18. Rust Query Planner Parity Candidate v0
 19. Native App Work Later
@@ -80,7 +85,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Hard Test Pack v0
+> Search Usefulness Backlog Triage v0
 
 Why this comes next:
 
@@ -114,8 +119,11 @@ Why this comes next:
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 now records hard
   test proposals and structured findings that should become executable
   guardrails before source, planner, or Rust parity work widens
-- the next backend bottleneck is turning audit findings into hard tests before
-  choosing broader source, planner, or Rust parity work
+- Hard Test Pack v0 now turns the first selected audit findings into
+  executable guardrails without changing runtime behavior
+- the next backend bottleneck is deciding which search-usefulness failure
+  families should be reduced first without slipping into live crawling,
+  ranking, fuzzy/vector retrieval, or source-coverage overreach
 
 ## Explicit Deferrals
 

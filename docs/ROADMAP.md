@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: thirty-six local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, and Comprehensive Test/Eval Operating Layer and Repo Audit v0. The latest governance layer adds a test registry, command matrix, finding schema, dated audit pack, hard-test proposals, and AIDE task/report scaffolding without adding product runtime behavior or production-readiness claims.
+Current status within this stage: thirty-six local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0. The latest governance layer adds a test registry, command matrix, finding schema, dated audit pack, hard-test proposals, AIDE task/report scaffolding, and enforceable hardening guards without adding product runtime behavior or production-readiness claims.
 
 ## Stage 3: Surface Skeletons
 
@@ -74,6 +74,12 @@ Comprehensive Test/Eval Operating Layer and Repo Audit v0 now also lives under
 `docs/operations/TEST_AND_EVAL_LANES.md`, and `.aide/tasks/`, giving the
 project reusable verification lanes, structured findings, hard-test proposals,
 and next-milestone recommendations without changing runtime product behavior.
+Hard Test Pack v0 now also lives under `tests/hardening/` and
+`docs/operations/HARD_TEST_PACK.md`, giving the project enforceable regression
+guards for eval hardness, external baseline honesty, public-alpha path safety,
+route/docs/README drift, Python-oracle golden drift, Rust parity structure,
+source placeholder honesty, memory path/privacy scope, and AIDE/test registry
+consistency without changing runtime product behavior.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
@@ -81,14 +87,15 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Hard Test Pack v0
+> Search Usefulness Backlog Triage v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
 Eval Runner v0, Public Alpha Safe Mode v0, Public Alpha Deployment Readiness
 Review, Public Alpha Hosting Pack v0, Rust Migration Skeleton and Parity
 Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity Candidate
-v0, Search Usefulness Audit v0, and Comprehensive Test/Eval Operating Layer and
-Repo Audit v0 now mark the start of a more evidence-led backend phase. The next
-step should turn the highest-priority hard-test proposals into executable
-guardrails before broader source, planner, or Rust parity work proceeds.
+v0, Search Usefulness Audit v0, Comprehensive Test/Eval Operating Layer and
+Repo Audit v0, and Hard Test Pack v0 now mark the start of a more evidence-led
+backend phase. The next step should triage the broad search-usefulness backlog
+into a bounded implementation target before broader source, planner, or Rust
+parity work proceeds.

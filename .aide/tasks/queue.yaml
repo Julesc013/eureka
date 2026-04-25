@@ -13,9 +13,9 @@
     {
       "id": "hard_test_pack_v0",
       "title": "Hard Test Pack v0",
-      "status": "queued",
+      "status": "completed",
       "priority": 2,
-      "notes": "Turn selected audit hard-test proposals into executable guardrails."
+      "notes": "Turn selected audit hard-test proposals into executable guardrails under tests/hardening."
     },
     {
       "id": "rust_query_planner_parity_candidate_v0",

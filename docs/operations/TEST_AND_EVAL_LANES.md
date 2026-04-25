@@ -38,6 +38,9 @@ The command matrix defines these lanes:
 - `public_alpha`: route inventory, smoke, and hosting-pack safety checks
 - `parity`: Python oracle and source-registry validation checks
 - `audit`: archive-resolution and search-usefulness eval/audit runners
+- `hardening`: high-risk regression guards for eval truth, path safety,
+  route/docs/README drift, parity/golden discipline, and AIDE/test registry
+  consistency
 - `rust_optional`: Cargo checks only when the local toolchain exists
 
 ## Required vs Advisory
@@ -74,3 +77,19 @@ Large tasks should use a two-pass flow: implementation first, hardening second.
 The hardening pass should reread changed files, check claims against evidence,
 and make sure hard evals or manual baselines were not weakened or fabricated.
 
+## Hard Test Pack
+
+Hard Test Pack v0 lives under `tests/hardening/` and is documented in
+`docs/operations/HARD_TEST_PACK.md`.
+
+Run it with:
+
+```bash
+python -m unittest discover -s tests/hardening -t .
+```
+
+These tests are regression guards, not product features. They should be run
+before syncing changes that affect eval fixtures, external baseline wording,
+public-alpha route policy, route inventory, README commands, docs links,
+Python-oracle goldens, Rust parity scaffolding, source registry honesty,
+resolution memory privacy claims, or AIDE/test metadata.
