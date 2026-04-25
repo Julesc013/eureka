@@ -14,6 +14,11 @@ EXPECTED_CRATES = (
     "eureka-store",
     "eureka-resolver",
 )
+PLACEHOLDER_CRATES = (
+    "eureka-contracts",
+    "eureka-store",
+    "eureka-resolver",
+)
 
 
 class RustMigrationSkeletonTestCase(unittest.TestCase):
@@ -32,14 +37,39 @@ class RustMigrationSkeletonTestCase(unittest.TestCase):
                 self.assertTrue((crate_root / "src" / "lib.rs").exists())
                 self.assertIn(crate_name, workspace)
 
-    def test_crates_are_placeholder_only_and_forbid_unsafe(self) -> None:
+    def test_crates_forbid_unsafe_and_non_candidate_crates_are_placeholders(self) -> None:
         for crate_name in EXPECTED_CRATES:
             with self.subTest(crate=crate_name):
                 lib_rs = (CRATES_ROOT / crate_name / "src" / "lib.rs").read_text(
                     encoding="utf-8"
                 )
                 self.assertIn("#![forbid(unsafe_code)]", lib_rs)
+        for crate_name in PLACEHOLDER_CRATES:
+            with self.subTest(crate=crate_name):
+                lib_rs = (CRATES_ROOT / crate_name / "src" / "lib.rs").read_text(
+                    encoding="utf-8"
+                )
                 self.assertIn("placeholder_only_python_oracle_active", lib_rs)
+
+    def test_eureka_core_declares_source_registry_candidate_only(self) -> None:
+        lib_rs = (CRATES_ROOT / "eureka-core" / "src" / "lib.rs").read_text(
+            encoding="utf-8"
+        )
+        cargo_toml = (CRATES_ROOT / "eureka-core" / "Cargo.toml").read_text(
+            encoding="utf-8"
+        )
+        source_registry = (
+            CRATES_ROOT / "eureka-core" / "src" / "source_registry.rs"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("pub mod source_registry;", lib_rs)
+        self.assertIn("source_registry_parity_candidate_v0_python_oracle_active", lib_rs)
+        self.assertIn("serde", cargo_toml)
+        self.assertIn("serde_json", cargo_toml)
+        self.assertNotIn("tokio", cargo_toml)
+        self.assertNotIn("reqwest", cargo_toml)
+        self.assertIn("load_source_registry", source_registry)
+        self.assertIn("list_sources_response", source_registry)
 
     def test_docs_record_python_oracle_and_parity_rules(self) -> None:
         docs = "\n".join(
@@ -55,7 +85,8 @@ class RustMigrationSkeletonTestCase(unittest.TestCase):
         self.assertIn("python is the oracle", docs)
         self.assertIn("no big-bang rewrite", docs)
         self.assertIn("parity tests must pass before replacement", docs)
-        self.assertIn("does not port runtime behavior", " ".join(docs.split()))
+        self.assertIn("python runtime", docs)
+        self.assertIn("not wired into runtime", docs)
 
     def test_docs_keep_rust_and_native_work_deferred(self) -> None:
         rust_lane = (
