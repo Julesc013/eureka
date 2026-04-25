@@ -20,6 +20,8 @@ steps:
     run: python scripts/generate_public_alpha_hosting_pack.py --check
   - id: public_alpha_hosting_pack
     run: python -m unittest tests.operations.test_public_alpha_hosting_pack
+  - id: python_oracle_golden_check
+    run: python scripts/generate_python_oracle_golden.py --check
   - id: runtime_tests
     run: python -m unittest discover -s runtime -t .
   - id: surface_tests
@@ -29,5 +31,6 @@ steps:
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.
+  - The Python-oracle golden check is stdlib-only and verifies committed future-Rust parity fixtures without requiring Rust tooling.
   - Rust workspace checking is intentionally not required here because normal Python verification must not depend on a Rust toolchain; use `cargo check --workspace --manifest-path crates/Cargo.toml` as an optional local check.
   - This command contract is repo-operating metadata, not proof of a local AIDE product CLI.

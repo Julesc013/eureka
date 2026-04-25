@@ -28,6 +28,11 @@ Parity tests protect the transition.
 No big-bang rewrite is accepted. Every Rust migration step must be seam-sized
 and parity-tested against Python oracle outputs before replacement.
 
+Rust Parity Fixture Pack v0 now captures the first committed Python-oracle
+golden outputs under `tests/parity/golden/python_oracle/v0/`. Future Rust
+candidate seams must match those outputs, or record an explicit allowed
+divergence, before replacing any Python behavior.
+
 ## Suggested Future Layout
 
 ```text
@@ -83,9 +88,33 @@ workspace under `crates/` contains placeholder crates only:
 - `eureka-store`
 - `eureka-resolver`
 
+The first Python-oracle golden fixture pack exists for:
+
+- source registry
+- query planner
+- resolution runs
+- local index
+- resolution memory
+- archive-resolution eval runner
+
 Current Python CLI, web, and local HTTP API behavior remain authoritative.
 Python remains the executable specification, reference backend, and oracle.
-Rust crates are placeholders until future parity work begins.
+Rust crates are placeholders until future Rust candidate work begins. No Rust runtime
+logic, gateway, CLI, FFI, or production service is implemented by the fixture
+pack.
+
+## Python Oracle Fixture Pack
+
+Use the stdlib generator to refresh or verify the committed v0 pack:
+
+```powershell
+python scripts/generate_python_oracle_golden.py
+python scripts/generate_python_oracle_golden.py --check
+```
+
+The generator normalizes unstable fields such as timestamps, local index paths,
+SQLite FTS mode, and generation metadata. It preserves semantically meaningful
+fields, including the current archive-resolution eval capability gaps.
 
 ## Optional Check
 

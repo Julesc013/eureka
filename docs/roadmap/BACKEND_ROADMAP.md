@@ -37,6 +37,8 @@ The repo has already proven:
   packet for that posture
 - Rust Migration Skeleton and Parity Plan v0 as the first governed Rust lane
   skeleton, with Python still authoritative
+- Rust Parity Fixture Pack v0 as the first committed Python-oracle golden
+  output pack for future Rust seam checks, with no Rust behavior port
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -56,14 +58,15 @@ The next backend sequence is:
 9. Public Alpha Deployment Readiness Review (implemented)
 10. Public Alpha Hosting Pack v0 (implemented)
 11. Rust Migration Skeleton and Parity Plan (implemented as skeleton only)
-12. Rust Parity Fixture Pack v0
-13. Native App Work Later
+12. Rust Parity Fixture Pack v0 (implemented as Python-oracle goldens only)
+13. Rust Source Registry Parity Candidate v0
+14. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Rust Parity Fixture Pack v0
+> Rust Source Registry Parity Candidate v0
 
 Why this comes next:
 
@@ -87,8 +90,10 @@ Why this comes next:
   runbook without adding deployment infrastructure
 - Rust Migration Skeleton and Parity Plan v0 now creates placeholder crates and
   parity documentation without porting behavior or replacing Python
-- the next backend bottleneck is capturing Python oracle outputs as stable
+- Rust Parity Fixture Pack v0 now captures Python oracle outputs as stable
   parity fixtures before any Rust seam ports begin
+- the next migration bottleneck is the first tiny Rust candidate seam, most
+  likely source registry loading, checked against committed Python goldens
 
 ## Explicit Deferrals
 
@@ -98,7 +103,7 @@ The backend roadmap intentionally defers:
 - Xcode app work
 - full native app work
 - production Rust rewrite
-- Rust behavior ports before Python oracle fixtures exist
+- Rust behavior ports that do not match Python-oracle fixtures
 - installer or download automation
 - trust scoring
 - production relevance benchmarking

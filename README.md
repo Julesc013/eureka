@@ -23,7 +23,7 @@ This repository is intentionally:
 | Product maturity | Bootstrap / pre-product |
 | Runtime lane | Python 3 standard library only |
 | Backend role | Python reference backend / architectural oracle |
-| Rust lane | Workspace skeleton only; not active backend |
+| Rust lane | Workspace skeleton plus Python-oracle golden fixtures; not active backend |
 | Data sources | Governed synthetic fixtures plus recorded GitHub Releases fixtures |
 | Surfaces | HTML workbench, native CLI, local stdlib HTTP API |
 | Search | Deterministic, bounded, no ranking, no fuzzy retrieval |
@@ -32,7 +32,7 @@ This repository is intentionally:
 | Persistence | Local bounded content-addressed export store plus local JSON resolution-run, task, and memory stores |
 | Identity | Bootstrap deterministic `resolved_resource_id` seam |
 | Architecture enforcement | Repo-local Python import boundary checker |
-| Next implementation milestone | Rust Parity Fixture Pack v0 |
+| Next implementation milestone | Rust Source Registry Parity Candidate v0 |
 
 ## What Eureka Proves Today
 
@@ -80,6 +80,7 @@ The current repo proves a set of bounded executable seams across connectors, eng
 
 - first repo-level archive-resolution eval corpus under `evals/archive_resolution/`
 - hard software-resolution queries with explicit bad-result patterns, minimum granularity expectations, and allowed absence outcomes for future investigation and ranking work
+- first Python-oracle golden fixture pack under `tests/parity/golden/python_oracle/v0/` for future Rust seam parity checks
 
 ## What Eureka Deliberately Does Not Claim Yet
 
@@ -167,6 +168,12 @@ Then open the local URLs printed by the script, including the exact-resolution w
 python scripts/check_architecture_boundaries.py
 ```
 
+#### Python Oracle Golden Fixtures
+
+```bash
+python scripts/generate_python_oracle_golden.py --check
+```
+
 #### Optional Rust Skeleton Check
 
 ```bash
@@ -232,7 +239,7 @@ Research that remains intentionally non-normative stays under:
 
 ## Current Executable Scope
 
-Current bootstrap status includes **thirty-five executable local deterministic thin slices**, the first repo-level archive-resolution eval corpus, Public Alpha Hosting Pack v0, and a Rust migration skeleton.
+Current bootstrap status includes **thirty-six executable local deterministic thin slices**, the first repo-level archive-resolution eval corpus, Public Alpha Hosting Pack v0, a Rust migration skeleton, and the first Python-oracle golden fixture pack.
 
 Important highlights:
 
@@ -248,6 +255,7 @@ Important highlights:
 - one bootstrap native CLI surface
 - one local stdlib HTTP API surface
 - one repo-local architecture-boundary checker
+- one committed Python-oracle golden fixture pack for future Rust parity
 - one placeholder Rust workspace under `crates/` that is not yet an active
   backend
 
