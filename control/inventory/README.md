@@ -8,6 +8,8 @@ Current inventory coverage:
 - `sources/` for Source Registry v0 seed records
 - `public_alpha_routes.json` for the Public Alpha Deployment Readiness Review
   route inventory and current safe/blocked route classification
+- `docs/operations/public_alpha_hosting_pack/ROUTE_SAFETY_SUMMARY.md` consumes
+  the public-alpha route inventory as an operator-readable summary
 - `runtime/source_registry/` is the current stdlib-only runtime consumer of those records
 
 Inventory records are:

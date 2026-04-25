@@ -32,6 +32,8 @@ The repo has already proven:
   blocking
 - Public Alpha Deployment Readiness Review as the first auditable route
   inventory, smoke-test, and operator-checklist gate for that posture
+- Public Alpha Hosting Pack v0 as the first supervised rehearsal evidence
+  packet for that posture
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -49,7 +51,7 @@ The next backend sequence is:
 7. Archive Resolution Eval Runner v0 (implemented)
 8. Public Alpha Safe Mode v0 (implemented)
 9. Public Alpha Deployment Readiness Review (implemented)
-10. Public Alpha Hosting Pack v0
+10. Public Alpha Hosting Pack v0 (implemented)
 11. Rust Migration Skeleton and Parity Plan
 12. Native App Work Later
 
@@ -57,7 +59,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Public Alpha Hosting Pack v0
+> Rust Migration Skeleton and Parity Plan
 
 Why this comes next:
 
@@ -76,8 +78,11 @@ Why this comes next:
   public-alpha mode while preserving local-dev behavior
 - Public Alpha Deployment Readiness Review now inventories route safety,
   validates policy alignment, and smoke-tests public-alpha behavior
-- the next backend bottleneck is packaging that evidence into a bounded hosting
-  pack, not broader retrieval semantics
+- Public Alpha Hosting Pack v0 now packages route inventory status, smoke
+  evidence templates, operator signoff, blockers, and a supervised rehearsal
+  runbook without adding deployment infrastructure
+- the next backend bottleneck is planning Python-to-Rust parity without starting
+  the migration or changing reference semantics
 
 ## Explicit Deferrals
 

@@ -24,6 +24,7 @@ process manager, or multi-user isolation.
 - Route inventory: `control/inventory/public_alpha_routes.json`
 - Smoke command: `python scripts/public_alpha_smoke.py`
 - JSON smoke command: `python scripts/public_alpha_smoke.py --json`
+- Hosting pack: `docs/operations/public_alpha_hosting_pack/`
 - Inventory validator: `python -m unittest tests.operations.test_public_alpha_route_inventory`
 - Script smoke tests: `python -m unittest tests.scripts.test_public_alpha_scripts`
 
@@ -92,6 +93,7 @@ metadata and should be manually reviewed again before any real hosted demo.
 
 ## Next Recommendation
 
-The next milestone should be Public Alpha Hosting Pack v0: a small evidence
-packet for an operator-supervised demo that consumes this inventory, smoke
-report, and checklist without adding deployment infrastructure in this repo.
+Public Alpha Hosting Pack v0 now packages this inventory, smoke report, and
+checklist into a bounded operator evidence packet for supervised rehearsal. A
+real hosted alpha remains blocked on external hosting posture, final route
+review, abuse-control decisions, TLS/auth ownership, and operator approval.

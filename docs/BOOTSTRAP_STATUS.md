@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus thirty-four executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus thirty-five executable local deterministic thin slices, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -57,6 +57,7 @@ architectural oracle rather than as a throwaway scaffold.
 - first bounded Archive Resolution Eval Runner v0 seam under `runtime/engine/evals/` that executes the governed hard-query packet through Query Planner v0, Local Index v0 or deterministic search fallback, and bounded absence reasoning, then reports stable JSON task and suite results with explicit satisfied, partial, not-satisfied, not-evaluable, and capability-gap checks without implying ranking, fuzzy retrieval, vector search, LLM planning, crawling, live sync, or production relevance evaluation
 - first bounded Public Alpha Safe Mode v0 seam under `surfaces/web/server/` that separates trusted `local_dev` behavior from constrained `public_alpha` behavior, blocks caller-provided local path parameters in public-alpha mode, adds `/status` plus `/api/status`, and keeps safe read-only/search/eval routes available without implying production deployment, auth, accounts, HTTPS/TLS, or multi-user hosting
 - first bounded Public Alpha Deployment Readiness Review seam through `control/inventory/public_alpha_routes.json`, `scripts/public_alpha_smoke.py`, and `docs/operations/` that inventories safe, blocked, local-dev-only, and review-required route groups, smoke-tests public-alpha allowed and blocked behavior, and records operator checklist guidance without deploying Eureka or adding auth, HTTPS/TLS, accounts, rate limiting, production process management, or hosting infrastructure
+- first bounded Public Alpha Hosting Pack v0 seam under `docs/operations/public_alpha_hosting_pack/` plus `scripts/generate_public_alpha_hosting_pack.py` that packages route inventory status, smoke evidence templates, operator signoff, blockers, and a supervised rehearsal runbook without deploying Eureka or adding Docker, nginx, systemd, cloud infrastructure, auth, HTTPS/TLS, rate limiting, production logging, process management, live crawling, or background workers
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -96,23 +97,22 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Public Alpha Hosting Pack v0
+> Rust Migration Skeleton and Parity Plan
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
 Eval Runner v0, Public Alpha Safe Mode v0, and Public Alpha Deployment
-Readiness Review are now implemented as the first
+Readiness Review, and Public Alpha Hosting Pack v0 are now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
 synchronous local execution substrate, explicit local reusable investigation
 memory layer, executable eval guardrail, constrained public-demo posture, and
-auditable public-alpha route/smoke checklist.
+auditable public-alpha route/smoke checklist plus supervised rehearsal evidence packet.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Public Alpha Hosting Pack v0
-2. Rust Migration Skeleton and Parity Plan
-3. Native App Work Later
+1. Rust Migration Skeleton and Parity Plan
+2. Native App Work Later
 
 ## Deferred Priorities
 

@@ -17,6 +17,8 @@ The minimum public-alpha entry gate should include:
 - Public Alpha Safe Mode v0 (implemented as constrained mode-aware server behavior)
 - Public Alpha Deployment Readiness Review (implemented as route inventory,
   smoke checks, and operator checklist)
+- Public Alpha Hosting Pack v0 (implemented as a supervised rehearsal evidence
+  packet)
 - local-path APIs disabled or explicitly restricted in public-alpha mode
 - safe status route without private local path disclosure
 - repeatable public-alpha smoke report
@@ -65,7 +67,9 @@ server behavior. `local_dev` preserves trusted local path demos, while
 `public_alpha` blocks arbitrary local path parameters and disables local
 write/readback route groups. Public Alpha Deployment Readiness Review now adds
 `control/inventory/public_alpha_routes.json`, `scripts/public_alpha_smoke.py`,
-and operator docs under `docs/operations/`. Public hosting itself is still not
+and operator docs under `docs/operations/`. Public Alpha Hosting Pack v0 now
+adds `docs/operations/public_alpha_hosting_pack/` plus a route-summary
+generator for supervised rehearsal evidence. Public hosting itself is still not
 started. The hosted-alpha gate remains blocked on real deployment posture,
 externally supplied auth/TLS decisions, abuse controls, operational monitoring,
 and final operator approval.

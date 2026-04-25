@@ -10,6 +10,8 @@ rehearsal. It is not deployment infrastructure.
   `control/inventory/public_alpha_routes.json`.
 - Confirm the readiness review has been read:
   `docs/operations/PUBLIC_ALPHA_READINESS_REVIEW.md`.
+- Confirm the hosting pack has been read:
+  `docs/operations/public_alpha_hosting_pack/README.md`.
 - Confirm the demo does not need auth, accounts, private user state, live
   crawling, broad downloads, installer behavior, or background workers.
 
@@ -47,6 +49,7 @@ Run:
 ```powershell
 python scripts/public_alpha_smoke.py
 python scripts/public_alpha_smoke.py --json
+python scripts/generate_public_alpha_hosting_pack.py --check
 python -m unittest tests.operations.test_public_alpha_route_inventory
 ```
 
@@ -58,6 +61,11 @@ Capture:
 - plain-text smoke summary
 - JSON smoke report
 - commit SHA
+
+For a supervised rehearsal, record the result in:
+
+- `docs/operations/public_alpha_hosting_pack/SMOKE_EVIDENCE_TEMPLATE.md`
+- `docs/operations/public_alpha_hosting_pack/OPERATOR_SIGNOFF_TEMPLATE.md`
 
 ## Stop Procedure
 
@@ -81,6 +89,7 @@ Capture:
 
 - The server is not in `public_alpha` mode.
 - The smoke script fails.
+- The hosting pack summary check fails.
 - `/api/status` leaks an absolute local path.
 - Any caller-provided local path route returns success in public-alpha mode.
 - A demo requires local-dev-only routes such as local index, local task, run,

@@ -54,4 +54,5 @@ These questions are intentionally left open during bootstrap:
 50. Which additional synchronous local task kinds should follow the current v0 set without prematurely turning the task substrate into a production scheduler or queue system?
 51. Should Archive Resolution Eval Runner v0 become a local task kind later, and if so how should that remain synchronous and local without implying background benchmark workers or production scheduling?
 52. Now that Public Alpha Deployment Readiness Review v0 inventories routes and adds smoke checks, which review-required route groups should be promoted, further restricted, or removed before a real public-alpha demo?
-53. What should Public Alpha Hosting Pack v0 contain beyond the current inventory, smoke report, and operator checklist while still avoiding auth, TLS, production process management, and deployment infrastructure inside this repo?
+53. After Public Alpha Hosting Pack v0, which checklist failures should be hard rehearsal blockers versus advisory warnings, and who owns that operator decision outside the repo?
+54. What evidence would be required to convert the supervised public-alpha rehearsal packet into a real hosted-alpha gate without adding deployment infrastructure, auth, TLS, accounts, rate limiting, or production process management inside this repo?

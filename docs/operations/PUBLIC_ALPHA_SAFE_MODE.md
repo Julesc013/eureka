@@ -75,6 +75,7 @@ checklist live at:
 
 - `docs/operations/PUBLIC_ALPHA_READINESS_REVIEW.md`
 - `docs/operations/PUBLIC_ALPHA_OPERATOR_CHECKLIST.md`
+- `docs/operations/public_alpha_hosting_pack/`
 
 ## Still Not Production
 
