@@ -12,6 +12,10 @@ steps:
     run: python scripts/run_archive_resolution_evals.py --json
   - id: public_alpha_status
     run: python scripts/demo_http_api.py --mode public_alpha status
+  - id: public_alpha_smoke
+    run: python scripts/public_alpha_smoke.py --json
+  - id: public_alpha_route_inventory
+    run: python -m unittest tests.operations.test_public_alpha_route_inventory
   - id: runtime_tests
     run: python -m unittest discover -s runtime -t .
   - id: surface_tests

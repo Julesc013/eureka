@@ -53,4 +53,5 @@ These questions are intentionally left open during bootstrap:
 49. At what milestone should thin native host-shell experiments become worthwhile, and what backend or public-boundary conditions must be true first?
 50. Which additional synchronous local task kinds should follow the current v0 set without prematurely turning the task substrate into a production scheduler or queue system?
 51. Should Archive Resolution Eval Runner v0 become a local task kind later, and if so how should that remain synchronous and local without implying background benchmark workers or production scheduling?
-52. Now that Public Alpha Safe Mode v0 blocks local path controls, what final route inventory, abuse-control posture, and operator checklist are required before any real public-alpha deployment is attempted?
+52. Now that Public Alpha Deployment Readiness Review v0 inventories routes and adds smoke checks, which review-required route groups should be promoted, further restricted, or removed before a real public-alpha demo?
+53. What should Public Alpha Hosting Pack v0 contain beyond the current inventory, smoke report, and operator checklist while still avoiding auth, TLS, production process management, and deployment infrastructure inside this repo?

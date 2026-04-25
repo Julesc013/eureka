@@ -35,6 +35,8 @@ In `local_dev`, existing demos may still use:
 
 These controls are intentionally convenient for local bootstrap work. They are
 not safe as public URL parameters and are blocked by `public_alpha` mode.
+`local_dev` mode is therefore not an acceptable mode for the public-alpha
+readiness smoke checks or any hosted demo rehearsal.
 
 ## Scope
 

@@ -15,8 +15,11 @@ The minimum public-alpha entry gate should include:
 - Resolution Memory v0 (implemented, local-only)
 - Archive Resolution Eval Runner v0 (implemented as a local regression guardrail)
 - Public Alpha Safe Mode v0 (implemented as constrained mode-aware server behavior)
+- Public Alpha Deployment Readiness Review (implemented as route inventory,
+  smoke checks, and operator checklist)
 - local-path APIs disabled or explicitly restricted in public-alpha mode
 - safe status route without private local path disclosure
+- repeatable public-alpha smoke report
 - clear alpha disclaimers
 
 ## Public Alpha Safe-Mode Expectations
@@ -60,6 +63,9 @@ The public alpha should not yet include:
 Public Alpha Safe Mode v0 is now implemented as mode-aware stdlib web/API
 server behavior. `local_dev` preserves trusted local path demos, while
 `public_alpha` blocks arbitrary local path parameters and disables local
-write/readback route groups. Public hosting itself is still not started. The
-hosted-alpha gate remains blocked on real deployment posture, auth/TLS
-decisions, abuse controls, operational monitoring, and final route review.
+write/readback route groups. Public Alpha Deployment Readiness Review now adds
+`control/inventory/public_alpha_routes.json`, `scripts/public_alpha_smoke.py`,
+and operator docs under `docs/operations/`. Public hosting itself is still not
+started. The hosted-alpha gate remains blocked on real deployment posture,
+externally supplied auth/TLS decisions, abuse controls, operational monitoring,
+and final operator approval.

@@ -287,3 +287,9 @@
 - Status: accepted
 - Decision: Eureka now gives the stdlib web/API backend explicit `local_dev` and `public_alpha` modes under `surfaces/web/server/`, with a route policy that blocks caller-provided local filesystem path controls in public-alpha mode, status/capability reporting at `/status` and `/api/status`, and script flags for starting or checking public-alpha behavior.
 - Why: the local demo server intentionally supports trusted local path workflows, but a public demo needs an explicit constrained posture before any hosted-alpha experiment; this separates mode behavior without adding auth, HTTPS/TLS, accounts, production deployment, background workers, or new retrieval semantics.
+
+## ADR-049: Add Public Alpha Deployment Readiness Review as an Auditable Gate
+
+- Status: accepted
+- Decision: Eureka now records a machine-readable public-alpha route inventory under `control/inventory/public_alpha_routes.json`, validates that inventory in tests, adds `scripts/public_alpha_smoke.py` for repeatable safe/blocked route smoke checks, and documents the readiness verdict plus operator checklist under `docs/operations/`.
+- Why: `public_alpha` mode is useful only if its route posture can be audited and rechecked; the review makes safe routes, local-dev-only routes, blocked local-path variants, review-required routes, and unresolved hosting blockers explicit without deploying Eureka or adding auth, HTTPS/TLS, accounts, rate limiting, process management, or production infrastructure.

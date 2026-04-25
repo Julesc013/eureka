@@ -14,6 +14,7 @@ Run the demo server in public-alpha mode with:
 ```powershell
 python scripts/demo_web_workbench.py --mode public_alpha
 python scripts/demo_http_api.py --mode public_alpha status
+python scripts/public_alpha_smoke.py
 ```
 
 The mode can also be selected with:
@@ -67,6 +68,13 @@ fixture bytes:
 Blocked API routes return a structured `403` JSON response. Blocked HTML
 routes render a compatibility-first blocked page with the mode, reason, and
 blocked parameter names where applicable.
+
+The auditable route inventory lives at
+`control/inventory/public_alpha_routes.json`. The readiness review and operator
+checklist live at:
+
+- `docs/operations/PUBLIC_ALPHA_READINESS_REVIEW.md`
+- `docs/operations/PUBLIC_ALPHA_OPERATOR_CHECKLIST.md`
 
 ## Still Not Production
 

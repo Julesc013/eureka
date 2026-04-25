@@ -8,6 +8,8 @@ Current bootstrap slice:
 
 - stdlib-only, local-only, server-rendered compatibility-first workbench page
 - explicit `local_dev` and `public_alpha` server modes for the stdlib web/API surface
+- public-alpha route posture is inventoried in `control/inventory/public_alpha_routes.json`
+- public-alpha readiness smoke checks live in `scripts/public_alpha_smoke.py`
 - consumes the transport-neutral gateway public submit/read and search boundaries
 - renders exact resolution from the shared `WorkbenchSession` view model rather than engine-owned state
 - renders side-by-side comparison at `/compare?left=...&right=...` from a shared comparison view model rather than engine-owned compare state
@@ -60,6 +62,7 @@ Current bootstrap slice:
 - does not imply a real framework choice, browser-side JavaScript dependency, routing tree, authentication layer, or deployment model
 - does not settle final HTTP API route naming, auth, HTTPS/TLS, deployment, or multi-user semantics
 - public-alpha mode blocks caller-provided local path parameters and local write/readback route groups, but remains a constrained demo posture rather than production deployment
+- Public Alpha Deployment Readiness Review documents the current verdict and operator checklist under `docs/operations/`; it is not a final security review or public hosting approval
 - local store root configuration is a bootstrap-only demo choice, not a final deployment or multi-user storage contract
 - run_store_root configuration is a bootstrap-only demo choice for synchronous persisted resolution runs, not a final deployment, worker, or multi-user storage contract
 - task_store_root configuration is a bootstrap-only demo choice for synchronous persisted local tasks, not a final deployment, worker, scheduler, or multi-user storage contract

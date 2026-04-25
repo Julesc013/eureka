@@ -30,6 +30,8 @@ The repo has already proven:
 - Public Alpha Safe Mode v0 as the first explicit constrained web/API hosting
   posture that separates trusted local-dev behavior from public-alpha route
   blocking
+- Public Alpha Deployment Readiness Review as the first auditable route
+  inventory, smoke-test, and operator-checklist gate for that posture
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -46,15 +48,16 @@ The next backend sequence is:
 6. Resolution Memory v0 (implemented)
 7. Archive Resolution Eval Runner v0 (implemented)
 8. Public Alpha Safe Mode v0 (implemented)
-9. Public Alpha Deployment Readiness Review
-10. Rust Migration Skeleton and Parity Plan
-11. Native App Work Later
+9. Public Alpha Deployment Readiness Review (implemented)
+10. Public Alpha Hosting Pack v0
+11. Rust Migration Skeleton and Parity Plan
+12. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Public Alpha Deployment Readiness Review
+> Public Alpha Hosting Pack v0
 
 Why this comes next:
 
@@ -71,8 +74,10 @@ Why this comes next:
   harness over the hard-query packet, including explicit capability gaps
 - Public Alpha Safe Mode v0 now blocks arbitrary local-path controls in
   public-alpha mode while preserving local-dev behavior
-- the next backend bottleneck is final public-alpha deployment-readiness review,
-  not broader retrieval semantics
+- Public Alpha Deployment Readiness Review now inventories route safety,
+  validates policy alignment, and smoke-tests public-alpha behavior
+- the next backend bottleneck is packaging that evidence into a bounded hosting
+  pack, not broader retrieval semantics
 
 ## Explicit Deferrals
 
