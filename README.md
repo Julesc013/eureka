@@ -23,6 +23,7 @@ This repository is intentionally:
 | Product maturity | Bootstrap / pre-product |
 | Runtime lane | Python 3 standard library only |
 | Backend role | Python reference backend / architectural oracle |
+| Rust lane | Workspace skeleton only; not active backend |
 | Data sources | Governed synthetic fixtures plus recorded GitHub Releases fixtures |
 | Surfaces | HTML workbench, native CLI, local stdlib HTTP API |
 | Search | Deterministic, bounded, no ranking, no fuzzy retrieval |
@@ -31,7 +32,7 @@ This repository is intentionally:
 | Persistence | Local bounded content-addressed export store plus local JSON resolution-run, task, and memory stores |
 | Identity | Bootstrap deterministic `resolved_resource_id` seam |
 | Architecture enforcement | Repo-local Python import boundary checker |
-| Next implementation milestone | Eval Harness Upgrade |
+| Next implementation milestone | Rust Parity Fixture Pack v0 |
 
 ## What Eureka Proves Today
 
@@ -93,7 +94,7 @@ It does **not** yet settle:
 - actual downloads, installers, or restore/import flows
 - async workers, auth, deployment, or production HTTP semantics
 - public hosted alpha readiness
-- production Rust backend migration
+- active Rust backend behavior or production Rust migration
 - native app shells or serious Visual Studio/Xcode work
 - final CLI, TUI, or GUI direction
 - personalization, saved user profiles, cloud/shared memory, or automatic memory invalidation
@@ -104,6 +105,7 @@ It does **not** yet settle:
 
 - Python 3
 - no third-party Python dependencies required for the bootstrap lane
+- optional Rust toolchain only for checking the placeholder Rust workspace
 
 ### Useful Demo Commands
 
@@ -165,6 +167,15 @@ Then open the local URLs printed by the script, including the exact-resolution w
 python scripts/check_architecture_boundaries.py
 ```
 
+#### Optional Rust Skeleton Check
+
+```bash
+cargo check --workspace --manifest-path crates/Cargo.toml
+```
+
+This checks only the placeholder Rust workspace. It does not run or replace
+Eureka runtime behavior.
+
 ## Architecture At a Glance
 
 Normal bounded flow:
@@ -210,7 +221,7 @@ The repo enforces the current proven Python import layering with:
 The detailed north-star documentation now lives in:
 
 - `docs/vision/` — accepted product thesis, promise, and doctrine
-- `docs/architecture/` — accepted architecture direction and staging
+- `docs/architecture/` — accepted architecture direction, staging, and Rust backend lane
 - `docs/roadmap/` — backend roadmap, public alpha plan, Rust migration plan, native-apps-later plan
 - `docs/standards/` — source registry, identifier, and privacy/shared-evidence standards
 - `docs/evals/` — benchmark design guidance tied to the archive-resolution eval packet
@@ -221,7 +232,7 @@ Research that remains intentionally non-normative stays under:
 
 ## Current Executable Scope
 
-Current bootstrap status includes **thirty-one executable local deterministic thin slices** plus the first repo-level archive-resolution eval corpus.
+Current bootstrap status includes **thirty-five executable local deterministic thin slices**, the first repo-level archive-resolution eval corpus, Public Alpha Hosting Pack v0, and a Rust migration skeleton.
 
 Important highlights:
 
@@ -237,6 +248,8 @@ Important highlights:
 - one bootstrap native CLI surface
 - one local stdlib HTTP API surface
 - one repo-local architecture-boundary checker
+- one placeholder Rust workspace under `crates/` that is not yet an active
+  backend
 
 This means the repo is already useful for:
 
@@ -288,9 +301,10 @@ Useful paths to know:
 - `runtime/gateway/public_api/` — transport-neutral public runtime boundary reused by surfaces
 - `surfaces/web/` — compatibility-first HTML workbench plus local stdlib HTTP API
 - `surfaces/native/cli/` — bootstrap CLI surface
+- `crates/` — placeholder Rust workspace for the future parity-tested backend lane
 - `evals/archive_resolution/` — hard archive-resolution benchmark tasks and draft schema
 - `docs/vision/` — accepted product thesis, promise, and doctrine
-- `docs/architecture/` — accepted architecture direction and staging
+- `docs/architecture/` — accepted architecture direction, staging, and Rust backend lane
 - `docs/roadmap/` — next-phase backend, public-alpha, Rust-migration, and native-app plans
 - `docs/standards/` — source-registry, identifier, and privacy guidance
 - `docs/evals/` — benchmark-design guidance

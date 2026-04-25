@@ -15,6 +15,11 @@ downstream of stronger backend and public-boundary work.
 Source Registry v0 does not change that policy by itself. Backend infrastructure
 still takes priority over host shells.
 
+Rust Migration Skeleton and Parity Plan v0 does not change that policy. The
+Rust skeleton does not change that policy either: the workspace is a backend
+parity lane only; it is not a native app project, does not add FFI, and does
+not start host-shell work.
+
 ## Host-Shell Principle
 
 Future native apps should remain shells over the core. They should consume
@@ -38,3 +43,5 @@ Serious native host work should wait until:
 - resolution runs exist
 - local index work is underway
 - public-alpha-safe boundaries are clearer
+- Rust parity boundaries are clearer if native shells later consume Rust
+  libraries directly

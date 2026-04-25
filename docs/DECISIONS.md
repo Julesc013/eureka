@@ -299,3 +299,9 @@
 - Status: accepted
 - Decision: Eureka now groups Public Alpha Hosting Pack v0 under `docs/operations/public_alpha_hosting_pack/`, with a rehearsal runbook, route-safety summary, smoke evidence template, operator signoff template, blocker list, and manifest, plus `scripts/generate_public_alpha_hosting_pack.py` to keep the route summary aligned with the route inventory.
 - Why: the readiness review established route posture evidence, but a human operator needs a bounded packet for supervised rehearsal decisions; the pack packages existing evidence and explicit blockers without deploying Eureka or adding Docker, nginx, systemd, cloud infrastructure, auth, HTTPS/TLS, accounts, rate limiting, production logging, production process management, live crawling, background workers, Rust code, or native app work.
+
+## ADR-051: Add Rust Migration Skeleton and Parity Plan v0 Without Porting Behavior
+
+- Status: accepted
+- Decision: Eureka now contains a minimal Rust workspace under `crates/` plus `docs/architecture/RUST_BACKEND_LANE.md` and `tests/parity/` planning docs; Python remains the executable specification, reference backend, and oracle, and Rust cannot replace a seam until parity tests compare Python oracle outputs against Rust candidate outputs.
+- Why: Rust is the intended later production backend lane, but the project needs a governed migration path before any rewrite; the skeleton reserves the first crate boundaries and parity discipline without porting runtime behavior, replacing Python, adding production services, adding FFI, or starting native app projects.

@@ -60,6 +60,7 @@ Detailed product-architecture direction now lives under `docs/architecture/`:
 - [Resolution Memory](architecture/RESOLUTION_MEMORY.md)
 - [Streaming Runs](architecture/STREAMING_RUNS.md)
 - [Action Router](architecture/ACTION_ROUTER.md)
+- [Rust Backend Lane](architecture/RUST_BACKEND_LANE.md)
 - [AI Policy](architecture/AI_POLICY.md)
 
 These documents describe accepted architecture direction and staging. They do

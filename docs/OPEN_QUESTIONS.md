@@ -56,3 +56,5 @@ These questions are intentionally left open during bootstrap:
 52. Now that Public Alpha Deployment Readiness Review v0 inventories routes and adds smoke checks, which review-required route groups should be promoted, further restricted, or removed before a real public-alpha demo?
 53. After Public Alpha Hosting Pack v0, which checklist failures should be hard rehearsal blockers versus advisory warnings, and who owns that operator decision outside the repo?
 54. What evidence would be required to convert the supervised public-alpha rehearsal packet into a real hosted-alpha gate without adding deployment infrastructure, auth, TLS, accounts, rate limiting, or production process management inside this repo?
+55. Which Python oracle outputs should become the first committed Rust parity fixture pack, and how should allowed divergences be represented before any Rust behavior port begins?
+56. Which initial Rust crate should receive the first real parity-tested seam once source registry and query-planner golden outputs exist?

@@ -2,7 +2,8 @@
 
 Eureka has completed most of its bounded architecture-proof phase. The next
 program is operational backend development, still in the Python reference lane,
-before public alpha or Rust migration work begins.
+with public-alpha rehearsal evidence and Rust migration scaffolding now present
+but not production-active.
 
 ## Current Status
 
@@ -34,6 +35,8 @@ The repo has already proven:
   inventory, smoke-test, and operator-checklist gate for that posture
 - Public Alpha Hosting Pack v0 as the first supervised rehearsal evidence
   packet for that posture
+- Rust Migration Skeleton and Parity Plan v0 as the first governed Rust lane
+  skeleton, with Python still authoritative
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -52,14 +55,15 @@ The next backend sequence is:
 8. Public Alpha Safe Mode v0 (implemented)
 9. Public Alpha Deployment Readiness Review (implemented)
 10. Public Alpha Hosting Pack v0 (implemented)
-11. Rust Migration Skeleton and Parity Plan
-12. Native App Work Later
+11. Rust Migration Skeleton and Parity Plan (implemented as skeleton only)
+12. Rust Parity Fixture Pack v0
+13. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Rust Migration Skeleton and Parity Plan
+> Rust Parity Fixture Pack v0
 
 Why this comes next:
 
@@ -81,8 +85,10 @@ Why this comes next:
 - Public Alpha Hosting Pack v0 now packages route inventory status, smoke
   evidence templates, operator signoff, blockers, and a supervised rehearsal
   runbook without adding deployment infrastructure
-- the next backend bottleneck is planning Python-to-Rust parity without starting
-  the migration or changing reference semantics
+- Rust Migration Skeleton and Parity Plan v0 now creates placeholder crates and
+  parity documentation without porting behavior or replacing Python
+- the next backend bottleneck is capturing Python oracle outputs as stable
+  parity fixtures before any Rust seam ports begin
 
 ## Explicit Deferrals
 
@@ -92,6 +98,7 @@ The backend roadmap intentionally defers:
 - Xcode app work
 - full native app work
 - production Rust rewrite
+- Rust behavior ports before Python oracle fixtures exist
 - installer or download automation
 - trust scoring
 - production relevance benchmarking
