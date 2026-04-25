@@ -6,6 +6,8 @@ assets without turning them into runtime truth by themselves.
 Current inventory coverage:
 
 - `sources/` for Source Registry v0 seed records
+- `tests/` for the Test and Eval Operating Layer v0 registry and command
+  matrix
 - `public_alpha_routes.json` for the Public Alpha Deployment Readiness Review
   route inventory and current safe/blocked route classification
 - `docs/operations/public_alpha_hosting_pack/ROUTE_SAFETY_SUMMARY.md` consumes

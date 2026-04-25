@@ -24,6 +24,10 @@ steps:
     run: python -m unittest tests.operations.test_public_alpha_hosting_pack
   - id: python_oracle_golden_check
     run: python scripts/generate_python_oracle_golden.py --check
+  - id: test_eval_operating_layer
+    run: python -m unittest tests.operations.test_test_eval_operating_layer
+  - id: comprehensive_audit_pack
+    run: python -m unittest tests.operations.test_comprehensive_audit_pack
   - id: runtime_tests
     run: python -m unittest discover -s runtime -t .
   - id: surface_tests
@@ -35,5 +39,6 @@ notes:
   - The architecture-boundary check remains intentionally narrow and Python import focused.
   - The Python-oracle golden check is stdlib-only and verifies committed future-Rust parity fixtures without requiring Rust tooling.
   - The search-usefulness audit is stdlib-only and keeps external baselines as pending manual observations; it does not scrape Google, Internet Archive, or any other external source.
+  - The test/eval operating layer and comprehensive audit pack checks are stdlib-only governance validations; they do not add product runtime behavior or production-readiness claims.
   - Rust workspace checking is intentionally not required here because normal Python verification must not depend on a Rust toolchain; use `cargo check --workspace --manifest-path crates/Cargo.toml` and `cargo test --workspace --manifest-path crates/Cargo.toml` as optional local checks.
   - This command contract is repo-operating metadata, not proof of a local AIDE product CLI.

@@ -323,3 +323,9 @@
 - Status: accepted
 - Decision: Eureka now maintains Search Usefulness Audit v0 under `evals/search_usefulness/`, with a 64-query archive-resolution-style pack, JSON-subset YAML schemas, a stdlib runner, a manual baseline-observation helper, and reports that aggregate current Eureka statuses, pending external baselines, failure modes, and future-work labels.
 - Why: archive-resolution progress needs a broad usefulness audit that can show where Eureka's structure helps and where corpus, planner, index, decomposition, representation, compatibility, or UX gaps dominate; external systems must remain pending manual observations unless a human records them, so the repo does not fabricate Google or Internet Archive results or introduce scraping.
+
+## ADR-055: Add Test/Eval Operating Layer and Comprehensive Repo Audit v0
+
+- Status: accepted
+- Decision: Eureka now records a repo-native test/eval operating layer under `control/inventory/tests/`, structured audit finding schemas under `control/audits/schemas/`, a dated comprehensive audit pack under `control/audits/2026-04-25-comprehensive-test-eval-audit/`, and AIDE task/report scaffolding under `.aide/tasks/` and `.aide/reports/`.
+- Why: future backend, eval, public-alpha, and Rust parity work needs modular verification lanes, structured findings, hard-test proposals, and evidence-backed backlog recommendations before implementation broadens; this is governance metadata only and does not add product runtime behavior, source connectors, deployment infrastructure, external scraping, or production-readiness claims.

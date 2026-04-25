@@ -21,6 +21,8 @@ The minimum public-alpha entry gate should include:
   packet)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
+- Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
+  structured verification lanes and audit findings; not a hosting approval)
 - local-path APIs disabled or explicitly restricted in public-alpha mode
 - safe status route without private local path disclosure
 - repeatable public-alpha smoke report
@@ -78,3 +80,7 @@ and final operator approval. Search Usefulness Audit v0 now provides a broad
 local query/usefulness report that can inform public-alpha demo scope, but its
 external Google and Internet Archive baselines remain pending manual
 observation and it is not public-hosting approval.
+Comprehensive Test/Eval Operating Layer and Repo Audit v0 adds reusable
+public-alpha and full verification lanes plus hard-test proposals for path
+leakage and route inventory drift, but it does not change the public-alpha
+runtime posture or approve public hosting.

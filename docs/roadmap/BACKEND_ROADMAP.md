@@ -45,6 +45,9 @@ The repo has already proven:
 - Search Usefulness Audit v0 as the first broad usefulness/backlog audit over
   64 archive-resolution-style queries, with external baselines left pending
   manual observation and no scraping or new retrieval semantics
+- Comprehensive Test/Eval Operating Layer and Repo Audit v0 as the first
+  structured verification lane registry, audit finding schema, dated audit
+  pack, hard-test proposal set, and next-milestone backlog
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -67,15 +70,17 @@ The next backend sequence is:
 12. Rust Parity Fixture Pack v0 (implemented as Python-oracle goldens only)
 13. Rust Source Registry Parity Candidate v0 (implemented as isolated parity seam)
 14. Search Usefulness Audit v0 (implemented as local audit/backlog generator)
-15. Search Usefulness Backlog Triage v0
-16. Rust Query Planner Parity Candidate v0
-17. Native App Work Later
+15. Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as governance/audit layer)
+16. Hard Test Pack v0
+17. Search Usefulness Backlog Triage v0
+18. Rust Query Planner Parity Candidate v0
+19. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Search Usefulness Backlog Triage v0
+> Hard Test Pack v0
 
 Why this comes next:
 
@@ -106,9 +111,11 @@ Why this comes next:
 - Search Usefulness Audit v0 now shows a broad observed backlog dominated by
   source coverage, planner/query-interpretation, compatibility evidence,
   representation, decomposition, and member-access gaps
-- the next backend bottleneck is turning that audit output into a small
-  accepted backlog slice before choosing broader source, planner, or Rust
-  parity work
+- Comprehensive Test/Eval Operating Layer and Repo Audit v0 now records hard
+  test proposals and structured findings that should become executable
+  guardrails before source, planner, or Rust parity work widens
+- the next backend bottleneck is turning audit findings into hard tests before
+  choosing broader source, planner, or Rust parity work
 
 ## Explicit Deferrals
 

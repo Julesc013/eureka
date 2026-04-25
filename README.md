@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. Many archive-resolution eval tasks
@@ -92,6 +92,10 @@ python scripts/run_search_usefulness_audit.py
 python scripts/public_alpha_smoke.py
 python scripts/generate_python_oracle_golden.py --check
 ```
+
+For larger tasks, the command registry and lane guidance live in
+`control/inventory/tests/` and
+`docs/operations/TEST_AND_EVAL_LANES.md`.
 
 ### Try the CLI
 
@@ -296,6 +300,8 @@ Roadmaps and operations:
 - [Public Alpha Safe Mode](docs/operations/PUBLIC_ALPHA_SAFE_MODE.md)
 - [Public Alpha Readiness Review](docs/operations/PUBLIC_ALPHA_READINESS_REVIEW.md)
 - [Public Alpha Hosting Pack](docs/operations/public_alpha_hosting_pack/README.md)
+- [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md)
+- [Comprehensive Audit Pack](control/audits/2026-04-25-comprehensive-test-eval-audit/README.md)
 
 Evals and parity:
 
@@ -326,18 +332,21 @@ Eureka is substantial, but it is still a prototype/reference backend:
 Accepted immediate next milestone:
 
 1. Search Usefulness Backlog Triage v0
+2. Hard Test Pack v0
 
 Broader near-term direction:
 
-1. triage Search Usefulness Audit v0 into the next small source, planner,
+1. use the comprehensive audit findings to select the next small hard-test,
+   source, planner, representation, or compatibility slice
+2. triage Search Usefulness Audit v0 into the next small source, planner,
    representation, or compatibility backlog slice
-2. keep Python as oracle while adding Rust candidates only when parity fixtures
+3. keep Python as oracle while adding Rust candidates only when parity fixtures
    exist
-3. preserve public-alpha safety checks and capture rehearsal evidence
-4. expand source and eval coverage without weakening hard queries
-5. harden backend contracts, run models, memory, and local index behavior
-6. move toward hosted alpha only after explicit blockers are resolved
-7. keep native app shells later, after backend infrastructure is stronger
+4. preserve public-alpha safety checks and capture rehearsal evidence
+5. expand source and eval coverage without weakening hard queries
+6. harden backend contracts, run models, memory, and local index behavior
+7. move toward hosted alpha only after explicit blockers are resolved
+8. keep native app shells later, after backend infrastructure is stronger
 
 No exact dates are promised.
 
@@ -348,6 +357,8 @@ No exact dates are promised.
 - Preserve architecture boundaries; surfaces must not import engine internals.
 - Use gateway public APIs from web, CLI, and HTTP-facing code.
 - Treat evals and Python-oracle goldens as guardrails, not decoration.
+- Use the test registry and command matrix when choosing verification lanes for
+  larger tasks.
 - Do not claim production readiness without evidence and accepted decisions.
 - For nontrivial Codex/agent tasks, work in two passes: implementation, then
   hardening.

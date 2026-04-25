@@ -62,3 +62,6 @@ These questions are intentionally left open during bootstrap:
 58. Which source-registry fields should graduate from parity fixture shape into longer-lived Rust contract types, and which should remain implementation detail?
 59. Now that Search Usefulness Audit v0 reports broad source, planner, decomposition, representation, compatibility, and UX gaps, which failure family should become the next bounded implementation target?
 60. What process should govern manual Google, Internet Archive metadata, and Internet Archive OCR/full-text baseline observations so they remain evidence records rather than scraped or fabricated comparisons?
+61. Which audit findings from Comprehensive Test/Eval Operating Layer and Repo Audit v0 should become required hard tests before broader source, planner, public-alpha, or Rust parity work proceeds?
+62. Should `control/inventory/tests/test_registry.json` become the source of truth for future AIDE command metadata, or should it remain a curated verification registry beside `.aide/commands/`?
+63. What minimum evidence should be required before an audit finding can be marked resolved rather than merely deferred or superseded?

@@ -13,3 +13,7 @@
 Benchmark-design guidance now lives in:
 
 - [docs/evals/SEARCH_BENCHMARK_DESIGN.md](../docs/evals/SEARCH_BENCHMARK_DESIGN.md)
+
+Repo-level audit findings and hard-test proposals now live under:
+
+- [control/audits/](../control/audits/README.md)

@@ -9,6 +9,7 @@
 - Plan first for any non-trivial task. Inspect the relevant paths, write a bounded plan, and update it as the work changes.
 - Respect boundaries. Edit only the paths needed for the task and preserve the contract split between control, contracts, runtime, and surfaces.
 - Verify before claiming completion. Run the lightweight checks that fit the scope and report what was actually verified.
+- Use `control/inventory/tests/command_matrix.json` and `docs/operations/TEST_AND_EVAL_LANES.md` when choosing verification lanes for larger tasks.
 - State blocked and deferred items explicitly. Do not imply completion by silence when something was left open on purpose.
 - Treat placeholders honestly. Do not fabricate mature behavior, stable semantics, or fake completeness.
 
@@ -43,3 +44,4 @@
 - Run `python scripts/check_architecture_boundaries.py` when Python-layering changes could affect runtime, gateway, connector, or surface boundaries.
 - If verification cannot be completed, say so plainly and list the reason.
 - If follow-up work is intentionally deferred, list it under a clear deferred or open-items heading.
+- Repo audits should emit structured findings under `control/audits/` and should not be treated as production-readiness claims.

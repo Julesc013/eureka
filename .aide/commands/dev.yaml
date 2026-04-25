@@ -46,6 +46,10 @@ steps:
     run: python scripts/generate_python_oracle_golden.py --check
   - id: python_oracle_golden_tests
     run: python -m unittest tests.parity.test_python_oracle_golden
+  - id: test_eval_operating_layer_validation
+    run: python -m unittest tests.operations.test_test_eval_operating_layer
+  - id: comprehensive_audit_pack_validation
+    run: python -m unittest tests.operations.test_comprehensive_audit_pack
   - id: rust_workspace_check_optional
     run: cargo check --workspace --manifest-path crates/Cargo.toml
   - id: rust_workspace_tests_optional
@@ -104,6 +108,10 @@ steps:
     run: python scripts/run_search_usefulness_audit.py --query windows_7_apps --json
   - id: search_usefulness_manual_baseline_template
     run: python scripts/record_search_baseline_observation.py --query windows_7_apps --system google
+  - id: test_eval_command_matrix
+    run: python -m json.tool control/inventory/tests/command_matrix.json
+  - id: audit_findings_parse
+    run: python -m json.tool control/audits/2026-04-25-comprehensive-test-eval-audit/findings.json
   - id: native_cli_archive_resolution_evals
     run: python scripts/demo_cli_workbench.py evals-archive-resolution --task windows_7_apps --json
   - id: native_cli_index_build
@@ -298,5 +306,6 @@ notes:
   - Rust Parity Fixture Pack v0 adds Python-oracle golden outputs and a stdlib generator/check script only; it does not implement Rust behavior, replace Python runtime paths, or require Rust tooling for normal checks.
   - Rust Source Registry Parity Candidate v0 is the first isolated Rust behavior seam under `crates/eureka-core`; it is compared to Python-oracle source-registry goldens and is not wired into Python runtime, web, CLI, HTTP API, workers, or production paths.
   - Search Usefulness Audit v0 is a local eval/audit harness with pending manual external baselines only; it performs no Google scraping, Internet Archive scraping, live crawling, ranking, fuzzy retrieval, vector search, or LLM planning.
+  - Comprehensive Test/Eval Operating Layer and Repo Audit v0 adds a structured test registry, command matrix, audit findings schema, AIDE queue/report scaffolding, and dated audit pack; it is governance metadata only and does not add product runtime behavior.
   - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.
