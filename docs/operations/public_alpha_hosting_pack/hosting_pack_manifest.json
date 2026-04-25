@@ -1,0 +1,39 @@
+{
+  "created_by_slice": "public_alpha_hosting_pack_v0",
+  "includes": [
+    "README.md",
+    "RUNBOOK.md",
+    "ROUTE_SAFETY_SUMMARY.md",
+    "SMOKE_EVIDENCE_TEMPLATE.md",
+    "OPERATOR_SIGNOFF_TEMPLATE.md",
+    "BLOCKERS.md"
+  ],
+  "known_blockers": [
+    "no auth or accounts",
+    "no HTTPS/TLS posture",
+    "no rate limiting or abuse controls",
+    "no production logging or monitoring posture",
+    "no process supervisor or deployment posture",
+    "review-required routes remain unresolved"
+  ],
+  "pack_id": "public_alpha_hosting_pack",
+  "required_checks": [
+    "python scripts/public_alpha_smoke.py",
+    "python scripts/public_alpha_smoke.py --json",
+    "python scripts/generate_public_alpha_hosting_pack.py --check",
+    "python -m unittest discover -s runtime -t .",
+    "python -m unittest discover -s surfaces -t .",
+    "python -m unittest discover -s tests -t .",
+    "python scripts/check_architecture_boundaries.py",
+    "git diff --check"
+  ],
+  "source_artifacts": {
+    "operator_checklist": "docs/operations/PUBLIC_ALPHA_OPERATOR_CHECKLIST.md",
+    "readiness_review": "docs/operations/PUBLIC_ALPHA_READINESS_REVIEW.md",
+    "route_inventory": "control/inventory/public_alpha_routes.json",
+    "safe_mode_docs": "docs/operations/PUBLIC_ALPHA_SAFE_MODE.md",
+    "smoke_script": "scripts/public_alpha_smoke.py"
+  },
+  "status": "supervised_rehearsal_only",
+  "version": "0.1.0"
+}
