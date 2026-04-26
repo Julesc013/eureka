@@ -185,6 +185,39 @@ def render_compatibility_html(
             parts.append("        <p>No bounded reasons are available for this verdict.</p>")
         parts.append("      </section>")
 
+        evidence_verdict = _optional_mapping(
+            compatibility.get("compatibility_evidence_verdict"),
+            "compatibility.compatibility_evidence_verdict",
+        )
+        compatibility_evidence = _mapping_list(
+            compatibility.get("compatibility_evidence"),
+            "compatibility.compatibility_evidence",
+            allow_none=True,
+        )
+        parts.extend(
+            [
+                "      <section>",
+                "        <h2>Compatibility Evidence</h2>",
+            ]
+        )
+        if evidence_verdict is not None:
+            verdict = _require_string(evidence_verdict.get("verdict"), "compatibility_evidence_verdict.verdict")
+            parts.append(f"        <p>Verdict: {escape(verdict)}</p>")
+            limitations = _string_list(
+                evidence_verdict.get("limitations"),
+                "compatibility_evidence_verdict.limitations",
+            )
+            if limitations:
+                parts.append(f"        <p>Limitations: {escape(', '.join(limitations))}</p>")
+        if compatibility_evidence:
+            parts.append("        <ul>")
+            for item in compatibility_evidence:
+                parts.append(f"          <li>{escape(_compact_compatibility_evidence(item))}</li>")
+            parts.append("        </ul>")
+        else:
+            parts.append("        <p>No source-backed compatibility evidence is attached to this target.</p>")
+        parts.append("      </section>")
+
         next_steps = _string_list(compatibility.get("next_steps"), "compatibility.next_steps")
         if next_steps:
             parts.extend(
@@ -290,3 +323,17 @@ def _optional_string(value: Any, field_name: str) -> str | None:
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field_name} must be a non-empty string when provided.")
     return value
+
+
+def _compact_compatibility_evidence(value: Mapping[str, Any]) -> str:
+    platform = value.get("platform")
+    platform_name = "(unknown platform)"
+    if isinstance(platform, Mapping):
+        platform_name = str(platform.get("name") or platform.get("marketing_alias") or platform_name)
+    confidence = _optional_string(value.get("confidence"), "compatibility_evidence.confidence") or "unknown"
+    return (
+        f"{platform_name}: "
+        f"{_require_string(value.get('claim_type'), 'compatibility_evidence.claim_type')} via "
+        f"{_require_string(value.get('evidence_kind'), 'compatibility_evidence.evidence_kind')} "
+        f"({confidence})"
+    )

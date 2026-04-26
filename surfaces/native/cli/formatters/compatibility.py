@@ -78,6 +78,25 @@ def format_compatibility(compatibility: Mapping[str, Any]) -> str:
                 f"- {reason.get('code', '(unknown)')}: {reason.get('message', '(unknown)')}"
             )
 
+    evidence_verdict = compatibility.get("compatibility_evidence_verdict")
+    if isinstance(evidence_verdict, Mapping):
+        lines.extend(["", "Compatibility evidence verdict"])
+        lines.append(f"verdict: {evidence_verdict.get('verdict', '(unknown)')}")
+        verdict_reasons = evidence_verdict.get("reasons")
+        if isinstance(verdict_reasons, list) and verdict_reasons:
+            lines.append(f"reasons: {', '.join(str(item) for item in verdict_reasons)}")
+        limitations = evidence_verdict.get("limitations")
+        if isinstance(limitations, list) and limitations:
+            lines.append(f"limitations: {', '.join(str(item) for item in limitations)}")
+
+    compatibility_evidence = compatibility.get("compatibility_evidence")
+    if isinstance(compatibility_evidence, list) and compatibility_evidence:
+        lines.extend(["", "Compatibility evidence"])
+        for item in compatibility_evidence:
+            if not isinstance(item, Mapping):
+                continue
+            lines.append(f"- {_compact_compatibility_evidence(item)}")
+
     next_steps = compatibility.get("next_steps")
     if isinstance(next_steps, list) and next_steps:
         lines.extend(["", "Next steps"])
@@ -97,3 +116,15 @@ def format_compatibility(compatibility: Mapping[str, Any]) -> str:
             lines.append(line)
 
     return "\n".join(lines) + "\n"
+
+
+def _compact_compatibility_evidence(value: Mapping[str, Any]) -> str:
+    platform = value.get("platform")
+    platform_name = "(unknown platform)"
+    if isinstance(platform, Mapping):
+        platform_name = str(platform.get("name") or platform.get("marketing_alias") or platform_name)
+    return (
+        f"{platform_name}: {value.get('claim_type', '(unknown claim)')} "
+        f"via {value.get('evidence_kind', '(unknown evidence)')} "
+        f"confidence={value.get('confidence', '(unknown)')}"
+    )

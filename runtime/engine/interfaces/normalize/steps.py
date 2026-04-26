@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from runtime.engine.compatibility import CompatibilityRequirements
+from runtime.engine.compatibility import CompatibilityRequirements, attach_compatibility_evidence
 from runtime.engine.interfaces.extract import (
     ExtractedGitHubReleaseRecord,
     ExtractedInternetArchiveRecordedItem,
@@ -26,7 +26,7 @@ def normalize_extracted_record(extracted_record: ExtractedSyntheticRecord) -> No
     )
     primary_representation = representations[0]
 
-    return NormalizedResolutionRecord(
+    return attach_compatibility_evidence(NormalizedResolutionRecord(
         target_ref=extracted_record.target_ref,
         source_name=extracted_record.source_name,
         source_locator=extracted_record.source_locator,
@@ -52,7 +52,7 @@ def normalize_extracted_record(extracted_record: ExtractedSyntheticRecord) -> No
             object_label=object_label or object_id,
             access_path_locator=primary_representation.access_locator,
         ),
-    )
+    ))
 
 
 def normalize_github_release_record(
@@ -78,7 +78,7 @@ def normalize_github_release_record(
     )
     primary_representation = representations[0]
 
-    return NormalizedResolutionRecord(
+    return attach_compatibility_evidence(NormalizedResolutionRecord(
         target_ref=extracted_record.target_ref,
         source_name=extracted_record.source_name,
         source_locator=extracted_record.source_locator,
@@ -106,7 +106,7 @@ def normalize_github_release_record(
             release_locator=release_html_url or release_api_url or extracted_record.source_locator,
             published_at=published_at,
         ),
-    )
+    ))
 
 
 def normalize_internet_archive_recorded_item(
@@ -126,7 +126,7 @@ def normalize_internet_archive_recorded_item(
     )
     primary_representation = representations[0]
 
-    return NormalizedResolutionRecord(
+    return attach_compatibility_evidence(NormalizedResolutionRecord(
         target_ref=extracted_record.target_ref,
         source_name=extracted_record.source_name,
         source_locator=extracted_record.source_locator,
@@ -155,7 +155,7 @@ def normalize_internet_archive_recorded_item(
             file_records=extracted_record.file_records,
             asserted_at=date,
         ),
-    )
+    ))
 
 
 def normalize_local_bundle_record(
@@ -174,7 +174,7 @@ def normalize_local_bundle_record(
     )
     primary_representation = representations[0]
 
-    return NormalizedResolutionRecord(
+    return attach_compatibility_evidence(NormalizedResolutionRecord(
         target_ref=extracted_record.target_ref,
         source_name=extracted_record.source_name,
         source_locator=extracted_record.source_locator,
@@ -201,7 +201,7 @@ def normalize_local_bundle_record(
             bundle_record=bundle_record,
             member_hint_records=extracted_record.member_hint_records,
         ),
-    )
+    ))
 
 
 def _synthetic_representation_summaries(

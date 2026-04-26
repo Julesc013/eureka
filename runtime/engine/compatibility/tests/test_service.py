@@ -3,16 +3,20 @@ from __future__ import annotations
 import unittest
 
 from runtime.connectors.github_releases import GitHubReleasesConnector
+from runtime.connectors.local_bundle_fixtures import LocalBundleFixturesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.compatibility.service import DeterministicCompatibilityService
+from runtime.engine.synthetic_records import synthesize_member_normalized_records
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.extract import (
     extract_github_release_source_record,
+    extract_local_bundle_source_record,
     extract_synthetic_source_record,
 )
 from runtime.engine.interfaces.normalize import (
     normalize_extracted_record,
     normalize_github_release_record,
+    normalize_local_bundle_record,
 )
 from runtime.engine.interfaces.public.compatibility import CompatibilityRequest
 
@@ -26,7 +30,14 @@ def _build_demo_catalog() -> NormalizedCatalog:
         normalize_github_release_record(extract_github_release_source_record(record))
         for record in GitHubReleasesConnector().load_source_records()
     )
-    return NormalizedCatalog(synthetic_records + github_records)
+    local_bundle_records = tuple(
+        normalize_local_bundle_record(extract_local_bundle_source_record(record))
+        for record in LocalBundleFixturesConnector().load_source_records()
+    )
+    synthetic_member_records = synthesize_member_normalized_records(local_bundle_records)
+    return NormalizedCatalog(
+        synthetic_records + github_records + local_bundle_records + synthetic_member_records
+    )
 
 
 class DeterministicCompatibilityServiceTestCase(unittest.TestCase):
@@ -91,3 +102,20 @@ class DeterministicCompatibilityServiceTestCase(unittest.TestCase):
         self.assertEqual(result.source.label, "GitHub Releases")
         self.assertEqual(result.resolved_resource_id[:16], "resolved:sha256:")
 
+    def test_member_target_returns_source_backed_compatibility_evidence(self) -> None:
+        member = next(
+            record
+            for record in _build_demo_catalog().records
+            if record.member_path == "drivers/wifi/thinkpad_t42/windows2000/driver.inf"
+        )
+
+        result = self.service.evaluate_compatibility(
+            CompatibilityRequest.from_parts(member.target_ref, "windows-x86_64")
+        )
+
+        self.assertEqual(result.status, "evaluated")
+        self.assertTrue(result.compatibility_evidence)
+        self.assertIsNotNone(result.compatibility_evidence_verdict)
+        assert result.compatibility_evidence_verdict is not None
+        self.assertEqual(result.compatibility_evidence_verdict.verdict, "partial")
+        self.assertEqual(result.compatibility_evidence[0].platform.name, "Windows 2000")

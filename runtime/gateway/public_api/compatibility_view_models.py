@@ -36,6 +36,18 @@ def compatibility_envelope_to_view_model(envelope: Mapping[str, Any]) -> dict[st
     source = envelope.get("source")
     if source is not None:
         view_model["source"] = _coerce_source_summary(source, "compatibility.source")
+    compatibility_evidence = envelope.get("compatibility_evidence")
+    if compatibility_evidence is not None:
+        view_model["compatibility_evidence"] = _coerce_json_list(
+            compatibility_evidence,
+            "compatibility.compatibility_evidence",
+        )
+    evidence_verdict = envelope.get("compatibility_evidence_verdict")
+    if evidence_verdict is not None:
+        view_model["compatibility_evidence_verdict"] = _coerce_json_mapping(
+            evidence_verdict,
+            "compatibility.compatibility_evidence_verdict",
+        )
     return view_model
 
 
@@ -125,6 +137,33 @@ def _coerce_string_list(value: Any, field_name: str) -> list[str]:
     for index, item in enumerate(value):
         strings.append(_require_string(item, f"{field_name}[{index}]"))
     return strings
+
+
+def _coerce_json_list(value: Any, field_name: str) -> list[Any]:
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    return [_clone_json_like(item, f"{field_name}[{index}]") for index, item in enumerate(value)]
+
+
+def _coerce_json_mapping(value: Any, field_name: str) -> dict[str, Any]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    payload: dict[str, Any] = {}
+    for key, item in value.items():
+        if not isinstance(key, str) or not key:
+            raise ValueError(f"{field_name} keys must be non-empty strings.")
+        payload[key] = _clone_json_like(item, f"{field_name}.{key}")
+    return payload
+
+
+def _clone_json_like(value: Any, field_name: str) -> Any:
+    if isinstance(value, Mapping):
+        return _coerce_json_mapping(value, field_name)
+    if isinstance(value, list):
+        return [_clone_json_like(item, f"{field_name}[]") for item in value]
+    if isinstance(value, (str, int, float, bool)) or value is None:
+        return value
+    raise ValueError(f"{field_name} must contain only JSON-compatible values.")
 
 
 def _require_string(value: Any, field_name: str) -> str:

@@ -4,6 +4,7 @@ from runtime.engine.compatibility import (
     CompatibilityReason,
     CompatibilityVerdict,
     HostProfile,
+    compatibility_evidence_verdict,
     resolve_bootstrap_host_profile,
 )
 from runtime.engine.core import NormalizedCatalog
@@ -50,6 +51,7 @@ class DeterministicCompatibilityService(CompatibilityService):
             )
 
         verdict = _evaluate_record_against_host(record.compatibility_requirements, host_profile)
+        evidence_verdict = compatibility_evidence_verdict(record)
         return CompatibilityResult(
             status="evaluated",
             target_ref=request.target_ref,
@@ -59,6 +61,8 @@ class DeterministicCompatibilityService(CompatibilityService):
             primary_object=outcome.result.primary_object,
             source=outcome.result.source,
             reasons=verdict.reasons,
+            compatibility_evidence=record.compatibility_evidence,
+            compatibility_evidence_verdict=evidence_verdict,
             next_steps=verdict.next_steps,
             notices=outcome.result.notices,
         )

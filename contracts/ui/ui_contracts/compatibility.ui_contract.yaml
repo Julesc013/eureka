@@ -18,6 +18,7 @@ normal_path:
 surface_expectations:
   - surfaces evaluate compatibility through the public gateway boundary and do not read engine-local requirement logic directly
   - surfaces preserve the selected host profile preset, compatibility status, and compact reasons without implying installer, download, or runtime-routing behavior
+  - surfaces may show source-backed compatibility evidence records and their limitations, but must not present them as run-tested proof
   - surfaces treat unknown as an honest first-class outcome when bounded requirements are missing or incomplete
   - surfaces handle unresolved targets honestly without fabricating compatibility verdicts
 surface_split:
@@ -28,5 +29,6 @@ surface_split:
     deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
 deferred_topics:
   - final compatibility oracle semantics
+  - runtime execution verification
   - broader host profile vocabularies and runtime matrices
   - installer, download, or runtime-routing behavior

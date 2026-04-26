@@ -31,6 +31,12 @@ properties:
     type: array
     items:
       $ref: '#/$defs/reason'
+  compatibility_evidence:
+    type: array
+    items:
+      type: object
+  compatibility_evidence_verdict:
+    type: object
   next_steps:
     type: array
     items:

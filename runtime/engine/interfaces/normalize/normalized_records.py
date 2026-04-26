@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from runtime.engine.compatibility import CompatibilityRequirements
+from runtime.engine.compatibility import CompatibilityEvidenceRecord, CompatibilityRequirements
 from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.representations import RepresentationSummary
 
@@ -28,6 +28,7 @@ class NormalizedResolutionRecord:
     access_path_locator: str | None = None
     representations: tuple[RepresentationSummary, ...] = ()
     compatibility_requirements: CompatibilityRequirements | None = None
+    compatibility_evidence: tuple[CompatibilityEvidenceRecord, ...] = ()
     evidence: tuple[EvidenceSummary, ...] = ()
     parent_target_ref: str | None = None
     parent_resolved_resource_id: str | None = None

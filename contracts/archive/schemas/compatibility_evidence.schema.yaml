@@ -1,0 +1,109 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka.local/contracts/archive/schemas/compatibility_evidence.schema.yaml"
+title: CompatibilityEvidence
+type: object
+x-eureka-status: draft
+description: >
+  Bounded source-backed compatibility evidence record. This is not a
+  compatibility oracle and does not represent runtime execution proof.
+additionalProperties: false
+required:
+  - evidence_id
+  - subject_target_ref
+  - source_family
+  - evidence_kind
+  - claim_type
+  - architecture
+  - confidence
+  - locator
+  - created_by_slice
+properties:
+  evidence_id:
+    type: string
+    minLength: 1
+  subject_target_ref:
+    type: string
+    minLength: 1
+  subject_resolved_resource_id:
+    type:
+      - string
+      - "null"
+  source_id:
+    type:
+      - string
+      - "null"
+  source_family:
+    type: string
+    minLength: 1
+  source_label:
+    type:
+      - string
+      - "null"
+  evidence_kind:
+    type: string
+    enum:
+      - source_metadata
+      - readme
+      - compatibility_note
+      - file_path
+      - release_notes
+      - manual
+      - package_metadata
+      - inferred_from_fixture_metadata
+      - member_text
+      - unknown
+  claim_type:
+    type: string
+    enum:
+      - works_on
+      - does_not_work_on
+      - requires
+      - supports_platform
+      - mentions_platform
+      - driver_for_hardware
+      - documentation_for_platform
+      - unknown
+  platform:
+    oneOf:
+      - $ref: "#/$defs/platform"
+      - type: "null"
+  architecture:
+    type: string
+    enum:
+      - x86
+      - x64
+      - ppc
+      - unknown
+  confidence:
+    type: string
+    enum:
+      - high
+      - medium
+      - low
+      - unknown
+  evidence_text:
+    type:
+      - string
+      - "null"
+  locator:
+    type: string
+    minLength: 1
+  created_by_slice:
+    type: string
+    const: compatibility_evidence_pack_v0
+$defs:
+  platform:
+    type: object
+    additionalProperties: false
+    required:
+      - family
+      - name
+    properties:
+      family:
+        type: string
+      name:
+        type: string
+      version:
+        type: string
+      marketing_alias:
+        type: string

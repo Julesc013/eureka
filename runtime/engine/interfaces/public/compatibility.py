@@ -3,7 +3,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from runtime.engine.compatibility import CompatibilityReason, HostProfile
+from runtime.engine.compatibility import (
+    CompatibilityEvidenceRecord,
+    CompatibilityEvidenceVerdict,
+    CompatibilityReason,
+    HostProfile,
+)
 from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary, SourceSummary
 
 
@@ -36,6 +41,8 @@ class CompatibilityResult:
     primary_object: ObjectSummary | None = None
     source: SourceSummary | None = None
     reasons: tuple[CompatibilityReason, ...] = ()
+    compatibility_evidence: tuple[CompatibilityEvidenceRecord, ...] = ()
+    compatibility_evidence_verdict: CompatibilityEvidenceVerdict | None = None
     next_steps: tuple[str, ...] = ()
     notices: tuple[Notice, ...] = ()
 
@@ -56,4 +63,10 @@ class CompatibilityResult:
             payload["primary_object"] = self.primary_object.to_dict()
         if self.source is not None:
             payload["source"] = self.source.to_dict()
+        if self.compatibility_evidence:
+            payload["compatibility_evidence"] = [
+                evidence.to_dict() for evidence in self.compatibility_evidence
+            ]
+        if self.compatibility_evidence_verdict is not None:
+            payload["compatibility_evidence_verdict"] = self.compatibility_evidence_verdict.to_dict()
         return payload

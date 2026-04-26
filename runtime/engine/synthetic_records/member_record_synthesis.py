@@ -6,6 +6,7 @@ import re
 from typing import Iterable
 from zipfile import BadZipFile, ZipFile
 
+from runtime.engine.compatibility import attach_compatibility_evidence
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.normalize import NormalizedResolutionRecord
 from runtime.engine.provenance import EvidenceSummary
@@ -171,7 +172,7 @@ def _to_normalized_record(member: SyntheticMemberRecord) -> NormalizedResolution
         is_direct=False,
         is_fetchable=False,
     )
-    return NormalizedResolutionRecord(
+    return attach_compatibility_evidence(NormalizedResolutionRecord(
         target_ref=member.synthetic_target_ref,
         source_name=member.source_family,
         source_locator=str(member.parent_lineage.get("source_locator") or ""),
@@ -202,7 +203,7 @@ def _to_normalized_record(member: SyntheticMemberRecord) -> NormalizedResolution
         content_hash=member.content_hash,
         parent_lineage=member.parent_lineage,
         action_hints=member.action_hints,
-    )
+    ))
 
 
 def _zip_member_metadata(representation: RepresentationSummary) -> dict[str, dict[str, object]]:
