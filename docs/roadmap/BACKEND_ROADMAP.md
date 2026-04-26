@@ -79,6 +79,11 @@ The repo has already proven:
   files visible to exact resolution, deterministic search, local index, and
   current public projections without broad extraction, arbitrary local
   filesystem ingestion, ranking, live source behavior, or new connectors
+- Result Lanes + User-Cost Ranking v0 as the first bounded deterministic
+  usefulness-annotation seam, assigning result lanes and user-cost reasons to
+  current result records so smaller member records can be explained ahead of
+  parent bundles without fuzzy/vector retrieval, LLM scoring, live source
+  behavior, production ranking, or new connectors
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -108,7 +113,7 @@ The next backend sequence is:
 19. Real Source Coverage Pack v0 (implemented as recorded fixtures only)
 20. Old-Platform Software Planner Pack v0 (implemented as deterministic interpretation only)
 21. Member-Level Synthetic Records v0 (implemented as bounded fixture-derived member records)
-22. Result Lanes + User-Cost Ranking v0
+22. Result Lanes + User-Cost Ranking v0 (implemented as bounded annotations)
 23. Compatibility Evidence Pack v0
 24. Search Usefulness Audit Delta v0
 25. Rust Query Planner Parity Candidate v0
@@ -120,7 +125,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Result Lanes + User-Cost Ranking v0
+> Compatibility Evidence Pack v0
 
 Why this comes next:
 
@@ -171,10 +176,13 @@ Why this comes next:
 - Member-Level Synthetic Records v0 has added member-level target refs,
   member-level index records, and parent lineage over the existing fixture
   corpus
-- the next backend bottleneck is presentation and lane policy: promoting the
-  smallest actionable member when evidence supports it while preserving parent
-  bundles as lineage, without adding fuzzy ranking, vector search, LLM planning,
-  live source behavior, or production relevance claims
+- Result Lanes + User-Cost Ranking v0 now adds bounded deterministic
+  presentation hints for member-vs-parent usefulness without becoming final
+  production ranking
+- the next backend bottleneck is compatibility evidence: old-platform software
+  results need source-backed Windows 98/2000/XP/Vista/7, architecture, package
+  type, and unknown-compatibility signals before actionability can improve
+  honestly
 
 ## Explicit Deferrals
 

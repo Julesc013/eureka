@@ -160,3 +160,17 @@ This check verifies deterministic member target refs, parent lineage,
 source/evidence preservation, and local-index visibility for bounded
 fixture-backed bundle members. It does not add broad archive extraction,
 arbitrary local filesystem ingestion, ranking, or live source behavior.
+
+## Result Lanes And User Cost
+
+Result Lanes + User-Cost Ranking v0 is validated with:
+
+```bash
+python -m unittest runtime.engine.ranking.tests.test_result_lanes runtime.engine.ranking.tests.test_user_cost runtime.engine.index.tests.test_member_level_synthetic_records tests.integration.test_github_release_http_api_slice
+```
+
+This check verifies deterministic lane assignment, user-cost explanations,
+member-vs-parent cost behavior, and public search projection for current
+result records. It validates bounded usefulness annotations only; it does not
+add production ranking, fuzzy/vector retrieval, LLM scoring, live source
+behavior, or source connectors.

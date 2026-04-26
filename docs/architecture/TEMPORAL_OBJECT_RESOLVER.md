@@ -46,6 +46,12 @@ This doctrine does not forbid showing the parent artifact. It requires the
 parent to stop crowding out a stronger inner answer when the system has enough
 evidence to expose that inner unit honestly.
 
+Result Lanes + User-Cost Ranking v0 is the first bounded implementation of
+that presentation rule. It assigns deterministic lane and user-cost hints to
+current result records so inner members with lineage, evidence, and action
+hints can be explained as lower effort than bulky parent bundles. It is not a
+final production ranking engine.
+
 ## Current Status
 
 The current repo proves many bounded seams that support this direction:
@@ -57,8 +63,11 @@ The current repo proves many bounded seams that support this direction:
 - compatibility hints
 - action routing
 - decomposition and member readback
+- source registry, coverage-depth metadata, local indexing, and resolution runs
+- synthetic member records for bounded local bundle fixtures
+- deterministic result lanes and user-cost explanations for current results
 - multiple surfaces over one public boundary
 
-What it does not yet prove is the full operational infrastructure for durable
-investigation runs, source registries, indexing, memory, workers, or hosted
-operation. Those belong to the next backend phase.
+What it does not yet prove is broad live source coverage, final compatibility
+evidence, production ranking, hosted operation, or native app delivery. Those
+remain staged future work.

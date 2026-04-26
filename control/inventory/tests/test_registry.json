@@ -310,6 +310,28 @@
       "notes": "Added by Member-Level Synthetic Records v0; it uses committed local bundle fixtures only and adds no broad extraction, arbitrary local filesystem ingestion, ranking, live source behavior, or source connectors."
     },
     {
+      "test_id": "result_lanes_user_cost_validation",
+      "label": "Result lanes and user-cost tests",
+      "command": "python -m unittest runtime.engine.ranking.tests.test_result_lanes runtime.engine.ranking.tests.test_user_cost runtime.engine.index.tests.test_member_level_synthetic_records tests.integration.test_github_release_http_api_slice",
+      "category": "integration",
+      "owner_area": "runtime/engine/ranking",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary local indexes only",
+      "expected_runtime": "seconds",
+      "failure_means": "Deterministic result lanes, user-cost reasons, member-vs-parent cost behavior, or public search projection regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Result Lanes + User-Cost Ranking v0; it validates bounded explanation hints only and adds no production ranking, fuzzy/vector retrieval, LLM scoring, live source behavior, or source connectors."
+    },
+    {
       "test_id": "operating_layer_validation",
       "label": "Test/eval operating layer validation",
       "command": "python -m unittest tests.operations.test_test_eval_operating_layer",

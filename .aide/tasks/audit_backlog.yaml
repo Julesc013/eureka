@@ -20,8 +20,8 @@
         "CTEA-CONTENT-002"
       ],
       "title": "Prioritize recorded fixture source coverage for source-gap query families",
-      "status": "partially_addressed_by_real_source_coverage_and_member_synthetic_records_v0",
-      "suggested_milestone": "Result Lanes + User-Cost Ranking v0"
+      "status": "partially_addressed_through_result_lanes_user_cost_v0",
+      "suggested_milestone": "Compatibility Evidence Pack v0"
     },
     {
       "id": "audit-backlog-doc-drift",
@@ -40,7 +40,7 @@
       ],
       "title": "Reduce old-platform software planner and query interpretation gaps",
       "status": "addressed_by_old_platform_software_planner_pack_v0",
-      "suggested_milestone": "Result Lanes + User-Cost Ranking v0"
+      "suggested_milestone": "Compatibility Evidence Pack v0"
     },
     {
       "id": "audit-backlog-member-discovery",
@@ -48,8 +48,8 @@
         "CTEA-CONTENT-003"
       ],
       "title": "Add member-level discovery fixtures, lineage, and index records",
-      "status": "partially_addressed_by_member_level_synthetic_records_v0",
-      "suggested_milestone": "Result Lanes + User-Cost Ranking v0"
+      "status": "partially_addressed_through_result_lanes_user_cost_v0",
+      "suggested_milestone": "Compatibility Evidence Pack v0"
     },
     {
       "id": "audit-backlog-compatibility-evidence",

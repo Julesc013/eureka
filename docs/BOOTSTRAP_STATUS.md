@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus forty executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus forty-one executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -118,6 +118,13 @@ architectural oracle rather than as a throwaway scaffold.
   local index, CLI, web, and local HTTP API paths without adding broad archive
   extraction, arbitrary local filesystem ingestion, ranking, live source
   behavior, or new connectors
+- first Result Lanes + User-Cost Ranking v0 seam under
+  `runtime/engine/ranking/` that assigns deterministic result lanes and
+  user-cost explanations to current result records, projects those annotations
+  through search, exact resolution, local index, CLI, web, local HTTP API, and
+  eval summaries, and explains member-vs-parent usefulness without adding
+  fuzzy/vector retrieval, LLM scoring, live source behavior, production ranking,
+  or new connectors
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -157,7 +164,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Result Lanes + User-Cost Ranking v0
+> Compatibility Evidence Pack v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -168,7 +175,7 @@ Candidate v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 and Comprehensive Test/Eval Operating Layer and Repo Audit v0, plus Hard Test
 Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack
 v0, Old-Platform Software Planner Pack v0, and Member-Level Synthetic Records
-v0, are now implemented as the first
+v0, plus Result Lanes + User-Cost Ranking v0, are now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
 synchronous local execution substrate, explicit local reusable investigation
@@ -178,18 +185,18 @@ packet, committed Python-oracle golden fixture pack, isolated Rust
 source-registry parity seam, broad usefulness-audit backlog generator, and
 repo-native test/eval governance, executable hardening guard layer,
 evidence-backed usefulness backlog, explicit source capability/coverage
-metadata layer, first recorded source-coverage fixture pack, and deterministic
-old-platform planner interpretation layer, plus first bounded member-level
-synthetic target-ref and parent-lineage layer.
+metadata layer, first recorded source-coverage fixture pack, deterministic
+old-platform planner interpretation layer, first bounded member-level synthetic
+target-ref and parent-lineage layer, and first deterministic result-lane and
+user-cost explanation layer.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Result Lanes + User-Cost Ranking v0
-2. Compatibility Evidence Pack v0
-3. Search Usefulness Audit Delta v0
-4. Rust Query Planner Parity Candidate v0
-5. Public Alpha Rehearsal Evidence v0
-6. Compatibility Surface Strategy v0
+1. Compatibility Evidence Pack v0
+2. Search Usefulness Audit Delta v0
+3. Rust Query Planner Parity Candidate v0
+4. Public Alpha Rehearsal Evidence v0
+5. Compatibility Surface Strategy v0
 
 ## Deferred Priorities
 

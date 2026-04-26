@@ -17,6 +17,9 @@ This bootstrap CLI:
 - shows bounded deterministic query-plan summaries over the public side of the architecture, including old-platform platform constraints, latest-compatible intent, driver/hardware hints, vague identity uncertainty, documentation intent, member-discovery hints, and suppression hints without implying LLM planning, vector search, fuzzy retrieval, ranking, or live source behavior
 - shows bounded local-index build, status, and query results over the public side of the architecture, clearly distinguishing SQLite FTS5 mode from deterministic fallback mode without implying ranking, fuzzy retrieval, vector search, live sync, or incremental indexing
 - shows deterministic `synthetic_member` results from committed local bundle fixtures, including member path, parent target ref, member kind, and action hints where the public boundary provides them
+- shows bounded result-lane and user-cost summaries for search, local-index,
+  and exact-resolution output, including why an inner member may be lower cost
+  than its parent bundle when evidence and lineage are present
 - shows Archive Resolution Eval Runner v0 suite summaries over the public side of the architecture, clearly distinguishing planner satisfaction, absence partials, not-yet-evaluable checks, and capability gaps without implying ranking, fuzzy retrieval, vector search, LLM planning, crawling, live sync, or production relevance evaluation
 - shows bounded synchronous local-task creation, listing, and inspection over the public side of the architecture, clearly distinguishing completed, blocked, and failed bootstrap local task records without implying background scheduling, retries, priorities, or distributed queue behavior
 - shows bounded synchronous resolution-run listings and detail over the public side of the architecture, clearly distinguishing completed exact-resolution, deterministic-search, and planned-search investigation records from any future worker, full planner, or streaming semantics
@@ -99,6 +102,11 @@ visible as deterministic member target refs in search, local-index, and exact
 resolution output. This is fixture-derived member visibility only; it is not
 ranking, broad extraction, arbitrary local filesystem ingestion, or a new
 connector.
+
+Result Lanes + User-Cost Ranking v0 adds deterministic lane and cost summaries
+to current result output. These are bounded explanation hints over existing
+records, not final production ranking, fuzzy/vector retrieval, LLM scoring, or
+live source behavior.
 
 `--task-store-root` is a bootstrap local persistence input only. It does not
 imply background scheduling, retries, priorities, worker daemons, distributed

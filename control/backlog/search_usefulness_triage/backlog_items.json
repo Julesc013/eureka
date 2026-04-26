@@ -4,13 +4,13 @@
   "created_by_slice": "search_usefulness_backlog_triage_v0",
   "selected_primary_wedge": "old_platform_software",
   "selected_secondary_wedge": "member_level_discovery",
-  "immediate_next_milestone": "Member-Level Synthetic Records v0",
+  "immediate_next_milestone": "Compatibility Evidence Pack v0",
   "audit_snapshot": {
     "total_queries": 64,
     "eureka_status_counts": {
-      "capability_gap": 12,
+      "capability_gap": 11,
       "covered": 5,
-      "partial": 4,
+      "partial": 5,
       "source_gap": 41,
       "unknown": 2
     },
@@ -109,7 +109,7 @@
       "id": "SU-T004",
       "title": "Member-Level Synthetic Records v0",
       "priority": "P0",
-      "status": "selected",
+      "status": "implemented",
       "wedge": "member_level_discovery",
       "failure_modes": ["decomposition_gap", "member_access_gap", "representation_gap", "source_coverage_gap"],
       "evidence": {
@@ -120,20 +120,20 @@
       "user_value": "Lets Eureka show the smallest actionable member while preserving parent container lineage.",
       "implementation_feasibility": "Medium; can begin with local synthetic package/support-media fixtures.",
       "regression_risk": "Medium; member target refs and index records need stable shape.",
-      "expected_audit_delta": "Reduce selected package/container capability gaps and improve smallest-actionable-unit scores.",
+      "expected_audit_delta": "Implemented: selected package/container queries now have bounded member target refs, lineage, and index/search visibility where fixture evidence exists.",
       "prerequisite_items": ["SU-T001", "SU-T002", "SU-T003"],
       "suggested_milestone": "Member-Level Synthetic Records v0",
-      "acceptance_criteria": ["member target refs exist", "parent lineage is preserved", "member-level index records are queryable", "parent container is demoted when member evidence exists"],
+      "acceptance_criteria": ["member target refs exist", "parent lineage is preserved", "member-level index records are queryable"],
       "tests_to_add_first": ["member target-ref validation", "parent lineage tests", "local index member-record tests"],
       "likely_files": ["contracts/archive/fixtures/", "runtime/engine/decomposition/", "runtime/engine/index/", "evals/search_usefulness/"],
       "do_not_do": ["do not add arbitrary local filesystem reads", "do not broaden extraction formats beyond fixtures", "do not hide parent provenance"],
-      "notes": "Selected as the immediate next milestone because planner hints now expose member intent, but member target refs and parent lineage remain the next bottleneck."
+      "notes": "Implemented for bounded committed local bundle fixtures. Parent container demotion is now handled by Result Lanes + User-Cost Ranking v0."
     },
     {
       "id": "SU-T005",
       "title": "Result Lanes + User-Cost Ranking v0",
-      "priority": "P2",
-      "status": "proposed",
+      "priority": "P0",
+      "status": "implemented",
       "wedge": "other",
       "failure_modes": ["actionability_gap", "surface_ux_gap", "ranking_gap"],
       "evidence": {
@@ -142,22 +142,22 @@
         "finding_ids": ["CTEA-BEHAVIOR-002"]
       },
       "user_value": "Clarifies why one result is more useful than another once evidence and source coverage exist.",
-      "implementation_feasibility": "Medium later; premature before source/member evidence improves.",
+      "implementation_feasibility": "Implemented after source/member evidence became available.",
       "regression_risk": "High if it becomes hidden ranking or fuzzy relevance.",
-      "expected_audit_delta": "Improve actionability and user-cost reduction scores after source/member coverage exists.",
+      "expected_audit_delta": "Implemented: current result records now expose deterministic lanes, user-cost scores, and reasons where available.",
       "prerequisite_items": ["SU-T002", "SU-T004"],
       "suggested_milestone": "Result Lanes + User-Cost Ranking v0",
       "acceptance_criteria": ["lanes are explicit", "ranking is evidence-bounded and deterministic", "bad-result patterns remain visible", "no semantic/fuzzy/vector ranking is introduced"],
       "tests_to_add_first": ["lane assignment tests", "bad-result suppression tests", "user-cost explanation tests"],
       "likely_files": ["runtime/engine/evals/", "docs/evals/", "evals/archive_resolution/"],
       "do_not_do": ["do not add fuzzy ranking", "do not add vector search", "do not use LLM scoring"],
-      "notes": "Kept P2 because ordering before evidence coverage would create fake confidence."
+      "notes": "Implemented as bounded deterministic usefulness annotations over current result records; no production ranking, fuzzy/vector retrieval, LLM scoring, or live source behavior was added."
     },
     {
       "id": "SU-T006",
       "title": "Compatibility Evidence Pack v0",
-      "priority": "P1",
-      "status": "proposed",
+      "priority": "P0",
+      "status": "selected",
       "wedge": "compatibility_evidence",
       "failure_modes": ["compatibility_evidence_gap", "source_coverage_gap", "actionability_gap"],
       "evidence": {
@@ -169,13 +169,13 @@
       "implementation_feasibility": "Medium; can start with fixture-backed release notes/readmes/manuals.",
       "regression_risk": "Medium; false compatibility claims are risky.",
       "expected_audit_delta": "Reduce compatibility_evidence_gap and improve compatibility clarity for old-platform queries.",
-      "prerequisite_items": ["SU-T001", "SU-T002"],
+      "prerequisite_items": ["SU-T001", "SU-T002", "SU-T003", "SU-T004", "SU-T005"],
       "suggested_milestone": "Compatibility Evidence Pack v0",
       "acceptance_criteria": ["Windows 98/2000/XP/Vista/7 evidence types exist", "unknown compatibility is first-class", "official/readme/manual/community evidence is labeled"],
       "tests_to_add_first": ["known/unknown compatibility evidence tests", "Windows NT 6.1 alias tests", "driver-vs-app evidence tests"],
       "likely_files": ["contracts/archive/fixtures/", "runtime/engine/compatibility/", "evals/search_usefulness/"],
       "do_not_do": ["do not infer compatibility as truth", "do not create a compatibility oracle", "do not execute installers"],
-      "notes": "Pairs with old-platform source coverage and planner work."
+      "notes": "Selected as the immediate next milestone because source coverage, planner interpretation, member records, and lane/user-cost projection now exist at v0 scope."
     },
     {
       "id": "SU-T007",
@@ -319,7 +319,7 @@
       "tests_to_add_first": ["recorded IA fixture loader tests", "no-network tests", "placeholder promotion guard"],
       "likely_files": ["runtime/connectors/", "control/inventory/sources/", "contracts/archive/fixtures/"],
       "do_not_do": ["do not scrape Internet Archive", "do not add live crawling", "do not claim OCR coverage broadly"],
-      "notes": "Deferred until the source capability model exists."
+      "notes": "Deferred until the next recorded-fixture expansion is scoped after compatibility evidence priorities are clearer."
     }
   ]
 }

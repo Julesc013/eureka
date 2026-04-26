@@ -94,10 +94,11 @@ When migration begins, the order should be seam-oriented:
 7. deterministic search
 8. provenance and evidence
 9. representation and access paths
-10. compatibility
-11. action-plan and handoff
-12. acquisition, decomposition, and member access
-13. local store, local index execution, and gateway projection
+10. result lanes and user-cost annotations
+11. compatibility
+12. action-plan and handoff
+13. acquisition, decomposition, and member access
+14. local store, local index execution, and gateway projection
 
 Each migrated seam should be checked against Python golden or parity outputs
 before replacement.
@@ -141,6 +142,11 @@ The generator normalizes unstable fields such as timestamps, local index paths,
 SQLite FTS mode, and generation metadata. It preserves semantically meaningful
 fields, including the current archive-resolution eval capability gaps and
 source-backed not-satisfied cases.
+Result Lanes + User-Cost Ranking v0 intentionally adds lane and user-cost fields
+to Python oracle outputs for current result records. Future Rust local-index,
+deterministic-search, exact-resolution, and public-projection parity must match
+those bounded annotations or record explicit allowed divergences before any
+replacement claim.
 
 ## Optional Check
 

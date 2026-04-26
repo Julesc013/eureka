@@ -14,3 +14,8 @@
 - `end_to_end/`: higher-level product workflow checks once real behavior exists
 
 Component-local tests stay with their owning component and should not be duplicated here.
+
+Result Lanes + User-Cost Ranking v0 adds component-local ranking tests under
+`runtime/engine/ranking/tests/` plus cross-component checks where lane/cost
+annotations flow through public search and index projection. These tests guard
+bounded deterministic usefulness hints only, not production ranking.

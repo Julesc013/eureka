@@ -330,21 +330,21 @@ Eureka is substantial, but it is still a prototype/reference backend:
   candidate. It does not replace Python and is not used by web, CLI, HTTP API,
   workers, or production paths.
 - Native apps are deferred. The current native surface is a stdlib CLI proof.
-- Live crawling, source sync, ranking, fuzzy retrieval, vector search, LLM
-  planning, auth, accounts, HTTPS/TLS, rate limiting, process supervision, and
-  deployment infrastructure are intentionally out of scope.
+- Live crawling, source sync, fuzzy retrieval, vector search, LLM planning,
+  auth, accounts, HTTPS/TLS, rate limiting, process supervision, and deployment
+  infrastructure are intentionally out of scope. Current result lanes and
+  user-cost scores are bounded deterministic hints, not production ranking.
 
 ## Roadmap
 
 Accepted immediate next milestone:
 
-1. Member-Level Synthetic Records v0
-2. Result Lanes + User-Cost Ranking v0
+1. Compatibility Evidence Pack v0
+2. Search Usefulness Audit Delta v0
 
 Broader near-term direction:
 
-1. add member-level target refs, parent lineage, and indexable member records
-   over the existing recorded fixture corpus
+1. add source-backed compatibility evidence for old-platform software outcomes
 2. use the selected old-platform-compatible software and member-level discovery
    wedges to scope source, planner, representation, and compatibility slices
 3. keep Python as oracle while adding Rust candidates only when parity fixtures

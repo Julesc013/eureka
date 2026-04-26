@@ -33,6 +33,9 @@ Current thin-slice behavior:
 - submit returns an accepted public envelope while read returns the current bounded job envelope
 - deterministic job envelopes for known and unknown bounded targets from the mixed demo corpus
 - deterministic search results or a structured absence report for bounded queries
+- deterministic result-lane and user-cost annotations propagated for current
+  resolution, search, and local-index records where the public boundary provides
+  them
 - deterministic manifest and bundle export for known synthetic or GitHub Releases-backed targets plus blocked export responses for misses
 - deterministic local stored-export identity, listing, and readback through a caller-provided store root
 - deterministic local bundle inspection without live fixture dependence
@@ -53,6 +56,10 @@ Current thin-slice behavior:
 - bounded acquisition results propagated across the public boundary and shared-surface mappings without implying live downloads, installers, launches, restore flows, or final download semantics
 - bounded decomposition results propagated across the public boundary and shared-surface mappings without implying broad extraction tooling, installers, import, restore, or final package semantics
 - bounded member-access results propagated across the public boundary and shared-surface mappings without implying extraction-to-disk, installers, import, restore, or final package-management semantics
+- bounded result-lane and user-cost summaries propagated across the public
+  boundary and shared-surface mappings without implying production ranking,
+  fuzzy/vector retrieval, LLM scoring, semantic relevance, or source-trust
+  scoring
 - bounded action plans propagated across the public boundary and shared-surface mappings without implying execution, installer, launcher, final policy-engine behavior, or a final personalization model
 - gateway composes with engine service interfaces over normalized records and local bootstrap resolution-run records and does not read governed fixtures directly
 - shared workbench-session, search-results, representations, resolution-actions, stored-exports, and bundle-inspection mappings are exercised without implementing web or native shells

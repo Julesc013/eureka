@@ -39,6 +39,9 @@ Current bootstrap slice:
 - renders a compatibility-first bundle inspection page from a shared bundle-inspection model through a local-path bootstrap route
 - renders deterministic search results and structured absence reports from a shared search-results view model
 - renders deterministic `synthetic_member` search, local-index, and exact-resolution fields when the public boundary provides bounded member target refs, member paths, parent target refs, member kind, and action hints
+- renders bounded result-lane and user-cost hints for search, local-index, and
+  exact-resolution records when the public boundary provides them, including
+  compact explanations for member-vs-parent usefulness
 - links blocked exact-resolution pages and search no-result pages into the dedicated bounded absence-report routes
 - renders `resolved_resource_id` in search results, stored-export summaries, and bundle inspection when the public boundary provides it
 - links search results back into the exact-resolution workbench flow through target references
@@ -74,6 +77,10 @@ Current bootstrap slice:
 - source-registry pages are inventory, capability, and coverage-depth metadata only; placeholder and future sources must remain visibly unimplemented and local private paths must not be exposed
 - Real Source Coverage Pack v0 source pages expose two new active fixture-backed records, `internet-archive-recorded-fixtures` and `local-bundle-fixtures`; the Internet Archive and local-files placeholders remain unimplemented planning anchors
 - Member-Level Synthetic Records v0 projects member-level target refs derived from committed local bundle fixtures; this is not broad archive extraction, arbitrary local filesystem ingestion, ranking, live source behavior, or a new connector
+- Result Lanes + User-Cost Ranking v0 projects deterministic usefulness hints
+  for existing result records; this is not final production ranking,
+  fuzzy/vector retrieval, LLM scoring, semantic search, live source behavior, or
+  a source-trust model
 - query-plan pages are deterministic interpretation aids only; they must not imply LLM reasoning, fuzzy/vector retrieval, ranking, live source behavior, full investigation planning, or planner-owned retrieval routing yet
 - local-index pages are deterministic local retrieval aids only; they must not imply ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics
 - archive-resolution eval pages are regression reports only; they must not imply ranking, fuzzy retrieval, vector search, LLM planning, crawling, live source sync, or production relevance benchmarking, and current hard-task capability gaps must remain visible

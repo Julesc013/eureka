@@ -101,11 +101,17 @@ Do not do: do not add fuzzy/vector/LLM ranking or hidden semantic relevance.
 
 Expected audit effect: actionability and user-cost reduction improve for selected queries.
 
+Status: implemented as a bounded deterministic annotation seam over existing
+result records. It adds result lanes, user-cost scores, reasons, and public
+projection without adding production ranking, fuzzy/vector retrieval, LLM
+scoring, live source behavior, or new connectors.
+
 ## 6. Compatibility Evidence Pack v0
 
 Why: old-platform usefulness depends on compatibility clarity.
 
-Prerequisite: recorded source evidence for old platforms.
+Prerequisite: recorded source evidence for old platforms plus bounded
+result-lane/user-cost projection. Both prerequisites now exist at v0 scope.
 
 Likely files: `contracts/archive/fixtures/`, `runtime/engine/compatibility/`, `evals/search_usefulness/`.
 

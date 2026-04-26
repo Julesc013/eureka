@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: forty local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, and Member-Level Synthetic Records v0. The latest member layer derives deterministic member target refs, parent lineage, evidence, and public/index projection for bounded local bundle fixtures without broad extraction, arbitrary local filesystem ingestion, ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or new connectors.
+Current status within this stage: forty-one local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, and Result Lanes + User-Cost Ranking v0. The latest result-lane layer annotates current result records with deterministic lanes and user-cost explanations without broad extraction, arbitrary local filesystem ingestion, fuzzy/vector retrieval, LLM scoring, live source behavior, production ranking, or new connectors.
 
 ## Stage 3: Surface Skeletons
 
@@ -112,14 +112,20 @@ member candidates visible through exact resolution, deterministic search, local
 index, CLI, web, and local HTTP API projections without adding broad archive
 extraction, arbitrary local filesystem ingestion, ranking, live source behavior,
 or new connectors.
+Result Lanes + User-Cost Ranking v0 now assigns deterministic result lanes and
+user-cost explanations to current result records, including synthetic member
+records and parent bundles. It projects those hints through search, exact
+resolution, local index, CLI, web, local HTTP API, and eval summaries without
+adding fuzzy/vector retrieval, LLM scoring, live source behavior, production
+ranking, or new connectors.
 
-Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
+Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
 ## Immediate Next Milestone
 
 The next implementation milestone is:
 
-> Result Lanes + User-Cost Ranking v0
+> Compatibility Evidence Pack v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -129,10 +135,11 @@ Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity Candidate
 v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0,
 Source Coverage and Capability Model v0, Real Source Coverage Pack v0,
-Old-Platform Software Planner Pack v0, and Member-Level Synthetic Records v0 now
+Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, and
+Result Lanes + User-Cost Ranking v0 now
 mark the start of a more evidence-led backend phase. The next step is to add
-result lanes and user-cost-aware presentation so the existing member records can
-be promoted as smaller actionable units while parent bundles remain visible as
-lineage. That next step must still avoid live crawling, external scraping,
-fuzzy/vector search, LLM planning, broad source federation, and production
-ranking claims.
+source-backed compatibility evidence so old-platform usefulness can distinguish
+known, unknown, inferred, and incompatible outcomes while preserving truth and
+uncertainty. That next step must still avoid live crawling, external scraping,
+installer execution, fuzzy/vector search, LLM planning, broad source federation,
+and production compatibility-oracle claims.

@@ -81,12 +81,17 @@ selected usefulness wedge. It now records:
 
 Resolution Run Model v0 now accepts an optional `resolution_task` summary for
 planned-search runs. Query Planner v0 shapes that summary and derives the
-current deterministic search string, but it does not yet own retrieval lanes,
-budgets, source routing, checkpoints, or streaming phases.
+current deterministic search string, but it does not own budgets, source
+routing, checkpoints, or streaming phases.
 
 Local Index v0 now exists as a separate retrieval substrate, but Query Planner
 v0 does not yet route into it, choose between search modes, or own indexed
 retrieval semantics.
+
+Result Lanes + User-Cost Ranking v0 may consume planner suppression hints, such
+as app-vs-OS-media demotion, when a result record already carries enough
+evidence. This remains a bounded deterministic annotation layer over current
+results, not planner-owned retrieval routing or production ranking.
 
 ## Still Deferred
 
@@ -95,7 +100,8 @@ Query Planner v0 does not yet provide:
 - full investigation planning
 - source-lane or retrieval-lane routing
 - budgets, checkpoints, or remaining-work summaries
-- planner-driven ranking or suppression beyond bounded prefer/exclude hints
+- planner-driven production ranking or suppression beyond bounded
+  prefer/exclude hints
 - LLM planning
 - vector or fuzzy retrieval
 - live source behavior or source connector execution

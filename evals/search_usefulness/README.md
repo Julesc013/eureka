@@ -76,3 +76,9 @@ intentionally bounded: external Google and Internet Archive baselines remain
 pending manual observation, and the audit still performs no live-source
 crawling, no Google scraping, no Internet Archive scraping, and no external
 baseline fabrication.
+
+Result Lanes + User-Cost Ranking v0 now adds bounded lane and user-cost details
+to current Eureka observations when search/index results provide them. The audit
+may use those fields to explain actionability or member-vs-parent cost, but it
+does not treat them as production relevance ranking and it still leaves
+external baselines pending unless manually recorded.

@@ -17,9 +17,9 @@ The live audit was re-run after Old-Platform Software Planner Pack v0. Current S
 
 - total queries: 64
 - covered: 5
-- partial: 4
+- partial: 5
 - source_gap: 41
-- capability_gap: 12
+- capability_gap: 11
 - unknown: 2
 - external baselines pending: Google 64, Internet Archive metadata 64, Internet Archive full text/OCR 64
 - planner_gap: 24
@@ -29,13 +29,16 @@ The live audit was re-run after Old-Platform Software Planner Pack v0. Current S
 
 - Primary usefulness wedge: old-platform-compatible software search
 - Secondary usefulness wedge: member-level discovery inside bundles
-- Immediate next milestone: Member-Level Synthetic Records v0
+- Immediate next milestone: Compatibility Evidence Pack v0
 
 Update: Source Coverage and Capability Model v0 and Real Source Coverage Pack
 v0 are implemented, and Old-Platform Software Planner Pack v0 now improves
-deterministic old-platform interpretation. The next implementation milestone is
-Member-Level Synthetic Records v0 because member target refs and parent lineage
-are now the visible bottleneck for support-CD, ISO, ZIP, and bundle queries.
+deterministic old-platform interpretation. Member-Level Synthetic Records v0
+then added bounded member target refs and parent lineage, and Result Lanes +
+User-Cost Ranking v0 added deterministic member-vs-parent usefulness
+annotations. The next implementation milestone is Compatibility Evidence Pack
+v0 because old-platform answers now need source-backed known/unknown
+compatibility signals.
 
 ## Contents
 

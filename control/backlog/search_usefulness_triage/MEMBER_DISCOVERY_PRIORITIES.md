@@ -10,7 +10,7 @@ all source families or archive formats.
 ## Missing Pieces
 
 1. broader member target refs beyond committed local bundle fixtures
-2. richer result cards and result lanes for member-vs-parent presentation
+2. richer result cards beyond the current v0 lane/user-cost summaries
 3. member action routing beyond explicit existing read/preview hints
 4. parent container demotion when inner member exists
 5. member-level records for Internet Archive file lists, scanned/OCR content,
@@ -52,9 +52,10 @@ The local index should be able to record:
 This must remain deterministic and not become ranking, fuzzy, vector, or semantic retrieval.
 
 Member-Level Synthetic Records v0 now indexes `synthetic_member` records for
-the committed local bundle fixture members. Result-lane work is still needed to
-promote the member above the parent bundle when it is the smallest actionable
-unit.
+the committed local bundle fixture members. Result Lanes + User-Cost Ranking v0
+now gives those records lower deterministic user cost than parent bundles when
+member path, parent lineage, evidence, and action hints are present. This is a
+bounded explanation seam, not final relevance ranking.
 
 ## Result Cards And Action Routing
 
@@ -67,6 +68,10 @@ Surfaces should eventually distinguish:
 - fetchable local fixture member
 
 Action routing should prefer the member when it is the smallest useful unit, while still showing the parent lineage.
+
+Current v0 projection shows lane and user-cost hints in search, local-index,
+exact-resolution, CLI, web, and HTTP API output. Future result-card work should
+make those hints easier to scan without hiding the parent bundle.
 
 ## Parent Container Demotion
 

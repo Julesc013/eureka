@@ -57,6 +57,8 @@ The eval suite now has two executable guardrails:
 - it builds or uses Local Index v0 when available
 - it falls back to deterministic search when needed
 - it records bounded absence reasoning for no-result cases
+- it includes bounded result-lane and user-cost annotations where current
+  result records expose them
 - it emits stable JSON per-task and suite reports
 - Search Usefulness Audit v0 loads a broader 64-query pack under
   `evals/search_usefulness/`
@@ -67,12 +69,13 @@ The eval suite now has two executable guardrails:
 - it aggregates source, planner, index, decomposition, representation,
   compatibility, actionability, and UX failure labels into future-work targets
 
-This is not a full relevance benchmark. It does not score ranking, fuzzy
-retrieval, vector or semantic search, LLM planning, crawling, live source sync,
-or production search quality. Many hard tasks should currently report
-`capability_gap`; that is the honest result until the corpus and bounded
-resolver capabilities can satisfy their direct-artifact, member-level, article,
-or evidence expectations.
+This is not a full relevance benchmark. It does not score production ranking,
+fuzzy retrieval, vector or semantic search, LLM planning, crawling, live source
+sync, or production search quality. Current lane/user-cost fields are bounded
+Eureka observation details, not proof that final relevance ranking exists. Many
+hard tasks should currently report `capability_gap`; that is the honest result
+until the corpus and bounded resolver capabilities can satisfy their
+direct-artifact, member-level, article, or evidence expectations.
 
 The usefulness audit is also not an automated Google or Internet Archive
 comparison. External baseline observations are placeholders until a human

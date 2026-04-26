@@ -55,9 +55,9 @@
     {
       "id": "result_lanes_user_cost_ranking_v0",
       "title": "Result Lanes + User-Cost Ranking v0",
-      "status": "queued",
+      "status": "completed",
       "priority": 8,
-      "notes": "Define evidence-bounded result lanes and user-cost ordering only after source/member evidence exists."
+      "notes": "Added bounded deterministic result lanes, user-cost scores, reasons, and public projection without production ranking, fuzzy/vector retrieval, LLM scoring, or live source behavior."
     },
     {
       "id": "compatibility_evidence_pack_v0",

@@ -10,7 +10,7 @@ Current bootstrap scope:
 - search the bounded software-first corpus through a deterministic public search boundary
 - plan one bounded raw query through a deterministic public query-planner boundary, including old-platform platform constraints, latest-compatible intent, driver/hardware hints, vague identity uncertainty, documentation intent, member-discovery hints, and suppression hints when present
 - build, inspect, and query one bootstrap local SQLite index through a deterministic public local-index boundary
-- run Archive Resolution Eval Runner v0 through a deterministic public eval boundary, returning bounded suite and task result envelopes without implying background execution, ranking, fuzzy retrieval, vector search, LLM planning, crawling, live sync, or production benchmark semantics
+- run Archive Resolution Eval Runner v0 through a deterministic public eval boundary, returning bounded suite and task result envelopes without implying background execution, production ranking, fuzzy retrieval, vector search, LLM planning, crawling, live sync, or production benchmark semantics
 - create, read, and list synchronous bootstrap local tasks through a deterministic public local-tasks boundary
 - start, read, and list synchronous local exact-resolution, deterministic-search, and planned-search runs through a deterministic public resolution-runs boundary
 - create, read, and list explicit local resolution-memory records derived from persisted runs through a deterministic public resolution-memory boundary
@@ -34,6 +34,7 @@ Current bootstrap scope:
 - inspect a deterministic portable resolution bundle from local bytes or a local bundle path through a transport-neutral public boundary
 - surface a bootstrap deterministic `resolved_resource_id` across resolution, search, actions, stored exports, and bundle inspection where available
 - surface bounded synthetic member records, including deterministic member target refs, member paths, parent target refs, parent representation ids, member kind, evidence, and action hints where available
+- surface bounded result lanes and user-cost explanations for current result records, including why member records may be lower-cost than parent bundles when evidence supports that
 - surface bounded source-family and source-origin summaries across resolution, search, export, and stored-export metadata where available
 - surface bounded evidence summaries across resolution, search, export, stored-export metadata, and bundle inspection where available
 - translate internal gateway job state into public contract-facing envelopes
@@ -92,14 +93,15 @@ Out of scope here:
 - worker queues, background schedulers, or async orchestration for resolution runs
 - worker queues, background schedulers, retries, priorities, or distributed queue behavior for local tasks
 - automatic memory creation, shared/cloud memory, invalidation engines, or personalization behavior for resolution memory
-- incremental indexing, ranking, fuzzy matching, vector search, semantic recall, or planner-driven retrieval routing for local index queries
-- ranking, fuzzy matching, vector search, semantic recall, LLM planning, crawling, live source sync, or production relevance claims for archive-resolution eval execution
+- incremental indexing, production ranking, fuzzy matching, vector search, semantic recall, or planner-driven retrieval routing for local index queries
+- production ranking, fuzzy matching, vector search, semantic recall, LLM planning, crawling, live source sync, or production relevance claims for archive-resolution eval execution
 - full investigation planning, planner-owned retrieval routing, phases, checkpoints, or streaming transport for resolution runs
 - implying that old-platform planner hints perform ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or planner-owned result routing
 - exposing raw fixture paths or private local paths through the public source-registry boundary
 - implying that source capability metadata implements a connector, live probe, crawl, or source-sync path
 - implying that recorded Internet Archive fixtures are a live Internet Archive connector or that local bundle fixtures are arbitrary local filesystem ingestion
 - implying that synthetic member records are broad extraction, arbitrary local filesystem indexing, ranking, or final object-identity semantics
+- implying that result lanes and user-cost scores are final production ranking, fuzzy/vector retrieval, LLM scoring, semantic relevance, or a global source-trust model
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
 - final provenance graph, trust scoring, or cross-source merge behavior beyond the current bounded evidence summary seam
 - final comparison, merge, or truth-selection behavior beyond the current bounded disagreement seam
@@ -108,6 +110,6 @@ Out of scope here:
 - installers, downloads from external sources, import, restore, rollback behavior, or final representation-selection, handoff, acquisition, decomposition, or member-readback semantics
 - final compatibility oracle behavior, richer host profile vocabularies, or runtime-routing behavior
 - final action-routing policy behavior, user-strategy semantics, execution semantics, installers, or workflow orchestration
-- ranking, fuzzy matching, vector retrieval, or broader retrieval semantics
+- production ranking, fuzzy matching, vector retrieval, or broader retrieval semantics
 - finalized public API guarantees
 - finalized global identity or cross-source merge semantics

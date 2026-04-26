@@ -365,3 +365,9 @@
 - Status: accepted
 - Decision: Eureka now derives deterministic `member:sha256:<digest>` synthetic member records from committed local bundle fixtures, preserving parent target refs, parent representation ids, source provenance, member paths, inferred member kind, content metadata, evidence summaries, and action hints. These records flow through the normalized catalog, exact resolution, deterministic search, local index, gateway public envelopes, CLI, web, and local HTTP API projections.
 - Why: The old-platform software and member-level discovery wedges need Eureka to identify the useful inner file, not only the parent ZIP or support bundle. This milestone adds that first bounded seam without adding new source connectors, live source calls, crawling, scraping, broad archive extraction, arbitrary local filesystem ingestion, ranking, fuzzy/vector retrieval, LLM planning, Rust runtime behavior, native apps, or production deployment.
+
+## ADR-062: Add Result Lanes and User-Cost Hints Without Production Ranking
+
+- Status: accepted
+- Decision: Eureka now assigns deterministic result lanes and user-cost explanations to current result records under `runtime/engine/ranking/`, then projects those annotations through exact resolution, deterministic search, local index, eval summaries, gateway public envelopes, CLI, web, and local HTTP API output.
+- Why: The old-platform software and member-level discovery wedges need the system to explain why a source-backed inner member can be more actionable than a parent bundle while keeping parent context visible. This milestone adds bounded explanation and small-result ordering only; it does not add fuzzy/vector retrieval, LLM scoring, live source behavior, source connectors, broad source federation, Rust runtime behavior, native apps, production deployment, or final production ranking.

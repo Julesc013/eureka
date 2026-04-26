@@ -81,9 +81,14 @@ ingestion. Old-Platform Software Planner Pack v0 then added deterministic OS
 aliases, latest-compatible release intent, driver/hardware/OS intent, vague
 identity uncertainty, documentation intent, member-discovery hints, and
 app-vs-OS-media suppression hints without adding ranking, fuzzy/vector
-retrieval, LLM planning, live source behavior, or connector work.
+retrieval, LLM planning, live source behavior, or connector work. Member-Level
+Synthetic Records v0 then added deterministic member target refs and parent
+lineage for bounded local bundle fixtures. Result Lanes + User-Cost Ranking v0
+then added bounded deterministic lane and user-cost explanations without adding
+production ranking, fuzzy/vector retrieval, LLM scoring, live source behavior,
+or connector work.
 
-Current next implementation milestone: Member-Level Synthetic Records v0.
+Current next implementation milestone: Compatibility Evidence Pack v0.
 
 ## Evidence That Would Change The Plan
 
@@ -91,7 +96,9 @@ The plan should be revisited if:
 
 - a recorded source pack makes old-platform queries less dominant than another family
 - manual external baseline observations show a different high-value wedge
-- member-level discovery becomes blocked by a contract problem that must be solved first
+- compatibility evidence becomes blocked by a source/contract problem that must be solved first
 - hardening tests reveal route/public-alpha/privacy constraints that prevent safe fixture work
 
-Until then, member-level synthetic records are the lowest-risk next move with the highest future leverage.
+Until then, compatibility evidence is the lowest-risk next move with the
+highest future leverage because source, planner, member, and lane/cost v0 seams
+now exist.

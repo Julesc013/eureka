@@ -153,7 +153,7 @@
         "local_dev": "allowed",
         "public_alpha": "allowed"
       },
-      "notes": "Uses current deterministic search over the bounded corpus, not local-index, ranking, fuzzy, vector, or semantic retrieval.",
+      "notes": "Uses current deterministic search over the bounded corpus with bounded lane/user-cost hints, not local-index, production ranking, fuzzy, vector, or semantic retrieval.",
       "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
       "reason": "Deterministic search is read-only and uses no arbitrary local path parameter.",
       "route_pattern": "/search",
@@ -168,7 +168,7 @@
         "local_dev": "allowed",
         "public_alpha": "allowed"
       },
-      "notes": "Uses current deterministic search over the bounded corpus, not local-index, ranking, fuzzy, vector, or semantic retrieval.",
+      "notes": "Uses current deterministic search over the bounded corpus with bounded lane/user-cost hints, not local-index, production ranking, fuzzy, vector, or semantic retrieval.",
       "owning_module": "surfaces.web.server.api_routes.handle_api_request",
       "reason": "Deterministic search is read-only and uses no arbitrary local path parameter.",
       "route_pattern": "/api/search",

@@ -75,4 +75,5 @@ These questions are intentionally left open during bootstrap:
 71. How should future Rust source-registry parity candidates handle capability and coverage fields once Cargo checks become part of a maintained optional lane?
 72. Which old-platform planner hint fields should become stable public/planner contract fields before Rust Query Planner Parity Candidate v0, and which should remain replaceable Python-oracle implementation detail?
 73. How should member paths from committed local bundle fixtures graduate into stable member target refs without implying arbitrary local filesystem ingestion?
-74. Now that bounded synthetic member records exist, which result-lane and user-cost fields should become durable enough to promote smaller actionable members above parent bundles without turning the slice into fuzzy, vector, LLM, or production ranking?
+74. Now that bounded result lanes and user-cost hints exist, which fields should become durable public compatibility promises, and which should remain replaceable until broader result-lane and source-evidence work matures?
+75. Which first compatibility evidence fields should be added for Windows 98, Windows 2000, Windows XP, Vista, Windows 7 / NT 6.1, x86/x64, installer/portable/driver distinctions, and unknown compatibility without turning Eureka into a compatibility oracle?
