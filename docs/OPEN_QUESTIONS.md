@@ -67,3 +67,6 @@ These questions are intentionally left open during bootstrap:
 63. What minimum evidence should be required before an audit finding can be marked resolved rather than merely deferred or superseded?
 64. Which additional hard tests should graduate into Hard Test Pack v1 after the first source-coverage, planner-gap, or Rust parity follow-up changes land?
 65. How should hardening tests be updated when a real source pack legitimately turns a current capability gap into a covered result without weakening the underlying hard eval fixture?
+66. Which source capability fields are stable enough to become governed Source Registry contract fields, and which should remain descriptive triage metadata for now?
+67. What minimum recorded fixture evidence is needed before an old-platform query may move from `source_gap` to `partial` or `covered` in Search Usefulness Audit results?
+68. What member target-ref shape should be stable enough for parent lineage, member-level index records, and later Rust parity fixtures?

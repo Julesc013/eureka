@@ -335,3 +335,9 @@
 - Status: accepted
 - Decision: Eureka now maintains Hard Test Pack v0 under `tests/hardening/`, with stdlib-only guards for hard eval truth, external baseline honesty, public-alpha local path safety, route inventory drift, README command drift, documentation link drift, Python-oracle golden drift, Rust parity structure, source placeholder honesty, resolution-memory path/privacy scope, and AIDE/test registry consistency.
 - Why: the comprehensive audit identified risks that should fail loudly before future work broadens the repo; hardening those risks as tests improves regression discipline without adding product runtime behavior, source connectors, Rust behavior ports, deployment infrastructure, external scraping, native apps, or production-readiness claims.
+
+## ADR-057: Select Old-Platform Software and Member-Level Discovery as the Next Usefulness Wedges
+
+- Status: accepted
+- Decision: Eureka now records Search Usefulness Backlog Triage v0 under `control/backlog/search_usefulness_triage/`, selecting old-platform-compatible software search as the primary usefulness wedge, member-level discovery inside bundles as the secondary wedge, and Source Coverage and Capability Model v0 as the immediate next milestone.
+- Why: Search Usefulness Audit v0 shows source coverage, query interpretation, planner, compatibility evidence, representation, decomposition, and member-access gaps dominate current usefulness failures; the selected wedges produce the clearest user value while preserving hard eval honesty, external baseline pending/manual status, Python-oracle authority, and the deferral of live crawling, scraping, ranking/fuzzy/vector/LLM retrieval, Rust behavior ports, native apps, and production hosting.

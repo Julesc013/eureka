@@ -53,6 +53,9 @@ The repo has already proven:
   route/docs/README drift, Python-oracle golden drift, Rust parity structure,
   source placeholder honesty, memory path privacy, and AIDE/test registry
   consistency
+- Search Usefulness Backlog Triage v0 as the first governed usefulness backlog
+  pack selecting old-platform-compatible software search, member-level
+  discovery, and Source Coverage and Capability Model v0 as the next milestone
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -77,15 +80,24 @@ The next backend sequence is:
 14. Search Usefulness Audit v0 (implemented as local audit/backlog generator)
 15. Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as governance/audit layer)
 16. Hard Test Pack v0 (implemented as high-risk regression guards)
-17. Search Usefulness Backlog Triage v0
-18. Rust Query Planner Parity Candidate v0
-19. Native App Work Later
+17. Search Usefulness Backlog Triage v0 (implemented as governed backlog selection)
+18. Source Coverage and Capability Model v0
+19. Real Source Coverage Pack v0
+20. Old-Platform Software Planner Pack v0
+21. Member-Level Synthetic Records v0
+22. Result Lanes + User-Cost Ranking v0
+23. Compatibility Evidence Pack v0
+24. Search Usefulness Audit Delta v0
+25. Rust Query Planner Parity Candidate v0
+26. Public Alpha Rehearsal Evidence v0
+27. Compatibility Surface Strategy v0
+28. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Search Usefulness Backlog Triage v0
+> Source Coverage and Capability Model v0
 
 Why this comes next:
 
@@ -121,8 +133,11 @@ Why this comes next:
   guardrails before source, planner, or Rust parity work widens
 - Hard Test Pack v0 now turns the first selected audit findings into
   executable guardrails without changing runtime behavior
-- the next backend bottleneck is deciding which search-usefulness failure
-  families should be reduced first without slipping into live crawling,
+- Search Usefulness Backlog Triage v0 now selects old-platform-compatible
+  software search as the primary wedge and member-level discovery as the
+  secondary wedge
+- the next backend bottleneck is defining source capability depth so recorded
+  fixture coverage can improve usefulness without slipping into live crawling,
   ranking, fuzzy/vector retrieval, or source-coverage overreach
 
 ## Explicit Deferrals

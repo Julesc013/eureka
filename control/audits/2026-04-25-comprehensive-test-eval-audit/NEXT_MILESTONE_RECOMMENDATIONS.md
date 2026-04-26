@@ -1,5 +1,11 @@
 # Next Milestone Recommendations
 
+Update: Search Usefulness Backlog Triage v0 now supersedes the ordering in this
+audit snapshot. The selected immediate next milestone is Source Coverage and
+Capability Model v0, followed by Real Source Coverage Pack v0 and
+Old-Platform Software Planner Pack v0. This file remains the original audit
+recommendation record.
+
 ## 1. Hard Test Pack v0
 
 Why: convert the most important audit proposals into executable guardrails.
@@ -183,4 +189,3 @@ Likely files: `tests/operations/`, `control/inventory/tests/`.
 Tests to add first: command-file existence and required README/index checks.
 
 Do not do: do not build a full documentation site.
-

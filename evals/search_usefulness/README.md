@@ -51,3 +51,14 @@ The report aggregates current Eureka statuses, pending external baselines,
 failure modes, and future-work labels. It does not introduce ranking, fuzzy
 retrieval, vector search, LLM planning, live crawling, or production benchmark
 claims.
+
+## Backlog Triage
+
+Search Usefulness Backlog Triage v0 lives under
+`control/backlog/search_usefulness_triage/`.
+
+The triage selects old-platform-compatible software search as the primary
+usefulness wedge and member-level discovery inside bundles as the secondary
+wedge. It keeps external Google and Internet Archive baselines pending manual
+observation and recommends Source Coverage and Capability Model v0 as the next
+implementation milestone.

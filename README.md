@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. Many archive-resolution eval tasks
@@ -304,6 +304,7 @@ Roadmaps and operations:
 - [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md)
 - [Hard Test Pack](docs/operations/HARD_TEST_PACK.md)
 - [Comprehensive Audit Pack](control/audits/2026-04-25-comprehensive-test-eval-audit/README.md)
+- [Search Usefulness Backlog Triage](control/backlog/search_usefulness_triage/README.md)
 
 Evals and parity:
 
@@ -333,15 +334,14 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Search Usefulness Backlog Triage v0
+1. Source Coverage and Capability Model v0
 2. Real Source Coverage Pack v0
 
 Broader near-term direction:
 
-1. use the comprehensive audit findings to select the next small hard-test,
-   source, planner, representation, or compatibility slice
-2. triage Search Usefulness Audit v0 into the next small source, planner,
-   representation, or compatibility backlog slice
+1. define source capability depth before adding recorded fixture coverage
+2. use the selected old-platform-compatible software and member-level discovery
+   wedges to scope source, planner, representation, and compatibility slices
 3. keep Python as oracle while adding Rust candidates only when parity fixtures
    exist
 4. preserve public-alpha safety checks and capture rehearsal evidence
