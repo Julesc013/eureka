@@ -339,7 +339,7 @@
 ## ADR-057: Select Old-Platform Software and Member-Level Discovery as the Next Usefulness Wedges
 
 - Status: accepted
-- Decision: Eureka now records Search Usefulness Backlog Triage v0 under `control/backlog/search_usefulness_triage/`, selecting old-platform-compatible software search as the primary usefulness wedge, member-level discovery inside bundles as the secondary wedge, and Source Coverage and Capability Model v0 as the immediate next milestone.
+- Decision: Eureka now records Search Usefulness Backlog Triage v0 under `control/backlog/search_usefulness_triage/`, selecting old-platform-compatible software search as the primary usefulness wedge, member-level discovery inside bundles as the secondary wedge, and the initial Source Coverage and Capability Model v0 milestone before later source, planner, member, and compatibility slices.
 - Why: Search Usefulness Audit v0 shows source coverage, query interpretation, planner, compatibility evidence, representation, decomposition, and member-access gaps dominate current usefulness failures; the selected wedges produce the clearest user value while preserving hard eval honesty, external baseline pending/manual status, Python-oracle authority, and the deferral of live crawling, scraping, ranking/fuzzy/vector/LLM retrieval, Rust behavior ports, native apps, and production hosting.
 
 ## ADR-058: Add Source Coverage and Capability Model v0 Without Adding Connectors
@@ -353,3 +353,9 @@
 - Status: accepted
 - Decision: Eureka now adds separate active fixture-backed records for `internet-archive-recorded-fixtures` and `local-bundle-fixtures`, with tiny committed Internet Archive-like metadata/file-list fixtures plus committed ZIP bundle fixtures flowing through existing ingest, extract, normalize, index, eval, and public projection paths.
 - Why: Old-platform-compatible software search and member-level discovery need more realistic source-shaped evidence before planner and member-target work can improve usefulness. This milestone keeps `internet-archive-placeholder` and `local-files-placeholder` as unimplemented planning anchors, adds no live Internet Archive API calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, ranking, fuzzy/vector retrieval, LLM planning, Rust runtime behavior, native apps, or production deployment, and preserves hard eval honesty.
+
+## ADR-060: Add Old-Platform Software Planner Pack v0 as Deterministic Interpretation Only
+
+- Status: accepted
+- Decision: Eureka now extends Query Planner v0 with deterministic old-platform software planning rules for OS/platform aliases, platform-as-constraint handling, app-vs-OS-media suppression hints, latest-compatible release intent, driver/hardware/OS intent, vague identity uncertainty, documentation intent, and member-discovery hints.
+- Why: Search Usefulness Audit v0 still shows old-platform software and member-discovery usefulness blocked by interpretation, member, representation, compatibility, and source gaps. This milestone reduces planner/query-interpretation gaps while preserving source/capability gap honesty. It does not add ranking, fuzzy/vector retrieval, LLM planning, live source calls, crawling, scraping, new connectors, Rust runtime behavior, native apps, or production deployment.

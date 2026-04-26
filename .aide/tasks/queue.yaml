@@ -41,9 +41,9 @@
     {
       "id": "old_platform_software_planner_pack_v0",
       "title": "Old-Platform Software Planner Pack v0",
-      "status": "queued",
+      "status": "completed",
       "priority": 6,
-      "notes": "Improve deterministic planner handling for old OS aliases, latest-compatible intent, and app-vs-OS-media suppression."
+      "notes": "Added deterministic old-platform OS aliases, latest-compatible intent, driver/hardware intent, vague identity uncertainty, documentation intent, member-discovery hints, and app-vs-OS-media suppression without ranking, fuzzy/vector retrieval, LLM planning, or live source behavior."
     },
     {
       "id": "member_level_synthetic_records_v0",

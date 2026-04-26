@@ -66,7 +66,10 @@ implementation milestone at the time of triage.
 Source Coverage and Capability Model v0 now exists as the metadata/projection
 layer needed by that recommendation. Real Source Coverage Pack v0 adds tiny
 recorded Internet Archive-like metadata/file-list fixtures plus a committed
-local bundle fixture corpus. Audit deltas are intentionally modest: external
-Google and Internet Archive baselines remain pending manual observation, and
-the audit still performs no live crawling, Google scraping, Internet Archive
-scraping, or external baseline fabrication.
+local bundle fixture corpus. Old-Platform Software Planner Pack v0 now reduces
+planner/query-interpretation gaps by making OS aliases, latest-compatible
+intent, driver/hardware intent, vague identity uncertainty, documentation
+intent, and member-discovery hints explicit. Audit deltas remain intentionally
+bounded: external Google and Internet Archive baselines remain pending manual
+observation, and the audit still performs no live-source crawling, no Google
+scraping, no Internet Archive scraping, and no external baseline fabrication.

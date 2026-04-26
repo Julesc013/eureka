@@ -73,5 +73,5 @@ These questions are intentionally left open during bootstrap:
 69. After Source Coverage and Capability Model v0, which recorded fixture families should be sufficient to promote Internet Archive or Wayback/Memento placeholder records into active recorded-fixture sources without implying live access?
 70. Which coverage-depth changes should require Python-oracle golden fixture updates, and which can remain descriptive inventory-only changes?
 71. How should future Rust source-registry parity candidates handle capability and coverage fields once Cargo checks become part of a maintained optional lane?
-72. Which recorded source fixture result fields from Real Source Coverage Pack v0 should become stable enough for Old-Platform Software Planner Pack v0, and which should remain replaceable fixture-shape evidence?
+72. Which old-platform planner hint fields should become stable public/planner contract fields before Rust Query Planner Parity Candidate v0, and which should remain replaceable Python-oracle implementation detail?
 73. How should member paths from committed local bundle fixtures graduate into stable member target refs without implying arbitrary local filesystem ingestion?

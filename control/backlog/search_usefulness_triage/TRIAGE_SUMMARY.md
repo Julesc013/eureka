@@ -10,9 +10,9 @@ The Search Usefulness Audit v0 runner was re-run for this triage. Current local 
 | --- | ---: |
 | Total queries | 64 |
 | Covered | 5 |
-| Partial | 1 |
-| Source gap | 43 |
-| Capability gap | 13 |
+| Partial | 4 |
+| Source gap | 41 |
+| Capability gap | 12 |
 | Unknown | 2 |
 | Google pending manual observations | 64 |
 | Internet Archive metadata pending manual observations | 64 |
@@ -23,15 +23,15 @@ Top failure modes:
 | Failure mode | Count |
 | --- | ---: |
 | source_coverage_gap | 49 |
-| query_interpretation_gap | 46 |
-| planner_gap | 45 |
 | compatibility_evidence_gap | 25 |
+| planner_gap | 24 |
+| query_interpretation_gap | 21 |
 | representation_gap | 14 |
 | decomposition_gap | 12 |
 | member_access_gap | 12 |
 | identity_cluster_gap | 11 |
 
-The data says Eureka's current bottleneck is not architecture theater. It is missing governed source coverage, missing source capability depth, incomplete planner interpretation for old platform intent, and missing member/compatibility evidence.
+The data says Eureka's current bottleneck is not architecture theater. Source coverage is still dominant, but Old-Platform Software Planner Pack v0 reduced the planner/query-interpretation counts by making old-platform intent deterministic. The next visible gaps are member/representation depth, compatibility evidence, and further recorded source coverage.
 
 ## Selected Wedges
 
@@ -49,11 +49,11 @@ These wedges are selected because they cover many high-value hard queries while 
 
 ## Top Blockers
 
-1. Source coverage and capability depth are underspecified. Current active sources are synthetic fixtures and recorded GitHub Releases fixtures only.
-2. Placeholder/future sources remain Internet Archive, Wayback/Memento, Software Heritage, and local files; they must not be described as implemented connectors.
-3. Planner coverage does not yet capture enough old OS aliases, latest-compatible release intent, vague identity clues, or app-vs-OS-media suppression.
-4. Member-level discovery is bounded to current synthetic fixture behavior and does not yet provide broad member target refs, parent lineage, or member-level index records.
-5. Compatibility evidence is too thin for Windows 98, Windows 2000, Windows XP, Vista, and Windows 7 / NT 6.1 claims.
+1. Source coverage is still narrow even after recorded Internet Archive-like and local bundle fixtures.
+2. Placeholder/future sources remain Internet Archive live, Wayback/Memento, Software Heritage, and local files; they must not be described as implemented connectors.
+3. Member-level discovery does not yet provide stable member target refs, parent lineage records, or member-level index records.
+4. Compatibility evidence is too thin for Windows 98, Windows 2000, Windows XP, Vista, and Windows 7 / NT 6.1 claims.
+5. Result lanes and user-cost ordering remain future work; planner suppression hints do not rank results.
 
 ## Why Live Crawling Is Deferred
 
@@ -77,9 +77,13 @@ coverage-depth vocabulary, fixture expectations, and tests that prevent
 placeholder sources from being promoted silently. Real Source Coverage Pack v0
 then added recorded Internet Archive-like fixtures plus local bundle fixtures
 without live probing, crawling, scraping, or arbitrary local filesystem
-ingestion.
+ingestion. Old-Platform Software Planner Pack v0 then added deterministic OS
+aliases, latest-compatible release intent, driver/hardware/OS intent, vague
+identity uncertainty, documentation intent, member-discovery hints, and
+app-vs-OS-media suppression hints without adding ranking, fuzzy/vector
+retrieval, LLM planning, live source behavior, or connector work.
 
-Current next implementation milestone: Old-Platform Software Planner Pack v0.
+Current next implementation milestone: Member-Level Synthetic Records v0.
 
 ## Evidence That Would Change The Plan
 
@@ -90,4 +94,4 @@ The plan should be revisited if:
 - member-level discovery becomes blocked by a contract problem that must be solved first
 - hardening tests reveal route/public-alpha/privacy constraints that prevent safe fixture work
 
-Until then, source capability modeling is the lowest-risk next move with the highest future leverage.
+Until then, member-level synthetic records are the lowest-risk next move with the highest future leverage.

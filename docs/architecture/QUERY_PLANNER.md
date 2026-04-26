@@ -56,9 +56,26 @@ Supported query families now include:
 - vague software identity
 - latest-compatible release
 - driver and hardware-support lookup
+- member/container discovery hints
 - bounded manual lookup
 - article-inside-scan and document-member search
 - honest `generic_search` fallback when no bounded family matches
+
+Old-Platform Software Planner Pack v0 extends this deterministic lane for the
+selected usefulness wedge. It now records:
+
+- OS aliases such as Windows 7 / Windows NT 6.1, Windows XP / NT 5.1, Windows
+  2000 / NT 5.0, Win9x aliases, Mac OS 9, Mac OS X Tiger, and Snow Leopard
+- platform-vs-target distinction so `Windows 7 apps` remains a software query
+  with a Windows 7 compatibility constraint
+- latest-compatible release intent without asserting the actual latest version
+- driver + hardware + OS intent, including INF/support-media representation
+  hints
+- vague identity uncertainty for queries such as `old blue FTP client for XP`
+- member/container hints for support CDs, ISOs, ZIPs, bundles, and packages
+- manual/readme/documentation hints without adding OCR or document connectors
+- app-vs-OS-media suppression hints such as `os_iso_image` and
+  `operating_system_install_media`
 
 ## Current Integration
 
@@ -81,3 +98,4 @@ Query Planner v0 does not yet provide:
 - planner-driven ranking or suppression beyond bounded prefer/exclude hints
 - LLM planning
 - vector or fuzzy retrieval
+- live source behavior or source connector execution

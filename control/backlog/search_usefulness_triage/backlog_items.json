@@ -4,7 +4,7 @@
   "created_by_slice": "search_usefulness_backlog_triage_v0",
   "selected_primary_wedge": "old_platform_software",
   "selected_secondary_wedge": "member_level_discovery",
-  "immediate_next_milestone": "Old-Platform Software Planner Pack v0",
+  "immediate_next_milestone": "Member-Level Synthetic Records v0",
   "audit_snapshot": {
     "total_queries": 64,
     "eureka_status_counts": {
@@ -21,13 +21,15 @@
     },
     "top_failure_modes": {
       "source_coverage_gap": 49,
-      "query_interpretation_gap": 46,
-      "planner_gap": 45,
+      "query_interpretation_gap": 21,
+      "planner_gap": 24,
       "compatibility_evidence_gap": 25,
       "representation_gap": 14,
       "decomposition_gap": 12,
       "member_access_gap": 12,
-      "identity_cluster_gap": 11
+      "identity_cluster_gap": 12,
+      "live_source_gap": 10,
+      "surface_ux_gap": 4
     }
   },
   "items": [
@@ -83,7 +85,7 @@
       "id": "SU-T003",
       "title": "Old-Platform Software Planner Pack v0",
       "priority": "P0",
-      "status": "selected",
+      "status": "implemented",
       "wedge": "old_platform_software",
       "failure_modes": ["planner_gap", "query_interpretation_gap", "compatibility_evidence_gap"],
       "evidence": {
@@ -94,20 +96,20 @@
       "user_value": "Improves query interpretation for the selected wedge so source evidence can be routed toward the right object type and constraints.",
       "implementation_feasibility": "Medium; deterministic rules can be extended after source capability expectations are defined.",
       "regression_risk": "Medium; planner output changes affect goldens and eval checks.",
-      "expected_audit_delta": "Reduce planner_gap/query_interpretation_gap for old-platform queries; no false coverage without source evidence.",
+      "expected_audit_delta": "Implemented: reduced planner_gap/query_interpretation_gap for old-platform queries while preserving source/capability gap honesty.",
       "prerequisite_items": ["SU-T001", "SU-T002"],
       "suggested_milestone": "Old-Platform Software Planner Pack v0",
       "acceptance_criteria": ["OS aliases are deterministic", "latest-compatible intent is explicit", "apps are not confused with OS media", "unknowns remain honest"],
       "tests_to_add_first": ["planner expected task-kind fixtures", "OS alias graph tests", "app-vs-OS suppression tests"],
       "likely_files": ["runtime/engine/query_planner/", "evals/search_usefulness/", "tests/parity/golden/python_oracle/v0/query_planner/"],
       "do_not_do": ["do not add LLM planning", "do not add fuzzy/vector retrieval", "do not claim compatibility without evidence"],
-      "notes": "Rust query-planner parity should wait until this Python planner wedge stabilizes."
+      "notes": "Implemented as deterministic Python-oracle planner behavior. Rust query-planner parity should target these refreshed Python goldens later."
     },
     {
       "id": "SU-T004",
       "title": "Member-Level Synthetic Records v0",
-      "priority": "P1",
-      "status": "proposed",
+      "priority": "P0",
+      "status": "selected",
       "wedge": "member_level_discovery",
       "failure_modes": ["decomposition_gap", "member_access_gap", "representation_gap", "source_coverage_gap"],
       "evidence": {
@@ -119,13 +121,13 @@
       "implementation_feasibility": "Medium; can begin with local synthetic package/support-media fixtures.",
       "regression_risk": "Medium; member target refs and index records need stable shape.",
       "expected_audit_delta": "Reduce selected package/container capability gaps and improve smallest-actionable-unit scores.",
-      "prerequisite_items": ["SU-T001"],
+      "prerequisite_items": ["SU-T001", "SU-T002", "SU-T003"],
       "suggested_milestone": "Member-Level Synthetic Records v0",
       "acceptance_criteria": ["member target refs exist", "parent lineage is preserved", "member-level index records are queryable", "parent container is demoted when member evidence exists"],
       "tests_to_add_first": ["member target-ref validation", "parent lineage tests", "local index member-record tests"],
       "likely_files": ["contracts/archive/fixtures/", "runtime/engine/decomposition/", "runtime/engine/index/", "evals/search_usefulness/"],
       "do_not_do": ["do not add arbitrary local filesystem reads", "do not broaden extraction formats beyond fixtures", "do not hide parent provenance"],
-      "notes": "This is the secondary wedge because member-level discovery is central to the temporal-object-resolver thesis."
+      "notes": "Selected as the immediate next milestone because planner hints now expose member intent, but member target refs and parent lineage remain the next bottleneck."
     },
     {
       "id": "SU-T005",

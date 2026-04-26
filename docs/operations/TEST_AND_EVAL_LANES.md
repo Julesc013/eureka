@@ -132,3 +132,18 @@ local bundle fixture loader, local-index visibility, public projection, and
 bounded member readback. It does not perform live Internet Archive API calls,
 scraping, crawling, broad source federation, or arbitrary local filesystem
 ingestion.
+
+## Old-Platform Software Planner Pack
+
+Old-Platform Software Planner Pack v0 is validated with:
+
+```bash
+python -m unittest runtime.engine.query_planner.tests.test_old_platform_planner
+```
+
+This check verifies deterministic OS aliases, platform-as-constraint handling,
+latest-compatible release intent, driver/hardware/OS intent, vague identity
+uncertainty, documentation intent, member-discovery hints, and app-vs-OS-media
+suppression hints. It improves planner interpretation only; it does not add
+ranking, fuzzy/vector retrieval, LLM planning, live source behavior, source
+connectors, or planner-owned retrieval routing.

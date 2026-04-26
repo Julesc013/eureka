@@ -67,6 +67,13 @@ The repo has already proven:
   `internet-archive-recorded-fixtures` and `local-bundle-fixtures` records
   without live Internet Archive API calls, scraping, crawling, broad source
   federation, or arbitrary local filesystem ingestion
+- Old-Platform Software Planner Pack v0 as the first deterministic
+  usefulness-wedge planner expansion, adding OS/platform aliases,
+  platform-as-constraint handling, app-vs-OS-media suppression hints,
+  latest-compatible release intent, driver/hardware/OS intent, vague identity
+  uncertainty, documentation intent, and member-discovery hints without
+  ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or new
+  connectors
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -94,7 +101,7 @@ The next backend sequence is:
 17. Search Usefulness Backlog Triage v0 (implemented as governed backlog selection)
 18. Source Coverage and Capability Model v0 (implemented as metadata/projection only)
 19. Real Source Coverage Pack v0 (implemented as recorded fixtures only)
-20. Old-Platform Software Planner Pack v0
+20. Old-Platform Software Planner Pack v0 (implemented as deterministic interpretation only)
 21. Member-Level Synthetic Records v0
 22. Result Lanes + User-Cost Ranking v0
 23. Compatibility Evidence Pack v0
@@ -108,7 +115,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Old-Platform Software Planner Pack v0
+> Member-Level Synthetic Records v0
 
 Why this comes next:
 
@@ -152,9 +159,12 @@ Why this comes next:
   without slipping into live crawling, ranking, fuzzy/vector retrieval, or
   source-coverage overreach
 - Real Source Coverage Pack v0 has added the first recorded source coverage
-  fixtures, and the next backend bottleneck is deterministic old-platform
-  query interpretation over those source-backed records while preserving hard
-  eval honesty
+  fixtures
+- Old-Platform Software Planner Pack v0 has reduced planner/query
+  interpretation gaps with deterministic hints while preserving hard eval
+  honesty
+- the next backend bottleneck is member-level target refs, member-level index
+  records, and parent lineage over the existing fixture corpus
 
 ## Explicit Deferrals
 

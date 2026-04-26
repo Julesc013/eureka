@@ -49,7 +49,7 @@ results are canonical truth.
 | Area | Current bounded capability |
 | --- | --- |
 | Source and ingestion | Source Registry v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, synthetic fixtures, recorded GitHub Releases fixtures, recorded Internet Archive-like fixtures, local bundle fixtures, governed source IDs, explicit placeholder posture for future sources |
-| Resolution and search | exact resolution, deterministic search, query planning, local SQLite index with FTS5 preferred and deterministic fallback |
+| Resolution and search | exact resolution, deterministic search, Query Planner v0 plus Old-Platform Software Planner Pack v0, local SQLite index with FTS5 preferred and deterministic fallback |
 | Evidence and explanation | provenance summaries, source summaries, absence reasoning, comparison/disagreement, subject/state timelines |
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
@@ -338,13 +338,13 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Old-Platform Software Planner Pack v0
-2. Member-Level Synthetic Records v0
+1. Member-Level Synthetic Records v0
+2. Result Lanes + User-Cost Ranking v0
 
 Broader near-term direction:
 
-1. improve deterministic old-platform query interpretation over the new
-   recorded fixture corpus
+1. add member-level target refs, parent lineage, and indexable member records
+   over the existing recorded fixture corpus
 2. use the selected old-platform-compatible software and member-level discovery
    wedges to scope source, planner, representation, and compatibility slices
 3. keep Python as oracle while adding Rust candidates only when parity fixtures

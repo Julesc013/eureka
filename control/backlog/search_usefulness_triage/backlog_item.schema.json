@@ -24,7 +24,7 @@
   ],
   "field_values": {
     "priority": ["P0", "P1", "P2", "P3"],
-    "status": ["proposed", "selected", "deferred", "rejected"],
+    "status": ["proposed", "selected", "implemented", "deferred", "rejected"],
     "wedge": [
       "old_platform_software",
       "member_level_discovery",

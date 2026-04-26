@@ -43,8 +43,8 @@ class SearchUsefulnessBacklogTriageTest(unittest.TestCase):
 
         self.assertGreaterEqual(len(items), 10)
         self.assertEqual(len(selected), 1)
-        self.assertEqual(selected[0]["title"], "Old-Platform Software Planner Pack v0")
-        self.assertEqual(payload["immediate_next_milestone"], "Old-Platform Software Planner Pack v0")
+        self.assertEqual(selected[0]["title"], "Member-Level Synthetic Records v0")
+        self.assertEqual(payload["immediate_next_milestone"], "Member-Level Synthetic Records v0")
         self.assertEqual(payload["selected_primary_wedge"], "old_platform_software")
         self.assertEqual(payload["selected_secondary_wedge"], "member_level_discovery")
 

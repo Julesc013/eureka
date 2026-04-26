@@ -8,7 +8,7 @@ Current bootstrap scope:
 - submit bounded resolution work and return an accepted envelope with a `job_id`
 - read the current in-memory job envelope by `job_id`
 - search the bounded software-first corpus through a deterministic public search boundary
-- plan one bounded raw query through a deterministic public query-planner boundary
+- plan one bounded raw query through a deterministic public query-planner boundary, including old-platform platform constraints, latest-compatible intent, driver/hardware hints, vague identity uncertainty, documentation intent, member-discovery hints, and suppression hints when present
 - build, inspect, and query one bootstrap local SQLite index through a deterministic public local-index boundary
 - run Archive Resolution Eval Runner v0 through a deterministic public eval boundary, returning bounded suite and task result envelopes without implying background execution, ranking, fuzzy retrieval, vector search, LLM planning, crawling, live sync, or production benchmark semantics
 - create, read, and list synchronous bootstrap local tasks through a deterministic public local-tasks boundary
@@ -94,6 +94,7 @@ Out of scope here:
 - incremental indexing, ranking, fuzzy matching, vector search, semantic recall, or planner-driven retrieval routing for local index queries
 - ranking, fuzzy matching, vector search, semantic recall, LLM planning, crawling, live source sync, or production relevance claims for archive-resolution eval execution
 - full investigation planning, planner-owned retrieval routing, phases, checkpoints, or streaming transport for resolution runs
+- implying that old-platform planner hints perform ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or planner-owned result routing
 - exposing raw fixture paths or private local paths through the public source-registry boundary
 - implying that source capability metadata implements a connector, live probe, crawl, or source-sync path
 - implying that recorded Internet Archive fixtures are a live Internet Archive connector or that local bundle fixtures are arbitrary local filesystem ingestion

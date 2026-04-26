@@ -56,11 +56,17 @@ Do not do: do not add LLM planning, fuzzy retrieval, vector search, or ranking.
 
 Expected audit effect: planner_gap and query_interpretation_gap decrease for old-platform queries.
 
+Status: implemented as deterministic planner interpretation only. The current
+audit now reports `planner_gap=24` and `query_interpretation_gap=21`, while
+source coverage, compatibility evidence, representation, decomposition, and
+member-access gaps remain honest future work.
+
 ## 4. Member-Level Synthetic Records v0
 
 Why: many hard queries require a member inside a parent bundle or scan.
 
-Prerequisite: source capability model.
+Prerequisite: source capability model, Real Source Coverage Pack v0, and
+Old-Platform Software Planner Pack v0.
 
 Likely files: `contracts/archive/fixtures/`, `runtime/engine/index/`, `runtime/engine/decomposition/`, `evals/search_usefulness/`.
 

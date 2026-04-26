@@ -267,6 +267,28 @@
       "notes": "Added by Real Source Coverage Pack v0; it uses committed fixtures only and performs no live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion."
     },
     {
+      "test_id": "old_platform_planner_pack_validation",
+      "label": "Old-platform software planner tests",
+      "command": "python -m unittest runtime.engine.query_planner.tests.test_old_platform_planner",
+      "category": "eval",
+      "owner_area": "runtime/engine/query_planner",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Deterministic old-platform OS aliases, latest-compatible intent, driver/hardware intent, vague identity uncertainty, or member-discovery hints regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Old-Platform Software Planner Pack v0; it improves interpretation only and adds no ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or source connectors."
+    },
+    {
       "test_id": "operating_layer_validation",
       "label": "Test/eval operating layer validation",
       "command": "python -m unittest tests.operations.test_test_eval_operating_layer",

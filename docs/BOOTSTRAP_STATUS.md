@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus thirty-eight executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus thirty-nine executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -92,9 +92,9 @@ architectural oracle rather than as a throwaway scaffold.
 - first Search Usefulness Backlog Triage v0 pack under
   `control/backlog/search_usefulness_triage/` that selects
   old-platform-compatible software search as the primary usefulness wedge,
-  member-level discovery inside bundles as the secondary wedge, and Source
-  Coverage and Capability Model v0 as the selected next milestone without
-  changing runtime behavior or fabricating external baselines
+  member-level discovery inside bundles as the secondary wedge, and a staged
+  usefulness backlog without changing runtime behavior or fabricating external
+  baselines
 - first Real Source Coverage Pack v0 seam under
   `runtime/connectors/internet_archive_recorded/`,
   `runtime/connectors/local_bundle_fixtures/`, and
@@ -103,6 +103,13 @@ architectural oracle rather than as a throwaway scaffold.
   old-platform-compatible software and member-level discovery probes without
   live Internet Archive API calls, scraping, crawling, broad source federation,
   arbitrary local filesystem ingestion, or production source claims
+- first Old-Platform Software Planner Pack v0 seam under
+  `runtime/engine/query_planner/` that adds deterministic OS/platform aliases,
+  platform-as-constraint handling, app-vs-OS-media suppression hints,
+  latest-compatible release intent, driver/hardware/OS intent, vague identity
+  uncertainty, documentation intent, and member-discovery hints without adding
+  ranking, fuzzy/vector retrieval, LLM planning, live source behavior, new
+  connectors, or planner-owned result routing
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -142,7 +149,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Old-Platform Software Planner Pack v0
+> Member-Level Synthetic Records v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -151,8 +158,8 @@ Readiness Review, Public Alpha Hosting Pack v0, Rust Migration Skeleton and
 Parity Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity
 Candidate v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 and Comprehensive Test/Eval Operating Layer and Repo Audit v0, plus Hard Test
-Pack v0, Source Coverage and Capability Model v0, and Real Source Coverage
-Pack v0, are now implemented as the first
+Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack
+v0, and Old-Platform Software Planner Pack v0, are now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
 synchronous local execution substrate, explicit local reusable investigation
@@ -162,18 +169,18 @@ packet, committed Python-oracle golden fixture pack, isolated Rust
 source-registry parity seam, broad usefulness-audit backlog generator, and
 repo-native test/eval governance, executable hardening guard layer,
 evidence-backed usefulness backlog, explicit source capability/coverage
-metadata layer, and first recorded source-coverage fixture pack.
+metadata layer, first recorded source-coverage fixture pack, and deterministic
+old-platform planner interpretation layer.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Old-Platform Software Planner Pack v0
-2. Member-Level Synthetic Records v0
-3. Result Lanes + User-Cost Ranking v0
-4. Compatibility Evidence Pack v0
-5. Search Usefulness Audit Delta v0
-6. Rust Query Planner Parity Candidate v0
-7. Public Alpha Rehearsal Evidence v0
-8. Compatibility Surface Strategy v0
+1. Member-Level Synthetic Records v0
+2. Result Lanes + User-Cost Ranking v0
+3. Compatibility Evidence Pack v0
+4. Search Usefulness Audit Delta v0
+5. Rust Query Planner Parity Candidate v0
+6. Public Alpha Rehearsal Evidence v0
+7. Compatibility Surface Strategy v0
 
 ## Deferred Priorities
 

@@ -46,6 +46,13 @@ Python reference lane:
 5. call bounded absence reasoning for empty results
 6. emit stable JSON task and suite results
 
+The expected planner fields now exercise Old-Platform Software Planner Pack v0
+for deterministic old-platform interpretation: Windows aliases are platform
+constraints, latest-compatible release queries carry a temporal goal, vague
+identity queries preserve uncertainty, and member/document queries carry
+bounded representation or decomposition hints. These expectations do not make
+the hard tasks pass; they only guard planner interpretation.
+
 Run it with:
 
 ```powershell

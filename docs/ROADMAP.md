@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: thirty-eight local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, and Real Source Coverage Pack v0. The latest source-coverage layer adds tiny committed Internet Archive-like recorded metadata/file-list fixtures plus local bundle ZIP fixtures without live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
+Current status within this stage: thirty-nine local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, and Old-Platform Software Planner Pack v0. The latest planner layer adds deterministic OS/platform aliases, platform-as-constraint handling, app-vs-OS-media suppression hints, latest-compatible release intent, driver/hardware/OS intent, vague identity uncertainty, documentation intent, and member-discovery hints without ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or new connectors.
 
 ## Stage 3: Surface Skeletons
 
@@ -98,6 +98,12 @@ committed metadata/file-list and ZIP bundle fixtures. It keeps the Internet
 Archive and local-files placeholders unimplemented and does not add live source
 probing, crawling, scraping, broad source federation, or arbitrary local
 filesystem ingestion.
+Old-Platform Software Planner Pack v0 now extends Query Planner v0 with
+deterministic old-platform software interpretation, including OS aliases,
+latest-compatible release intent, driver/hardware/OS intent, vague identity
+uncertainty, documentation intent, member-discovery hints, and app-vs-OS-media
+suppression hints. It improves interpretation only and does not add ranking,
+fuzzy/vector retrieval, LLM planning, live source behavior, or new connectors.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
@@ -105,7 +111,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Old-Platform Software Planner Pack v0
+> Member-Level Synthetic Records v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -114,8 +120,10 @@ Review, Public Alpha Hosting Pack v0, Rust Migration Skeleton and Parity
 Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity Candidate
 v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0,
-Source Coverage and Capability Model v0, and Real Source Coverage Pack v0 now
+Source Coverage and Capability Model v0, Real Source Coverage Pack v0, and
+Old-Platform Software Planner Pack v0 now
 mark the start of a more evidence-led backend phase. The next step is to add
-old-platform planner/query interpretation improvements over the newly expanded
-recorded fixture corpus without introducing LLM planning, fuzzy/vector search,
-ranking, live crawling, external scraping, or broad source federation.
+member-level synthetic records, target refs, and parent lineage over the
+existing recorded fixture corpus without introducing arbitrary local filesystem
+ingestion, live crawling, external scraping, ranking, fuzzy/vector search, LLM
+planning, or broad source federation.
