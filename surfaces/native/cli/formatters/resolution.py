@@ -35,6 +35,24 @@ def format_resolution_workspace(
             lines.append(f"kind: {selected_object['kind']}")
         if selected_object.get("label"):
             lines.append(f"label: {selected_object['label']}")
+        for field_name in (
+            "record_kind",
+            "member_path",
+            "member_kind",
+            "parent_target_ref",
+            "parent_representation_id",
+            "media_type",
+            "content_hash",
+        ):
+            value = selected_object.get(field_name)
+            if isinstance(value, str) and value:
+                lines.append(f"{field_name}: {value}")
+        size_bytes = selected_object.get("size_bytes")
+        if isinstance(size_bytes, int):
+            lines.append(f"size_bytes: {size_bytes}")
+        action_hints = selected_object.get("action_hints")
+        if isinstance(action_hints, list) and action_hints:
+            lines.append(f"action_hints: {', '.join(str(item) for item in action_hints)}")
 
     source = workbench_session.get("source")
     if isinstance(source, Mapping):
@@ -45,6 +63,8 @@ def format_resolution_workspace(
                 f"family: {source.get('family', '(unknown)')}",
             ]
         )
+        if source.get("source_id"):
+            lines.append(f"source_id: {source['source_id']}")
         if source.get("label"):
             lines.append(f"label: {source['label']}")
         if source.get("locator"):

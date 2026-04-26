@@ -20,6 +20,24 @@ def format_search_results(search_results: Mapping[str, Any]) -> str:
             lines.append(f"   object_id: {object_summary.get('id', '(unknown)')}")
             if object_summary.get("kind"):
                 lines.append(f"   object_kind: {object_summary['kind']}")
+            for field_name in (
+                "record_kind",
+                "member_path",
+                "member_kind",
+                "parent_target_ref",
+                "parent_representation_id",
+                "media_type",
+                "content_hash",
+            ):
+                value = object_summary.get(field_name)
+                if isinstance(value, str) and value:
+                    lines.append(f"   {field_name}: {value}")
+            size_bytes = object_summary.get("size_bytes")
+            if isinstance(size_bytes, int):
+                lines.append(f"   size_bytes: {size_bytes}")
+            action_hints = object_summary.get("action_hints")
+            if isinstance(action_hints, list) and action_hints:
+                lines.append(f"   action_hints: {', '.join(str(item) for item in action_hints)}")
             source = result.get("source")
             if isinstance(source, Mapping):
                 source_label = source.get("label") or source.get("family")

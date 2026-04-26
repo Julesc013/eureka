@@ -95,6 +95,18 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
                     f"results[{index}].source.label",
                 )
                 item += f" <span>[source: {escape(source_label)}]</span>"
+            member_path = _optional_string(object_summary.get("member_path"), f"results[{index}].object.member_path")
+            member_kind = _optional_string(object_summary.get("member_kind"), f"results[{index}].object.member_kind")
+            parent_target_ref = _optional_string(
+                object_summary.get("parent_target_ref"),
+                f"results[{index}].object.parent_target_ref",
+            )
+            if member_path is not None:
+                item += f" <span>[member: {escape(member_path)}]</span>"
+            if member_kind is not None:
+                item += f" <span>[kind: {escape(member_kind)}]</span>"
+            if parent_target_ref is not None:
+                item += f" <span>[parent: {escape(parent_target_ref)}]</span>"
             evidence = _optional_evidence_list(result.get("evidence"), f"results[{index}].evidence")
             if evidence:
                 item += f" <span>[evidence: {escape(_compact_evidence_text(evidence[0]))}]</span>"

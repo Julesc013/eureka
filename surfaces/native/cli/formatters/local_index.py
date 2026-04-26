@@ -43,11 +43,22 @@ def format_local_index(local_index: Mapping[str, Any]) -> str:
                 "source_family",
                 "representation_id",
                 "member_path",
+                "parent_target_ref",
+                "parent_representation_id",
+                "member_kind",
+                "media_type",
+                "content_hash",
                 "summary",
             ):
                 value = result.get(field_name)
                 if isinstance(value, str) and value:
                     lines.append(f"  {field_name}: {value}")
+            size_bytes = result.get("size_bytes")
+            if isinstance(size_bytes, int):
+                lines.append(f"  size_bytes: {size_bytes}")
+            action_hints = result.get("action_hints")
+            if isinstance(action_hints, list) and action_hints:
+                lines.append(f"  action_hints: {', '.join(str(item) for item in action_hints)}")
     notices = local_index.get("notices")
     if isinstance(notices, list) and notices:
         lines.extend(["", "Notices"])

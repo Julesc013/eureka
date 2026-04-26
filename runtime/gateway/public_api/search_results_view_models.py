@@ -47,17 +47,38 @@ def _coerce_results(value: Any) -> list[dict[str, Any]]:
     return results
 
 
-def _coerce_object_summary(value: Any, field_name: str) -> dict[str, str]:
+def _coerce_object_summary(value: Any, field_name: str) -> dict[str, Any]:
     if not isinstance(value, Mapping):
         raise ValueError(f"{field_name} must be an object.")
 
-    summary = {"id": _require_string(value.get("id"), f"{field_name}.id")}
+    summary: dict[str, Any] = {"id": _require_string(value.get("id"), f"{field_name}.id")}
     kind = _optional_string(value.get("kind"), f"{field_name}.kind")
     label = _optional_string(value.get("label"), f"{field_name}.label")
     if kind is not None:
         summary["kind"] = kind
     if label is not None:
         summary["label"] = label
+    for optional_name in (
+        "record_kind",
+        "parent_target_ref",
+        "parent_resolved_resource_id",
+        "parent_representation_id",
+        "parent_object_label",
+        "member_path",
+        "member_label",
+        "member_kind",
+        "media_type",
+        "content_hash",
+    ):
+        optional_value = _optional_string(value.get(optional_name), f"{field_name}.{optional_name}")
+        if optional_value is not None:
+            summary[optional_name] = optional_value
+    size_bytes = _optional_non_negative_int(value.get("size_bytes"), f"{field_name}.size_bytes")
+    if size_bytes is not None:
+        summary["size_bytes"] = size_bytes
+    action_hints = value.get("action_hints")
+    if action_hints is not None:
+        summary["action_hints"] = _coerce_string_list(action_hints, f"{field_name}.action_hints")
     return summary
 
 
@@ -78,8 +99,11 @@ def _optional_source_summary(value: Any, field_name: str) -> dict[str, str] | No
     source = {
         "family": _require_string(value.get("family"), f"{field_name}.family"),
     }
+    source_id = _optional_string(value.get("source_id"), f"{field_name}.source_id")
     label = _optional_string(value.get("label"), f"{field_name}.label")
     locator = _optional_string(value.get("locator"), f"{field_name}.locator")
+    if source_id is not None:
+        source["source_id"] = source_id
     if label is not None:
         source["label"] = label
     if locator is not None:
@@ -138,3 +162,15 @@ def _require_int(value: Any, field_name: str) -> int:
     if not isinstance(value, int) or value < 0:
         raise ValueError(f"{field_name} must be a non-negative integer.")
     return value
+
+
+def _optional_non_negative_int(value: Any, field_name: str) -> int | None:
+    if value is None:
+        return None
+    return _require_int(value, field_name)
+
+
+def _coerce_string_list(value: Any, field_name: str) -> list[str]:
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    return [_require_string(item, f"{field_name}[{index}]") for index, item in enumerate(value)]

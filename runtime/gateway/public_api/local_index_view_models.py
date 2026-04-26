@@ -80,6 +80,13 @@ def _coerce_results(value: Any, field_name: str) -> list[dict[str, Any]]:
             "version_or_state",
             "representation_id",
             "member_path",
+            "parent_target_ref",
+            "parent_resolved_resource_id",
+            "parent_representation_id",
+            "parent_object_label",
+            "member_kind",
+            "media_type",
+            "content_hash",
         ):
             optional_value = item.get(optional_name)
             if optional_value is not None:
@@ -87,6 +94,18 @@ def _coerce_results(value: Any, field_name: str) -> list[dict[str, Any]]:
                     optional_value,
                     f"{field_name}[{index}].{optional_name}",
                 )
+        size_bytes = item.get("size_bytes")
+        if size_bytes is not None:
+            result["size_bytes"] = _require_non_negative_int(
+                size_bytes,
+                f"{field_name}[{index}].size_bytes",
+            )
+        action_hints = item.get("action_hints")
+        if action_hints is not None:
+            result["action_hints"] = _coerce_string_list(
+                action_hints,
+                f"{field_name}[{index}].action_hints",
+            )
         results.append(result)
     return results
 

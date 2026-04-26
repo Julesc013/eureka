@@ -124,11 +124,22 @@ def render_local_index_html(
                 "resolved_resource_id",
                 "representation_id",
                 "member_path",
+                "parent_target_ref",
+                "parent_representation_id",
+                "member_kind",
+                "media_type",
+                "content_hash",
                 "version_or_state",
             ):
                 value = result.get(field_name)
                 if isinstance(value, str) and value:
                     parts.append(f"            <li>{escape(field_name)}: {escape(value)}</li>")
+            size_bytes = result.get("size_bytes")
+            if isinstance(size_bytes, int):
+                parts.append(f"            <li>size_bytes: {size_bytes}</li>")
+            action_hints = result.get("action_hints")
+            if isinstance(action_hints, list) and action_hints:
+                parts.append(f"            <li>action_hints: {escape(', '.join(str(item) for item in action_hints))}</li>")
             if result["route_hints"]:
                 parts.append(
                     f"            <li>route_hints: {escape(_mapping_text(result['route_hints']))}</li>"
@@ -194,6 +205,19 @@ def _results(value: Any, field_name: str) -> list[dict[str, Any]]:
                     f"{field_name}[{index}].representation_id",
                 ),
                 "member_path": _optional_string(item.get("member_path"), f"{field_name}[{index}].member_path"),
+                "parent_target_ref": _optional_string(
+                    item.get("parent_target_ref"),
+                    f"{field_name}[{index}].parent_target_ref",
+                ),
+                "parent_representation_id": _optional_string(
+                    item.get("parent_representation_id"),
+                    f"{field_name}[{index}].parent_representation_id",
+                ),
+                "member_kind": _optional_string(item.get("member_kind"), f"{field_name}[{index}].member_kind"),
+                "media_type": _optional_string(item.get("media_type"), f"{field_name}[{index}].media_type"),
+                "content_hash": _optional_string(item.get("content_hash"), f"{field_name}[{index}].content_hash"),
+                "size_bytes": _optional_int(item.get("size_bytes"), f"{field_name}[{index}].size_bytes"),
+                "action_hints": _optional_string_list(item.get("action_hints"), f"{field_name}[{index}].action_hints"),
                 "version_or_state": _optional_string(
                     item.get("version_or_state"),
                     f"{field_name}[{index}].version_or_state",
@@ -243,6 +267,12 @@ def _string_list(value: Any, field_name: str) -> list[str]:
     return [_require_string(item, f"{field_name}[{index}]") for index, item in enumerate(value)]
 
 
+def _optional_string_list(value: Any, field_name: str) -> list[str]:
+    if value is None:
+        return []
+    return _string_list(value, field_name)
+
+
 def _require_mapping(value: Any, field_name: str) -> Mapping[str, Any]:
     if not isinstance(value, Mapping):
         raise ValueError(f"{field_name} must be an object.")
@@ -265,3 +295,9 @@ def _require_int(value: Any, field_name: str) -> int:
     if not isinstance(value, int) or value < 0:
         raise ValueError(f"{field_name} must be a non-negative integer.")
     return value
+
+
+def _optional_int(value: Any, field_name: str) -> int | None:
+    if value is None:
+        return None
+    return _require_int(value, field_name)

@@ -232,6 +232,24 @@ def render_resolution_workspace_html(
         object_label = _optional_string(selected_object.get("label"), "selected_object.label")
         if object_label is not None:
             parts.append(f"          <dt>Label</dt><dd>{escape(object_label)}</dd>")
+        for key, label_text in (
+            ("record_kind", "Record kind"),
+            ("member_path", "Member path"),
+            ("member_kind", "Member kind"),
+            ("parent_target_ref", "Parent target ref"),
+            ("parent_representation_id", "Parent representation"),
+            ("media_type", "Media type"),
+            ("content_hash", "Content hash"),
+        ):
+            value = _optional_string(selected_object.get(key), f"selected_object.{key}")
+            if value is not None:
+                parts.append(f"          <dt>{escape(label_text)}</dt><dd>{escape(value)}</dd>")
+        size_bytes = _optional_int(selected_object.get("size_bytes"), "selected_object.size_bytes")
+        if size_bytes is not None:
+            parts.append(f"          <dt>Size bytes</dt><dd>{size_bytes}</dd>")
+        action_hints = _string_list(selected_object.get("action_hints"), "selected_object.action_hints")
+        if action_hints:
+            parts.append(f"          <dt>Action hints</dt><dd>{escape(', '.join(action_hints))}</dd>")
         parts.extend(
             [
                 "        </dl>",
@@ -257,6 +275,9 @@ def render_resolution_workspace_html(
                 f"          <dt>Family</dt><dd>{escape(_require_string(source.get('family'), 'source.family'))}</dd>",
             ]
         )
+        source_id = _optional_string(source.get("source_id"), "source.source_id")
+        if source_id is not None:
+            parts.append(f"          <dt>Source ID</dt><dd>{escape(source_id)}</dd>")
         source_label = _optional_string(source.get("label"), "source.label")
         if source_label is not None:
             parts.append(f"          <dt>Label</dt><dd>{escape(source_label)}</dd>")

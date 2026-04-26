@@ -44,7 +44,7 @@ def resolution_job_envelope_to_workbench_session(
     return workbench_session
 
 
-def _extract_primary_object(job_envelope: Mapping[str, Any]) -> dict[str, str] | None:
+def _extract_primary_object(job_envelope: Mapping[str, Any]) -> dict[str, Any] | None:
     result = job_envelope.get("result")
     if not isinstance(result, Mapping):
         return None
@@ -53,13 +53,34 @@ def _extract_primary_object(job_envelope: Mapping[str, Any]) -> dict[str, str] |
     if not isinstance(primary_object, Mapping):
         return None
 
-    summary = {"id": _require_string(primary_object.get("id"), "result.primary_object.id")}
+    summary: dict[str, Any] = {"id": _require_string(primary_object.get("id"), "result.primary_object.id")}
     kind = _optional_string(primary_object.get("kind"), "result.primary_object.kind")
     label = _optional_string(primary_object.get("label"), "result.primary_object.label")
     if kind is not None:
         summary["kind"] = kind
     if label is not None:
         summary["label"] = label
+    for optional_name in (
+        "record_kind",
+        "parent_target_ref",
+        "parent_resolved_resource_id",
+        "parent_representation_id",
+        "parent_object_label",
+        "member_path",
+        "member_label",
+        "member_kind",
+        "media_type",
+        "content_hash",
+    ):
+        optional_value = _optional_string(primary_object.get(optional_name), f"result.primary_object.{optional_name}")
+        if optional_value is not None:
+            summary[optional_name] = optional_value
+    size_bytes = _optional_non_negative_int(primary_object.get("size_bytes"), "result.primary_object.size_bytes")
+    if size_bytes is not None:
+        summary["size_bytes"] = size_bytes
+    action_hints = primary_object.get("action_hints")
+    if action_hints is not None:
+        summary["action_hints"] = _coerce_string_list(action_hints, "result.primary_object.action_hints")
     return summary
 
 
@@ -83,8 +104,11 @@ def _extract_source_summary(job_envelope: Mapping[str, Any]) -> dict[str, str] |
         return None
 
     summary = {"family": _require_string(source.get("family"), "result.source.family")}
+    source_id = _optional_string(source.get("source_id"), "result.source.source_id")
     label = _optional_string(source.get("label"), "result.source.label")
     locator = _optional_string(source.get("locator"), "result.source.locator")
+    if source_id is not None:
+        summary["source_id"] = source_id
     if label is not None:
         summary["label"] = label
     if locator is not None:
@@ -228,3 +252,9 @@ def _optional_non_negative_int(value: Any, field_name: str) -> int | None:
     if not isinstance(value, int) or value < 0:
         raise ValueError(f"{field_name} must be a non-negative integer when provided.")
     return value
+
+
+def _coerce_string_list(value: Any, field_name: str) -> list[str]:
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    return [_require_string(item, f"{field_name}[{index}]") for index, item in enumerate(value)]
