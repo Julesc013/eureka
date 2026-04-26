@@ -3,6 +3,7 @@ from __future__ import annotations
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.interfaces.public import Notice, SearchRequest, SearchResponse, SearchResultEntry
 from runtime.engine.interfaces.service import SearchService
+from runtime.engine.compatibility import compatibility_summary
 from runtime.engine.ranking import assign_result_usefulness
 from runtime.engine.resolve.object_summary import normalized_record_to_object_summary
 from runtime.engine.resolve.resolved_resource_identity import resolved_resource_id_for_record
@@ -28,6 +29,8 @@ class DeterministicSearchService(SearchService):
                     resolved_resource_id=resolved_resource_id_for_record(record),
                     source=normalized_record_to_source_summary(record),
                     evidence=record.evidence,
+                    compatibility_evidence=record.compatibility_evidence,
+                    compatibility_summary=compatibility_summary(record.compatibility_evidence),
                     result_lanes=usefulness.result_lanes,
                     primary_lane=usefulness.primary_lane,
                     user_cost_score=usefulness.user_cost_score,

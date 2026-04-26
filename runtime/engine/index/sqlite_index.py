@@ -13,7 +13,7 @@ from runtime.engine.interfaces.public.local_index import (
 )
 
 
-SCHEMA_VERSION = "local_index_v0_result_lanes"
+SCHEMA_VERSION = "local_index_v0_compatibility_evidence"
 RECORD_KINDS = (
     "resolved_object",
     "synthetic_member",
@@ -150,6 +150,8 @@ def _create_schema(connection: sqlite3.Connection, *, fts5_available: bool) -> N
             content_text TEXT,
             evidence_json TEXT NOT NULL,
             action_hints_json TEXT NOT NULL,
+            compatibility_evidence_json TEXT NOT NULL,
+            compatibility_summary TEXT,
             result_lanes_json TEXT NOT NULL,
             primary_lane TEXT,
             user_cost_score INTEGER,
@@ -231,6 +233,8 @@ def _insert_records(
                 content_text,
                 evidence_json,
                 action_hints_json,
+                compatibility_evidence_json,
+                compatibility_summary,
                 result_lanes_json,
                 primary_lane,
                 user_cost_score,
@@ -239,7 +243,7 @@ def _insert_records(
                 route_hints_json,
                 search_text,
                 created_by_slice
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 record.index_record_id,
@@ -266,6 +270,8 @@ def _insert_records(
                 record.content_text,
                 json.dumps(list(record.evidence), sort_keys=True),
                 json.dumps(list(record.action_hints), sort_keys=True),
+                json.dumps(list(record.compatibility_evidence), sort_keys=True),
+                record.compatibility_summary,
                 json.dumps(list(record.result_lanes), sort_keys=True),
                 record.primary_lane,
                 record.user_cost_score,
@@ -382,6 +388,7 @@ def _fts_query(query: str) -> str:
 def _row_to_summary(row: sqlite3.Row) -> LocalIndexRecordSummary:
     evidence = json.loads(row["evidence_json"])
     action_hints = json.loads(row["action_hints_json"])
+    compatibility_evidence = json.loads(row["compatibility_evidence_json"])
     result_lanes = json.loads(row["result_lanes_json"])
     user_cost_reasons = json.loads(row["user_cost_reasons_json"])
     route_hints = json.loads(row["route_hints_json"])
@@ -409,6 +416,10 @@ def _row_to_summary(row: sqlite3.Row) -> LocalIndexRecordSummary:
         content_hash=_optional_text(row["content_hash"]),
         evidence=tuple(str(item) for item in evidence if isinstance(item, str)),
         action_hints=tuple(str(item) for item in action_hints if isinstance(item, str)),
+        compatibility_evidence=tuple(
+            item for item in compatibility_evidence if isinstance(item, dict)
+        ),
+        compatibility_summary=_optional_text(row["compatibility_summary"]),
         result_lanes=tuple(str(item) for item in result_lanes if isinstance(item, str)),
         primary_lane=_optional_text(row["primary_lane"]),
         user_cost_score=_optional_non_negative_int(row["user_cost_score"]),

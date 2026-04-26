@@ -143,6 +143,7 @@ def render_local_index_html(
             for field_name in (
                 "primary_lane",
                 "user_cost_score",
+                "compatibility_summary",
                 "usefulness_summary",
             ):
                 value = result.get(field_name)
@@ -154,6 +155,11 @@ def render_local_index_html(
                 values = result.get(field_name)
                 if isinstance(values, list) and values:
                     parts.append(f"            <li>{escape(field_name)}: {escape(', '.join(str(item) for item in values))}</li>")
+            compatibility_evidence = result.get("compatibility_evidence")
+            if isinstance(compatibility_evidence, list) and compatibility_evidence:
+                parts.append(
+                    f"            <li>compatibility_evidence: {escape(_compact_compatibility_evidence(compatibility_evidence[0]))}</li>"
+                )
             if result["route_hints"]:
                 parts.append(
                     f"            <li>route_hints: {escape(_mapping_text(result['route_hints']))}</li>"
@@ -232,6 +238,14 @@ def _results(value: Any, field_name: str) -> list[dict[str, Any]]:
                 "content_hash": _optional_string(item.get("content_hash"), f"{field_name}[{index}].content_hash"),
                 "size_bytes": _optional_int(item.get("size_bytes"), f"{field_name}[{index}].size_bytes"),
                 "action_hints": _optional_string_list(item.get("action_hints"), f"{field_name}[{index}].action_hints"),
+                "compatibility_evidence": _optional_json_list(
+                    item.get("compatibility_evidence"),
+                    f"{field_name}[{index}].compatibility_evidence",
+                ),
+                "compatibility_summary": _optional_string(
+                    item.get("compatibility_summary"),
+                    f"{field_name}[{index}].compatibility_summary",
+                ),
                 "result_lanes": _optional_string_list(item.get("result_lanes"), f"{field_name}[{index}].result_lanes"),
                 "primary_lane": _optional_string(item.get("primary_lane"), f"{field_name}[{index}].primary_lane"),
                 "user_cost_score": _optional_int(item.get("user_cost_score"), f"{field_name}[{index}].user_cost_score"),
@@ -298,6 +312,14 @@ def _optional_string_list(value: Any, field_name: str) -> list[str]:
     return _string_list(value, field_name)
 
 
+def _optional_json_list(value: Any, field_name: str) -> list[Any]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    return value
+
+
 def _require_mapping(value: Any, field_name: str) -> Mapping[str, Any]:
     if not isinstance(value, Mapping):
         raise ValueError(f"{field_name} must be an object.")
@@ -326,3 +348,16 @@ def _optional_int(value: Any, field_name: str) -> int | None:
     if value is None:
         return None
     return _require_int(value, field_name)
+
+
+def _compact_compatibility_evidence(value: Any) -> str:
+    if not isinstance(value, Mapping):
+        return "(unknown)"
+    platform = value.get("platform")
+    platform_name = "(unknown platform)"
+    if isinstance(platform, Mapping):
+        platform_name = str(platform.get("name") or platform.get("marketing_alias") or platform_name)
+    return (
+        f"{platform_name} {value.get('claim_type', '(unknown claim)')} "
+        f"via {value.get('evidence_kind', '(unknown evidence)')}"
+    )

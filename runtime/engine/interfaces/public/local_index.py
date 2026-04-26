@@ -71,6 +71,8 @@ class LocalIndexRecordSummary:
     content_hash: str | None = None
     evidence: tuple[str, ...] = ()
     action_hints: tuple[str, ...] = ()
+    compatibility_evidence: tuple[dict[str, Any], ...] = ()
+    compatibility_summary: str | None = None
     result_lanes: tuple[str, ...] = ()
     primary_lane: str | None = None
     user_cost_score: int | None = None
@@ -122,6 +124,10 @@ class LocalIndexRecordSummary:
             payload["size_bytes"] = self.size_bytes
         if self.action_hints:
             payload["action_hints"] = list(self.action_hints)
+        if self.compatibility_evidence:
+            payload["compatibility_evidence"] = _clone_json_like(self.compatibility_evidence)
+        if self.compatibility_summary is not None:
+            payload["compatibility_summary"] = self.compatibility_summary
         if self.result_lanes:
             payload["result_lanes"] = list(self.result_lanes)
         if self.primary_lane is not None:

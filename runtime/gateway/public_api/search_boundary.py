@@ -64,6 +64,12 @@ def search_result_to_public_entry(result) -> dict[str, Any]:
         entry["user_cost_reasons"] = list(result.user_cost_reasons)
     if result.usefulness_summary is not None:
         entry["usefulness_summary"] = result.usefulness_summary
+    if result.compatibility_evidence:
+        entry["compatibility_evidence"] = [
+            evidence.to_dict() for evidence in result.compatibility_evidence
+        ]
+    if result.compatibility_summary is not None:
+        entry["compatibility_summary"] = result.compatibility_summary
     if result.resolved_resource_id is not None:
         entry["resolved_resource_id"] = result.resolved_resource_id
     if result.source is not None:

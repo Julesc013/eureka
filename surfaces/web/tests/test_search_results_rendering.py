@@ -102,6 +102,21 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
                         "primary_lane": "inside_bundles",
                         "user_cost_score": 1,
                         "usefulness_summary": "inside bundles; user cost 1; why: member_has_path",
+                        "compatibility_summary": "Windows 2000: driver_for_hardware via file_path (medium)",
+                        "compatibility_evidence": [
+                            {
+                                "evidence_id": "compat-evidence:sha256:abc",
+                                "subject_target_ref": "member:sha256:abc",
+                                "source_family": "local_bundle_fixtures",
+                                "evidence_kind": "file_path",
+                                "claim_type": "driver_for_hardware",
+                                "platform": {"family": "windows", "name": "Windows 2000"},
+                                "architecture": "x86",
+                                "confidence": "medium",
+                                "locator": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                                "created_by_slice": "compatibility_evidence_pack_v0",
+                            }
+                        ],
                         "object": {
                             "id": "obj.synthetic-member.abc",
                             "kind": "synthetic_member",
@@ -128,3 +143,5 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
         self.assertIn("[parent: local-bundle-fixture:driver-support-cd@1.0]", html)
         self.assertIn("[lane: inside_bundles]", html)
         self.assertIn("[user cost: 1]", html)
+        self.assertIn("[compatibility: Windows 2000: driver_for_hardware via file_path (medium)]", html)
+        self.assertIn("[compat evidence: Windows 2000 driver_for_hardware via file_path]", html)

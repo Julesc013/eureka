@@ -65,6 +65,14 @@ def format_resolution_workspace(
         usefulness_summary = selected_object.get("usefulness_summary")
         if isinstance(usefulness_summary, str) and usefulness_summary:
             lines.append(f"usefulness: {usefulness_summary}")
+        compatibility_summary = selected_object.get("compatibility_summary")
+        if isinstance(compatibility_summary, str) and compatibility_summary:
+            lines.append(f"compatibility: {compatibility_summary}")
+        compatibility_evidence = selected_object.get("compatibility_evidence")
+        if isinstance(compatibility_evidence, list) and compatibility_evidence:
+            lines.append(
+                f"compatibility_evidence: {_compact_compatibility_evidence(compatibility_evidence[0])}"
+            )
 
     source = workbench_session.get("source")
     if isinstance(source, Mapping):
@@ -150,3 +158,16 @@ def _format_evidence_entry(entry: Mapping[str, Any]) -> str:
     if asserted_at:
         text += f" @ {asserted_at}"
     return text
+
+
+def _compact_compatibility_evidence(value: Any) -> str:
+    if not isinstance(value, Mapping):
+        return "(unknown)"
+    platform = value.get("platform")
+    platform_name = "(unknown platform)"
+    if isinstance(platform, Mapping):
+        platform_name = str(platform.get("name") or platform.get("marketing_alias") or platform_name)
+    return (
+        f"{platform_name} {value.get('claim_type', '(unknown claim)')} "
+        f"via {value.get('evidence_kind', '(unknown evidence)')}"
+    )

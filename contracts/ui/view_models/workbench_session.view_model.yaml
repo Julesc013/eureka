@@ -75,6 +75,12 @@ properties:
           type: string
       usefulness_summary:
         type: string
+      compatibility_evidence:
+        type: array
+        items:
+          type: object
+      compatibility_summary:
+        type: string
     required:
       - id
   source:

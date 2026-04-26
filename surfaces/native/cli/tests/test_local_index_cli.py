@@ -65,6 +65,8 @@ class LocalIndexCliTestCase(unittest.TestCase):
         self.assertIn("member_kind: driver", output)
         self.assertIn("lane: inside_bundles", output)
         self.assertIn("user_cost: 1", output)
+        self.assertIn("compatibility: Windows 2000", output)
+        self.assertIn("compatibility_evidence: Windows 2000", output)
 
 
 if __name__ == "__main__":

@@ -65,7 +65,13 @@ def assign_result_usefulness(
                 reasons.append("member_has_preview_or_readback_action")
         if fields.sequence("evidence"):
             reasons.append("source_evidence_present")
-        if _has_compatibility_hint(fields):
+        if _has_compatibility_evidence(fields):
+            reasons.append("compatibility_evidence_present")
+            if member_kind == "driver" and _has_claim_type(fields, "driver_for_hardware"):
+                reasons.append("driver_platform_match")
+            if _has_documentation_only_compatibility(fields):
+                reasons.append("documentation_only_compatibility_evidence")
+        elif _has_compatibility_hint(fields):
             reasons.append("compatibility_hint_present")
         if member_kind in {"readme", "documentation", "compatibility_note", "manifest"}:
             lanes.append(DOCUMENTATION)
@@ -166,6 +172,20 @@ class _RecordFields:
             return tuple(str(item) for item in value if isinstance(item, str) and item)
         return ()
 
+    def mapping_sequence(self, name: str) -> tuple[Mapping[str, Any], ...]:
+        value = self._get(name)
+        if isinstance(value, (list, tuple)):
+            mappings: list[Mapping[str, Any]] = []
+            for item in value:
+                if isinstance(item, Mapping):
+                    mappings.append(item)
+                elif hasattr(item, "to_dict"):
+                    payload = item.to_dict()
+                    if isinstance(payload, Mapping):
+                        mappings.append(payload)
+            return tuple(mappings)
+        return ()
+
     def _get(self, name: str) -> Any:
         if isinstance(self._value, Mapping):
             return self._value.get(name)
@@ -223,6 +243,25 @@ def _has_compatibility_hint(fields: _RecordFields) -> bool:
         if item
     ).casefold()
     return any(token in haystack for token in ("windows", "win", "mac os", "compatibility", "nt "))
+
+
+def _has_compatibility_evidence(fields: _RecordFields) -> bool:
+    return bool(fields.mapping_sequence("compatibility_evidence"))
+
+
+def _has_claim_type(fields: _RecordFields, claim_type: str) -> bool:
+    return any(item.get("claim_type") == claim_type for item in fields.mapping_sequence("compatibility_evidence"))
+
+
+def _has_documentation_only_compatibility(fields: _RecordFields) -> bool:
+    evidence_records = fields.mapping_sequence("compatibility_evidence")
+    if not evidence_records:
+        return False
+    return all(
+        item.get("claim_type") == "documentation_for_platform"
+        or item.get("evidence_kind") in {"readme", "manual", "compatibility_note"}
+        for item in evidence_records
+    )
 
 
 def _is_os_media_suppressed(fields: _RecordFields, suppression_hints: tuple[str, ...]) -> bool:

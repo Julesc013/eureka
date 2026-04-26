@@ -127,6 +127,21 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
                 item += f" <span>[user cost: {user_cost_score}]</span>"
             if usefulness_summary is not None:
                 item += f" <span>[why: {escape(usefulness_summary)}]</span>"
+            compatibility_summary = _optional_string(
+                result.get("compatibility_summary"),
+                f"results[{index}].compatibility_summary",
+            ) or _optional_string(
+                object_summary.get("compatibility_summary"),
+                f"results[{index}].object.compatibility_summary",
+            )
+            if compatibility_summary is not None:
+                item += f" <span>[compatibility: {escape(compatibility_summary)}]</span>"
+            compatibility_evidence = _optional_mapping_list(
+                result.get("compatibility_evidence") or object_summary.get("compatibility_evidence"),
+                f"results[{index}].compatibility_evidence",
+            )
+            if compatibility_evidence:
+                item += f" <span>[compat evidence: {escape(_compact_compatibility_evidence(compatibility_evidence[0]))}]</span>"
             evidence = _optional_evidence_list(result.get("evidence"), f"results[{index}].evidence")
             if evidence:
                 item += f" <span>[evidence: {escape(_compact_evidence_text(evidence[0]))}]</span>"
@@ -203,6 +218,19 @@ def _optional_evidence_list(value: Any, field_name: str) -> list[Mapping[str, An
     return evidence
 
 
+def _optional_mapping_list(value: Any, field_name: str) -> list[Mapping[str, Any]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list when provided.")
+    items: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"{field_name}[{index}] must be an object.")
+        items.append(item)
+    return items
+
+
 def _require_string(value: Any, field_name: str, *, allow_empty: bool = False) -> str:
     if not isinstance(value, str):
         raise ValueError(f"{field_name} must be a string.")
@@ -230,3 +258,14 @@ def _compact_evidence_text(entry: Mapping[str, Any]) -> str:
         "evidence.asserted_by_family",
     )
     return f"{claim_kind} via {asserted_by}"
+
+
+def _compact_compatibility_evidence(entry: Mapping[str, Any]) -> str:
+    platform = entry.get("platform")
+    platform_name = "(unknown platform)"
+    if isinstance(platform, Mapping):
+        platform_name = str(platform.get("name") or platform.get("marketing_alias") or platform_name)
+    return (
+        f"{platform_name} {entry.get('claim_type', '(unknown claim)')} "
+        f"via {entry.get('evidence_kind', '(unknown evidence)')}"
+    )

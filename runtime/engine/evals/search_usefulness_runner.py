@@ -1320,10 +1320,12 @@ def _search_result_to_dict(result: Any) -> dict[str, Any]:
         "user_cost_score",
         "user_cost_reasons",
         "usefulness_summary",
+        "compatibility_evidence",
+        "compatibility_summary",
     ):
         value = getattr(result, field_name, None)
         if value is not None and value != ():
-            payload[field_name] = list(value) if isinstance(value, tuple) else value
+            payload[field_name] = _json_value(value)
     if result.resolved_resource_id is not None:
         payload["resolved_resource_id"] = result.resolved_resource_id
     if result.source is not None:
@@ -1334,6 +1336,16 @@ def _search_result_to_dict(result: Any) -> dict[str, Any]:
     if result.evidence:
         payload["evidence"] = [summary.to_dict() for summary in result.evidence]
     return payload
+
+
+def _json_value(value: Any) -> Any:
+    if isinstance(value, tuple):
+        return [_json_value(item) for item in value]
+    if isinstance(value, list):
+        return [_json_value(item) for item in value]
+    if hasattr(value, "to_dict"):
+        return value.to_dict()
+    return value
 
 
 def _mapping_text(value: Mapping[str, int]) -> str:

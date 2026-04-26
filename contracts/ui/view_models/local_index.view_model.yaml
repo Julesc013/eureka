@@ -117,6 +117,14 @@ properties:
           type: array
           items:
             type: string
+        compatibility_evidence:
+          type: array
+          items:
+            type: object
+        compatibility_summary:
+          type:
+            - string
+            - "null"
         result_lanes:
           type: array
           items:

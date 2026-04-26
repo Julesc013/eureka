@@ -59,6 +59,12 @@ def format_local_index(local_index: Mapping[str, Any]) -> str:
             action_hints = result.get("action_hints")
             if isinstance(action_hints, list) and action_hints:
                 lines.append(f"  action_hints: {', '.join(str(item) for item in action_hints)}")
+            compatibility_summary = result.get("compatibility_summary")
+            if isinstance(compatibility_summary, str) and compatibility_summary:
+                lines.append(f"  compatibility: {compatibility_summary}")
+            compatibility_evidence = result.get("compatibility_evidence")
+            if isinstance(compatibility_evidence, list) and compatibility_evidence:
+                lines.append(f"  compatibility_evidence: {_compact_compatibility_evidence(compatibility_evidence[0])}")
             primary_lane = result.get("primary_lane")
             if isinstance(primary_lane, str) and primary_lane:
                 lines.append(f"  lane: {primary_lane}")
@@ -89,3 +95,16 @@ def _mapping_text(value: Any) -> str:
     if not isinstance(value, Mapping) or not value:
         return "(none)"
     return ", ".join(f"{key}={item}" for key, item in value.items())
+
+
+def _compact_compatibility_evidence(value: Any) -> str:
+    if not isinstance(value, Mapping):
+        return "(unknown)"
+    platform = value.get("platform")
+    platform_name = "(unknown platform)"
+    if isinstance(platform, Mapping):
+        platform_name = str(platform.get("name") or platform.get("marketing_alias") or platform_name)
+    return (
+        f"{platform_name} {value.get('claim_type', '(unknown claim)')} "
+        f"via {value.get('evidence_kind', '(unknown evidence)')}"
+    )

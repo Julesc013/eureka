@@ -52,6 +52,14 @@ def format_search_results(search_results: Mapping[str, Any]) -> str:
             usefulness_summary = result.get("usefulness_summary") or object_summary.get("usefulness_summary")
             if isinstance(usefulness_summary, str) and usefulness_summary:
                 lines.append(f"   usefulness: {usefulness_summary}")
+            compatibility_summary = result.get("compatibility_summary") or object_summary.get("compatibility_summary")
+            if isinstance(compatibility_summary, str) and compatibility_summary:
+                lines.append(f"   compatibility: {compatibility_summary}")
+            compatibility_evidence = result.get("compatibility_evidence") or object_summary.get("compatibility_evidence")
+            if isinstance(compatibility_evidence, list) and compatibility_evidence:
+                lines.append(
+                    f"   compatibility_evidence: {_compact_compatibility_evidence(compatibility_evidence[0])}"
+                )
             source = result.get("source")
             if isinstance(source, Mapping):
                 source_label = source.get("label") or source.get("family")
@@ -84,3 +92,16 @@ def _compact_evidence_entry(entry: Any) -> str:
     claim_kind = entry.get("claim_kind", "(unknown)")
     asserted_by = entry.get("asserted_by_label") or entry.get("asserted_by_family") or "(unknown)"
     return f"{claim_kind} via {asserted_by}"
+
+
+def _compact_compatibility_evidence(entry: Any) -> str:
+    if not isinstance(entry, Mapping):
+        return "(unknown)"
+    platform = entry.get("platform")
+    platform_name = "(unknown platform)"
+    if isinstance(platform, Mapping):
+        platform_name = str(platform.get("name") or platform.get("marketing_alias") or platform_name)
+    return (
+        f"{platform_name} {entry.get('claim_type', '(unknown claim)')} "
+        f"via {entry.get('evidence_kind', '(unknown evidence)')}"
+    )

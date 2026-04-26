@@ -30,6 +30,8 @@ class IndexRecord:
     content_text: str | None = None
     evidence: tuple[str, ...] = ()
     action_hints: tuple[str, ...] = ()
+    compatibility_evidence: tuple[dict[str, Any], ...] = ()
+    compatibility_summary: str | None = None
     result_lanes: tuple[str, ...] = ()
     primary_lane: str | None = None
     user_cost_score: int | None = None
@@ -85,6 +87,10 @@ class IndexRecord:
             payload["content_text"] = self.content_text
         if self.action_hints:
             payload["action_hints"] = list(self.action_hints)
+        if self.compatibility_evidence:
+            payload["compatibility_evidence"] = _clone_json_like(self.compatibility_evidence)
+        if self.compatibility_summary is not None:
+            payload["compatibility_summary"] = self.compatibility_summary
         if self.result_lanes:
             payload["result_lanes"] = list(self.result_lanes)
         if self.primary_lane is not None:
@@ -121,6 +127,8 @@ class IndexRecord:
             self.content_text,
             " ".join(self.evidence),
             " ".join(self.action_hints),
+            _compatibility_evidence_text(self.compatibility_evidence),
+            self.compatibility_summary,
             " ".join(self.result_lanes),
             self.primary_lane,
             str(self.user_cost_score) if self.user_cost_score is not None else None,
@@ -150,4 +158,22 @@ def _route_hints_text(value: dict[str, Any] | None) -> str:
             parts.append(f"{key} {item}")
         elif isinstance(item, (int, float, bool)):
             parts.append(f"{key} {item}")
+    return " ".join(parts)
+
+
+def _compatibility_evidence_text(value: tuple[dict[str, Any], ...]) -> str:
+    parts: list[str] = []
+    for item in value:
+        if not isinstance(item, dict):
+            continue
+        for field_name in ("evidence_kind", "claim_type", "architecture", "confidence", "evidence_text"):
+            field_value = item.get(field_name)
+            if isinstance(field_value, str) and field_value:
+                parts.append(field_value)
+        platform = item.get("platform")
+        if isinstance(platform, dict):
+            for field_name in ("family", "name", "version", "marketing_alias"):
+                field_value = platform.get(field_name)
+                if isinstance(field_value, str) and field_value:
+                    parts.append(field_value)
     return " ".join(parts)

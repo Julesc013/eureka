@@ -120,6 +120,14 @@ properties:
     type: array
     items:
       type: string
+  compatibility_evidence:
+    type: array
+    items:
+      $ref: ./compatibility_evidence.schema.yaml
+  compatibility_summary:
+    type:
+      - string
+      - "null"
   result_lanes:
     type: array
     items:

@@ -76,6 +76,21 @@ class LocalIndexRenderingTestCase(unittest.TestCase):
                         "user_cost_score": 1,
                         "user_cost_reasons": ["member_has_path", "source_evidence_present"],
                         "usefulness_summary": "inside bundles; user cost 1; why: member_has_path",
+                        "compatibility_summary": "Windows 2000: driver_for_hardware via file_path (medium)",
+                        "compatibility_evidence": [
+                            {
+                                "evidence_id": "compat-evidence:sha256:abc",
+                                "subject_target_ref": "member:sha256:abc",
+                                "source_family": "local_bundle_fixtures",
+                                "evidence_kind": "file_path",
+                                "claim_type": "driver_for_hardware",
+                                "platform": {"family": "windows", "name": "Windows 2000"},
+                                "architecture": "x86",
+                                "confidence": "medium",
+                                "locator": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                                "created_by_slice": "compatibility_evidence_pack_v0",
+                            }
+                        ],
                         "evidence": ["member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf"],
                         "route_hints": {"surface_route": "/", "target_ref": "member:sha256:abc"},
                     }
@@ -98,6 +113,8 @@ class LocalIndexRenderingTestCase(unittest.TestCase):
         self.assertIn("preview_member", html)
         self.assertIn("primary_lane: inside_bundles", html)
         self.assertIn("user_cost_score: 1", html)
+        self.assertIn("compatibility_summary: Windows 2000: driver_for_hardware via file_path (medium)", html)
+        self.assertIn("compatibility_evidence: Windows 2000 driver_for_hardware via file_path", html)
 
 
 if __name__ == "__main__":

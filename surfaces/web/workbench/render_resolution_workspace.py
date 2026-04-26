@@ -265,6 +265,20 @@ def render_resolution_workspace_html(
         usefulness_summary = _optional_string(selected_object.get("usefulness_summary"), "selected_object.usefulness_summary")
         if usefulness_summary is not None:
             parts.append(f"          <dt>Usefulness</dt><dd>{escape(usefulness_summary)}</dd>")
+        compatibility_summary = _optional_string(
+            selected_object.get("compatibility_summary"),
+            "selected_object.compatibility_summary",
+        )
+        if compatibility_summary is not None:
+            parts.append(f"          <dt>Compatibility</dt><dd>{escape(compatibility_summary)}</dd>")
+        compatibility_evidence = _mapping_list(
+            selected_object.get("compatibility_evidence"),
+            "selected_object.compatibility_evidence",
+        )
+        if compatibility_evidence:
+            parts.append(
+                f"          <dt>Compatibility evidence</dt><dd>{escape(_compatibility_evidence_text(compatibility_evidence[0]))}</dd>"
+            )
         parts.extend(
             [
                 "        </dl>",
@@ -1064,3 +1078,27 @@ def _evidence_text(entry: Mapping[str, Any]) -> str:
     if asserted_at is not None:
         text += f" @ {asserted_at}"
     return text
+
+
+def _mapping_list(value: Any, field_name: str) -> list[Mapping[str, Any]]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list when provided.")
+    items: list[Mapping[str, Any]] = []
+    for index, item in enumerate(value):
+        if not isinstance(item, Mapping):
+            raise ValueError(f"{field_name}[{index}] must be an object.")
+        items.append(item)
+    return items
+
+
+def _compatibility_evidence_text(entry: Mapping[str, Any]) -> str:
+    platform = entry.get("platform")
+    platform_name = "(unknown platform)"
+    if isinstance(platform, Mapping):
+        platform_name = str(platform.get("name") or platform.get("marketing_alias") or platform_name)
+    return (
+        f"{platform_name} {entry.get('claim_type', '(unknown claim)')} "
+        f"via {entry.get('evidence_kind', '(unknown evidence)')}"
+    )

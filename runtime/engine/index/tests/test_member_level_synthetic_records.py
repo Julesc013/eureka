@@ -45,6 +45,10 @@ class MemberLevelSyntheticRecordsIndexTestCase(unittest.TestCase):
         self.assertIn("best_direct_answer", driver_record.result_lanes)
         self.assertEqual(driver_record.user_cost_score, 1)
         self.assertIn("member_has_path", driver_record.user_cost_reasons)
+        self.assertIn("compatibility_evidence_present", driver_record.user_cost_reasons)
+        self.assertIn("driver_platform_match", driver_record.user_cost_reasons)
+        self.assertTrue(driver_record.compatibility_evidence)
+        self.assertIn("Windows 2000", driver_record.compatibility_summary or "")
 
     def test_index_queries_find_synthetic_members(self) -> None:
         records = build_index_records(_catalog_with_synthetic_members(), load_source_registry())
@@ -96,6 +100,8 @@ class MemberLevelSyntheticRecordsIndexTestCase(unittest.TestCase):
         )
         self.assertLess(driver_member.user_cost_score or 9, parent_bundle.user_cost_score or 9)
         self.assertEqual(driver_member.primary_lane, "inside_bundles")
+        self.assertTrue(driver_member.compatibility_evidence)
+        self.assertIn("Windows 2000", driver_member.compatibility_summary or "")
         self.assertIn("parent_bundle_context_only", parent_bundle.user_cost_reasons)
 
     def test_exact_resolution_supports_synthetic_member_target_refs(self) -> None:
@@ -119,6 +125,11 @@ class MemberLevelSyntheticRecordsIndexTestCase(unittest.TestCase):
         )
         self.assertEqual(outcome.result.primary_object.primary_lane, "inside_bundles")
         self.assertEqual(outcome.result.primary_object.user_cost_score, 1)
+        self.assertTrue(outcome.result.primary_object.compatibility_evidence)
+        self.assertIn(
+            "Windows 2000",
+            outcome.result.primary_object.compatibility_summary or "",
+        )
         self.assertTrue(
             any(item.claim_kind == "member_path" for item in outcome.result.evidence)
         )

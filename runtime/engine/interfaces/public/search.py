@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from runtime.engine.compatibility import CompatibilityEvidenceRecord
 from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.interfaces.public.resolution import Notice, ObjectSummary, SourceSummary
 
@@ -25,6 +26,8 @@ class SearchResultEntry:
     resolved_resource_id: str | None = None
     source: SourceSummary | None = None
     evidence: tuple[EvidenceSummary, ...] = ()
+    compatibility_evidence: tuple[CompatibilityEvidenceRecord, ...] = ()
+    compatibility_summary: str | None = None
     result_lanes: tuple[str, ...] = ()
     primary_lane: str | None = None
     user_cost_score: int | None = None

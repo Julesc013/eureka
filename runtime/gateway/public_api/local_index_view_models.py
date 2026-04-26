@@ -106,6 +106,18 @@ def _coerce_results(value: Any, field_name: str) -> list[dict[str, Any]]:
                 action_hints,
                 f"{field_name}[{index}].action_hints",
             )
+        compatibility_evidence = item.get("compatibility_evidence")
+        if compatibility_evidence is not None:
+            result["compatibility_evidence"] = _coerce_json_list(
+                compatibility_evidence,
+                f"{field_name}[{index}].compatibility_evidence",
+            )
+        compatibility_summary = item.get("compatibility_summary")
+        if compatibility_summary is not None:
+            result["compatibility_summary"] = _require_string(
+                compatibility_summary,
+                f"{field_name}[{index}].compatibility_summary",
+            )
         _copy_usefulness_fields(item, result, f"{field_name}[{index}]")
         results.append(result)
     return results
@@ -154,6 +166,12 @@ def _clone_json_like(value: Any, field_name: str) -> Any:
     if isinstance(value, (str, int, float, bool)) or value is None:
         return value
     raise ValueError(f"{field_name} must contain only JSON-compatible values.")
+
+
+def _coerce_json_list(value: Any, field_name: str) -> list[Any]:
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    return [_clone_json_like(item, f"{field_name}[{index}]") for index, item in enumerate(value)]
 
 
 def _coerce_notices(value: Any, field_name: str) -> list[dict[str, str]]:

@@ -8,6 +8,7 @@ from runtime.engine.core import NormalizedCatalog
 from runtime.engine.index.index_record import IndexRecord
 from runtime.engine.interfaces.normalize import NormalizedResolutionRecord
 from runtime.engine.provenance import EvidenceSummary
+from runtime.engine.compatibility import compatibility_evidence_payloads, compatibility_summary
 from runtime.engine.ranking import assign_result_usefulness
 from runtime.engine.representations import RepresentationSummary
 from runtime.engine.resolve.source_summary import normalized_record_to_source_summary
@@ -69,6 +70,8 @@ def _build_catalog_records(record: NormalizedResolutionRecord) -> list[IndexReco
     version_or_state = _infer_version_or_state(record)
     subject_key = record.object_id
     evidence_text = tuple(_evidence_text(item) for item in record.evidence)
+    compatibility_evidence = compatibility_evidence_payloads(record.compatibility_evidence)
+    compatibility_text = compatibility_summary(record.compatibility_evidence)
     representation_labels = tuple(summary.label for summary in record.representations if summary.label)
 
     records.append(
@@ -107,9 +110,12 @@ def _build_catalog_records(record: NormalizedResolutionRecord) -> list[IndexReco
                 " ".join(record.action_hints),
                 " ".join(representation_labels),
                 " ".join(evidence_text),
+                compatibility_text,
             ),
             evidence=evidence_text,
             action_hints=record.action_hints,
+            compatibility_evidence=compatibility_evidence,
+            compatibility_summary=compatibility_text,
             route_hints=_compact_mapping({
                 "surface_route": "/",
                 "target_ref": record.target_ref,
@@ -187,6 +193,8 @@ def _build_catalog_records(record: NormalizedResolutionRecord) -> list[IndexReco
                     evidence.asserted_by_label,
                 ),
                 evidence=(_evidence_text(evidence),),
+                compatibility_evidence=compatibility_evidence,
+                compatibility_summary=compatibility_text,
                 route_hints={
                     "surface_route": "/",
                     "target_ref": record.target_ref,

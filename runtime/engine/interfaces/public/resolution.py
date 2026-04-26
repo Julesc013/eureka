@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Sequence
 
+from runtime.engine.compatibility import CompatibilityEvidenceRecord, compatibility_evidence_payloads, compatibility_summary
 from runtime.engine.provenance import EvidenceSummary
 from runtime.engine.representations import RepresentationSummary
 
@@ -44,6 +45,8 @@ class ObjectSummary:
     size_bytes: int | None = None
     content_hash: str | None = None
     action_hints: tuple[str, ...] = ()
+    compatibility_evidence: tuple[CompatibilityEvidenceRecord, ...] = ()
+    compatibility_summary: str | None = None
     result_lanes: tuple[str, ...] = ()
     primary_lane: str | None = None
     user_cost_score: int | None = None
@@ -75,6 +78,12 @@ class ObjectSummary:
             payload["size_bytes"] = self.size_bytes
         if self.action_hints:
             payload["action_hints"] = list(self.action_hints)
+        if self.compatibility_evidence:
+            payload["compatibility_evidence"] = list(
+                compatibility_evidence_payloads(self.compatibility_evidence)
+            )
+        if self.compatibility_summary is not None:
+            payload["compatibility_summary"] = self.compatibility_summary
         if self.result_lanes:
             payload["result_lanes"] = list(self.result_lanes)
         if self.primary_lane is not None:

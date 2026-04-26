@@ -43,6 +43,18 @@ def _coerce_results(value: Any) -> list[dict[str, Any]]:
         evidence = _optional_evidence_list(item.get("evidence"), f"search_envelope.results[{index}].evidence")
         if evidence:
             result["evidence"] = evidence
+        compatibility_evidence = item.get("compatibility_evidence")
+        if compatibility_evidence is not None:
+            result["compatibility_evidence"] = _coerce_json_list(
+                compatibility_evidence,
+                f"search_envelope.results[{index}].compatibility_evidence",
+            )
+        compatibility_summary = _optional_string(
+            item.get("compatibility_summary"),
+            f"search_envelope.results[{index}].compatibility_summary",
+        )
+        if compatibility_summary is not None:
+            result["compatibility_summary"] = compatibility_summary
         _copy_usefulness_fields(item, result, f"search_envelope.results[{index}]")
         results.append(result)
     return results
@@ -80,6 +92,15 @@ def _coerce_object_summary(value: Any, field_name: str) -> dict[str, Any]:
     action_hints = value.get("action_hints")
     if action_hints is not None:
         summary["action_hints"] = _coerce_string_list(action_hints, f"{field_name}.action_hints")
+    compatibility_evidence = value.get("compatibility_evidence")
+    if compatibility_evidence is not None:
+        summary["compatibility_evidence"] = _coerce_json_list(
+            compatibility_evidence,
+            f"{field_name}.compatibility_evidence",
+        )
+    compatibility_summary = _optional_string(value.get("compatibility_summary"), f"{field_name}.compatibility_summary")
+    if compatibility_summary is not None:
+        summary["compatibility_summary"] = compatibility_summary
     _copy_usefulness_fields(value, summary, field_name)
     return summary
 
@@ -197,3 +218,30 @@ def _coerce_string_list(value: Any, field_name: str) -> list[str]:
     if not isinstance(value, list):
         raise ValueError(f"{field_name} must be a list.")
     return [_require_string(item, f"{field_name}[{index}]") for index, item in enumerate(value)]
+
+
+def _coerce_json_list(value: Any, field_name: str) -> list[Any]:
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list.")
+    return [_clone_json_like(item, f"{field_name}[{index}]") for index, item in enumerate(value)]
+
+
+def _coerce_json_mapping(value: Any, field_name: str) -> dict[str, Any]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    payload: dict[str, Any] = {}
+    for key, item in value.items():
+        if not isinstance(key, str) or not key:
+            raise ValueError(f"{field_name} keys must be non-empty strings.")
+        payload[key] = _clone_json_like(item, f"{field_name}.{key}")
+    return payload
+
+
+def _clone_json_like(value: Any, field_name: str) -> Any:
+    if isinstance(value, Mapping):
+        return _coerce_json_mapping(value, field_name)
+    if isinstance(value, list):
+        return [_clone_json_like(item, f"{field_name}[]") for item in value]
+    if isinstance(value, (str, int, float, bool)) or value is None:
+        return value
+    raise ValueError(f"{field_name} must contain only JSON-compatible values.")
