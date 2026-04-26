@@ -359,3 +359,9 @@
 - Status: accepted
 - Decision: Eureka now extends Query Planner v0 with deterministic old-platform software planning rules for OS/platform aliases, platform-as-constraint handling, app-vs-OS-media suppression hints, latest-compatible release intent, driver/hardware/OS intent, vague identity uncertainty, documentation intent, and member-discovery hints.
 - Why: Search Usefulness Audit v0 still shows old-platform software and member-discovery usefulness blocked by interpretation, member, representation, compatibility, and source gaps. This milestone reduces planner/query-interpretation gaps while preserving source/capability gap honesty. It does not add ranking, fuzzy/vector retrieval, LLM planning, live source calls, crawling, scraping, new connectors, Rust runtime behavior, native apps, or production deployment.
+
+## ADR-061: Add Member-Level Synthetic Records v0 for Bounded Fixture Members
+
+- Status: accepted
+- Decision: Eureka now derives deterministic `member:sha256:<digest>` synthetic member records from committed local bundle fixtures, preserving parent target refs, parent representation ids, source provenance, member paths, inferred member kind, content metadata, evidence summaries, and action hints. These records flow through the normalized catalog, exact resolution, deterministic search, local index, gateway public envelopes, CLI, web, and local HTTP API projections.
+- Why: The old-platform software and member-level discovery wedges need Eureka to identify the useful inner file, not only the parent ZIP or support bundle. This milestone adds that first bounded seam without adding new source connectors, live source calls, crawling, scraping, broad archive extraction, arbitrary local filesystem ingestion, ranking, fuzzy/vector retrieval, LLM planning, Rust runtime behavior, native apps, or production deployment.

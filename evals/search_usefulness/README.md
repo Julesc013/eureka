@@ -69,7 +69,10 @@ recorded Internet Archive-like metadata/file-list fixtures plus a committed
 local bundle fixture corpus. Old-Platform Software Planner Pack v0 now reduces
 planner/query-interpretation gaps by making OS aliases, latest-compatible
 intent, driver/hardware intent, vague identity uncertainty, documentation
-intent, and member-discovery hints explicit. Audit deltas remain intentionally
-bounded: external Google and Internet Archive baselines remain pending manual
-observation, and the audit still performs no live-source crawling, no Google
-scraping, no Internet Archive scraping, and no external baseline fabrication.
+intent, and member-discovery hints explicit. Member-Level Synthetic Records v0
+now makes selected committed local-bundle members visible as deterministic
+member target refs with parent lineage and evidence. Audit deltas remain
+intentionally bounded: external Google and Internet Archive baselines remain
+pending manual observation, and the audit still performs no live-source
+crawling, no Google scraping, no Internet Archive scraping, and no external
+baseline fabrication.

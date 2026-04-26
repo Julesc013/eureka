@@ -289,6 +289,27 @@
       "notes": "Added by Old-Platform Software Planner Pack v0; it improves interpretation only and adds no ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or source connectors."
     },
     {
+      "test_id": "member_level_synthetic_records_validation",
+      "label": "Member-level synthetic records tests",
+      "command": "python -m unittest runtime.engine.synthetic_records.tests.test_member_record_synthesis runtime.engine.index.tests.test_member_level_synthetic_records tests.integration.test_member_level_synthetic_records_slice",
+      "category": "integration",
+      "owner_area": "runtime/engine/synthetic_records",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary local indexes only",
+      "expected_runtime": "seconds",
+      "failure_means": "Deterministic synthetic member target refs, parent lineage, local-index visibility, search projection, or exact member resolution regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Member-Level Synthetic Records v0; it uses committed local bundle fixtures only and adds no broad extraction, arbitrary local filesystem ingestion, ranking, live source behavior, or source connectors."
+    },
+    {
       "test_id": "operating_layer_validation",
       "label": "Test/eval operating layer validation",
       "command": "python -m unittest tests.operations.test_test_eval_operating_layer",

@@ -2,28 +2,31 @@
 
 Member-level discovery is the secondary usefulness wedge. It is necessary when the requested object is inside a parent container.
 
-Current support is bounded and fixture-driven. This triage does not claim broad member discovery is already implemented.
+Current support is bounded and fixture-driven. Member-Level Synthetic Records
+v0 now implements the first deterministic member-record seam for committed
+local bundle fixtures. This still does not claim broad member discovery across
+all source families or archive formats.
 
 ## Missing Pieces
 
-1. member target refs
-2. parent lineage
-3. member path/hash/content type
-4. member-level index records
-5. source/evidence carried to member
-6. bundle/member result cards
-7. member action routing
-8. parent container demotion when inner member exists
+1. broader member target refs beyond committed local bundle fixtures
+2. richer result cards and result lanes for member-vs-parent presentation
+3. member action routing beyond explicit existing read/preview hints
+4. parent container demotion when inner member exists
+5. member-level records for Internet Archive file lists, scanned/OCR content,
+   WARC/WACZ, source archives, and future fixture families
 
 ## Member Target Refs
 
-Future member results need stable refs distinct from the parent:
+Current bounded member results use stable refs distinct from the parent:
 
 ```text
-member:<parent-ref>#<member-path-or-id>
+member:sha256:<sha256(parent-target-ref + normalized-member-path)>
 ```
 
-The exact contract is future work, but the next implementation should test that member identity is not collapsed into the parent container.
+The digest-based target ref intentionally avoids private paths while preserving
+the reversible parent/member path metadata in the record body. Future contract
+work should decide which parts become durable public compatibility promises.
 
 ## Parent Lineage
 
@@ -48,6 +51,11 @@ The local index should be able to record:
 
 This must remain deterministic and not become ranking, fuzzy, vector, or semantic retrieval.
 
+Member-Level Synthetic Records v0 now indexes `synthetic_member` records for
+the committed local bundle fixture members. Result-lane work is still needed to
+promote the member above the parent bundle when it is the smallest actionable
+unit.
+
 ## Result Cards And Action Routing
 
 Surfaces should eventually distinguish:
@@ -66,10 +74,9 @@ When the query asks for an INF, README, installer, article, or source file, a pa
 
 ## Tests To Add First
 
-- member target-ref validation
-- parent lineage preserved in member result
-- member-level local index record generation
+- result-lane member-vs-parent promotion tests
 - member result card rendering
+- compatibility evidence carried to member tests
 - hard eval query stays capability_gap unless direct member evidence exists
 
 ## Do Not Do

@@ -48,9 +48,9 @@
     {
       "id": "member_level_synthetic_records_v0",
       "title": "Member-Level Synthetic Records v0",
-      "status": "queued",
+      "status": "completed",
       "priority": 7,
-      "notes": "Add bounded member target refs, parent lineage, and member-level index records for fixture bundles."
+      "notes": "Added bounded deterministic member target refs, parent lineage, evidence, exact-resolution/search/local-index visibility, and public projection for committed local bundle fixtures."
     },
     {
       "id": "result_lanes_user_cost_ranking_v0",

@@ -78,11 +78,18 @@ Do not do: do not add arbitrary filesystem reads or broad extraction frameworks.
 
 Expected audit effect: selected package/container/member capability gaps improve.
 
+Status: implemented for bounded committed local bundle fixtures. It adds
+deterministic `member:sha256:<digest>` target refs, parent lineage, member
+metadata, evidence, exact resolution, local-index/search visibility, and public
+projection without broad extraction, arbitrary local filesystem ingestion,
+ranking, live source behavior, or new connectors.
+
 ## 5. Result Lanes + User-Cost Ranking v0
 
 Why: once evidence exists, results need explicit lanes and user-cost explanation.
 
-Prerequisite: source and member evidence improvements.
+Prerequisite: source and member evidence improvements. Member-Level Synthetic
+Records v0 now satisfies the first bounded member-evidence prerequisite.
 
 Likely files: `runtime/engine/evals/`, `docs/evals/`, `evals/archive_resolution/`.
 

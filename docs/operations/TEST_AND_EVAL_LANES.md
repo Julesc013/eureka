@@ -147,3 +147,16 @@ uncertainty, documentation intent, member-discovery hints, and app-vs-OS-media
 suppression hints. It improves planner interpretation only; it does not add
 ranking, fuzzy/vector retrieval, LLM planning, live source behavior, source
 connectors, or planner-owned retrieval routing.
+
+## Member-Level Synthetic Records
+
+Member-Level Synthetic Records v0 is validated with:
+
+```bash
+python -m unittest runtime.engine.synthetic_records.tests.test_member_record_synthesis runtime.engine.index.tests.test_member_level_synthetic_records tests.integration.test_member_level_synthetic_records_slice
+```
+
+This check verifies deterministic member target refs, parent lineage,
+source/evidence preservation, and local-index visibility for bounded
+fixture-backed bundle members. It does not add broad archive extraction,
+arbitrary local filesystem ingestion, ranking, or live source behavior.

@@ -74,6 +74,11 @@ The repo has already proven:
   uncertainty, documentation intent, and member-discovery hints without
   ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or new
   connectors
+- Member-Level Synthetic Records v0 as the first bounded member target-ref and
+  parent-lineage seam for committed local bundle fixtures, making useful inner
+  files visible to exact resolution, deterministic search, local index, and
+  current public projections without broad extraction, arbitrary local
+  filesystem ingestion, ranking, live source behavior, or new connectors
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -102,7 +107,7 @@ The next backend sequence is:
 18. Source Coverage and Capability Model v0 (implemented as metadata/projection only)
 19. Real Source Coverage Pack v0 (implemented as recorded fixtures only)
 20. Old-Platform Software Planner Pack v0 (implemented as deterministic interpretation only)
-21. Member-Level Synthetic Records v0
+21. Member-Level Synthetic Records v0 (implemented as bounded fixture-derived member records)
 22. Result Lanes + User-Cost Ranking v0
 23. Compatibility Evidence Pack v0
 24. Search Usefulness Audit Delta v0
@@ -115,7 +120,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Member-Level Synthetic Records v0
+> Result Lanes + User-Cost Ranking v0
 
 Why this comes next:
 
@@ -163,8 +168,13 @@ Why this comes next:
 - Old-Platform Software Planner Pack v0 has reduced planner/query
   interpretation gaps with deterministic hints while preserving hard eval
   honesty
-- the next backend bottleneck is member-level target refs, member-level index
-  records, and parent lineage over the existing fixture corpus
+- Member-Level Synthetic Records v0 has added member-level target refs,
+  member-level index records, and parent lineage over the existing fixture
+  corpus
+- the next backend bottleneck is presentation and lane policy: promoting the
+  smallest actionable member when evidence supports it while preserving parent
+  bundles as lineage, without adding fuzzy ranking, vector search, LLM planning,
+  live source behavior, or production relevance claims
 
 ## Explicit Deferrals
 

@@ -33,6 +33,7 @@ Current bootstrap scope:
 - list stored exports for a target and read stored artifact content by stable artifact identity
 - inspect a deterministic portable resolution bundle from local bytes or a local bundle path through a transport-neutral public boundary
 - surface a bootstrap deterministic `resolved_resource_id` across resolution, search, actions, stored exports, and bundle inspection where available
+- surface bounded synthetic member records, including deterministic member target refs, member paths, parent target refs, parent representation ids, member kind, evidence, and action hints where available
 - surface bounded source-family and source-origin summaries across resolution, search, export, and stored-export metadata where available
 - surface bounded evidence summaries across resolution, search, export, stored-export metadata, and bundle inspection where available
 - translate internal gateway job state into public contract-facing envelopes
@@ -98,6 +99,7 @@ Out of scope here:
 - exposing raw fixture paths or private local paths through the public source-registry boundary
 - implying that source capability metadata implements a connector, live probe, crawl, or source-sync path
 - implying that recorded Internet Archive fixtures are a live Internet Archive connector or that local bundle fixtures are arbitrary local filesystem ingestion
+- implying that synthetic member records are broad extraction, arbitrary local filesystem indexing, ranking, or final object-identity semantics
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
 - final provenance graph, trust scoring, or cross-source merge behavior beyond the current bounded evidence summary seam
 - final comparison, merge, or truth-selection behavior beyond the current bounded disagreement seam

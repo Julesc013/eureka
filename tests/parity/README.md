@@ -31,6 +31,12 @@ planned-run, resolution-memory, and archive-resolution eval goldens. Future
 Rust Query Planner Parity Candidate v0 must target these outputs; no Rust
 planner behavior is implemented or wired in here.
 
+Member-Level Synthetic Records v0 refreshes Python-oracle local-index,
+resolution, search, memory, and eval goldens with deterministic
+`synthetic_member` records from committed local bundle fixtures. Future Rust
+local-index or exact-resolution parity work must learn this member record shape
+before any replacement claim; no Rust behavior is implemented or wired in here.
+
 There is still no Rust parity runner in this milestone. Future parity assets
 should remain fixture-driven, JSON-inspectable, and explicit about allowed
 divergences.

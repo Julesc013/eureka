@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: thirty-nine local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, and Old-Platform Software Planner Pack v0. The latest planner layer adds deterministic OS/platform aliases, platform-as-constraint handling, app-vs-OS-media suppression hints, latest-compatible release intent, driver/hardware/OS intent, vague identity uncertainty, documentation intent, and member-discovery hints without ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or new connectors.
+Current status within this stage: forty local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, and Member-Level Synthetic Records v0. The latest member layer derives deterministic member target refs, parent lineage, evidence, and public/index projection for bounded local bundle fixtures without broad extraction, arbitrary local filesystem ingestion, ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or new connectors.
 
 ## Stage 3: Surface Skeletons
 
@@ -104,6 +104,14 @@ latest-compatible release intent, driver/hardware/OS intent, vague identity
 uncertainty, documentation intent, member-discovery hints, and app-vs-OS-media
 suppression hints. It improves interpretation only and does not add ranking,
 fuzzy/vector retrieval, LLM planning, live source behavior, or new connectors.
+Member-Level Synthetic Records v0 now derives deterministic
+`member:sha256:<digest>` records for files inside bounded local bundle fixtures,
+preserving parent target refs, parent representation ids, source provenance,
+member paths, evidence summaries, content metadata, and action hints. It makes
+member candidates visible through exact resolution, deterministic search, local
+index, CLI, web, and local HTTP API projections without adding broad archive
+extraction, arbitrary local filesystem ingestion, ranking, live source behavior,
+or new connectors.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
@@ -111,7 +119,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Member-Level Synthetic Records v0
+> Result Lanes + User-Cost Ranking v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -120,10 +128,11 @@ Review, Public Alpha Hosting Pack v0, Rust Migration Skeleton and Parity
 Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity Candidate
 v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0,
-Source Coverage and Capability Model v0, Real Source Coverage Pack v0, and
-Old-Platform Software Planner Pack v0 now
+Source Coverage and Capability Model v0, Real Source Coverage Pack v0,
+Old-Platform Software Planner Pack v0, and Member-Level Synthetic Records v0 now
 mark the start of a more evidence-led backend phase. The next step is to add
-member-level synthetic records, target refs, and parent lineage over the
-existing recorded fixture corpus without introducing arbitrary local filesystem
-ingestion, live crawling, external scraping, ranking, fuzzy/vector search, LLM
-planning, or broad source federation.
+result lanes and user-cost-aware presentation so the existing member records can
+be promoted as smaller actionable units while parent bundles remain visible as
+lineage. That next step must still avoid live crawling, external scraping,
+fuzzy/vector search, LLM planning, broad source federation, and production
+ranking claims.

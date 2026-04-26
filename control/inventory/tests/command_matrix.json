@@ -28,6 +28,7 @@
         "source_coverage_capability_validation",
         "real_source_coverage_pack_validation",
         "old_platform_planner_pack_validation",
+        "member_level_synthetic_records_validation",
         "hardening_tests",
         "docs_diff_check"
       ],
@@ -51,6 +52,7 @@
         "source_coverage_capability_validation",
         "real_source_coverage_pack_validation",
         "old_platform_planner_pack_validation",
+        "member_level_synthetic_records_validation",
         "search_usefulness_backlog_triage_validation",
         "hardening_tests",
         "docs_diff_check"
@@ -96,6 +98,7 @@
         "source_registry_validation",
         "source_coverage_capability_validation",
         "old_platform_planner_pack_validation",
+        "member_level_synthetic_records_validation",
         "tests.hardening.python_oracle_golden",
         "tests.hardening.rust_parity_structure"
       ],
@@ -111,6 +114,7 @@
         "search_usefulness_audit_runner",
         "real_source_coverage_pack_validation",
         "old_platform_planner_pack_validation",
+        "member_level_synthetic_records_validation",
         "search_usefulness_backlog_triage_validation",
         "tests.hardening.eval_hardness",
         "tests.hardening.external_baselines"

@@ -27,5 +27,12 @@ Current corpus inputs:
 - GitHub Releases recorded-fixture records
 - bounded representation summaries
 - bounded member summaries when cheap local ZIP inspection is available
+- deterministic `synthetic_member` records derived from committed local bundle
+  fixtures, including parent target refs, member paths, member kind, hash/size
+  metadata when available, and action hints
 - bounded evidence summaries
 - source-registry records
+
+Member-level records are fixture-derived and deterministic. They do not imply
+ranking, broad archive extraction, arbitrary local filesystem ingestion,
+incremental indexing, live source sync, or a final hosted search service.

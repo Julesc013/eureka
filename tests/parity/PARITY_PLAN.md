@@ -43,6 +43,14 @@ query-planner parity must reproduce platform constraints, temporal goals,
 product/hardware/function hints, representation/member hints, suppression
 hints, and uncertainty notes before replacement is considered.
 
+Member-Level Synthetic Records v0 intentionally changes the Python local-index,
+search, exact-resolution, and eval-visible corpus shape by adding deterministic
+`synthetic_member` records for bounded local bundle fixture members. Future Rust
+local-index, exact-resolution, deterministic-search, and evidence parity must
+preserve member target refs, parent lineage, source/evidence summaries, member
+paths, member kind, content metadata, and action hints before replacement is
+considered.
+
 ## Golden Outputs
 
 Rust Parity Fixture Pack v0 now commits the first Python-oracle golden outputs
