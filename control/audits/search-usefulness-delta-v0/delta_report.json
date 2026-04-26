@@ -1,0 +1,210 @@
+{
+  "report_id": "search_usefulness_delta_v0",
+  "created_by_slice": "search_usefulness_audit_delta_v0",
+  "baseline": {
+    "label": "historical_reported_baseline_before_source_planner_member_lane_compat_sequence",
+    "source": [
+      "control/audits/2026-04-25-comprehensive-test-eval-audit/CONTENT_COVERAGE_AUDIT.md",
+      "control/audits/2026-04-25-comprehensive-test-eval-audit/findings.json",
+      "previous milestone handoff values for Search Usefulness Audit v0"
+    ],
+    "source_type": "historical_reported_aggregate",
+    "query_count": 64,
+    "status_counts": {
+      "covered": 5,
+      "partial": 1,
+      "source_gap": 43,
+      "capability_gap": 13,
+      "unknown": 2
+    },
+    "failure_mode_counts": {
+      "source_coverage_gap": null,
+      "planner_gap": null,
+      "query_interpretation_gap": null,
+      "compatibility_evidence_gap": null,
+      "representation_gap": null,
+      "decomposition_gap": null,
+      "member_access_gap": null,
+      "actionability_gap": null,
+      "external_baseline_pending": null
+    },
+    "notes": [
+      "No committed machine-derived per-query historical report was found.",
+      "The baseline is aggregate-level only.",
+      "The baseline is not external search observation data.",
+      "Future delta reports should prefer committed machine-derived previous reports."
+    ]
+  },
+  "current": {
+    "label": "current_audit_after_compatibility_evidence_pack_v0",
+    "source": "python scripts/run_search_usefulness_audit.py --json",
+    "generated_at_normalized": "current_run_normalized_2026-04-27",
+    "query_count": 64,
+    "status_counts": {
+      "covered": 5,
+      "partial": 5,
+      "source_gap": 41,
+      "capability_gap": 11,
+      "unknown": 2
+    },
+    "failure_mode_counts": {
+      "absence_reasoning_gap": 2,
+      "actionability_gap": 2,
+      "compatibility_evidence_gap": 25,
+      "decomposition_gap": 12,
+      "external_baseline_pending": 64,
+      "identity_cluster_gap": 12,
+      "index_gap": 3,
+      "live_source_gap": 10,
+      "member_access_gap": 12,
+      "planner_gap": 24,
+      "query_interpretation_gap": 21,
+      "ranking_gap": 4,
+      "representation_gap": 14,
+      "source_coverage_gap": 49,
+      "surface_ux_gap": 4
+    },
+    "external_baseline_pending_counts": {
+      "google": 64,
+      "internet_archive_full_text": 64,
+      "internet_archive_metadata": 64
+    }
+  },
+  "delta": {
+    "status_count_changes": {
+      "covered": 0,
+      "partial": 4,
+      "source_gap": -2,
+      "capability_gap": -2,
+      "unknown": 0
+    },
+    "failure_mode_changes": {
+      "source_coverage_gap": {
+        "baseline_value": null,
+        "current_value": 49,
+        "change": null,
+        "notes": "No comparable historical machine-derived failure-mode count exists."
+      },
+      "planner_gap": {
+        "baseline_value": null,
+        "current_value": 24,
+        "change": null,
+        "notes": "No comparable historical machine-derived failure-mode count exists."
+      },
+      "query_interpretation_gap": {
+        "baseline_value": null,
+        "current_value": 21,
+        "change": null,
+        "notes": "No comparable historical machine-derived failure-mode count exists."
+      },
+      "compatibility_evidence_gap": {
+        "baseline_value": null,
+        "current_value": 25,
+        "change": null,
+        "notes": "No comparable historical machine-derived failure-mode count exists."
+      },
+      "representation_gap": {
+        "baseline_value": null,
+        "current_value": 14,
+        "change": null,
+        "notes": "No comparable historical machine-derived failure-mode count exists."
+      },
+      "decomposition_gap": {
+        "baseline_value": null,
+        "current_value": 12,
+        "change": null,
+        "notes": "No comparable historical machine-derived failure-mode count exists."
+      },
+      "member_access_gap": {
+        "baseline_value": null,
+        "current_value": 12,
+        "change": null,
+        "notes": "No comparable historical machine-derived failure-mode count exists."
+      },
+      "actionability_gap": {
+        "baseline_value": null,
+        "current_value": 2,
+        "change": null,
+        "notes": "No comparable historical machine-derived failure-mode count exists."
+      },
+      "external_baseline_pending": {
+        "baseline_value": null,
+        "current_value": 64,
+        "change": null,
+        "notes": "External baselines remain pending/manual unless human observations are committed."
+      }
+    },
+    "moved_queries": [
+      {
+        "query_id": "windows_xp_software",
+        "current_status": "partial",
+        "movement_basis": "inferred_from_current_output_and_historical_aggregate"
+      },
+      {
+        "query_id": "latest_firefox_before_xp_support_ended",
+        "current_status": "partial",
+        "movement_basis": "inferred_from_current_output_and_historical_aggregate"
+      },
+      {
+        "query_id": "driver_inf_inside_support_cd",
+        "current_status": "partial",
+        "movement_basis": "inferred_from_current_output_and_historical_aggregate"
+      },
+      {
+        "query_id": "support_cd_member_driver",
+        "current_status": "partial",
+        "movement_basis": "inferred_from_current_output_and_historical_aggregate"
+      }
+    ],
+    "unchanged_queries": {
+      "covered_count": 5,
+      "unknown_count": 2,
+      "source_gap_still_dominant": true
+    },
+    "new_gaps": [],
+    "resolved_or_reduced_gaps": [
+      "partial_status_count_increased",
+      "source_gap_status_count_decreased",
+      "capability_gap_status_count_decreased",
+      "member_records_visible_for_selected_fixture_queries",
+      "compatibility_evidence_visible_for_selected_fixture_queries"
+    ]
+  },
+  "selected_wedges": {
+    "primary": "old_platform_compatible_software_search",
+    "secondary": "member_level_discovery_inside_bundles"
+  },
+  "conclusions": [
+    "The selected usefulness wedge improved modestly and honestly.",
+    "Source coverage remains the dominant blocker.",
+    "Member-level fixture queries now have better partial evidence.",
+    "Compatibility evidence is visible where current fixtures support it.",
+    "External baselines remain pending_manual_observation."
+  ],
+  "recommended_next_milestone": "Old-Platform Source Coverage Expansion v0",
+  "alternatives_considered": [
+    "Search Usefulness Baseline Persistence v0",
+    "Rust Query Planner Parity Candidate v0",
+    "Public Alpha Rehearsal Evidence v0",
+    "Compatibility Evidence Expansion v0"
+  ],
+  "do_not_do": [
+    "live crawling",
+    "Google scraping",
+    "Internet Archive scraping",
+    "broad live source federation",
+    "fuzzy/vector retrieval",
+    "LLM planning",
+    "production hosting",
+    "native apps",
+    "broad Rust rewrite",
+    "installer automation",
+    "arbitrary local filesystem ingestion"
+  ],
+  "limitations": [
+    "Historical per-query movement is inferred because no committed machine-derived previous per-query report exists.",
+    "The report measures local Eureka observations only.",
+    "External comparison baselines remain pending manual observation.",
+    "The delta does not claim global search superiority."
+  ]
+}
