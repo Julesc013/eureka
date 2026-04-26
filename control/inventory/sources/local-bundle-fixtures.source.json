@@ -1,0 +1,104 @@
+{
+  "source_id": "local-bundle-fixtures",
+  "name": "Local Bundle Fixtures",
+  "source_family": "local_bundle_fixtures",
+  "status": "active_fixture",
+  "roles": [
+    "fixture",
+    "discovery_index",
+    "action_provider",
+    "citation_source"
+  ],
+  "surfaces": [
+    "search",
+    "item_record",
+    "artifact_download",
+    "fixture_file"
+  ],
+  "trust_lane": "fixture",
+  "authority_class": "repo_governed_fixture",
+  "protocols": [
+    "fixture_json",
+    "filesystem"
+  ],
+  "object_types": [
+    "software_bundle",
+    "driver_support_bundle",
+    "package_member"
+  ],
+  "artifact_types": [
+    "fixture_archive",
+    "bundle_member",
+    "readme",
+    "driver_inf"
+  ],
+  "identifier_types_emitted": [
+    "target_ref",
+    "member_path"
+  ],
+  "connector": {
+    "label": "Local bundle fixtures connector",
+    "entrypoint": "runtime.connectors.local_bundle_fixtures",
+    "status": "fixture_backed"
+  },
+  "fixture_paths": [
+    "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json",
+    "runtime/connectors/local_bundle_fixtures/fixtures/payloads"
+  ],
+  "live_access": {
+    "mode": "none",
+    "notes": "Committed ZIP fixtures only. This does not enable arbitrary local filesystem ingestion."
+  },
+  "extraction_policy": {
+    "mode": "fixture_only",
+    "notes": "The runtime can fetch and decompose the committed ZIP fixtures through existing bounded fixture paths only."
+  },
+  "rights_notes": "Repo-governed text fixtures only. No real third-party software or driver binaries are redistributed.",
+  "legal_posture": "repo_governed_fixture",
+  "freshness_model": "static_fixture",
+  "capabilities": {
+    "supports_search": true,
+    "supports_item_metadata": true,
+    "supports_file_listing": true,
+    "supports_bulk_access": false,
+    "supports_delta_or_feed": false,
+    "supports_live_probe": false,
+    "supports_member_listing": true,
+    "supports_reviews_or_comments": false,
+    "supports_hashes": true,
+    "supports_signatures": false,
+    "supports_content_text": true,
+    "supports_temporal_captures": false,
+    "supports_action_paths": true,
+    "auth_required": false,
+    "network_required": false,
+    "local_private": false,
+    "fixture_backed": true,
+    "recorded_fixture_backed": false,
+    "live_supported": false,
+    "live_deferred": false
+  },
+  "coverage": {
+    "coverage_depth": "action_indexed",
+    "coverage_status": "active_fixture_scope",
+    "indexed_scopes": [
+      "catalog_records",
+      "bundle_representations",
+      "member_paths",
+      "member_readback",
+      "compatibility_hints",
+      "action_paths"
+    ],
+    "connector_mode": "fixture_only",
+    "last_fixture_update": "static_fixture",
+    "coverage_notes": "Committed ZIP fixtures exercise bundle representation, member listing, and member readback for the member-level discovery wedge.",
+    "current_limitations": [
+      "Committed fixture scope only",
+      "No arbitrary user filesystem ingestion",
+      "No public-alpha local path access",
+      "No live source probing"
+    ],
+    "next_coverage_step": "Use these fixtures as the control corpus for Member-Level Synthetic Records v0."
+  },
+  "notes": "Active repo-governed fixture source distinct from local-files-placeholder. It is not a local-files connector."
+}

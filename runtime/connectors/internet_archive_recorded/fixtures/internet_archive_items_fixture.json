@@ -1,0 +1,188 @@
+{
+  "fixture_id": "internet_archive_recorded_fixtures_v0",
+  "fixture_notes": [
+    "Tiny recorded-fixture stand-ins shaped like Internet Archive item metadata.",
+    "No live Internet Archive API call, scraping, crawling, or binary redistribution is represented here.",
+    "File names and product-family hints are source-shape fixtures for old-platform software evaluation."
+  ],
+  "items": [
+    {
+      "item": {
+        "identifier": "ia-win7-utility-pack-fixture",
+        "title": "Windows 7 Utility Pack recorded fixture",
+        "mediatype": "software",
+        "collection": [
+          "software",
+          "utilities",
+          "vintage"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "2010",
+        "description": "Recorded metadata for a small utility pack shaped around Windows 7 and Windows NT 6.1 compatibility evidence. Payload entries are text stand-ins, not redistributed executables.",
+        "metadata": {
+          "platforms": [
+            "Windows 7",
+            "Windows NT 6.1"
+          ],
+          "architectures": [
+            "x86",
+            "x64"
+          ],
+          "artifact_roles": [
+            "utility",
+            "installer_stub",
+            "readme"
+          ]
+        },
+        "files": [
+          {
+            "name": "7z920.exe.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 155,
+            "sha256": "a923a4cbe961ae7cc6d70b58a43a4bff1f9b985738d5db0e47bd8f5dfdd086e9"
+          },
+          {
+            "name": "README-windows7.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 213,
+            "sha256": "2b9bdad447f6a3c7317e1fbe2f571b29662f765c9b9112f196aa1d4c61a8ce20"
+          },
+          {
+            "name": "SHA256SUMS.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 128,
+            "sha256": "4e3c828a97cd12ca7b0b1ad14c1e9dc1608a705019e13c979f01e0216f27676a"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86",
+          "x64"
+        ],
+        "required_features": [
+          "Windows 7",
+          "Windows NT 6.1"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-firefox-xp-support-fixture",
+        "title": "Firefox XP support notes recorded fixture",
+        "mediatype": "software",
+        "collection": [
+          "software",
+          "browsers",
+          "documentation"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "2017",
+        "description": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
+        "metadata": {
+          "platforms": [
+            "Windows XP"
+          ],
+          "architectures": [
+            "x86"
+          ],
+          "artifact_roles": [
+            "release_notes",
+            "support_window"
+          ]
+        },
+        "files": [
+          {
+            "name": "firefox-xp-support-notes.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 196,
+            "sha256": "338d4d8222af81b7191827eb4eb214c1407f4973427df4a7ac4c436a2c4d90fe"
+          },
+          {
+            "name": "release-family-manifest.json",
+            "format": "JSON",
+            "content_type": "application/json",
+            "size": 152,
+            "sha256": "01ac4616156c8c447803f4988288b55635442a331fe3f76165db1e6a1839c01f"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows XP",
+          "support-window evidence"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-thinkpad-t42-wireless-support-fixture",
+        "title": "ThinkPad T42 wireless driver support media recorded fixture",
+        "mediatype": "software",
+        "collection": [
+          "software",
+          "drivers",
+          "support_media"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "2004",
+        "description": "Recorded metadata for a support-media-shaped driver item with Windows 2000 compatibility hints. Payload entries are text stand-ins, not real driver binaries.",
+        "metadata": {
+          "platforms": [
+            "Windows 2000"
+          ],
+          "architectures": [
+            "x86"
+          ],
+          "artifact_roles": [
+            "driver",
+            "support_media",
+            "readme",
+            "inf"
+          ]
+        },
+        "files": [
+          {
+            "name": "DRIVERS/WIFI/THINKPAD_T42/WIN2000/DRIVER.INF",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 240,
+            "sha256": "b716f9f2d6852dd2b25db6387e4dac769a6e234a52966295a1bce22fbcb2c68a"
+          },
+          {
+            "name": "DRIVERS/WIFI/THINKPAD_T42/WIN2000/README.TXT",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 232,
+            "sha256": "00dc60033293a1ed6ec52bd9645f7df542c645b3efa819c86ea3d3da74634ae1"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 2000",
+          "ThinkPad T42 wireless"
+        ]
+      }
+    }
+  ]
+}

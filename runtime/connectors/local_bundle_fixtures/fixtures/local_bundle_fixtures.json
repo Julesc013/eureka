@@ -1,0 +1,143 @@
+{
+  "fixture_id": "local_bundle_fixtures_v0",
+  "fixture_notes": [
+    "Committed ZIP fixtures for bounded member-level discovery tests.",
+    "These are not arbitrary local-files ingestion and are not public-alpha local path controls.",
+    "Payloads contain tiny text stand-ins only."
+  ],
+  "bundles": [
+    {
+      "bundle_id": "windows-utility-bundle",
+      "version": "1.0",
+      "object": {
+        "id": "obj.local-bundle.windows-utility-bundle",
+        "kind": "software_bundle",
+        "label": "Windows 7 utility bundle recorded fixture"
+      },
+      "state": {
+        "id": "state.local-bundle.windows-utility-bundle.fixture",
+        "subject_id": "obj.local-bundle.windows-utility-bundle",
+        "kind": "fixture_bundle",
+        "standing": "available"
+      },
+      "bundle": {
+        "id": "rep.local-bundle.windows-utility-bundle.zip",
+        "kind": "fixture_archive",
+        "label": "Windows 7 utility bundle ZIP fixture",
+        "content_type": "application/zip",
+        "filename": "windows_utility_bundle.zip",
+        "payload_fixture": {
+          "locator": "runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_utility_bundle.zip",
+          "filename": "windows_utility_bundle.zip"
+        },
+        "access_path": {
+          "id": "access.local-bundle.windows-utility-bundle.zip",
+          "kind": "download",
+          "locator": "runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_utility_bundle.zip",
+          "is_direct": true
+        }
+      },
+      "member_hints": [
+        {
+          "member_path": "README.txt",
+          "member_role": "readme",
+          "compatibility_note": "Fixture readme records Windows 7 / Windows NT 6.1 compatibility hints."
+        },
+        {
+          "member_path": "utilities/7z920.exe.txt",
+          "member_role": "installer_stub",
+          "compatibility_note": "Text stand-in for a Windows 7 utility artifact."
+        },
+        {
+          "member_path": "utilities/ftp-blue-client/readme.txt",
+          "member_role": "readme",
+          "compatibility_note": "Text stand-in for a blue FTP client vague-identity fixture."
+        },
+        {
+          "member_path": "compatibility/windows7.txt",
+          "member_role": "compatibility_note",
+          "compatibility_note": "Windows 7 and Windows NT 6.1 compatibility hint."
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86",
+          "x64"
+        ],
+        "required_features": [
+          "Windows 7",
+          "Windows NT 6.1"
+        ]
+      }
+    },
+    {
+      "bundle_id": "driver-support-cd",
+      "version": "1.0",
+      "object": {
+        "id": "obj.local-bundle.driver-support-cd",
+        "kind": "driver_support_bundle",
+        "label": "ThinkPad T42 wireless support bundle recorded fixture"
+      },
+      "state": {
+        "id": "state.local-bundle.driver-support-cd.fixture",
+        "subject_id": "obj.local-bundle.driver-support-cd",
+        "kind": "fixture_bundle",
+        "standing": "available"
+      },
+      "bundle": {
+        "id": "rep.local-bundle.driver-support-cd.zip",
+        "kind": "fixture_archive",
+        "label": "ThinkPad T42 wireless driver support ZIP fixture",
+        "content_type": "application/zip",
+        "filename": "driver_support_cd.zip",
+        "payload_fixture": {
+          "locator": "runtime/connectors/local_bundle_fixtures/fixtures/payloads/driver_support_cd.zip",
+          "filename": "driver_support_cd.zip"
+        },
+        "access_path": {
+          "id": "access.local-bundle.driver-support-cd.zip",
+          "kind": "download",
+          "locator": "runtime/connectors/local_bundle_fixtures/fixtures/payloads/driver_support_cd.zip",
+          "is_direct": true
+        }
+      },
+      "member_hints": [
+        {
+          "member_path": "README.txt",
+          "member_role": "readme",
+          "compatibility_note": "Fixture readme records ThinkPad T42 wireless and Windows 2000 hints."
+        },
+        {
+          "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+          "member_role": "driver_inf",
+          "compatibility_note": "Windows 2000 driver INF text stand-in."
+        },
+        {
+          "member_path": "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+          "member_role": "readme",
+          "compatibility_note": "ThinkPad T42 wireless driver readme for Windows 2000 fixture."
+        },
+        {
+          "member_path": "compatibility/windows2000.txt",
+          "member_role": "compatibility_note",
+          "compatibility_note": "Windows 2000 compatibility hint."
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 2000",
+          "ThinkPad T42 wireless"
+        ]
+      }
+    }
+  ]
+}
