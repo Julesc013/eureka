@@ -17,6 +17,8 @@ REQUIRED_FILES = (
     "source_registry/sources_list.json",
     "source_registry/source_synthetic_fixtures.json",
     "source_registry/source_github_releases_recorded_fixtures.json",
+    "source_registry/source_internet_archive_recorded_fixtures.json",
+    "source_registry/source_local_bundle_fixtures.json",
     "query_planner/windows_7_apps.json",
     "query_planner/latest_firefox_before_xp_support_ended.json",
     "query_planner/old_blue_ftp_client_xp.json",
@@ -114,12 +116,19 @@ class PythonOracleGoldenTestCase(unittest.TestCase):
         summary = _load_json("archive_resolution_evals/suite_summary.json")
         full_report = _load_json("archive_resolution_evals/full_report.json")
 
-        self.assertEqual(summary["status_counts"], {"capability_gap": 6})
+        self.assertEqual(summary["status_counts"], {"capability_gap": 5, "not_satisfied": 1})
         self.assertEqual(summary["total_task_count"], 6)
-        self.assertEqual(full_report["status_counts"], {"capability_gap": 6})
-        self.assertTrue(
-            all(task["overall_status"] == "capability_gap" for task in full_report["tasks"])
+        self.assertEqual(full_report["status_counts"], {"capability_gap": 5, "not_satisfied": 1})
+        self.assertFalse(
+            any(task["overall_status"] == "satisfied" for task in full_report["tasks"])
         )
+        firefox = next(
+            task
+            for task in full_report["tasks"]
+            if task["task_id"] == "latest_firefox_before_xp_drop"
+        )
+        self.assertEqual(firefox["overall_status"], "not_satisfied")
+        self.assertGreater(firefox["search_observed_result_count"], 0)
 
     def test_query_planner_outputs_include_expected_task_kinds(self) -> None:
         for filename, expected_task_kind in EXPECTED_TASK_KINDS.items():
@@ -137,14 +146,25 @@ class PythonOracleGoldenTestCase(unittest.TestCase):
 
         self.assertIn("synthetic-fixtures", source_ids)
         self.assertIn("github-releases-recorded-fixtures", source_ids)
+        self.assertIn("internet-archive-recorded-fixtures", source_ids)
+        self.assertIn("local-bundle-fixtures", source_ids)
 
         synthetic = _load_json("source_registry/source_synthetic_fixtures.json")
         github = _load_json("source_registry/source_github_releases_recorded_fixtures.json")
+        internet_archive = _load_json(
+            "source_registry/source_internet_archive_recorded_fixtures.json"
+        )
+        local_bundle = _load_json("source_registry/source_local_bundle_fixtures.json")
         self.assertEqual(synthetic["body"]["selected_source_id"], "synthetic-fixtures")
         self.assertEqual(
             github["body"]["selected_source_id"],
             "github-releases-recorded-fixtures",
         )
+        self.assertEqual(
+            internet_archive["body"]["selected_source_id"],
+            "internet-archive-recorded-fixtures",
+        )
+        self.assertEqual(local_bundle["body"]["selected_source_id"], "local-bundle-fixtures")
 
     def test_local_index_fts_mode_is_normalized(self) -> None:
         status = _load_json("local_index/status_after_build.json")

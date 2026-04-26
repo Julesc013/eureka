@@ -6,10 +6,14 @@
         "absence_report": null,
         "checked_source_families": [
           "github_releases",
+          "internet_archive_recorded",
+          "local_bundle_fixtures",
           "synthetic"
         ],
         "checked_source_ids": [
           "github-releases-recorded-fixtures",
+          "internet-archive-recorded-fixtures",
+          "local-bundle-fixtures",
           "synthetic-fixtures"
         ],
         "checked_sources": [
@@ -19,6 +23,20 @@
             "source_id": "github-releases-recorded-fixtures",
             "status": "active_recorded_fixture",
             "trust_lane": "official"
+          },
+          {
+            "name": "Internet Archive Recorded Fixtures",
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "preservation"
+          },
+          {
+            "name": "Local Bundle Fixtures",
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "fixture"
           },
           {
             "name": "Synthetic Fixtures",

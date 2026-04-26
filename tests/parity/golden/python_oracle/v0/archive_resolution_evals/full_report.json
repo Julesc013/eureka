@@ -15,7 +15,8 @@
     }
   ],
   "status_counts": {
-    "capability_gap": 6
+    "capability_gap": 5,
+    "not_satisfied": 1
   },
   "task_summaries": [
     {
@@ -47,17 +48,17 @@
       "task_id": "driver_inside_support_cd"
     },
     {
-      "capability_gap_count": 1,
-      "failed_check_count": 0,
+      "capability_gap_count": 0,
+      "failed_check_count": 1,
       "not_evaluable_check_count": 2,
-      "overall_status": "capability_gap",
+      "overall_status": "not_satisfied",
       "planner_expected_task_kind": "find_software_release",
       "planner_observed_task_kind": "find_software_release",
       "planner_status": "satisfied",
       "query_family": "latest_compatible_release",
       "raw_query": "latest Firefox before XP support ended",
       "search_mode": "local_index",
-      "search_observed_result_count": 0,
+      "search_observed_result_count": 11,
       "task_id": "latest_firefox_before_xp_drop"
     },
     {
@@ -106,12 +107,14 @@
   "tasks": [
     {
       "absence_summary": {
-        "checked_record_count": 8,
+        "checked_record_count": 13,
         "checked_source_families": [
           "synthetic_fixture",
-          "github_releases"
+          "github_releases",
+          "internet_archive_recorded",
+          "local_bundle_fixtures"
         ],
-        "checked_subject_count": 6,
+        "checked_subject_count": 11,
         "likely_reason_code": "query_not_present_in_bounded_corpus",
         "near_match_count": 0,
         "next_steps": [
@@ -194,12 +197,14 @@
           "message": "Absence reasoning explained the empty bounded search result.",
           "name": "absence.reasoning",
           "observed": {
-            "checked_record_count": 8,
+            "checked_record_count": 13,
             "checked_source_families": [
               "synthetic_fixture",
-              "github_releases"
+              "github_releases",
+              "internet_archive_recorded",
+              "local_bundle_fixtures"
             ],
-            "checked_subject_count": 6,
+            "checked_subject_count": 11,
             "likely_reason_code": "query_not_present_in_bounded_corpus",
             "near_match_count": 0,
             "next_steps": [
@@ -335,12 +340,14 @@
     },
     {
       "absence_summary": {
-        "checked_record_count": 8,
+        "checked_record_count": 13,
         "checked_source_families": [
           "synthetic_fixture",
-          "github_releases"
+          "github_releases",
+          "internet_archive_recorded",
+          "local_bundle_fixtures"
         ],
-        "checked_subject_count": 6,
+        "checked_subject_count": 11,
         "likely_reason_code": "query_not_present_in_bounded_corpus",
         "near_match_count": 0,
         "next_steps": [
@@ -423,12 +430,14 @@
           "message": "Absence reasoning explained the empty bounded search result.",
           "name": "absence.reasoning",
           "observed": {
-            "checked_record_count": 8,
+            "checked_record_count": 13,
             "checked_source_families": [
               "synthetic_fixture",
-              "github_releases"
+              "github_releases",
+              "internet_archive_recorded",
+              "local_bundle_fixtures"
             ],
-            "checked_subject_count": 6,
+            "checked_subject_count": 11,
             "likely_reason_code": "query_not_present_in_bounded_corpus",
             "near_match_count": 0,
             "next_steps": [
@@ -567,23 +576,30 @@
       "top_results": []
     },
     {
-      "absence_summary": {
-        "checked_record_count": 8,
-        "checked_source_families": [
-          "synthetic_fixture",
-          "github_releases"
+      "capability_gaps": [],
+      "expected_result_hints": {
+        "acceptable_result_patterns": [
+          "direct installer for the last compatible Firefox release",
+          "release archive page with version evidence and downloadable asset",
+          "archived vendor page plus concrete release asset trace"
         ],
-        "checked_subject_count": 6,
-        "likely_reason_code": "query_not_present_in_bounded_corpus",
-        "near_match_count": 0,
-        "next_steps": [
-          "Retry with a different bounded subject, version, or label term.",
-          "Confirm that the expected source family is loaded into the current local corpus."
+        "allowed_absence_outcomes": [
+          "near_match_with_version_window_trace",
+          "checked_sources_with_reasoned_absence"
         ],
-        "reason_message": "No bounded subject or label related to query 'Firefox' was found in the current local corpus.",
-        "status": "explained"
+        "desired_object_types": [
+          "software_release",
+          "installer",
+          "release_asset"
+        ],
+        "minimum_granularity": "versioned_release_artifact",
+        "required_evidence": [
+          "version or release identity",
+          "Windows XP compatibility or support-window evidence",
+          "direct artifact or release asset locator"
+        ]
       },
-      "capability_gaps": [
+      "failed_checks": [
         {
           "expected": {
             "acceptable_result_patterns": [
@@ -607,73 +623,133 @@
               "direct artifact or release asset locator"
             ]
           },
-          "message": "No bounded local result matched this hard fixture. Current bootstrap corpus does not contain the direct artifact, member, article, or evidence shape required to satisfy the task.",
+          "message": "Search returned bounded results, but none contained an exact known expected result hint. Eval Runner v0 does not infer semantic relevance.",
           "name": "search.expected_result_hints",
           "observed": {
-            "result_count": 0
+            "top_results": [
+              {
+                "evidence": [
+                  "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+                  "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+                  "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+                  "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+                  "file_listing firefox-xp-support-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+                  "file_listing release-family-manifest.json internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+                ],
+                "index_record_id": "resolved_object:internet-archive-recorded:ia-firefox-xp-support-fixture",
+                "label": "Firefox XP support notes recorded fixture",
+                "record_kind": "resolved_object",
+                "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "route_hints": {
+                  "surface_route": "/",
+                  "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+                },
+                "source_family": "internet_archive_recorded",
+                "source_id": "internet-archive-recorded-fixtures",
+                "source_label": "Internet Archive Recorded Fixtures",
+                "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "summary": "software from Internet Archive Recorded Fixtures",
+                "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+                "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+              },
+              {
+                "evidence": [
+                  "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+                ],
+                "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:0",
+                "label": "Firefox XP support notes recorded fixture evidence 1",
+                "record_kind": "evidence",
+                "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "route_hints": {
+                  "record_kind": "evidence",
+                  "surface_route": "/",
+                  "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+                },
+                "source_family": "internet_archive_recorded",
+                "source_id": "internet-archive-recorded-fixtures",
+                "source_label": "Internet Archive Recorded Fixtures",
+                "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "summary": "label from internet_archive_recorded",
+                "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+                "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+              },
+              {
+                "evidence": [
+                  "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+                ],
+                "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:1",
+                "label": "Firefox XP support notes recorded fixture evidence 2",
+                "record_kind": "evidence",
+                "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "route_hints": {
+                  "record_kind": "evidence",
+                  "surface_route": "/",
+                  "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+                },
+                "source_family": "internet_archive_recorded",
+                "source_id": "internet-archive-recorded-fixtures",
+                "source_label": "Internet Archive Recorded Fixtures",
+                "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "summary": "source_identifier from internet_archive_recorded",
+                "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+                "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+              },
+              {
+                "evidence": [
+                  "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+                ],
+                "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:2",
+                "label": "Firefox XP support notes recorded fixture evidence 3",
+                "record_kind": "evidence",
+                "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "route_hints": {
+                  "record_kind": "evidence",
+                  "surface_route": "/",
+                  "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+                },
+                "source_family": "internet_archive_recorded",
+                "source_id": "internet-archive-recorded-fixtures",
+                "source_label": "Internet Archive Recorded Fixtures",
+                "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "summary": "description from internet_archive_recorded",
+                "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+                "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+              },
+              {
+                "evidence": [
+                  "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+                ],
+                "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:3",
+                "label": "Firefox XP support notes recorded fixture evidence 4",
+                "record_kind": "evidence",
+                "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "route_hints": {
+                  "record_kind": "evidence",
+                  "surface_route": "/",
+                  "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+                },
+                "source_family": "internet_archive_recorded",
+                "source_id": "internet-archive-recorded-fixtures",
+                "source_label": "Internet Archive Recorded Fixtures",
+                "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "summary": "compatibility_note from internet_archive_recorded",
+                "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+                "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+              }
+            ]
           },
-          "status": "capability_gap"
+          "status": "not_satisfied"
         }
       ],
-      "expected_result_hints": {
-        "acceptable_result_patterns": [
-          "direct installer for the last compatible Firefox release",
-          "release archive page with version evidence and downloadable asset",
-          "archived vendor page plus concrete release asset trace"
-        ],
-        "allowed_absence_outcomes": [
-          "near_match_with_version_window_trace",
-          "checked_sources_with_reasoned_absence"
-        ],
-        "desired_object_types": [
-          "software_release",
-          "installer",
-          "release_asset"
-        ],
-        "minimum_granularity": "versioned_release_artifact",
-        "required_evidence": [
-          "version or release identity",
-          "Windows XP compatibility or support-window evidence",
-          "direct artifact or release asset locator"
-        ]
-      },
-      "failed_checks": [],
       "notices": [
         {
           "code": "eval_runner_scope",
           "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, and absence behavior only; ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
           "severity": "info"
-        },
-        {
-          "code": "local_index_no_results",
-          "message": "No Local Index v0 records matched 'Firefox'.",
-          "severity": "info"
         }
       ],
-      "overall_status": "capability_gap",
-      "partial_checks": [
-        {
-          "message": "Absence reasoning explained the empty bounded search result.",
-          "name": "absence.reasoning",
-          "observed": {
-            "checked_record_count": 8,
-            "checked_source_families": [
-              "synthetic_fixture",
-              "github_releases"
-            ],
-            "checked_subject_count": 6,
-            "likely_reason_code": "query_not_present_in_bounded_corpus",
-            "near_match_count": 0,
-            "next_steps": [
-              "Retry with a different bounded subject, version, or label term.",
-              "Confirm that the expected source family is loaded into the current local corpus."
-            ],
-            "reason_message": "No bounded subject or label related to query 'Firefox' was found in the current local corpus.",
-            "status": "explained"
-          },
-          "status": "partial"
-        }
-      ],
+      "overall_status": "not_satisfied",
+      "partial_checks": [],
       "planner_expected_task_kind": "find_software_release",
       "planner_observed": {
         "action_hints": [
@@ -774,7 +850,7 @@
         }
       ],
       "search_mode": "local_index",
-      "search_observed_result_count": 0,
+      "search_observed_result_count": 11,
       "search_query": "Firefox",
       "skipped_checks": [
         {
@@ -801,16 +877,128 @@
         }
       ],
       "task_id": "latest_firefox_before_xp_drop",
-      "top_results": []
+      "top_results": [
+        {
+          "evidence": [
+            "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+            "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+            "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+            "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+            "file_listing firefox-xp-support-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+            "file_listing release-family-manifest.json internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+          ],
+          "index_record_id": "resolved_object:internet-archive-recorded:ia-firefox-xp-support-fixture",
+          "label": "Firefox XP support notes recorded fixture",
+          "record_kind": "resolved_object",
+          "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+          "route_hints": {
+            "surface_route": "/",
+            "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+          },
+          "source_family": "internet_archive_recorded",
+          "source_id": "internet-archive-recorded-fixtures",
+          "source_label": "Internet Archive Recorded Fixtures",
+          "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+          "summary": "software from Internet Archive Recorded Fixtures",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+          "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+        },
+        {
+          "evidence": [
+            "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+          ],
+          "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:0",
+          "label": "Firefox XP support notes recorded fixture evidence 1",
+          "record_kind": "evidence",
+          "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+          "route_hints": {
+            "record_kind": "evidence",
+            "surface_route": "/",
+            "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+          },
+          "source_family": "internet_archive_recorded",
+          "source_id": "internet-archive-recorded-fixtures",
+          "source_label": "Internet Archive Recorded Fixtures",
+          "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+          "summary": "label from internet_archive_recorded",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+          "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+        },
+        {
+          "evidence": [
+            "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+          ],
+          "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:1",
+          "label": "Firefox XP support notes recorded fixture evidence 2",
+          "record_kind": "evidence",
+          "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+          "route_hints": {
+            "record_kind": "evidence",
+            "surface_route": "/",
+            "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+          },
+          "source_family": "internet_archive_recorded",
+          "source_id": "internet-archive-recorded-fixtures",
+          "source_label": "Internet Archive Recorded Fixtures",
+          "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+          "summary": "source_identifier from internet_archive_recorded",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+          "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+        },
+        {
+          "evidence": [
+            "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+          ],
+          "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:2",
+          "label": "Firefox XP support notes recorded fixture evidence 3",
+          "record_kind": "evidence",
+          "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+          "route_hints": {
+            "record_kind": "evidence",
+            "surface_route": "/",
+            "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+          },
+          "source_family": "internet_archive_recorded",
+          "source_id": "internet-archive-recorded-fixtures",
+          "source_label": "Internet Archive Recorded Fixtures",
+          "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+          "summary": "description from internet_archive_recorded",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+          "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+        },
+        {
+          "evidence": [
+            "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+          ],
+          "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:3",
+          "label": "Firefox XP support notes recorded fixture evidence 4",
+          "record_kind": "evidence",
+          "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+          "route_hints": {
+            "record_kind": "evidence",
+            "surface_route": "/",
+            "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+          },
+          "source_family": "internet_archive_recorded",
+          "source_id": "internet-archive-recorded-fixtures",
+          "source_label": "Internet Archive Recorded Fixtures",
+          "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+          "summary": "compatibility_note from internet_archive_recorded",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+          "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+        }
+      ]
     },
     {
       "absence_summary": {
-        "checked_record_count": 8,
+        "checked_record_count": 13,
         "checked_source_families": [
           "synthetic_fixture",
-          "github_releases"
+          "github_releases",
+          "internet_archive_recorded",
+          "local_bundle_fixtures"
         ],
-        "checked_subject_count": 6,
+        "checked_subject_count": 11,
         "likely_reason_code": "related_subjects_exist",
         "near_match_count": 1,
         "next_steps": [
@@ -894,12 +1082,14 @@
           "message": "Absence reasoning explained the empty bounded search result.",
           "name": "absence.reasoning",
           "observed": {
-            "checked_record_count": 8,
+            "checked_record_count": 13,
             "checked_source_families": [
               "synthetic_fixture",
-              "github_releases"
+              "github_releases",
+              "internet_archive_recorded",
+              "local_bundle_fixtures"
             ],
-            "checked_subject_count": 6,
+            "checked_subject_count": 11,
             "likely_reason_code": "related_subjects_exist",
             "near_match_count": 1,
             "next_steps": [
@@ -1050,12 +1240,14 @@
     },
     {
       "absence_summary": {
-        "checked_record_count": 8,
+        "checked_record_count": 13,
         "checked_source_families": [
           "synthetic_fixture",
-          "github_releases"
+          "github_releases",
+          "internet_archive_recorded",
+          "local_bundle_fixtures"
         ],
-        "checked_subject_count": 6,
+        "checked_subject_count": 11,
         "likely_reason_code": "query_not_present_in_bounded_corpus",
         "near_match_count": 0,
         "next_steps": [
@@ -1138,12 +1330,14 @@
           "message": "Absence reasoning explained the empty bounded search result.",
           "name": "absence.reasoning",
           "observed": {
-            "checked_record_count": 8,
+            "checked_record_count": 13,
             "checked_source_families": [
               "synthetic_fixture",
-              "github_releases"
+              "github_releases",
+              "internet_archive_recorded",
+              "local_bundle_fixtures"
             ],
-            "checked_subject_count": 6,
+            "checked_subject_count": 11,
             "likely_reason_code": "query_not_present_in_bounded_corpus",
             "near_match_count": 0,
             "next_steps": [
@@ -1287,12 +1481,14 @@
     },
     {
       "absence_summary": {
-        "checked_record_count": 8,
+        "checked_record_count": 13,
         "checked_source_families": [
           "synthetic_fixture",
-          "github_releases"
+          "github_releases",
+          "internet_archive_recorded",
+          "local_bundle_fixtures"
         ],
-        "checked_subject_count": 6,
+        "checked_subject_count": 11,
         "likely_reason_code": "query_not_present_in_bounded_corpus",
         "near_match_count": 0,
         "next_steps": [
@@ -1377,12 +1573,14 @@
           "message": "Absence reasoning explained the empty bounded search result.",
           "name": "absence.reasoning",
           "observed": {
-            "checked_record_count": 8,
+            "checked_record_count": 13,
             "checked_source_families": [
               "synthetic_fixture",
-              "github_releases"
+              "github_releases",
+              "internet_archive_recorded",
+              "local_bundle_fixtures"
             ],
-            "checked_subject_count": 6,
+            "checked_subject_count": 11,
             "likely_reason_code": "query_not_present_in_bounded_corpus",
             "near_match_count": 0,
             "next_steps": [

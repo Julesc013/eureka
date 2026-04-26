@@ -4,18 +4,18 @@
       "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
       "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
       "index_path_kind": "bootstrap_local_path",
-      "record_count": 58,
+      "record_count": 130,
       "record_kind_counts": {
-        "evidence": 19,
-        "member": 3,
-        "representation": 14,
-        "resolved_object": 8,
-        "source_record": 6,
-        "state_or_release": 8
+        "evidence": 58,
+        "member": 12,
+        "representation": 26,
+        "resolved_object": 13,
+        "source_record": 8,
+        "state_or_release": 13
       }
     },
     "query": "synthetic",
-    "result_count": 31,
+    "result_count": 32,
     "results": [
       {
         "evidence": [
@@ -364,6 +364,25 @@
         "summary": "member of Synthetic demo app package archive",
         "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
         "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "connector:Internet Archive recorded fixtures connector",
+          "status:active_recorded_fixture",
+          "trust_lane:preservation"
+        ],
+        "index_record_id": "source_record:internet-archive-recorded-fixtures",
+        "label": "Internet Archive Recorded Fixtures",
+        "record_kind": "source_record",
+        "route_hints": {
+          "source_id": "internet-archive-recorded-fixtures",
+          "status": "active_recorded_fixture",
+          "surface_route": "/source"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "summary": "active_recorded_fixture preservation source registry record"
       },
       {
         "evidence": [

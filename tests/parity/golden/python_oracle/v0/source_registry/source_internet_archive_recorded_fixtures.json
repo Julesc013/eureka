@@ -1,0 +1,123 @@
+{
+  "body": {
+    "selected_source_id": "internet-archive-recorded-fixtures",
+    "source_count": 1,
+    "sources": [
+      {
+        "artifact_types": [
+          "metadata_record",
+          "archive_item_file",
+          "file_listing"
+        ],
+        "authority_class": "recorded_public_archive_fixture",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": true,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": true,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": true,
+          "supports_hashes": true,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_file_listing",
+          "supports_hashes",
+          "fixture_backed",
+          "recorded_fixture_backed",
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Internet Archive recorded fixtures connector",
+          "status": "fixture_backed"
+        },
+        "connector_mode": "recorded_fixture_only",
+        "coverage": {
+          "connector_mode": "recorded_fixture_only",
+          "coverage_depth": "representation_indexed",
+          "coverage_notes": "Tiny Internet-Archive-shaped fixture records expose item metadata and file listings for old-platform software and driver/support-media examples.",
+          "coverage_status": "active_recorded_fixture_scope",
+          "current_limitations": [
+            "Recorded fixture scope only",
+            "No live Internet Archive API access",
+            "No scraping or crawling",
+            "No item payload fetch",
+            "No OCR/full-text source coverage"
+          ],
+          "indexed_scopes": [
+            "item_metadata",
+            "item_file_listings",
+            "compatibility_hints",
+            "recorded_hashes"
+          ],
+          "last_fixture_update": "recorded_fixture_snapshot",
+          "next_coverage_step": "Expand recorded metadata and item-file fixtures before considering any live Internet Archive connector behavior."
+        },
+        "coverage_depth": "representation_indexed",
+        "coverage_status": "active_recorded_fixture_scope",
+        "current_limitations": [
+          "Recorded fixture scope only",
+          "No live Internet Archive API access",
+          "No scraping or crawling",
+          "No item payload fetch",
+          "No OCR/full-text source coverage"
+        ],
+        "extraction_mode": "recorded_fixture_only",
+        "freshness_model": "recorded_fixture_snapshot",
+        "identifier_types_emitted": [
+          "archive_org_identifier"
+        ],
+        "indexed_scopes": [
+          "item_metadata",
+          "item_file_listings",
+          "compatibility_hints",
+          "recorded_hashes"
+        ],
+        "legal_posture": "recorded_public_source",
+        "live_access_mode": "recorded_fixture_only",
+        "name": "Internet Archive Recorded Fixtures",
+        "next_coverage_step": "Expand recorded metadata and item-file fixtures before considering any live Internet Archive connector behavior.",
+        "notes": "Active recorded-fixture source distinct from internet-archive-placeholder. It must not be described as a live Internet Archive connector.",
+        "object_types": [
+          "software",
+          "software_release",
+          "driver",
+          "manual"
+        ],
+        "placeholder_warning": "",
+        "rights_notes": "Recorded fixture shape only. Payloads are synthetic text stand-ins; live item rights and access policy remain deferred.",
+        "roles": [
+          "discovery_index",
+          "citation_source",
+          "fixture"
+        ],
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "status": "active_recorded_fixture",
+        "status_summary": "Active recorded-fixture source record. Live source access remains separate.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "fixture_file"
+        ],
+        "trust_lane": "preservation"
+      }
+    ],
+    "status": "available"
+  },
+  "status_code": 200
+}

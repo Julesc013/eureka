@@ -21,6 +21,11 @@ goldens with capability and coverage-depth fields. The Rust source-registry
 candidate must be updated in a later Rust parity task before it can claim
 current source-registry parity again; Python remains authoritative.
 
+Real Source Coverage Pack v0 expands the Python-oracle source-registry and
+local-index goldens with `internet-archive-recorded-fixtures` and
+`local-bundle-fixtures`. Rust remains a future parity lane only; no Rust
+runtime behavior is introduced by those fixture updates.
+
 There is still no Rust parity runner in this milestone. Future parity assets
 should remain fixture-driven, JSON-inspectable, and explicit about allowed
 divergences.

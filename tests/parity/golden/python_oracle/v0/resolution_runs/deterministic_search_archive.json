@@ -6,10 +6,14 @@
         "absence_report": null,
         "checked_source_families": [
           "github_releases",
+          "internet_archive_recorded",
+          "local_bundle_fixtures",
           "synthetic"
         ],
         "checked_source_ids": [
           "github-releases-recorded-fixtures",
+          "internet-archive-recorded-fixtures",
+          "local-bundle-fixtures",
           "synthetic-fixtures"
         ],
         "checked_sources": [
@@ -19,6 +23,20 @@
             "source_id": "github-releases-recorded-fixtures",
             "status": "active_recorded_fixture",
             "trust_lane": "official"
+          },
+          {
+            "name": "Internet Archive Recorded Fixtures",
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "preservation"
+          },
+          {
+            "name": "Local Bundle Fixtures",
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "status": "active_fixture",
+            "trust_lane": "fixture"
           },
           {
             "name": "Synthetic Fixtures",
@@ -188,9 +206,231 @@
                 "source_id": "github-releases-recorded-fixtures"
               },
               "target_ref": "github-release:archivebox/archivebox@v0.8.5"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "Windows 7 Utility Pack recorded fixture",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "source_identifier",
+                  "claim_value": "ia-win7-utility-pack-fixture",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "description",
+                  "claim_value": "Recorded metadata for a small utility pack shaped around Windows 7 and Windows NT 6.1 compatibility evidence. Payload entries are text stand-ins, not redistributed executables.",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "compatibility_note",
+                  "claim_value": "Windows 7; Windows NT 6.1; x86; x64; utility; installer_stub; readme",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "7z920.exe.txt",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture/files/0"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "README-windows7.txt",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture/files/1"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "SHA256SUMS.txt",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture/files/2"
+                }
+              ],
+              "object": {
+                "id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+                "kind": "software",
+                "label": "Windows 7 Utility Pack recorded fixture"
+              },
+              "resolved_resource_id": "resolved:sha256:2f41dd657e545c2ec4fb2d12ecae2eef5a9521721ee55208b619a24b26f0d23c",
+              "source": {
+                "family": "internet_archive_recorded",
+                "label": "Internet Archive Recorded Fixtures",
+                "locator": "ia-recorded://ia-win7-utility-pack-fixture",
+                "source_id": "internet-archive-recorded-fixtures"
+              },
+              "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_at": "2017",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "Firefox XP support notes recorded fixture",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture"
+                },
+                {
+                  "asserted_at": "2017",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "source_identifier",
+                  "claim_value": "ia-firefox-xp-support-fixture",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture"
+                },
+                {
+                  "asserted_at": "2017",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "description",
+                  "claim_value": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture"
+                },
+                {
+                  "asserted_at": "2017",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "compatibility_note",
+                  "claim_value": "Windows XP; x86; release_notes; support_window",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture"
+                },
+                {
+                  "asserted_at": "2017",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "firefox-xp-support-notes.txt",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture/files/0"
+                },
+                {
+                  "asserted_at": "2017",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "release-family-manifest.json",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture/files/1"
+                }
+              ],
+              "object": {
+                "id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                "kind": "software",
+                "label": "Firefox XP support notes recorded fixture"
+              },
+              "resolved_resource_id": "resolved:sha256:b80436d405f3dabbc6f6c57239f0bdac58d2387dcf5658ecbbf9292d45f280f7",
+              "source": {
+                "family": "internet_archive_recorded",
+                "label": "Internet Archive Recorded Fixtures",
+                "locator": "ia-recorded://ia-firefox-xp-support-fixture",
+                "source_id": "internet-archive-recorded-fixtures"
+              },
+              "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_at": "2004",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "ThinkPad T42 wireless driver support media recorded fixture",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-thinkpad-t42-wireless-support-fixture"
+                },
+                {
+                  "asserted_at": "2004",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "source_identifier",
+                  "claim_value": "ia-thinkpad-t42-wireless-support-fixture",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-thinkpad-t42-wireless-support-fixture"
+                },
+                {
+                  "asserted_at": "2004",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "description",
+                  "claim_value": "Recorded metadata for a support-media-shaped driver item with Windows 2000 compatibility hints. Payload entries are text stand-ins, not real driver binaries.",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-thinkpad-t42-wireless-support-fixture"
+                },
+                {
+                  "asserted_at": "2004",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "compatibility_note",
+                  "claim_value": "Windows 2000; x86; driver; support_media; readme; inf",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-thinkpad-t42-wireless-support-fixture"
+                },
+                {
+                  "asserted_at": "2004",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "DRIVERS/WIFI/THINKPAD_T42/WIN2000/DRIVER.INF",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-thinkpad-t42-wireless-support-fixture/files/0"
+                },
+                {
+                  "asserted_at": "2004",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "DRIVERS/WIFI/THINKPAD_T42/WIN2000/README.TXT",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-thinkpad-t42-wireless-support-fixture/files/1"
+                }
+              ],
+              "object": {
+                "id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+                "kind": "software",
+                "label": "ThinkPad T42 wireless driver support media recorded fixture"
+              },
+              "resolved_resource_id": "resolved:sha256:0ed36a20a06bccf391a1de82350cf88d5ad26f493819346346f05b393e0649d1",
+              "source": {
+                "family": "internet_archive_recorded",
+                "label": "Internet Archive Recorded Fixtures",
+                "locator": "ia-recorded://ia-thinkpad-t42-wireless-support-fixture",
+                "source_id": "internet-archive-recorded-fixtures"
+              },
+              "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
             }
           ],
-          "result_count": 4,
+          "result_count": 7,
           "result_kind": "search_results"
         },
         "run_id": "run-deterministic-search-0001",

@@ -4,14 +4,14 @@
       "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
       "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
       "index_path_kind": "bootstrap_local_path",
-      "record_count": 58,
+      "record_count": 130,
       "record_kind_counts": {
-        "evidence": 19,
-        "member": 3,
-        "representation": 14,
-        "resolved_object": 8,
-        "source_record": 6,
-        "state_or_release": 8
+        "evidence": 58,
+        "member": 12,
+        "representation": 26,
+        "resolved_object": 13,
+        "source_record": 8,
+        "state_or_release": 13
       }
     },
     "notices": [

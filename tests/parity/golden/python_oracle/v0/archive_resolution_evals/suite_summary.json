@@ -15,7 +15,8 @@
   ],
   "status": "evaluated",
   "status_counts": {
-    "capability_gap": 6
+    "capability_gap": 5,
+    "not_satisfied": 1
   },
   "task_summaries": [
     {
@@ -47,17 +48,17 @@
       "task_id": "driver_inside_support_cd"
     },
     {
-      "capability_gap_count": 1,
-      "failed_check_count": 0,
+      "capability_gap_count": 0,
+      "failed_check_count": 1,
       "not_evaluable_check_count": 2,
-      "overall_status": "capability_gap",
+      "overall_status": "not_satisfied",
       "planner_expected_task_kind": "find_software_release",
       "planner_observed_task_kind": "find_software_release",
       "planner_status": "satisfied",
       "query_family": "latest_compatible_release",
       "raw_query": "latest Firefox before XP support ended",
       "search_mode": "local_index",
-      "search_observed_result_count": 0,
+      "search_observed_result_count": 11,
       "task_id": "latest_firefox_before_xp_drop"
     },
     {

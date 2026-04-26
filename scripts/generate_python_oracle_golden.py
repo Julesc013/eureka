@@ -88,6 +88,12 @@ def build_fixture_pack() -> dict[Path, Any]:
         Path("source_registry/source_github_releases_recorded_fixtures.json"): (
             _source_registry_source("github-releases-recorded-fixtures")
         ),
+        Path("source_registry/source_internet_archive_recorded_fixtures.json"): (
+            _source_registry_source("internet-archive-recorded-fixtures")
+        ),
+        Path("source_registry/source_local_bundle_fixtures.json"): _source_registry_source(
+            "local-bundle-fixtures"
+        ),
         **_query_planner_outputs(),
         **_resolution_run_outputs(),
         **_local_index_outputs(),

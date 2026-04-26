@@ -1,0 +1,129 @@
+{
+  "body": {
+    "selected_source_id": "local-bundle-fixtures",
+    "source_count": 1,
+    "sources": [
+      {
+        "artifact_types": [
+          "fixture_archive",
+          "bundle_member",
+          "readme",
+          "driver_inf"
+        ],
+        "authority_class": "repo_governed_fixture",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": true,
+          "live_deferred": false,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": false,
+          "supports_action_paths": true,
+          "supports_bulk_access": false,
+          "supports_content_text": true,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": true,
+          "supports_hashes": true,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": true,
+          "supports_reviews_or_comments": false,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_file_listing",
+          "supports_member_listing",
+          "supports_hashes",
+          "supports_content_text",
+          "supports_action_paths",
+          "fixture_backed"
+        ],
+        "connector": {
+          "label": "Local bundle fixtures connector",
+          "status": "fixture_backed"
+        },
+        "connector_mode": "fixture_only",
+        "coverage": {
+          "connector_mode": "fixture_only",
+          "coverage_depth": "action_indexed",
+          "coverage_notes": "Committed ZIP fixtures exercise bundle representation, member listing, and member readback for the member-level discovery wedge.",
+          "coverage_status": "active_fixture_scope",
+          "current_limitations": [
+            "Committed fixture scope only",
+            "No arbitrary user filesystem ingestion",
+            "No public-alpha local path access",
+            "No live source probing"
+          ],
+          "indexed_scopes": [
+            "catalog_records",
+            "bundle_representations",
+            "member_paths",
+            "member_readback",
+            "compatibility_hints",
+            "action_paths"
+          ],
+          "last_fixture_update": "static_fixture",
+          "next_coverage_step": "Use these fixtures as the control corpus for Member-Level Synthetic Records v0."
+        },
+        "coverage_depth": "action_indexed",
+        "coverage_status": "active_fixture_scope",
+        "current_limitations": [
+          "Committed fixture scope only",
+          "No arbitrary user filesystem ingestion",
+          "No public-alpha local path access",
+          "No live source probing"
+        ],
+        "extraction_mode": "fixture_only",
+        "freshness_model": "static_fixture",
+        "identifier_types_emitted": [
+          "target_ref",
+          "member_path"
+        ],
+        "indexed_scopes": [
+          "catalog_records",
+          "bundle_representations",
+          "member_paths",
+          "member_readback",
+          "compatibility_hints",
+          "action_paths"
+        ],
+        "legal_posture": "repo_governed_fixture",
+        "live_access_mode": "none",
+        "name": "Local Bundle Fixtures",
+        "next_coverage_step": "Use these fixtures as the control corpus for Member-Level Synthetic Records v0.",
+        "notes": "Active repo-governed fixture source distinct from local-files-placeholder. It is not a local-files connector.",
+        "object_types": [
+          "software_bundle",
+          "driver_support_bundle",
+          "package_member"
+        ],
+        "placeholder_warning": "",
+        "rights_notes": "Repo-governed text fixtures only. No real third-party software or driver binaries are redistributed.",
+        "roles": [
+          "fixture",
+          "discovery_index",
+          "action_provider",
+          "citation_source"
+        ],
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "status": "active_fixture",
+        "status_summary": "Active fixture-backed source record.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "artifact_download",
+          "fixture_file"
+        ],
+        "trust_lane": "fixture"
+      }
+    ],
+    "status": "available"
+  },
+  "status_code": 200
+}
