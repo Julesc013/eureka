@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: forty-two local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, and Compatibility Evidence Pack v0. The latest compatibility-evidence layer annotates current fixture-backed result records with source-backed old-platform evidence while preserving unknown compatibility without adding runtime execution, installer verification, live source behavior, fuzzy/vector retrieval, LLM behavior, or new connectors.
+Current status within this stage: forty-two local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, and Search Usefulness Audit Delta v0. The latest audit-delta pack records that current Search Usefulness Audit status counts are 5 covered, 5 partial, 41 source gaps, 11 capability gaps, and 2 unknowns against a historical reported aggregate baseline, without changing retrieval behavior or recording external baseline observations.
 
 ## Stage 3: Surface Skeletons
 
@@ -125,6 +125,13 @@ resolution, local index, compatibility, CLI, web, local HTTP API, and eval
 summaries while keeping unknown compatibility valid; it does not execute
 software, verify installers, add live source behavior, scrape external systems,
 or become a universal compatibility oracle.
+Search Usefulness Audit Delta v0 now lives under
+`control/audits/search-usefulness-delta-v0/`, recording the current
+Search Usefulness Audit counts, historical reported baseline limitations,
+wedge-specific movement, failure-mode counts, and the recommendation to expand
+old-platform recorded source coverage next. It is audit/reporting only and does
+not add retrieval behavior, source connectors, live source behavior, or external
+baseline observations.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
@@ -132,7 +139,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Search Usefulness Audit Delta v0
+> Old-Platform Source Coverage Expansion v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -143,11 +150,11 @@ v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0,
 Source Coverage and Capability Model v0, Real Source Coverage Pack v0,
 Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0,
-Result Lanes + User-Cost Ranking v0, and Compatibility Evidence Pack v0 now
+Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, and
+Search Usefulness Audit Delta v0 now
 mark the start of a more evidence-led backend phase. The next step is to add
-before/after usefulness evidence so the project can see which old-platform and
-member-discovery query families improved, which gaps remain, and which next
-source or surface slice should be prioritized. That next step must still avoid
-live crawling, external scraping, installer execution, fuzzy/vector search, LLM
-planning, broad source federation, external baseline fabrication, and production
-benchmark claims.
+more recorded old-platform source coverage because the current delta still
+shows 41 `source_gap` statuses and 49 `source_coverage_gap` failure labels.
+That next step must still avoid live crawling, external scraping, installer
+execution, fuzzy/vector search, LLM planning, broad source federation, external
+baseline fabrication, and production benchmark claims.

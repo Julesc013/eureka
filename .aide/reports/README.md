@@ -12,3 +12,8 @@ Search Usefulness Backlog Triage v0 records its governed backlog under
 `control/backlog/search_usefulness_triage/`. If an operator later captures a
 triage review report, keep it as evidence here and leave runtime behavior in
 the product layers.
+
+Search Usefulness Audit Delta v0 records its committed audit/reporting pack
+under `control/audits/search-usefulness-delta-v0/`. It is the canonical place
+for the current usefulness-delta summary; do not duplicate volatile local audit
+run dumps here.

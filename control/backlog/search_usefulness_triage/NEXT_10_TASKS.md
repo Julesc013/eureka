@@ -146,6 +146,37 @@ Do not do: do not weaken queries to improve deltas.
 
 Expected audit effect: makes improvement or regression visible.
 
+Status: implemented as Search Usefulness Audit Delta v0 under
+`control/audits/search-usefulness-delta-v0/`. The measured aggregate movement
+is partial `+4`, source_gap `-2`, and capability_gap `-2` against the
+historical reported baseline. The report recommends Old-Platform Source
+Coverage Expansion v0 next because source coverage remains dominant.
+
+## 7a. Old-Platform Source Coverage Expansion v0
+
+Why: source coverage remains the largest current failure family after the
+audit delta.
+
+Prerequisite: Search Usefulness Audit Delta v0 and the existing recorded
+fixture/source-capability guardrails.
+
+Likely files: `control/inventory/sources/`, `runtime/connectors/`,
+`evals/search_usefulness/`, `tests/integration/`, `tests/hardening/`.
+
+Acceptance criteria: recorded old-platform utility, driver, support-media,
+manual, and latest-compatible release fixtures exist; placeholder sources
+remain honest; audit status changes are evidence-backed; no required command
+uses network access.
+
+Tests to add first: recorded fixture provenance tests, placeholder honesty
+guards, and search-usefulness status-change justification tests.
+
+Do not do: do not add live crawling, scraping, broad source federation,
+arbitrary local filesystem ingestion, or hard-eval weakening.
+
+Expected audit effect: selected source_gap queries should become partial only
+when current source evidence supports the movement.
+
 ## 8. Rust Query Planner Parity Candidate v0
 
 Why: Rust parity should preserve useful Python planner behavior after it stabilizes.

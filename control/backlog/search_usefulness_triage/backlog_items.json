@@ -4,7 +4,7 @@
   "created_by_slice": "search_usefulness_backlog_triage_v0",
   "selected_primary_wedge": "old_platform_software",
   "selected_secondary_wedge": "member_level_discovery",
-  "immediate_next_milestone": "Search Usefulness Audit Delta v0",
+  "immediate_next_milestone": "Old-Platform Source Coverage Expansion v0",
   "audit_snapshot": {
     "total_queries": 64,
     "eureka_status_counts": {
@@ -181,7 +181,7 @@
       "id": "SU-T007",
       "title": "Search Usefulness Audit Delta v0",
       "priority": "P0",
-      "status": "selected",
+      "status": "implemented",
       "wedge": "other",
       "failure_modes": ["eval_truth_gap", "source_coverage_gap", "planner_gap"],
       "evidence": {
@@ -192,14 +192,38 @@
       "user_value": "Shows whether selected implementation slices actually improved audit outcomes without weakening fixtures.",
       "implementation_feasibility": "High now that source, planner, member, lane/user-cost, and compatibility evidence slices exist at v0 scope.",
       "regression_risk": "Low if it reports deltas honestly.",
-      "expected_audit_delta": "Creates before/after evidence for selected query families.",
+      "expected_audit_delta": "Implemented: partial count increased from 1 to 5, source_gap decreased from 43 to 41, and capability_gap decreased from 13 to 11 against the historical reported aggregate baseline.",
       "prerequisite_items": ["SU-T002", "SU-T003", "SU-T004", "SU-T005", "SU-T006"],
       "suggested_milestone": "Search Usefulness Audit Delta v0",
       "acceptance_criteria": ["delta report format exists", "status changes include evidence refs", "external baselines remain pending/manual"],
       "tests_to_add_first": ["delta report validation", "no fake status improvement guard", "external baseline pending guard"],
       "likely_files": ["runtime/engine/evals/", "evals/search_usefulness/", "tests/operations/"],
       "do_not_do": ["do not rewrite queries to make deltas green", "do not fabricate Google/Archive observations"],
-      "notes": "Selected as the immediate next milestone to measure the accumulated usefulness delta without weakening queries or fabricating external baselines."
+      "notes": "Implemented as an audit/reporting pack under control/audits/search-usefulness-delta-v0. It records current Search Usefulness Audit results, historical baseline limitations, wedge-specific findings, and the next recommendation without changing retrieval behavior or recording external baseline observations."
+    },
+    {
+      "id": "SU-T013",
+      "title": "Old-Platform Source Coverage Expansion v0",
+      "priority": "P0",
+      "status": "selected",
+      "wedge": "old_platform_software",
+      "failure_modes": ["source_coverage_gap", "compatibility_evidence_gap", "representation_gap", "member_access_gap"],
+      "evidence": {
+        "query_ids": ["windows_7_apps", "windows_7_portable_apps_archive", "windows_98_registry_repair", "windows_2000_antivirus", "driver_thinkpad_t42_wifi_windows_2000", "creative_ct1740_driver_windows_98"],
+        "audit_file_refs": ["control/audits/search-usefulness-delta-v0/DELTA_SUMMARY.md", "control/audits/search-usefulness-delta-v0/NEXT_RECOMMENDATIONS.md", "evals/search_usefulness/queries/search_usefulness_v0.json"],
+        "finding_ids": ["CTEA-CONTENT-001", "CTEA-CONTENT-002"]
+      },
+      "user_value": "Adds the next recorded source material needed for old Windows/Mac utilities, drivers, support media, manuals, and latest-compatible release queries.",
+      "implementation_feasibility": "Medium; should reuse the recorded-fixture approach from Real Source Coverage Pack v0 without adding live calls or arbitrary local ingestion.",
+      "regression_risk": "Medium; status movement must stay source-backed and placeholder sources must remain honest.",
+      "expected_audit_delta": "Reduce selected source_gap and source_coverage_gap counts through evidence-backed partial results for old-platform software and driver/support-media families.",
+      "prerequisite_items": ["SU-T001", "SU-T002", "SU-T003", "SU-T004", "SU-T005", "SU-T006", "SU-T007"],
+      "suggested_milestone": "Old-Platform Source Coverage Expansion v0",
+      "acceptance_criteria": ["recorded fixtures are committed and deterministic", "old-platform source gaps are targeted explicitly", "placeholder sources remain placeholders", "external baselines remain pending unless manually recorded", "audit deltas are rerun after fixture expansion"],
+      "tests_to_add_first": ["recorded fixture provenance tests", "source placeholder honesty guard updates", "search usefulness status-change justification tests"],
+      "likely_files": ["control/inventory/sources/", "runtime/connectors/", "evals/search_usefulness/", "tests/integration/", "tests/hardening/"],
+      "do_not_do": ["do not add live crawling", "do not scrape external systems", "do not add broad source federation", "do not weaken hard evals"],
+      "notes": "Selected by Search Usefulness Audit Delta v0 because source_gap remains 41 of 64 queries and source_coverage_gap remains the largest current failure mode."
     },
     {
       "id": "SU-T008",

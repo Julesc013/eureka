@@ -10,9 +10,9 @@ The Search Usefulness Audit v0 runner was re-run for this triage. Current local 
 | --- | ---: |
 | Total queries | 64 |
 | Covered | 5 |
-| Partial | 4 |
+| Partial | 5 |
 | Source gap | 41 |
-| Capability gap | 12 |
+| Capability gap | 11 |
 | Unknown | 2 |
 | Google pending manual observations | 64 |
 | Internet Archive metadata pending manual observations | 64 |
@@ -29,7 +29,7 @@ Top failure modes:
 | representation_gap | 14 |
 | decomposition_gap | 12 |
 | member_access_gap | 12 |
-| identity_cluster_gap | 11 |
+| identity_cluster_gap | 12 |
 
 The data says Eureka's current bottleneck is not architecture theater. Source coverage is still dominant, but Old-Platform Software Planner Pack v0 reduced the planner/query-interpretation counts by making old-platform intent deterministic. The next visible gaps are member/representation depth, compatibility evidence, and further recorded source coverage.
 
@@ -53,7 +53,8 @@ These wedges are selected because they cover many high-value hard queries while 
 2. Placeholder/future sources remain Internet Archive live, Wayback/Memento, Software Heritage, and local files; they must not be described as implemented connectors.
 3. Member-level discovery is now bounded to committed fixture members and needs broader recorded source/member coverage before it can answer many real queries.
 4. Compatibility evidence now exists for current fixture-backed old-platform signals, but Windows 98/95, Vista-depth evidence, broader architecture coverage, and real release-note/source coverage remain thin.
-5. Result lanes and user-cost hints exist as bounded annotations, but the project has not yet measured their before/after usefulness delta.
+5. Search Usefulness Audit Delta v0 measured a modest improvement, but source
+   coverage remains dominant.
 
 ## Why Live Crawling Is Deferred
 
@@ -92,7 +93,14 @@ paths, README text, and compatibility notes while keeping unknown compatibility
 valid and avoiding installer execution, live source behavior, scraping, and
 compatibility-oracle claims.
 
-Current next implementation milestone: Search Usefulness Audit Delta v0.
+Search Usefulness Audit Delta v0 then recorded the measured aggregate delta:
+partial results increased from 1 to 5, `source_gap` decreased from 43 to 41,
+and `capability_gap` decreased from 13 to 11 against the historical reported
+aggregate baseline. It did not change retrieval behavior or record external
+baseline observations.
+
+Current next implementation milestone: Old-Platform Source Coverage Expansion
+v0.
 
 ## Evidence That Would Change The Plan
 
@@ -100,10 +108,10 @@ The plan should be revisited if:
 
 - a recorded source pack makes old-platform queries less dominant than another family
 - manual external baseline observations show a different high-value wedge
-- the compatibility evidence model proves too thin to explain status changes in
-  the audit delta
+- a future machine-derived audit delta shows another failure family has become
+  dominant
 - hardening tests reveal route/public-alpha/privacy constraints that prevent safe fixture work
 
-Until then, an audit delta is the lowest-risk next move because source,
-planner, member, lane/cost, and compatibility-evidence v0 seams now exist and
-should be measured before the next source or surface implementation slice.
+Until then, the next lowest-risk implementation move is recorded old-platform
+source coverage expansion because the current audit still reports 41
+`source_gap` query statuses and 49 `source_coverage_gap` failure labels.

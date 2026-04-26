@@ -89,6 +89,11 @@ The repo has already proven:
   fixture metadata, member paths, README text, and compatibility notes while
   preserving unknown compatibility without installer execution, live source
   behavior, scraping, fuzzy/vector retrieval, LLM behavior, or new connectors
+- Search Usefulness Audit Delta v0 as the first stable usefulness-delta pack,
+  recording current Search Usefulness Audit counts, historical reported
+  baseline limitations, wedge-specific movement, and the next source-coverage
+  recommendation without changing retrieval behavior or recording external
+  baseline observations
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -120,17 +125,19 @@ The next backend sequence is:
 21. Member-Level Synthetic Records v0 (implemented as bounded fixture-derived member records)
 22. Result Lanes + User-Cost Ranking v0 (implemented as bounded annotations)
 23. Compatibility Evidence Pack v0 (implemented as source-backed evidence annotations)
-24. Search Usefulness Audit Delta v0
-25. Rust Query Planner Parity Candidate v0
-26. Public Alpha Rehearsal Evidence v0
-27. Compatibility Surface Strategy v0
-28. Native App Work Later
+24. Search Usefulness Audit Delta v0 (implemented as audit/reporting)
+25. Old-Platform Source Coverage Expansion v0
+26. Search Usefulness Baseline Persistence v0
+27. Rust Query Planner Parity Candidate v0
+28. Public Alpha Rehearsal Evidence v0
+29. Compatibility Surface Strategy v0
+30. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Search Usefulness Audit Delta v0
+> Old-Platform Source Coverage Expansion v0
 
 Why this comes next:
 
@@ -187,10 +194,13 @@ Why this comes next:
 - Compatibility Evidence Pack v0 now adds source-backed Windows 7, Windows XP,
   and Windows 2000 fixture evidence where current records support it while
   preserving unknown compatibility
-- the next backend bottleneck is measurement: after source fixtures, planner
-  interpretation, member records, result lanes, and compatibility evidence, the
-  project needs a Search Usefulness Audit Delta v0 to record actual before/after
-  movement without weakening queries or fabricating external baselines
+- Search Usefulness Audit Delta v0 records a modest measured movement: partial
+  results increased from 1 to 5, `source_gap` decreased from 43 to 41, and
+  `capability_gap` decreased from 13 to 11 against the historical reported
+  aggregate baseline
+- the next backend bottleneck is source coverage: current Search Usefulness
+  Audit output still reports 41 `source_gap` query statuses and 49
+  `source_coverage_gap` failure labels
 
 ## Explicit Deferrals
 

@@ -89,3 +89,11 @@ paths, README text, or compatibility notes support them. The audit may use
 those fields to explain compatibility-evidence gaps, but it still does not
 execute software, verify installers, call live sources, or fabricate Google or
 Internet Archive baseline observations.
+
+Search Usefulness Audit Delta v0 now lives under
+`control/audits/search-usefulness-delta-v0/`. It records the current audit
+counts after the source/planner/member/lane/compatibility sequence, compares
+them with a historical reported aggregate baseline, and recommends
+Old-Platform Source Coverage Expansion v0 because source coverage remains the
+dominant gap. The delta pack is audit/reporting only; it does not change
+retrieval behavior or record external baseline observations.

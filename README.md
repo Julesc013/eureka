@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. Many archive-resolution eval tasks
@@ -309,6 +309,7 @@ Roadmaps and operations:
 - [Hard Test Pack](docs/operations/HARD_TEST_PACK.md)
 - [Comprehensive Audit Pack](control/audits/2026-04-25-comprehensive-test-eval-audit/README.md)
 - [Search Usefulness Backlog Triage](control/backlog/search_usefulness_triage/README.md)
+- [Search Usefulness Audit Delta](control/audits/search-usefulness-delta-v0/README.md)
 
 Evals and parity:
 
@@ -339,15 +340,16 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Search Usefulness Audit Delta v0
-2. Rust Query Planner Parity Candidate v0
+1. Old-Platform Source Coverage Expansion v0
+2. Search Usefulness Baseline Persistence v0
+3. Rust Query Planner Parity Candidate v0
 
 Broader near-term direction:
 
-1. measure before/after usefulness after the source, planner, member, lane, and
-   compatibility-evidence slices
-2. use the selected old-platform-compatible software and member-level discovery
-   wedges to scope source, planner, representation, and compatibility slices
+1. expand recorded old-platform software, driver, support-media, manual, and
+   latest-compatible release fixtures without live source behavior
+2. keep using audit deltas to measure source, planner, representation,
+   member, lane, and compatibility-evidence movement
 3. keep Python as oracle while adding Rust candidates only when parity fixtures
    exist
 4. preserve public-alpha safety checks and capture rehearsal evidence
