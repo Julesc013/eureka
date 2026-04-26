@@ -46,6 +46,52 @@ class LocalIndexRenderingTestCase(unittest.TestCase):
         self.assertIn("github-releases-recorded-fixtures", html)
         self.assertIn("fts5", html)
 
+    def test_local_index_rendering_shows_synthetic_member_context(self) -> None:
+        html = render_local_index_html(
+            {
+                "status": "queried",
+                "query": "driver.inf",
+                "result_count": 1,
+                "results": [
+                    {
+                        "index_record_id": "synthetic_member:member:sha256:abc",
+                        "record_kind": "synthetic_member",
+                        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                        "summary": "driver member of ThinkPad T42 wireless support bundle",
+                        "target_ref": "member:sha256:abc",
+                        "resolved_resource_id": "obj.synthetic-member.abc",
+                        "source_id": "local-bundle-fixtures",
+                        "source_family": "local_bundle_fixtures",
+                        "representation_id": "rep.synthetic-member.abc",
+                        "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                        "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+                        "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
+                        "member_kind": "driver",
+                        "media_type": "text/plain",
+                        "size_bytes": 128,
+                        "content_hash": "sha256:abcd",
+                        "action_hints": ["inspect_parent_bundle", "read_member", "preview_member"],
+                        "evidence": ["member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf"],
+                        "route_hints": {"surface_route": "/", "target_ref": "member:sha256:abc"},
+                    }
+                ],
+                "index": {
+                    "index_path_kind": "bootstrap_local_path",
+                    "index_path": "D:/tmp/local-index.sqlite3",
+                    "fts_mode": "fts5",
+                    "record_count": 1,
+                    "record_kind_counts": {"synthetic_member": 1},
+                },
+            },
+            requested_index_path="D:/tmp/local-index.sqlite3",
+            requested_query="driver.inf",
+        )
+
+        self.assertIn("synthetic_member", html)
+        self.assertIn("drivers/wifi/thinkpad_t42/windows2000/driver.inf", html)
+        self.assertIn("local-bundle-fixture:driver-support-cd@1.0", html)
+        self.assertIn("preview_member", html)
+
 
 if __name__ == "__main__":
     unittest.main()

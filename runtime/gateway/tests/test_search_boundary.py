@@ -28,19 +28,23 @@ class SearchPublicApiTestCase(unittest.TestCase):
         response = self.public_api.search_records(SearchCatalogRequest.from_parts("compatibility"))
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.body["result_count"], 1)
-        self.assertEqual(response.body["results"][0]["target_ref"], "fixture:software/compatibility-lab@3.2.1")
+        self.assertGreaterEqual(response.body["result_count"], 1)
+        compatibility_result = next(
+            entry
+            for entry in response.body["results"]
+            if entry["target_ref"] == "fixture:software/compatibility-lab@3.2.1"
+        )
         self.assertEqual(
-            response.body["results"][0]["object"],
+            compatibility_result["object"],
             {
                 "id": "obj.compatibility-lab",
                 "kind": "software",
                 "label": "Compatibility Lab",
             },
         )
-        self.assertTrue(response.body["results"][0]["resolved_resource_id"].startswith("resolved:sha256:"))
-        self.assertEqual(response.body["results"][0]["source"]["label"], "Synthetic Fixture")
-        self.assertEqual(response.body["results"][0]["evidence"][0]["claim_kind"], "label")
+        self.assertTrue(compatibility_result["resolved_resource_id"].startswith("resolved:sha256:"))
+        self.assertEqual(compatibility_result["source"]["label"], "Synthetic Fixture")
+        self.assertEqual(compatibility_result["evidence"][0]["claim_kind"], "label")
 
     def test_public_search_boundary_surfaces_github_release_source_labels(self) -> None:
         response = self.public_api.search_records(SearchCatalogRequest.from_parts("archive"))
@@ -81,3 +85,21 @@ class SearchPublicApiTestCase(unittest.TestCase):
                 },
             },
         )
+
+    def test_public_search_boundary_projects_synthetic_member_context(self) -> None:
+        response = self.public_api.search_records(SearchCatalogRequest.from_parts("driver.inf"))
+
+        self.assertEqual(response.status_code, 200)
+        member_result = next(
+            entry
+            for entry in response.body["results"]
+            if entry["object"].get("member_path") == "drivers/wifi/thinkpad_t42/windows2000/driver.inf"
+        )
+        self.assertRegex(member_result["target_ref"], r"^member:sha256:[a-f0-9]{64}$")
+        self.assertEqual(member_result["object"]["record_kind"], "synthetic_member")
+        self.assertEqual(member_result["object"]["member_kind"], "driver")
+        self.assertEqual(
+            member_result["object"]["parent_target_ref"],
+            "local-bundle-fixture:driver-support-cd@1.0",
+        )
+        self.assertEqual(member_result["source"]["source_id"], "local-bundle-fixtures")

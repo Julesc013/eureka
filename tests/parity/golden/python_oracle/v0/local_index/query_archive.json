@@ -4,14 +4,15 @@
       "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
       "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
       "index_path_kind": "bootstrap_local_path",
-      "record_count": 130,
+      "record_count": 182,
       "record_kind_counts": {
-        "evidence": 58,
+        "evidence": 101,
         "member": 12,
         "representation": 26,
         "resolved_object": 13,
         "source_record": 8,
-        "state_or_release": 13
+        "state_or_release": 13,
+        "synthetic_member": 9
       }
     },
     "query": "archive",
@@ -48,8 +49,10 @@
         "index_record_id": "resolved_object:fixture:software/archive-viewer@0.9.0",
         "label": "Archive Viewer",
         "record_kind": "resolved_object",
+        "representation_id": "rep.archive-viewer.source",
         "resolved_resource_id": "obj.archive-viewer",
         "route_hints": {
+          "record_kind": "resolved_object",
           "surface_route": "/",
           "target_ref": "fixture:software/archive-viewer@0.9.0"
         },
@@ -156,8 +159,10 @@
         "index_record_id": "resolved_object:fixture:software/archivebox@0.8.5",
         "label": "ArchiveBox 0.8.5",
         "record_kind": "resolved_object",
+        "representation_id": "rep.archivebox.synthetic.source",
         "resolved_resource_id": "obj.archivebox.synthetic",
         "route_hints": {
+          "record_kind": "resolved_object",
           "surface_route": "/",
           "target_ref": "fixture:software/archivebox@0.8.5"
         },
@@ -264,8 +269,10 @@
         "index_record_id": "resolved_object:fixture:software/compatibility-lab@3.2.1",
         "label": "Compatibility Lab",
         "record_kind": "resolved_object",
+        "representation_id": "rep.compatibility-lab.source",
         "resolved_resource_id": "obj.compatibility-lab",
         "route_hints": {
+          "record_kind": "resolved_object",
           "surface_route": "/",
           "target_ref": "fixture:software/compatibility-lab@3.2.1"
         },
@@ -446,8 +453,10 @@
         "index_record_id": "resolved_object:internet-archive-recorded:ia-firefox-xp-support-fixture",
         "label": "Firefox XP support notes recorded fixture",
         "record_kind": "resolved_object",
+        "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
         "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
         "route_hints": {
+          "record_kind": "resolved_object",
           "surface_route": "/",
           "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
         },
@@ -839,8 +848,10 @@
         "index_record_id": "resolved_object:fixture:software/synthetic-demo-app@1.0.0",
         "label": "Synthetic Demo App",
         "record_kind": "resolved_object",
+        "representation_id": "rep.synthetic-demo-app.source",
         "resolved_resource_id": "obj.synthetic-demo-app",
         "route_hints": {
+          "record_kind": "resolved_object",
           "surface_route": "/",
           "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
         },
@@ -993,8 +1004,10 @@
         "index_record_id": "resolved_object:fixture:software/synthetic-demo-suite@2.0.0",
         "label": "Synthetic Demo Suite",
         "record_kind": "resolved_object",
+        "representation_id": "rep.synthetic-demo-suite.source",
         "resolved_resource_id": "obj.synthetic-demo-suite",
         "route_hints": {
+          "record_kind": "resolved_object",
           "surface_route": "/",
           "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
         },
@@ -1105,8 +1118,10 @@
         "index_record_id": "resolved_object:internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
         "label": "ThinkPad T42 wireless driver support media recorded fixture",
         "record_kind": "resolved_object",
+        "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.metadata",
         "resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
         "route_hints": {
+          "record_kind": "resolved_object",
           "surface_route": "/",
           "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
         },

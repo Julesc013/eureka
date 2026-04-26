@@ -22,6 +22,7 @@ from runtime.engine.interfaces.normalize import (
     normalize_internet_archive_recorded_item,
     normalize_local_bundle_record,
 )
+from runtime.engine.synthetic_records import synthesize_member_normalized_records
 from runtime.source_registry import load_source_registry
 
 
@@ -44,8 +45,13 @@ def _build_current_catalog() -> NormalizedCatalog:
         normalize_local_bundle_record(extract_local_bundle_source_record(record))
         for record in LocalBundleFixturesConnector().load_source_records()
     )
+    synthetic_member_records = synthesize_member_normalized_records(local_bundle_records)
     return NormalizedCatalog(
-        synthetic_records + github_records + internet_archive_records + local_bundle_records
+        synthetic_records
+        + github_records
+        + internet_archive_records
+        + local_bundle_records
+        + synthetic_member_records
     )
 
 
@@ -82,14 +88,15 @@ class RealSourceCoveragePackIndexTestCase(unittest.TestCase):
         driver_member = next(
             record
             for record in records
-            if record.record_kind == "member"
+            if record.record_kind == "synthetic_member"
             and record.member_path == "drivers/wifi/thinkpad_t42/windows2000/driver.inf"
         )
 
         self.assertEqual(driver_member.source_id, "local-bundle-fixtures")
         self.assertEqual(driver_member.source_family, "local_bundle_fixtures")
-        self.assertEqual(driver_member.target_ref, "local-bundle-fixture:driver-support-cd@1.0")
-        self.assertEqual(driver_member.representation_id, "rep.local-bundle.driver-support-cd.zip")
+        self.assertRegex(driver_member.target_ref or "", r"^member:sha256:[a-f0-9]{64}$")
+        self.assertEqual(driver_member.parent_target_ref, "local-bundle-fixture:driver-support-cd@1.0")
+        self.assertEqual(driver_member.parent_representation_id, "rep.local-bundle.driver-support-cd.zip")
 
 
 if __name__ == "__main__":

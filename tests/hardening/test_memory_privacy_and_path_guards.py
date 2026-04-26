@@ -2,6 +2,8 @@ import json
 import unittest
 
 from surfaces.web.server.server_config import WebServerConfig
+from runtime.gateway import build_demo_search_public_api
+from runtime.gateway.public_api import SearchCatalogRequest
 from tests.hardening.helpers import find_private_path_leaks, load_json, repo_path, read_text
 
 
@@ -83,6 +85,20 @@ class MemoryPrivacyAndPathGuardsTest(unittest.TestCase):
                     for leak in find_private_path_leaks(payload)
                 )
         self.assertEqual(leaks, [])
+
+    def test_synthetic_member_public_projection_does_not_leak_private_paths(self):
+        response = build_demo_search_public_api().search_records(
+            SearchCatalogRequest.from_parts("driver.inf"),
+        )
+        member = next(
+            result
+            for result in response.body["results"]
+            if result["object"].get("member_path") == "drivers/wifi/thinkpad_t42/windows2000/driver.inf"
+        )
+
+        self.assertRegex(member["target_ref"], r"^member:sha256:[a-f0-9]{64}$")
+        self.assertNotIn("drivers/", member["target_ref"])
+        self.assertEqual(find_private_path_leaks(member), [])
 
 
 if __name__ == "__main__":

@@ -107,14 +107,14 @@
   "tasks": [
     {
       "absence_summary": {
-        "checked_record_count": 13,
+        "checked_record_count": 22,
         "checked_source_families": [
           "synthetic_fixture",
           "github_releases",
           "internet_archive_recorded",
           "local_bundle_fixtures"
         ],
-        "checked_subject_count": 11,
+        "checked_subject_count": 20,
         "likely_reason_code": "query_not_present_in_bounded_corpus",
         "near_match_count": 0,
         "next_steps": [
@@ -197,14 +197,14 @@
           "message": "Absence reasoning explained the empty bounded search result.",
           "name": "absence.reasoning",
           "observed": {
-            "checked_record_count": 13,
+            "checked_record_count": 22,
             "checked_source_families": [
               "synthetic_fixture",
               "github_releases",
               "internet_archive_recorded",
               "local_bundle_fixtures"
             ],
-            "checked_subject_count": 11,
+            "checked_subject_count": 20,
             "likely_reason_code": "query_not_present_in_bounded_corpus",
             "near_match_count": 0,
             "next_steps": [
@@ -352,14 +352,14 @@
     },
     {
       "absence_summary": {
-        "checked_record_count": 13,
+        "checked_record_count": 22,
         "checked_source_families": [
           "synthetic_fixture",
           "github_releases",
           "internet_archive_recorded",
           "local_bundle_fixtures"
         ],
-        "checked_subject_count": 11,
+        "checked_subject_count": 20,
         "likely_reason_code": "query_not_present_in_bounded_corpus",
         "near_match_count": 0,
         "next_steps": [
@@ -442,14 +442,14 @@
           "message": "Absence reasoning explained the empty bounded search result.",
           "name": "absence.reasoning",
           "observed": {
-            "checked_record_count": 13,
+            "checked_record_count": 22,
             "checked_source_families": [
               "synthetic_fixture",
               "github_releases",
               "internet_archive_recorded",
               "local_bundle_fixtures"
             ],
-            "checked_subject_count": 11,
+            "checked_subject_count": 20,
             "likely_reason_code": "query_not_present_in_bounded_corpus",
             "near_match_count": 0,
             "next_steps": [
@@ -681,8 +681,10 @@
                 "index_record_id": "resolved_object:internet-archive-recorded:ia-firefox-xp-support-fixture",
                 "label": "Firefox XP support notes recorded fixture",
                 "record_kind": "resolved_object",
+                "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
                 "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
                 "route_hints": {
+                  "record_kind": "resolved_object",
                   "surface_route": "/",
                   "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
                 },
@@ -967,8 +969,10 @@
           "index_record_id": "resolved_object:internet-archive-recorded:ia-firefox-xp-support-fixture",
           "label": "Firefox XP support notes recorded fixture",
           "record_kind": "resolved_object",
+          "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
           "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
           "route_hints": {
+            "record_kind": "resolved_object",
             "surface_route": "/",
             "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
           },
@@ -1068,14 +1072,14 @@
     },
     {
       "absence_summary": {
-        "checked_record_count": 13,
+        "checked_record_count": 22,
         "checked_source_families": [
           "synthetic_fixture",
           "github_releases",
           "internet_archive_recorded",
           "local_bundle_fixtures"
         ],
-        "checked_subject_count": 11,
+        "checked_subject_count": 20,
         "likely_reason_code": "related_subjects_exist",
         "near_match_count": 1,
         "next_steps": [
@@ -1159,14 +1163,14 @@
           "message": "Absence reasoning explained the empty bounded search result.",
           "name": "absence.reasoning",
           "observed": {
-            "checked_record_count": 13,
+            "checked_record_count": 22,
             "checked_source_families": [
               "synthetic_fixture",
               "github_releases",
               "internet_archive_recorded",
               "local_bundle_fixtures"
             ],
-            "checked_subject_count": 11,
+            "checked_subject_count": 20,
             "likely_reason_code": "related_subjects_exist",
             "near_match_count": 1,
             "next_steps": [
@@ -1339,14 +1343,14 @@
     },
     {
       "absence_summary": {
-        "checked_record_count": 13,
+        "checked_record_count": 22,
         "checked_source_families": [
           "synthetic_fixture",
           "github_releases",
           "internet_archive_recorded",
           "local_bundle_fixtures"
         ],
-        "checked_subject_count": 11,
+        "checked_subject_count": 20,
         "likely_reason_code": "query_not_present_in_bounded_corpus",
         "near_match_count": 0,
         "next_steps": [
@@ -1429,14 +1433,14 @@
           "message": "Absence reasoning explained the empty bounded search result.",
           "name": "absence.reasoning",
           "observed": {
-            "checked_record_count": 13,
+            "checked_record_count": 22,
             "checked_source_families": [
               "synthetic_fixture",
               "github_releases",
               "internet_archive_recorded",
               "local_bundle_fixtures"
             ],
-            "checked_subject_count": 11,
+            "checked_subject_count": 20,
             "likely_reason_code": "query_not_present_in_bounded_corpus",
             "near_match_count": 0,
             "next_steps": [
@@ -1599,14 +1603,14 @@
     },
     {
       "absence_summary": {
-        "checked_record_count": 13,
+        "checked_record_count": 22,
         "checked_source_families": [
           "synthetic_fixture",
           "github_releases",
           "internet_archive_recorded",
           "local_bundle_fixtures"
         ],
-        "checked_subject_count": 11,
+        "checked_subject_count": 20,
         "likely_reason_code": "query_not_present_in_bounded_corpus",
         "near_match_count": 0,
         "next_steps": [
@@ -1691,14 +1695,14 @@
           "message": "Absence reasoning explained the empty bounded search result.",
           "name": "absence.reasoning",
           "observed": {
-            "checked_record_count": 13,
+            "checked_record_count": 22,
             "checked_source_families": [
               "synthetic_fixture",
               "github_releases",
               "internet_archive_recorded",
               "local_bundle_fixtures"
             ],
-            "checked_subject_count": 11,
+            "checked_subject_count": 20,
             "likely_reason_code": "query_not_present_in_bounded_corpus",
             "near_match_count": 0,
             "next_steps": [

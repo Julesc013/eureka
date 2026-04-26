@@ -47,6 +47,23 @@ class LocalIndexCliTestCase(unittest.TestCase):
         self.assertEqual(payload["status"], "queried")
         self.assertGreaterEqual(payload["result_count"], 1)
 
+    def test_index_query_shows_synthetic_member_parent_context(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            index_path = str(Path(temp_dir) / "local-index.sqlite3")
+            run_cli("index-build", "--index-path", index_path)
+            exit_code, output = run_cli(
+                "index-query",
+                "driver.inf",
+                "--index-path",
+                index_path,
+            )
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("synthetic_member", output)
+        self.assertIn("drivers/wifi/thinkpad_t42/windows2000/driver.inf", output)
+        self.assertIn("parent_target_ref: local-bundle-fixture:driver-support-cd@1.0", output)
+        self.assertIn("member_kind: driver", output)
+
 
 if __name__ == "__main__":
     unittest.main()

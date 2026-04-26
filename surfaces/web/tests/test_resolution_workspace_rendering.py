@@ -207,6 +207,47 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("sha256:1234", html)
         self.assertIn("/stored/artifact?artifact_id=sha256%3A1234", html)
 
+    def test_member_resolution_rendering_includes_parent_lineage(self) -> None:
+        html = render_resolution_workspace_html(
+            {
+                "session_id": "session.member",
+                "resolved_resource_id": "resolved:sha256:member",
+                "active_job": {
+                    "job_id": "job-0003",
+                    "status": "completed",
+                    "target_ref": "member:sha256:abc",
+                },
+                "selected_object": {
+                    "id": "obj.synthetic-member.abc",
+                    "kind": "synthetic_member",
+                    "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                    "record_kind": "synthetic_member",
+                    "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                    "member_kind": "driver",
+                    "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+                    "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
+                    "media_type": "text/plain",
+                    "size_bytes": 256,
+                    "content_hash": "sha256:abcd",
+                    "action_hints": ["inspect_parent_bundle", "read_member", "preview_member"],
+                },
+                "source": {
+                    "family": "local_bundle_fixtures",
+                    "source_id": "local-bundle-fixtures",
+                    "label": "Local Bundle Fixtures",
+                },
+                "evidence": [],
+                "representations": [],
+            },
+        )
+
+        self.assertIn("Member path", html)
+        self.assertIn("drivers/wifi/thinkpad_t42/windows2000/driver.inf", html)
+        self.assertIn("Parent target ref", html)
+        self.assertIn("local-bundle-fixture:driver-support-cd@1.0", html)
+        self.assertIn("preview_member", html)
+        self.assertIn("local-bundle-fixtures", html)
+
     def test_unknown_target_rendering_includes_blocked_status_notice_and_unavailable_store_state(self) -> None:
         html = render_resolution_workspace_html(
             {

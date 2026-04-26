@@ -42,6 +42,7 @@ class WorkbenchSessionMappingTestCase(unittest.TestCase):
                 },
                 "source": {
                     "family": "synthetic_fixture",
+                    "source_id": "synthetic-fixtures",
                     "label": "Synthetic Fixture",
                     "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
                 },

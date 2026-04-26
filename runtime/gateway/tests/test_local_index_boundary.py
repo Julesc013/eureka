@@ -53,6 +53,27 @@ class LocalIndexPublicApiTestCase(unittest.TestCase):
         self.assertEqual(empty_query_response.status_code, 400)
         self.assertEqual(empty_query_response.body["notices"][0]["code"], "invalid_local_index_query")
 
+    def test_query_projects_synthetic_member_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            index_path = str(Path(temp_dir) / "local-index.sqlite3")
+            self.public_api.build_index(LocalIndexBuildRequest.from_parts(index_path))
+            response = self.public_api.query_index(
+                LocalIndexQueryRequest.from_parts(index_path, "driver.inf"),
+            )
+
+        member = next(
+            result
+            for result in response.body["results"]
+            if result["record_kind"] == "synthetic_member"
+            and result.get("member_path") == "drivers/wifi/thinkpad_t42/windows2000/driver.inf"
+        )
+        self.assertEqual(member["parent_target_ref"], "local-bundle-fixture:driver-support-cd@1.0")
+        self.assertEqual(member["parent_representation_id"], "rep.local-bundle.driver-support-cd.zip")
+        self.assertEqual(member["member_kind"], "driver")
+        self.assertEqual(member["media_type"], "text/plain")
+        self.assertRegex(member["content_hash"], r"^sha256:[a-f0-9]{64}$")
+        self.assertIn("preview_member", member["action_hints"])
+
 
 if __name__ == "__main__":
     unittest.main()

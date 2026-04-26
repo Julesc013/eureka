@@ -89,3 +89,37 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
         self.assertIn("search_no_matches", html)
         self.assertIn("No bounded records matched query", html)
         self.assertIn("/absence/search?q=missing", html)
+
+    def test_member_results_render_parent_and_member_context(self) -> None:
+        html = render_search_results_html(
+            {
+                "query": "driver.inf",
+                "result_count": 1,
+                "results": [
+                    {
+                        "target_ref": "member:sha256:abc",
+                        "resolved_resource_id": "resolved:sha256:abc",
+                        "object": {
+                            "id": "obj.synthetic-member.abc",
+                            "kind": "synthetic_member",
+                            "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                            "record_kind": "synthetic_member",
+                            "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                            "member_kind": "driver",
+                            "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+                        },
+                        "source": {
+                            "family": "local_bundle_fixtures",
+                            "source_id": "local-bundle-fixtures",
+                            "label": "Local Bundle Fixtures",
+                        },
+                        "evidence": [],
+                    }
+                ],
+            }
+        )
+
+        self.assertIn("drivers/wifi/thinkpad_t42/windows2000/driver.inf", html)
+        self.assertIn("[member: drivers/wifi/thinkpad_t42/windows2000/driver.inf]", html)
+        self.assertIn("[kind: driver]", html)
+        self.assertIn("[parent: local-bundle-fixture:driver-support-cd@1.0]", html)

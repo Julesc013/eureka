@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.gateway import build_demo_resolution_jobs_public_api
-from runtime.gateway.public_api import SubmitResolutionJobRequest
+from runtime.gateway import build_demo_resolution_jobs_public_api, build_demo_search_public_api
+from runtime.gateway.public_api import SearchCatalogRequest, SubmitResolutionJobRequest
 
 
 KNOWN_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
@@ -83,6 +83,33 @@ class ResolutionJobServiceTestCase(unittest.TestCase):
         )
         self.assertEqual(response.body["result"]["evidence"][1]["claim_kind"], "version")
         self.assertEqual(response.body["result"]["evidence"][1]["claim_value"], "v2.65.0")
+
+    def test_read_boundary_returns_member_lineage_for_synthetic_member_target(self) -> None:
+        search_api = build_demo_search_public_api()
+        search_response = search_api.search_records(
+            SearchCatalogRequest.from_parts("driver.inf"),
+        )
+        member_target_ref = next(
+            entry["target_ref"]
+            for entry in search_response.body["results"]
+            if entry["object"].get("member_path") == "drivers/wifi/thinkpad_t42/windows2000/driver.inf"
+        )
+        submit_response = self.public_api.submit_resolution_job(
+            SubmitResolutionJobRequest.from_parts(member_target_ref),
+        )
+
+        response = self.public_api.read_resolution_job(submit_response.body["job_id"])
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.body["status"], "completed")
+        primary_object = response.body["result"]["primary_object"]
+        self.assertEqual(primary_object["record_kind"], "synthetic_member")
+        self.assertEqual(primary_object["member_kind"], "driver")
+        self.assertEqual(primary_object["member_path"], "drivers/wifi/thinkpad_t42/windows2000/driver.inf")
+        self.assertEqual(primary_object["parent_target_ref"], "local-bundle-fixture:driver-support-cd@1.0")
+        self.assertTrue(
+            any(item["claim_kind"] == "member_path" for item in response.body["result"]["evidence"])
+        )
 
     def test_read_boundary_returns_blocked_job_for_unknown_target(self) -> None:
         submit_response = self.public_api.submit_resolution_job(
