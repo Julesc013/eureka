@@ -32,13 +32,44 @@ class ObjectSummary:
     id: str
     kind: str | None = None
     label: str | None = None
+    record_kind: str | None = None
+    parent_target_ref: str | None = None
+    parent_resolved_resource_id: str | None = None
+    parent_representation_id: str | None = None
+    parent_object_label: str | None = None
+    member_path: str | None = None
+    member_label: str | None = None
+    member_kind: str | None = None
+    media_type: str | None = None
+    size_bytes: int | None = None
+    content_hash: str | None = None
+    action_hints: tuple[str, ...] = ()
 
-    def to_dict(self) -> dict[str, str]:
-        payload = {"id": self.id}
+    def to_dict(self) -> dict[str, Any]:
+        payload: dict[str, Any] = {"id": self.id}
         if self.kind is not None:
             payload["kind"] = self.kind
         if self.label is not None:
             payload["label"] = self.label
+        for field_name in (
+            "record_kind",
+            "parent_target_ref",
+            "parent_resolved_resource_id",
+            "parent_representation_id",
+            "parent_object_label",
+            "member_path",
+            "member_label",
+            "member_kind",
+            "media_type",
+            "content_hash",
+        ):
+            value = getattr(self, field_name)
+            if value is not None:
+                payload[field_name] = value
+        if self.size_bytes is not None:
+            payload["size_bytes"] = self.size_bytes
+        if self.action_hints:
+            payload["action_hints"] = list(self.action_hints)
         return payload
 
 

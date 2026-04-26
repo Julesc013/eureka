@@ -61,7 +61,16 @@ class LocalIndexRecordSummary:
     version_or_state: str | None = None
     representation_id: str | None = None
     member_path: str | None = None
+    parent_target_ref: str | None = None
+    parent_resolved_resource_id: str | None = None
+    parent_representation_id: str | None = None
+    parent_object_label: str | None = None
+    member_kind: str | None = None
+    media_type: str | None = None
+    size_bytes: int | None = None
+    content_hash: str | None = None
     evidence: tuple[str, ...] = ()
+    action_hints: tuple[str, ...] = ()
     route_hints: dict[str, Any] | None = None
 
     def to_dict(self) -> dict[str, Any]:
@@ -92,6 +101,22 @@ class LocalIndexRecordSummary:
             payload["representation_id"] = self.representation_id
         if self.member_path is not None:
             payload["member_path"] = self.member_path
+        for field_name in (
+            "parent_target_ref",
+            "parent_resolved_resource_id",
+            "parent_representation_id",
+            "parent_object_label",
+            "member_kind",
+            "media_type",
+            "content_hash",
+        ):
+            value = getattr(self, field_name)
+            if value is not None:
+                payload[field_name] = value
+        if self.size_bytes is not None:
+            payload["size_bytes"] = self.size_bytes
+        if self.action_hints:
+            payload["action_hints"] = list(self.action_hints)
         return payload
 
 

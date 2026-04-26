@@ -19,8 +19,17 @@ class IndexRecord:
     version_or_state: str | None = None
     representation_id: str | None = None
     member_path: str | None = None
+    parent_target_ref: str | None = None
+    parent_resolved_resource_id: str | None = None
+    parent_representation_id: str | None = None
+    parent_object_label: str | None = None
+    member_kind: str | None = None
+    media_type: str | None = None
+    size_bytes: int | None = None
+    content_hash: str | None = None
     content_text: str | None = None
     evidence: tuple[str, ...] = ()
+    action_hints: tuple[str, ...] = ()
     route_hints: dict[str, Any] | None = None
     created_by_slice: str = "local_index_v0"
 
@@ -53,8 +62,24 @@ class IndexRecord:
             payload["representation_id"] = self.representation_id
         if self.member_path is not None:
             payload["member_path"] = self.member_path
+        for field_name in (
+            "parent_target_ref",
+            "parent_resolved_resource_id",
+            "parent_representation_id",
+            "parent_object_label",
+            "member_kind",
+            "media_type",
+            "content_hash",
+        ):
+            value = getattr(self, field_name)
+            if value is not None:
+                payload[field_name] = value
+        if self.size_bytes is not None:
+            payload["size_bytes"] = self.size_bytes
         if self.content_text is not None:
             payload["content_text"] = self.content_text
+        if self.action_hints:
+            payload["action_hints"] = list(self.action_hints)
         return payload
 
     def search_text(self) -> str:
@@ -70,8 +95,17 @@ class IndexRecord:
             self.version_or_state,
             self.representation_id,
             self.member_path,
+            self.parent_target_ref,
+            self.parent_resolved_resource_id,
+            self.parent_representation_id,
+            self.parent_object_label,
+            self.member_kind,
+            self.media_type,
+            str(self.size_bytes) if self.size_bytes is not None else None,
+            self.content_hash,
             self.content_text,
             " ".join(self.evidence),
+            " ".join(self.action_hints),
             _route_hints_text(self.route_hints),
         ]
         return " ".join(part for part in fields if isinstance(part, str) and part).strip()

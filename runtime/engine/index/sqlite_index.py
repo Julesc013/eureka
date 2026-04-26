@@ -16,6 +16,7 @@ from runtime.engine.interfaces.public.local_index import (
 SCHEMA_VERSION = "local_index_v0"
 RECORD_KINDS = (
     "resolved_object",
+    "synthetic_member",
     "state_or_release",
     "representation",
     "member",
@@ -138,8 +139,17 @@ def _create_schema(connection: sqlite3.Connection, *, fts5_available: bool) -> N
             version_or_state TEXT,
             representation_id TEXT,
             member_path TEXT,
+            parent_target_ref TEXT,
+            parent_resolved_resource_id TEXT,
+            parent_representation_id TEXT,
+            parent_object_label TEXT,
+            member_kind TEXT,
+            media_type TEXT,
+            size_bytes INTEGER,
+            content_hash TEXT,
             content_text TEXT,
             evidence_json TEXT NOT NULL,
+            action_hints_json TEXT NOT NULL,
             route_hints_json TEXT NOT NULL,
             search_text TEXT NOT NULL,
             created_by_slice TEXT NOT NULL
@@ -205,12 +215,21 @@ def _insert_records(
                 version_or_state,
                 representation_id,
                 member_path,
+                parent_target_ref,
+                parent_resolved_resource_id,
+                parent_representation_id,
+                parent_object_label,
+                member_kind,
+                media_type,
+                size_bytes,
+                content_hash,
                 content_text,
                 evidence_json,
+                action_hints_json,
                 route_hints_json,
                 search_text,
                 created_by_slice
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 record.index_record_id,
@@ -226,8 +245,17 @@ def _insert_records(
                 record.version_or_state,
                 record.representation_id,
                 record.member_path,
+                record.parent_target_ref,
+                record.parent_resolved_resource_id,
+                record.parent_representation_id,
+                record.parent_object_label,
+                record.member_kind,
+                record.media_type,
+                record.size_bytes,
+                record.content_hash,
                 record.content_text,
                 json.dumps(list(record.evidence), sort_keys=True),
+                json.dumps(list(record.action_hints), sort_keys=True),
                 json.dumps(record.route_hints or {}, sort_keys=True),
                 search_text,
                 record.created_by_slice,
@@ -338,6 +366,7 @@ def _fts_query(query: str) -> str:
 
 def _row_to_summary(row: sqlite3.Row) -> LocalIndexRecordSummary:
     evidence = json.loads(row["evidence_json"])
+    action_hints = json.loads(row["action_hints_json"])
     route_hints = json.loads(row["route_hints_json"])
     return LocalIndexRecordSummary(
         index_record_id=str(row["index_record_id"]),
@@ -353,12 +382,27 @@ def _row_to_summary(row: sqlite3.Row) -> LocalIndexRecordSummary:
         version_or_state=_optional_text(row["version_or_state"]),
         representation_id=_optional_text(row["representation_id"]),
         member_path=_optional_text(row["member_path"]),
+        parent_target_ref=_optional_text(row["parent_target_ref"]),
+        parent_resolved_resource_id=_optional_text(row["parent_resolved_resource_id"]),
+        parent_representation_id=_optional_text(row["parent_representation_id"]),
+        parent_object_label=_optional_text(row["parent_object_label"]),
+        member_kind=_optional_text(row["member_kind"]),
+        media_type=_optional_text(row["media_type"]),
+        size_bytes=_optional_non_negative_int(row["size_bytes"]),
+        content_hash=_optional_text(row["content_hash"]),
         evidence=tuple(str(item) for item in evidence if isinstance(item, str)),
+        action_hints=tuple(str(item) for item in action_hints if isinstance(item, str)),
         route_hints=route_hints if isinstance(route_hints, dict) else {},
     )
 
 
 def _optional_text(value: object) -> str | None:
     if isinstance(value, str) and value:
+        return value
+    return None
+
+
+def _optional_non_negative_int(value: object) -> int | None:
+    if isinstance(value, int) and value >= 0:
         return value
     return None

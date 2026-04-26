@@ -1,0 +1,40 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka.local/contracts/archive/synthetic_record.schema.json"
+x-eureka-status: draft
+title: "Eureka Synthetic Record"
+type: object
+additionalProperties: false
+required:
+  - synthetic_target_ref
+  - synthetic_record_kind
+  - derived_from
+  - created_by_slice
+properties:
+  synthetic_target_ref:
+    type: string
+  synthetic_record_kind:
+    enum:
+      - synthetic_member
+  derived_from:
+    type: object
+    additionalProperties: false
+    required:
+      - parent_target_ref
+      - source_family
+    properties:
+      parent_target_ref:
+        type: string
+      parent_representation_id:
+        type: string
+      source_id:
+        type: string
+      source_family:
+        type: string
+      member_path:
+        type: string
+  created_by_slice:
+    type: string
+  notes:
+    type: array
+    items:
+      type: string

@@ -71,10 +71,10 @@ def _build_catalog_records(record: NormalizedResolutionRecord) -> list[IndexReco
 
     records.append(
         IndexRecord(
-            index_record_id=f"resolved_object:{record.target_ref}",
-            record_kind="resolved_object",
+            index_record_id=f"{record.record_kind}:{record.target_ref}",
+            record_kind=record.record_kind,
             label=record.object_label,
-            summary=f"{record.object_kind} from {record.source_family_label}",
+            summary=_catalog_record_summary(record),
             target_ref=record.target_ref,
             resolved_resource_id=record.object_id,
             source_id=source_id,
@@ -82,24 +82,44 @@ def _build_catalog_records(record: NormalizedResolutionRecord) -> list[IndexReco
             source_label=source_label,
             subject_key=subject_key,
             version_or_state=version_or_state,
+            representation_id=record.representation_id,
+            member_path=record.member_path,
+            parent_target_ref=record.parent_target_ref,
+            parent_resolved_resource_id=record.parent_resolved_resource_id,
+            parent_representation_id=record.parent_representation_id,
+            parent_object_label=record.parent_object_label,
+            member_kind=record.member_kind,
+            media_type=record.media_type,
+            size_bytes=record.size_bytes,
+            content_hash=record.content_hash,
             content_text=_join_text(
                 record.object_label,
                 record.object_kind,
                 record.target_ref,
                 version_or_state,
                 source_label,
+                record.member_path,
+                record.member_label,
+                record.member_kind,
+                record.parent_object_label,
+                " ".join(record.action_hints),
                 " ".join(representation_labels),
                 " ".join(evidence_text),
             ),
             evidence=evidence_text,
-            route_hints={
+            action_hints=record.action_hints,
+            route_hints=_compact_mapping({
                 "surface_route": "/",
                 "target_ref": record.target_ref,
-            },
+                "record_kind": record.record_kind,
+                "parent_target_ref": record.parent_target_ref,
+                "parent_representation_id": record.parent_representation_id,
+                "member_path": record.member_path,
+            }),
         )
     )
 
-    if record.state_id:
+    if record.record_kind != "synthetic_member" and record.state_id:
         records.append(
             IndexRecord(
                 index_record_id=f"state_or_release:{record.state_id}",
@@ -129,16 +149,17 @@ def _build_catalog_records(record: NormalizedResolutionRecord) -> list[IndexReco
             )
         )
 
-    for representation in sorted(record.representations, key=lambda item: item.representation_id):
-        records.append(_representation_record(record, representation, source_id, source_label, version_or_state))
-        records.extend(
-            _member_records(
-                record,
-                representation,
-                source_id=source_id,
-                source_label=source_label,
+    if record.record_kind != "synthetic_member":
+        for representation in sorted(record.representations, key=lambda item: item.representation_id):
+            records.append(_representation_record(record, representation, source_id, source_label, version_or_state))
+            records.extend(
+                _member_records(
+                    record,
+                    representation,
+                    source_id=source_id,
+                    source_label=source_label,
+                )
             )
-        )
 
     for index, evidence in enumerate(record.evidence):
         records.append(
@@ -173,6 +194,14 @@ def _build_catalog_records(record: NormalizedResolutionRecord) -> list[IndexReco
         )
 
     return records
+
+
+def _catalog_record_summary(record: NormalizedResolutionRecord) -> str:
+    if record.record_kind == "synthetic_member":
+        parent_label = record.parent_object_label or record.parent_target_ref or "parent bundle"
+        member_kind = record.member_kind or "member"
+        return f"{member_kind} member of {parent_label}"
+    return f"{record.object_kind} from {record.source_family_label}"
 
 
 def _representation_record(
@@ -318,3 +347,7 @@ def _join_text(*parts: str | None) -> str | None:
     if not values:
         return None
     return " ".join(values)
+
+
+def _compact_mapping(value: dict[str, object | None]) -> dict[str, object]:
+    return {key: item for key, item in value.items() if item is not None}

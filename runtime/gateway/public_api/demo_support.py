@@ -41,6 +41,7 @@ from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolut
 from runtime.engine.states import DeterministicSubjectStatesService
 from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBundleInspectionEngineService
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
+from runtime.engine.synthetic_records import synthesize_member_normalized_records
 from runtime.source_registry import load_source_registry
 from runtime.gateway.public_api.action_plan_boundary import ActionPlanPublicApi
 from runtime.gateway.public_api.archive_resolution_evals_boundary import (
@@ -319,8 +320,13 @@ def _build_demo_normalized_catalog() -> NormalizedCatalog:
         normalize_local_bundle_record(extract_local_bundle_source_record(record))
         for record in local_bundle_connector.load_source_records()
     )
+    synthetic_member_records = synthesize_member_normalized_records(local_bundle_records)
     return NormalizedCatalog(
-        synthetic_records + github_records + internet_archive_records + local_bundle_records
+        synthetic_records
+        + github_records
+        + internet_archive_records
+        + local_bundle_records
+        + synthetic_member_records
     )
 
 

@@ -1,0 +1,73 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka.local/contracts/archive/member_record.schema.json"
+x-eureka-status: draft
+title: "Eureka Synthetic Member Record"
+type: object
+additionalProperties: false
+required:
+  - member_record_id
+  - synthetic_target_ref
+  - parent_target_ref
+  - parent_representation_id
+  - source_family
+  - member_path
+  - member_label
+  - member_kind
+  - evidence
+  - parent_lineage
+  - action_hints
+  - created_by_slice
+properties:
+  member_record_id:
+    type: string
+  synthetic_target_ref:
+    type: string
+    pattern: "^member:sha256:[a-f0-9]{64}$"
+  parent_target_ref:
+    type: string
+  parent_resolved_resource_id:
+    type: string
+  parent_representation_id:
+    type: string
+  parent_object_label:
+    type: string
+  source_id:
+    type: string
+  source_family:
+    type: string
+  source_label:
+    type: string
+  member_path:
+    type: string
+  member_label:
+    type: string
+  member_kind:
+    enum:
+      - driver
+      - readme
+      - compatibility_note
+      - utility
+      - installer_like
+      - manifest
+      - documentation
+      - unknown
+  media_type:
+    type: string
+  size_bytes:
+    type: integer
+    minimum: 0
+  content_hash:
+    type: string
+    pattern: "^sha256:[a-f0-9]{64}$"
+  evidence:
+    type: array
+    items:
+      type: object
+  parent_lineage:
+    type: object
+  action_hints:
+    type: array
+    items:
+      type: string
+  created_by_slice:
+    const: "member_level_synthetic_records_v0"
