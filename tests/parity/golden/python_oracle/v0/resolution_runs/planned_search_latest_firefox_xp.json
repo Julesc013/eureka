@@ -169,7 +169,16 @@
               "object": {
                 "id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
                 "kind": "software",
-                "label": "Firefox XP support notes recorded fixture"
+                "label": "Firefox XP support notes recorded fixture",
+                "primary_lane": "preservation",
+                "result_lanes": [
+                  "preservation"
+                ],
+                "usefulness_summary": "preservation; user cost 3; why: preservation_source",
+                "user_cost_reasons": [
+                  "preservation_source"
+                ],
+                "user_cost_score": 3
               },
               "resolved_resource_id": "resolved:sha256:b80436d405f3dabbc6f6c57239f0bdac58d2387dcf5658ecbbf9292d45f280f7",
               "source": {

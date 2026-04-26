@@ -19,15 +19,137 @@
     "result_count": 50,
     "results": [
       {
+        "action_hints": [
+          "inspect_parent_bundle",
+          "read_member",
+          "preview_member"
+        ],
+        "content_hash": "sha256:04ec90754dfba2dface73c89e3454e7c358942122cf58ee85d327f180ead23cd",
+        "evidence": [
+          "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "compatibility_note Windows 2000 driver INF text stand-in. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
+          "member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_hash sha256:04ec90754dfba2dface73c89e3454e7c358942122cf58ee85d327f180ead23cd local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text [Version]\nSignature=\"$Windows NT$\"\n[Manufacturer]\n%Fixture%=Fixture,NTx86\n; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests. local_bundle_fixtures member_text Local Bundle Fixtures"
+        ],
+        "index_record_id": "synthetic_member:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
+        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture",
+        "media_type": "text/plain",
+        "member_kind": "driver",
+        "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+        "parent_object_label": "ThinkPad T42 wireless support bundle recorded fixture",
+        "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
+        "parent_resolved_resource_id": "resolved:sha256:7df1a59778cd6a8d7f15a65ab1bf8c57016e96a22078ced8e29ce83dd0f3a35d",
+        "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+        "primary_lane": "inside_bundles",
+        "record_kind": "synthetic_member",
+        "representation_id": "rep.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "result_lanes": [
+          "inside_bundles",
+          "best_direct_answer",
+          "installable_or_usable_now"
+        ],
+        "route_hints": {
+          "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+          "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
+          "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+          "record_kind": "synthetic_member",
+          "surface_route": "/",
+          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+        },
+        "size_bytes": 142,
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "summary": "driver member of ThinkPad T42 wireless support bundle recorded fixture",
+        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
+        "usefulness_summary": "inside bundles; user cost 1; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_hint_present"
+        ],
+        "user_cost_score": 1,
+        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
+      },
+      {
+        "action_hints": [
+          "inspect_parent_bundle",
+          "read_member",
+          "preview_member"
+        ],
+        "content_hash": "sha256:ef80f594d01dd2725974be86048730dc265dd3e6206ec34ec2c9c7e7e4b09273",
+        "evidence": [
+          "member_listing utilities/7z920.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "compatibility_note Text stand-in for a Windows 7 utility artifact. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
+          "member_path utilities/7z920.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_hash sha256:ef80f594d01dd2725974be86048730dc265dd3e6206ec34ec2c9c7e7e4b09273 local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Dummy text stand-in named after a classic utility installer. Compatibility hint: Windows 7 / Windows NT 6.1. local_bundle_fixtures member_text Local Bundle Fixtures"
+        ],
+        "index_record_id": "synthetic_member:member:sha256:8f8dedb649627129727ef17ef654e9156242ffc71ac39db2f49e1ea2877108fd",
+        "label": "utilities/7z920.exe.txt (utilities 7z920 exe txt) in Windows 7 utility bundle recorded fixture",
+        "media_type": "text/plain",
+        "member_kind": "utility",
+        "member_path": "utilities/7z920.exe.txt",
+        "parent_object_label": "Windows 7 utility bundle recorded fixture",
+        "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+        "parent_resolved_resource_id": "resolved:sha256:198bc6d5c14681830b33f09ce397da47e59adb92c6fe4a72e5c3debf62c1ce89",
+        "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+        "primary_lane": "inside_bundles",
+        "record_kind": "synthetic_member",
+        "representation_id": "rep.synthetic-member.8f8dedb649627129727ef17e",
+        "resolved_resource_id": "obj.synthetic-member.8f8dedb649627129727ef17e",
+        "result_lanes": [
+          "inside_bundles",
+          "best_direct_answer",
+          "installable_or_usable_now"
+        ],
+        "route_hints": {
+          "member_path": "utilities/7z920.exe.txt",
+          "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+          "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+          "record_kind": "synthetic_member",
+          "surface_route": "/",
+          "target_ref": "member:sha256:8f8dedb649627129727ef17ef654e9156242ffc71ac39db2f49e1ea2877108fd"
+        },
+        "size_bytes": 109,
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.8f8dedb649627129727ef17e",
+        "summary": "utility member of Windows 7 utility bundle recorded fixture",
+        "target_ref": "member:sha256:8f8dedb649627129727ef17ef654e9156242ffc71ac39db2f49e1ea2877108fd",
+        "usefulness_summary": "inside bundles; user cost 1; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_hint_present"
+        ],
+        "user_cost_score": 1,
+        "version_or_state": "state.synthetic-member.8f8dedb649627129727ef17e.derived"
+      },
+      {
         "evidence": [
           "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
           "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
         "index_record_id": "resolved_object:fixture:software/archive-viewer@0.9.0",
         "label": "Archive Viewer",
+        "primary_lane": "installable_or_usable_now",
         "record_kind": "resolved_object",
         "representation_id": "rep.archive-viewer.source",
         "resolved_resource_id": "obj.archive-viewer",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
         "route_hints": {
           "record_kind": "resolved_object",
           "surface_route": "/",
@@ -39,71 +161,308 @@
         "subject_key": "obj.archive-viewer",
         "summary": "software from Synthetic Fixture",
         "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "usefulness_summary": "installable or usable now; user cost 2; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 2,
         "version_or_state": "0.9.0"
       },
       {
         "evidence": [
-          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
+          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
           "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
-        "index_record_id": "state_or_release:state.archive-viewer.release",
-        "label": "Archive Viewer 0.9.0",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.archive-viewer",
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archive-viewer@0.9.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archive-viewer",
-        "summary": "release for Archive Viewer",
-        "target_ref": "fixture:software/archive-viewer@0.9.0",
-        "version_or_state": "0.9.0"
-      },
-      {
-        "evidence": [
-          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture"
+        "index_record_id": "resolved_object:fixture:software/archivebox@0.8.5",
+        "label": "ArchiveBox 0.8.5",
+        "primary_lane": "installable_or_usable_now",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.archivebox.synthetic.source",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "result_lanes": [
+          "installable_or_usable_now"
         ],
-        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:0",
-        "label": "Archive Viewer evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archive-viewer",
         "route_hints": {
-          "record_kind": "evidence",
+          "record_kind": "resolved_object",
           "surface_route": "/",
-          "target_ref": "fixture:software/archive-viewer@0.9.0"
+          "target_ref": "fixture:software/archivebox@0.8.5"
         },
         "source_family": "synthetic_fixture",
         "source_id": "synthetic-fixtures",
         "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archive-viewer",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/archive-viewer@0.9.0",
-        "version_or_state": "0.9.0"
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "software from Synthetic Fixture",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "usefulness_summary": "installable or usable now; user cost 2; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 2,
+        "version_or_state": "0.8.5"
       },
       {
         "evidence": [
+          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture",
           "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
-        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:1",
-        "label": "Archive Viewer evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archive-viewer",
+        "index_record_id": "resolved_object:fixture:software/compatibility-lab@3.2.1",
+        "label": "Compatibility Lab",
+        "primary_lane": "installable_or_usable_now",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.compatibility-lab.source",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
         "route_hints": {
-          "record_kind": "evidence",
+          "record_kind": "resolved_object",
           "surface_route": "/",
-          "target_ref": "fixture:software/archive-viewer@0.9.0"
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
         },
         "source_family": "synthetic_fixture",
         "source_id": "synthetic-fixtures",
         "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archive-viewer",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/archive-viewer@0.9.0",
-        "version_or_state": "0.9.0"
+        "subject_key": "obj.compatibility-lab",
+        "summary": "software from Synthetic Fixture",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "usefulness_summary": "installable or usable now; user cost 2; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 2,
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "member_path:docs/evidence.txt"
+        ],
+        "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:docs/evidence.txt",
+        "label": "evidence.txt",
+        "member_path": "docs/evidence.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "member",
+        "representation_id": "rep.synthetic-demo-app.package",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "inside_bundles"
+        ],
+        "route_hints": {
+          "member_path": "docs/evidence.txt",
+          "representation_id": "rep.synthetic-demo-app.package",
+          "surface_route": "/member",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "member of Synthetic demo app package archive",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "inside bundles; user cost 2; why: member_has_path; member_listing_only",
+        "user_cost_reasons": [
+          "member_has_path",
+          "member_listing_only"
+        ],
+        "user_cost_score": 2,
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "member_path:README.txt"
+        ],
+        "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:README.txt",
+        "label": "README.txt",
+        "member_path": "README.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "member",
+        "representation_id": "rep.synthetic-demo-app.package",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "inside_bundles"
+        ],
+        "route_hints": {
+          "member_path": "README.txt",
+          "representation_id": "rep.synthetic-demo-app.package",
+          "surface_route": "/member",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "member of Synthetic demo app package archive",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "inside bundles; user cost 2; why: member_has_path; member_listing_only",
+        "user_cost_reasons": [
+          "member_has_path",
+          "member_listing_only"
+        ],
+        "user_cost_score": 2,
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "member_path:config/settings.json"
+        ],
+        "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:config/settings.json",
+        "label": "settings.json",
+        "member_path": "config/settings.json",
+        "primary_lane": "inside_bundles",
+        "record_kind": "member",
+        "representation_id": "rep.synthetic-demo-app.package",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "inside_bundles"
+        ],
+        "route_hints": {
+          "member_path": "config/settings.json",
+          "representation_id": "rep.synthetic-demo-app.package",
+          "surface_route": "/member",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "member of Synthetic demo app package archive",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "inside bundles; user cost 2; why: member_has_path; member_listing_only",
+        "user_cost_reasons": [
+          "member_has_path",
+          "member_listing_only"
+        ],
+        "user_cost_score": 2,
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "resolved_object:fixture:software/synthetic-demo-app@1.0.0",
+        "label": "Synthetic Demo App",
+        "primary_lane": "installable_or_usable_now",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.synthetic-demo-app.source",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "software from Synthetic Fixture",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "installable or usable now; user cost 2; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 2,
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "fixture_artifact",
+          "synthetic-demo-app.bundle"
+        ],
+        "index_record_id": "representation:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.source",
+        "label": "Synthetic demo app fixture artifact",
+        "primary_lane": "installable_or_usable_now",
+        "record_kind": "representation",
+        "representation_id": "rep.synthetic-demo-app.source",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
+        "route_hints": {
+          "representation_id": "rep.synthetic-demo-app.source",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "fixture_artifact representation for Synthetic Demo App",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "installable or usable now; user cost 2; why: direct_representation_present; source_evidence_present",
+        "user_cost_reasons": [
+          "direct_representation_present",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 2,
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "fixture_record",
+          "synthetic_resolution_fixture.json"
+        ],
+        "index_record_id": "representation:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.fixture-record",
+        "label": "Synthetic demo app fixture record",
+        "primary_lane": "installable_or_usable_now",
+        "record_kind": "representation",
+        "representation_id": "rep.synthetic-demo-app.fixture-record",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
+        "route_hints": {
+          "representation_id": "rep.synthetic-demo-app.fixture-record",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "fixture_record representation for Synthetic Demo App",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "installable or usable now; user cost 2; why: direct_representation_present; source_evidence_present",
+        "user_cost_reasons": [
+          "direct_representation_present",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 2,
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "label Synthetic Demo Suite synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "resolved_object:fixture:software/synthetic-demo-suite@2.0.0",
+        "label": "Synthetic Demo Suite",
+        "primary_lane": "installable_or_usable_now",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.synthetic-demo-suite.source",
+        "resolved_resource_id": "obj.synthetic-demo-suite",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-suite",
+        "summary": "software from Synthetic Fixture",
+        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+        "usefulness_summary": "installable or usable now; user cost 2; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 2,
+        "version_or_state": "2.0.0"
       },
       {
         "evidence": [
@@ -112,9 +471,14 @@
         ],
         "index_record_id": "representation:fixture:software/archive-viewer@0.9.0:rep.archive-viewer.source",
         "label": "Archive Viewer representation",
+        "primary_lane": "inside_bundles",
         "record_kind": "representation",
         "representation_id": "rep.archive-viewer.source",
         "resolved_resource_id": "obj.archive-viewer",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
         "route_hints": {
           "representation_id": "rep.archive-viewer.source",
           "surface_route": "/representations",
@@ -126,94 +490,12 @@
         "subject_key": "obj.archive-viewer",
         "summary": "source_archive representation for Archive Viewer",
         "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
         "version_or_state": "0.9.0"
-      },
-      {
-        "evidence": [
-          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "resolved_object:fixture:software/archivebox@0.8.5",
-        "label": "ArchiveBox 0.8.5",
-        "record_kind": "resolved_object",
-        "representation_id": "rep.archivebox.synthetic.source",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "route_hints": {
-          "record_kind": "resolved_object",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "software from Synthetic Fixture",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "state_or_release:state.archivebox.synthetic.release",
-        "label": "ArchiveBox 0.8.5 0.8.5",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "release for ArchiveBox 0.8.5",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:0",
-        "label": "ArchiveBox 0.8.5 evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:1",
-        "label": "ArchiveBox 0.8.5 evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "version_or_state": "0.8.5"
       },
       {
         "evidence": [
@@ -222,9 +504,14 @@
         ],
         "index_record_id": "representation:fixture:software/archivebox@0.8.5:rep.archivebox.synthetic.source",
         "label": "ArchiveBox 0.8.5 representation",
+        "primary_lane": "inside_bundles",
         "record_kind": "representation",
         "representation_id": "rep.archivebox.synthetic.source",
         "resolved_resource_id": "obj.archivebox.synthetic",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
         "route_hints": {
           "representation_id": "rep.archivebox.synthetic.source",
           "surface_route": "/representations",
@@ -236,94 +523,12 @@
         "subject_key": "obj.archivebox.synthetic",
         "summary": "source_archive representation for ArchiveBox 0.8.5",
         "target_ref": "fixture:software/archivebox@0.8.5",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
         "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "resolved_object:fixture:software/compatibility-lab@3.2.1",
-        "label": "Compatibility Lab",
-        "record_kind": "resolved_object",
-        "representation_id": "rep.compatibility-lab.source",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "route_hints": {
-          "record_kind": "resolved_object",
-          "surface_route": "/",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "software from Synthetic Fixture",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "version_or_state": "3.2.1"
-      },
-      {
-        "evidence": [
-          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "state_or_release:state.compatibility-lab.release",
-        "label": "Compatibility Lab 3.2.1",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "release for Compatibility Lab",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "version_or_state": "3.2.1"
-      },
-      {
-        "evidence": [
-          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:0",
-        "label": "Compatibility Lab evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "version_or_state": "3.2.1"
-      },
-      {
-        "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:1",
-        "label": "Compatibility Lab evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "version_or_state": "3.2.1"
       },
       {
         "evidence": [
@@ -332,9 +537,14 @@
         ],
         "index_record_id": "representation:fixture:software/compatibility-lab@3.2.1:rep.compatibility-lab.source",
         "label": "Compatibility Lab representation",
+        "primary_lane": "inside_bundles",
         "record_kind": "representation",
         "representation_id": "rep.compatibility-lab.source",
         "resolved_resource_id": "obj.compatibility-lab",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
         "route_hints": {
           "representation_id": "rep.compatibility-lab.source",
           "surface_route": "/representations",
@@ -346,7 +556,78 @@
         "subject_key": "obj.compatibility-lab",
         "summary": "source_archive representation for Compatibility Lab",
         "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
         "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "fixture_archive",
+          "synthetic-demo-app-package.zip"
+        ],
+        "index_record_id": "representation:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package",
+        "label": "Synthetic demo app package archive",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.synthetic-demo-app.package",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.synthetic-demo-app.package",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "fixture_archive representation for Synthetic Demo App",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "source_archive",
+          "synthetic_resolution_fixture.json"
+        ],
+        "index_record_id": "representation:fixture:software/synthetic-demo-suite@2.0.0:rep.synthetic-demo-suite.source",
+        "label": "Synthetic Demo Suite representation",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.synthetic-demo-suite.source",
+        "resolved_resource_id": "obj.synthetic-demo-suite",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.synthetic-demo-suite.source",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-suite",
+        "summary": "source_archive representation for Synthetic Demo Suite",
+        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "2.0.0"
       },
       {
         "action_hints": [
@@ -371,9 +652,14 @@
         "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
         "parent_resolved_resource_id": "resolved:sha256:7df1a59778cd6a8d7f15a65ab1bf8c57016e96a22078ced8e29ce83dd0f3a35d",
         "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+        "primary_lane": "inside_bundles",
         "record_kind": "synthetic_member",
         "representation_id": "rep.synthetic-member.6362e313263bde7cf6d3f09b",
         "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+        "result_lanes": [
+          "inside_bundles",
+          "documentation"
+        ],
         "route_hints": {
           "member_path": "compatibility/windows2000.txt",
           "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
@@ -389,111 +675,17 @@
         "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
         "summary": "compatibility_note member of ThinkPad T42 wireless support bundle recorded fixture",
         "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
-        "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
-      },
-      {
-        "evidence": [
-          "member_listing compatibility/windows2000.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_hint_present",
+          "documentation_only"
         ],
-        "index_record_id": "evidence:member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044:0",
-        "label": "compatibility/windows2000.txt (compatibility windows2000 txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
-        "summary": "member_listing from local_bundle_fixtures",
-        "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
-        "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
-      },
-      {
-        "evidence": [
-          "compatibility_note Windows 2000 compatibility hint. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044:1",
-        "label": "compatibility/windows2000.txt (compatibility windows2000 txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
-        "summary": "compatibility_note from local_bundle_fixtures",
-        "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
-        "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
-      },
-      {
-        "evidence": [
-          "member_path compatibility/windows2000.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044:2",
-        "label": "compatibility/windows2000.txt (compatibility windows2000 txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 3",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
-        "summary": "member_path from local_bundle_fixtures",
-        "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
-        "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
-      },
-      {
-        "evidence": [
-          "member_hash sha256:9362246fbe4edd1b8b3ad7678280850394a838949419f9b037e0bf67a51405be local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044:3",
-        "label": "compatibility/windows2000.txt (compatibility windows2000 txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 4",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
-        "summary": "member_hash from local_bundle_fixtures",
-        "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
-        "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
-      },
-      {
-        "evidence": [
-          "member_text Compatibility evidence hint: Windows 2000, x86, driver/support media fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044:4",
-        "label": "compatibility/windows2000.txt (compatibility windows2000 txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 5",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
-        "summary": "member_text from local_bundle_fixtures",
-        "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
+        "user_cost_score": 5,
         "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
       },
       {
@@ -519,9 +711,14 @@
         "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
         "parent_resolved_resource_id": "resolved:sha256:198bc6d5c14681830b33f09ce397da47e59adb92c6fe4a72e5c3debf62c1ce89",
         "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+        "primary_lane": "inside_bundles",
         "record_kind": "synthetic_member",
         "representation_id": "rep.synthetic-member.f1d241f67aa0ae7ead831d03",
         "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "result_lanes": [
+          "inside_bundles",
+          "documentation"
+        ],
         "route_hints": {
           "member_path": "compatibility/windows7.txt",
           "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
@@ -537,260 +734,18 @@
         "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
         "summary": "compatibility_note member of Windows 7 utility bundle recorded fixture",
         "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_hint_present",
+          "documentation_only"
+        ],
+        "user_cost_score": 5,
         "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
-      },
-      {
-        "evidence": [
-          "member_listing compatibility/windows7.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296:0",
-        "label": "compatibility/windows7.txt (compatibility windows7 txt) in Windows 7 utility bundle recorded fixture evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-        "summary": "member_listing from local_bundle_fixtures",
-        "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
-        "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
-      },
-      {
-        "evidence": [
-          "compatibility_note Windows 7 and Windows NT 6.1 compatibility hint. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296:1",
-        "label": "compatibility/windows7.txt (compatibility windows7 txt) in Windows 7 utility bundle recorded fixture evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-        "summary": "compatibility_note from local_bundle_fixtures",
-        "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
-        "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
-      },
-      {
-        "evidence": [
-          "member_path compatibility/windows7.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296:2",
-        "label": "compatibility/windows7.txt (compatibility windows7 txt) in Windows 7 utility bundle recorded fixture evidence 3",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-        "summary": "member_path from local_bundle_fixtures",
-        "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
-        "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
-      },
-      {
-        "evidence": [
-          "member_hash sha256:78dc68497ecd1c8544a3f6b9b3944236d70b18aea20f51af18775a670f4f7970 local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296:3",
-        "label": "compatibility/windows7.txt (compatibility windows7 txt) in Windows 7 utility bundle recorded fixture evidence 4",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-        "summary": "member_hash from local_bundle_fixtures",
-        "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
-        "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
-      },
-      {
-        "evidence": [
-          "member_text Compatibility evidence hint: Windows 7, Windows NT 6.1, x86, x64. Source: committed local bundle fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296:4",
-        "label": "compatibility/windows7.txt (compatibility windows7 txt) in Windows 7 utility bundle recorded fixture evidence 5",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-        "summary": "member_text from local_bundle_fixtures",
-        "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
-        "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
-      },
-      {
-        "action_hints": [
-          "inspect_parent_bundle",
-          "read_member",
-          "preview_member"
-        ],
-        "content_hash": "sha256:04ec90754dfba2dface73c89e3454e7c358942122cf58ee85d327f180ead23cd",
-        "evidence": [
-          "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "compatibility_note Windows 2000 driver INF text stand-in. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
-          "member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_hash sha256:04ec90754dfba2dface73c89e3454e7c358942122cf58ee85d327f180ead23cd local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_text [Version]\nSignature=\"$Windows NT$\"\n[Manufacturer]\n%Fixture%=Fixture,NTx86\n; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests. local_bundle_fixtures member_text Local Bundle Fixtures"
-        ],
-        "index_record_id": "synthetic_member:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture",
-        "media_type": "text/plain",
-        "member_kind": "driver",
-        "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
-        "parent_object_label": "ThinkPad T42 wireless support bundle recorded fixture",
-        "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
-        "parent_resolved_resource_id": "resolved:sha256:7df1a59778cd6a8d7f15a65ab1bf8c57016e96a22078ced8e29ce83dd0f3a35d",
-        "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
-        "record_kind": "synthetic_member",
-        "representation_id": "rep.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "route_hints": {
-          "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
-          "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
-          "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
-          "record_kind": "synthetic_member",
-          "surface_route": "/",
-          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
-        },
-        "size_bytes": 142,
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "summary": "driver member of ThinkPad T42 wireless support bundle recorded fixture",
-        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
-        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
-      },
-      {
-        "evidence": [
-          "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af:0",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "summary": "member_listing from local_bundle_fixtures",
-        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
-        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
-      },
-      {
-        "evidence": [
-          "compatibility_note Windows 2000 driver INF text stand-in. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af:1",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "summary": "compatibility_note from local_bundle_fixtures",
-        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
-        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
-      },
-      {
-        "evidence": [
-          "member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af:2",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture evidence 3",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "summary": "member_path from local_bundle_fixtures",
-        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
-        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
-      },
-      {
-        "evidence": [
-          "member_hash sha256:04ec90754dfba2dface73c89e3454e7c358942122cf58ee85d327f180ead23cd local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af:3",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture evidence 4",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "summary": "member_hash from local_bundle_fixtures",
-        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
-        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
-      },
-      {
-        "evidence": [
-          "member_text [Version]\nSignature=\"$Windows NT$\"\n[Manufacturer]\n%Fixture%=Fixture,NTx86\n; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests. local_bundle_fixtures member_text Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af:4",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture evidence 5",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
-        "summary": "member_text from local_bundle_fixtures",
-        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
-        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
       },
       {
         "action_hints": [
@@ -815,9 +770,14 @@
         "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
         "parent_resolved_resource_id": "resolved:sha256:7df1a59778cd6a8d7f15a65ab1bf8c57016e96a22078ced8e29ce83dd0f3a35d",
         "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+        "primary_lane": "inside_bundles",
         "record_kind": "synthetic_member",
         "representation_id": "rep.synthetic-member.89d25f4de4d94079fed7d9b8",
         "resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+        "result_lanes": [
+          "inside_bundles",
+          "documentation"
+        ],
         "route_hints": {
           "member_path": "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
           "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
@@ -833,155 +793,18 @@
         "subject_key": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
         "summary": "readme member of ThinkPad T42 wireless support bundle recorded fixture",
         "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_hint_present",
+          "documentation_only"
+        ],
+        "user_cost_score": 5,
         "version_or_state": "state.synthetic-member.89d25f4de4d94079fed7d9b8.derived"
-      },
-      {
-        "evidence": [
-          "member_listing drivers/wifi/thinkpad_t42/windows2000/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce:0",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/readme.txt (drivers wifi thinkpad t42 windows2000 readme txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
-        "summary": "member_listing from local_bundle_fixtures",
-        "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce",
-        "version_or_state": "state.synthetic-member.89d25f4de4d94079fed7d9b8.derived"
-      },
-      {
-        "evidence": [
-          "compatibility_note ThinkPad T42 wireless driver readme for Windows 2000 fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce:1",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/readme.txt (drivers wifi thinkpad t42 windows2000 readme txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
-        "summary": "compatibility_note from local_bundle_fixtures",
-        "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce",
-        "version_or_state": "state.synthetic-member.89d25f4de4d94079fed7d9b8.derived"
-      },
-      {
-        "evidence": [
-          "member_path drivers/wifi/thinkpad_t42/windows2000/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce:2",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/readme.txt (drivers wifi thinkpad t42 windows2000 readme txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 3",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
-        "summary": "member_path from local_bundle_fixtures",
-        "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce",
-        "version_or_state": "state.synthetic-member.89d25f4de4d94079fed7d9b8.derived"
-      },
-      {
-        "evidence": [
-          "member_hash sha256:e168e4d8ced9dbe0a36445c54587801bd91269c0b72d264a147ec4f29272d9ea local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce:3",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/readme.txt (drivers wifi thinkpad t42 windows2000 readme txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 4",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
-        "summary": "member_hash from local_bundle_fixtures",
-        "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce",
-        "version_or_state": "state.synthetic-member.89d25f4de4d94079fed7d9b8.derived"
-      },
-      {
-        "evidence": [
-          "member_text Readme stand-in: ThinkPad T42 wireless driver package shape for Windows 2000. Not a real driver. local_bundle_fixtures readme Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce:4",
-        "label": "drivers/wifi/thinkpad_t42/windows2000/readme.txt (drivers wifi thinkpad t42 windows2000 readme txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 5",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
-        "summary": "member_text from local_bundle_fixtures",
-        "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce",
-        "version_or_state": "state.synthetic-member.89d25f4de4d94079fed7d9b8.derived"
-      },
-      {
-        "evidence": [
-          "member_path:docs/evidence.txt"
-        ],
-        "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:docs/evidence.txt",
-        "label": "evidence.txt",
-        "member_path": "docs/evidence.txt",
-        "record_kind": "member",
-        "representation_id": "rep.synthetic-demo-app.package",
-        "resolved_resource_id": "obj.synthetic-demo-app",
-        "route_hints": {
-          "member_path": "docs/evidence.txt",
-          "representation_id": "rep.synthetic-demo-app.package",
-          "surface_route": "/member",
-          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-app",
-        "summary": "member of Synthetic demo app package archive",
-        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
-        "version_or_state": "1.0.0"
-      },
-      {
-        "evidence": [
-          "connector:Internet Archive recorded fixtures connector",
-          "status:active_recorded_fixture",
-          "trust_lane:preservation"
-        ],
-        "index_record_id": "source_record:internet-archive-recorded-fixtures",
-        "label": "Internet Archive Recorded Fixtures",
-        "record_kind": "source_record",
-        "route_hints": {
-          "source_id": "internet-archive-recorded-fixtures",
-          "status": "active_recorded_fixture",
-          "surface_route": "/source"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "summary": "active_recorded_fixture preservation source registry record"
       },
       {
         "action_hints": [
@@ -1004,9 +827,14 @@
         "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
         "parent_resolved_resource_id": "resolved:sha256:198bc6d5c14681830b33f09ce397da47e59adb92c6fe4a72e5c3debf62c1ce89",
         "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+        "primary_lane": "inside_bundles",
         "record_kind": "synthetic_member",
         "representation_id": "rep.synthetic-member.5475247899f48cb2102bacd1",
         "resolved_resource_id": "obj.synthetic-member.5475247899f48cb2102bacd1",
+        "result_lanes": [
+          "inside_bundles",
+          "documentation"
+        ],
         "route_hints": {
           "member_path": "manifests/manifest.json",
           "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
@@ -1022,94 +850,18 @@
         "subject_key": "obj.synthetic-member.5475247899f48cb2102bacd1",
         "summary": "manifest member of Windows 7 utility bundle recorded fixture",
         "target_ref": "member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493",
-        "version_or_state": "state.synthetic-member.5475247899f48cb2102bacd1.derived"
-      },
-      {
-        "evidence": [
-          "member_path manifests/manifest.json local_bundle_fixtures member_listing Local Bundle Fixtures"
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_hint_present",
+          "documentation_only"
         ],
-        "index_record_id": "evidence:member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493:0",
-        "label": "manifests/manifest.json (manifests manifest json) in Windows 7 utility bundle recorded fixture evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.5475247899f48cb2102bacd1",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.5475247899f48cb2102bacd1",
-        "summary": "member_path from local_bundle_fixtures",
-        "target_ref": "member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493",
+        "user_cost_score": 5,
         "version_or_state": "state.synthetic-member.5475247899f48cb2102bacd1.derived"
-      },
-      {
-        "evidence": [
-          "member_hash sha256:e12b9cdd3d5cf64d8854f59085543fa78eaff272c9c9e89aeac08663a833de18 local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493:1",
-        "label": "manifests/manifest.json (manifests manifest json) in Windows 7 utility bundle recorded fixture evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.5475247899f48cb2102bacd1",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.5475247899f48cb2102bacd1",
-        "summary": "member_hash from local_bundle_fixtures",
-        "target_ref": "member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493",
-        "version_or_state": "state.synthetic-member.5475247899f48cb2102bacd1.derived"
-      },
-      {
-        "evidence": [
-          "member_text {\"fixture\":\"windows_utility_bundle\",\"platforms\":[\"Windows 7\",\"Windows NT 6.1\"],\"members\":4} local_bundle_fixtures member_text Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493:2",
-        "label": "manifests/manifest.json (manifests manifest json) in Windows 7 utility bundle recorded fixture evidence 3",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.5475247899f48cb2102bacd1",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.5475247899f48cb2102bacd1",
-        "summary": "member_text from local_bundle_fixtures",
-        "target_ref": "member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493",
-        "version_or_state": "state.synthetic-member.5475247899f48cb2102bacd1.derived"
-      },
-      {
-        "evidence": [
-          "member_path:README.txt"
-        ],
-        "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:README.txt",
-        "label": "README.txt",
-        "member_path": "README.txt",
-        "record_kind": "member",
-        "representation_id": "rep.synthetic-demo-app.package",
-        "resolved_resource_id": "obj.synthetic-demo-app",
-        "route_hints": {
-          "member_path": "README.txt",
-          "representation_id": "rep.synthetic-demo-app.package",
-          "surface_route": "/member",
-          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-app",
-        "summary": "member of Synthetic demo app package archive",
-        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
-        "version_or_state": "1.0.0"
       },
       {
         "action_hints": [
@@ -1134,9 +886,14 @@
         "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
         "parent_resolved_resource_id": "resolved:sha256:7df1a59778cd6a8d7f15a65ab1bf8c57016e96a22078ced8e29ce83dd0f3a35d",
         "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+        "primary_lane": "inside_bundles",
         "record_kind": "synthetic_member",
         "representation_id": "rep.synthetic-member.1cd421e446466c9e51ce832b",
         "resolved_resource_id": "obj.synthetic-member.1cd421e446466c9e51ce832b",
+        "result_lanes": [
+          "inside_bundles",
+          "documentation"
+        ],
         "route_hints": {
           "member_path": "README.txt",
           "parent_representation_id": "rep.local-bundle.driver-support-cd.zip",
@@ -1152,70 +909,942 @@
         "subject_key": "obj.synthetic-member.1cd421e446466c9e51ce832b",
         "summary": "readme member of ThinkPad T42 wireless support bundle recorded fixture",
         "target_ref": "member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_hint_present",
+          "documentation_only"
+        ],
+        "user_cost_score": 5,
         "version_or_state": "state.synthetic-member.1cd421e446466c9e51ce832b.derived"
       },
       {
-        "evidence": [
-          "member_listing README.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
+        "action_hints": [
+          "inspect_parent_bundle",
+          "read_member",
+          "preview_member"
         ],
-        "index_record_id": "evidence:member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3:0",
-        "label": "README.txt (README txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 1",
+        "content_hash": "sha256:dafdc398c3d3055f9679f7073f209534a7d363d665d21a7e08e5afb275d0ccbb",
+        "evidence": [
+          "member_listing README.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "compatibility_note Fixture readme records Windows 7 / Windows NT 6.1 compatibility hints. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
+          "member_path README.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_hash sha256:dafdc398c3d3055f9679f7073f209534a7d363d665d21a7e08e5afb275d0ccbb local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Windows 7 utility bundle fixture. Text stand-ins only; no real executables are redistributed. local_bundle_fixtures readme Local Bundle Fixtures"
+        ],
+        "index_record_id": "synthetic_member:member:sha256:fa60a201421f029eb8521f8d841859963e83c6bf669736f8ab5a4f9855b39647",
+        "label": "README.txt (README txt) in Windows 7 utility bundle recorded fixture",
+        "media_type": "text/plain",
+        "member_kind": "readme",
+        "member_path": "README.txt",
+        "parent_object_label": "Windows 7 utility bundle recorded fixture",
+        "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+        "parent_resolved_resource_id": "resolved:sha256:198bc6d5c14681830b33f09ce397da47e59adb92c6fe4a72e5c3debf62c1ce89",
+        "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+        "primary_lane": "inside_bundles",
+        "record_kind": "synthetic_member",
+        "representation_id": "rep.synthetic-member.fa60a201421f029eb8521f8d",
+        "resolved_resource_id": "obj.synthetic-member.fa60a201421f029eb8521f8d",
+        "result_lanes": [
+          "inside_bundles",
+          "documentation"
+        ],
+        "route_hints": {
+          "member_path": "README.txt",
+          "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+          "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+          "record_kind": "synthetic_member",
+          "surface_route": "/",
+          "target_ref": "member:sha256:fa60a201421f029eb8521f8d841859963e83c6bf669736f8ab5a4f9855b39647"
+        },
+        "size_bytes": 94,
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.fa60a201421f029eb8521f8d",
+        "summary": "readme member of Windows 7 utility bundle recorded fixture",
+        "target_ref": "member:sha256:fa60a201421f029eb8521f8d841859963e83c6bf669736f8ab5a4f9855b39647",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_hint_present",
+          "documentation_only"
+        ],
+        "user_cost_score": 5,
+        "version_or_state": "state.synthetic-member.fa60a201421f029eb8521f8d.derived"
+      },
+      {
+        "action_hints": [
+          "inspect_parent_bundle",
+          "read_member",
+          "preview_member"
+        ],
+        "content_hash": "sha256:e6b89f879a97f9180a05b2342e267f639a9c9b8fc977bf5de109dd45c00541cc",
+        "evidence": [
+          "member_listing utilities/ftp-blue-client/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "compatibility_note Text stand-in for a blue FTP client vague-identity fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
+          "member_path utilities/ftp-blue-client/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_hash sha256:e6b89f879a97f9180a05b2342e267f639a9c9b8fc977bf5de109dd45c00541cc local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Blue FTP client fixture note for Windows XP-era vague identity tests. This is not a real application payload. local_bundle_fixtures readme Local Bundle Fixtures"
+        ],
+        "index_record_id": "synthetic_member:member:sha256:49ea2e713beb1c021863ad1068e8afa72baa1e4a9e196cee2ae9b4954447bddd",
+        "label": "utilities/ftp-blue-client/readme.txt (utilities ftp blue client readme txt) in Windows 7 utility bundle recorded fixture",
+        "media_type": "text/plain",
+        "member_kind": "readme",
+        "member_path": "utilities/ftp-blue-client/readme.txt",
+        "parent_object_label": "Windows 7 utility bundle recorded fixture",
+        "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+        "parent_resolved_resource_id": "resolved:sha256:198bc6d5c14681830b33f09ce397da47e59adb92c6fe4a72e5c3debf62c1ce89",
+        "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+        "primary_lane": "inside_bundles",
+        "record_kind": "synthetic_member",
+        "representation_id": "rep.synthetic-member.49ea2e713beb1c021863ad10",
+        "resolved_resource_id": "obj.synthetic-member.49ea2e713beb1c021863ad10",
+        "result_lanes": [
+          "inside_bundles",
+          "documentation"
+        ],
+        "route_hints": {
+          "member_path": "utilities/ftp-blue-client/readme.txt",
+          "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+          "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+          "record_kind": "synthetic_member",
+          "surface_route": "/",
+          "target_ref": "member:sha256:49ea2e713beb1c021863ad1068e8afa72baa1e4a9e196cee2ae9b4954447bddd"
+        },
+        "size_bytes": 110,
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.49ea2e713beb1c021863ad10",
+        "summary": "readme member of Windows 7 utility bundle recorded fixture",
+        "target_ref": "member:sha256:49ea2e713beb1c021863ad1068e8afa72baa1e4a9e196cee2ae9b4954447bddd",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_hint_present",
+          "documentation_only"
+        ],
+        "user_cost_score": 5,
+        "version_or_state": "state.synthetic-member.49ea2e713beb1c021863ad10.derived"
+      },
+      {
+        "evidence": [
+          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.archive-viewer.release",
+        "label": "Archive Viewer 0.9.0",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.archive-viewer",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "release for Archive Viewer",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:0",
+        "label": "Archive Viewer evidence 1",
+        "primary_lane": "mentions_or_traces",
         "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.1cd421e446466c9e51ce832b",
+        "resolved_resource_id": "obj.archive-viewer",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
         "route_hints": {
           "record_kind": "evidence",
           "surface_route": "/",
-          "target_ref": "member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3"
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:1",
+        "label": "Archive Viewer evidence 2",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archive-viewer",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.archivebox.synthetic.release",
+        "label": "ArchiveBox 0.8.5 0.8.5",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "release for ArchiveBox 0.8.5",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:0",
+        "label": "ArchiveBox 0.8.5 evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:1",
+        "label": "ArchiveBox 0.8.5 evidence 2",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.compatibility-lab.release",
+        "label": "Compatibility Lab 3.2.1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "release for Compatibility Lab",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:0",
+        "label": "Compatibility Lab evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:1",
+        "label": "Compatibility Lab evidence 2",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "member_listing compatibility/windows2000.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044:0",
+        "label": "compatibility/windows2000.txt (compatibility windows2000 txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
         },
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.1cd421e446466c9e51ce832b",
+        "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
         "summary": "member_listing from local_bundle_fixtures",
-        "target_ref": "member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3",
-        "version_or_state": "state.synthetic-member.1cd421e446466c9e51ce832b.derived"
+        "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
       },
       {
         "evidence": [
-          "compatibility_note Fixture readme records ThinkPad T42 wireless and Windows 2000 hints. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
+          "compatibility_note Windows 2000 compatibility hint. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
         ],
-        "index_record_id": "evidence:member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3:1",
-        "label": "README.txt (README txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 2",
+        "index_record_id": "evidence:member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044:1",
+        "label": "compatibility/windows2000.txt (compatibility windows2000 txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 2",
+        "primary_lane": "mentions_or_traces",
         "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.1cd421e446466c9e51ce832b",
+        "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
         "route_hints": {
           "record_kind": "evidence",
           "surface_route": "/",
-          "target_ref": "member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3"
+          "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
         },
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.1cd421e446466c9e51ce832b",
+        "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
         "summary": "compatibility_note from local_bundle_fixtures",
-        "target_ref": "member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3",
-        "version_or_state": "state.synthetic-member.1cd421e446466c9e51ce832b.derived"
+        "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
       },
       {
         "evidence": [
-          "member_path README.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
+          "member_path compatibility/windows2000.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
-        "index_record_id": "evidence:member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3:2",
-        "label": "README.txt (README txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 3",
+        "index_record_id": "evidence:member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044:2",
+        "label": "compatibility/windows2000.txt (compatibility windows2000 txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 3",
+        "primary_lane": "mentions_or_traces",
         "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.1cd421e446466c9e51ce832b",
+        "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
         "route_hints": {
           "record_kind": "evidence",
           "surface_route": "/",
-          "target_ref": "member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3"
+          "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
         },
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.1cd421e446466c9e51ce832b",
+        "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
         "summary": "member_path from local_bundle_fixtures",
-        "target_ref": "member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3",
-        "version_or_state": "state.synthetic-member.1cd421e446466c9e51ce832b.derived"
+        "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
+      },
+      {
+        "evidence": [
+          "member_hash sha256:9362246fbe4edd1b8b3ad7678280850394a838949419f9b037e0bf67a51405be local_bundle_fixtures member_listing Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044:3",
+        "label": "compatibility/windows2000.txt (compatibility windows2000 txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 4",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+        "summary": "member_hash from local_bundle_fixtures",
+        "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
+      },
+      {
+        "evidence": [
+          "member_text Compatibility evidence hint: Windows 2000, x86, driver/support media fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044:4",
+        "label": "compatibility/windows2000.txt (compatibility windows2000 txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 5",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+        "summary": "member_text from local_bundle_fixtures",
+        "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
+      },
+      {
+        "evidence": [
+          "member_listing compatibility/windows7.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296:0",
+        "label": "compatibility/windows7.txt (compatibility windows7 txt) in Windows 7 utility bundle recorded fixture evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "summary": "member_listing from local_bundle_fixtures",
+        "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
+      },
+      {
+        "evidence": [
+          "compatibility_note Windows 7 and Windows NT 6.1 compatibility hint. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296:1",
+        "label": "compatibility/windows7.txt (compatibility windows7 txt) in Windows 7 utility bundle recorded fixture evidence 2",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "summary": "compatibility_note from local_bundle_fixtures",
+        "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
+      },
+      {
+        "evidence": [
+          "member_path compatibility/windows7.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296:2",
+        "label": "compatibility/windows7.txt (compatibility windows7 txt) in Windows 7 utility bundle recorded fixture evidence 3",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "summary": "member_path from local_bundle_fixtures",
+        "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
+      },
+      {
+        "evidence": [
+          "member_hash sha256:78dc68497ecd1c8544a3f6b9b3944236d70b18aea20f51af18775a670f4f7970 local_bundle_fixtures member_listing Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296:3",
+        "label": "compatibility/windows7.txt (compatibility windows7 txt) in Windows 7 utility bundle recorded fixture evidence 4",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "summary": "member_hash from local_bundle_fixtures",
+        "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
+      },
+      {
+        "evidence": [
+          "member_text Compatibility evidence hint: Windows 7, Windows NT 6.1, x86, x64. Source: committed local bundle fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296:4",
+        "label": "compatibility/windows7.txt (compatibility windows7 txt) in Windows 7 utility bundle recorded fixture evidence 5",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+        "summary": "member_text from local_bundle_fixtures",
+        "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
+      },
+      {
+        "evidence": [
+          "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af:0",
+        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "summary": "member_listing from local_bundle_fixtures",
+        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
+      },
+      {
+        "evidence": [
+          "compatibility_note Windows 2000 driver INF text stand-in. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af:1",
+        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture evidence 2",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "summary": "compatibility_note from local_bundle_fixtures",
+        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
+      },
+      {
+        "evidence": [
+          "member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af:2",
+        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture evidence 3",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "summary": "member_path from local_bundle_fixtures",
+        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
+      },
+      {
+        "evidence": [
+          "member_hash sha256:04ec90754dfba2dface73c89e3454e7c358942122cf58ee85d327f180ead23cd local_bundle_fixtures member_listing Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af:3",
+        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture evidence 4",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "summary": "member_hash from local_bundle_fixtures",
+        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
+      },
+      {
+        "evidence": [
+          "member_text [Version]\nSignature=\"$Windows NT$\"\n[Manufacturer]\n%Fixture%=Fixture,NTx86\n; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests. local_bundle_fixtures member_text Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af:4",
+        "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 wireless support bundle recorded fixture evidence 5",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+        "summary": "member_text from local_bundle_fixtures",
+        "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
+      },
+      {
+        "evidence": [
+          "member_listing drivers/wifi/thinkpad_t42/windows2000/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce:0",
+        "label": "drivers/wifi/thinkpad_t42/windows2000/readme.txt (drivers wifi thinkpad t42 windows2000 readme txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+        "summary": "member_listing from local_bundle_fixtures",
+        "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.89d25f4de4d94079fed7d9b8.derived"
+      },
+      {
+        "evidence": [
+          "compatibility_note ThinkPad T42 wireless driver readme for Windows 2000 fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
+        ],
+        "index_record_id": "evidence:member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce:1",
+        "label": "drivers/wifi/thinkpad_t42/windows2000/readme.txt (drivers wifi thinkpad t42 windows2000 readme txt) in ThinkPad T42 wireless support bundle recorded fixture evidence 2",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+        "summary": "compatibility_note from local_bundle_fixtures",
+        "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.synthetic-member.89d25f4de4d94079fed7d9b8.derived"
       }
     ],
     "status": "queried"

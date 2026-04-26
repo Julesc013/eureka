@@ -51,6 +51,13 @@ preserve member target refs, parent lineage, source/evidence summaries, member
 paths, member kind, content metadata, and action hints before replacement is
 considered.
 
+Result Lanes + User-Cost Ranking v0 intentionally changes Python local-index,
+deterministic-search, exact-resolution, resolution-run, and eval-visible output
+by adding bounded result lanes, user-cost scores, reasons, and usefulness
+summaries. Future Rust parity for local index, exact resolution, deterministic
+search, and public result projection must reproduce these annotations or record
+an explicit allowed divergence before replacement is considered.
+
 ## Golden Outputs
 
 Rust Parity Fixture Pack v0 now commits the first Python-oracle golden outputs

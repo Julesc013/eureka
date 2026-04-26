@@ -37,6 +37,13 @@ resolution, search, memory, and eval goldens with deterministic
 local-index or exact-resolution parity work must learn this member record shape
 before any replacement claim; no Rust behavior is implemented or wired in here.
 
+Result Lanes + User-Cost Ranking v0 refreshes Python-oracle resolution-run,
+local-index, and archive-resolution eval goldens with deterministic result
+lanes, user-cost scores, reasons, and usefulness summaries. Future Rust
+local-index, deterministic-search, exact-resolution, and result-projection
+parity must account for these bounded annotations before any replacement claim;
+no Rust behavior is implemented or wired in here.
+
 There is still no Rust parity runner in this milestone. Future parity assets
 should remain fixture-driven, JSON-inspectable, and explicit about allowed
 divergences.

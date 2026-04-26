@@ -75,7 +75,16 @@
               "object": {
                 "id": "obj.archive-viewer",
                 "kind": "software",
-                "label": "Archive Viewer"
+                "label": "Archive Viewer",
+                "primary_lane": "installable_or_usable_now",
+                "result_lanes": [
+                  "installable_or_usable_now"
+                ],
+                "usefulness_summary": "installable or usable now; user cost 2; why: direct_bounded_record",
+                "user_cost_reasons": [
+                  "direct_bounded_record"
+                ],
+                "user_cost_score": 2
               },
               "resolved_resource_id": "resolved:sha256:b38c82f9ca3af117ce8b3984ad311fb4102261c3c1573cd18a8a7db0c760fc81",
               "source": {
@@ -108,7 +117,16 @@
               "object": {
                 "id": "obj.archivebox.synthetic",
                 "kind": "software",
-                "label": "ArchiveBox 0.8.5"
+                "label": "ArchiveBox 0.8.5",
+                "primary_lane": "installable_or_usable_now",
+                "result_lanes": [
+                  "installable_or_usable_now"
+                ],
+                "usefulness_summary": "installable or usable now; user cost 2; why: direct_bounded_record",
+                "user_cost_reasons": [
+                  "direct_bounded_record"
+                ],
+                "user_cost_score": 2
               },
               "resolved_resource_id": "resolved:sha256:c3cdf00def0c5c099f099f4808785761f653c80d11eeb27c5646a3fe1ae35178",
               "source": {
@@ -152,7 +170,17 @@
               "object": {
                 "id": "obj.github-release.archivebox.archivebox",
                 "kind": "software",
-                "label": "ArchiveBox v0.8.4"
+                "label": "ArchiveBox v0.8.4",
+                "primary_lane": "community",
+                "result_lanes": [
+                  "community",
+                  "installable_or_usable_now"
+                ],
+                "usefulness_summary": "community; user cost 2; why: community_release_source",
+                "user_cost_reasons": [
+                  "community_release_source"
+                ],
+                "user_cost_score": 2
               },
               "resolved_resource_id": "resolved:sha256:4c60d8106286dec072625d5e202e04f20eec249c5cb924e283e83b3cac18779e",
               "source": {
@@ -196,7 +224,17 @@
               "object": {
                 "id": "obj.github-release.archivebox.archivebox",
                 "kind": "software",
-                "label": "ArchiveBox v0.8.5"
+                "label": "ArchiveBox v0.8.5",
+                "primary_lane": "community",
+                "result_lanes": [
+                  "community",
+                  "installable_or_usable_now"
+                ],
+                "usefulness_summary": "community; user cost 2; why: community_release_source",
+                "user_cost_reasons": [
+                  "community_release_source"
+                ],
+                "user_cost_score": 2
               },
               "resolved_resource_id": "resolved:sha256:4e3bbaf3175192349b3f9d9c978d8a6a25cc306ab8d0f9fe3acab9eeca3b107f",
               "source": {
@@ -206,86 +244,6 @@
                 "source_id": "github-releases-recorded-fixtures"
               },
               "target_ref": "github-release:archivebox/archivebox@v0.8.5"
-            },
-            {
-              "evidence": [
-                {
-                  "asserted_at": "2010",
-                  "asserted_by_family": "internet_archive_recorded",
-                  "asserted_by_label": "Internet Archive Recorded Fixtures",
-                  "claim_kind": "label",
-                  "claim_value": "Windows 7 Utility Pack recorded fixture",
-                  "evidence_kind": "source_metadata",
-                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
-                },
-                {
-                  "asserted_at": "2010",
-                  "asserted_by_family": "internet_archive_recorded",
-                  "asserted_by_label": "Internet Archive Recorded Fixtures",
-                  "claim_kind": "source_identifier",
-                  "claim_value": "ia-win7-utility-pack-fixture",
-                  "evidence_kind": "source_metadata",
-                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
-                },
-                {
-                  "asserted_at": "2010",
-                  "asserted_by_family": "internet_archive_recorded",
-                  "asserted_by_label": "Internet Archive Recorded Fixtures",
-                  "claim_kind": "description",
-                  "claim_value": "Recorded metadata for a small utility pack shaped around Windows 7 and Windows NT 6.1 compatibility evidence. Payload entries are text stand-ins, not redistributed executables.",
-                  "evidence_kind": "source_metadata",
-                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
-                },
-                {
-                  "asserted_at": "2010",
-                  "asserted_by_family": "internet_archive_recorded",
-                  "asserted_by_label": "Internet Archive Recorded Fixtures",
-                  "claim_kind": "compatibility_note",
-                  "claim_value": "Windows 7; Windows NT 6.1; x86; x64; utility; installer_stub; readme",
-                  "evidence_kind": "source_metadata",
-                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
-                },
-                {
-                  "asserted_at": "2010",
-                  "asserted_by_family": "internet_archive_recorded",
-                  "asserted_by_label": "Internet Archive Recorded Fixtures",
-                  "claim_kind": "file_listing",
-                  "claim_value": "7z920.exe.txt",
-                  "evidence_kind": "file_listing",
-                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture/files/0"
-                },
-                {
-                  "asserted_at": "2010",
-                  "asserted_by_family": "internet_archive_recorded",
-                  "asserted_by_label": "Internet Archive Recorded Fixtures",
-                  "claim_kind": "file_listing",
-                  "claim_value": "README-windows7.txt",
-                  "evidence_kind": "file_listing",
-                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture/files/1"
-                },
-                {
-                  "asserted_at": "2010",
-                  "asserted_by_family": "internet_archive_recorded",
-                  "asserted_by_label": "Internet Archive Recorded Fixtures",
-                  "claim_kind": "file_listing",
-                  "claim_value": "SHA256SUMS.txt",
-                  "evidence_kind": "file_listing",
-                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture/files/2"
-                }
-              ],
-              "object": {
-                "id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-                "kind": "software",
-                "label": "Windows 7 Utility Pack recorded fixture"
-              },
-              "resolved_resource_id": "resolved:sha256:2f41dd657e545c2ec4fb2d12ecae2eef5a9521721ee55208b619a24b26f0d23c",
-              "source": {
-                "family": "internet_archive_recorded",
-                "label": "Internet Archive Recorded Fixtures",
-                "locator": "ia-recorded://ia-win7-utility-pack-fixture",
-                "source_id": "internet-archive-recorded-fixtures"
-              },
-              "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
             },
             {
               "evidence": [
@@ -347,7 +305,16 @@
               "object": {
                 "id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
                 "kind": "software",
-                "label": "Firefox XP support notes recorded fixture"
+                "label": "Firefox XP support notes recorded fixture",
+                "primary_lane": "preservation",
+                "result_lanes": [
+                  "preservation"
+                ],
+                "usefulness_summary": "preservation; user cost 3; why: preservation_source",
+                "user_cost_reasons": [
+                  "preservation_source"
+                ],
+                "user_cost_score": 3
               },
               "resolved_resource_id": "resolved:sha256:b80436d405f3dabbc6f6c57239f0bdac58d2387dcf5658ecbbf9292d45f280f7",
               "source": {
@@ -418,7 +385,16 @@
               "object": {
                 "id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
                 "kind": "software",
-                "label": "ThinkPad T42 wireless driver support media recorded fixture"
+                "label": "ThinkPad T42 wireless driver support media recorded fixture",
+                "primary_lane": "preservation",
+                "result_lanes": [
+                  "preservation"
+                ],
+                "usefulness_summary": "preservation; user cost 3; why: preservation_source",
+                "user_cost_reasons": [
+                  "preservation_source"
+                ],
+                "user_cost_score": 3
               },
               "resolved_resource_id": "resolved:sha256:0ed36a20a06bccf391a1de82350cf88d5ad26f493819346346f05b393e0649d1",
               "source": {
@@ -428,6 +404,95 @@
                 "source_id": "internet-archive-recorded-fixtures"
               },
               "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "Windows 7 Utility Pack recorded fixture",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "source_identifier",
+                  "claim_value": "ia-win7-utility-pack-fixture",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "description",
+                  "claim_value": "Recorded metadata for a small utility pack shaped around Windows 7 and Windows NT 6.1 compatibility evidence. Payload entries are text stand-ins, not redistributed executables.",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "compatibility_note",
+                  "claim_value": "Windows 7; Windows NT 6.1; x86; x64; utility; installer_stub; readme",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "7z920.exe.txt",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture/files/0"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "README-windows7.txt",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture/files/1"
+                },
+                {
+                  "asserted_at": "2010",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "SHA256SUMS.txt",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture/files/2"
+                }
+              ],
+              "object": {
+                "id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+                "kind": "software",
+                "label": "Windows 7 Utility Pack recorded fixture",
+                "primary_lane": "preservation",
+                "result_lanes": [
+                  "preservation"
+                ],
+                "usefulness_summary": "preservation; user cost 3; why: preservation_source",
+                "user_cost_reasons": [
+                  "preservation_source"
+                ],
+                "user_cost_score": 3
+              },
+              "resolved_resource_id": "resolved:sha256:2f41dd657e545c2ec4fb2d12ecae2eef5a9521721ee55208b619a24b26f0d23c",
+              "source": {
+                "family": "internet_archive_recorded",
+                "label": "Internet Archive Recorded Fixtures",
+                "locator": "ia-recorded://ia-win7-utility-pack-fixture",
+                "source_id": "internet-archive-recorded-fixtures"
+              },
+              "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
             }
           ],
           "result_count": 7,

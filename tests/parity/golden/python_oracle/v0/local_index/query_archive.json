@@ -20,37 +20,18 @@
     "results": [
       {
         "evidence": [
-          "archive_item_file",
-          "7z920.exe.txt"
-        ],
-        "index_record_id": "representation:internet-archive-recorded:ia-win7-utility-pack-fixture:rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.0",
-        "label": "7z920.exe.txt",
-        "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.0",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.0",
-          "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "summary": "archive_item_file representation for Windows 7 Utility Pack recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
-      },
-      {
-        "evidence": [
           "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
           "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
         "index_record_id": "resolved_object:fixture:software/archive-viewer@0.9.0",
         "label": "Archive Viewer",
+        "primary_lane": "installable_or_usable_now",
         "record_kind": "resolved_object",
         "representation_id": "rep.archive-viewer.source",
         "resolved_resource_id": "obj.archive-viewer",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
         "route_hints": {
           "record_kind": "resolved_object",
           "surface_route": "/",
@@ -62,93 +43,11 @@
         "subject_key": "obj.archive-viewer",
         "summary": "software from Synthetic Fixture",
         "target_ref": "fixture:software/archive-viewer@0.9.0",
-        "version_or_state": "0.9.0"
-      },
-      {
-        "evidence": [
-          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        "usefulness_summary": "installable or usable now; user cost 2; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
         ],
-        "index_record_id": "state_or_release:state.archive-viewer.release",
-        "label": "Archive Viewer 0.9.0",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.archive-viewer",
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archive-viewer@0.9.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archive-viewer",
-        "summary": "release for Archive Viewer",
-        "target_ref": "fixture:software/archive-viewer@0.9.0",
-        "version_or_state": "0.9.0"
-      },
-      {
-        "evidence": [
-          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:0",
-        "label": "Archive Viewer evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archive-viewer",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archive-viewer@0.9.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archive-viewer",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/archive-viewer@0.9.0",
-        "version_or_state": "0.9.0"
-      },
-      {
-        "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:1",
-        "label": "Archive Viewer evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archive-viewer",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archive-viewer@0.9.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archive-viewer",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/archive-viewer@0.9.0",
-        "version_or_state": "0.9.0"
-      },
-      {
-        "evidence": [
-          "source_archive",
-          "synthetic_resolution_fixture.json"
-        ],
-        "index_record_id": "representation:fixture:software/archive-viewer@0.9.0:rep.archive-viewer.source",
-        "label": "Archive Viewer representation",
-        "record_kind": "representation",
-        "representation_id": "rep.archive-viewer.source",
-        "resolved_resource_id": "obj.archive-viewer",
-        "route_hints": {
-          "representation_id": "rep.archive-viewer.source",
-          "surface_route": "/representations",
-          "target_ref": "fixture:software/archive-viewer@0.9.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archive-viewer",
-        "summary": "source_archive representation for Archive Viewer",
-        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "user_cost_score": 2,
         "version_or_state": "0.9.0"
       },
       {
@@ -158,9 +57,13 @@
         ],
         "index_record_id": "resolved_object:fixture:software/archivebox@0.8.5",
         "label": "ArchiveBox 0.8.5",
+        "primary_lane": "installable_or_usable_now",
         "record_kind": "resolved_object",
         "representation_id": "rep.archivebox.synthetic.source",
         "resolved_resource_id": "obj.archivebox.synthetic",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
         "route_hints": {
           "record_kind": "resolved_object",
           "surface_route": "/",
@@ -172,93 +75,11 @@
         "subject_key": "obj.archivebox.synthetic",
         "summary": "software from Synthetic Fixture",
         "target_ref": "fixture:software/archivebox@0.8.5",
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        "usefulness_summary": "installable or usable now; user cost 2; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
         ],
-        "index_record_id": "state_or_release:state.archivebox.synthetic.release",
-        "label": "ArchiveBox 0.8.5 0.8.5",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "release for ArchiveBox 0.8.5",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:0",
-        "label": "ArchiveBox 0.8.5 evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:1",
-        "label": "ArchiveBox 0.8.5 evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "source_archive",
-          "synthetic_resolution_fixture.json"
-        ],
-        "index_record_id": "representation:fixture:software/archivebox@0.8.5:rep.archivebox.synthetic.source",
-        "label": "ArchiveBox 0.8.5 representation",
-        "record_kind": "representation",
-        "representation_id": "rep.archivebox.synthetic.source",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "route_hints": {
-          "representation_id": "rep.archivebox.synthetic.source",
-          "surface_route": "/representations",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "source_archive representation for ArchiveBox 0.8.5",
-        "target_ref": "fixture:software/archivebox@0.8.5",
+        "user_cost_score": 2,
         "version_or_state": "0.8.5"
       },
       {
@@ -268,9 +89,13 @@
         ],
         "index_record_id": "resolved_object:fixture:software/compatibility-lab@3.2.1",
         "label": "Compatibility Lab",
+        "primary_lane": "installable_or_usable_now",
         "record_kind": "resolved_object",
         "representation_id": "rep.compatibility-lab.source",
         "resolved_resource_id": "obj.compatibility-lab",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
         "route_hints": {
           "record_kind": "resolved_object",
           "surface_route": "/",
@@ -282,140 +107,12 @@
         "subject_key": "obj.compatibility-lab",
         "summary": "software from Synthetic Fixture",
         "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "usefulness_summary": "installable or usable now; user cost 2; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 2,
         "version_or_state": "3.2.1"
-      },
-      {
-        "evidence": [
-          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "state_or_release:state.compatibility-lab.release",
-        "label": "Compatibility Lab 3.2.1",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "release for Compatibility Lab",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "version_or_state": "3.2.1"
-      },
-      {
-        "evidence": [
-          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:0",
-        "label": "Compatibility Lab evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "version_or_state": "3.2.1"
-      },
-      {
-        "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:1",
-        "label": "Compatibility Lab evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "version_or_state": "3.2.1"
-      },
-      {
-        "evidence": [
-          "source_archive",
-          "synthetic_resolution_fixture.json"
-        ],
-        "index_record_id": "representation:fixture:software/compatibility-lab@3.2.1:rep.compatibility-lab.source",
-        "label": "Compatibility Lab representation",
-        "record_kind": "representation",
-        "representation_id": "rep.compatibility-lab.source",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "route_hints": {
-          "representation_id": "rep.compatibility-lab.source",
-          "surface_route": "/representations",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "source_archive representation for Compatibility Lab",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "version_or_state": "3.2.1"
-      },
-      {
-        "evidence": [
-          "archive_item_file",
-          "DRIVERS/WIFI/THINKPAD_T42/WIN2000/DRIVER.INF"
-        ],
-        "index_record_id": "representation:internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture:rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.0",
-        "label": "DRIVERS/WIFI/THINKPAD_T42/WIN2000/DRIVER.INF",
-        "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.0",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
-        "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.0",
-          "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
-        "summary": "archive_item_file representation for ThinkPad T42 wireless driver support media recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "archive_item_file",
-          "DRIVERS/WIFI/THINKPAD_T42/WIN2000/README.TXT"
-        ],
-        "index_record_id": "representation:internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture:rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.1",
-        "label": "DRIVERS/WIFI/THINKPAD_T42/WIN2000/README.TXT",
-        "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.1",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
-        "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.1",
-          "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
-        "summary": "archive_item_file representation for ThinkPad T42 wireless driver support media recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded"
       },
       {
         "evidence": [
@@ -424,9 +121,13 @@
         "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:docs/evidence.txt",
         "label": "evidence.txt",
         "member_path": "docs/evidence.txt",
+        "primary_lane": "inside_bundles",
         "record_kind": "member",
         "representation_id": "rep.synthetic-demo-app.package",
         "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "inside_bundles"
+        ],
         "route_hints": {
           "member_path": "docs/evidence.txt",
           "representation_id": "rep.synthetic-demo-app.package",
@@ -439,293 +140,13 @@
         "subject_key": "obj.synthetic-demo-app",
         "summary": "member of Synthetic demo app package archive",
         "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "inside bundles; user cost 2; why: member_has_path; member_listing_only",
+        "user_cost_reasons": [
+          "member_has_path",
+          "member_listing_only"
+        ],
+        "user_cost_score": 2,
         "version_or_state": "1.0.0"
-      },
-      {
-        "evidence": [
-          "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "file_listing firefox-xp-support-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
-          "file_listing release-family-manifest.json internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "resolved_object:internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "label": "Firefox XP support notes recorded fixture",
-        "record_kind": "resolved_object",
-        "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "record_kind": "resolved_object",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "software from Internet Archive Recorded Fixtures",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:0",
-        "label": "Firefox XP support notes recorded fixture evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "label from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:1",
-        "label": "Firefox XP support notes recorded fixture evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "source_identifier from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:2",
-        "label": "Firefox XP support notes recorded fixture evidence 3",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "description from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:3",
-        "label": "Firefox XP support notes recorded fixture evidence 4",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "compatibility_note from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "file_listing firefox-xp-support-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:4",
-        "label": "Firefox XP support notes recorded fixture evidence 5",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "file_listing from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "file_listing release-family-manifest.json internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:5",
-        "label": "Firefox XP support notes recorded fixture evidence 6",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "file_listing from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "archive_item_metadata",
-          "internet_archive_items_fixture.json"
-        ],
-        "index_record_id": "representation:internet-archive-recorded:ia-firefox-xp-support-fixture:rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
-        "label": "Firefox XP support notes recorded fixture metadata",
-        "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
-          "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "archive_item_metadata representation for Firefox XP support notes recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "file_listing firefox-xp-support-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
-          "file_listing release-family-manifest.json internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "state_or_release:state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded",
-        "label": "Firefox XP support notes recorded fixture state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "recorded_item for Firefox XP support notes recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "archive_item_file",
-          "firefox-xp-support-notes.txt"
-        ],
-        "index_record_id": "representation:internet-archive-recorded:ia-firefox-xp-support-fixture:rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.0",
-        "label": "firefox-xp-support-notes.txt",
-        "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.0",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.0",
-          "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "archive_item_file representation for Firefox XP support notes recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "connector:Internet Archive connector",
-          "status:placeholder",
-          "trust_lane:preservation"
-        ],
-        "index_record_id": "source_record:internet-archive-placeholder",
-        "label": "Internet Archive",
-        "record_kind": "source_record",
-        "route_hints": {
-          "source_id": "internet-archive-placeholder",
-          "status": "placeholder",
-          "surface_route": "/source"
-        },
-        "source_family": "internet_archive",
-        "source_id": "internet-archive-placeholder",
-        "source_label": "Internet Archive",
-        "summary": "placeholder preservation source registry record"
-      },
-      {
-        "evidence": [
-          "connector:Internet Archive recorded fixtures connector",
-          "status:active_recorded_fixture",
-          "trust_lane:preservation"
-        ],
-        "index_record_id": "source_record:internet-archive-recorded-fixtures",
-        "label": "Internet Archive Recorded Fixtures",
-        "record_kind": "source_record",
-        "route_hints": {
-          "source_id": "internet-archive-recorded-fixtures",
-          "status": "active_recorded_fixture",
-          "surface_route": "/source"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "summary": "active_recorded_fixture preservation source registry record"
-      },
-      {
-        "evidence": [
-          "archive_item_file",
-          "README-windows7.txt"
-        ],
-        "index_record_id": "representation:internet-archive-recorded:ia-win7-utility-pack-fixture:rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.1",
-        "label": "README-windows7.txt",
-        "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.1",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.1",
-          "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "summary": "archive_item_file representation for Windows 7 Utility Pack recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
       },
       {
         "evidence": [
@@ -734,9 +155,13 @@
         "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:README.txt",
         "label": "README.txt",
         "member_path": "README.txt",
+        "primary_lane": "inside_bundles",
         "record_kind": "member",
         "representation_id": "rep.synthetic-demo-app.package",
         "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "inside_bundles"
+        ],
         "route_hints": {
           "member_path": "README.txt",
           "representation_id": "rep.synthetic-demo-app.package",
@@ -749,30 +174,13 @@
         "subject_key": "obj.synthetic-demo-app",
         "summary": "member of Synthetic demo app package archive",
         "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
-        "version_or_state": "1.0.0"
-      },
-      {
-        "evidence": [
-          "archive_item_file",
-          "release-family-manifest.json"
+        "usefulness_summary": "inside bundles; user cost 2; why: member_has_path; member_listing_only",
+        "user_cost_reasons": [
+          "member_has_path",
+          "member_listing_only"
         ],
-        "index_record_id": "representation:internet-archive-recorded:ia-firefox-xp-support-fixture:rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.1",
-        "label": "release-family-manifest.json",
-        "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.1",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.1",
-          "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "archive_item_file representation for Firefox XP support notes recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+        "user_cost_score": 2,
+        "version_or_state": "1.0.0"
       },
       {
         "evidence": [
@@ -781,9 +189,13 @@
         "index_record_id": "member:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package:config/settings.json",
         "label": "settings.json",
         "member_path": "config/settings.json",
+        "primary_lane": "inside_bundles",
         "record_kind": "member",
         "representation_id": "rep.synthetic-demo-app.package",
         "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "inside_bundles"
+        ],
         "route_hints": {
           "member_path": "config/settings.json",
           "representation_id": "rep.synthetic-demo-app.package",
@@ -796,49 +208,13 @@
         "subject_key": "obj.synthetic-demo-app",
         "summary": "member of Synthetic demo app package archive",
         "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "inside bundles; user cost 2; why: member_has_path; member_listing_only",
+        "user_cost_reasons": [
+          "member_has_path",
+          "member_listing_only"
+        ],
+        "user_cost_score": 2,
         "version_or_state": "1.0.0"
-      },
-      {
-        "evidence": [
-          "archive_item_file",
-          "SHA256SUMS.txt"
-        ],
-        "index_record_id": "representation:internet-archive-recorded:ia-win7-utility-pack-fixture:rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.2",
-        "label": "SHA256SUMS.txt",
-        "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.2",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.2",
-          "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "summary": "archive_item_file representation for Windows 7 Utility Pack recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
-        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "connector:Software Heritage connector",
-          "status:placeholder",
-          "trust_lane:preservation"
-        ],
-        "index_record_id": "source_record:software-heritage-placeholder",
-        "label": "Software Heritage",
-        "record_kind": "source_record",
-        "route_hints": {
-          "source_id": "software-heritage-placeholder",
-          "status": "placeholder",
-          "surface_route": "/source"
-        },
-        "source_family": "software_heritage",
-        "source_id": "software-heritage-placeholder",
-        "source_label": "Software Heritage",
-        "summary": "placeholder preservation source registry record"
       },
       {
         "evidence": [
@@ -847,9 +223,13 @@
         ],
         "index_record_id": "resolved_object:fixture:software/synthetic-demo-app@1.0.0",
         "label": "Synthetic Demo App",
+        "primary_lane": "installable_or_usable_now",
         "record_kind": "resolved_object",
         "representation_id": "rep.synthetic-demo-app.source",
         "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
         "route_hints": {
           "record_kind": "resolved_object",
           "surface_route": "/",
@@ -861,70 +241,11 @@
         "subject_key": "obj.synthetic-demo-app",
         "summary": "software from Synthetic Fixture",
         "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
-        "version_or_state": "1.0.0"
-      },
-      {
-        "evidence": [
-          "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        "usefulness_summary": "installable or usable now; user cost 2; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
         ],
-        "index_record_id": "state_or_release:state.synthetic-demo-app.release",
-        "label": "Synthetic Demo App 1.0.0",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.synthetic-demo-app",
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-app",
-        "summary": "release for Synthetic Demo App",
-        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
-        "version_or_state": "1.0.0"
-      },
-      {
-        "evidence": [
-          "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/synthetic-demo-app@1.0.0:0",
-        "label": "Synthetic Demo App evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-demo-app",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-app",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
-        "version_or_state": "1.0.0"
-      },
-      {
-        "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/synthetic-demo-app@1.0.0:1",
-        "label": "Synthetic Demo App evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-demo-app",
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-app",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "user_cost_score": 2,
         "version_or_state": "1.0.0"
       },
       {
@@ -934,9 +255,13 @@
         ],
         "index_record_id": "representation:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.source",
         "label": "Synthetic demo app fixture artifact",
+        "primary_lane": "installable_or_usable_now",
         "record_kind": "representation",
         "representation_id": "rep.synthetic-demo-app.source",
         "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
         "route_hints": {
           "representation_id": "rep.synthetic-demo-app.source",
           "surface_route": "/representations",
@@ -948,6 +273,12 @@
         "subject_key": "obj.synthetic-demo-app",
         "summary": "fixture_artifact representation for Synthetic Demo App",
         "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "installable or usable now; user cost 2; why: direct_representation_present; source_evidence_present",
+        "user_cost_reasons": [
+          "direct_representation_present",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 2,
         "version_or_state": "1.0.0"
       },
       {
@@ -957,9 +288,13 @@
         ],
         "index_record_id": "representation:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.fixture-record",
         "label": "Synthetic demo app fixture record",
+        "primary_lane": "installable_or_usable_now",
         "record_kind": "representation",
         "representation_id": "rep.synthetic-demo-app.fixture-record",
         "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
         "route_hints": {
           "representation_id": "rep.synthetic-demo-app.fixture-record",
           "surface_route": "/representations",
@@ -971,29 +306,12 @@
         "subject_key": "obj.synthetic-demo-app",
         "summary": "fixture_record representation for Synthetic Demo App",
         "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
-        "version_or_state": "1.0.0"
-      },
-      {
-        "evidence": [
-          "fixture_archive",
-          "synthetic-demo-app-package.zip"
+        "usefulness_summary": "installable or usable now; user cost 2; why: direct_representation_present; source_evidence_present",
+        "user_cost_reasons": [
+          "direct_representation_present",
+          "source_evidence_present"
         ],
-        "index_record_id": "representation:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package",
-        "label": "Synthetic demo app package archive",
-        "record_kind": "representation",
-        "representation_id": "rep.synthetic-demo-app.package",
-        "resolved_resource_id": "obj.synthetic-demo-app",
-        "route_hints": {
-          "representation_id": "rep.synthetic-demo-app.package",
-          "surface_route": "/representations",
-          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-app",
-        "summary": "fixture_archive representation for Synthetic Demo App",
-        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "user_cost_score": 2,
         "version_or_state": "1.0.0"
       },
       {
@@ -1003,9 +321,13 @@
         ],
         "index_record_id": "resolved_object:fixture:software/synthetic-demo-suite@2.0.0",
         "label": "Synthetic Demo Suite",
+        "primary_lane": "installable_or_usable_now",
         "record_kind": "resolved_object",
         "representation_id": "rep.synthetic-demo-suite.source",
         "resolved_resource_id": "obj.synthetic-demo-suite",
+        "result_lanes": [
+          "installable_or_usable_now"
+        ],
         "route_hints": {
           "record_kind": "resolved_object",
           "surface_route": "/",
@@ -1017,71 +339,445 @@
         "subject_key": "obj.synthetic-demo-suite",
         "summary": "software from Synthetic Fixture",
         "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+        "usefulness_summary": "installable or usable now; user cost 2; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 2,
         "version_or_state": "2.0.0"
       },
       {
         "evidence": [
-          "label Synthetic Demo Suite synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+          "archive_item_file",
+          "7z920.exe.txt"
         ],
-        "index_record_id": "state_or_release:state.synthetic-demo-suite.release",
-        "label": "Synthetic Demo Suite 2.0.0",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.synthetic-demo-suite",
+        "index_record_id": "representation:internet-archive-recorded:ia-win7-utility-pack-fixture:rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.0",
+        "label": "7z920.exe.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.0",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
         "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
+          "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.0",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
         },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-suite",
-        "summary": "release for Synthetic Demo Suite",
-        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
-        "version_or_state": "2.0.0"
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "summary": "archive_item_file representation for Windows 7 Utility Pack recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
       },
       {
         "evidence": [
-          "label Synthetic Demo Suite synthetic_fixture recorded_fixture Synthetic Fixture"
+          "source_archive",
+          "synthetic_resolution_fixture.json"
         ],
-        "index_record_id": "evidence:fixture:software/synthetic-demo-suite@2.0.0:0",
-        "label": "Synthetic Demo Suite evidence 1",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-demo-suite",
+        "index_record_id": "representation:fixture:software/archive-viewer@0.9.0:rep.archive-viewer.source",
+        "label": "Archive Viewer representation",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.archive-viewer.source",
+        "resolved_resource_id": "obj.archive-viewer",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
         "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
+          "representation_id": "rep.archive-viewer.source",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
         },
         "source_family": "synthetic_fixture",
         "source_id": "synthetic-fixtures",
         "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-suite",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
-        "version_or_state": "2.0.0"
+        "subject_key": "obj.archive-viewer",
+        "summary": "source_archive representation for Archive Viewer",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "0.9.0"
       },
       {
         "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+          "source_archive",
+          "synthetic_resolution_fixture.json"
         ],
-        "index_record_id": "evidence:fixture:software/synthetic-demo-suite@2.0.0:1",
-        "label": "Synthetic Demo Suite evidence 2",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-demo-suite",
+        "index_record_id": "representation:fixture:software/archivebox@0.8.5:rep.archivebox.synthetic.source",
+        "label": "ArchiveBox 0.8.5 representation",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.archivebox.synthetic.source",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
         "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/synthetic-demo-suite@2.0.0"
+          "representation_id": "rep.archivebox.synthetic.source",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/archivebox@0.8.5"
         },
         "source_family": "synthetic_fixture",
         "source_id": "synthetic-fixtures",
         "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-suite",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
-        "version_or_state": "2.0.0"
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "source_archive representation for ArchiveBox 0.8.5",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "source_archive",
+          "synthetic_resolution_fixture.json"
+        ],
+        "index_record_id": "representation:fixture:software/compatibility-lab@3.2.1:rep.compatibility-lab.source",
+        "label": "Compatibility Lab representation",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.compatibility-lab.source",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.compatibility-lab.source",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "source_archive representation for Compatibility Lab",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "DRIVERS/WIFI/THINKPAD_T42/WIN2000/DRIVER.INF"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture:rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.0",
+        "label": "DRIVERS/WIFI/THINKPAD_T42/WIN2000/DRIVER.INF",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.0",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.0",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+        "summary": "archive_item_file representation for ThinkPad T42 wireless driver support media recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "DRIVERS/WIFI/THINKPAD_T42/WIN2000/README.TXT"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture:rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.1",
+        "label": "DRIVERS/WIFI/THINKPAD_T42/WIN2000/README.TXT",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.1",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.file.1",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+        "summary": "archive_item_file representation for ThinkPad T42 wireless driver support media recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing firefox-xp-support-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+          "file_listing release-family-manifest.json internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "resolved_object:internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "label": "Firefox XP support notes recorded fixture",
+        "primary_lane": "preservation",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "software from Internet Archive Recorded Fixtures",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "preservation; user cost 3; why: preservation_source; source_evidence_present",
+        "user_cost_reasons": [
+          "preservation_source",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_metadata",
+          "internet_archive_items_fixture.json"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-firefox-xp-support-fixture:rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
+        "label": "Firefox XP support notes recorded fixture metadata",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "archive_item_metadata representation for Firefox XP support notes recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "firefox-xp-support-notes.txt"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-firefox-xp-support-fixture:rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.0",
+        "label": "firefox-xp-support-notes.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.0",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.0",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "archive_item_file representation for Firefox XP support notes recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "README-windows7.txt"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-win7-utility-pack-fixture:rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.1",
+        "label": "README-windows7.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.1",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.1",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "summary": "archive_item_file representation for Windows 7 Utility Pack recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "release-family-manifest.json"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-firefox-xp-support-fixture:rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.1",
+        "label": "release-family-manifest.json",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.1",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.1",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "archive_item_file representation for Firefox XP support notes recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "SHA256SUMS.txt"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-win7-utility-pack-fixture:rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.2",
+        "label": "SHA256SUMS.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.2",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.2",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "summary": "archive_item_file representation for Windows 7 Utility Pack recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "fixture_archive",
+          "synthetic-demo-app-package.zip"
+        ],
+        "index_record_id": "representation:fixture:software/synthetic-demo-app@1.0.0:rep.synthetic-demo-app.package",
+        "label": "Synthetic demo app package archive",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.synthetic-demo-app.package",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.synthetic-demo-app.package",
+          "surface_route": "/representations",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "fixture_archive representation for Synthetic Demo App",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "1.0.0"
       },
       {
         "evidence": [
@@ -1090,9 +786,14 @@
         ],
         "index_record_id": "representation:fixture:software/synthetic-demo-suite@2.0.0:rep.synthetic-demo-suite.source",
         "label": "Synthetic Demo Suite representation",
+        "primary_lane": "inside_bundles",
         "record_kind": "representation",
         "representation_id": "rep.synthetic-demo-suite.source",
         "resolved_resource_id": "obj.synthetic-demo-suite",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
         "route_hints": {
           "representation_id": "rep.synthetic-demo-suite.source",
           "surface_route": "/representations",
@@ -1104,6 +805,11 @@
         "subject_key": "obj.synthetic-demo-suite",
         "summary": "source_archive representation for Synthetic Demo Suite",
         "target_ref": "fixture:software/synthetic-demo-suite@2.0.0",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
         "version_or_state": "2.0.0"
       },
       {
@@ -1117,9 +823,13 @@
         ],
         "index_record_id": "resolved_object:internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
         "label": "ThinkPad T42 wireless driver support media recorded fixture",
+        "primary_lane": "preservation",
         "record_kind": "resolved_object",
         "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.metadata",
         "resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
         "route_hints": {
           "record_kind": "resolved_object",
           "surface_route": "/",
@@ -1131,7 +841,816 @@
         "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
         "summary": "software from Internet Archive Recorded Fixtures",
         "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
+        "usefulness_summary": "preservation; user cost 3; why: preservation_source; source_evidence_present",
+        "user_cost_reasons": [
+          "preservation_source",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 3,
         "version_or_state": "state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_metadata",
+          "internet_archive_items_fixture.json"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture:rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.metadata",
+        "label": "ThinkPad T42 wireless driver support media recorded fixture metadata",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.metadata",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+        "summary": "archive_item_metadata representation for ThinkPad T42 wireless driver support media recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "fixture_archive",
+          "driver_support_cd.zip"
+        ],
+        "index_record_id": "representation:local-bundle-fixture:driver-support-cd@1.0:rep.local-bundle.driver-support-cd.zip",
+        "label": "ThinkPad T42 wireless driver support ZIP fixture",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.local-bundle.driver-support-cd.zip",
+        "resolved_resource_id": "obj.local-bundle.driver-support-cd",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.local-bundle.driver-support-cd.zip",
+          "surface_route": "/representations",
+          "target_ref": "local-bundle-fixture:driver-support-cd@1.0"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.local-bundle.driver-support-cd",
+        "summary": "fixture_archive representation for ThinkPad T42 wireless support bundle recorded fixture",
+        "target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "1.0"
+      },
+      {
+        "evidence": [
+          "fixture_archive",
+          "windows_utility_bundle.zip"
+        ],
+        "index_record_id": "representation:local-bundle-fixture:windows-utility-bundle@1.0:rep.local-bundle.windows-utility-bundle.zip",
+        "label": "Windows 7 utility bundle ZIP fixture",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+        "resolved_resource_id": "obj.local-bundle.windows-utility-bundle",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+          "surface_route": "/representations",
+          "target_ref": "local-bundle-fixture:windows-utility-bundle@1.0"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.local-bundle.windows-utility-bundle",
+        "summary": "fixture_archive representation for Windows 7 utility bundle recorded fixture",
+        "target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "1.0"
+      },
+      {
+        "evidence": [
+          "label Windows 7 Utility Pack recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-win7-utility-pack-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Recorded metadata for a small utility pack shaped around Windows 7 and Windows NT 6.1 compatibility evidence. Payload entries are text stand-ins, not redistributed executables. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note Windows 7; Windows NT 6.1; x86; x64; utility; installer_stub; readme internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing 7z920.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+          "file_listing README-windows7.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+          "file_listing SHA256SUMS.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "resolved_object:internet-archive-recorded:ia-win7-utility-pack-fixture",
+        "label": "Windows 7 Utility Pack recorded fixture",
+        "primary_lane": "preservation",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "summary": "software from Internet Archive Recorded Fixtures",
+        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
+        "usefulness_summary": "preservation; user cost 3; why: preservation_source; source_evidence_present",
+        "user_cost_reasons": [
+          "preservation_source",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_metadata",
+          "internet_archive_items_fixture.json"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-win7-utility-pack-fixture:rep.internet-archive-recorded.ia.win7.utility.pack.fixture.metadata",
+        "label": "Windows 7 Utility Pack recorded fixture metadata",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.metadata",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "summary": "archive_item_metadata representation for Windows 7 Utility Pack recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing firefox-xp-support-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+          "file_listing release-family-manifest.json internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "state_or_release:state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded",
+        "label": "Firefox XP support notes recorded fixture state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded",
+        "primary_lane": "preservation",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "recorded_item for Firefox XP support notes recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "preservation; user cost 4; why: preservation_source",
+        "user_cost_reasons": [
+          "preservation_source"
+        ],
+        "user_cost_score": 4,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "label ThinkPad T42 wireless driver support media recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-thinkpad-t42-wireless-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Recorded metadata for a support-media-shaped driver item with Windows 2000 compatibility hints. Payload entries are text stand-ins, not real driver binaries. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note Windows 2000; x86; driver; support_media; readme; inf internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing DRIVERS/WIFI/THINKPAD_T42/WIN2000/DRIVER.INF internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+          "file_listing DRIVERS/WIFI/THINKPAD_T42/WIN2000/README.TXT internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "state_or_release:state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded",
+        "label": "ThinkPad T42 wireless driver support media recorded fixture state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded",
+        "primary_lane": "preservation",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+        "summary": "recorded_item for ThinkPad T42 wireless driver support media recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
+        "usefulness_summary": "preservation; user cost 4; why: preservation_source",
+        "user_cost_reasons": [
+          "preservation_source"
+        ],
+        "user_cost_score": 4,
+        "version_or_state": "state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "label Windows 7 Utility Pack recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-win7-utility-pack-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Recorded metadata for a small utility pack shaped around Windows 7 and Windows NT 6.1 compatibility evidence. Payload entries are text stand-ins, not redistributed executables. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note Windows 7; Windows NT 6.1; x86; x64; utility; installer_stub; readme internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing 7z920.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+          "file_listing README-windows7.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+          "file_listing SHA256SUMS.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "state_or_release:state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded",
+        "label": "Windows 7 Utility Pack recorded fixture state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded",
+        "primary_lane": "preservation",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+        "summary": "recorded_item for Windows 7 Utility Pack recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
+        "usefulness_summary": "preservation; user cost 4; why: preservation_source",
+        "user_cost_reasons": [
+          "preservation_source"
+        ],
+        "user_cost_score": 4,
+        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.archive-viewer.release",
+        "label": "Archive Viewer 0.9.0",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.archive-viewer",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "release for Archive Viewer",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:0",
+        "label": "Archive Viewer evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archive-viewer",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:1",
+        "label": "Archive Viewer evidence 2",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archive-viewer",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archive-viewer@0.9.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archive-viewer",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/archive-viewer@0.9.0",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.9.0"
+      },
+      {
+        "evidence": [
+          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.archivebox.synthetic.release",
+        "label": "ArchiveBox 0.8.5 0.8.5",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "release for ArchiveBox 0.8.5",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:0",
+        "label": "ArchiveBox 0.8.5 evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:1",
+        "label": "ArchiveBox 0.8.5 evidence 2",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.archivebox.synthetic",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/archivebox@0.8.5"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.archivebox.synthetic",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/archivebox@0.8.5",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "0.8.5"
+      },
+      {
+        "evidence": [
+          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.compatibility-lab.release",
+        "label": "Compatibility Lab 3.2.1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "release for Compatibility Lab",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:0",
+        "label": "Compatibility Lab evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:1",
+        "label": "Compatibility Lab evidence 2",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.compatibility-lab",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/compatibility-lab@3.2.1"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.compatibility-lab",
+        "summary": "source_locator from synthetic_fixture",
+        "target_ref": "fixture:software/compatibility-lab@3.2.1",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "3.2.1"
+      },
+      {
+        "evidence": [
+          "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:0",
+        "label": "Firefox XP support notes recorded fixture evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "label from internet_archive_recorded",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:1",
+        "label": "Firefox XP support notes recorded fixture evidence 2",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "source_identifier from internet_archive_recorded",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:2",
+        "label": "Firefox XP support notes recorded fixture evidence 3",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "description from internet_archive_recorded",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:3",
+        "label": "Firefox XP support notes recorded fixture evidence 4",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "compatibility_note from internet_archive_recorded",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "file_listing firefox-xp-support-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:4",
+        "label": "Firefox XP support notes recorded fixture evidence 5",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "file_listing from internet_archive_recorded",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "file_listing release-family-manifest.json internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:5",
+        "label": "Firefox XP support notes recorded fixture evidence 6",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "summary": "file_listing from internet_archive_recorded",
+        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture",
+          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "state_or_release:state.synthetic-demo-app.release",
+        "label": "Synthetic Demo App 1.0.0",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "state_or_release",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "state_or_release",
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "release for Synthetic Demo App",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
+        "user_cost_reasons": [
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "1.0.0"
+      },
+      {
+        "evidence": [
+          "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture"
+        ],
+        "index_record_id": "evidence:fixture:software/synthetic-demo-app@1.0.0:0",
+        "label": "Synthetic Demo App evidence 1",
+        "primary_lane": "mentions_or_traces",
+        "record_kind": "evidence",
+        "resolved_resource_id": "obj.synthetic-demo-app",
+        "result_lanes": [
+          "mentions_or_traces"
+        ],
+        "route_hints": {
+          "record_kind": "evidence",
+          "surface_route": "/",
+          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
+        },
+        "source_family": "synthetic_fixture",
+        "source_id": "synthetic-fixtures",
+        "source_label": "Synthetic Fixture",
+        "subject_key": "obj.synthetic-demo-app",
+        "summary": "label from synthetic_fixture",
+        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
+        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+        "user_cost_reasons": [
+          "mention_only",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 6,
+        "version_or_state": "1.0.0"
       }
     ],
     "status": "queried"

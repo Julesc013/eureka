@@ -75,7 +75,16 @@
               "object": {
                 "id": "obj.synthetic-demo-app",
                 "kind": "software",
-                "label": "Synthetic Demo App"
+                "label": "Synthetic Demo App",
+                "primary_lane": "installable_or_usable_now",
+                "result_lanes": [
+                  "installable_or_usable_now"
+                ],
+                "usefulness_summary": "installable or usable now; user cost 2; why: direct_bounded_record",
+                "user_cost_reasons": [
+                  "direct_bounded_record"
+                ],
+                "user_cost_score": 2
               },
               "resolved_resource_id": "resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2",
               "source": {
