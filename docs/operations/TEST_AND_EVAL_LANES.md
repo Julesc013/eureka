@@ -107,6 +107,20 @@ python -m unittest tests.operations.test_search_usefulness_backlog_triage
 The validation checks the selected wedges, next milestone, backlog item count,
 deferred-work list, and no-fake-baseline/no-runtime-behavior claims.
 
+## Search Usefulness Audit Delta
+
+Search Usefulness Audit Delta v0 is validated with:
+
+```bash
+python -m unittest tests.operations.test_search_usefulness_audit_delta
+```
+
+The validation checks the stable delta pack, historical reported baseline
+limitations, selected wedges, current local audit counts, pending/manual
+external baseline posture, and the Old-Platform Source Coverage Expansion v0
+recommendation. It is audit/reporting only and does not change retrieval
+behavior.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

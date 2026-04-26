@@ -52,6 +52,8 @@ steps:
     run: python -m unittest tests.operations.test_comprehensive_audit_pack
   - id: search_usefulness_backlog_triage_validation
     run: python -m unittest tests.operations.test_search_usefulness_backlog_triage
+  - id: search_usefulness_audit_delta_validation
+    run: python -m unittest tests.operations.test_search_usefulness_audit_delta
   - id: source_coverage_capability_tests
     run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
   - id: real_source_coverage_pack_tests
@@ -134,6 +136,8 @@ steps:
     run: python scripts/run_search_usefulness_audit.py
   - id: search_usefulness_audit_json
     run: python scripts/run_search_usefulness_audit.py --query windows_7_apps --json
+  - id: search_usefulness_delta_report_validation
+    run: python -m unittest tests.operations.test_search_usefulness_audit_delta
   - id: search_usefulness_manual_baseline_template
     run: python scripts/record_search_baseline_observation.py --query windows_7_apps --system google
   - id: test_eval_command_matrix
@@ -336,6 +340,7 @@ notes:
   - Rust Parity Fixture Pack v0 adds Python-oracle golden outputs and a stdlib generator/check script only; it does not implement Rust behavior, replace Python runtime paths, or require Rust tooling for normal checks.
   - Rust Source Registry Parity Candidate v0 is the first isolated Rust behavior seam under `crates/eureka-core`; it is compared to Python-oracle source-registry goldens and is not wired into Python runtime, web, CLI, HTTP API, workers, or production paths.
   - Search Usefulness Audit v0 is a local eval/audit harness with pending manual external baselines only; it performs no Google scraping, Internet Archive scraping, live crawling, ranking, fuzzy retrieval, vector search, or LLM planning.
+  - Search Usefulness Audit Delta v0 is audit/reporting governance over current local results only; it adds no retrieval behavior and records no external baseline observations.
   - Source Coverage and Capability Model v0 adds source capability and coverage-depth metadata/projection only; it does not add connectors, live source probing, crawling, or acquisition behavior.
   - Real Source Coverage Pack v0 adds committed recorded Internet Archive-like fixtures and local bundle fixtures only; it does not add live Internet Archive API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Software Planner Pack v0 adds deterministic old-platform interpretation only; it does not add ranking, fuzzy/vector retrieval, LLM planning, live source behavior, new connectors, or planner-owned retrieval routing.

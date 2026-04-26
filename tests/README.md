@@ -25,3 +25,9 @@ tests under `runtime/engine/compatibility/tests/` plus projection checks where
 source-backed evidence flows through local index, search, compatibility, CLI,
 and web output. These tests guard fixture-backed evidence and unknown outcomes,
 not a compatibility oracle or installer/runtime execution behavior.
+
+Search Usefulness Audit Delta v0 adds
+`tests/operations/test_search_usefulness_audit_delta.py` to validate the
+committed delta pack, baseline limitations, selected wedges, current audit
+counts, pending/manual external-baseline posture, and next recommendation. It
+does not exercise product behavior.
