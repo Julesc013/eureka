@@ -303,6 +303,51 @@
                 }
               ],
               "object": {
+                "compatibility_evidence": [
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "mentions_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:87bfa226afc4e6c69eea03e5933362d822a7f15405091f844d99e43b3b3c1e73",
+                    "evidence_kind": "source_metadata",
+                    "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+                  },
+                  {
+                    "architecture": "x86",
+                    "claim_type": "supports_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:9b1050ab4e10752aa5c6bbd65d2b4f7a13c678f1740198742f4c155a8aa8092c",
+                    "evidence_kind": "compatibility_note",
+                    "evidence_text": "Windows XP; x86; release_notes; support_window",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+                  }
+                ],
+                "compatibility_summary": "Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium)",
                 "id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
                 "kind": "software",
                 "label": "Firefox XP support notes recorded fixture",
@@ -383,6 +428,93 @@
                 }
               ],
               "object": {
+                "compatibility_evidence": [
+                  {
+                    "architecture": "x86",
+                    "claim_type": "documentation_for_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:03776648138c0416bc21d4c88de55fc4179037e2e85e7235577a811a8b591b94",
+                    "evidence_kind": "compatibility_note",
+                    "evidence_text": "Windows 2000; x86; driver; support_media; readme; inf",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-thinkpad-t42-wireless-support-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows 2000",
+                      "name": "Windows 2000",
+                      "version": "NT 5.0"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
+                  },
+                  {
+                    "architecture": "x86",
+                    "claim_type": "driver_for_hardware",
+                    "confidence": "low",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:2c6c6f02c73beb55c11b27f5b500161e5f5fbbac1ce4437c089306c7698d4beb",
+                    "evidence_kind": "file_path",
+                    "evidence_text": "DRIVERS/WIFI/THINKPAD_T42/WIN2000/DRIVER.INF",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-thinkpad-t42-wireless-support-fixture/files/0",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows 2000",
+                      "name": "Windows 2000",
+                      "version": "NT 5.0"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
+                  },
+                  {
+                    "architecture": "x86",
+                    "claim_type": "driver_for_hardware",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:48844b8ed9662a09aee578beabe0b2c27c8401e885b9a67890406ce45c372bdd",
+                    "evidence_kind": "file_path",
+                    "evidence_text": "DRIVERS/WIFI/THINKPAD_T42/WIN2000/README.TXT",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-thinkpad-t42-wireless-support-fixture/files/1",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows 2000",
+                      "name": "Windows 2000",
+                      "version": "NT 5.0"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
+                  },
+                  {
+                    "architecture": "x86",
+                    "claim_type": "supports_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:a46a50fc2b3558914b8e036cead61a9c48578c2d3db61cdec7f0609ef27e07ae",
+                    "evidence_kind": "source_metadata",
+                    "evidence_text": "Recorded metadata for a support-media-shaped driver item with Windows 2000 compatibility hints. Payload entries are text stand-ins, not real driver binaries.",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-thinkpad-t42-wireless-support-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows 2000",
+                      "name": "Windows 2000",
+                      "version": "NT 5.0"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
+                  }
+                ],
+                "compatibility_summary": "Windows 2000: documentation_for_platform via compatibility_note (medium); Windows 2000: driver_for_hardware via file_path (low); Windows 2000: driver_for_hardware via file_path (medium); +1 more",
                 "id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
                 "kind": "software",
                 "label": "ThinkPad T42 wireless driver support media recorded fixture",
@@ -472,6 +604,72 @@
                 }
               ],
               "object": {
+                "compatibility_evidence": [
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "supports_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:11da2938a96dcac27bfb7de77f3fdeb1c36842139a4cf217773c31177e00b366",
+                    "evidence_kind": "source_metadata",
+                    "evidence_text": "Recorded metadata for a small utility pack shaped around Windows 7 and Windows NT 6.1 compatibility evidence. Payload entries are text stand-ins, not redistributed executables.",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows 7",
+                      "name": "Windows 7",
+                      "version": "NT 6.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
+                  },
+                  {
+                    "architecture": "x64",
+                    "claim_type": "documentation_for_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:4325a810994897d7c790bc0487f4c0cf3a7ff58091844ff4ad498d65df657872",
+                    "evidence_kind": "compatibility_note",
+                    "evidence_text": "Windows 7; Windows NT 6.1; x86; x64; utility; installer_stub; readme",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows 7",
+                      "name": "Windows 7",
+                      "version": "NT 6.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
+                  },
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "mentions_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:a0dba5e3ed3579a0fee1c2d07d97cbab4744fd387231a1aa5862ef7581f0068d",
+                    "evidence_kind": "source_metadata",
+                    "evidence_text": "Windows 7 Utility Pack recorded fixture",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows 7",
+                      "name": "Windows 7",
+                      "version": "NT 6.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
+                  }
+                ],
+                "compatibility_summary": "Windows 7: supports_platform via source_metadata (medium); Windows 7: documentation_for_platform via compatibility_note (medium); Windows 7: mentions_platform via source_metadata (medium)",
                 "id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
                 "kind": "software",
                 "label": "Windows 7 Utility Pack recorded fixture",

@@ -24,6 +24,51 @@
           "read_member",
           "preview_member"
         ],
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:5210a3dd8526c47f653c038f71a0760581918a4cc2e02d3534c9bfe410b007f7",
+            "evidence_kind": "member_text",
+            "evidence_text": "[Version] Signature=\"$Windows NT$\" [Manufacturer] %Fixture%=Fixture,NTx86 ; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:67324b563124d6bdf276564cc2b0e3b6d65be5d326ca49ed3c997f13f11c08a2",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 driver INF text stand-in.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: driver_for_hardware via member_text (low); Windows 2000: supports_platform via compatibility_note (medium)",
         "content_hash": "sha256:04ec90754dfba2dface73c89e3454e7c358942122cf58ee85d327f180ead23cd",
         "evidence": [
           "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
@@ -65,14 +110,15 @@
         "subject_key": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
         "summary": "driver member of ThinkPad T42 wireless support bundle recorded fixture",
         "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
-        "usefulness_summary": "inside bundles; user cost 1; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present",
+        "usefulness_summary": "inside bundles; user cost 1; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present; driver_platform_match",
         "user_cost_reasons": [
           "inner_member_has_parent_lineage",
           "member_has_path",
           "action_available",
           "member_has_preview_or_readback_action",
           "source_evidence_present",
-          "compatibility_hint_present"
+          "compatibility_evidence_present",
+          "driver_platform_match"
         ],
         "user_cost_score": 1,
         "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
@@ -83,6 +129,51 @@
           "read_member",
           "preview_member"
         ],
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:0e758c31360d2241cea2d7ac1ed1f042c1c4843de4999ee3eaad26738de39362",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Text stand-in for a Windows 7 utility artifact.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/1",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.8f8dedb649627129727ef17e",
+            "subject_target_ref": "member:sha256:8f8dedb649627129727ef17ef654e9156242ffc71ac39db2f49e1ea2877108fd"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:abee147469703769215ff63bc10846186fec822f9b14186512371bbe407bec15",
+            "evidence_kind": "member_text",
+            "evidence_text": "Dummy text stand-in named after a classic utility installer. Compatibility hint: Windows 7 / Windows NT 6.1.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/utilities/7z920.exe.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.8f8dedb649627129727ef17e",
+            "subject_target_ref": "member:sha256:8f8dedb649627129727ef17ef654e9156242ffc71ac39db2f49e1ea2877108fd"
+          }
+        ],
+        "compatibility_summary": "Windows 7: supports_platform via compatibility_note (medium); Windows 7: supports_platform via member_text (low)",
         "content_hash": "sha256:ef80f594d01dd2725974be86048730dc265dd3e6206ec34ec2c9c7e7e4b09273",
         "evidence": [
           "member_listing utilities/7z920.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
@@ -124,14 +215,14 @@
         "subject_key": "obj.synthetic-member.8f8dedb649627129727ef17e",
         "summary": "utility member of Windows 7 utility bundle recorded fixture",
         "target_ref": "member:sha256:8f8dedb649627129727ef17ef654e9156242ffc71ac39db2f49e1ea2877108fd",
-        "usefulness_summary": "inside bundles; user cost 1; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present",
+        "usefulness_summary": "inside bundles; user cost 1; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present",
         "user_cost_reasons": [
           "inner_member_has_parent_lineage",
           "member_has_path",
           "action_available",
           "member_has_preview_or_readback_action",
           "source_evidence_present",
-          "compatibility_hint_present"
+          "compatibility_evidence_present"
         ],
         "user_cost_score": 1,
         "version_or_state": "state.synthetic-member.8f8dedb649627129727ef17e.derived"
@@ -635,6 +726,51 @@
           "read_member",
           "preview_member"
         ],
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:28a4d752cc9d542f754ac44266e8266dea8e6641ba1bd794a2a1906b38ac3df9",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 2000, x86, driver/support media fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/compatibility/windows2000.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:7b4a7301c6d632452586b7418909ec10831257c4ecf86a1e832022e397d76eed",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: supports_platform via compatibility_note (medium); Windows 2000: supports_platform via compatibility_note (medium)",
         "content_hash": "sha256:9362246fbe4edd1b8b3ad7678280850394a838949419f9b037e0bf67a51405be",
         "evidence": [
           "member_listing compatibility/windows2000.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
@@ -675,14 +811,15 @@
         "subject_key": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
         "summary": "compatibility_note member of ThinkPad T42 wireless support bundle recorded fixture",
         "target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044",
-        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present; documentation_only_compatibility_evidence; documentation_only",
         "user_cost_reasons": [
           "inner_member_has_parent_lineage",
           "member_has_path",
           "action_available",
           "member_has_preview_or_readback_action",
           "source_evidence_present",
-          "compatibility_hint_present",
+          "compatibility_evidence_present",
+          "documentation_only_compatibility_evidence",
           "documentation_only"
         ],
         "user_cost_score": 5,
@@ -694,6 +831,51 @@
           "read_member",
           "preview_member"
         ],
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:13d4eb4bdfb28370b7c5b4ec58297442470c44ea2222dcd08262951ba36d5b13",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 7 and Windows NT 6.1 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          },
+          {
+            "architecture": "x64",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:20aca8a6bfb5c3d26ac20c772ca5fc2c8bf82b13bd1315df2fc30aa2240f7d2e",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 7, Windows NT 6.1, x86, x64. Source: committed local bundle fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/compatibility/windows7.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          }
+        ],
+        "compatibility_summary": "Windows 7: supports_platform via compatibility_note (medium); Windows 7: supports_platform via compatibility_note (medium)",
         "content_hash": "sha256:78dc68497ecd1c8544a3f6b9b3944236d70b18aea20f51af18775a670f4f7970",
         "evidence": [
           "member_listing compatibility/windows7.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
@@ -734,14 +916,15 @@
         "subject_key": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
         "summary": "compatibility_note member of Windows 7 utility bundle recorded fixture",
         "target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296",
-        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present; documentation_only_compatibility_evidence; documentation_only",
         "user_cost_reasons": [
           "inner_member_has_parent_lineage",
           "member_has_path",
           "action_available",
           "member_has_preview_or_readback_action",
           "source_evidence_present",
-          "compatibility_hint_present",
+          "compatibility_evidence_present",
+          "documentation_only_compatibility_evidence",
           "documentation_only"
         ],
         "user_cost_score": 5,
@@ -753,6 +936,51 @@
           "read_member",
           "preview_member"
         ],
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:a711b4b3fc85e4aaed2908a86382d8f570561f413e42c378048a7635f2a3dc04",
+            "evidence_kind": "readme",
+            "evidence_text": "Readme stand-in: ThinkPad T42 wireless driver package shape for Windows 2000. Not a real driver.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+            "subject_target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:ae7660901f89ca2d969ec62008a052ee650e0b5b3304fd21fc30223e5958fb40",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "ThinkPad T42 wireless driver readme for Windows 2000 fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/2",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+            "subject_target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: driver_for_hardware via readme (medium); Windows 2000: driver_for_hardware via compatibility_note (medium)",
         "content_hash": "sha256:e168e4d8ced9dbe0a36445c54587801bd91269c0b72d264a147ec4f29272d9ea",
         "evidence": [
           "member_listing drivers/wifi/thinkpad_t42/windows2000/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
@@ -793,14 +1021,15 @@
         "subject_key": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
         "summary": "readme member of ThinkPad T42 wireless support bundle recorded fixture",
         "target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce",
-        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present; documentation_only_compatibility_evidence; documentation_only",
         "user_cost_reasons": [
           "inner_member_has_parent_lineage",
           "member_has_path",
           "action_available",
           "member_has_preview_or_readback_action",
           "source_evidence_present",
-          "compatibility_hint_present",
+          "compatibility_evidence_present",
+          "documentation_only_compatibility_evidence",
           "documentation_only"
         ],
         "user_cost_score": 5,
@@ -812,6 +1041,30 @@
           "read_member",
           "preview_member"
         ],
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:b8ff3a87378bd831477a289a3babecae9a59bb8976ca4c3be5f1f1c070a6f4c9",
+            "evidence_kind": "member_text",
+            "evidence_text": "{\"fixture\":\"windows_utility_bundle\",\"platforms\":[\"Windows 7\",\"Windows NT 6.1\"],\"members\":4}",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/manifests/manifest.json",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.5475247899f48cb2102bacd1",
+            "subject_target_ref": "member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493"
+          }
+        ],
+        "compatibility_summary": "Windows 7: supports_platform via member_text (low)",
         "content_hash": "sha256:e12b9cdd3d5cf64d8854f59085543fa78eaff272c9c9e89aeac08663a833de18",
         "evidence": [
           "member_path manifests/manifest.json local_bundle_fixtures member_listing Local Bundle Fixtures",
@@ -850,14 +1103,14 @@
         "subject_key": "obj.synthetic-member.5475247899f48cb2102bacd1",
         "summary": "manifest member of Windows 7 utility bundle recorded fixture",
         "target_ref": "member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493",
-        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present; documentation_only",
         "user_cost_reasons": [
           "inner_member_has_parent_lineage",
           "member_has_path",
           "action_available",
           "member_has_preview_or_readback_action",
           "source_evidence_present",
-          "compatibility_hint_present",
+          "compatibility_evidence_present",
           "documentation_only"
         ],
         "user_cost_score": 5,
@@ -869,6 +1122,30 @@
           "read_member",
           "preview_member"
         ],
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:c29b1e49413322720ab57d068bf06c103c907e5d6f731a68d4134f4440e7ace3",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Fixture readme records ThinkPad T42 wireless and Windows 2000 hints.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/0",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.1cd421e446466c9e51ce832b",
+            "subject_target_ref": "member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: documentation_for_platform via compatibility_note (medium)",
         "content_hash": "sha256:8e8672c07aa329181ad877e5955c15be72bc231d5f2a09b729221542040bf42d",
         "evidence": [
           "member_listing README.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
@@ -909,14 +1186,15 @@
         "subject_key": "obj.synthetic-member.1cd421e446466c9e51ce832b",
         "summary": "readme member of ThinkPad T42 wireless support bundle recorded fixture",
         "target_ref": "member:sha256:1cd421e446466c9e51ce832b73785a15836377fa4c5a1be221539b61ed5020c3",
-        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present; documentation_only_compatibility_evidence; documentation_only",
         "user_cost_reasons": [
           "inner_member_has_parent_lineage",
           "member_has_path",
           "action_available",
           "member_has_preview_or_readback_action",
           "source_evidence_present",
-          "compatibility_hint_present",
+          "compatibility_evidence_present",
+          "documentation_only_compatibility_evidence",
           "documentation_only"
         ],
         "user_cost_score": 5,
@@ -928,6 +1206,51 @@
           "read_member",
           "preview_member"
         ],
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:7e1c1b40a46ba53b6cf87cc1c96119fc76b530cd716872740b43e6eb7dbcc53c",
+            "evidence_kind": "readme",
+            "evidence_text": "Windows 7 utility bundle fixture. Text stand-ins only; no real executables are redistributed.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/README.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.fa60a201421f029eb8521f8d",
+            "subject_target_ref": "member:sha256:fa60a201421f029eb8521f8d841859963e83c6bf669736f8ab5a4f9855b39647"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:f16f6a631507d8b01fd10ae5ac95643a58487ecf29eee8fdbd5ec9900b2c0c32",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Fixture readme records Windows 7 / Windows NT 6.1 compatibility hints.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/0",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.fa60a201421f029eb8521f8d",
+            "subject_target_ref": "member:sha256:fa60a201421f029eb8521f8d841859963e83c6bf669736f8ab5a4f9855b39647"
+          }
+        ],
+        "compatibility_summary": "Windows 7: documentation_for_platform via readme (medium); Windows 7: documentation_for_platform via compatibility_note (medium)",
         "content_hash": "sha256:dafdc398c3d3055f9679f7073f209534a7d363d665d21a7e08e5afb275d0ccbb",
         "evidence": [
           "member_listing README.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
@@ -968,14 +1291,15 @@
         "subject_key": "obj.synthetic-member.fa60a201421f029eb8521f8d",
         "summary": "readme member of Windows 7 utility bundle recorded fixture",
         "target_ref": "member:sha256:fa60a201421f029eb8521f8d841859963e83c6bf669736f8ab5a4f9855b39647",
-        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present; documentation_only_compatibility_evidence; documentation_only",
         "user_cost_reasons": [
           "inner_member_has_parent_lineage",
           "member_has_path",
           "action_available",
           "member_has_preview_or_readback_action",
           "source_evidence_present",
-          "compatibility_hint_present",
+          "compatibility_evidence_present",
+          "documentation_only_compatibility_evidence",
           "documentation_only"
         ],
         "user_cost_score": 5,
@@ -987,6 +1311,30 @@
           "read_member",
           "preview_member"
         ],
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:3ef8d33ee564653bc3da5fd1b6c4b24f13771b0558a6f190270c8c43e6e30250",
+            "evidence_kind": "readme",
+            "evidence_text": "Blue FTP client fixture note for Windows XP-era vague identity tests. This is not a real application payload.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/utilities/ftp-blue-client/readme.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows XP",
+              "name": "Windows XP",
+              "version": "NT 5.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.49ea2e713beb1c021863ad10",
+            "subject_target_ref": "member:sha256:49ea2e713beb1c021863ad1068e8afa72baa1e4a9e196cee2ae9b4954447bddd"
+          }
+        ],
+        "compatibility_summary": "Windows XP: documentation_for_platform via readme (medium)",
         "content_hash": "sha256:e6b89f879a97f9180a05b2342e267f639a9c9b8fc977bf5de109dd45c00541cc",
         "evidence": [
           "member_listing utilities/ftp-blue-client/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
@@ -1027,14 +1375,15 @@
         "subject_key": "obj.synthetic-member.49ea2e713beb1c021863ad10",
         "summary": "readme member of Windows 7 utility bundle recorded fixture",
         "target_ref": "member:sha256:49ea2e713beb1c021863ad1068e8afa72baa1e4a9e196cee2ae9b4954447bddd",
-        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_hint_present; documentation_only",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present; documentation_only_compatibility_evidence; documentation_only",
         "user_cost_reasons": [
           "inner_member_has_parent_lineage",
           "member_has_path",
           "action_available",
           "member_has_preview_or_readback_action",
           "source_evidence_present",
-          "compatibility_hint_present",
+          "compatibility_evidence_present",
+          "documentation_only_compatibility_evidence",
           "documentation_only"
         ],
         "user_cost_score": 5,
@@ -1320,6 +1669,51 @@
         "version_or_state": "3.2.1"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:28a4d752cc9d542f754ac44266e8266dea8e6641ba1bd794a2a1906b38ac3df9",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 2000, x86, driver/support media fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/compatibility/windows2000.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:7b4a7301c6d632452586b7418909ec10831257c4ecf86a1e832022e397d76eed",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: supports_platform via compatibility_note (medium); Windows 2000: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_listing compatibility/windows2000.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
@@ -1351,6 +1745,51 @@
         "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:28a4d752cc9d542f754ac44266e8266dea8e6641ba1bd794a2a1906b38ac3df9",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 2000, x86, driver/support media fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/compatibility/windows2000.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:7b4a7301c6d632452586b7418909ec10831257c4ecf86a1e832022e397d76eed",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: supports_platform via compatibility_note (medium); Windows 2000: supports_platform via compatibility_note (medium)",
         "evidence": [
           "compatibility_note Windows 2000 compatibility hint. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
         ],
@@ -1382,6 +1821,51 @@
         "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:28a4d752cc9d542f754ac44266e8266dea8e6641ba1bd794a2a1906b38ac3df9",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 2000, x86, driver/support media fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/compatibility/windows2000.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:7b4a7301c6d632452586b7418909ec10831257c4ecf86a1e832022e397d76eed",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: supports_platform via compatibility_note (medium); Windows 2000: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_path compatibility/windows2000.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
@@ -1413,6 +1897,51 @@
         "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:28a4d752cc9d542f754ac44266e8266dea8e6641ba1bd794a2a1906b38ac3df9",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 2000, x86, driver/support media fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/compatibility/windows2000.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:7b4a7301c6d632452586b7418909ec10831257c4ecf86a1e832022e397d76eed",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: supports_platform via compatibility_note (medium); Windows 2000: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_hash sha256:9362246fbe4edd1b8b3ad7678280850394a838949419f9b037e0bf67a51405be local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
@@ -1444,6 +1973,51 @@
         "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:28a4d752cc9d542f754ac44266e8266dea8e6641ba1bd794a2a1906b38ac3df9",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 2000, x86, driver/support media fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/compatibility/windows2000.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:7b4a7301c6d632452586b7418909ec10831257c4ecf86a1e832022e397d76eed",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.6362e313263bde7cf6d3f09b",
+            "subject_target_ref": "member:sha256:6362e313263bde7cf6d3f09b395c67d84fdb1483b13014132fbdf495af37f044"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: supports_platform via compatibility_note (medium); Windows 2000: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_text Compatibility evidence hint: Windows 2000, x86, driver/support media fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
         ],
@@ -1475,6 +2049,51 @@
         "version_or_state": "state.synthetic-member.6362e313263bde7cf6d3f09b.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:13d4eb4bdfb28370b7c5b4ec58297442470c44ea2222dcd08262951ba36d5b13",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 7 and Windows NT 6.1 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          },
+          {
+            "architecture": "x64",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:20aca8a6bfb5c3d26ac20c772ca5fc2c8bf82b13bd1315df2fc30aa2240f7d2e",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 7, Windows NT 6.1, x86, x64. Source: committed local bundle fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/compatibility/windows7.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          }
+        ],
+        "compatibility_summary": "Windows 7: supports_platform via compatibility_note (medium); Windows 7: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_listing compatibility/windows7.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
@@ -1506,6 +2125,51 @@
         "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:13d4eb4bdfb28370b7c5b4ec58297442470c44ea2222dcd08262951ba36d5b13",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 7 and Windows NT 6.1 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          },
+          {
+            "architecture": "x64",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:20aca8a6bfb5c3d26ac20c772ca5fc2c8bf82b13bd1315df2fc30aa2240f7d2e",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 7, Windows NT 6.1, x86, x64. Source: committed local bundle fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/compatibility/windows7.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          }
+        ],
+        "compatibility_summary": "Windows 7: supports_platform via compatibility_note (medium); Windows 7: supports_platform via compatibility_note (medium)",
         "evidence": [
           "compatibility_note Windows 7 and Windows NT 6.1 compatibility hint. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
         ],
@@ -1537,6 +2201,51 @@
         "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:13d4eb4bdfb28370b7c5b4ec58297442470c44ea2222dcd08262951ba36d5b13",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 7 and Windows NT 6.1 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          },
+          {
+            "architecture": "x64",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:20aca8a6bfb5c3d26ac20c772ca5fc2c8bf82b13bd1315df2fc30aa2240f7d2e",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 7, Windows NT 6.1, x86, x64. Source: committed local bundle fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/compatibility/windows7.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          }
+        ],
+        "compatibility_summary": "Windows 7: supports_platform via compatibility_note (medium); Windows 7: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_path compatibility/windows7.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
@@ -1568,6 +2277,51 @@
         "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:13d4eb4bdfb28370b7c5b4ec58297442470c44ea2222dcd08262951ba36d5b13",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 7 and Windows NT 6.1 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          },
+          {
+            "architecture": "x64",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:20aca8a6bfb5c3d26ac20c772ca5fc2c8bf82b13bd1315df2fc30aa2240f7d2e",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 7, Windows NT 6.1, x86, x64. Source: committed local bundle fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/compatibility/windows7.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          }
+        ],
+        "compatibility_summary": "Windows 7: supports_platform via compatibility_note (medium); Windows 7: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_hash sha256:78dc68497ecd1c8544a3f6b9b3944236d70b18aea20f51af18775a670f4f7970 local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
@@ -1599,6 +2353,51 @@
         "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:13d4eb4bdfb28370b7c5b4ec58297442470c44ea2222dcd08262951ba36d5b13",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 7 and Windows NT 6.1 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          },
+          {
+            "architecture": "x64",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:20aca8a6bfb5c3d26ac20c772ca5fc2c8bf82b13bd1315df2fc30aa2240f7d2e",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Compatibility evidence hint: Windows 7, Windows NT 6.1, x86, x64. Source: committed local bundle fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/compatibility/windows7.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          }
+        ],
+        "compatibility_summary": "Windows 7: supports_platform via compatibility_note (medium); Windows 7: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_text Compatibility evidence hint: Windows 7, Windows NT 6.1, x86, x64. Source: committed local bundle fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
         ],
@@ -1630,6 +2429,51 @@
         "version_or_state": "state.synthetic-member.f1d241f67aa0ae7ead831d03.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:5210a3dd8526c47f653c038f71a0760581918a4cc2e02d3534c9bfe410b007f7",
+            "evidence_kind": "member_text",
+            "evidence_text": "[Version] Signature=\"$Windows NT$\" [Manufacturer] %Fixture%=Fixture,NTx86 ; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:67324b563124d6bdf276564cc2b0e3b6d65be5d326ca49ed3c997f13f11c08a2",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 driver INF text stand-in.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: driver_for_hardware via member_text (low); Windows 2000: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
@@ -1661,6 +2505,51 @@
         "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:5210a3dd8526c47f653c038f71a0760581918a4cc2e02d3534c9bfe410b007f7",
+            "evidence_kind": "member_text",
+            "evidence_text": "[Version] Signature=\"$Windows NT$\" [Manufacturer] %Fixture%=Fixture,NTx86 ; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:67324b563124d6bdf276564cc2b0e3b6d65be5d326ca49ed3c997f13f11c08a2",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 driver INF text stand-in.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: driver_for_hardware via member_text (low); Windows 2000: supports_platform via compatibility_note (medium)",
         "evidence": [
           "compatibility_note Windows 2000 driver INF text stand-in. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
         ],
@@ -1692,6 +2581,51 @@
         "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:5210a3dd8526c47f653c038f71a0760581918a4cc2e02d3534c9bfe410b007f7",
+            "evidence_kind": "member_text",
+            "evidence_text": "[Version] Signature=\"$Windows NT$\" [Manufacturer] %Fixture%=Fixture,NTx86 ; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:67324b563124d6bdf276564cc2b0e3b6d65be5d326ca49ed3c997f13f11c08a2",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 driver INF text stand-in.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: driver_for_hardware via member_text (low); Windows 2000: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
@@ -1723,6 +2657,51 @@
         "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:5210a3dd8526c47f653c038f71a0760581918a4cc2e02d3534c9bfe410b007f7",
+            "evidence_kind": "member_text",
+            "evidence_text": "[Version] Signature=\"$Windows NT$\" [Manufacturer] %Fixture%=Fixture,NTx86 ; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:67324b563124d6bdf276564cc2b0e3b6d65be5d326ca49ed3c997f13f11c08a2",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 driver INF text stand-in.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: driver_for_hardware via member_text (low); Windows 2000: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_hash sha256:04ec90754dfba2dface73c89e3454e7c358942122cf58ee85d327f180ead23cd local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
@@ -1754,6 +2733,51 @@
         "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:5210a3dd8526c47f653c038f71a0760581918a4cc2e02d3534c9bfe410b007f7",
+            "evidence_kind": "member_text",
+            "evidence_text": "[Version] Signature=\"$Windows NT$\" [Manufacturer] %Fixture%=Fixture,NTx86 ; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:67324b563124d6bdf276564cc2b0e3b6d65be5d326ca49ed3c997f13f11c08a2",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000 driver INF text stand-in.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.16388e6269f0a84bb96ed8f1",
+            "subject_target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: driver_for_hardware via member_text (low); Windows 2000: supports_platform via compatibility_note (medium)",
         "evidence": [
           "member_text [Version]\nSignature=\"$Windows NT$\"\n[Manufacturer]\n%Fixture%=Fixture,NTx86\n; Windows 2000 driver INF stand-in for ThinkPad T42 wireless tests. local_bundle_fixtures member_text Local Bundle Fixtures"
         ],
@@ -1785,6 +2809,51 @@
         "version_or_state": "state.synthetic-member.16388e6269f0a84bb96ed8f1.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:a711b4b3fc85e4aaed2908a86382d8f570561f413e42c378048a7635f2a3dc04",
+            "evidence_kind": "readme",
+            "evidence_text": "Readme stand-in: ThinkPad T42 wireless driver package shape for Windows 2000. Not a real driver.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+            "subject_target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:ae7660901f89ca2d969ec62008a052ee650e0b5b3304fd21fc30223e5958fb40",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "ThinkPad T42 wireless driver readme for Windows 2000 fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/2",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+            "subject_target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: driver_for_hardware via readme (medium); Windows 2000: driver_for_hardware via compatibility_note (medium)",
         "evidence": [
           "member_listing drivers/wifi/thinkpad_t42/windows2000/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
         ],
@@ -1816,6 +2885,51 @@
         "version_or_state": "state.synthetic-member.89d25f4de4d94079fed7d9b8.derived"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:a711b4b3fc85e4aaed2908a86382d8f570561f413e42c378048a7635f2a3dc04",
+            "evidence_kind": "readme",
+            "evidence_text": "Readme stand-in: ThinkPad T42 wireless driver package shape for Windows 2000. Not a real driver.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+            "subject_target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "driver_for_hardware",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:ae7660901f89ca2d969ec62008a052ee650e0b5b3304fd21fc30223e5958fb40",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "ThinkPad T42 wireless driver readme for Windows 2000 fixture.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/2",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.89d25f4de4d94079fed7d9b8",
+            "subject_target_ref": "member:sha256:89d25f4de4d94079fed7d9b8958d417a15d972a991a30e64d1d71734de3677ce"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: driver_for_hardware via readme (medium); Windows 2000: driver_for_hardware via compatibility_note (medium)",
         "evidence": [
           "compatibility_note ThinkPad T42 wireless driver readme for Windows 2000 fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
         ],

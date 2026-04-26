@@ -57,6 +57,14 @@ intent, member-discovery hints, and app-vs-OS-media suppression hints. Future
 Rust Query Planner Parity Candidate v0 must match those Python outputs before
 any planner replacement is considered.
 
+Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, and
+Compatibility Evidence Pack v0 further refresh the Python-oracle local-index,
+resolution-run, search, compatibility, and eval-visible outputs with member
+records, lane/user-cost annotations, and source-backed compatibility evidence.
+Future Rust local-index, deterministic-search, exact-resolution,
+compatibility, and result-projection parity must match those shapes or record
+explicit allowed divergences before any replacement is considered.
+
 ## Suggested Future Layout
 
 ```text
@@ -143,10 +151,12 @@ SQLite FTS mode, and generation metadata. It preserves semantically meaningful
 fields, including the current archive-resolution eval capability gaps and
 source-backed not-satisfied cases.
 Result Lanes + User-Cost Ranking v0 intentionally adds lane and user-cost fields
-to Python oracle outputs for current result records. Future Rust local-index,
-deterministic-search, exact-resolution, and public-projection parity must match
-those bounded annotations or record explicit allowed divergences before any
-replacement claim.
+to Python oracle outputs for current result records. Compatibility Evidence
+Pack v0 intentionally adds source-backed compatibility evidence fields where
+current fixture records support them. Future Rust local-index,
+deterministic-search, exact-resolution, compatibility, and public-projection
+parity must match those bounded annotations or record explicit allowed
+divergences before any replacement claim.
 
 ## Optional Check
 

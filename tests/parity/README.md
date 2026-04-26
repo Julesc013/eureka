@@ -44,6 +44,13 @@ local-index, deterministic-search, exact-resolution, and result-projection
 parity must account for these bounded annotations before any replacement claim;
 no Rust behavior is implemented or wired in here.
 
+Compatibility Evidence Pack v0 refreshes Python-oracle local-index,
+resolution-run, and archive-resolution eval goldens with source-backed
+compatibility evidence records and summaries for current fixture-backed
+records. Future Rust planner/index/compatibility parity must account for this
+shape before any replacement claim; no Rust behavior is implemented or wired in
+here.
+
 There is still no Rust parity runner in this milestone. Future parity assets
 should remain fixture-driven, JSON-inspectable, and explicit about allowed
 divergences.

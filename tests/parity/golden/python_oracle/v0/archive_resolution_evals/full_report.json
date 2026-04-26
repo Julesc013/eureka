@@ -670,6 +670,51 @@
           "observed": {
             "top_results": [
               {
+                "compatibility_evidence": [
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "mentions_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:87bfa226afc4e6c69eea03e5933362d822a7f15405091f844d99e43b3b3c1e73",
+                    "evidence_kind": "source_metadata",
+                    "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+                  },
+                  {
+                    "architecture": "x86",
+                    "claim_type": "supports_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:9b1050ab4e10752aa5c6bbd65d2b4f7a13c678f1740198742f4c155a8aa8092c",
+                    "evidence_kind": "compatibility_note",
+                    "evidence_text": "Windows XP; x86; release_notes; support_window",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+                  }
+                ],
+                "compatibility_summary": "Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium)",
                 "evidence": [
                   "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
                   "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
@@ -1018,6 +1063,51 @@
       "task_id": "latest_firefox_before_xp_drop",
       "top_results": [
         {
+          "compatibility_evidence": [
+            {
+              "architecture": "unknown",
+              "claim_type": "mentions_platform",
+              "confidence": "medium",
+              "created_by_slice": "compatibility_evidence_pack_v0",
+              "evidence_id": "compat-evidence:sha256:87bfa226afc4e6c69eea03e5933362d822a7f15405091f844d99e43b3b3c1e73",
+              "evidence_kind": "source_metadata",
+              "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
+              "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
+              "platform": {
+                "family": "windows",
+                "marketing_alias": "Windows XP",
+                "name": "Windows XP",
+                "version": "NT 5.1"
+              },
+              "source_family": "internet_archive_recorded",
+              "source_id": "internet-archive-recorded-fixtures",
+              "source_label": "Internet Archive Recorded Fixtures",
+              "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+              "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+            },
+            {
+              "architecture": "x86",
+              "claim_type": "supports_platform",
+              "confidence": "medium",
+              "created_by_slice": "compatibility_evidence_pack_v0",
+              "evidence_id": "compat-evidence:sha256:9b1050ab4e10752aa5c6bbd65d2b4f7a13c678f1740198742f4c155a8aa8092c",
+              "evidence_kind": "compatibility_note",
+              "evidence_text": "Windows XP; x86; release_notes; support_window",
+              "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
+              "platform": {
+                "family": "windows",
+                "marketing_alias": "Windows XP",
+                "name": "Windows XP",
+                "version": "NT 5.1"
+              },
+              "source_family": "internet_archive_recorded",
+              "source_id": "internet-archive-recorded-fixtures",
+              "source_label": "Internet Archive Recorded Fixtures",
+              "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+              "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+            }
+          ],
+          "compatibility_summary": "Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium)",
           "evidence": [
             "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
             "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
