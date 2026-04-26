@@ -50,6 +50,8 @@ steps:
     run: python -m unittest tests.operations.test_test_eval_operating_layer
   - id: comprehensive_audit_pack_validation
     run: python -m unittest tests.operations.test_comprehensive_audit_pack
+  - id: search_usefulness_backlog_triage_validation
+    run: python -m unittest tests.operations.test_search_usefulness_backlog_triage
   - id: hardening_tests
     run: python -m unittest discover -s tests/hardening -t .
   - id: hardening_eval_guards

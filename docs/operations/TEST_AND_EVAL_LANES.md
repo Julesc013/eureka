@@ -93,3 +93,14 @@ before syncing changes that affect eval fixtures, external baseline wording,
 public-alpha route policy, route inventory, README commands, docs links,
 Python-oracle goldens, Rust parity scaffolding, source registry honesty,
 resolution memory privacy claims, or AIDE/test metadata.
+
+## Search Usefulness Backlog Triage
+
+Search Usefulness Backlog Triage v0 is validated with:
+
+```bash
+python -m unittest tests.operations.test_search_usefulness_backlog_triage
+```
+
+The validation checks the selected wedges, next milestone, backlog item count,
+deferred-work list, and no-fake-baseline/no-runtime-behavior claims.

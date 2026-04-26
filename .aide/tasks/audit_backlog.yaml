@@ -20,8 +20,8 @@
         "CTEA-CONTENT-002"
       ],
       "title": "Prioritize recorded fixture source coverage for source-gap query families",
-      "status": "open",
-      "suggested_milestone": "Real Source Coverage Pack v0"
+      "status": "selected_by_search_usefulness_backlog_triage_v0",
+      "suggested_milestone": "Source Coverage and Capability Model v0"
     },
     {
       "id": "audit-backlog-doc-drift",
@@ -32,6 +32,33 @@
       "title": "Add docs link and command drift guards",
       "status": "addressed_by_hard_test_pack_v0",
       "suggested_milestone": "Docs Link/Command Drift Guard v0"
+    },
+    {
+      "id": "audit-backlog-old-platform-planner",
+      "finding_refs": [
+        "CTEA-BEHAVIOR-001"
+      ],
+      "title": "Reduce old-platform software planner and query interpretation gaps",
+      "status": "triaged",
+      "suggested_milestone": "Old-Platform Software Planner Pack v0"
+    },
+    {
+      "id": "audit-backlog-member-discovery",
+      "finding_refs": [
+        "CTEA-CONTENT-003"
+      ],
+      "title": "Add member-level discovery fixtures, lineage, and index records",
+      "status": "triaged",
+      "suggested_milestone": "Member-Level Synthetic Records v0"
+    },
+    {
+      "id": "audit-backlog-compatibility-evidence",
+      "finding_refs": [
+        "CTEA-CONTENT-004"
+      ],
+      "title": "Add old-platform compatibility evidence fixtures and unknown outcomes",
+      "status": "triaged",
+      "suggested_milestone": "Compatibility Evidence Pack v0"
     }
   ]
 }

@@ -267,6 +267,28 @@
       "notes": "Validates the repo-native audit outputs from this milestone."
     },
     {
+      "test_id": "search_usefulness_backlog_triage_validation",
+      "label": "Search usefulness backlog triage validation",
+      "command": "python -m unittest tests.operations.test_search_usefulness_backlog_triage",
+      "category": "audit",
+      "owner_area": "control/backlog/search_usefulness_triage",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The search usefulness triage pack lost required docs, selected wedges, selected next milestone, or anti-fake-success guardrails.",
+      "advisory_or_required": "required",
+      "notes": "Added by Search Usefulness Backlog Triage v0; validates governance/backlog artifacts only."
+    },
+    {
       "test_id": "hardening_tests",
       "label": "Hard Test Pack v0 aggregate",
       "command": "python -m unittest discover -s tests/hardening -t .",
