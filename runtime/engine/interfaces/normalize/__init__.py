@@ -4,10 +4,14 @@ from runtime.engine.interfaces.normalize.normalized_records import NormalizedRes
 from runtime.engine.interfaces.normalize.steps import (
     normalize_extracted_record,
     normalize_github_release_record,
+    normalize_internet_archive_recorded_item,
+    normalize_local_bundle_record,
 )
 
 __all__ = [
     "NormalizedResolutionRecord",
     "normalize_extracted_record",
     "normalize_github_release_record",
+    "normalize_internet_archive_recorded_item",
+    "normalize_local_bundle_record",
 ]

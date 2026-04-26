@@ -7,6 +7,8 @@ from runtime.engine.interfaces.public import SourceSummary
 _BOOTSTRAP_SOURCE_IDS_BY_FAMILY = {
     "synthetic_fixture": "synthetic-fixtures",
     "github_releases": "github-releases-recorded-fixtures",
+    "internet_archive_recorded": "internet-archive-recorded-fixtures",
+    "local_bundle_fixtures": "local-bundle-fixtures",
 }
 
 

@@ -2,7 +2,14 @@
 
 from runtime.engine.interfaces.ingest.source_records import (
     GitHubReleaseSourceRecord,
+    InternetArchiveRecordedSourceRecord,
+    LocalBundleSourceRecord,
     SyntheticSourceRecord,
 )
 
-__all__ = ["GitHubReleaseSourceRecord", "SyntheticSourceRecord"]
+__all__ = [
+    "GitHubReleaseSourceRecord",
+    "InternetArchiveRecordedSourceRecord",
+    "LocalBundleSourceRecord",
+    "SyntheticSourceRecord",
+]

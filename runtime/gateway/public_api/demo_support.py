@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from runtime.connectors.github_releases import GitHubReleasesConnector
+from runtime.connectors.internet_archive_recorded import InternetArchiveRecordedConnector
+from runtime.connectors.local_bundle_fixtures import LocalBundleFixturesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.acquisition.service import DeterministicAcquisitionService
 from runtime.engine.decomposition.service import DeterministicDecompositionService
@@ -21,11 +23,15 @@ from runtime.engine.core import NormalizedCatalog
 from runtime.engine.handoff.service import DeterministicRepresentationSelectionService
 from runtime.engine.interfaces.extract import (
     extract_github_release_source_record,
+    extract_internet_archive_recorded_source_record,
+    extract_local_bundle_source_record,
     extract_synthetic_source_record,
 )
 from runtime.engine.interfaces.normalize import (
     normalize_extracted_record,
     normalize_github_release_record,
+    normalize_internet_archive_recorded_item,
+    normalize_local_bundle_record,
 )
 from runtime.engine.query_planner import DeterministicQueryPlannerService
 from runtime.engine.resolution_runs import LocalResolutionRunService, LocalResolutionRunStore
@@ -293,6 +299,8 @@ def build_demo_stored_exports_public_api(store_root: str) -> StoredExportsPublic
 def _build_demo_normalized_catalog() -> NormalizedCatalog:
     synthetic_connector = SyntheticSoftwareConnector()
     github_connector = GitHubReleasesConnector()
+    internet_archive_connector = InternetArchiveRecordedConnector()
+    local_bundle_connector = LocalBundleFixturesConnector()
     synthetic_records = tuple(
         normalize_extracted_record(extract_synthetic_source_record(record))
         for record in synthetic_connector.load_source_records()
@@ -301,7 +309,19 @@ def _build_demo_normalized_catalog() -> NormalizedCatalog:
         normalize_github_release_record(extract_github_release_source_record(record))
         for record in github_connector.load_source_records()
     )
-    return NormalizedCatalog(synthetic_records + github_records)
+    internet_archive_records = tuple(
+        normalize_internet_archive_recorded_item(
+            extract_internet_archive_recorded_source_record(record)
+        )
+        for record in internet_archive_connector.load_source_records()
+    )
+    local_bundle_records = tuple(
+        normalize_local_bundle_record(extract_local_bundle_source_record(record))
+        for record in local_bundle_connector.load_source_records()
+    )
+    return NormalizedCatalog(
+        synthetic_records + github_records + internet_archive_records + local_bundle_records
+    )
 
 
 def _build_demo_resolution_run_service(run_store_root: str) -> LocalResolutionRunService:

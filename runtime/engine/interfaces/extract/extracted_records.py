@@ -26,3 +26,25 @@ class ExtractedGitHubReleaseRecord:
     release_record: dict[str, Any]
     asset_records: tuple[dict[str, Any], ...] = ()
     compatibility_record: dict[str, Any] | None = None
+
+
+@dataclass(frozen=True)
+class ExtractedInternetArchiveRecordedItem:
+    target_ref: str
+    source_name: str
+    source_locator: str
+    item_record: dict[str, Any]
+    file_records: tuple[dict[str, Any], ...] = ()
+    compatibility_record: dict[str, Any] | None = None
+
+
+@dataclass(frozen=True)
+class ExtractedLocalBundleRecord:
+    target_ref: str
+    source_name: str
+    source_locator: str
+    object_record: dict[str, Any]
+    state_record: dict[str, Any]
+    bundle_record: dict[str, Any]
+    member_hint_records: tuple[dict[str, Any], ...] = ()
+    compatibility_record: dict[str, Any] | None = None

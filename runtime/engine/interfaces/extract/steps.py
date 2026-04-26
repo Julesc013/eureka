@@ -4,9 +4,16 @@ from typing import Any
 
 from runtime.engine.interfaces.extract.extracted_records import (
     ExtractedGitHubReleaseRecord,
+    ExtractedInternetArchiveRecordedItem,
+    ExtractedLocalBundleRecord,
     ExtractedSyntheticRecord,
 )
-from runtime.engine.interfaces.ingest import GitHubReleaseSourceRecord, SyntheticSourceRecord
+from runtime.engine.interfaces.ingest import (
+    GitHubReleaseSourceRecord,
+    InternetArchiveRecordedSourceRecord,
+    LocalBundleSourceRecord,
+    SyntheticSourceRecord,
+)
 
 
 def extract_synthetic_source_record(source_record: SyntheticSourceRecord) -> ExtractedSyntheticRecord:
@@ -52,6 +59,40 @@ def extract_github_release_source_record(
         repository_record=_require_mapping(payload.get("repository"), "repository"),
         release_record=release_record,
         asset_records=_require_optional_mapping_sequence(release_record.get("assets"), "release.assets"),
+        compatibility_record=_optional_mapping(payload.get("compatibility"), "compatibility"),
+    )
+
+
+def extract_internet_archive_recorded_source_record(
+    source_record: InternetArchiveRecordedSourceRecord,
+) -> ExtractedInternetArchiveRecordedItem:
+    payload = source_record.payload
+    item_record = _require_mapping(payload.get("item"), "item")
+    return ExtractedInternetArchiveRecordedItem(
+        target_ref=source_record.target_ref,
+        source_name=source_record.source_name,
+        source_locator=source_record.source_locator,
+        item_record=item_record,
+        file_records=_require_optional_mapping_sequence(item_record.get("files"), "item.files"),
+        compatibility_record=_optional_mapping(payload.get("compatibility"), "compatibility"),
+    )
+
+
+def extract_local_bundle_source_record(
+    source_record: LocalBundleSourceRecord,
+) -> ExtractedLocalBundleRecord:
+    payload = source_record.payload
+    return ExtractedLocalBundleRecord(
+        target_ref=source_record.target_ref,
+        source_name=source_record.source_name,
+        source_locator=source_record.source_locator,
+        object_record=_require_mapping(payload.get("object"), "object"),
+        state_record=_require_mapping(payload.get("state"), "state"),
+        bundle_record=_require_mapping(payload.get("bundle"), "bundle"),
+        member_hint_records=_require_optional_mapping_sequence(
+            payload.get("member_hints"),
+            "member_hints",
+        ),
         compatibility_record=_optional_mapping(payload.get("compatibility"), "compatibility"),
     )
 

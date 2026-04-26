@@ -6,6 +6,8 @@ from typing import Any
 from runtime.engine.compatibility import CompatibilityRequirements
 from runtime.engine.interfaces.extract import (
     ExtractedGitHubReleaseRecord,
+    ExtractedInternetArchiveRecordedItem,
+    ExtractedLocalBundleRecord,
     ExtractedSyntheticRecord,
 )
 from runtime.engine.interfaces.normalize.normalized_records import NormalizedResolutionRecord
@@ -103,6 +105,101 @@ def normalize_github_release_record(
             tag_name=tag_name,
             release_locator=release_html_url or release_api_url or extracted_record.source_locator,
             published_at=published_at,
+        ),
+    )
+
+
+def normalize_internet_archive_recorded_item(
+    extracted_record: ExtractedInternetArchiveRecordedItem,
+) -> NormalizedResolutionRecord:
+    item_record = extracted_record.item_record
+    identifier = _require_string(item_record.get("identifier"), "item.identifier")
+    identifier_key = _normalize_identifier(identifier)
+    title = _require_string(item_record.get("title"), "item.title")
+    mediatype = _optional_string(item_record.get("mediatype"), "item.mediatype") or "item"
+    date = _optional_string(item_record.get("date"), "item.date")
+    representations = _internet_archive_representation_summaries(
+        extracted_record,
+        identifier=identifier,
+        identifier_key=identifier_key,
+        title=title,
+    )
+    primary_representation = representations[0]
+
+    return NormalizedResolutionRecord(
+        target_ref=extracted_record.target_ref,
+        source_name=extracted_record.source_name,
+        source_locator=extracted_record.source_locator,
+        object_id=f"obj.internet-archive-recorded.{identifier_key}",
+        source_family="internet_archive_recorded",
+        source_family_label="Internet Archive Recorded Fixtures",
+        object_kind=mediatype,
+        object_label=title,
+        state_id=f"state.internet-archive-recorded.{identifier_key}.recorded",
+        state_kind="recorded_item",
+        representation_id=primary_representation.representation_id,
+        representation_kind=primary_representation.representation_kind,
+        access_path_id=primary_representation.access_path_id,
+        access_path_kind=primary_representation.access_kind,
+        access_path_locator=primary_representation.access_locator,
+        representations=representations,
+        compatibility_requirements=_compatibility_requirements(
+            extracted_record.compatibility_record,
+            "compatibility",
+        ),
+        evidence=_internet_archive_evidence_summaries(
+            source_locator=extracted_record.source_locator,
+            identifier=identifier,
+            title=title,
+            item_record=item_record,
+            file_records=extracted_record.file_records,
+            asserted_at=date,
+        ),
+    )
+
+
+def normalize_local_bundle_record(
+    extracted_record: ExtractedLocalBundleRecord,
+) -> NormalizedResolutionRecord:
+    object_record = extracted_record.object_record
+    state_record = extracted_record.state_record
+    bundle_record = extracted_record.bundle_record
+    object_label = _optional_string(object_record.get("label"), "object.label")
+    object_id = _require_string(object_record.get("id"), "object.id")
+    bundle_id = _require_string(bundle_record.get("id"), "bundle.id")
+    representations = _local_bundle_representation_summaries(
+        extracted_record,
+        fallback_object_label=object_label or object_id,
+        bundle_id=bundle_id,
+    )
+    primary_representation = representations[0]
+
+    return NormalizedResolutionRecord(
+        target_ref=extracted_record.target_ref,
+        source_name=extracted_record.source_name,
+        source_locator=extracted_record.source_locator,
+        object_id=object_id,
+        source_family="local_bundle_fixtures",
+        source_family_label="Local Bundle Fixtures",
+        object_kind=_optional_string(object_record.get("kind"), "object.kind"),
+        object_label=object_label,
+        state_id=_optional_string(state_record.get("id"), "state.id"),
+        state_kind=_optional_string(state_record.get("kind"), "state.kind"),
+        representation_id=primary_representation.representation_id,
+        representation_kind=primary_representation.representation_kind,
+        access_path_id=primary_representation.access_path_id,
+        access_path_kind=primary_representation.access_kind,
+        access_path_locator=primary_representation.access_locator,
+        representations=representations,
+        compatibility_requirements=_compatibility_requirements(
+            extracted_record.compatibility_record,
+            "compatibility",
+        ),
+        evidence=_local_bundle_evidence_summaries(
+            source_locator=extracted_record.source_locator,
+            object_label=object_label or object_id,
+            bundle_record=bundle_record,
+            member_hint_records=extracted_record.member_hint_records,
         ),
     )
 
@@ -258,6 +355,99 @@ def _github_release_representation_summaries(
     return tuple(summaries)
 
 
+def _internet_archive_representation_summaries(
+    extracted_record: ExtractedInternetArchiveRecordedItem,
+    *,
+    identifier: str,
+    identifier_key: str,
+    title: str,
+) -> tuple[RepresentationSummary, ...]:
+    item_locator = f"ia-recorded://{identifier}"
+    summaries: list[RepresentationSummary] = [
+        RepresentationSummary(
+            representation_id=f"rep.internet-archive-recorded.{identifier_key}.metadata",
+            representation_kind="archive_item_metadata",
+            label=f"{title} metadata",
+            content_type="application/json",
+            source_family="internet_archive_recorded",
+            source_label="Internet Archive Recorded Fixtures",
+            source_locator=extracted_record.source_locator,
+            access_path_id=f"access.internet-archive-recorded.{identifier_key}.metadata",
+            access_kind="view",
+            access_locator=item_locator,
+            is_direct=False,
+            is_fetchable=False,
+        )
+    ]
+    for index, file_record in enumerate(extracted_record.file_records):
+        filename = _require_string(file_record.get("name"), f"item.files[{index}].name")
+        content_type = _optional_string(
+            file_record.get("content_type"),
+            f"item.files[{index}].content_type",
+        )
+        summaries.append(
+            RepresentationSummary(
+                representation_id=f"rep.internet-archive-recorded.{identifier_key}.file.{index}",
+                representation_kind="archive_item_file",
+                label=filename,
+                content_type=content_type,
+                byte_length=_optional_int(file_record.get("size"), f"item.files[{index}].size"),
+                filename=filename,
+                source_family="internet_archive_recorded",
+                source_label="Internet Archive Recorded Fixtures",
+                source_locator=extracted_record.source_locator,
+                access_path_id=f"access.internet-archive-recorded.{identifier_key}.file.{index}",
+                access_kind="view",
+                access_locator=f"{item_locator}/{filename}",
+                is_direct=False,
+                is_fetchable=False,
+            )
+        )
+    return tuple(summaries)
+
+
+def _local_bundle_representation_summaries(
+    extracted_record: ExtractedLocalBundleRecord,
+    *,
+    fallback_object_label: str,
+    bundle_id: str,
+) -> tuple[RepresentationSummary, ...]:
+    bundle_record = extracted_record.bundle_record
+    payload_fixture = _require_mapping(
+        bundle_record.get("payload_fixture"),
+        "bundle.payload_fixture",
+    )
+    access_path = _require_mapping(bundle_record.get("access_path"), "bundle.access_path")
+    bundle_key = _normalize_identifier(bundle_id)
+    filename = _payload_filename(
+        payload_fixture,
+        "bundle.payload_fixture",
+        fallback_filename=_optional_string(bundle_record.get("filename"), "bundle.filename"),
+    )
+    return (
+        RepresentationSummary(
+            representation_id=_require_string(bundle_record.get("id"), "bundle.id"),
+            representation_kind=_require_string(bundle_record.get("kind"), "bundle.kind"),
+            label=_optional_string(bundle_record.get("label"), "bundle.label")
+            or f"{fallback_object_label} bundle",
+            content_type=_optional_string(bundle_record.get("content_type"), "bundle.content_type"),
+            byte_length=_optional_int(bundle_record.get("byte_length"), "bundle.byte_length"),
+            filename=filename,
+            source_family="local_bundle_fixtures",
+            source_label="Local Bundle Fixtures",
+            source_locator=extracted_record.source_locator,
+            access_path_id=_optional_string(access_path.get("id"), "bundle.access_path.id")
+            or f"access.local-bundle.{bundle_key}",
+            access_kind=_require_string(access_path.get("kind"), "bundle.access_path.kind"),
+            access_locator=_optional_string(access_path.get("locator"), "bundle.access_path.locator"),
+            is_direct=_optional_bool(access_path.get("is_direct"), "bundle.access_path.is_direct")
+            or False,
+            is_fetchable=_payload_locator(payload_fixture, "bundle.payload_fixture") is not None,
+            fetch_locator=_payload_locator(payload_fixture, "bundle.payload_fixture"),
+        ),
+    )
+
+
 def _synthetic_evidence_summaries(
     *,
     source_locator: str,
@@ -325,6 +515,150 @@ def _github_release_evidence_summaries(
             asserted_at=published_at,
         ),
     )
+
+
+def _metadata_terms(metadata: dict[str, Any], field_names: tuple[str, ...]) -> str:
+    terms: list[str] = []
+    for field_name in field_names:
+        value = metadata.get(field_name)
+        if isinstance(value, str) and value:
+            terms.append(value)
+        elif isinstance(value, list):
+            terms.extend(item for item in value if isinstance(item, str) and item)
+    return "; ".join(terms)
+
+
+def _internet_archive_evidence_summaries(
+    *,
+    source_locator: str,
+    identifier: str,
+    title: str,
+    item_record: dict[str, Any],
+    file_records: tuple[dict[str, Any], ...],
+    asserted_at: str | None,
+) -> tuple[EvidenceSummary, ...]:
+    evidence: list[EvidenceSummary] = [
+        EvidenceSummary(
+            claim_kind="label",
+            claim_value=title,
+            asserted_by_family="internet_archive_recorded",
+            asserted_by_label="Internet Archive Recorded Fixtures",
+            evidence_kind="source_metadata",
+            evidence_locator=f"{source_locator}#{identifier}",
+            asserted_at=asserted_at,
+        ),
+        EvidenceSummary(
+            claim_kind="source_identifier",
+            claim_value=identifier,
+            asserted_by_family="internet_archive_recorded",
+            asserted_by_label="Internet Archive Recorded Fixtures",
+            evidence_kind="source_metadata",
+            evidence_locator=f"{source_locator}#{identifier}",
+            asserted_at=asserted_at,
+        ),
+    ]
+    description = _optional_string(item_record.get("description"), "item.description")
+    if description is not None:
+        evidence.append(
+            EvidenceSummary(
+                claim_kind="description",
+                claim_value=description,
+                asserted_by_family="internet_archive_recorded",
+                asserted_by_label="Internet Archive Recorded Fixtures",
+                evidence_kind="source_metadata",
+                evidence_locator=f"{source_locator}#{identifier}",
+                asserted_at=asserted_at,
+            )
+        )
+    metadata = _optional_mapping(item_record.get("metadata"), "item.metadata")
+    if metadata is not None:
+        compatibility_text = _metadata_terms(metadata, ("platforms", "architectures", "artifact_roles"))
+        if compatibility_text:
+            evidence.append(
+                EvidenceSummary(
+                    claim_kind="compatibility_note",
+                    claim_value=compatibility_text,
+                    asserted_by_family="internet_archive_recorded",
+                    asserted_by_label="Internet Archive Recorded Fixtures",
+                    evidence_kind="source_metadata",
+                    evidence_locator=f"{source_locator}#{identifier}",
+                    asserted_at=asserted_at,
+                )
+            )
+    for index, file_record in enumerate(file_records):
+        file_name = _require_string(file_record.get("name"), f"item.files[{index}].name")
+        evidence.append(
+            EvidenceSummary(
+                claim_kind="file_listing",
+                claim_value=file_name,
+                asserted_by_family="internet_archive_recorded",
+                asserted_by_label="Internet Archive Recorded Fixtures",
+                evidence_kind="file_listing",
+                evidence_locator=f"{source_locator}#{identifier}/files/{index}",
+                asserted_at=asserted_at,
+            )
+        )
+    return tuple(evidence)
+
+
+def _local_bundle_evidence_summaries(
+    *,
+    source_locator: str,
+    object_label: str,
+    bundle_record: dict[str, Any],
+    member_hint_records: tuple[dict[str, Any], ...],
+) -> tuple[EvidenceSummary, ...]:
+    bundle_id = _require_string(bundle_record.get("id"), "bundle.id")
+    evidence: list[EvidenceSummary] = [
+        EvidenceSummary(
+            claim_kind="label",
+            claim_value=object_label,
+            asserted_by_family="local_bundle_fixtures",
+            asserted_by_label="Local Bundle Fixtures",
+            evidence_kind="source_metadata",
+            evidence_locator=f"{source_locator}#{bundle_id}",
+        ),
+        EvidenceSummary(
+            claim_kind="representation_locator",
+            claim_value=_optional_string(
+                _require_mapping(bundle_record.get("access_path"), "bundle.access_path").get("locator"),
+                "bundle.access_path.locator",
+            )
+            or bundle_id,
+            asserted_by_family="local_bundle_fixtures",
+            asserted_by_label="Local Bundle Fixtures",
+            evidence_kind="source_metadata",
+            evidence_locator=f"{source_locator}#{bundle_id}",
+        ),
+    ]
+    for index, member_hint in enumerate(member_hint_records):
+        member_path = _require_string(member_hint.get("member_path"), f"member_hints[{index}].member_path")
+        evidence.append(
+            EvidenceSummary(
+                claim_kind="member_listing",
+                claim_value=member_path,
+                asserted_by_family="local_bundle_fixtures",
+                asserted_by_label="Local Bundle Fixtures",
+                evidence_kind="member_listing",
+                evidence_locator=f"{source_locator}#{bundle_id}/members/{index}",
+            )
+        )
+        compatibility = _optional_string(
+            member_hint.get("compatibility_note"),
+            f"member_hints[{index}].compatibility_note",
+        )
+        if compatibility is not None:
+            evidence.append(
+                EvidenceSummary(
+                    claim_kind="compatibility_note",
+                    claim_value=compatibility,
+                    asserted_by_family="local_bundle_fixtures",
+                    asserted_by_label="Local Bundle Fixtures",
+                    evidence_kind="compatibility_note",
+                    evidence_locator=f"{source_locator}#{bundle_id}/members/{index}",
+                )
+            )
+    return tuple(evidence)
 
 
 def _require_string(value: Any, field_name: str) -> str:
