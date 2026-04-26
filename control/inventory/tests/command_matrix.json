@@ -25,6 +25,7 @@
         "operating_layer_validation",
         "comprehensive_audit_pack_validation",
         "search_usefulness_backlog_triage_validation",
+        "source_coverage_capability_validation",
         "hardening_tests",
         "docs_diff_check"
       ],
@@ -45,6 +46,7 @@
         "python_oracle_golden_check",
         "archive_resolution_eval_runner",
         "search_usefulness_audit_runner",
+        "source_coverage_capability_validation",
         "search_usefulness_backlog_triage_validation",
         "hardening_tests",
         "docs_diff_check"
@@ -88,6 +90,7 @@
       "commands": [
         "python_oracle_golden_check",
         "source_registry_validation",
+        "source_coverage_capability_validation",
         "tests.hardening.python_oracle_golden",
         "tests.hardening.rust_parity_structure"
       ],

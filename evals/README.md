@@ -17,3 +17,12 @@ Benchmark-design guidance now lives in:
 Repo-level audit findings and hard-test proposals now live under:
 
 - [control/audits/](../control/audits/README.md)
+
+Search usefulness backlog triage now lives under:
+
+- [control/backlog/search_usefulness_triage/](../control/backlog/search_usefulness_triage/README.md)
+
+Source Coverage and Capability Model v0 adds source capability and
+coverage-depth metadata that later eval deltas can use when Real Source
+Coverage Pack v0 adds recorded fixtures. It does not add live source access or
+external baseline observations.

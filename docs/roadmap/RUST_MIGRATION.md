@@ -38,6 +38,12 @@ Rust Source Registry Parity Candidate v0 is the first such candidate. It loads
 the governed source inventory and compares source-registry public envelopes
 against the committed Python-oracle source-registry goldens.
 
+Source Coverage and Capability Model v0 expands the Python source-registry
+oracle shape with capability and coverage-depth fields. Future Rust
+source-registry parity work must learn those fields before any source-registry
+replacement can be considered; this milestone does not wire Rust into Python
+runtime behavior.
+
 ## Suggested Future Layout
 
 ```text

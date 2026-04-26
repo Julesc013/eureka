@@ -29,6 +29,10 @@ The live audit was re-run during this triage. Current Search Usefulness Audit v0
 - Secondary usefulness wedge: member-level discovery inside bundles
 - Immediate next milestone: Source Coverage and Capability Model v0
 
+Update: Source Coverage and Capability Model v0 is now implemented as source
+metadata and public projection. The next implementation milestone is Real
+Source Coverage Pack v0 with recorded fixtures only.
+
 ## Contents
 
 - `TRIAGE_SUMMARY.md`

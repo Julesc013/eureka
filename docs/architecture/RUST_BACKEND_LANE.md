@@ -95,6 +95,12 @@ duplicate `source_id` values, sorts records deterministically by `source_id`,
 and emits the same source-registry public envelope shape captured in the Python
 oracle goldens.
 
+Source Coverage and Capability Model v0 expands that Python oracle shape with
+source capability booleans and coverage-depth metadata. The Rust candidate must
+eventually match those fields through parity tests, but this documentation
+change does not activate Rust in any Python runtime, gateway, surface, worker,
+or public-alpha path.
+
 This candidate is tested only inside the Rust workspace. It is not used by
 Python runtime, gateway, web, CLI, HTTP API, local workers, or public-alpha
 paths.

@@ -69,9 +69,15 @@ Native apps would mostly repackage current usefulness gaps. The next value comes
 
 ## Exact Next Milestone
 
-Immediate next milestone: Source Coverage and Capability Model v0.
+Immediate next milestone at triage time: Source Coverage and Capability Model v0.
 
 This should define source-family capability fields, coverage-depth vocabulary, fixture expectations, and tests that prevent placeholder sources from being promoted silently.
+
+Implementation note: Source Coverage and Capability Model v0 is now in place
+as bounded source-registry metadata plus public projection. It does not add
+connectors, live probing, crawling, or source acquisition behavior. The next
+implementation milestone is Real Source Coverage Pack v0 with recorded
+fixtures only.
 
 ## Evidence That Would Change The Plan
 

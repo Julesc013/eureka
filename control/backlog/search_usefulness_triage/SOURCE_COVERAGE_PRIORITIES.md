@@ -32,6 +32,12 @@ These must not be described as implemented connectors. They are planning anchors
 6. package ecosystem fixtures later
 7. live source probes later
 
+Status update: Source Coverage and Capability Model v0 is implemented as
+bounded registry metadata and public projection. The next source work should be
+Real Source Coverage Pack v0, starting with recorded Internet Archive
+metadata/item-file fixtures and a local bundle fixture corpus. Placeholder
+source records remain placeholders.
+
 ## Why Capability Depth Comes Before More Connectors
 
 A source record should say what the source can support:

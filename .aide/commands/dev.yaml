@@ -52,6 +52,8 @@ steps:
     run: python -m unittest tests.operations.test_comprehensive_audit_pack
   - id: search_usefulness_backlog_triage_validation
     run: python -m unittest tests.operations.test_search_usefulness_backlog_triage
+  - id: source_coverage_capability_tests
+    run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
   - id: hardening_tests
     run: python -m unittest discover -s tests/hardening -t .
   - id: hardening_eval_guards
@@ -314,6 +316,7 @@ notes:
   - Rust Parity Fixture Pack v0 adds Python-oracle golden outputs and a stdlib generator/check script only; it does not implement Rust behavior, replace Python runtime paths, or require Rust tooling for normal checks.
   - Rust Source Registry Parity Candidate v0 is the first isolated Rust behavior seam under `crates/eureka-core`; it is compared to Python-oracle source-registry goldens and is not wired into Python runtime, web, CLI, HTTP API, workers, or production paths.
   - Search Usefulness Audit v0 is a local eval/audit harness with pending manual external baselines only; it performs no Google scraping, Internet Archive scraping, live crawling, ranking, fuzzy retrieval, vector search, or LLM planning.
+  - Source Coverage and Capability Model v0 adds source capability and coverage-depth metadata/projection only; it does not add connectors, live source probing, crawling, or acquisition behavior.
   - Comprehensive Test/Eval Operating Layer and Repo Audit v0 adds a structured test registry, command matrix, audit findings schema, AIDE queue/report scaffolding, and dated audit pack; it is governance metadata only and does not add product runtime behavior.
   - Hard Test Pack v0 adds repo-level regression guards under `tests/hardening/` for hard eval truth, external baseline honesty, public-alpha path safety, route/docs/README drift, Python-oracle golden drift, Rust parity structure, source placeholder honesty, resolution-memory path privacy, and AIDE/test registry consistency; it does not add product runtime behavior.
   - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.

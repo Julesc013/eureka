@@ -56,6 +56,12 @@ The repo has already proven:
 - Search Usefulness Backlog Triage v0 as the first governed usefulness backlog
   pack selecting old-platform-compatible software search, member-level
   discovery, and Source Coverage and Capability Model v0 as the next milestone
+- Source Coverage and Capability Model v0 as the first bounded extension of
+  Source Registry v0 from source inventory into explicit capability flags,
+  coverage-depth metadata, connector modes, current limitations, and next
+  coverage steps, projected through current public source-registry surfaces
+  without adding connectors, live probing, crawling, scraping, or acquisition
+  behavior
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -81,7 +87,7 @@ The next backend sequence is:
 15. Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as governance/audit layer)
 16. Hard Test Pack v0 (implemented as high-risk regression guards)
 17. Search Usefulness Backlog Triage v0 (implemented as governed backlog selection)
-18. Source Coverage and Capability Model v0
+18. Source Coverage and Capability Model v0 (implemented as metadata/projection only)
 19. Real Source Coverage Pack v0
 20. Old-Platform Software Planner Pack v0
 21. Member-Level Synthetic Records v0
@@ -97,7 +103,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Source Coverage and Capability Model v0
+> Real Source Coverage Pack v0
 
 Why this comes next:
 
@@ -136,9 +142,13 @@ Why this comes next:
 - Search Usefulness Backlog Triage v0 now selects old-platform-compatible
   software search as the primary wedge and member-level discovery as the
   secondary wedge
-- the next backend bottleneck is defining source capability depth so recorded
-  fixture coverage can improve usefulness without slipping into live crawling,
-  ranking, fuzzy/vector retrieval, or source-coverage overreach
+- Source Coverage and Capability Model v0 now defines source capability depth
+  and placeholder posture so recorded fixture coverage can improve usefulness
+  without slipping into live crawling, ranking, fuzzy/vector retrieval, or
+  source-coverage overreach
+- the next backend bottleneck is adding the first recorded source coverage
+  fixtures under that model, starting with old-platform software and
+  member-level discovery needs while preserving hard eval honesty
 
 ## Explicit Deferrals
 

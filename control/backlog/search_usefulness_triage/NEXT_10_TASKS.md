@@ -16,6 +16,9 @@ Do not do: do not add connectors or mark placeholders implemented.
 
 Expected audit effect: no immediate status change, but creates the model required for useful source-gap reduction.
 
+Status: implemented as bounded metadata and projection only. It added no
+connectors, live probing, crawling, or source acquisition behavior.
+
 ## 2. Real Source Coverage Pack v0
 
 Why: old-platform-compatible software search needs recorded source evidence.

@@ -28,6 +28,8 @@ The minimum public-alpha entry gate should include:
   hosting approval)
 - local-path APIs disabled or explicitly restricted in public-alpha mode
 - safe status route without private local path disclosure
+- source capability and coverage-depth projection limited to governed metadata
+  with no private local path disclosure
 - repeatable public-alpha smoke report
 - clear alpha disclaimers
 
@@ -90,3 +92,7 @@ runtime posture or approve public hosting.
 Hard Test Pack v0 now makes the first path-leakage and route-inventory drift
 guards executable, while still avoiding deployment infrastructure, auth, TLS,
 accounts, rate limiting, or production-readiness claims.
+Source Coverage and Capability Model v0 adds safe source capability and
+coverage-depth metadata to source pages and API responses in public-alpha mode.
+This is descriptive registry projection only; it does not add live source
+probing, source sync, crawling, or implemented placeholder connectors.

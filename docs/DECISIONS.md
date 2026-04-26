@@ -341,3 +341,9 @@
 - Status: accepted
 - Decision: Eureka now records Search Usefulness Backlog Triage v0 under `control/backlog/search_usefulness_triage/`, selecting old-platform-compatible software search as the primary usefulness wedge, member-level discovery inside bundles as the secondary wedge, and Source Coverage and Capability Model v0 as the immediate next milestone.
 - Why: Search Usefulness Audit v0 shows source coverage, query interpretation, planner, compatibility evidence, representation, decomposition, and member-access gaps dominate current usefulness failures; the selected wedges produce the clearest user value while preserving hard eval honesty, external baseline pending/manual status, Python-oracle authority, and the deferral of live crawling, scraping, ranking/fuzzy/vector/LLM retrieval, Rust behavior ports, native apps, and production hosting.
+
+## ADR-058: Add Source Coverage and Capability Model v0 Without Adding Connectors
+
+- Status: accepted
+- Decision: Eureka now extends Source Registry v0 with explicit source capability booleans, source posture, connector-mode metadata, a six-level coverage-depth ladder, current limitations, and next coverage steps across governed source records, runtime loading/filtering, gateway projection, CLI, local HTTP API, and compatibility-first web source pages.
+- Why: Search Usefulness Backlog Triage v0 selected old-platform-compatible software search and member-level discovery, but those wedges need an honest source-capability plane before recorded fixtures or planner changes can improve results. This milestone makes source coverage depth visible while keeping Internet Archive, Wayback/Memento, Software Heritage, and local-files records as placeholders or local/private future sources. It does not add source connectors, live source probing, crawling, scraping, acquisition behavior, ranking, fuzzy/vector retrieval, LLM planning, Rust runtime behavior, native apps, or production deployment.

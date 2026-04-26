@@ -60,5 +60,11 @@ Search Usefulness Backlog Triage v0 lives under
 The triage selects old-platform-compatible software search as the primary
 usefulness wedge and member-level discovery inside bundles as the secondary
 wedge. It keeps external Google and Internet Archive baselines pending manual
-observation and recommends Source Coverage and Capability Model v0 as the next
-implementation milestone.
+observation and selected Source Coverage and Capability Model v0 as the next
+implementation milestone at the time of triage.
+
+Source Coverage and Capability Model v0 now exists as the metadata/projection
+layer needed by that recommendation. The next usefulness source work is Real
+Source Coverage Pack v0 with recorded fixtures only; this audit still performs
+no live crawling, Google scraping, Internet Archive scraping, or external
+baseline fabrication.

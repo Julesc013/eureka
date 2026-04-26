@@ -27,9 +27,9 @@
     {
       "id": "source_coverage_and_capability_model_v0",
       "title": "Source Coverage and Capability Model v0",
-      "status": "queued",
+      "status": "completed",
       "priority": 4,
-      "notes": "Define source capability depth before adding recorded fixture coverage."
+      "notes": "Added bounded capability flags and coverage-depth metadata/projection without adding connectors or live probing."
     },
     {
       "id": "real_source_coverage_pack_v0",

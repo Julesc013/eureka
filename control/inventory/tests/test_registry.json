@@ -225,6 +225,27 @@
       "notes": "Keeps governed source inventory records coherent."
     },
     {
+      "test_id": "source_coverage_capability_validation",
+      "label": "Source coverage and capability model tests",
+      "command": "python -m unittest runtime.source_registry.tests.test_source_capability_coverage",
+      "category": "contract",
+      "owner_area": "runtime/source_registry",
+      "required_for": [
+        "standard",
+        "full",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only for malformed-record checks",
+      "expected_runtime": "sub-second",
+      "failure_means": "Source capability flags, coverage-depth values, or placeholder-source honesty regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Source Coverage and Capability Model v0; it does not add connectors, live probes, or crawling."
+    },
+    {
       "test_id": "operating_layer_validation",
       "label": "Test/eval operating layer validation",
       "command": "python -m unittest tests.operations.test_test_eval_operating_layer",

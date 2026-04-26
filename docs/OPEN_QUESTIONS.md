@@ -70,3 +70,6 @@ These questions are intentionally left open during bootstrap:
 66. Which source capability fields are stable enough to become governed Source Registry contract fields, and which should remain descriptive triage metadata for now?
 67. What minimum recorded fixture evidence is needed before an old-platform query may move from `source_gap` to `partial` or `covered` in Search Usefulness Audit results?
 68. What member target-ref shape should be stable enough for parent lineage, member-level index records, and later Rust parity fixtures?
+69. After Source Coverage and Capability Model v0, which recorded fixture families should be sufficient to promote Internet Archive or Wayback/Memento placeholder records into active recorded-fixture sources without implying live access?
+70. Which coverage-depth changes should require Python-oracle golden fixture updates, and which can remain descriptive inventory-only changes?
+71. How should future Rust source-registry parity candidates handle capability and coverage fields once Cargo checks become part of a maintained optional lane?

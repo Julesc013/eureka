@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus thirty-six executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus thirty-seven executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -49,6 +49,14 @@ architectural oracle rather than as a throwaway scaffold.
 - first bounded member-readback and preview seam under `runtime/engine/members/` that lets one resolved target plus one explicit representation and member path surface compact text previews or bounded byte readback through the public boundary plus current surfaces, while returning explicit unsupported, unavailable, and blocked outcomes without forcing extraction to disk, installers, import, or restore semantics
 - first repo-level archive-resolution eval corpus under `evals/archive_resolution/` that records hard software-resolution queries, explicit bad-result patterns, minimum granularity expectations, expected future result lanes, and allowed absence outcomes before broader investigation, ranking, decomposition, source-expansion, or optional AI claims are introduced
 - first bounded Source Registry v0 seam under `contracts/source_registry/`, `control/inventory/sources/`, and `runtime/source_registry/` that records explicit governed source metadata, validates seed inventory records with stdlib-only runtime checks, and projects bounded source-registry listing plus detail views through the public boundary and current web, CLI, plus local HTTP API surfaces without implying live sync, crawling, health scoring, trust scoring, or implemented placeholder connectors
+- first bounded Source Coverage and Capability Model v0 seam under
+  `contracts/source_registry/`, `control/inventory/sources/`,
+  `runtime/source_registry/`, and current source-registry public projections
+  that records explicit capability booleans plus coverage-depth metadata for
+  every seed source, keeps placeholder and local/private sources honest, and
+  exposes safe source capability summaries through web, CLI, and local HTTP API
+  without adding connectors, live source probing, crawling, or acquisition
+  behavior
 - first bounded Resolution Run Model v0 seam under `runtime/engine/resolution_runs/` that records synchronous exact-resolution, deterministic-search, and planned-search investigations as local JSON run records with checked source ids and families, current result summaries or bounded absence reports, and bounded public projection through current web, CLI, plus local HTTP API surfaces without implying worker queues, streaming phases, or async orchestration
 - first bounded Query Planner v0 seam under `runtime/engine/query_planner/` that deterministically classifies a bounded set of archive-resolution eval query families into structured `ResolutionTask` records with compact platform, product, hardware, date, prefer/exclude, action-hint, and source-hint summaries, and projects those plans through current web, CLI, plus local HTTP API surfaces without implying LLM planning, vector search, fuzzy retrieval, ranking, or full investigation planning
 - first bounded Local Index v0 seam under `runtime/engine/index/` that builds a caller-provided local SQLite index over the current bounded corpus, prefers FTS5 when available and falls back to deterministic non-FTS query behavior otherwise, preserves compact source ids, source families, representation and member text, evidence summaries, source-registry records, and bootstrap `resolved_resource_id` values where available, and projects build, status, plus query results through current web, CLI, plus local HTTP API surfaces without implying ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics
@@ -85,7 +93,7 @@ architectural oracle rather than as a throwaway scaffold.
   `control/backlog/search_usefulness_triage/` that selects
   old-platform-compatible software search as the primary usefulness wedge,
   member-level discovery inside bundles as the secondary wedge, and Source
-  Coverage and Capability Model v0 as the immediate next milestone without
+  Coverage and Capability Model v0 as the selected next milestone without
   changing runtime behavior or fabricating external baselines
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
@@ -126,7 +134,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Source Coverage and Capability Model v0
+> Real Source Coverage Pack v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -135,7 +143,7 @@ Readiness Review, Public Alpha Hosting Pack v0, Rust Migration Skeleton and
 Parity Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity
 Candidate v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 and Comprehensive Test/Eval Operating Layer and Repo Audit v0, plus Hard Test
-Pack v0, are now implemented as the first
+Pack v0, and Source Coverage and Capability Model v0, are now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
 synchronous local execution substrate, explicit local reusable investigation
@@ -143,21 +151,21 @@ memory layer, executable eval guardrail, constrained public-demo posture, and
 auditable public-alpha route/smoke checklist plus supervised rehearsal evidence
 packet, committed Python-oracle golden fixture pack, isolated Rust
 source-registry parity seam, broad usefulness-audit backlog generator, and
-repo-native test/eval governance, executable hardening guard layer, and
-evidence-backed usefulness backlog.
+repo-native test/eval governance, executable hardening guard layer,
+evidence-backed usefulness backlog, and explicit source capability/coverage
+metadata layer.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Source Coverage and Capability Model v0
-2. Real Source Coverage Pack v0
-3. Old-Platform Software Planner Pack v0
-4. Member-Level Synthetic Records v0
-5. Result Lanes + User-Cost Ranking v0
-6. Compatibility Evidence Pack v0
-7. Search Usefulness Audit Delta v0
-8. Rust Query Planner Parity Candidate v0
-9. Public Alpha Rehearsal Evidence v0
-10. Compatibility Surface Strategy v0
+1. Real Source Coverage Pack v0
+2. Old-Platform Software Planner Pack v0
+3. Member-Level Synthetic Records v0
+4. Result Lanes + User-Cost Ranking v0
+5. Compatibility Evidence Pack v0
+6. Search Usefulness Audit Delta v0
+7. Rust Query Planner Parity Candidate v0
+8. Public Alpha Rehearsal Evidence v0
+9. Compatibility Surface Strategy v0
 
 ## Deferred Priorities
 

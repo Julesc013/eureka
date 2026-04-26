@@ -48,7 +48,7 @@ results are canonical truth.
 
 | Area | Current bounded capability |
 | --- | --- |
-| Source and ingestion | Source Registry v0, synthetic fixtures, recorded GitHub Releases fixtures, governed source IDs |
+| Source and ingestion | Source Registry v0, Source Coverage and Capability Model v0, synthetic fixtures, recorded GitHub Releases fixtures, governed source IDs, explicit placeholder posture for future sources |
 | Resolution and search | exact resolution, deterministic search, query planning, local SQLite index with FTS5 preferred and deterministic fallback |
 | Evidence and explanation | provenance summaries, source summaries, absence reasoning, comparison/disagreement, subject/state timelines |
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
@@ -178,10 +178,14 @@ local path controls.
 
 ```bash
 python scripts/demo_cli_workbench.py sources
+python scripts/demo_cli_workbench.py sources --coverage-depth source_known
+python scripts/demo_cli_workbench.py sources --capability recorded_fixture_backed
 python scripts/demo_cli_workbench.py source github-releases-recorded-fixtures
 ```
 
-This shows the governed source inventory through the public boundary.
+This shows the governed source inventory, capability flags, coverage depth, and
+placeholder posture through the public boundary. Placeholder sources remain
+placeholders; this does not imply live connector support.
 
 ### Run the Archive Eval Harness
 
@@ -334,12 +338,13 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Source Coverage and Capability Model v0
-2. Real Source Coverage Pack v0
+1. Real Source Coverage Pack v0
+2. Old-Platform Software Planner Pack v0
 
 Broader near-term direction:
 
-1. define source capability depth before adding recorded fixture coverage
+1. add recorded real-source fixtures under the explicit source capability and
+   coverage-depth model
 2. use the selected old-platform-compatible software and member-level discovery
    wedges to scope source, planner, representation, and compatibility slices
 3. keep Python as oracle while adding Rust candidates only when parity fixtures

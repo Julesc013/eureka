@@ -36,7 +36,8 @@ The command matrix defines these lanes:
   oracle golden check, archive eval runner, and search usefulness audit
 - `docs_only`: docs/audit/index validation plus whitespace diff checks
 - `public_alpha`: route inventory, smoke, and hosting-pack safety checks
-- `parity`: Python oracle and source-registry validation checks
+- `parity`: Python oracle, source-registry, and source coverage/capability
+  validation checks
 - `audit`: archive-resolution and search-usefulness eval/audit runners
 - `hardening`: high-risk regression guards for eval truth, path safety,
   route/docs/README drift, parity/golden discipline, and AIDE/test registry
@@ -104,3 +105,16 @@ python -m unittest tests.operations.test_search_usefulness_backlog_triage
 
 The validation checks the selected wedges, next milestone, backlog item count,
 deferred-work list, and no-fake-baseline/no-runtime-behavior claims.
+
+## Source Coverage And Capability
+
+Source Coverage and Capability Model v0 is validated with:
+
+```bash
+python -m unittest runtime.source_registry.tests.test_source_capability_coverage
+```
+
+This check verifies coverage-depth vocabulary, capability booleans, placeholder
+honesty, recorded-fixture posture, and source-registry filtering. It is a
+metadata/projection guard only; it does not add source connectors, live probing,
+crawling, or source acquisition behavior.

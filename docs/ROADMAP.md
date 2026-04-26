@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: thirty-six local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0. The latest governance layer adds a test registry, command matrix, finding schema, dated audit pack, hard-test proposals, AIDE task/report scaffolding, enforceable hardening guards, and a selected usefulness backlog without adding product runtime behavior or production-readiness claims.
+Current status within this stage: thirty-seven local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, and Source Coverage and Capability Model v0. The latest source-registry layer adds governed capability booleans, coverage-depth metadata, source eligibility language, and safe public projections without adding connectors, live source probing, crawling, or acquisition behavior.
 
 ## Stage 3: Surface Skeletons
 
@@ -82,8 +82,16 @@ source placeholder honesty, memory path/privacy scope, and AIDE/test registry
 consistency without changing runtime product behavior.
 Search Usefulness Backlog Triage v0 now also lives under
 `control/backlog/search_usefulness_triage/`, selecting old-platform-compatible
-software search and member-level discovery as the next usefulness wedges and
-making Source Coverage and Capability Model v0 the immediate next milestone.
+software search and member-level discovery as the next usefulness wedges. Its
+selected immediate milestone, Source Coverage and Capability Model v0, is now
+implemented as the metadata/projection layer before Real Source Coverage Pack
+v0.
+Source Coverage and Capability Model v0 now extends Source Registry v0 with
+explicit capability flags, a six-level coverage-depth ladder, connector-mode
+metadata, current limitations, and next coverage steps for each seed source.
+It keeps Internet Archive, Wayback/Memento, Software Heritage, and local-files
+records as placeholders or local/private future sources and does not add any
+new connector, live probe, crawl, or acquisition behavior.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
@@ -91,7 +99,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Source Coverage and Capability Model v0
+> Real Source Coverage Pack v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -99,7 +107,9 @@ Eval Runner v0, Public Alpha Safe Mode v0, Public Alpha Deployment Readiness
 Review, Public Alpha Hosting Pack v0, Rust Migration Skeleton and Parity
 Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity Candidate
 v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
-Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack
-v0 now mark the start of a more evidence-led backend phase. The next step is to
-define source coverage and capability depth before adding recorded fixtures or
-planner changes.
+Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0,
+and Source Coverage and Capability Model v0 now mark the start of a more
+evidence-led backend phase. The next step is to add the first recorded real
+source coverage fixtures under the newly explicit capability and coverage-depth
+model without introducing live crawling, external scraping, or broad source
+federation.
