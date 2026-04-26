@@ -82,3 +82,10 @@ to current Eureka observations when search/index results provide them. The audit
 may use those fields to explain actionability or member-vs-parent cost, but it
 does not treat them as production relevance ranking and it still leaves
 external baselines pending unless manually recorded.
+
+Compatibility Evidence Pack v0 now adds bounded source-backed compatibility
+evidence fields to current Eureka observations when fixture metadata, member
+paths, README text, or compatibility notes support them. The audit may use
+those fields to explain compatibility-evidence gaps, but it still does not
+execute software, verify installers, call live sources, or fabricate Google or
+Internet Archive baseline observations.

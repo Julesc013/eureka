@@ -50,7 +50,7 @@ results are canonical truth.
 | --- | --- |
 | Source and ingestion | Source Registry v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, synthetic fixtures, recorded GitHub Releases fixtures, recorded Internet Archive-like fixtures, local bundle fixtures, governed source IDs, explicit placeholder posture for future sources |
 | Resolution and search | exact resolution, deterministic search, Query Planner v0 plus Old-Platform Software Planner Pack v0, local SQLite index with FTS5 preferred and deterministic fallback |
-| Evidence and explanation | provenance summaries, source summaries, absence reasoning, comparison/disagreement, subject/state timelines |
+| Evidence and explanation | provenance summaries, source summaries, source-backed compatibility evidence, absence reasoning, comparison/disagreement, subject/state timelines |
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
@@ -339,12 +339,13 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Compatibility Evidence Pack v0
-2. Search Usefulness Audit Delta v0
+1. Search Usefulness Audit Delta v0
+2. Rust Query Planner Parity Candidate v0
 
 Broader near-term direction:
 
-1. add source-backed compatibility evidence for old-platform software outcomes
+1. measure before/after usefulness after the source, planner, member, lane, and
+   compatibility-evidence slices
 2. use the selected old-platform-compatible software and member-level discovery
    wedges to scope source, planner, representation, and compatibility slices
 3. keep Python as oracle while adding Rust candidates only when parity fixtures

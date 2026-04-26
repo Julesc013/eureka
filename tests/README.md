@@ -19,3 +19,9 @@ Result Lanes + User-Cost Ranking v0 adds component-local ranking tests under
 `runtime/engine/ranking/tests/` plus cross-component checks where lane/cost
 annotations flow through public search and index projection. These tests guard
 bounded deterministic usefulness hints only, not production ranking.
+
+Compatibility Evidence Pack v0 adds component-local compatibility-evidence
+tests under `runtime/engine/compatibility/tests/` plus projection checks where
+source-backed evidence flows through local index, search, compatibility, CLI,
+and web output. These tests guard fixture-backed evidence and unknown outcomes,
+not a compatibility oracle or installer/runtime execution behavior.

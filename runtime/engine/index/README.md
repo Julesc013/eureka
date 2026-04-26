@@ -10,6 +10,9 @@ Scope:
 - expose bounded build, status, and query behavior through engine service interfaces
 - annotate records with bounded result lanes and user-cost explanations where
   current evidence supports them
+- carry bounded compatibility evidence summaries where current committed
+  fixture metadata, member paths, README text, or compatibility notes support
+  them
 - treat caller-provided index paths as bootstrap local inputs only, not final
   hosted or multi-user storage semantics
 
@@ -44,3 +47,8 @@ to index records so a member with source evidence and parent lineage can be
 explained as lower user cost than a bulky parent bundle. This is an annotation
 and small-result ordering seam only; it is not fuzzy, vector, LLM, semantic, or
 production relevance ranking.
+
+Compatibility Evidence Pack v0 adds source-backed compatibility evidence
+payloads and compact summaries to index records. Those fields are evidence
+annotations only: they do not prove runtime compatibility, execute installers,
+or convert unknown compatibility into a positive claim.

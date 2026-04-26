@@ -60,6 +60,8 @@ steps:
     run: python -m unittest runtime.engine.synthetic_records.tests.test_member_record_synthesis runtime.engine.index.tests.test_member_level_synthetic_records tests.integration.test_member_level_synthetic_records_slice
   - id: result_lanes_user_cost_tests
     run: python -m unittest runtime.engine.ranking.tests.test_result_lanes runtime.engine.ranking.tests.test_user_cost runtime.engine.index.tests.test_member_level_synthetic_records tests.integration.test_github_release_http_api_slice
+  - id: compatibility_evidence_pack_tests
+    run: python -m unittest runtime.engine.compatibility.tests.test_compatibility_evidence runtime.engine.compatibility.tests.test_service runtime.engine.index.tests.test_member_level_synthetic_records surfaces.web.tests.test_compatibility_rendering surfaces.native.cli.tests.test_local_index_cli
   - id: hardening_tests
     run: python -m unittest discover -s tests/hardening -t .
   - id: hardening_eval_guards
@@ -200,6 +202,8 @@ steps:
     run: python scripts/demo_cli_workbench.py compatibility fixture:software/archive-viewer@0.9.0 --host linux-x86_64 --json
   - id: native_cli_compatibility_unknown
     run: python scripts/demo_cli_workbench.py compatibility fixture:software/synthetic-demo-app@1.0.0 --host windows-x86_64 --json
+  - id: native_cli_compatibility_member_evidence
+    run: python scripts/demo_cli_workbench.py compatibility member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af --host windows-x86_64 --json
   - id: native_cli_explain_resolve_miss
     run: python scripts/demo_cli_workbench.py explain-resolve-miss fixture:software/archivebox@9.9.9
   - id: native_cli_explain_search_miss
@@ -337,6 +341,7 @@ notes:
   - Old-Platform Software Planner Pack v0 adds deterministic old-platform interpretation only; it does not add ranking, fuzzy/vector retrieval, LLM planning, live source behavior, new connectors, or planner-owned retrieval routing.
   - Member-Level Synthetic Records v0 adds deterministic synthetic member records for bounded fixture-backed bundle members, preserving parent lineage and source evidence for index/search projection; it does not add broad extraction, arbitrary local filesystem ingestion, ranking, or live source behavior.
   - Result Lanes + User-Cost Ranking v0 adds bounded deterministic result lanes and user-cost explanations for current records; it does not add production ranking, fuzzy/vector retrieval, LLM scoring, live source behavior, or new connectors.
+  - Compatibility Evidence Pack v0 adds bounded source-backed evidence records for current fixture data; it does not add a compatibility oracle, installer execution, live source behavior, scraping, fuzzy/vector retrieval, LLM behavior, Rust behavior, or source connectors.
   - Comprehensive Test/Eval Operating Layer and Repo Audit v0 adds a structured test registry, command matrix, audit findings schema, AIDE queue/report scaffolding, and dated audit pack; it is governance metadata only and does not add product runtime behavior.
   - Hard Test Pack v0 adds repo-level regression guards under `tests/hardening/` for hard eval truth, external baseline honesty, public-alpha path safety, route/docs/README drift, Python-oracle golden drift, Rust parity structure, source placeholder honesty, resolution-memory path privacy, and AIDE/test registry consistency; it does not add product runtime behavior.
   - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.

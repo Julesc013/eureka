@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: forty-one local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, and Result Lanes + User-Cost Ranking v0. The latest result-lane layer annotates current result records with deterministic lanes and user-cost explanations without broad extraction, arbitrary local filesystem ingestion, fuzzy/vector retrieval, LLM scoring, live source behavior, production ranking, or new connectors.
+Current status within this stage: forty-two local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, and Compatibility Evidence Pack v0. The latest compatibility-evidence layer annotates current fixture-backed result records with source-backed old-platform evidence while preserving unknown compatibility without adding runtime execution, installer verification, live source behavior, fuzzy/vector retrieval, LLM behavior, or new connectors.
 
 ## Stage 3: Surface Skeletons
 
@@ -118,6 +118,13 @@ records and parent bundles. It projects those hints through search, exact
 resolution, local index, CLI, web, local HTTP API, and eval summaries without
 adding fuzzy/vector retrieval, LLM scoring, live source behavior, production
 ranking, or new connectors.
+Compatibility Evidence Pack v0 now derives compact source-backed compatibility
+evidence records from committed fixture metadata, member paths, README text,
+and compatibility notes. It projects evidence summaries through search, exact
+resolution, local index, compatibility, CLI, web, local HTTP API, and eval
+summaries while keeping unknown compatibility valid; it does not execute
+software, verify installers, add live source behavior, scrape external systems,
+or become a universal compatibility oracle.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
@@ -125,7 +132,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Compatibility Evidence Pack v0
+> Search Usefulness Audit Delta v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -135,11 +142,12 @@ Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity Candidate
 v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0,
 Source Coverage and Capability Model v0, Real Source Coverage Pack v0,
-Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, and
-Result Lanes + User-Cost Ranking v0 now
+Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0,
+Result Lanes + User-Cost Ranking v0, and Compatibility Evidence Pack v0 now
 mark the start of a more evidence-led backend phase. The next step is to add
-source-backed compatibility evidence so old-platform usefulness can distinguish
-known, unknown, inferred, and incompatible outcomes while preserving truth and
-uncertainty. That next step must still avoid live crawling, external scraping,
-installer execution, fuzzy/vector search, LLM planning, broad source federation,
-and production compatibility-oracle claims.
+before/after usefulness evidence so the project can see which old-platform and
+member-discovery query families improved, which gaps remain, and which next
+source or surface slice should be prioritized. That next step must still avoid
+live crawling, external scraping, installer execution, fuzzy/vector search, LLM
+planning, broad source federation, external baseline fabrication, and production
+benchmark claims.

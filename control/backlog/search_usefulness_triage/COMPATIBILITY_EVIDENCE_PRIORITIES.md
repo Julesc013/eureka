@@ -2,6 +2,12 @@
 
 Compatibility evidence is the main actionability multiplier for the primary wedge. Search Usefulness Audit v0 reports `compatibility_evidence_gap=25`.
 
+Status: Compatibility Evidence Pack v0 is implemented as the first bounded
+source-backed evidence seam. It extracts current fixture-backed evidence from
+metadata, member paths, README text, and compatibility notes. It does not create
+a compatibility oracle, execute software, verify installers, call live sources,
+or replace unknown compatibility outcomes.
+
 ## First Platform Set
 
 The first compatibility evidence pack should cover:
@@ -12,6 +18,11 @@ The first compatibility evidence pack should cover:
 - Windows Vista
 - Windows 7 / NT 6.1
 - x86 and x64 distinctions where source evidence supports them
+
+V0 currently proves this pattern on the committed fixture corpus, especially
+Windows 7 / NT 6.1, Windows XP / NT 5.1, and Windows 2000 / NT 5.0 evidence.
+Windows 98, Windows 95, Vista-depth evidence, and broader architecture coverage
+remain source-coverage follow-up work.
 
 ## Object Distinctions
 
@@ -52,11 +63,13 @@ Suggested v0 confidence values:
 
 ## Tests To Add First
 
-- Windows 7 / NT 6.1 alias compatibility tests
-- Windows XP support-drop evidence tests
-- driver hardware + OS evidence tests
-- unknown compatibility rendering tests
-- no compatibility oracle from guesses
+- Windows 7 / NT 6.1 alias compatibility tests: implemented for fixture-backed
+  evidence
+- Windows XP evidence tests: implemented for current fixture evidence
+- driver hardware + OS evidence tests: implemented for the ThinkPad T42
+  Windows 2000 fixture member
+- unknown compatibility rendering tests: implemented for unrelated records
+- no compatibility oracle from guesses: implemented at v0 scope
 
 ## Do Not Do
 

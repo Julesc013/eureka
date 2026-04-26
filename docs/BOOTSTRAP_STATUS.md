@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus forty-one executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus forty-two executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -125,6 +125,14 @@ architectural oracle rather than as a throwaway scaffold.
   eval summaries, and explains member-vs-parent usefulness without adding
   fuzzy/vector retrieval, LLM scoring, live source behavior, production ranking,
   or new connectors
+- first Compatibility Evidence Pack v0 seam under
+  `runtime/engine/compatibility/` that derives compact source-backed
+  compatibility evidence records from committed fixture metadata, member paths,
+  README text, and compatibility notes, projects those records through search,
+  exact resolution, local index, compatibility, CLI, web, local HTTP API, and
+  eval summaries, and preserves unknown compatibility without adding a
+  compatibility oracle, installer execution, live source behavior, scraping,
+  fuzzy/vector retrieval, LLM behavior, Rust behavior, or new connectors
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -164,7 +172,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Compatibility Evidence Pack v0
+> Search Usefulness Audit Delta v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -174,8 +182,9 @@ Parity Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity
 Candidate v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 and Comprehensive Test/Eval Operating Layer and Repo Audit v0, plus Hard Test
 Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack
-v0, Old-Platform Software Planner Pack v0, and Member-Level Synthetic Records
-v0, plus Result Lanes + User-Cost Ranking v0, are now implemented as the first
+v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0,
+Result Lanes + User-Cost Ranking v0, and Compatibility Evidence Pack v0, are
+now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
 synchronous local execution substrate, explicit local reusable investigation
@@ -187,16 +196,17 @@ repo-native test/eval governance, executable hardening guard layer,
 evidence-backed usefulness backlog, explicit source capability/coverage
 metadata layer, first recorded source-coverage fixture pack, deterministic
 old-platform planner interpretation layer, first bounded member-level synthetic
-target-ref and parent-lineage layer, and first deterministic result-lane and
-user-cost explanation layer.
+target-ref and parent-lineage layer, first deterministic result-lane and
+user-cost explanation layer, and first source-backed compatibility evidence
+layer.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Compatibility Evidence Pack v0
-2. Search Usefulness Audit Delta v0
-3. Rust Query Planner Parity Candidate v0
-4. Public Alpha Rehearsal Evidence v0
-5. Compatibility Surface Strategy v0
+1. Search Usefulness Audit Delta v0
+2. Rust Query Planner Parity Candidate v0
+3. Public Alpha Rehearsal Evidence v0
+4. Compatibility Surface Strategy v0
+5. Old-Platform Source Coverage Expansion v0
 
 ## Deferred Priorities
 

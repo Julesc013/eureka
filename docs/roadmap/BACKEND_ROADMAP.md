@@ -84,6 +84,11 @@ The repo has already proven:
   current result records so smaller member records can be explained ahead of
   parent bundles without fuzzy/vector retrieval, LLM scoring, live source
   behavior, production ranking, or new connectors
+- Compatibility Evidence Pack v0 as the first bounded source-backed
+  compatibility evidence seam, deriving evidence records from committed
+  fixture metadata, member paths, README text, and compatibility notes while
+  preserving unknown compatibility without installer execution, live source
+  behavior, scraping, fuzzy/vector retrieval, LLM behavior, or new connectors
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -114,7 +119,7 @@ The next backend sequence is:
 20. Old-Platform Software Planner Pack v0 (implemented as deterministic interpretation only)
 21. Member-Level Synthetic Records v0 (implemented as bounded fixture-derived member records)
 22. Result Lanes + User-Cost Ranking v0 (implemented as bounded annotations)
-23. Compatibility Evidence Pack v0
+23. Compatibility Evidence Pack v0 (implemented as source-backed evidence annotations)
 24. Search Usefulness Audit Delta v0
 25. Rust Query Planner Parity Candidate v0
 26. Public Alpha Rehearsal Evidence v0
@@ -125,7 +130,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Compatibility Evidence Pack v0
+> Search Usefulness Audit Delta v0
 
 Why this comes next:
 
@@ -179,10 +184,13 @@ Why this comes next:
 - Result Lanes + User-Cost Ranking v0 now adds bounded deterministic
   presentation hints for member-vs-parent usefulness without becoming final
   production ranking
-- the next backend bottleneck is compatibility evidence: old-platform software
-  results need source-backed Windows 98/2000/XP/Vista/7, architecture, package
-  type, and unknown-compatibility signals before actionability can improve
-  honestly
+- Compatibility Evidence Pack v0 now adds source-backed Windows 7, Windows XP,
+  and Windows 2000 fixture evidence where current records support it while
+  preserving unknown compatibility
+- the next backend bottleneck is measurement: after source fixtures, planner
+  interpretation, member records, result lanes, and compatibility evidence, the
+  project needs a Search Usefulness Audit Delta v0 to record actual before/after
+  movement without weakening queries or fabricating external baselines
 
 ## Explicit Deferrals
 

@@ -51,9 +51,9 @@ These wedges are selected because they cover many high-value hard queries while 
 
 1. Source coverage is still narrow even after recorded Internet Archive-like and local bundle fixtures.
 2. Placeholder/future sources remain Internet Archive live, Wayback/Memento, Software Heritage, and local files; they must not be described as implemented connectors.
-3. Member-level discovery does not yet provide stable member target refs, parent lineage records, or member-level index records.
-4. Compatibility evidence is too thin for Windows 98, Windows 2000, Windows XP, Vista, and Windows 7 / NT 6.1 claims.
-5. Result lanes and user-cost ordering remain future work; planner suppression hints do not rank results.
+3. Member-level discovery is now bounded to committed fixture members and needs broader recorded source/member coverage before it can answer many real queries.
+4. Compatibility evidence now exists for current fixture-backed old-platform signals, but Windows 98/95, Vista-depth evidence, broader architecture coverage, and real release-note/source coverage remain thin.
+5. Result lanes and user-cost hints exist as bounded annotations, but the project has not yet measured their before/after usefulness delta.
 
 ## Why Live Crawling Is Deferred
 
@@ -86,9 +86,13 @@ Synthetic Records v0 then added deterministic member target refs and parent
 lineage for bounded local bundle fixtures. Result Lanes + User-Cost Ranking v0
 then added bounded deterministic lane and user-cost explanations without adding
 production ranking, fuzzy/vector retrieval, LLM scoring, live source behavior,
-or connector work.
+or connector work. Compatibility Evidence Pack v0 then added compact
+source-backed compatibility evidence from committed fixture metadata, member
+paths, README text, and compatibility notes while keeping unknown compatibility
+valid and avoiding installer execution, live source behavior, scraping, and
+compatibility-oracle claims.
 
-Current next implementation milestone: Compatibility Evidence Pack v0.
+Current next implementation milestone: Search Usefulness Audit Delta v0.
 
 ## Evidence That Would Change The Plan
 
@@ -96,9 +100,10 @@ The plan should be revisited if:
 
 - a recorded source pack makes old-platform queries less dominant than another family
 - manual external baseline observations show a different high-value wedge
-- compatibility evidence becomes blocked by a source/contract problem that must be solved first
+- the compatibility evidence model proves too thin to explain status changes in
+  the audit delta
 - hardening tests reveal route/public-alpha/privacy constraints that prevent safe fixture work
 
-Until then, compatibility evidence is the lowest-risk next move with the
-highest future leverage because source, planner, member, and lane/cost v0 seams
-now exist.
+Until then, an audit delta is the lowest-risk next move because source,
+planner, member, lane/cost, and compatibility-evidence v0 seams now exist and
+should be measured before the next source or surface implementation slice.

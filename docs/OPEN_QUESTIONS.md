@@ -77,3 +77,4 @@ These questions are intentionally left open during bootstrap:
 73. How should member paths from committed local bundle fixtures graduate into stable member target refs without implying arbitrary local filesystem ingestion?
 74. Now that bounded result lanes and user-cost hints exist, which fields should become durable public compatibility promises, and which should remain replaceable until broader result-lane and source-evidence work matures?
 75. Which first compatibility evidence fields should be added for Windows 98, Windows 2000, Windows XP, Vista, Windows 7 / NT 6.1, x86/x64, installer/portable/driver distinctions, and unknown compatibility without turning Eureka into a compatibility oracle?
+76. Now that Compatibility Evidence Pack v0 exists, which evidence fields, confidence labels, locator shapes, and unknown-compatibility outcomes should become stable enough for future Rust parity and public API compatibility promises?

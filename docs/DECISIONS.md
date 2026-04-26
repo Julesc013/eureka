@@ -371,3 +371,9 @@
 - Status: accepted
 - Decision: Eureka now assigns deterministic result lanes and user-cost explanations to current result records under `runtime/engine/ranking/`, then projects those annotations through exact resolution, deterministic search, local index, eval summaries, gateway public envelopes, CLI, web, and local HTTP API output.
 - Why: The old-platform software and member-level discovery wedges need the system to explain why a source-backed inner member can be more actionable than a parent bundle while keeping parent context visible. This milestone adds bounded explanation and small-result ordering only; it does not add fuzzy/vector retrieval, LLM scoring, live source behavior, source connectors, broad source federation, Rust runtime behavior, native apps, production deployment, or final production ranking.
+
+## ADR-063: Add Compatibility Evidence Records Without Creating an Oracle
+
+- Status: accepted
+- Decision: Eureka now derives compact compatibility evidence records from committed fixture metadata, member paths, README text, and compatibility notes under `runtime/engine/compatibility/`, then projects those records through exact resolution, deterministic search, local index, compatibility evaluation, eval summaries, gateway public envelopes, CLI, web, and local HTTP API output.
+- Why: The old-platform software wedge needs source-backed compatibility signals for platforms such as Windows 7, Windows XP, and Windows 2000 while preserving unknown outcomes. This milestone adds evidence records only; it does not execute software, verify installers, scrape external systems, call live sources, add fuzzy/vector retrieval or LLM behavior, introduce source connectors, port Rust behavior, start native app work, add deployment infrastructure, or claim a universal compatibility oracle.

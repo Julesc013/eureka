@@ -62,14 +62,14 @@
     {
       "id": "compatibility_evidence_pack_v0",
       "title": "Compatibility Evidence Pack v0",
-      "status": "queued",
+      "status": "completed",
       "priority": 9,
-      "notes": "Add source-backed old-platform compatibility evidence and preserve unknown compatibility outcomes."
+      "notes": "Added bounded source-backed compatibility evidence from committed fixture metadata, member paths, README text, and compatibility notes while preserving unknown outcomes."
     },
     {
       "id": "search_usefulness_audit_delta_v0",
       "title": "Search Usefulness Audit Delta v0",
-      "status": "queued",
+      "status": "next",
       "priority": 10,
       "notes": "Report before/after usefulness deltas without weakening queries or fabricating baselines."
     },

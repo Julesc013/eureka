@@ -66,8 +66,10 @@ The current repo proves many bounded seams that support this direction:
 - source registry, coverage-depth metadata, local indexing, and resolution runs
 - synthetic member records for bounded local bundle fixtures
 - deterministic result lanes and user-cost explanations for current results
+- source-backed compatibility evidence records for current fixture-backed
+  old-platform signals
 - multiple surfaces over one public boundary
 
-What it does not yet prove is broad live source coverage, final compatibility
-evidence, production ranking, hosted operation, or native app delivery. Those
-remain staged future work.
+What it does not yet prove is broad live source coverage, a final
+compatibility oracle, runtime execution verification, production ranking,
+hosted operation, or native app delivery. Those remain staged future work.

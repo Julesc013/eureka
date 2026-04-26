@@ -29,16 +29,18 @@ The live audit was re-run after Old-Platform Software Planner Pack v0. Current S
 
 - Primary usefulness wedge: old-platform-compatible software search
 - Secondary usefulness wedge: member-level discovery inside bundles
-- Immediate next milestone: Compatibility Evidence Pack v0
+- Immediate next milestone: Search Usefulness Audit Delta v0
 
 Update: Source Coverage and Capability Model v0 and Real Source Coverage Pack
 v0 are implemented, and Old-Platform Software Planner Pack v0 now improves
 deterministic old-platform interpretation. Member-Level Synthetic Records v0
 then added bounded member target refs and parent lineage, and Result Lanes +
 User-Cost Ranking v0 added deterministic member-vs-parent usefulness
-annotations. The next implementation milestone is Compatibility Evidence Pack
-v0 because old-platform answers now need source-backed known/unknown
-compatibility signals.
+annotations. Compatibility Evidence Pack v0 then added bounded source-backed
+compatibility evidence while preserving unknown outcomes. The next
+implementation milestone is Search Usefulness Audit Delta v0 so the repo can
+measure the accumulated usefulness delta without weakening queries or
+fabricating external baselines.
 
 ## Contents
 

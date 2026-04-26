@@ -123,11 +123,18 @@ Do not do: do not build a compatibility oracle or execute installers.
 
 Expected audit effect: compatibility_evidence_gap decreases.
 
+Status: implemented as a bounded source-backed evidence seam over current
+fixture metadata, member paths, README text, and compatibility notes. It keeps
+unknown compatibility valid and adds no runtime execution, installer behavior,
+live source calls, scraping, fuzzy/vector retrieval, LLM behavior, Rust behavior
+ports, native apps, deployment infrastructure, or new connectors.
+
 ## 7. Search Usefulness Audit Delta v0
 
 Why: future slices need before/after evidence.
 
-Prerequisite: at least one source/planner/member improvement.
+Prerequisite: source, planner, member, lane/user-cost, and compatibility
+evidence slices are implemented at v0 scope.
 
 Likely files: `runtime/engine/evals/`, `evals/search_usefulness/`, `tests/operations/`.
 

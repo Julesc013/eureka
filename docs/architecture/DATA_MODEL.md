@@ -15,6 +15,7 @@ The long-term canonical core will likely need typed records such as:
 - `agent`
 - `claim`
 - `evidence`
+- `compatibility_evidence`
 - `identifier`
 - `access_path`
 - `edge`
@@ -67,3 +68,9 @@ Access and trust should instead remain decomposed into dimensions such as:
 The current `resolved_resource_id` seam is useful and should continue to be
 propagated. It is still a bootstrap deterministic seam rather than Eureka's
 final global identity system.
+
+Compatibility Evidence Pack v0 adds a bounded `compatibility_evidence` record
+shape for current fixture-backed old-platform signals. These records preserve
+source identity, evidence kind, claim type, platform, architecture, confidence,
+locator, and snippet where available. They are evidence records, not a final
+compatibility oracle or runtime execution proof.

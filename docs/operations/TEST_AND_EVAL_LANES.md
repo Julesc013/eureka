@@ -37,7 +37,8 @@ The command matrix defines these lanes:
 - `docs_only`: docs/audit/index validation plus whitespace diff checks
 - `public_alpha`: route inventory, smoke, and hosting-pack safety checks
 - `parity`: Python oracle, source-registry, and source coverage/capability
-  validation checks
+  validation checks, plus current Python-oracle shape guards such as planner,
+  member, result-lane, and compatibility-evidence fields
 - `audit`: archive-resolution and search-usefulness eval/audit runners
 - `hardening`: high-risk regression guards for eval truth, path safety,
   route/docs/README drift, parity/golden discipline, and AIDE/test registry
@@ -174,3 +175,18 @@ member-vs-parent cost behavior, and public search projection for current
 result records. It validates bounded usefulness annotations only; it does not
 add production ranking, fuzzy/vector retrieval, LLM scoring, live source
 behavior, or source connectors.
+
+## Compatibility Evidence
+
+Compatibility Evidence Pack v0 is validated with:
+
+```bash
+python -m unittest runtime.engine.compatibility.tests.test_compatibility_evidence runtime.engine.compatibility.tests.test_service runtime.engine.index.tests.test_member_level_synthetic_records surfaces.web.tests.test_compatibility_rendering surfaces.native.cli.tests.test_local_index_cli
+```
+
+This check verifies source-backed compatibility evidence extraction,
+compatibility verdict projection, index/search evidence fields, and current
+surface rendering for bounded fixture-backed records. It preserves unknown
+compatibility and does not add a compatibility oracle, installer/runtime
+execution, live source behavior, scraping, fuzzy/vector retrieval, LLM
+behavior, Rust behavior, or source connectors.

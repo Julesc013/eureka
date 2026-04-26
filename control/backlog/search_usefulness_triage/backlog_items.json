@@ -4,7 +4,7 @@
   "created_by_slice": "search_usefulness_backlog_triage_v0",
   "selected_primary_wedge": "old_platform_software",
   "selected_secondary_wedge": "member_level_discovery",
-  "immediate_next_milestone": "Compatibility Evidence Pack v0",
+  "immediate_next_milestone": "Search Usefulness Audit Delta v0",
   "audit_snapshot": {
     "total_queries": 64,
     "eureka_status_counts": {
@@ -157,7 +157,7 @@
       "id": "SU-T006",
       "title": "Compatibility Evidence Pack v0",
       "priority": "P0",
-      "status": "selected",
+      "status": "implemented",
       "wedge": "compatibility_evidence",
       "failure_modes": ["compatibility_evidence_gap", "source_coverage_gap", "actionability_gap"],
       "evidence": {
@@ -166,22 +166,22 @@
         "finding_ids": ["CTEA-CONTENT-004"]
       },
       "user_value": "Makes old-platform answers actionable by citing compatibility evidence or preserving unknown compatibility honestly.",
-      "implementation_feasibility": "Medium; can start with fixture-backed release notes/readmes/manuals.",
+      "implementation_feasibility": "Implemented with fixture-backed metadata, member paths, README text, and compatibility notes.",
       "regression_risk": "Medium; false compatibility claims are risky.",
-      "expected_audit_delta": "Reduce compatibility_evidence_gap and improve compatibility clarity for old-platform queries.",
+      "expected_audit_delta": "Implemented: current fixture-backed results now expose source-backed compatibility evidence where available while preserving unknown compatibility.",
       "prerequisite_items": ["SU-T001", "SU-T002", "SU-T003", "SU-T004", "SU-T005"],
       "suggested_milestone": "Compatibility Evidence Pack v0",
-      "acceptance_criteria": ["Windows 98/2000/XP/Vista/7 evidence types exist", "unknown compatibility is first-class", "official/readme/manual/community evidence is labeled"],
+      "acceptance_criteria": ["Windows 7/XP/2000 fixture-backed evidence types exist", "unknown compatibility is first-class", "metadata/readme/member-path evidence is labeled"],
       "tests_to_add_first": ["known/unknown compatibility evidence tests", "Windows NT 6.1 alias tests", "driver-vs-app evidence tests"],
       "likely_files": ["contracts/archive/fixtures/", "runtime/engine/compatibility/", "evals/search_usefulness/"],
       "do_not_do": ["do not infer compatibility as truth", "do not create a compatibility oracle", "do not execute installers"],
-      "notes": "Selected as the immediate next milestone because source coverage, planner interpretation, member records, and lane/user-cost projection now exist at v0 scope."
+      "notes": "Implemented as a bounded source-backed evidence seam. It does not create a compatibility oracle, execute installers, call live sources, scrape external systems, add fuzzy/vector retrieval, use LLM behavior, port Rust behavior, or add connectors."
     },
     {
       "id": "SU-T007",
       "title": "Search Usefulness Audit Delta v0",
-      "priority": "P1",
-      "status": "proposed",
+      "priority": "P0",
+      "status": "selected",
       "wedge": "other",
       "failure_modes": ["eval_truth_gap", "source_coverage_gap", "planner_gap"],
       "evidence": {
@@ -190,16 +190,16 @@
         "finding_ids": ["CTEA-EVAL-001"]
       },
       "user_value": "Shows whether selected implementation slices actually improved audit outcomes without weakening fixtures.",
-      "implementation_feasibility": "High after one source/planner/member slice.",
+      "implementation_feasibility": "High now that source, planner, member, lane/user-cost, and compatibility evidence slices exist at v0 scope.",
       "regression_risk": "Low if it reports deltas honestly.",
       "expected_audit_delta": "Creates before/after evidence for selected query families.",
-      "prerequisite_items": ["SU-T002", "SU-T003", "SU-T004"],
+      "prerequisite_items": ["SU-T002", "SU-T003", "SU-T004", "SU-T005", "SU-T006"],
       "suggested_milestone": "Search Usefulness Audit Delta v0",
       "acceptance_criteria": ["delta report format exists", "status changes include evidence refs", "external baselines remain pending/manual"],
       "tests_to_add_first": ["delta report validation", "no fake status improvement guard", "external baseline pending guard"],
       "likely_files": ["runtime/engine/evals/", "evals/search_usefulness/", "tests/operations/"],
       "do_not_do": ["do not rewrite queries to make deltas green", "do not fabricate Google/Archive observations"],
-      "notes": "Should follow a real usefulness slice, not precede it."
+      "notes": "Selected as the immediate next milestone to measure the accumulated usefulness delta without weakening queries or fabricating external baselines."
     },
     {
       "id": "SU-T008",

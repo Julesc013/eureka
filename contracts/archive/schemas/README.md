@@ -20,3 +20,9 @@ Result Lanes + User-Cost Ranking v0 adds draft schemas for bounded lane and
 user-cost annotations on existing result records. These annotations explain
 current deterministic usefulness hints; they are not final production ranking,
 fuzzy retrieval, vector search, LLM scoring, or live source behavior.
+
+Compatibility Evidence Pack v0 adds a draft schema for compact source-backed
+compatibility evidence records derived from committed fixture metadata, member
+paths, readmes, and compatibility notes. The schema preserves evidence and
+confidence; it is not a universal compatibility oracle, runtime execution
+proof, installer behavior, or live-source claim.

@@ -20,6 +20,9 @@ This bootstrap CLI:
 - shows bounded result-lane and user-cost summaries for search, local-index,
   and exact-resolution output, including why an inner member may be lower cost
   than its parent bundle when evidence and lineage are present
+- shows bounded source-backed compatibility evidence summaries where current
+  fixture metadata, member paths, README text, or compatibility notes support
+  them, while preserving unknown compatibility outcomes
 - shows Archive Resolution Eval Runner v0 suite summaries over the public side of the architecture, clearly distinguishing planner satisfaction, absence partials, not-yet-evaluable checks, and capability gaps without implying ranking, fuzzy retrieval, vector search, LLM planning, crawling, live sync, or production relevance evaluation
 - shows bounded synchronous local-task creation, listing, and inspection over the public side of the architecture, clearly distinguishing completed, blocked, and failed bootstrap local task records without implying background scheduling, retries, priorities, or distributed queue behavior
 - shows bounded synchronous resolution-run listings and detail over the public side of the architecture, clearly distinguishing completed exact-resolution, deterministic-search, and planned-search investigation records from any future worker, full planner, or streaming semantics
@@ -107,6 +110,11 @@ Result Lanes + User-Cost Ranking v0 adds deterministic lane and cost summaries
 to current result output. These are bounded explanation hints over existing
 records, not final production ranking, fuzzy/vector retrieval, LLM scoring, or
 live source behavior.
+
+Compatibility Evidence Pack v0 adds compact source-backed compatibility
+evidence to compatibility, search, local-index, and exact-resolution output
+where current fixtures support it. This is not a compatibility oracle, runtime
+execution check, installer verifier, live-source claim, or source connector.
 
 `--task-store-root` is a bootstrap local persistence input only. It does not
 imply background scheduling, retries, priorities, worker daemons, distributed

@@ -42,6 +42,9 @@ Current bootstrap slice:
 - renders bounded result-lane and user-cost hints for search, local-index, and
   exact-resolution records when the public boundary provides them, including
   compact explanations for member-vs-parent usefulness
+- renders bounded compatibility evidence summaries for compatibility, search,
+  local-index, and exact-resolution records when the public boundary provides
+  source-backed fixture evidence, while keeping unknown compatibility visible
 - links blocked exact-resolution pages and search no-result pages into the dedicated bounded absence-report routes
 - renders `resolved_resource_id` in search results, stored-export summaries, and bundle inspection when the public boundary provides it
 - links search results back into the exact-resolution workbench flow through target references
@@ -81,6 +84,10 @@ Current bootstrap slice:
   for existing result records; this is not final production ranking,
   fuzzy/vector retrieval, LLM scoring, semantic search, live source behavior, or
   a source-trust model
+- Compatibility Evidence Pack v0 projects compact source-backed compatibility
+  evidence for current fixture-backed results; this is not a universal
+  compatibility oracle, install/run verification, installer behavior, live
+  source behavior, or a source connector
 - query-plan pages are deterministic interpretation aids only; they must not imply LLM reasoning, fuzzy/vector retrieval, ranking, live source behavior, full investigation planning, or planner-owned retrieval routing yet
 - local-index pages are deterministic local retrieval aids only; they must not imply ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics
 - archive-resolution eval pages are regression reports only; they must not imply ranking, fuzzy retrieval, vector search, LLM planning, crawling, live source sync, or production relevance benchmarking, and current hard-task capability gaps must remain visible

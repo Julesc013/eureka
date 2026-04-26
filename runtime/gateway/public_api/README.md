@@ -35,6 +35,9 @@ Current bootstrap scope:
 - surface a bootstrap deterministic `resolved_resource_id` across resolution, search, actions, stored exports, and bundle inspection where available
 - surface bounded synthetic member records, including deterministic member target refs, member paths, parent target refs, parent representation ids, member kind, evidence, and action hints where available
 - surface bounded result lanes and user-cost explanations for current result records, including why member records may be lower-cost than parent bundles when evidence supports that
+- surface bounded compatibility evidence records and summaries for current
+  fixture-backed results where source metadata, member paths, README text, or
+  compatibility notes support them
 - surface bounded source-family and source-origin summaries across resolution, search, export, and stored-export metadata where available
 - surface bounded evidence summaries across resolution, search, export, stored-export metadata, and bundle inspection where available
 - translate internal gateway job state into public contract-facing envelopes
@@ -102,6 +105,8 @@ Out of scope here:
 - implying that recorded Internet Archive fixtures are a live Internet Archive connector or that local bundle fixtures are arbitrary local filesystem ingestion
 - implying that synthetic member records are broad extraction, arbitrary local filesystem indexing, ranking, or final object-identity semantics
 - implying that result lanes and user-cost scores are final production ranking, fuzzy/vector retrieval, LLM scoring, semantic relevance, or a global source-trust model
+- implying that compatibility evidence is a universal compatibility oracle,
+  installer/run verification, execution proof, or live source-derived claim
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
 - final provenance graph, trust scoring, or cross-source merge behavior beyond the current bounded evidence summary seam
 - final comparison, merge, or truth-selection behavior beyond the current bounded disagreement seam

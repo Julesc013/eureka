@@ -332,6 +332,28 @@
       "notes": "Added by Result Lanes + User-Cost Ranking v0; it validates bounded explanation hints only and adds no production ranking, fuzzy/vector retrieval, LLM scoring, live source behavior, or source connectors."
     },
     {
+      "test_id": "compatibility_evidence_pack_validation",
+      "label": "Compatibility evidence pack tests",
+      "command": "python -m unittest runtime.engine.compatibility.tests.test_compatibility_evidence runtime.engine.compatibility.tests.test_service runtime.engine.index.tests.test_member_level_synthetic_records surfaces.web.tests.test_compatibility_rendering surfaces.native.cli.tests.test_local_index_cli",
+      "category": "integration",
+      "owner_area": "runtime/engine/compatibility",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary local indexes only",
+      "expected_runtime": "seconds",
+      "failure_means": "Source-backed compatibility evidence extraction, unknown outcomes, index projection, or surface rendering regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Compatibility Evidence Pack v0; it validates fixture-backed evidence only and adds no compatibility oracle, installer execution, live source behavior, scraping, fuzzy/vector retrieval, LLM behavior, Rust behavior, or source connectors."
+    },
+    {
       "test_id": "operating_layer_validation",
       "label": "Test/eval operating layer validation",
       "command": "python -m unittest tests.operations.test_test_eval_operating_layer",
