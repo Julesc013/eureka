@@ -68,6 +68,65 @@ properties:
           required:
             - label
             - status
+        capabilities:
+          type: object
+          additionalProperties:
+            type: boolean
+        capabilities_summary:
+          type: array
+          items:
+            type: string
+        coverage:
+          type: object
+          additionalProperties: false
+          properties:
+            coverage_depth:
+              type: string
+            coverage_status:
+              type: string
+            indexed_scopes:
+              type: array
+              items:
+                type: string
+            connector_mode:
+              type: string
+            last_fixture_update:
+              type: string
+            coverage_notes:
+              type: string
+            current_limitations:
+              type: array
+              items:
+                type: string
+            next_coverage_step:
+              type: string
+          required:
+            - coverage_depth
+            - coverage_status
+            - indexed_scopes
+            - connector_mode
+            - last_fixture_update
+            - coverage_notes
+            - current_limitations
+            - next_coverage_step
+        coverage_depth:
+          type: string
+        coverage_status:
+          type: string
+        connector_mode:
+          type: string
+        indexed_scopes:
+          type: array
+          items:
+            type: string
+        current_limitations:
+          type: array
+          items:
+            type: string
+        next_coverage_step:
+          type: string
+        placeholder_warning:
+          type: string
         live_access_mode:
           type: string
         extraction_mode:
@@ -94,6 +153,16 @@ properties:
         - artifact_types
         - identifier_types_emitted
         - connector
+        - capabilities
+        - capabilities_summary
+        - coverage
+        - coverage_depth
+        - coverage_status
+        - connector_mode
+        - indexed_scopes
+        - current_limitations
+        - next_coverage_step
+        - placeholder_warning
         - live_access_mode
         - extraction_mode
         - legal_posture

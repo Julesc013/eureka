@@ -78,10 +78,10 @@ class SourceRegistryIntegrationTestCase(unittest.TestCase):
         payload = json.loads(body.decode("utf-8"))
 
         self.assertEqual(captured["status"], "200 OK")
-        self.assertEqual(payload["source_count"], 2)
+        self.assertEqual(payload["source_count"], 1)
         self.assertEqual(
             {entry["source_id"] for entry in payload["sources"]},
-            {"synthetic-fixtures", "github-releases-recorded-fixtures"},
+            {"synthetic-fixtures"},
         )
 
 

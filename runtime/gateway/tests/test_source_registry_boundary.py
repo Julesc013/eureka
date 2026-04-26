@@ -25,7 +25,15 @@ class SourceRegistryPublicApiTestCase(unittest.TestCase):
         )
         self.assertEqual(
             {entry["source_id"] for entry in active_response.body["sources"]},
-            {"synthetic-fixtures", "github-releases-recorded-fixtures"},
+            {"synthetic-fixtures"},
+        )
+
+        recorded_response = self.public_api.list_sources(
+            SourceCatalogRequest.from_parts(status="active_recorded_fixture")
+        )
+        self.assertEqual(
+            [entry["source_id"] for entry in recorded_response.body["sources"]],
+            ["github-releases-recorded-fixtures"],
         )
 
         preservation_response = self.public_api.list_sources(

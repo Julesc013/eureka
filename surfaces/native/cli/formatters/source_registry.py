@@ -32,11 +32,19 @@ def format_source_registry(source_registry: Mapping[str, Any]) -> str:
                 lines.append(f"   source_id: {entry.get('source_id', '(unknown)')}")
                 lines.append(f"   family: {entry.get('source_family', '(unknown)')}")
                 lines.append(f"   status: {entry.get('status', '(unknown)')}")
+                lines.append(f"   coverage: {entry.get('coverage_depth', '(unknown)')}")
+                lines.append(f"   connector_mode: {entry.get('connector_mode', '(unknown)')}")
                 lines.append(f"   trust_lane: {entry.get('trust_lane', '(unknown)')}")
                 lines.append(f"   connector: {_connector_text(entry.get('connector'))}")
+                lines.append(
+                    f"   capabilities: {_comma_text(entry.get('capabilities_summary'))}"
+                )
                 lines.append(f"   roles: {_comma_text(entry.get('roles'))}")
                 lines.append(f"   surfaces: {_comma_text(entry.get('surfaces'))}")
                 lines.append(f"   summary: {entry.get('status_summary', '(unknown)')}")
+                next_step = entry.get("next_coverage_step")
+                if isinstance(next_step, str) and next_step:
+                    lines.append(f"   next: {next_step}")
     notices = source_registry.get("notices")
     if isinstance(notices, list) and notices:
         lines.extend(["", "Notices"])
@@ -59,6 +67,13 @@ def _format_source_detail(entry: Mapping[str, Any]) -> list[str]:
         f"family: {entry.get('source_family', '(unknown)')}",
         f"status: {entry.get('status', '(unknown)')}",
         f"summary: {entry.get('status_summary', '(unknown)')}",
+        f"coverage_depth: {entry.get('coverage_depth', '(unknown)')}",
+        f"coverage_status: {entry.get('coverage_status', '(unknown)')}",
+        f"connector_mode: {entry.get('connector_mode', '(unknown)')}",
+        f"capabilities: {_comma_text(entry.get('capabilities_summary'))}",
+        f"indexed_scopes: {_comma_text(entry.get('indexed_scopes'))}",
+        f"current_limitations: {_comma_text(entry.get('current_limitations'))}",
+        f"next_coverage_step: {entry.get('next_coverage_step', '(unknown)')}",
         f"trust_lane: {entry.get('trust_lane', '(unknown)')}",
         f"authority_class: {entry.get('authority_class', '(unknown)')}",
         f"connector: {_connector_text(entry.get('connector'))}",
@@ -74,6 +89,9 @@ def _format_source_detail(entry: Mapping[str, Any]) -> list[str]:
         f"rights_notes: {entry.get('rights_notes', '(unknown)')}",
         f"notes: {entry.get('notes', '(unknown)')}",
     ]
+    placeholder_warning = entry.get("placeholder_warning")
+    if isinstance(placeholder_warning, str) and placeholder_warning:
+        lines.append(f"placeholder_warning: {placeholder_warning}")
     return lines
 
 

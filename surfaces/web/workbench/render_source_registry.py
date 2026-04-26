@@ -55,6 +55,12 @@ def render_source_registry_html(source_registry: Mapping[str, Any]) -> str:
         f"          <input id=\"role\" name=\"role\" type=\"text\" value=\"{escape(_filter_value(applied_filters, 'role'), quote=True)}\">",
         "          <label for=\"surface\">Surface</label>",
         f"          <input id=\"surface\" name=\"surface\" type=\"text\" value=\"{escape(_filter_value(applied_filters, 'surface'), quote=True)}\">",
+        "          <label for=\"coverage_depth\">Coverage depth</label>",
+        f"          <input id=\"coverage_depth\" name=\"coverage_depth\" type=\"text\" value=\"{escape(_filter_value(applied_filters, 'coverage_depth'), quote=True)}\">",
+        "          <label for=\"capability\">Capability</label>",
+        f"          <input id=\"capability\" name=\"capability\" type=\"text\" value=\"{escape(_filter_value(applied_filters, 'capability'), quote=True)}\">",
+        "          <label for=\"connector_mode\">Connector mode</label>",
+        f"          <input id=\"connector_mode\" name=\"connector_mode\" type=\"text\" value=\"{escape(_filter_value(applied_filters, 'connector_mode'), quote=True)}\">",
         "          <button type=\"submit\">Filter</button>",
         "        </form>",
         "      </section>",
@@ -87,9 +93,12 @@ def render_source_registry_html(source_registry: Mapping[str, Any]) -> str:
                 f"<a href=\"{escape(link, quote=True)}\">{escape(source['name'])}</a> "
                 f"<span>[{escape(source['status'])}]</span> "
                 f"<span>{escape(source['source_family'])}</span> "
+                f"<span>coverage: {escape(source['coverage_depth'])}</span> "
+                f"<span>connector mode: {escape(source['connector_mode'])}</span> "
                 f"<span>{escape(source['status_summary'])}</span> "
                 f"<span>trust: {escape(source['trust_lane'])}</span> "
                 f"<span>connector: {escape(_connector_text(source['connector']))}</span> "
+                f"<span>capabilities: {escape(_list_text(source['capabilities_summary']))}</span> "
                 f"<span>roles: {escape(', '.join(source['roles']))}</span> "
                 f"<span>surfaces: {escape(', '.join(source['surfaces']))}</span>"
                 "</li>"
@@ -117,6 +126,13 @@ def render_source_registry_html(source_registry: Mapping[str, Any]) -> str:
                 f"          <dt>Family</dt><dd>{escape(selected_source['source_family'])}</dd>",
                 f"          <dt>Status</dt><dd>{escape(selected_source['status'])}</dd>",
                 f"          <dt>Status summary</dt><dd>{escape(selected_source['status_summary'])}</dd>",
+                f"          <dt>Coverage depth</dt><dd>{escape(selected_source['coverage_depth'])}</dd>",
+                f"          <dt>Coverage status</dt><dd>{escape(selected_source['coverage_status'])}</dd>",
+                f"          <dt>Connector mode</dt><dd>{escape(selected_source['connector_mode'])}</dd>",
+                f"          <dt>Capabilities</dt><dd>{escape(_list_text(selected_source['capabilities_summary']))}</dd>",
+                f"          <dt>Indexed scopes</dt><dd>{escape(_list_text(selected_source['indexed_scopes']))}</dd>",
+                f"          <dt>Current limitations</dt><dd>{escape(_list_text(selected_source['current_limitations']))}</dd>",
+                f"          <dt>Next coverage step</dt><dd>{escape(selected_source['next_coverage_step'])}</dd>",
                 f"          <dt>Trust lane</dt><dd>{escape(selected_source['trust_lane'])}</dd>",
                 f"          <dt>Authority class</dt><dd>{escape(selected_source['authority_class'])}</dd>",
                 f"          <dt>Connector</dt><dd>{escape(_connector_text(selected_source['connector']))}</dd>",
@@ -135,6 +151,16 @@ def render_source_registry_html(source_registry: Mapping[str, Any]) -> str:
                 "      </section>",
             ]
         )
+        placeholder_warning = selected_source.get("placeholder_warning")
+        if isinstance(placeholder_warning, str) and placeholder_warning:
+            parts.extend(
+                [
+                    "      <section>",
+                    "        <h2>Source Warning</h2>",
+                    f"        <p>{escape(placeholder_warning)}</p>",
+                    "      </section>",
+                ]
+            )
 
     if notices:
         parts.extend(
@@ -212,6 +238,28 @@ def _source_entry(value: Mapping[str, Any], field_name: str) -> dict[str, Any]:
             f"{field_name}.identifier_types_emitted",
         ),
         "connector": _require_mapping(value.get("connector"), f"{field_name}.connector"),
+        "capabilities": _bool_mapping(value.get("capabilities"), f"{field_name}.capabilities"),
+        "capabilities_summary": _string_list(
+            value.get("capabilities_summary"),
+            f"{field_name}.capabilities_summary",
+        ),
+        "coverage": _require_mapping(value.get("coverage"), f"{field_name}.coverage"),
+        "coverage_depth": _require_string(value.get("coverage_depth"), f"{field_name}.coverage_depth"),
+        "coverage_status": _require_string(value.get("coverage_status"), f"{field_name}.coverage_status"),
+        "connector_mode": _require_string(value.get("connector_mode"), f"{field_name}.connector_mode"),
+        "indexed_scopes": _string_list(value.get("indexed_scopes"), f"{field_name}.indexed_scopes"),
+        "current_limitations": _string_list(
+            value.get("current_limitations"),
+            f"{field_name}.current_limitations",
+        ),
+        "next_coverage_step": _require_string(
+            value.get("next_coverage_step"),
+            f"{field_name}.next_coverage_step",
+        ),
+        "placeholder_warning": _optional_text(
+            value.get("placeholder_warning"),
+            f"{field_name}.placeholder_warning",
+        ),
         "live_access_mode": _require_string(value.get("live_access_mode"), f"{field_name}.live_access_mode"),
         "extraction_mode": _require_string(value.get("extraction_mode"), f"{field_name}.extraction_mode"),
         "legal_posture": _require_string(value.get("legal_posture"), f"{field_name}.legal_posture"),
@@ -261,6 +309,25 @@ def _string_list(value: Any, field_name: str) -> list[str]:
     return values
 
 
+def _bool_mapping(value: Any, field_name: str) -> dict[str, bool]:
+    if not isinstance(value, Mapping):
+        raise ValueError(f"{field_name} must be an object.")
+    values: dict[str, bool] = {}
+    for key, raw_value in value.items():
+        if not isinstance(key, str) or not key:
+            raise ValueError(f"{field_name} keys must be non-empty strings.")
+        if not isinstance(raw_value, bool):
+            raise ValueError(f"{field_name}.{key} must be a boolean.")
+        values[key] = raw_value
+    return values
+
+
+def _list_text(value: list[str]) -> str:
+    if not value:
+        return "(none)"
+    return ", ".join(value)
+
+
 def _connector_text(value: Mapping[str, Any]) -> str:
     label = _require_string(value.get("label"), "connector.label")
     status = _require_string(value.get("status"), "connector.status")
@@ -277,6 +344,14 @@ def _optional_string(value: Any, field_name: str) -> str | None:
     if value is None:
         return None
     return _require_string(value, field_name)
+
+
+def _optional_text(value: Any, field_name: str) -> str:
+    if value is None:
+        return ""
+    if not isinstance(value, str):
+        raise ValueError(f"{field_name} must be a string.")
+    return value
 
 
 def _require_int(value: Any, field_name: str) -> int:

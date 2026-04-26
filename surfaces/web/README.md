@@ -16,7 +16,7 @@ Current bootstrap slice:
 - renders bounded subject-state listing at `/subject?key=...` from a shared subject-state view model rather than engine-owned grouping state
 - renders bounded miss explanations at `/absence/resolve?target_ref=...` and `/absence/search?q=...` from a shared absence-report view model rather than engine-owned diagnostic state
 - renders bounded known representations and access paths in the exact-resolution page and at `/representations?target_ref=...` from shared public-boundary data rather than engine-owned artifact logic
-- renders compatibility-first source-registry listing at `/sources` and bounded source detail at `/source?id=...` from a shared source-registry view model rather than reading control inventory directly
+- renders compatibility-first source-registry listing at `/sources` and bounded source detail at `/source?id=...` from a shared source-registry view model rather than reading control inventory directly, including capability summaries, coverage depth, connector mode, current limitations, next coverage steps, and placeholder warnings
 - renders compatibility-first deterministic query planning at `/query-plan?q=...` from a shared query-plan view model rather than engine-owned planner state
 - renders compatibility-first local-index build, status, and search pages at `/index/build?index_path=...`, `/index/status?index_path=...`, and `/index/search?q=...&index_path=...` from a shared local-index view model rather than engine-owned SQLite state
 - renders compatibility-first archive-resolution eval reports at `/evals/archive-resolution?task_id=...&index_path=...` from a shared eval-report view model rather than engine-owned runner state, keeping capability gaps visible for hard fixtures
@@ -45,7 +45,7 @@ Current bootstrap slice:
 - exposes `/api/states?subject=...` for machine-readable bounded subject-state listing over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/absence/resolve?target_ref=...` and `/api/absence/search?q=...` for machine-readable bounded miss explanations over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/representations?target_ref=...` for machine-readable bounded representation and access-path listing over the same transport-neutral public boundary already reused by the HTML workbench and CLI
-- exposes `/api/sources?...` and `/api/source?id=...` for machine-readable bounded source-registry listing and source detail over the same transport-neutral public boundary already reused by the HTML workbench and CLI
+- exposes `/api/sources?...` and `/api/source?id=...` for machine-readable bounded source-registry listing and source detail over the same transport-neutral public boundary already reused by the HTML workbench and CLI, including safe capability and coverage metadata
 - exposes `/api/query-plan?q=...` for machine-readable deterministic query planning over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/index/build?index_path=...`, `/api/index/status?index_path=...`, and `/api/index/query?index_path=...&q=...` for machine-readable bootstrap local indexing over the same transport-neutral public boundary already reused by the HTML workbench and CLI
 - exposes `/api/evals/archive-resolution?task_id=...&index_path=...` for machine-readable Archive Resolution Eval Runner v0 reports over the same transport-neutral public boundary already reused by the HTML workbench and CLI
@@ -69,7 +69,7 @@ Current bootstrap slice:
 - memory_store_root configuration is a bootstrap-only demo choice for explicit persisted local resolution memory, not a final deployment, shared-memory, or multi-user storage contract
 - index_path configuration is a bootstrap-only demo choice for local SQLite indexing, not a final hosted search, multi-user storage, or deployment contract
 - local path-based bundle inspection is a bootstrap-only demo choice, not a production upload or import contract
-- source-registry pages are inventory and labeling only; placeholder and future sources must remain visibly unimplemented and local private paths must not be exposed
+- source-registry pages are inventory, capability, and coverage-depth metadata only; placeholder and future sources must remain visibly unimplemented and local private paths must not be exposed
 - query-plan pages are deterministic interpretation aids only; they must not imply LLM reasoning, full investigation planning, or planner-owned retrieval routing yet
 - local-index pages are deterministic local retrieval aids only; they must not imply ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics
 - archive-resolution eval pages are regression reports only; they must not imply ranking, fuzzy retrieval, vector search, LLM planning, crawling, live source sync, or production relevance benchmarking, and current hard-task capability gaps must remain visible

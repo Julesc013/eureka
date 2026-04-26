@@ -504,6 +504,9 @@ def main(
                     source_family=args.family,
                     role=args.role,
                     surface=args.surface,
+                    coverage_depth=args.coverage_depth,
+                    capability=args.capability,
+                    connector_mode=args.connector_mode,
                 )
             )
             source_registry = source_registry_envelope_to_view_model(response.body)
@@ -919,6 +922,9 @@ def build_parser() -> argparse.ArgumentParser:
     sources_parser.add_argument("--family", dest="family")
     sources_parser.add_argument("--role")
     sources_parser.add_argument("--surface")
+    sources_parser.add_argument("--coverage-depth")
+    sources_parser.add_argument("--capability")
+    sources_parser.add_argument("--connector-mode")
 
     source_parser = subparsers.add_parser(
         "source",

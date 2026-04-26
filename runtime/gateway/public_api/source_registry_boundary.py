@@ -13,6 +13,9 @@ class SourceCatalogRequest:
     source_family: str | None = None
     role: str | None = None
     surface: str | None = None
+    coverage_depth: str | None = None
+    capability: str | None = None
+    connector_mode: str | None = None
 
     @classmethod
     def from_parts(
@@ -22,12 +25,18 @@ class SourceCatalogRequest:
         source_family: str | None = None,
         role: str | None = None,
         surface: str | None = None,
+        coverage_depth: str | None = None,
+        capability: str | None = None,
+        connector_mode: str | None = None,
     ) -> "SourceCatalogRequest":
         return cls(
             status=_normalize_optional_filter(status),
             source_family=_normalize_optional_filter(source_family),
             role=_normalize_optional_filter(role),
             surface=_normalize_optional_filter(surface),
+            coverage_depth=_normalize_optional_filter(coverage_depth),
+            capability=_normalize_optional_filter(capability),
+            connector_mode=_normalize_optional_filter(connector_mode),
         )
 
 
@@ -53,6 +62,9 @@ class SourceRegistryPublicApi:
             source_family=request.source_family,
             role=request.role,
             surface=request.surface,
+            coverage_depth=request.coverage_depth,
+            capability=request.capability,
+            connector_mode=request.connector_mode,
         )
         return PublicApiResponse(
             status_code=200,
@@ -63,6 +75,9 @@ class SourceRegistryPublicApi:
                     "family": request.source_family,
                     "role": request.role,
                     "surface": request.surface,
+                    "coverage_depth": request.coverage_depth,
+                    "capability": request.capability,
+                    "connector_mode": request.connector_mode,
                 },
             ),
         )
@@ -139,6 +154,16 @@ def source_record_to_public_entry(record) -> dict[str, Any]:
             "label": record.connector.label,
             "status": record.connector.status,
         },
+        "capabilities": record.capabilities.to_dict(),
+        "capabilities_summary": list(record.capabilities.enabled_capabilities()),
+        "coverage": record.coverage.to_dict(),
+        "coverage_depth": record.coverage.coverage_depth,
+        "coverage_status": record.coverage.coverage_status,
+        "connector_mode": record.coverage.connector_mode,
+        "indexed_scopes": list(record.coverage.indexed_scopes),
+        "current_limitations": list(record.coverage.current_limitations),
+        "next_coverage_step": record.coverage.next_coverage_step,
+        "placeholder_warning": _placeholder_warning(record),
         "live_access_mode": record.live_access.mode,
         "extraction_mode": record.extraction_policy.mode,
         "legal_posture": record.legal_posture,
@@ -158,8 +183,24 @@ def _normalize_optional_filter(value: str | None) -> str | None:
 def _status_summary(record) -> str:
     if record.status == "active_fixture":
         return "Active fixture-backed source record."
+    if record.status == "active_recorded_fixture":
+        return "Active recorded-fixture source record. Live source access remains separate."
     if record.status == "placeholder":
         return "Placeholder record only. No runtime connector is implemented yet."
     if record.status == "future":
         return "Future source record only. Runtime behavior remains deferred."
+    if record.status == "local_private_future":
+        return "Future local/private source record only. Runtime behavior remains deferred."
+    if record.status == "live_deferred":
+        return "Registered source record with live access deferred."
     return "Disabled source record."
+
+
+def _placeholder_warning(record) -> str:
+    if record.status == "placeholder":
+        return "Placeholder only; no connector, fixture coverage, or live access is implemented."
+    if record.status in {"future", "local_private_future"}:
+        return "Future-only source; no runtime connector is implemented."
+    if record.connector.status in {"unimplemented", "deferred"}:
+        return "Connector is not implemented for current runtime behavior."
+    return ""

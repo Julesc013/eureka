@@ -22,7 +22,7 @@ class SourceRegistryViewModelTestCase(unittest.TestCase):
         view_model = source_registry_envelope_to_view_model(response.body)
 
         self.assertEqual(view_model["status"], "listed")
-        self.assertEqual(view_model["source_count"], 2)
+        self.assertEqual(view_model["source_count"], 1)
         self.assertEqual(view_model["applied_filters"]["status"], "active_fixture")
         self.assertEqual(view_model["sources"][0]["connector"]["status"], "fixture_backed")
 

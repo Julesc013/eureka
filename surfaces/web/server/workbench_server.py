@@ -1093,6 +1093,9 @@ class WorkbenchWsgiApp:
                 source_family=self._resolve_optional_query_value(query_string, "family"),
                 role=self._resolve_optional_query_value(query_string, "role"),
                 surface=self._resolve_optional_query_value(query_string, "surface"),
+                coverage_depth=self._resolve_optional_query_value(query_string, "coverage_depth"),
+                capability=self._resolve_optional_query_value(query_string, "capability"),
+                connector_mode=self._resolve_optional_query_value(query_string, "connector_mode"),
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/source":
@@ -1658,6 +1661,9 @@ def render_source_registry_page(
     source_family: str | None = None,
     role: str | None = None,
     surface: str | None = None,
+    coverage_depth: str | None = None,
+    capability: str | None = None,
+    connector_mode: str | None = None,
 ) -> str:
     if public_api is None:
         return render_source_registry_html(
@@ -1702,6 +1708,9 @@ def render_source_registry_page(
             source_family=source_family,
             role=role,
             surface=surface,
+            coverage_depth=coverage_depth,
+            capability=capability,
+            connector_mode=connector_mode,
         )
     )
     return render_source_registry_html(source_registry_envelope_to_view_model(response.body))

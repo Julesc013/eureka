@@ -223,6 +223,8 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertIn("github-releases-recorded-fixtures", output)
         self.assertIn("internet-archive-placeholder", output)
         self.assertIn("connector: Synthetic software connector [fixture_backed]", output)
+        self.assertIn("coverage: action_indexed", output)
+        self.assertIn("coverage: source_known", output)
 
     def test_source_commands_support_filters_json_and_not_found(self) -> None:
         filtered_exit_code, filtered_output = run_cli("sources", "--status", "active_fixture", "--json")
@@ -230,12 +232,39 @@ class NativeCliMainTestCase(unittest.TestCase):
 
         self.assertEqual(filtered_exit_code, 0)
         self.assertEqual(filtered_payload["status"], "listed")
-        self.assertEqual(filtered_payload["source_count"], 2)
+        self.assertEqual(filtered_payload["source_count"], 1)
         self.assertEqual(filtered_payload["applied_filters"]["status"], "active_fixture")
+        self.assertIn("coverage_depth", filtered_payload["sources"][0])
+        self.assertIn("capabilities", filtered_payload["sources"][0])
+
+        capability_exit_code, capability_output = run_cli(
+            "sources",
+            "--capability",
+            "recorded_fixture_backed",
+            "--json",
+        )
+        capability_payload = json.loads(capability_output)
+        self.assertEqual(capability_exit_code, 0)
+        self.assertEqual(
+            [source["source_id"] for source in capability_payload["sources"]],
+            ["github-releases-recorded-fixtures"],
+        )
+
+        coverage_exit_code, coverage_output = run_cli(
+            "sources",
+            "--coverage-depth",
+            "source_known",
+            "--json",
+        )
+        coverage_payload = json.loads(coverage_output)
+        self.assertEqual(coverage_exit_code, 0)
+        self.assertEqual(coverage_payload["source_count"], 4)
 
         detail_exit_code, detail_output = run_cli("source", "local-files-placeholder")
         self.assertEqual(detail_exit_code, 0)
         self.assertIn("selected_source_id: local-files-placeholder", detail_output)
+        self.assertIn("coverage_depth: source_known", detail_output)
+        self.assertIn("connector_mode: local_private_future", detail_output)
         self.assertIn("rights_notes: Local paths and user-controlled material are private by default", detail_output)
 
         missing_exit_code, missing_output = run_cli("source", "missing-source", "--json")

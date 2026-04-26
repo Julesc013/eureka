@@ -12,7 +12,7 @@ This bootstrap CLI:
 - shows bounded miss explanations for exact-resolution misses and deterministic search no-result cases
 - shows bounded ordered state listings for one bootstrap subject key with compact source and evidence summaries per state
 - shows bounded side-by-side agreements and disagreements for exactly two compared targets while preserving evidence per side
-- shows bounded source-registry listings and source detail over the public side of the architecture, clearly distinguishing active fixture-backed sources from placeholders and future records
+- shows bounded source-registry listings and source detail over the public side of the architecture, including capability summaries, coverage depth, connector mode, current limitations, and next coverage steps while clearly distinguishing active fixture-backed, active recorded-fixture-backed, placeholder, and future records
 - shows bounded deterministic query-plan summaries over the public side of the architecture, clearly distinguishing supported query families from generic fallbacks without implying LLM planning, vector search, fuzzy retrieval, or ranking
 - shows bounded local-index build, status, and query results over the public side of the architecture, clearly distinguishing SQLite FTS5 mode from deterministic fallback mode without implying ranking, fuzzy retrieval, vector search, live sync, or incremental indexing
 - shows Archive Resolution Eval Runner v0 suite summaries over the public side of the architecture, clearly distinguishing planner satisfaction, absence partials, not-yet-evaluable checks, and capability gaps without implying ranking, fuzzy retrieval, vector search, LLM planning, crawling, live sync, or production relevance evaluation
@@ -48,7 +48,7 @@ Commands currently exposed:
 - `memory-create --run-store-root <path> --memory-store-root <path> --run-id <run_id>`
 - `memory <memory_id> --memory-store-root <path>`
 - `memories --memory-store-root <path> [--kind <memory_kind>] [--run-id <run_id>] [--task-kind <task_kind>] [--source-id <source_id>]`
-- `sources [--status <status>] [--family <family>] [--role <role>] [--surface <surface>]`
+- `sources [--status <status>] [--family <family>] [--role <role>] [--surface <surface>] [--coverage-depth <depth>] [--capability <name>] [--connector-mode <mode>]`
 - `source <source_id>`
 - `representations <target_ref>`
 - `plan <target_ref> [--host <host_profile_id>] [--strategy <strategy_id>] [--store-root <path>]`

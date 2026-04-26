@@ -26,12 +26,15 @@ class SourcePlaceholderHonestyTest(unittest.TestCase):
             source_id = record["source_id"]
             connector = record.get("connector", {})
             connector_status = connector.get("status")
-            if status not in {"placeholder", "future"}:
+            if status not in {"placeholder", "future", "local_private_future"}:
                 continue
 
             self.assertNotEqual(connector_status, "fixture_backed", source_id)
             self.assertNotEqual(connector_status, "implemented", source_id)
             self.assertFalse(connector.get("entrypoint"), source_id)
+            self.assertEqual(record["coverage"]["coverage_depth"], "source_known", source_id)
+            self.assertFalse(record["capabilities"]["live_supported"], source_id)
+            self.assertFalse(record["capabilities"]["recorded_fixture_backed"], source_id)
             combined = json.dumps(record, sort_keys=True).lower()
             self.assertRegex(combined, r"placeholder|future|deferred|unimplemented", source_id)
 
@@ -53,8 +56,12 @@ class SourcePlaceholderHonestyTest(unittest.TestCase):
         local_files = records["local-files-placeholder"]
         combined = json.dumps(local_files, sort_keys=True).lower()
 
-        self.assertEqual(local_files["status"], "future")
+        self.assertEqual(local_files["status"], "local_private_future")
         self.assertEqual(local_files["connector"]["status"], "deferred")
+        self.assertEqual(local_files["coverage"]["coverage_depth"], "source_known")
+        self.assertEqual(local_files["coverage"]["connector_mode"], "local_private_future")
+        self.assertTrue(local_files["capabilities"]["local_private"])
+        self.assertFalse(local_files["capabilities"]["supports_action_paths"])
         self.assertIn("private", combined)
         self.assertIn("local", combined)
 
@@ -65,7 +72,9 @@ class SourcePlaceholderHonestyTest(unittest.TestCase):
         for source in response.body["sources"]:
             if source["source_id"] in ACTIVE_FIXTURE_SOURCE_IDS:
                 continue
-            self.assertIn(source["status"], {"placeholder", "future"})
+            self.assertIn(source["status"], {"placeholder", "future", "local_private_future"})
+            self.assertEqual(source["coverage_depth"], "source_known")
+            self.assertFalse(source["capabilities"]["live_supported"])
             self.assertNotIn("Active fixture-backed", source["status_summary"])
 
 

@@ -361,11 +361,24 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(headers["Content-Type"], "application/json; charset=utf-8")
         payload = json.loads(body)
         self.assertEqual(payload["status"], "listed")
-        self.assertEqual(payload["source_count"], 2)
+        self.assertEqual(payload["source_count"], 1)
         self.assertEqual(payload["applied_filters"]["status"], "active_fixture")
         self.assertEqual(
             {entry["source_id"] for entry in payload["sources"]},
-            {"synthetic-fixtures", "github-releases-recorded-fixtures"},
+            {"synthetic-fixtures"},
+        )
+        self.assertIn("coverage_depth", payload["sources"][0])
+        self.assertIn("capabilities", payload["sources"][0])
+
+        capability_status, _, capability_body = self._request(
+            "/api/sources",
+            {"capability": "recorded_fixture_backed"},
+        )
+        self.assertEqual(capability_status, "200 OK")
+        capability_payload = json.loads(capability_body)
+        self.assertEqual(
+            [entry["source_id"] for entry in capability_payload["sources"]],
+            ["github-releases-recorded-fixtures"],
         )
 
         detail_status, _, detail_body = self._request(
@@ -393,6 +406,8 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         placeholder_payload = json.loads(placeholder_body)
         self.assertEqual(placeholder_payload["sources"][0]["status"], "placeholder")
         self.assertEqual(placeholder_payload["sources"][0]["connector"]["status"], "unimplemented")
+        self.assertEqual(placeholder_payload["sources"][0]["coverage_depth"], "source_known")
+        self.assertFalse(placeholder_payload["sources"][0]["capabilities"]["live_supported"])
 
     def test_absence_endpoints_return_machine_readable_reports(self) -> None:
         resolve_status, headers, resolve_body = self._request(

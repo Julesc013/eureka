@@ -290,7 +290,15 @@ def build_api_index_document(
             {
                 "path": "/api/sources",
                 "method": "GET",
-                "query_parameters": ["status", "family", "role", "surface"],
+                "query_parameters": [
+                    "status",
+                    "family",
+                    "role",
+                    "surface",
+                    "coverage_depth",
+                    "capability",
+                    "connector_mode",
+                ],
                 "response_content_types": ["application/json"],
             },
             {
@@ -1110,6 +1118,9 @@ def handle_api_request(
                 source_family=_required_query_value(query, "family"),
                 role=_required_query_value(query, "role"),
                 surface=_required_query_value(query, "surface"),
+                coverage_depth=_required_query_value(query, "coverage_depth"),
+                capability=_required_query_value(query, "capability"),
+                connector_mode=_required_query_value(query, "connector_mode"),
             )
         )
         return json_response(

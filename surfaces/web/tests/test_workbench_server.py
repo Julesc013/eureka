@@ -662,8 +662,9 @@ class WorkbenchServerTestCase(unittest.TestCase):
 
         self.assertIn("Eureka Source Registry", html)
         self.assertIn("synthetic-fixtures", html)
-        self.assertIn("github-releases-recorded-fixtures", html)
+        self.assertNotIn("github-releases-recorded-fixtures", html)
         self.assertIn("Active fixture-backed source record.", html)
+        self.assertIn("coverage: action_indexed", html)
 
     def test_wsgi_app_handles_source_registry_requests(self) -> None:
         app = WorkbenchWsgiApp(
@@ -694,7 +695,8 @@ class WorkbenchServerTestCase(unittest.TestCase):
 
         self.assertEqual(captured["status"], "200 OK")
         self.assertIn("synthetic-fixtures", body)
-        self.assertIn("github-releases-recorded-fixtures", body)
+        self.assertNotIn("github-releases-recorded-fixtures", body)
+        self.assertIn("coverage: action_indexed", body)
 
     def test_wsgi_app_serves_manifest_export_json_for_known_target(self) -> None:
         app = WorkbenchWsgiApp(

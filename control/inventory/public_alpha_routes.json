@@ -183,7 +183,7 @@
         "local_dev": "allowed",
         "public_alpha": "allowed"
       },
-      "notes": "Source Registry v0 list view; no live source sync or crawling.",
+      "notes": "Source Registry v0 list view with safe capability and coverage-depth filters; no live source sync or crawling.",
       "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
       "reason": "Source inventory listing is read-only.",
       "route_pattern": "/sources",
@@ -198,7 +198,7 @@
         "local_dev": "allowed",
         "public_alpha": "allowed"
       },
-      "notes": "Source Registry v0 list endpoint; no live source sync or crawling.",
+      "notes": "Source Registry v0 list endpoint with safe capability and coverage-depth filters; no live source sync or crawling.",
       "owning_module": "surfaces.web.server.api_routes.handle_api_request",
       "reason": "Source inventory listing is read-only.",
       "route_pattern": "/api/sources",
@@ -213,7 +213,7 @@
         "local_dev": "allowed",
         "public_alpha": "allowed"
       },
-      "notes": "Reads one bounded source registry record by source id.",
+      "notes": "Reads one bounded source registry record by source id, including safe capability and coverage-depth metadata.",
       "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
       "reason": "Source detail lookup is read-only.",
       "route_pattern": "/source",
@@ -228,7 +228,7 @@
         "local_dev": "allowed",
         "public_alpha": "allowed"
       },
-      "notes": "Reads one bounded source registry record by source id.",
+      "notes": "Reads one bounded source registry record by source id, including safe capability and coverage-depth metadata.",
       "owning_module": "surfaces.web.server.api_routes.handle_api_request",
       "reason": "Source detail lookup is read-only.",
       "route_pattern": "/api/source",
