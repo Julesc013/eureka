@@ -43,7 +43,12 @@ class ResolutionRunsCliTestCase(unittest.TestCase):
         self.assertEqual(list_exit_code, 0)
         self.assertIn("Resolution runs", resolve_output)
         self.assertIn("selected_run_id: run-exact-resolution-0001", resolve_output)
-        self.assertIn("checked_source_ids: github-releases-recorded-fixtures, synthetic-fixtures", status_output)
+        self.assertIn(
+            "checked_source_ids: github-releases-recorded-fixtures, internet-archive-recorded-fixtures, local-bundle-fixtures, synthetic-fixtures",
+            status_output,
+        )
+        self.assertIn("Internet Archive Recorded Fixtures [active_recorded_fixture]", status_output)
+        self.assertIn("Local Bundle Fixtures [active_fixture]", status_output)
         self.assertIn("Synthetic Fixtures [active_fixture]", status_output)
         self.assertIn("run-exact-resolution-0001", list_output)
 
@@ -61,7 +66,7 @@ class ResolutionRunsCliTestCase(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertEqual(payload["status"], "available")
         self.assertEqual(payload["selected_run_id"], "run-deterministic-search-0001")
-        self.assertEqual(payload["runs"][0]["result_summary"]["result_count"], 4)
+        self.assertEqual(payload["runs"][0]["result_summary"]["result_count"], 7)
 
 
 if __name__ == "__main__":

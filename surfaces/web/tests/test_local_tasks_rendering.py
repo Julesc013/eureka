@@ -21,7 +21,10 @@ class LocalTasksRenderingTestCase(unittest.TestCase):
                         "created_at": "2026-04-24T00:00:00+00:00",
                         "started_at": "2026-04-24T00:00:00+00:00",
                         "completed_at": "2026-04-24T00:00:01+00:00",
-                        "result_summary": {"source_count": 6, "active_fixture_sources": ["synthetic-fixtures"]},
+                        "result_summary": {
+                            "source_count": 8,
+                            "active_fixture_sources": ["local-bundle-fixtures", "synthetic-fixtures"],
+                        },
                         "notices": [{"code": "task_completed", "severity": "info", "message": "done"}],
                         "created_by_slice": "local_worker_task_model_v0",
                     }
@@ -33,7 +36,7 @@ class LocalTasksRenderingTestCase(unittest.TestCase):
         self.assertIn("Eureka Local Tasks", html)
         self.assertIn("task-validate-source-registry-0001", html)
         self.assertIn("validate_source_registry", html)
-        self.assertIn("source_count=6", html)
+        self.assertIn("source_count=8", html)
 
 
 if __name__ == "__main__":

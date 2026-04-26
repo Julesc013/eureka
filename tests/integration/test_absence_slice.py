@@ -26,7 +26,15 @@ class AbsenceSliceIntegrationTestCase(unittest.TestCase):
         )
 
         self.assertEqual(view_model["likely_reason_code"], "known_subject_different_state")
-        self.assertEqual(view_model["checked_source_families"], ["synthetic_fixture", "github_releases"])
+        self.assertEqual(
+            view_model["checked_source_families"],
+            [
+                "synthetic_fixture",
+                "github_releases",
+                "internet_archive_recorded",
+                "local_bundle_fixtures",
+            ],
+        )
         self.assertEqual(
             [entry["target_ref"] for entry in view_model["near_matches"]],
             [

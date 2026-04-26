@@ -36,6 +36,8 @@ class ResolutionRunsPublicApiTestCase(unittest.TestCase):
         self.assertEqual(resolve_response.body["selected_run_id"], "run-exact-resolution-0001")
         self.assertEqual(resolve_response.body["runs"][0]["checked_source_ids"], [
             "github-releases-recorded-fixtures",
+            "internet-archive-recorded-fixtures",
+            "local-bundle-fixtures",
             "synthetic-fixtures",
         ])
         self.assertEqual(search_response.status_code, 200)

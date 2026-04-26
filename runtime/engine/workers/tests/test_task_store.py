@@ -21,7 +21,7 @@ class LocalTaskStoreTestCase(unittest.TestCase):
                 created_at="2026-04-24T00:00:00+00:00",
                 started_at="2026-04-24T00:00:00+00:00",
                 completed_at="2026-04-24T00:00:01+00:00",
-                result_summary={"source_count": 6},
+                result_summary={"source_count": 8},
                 notices=(Notice(code="task_completed", severity="info"),),
             )
             task_path = store.save_task(task)
@@ -31,7 +31,7 @@ class LocalTaskStoreTestCase(unittest.TestCase):
 
         self.assertEqual(task_path.name, f"{task.task_id}.json")
         self.assertEqual(loaded.task_id, task.task_id)
-        self.assertEqual(loaded.result_summary, {"source_count": 6})
+        self.assertEqual(loaded.result_summary, {"source_count": 8})
         self.assertEqual(tuple(item.task_id for item in listed), (task.task_id,))
 
     def test_unknown_task_raises_not_found(self) -> None:

@@ -9,6 +9,8 @@ from tests.hardening.helpers import repo_path
 ACTIVE_FIXTURE_SOURCE_IDS = {
     "synthetic-fixtures",
     "github-releases-recorded-fixtures",
+    "internet-archive-recorded-fixtures",
+    "local-bundle-fixtures",
 }
 
 
@@ -64,6 +66,31 @@ class SourcePlaceholderHonestyTest(unittest.TestCase):
         self.assertFalse(local_files["capabilities"]["supports_action_paths"])
         self.assertIn("private", combined)
         self.assertIn("local", combined)
+
+    def test_new_recorded_sources_are_distinct_from_placeholders(self):
+        records = {record["source_id"]: record for record in _source_records()}
+
+        self.assertEqual(records["internet-archive-placeholder"]["status"], "placeholder")
+        self.assertEqual(records["internet-archive-placeholder"]["coverage"]["coverage_depth"], "source_known")
+        self.assertEqual(records["internet-archive-recorded-fixtures"]["status"], "active_recorded_fixture")
+        self.assertEqual(
+            records["internet-archive-recorded-fixtures"]["coverage"]["connector_mode"],
+            "recorded_fixture_only",
+        )
+        self.assertFalse(records["internet-archive-recorded-fixtures"]["capabilities"]["live_supported"])
+        self.assertIn(
+            "No live Internet Archive API",
+            json.dumps(records["internet-archive-recorded-fixtures"], sort_keys=True),
+        )
+
+        self.assertEqual(records["local-files-placeholder"]["status"], "local_private_future")
+        self.assertEqual(records["local-bundle-fixtures"]["status"], "active_fixture")
+        self.assertFalse(records["local-bundle-fixtures"]["capabilities"]["local_private"])
+        self.assertTrue(records["local-bundle-fixtures"]["capabilities"]["fixture_backed"])
+        self.assertIn(
+            "No arbitrary user filesystem ingestion",
+            json.dumps(records["local-bundle-fixtures"], sort_keys=True),
+        )
 
     def test_public_source_view_does_not_present_placeholders_as_active(self):
         response = build_demo_source_registry_public_api().list_sources(

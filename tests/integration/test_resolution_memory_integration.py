@@ -31,7 +31,7 @@ class ResolutionMemoryIntegrationTestCase(unittest.TestCase):
                 ResolutionMemoryCreateRequest.from_parts("run-planned-search-0001")
             )
             read_response = memory_public_api.get_memory(
-                ResolutionMemoryReadRequest.from_parts("memory-absence-finding-0001")
+                ResolutionMemoryReadRequest.from_parts("memory-successful-search-0001")
             )
             view_model = resolution_memory_envelope_to_view_model(read_response.body)
             html = render_resolution_memory_html(
@@ -43,9 +43,9 @@ class ResolutionMemoryIntegrationTestCase(unittest.TestCase):
 
         self.assertEqual(start_response.status_code, 200)
         self.assertEqual(create_response.status_code, 200)
-        self.assertEqual(view_model["selected_memory_id"], "memory-absence-finding-0001")
+        self.assertEqual(view_model["selected_memory_id"], "memory-successful-search-0001")
         self.assertIn("latest Firefox before XP support ended", html)
-        self.assertIn("memory-absence-finding-0001", html)
+        self.assertIn("memory-successful-search-0001", html)
 
 
 if __name__ == "__main__":

@@ -32,6 +32,7 @@ class GitHubReleaseHttpApiSliceIntegrationTestCase(unittest.TestCase):
         search_status, _, search_body = self._request("/api/search", {"q": "archive"})
         self.assertEqual(search_status, "200 OK")
         search_payload = json.loads(search_body)
+        self.assertEqual(search_payload["result_count"], 7)
         self.assertEqual(
             [result["target_ref"] for result in search_payload["results"]],
             [
@@ -39,6 +40,9 @@ class GitHubReleaseHttpApiSliceIntegrationTestCase(unittest.TestCase):
                 "fixture:software/archivebox@0.8.5",
                 "github-release:archivebox/archivebox@v0.8.4",
                 "github-release:archivebox/archivebox@v0.8.5",
+                "internet-archive-recorded:ia-win7-utility-pack-fixture",
+                "internet-archive-recorded:ia-firefox-xp-support-fixture",
+                "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
             ],
         )
         self.assertEqual(search_payload["results"][3]["source"]["label"], "GitHub Releases")

@@ -20,12 +20,14 @@ class SourceRegistryTestCase(unittest.TestCase):
     def test_load_source_registry_reads_all_seed_records(self) -> None:
         registry = load_source_registry()
 
-        self.assertEqual(len(registry.records), 6)
+        self.assertEqual(len(registry.records), 8)
         self.assertEqual(
             [record.source_id for record in registry.records],
             [
                 "github-releases-recorded-fixtures",
                 "internet-archive-placeholder",
+                "internet-archive-recorded-fixtures",
+                "local-bundle-fixtures",
                 "local-files-placeholder",
                 "software-heritage-placeholder",
                 "synthetic-fixtures",
@@ -48,11 +50,11 @@ class SourceRegistryTestCase(unittest.TestCase):
 
         self.assertEqual(
             {record.source_id for record in registry.list_records(status="active_fixture")},
-            {"synthetic-fixtures"},
+            {"local-bundle-fixtures", "synthetic-fixtures"},
         )
         self.assertEqual(
             {record.source_id for record in registry.list_records(status="active_recorded_fixture")},
-            {"github-releases-recorded-fixtures"},
+            {"github-releases-recorded-fixtures", "internet-archive-recorded-fixtures"},
         )
         self.assertEqual(
             {record.source_id for record in registry.list_records(source_family="internet_archive")},

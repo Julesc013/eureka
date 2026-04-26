@@ -78,8 +78,8 @@ class ResolutionMemoryCliTestCase(unittest.TestCase):
         payload = json.loads(output)
         self.assertEqual(exit_code, 0)
         self.assertEqual(payload["status"], "available")
-        self.assertEqual(payload["selected_memory_id"], "memory-absence-finding-0001")
-        self.assertEqual(payload["memories"][0]["memory_kind"], "absence_finding")
+        self.assertEqual(payload["selected_memory_id"], "memory-successful-search-0001")
+        self.assertEqual(payload["memories"][0]["memory_kind"], "successful_search")
 
 
 if __name__ == "__main__":

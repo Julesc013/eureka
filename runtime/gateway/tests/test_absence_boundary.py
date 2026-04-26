@@ -38,5 +38,13 @@ class AbsencePublicApiTestCase(unittest.TestCase):
         self.assertEqual(response.body["request_kind"], "search")
         self.assertEqual(response.body["status"], "explained")
         self.assertEqual(response.body["likely_reason_code"], "related_subjects_exist")
-        self.assertEqual(response.body["checked_source_families"], ["synthetic_fixture", "github_releases"])
+        self.assertEqual(
+            response.body["checked_source_families"],
+            [
+                "synthetic_fixture",
+                "github_releases",
+                "internet_archive_recorded",
+                "local_bundle_fixtures",
+            ],
+        )
         self.assertGreaterEqual(len(response.body["near_matches"]), 3)

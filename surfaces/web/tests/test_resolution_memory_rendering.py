@@ -39,13 +39,13 @@ class ResolutionMemoryRenderingTestCase(unittest.TestCase):
             )
             list_html = render_resolution_memory_page(
                 temp_dir,
-                memory_id="memory-absence-finding-0001",
+                memory_id="memory-successful-search-0001",
                 run_store_root=temp_dir,
             )
 
         self.assertIn("Eureka Resolution Memory", create_html)
-        self.assertIn("memory-absence-finding-0001", create_html)
-        self.assertIn("Absence Report", list_html)
+        self.assertIn("memory-successful-search-0001", create_html)
+        self.assertIn("Result Summaries", list_html)
         self.assertIn("latest Firefox before XP support ended", list_html)
 
     def test_wsgi_routes_render_memory_pages(self) -> None:

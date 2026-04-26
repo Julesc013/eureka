@@ -15,7 +15,7 @@ class SourceRegistryPublicApiTestCase(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.body["status"], "listed")
-        self.assertEqual(response.body["source_count"], 6)
+        self.assertEqual(response.body["source_count"], 8)
         self.assertEqual(response.body["sources"][0]["source_id"], "github-releases-recorded-fixtures")
         self.assertEqual(response.body["sources"][0]["connector"]["status"], "fixture_backed")
 
@@ -25,7 +25,7 @@ class SourceRegistryPublicApiTestCase(unittest.TestCase):
         )
         self.assertEqual(
             {entry["source_id"] for entry in active_response.body["sources"]},
-            {"synthetic-fixtures"},
+            {"local-bundle-fixtures", "synthetic-fixtures"},
         )
 
         recorded_response = self.public_api.list_sources(
@@ -33,7 +33,7 @@ class SourceRegistryPublicApiTestCase(unittest.TestCase):
         )
         self.assertEqual(
             [entry["source_id"] for entry in recorded_response.body["sources"]],
-            ["github-releases-recorded-fixtures"],
+            ["github-releases-recorded-fixtures", "internet-archive-recorded-fixtures"],
         )
 
         preservation_response = self.public_api.list_sources(

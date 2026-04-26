@@ -204,13 +204,14 @@ class NativeCliMainTestCase(unittest.TestCase):
         exit_code, output = run_cli("search", "archive")
 
         self.assertEqual(exit_code, 0)
-        self.assertIn("result_count: 4", output)
+        self.assertIn("result_count: 7", output)
         self.assertIn("Archive Viewer", output)
         self.assertIn("ArchiveBox 0.8.5", output)
         self.assertIn("ArchiveBox v0.8.4", output)
         self.assertIn("ArchiveBox v0.8.5", output)
         self.assertIn("source: Synthetic Fixture", output)
         self.assertIn("source: GitHub Releases", output)
+        self.assertIn("source: Internet Archive Recorded Fixtures", output)
         self.assertIn("evidence: label via", output)
 
     def test_sources_command_lists_active_fixture_and_placeholder_records(self) -> None:
@@ -218,9 +219,11 @@ class NativeCliMainTestCase(unittest.TestCase):
 
         self.assertEqual(exit_code, 0)
         self.assertIn("Source registry", output)
-        self.assertIn("source_count: 6", output)
+        self.assertIn("source_count: 8", output)
         self.assertIn("synthetic-fixtures", output)
         self.assertIn("github-releases-recorded-fixtures", output)
+        self.assertIn("internet-archive-recorded-fixtures", output)
+        self.assertIn("local-bundle-fixtures", output)
         self.assertIn("internet-archive-placeholder", output)
         self.assertIn("connector: Synthetic software connector [fixture_backed]", output)
         self.assertIn("coverage: action_indexed", output)
@@ -232,10 +235,14 @@ class NativeCliMainTestCase(unittest.TestCase):
 
         self.assertEqual(filtered_exit_code, 0)
         self.assertEqual(filtered_payload["status"], "listed")
-        self.assertEqual(filtered_payload["source_count"], 1)
+        self.assertEqual(filtered_payload["source_count"], 2)
         self.assertEqual(filtered_payload["applied_filters"]["status"], "active_fixture")
-        self.assertIn("coverage_depth", filtered_payload["sources"][0])
-        self.assertIn("capabilities", filtered_payload["sources"][0])
+        self.assertEqual(
+            {source["source_id"] for source in filtered_payload["sources"]},
+            {"local-bundle-fixtures", "synthetic-fixtures"},
+        )
+        self.assertTrue(all("coverage_depth" in source for source in filtered_payload["sources"]))
+        self.assertTrue(all("capabilities" in source for source in filtered_payload["sources"]))
 
         capability_exit_code, capability_output = run_cli(
             "sources",
@@ -247,7 +254,7 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertEqual(capability_exit_code, 0)
         self.assertEqual(
             [source["source_id"] for source in capability_payload["sources"]],
-            ["github-releases-recorded-fixtures"],
+            ["github-releases-recorded-fixtures", "internet-archive-recorded-fixtures"],
         )
 
         coverage_exit_code, coverage_output = run_cli(
@@ -294,7 +301,15 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertEqual(payload["request_kind"], "search")
         self.assertEqual(payload["status"], "explained")
         self.assertEqual(payload["likely_reason_code"], "related_subjects_exist")
-        self.assertEqual(payload["checked_source_families"], ["synthetic_fixture", "github_releases"])
+        self.assertEqual(
+            payload["checked_source_families"],
+            [
+                "synthetic_fixture",
+                "github_releases",
+                "internet_archive_recorded",
+                "local_bundle_fixtures",
+            ],
+        )
         self.assertGreaterEqual(len(payload["near_matches"]), 3)
         self.assertEqual(payload["near_matches"][0]["subject_key"], "archivebox")
 

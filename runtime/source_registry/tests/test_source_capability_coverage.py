@@ -41,6 +41,23 @@ class SourceCapabilityCoverageTestCase(unittest.TestCase):
         self.assertEqual(github.coverage.connector_mode, "recorded_fixture_only")
         self.assertFalse(github.capabilities.live_supported)
 
+        internet_archive_recorded = records["internet-archive-recorded-fixtures"]
+        self.assertEqual(internet_archive_recorded.status, "active_recorded_fixture")
+        self.assertEqual(internet_archive_recorded.coverage.coverage_depth, "representation_indexed")
+        self.assertTrue(internet_archive_recorded.capabilities.recorded_fixture_backed)
+        self.assertTrue(internet_archive_recorded.capabilities.supports_file_listing)
+        self.assertFalse(internet_archive_recorded.capabilities.live_supported)
+        self.assertTrue(internet_archive_recorded.capabilities.live_deferred)
+
+        local_bundle = records["local-bundle-fixtures"]
+        self.assertEqual(local_bundle.status, "active_fixture")
+        self.assertEqual(local_bundle.coverage.coverage_depth, "action_indexed")
+        self.assertTrue(local_bundle.capabilities.fixture_backed)
+        self.assertTrue(local_bundle.capabilities.supports_member_listing)
+        self.assertTrue(local_bundle.capabilities.supports_action_paths)
+        self.assertFalse(local_bundle.capabilities.local_private)
+        self.assertFalse(local_bundle.capabilities.live_supported)
+
         for source_id in (
             "internet-archive-placeholder",
             "wayback-memento-placeholder",
@@ -76,11 +93,11 @@ class SourceCapabilityCoverageTestCase(unittest.TestCase):
                 record.source_id
                 for record in registry.list_records(capability="recorded_fixture_backed")
             },
-            {"github-releases-recorded-fixtures"},
+            {"github-releases-recorded-fixtures", "internet-archive-recorded-fixtures"},
         )
         self.assertEqual(
             {record.source_id for record in registry.list_records(connector_mode="fixture_only")},
-            {"synthetic-fixtures"},
+            {"local-bundle-fixtures", "synthetic-fixtures"},
         )
 
     def test_invalid_coverage_depth_is_rejected(self) -> None:

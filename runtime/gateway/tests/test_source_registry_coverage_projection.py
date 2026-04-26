@@ -41,13 +41,33 @@ class SourceRegistryCoverageProjectionTestCase(unittest.TestCase):
         )
         self.assertEqual(
             [entry["source_id"] for entry in recorded_response.body["sources"]],
-            ["github-releases-recorded-fixtures"],
+            [
+                "github-releases-recorded-fixtures",
+                "internet-archive-recorded-fixtures",
+            ],
         )
 
         source_known_response = self.public_api.list_sources(
             SourceCatalogRequest.from_parts(coverage_depth="source_known")
         )
         self.assertEqual(source_known_response.body["source_count"], 4)
+
+    def test_detail_projection_includes_new_recorded_fixture_sources(self) -> None:
+        ia_response = self.public_api.get_source(
+            SourceReadRequest.from_parts("internet-archive-recorded-fixtures")
+        )
+        local_response = self.public_api.get_source(
+            SourceReadRequest.from_parts("local-bundle-fixtures")
+        )
+
+        self.assertEqual(ia_response.status_code, 200)
+        self.assertEqual(ia_response.body["sources"][0]["status"], "active_recorded_fixture")
+        self.assertEqual(ia_response.body["sources"][0]["coverage_depth"], "representation_indexed")
+        self.assertFalse(ia_response.body["sources"][0]["capabilities"]["live_supported"])
+        self.assertEqual(local_response.status_code, 200)
+        self.assertEqual(local_response.body["sources"][0]["status"], "active_fixture")
+        self.assertEqual(local_response.body["sources"][0]["coverage_depth"], "action_indexed")
+        self.assertTrue(local_response.body["sources"][0]["capabilities"]["supports_member_listing"])
 
     def test_public_projection_does_not_expose_private_paths(self) -> None:
         response = self.public_api.get_source(SourceReadRequest.from_parts("local-files-placeholder"))

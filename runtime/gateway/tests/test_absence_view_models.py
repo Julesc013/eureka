@@ -23,7 +23,15 @@ class AbsenceViewModelTestCase(unittest.TestCase):
 
         self.assertEqual(view_model["request_kind"], "resolve")
         self.assertEqual(view_model["requested_value"], "fixture:software/archivebox@9.9.9")
-        self.assertEqual(view_model["checked_source_families"], ["synthetic_fixture", "github_releases"])
+        self.assertEqual(
+            view_model["checked_source_families"],
+            [
+                "synthetic_fixture",
+                "github_releases",
+                "internet_archive_recorded",
+                "local_bundle_fixtures",
+            ],
+        )
         self.assertEqual(view_model["near_matches"][0]["subject_key"], "archivebox")
         self.assertEqual(view_model["near_matches"][0]["evidence"][0]["claim_kind"], "label")
 

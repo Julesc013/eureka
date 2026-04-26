@@ -22,9 +22,15 @@ class SourceRegistryViewModelTestCase(unittest.TestCase):
         view_model = source_registry_envelope_to_view_model(response.body)
 
         self.assertEqual(view_model["status"], "listed")
-        self.assertEqual(view_model["source_count"], 1)
+        self.assertEqual(view_model["source_count"], 2)
         self.assertEqual(view_model["applied_filters"]["status"], "active_fixture")
-        self.assertEqual(view_model["sources"][0]["connector"]["status"], "fixture_backed")
+        self.assertEqual(
+            {source["source_id"] for source in view_model["sources"]},
+            {"local-bundle-fixtures", "synthetic-fixtures"},
+        )
+        self.assertTrue(
+            all(source["connector"]["status"] == "fixture_backed" for source in view_model["sources"])
+        )
 
     def test_not_found_response_maps_to_blocked_view_model(self) -> None:
         response = self.public_api.get_source(SourceReadRequest.from_parts("missing-source"))
