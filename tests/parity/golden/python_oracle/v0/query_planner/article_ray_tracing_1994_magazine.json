@@ -10,6 +10,16 @@
       "constraints": {
         "date_year_hint": "1994",
         "document_hint": "magazine",
+        "member_discovery_hints": {
+          "prefer_article_member": true,
+          "preserve_issue_lineage": true
+        },
+        "representation_hints": [
+          "scan",
+          "OCR",
+          "page_range",
+          "article_member"
+        ],
         "topic_hint": "ray tracing"
       },
       "exclude": [
@@ -26,7 +36,9 @@
         "ocr_text_snippet"
       ],
       "raw_query": "article about ray tracing in 1994 magazine",
-      "source_hints": [],
+      "source_hints": [
+        "internet_archive_placeholder"
+      ],
       "task_kind": "find_document_article"
     },
     "status": "planned"

@@ -50,6 +50,13 @@ parity must later account for `internet-archive-recorded-fixtures` and
 `local-bundle-fixtures`, but this task does not implement Rust behavior or wire
 Rust into runtime paths.
 
+Old-Platform Software Planner Pack v0 refreshes the Python-oracle query planner
+goldens with deterministic old-platform OS aliases, latest-compatible release
+intent, driver/hardware intent, vague identity uncertainty, documentation
+intent, member-discovery hints, and app-vs-OS-media suppression hints. Future
+Rust Query Planner Parity Candidate v0 must match those Python outputs before
+any planner replacement is considered.
+
 ## Suggested Future Layout
 
 ```text

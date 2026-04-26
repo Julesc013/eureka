@@ -2,19 +2,60 @@
   "body": {
     "query_plan": {
       "action_hints": [
-        "inspect"
+        "inspect",
+        "inspect_members",
+        "decompose",
+        "fetch_if_available",
+        "export_manifest"
       ],
-      "constraints": {},
-      "exclude": [],
-      "object_type": "unknown",
-      "planner_confidence": "low",
+      "constraints": {
+        "hardware_hint": "ThinkPad T42 wifi",
+        "member_discovery_hints": {
+          "prefer_inf_member": true,
+          "support_media_member": true
+        },
+        "platform": {
+          "aliases": [
+            "Win2k",
+            "Windows NT 5.0"
+          ],
+          "family": "Windows NT",
+          "marketing_alias": "Windows 2000",
+          "version": "5.0"
+        },
+        "representation_hints": [
+          "driver_package",
+          "INF",
+          "support_media_member",
+          "readme",
+          "manual"
+        ]
+      },
+      "exclude": [
+        "generic_advice_only",
+        "unrelated_full_os_media",
+        "parent_support_cd_without_matching_driver_member"
+      ],
+      "object_type": "driver",
+      "planner_confidence": "high",
       "planner_notes": [
-        "No bounded Query Planner v0 family matched; keep the request as a generic deterministic search."
+        "Recognized a driver lookup query.",
+        "Hardware and platform hints remain bounded extracted constraints only."
       ],
-      "prefer": [],
+      "prefer": [
+        "driver_package",
+        "inf_member",
+        "support_bundle_member",
+        "documentation_with_driver_locator"
+      ],
       "raw_query": "ThinkPad T42 wifi driver Windows 2000",
-      "source_hints": [],
-      "task_kind": "generic_search"
+      "source_hints": [
+        "local_bundle_fixtures",
+        "internet_archive_recorded",
+        "wayback_memento_placeholder",
+        "vendor_archive_future"
+      ],
+      "task_kind": "find_driver"
     },
     "status": "planned"
   },

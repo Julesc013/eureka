@@ -37,6 +37,12 @@ metadata, connector mode, limitations, and next coverage steps. Updating the
 Rust candidate to match those fields is future Rust parity work; this source
 coverage milestone does not port Rust behavior or wire Rust into runtime paths.
 
+Old-Platform Software Planner Pack v0 intentionally changes the Python
+query-planner oracle shape for selected hard old-platform queries. Future Rust
+query-planner parity must reproduce platform constraints, temporal goals,
+product/hardware/function hints, representation/member hints, suppression
+hints, and uncertainty notes before replacement is considered.
+
 ## Golden Outputs
 
 Rust Parity Fixture Pack v0 now commits the first Python-oracle golden outputs

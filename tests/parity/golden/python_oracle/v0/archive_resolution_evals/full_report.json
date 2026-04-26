@@ -52,8 +52,8 @@
       "failed_check_count": 1,
       "not_evaluable_check_count": 2,
       "overall_status": "not_satisfied",
-      "planner_expected_task_kind": "find_software_release",
-      "planner_observed_task_kind": "find_software_release",
+      "planner_expected_task_kind": "find_latest_compatible_release",
+      "planner_observed_task_kind": "find_latest_compatible_release",
       "planner_status": "satisfied",
       "query_family": "latest_compatible_release",
       "raw_query": "latest Firefox before XP support ended",
@@ -66,8 +66,8 @@
       "failed_check_count": 0,
       "not_evaluable_check_count": 2,
       "overall_status": "capability_gap",
-      "planner_expected_task_kind": "find_software_release",
-      "planner_observed_task_kind": "find_software_release",
+      "planner_expected_task_kind": "identify_software",
+      "planner_observed_task_kind": "identify_software",
       "planner_status": "satisfied",
       "query_family": "vague_software_identity",
       "raw_query": "old blue FTP client for XP",
@@ -80,8 +80,8 @@
       "failed_check_count": 0,
       "not_evaluable_check_count": 2,
       "overall_status": "capability_gap",
-      "planner_expected_task_kind": "find_software_release",
-      "planner_observed_task_kind": "find_software_release",
+      "planner_expected_task_kind": "identify_software",
+      "planner_observed_task_kind": "identify_software",
       "planner_status": "satisfied",
       "query_family": "software_by_function_and_platform",
       "raw_query": "software to fix broken registry on Windows 98",
@@ -228,6 +228,16 @@
         "constraints": {
           "date_year_hint": "1994",
           "document_hint": "magazine",
+          "member_discovery_hints": {
+            "prefer_article_member": true,
+            "preserve_issue_lineage": true
+          },
+          "representation_hints": [
+            "scan",
+            "OCR",
+            "page_range",
+            "article_member"
+          ],
           "topic_hint": "ray tracing"
         },
         "exclude": [
@@ -244,7 +254,9 @@
           "ocr_text_snippet"
         ],
         "raw_query": "article inside 1994 magazine scan about ray tracing",
-        "source_hints": [],
+        "source_hints": [
+          "internet_archive_placeholder"
+        ],
         "task_kind": "find_document_article"
       },
       "planner_observed_task_kind": "find_document_article",
@@ -454,20 +466,38 @@
       "planner_observed": {
         "action_hints": [
           "inspect",
-          "download",
+          "inspect_members",
+          "decompose",
+          "fetch_if_available",
           "export_manifest"
         ],
         "constraints": {
           "hardware_hint": "ThinkPad T42 Wi-Fi",
+          "member_discovery_hints": {
+            "prefer_inf_member": true,
+            "support_media_member": true
+          },
           "platform": {
+            "aliases": [
+              "Win2k",
+              "Windows NT 5.0"
+            ],
+            "family": "Windows NT",
             "marketing_alias": "Windows 2000",
-            "os_family": "Windows NT",
-            "os_version": "5.0"
-          }
+            "version": "5.0"
+          },
+          "representation_hints": [
+            "driver_package",
+            "INF",
+            "support_media_member",
+            "readme",
+            "manual"
+          ]
         },
         "exclude": [
           "generic_advice_only",
-          "unrelated_full_os_media"
+          "unrelated_full_os_media",
+          "parent_support_cd_without_matching_driver_member"
         ],
         "object_type": "driver",
         "planner_confidence": "high",
@@ -477,11 +507,17 @@
         ],
         "prefer": [
           "driver_package",
+          "inf_member",
           "support_bundle_member",
           "documentation_with_driver_locator"
         ],
         "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
-        "source_hints": [],
+        "source_hints": [
+          "local_bundle_fixtures",
+          "internet_archive_recorded",
+          "wayback_memento_placeholder",
+          "vendor_archive_future"
+        ],
         "task_kind": "find_driver"
       },
       "planner_observed_task_kind": "find_driver",
@@ -517,9 +553,13 @@
           "message": "Planner constraint 'platform' contains the expected bounded values.",
           "name": "planner.constraints.platform",
           "observed": {
+            "aliases": [
+              "Win2k",
+              "Windows NT 5.0"
+            ],
+            "family": "Windows NT",
             "marketing_alias": "Windows 2000",
-            "os_family": "Windows NT",
-            "os_version": "5.0"
+            "version": "5.0"
           },
           "status": "satisfied"
         },
@@ -529,6 +569,7 @@
           "name": "planner.prefer.driver_package",
           "observed": [
             "driver_package",
+            "inf_member",
             "support_bundle_member",
             "documentation_with_driver_locator"
           ],
@@ -540,7 +581,8 @@
           "name": "planner.exclude.generic_advice_only",
           "observed": [
             "generic_advice_only",
-            "unrelated_full_os_media"
+            "unrelated_full_os_media",
+            "parent_support_cd_without_matching_driver_member"
           ],
           "status": "satisfied"
         }
@@ -750,32 +792,49 @@
       ],
       "overall_status": "not_satisfied",
       "partial_checks": [],
-      "planner_expected_task_kind": "find_software_release",
+      "planner_expected_task_kind": "find_latest_compatible_release",
       "planner_observed": {
         "action_hints": [
           "inspect",
           "compare_versions",
-          "download",
+          "fetch_if_available",
           "export_manifest"
         ],
         "constraints": {
+          "compatibility_required": true,
           "platform": {
+            "aliases": [
+              "WinXP",
+              "Windows NT 5.1"
+            ],
+            "family": "Windows NT",
             "marketing_alias": "Windows XP",
-            "os_family": "Windows NT",
-            "os_version": "5.1"
+            "version": "5.1"
           },
+          "platform_is_constraint": true,
           "product_hint": "Firefox",
-          "support_window_hint": "latest before xp support ended"
+          "representation_hints": [
+            "versioned_release_artifact",
+            "release_notes",
+            "installer",
+            "portable_package"
+          ],
+          "support_window_hint": "latest before xp support ended",
+          "temporal_goal": "latest_before_support_drop"
         },
         "exclude": [
           "latest_overall_without_platform_evidence",
-          "operating_system_image"
+          "operating_system_image",
+          "os_iso_image",
+          "operating_system_install_media",
+          "generic_all_system_dump_without_member_index",
+          "unrelated_support_cd_parent_without_relevant_member"
         ],
         "object_type": "software_release",
         "planner_confidence": "high",
         "planner_notes": [
           "Recognized a latest-compatible release query.",
-          "Current retrieval remains bounded deterministic search; planner output is stored for later reuse."
+          "The planner does not claim the exact latest version; it records the temporal and platform constraints for later evidence checks."
         ],
         "prefer": [
           "versioned_release_artifact",
@@ -784,20 +843,23 @@
         ],
         "raw_query": "latest Firefox before XP support ended",
         "source_hints": [
-          "github_releases"
+          "internet_archive_recorded",
+          "github_releases",
+          "wayback_memento_placeholder",
+          "vendor_archive_future"
         ],
-        "task_kind": "find_software_release"
+        "task_kind": "find_latest_compatible_release"
       },
-      "planner_observed_task_kind": "find_software_release",
+      "planner_observed_task_kind": "find_latest_compatible_release",
       "planner_status": "satisfied",
       "query_family": "latest_compatible_release",
       "raw_query": "latest Firefox before XP support ended",
       "satisfied_checks": [
         {
-          "expected": "find_software_release",
+          "expected": "find_latest_compatible_release",
           "message": "Planner task_kind matched expected_plan.",
           "name": "planner.task_kind",
-          "observed": "find_software_release",
+          "observed": "find_latest_compatible_release",
           "status": "satisfied"
         },
         {
@@ -814,9 +876,13 @@
           "message": "Planner constraint 'platform' contains the expected bounded values.",
           "name": "planner.constraints.platform",
           "observed": {
+            "aliases": [
+              "WinXP",
+              "Windows NT 5.1"
+            ],
+            "family": "Windows NT",
             "marketing_alias": "Windows XP",
-            "os_family": "Windows NT",
-            "os_version": "5.1"
+            "version": "5.1"
           },
           "status": "satisfied"
         },
@@ -825,6 +891,13 @@
           "message": "Planner constraint 'product_hint' contains the expected bounded values.",
           "name": "planner.constraints.product_hint",
           "observed": "Firefox",
+          "status": "satisfied"
+        },
+        {
+          "expected": "latest_before_support_drop",
+          "message": "Planner constraint 'temporal_goal' contains the expected bounded values.",
+          "name": "planner.constraints.temporal_goal",
+          "observed": "latest_before_support_drop",
           "status": "satisfied"
         },
         {
@@ -844,7 +917,11 @@
           "name": "planner.exclude.latest_overall_without_platform_evidence",
           "observed": [
             "latest_overall_without_platform_evidence",
-            "operating_system_image"
+            "operating_system_image",
+            "os_iso_image",
+            "operating_system_install_media",
+            "generic_all_system_dump_without_member_index",
+            "unrelated_support_cd_parent_without_relevant_member"
           ],
           "status": "satisfied"
         }
@@ -1103,31 +1180,43 @@
           "status": "partial"
         }
       ],
-      "planner_expected_task_kind": "find_software_release",
+      "planner_expected_task_kind": "identify_software",
       "planner_observed": {
         "action_hints": [
-          "inspect",
-          "download",
+          "inspect_candidates",
+          "compare",
+          "search_documentation",
           "export_manifest"
         ],
         "constraints": {
           "descriptor_hint": "blue",
-          "function_hint": "ftp client",
+          "function_hint": "FTP client",
           "platform": {
+            "aliases": [
+              "WinXP",
+              "Windows NT 5.1"
+            ],
+            "family": "Windows NT",
             "marketing_alias": "Windows XP",
-            "os_family": "Windows NT",
-            "os_version": "5.1"
+            "version": "5.1"
           },
-          "temporal_style_hint": "old"
+          "temporal_style_hint": "old",
+          "uncertainty_notes": [
+            "Vague identity query; exact software identity is not asserted by the planner."
+          ]
         },
         "exclude": [
           "generic_advice_only",
-          "operating_system_image"
+          "operating_system_image",
+          "os_iso_image",
+          "operating_system_install_media",
+          "generic_all_system_dump_without_member_index",
+          "unrelated_support_cd_parent_without_relevant_member"
         ],
-        "object_type": "software_release",
+        "object_type": "software",
         "planner_confidence": "medium",
         "planner_notes": [
-          "Recognized a vague software identity query with platform and functional hints."
+          "Vague identity query; exact software identity is not asserted by the planner."
         ],
         "prefer": [
           "named_software_artifact",
@@ -1136,27 +1225,29 @@
         ],
         "raw_query": "old blue FTP client for XP",
         "source_hints": [
-          "github_releases"
+          "internet_archive_recorded",
+          "local_bundle_fixtures",
+          "wayback_memento_placeholder"
         ],
-        "task_kind": "find_software_release"
+        "task_kind": "identify_software"
       },
-      "planner_observed_task_kind": "find_software_release",
+      "planner_observed_task_kind": "identify_software",
       "planner_status": "satisfied",
       "query_family": "vague_software_identity",
       "raw_query": "old blue FTP client for XP",
       "satisfied_checks": [
         {
-          "expected": "find_software_release",
+          "expected": "identify_software",
           "message": "Planner task_kind matched expected_plan.",
           "name": "planner.task_kind",
-          "observed": "find_software_release",
+          "observed": "identify_software",
           "status": "satisfied"
         },
         {
-          "expected": "software_release",
+          "expected": "software",
           "message": "Planner object_type matched expected_plan.",
           "name": "planner.object_type",
-          "observed": "software_release",
+          "observed": "software",
           "status": "satisfied"
         },
         {
@@ -1167,10 +1258,10 @@
           "status": "satisfied"
         },
         {
-          "expected": "ftp client",
+          "expected": "FTP client",
           "message": "Planner constraint 'function_hint' contains the expected bounded values.",
           "name": "planner.constraints.function_hint",
-          "observed": "ftp client",
+          "observed": "FTP client",
           "status": "satisfied"
         },
         {
@@ -1180,9 +1271,13 @@
           "message": "Planner constraint 'platform' contains the expected bounded values.",
           "name": "planner.constraints.platform",
           "observed": {
+            "aliases": [
+              "WinXP",
+              "Windows NT 5.1"
+            ],
+            "family": "Windows NT",
             "marketing_alias": "Windows XP",
-            "os_family": "Windows NT",
-            "os_version": "5.1"
+            "version": "5.1"
           },
           "status": "satisfied"
         },
@@ -1203,7 +1298,11 @@
           "name": "planner.exclude.generic_advice_only",
           "observed": [
             "generic_advice_only",
-            "operating_system_image"
+            "operating_system_image",
+            "os_iso_image",
+            "operating_system_install_media",
+            "generic_all_system_dump_without_member_index",
+            "unrelated_support_cd_parent_without_relevant_member"
           ],
           "status": "satisfied"
         }
@@ -1350,67 +1449,79 @@
           "status": "partial"
         }
       ],
-      "planner_expected_task_kind": "find_software_release",
+      "planner_expected_task_kind": "identify_software",
       "planner_observed": {
         "action_hints": [
-          "inspect",
-          "download",
+          "inspect_candidates",
+          "compare",
+          "search_documentation",
           "export_manifest"
         ],
         "constraints": {
-          "function_hint": "fix broken registry",
+          "function_hint": "registry repair",
           "platform": {
+            "aliases": [
+              "Win98"
+            ],
+            "family": "Windows",
             "marketing_alias": "Windows 98",
-            "os_family": "Windows",
-            "os_version": "4.1",
-            "platform_family": "Win9x"
-          }
+            "platform_family": "Win9x",
+            "version": "4.1"
+          },
+          "uncertainty_notes": [
+            "Vague identity query; exact software identity is not asserted by the planner."
+          ]
         },
         "exclude": [
           "generic_advice_only",
-          "modern_incompatible_release"
+          "operating_system_image",
+          "os_iso_image",
+          "operating_system_install_media",
+          "generic_all_system_dump_without_member_index",
+          "unrelated_support_cd_parent_without_relevant_member"
         ],
-        "object_type": "software_release",
+        "object_type": "software",
         "planner_confidence": "medium",
         "planner_notes": [
-          "Recognized a functional software lookup query."
+          "Vague identity query; exact software identity is not asserted by the planner."
         ],
         "prefer": [
-          "direct_software_artifact",
-          "period_appropriate_utility",
+          "named_software_artifact",
+          "descriptive_release_notes",
           "compatibility_evidence"
         ],
         "raw_query": "software to fix broken registry on Windows 98",
         "source_hints": [
-          "synthetic",
-          "github_releases"
+          "internet_archive_recorded",
+          "local_bundle_fixtures",
+          "wayback_memento_placeholder"
         ],
-        "task_kind": "find_software_release"
+        "task_kind": "identify_software"
       },
-      "planner_observed_task_kind": "find_software_release",
+      "planner_observed_task_kind": "identify_software",
       "planner_status": "satisfied",
       "query_family": "software_by_function_and_platform",
       "raw_query": "software to fix broken registry on Windows 98",
       "satisfied_checks": [
         {
-          "expected": "find_software_release",
+          "expected": "identify_software",
           "message": "Planner task_kind matched expected_plan.",
           "name": "planner.task_kind",
-          "observed": "find_software_release",
+          "observed": "identify_software",
           "status": "satisfied"
         },
         {
-          "expected": "software_release",
+          "expected": "software",
           "message": "Planner object_type matched expected_plan.",
           "name": "planner.object_type",
-          "observed": "software_release",
+          "observed": "software",
           "status": "satisfied"
         },
         {
-          "expected": "fix broken registry",
+          "expected": "registry repair",
           "message": "Planner constraint 'function_hint' contains the expected bounded values.",
           "name": "planner.constraints.function_hint",
-          "observed": "fix broken registry",
+          "observed": "registry repair",
           "status": "satisfied"
         },
         {
@@ -1420,31 +1531,38 @@
           "message": "Planner constraint 'platform' contains the expected bounded values.",
           "name": "planner.constraints.platform",
           "observed": {
+            "aliases": [
+              "Win98"
+            ],
+            "family": "Windows",
             "marketing_alias": "Windows 98",
-            "os_family": "Windows",
-            "os_version": "4.1",
-            "platform_family": "Win9x"
+            "platform_family": "Win9x",
+            "version": "4.1"
           },
           "status": "satisfied"
         },
         {
-          "expected": "direct_software_artifact",
-          "message": "Planner prefer includes 'direct_software_artifact'.",
-          "name": "planner.prefer.direct_software_artifact",
+          "expected": "named_software_artifact",
+          "message": "Planner prefer includes 'named_software_artifact'.",
+          "name": "planner.prefer.named_software_artifact",
           "observed": [
-            "direct_software_artifact",
-            "period_appropriate_utility",
+            "named_software_artifact",
+            "descriptive_release_notes",
             "compatibility_evidence"
           ],
           "status": "satisfied"
         },
         {
-          "expected": "modern_incompatible_release",
-          "message": "Planner exclude includes 'modern_incompatible_release'.",
-          "name": "planner.exclude.modern_incompatible_release",
+          "expected": "operating_system_image",
+          "message": "Planner exclude includes 'operating_system_image'.",
+          "name": "planner.exclude.operating_system_image",
           "observed": [
             "generic_advice_only",
-            "modern_incompatible_release"
+            "operating_system_image",
+            "os_iso_image",
+            "operating_system_install_media",
+            "generic_all_system_dump_without_member_index",
+            "unrelated_support_cd_parent_without_relevant_member"
           ],
           "status": "satisfied"
         }
@@ -1597,24 +1715,40 @@
       "planner_observed": {
         "action_hints": [
           "inspect",
-          "download",
+          "fetch_if_available",
           "export_manifest"
         ],
         "constraints": {
           "platform": {
+            "aliases": [
+              "Win7",
+              "Windows NT 6.1"
+            ],
+            "family": "Windows NT",
             "marketing_alias": "Windows 7",
-            "os_family": "Windows NT",
-            "os_version": "6.1"
-          }
+            "version": "6.1"
+          },
+          "platform_is_constraint": true,
+          "representation_hints": [
+            "installer",
+            "portable_package",
+            "release_asset",
+            "member_artifact"
+          ],
+          "target_object_hint": "software_for_platform"
         },
         "exclude": [
           "operating_system_image",
-          "full_os_iso"
+          "os_iso_image",
+          "operating_system_install_media",
+          "generic_all_system_dump_without_member_index",
+          "unrelated_support_cd_parent_without_relevant_member"
         ],
         "object_type": "software",
         "planner_confidence": "high",
         "planner_notes": [
-          "Recognized a platform-scoped software browsing query."
+          "Recognized a platform-scoped software browsing query.",
+          "The named operating system is treated as a compatibility constraint, not the requested object."
         ],
         "prefer": [
           "direct_software_artifact",
@@ -1623,8 +1757,10 @@
         ],
         "raw_query": "Windows 7 apps",
         "source_hints": [
-          "synthetic",
-          "github_releases"
+          "internet_archive_recorded",
+          "local_bundle_fixtures",
+          "github_releases",
+          "synthetic_fixture"
         ],
         "task_kind": "browse_software"
       },
@@ -1654,9 +1790,13 @@
           "message": "Planner constraint 'platform' contains the expected bounded values.",
           "name": "planner.constraints.platform",
           "observed": {
+            "aliases": [
+              "Win7",
+              "Windows NT 6.1"
+            ],
+            "family": "Windows NT",
             "marketing_alias": "Windows 7",
-            "os_family": "Windows NT",
-            "os_version": "6.1"
+            "version": "6.1"
           },
           "status": "satisfied"
         },
@@ -1677,7 +1817,10 @@
           "name": "planner.exclude.operating_system_image",
           "observed": [
             "operating_system_image",
-            "full_os_iso"
+            "os_iso_image",
+            "operating_system_install_media",
+            "generic_all_system_dump_without_member_index",
+            "unrelated_support_cd_parent_without_relevant_member"
           ],
           "status": "satisfied"
         }

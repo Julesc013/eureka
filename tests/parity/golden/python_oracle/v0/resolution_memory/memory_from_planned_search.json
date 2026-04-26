@@ -122,27 +122,44 @@
           "action_hints": [
             "inspect",
             "compare_versions",
-            "download",
+            "fetch_if_available",
             "export_manifest"
           ],
           "constraints": {
+            "compatibility_required": true,
             "platform": {
+              "aliases": [
+                "WinXP",
+                "Windows NT 5.1"
+              ],
+              "family": "Windows NT",
               "marketing_alias": "Windows XP",
-              "os_family": "Windows NT",
-              "os_version": "5.1"
+              "version": "5.1"
             },
+            "platform_is_constraint": true,
             "product_hint": "Firefox",
-            "support_window_hint": "latest before xp support ended"
+            "representation_hints": [
+              "versioned_release_artifact",
+              "release_notes",
+              "installer",
+              "portable_package"
+            ],
+            "support_window_hint": "latest before xp support ended",
+            "temporal_goal": "latest_before_support_drop"
           },
           "exclude": [
             "latest_overall_without_platform_evidence",
-            "operating_system_image"
+            "operating_system_image",
+            "os_iso_image",
+            "operating_system_install_media",
+            "generic_all_system_dump_without_member_index",
+            "unrelated_support_cd_parent_without_relevant_member"
           ],
           "object_type": "software_release",
           "planner_confidence": "high",
           "planner_notes": [
             "Recognized a latest-compatible release query.",
-            "Current retrieval remains bounded deterministic search; planner output is stored for later reuse."
+            "The planner does not claim the exact latest version; it records the temporal and platform constraints for later evidence checks."
           ],
           "prefer": [
             "versioned_release_artifact",
@@ -151,9 +168,12 @@
           ],
           "raw_query": "latest Firefox before XP support ended",
           "source_hints": [
-            "github_releases"
+            "internet_archive_recorded",
+            "github_releases",
+            "wayback_memento_placeholder",
+            "vendor_archive_future"
           ],
-          "task_kind": "find_software_release"
+          "task_kind": "find_latest_compatible_release"
         },
         "result_summaries": [
           {
@@ -173,7 +193,7 @@
           }
         ],
         "source_run_id": "run-planned-search-0001",
-        "task_kind": "find_software_release",
+        "task_kind": "find_latest_compatible_release",
         "useful_source_ids": [
           "internet-archive-recorded-fixtures"
         ]

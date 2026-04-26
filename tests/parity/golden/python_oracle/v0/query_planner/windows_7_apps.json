@@ -3,24 +3,40 @@
     "query_plan": {
       "action_hints": [
         "inspect",
-        "download",
+        "fetch_if_available",
         "export_manifest"
       ],
       "constraints": {
         "platform": {
+          "aliases": [
+            "Win7",
+            "Windows NT 6.1"
+          ],
+          "family": "Windows NT",
           "marketing_alias": "Windows 7",
-          "os_family": "Windows NT",
-          "os_version": "6.1"
-        }
+          "version": "6.1"
+        },
+        "platform_is_constraint": true,
+        "representation_hints": [
+          "installer",
+          "portable_package",
+          "release_asset",
+          "member_artifact"
+        ],
+        "target_object_hint": "software_for_platform"
       },
       "exclude": [
         "operating_system_image",
-        "full_os_iso"
+        "os_iso_image",
+        "operating_system_install_media",
+        "generic_all_system_dump_without_member_index",
+        "unrelated_support_cd_parent_without_relevant_member"
       ],
       "object_type": "software",
       "planner_confidence": "high",
       "planner_notes": [
-        "Recognized a platform-scoped software browsing query."
+        "Recognized a platform-scoped software browsing query.",
+        "The named operating system is treated as a compatibility constraint, not the requested object."
       ],
       "prefer": [
         "direct_software_artifact",
@@ -29,8 +45,10 @@
       ],
       "raw_query": "Windows 7 apps",
       "source_hints": [
-        "synthetic",
-        "github_releases"
+        "internet_archive_recorded",
+        "local_bundle_fixtures",
+        "github_releases",
+        "synthetic_fixture"
       ],
       "task_kind": "browse_software"
     },

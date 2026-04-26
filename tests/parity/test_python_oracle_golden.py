@@ -51,10 +51,9 @@ REQUIRED_DIRECTORIES = (
 
 EXPECTED_TASK_KINDS = {
     "windows_7_apps.json": "browse_software",
-    "latest_firefox_before_xp_support_ended.json": "find_software_release",
-    "old_blue_ftp_client_xp.json": "find_software_release",
-    # This fixture intentionally captures the current planner fallback.
-    "driver_thinkpad_t42_wifi_windows_2000.json": "generic_search",
+    "latest_firefox_before_xp_support_ended.json": "find_latest_compatible_release",
+    "old_blue_ftp_client_xp.json": "identify_software",
+    "driver_thinkpad_t42_wifi_windows_2000.json": "find_driver",
     "article_ray_tracing_1994_magazine.json": "find_document_article",
     "generic_unknown_query.json": "generic_search",
 }
