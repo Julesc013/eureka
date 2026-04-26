@@ -2,7 +2,7 @@
   "source_id": "github-releases-recorded-fixtures",
   "name": "GitHub Releases Recorded Fixtures",
   "source_family": "github_releases",
-  "status": "active_fixture",
+  "status": "active_recorded_fixture",
   "roles": [
     "discovery_index",
     "action_provider",
@@ -53,5 +53,46 @@
   "rights_notes": "Recorded fixture slice only. Live upstream terms and auth handling remain deferred.",
   "legal_posture": "recorded_public_source",
   "freshness_model": "recorded_fixture_snapshot",
+  "capabilities": {
+    "supports_search": true,
+    "supports_item_metadata": true,
+    "supports_file_listing": true,
+    "supports_bulk_access": false,
+    "supports_delta_or_feed": false,
+    "supports_live_probe": false,
+    "supports_member_listing": false,
+    "supports_reviews_or_comments": false,
+    "supports_hashes": true,
+    "supports_signatures": false,
+    "supports_content_text": false,
+    "supports_temporal_captures": false,
+    "supports_action_paths": true,
+    "auth_required": false,
+    "network_required": false,
+    "local_private": false,
+    "fixture_backed": false,
+    "recorded_fixture_backed": true,
+    "live_supported": false,
+    "live_deferred": true
+  },
+  "coverage": {
+    "coverage_depth": "representation_indexed",
+    "coverage_status": "active_recorded_fixture_scope",
+    "indexed_scopes": [
+      "release_metadata",
+      "release_assets",
+      "recorded_payload_fixture_paths"
+    ],
+    "connector_mode": "recorded_fixture_only",
+    "last_fixture_update": "recorded_fixture_snapshot",
+    "coverage_notes": "Recorded GitHub Releases fixtures expose release metadata and release asset representations without using the live GitHub API.",
+    "current_limitations": [
+      "Recorded fixture scope only",
+      "No live GitHub API access",
+      "No source archive member extraction",
+      "No reviews, discussion, or issue coverage"
+    ],
+    "next_coverage_step": "Add more recorded source families before considering any live GitHub connector behavior."
+  },
   "notes": "Active bounded real-source slice backed by recorded GitHub Releases fixtures, not live network access."
 }

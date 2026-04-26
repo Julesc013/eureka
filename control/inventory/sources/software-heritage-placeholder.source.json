@@ -46,5 +46,44 @@
   "rights_notes": "Source preservation and archive access terms vary by origin and snapshot.",
   "legal_posture": "deferred_placeholder",
   "freshness_model": "deferred",
+  "capabilities": {
+    "supports_search": false,
+    "supports_item_metadata": false,
+    "supports_file_listing": false,
+    "supports_bulk_access": false,
+    "supports_delta_or_feed": false,
+    "supports_live_probe": false,
+    "supports_member_listing": false,
+    "supports_reviews_or_comments": false,
+    "supports_hashes": false,
+    "supports_signatures": false,
+    "supports_content_text": false,
+    "supports_temporal_captures": false,
+    "supports_action_paths": false,
+    "auth_required": false,
+    "network_required": false,
+    "local_private": false,
+    "fixture_backed": false,
+    "recorded_fixture_backed": false,
+    "live_supported": false,
+    "live_deferred": true
+  },
+  "coverage": {
+    "coverage_depth": "source_known",
+    "coverage_status": "placeholder",
+    "indexed_scopes": [
+      "registry_record"
+    ],
+    "connector_mode": "not_implemented",
+    "last_fixture_update": "not_applicable",
+    "coverage_notes": "Software Heritage is registered as a future source-code provenance source family only.",
+    "current_limitations": [
+      "No recorded Software Heritage fixtures",
+      "No SWHID lookup",
+      "No source tree member indexing",
+      "No live Software Heritage API calls"
+    ],
+    "next_coverage_step": "Add recorded source snapshot fixtures and provenance examples before any connector behavior."
+  },
   "notes": "Planning placeholder only. This record identifies a likely future source family without claiming implementation."
 }

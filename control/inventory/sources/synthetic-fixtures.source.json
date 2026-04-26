@@ -48,5 +48,48 @@
   "rights_notes": "Repo-governed demo fixtures only.",
   "legal_posture": "repo_governed_fixture",
   "freshness_model": "static_fixture",
+  "capabilities": {
+    "supports_search": true,
+    "supports_item_metadata": true,
+    "supports_file_listing": true,
+    "supports_bulk_access": false,
+    "supports_delta_or_feed": false,
+    "supports_live_probe": false,
+    "supports_member_listing": true,
+    "supports_reviews_or_comments": false,
+    "supports_hashes": true,
+    "supports_signatures": false,
+    "supports_content_text": true,
+    "supports_temporal_captures": false,
+    "supports_action_paths": true,
+    "auth_required": false,
+    "network_required": false,
+    "local_private": false,
+    "fixture_backed": true,
+    "recorded_fixture_backed": false,
+    "live_supported": false,
+    "live_deferred": false
+  },
+  "coverage": {
+    "coverage_depth": "action_indexed",
+    "coverage_status": "active_fixture_scope",
+    "indexed_scopes": [
+      "catalog_records",
+      "item_metadata",
+      "representations",
+      "members",
+      "content_summaries",
+      "action_paths"
+    ],
+    "connector_mode": "fixture_only",
+    "last_fixture_update": "static_fixture",
+    "coverage_notes": "Synthetic fixtures are intentionally small but exercise the deepest bounded registry, representation, member, and action-path shape.",
+    "current_limitations": [
+      "Synthetic fixture scope only",
+      "No real-world source coverage",
+      "No live network acquisition"
+    ],
+    "next_coverage_step": "Use this as a deterministic fixture control while recorded real-source coverage is added separately."
+  },
   "notes": "Active local-only source used for deterministic bootstrap execution, tests, and connector-boundary development."
 }

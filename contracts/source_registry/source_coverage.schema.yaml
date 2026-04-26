@@ -1,0 +1,46 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/source_registry/source_coverage.schema.yaml
+$comment: Provisional draft vocabulary for bounded source coverage-depth metadata.
+title: SourceCoverage
+description: Draft coverage-depth record for one source-registry entry.
+type: object
+additionalProperties: false
+properties:
+  coverage_depth:
+    type: string
+    enum:
+      - source_known
+      - catalog_indexed
+      - metadata_indexed
+      - representation_indexed
+      - content_or_member_indexed
+      - action_indexed
+  coverage_status:
+    type: string
+  indexed_scopes:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  connector_mode:
+    type: string
+  last_fixture_update:
+    type: string
+  coverage_notes:
+    type: string
+  current_limitations:
+    type: array
+    items:
+      type: string
+  next_coverage_step:
+    type: string
+required:
+  - coverage_depth
+  - coverage_status
+  - indexed_scopes
+  - connector_mode
+  - last_fixture_update
+  - coverage_notes
+  - current_limitations
+  - next_coverage_step
+x-eureka-status: draft

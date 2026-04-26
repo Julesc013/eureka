@@ -51,5 +51,44 @@
   "rights_notes": "Rights and access vary per item; no runtime policy is implemented yet.",
   "legal_posture": "deferred_placeholder",
   "freshness_model": "deferred",
+  "capabilities": {
+    "supports_search": false,
+    "supports_item_metadata": false,
+    "supports_file_listing": false,
+    "supports_bulk_access": false,
+    "supports_delta_or_feed": false,
+    "supports_live_probe": false,
+    "supports_member_listing": false,
+    "supports_reviews_or_comments": false,
+    "supports_hashes": false,
+    "supports_signatures": false,
+    "supports_content_text": false,
+    "supports_temporal_captures": false,
+    "supports_action_paths": false,
+    "auth_required": false,
+    "network_required": false,
+    "local_private": false,
+    "fixture_backed": false,
+    "recorded_fixture_backed": false,
+    "live_supported": false,
+    "live_deferred": true
+  },
+  "coverage": {
+    "coverage_depth": "source_known",
+    "coverage_status": "placeholder",
+    "indexed_scopes": [
+      "registry_record"
+    ],
+    "connector_mode": "not_implemented",
+    "last_fixture_update": "not_applicable",
+    "coverage_notes": "The Internet Archive source is registered for planning only; no connector, recorded fixture, or live access is implemented.",
+    "current_limitations": [
+      "No recorded Internet Archive fixtures",
+      "No item-file listing",
+      "No metadata search",
+      "No live Internet Archive API calls"
+    ],
+    "next_coverage_step": "Add recorded metadata and item-file fixtures for a small governed Internet Archive slice."
+  },
   "notes": "Planning placeholder only. This record must not be read as an implemented connector."
 }

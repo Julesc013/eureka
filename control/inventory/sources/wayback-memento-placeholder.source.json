@@ -46,5 +46,44 @@
   "rights_notes": "Replay availability and access conditions vary by capture and provider.",
   "legal_posture": "deferred_placeholder",
   "freshness_model": "deferred",
+  "capabilities": {
+    "supports_search": false,
+    "supports_item_metadata": false,
+    "supports_file_listing": false,
+    "supports_bulk_access": false,
+    "supports_delta_or_feed": false,
+    "supports_live_probe": false,
+    "supports_member_listing": false,
+    "supports_reviews_or_comments": false,
+    "supports_hashes": false,
+    "supports_signatures": false,
+    "supports_content_text": false,
+    "supports_temporal_captures": false,
+    "supports_action_paths": false,
+    "auth_required": false,
+    "network_required": false,
+    "local_private": false,
+    "fixture_backed": false,
+    "recorded_fixture_backed": false,
+    "live_supported": false,
+    "live_deferred": true
+  },
+  "coverage": {
+    "coverage_depth": "source_known",
+    "coverage_status": "placeholder",
+    "indexed_scopes": [
+      "registry_record"
+    ],
+    "connector_mode": "not_implemented",
+    "last_fixture_update": "not_applicable",
+    "coverage_notes": "Wayback/Memento is registered as a future temporal-capture source family only.",
+    "current_limitations": [
+      "No recorded capture fixtures",
+      "No replay or memento expansion",
+      "No live capture probing",
+      "No WARC/WACZ member indexing"
+    ],
+    "next_coverage_step": "Add recorded temporal capture metadata fixtures before any live probing is considered."
+  },
   "notes": "Planning placeholder only. This record should guide future registry growth, not imply live replay support."
 }

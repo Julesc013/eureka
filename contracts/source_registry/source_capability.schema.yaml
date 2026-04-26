@@ -1,0 +1,70 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.eureka.invalid/source_registry/source_capability.schema.yaml
+$comment: Provisional draft vocabulary for bounded source capability metadata. This is not a connector implementation contract.
+title: SourceCapability
+description: Draft bounded capability flags for one source-registry entry.
+type: object
+additionalProperties: false
+properties:
+  supports_search:
+    type: boolean
+  supports_item_metadata:
+    type: boolean
+  supports_file_listing:
+    type: boolean
+  supports_bulk_access:
+    type: boolean
+  supports_delta_or_feed:
+    type: boolean
+  supports_live_probe:
+    type: boolean
+  supports_member_listing:
+    type: boolean
+  supports_reviews_or_comments:
+    type: boolean
+  supports_hashes:
+    type: boolean
+  supports_signatures:
+    type: boolean
+  supports_content_text:
+    type: boolean
+  supports_temporal_captures:
+    type: boolean
+  supports_action_paths:
+    type: boolean
+  auth_required:
+    type: boolean
+  network_required:
+    type: boolean
+  local_private:
+    type: boolean
+  fixture_backed:
+    type: boolean
+  recorded_fixture_backed:
+    type: boolean
+  live_supported:
+    type: boolean
+  live_deferred:
+    type: boolean
+required:
+  - supports_search
+  - supports_item_metadata
+  - supports_file_listing
+  - supports_bulk_access
+  - supports_delta_or_feed
+  - supports_live_probe
+  - supports_member_listing
+  - supports_reviews_or_comments
+  - supports_hashes
+  - supports_signatures
+  - supports_content_text
+  - supports_temporal_captures
+  - supports_action_paths
+  - auth_required
+  - network_required
+  - local_private
+  - fixture_backed
+  - recorded_fixture_backed
+  - live_supported
+  - live_deferred
+x-eureka-status: draft

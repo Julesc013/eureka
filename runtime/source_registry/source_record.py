@@ -4,6 +4,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping
 
+from runtime.source_registry.source_capability import SourceCapabilityRecord
+from runtime.source_registry.source_coverage import SourceCoverageRecord
+
 
 class SourceRegistryError(Exception):
     """Base class for bounded source-registry runtime errors."""
@@ -104,6 +107,8 @@ class SourceRecord:
     rights_notes: str
     legal_posture: str
     freshness_model: str
+    capabilities: SourceCapabilityRecord
+    coverage: SourceCoverageRecord
     notes: str
 
     def to_dict(self) -> dict[str, Any]:
@@ -127,6 +132,8 @@ class SourceRecord:
             "rights_notes": self.rights_notes,
             "legal_posture": self.legal_posture,
             "freshness_model": self.freshness_model,
+            "capabilities": self.capabilities.to_dict(),
+            "coverage": self.coverage.to_dict(),
             "notes": self.notes,
         }
 
@@ -160,6 +167,8 @@ class SourceRecord:
             rights_notes=_require_string(raw_record, "rights_notes", source_path),
             legal_posture=_require_non_empty_string(raw_record, "legal_posture", source_path),
             freshness_model=_require_non_empty_string(raw_record, "freshness_model", source_path),
+            capabilities=_require_capability_record(raw_record, "capabilities", source_path),
+            coverage=_require_coverage_record(raw_record, "coverage", source_path),
             notes=_require_string(raw_record, "notes", source_path),
         )
 
@@ -306,3 +315,27 @@ def _require_extraction_policy_record(
         mode=_require_nested_non_empty_string(raw_record, field_name, "mode", source_path),
         notes=_require_nested_optional_string(raw_record, field_name, "notes", source_path),
     )
+
+
+def _require_capability_record(
+    raw_record: Mapping[str, Any],
+    field_name: str,
+    source_path: Path,
+) -> SourceCapabilityRecord:
+    raw_capabilities = _require_nested_mapping(raw_record, field_name, source_path)
+    try:
+        return SourceCapabilityRecord.from_mapping(raw_capabilities, field_name=field_name)
+    except ValueError as error:
+        raise MalformedSourceRecordError(source_path, str(error)) from error
+
+
+def _require_coverage_record(
+    raw_record: Mapping[str, Any],
+    field_name: str,
+    source_path: Path,
+) -> SourceCoverageRecord:
+    raw_coverage = _require_nested_mapping(raw_record, field_name, source_path)
+    try:
+        return SourceCoverageRecord.from_mapping(raw_coverage, field_name=field_name)
+    except ValueError as error:
+        raise MalformedSourceRecordError(source_path, str(error)) from error

@@ -32,6 +32,9 @@ class SourceRegistry:
         source_family: str | None = None,
         role: str | None = None,
         surface: str | None = None,
+        coverage_depth: str | None = None,
+        capability: str | None = None,
+        connector_mode: str | None = None,
     ) -> tuple[SourceRecord, ...]:
         return tuple(
             record
@@ -40,6 +43,9 @@ class SourceRegistry:
             and (source_family is None or record.source_family == source_family)
             and (role is None or role in record.roles)
             and (surface is None or surface in record.surfaces)
+            and (coverage_depth is None or record.coverage.coverage_depth == coverage_depth)
+            and (capability is None or record.capabilities.supports(capability))
+            and (connector_mode is None or record.coverage.connector_mode == connector_mode)
         )
 
     def get_record(self, source_id: str) -> SourceRecord:

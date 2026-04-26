@@ -48,7 +48,11 @@ class SourceRegistryTestCase(unittest.TestCase):
 
         self.assertEqual(
             {record.source_id for record in registry.list_records(status="active_fixture")},
-            {"synthetic-fixtures", "github-releases-recorded-fixtures"},
+            {"synthetic-fixtures"},
+        )
+        self.assertEqual(
+            {record.source_id for record in registry.list_records(status="active_recorded_fixture")},
+            {"github-releases-recorded-fixtures"},
         )
         self.assertEqual(
             {record.source_id for record in registry.list_records(source_family="internet_archive")},
@@ -102,6 +106,38 @@ class SourceRegistryTestCase(unittest.TestCase):
             "rights_notes": "Fixtures only.",
             "legal_posture": "repo_governed_fixture",
             "freshness_model": "static_fixture",
+            "capabilities": {
+                "supports_search": True,
+                "supports_item_metadata": True,
+                "supports_file_listing": False,
+                "supports_bulk_access": False,
+                "supports_delta_or_feed": False,
+                "supports_live_probe": False,
+                "supports_member_listing": False,
+                "supports_reviews_or_comments": False,
+                "supports_hashes": False,
+                "supports_signatures": False,
+                "supports_content_text": False,
+                "supports_temporal_captures": False,
+                "supports_action_paths": False,
+                "auth_required": False,
+                "network_required": False,
+                "local_private": False,
+                "fixture_backed": True,
+                "recorded_fixture_backed": False,
+                "live_supported": False,
+                "live_deferred": False
+            },
+            "coverage": {
+                "coverage_depth": "metadata_indexed",
+                "coverage_status": "active_fixture_scope",
+                "indexed_scopes": ["catalog_records", "item_metadata"],
+                "connector_mode": "fixture_only",
+                "last_fixture_update": "static_fixture",
+                "coverage_notes": "Temporary test fixture.",
+                "current_limitations": ["test fixture only"],
+                "next_coverage_step": "none"
+            },
             "notes": "Demo record."
         }
         with tempfile.TemporaryDirectory() as temp_dir:

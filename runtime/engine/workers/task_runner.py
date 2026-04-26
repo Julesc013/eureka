@@ -147,6 +147,9 @@ class LocalTaskRunnerService(LocalTaskService):
         active_fixture_sources = sorted(
             record.source_id for record in records if record.status == "active_fixture"
         )
+        active_recorded_fixture_sources = sorted(
+            record.source_id for record in records if record.status == "active_recorded_fixture"
+        )
         placeholder_sources = sorted(
             record.source_id for record in records if record.status == "placeholder"
         )
@@ -155,6 +158,7 @@ class LocalTaskRunnerService(LocalTaskService):
                 "source_count": len(records),
                 "status_counts": dict(sorted(status_counts.items())),
                 "active_fixture_sources": active_fixture_sources,
+                "active_recorded_fixture_sources": active_recorded_fixture_sources,
                 "placeholder_sources": placeholder_sources,
             },
             "notices": (

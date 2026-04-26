@@ -16,9 +16,12 @@ properties:
     type: string
     enum:
       - active_fixture
+      - active_recorded_fixture
       - placeholder
       - future
       - disabled
+      - local_private_future
+      - live_deferred
   roles:
     type: array
     items:
@@ -151,6 +154,10 @@ properties:
       - recorded_fixture_snapshot
       - deferred
       - local_mutable
+  capabilities:
+    $ref: https://schemas.eureka.invalid/source_registry/source_capability.schema.yaml
+  coverage:
+    $ref: https://schemas.eureka.invalid/source_registry/source_coverage.schema.yaml
   notes:
     type: string
 required:
@@ -173,5 +180,7 @@ required:
   - rights_notes
   - legal_posture
   - freshness_model
+  - capabilities
+  - coverage
   - notes
 x-eureka-status: draft

@@ -55,6 +55,11 @@ class LocalTaskRunnerServiceTestCase(unittest.TestCase):
         self.assertEqual(task.status, "completed")
         self.assertEqual(task.task_kind, "validate_source_registry")
         self.assertEqual(task.result_summary["source_count"], 6)
+        self.assertEqual(task.result_summary["active_fixture_sources"], ["synthetic-fixtures"])
+        self.assertEqual(
+            task.result_summary["active_recorded_fixture_sources"],
+            ["github-releases-recorded-fixtures"],
+        )
 
     def test_build_local_index_task_completes(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

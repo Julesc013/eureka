@@ -27,6 +27,8 @@ The registry answers bounded planning and labeling questions such as:
 - what kinds of objects and artifacts does it speak about
 - which connector owns it today, if any
 - whether it is fixture-backed, placeholder, future, or disabled
+- what bounded capabilities are currently available
+- how deeply the current source slice is indexed
 - what trust lane, authority class, legal posture, and freshness notes are known
 
 ## Source Record v0 Field Set
@@ -52,9 +54,35 @@ The registry answers bounded planning and labeling questions such as:
 - `rights_notes`
 - `legal_posture`
 - `freshness_model`
+- `capabilities`
+- `coverage`
 - `notes`
 
 The field set is intentionally descriptive. It is not a final ontology.
+
+## Capability And Coverage v0
+
+Source Coverage and Capability Model v0 adds compact metadata rather than new
+source acquisition behavior.
+
+`capabilities` records booleans for bounded support such as search, item
+metadata, file listing, member listing, hashes, content text, action paths,
+fixture backing, recorded fixture backing, local-private posture, live support,
+and live-deferred posture.
+
+`coverage.coverage_depth` uses this ladder:
+
+0. `source_known`
+1. `catalog_indexed`
+2. `metadata_indexed`
+3. `representation_indexed`
+4. `content_or_member_indexed`
+5. `action_indexed`
+
+Do not raise a source above its current bounded coverage. Internet Archive,
+Wayback/Memento, Software Heritage, and local files remain planning anchors at
+`source_known` until a future accepted recorded-fixture or connector milestone
+changes their posture.
 
 ## Seed Records In Scope
 
@@ -67,8 +95,9 @@ Source Registry v0 currently seeds:
 - `software-heritage-placeholder`
 - `local-files-placeholder`
 
-The first two are active fixture-backed records. The remaining records are
-honest placeholders or future anchors only.
+`synthetic-fixtures` is an active fixture-backed record.
+`github-releases-recorded-fixtures` is an active recorded-fixture-backed
+record. The remaining records are honest placeholders or future anchors only.
 
 ## Public Projection Rules
 
@@ -77,6 +106,8 @@ Public source-registry views may show:
 - source id and display name
 - family, status, roles, surfaces, and trust lane
 - connector label and connector status
+- capability summaries, coverage depth, coverage status, connector mode,
+  current limitations, and next coverage step
 - object and artifact type summaries
 - bounded legal, freshness, and notes fields
 
@@ -97,10 +128,12 @@ Source Registry v0 does **not** implement:
 - authentication
 - async workers
 - placeholder connectors
+- live probing or crawling
+- new source connectors
 
 ## Status
 
-Source Registry v0 is now implemented as bounded inventory and metadata only.
-It informs future connector planning, UI labeling, and public policy
-projection. It does not imply that placeholder sources are usable runtime
-connectors today.
+Source Registry v0 is now implemented as bounded inventory, capability, and
+coverage-depth metadata only. It informs future connector planning, UI labeling,
+and public policy projection. It does not imply that placeholder sources are
+usable runtime connectors today.
