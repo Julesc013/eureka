@@ -20,6 +20,11 @@ class QueryPlannerViewModelsTestCase(unittest.TestCase):
             view_model["query_plan"]["constraints"]["platform"]["marketing_alias"],
             "Windows 2000",
         )
+        self.assertEqual(
+            view_model["query_plan"]["constraints"]["hardware_hint"],
+            "ThinkPad T42 Wi-Fi",
+        )
+        self.assertIn("INF", view_model["query_plan"]["constraints"]["representation_hints"])
 
 
 if __name__ == "__main__":

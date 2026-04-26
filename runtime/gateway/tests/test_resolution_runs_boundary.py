@@ -79,7 +79,7 @@ class ResolutionRunsPublicApiTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         run = response.body["runs"][0]
         self.assertEqual(run["run_kind"], "planned_search")
-        self.assertEqual(run["resolution_task"]["task_kind"], "find_software_release")
+        self.assertEqual(run["resolution_task"]["task_kind"], "find_latest_compatible_release")
         self.assertEqual(run["resolution_task"]["constraints"]["product_hint"], "Firefox")
 
 

@@ -22,6 +22,9 @@ class QueryPlannerPublicApiTestCase(unittest.TestCase):
             response.body["query_plan"]["constraints"]["platform"]["marketing_alias"],
             "Windows 7",
         )
+        self.assertTrue(response.body["query_plan"]["constraints"]["platform_is_constraint"])
+        self.assertIn("os_iso_image", response.body["query_plan"]["exclude"])
+        self.assertIn("internet_archive_recorded", response.body["query_plan"]["source_hints"])
 
     def test_empty_query_returns_structured_error(self) -> None:
         response = self.public_api.plan_query_text("   ")

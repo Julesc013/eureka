@@ -16,7 +16,8 @@ normal_path:
     - QueryPlanEnvelope
 surface_expectations:
   - surfaces project bounded deterministic planner output through the public gateway boundary rather than running planner rules directly
-  - surfaces show task kind, object type, constraints, prefer and exclude hints, action hints, and planner notes compactly
+  - surfaces show task kind, object type, constraints, prefer and exclude hints, action hints, source hints, and planner notes compactly
+  - surfaces may render old-platform platform constraints, latest-compatible goals, hardware/product/function hints, representation/member hints, and app-vs-OS-media suppression hints when they appear in the bounded plan
   - surfaces do not imply LLM use, vector search, fuzzy retrieval, or full investigation planning
 surface_split:
   web:

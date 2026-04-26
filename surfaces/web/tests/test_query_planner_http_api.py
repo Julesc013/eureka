@@ -33,10 +33,13 @@ class QueryPlannerHttpApiTestCase(unittest.TestCase):
         payload = json.loads(body)
         self.assertEqual(payload["status"], "planned")
         self.assertEqual(payload["query_plan"]["task_kind"], "find_driver")
+        self.assertEqual(payload["query_plan"]["constraints"]["hardware_hint"], "ThinkPad T42 Wi-Fi")
         self.assertEqual(
             payload["query_plan"]["constraints"]["platform"]["marketing_alias"],
             "Windows 2000",
         )
+        self.assertIn("INF", payload["query_plan"]["constraints"]["representation_hints"])
+        self.assertIn("decompose", payload["query_plan"]["action_hints"])
 
     def test_planned_search_run_endpoint_records_resolution_task(self) -> None:
         import tempfile
@@ -50,7 +53,15 @@ class QueryPlannerHttpApiTestCase(unittest.TestCase):
         payload = json.loads(body)
         self.assertEqual(status, "200 OK")
         self.assertEqual(payload["runs"][0]["run_kind"], "planned_search")
+        self.assertEqual(
+            payload["runs"][0]["resolution_task"]["task_kind"],
+            "find_latest_compatible_release",
+        )
         self.assertEqual(payload["runs"][0]["resolution_task"]["constraints"]["product_hint"], "Firefox")
+        self.assertEqual(
+            payload["runs"][0]["resolution_task"]["constraints"]["temporal_goal"],
+            "latest_before_support_drop",
+        )
 
     def _request(
         self,

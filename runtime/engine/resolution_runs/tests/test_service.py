@@ -111,7 +111,10 @@ class LocalResolutionRunServiceTestCase(unittest.TestCase):
 
         self.assertEqual(run.run_kind, "planned_search")
         self.assertIsNotNone(run.resolution_task)
-        self.assertEqual(run.resolution_task.task_kind if run.resolution_task else "", "find_software_release")
+        self.assertEqual(
+            run.resolution_task.task_kind if run.resolution_task else "",
+            "find_latest_compatible_release",
+        )
         self.assertEqual(run.resolution_task.constraints["product_hint"] if run.resolution_task else "", "Firefox")
         self.assertIsNone(run.result_summary)
         self.assertIsNotNone(run.absence_report)

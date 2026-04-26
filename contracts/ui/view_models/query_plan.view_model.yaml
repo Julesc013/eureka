@@ -2,7 +2,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 $id: https://schemas.eureka.invalid/ui/query_plan.view_model.yaml
 $comment: Provisional draft skeleton only. Shared across web and native surfaces in the normal online path.
 title: QueryPlan
-description: Draft shared surface-facing query-plan model aligned with the gateway public query-planner boundary.
+description: Draft shared surface-facing query-plan model aligned with the gateway public query-planner boundary. Old-platform planner hints are carried through existing constraints, prefer/exclude, action_hints, source_hints, and planner_notes fields.
 type: object
 additionalProperties: false
 properties:

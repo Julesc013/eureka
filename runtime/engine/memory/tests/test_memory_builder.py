@@ -81,7 +81,7 @@ class ResolutionMemoryBuilderTestCase(unittest.TestCase):
         )
 
         self.assertIsNotNone(memory.resolution_task)
-        self.assertEqual(memory.task_kind, "find_software_release")
+        self.assertEqual(memory.task_kind, "find_latest_compatible_release")
         self.assertEqual(memory.raw_query, "latest Firefox before XP support ended")
 
 

@@ -42,7 +42,7 @@ class QueryPlannerIntegrationTestCase(unittest.TestCase):
         self.assertEqual(read_status, "200 OK")
         html = page_body.decode("utf-8")
         self.assertIn("Resolution Task", html)
-        self.assertIn("find_software_release", html)
+        self.assertIn("find_latest_compatible_release", html)
         self.assertIn("Firefox", html)
 
     def _request(

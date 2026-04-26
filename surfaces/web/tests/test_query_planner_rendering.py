@@ -19,9 +19,10 @@ class QueryPlannerRenderingTestCase(unittest.TestCase):
         )
 
         self.assertIn("Eureka Query Plan", html)
-        self.assertIn("find_software_release", html)
+        self.assertIn("find_latest_compatible_release", html)
         self.assertIn("Firefox", html)
         self.assertIn("Windows XP", html)
+        self.assertIn("latest_before_support_drop", html)
 
     def test_wsgi_app_handles_query_plan_requests(self) -> None:
         app = WorkbenchWsgiApp(
@@ -52,6 +53,8 @@ class QueryPlannerRenderingTestCase(unittest.TestCase):
         self.assertEqual(captured["status"], "200 OK")
         self.assertIn("browse_software", body)
         self.assertIn("Windows 7", body)
+        self.assertIn("platform_is_constraint", body)
+        self.assertIn("os_iso_image", body)
 
 
 if __name__ == "__main__":
