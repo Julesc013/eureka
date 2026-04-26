@@ -16,6 +16,11 @@ Current assets:
 - `crates/eureka-core/src/source_registry.rs`: first Rust source-registry
   candidate compared against the Python-oracle source-registry goldens
 
+Source Coverage and Capability Model v0 expands the Python source-registry
+goldens with capability and coverage-depth fields. The Rust source-registry
+candidate must be updated in a later Rust parity task before it can claim
+current source-registry parity again; Python remains authoritative.
+
 There is still no Rust parity runner in this milestone. Future parity assets
 should remain fixture-driven, JSON-inspectable, and explicit about allowed
 divergences.

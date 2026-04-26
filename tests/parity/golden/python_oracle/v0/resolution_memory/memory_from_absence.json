@@ -34,7 +34,7 @@
             "name": "GitHub Releases Recorded Fixtures",
             "source_family": "github_releases",
             "source_id": "github-releases-recorded-fixtures",
-            "status": "active_fixture",
+            "status": "active_recorded_fixture",
             "trust_lane": "official"
           },
           {

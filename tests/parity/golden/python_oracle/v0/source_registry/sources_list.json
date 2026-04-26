@@ -8,24 +8,90 @@
           "release_asset"
         ],
         "authority_class": "upstream_release_service",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": false,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": true,
+          "supports_action_paths": true,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": true,
+          "supports_hashes": true,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_file_listing",
+          "supports_hashes",
+          "supports_action_paths",
+          "recorded_fixture_backed",
+          "live_deferred"
+        ],
         "connector": {
           "label": "GitHub Releases connector",
           "status": "fixture_backed"
         },
+        "connector_mode": "recorded_fixture_only",
+        "coverage": {
+          "connector_mode": "recorded_fixture_only",
+          "coverage_depth": "representation_indexed",
+          "coverage_notes": "Recorded GitHub Releases fixtures expose release metadata and release asset representations without using the live GitHub API.",
+          "coverage_status": "active_recorded_fixture_scope",
+          "current_limitations": [
+            "Recorded fixture scope only",
+            "No live GitHub API access",
+            "No source archive member extraction",
+            "No reviews, discussion, or issue coverage"
+          ],
+          "indexed_scopes": [
+            "release_metadata",
+            "release_assets",
+            "recorded_payload_fixture_paths"
+          ],
+          "last_fixture_update": "recorded_fixture_snapshot",
+          "next_coverage_step": "Add more recorded source families before considering any live GitHub connector behavior."
+        },
+        "coverage_depth": "representation_indexed",
+        "coverage_status": "active_recorded_fixture_scope",
+        "current_limitations": [
+          "Recorded fixture scope only",
+          "No live GitHub API access",
+          "No source archive member extraction",
+          "No reviews, discussion, or issue coverage"
+        ],
         "extraction_mode": "recorded_fixture_only",
         "freshness_model": "recorded_fixture_snapshot",
         "identifier_types_emitted": [
           "github_repo",
           "github_release_tag"
         ],
+        "indexed_scopes": [
+          "release_metadata",
+          "release_assets",
+          "recorded_payload_fixture_paths"
+        ],
         "legal_posture": "recorded_public_source",
         "live_access_mode": "recorded_fixture_only",
         "name": "GitHub Releases Recorded Fixtures",
+        "next_coverage_step": "Add more recorded source families before considering any live GitHub connector behavior.",
         "notes": "Active bounded real-source slice backed by recorded GitHub Releases fixtures, not live network access.",
         "object_types": [
           "software_release",
           "source_repository"
         ],
+        "placeholder_warning": "",
         "rights_notes": "Recorded fixture slice only. Live upstream terms and auth handling remain deferred.",
         "roles": [
           "discovery_index",
@@ -35,8 +101,8 @@
         ],
         "source_family": "github_releases",
         "source_id": "github-releases-recorded-fixtures",
-        "status": "active_fixture",
-        "status_summary": "Active fixture-backed source record.",
+        "status": "active_recorded_fixture",
+        "status_summary": "Active recorded-fixture source record. Live source access remains separate.",
         "surfaces": [
           "search",
           "item_record",
@@ -52,18 +118,73 @@
           "metadata_record"
         ],
         "authority_class": "public_archive",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": false,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": false,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": false,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": false,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "live_deferred"
+        ],
         "connector": {
           "label": "Internet Archive connector",
           "status": "unimplemented"
         },
+        "connector_mode": "not_implemented",
+        "coverage": {
+          "connector_mode": "not_implemented",
+          "coverage_depth": "source_known",
+          "coverage_notes": "The Internet Archive source is registered for planning only; no connector, recorded fixture, or live access is implemented.",
+          "coverage_status": "placeholder",
+          "current_limitations": [
+            "No recorded Internet Archive fixtures",
+            "No item-file listing",
+            "No metadata search",
+            "No live Internet Archive API calls"
+          ],
+          "indexed_scopes": [
+            "registry_record"
+          ],
+          "last_fixture_update": "not_applicable",
+          "next_coverage_step": "Add recorded metadata and item-file fixtures for a small governed Internet Archive slice."
+        },
+        "coverage_depth": "source_known",
+        "coverage_status": "placeholder",
+        "current_limitations": [
+          "No recorded Internet Archive fixtures",
+          "No item-file listing",
+          "No metadata search",
+          "No live Internet Archive API calls"
+        ],
         "extraction_mode": "deferred",
         "freshness_model": "deferred",
         "identifier_types_emitted": [
           "archive_org_identifier"
         ],
+        "indexed_scopes": [
+          "registry_record"
+        ],
         "legal_posture": "deferred_placeholder",
         "live_access_mode": "deferred",
         "name": "Internet Archive",
+        "next_coverage_step": "Add recorded metadata and item-file fixtures for a small governed Internet Archive slice.",
         "notes": "Planning placeholder only. This record must not be read as an implemented connector.",
         "object_types": [
           "software_release",
@@ -71,6 +192,7 @@
           "article",
           "dataset"
         ],
+        "placeholder_warning": "Placeholder only; no connector, fixture coverage, or live access is implemented.",
         "rights_notes": "Rights and access vary per item; no runtime policy is implemented yet.",
         "roles": [
           "preservation_anchor",
@@ -97,24 +219,79 @@
           "local_archive"
         ],
         "authority_class": "local_private_user_controlled",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": false,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": true,
+          "network_required": false,
+          "recorded_fixture_backed": false,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": false,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": false,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "local_private",
+          "live_deferred"
+        ],
         "connector": {
           "label": "Local files connector",
           "status": "deferred"
         },
+        "connector_mode": "local_private_future",
+        "coverage": {
+          "connector_mode": "local_private_future",
+          "coverage_depth": "source_known",
+          "coverage_notes": "Local files are registered as a future local/private source family only; no local-files ingestion connector exists.",
+          "coverage_status": "local_private_future",
+          "current_limitations": [
+            "No implemented local-files ingestion connector",
+            "No public-alpha arbitrary local path access",
+            "No local bundle fixture corpus yet"
+          ],
+          "indexed_scopes": [
+            "registry_record"
+          ],
+          "last_fixture_update": "not_applicable",
+          "next_coverage_step": "Add a governed local bundle fixture corpus before any private local-files workflow."
+        },
+        "coverage_depth": "source_known",
+        "coverage_status": "local_private_future",
+        "current_limitations": [
+          "No implemented local-files ingestion connector",
+          "No public-alpha arbitrary local path access",
+          "No local bundle fixture corpus yet"
+        ],
         "extraction_mode": "local_private_later",
         "freshness_model": "local_mutable",
         "identifier_types_emitted": [
           "filesystem_path"
         ],
+        "indexed_scopes": [
+          "registry_record"
+        ],
         "legal_posture": "local_private_user_controlled",
         "live_access_mode": "local_private_later",
         "name": "Local Files",
+        "next_coverage_step": "Add a governed local bundle fixture corpus before any private local-files workflow.",
         "notes": "Future local-private source only. No current runtime connector exists, and local path disclosure remains out of bounds.",
         "object_types": [
           "software_release",
           "manual",
           "dataset"
         ],
+        "placeholder_warning": "Future-only source; no runtime connector is implemented.",
         "rights_notes": "Local paths and user-controlled material are private by default and must not leak through public surfaces.",
         "roles": [
           "action_provider",
@@ -122,8 +299,8 @@
         ],
         "source_family": "local_files",
         "source_id": "local-files-placeholder",
-        "status": "future",
-        "status_summary": "Future source record only. Runtime behavior remains deferred.",
+        "status": "local_private_future",
+        "status_summary": "Future local/private source record only. Runtime behavior remains deferred.",
         "surfaces": [
           "item_record",
           "artifact_download"
@@ -136,24 +313,80 @@
           "source_tree_snapshot"
         ],
         "authority_class": "software_preservation_network",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": false,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": false,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": false,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": false,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "live_deferred"
+        ],
         "connector": {
           "label": "Software Heritage connector",
           "status": "unimplemented"
         },
+        "connector_mode": "not_implemented",
+        "coverage": {
+          "connector_mode": "not_implemented",
+          "coverage_depth": "source_known",
+          "coverage_notes": "Software Heritage is registered as a future source-code provenance source family only.",
+          "coverage_status": "placeholder",
+          "current_limitations": [
+            "No recorded Software Heritage fixtures",
+            "No SWHID lookup",
+            "No source tree member indexing",
+            "No live Software Heritage API calls"
+          ],
+          "indexed_scopes": [
+            "registry_record"
+          ],
+          "last_fixture_update": "not_applicable",
+          "next_coverage_step": "Add recorded source snapshot fixtures and provenance examples before any connector behavior."
+        },
+        "coverage_depth": "source_known",
+        "coverage_status": "placeholder",
+        "current_limitations": [
+          "No recorded Software Heritage fixtures",
+          "No SWHID lookup",
+          "No source tree member indexing",
+          "No live Software Heritage API calls"
+        ],
         "extraction_mode": "deferred",
         "freshness_model": "deferred",
         "identifier_types_emitted": [
           "swhid",
           "origin_url"
         ],
+        "indexed_scopes": [
+          "registry_record"
+        ],
         "legal_posture": "deferred_placeholder",
         "live_access_mode": "deferred",
         "name": "Software Heritage",
+        "next_coverage_step": "Add recorded source snapshot fixtures and provenance examples before any connector behavior.",
         "notes": "Planning placeholder only. This record identifies a likely future source family without claiming implementation.",
         "object_types": [
           "source_repository",
           "software_release"
         ],
+        "placeholder_warning": "Placeholder only; no connector, fixture coverage, or live access is implemented.",
         "rights_notes": "Source preservation and archive access terms vary by origin and snapshot.",
         "roles": [
           "preservation_anchor",
@@ -176,23 +409,94 @@
           "fixture_archive"
         ],
         "authority_class": "repo_governed_fixture",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": true,
+          "live_deferred": false,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": false,
+          "supports_action_paths": true,
+          "supports_bulk_access": false,
+          "supports_content_text": true,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": true,
+          "supports_hashes": true,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": true,
+          "supports_reviews_or_comments": false,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_file_listing",
+          "supports_member_listing",
+          "supports_hashes",
+          "supports_content_text",
+          "supports_action_paths",
+          "fixture_backed"
+        ],
         "connector": {
           "label": "Synthetic software connector",
           "status": "fixture_backed"
         },
+        "connector_mode": "fixture_only",
+        "coverage": {
+          "connector_mode": "fixture_only",
+          "coverage_depth": "action_indexed",
+          "coverage_notes": "Synthetic fixtures are intentionally small but exercise the deepest bounded registry, representation, member, and action-path shape.",
+          "coverage_status": "active_fixture_scope",
+          "current_limitations": [
+            "Synthetic fixture scope only",
+            "No real-world source coverage",
+            "No live network acquisition"
+          ],
+          "indexed_scopes": [
+            "catalog_records",
+            "item_metadata",
+            "representations",
+            "members",
+            "content_summaries",
+            "action_paths"
+          ],
+          "last_fixture_update": "static_fixture",
+          "next_coverage_step": "Use this as a deterministic fixture control while recorded real-source coverage is added separately."
+        },
+        "coverage_depth": "action_indexed",
+        "coverage_status": "active_fixture_scope",
+        "current_limitations": [
+          "Synthetic fixture scope only",
+          "No real-world source coverage",
+          "No live network acquisition"
+        ],
         "extraction_mode": "fixture_only",
         "freshness_model": "static_fixture",
         "identifier_types_emitted": [
           "target_ref"
         ],
+        "indexed_scopes": [
+          "catalog_records",
+          "item_metadata",
+          "representations",
+          "members",
+          "content_summaries",
+          "action_paths"
+        ],
         "legal_posture": "repo_governed_fixture",
         "live_access_mode": "none",
         "name": "Synthetic Fixtures",
+        "next_coverage_step": "Use this as a deterministic fixture control while recorded real-source coverage is added separately.",
         "notes": "Active local-only source used for deterministic bootstrap execution, tests, and connector-boundary development.",
         "object_types": [
           "software_product",
           "software_release"
         ],
+        "placeholder_warning": "",
         "rights_notes": "Repo-governed demo fixtures only.",
         "roles": [
           "fixture",
@@ -215,24 +519,80 @@
           "replay_record"
         ],
         "authority_class": "web_archive",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": false,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": false,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": false,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": false,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "live_deferred"
+        ],
         "connector": {
           "label": "Wayback / Memento connector",
           "status": "unimplemented"
         },
+        "connector_mode": "not_implemented",
+        "coverage": {
+          "connector_mode": "not_implemented",
+          "coverage_depth": "source_known",
+          "coverage_notes": "Wayback/Memento is registered as a future temporal-capture source family only.",
+          "coverage_status": "placeholder",
+          "current_limitations": [
+            "No recorded capture fixtures",
+            "No replay or memento expansion",
+            "No live capture probing",
+            "No WARC/WACZ member indexing"
+          ],
+          "indexed_scopes": [
+            "registry_record"
+          ],
+          "last_fixture_update": "not_applicable",
+          "next_coverage_step": "Add recorded temporal capture metadata fixtures before any live probing is considered."
+        },
+        "coverage_depth": "source_known",
+        "coverage_status": "placeholder",
+        "current_limitations": [
+          "No recorded capture fixtures",
+          "No replay or memento expansion",
+          "No live capture probing",
+          "No WARC/WACZ member indexing"
+        ],
         "extraction_mode": "deferred",
         "freshness_model": "deferred",
         "identifier_types_emitted": [
           "url",
           "capture_datetime"
         ],
+        "indexed_scopes": [
+          "registry_record"
+        ],
         "legal_posture": "deferred_placeholder",
         "live_access_mode": "deferred",
         "name": "Wayback / Memento",
+        "next_coverage_step": "Add recorded temporal capture metadata fixtures before any live probing is considered.",
         "notes": "Planning placeholder only. This record should guide future registry growth, not imply live replay support.",
         "object_types": [
           "website",
           "web_page"
         ],
+        "placeholder_warning": "Placeholder only; no connector, fixture coverage, or live access is implemented.",
         "rights_notes": "Replay availability and access conditions vary by capture and provider.",
         "roles": [
           "preservation_anchor",

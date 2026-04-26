@@ -31,6 +31,12 @@ tests compare the generated source-registry public envelopes with:
 Passing those tests does not replace Python behavior. It only proves that this
 isolated Rust candidate can match the committed Python-oracle fixture shape.
 
+Source Coverage and Capability Model v0 intentionally changes the Python
+source-registry oracle shape by adding capability booleans, coverage-depth
+metadata, connector mode, limitations, and next coverage steps. Updating the
+Rust candidate to match those fields is future Rust parity work; this source
+coverage milestone does not port Rust behavior or wire Rust into runtime paths.
+
 ## Golden Outputs
 
 Rust Parity Fixture Pack v0 now commits the first Python-oracle golden outputs

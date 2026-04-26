@@ -402,6 +402,11 @@ def _compare_directories(left: Path, right: Path) -> dict[str, Any]:
     status = "passed" if not missing and not extra and not changed else "failed"
     return {
         "status": status,
+        "fixture_pack_id": FIXTURE_PACK_ID,
+        "fixture_pack_version": FIXTURE_PACK_VERSION,
+        "output_root": str(left),
+        "file_count": len(right_files),
+        "created_by_slice": CREATED_BY_SLICE,
         "committed_root": str(left),
         "missing_files": missing,
         "extra_files": extra,
@@ -450,6 +455,12 @@ def _emit_summary(summary: Mapping[str, Any], *, emit_json: bool, stderr: bool =
     output.write(f"file_count: {summary['file_count']}\n")
     if "error" in summary:
         output.write(f"error: {summary['error']}\n")
+    if summary.get("missing_files"):
+        output.write(f"missing_files: {', '.join(summary['missing_files'])}\n")
+    if summary.get("extra_files"):
+        output.write(f"extra_files: {', '.join(summary['extra_files'])}\n")
+    if summary.get("changed_files"):
+        output.write(f"changed_files: {', '.join(summary['changed_files'])}\n")
 
 
 def _json_dumps(payload: Any) -> str:

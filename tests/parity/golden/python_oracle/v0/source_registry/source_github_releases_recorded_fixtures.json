@@ -9,24 +9,90 @@
           "release_asset"
         ],
         "authority_class": "upstream_release_service",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": false,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": true,
+          "supports_action_paths": true,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": true,
+          "supports_hashes": true,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_file_listing",
+          "supports_hashes",
+          "supports_action_paths",
+          "recorded_fixture_backed",
+          "live_deferred"
+        ],
         "connector": {
           "label": "GitHub Releases connector",
           "status": "fixture_backed"
         },
+        "connector_mode": "recorded_fixture_only",
+        "coverage": {
+          "connector_mode": "recorded_fixture_only",
+          "coverage_depth": "representation_indexed",
+          "coverage_notes": "Recorded GitHub Releases fixtures expose release metadata and release asset representations without using the live GitHub API.",
+          "coverage_status": "active_recorded_fixture_scope",
+          "current_limitations": [
+            "Recorded fixture scope only",
+            "No live GitHub API access",
+            "No source archive member extraction",
+            "No reviews, discussion, or issue coverage"
+          ],
+          "indexed_scopes": [
+            "release_metadata",
+            "release_assets",
+            "recorded_payload_fixture_paths"
+          ],
+          "last_fixture_update": "recorded_fixture_snapshot",
+          "next_coverage_step": "Add more recorded source families before considering any live GitHub connector behavior."
+        },
+        "coverage_depth": "representation_indexed",
+        "coverage_status": "active_recorded_fixture_scope",
+        "current_limitations": [
+          "Recorded fixture scope only",
+          "No live GitHub API access",
+          "No source archive member extraction",
+          "No reviews, discussion, or issue coverage"
+        ],
         "extraction_mode": "recorded_fixture_only",
         "freshness_model": "recorded_fixture_snapshot",
         "identifier_types_emitted": [
           "github_repo",
           "github_release_tag"
         ],
+        "indexed_scopes": [
+          "release_metadata",
+          "release_assets",
+          "recorded_payload_fixture_paths"
+        ],
         "legal_posture": "recorded_public_source",
         "live_access_mode": "recorded_fixture_only",
         "name": "GitHub Releases Recorded Fixtures",
+        "next_coverage_step": "Add more recorded source families before considering any live GitHub connector behavior.",
         "notes": "Active bounded real-source slice backed by recorded GitHub Releases fixtures, not live network access.",
         "object_types": [
           "software_release",
           "source_repository"
         ],
+        "placeholder_warning": "",
         "rights_notes": "Recorded fixture slice only. Live upstream terms and auth handling remain deferred.",
         "roles": [
           "discovery_index",
@@ -36,8 +102,8 @@
         ],
         "source_family": "github_releases",
         "source_id": "github-releases-recorded-fixtures",
-        "status": "active_fixture",
-        "status_summary": "Active fixture-backed source record.",
+        "status": "active_recorded_fixture",
+        "status_summary": "Active recorded-fixture source record. Live source access remains separate.",
         "surfaces": [
           "search",
           "item_record",
