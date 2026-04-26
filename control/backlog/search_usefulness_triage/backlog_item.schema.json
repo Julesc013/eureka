@@ -1,0 +1,42 @@
+{
+  "schema_kind": "eureka.search_usefulness_backlog_item_schema",
+  "version": "0.1.0",
+  "created_by_slice": "search_usefulness_backlog_triage_v0",
+  "required_fields": [
+    "id",
+    "title",
+    "priority",
+    "status",
+    "wedge",
+    "failure_modes",
+    "evidence",
+    "user_value",
+    "implementation_feasibility",
+    "regression_risk",
+    "expected_audit_delta",
+    "prerequisite_items",
+    "suggested_milestone",
+    "acceptance_criteria",
+    "tests_to_add_first",
+    "likely_files",
+    "do_not_do",
+    "notes"
+  ],
+  "field_values": {
+    "priority": ["P0", "P1", "P2", "P3"],
+    "status": ["proposed", "selected", "deferred", "rejected"],
+    "wedge": [
+      "old_platform_software",
+      "member_level_discovery",
+      "source_operating_layer",
+      "compatibility_evidence",
+      "rust_parity",
+      "public_alpha",
+      "other"
+    ]
+  },
+  "notes": [
+    "This is a compact repo-local schema description for validation tests and human review.",
+    "Backlog items are governance records only and do not implement runtime behavior."
+  ]
+}
