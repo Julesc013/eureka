@@ -50,3 +50,14 @@ Out of scope here:
 
 Source Registry v0 is inventory metadata only. Placeholder and future records do
 not imply implemented connectors.
+
+Real Source Coverage Pack v0 adds two active fixture-backed source records:
+
+- `internet-archive-recorded-fixtures`: recorded metadata and item-file fixture
+  shapes only, with no live Internet Archive API calls, scraping, or crawling.
+- `local-bundle-fixtures`: committed local ZIP fixture corpus only, with no
+  arbitrary user filesystem ingestion.
+
+The separate `internet-archive-placeholder` and `local-files-placeholder`
+records remain planning anchors and must not be presented as implemented live
+connectors.

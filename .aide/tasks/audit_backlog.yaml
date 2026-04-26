@@ -20,8 +20,8 @@
         "CTEA-CONTENT-002"
       ],
       "title": "Prioritize recorded fixture source coverage for source-gap query families",
-      "status": "partially_addressed_by_source_coverage_capability_model_v0",
-      "suggested_milestone": "Real Source Coverage Pack v0"
+      "status": "partially_addressed_by_real_source_coverage_pack_v0",
+      "suggested_milestone": "Old-Platform Software Planner Pack v0"
     },
     {
       "id": "audit-backlog-doc-drift",

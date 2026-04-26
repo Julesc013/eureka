@@ -32,6 +32,8 @@ steps:
     run: python -m unittest tests.operations.test_search_usefulness_backlog_triage
   - id: source_coverage_capability
     run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
+  - id: real_source_coverage_pack
+    run: python -m unittest runtime.connectors.internet_archive_recorded.tests.test_connector runtime.connectors.local_bundle_fixtures.tests.test_connector runtime.engine.index.tests.test_real_source_coverage_pack tests.integration.test_real_source_coverage_pack
   - id: hardening_tests
     run: python -m unittest discover -s tests/hardening -t .
   - id: runtime_tests
@@ -46,6 +48,7 @@ notes:
   - The Python-oracle golden check is stdlib-only and verifies committed future-Rust parity fixtures without requiring Rust tooling.
   - The search-usefulness audit is stdlib-only and keeps external baselines as pending manual observations; it does not scrape Google, Internet Archive, or any other external source.
   - Source Coverage and Capability Model v0 checks validate metadata and projection only; they do not add connectors, live source probing, or crawling.
+  - Real Source Coverage Pack v0 checks validate committed recorded fixtures, local bundle fixtures, local-index visibility, and public projection only; they do not add live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - The test/eval operating layer and comprehensive audit pack checks are stdlib-only governance validations; they do not add product runtime behavior or production-readiness claims.
   - Hard Test Pack v0 checks are stdlib-only regression guards for eval truth, external baseline honesty, public-alpha path safety, route/docs/README drift, Python-oracle and Rust parity discipline, source placeholder honesty, memory path privacy, and AIDE/test registry consistency.
   - Rust workspace checking is intentionally not required here because normal Python verification must not depend on a Rust toolchain; use `cargo check --workspace --manifest-path crates/Cargo.toml` and `cargo test --workspace --manifest-path crates/Cargo.toml` as optional local checks.

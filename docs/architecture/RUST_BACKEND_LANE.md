@@ -101,6 +101,11 @@ eventually match those fields through parity tests, but this documentation
 change does not activate Rust in any Python runtime, gateway, surface, worker,
 or public-alpha path.
 
+Real Source Coverage Pack v0 further expands the Python oracle with two
+additional source records and recorded fixture outputs. Rust candidate parity
+will need a later catch-up step for those fields and records; no Rust runtime
+path is activated by that fixture pack.
+
 This candidate is tested only inside the Rust workspace. It is not used by
 Python runtime, gateway, web, CLI, HTTP API, local workers, or public-alpha
 paths.

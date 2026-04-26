@@ -13,13 +13,13 @@ This pack is governance only. It does not change runtime behavior, add source co
 - `tests/hardening/`
 - `control/inventory/sources/`
 
-The live audit was re-run during this triage. Current Search Usefulness Audit v0 reports:
+The live audit was re-run after Real Source Coverage Pack v0. Current Search Usefulness Audit v0 reports:
 
 - total queries: 64
 - covered: 5
-- partial: 1
-- source_gap: 43
-- capability_gap: 13
+- partial: 4
+- source_gap: 41
+- capability_gap: 12
 - unknown: 2
 - external baselines pending: Google 64, Internet Archive metadata 64, Internet Archive full text/OCR 64
 
@@ -27,11 +27,11 @@ The live audit was re-run during this triage. Current Search Usefulness Audit v0
 
 - Primary usefulness wedge: old-platform-compatible software search
 - Secondary usefulness wedge: member-level discovery inside bundles
-- Immediate next milestone: Source Coverage and Capability Model v0
+- Immediate next milestone: Old-Platform Software Planner Pack v0
 
-Update: Source Coverage and Capability Model v0 is now implemented as source
-metadata and public projection. The next implementation milestone is Real
-Source Coverage Pack v0 with recorded fixtures only.
+Update: Source Coverage and Capability Model v0 and Real Source Coverage Pack
+v0 are now implemented. The next implementation milestone is Old-Platform
+Software Planner Pack v0.
 
 ## Contents
 

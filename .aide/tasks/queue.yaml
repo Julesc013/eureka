@@ -34,9 +34,9 @@
     {
       "id": "real_source_coverage_pack_v0",
       "title": "Real Source Coverage Pack v0",
-      "status": "queued",
+      "status": "completed",
       "priority": 5,
-      "notes": "Add governed recorded fixtures for selected old-platform software queries without live crawling."
+      "notes": "Added recorded Internet Archive-like fixtures and local bundle fixture corpus without live crawling, scraping, live probes, or arbitrary local filesystem ingestion."
     },
     {
       "id": "old_platform_software_planner_pack_v0",

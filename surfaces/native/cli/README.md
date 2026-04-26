@@ -8,6 +8,7 @@ This bootstrap CLI:
 - uses `runtime/gateway/public_api/` plus shared surface-neutral mappings
 - remains local, deterministic, stdlib-only, and bounded
 - shows bounded source-family and source-origin summaries for synthetic fixtures and recorded GitHub Releases-backed results
+- shows bounded source-family and source-origin summaries for recorded Internet Archive-like fixtures and committed local bundle fixtures without implying live Internet Archive access or arbitrary local filesystem ingestion
 - shows bounded evidence summaries for exact resolution, search, inspection, and stored-export flows
 - shows bounded miss explanations for exact-resolution misses and deterministic search no-result cases
 - shows bounded ordered state listings for one bootstrap subject key with compact source and evidence summaries per state
@@ -85,6 +86,12 @@ The archive-resolution eval command is an executable regression guardrail over
 the current hard-query packet. Many tasks currently report `capability_gap`.
 That is expected, and the command is not a ranking, semantic, fuzzy, vector,
 LLM, crawling, live-sync, or production relevance benchmark.
+
+Real Source Coverage Pack v0 broadens the local demo corpus with two recorded
+fixture families: `internet-archive-recorded-fixtures` and
+`local-bundle-fixtures`. CLI source and search commands may show those records,
+but they are committed fixture data only, not live API access, scraping,
+crawling, or arbitrary local-path ingestion.
 
 `--task-store-root` is a bootstrap local persistence input only. It does not
 imply background scheduling, retries, priorities, worker daemons, distributed

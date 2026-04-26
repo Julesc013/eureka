@@ -46,10 +46,18 @@ Seed records currently cover:
 
 - `synthetic-fixtures`
 - `github-releases-recorded-fixtures`
+- `internet-archive-recorded-fixtures`
+- `local-bundle-fixtures`
 - `internet-archive-placeholder`
 - `wayback-memento-placeholder`
 - `software-heritage-placeholder`
 - `local-files-placeholder`
+
+Real Source Coverage Pack v0 adds `internet-archive-recorded-fixtures` and
+`local-bundle-fixtures` as active fixture-backed source records. They are tiny
+committed test fixtures for old-platform software and bundle/member discovery.
+They do not call the Internet Archive API, scrape external sites, crawl,
+federate sources, or ingest arbitrary user filesystem paths.
 
 Placeholder and future records are planning anchors only. They must not be
 described as implemented connectors until runtime code lands for them.

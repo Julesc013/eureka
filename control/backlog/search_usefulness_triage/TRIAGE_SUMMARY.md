@@ -71,13 +71,15 @@ Native apps would mostly repackage current usefulness gaps. The next value comes
 
 Immediate next milestone at triage time: Source Coverage and Capability Model v0.
 
-This should define source-family capability fields, coverage-depth vocabulary, fixture expectations, and tests that prevent placeholder sources from being promoted silently.
+That milestone and Real Source Coverage Pack v0 are now implemented. Source
+Coverage and Capability Model v0 defined source-family capability fields,
+coverage-depth vocabulary, fixture expectations, and tests that prevent
+placeholder sources from being promoted silently. Real Source Coverage Pack v0
+then added recorded Internet Archive-like fixtures plus local bundle fixtures
+without live probing, crawling, scraping, or arbitrary local filesystem
+ingestion.
 
-Implementation note: Source Coverage and Capability Model v0 is now in place
-as bounded source-registry metadata plus public projection. It does not add
-connectors, live probing, crawling, or source acquisition behavior. The next
-implementation milestone is Real Source Coverage Pack v0 with recorded
-fixtures only.
+Current next implementation milestone: Old-Platform Software Planner Pack v0.
 
 ## Evidence That Would Change The Plan
 

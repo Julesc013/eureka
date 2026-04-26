@@ -246,6 +246,27 @@
       "notes": "Added by Source Coverage and Capability Model v0; it does not add connectors, live probes, or crawling."
     },
     {
+      "test_id": "real_source_coverage_pack_validation",
+      "label": "Real source coverage pack tests",
+      "command": "python -m unittest runtime.connectors.internet_archive_recorded.tests.test_connector runtime.connectors.local_bundle_fixtures.tests.test_connector runtime.engine.index.tests.test_real_source_coverage_pack tests.integration.test_real_source_coverage_pack",
+      "category": "integration",
+      "owner_area": "runtime/connectors",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary local indexes and stores only",
+      "expected_runtime": "seconds",
+      "failure_means": "Recorded Internet Archive-like fixtures, local bundle fixtures, index visibility, public projection, or bounded member readback regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Real Source Coverage Pack v0; it uses committed fixtures only and performs no live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion."
+    },
+    {
       "test_id": "operating_layer_validation",
       "label": "Test/eval operating layer validation",
       "command": "python -m unittest tests.operations.test_test_eval_operating_layer",

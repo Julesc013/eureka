@@ -54,6 +54,8 @@ steps:
     run: python -m unittest tests.operations.test_search_usefulness_backlog_triage
   - id: source_coverage_capability_tests
     run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
+  - id: real_source_coverage_pack_tests
+    run: python -m unittest runtime.connectors.internet_archive_recorded.tests.test_connector runtime.connectors.local_bundle_fixtures.tests.test_connector runtime.engine.index.tests.test_real_source_coverage_pack tests.integration.test_real_source_coverage_pack
   - id: hardening_tests
     run: python -m unittest discover -s tests/hardening -t .
   - id: hardening_eval_guards
@@ -106,6 +108,12 @@ steps:
     run: python scripts/demo_cli_workbench.py search synthetic
   - id: native_cli_search_mixed
     run: python scripts/demo_cli_workbench.py search archive
+  - id: native_cli_source_internet_archive_recorded
+    run: python scripts/demo_cli_workbench.py source internet-archive-recorded-fixtures
+  - id: native_cli_source_local_bundle_fixtures
+    run: python scripts/demo_cli_workbench.py source local-bundle-fixtures
+  - id: native_cli_index_query_thinkpad_fixture
+    run: python scripts/demo_cli_workbench.py index-query thinkpad --index-path .demo-index/eureka-local-index.sqlite3 --json
   - id: native_cli_query_plan_windows7
     run: python scripts/demo_cli_workbench.py query-plan "Windows 7 apps"
   - id: archive_resolution_eval_runner
@@ -284,7 +292,7 @@ notes:
   - The architecture-boundary check is a narrow repo-local Python import guardrail, not a universal policy engine.
   - Submit and read remain in-memory bootstrap semantics; no real HTTP server or async worker exists yet.
   - The web workbench demo uses a tiny stdlib local server only for bootstrap proof and does not imply a deployment choice.
-  - Search semantics remain bootstrap-scale deterministic matching over a small bounded corpus composed from synthetic fixtures plus recorded GitHub Releases fixtures and do not imply final retrieval or ranking behavior.
+  - Search semantics remain bootstrap-scale deterministic matching over a small bounded corpus composed from synthetic fixtures, recorded GitHub Releases fixtures, recorded Internet Archive-like fixtures, and local bundle fixtures; they do not imply final retrieval or ranking behavior.
   - Comparison semantics remain bootstrap-scale side-by-side summaries of explicit agreements and disagreements and do not imply merge, trust ranking, or truth-selection behavior.
   - Subject-state semantics remain bootstrap-scale grouping plus deterministic ordering over one bootstrap `subject_key` and do not imply a final object identity or temporal graph contract.
   - Absence-report semantics remain bootstrap-scale checked-source summaries plus compact near matches and do not imply final diagnostics, ranking, fuzzy retrieval, or trust reasoning.
@@ -317,6 +325,7 @@ notes:
   - Rust Source Registry Parity Candidate v0 is the first isolated Rust behavior seam under `crates/eureka-core`; it is compared to Python-oracle source-registry goldens and is not wired into Python runtime, web, CLI, HTTP API, workers, or production paths.
   - Search Usefulness Audit v0 is a local eval/audit harness with pending manual external baselines only; it performs no Google scraping, Internet Archive scraping, live crawling, ranking, fuzzy retrieval, vector search, or LLM planning.
   - Source Coverage and Capability Model v0 adds source capability and coverage-depth metadata/projection only; it does not add connectors, live source probing, crawling, or acquisition behavior.
+  - Real Source Coverage Pack v0 adds committed recorded Internet Archive-like fixtures and local bundle fixtures only; it does not add live Internet Archive API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Comprehensive Test/Eval Operating Layer and Repo Audit v0 adds a structured test registry, command matrix, audit findings schema, AIDE queue/report scaffolding, and dated audit pack; it is governance metadata only and does not add product runtime behavior.
   - Hard Test Pack v0 adds repo-level regression guards under `tests/hardening/` for hard eval truth, external baseline honesty, public-alpha path safety, route/docs/README drift, Python-oracle golden drift, Rust parity structure, source placeholder honesty, resolution-memory path privacy, and AIDE/test registry consistency; it does not add product runtime behavior.
   - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.

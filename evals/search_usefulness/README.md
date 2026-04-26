@@ -64,7 +64,9 @@ observation and selected Source Coverage and Capability Model v0 as the next
 implementation milestone at the time of triage.
 
 Source Coverage and Capability Model v0 now exists as the metadata/projection
-layer needed by that recommendation. The next usefulness source work is Real
-Source Coverage Pack v0 with recorded fixtures only; this audit still performs
-no live crawling, Google scraping, Internet Archive scraping, or external
-baseline fabrication.
+layer needed by that recommendation. Real Source Coverage Pack v0 adds tiny
+recorded Internet Archive-like metadata/file-list fixtures plus a committed
+local bundle fixture corpus. Audit deltas are intentionally modest: external
+Google and Internet Archive baselines remain pending manual observation, and
+the audit still performs no live crawling, Google scraping, Internet Archive
+scraping, or external baseline fabrication.

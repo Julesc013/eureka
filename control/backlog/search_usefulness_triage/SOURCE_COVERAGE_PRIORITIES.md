@@ -1,6 +1,8 @@
 # Source Coverage Priorities
 
-Source coverage dominates current usefulness failures. Search Usefulness Audit v0 reports `source_coverage_gap=49`, and 43 of 64 queries currently land in `source_gap`.
+Source coverage dominates current usefulness failures. After Real Source
+Coverage Pack v0, Search Usefulness Audit v0 reports `source_coverage_gap=49`,
+and 41 of 64 queries still land in `source_gap`.
 
 ## Current Active Sources
 
@@ -8,8 +10,14 @@ Current active or fixture-backed source families:
 
 1. synthetic fixtures
 2. recorded GitHub Releases fixtures
+3. recorded Internet Archive-like metadata/file-list fixtures
+4. local bundle fixtures
 
-These are enough for deterministic sanity checks, source registry validation, Python-oracle goldens, and a few covered queries. They are not enough for old-platform software, drivers, manuals, scans, support media, or dead-link workflows.
+These are enough for deterministic sanity checks, source registry validation,
+Python-oracle goldens, a few covered queries, and initial source-backed
+old-platform/member-discovery probes. They are not enough for broad
+old-platform software, drivers, manuals, scans, support media, or dead-link
+workflows.
 
 ## Placeholder/Future Sources
 
@@ -20,23 +28,27 @@ Current placeholder or future source families:
 - Software Heritage
 - local files
 
-These must not be described as implemented connectors. They are planning anchors until a later milestone promotes recorded fixture behavior with tests.
+These must not be described as implemented connectors. They are planning
+anchors. Real Source Coverage Pack v0 adds separate active fixture records for
+recorded Internet Archive-like data and local bundle fixtures instead of
+mutating placeholders into live sources.
 
 ## Priority Order
 
 1. Source Coverage and Capability Model v0
-2. Internet Archive recorded metadata + item-file fixtures
-3. Local bundle fixture corpus
+2. Internet Archive recorded metadata + item-file fixtures (implemented as
+   `internet-archive-recorded-fixtures`)
+3. Local bundle fixture corpus (implemented as `local-bundle-fixtures`)
 4. Wayback/Memento recorded fixture
 5. Software Heritage recorded fixture
 6. package ecosystem fixtures later
 7. live source probes later
 
-Status update: Source Coverage and Capability Model v0 is implemented as
-bounded registry metadata and public projection. The next source work should be
-Real Source Coverage Pack v0, starting with recorded Internet Archive
-metadata/item-file fixtures and a local bundle fixture corpus. Placeholder
-source records remain placeholders.
+Status update: Source Coverage and Capability Model v0 and Real Source
+Coverage Pack v0 are implemented. Placeholder source records remain
+placeholders. The next usefulness work should move to deterministic
+old-platform planner/query interpretation and member-level synthetic records
+rather than live crawling.
 
 ## Why Capability Depth Comes Before More Connectors
 

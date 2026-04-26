@@ -4,14 +4,14 @@
   "created_by_slice": "search_usefulness_backlog_triage_v0",
   "selected_primary_wedge": "old_platform_software",
   "selected_secondary_wedge": "member_level_discovery",
-  "immediate_next_milestone": "Source Coverage and Capability Model v0",
+  "immediate_next_milestone": "Old-Platform Software Planner Pack v0",
   "audit_snapshot": {
     "total_queries": 64,
     "eureka_status_counts": {
-      "capability_gap": 13,
+      "capability_gap": 12,
       "covered": 5,
-      "partial": 1,
-      "source_gap": 43,
+      "partial": 4,
+      "source_gap": 41,
       "unknown": 2
     },
     "external_baseline_pending_counts": {
@@ -35,7 +35,7 @@
       "id": "SU-T001",
       "title": "Source Coverage and Capability Model v0",
       "priority": "P0",
-      "status": "selected",
+      "status": "implemented",
       "wedge": "source_operating_layer",
       "failure_modes": ["source_coverage_gap", "live_source_gap", "eval_truth_gap"],
       "evidence": {
@@ -53,13 +53,13 @@
       "tests_to_add_first": ["source capability schema validation", "placeholder source cannot claim implemented capability", "search usefulness query family maps to source capability need"],
       "likely_files": ["control/inventory/sources/", "contracts/source_registry/", "docs/architecture/", "tests/operations/"],
       "do_not_do": ["do not add live connectors", "do not scrape external systems", "do not mark placeholder sources implemented"],
-      "notes": "Selected as the immediate next milestone because source coverage dominates the audit and must be modeled before fixture expansion."
+      "notes": "Implemented as the source capability/coverage-depth model required before fixture expansion."
     },
     {
       "id": "SU-T002",
       "title": "Real Source Coverage Pack v0",
       "priority": "P0",
-      "status": "proposed",
+      "status": "implemented",
       "wedge": "old_platform_software",
       "failure_modes": ["source_coverage_gap", "compatibility_evidence_gap", "representation_gap"],
       "evidence": {
@@ -77,13 +77,13 @@
       "tests_to_add_first": ["recorded fixture parse tests", "no-network connector tests", "hard eval status-change justification tests"],
       "likely_files": ["control/inventory/sources/", "runtime/connectors/", "contracts/archive/fixtures/", "evals/search_usefulness/"],
       "do_not_do": ["do not call live source APIs", "do not add broad source federation", "do not weaken existing hard queries"],
-      "notes": "Should start with small old-platform release/documentation metadata before large archives."
+      "notes": "Implemented with tiny Internet Archive-like recorded metadata/file-list fixtures plus committed local bundle fixtures. It added no live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion."
     },
     {
       "id": "SU-T003",
       "title": "Old-Platform Software Planner Pack v0",
-      "priority": "P1",
-      "status": "proposed",
+      "priority": "P0",
+      "status": "selected",
       "wedge": "old_platform_software",
       "failure_modes": ["planner_gap", "query_interpretation_gap", "compatibility_evidence_gap"],
       "evidence": {

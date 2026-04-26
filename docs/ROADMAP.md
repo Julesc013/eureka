@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: thirty-seven local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, and Source Coverage and Capability Model v0. The latest source-registry layer adds governed capability booleans, coverage-depth metadata, source eligibility language, and safe public projections without adding connectors, live source probing, crawling, or acquisition behavior.
+Current status within this stage: thirty-eight local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, and Real Source Coverage Pack v0. The latest source-coverage layer adds tiny committed Internet Archive-like recorded metadata/file-list fixtures plus local bundle ZIP fixtures without live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
 
 ## Stage 3: Surface Skeletons
 
@@ -92,6 +92,12 @@ metadata, current limitations, and next coverage steps for each seed source.
 It keeps Internet Archive, Wayback/Memento, Software Heritage, and local-files
 records as placeholders or local/private future sources and does not add any
 new connector, live probe, crawl, or acquisition behavior.
+Real Source Coverage Pack v0 now adds separate active fixture records for
+`internet-archive-recorded-fixtures` and `local-bundle-fixtures`, with tiny
+committed metadata/file-list and ZIP bundle fixtures. It keeps the Internet
+Archive and local-files placeholders unimplemented and does not add live source
+probing, crawling, scraping, broad source federation, or arbitrary local
+filesystem ingestion.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
@@ -99,7 +105,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Real Source Coverage Pack v0
+> Old-Platform Software Planner Pack v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -108,8 +114,8 @@ Review, Public Alpha Hosting Pack v0, Rust Migration Skeleton and Parity
 Plan v0, Rust Parity Fixture Pack v0, Rust Source Registry Parity Candidate
 v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0,
-and Source Coverage and Capability Model v0 now mark the start of a more
-evidence-led backend phase. The next step is to add the first recorded real
-source coverage fixtures under the newly explicit capability and coverage-depth
-model without introducing live crawling, external scraping, or broad source
-federation.
+Source Coverage and Capability Model v0, and Real Source Coverage Pack v0 now
+mark the start of a more evidence-led backend phase. The next step is to add
+old-platform planner/query interpretation improvements over the newly expanded
+recorded fixture corpus without introducing LLM planning, fuzzy/vector search,
+ranking, live crawling, external scraping, or broad source federation.

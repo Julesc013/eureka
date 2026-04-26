@@ -96,6 +96,7 @@ Out of scope here:
 - full investigation planning, planner-owned retrieval routing, phases, checkpoints, or streaming transport for resolution runs
 - exposing raw fixture paths or private local paths through the public source-registry boundary
 - implying that source capability metadata implements a connector, live probe, crawl, or source-sync path
+- implying that recorded Internet Archive fixtures are a live Internet Archive connector or that local bundle fixtures are arbitrary local filesystem ingestion
 - live GitHub acquisition, auth, rate-limit handling, or broader multi-source federation beyond the recorded GitHub Releases fixture slice
 - final provenance graph, trust scoring, or cross-source merge behavior beyond the current bounded evidence summary seam
 - final comparison, merge, or truth-selection behavior beyond the current bounded disagreement seam

@@ -11,7 +11,7 @@ Boundary notes:
 Current thin-slice behavior:
 
 - transport-neutral public submit and read boundary over an in-memory job service
-- transport-neutral public search boundary over a bounded normalized corpus composed from synthetic fixtures plus recorded GitHub Releases records
+- transport-neutral public search boundary over a bounded normalized corpus composed from synthetic fixtures, recorded GitHub Releases records, recorded Internet Archive-like fixtures, and committed local bundle fixtures
 - transport-neutral public query-planner boundary for deterministically compiling a bounded set of raw-query families into shared `ResolutionTask` envelopes
 - transport-neutral public local-index boundary for building, inspecting, and querying a bootstrap local SQLite index over the current bounded corpus
 - transport-neutral public local-tasks boundary for creating, reading, and listing synchronous bootstrap local task records over a caller-provided local task-store root

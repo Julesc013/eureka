@@ -44,6 +44,12 @@ source-registry parity work must learn those fields before any source-registry
 replacement can be considered; this milestone does not wire Rust into Python
 runtime behavior.
 
+Real Source Coverage Pack v0 adds two more governed source records and expands
+the Python-oracle source-registry and local-index goldens. Rust source-registry
+parity must later account for `internet-archive-recorded-fixtures` and
+`local-bundle-fixtures`, but this task does not implement Rust behavior or wire
+Rust into runtime paths.
+
 ## Suggested Future Layout
 
 ```text
@@ -126,7 +132,8 @@ python scripts/generate_python_oracle_golden.py --check
 
 The generator normalizes unstable fields such as timestamps, local index paths,
 SQLite FTS mode, and generation metadata. It preserves semantically meaningful
-fields, including the current archive-resolution eval capability gaps.
+fields, including the current archive-resolution eval capability gaps and
+source-backed not-satisfied cases.
 
 ## Optional Check
 

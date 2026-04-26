@@ -62,6 +62,11 @@ The repo has already proven:
   coverage steps, projected through current public source-registry surfaces
   without adding connectors, live probing, crawling, scraping, or acquisition
   behavior
+- Real Source Coverage Pack v0 as the first recorded source-coverage fixture
+  pack for old-platform software and member-level discovery, adding separate
+  `internet-archive-recorded-fixtures` and `local-bundle-fixtures` records
+  without live Internet Archive API calls, scraping, crawling, broad source
+  federation, or arbitrary local filesystem ingestion
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -88,7 +93,7 @@ The next backend sequence is:
 16. Hard Test Pack v0 (implemented as high-risk regression guards)
 17. Search Usefulness Backlog Triage v0 (implemented as governed backlog selection)
 18. Source Coverage and Capability Model v0 (implemented as metadata/projection only)
-19. Real Source Coverage Pack v0
+19. Real Source Coverage Pack v0 (implemented as recorded fixtures only)
 20. Old-Platform Software Planner Pack v0
 21. Member-Level Synthetic Records v0
 22. Result Lanes + User-Cost Ranking v0
@@ -103,7 +108,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Real Source Coverage Pack v0
+> Old-Platform Software Planner Pack v0
 
 Why this comes next:
 
@@ -146,9 +151,10 @@ Why this comes next:
   and placeholder posture so recorded fixture coverage can improve usefulness
   without slipping into live crawling, ranking, fuzzy/vector retrieval, or
   source-coverage overreach
-- the next backend bottleneck is adding the first recorded source coverage
-  fixtures under that model, starting with old-platform software and
-  member-level discovery needs while preserving hard eval honesty
+- Real Source Coverage Pack v0 has added the first recorded source coverage
+  fixtures, and the next backend bottleneck is deterministic old-platform
+  query interpretation over those source-backed records while preserving hard
+  eval honesty
 
 ## Explicit Deferrals
 

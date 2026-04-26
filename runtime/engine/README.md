@@ -17,6 +17,8 @@ Current thin-slice behavior:
 - engine consumes normalized records only
 - governed local synthetic fixture access is kept behind `runtime/connectors/synthetic_software/`
 - recorded GitHub Releases source loading is kept behind `runtime/connectors/github_releases/`
+- recorded Internet Archive-like metadata and item-file fixtures are kept behind `runtime/connectors/internet_archive_recorded/`
+- committed local bundle ZIP fixtures are kept behind `runtime/connectors/local_bundle_fixtures/`
 - bootstrap normalization currently flows through `interfaces/ingest/`, `interfaces/extract/`, and `interfaces/normalize/`
 - exact-match resolution for bounded `target_ref` values only
 - deterministic search over a tiny bounded set of normalized fields using stable catalog order across synthetic fixtures and recorded GitHub Releases records

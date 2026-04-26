@@ -35,6 +35,11 @@ Do not do: do not scrape, crawl, or claim global recall.
 
 Expected audit effect: selected source_gap queries may become partial/covered when evidence supports it.
 
+Status: implemented with tiny committed Internet Archive-like recorded
+metadata/file-list fixtures and local bundle ZIP fixtures. It added no live
+Internet Archive API calls, scraping, crawling, broad source federation, or
+arbitrary local filesystem ingestion.
+
 ## 3. Old-Platform Software Planner Pack v0
 
 Why: planner/query-interpretation gaps are the second largest failure family.

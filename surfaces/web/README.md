@@ -32,6 +32,7 @@ Current bootstrap slice:
 - renders bounded recommended, available, and unavailable next-step actions in the exact-resolution page and at `/action-plan?target_ref=...&host=...&strategy=...` from a shared action-plan view model rather than engine-owned policy logic
 - renders the bootstrap `resolved_resource_id` for known resolved targets without importing engine internals
 - renders bounded source-family and source-origin summaries for resolved and searched records from synthetic fixtures and recorded GitHub Releases fixtures
+- renders bounded source-family and source-origin summaries for recorded Internet Archive-like fixtures and committed local bundle fixtures without implying live Internet Archive access or arbitrary local filesystem ingestion
 - renders bounded evidence summaries for resolved, searched, and inspected records without implying a final provenance or trust model
 - renders a bounded action panel from the shared `ResolutionActions` view model and exposes JSON manifest export plus ZIP bundle export routes
 - renders local stored-export actions plus a stored-exports section from a shared `StoredExports` model and exposes stored-artifact retrieval routes
@@ -70,6 +71,7 @@ Current bootstrap slice:
 - index_path configuration is a bootstrap-only demo choice for local SQLite indexing, not a final hosted search, multi-user storage, or deployment contract
 - local path-based bundle inspection is a bootstrap-only demo choice, not a production upload or import contract
 - source-registry pages are inventory, capability, and coverage-depth metadata only; placeholder and future sources must remain visibly unimplemented and local private paths must not be exposed
+- Real Source Coverage Pack v0 source pages expose two new active fixture-backed records, `internet-archive-recorded-fixtures` and `local-bundle-fixtures`; the Internet Archive and local-files placeholders remain unimplemented planning anchors
 - query-plan pages are deterministic interpretation aids only; they must not imply LLM reasoning, full investigation planning, or planner-owned retrieval routing yet
 - local-index pages are deterministic local retrieval aids only; they must not imply ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or final hosted search semantics
 - archive-resolution eval pages are regression reports only; they must not imply ranking, fuzzy retrieval, vector search, LLM planning, crawling, live source sync, or production relevance benchmarking, and current hard-task capability gaps must remain visible

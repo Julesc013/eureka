@@ -118,3 +118,17 @@ This check verifies coverage-depth vocabulary, capability booleans, placeholder
 honesty, recorded-fixture posture, and source-registry filtering. It is a
 metadata/projection guard only; it does not add source connectors, live probing,
 crawling, or source acquisition behavior.
+
+## Real Source Coverage Pack
+
+Real Source Coverage Pack v0 is validated with:
+
+```bash
+python -m unittest runtime.connectors.internet_archive_recorded.tests.test_connector runtime.connectors.local_bundle_fixtures.tests.test_connector runtime.engine.index.tests.test_real_source_coverage_pack tests.integration.test_real_source_coverage_pack
+```
+
+This check verifies the recorded Internet Archive-like fixture loader, committed
+local bundle fixture loader, local-index visibility, public projection, and
+bounded member readback. It does not perform live Internet Archive API calls,
+scraping, crawling, broad source federation, or arbitrary local filesystem
+ingestion.
