@@ -16,10 +16,14 @@ properties:
     type: string
     enum:
       - browse_software
+      - browse_software_candidates
       - find_software_release
+      - find_latest_compatible_release
       - find_driver
+      - find_member_in_container
       - find_document_article
       - find_documentation
+      - identify_software
       - generic_search
       - unknown
   object_type:
@@ -28,6 +32,7 @@ properties:
       - software
       - software_release
       - driver
+      - package_member
       - document_article
       - documentation
       - unknown

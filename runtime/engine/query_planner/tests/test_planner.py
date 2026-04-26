@@ -18,19 +18,21 @@ class QueryPlannerTestCase(unittest.TestCase):
     def test_old_blue_ftp_client_for_xp(self) -> None:
         task = plan_query("old blue FTP client for XP")
 
-        self.assertEqual(task.task_kind, "find_software_release")
-        self.assertEqual(task.object_type, "software_release")
+        self.assertEqual(task.task_kind, "identify_software")
+        self.assertEqual(task.object_type, "software")
         self.assertEqual(task.constraints["platform"]["marketing_alias"], "Windows XP")
-        self.assertEqual(task.constraints["function_hint"], "ftp client")
+        self.assertEqual(task.constraints["function_hint"], "FTP client")
         self.assertEqual(task.constraints["descriptor_hint"], "blue")
+        self.assertIn("uncertainty_notes", task.constraints)
 
     def test_latest_firefox_before_xp_support_ended(self) -> None:
         task = plan_query("latest Firefox before XP support ended")
 
-        self.assertEqual(task.task_kind, "find_software_release")
+        self.assertEqual(task.task_kind, "find_latest_compatible_release")
         self.assertEqual(task.object_type, "software_release")
         self.assertEqual(task.constraints["product_hint"], "Firefox")
         self.assertEqual(task.constraints["platform"]["marketing_alias"], "Windows XP")
+        self.assertEqual(task.constraints["temporal_goal"], "latest_before_support_drop")
         self.assertEqual(derive_search_query_from_task(task), "Firefox")
 
     def test_driver_for_thinkpad_t42(self) -> None:

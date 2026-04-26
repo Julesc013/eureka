@@ -45,13 +45,14 @@
     "checked_sources_with_reasoned_absence"
   ],
   "expected_plan": {
-    "task_kind": "find_software_release",
+    "task_kind": "find_latest_compatible_release",
     "object_type": "software_release",
     "constraints": {
       "platform": {
         "marketing_alias": "Windows XP"
       },
-      "product_hint": "Firefox"
+      "product_hint": "Firefox",
+      "temporal_goal": "latest_before_support_drop"
     },
     "prefer": [
       "versioned_release_artifact"

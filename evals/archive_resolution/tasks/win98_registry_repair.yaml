@@ -43,19 +43,19 @@
     "near_matches_with_functional_trace"
   ],
   "expected_plan": {
-    "task_kind": "find_software_release",
-    "object_type": "software_release",
+    "task_kind": "identify_software",
+    "object_type": "software",
     "constraints": {
       "platform": {
         "marketing_alias": "Windows 98"
       },
-      "function_hint": "fix broken registry"
+      "function_hint": "registry repair"
     },
     "prefer": [
-      "direct_software_artifact"
+      "named_software_artifact"
     ],
     "exclude": [
-      "modern_incompatible_release"
+      "operating_system_image"
     ]
   }
 }
