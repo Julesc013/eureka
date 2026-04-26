@@ -25,3 +25,13 @@ properties:
     type: array
     items:
       type: string
+default:
+  contract_name: LocalIndexUiContract
+  primary_view_model: contracts/ui/view_models/local_index.view_model.yaml
+  supported_surfaces:
+    - web
+    - native_cli
+    - http_api
+  notes:
+    - Local index result view models may include bounded result_lanes, primary_lane, user_cost_score, user_cost_reasons, and usefulness_summary.
+    - These fields are deterministic usefulness annotations for current records, not final production ranking, fuzzy retrieval, vector search, or LLM scoring.

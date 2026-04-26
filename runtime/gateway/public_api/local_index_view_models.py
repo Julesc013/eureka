@@ -106,8 +106,33 @@ def _coerce_results(value: Any, field_name: str) -> list[dict[str, Any]]:
                 action_hints,
                 f"{field_name}[{index}].action_hints",
             )
+        _copy_usefulness_fields(item, result, f"{field_name}[{index}]")
         results.append(result)
     return results
+
+
+def _copy_usefulness_fields(value: Mapping[str, Any], result: dict[str, Any], field_name: str) -> None:
+    result_lanes = value.get("result_lanes")
+    if result_lanes is not None:
+        result["result_lanes"] = _coerce_string_list(result_lanes, f"{field_name}.result_lanes")
+    primary_lane = value.get("primary_lane")
+    if primary_lane is not None:
+        result["primary_lane"] = _require_string(primary_lane, f"{field_name}.primary_lane")
+    user_cost_score = value.get("user_cost_score")
+    if user_cost_score is not None:
+        result["user_cost_score"] = _require_non_negative_int(
+            user_cost_score,
+            f"{field_name}.user_cost_score",
+        )
+    user_cost_reasons = value.get("user_cost_reasons")
+    if user_cost_reasons is not None:
+        result["user_cost_reasons"] = _coerce_string_list(
+            user_cost_reasons,
+            f"{field_name}.user_cost_reasons",
+        )
+    usefulness_summary = value.get("usefulness_summary")
+    if usefulness_summary is not None:
+        result["usefulness_summary"] = _require_string(usefulness_summary, f"{field_name}.usefulness_summary")
 
 
 def _coerce_json_mapping(value: Any, field_name: str) -> dict[str, Any]:

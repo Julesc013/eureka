@@ -54,6 +54,16 @@ def search_result_to_public_entry(result) -> dict[str, Any]:
         "target_ref": result.target_ref,
         "object": result.object_summary.to_dict(),
     }
+    if result.result_lanes:
+        entry["result_lanes"] = list(result.result_lanes)
+    if result.primary_lane is not None:
+        entry["primary_lane"] = result.primary_lane
+    if result.user_cost_score is not None:
+        entry["user_cost_score"] = result.user_cost_score
+    if result.user_cost_reasons:
+        entry["user_cost_reasons"] = list(result.user_cost_reasons)
+    if result.usefulness_summary is not None:
+        entry["usefulness_summary"] = result.usefulness_summary
     if result.resolved_resource_id is not None:
         entry["resolved_resource_id"] = result.resolved_resource_id
     if result.source is not None:

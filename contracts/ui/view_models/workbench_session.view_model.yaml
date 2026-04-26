@@ -45,6 +45,36 @@ properties:
         type: string
       label:
         type: string
+      record_kind:
+        type: string
+      source_id:
+        type: string
+      source_family:
+        type: string
+      member_path:
+        type: string
+      parent_target_ref:
+        type: string
+      parent_object_label:
+        type: string
+      member_kind:
+        type: string
+      result_lanes:
+        type: array
+        items:
+          type: string
+      primary_lane:
+        type: string
+      user_cost_score:
+        type: integer
+        minimum: 0
+        maximum: 9
+      user_cost_reasons:
+        type: array
+        items:
+          type: string
+      usefulness_summary:
+        type: string
     required:
       - id
   source:

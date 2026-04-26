@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
 from zipfile import BadZipFile, ZipFile
 
@@ -7,6 +8,7 @@ from runtime.engine.core import NormalizedCatalog
 from runtime.engine.index.index_record import IndexRecord
 from runtime.engine.interfaces.normalize import NormalizedResolutionRecord
 from runtime.engine.provenance import EvidenceSummary
+from runtime.engine.ranking import assign_result_usefulness
 from runtime.engine.representations import RepresentationSummary
 from runtime.engine.resolve.source_summary import normalized_record_to_source_summary
 from runtime.source_registry import SourceRecord, SourceRegistry
@@ -56,7 +58,7 @@ def _build_source_records(source_registry: SourceRegistry) -> list[IndexRecord]:
                 },
             )
         )
-    return records
+    return [_annotated_index_record(record) for record in records]
 
 
 def _build_catalog_records(record: NormalizedResolutionRecord) -> list[IndexRecord]:
@@ -193,7 +195,19 @@ def _build_catalog_records(record: NormalizedResolutionRecord) -> list[IndexReco
             )
         )
 
-    return records
+    return [_annotated_index_record(item) for item in records]
+
+
+def _annotated_index_record(record: IndexRecord) -> IndexRecord:
+    usefulness = assign_result_usefulness(record)
+    return replace(
+        record,
+        result_lanes=usefulness.result_lanes,
+        primary_lane=usefulness.primary_lane,
+        user_cost_score=usefulness.user_cost_score,
+        user_cost_reasons=usefulness.user_cost_reasons,
+        usefulness_summary=usefulness.usefulness_summary,
+    )
 
 
 def _catalog_record_summary(record: NormalizedResolutionRecord) -> str:

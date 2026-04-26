@@ -2,9 +2,11 @@ from __future__ import annotations
 
 from runtime.engine.interfaces.normalize import NormalizedResolutionRecord
 from runtime.engine.interfaces.public import ObjectSummary
+from runtime.engine.ranking import assign_result_usefulness
 
 
 def normalized_record_to_object_summary(record: NormalizedResolutionRecord) -> ObjectSummary:
+    usefulness = assign_result_usefulness(record)
     return ObjectSummary(
         id=record.object_id,
         kind=record.object_kind,
@@ -21,4 +23,9 @@ def normalized_record_to_object_summary(record: NormalizedResolutionRecord) -> O
         size_bytes=record.size_bytes,
         content_hash=record.content_hash,
         action_hints=record.action_hints,
+        result_lanes=usefulness.result_lanes,
+        primary_lane=usefulness.primary_lane,
+        user_cost_score=usefulness.user_cost_score,
+        user_cost_reasons=usefulness.user_cost_reasons,
+        usefulness_summary=usefulness.usefulness_summary,
     )

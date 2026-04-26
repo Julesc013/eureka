@@ -1307,12 +1307,23 @@ def _compact_text(value: str) -> str:
 
 
 def _search_result_to_dict(result: Any) -> dict[str, Any]:
+    object_payload = result.object_summary.to_dict()
     payload: dict[str, Any] = {
-        "record_kind": "resolved_object",
+        "record_kind": object_payload.get("record_kind", "resolved_object"),
         "target_ref": result.target_ref,
-        "object": result.object_summary.to_dict(),
+        "object": object_payload,
         "label": result.object_summary.label or result.object_summary.id,
     }
+    for field_name in (
+        "result_lanes",
+        "primary_lane",
+        "user_cost_score",
+        "user_cost_reasons",
+        "usefulness_summary",
+    ):
+        value = getattr(result, field_name, None)
+        if value is not None and value != ():
+            payload[field_name] = list(value) if isinstance(value, tuple) else value
     if result.resolved_resource_id is not None:
         payload["resolved_resource_id"] = result.resolved_resource_id
     if result.source is not None:

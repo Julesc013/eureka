@@ -71,6 +71,11 @@ class LocalIndexRecordSummary:
     content_hash: str | None = None
     evidence: tuple[str, ...] = ()
     action_hints: tuple[str, ...] = ()
+    result_lanes: tuple[str, ...] = ()
+    primary_lane: str | None = None
+    user_cost_score: int | None = None
+    user_cost_reasons: tuple[str, ...] = ()
+    usefulness_summary: str | None = None
     route_hints: dict[str, Any] | None = None
 
     def to_dict(self) -> dict[str, Any]:
@@ -117,6 +122,16 @@ class LocalIndexRecordSummary:
             payload["size_bytes"] = self.size_bytes
         if self.action_hints:
             payload["action_hints"] = list(self.action_hints)
+        if self.result_lanes:
+            payload["result_lanes"] = list(self.result_lanes)
+        if self.primary_lane is not None:
+            payload["primary_lane"] = self.primary_lane
+        if self.user_cost_score is not None:
+            payload["user_cost_score"] = self.user_cost_score
+        if self.user_cost_reasons:
+            payload["user_cost_reasons"] = list(self.user_cost_reasons)
+        if self.usefulness_summary is not None:
+            payload["usefulness_summary"] = self.usefulness_summary
         return payload
 
 

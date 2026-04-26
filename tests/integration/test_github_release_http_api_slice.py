@@ -33,21 +33,29 @@ class GitHubReleaseHttpApiSliceIntegrationTestCase(unittest.TestCase):
         self.assertEqual(search_status, "200 OK")
         search_payload = json.loads(search_body)
         self.assertEqual(search_payload["result_count"], 7)
+        target_refs = [result["target_ref"] for result in search_payload["results"]]
         self.assertEqual(
-            [result["target_ref"] for result in search_payload["results"]],
+            target_refs[:4],
             [
                 "fixture:software/archive-viewer@0.9.0",
                 "fixture:software/archivebox@0.8.5",
                 "github-release:archivebox/archivebox@v0.8.4",
                 "github-release:archivebox/archivebox@v0.8.5",
+            ],
+        )
+        self.assertEqual(
+            set(target_refs[4:]),
+            {
                 "internet-archive-recorded:ia-win7-utility-pack-fixture",
                 "internet-archive-recorded:ia-firefox-xp-support-fixture",
                 "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
-            ],
+            },
         )
         self.assertEqual(search_payload["results"][3]["source"]["label"], "GitHub Releases")
         self.assertEqual(search_payload["results"][3]["evidence"][1]["claim_kind"], "version")
         self.assertEqual(search_payload["results"][3]["evidence"][1]["claim_value"], "v0.8.5")
+        self.assertEqual(search_payload["results"][3]["primary_lane"], "community")
+        self.assertEqual(search_payload["results"][3]["user_cost_score"], 2)
 
         resolve_status, _, resolve_body = self._request(
             "/api/resolve",

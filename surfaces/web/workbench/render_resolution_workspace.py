@@ -250,6 +250,21 @@ def render_resolution_workspace_html(
         action_hints = _string_list(selected_object.get("action_hints"), "selected_object.action_hints")
         if action_hints:
             parts.append(f"          <dt>Action hints</dt><dd>{escape(', '.join(action_hints))}</dd>")
+        result_lanes = _string_list(selected_object.get("result_lanes"), "selected_object.result_lanes")
+        if result_lanes:
+            parts.append(f"          <dt>Result lanes</dt><dd>{escape(', '.join(result_lanes))}</dd>")
+        primary_lane = _optional_string(selected_object.get("primary_lane"), "selected_object.primary_lane")
+        if primary_lane is not None:
+            parts.append(f"          <dt>Primary lane</dt><dd>{escape(primary_lane)}</dd>")
+        user_cost_score = _optional_int(selected_object.get("user_cost_score"), "selected_object.user_cost_score")
+        if user_cost_score is not None:
+            parts.append(f"          <dt>User cost</dt><dd>{user_cost_score}</dd>")
+        user_cost_reasons = _string_list(selected_object.get("user_cost_reasons"), "selected_object.user_cost_reasons")
+        if user_cost_reasons:
+            parts.append(f"          <dt>User-cost reasons</dt><dd>{escape(', '.join(user_cost_reasons))}</dd>")
+        usefulness_summary = _optional_string(selected_object.get("usefulness_summary"), "selected_object.usefulness_summary")
+        if usefulness_summary is not None:
+            parts.append(f"          <dt>Usefulness</dt><dd>{escape(usefulness_summary)}</dd>")
         parts.extend(
             [
                 "        </dl>",

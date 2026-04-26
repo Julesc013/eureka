@@ -284,8 +284,8 @@ class ArchiveResolutionEvalRunner:
                     "info",
                     (
                         "Archive Resolution Eval Runner v0 records deterministic planner, local search, "
-                        "and absence behavior only; ranking, fuzzy, vector, LLM, crawling, and live sync "
-                        "are intentionally out of scope."
+                        "absence behavior, and bounded lane/user-cost annotations only; production ranking, "
+                        "fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope."
                     ),
                 ),
             )
@@ -835,8 +835,8 @@ def _not_yet_evaluable_checks(
             name="lanes.expected_lanes",
             status="not_evaluable",
             message=(
-                "Expected result lanes are recorded but not scored in Eval Runner v0; "
-                "there is no ranking or lane-placement benchmark yet."
+                "Expected future result lanes are recorded but not scored as a benchmark in Eval Runner v0; "
+                "current lane/user-cost annotations are bounded result details, not a lane-placement benchmark."
             ),
             expected=list(task.expected_lanes),
         ),
@@ -845,7 +845,7 @@ def _not_yet_evaluable_checks(
             status="not_evaluable",
             message=(
                 "Bad-result patterns are recorded but not scored in Eval Runner v0; "
-                "this runner does not implement ranking, fuzzy, semantic, or vector evaluation."
+                "this runner does not implement production ranking, fuzzy, semantic, or vector evaluation."
             ),
             expected=list(task.bad_result_patterns),
         ),
@@ -1022,12 +1022,23 @@ def _compact_text(value: str) -> str:
 
 
 def _search_result_to_dict(result: Any) -> dict[str, Any]:
+    object_payload = result.object_summary.to_dict()
     payload: dict[str, Any] = {
-        "record_kind": "resolved_object",
+        "record_kind": object_payload.get("record_kind", "resolved_object"),
         "target_ref": result.target_ref,
-        "object": result.object_summary.to_dict(),
+        "object": object_payload,
         "label": result.object_summary.label or result.object_summary.id,
     }
+    for field_name in (
+        "result_lanes",
+        "primary_lane",
+        "user_cost_score",
+        "user_cost_reasons",
+        "usefulness_summary",
+    ):
+        value = getattr(result, field_name, None)
+        if value is not None and value != ():
+            payload[field_name] = list(value) if isinstance(value, tuple) else value
     if result.resolved_resource_id is not None:
         payload["resolved_resource_id"] = result.resolved_resource_id
     if result.source is not None:

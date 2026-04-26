@@ -30,6 +30,11 @@ class IndexRecord:
     content_text: str | None = None
     evidence: tuple[str, ...] = ()
     action_hints: tuple[str, ...] = ()
+    result_lanes: tuple[str, ...] = ()
+    primary_lane: str | None = None
+    user_cost_score: int | None = None
+    user_cost_reasons: tuple[str, ...] = ()
+    usefulness_summary: str | None = None
     route_hints: dict[str, Any] | None = None
     created_by_slice: str = "local_index_v0"
 
@@ -80,6 +85,16 @@ class IndexRecord:
             payload["content_text"] = self.content_text
         if self.action_hints:
             payload["action_hints"] = list(self.action_hints)
+        if self.result_lanes:
+            payload["result_lanes"] = list(self.result_lanes)
+        if self.primary_lane is not None:
+            payload["primary_lane"] = self.primary_lane
+        if self.user_cost_score is not None:
+            payload["user_cost_score"] = self.user_cost_score
+        if self.user_cost_reasons:
+            payload["user_cost_reasons"] = list(self.user_cost_reasons)
+        if self.usefulness_summary is not None:
+            payload["usefulness_summary"] = self.usefulness_summary
         return payload
 
     def search_text(self) -> str:
@@ -106,6 +121,11 @@ class IndexRecord:
             self.content_text,
             " ".join(self.evidence),
             " ".join(self.action_hints),
+            " ".join(self.result_lanes),
+            self.primary_lane,
+            str(self.user_cost_score) if self.user_cost_score is not None else None,
+            " ".join(self.user_cost_reasons),
+            self.usefulness_summary,
             _route_hints_text(self.route_hints),
         ]
         return " ".join(part for part in fields if isinstance(part, str) and part).strip()

@@ -1,0 +1,20 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://eureka.local/contracts/archive/schemas/result_lane.schema.yaml"
+title: ResultLane
+type: string
+x-eureka-status: draft
+description: >
+  Bounded deterministic result-lane vocabulary for current Eureka result
+  annotations. This is not a production ranking ontology.
+enum:
+  - best_direct_answer
+  - installable_or_usable_now
+  - inside_bundles
+  - official
+  - preservation
+  - community
+  - documentation
+  - mentions_or_traces
+  - absence_or_next_steps
+  - still_searching
+  - other

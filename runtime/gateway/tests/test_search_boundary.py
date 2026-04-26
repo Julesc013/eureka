@@ -34,14 +34,11 @@ class SearchPublicApiTestCase(unittest.TestCase):
             for entry in response.body["results"]
             if entry["target_ref"] == "fixture:software/compatibility-lab@3.2.1"
         )
-        self.assertEqual(
-            compatibility_result["object"],
-            {
-                "id": "obj.compatibility-lab",
-                "kind": "software",
-                "label": "Compatibility Lab",
-            },
-        )
+        self.assertEqual(compatibility_result["object"]["id"], "obj.compatibility-lab")
+        self.assertEqual(compatibility_result["object"]["kind"], "software")
+        self.assertEqual(compatibility_result["object"]["label"], "Compatibility Lab")
+        self.assertEqual(compatibility_result["primary_lane"], "installable_or_usable_now")
+        self.assertEqual(compatibility_result["user_cost_score"], 2)
         self.assertTrue(compatibility_result["resolved_resource_id"].startswith("resolved:sha256:"))
         self.assertEqual(compatibility_result["source"]["label"], "Synthetic Fixture")
         self.assertEqual(compatibility_result["evidence"][0]["claim_kind"], "label")
@@ -98,6 +95,9 @@ class SearchPublicApiTestCase(unittest.TestCase):
         self.assertRegex(member_result["target_ref"], r"^member:sha256:[a-f0-9]{64}$")
         self.assertEqual(member_result["object"]["record_kind"], "synthetic_member")
         self.assertEqual(member_result["object"]["member_kind"], "driver")
+        self.assertEqual(member_result["primary_lane"], "inside_bundles")
+        self.assertEqual(member_result["user_cost_score"], 1)
+        self.assertIn("member_has_path", member_result["user_cost_reasons"])
         self.assertEqual(
             member_result["object"]["parent_target_ref"],
             "local-bundle-fixture:driver-support-cd@1.0",

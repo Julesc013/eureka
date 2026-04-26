@@ -73,6 +73,9 @@ class LocalIndexPublicApiTestCase(unittest.TestCase):
         self.assertEqual(member["media_type"], "text/plain")
         self.assertRegex(member["content_hash"], r"^sha256:[a-f0-9]{64}$")
         self.assertIn("preview_member", member["action_hints"])
+        self.assertEqual(member["primary_lane"], "inside_bundles")
+        self.assertEqual(member["user_cost_score"], 1)
+        self.assertIn("member_has_preview_or_readback_action", member["user_cost_reasons"])
 
 
 if __name__ == "__main__":

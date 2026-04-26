@@ -230,6 +230,11 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
                     "size_bytes": 256,
                     "content_hash": "sha256:abcd",
                     "action_hints": ["inspect_parent_bundle", "read_member", "preview_member"],
+                    "result_lanes": ["inside_bundles", "best_direct_answer"],
+                    "primary_lane": "inside_bundles",
+                    "user_cost_score": 1,
+                    "user_cost_reasons": ["member_has_path", "source_evidence_present"],
+                    "usefulness_summary": "inside bundles; user cost 1; why: member_has_path",
                 },
                 "source": {
                     "family": "local_bundle_fixtures",
@@ -246,6 +251,9 @@ class ResolutionWorkspaceRenderingTestCase(unittest.TestCase):
         self.assertIn("Parent target ref", html)
         self.assertIn("local-bundle-fixture:driver-support-cd@1.0", html)
         self.assertIn("preview_member", html)
+        self.assertIn("Primary lane", html)
+        self.assertIn("inside_bundles", html)
+        self.assertIn("User cost", html)
         self.assertIn("local-bundle-fixtures", html)
 
     def test_unknown_target_rendering_includes_blocked_status_notice_and_unavailable_store_state(self) -> None:

@@ -346,6 +346,20 @@ class HttpApiRoutesTestCase(unittest.TestCase):
                 EXPECTED_RESOLVED_RESOURCE_ID,
             )
             self.assertEqual(payload["results"][0]["evidence"][0]["claim_kind"], "label")
+            self.assertIn("primary_lane", payload["results"][0])
+            self.assertIn("user_cost_score", payload["results"][0])
+
+        with self.subTest(query="driver.inf"):
+            status, _, body = self._request("/api/search", {"q": "driver.inf"})
+            self.assertEqual(status, "200 OK")
+            payload = json.loads(body)
+            member = next(
+                result
+                for result in payload["results"]
+                if result["object"].get("member_kind") == "driver"
+            )
+            self.assertEqual(member["primary_lane"], "inside_bundles")
+            self.assertEqual(member["user_cost_score"], 1)
 
         with self.subTest(query="missing"):
             status, _, body = self._request("/api/search", {"q": "missing"})

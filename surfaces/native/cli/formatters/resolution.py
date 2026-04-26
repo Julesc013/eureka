@@ -53,6 +53,18 @@ def format_resolution_workspace(
         action_hints = selected_object.get("action_hints")
         if isinstance(action_hints, list) and action_hints:
             lines.append(f"action_hints: {', '.join(str(item) for item in action_hints)}")
+        primary_lane = selected_object.get("primary_lane")
+        if isinstance(primary_lane, str) and primary_lane:
+            lines.append(f"lane: {primary_lane}")
+        user_cost_score = selected_object.get("user_cost_score")
+        if isinstance(user_cost_score, int):
+            lines.append(f"user_cost: {user_cost_score}")
+        user_cost_reasons = selected_object.get("user_cost_reasons")
+        if isinstance(user_cost_reasons, list) and user_cost_reasons:
+            lines.append(f"why: {', '.join(str(item) for item in user_cost_reasons)}")
+        usefulness_summary = selected_object.get("usefulness_summary")
+        if isinstance(usefulness_summary, str) and usefulness_summary:
+            lines.append(f"usefulness: {usefulness_summary}")
 
     source = workbench_session.get("source")
     if isinstance(source, Mapping):

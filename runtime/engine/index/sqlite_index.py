@@ -13,7 +13,7 @@ from runtime.engine.interfaces.public.local_index import (
 )
 
 
-SCHEMA_VERSION = "local_index_v0"
+SCHEMA_VERSION = "local_index_v0_result_lanes"
 RECORD_KINDS = (
     "resolved_object",
     "synthetic_member",
@@ -150,6 +150,11 @@ def _create_schema(connection: sqlite3.Connection, *, fts5_available: bool) -> N
             content_text TEXT,
             evidence_json TEXT NOT NULL,
             action_hints_json TEXT NOT NULL,
+            result_lanes_json TEXT NOT NULL,
+            primary_lane TEXT,
+            user_cost_score INTEGER,
+            user_cost_reasons_json TEXT NOT NULL,
+            usefulness_summary TEXT,
             route_hints_json TEXT NOT NULL,
             search_text TEXT NOT NULL,
             created_by_slice TEXT NOT NULL
@@ -226,10 +231,15 @@ def _insert_records(
                 content_text,
                 evidence_json,
                 action_hints_json,
+                result_lanes_json,
+                primary_lane,
+                user_cost_score,
+                user_cost_reasons_json,
+                usefulness_summary,
                 route_hints_json,
                 search_text,
                 created_by_slice
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 record.index_record_id,
@@ -256,6 +266,11 @@ def _insert_records(
                 record.content_text,
                 json.dumps(list(record.evidence), sort_keys=True),
                 json.dumps(list(record.action_hints), sort_keys=True),
+                json.dumps(list(record.result_lanes), sort_keys=True),
+                record.primary_lane,
+                record.user_cost_score,
+                json.dumps(list(record.user_cost_reasons), sort_keys=True),
+                record.usefulness_summary,
                 json.dumps(record.route_hints or {}, sort_keys=True),
                 search_text,
                 record.created_by_slice,
@@ -334,7 +349,7 @@ def _query_rows(
                     JOIN index_records_fts AS fts
                       ON fts.index_record_id = records.index_record_id
                     WHERE fts.search_text MATCH ?
-                    ORDER BY LOWER(records.label), records.index_record_id
+                    ORDER BY COALESCE(records.user_cost_score, 9), LOWER(records.label), records.index_record_id
                     LIMIT ?
                     """,
                     (_fts_query(query), normalized_limit),
@@ -348,7 +363,7 @@ def _query_rows(
             SELECT *
             FROM index_records
             WHERE search_text LIKE ?
-            ORDER BY LOWER(label), index_record_id
+            ORDER BY COALESCE(user_cost_score, 9), LOWER(label), index_record_id
             LIMIT ?
             """,
             (f"%{query.casefold()}%", normalized_limit),
@@ -367,6 +382,8 @@ def _fts_query(query: str) -> str:
 def _row_to_summary(row: sqlite3.Row) -> LocalIndexRecordSummary:
     evidence = json.loads(row["evidence_json"])
     action_hints = json.loads(row["action_hints_json"])
+    result_lanes = json.loads(row["result_lanes_json"])
+    user_cost_reasons = json.loads(row["user_cost_reasons_json"])
     route_hints = json.loads(row["route_hints_json"])
     return LocalIndexRecordSummary(
         index_record_id=str(row["index_record_id"]),
@@ -392,6 +409,11 @@ def _row_to_summary(row: sqlite3.Row) -> LocalIndexRecordSummary:
         content_hash=_optional_text(row["content_hash"]),
         evidence=tuple(str(item) for item in evidence if isinstance(item, str)),
         action_hints=tuple(str(item) for item in action_hints if isinstance(item, str)),
+        result_lanes=tuple(str(item) for item in result_lanes if isinstance(item, str)),
+        primary_lane=_optional_text(row["primary_lane"]),
+        user_cost_score=_optional_non_negative_int(row["user_cost_score"]),
+        user_cost_reasons=tuple(str(item) for item in user_cost_reasons if isinstance(item, str)),
+        usefulness_summary=_optional_text(row["usefulness_summary"]),
         route_hints=route_hints if isinstance(route_hints, dict) else {},
     )
 

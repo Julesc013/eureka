@@ -71,6 +71,11 @@ class LocalIndexRenderingTestCase(unittest.TestCase):
                         "size_bytes": 128,
                         "content_hash": "sha256:abcd",
                         "action_hints": ["inspect_parent_bundle", "read_member", "preview_member"],
+                        "result_lanes": ["inside_bundles", "best_direct_answer"],
+                        "primary_lane": "inside_bundles",
+                        "user_cost_score": 1,
+                        "user_cost_reasons": ["member_has_path", "source_evidence_present"],
+                        "usefulness_summary": "inside bundles; user cost 1; why: member_has_path",
                         "evidence": ["member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf"],
                         "route_hints": {"surface_route": "/", "target_ref": "member:sha256:abc"},
                     }
@@ -91,6 +96,8 @@ class LocalIndexRenderingTestCase(unittest.TestCase):
         self.assertIn("drivers/wifi/thinkpad_t42/windows2000/driver.inf", html)
         self.assertIn("local-bundle-fixture:driver-support-cd@1.0", html)
         self.assertIn("preview_member", html)
+        self.assertIn("primary_lane: inside_bundles", html)
+        self.assertIn("user_cost_score: 1", html)
 
 
 if __name__ == "__main__":

@@ -25,6 +25,11 @@ class SearchResultEntry:
     resolved_resource_id: str | None = None
     source: SourceSummary | None = None
     evidence: tuple[EvidenceSummary, ...] = ()
+    result_lanes: tuple[str, ...] = ()
+    primary_lane: str | None = None
+    user_cost_score: int | None = None
+    user_cost_reasons: tuple[str, ...] = ()
+    usefulness_summary: str | None = None
 
 
 @dataclass(frozen=True)

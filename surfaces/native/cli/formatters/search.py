@@ -38,6 +38,20 @@ def format_search_results(search_results: Mapping[str, Any]) -> str:
             action_hints = object_summary.get("action_hints")
             if isinstance(action_hints, list) and action_hints:
                 lines.append(f"   action_hints: {', '.join(str(item) for item in action_hints)}")
+            primary_lane = result.get("primary_lane") or object_summary.get("primary_lane")
+            if isinstance(primary_lane, str) and primary_lane:
+                lines.append(f"   lane: {primary_lane}")
+            user_cost_score = result.get("user_cost_score")
+            if not isinstance(user_cost_score, int):
+                user_cost_score = object_summary.get("user_cost_score")
+            if isinstance(user_cost_score, int):
+                lines.append(f"   user_cost: {user_cost_score}")
+            user_cost_reasons = result.get("user_cost_reasons") or object_summary.get("user_cost_reasons")
+            if isinstance(user_cost_reasons, list) and user_cost_reasons:
+                lines.append(f"   why: {', '.join(str(item) for item in user_cost_reasons)}")
+            usefulness_summary = result.get("usefulness_summary") or object_summary.get("usefulness_summary")
+            if isinstance(usefulness_summary, str) and usefulness_summary:
+                lines.append(f"   usefulness: {usefulness_summary}")
             source = result.get("source")
             if isinstance(source, Mapping):
                 source_label = source.get("label") or source.get("family")

@@ -81,7 +81,29 @@ def _extract_primary_object(job_envelope: Mapping[str, Any]) -> dict[str, Any] |
     action_hints = primary_object.get("action_hints")
     if action_hints is not None:
         summary["action_hints"] = _coerce_string_list(action_hints, "result.primary_object.action_hints")
+    _copy_usefulness_fields(primary_object, summary, "result.primary_object")
     return summary
+
+
+def _copy_usefulness_fields(value: Mapping[str, Any], summary: dict[str, Any], field_name: str) -> None:
+    result_lanes = value.get("result_lanes")
+    if result_lanes is not None:
+        summary["result_lanes"] = _coerce_string_list(result_lanes, f"{field_name}.result_lanes")
+    primary_lane = _optional_string(value.get("primary_lane"), f"{field_name}.primary_lane")
+    if primary_lane is not None:
+        summary["primary_lane"] = primary_lane
+    user_cost_score = _optional_non_negative_int(value.get("user_cost_score"), f"{field_name}.user_cost_score")
+    if user_cost_score is not None:
+        summary["user_cost_score"] = user_cost_score
+    user_cost_reasons = value.get("user_cost_reasons")
+    if user_cost_reasons is not None:
+        summary["user_cost_reasons"] = _coerce_string_list(
+            user_cost_reasons,
+            f"{field_name}.user_cost_reasons",
+        )
+    usefulness_summary = _optional_string(value.get("usefulness_summary"), f"{field_name}.usefulness_summary")
+    if usefulness_summary is not None:
+        summary["usefulness_summary"] = usefulness_summary
 
 
 def _collect_notices(job_envelope: Mapping[str, Any]) -> list[dict[str, str]]:

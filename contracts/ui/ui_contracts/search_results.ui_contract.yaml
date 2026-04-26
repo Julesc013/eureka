@@ -17,7 +17,7 @@ normal_path:
     - SearchResultsEnvelope
 surface_expectations:
   - surfaces search through the public gateway boundary and do not assume engine-local search internals
-  - surfaces render deterministic ordered result lists plus any bootstrap `resolved_resource_id`, bounded source summaries, and compact evidence summaries from governed contracts
+  - surfaces render deterministic result lists plus any bootstrap `resolved_resource_id`, bounded source summaries, compact evidence summaries, and bounded lane/user-cost hints from governed contracts
   - surfaces render structured absence reports honestly when no results are found
   - surfaces link search results into exact resolution flow through target references rather than bypassing the gateway boundary
 surface_split:
@@ -27,6 +27,6 @@ surface_split:
     normal_path: public gateway contracts only
     deferred_path: runtime/engine/sdk/** only after an explicit offline or local-mode decision
 deferred_topics:
-  - ranking, fuzzy matching, and retrieval expansion
+  - final production ranking, fuzzy matching, vector search, LLM scoring, and retrieval expansion
   - pagination and broader search navigation
   - finalized surface-specific search interaction behavior

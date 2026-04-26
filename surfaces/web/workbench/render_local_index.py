@@ -140,6 +140,20 @@ def render_local_index_html(
             action_hints = result.get("action_hints")
             if isinstance(action_hints, list) and action_hints:
                 parts.append(f"            <li>action_hints: {escape(', '.join(str(item) for item in action_hints))}</li>")
+            for field_name in (
+                "primary_lane",
+                "user_cost_score",
+                "usefulness_summary",
+            ):
+                value = result.get(field_name)
+                if isinstance(value, str) and value:
+                    parts.append(f"            <li>{escape(field_name)}: {escape(value)}</li>")
+                elif isinstance(value, int):
+                    parts.append(f"            <li>{escape(field_name)}: {value}</li>")
+            for field_name in ("result_lanes", "user_cost_reasons"):
+                values = result.get(field_name)
+                if isinstance(values, list) and values:
+                    parts.append(f"            <li>{escape(field_name)}: {escape(', '.join(str(item) for item in values))}</li>")
             if result["route_hints"]:
                 parts.append(
                     f"            <li>route_hints: {escape(_mapping_text(result['route_hints']))}</li>"
@@ -218,6 +232,17 @@ def _results(value: Any, field_name: str) -> list[dict[str, Any]]:
                 "content_hash": _optional_string(item.get("content_hash"), f"{field_name}[{index}].content_hash"),
                 "size_bytes": _optional_int(item.get("size_bytes"), f"{field_name}[{index}].size_bytes"),
                 "action_hints": _optional_string_list(item.get("action_hints"), f"{field_name}[{index}].action_hints"),
+                "result_lanes": _optional_string_list(item.get("result_lanes"), f"{field_name}[{index}].result_lanes"),
+                "primary_lane": _optional_string(item.get("primary_lane"), f"{field_name}[{index}].primary_lane"),
+                "user_cost_score": _optional_int(item.get("user_cost_score"), f"{field_name}[{index}].user_cost_score"),
+                "user_cost_reasons": _optional_string_list(
+                    item.get("user_cost_reasons"),
+                    f"{field_name}[{index}].user_cost_reasons",
+                ),
+                "usefulness_summary": _optional_string(
+                    item.get("usefulness_summary"),
+                    f"{field_name}[{index}].usefulness_summary",
+                ),
                 "version_or_state": _optional_string(
                     item.get("version_or_state"),
                     f"{field_name}[{index}].version_or_state",

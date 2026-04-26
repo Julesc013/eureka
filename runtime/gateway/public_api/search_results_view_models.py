@@ -43,6 +43,7 @@ def _coerce_results(value: Any) -> list[dict[str, Any]]:
         evidence = _optional_evidence_list(item.get("evidence"), f"search_envelope.results[{index}].evidence")
         if evidence:
             result["evidence"] = evidence
+        _copy_usefulness_fields(item, result, f"search_envelope.results[{index}]")
         results.append(result)
     return results
 
@@ -79,7 +80,29 @@ def _coerce_object_summary(value: Any, field_name: str) -> dict[str, Any]:
     action_hints = value.get("action_hints")
     if action_hints is not None:
         summary["action_hints"] = _coerce_string_list(action_hints, f"{field_name}.action_hints")
+    _copy_usefulness_fields(value, summary, field_name)
     return summary
+
+
+def _copy_usefulness_fields(value: Mapping[str, Any], result: dict[str, Any], field_name: str) -> None:
+    result_lanes = value.get("result_lanes")
+    if result_lanes is not None:
+        result["result_lanes"] = _coerce_string_list(result_lanes, f"{field_name}.result_lanes")
+    primary_lane = _optional_string(value.get("primary_lane"), f"{field_name}.primary_lane")
+    if primary_lane is not None:
+        result["primary_lane"] = primary_lane
+    user_cost_score = _optional_non_negative_int(value.get("user_cost_score"), f"{field_name}.user_cost_score")
+    if user_cost_score is not None:
+        result["user_cost_score"] = user_cost_score
+    user_cost_reasons = value.get("user_cost_reasons")
+    if user_cost_reasons is not None:
+        result["user_cost_reasons"] = _coerce_string_list(
+            user_cost_reasons,
+            f"{field_name}.user_cost_reasons",
+        )
+    usefulness_summary = _optional_string(value.get("usefulness_summary"), f"{field_name}.usefulness_summary")
+    if usefulness_summary is not None:
+        result["usefulness_summary"] = usefulness_summary
 
 
 def _coerce_absence(value: Any) -> dict[str, str]:

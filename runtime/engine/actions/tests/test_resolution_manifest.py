@@ -38,6 +38,13 @@ class ResolutionManifestExportServiceTestCase(unittest.TestCase):
                     "id": "obj.synthetic-demo-app",
                     "kind": "software",
                     "label": "Synthetic Demo App",
+                    "result_lanes": ["installable_or_usable_now"],
+                    "primary_lane": "installable_or_usable_now",
+                    "user_cost_score": 2,
+                    "user_cost_reasons": ["direct_bounded_record"],
+                    "usefulness_summary": (
+                        "installable or usable now; user cost 2; why: direct_bounded_record"
+                    ),
                 },
                 "source": {
                     "family": "synthetic_fixture",

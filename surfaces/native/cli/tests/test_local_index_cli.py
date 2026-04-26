@@ -63,6 +63,8 @@ class LocalIndexCliTestCase(unittest.TestCase):
         self.assertIn("drivers/wifi/thinkpad_t42/windows2000/driver.inf", output)
         self.assertIn("parent_target_ref: local-bundle-fixture:driver-support-cd@1.0", output)
         self.assertIn("member_kind: driver", output)
+        self.assertIn("lane: inside_bundles", output)
+        self.assertIn("user_cost: 1", output)
 
 
 if __name__ == "__main__":

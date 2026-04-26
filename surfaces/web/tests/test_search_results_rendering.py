@@ -99,6 +99,9 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
                     {
                         "target_ref": "member:sha256:abc",
                         "resolved_resource_id": "resolved:sha256:abc",
+                        "primary_lane": "inside_bundles",
+                        "user_cost_score": 1,
+                        "usefulness_summary": "inside bundles; user cost 1; why: member_has_path",
                         "object": {
                             "id": "obj.synthetic-member.abc",
                             "kind": "synthetic_member",
@@ -123,3 +126,5 @@ class SearchResultsRenderingTestCase(unittest.TestCase):
         self.assertIn("[member: drivers/wifi/thinkpad_t42/windows2000/driver.inf]", html)
         self.assertIn("[kind: driver]", html)
         self.assertIn("[parent: local-bundle-fixture:driver-support-cd@1.0]", html)
+        self.assertIn("[lane: inside_bundles]", html)
+        self.assertIn("[user cost: 1]", html)

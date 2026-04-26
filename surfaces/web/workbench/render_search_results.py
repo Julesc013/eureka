@@ -107,6 +107,26 @@ def render_search_results_html(search_results: Mapping[str, Any]) -> str:
                 item += f" <span>[kind: {escape(member_kind)}]</span>"
             if parent_target_ref is not None:
                 item += f" <span>[parent: {escape(parent_target_ref)}]</span>"
+            primary_lane = _optional_string(result.get("primary_lane"), f"results[{index}].primary_lane") or _optional_string(
+                object_summary.get("primary_lane"),
+                f"results[{index}].object.primary_lane",
+            )
+            user_cost_score = result.get("user_cost_score")
+            if not isinstance(user_cost_score, int):
+                user_cost_score = object_summary.get("user_cost_score")
+            usefulness_summary = _optional_string(
+                result.get("usefulness_summary"),
+                f"results[{index}].usefulness_summary",
+            ) or _optional_string(
+                object_summary.get("usefulness_summary"),
+                f"results[{index}].object.usefulness_summary",
+            )
+            if primary_lane is not None:
+                item += f" <span>[lane: {escape(primary_lane)}]</span>"
+            if isinstance(user_cost_score, int):
+                item += f" <span>[user cost: {user_cost_score}]</span>"
+            if usefulness_summary is not None:
+                item += f" <span>[why: {escape(usefulness_summary)}]</span>"
             evidence = _optional_evidence_list(result.get("evidence"), f"results[{index}].evidence")
             if evidence:
                 item += f" <span>[evidence: {escape(_compact_evidence_text(evidence[0]))}]</span>"

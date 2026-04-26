@@ -41,6 +41,10 @@ class MemberLevelSyntheticRecordsIndexTestCase(unittest.TestCase):
         self.assertEqual(driver_record.member_kind, "driver")
         self.assertEqual(driver_record.media_type, "text/plain")
         self.assertIn("preview_member", driver_record.action_hints)
+        self.assertEqual(driver_record.primary_lane, "inside_bundles")
+        self.assertIn("best_direct_answer", driver_record.result_lanes)
+        self.assertEqual(driver_record.user_cost_score, 1)
+        self.assertIn("member_has_path", driver_record.user_cost_reasons)
 
     def test_index_queries_find_synthetic_members(self) -> None:
         records = build_index_records(_catalog_with_synthetic_members(), load_source_registry())
@@ -78,6 +82,21 @@ class MemberLevelSyntheticRecordsIndexTestCase(unittest.TestCase):
                 for result in ftp_results
             )
         )
+        driver_member = next(
+            result
+            for result in thinkpad_results
+            if result.record_kind == "synthetic_member"
+            and result.member_path == "drivers/wifi/thinkpad_t42/windows2000/driver.inf"
+        )
+        parent_bundle = next(
+            result
+            for result in thinkpad_results
+            if result.record_kind == "resolved_object"
+            and result.target_ref == "local-bundle-fixture:driver-support-cd@1.0"
+        )
+        self.assertLess(driver_member.user_cost_score or 9, parent_bundle.user_cost_score or 9)
+        self.assertEqual(driver_member.primary_lane, "inside_bundles")
+        self.assertIn("parent_bundle_context_only", parent_bundle.user_cost_reasons)
 
     def test_exact_resolution_supports_synthetic_member_target_refs(self) -> None:
         catalog = _catalog_with_synthetic_members()
@@ -98,6 +117,8 @@ class MemberLevelSyntheticRecordsIndexTestCase(unittest.TestCase):
             outcome.result.primary_object.parent_target_ref,
             "local-bundle-fixture:driver-support-cd@1.0",
         )
+        self.assertEqual(outcome.result.primary_object.primary_lane, "inside_bundles")
+        self.assertEqual(outcome.result.primary_object.user_cost_score, 1)
         self.assertTrue(
             any(item.claim_kind == "member_path" for item in outcome.result.evidence)
         )

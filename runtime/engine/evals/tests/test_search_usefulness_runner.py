@@ -62,6 +62,12 @@ class SearchUsefulnessRunnerTestCase(unittest.TestCase):
         self.assertEqual(result.eureka_status, "covered")
         self.assertGreater(result.search_result_count, 0)
         self.assertEqual(result.first_useful_result_rank, 1)
+        systems = {observation.system: observation for observation in result.observations}
+        eureka_results = systems["eureka"].top_results
+        self.assertGreater(len(eureka_results), 0)
+        self.assertIn("primary_lane", eureka_results[0])
+        self.assertIn("user_cost_score", eureka_results[0])
+        self.assertIn("user_cost_reasons", eureka_results[0])
 
     def test_hard_query_remains_gap_not_fake_green(self) -> None:
         runner = build_default_search_usefulness_audit_runner(
