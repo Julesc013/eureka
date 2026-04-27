@@ -29,7 +29,7 @@ The live audit has been re-run through Old-Platform Source Coverage Expansion v0
 
 - Primary usefulness wedge: old-platform-compatible software search
 - Secondary usefulness wedge: member-level discovery inside bundles
-- Immediate next milestone: Old-Platform Result Refinement Pack v0
+- Immediate next milestone: More Source Coverage Expansion v1
 
 Update: Source Coverage and Capability Model v0 and Real Source Coverage Pack
 v0 are implemented, and Old-Platform Software Planner Pack v0 now improves
@@ -46,6 +46,12 @@ to `partial` using source-backed structured evidence without weakening hard
 task definitions. The next milestone is Old-Platform Result Refinement Pack v0
 because the remaining blocker is expected-lane, bad-result, and result-shape
 scoring for those partials.
+Old-Platform Result Refinement Pack v0 then added deterministic result-shape,
+expected-lane, and bad-result checks. One driver/member hard task is now
+satisfied, four old-platform hard tasks remain partial, and the next milestone
+is More Source Coverage Expansion v1 because exact-release, concrete identity,
+direct-artifact, and source-evidence breadth gaps still block the selected
+wedge.
 
 ## Contents
 

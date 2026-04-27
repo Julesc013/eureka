@@ -58,6 +58,8 @@ steps:
     run: python -m unittest tests.operations.test_search_usefulness_audit_delta_v1
   - id: hard_eval_satisfaction_pack_validation
     run: python -m unittest tests.evals.test_hard_eval_satisfaction_pack
+  - id: old_platform_result_refinement_validation
+    run: python -m unittest tests.evals.test_old_platform_result_refinement
   - id: source_coverage_capability_tests
     run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
   - id: real_source_coverage_pack_tests
@@ -352,7 +354,8 @@ notes:
   - Search Usefulness Audit v0 is a local eval/audit harness with pending manual external baselines only; it performs no Google scraping, Internet Archive scraping, live crawling, ranking, fuzzy retrieval, vector search, or LLM planning.
   - Search Usefulness Audit Delta v0 is audit/reporting governance over current local results only; it adds no retrieval behavior and records no external baseline observations.
   - Search Usefulness Audit Delta v1 is audit/reporting governance over post-source-expansion results only; it recommends hard-eval satisfaction work and records no external baseline observations.
-  - Hard Eval Satisfaction Pack v0 maps existing source-backed archive hard-eval candidates into structured expected-result checks; it does not weaken hard evals, add source behavior, fabricate evidence, or mark any hard task overall satisfied.
+  - Hard Eval Satisfaction Pack v0 maps existing source-backed archive hard-eval candidates into structured expected-result checks; it does not weaken hard evals, add source behavior, or fabricate evidence.
+  - Old-Platform Result Refinement Pack v0 scores deterministic result-shape, expected-lane, and bad-result checks over current hard eval candidates; it does not add production ranking, fuzzy/vector retrieval, LLM behavior, live source behavior, or new connectors.
   - Source Coverage and Capability Model v0 adds source capability and coverage-depth metadata/projection only; it does not add connectors, live source probing, crawling, or acquisition behavior.
   - Real Source Coverage Pack v0 adds committed recorded Internet Archive-like fixtures and local bundle fixtures only; it does not add live Internet Archive API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Source Coverage Expansion v0 expands committed old-platform fixtures only; it does not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.

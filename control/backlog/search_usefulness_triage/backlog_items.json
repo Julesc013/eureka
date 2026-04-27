@@ -4,7 +4,7 @@
   "created_by_slice": "search_usefulness_backlog_triage_v0",
   "selected_primary_wedge": "old_platform_software",
   "selected_secondary_wedge": "member_level_discovery",
-  "immediate_next_milestone": "Old-Platform Result Refinement Pack v0",
+  "immediate_next_milestone": "More Source Coverage Expansion v1",
   "audit_snapshot": {
     "total_queries": 64,
     "eureka_status_counts": {
@@ -278,7 +278,7 @@
       "id": "SU-T016",
       "title": "Old-Platform Result Refinement Pack v0",
       "priority": "P0",
-      "status": "selected",
+      "status": "implemented",
       "wedge": "old_platform_software",
       "failure_modes": ["ranking_gap", "actionability_gap", "member_access_gap", "representation_gap", "eval_truth_gap"],
       "evidence": {
@@ -289,14 +289,38 @@
       "user_value": "Turns source-backed hard-eval partials into better smallest-actionable-unit results by evaluating lanes, bad-result avoidance, and parent-vs-member result shape.",
       "implementation_feasibility": "Medium; current result lanes and member records exist, but hard eval scoring must stay strict and deterministic.",
       "regression_risk": "High if result-lane checks become vague ranking or if bad-result patterns are softened.",
-      "expected_audit_delta": "Some hard-eval partials may move toward satisfied only when lane, bad-result, evidence, and result-shape checks all pass.",
+      "expected_audit_delta": "Implemented: archive evals moved from capability_gap=1/partial=5 to capability_gap=1/partial=4/satisfied=1 after strict result-shape, expected-lane, and bad-result checks were added.",
       "prerequisite_items": ["SU-T015"],
       "suggested_milestone": "Old-Platform Result Refinement Pack v0",
       "acceptance_criteria": ["expected lanes are evaluated deterministically", "bad-result patterns remain strict", "member/direct artifact results are distinguished from parent bundles", "overall satisfied is allowed only when all hard checks pass", "external baselines remain pending/manual"],
       "tests_to_add_first": ["lane-check fixture tests", "bad-result pattern guard tests", "member-vs-parent result-shape tests", "no fake satisfied hardening tests"],
       "likely_files": ["runtime/engine/evals/", "runtime/engine/ranking/", "runtime/engine/index/", "evals/archive_resolution/", "tests/evals/", "tests/hardening/"],
       "do_not_do": ["do not add production ranking", "do not add fuzzy/vector/LLM retrieval", "do not weaken bad-result patterns", "do not add live source calls", "do not fabricate external baselines"],
-      "notes": "Selected by Hard Eval Satisfaction Pack v0 because five archive hard tasks are now partial and blocked by unscored expected lanes, bad-result avoidance, and result-shape checks."
+      "notes": "Implemented under control/audits/old-platform-result-refinement-v0. It satisfied driver_inside_support_cd and left four old-platform tasks partial with explicit source/evidence/result-shape limitations."
+    },
+    {
+      "id": "SU-T017",
+      "title": "More Source Coverage Expansion v1",
+      "priority": "P0",
+      "status": "selected",
+      "wedge": "old_platform_software",
+      "failure_modes": ["source_coverage_gap", "compatibility_evidence_gap", "representation_gap", "identity_cluster_gap", "eval_truth_gap"],
+      "evidence": {
+        "query_ids": ["latest_firefox_before_xp_support_ended", "old_blue_ftp_client_xp", "windows_98_registry_repair", "windows_7_apps", "article_ray_tracing_1994_magazine"],
+        "audit_file_refs": ["control/audits/old-platform-result-refinement-v0/REMAINING_GAPS.md", "control/audits/old-platform-result-refinement-v0/result_refinement_report.json", "evals/archive_resolution/README.md"],
+        "finding_ids": ["CTEA-CONTENT-001", "CTEA-CONTENT-002", "CTEA-EVAL-001"]
+      },
+      "user_value": "Adds the next bounded recorded evidence needed for exact latest-compatible releases, concrete old-software identities, direct artifacts, and remaining article/source gaps.",
+      "implementation_feasibility": "Medium; should extend committed recorded fixtures only and reuse existing connector/index/evidence paths.",
+      "regression_risk": "Medium if fixtures overclaim exact versions, identities, or external baselines.",
+      "expected_audit_delta": "Selected after result refinement because four hard tasks remain partial and source_coverage_gap remains dominant in the broader audit.",
+      "prerequisite_items": ["SU-T016"],
+      "suggested_milestone": "More Source Coverage Expansion v1",
+      "acceptance_criteria": ["fixtures remain tiny and deterministic", "exact version/identity claims require explicit fixture evidence", "placeholder sources remain placeholders", "external baselines remain pending/manual", "hard eval satisfied movement is source-backed"],
+      "tests_to_add_first": ["recorded fixture evidence tests", "no fake exact-version guard", "hard eval source-backed movement tests", "external baseline pending guard"],
+      "likely_files": ["runtime/connectors/internet_archive_recorded/", "runtime/connectors/local_bundle_fixtures/", "evals/archive_resolution/", "tests/evals/", "tests/hardening/"],
+      "do_not_do": ["do not add live source calls", "do not scrape external systems", "do not add arbitrary local filesystem ingestion", "do not weaken hard evals", "do not fabricate latest-version or identity evidence"],
+      "notes": "Selected by Old-Platform Result Refinement Pack v0 because one hard task is now satisfied while four old-platform tasks remain partial due evidence breadth, exact-release, identity, and direct-lane limits."
     },
     {
       "id": "SU-T008",

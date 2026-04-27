@@ -401,3 +401,9 @@
 - Status: accepted
 - Decision: Eureka now records Hard Eval Satisfaction Pack v0 under `control/audits/hard-eval-satisfaction-v0/` and updates Archive Resolution Eval Runner v0 so hard expected-result checks can inspect source-backed member paths, representation locators, compatibility evidence, result lanes, source ids, and source families already present in bounded local results.
 - Why: Delta v1 showed five archive hard tasks with local source-backed candidates but `not_satisfied` status. The new mapping moves those five tasks to `partial` without changing task definitions, removing expected fields, fabricating evidence, or marking any task overall satisfied. The next selected milestone is Old-Platform Result Refinement Pack v0 because expected lanes and bad-result pattern checks remain not evaluable.
+
+## ADR-068: Score Result Shape Before Expanding Old-Platform Evidence Again
+
+- Status: accepted
+- Decision: Eureka now records Old-Platform Result Refinement Pack v0 under `control/audits/old-platform-result-refinement-v0/` and updates Archive Resolution Eval Runner v0 to score deterministic primary-candidate shape, expected lanes, and bad-result pattern avoidance for the current old-platform hard eval partials.
+- Why: Hard Eval Satisfaction Pack v0 proved source-backed candidates exist but did not score lane or bad-result expectations. The refinement moves `driver_inside_support_cd` to `satisfied` while keeping four old-platform tasks `partial` and `article_inside_magazine_scan` as `capability_gap`. The next selected milestone is More Source Coverage Expansion v1 because the remaining partials need exact-release, concrete-identity, direct-artifact, or source-evidence breadth. This does not weaken hard evals, add retrieval behavior, fabricate evidence, add live sources, scrape external systems, port Rust behavior, start native app work, or add deployment infrastructure.

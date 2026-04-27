@@ -119,3 +119,10 @@ Hard Eval Satisfaction Pack v0 now lives under
 moves five hard tasks to `partial` through source-backed structured evidence
 mapping; it does not change this broader 64-query audit corpus or external
 baseline posture.
+
+Old-Platform Result Refinement Pack v0 now lives under
+`control/audits/old-platform-result-refinement-v0/`. It refines archive hard
+eval result-shape, lane, and bad-result checks, moving one driver/member task
+to `satisfied` while leaving four old-platform tasks partial. It does not
+change the 64-query Search Usefulness Audit corpus, retrieval behavior, or
+external baseline posture.

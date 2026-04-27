@@ -505,6 +505,28 @@
       "notes": "Added by Hard Eval Satisfaction Pack v0; validates eval evidence mapping without weakening hard evals or changing source behavior."
     },
     {
+      "test_id": "old_platform_result_refinement_validation",
+      "label": "Old-platform result refinement validation",
+      "command": "python -m unittest tests.evals.test_old_platform_result_refinement",
+      "category": "eval",
+      "owner_area": "control/audits/old-platform-result-refinement-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where the archive eval runner builds a transient local index",
+      "expected_runtime": "seconds",
+      "failure_means": "The old-platform result refinement report, strict driver satisfaction, remaining partial explanations, or no-fake-baseline guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Old-Platform Result Refinement Pack v0; validates deterministic result-shape, lane, and bad-result checks without weakening hard evals or adding retrieval behavior."
+    },
+    {
       "test_id": "hardening_tests",
       "label": "Hard Test Pack v0 aggregate",
       "command": "python -m unittest discover -s tests/hardening -t .",

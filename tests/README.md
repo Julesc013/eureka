@@ -41,8 +41,14 @@ Satisfaction Pack v0 recommendation. It does not exercise product behavior.
 Hard Eval Satisfaction Pack v0 adds
 `tests/evals/test_hard_eval_satisfaction_pack.py` to validate the hard-eval
 satisfaction report, source-backed partial movement, the unchanged
-article-inside-scan capability gap, and the rule that no hard task is marked
-overall satisfied without the still-deferred lane/bad-result checks.
+article-inside-scan capability gap, and the rule that any later satisfied task
+must have source-backed structured evidence.
+
+Old-Platform Result Refinement Pack v0 adds
+`tests/evals/test_old_platform_result_refinement.py` to validate the
+result-refinement report, strict result-shape checks, expected-lane checks,
+bad-result avoidance, one source-backed satisfied driver/member task, and
+explicit remaining partial/capability-gap explanations.
 
 Old-Platform Source Coverage Expansion v0 adds
 `tests/integration/test_old_platform_source_coverage_expansion.py` and expands

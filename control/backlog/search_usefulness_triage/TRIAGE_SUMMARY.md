@@ -115,7 +115,13 @@ and `partial=5` by mapping source-backed member, representation,
 compatibility, and source-family evidence into hard expected-result checks
 without weakening task definitions.
 
-Current next implementation milestone: Old-Platform Result Refinement Pack v0.
+Old-Platform Result Refinement Pack v0 then added deterministic
+primary-candidate shape, expected-lane, and bad-result checks. Archive evals
+now report `capability_gap=1`, `partial=4`, and `satisfied=1`; the driver
+support-CD member task is satisfied while four old-platform tasks remain
+partial with explicit evidence and lane limits.
+
+Current next implementation milestone: More Source Coverage Expansion v1.
 
 ## Evidence That Would Change The Plan
 
@@ -127,7 +133,7 @@ The plan should be revisited if:
   dominant
 - hardening tests reveal route/public-alpha/privacy constraints that prevent safe fixture work
 
-Until then, the next lowest-risk move is a fresh audit delta because the source
-expansion changed enough local results that the repo should measure the
-movement before choosing compatibility expansion, result-lane refinement,
-another recorded source pack, or Rust planner parity.
+Until then, the next lowest-risk move is another bounded recorded source pack
+because the remaining old-platform partials need exact-release, concrete
+identity, direct-artifact, and source-evidence breadth before more hard evals
+can honestly become satisfied.

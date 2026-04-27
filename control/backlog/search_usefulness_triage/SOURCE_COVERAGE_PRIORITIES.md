@@ -62,9 +62,12 @@ v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
 Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
 v0 are implemented, and Search Usefulness Audit Delta v1 has recorded the
 movement. Hard Eval Satisfaction Pack v0 then moved five source-backed archive
-hard tasks to partial. Placeholder source records remain placeholders. The next
-usefulness work should refine result lanes, bad-result avoidance, and
-member-vs-parent result shape before adding another broad source pack.
+hard tasks to partial. Old-Platform Result Refinement Pack v0 then satisfied
+the driver support-CD member task and left four old-platform tasks partial with
+explicit evidence/result-shape limits. Placeholder source records remain
+placeholders. The next usefulness work should add more bounded recorded source
+coverage for exact-release, concrete-identity, direct-artifact, and
+source-evidence breadth gaps before external baselines or Rust parity.
 
 ## Why Capability Depth Comes Before More Connectors
 

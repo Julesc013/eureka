@@ -277,6 +277,42 @@ source calls, external scraping, or weaken hard expected-result patterns.
 Expected audit effect: selected hard eval partials may move toward satisfied
 only if deterministic lane/bad-result/result-shape checks pass.
 
+Status: implemented as Old-Platform Result Refinement Pack v0 under
+`control/audits/old-platform-result-refinement-v0/`. Archive evals now report
+`capability_gap=1`, `partial=4`, and `satisfied=1`; the driver support-CD
+member task is satisfied, while four old-platform hard tasks remain partial.
+
+## 7e. More Source Coverage Expansion v1
+
+Why: result refinement proved one hard task can satisfy strict checks, but the
+remaining old-platform partials still need exact latest-compatible release
+evidence, concrete old-software identity evidence, direct artifact evidence,
+and broader source-backed fixture material.
+
+Prerequisite: Old-Platform Result Refinement Pack v0 and hardening tests remain
+green.
+
+Likely files: `runtime/connectors/internet_archive_recorded/`,
+`runtime/connectors/local_bundle_fixtures/`, `evals/archive_resolution/`,
+`tests/evals/`, and `tests/hardening/`.
+
+Acceptance criteria: fixtures remain tiny and deterministic; exact version and
+identity claims require explicit source-backed evidence; placeholder sources
+remain placeholders; external baselines remain pending/manual; any hard-eval
+movement is source-backed.
+
+Tests to add first: recorded fixture evidence tests, no-fake-exact-version
+guards, hard eval source-backed movement tests, and external baseline pending
+guards.
+
+Do not do: do not add live source calls, scrape external systems, add arbitrary
+local filesystem ingestion, weaken hard evals, or fabricate latest-version or
+identity evidence.
+
+Expected audit effect: selected remaining old-platform hard partials may move
+toward satisfied only if the new bounded evidence satisfies existing strict
+checks.
+
 ## 8. Rust Query Planner Parity Candidate v0
 
 Why: Rust parity should preserve useful Python planner behavior after it stabilizes.

@@ -25,3 +25,8 @@ does not belong in runtime state.
 Hard Eval Satisfaction Pack v0 records the archive-resolution hard-eval
 satisfaction pass under `control/audits/hard-eval-satisfaction-v0/`. It is
 source-backed eval evidence, not AIDE runtime state.
+
+Old-Platform Result Refinement Pack v0 records the archive-resolution
+result-shape refinement pass under
+`control/audits/old-platform-result-refinement-v0/`. It is deterministic eval
+evidence, not AIDE runtime state.

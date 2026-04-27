@@ -100,6 +100,14 @@ The repo has already proven:
   utility, browser-note, registry-repair, and driver/support-media cases without
   live source calls, scraping, crawling, arbitrary local filesystem ingestion,
   real binaries, or production source claims
+- Search Usefulness Audit Delta v1 as the second measured audit/reporting pack
+  after source expansion
+- Hard Eval Satisfaction Pack v0 as the first source-backed hard-eval
+  satisfaction mapping/report pack
+- Old-Platform Result Refinement Pack v0 as the first strict result-shape,
+  expected-lane, and bad-result evaluation pass over current old-platform hard
+  eval partials, moving archive evals to `capability_gap=1`, `partial=4`, and
+  `satisfied=1` without adding retrieval behavior or weakening hard tasks
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -135,7 +143,7 @@ The next backend sequence is:
 25. Old-Platform Source Coverage Expansion v0 (implemented as recorded fixtures only)
 26. Search Usefulness Audit Delta v1 (implemented as audit/reporting)
 27. Hard Eval Satisfaction Pack v0 (implemented as eval evidence mapping/reporting)
-28. Old-Platform Result Refinement Pack v0
+28. Old-Platform Result Refinement Pack v0 (implemented as strict result-shape eval refinement)
 29. More Source Coverage Expansion v1
 30. Manual External Baseline Observation Pack v0
 31. Rust Query Planner Parity Candidate v0
@@ -147,7 +155,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Old-Platform Result Refinement Pack v0
+> More Source Coverage Expansion v1
 
 Why this comes next:
 
@@ -216,10 +224,13 @@ Why this comes next:
 - Hard Eval Satisfaction Pack v0 maps current source-backed candidates into
   hard expected-result checks without weakening task definitions; archive evals
   now report `capability_gap=1` and `partial=5`
-- the next backend bottleneck is old-platform result refinement: the repo
-  should score expected lanes, bad-result avoidance, and result-shape quality
-  for the current source-backed partials before claiming any task fully
-  satisfied
+- Old-Platform Result Refinement Pack v0 scores expected lanes, bad-result
+  avoidance, and result-shape quality for the current source-backed partials;
+  archive evals now report `capability_gap=1`, `partial=4`, and `satisfied=1`
+- the next backend bottleneck is more bounded source evidence: four
+  old-platform hard tasks remain partial because exact release identity,
+  concrete product identity, direct artifact, or source-evidence breadth is
+  still insufficient
 
 ## Explicit Deferrals
 

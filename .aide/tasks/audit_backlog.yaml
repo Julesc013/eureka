@@ -20,7 +20,7 @@
         "CTEA-CONTENT-002"
       ],
       "title": "Prioritize recorded fixture source coverage for source-gap query families",
-      "status": "measured_by_search_usefulness_audit_delta_v1",
+      "status": "selected_after_old_platform_result_refinement_pack_v0",
       "suggested_milestone": "More Source Coverage Expansion v1"
     },
     {
@@ -48,8 +48,8 @@
         "CTEA-CONTENT-003"
       ],
       "title": "Add member-level discovery fixtures, lineage, and index records",
-      "status": "partially_addressed_with_expanded_local_bundle_members_and_measured_by_delta_v1",
-      "suggested_milestone": "Old-Platform Result Refinement Pack v0"
+      "status": "partially_addressed_with_result_refinement_pack_v0",
+      "suggested_milestone": "More Source Coverage Expansion v1"
     },
     {
       "id": "audit-backlog-compatibility-evidence",
@@ -77,8 +77,19 @@
         "CTEA-BEHAVIOR-001"
       ],
       "title": "Evaluate expected lanes, bad-result avoidance, and member-vs-parent result shape for source-backed hard eval partials",
-      "status": "selected_by_hard_eval_satisfaction_pack_v0",
-      "suggested_milestone": "Old-Platform Result Refinement Pack v0"
+      "status": "addressed_by_old_platform_result_refinement_pack_v0",
+      "suggested_milestone": "More Source Coverage Expansion v1"
+    },
+    {
+      "id": "audit-backlog-more-source-coverage-v1",
+      "finding_refs": [
+        "CTEA-CONTENT-001",
+        "CTEA-CONTENT-002",
+        "CTEA-EVAL-001"
+      ],
+      "title": "Add more bounded recorded source evidence for remaining old-platform partials",
+      "status": "selected_by_old_platform_result_refinement_pack_v0",
+      "suggested_milestone": "More Source Coverage Expansion v1"
     }
   ]
 }

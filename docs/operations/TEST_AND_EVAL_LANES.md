@@ -138,10 +138,21 @@ Hard Eval Satisfaction Pack v0 is validated with:
 python -m unittest tests.evals.test_hard_eval_satisfaction_pack
 ```
 
-The validation checks the satisfaction report, `capability_gap=1` and
-`partial=5` archive-eval posture, source-backed evidence for moved tasks, the
-unchanged article-inside-scan capability gap, and the absence of overall
-satisfied hard tasks while lane/bad-result checks remain not evaluable.
+The validation checks the satisfaction report, its historical
+`capability_gap=1` and `partial=5` archive-eval posture, source-backed evidence
+for moved tasks, and the unchanged article-inside-scan capability gap.
+
+Old-Platform Result Refinement Pack v0 is validated with:
+
+```bash
+python -m unittest tests.evals.test_old_platform_result_refinement
+```
+
+The validation checks the result-refinement report,
+`capability_gap=1`/`partial=4`/`satisfied=1` archive-eval posture, strict
+result-shape checks, expected-lane checks, bad-result avoidance, and explicit
+remaining partial/capability-gap explanations. It does not validate production
+ranking or retrieval behavior.
 
 ## Source Coverage And Capability
 
