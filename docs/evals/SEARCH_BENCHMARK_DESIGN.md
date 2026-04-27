@@ -57,6 +57,9 @@ The eval suite now has two executable guardrails:
 - it builds or uses Local Index v0 when available
 - it falls back to deterministic search when needed
 - it records bounded absence reasoning for no-result cases
+- Hard Eval Satisfaction Pack v0 maps source-backed member paths,
+  representation locators, compatibility evidence, and source-family evidence
+  into hard expected-result checks without weakening task definitions
 - it includes bounded result-lane and user-cost annotations where current
   result records expose them
 - it emits stable JSON per-task and suite reports

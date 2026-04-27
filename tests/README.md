@@ -38,6 +38,12 @@ second committed delta pack, v0 baseline reference, current audit counts,
 archive-eval movement, pending/manual external-baseline posture, and Hard Eval
 Satisfaction Pack v0 recommendation. It does not exercise product behavior.
 
+Hard Eval Satisfaction Pack v0 adds
+`tests/evals/test_hard_eval_satisfaction_pack.py` to validate the hard-eval
+satisfaction report, source-backed partial movement, the unchanged
+article-inside-scan capability gap, and the rule that no hard task is marked
+overall satisfied without the still-deferred lane/bad-result checks.
+
 Old-Platform Source Coverage Expansion v0 adds
 `tests/integration/test_old_platform_source_coverage_expansion.py` and expands
 component-local connector/index/compatibility tests. These checks guard the

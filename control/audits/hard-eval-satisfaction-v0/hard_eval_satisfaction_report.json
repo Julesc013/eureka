@@ -1,0 +1,131 @@
+{
+  "report_id": "hard_eval_satisfaction_v0",
+  "created_by_slice": "hard_eval_satisfaction_pack_v0",
+  "baseline": {
+    "label": "Search Usefulness Audit Delta v1 reported archive eval baseline",
+    "source": "control/audits/search-usefulness-delta-v1/delta_report.json",
+    "status_counts": {
+      "capability_gap": 1,
+      "not_satisfied": 5
+    },
+    "notes": [
+      "The baseline had source-backed candidates for five tasks, but hard expected-result checks were not satisfied.",
+      "The baseline did not include external baseline observations."
+    ]
+  },
+  "current": {
+    "label": "Hard Eval Satisfaction Pack v0 current archive eval output",
+    "source": "python scripts/run_archive_resolution_evals.py --json",
+    "status_counts": {
+      "capability_gap": 1,
+      "partial": 5
+    },
+    "task_count": 6,
+    "tasks": [
+      {
+        "task_id": "article_inside_magazine_scan",
+        "status": "capability_gap",
+        "search_expected_result_check": "capability_gap",
+        "evidence_summary": "No bounded article/page/OCR/scan fixture exists."
+      },
+      {
+        "task_id": "driver_inside_support_cd",
+        "status": "partial",
+        "search_expected_result_check": "satisfied",
+        "evidence_summary": "ThinkPad T42 Wi-Fi Windows 2000 driver.inf member path and local bundle source evidence."
+      },
+      {
+        "task_id": "latest_firefox_before_xp_drop",
+        "status": "partial",
+        "search_expected_result_check": "partial",
+        "evidence_summary": "Firefox XP support-note fixtures provide Windows XP support evidence but no exact latest release or direct installer."
+      },
+      {
+        "task_id": "old_blue_ftp_client_xp",
+        "status": "partial",
+        "search_expected_result_check": "partial",
+        "evidence_summary": "Local bundle trace for old blue FTP client on XP exists but does not prove concrete product identity or direct installer."
+      },
+      {
+        "task_id": "win98_registry_repair",
+        "status": "partial",
+        "search_expected_result_check": "satisfied",
+        "evidence_summary": "Windows 98 registry-repair recorded fixture with README and exe text stand-in file listings."
+      },
+      {
+        "task_id": "windows_7_apps",
+        "status": "partial",
+        "search_expected_result_check": "satisfied",
+        "evidence_summary": "Windows 7 portable-app recorded fixture with individual installer text stand-in and compatibility evidence."
+      }
+    ]
+  },
+  "delta": {
+    "status_count_changes": {
+      "capability_gap": 0,
+      "not_satisfied": -5,
+      "partial": 5
+    },
+    "improved_tasks": [
+      "driver_inside_support_cd",
+      "latest_firefox_before_xp_drop",
+      "old_blue_ftp_client_xp",
+      "win98_registry_repair",
+      "windows_7_apps"
+    ],
+    "still_capability_gap": [
+      "article_inside_magazine_scan"
+    ],
+    "overall_satisfied_tasks": [],
+    "interpretation": "Five tasks moved from not_satisfied to partial. No task is claimed satisfied overall."
+  },
+  "evidence_used": {
+    "source_ids": [
+      "internet-archive-recorded-fixtures",
+      "local-bundle-fixtures"
+    ],
+    "evidence_fields": [
+      "source_id",
+      "source_family",
+      "member_path",
+      "representation_id",
+      "compatibility_evidence",
+      "evidence",
+      "result_lanes"
+    ],
+    "fixture_changes": []
+  },
+  "runner_changes": [
+    "Structured expected-result evidence mapping now recognizes source-backed member paths, representation locators, compatibility records, artifact-like file paths, and bounded task constraints.",
+    "Planner fields alone cannot satisfy a search expected-result check.",
+    "Lane and bad-result pattern checks remain not_evaluable, so moved tasks are partial overall."
+  ],
+  "do_not_do": [
+    "weaken hard evals",
+    "remove hard eval tasks",
+    "fabricate source evidence",
+    "fabricate external baselines",
+    "live crawling",
+    "Google scraping",
+    "Internet Archive scraping",
+    "live source probes",
+    "arbitrary local filesystem ingestion",
+    "fuzzy/vector/LLM retrieval",
+    "Rust behavior ports",
+    "native apps",
+    "production deployment"
+  ],
+  "recommended_next_milestone": "Old-Platform Result Refinement Pack v0",
+  "alternatives_considered": [
+    "More Source Coverage Expansion v1",
+    "Manual External Baseline Observation Pack v0",
+    "Rust Query Planner Parity Candidate v0",
+    "Public Alpha Rehearsal Evidence v0"
+  ],
+  "limitations": [
+    "No article/page/OCR fixture exists for article_inside_magazine_scan.",
+    "Firefox XP remains partial because exact latest-compatible release identity is not proven.",
+    "Old blue FTP client remains partial because concrete product identity is not proven.",
+    "Overall satisfaction remains blocked by unscored lane and bad-result pattern checks."
+  ]
+}

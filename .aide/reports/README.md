@@ -21,3 +21,7 @@ run dumps here.
 Search Usefulness Audit Delta v1 records the post-source-expansion delta under
 `control/audits/search-usefulness-delta-v1/`. It is also reporting-only and
 does not belong in runtime state.
+
+Hard Eval Satisfaction Pack v0 records the archive-resolution hard-eval
+satisfaction pass under `control/audits/hard-eval-satisfaction-v0/`. It is
+source-backed eval evidence, not AIDE runtime state.

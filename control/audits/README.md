@@ -33,3 +33,7 @@ Current packs:
   post-source-expansion audit output to the v0 delta aggregate baseline and
   recording archive-eval movement toward source-backed but still unsatisfied
   hard tasks.
+- `hard-eval-satisfaction-v0/`: stable archive-resolution hard-eval report
+  recording the move from `capability_gap=1, not_satisfied=5` to
+  `capability_gap=1, partial=5` without weakening hard tasks or fabricating
+  source evidence.
