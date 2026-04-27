@@ -220,7 +220,8 @@ class NativeCliMainTestCase(unittest.TestCase):
 
         self.assertEqual(exit_code, 0)
         self.assertIn("Source registry", output)
-        self.assertIn("source_count: 8", output)
+        self.assertIn("source_count: 9", output)
+        self.assertIn("article-scan-recorded-fixtures", output)
         self.assertIn("synthetic-fixtures", output)
         self.assertIn("github-releases-recorded-fixtures", output)
         self.assertIn("internet-archive-recorded-fixtures", output)
@@ -255,7 +256,11 @@ class NativeCliMainTestCase(unittest.TestCase):
         self.assertEqual(capability_exit_code, 0)
         self.assertEqual(
             [source["source_id"] for source in capability_payload["sources"]],
-            ["github-releases-recorded-fixtures", "internet-archive-recorded-fixtures"],
+            [
+                "article-scan-recorded-fixtures",
+                "github-releases-recorded-fixtures",
+                "internet-archive-recorded-fixtures",
+            ],
         )
 
         coverage_exit_code, coverage_output = run_cli(
@@ -309,6 +314,7 @@ class NativeCliMainTestCase(unittest.TestCase):
                 "github_releases",
                 "internet_archive_recorded",
                 "local_bundle_fixtures",
+                "article_scan_recorded",
             ],
         )
         self.assertGreaterEqual(len(payload["near_matches"]), 3)

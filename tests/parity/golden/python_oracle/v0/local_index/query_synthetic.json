@@ -4,15 +4,15 @@
       "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
       "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
       "index_path_kind": "bootstrap_local_path",
-      "record_count": 479,
+      "record_count": 489,
       "record_kind_counts": {
-        "evidence": 305,
+        "evidence": 313,
         "member": 33,
         "representation": 53,
         "resolved_object": 25,
-        "source_record": 8,
+        "source_record": 9,
         "state_or_release": 25,
-        "synthetic_member": 30
+        "synthetic_member": 31
       }
     },
     "query": "synthetic",
@@ -1197,6 +1197,69 @@
         ],
         "user_cost_score": 2,
         "version_or_state": "0.8.5"
+      },
+      {
+        "action_hints": [
+          "inspect_parent_issue",
+          "preview_ocr_text",
+          "cite_page_range",
+          "export_manifest"
+        ],
+        "content_hash": "sha256:7e3b972c02becefcb80da136ae1adbc8b2599a828da52ea3b6418cb82835e96d",
+        "evidence": [
+          "label Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop article_scan_recorded article_segment Article Scan Recorded Fixtures",
+          "parent_issue PC Magazine July 1994 Issue Fixture article_scan_recorded source_metadata Article Scan Recorded Fixtures",
+          "page_range 123-128 article_scan_recorded page_range Article Scan Recorded Fixtures",
+          "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures",
+          "topic ray tracing article_scan_recorded article_segment Article Scan Recorded Fixtures",
+          "ocr_text_fixture Synthetic OCR-like fixture text: the article segment is inside a scanned 1994 magazine issue fixture and discusses ray tracing for PC graphics. article_scan_recorded ocr_text_fixture Article Scan Recorded Fixtures",
+          "file_listing payloads/pc_magazine_1994_issue_manifest.json article_scan_recorded file_listing Article Scan Recorded Fixtures",
+          "file_listing payloads/pc_magazine_1994_ray_tracing_ocr.txt article_scan_recorded file_listing Article Scan Recorded Fixtures"
+        ],
+        "index_record_id": "synthetic_member:article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+        "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop",
+        "media_type": "text/plain",
+        "member_kind": "article_segment",
+        "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+        "parent_object_label": "PC Magazine July 1994 Issue Fixture",
+        "parent_representation_id": "rep.article-scan-recorded.pc.magazine.july.1994.fixture.scan-placeholder",
+        "parent_resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture",
+        "parent_target_ref": "article-scan-recorded:issue:pc.magazine.july.1994.fixture",
+        "primary_lane": "inside_bundles",
+        "record_kind": "synthetic_member",
+        "representation_id": "rep.article-scan-recorded.pc.magazine.1994.ray.tracing.article.ocr",
+        "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+        "result_lanes": [
+          "inside_bundles",
+          "best_direct_answer",
+          "documentation"
+        ],
+        "route_hints": {
+          "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+          "parent_representation_id": "rep.article-scan-recorded.pc.magazine.july.1994.fixture.scan-placeholder",
+          "parent_target_ref": "article-scan-recorded:issue:pc.magazine.july.1994.fixture",
+          "record_kind": "synthetic_member",
+          "surface_route": "/",
+          "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+        },
+        "size_bytes": 415,
+        "source_family": "article_scan_recorded",
+        "source_id": "article-scan-recorded-fixtures",
+        "source_label": "Article Scan Recorded Fixtures",
+        "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+        "summary": "article_segment member of PC Magazine July 1994 Issue Fixture",
+        "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+        "usefulness_summary": "inside bundles; user cost 2; why: inner_member_has_parent_lineage; member_has_path; action_available; source_evidence_present; compatibility_hint_present; article_segment_has_page_locator",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "source_evidence_present",
+          "compatibility_hint_present",
+          "article_segment_has_page_locator"
+        ],
+        "user_cost_score": 2,
+        "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
       },
       {
         "evidence": [
@@ -4321,37 +4384,6 @@
         "target_ref": "fixture:software/archivebox@0.8.5",
         "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
         "user_cost_reasons": [
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:0",
-        "label": "ArchiveBox 0.8.5 evidence 1",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
           "source_evidence_present"
         ],
         "user_cost_score": 6,

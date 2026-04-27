@@ -1,0 +1,132 @@
+{
+  "body": {
+    "selected_source_id": "article-scan-recorded-fixtures",
+    "source_count": 1,
+    "sources": [
+      {
+        "artifact_types": [
+          "issue_metadata",
+          "article_segment",
+          "page_range",
+          "ocr_text_fixture"
+        ],
+        "authority_class": "repo_governed_recorded_fixture",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": true,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": true,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": true,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": true,
+          "supports_hashes": true,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": true,
+          "supports_reviews_or_comments": false,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_file_listing",
+          "supports_member_listing",
+          "supports_hashes",
+          "supports_content_text",
+          "fixture_backed",
+          "recorded_fixture_backed",
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Article scan recorded fixtures connector",
+          "status": "fixture_backed"
+        },
+        "connector_mode": "recorded_fixture_only",
+        "coverage": {
+          "connector_mode": "recorded_fixture_only",
+          "coverage_depth": "content_or_member_indexed",
+          "coverage_notes": "Tiny synthetic article/scan fixture exposes one article-like segment inside a scanned magazine-like parent issue for the article-inside-scan hard eval.",
+          "coverage_status": "active_recorded_fixture_scope",
+          "current_limitations": [
+            "Recorded fixture scope only",
+            "No real magazine scans",
+            "No copyrighted article text",
+            "No OCR engine",
+            "No PDF or image parsing",
+            "No live source access"
+          ],
+          "indexed_scopes": [
+            "issue_metadata",
+            "article_segment",
+            "page_range",
+            "ocr_text_fixture",
+            "file_listing"
+          ],
+          "last_fixture_update": "static_fixture",
+          "next_coverage_step": "Use this fixture to validate bounded article/page result-shape checks before considering any broader scan/article source strategy."
+        },
+        "coverage_depth": "content_or_member_indexed",
+        "coverage_status": "active_recorded_fixture_scope",
+        "current_limitations": [
+          "Recorded fixture scope only",
+          "No real magazine scans",
+          "No copyrighted article text",
+          "No OCR engine",
+          "No PDF or image parsing",
+          "No live source access"
+        ],
+        "extraction_mode": "recorded_fixture_only",
+        "freshness_model": "static_fixture",
+        "identifier_types_emitted": [
+          "target_ref",
+          "article_id",
+          "page_range"
+        ],
+        "indexed_scopes": [
+          "issue_metadata",
+          "article_segment",
+          "page_range",
+          "ocr_text_fixture",
+          "file_listing"
+        ],
+        "legal_posture": "repo_governed_fixture",
+        "live_access_mode": "recorded_fixture_only",
+        "name": "Article Scan Recorded Fixtures",
+        "next_coverage_step": "Use this fixture to validate bounded article/page result-shape checks before considering any broader scan/article source strategy.",
+        "notes": "Active recorded fixture source distinct from Internet Archive and local-files placeholders. It must not be described as live OCR, broad article search, or magazine scraping.",
+        "object_types": [
+          "magazine_issue",
+          "article",
+          "page_range",
+          "document_section"
+        ],
+        "placeholder_warning": "",
+        "rights_notes": "Synthetic text fixture only. No real magazine scans, PDFs, images, or copyrighted article text are redistributed.",
+        "roles": [
+          "discovery_index",
+          "citation_source",
+          "fixture"
+        ],
+        "source_family": "article_scan_recorded",
+        "source_id": "article-scan-recorded-fixtures",
+        "status": "active_recorded_fixture",
+        "status_summary": "Active recorded-fixture source record. Live source access remains separate.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "fixture_file"
+        ],
+        "trust_lane": "fixture"
+      }
+    ],
+    "status": "available"
+  },
+  "status_code": 200
+}

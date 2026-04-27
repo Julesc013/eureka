@@ -393,6 +393,7 @@ class HttpApiRoutesTestCase(unittest.TestCase):
         self.assertEqual(
             [entry["source_id"] for entry in capability_payload["sources"]],
             [
+                "article-scan-recorded-fixtures",
                 "github-releases-recorded-fixtures",
                 "internet-archive-recorded-fixtures",
             ],

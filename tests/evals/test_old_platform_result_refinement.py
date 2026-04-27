@@ -65,9 +65,9 @@ class OldPlatformResultRefinementPackTestCase(unittest.TestCase):
         suite = runner.run_suite()
         by_id = {result.task_id: result for result in suite.task_results}
 
-        self.assertEqual(suite.status_counts, {"capability_gap": 1, "satisfied": 5})
+        self.assertEqual(suite.status_counts, {"satisfied": 6})
         self.assertEqual(by_id["driver_inside_support_cd"].overall_status, "satisfied")
-        self.assertEqual(by_id["article_inside_magazine_scan"].overall_status, "capability_gap")
+        self.assertEqual(by_id["article_inside_magazine_scan"].overall_status, "satisfied")
 
         for task_id in TARGETED_TASK_IDS:
             result = by_id[task_id]

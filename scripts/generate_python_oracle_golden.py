@@ -94,6 +94,9 @@ def build_fixture_pack() -> dict[Path, Any]:
         Path("source_registry/source_local_bundle_fixtures.json"): _source_registry_source(
             "local-bundle-fixtures"
         ),
+        Path("source_registry/source_article_scan_recorded_fixtures.json"): (
+            _source_registry_source("article-scan-recorded-fixtures")
+        ),
         **_query_planner_outputs(),
         **_resolution_run_outputs(),
         **_local_index_outputs(),

@@ -43,7 +43,7 @@ class MoreSourceCoverageExpansionV1TestCase(unittest.TestCase):
         suite = runner.run_suite()
         by_id = {result.task_id: result for result in suite.task_results}
 
-        self.assertEqual(suite.status_counts, {"capability_gap": 1, "satisfied": 5})
+        self.assertEqual(suite.status_counts, {"satisfied": 6})
         for task_id in (
             "latest_firefox_before_xp_drop",
             "old_blue_ftp_client_xp",
@@ -57,7 +57,9 @@ class MoreSourceCoverageExpansionV1TestCase(unittest.TestCase):
             self.assertIn("artifact_locators", rendered, task_id)
             self.assertIn("ranking.bad_result_patterns", rendered, task_id)
 
-        self.assertEqual(by_id["article_inside_magazine_scan"].overall_status, "capability_gap")
+        article = by_id["article_inside_magazine_scan"]
+        self.assertEqual(article.overall_status, "satisfied")
+        self.assertIn("article-scan-recorded-fixtures", json.dumps(article.to_dict(), sort_keys=True))
 
     def test_report_does_not_claim_live_or_external_baseline_behavior(self) -> None:
         combined = "\n".join(

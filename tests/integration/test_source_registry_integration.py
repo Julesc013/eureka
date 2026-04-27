@@ -42,7 +42,7 @@ class SourceRegistryIntegrationTestCase(unittest.TestCase):
         source_ids: set[str] = set()
         source_paths = sorted(DEFAULT_SOURCE_INVENTORY_DIR.glob("*.source.json"))
 
-        self.assertEqual(len(source_paths), 8)
+        self.assertEqual(len(source_paths), 9)
         for source_path in source_paths:
             payload = json.loads(source_path.read_text(encoding="utf-8"))
             self.assertTrue(REQUIRED_FIELDS.issubset(payload.keys()))
@@ -52,7 +52,7 @@ class SourceRegistryIntegrationTestCase(unittest.TestCase):
 
     def test_inventory_projects_through_public_http_surface(self) -> None:
         registry = load_source_registry()
-        self.assertEqual(len(registry.records), 8)
+        self.assertEqual(len(registry.records), 9)
 
         app = WorkbenchWsgiApp(
             resolution_public_api=_FakeResolutionJobsPublicApi(),

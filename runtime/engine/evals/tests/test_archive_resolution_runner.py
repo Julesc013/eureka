@@ -43,18 +43,20 @@ class ArchiveResolutionEvalRunnerTestCase(unittest.TestCase):
         self.assertIn("planner.object_type", satisfied_names)
         self.assertIn("planner.constraints.platform", satisfied_names)
 
-    def test_capability_gaps_are_reported_honestly(self) -> None:
+    def test_article_scan_fixture_satisfies_article_hard_eval(self) -> None:
         runner = build_default_archive_resolution_eval_runner(
             timestamp_factory=lambda: FIXED_TIMESTAMP,
         )
         suite = runner.run_suite(task_id="article_inside_magazine_scan")
         task_result = suite.task_results[0]
 
-        self.assertEqual(task_result.overall_status, "capability_gap")
-        self.assertEqual(task_result.search_observed_result_count, 0)
-        self.assertTrue(task_result.capability_gaps)
-        self.assertIn("Current bootstrap corpus", task_result.capability_gaps[0].message)
-        self.assertTrue(task_result.skipped_checks)
+        self.assertEqual(task_result.overall_status, "satisfied")
+        self.assertGreater(task_result.search_observed_result_count, 0)
+        self.assertFalse(task_result.capability_gaps)
+        rendered = json.dumps(task_result.to_dict(), sort_keys=True)
+        self.assertIn("article-scan-recorded-fixtures", rendered)
+        self.assertIn("ocr_text_fixture", rendered)
+        self.assertIn("page_range", rendered)
 
     def test_json_report_is_stable_with_fixed_timestamp(self) -> None:
         runner = build_default_archive_resolution_eval_runner(

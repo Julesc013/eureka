@@ -11,6 +11,7 @@ REQUIRED_GOLDEN_FAMILIES = {
         "source_github_releases_recorded_fixtures.json",
         "source_internet_archive_recorded_fixtures.json",
         "source_local_bundle_fixtures.json",
+        "source_article_scan_recorded_fixtures.json",
     ],
     "query_planner": [
         "windows_7_apps.json",

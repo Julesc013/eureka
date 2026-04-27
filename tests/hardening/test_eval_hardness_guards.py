@@ -71,7 +71,6 @@ class EvalHardnessGuardsTest(unittest.TestCase):
         summaries = {item["task_id"]: item for item in report["task_summaries"]}
         self.assertTrue(REQUIRED_ARCHIVE_TASK_IDS.issubset(summaries))
         self.assertEqual(report["total_task_count"], len(summaries))
-        self.assertGreaterEqual(report["status_counts"].get("capability_gap", 0), 1)
         self.assertEqual(
             report["status_counts"].get("capability_gap", 0)
             + report["status_counts"].get("not_satisfied", 0)
@@ -133,6 +132,13 @@ class EvalHardnessGuardsTest(unittest.TestCase):
                     observed = search_check.get("observed", {})
                     self.assertTrue(observed.get("source_ids"), task_id)
                     self.assertTrue(observed.get("artifact_locators"), task_id)
+                    if task_id == "article_inside_magazine_scan":
+                        shape = by_name["result_shape.primary_candidate"].get("observed", {})
+                        primary = shape.get("primary_candidate", {})
+                        self.assertEqual(primary.get("candidate_kind"), "article")
+                        self.assertIn("ocr_text_fixture", primary.get("evidence_kinds", []))
+                        self.assertIn("page_range", primary.get("evidence_kinds", []))
+                        self.assertIn("pages-123-128.ocr.txt", primary.get("member_path", ""))
 
     def test_search_usefulness_query_pack_keeps_hard_coverage(self):
         query_pack = load_json("evals/search_usefulness/queries/search_usefulness_v0.json")

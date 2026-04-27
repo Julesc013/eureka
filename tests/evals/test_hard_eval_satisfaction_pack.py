@@ -62,11 +62,7 @@ class HardEvalSatisfactionPackTestCase(unittest.TestCase):
         suite = runner.run_suite()
         by_id = {result.task_id: result for result in suite.task_results}
 
-        self.assertEqual(suite.status_counts.get("capability_gap"), 1)
-        self.assertEqual(
-            suite.status_counts.get("partial", 0) + suite.status_counts.get("satisfied", 0),
-            5,
-        )
+        self.assertEqual(suite.status_counts, {"satisfied": 6})
         self.assertEqual(set(by_id), MOVED_TASK_IDS | {"article_inside_magazine_scan"})
 
         for task_id in MOVED_TASK_IDS:
@@ -84,17 +80,19 @@ class HardEvalSatisfactionPackTestCase(unittest.TestCase):
                 task_id,
             )
 
-    def test_article_scan_gap_is_not_faked(self) -> None:
+    def test_article_scan_task_now_requires_fixture_article_evidence(self) -> None:
         runner = build_default_archive_resolution_eval_runner(
             timestamp_factory=lambda: FIXED_TIMESTAMP,
         )
         result = runner.run_suite(task_id="article_inside_magazine_scan").task_results[0]
         check = _search_check(result)
 
-        self.assertEqual(result.overall_status, "capability_gap")
-        self.assertEqual(result.search_observed_result_count, 0)
-        self.assertEqual(check.status, "capability_gap")
-        self.assertFalse(result.top_results)
+        self.assertEqual(result.overall_status, "satisfied")
+        self.assertGreater(result.search_observed_result_count, 0)
+        self.assertEqual(check.status, "satisfied")
+        observed = check.observed or {}
+        self.assertEqual(observed.get("source_ids"), ["article-scan-recorded-fixtures"])
+        self.assertTrue(any("ocr" in item for item in observed.get("artifact_locators", [])))
 
     def test_overall_satisfied_tasks_need_structured_source_evidence(self) -> None:
         runner = build_default_archive_resolution_eval_runner(

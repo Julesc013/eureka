@@ -44,9 +44,10 @@ class ResolutionRunsCliTestCase(unittest.TestCase):
         self.assertIn("Resolution runs", resolve_output)
         self.assertIn("selected_run_id: run-exact-resolution-0001", resolve_output)
         self.assertIn(
-            "checked_source_ids: github-releases-recorded-fixtures, internet-archive-recorded-fixtures, local-bundle-fixtures, synthetic-fixtures",
+            "checked_source_ids: article-scan-recorded-fixtures, github-releases-recorded-fixtures, internet-archive-recorded-fixtures, local-bundle-fixtures, synthetic-fixtures",
             status_output,
         )
+        self.assertIn("Article Scan Recorded Fixtures [active_recorded_fixture]", status_output)
         self.assertIn("Internet Archive Recorded Fixtures [active_recorded_fixture]", status_output)
         self.assertIn("Local Bundle Fixtures [active_fixture]", status_output)
         self.assertIn("Synthetic Fixtures [active_fixture]", status_output)

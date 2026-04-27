@@ -25,9 +25,14 @@ class RealSourceCoveragePackIntegrationTestCase(unittest.TestCase):
     def test_public_source_projection_includes_new_active_fixture_sources(self) -> None:
         api = build_demo_source_registry_public_api()
 
+        article = api.get_source(SourceReadRequest.from_parts("article-scan-recorded-fixtures"))
         ia = api.get_source(SourceReadRequest.from_parts("internet-archive-recorded-fixtures"))
         local = api.get_source(SourceReadRequest.from_parts("local-bundle-fixtures"))
 
+        self.assertEqual(article.status_code, 200)
+        self.assertEqual(article.body["sources"][0]["status"], "active_recorded_fixture")
+        self.assertEqual(article.body["sources"][0]["coverage_depth"], "content_or_member_indexed")
+        self.assertFalse(article.body["sources"][0]["capabilities"]["live_supported"])
         self.assertEqual(ia.status_code, 200)
         self.assertEqual(ia.body["sources"][0]["status"], "active_recorded_fixture")
         self.assertFalse(ia.body["sources"][0]["capabilities"]["live_supported"])

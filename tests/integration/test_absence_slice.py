@@ -33,6 +33,7 @@ class AbsenceSliceIntegrationTestCase(unittest.TestCase):
                 "github_releases",
                 "internet_archive_recorded",
                 "local_bundle_fixtures",
+                "article_scan_recorded",
             ],
         )
         self.assertEqual(

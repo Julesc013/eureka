@@ -24,7 +24,8 @@ class ArchiveResolutionEvalScriptTestCase(unittest.TestCase):
 
         self.assertIn("Archive resolution evals", completed.stdout)
         self.assertIn("task_count: 6", completed.stdout)
-        self.assertIn("capability_gap", completed.stdout)
+        self.assertIn("status_counts: satisfied=6", completed.stdout)
+        self.assertIn("article_inside_magazine_scan: satisfied", completed.stdout)
 
     def test_script_runs_one_task(self) -> None:
         completed = subprocess.run(

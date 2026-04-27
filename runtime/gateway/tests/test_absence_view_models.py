@@ -30,6 +30,7 @@ class AbsenceViewModelTestCase(unittest.TestCase):
                 "github_releases",
                 "internet_archive_recorded",
                 "local_bundle_fixtures",
+                "article_scan_recorded",
             ],
         )
         self.assertEqual(view_model["near_matches"][0]["subject_key"], "archivebox")

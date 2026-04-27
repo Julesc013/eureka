@@ -4,15 +4,15 @@
       "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
       "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
       "index_path_kind": "bootstrap_local_path",
-      "record_count": 479,
+      "record_count": 489,
       "record_kind_counts": {
-        "evidence": 305,
+        "evidence": 313,
         "member": 33,
         "representation": 53,
         "resolved_object": 25,
-        "source_record": 8,
+        "source_record": 9,
         "state_or_release": 25,
-        "synthetic_member": 30
+        "synthetic_member": 31
       }
     },
     "notices": [

@@ -16,7 +16,7 @@ class ArchiveResolutionEvalsPublicApiTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.body["status"], "evaluated")
         self.assertEqual(response.body["eval_suite"]["total_task_count"], 6)
-        self.assertIn("capability_gap", response.body["eval_suite"]["status_counts"])
+        self.assertEqual(response.body["eval_suite"]["status_counts"], {"satisfied": 6})
 
     def test_run_one_task_returns_one_task(self) -> None:
         response = self.public_api.run_task(

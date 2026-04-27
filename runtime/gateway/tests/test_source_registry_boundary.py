@@ -15,8 +15,8 @@ class SourceRegistryPublicApiTestCase(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.body["status"], "listed")
-        self.assertEqual(response.body["source_count"], 8)
-        self.assertEqual(response.body["sources"][0]["source_id"], "github-releases-recorded-fixtures")
+        self.assertEqual(response.body["source_count"], 9)
+        self.assertEqual(response.body["sources"][0]["source_id"], "article-scan-recorded-fixtures")
         self.assertEqual(response.body["sources"][0]["connector"]["status"], "fixture_backed")
 
     def test_list_sources_filters_by_status_role_and_surface(self) -> None:
@@ -33,7 +33,11 @@ class SourceRegistryPublicApiTestCase(unittest.TestCase):
         )
         self.assertEqual(
             [entry["source_id"] for entry in recorded_response.body["sources"]],
-            ["github-releases-recorded-fixtures", "internet-archive-recorded-fixtures"],
+            [
+                "article-scan-recorded-fixtures",
+                "github-releases-recorded-fixtures",
+                "internet-archive-recorded-fixtures",
+            ],
         )
 
         preservation_response = self.public_api.list_sources(

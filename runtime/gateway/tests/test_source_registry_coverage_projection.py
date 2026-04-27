@@ -42,6 +42,7 @@ class SourceRegistryCoverageProjectionTestCase(unittest.TestCase):
         self.assertEqual(
             [entry["source_id"] for entry in recorded_response.body["sources"]],
             [
+                "article-scan-recorded-fixtures",
                 "github-releases-recorded-fixtures",
                 "internet-archive-recorded-fixtures",
             ],
@@ -56,10 +57,18 @@ class SourceRegistryCoverageProjectionTestCase(unittest.TestCase):
         ia_response = self.public_api.get_source(
             SourceReadRequest.from_parts("internet-archive-recorded-fixtures")
         )
+        article_response = self.public_api.get_source(
+            SourceReadRequest.from_parts("article-scan-recorded-fixtures")
+        )
         local_response = self.public_api.get_source(
             SourceReadRequest.from_parts("local-bundle-fixtures")
         )
 
+        self.assertEqual(article_response.status_code, 200)
+        self.assertEqual(article_response.body["sources"][0]["status"], "active_recorded_fixture")
+        self.assertEqual(article_response.body["sources"][0]["coverage_depth"], "content_or_member_indexed")
+        self.assertTrue(article_response.body["sources"][0]["capabilities"]["supports_content_text"])
+        self.assertFalse(article_response.body["sources"][0]["capabilities"]["live_supported"])
         self.assertEqual(ia_response.status_code, 200)
         self.assertEqual(ia_response.body["sources"][0]["status"], "active_recorded_fixture")
         self.assertEqual(ia_response.body["sources"][0]["coverage_depth"], "representation_indexed")

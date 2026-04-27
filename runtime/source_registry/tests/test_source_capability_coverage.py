@@ -49,6 +49,15 @@ class SourceCapabilityCoverageTestCase(unittest.TestCase):
         self.assertFalse(internet_archive_recorded.capabilities.live_supported)
         self.assertTrue(internet_archive_recorded.capabilities.live_deferred)
 
+        article_scan = records["article-scan-recorded-fixtures"]
+        self.assertEqual(article_scan.status, "active_recorded_fixture")
+        self.assertEqual(article_scan.coverage.coverage_depth, "content_or_member_indexed")
+        self.assertTrue(article_scan.capabilities.recorded_fixture_backed)
+        self.assertTrue(article_scan.capabilities.supports_content_text)
+        self.assertTrue(article_scan.capabilities.supports_member_listing)
+        self.assertFalse(article_scan.capabilities.live_supported)
+        self.assertTrue(article_scan.capabilities.live_deferred)
+
         local_bundle = records["local-bundle-fixtures"]
         self.assertEqual(local_bundle.status, "active_fixture")
         self.assertEqual(local_bundle.coverage.coverage_depth, "action_indexed")
@@ -93,7 +102,11 @@ class SourceCapabilityCoverageTestCase(unittest.TestCase):
                 record.source_id
                 for record in registry.list_records(capability="recorded_fixture_backed")
             },
-            {"github-releases-recorded-fixtures", "internet-archive-recorded-fixtures"},
+            {
+                "article-scan-recorded-fixtures",
+                "github-releases-recorded-fixtures",
+                "internet-archive-recorded-fixtures",
+            },
         )
         self.assertEqual(
             {record.source_id for record in registry.list_records(connector_mode="fixture_only")},

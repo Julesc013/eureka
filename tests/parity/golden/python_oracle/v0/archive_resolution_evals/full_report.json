@@ -15,22 +15,21 @@
     }
   ],
   "status_counts": {
-    "capability_gap": 1,
-    "satisfied": 5
+    "satisfied": 6
   },
   "task_summaries": [
     {
-      "capability_gap_count": 1,
+      "capability_gap_count": 0,
       "failed_check_count": 0,
-      "not_evaluable_check_count": 3,
-      "overall_status": "capability_gap",
+      "not_evaluable_check_count": 0,
+      "overall_status": "satisfied",
       "planner_expected_task_kind": "find_document_article",
       "planner_observed_task_kind": "find_document_article",
       "planner_status": "satisfied",
       "query_family": "article_inside_scan",
       "raw_query": "article inside 1994 magazine scan about ray tracing",
       "search_mode": "local_index",
-      "search_observed_result_count": 0,
+      "search_observed_result_count": 9,
       "task_id": "article_inside_magazine_scan"
     },
     {
@@ -106,56 +105,7 @@
   ],
   "tasks": [
     {
-      "absence_summary": {
-        "checked_record_count": 55,
-        "checked_source_families": [
-          "synthetic_fixture",
-          "github_releases",
-          "internet_archive_recorded",
-          "local_bundle_fixtures"
-        ],
-        "checked_subject_count": 53,
-        "likely_reason_code": "query_not_present_in_bounded_corpus",
-        "near_match_count": 0,
-        "next_steps": [
-          "Retry with a different bounded subject, version, or label term.",
-          "Confirm that the expected source family is loaded into the current local corpus."
-        ],
-        "reason_message": "No bounded subject or label related to query 'article inside 1994 magazine scan about ray tracing' was found in the current local corpus.",
-        "status": "explained"
-      },
-      "capability_gaps": [
-        {
-          "expected": {
-            "acceptable_result_patterns": [
-              "article-level record with page range",
-              "page-level or section-level trace inside a scanned magazine",
-              "OCR-backed page locator that narrows the scan to a relevant segment"
-            ],
-            "allowed_absence_outcomes": [
-              "scan_level_trace_without_article_boundary",
-              "checked_sources_with_reasoned_absence"
-            ],
-            "desired_object_types": [
-              "article",
-              "page_range",
-              "document_section"
-            ],
-            "minimum_granularity": "article_or_page_range",
-            "required_evidence": [
-              "topic clue tied to the scan or pages",
-              "page, section, or article locator",
-              "source-family visibility"
-            ]
-          },
-          "message": "No bounded local result matched this hard fixture. Current bootstrap corpus does not contain the direct artifact, member, article, or evidence shape required to satisfy the task.",
-          "name": "search.expected_result_hints",
-          "observed": {
-            "result_count": 0
-          },
-          "status": "capability_gap"
-        }
-      ],
+      "capability_gaps": [],
       "expected_result_hints": {
         "acceptable_result_patterns": [
           "article-level record with page range",
@@ -184,39 +134,10 @@
           "code": "eval_runner_scope",
           "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
           "severity": "info"
-        },
-        {
-          "code": "local_index_no_results",
-          "message": "No Local Index v0 records matched 'article inside 1994 magazine scan about ray tracing'.",
-          "severity": "info"
         }
       ],
-      "overall_status": "capability_gap",
-      "partial_checks": [
-        {
-          "message": "Absence reasoning explained the empty bounded search result.",
-          "name": "absence.reasoning",
-          "observed": {
-            "checked_record_count": 55,
-            "checked_source_families": [
-              "synthetic_fixture",
-              "github_releases",
-              "internet_archive_recorded",
-              "local_bundle_fixtures"
-            ],
-            "checked_subject_count": 53,
-            "likely_reason_code": "query_not_present_in_bounded_corpus",
-            "near_match_count": 0,
-            "next_steps": [
-              "Retry with a different bounded subject, version, or label term.",
-              "Confirm that the expected source family is loaded into the current local corpus."
-            ],
-            "reason_message": "No bounded subject or label related to query 'article inside 1994 magazine scan about ray tracing' was found in the current local corpus.",
-            "status": "explained"
-          },
-          "status": "partial"
-        }
-      ],
+      "overall_status": "satisfied",
+      "partial_checks": [],
       "planner_expected_task_kind": "find_document_article",
       "planner_observed": {
         "action_hints": [
@@ -318,12 +239,311 @@
             "whole_issue_only_without_article_trace"
           ],
           "status": "satisfied"
-        }
-      ],
-      "search_mode": "local_index",
-      "search_observed_result_count": 0,
-      "search_query": "article inside 1994 magazine scan about ray tracing",
-      "skipped_checks": [
+        },
+        {
+          "expected": {
+            "acceptable_result_patterns": [
+              "article-level record with page range",
+              "page-level or section-level trace inside a scanned magazine",
+              "OCR-backed page locator that narrows the scan to a relevant segment"
+            ],
+            "allowed_absence_outcomes": [
+              "scan_level_trace_without_article_boundary",
+              "checked_sources_with_reasoned_absence"
+            ],
+            "desired_object_types": [
+              "article",
+              "page_range",
+              "document_section"
+            ],
+            "minimum_granularity": "article_or_page_range",
+            "required_evidence": [
+              "topic clue tied to the scan or pages",
+              "page, section, or article locator",
+              "source-family visibility"
+            ]
+          },
+          "message": "Observed bounded results include source-backed structured evidence for the required hard-eval result hints.",
+          "name": "search.expected_result_hints",
+          "observed": {
+            "acceptable_result_patterns": [
+              {
+                "pattern": "article-level record with page range",
+                "reasons": [
+                  "article_page_or_ocr_segment_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "pattern": "page-level or section-level trace inside a scanned magazine",
+                "reasons": [],
+                "satisfied": false
+              },
+              {
+                "pattern": "OCR-backed page locator that narrows the scan to a relevant segment",
+                "reasons": [
+                  "article_page_or_ocr_segment_present"
+                ],
+                "satisfied": true
+              }
+            ],
+            "artifact_locators": [
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "payloads/pc_magazine_1994_ray_tracing_ocr.txt",
+              "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures",
+              "file_listing payloads/pc_magazine_1994_ray_tracing_ocr.txt article_scan_recorded file_listing Article Scan Recorded Fixtures",
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures"
+            ],
+            "compatibility_evidence_count": 0,
+            "matched_function_terms": [],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [],
+            "matched_product_terms": [],
+            "member_paths": [
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "payloads/pc_magazine_1994_issue_manifest.json",
+              "payloads/pc_magazine_1994_ray_tracing_ocr.txt"
+            ],
+            "record_kinds": [
+              "evidence",
+              "synthetic_member"
+            ],
+            "representation_ids": [
+              "rep.article-scan-recorded.pc.magazine.1994.ray.tracing.article.ocr"
+            ],
+            "required_evidence": [
+              {
+                "clause": "topic clue tied to the scan or pages",
+                "reasons": [
+                  "article_or_page_locator_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "page, section, or article locator",
+                "reasons": [
+                  "artifact_or_member_locator_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "source-family visibility",
+                "reasons": [
+                  "source_family_present"
+                ],
+                "satisfied": true
+              }
+            ],
+            "result_lanes": [
+              "best_direct_answer",
+              "documentation",
+              "inside_bundles",
+              "mentions_or_traces"
+            ],
+            "source_families": [
+              "article_scan_recorded"
+            ],
+            "source_ids": [
+              "article-scan-recorded-fixtures"
+            ],
+            "status": "satisfied",
+            "top_result_count": 5,
+            "top_results": [
+              {
+                "action_hints": [
+                  "inspect_parent_issue",
+                  "preview_ocr_text",
+                  "cite_page_range",
+                  "export_manifest"
+                ],
+                "content_hash": "sha256:7e3b972c02becefcb80da136ae1adbc8b2599a828da52ea3b6418cb82835e96d",
+                "evidence": [
+                  "label Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop article_scan_recorded article_segment Article Scan Recorded Fixtures",
+                  "parent_issue PC Magazine July 1994 Issue Fixture article_scan_recorded source_metadata Article Scan Recorded Fixtures",
+                  "page_range 123-128 article_scan_recorded page_range Article Scan Recorded Fixtures",
+                  "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures",
+                  "topic ray tracing article_scan_recorded article_segment Article Scan Recorded Fixtures",
+                  "ocr_text_fixture Synthetic OCR-like fixture text: the article segment is inside a scanned 1994 magazine issue fixture and discusses ray tracing for PC graphics. article_scan_recorded ocr_text_fixture Article Scan Recorded Fixtures",
+                  "file_listing payloads/pc_magazine_1994_issue_manifest.json article_scan_recorded file_listing Article Scan Recorded Fixtures",
+                  "file_listing payloads/pc_magazine_1994_ray_tracing_ocr.txt article_scan_recorded file_listing Article Scan Recorded Fixtures"
+                ],
+                "index_record_id": "synthetic_member:article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+                "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop",
+                "media_type": "text/plain",
+                "member_kind": "article_segment",
+                "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+                "parent_object_label": "PC Magazine July 1994 Issue Fixture",
+                "parent_representation_id": "rep.article-scan-recorded.pc.magazine.july.1994.fixture.scan-placeholder",
+                "parent_resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture",
+                "parent_target_ref": "article-scan-recorded:issue:pc.magazine.july.1994.fixture",
+                "primary_lane": "inside_bundles",
+                "record_kind": "synthetic_member",
+                "representation_id": "rep.article-scan-recorded.pc.magazine.1994.ray.tracing.article.ocr",
+                "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+                "result_lanes": [
+                  "inside_bundles",
+                  "best_direct_answer",
+                  "documentation"
+                ],
+                "route_hints": {
+                  "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+                  "parent_representation_id": "rep.article-scan-recorded.pc.magazine.july.1994.fixture.scan-placeholder",
+                  "parent_target_ref": "article-scan-recorded:issue:pc.magazine.july.1994.fixture",
+                  "record_kind": "synthetic_member",
+                  "surface_route": "/",
+                  "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+                },
+                "size_bytes": 415,
+                "source_family": "article_scan_recorded",
+                "source_id": "article-scan-recorded-fixtures",
+                "source_label": "Article Scan Recorded Fixtures",
+                "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+                "summary": "article_segment member of PC Magazine July 1994 Issue Fixture",
+                "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+                "usefulness_summary": "inside bundles; user cost 2; why: inner_member_has_parent_lineage; member_has_path; action_available; source_evidence_present; compatibility_hint_present; article_segment_has_page_locator",
+                "user_cost_reasons": [
+                  "inner_member_has_parent_lineage",
+                  "member_has_path",
+                  "action_available",
+                  "source_evidence_present",
+                  "compatibility_hint_present",
+                  "article_segment_has_page_locator"
+                ],
+                "user_cost_score": 2,
+                "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
+              },
+              {
+                "evidence": [
+                  "label Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop article_scan_recorded article_segment Article Scan Recorded Fixtures"
+                ],
+                "index_record_id": "evidence:article-scan-recorded:pc-magazine-1994-ray-tracing-article:0",
+                "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop evidence 1",
+                "primary_lane": "mentions_or_traces",
+                "record_kind": "evidence",
+                "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+                "result_lanes": [
+                  "mentions_or_traces"
+                ],
+                "route_hints": {
+                  "record_kind": "evidence",
+                  "surface_route": "/",
+                  "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+                },
+                "source_family": "article_scan_recorded",
+                "source_id": "article-scan-recorded-fixtures",
+                "source_label": "Article Scan Recorded Fixtures",
+                "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+                "summary": "label from article_scan_recorded",
+                "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+                "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+                "user_cost_reasons": [
+                  "mention_only",
+                  "source_evidence_present"
+                ],
+                "user_cost_score": 6,
+                "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
+              },
+              {
+                "evidence": [
+                  "parent_issue PC Magazine July 1994 Issue Fixture article_scan_recorded source_metadata Article Scan Recorded Fixtures"
+                ],
+                "index_record_id": "evidence:article-scan-recorded:pc-magazine-1994-ray-tracing-article:1",
+                "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop evidence 2",
+                "primary_lane": "mentions_or_traces",
+                "record_kind": "evidence",
+                "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+                "result_lanes": [
+                  "mentions_or_traces"
+                ],
+                "route_hints": {
+                  "record_kind": "evidence",
+                  "surface_route": "/",
+                  "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+                },
+                "source_family": "article_scan_recorded",
+                "source_id": "article-scan-recorded-fixtures",
+                "source_label": "Article Scan Recorded Fixtures",
+                "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+                "summary": "parent_issue from article_scan_recorded",
+                "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+                "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+                "user_cost_reasons": [
+                  "mention_only",
+                  "source_evidence_present"
+                ],
+                "user_cost_score": 6,
+                "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
+              },
+              {
+                "evidence": [
+                  "page_range 123-128 article_scan_recorded page_range Article Scan Recorded Fixtures"
+                ],
+                "index_record_id": "evidence:article-scan-recorded:pc-magazine-1994-ray-tracing-article:2",
+                "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop evidence 3",
+                "primary_lane": "mentions_or_traces",
+                "record_kind": "evidence",
+                "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+                "result_lanes": [
+                  "mentions_or_traces"
+                ],
+                "route_hints": {
+                  "record_kind": "evidence",
+                  "surface_route": "/",
+                  "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+                },
+                "source_family": "article_scan_recorded",
+                "source_id": "article-scan-recorded-fixtures",
+                "source_label": "Article Scan Recorded Fixtures",
+                "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+                "summary": "page_range from article_scan_recorded",
+                "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+                "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+                "user_cost_reasons": [
+                  "mention_only",
+                  "source_evidence_present"
+                ],
+                "user_cost_score": 6,
+                "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
+              },
+              {
+                "evidence": [
+                  "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures"
+                ],
+                "index_record_id": "evidence:article-scan-recorded:pc-magazine-1994-ray-tracing-article:3",
+                "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop evidence 4",
+                "primary_lane": "mentions_or_traces",
+                "record_kind": "evidence",
+                "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+                "result_lanes": [
+                  "mentions_or_traces"
+                ],
+                "route_hints": {
+                  "record_kind": "evidence",
+                  "surface_route": "/",
+                  "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+                },
+                "source_family": "article_scan_recorded",
+                "source_id": "article-scan-recorded-fixtures",
+                "source_label": "Article Scan Recorded Fixtures",
+                "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+                "summary": "member_path from article_scan_recorded",
+                "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+                "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+                "user_cost_reasons": [
+                  "mention_only",
+                  "source_evidence_present"
+                ],
+                "user_cost_score": 6,
+                "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
+              }
+            ]
+          },
+          "status": "satisfied"
+        },
         {
           "expected": {
             "desired_object_types": [
@@ -333,29 +553,98 @@
             ],
             "minimum_granularity": "article_or_page_range"
           },
-          "message": "No bounded primary candidate was available for result-shape evaluation.",
+          "message": "Primary candidate shape satisfies the strict minimum granularity for this hard task.",
           "name": "result_shape.primary_candidate",
           "observed": {
-            "active_lanes": [],
-            "artifact_locators": [],
-            "compatibility_evidence_count": 0,
-            "limitations": [
-              "no_result"
+            "active_lanes": [
+              "best_direct_answer",
+              "documentation",
+              "inside_bundles",
+              "mentions_or_traces"
             ],
+            "artifact_locators": [
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "payloads/pc_magazine_1994_ray_tracing_ocr.txt",
+              "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures",
+              "file_listing payloads/pc_magazine_1994_ray_tracing_ocr.txt article_scan_recorded file_listing Article Scan Recorded Fixtures",
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures"
+            ],
+            "compatibility_evidence_count": 0,
+            "limitations": [],
             "matched_function_terms": [],
             "matched_hardware_terms": [],
             "matched_platform_terms": [],
             "matched_product_terms": [],
-            "member_paths": [],
+            "member_paths": [
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "payloads/pc_magazine_1994_issue_manifest.json",
+              "payloads/pc_magazine_1994_ray_tracing_ocr.txt"
+            ],
             "minimum_granularity": "article_or_page_range",
-            "minimum_granularity_status": "not_evaluable",
-            "primary_candidate": null,
-            "representation_ids": [],
-            "source_families": [],
-            "source_ids": [],
-            "top_result_count": 0
+            "minimum_granularity_status": "satisfied",
+            "primary_candidate": {
+              "artifact_locators": [
+                "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures",
+                "file_listing payloads/pc_magazine_1994_ray_tracing_ocr.txt article_scan_recorded file_listing Article Scan Recorded Fixtures",
+                "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+                "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt"
+              ],
+              "candidate_kind": "article",
+              "compatibility_evidence_count": 0,
+              "compatibility_summary": null,
+              "evidence_count": 8,
+              "evidence_kinds": [
+                "file_listing",
+                "label",
+                "member_path",
+                "ocr_text_fixture",
+                "page_range",
+                "parent_issue",
+                "topic"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": true,
+              "is_parent_context": false,
+              "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop",
+              "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "parent_target_ref": "article-scan-recorded:issue:pc.magazine.july.1994.fixture",
+              "primary_lane": "inside_bundles",
+              "record_kind": "synthetic_member",
+              "representation_id": "rep.article-scan-recorded.pc.magazine.1994.ray.tracing.article.ocr",
+              "result_lanes": [
+                "inside_bundles",
+                "best_direct_answer",
+                "documentation"
+              ],
+              "source_family": "article_scan_recorded",
+              "source_id": "article-scan-recorded-fixtures",
+              "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+              "user_cost_reasons": [
+                "inner_member_has_parent_lineage",
+                "member_has_path",
+                "action_available",
+                "source_evidence_present",
+                "compatibility_hint_present",
+                "article_segment_has_page_locator"
+              ],
+              "user_cost_score": 2
+            },
+            "representation_ids": [
+              "rep.article-scan-recorded.pc.magazine.1994.ray.tracing.article.ocr"
+            ],
+            "source_families": [
+              "article_scan_recorded"
+            ],
+            "source_ids": [
+              "article-scan-recorded-fixtures"
+            ],
+            "top_result_count": 5
           },
-          "status": "not_evaluable"
+          "status": "satisfied"
         },
         {
           "expected": [
@@ -365,29 +654,83 @@
             "documentation",
             "absence_or_next_steps"
           ],
-          "message": "No primary candidate was available for lane evaluation.",
+          "message": "Primary candidate satisfies the expected lane shape for direct/member usefulness.",
           "name": "lanes.expected_lanes",
           "observed": {
-            "active_lanes": [],
-            "artifact_locators": [],
-            "compatibility_evidence_count": 0,
-            "limitations": [
-              "no_result"
+            "active_lanes": [
+              "best_direct_answer",
+              "documentation",
+              "inside_bundles",
+              "mentions_or_traces"
             ],
-            "matched_function_terms": [],
-            "matched_hardware_terms": [],
-            "matched_platform_terms": [],
-            "matched_product_terms": [],
-            "member_paths": [],
-            "minimum_granularity": "article_or_page_range",
-            "minimum_granularity_status": "not_evaluable",
-            "primary_candidate": null,
-            "representation_ids": [],
-            "source_families": [],
-            "source_ids": [],
-            "top_result_count": 0
+            "direct_member_best_lane_satisfied": true,
+            "direct_member_counts_as_best_direct_answer": true,
+            "direct_member_installable_lane_satisfied": false,
+            "expected_lanes": [
+              "best_direct_answer",
+              "inside_bundles",
+              "preservation",
+              "documentation",
+              "absence_or_next_steps"
+            ],
+            "installable_lane_satisfied": true,
+            "matched_lanes": [
+              "best_direct_answer",
+              "documentation",
+              "inside_bundles"
+            ],
+            "preferred_direct_lane_satisfied": true,
+            "primary_candidate": {
+              "artifact_locators": [
+                "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures",
+                "file_listing payloads/pc_magazine_1994_ray_tracing_ocr.txt article_scan_recorded file_listing Article Scan Recorded Fixtures",
+                "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+                "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt"
+              ],
+              "candidate_kind": "article",
+              "compatibility_evidence_count": 0,
+              "compatibility_summary": null,
+              "evidence_count": 8,
+              "evidence_kinds": [
+                "file_listing",
+                "label",
+                "member_path",
+                "ocr_text_fixture",
+                "page_range",
+                "parent_issue",
+                "topic"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": true,
+              "is_parent_context": false,
+              "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop",
+              "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "parent_target_ref": "article-scan-recorded:issue:pc.magazine.july.1994.fixture",
+              "primary_lane": "inside_bundles",
+              "record_kind": "synthetic_member",
+              "representation_id": "rep.article-scan-recorded.pc.magazine.1994.ray.tracing.article.ocr",
+              "result_lanes": [
+                "inside_bundles",
+                "best_direct_answer",
+                "documentation"
+              ],
+              "source_family": "article_scan_recorded",
+              "source_id": "article-scan-recorded-fixtures",
+              "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+              "user_cost_reasons": [
+                "inner_member_has_parent_lineage",
+                "member_has_path",
+                "action_available",
+                "source_evidence_present",
+                "compatibility_hint_present",
+                "article_segment_has_page_locator"
+              ],
+              "user_cost_score": 2
+            },
+            "primary_lane": "inside_bundles",
+            "primary_lane_satisfied": true
           },
-          "status": "not_evaluable"
+          "status": "satisfied"
         },
         {
           "expected": [
@@ -395,33 +738,272 @@
             "modern ray tracing articles unrelated to the 1994 scan context",
             "search hits that match only a collection title without page-level evidence"
           ],
-          "message": "No primary candidate was available for bad-result evaluation.",
+          "message": "No known bad-result pattern was accepted as the primary bounded result.",
           "name": "ranking.bad_result_patterns",
           "observed": {
-            "active_lanes": [],
-            "artifact_locators": [],
-            "compatibility_evidence_count": 0,
-            "limitations": [
-              "no_result"
+            "limitations": [],
+            "patterns": [
+              {
+                "pattern": "whole magazine issues with no article boundary",
+                "reason": "article_boundary_present",
+                "triggered": false
+              },
+              {
+                "pattern": "modern ray tracing articles unrelated to the 1994 scan context",
+                "reason": "1994_scan_context_present",
+                "triggered": false
+              },
+              {
+                "pattern": "search hits that match only a collection title without page-level evidence",
+                "reason": "pattern_avoided",
+                "triggered": false
+              }
             ],
-            "matched_function_terms": [],
-            "matched_hardware_terms": [],
-            "matched_platform_terms": [],
-            "matched_product_terms": [],
-            "member_paths": [],
-            "minimum_granularity": "article_or_page_range",
-            "minimum_granularity_status": "not_evaluable",
-            "primary_candidate": null,
-            "representation_ids": [],
-            "source_families": [],
-            "source_ids": [],
-            "top_result_count": 0
+            "primary_candidate": {
+              "artifact_locators": [
+                "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures",
+                "file_listing payloads/pc_magazine_1994_ray_tracing_ocr.txt article_scan_recorded file_listing Article Scan Recorded Fixtures",
+                "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+                "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt"
+              ],
+              "candidate_kind": "article",
+              "compatibility_evidence_count": 0,
+              "compatibility_summary": null,
+              "evidence_count": 8,
+              "evidence_kinds": [
+                "file_listing",
+                "label",
+                "member_path",
+                "ocr_text_fixture",
+                "page_range",
+                "parent_issue",
+                "topic"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": true,
+              "is_parent_context": false,
+              "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop",
+              "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+              "parent_target_ref": "article-scan-recorded:issue:pc.magazine.july.1994.fixture",
+              "primary_lane": "inside_bundles",
+              "record_kind": "synthetic_member",
+              "representation_id": "rep.article-scan-recorded.pc.magazine.1994.ray.tracing.article.ocr",
+              "result_lanes": [
+                "inside_bundles",
+                "best_direct_answer",
+                "documentation"
+              ],
+              "source_family": "article_scan_recorded",
+              "source_id": "article-scan-recorded-fixtures",
+              "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+              "user_cost_reasons": [
+                "inner_member_has_parent_lineage",
+                "member_has_path",
+                "action_available",
+                "source_evidence_present",
+                "compatibility_hint_present",
+                "article_segment_has_page_locator"
+              ],
+              "user_cost_score": 2
+            }
           },
-          "status": "not_evaluable"
+          "status": "satisfied"
         }
       ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 9,
+      "search_query": "article inside 1994 magazine scan about ray tracing",
+      "skipped_checks": [],
       "task_id": "article_inside_magazine_scan",
-      "top_results": []
+      "top_results": [
+        {
+          "action_hints": [
+            "inspect_parent_issue",
+            "preview_ocr_text",
+            "cite_page_range",
+            "export_manifest"
+          ],
+          "content_hash": "sha256:7e3b972c02becefcb80da136ae1adbc8b2599a828da52ea3b6418cb82835e96d",
+          "evidence": [
+            "label Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop article_scan_recorded article_segment Article Scan Recorded Fixtures",
+            "parent_issue PC Magazine July 1994 Issue Fixture article_scan_recorded source_metadata Article Scan Recorded Fixtures",
+            "page_range 123-128 article_scan_recorded page_range Article Scan Recorded Fixtures",
+            "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures",
+            "topic ray tracing article_scan_recorded article_segment Article Scan Recorded Fixtures",
+            "ocr_text_fixture Synthetic OCR-like fixture text: the article segment is inside a scanned 1994 magazine issue fixture and discusses ray tracing for PC graphics. article_scan_recorded ocr_text_fixture Article Scan Recorded Fixtures",
+            "file_listing payloads/pc_magazine_1994_issue_manifest.json article_scan_recorded file_listing Article Scan Recorded Fixtures",
+            "file_listing payloads/pc_magazine_1994_ray_tracing_ocr.txt article_scan_recorded file_listing Article Scan Recorded Fixtures"
+          ],
+          "index_record_id": "synthetic_member:article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+          "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop",
+          "media_type": "text/plain",
+          "member_kind": "article_segment",
+          "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+          "parent_object_label": "PC Magazine July 1994 Issue Fixture",
+          "parent_representation_id": "rep.article-scan-recorded.pc.magazine.july.1994.fixture.scan-placeholder",
+          "parent_resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture",
+          "parent_target_ref": "article-scan-recorded:issue:pc.magazine.july.1994.fixture",
+          "primary_lane": "inside_bundles",
+          "record_kind": "synthetic_member",
+          "representation_id": "rep.article-scan-recorded.pc.magazine.1994.ray.tracing.article.ocr",
+          "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+          "result_lanes": [
+            "inside_bundles",
+            "best_direct_answer",
+            "documentation"
+          ],
+          "route_hints": {
+            "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+            "parent_representation_id": "rep.article-scan-recorded.pc.magazine.july.1994.fixture.scan-placeholder",
+            "parent_target_ref": "article-scan-recorded:issue:pc.magazine.july.1994.fixture",
+            "record_kind": "synthetic_member",
+            "surface_route": "/",
+            "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+          },
+          "size_bytes": 415,
+          "source_family": "article_scan_recorded",
+          "source_id": "article-scan-recorded-fixtures",
+          "source_label": "Article Scan Recorded Fixtures",
+          "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+          "summary": "article_segment member of PC Magazine July 1994 Issue Fixture",
+          "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+          "usefulness_summary": "inside bundles; user cost 2; why: inner_member_has_parent_lineage; member_has_path; action_available; source_evidence_present; compatibility_hint_present; article_segment_has_page_locator",
+          "user_cost_reasons": [
+            "inner_member_has_parent_lineage",
+            "member_has_path",
+            "action_available",
+            "source_evidence_present",
+            "compatibility_hint_present",
+            "article_segment_has_page_locator"
+          ],
+          "user_cost_score": 2,
+          "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
+        },
+        {
+          "evidence": [
+            "label Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop article_scan_recorded article_segment Article Scan Recorded Fixtures"
+          ],
+          "index_record_id": "evidence:article-scan-recorded:pc-magazine-1994-ray-tracing-article:0",
+          "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop evidence 1",
+          "primary_lane": "mentions_or_traces",
+          "record_kind": "evidence",
+          "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+          "result_lanes": [
+            "mentions_or_traces"
+          ],
+          "route_hints": {
+            "record_kind": "evidence",
+            "surface_route": "/",
+            "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+          },
+          "source_family": "article_scan_recorded",
+          "source_id": "article-scan-recorded-fixtures",
+          "source_label": "Article Scan Recorded Fixtures",
+          "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+          "summary": "label from article_scan_recorded",
+          "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+          "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+          "user_cost_reasons": [
+            "mention_only",
+            "source_evidence_present"
+          ],
+          "user_cost_score": 6,
+          "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
+        },
+        {
+          "evidence": [
+            "parent_issue PC Magazine July 1994 Issue Fixture article_scan_recorded source_metadata Article Scan Recorded Fixtures"
+          ],
+          "index_record_id": "evidence:article-scan-recorded:pc-magazine-1994-ray-tracing-article:1",
+          "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop evidence 2",
+          "primary_lane": "mentions_or_traces",
+          "record_kind": "evidence",
+          "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+          "result_lanes": [
+            "mentions_or_traces"
+          ],
+          "route_hints": {
+            "record_kind": "evidence",
+            "surface_route": "/",
+            "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+          },
+          "source_family": "article_scan_recorded",
+          "source_id": "article-scan-recorded-fixtures",
+          "source_label": "Article Scan Recorded Fixtures",
+          "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+          "summary": "parent_issue from article_scan_recorded",
+          "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+          "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+          "user_cost_reasons": [
+            "mention_only",
+            "source_evidence_present"
+          ],
+          "user_cost_score": 6,
+          "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
+        },
+        {
+          "evidence": [
+            "page_range 123-128 article_scan_recorded page_range Article Scan Recorded Fixtures"
+          ],
+          "index_record_id": "evidence:article-scan-recorded:pc-magazine-1994-ray-tracing-article:2",
+          "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop evidence 3",
+          "primary_lane": "mentions_or_traces",
+          "record_kind": "evidence",
+          "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+          "result_lanes": [
+            "mentions_or_traces"
+          ],
+          "route_hints": {
+            "record_kind": "evidence",
+            "surface_route": "/",
+            "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+          },
+          "source_family": "article_scan_recorded",
+          "source_id": "article-scan-recorded-fixtures",
+          "source_label": "Article Scan Recorded Fixtures",
+          "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+          "summary": "page_range from article_scan_recorded",
+          "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+          "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+          "user_cost_reasons": [
+            "mention_only",
+            "source_evidence_present"
+          ],
+          "user_cost_score": 6,
+          "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
+        },
+        {
+          "evidence": [
+            "member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures"
+          ],
+          "index_record_id": "evidence:article-scan-recorded:pc-magazine-1994-ray-tracing-article:3",
+          "label": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop evidence 4",
+          "primary_lane": "mentions_or_traces",
+          "record_kind": "evidence",
+          "resolved_resource_id": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+          "result_lanes": [
+            "mentions_or_traces"
+          ],
+          "route_hints": {
+            "record_kind": "evidence",
+            "surface_route": "/",
+            "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article"
+          },
+          "source_family": "article_scan_recorded",
+          "source_id": "article-scan-recorded-fixtures",
+          "source_label": "Article Scan Recorded Fixtures",
+          "subject_key": "obj.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article",
+          "summary": "member_path from article_scan_recorded",
+          "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+          "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
+          "user_cost_reasons": [
+            "mention_only",
+            "source_evidence_present"
+          ],
+          "user_cost_score": 6,
+          "version_or_state": "state.article-scan-recorded.pc.magazine.july.1994.fixture.pc.magazine.1994.ray.tracing.article.fixture"
+        }
+      ]
     },
     {
       "capability_gaps": [],

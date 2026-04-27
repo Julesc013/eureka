@@ -7,6 +7,7 @@ from tests.hardening.helpers import repo_path
 
 
 ACTIVE_FIXTURE_SOURCE_IDS = {
+    "article-scan-recorded-fixtures",
     "synthetic-fixtures",
     "github-releases-recorded-fixtures",
     "internet-archive-recorded-fixtures",
@@ -81,6 +82,17 @@ class SourcePlaceholderHonestyTest(unittest.TestCase):
         self.assertIn(
             "No live Internet Archive API",
             json.dumps(records["internet-archive-recorded-fixtures"], sort_keys=True),
+        )
+
+        self.assertEqual(records["article-scan-recorded-fixtures"]["status"], "active_recorded_fixture")
+        self.assertEqual(
+            records["article-scan-recorded-fixtures"]["coverage"]["coverage_depth"],
+            "content_or_member_indexed",
+        )
+        self.assertFalse(records["article-scan-recorded-fixtures"]["capabilities"]["live_supported"])
+        self.assertIn(
+            "No real magazine scans",
+            json.dumps(records["article-scan-recorded-fixtures"], sort_keys=True),
         )
 
         self.assertEqual(records["local-files-placeholder"]["status"], "local_private_future")

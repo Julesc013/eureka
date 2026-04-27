@@ -4,14 +4,15 @@
     "runs": [
       {
         "absence_report": {
-          "checked_record_count": 55,
+          "checked_record_count": 56,
           "checked_source_families": [
             "synthetic_fixture",
             "github_releases",
             "internet_archive_recorded",
-            "local_bundle_fixtures"
+            "local_bundle_fixtures",
+            "article_scan_recorded"
           ],
-          "checked_subject_count": 53,
+          "checked_subject_count": 54,
           "likely_reason_code": "subject_unknown_in_bounded_corpus",
           "near_matches": [],
           "next_steps": [
@@ -25,18 +26,27 @@
           "status": "explained"
         },
         "checked_source_families": [
+          "article_scan_recorded",
           "github_releases",
           "internet_archive_recorded",
           "local_bundle_fixtures",
           "synthetic"
         ],
         "checked_source_ids": [
+          "article-scan-recorded-fixtures",
           "github-releases-recorded-fixtures",
           "internet-archive-recorded-fixtures",
           "local-bundle-fixtures",
           "synthetic-fixtures"
         ],
         "checked_sources": [
+          {
+            "name": "Article Scan Recorded Fixtures",
+            "source_family": "article_scan_recorded",
+            "source_id": "article-scan-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "fixture"
+          },
           {
             "name": "GitHub Releases Recorded Fixtures",
             "source_family": "github_releases",

@@ -958,6 +958,13 @@ def _candidate_kind(
 ) -> str:
     text = _compact_text(" ".join(_flatten_strings(result)))
     record_kind = str(result.get("record_kind") or "").casefold()
+    member_kind = str(result.get("member_kind") or "").casefold()
+    if (
+        member_kind in {"article", "article_segment", "page_range", "document_section"}
+        or "articlesegment" in text
+        or ("article" in text and ("page" in text or "ocr" in text))
+    ):
+        return "article"
     if record_kind == "member":
         if any(".inf" in item.casefold() for item in artifact_locators) or "driver" in text:
             return "driver"
@@ -1042,8 +1049,29 @@ def _minimum_granularity_status(
         return "not_satisfied", limitations
 
     if minimum == "article_or_page_range":
-        limitations.append("article_or_page_range_evidence_not_available")
-        return "not_evaluable", limitations
+        observed = _compact_text(" ".join(_flatten_strings(evidence_report)))
+        topic_hint = ""
+        topic_constraints = task.target_constraints.get("topic_hint")
+        if isinstance(topic_constraints, str):
+            topic_hint = _compact_text(topic_constraints)
+        primary_kind = str(primary_shape.get("candidate_kind") or "")
+        has_article_or_section = primary_kind in {"article", "page_range", "document_section"} or (
+            "article" in observed and ("page" in observed or "section" in observed)
+        )
+        has_page_locator = (
+            "pagerange" in observed
+            or "page" in observed
+            or any("page" in str(path).casefold() for path in evidence_report.get("member_paths", []))
+        )
+        has_ocr_text = "ocr" in observed or "ocrtextfixture" in observed
+        has_topic = bool(topic_hint and topic_hint in observed)
+        if source_backed and has_article_or_section and has_page_locator and has_ocr_text and has_topic:
+            return "satisfied", limitations
+        if source_backed and has_article_or_section and (has_page_locator or has_ocr_text):
+            limitations.append("article_segment_present_but_strict_topic_or_locator_evidence_incomplete")
+            return "partial", limitations
+        limitations.append("missing_article_page_range_or_ocr_text_evidence")
+        return "not_satisfied", limitations
 
     return ("satisfied" if source_backed else "not_satisfied"), limitations
 
@@ -1291,6 +1319,18 @@ def _bad_result_pattern_status(
     elif "genericsoftwaredumps" in compact_pattern or "bundleonlyresults" in compact_pattern:
         triggered = primary_is_parent_context and not (has_member or has_artifact)
         reason = "parent_bundle_without_member_or_artifact" if triggered else "member_or_artifact_visible"
+    elif "wholemagazineissues" in compact_pattern:
+        triggered = "magazineissue" in primary_text and "article" not in primary_text
+        reason = "whole_issue_without_article_boundary" if triggered else "article_boundary_present"
+    elif "modernraytracing" in compact_pattern:
+        triggered = "raytracing" in primary_text and "1994" not in primary_text
+        reason = "modern_or_unanchored_ray_tracing_primary" if triggered else "1994_scan_context_present"
+    elif "collectiontitleonly" in compact_pattern:
+        triggered = not (
+            "article" in primary_text
+            and ("page" in primary_text or has_member or "ocr" in primary_text)
+        )
+        reason = "collection_title_without_page_or_article_evidence" if triggered else "page_or_article_evidence_present"
     else:
         triggered = False
 
@@ -1707,6 +1747,14 @@ def _acceptable_pattern_status(
         satisfied = bool(member_paths) and _has_direct_artifact_locator(artifact_paths)
         if satisfied:
             reasons.append("member_path_present")
+    elif "article" in compact_pattern or "page" in compact_pattern or "ocr" in compact_pattern:
+        satisfied = (
+            "article" in compact_observed
+            and ("page" in compact_observed or "section" in compact_observed)
+            and ("ocr" in compact_observed or member_paths or representation_ids)
+        )
+        if satisfied:
+            reasons.append("article_page_or_ocr_segment_present")
     else:
         satisfied = compact_pattern in compact_observed
         if satisfied:
@@ -1832,6 +1880,8 @@ def _looks_like_artifact_locator(value: str) -> bool:
         or "driver" in lowered
         or "portable-app-package" in lowered
         or "registry-repair" in lowered
+        or ("article" in lowered and ("page" in lowered or "ocr" in lowered))
+        or ("ocr" in lowered and lowered.endswith(".txt"))
     )
 
 
@@ -1839,6 +1889,8 @@ def _has_direct_artifact_locator(paths: tuple[str, ...]) -> bool:
     return any(
         re.search(r"\.(?:inf|cab|exe|7z)(?:\.txt)?\b", path.casefold())
         or "installer" in path.casefold()
+        or ("article" in path.casefold() and ("page" in path.casefold() or "ocr" in path.casefold()))
+        or ("ocr" in path.casefold() and path.casefold().endswith(".txt"))
         for path in paths
     )
 
@@ -2121,17 +2173,20 @@ def _mapping_text(value: Mapping[str, int]) -> str:
 
 
 def _build_default_catalog() -> NormalizedCatalog:
+    from runtime.connectors.article_scan_recorded import ArticleScanRecordedConnector
     from runtime.connectors.github_releases import GitHubReleasesConnector
     from runtime.connectors.internet_archive_recorded import InternetArchiveRecordedConnector
     from runtime.connectors.local_bundle_fixtures import LocalBundleFixturesConnector
     from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
     from runtime.engine.interfaces.extract import (
+        extract_article_scan_recorded_source_record,
         extract_github_release_source_record,
         extract_internet_archive_recorded_source_record,
         extract_local_bundle_source_record,
         extract_synthetic_source_record,
     )
     from runtime.engine.interfaces.normalize import (
+        normalize_article_scan_recorded_record,
         normalize_extracted_record,
         normalize_github_release_record,
         normalize_internet_archive_recorded_item,
@@ -2143,6 +2198,7 @@ def _build_default_catalog() -> NormalizedCatalog:
     github_connector = GitHubReleasesConnector()
     internet_archive_connector = InternetArchiveRecordedConnector()
     local_bundle_connector = LocalBundleFixturesConnector()
+    article_scan_connector = ArticleScanRecordedConnector()
     synthetic_records = tuple(
         normalize_extracted_record(extract_synthetic_source_record(record))
         for record in synthetic_connector.load_source_records()
@@ -2161,11 +2217,18 @@ def _build_default_catalog() -> NormalizedCatalog:
         normalize_local_bundle_record(extract_local_bundle_source_record(record))
         for record in local_bundle_connector.load_source_records()
     )
+    article_scan_records = tuple(
+        normalize_article_scan_recorded_record(
+            extract_article_scan_recorded_source_record(record)
+        )
+        for record in article_scan_connector.load_source_records()
+    )
     synthetic_member_records = synthesize_member_normalized_records(local_bundle_records)
     return NormalizedCatalog(
         synthetic_records
         + github_records
         + internet_archive_records
         + local_bundle_records
+        + article_scan_records
         + synthetic_member_records
     )

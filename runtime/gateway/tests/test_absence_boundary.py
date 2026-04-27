@@ -45,6 +45,7 @@ class AbsencePublicApiTestCase(unittest.TestCase):
                 "github_releases",
                 "internet_archive_recorded",
                 "local_bundle_fixtures",
+                "article_scan_recorded",
             ],
         )
         self.assertGreaterEqual(len(response.body["near_matches"]), 3)
