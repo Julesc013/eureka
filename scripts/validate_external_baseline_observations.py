@@ -61,13 +61,20 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
         default=str(DEFAULT_BATCHES_DIR),
         help="Directory of manual observation batch directories.",
     )
+    parser.add_argument(
+        "--file",
+        help="Validate one observation JSON file instead of the full observation area.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON summary.")
     args = parser.parse_args(list(argv) if argv is not None else None)
 
-    report = validate_external_baseline_observations(
-        observations_dir=Path(args.observations_dir),
-        batches_dir=Path(args.batches_dir),
-    )
+    if args.file:
+        report = validate_external_baseline_observation_file(Path(args.file))
+    else:
+        report = validate_external_baseline_observations(
+            observations_dir=Path(args.observations_dir),
+            batches_dir=Path(args.batches_dir),
+        )
     output = stdout or sys.stdout
     if args.json:
         output.write(json.dumps(report, indent=2, sort_keys=True) + "\n")
@@ -165,6 +172,57 @@ def validate_external_baseline_observations(
         "query_count": len(query_ids),
         "status_counts_by_system": status_counts,
         "query_coverage": query_coverage,
+        "errors": errors,
+    }
+
+
+def validate_external_baseline_observation_file(file_path: Path) -> dict[str, Any]:
+    errors: list[str] = []
+    systems_payload = _load_json(EXTERNAL_BASELINE_ROOT / "systems.json", errors)
+    schema_payload = _load_json(EXTERNAL_BASELINE_ROOT / "observation.schema.json", errors)
+    template_payload = _load_json(EXTERNAL_BASELINE_ROOT / "observation_template.json", errors)
+    query_pack = _load_json(QUERY_PACK_PATH, errors)
+
+    system_ids = _validate_systems(systems_payload, errors)
+    query_ids = _query_ids(query_pack, errors)
+    _validate_schema(schema_payload, errors)
+    _validate_template(template_payload, errors)
+
+    status_counts_by_system: dict[str, Counter[str]] = defaultdict(Counter)
+    observed_query_ids_by_system: dict[str, set[str]] = defaultdict(set)
+    payload = _load_json(file_path, errors)
+    record_count = 0
+    if isinstance(payload, Mapping):
+        records = payload.get("observations", [payload])
+        if isinstance(records, list):
+            for index, record in enumerate(records):
+                record_count += 1
+                _validate_observation_record(
+                    record,
+                    source=f"{_rel(file_path)}#{index}",
+                    system_ids=system_ids,
+                    query_ids=query_ids,
+                    status_counts_by_system=status_counts_by_system,
+                    observed_query_ids_by_system=observed_query_ids_by_system,
+                    errors=errors,
+                )
+        else:
+            errors.append(f"{_rel(file_path)}: observations must be a list.")
+    elif payload is not None:
+        errors.append(f"{_rel(file_path)}: observation file must contain a JSON object.")
+
+    systems = sorted(system_ids)
+    return {
+        "status": "valid" if not errors else "invalid",
+        "created_by": "manual_external_baseline_observation_validator_v0",
+        "file": str(file_path),
+        "record_count": record_count,
+        "systems": systems,
+        "query_count": len(query_ids),
+        "status_counts_by_system": {
+            system: dict(sorted(status_counts_by_system[system].items()))
+            for system in systems
+        },
         "errors": errors,
     }
 
@@ -309,6 +367,24 @@ def _validate_observation_record(
             value = _string(record.get(required))
             if not value or value.startswith("<"):
                 errors.append(f"{source}: observed record missing {required}.")
+        if _contains_placeholder_value(record):
+            errors.append(f"{source}: observed record must not contain template placeholders.")
+        if not isinstance(top_results, list) or not top_results:
+            errors.append(f"{source}: observed record must contain manually recorded top_results.")
+        elif isinstance(top_results, list):
+            for result_index, result in enumerate(top_results):
+                _validate_top_result(
+                    result,
+                    source=f"{source}: top_results/{result_index}",
+                    errors=errors,
+                )
+        scores = record.get("usefulness_scores")
+        if not isinstance(scores, Mapping):
+            errors.append(f"{source}: observed record must contain usefulness_scores.")
+        else:
+            missing_scores = sorted(SCORE_FIELDS - set(scores))
+            if missing_scores:
+                errors.append(f"{source}: observed record missing scores {missing_scores}.")
         if system_id in system_ids:
             if query_id:
                 observed_query_ids_by_system[system_id].add(query_id)
@@ -326,6 +402,32 @@ def _validate_observation_record(
             for key, value in scores.items():
                 if not isinstance(value, int) or value < 0 or value > 3:
                     errors.append(f"{source}: score {key} must be an integer from 0 to 3.")
+
+
+def _validate_top_result(result: Any, *, source: str, errors: list[str]) -> None:
+    if not isinstance(result, Mapping):
+        errors.append(f"{source}: result must be an object.")
+        return
+    rank = result.get("rank")
+    if not isinstance(rank, int) or rank < 1:
+        errors.append(f"{source}: rank must be an integer >= 1.")
+    for required in ("title", "url_or_locator", "result_type"):
+        value = _string(result.get(required))
+        if not value or value.startswith("<"):
+            errors.append(f"{source}: missing {required}.")
+    if _contains_placeholder_value(result):
+        errors.append(f"{source}: result must not contain template placeholders.")
+
+
+def _contains_placeholder_value(value: Any) -> bool:
+    if isinstance(value, str):
+        normalized = value.strip().casefold()
+        return normalized.startswith("<") or "<manual" in normalized or "manual observation required" in normalized
+    if isinstance(value, Mapping):
+        return any(_contains_placeholder_value(item) for item in value.values())
+    if isinstance(value, list):
+        return any(_contains_placeholder_value(item) for item in value)
+    return False
 
 
 def _validate_batches(
@@ -397,11 +499,23 @@ def _validate_batches(
         slot_keys: set[tuple[str, str]] = set()
         status_counts: Counter[str] = Counter()
         observed_query_ids: set[str] = set()
+        observation_slots: list[dict[str, Any]] = []
         for index, record in enumerate(records):
             source = f"{_rel(observations_path)}#{index}"
             if isinstance(record, Mapping):
                 query_id = _string(record.get("query_id"))
                 system_id = _string(record.get("system_id"))
+                status = _string(record.get("observation_status"))
+                observation_slots.append(
+                    {
+                        "batch_id": batch_id,
+                        "observation_id": _string(record.get("observation_id")),
+                        "query_id": query_id,
+                        "query_text": _string(record.get("query_text")),
+                        "system_id": system_id,
+                        "observation_status": status,
+                    }
+                )
                 if query_id not in selected_query_set:
                     errors.append(f"{source}: query_id must be selected by the batch.")
                 if system_id not in selected_system_set:
@@ -462,6 +576,10 @@ def _validate_batches(
             "selected_system_ids": selected_system_ids,
             "missing_observation_slots": missing_slots,
             "observed_query_ids": sorted(observed_query_ids),
+            "observation_slots": observation_slots,
+            "next_pending_slots": [
+                slot for slot in observation_slots if slot["observation_status"] == PENDING_STATUS
+            ],
         }
     return dict(sorted(batch_reports.items()))
 
@@ -505,6 +623,19 @@ def _load_json(path: Path, errors: list[str]) -> Any:
 
 
 def _format_plain_report(report: Mapping[str, Any]) -> str:
+    if "file" in report:
+        lines = [
+            "Manual external baseline observation file",
+            f"status: {report['status']}",
+            f"file: {report['file']}",
+            f"record_count: {report['record_count']}",
+        ]
+        if report["errors"]:
+            lines.append("")
+            lines.append("Errors")
+            lines.extend(f"- {error}" for error in report["errors"])
+        return "\n".join(lines) + "\n"
+
     lines = [
         "Manual external baseline observations",
         f"status: {report['status']}",

@@ -36,6 +36,12 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
         default=str(DEFAULT_BATCHES_DIR),
         help="Directory of manual observation batch directories.",
     )
+    parser.add_argument("--batch", help="Report one manual observation batch.")
+    parser.add_argument(
+        "--next-pending",
+        action="store_true",
+        help="Include pending slots that are ready for manual observation.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON report.")
     args = parser.parse_args(list(argv) if argv is not None else None)
 
@@ -51,19 +57,41 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
         counts.get("observed", 0)
         for counts in validation["status_counts_by_system"].values()
     )
+    batches = validation.get("batches", {})
+    errors = list(validation["errors"])
+    if args.batch and args.batch not in batches:
+        errors.append(f"Unknown batch id '{args.batch}'.")
+    selected_batches = (
+        {args.batch: batches[args.batch]}
+        if args.batch and args.batch in batches
+        else batches
+    )
+    next_pending_slots = []
+    if args.next_pending:
+        for batch_report in selected_batches.values():
+            if not isinstance(batch_report, dict):
+                continue
+            next_pending_slots.extend(
+                slot
+                for slot in batch_report.get("next_pending_slots", [])
+                if isinstance(slot, dict)
+            )
+
     report = {
-        "status": "ready" if validation["status"] == "valid" else "invalid",
+        "status": "ready" if validation["status"] == "valid" and not errors else "invalid",
         "created_by": "manual_external_baseline_status_report_v0",
         "validation_status": validation["status"],
         "query_count": validation["query_count"],
         "systems": validation["systems"],
+        "selected_batch": args.batch,
         "global_slot_counts": {
             "pending_manual_observation": global_pending,
             "observed": global_observed,
         },
         "status_counts_by_system": validation["status_counts_by_system"],
         "query_coverage": validation["query_coverage"],
-        "batches": validation.get("batches", {}),
+        "batches": selected_batches,
+        "next_pending_slots": next_pending_slots,
         "observed_query_ids": {
             system_id: coverage["observed_query_count"]
             for system_id, coverage in validation["query_coverage"].items()
@@ -81,7 +109,7 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
             "This report performs no external querying or scraping.",
             "Future observed records are manual, time-sensitive, and not global truth.",
         ],
-        "errors": validation["errors"],
+        "errors": errors,
     }
     output = stdout or sys.stdout
     if args.json:
@@ -100,9 +128,10 @@ def _format_plain_report(report: dict[str, object]) -> str:
         f"query_count: {report['query_count']}",
         f"global_pending_slots: {global_slot_counts['pending_manual_observation']}",
         f"global_observed_slots: {global_slot_counts['observed']}",
-        "",
-        "Systems",
     ]
+    if report.get("selected_batch"):
+        lines.append(f"selected_batch: {report['selected_batch']}")
+    lines.extend(["", "Systems"])
     counts_by_system = report["status_counts_by_system"]
     coverage_by_system = report["query_coverage"]
     assert isinstance(counts_by_system, dict)
@@ -129,6 +158,18 @@ def _format_plain_report(report: dict[str, object]) -> str:
                 f"observed={batch.get('observed_observation_count', 0)}, "
                 f"expected={batch.get('expected_observation_count', 0)}, "
                 f"completion={batch.get('completion_percent', 0)}%"
+            )
+    next_pending = report.get("next_pending_slots", [])
+    if isinstance(next_pending, list) and next_pending:
+        lines.append("")
+        lines.append("Next Pending Slots")
+        for slot in next_pending:
+            if not isinstance(slot, dict):
+                continue
+            lines.append(
+                "- "
+                f"{slot.get('batch_id', '')} / {slot.get('query_id', '')} / "
+                f"{slot.get('system_id', '')}"
             )
     if report["errors"]:
         lines.append("")
