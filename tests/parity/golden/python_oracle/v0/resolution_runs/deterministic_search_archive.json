@@ -433,7 +433,7 @@
                   "asserted_by_family": "internet_archive_recorded",
                   "asserted_by_label": "Internet Archive Recorded Fixtures",
                   "claim_kind": "description",
-                  "claim_value": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
+                  "claim_value": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture includes a Firefox 52.9.0 ESR Windows XP compatible installer text stand-in as a bounded candidate within this corpus, not a universal latest-version oracle.",
                   "evidence_kind": "source_metadata",
                   "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture"
                 },
@@ -442,7 +442,7 @@
                   "asserted_by_family": "internet_archive_recorded",
                   "asserted_by_label": "Internet Archive Recorded Fixtures",
                   "claim_kind": "compatibility_note",
-                  "claim_value": "Windows XP; x86; release_notes; support_window",
+                  "claim_value": "Windows XP; Windows NT 5.1; x86; release_notes; support_window; versioned_release_candidate; installer_stub",
                   "evidence_kind": "source_metadata",
                   "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture"
                 },
@@ -451,7 +451,7 @@
                   "asserted_by_family": "internet_archive_recorded",
                   "asserted_by_label": "Internet Archive Recorded Fixtures",
                   "claim_kind": "file_listing",
-                  "claim_value": "firefox-xp-support-notes.txt",
+                  "claim_value": "firefox/releases/52.9.0esr/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
                   "evidence_kind": "file_listing",
                   "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture/files/0"
                 },
@@ -460,9 +460,27 @@
                   "asserted_by_family": "internet_archive_recorded",
                   "asserted_by_label": "Internet Archive Recorded Fixtures",
                   "claim_kind": "file_listing",
-                  "claim_value": "release-family-manifest.json",
+                  "claim_value": "firefox-xp-support-notes.txt",
                   "evidence_kind": "file_listing",
                   "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture/files/1"
+                },
+                {
+                  "asserted_at": "2017",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "firefox/releases/52.9.0esr/README-xp-support.txt",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture/files/2"
+                },
+                {
+                  "asserted_at": "2017",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "release-family-manifest.json",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture/files/3"
                 }
               ],
               "object": {
@@ -474,7 +492,7 @@
                     "created_by_slice": "compatibility_evidence_pack_v0",
                     "evidence_id": "compat-evidence:sha256:87bfa226afc4e6c69eea03e5933362d822a7f15405091f844d99e43b3b3c1e73",
                     "evidence_kind": "source_metadata",
-                    "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
+                    "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture includes a Firefox 52.9.0 ESR Windows XP compatible installer text stand-in as a bounded candidate within this corpus, not a universal latest-versio",
                     "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
                     "platform": {
                       "family": "windows",
@@ -495,7 +513,7 @@
                     "created_by_slice": "compatibility_evidence_pack_v0",
                     "evidence_id": "compat-evidence:sha256:9b1050ab4e10752aa5c6bbd65d2b4f7a13c678f1740198742f4c155a8aa8092c",
                     "evidence_kind": "compatibility_note",
-                    "evidence_text": "Windows XP; x86; release_notes; support_window",
+                    "evidence_text": "Windows XP; Windows NT 5.1; x86; release_notes; support_window; versioned_release_candidate; installer_stub",
                     "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
                     "platform": {
                       "family": "windows",
@@ -1116,6 +1134,173 @@
                 "source_id": "internet-archive-recorded-fixtures"
               },
               "target_ref": "internet-archive-recorded:ia-mac-os9-browser-doc-fixture"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_at": "2003",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "Old blue FTP client Windows XP candidate recorded fixture",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-blue-ftp-client-xp-candidate-fixture"
+                },
+                {
+                  "asserted_at": "2003",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "source_identifier",
+                  "claim_value": "ia-blue-ftp-client-xp-candidate-fixture",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-blue-ftp-client-xp-candidate-fixture"
+                },
+                {
+                  "asserted_at": "2003",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "description",
+                  "claim_value": "Recorded metadata for a plausible old blue FTP client Windows XP candidate. The fixture keeps the vague identity uncertainty explicit while providing source-shaped function, visual, platform, and artifact evidence.",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-blue-ftp-client-xp-candidate-fixture"
+                },
+                {
+                  "asserted_at": "2003",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "compatibility_note",
+                  "claim_value": "Windows XP; Windows NT 5.1; x86; ftp_client; file_transfer; visual_identity_hint; installer_stub; readme",
+                  "evidence_kind": "source_metadata",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-blue-ftp-client-xp-candidate-fixture"
+                },
+                {
+                  "asserted_at": "2003",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "ftp/blue-client/blue-ftp-client-xp-installer.exe.txt",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-blue-ftp-client-xp-candidate-fixture/files/0"
+                },
+                {
+                  "asserted_at": "2003",
+                  "asserted_by_family": "internet_archive_recorded",
+                  "asserted_by_label": "Internet Archive Recorded Fixtures",
+                  "claim_kind": "file_listing",
+                  "claim_value": "ftp/blue-client/README-windowsxp.txt",
+                  "evidence_kind": "file_listing",
+                  "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-blue-ftp-client-xp-candidate-fixture/files/1"
+                }
+              ],
+              "object": {
+                "compatibility_evidence": [
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "supports_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:084a581a3e7f3f71104c1b5cce3684e620a71e71b9c72cc0539a4b167a7b3664",
+                    "evidence_kind": "source_metadata",
+                    "evidence_text": "Recorded metadata for a plausible old blue FTP client Windows XP candidate. The fixture keeps the vague identity uncertainty explicit while providing source-shaped function, visual, platform, and artifact evidence.",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-blue-ftp-client-xp-candidate-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.blue.ftp.client.xp.candidate.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-blue-ftp-client-xp-candidate-fixture"
+                  },
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "mentions_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:0f059538427ff8468ef5768fa57a1ba4aff5ae8e1471b2840c3b91b7aaae1382",
+                    "evidence_kind": "source_metadata",
+                    "evidence_text": "Old blue FTP client Windows XP candidate recorded fixture",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-blue-ftp-client-xp-candidate-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.blue.ftp.client.xp.candidate.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-blue-ftp-client-xp-candidate-fixture"
+                  },
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "documentation_for_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:2b1d4b6292dd96873f48b0d654939db5b4591898722a222014d4e3adba74d1bd",
+                    "evidence_kind": "file_path",
+                    "evidence_text": "ftp/blue-client/README-windowsxp.txt",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-blue-ftp-client-xp-candidate-fixture/files/1",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.blue.ftp.client.xp.candidate.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-blue-ftp-client-xp-candidate-fixture"
+                  },
+                  {
+                    "architecture": "x86",
+                    "claim_type": "documentation_for_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:a28a2d741074ad382f618e702d251c7ca82cf148408fc83bbd254d79ddd06ebf",
+                    "evidence_kind": "compatibility_note",
+                    "evidence_text": "Windows XP; Windows NT 5.1; x86; ftp_client; file_transfer; visual_identity_hint; installer_stub; readme",
+                    "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-blue-ftp-client-xp-candidate-fixture",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "internet_archive_recorded",
+                    "source_id": "internet-archive-recorded-fixtures",
+                    "source_label": "Internet Archive Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.blue.ftp.client.xp.candidate.fixture",
+                    "subject_target_ref": "internet-archive-recorded:ia-blue-ftp-client-xp-candidate-fixture"
+                  }
+                ],
+                "compatibility_summary": "Windows XP: supports_platform via source_metadata (medium); Windows XP: mentions_platform via source_metadata (medium); Windows XP: documentation_for_platform via file_path (medium); +1 more",
+                "id": "obj.internet-archive-recorded.ia.blue.ftp.client.xp.candidate.fixture",
+                "kind": "software",
+                "label": "Old blue FTP client Windows XP candidate recorded fixture",
+                "primary_lane": "preservation",
+                "result_lanes": [
+                  "preservation"
+                ],
+                "usefulness_summary": "preservation; user cost 3; why: preservation_source",
+                "user_cost_reasons": [
+                  "preservation_source"
+                ],
+                "user_cost_score": 3
+              },
+              "resolved_resource_id": "resolved:sha256:9c1b7cf3ba0f677ef0fd25a3621d8436a35b0b2808f13ae4d34ef71f202787d9",
+              "source": {
+                "family": "internet_archive_recorded",
+                "label": "Internet Archive Recorded Fixtures",
+                "locator": "ia-recorded://ia-blue-ftp-client-xp-candidate-fixture",
+                "source_id": "internet-archive-recorded-fixtures"
+              },
+              "target_ref": "internet-archive-recorded:ia-blue-ftp-client-xp-candidate-fixture"
             },
             {
               "evidence": [
@@ -1949,7 +2134,7 @@
               "target_ref": "internet-archive-recorded:ia-win98-registry-repair-fixture"
             }
           ],
-          "result_count": 15,
+          "result_count": 16,
           "result_kind": "search_results"
         },
         "run_id": "run-deterministic-search-0001",

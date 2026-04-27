@@ -48,6 +48,46 @@
         "created_by_slice": "resolution_memory_v0",
         "evidence_summary": [
           {
+            "asserted_by_family": "local_bundle_fixtures",
+            "asserted_by_label": "Local Bundle Fixtures",
+            "claim_kind": "member_listing",
+            "claim_value": "browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+            "evidence_kind": "member_listing",
+            "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/3"
+          },
+          {
+            "asserted_by_family": "local_bundle_fixtures",
+            "asserted_by_label": "Local Bundle Fixtures",
+            "claim_kind": "compatibility_note",
+            "claim_value": "Text stand-in for a Firefox 52.9.0 ESR Windows XP compatible installer candidate within fixture scope.",
+            "evidence_kind": "compatibility_note",
+            "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/3"
+          },
+          {
+            "asserted_by_family": "local_bundle_fixtures",
+            "asserted_by_label": "Local Bundle Fixtures",
+            "claim_kind": "member_path",
+            "claim_value": "browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+            "evidence_kind": "member_listing",
+            "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt"
+          },
+          {
+            "asserted_by_family": "local_bundle_fixtures",
+            "asserted_by_label": "Local Bundle Fixtures",
+            "claim_kind": "member_hash",
+            "claim_value": "sha256:dda82b41c912f13179998404f622a80839b27aa70fbf20049f521de1a4118cc4",
+            "evidence_kind": "member_listing",
+            "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt"
+          },
+          {
+            "asserted_by_family": "local_bundle_fixtures",
+            "asserted_by_label": "Local Bundle Fixtures",
+            "claim_kind": "member_text",
+            "claim_value": "Text stand-in for Firefox release 52.9.0 ESR Windows XP compatible installer candidate. This fixture records versioned release evidence before XP support ended within the committed corpus only; no real browser binary is redistributed.",
+            "evidence_kind": "member_text",
+            "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt"
+          },
+          {
             "asserted_at": "2017",
             "asserted_by_family": "internet_archive_recorded",
             "asserted_by_label": "Internet Archive Recorded Fixtures",
@@ -70,52 +110,9 @@
             "asserted_by_family": "internet_archive_recorded",
             "asserted_by_label": "Internet Archive Recorded Fixtures",
             "claim_kind": "description",
-            "claim_value": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
+            "claim_value": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture includes a Firefox 52.9.0 ESR Windows XP compatible installer text stand-in as a bounded candidate within this corpus, not a universal latest-version oracle.",
             "evidence_kind": "source_metadata",
             "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture"
-          },
-          {
-            "asserted_at": "2017",
-            "asserted_by_family": "internet_archive_recorded",
-            "asserted_by_label": "Internet Archive Recorded Fixtures",
-            "claim_kind": "compatibility_note",
-            "claim_value": "Windows XP; x86; release_notes; support_window",
-            "evidence_kind": "source_metadata",
-            "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture"
-          },
-          {
-            "asserted_at": "2017",
-            "asserted_by_family": "internet_archive_recorded",
-            "asserted_by_label": "Internet Archive Recorded Fixtures",
-            "claim_kind": "file_listing",
-            "claim_value": "firefox-xp-support-notes.txt",
-            "evidence_kind": "file_listing",
-            "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture/files/0"
-          },
-          {
-            "asserted_at": "2017",
-            "asserted_by_family": "internet_archive_recorded",
-            "asserted_by_label": "Internet Archive Recorded Fixtures",
-            "claim_kind": "file_listing",
-            "claim_value": "release-family-manifest.json",
-            "evidence_kind": "file_listing",
-            "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture/files/1"
-          },
-          {
-            "asserted_by_family": "local_bundle_fixtures",
-            "asserted_by_label": "Local Bundle Fixtures",
-            "claim_kind": "member_listing",
-            "claim_value": "browsers/firefox-xp-support/readme.txt",
-            "evidence_kind": "member_listing",
-            "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/2"
-          },
-          {
-            "asserted_by_family": "local_bundle_fixtures",
-            "asserted_by_label": "Local Bundle Fixtures",
-            "claim_kind": "compatibility_note",
-            "claim_value": "Readme for Firefox XP browser support notes fixture.",
-            "evidence_kind": "compatibility_note",
-            "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/2"
           }
         ],
         "invalidation_hints": {
@@ -131,7 +128,7 @@
         "memory_id": "memory-successful-search-0001",
         "memory_kind": "successful_search",
         "notices": [],
-        "primary_resolved_resource_id": "resolved:sha256:b80436d405f3dabbc6f6c57239f0bdac58d2387dcf5658ecbbf9292d45f280f7",
+        "primary_resolved_resource_id": "resolved:sha256:4caad63e34224be339f9e5060e335488bf8d9c6a2c273078ba6658165e21679c",
         "raw_query": "latest Firefox before XP support ended",
         "requested_value": "latest Firefox before XP support ended",
         "resolution_task": {
@@ -192,6 +189,21 @@
           "task_kind": "find_latest_compatible_release"
         },
         "result_summaries": [
+          {
+            "object": {
+              "id": "obj.synthetic-member.c78fbddd993ef55a796e8e48",
+              "kind": "synthetic_member",
+              "label": "browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt (browsers firefox xp support firefox 52 9 0esr win32 xp compatible installer exe txt) in Windows XP browser and tools bundle recorded fixture"
+            },
+            "resolved_resource_id": "resolved:sha256:4caad63e34224be339f9e5060e335488bf8d9c6a2c273078ba6658165e21679c",
+            "source": {
+              "family": "local_bundle_fixtures",
+              "label": "Local Bundle Fixtures",
+              "locator": "rep.local-bundle.windows-xp-browser-tools-bundle.zip#browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+              "source_id": "local-bundle-fixtures"
+            },
+            "target_ref": "member:sha256:c78fbddd993ef55a796e8e48165971d14b1dc4c69159077758a20b5a975c804f"
+          },
           {
             "object": {
               "id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",

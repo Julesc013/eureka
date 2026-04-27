@@ -4,20 +4,124 @@
       "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
       "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
       "index_path_kind": "bootstrap_local_path",
-      "record_count": 428,
+      "record_count": 479,
       "record_kind_counts": {
-        "evidence": 269,
-        "member": 29,
-        "representation": 48,
-        "resolved_object": 24,
+        "evidence": 305,
+        "member": 33,
+        "representation": 53,
+        "resolved_object": 25,
         "source_record": 8,
-        "state_or_release": 24,
-        "synthetic_member": 26
+        "state_or_release": 25,
+        "synthetic_member": 30
       }
     },
     "query": "synthetic",
     "result_count": 50,
     "results": [
+      {
+        "action_hints": [
+          "inspect_parent_bundle",
+          "read_member",
+          "preview_member"
+        ],
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:b7c8525e587c0aa23c979fd5ba11163f75dbdf39a62a6aa46b0e0479f5803fa1",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Text stand-in for a Firefox 52.9.0 ESR Windows XP compatible installer candidate within fixture scope.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows XP",
+              "name": "Windows XP",
+              "version": "NT 5.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.c78fbddd993ef55a796e8e48",
+            "subject_target_ref": "member:sha256:c78fbddd993ef55a796e8e48165971d14b1dc4c69159077758a20b5a975c804f"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "mentions_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:c75342467b318ba57e07ca85604350204eee77b47bc5e5a67a5f7331a788dd26",
+            "evidence_kind": "member_text",
+            "evidence_text": "Text stand-in for Firefox release 52.9.0 ESR Windows XP compatible installer candidate. This fixture records versioned release evidence before XP support ended within the committed corpus only; no real browser binary is redistributed.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows XP",
+              "name": "Windows XP",
+              "version": "NT 5.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.c78fbddd993ef55a796e8e48",
+            "subject_target_ref": "member:sha256:c78fbddd993ef55a796e8e48165971d14b1dc4c69159077758a20b5a975c804f"
+          }
+        ],
+        "compatibility_summary": "Windows XP: supports_platform via compatibility_note (medium); Windows XP: mentions_platform via member_text (medium)",
+        "content_hash": "sha256:dda82b41c912f13179998404f622a80839b27aa70fbf20049f521de1a4118cc4",
+        "evidence": [
+          "member_listing browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "compatibility_note Text stand-in for a Firefox 52.9.0 ESR Windows XP compatible installer candidate within fixture scope. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
+          "member_path browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_hash sha256:dda82b41c912f13179998404f622a80839b27aa70fbf20049f521de1a4118cc4 local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Text stand-in for Firefox release 52.9.0 ESR Windows XP compatible installer candidate. This fixture records versioned release evidence before XP support ended within the committed corpus only; no real browser binary is redistributed. local_bundle_fixtures member_text Local Bundle Fixtures"
+        ],
+        "index_record_id": "synthetic_member:member:sha256:c78fbddd993ef55a796e8e48165971d14b1dc4c69159077758a20b5a975c804f",
+        "label": "browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt (browsers firefox xp support firefox 52 9 0esr win32 xp compatible installer exe txt) in Windows XP browser and tools bundle recorded fixture",
+        "media_type": "text/plain",
+        "member_kind": "installer_like",
+        "member_path": "browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+        "parent_object_label": "Windows XP browser and tools bundle recorded fixture",
+        "parent_representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+        "parent_resolved_resource_id": "resolved:sha256:e03e0d3b7a43c3839c4302403544c87a6dff59120b1b0a4f95d11aee20d05f5c",
+        "parent_target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+        "primary_lane": "inside_bundles",
+        "record_kind": "synthetic_member",
+        "representation_id": "rep.synthetic-member.c78fbddd993ef55a796e8e48",
+        "resolved_resource_id": "obj.synthetic-member.c78fbddd993ef55a796e8e48",
+        "result_lanes": [
+          "inside_bundles",
+          "best_direct_answer",
+          "installable_or_usable_now"
+        ],
+        "route_hints": {
+          "member_path": "browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+          "parent_representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+          "parent_target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+          "record_kind": "synthetic_member",
+          "surface_route": "/",
+          "target_ref": "member:sha256:c78fbddd993ef55a796e8e48165971d14b1dc4c69159077758a20b5a975c804f"
+        },
+        "size_bytes": 235,
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.c78fbddd993ef55a796e8e48",
+        "summary": "installer_like member of Windows XP browser and tools bundle recorded fixture",
+        "target_ref": "member:sha256:c78fbddd993ef55a796e8e48165971d14b1dc4c69159077758a20b5a975c804f",
+        "usefulness_summary": "inside bundles; user cost 1; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_evidence_present"
+        ],
+        "user_cost_score": 1,
+        "version_or_state": "state.synthetic-member.c78fbddd993ef55a796e8e48.derived"
+      },
       {
         "action_hints": [
           "inspect_parent_bundle",
@@ -624,13 +728,221 @@
         ],
         "compatibility_evidence": [
           {
+            "architecture": "x64",
+            "claim_type": "supports_platform",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:532f209449f81ac09f2b8a28e4d44590b46a298b5af627cee583a63ca0c1cf33",
+            "evidence_kind": "member_text",
+            "evidence_text": "Text stand-in for an individual Windows 7 apps checksum utility installer. Compatibility hint: Windows 7 / Windows NT 6.1, x86 and x64. No real executable payload.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/utilities/checksum-tool/checksum-tool.exe.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.67d6204835e06fae68fcb2d9",
+            "subject_target_ref": "member:sha256:67d6204835e06fae68fcb2d96d128d1e78013c046f7733427b37e0ce52d0b391"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:96c472e65ebb5937f29f44254755538d207ea24264889b7ca37135154f91fc24",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Text stand-in for an individual Windows 7 checksum utility app installer.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/2",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.67d6204835e06fae68fcb2d9",
+            "subject_target_ref": "member:sha256:67d6204835e06fae68fcb2d96d128d1e78013c046f7733427b37e0ce52d0b391"
+          }
+        ],
+        "compatibility_summary": "Windows 7: supports_platform via member_text (low); Windows 7: supports_platform via compatibility_note (medium)",
+        "content_hash": "sha256:4ad4c6907726cccd06a11c5c7eed1b03f83848d5b1e20f15ce63cf90c5262eda",
+        "evidence": [
+          "member_listing utilities/checksum-tool/checksum-tool.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "compatibility_note Text stand-in for an individual Windows 7 checksum utility app installer. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
+          "member_path utilities/checksum-tool/checksum-tool.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_hash sha256:4ad4c6907726cccd06a11c5c7eed1b03f83848d5b1e20f15ce63cf90c5262eda local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Text stand-in for an individual Windows 7 apps checksum utility installer. Compatibility hint: Windows 7 / Windows NT 6.1, x86 and x64. No real executable payload. local_bundle_fixtures member_text Local Bundle Fixtures"
+        ],
+        "index_record_id": "synthetic_member:member:sha256:67d6204835e06fae68fcb2d96d128d1e78013c046f7733427b37e0ce52d0b391",
+        "label": "utilities/checksum-tool/checksum-tool.exe.txt (utilities checksum tool checksum tool exe txt) in Windows 7 utility bundle recorded fixture",
+        "media_type": "text/plain",
+        "member_kind": "utility",
+        "member_path": "utilities/checksum-tool/checksum-tool.exe.txt",
+        "parent_object_label": "Windows 7 utility bundle recorded fixture",
+        "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+        "parent_resolved_resource_id": "resolved:sha256:198bc6d5c14681830b33f09ce397da47e59adb92c6fe4a72e5c3debf62c1ce89",
+        "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+        "primary_lane": "inside_bundles",
+        "record_kind": "synthetic_member",
+        "representation_id": "rep.synthetic-member.67d6204835e06fae68fcb2d9",
+        "resolved_resource_id": "obj.synthetic-member.67d6204835e06fae68fcb2d9",
+        "result_lanes": [
+          "inside_bundles",
+          "best_direct_answer",
+          "installable_or_usable_now"
+        ],
+        "route_hints": {
+          "member_path": "utilities/checksum-tool/checksum-tool.exe.txt",
+          "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+          "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+          "record_kind": "synthetic_member",
+          "surface_route": "/",
+          "target_ref": "member:sha256:67d6204835e06fae68fcb2d96d128d1e78013c046f7733427b37e0ce52d0b391"
+        },
+        "size_bytes": 164,
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.67d6204835e06fae68fcb2d9",
+        "summary": "utility member of Windows 7 utility bundle recorded fixture",
+        "target_ref": "member:sha256:67d6204835e06fae68fcb2d96d128d1e78013c046f7733427b37e0ce52d0b391",
+        "usefulness_summary": "inside bundles; user cost 1; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_evidence_present"
+        ],
+        "user_cost_score": 1,
+        "version_or_state": "state.synthetic-member.67d6204835e06fae68fcb2d9.derived"
+      },
+      {
+        "action_hints": [
+          "inspect_parent_bundle",
+          "read_member",
+          "preview_member"
+        ],
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:5555b534fea0de3926695a2dbe3af57cf579f41abdc7b2d9d526e2ccc700ba12",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Text stand-in for a plausible old blue FTP client Windows XP installer candidate.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/5",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows XP",
+              "name": "Windows XP",
+              "version": "NT 5.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.fcabf3c698e15061422b6a2f",
+            "subject_target_ref": "member:sha256:fcabf3c698e15061422b6a2f0d10cf90b6583f2245f7bdd9ac3c34847824fdec"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "mentions_platform",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:8fbf704933d2f1d0d830e19e2c727b562d4cca896ba20e1d54d9335364429a00",
+            "evidence_kind": "member_text",
+            "evidence_text": "Text stand-in for a plausible old blue FTP client Windows XP installer candidate. Function evidence: FTP client and file transfer. Appearance evidence: blue icon / blue globe. No real executable payload.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/utilities/ftp-blue-client/blue-ftp-client-xp-installer.exe.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows XP",
+              "name": "Windows XP",
+              "version": "NT 5.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.fcabf3c698e15061422b6a2f",
+            "subject_target_ref": "member:sha256:fcabf3c698e15061422b6a2f0d10cf90b6583f2245f7bdd9ac3c34847824fdec"
+          }
+        ],
+        "compatibility_summary": "Windows XP: supports_platform via compatibility_note (medium); Windows XP: mentions_platform via member_text (low)",
+        "content_hash": "sha256:7e663306c3d836ba85dc48a45344eace80940c128a9ff752ad6a924e6b77d5dc",
+        "evidence": [
+          "member_listing utilities/ftp-blue-client/blue-ftp-client-xp-installer.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "compatibility_note Text stand-in for a plausible old blue FTP client Windows XP installer candidate. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
+          "member_path utilities/ftp-blue-client/blue-ftp-client-xp-installer.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_hash sha256:7e663306c3d836ba85dc48a45344eace80940c128a9ff752ad6a924e6b77d5dc local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Text stand-in for a plausible old blue FTP client Windows XP installer candidate. Function evidence: FTP client and file transfer. Appearance evidence: blue icon / blue globe. No real executable payload. local_bundle_fixtures member_text Local Bundle Fixtures"
+        ],
+        "index_record_id": "synthetic_member:member:sha256:fcabf3c698e15061422b6a2f0d10cf90b6583f2245f7bdd9ac3c34847824fdec",
+        "label": "utilities/ftp-blue-client/blue-ftp-client-xp-installer.exe.txt (utilities ftp blue client blue ftp client xp installer exe txt) in Windows XP browser and tools bundle recorded fixture",
+        "media_type": "text/plain",
+        "member_kind": "utility",
+        "member_path": "utilities/ftp-blue-client/blue-ftp-client-xp-installer.exe.txt",
+        "parent_object_label": "Windows XP browser and tools bundle recorded fixture",
+        "parent_representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+        "parent_resolved_resource_id": "resolved:sha256:e03e0d3b7a43c3839c4302403544c87a6dff59120b1b0a4f95d11aee20d05f5c",
+        "parent_target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+        "primary_lane": "inside_bundles",
+        "record_kind": "synthetic_member",
+        "representation_id": "rep.synthetic-member.fcabf3c698e15061422b6a2f",
+        "resolved_resource_id": "obj.synthetic-member.fcabf3c698e15061422b6a2f",
+        "result_lanes": [
+          "inside_bundles",
+          "best_direct_answer",
+          "installable_or_usable_now"
+        ],
+        "route_hints": {
+          "member_path": "utilities/ftp-blue-client/blue-ftp-client-xp-installer.exe.txt",
+          "parent_representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+          "parent_target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+          "record_kind": "synthetic_member",
+          "surface_route": "/",
+          "target_ref": "member:sha256:fcabf3c698e15061422b6a2f0d10cf90b6583f2245f7bdd9ac3c34847824fdec"
+        },
+        "size_bytes": 204,
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.fcabf3c698e15061422b6a2f",
+        "summary": "utility member of Windows XP browser and tools bundle recorded fixture",
+        "target_ref": "member:sha256:fcabf3c698e15061422b6a2f0d10cf90b6583f2245f7bdd9ac3c34847824fdec",
+        "usefulness_summary": "inside bundles; user cost 1; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_evidence_present"
+        ],
+        "user_cost_score": 1,
+        "version_or_state": "state.synthetic-member.fcabf3c698e15061422b6a2f.derived"
+      },
+      {
+        "action_hints": [
+          "inspect_parent_bundle",
+          "read_member",
+          "preview_member"
+        ],
+        "compatibility_evidence": [
+          {
             "architecture": "unknown",
             "claim_type": "mentions_platform",
             "confidence": "low",
             "created_by_slice": "compatibility_evidence_pack_v0",
             "evidence_id": "compat-evidence:sha256:7a597f529dbe940c3b82eb6ca387753b5f28daa808b2a5e6b4a4cc9a4baa99da",
             "evidence_kind": "member_text",
-            "evidence_text": "Text stand-in for a Windows 98 compatible installer named registry repair utility. This is not executable software.",
+            "evidence_text": "Text stand-in for a Windows 98 compatible registry repair utility installer. Function evidence: software to fix broken registry entries on Windows 98. This is not executable software.",
             "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-98-registry-repair-bundle.zip/utilities/registry-repair/registry-repair.exe.txt",
             "platform": {
               "family": "windows",
@@ -665,13 +977,13 @@
           }
         ],
         "compatibility_summary": "Windows 98: mentions_platform via member_text (low); Windows 98: supports_platform via compatibility_note (medium)",
-        "content_hash": "sha256:f43dcaf861aef42b4df5138bcdfe3abded3957e17144f8bbb574275e218c4517",
+        "content_hash": "sha256:75be0291dbaaa64349265eab068e8c9f3e49005a76d46777062cebf62e8d99ae",
         "evidence": [
           "member_listing utilities/registry-repair/registry-repair.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
           "compatibility_note Text stand-in for a Windows 98 compatible installer. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
           "member_path utilities/registry-repair/registry-repair.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_hash sha256:f43dcaf861aef42b4df5138bcdfe3abded3957e17144f8bbb574275e218c4517 local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_text Text stand-in for a Windows 98 compatible installer named registry repair utility. This is not executable software. local_bundle_fixtures member_text Local Bundle Fixtures"
+          "member_hash sha256:75be0291dbaaa64349265eab068e8c9f3e49005a76d46777062cebf62e8d99ae local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Text stand-in for a Windows 98 compatible registry repair utility installer. Function evidence: software to fix broken registry entries on Windows 98. This is not executable software. local_bundle_fixtures member_text Local Bundle Fixtures"
         ],
         "index_record_id": "synthetic_member:member:sha256:d665d29fb32737ac3449781b237d434a37a8c0adac360abfe8179c988519e5a6",
         "label": "utilities/registry-repair/registry-repair.exe.txt (utilities registry repair registry repair exe txt) in Windows 98 software to fix broken registry repair utility bundle recorded fixture",
@@ -699,7 +1011,7 @@
           "surface_route": "/",
           "target_ref": "member:sha256:d665d29fb32737ac3449781b237d434a37a8c0adac360abfe8179c988519e5a6"
         },
-        "size_bytes": 116,
+        "size_bytes": 184,
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
@@ -717,6 +1029,110 @@
         ],
         "user_cost_score": 1,
         "version_or_state": "state.synthetic-member.d665d29fb32737ac3449781b.derived"
+      },
+      {
+        "action_hints": [
+          "inspect_parent_bundle",
+          "read_member",
+          "preview_member"
+        ],
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:2d6dc0612c42d0c10604f5344e99742ff4ae2f0c8e20398212a4f7ae6414a750",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Text stand-in for an individual Windows 7 text editor app installer.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/3",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.8ef60df8137d8abb742b15b6",
+            "subject_target_ref": "member:sha256:8ef60df8137d8abb742b15b68efeec102c5767659c746d4374d65854a71bfb27"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:b4be560b936f79027bb0b95d572082af71e81a2dac20002f54ab174e1f6b7c9d",
+            "evidence_kind": "member_text",
+            "evidence_text": "Text stand-in for an individual Windows 7 apps text editor installer. Compatibility hint: Windows 7 / Windows NT 6.1. No real executable payload.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/utilities/text-editor/text-editor.exe.txt",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.8ef60df8137d8abb742b15b6",
+            "subject_target_ref": "member:sha256:8ef60df8137d8abb742b15b68efeec102c5767659c746d4374d65854a71bfb27"
+          }
+        ],
+        "compatibility_summary": "Windows 7: supports_platform via compatibility_note (medium); Windows 7: supports_platform via member_text (low)",
+        "content_hash": "sha256:ce74bd3edb3831fbeac7d8638f9120d8119c268229d705b8bca197749323b575",
+        "evidence": [
+          "member_listing utilities/text-editor/text-editor.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "compatibility_note Text stand-in for an individual Windows 7 text editor app installer. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
+          "member_path utilities/text-editor/text-editor.exe.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_hash sha256:ce74bd3edb3831fbeac7d8638f9120d8119c268229d705b8bca197749323b575 local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Text stand-in for an individual Windows 7 apps text editor installer. Compatibility hint: Windows 7 / Windows NT 6.1. No real executable payload. local_bundle_fixtures member_text Local Bundle Fixtures"
+        ],
+        "index_record_id": "synthetic_member:member:sha256:8ef60df8137d8abb742b15b68efeec102c5767659c746d4374d65854a71bfb27",
+        "label": "utilities/text-editor/text-editor.exe.txt (utilities text editor text editor exe txt) in Windows 7 utility bundle recorded fixture",
+        "media_type": "text/plain",
+        "member_kind": "utility",
+        "member_path": "utilities/text-editor/text-editor.exe.txt",
+        "parent_object_label": "Windows 7 utility bundle recorded fixture",
+        "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+        "parent_resolved_resource_id": "resolved:sha256:198bc6d5c14681830b33f09ce397da47e59adb92c6fe4a72e5c3debf62c1ce89",
+        "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+        "primary_lane": "inside_bundles",
+        "record_kind": "synthetic_member",
+        "representation_id": "rep.synthetic-member.8ef60df8137d8abb742b15b6",
+        "resolved_resource_id": "obj.synthetic-member.8ef60df8137d8abb742b15b6",
+        "result_lanes": [
+          "inside_bundles",
+          "best_direct_answer",
+          "installable_or_usable_now"
+        ],
+        "route_hints": {
+          "member_path": "utilities/text-editor/text-editor.exe.txt",
+          "parent_representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+          "parent_target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+          "record_kind": "synthetic_member",
+          "surface_route": "/",
+          "target_ref": "member:sha256:8ef60df8137d8abb742b15b68efeec102c5767659c746d4374d65854a71bfb27"
+        },
+        "size_bytes": 146,
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.synthetic-member.8ef60df8137d8abb742b15b6",
+        "summary": "utility member of Windows 7 utility bundle recorded fixture",
+        "target_ref": "member:sha256:8ef60df8137d8abb742b15b68efeec102c5767659c746d4374d65854a71bfb27",
+        "usefulness_summary": "inside bundles; user cost 1; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; compatibility_evidence_present",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "compatibility_evidence_present"
+        ],
+        "user_cost_score": 1,
+        "version_or_state": "state.synthetic-member.8ef60df8137d8abb742b15b6.derived"
       },
       {
         "evidence": [
@@ -1225,7 +1641,7 @@
             "created_by_slice": "compatibility_evidence_pack_v0",
             "evidence_id": "compat-evidence:sha256:6f89a8e6f72ebe6f0852cd7ca0ab41761ff764fc376f598a8f1709a81cbf0f17",
             "evidence_kind": "readme",
-            "evidence_text": "Firefox XP browser support notes fixture. Mentions Windows XP compatibility evidence and support-window investigation.",
+            "evidence_text": "Firefox XP browser support notes fixture. Mentions Windows XP / Windows NT 5.1 compatibility, Firefox release 52.9.0 ESR, and support-window investigation. Fixture evidence only; not a universal latest-version oracle.",
             "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/readme.txt",
             "platform": {
               "family": "windows",
@@ -1241,13 +1657,13 @@
           }
         ],
         "compatibility_summary": "Windows XP: documentation_for_platform via readme (medium)",
-        "content_hash": "sha256:0dbd25cc0fa1e75926744518cd51fa6b7db3a53c91fc0880f9b78c1777bd7645",
+        "content_hash": "sha256:be5988a93c37ba3494a9c97ee4c1f6a9bb9ee9b61daac194e13b0f3dec0d914e",
         "evidence": [
           "member_listing browsers/firefox-xp-support/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "compatibility_note Readme for Firefox XP browser support notes fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
+          "compatibility_note Readme for Firefox XP browser support notes fixture with Firefox 52.9.0 ESR candidate evidence. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
           "member_path browsers/firefox-xp-support/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_hash sha256:0dbd25cc0fa1e75926744518cd51fa6b7db3a53c91fc0880f9b78c1777bd7645 local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_text Firefox XP browser support notes fixture. Mentions Windows XP compatibility evidence and support-window investigation. local_bundle_fixtures readme Local Bundle Fixtures"
+          "member_hash sha256:be5988a93c37ba3494a9c97ee4c1f6a9bb9ee9b61daac194e13b0f3dec0d914e local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Firefox XP browser support notes fixture. Mentions Windows XP / Windows NT 5.1 compatibility, Firefox release 52.9.0 ESR, and support-window investigation. Fixture evidence only; not a universal latest-version oracle. local_bundle_fixtures readme Local Bundle Fixtures"
         ],
         "index_record_id": "synthetic_member:member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199",
         "label": "browsers/firefox-xp-support/readme.txt (browsers firefox xp support readme txt) in Windows XP browser and tools bundle recorded fixture",
@@ -1274,7 +1690,7 @@
           "surface_route": "/",
           "target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199"
         },
-        "size_bytes": 119,
+        "size_bytes": 218,
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
@@ -1470,48 +1886,6 @@
         ],
         "compatibility_evidence": [
           {
-            "architecture": "unknown",
-            "claim_type": "supports_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:13d4eb4bdfb28370b7c5b4ec58297442470c44ea2222dcd08262951ba36d5b13",
-            "evidence_kind": "compatibility_note",
-            "evidence_text": "Windows 7 and Windows NT 6.1 compatibility hint.",
-            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/3",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows 7",
-              "name": "Windows 7",
-              "version": "NT 6.1"
-            },
-            "source_family": "local_bundle_fixtures",
-            "source_id": "local-bundle-fixtures",
-            "source_label": "Local Bundle Fixtures",
-            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
-          },
-          {
-            "architecture": "unknown",
-            "claim_type": "supports_platform",
-            "confidence": "low",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:1e519d522748c8c1c35b0132dcae66afa34f07813e68f605c0392bdff21fec9d",
-            "evidence_kind": "file_path",
-            "evidence_text": "compatibility/windows7.txt",
-            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/3",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows 7",
-              "name": "Windows 7",
-              "version": "NT 6.1"
-            },
-            "source_family": "local_bundle_fixtures",
-            "source_id": "local-bundle-fixtures",
-            "source_label": "Local Bundle Fixtures",
-            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
-            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
-          },
-          {
             "architecture": "x64",
             "claim_type": "supports_platform",
             "confidence": "medium",
@@ -1555,6 +1929,27 @@
           },
           {
             "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:6f5c5ccc0418d962983e56a862a9c40b61df13d4c76f85328d7d8080dbe36d9d",
+            "evidence_kind": "file_path",
+            "evidence_text": "compatibility/windows7.txt",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/5",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          },
+          {
+            "architecture": "unknown",
             "claim_type": "documentation_for_platform",
             "confidence": "medium",
             "created_by_slice": "compatibility_evidence_pack_v0",
@@ -1573,9 +1968,30 @@
             "source_label": "Local Bundle Fixtures",
             "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
             "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:ce545277e7f8357bc0a585257dd4da88f52a676fda4b2a98acb9b4a7512b437b",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 7 and Windows NT 6.1 compatibility hint.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/members/5",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 7",
+              "name": "Windows 7",
+              "version": "NT 6.1"
+            },
+            "source_family": "local_bundle_fixtures",
+            "source_id": "local-bundle-fixtures",
+            "source_label": "Local Bundle Fixtures",
+            "subject_resolved_resource_id": "obj.synthetic-member.f1d241f67aa0ae7ead831d03",
+            "subject_target_ref": "member:sha256:f1d241f67aa0ae7ead831d032f9ec8876e8e81fee2808e79857a7874e1688296"
           }
         ],
-        "compatibility_summary": "Windows 7: supports_platform via compatibility_note (medium); Windows 7: supports_platform via file_path (low); Windows 7: supports_platform via compatibility_note (medium); +2 more",
+        "compatibility_summary": "Windows 7: supports_platform via compatibility_note (medium); Windows 7: supports_platform via file_path (low); Windows 7: supports_platform via file_path (low); +2 more",
         "content_hash": "sha256:78dc68497ecd1c8544a3f6b9b3944236d70b18aea20f51af18775a670f4f7970",
         "evidence": [
           "member_listing compatibility/windows7.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
@@ -2727,7 +3143,7 @@
             "created_by_slice": "compatibility_evidence_pack_v0",
             "evidence_id": "compat-evidence:sha256:b8ff3a87378bd831477a289a3babecae9a59bb8976ca4c3be5f1f1c070a6f4c9",
             "evidence_kind": "member_text",
-            "evidence_text": "{\"fixture\":\"windows_utility_bundle\",\"platforms\":[\"Windows 7\",\"Windows NT 6.1\"],\"members\":4}",
+            "evidence_text": "{\"fixture\":\"windows_utility_bundle\",\"platforms\":[\"Windows 7\",\"Windows NT 6.1\"],\"members\":6,\"roles\":[\"utility\",\"individual_application_installer\",\"portable_app\"]}",
             "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/manifests/manifest.json",
             "platform": {
               "family": "windows",
@@ -2743,11 +3159,11 @@
           }
         ],
         "compatibility_summary": "Windows 7: supports_platform via member_text (low)",
-        "content_hash": "sha256:e12b9cdd3d5cf64d8854f59085543fa78eaff272c9c9e89aeac08663a833de18",
+        "content_hash": "sha256:b335774acd76ab92000b05cb8014f616ac87c2b4fa3e0d11f31fa370bf370be7",
         "evidence": [
           "member_path manifests/manifest.json local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_hash sha256:e12b9cdd3d5cf64d8854f59085543fa78eaff272c9c9e89aeac08663a833de18 local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_text {\"fixture\":\"windows_utility_bundle\",\"platforms\":[\"Windows 7\",\"Windows NT 6.1\"],\"members\":4} local_bundle_fixtures member_text Local Bundle Fixtures"
+          "member_hash sha256:b335774acd76ab92000b05cb8014f616ac87c2b4fa3e0d11f31fa370bf370be7 local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text {\"fixture\":\"windows_utility_bundle\",\"platforms\":[\"Windows 7\",\"Windows NT 6.1\"],\"members\":6,\"roles\":[\"utility\",\"individual_application_installer\",\"portable_app\"]} local_bundle_fixtures member_text Local Bundle Fixtures"
         ],
         "index_record_id": "synthetic_member:member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493",
         "label": "manifests/manifest.json (manifests manifest json) in Windows 7 utility bundle recorded fixture",
@@ -2774,7 +3190,7 @@
           "surface_route": "/",
           "target_ref": "member:sha256:5475247899f48cb2102bacd1faf7cb826b986d66e8a53c9993f9491142188493"
         },
-        "size_bytes": 92,
+        "size_bytes": 162,
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
@@ -2808,7 +3224,7 @@
             "created_by_slice": "compatibility_evidence_pack_v0",
             "evidence_id": "compat-evidence:sha256:2a6e8a29c78712c1c8a5df88db6ff8240844ae4fca0e9aac70d6df14d2f1397f",
             "evidence_kind": "member_text",
-            "evidence_text": "{\"fixture\":\"windows_98_registry_repair_bundle\",\"platforms\":[\"Windows 98\"],\"roles\":[\"registry repair utility\",\"installer_stub\"]}",
+            "evidence_text": "{\"fixture\":\"windows_98_registry_repair_bundle\",\"platforms\":[\"Windows 98\"],\"roles\":[\"registry repair utility\",\"installer_stub\",\"direct_artifact_candidate\"],\"members\":[\"utilities/registry-repair/registry-repair.exe.txt\"]}",
             "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-98-registry-repair-bundle.zip/manifests/manifest.json",
             "platform": {
               "family": "windows",
@@ -2843,13 +3259,13 @@
           }
         ],
         "compatibility_summary": "Windows 98: supports_platform via member_text (low); Windows 98: supports_platform via compatibility_note (medium)",
-        "content_hash": "sha256:b3e42301a4e44b7e2a21237f280c6eaf558f9646fe30ddd0a3d89646af5ac80f",
+        "content_hash": "sha256:386800bf2b46506820534a8afdbd7160c3589f7c37555d510c8317da043dd869",
         "evidence": [
           "member_listing manifests/manifest.json local_bundle_fixtures member_listing Local Bundle Fixtures",
           "compatibility_note Manifest records Windows 98 registry repair metadata. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
           "member_path manifests/manifest.json local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_hash sha256:b3e42301a4e44b7e2a21237f280c6eaf558f9646fe30ddd0a3d89646af5ac80f local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_text {\"fixture\":\"windows_98_registry_repair_bundle\",\"platforms\":[\"Windows 98\"],\"roles\":[\"registry repair utility\",\"installer_stub\"]} local_bundle_fixtures member_text Local Bundle Fixtures"
+          "member_hash sha256:386800bf2b46506820534a8afdbd7160c3589f7c37555d510c8317da043dd869 local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text {\"fixture\":\"windows_98_registry_repair_bundle\",\"platforms\":[\"Windows 98\"],\"roles\":[\"registry repair utility\",\"installer_stub\",\"direct_artifact_candidate\"],\"members\":[\"utilities/registry-repair/registry-repair.exe.txt\"]} local_bundle_fixtures member_text Local Bundle Fixtures"
         ],
         "index_record_id": "synthetic_member:member:sha256:ae90d1ea07d3b96a37368fa2f488c82bed77f475620d4d16f30227cd6a3975f1",
         "label": "manifests/manifest.json (manifests manifest json) in Windows 98 software to fix broken registry repair utility bundle recorded fixture",
@@ -2876,7 +3292,7 @@
           "surface_route": "/",
           "target_ref": "member:sha256:ae90d1ea07d3b96a37368fa2f488c82bed77f475620d4d16f30227cd6a3975f1"
         },
-        "size_bytes": 128,
+        "size_bytes": 220,
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
@@ -2906,12 +3322,12 @@
           {
             "architecture": "unknown",
             "claim_type": "supports_platform",
-            "confidence": "low",
+            "confidence": "medium",
             "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:7695b3776ebb8a1bda312d5ac7eb61e2b63b8338c499a70c4729c56c3ffcc6dd",
-            "evidence_kind": "member_text",
-            "evidence_text": "{\"fixture\":\"windows_xp_browser_tools_bundle\",\"platforms\":[\"Windows XP\",\"Windows NT 5.1\"],\"roles\":[\"browser_notes\",\"ftp_client\"]}",
-            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/manifests/manifest.json",
+            "evidence_id": "compat-evidence:sha256:023e46042a2bf95e50f6231b54c34f329c9635fb2c0a8d156f28edd1e30de246",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Manifest records Windows XP browser/tools metadata.",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/6",
             "platform": {
               "family": "windows",
               "marketing_alias": "Windows XP",
@@ -2929,10 +3345,10 @@
             "claim_type": "supports_platform",
             "confidence": "medium",
             "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:e336ce0442ef6247478fc4c4042d7e0b4a686944ff4c88e0fd7d0de7be157e91",
-            "evidence_kind": "compatibility_note",
-            "evidence_text": "Manifest records Windows XP browser/tools metadata.",
-            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/4",
+            "evidence_id": "compat-evidence:sha256:7695b3776ebb8a1bda312d5ac7eb61e2b63b8338c499a70c4729c56c3ffcc6dd",
+            "evidence_kind": "member_text",
+            "evidence_text": "{\"fixture\":\"windows_xp_browser_tools_bundle\",\"platforms\":[\"Windows XP\",\"Windows NT 5.1\"],\"roles\":[\"browser_notes\",\"versioned_release_candidate\",\"ftp_client\",\"installer_stub\"],\"members\":[\"firefox-52.9.0esr-win32-xp-compatible-installer.exe.t",
+            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/manifests/manifest.json",
             "platform": {
               "family": "windows",
               "marketing_alias": "Windows XP",
@@ -2946,14 +3362,14 @@
             "subject_target_ref": "member:sha256:33ba36bb852ba78f9ff22237ebc7ee25ef36e396c812549dae2c7335f52d3ae5"
           }
         ],
-        "compatibility_summary": "Windows XP: supports_platform via member_text (low); Windows XP: supports_platform via compatibility_note (medium)",
-        "content_hash": "sha256:1fdfca6a0d439ba04af8d913d84de6065603552a1d8be4296134b2824bcfe5d1",
+        "compatibility_summary": "Windows XP: supports_platform via compatibility_note (medium); Windows XP: supports_platform via member_text (medium)",
+        "content_hash": "sha256:e1288002261b02e9dbd3da64d66204f15502131ee7b441cae8c2abc0387dec0d",
         "evidence": [
           "member_listing manifests/manifest.json local_bundle_fixtures member_listing Local Bundle Fixtures",
           "compatibility_note Manifest records Windows XP browser/tools metadata. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
           "member_path manifests/manifest.json local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_hash sha256:1fdfca6a0d439ba04af8d913d84de6065603552a1d8be4296134b2824bcfe5d1 local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_text {\"fixture\":\"windows_xp_browser_tools_bundle\",\"platforms\":[\"Windows XP\",\"Windows NT 5.1\"],\"roles\":[\"browser_notes\",\"ftp_client\"]} local_bundle_fixtures member_text Local Bundle Fixtures"
+          "member_hash sha256:e1288002261b02e9dbd3da64d66204f15502131ee7b441cae8c2abc0387dec0d local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text {\"fixture\":\"windows_xp_browser_tools_bundle\",\"platforms\":[\"Windows XP\",\"Windows NT 5.1\"],\"roles\":[\"browser_notes\",\"versioned_release_candidate\",\"ftp_client\",\"installer_stub\"],\"members\":[\"firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt\",\"blue-ftp-client-xp-installer.exe.txt\"]} local_bundle_fixtures member_text Local Bundle Fixtures"
         ],
         "index_record_id": "synthetic_member:member:sha256:33ba36bb852ba78f9ff22237ebc7ee25ef36e396c812549dae2c7335f52d3ae5",
         "label": "manifests/manifest.json (manifests manifest json) in Windows XP browser and tools bundle recorded fixture",
@@ -2980,7 +3396,7 @@
           "surface_route": "/",
           "target_ref": "member:sha256:33ba36bb852ba78f9ff22237ebc7ee25ef36e396c812549dae2c7335f52d3ae5"
         },
-        "size_bytes": 129,
+        "size_bytes": 285,
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
@@ -3241,7 +3657,7 @@
             "created_by_slice": "compatibility_evidence_pack_v0",
             "evidence_id": "compat-evidence:sha256:7e1c1b40a46ba53b6cf87cc1c96119fc76b530cd716872740b43e6eb7dbcc53c",
             "evidence_kind": "readme",
-            "evidence_text": "Windows 7 utility bundle fixture. Text stand-ins only; no real executables are redistributed.",
+            "evidence_text": "Windows 7 utility bundle fixture. Text stand-ins only; no real executables are redistributed. Includes individual Windows 7 apps and utility installer candidates.",
             "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-utility-bundle.zip/README.txt",
             "platform": {
               "family": "windows",
@@ -3278,13 +3694,13 @@
           }
         ],
         "compatibility_summary": "Windows 7: documentation_for_platform via readme (medium); Windows 7: documentation_for_platform via compatibility_note (medium)",
-        "content_hash": "sha256:dafdc398c3d3055f9679f7073f209534a7d363d665d21a7e08e5afb275d0ccbb",
+        "content_hash": "sha256:24494ed8134ad83437291e47d1208f9e67bb242ff8a90576b1904d74a0e346bc",
         "evidence": [
           "member_listing README.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
           "compatibility_note Fixture readme records Windows 7 / Windows NT 6.1 compatibility hints. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
           "member_path README.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_hash sha256:dafdc398c3d3055f9679f7073f209534a7d363d665d21a7e08e5afb275d0ccbb local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_text Windows 7 utility bundle fixture. Text stand-ins only; no real executables are redistributed. local_bundle_fixtures readme Local Bundle Fixtures"
+          "member_hash sha256:24494ed8134ad83437291e47d1208f9e67bb242ff8a90576b1904d74a0e346bc local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Windows 7 utility bundle fixture. Text stand-ins only; no real executables are redistributed. Includes individual Windows 7 apps and utility installer candidates. local_bundle_fixtures readme Local Bundle Fixtures"
         ],
         "index_record_id": "synthetic_member:member:sha256:fa60a201421f029eb8521f8d841859963e83c6bf669736f8ab5a4f9855b39647",
         "label": "README.txt (README txt) in Windows 7 utility bundle recorded fixture",
@@ -3311,7 +3727,7 @@
           "surface_route": "/",
           "target_ref": "member:sha256:fa60a201421f029eb8521f8d841859963e83c6bf669736f8ab5a4f9855b39647"
         },
-        "size_bytes": 94,
+        "size_bytes": 163,
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
@@ -3366,7 +3782,7 @@
             "created_by_slice": "compatibility_evidence_pack_v0",
             "evidence_id": "compat-evidence:sha256:db498ca69e1ff536d57260a754d4c9f785dacc7817afb310c860b7925951e2e4",
             "evidence_kind": "readme",
-            "evidence_text": "Windows 98 registry repair utility bundle fixture. Text stand-ins only; no real executable payload is included.",
+            "evidence_text": "Windows 98 registry repair utility bundle fixture. Text stand-ins only; no real executable payload is included. Targets software to fix broken registry entries on Windows 98.",
             "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-98-registry-repair-bundle.zip/README.txt",
             "platform": {
               "family": "windows",
@@ -3381,13 +3797,13 @@
           }
         ],
         "compatibility_summary": "Windows 98: documentation_for_platform via compatibility_note (medium); Windows 98: documentation_for_platform via readme (medium)",
-        "content_hash": "sha256:c710fb6bebfb4afbffd85adee7f3d0ec3e837981714ee33d2b5e342a80b137ea",
+        "content_hash": "sha256:42d805a047ea94a6a9ae12ba9e575c4355a84c59e09430c393fa602dc647b7de",
         "evidence": [
           "member_listing README.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
           "compatibility_note Fixture readme records software to fix broken registry entries with a registry repair utility for Windows 98. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
           "member_path README.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_hash sha256:c710fb6bebfb4afbffd85adee7f3d0ec3e837981714ee33d2b5e342a80b137ea local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_text Windows 98 registry repair utility bundle fixture. Text stand-ins only; no real executable payload is included. local_bundle_fixtures readme Local Bundle Fixtures"
+          "member_hash sha256:42d805a047ea94a6a9ae12ba9e575c4355a84c59e09430c393fa602dc647b7de local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Windows 98 registry repair utility bundle fixture. Text stand-ins only; no real executable payload is included. Targets software to fix broken registry entries on Windows 98. local_bundle_fixtures readme Local Bundle Fixtures"
         ],
         "index_record_id": "synthetic_member:member:sha256:c303efe923d541676af1c1a113fee0cdc3ba4216d5a34c589a35f5877b0f8fd7",
         "label": "README.txt (README txt) in Windows 98 software to fix broken registry repair utility bundle recorded fixture",
@@ -3414,7 +3830,7 @@
           "surface_route": "/",
           "target_ref": "member:sha256:c303efe923d541676af1c1a113fee0cdc3ba4216d5a34c589a35f5877b0f8fd7"
         },
-        "size_bytes": 112,
+        "size_bytes": 175,
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
@@ -3630,13 +4046,13 @@
           "read_member",
           "preview_member"
         ],
-        "content_hash": "sha256:efa70ea5170df4b316965585513244c319243a7d77a4138f916010b2d6b26256",
+        "content_hash": "sha256:8a32b9b7b8063c2338ad792f3394bf86aba90c482efba7f938860fe6f7981261",
         "evidence": [
           "member_listing utilities/ftp-blue-client/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "compatibility_note Text stand-in for an old blue FTP client for XP. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
+          "compatibility_note Text stand-in for an old blue FTP client for XP with blue icon / blue globe visual clue. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
           "member_path utilities/ftp-blue-client/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_hash sha256:efa70ea5170df4b316965585513244c319243a7d77a4138f916010b2d6b26256 local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_text Old blue FTP client for XP readme fixture. Classic Windows file transfer app blue globe clue, documentation only. local_bundle_fixtures readme Local Bundle Fixtures"
+          "member_hash sha256:8a32b9b7b8063c2338ad792f3394bf86aba90c482efba7f938860fe6f7981261 local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Old blue FTP client for XP readme fixture. Classic Windows file transfer app with blue icon / blue globe clue. This narrows a plausible candidate identity but remains fixture evidence, not a real-world identity oracle. local_bundle_fixtures readme Local Bundle Fixtures"
         ],
         "index_record_id": "synthetic_member:member:sha256:0733365e112ce769f912e0586b6b5597181e7426b85fedc04f2172e430b88aa1",
         "label": "utilities/ftp-blue-client/readme.txt (utilities ftp blue client readme txt) in Windows XP browser and tools bundle recorded fixture",
@@ -3663,7 +4079,7 @@
           "surface_route": "/",
           "target_ref": "member:sha256:0733365e112ce769f912e0586b6b5597181e7426b85fedc04f2172e430b88aa1"
         },
-        "size_bytes": 114,
+        "size_bytes": 219,
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
@@ -3717,7 +4133,7 @@
             "created_by_slice": "compatibility_evidence_pack_v0",
             "evidence_id": "compat-evidence:sha256:933352bfae9cd6ade42c9fc54bae8aba38f4855c0e5a7395bd0010ef574cf697",
             "evidence_kind": "readme",
-            "evidence_text": "Registry repair utility README. Intended source-shape evidence for software to fix broken registry Windows 98.",
+            "evidence_text": "Registry repair utility README. Intended source-shape evidence for software to fix broken registry on Windows 98. The fixture points to a text stand-in installer member.",
             "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-98-registry-repair-bundle.zip/utilities/registry-repair/readme.txt",
             "platform": {
               "family": "windows",
@@ -3732,13 +4148,13 @@
           }
         ],
         "compatibility_summary": "Windows 98: documentation_for_platform via compatibility_note (medium); Windows 98: documentation_for_platform via readme (medium)",
-        "content_hash": "sha256:c0a557b586fb09e18b2f2098721ffa052169316b513fa051024c2ba47a3df377",
+        "content_hash": "sha256:150a1b195ae74898b9379d95b7e5d97070f4b24f41c9b253255b0acbc5119834",
         "evidence": [
           "member_listing utilities/registry-repair/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
           "compatibility_note Readme for a Windows 98 registry repair utility fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures",
           "member_path utilities/registry-repair/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_hash sha256:c0a557b586fb09e18b2f2098721ffa052169316b513fa051024c2ba47a3df377 local_bundle_fixtures member_listing Local Bundle Fixtures",
-          "member_text Registry repair utility README. Intended source-shape evidence for software to fix broken registry Windows 98. local_bundle_fixtures readme Local Bundle Fixtures"
+          "member_hash sha256:150a1b195ae74898b9379d95b7e5d97070f4b24f41c9b253255b0acbc5119834 local_bundle_fixtures member_listing Local Bundle Fixtures",
+          "member_text Registry repair utility README. Intended source-shape evidence for software to fix broken registry on Windows 98. The fixture points to a text stand-in installer member. local_bundle_fixtures readme Local Bundle Fixtures"
         ],
         "index_record_id": "synthetic_member:member:sha256:f44d165492900ffabbd5ef0099cc73324218cd8f53e885b9dae222325de13c76",
         "label": "utilities/registry-repair/readme.txt (utilities registry repair readme txt) in Windows 98 software to fix broken registry repair utility bundle recorded fixture",
@@ -3765,7 +4181,7 @@
           "surface_route": "/",
           "target_ref": "member:sha256:f44d165492900ffabbd5ef0099cc73324218cd8f53e885b9dae222325de13c76"
         },
-        "size_bytes": 111,
+        "size_bytes": 170,
         "source_family": "local_bundle_fixtures",
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
@@ -3940,202 +4356,6 @@
         ],
         "user_cost_score": 6,
         "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:1",
-        "label": "ArchiveBox 0.8.5 evidence 2",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "0.8.5"
-      },
-      {
-        "compatibility_evidence": [
-          {
-            "architecture": "unknown",
-            "claim_type": "documentation_for_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:6f89a8e6f72ebe6f0852cd7ca0ab41761ff764fc376f598a8f1709a81cbf0f17",
-            "evidence_kind": "readme",
-            "evidence_text": "Firefox XP browser support notes fixture. Mentions Windows XP compatibility evidence and support-window investigation.",
-            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/readme.txt",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "local_bundle_fixtures",
-            "source_id": "local-bundle-fixtures",
-            "source_label": "Local Bundle Fixtures",
-            "subject_resolved_resource_id": "obj.synthetic-member.44bafbb6910656bb675bdd81",
-            "subject_target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199"
-          }
-        ],
-        "compatibility_summary": "Windows XP: documentation_for_platform via readme (medium)",
-        "evidence": [
-          "member_listing browsers/firefox-xp-support/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199:0",
-        "label": "browsers/firefox-xp-support/readme.txt (browsers firefox xp support readme txt) in Windows XP browser and tools bundle recorded fixture evidence 1",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.44bafbb6910656bb675bdd81",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.44bafbb6910656bb675bdd81",
-        "summary": "member_listing from local_bundle_fixtures",
-        "target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "state.synthetic-member.44bafbb6910656bb675bdd81.derived"
-      },
-      {
-        "compatibility_evidence": [
-          {
-            "architecture": "unknown",
-            "claim_type": "documentation_for_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:6f89a8e6f72ebe6f0852cd7ca0ab41761ff764fc376f598a8f1709a81cbf0f17",
-            "evidence_kind": "readme",
-            "evidence_text": "Firefox XP browser support notes fixture. Mentions Windows XP compatibility evidence and support-window investigation.",
-            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/readme.txt",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "local_bundle_fixtures",
-            "source_id": "local-bundle-fixtures",
-            "source_label": "Local Bundle Fixtures",
-            "subject_resolved_resource_id": "obj.synthetic-member.44bafbb6910656bb675bdd81",
-            "subject_target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199"
-          }
-        ],
-        "compatibility_summary": "Windows XP: documentation_for_platform via readme (medium)",
-        "evidence": [
-          "compatibility_note Readme for Firefox XP browser support notes fixture. local_bundle_fixtures compatibility_note Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199:1",
-        "label": "browsers/firefox-xp-support/readme.txt (browsers firefox xp support readme txt) in Windows XP browser and tools bundle recorded fixture evidence 2",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.44bafbb6910656bb675bdd81",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.44bafbb6910656bb675bdd81",
-        "summary": "compatibility_note from local_bundle_fixtures",
-        "target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "state.synthetic-member.44bafbb6910656bb675bdd81.derived"
-      },
-      {
-        "compatibility_evidence": [
-          {
-            "architecture": "unknown",
-            "claim_type": "documentation_for_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:6f89a8e6f72ebe6f0852cd7ca0ab41761ff764fc376f598a8f1709a81cbf0f17",
-            "evidence_kind": "readme",
-            "evidence_text": "Firefox XP browser support notes fixture. Mentions Windows XP compatibility evidence and support-window investigation.",
-            "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/readme.txt",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "local_bundle_fixtures",
-            "source_id": "local-bundle-fixtures",
-            "source_label": "Local Bundle Fixtures",
-            "subject_resolved_resource_id": "obj.synthetic-member.44bafbb6910656bb675bdd81",
-            "subject_target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199"
-          }
-        ],
-        "compatibility_summary": "Windows XP: documentation_for_platform via readme (medium)",
-        "evidence": [
-          "member_path browsers/firefox-xp-support/readme.txt local_bundle_fixtures member_listing Local Bundle Fixtures"
-        ],
-        "index_record_id": "evidence:member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199:2",
-        "label": "browsers/firefox-xp-support/readme.txt (browsers firefox xp support readme txt) in Windows XP browser and tools bundle recorded fixture evidence 3",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-member.44bafbb6910656bb675bdd81",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199"
-        },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.synthetic-member.44bafbb6910656bb675bdd81",
-        "summary": "member_path from local_bundle_fixtures",
-        "target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "state.synthetic-member.44bafbb6910656bb675bdd81.derived"
       }
     ],
     "status": "queried"
