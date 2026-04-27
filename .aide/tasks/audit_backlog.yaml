@@ -20,8 +20,8 @@
         "CTEA-CONTENT-002"
       ],
       "title": "Prioritize recorded fixture source coverage for source-gap query families",
-      "status": "selected_after_old_platform_result_refinement_pack_v0",
-      "suggested_milestone": "More Source Coverage Expansion v1"
+      "status": "partially_addressed_by_more_source_coverage_expansion_v1",
+      "suggested_milestone": "Article/Scan Fixture Pack v0"
     },
     {
       "id": "audit-backlog-doc-drift",
@@ -48,8 +48,8 @@
         "CTEA-CONTENT-003"
       ],
       "title": "Add member-level discovery fixtures, lineage, and index records",
-      "status": "partially_addressed_with_result_refinement_pack_v0",
-      "suggested_milestone": "More Source Coverage Expansion v1"
+      "status": "partially_addressed_with_old_platform_source_and_article_gap_remaining",
+      "suggested_milestone": "Article/Scan Fixture Pack v0"
     },
     {
       "id": "audit-backlog-compatibility-evidence",
@@ -88,8 +88,19 @@
         "CTEA-EVAL-001"
       ],
       "title": "Add more bounded recorded source evidence for remaining old-platform partials",
-      "status": "selected_by_old_platform_result_refinement_pack_v0",
+      "status": "addressed_by_more_source_coverage_expansion_v1",
       "suggested_milestone": "More Source Coverage Expansion v1"
+    },
+    {
+      "id": "audit-backlog-article-scan-fixtures",
+      "finding_refs": [
+        "CTEA-CONTENT-002",
+        "CTEA-CONTENT-003",
+        "CTEA-EVAL-001"
+      ],
+      "title": "Add bounded article/page/scan fixture evidence for the remaining hard capability gap",
+      "status": "selected_after_more_source_coverage_expansion_v1",
+      "suggested_milestone": "Article/Scan Fixture Pack v0"
     }
   ]
 }

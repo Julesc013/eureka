@@ -81,3 +81,11 @@ candidate is a source-backed driver member, while the Firefox, FTP, Windows 98
 registry repair, and Windows 7 app tasks remain partial with explicit
 result-shape or evidence limits. The article-inside-scan task remains a true
 capability gap because no bounded article/page/OCR fixture exists.
+
+More Source Coverage Expansion v1 then adds targeted tiny recorded fixture
+evidence for the four remaining old-platform partials. Current
+archive-resolution evals now report `capability_gap=1` and `satisfied=5`: the
+Firefox XP, blue FTP client XP, Windows 98 registry repair, Windows 7 apps, and
+support-CD driver tasks satisfy the current strict source/evidence/result-shape
+checks. `article_inside_magazine_scan` remains the only hard capability gap and
+is intentionally deferred to an Article/Scan Fixture Pack.

@@ -126,3 +126,12 @@ eval result-shape, lane, and bad-result checks, moving one driver/member task
 to `satisfied` while leaving four old-platform tasks partial. It does not
 change the 64-query Search Usefulness Audit corpus, retrieval behavior, or
 external baseline posture.
+
+More Source Coverage Expansion v1 now lives under
+`control/audits/more-source-coverage-expansion-v1/`. It adds targeted tiny
+recorded/fixture-only source material for Firefox XP, a blue FTP-client XP
+candidate, Windows 98 registry repair, and Windows 7 utility/app evidence. The
+current local audit reports `covered=5`, `partial=21`, `source_gap=27`,
+`capability_gap=9`, and `unknown=2`; external baselines remain pending manual
+observation and the audit still adds no live crawling, scraping, fuzzy/vector
+retrieval, LLM behavior, or production benchmark claims.

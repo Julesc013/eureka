@@ -17,3 +17,9 @@ notes, Windows 2000/98 compatibility notes, Mac OS 9 and PowerPC browser
 documentation, and Creative CT1740-style driver support media. Those records
 are source-shape fixtures only; they are not real redistributed software
 binaries and must not be described as a live Internet Archive connector.
+
+More Source Coverage Expansion v1 further extends the same recorded fixture
+family with targeted Firefox XP 52.9.0 ESR candidate file-list evidence and a
+blue FTP-client XP candidate. These are still tiny synthetic/recorded
+stand-ins for source shape, not a live Internet Archive adapter and not a
+global latest-version or exact-identity oracle.

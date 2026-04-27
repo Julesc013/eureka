@@ -527,6 +527,28 @@
       "notes": "Added by Old-Platform Result Refinement Pack v0; validates deterministic result-shape, lane, and bad-result checks without weakening hard evals or adding retrieval behavior."
     },
     {
+      "test_id": "more_source_coverage_expansion_v1_validation",
+      "label": "More source coverage expansion v1 validation",
+      "command": "python -m unittest tests.evals.test_more_source_coverage_expansion_v1",
+      "category": "eval",
+      "owner_area": "control/audits/more-source-coverage-expansion-v1",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where the archive eval runner builds a transient local index",
+      "expected_runtime": "seconds",
+      "failure_means": "The More Source Coverage Expansion v1 report, source-backed hard-eval satisfaction, article capability gap, or no-live/no-real-binary guardrail regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by More Source Coverage Expansion v1; validates targeted fixture evidence and hard-eval movement without weakening hard evals, adding live source behavior, arbitrary local ingestion, or real binaries."
+    },
+    {
       "test_id": "hardening_tests",
       "label": "Hard Test Pack v0 aggregate",
       "command": "python -m unittest discover -s tests/hardening -t .",

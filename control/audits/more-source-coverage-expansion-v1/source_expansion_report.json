@@ -1,0 +1,95 @@
+{
+  "report_id": "more_source_coverage_expansion_v1",
+  "created_by_slice": "more_source_coverage_expansion_v1",
+  "baseline": {
+    "label": "after_old_platform_result_refinement_pack_v0",
+    "archive_eval_status_counts": {
+      "capability_gap": 1,
+      "partial": 4,
+      "satisfied": 1
+    },
+    "search_usefulness_status_counts": {
+      "capability_gap": 9,
+      "covered": 5,
+      "partial": 20,
+      "source_gap": 28,
+      "unknown": 2
+    }
+  },
+  "current": {
+    "label": "after_more_source_coverage_expansion_v1",
+    "archive_eval_status_counts": {
+      "capability_gap": 1,
+      "satisfied": 5
+    },
+    "search_usefulness_status_counts": {
+      "capability_gap": 9,
+      "covered": 5,
+      "partial": 21,
+      "source_gap": 27,
+      "unknown": 2
+    },
+    "external_baselines": {
+      "google": "pending_manual_observation",
+      "internet_archive_full_text": "pending_manual_observation",
+      "internet_archive_metadata": "pending_manual_observation"
+    }
+  },
+  "targeted_tasks": [
+    "latest_firefox_before_xp_drop",
+    "old_blue_ftp_client_xp",
+    "win98_registry_repair",
+    "windows_7_apps"
+  ],
+  "fixture_records_added_or_extended": [
+    "internet_archive_recorded: ia-firefox-xp-support-fixture extended with Firefox 52.9.0 ESR candidate file-list evidence",
+    "internet_archive_recorded: ia-blue-ftp-client-xp-candidate-fixture added",
+    "local_bundle_fixtures: windows-xp-browser-tools-bundle extended",
+    "local_bundle_fixtures: windows-98-registry-repair-bundle strengthened",
+    "local_bundle_fixtures: windows-utility-bundle extended"
+  ],
+  "fixture_payloads_added": [
+    "browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+    "utilities/ftp-blue-client/blue-ftp-client-xp-installer.exe.txt",
+    "utilities/checksum-tool/checksum-tool.exe.txt",
+    "utilities/text-editor/text-editor.exe.txt"
+  ],
+  "hard_eval_impact": {
+    "improved_to_satisfied": [
+      "latest_firefox_before_xp_drop",
+      "old_blue_ftp_client_xp",
+      "win98_registry_repair",
+      "windows_7_apps"
+    ],
+    "already_satisfied": [
+      "driver_inside_support_cd"
+    ],
+    "still_capability_gap": [
+      "article_inside_magazine_scan"
+    ]
+  },
+  "search_usefulness_impact": {
+    "partial_delta": 1,
+    "source_gap_delta": -1,
+    "covered_delta": 0,
+    "capability_gap_delta": 0,
+    "unknown_delta": 0
+  },
+  "limitations": [
+    "Fixture evidence is bounded and synthetic/recorded.",
+    "Firefox latest-compatible evidence is scoped to the committed fixture corpus and is not a universal latest-version oracle.",
+    "The blue FTP client candidate remains a fixture-backed plausible candidate, not a universal real-world identity claim.",
+    "No article/scan/OCR fixture evidence was added."
+  ],
+  "do_not_do": [
+    "do not weaken hard evals",
+    "do not add live Internet Archive calls",
+    "do not scrape Google or Internet Archive",
+    "do not add crawling",
+    "do not add arbitrary local filesystem ingestion",
+    "do not add real binaries",
+    "do not fabricate external baselines",
+    "do not claim production readiness"
+  ],
+  "recommended_next_milestone": "Article/Scan Fixture Pack v0"
+}

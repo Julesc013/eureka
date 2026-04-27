@@ -4,14 +4,14 @@
   "created_by_slice": "search_usefulness_backlog_triage_v0",
   "selected_primary_wedge": "old_platform_software",
   "selected_secondary_wedge": "member_level_discovery",
-  "immediate_next_milestone": "More Source Coverage Expansion v1",
+  "immediate_next_milestone": "Article/Scan Fixture Pack v0",
   "audit_snapshot": {
     "total_queries": 64,
     "eureka_status_counts": {
       "capability_gap": 9,
       "covered": 5,
-      "partial": 20,
-      "source_gap": 28,
+      "partial": 21,
+      "source_gap": 27,
       "unknown": 2
     },
     "external_baseline_pending_counts": {
@@ -27,7 +27,7 @@
       "representation_gap": 14,
       "decomposition_gap": 12,
       "member_access_gap": 12,
-      "identity_cluster_gap": 14,
+      "identity_cluster_gap": 13,
       "live_source_gap": 10,
       "surface_ux_gap": 4,
       "ranking_gap": 8
@@ -302,7 +302,7 @@
       "id": "SU-T017",
       "title": "More Source Coverage Expansion v1",
       "priority": "P0",
-      "status": "selected",
+      "status": "implemented",
       "wedge": "old_platform_software",
       "failure_modes": ["source_coverage_gap", "compatibility_evidence_gap", "representation_gap", "identity_cluster_gap", "eval_truth_gap"],
       "evidence": {
@@ -313,14 +313,38 @@
       "user_value": "Adds the next bounded recorded evidence needed for exact latest-compatible releases, concrete old-software identities, direct artifacts, and remaining article/source gaps.",
       "implementation_feasibility": "Medium; should extend committed recorded fixtures only and reuse existing connector/index/evidence paths.",
       "regression_risk": "Medium if fixtures overclaim exact versions, identities, or external baselines.",
-      "expected_audit_delta": "Selected after result refinement because four hard tasks remain partial and source_coverage_gap remains dominant in the broader audit.",
+      "expected_audit_delta": "Implemented: current archive evals moved from capability_gap=1/partial=4/satisfied=1 to capability_gap=1/satisfied=5, while the broader Search Usefulness Audit moved to covered=5, partial=21, source_gap=27, capability_gap=9, and unknown=2.",
       "prerequisite_items": ["SU-T016"],
       "suggested_milestone": "More Source Coverage Expansion v1",
       "acceptance_criteria": ["fixtures remain tiny and deterministic", "exact version/identity claims require explicit fixture evidence", "placeholder sources remain placeholders", "external baselines remain pending/manual", "hard eval satisfied movement is source-backed"],
       "tests_to_add_first": ["recorded fixture evidence tests", "no fake exact-version guard", "hard eval source-backed movement tests", "external baseline pending guard"],
       "likely_files": ["runtime/connectors/internet_archive_recorded/", "runtime/connectors/local_bundle_fixtures/", "evals/archive_resolution/", "tests/evals/", "tests/hardening/"],
       "do_not_do": ["do not add live source calls", "do not scrape external systems", "do not add arbitrary local filesystem ingestion", "do not weaken hard evals", "do not fabricate latest-version or identity evidence"],
-      "notes": "Selected by Old-Platform Result Refinement Pack v0 because one hard task is now satisfied while four old-platform tasks remain partial due evidence breadth, exact-release, identity, and direct-lane limits."
+      "notes": "Implemented as More Source Coverage Expansion v1 under control/audits/more-source-coverage-expansion-v1. It adds tiny targeted Firefox XP, blue FTP-client XP, Windows 98 registry repair, and Windows 7 utility/app fixture evidence without live calls, scraping, arbitrary local ingestion, real binaries, or external baseline claims."
+    },
+    {
+      "id": "SU-T018",
+      "title": "Article/Scan Fixture Pack v0",
+      "priority": "P0",
+      "status": "selected",
+      "wedge": "member_level_discovery",
+      "failure_modes": ["source_coverage_gap", "decomposition_gap", "member_access_gap", "representation_gap", "eval_truth_gap"],
+      "evidence": {
+        "query_ids": ["article_ray_tracing_1994_magazine", "pc_magazine_july_1994_ray_tracing", "article_inside_magazine_scan"],
+        "audit_file_refs": ["control/audits/more-source-coverage-expansion-v1/REMAINING_GAPS.md", "control/audits/more-source-coverage-expansion-v1/source_expansion_report.json", "evals/archive_resolution/README.md"],
+        "finding_ids": ["CTEA-CONTENT-002", "CTEA-CONTENT-003", "CTEA-EVAL-001"]
+      },
+      "user_value": "Adds the first bounded article/page/scan fixture evidence so Eureka can represent article-inside-scan discovery without pretending it has OCR or live source coverage.",
+      "implementation_feasibility": "Medium; should add tiny recorded scan/page/article metadata and synthetic text snippets only, reusing existing recorded-fixture and member-lineage paths where possible.",
+      "regression_risk": "Medium if article evidence is overclaimed as OCR coverage or real Internet Archive crawling.",
+      "expected_audit_delta": "Selected after More Source Coverage Expansion v1 because all old-platform archive hard tasks are satisfied and article_inside_magazine_scan is the only remaining hard capability gap.",
+      "prerequisite_items": ["SU-T017"],
+      "suggested_milestone": "Article/Scan Fixture Pack v0",
+      "acceptance_criteria": ["scan/article fixtures are tiny and deterministic", "article/page/member evidence is source-backed", "no live OCR or Internet Archive scraping is added", "article_inside_magazine_scan remains unsatisfied unless strict evidence exists", "external baselines remain pending/manual"],
+      "tests_to_add_first": ["article fixture provenance tests", "page/member lineage tests", "no fake OCR/article evidence guard", "hard eval capability-gap movement tests"],
+      "likely_files": ["runtime/connectors/internet_archive_recorded/", "runtime/engine/synthetic_records/", "evals/archive_resolution/", "tests/evals/", "tests/hardening/"],
+      "do_not_do": ["do not scrape Internet Archive", "do not call live source APIs", "do not add broad OCR", "do not fabricate article text", "do not weaken hard evals"],
+      "notes": "Selected because More Source Coverage Expansion v1 satisfied the old-platform hard partials, leaving article_inside_magazine_scan as the only archive hard capability gap."
     },
     {
       "id": "SU-T008",

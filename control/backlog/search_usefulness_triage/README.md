@@ -13,12 +13,12 @@ This pack is governance only. It does not change runtime behavior, add source co
 - `tests/hardening/`
 - `control/inventory/sources/`
 
-The live audit has been re-run through Old-Platform Source Coverage Expansion v0. Current Search Usefulness Audit v0 reports:
+The live audit has been re-run through More Source Coverage Expansion v1. Current Search Usefulness Audit v0 reports:
 
 - total queries: 64
 - covered: 5
-- partial: 20
-- source_gap: 28
+- partial: 21
+- source_gap: 27
 - capability_gap: 9
 - unknown: 2
 - external baselines pending: Google 64, Internet Archive metadata 64, Internet Archive full text/OCR 64
@@ -29,7 +29,7 @@ The live audit has been re-run through Old-Platform Source Coverage Expansion v0
 
 - Primary usefulness wedge: old-platform-compatible software search
 - Secondary usefulness wedge: member-level discovery inside bundles
-- Immediate next milestone: More Source Coverage Expansion v1
+- Immediate next milestone: Article/Scan Fixture Pack v0
 
 Update: Source Coverage and Capability Model v0 and Real Source Coverage Pack
 v0 are implemented, and Old-Platform Software Planner Pack v0 now improves
@@ -52,6 +52,12 @@ satisfied, four old-platform hard tasks remain partial, and the next milestone
 is More Source Coverage Expansion v1 because exact-release, concrete identity,
 direct-artifact, and source-evidence breadth gaps still block the selected
 wedge.
+More Source Coverage Expansion v1 then added targeted tiny fixture evidence
+for Firefox XP, a blue FTP-client XP candidate, Windows 98 registry repair, and
+Windows 7 utility/app hard-eval gaps. Current archive evals report
+`capability_gap=1` and `satisfied=5`; the next milestone is Article/Scan
+Fixture Pack v0 because `article_inside_magazine_scan` remains the only archive
+hard capability gap.
 
 ## Contents
 

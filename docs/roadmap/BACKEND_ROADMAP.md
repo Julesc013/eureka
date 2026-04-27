@@ -108,6 +108,10 @@ The repo has already proven:
   expected-lane, and bad-result evaluation pass over current old-platform hard
   eval partials, moving archive evals to `capability_gap=1`, `partial=4`, and
   `satisfied=1` without adding retrieval behavior or weakening hard tasks
+- More Source Coverage Expansion v1 as the targeted recorded-fixture follow-up
+  for the remaining old-platform hard partials, moving archive evals to
+  `capability_gap=1` and `satisfied=5` without live source behavior, scraping,
+  arbitrary local ingestion, real binaries, or external baseline claims
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -144,18 +148,19 @@ The next backend sequence is:
 26. Search Usefulness Audit Delta v1 (implemented as audit/reporting)
 27. Hard Eval Satisfaction Pack v0 (implemented as eval evidence mapping/reporting)
 28. Old-Platform Result Refinement Pack v0 (implemented as strict result-shape eval refinement)
-29. More Source Coverage Expansion v1
-30. Manual External Baseline Observation Pack v0
-31. Rust Query Planner Parity Candidate v0
-32. Public Alpha Rehearsal Evidence v0
-33. Compatibility Surface Strategy v0
-34. Native App Work Later
+29. More Source Coverage Expansion v1 (implemented as targeted recorded fixtures)
+30. Article/Scan Fixture Pack v0
+31. Manual External Baseline Observation Pack v0
+32. Rust Query Planner Parity Candidate v0
+33. Public Alpha Rehearsal Evidence v0
+34. Compatibility Surface Strategy v0
+35. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> More Source Coverage Expansion v1
+> Article/Scan Fixture Pack v0
 
 Why this comes next:
 
@@ -227,10 +232,12 @@ Why this comes next:
 - Old-Platform Result Refinement Pack v0 scores expected lanes, bad-result
   avoidance, and result-shape quality for the current source-backed partials;
   archive evals now report `capability_gap=1`, `partial=4`, and `satisfied=1`
-- the next backend bottleneck is more bounded source evidence: four
-  old-platform hard tasks remain partial because exact release identity,
-  concrete product identity, direct artifact, or source-evidence breadth is
-  still insufficient
+- More Source Coverage Expansion v1 adds targeted tiny recorded fixture
+  evidence for the four old-platform partials; archive evals now report
+  `capability_gap=1` and `satisfied=5`
+- the next backend bottleneck is bounded article/page/scan evidence:
+  `article_inside_magazine_scan` is the remaining archive hard capability gap,
+  while source gaps in the broader 64-query audit remain honest future work
 
 ## Explicit Deferrals
 

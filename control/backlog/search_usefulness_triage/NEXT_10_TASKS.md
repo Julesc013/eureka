@@ -313,6 +313,43 @@ Expected audit effect: selected remaining old-platform hard partials may move
 toward satisfied only if the new bounded evidence satisfies existing strict
 checks.
 
+Status: implemented as More Source Coverage Expansion v1 under
+`control/audits/more-source-coverage-expansion-v1/`. Archive evals now report
+`capability_gap=1` and `satisfied=5`; the four old-platform hard partials are
+now source/evidence-backed satisfied under the current strict checks. The
+broader Search Usefulness Audit reports `covered=5`, `partial=21`,
+`source_gap=27`, `capability_gap=9`, and `unknown=2`, with external baselines
+still pending/manual.
+
+## 7f. Article/Scan Fixture Pack v0
+
+Why: More Source Coverage Expansion v1 satisfied the old-platform hard partials
+and left `article_inside_magazine_scan` as the only archive-resolution hard
+capability gap. That gap needs bounded scan/page/article evidence, not live
+source behavior or another old-platform app fixture.
+
+Prerequisite: More Source Coverage Expansion v1 and hardening tests remain
+green.
+
+Likely files: `runtime/connectors/internet_archive_recorded/`,
+`runtime/engine/synthetic_records/`, `evals/archive_resolution/`,
+`tests/evals/`, and `tests/hardening/`.
+
+Acceptance criteria: article/page/scan fixtures are tiny and deterministic;
+source-backed parent/source lineage is preserved; hard eval movement happens
+only with explicit article/page evidence; external baselines remain
+pending/manual.
+
+Tests to add first: article fixture provenance tests, page/member lineage tests,
+no-fake-OCR/article guard tests, and archive hard eval movement tests.
+
+Do not do: do not scrape Internet Archive, call live source APIs, add broad OCR,
+fabricate article text, weaken hard evals, or claim broad scan search.
+
+Expected audit effect: `article_inside_magazine_scan` may leave
+`capability_gap` only if bounded fixture evidence satisfies the strict hard
+checks; broader source gaps may remain dominant.
+
 ## 8. Rust Query Planner Parity Candidate v0
 
 Why: Rust parity should preserve useful Python planner behavior after it stabilizes.

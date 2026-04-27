@@ -41,3 +41,9 @@ Current packs:
   report recording the move to `capability_gap=1, partial=4, satisfied=1`
   after deterministic primary-candidate, expected-lane, and bad-result checks
   were added without weakening hard tasks or changing retrieval behavior.
+- `more-source-coverage-expansion-v1/`: stable targeted source-expansion
+  report recording the move to `capability_gap=1, satisfied=5` for current
+  archive-resolution hard evals after tiny Firefox XP, blue FTP-client XP,
+  Windows 98 registry repair, and Windows 7 utility/app fixture evidence was
+  added without live source behavior, real binaries, or external baseline
+  claims.

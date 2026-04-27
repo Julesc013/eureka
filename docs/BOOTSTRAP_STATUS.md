@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus forty-five executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus forty-six executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -164,6 +164,13 @@ architectural oracle rather than as a throwaway scaffold.
   that move archive evals to `capability_gap=1`, `partial=4`, and
   `satisfied=1` without weakening hard tasks, adding retrieval behavior, or
   fabricating source/external evidence
+- first More Source Coverage Expansion v1 pack under
+  `control/audits/more-source-coverage-expansion-v1/` plus targeted tiny
+  recorded/fixture-only Firefox XP, blue FTP-client XP, Windows 98 registry
+  repair, and Windows 7 utility/app evidence that moves current archive evals
+  to `capability_gap=1` and `satisfied=5` without live source behavior,
+  scraping, arbitrary local filesystem ingestion, real binaries, weakened hard
+  evals, or external baseline claims
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -203,7 +210,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> More Source Coverage Expansion v1
+> Article/Scan Fixture Pack v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -216,8 +223,9 @@ Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack
 v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0,
 Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
 Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
-v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, and
-Old-Platform Result Refinement Pack v0 are
+v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0,
+Old-Platform Result Refinement Pack v0, and More Source Coverage Expansion v1
+are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
@@ -235,11 +243,12 @@ user-cost explanation layer, first source-backed compatibility evidence layer,
 first measured usefulness-delta reporting pack, first expanded old-platform
 fixture coverage pack, second measured usefulness-delta reporting pack, and
 first hard-eval satisfaction mapping/report pack, plus first strict
-old-platform hard-eval result-shape refinement pack.
+old-platform hard-eval result-shape refinement pack and targeted old-platform
+fixture evidence expansion pack.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. More Source Coverage Expansion v1
+1. Article/Scan Fixture Pack v0
 2. Manual External Baseline Observation Pack v0
 3. Rust Query Planner Parity Candidate v0
 4. Public Alpha Rehearsal Evidence v0

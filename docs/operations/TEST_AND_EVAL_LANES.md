@@ -154,6 +154,19 @@ result-shape checks, expected-lane checks, bad-result avoidance, and explicit
 remaining partial/capability-gap explanations. It does not validate production
 ranking or retrieval behavior.
 
+More Source Coverage Expansion v1 is validated with:
+
+```bash
+python -m unittest tests.evals.test_more_source_coverage_expansion_v1
+```
+
+The validation checks the targeted source-expansion report,
+`capability_gap=1`/`satisfied=5` archive-eval posture, source-backed evidence
+for the four old-platform tasks that moved, and the unchanged
+article-inside-scan capability gap. It does not add live source behavior,
+scraping, arbitrary local ingestion, real binaries, or external baseline
+claims.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

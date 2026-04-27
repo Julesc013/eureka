@@ -121,7 +121,13 @@ now report `capability_gap=1`, `partial=4`, and `satisfied=1`; the driver
 support-CD member task is satisfied while four old-platform tasks remain
 partial with explicit evidence and lane limits.
 
-Current next implementation milestone: More Source Coverage Expansion v1.
+More Source Coverage Expansion v1 then added targeted tiny Firefox XP, blue
+FTP-client XP, Windows 98 registry repair, and Windows 7 utility/app fixture
+evidence. Archive evals now report `capability_gap=1` and `satisfied=5`; the
+broader Search Usefulness Audit reports `covered=5`, `partial=21`,
+`source_gap=27`, `capability_gap=9`, and `unknown=2`.
+
+Current next implementation milestone: Article/Scan Fixture Pack v0.
 
 ## Evidence That Would Change The Plan
 
@@ -133,7 +139,6 @@ The plan should be revisited if:
   dominant
 - hardening tests reveal route/public-alpha/privacy constraints that prevent safe fixture work
 
-Until then, the next lowest-risk move is another bounded recorded source pack
-because the remaining old-platform partials need exact-release, concrete
-identity, direct-artifact, and source-evidence breadth before more hard evals
-can honestly become satisfied.
+Until then, the next lowest-risk move is a bounded article/scan fixture pack
+because the old-platform hard partials are now satisfied and
+`article_inside_magazine_scan` remains the only archive hard capability gap.

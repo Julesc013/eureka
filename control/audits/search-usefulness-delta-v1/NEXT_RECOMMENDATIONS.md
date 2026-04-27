@@ -17,6 +17,13 @@ recommended milestone is More Source Coverage Expansion v1 because four
 old-platform hard tasks remain partial due exact-release, identity,
 direct-artifact, or lane/evidence limits.
 
+Third follow-up status: More Source Coverage Expansion v1 is implemented under
+`control/audits/more-source-coverage-expansion-v1/`. Archive evals now report
+`capability_gap=1` and `satisfied=5`; the four old-platform partials are
+source/evidence-backed satisfied under the current hard checks. The next
+recommended milestone is Article/Scan Fixture Pack v0 because
+`article_inside_magazine_scan` remains the only archive hard capability gap.
+
 ## Why This Comes Next
 
 Old-Platform Source Coverage Expansion v0 produced a meaningful local audit
@@ -62,9 +69,17 @@ exact satisfaction work.
 
 ### More Source Coverage Expansion v1
 
-Still useful because `source_coverage_gap` remains 49 and `source_gap` remains
-28. It is not first because another broad fixture pack would not resolve the
-five hard tasks now stuck at `not_satisfied`.
+Now implemented as a targeted fixture pack. It did not attempt broad source
+coverage; it added only bounded Firefox XP, blue FTP-client XP, Windows 98
+registry repair, and Windows 7 utility/app evidence needed by the remaining
+old-platform hard partials.
+
+### Article/Scan Fixture Pack v0
+
+Now the best immediate follow-up. It would add bounded scan/page/OCR/article
+fixture evidence for `article_inside_magazine_scan`, the only remaining archive
+hard capability gap. It should remain fixture-only and must not scrape or call
+live Internet Archive.
 
 ### Manual External Baseline Observation Pack v0
 
