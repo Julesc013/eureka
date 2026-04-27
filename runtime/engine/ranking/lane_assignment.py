@@ -77,6 +77,10 @@ def assign_result_usefulness(
             lanes.append(DOCUMENTATION)
             reasons.append("documentation_only")
             score = 5
+        elif member_kind in {"article", "article_segment", "page_range", "document_section"}:
+            lanes.extend((BEST_DIRECT_ANSWER, DOCUMENTATION))
+            reasons.append("article_segment_has_page_locator")
+            score = 2
         elif member_kind in {"driver", "utility", "installer_like"}:
             lanes.extend((BEST_DIRECT_ANSWER, INSTALLABLE_OR_USABLE_NOW))
             score = 1

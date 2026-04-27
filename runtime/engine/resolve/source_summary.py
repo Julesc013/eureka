@@ -5,6 +5,7 @@ from runtime.engine.interfaces.public import SourceSummary
 
 
 _BOOTSTRAP_SOURCE_IDS_BY_FAMILY = {
+    "article_scan_recorded": "article-scan-recorded-fixtures",
     "synthetic_fixture": "synthetic-fixtures",
     "github_releases": "github-releases-recorded-fixtures",
     "internet_archive_recorded": "internet-archive-recorded-fixtures",

@@ -3,12 +3,14 @@ from __future__ import annotations
 from typing import Any
 
 from runtime.engine.interfaces.extract.extracted_records import (
+    ExtractedArticleScanRecordedRecord,
     ExtractedGitHubReleaseRecord,
     ExtractedInternetArchiveRecordedItem,
     ExtractedLocalBundleRecord,
     ExtractedSyntheticRecord,
 )
 from runtime.engine.interfaces.ingest import (
+    ArticleScanRecordedSourceRecord,
     GitHubReleaseSourceRecord,
     InternetArchiveRecordedSourceRecord,
     LocalBundleSourceRecord,
@@ -94,6 +96,20 @@ def extract_local_bundle_source_record(
             "member_hints",
         ),
         compatibility_record=_optional_mapping(payload.get("compatibility"), "compatibility"),
+    )
+
+
+def extract_article_scan_recorded_source_record(
+    source_record: ArticleScanRecordedSourceRecord,
+) -> ExtractedArticleScanRecordedRecord:
+    payload = source_record.payload
+    return ExtractedArticleScanRecordedRecord(
+        target_ref=source_record.target_ref,
+        source_name=source_record.source_name,
+        source_locator=source_record.source_locator,
+        issue_record=_require_mapping(payload.get("issue"), "issue"),
+        article_record=_require_mapping(payload.get("article"), "article"),
+        file_records=_require_optional_mapping_sequence(payload.get("files"), "files"),
     )
 
 

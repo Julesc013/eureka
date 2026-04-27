@@ -1,0 +1,9 @@
+Fixture notice: this is synthetic OCR-like text for Eureka tests, not copied magazine text.
+
+Article: Ray Tracing on the Desktop.
+Page range: 123-128.
+Issue context: 1994 magazine scan fixture.
+
+This article segment discusses ray tracing for PC graphics in a 1994 desktop
+computing context. The text is a tiny deterministic stand-in used to test an
+article-level locator inside a scanned magazine-like parent item.

@@ -1,6 +1,7 @@
 """Ingest-facing boundary types for the Eureka bootstrap thin slice."""
 
 from runtime.engine.interfaces.ingest.source_records import (
+    ArticleScanRecordedSourceRecord,
     GitHubReleaseSourceRecord,
     InternetArchiveRecordedSourceRecord,
     LocalBundleSourceRecord,
@@ -8,6 +9,7 @@ from runtime.engine.interfaces.ingest.source_records import (
 )
 
 __all__ = [
+    "ArticleScanRecordedSourceRecord",
     "GitHubReleaseSourceRecord",
     "InternetArchiveRecordedSourceRecord",
     "LocalBundleSourceRecord",

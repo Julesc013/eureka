@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from runtime.connectors.article_scan_recorded import ArticleScanRecordedConnector
 from runtime.connectors.github_releases import GitHubReleasesConnector
 from runtime.connectors.internet_archive_recorded import InternetArchiveRecordedConnector
 from runtime.connectors.local_bundle_fixtures import LocalBundleFixturesConnector
@@ -22,12 +23,14 @@ from runtime.engine.compare import DeterministicComparisonService
 from runtime.engine.core import NormalizedCatalog
 from runtime.engine.handoff.service import DeterministicRepresentationSelectionService
 from runtime.engine.interfaces.extract import (
+    extract_article_scan_recorded_source_record,
     extract_github_release_source_record,
     extract_internet_archive_recorded_source_record,
     extract_local_bundle_source_record,
     extract_synthetic_source_record,
 )
 from runtime.engine.interfaces.normalize import (
+    normalize_article_scan_recorded_record,
     normalize_extracted_record,
     normalize_github_release_record,
     normalize_internet_archive_recorded_item,
@@ -302,6 +305,7 @@ def _build_demo_normalized_catalog() -> NormalizedCatalog:
     github_connector = GitHubReleasesConnector()
     internet_archive_connector = InternetArchiveRecordedConnector()
     local_bundle_connector = LocalBundleFixturesConnector()
+    article_scan_connector = ArticleScanRecordedConnector()
     synthetic_records = tuple(
         normalize_extracted_record(extract_synthetic_source_record(record))
         for record in synthetic_connector.load_source_records()
@@ -320,12 +324,19 @@ def _build_demo_normalized_catalog() -> NormalizedCatalog:
         normalize_local_bundle_record(extract_local_bundle_source_record(record))
         for record in local_bundle_connector.load_source_records()
     )
+    article_scan_records = tuple(
+        normalize_article_scan_recorded_record(
+            extract_article_scan_recorded_source_record(record)
+        )
+        for record in article_scan_connector.load_source_records()
+    )
     synthetic_member_records = synthesize_member_normalized_records(local_bundle_records)
     return NormalizedCatalog(
         synthetic_records
         + github_records
         + internet_archive_records
         + local_bundle_records
+        + article_scan_records
         + synthetic_member_records
     )
 

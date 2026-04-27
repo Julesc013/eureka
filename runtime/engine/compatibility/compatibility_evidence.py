@@ -428,6 +428,7 @@ def _text(value: Any, name: str) -> str | None:
 
 def _source_id(source_family: str) -> str | None:
     return {
+        "article_scan_recorded": "article-scan-recorded-fixtures",
         "synthetic_fixture": "synthetic-fixtures",
         "github_releases": "github-releases-recorded-fixtures",
         "internet_archive_recorded": "internet-archive-recorded-fixtures",

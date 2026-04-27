@@ -48,3 +48,13 @@ class ExtractedLocalBundleRecord:
     bundle_record: dict[str, Any]
     member_hint_records: tuple[dict[str, Any], ...] = ()
     compatibility_record: dict[str, Any] | None = None
+
+
+@dataclass(frozen=True)
+class ExtractedArticleScanRecordedRecord:
+    target_ref: str
+    source_name: str
+    source_locator: str
+    issue_record: dict[str, Any]
+    article_record: dict[str, Any]
+    file_records: tuple[dict[str, Any], ...] = ()

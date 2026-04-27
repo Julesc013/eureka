@@ -1,0 +1,15 @@
+{
+  "fixture_notice": "Synthetic issue manifest for Eureka tests. No real scan, PDF, OCR pipeline, or copied article text is included.",
+  "issue_id": "pc-magazine-july-1994-fixture",
+  "issue_title": "PC Magazine July 1994 Issue Fixture",
+  "issue_date": "1994-07",
+  "segments": [
+    {
+      "article_id": "pc-magazine-1994-ray-tracing-article",
+      "title": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop",
+      "page_range": "123-128",
+      "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+      "topic": "ray tracing"
+    }
+  ]
+}

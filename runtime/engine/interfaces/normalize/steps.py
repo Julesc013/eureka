@@ -5,6 +5,7 @@ from typing import Any
 
 from runtime.engine.compatibility import CompatibilityRequirements, attach_compatibility_evidence
 from runtime.engine.interfaces.extract import (
+    ExtractedArticleScanRecordedRecord,
     ExtractedGitHubReleaseRecord,
     ExtractedInternetArchiveRecordedItem,
     ExtractedLocalBundleRecord,
@@ -202,6 +203,95 @@ def normalize_local_bundle_record(
             member_hint_records=extracted_record.member_hint_records,
         ),
     ))
+
+
+def normalize_article_scan_recorded_record(
+    extracted_record: ExtractedArticleScanRecordedRecord,
+) -> NormalizedResolutionRecord:
+    issue_record = extracted_record.issue_record
+    article_record = extracted_record.article_record
+    issue_id = _require_string(issue_record.get("id"), "issue.id")
+    article_id = _require_string(article_record.get("id"), "article.id")
+    issue_key = _normalize_identifier(issue_id)
+    article_key = _normalize_identifier(article_id)
+    issue_title = _require_string(issue_record.get("title"), "issue.title")
+    article_title = _require_string(article_record.get("title"), "article.title")
+    page_range = _require_string(article_record.get("page_range"), "article.page_range")
+    member_path = _require_string(article_record.get("member_path"), "article.member_path")
+    snippet = _optional_string(article_record.get("snippet"), "article.snippet")
+    representations = _article_scan_representation_summaries(
+        extracted_record,
+        issue_key=issue_key,
+        article_key=article_key,
+        issue_title=issue_title,
+        article_title=article_title,
+    )
+    primary_representation = representations[0]
+
+    return NormalizedResolutionRecord(
+        target_ref=extracted_record.target_ref,
+        source_name=extracted_record.source_name,
+        source_locator=extracted_record.source_locator,
+        object_id=f"obj.article-scan-recorded.{issue_key}.{article_key}",
+        record_kind="synthetic_member",
+        source_family="article_scan_recorded",
+        source_family_label="Article Scan Recorded Fixtures",
+        object_kind="document_article",
+        object_label=article_title,
+        state_id=f"state.article-scan-recorded.{issue_key}.{article_key}.fixture",
+        state_kind="article_segment_fixture",
+        representation_id=primary_representation.representation_id,
+        representation_kind=primary_representation.representation_kind,
+        access_path_id=primary_representation.access_path_id,
+        access_path_kind=primary_representation.access_kind,
+        access_path_locator=primary_representation.access_locator,
+        representations=representations,
+        evidence=_article_scan_evidence_summaries(
+            source_locator=extracted_record.source_locator,
+            issue_id=issue_id,
+            issue_title=issue_title,
+            article_id=article_id,
+            article_title=article_title,
+            page_range=page_range,
+            member_path=member_path,
+            topic=_optional_string(article_record.get("topic"), "article.topic"),
+            snippet=snippet,
+            file_records=extracted_record.file_records,
+            asserted_at=_optional_string(issue_record.get("date"), "issue.date"),
+        ),
+        parent_target_ref=f"article-scan-recorded:issue:{issue_key}",
+        parent_resolved_resource_id=f"obj.article-scan-recorded.{issue_key}",
+        parent_representation_id=_optional_string(
+            issue_record.get("primary_representation_id"),
+            "issue.primary_representation_id",
+        )
+        or f"rep.article-scan-recorded.{issue_key}.scan-placeholder",
+        parent_object_label=issue_title,
+        member_path=member_path,
+        member_label=article_title,
+        member_kind=_optional_string(article_record.get("kind"), "article.kind")
+        or "article_segment",
+        media_type=_optional_string(article_record.get("media_type"), "article.media_type")
+        or "text/plain",
+        size_bytes=_optional_int(article_record.get("size_bytes"), "article.size_bytes"),
+        content_hash=_optional_string(article_record.get("content_hash"), "article.content_hash"),
+        parent_lineage={
+            "source_id": "article-scan-recorded-fixtures",
+            "source_family": "article_scan_recorded",
+            "source_record_id": article_id,
+            "parent_target_ref": f"article-scan-recorded:issue:{issue_key}",
+            "parent_object_label": issue_title,
+            "member_path": member_path,
+            "page_range": page_range,
+            "contained_in": "synthetic recorded scanned magazine issue fixture",
+        },
+        action_hints=(
+            "inspect_parent_issue",
+            "preview_ocr_text",
+            "cite_page_range",
+            "export_manifest",
+        ),
+    )
 
 
 def _synthetic_representation_summaries(
@@ -448,6 +538,104 @@ def _local_bundle_representation_summaries(
     )
 
 
+def _article_scan_representation_summaries(
+    extracted_record: ExtractedArticleScanRecordedRecord,
+    *,
+    issue_key: str,
+    article_key: str,
+    issue_title: str,
+    article_title: str,
+) -> tuple[RepresentationSummary, ...]:
+    raw_representations = (
+        _optional_mapping_sequence(
+            extracted_record.article_record.get("representations"),
+            "article.representations",
+        )
+        + _optional_mapping_sequence(
+            extracted_record.issue_record.get("representations"),
+            "issue.representations",
+        )
+    )
+    if not raw_representations:
+        raise ValueError("article or issue must provide at least one representation.")
+
+    summaries: list[RepresentationSummary] = []
+    for index, raw_representation in enumerate(raw_representations):
+        payload_fixture = _optional_mapping(
+            raw_representation.get("payload_fixture"),
+            f"representations[{index}].payload_fixture",
+        )
+        access_path = _require_mapping(
+            raw_representation.get("access_path"),
+            f"representations[{index}].access_path",
+        )
+        representation_id = _require_string(
+            raw_representation.get("id"),
+            f"representations[{index}].id",
+        )
+        label = _optional_string(
+            raw_representation.get("label"),
+            f"representations[{index}].label",
+        )
+        summaries.append(
+            RepresentationSummary(
+                representation_id=representation_id,
+                representation_kind=_require_string(
+                    raw_representation.get("kind"),
+                    f"representations[{index}].kind",
+                ),
+                label=label or (article_title if index == 0 else issue_title),
+                content_type=_optional_string(
+                    raw_representation.get("content_type"),
+                    f"representations[{index}].content_type",
+                ),
+                byte_length=_optional_int(
+                    raw_representation.get("byte_length"),
+                    f"representations[{index}].byte_length",
+                ),
+                filename=_payload_filename(
+                    payload_fixture,
+                    f"representations[{index}].payload_fixture",
+                    fallback_filename=_optional_string(
+                        raw_representation.get("filename"),
+                        f"representations[{index}].filename",
+                    ),
+                ),
+                source_family="article_scan_recorded",
+                source_label="Article Scan Recorded Fixtures",
+                source_locator=extracted_record.source_locator,
+                access_path_id=_optional_string(
+                    access_path.get("id"),
+                    f"representations[{index}].access_path.id",
+                )
+                or f"access.article-scan-recorded.{issue_key}.{article_key}.{index}",
+                access_kind=_require_string(
+                    access_path.get("kind"),
+                    f"representations[{index}].access_path.kind",
+                ),
+                access_locator=_optional_string(
+                    access_path.get("locator"),
+                    f"representations[{index}].access_path.locator",
+                ),
+                is_direct=_optional_bool(
+                    access_path.get("is_direct"),
+                    f"representations[{index}].access_path.is_direct",
+                )
+                or False,
+                is_fetchable=_payload_locator(
+                    payload_fixture,
+                    f"representations[{index}].payload_fixture",
+                )
+                is not None,
+                fetch_locator=_payload_locator(
+                    payload_fixture,
+                    f"representations[{index}].payload_fixture",
+                ),
+            )
+        )
+    return tuple(summaries)
+
+
 def _synthetic_evidence_summaries(
     *,
     source_locator: str,
@@ -661,6 +849,99 @@ def _local_bundle_evidence_summaries(
     return tuple(evidence)
 
 
+def _article_scan_evidence_summaries(
+    *,
+    source_locator: str,
+    issue_id: str,
+    issue_title: str,
+    article_id: str,
+    article_title: str,
+    page_range: str,
+    member_path: str,
+    topic: str | None,
+    snippet: str | None,
+    file_records: tuple[dict[str, Any], ...],
+    asserted_at: str | None,
+) -> tuple[EvidenceSummary, ...]:
+    base_locator = f"{source_locator}#{issue_id}/articles/{article_id}"
+    evidence: list[EvidenceSummary] = [
+        EvidenceSummary(
+            claim_kind="label",
+            claim_value=article_title,
+            asserted_by_family="article_scan_recorded",
+            asserted_by_label="Article Scan Recorded Fixtures",
+            evidence_kind="article_segment",
+            evidence_locator=base_locator,
+            asserted_at=asserted_at,
+        ),
+        EvidenceSummary(
+            claim_kind="parent_issue",
+            claim_value=issue_title,
+            asserted_by_family="article_scan_recorded",
+            asserted_by_label="Article Scan Recorded Fixtures",
+            evidence_kind="source_metadata",
+            evidence_locator=f"{source_locator}#{issue_id}",
+            asserted_at=asserted_at,
+        ),
+        EvidenceSummary(
+            claim_kind="page_range",
+            claim_value=page_range,
+            asserted_by_family="article_scan_recorded",
+            asserted_by_label="Article Scan Recorded Fixtures",
+            evidence_kind="page_range",
+            evidence_locator=base_locator,
+            asserted_at=asserted_at,
+        ),
+        EvidenceSummary(
+            claim_kind="member_path",
+            claim_value=member_path,
+            asserted_by_family="article_scan_recorded",
+            asserted_by_label="Article Scan Recorded Fixtures",
+            evidence_kind="article_segment",
+            evidence_locator=base_locator,
+            asserted_at=asserted_at,
+        ),
+    ]
+    if topic is not None:
+        evidence.append(
+            EvidenceSummary(
+                claim_kind="topic",
+                claim_value=topic,
+                asserted_by_family="article_scan_recorded",
+                asserted_by_label="Article Scan Recorded Fixtures",
+                evidence_kind="article_segment",
+                evidence_locator=base_locator,
+                asserted_at=asserted_at,
+            )
+        )
+    if snippet is not None:
+        evidence.append(
+            EvidenceSummary(
+                claim_kind="ocr_text_fixture",
+                claim_value=snippet,
+                asserted_by_family="article_scan_recorded",
+                asserted_by_label="Article Scan Recorded Fixtures",
+                evidence_kind="ocr_text_fixture",
+                evidence_locator=f"{base_locator}/ocr",
+                asserted_at=asserted_at,
+            )
+        )
+    for index, file_record in enumerate(file_records):
+        file_name = _require_string(file_record.get("name"), f"files[{index}].name")
+        evidence.append(
+            EvidenceSummary(
+                claim_kind="file_listing",
+                claim_value=file_name,
+                asserted_by_family="article_scan_recorded",
+                asserted_by_label="Article Scan Recorded Fixtures",
+                evidence_kind="file_listing",
+                evidence_locator=f"{source_locator}#{issue_id}/files/{index}",
+                asserted_at=asserted_at,
+            )
+        )
+    return tuple(evidence)
+
+
 def _require_string(value: Any, field_name: str) -> str:
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field_name} must be a non-empty string in the extracted record.")
@@ -695,6 +976,14 @@ def _optional_mapping(value: Any, field_name: str) -> dict[str, Any] | None:
     if value is None:
         return None
     return _require_mapping(value, field_name)
+
+
+def _optional_mapping_sequence(value: Any, field_name: str) -> tuple[dict[str, Any], ...]:
+    if value is None:
+        return ()
+    if not isinstance(value, list):
+        raise ValueError(f"{field_name} must be a list when provided.")
+    return tuple(_require_mapping(item, f"{field_name}[]") for item in value)
 
 
 def _payload_locator(payload_fixture: dict[str, Any] | None, field_name: str) -> str | None:

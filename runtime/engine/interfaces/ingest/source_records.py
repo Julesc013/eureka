@@ -34,3 +34,11 @@ class LocalBundleSourceRecord:
     source_name: str
     payload: dict[str, Any]
     source_locator: str
+
+
+@dataclass(frozen=True)
+class ArticleScanRecordedSourceRecord:
+    target_ref: str
+    source_name: str
+    payload: dict[str, Any]
+    source_locator: str

@@ -1,0 +1,102 @@
+{
+  "fixture_id": "article_scan_recorded_fixtures_v0",
+  "created_by_slice": "article_scan_fixture_pack_v0",
+  "fixture_notes": [
+    "Synthetic article/scan-shaped fixture for bounded hard eval coverage.",
+    "No real scan, PDF, image, OCR pipeline, live source call, scraping, or copied article text is included.",
+    "The OCR-like payload text is a tiny deterministic stand-in for source/evidence shape only."
+  ],
+  "articles": [
+    {
+      "issue": {
+        "id": "pc-magazine-july-1994-fixture",
+        "title": "PC Magazine July 1994 Issue Fixture",
+        "date": "1994-07",
+        "volume": "fixture-volume",
+        "issue": "fixture-issue",
+        "primary_representation_id": "rep.article-scan-recorded.pc.magazine.july.1994.fixture.scan-placeholder",
+        "representations": [
+          {
+            "id": "rep.article-scan-recorded.pc.magazine.july.1994.fixture.scan-placeholder",
+            "kind": "scanned_issue_placeholder",
+            "label": "PC Magazine July 1994 synthetic scan placeholder",
+            "content_type": "application/octet-stream",
+            "filename": "pc-magazine-july-1994-scan-placeholder.txt",
+            "access_path": {
+              "id": "access.article-scan-recorded.pc.magazine.july.1994.fixture.scan-placeholder",
+              "kind": "view",
+              "locator": "article-scan-recorded://pc-magazine-july-1994-fixture/scan-placeholder",
+              "is_direct": false
+            }
+          },
+          {
+            "id": "rep.article-scan-recorded.pc.magazine.july.1994.fixture.issue-manifest",
+            "kind": "issue_manifest",
+            "label": "PC Magazine July 1994 synthetic issue manifest",
+            "content_type": "application/json",
+            "byte_length": 602,
+            "filename": "pc_magazine_1994_issue_manifest.json",
+            "payload_fixture": {
+              "locator": "runtime/connectors/article_scan_recorded/fixtures/payloads/pc_magazine_1994_issue_manifest.json",
+              "filename": "pc_magazine_1994_issue_manifest.json",
+              "sha256": "0f4298d049c9aef4801fe977cdb815bba776edf06b4f842bab2558ce530b1385"
+            },
+            "access_path": {
+              "id": "access.article-scan-recorded.pc.magazine.july.1994.fixture.issue-manifest",
+              "kind": "read_fixture_text",
+              "locator": "article-scan-recorded://pc-magazine-july-1994-fixture/issue-manifest",
+              "is_direct": true
+            }
+          }
+        ]
+      },
+      "article": {
+        "id": "pc-magazine-1994-ray-tracing-article",
+        "kind": "article_segment",
+        "title": "Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop",
+        "topic": "ray tracing",
+        "page_range": "123-128",
+        "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+        "media_type": "text/plain",
+        "size_bytes": 415,
+        "content_hash": "sha256:7e3b972c02becefcb80da136ae1adbc8b2599a828da52ea3b6418cb82835e96d",
+        "snippet": "Synthetic OCR-like fixture text: the article segment is inside a scanned 1994 magazine issue fixture and discusses ray tracing for PC graphics.",
+        "representations": [
+          {
+            "id": "rep.article-scan-recorded.pc.magazine.1994.ray.tracing.article.ocr",
+            "kind": "ocr_text_fixture",
+            "label": "Ray Tracing on the Desktop synthetic OCR text page range 123-128",
+            "content_type": "text/plain",
+            "byte_length": 415,
+            "filename": "pc_magazine_1994_ray_tracing_ocr.txt",
+            "payload_fixture": {
+              "locator": "runtime/connectors/article_scan_recorded/fixtures/payloads/pc_magazine_1994_ray_tracing_ocr.txt",
+              "filename": "pc_magazine_1994_ray_tracing_ocr.txt",
+              "sha256": "7e3b972c02becefcb80da136ae1adbc8b2599a828da52ea3b6418cb82835e96d"
+            },
+            "access_path": {
+              "id": "access.article-scan-recorded.pc.magazine.1994.ray.tracing.article.ocr",
+              "kind": "read_fixture_text",
+              "locator": "article-scan-recorded://pc-magazine-july-1994-fixture/articles/ray-tracing-on-the-desktop/pages-123-128",
+              "is_direct": true
+            }
+          }
+        ]
+      },
+      "files": [
+        {
+          "name": "payloads/pc_magazine_1994_issue_manifest.json",
+          "content_type": "application/json",
+          "size": 602,
+          "sha256": "0f4298d049c9aef4801fe977cdb815bba776edf06b4f842bab2558ce530b1385"
+        },
+        {
+          "name": "payloads/pc_magazine_1994_ray_tracing_ocr.txt",
+          "content_type": "text/plain",
+          "size": 415,
+          "sha256": "7e3b972c02becefcb80da136ae1adbc8b2599a828da52ea3b6418cb82835e96d"
+        }
+      ]
+    }
+  ]
+}
