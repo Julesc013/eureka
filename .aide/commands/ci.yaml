@@ -46,10 +46,18 @@ steps:
     run: python -m unittest tests.evals.test_external_baseline_observations tests.scripts.test_external_baseline_observation_scripts
   - id: manual_observation_batch_0
     run: python -m unittest tests.evals.test_manual_observation_batch_0
+  - id: manual_observation_entry_helper
+    run: python -m unittest tests.scripts.test_external_baseline_entry_helpers
   - id: external_baseline_observation_validator
     run: python scripts/validate_external_baseline_observations.py
   - id: external_baseline_status_report
     run: python scripts/report_external_baseline_status.py
+  - id: external_baseline_status_report_batch_0
+    run: python scripts/report_external_baseline_status.py --batch batch_0 --json
+  - id: external_baseline_observation_list_batch_0
+    run: python scripts/list_external_baseline_observations.py --batch batch_0 --json
+  - id: external_baseline_observation_create_stdout
+    run: python scripts/create_external_baseline_observation.py --batch batch_0 --query-id windows_7_apps --system-id google_web_search --stdout
   - id: source_coverage_capability
     run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
   - id: real_source_coverage_pack

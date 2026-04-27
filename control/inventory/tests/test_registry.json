@@ -615,6 +615,28 @@
       "notes": "Added by Manual Observation Batch 0; validates pending batch preparation only and performs no external searches."
     },
     {
+      "test_id": "manual_observation_entry_helper_validation",
+      "label": "Manual Observation Entry Helper validation",
+      "command": "python -m unittest tests.scripts.test_external_baseline_entry_helpers",
+      "category": "eval",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where helper tests create pending observation examples",
+      "expected_runtime": "seconds",
+      "failure_means": "The manual observation entry helpers may list, create, validate, or report slots incorrectly, or may count pending/template files as observed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Manual Observation Entry Helper v0; validates stdlib-only local entry tooling without scraping, URL fetching, browser automation, external queries, or fabricated observations."
+    },
+    {
       "test_id": "external_baseline_observation_validator",
       "label": "External baseline observation validator",
       "command": "python scripts/validate_external_baseline_observations.py",
@@ -654,6 +676,46 @@
       "failure_means": "The manual baseline status report cannot summarize pending/observed coverage.",
       "advisory_or_required": "required",
       "notes": "Reports pending/observed manual baseline coverage without scraping, APIs, or automated searches."
+    },
+    {
+      "test_id": "external_baseline_observation_list_helper",
+      "label": "External baseline observation list helper",
+      "command": "python scripts/list_external_baseline_observations.py --batch batch_0",
+      "category": "eval",
+      "owner_area": "scripts",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The manual baseline list helper cannot enumerate Batch 0 pending slots.",
+      "advisory_or_required": "required",
+      "notes": "Lists local pending/observed slots only; it performs no scraping, URL fetching, browser automation, or external queries."
+    },
+    {
+      "test_id": "external_baseline_observation_create_helper_stdout",
+      "label": "External baseline observation create helper stdout",
+      "command": "python scripts/create_external_baseline_observation.py --batch batch_0 --query-id windows_7_apps --system-id google_web_search --stdout",
+      "category": "eval",
+      "owner_area": "scripts",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The manual baseline create helper cannot emit a fillable pending observation record.",
+      "advisory_or_required": "required",
+      "notes": "Emits pending JSON only; it does not populate top results, fetch URLs, open browsers, query external systems, or mark records observed."
     },
     {
       "test_id": "hardening_tests",
