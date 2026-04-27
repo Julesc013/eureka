@@ -13,13 +13,13 @@ This pack is governance only. It does not change runtime behavior, add source co
 - `tests/hardening/`
 - `control/inventory/sources/`
 
-The live audit was re-run after Old-Platform Software Planner Pack v0. Current Search Usefulness Audit v0 reports:
+The live audit has been re-run through Old-Platform Source Coverage Expansion v0. Current Search Usefulness Audit v0 reports:
 
 - total queries: 64
 - covered: 5
-- partial: 5
-- source_gap: 41
-- capability_gap: 11
+- partial: 20
+- source_gap: 28
+- capability_gap: 9
 - unknown: 2
 - external baselines pending: Google 64, Internet Archive metadata 64, Internet Archive full text/OCR 64
 - planner_gap: 24
@@ -29,7 +29,7 @@ The live audit was re-run after Old-Platform Software Planner Pack v0. Current S
 
 - Primary usefulness wedge: old-platform-compatible software search
 - Secondary usefulness wedge: member-level discovery inside bundles
-- Immediate next milestone: Search Usefulness Audit Delta v0
+- Immediate next milestone: Search Usefulness Audit Delta v1
 
 Update: Source Coverage and Capability Model v0 and Real Source Coverage Pack
 v0 are implemented, and Old-Platform Software Planner Pack v0 now improves
@@ -37,10 +37,11 @@ deterministic old-platform interpretation. Member-Level Synthetic Records v0
 then added bounded member target refs and parent lineage, and Result Lanes +
 User-Cost Ranking v0 added deterministic member-vs-parent usefulness
 annotations. Compatibility Evidence Pack v0 then added bounded source-backed
-compatibility evidence while preserving unknown outcomes. The next
-implementation milestone is Search Usefulness Audit Delta v0 so the repo can
-measure the accumulated usefulness delta without weakening queries or
-fabricating external baselines.
+compatibility evidence while preserving unknown outcomes. Search Usefulness
+Audit Delta v0 recorded the first measured movement, and Old-Platform Source
+Coverage Expansion v0 then expanded committed old-platform fixture coverage.
+The next milestone is Search Usefulness Audit Delta v1 so the repo can record
+the new movement without weakening queries or fabricating external baselines.
 
 ## Contents
 

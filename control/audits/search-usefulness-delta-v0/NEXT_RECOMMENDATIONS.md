@@ -2,20 +2,24 @@
 
 ## Recommended Next Milestone
 
-`Old-Platform Source Coverage Expansion v0`
+`Old-Platform Source Coverage Expansion v0` was the recommendation from this
+delta pack and is now implemented. The recommended follow-up is
+`Search Usefulness Audit Delta v1`.
 
 ## Why This Comes Next
 
-The current audit still reports:
+Before Old-Platform Source Coverage Expansion v0, this delta pack reported:
 
 - `source_gap`: 41 of 64 queries
 - `source_coverage_gap`: 49 failure-mode labels
 - external baselines pending/manual for every query
 
-The recent implementation sequence made the resolver more capable when fixture
-evidence exists. The next bottleneck is that too few old-platform software,
-driver, manual, support-media, and latest-compatible release records exist in
-the bounded corpus.
+After Old-Platform Source Coverage Expansion v0, the current audit reports
+`covered=5`, `partial=20`, `source_gap=28`, `capability_gap=9`, and
+`unknown=2`. That movement is significant enough to warrant a new delta pack
+before selecting the next implementation slice. Source coverage is still a
+large pressure, but the next decision should be evidence-backed against the
+expanded fixture corpus.
 
 ## Acceptance Criteria
 
@@ -27,7 +31,8 @@ the bounded corpus.
   hints, and member lineage.
 - Add tests before changing expected query status.
 - Keep external baselines pending unless manual observations are committed.
-- Produce a new Search Usefulness Audit result after the source expansion.
+- Produce a new Search Usefulness Audit Delta v1 result after the source
+  expansion.
 
 ## Initial Source Families To Target
 
@@ -45,7 +50,8 @@ the bounded corpus.
 
 Useful, but it is a measurement infrastructure improvement. It should follow or
 pair with the next source expansion so future reports have more movement to
-measure.
+measure. After the source expansion, the next delta pack should decide whether
+baseline persistence is the right follow-up.
 
 ### Rust Query Planner Parity Candidate v0
 

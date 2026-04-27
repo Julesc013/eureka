@@ -58,6 +58,8 @@ steps:
     run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
   - id: real_source_coverage_pack_tests
     run: python -m unittest runtime.connectors.internet_archive_recorded.tests.test_connector runtime.connectors.local_bundle_fixtures.tests.test_connector runtime.engine.index.tests.test_real_source_coverage_pack tests.integration.test_real_source_coverage_pack
+  - id: old_platform_source_coverage_expansion_tests
+    run: python -m unittest runtime.connectors.internet_archive_recorded.tests.test_connector runtime.connectors.local_bundle_fixtures.tests.test_connector runtime.engine.synthetic_records.tests.test_member_record_synthesis runtime.engine.index.tests.test_real_source_coverage_pack runtime.engine.compatibility.tests.test_compatibility_evidence tests.integration.test_old_platform_source_coverage_expansion
   - id: member_level_synthetic_records_tests
     run: python -m unittest runtime.engine.synthetic_records.tests.test_member_record_synthesis runtime.engine.index.tests.test_member_level_synthetic_records tests.integration.test_member_level_synthetic_records_slice
   - id: result_lanes_user_cost_tests
@@ -343,6 +345,7 @@ notes:
   - Search Usefulness Audit Delta v0 is audit/reporting governance over current local results only; it adds no retrieval behavior and records no external baseline observations.
   - Source Coverage and Capability Model v0 adds source capability and coverage-depth metadata/projection only; it does not add connectors, live source probing, crawling, or acquisition behavior.
   - Real Source Coverage Pack v0 adds committed recorded Internet Archive-like fixtures and local bundle fixtures only; it does not add live Internet Archive API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
+  - Old-Platform Source Coverage Expansion v0 expands committed old-platform fixtures only; it does not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.
   - Old-Platform Software Planner Pack v0 adds deterministic old-platform interpretation only; it does not add ranking, fuzzy/vector retrieval, LLM planning, live source behavior, new connectors, or planner-owned retrieval routing.
   - Member-Level Synthetic Records v0 adds deterministic synthetic member records for bounded fixture-backed bundle members, preserving parent lineage and source evidence for index/search projection; it does not add broad extraction, arbitrary local filesystem ingestion, ranking, or live source behavior.
   - Result Lanes + User-Cost Ranking v0 adds bounded deterministic result lanes and user-cost explanations for current records; it does not add production ranking, fuzzy/vector retrieval, LLM scoring, live source behavior, or new connectors.

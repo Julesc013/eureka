@@ -12,8 +12,8 @@ Current bootstrap slice:
 
 - `synthetic_software/` is a local-only connector-shaped adapter over governed synthetic software fixtures
 - `github_releases/` is the first bounded real-source connector family, using small recorded GitHub Releases fixtures for deterministic tests
-- `internet_archive_recorded/` loads tiny committed Internet Archive-like metadata and item-file fixtures only; it performs no live API calls, scraping, crawling, or external lookups
-- `local_bundle_fixtures/` loads tiny committed ZIP bundle fixtures only; it does not add arbitrary local filesystem ingestion or public-alpha local path access
+- `internet_archive_recorded/` loads tiny committed Internet Archive-like metadata and item-file fixtures only, now expanded with old-platform browser, utility, registry-repair, and driver/support-media evidence; it performs no live API calls, scraping, crawling, or external lookups
+- `local_bundle_fixtures/` loads tiny committed ZIP bundle fixtures only, now expanded with Windows 98 registry repair, Windows XP browser/tool, and legacy driver-support members; it does not add arbitrary local filesystem ingestion or public-alpha local path access
 - Source Registry v0 now owns the governed inventory of known source records under `control/inventory/sources/`; connectors remain the runtime-side implementation adapters for records that are actually implemented
 - Resolution Run Model v0 records checked source ids and families by observing the bounded normalized catalog actually consulted by current implemented connectors and mapping those checks back through Source Registry v0 where possible
 - connectors own source loading only in this slice

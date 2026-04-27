@@ -148,6 +148,20 @@ bounded member readback. It does not perform live Internet Archive API calls,
 scraping, crawling, broad source federation, or arbitrary local filesystem
 ingestion.
 
+## Old-Platform Source Coverage Expansion
+
+Old-Platform Source Coverage Expansion v0 is validated with:
+
+```bash
+python -m unittest runtime.connectors.internet_archive_recorded.tests.test_connector runtime.connectors.local_bundle_fixtures.tests.test_connector runtime.engine.synthetic_records.tests.test_member_record_synthesis runtime.engine.index.tests.test_real_source_coverage_pack runtime.engine.compatibility.tests.test_compatibility_evidence tests.integration.test_old_platform_source_coverage_expansion
+```
+
+This check verifies the expanded committed Internet-Archive-shaped records,
+local bundle ZIP fixtures, member synthesis, compatibility evidence, and
+local-index/public projection for the old-platform wedge. It does not perform
+live source calls, scraping, crawling, broad source federation, arbitrary local
+filesystem ingestion, or real binary handling.
+
 ## Old-Platform Software Planner Pack
 
 Old-Platform Software Planner Pack v0 is validated with:

@@ -99,8 +99,14 @@ and `capability_gap` decreased from 13 to 11 against the historical reported
 aggregate baseline. It did not change retrieval behavior or record external
 baseline observations.
 
-Current next implementation milestone: Old-Platform Source Coverage Expansion
-v0.
+Old-Platform Source Coverage Expansion v0 then expanded committed
+Internet-Archive-shaped records and local bundle ZIP fixtures for
+old-platform browser, utility, registry-repair, and driver/support-media cases.
+The current audit now reports `covered=5`, `partial=20`, `source_gap=28`,
+`capability_gap=9`, and `unknown=2`, with external baselines still
+pending/manual.
+
+Current next implementation milestone: Search Usefulness Audit Delta v1.
 
 ## Evidence That Would Change The Plan
 
@@ -112,6 +118,7 @@ The plan should be revisited if:
   dominant
 - hardening tests reveal route/public-alpha/privacy constraints that prevent safe fixture work
 
-Until then, the next lowest-risk implementation move is recorded old-platform
-source coverage expansion because the current audit still reports 41
-`source_gap` query statuses and 49 `source_coverage_gap` failure labels.
+Until then, the next lowest-risk move is a fresh audit delta because the source
+expansion changed enough local results that the repo should measure the
+movement before choosing compatibility expansion, result-lane refinement,
+another recorded source pack, or Rust planner parity.

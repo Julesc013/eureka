@@ -1,11 +1,15 @@
 # Source Coverage Priorities
 
-Source coverage dominates current usefulness failures. After Real Source
-Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level
-Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility
-Evidence Pack v0, and Search Usefulness Audit Delta v0, Search Usefulness
-Audit v0 reports `source_coverage_gap=49`, and 41 of 64 queries still land in
-`source_gap`.
+Source coverage remains the largest usefulness pressure even after the first
+fixture expansion. After Real Source Coverage Pack v0, Old-Platform Software
+Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost
+Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0,
+and Old-Platform Source Coverage Expansion v0, Search Usefulness Audit v0
+reports `covered=5`, `partial=20`, `source_gap=28`, `capability_gap=9`, and
+`unknown=2`. The current failure labels still include
+`source_coverage_gap=49`, because many query fixtures intentionally keep their
+future-work labels until a later delta pack reviews whether those labels should
+be retired.
 
 ## Current Active Sources
 
@@ -38,10 +42,10 @@ mutating placeholders into live sources.
 
 ## Priority Order
 
-Delta update: the next selected implementation milestone is Old-Platform Source
-Coverage Expansion v0. It should expand recorded/committed source material for
-old Windows/Mac utilities, latest-compatible releases, driver/support media,
-and manuals before any live source behavior is considered.
+Status update: Old-Platform Source Coverage Expansion v0 is implemented. It
+expanded recorded/committed source material for old Windows/Mac utilities,
+latest-compatible release notes, driver/support media, and member-level local
+bundles before any live source behavior is considered.
 
 1. Source Coverage and Capability Model v0
 2. Internet Archive recorded metadata + item-file fixtures (implemented as
@@ -52,13 +56,14 @@ and manuals before any live source behavior is considered.
 6. package ecosystem fixtures later
 7. live source probes later
 
-Status update: Source Coverage and Capability Model v0 and Real Source
-Coverage Pack v0 are implemented. Placeholder source records remain
-placeholders. Old-Platform Software Planner Pack v0, Member-Level Synthetic
-Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack
-v0, and Search Usefulness Audit Delta v0 are also implemented. The next
-usefulness work should expand recorded old-platform source coverage rather
-than live crawling.
+Status update: Source Coverage and Capability Model v0, Real Source Coverage
+Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records
+v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
+Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
+v0 are implemented. Placeholder source records remain placeholders. The next
+usefulness work should record a fresh audit delta and decide whether source
+coverage expansion, compatibility evidence expansion, or result-lane
+refinement should follow.
 
 ## Why Capability Depth Comes Before More Connectors
 

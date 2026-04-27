@@ -59,5 +59,12 @@ committed test fixtures for old-platform software and bundle/member discovery.
 They do not call the Internet Archive API, scrape external sites, crawl,
 federate sources, or ingest arbitrary user filesystem paths.
 
+Old-Platform Source Coverage Expansion v0 expands those same active fixture
+records with more committed source-shaped evidence for old Windows/Mac browser
+notes, utility and registry-repair cases, and driver/support-media member
+paths. It does not promote any placeholder source and it still adds no live
+Internet Archive API calls, scraping, crawling, broad source federation, or
+arbitrary local filesystem ingestion.
+
 Placeholder and future records are planning anchors only. They must not be
 described as implemented connectors until runtime code lands for them.

@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: forty-two local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, and Search Usefulness Audit Delta v0. The latest audit-delta pack records that current Search Usefulness Audit status counts are 5 covered, 5 partial, 41 source gaps, 11 capability gaps, and 2 unknowns against a historical reported aggregate baseline, without changing retrieval behavior or recording external baseline observations.
+Current status within this stage: forty-three local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion v0. The current Search Usefulness Audit status counts are 5 covered, 20 partial, 28 source gaps, 9 capability gaps, and 2 unknowns after the fixture expansion, without changing external baseline posture or recording external observations.
 
 ## Stage 3: Surface Skeletons
 
@@ -132,6 +132,12 @@ wedge-specific movement, failure-mode counts, and the recommendation to expand
 old-platform recorded source coverage next. It is audit/reporting only and does
 not add retrieval behavior, source connectors, live source behavior, or external
 baseline observations.
+Old-Platform Source Coverage Expansion v0 now expands the committed
+Internet-Archive-shaped fixture and local bundle fixture corpus with tiny
+text-safe records for Windows 7/XP/2000/98 utility, browser-note,
+registry-repair, and driver/support-media cases. It adds no live Internet
+Archive calls, scraping, crawling, broad source federation, arbitrary local
+filesystem ingestion, or production source claims.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
@@ -139,7 +145,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Old-Platform Source Coverage Expansion v0
+> Search Usefulness Audit Delta v1
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -150,11 +156,13 @@ v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0,
 Source Coverage and Capability Model v0, Real Source Coverage Pack v0,
 Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0,
-Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, and
-Search Usefulness Audit Delta v0 now
+Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
+Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
+v0 now
 mark the start of a more evidence-led backend phase. The next step is to add
-more recorded old-platform source coverage because the current delta still
-shows 41 `source_gap` statuses and 49 `source_coverage_gap` failure labels.
+record a fresh audit delta because the fixture expansion moved the current
+audit to 20 partial results and 28 source gaps while external baselines remain
+pending/manual.
 That next step must still avoid live crawling, external scraping, installer
 execution, fuzzy/vector search, LLM planning, broad source federation, external
 baseline fabrication, and production benchmark claims.

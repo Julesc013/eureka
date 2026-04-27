@@ -76,29 +76,36 @@
     {
       "id": "old_platform_source_coverage_expansion_v0",
       "title": "Old-Platform Source Coverage Expansion v0",
-      "status": "next",
+      "status": "completed",
       "priority": 11,
-      "notes": "Expand recorded/committed old-platform software, driver, support-media, manual, and latest-compatible release fixtures because source coverage remains the dominant audit gap."
+      "notes": "Expanded committed Internet-Archive-shaped and local bundle fixtures for old-platform browser, utility, registry-repair, and driver/support-media cases without live calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion."
+    },
+    {
+      "id": "search_usefulness_audit_delta_v1",
+      "title": "Search Usefulness Audit Delta v1",
+      "status": "next",
+      "priority": 12,
+      "notes": "Record the measured delta after Old-Platform Source Coverage Expansion v0 before choosing the next implementation slice."
     },
     {
       "id": "rust_query_planner_parity_candidate_v0",
       "title": "Rust Query Planner Parity Candidate v0",
       "status": "queued",
-      "priority": 12,
+      "priority": 13,
       "notes": "Implement the next isolated Rust seam only after Python planner behavior stabilizes."
     },
     {
       "id": "public_alpha_rehearsal_evidence_v0",
       "title": "Public Alpha Rehearsal Evidence v0",
       "status": "queued",
-      "priority": 13,
+      "priority": 14,
       "notes": "Capture supervised rehearsal evidence using the hosting pack without deploying."
     },
     {
       "id": "compatibility_surface_strategy_v0",
       "title": "Compatibility Surface Strategy v0",
       "status": "queued",
-      "priority": 14,
+      "priority": 15,
       "notes": "Define presentation rules for known, unknown, inferred, and incompatible outcomes before app work."
     }
   ]

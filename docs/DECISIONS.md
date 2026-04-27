@@ -383,3 +383,9 @@
 - Status: accepted
 - Decision: Eureka now records Search Usefulness Audit Delta v0 under `control/audits/search-usefulness-delta-v0/`, comparing current local Search Usefulness Audit output against a historical reported aggregate baseline after source coverage, old-platform planning, member records, result lanes/user-cost, and compatibility evidence landed.
 - Why: The recent usefulness sequence produced a modest measured movement: partial results increased from 1 to 5, `source_gap` decreased from 43 to 41, and `capability_gap` decreased from 13 to 11. The delta pack keeps baseline limitations explicit, leaves external baselines pending/manual, and recommends Old-Platform Source Coverage Expansion v0 because source coverage remains dominant. It does not change retrieval behavior, add source connectors, call live sources, scrape external systems, add fuzzy/vector retrieval or LLM behavior, weaken hard evals, port Rust behavior, start native app work, or add deployment infrastructure.
+
+## ADR-065: Expand Old-Platform Source Coverage With Committed Fixtures Only
+
+- Status: accepted
+- Decision: Eureka now expands the existing `internet-archive-recorded-fixtures` and `local-bundle-fixtures` source families with tiny committed old-platform utility, browser-note, registry-repair, and driver/support-media fixture records.
+- Why: Search Usefulness Audit Delta v0 showed source coverage remained the dominant usefulness blocker. The expansion moves current local audit counts to 5 covered, 20 partial, 28 source gaps, 9 capability gaps, and 2 unknowns while keeping placeholder sources unimplemented and external baselines pending/manual. It does not add live Internet Archive calls, scraping, crawling, arbitrary local filesystem ingestion, real software binaries, fuzzy/vector retrieval, LLM behavior, Rust behavior ports, native apps, deployment infrastructure, hard-eval weakening, or production-readiness claims.

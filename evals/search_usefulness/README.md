@@ -97,3 +97,11 @@ them with a historical reported aggregate baseline, and recommends
 Old-Platform Source Coverage Expansion v0 because source coverage remains the
 dominant gap. The delta pack is audit/reporting only; it does not change
 retrieval behavior or record external baseline observations.
+
+Old-Platform Source Coverage Expansion v0 now expands the committed
+Internet-Archive-shaped and local bundle fixture corpus. The current local
+audit reports `covered=5`, `partial=20`, `source_gap=28`, `capability_gap=9`,
+and `unknown=2`. The movement is source-backed and bounded: Google and
+Internet Archive baselines remain pending manual observation, and the audit
+still performs no live-source crawling, scraping, fuzzy/vector retrieval, LLM
+planning, or production benchmark comparison.

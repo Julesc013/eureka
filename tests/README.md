@@ -31,3 +31,10 @@ Search Usefulness Audit Delta v0 adds
 committed delta pack, baseline limitations, selected wedges, current audit
 counts, pending/manual external-baseline posture, and next recommendation. It
 does not exercise product behavior.
+
+Old-Platform Source Coverage Expansion v0 adds
+`tests/integration/test_old_platform_source_coverage_expansion.py` and expands
+component-local connector/index/compatibility tests. These checks guard the
+expanded committed fixture corpus only; they do not add live source calls,
+scraping, crawling, arbitrary local filesystem ingestion, or real binary
+handling.

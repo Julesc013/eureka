@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus forty-two executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus forty-three executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -139,6 +139,14 @@ architectural oracle rather than as a throwaway scaffold.
   eval summaries, and preserves unknown compatibility without adding a
   compatibility oracle, installer execution, live source behavior, scraping,
   fuzzy/vector retrieval, LLM behavior, Rust behavior, or new connectors
+- first Old-Platform Source Coverage Expansion v0 seam under
+  `runtime/connectors/internet_archive_recorded/` and
+  `runtime/connectors/local_bundle_fixtures/` that expands committed
+  Internet-Archive-shaped and local bundle fixtures for Windows 7/XP/2000/98
+  utility, browser-note, registry-repair, and driver/support-media cases,
+  improving local audit partials while adding no live Internet Archive calls,
+  scraping, crawling, broad source federation, arbitrary local filesystem
+  ingestion, real binaries, or production source claims
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -178,7 +186,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Old-Platform Source Coverage Expansion v0
+> Search Usefulness Audit Delta v1
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -189,8 +197,9 @@ Candidate v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0,
 and Comprehensive Test/Eval Operating Layer and Repo Audit v0, plus Hard Test
 Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack
 v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0,
-Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, and
-Search Usefulness Audit Delta v0, are
+Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
+Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
+v0, are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
@@ -205,12 +214,13 @@ metadata layer, first recorded source-coverage fixture pack, deterministic
 old-platform planner interpretation layer, first bounded member-level synthetic
 target-ref and parent-lineage layer, first deterministic result-lane and
 user-cost explanation layer, first source-backed compatibility evidence layer,
-and first measured usefulness-delta reporting pack.
+first measured usefulness-delta reporting pack, and first expanded
+old-platform fixture coverage pack.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Old-Platform Source Coverage Expansion v0
-2. Search Usefulness Baseline Persistence v0
+1. Search Usefulness Audit Delta v1
+2. Compatibility Evidence Expansion v0
 3. Rust Query Planner Parity Candidate v0
 4. Public Alpha Rehearsal Evidence v0
 5. Compatibility Surface Strategy v0

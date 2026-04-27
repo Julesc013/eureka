@@ -267,6 +267,27 @@
       "notes": "Added by Real Source Coverage Pack v0; it uses committed fixtures only and performs no live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion."
     },
     {
+      "test_id": "old_platform_source_coverage_expansion_validation",
+      "label": "Old-platform source coverage expansion tests",
+      "command": "python -m unittest runtime.connectors.internet_archive_recorded.tests.test_connector runtime.connectors.local_bundle_fixtures.tests.test_connector runtime.engine.synthetic_records.tests.test_member_record_synthesis runtime.engine.index.tests.test_real_source_coverage_pack runtime.engine.compatibility.tests.test_compatibility_evidence tests.integration.test_old_platform_source_coverage_expansion",
+      "category": "integration",
+      "owner_area": "runtime/connectors",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary local indexes only",
+      "expected_runtime": "seconds",
+      "failure_means": "Expanded old-platform recorded fixtures, local bundle members, compatibility evidence, local-index visibility, or public projection regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Old-Platform Source Coverage Expansion v0; it validates committed fixtures only and performs no live API calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, or real binary handling."
+    },
+    {
       "test_id": "old_platform_planner_pack_validation",
       "label": "Old-platform software planner tests",
       "command": "python -m unittest runtime.engine.query_planner.tests.test_old_platform_planner",

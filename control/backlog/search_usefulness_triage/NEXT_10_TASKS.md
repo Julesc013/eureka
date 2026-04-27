@@ -177,6 +177,39 @@ arbitrary local filesystem ingestion, or hard-eval weakening.
 Expected audit effect: selected source_gap queries should become partial only
 when current source evidence supports the movement.
 
+Status: implemented with expanded committed Internet-Archive-shaped fixture
+records and three tiny local bundle ZIP fixtures for Windows 98 registry
+repair, Windows XP browser/tools notes, Creative CT1740, and 3Com 3C905
+driver-support cases. Current Search Usefulness Audit output reports
+`covered=5`, `partial=20`, `source_gap=28`, `capability_gap=9`, and
+`unknown=2`; external baselines remain pending/manual.
+
+## 7b. Search Usefulness Audit Delta v1
+
+Why: the old-platform source expansion moved several source-backed queries to
+partial, and the repo should record that machine-derived movement before the
+next implementation slice.
+
+Prerequisite: Old-Platform Source Coverage Expansion v0 and full verification
+remain green.
+
+Likely files: `control/audits/`, `evals/search_usefulness/`,
+`tests/operations/`, `.aide/tasks/`.
+
+Acceptance criteria: delta report records current counts, query movement,
+remaining source/compatibility/member/ranking gaps, and next recommendation
+without changing retrieval behavior or external baseline status.
+
+Tests to add first: delta v1 pack validation, no fake external-baseline guard,
+and audit movement sanity checks.
+
+Do not do: do not weaken search-usefulness queries, hard evals, or external
+baseline pending/manual posture.
+
+Expected audit effect: no new retrieval behavior; clearer evidence for whether
+the next implementation should be compatibility expansion, result-lane
+refinement, or another recorded source pack.
+
 ## 8. Rust Query Planner Parity Candidate v0
 
 Why: Rust parity should preserve useful Python planner behavior after it stabilizes.

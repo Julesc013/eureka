@@ -20,8 +20,8 @@
         "CTEA-CONTENT-002"
       ],
       "title": "Prioritize recorded fixture source coverage for source-gap query families",
-      "status": "still_dominant_after_search_usefulness_audit_delta_v0",
-      "suggested_milestone": "Old-Platform Source Coverage Expansion v0"
+      "status": "partially_addressed_by_old_platform_source_coverage_expansion_v0",
+      "suggested_milestone": "Search Usefulness Audit Delta v1"
     },
     {
       "id": "audit-backlog-doc-drift",
@@ -48,8 +48,8 @@
         "CTEA-CONTENT-003"
       ],
       "title": "Add member-level discovery fixtures, lineage, and index records",
-      "status": "partially_addressed_but_source_coverage_limited_after_search_usefulness_audit_delta_v0",
-      "suggested_milestone": "Old-Platform Source Coverage Expansion v0"
+      "status": "partially_addressed_with_expanded_local_bundle_members",
+      "suggested_milestone": "Search Usefulness Audit Delta v1"
     },
     {
       "id": "audit-backlog-compatibility-evidence",
@@ -57,8 +57,8 @@
         "CTEA-CONTENT-004"
       ],
       "title": "Add old-platform compatibility evidence fixtures and unknown outcomes",
-      "status": "addressed_by_compatibility_evidence_pack_v0",
-      "suggested_milestone": "Old-Platform Source Coverage Expansion v0"
+      "status": "partially_addressed_with_expanded_old_platform_fixture_evidence",
+      "suggested_milestone": "Compatibility Evidence Expansion v0"
     }
   ]
 }

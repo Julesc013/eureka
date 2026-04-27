@@ -36,6 +36,8 @@ steps:
     run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
   - id: real_source_coverage_pack
     run: python -m unittest runtime.connectors.internet_archive_recorded.tests.test_connector runtime.connectors.local_bundle_fixtures.tests.test_connector runtime.engine.index.tests.test_real_source_coverage_pack tests.integration.test_real_source_coverage_pack
+  - id: old_platform_source_coverage_expansion
+    run: python -m unittest runtime.connectors.internet_archive_recorded.tests.test_connector runtime.connectors.local_bundle_fixtures.tests.test_connector runtime.engine.synthetic_records.tests.test_member_record_synthesis runtime.engine.index.tests.test_real_source_coverage_pack runtime.engine.compatibility.tests.test_compatibility_evidence tests.integration.test_old_platform_source_coverage_expansion
   - id: old_platform_planner_pack
     run: python -m unittest runtime.engine.query_planner.tests.test_old_platform_planner
   - id: member_level_synthetic_records
@@ -60,6 +62,7 @@ notes:
   - Search Usefulness Audit Delta v0 validates a stable audit/reporting pack over current local results only; it adds no retrieval behavior and records no external baseline observations.
   - Source Coverage and Capability Model v0 checks validate metadata and projection only; they do not add connectors, live source probing, or crawling.
   - Real Source Coverage Pack v0 checks validate committed recorded fixtures, local bundle fixtures, local-index visibility, and public projection only; they do not add live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
+  - Old-Platform Source Coverage Expansion v0 checks validate expanded committed old-platform fixtures, local bundle members, compatibility evidence, and index visibility only; they do not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.
   - Old-Platform Software Planner Pack v0 checks validate deterministic planner interpretation only; they do not add ranking, fuzzy/vector retrieval, LLM planning, live source behavior, or new connectors.
   - Member-Level Synthetic Records v0 checks validate deterministic fixture-backed member records, parent lineage, and index/search projection only; they do not add broad extraction, arbitrary local filesystem ingestion, ranking, or live source behavior.
   - Result Lanes + User-Cost Ranking v0 checks validate deterministic lane and user-cost annotations only; they do not add production ranking, fuzzy/vector retrieval, LLM scoring, live source behavior, or new connectors.

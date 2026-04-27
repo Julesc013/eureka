@@ -94,6 +94,12 @@ The repo has already proven:
   baseline limitations, wedge-specific movement, and the next source-coverage
   recommendation without changing retrieval behavior or recording external
   baseline observations
+- Old-Platform Source Coverage Expansion v0 as the first follow-up recorded
+  fixture expansion for the selected wedge, adding tiny committed
+  Internet-Archive-shaped and local bundle fixture data for Windows 7/XP/2000/98
+  utility, browser-note, registry-repair, and driver/support-media cases without
+  live source calls, scraping, crawling, arbitrary local filesystem ingestion,
+  real binaries, or production source claims
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -126,18 +132,19 @@ The next backend sequence is:
 22. Result Lanes + User-Cost Ranking v0 (implemented as bounded annotations)
 23. Compatibility Evidence Pack v0 (implemented as source-backed evidence annotations)
 24. Search Usefulness Audit Delta v0 (implemented as audit/reporting)
-25. Old-Platform Source Coverage Expansion v0
-26. Search Usefulness Baseline Persistence v0
-27. Rust Query Planner Parity Candidate v0
-28. Public Alpha Rehearsal Evidence v0
-29. Compatibility Surface Strategy v0
-30. Native App Work Later
+25. Old-Platform Source Coverage Expansion v0 (implemented as recorded fixtures only)
+26. Search Usefulness Audit Delta v1
+27. Compatibility Evidence Expansion v0
+28. Rust Query Planner Parity Candidate v0
+29. Public Alpha Rehearsal Evidence v0
+30. Compatibility Surface Strategy v0
+31. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Old-Platform Source Coverage Expansion v0
+> Search Usefulness Audit Delta v1
 
 Why this comes next:
 
@@ -198,9 +205,12 @@ Why this comes next:
   results increased from 1 to 5, `source_gap` decreased from 43 to 41, and
   `capability_gap` decreased from 13 to 11 against the historical reported
   aggregate baseline
-- the next backend bottleneck is source coverage: current Search Usefulness
-  Audit output still reports 41 `source_gap` query statuses and 49
-  `source_coverage_gap` failure labels
+- Old-Platform Source Coverage Expansion v0 expanded recorded fixtures and the
+  current Search Usefulness Audit now reports `covered=5`, `partial=20`,
+  `source_gap=28`, `capability_gap=9`, and `unknown=2`
+- the next backend bottleneck is measurement and prioritization: the repo
+  should record a fresh delta before choosing between compatibility evidence
+  expansion, result-lane refinement, another source pack, or Rust planner parity
 
 ## Explicit Deferrals
 
