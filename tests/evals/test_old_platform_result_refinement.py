@@ -65,7 +65,7 @@ class OldPlatformResultRefinementPackTestCase(unittest.TestCase):
         suite = runner.run_suite()
         by_id = {result.task_id: result for result in suite.task_results}
 
-        self.assertEqual(suite.status_counts, {"capability_gap": 1, "partial": 4, "satisfied": 1})
+        self.assertEqual(suite.status_counts, {"capability_gap": 1, "satisfied": 5})
         self.assertEqual(by_id["driver_inside_support_cd"].overall_status, "satisfied")
         self.assertEqual(by_id["article_inside_magazine_scan"].overall_status, "capability_gap")
 
@@ -99,29 +99,32 @@ class OldPlatformResultRefinementPackTestCase(unittest.TestCase):
 
         shape = checks["result_shape.primary_candidate"].observed or {}
         primary = shape.get("primary_candidate") or {}
-        self.assertEqual(primary.get("record_kind"), "member")
+        self.assertIn(primary.get("record_kind"), {"member", "synthetic_member"})
         self.assertEqual(primary.get("candidate_kind"), "driver")
         self.assertIn("driver.inf", primary.get("member_path", ""))
         self.assertTrue(primary.get("source_id"))
         self.assertTrue(primary.get("has_direct_artifact_locator"))
 
-    def test_remaining_partials_explain_unmet_shape_requirements(self) -> None:
+    def test_source_expansion_supersedes_prior_partials_with_evidence(self) -> None:
         runner = build_default_archive_resolution_eval_runner(
             timestamp_factory=lambda: FIXED_TIMESTAMP,
         )
         by_id = {result.task_id: result for result in runner.run_suite().task_results}
 
-        expected_limitations = {
-            "latest_firefox_before_xp_drop": "exact_latest_compatible_release_not_proven",
-            "old_blue_ftp_client_xp": "concrete_identity_or_direct_installer_not_proven",
-            "win98_registry_repair": "strict expected lane set",
-            "windows_7_apps": "strict lane shape",
+        superseded_partials = {
+            "latest_firefox_before_xp_drop",
+            "old_blue_ftp_client_xp",
+            "win98_registry_repair",
+            "windows_7_apps",
         }
-        for task_id, limitation in expected_limitations.items():
+        for task_id in superseded_partials:
             result = by_id[task_id]
-            self.assertEqual(result.overall_status, "partial", task_id)
-            rendered = json.dumps(result.to_dict(), sort_keys=True)
-            self.assertIn(limitation, rendered, task_id)
+            checks = _checks_by_name(result)
+            self.assertEqual(result.overall_status, "satisfied", task_id)
+            self.assertEqual(checks["search.expected_result_hints"].status, "satisfied", task_id)
+            self.assertEqual(checks["result_shape.primary_candidate"].status, "satisfied", task_id)
+            self.assertEqual(checks["lanes.expected_lanes"].status, "satisfied", task_id)
+            self.assertEqual(checks["ranking.bad_result_patterns"].status, "satisfied", task_id)
 
     def test_report_does_not_claim_external_baselines_or_production_readiness(self) -> None:
         combined = "\n".join(

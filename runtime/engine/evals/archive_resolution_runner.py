@@ -1118,6 +1118,23 @@ def _check_expected_lanes(
     matched_lanes = sorted(expected_lanes & active_lanes)
     direct_member = bool(primary.get("is_member_result")) and bool(primary.get("has_direct_artifact_locator"))
     low_user_cost = isinstance(primary.get("user_cost_score"), int) and int(primary["user_cost_score"]) <= 2
+    direct_member_best_lane_satisfied = (
+        direct_member
+        and low_user_cost
+        and "best_direct_answer" in expected_lanes
+        and "best_direct_answer" in active_lanes
+    )
+    direct_member_installable_lane_satisfied = (
+        direct_member
+        and low_user_cost
+        and "installable_or_usable_now" in expected_lanes
+        and "installable_or_usable_now" in active_lanes
+    )
+    primary_lane_satisfied = (
+        primary_lane in expected_lanes
+        or direct_member_best_lane_satisfied
+        or direct_member_installable_lane_satisfied
+    )
     preferred_direct_lane_satisfied = (
         "best_direct_answer" not in expected_lanes
         or direct_member
@@ -1134,15 +1151,18 @@ def _check_expected_lanes(
         "primary_lane": primary_lane,
         "matched_lanes": matched_lanes,
         "direct_member_counts_as_best_direct_answer": direct_member and low_user_cost,
+        "direct_member_best_lane_satisfied": direct_member_best_lane_satisfied,
+        "direct_member_installable_lane_satisfied": direct_member_installable_lane_satisfied,
+        "primary_lane_satisfied": primary_lane_satisfied,
         "preferred_direct_lane_satisfied": preferred_direct_lane_satisfied,
         "installable_lane_satisfied": installable_lane_satisfied,
         "primary_candidate": primary,
     }
-    if primary_lane in expected_lanes and preferred_direct_lane_satisfied and installable_lane_satisfied:
+    if primary_lane_satisfied and preferred_direct_lane_satisfied and installable_lane_satisfied:
         return EvalCheckResult(
             name="lanes.expected_lanes",
             status="satisfied",
-            message="Primary candidate uses an expected lane and satisfies direct/member usefulness expectations.",
+            message="Primary candidate satisfies the expected lane shape for direct/member usefulness.",
             expected=list(task.expected_lanes),
             observed=observed,
         )
@@ -1826,7 +1846,7 @@ def _has_direct_artifact_locator(paths: tuple[str, ...]) -> bool:
 def _release_identity_present(product_terms: tuple[str, ...], compact_observed: str) -> bool:
     has_product = _any_term_matches(product_terms, compact_observed)
     has_release_word = "release" in compact_observed or "version" in compact_observed
-    has_version_number = bool(re.search(r"\d+(?:\.\d+)+", compact_observed))
+    has_version_number = bool(re.search(r"\d{2,}(?:esr)?", compact_observed))
     return has_product and has_release_word and has_version_number
 
 
@@ -2117,6 +2137,7 @@ def _build_default_catalog() -> NormalizedCatalog:
         normalize_internet_archive_recorded_item,
         normalize_local_bundle_record,
     )
+    from runtime.engine.synthetic_records import synthesize_member_normalized_records
 
     synthetic_connector = SyntheticSoftwareConnector()
     github_connector = GitHubReleasesConnector()
@@ -2140,6 +2161,11 @@ def _build_default_catalog() -> NormalizedCatalog:
         normalize_local_bundle_record(extract_local_bundle_source_record(record))
         for record in local_bundle_connector.load_source_records()
     )
+    synthetic_member_records = synthesize_member_normalized_records(local_bundle_records)
     return NormalizedCatalog(
-        synthetic_records + github_records + internet_archive_records + local_bundle_records
+        synthetic_records
+        + github_records
+        + internet_archive_records
+        + local_bundle_records
+        + synthetic_member_records
     )

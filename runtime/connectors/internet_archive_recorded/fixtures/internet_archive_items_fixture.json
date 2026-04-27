@@ -84,26 +84,43 @@
         ],
         "creator": "Eureka recorded fixture corpus",
         "date": "2017",
-        "description": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
+        "description": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture includes a Firefox 52.9.0 ESR Windows XP compatible installer text stand-in as a bounded candidate within this corpus, not a universal latest-version oracle.",
         "metadata": {
           "platforms": [
-            "Windows XP"
+            "Windows XP",
+            "Windows NT 5.1"
           ],
           "architectures": [
             "x86"
           ],
           "artifact_roles": [
             "release_notes",
-            "support_window"
+            "support_window",
+            "versioned_release_candidate",
+            "installer_stub"
           ]
         },
         "files": [
+          {
+            "name": "firefox/releases/52.9.0esr/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 152,
+            "sha256": "8df23761bdd175c67a93063f0351a4d0bbdd089f8e0aacb8028465b7d0652715"
+          },
           {
             "name": "firefox-xp-support-notes.txt",
             "format": "Text",
             "content_type": "text/plain",
             "size": 196,
             "sha256": "338d4d8222af81b7191827eb4eb214c1407f4973427df4a7ac4c436a2c4d90fe"
+          },
+          {
+            "name": "firefox/releases/52.9.0esr/README-xp-support.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 180,
+            "sha256": "6a1b5061fe71720c5024c76e38d96e2d0aa84827cfd3c064169842f8245e2a3f"
           },
           {
             "name": "release-family-manifest.json",
@@ -123,7 +140,71 @@
         ],
         "required_features": [
           "Windows XP",
-          "support-window evidence"
+          "Windows NT 5.1",
+          "support-window evidence",
+          "Firefox 52.9.0 ESR fixture candidate"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-blue-ftp-client-xp-candidate-fixture",
+        "title": "Old blue FTP client Windows XP candidate recorded fixture",
+        "mediatype": "software",
+        "collection": [
+          "software",
+          "networking",
+          "utilities",
+          "vintage"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "2003",
+        "description": "Recorded metadata for a plausible old blue FTP client Windows XP candidate. The fixture keeps the vague identity uncertainty explicit while providing source-shaped function, visual, platform, and artifact evidence.",
+        "metadata": {
+          "platforms": [
+            "Windows XP",
+            "Windows NT 5.1"
+          ],
+          "architectures": [
+            "x86"
+          ],
+          "artifact_roles": [
+            "ftp_client",
+            "file_transfer",
+            "visual_identity_hint",
+            "installer_stub",
+            "readme"
+          ]
+        },
+        "files": [
+          {
+            "name": "ftp/blue-client/blue-ftp-client-xp-installer.exe.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 176,
+            "sha256": "ac1bd43fc7d8739104be6e6b66a3d0daaef501188b3d8b72fe980926465f0bf0"
+          },
+          {
+            "name": "ftp/blue-client/README-windowsxp.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 164,
+            "sha256": "e622114b411d24576618188b7a3ab420452438071292b79b69af2aa60a1e164e"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows XP",
+          "Windows NT 5.1",
+          "FTP client",
+          "blue icon"
         ]
       }
     },

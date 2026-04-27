@@ -25,6 +25,7 @@ class InternetArchiveRecordedConnectorTestCase(unittest.TestCase):
         by_target_ref = {record.target_ref: record for record in records}
 
         required_refs = {
+            "internet-archive-recorded:ia-blue-ftp-client-xp-candidate-fixture",
             "internet-archive-recorded:ia-win7-portable-apps-fixture",
             "internet-archive-recorded:ia-win98-registry-repair-fixture",
             "internet-archive-recorded:ia-vlc-xp-release-notes-fixture",
@@ -45,6 +46,25 @@ class InternetArchiveRecordedConnectorTestCase(unittest.TestCase):
         mac_record = by_target_ref["internet-archive-recorded:ia-mac-os9-browser-doc-fixture"]
         self.assertIn("documentation", mac_record.payload["item"]["metadata"]["artifact_roles"])
         self.assertFalse(any(file_record["name"].lower().endswith(".exe") for file_record in mac_record.payload["item"]["files"]))
+
+        firefox_record = by_target_ref["internet-archive-recorded:ia-firefox-xp-support-fixture"]
+        self.assertTrue(
+            any(
+                "52.9.0esr" in file_record["name"]
+                and file_record["name"].endswith(".exe.txt")
+                for file_record in firefox_record.payload["item"]["files"]
+            )
+        )
+        self.assertIn(
+            "versioned_release_candidate",
+            firefox_record.payload["item"]["metadata"]["artifact_roles"],
+        )
+
+        ftp_record = by_target_ref[
+            "internet-archive-recorded:ia-blue-ftp-client-xp-candidate-fixture"
+        ]
+        self.assertIn("Windows XP", ftp_record.payload["item"]["metadata"]["platforms"])
+        self.assertIn("visual_identity_hint", ftp_record.payload["item"]["metadata"]["artifact_roles"])
 
     def test_normalized_records_preserve_source_and_evidence(self) -> None:
         record = next(

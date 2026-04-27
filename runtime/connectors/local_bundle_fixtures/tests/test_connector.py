@@ -48,6 +48,8 @@ class LocalBundleFixturesConnectorTestCase(unittest.TestCase):
             ),
             "windows_xp_browser_tools_bundle.zip": (
                 "browsers/firefox-xp-support/readme.txt",
+                "browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+                "utilities/ftp-blue-client/blue-ftp-client-xp-installer.exe.txt",
             ),
             "legacy_hardware_driver_support_bundle.zip": (
                 "drivers/sound/creative_ct1740/windows98/driver.inf",
@@ -104,6 +106,38 @@ class LocalBundleFixturesConnectorTestCase(unittest.TestCase):
         self.assertTrue(
             any("Windows 95" in evidence.claim_value for evidence in normalized.evidence)
         )
+
+    def test_v1_expansion_preserves_firefox_ftp_and_windows7_members(self) -> None:
+        records = {
+            item.target_ref: normalize_local_bundle_record(extract_local_bundle_source_record(item))
+            for item in LocalBundleFixturesConnector().load_source_records()
+        }
+
+        xp_member_paths = {
+            evidence.claim_value
+            for evidence in records[
+                "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0"
+            ].evidence
+            if evidence.claim_kind == "member_listing"
+        }
+        self.assertIn(
+            "browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+            xp_member_paths,
+        )
+        self.assertIn(
+            "utilities/ftp-blue-client/blue-ftp-client-xp-installer.exe.txt",
+            xp_member_paths,
+        )
+
+        win7_member_paths = {
+            evidence.claim_value
+            for evidence in records[
+                "local-bundle-fixture:windows-utility-bundle@1.0"
+            ].evidence
+            if evidence.claim_kind == "member_listing"
+        }
+        self.assertIn("utilities/checksum-tool/checksum-tool.exe.txt", win7_member_paths)
+        self.assertIn("utilities/text-editor/text-editor.exe.txt", win7_member_paths)
 
     def test_existing_decomposition_and_member_access_can_use_committed_zip_fixture(self) -> None:
         records = tuple(

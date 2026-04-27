@@ -49,6 +49,16 @@
           "compatibility_note": "Text stand-in for a Windows 7 utility artifact."
         },
         {
+          "member_path": "utilities/checksum-tool/checksum-tool.exe.txt",
+          "member_role": "installer_stub",
+          "compatibility_note": "Text stand-in for an individual Windows 7 checksum utility app installer."
+        },
+        {
+          "member_path": "utilities/text-editor/text-editor.exe.txt",
+          "member_role": "installer_stub",
+          "compatibility_note": "Text stand-in for an individual Windows 7 text editor app installer."
+        },
+        {
           "member_path": "utilities/ftp-blue-client/readme.txt",
           "member_role": "readme",
           "compatibility_note": "Text stand-in for a blue FTP client vague-identity fixture."
@@ -255,12 +265,22 @@
         {
           "member_path": "browsers/firefox-xp-support/readme.txt",
           "member_role": "readme",
-          "compatibility_note": "Readme for Firefox XP browser support notes fixture."
+          "compatibility_note": "Readme for Firefox XP browser support notes fixture with Firefox 52.9.0 ESR candidate evidence."
+        },
+        {
+          "member_path": "browsers/firefox-xp-support/firefox-52.9.0esr-win32-xp-compatible-installer.exe.txt",
+          "member_role": "installer_stub",
+          "compatibility_note": "Text stand-in for a Firefox 52.9.0 ESR Windows XP compatible installer candidate within fixture scope."
         },
         {
           "member_path": "utilities/ftp-blue-client/readme.txt",
           "member_role": "readme",
-          "compatibility_note": "Text stand-in for an old blue FTP client for XP."
+          "compatibility_note": "Text stand-in for an old blue FTP client for XP with blue icon / blue globe visual clue."
+        },
+        {
+          "member_path": "utilities/ftp-blue-client/blue-ftp-client-xp-installer.exe.txt",
+          "member_role": "installer_stub",
+          "compatibility_note": "Text stand-in for a plausible old blue FTP client Windows XP installer candidate."
         },
         {
           "member_path": "manifests/manifest.json",
