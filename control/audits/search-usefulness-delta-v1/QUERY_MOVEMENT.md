@@ -74,5 +74,5 @@ targets before further broad source expansion:
 - `win98_registry_repair`
 - `windows_7_apps`
 
-These currently have local results but remain `not_satisfied`; that is the next
-precision gap.
+At Delta v1 these had local results but remained `not_satisfied`; that was the
+next precision gap. Hard Eval Satisfaction Pack v0 later moved them to partial.

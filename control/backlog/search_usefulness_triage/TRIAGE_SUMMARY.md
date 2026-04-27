@@ -110,7 +110,12 @@ Search Usefulness Audit Delta v1 then recorded the measured movement against
 the v0 delta baseline: `partial +15`, `source_gap -13`, `capability_gap -2`,
 and archive eval movement to `capability_gap=1` and `not_satisfied=5`.
 
-Current next implementation milestone: Hard Eval Satisfaction Pack v0.
+Hard Eval Satisfaction Pack v0 then moved archive evals to `capability_gap=1`
+and `partial=5` by mapping source-backed member, representation,
+compatibility, and source-family evidence into hard expected-result checks
+without weakening task definitions.
+
+Current next implementation milestone: Old-Platform Result Refinement Pack v0.
 
 ## Evidence That Would Change The Plan
 

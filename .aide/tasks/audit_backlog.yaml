@@ -21,7 +21,7 @@
       ],
       "title": "Prioritize recorded fixture source coverage for source-gap query families",
       "status": "measured_by_search_usefulness_audit_delta_v1",
-      "suggested_milestone": "Hard Eval Satisfaction Pack v0"
+      "suggested_milestone": "More Source Coverage Expansion v1"
     },
     {
       "id": "audit-backlog-doc-drift",
@@ -49,7 +49,7 @@
       ],
       "title": "Add member-level discovery fixtures, lineage, and index records",
       "status": "partially_addressed_with_expanded_local_bundle_members_and_measured_by_delta_v1",
-      "suggested_milestone": "Hard Eval Satisfaction Pack v0"
+      "suggested_milestone": "Old-Platform Result Refinement Pack v0"
     },
     {
       "id": "audit-backlog-compatibility-evidence",
@@ -67,8 +67,18 @@
         "CTEA-CONTENT-001"
       ],
       "title": "Use source-backed hard eval candidates to satisfy exact expected outcomes without weakening evals",
-      "status": "selected_by_search_usefulness_audit_delta_v1",
-      "suggested_milestone": "Hard Eval Satisfaction Pack v0"
+      "status": "addressed_by_hard_eval_satisfaction_pack_v0",
+      "suggested_milestone": "Old-Platform Result Refinement Pack v0"
+    },
+    {
+      "id": "audit-backlog-old-platform-result-refinement",
+      "finding_refs": [
+        "CTEA-EVAL-001",
+        "CTEA-BEHAVIOR-001"
+      ],
+      "title": "Evaluate expected lanes, bad-result avoidance, and member-vs-parent result shape for source-backed hard eval partials",
+      "status": "selected_by_hard_eval_satisfaction_pack_v0",
+      "suggested_milestone": "Old-Platform Result Refinement Pack v0"
     }
   ]
 }

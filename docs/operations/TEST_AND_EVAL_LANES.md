@@ -132,6 +132,17 @@ counts, archive-eval movement, pending/manual external baseline posture, and
 the Hard Eval Satisfaction Pack v0 recommendation. It is audit/reporting only
 and does not change retrieval behavior.
 
+Hard Eval Satisfaction Pack v0 is validated with:
+
+```bash
+python -m unittest tests.evals.test_hard_eval_satisfaction_pack
+```
+
+The validation checks the satisfaction report, `capability_gap=1` and
+`partial=5` archive-eval posture, source-backed evidence for moved tasks, the
+unchanged article-inside-scan capability gap, and the absence of overall
+satisfied hard tasks while lane/bad-result checks remain not evaluable.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

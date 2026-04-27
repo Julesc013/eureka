@@ -44,7 +44,7 @@ class SearchUsefulnessBacklogTriageTest(unittest.TestCase):
         self.assertGreaterEqual(len(items), 10)
         self.assertEqual(len(selected), 1)
         self.assertEqual(selected[0]["title"], payload["immediate_next_milestone"])
-        self.assertEqual(payload["immediate_next_milestone"], "Hard Eval Satisfaction Pack v0")
+        self.assertEqual(payload["immediate_next_milestone"], "Old-Platform Result Refinement Pack v0")
         self.assertEqual(payload["selected_primary_wedge"], "old_platform_software")
         self.assertEqual(payload["selected_secondary_wedge"], "member_level_discovery")
 
@@ -61,6 +61,7 @@ class SearchUsefulnessBacklogTriageTest(unittest.TestCase):
             "Old-Platform Source Coverage Expansion v0",
             "Search Usefulness Audit Delta v1",
             "Hard Eval Satisfaction Pack v0",
+            "Old-Platform Result Refinement Pack v0",
             "Rust Query Planner Parity Candidate v0",
             "Public Alpha Rehearsal Evidence v0",
             "Compatibility Surface Strategy v0",

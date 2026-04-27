@@ -4,6 +4,12 @@
 
 `Hard Eval Satisfaction Pack v0`
 
+Follow-up status: implemented under
+`control/audits/hard-eval-satisfaction-v0/`. The follow-up moved archive evals
+to `capability_gap=1` and `partial=5` without weakening hard tasks. The next
+recommended milestone after that follow-up is Old-Platform Result Refinement
+Pack v0.
+
 ## Why This Comes Next
 
 Old-Platform Source Coverage Expansion v0 produced a meaningful local audit

@@ -61,9 +61,10 @@ Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records
 v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
 Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
 v0 are implemented, and Search Usefulness Audit Delta v1 has recorded the
-movement. Placeholder source records remain placeholders. The next usefulness
-work should satisfy hard eval expectations where current fixture-backed
-candidates already exist before adding another broad source pack.
+movement. Hard Eval Satisfaction Pack v0 then moved five source-backed archive
+hard tasks to partial. Placeholder source records remain placeholders. The next
+usefulness work should refine result lanes, bad-result avoidance, and
+member-vs-parent result shape before adding another broad source pack.
 
 ## Why Capability Depth Comes Before More Connectors
 

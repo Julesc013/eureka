@@ -218,9 +218,9 @@ Satisfaction Pack v0 next.
 
 ## 7c. Hard Eval Satisfaction Pack v0
 
-Why: five archive-resolution hard tasks now have local source-backed candidates
-but remain `not_satisfied`; the next precision gap is satisfying hard expected
-outcomes honestly, not adding another broad source pack.
+Why: at Delta v1, five archive-resolution hard tasks had local source-backed
+candidates but remained `not_satisfied`; the precision gap was satisfying hard
+expected outcomes honestly, not adding another broad source pack.
 
 Prerequisite: Search Usefulness Audit Delta v1 and all hardening tests remain
 green.
@@ -245,7 +245,37 @@ Expected audit effect: selected archive hard tasks may move from
 `not_satisfied` only when current fixture-backed results satisfy exact expected
 checks; search-usefulness partials should become more actionable.
 
-Status: selected immediate next milestone.
+Status: implemented as Hard Eval Satisfaction Pack v0 under
+`control/audits/hard-eval-satisfaction-v0/`. Archive evals now report
+`capability_gap=1` and `partial=5`; five source-backed hard tasks moved from
+`not_satisfied` to `partial`, and no task is marked overall satisfied.
+
+## 7d. Old-Platform Result Refinement Pack v0
+
+Why: five archive hard tasks now have source-backed partials, but expected
+result lanes, bad-result pattern avoidance, and best-actionable-unit result
+shape are still not scored. The next step should make those checks explicit
+without pretending this is production ranking.
+
+Prerequisite: Hard Eval Satisfaction Pack v0 and hardening tests remain green.
+
+Likely files: `runtime/engine/evals/`, `runtime/engine/ranking/`,
+`runtime/engine/index/`, `evals/archive_resolution/`, `tests/evals/`, and
+surface projection tests if report fields are exposed.
+
+Acceptance criteria: expected lanes are evaluated deterministically; bad-result
+patterns remain strict; member/direct artifact results are distinguished from
+parent bundles; overall `satisfied` is allowed only when lane, bad-result, and
+evidence checks all pass.
+
+Tests to add first: lane-check fixture tests, bad-result guard tests,
+member-vs-parent result-shape tests, and no-fake-satisfied hardening guards.
+
+Do not do: do not add production ranking, fuzzy/vector/LLM retrieval, live
+source calls, external scraping, or weaken hard expected-result patterns.
+
+Expected audit effect: selected hard eval partials may move toward satisfied
+only if deterministic lane/bad-result/result-shape checks pass.
 
 ## 8. Rust Query Planner Parity Candidate v0
 

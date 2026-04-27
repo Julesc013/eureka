@@ -483,6 +483,28 @@
       "notes": "Added by Search Usefulness Audit Delta v1; validates audit/reporting artifacts only and changes no retrieval behavior."
     },
     {
+      "test_id": "hard_eval_satisfaction_pack_validation",
+      "label": "Hard eval satisfaction pack validation",
+      "command": "python -m unittest tests.evals.test_hard_eval_satisfaction_pack",
+      "category": "eval",
+      "owner_area": "control/audits/hard-eval-satisfaction-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where the archive eval runner builds a transient local index",
+      "expected_runtime": "seconds",
+      "failure_means": "The hard eval satisfaction report, source-backed partial movement, article capability gap, or anti-fake-satisfied guardrail regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Hard Eval Satisfaction Pack v0; validates eval evidence mapping without weakening hard evals or changing source behavior."
+    },
+    {
       "test_id": "hardening_tests",
       "label": "Hard Test Pack v0 aggregate",
       "command": "python -m unittest discover -s tests/hardening -t .",

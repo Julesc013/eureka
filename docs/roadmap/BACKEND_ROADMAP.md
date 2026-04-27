@@ -134,18 +134,20 @@ The next backend sequence is:
 24. Search Usefulness Audit Delta v0 (implemented as audit/reporting)
 25. Old-Platform Source Coverage Expansion v0 (implemented as recorded fixtures only)
 26. Search Usefulness Audit Delta v1 (implemented as audit/reporting)
-27. Hard Eval Satisfaction Pack v0
-28. Compatibility Evidence Expansion v0
-29. Rust Query Planner Parity Candidate v0
-30. Public Alpha Rehearsal Evidence v0
-31. Compatibility Surface Strategy v0
-32. Native App Work Later
+27. Hard Eval Satisfaction Pack v0 (implemented as eval evidence mapping/reporting)
+28. Old-Platform Result Refinement Pack v0
+29. More Source Coverage Expansion v1
+30. Manual External Baseline Observation Pack v0
+31. Rust Query Planner Parity Candidate v0
+32. Public Alpha Rehearsal Evidence v0
+33. Compatibility Surface Strategy v0
+34. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Hard Eval Satisfaction Pack v0
+> Old-Platform Result Refinement Pack v0
 
 Why this comes next:
 
@@ -211,9 +213,13 @@ Why this comes next:
   `source_gap=28`, `capability_gap=9`, and `unknown=2`
 - Search Usefulness Audit Delta v1 records that movement and shows archive
   evals at `capability_gap=1` and `not_satisfied=5`
-- the next backend bottleneck is hard-eval satisfaction: the repo should use
-  current source-backed candidates to satisfy exact expected outcomes where
-  evidence supports them, without weakening the hard evals
+- Hard Eval Satisfaction Pack v0 maps current source-backed candidates into
+  hard expected-result checks without weakening task definitions; archive evals
+  now report `capability_gap=1` and `partial=5`
+- the next backend bottleneck is old-platform result refinement: the repo
+  should score expected lanes, bad-result avoidance, and result-shape quality
+  for the current source-backed partials before claiming any task fully
+  satisfied
 
 ## Explicit Deferrals
 

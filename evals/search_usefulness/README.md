@@ -113,3 +113,9 @@ after the source expansion against the v0 delta baseline: `partial +15`,
 `capability_gap=1` plus `not_satisfied=5`. The pack is measurement/reporting
 only; it does not change retrieval behavior or mark any external baseline
 observed.
+
+Hard Eval Satisfaction Pack v0 now lives under
+`control/audits/hard-eval-satisfaction-v0/`. It is archive-eval focused and
+moves five hard tasks to `partial` through source-backed structured evidence
+mapping; it does not change this broader 64-query audit corpus or external
+baseline posture.

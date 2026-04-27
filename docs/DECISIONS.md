@@ -395,3 +395,9 @@
 - Status: accepted
 - Decision: Eureka now records Search Usefulness Audit Delta v1 under `control/audits/search-usefulness-delta-v1/`, comparing current local Search Usefulness Audit output against the committed v0 delta aggregate baseline and recording archive eval movement after Old-Platform Source Coverage Expansion v0.
 - Why: The source expansion produced meaningful measured movement: partial results increased from 5 to 20, `source_gap` decreased from 41 to 28, `capability_gap` decreased from 11 to 9, and archive evals moved to `capability_gap=1` plus `not_satisfied=5`. The next selected milestone is Hard Eval Satisfaction Pack v0 because source-backed candidates now exist for five hard tasks but exact expected-result checks still fail. This is reporting only; it does not change retrieval behavior, weaken hard evals, fabricate external baselines, add live sources, scrape external systems, add fuzzy/vector retrieval or LLM behavior, port Rust behavior, start native app work, add deployment infrastructure, or make production-readiness claims.
+
+## ADR-067: Map Source-Backed Hard Eval Evidence Before Result Refinement
+
+- Status: accepted
+- Decision: Eureka now records Hard Eval Satisfaction Pack v0 under `control/audits/hard-eval-satisfaction-v0/` and updates Archive Resolution Eval Runner v0 so hard expected-result checks can inspect source-backed member paths, representation locators, compatibility evidence, result lanes, source ids, and source families already present in bounded local results.
+- Why: Delta v1 showed five archive hard tasks with local source-backed candidates but `not_satisfied` status. The new mapping moves those five tasks to `partial` without changing task definitions, removing expected fields, fabricating evidence, or marking any task overall satisfied. The next selected milestone is Old-Platform Result Refinement Pack v0 because expected lanes and bad-result pattern checks remain not evaluable.
