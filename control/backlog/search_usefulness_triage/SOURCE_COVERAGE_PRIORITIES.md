@@ -60,10 +60,10 @@ Status update: Source Coverage and Capability Model v0, Real Source Coverage
 Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records
 v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
 Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
-v0 are implemented. Placeholder source records remain placeholders. The next
-usefulness work should record a fresh audit delta and decide whether source
-coverage expansion, compatibility evidence expansion, or result-lane
-refinement should follow.
+v0 are implemented, and Search Usefulness Audit Delta v1 has recorded the
+movement. Placeholder source records remain placeholders. The next usefulness
+work should satisfy hard eval expectations where current fixture-backed
+candidates already exist before adding another broad source pack.
 
 ## Why Capability Depth Comes Before More Connectors
 

@@ -29,7 +29,7 @@ The live audit has been re-run through Old-Platform Source Coverage Expansion v0
 
 - Primary usefulness wedge: old-platform-compatible software search
 - Secondary usefulness wedge: member-level discovery inside bundles
-- Immediate next milestone: Search Usefulness Audit Delta v1
+- Immediate next milestone: Hard Eval Satisfaction Pack v0
 
 Update: Source Coverage and Capability Model v0 and Real Source Coverage Pack
 v0 are implemented, and Old-Platform Software Planner Pack v0 now improves
@@ -40,8 +40,9 @@ annotations. Compatibility Evidence Pack v0 then added bounded source-backed
 compatibility evidence while preserving unknown outcomes. Search Usefulness
 Audit Delta v0 recorded the first measured movement, and Old-Platform Source
 Coverage Expansion v0 then expanded committed old-platform fixture coverage.
-The next milestone is Search Usefulness Audit Delta v1 so the repo can record
-the new movement without weakening queries or fabricating external baselines.
+Search Usefulness Audit Delta v1 recorded the new movement. The next milestone
+is Hard Eval Satisfaction Pack v0 because five archive hard tasks now have
+local source-backed candidates but remain `not_satisfied`.
 
 ## Contents
 

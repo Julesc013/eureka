@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: forty-three local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion v0. The current Search Usefulness Audit status counts are 5 covered, 20 partial, 28 source gaps, 9 capability gaps, and 2 unknowns after the fixture expansion, without changing external baseline posture or recording external observations.
+Current status within this stage: forty-three local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, and Search Usefulness Audit Delta v1. The current Search Usefulness Audit status counts are 5 covered, 20 partial, 28 source gaps, 9 capability gaps, and 2 unknowns after the fixture expansion, without changing external baseline posture or recording external observations.
 
 ## Stage 3: Surface Skeletons
 
@@ -138,6 +138,12 @@ text-safe records for Windows 7/XP/2000/98 utility, browser-note,
 registry-repair, and driver/support-media cases. It adds no live Internet
 Archive calls, scraping, crawling, broad source federation, arbitrary local
 filesystem ingestion, or production source claims.
+Search Usefulness Audit Delta v1 now lives under
+`control/audits/search-usefulness-delta-v1/`, recording the measured movement
+after the source expansion: `partial +15`, `source_gap -13`,
+`capability_gap -2`, and archive eval movement to `capability_gap=1` plus
+`not_satisfied=5`.
+It is audit/reporting only and recommends Hard Eval Satisfaction Pack v0 next.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
@@ -145,7 +151,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Search Usefulness Audit Delta v1
+> Hard Eval Satisfaction Pack v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -158,11 +164,11 @@ Source Coverage and Capability Model v0, Real Source Coverage Pack v0,
 Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0,
 Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
 Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
-v0 now
+v0, and Search Usefulness Audit Delta v1 now
 mark the start of a more evidence-led backend phase. The next step is to add
-record a fresh audit delta because the fixture expansion moved the current
-audit to 20 partial results and 28 source gaps while external baselines remain
-pending/manual.
+hard eval satisfaction work because five archive-resolution hard tasks now have
+local source-backed candidates but remain `not_satisfied`; external baselines
+remain pending/manual.
 That next step must still avoid live crawling, external scraping, installer
 execution, fuzzy/vector search, LLM planning, broad source federation, external
 baseline fabrication, and production benchmark claims.

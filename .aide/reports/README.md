@@ -17,3 +17,7 @@ Search Usefulness Audit Delta v0 records its committed audit/reporting pack
 under `control/audits/search-usefulness-delta-v0/`. It is the canonical place
 for the current usefulness-delta summary; do not duplicate volatile local audit
 run dumps here.
+
+Search Usefulness Audit Delta v1 records the post-source-expansion delta under
+`control/audits/search-usefulness-delta-v1/`. It is also reporting-only and
+does not belong in runtime state.

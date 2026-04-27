@@ -20,8 +20,8 @@
         "CTEA-CONTENT-002"
       ],
       "title": "Prioritize recorded fixture source coverage for source-gap query families",
-      "status": "partially_addressed_by_old_platform_source_coverage_expansion_v0",
-      "suggested_milestone": "Search Usefulness Audit Delta v1"
+      "status": "measured_by_search_usefulness_audit_delta_v1",
+      "suggested_milestone": "Hard Eval Satisfaction Pack v0"
     },
     {
       "id": "audit-backlog-doc-drift",
@@ -48,8 +48,8 @@
         "CTEA-CONTENT-003"
       ],
       "title": "Add member-level discovery fixtures, lineage, and index records",
-      "status": "partially_addressed_with_expanded_local_bundle_members",
-      "suggested_milestone": "Search Usefulness Audit Delta v1"
+      "status": "partially_addressed_with_expanded_local_bundle_members_and_measured_by_delta_v1",
+      "suggested_milestone": "Hard Eval Satisfaction Pack v0"
     },
     {
       "id": "audit-backlog-compatibility-evidence",
@@ -59,6 +59,16 @@
       "title": "Add old-platform compatibility evidence fixtures and unknown outcomes",
       "status": "partially_addressed_with_expanded_old_platform_fixture_evidence",
       "suggested_milestone": "Compatibility Evidence Expansion v0"
+    },
+    {
+      "id": "audit-backlog-hard-eval-satisfaction",
+      "finding_refs": [
+        "CTEA-EVAL-001",
+        "CTEA-CONTENT-001"
+      ],
+      "title": "Use source-backed hard eval candidates to satisfy exact expected outcomes without weakening evals",
+      "status": "selected_by_search_usefulness_audit_delta_v1",
+      "suggested_milestone": "Hard Eval Satisfaction Pack v0"
     }
   ]
 }

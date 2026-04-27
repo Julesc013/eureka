@@ -106,7 +106,11 @@ The current audit now reports `covered=5`, `partial=20`, `source_gap=28`,
 `capability_gap=9`, and `unknown=2`, with external baselines still
 pending/manual.
 
-Current next implementation milestone: Search Usefulness Audit Delta v1.
+Search Usefulness Audit Delta v1 then recorded the measured movement against
+the v0 delta baseline: `partial +15`, `source_gap -13`, `capability_gap -2`,
+and archive eval movement to `capability_gap=1` and `not_satisfied=5`.
+
+Current next implementation milestone: Hard Eval Satisfaction Pack v0.
 
 ## Evidence That Would Change The Plan
 

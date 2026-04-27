@@ -133,18 +133,19 @@ The next backend sequence is:
 23. Compatibility Evidence Pack v0 (implemented as source-backed evidence annotations)
 24. Search Usefulness Audit Delta v0 (implemented as audit/reporting)
 25. Old-Platform Source Coverage Expansion v0 (implemented as recorded fixtures only)
-26. Search Usefulness Audit Delta v1
-27. Compatibility Evidence Expansion v0
-28. Rust Query Planner Parity Candidate v0
-29. Public Alpha Rehearsal Evidence v0
-30. Compatibility Surface Strategy v0
-31. Native App Work Later
+26. Search Usefulness Audit Delta v1 (implemented as audit/reporting)
+27. Hard Eval Satisfaction Pack v0
+28. Compatibility Evidence Expansion v0
+29. Rust Query Planner Parity Candidate v0
+30. Public Alpha Rehearsal Evidence v0
+31. Compatibility Surface Strategy v0
+32. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Search Usefulness Audit Delta v1
+> Hard Eval Satisfaction Pack v0
 
 Why this comes next:
 
@@ -208,9 +209,11 @@ Why this comes next:
 - Old-Platform Source Coverage Expansion v0 expanded recorded fixtures and the
   current Search Usefulness Audit now reports `covered=5`, `partial=20`,
   `source_gap=28`, `capability_gap=9`, and `unknown=2`
-- the next backend bottleneck is measurement and prioritization: the repo
-  should record a fresh delta before choosing between compatibility evidence
-  expansion, result-lane refinement, another source pack, or Rust planner parity
+- Search Usefulness Audit Delta v1 records that movement and shows archive
+  evals at `capability_gap=1` and `not_satisfied=5`
+- the next backend bottleneck is hard-eval satisfaction: the repo should use
+  current source-backed candidates to satisfy exact expected outcomes where
+  evidence supports them, without weakening the hard evals
 
 ## Explicit Deferrals
 

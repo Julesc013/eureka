@@ -4,7 +4,7 @@
   "created_by_slice": "search_usefulness_backlog_triage_v0",
   "selected_primary_wedge": "old_platform_software",
   "selected_secondary_wedge": "member_level_discovery",
-  "immediate_next_milestone": "Search Usefulness Audit Delta v1",
+  "immediate_next_milestone": "Hard Eval Satisfaction Pack v0",
   "audit_snapshot": {
     "total_queries": 64,
     "eureka_status_counts": {
@@ -230,7 +230,7 @@
       "id": "SU-T014",
       "title": "Search Usefulness Audit Delta v1",
       "priority": "P0",
-      "status": "selected",
+      "status": "implemented",
       "wedge": "other",
       "failure_modes": ["eval_truth_gap", "source_coverage_gap", "compatibility_evidence_gap", "ranking_gap"],
       "evidence": {
@@ -248,7 +248,31 @@
       "tests_to_add_first": ["delta v1 pack validation", "external baseline pending guard", "no hard eval weakening guard"],
       "likely_files": ["control/audits/", "evals/search_usefulness/", "tests/operations/", ".aide/tasks/"],
       "do_not_do": ["do not change retrieval behavior", "do not rewrite query fixtures to make deltas look better", "do not fabricate Google or Internet Archive baselines"],
-      "notes": "Selected after Old-Platform Source Coverage Expansion v0 because the local audit changed substantially and should be recorded before the next implementation milestone."
+      "notes": "Implemented as a reporting-only delta pack under control/audits/search-usefulness-delta-v1. It records partial +15, source_gap -13, capability_gap -2, and archive eval movement to capability_gap=1/not_satisfied=5 without changing retrieval behavior or recording external baseline observations."
+    },
+    {
+      "id": "SU-T015",
+      "title": "Hard Eval Satisfaction Pack v0",
+      "priority": "P0",
+      "status": "selected",
+      "wedge": "old_platform_software",
+      "failure_modes": ["eval_truth_gap", "ranking_gap", "compatibility_evidence_gap", "member_access_gap", "representation_gap"],
+      "evidence": {
+        "query_ids": ["windows_7_apps", "latest_firefox_before_xp_support_ended", "old_blue_ftp_client_xp", "windows_98_registry_repair", "driver_thinkpad_t42_wifi_windows_2000"],
+        "audit_file_refs": ["control/audits/search-usefulness-delta-v1/ARCHIVE_EVAL_DELTA.md", "control/audits/search-usefulness-delta-v1/NEXT_RECOMMENDATIONS.md", "evals/archive_resolution/README.md"],
+        "finding_ids": ["CTEA-EVAL-001", "CTEA-CONTENT-001"]
+      },
+      "user_value": "Turns the current source-backed hard eval candidates into honest satisfied or still-not-satisfied outcomes without weakening the hard tasks.",
+      "implementation_feasibility": "Medium; local source evidence now exists for five hard tasks, but expected-result alignment must remain strict.",
+      "regression_risk": "High if expected-result hints are loosened instead of satisfying them.",
+      "expected_audit_delta": "Archive eval not_satisfied tasks should move only when exact expected-result evidence is present; search-usefulness partials may become more actionable.",
+      "prerequisite_items": ["SU-T014"],
+      "suggested_milestone": "Hard Eval Satisfaction Pack v0",
+      "acceptance_criteria": ["hard eval task IDs remain intact", "expected-result hints are not weakened", "source-backed candidates satisfy hard checks where evidence supports it", "not_satisfied remains honest when evidence is insufficient", "external baselines remain pending/manual"],
+      "tests_to_add_first": ["hard eval expected-result fixture tests", "result-lane/member-target selection tests", "no hard eval weakening guard expansion"],
+      "likely_files": ["evals/archive_resolution/", "runtime/engine/evals/", "runtime/engine/index/", "runtime/engine/ranking/", "tests/hardening/"],
+      "do_not_do": ["do not weaken hard evals", "do not fabricate exact-result evidence", "do not add live crawling", "do not scrape external systems", "do not add fuzzy/vector/LLM retrieval"],
+      "notes": "Selected by Search Usefulness Audit Delta v1 because five archive hard tasks now have local source-backed candidates but remain not_satisfied."
     },
     {
       "id": "SU-T008",

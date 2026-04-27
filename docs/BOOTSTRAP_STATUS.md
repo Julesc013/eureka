@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus forty-three executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus forty-three executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -147,6 +147,12 @@ architectural oracle rather than as a throwaway scaffold.
   improving local audit partials while adding no live Internet Archive calls,
   scraping, crawling, broad source federation, arbitrary local filesystem
   ingestion, real binaries, or production source claims
+- first Search Usefulness Audit Delta v1 pack under
+  `control/audits/search-usefulness-delta-v1/` that records the measured
+  movement after old-platform source expansion, including `partial +15`,
+  `source_gap -13`, `capability_gap -2`, and archive evals at
+  `capability_gap=1` plus `not_satisfied=5`, while changing no retrieval
+  behavior and recording no external baseline observations
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -186,7 +192,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Search Usefulness Audit Delta v1
+> Hard Eval Satisfaction Pack v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -199,7 +205,7 @@ Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack
 v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0,
 Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
 Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
-v0, are
+v0, and Search Usefulness Audit Delta v1, are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
@@ -215,15 +221,16 @@ old-platform planner interpretation layer, first bounded member-level synthetic
 target-ref and parent-lineage layer, first deterministic result-lane and
 user-cost explanation layer, first source-backed compatibility evidence layer,
 first measured usefulness-delta reporting pack, and first expanded
-old-platform fixture coverage pack.
+old-platform fixture coverage pack, plus the second measured usefulness-delta
+reporting pack.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Search Usefulness Audit Delta v1
-2. Compatibility Evidence Expansion v0
-3. Rust Query Planner Parity Candidate v0
-4. Public Alpha Rehearsal Evidence v0
-5. Compatibility Surface Strategy v0
+1. Hard Eval Satisfaction Pack v0
+2. Old-Platform Result Refinement Pack v0
+3. Compatibility Evidence Expansion v0
+4. Rust Query Planner Parity Candidate v0
+5. Public Alpha Rehearsal Evidence v0
 
 ## Deferred Priorities
 

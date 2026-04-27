@@ -210,6 +210,43 @@ Expected audit effect: no new retrieval behavior; clearer evidence for whether
 the next implementation should be compatibility expansion, result-lane
 refinement, or another recorded source pack.
 
+Status: implemented as Search Usefulness Audit Delta v1 under
+`control/audits/search-usefulness-delta-v1/`. It records `partial +15`,
+`source_gap -13`, `capability_gap -2`, archive eval movement to
+`capability_gap=1` and `not_satisfied=5`, and recommends Hard Eval
+Satisfaction Pack v0 next.
+
+## 7c. Hard Eval Satisfaction Pack v0
+
+Why: five archive-resolution hard tasks now have local source-backed candidates
+but remain `not_satisfied`; the next precision gap is satisfying hard expected
+outcomes honestly, not adding another broad source pack.
+
+Prerequisite: Search Usefulness Audit Delta v1 and all hardening tests remain
+green.
+
+Likely files: `evals/archive_resolution/`, `runtime/engine/evals/`,
+`runtime/engine/index/`, `runtime/engine/ranking/`, `tests/hardening/`.
+
+Acceptance criteria: hard eval task IDs and expected-result hints remain intact;
+source-backed candidates satisfy hard checks only where evidence supports them;
+`not_satisfied` remains available for insufficient evidence; no external
+baselines are fabricated.
+
+Tests to add first: hard expected-result fixture tests, source-backed candidate
+selection tests, result-lane/member-target preference tests, and hard eval
+weakening guard expansion.
+
+Do not do: do not weaken hard evals, fabricate exact evidence, add live
+crawling, scrape external systems, add fuzzy/vector/LLM retrieval, or call this
+production search.
+
+Expected audit effect: selected archive hard tasks may move from
+`not_satisfied` only when current fixture-backed results satisfy exact expected
+checks; search-usefulness partials should become more actionable.
+
+Status: selected immediate next milestone.
+
 ## 8. Rust Query Planner Parity Candidate v0
 
 Why: Rust parity should preserve useful Python planner behavior after it stabilizes.
