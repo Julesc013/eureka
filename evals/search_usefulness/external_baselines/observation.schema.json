@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.eureka.invalid/evals/search_usefulness/external_baselines/observation.schema.json",
+  "title": "ManualExternalBaselineObservation",
+  "description": "Manual, human-recorded external baseline observation. This schema is documentation; stdlib validation is implemented by scripts/validate_external_baseline_observations.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "observation_id": {"type": "string"},
+    "query_id": {"type": "string"},
+    "query_text": {"type": "string"},
+    "system_id": {"type": "string"},
+    "observation_status": {
+      "type": "string",
+      "enum": ["observed", "pending_manual_observation", "not_applicable", "blocked", "stale"]
+    },
+    "operator": {"type": "string"},
+    "observed_at": {"type": "string"},
+    "browser_or_tool": {"type": "string"},
+    "location_context_optional": {"type": "string"},
+    "exact_query_submitted": {"type": "string"},
+    "filters_or_scope": {"type": "string"},
+    "result_count_visible_optional": {"type": ["integer", "null"]},
+    "collection_method": {
+      "type": "string",
+      "enum": ["manual", "manual_entry", "pending_manual_observation"]
+    },
+    "top_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rank": {"type": "integer", "minimum": 1},
+          "title": {"type": "string"},
+          "url_or_locator": {"type": "string"},
+          "snippet_or_visible_summary": {"type": "string"},
+          "result_type": {"type": "string"},
+          "notes": {"type": "string"}
+        },
+        "required": ["rank", "title", "url_or_locator", "result_type"]
+      }
+    },
+    "first_useful_result_rank": {"type": ["integer", "null"], "minimum": 1},
+    "first_useful_result_reason": {"type": "string"},
+    "usefulness_scores": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0, "maximum": 3},
+      "properties": {
+        "object_type_fit": {"type": "integer", "minimum": 0, "maximum": 3},
+        "smallest_actionable_unit": {"type": "integer", "minimum": 0, "maximum": 3},
+        "evidence_quality": {"type": "integer", "minimum": 0, "maximum": 3},
+        "compatibility_clarity": {"type": "integer", "minimum": 0, "maximum": 3},
+        "actionability": {"type": "integer", "minimum": 0, "maximum": 3},
+        "absence_explanation": {"type": "integer", "minimum": 0, "maximum": 3},
+        "duplicate_handling": {"type": "integer", "minimum": 0, "maximum": 3},
+        "user_cost_reduction": {"type": "integer", "minimum": 0, "maximum": 3},
+        "overall": {"type": "integer", "minimum": 0, "maximum": 3}
+      }
+    },
+    "failure_modes": {"type": "array", "items": {"type": "string"}},
+    "comparison_notes": {"type": "array", "items": {"type": "string"}},
+    "next_eureka_work": {"type": "array", "items": {"type": "string"}},
+    "evidence_limitations": {"type": "array", "items": {"type": "string"}},
+    "staleness_notes": {"type": "array", "items": {"type": "string"}},
+    "created_by": {"type": "string"},
+    "schema_version": {"type": "string"}
+  },
+  "required": [
+    "observation_id",
+    "query_id",
+    "query_text",
+    "system_id",
+    "observation_status",
+    "top_results",
+    "failure_modes",
+    "next_eureka_work",
+    "evidence_limitations",
+    "created_by",
+    "schema_version"
+  ]
+}

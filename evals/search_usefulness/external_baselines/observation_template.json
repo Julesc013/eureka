@@ -1,0 +1,44 @@
+{
+  "observation_id": "<query_id>::<system_id>::<YYYY-MM-DD>",
+  "query_id": "<query_id>",
+  "query_text": "<query text from eval pack>",
+  "system_id": "<google_web_search|internet_archive_metadata_search|internet_archive_full_text_search>",
+  "observation_status": "pending_manual_observation",
+  "operator": "<operator>",
+  "observed_at": "<YYYY-MM-DDTHH:MM:SSZ>",
+  "browser_or_tool": "<manual browser/tool name>",
+  "location_context_optional": "<optional location/account/context note>",
+  "exact_query_submitted": "<manual observation required>",
+  "filters_or_scope": "<manual observation required>",
+  "result_count_visible_optional": null,
+  "collection_method": "pending_manual_observation",
+  "top_results": [],
+  "first_useful_result_rank": null,
+  "first_useful_result_reason": "<manual observation required>",
+  "usefulness_scores": {
+    "object_type_fit": 0,
+    "smallest_actionable_unit": 0,
+    "evidence_quality": 0,
+    "compatibility_clarity": 0,
+    "actionability": 0,
+    "absence_explanation": 0,
+    "duplicate_handling": 0,
+    "user_cost_reduction": 0,
+    "overall": 0
+  },
+  "failure_modes": [
+    "external_baseline_pending"
+  ],
+  "comparison_notes": [
+    "<manual observation required>"
+  ],
+  "next_eureka_work": [],
+  "evidence_limitations": [
+    "Template only. This is not an observed external baseline."
+  ],
+  "staleness_notes": [
+    "External search results are time-sensitive and may vary by operator/browser/location."
+  ],
+  "created_by": "manual_external_baseline_observation_pack_v0",
+  "schema_version": "manual_external_baseline_observation.v0"
+}

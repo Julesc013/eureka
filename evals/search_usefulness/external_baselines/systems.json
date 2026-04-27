@@ -1,0 +1,72 @@
+{
+  "systems_schema_version": "external_baseline_systems.v0",
+  "created_by": "manual_external_baseline_observation_pack_v0",
+  "systems": [
+    {
+      "system_id": "google_web_search",
+      "label": "Google Web Search",
+      "audit_pending_count_key": "google",
+      "observation_mode": "manual_only",
+      "baseline_role": "broad web recall baseline",
+      "scraping_allowed": false,
+      "automated_querying_allowed": false,
+      "live_api_allowed": false,
+      "network_required_for_manual_operator": true,
+      "notes": [
+        "A human operator may manually search Google and transcribe visible organic results.",
+        "Observations can vary by date, time, browser, account state, location, and personalization.",
+        "One observation is not stable global Google truth."
+      ]
+    },
+    {
+      "system_id": "internet_archive_metadata_search",
+      "label": "Internet Archive Metadata Search",
+      "audit_pending_count_key": "internet_archive_metadata",
+      "observation_mode": "manual_only",
+      "baseline_role": "archive metadata and catalog baseline",
+      "scraping_allowed": false,
+      "automated_querying_allowed": false,
+      "live_api_allowed": false,
+      "network_required_for_manual_operator": true,
+      "notes": [
+        "A human operator may manually use the Internet Archive website metadata/catalog search.",
+        "Record visible filters, exact query, and whether results are item, collection, or file-level.",
+        "This pack does not call Internet Archive APIs."
+      ]
+    },
+    {
+      "system_id": "internet_archive_full_text_search",
+      "label": "Internet Archive Full Text/OCR Search",
+      "audit_pending_count_key": "internet_archive_full_text",
+      "observation_mode": "manual_only",
+      "baseline_role": "full-text or OCR-style archive baseline where available",
+      "scraping_allowed": false,
+      "automated_querying_allowed": false,
+      "live_api_allowed": false,
+      "network_required_for_manual_operator": true,
+      "notes": [
+        "A human operator may manually use visible full-text/OCR search surfaces.",
+        "Record searched scope or collection where the UI exposes it.",
+        "Distinguish parent scans from page, article, or member-level hits."
+      ]
+    }
+  ],
+  "deferred_systems": [
+    {
+      "system_id": "bing_web_search",
+      "status": "deferred"
+    },
+    {
+      "system_id": "software_heritage_manual_search",
+      "status": "deferred"
+    },
+    {
+      "system_id": "wayback_manual_search",
+      "status": "deferred"
+    },
+    {
+      "system_id": "local_human_archive",
+      "status": "deferred"
+    }
+  ]
+}
