@@ -121,6 +121,17 @@ external baseline posture, and the Old-Platform Source Coverage Expansion v0
 recommendation. It is audit/reporting only and does not change retrieval
 behavior.
 
+Search Usefulness Audit Delta v1 is validated with:
+
+```bash
+python -m unittest tests.operations.test_search_usefulness_audit_delta_v1
+```
+
+The validation checks the v1 pack, v0 baseline reference, current local audit
+counts, archive-eval movement, pending/manual external baseline posture, and
+the Hard Eval Satisfaction Pack v0 recommendation. It is audit/reporting only
+and does not change retrieval behavior.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

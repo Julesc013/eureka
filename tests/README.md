@@ -32,6 +32,12 @@ committed delta pack, baseline limitations, selected wedges, current audit
 counts, pending/manual external-baseline posture, and next recommendation. It
 does not exercise product behavior.
 
+Search Usefulness Audit Delta v1 adds
+`tests/operations/test_search_usefulness_audit_delta_v1.py` to validate the
+second committed delta pack, v0 baseline reference, current audit counts,
+archive-eval movement, pending/manual external-baseline posture, and Hard Eval
+Satisfaction Pack v0 recommendation. It does not exercise product behavior.
+
 Old-Platform Source Coverage Expansion v0 adds
 `tests/integration/test_old_platform_source_coverage_expansion.py` and expands
 component-local connector/index/compatibility tests. These checks guard the

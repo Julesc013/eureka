@@ -32,6 +32,8 @@ steps:
     run: python -m unittest tests.operations.test_search_usefulness_backlog_triage
   - id: search_usefulness_audit_delta
     run: python -m unittest tests.operations.test_search_usefulness_audit_delta
+  - id: search_usefulness_audit_delta_v1
+    run: python -m unittest tests.operations.test_search_usefulness_audit_delta_v1
   - id: source_coverage_capability
     run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
   - id: real_source_coverage_pack
@@ -60,6 +62,7 @@ notes:
   - The Python-oracle golden check is stdlib-only and verifies committed future-Rust parity fixtures without requiring Rust tooling.
   - The search-usefulness audit is stdlib-only and keeps external baselines as pending manual observations; it does not scrape Google, Internet Archive, or any other external source.
   - Search Usefulness Audit Delta v0 validates a stable audit/reporting pack over current local results only; it adds no retrieval behavior and records no external baseline observations.
+  - Search Usefulness Audit Delta v1 validates the measured movement after Old-Platform Source Coverage Expansion v0 and recommends hard-eval satisfaction work; it adds no retrieval behavior and records no external baseline observations.
   - Source Coverage and Capability Model v0 checks validate metadata and projection only; they do not add connectors, live source probing, or crawling.
   - Real Source Coverage Pack v0 checks validate committed recorded fixtures, local bundle fixtures, local-index visibility, and public projection only; they do not add live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Source Coverage Expansion v0 checks validate expanded committed old-platform fixtures, local bundle members, compatibility evidence, and index visibility only; they do not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.

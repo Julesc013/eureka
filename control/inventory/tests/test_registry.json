@@ -461,6 +461,28 @@
       "notes": "Added by Search Usefulness Audit Delta v0; validates audit/reporting artifacts only and changes no retrieval behavior."
     },
     {
+      "test_id": "search_usefulness_audit_delta_v1_validation",
+      "label": "Search usefulness audit delta v1 validation",
+      "command": "python -m unittest tests.operations.test_search_usefulness_audit_delta_v1",
+      "category": "audit",
+      "owner_area": "control/audits/search-usefulness-delta-v1",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The search usefulness delta v1 pack lost required files, current counts, archive-eval movement, baseline limitations, or anti-fake-baseline guardrails.",
+      "advisory_or_required": "required",
+      "notes": "Added by Search Usefulness Audit Delta v1; validates audit/reporting artifacts only and changes no retrieval behavior."
+    },
+    {
       "test_id": "hardening_tests",
       "label": "Hard Test Pack v0 aggregate",
       "command": "python -m unittest discover -s tests/hardening -t .",
