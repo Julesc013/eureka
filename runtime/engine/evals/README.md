@@ -14,13 +14,16 @@ Current scope:
 - the runner loads the current JSON-subset-of-YAML task fixtures, runs Query
   Planner v0, builds or uses Local Index v0 once per suite when available,
   falls back to deterministic search when needed, calls bounded absence
-  reasoning for no-result cases, and reports structured checks
+  reasoning for no-result cases, maps current source-backed member,
+  representation, compatibility, and source-family evidence into hard
+  expected-result checks, and reports structured checks
 
 Archive Resolution Eval Runner v0 is a regression harness, not a ranking or
 semantic relevance benchmark. It reports `satisfied`, `partial`,
 `not_satisfied`, `not_evaluable`, and `capability_gap` states honestly. The
-current hard fixtures are expected to remain mostly capability gaps until the
-corpus and bounded resolver capabilities grow.
+current hard fixtures remain bounded: five source-backed tasks are partial
+after Hard Eval Satisfaction Pack v0, and article-inside-scan remains a
+capability gap until article/page/OCR fixture evidence exists.
 
 Search Usefulness Audit v0 is broader and more diagnostic: it runs a large
 archive-resolution-style query pack through the current bounded Eureka path,

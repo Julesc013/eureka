@@ -67,8 +67,9 @@ direct artifacts, member paths, article boundaries, or evidence needed for full
 satisfaction. This is intentional. The runner is not a ranking benchmark, not a
 semantic/fuzzy/vector benchmark, and not a production relevance evaluation.
 
-Search Usefulness Audit Delta v1 records that current archive-resolution evals
-now report `capability_gap=1` and `not_satisfied=5` after old-platform source
-fixture expansion. This is progress from missing capability toward
-source-backed candidates, but `not_satisfied` is not success and hard expected
-result checks must not be weakened.
+Hard Eval Satisfaction Pack v0 records that current archive-resolution evals
+now report `capability_gap=1` and `partial=5`. The five moved tasks have
+source-backed structured evidence in bounded local results, but they are not
+overall satisfied because expected lane placement and bad-result pattern checks
+remain not evaluable in Eval Runner v0. The article-inside-scan task remains a
+true capability gap because no bounded article/page/OCR fixture exists.

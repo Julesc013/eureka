@@ -90,7 +90,30 @@ class EvalHardnessGuardsTest(unittest.TestCase):
             self.assertEqual(summaries[task_id]["planner_status"], "satisfied", task_id)
             if summaries[task_id]["overall_status"] != "capability_gap":
                 self.assertGreater(full_tasks[task_id]["search_observed_result_count"], 0, task_id)
-                self.assertTrue(full_tasks[task_id]["failed_checks"], task_id)
+                checks = (
+                    full_tasks[task_id]["satisfied_checks"]
+                    + full_tasks[task_id]["partial_checks"]
+                    + full_tasks[task_id]["failed_checks"]
+                )
+                search_checks = [
+                    check for check in checks if check["name"] == "search.expected_result_hints"
+                ]
+                self.assertEqual(len(search_checks), 1, task_id)
+                search_check = search_checks[0]
+                self.assertIn(
+                    search_check["status"],
+                    {"satisfied", "partial", "not_satisfied"},
+                    task_id,
+                )
+                if summaries[task_id]["overall_status"] == "partial":
+                    observed = search_check.get("observed", {})
+                    self.assertTrue(observed.get("source_ids"), task_id)
+                    self.assertTrue(
+                        observed.get("member_paths")
+                        or observed.get("representation_ids")
+                        or observed.get("artifact_locators"),
+                        task_id,
+                    )
 
     def test_search_usefulness_query_pack_keeps_hard_coverage(self):
         query_pack = load_json("evals/search_usefulness/queries/search_usefulness_v0.json")

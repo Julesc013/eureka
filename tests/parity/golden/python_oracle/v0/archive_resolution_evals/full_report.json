@@ -16,7 +16,7 @@
   ],
   "status_counts": {
     "capability_gap": 1,
-    "not_satisfied": 5
+    "partial": 5
   },
   "task_summaries": [
     {
@@ -35,9 +35,9 @@
     },
     {
       "capability_gap_count": 0,
-      "failed_check_count": 1,
+      "failed_check_count": 0,
       "not_evaluable_check_count": 2,
-      "overall_status": "not_satisfied",
+      "overall_status": "partial",
       "planner_expected_task_kind": "find_driver",
       "planner_observed_task_kind": "find_driver",
       "planner_status": "satisfied",
@@ -49,9 +49,9 @@
     },
     {
       "capability_gap_count": 0,
-      "failed_check_count": 1,
+      "failed_check_count": 0,
       "not_evaluable_check_count": 2,
-      "overall_status": "not_satisfied",
+      "overall_status": "partial",
       "planner_expected_task_kind": "find_latest_compatible_release",
       "planner_observed_task_kind": "find_latest_compatible_release",
       "planner_status": "satisfied",
@@ -63,9 +63,9 @@
     },
     {
       "capability_gap_count": 0,
-      "failed_check_count": 1,
+      "failed_check_count": 0,
       "not_evaluable_check_count": 2,
-      "overall_status": "not_satisfied",
+      "overall_status": "partial",
       "planner_expected_task_kind": "identify_software",
       "planner_observed_task_kind": "identify_software",
       "planner_status": "satisfied",
@@ -77,9 +77,9 @@
     },
     {
       "capability_gap_count": 0,
-      "failed_check_count": 1,
+      "failed_check_count": 0,
       "not_evaluable_check_count": 2,
-      "overall_status": "not_satisfied",
+      "overall_status": "partial",
       "planner_expected_task_kind": "identify_software",
       "planner_observed_task_kind": "identify_software",
       "planner_status": "satisfied",
@@ -91,9 +91,9 @@
     },
     {
       "capability_gap_count": 0,
-      "failed_check_count": 1,
+      "failed_check_count": 0,
       "not_evaluable_check_count": 2,
-      "overall_status": "not_satisfied",
+      "overall_status": "partial",
       "planner_expected_task_kind": "browse_software",
       "planner_observed_task_kind": "browse_software",
       "planner_status": "satisfied",
@@ -374,7 +374,140 @@
           "artifact or member locator"
         ]
       },
-      "failed_checks": [
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "partial",
+      "partial_checks": [],
+      "planner_expected_task_kind": "find_driver",
+      "planner_observed": {
+        "action_hints": [
+          "inspect",
+          "inspect_members",
+          "decompose",
+          "fetch_if_available",
+          "export_manifest"
+        ],
+        "constraints": {
+          "hardware_hint": "ThinkPad T42 Wi-Fi",
+          "member_discovery_hints": {
+            "prefer_inf_member": true,
+            "support_media_member": true
+          },
+          "platform": {
+            "aliases": [
+              "Win2k",
+              "Windows NT 5.0"
+            ],
+            "family": "Windows NT",
+            "marketing_alias": "Windows 2000",
+            "version": "5.0"
+          },
+          "representation_hints": [
+            "driver_package",
+            "INF",
+            "support_media_member",
+            "readme",
+            "manual"
+          ]
+        },
+        "exclude": [
+          "generic_advice_only",
+          "unrelated_full_os_media",
+          "parent_support_cd_without_matching_driver_member"
+        ],
+        "object_type": "driver",
+        "planner_confidence": "high",
+        "planner_notes": [
+          "Recognized a driver lookup query.",
+          "Hardware and platform hints remain bounded extracted constraints only."
+        ],
+        "prefer": [
+          "driver_package",
+          "inf_member",
+          "support_bundle_member",
+          "documentation_with_driver_locator"
+        ],
+        "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+        "source_hints": [
+          "local_bundle_fixtures",
+          "internet_archive_recorded",
+          "wayback_memento_placeholder",
+          "vendor_archive_future"
+        ],
+        "task_kind": "find_driver"
+      },
+      "planner_observed_task_kind": "find_driver",
+      "planner_status": "satisfied",
+      "query_family": "driver_by_hardware_and_platform",
+      "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+      "satisfied_checks": [
+        {
+          "expected": "find_driver",
+          "message": "Planner task_kind matched expected_plan.",
+          "name": "planner.task_kind",
+          "observed": "find_driver",
+          "status": "satisfied"
+        },
+        {
+          "expected": "driver",
+          "message": "Planner object_type matched expected_plan.",
+          "name": "planner.object_type",
+          "observed": "driver",
+          "status": "satisfied"
+        },
+        {
+          "expected": "ThinkPad T42 Wi-Fi",
+          "message": "Planner constraint 'hardware_hint' contains the expected bounded values.",
+          "name": "planner.constraints.hardware_hint",
+          "observed": "ThinkPad T42 Wi-Fi",
+          "status": "satisfied"
+        },
+        {
+          "expected": {
+            "marketing_alias": "Windows 2000"
+          },
+          "message": "Planner constraint 'platform' contains the expected bounded values.",
+          "name": "planner.constraints.platform",
+          "observed": {
+            "aliases": [
+              "Win2k",
+              "Windows NT 5.0"
+            ],
+            "family": "Windows NT",
+            "marketing_alias": "Windows 2000",
+            "version": "5.0"
+          },
+          "status": "satisfied"
+        },
+        {
+          "expected": "driver_package",
+          "message": "Planner prefer includes 'driver_package'.",
+          "name": "planner.prefer.driver_package",
+          "observed": [
+            "driver_package",
+            "inf_member",
+            "support_bundle_member",
+            "documentation_with_driver_locator"
+          ],
+          "status": "satisfied"
+        },
+        {
+          "expected": "generic_advice_only",
+          "message": "Planner exclude includes 'generic_advice_only'.",
+          "name": "planner.exclude.generic_advice_only",
+          "observed": [
+            "generic_advice_only",
+            "unrelated_full_os_media",
+            "parent_support_cd_without_matching_driver_member"
+          ],
+          "status": "satisfied"
+        },
         {
           "expected": {
             "acceptable_result_patterns": [
@@ -398,9 +531,152 @@
               "artifact or member locator"
             ]
           },
-          "message": "Search returned bounded results, but none contained an exact known expected result hint. Eval Runner v0 does not infer semantic relevance.",
+          "message": "Observed bounded results include source-backed structured evidence for the required hard-eval result hints.",
           "name": "search.expected_result_hints",
           "observed": {
+            "acceptable_result_patterns": [
+              {
+                "pattern": "direct driver installer or archive",
+                "reasons": [
+                  "driver_member_or_artifact_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "pattern": "INF, CAB, or executable member extracted from a support bundle",
+                "reasons": [
+                  "member_path_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "pattern": "vendor or preservation trace that points to the exact member path",
+                "reasons": [
+                  "documentation_or_trace_evidence_present"
+                ],
+                "satisfied": true
+              }
+            ],
+            "artifact_locators": [
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 Wi-Fi wireless support bundle recorded fixture",
+              "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+              "member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "rep.local-bundle.driver-support-cd.zip",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "rep.local-bundle.driver-support-cd.zip",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "member:local-bundle-fixture:driver-support-cd@1.0:rep.local-bundle.driver-support-cd.zip:drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "driver.inf",
+              "member_path:drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "member:local-bundle-fixture:driver-support-cd@1.0:rep.local-bundle.driver-support-cd.zip:README.txt",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip",
+              "member:local-bundle-fixture:driver-support-cd@1.0:rep.local-bundle.driver-support-cd.zip:drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "member_path:drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "member:local-bundle-fixture:driver-support-cd@1.0:rep.local-bundle.driver-support-cd.zip:compatibility/windows2000.txt",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip"
+            ],
+            "compatibility_evidence_count": 5,
+            "matched_function_terms": [],
+            "matched_hardware_terms": [
+              "ThinkPad T42 Wi-Fi"
+            ],
+            "matched_platform_terms": [
+              "Windows 2000"
+            ],
+            "matched_product_terms": [],
+            "member_paths": [
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "README.txt",
+              "README.txt",
+              "README.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "compatibility/windows2000.txt",
+              "compatibility/windows2000.txt",
+              "compatibility/windows2000.txt"
+            ],
+            "record_kinds": [
+              "member",
+              "synthetic_member"
+            ],
+            "representation_ids": [
+              "rep.synthetic-member.16388e6269f0a84bb96ed8f1",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip"
+            ],
+            "required_evidence": [
+              {
+                "clause": "hardware match evidence",
+                "reasons": [
+                  "hardware_hint_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "Windows 2000 compatibility evidence",
+                "reasons": [
+                  "platform_compatibility_evidence_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "artifact or member locator",
+                "reasons": [
+                  "artifact_or_member_locator_present"
+                ],
+                "satisfied": true
+              }
+            ],
+            "result_lanes": [
+              "best_direct_answer",
+              "inside_bundles",
+              "installable_or_usable_now"
+            ],
+            "source_families": [
+              "local_bundle_fixtures"
+            ],
+            "source_ids": [
+              "local-bundle-fixtures"
+            ],
+            "status": "satisfied",
+            "top_result_count": 5,
             "top_results": [
               {
                 "action_hints": [
@@ -708,140 +984,6 @@
               }
             ]
           },
-          "status": "not_satisfied"
-        }
-      ],
-      "notices": [
-        {
-          "code": "eval_runner_scope",
-          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
-          "severity": "info"
-        }
-      ],
-      "overall_status": "not_satisfied",
-      "partial_checks": [],
-      "planner_expected_task_kind": "find_driver",
-      "planner_observed": {
-        "action_hints": [
-          "inspect",
-          "inspect_members",
-          "decompose",
-          "fetch_if_available",
-          "export_manifest"
-        ],
-        "constraints": {
-          "hardware_hint": "ThinkPad T42 Wi-Fi",
-          "member_discovery_hints": {
-            "prefer_inf_member": true,
-            "support_media_member": true
-          },
-          "platform": {
-            "aliases": [
-              "Win2k",
-              "Windows NT 5.0"
-            ],
-            "family": "Windows NT",
-            "marketing_alias": "Windows 2000",
-            "version": "5.0"
-          },
-          "representation_hints": [
-            "driver_package",
-            "INF",
-            "support_media_member",
-            "readme",
-            "manual"
-          ]
-        },
-        "exclude": [
-          "generic_advice_only",
-          "unrelated_full_os_media",
-          "parent_support_cd_without_matching_driver_member"
-        ],
-        "object_type": "driver",
-        "planner_confidence": "high",
-        "planner_notes": [
-          "Recognized a driver lookup query.",
-          "Hardware and platform hints remain bounded extracted constraints only."
-        ],
-        "prefer": [
-          "driver_package",
-          "inf_member",
-          "support_bundle_member",
-          "documentation_with_driver_locator"
-        ],
-        "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
-        "source_hints": [
-          "local_bundle_fixtures",
-          "internet_archive_recorded",
-          "wayback_memento_placeholder",
-          "vendor_archive_future"
-        ],
-        "task_kind": "find_driver"
-      },
-      "planner_observed_task_kind": "find_driver",
-      "planner_status": "satisfied",
-      "query_family": "driver_by_hardware_and_platform",
-      "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
-      "satisfied_checks": [
-        {
-          "expected": "find_driver",
-          "message": "Planner task_kind matched expected_plan.",
-          "name": "planner.task_kind",
-          "observed": "find_driver",
-          "status": "satisfied"
-        },
-        {
-          "expected": "driver",
-          "message": "Planner object_type matched expected_plan.",
-          "name": "planner.object_type",
-          "observed": "driver",
-          "status": "satisfied"
-        },
-        {
-          "expected": "ThinkPad T42 Wi-Fi",
-          "message": "Planner constraint 'hardware_hint' contains the expected bounded values.",
-          "name": "planner.constraints.hardware_hint",
-          "observed": "ThinkPad T42 Wi-Fi",
-          "status": "satisfied"
-        },
-        {
-          "expected": {
-            "marketing_alias": "Windows 2000"
-          },
-          "message": "Planner constraint 'platform' contains the expected bounded values.",
-          "name": "planner.constraints.platform",
-          "observed": {
-            "aliases": [
-              "Win2k",
-              "Windows NT 5.0"
-            ],
-            "family": "Windows NT",
-            "marketing_alias": "Windows 2000",
-            "version": "5.0"
-          },
-          "status": "satisfied"
-        },
-        {
-          "expected": "driver_package",
-          "message": "Planner prefer includes 'driver_package'.",
-          "name": "planner.prefer.driver_package",
-          "observed": [
-            "driver_package",
-            "inf_member",
-            "support_bundle_member",
-            "documentation_with_driver_locator"
-          ],
-          "status": "satisfied"
-        },
-        {
-          "expected": "generic_advice_only",
-          "message": "Planner exclude includes 'generic_advice_only'.",
-          "name": "planner.exclude.generic_advice_only",
-          "observed": [
-            "generic_advice_only",
-            "unrelated_full_os_media",
-            "parent_support_cd_without_matching_driver_member"
-          ],
           "status": "satisfied"
         }
       ],
@@ -1204,7 +1346,16 @@
           "direct artifact or release asset locator"
         ]
       },
-      "failed_checks": [
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "partial",
+      "partial_checks": [
         {
           "expected": {
             "acceptable_result_patterns": [
@@ -1228,9 +1379,90 @@
               "direct artifact or release asset locator"
             ]
           },
-          "message": "Search returned bounded results, but none contained an exact known expected result hint. Eval Runner v0 does not infer semantic relevance.",
+          "message": "Observed bounded results include source-backed evidence for the core task intent, but one or more hard expected-result hints remain unmet.",
           "name": "search.expected_result_hints",
           "observed": {
+            "acceptable_result_patterns": [
+              {
+                "pattern": "direct installer for the last compatible Firefox release",
+                "reasons": [],
+                "satisfied": false
+              },
+              {
+                "pattern": "release archive page with version evidence and downloadable asset",
+                "reasons": [],
+                "satisfied": false
+              },
+              {
+                "pattern": "archived vendor page plus concrete release asset trace",
+                "reasons": [],
+                "satisfied": false
+              }
+            ],
+            "artifact_locators": [
+              "member:local-bundle-fixture:windows-xp-browser-tools-bundle@1.0:rep.local-bundle.windows-xp-browser-tools-bundle.zip:browsers/firefox-xp-support/readme.txt",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip"
+            ],
+            "compatibility_evidence_count": 2,
+            "matched_function_terms": [],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [
+              "Windows XP"
+            ],
+            "matched_product_terms": [
+              "Firefox"
+            ],
+            "member_paths": [
+              "browsers/firefox-xp-support/readme.txt",
+              "browsers/firefox-xp-support/readme.txt",
+              "browsers/firefox-xp-support/readme.txt"
+            ],
+            "record_kinds": [
+              "member",
+              "representation",
+              "resolved_object"
+            ],
+            "representation_ids": [
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
+              "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
+              "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.0",
+              "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.1"
+            ],
+            "required_evidence": [
+              {
+                "clause": "version or release identity",
+                "reasons": [],
+                "satisfied": false
+              },
+              {
+                "clause": "Windows XP compatibility or support-window evidence",
+                "reasons": [
+                  "platform_compatibility_evidence_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "direct artifact or release asset locator",
+                "reasons": [],
+                "satisfied": false
+              }
+            ],
+            "result_lanes": [
+              "inside_bundles",
+              "preservation"
+            ],
+            "source_families": [
+              "internet_archive_recorded",
+              "local_bundle_fixtures"
+            ],
+            "source_ids": [
+              "internet-archive-recorded-fixtures",
+              "local-bundle-fixtures"
+            ],
+            "status": "partial",
+            "top_result_count": 5,
             "top_results": [
               {
                 "evidence": [
@@ -1449,18 +1681,9 @@
               }
             ]
           },
-          "status": "not_satisfied"
+          "status": "partial"
         }
       ],
-      "notices": [
-        {
-          "code": "eval_runner_scope",
-          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
-          "severity": "info"
-        }
-      ],
-      "overall_status": "not_satisfied",
-      "partial_checks": [],
       "planner_expected_task_kind": "find_latest_compatible_release",
       "planner_observed": {
         "action_hints": [
@@ -1865,7 +2088,16 @@
           "artifact locator or concrete product trace"
         ]
       },
-      "failed_checks": [
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "partial",
+      "partial_checks": [
         {
           "expected": {
             "acceptable_result_patterns": [
@@ -1889,9 +2121,115 @@
               "artifact locator or concrete product trace"
             ]
           },
-          "message": "Search returned bounded results, but none contained an exact known expected result hint. Eval Runner v0 does not infer semantic relevance.",
+          "message": "Observed bounded results include source-backed evidence for the core task intent, but one or more hard expected-result hints remain unmet.",
           "name": "search.expected_result_hints",
           "observed": {
+            "acceptable_result_patterns": [
+              {
+                "pattern": "direct installer for a plausible FTP client supported on Windows XP",
+                "reasons": [],
+                "satisfied": false
+              },
+              {
+                "pattern": "archived vendor page or manual trace that narrows identity to a concrete product",
+                "reasons": [],
+                "satisfied": false
+              },
+              {
+                "pattern": "bundle-contained installer with a member path and surrounding evidence",
+                "reasons": [],
+                "satisfied": false
+              }
+            ],
+            "artifact_locators": [
+              "representation_locator runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_xp_browser_tools_bundle.zip local_bundle_fixtures source_metadata Local Bundle Fixtures",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/4",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/1",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/1",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/README.txt",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/README.txt",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/README.txt"
+            ],
+            "compatibility_evidence_count": 11,
+            "matched_function_terms": [
+              "FTP client",
+              "blue"
+            ],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [
+              "Windows NT 5.1",
+              "Windows XP"
+            ],
+            "matched_product_terms": [],
+            "member_paths": [
+              "compatibility/windowsxp.txt",
+              "browsers/firefox-xp-support/readme.txt",
+              "utilities/ftp-blue-client/readme.txt",
+              "manifests/manifest.json",
+              "README.txt",
+              "README.txt",
+              "utilities/ftp-blue-client/readme.txt",
+              "utilities/ftp-blue-client/readme.txt",
+              "utilities/ftp-blue-client/readme.txt",
+              "utilities/ftp-blue-client/readme.txt"
+            ],
+            "record_kinds": [
+              "evidence",
+              "resolved_object",
+              "synthetic_member"
+            ],
+            "representation_ids": [
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "rep.synthetic-member.72d5c351d345a66c64c881ae",
+              "rep.synthetic-member.0733365e112ce769f912e058"
+            ],
+            "required_evidence": [
+              {
+                "clause": "FTP-client function evidence",
+                "reasons": [
+                  "functional_hint_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "Windows XP compatibility evidence or period trace",
+                "reasons": [
+                  "platform_compatibility_evidence_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "artifact locator or concrete product trace",
+                "reasons": [
+                  "artifact_or_member_locator_present"
+                ],
+                "satisfied": true
+              }
+            ],
+            "result_lanes": [
+              "documentation",
+              "inside_bundles",
+              "mentions_or_traces",
+              "preservation"
+            ],
+            "source_families": [
+              "local_bundle_fixtures"
+            ],
+            "source_ids": [
+              "local-bundle-fixtures"
+            ],
+            "status": "partial",
+            "top_result_count": 5,
             "top_results": [
               {
                 "compatibility_evidence": [
@@ -2363,18 +2701,9 @@
               }
             ]
           },
-          "status": "not_satisfied"
+          "status": "partial"
         }
       ],
-      "notices": [
-        {
-          "code": "eval_runner_scope",
-          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
-          "severity": "info"
-        }
-      ],
-      "overall_status": "not_satisfied",
-      "partial_checks": [],
       "planner_expected_task_kind": "identify_software",
       "planner_observed": {
         "action_hints": [
@@ -3025,7 +3354,133 @@
           "artifact or member locator"
         ]
       },
-      "failed_checks": [
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "partial",
+      "partial_checks": [],
+      "planner_expected_task_kind": "identify_software",
+      "planner_observed": {
+        "action_hints": [
+          "inspect_candidates",
+          "compare",
+          "search_documentation",
+          "export_manifest"
+        ],
+        "constraints": {
+          "function_hint": "registry repair",
+          "platform": {
+            "aliases": [
+              "Win98"
+            ],
+            "family": "Windows",
+            "marketing_alias": "Windows 98",
+            "platform_family": "Win9x",
+            "version": "4.1"
+          },
+          "uncertainty_notes": [
+            "Vague identity query; exact software identity is not asserted by the planner."
+          ]
+        },
+        "exclude": [
+          "generic_advice_only",
+          "operating_system_image",
+          "os_iso_image",
+          "operating_system_install_media",
+          "generic_all_system_dump_without_member_index",
+          "unrelated_support_cd_parent_without_relevant_member"
+        ],
+        "object_type": "software",
+        "planner_confidence": "medium",
+        "planner_notes": [
+          "Vague identity query; exact software identity is not asserted by the planner."
+        ],
+        "prefer": [
+          "named_software_artifact",
+          "descriptive_release_notes",
+          "compatibility_evidence"
+        ],
+        "raw_query": "software to fix broken registry on Windows 98",
+        "source_hints": [
+          "internet_archive_recorded",
+          "local_bundle_fixtures",
+          "wayback_memento_placeholder"
+        ],
+        "task_kind": "identify_software"
+      },
+      "planner_observed_task_kind": "identify_software",
+      "planner_status": "satisfied",
+      "query_family": "software_by_function_and_platform",
+      "raw_query": "software to fix broken registry on Windows 98",
+      "satisfied_checks": [
+        {
+          "expected": "identify_software",
+          "message": "Planner task_kind matched expected_plan.",
+          "name": "planner.task_kind",
+          "observed": "identify_software",
+          "status": "satisfied"
+        },
+        {
+          "expected": "software",
+          "message": "Planner object_type matched expected_plan.",
+          "name": "planner.object_type",
+          "observed": "software",
+          "status": "satisfied"
+        },
+        {
+          "expected": "registry repair",
+          "message": "Planner constraint 'function_hint' contains the expected bounded values.",
+          "name": "planner.constraints.function_hint",
+          "observed": "registry repair",
+          "status": "satisfied"
+        },
+        {
+          "expected": {
+            "marketing_alias": "Windows 98"
+          },
+          "message": "Planner constraint 'platform' contains the expected bounded values.",
+          "name": "planner.constraints.platform",
+          "observed": {
+            "aliases": [
+              "Win98"
+            ],
+            "family": "Windows",
+            "marketing_alias": "Windows 98",
+            "platform_family": "Win9x",
+            "version": "4.1"
+          },
+          "status": "satisfied"
+        },
+        {
+          "expected": "named_software_artifact",
+          "message": "Planner prefer includes 'named_software_artifact'.",
+          "name": "planner.prefer.named_software_artifact",
+          "observed": [
+            "named_software_artifact",
+            "descriptive_release_notes",
+            "compatibility_evidence"
+          ],
+          "status": "satisfied"
+        },
+        {
+          "expected": "operating_system_image",
+          "message": "Planner exclude includes 'operating_system_image'.",
+          "name": "planner.exclude.operating_system_image",
+          "observed": [
+            "generic_advice_only",
+            "operating_system_image",
+            "os_iso_image",
+            "operating_system_install_media",
+            "generic_all_system_dump_without_member_index",
+            "unrelated_support_cd_parent_without_relevant_member"
+          ],
+          "status": "satisfied"
+        },
         {
           "expected": {
             "acceptable_result_patterns": [
@@ -3049,9 +3504,118 @@
               "artifact or member locator"
             ]
           },
-          "message": "Search returned bounded results, but none contained an exact known expected result hint. Eval Runner v0 does not infer semantic relevance.",
+          "message": "Observed bounded results include source-backed structured evidence for the required hard-eval result hints.",
           "name": "search.expected_result_hints",
           "observed": {
+            "acceptable_result_patterns": [
+              {
+                "pattern": "direct utility installer or archive",
+                "reasons": [
+                  "software_artifact_or_representation_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "pattern": "manual or release note that confirms Windows 98 support and points to a tool",
+                "reasons": [],
+                "satisfied": false
+              },
+              {
+                "pattern": "extracted bundle member that is itself the utility",
+                "reasons": [
+                  "member_path_present"
+                ],
+                "satisfied": true
+              }
+            ],
+            "artifact_locators": [
+              "registry-repair/registry-repair.exe.txt",
+              "registry-repair/README-windows98.txt",
+              "registry-repair/registry-repair.exe.txt",
+              "registry-repair/README-windows98.txt",
+              "file_listing registry-repair/registry-repair.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "file_listing registry-repair/README-windows98.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "registry-repair/README-windows98.txt",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "file_listing registry-repair/registry-repair.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "file_listing registry-repair/README-windows98.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "registry-repair/README-windows98.txt",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "registry-repair/README-windows98.txt",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "registry-repair/README-windows98.txt",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture"
+            ],
+            "compatibility_evidence_count": 16,
+            "matched_function_terms": [
+              "registry repair"
+            ],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [
+              "Windows 98"
+            ],
+            "matched_product_terms": [],
+            "member_paths": [
+              "registry-repair/registry-repair.exe.txt",
+              "registry-repair/README-windows98.txt",
+              "registry-repair/registry-repair.exe.txt",
+              "registry-repair/README-windows98.txt"
+            ],
+            "record_kinds": [
+              "evidence",
+              "resolved_object",
+              "state_or_release"
+            ],
+            "representation_ids": [
+              "rep.internet-archive-recorded.ia.win98.registry.repair.fixture.metadata"
+            ],
+            "required_evidence": [
+              {
+                "clause": "functional or descriptive clue that the tool repairs registry issues",
+                "reasons": [
+                  "functional_hint_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "Windows 98 compatibility evidence or period-appropriate provenance",
+                "reasons": [
+                  "platform_compatibility_evidence_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "artifact or member locator",
+                "reasons": [
+                  "artifact_or_member_locator_present"
+                ],
+                "satisfied": true
+              }
+            ],
+            "result_lanes": [
+              "mentions_or_traces",
+              "preservation"
+            ],
+            "source_families": [
+              "internet_archive_recorded"
+            ],
+            "source_ids": [
+              "internet-archive-recorded-fixtures"
+            ],
+            "status": "satisfied",
+            "top_result_count": 5,
             "top_results": [
               {
                 "compatibility_evidence": [
@@ -3552,133 +4116,6 @@
               }
             ]
           },
-          "status": "not_satisfied"
-        }
-      ],
-      "notices": [
-        {
-          "code": "eval_runner_scope",
-          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
-          "severity": "info"
-        }
-      ],
-      "overall_status": "not_satisfied",
-      "partial_checks": [],
-      "planner_expected_task_kind": "identify_software",
-      "planner_observed": {
-        "action_hints": [
-          "inspect_candidates",
-          "compare",
-          "search_documentation",
-          "export_manifest"
-        ],
-        "constraints": {
-          "function_hint": "registry repair",
-          "platform": {
-            "aliases": [
-              "Win98"
-            ],
-            "family": "Windows",
-            "marketing_alias": "Windows 98",
-            "platform_family": "Win9x",
-            "version": "4.1"
-          },
-          "uncertainty_notes": [
-            "Vague identity query; exact software identity is not asserted by the planner."
-          ]
-        },
-        "exclude": [
-          "generic_advice_only",
-          "operating_system_image",
-          "os_iso_image",
-          "operating_system_install_media",
-          "generic_all_system_dump_without_member_index",
-          "unrelated_support_cd_parent_without_relevant_member"
-        ],
-        "object_type": "software",
-        "planner_confidence": "medium",
-        "planner_notes": [
-          "Vague identity query; exact software identity is not asserted by the planner."
-        ],
-        "prefer": [
-          "named_software_artifact",
-          "descriptive_release_notes",
-          "compatibility_evidence"
-        ],
-        "raw_query": "software to fix broken registry on Windows 98",
-        "source_hints": [
-          "internet_archive_recorded",
-          "local_bundle_fixtures",
-          "wayback_memento_placeholder"
-        ],
-        "task_kind": "identify_software"
-      },
-      "planner_observed_task_kind": "identify_software",
-      "planner_status": "satisfied",
-      "query_family": "software_by_function_and_platform",
-      "raw_query": "software to fix broken registry on Windows 98",
-      "satisfied_checks": [
-        {
-          "expected": "identify_software",
-          "message": "Planner task_kind matched expected_plan.",
-          "name": "planner.task_kind",
-          "observed": "identify_software",
-          "status": "satisfied"
-        },
-        {
-          "expected": "software",
-          "message": "Planner object_type matched expected_plan.",
-          "name": "planner.object_type",
-          "observed": "software",
-          "status": "satisfied"
-        },
-        {
-          "expected": "registry repair",
-          "message": "Planner constraint 'function_hint' contains the expected bounded values.",
-          "name": "planner.constraints.function_hint",
-          "observed": "registry repair",
-          "status": "satisfied"
-        },
-        {
-          "expected": {
-            "marketing_alias": "Windows 98"
-          },
-          "message": "Planner constraint 'platform' contains the expected bounded values.",
-          "name": "planner.constraints.platform",
-          "observed": {
-            "aliases": [
-              "Win98"
-            ],
-            "family": "Windows",
-            "marketing_alias": "Windows 98",
-            "platform_family": "Win9x",
-            "version": "4.1"
-          },
-          "status": "satisfied"
-        },
-        {
-          "expected": "named_software_artifact",
-          "message": "Planner prefer includes 'named_software_artifact'.",
-          "name": "planner.prefer.named_software_artifact",
-          "observed": [
-            "named_software_artifact",
-            "descriptive_release_notes",
-            "compatibility_evidence"
-          ],
-          "status": "satisfied"
-        },
-        {
-          "expected": "operating_system_image",
-          "message": "Planner exclude includes 'operating_system_image'.",
-          "name": "planner.exclude.operating_system_image",
-          "observed": [
-            "generic_advice_only",
-            "operating_system_image",
-            "os_iso_image",
-            "operating_system_install_media",
-            "generic_all_system_dump_without_member_index",
-            "unrelated_support_cd_parent_without_relevant_member"
-          ],
           "status": "satisfied"
         }
       ],
@@ -4235,7 +4672,129 @@
           "source-family visibility"
         ]
       },
-      "failed_checks": [
+      "failed_checks": [],
+      "notices": [
+        {
+          "code": "eval_runner_scope",
+          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
+          "severity": "info"
+        }
+      ],
+      "overall_status": "partial",
+      "partial_checks": [],
+      "planner_expected_task_kind": "browse_software",
+      "planner_observed": {
+        "action_hints": [
+          "inspect",
+          "fetch_if_available",
+          "export_manifest"
+        ],
+        "constraints": {
+          "platform": {
+            "aliases": [
+              "Win7",
+              "Windows NT 6.1"
+            ],
+            "family": "Windows NT",
+            "marketing_alias": "Windows 7",
+            "version": "6.1"
+          },
+          "platform_is_constraint": true,
+          "representation_hints": [
+            "installer",
+            "portable_package",
+            "release_asset",
+            "member_artifact"
+          ],
+          "target_object_hint": "software_for_platform"
+        },
+        "exclude": [
+          "operating_system_image",
+          "os_iso_image",
+          "operating_system_install_media",
+          "generic_all_system_dump_without_member_index",
+          "unrelated_support_cd_parent_without_relevant_member"
+        ],
+        "object_type": "software",
+        "planner_confidence": "high",
+        "planner_notes": [
+          "Recognized a platform-scoped software browsing query.",
+          "The named operating system is treated as a compatibility constraint, not the requested object."
+        ],
+        "prefer": [
+          "direct_software_artifact",
+          "portable_package",
+          "compatibility_evidence"
+        ],
+        "raw_query": "Windows 7 apps",
+        "source_hints": [
+          "internet_archive_recorded",
+          "local_bundle_fixtures",
+          "github_releases",
+          "synthetic_fixture"
+        ],
+        "task_kind": "browse_software"
+      },
+      "planner_observed_task_kind": "browse_software",
+      "planner_status": "satisfied",
+      "query_family": "software_by_platform",
+      "raw_query": "Windows 7 apps",
+      "satisfied_checks": [
+        {
+          "expected": "browse_software",
+          "message": "Planner task_kind matched expected_plan.",
+          "name": "planner.task_kind",
+          "observed": "browse_software",
+          "status": "satisfied"
+        },
+        {
+          "expected": "software",
+          "message": "Planner object_type matched expected_plan.",
+          "name": "planner.object_type",
+          "observed": "software",
+          "status": "satisfied"
+        },
+        {
+          "expected": {
+            "marketing_alias": "Windows 7"
+          },
+          "message": "Planner constraint 'platform' contains the expected bounded values.",
+          "name": "planner.constraints.platform",
+          "observed": {
+            "aliases": [
+              "Win7",
+              "Windows NT 6.1"
+            ],
+            "family": "Windows NT",
+            "marketing_alias": "Windows 7",
+            "version": "6.1"
+          },
+          "status": "satisfied"
+        },
+        {
+          "expected": "direct_software_artifact",
+          "message": "Planner prefer includes 'direct_software_artifact'.",
+          "name": "planner.prefer.direct_software_artifact",
+          "observed": [
+            "direct_software_artifact",
+            "portable_package",
+            "compatibility_evidence"
+          ],
+          "status": "satisfied"
+        },
+        {
+          "expected": "operating_system_image",
+          "message": "Planner exclude includes 'operating_system_image'.",
+          "name": "planner.exclude.operating_system_image",
+          "observed": [
+            "operating_system_image",
+            "os_iso_image",
+            "operating_system_install_media",
+            "generic_all_system_dump_without_member_index",
+            "unrelated_support_cd_parent_without_relevant_member"
+          ],
+          "status": "satisfied"
+        },
         {
           "expected": {
             "acceptable_result_patterns": [
@@ -4260,9 +4819,114 @@
               "source-family visibility"
             ]
           },
-          "message": "Search returned bounded results, but none contained an exact known expected result hint. Eval Runner v0 does not infer semantic relevance.",
+          "message": "Observed bounded results include source-backed structured evidence for the required hard-eval result hints.",
           "name": "search.expected_result_hints",
           "observed": {
+            "acceptable_result_patterns": [
+              {
+                "pattern": "individual application installers",
+                "reasons": [
+                  "software_artifact_or_representation_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "pattern": "portable applications compatible with Windows 7",
+                "reasons": [
+                  "software_artifact_or_representation_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "pattern": "extracted bundle members with direct application artifacts",
+                "reasons": [
+                  "software_artifact_or_representation_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "pattern": "documentation-backed compatibility traces that point to direct downloads",
+                "reasons": [
+                  "documentation_or_trace_evidence_present"
+                ],
+                "satisfied": true
+              }
+            ],
+            "artifact_locators": [
+              "portable-app-package/README-windows7.txt",
+              "portable-app-package/individual-application-installer.exe.txt",
+              "portable-app-package/README-windows7.txt",
+              "portable-app-package/individual-application-installer.exe.txt",
+              "portable-app-package/individual-application-installer.exe.txt",
+              "portable-app-package/individual-application-installer.exe.txt",
+              "portable-app-package/README-windows7.txt",
+              "portable-app-package/README-windows7.txt",
+              "file_listing portable-app-package/README-windows7.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "file_listing portable-app-package/individual-application-installer.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "portable-app-package/README-windows7.txt",
+              "file_listing portable-app-package/README-windows7.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "file_listing portable-app-package/individual-application-installer.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+            ],
+            "compatibility_evidence_count": 4,
+            "matched_function_terms": [],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [
+              "Windows 7",
+              "Windows NT 6.1"
+            ],
+            "matched_product_terms": [],
+            "member_paths": [
+              "portable-app-package/README-windows7.txt",
+              "portable-app-package/individual-application-installer.exe.txt",
+              "portable-app-package/README-windows7.txt",
+              "portable-app-package/individual-application-installer.exe.txt"
+            ],
+            "record_kinds": [
+              "representation",
+              "resolved_object",
+              "state_or_release"
+            ],
+            "representation_ids": [
+              "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.1",
+              "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.0",
+              "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.metadata",
+              "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.metadata"
+            ],
+            "required_evidence": [
+              {
+                "clause": "compatibility clue or platform evidence",
+                "reasons": [
+                  "platform_compatibility_evidence_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "representation or member path",
+                "reasons": [
+                  "artifact_or_member_locator_present"
+                ],
+                "satisfied": true
+              },
+              {
+                "clause": "source-family visibility",
+                "reasons": [
+                  "source_family_present"
+                ],
+                "satisfied": true
+              }
+            ],
+            "result_lanes": [
+              "inside_bundles",
+              "preservation"
+            ],
+            "source_families": [
+              "internet_archive_recorded"
+            ],
+            "source_ids": [
+              "internet-archive-recorded-fixtures"
+            ],
+            "status": "satisfied",
+            "top_result_count": 5,
             "top_results": [
               {
                 "evidence": [
@@ -4524,129 +5188,6 @@
               }
             ]
           },
-          "status": "not_satisfied"
-        }
-      ],
-      "notices": [
-        {
-          "code": "eval_runner_scope",
-          "message": "Archive Resolution Eval Runner v0 records deterministic planner, local search, absence behavior, and bounded lane/user-cost annotations only; production ranking, fuzzy, vector, LLM, crawling, and live sync are intentionally out of scope.",
-          "severity": "info"
-        }
-      ],
-      "overall_status": "not_satisfied",
-      "partial_checks": [],
-      "planner_expected_task_kind": "browse_software",
-      "planner_observed": {
-        "action_hints": [
-          "inspect",
-          "fetch_if_available",
-          "export_manifest"
-        ],
-        "constraints": {
-          "platform": {
-            "aliases": [
-              "Win7",
-              "Windows NT 6.1"
-            ],
-            "family": "Windows NT",
-            "marketing_alias": "Windows 7",
-            "version": "6.1"
-          },
-          "platform_is_constraint": true,
-          "representation_hints": [
-            "installer",
-            "portable_package",
-            "release_asset",
-            "member_artifact"
-          ],
-          "target_object_hint": "software_for_platform"
-        },
-        "exclude": [
-          "operating_system_image",
-          "os_iso_image",
-          "operating_system_install_media",
-          "generic_all_system_dump_without_member_index",
-          "unrelated_support_cd_parent_without_relevant_member"
-        ],
-        "object_type": "software",
-        "planner_confidence": "high",
-        "planner_notes": [
-          "Recognized a platform-scoped software browsing query.",
-          "The named operating system is treated as a compatibility constraint, not the requested object."
-        ],
-        "prefer": [
-          "direct_software_artifact",
-          "portable_package",
-          "compatibility_evidence"
-        ],
-        "raw_query": "Windows 7 apps",
-        "source_hints": [
-          "internet_archive_recorded",
-          "local_bundle_fixtures",
-          "github_releases",
-          "synthetic_fixture"
-        ],
-        "task_kind": "browse_software"
-      },
-      "planner_observed_task_kind": "browse_software",
-      "planner_status": "satisfied",
-      "query_family": "software_by_platform",
-      "raw_query": "Windows 7 apps",
-      "satisfied_checks": [
-        {
-          "expected": "browse_software",
-          "message": "Planner task_kind matched expected_plan.",
-          "name": "planner.task_kind",
-          "observed": "browse_software",
-          "status": "satisfied"
-        },
-        {
-          "expected": "software",
-          "message": "Planner object_type matched expected_plan.",
-          "name": "planner.object_type",
-          "observed": "software",
-          "status": "satisfied"
-        },
-        {
-          "expected": {
-            "marketing_alias": "Windows 7"
-          },
-          "message": "Planner constraint 'platform' contains the expected bounded values.",
-          "name": "planner.constraints.platform",
-          "observed": {
-            "aliases": [
-              "Win7",
-              "Windows NT 6.1"
-            ],
-            "family": "Windows NT",
-            "marketing_alias": "Windows 7",
-            "version": "6.1"
-          },
-          "status": "satisfied"
-        },
-        {
-          "expected": "direct_software_artifact",
-          "message": "Planner prefer includes 'direct_software_artifact'.",
-          "name": "planner.prefer.direct_software_artifact",
-          "observed": [
-            "direct_software_artifact",
-            "portable_package",
-            "compatibility_evidence"
-          ],
-          "status": "satisfied"
-        },
-        {
-          "expected": "operating_system_image",
-          "message": "Planner exclude includes 'operating_system_image'.",
-          "name": "planner.exclude.operating_system_image",
-          "observed": [
-            "operating_system_image",
-            "os_iso_image",
-            "operating_system_install_media",
-            "generic_all_system_dump_without_member_index",
-            "unrelated_support_cd_parent_without_relevant_member"
-          ],
           "status": "satisfied"
         }
       ],

@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import json
 from json import JSONDecodeError
 from pathlib import Path
+import re
 import tempfile
 from typing import Any, Callable, Iterable, Mapping
 
@@ -800,17 +801,31 @@ def _evaluate_search(
             )
         return tuple(checks)
 
-    if _observed_results_match_expected_hints(task, top_results):
+    evidence_report = _structured_expected_result_evidence(task, top_results)
+    if evidence_report["status"] == "satisfied":
         return (
             EvalCheckResult(
                 name="search.expected_result_hints",
                 status="satisfied",
                 message=(
-                    "At least one observed result contained an explicit acceptable-result "
-                    "or required-evidence hint."
+                    "Observed bounded results include source-backed structured evidence for "
+                    "the required hard-eval result hints."
                 ),
                 expected=_expected_result_hints(task),
-                observed={"top_results": top_results},
+                observed=evidence_report,
+            ),
+        )
+    if evidence_report["status"] == "partial":
+        return (
+            EvalCheckResult(
+                name="search.expected_result_hints",
+                status="partial",
+                message=(
+                    "Observed bounded results include source-backed evidence for the core "
+                    "task intent, but one or more hard expected-result hints remain unmet."
+                ),
+                expected=_expected_result_hints(task),
+                observed=evidence_report,
             ),
         )
     return (
@@ -818,11 +833,12 @@ def _evaluate_search(
             name="search.expected_result_hints",
             status="not_satisfied",
             message=(
-                "Search returned bounded results, but none contained an exact known expected result hint. "
-                "Eval Runner v0 does not infer semantic relevance."
+                "Search returned bounded results, but current source-backed evidence did not "
+                "satisfy the structured hard expected-result hints. Eval Runner v0 still "
+                "does not infer semantic relevance."
             ),
             expected=_expected_result_hints(task),
-            observed={"top_results": top_results},
+            observed=evidence_report,
         ),
     )
 
@@ -994,16 +1010,404 @@ def _json_subset_matches(expected: Any, observed: Any) -> bool:
     return expected == observed
 
 
-def _observed_results_match_expected_hints(
+def _structured_expected_result_evidence(
     task: ArchiveResolutionEvalTask,
     top_results: tuple[dict[str, Any], ...],
-) -> bool:
+) -> dict[str, Any]:
     observed_text = " ".join(_flatten_strings(top_results)).casefold()
     compact_observed = _compact_text(observed_text)
-    for hint in task.acceptable_result_patterns + task.required_evidence:
-        if _compact_text(hint) and _compact_text(hint) in compact_observed:
-            return True
-    return False
+    source_ids = sorted(
+        {
+            str(result.get("source_id"))
+            for result in top_results
+            if result.get("source_id")
+        }
+    )
+    source_families = sorted(
+        {
+            str(result.get("source_family"))
+            for result in top_results
+            if result.get("source_family")
+        }
+    )
+    record_kinds = sorted(
+        {
+            str(result.get("record_kind"))
+            for result in top_results
+            if result.get("record_kind")
+        }
+    )
+    result_lanes = sorted(
+        {
+            str(lane)
+            for result in top_results
+            for lane in _string_iter(result.get("result_lanes"))
+        }
+    )
+    member_paths = tuple(_result_member_paths(top_results))
+    representation_ids = tuple(
+        str(result["representation_id"])
+        for result in top_results
+        if result.get("representation_id")
+    )
+    compatibility_records = tuple(_compatibility_records(top_results))
+    platform_terms = tuple(_platform_terms(task))
+    hardware_terms = tuple(_hardware_terms(task))
+    product_terms = tuple(_product_terms(task))
+    function_terms = tuple(_function_terms(task))
+    artifact_paths = tuple(
+        path
+        for path in member_paths + tuple(_result_file_like_strings(top_results))
+        if _looks_like_artifact_locator(path)
+    )
+
+    clause_results = [
+        _required_evidence_clause_status(
+            clause,
+            compact_observed=compact_observed,
+            source_families=source_families,
+            member_paths=member_paths,
+            representation_ids=representation_ids,
+            compatibility_records=compatibility_records,
+            platform_terms=platform_terms,
+            hardware_terms=hardware_terms,
+            product_terms=product_terms,
+            function_terms=function_terms,
+            artifact_paths=artifact_paths,
+        )
+        for clause in task.required_evidence
+    ]
+    acceptable_patterns = [
+        _acceptable_pattern_status(
+            pattern,
+            compact_observed=compact_observed,
+            member_paths=member_paths,
+            representation_ids=representation_ids,
+            compatibility_records=compatibility_records,
+            platform_terms=platform_terms,
+            hardware_terms=hardware_terms,
+            product_terms=product_terms,
+            function_terms=function_terms,
+            artifact_paths=artifact_paths,
+        )
+        for pattern in task.acceptable_result_patterns
+    ]
+    satisfied_clause_count = sum(1 for item in clause_results if item["satisfied"])
+    satisfied_pattern_count = sum(1 for item in acceptable_patterns if item["satisfied"])
+    source_backed = bool(source_ids or source_families)
+    has_locator = bool(member_paths or representation_ids or artifact_paths)
+    has_core_intent = (
+        _any_term_matches(platform_terms, compact_observed)
+        or _any_term_matches(hardware_terms, compact_observed)
+        or _any_term_matches(product_terms, compact_observed)
+        or _any_term_matches(function_terms, compact_observed)
+    )
+
+    status = "not_satisfied"
+    if (
+        source_backed
+        and has_locator
+        and satisfied_clause_count == len(clause_results)
+        and satisfied_pattern_count > 0
+    ):
+        status = "satisfied"
+    elif source_backed and has_core_intent and (satisfied_clause_count > 0 or satisfied_pattern_count > 0):
+        status = "partial"
+
+    return {
+        "status": status,
+        "top_result_count": len(top_results),
+        "source_ids": source_ids,
+        "source_families": source_families,
+        "record_kinds": record_kinds,
+        "result_lanes": result_lanes,
+        "member_paths": list(member_paths),
+        "representation_ids": list(representation_ids),
+        "artifact_locators": list(artifact_paths),
+        "compatibility_evidence_count": len(compatibility_records),
+        "matched_platform_terms": _matched_terms(platform_terms, compact_observed),
+        "matched_hardware_terms": _matched_terms(hardware_terms, compact_observed),
+        "matched_product_terms": _matched_terms(product_terms, compact_observed),
+        "matched_function_terms": _matched_terms(function_terms, compact_observed),
+        "required_evidence": clause_results,
+        "acceptable_result_patterns": acceptable_patterns,
+        "top_results": top_results,
+    }
+
+
+def _required_evidence_clause_status(
+    clause: str,
+    *,
+    compact_observed: str,
+    source_families: list[str],
+    member_paths: tuple[str, ...],
+    representation_ids: tuple[str, ...],
+    compatibility_records: tuple[Mapping[str, Any], ...],
+    platform_terms: tuple[str, ...],
+    hardware_terms: tuple[str, ...],
+    product_terms: tuple[str, ...],
+    function_terms: tuple[str, ...],
+    artifact_paths: tuple[str, ...],
+) -> dict[str, Any]:
+    compact_clause = _compact_text(clause)
+    reasons: list[str] = []
+    satisfied = False
+
+    if "sourcefamily" in compact_clause:
+        satisfied = bool(source_families)
+        if satisfied:
+            reasons.append("source_family_present")
+    elif "hardware" in compact_clause:
+        satisfied = _any_term_matches(hardware_terms, compact_observed)
+        if satisfied:
+            reasons.append("hardware_hint_present")
+    elif "ftpclient" in compact_clause or "function" in compact_clause or "registry" in compact_clause:
+        satisfied = _any_term_matches(function_terms, compact_observed)
+        if satisfied:
+            reasons.append("functional_hint_present")
+    elif "version" in compact_clause or "release" in compact_clause:
+        satisfied = _release_identity_present(product_terms, compact_observed)
+        if satisfied:
+            reasons.append("version_or_release_identity_present")
+    elif (
+        "compatibility" in compact_clause
+        or "platform" in compact_clause
+        or "supportwindow" in compact_clause
+        or "periodappropriate" in compact_clause
+    ):
+        platform_match = _any_term_matches(platform_terms, compact_observed)
+        satisfied = platform_match and bool(compatibility_records or "compatibility" in compact_observed)
+        if satisfied:
+            reasons.append("platform_compatibility_evidence_present")
+    elif "artifact" in compact_clause or "member" in compact_clause or "locator" in compact_clause:
+        satisfied = bool(artifact_paths or member_paths or representation_ids)
+        if satisfied:
+            reasons.append("artifact_or_member_locator_present")
+    elif "topic" in compact_clause or "page" in compact_clause or "article" in compact_clause:
+        satisfied = "article" in compact_observed and ("page" in compact_observed or "section" in compact_observed)
+        if satisfied:
+            reasons.append("article_or_page_locator_present")
+    else:
+        satisfied = _compact_text(clause) in compact_observed
+        if satisfied:
+            reasons.append("literal_required_evidence_present")
+
+    return {
+        "clause": clause,
+        "satisfied": satisfied,
+        "reasons": reasons,
+    }
+
+
+def _acceptable_pattern_status(
+    pattern: str,
+    *,
+    compact_observed: str,
+    member_paths: tuple[str, ...],
+    representation_ids: tuple[str, ...],
+    compatibility_records: tuple[Mapping[str, Any], ...],
+    platform_terms: tuple[str, ...],
+    hardware_terms: tuple[str, ...],
+    product_terms: tuple[str, ...],
+    function_terms: tuple[str, ...],
+    artifact_paths: tuple[str, ...],
+) -> dict[str, Any]:
+    compact_pattern = _compact_text(pattern)
+    reasons: list[str] = []
+    satisfied = False
+
+    if "driver" in compact_pattern:
+        satisfied = bool(artifact_paths or member_paths) and _any_term_matches(
+            hardware_terms, compact_observed
+        )
+        if satisfied:
+            reasons.append("driver_member_or_artifact_present")
+    elif "installer" in compact_pattern or "portable" in compact_pattern or "application" in compact_pattern:
+        satisfied = _has_direct_artifact_locator(artifact_paths) and (
+            _any_term_matches(platform_terms, compact_observed)
+            or _any_term_matches(function_terms, compact_observed)
+        )
+        if satisfied:
+            reasons.append("software_artifact_or_representation_present")
+    elif "release" in compact_pattern:
+        satisfied = _release_identity_present(product_terms, compact_observed) and bool(
+            representation_ids or artifact_paths
+        )
+        if satisfied:
+            reasons.append("versioned_release_trace_present")
+    elif "manual" in compact_pattern or "documentation" in compact_pattern or "trace" in compact_pattern:
+        requires_concrete_product = "concreteproduct" in compact_pattern
+        product_requirement_met = (
+            _any_term_matches(product_terms, compact_observed)
+            if requires_concrete_product
+            else True
+        )
+        satisfied = product_requirement_met and bool(compatibility_records) and (
+            _any_term_matches(platform_terms, compact_observed)
+            or _any_term_matches(product_terms, compact_observed)
+            or _any_term_matches(function_terms, compact_observed)
+        )
+        if satisfied:
+            reasons.append("documentation_or_trace_evidence_present")
+    elif "member" in compact_pattern:
+        satisfied = bool(member_paths) and _has_direct_artifact_locator(artifact_paths)
+        if satisfied:
+            reasons.append("member_path_present")
+    else:
+        satisfied = compact_pattern in compact_observed
+        if satisfied:
+            reasons.append("literal_acceptable_pattern_present")
+
+    return {
+        "pattern": pattern,
+        "satisfied": satisfied,
+        "reasons": reasons,
+    }
+
+
+def _result_member_paths(top_results: tuple[dict[str, Any], ...]) -> Iterable[str]:
+    for result in top_results:
+        member_path = result.get("member_path")
+        if isinstance(member_path, str) and member_path:
+            yield member_path
+        route_hints = result.get("route_hints")
+        if isinstance(route_hints, Mapping):
+            routed_member_path = route_hints.get("member_path")
+            if isinstance(routed_member_path, str) and routed_member_path:
+                yield routed_member_path
+        for evidence in _string_iter(result.get("evidence")):
+            if evidence.startswith("member_path:"):
+                yield evidence.removeprefix("member_path:")
+            elif "member_listing" in evidence or "file_listing" in evidence:
+                tokens = evidence.split()
+                for token in tokens:
+                    if "/" in token and "." in token:
+                        yield token
+
+
+def _result_file_like_strings(top_results: tuple[dict[str, Any], ...]) -> Iterable[str]:
+    for value in _flatten_strings(top_results):
+        if "/" in value and "." in value:
+            yield value
+        elif re.search(r"\b[\w.-]+\.(?:inf|cab|exe|zip|7z|json|txt)\b", value, re.IGNORECASE):
+            yield value
+
+
+def _compatibility_records(top_results: tuple[dict[str, Any], ...]) -> Iterable[Mapping[str, Any]]:
+    for result in top_results:
+        records = result.get("compatibility_evidence")
+        if isinstance(records, list):
+            for record in records:
+                if isinstance(record, Mapping):
+                    yield record
+
+
+def _platform_terms(task: ArchiveResolutionEvalTask) -> Iterable[str]:
+    yield from _constraint_terms(task, ("platform", "os_family", "os_version", "marketing_alias"))
+    expected_plan = task.expected_plan or {}
+    constraints = expected_plan.get("constraints")
+    if isinstance(constraints, Mapping):
+        platform = constraints.get("platform")
+        if isinstance(platform, Mapping):
+            yield from (str(value) for value in platform.values() if isinstance(value, str))
+    platform = task.target_constraints.get("platform")
+    if isinstance(platform, Mapping):
+        family = platform.get("os_family")
+        version = platform.get("os_version")
+        if isinstance(family, str) and isinstance(version, str):
+            yield f"{family} {version}"
+            if family.casefold() == "windows" and version.casefold() == "xp":
+                yield "Windows NT 5.1"
+            elif family.casefold() == "windows" and version == "2000":
+                yield "Windows NT 5.0"
+            elif family.casefold() == "windows" and version == "7":
+                yield "Windows NT 6.1"
+
+
+def _hardware_terms(task: ArchiveResolutionEvalTask) -> Iterable[str]:
+    yield from _constraint_terms(task, ("hardware", "device_family", "hardware_hint"))
+    expected_plan = task.expected_plan or {}
+    constraints = expected_plan.get("constraints")
+    if isinstance(constraints, Mapping):
+        value = constraints.get("hardware_hint")
+        if isinstance(value, str):
+            yield value
+
+
+def _product_terms(task: ArchiveResolutionEvalTask) -> Iterable[str]:
+    yield from _constraint_terms(task, ("product_hint",))
+    expected_plan = task.expected_plan or {}
+    constraints = expected_plan.get("constraints")
+    if isinstance(constraints, Mapping):
+        value = constraints.get("product_hint")
+        if isinstance(value, str):
+            yield value
+
+
+def _function_terms(task: ArchiveResolutionEvalTask) -> Iterable[str]:
+    yield from _constraint_terms(task, ("function_hint", "appearance_hint", "descriptor_hint"))
+    expected_plan = task.expected_plan or {}
+    constraints = expected_plan.get("constraints")
+    if isinstance(constraints, Mapping):
+        for key in ("function_hint", "descriptor_hint"):
+            value = constraints.get(key)
+            if isinstance(value, str):
+                yield value
+    if "registry" in task.raw_query.casefold():
+        yield "registry repair"
+    if "ftp" in task.raw_query.casefold():
+        yield "FTP client"
+
+
+def _constraint_terms(value: Any, keys: tuple[str, ...]) -> Iterable[str]:
+    if isinstance(value, Mapping):
+        for key, item in value.items():
+            if key in keys and isinstance(item, str):
+                yield item
+            yield from _constraint_terms(item, keys)
+    elif isinstance(value, list):
+        for item in value:
+            yield from _constraint_terms(item, keys)
+
+
+def _looks_like_artifact_locator(value: str) -> bool:
+    lowered = value.casefold()
+    return bool(
+        re.search(r"\.(?:inf|cab|exe|zip|7z)(?:\.txt)?\b", lowered)
+        or "installer" in lowered
+        or "driver" in lowered
+        or "portable-app-package" in lowered
+        or "registry-repair" in lowered
+    )
+
+
+def _has_direct_artifact_locator(paths: tuple[str, ...]) -> bool:
+    return any(
+        re.search(r"\.(?:inf|cab|exe|7z)(?:\.txt)?\b", path.casefold())
+        or "installer" in path.casefold()
+        for path in paths
+    )
+
+
+def _release_identity_present(product_terms: tuple[str, ...], compact_observed: str) -> bool:
+    has_product = _any_term_matches(product_terms, compact_observed)
+    has_release_word = "release" in compact_observed or "version" in compact_observed
+    has_version_number = bool(re.search(r"\d+(?:\.\d+)+", compact_observed))
+    return has_product and has_release_word and has_version_number
+
+
+def _any_term_matches(terms: Iterable[str], compact_observed: str) -> bool:
+    return any(_compact_text(term) and _compact_text(term) in compact_observed for term in terms)
+
+
+def _matched_terms(terms: Iterable[str], compact_observed: str) -> list[str]:
+    return sorted(
+        {
+            term
+            for term in terms
+            if _compact_text(term) and _compact_text(term) in compact_observed
+        }
+    )
 
 
 def _flatten_strings(value: Any) -> Iterable[str]:
