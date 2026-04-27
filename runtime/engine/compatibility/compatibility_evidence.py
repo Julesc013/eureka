@@ -458,12 +458,12 @@ def _snippet(value: str) -> str | None:
 
 
 _PLATFORM_ALIASES: tuple[tuple[tuple[str, ...], PlatformRef], ...] = (
-    (("windows 7", "windows nt 6.1", "nt 6.1", "win7"), PlatformRef("windows", "Windows 7", "NT 6.1", "Windows 7")),
-    (("windows vista", "windows nt 6.0", "nt 6.0", "vista", "winvista"), PlatformRef("windows", "Windows Vista", "NT 6.0", "Windows Vista")),
-    (("windows xp", "windows nt 5.1", "nt 5.1", "winxp"), PlatformRef("windows", "Windows XP", "NT 5.1", "Windows XP")),
-    (("windows 2000", "windows nt 5.0", "nt 5.0", "win2000", "win2k"), PlatformRef("windows", "Windows 2000", "NT 5.0", "Windows 2000")),
-    (("windows 98", "win98"), PlatformRef("windows", "Windows 98", None, "Windows 98")),
-    (("windows 95", "win95"), PlatformRef("windows", "Windows 95", None, "Windows 95")),
+    (("windows 7", "windows7", "windows nt 6.1", "nt 6.1", "win7"), PlatformRef("windows", "Windows 7", "NT 6.1", "Windows 7")),
+    (("windows vista", "windowsvista", "windows nt 6.0", "nt 6.0", "vista", "winvista"), PlatformRef("windows", "Windows Vista", "NT 6.0", "Windows Vista")),
+    (("windows xp", "windowsxp", "windows nt 5.1", "nt 5.1", "winxp"), PlatformRef("windows", "Windows XP", "NT 5.1", "Windows XP")),
+    (("windows 2000", "windows2000", "windows nt 5.0", "nt 5.0", "win2000", "win2k"), PlatformRef("windows", "Windows 2000", "NT 5.0", "Windows 2000")),
+    (("windows 98", "windows98", "win98"), PlatformRef("windows", "Windows 98", None, "Windows 98")),
+    (("windows 95", "windows95", "win95"), PlatformRef("windows", "Windows 95", None, "Windows 95")),
     (("mac os 9", "classic mac os"), PlatformRef("macos", "Mac OS 9", None, "Mac OS 9")),
     (("mac os x 10.4", "tiger", "powerpc"), PlatformRef("macos", "Mac OS X 10.4", "10.4", "Tiger")),
     (("mac os x 10.6", "snow leopard"), PlatformRef("macos", "Mac OS X 10.6", "10.6", "Snow Leopard")),

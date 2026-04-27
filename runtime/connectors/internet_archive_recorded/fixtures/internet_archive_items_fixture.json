@@ -130,7 +130,7 @@
     {
       "item": {
         "identifier": "ia-thinkpad-t42-wireless-support-fixture",
-        "title": "ThinkPad T42 wireless driver support media recorded fixture",
+        "title": "ThinkPad T42 Wi-Fi wireless driver support media recorded fixture",
         "mediatype": "software",
         "collection": [
           "software",
@@ -180,7 +180,425 @@
         ],
         "required_features": [
           "Windows 2000",
-          "ThinkPad T42 wireless"
+          "ThinkPad T42 Wi-Fi wireless"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-win7-portable-apps-fixture",
+        "title": "Windows 7 portable apps archive recorded fixture",
+        "mediatype": "software",
+        "collection": [
+          "software",
+          "portable_apps",
+          "vintage"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "2011",
+        "description": "Recorded metadata for Windows 7 apps and Windows NT 6.1 utilities. The file list uses text stand-ins for an individual application installer and portable app package with Windows 7 compatibility evidence.",
+        "metadata": {
+          "platforms": [
+            "Windows 7",
+            "Windows NT 6.1"
+          ],
+          "architectures": [
+            "x86",
+            "x64"
+          ],
+          "artifact_roles": [
+            "portable_app_package",
+            "individual_application_installer",
+            "compatibility_note"
+          ]
+        },
+        "files": [
+          {
+            "name": "portable-app-package/README-windows7.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 218,
+            "sha256": "9331346383523f066a4316b8ad6d7d49d38f2e1a798edcfde192986fe8eb8d35"
+          },
+          {
+            "name": "portable-app-package/individual-application-installer.exe.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 184,
+            "sha256": "bff7a35e3c2e2437b4a6f0b34b9100cdfb61f1eba22bbefc951f770d7f4c3bd7"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86",
+          "x64"
+        ],
+        "required_features": [
+          "Windows 7",
+          "Windows NT 6.1"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-win98-registry-repair-fixture",
+        "title": "Windows 98 registry repair utility recorded fixture",
+        "mediatype": "software",
+        "collection": [
+          "software",
+          "utilities",
+          "vintage"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "1999",
+        "description": "Recorded metadata for software to fix broken registry entries on Windows 98. Payload entries are text stand-ins for a registry repair utility, Windows 98 compatible installer, and README evidence, not redistributed software.",
+        "metadata": {
+          "platforms": [
+            "Windows 98"
+          ],
+          "architectures": [
+            "x86"
+          ],
+          "artifact_roles": [
+            "registry_repair_utility",
+            "installer_stub",
+            "readme"
+          ]
+        },
+        "files": [
+          {
+            "name": "registry-repair/registry-repair.exe.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 176,
+            "sha256": "a6de13b5cbb7a9b6bf6700466f3a4a3f27c9d8d5e55b03b1ce8742be35837554"
+          },
+          {
+            "name": "registry-repair/README-windows98.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 220,
+            "sha256": "649cfc27c0f627aac0ba95fe75ef5f13a70a98ed0a669a06840ccdb6f38df7cb"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 98"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-vlc-xp-release-notes-fixture",
+        "title": "latest VLC for Windows XP versioned release notes fixture",
+        "mediatype": "software",
+        "collection": [
+          "software",
+          "media_players",
+          "documentation"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "2014",
+        "description": "Recorded release-note fixture for a VLC versioned release with Windows XP compatibility evidence. This is partial source evidence and does not assert the actual final compatible VLC version.",
+        "metadata": {
+          "platforms": [
+            "Windows XP",
+            "Windows NT 5.1"
+          ],
+          "architectures": [
+            "x86"
+          ],
+          "artifact_roles": [
+            "release_notes",
+            "versioned_release",
+            "compatibility_note"
+          ]
+        },
+        "files": [
+          {
+            "name": "vlc/windows-xp-release-notes.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 240,
+            "sha256": "1fbb9c761a16b95bda8a795030648c344b6b72efba976b98f8d1ef6f7f8cd25c"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows XP",
+          "Windows NT 5.1"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-opera-win2000-notes-fixture",
+        "title": "last Opera for Windows 2000 compatibility note fixture",
+        "mediatype": "software",
+        "collection": [
+          "software",
+          "browsers",
+          "documentation"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "2010",
+        "description": "Recorded note for an Opera versioned release with a Windows 2000 compatibility note. This fixture is partial evidence and does not assert final release identity.",
+        "metadata": {
+          "platforms": [
+            "Windows 2000",
+            "Windows NT 5.0"
+          ],
+          "architectures": [
+            "x86"
+          ],
+          "artifact_roles": [
+            "release_notes",
+            "versioned_release",
+            "compatibility_note"
+          ]
+        },
+        "files": [
+          {
+            "name": "opera/windows2000-compatibility-note.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 214,
+            "sha256": "b324438c1d275b1af99c71a0e4d61bc05c5fceab05cd30fd50732a2bcad27137"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 2000",
+          "Windows NT 5.0"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-winamp-win98-notes-fixture",
+        "title": "last Winamp for Windows 98 compatibility evidence fixture",
+        "mediatype": "software",
+        "collection": [
+          "software",
+          "media_players",
+          "documentation"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "2004",
+        "description": "Recorded notes for a Winamp versioned installer with Windows 98 compatibility evidence. This is a tiny text fixture and not a redistributed installer.",
+        "metadata": {
+          "platforms": [
+            "Windows 98"
+          ],
+          "architectures": [
+            "x86"
+          ],
+          "artifact_roles": [
+            "versioned_installer_note",
+            "compatibility_note"
+          ]
+        },
+        "files": [
+          {
+            "name": "winamp/winamp-versioned-installer-windows98.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 228,
+            "sha256": "d845fa852d8170e6b23e10cfbb55a759c39236733b6d4e0d0846529789df3856"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 98"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-mac-os9-browser-doc-fixture",
+        "title": "Mac OS 9 browser installer documentation fixture",
+        "mediatype": "texts",
+        "collection": [
+          "software",
+          "browsers",
+          "documentation"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "2001",
+        "description": "Documentation-only recorded fixture for a classic Mac browser archive and Mac OS 9 browser installer evidence. No executable artifact is included.",
+        "metadata": {
+          "platforms": [
+            "Mac OS 9",
+            "Classic Mac OS"
+          ],
+          "architectures": [
+            "ppc"
+          ],
+          "artifact_roles": [
+            "documentation",
+            "browser_archive_note"
+          ]
+        },
+        "files": [
+          {
+            "name": "classic-mac/browser-archive-readme.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 205,
+            "sha256": "ea591c7bde70edb4cb3c967ffb1efcecc7ee10c42ece6866d446ca9c5c2870fd"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "macos"
+        ],
+        "required_architectures": [
+          "ppc"
+        ],
+        "required_features": [
+          "Mac OS 9",
+          "Classic Mac OS"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-powerpc-tiger-browser-fixture",
+        "title": "PowerPC Mac OS X 10.4 browser build documentation fixture",
+        "mediatype": "texts",
+        "collection": [
+          "software",
+          "browsers",
+          "documentation"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "2008",
+        "description": "Documentation-only recorded fixture for a PowerPC browser build and Mac OS X 10.4 compatible release notes. No executable artifact is included.",
+        "metadata": {
+          "platforms": [
+            "PowerPC Mac OS X 10.4",
+            "Mac OS X Tiger"
+          ],
+          "architectures": [
+            "ppc"
+          ],
+          "artifact_roles": [
+            "documentation",
+            "browser_build_note",
+            "compatibility_note"
+          ]
+        },
+        "files": [
+          {
+            "name": "powerpc/tiger-browser-build-readme.txt",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 226,
+            "sha256": "641af54302fc25ffac8a2a420a900ea414223137701e083bfa1ca729e2904e4f"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "macos"
+        ],
+        "required_architectures": [
+          "ppc"
+        ],
+        "required_features": [
+          "Mac OS X 10.4",
+          "Tiger",
+          "PowerPC"
+        ]
+      }
+    },
+    {
+      "item": {
+        "identifier": "ia-creative-ct1740-win98-driver-fixture",
+        "title": "Creative CT1740 driver Windows 98 support media fixture",
+        "mediatype": "software",
+        "collection": [
+          "software",
+          "drivers",
+          "support_media"
+        ],
+        "creator": "Eureka recorded fixture corpus",
+        "date": "1998",
+        "description": "Recorded file-list evidence for a Creative CT1740 driver package with Windows 98 INF notes. Files are text stand-ins only.",
+        "metadata": {
+          "platforms": [
+            "Windows 98"
+          ],
+          "architectures": [
+            "x86"
+          ],
+          "artifact_roles": [
+            "driver",
+            "inf",
+            "readme",
+            "support_media"
+          ]
+        },
+        "files": [
+          {
+            "name": "DRIVERS/SOUND/CREATIVE_CT1740/WINDOWS98/DRIVER.INF",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 226,
+            "sha256": "5fa776b504820e8d6c03cd1c7fe0a9feb898f75d648a458976d45d9d1730ee6e"
+          },
+          {
+            "name": "DRIVERS/SOUND/CREATIVE_CT1740/WINDOWS98/README.TXT",
+            "format": "Text",
+            "content_type": "text/plain",
+            "size": 218,
+            "sha256": "bb02c55f7baa1158e759fd911535c048a4f34cb8f39144ad408409d9db9378af"
+          }
+        ]
+      },
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 98",
+          "Creative CT1740"
         ]
       }
     }

@@ -79,7 +79,7 @@
       "object": {
         "id": "obj.local-bundle.driver-support-cd",
         "kind": "driver_support_bundle",
-        "label": "ThinkPad T42 wireless support bundle recorded fixture"
+        "label": "ThinkPad T42 Wi-Fi wireless support bundle recorded fixture"
       },
       "state": {
         "id": "state.local-bundle.driver-support-cd.fixture",
@@ -90,7 +90,7 @@
       "bundle": {
         "id": "rep.local-bundle.driver-support-cd.zip",
         "kind": "fixture_archive",
-        "label": "ThinkPad T42 wireless driver support ZIP fixture",
+        "label": "ThinkPad T42 Wi-Fi wireless driver support ZIP fixture",
         "content_type": "application/zip",
         "filename": "driver_support_cd.zip",
         "payload_fixture": {
@@ -108,7 +108,7 @@
         {
           "member_path": "README.txt",
           "member_role": "readme",
-          "compatibility_note": "Fixture readme records ThinkPad T42 wireless and Windows 2000 hints."
+          "compatibility_note": "Fixture readme records ThinkPad T42 Wi-Fi wireless and Windows 2000 hints."
         },
         {
           "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
@@ -118,7 +118,7 @@
         {
           "member_path": "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
           "member_role": "readme",
-          "compatibility_note": "ThinkPad T42 wireless driver readme for Windows 2000 fixture."
+          "compatibility_note": "ThinkPad T42 Wi-Fi wireless driver readme for Windows 2000 fixture."
         },
         {
           "member_path": "compatibility/windows2000.txt",
@@ -135,7 +135,232 @@
         ],
         "required_features": [
           "Windows 2000",
-          "ThinkPad T42 wireless"
+          "ThinkPad T42 Wi-Fi wireless"
+        ]
+      }
+    },
+    {
+      "bundle_id": "windows-98-registry-repair-bundle",
+      "version": "1.0",
+      "object": {
+        "id": "obj.local-bundle.windows-98-registry-repair-bundle",
+        "kind": "software_bundle",
+        "label": "Windows 98 software to fix broken registry repair utility bundle recorded fixture"
+      },
+      "state": {
+        "id": "state.local-bundle.windows-98-registry-repair-bundle.fixture",
+        "subject_id": "obj.local-bundle.windows-98-registry-repair-bundle",
+        "kind": "fixture_bundle",
+        "standing": "available"
+      },
+      "bundle": {
+        "id": "rep.local-bundle.windows-98-registry-repair-bundle.zip",
+        "kind": "fixture_archive",
+        "label": "Windows 98 software to fix broken registry repair utility ZIP fixture",
+        "content_type": "application/zip",
+        "filename": "windows_98_registry_repair_bundle.zip",
+        "payload_fixture": {
+          "locator": "runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_98_registry_repair_bundle.zip",
+          "filename": "windows_98_registry_repair_bundle.zip"
+        },
+        "access_path": {
+          "id": "access.local-bundle.windows-98-registry-repair-bundle.zip",
+          "kind": "download",
+          "locator": "runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_98_registry_repair_bundle.zip",
+          "is_direct": true
+        }
+      },
+      "member_hints": [
+        {
+          "member_path": "README.txt",
+          "member_role": "readme",
+          "compatibility_note": "Fixture readme records software to fix broken registry entries with a registry repair utility for Windows 98."
+        },
+        {
+          "member_path": "compatibility/windows98.txt",
+          "member_role": "compatibility_note",
+          "compatibility_note": "Windows 98 compatibility evidence for the registry repair utility."
+        },
+        {
+          "member_path": "utilities/registry-repair/readme.txt",
+          "member_role": "readme",
+          "compatibility_note": "Readme for a Windows 98 registry repair utility fixture."
+        },
+        {
+          "member_path": "utilities/registry-repair/registry-repair.exe.txt",
+          "member_role": "installer_stub",
+          "compatibility_note": "Text stand-in for a Windows 98 compatible installer."
+        },
+        {
+          "member_path": "manifests/manifest.json",
+          "member_role": "manifest",
+          "compatibility_note": "Manifest records Windows 98 registry repair metadata."
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 98",
+          "registry repair utility"
+        ]
+      }
+    },
+    {
+      "bundle_id": "windows-xp-browser-tools-bundle",
+      "version": "1.0",
+      "object": {
+        "id": "obj.local-bundle.windows-xp-browser-tools-bundle",
+        "kind": "software_bundle",
+        "label": "Windows XP browser and tools bundle recorded fixture"
+      },
+      "state": {
+        "id": "state.local-bundle.windows-xp-browser-tools-bundle.fixture",
+        "subject_id": "obj.local-bundle.windows-xp-browser-tools-bundle",
+        "kind": "fixture_bundle",
+        "standing": "available"
+      },
+      "bundle": {
+        "id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+        "kind": "fixture_archive",
+        "label": "Windows XP browser and tools ZIP fixture",
+        "content_type": "application/zip",
+        "filename": "windows_xp_browser_tools_bundle.zip",
+        "payload_fixture": {
+          "locator": "runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_xp_browser_tools_bundle.zip",
+          "filename": "windows_xp_browser_tools_bundle.zip"
+        },
+        "access_path": {
+          "id": "access.local-bundle.windows-xp-browser-tools-bundle.zip",
+          "kind": "download",
+          "locator": "runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_xp_browser_tools_bundle.zip",
+          "is_direct": true
+        }
+      },
+      "member_hints": [
+        {
+          "member_path": "README.txt",
+          "member_role": "readme",
+          "compatibility_note": "Fixture readme records Windows XP software and XP browser evidence."
+        },
+        {
+          "member_path": "compatibility/windowsxp.txt",
+          "member_role": "compatibility_note",
+          "compatibility_note": "Windows XP and Windows NT 5.1 compatibility evidence."
+        },
+        {
+          "member_path": "browsers/firefox-xp-support/readme.txt",
+          "member_role": "readme",
+          "compatibility_note": "Readme for Firefox XP browser support notes fixture."
+        },
+        {
+          "member_path": "utilities/ftp-blue-client/readme.txt",
+          "member_role": "readme",
+          "compatibility_note": "Text stand-in for an old blue FTP client for XP."
+        },
+        {
+          "member_path": "manifests/manifest.json",
+          "member_role": "manifest",
+          "compatibility_note": "Manifest records Windows XP browser/tools metadata."
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows XP",
+          "Windows NT 5.1"
+        ]
+      }
+    },
+    {
+      "bundle_id": "legacy-hardware-driver-support-bundle",
+      "version": "1.0",
+      "object": {
+        "id": "obj.local-bundle.legacy-hardware-driver-support-bundle",
+        "kind": "driver_support_bundle",
+        "label": "Legacy hardware driver support bundle recorded fixture"
+      },
+      "state": {
+        "id": "state.local-bundle.legacy-hardware-driver-support-bundle.fixture",
+        "subject_id": "obj.local-bundle.legacy-hardware-driver-support-bundle",
+        "kind": "fixture_bundle",
+        "standing": "available"
+      },
+      "bundle": {
+        "id": "rep.local-bundle.legacy-hardware-driver-support-bundle.zip",
+        "kind": "fixture_archive",
+        "label": "Legacy hardware driver support ZIP fixture",
+        "content_type": "application/zip",
+        "filename": "legacy_hardware_driver_support_bundle.zip",
+        "payload_fixture": {
+          "locator": "runtime/connectors/local_bundle_fixtures/fixtures/payloads/legacy_hardware_driver_support_bundle.zip",
+          "filename": "legacy_hardware_driver_support_bundle.zip"
+        },
+        "access_path": {
+          "id": "access.local-bundle.legacy-hardware-driver-support-bundle.zip",
+          "kind": "download",
+          "locator": "runtime/connectors/local_bundle_fixtures/fixtures/payloads/legacy_hardware_driver_support_bundle.zip",
+          "is_direct": true
+        }
+      },
+      "member_hints": [
+        {
+          "member_path": "README.txt",
+          "member_role": "readme",
+          "compatibility_note": "Fixture readme records Creative CT1740 Windows 98 and 3Com 3C905 Windows 95 driver evidence."
+        },
+        {
+          "member_path": "compatibility/windows98.txt",
+          "member_role": "compatibility_note",
+          "compatibility_note": "Windows 98 driver support evidence."
+        },
+        {
+          "member_path": "drivers/sound/creative_ct1740/windows98/readme.txt",
+          "member_role": "readme",
+          "compatibility_note": "Creative CT1740 driver package readme for Windows 98."
+        },
+        {
+          "member_path": "drivers/sound/creative_ct1740/windows98/driver.inf",
+          "member_role": "driver_inf",
+          "compatibility_note": "Windows 98 INF for Creative CT1740 driver package."
+        },
+        {
+          "member_path": "drivers/network/3com_3c905/windows95/readme.txt",
+          "member_role": "readme",
+          "compatibility_note": "3Com 3C905 driver package readme for Windows 95."
+        },
+        {
+          "member_path": "drivers/network/3com_3c905/windows95/driver.inf",
+          "member_role": "driver_inf",
+          "compatibility_note": "Windows 95 INF for 3Com 3C905 driver package."
+        },
+        {
+          "member_path": "manifests/manifest.json",
+          "member_role": "manifest",
+          "compatibility_note": "Manifest records Creative CT1740 and 3Com 3C905 driver metadata."
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 98",
+          "Windows 95",
+          "Creative CT1740",
+          "3Com 3C905"
         ]
       }
     }

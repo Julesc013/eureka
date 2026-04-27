@@ -91,14 +91,14 @@
     ],
     "connector_mode": "fixture_only",
     "last_fixture_update": "static_fixture",
-    "coverage_notes": "Committed ZIP fixtures exercise bundle representation, member listing, and member readback for the member-level discovery wedge.",
+    "coverage_notes": "Committed ZIP fixtures exercise bundle representation, member listing, member readback, registry-repair utility, Windows XP browser/tool, and legacy driver support cases for the member-level discovery wedge.",
     "current_limitations": [
       "Committed fixture scope only",
       "No arbitrary user filesystem ingestion",
       "No public-alpha local path access",
       "No live source probing"
     ],
-    "next_coverage_step": "Use these fixtures as the control corpus for Member-Level Synthetic Records v0."
+    "next_coverage_step": "Use the expanded fixtures as the control corpus for follow-up audit deltas, compatibility evidence expansion, and future old-platform source coverage work."
   },
   "notes": "Active repo-governed fixture source distinct from local-files-placeholder. It is not a local-files connector."
 }

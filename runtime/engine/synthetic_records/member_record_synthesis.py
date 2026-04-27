@@ -280,7 +280,7 @@ def _member_kind(member_path: str) -> str:
         return "manifest"
     if "manual" in value or "documentation" in value or "docs/" in value:
         return "documentation"
-    if "/utilities/" in value or "utility" in value or "7z" in value:
+    if value.startswith("utilities/") or "/utilities/" in value or "utility" in value or "7z" in value:
         return "utility"
     if ".exe" in value or "installer" in value or "setup" in value:
         return "installer_like"

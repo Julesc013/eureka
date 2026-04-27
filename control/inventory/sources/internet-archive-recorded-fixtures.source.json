@@ -84,7 +84,7 @@
     ],
     "connector_mode": "recorded_fixture_only",
     "last_fixture_update": "recorded_fixture_snapshot",
-    "coverage_notes": "Tiny Internet-Archive-shaped fixture records expose item metadata and file listings for old-platform software and driver/support-media examples.",
+    "coverage_notes": "Tiny Internet-Archive-shaped fixture records expose item metadata and file listings for old-platform software, latest-compatible release notes, browser documentation, utility, registry-repair, and driver/support-media examples.",
     "current_limitations": [
       "Recorded fixture scope only",
       "No live Internet Archive API access",
