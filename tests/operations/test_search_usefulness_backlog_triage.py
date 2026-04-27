@@ -46,7 +46,7 @@ class SearchUsefulnessBacklogTriageTest(unittest.TestCase):
         self.assertEqual(selected[0]["title"], payload["immediate_next_milestone"])
         self.assertEqual(
             payload["immediate_next_milestone"],
-            "Manual Observation Batch 0",
+            "Manual Observation Batch 0 Execution",
         )
         self.assertEqual(payload["selected_primary_wedge"], "old_platform_software")
         self.assertEqual(payload["selected_secondary_wedge"], "member_level_discovery")
@@ -69,6 +69,7 @@ class SearchUsefulnessBacklogTriageTest(unittest.TestCase):
             "Article/Scan Fixture Pack v0",
             "Manual External Baseline Observation Pack v0",
             "Manual Observation Batch 0",
+            "Manual Observation Batch 0 Execution",
             "Rust Query Planner Parity Candidate v0",
             "Public Alpha Rehearsal Evidence v0",
             "Compatibility Surface Strategy v0",

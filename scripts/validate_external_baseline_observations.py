@@ -5,12 +5,13 @@ from collections import Counter, defaultdict
 import json
 from pathlib import Path
 import sys
-from typing import Any, Iterable, Mapping, Sequence, TextIO
+from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 EXTERNAL_BASELINE_ROOT = REPO_ROOT / "evals" / "search_usefulness" / "external_baselines"
 DEFAULT_OBSERVATIONS_DIR = EXTERNAL_BASELINE_ROOT / "observations"
+DEFAULT_BATCHES_DIR = EXTERNAL_BASELINE_ROOT / "batches"
 QUERY_PACK_PATH = REPO_ROOT / "evals" / "search_usefulness" / "queries" / "search_usefulness_v0.json"
 
 VALID_STATUSES = {
@@ -55,11 +56,17 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
         default=str(DEFAULT_OBSERVATIONS_DIR),
         help="Directory of committed or temporary observation JSON files.",
     )
+    parser.add_argument(
+        "--batches-dir",
+        default=str(DEFAULT_BATCHES_DIR),
+        help="Directory of manual observation batch directories.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON summary.")
     args = parser.parse_args(list(argv) if argv is not None else None)
 
     report = validate_external_baseline_observations(
-        observations_dir=Path(args.observations_dir)
+        observations_dir=Path(args.observations_dir),
+        batches_dir=Path(args.batches_dir),
     )
     output = stdout or sys.stdout
     if args.json:
@@ -72,6 +79,7 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
 def validate_external_baseline_observations(
     *,
     observations_dir: Path = DEFAULT_OBSERVATIONS_DIR,
+    batches_dir: Path = DEFAULT_BATCHES_DIR,
 ) -> dict[str, Any]:
     errors: list[str] = []
     systems_payload = _load_json(EXTERNAL_BASELINE_ROOT / "systems.json", errors)
@@ -118,10 +126,18 @@ def validate_external_baseline_observations(
                 record,
                 source=f"{_rel(path)}#{index}",
                 system_ids=system_ids,
+                query_ids=query_ids,
                 status_counts_by_system=status_counts_by_system,
                 observed_query_ids_by_system=observed_query_ids_by_system,
                 errors=errors,
             )
+
+    batches = _validate_batches(
+        batches_dir,
+        system_ids=system_ids,
+        query_ids=query_ids,
+        errors=errors,
+    )
 
     systems = sorted(system_ids)
     status_counts = {
@@ -145,6 +161,7 @@ def validate_external_baseline_observations(
             "manifest_count": manifest_count,
             "record_count": record_count,
         },
+        "batches": batches,
         "query_count": len(query_ids),
         "status_counts_by_system": status_counts,
         "query_coverage": query_coverage,
@@ -260,6 +277,7 @@ def _validate_observation_record(
     *,
     source: str,
     system_ids: set[str],
+    query_ids: set[str],
     status_counts_by_system: dict[str, Counter[str]],
     observed_query_ids_by_system: dict[str, set[str]],
     errors: list[str],
@@ -270,6 +288,9 @@ def _validate_observation_record(
     system_id = _string(record.get("system_id"))
     if system_id not in system_ids:
         errors.append(f"{source}: unknown system_id '{system_id}'.")
+    query_id = _string(record.get("query_id"))
+    if query_id and query_id not in query_ids:
+        errors.append(f"{source}: unknown query_id '{query_id}'.")
     status = _string(record.get("observation_status"))
     if status not in VALID_STATUSES:
         errors.append(f"{source}: invalid observation_status '{status}'.")
@@ -289,7 +310,6 @@ def _validate_observation_record(
             if not value or value.startswith("<"):
                 errors.append(f"{source}: observed record missing {required}.")
         if system_id in system_ids:
-            query_id = _string(record.get("query_id"))
             if query_id:
                 observed_query_ids_by_system[system_id].add(query_id)
     if status == PENDING_STATUS:
@@ -306,6 +326,151 @@ def _validate_observation_record(
             for key, value in scores.items():
                 if not isinstance(value, int) or value < 0 or value > 3:
                     errors.append(f"{source}: score {key} must be an integer from 0 to 3.")
+
+
+def _validate_batches(
+    batches_dir: Path,
+    *,
+    system_ids: set[str],
+    query_ids: set[str],
+    errors: list[str],
+) -> dict[str, Any]:
+    if not batches_dir.exists():
+        return {}
+    batch_reports: dict[str, Any] = {}
+    for batch_dir in sorted(path for path in batches_dir.iterdir() if path.is_dir()):
+        manifest_path = batch_dir / "batch_manifest.json"
+        manifest = _load_json(manifest_path, errors)
+        if not isinstance(manifest, Mapping):
+            errors.append(f"{_rel(manifest_path)}: batch manifest must contain an object.")
+            continue
+        batch_id = _string(manifest.get("batch_id"))
+        if not batch_id:
+            errors.append(f"{_rel(manifest_path)}: missing batch_id.")
+            batch_id = batch_dir.name
+        selected_query_ids = _string_list(
+            manifest.get("selected_query_ids"),
+            source=f"{_rel(manifest_path)}: selected_query_ids",
+            errors=errors,
+        )
+        selected_system_ids = _string_list(
+            manifest.get("selected_system_ids"),
+            source=f"{_rel(manifest_path)}: selected_system_ids",
+            errors=errors,
+        )
+        expected_observation_count = manifest.get("expected_observation_count")
+        unknown_queries = sorted(set(selected_query_ids) - query_ids)
+        unknown_systems = sorted(set(selected_system_ids) - system_ids)
+        if unknown_queries:
+            errors.append(f"{_rel(manifest_path)}: unknown selected query ids {unknown_queries}.")
+        if unknown_systems:
+            errors.append(f"{_rel(manifest_path)}: unknown selected system ids {unknown_systems}.")
+        if manifest.get("status") != PENDING_STATUS:
+            errors.append(f"{_rel(manifest_path)}: batch status must be {PENDING_STATUS}.")
+
+        computed_expected = len(selected_query_ids) * len(selected_system_ids)
+        if expected_observation_count != computed_expected:
+            errors.append(
+                f"{_rel(manifest_path)}: expected_observation_count must be {computed_expected}."
+            )
+
+        observations_path = (
+            batch_dir / "observations" / f"pending_{batch_id}_observations.json"
+        )
+        payload = _load_json(observations_path, errors)
+        records = []
+        if not isinstance(payload, Mapping):
+            errors.append(f"{_rel(observations_path)}: batch observations must contain an object.")
+        else:
+            if payload.get("observation_status") != PENDING_STATUS:
+                errors.append(
+                    f"{_rel(observations_path)}: batch pending file must use {PENDING_STATUS}."
+                )
+            raw_records = payload.get("observations")
+            if not isinstance(raw_records, list):
+                errors.append(f"{_rel(observations_path)}: observations must be a list.")
+            else:
+                records = raw_records
+
+        selected_query_set = set(selected_query_ids)
+        selected_system_set = set(selected_system_ids)
+        slot_keys: set[tuple[str, str]] = set()
+        status_counts: Counter[str] = Counter()
+        observed_query_ids: set[str] = set()
+        for index, record in enumerate(records):
+            source = f"{_rel(observations_path)}#{index}"
+            if isinstance(record, Mapping):
+                query_id = _string(record.get("query_id"))
+                system_id = _string(record.get("system_id"))
+                if query_id not in selected_query_set:
+                    errors.append(f"{source}: query_id must be selected by the batch.")
+                if system_id not in selected_system_set:
+                    errors.append(f"{source}: system_id must be selected by the batch.")
+                if (query_id, system_id) in slot_keys:
+                    errors.append(f"{source}: duplicate query/system slot {query_id}/{system_id}.")
+                slot_keys.add((query_id, system_id))
+                if record.get("observation_status") == PENDING_STATUS and record.get("top_results") != []:
+                    errors.append(f"{source}: pending batch slot must not contain top_results.")
+            temp_status_counts: dict[str, Counter[str]] = defaultdict(Counter)
+            temp_observed_query_ids: dict[str, set[str]] = defaultdict(set)
+            _validate_observation_record(
+                record,
+                source=source,
+                system_ids=system_ids,
+                query_ids=query_ids,
+                status_counts_by_system=temp_status_counts,
+                observed_query_ids_by_system=temp_observed_query_ids,
+                errors=errors,
+            )
+            if isinstance(record, Mapping):
+                status = _string(record.get("observation_status"))
+                if status in VALID_STATUSES:
+                    status_counts[status] += 1
+                if status == "observed":
+                    query_id = _string(record.get("query_id"))
+                    if query_id:
+                        observed_query_ids.add(query_id)
+
+        missing_slots = sorted(
+            f"{query_id}::{system_id}"
+            for query_id in selected_query_ids
+            for system_id in selected_system_ids
+            if (query_id, system_id) not in slot_keys
+        )
+        if missing_slots:
+            errors.append(f"{_rel(observations_path)}: missing observation slots {missing_slots}.")
+        if len(records) != computed_expected:
+            errors.append(
+                f"{_rel(observations_path)}: expected {computed_expected} observations, found {len(records)}."
+            )
+        observed_count = status_counts.get("observed", 0)
+        batch_reports[batch_id] = {
+            "directory": str(batch_dir),
+            "status": manifest.get("status"),
+            "selected_query_count": len(selected_query_ids),
+            "selected_system_count": len(selected_system_ids),
+            "expected_observation_count": computed_expected,
+            "observation_file": str(observations_path),
+            "observation_count": len(records),
+            "status_counts": dict(sorted(status_counts.items())),
+            "pending_observation_count": status_counts.get(PENDING_STATUS, 0),
+            "observed_observation_count": observed_count,
+            "completion_percent": 0
+            if computed_expected == 0
+            else round((observed_count / computed_expected) * 100, 2),
+            "selected_query_ids": selected_query_ids,
+            "selected_system_ids": selected_system_ids,
+            "missing_observation_slots": missing_slots,
+            "observed_query_ids": sorted(observed_query_ids),
+        }
+    return dict(sorted(batch_reports.items()))
+
+
+def _string_list(value: Any, *, source: str, errors: list[str]) -> list[str]:
+    if not isinstance(value, list) or not all(isinstance(item, str) for item in value):
+        errors.append(f"{source} must be a string list.")
+        return []
+    return list(value)
 
 
 def _query_ids(payload: Any, errors: list[str]) -> set[str]:
@@ -357,6 +522,20 @@ def _format_plain_report(report: Mapping[str, Any]) -> str:
             f"observed={counts.get('observed', 0)}, "
             f"expected_queries={coverage['expected_query_count']}"
         )
+    batches = report.get("batches", {})
+    if isinstance(batches, Mapping) and batches:
+        lines.append("")
+        lines.append("Batches")
+        for batch_id, batch in sorted(batches.items()):
+            if not isinstance(batch, Mapping):
+                continue
+            lines.append(
+                "- "
+                f"{batch_id}: pending={batch.get('pending_observation_count', 0)}, "
+                f"observed={batch.get('observed_observation_count', 0)}, "
+                f"expected={batch.get('expected_observation_count', 0)}, "
+                f"completion={batch.get('completion_percent', 0)}%"
+            )
     if report["errors"]:
         lines.append("")
         lines.append("Errors")

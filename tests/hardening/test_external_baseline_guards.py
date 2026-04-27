@@ -24,12 +24,19 @@ class ExternalBaselineGuardsTest(unittest.TestCase):
                 repo_path("evals/search_usefulness/external_baselines/observations").glob("*.json")
             )
         )
+        observation_files.extend(
+            sorted(
+                repo_path(
+                    "evals/search_usefulness/external_baselines/batches"
+                ).glob("*/observations/*.json")
+            )
+        )
 
         for path in observation_files:
             payload = json.loads(path.read_text(encoding="utf-8"))
             records = payload.get("observations", [payload])
             for record in records:
-                system = record.get("system")
+                system = record.get("system") or record.get("system_id")
                 if system not in EXTERNAL_SYSTEMS:
                     continue
                 if record.get("observation_status") != "observed":
@@ -49,6 +56,21 @@ class ExternalBaselineGuardsTest(unittest.TestCase):
         self.assertEqual(len(manifest["query_ids"]), 64)
         self.assertEqual(len(manifest["required_system_ids"]), 3)
         self.assertNotIn("top_results", manifest)
+
+    def test_batch_zero_pending_observations_are_not_observed(self):
+        payload = json.loads(
+            repo_path(
+                "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json"
+            ).read_text(encoding="utf-8")
+        )
+
+        self.assertEqual(payload["observation_status"], "pending_manual_observation")
+        self.assertEqual(len(payload["observations"]), 39)
+        for record in payload["observations"]:
+            self.assertEqual(record["observation_status"], "pending_manual_observation")
+            self.assertEqual(record["top_results"], [])
+            self.assertIsNone(record["observed_at"])
+            self.assertIsNone(record["operator"])
 
     def test_docs_record_manual_pending_external_baseline_policy(self):
         docs = [

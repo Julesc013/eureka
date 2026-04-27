@@ -30,6 +30,12 @@ class ExternalBaselineObservationScriptTest(unittest.TestCase):
             with self.subTest(system_id=system_id):
                 self.assertEqual(counts["pending_manual_observation"], 64)
                 self.assertNotIn("observed", counts)
+        self.assertIn("batch_0", payload["batches"])
+        batch = payload["batches"]["batch_0"]
+        self.assertEqual(batch["selected_query_count"], 13)
+        self.assertEqual(batch["expected_observation_count"], 39)
+        self.assertEqual(batch["pending_observation_count"], 39)
+        self.assertEqual(batch["observed_observation_count"], 0)
 
     def test_validator_plain_text_summary(self) -> None:
         completed = subprocess.run(
@@ -43,6 +49,8 @@ class ExternalBaselineObservationScriptTest(unittest.TestCase):
         self.assertIn("Manual external baseline observations", completed.stdout)
         self.assertIn("google_web_search", completed.stdout)
         self.assertIn("pending=64", completed.stdout)
+        self.assertIn("batch_0", completed.stdout)
+        self.assertIn("expected=39", completed.stdout)
 
     def test_reporter_plain_and_json(self) -> None:
         plain = subprocess.run(
@@ -62,8 +70,12 @@ class ExternalBaselineObservationScriptTest(unittest.TestCase):
         payload = json.loads(structured.stdout)
 
         self.assertIn("External baseline observation status", plain.stdout)
+        self.assertIn("batch_0", plain.stdout)
         self.assertEqual(payload["status"], "ready")
+        self.assertEqual(payload["global_slot_counts"]["pending_manual_observation"], 192)
         self.assertEqual(payload["missing_observation_slots"]["google_web_search"], 64)
+        self.assertEqual(payload["batches"]["batch_0"]["pending_observation_count"], 39)
+        self.assertEqual(payload["batches"]["batch_0"]["completion_percent"], 0.0)
 
     def test_validator_rejects_observed_record_missing_metadata(self) -> None:
         record = {

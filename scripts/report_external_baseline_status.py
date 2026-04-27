@@ -12,6 +12,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.validate_external_baseline_observations import (  # noqa: E402
+    DEFAULT_BATCHES_DIR,
     DEFAULT_OBSERVATIONS_DIR,
     PENDING_STATUS,
     validate_external_baseline_observations,
@@ -30,11 +31,25 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
         default=str(DEFAULT_OBSERVATIONS_DIR),
         help="Directory of observation JSON files.",
     )
+    parser.add_argument(
+        "--batches-dir",
+        default=str(DEFAULT_BATCHES_DIR),
+        help="Directory of manual observation batch directories.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON report.")
     args = parser.parse_args(list(argv) if argv is not None else None)
 
     validation = validate_external_baseline_observations(
-        observations_dir=Path(args.observations_dir)
+        observations_dir=Path(args.observations_dir),
+        batches_dir=Path(args.batches_dir),
+    )
+    global_pending = sum(
+        counts.get(PENDING_STATUS, 0)
+        for counts in validation["status_counts_by_system"].values()
+    )
+    global_observed = sum(
+        counts.get("observed", 0)
+        for counts in validation["status_counts_by_system"].values()
     )
     report = {
         "status": "ready" if validation["status"] == "valid" else "invalid",
@@ -42,8 +57,13 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
         "validation_status": validation["status"],
         "query_count": validation["query_count"],
         "systems": validation["systems"],
+        "global_slot_counts": {
+            "pending_manual_observation": global_pending,
+            "observed": global_observed,
+        },
         "status_counts_by_system": validation["status_counts_by_system"],
         "query_coverage": validation["query_coverage"],
+        "batches": validation.get("batches", {}),
         "observed_query_ids": {
             system_id: coverage["observed_query_count"]
             for system_id, coverage in validation["query_coverage"].items()
@@ -72,10 +92,14 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
 
 
 def _format_plain_report(report: dict[str, object]) -> str:
+    global_slot_counts = report["global_slot_counts"]
+    assert isinstance(global_slot_counts, dict)
     lines = [
         "External baseline observation status",
         f"status: {report['status']}",
         f"query_count: {report['query_count']}",
+        f"global_pending_slots: {global_slot_counts['pending_manual_observation']}",
+        f"global_observed_slots: {global_slot_counts['observed']}",
         "",
         "Systems",
     ]
@@ -92,6 +116,20 @@ def _format_plain_report(report: dict[str, object]) -> str:
             f"observed={counts.get('observed', 0)}, "
             f"expected_queries={coverage['expected_query_count']}"
         )
+    batches = report.get("batches", {})
+    if isinstance(batches, dict) and batches:
+        lines.append("")
+        lines.append("Batches")
+        for batch_id, batch in sorted(batches.items()):
+            if not isinstance(batch, dict):
+                continue
+            lines.append(
+                "- "
+                f"{batch_id}: pending={batch.get('pending_observation_count', 0)}, "
+                f"observed={batch.get('observed_observation_count', 0)}, "
+                f"expected={batch.get('expected_observation_count', 0)}, "
+                f"completion={batch.get('completion_percent', 0)}%"
+            )
     if report["errors"]:
         lines.append("")
         lines.append("Errors")
