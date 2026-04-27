@@ -18,10 +18,18 @@ Current scripts:
   not perform web search, Google scraping, Internet Archive scraping, or
   network access
 - `validate_external_baseline_observations.py`: validates the governed manual
-  external-baseline observation area, pending slots, and any future human
-  observation records without querying external systems
+  external-baseline observation area, pending slots, one explicit `--file`,
+  and any future human observation records without querying external systems
 - `report_external_baseline_status.py`: reports manual external-baseline
-  pending/observed coverage without scraping, API calls, or automated searches
+  pending/observed coverage, including Batch 0 progress and `--next-pending`
+  summaries, without scraping, API calls, or automated searches
+- `list_external_baseline_observations.py`: lists pending or observed manual
+  baseline slots by batch, query id, system id, or status without opening
+  browsers, fetching URLs, scraping, or querying external systems
+- `create_external_baseline_observation.py`: creates one fillable pending
+  manual observation JSON file from a batch slot or prints it with `--stdout`;
+  it never marks the record observed, populates top results, fetches URLs, or
+  automates external searches
 - `public_alpha_smoke.py`: runs the local Public Alpha Deployment Readiness smoke checks directly against the stdlib WSGI app, verifies safe status/source/query/search/eval routes, verifies blocked local-path/readback routes, supports `--json`, and exits nonzero if the constrained public-alpha posture regresses
 - `generate_public_alpha_hosting_pack.py`: reads `control/inventory/public_alpha_routes.json` and emits or checks the Public Alpha Hosting Pack route-safety summary; it supports `--check` for repeatable docs validation and does not deploy, host, or mutate route behavior
 - `generate_python_oracle_golden.py`: generates or checks the Rust Parity Fixture Pack v0 Python-oracle golden outputs under `tests/parity/golden/python_oracle/v0/`; it supports `--check`, optional `--output-root`, and `--json`, normalizes unstable timestamps, local index paths, FTS mode, and generation metadata, and does not implement Rust behavior or replace Python runtime paths

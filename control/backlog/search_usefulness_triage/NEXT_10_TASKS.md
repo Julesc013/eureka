@@ -430,7 +430,39 @@ search, Internet Archive metadata search, and Internet Archive full-text/OCR
 search, and updates validation/reporting without performing observations or
 fabricating external baselines.
 
-## 7i. Manual Observation Batch 0 Execution
+## 7i. Manual Observation Entry Helper v0
+
+Why: Batch 0 exists as pending slots, but a human operator needs a safe local
+entry workflow before filling observed records.
+
+Prerequisite: Manual Observation Batch 0 validator/report checks remain green.
+
+Likely files: `scripts/list_external_baseline_observations.py`,
+`scripts/create_external_baseline_observation.py`,
+`scripts/validate_external_baseline_observations.py`,
+`scripts/report_external_baseline_status.py`, `tests/scripts/`, and
+documentation under `evals/search_usefulness/external_baselines/`.
+
+Acceptance criteria: pending slots can be listed; one fillable pending file can
+be generated from a Batch 0 query/system slot; one file can be validated; Batch
+0 progress can be reported; templates and pending files are not counted as
+observed.
+
+Tests to add first: list/create helper tests, `--file` validator tests,
+observed-placeholder rejection tests, and Batch 0 progress report tests.
+
+Do not do: do not scrape Google or Internet Archive, do not automate external
+queries, do not fetch URLs or open browsers, do not populate top results, and
+do not mark records observed without human evidence.
+
+Expected audit effect: no external pending counts decrease yet; no product
+retrieval behavior changes.
+
+Status: implemented as Manual Observation Entry Helper v0. It adds local
+stdlib-only list/create/validate/report helpers for Batch 0 and records no
+observed external baselines.
+
+## 7j. Manual Observation Batch 0 Execution
 
 Why: Batch 0 now exists as pending slots only. A human operator must manually
 fill the first records before any baseline comparison report can be honest.

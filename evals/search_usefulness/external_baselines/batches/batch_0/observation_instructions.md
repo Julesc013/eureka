@@ -2,6 +2,18 @@
 
 Use these steps for one query/system slot at a time.
 
+Optional local helpers:
+
+```bash
+python scripts/list_external_baseline_observations.py --batch batch_0 --status pending_manual_observation
+python scripts/create_external_baseline_observation.py --batch batch_0 --query-id <query_id> --system-id <system_id> --output <path>
+python scripts/validate_external_baseline_observations.py --file <path>
+```
+
+The helpers only list slots, create pending fillable JSON, and validate files.
+They do not search Google, search Internet Archive, open browsers, fetch URLs,
+or collect results.
+
 1. Pick one query ID from `batch_manifest.json`.
 2. Open the relevant external system manually.
 3. Submit the exact query text from the search-usefulness query corpus.

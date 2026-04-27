@@ -142,6 +142,12 @@ Manual Observation Batch 0 then selected 13 high-value query IDs and created
 39 batch-scoped pending slots across the three manual-only baseline systems. It
 records no observed external baselines and performs no external searches.
 
+Manual Observation Entry Helper v0 then added local stdlib-only scripts to list
+pending slots, create one fillable pending observation file from a Batch 0
+slot, validate one file or all files, and report Batch 0 progress. It does not
+fetch URLs, open browsers, scrape, automate external searches, or fabricate
+observed baselines.
+
 Current next implementation milestone: Manual Observation Batch 0 Execution.
 
 ## Evidence That Would Change The Plan
@@ -156,5 +162,6 @@ The plan should be revisited if:
 
 Until then, the next lowest-risk move is human execution of Batch 0 because
 archive hard evals are now satisfied under strict fixture-backed checks, the
-manual protocol exists, the first batch is prepared, and all Google/Internet
-Archive external baselines remain pending/manual.
+manual protocol exists, the first batch is prepared, entry helpers can create
+and validate pending files, and all Google/Internet Archive external baselines
+remain pending/manual.

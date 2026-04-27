@@ -45,6 +45,14 @@ full-text/OCR search. It records no observed baselines. The next recommended
 milestone is Manual Observation Batch 0 Execution, which must be performed by a
 human operator without scraping or automation.
 
+Seventh follow-up status: Manual Observation Entry Helper v0 is implemented as
+local stdlib tooling for listing slots, creating fillable pending observation
+files, validating one file or all files, and reporting Batch 0 progress. It
+does not perform observations, fetch URLs, open browsers, scrape, automate
+external searches, populate top results, or mark records observed. The next
+recommended milestone remains Manual Observation Batch 0 Execution by a human
+operator.
+
 ## Why This Comes Next
 
 Old-Platform Source Coverage Expansion v0 produced a meaningful local audit

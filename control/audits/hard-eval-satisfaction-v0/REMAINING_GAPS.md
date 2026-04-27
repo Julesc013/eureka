@@ -49,6 +49,11 @@ Manual Observation Batch 0 is also implemented as pending preparation only. It
 selects 13 high-value query IDs across the three manual-only baseline systems
 and creates 39 batch-scoped slots without recording observed external results.
 
+Manual Observation Entry Helper v0 is also implemented as local helper tooling
+only. It lists slots, creates fillable pending files, validates one file or all
+files, and reports Batch 0 progress without collecting external results or
+marking pending records observed.
+
 ## Still Deferred
 
 - live crawling

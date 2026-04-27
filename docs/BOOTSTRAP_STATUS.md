@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus forty-seven executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus forty-eight executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -192,6 +192,11 @@ architectural oracle rather than as a throwaway scaffold.
   full-text/OCR search, with validation and reporting support but no observed
   external results, scraping, automated querying, live APIs, or fabricated
   baselines
+- first Manual Observation Entry Helper v0 under `scripts/` that lists manual
+  observation slots, creates one fillable pending observation file from a
+  batch slot, validates a single file or the full observation area, and reports
+  Batch 0 progress without performing observations, opening browsers, fetching
+  URLs, scraping, automated external querying, or fabricating baselines
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -247,7 +252,7 @@ Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
 v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0,
 Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1,
 Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0,
-and Manual Observation Batch 0 are
+Manual Observation Batch 0, and Manual Observation Entry Helper v0 are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
@@ -268,7 +273,7 @@ first hard-eval satisfaction mapping/report pack, plus first strict
 old-platform hard-eval result-shape refinement pack, targeted old-platform
 fixture evidence expansion pack, bounded article/page/scan fixture pack,
 manual external-baseline observation protocol, and first prioritized pending
-manual observation batch.
+manual observation batch plus local human-entry helper tooling.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 

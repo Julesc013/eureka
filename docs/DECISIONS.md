@@ -431,3 +431,9 @@
 - Status: accepted
 - Decision: Eureka now records Manual Observation Batch 0 under `evals/search_usefulness/external_baselines/batches/batch_0/`, selecting 13 existing high-value query IDs across Google web search, Internet Archive metadata search, and Internet Archive full-text/OCR search for 39 pending query/system slots.
 - Why: The manual external baseline protocol exists, but a human operator still needs a manageable first batch before any comparison report. Batch 0 narrows the work to old-platform software, member-level discovery, driver/support-media, and article/scan queries where external comparison is most useful. It creates templates, instructions, validation, and reporting support only; it does not perform observations, scrape or automate external systems, call APIs, fabricate top results, or treat one future manual observation as global truth. The next selected milestone is Manual Observation Batch 0 Execution.
+
+## ADR-073: Add Manual Observation Entry Helpers Without Performing Observations
+
+- Status: accepted
+- Decision: Eureka now adds Manual Observation Entry Helper v0 through stdlib-only scripts for listing manual external-baseline slots, creating one fillable pending observation file from a Batch 0 slot, validating one file or the full observation area, and reporting Batch 0 progress.
+- Why: Batch 0 exists, but human entry needs a safer local workflow before any observations are manually filled. The helpers reduce friction while preserving the boundary that Codex and scripts do not perform observations: they do not fetch URLs, open browsers, scrape Google or Internet Archive, automate external searches, call APIs, populate top results, mark pending records observed, fabricate external baselines, or claim global Google/Internet Archive truth. The next milestone remains Manual Observation Batch 0 Execution by a human operator.

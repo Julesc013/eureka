@@ -467,6 +467,30 @@
       "notes": "Implemented as Manual Observation Batch 0. It selects 13 existing query IDs, creates 39 pending query/system slots across Google web search, Internet Archive metadata search, and Internet Archive full-text/OCR search, and records no observed external baselines."
     },
     {
+      "id": "SU-T021",
+      "title": "Manual Observation Entry Helper v0",
+      "priority": "P0",
+      "status": "implemented",
+      "wedge": "other",
+      "failure_modes": ["external_baseline_pending", "eval_truth_gap"],
+      "evidence": {
+        "query_ids": ["windows_7_apps", "latest_firefox_before_xp_support_ended", "pc_magazine_july_1994_ray_tracing"],
+        "audit_file_refs": ["evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json", "scripts/list_external_baseline_observations.py", "scripts/create_external_baseline_observation.py", "scripts/validate_external_baseline_observations.py", "scripts/report_external_baseline_status.py"],
+        "finding_ids": ["CTEA-EVAL-002"]
+      },
+      "user_value": "Makes it easier and safer for a human operator to fill Batch 0 records later without fabricating external baselines.",
+      "implementation_feasibility": "Implemented as stdlib-only local helper scripts and validation tests.",
+      "regression_risk": "Low if helpers keep generated records pending and validators reject template-like observed records.",
+      "expected_audit_delta": "No observed counts change yet; helpers prepare manual entry only.",
+      "prerequisite_items": ["SU-T019"],
+      "suggested_milestone": "Manual Observation Entry Helper v0",
+      "acceptance_criteria": ["pending slots can be listed", "fillable pending files can be generated from Batch 0 slots", "one file can be validated", "Batch 0 progress can be summarized", "templates and pending files are not counted observed"],
+      "tests_to_add_first": ["list/create helper tests", "validator --file tests", "observed placeholder rejection tests", "Batch 0 progress report tests"],
+      "likely_files": ["scripts/list_external_baseline_observations.py", "scripts/create_external_baseline_observation.py", "scripts/validate_external_baseline_observations.py", "scripts/report_external_baseline_status.py", "tests/scripts/"],
+      "do_not_do": ["do not scrape Google", "do not scrape Internet Archive", "do not automate external searches", "do not fetch URLs", "do not open browsers", "do not fabricate top results", "do not mark records observed without human evidence"],
+      "notes": "Implemented as Manual Observation Entry Helper v0. It adds local list/create/validate/report helpers for pending observation entry and records no observed external baselines."
+    },
+    {
       "id": "SU-T020",
       "title": "Manual Observation Batch 0 Execution",
       "priority": "P0",
@@ -482,7 +506,7 @@
       "implementation_feasibility": "Medium; the batch exists, but it requires human operation outside Codex automation.",
       "regression_risk": "Medium if observations omit required metadata or are mistaken for global truth.",
       "expected_audit_delta": "External pending counts decrease only for manually observed Batch 0 query/system slots.",
-      "prerequisite_items": ["SU-T019"],
+      "prerequisite_items": ["SU-T019", "SU-T021"],
       "suggested_milestone": "Manual Observation Batch 0 Execution",
       "acceptance_criteria": ["human observations committed for selected Batch 0 slots", "operator/timestamp/browser/exact-query metadata present", "top visible results manually recorded", "pending slots remain pending where not observed", "no automated external query collection"],
       "tests_to_add_first": ["observed-record metadata validation", "no scraped or automated collection guard", "baseline status report observed-count validation"],

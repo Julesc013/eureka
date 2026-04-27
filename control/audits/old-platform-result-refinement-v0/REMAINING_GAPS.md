@@ -58,3 +58,8 @@ Manual Observation Batch 0 follow-up: a prioritized 13-query/39-slot manual
 baseline batch now exists, but it remains pending-only. Observed Google and
 Internet Archive evidence still requires human operation under the governed
 manual protocol.
+
+Manual Observation Entry Helper v0 follow-up: local helper scripts now list
+pending slots, create fillable pending JSON, validate one file or all files,
+and report Batch 0 progress. They do not perform observations or fabricate
+external baseline evidence.

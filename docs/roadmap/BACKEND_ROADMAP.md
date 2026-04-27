@@ -126,6 +126,10 @@ The repo has already proven:
   observation batch, selecting 13 high-value query IDs and 39 query/system
   slots across the three manual-only baselines without performing observations
   or creating external baseline evidence
+- Manual Observation Entry Helper v0 as the stdlib-only local helper layer for
+  listing pending slots, creating fillable pending files, validating one file
+  or all files, and reporting Batch 0 progress without fetching URLs, opening
+  browsers, scraping, automating external searches, or fabricating observations
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -166,12 +170,13 @@ The next backend sequence is:
 30. Article/Scan Fixture Pack v0 (implemented)
 31. Manual External Baseline Observation Pack v0 (implemented)
 32. Manual Observation Batch 0 (implemented as pending slots only)
-33. Manual Observation Batch 0 Execution
-34. Search Usefulness Baseline Comparison Report v0
-35. Public Alpha Rehearsal Evidence v0
-36. Rust Query Planner Parity Candidate v0
-37. More Source Coverage Expansion v2
-38. Native App Work Later
+33. Manual Observation Entry Helper v0 (implemented)
+34. Manual Observation Batch 0 Execution
+35. Search Usefulness Baseline Comparison Report v0
+36. Public Alpha Rehearsal Evidence v0
+37. Rust Query Planner Parity Candidate v0
+38. More Source Coverage Expansion v2
+39. Native App Work Later
 
 ## Immediate Next Milestone
 
@@ -259,6 +264,9 @@ Why this comes next:
   external observations without scraping or fabricated baselines
 - Manual Observation Batch 0 selects the first 13-query, 39-slot subset for
   human operation without filling or fabricating observations
+- Manual Observation Entry Helper v0 now makes the human entry workflow safer:
+  it lists pending slots, creates fillable pending files, validates one file or
+  all files, and reports Batch 0 progress without performing any observation
 - the next backend bottleneck is actual human observation evidence for Batch 0:
   Google and Internet Archive baselines remain pending/manual for all 64
   queries globally, while source gaps in the broader audit remain honest future

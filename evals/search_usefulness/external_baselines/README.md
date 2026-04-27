@@ -22,6 +22,25 @@ retrieval behavior. Pending slots are not observations.
 - `reports/` is reserved for future committed comparison reports after manual
   observations exist.
 
+## Entry Helpers
+
+Manual Observation Entry Helper v0 adds stdlib-only local helper scripts:
+
+- `scripts/list_external_baseline_observations.py` lists pending or observed
+  slots, with filters for batch, query id, system id, and status.
+- `scripts/create_external_baseline_observation.py` creates one fillable
+  pending JSON file from a Batch 0 slot or prints it with `--stdout`.
+- `scripts/validate_external_baseline_observations.py --file <path>`
+  validates one human-edited observation file before commit.
+- `scripts/report_external_baseline_status.py --batch batch_0 --next-pending`
+  summarizes Batch 0 progress and the next pending slots.
+
+These helpers do not perform observations, open browsers, fetch URLs, call
+external APIs, scrape search systems, or mark records observed. A generated
+file remains `pending_manual_observation` until a human adds the required
+operator, timestamp, exact query, manually recorded top results, bounded scores,
+limitations, and staleness notes.
+
 ## Report Shape
 
 Validator and report scripts emit JSON-compatible summaries with:
@@ -42,3 +61,8 @@ Manual Observation Batch 0 is implemented as preparation only. It selects a
 manageable old-platform/member-discovery set for later human operation, but it
 does not perform external observations, does not scrape or automate Google or
 Internet Archive, and does not turn any pending slot into observed evidence.
+
+Manual Observation Entry Helper v0 is implemented as local helper tooling only.
+It improves the human entry workflow without adding external querying,
+scraping, browser automation, URL fetching, comparison scoring, or observed
+baseline claims.

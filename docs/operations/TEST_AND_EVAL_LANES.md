@@ -211,6 +211,22 @@ and keeps every slot pending with no top results. It prepares human observation
 only; it does not scrape, automate external searches, or fabricate external
 baseline evidence.
 
+Manual Observation Entry Helper v0 is validated with:
+
+```bash
+python -m unittest tests.scripts.test_external_baseline_entry_helpers
+python scripts/list_external_baseline_observations.py --batch batch_0
+python scripts/list_external_baseline_observations.py --batch batch_0 --json
+python scripts/create_external_baseline_observation.py --batch batch_0 --query-id windows_7_apps --system-id google_web_search --stdout
+python scripts/validate_external_baseline_observations.py --file <path>
+python scripts/report_external_baseline_status.py --batch batch_0 --next-pending --json
+```
+
+The helper lane checks local entry tooling only. It lists pending slots,
+creates fillable pending JSON, validates one file or all files, and summarizes
+Batch 0 progress without opening browsers, fetching URLs, scraping, automated
+external searches, or observed-baseline fabrication.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

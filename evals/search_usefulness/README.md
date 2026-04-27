@@ -70,6 +70,21 @@ It is preparation only: it records no observed external results, performs no
 searches, scrapes nothing, automates nothing, and leaves the global 192
 external baseline slots pending until a human fills records later.
 
+Manual Observation Entry Helper v0 adds local helper scripts for the human
+entry workflow:
+
+```bash
+python scripts/list_external_baseline_observations.py --batch batch_0
+python scripts/create_external_baseline_observation.py --batch batch_0 --query-id windows_7_apps --system-id google_web_search --stdout
+python scripts/validate_external_baseline_observations.py --file <path>
+python scripts/report_external_baseline_status.py --batch batch_0 --next-pending
+```
+
+These helpers only list slots, create pending fillable JSON, validate files,
+and summarize progress. They do not perform observations, scrape or automate
+Google or Internet Archive, fetch URLs, open browsers, fill top results, or
+count templates/pending slots as observed baselines.
+
 ## Running
 
 ```bash
@@ -187,3 +202,8 @@ Manual Observation Batch 0 now adds the first prioritized pending batch under
 query/system slots for later human observation across Google web search,
 Internet Archive metadata search, and Internet Archive full-text/OCR search.
 It does not perform observations or change Eureka search behavior.
+
+Manual Observation Entry Helper v0 now adds stdlib-only listing, creation,
+file-validation, and Batch 0 progress helpers for those pending slots. It does
+not perform observations, fetch URLs, open browsers, or fabricate external
+baseline results.

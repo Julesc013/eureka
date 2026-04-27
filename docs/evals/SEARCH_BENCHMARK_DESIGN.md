@@ -78,6 +78,11 @@ The eval suite now has two executable guardrails:
   selected query IDs across Google web search, Internet Archive metadata
   search, and Internet Archive full-text/OCR search, for 39 pending slots. It
   prepares human operation only and records no observed baselines.
+- Manual Observation Entry Helper v0 adds stdlib-only local helper scripts to
+  list slots, create fillable pending JSON, validate one file or all files, and
+  report Batch 0 progress. It does not perform observations, fetch URLs, open
+  browsers, scrape, automate searches, fabricate results, or count templates as
+  observed baselines.
 - it includes bounded result-lane and user-cost annotations where current
   result records expose them
 - it emits stable JSON per-task and suite reports
@@ -106,3 +111,5 @@ Manual observations are time-sensitive operator records, not global truth.
 Batch 0 remains pending until a human operator records results with operator,
 timestamp, exact query, top visible results, first useful rank, scores,
 limitations, and staleness notes.
+The entry helper may create the pending file a human edits, but it does not
+create observed evidence.
