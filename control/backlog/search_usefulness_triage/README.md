@@ -13,7 +13,9 @@ This pack is governance only. It does not change runtime behavior, add source co
 - `tests/hardening/`
 - `control/inventory/sources/`
 
-The live audit has been re-run through Article/Scan Fixture Pack v0. Current Search Usefulness Audit v0 reports:
+The live audit has been re-run through Article/Scan Fixture Pack v0 and Manual
+External Baseline Observation Pack v0. Current Search Usefulness Audit v0
+reports:
 
 - total queries: 64
 - covered: 5
@@ -29,7 +31,7 @@ The live audit has been re-run through Article/Scan Fixture Pack v0. Current Sea
 
 - Primary usefulness wedge: old-platform-compatible software search
 - Secondary usefulness wedge: member-level discovery inside bundles
-- Immediate next milestone: Manual External Baseline Observation Pack v0
+- Immediate next milestone: Manual Observation Batch 0
 
 Update: Source Coverage and Capability Model v0 and Real Source Coverage Pack
 v0 are implemented, and Old-Platform Software Planner Pack v0 now improves
@@ -63,6 +65,12 @@ source with parent issue lineage, page-range metadata, and OCR-like fixture
 text. Current archive evals report `satisfied=6`; the next milestone is Manual
 External Baseline Observation Pack v0 because all external baselines remain
 pending/manual.
+Manual External Baseline Observation Pack v0 then added the governed
+manual-only baseline system registry, observation schema/template,
+instructions, pending manifest, validator, and status report under
+`evals/search_usefulness/external_baselines/`. It seeds 192 pending slots
+across 64 queries and three systems without recording observed baselines. The
+next milestone is Manual Observation Batch 0.
 
 ## Contents
 

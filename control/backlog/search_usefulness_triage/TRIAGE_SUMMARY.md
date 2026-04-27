@@ -133,8 +133,12 @@ Archive evals now report `satisfied=6`; the broader Search Usefulness Audit
 reports `covered=5`, `partial=22`, `source_gap=26`, `capability_gap=9`, and
 `unknown=2`.
 
-Current next implementation milestone: Manual External Baseline Observation
-Pack v0.
+Manual External Baseline Observation Pack v0 then added manual-only Google web
+search, Internet Archive metadata search, and Internet Archive full-text/OCR
+observation protocol files plus 192 pending slots. It records no observed
+external baselines.
+
+Current next implementation milestone: Manual Observation Batch 0.
 
 ## Evidence That Would Change The Plan
 

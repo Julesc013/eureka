@@ -5,7 +5,8 @@ fixture expansion. After Real Source Coverage Pack v0, Old-Platform Software
 Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost
 Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0,
 Old-Platform Source Coverage Expansion v0, More Source Coverage Expansion v1,
-and Article/Scan Fixture Pack v0, Search Usefulness Audit v0 reports
+Article/Scan Fixture Pack v0, and Manual External Baseline Observation Pack
+v0, Search Usefulness Audit v0 reports
 `covered=5`, `partial=22`, `source_gap=26`, `capability_gap=9`, and
 `unknown=2`. The current failure labels still include
 `source_coverage_gap=49`, because many query fixtures intentionally keep their
@@ -71,8 +72,10 @@ added targeted tiny fixture evidence for those four old-platform hard partials,
 and archive evals reported `capability_gap=1` and `satisfied=5`. Article/Scan
 Fixture Pack v0 then added bounded synthetic article/page/scan fixture
 evidence, and archive evals now report `satisfied=6`. Placeholder source
-records remain placeholders. The next usefulness work should record manual
-external baselines before Rust parity or public-alpha rehearsal claims.
+records remain placeholders. Manual External Baseline Observation Pack v0 then
+defined manual-only external baseline systems, schema, instructions, and 192
+pending observation slots. The next usefulness work should fill a small manual
+observation batch before Rust parity or public-alpha rehearsal claims.
 
 ## Why Capability Depth Comes Before More Connectors
 

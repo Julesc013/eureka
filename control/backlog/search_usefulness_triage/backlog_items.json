@@ -4,7 +4,7 @@
   "created_by_slice": "search_usefulness_backlog_triage_v0",
   "selected_primary_wedge": "old_platform_software",
   "selected_secondary_wedge": "member_level_discovery",
-  "immediate_next_milestone": "Manual External Baseline Observation Pack v0",
+  "immediate_next_milestone": "Manual Observation Batch 0",
   "audit_snapshot": {
     "total_queries": 64,
     "eureka_status_counts": {
@@ -422,25 +422,49 @@
       "id": "SU-T011",
       "title": "Manual External Baseline Observation Pack v0",
       "priority": "P0",
-      "status": "selected",
+      "status": "completed",
       "wedge": "other",
       "failure_modes": ["external_baseline_pending", "eval_truth_gap"],
       "evidence": {
         "query_ids": ["windows_7_apps", "old_blue_ftp_client_xp"],
-        "audit_file_refs": ["evals/search_usefulness/observation.schema.yaml", "scripts/record_search_baseline_observation.py"],
+        "audit_file_refs": ["evals/search_usefulness/external_baselines/README.md", "evals/search_usefulness/external_baselines/observations/pending_observations.json", "scripts/validate_external_baseline_observations.py"],
         "finding_ids": ["CTEA-EVAL-002"]
       },
       "user_value": "Lets humans record Google/Archive observations later without scraping or fabrication.",
-      "implementation_feasibility": "High; helper script already exists and can be hardened after all current archive hard evals are fixture-backed satisfied.",
+      "implementation_feasibility": "Implemented as schema, template, instructions, pending slots, validation, and status reporting.",
       "regression_risk": "Low if strictly manual.",
       "expected_audit_delta": "External pending counts may decrease only when human evidence is committed.",
       "prerequisite_items": ["SU-T018"],
       "suggested_milestone": "Manual External Baseline Observation Pack v0",
-      "acceptance_criteria": ["operator/date/source notes required", "no scraping language", "observations are reviewable"],
-      "tests_to_add_first": ["manual observation required-field tests", "no observed baseline without evidence guard"],
-      "likely_files": ["evals/search_usefulness/observations/", "scripts/record_search_baseline_observation.py", "tests/hardening/"],
-      "do_not_do": ["do not scrape Google", "do not call Internet Archive APIs", "do not fill fake evidence"],
-      "notes": "Selected after Article/Scan Fixture Pack v0 because archive hard evals are now satisfied under current strict fixture-backed checks while all external baselines remain pending/manual."
+      "acceptance_criteria": ["operator/date/source notes required", "no scraping language", "observations are reviewable", "pending slots are not observed baselines"],
+      "tests_to_add_first": ["manual observation required-field tests", "no observed baseline without evidence guard", "pending manifest coverage tests"],
+      "likely_files": ["evals/search_usefulness/external_baselines/", "scripts/validate_external_baseline_observations.py", "scripts/report_external_baseline_status.py", "tests/evals/", "tests/scripts/"],
+      "do_not_do": ["do not scrape Google", "do not call Internet Archive APIs", "do not automate external searches", "do not fill fake evidence"],
+      "notes": "Implemented as Manual External Baseline Observation Pack v0. It seeds 192 pending manual slots for 64 queries across Google web search, Internet Archive metadata search, and Internet Archive full-text/OCR search while recording no observed baselines."
+    },
+    {
+      "id": "SU-T019",
+      "title": "Manual Observation Batch 0",
+      "priority": "P0",
+      "status": "selected",
+      "wedge": "other",
+      "failure_modes": ["external_baseline_pending", "eval_truth_gap"],
+      "evidence": {
+        "query_ids": ["windows_7_apps", "latest_firefox_before_xp_support_ended", "pc_magazine_july_1994_ray_tracing"],
+        "audit_file_refs": ["evals/search_usefulness/external_baselines/observations/pending_observations.json", "scripts/validate_external_baseline_observations.py"],
+        "finding_ids": ["CTEA-EVAL-002"]
+      },
+      "user_value": "Provides the first human-recorded external comparison evidence without scraping or fake baselines.",
+      "implementation_feasibility": "High; the manual observation protocol and validator now exist.",
+      "regression_risk": "Medium if observations omit required metadata or are mistaken for global truth.",
+      "expected_audit_delta": "External pending counts decrease only for manually observed query/system slots.",
+      "prerequisite_items": ["SU-T011"],
+      "suggested_milestone": "Manual Observation Batch 0",
+      "acceptance_criteria": ["10-15 high-value manual observations committed", "operator/timestamp/browser/exact-query metadata present", "top visible results manually recorded", "pending slots remain pending where not observed", "no automated external query collection"],
+      "tests_to_add_first": ["observed-record metadata validation", "no scraped or automated collection guard", "baseline status report observed-count validation"],
+      "likely_files": ["evals/search_usefulness/external_baselines/observations/", "evals/search_usefulness/external_baselines/reports/"],
+      "do_not_do": ["do not scrape Google", "do not scrape Internet Archive", "do not call external APIs", "do not fabricate top results", "do not claim global baseline truth"],
+      "notes": "Selected after Manual External Baseline Observation Pack v0 because the protocol exists but all observation slots remain pending."
     },
     {
       "id": "SU-T012",

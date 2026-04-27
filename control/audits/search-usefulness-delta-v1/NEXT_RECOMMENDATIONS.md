@@ -31,6 +31,12 @@ segment, parent issue lineage, page-range metadata, and OCR-like fixture text.
 The next recommended milestone is Manual External Baseline Observation Pack v0
 because external baselines remain pending/manual for all 64 queries.
 
+Fifth follow-up status: Manual External Baseline Observation Pack v0 is
+implemented under `evals/search_usefulness/external_baselines/`. It seeds 192
+pending manual observation slots and adds validation/reporting without
+recording observed baselines. The next recommended milestone is Manual
+Observation Batch 0.
+
 ## Why This Comes Next
 
 Old-Platform Source Coverage Expansion v0 produced a meaningful local audit
@@ -90,9 +96,16 @@ live Internet Archive.
 
 ### Manual External Baseline Observation Pack v0
 
-Now recommended after Article/Scan Fixture Pack v0. Internal hard-eval posture
-is sharper, and the next comparison step should be human-recorded external
-baseline evidence only.
+Implemented after Article/Scan Fixture Pack v0 as a manual-only protocol under
+`evals/search_usefulness/external_baselines/`. It defines schema, systems,
+templates, instructions, pending slots, and validation/report scripts without
+recording observed external baselines.
+
+### Manual Observation Batch 0
+
+Now recommended after Manual External Baseline Observation Pack v0. The next
+comparison step should be a small human-recorded batch of external baseline
+evidence only.
 
 ### Rust Query Planner Parity Candidate v0
 

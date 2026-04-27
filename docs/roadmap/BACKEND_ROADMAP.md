@@ -117,6 +117,11 @@ The repo has already proven:
   text and page-range evidence while adding no live source behavior, scraping,
   OCR engine, PDF/image parser, real scan, copyrighted article text, or
   external baseline claim
+- Manual External Baseline Observation Pack v0 as the first manual-only
+  external comparison protocol, defining Google web search, Internet Archive
+  metadata search, and Internet Archive full-text/OCR search observation
+  records plus 192 pending slots without scraping, automated external queries,
+  API calls, or fabricated baselines
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -155,18 +160,19 @@ The next backend sequence is:
 28. Old-Platform Result Refinement Pack v0 (implemented as strict result-shape eval refinement)
 29. More Source Coverage Expansion v1 (implemented as targeted recorded fixtures)
 30. Article/Scan Fixture Pack v0 (implemented)
-31. Manual External Baseline Observation Pack v0
-32. More Source Coverage Expansion v2
-33. Rust Query Planner Parity Candidate v0
+31. Manual External Baseline Observation Pack v0 (implemented)
+32. Manual Observation Batch 0
+33. Search Usefulness Baseline Comparison Report v0
 34. Public Alpha Rehearsal Evidence v0
-35. Compatibility Surface Strategy v0
-36. Native App Work Later
+35. Rust Query Planner Parity Candidate v0
+36. More Source Coverage Expansion v2
+37. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Manual External Baseline Observation Pack v0
+> Manual Observation Batch 0
 
 Why this comes next:
 
@@ -243,7 +249,10 @@ Why this comes next:
   `capability_gap=1` and `satisfied=5`
 - Article/Scan Fixture Pack v0 adds bounded synthetic article/page/scan
   evidence; archive evals now report `satisfied=6`
-- the next backend bottleneck is external comparison evidence: Google and
+- Manual External Baseline Observation Pack v0 adds the manual-only schema,
+  templates, pending slots, validation, and status reporting needed to record
+  external observations without scraping or fabricated baselines
+- the next backend bottleneck is actual human observation evidence: Google and
   Internet Archive baselines remain pending/manual for all 64 queries, while
   source gaps in the broader audit remain honest future work
 

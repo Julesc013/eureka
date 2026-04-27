@@ -366,9 +366,10 @@ manual observation for all 64 Search Usefulness Audit queries.
 Prerequisite: Article/Scan Fixture Pack v0 and external-baseline hardening
 guards remain green.
 
-Likely files: `evals/search_usefulness/observations/`,
-`scripts/record_search_baseline_observation.py`, `tests/hardening/`, and
-`control/audits/`.
+Likely files: `evals/search_usefulness/external_baselines/`,
+`scripts/validate_external_baseline_observations.py`,
+`scripts/report_external_baseline_status.py`, `tests/evals/`,
+`tests/scripts/`, and `tests/hardening/`.
 
 Acceptance criteria: manual observations require operator/source/date fields;
 no scraping or live API collection is added; baseline status changes happen
@@ -385,6 +386,40 @@ search superiority.
 
 Expected audit effect: external baseline pending counts may decrease only where
 manual observations are committed.
+
+Status: implemented as Manual External Baseline Observation Pack v0 under
+`evals/search_usefulness/external_baselines/`. It defines manual-only Google
+web search, Internet Archive metadata search, and Internet Archive full-text/OCR
+search systems; adds schema, template, instructions, validation, and report
+scripts; and seeds 192 pending slots across 64 queries and three systems. It
+records no observed external baselines.
+
+## 7h. Manual Observation Batch 0
+
+Why: the manual observation protocol now exists, but all external baseline
+slots remain pending. A first small human-filled batch should test the protocol
+before any comparison report claims.
+
+Prerequisite: Manual External Baseline Observation Pack v0 validator and
+hardening tests remain green.
+
+Likely files: `evals/search_usefulness/external_baselines/observations/` and
+possibly `evals/search_usefulness/external_baselines/reports/`.
+
+Acceptance criteria: 10-15 high-value query/system observations are manually
+recorded with operator, timestamp, exact submitted query, top visible results,
+first useful rank, usefulness scores, limitations, and next-work notes.
+Pending slots remain pending where no human observation exists.
+
+Tests to add first: observed-record metadata validation, no scraped/automated
+collection guard, and report checks that observed counts only change when
+records have required metadata.
+
+Do not do: do not scrape Google or Internet Archive, do not automate external
+queries, do not fabricate top results, and do not claim global baseline truth.
+
+Expected audit effect: external pending counts may decrease for the observed
+batch only; no product retrieval behavior changes.
 
 ## 8. Rust Query Planner Parity Candidate v0
 

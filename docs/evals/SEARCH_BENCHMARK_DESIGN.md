@@ -68,6 +68,12 @@ The eval suite now has two executable guardrails:
 - Article/Scan Fixture Pack v0 adds one bounded synthetic article/page/scan
   fixture so the article-inside-scan hard task can be evaluated against
   article-segment, page-range, and OCR-like text evidence without real OCR
+- Manual External Baseline Observation Pack v0 adds a governed manual-only
+  observation protocol for Google web search, Internet Archive metadata search,
+  and Internet Archive full-text/OCR search with schema, template, instructions,
+  pending slots, validation, and status reporting. It does not scrape, automate
+  external searches, call APIs, fabricate observations, or claim global
+  baseline truth.
 - it includes bounded result-lane and user-cost annotations where current
   result records expose them
 - it emits stable JSON per-task and suite reports
@@ -92,3 +98,4 @@ The usefulness audit is also not an automated Google or Internet Archive
 comparison. External baseline observations are placeholders until a human
 reviewer records them manually. This keeps the audit focused on reproducible
 local Eureka behavior and prevents fabricated external wins or losses.
+Manual observations are time-sensitive operator records, not global truth.

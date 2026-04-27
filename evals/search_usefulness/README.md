@@ -19,6 +19,9 @@ or UX gaps instead of hiding them.
 - `queries/`: first broad query pack for the audit.
 - `observations/`: manual external baseline observations may be recorded here
   later.
+- `external_baselines/`: governed manual-only observation protocol, baseline
+  system registry, templates, instructions, pending slots, and validation for
+  Google and Internet Archive comparisons.
 - `reports/`: report guidance; generated reports are not committed by default.
 
 The v0 pack contains 64 queries across current covered sanity checks, platform
@@ -38,6 +41,26 @@ Manual observation templates can be created with:
 ```bash
 python scripts/record_search_baseline_observation.py --query windows_7_apps --system google
 ```
+
+Manual External Baseline Observation Pack v0 now adds a stricter governed
+workflow under `external_baselines/`. It defines manual-only systems for Google
+web search, Internet Archive metadata search, and Internet Archive full-text/OCR
+search; a JSON observation schema and template; operator instructions; and a
+pending manifest covering all 64 queries across the three systems. The
+validator and status report are:
+
+```bash
+python scripts/validate_external_baseline_observations.py
+python scripts/validate_external_baseline_observations.py --json
+python scripts/report_external_baseline_status.py
+python scripts/report_external_baseline_status.py --json
+```
+
+The pack performs no scraping, automated external querying, live Internet
+Archive API calls, or web API calls. External baselines remain pending until a
+human records observations with operator, timestamp, exact query, visible
+result, usefulness, and limitation metadata. One manual observation is
+time-sensitive and not global Google or Internet Archive truth.
 
 ## Running
 
@@ -144,3 +167,9 @@ metadata, and OCR-like fixture text. The current local audit reports
 `unknown=2`; external baselines remain pending manual observation and the audit
 still adds no live source calls, scraping, OCR, PDF/image parsing, real scans,
 fuzzy/vector retrieval, LLM behavior, or production benchmark claims.
+
+Manual External Baseline Observation Pack v0 now lives under
+`evals/search_usefulness/external_baselines/`. It adds schema, templates,
+instructions, pending slots, validation, and status reporting for manual Google
+and Internet Archive observations. It changes no retrieval behavior and records
+no observed external baselines by itself.

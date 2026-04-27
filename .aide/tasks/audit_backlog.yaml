@@ -101,6 +101,15 @@
       "title": "Add bounded article/page/scan fixture evidence for the remaining hard capability gap",
       "status": "addressed_by_article_scan_fixture_pack_v0",
       "suggested_milestone": "Manual External Baseline Observation Pack v0"
+    },
+    {
+      "id": "audit-backlog-manual-external-baseline-observations",
+      "finding_refs": [
+        "CTEA-EVAL-002"
+      ],
+      "title": "Record the first human external baseline observation batch",
+      "status": "queued",
+      "suggested_milestone": "Manual Observation Batch 0"
     }
   ]
 }

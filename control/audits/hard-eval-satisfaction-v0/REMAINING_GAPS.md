@@ -40,6 +40,11 @@ reports `satisfied=6`, including source-backed article segment evidence for
 `article_inside_magazine_scan`. This supersedes the original remaining hard
 capability gap without weakening the task.
 
+Manual External Baseline Observation Pack v0 is also implemented. It adds
+manual-only external baseline systems, schema, template, instructions, pending
+slots, validation, and status reporting without recording observed Google or
+Internet Archive baselines.
+
 ## Still Deferred
 
 - live crawling

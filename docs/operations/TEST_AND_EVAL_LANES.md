@@ -180,6 +180,23 @@ guardrails. It does not add live source behavior, scraping, OCR engines,
 PDF/image parsing, real scans, copyrighted article text, or external baseline
 claims.
 
+Manual External Baseline Observation Pack v0 is validated with:
+
+```bash
+python -m unittest tests.evals.test_external_baseline_observations
+python -m unittest tests.scripts.test_external_baseline_observation_scripts
+python scripts/validate_external_baseline_observations.py
+python scripts/validate_external_baseline_observations.py --json
+python scripts/report_external_baseline_status.py
+python scripts/report_external_baseline_status.py --json
+```
+
+The lane checks that the manual-only baseline systems, schema, template,
+instructions, and pending observation manifest exist; that all 64 queries have
+pending slots for Google web search, Internet Archive metadata search, and
+Internet Archive full-text/OCR search; and that no pending slot is counted as
+observed evidence.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

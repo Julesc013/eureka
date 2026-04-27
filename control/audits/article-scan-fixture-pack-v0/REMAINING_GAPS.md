@@ -9,14 +9,14 @@
   mode, with `source_coverage_gap=49`.
 - Compatibility, planner, representation, decomposition, member-access,
   identity, ranking, and surface gaps remain visible in the broader audit.
-- External Google and Internet Archive baselines remain pending manual
-  observation.
+- External Google and Internet Archive baselines now have governed manual
+  observation slots, but no observed external baseline records are committed.
 
-Recommended next milestone: `Manual External Baseline Observation Pack v0`.
+Recommended next milestone: `Manual Observation Batch 0`.
 
 Rationale: archive-resolution hard evals are now all satisfied under current
-strict fixture-backed checks. The next useful step is to record manual external
-observations for comparison without scraping or fabricating baselines. If the
-team prefers implementation over measurement, `More Source Coverage Expansion
-v2` is the strongest alternative because source gaps remain dominant.
-
+strict fixture-backed checks, and the manual observation protocol now exists.
+The next useful step is to manually fill a small first batch without scraping
+or fabricating baselines. If the team prefers implementation over measurement,
+`More Source Coverage Expansion v2` is the strongest alternative because source
+gaps remain dominant.

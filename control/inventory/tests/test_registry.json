@@ -571,6 +571,69 @@
       "notes": "Added by Article/Scan Fixture Pack v0; validates tiny synthetic article-scan fixture evidence without adding OCR engines, PDF/image parsing, real scans, copyrighted article text, live source calls, or scraping."
     },
     {
+      "test_id": "manual_external_baseline_pack_validation",
+      "label": "Manual external baseline observation pack validation",
+      "command": "python -m unittest tests.evals.test_external_baseline_observations tests.scripts.test_external_baseline_observation_scripts",
+      "category": "eval",
+      "owner_area": "evals/search_usefulness/external_baselines",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where script tests create invalid observation examples",
+      "expected_runtime": "seconds",
+      "failure_means": "The manual external baseline schema, systems, template, pending manifest, validator, or no-fabricated-baseline guardrail regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Manual External Baseline Observation Pack v0; validates manual-only Google/Internet Archive observation protocol without scraping, automated querying, API calls, or observed baseline claims."
+    },
+    {
+      "test_id": "external_baseline_observation_validator",
+      "label": "External baseline observation validator",
+      "command": "python scripts/validate_external_baseline_observations.py",
+      "category": "eval",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Committed manual baseline observation records are invalid or pending slot coverage drifted.",
+      "advisory_or_required": "required",
+      "notes": "Stdlib-only validator; it performs no external querying."
+    },
+    {
+      "test_id": "external_baseline_status_report",
+      "label": "External baseline observation status report",
+      "command": "python scripts/report_external_baseline_status.py",
+      "category": "eval",
+      "owner_area": "scripts",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The manual baseline status report cannot summarize pending/observed coverage.",
+      "advisory_or_required": "required",
+      "notes": "Reports pending/observed manual baseline coverage without scraping, APIs, or automated searches."
+    },
+    {
       "test_id": "hardening_tests",
       "label": "Hard Test Pack v0 aggregate",
       "command": "python -m unittest discover -s tests/hardening -t .",
