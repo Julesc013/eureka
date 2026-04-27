@@ -55,20 +55,24 @@ class HardEvalSatisfactionPackTestCase(unittest.TestCase):
         self.assertEqual(report["delta"]["overall_satisfied_tasks"], [])
         self.assertIn("article_inside_magazine_scan", report["delta"]["still_capability_gap"])
 
-    def test_runner_moves_source_backed_tasks_to_partial(self) -> None:
+    def test_runner_keeps_source_backed_tasks_at_least_partial(self) -> None:
         runner = build_default_archive_resolution_eval_runner(
             timestamp_factory=lambda: FIXED_TIMESTAMP,
         )
         suite = runner.run_suite()
         by_id = {result.task_id: result for result in suite.task_results}
 
-        self.assertEqual(suite.status_counts, {"capability_gap": 1, "partial": 5})
+        self.assertEqual(suite.status_counts.get("capability_gap"), 1)
+        self.assertEqual(
+            suite.status_counts.get("partial", 0) + suite.status_counts.get("satisfied", 0),
+            5,
+        )
         self.assertEqual(set(by_id), MOVED_TASK_IDS | {"article_inside_magazine_scan"})
 
         for task_id in MOVED_TASK_IDS:
             result = by_id[task_id]
             check = _search_check(result)
-            self.assertEqual(result.overall_status, "partial", task_id)
+            self.assertIn(result.overall_status, {"partial", "satisfied"}, task_id)
             self.assertIn(check.status, {"satisfied", "partial"}, task_id)
             self.assertGreater(result.search_observed_result_count, 0, task_id)
             observed = check.observed or {}
@@ -92,15 +96,33 @@ class HardEvalSatisfactionPackTestCase(unittest.TestCase):
         self.assertEqual(check.status, "capability_gap")
         self.assertFalse(result.top_results)
 
-    def test_no_hard_task_is_overall_satisfied(self) -> None:
+    def test_overall_satisfied_tasks_need_structured_source_evidence(self) -> None:
         runner = build_default_archive_resolution_eval_runner(
             timestamp_factory=lambda: FIXED_TIMESTAMP,
         )
         suite = runner.run_suite()
 
-        self.assertNotIn("satisfied", suite.status_counts)
         for result in suite.task_results:
-            self.assertNotEqual(result.overall_status, "satisfied", result.task_id)
+            if result.overall_status != "satisfied":
+                continue
+            checks = {
+                check.name: check
+                for check in result.satisfied_checks
+                + result.partial_checks
+                + result.failed_checks
+                + result.capability_gaps
+            }
+            for name in (
+                "search.expected_result_hints",
+                "result_shape.primary_candidate",
+                "lanes.expected_lanes",
+                "ranking.bad_result_patterns",
+            ):
+                self.assertIn(name, checks, result.task_id)
+                self.assertEqual(checks[name].status, "satisfied", result.task_id)
+            observed = checks["search.expected_result_hints"].observed or {}
+            self.assertTrue(observed.get("source_ids"), result.task_id)
+            self.assertTrue(observed.get("artifact_locators"), result.task_id)
 
     def test_report_does_not_claim_external_baseline_or_production_readiness(self) -> None:
         combined = "\n".join(

@@ -16,14 +16,16 @@ Current scope:
   falls back to deterministic search when needed, calls bounded absence
   reasoning for no-result cases, maps current source-backed member,
   representation, compatibility, and source-family evidence into hard
-  expected-result checks, and reports structured checks
+  expected-result checks, evaluates deterministic result-shape, expected-lane,
+  and bad-result checks, and reports structured checks
 
 Archive Resolution Eval Runner v0 is a regression harness, not a ranking or
 semantic relevance benchmark. It reports `satisfied`, `partial`,
 `not_satisfied`, `not_evaluable`, and `capability_gap` states honestly. The
-current hard fixtures remain bounded: five source-backed tasks are partial
-after Hard Eval Satisfaction Pack v0, and article-inside-scan remains a
-capability gap until article/page/OCR fixture evidence exists.
+current hard fixtures remain bounded: one driver/member task is satisfied,
+four source-backed old-platform tasks remain partial after Old-Platform Result
+Refinement Pack v0, and article-inside-scan remains a capability gap until
+article/page/OCR fixture evidence exists.
 
 Search Usefulness Audit v0 is broader and more diagnostic: it runs a large
 archive-resolution-style query pack through the current bounded Eureka path,

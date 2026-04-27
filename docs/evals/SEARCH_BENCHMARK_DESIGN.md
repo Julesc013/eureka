@@ -60,6 +60,9 @@ The eval suite now has two executable guardrails:
 - Hard Eval Satisfaction Pack v0 maps source-backed member paths,
   representation locators, compatibility evidence, and source-family evidence
   into hard expected-result checks without weakening task definitions
+- Old-Platform Result Refinement Pack v0 scores deterministic primary
+  candidate shape, expected lanes, and bad-result avoidance for the current
+  old-platform hard eval partials without adding production ranking
 - it includes bounded result-lane and user-cost annotations where current
   result records expose them
 - it emits stable JSON per-task and suite reports

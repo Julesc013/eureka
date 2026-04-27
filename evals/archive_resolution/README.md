@@ -67,9 +67,17 @@ direct artifacts, member paths, article boundaries, or evidence needed for full
 satisfaction. This is intentional. The runner is not a ranking benchmark, not a
 semantic/fuzzy/vector benchmark, and not a production relevance evaluation.
 
-Hard Eval Satisfaction Pack v0 records that current archive-resolution evals
-now report `capability_gap=1` and `partial=5`. The five moved tasks have
-source-backed structured evidence in bounded local results, but they are not
-overall satisfied because expected lane placement and bad-result pattern checks
-remain not evaluable in Eval Runner v0. The article-inside-scan task remains a
-true capability gap because no bounded article/page/OCR fixture exists.
+Hard Eval Satisfaction Pack v0 records that archive-resolution evals moved to
+`capability_gap=1` and `partial=5` by mapping existing source-backed member,
+representation, compatibility, and source-family evidence into hard
+expected-result checks.
+
+Old-Platform Result Refinement Pack v0 then added deterministic
+`result_shape.primary_candidate`, `lanes.expected_lanes`, and
+`ranking.bad_result_patterns` checks for those source-backed partials. Current
+archive-resolution evals now report `capability_gap=1`, `partial=4`, and
+`satisfied=1`: `driver_inside_support_cd` is satisfied because the primary
+candidate is a source-backed driver member, while the Firefox, FTP, Windows 98
+registry repair, and Windows 7 app tasks remain partial with explicit
+result-shape or evidence limits. The article-inside-scan task remains a true
+capability gap because no bounded article/page/OCR fixture exists.

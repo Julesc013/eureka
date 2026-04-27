@@ -7,8 +7,8 @@
 
 ## Still Partial
 
-The five moved tasks remain partial because Eval Runner v0 still records but
-does not benchmark:
+At the time of Hard Eval Satisfaction Pack v0, the five moved tasks remained
+partial because Eval Runner v0 still recorded but did not benchmark:
 
 - expected result lanes
 - bad-result pattern avoidance
@@ -27,6 +27,12 @@ does not benchmark:
   be satisfied overall.
 - `windows_7_apps`: needs future lane/bad-result scoring and broader result
   refinement before it can be satisfied overall.
+
+Follow-up status: Old-Platform Result Refinement Pack v0 is implemented under
+`control/audits/old-platform-result-refinement-v0/`. It added deterministic
+result-shape, expected-lane, and bad-result checks. `driver_inside_support_cd`
+is now satisfied; the Firefox, FTP, Windows 98 registry repair, and Windows 7
+app tasks remain partial with explicit evidence/result-shape limitations.
 
 ## Still Deferred
 

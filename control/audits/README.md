@@ -37,3 +37,7 @@ Current packs:
   recording the move from `capability_gap=1, not_satisfied=5` to
   `capability_gap=1, partial=5` without weakening hard tasks or fabricating
   source evidence.
+- `old-platform-result-refinement-v0/`: stable archive-resolution result-shape
+  report recording the move to `capability_gap=1, partial=4, satisfied=1`
+  after deterministic primary-candidate, expected-lane, and bad-result checks
+  were added without weakening hard tasks or changing retrieval behavior.

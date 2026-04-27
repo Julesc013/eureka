@@ -16,13 +16,14 @@
   ],
   "status_counts": {
     "capability_gap": 1,
-    "partial": 5
+    "partial": 4,
+    "satisfied": 1
   },
   "task_summaries": [
     {
       "capability_gap_count": 1,
       "failed_check_count": 0,
-      "not_evaluable_check_count": 2,
+      "not_evaluable_check_count": 3,
       "overall_status": "capability_gap",
       "planner_expected_task_kind": "find_document_article",
       "planner_observed_task_kind": "find_document_article",
@@ -36,8 +37,8 @@
     {
       "capability_gap_count": 0,
       "failed_check_count": 0,
-      "not_evaluable_check_count": 2,
-      "overall_status": "partial",
+      "not_evaluable_check_count": 0,
+      "overall_status": "satisfied",
       "planner_expected_task_kind": "find_driver",
       "planner_observed_task_kind": "find_driver",
       "planner_status": "satisfied",
@@ -50,7 +51,7 @@
     {
       "capability_gap_count": 0,
       "failed_check_count": 0,
-      "not_evaluable_check_count": 2,
+      "not_evaluable_check_count": 0,
       "overall_status": "partial",
       "planner_expected_task_kind": "find_latest_compatible_release",
       "planner_observed_task_kind": "find_latest_compatible_release",
@@ -64,7 +65,7 @@
     {
       "capability_gap_count": 0,
       "failed_check_count": 0,
-      "not_evaluable_check_count": 2,
+      "not_evaluable_check_count": 0,
       "overall_status": "partial",
       "planner_expected_task_kind": "identify_software",
       "planner_observed_task_kind": "identify_software",
@@ -78,7 +79,7 @@
     {
       "capability_gap_count": 0,
       "failed_check_count": 0,
-      "not_evaluable_check_count": 2,
+      "not_evaluable_check_count": 0,
       "overall_status": "partial",
       "planner_expected_task_kind": "identify_software",
       "planner_observed_task_kind": "identify_software",
@@ -92,7 +93,7 @@
     {
       "capability_gap_count": 0,
       "failed_check_count": 0,
-      "not_evaluable_check_count": 2,
+      "not_evaluable_check_count": 0,
       "overall_status": "partial",
       "planner_expected_task_kind": "browse_software",
       "planner_observed_task_kind": "browse_software",
@@ -325,6 +326,39 @@
       "search_query": "article inside 1994 magazine scan about ray tracing",
       "skipped_checks": [
         {
+          "expected": {
+            "desired_object_types": [
+              "article",
+              "page_range",
+              "document_section"
+            ],
+            "minimum_granularity": "article_or_page_range"
+          },
+          "message": "No bounded primary candidate was available for result-shape evaluation.",
+          "name": "result_shape.primary_candidate",
+          "observed": {
+            "active_lanes": [],
+            "artifact_locators": [],
+            "compatibility_evidence_count": 0,
+            "limitations": [
+              "no_result"
+            ],
+            "matched_function_terms": [],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [],
+            "matched_product_terms": [],
+            "member_paths": [],
+            "minimum_granularity": "article_or_page_range",
+            "minimum_granularity_status": "not_evaluable",
+            "primary_candidate": null,
+            "representation_ids": [],
+            "source_families": [],
+            "source_ids": [],
+            "top_result_count": 0
+          },
+          "status": "not_evaluable"
+        },
+        {
           "expected": [
             "best_direct_answer",
             "inside_bundles",
@@ -332,8 +366,28 @@
             "documentation",
             "absence_or_next_steps"
           ],
-          "message": "Expected future result lanes are recorded but not scored as a benchmark in Eval Runner v0; current lane/user-cost annotations are bounded result details, not a lane-placement benchmark.",
+          "message": "No primary candidate was available for lane evaluation.",
           "name": "lanes.expected_lanes",
+          "observed": {
+            "active_lanes": [],
+            "artifact_locators": [],
+            "compatibility_evidence_count": 0,
+            "limitations": [
+              "no_result"
+            ],
+            "matched_function_terms": [],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [],
+            "matched_product_terms": [],
+            "member_paths": [],
+            "minimum_granularity": "article_or_page_range",
+            "minimum_granularity_status": "not_evaluable",
+            "primary_candidate": null,
+            "representation_ids": [],
+            "source_families": [],
+            "source_ids": [],
+            "top_result_count": 0
+          },
           "status": "not_evaluable"
         },
         {
@@ -342,8 +396,28 @@
             "modern ray tracing articles unrelated to the 1994 scan context",
             "search hits that match only a collection title without page-level evidence"
           ],
-          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement production ranking, fuzzy, semantic, or vector evaluation.",
+          "message": "No primary candidate was available for bad-result evaluation.",
           "name": "ranking.bad_result_patterns",
+          "observed": {
+            "active_lanes": [],
+            "artifact_locators": [],
+            "compatibility_evidence_count": 0,
+            "limitations": [
+              "no_result"
+            ],
+            "matched_function_terms": [],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [],
+            "matched_product_terms": [],
+            "member_paths": [],
+            "minimum_granularity": "article_or_page_range",
+            "minimum_granularity_status": "not_evaluable",
+            "primary_candidate": null,
+            "representation_ids": [],
+            "source_families": [],
+            "source_ids": [],
+            "top_result_count": 0
+          },
           "status": "not_evaluable"
         }
       ],
@@ -382,7 +456,7 @@
           "severity": "info"
         }
       ],
-      "overall_status": "partial",
+      "overall_status": "satisfied",
       "partial_checks": [],
       "planner_expected_task_kind": "find_driver",
       "planner_observed": {
@@ -985,12 +1059,175 @@
             ]
           },
           "status": "satisfied"
-        }
-      ],
-      "search_mode": "local_index",
-      "search_observed_result_count": 50,
-      "search_query": "ThinkPad T42 Wi-Fi",
-      "skipped_checks": [
+        },
+        {
+          "expected": {
+            "desired_object_types": [
+              "driver",
+              "installer",
+              "bundle_member"
+            ],
+            "minimum_granularity": "direct_driver_artifact_or_member"
+          },
+          "message": "Primary candidate shape satisfies the strict minimum granularity for this hard task.",
+          "name": "result_shape.primary_candidate",
+          "observed": {
+            "active_lanes": [
+              "best_direct_answer",
+              "inside_bundles",
+              "installable_or_usable_now"
+            ],
+            "artifact_locators": [
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 Wi-Fi wireless support bundle recorded fixture",
+              "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+              "member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "rep.local-bundle.driver-support-cd.zip",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "rep.local-bundle.driver-support-cd.zip",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "member:local-bundle-fixture:driver-support-cd@1.0:rep.local-bundle.driver-support-cd.zip:drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "driver.inf",
+              "member_path:drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "member:local-bundle-fixture:driver-support-cd@1.0:rep.local-bundle.driver-support-cd.zip:README.txt",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip",
+              "member:local-bundle-fixture:driver-support-cd@1.0:rep.local-bundle.driver-support-cd.zip:drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "member_path:drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "member:local-bundle-fixture:driver-support-cd@1.0:rep.local-bundle.driver-support-cd.zip:compatibility/windows2000.txt",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip"
+            ],
+            "compatibility_evidence_count": 5,
+            "limitations": [],
+            "matched_function_terms": [],
+            "matched_hardware_terms": [
+              "ThinkPad T42 Wi-Fi"
+            ],
+            "matched_platform_terms": [
+              "Windows 2000"
+            ],
+            "matched_product_terms": [],
+            "member_paths": [
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "README.txt",
+              "README.txt",
+              "README.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "drivers/wifi/thinkpad_t42/windows2000/readme.txt",
+              "compatibility/windows2000.txt",
+              "compatibility/windows2000.txt",
+              "compatibility/windows2000.txt"
+            ],
+            "minimum_granularity": "direct_driver_artifact_or_member",
+            "minimum_granularity_status": "satisfied",
+            "primary_candidate": {
+              "artifact_locators": [
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 Wi-Fi wireless support bundle recorded fixture",
+                "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+                "member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "rep.local-bundle.driver-support-cd.zip",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "rep.local-bundle.driver-support-cd.zip",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf"
+              ],
+              "candidate_kind": "driver",
+              "compatibility_evidence_count": 5,
+              "compatibility_summary": "Windows 2000: driver_for_hardware via member_text (low); Windows 2000: driver_for_hardware via file_path (low); Windows 2000: supports_platform via compatibility_note (medium); +2 more",
+              "evidence_count": 5,
+              "evidence_kinds": [
+                "compatibility_evidence",
+                "compatibility_note",
+                "member_hash",
+                "member_listing",
+                "member_path",
+                "member_text"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": true,
+              "is_parent_context": false,
+              "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 Wi-Fi wireless support bundle recorded fixture",
+              "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+              "primary_lane": "inside_bundles",
+              "record_kind": "synthetic_member",
+              "representation_id": "rep.synthetic-member.16388e6269f0a84bb96ed8f1",
+              "result_lanes": [
+                "inside_bundles",
+                "best_direct_answer",
+                "installable_or_usable_now"
+              ],
+              "source_family": "local_bundle_fixtures",
+              "source_id": "local-bundle-fixtures",
+              "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
+              "user_cost_reasons": [
+                "inner_member_has_parent_lineage",
+                "member_has_path",
+                "action_available",
+                "member_has_preview_or_readback_action",
+                "source_evidence_present",
+                "compatibility_evidence_present",
+                "driver_platform_match"
+              ],
+              "user_cost_score": 1
+            },
+            "representation_ids": [
+              "rep.synthetic-member.16388e6269f0a84bb96ed8f1",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip",
+              "rep.local-bundle.driver-support-cd.zip"
+            ],
+            "source_families": [
+              "local_bundle_fixtures"
+            ],
+            "source_ids": [
+              "local-bundle-fixtures"
+            ],
+            "top_result_count": 5
+          },
+          "status": "satisfied"
+        },
         {
           "expected": [
             "best_direct_answer",
@@ -999,9 +1236,89 @@
             "preservation",
             "absence_or_next_steps"
           ],
-          "message": "Expected future result lanes are recorded but not scored as a benchmark in Eval Runner v0; current lane/user-cost annotations are bounded result details, not a lane-placement benchmark.",
+          "message": "Primary candidate uses an expected lane and satisfies direct/member usefulness expectations.",
           "name": "lanes.expected_lanes",
-          "status": "not_evaluable"
+          "observed": {
+            "active_lanes": [
+              "best_direct_answer",
+              "inside_bundles",
+              "installable_or_usable_now"
+            ],
+            "direct_member_counts_as_best_direct_answer": true,
+            "expected_lanes": [
+              "best_direct_answer",
+              "inside_bundles",
+              "official",
+              "preservation",
+              "absence_or_next_steps"
+            ],
+            "installable_lane_satisfied": true,
+            "matched_lanes": [
+              "best_direct_answer",
+              "inside_bundles"
+            ],
+            "preferred_direct_lane_satisfied": true,
+            "primary_candidate": {
+              "artifact_locators": [
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 Wi-Fi wireless support bundle recorded fixture",
+                "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+                "member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "rep.local-bundle.driver-support-cd.zip",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "rep.local-bundle.driver-support-cd.zip",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf"
+              ],
+              "candidate_kind": "driver",
+              "compatibility_evidence_count": 5,
+              "compatibility_summary": "Windows 2000: driver_for_hardware via member_text (low); Windows 2000: driver_for_hardware via file_path (low); Windows 2000: supports_platform via compatibility_note (medium); +2 more",
+              "evidence_count": 5,
+              "evidence_kinds": [
+                "compatibility_evidence",
+                "compatibility_note",
+                "member_hash",
+                "member_listing",
+                "member_path",
+                "member_text"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": true,
+              "is_parent_context": false,
+              "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 Wi-Fi wireless support bundle recorded fixture",
+              "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+              "primary_lane": "inside_bundles",
+              "record_kind": "synthetic_member",
+              "representation_id": "rep.synthetic-member.16388e6269f0a84bb96ed8f1",
+              "result_lanes": [
+                "inside_bundles",
+                "best_direct_answer",
+                "installable_or_usable_now"
+              ],
+              "source_family": "local_bundle_fixtures",
+              "source_id": "local-bundle-fixtures",
+              "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
+              "user_cost_reasons": [
+                "inner_member_has_parent_lineage",
+                "member_has_path",
+                "action_available",
+                "member_has_preview_or_readback_action",
+                "source_evidence_present",
+                "compatibility_evidence_present",
+                "driver_platform_match"
+              ],
+              "user_cost_score": 1
+            },
+            "primary_lane": "inside_bundles"
+          },
+          "status": "satisfied"
         },
         {
           "expected": [
@@ -1009,11 +1326,93 @@
             "manuals or spec sheets with no driver artifact",
             "drivers for the wrong operating system or wrong hardware variant"
           ],
-          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement production ranking, fuzzy, semantic, or vector evaluation.",
+          "message": "No known bad-result pattern was accepted as the primary bounded result.",
           "name": "ranking.bad_result_patterns",
-          "status": "not_evaluable"
+          "observed": {
+            "limitations": [],
+            "patterns": [
+              {
+                "pattern": "whole support CDs without member listings",
+                "reason": "member_or_file_listing_present",
+                "triggered": false
+              },
+              {
+                "pattern": "manuals or spec sheets with no driver artifact",
+                "reason": "driver_artifact_or_non_manual_primary",
+                "triggered": false
+              },
+              {
+                "pattern": "drivers for the wrong operating system or wrong hardware variant",
+                "reason": "requested_platform_and_hardware_present",
+                "triggered": false
+              }
+            ],
+            "primary_candidate": {
+              "artifact_locators": [
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 Wi-Fi wireless support bundle recorded fixture",
+                "member_listing drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+                "member_path drivers/wifi/thinkpad_t42/windows2000/driver.inf local_bundle_fixtures member_listing Local Bundle Fixtures",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "rep.local-bundle.driver-support-cd.zip",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "rep.local-bundle.driver-support-cd.zip",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.driver-support-cd.zip/members/1",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+                "drivers/wifi/thinkpad_t42/windows2000/driver.inf"
+              ],
+              "candidate_kind": "driver",
+              "compatibility_evidence_count": 5,
+              "compatibility_summary": "Windows 2000: driver_for_hardware via member_text (low); Windows 2000: driver_for_hardware via file_path (low); Windows 2000: supports_platform via compatibility_note (medium); +2 more",
+              "evidence_count": 5,
+              "evidence_kinds": [
+                "compatibility_evidence",
+                "compatibility_note",
+                "member_hash",
+                "member_listing",
+                "member_path",
+                "member_text"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": true,
+              "is_parent_context": false,
+              "label": "drivers/wifi/thinkpad_t42/windows2000/driver.inf (drivers wifi thinkpad t42 windows2000 driver inf) in ThinkPad T42 Wi-Fi wireless support bundle recorded fixture",
+              "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+              "parent_target_ref": "local-bundle-fixture:driver-support-cd@1.0",
+              "primary_lane": "inside_bundles",
+              "record_kind": "synthetic_member",
+              "representation_id": "rep.synthetic-member.16388e6269f0a84bb96ed8f1",
+              "result_lanes": [
+                "inside_bundles",
+                "best_direct_answer",
+                "installable_or_usable_now"
+              ],
+              "source_family": "local_bundle_fixtures",
+              "source_id": "local-bundle-fixtures",
+              "target_ref": "member:sha256:16388e6269f0a84bb96ed8f115872a857094519f0a042786406401f39bcaf4af",
+              "user_cost_reasons": [
+                "inner_member_has_parent_lineage",
+                "member_has_path",
+                "action_available",
+                "member_has_preview_or_readback_action",
+                "source_evidence_present",
+                "compatibility_evidence_present",
+                "driver_platform_match"
+              ],
+              "user_cost_score": 1
+            }
+          },
+          "status": "satisfied"
         }
       ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 50,
+      "search_query": "ThinkPad T42 Wi-Fi",
+      "skipped_checks": [],
       "task_id": "driver_inside_support_cd",
       "top_results": [
         {
@@ -1682,6 +2081,165 @@
             ]
           },
           "status": "partial"
+        },
+        {
+          "expected": {
+            "desired_object_types": [
+              "software_release",
+              "installer",
+              "release_asset"
+            ],
+            "minimum_granularity": "versioned_release_artifact"
+          },
+          "message": "Primary candidate is source-backed but still misses one or more strict result-shape requirements.",
+          "name": "result_shape.primary_candidate",
+          "observed": {
+            "active_lanes": [
+              "inside_bundles",
+              "preservation"
+            ],
+            "artifact_locators": [
+              "member:local-bundle-fixture:windows-xp-browser-tools-bundle@1.0:rep.local-bundle.windows-xp-browser-tools-bundle.zip:browsers/firefox-xp-support/readme.txt",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip"
+            ],
+            "compatibility_evidence_count": 2,
+            "limitations": [
+              "exact_latest_compatible_release_not_proven"
+            ],
+            "matched_function_terms": [],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [
+              "Windows XP"
+            ],
+            "matched_product_terms": [
+              "Firefox"
+            ],
+            "member_paths": [
+              "browsers/firefox-xp-support/readme.txt",
+              "browsers/firefox-xp-support/readme.txt",
+              "browsers/firefox-xp-support/readme.txt"
+            ],
+            "minimum_granularity": "versioned_release_artifact",
+            "minimum_granularity_status": "partial",
+            "primary_candidate": {
+              "artifact_locators": [
+                "member:local-bundle-fixture:windows-xp-browser-tools-bundle@1.0:rep.local-bundle.windows-xp-browser-tools-bundle.zip:browsers/firefox-xp-support/readme.txt",
+                "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+                "rep.local-bundle.windows-xp-browser-tools-bundle.zip"
+              ],
+              "candidate_kind": "documentation",
+              "compatibility_evidence_count": 0,
+              "compatibility_summary": null,
+              "evidence_count": 1,
+              "evidence_kinds": [
+                "member_path"
+              ],
+              "has_direct_artifact_locator": false,
+              "is_member_result": true,
+              "is_parent_context": false,
+              "label": "readme.txt",
+              "member_path": "browsers/firefox-xp-support/readme.txt",
+              "parent_target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+              "primary_lane": "inside_bundles",
+              "record_kind": "member",
+              "representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "result_lanes": [
+                "inside_bundles"
+              ],
+              "source_family": "local_bundle_fixtures",
+              "source_id": "local-bundle-fixtures",
+              "target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+              "user_cost_reasons": [
+                "member_has_path",
+                "member_listing_only"
+              ],
+              "user_cost_score": 2
+            },
+            "representation_ids": [
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
+              "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
+              "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.0",
+              "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.1"
+            ],
+            "source_families": [
+              "internet_archive_recorded",
+              "local_bundle_fixtures"
+            ],
+            "source_ids": [
+              "internet-archive-recorded-fixtures",
+              "local-bundle-fixtures"
+            ],
+            "top_result_count": 5
+          },
+          "status": "partial"
+        },
+        {
+          "expected": [
+            "best_direct_answer",
+            "official",
+            "preservation",
+            "documentation",
+            "absence_or_next_steps"
+          ],
+          "message": "Some expected lanes are present, but the primary candidate does not yet satisfy the strict lane shape.",
+          "name": "lanes.expected_lanes",
+          "observed": {
+            "active_lanes": [
+              "inside_bundles",
+              "preservation"
+            ],
+            "direct_member_counts_as_best_direct_answer": false,
+            "expected_lanes": [
+              "best_direct_answer",
+              "official",
+              "preservation",
+              "documentation",
+              "absence_or_next_steps"
+            ],
+            "installable_lane_satisfied": true,
+            "matched_lanes": [
+              "preservation"
+            ],
+            "preferred_direct_lane_satisfied": false,
+            "primary_candidate": {
+              "artifact_locators": [
+                "member:local-bundle-fixture:windows-xp-browser-tools-bundle@1.0:rep.local-bundle.windows-xp-browser-tools-bundle.zip:browsers/firefox-xp-support/readme.txt",
+                "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+                "rep.local-bundle.windows-xp-browser-tools-bundle.zip"
+              ],
+              "candidate_kind": "documentation",
+              "compatibility_evidence_count": 0,
+              "compatibility_summary": null,
+              "evidence_count": 1,
+              "evidence_kinds": [
+                "member_path"
+              ],
+              "has_direct_artifact_locator": false,
+              "is_member_result": true,
+              "is_parent_context": false,
+              "label": "readme.txt",
+              "member_path": "browsers/firefox-xp-support/readme.txt",
+              "parent_target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+              "primary_lane": "inside_bundles",
+              "record_kind": "member",
+              "representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "result_lanes": [
+                "inside_bundles"
+              ],
+              "source_family": "local_bundle_fixtures",
+              "source_id": "local-bundle-fixtures",
+              "target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+              "user_cost_reasons": [
+                "member_has_path",
+                "member_listing_only"
+              ],
+              "user_cost_score": 2
+            },
+            "primary_lane": "inside_bundles"
+          },
+          "status": "partial"
         }
       ],
       "planner_expected_task_kind": "find_latest_compatible_release",
@@ -1816,23 +2374,6 @@
             "unrelated_support_cd_parent_without_relevant_member"
           ],
           "status": "satisfied"
-        }
-      ],
-      "search_mode": "local_index",
-      "search_observed_result_count": 22,
-      "search_query": "Firefox",
-      "skipped_checks": [
-        {
-          "expected": [
-            "best_direct_answer",
-            "official",
-            "preservation",
-            "documentation",
-            "absence_or_next_steps"
-          ],
-          "message": "Expected future result lanes are recorded but not scored as a benchmark in Eval Runner v0; current lane/user-cost annotations are bounded result details, not a lane-placement benchmark.",
-          "name": "lanes.expected_lanes",
-          "status": "not_evaluable"
         },
         {
           "expected": [
@@ -1840,11 +2381,71 @@
             "release pages without Windows XP compatibility evidence",
             "browser collections that do not narrow to one compatible release"
           ],
-          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement production ranking, fuzzy, semantic, or vector evaluation.",
+          "message": "No known bad-result pattern was accepted as the primary bounded result.",
           "name": "ranking.bad_result_patterns",
-          "status": "not_evaluable"
+          "observed": {
+            "limitations": [
+              "exact_latest_compatible_release_not_proven"
+            ],
+            "patterns": [
+              {
+                "pattern": "latest Firefox release regardless of platform support",
+                "reason": "platform_evidence_present",
+                "triggered": false
+              },
+              {
+                "pattern": "release pages without Windows XP compatibility evidence",
+                "reason": "platform_evidence_present",
+                "triggered": false
+              },
+              {
+                "pattern": "browser collections that do not narrow to one compatible release",
+                "reason": "not_collection_only_primary",
+                "triggered": false
+              }
+            ],
+            "primary_candidate": {
+              "artifact_locators": [
+                "member:local-bundle-fixture:windows-xp-browser-tools-bundle@1.0:rep.local-bundle.windows-xp-browser-tools-bundle.zip:browsers/firefox-xp-support/readme.txt",
+                "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+                "rep.local-bundle.windows-xp-browser-tools-bundle.zip"
+              ],
+              "candidate_kind": "documentation",
+              "compatibility_evidence_count": 0,
+              "compatibility_summary": null,
+              "evidence_count": 1,
+              "evidence_kinds": [
+                "member_path"
+              ],
+              "has_direct_artifact_locator": false,
+              "is_member_result": true,
+              "is_parent_context": false,
+              "label": "readme.txt",
+              "member_path": "browsers/firefox-xp-support/readme.txt",
+              "parent_target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+              "primary_lane": "inside_bundles",
+              "record_kind": "member",
+              "representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "result_lanes": [
+                "inside_bundles"
+              ],
+              "source_family": "local_bundle_fixtures",
+              "source_id": "local-bundle-fixtures",
+              "target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+              "user_cost_reasons": [
+                "member_has_path",
+                "member_listing_only"
+              ],
+              "user_cost_score": 2
+            }
+          },
+          "status": "satisfied"
         }
       ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 22,
+      "search_query": "Firefox",
+      "skipped_checks": [],
       "task_id": "latest_firefox_before_xp_drop",
       "top_results": [
         {
@@ -2702,6 +3303,207 @@
             ]
           },
           "status": "partial"
+        },
+        {
+          "expected": {
+            "desired_object_types": [
+              "application",
+              "installer",
+              "portable_package"
+            ],
+            "minimum_granularity": "direct_artifact_or_identity_trace"
+          },
+          "message": "Primary candidate is source-backed but still misses one or more strict result-shape requirements.",
+          "name": "result_shape.primary_candidate",
+          "observed": {
+            "active_lanes": [
+              "documentation",
+              "inside_bundles",
+              "mentions_or_traces",
+              "preservation"
+            ],
+            "artifact_locators": [
+              "representation_locator runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_xp_browser_tools_bundle.zip local_bundle_fixtures source_metadata Local Bundle Fixtures",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/4",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/1",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/1",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/README.txt",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/README.txt",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+              "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/README.txt"
+            ],
+            "compatibility_evidence_count": 11,
+            "limitations": [
+              "concrete_identity_or_direct_installer_not_proven"
+            ],
+            "matched_function_terms": [
+              "FTP client",
+              "blue"
+            ],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [
+              "Windows NT 5.1",
+              "Windows XP"
+            ],
+            "matched_product_terms": [],
+            "member_paths": [
+              "compatibility/windowsxp.txt",
+              "browsers/firefox-xp-support/readme.txt",
+              "utilities/ftp-blue-client/readme.txt",
+              "manifests/manifest.json",
+              "README.txt",
+              "README.txt",
+              "utilities/ftp-blue-client/readme.txt",
+              "utilities/ftp-blue-client/readme.txt",
+              "utilities/ftp-blue-client/readme.txt",
+              "utilities/ftp-blue-client/readme.txt"
+            ],
+            "minimum_granularity": "direct_artifact_or_identity_trace",
+            "minimum_granularity_status": "partial",
+            "primary_candidate": {
+              "artifact_locators": [
+                "representation_locator runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_xp_browser_tools_bundle.zip local_bundle_fixtures source_metadata Local Bundle Fixtures",
+                "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/4",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/1",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/1"
+              ],
+              "candidate_kind": "documentation",
+              "compatibility_evidence_count": 5,
+              "compatibility_summary": "Windows XP: documentation_for_platform via compatibility_note (medium); Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium); +2 more",
+              "evidence_count": 12,
+              "evidence_kinds": [
+                "compatibility_evidence",
+                "compatibility_note",
+                "label",
+                "member_listing",
+                "representation_locator"
+              ],
+              "has_direct_artifact_locator": false,
+              "is_member_result": false,
+              "is_parent_context": true,
+              "label": "Windows XP browser and tools bundle recorded fixture",
+              "member_path": null,
+              "parent_target_ref": null,
+              "primary_lane": "inside_bundles",
+              "record_kind": "resolved_object",
+              "representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "result_lanes": [
+                "inside_bundles",
+                "preservation"
+              ],
+              "source_family": "local_bundle_fixtures",
+              "source_id": "local-bundle-fixtures",
+              "target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+              "user_cost_reasons": [
+                "parent_bundle_context_only",
+                "source_evidence_present"
+              ],
+              "user_cost_score": 4
+            },
+            "representation_ids": [
+              "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "rep.synthetic-member.72d5c351d345a66c64c881ae",
+              "rep.synthetic-member.0733365e112ce769f912e058"
+            ],
+            "source_families": [
+              "local_bundle_fixtures"
+            ],
+            "source_ids": [
+              "local-bundle-fixtures"
+            ],
+            "top_result_count": 5
+          },
+          "status": "partial"
+        },
+        {
+          "expected": [
+            "best_direct_answer",
+            "documentation",
+            "community",
+            "mentions_or_traces",
+            "absence_or_next_steps"
+          ],
+          "message": "Some expected lanes are present, but the primary candidate does not yet satisfy the strict lane shape.",
+          "name": "lanes.expected_lanes",
+          "observed": {
+            "active_lanes": [
+              "documentation",
+              "inside_bundles",
+              "mentions_or_traces",
+              "preservation"
+            ],
+            "direct_member_counts_as_best_direct_answer": false,
+            "expected_lanes": [
+              "best_direct_answer",
+              "documentation",
+              "community",
+              "mentions_or_traces",
+              "absence_or_next_steps"
+            ],
+            "installable_lane_satisfied": true,
+            "matched_lanes": [
+              "documentation",
+              "mentions_or_traces"
+            ],
+            "preferred_direct_lane_satisfied": false,
+            "primary_candidate": {
+              "artifact_locators": [
+                "representation_locator runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_xp_browser_tools_bundle.zip local_bundle_fixtures source_metadata Local Bundle Fixtures",
+                "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/4",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/1",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/1"
+              ],
+              "candidate_kind": "documentation",
+              "compatibility_evidence_count": 5,
+              "compatibility_summary": "Windows XP: documentation_for_platform via compatibility_note (medium); Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium); +2 more",
+              "evidence_count": 12,
+              "evidence_kinds": [
+                "compatibility_evidence",
+                "compatibility_note",
+                "label",
+                "member_listing",
+                "representation_locator"
+              ],
+              "has_direct_artifact_locator": false,
+              "is_member_result": false,
+              "is_parent_context": true,
+              "label": "Windows XP browser and tools bundle recorded fixture",
+              "member_path": null,
+              "parent_target_ref": null,
+              "primary_lane": "inside_bundles",
+              "record_kind": "resolved_object",
+              "representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "result_lanes": [
+                "inside_bundles",
+                "preservation"
+              ],
+              "source_family": "local_bundle_fixtures",
+              "source_id": "local-bundle-fixtures",
+              "target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+              "user_cost_reasons": [
+                "parent_bundle_context_only",
+                "source_evidence_present"
+              ],
+              "user_cost_score": 4
+            },
+            "primary_lane": "inside_bundles"
+          },
+          "status": "partial"
         }
       ],
       "planner_expected_task_kind": "identify_software",
@@ -2829,23 +3631,6 @@
             "unrelated_support_cd_parent_without_relevant_member"
           ],
           "status": "satisfied"
-        }
-      ],
-      "search_mode": "local_index",
-      "search_observed_result_count": 12,
-      "search_query": "old blue FTP client for XP",
-      "skipped_checks": [
-        {
-          "expected": [
-            "best_direct_answer",
-            "documentation",
-            "community",
-            "mentions_or_traces",
-            "absence_or_next_steps"
-          ],
-          "message": "Expected future result lanes are recorded but not scored as a benchmark in Eval Runner v0; current lane/user-cost annotations are bounded result details, not a lane-placement benchmark.",
-          "name": "lanes.expected_lanes",
-          "status": "not_evaluable"
         },
         {
           "expected": [
@@ -2853,11 +3638,80 @@
             "modern sync tools unrelated to classic FTP clients",
             "results that match only the color hint without FTP function evidence"
           ],
-          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement production ranking, fuzzy, semantic, or vector evaluation.",
+          "message": "No known bad-result pattern was accepted as the primary bounded result.",
           "name": "ranking.bad_result_patterns",
-          "status": "not_evaluable"
+          "observed": {
+            "limitations": [
+              "concrete_identity_or_direct_installer_not_proven"
+            ],
+            "patterns": [
+              {
+                "pattern": "generic FTP client lists with no concrete artifact",
+                "reason": "function_or_member_evidence_present",
+                "triggered": false
+              },
+              {
+                "pattern": "modern sync tools unrelated to classic FTP clients",
+                "reason": "no_modern_sync_tool_primary",
+                "triggered": false
+              },
+              {
+                "pattern": "results that match only the color hint without FTP function evidence",
+                "reason": "function_evidence_present",
+                "triggered": false
+              }
+            ],
+            "primary_candidate": {
+              "artifact_locators": [
+                "representation_locator runtime/connectors/local_bundle_fixtures/fixtures/payloads/windows_xp_browser_tools_bundle.zip local_bundle_fixtures source_metadata Local Bundle Fixtures",
+                "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/0",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/4",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/1",
+                "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/1"
+              ],
+              "candidate_kind": "documentation",
+              "compatibility_evidence_count": 5,
+              "compatibility_summary": "Windows XP: documentation_for_platform via compatibility_note (medium); Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium); +2 more",
+              "evidence_count": 12,
+              "evidence_kinds": [
+                "compatibility_evidence",
+                "compatibility_note",
+                "label",
+                "member_listing",
+                "representation_locator"
+              ],
+              "has_direct_artifact_locator": false,
+              "is_member_result": false,
+              "is_parent_context": true,
+              "label": "Windows XP browser and tools bundle recorded fixture",
+              "member_path": null,
+              "parent_target_ref": null,
+              "primary_lane": "inside_bundles",
+              "record_kind": "resolved_object",
+              "representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+              "result_lanes": [
+                "inside_bundles",
+                "preservation"
+              ],
+              "source_family": "local_bundle_fixtures",
+              "source_id": "local-bundle-fixtures",
+              "target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+              "user_cost_reasons": [
+                "parent_bundle_context_only",
+                "source_evidence_present"
+              ],
+              "user_cost_score": 4
+            }
+          },
+          "status": "satisfied"
         }
       ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 12,
+      "search_query": "old blue FTP client for XP",
+      "skipped_checks": [],
       "task_id": "old_blue_ftp_client_xp",
       "top_results": [
         {
@@ -3363,7 +4217,81 @@
         }
       ],
       "overall_status": "partial",
-      "partial_checks": [],
+      "partial_checks": [
+        {
+          "expected": [
+            "best_direct_answer",
+            "installable_or_usable_now",
+            "documentation",
+            "community",
+            "absence_or_next_steps"
+          ],
+          "message": "Current results are source-backed, but their lanes do not yet match the strict expected lane set for this hard task.",
+          "name": "lanes.expected_lanes",
+          "observed": {
+            "active_lanes": [
+              "mentions_or_traces",
+              "preservation"
+            ],
+            "direct_member_counts_as_best_direct_answer": false,
+            "expected_lanes": [
+              "best_direct_answer",
+              "installable_or_usable_now",
+              "documentation",
+              "community",
+              "absence_or_next_steps"
+            ],
+            "installable_lane_satisfied": false,
+            "matched_lanes": [],
+            "preferred_direct_lane_satisfied": false,
+            "primary_candidate": {
+              "artifact_locators": [
+                "file_listing registry-repair/registry-repair.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+                "file_listing registry-repair/README-windows98.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+                "registry-repair/README-windows98.txt",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture"
+              ],
+              "candidate_kind": "utility",
+              "compatibility_evidence_count": 4,
+              "compatibility_summary": "Windows 98: documentation_for_platform via compatibility_note (medium); Windows 98: documentation_for_platform via source_metadata (medium); Windows 98: documentation_for_platform via file_path (medium); +1 more",
+              "evidence_count": 6,
+              "evidence_kinds": [
+                "compatibility_evidence",
+                "compatibility_note",
+                "description",
+                "file_listing",
+                "label",
+                "source_identifier"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": false,
+              "is_parent_context": false,
+              "label": "Windows 98 registry repair utility recorded fixture",
+              "member_path": null,
+              "parent_target_ref": null,
+              "primary_lane": "preservation",
+              "record_kind": "resolved_object",
+              "representation_id": "rep.internet-archive-recorded.ia.win98.registry.repair.fixture.metadata",
+              "result_lanes": [
+                "preservation"
+              ],
+              "source_family": "internet_archive_recorded",
+              "source_id": "internet-archive-recorded-fixtures",
+              "target_ref": "internet-archive-recorded:ia-win98-registry-repair-fixture",
+              "user_cost_reasons": [
+                "preservation_source",
+                "source_evidence_present"
+              ],
+              "user_cost_score": 3
+            },
+            "primary_lane": "preservation"
+          },
+          "status": "partial"
+        }
+      ],
       "planner_expected_task_kind": "identify_software",
       "planner_observed": {
         "action_hints": [
@@ -4117,23 +5045,126 @@
             ]
           },
           "status": "satisfied"
-        }
-      ],
-      "search_mode": "local_index",
-      "search_observed_result_count": 8,
-      "search_query": "software to fix broken registry on Windows 98",
-      "skipped_checks": [
+        },
         {
-          "expected": [
-            "best_direct_answer",
-            "installable_or_usable_now",
-            "documentation",
-            "community",
-            "absence_or_next_steps"
-          ],
-          "message": "Expected future result lanes are recorded but not scored as a benchmark in Eval Runner v0; current lane/user-cost annotations are bounded result details, not a lane-placement benchmark.",
-          "name": "lanes.expected_lanes",
-          "status": "not_evaluable"
+          "expected": {
+            "desired_object_types": [
+              "utility",
+              "application",
+              "portable_package"
+            ],
+            "minimum_granularity": "direct_artifact_or_extracted_member"
+          },
+          "message": "Primary candidate shape satisfies the strict minimum granularity for this hard task.",
+          "name": "result_shape.primary_candidate",
+          "observed": {
+            "active_lanes": [
+              "mentions_or_traces",
+              "preservation"
+            ],
+            "artifact_locators": [
+              "registry-repair/registry-repair.exe.txt",
+              "registry-repair/README-windows98.txt",
+              "registry-repair/registry-repair.exe.txt",
+              "registry-repair/README-windows98.txt",
+              "file_listing registry-repair/registry-repair.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "file_listing registry-repair/README-windows98.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "registry-repair/README-windows98.txt",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "file_listing registry-repair/registry-repair.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "file_listing registry-repair/README-windows98.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "registry-repair/README-windows98.txt",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "registry-repair/README-windows98.txt",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+              "registry-repair/README-windows98.txt",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+              "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture"
+            ],
+            "compatibility_evidence_count": 16,
+            "limitations": [],
+            "matched_function_terms": [
+              "registry repair"
+            ],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [
+              "Windows 98"
+            ],
+            "matched_product_terms": [],
+            "member_paths": [
+              "registry-repair/registry-repair.exe.txt",
+              "registry-repair/README-windows98.txt",
+              "registry-repair/registry-repair.exe.txt",
+              "registry-repair/README-windows98.txt"
+            ],
+            "minimum_granularity": "direct_artifact_or_extracted_member",
+            "minimum_granularity_status": "satisfied",
+            "primary_candidate": {
+              "artifact_locators": [
+                "file_listing registry-repair/registry-repair.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+                "file_listing registry-repair/README-windows98.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+                "registry-repair/README-windows98.txt",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture"
+              ],
+              "candidate_kind": "utility",
+              "compatibility_evidence_count": 4,
+              "compatibility_summary": "Windows 98: documentation_for_platform via compatibility_note (medium); Windows 98: documentation_for_platform via source_metadata (medium); Windows 98: documentation_for_platform via file_path (medium); +1 more",
+              "evidence_count": 6,
+              "evidence_kinds": [
+                "compatibility_evidence",
+                "compatibility_note",
+                "description",
+                "file_listing",
+                "label",
+                "source_identifier"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": false,
+              "is_parent_context": false,
+              "label": "Windows 98 registry repair utility recorded fixture",
+              "member_path": null,
+              "parent_target_ref": null,
+              "primary_lane": "preservation",
+              "record_kind": "resolved_object",
+              "representation_id": "rep.internet-archive-recorded.ia.win98.registry.repair.fixture.metadata",
+              "result_lanes": [
+                "preservation"
+              ],
+              "source_family": "internet_archive_recorded",
+              "source_id": "internet-archive-recorded-fixtures",
+              "target_ref": "internet-archive-recorded:ia-win98-registry-repair-fixture",
+              "user_cost_reasons": [
+                "preservation_source",
+                "source_evidence_present"
+              ],
+              "user_cost_score": 3
+            },
+            "representation_ids": [
+              "rep.internet-archive-recorded.ia.win98.registry.repair.fixture.metadata"
+            ],
+            "source_families": [
+              "internet_archive_recorded"
+            ],
+            "source_ids": [
+              "internet-archive-recorded-fixtures"
+            ],
+            "top_result_count": 5
+          },
+          "status": "satisfied"
         },
         {
           "expected": [
@@ -4141,11 +5172,78 @@
             "generic registry advice without an artifact",
             "modern registry cleaners without Windows 98 evidence"
           ],
-          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement production ranking, fuzzy, semantic, or vector evaluation.",
+          "message": "No known bad-result pattern was accepted as the primary bounded result.",
           "name": "ranking.bad_result_patterns",
-          "status": "not_evaluable"
+          "observed": {
+            "limitations": [],
+            "patterns": [
+              {
+                "pattern": "Windows 98 install media",
+                "reason": "no_os_media_primary",
+                "triggered": false
+              },
+              {
+                "pattern": "generic registry advice without an artifact",
+                "reason": "artifact_or_tool_trace_present",
+                "triggered": false
+              },
+              {
+                "pattern": "modern registry cleaners without Windows 98 evidence",
+                "reason": "requested_platform_evidence_present",
+                "triggered": false
+              }
+            ],
+            "primary_candidate": {
+              "artifact_locators": [
+                "file_listing registry-repair/registry-repair.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+                "file_listing registry-repair/README-windows98.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture",
+                "registry-repair/README-windows98.txt",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture/files/1",
+                "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win98-registry-repair-fixture"
+              ],
+              "candidate_kind": "utility",
+              "compatibility_evidence_count": 4,
+              "compatibility_summary": "Windows 98: documentation_for_platform via compatibility_note (medium); Windows 98: documentation_for_platform via source_metadata (medium); Windows 98: documentation_for_platform via file_path (medium); +1 more",
+              "evidence_count": 6,
+              "evidence_kinds": [
+                "compatibility_evidence",
+                "compatibility_note",
+                "description",
+                "file_listing",
+                "label",
+                "source_identifier"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": false,
+              "is_parent_context": false,
+              "label": "Windows 98 registry repair utility recorded fixture",
+              "member_path": null,
+              "parent_target_ref": null,
+              "primary_lane": "preservation",
+              "record_kind": "resolved_object",
+              "representation_id": "rep.internet-archive-recorded.ia.win98.registry.repair.fixture.metadata",
+              "result_lanes": [
+                "preservation"
+              ],
+              "source_family": "internet_archive_recorded",
+              "source_id": "internet-archive-recorded-fixtures",
+              "target_ref": "internet-archive-recorded:ia-win98-registry-repair-fixture",
+              "user_cost_reasons": [
+                "preservation_source",
+                "source_evidence_present"
+              ],
+              "user_cost_score": 3
+            }
+          },
+          "status": "satisfied"
         }
       ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 8,
+      "search_query": "software to fix broken registry on Windows 98",
+      "skipped_checks": [],
       "task_id": "win98_registry_repair",
       "top_results": [
         {
@@ -4681,7 +5779,74 @@
         }
       ],
       "overall_status": "partial",
-      "partial_checks": [],
+      "partial_checks": [
+        {
+          "expected": [
+            "best_direct_answer",
+            "installable_or_usable_now",
+            "inside_bundles",
+            "documentation",
+            "absence_or_next_steps"
+          ],
+          "message": "Some expected lanes are present, but the primary candidate does not yet satisfy the strict lane shape.",
+          "name": "lanes.expected_lanes",
+          "observed": {
+            "active_lanes": [
+              "inside_bundles",
+              "preservation"
+            ],
+            "direct_member_counts_as_best_direct_answer": false,
+            "expected_lanes": [
+              "best_direct_answer",
+              "installable_or_usable_now",
+              "inside_bundles",
+              "documentation",
+              "absence_or_next_steps"
+            ],
+            "installable_lane_satisfied": false,
+            "matched_lanes": [
+              "inside_bundles"
+            ],
+            "preferred_direct_lane_satisfied": false,
+            "primary_candidate": {
+              "artifact_locators": [
+                "portable-app-package/individual-application-installer.exe.txt",
+                "portable-app-package/individual-application-installer.exe.txt"
+              ],
+              "candidate_kind": "installer",
+              "compatibility_evidence_count": 0,
+              "compatibility_summary": null,
+              "evidence_count": 2,
+              "evidence_kinds": [
+                "archive_item_file",
+                "portable-app-package/individual-application-installer.exe.txt"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": false,
+              "is_parent_context": true,
+              "label": "portable-app-package/individual-application-installer.exe.txt",
+              "member_path": null,
+              "parent_target_ref": null,
+              "primary_lane": "inside_bundles",
+              "record_kind": "representation",
+              "representation_id": "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.1",
+              "result_lanes": [
+                "inside_bundles",
+                "preservation"
+              ],
+              "source_family": "internet_archive_recorded",
+              "source_id": "internet-archive-recorded-fixtures",
+              "target_ref": "internet-archive-recorded:ia-win7-portable-apps-fixture",
+              "user_cost_reasons": [
+                "parent_bundle_context_only"
+              ],
+              "user_cost_score": 3
+            },
+            "primary_lane": "inside_bundles"
+          },
+          "status": "partial"
+        }
+      ],
       "planner_expected_task_kind": "browse_software",
       "planner_observed": {
         "action_hints": [
@@ -5189,23 +6354,104 @@
             ]
           },
           "status": "satisfied"
-        }
-      ],
-      "search_mode": "local_index",
-      "search_observed_result_count": 11,
-      "search_query": "Windows 7 apps",
-      "skipped_checks": [
+        },
         {
-          "expected": [
-            "best_direct_answer",
-            "installable_or_usable_now",
-            "inside_bundles",
-            "documentation",
-            "absence_or_next_steps"
-          ],
-          "message": "Expected future result lanes are recorded but not scored as a benchmark in Eval Runner v0; current lane/user-cost annotations are bounded result details, not a lane-placement benchmark.",
-          "name": "lanes.expected_lanes",
-          "status": "not_evaluable"
+          "expected": {
+            "desired_object_types": [
+              "application",
+              "installer",
+              "portable_package"
+            ],
+            "minimum_granularity": "direct_artifact_or_extracted_member"
+          },
+          "message": "Primary candidate shape satisfies the strict minimum granularity for this hard task.",
+          "name": "result_shape.primary_candidate",
+          "observed": {
+            "active_lanes": [
+              "inside_bundles",
+              "preservation"
+            ],
+            "artifact_locators": [
+              "portable-app-package/README-windows7.txt",
+              "portable-app-package/individual-application-installer.exe.txt",
+              "portable-app-package/README-windows7.txt",
+              "portable-app-package/individual-application-installer.exe.txt",
+              "portable-app-package/individual-application-installer.exe.txt",
+              "portable-app-package/individual-application-installer.exe.txt",
+              "portable-app-package/README-windows7.txt",
+              "portable-app-package/README-windows7.txt",
+              "file_listing portable-app-package/README-windows7.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "file_listing portable-app-package/individual-application-installer.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "portable-app-package/README-windows7.txt",
+              "file_listing portable-app-package/README-windows7.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+              "file_listing portable-app-package/individual-application-installer.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+            ],
+            "compatibility_evidence_count": 4,
+            "limitations": [],
+            "matched_function_terms": [],
+            "matched_hardware_terms": [],
+            "matched_platform_terms": [
+              "Windows 7",
+              "Windows NT 6.1"
+            ],
+            "matched_product_terms": [],
+            "member_paths": [
+              "portable-app-package/README-windows7.txt",
+              "portable-app-package/individual-application-installer.exe.txt",
+              "portable-app-package/README-windows7.txt",
+              "portable-app-package/individual-application-installer.exe.txt"
+            ],
+            "minimum_granularity": "direct_artifact_or_extracted_member",
+            "minimum_granularity_status": "satisfied",
+            "primary_candidate": {
+              "artifact_locators": [
+                "portable-app-package/individual-application-installer.exe.txt",
+                "portable-app-package/individual-application-installer.exe.txt"
+              ],
+              "candidate_kind": "installer",
+              "compatibility_evidence_count": 0,
+              "compatibility_summary": null,
+              "evidence_count": 2,
+              "evidence_kinds": [
+                "archive_item_file",
+                "portable-app-package/individual-application-installer.exe.txt"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": false,
+              "is_parent_context": true,
+              "label": "portable-app-package/individual-application-installer.exe.txt",
+              "member_path": null,
+              "parent_target_ref": null,
+              "primary_lane": "inside_bundles",
+              "record_kind": "representation",
+              "representation_id": "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.1",
+              "result_lanes": [
+                "inside_bundles",
+                "preservation"
+              ],
+              "source_family": "internet_archive_recorded",
+              "source_id": "internet-archive-recorded-fixtures",
+              "target_ref": "internet-archive-recorded:ia-win7-portable-apps-fixture",
+              "user_cost_reasons": [
+                "parent_bundle_context_only"
+              ],
+              "user_cost_score": 3
+            },
+            "representation_ids": [
+              "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.1",
+              "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.0",
+              "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.metadata",
+              "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.metadata"
+            ],
+            "source_families": [
+              "internet_archive_recorded"
+            ],
+            "source_ids": [
+              "internet-archive-recorded-fixtures"
+            ],
+            "top_result_count": 5
+          },
+          "status": "satisfied"
         },
         {
           "expected": [
@@ -5213,11 +6459,69 @@
             "generic software dumps without member listings",
             "bundle-only results that do not expose direct installable artifacts"
           ],
-          "message": "Bad-result patterns are recorded but not scored in Eval Runner v0; this runner does not implement production ranking, fuzzy, semantic, or vector evaluation.",
+          "message": "No known bad-result pattern was accepted as the primary bounded result.",
           "name": "ranking.bad_result_patterns",
-          "status": "not_evaluable"
+          "observed": {
+            "limitations": [],
+            "patterns": [
+              {
+                "pattern": "operating system ISO images",
+                "reason": "no_os_media_primary",
+                "triggered": false
+              },
+              {
+                "pattern": "generic software dumps without member listings",
+                "reason": "member_or_artifact_visible",
+                "triggered": false
+              },
+              {
+                "pattern": "bundle-only results that do not expose direct installable artifacts",
+                "reason": "member_or_artifact_visible",
+                "triggered": false
+              }
+            ],
+            "primary_candidate": {
+              "artifact_locators": [
+                "portable-app-package/individual-application-installer.exe.txt",
+                "portable-app-package/individual-application-installer.exe.txt"
+              ],
+              "candidate_kind": "installer",
+              "compatibility_evidence_count": 0,
+              "compatibility_summary": null,
+              "evidence_count": 2,
+              "evidence_kinds": [
+                "archive_item_file",
+                "portable-app-package/individual-application-installer.exe.txt"
+              ],
+              "has_direct_artifact_locator": true,
+              "is_member_result": false,
+              "is_parent_context": true,
+              "label": "portable-app-package/individual-application-installer.exe.txt",
+              "member_path": null,
+              "parent_target_ref": null,
+              "primary_lane": "inside_bundles",
+              "record_kind": "representation",
+              "representation_id": "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.1",
+              "result_lanes": [
+                "inside_bundles",
+                "preservation"
+              ],
+              "source_family": "internet_archive_recorded",
+              "source_id": "internet-archive-recorded-fixtures",
+              "target_ref": "internet-archive-recorded:ia-win7-portable-apps-fixture",
+              "user_cost_reasons": [
+                "parent_bundle_context_only"
+              ],
+              "user_cost_score": 3
+            }
+          },
+          "status": "satisfied"
         }
       ],
+      "search_mode": "local_index",
+      "search_observed_result_count": 11,
+      "search_query": "Windows 7 apps",
+      "skipped_checks": [],
       "task_id": "windows_7_apps",
       "top_results": [
         {

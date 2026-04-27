@@ -1,0 +1,159 @@
+{
+  "report_id": "old_platform_result_refinement_v0",
+  "created_by_slice": "old_platform_result_refinement_pack_v0",
+  "baseline": {
+    "label": "Hard Eval Satisfaction Pack v0",
+    "source": "control/audits/hard-eval-satisfaction-v0/",
+    "status_counts": {
+      "capability_gap": 1,
+      "partial": 5
+    },
+    "notes": "Five source-backed old-platform hard evals were partial because result-shape, lane, and bad-result checks were not yet evaluated."
+  },
+  "current": {
+    "label": "Old-Platform Result Refinement Pack v0",
+    "source": "python scripts/run_archive_resolution_evals.py --json",
+    "status_counts": {
+      "capability_gap": 1,
+      "partial": 4,
+      "satisfied": 1
+    },
+    "archive_eval_task_count": 6,
+    "external_baselines": "external baselines remain pending/manual"
+  },
+  "targeted_tasks": [
+    "driver_inside_support_cd",
+    "latest_firefox_before_xp_drop",
+    "old_blue_ftp_client_xp",
+    "win98_registry_repair",
+    "windows_7_apps"
+  ],
+  "tasks_improved_to_satisfied": [
+    "driver_inside_support_cd"
+  ],
+  "tasks_remaining_partial": [
+    "latest_firefox_before_xp_drop",
+    "old_blue_ftp_client_xp",
+    "win98_registry_repair",
+    "windows_7_apps"
+  ],
+  "tasks_still_capability_gap": [
+    "article_inside_magazine_scan"
+  ],
+  "result_shape_checks_added": [
+    "result_shape.primary_candidate",
+    "lanes.expected_lanes",
+    "ranking.bad_result_patterns"
+  ],
+  "bad_result_checks_added": [
+    "OS media is not accepted as app/software answer",
+    "parent support CD without member evidence is not accepted for driver-member tasks",
+    "manual/document-only result is not accepted when driver artifact is expected",
+    "wrong OS or wrong hardware evidence blocks driver satisfaction",
+    "generic FTP list without function/member evidence is not accepted",
+    "generic registry advice without artifact/tool trace is not accepted",
+    "bundle-only records without members/artifacts are not accepted for direct application tasks"
+  ],
+  "task_findings": {
+    "driver_inside_support_cd": {
+      "baseline_status": "partial",
+      "current_status": "satisfied",
+      "evidence_used": [
+        "member path drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+        "local-bundle-fixtures source id/family",
+        "ThinkPad T42 Wi-Fi hardware evidence",
+        "Windows 2000 platform evidence",
+        "inside_bundles lane with low member user cost"
+      ],
+      "remaining_gap": null
+    },
+    "latest_firefox_before_xp_drop": {
+      "baseline_status": "partial",
+      "current_status": "partial",
+      "evidence_used": [
+        "Firefox product evidence",
+        "Windows XP support evidence",
+        "recorded fixture/source evidence"
+      ],
+      "remaining_gap": "exact_latest_compatible_release_not_proven"
+    },
+    "old_blue_ftp_client_xp": {
+      "baseline_status": "partial",
+      "current_status": "partial",
+      "evidence_used": [
+        "FTP client function evidence",
+        "Windows XP compatibility evidence",
+        "local bundle member listing evidence"
+      ],
+      "remaining_gap": "concrete_identity_or_direct_installer_not_proven"
+    },
+    "win98_registry_repair": {
+      "baseline_status": "partial",
+      "current_status": "partial",
+      "evidence_used": [
+        "registry repair function evidence",
+        "Windows 98 compatibility evidence",
+        "recorded fixture file-list evidence"
+      ],
+      "remaining_gap": "primary lane remains preservation/context"
+    },
+    "windows_7_apps": {
+      "baseline_status": "partial",
+      "current_status": "partial",
+      "evidence_used": [
+        "Windows 7 platform evidence",
+        "individual application installer representation",
+        "recorded fixture source evidence"
+      ],
+      "remaining_gap": "primary lane remains inside_bundles/context"
+    },
+    "article_inside_magazine_scan": {
+      "baseline_status": "capability_gap",
+      "current_status": "capability_gap",
+      "evidence_used": [],
+      "remaining_gap": "scan/OCR/article/page fixture evidence missing"
+    }
+  },
+  "recommended_next_milestone": "More Source Coverage Expansion v1",
+  "alternatives_considered": [
+    {
+      "milestone": "Manual External Baseline Observation Pack v0",
+      "decision": "defer",
+      "why": "One hard task is satisfied, but four old-platform hard tasks still need stronger source/result evidence before external comparison is the highest-value next step."
+    },
+    {
+      "milestone": "Article/Scan Fixture Pack v0",
+      "decision": "defer",
+      "why": "It targets the only capability gap, but source coverage remains a broader old-platform usefulness blocker."
+    },
+    {
+      "milestone": "Rust Query Planner Parity Candidate v0",
+      "decision": "defer",
+      "why": "Python oracle result-shape behavior is still evolving."
+    },
+    {
+      "milestone": "Public Alpha Rehearsal Evidence v0",
+      "decision": "defer",
+      "why": "Demo usefulness is improving but several old-platform hard tasks remain partial."
+    }
+  ],
+  "do_not_do": [
+    "do not weaken hard evals",
+    "do not remove hard eval tasks",
+    "do not fabricate source evidence",
+    "do not fabricate external baselines",
+    "do not add live crawling",
+    "do not scrape Google",
+    "do not scrape Internet Archive",
+    "do not add fuzzy/vector/LLM retrieval",
+    "do not add production ranking",
+    "do not add Rust behavior ports",
+    "do not add native app projects"
+  ],
+  "limitations": [
+    "Only one hard task is satisfied.",
+    "Four old-platform hard tasks remain partial.",
+    "Article-inside-scan remains a capability gap.",
+    "The checks are deterministic eval/result-shape checks, not production ranking."
+  ]
+}

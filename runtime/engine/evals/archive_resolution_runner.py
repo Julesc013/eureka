@@ -249,7 +249,11 @@ class ArchiveResolutionEvalRunner:
 
         planner_checks, planner_status = _evaluate_planner(task, planner_task, planner_exception)
         search_observation = self._observe_search(task, planner_task, search_context)
-        all_checks = planner_checks + search_observation.checks + _not_yet_evaluable_checks(task)
+        all_checks = (
+            planner_checks
+            + search_observation.checks
+            + _evaluate_result_refinement_checks(task, search_observation.top_results)
+        )
         satisfied_checks = tuple(check for check in all_checks if check.status == "satisfied")
         partial_checks = tuple(check for check in all_checks if check.status == "partial")
         failed_checks = tuple(check for check in all_checks if check.status == "not_satisfied")
@@ -843,29 +847,459 @@ def _evaluate_search(
     )
 
 
-def _not_yet_evaluable_checks(
+def _evaluate_result_refinement_checks(
     task: ArchiveResolutionEvalTask,
+    top_results: tuple[dict[str, Any], ...],
 ) -> tuple[EvalCheckResult, ...]:
+    shape = _result_shape_summary(task, top_results)
     return (
-        EvalCheckResult(
+        _check_primary_result_shape(task, shape),
+        _check_expected_lanes(task, shape),
+        _check_bad_result_patterns(task, shape),
+    )
+
+
+def _result_shape_summary(
+    task: ArchiveResolutionEvalTask,
+    top_results: tuple[dict[str, Any], ...],
+) -> dict[str, Any]:
+    evidence_report = (
+        _structured_expected_result_evidence(task, top_results)
+        if top_results
+        else {
+            "status": "not_evaluable",
+            "source_ids": [],
+            "source_families": [],
+            "member_paths": [],
+            "representation_ids": [],
+            "artifact_locators": [],
+            "compatibility_evidence_count": 0,
+            "matched_platform_terms": [],
+            "matched_hardware_terms": [],
+            "matched_product_terms": [],
+            "matched_function_terms": [],
+        }
+    )
+    primary = top_results[0] if top_results else None
+    primary_shape = _primary_candidate_shape(task, primary) if primary is not None else None
+    shape_status, limitations = _minimum_granularity_status(
+        task,
+        primary_shape=primary_shape,
+        evidence_report=evidence_report,
+    )
+    return {
+        "top_result_count": len(top_results),
+        "primary_candidate": primary_shape,
+        "active_lanes": _active_lanes(top_results),
+        "source_ids": evidence_report["source_ids"],
+        "source_families": evidence_report["source_families"],
+        "member_paths": evidence_report["member_paths"],
+        "representation_ids": evidence_report["representation_ids"],
+        "artifact_locators": evidence_report["artifact_locators"],
+        "compatibility_evidence_count": evidence_report["compatibility_evidence_count"],
+        "matched_platform_terms": evidence_report["matched_platform_terms"],
+        "matched_hardware_terms": evidence_report["matched_hardware_terms"],
+        "matched_product_terms": evidence_report["matched_product_terms"],
+        "matched_function_terms": evidence_report["matched_function_terms"],
+        "minimum_granularity": task.minimum_granularity,
+        "minimum_granularity_status": shape_status,
+        "limitations": limitations,
+    }
+
+
+def _primary_candidate_shape(
+    task: ArchiveResolutionEvalTask,
+    result: Mapping[str, Any],
+) -> dict[str, Any]:
+    primary_artifacts = tuple(
+        item
+        for item in _result_file_like_strings((dict(result),))
+        if _looks_like_artifact_locator(item)
+    )
+    member_path = result.get("member_path") if isinstance(result.get("member_path"), str) else None
+    record_kind = str(result.get("record_kind") or "unknown")
+    member_like = record_kind in {"member", "synthetic_member"}
+    primary_lane = str(result.get("primary_lane") or "other")
+    target_ref = str(result.get("target_ref") or "")
+    route_hints = result.get("route_hints") if isinstance(result.get("route_hints"), Mapping) else {}
+    representation_id = result.get("representation_id") or route_hints.get("representation_id")
+    user_cost_score = result.get("user_cost_score")
+    compatibility_evidence = result.get("compatibility_evidence")
+    compatibility_count = len(compatibility_evidence) if isinstance(compatibility_evidence, list) else 0
+    return {
+        "target_ref": target_ref,
+        "label": str(result.get("label") or ""),
+        "candidate_kind": _candidate_kind(task, result, primary_artifacts),
+        "record_kind": record_kind,
+        "primary_lane": primary_lane,
+        "result_lanes": list(_string_iter(result.get("result_lanes"))),
+        "user_cost_score": user_cost_score if isinstance(user_cost_score, int) else None,
+        "user_cost_reasons": list(_string_iter(result.get("user_cost_reasons"))),
+        "source_id": result.get("source_id"),
+        "source_family": result.get("source_family"),
+        "evidence_count": len(result.get("evidence")) if isinstance(result.get("evidence"), list) else 0,
+        "evidence_kinds": _evidence_kinds(result),
+        "compatibility_evidence_count": compatibility_count,
+        "compatibility_summary": result.get("compatibility_summary"),
+        "representation_id": representation_id,
+        "member_path": member_path,
+        "parent_target_ref": result.get("parent_target_ref") or (target_ref if record_kind == "member" else None),
+        "artifact_locators": list(primary_artifacts),
+        "has_direct_artifact_locator": _has_direct_artifact_locator(primary_artifacts),
+        "is_member_result": member_like,
+        "is_parent_context": "parent_bundle_context_only" in set(_string_iter(result.get("user_cost_reasons"))),
+    }
+
+
+def _candidate_kind(
+    task: ArchiveResolutionEvalTask,
+    result: Mapping[str, Any],
+    artifact_locators: tuple[str, ...],
+) -> str:
+    text = _compact_text(" ".join(_flatten_strings(result)))
+    record_kind = str(result.get("record_kind") or "").casefold()
+    if record_kind == "member":
+        if any(".inf" in item.casefold() for item in artifact_locators) or "driver" in text:
+            return "driver"
+        if "readme" in text or "manual" in text:
+            return "documentation"
+        return "member"
+    if any(".inf" in item.casefold() for item in artifact_locators) or "driver" in text:
+        return "driver"
+    if "registryrepair" in text or "registry" in _compact_text(task.raw_query):
+        return "utility"
+    if "firefox" in text and "release" in text:
+        return "software_release"
+    if any(".exe" in item.casefold() or "installer" in item.casefold() for item in artifact_locators):
+        return "installer"
+    if "readme" in text or "manual" in text or "documentation" in text:
+        return "documentation"
+    if record_kind in {"resolved_object", "state_or_release"}:
+        return "bundle" if "bundle" in text or "archive" in text else "trace"
+    return record_kind or "unknown"
+
+
+def _minimum_granularity_status(
+    task: ArchiveResolutionEvalTask,
+    *,
+    primary_shape: Mapping[str, Any] | None,
+    evidence_report: Mapping[str, Any],
+) -> tuple[str, list[str]]:
+    if primary_shape is None:
+        return "not_evaluable", ["no_result"]
+
+    limitations: list[str] = []
+    source_backed = bool(primary_shape.get("source_id") or evidence_report.get("source_ids"))
+    if not source_backed:
+        limitations.append("missing_source_backing")
+
+    minimum = task.minimum_granularity.casefold()
+    primary_is_member = bool(primary_shape.get("is_member_result"))
+    primary_has_direct_artifact = bool(primary_shape.get("has_direct_artifact_locator"))
+    aggregate_has_artifact = bool(evidence_report.get("artifact_locators"))
+    has_representation = bool(primary_shape.get("representation_id") or evidence_report.get("representation_ids"))
+    has_member_path = bool(primary_shape.get("member_path") or evidence_report.get("member_paths"))
+    has_platform = bool(evidence_report.get("matched_platform_terms"))
+    has_function = bool(evidence_report.get("matched_function_terms"))
+    has_hardware = bool(evidence_report.get("matched_hardware_terms"))
+    has_product = bool(evidence_report.get("matched_product_terms"))
+
+    if minimum == "direct_driver_artifact_or_member":
+        if primary_is_member and primary_has_direct_artifact and has_hardware and has_platform:
+            return "satisfied", limitations
+        if has_member_path and aggregate_has_artifact and has_hardware and has_platform:
+            limitations.append("best_candidate_not_confirmed_as_driver_member")
+            return "partial", limitations
+        limitations.append("missing_driver_member_or_platform_hardware_evidence")
+        return "not_satisfied", limitations
+
+    if minimum == "versioned_release_artifact":
+        release_identity = _release_identity_present(
+            tuple(str(term) for term in evidence_report.get("matched_product_terms", [])),
+            _compact_text(" ".join(_flatten_strings(evidence_report))),
+        )
+        if release_identity and aggregate_has_artifact and has_platform:
+            return "satisfied", limitations
+        limitations.append("exact_latest_compatible_release_not_proven")
+        return "partial" if source_backed and has_product and has_platform else "not_satisfied", limitations
+
+    if minimum == "direct_artifact_or_identity_trace":
+        if primary_has_direct_artifact and has_function and has_platform:
+            return "satisfied", limitations
+        if source_backed and has_function and has_platform and (has_member_path or aggregate_has_artifact):
+            limitations.append("concrete_identity_or_direct_installer_not_proven")
+            return "partial", limitations
+        limitations.append("missing_function_platform_or_identity_trace")
+        return "not_satisfied", limitations
+
+    if minimum == "direct_artifact_or_extracted_member":
+        if source_backed and primary_has_direct_artifact and (has_platform or has_function):
+            return "satisfied", limitations
+        if source_backed and aggregate_has_artifact and (has_representation or has_member_path):
+            limitations.append("best_candidate_is_context_not_direct_artifact")
+            return "partial", limitations
+        limitations.append("missing_direct_artifact_or_member")
+        return "not_satisfied", limitations
+
+    if minimum == "article_or_page_range":
+        limitations.append("article_or_page_range_evidence_not_available")
+        return "not_evaluable", limitations
+
+    return ("satisfied" if source_backed else "not_satisfied"), limitations
+
+
+def _check_primary_result_shape(
+    task: ArchiveResolutionEvalTask,
+    shape: Mapping[str, Any],
+) -> EvalCheckResult:
+    status = str(shape.get("minimum_granularity_status"))
+    if status == "not_evaluable":
+        return EvalCheckResult(
+            name="result_shape.primary_candidate",
+            status="not_evaluable",
+            message="No bounded primary candidate was available for result-shape evaluation.",
+            expected={
+                "minimum_granularity": task.minimum_granularity,
+                "desired_object_types": list(task.desired_object_types),
+            },
+            observed=shape,
+        )
+    if status == "satisfied":
+        return EvalCheckResult(
+            name="result_shape.primary_candidate",
+            status="satisfied",
+            message="Primary candidate shape satisfies the strict minimum granularity for this hard task.",
+            expected={
+                "minimum_granularity": task.minimum_granularity,
+                "desired_object_types": list(task.desired_object_types),
+            },
+            observed=shape,
+        )
+    if status == "partial":
+        return EvalCheckResult(
+            name="result_shape.primary_candidate",
+            status="partial",
+            message="Primary candidate is source-backed but still misses one or more strict result-shape requirements.",
+            expected={
+                "minimum_granularity": task.minimum_granularity,
+                "desired_object_types": list(task.desired_object_types),
+            },
+            observed=shape,
+        )
+    return EvalCheckResult(
+        name="result_shape.primary_candidate",
+        status="not_satisfied",
+        message="Primary candidate shape does not satisfy the minimum result granularity for this hard task.",
+        expected={
+            "minimum_granularity": task.minimum_granularity,
+            "desired_object_types": list(task.desired_object_types),
+        },
+        observed=shape,
+    )
+
+
+def _check_expected_lanes(
+    task: ArchiveResolutionEvalTask,
+    shape: Mapping[str, Any],
+) -> EvalCheckResult:
+    primary = shape.get("primary_candidate")
+    if not isinstance(primary, Mapping):
+        return EvalCheckResult(
             name="lanes.expected_lanes",
             status="not_evaluable",
+            message="No primary candidate was available for lane evaluation.",
+            expected=list(task.expected_lanes),
+            observed=shape,
+        )
+
+    expected_lanes = set(task.expected_lanes)
+    active_lanes = set(_string_iter(shape.get("active_lanes")))
+    primary_lane = str(primary.get("primary_lane") or "")
+    matched_lanes = sorted(expected_lanes & active_lanes)
+    direct_member = bool(primary.get("is_member_result")) and bool(primary.get("has_direct_artifact_locator"))
+    low_user_cost = isinstance(primary.get("user_cost_score"), int) and int(primary["user_cost_score"]) <= 2
+    preferred_direct_lane_satisfied = (
+        "best_direct_answer" not in expected_lanes
+        or direct_member
+        or primary_lane == "best_direct_answer"
+    )
+    installable_lane_satisfied = (
+        "installable_or_usable_now" not in expected_lanes
+        or primary_lane == "installable_or_usable_now"
+        or (direct_member and low_user_cost)
+    )
+    observed = {
+        "expected_lanes": list(task.expected_lanes),
+        "active_lanes": sorted(active_lanes),
+        "primary_lane": primary_lane,
+        "matched_lanes": matched_lanes,
+        "direct_member_counts_as_best_direct_answer": direct_member and low_user_cost,
+        "preferred_direct_lane_satisfied": preferred_direct_lane_satisfied,
+        "installable_lane_satisfied": installable_lane_satisfied,
+        "primary_candidate": primary,
+    }
+    if primary_lane in expected_lanes and preferred_direct_lane_satisfied and installable_lane_satisfied:
+        return EvalCheckResult(
+            name="lanes.expected_lanes",
+            status="satisfied",
+            message="Primary candidate uses an expected lane and satisfies direct/member usefulness expectations.",
+            expected=list(task.expected_lanes),
+            observed=observed,
+        )
+    if matched_lanes:
+        return EvalCheckResult(
+            name="lanes.expected_lanes",
+            status="partial",
+            message="Some expected lanes are present, but the primary candidate does not yet satisfy the strict lane shape.",
+            expected=list(task.expected_lanes),
+            observed=observed,
+        )
+    if shape.get("source_ids") or primary.get("source_id"):
+        return EvalCheckResult(
+            name="lanes.expected_lanes",
+            status="partial",
             message=(
-                "Expected future result lanes are recorded but not scored as a benchmark in Eval Runner v0; "
-                "current lane/user-cost annotations are bounded result details, not a lane-placement benchmark."
+                "Current results are source-backed, but their lanes do not yet match the "
+                "strict expected lane set for this hard task."
             ),
             expected=list(task.expected_lanes),
-        ),
-        EvalCheckResult(
+            observed=observed,
+        )
+    return EvalCheckResult(
+        name="lanes.expected_lanes",
+        status="not_satisfied",
+        message="No current result lane matched the expected lane set for this hard task.",
+        expected=list(task.expected_lanes),
+        observed=observed,
+    )
+
+
+def _check_bad_result_patterns(
+    task: ArchiveResolutionEvalTask,
+    shape: Mapping[str, Any],
+) -> EvalCheckResult:
+    primary = shape.get("primary_candidate")
+    if not isinstance(primary, Mapping):
+        return EvalCheckResult(
             name="ranking.bad_result_patterns",
             status="not_evaluable",
-            message=(
-                "Bad-result patterns are recorded but not scored in Eval Runner v0; "
-                "this runner does not implement production ranking, fuzzy, semantic, or vector evaluation."
-            ),
+            message="No primary candidate was available for bad-result evaluation.",
             expected=list(task.bad_result_patterns),
-        ),
+            observed=shape,
+        )
+
+    pattern_results = [
+        _bad_result_pattern_status(pattern, task=task, shape=shape)
+        for pattern in task.bad_result_patterns
+    ]
+    triggered = [item for item in pattern_results if item["triggered"]]
+    observed = {
+        "patterns": pattern_results,
+        "primary_candidate": primary,
+        "limitations": shape.get("limitations", []),
+    }
+    if triggered:
+        return EvalCheckResult(
+            name="ranking.bad_result_patterns",
+            status="not_satisfied",
+            message="A known bad-result pattern appears to be treated as the primary result shape.",
+            expected=list(task.bad_result_patterns),
+            observed=observed,
+        )
+    return EvalCheckResult(
+        name="ranking.bad_result_patterns",
+        status="satisfied",
+        message="No known bad-result pattern was accepted as the primary bounded result.",
+        expected=list(task.bad_result_patterns),
+        observed=observed,
     )
+
+
+def _bad_result_pattern_status(
+    pattern: str,
+    *,
+    task: ArchiveResolutionEvalTask,
+    shape: Mapping[str, Any],
+) -> dict[str, Any]:
+    compact_pattern = _compact_text(pattern)
+    primary = shape.get("primary_candidate")
+    primary_text = _compact_text(" ".join(_flatten_strings(primary)))
+    member_paths = tuple(str(path) for path in shape.get("member_paths", []))
+    artifact_paths = tuple(str(path) for path in shape.get("artifact_locators", []))
+    has_artifact = _has_direct_artifact_locator(artifact_paths)
+    has_member = bool(member_paths)
+    has_platform = bool(shape.get("matched_platform_terms"))
+    has_hardware = bool(shape.get("matched_hardware_terms"))
+    has_function = bool(shape.get("matched_function_terms"))
+    primary_is_parent_context = bool(isinstance(primary, Mapping) and primary.get("is_parent_context"))
+
+    triggered = False
+    reason = "pattern_avoided"
+    if "operatingsystemiso" in compact_pattern or "installmedia" in compact_pattern:
+        triggered = "iso" in primary_text or "operatingsystemimage" in primary_text
+        reason = "primary_result_looks_like_os_media" if triggered else "no_os_media_primary"
+    elif "wholesupportcds" in compact_pattern:
+        triggered = primary_is_parent_context and not has_member
+        reason = "parent_support_cd_without_member" if triggered else "member_or_file_listing_present"
+    elif "manualsorspecsheets" in compact_pattern:
+        triggered = "manual" in primary_text and not has_artifact
+        reason = "manual_without_driver_artifact" if triggered else "driver_artifact_or_non_manual_primary"
+    elif "wrongoperatingsystem" in compact_pattern or "wronghardware" in compact_pattern:
+        triggered = not (has_platform and has_hardware)
+        reason = "missing_requested_platform_or_hardware" if triggered else "requested_platform_and_hardware_present"
+    elif "latestfirefoxrelease" in compact_pattern or "releasepageswithout" in compact_pattern:
+        triggered = not has_platform
+        reason = "release_trace_without_platform_evidence" if triggered else "platform_evidence_present"
+    elif "browsercollections" in compact_pattern:
+        triggered = primary_is_parent_context and not has_artifact
+        reason = "browser_collection_without_release_or_asset" if triggered else "not_collection_only_primary"
+    elif "genericftpclientlists" in compact_pattern:
+        triggered = (not has_function) or ("generic" in primary_text and not has_artifact)
+        reason = "generic_list_without_artifact" if triggered else "function_or_member_evidence_present"
+    elif "modernsynctools" in compact_pattern:
+        triggered = "sync" in primary_text and "ftp" not in primary_text
+        reason = "modern_sync_tool_primary" if triggered else "no_modern_sync_tool_primary"
+    elif "colorhintwithoutftp" in compact_pattern:
+        triggered = not has_function
+        reason = "color_hint_without_function_evidence" if triggered else "function_evidence_present"
+    elif "genericregistryadvice" in compact_pattern:
+        triggered = "advice" in primary_text and not has_artifact
+        reason = "generic_advice_without_artifact" if triggered else "artifact_or_tool_trace_present"
+    elif "modernregistrycleaners" in compact_pattern:
+        triggered = "modern" in primary_text and not has_platform
+        reason = "modern_tool_without_requested_platform" if triggered else "requested_platform_evidence_present"
+    elif "genericsoftwaredumps" in compact_pattern or "bundleonlyresults" in compact_pattern:
+        triggered = primary_is_parent_context and not (has_member or has_artifact)
+        reason = "parent_bundle_without_member_or_artifact" if triggered else "member_or_artifact_visible"
+    else:
+        triggered = False
+
+    return {
+        "pattern": pattern,
+        "triggered": triggered,
+        "reason": reason,
+    }
+
+
+def _active_lanes(top_results: tuple[dict[str, Any], ...]) -> list[str]:
+    lanes: set[str] = set()
+    for result in top_results:
+        primary_lane = result.get("primary_lane")
+        if isinstance(primary_lane, str) and primary_lane:
+            lanes.add(primary_lane)
+        lanes.update(_string_iter(result.get("result_lanes")))
+    return sorted(lanes)
+
+
+def _evidence_kinds(result: Mapping[str, Any]) -> list[str]:
+    kinds: set[str] = set()
+    for evidence in _string_iter(result.get("evidence")):
+        first = evidence.split(" ", 1)[0].split(":", 1)[0]
+        if first:
+            kinds.add(first)
+    if result.get("compatibility_evidence"):
+        kinds.add("compatibility_evidence")
+    return sorted(kinds)
 
 
 def _overall_status(

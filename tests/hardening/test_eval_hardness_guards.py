@@ -76,15 +76,21 @@ class EvalHardnessGuardsTest(unittest.TestCase):
             report["status_counts"].get("capability_gap", 0)
             + report["status_counts"].get("not_satisfied", 0)
             + report["status_counts"].get("partial", 0),
+            report["total_task_count"] - report["status_counts"].get("satisfied", 0),
+        )
+        self.assertEqual(
+            report["status_counts"].get("capability_gap", 0)
+            + report["status_counts"].get("not_satisfied", 0)
+            + report["status_counts"].get("partial", 0)
+            + report["status_counts"].get("satisfied", 0),
             report["total_task_count"],
         )
-        self.assertNotIn("satisfied", report["status_counts"])
 
         full_tasks = {task["task_id"]: task for task in report["tasks"]}
         for task_id in REQUIRED_ARCHIVE_TASK_IDS:
             self.assertIn(
                 summaries[task_id]["overall_status"],
-                {"capability_gap", "not_satisfied", "partial"},
+                {"capability_gap", "not_satisfied", "partial", "satisfied"},
                 task_id,
             )
             self.assertEqual(summaries[task_id]["planner_status"], "satisfied", task_id)
@@ -114,6 +120,19 @@ class EvalHardnessGuardsTest(unittest.TestCase):
                         or observed.get("artifact_locators"),
                         task_id,
                     )
+                if summaries[task_id]["overall_status"] == "satisfied":
+                    by_name = {check["name"]: check for check in checks}
+                    for check_name in (
+                        "search.expected_result_hints",
+                        "result_shape.primary_candidate",
+                        "lanes.expected_lanes",
+                        "ranking.bad_result_patterns",
+                    ):
+                        self.assertIn(check_name, by_name, task_id)
+                        self.assertEqual(by_name[check_name]["status"], "satisfied", task_id)
+                    observed = search_check.get("observed", {})
+                    self.assertTrue(observed.get("source_ids"), task_id)
+                    self.assertTrue(observed.get("artifact_locators"), task_id)
 
     def test_search_usefulness_query_pack_keeps_hard_coverage(self):
         query_pack = load_json("evals/search_usefulness/queries/search_usefulness_v0.json")

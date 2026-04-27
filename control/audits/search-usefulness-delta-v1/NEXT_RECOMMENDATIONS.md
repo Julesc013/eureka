@@ -10,6 +10,13 @@ to `capability_gap=1` and `partial=5` without weakening hard tasks. The next
 recommended milestone after that follow-up is Old-Platform Result Refinement
 Pack v0.
 
+Second follow-up status: Old-Platform Result Refinement Pack v0 is implemented
+under `control/audits/old-platform-result-refinement-v0/`. Archive evals now
+report `capability_gap=1`, `partial=4`, and `satisfied=1`. The next
+recommended milestone is More Source Coverage Expansion v1 because four
+old-platform hard tasks remain partial due exact-release, identity,
+direct-artifact, or lane/evidence limits.
+
 ## Why This Comes Next
 
 Old-Platform Source Coverage Expansion v0 produced a meaningful local audit
