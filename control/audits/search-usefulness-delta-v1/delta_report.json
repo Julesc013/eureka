@@ -1,0 +1,232 @@
+{
+  "report_id": "search_usefulness_delta_v1",
+  "created_by_slice": "search_usefulness_audit_delta_v1",
+  "baseline": {
+    "label": "search_usefulness_delta_v0_current_after_compatibility_evidence_pack_v0",
+    "source": "control/audits/search-usefulness-delta-v0/delta_report.json",
+    "source_type": "committed_machine_readable_aggregate",
+    "query_count": 64,
+    "status_counts": {
+      "covered": 5,
+      "partial": 5,
+      "source_gap": 41,
+      "capability_gap": 11,
+      "unknown": 2
+    },
+    "failure_mode_counts": {
+      "absence_reasoning_gap": 2,
+      "actionability_gap": 2,
+      "compatibility_evidence_gap": 25,
+      "decomposition_gap": 12,
+      "external_baseline_pending": 64,
+      "identity_cluster_gap": 12,
+      "index_gap": 3,
+      "live_source_gap": 10,
+      "member_access_gap": 12,
+      "planner_gap": 24,
+      "query_interpretation_gap": 21,
+      "ranking_gap": 4,
+      "representation_gap": 14,
+      "source_coverage_gap": 49,
+      "surface_ux_gap": 4
+    },
+    "archive_eval_counts": {
+      "source": "historical_reported_previous_milestone_handoff",
+      "source_type": "historical_reported_aggregate",
+      "status_counts": {
+        "capability_gap": 5,
+        "not_satisfied": 1
+      }
+    },
+    "notes": [
+      "Search-usefulness baseline is committed and machine-readable at aggregate level.",
+      "Archive-eval baseline is historical/reported because delta v0 did not include archive eval counts.",
+      "No committed v0 per-query machine output exists.",
+      "The baseline is not external search observation data."
+    ]
+  },
+  "current": {
+    "label": "current_audit_after_old_platform_source_coverage_expansion_v0",
+    "source": [
+      "python scripts/run_search_usefulness_audit.py --json",
+      "python scripts/run_archive_resolution_evals.py --json"
+    ],
+    "generated_at_normalized": "current_run_normalized_2026-04-27",
+    "query_count": 64,
+    "status_counts": {
+      "covered": 5,
+      "partial": 20,
+      "source_gap": 28,
+      "capability_gap": 9,
+      "unknown": 2
+    },
+    "failure_mode_counts": {
+      "absence_reasoning_gap": 2,
+      "actionability_gap": 2,
+      "compatibility_evidence_gap": 25,
+      "decomposition_gap": 12,
+      "external_baseline_pending": 64,
+      "identity_cluster_gap": 14,
+      "index_gap": 3,
+      "live_source_gap": 10,
+      "member_access_gap": 12,
+      "planner_gap": 24,
+      "query_interpretation_gap": 21,
+      "ranking_gap": 8,
+      "representation_gap": 14,
+      "source_coverage_gap": 49,
+      "surface_ux_gap": 4
+    },
+    "archive_eval_counts": {
+      "status_counts": {
+        "capability_gap": 1,
+        "not_satisfied": 5
+      },
+      "task_outcomes": [
+        {
+          "task_id": "article_inside_magazine_scan",
+          "status": "capability_gap",
+          "search_observed_result_count": 0
+        },
+        {
+          "task_id": "driver_inside_support_cd",
+          "status": "not_satisfied",
+          "search_observed_result_count": 28
+        },
+        {
+          "task_id": "latest_firefox_before_xp_drop",
+          "status": "not_satisfied",
+          "search_observed_result_count": 16
+        },
+        {
+          "task_id": "old_blue_ftp_client_xp",
+          "status": "not_satisfied",
+          "search_observed_result_count": 3
+        },
+        {
+          "task_id": "win98_registry_repair",
+          "status": "not_satisfied",
+          "search_observed_result_count": 8
+        },
+        {
+          "task_id": "windows_7_apps",
+          "status": "not_satisfied",
+          "search_observed_result_count": 11
+        }
+      ]
+    },
+    "external_baseline_pending_counts": {
+      "google": 64,
+      "internet_archive_full_text": 64,
+      "internet_archive_metadata": 64
+    }
+  },
+  "delta": {
+    "status_count_changes": {
+      "covered": 0,
+      "partial": 15,
+      "source_gap": -13,
+      "capability_gap": -2,
+      "unknown": 0
+    },
+    "failure_mode_changes": {
+      "source_coverage_gap": 0,
+      "compatibility_evidence_gap": 0,
+      "planner_gap": 0,
+      "query_interpretation_gap": 0,
+      "representation_gap": 0,
+      "decomposition_gap": 0,
+      "member_access_gap": 0,
+      "identity_cluster_gap": 2,
+      "live_source_gap": 0,
+      "ranking_gap": 4,
+      "surface_ux_gap": 0,
+      "index_gap": 0,
+      "absence_reasoning_gap": 0,
+      "actionability_gap": 0,
+      "external_baseline_pending": 0
+    },
+    "archive_eval_changes": {
+      "capability_gap": -4,
+      "not_satisfied": 4,
+      "satisfied": 0,
+      "interpretation": "Movement from capability_gap to not_satisfied is progress, not success."
+    },
+    "moved_queries": [],
+    "inferred_or_reported_movements": [
+      "creative_ct1740_driver_windows_98",
+      "driver_inf_inside_support_cd",
+      "driver_thinkpad_t42_wifi_windows_2000",
+      "last_opera_for_windows_2000",
+      "last_winamp_for_windows_98",
+      "latest_firefox_before_xp_support_ended",
+      "latest_vlc_for_windows_xp",
+      "mac_os_9_browser",
+      "old_blue_ftp_client_xp",
+      "powerpc_osx_104_browser",
+      "support_cd_member_driver",
+      "threecom_3c905_windows_95_driver",
+      "windows_7_apps",
+      "windows_7_portable_apps_archive",
+      "windows_98_registry_repair",
+      "windows_xp_ftp_clients",
+      "windows_xp_software"
+    ],
+    "unchanged_queries": {
+      "covered_count": 5,
+      "unknown_count": 2,
+      "source_gap_remaining_count": 28,
+      "capability_gap_remaining_count": 9
+    },
+    "new_gaps": [],
+    "reduced_gaps": [
+      "partial_status_count_increased",
+      "source_gap_status_count_decreased",
+      "capability_gap_status_count_decreased",
+      "archive_eval_capability_gap_count_decreased",
+      "archive_eval_not_satisfied_count_increased_with_source_backed_results"
+    ]
+  },
+  "selected_wedges": {
+    "primary": "old_platform_compatible_software_search",
+    "secondary": "member_level_discovery_inside_bundles"
+  },
+  "conclusions": [
+    "Old-Platform Source Coverage Expansion v0 produced a meaningful local audit movement.",
+    "Several old-platform software, driver, browser-note, and bundle-member queries are now partial.",
+    "Archive hard eval movement is progress but not success: five tasks are not_satisfied.",
+    "Source coverage remains broad, but the selected hard tasks now need satisfaction/refinement work.",
+    "External baselines remain pending_manual_observation."
+  ],
+  "recommended_next_milestone": "Hard Eval Satisfaction Pack v0",
+  "alternatives_considered": [
+    "Old-Platform Result Refinement Pack v0",
+    "Compatibility Evidence Expansion v0",
+    "More Source Coverage Expansion v1",
+    "Manual External Baseline Observation Pack v0",
+    "Rust Query Planner Parity Candidate v0",
+    "Public Alpha Rehearsal Evidence v0"
+  ],
+  "do_not_do": [
+    "live crawling",
+    "Google scraping",
+    "Internet Archive scraping",
+    "broad live source federation",
+    "fuzzy/vector retrieval",
+    "LLM planning",
+    "production hosting",
+    "native apps",
+    "broad Rust rewrite",
+    "installer automation",
+    "arbitrary local filesystem ingestion"
+  ],
+  "limitations": [
+    "No committed v0 per-query machine output exists.",
+    "Per-query movement is inferred from current output and committed expected-current-status fields, not from a full historical per-query report.",
+    "Archive-eval baseline counts are historical/reported because delta v0 did not record archive eval counts.",
+    "Failure-mode labels can persist or increase when queries become partial because partial results still carry future-work labels.",
+    "The report measures local Eureka observations only.",
+    "External comparison baselines remain pending manual observation.",
+    "The delta does not claim global search superiority."
+  ]
+}

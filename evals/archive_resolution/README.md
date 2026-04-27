@@ -66,3 +66,9 @@ reported as `capability_gap` because the bounded corpus does not yet contain the
 direct artifacts, member paths, article boundaries, or evidence needed for full
 satisfaction. This is intentional. The runner is not a ranking benchmark, not a
 semantic/fuzzy/vector benchmark, and not a production relevance evaluation.
+
+Search Usefulness Audit Delta v1 records that current archive-resolution evals
+now report `capability_gap=1` and `not_satisfied=5` after old-platform source
+fixture expansion. This is progress from missing capability toward
+source-backed candidates, but `not_satisfied` is not success and hard expected
+result checks must not be weakened.

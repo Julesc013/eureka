@@ -29,3 +29,7 @@ Current packs:
 - `search-usefulness-delta-v0/`: stable usefulness-delta report comparing
   current Search Usefulness Audit output to a historical reported aggregate
   baseline after the old-platform/member-discovery implementation sequence.
+- `search-usefulness-delta-v1/`: stable usefulness-delta report comparing
+  post-source-expansion audit output to the v0 delta aggregate baseline and
+  recording archive-eval movement toward source-backed but still unsatisfied
+  hard tasks.

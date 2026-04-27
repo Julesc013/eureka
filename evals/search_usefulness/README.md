@@ -105,3 +105,11 @@ and `unknown=2`. The movement is source-backed and bounded: Google and
 Internet Archive baselines remain pending manual observation, and the audit
 still performs no live-source crawling, scraping, fuzzy/vector retrieval, LLM
 planning, or production benchmark comparison.
+
+Search Usefulness Audit Delta v1 now lives under
+`control/audits/search-usefulness-delta-v1/`. It records the measured movement
+after the source expansion against the v0 delta baseline: `partial +15`,
+`source_gap -13`, `capability_gap -2`, and archive eval movement to
+`capability_gap=1` plus `not_satisfied=5`. The pack is measurement/reporting
+only; it does not change retrieval behavior or mark any external baseline
+observed.
