@@ -65,9 +65,11 @@ member-access gaps.
 External Google and Internet Archive baselines remain pending/manual; Manual
 Observation Batch 0 only prepares 39 prioritized slots for later human
 observation and records no external results.
-The static public site pack under `public_site/` is no-JS documentation for
-later hosting review. It does not deploy Eureka, add backend hosting, add live
-source probes, scrape external systems, or claim production readiness.
+The static public site pack under `public_site/` and Public Alpha Rehearsal
+Evidence v0 under `docs/operations/public_alpha_rehearsal_evidence_v0/` are
+documentation/evidence packs for later hosting review. They do not deploy
+Eureka, add backend hosting, add live source probes, scrape external systems,
+or claim production readiness.
 
 ## Quickstart
 
@@ -101,6 +103,7 @@ python scripts/public_alpha_smoke.py
 python scripts/generate_python_oracle_golden.py --check
 python -m unittest discover -s tests/hardening -t .
 python scripts/validate_public_static_site.py
+python scripts/generate_public_alpha_rehearsal_evidence.py --check
 ```
 
 For larger tasks, the command registry and lane guidance live in
@@ -270,7 +273,8 @@ production queues, and production Rust services remain future work.
 | `control/` | Governance material, source inventory, route inventory, research notes |
 | `crates/` | Future Rust backend lane; currently skeleton plus source-registry parity candidate |
 | `docs/` | Vision, architecture, roadmap, operations, standards, decisions |
-| `docs/operations/public_alpha_hosting_pack/` | Supervised public-alpha rehearsal evidence packet |
+| `docs/operations/public_alpha_hosting_pack/` | Supervised public-alpha hosting-pack runbook and templates |
+| `docs/operations/public_alpha_rehearsal_evidence_v0/` | Supervised local/static public-alpha rehearsal evidence pack; no deployment approval |
 | `evals/` | Archive-resolution eval packet and related eval scaffolding |
 | `public_site/` | No-JS static public site pack for later live-alpha hosting review; no deployment or live source behavior |
 | `runtime/` | Python reference engine, connectors, gateway public boundary, source registry |

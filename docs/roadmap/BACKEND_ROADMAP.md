@@ -135,6 +135,12 @@ The repo has already proven:
   eval/audit state, demo queries, limitations, roadmap, and local quickstart
   pages for later hosting review without deployment, backend hosting, live
   probes, scraping, automated external searches, or production-readiness claims
+- Public Alpha Rehearsal Evidence v0 as the first supervised local/static
+  rehearsal evidence pack, collecting static-site validation, public-alpha
+  smoke, route inventory, eval/audit, external-baseline pending status,
+  blockers, next deployment requirements, and unsigned signoff preparation
+  without deployment, production approval, live probes, or observed external
+  baselines
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -177,10 +183,10 @@ The next backend sequence is:
 32. Manual Observation Batch 0 (implemented as pending slots only)
 33. Manual Observation Entry Helper v0 (implemented)
 34. LIVE_ALPHA_00 Static Public Site Pack (implemented)
-35. Public Alpha Rehearsal Evidence v0
-36. Manual Observation Batch 0 Execution (human-operated parallel work)
-37. LIVE_ALPHA_01 Production Public-Alpha Wrapper
-38. LIVE_ALPHA_02 Deployment Config Pack
+35. Public Alpha Rehearsal Evidence v0 (implemented)
+36. LIVE_ALPHA_01 Production Public-Alpha Wrapper
+37. LIVE_ALPHA_02 Deployment Config Pack
+38. Manual Observation Batch 0 Execution (human-operated parallel work)
 39. LIVE_ALPHA_04 Live Probe Gateway Contract
 40. Rust Query Planner Parity Candidate v0
 41. Compatibility Surface Strategy v0
@@ -190,7 +196,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Public Alpha Rehearsal Evidence v0
+> LIVE_ALPHA_01 Production Public-Alpha Wrapper
 
 Why this comes next:
 
@@ -279,10 +285,14 @@ Why this comes next:
   static public-facing explanation of prototype status, source matrix,
   eval/audit posture, demo queries, limitations, roadmap, and local quickstart
   without deploying anything or adding live source behavior
-- the next Codex-side bottleneck is supervised public-alpha rehearsal evidence
-  for the current constrained posture; actual Batch 0 observation evidence is
-  still a human-operated parallel task, and Google/Internet Archive baselines
-  remain pending/manual for all 64 queries globally
+- Public Alpha Rehearsal Evidence v0 now records the static validator,
+  smoke-check, route inventory, eval/audit, baseline pending status, blockers,
+  next requirements, and unsigned signoff evidence without deploying or
+  approving production
+- the next Codex-side bottleneck is a bounded production public-alpha wrapper
+  design around the current constrained posture; actual Batch 0 observation
+  evidence is still a human-operated parallel task, and Google/Internet
+  Archive baselines remain pending/manual for all 64 queries globally
 
 ## Explicit Deferrals
 

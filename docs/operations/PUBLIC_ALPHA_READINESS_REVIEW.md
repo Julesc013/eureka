@@ -27,6 +27,8 @@ process manager, or multi-user isolation.
 - Hosting pack: `docs/operations/public_alpha_hosting_pack/`
 - Static public site pack: `public_site/`
 - Static site validator: `python scripts/validate_public_static_site.py`
+- Public Alpha Rehearsal Evidence v0:
+  `docs/operations/public_alpha_rehearsal_evidence_v0/`
 - Inventory validator: `python -m unittest tests.operations.test_public_alpha_route_inventory`
 - Script smoke tests: `python -m unittest tests.scripts.test_public_alpha_scripts`
 
@@ -104,8 +106,8 @@ production readiness.
 
 ## Next Recommendation
 
-Public Alpha Rehearsal Evidence v0 should come next on the Codex-side
-live-alpha lane. Public Alpha Hosting Pack v0 and LIVE_ALPHA_00 Static Public
-Site Pack now package enough local/static evidence for rehearsal planning, but
-a real hosted alpha remains blocked on external hosting posture, final route
-review, abuse-control decisions, TLS/auth ownership, and operator approval.
+Public Alpha Rehearsal Evidence v0 now packages the static validator,
+public-alpha smoke, route inventory, eval/audit, and external-baseline status
+into a supervised local rehearsal evidence pack. A real hosted alpha remains
+blocked on external hosting posture, final route review, abuse-control
+decisions, TLS/auth ownership, and operator approval.

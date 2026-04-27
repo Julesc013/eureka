@@ -443,3 +443,9 @@
 - Status: accepted
 - Decision: Eureka now records LIVE_ALPHA_00 Static Public Site Pack under `public_site/` with plain static HTML/CSS pages for identity, status, source matrix, eval/audit state, demo queries, limitations, roadmap, and local quickstart, plus a stdlib validator at `scripts/validate_public_static_site.py`.
 - Why: live-alpha preparation needs honest public-facing material before backend hosting. This pack is static documentation only: it does not deploy Eureka, add hosting infrastructure, add DNS or cloud configuration, start a server, add live source probes, scrape Google or Internet Archive, automate external searches, fabricate external baselines, weaken evals, or claim production readiness. The next Codex-side milestone is Public Alpha Rehearsal Evidence v0, while Manual Observation Batch 0 Execution remains human-operated parallel work.
+
+## ADR-075: Record Public Alpha Rehearsal Evidence Without Deploying
+
+- Status: accepted
+- Decision: Eureka now records Public Alpha Rehearsal Evidence v0 under `docs/operations/public_alpha_rehearsal_evidence_v0/` with a stdlib generator/check script at `scripts/generate_public_alpha_rehearsal_evidence.py`.
+- Why: the static site, safe mode, hosting pack, smoke checks, route inventory, evals, and manual baseline status need one supervised local evidence packet before wrapper or deployment-config work. The pack records static-site validation, public-alpha smoke status, route classification counts, archive/search eval status, external-baseline pending counts, blockers, next deployment requirements, and unsigned operator signoff. It does not deploy Eureka, approve production, add hosting infrastructure, add live probes, scrape external systems, call external APIs, fabricate external observations, weaken evals, or claim a public deployment happened.

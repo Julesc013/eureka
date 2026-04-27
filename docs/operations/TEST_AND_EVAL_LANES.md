@@ -243,6 +243,24 @@ public-alpha limitations. It performs no network calls, starts no server,
 deploys nothing, and does not add backend hosting, live probes, scraping, or
 production-readiness claims.
 
+## Public Alpha Rehearsal Evidence
+
+Public Alpha Rehearsal Evidence v0 is validated with:
+
+```bash
+python scripts/generate_public_alpha_rehearsal_evidence.py
+python scripts/generate_public_alpha_rehearsal_evidence.py --json
+python scripts/generate_public_alpha_rehearsal_evidence.py --check
+python -m unittest tests.operations.test_public_alpha_rehearsal_evidence tests.scripts.test_public_alpha_rehearsal_evidence_script
+```
+
+The lane checks the supervised local rehearsal evidence pack under
+`docs/operations/public_alpha_rehearsal_evidence_v0/`, including static-site
+validation, public-alpha smoke evidence, route inventory counts, eval/audit
+status, external-baseline pending/observed counts, blockers, and unsigned
+operator signoff. It does not deploy, approve production, add live probes, or
+record external observations.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

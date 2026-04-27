@@ -12,6 +12,8 @@ rehearsal. It is not deployment infrastructure.
   `docs/operations/PUBLIC_ALPHA_READINESS_REVIEW.md`.
 - Confirm the hosting pack has been read:
   `docs/operations/public_alpha_hosting_pack/README.md`.
+- Confirm Public Alpha Rehearsal Evidence v0 has been read:
+  `docs/operations/public_alpha_rehearsal_evidence_v0/README.md`.
 - Confirm the demo does not need auth, accounts, private user state, live
   crawling, broad downloads, installer behavior, or background workers.
 
@@ -50,6 +52,7 @@ Run:
 python scripts/public_alpha_smoke.py
 python scripts/public_alpha_smoke.py --json
 python scripts/generate_public_alpha_hosting_pack.py --check
+python scripts/generate_public_alpha_rehearsal_evidence.py --check
 python -m unittest tests.operations.test_public_alpha_route_inventory
 ```
 
@@ -66,6 +69,7 @@ For a supervised rehearsal, record the result in:
 
 - `docs/operations/public_alpha_hosting_pack/SMOKE_EVIDENCE_TEMPLATE.md`
 - `docs/operations/public_alpha_hosting_pack/OPERATOR_SIGNOFF_TEMPLATE.md`
+- `docs/operations/public_alpha_rehearsal_evidence_v0/SIGNOFF_TEMPLATE.md`
 
 ## Stop Procedure
 

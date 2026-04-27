@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: forty-nine local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, and LIVE_ALPHA_00 Static Public Site Pack. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns; the external-baseline pack adds 192 pending manual observation slots across 64 queries and three systems, Batch 0 adds 39 prioritized pending slots, the entry helper adds local list/create/validate/report tooling without recording observed external baselines, and the static public site pack adds no-JS pages under `public_site/` without deployment, backend hosting, live probes, scraping, or production claims.
+Current status within this stage: fifty local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, and Public Alpha Rehearsal Evidence v0. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns; the external-baseline pack adds 192 pending manual observation slots across 64 queries and three systems, Batch 0 adds 39 prioritized pending slots, the entry helper adds local list/create/validate/report tooling without recording observed external baselines, the static public site pack adds no-JS pages under `public_site/`, and the rehearsal evidence pack records local static/smoke/route/eval/baseline evidence without deployment, backend hosting, live probes, scraping, production claims, or observed external baselines.
 
 ## Stage 3: Surface Skeletons
 
@@ -199,13 +199,20 @@ site source pack for later hosting review only; it does not deploy Eureka, add
 backend hosting, add DNS or cloud configuration, add live source probes, scrape
 external systems, automate external searches, or claim production readiness.
 
+Public Alpha Rehearsal Evidence v0 now lives under
+`docs/operations/public_alpha_rehearsal_evidence_v0/` and records the current
+static validator, public-alpha smoke, route inventory, archive eval, search
+audit, external-baseline pending status, blocker, next-requirement, and
+unsigned signoff evidence. It is evidence/runbook material only and does not
+deploy Eureka or approve production.
+
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
 ## Immediate Next Milestone
 
 The next implementation milestone is:
 
-> Public Alpha Rehearsal Evidence v0
+> LIVE_ALPHA_01 Production Public-Alpha Wrapper
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -221,14 +228,15 @@ Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
 v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0,
 Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1,
 Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0,
-Manual Observation Batch 0, Manual Observation Entry Helper v0, and
-LIVE_ALPHA_00 Static Public Site Pack now
+Manual Observation Batch 0, Manual Observation Entry Helper v0,
+LIVE_ALPHA_00 Static Public Site Pack, and Public Alpha Rehearsal Evidence v0
+now
 mark the start of a more evidence-led backend phase. The next step is to add
-public-alpha rehearsal evidence because the static public site pack, hosting
-pack, public-alpha safe mode, and smoke checks now exist without deployment.
-Manual Observation Batch 0 Execution remains human-operated parallel work:
-external Google and Internet Archive observations remain pending/manual. The
-next Codex-side work must still avoid live crawling, external scraping,
-deployment infrastructure, live probes, installer execution, fuzzy/vector
-search, LLM planning, broad source federation, OCR claims, external baseline
-fabrication, and production benchmark claims.
+a production public-alpha wrapper design because the static site, hosting
+pack, safe mode, smoke checks, and rehearsal evidence now exist without
+deployment. Manual Observation Batch 0 Execution remains human-operated
+parallel work: external Google and Internet Archive observations remain
+pending/manual. The next Codex-side work must still avoid live crawling,
+external scraping, live probes, installer execution, fuzzy/vector search, LLM
+planning, broad source federation, OCR claims, external baseline fabrication,
+and production benchmark claims.

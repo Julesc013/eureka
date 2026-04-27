@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus forty-nine executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus fifty executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -203,6 +203,14 @@ architectural oracle rather than as a throwaway scaffold.
   limitations, roadmap, and local quickstart pages for later hosting review
   without deploying Eureka, adding backend hosting, adding live source probes,
   scraping external systems, or making production-readiness claims
+- first Public Alpha Rehearsal Evidence v0 under
+  `docs/operations/public_alpha_rehearsal_evidence_v0/` plus
+  `scripts/generate_public_alpha_rehearsal_evidence.py` that packages static
+  validator status, public-alpha smoke status, route inventory counts,
+  eval/audit counts, external-baseline pending status, blockers, next
+  deployment requirements, and an unsigned signoff template without deploying
+  Eureka, approving production, adding live probes, or recording external
+  baseline observations
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -242,7 +250,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Public Alpha Rehearsal Evidence v0
+> LIVE_ALPHA_01 Production Public-Alpha Wrapper
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -258,8 +266,9 @@ Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
 v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0,
 Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1,
 Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0,
-Manual Observation Batch 0, Manual Observation Entry Helper v0, and
-LIVE_ALPHA_00 Static Public Site Pack are
+Manual Observation Batch 0, Manual Observation Entry Helper v0,
+LIVE_ALPHA_00 Static Public Site Pack, and Public Alpha Rehearsal Evidence v0
+are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
@@ -280,14 +289,15 @@ first hard-eval satisfaction mapping/report pack, plus first strict
 old-platform hard-eval result-shape refinement pack, targeted old-platform
 fixture evidence expansion pack, bounded article/page/scan fixture pack,
 manual external-baseline observation protocol, first prioritized pending
-manual observation batch plus local human-entry helper tooling, and first
-static public-facing documentation pack for live-alpha review.
+manual observation batch plus local human-entry helper tooling, first static
+public-facing documentation pack for live-alpha review, and first supervised
+local/static public-alpha rehearsal evidence pack.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Public Alpha Rehearsal Evidence v0
-2. Manual Observation Batch 0 Execution (human-operated parallel work)
-3. LIVE_ALPHA_01 Production Public-Alpha Wrapper
+1. LIVE_ALPHA_01 Production Public-Alpha Wrapper
+2. LIVE_ALPHA_02 Deployment Config Pack
+3. Manual Observation Batch 0 Execution (human-operated parallel work)
 4. Rust Query Planner Parity Candidate v0
 5. Compatibility Surface Strategy v0
 

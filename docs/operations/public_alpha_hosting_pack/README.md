@@ -64,6 +64,8 @@ work and that caller-provided local path controls are blocked in
   `public_site/`
 - Static site validator:
   `scripts/validate_public_static_site.py`
+- Public Alpha Rehearsal Evidence v0:
+  `docs/operations/public_alpha_rehearsal_evidence_v0/`
 
 ## Pack Contents
 

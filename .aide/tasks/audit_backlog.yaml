@@ -120,6 +120,16 @@
       "title": "Publish a static public-facing project/status/source/eval pack for later live-alpha review",
       "status": "addressed_by_live_alpha_00_static_public_site_pack",
       "suggested_milestone": "Public Alpha Rehearsal Evidence v0"
+    },
+    {
+      "id": "audit-backlog-public-alpha-rehearsal-evidence",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Package supervised public-alpha rehearsal evidence before wrapper or deployment-config work",
+      "status": "addressed_by_public_alpha_rehearsal_evidence_v0",
+      "suggested_milestone": "LIVE_ALPHA_01 Production Public-Alpha Wrapper"
     }
   ]
 }

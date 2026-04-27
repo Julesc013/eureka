@@ -21,6 +21,8 @@ The minimum public-alpha entry gate should include:
   packet)
 - LIVE_ALPHA_00 Static Public Site Pack (implemented as a no-JS static site
   source pack for later hosting review, not deployment)
+- Public Alpha Rehearsal Evidence v0 (implemented as local/static
+  evidence/runbook material, not deployment approval)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -104,3 +106,9 @@ eval/audit state, demo queries, limitations, roadmap, and local quickstart
 pages. The pack is static only: it starts no server, performs no deployment,
 adds no backend hosting, makes no live source calls, performs no scraping, and
 does not claim production readiness.
+Public Alpha Rehearsal Evidence v0 now adds
+`docs/operations/public_alpha_rehearsal_evidence_v0/` plus a local generator
+and check script. It records static-site validation, public-alpha smoke,
+route-inventory, eval/audit, external-baseline pending status, blocker, and
+unsigned signoff evidence. It performs no deployment, approves no production
+hosting, adds no live probes, and records no external observations.

@@ -146,21 +146,21 @@
     {
       "id": "manual_observation_batch_0_execution",
       "title": "Manual Observation Batch 0 Execution",
-      "status": "next",
+      "status": "human_operated_parallel",
       "priority": 21,
       "notes": "Human-operated parallel follow-up to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
     },
     {
       "id": "public_alpha_rehearsal_evidence_v0",
       "title": "Public Alpha Rehearsal Evidence v0",
-      "status": "queued",
+      "status": "completed",
       "priority": 22,
-      "notes": "Capture supervised rehearsal evidence using the hosting pack and static site pack without deploying."
+      "notes": "Captured supervised local/static rehearsal evidence using the hosting pack, static site pack, smoke checks, route inventory, eval/audit status, external-baseline pending status, blockers, and unsigned signoff without deploying."
     },
     {
       "id": "live_alpha_01_production_public_alpha_wrapper",
       "title": "LIVE_ALPHA_01 Production Public-Alpha Wrapper",
-      "status": "queued",
+      "status": "next",
       "priority": 23,
       "notes": "Future wrapper work after rehearsal evidence; must not bypass auth, TLS, abuse-control, route-review, or operator gates."
     },
