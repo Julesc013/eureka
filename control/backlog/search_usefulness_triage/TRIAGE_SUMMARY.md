@@ -127,7 +127,14 @@ evidence. Archive evals now report `capability_gap=1` and `satisfied=5`; the
 broader Search Usefulness Audit reports `covered=5`, `partial=21`,
 `source_gap=27`, `capability_gap=9`, and `unknown=2`.
 
-Current next implementation milestone: Article/Scan Fixture Pack v0.
+Article/Scan Fixture Pack v0 then added a tiny synthetic article-scan fixture
+with parent issue lineage, page-range metadata, and OCR-like fixture text.
+Archive evals now report `satisfied=6`; the broader Search Usefulness Audit
+reports `covered=5`, `partial=22`, `source_gap=26`, `capability_gap=9`, and
+`unknown=2`.
+
+Current next implementation milestone: Manual External Baseline Observation
+Pack v0.
 
 ## Evidence That Would Change The Plan
 
@@ -139,6 +146,6 @@ The plan should be revisited if:
   dominant
 - hardening tests reveal route/public-alpha/privacy constraints that prevent safe fixture work
 
-Until then, the next lowest-risk move is a bounded article/scan fixture pack
-because the old-platform hard partials are now satisfied and
-`article_inside_magazine_scan` remains the only archive hard capability gap.
+Until then, the next lowest-risk move is a manual external baseline observation
+pack because archive hard evals are now satisfied under strict fixture-backed
+checks and all Google/Internet Archive external baselines remain pending/manual.

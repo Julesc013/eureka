@@ -30,6 +30,7 @@
         "hard_eval_satisfaction_pack_validation",
         "old_platform_result_refinement_validation",
         "more_source_coverage_expansion_v1_validation",
+        "article_scan_fixture_pack_validation",
         "source_coverage_capability_validation",
         "real_source_coverage_pack_validation",
         "old_platform_source_coverage_expansion_validation",
@@ -70,6 +71,7 @@
         "hard_eval_satisfaction_pack_validation",
         "old_platform_result_refinement_validation",
         "more_source_coverage_expansion_v1_validation",
+        "article_scan_fixture_pack_validation",
         "hardening_tests",
         "docs_diff_check"
       ],
@@ -89,6 +91,7 @@
         "hard_eval_satisfaction_pack_validation",
         "old_platform_result_refinement_validation",
         "more_source_coverage_expansion_v1_validation",
+        "article_scan_fixture_pack_validation",
         "tests.hardening.docs_link_drift",
         "tests.hardening.readme_command_drift",
         "docs_diff_check"
@@ -147,6 +150,7 @@
         "hard_eval_satisfaction_pack_validation",
         "old_platform_result_refinement_validation",
         "more_source_coverage_expansion_v1_validation",
+        "article_scan_fixture_pack_validation",
         "tests.hardening.eval_hardness",
         "tests.hardening.external_baselines"
       ],

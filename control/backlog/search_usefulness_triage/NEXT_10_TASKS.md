@@ -350,6 +350,42 @@ Expected audit effect: `article_inside_magazine_scan` may leave
 `capability_gap` only if bounded fixture evidence satisfies the strict hard
 checks; broader source gaps may remain dominant.
 
+Status: implemented as Article/Scan Fixture Pack v0 under
+`control/audits/article-scan-fixture-pack-v0/`. It adds
+`article-scan-recorded-fixtures`, a tiny synthetic article segment with parent
+issue lineage, page-range metadata, and OCR-like fixture text. Archive evals
+now report `satisfied=6`; the broader audit reports `covered=5`,
+`partial=22`, `source_gap=26`, `capability_gap=9`, and `unknown=2`.
+
+## 7g. Manual External Baseline Observation Pack v0
+
+Why: all current archive hard evals are now satisfied under strict
+fixture-backed checks, but Google and Internet Archive baselines remain pending
+manual observation for all 64 Search Usefulness Audit queries.
+
+Prerequisite: Article/Scan Fixture Pack v0 and external-baseline hardening
+guards remain green.
+
+Likely files: `evals/search_usefulness/observations/`,
+`scripts/record_search_baseline_observation.py`, `tests/hardening/`, and
+`control/audits/`.
+
+Acceptance criteria: manual observations require operator/source/date fields;
+no scraping or live API collection is added; baseline status changes happen
+only from committed human evidence; audit reports distinguish observed external
+baselines from pending/manual gaps.
+
+Tests to add first: required-field validation for manual observations, no fake
+baseline guard updates, and query movement checks that require committed
+evidence.
+
+Do not do: do not scrape Google, Internet Archive, or any external system; do
+not call live APIs; do not fabricate external observations; do not claim broad
+search superiority.
+
+Expected audit effect: external baseline pending counts may decrease only where
+manual observations are committed.
+
 ## 8. Rust Query Planner Parity Candidate v0
 
 Why: Rust parity should preserve useful Python planner behavior after it stabilizes.

@@ -112,6 +112,11 @@ The repo has already proven:
   for the remaining old-platform hard partials, moving archive evals to
   `capability_gap=1` and `satisfied=5` without live source behavior, scraping,
   arbitrary local ingestion, real binaries, or external baseline claims
+- Article/Scan Fixture Pack v0 as the first bounded article/page/scan fixture
+  source, moving archive evals to `satisfied=6` with tiny synthetic OCR-like
+  text and page-range evidence while adding no live source behavior, scraping,
+  OCR engine, PDF/image parser, real scan, copyrighted article text, or
+  external baseline claim
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -149,18 +154,19 @@ The next backend sequence is:
 27. Hard Eval Satisfaction Pack v0 (implemented as eval evidence mapping/reporting)
 28. Old-Platform Result Refinement Pack v0 (implemented as strict result-shape eval refinement)
 29. More Source Coverage Expansion v1 (implemented as targeted recorded fixtures)
-30. Article/Scan Fixture Pack v0
+30. Article/Scan Fixture Pack v0 (implemented)
 31. Manual External Baseline Observation Pack v0
-32. Rust Query Planner Parity Candidate v0
-33. Public Alpha Rehearsal Evidence v0
-34. Compatibility Surface Strategy v0
-35. Native App Work Later
+32. More Source Coverage Expansion v2
+33. Rust Query Planner Parity Candidate v0
+34. Public Alpha Rehearsal Evidence v0
+35. Compatibility Surface Strategy v0
+36. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Article/Scan Fixture Pack v0
+> Manual External Baseline Observation Pack v0
 
 Why this comes next:
 
@@ -235,9 +241,11 @@ Why this comes next:
 - More Source Coverage Expansion v1 adds targeted tiny recorded fixture
   evidence for the four old-platform partials; archive evals now report
   `capability_gap=1` and `satisfied=5`
-- the next backend bottleneck is bounded article/page/scan evidence:
-  `article_inside_magazine_scan` is the remaining archive hard capability gap,
-  while source gaps in the broader 64-query audit remain honest future work
+- Article/Scan Fixture Pack v0 adds bounded synthetic article/page/scan
+  evidence; archive evals now report `satisfied=6`
+- the next backend bottleneck is external comparison evidence: Google and
+  Internet Archive baselines remain pending/manual for all 64 queries, while
+  source gaps in the broader audit remain honest future work
 
 ## Explicit Deferrals
 

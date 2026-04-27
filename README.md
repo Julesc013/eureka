@@ -48,18 +48,20 @@ results are canonical truth.
 
 | Area | Current bounded capability |
 | --- | --- |
-| Source and ingestion | Source Registry v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, synthetic fixtures, recorded GitHub Releases fixtures, recorded Internet Archive-like fixtures, local bundle fixtures, governed source IDs, explicit placeholder posture for future sources |
+| Source and ingestion | Source Registry v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, synthetic fixtures, recorded GitHub Releases fixtures, recorded Internet Archive-like fixtures, local bundle fixtures, article/scan recorded fixtures, governed source IDs, explicit placeholder posture for future sources |
 | Resolution and search | exact resolution, deterministic search, Query Planner v0 plus Old-Platform Software Planner Pack v0, local SQLite index with FTS5 preferred and deterministic fallback |
 | Evidence and explanation | provenance summaries, source summaries, source-backed compatibility evidence, absence reasoning, comparison/disagreement, subject/state timelines |
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
-The current corpus is intentionally small. Many archive-resolution eval tasks
-are expected to report partial results, not-satisfied checks, or capability
-gaps. That honesty is part of the benchmark.
+The current corpus is intentionally small. The current archive-resolution hard
+eval packet is satisfied under strict fixture-backed checks, but that does not
+mean broad corpus coverage or production ranking exists. Search Usefulness
+Audit still records many source, compatibility, planner, representation, and
+member-access gaps.
 
 ## Quickstart
 
@@ -340,14 +342,14 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Old-Platform Source Coverage Expansion v0
-2. Search Usefulness Baseline Persistence v0
+1. Manual External Baseline Observation Pack v0
+2. More Source Coverage Expansion v2
 3. Rust Query Planner Parity Candidate v0
 
 Broader near-term direction:
 
-1. expand recorded old-platform software, driver, support-media, manual, and
-   latest-compatible release fixtures without live source behavior
+1. record manual Google and Internet Archive baseline observations without
+   scraping or fabricated comparisons
 2. keep using audit deltas to measure source, planner, representation,
    member, lane, and compatibility-evidence movement
 3. keep Python as oracle while adding Rust candidates only when parity fixtures

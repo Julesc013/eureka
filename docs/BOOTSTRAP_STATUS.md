@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus forty-six executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus forty-seven executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -171,6 +171,13 @@ architectural oracle rather than as a throwaway scaffold.
   to `capability_gap=1` and `satisfied=5` without live source behavior,
   scraping, arbitrary local filesystem ingestion, real binaries, weakened hard
   evals, or external baseline claims
+- first Article/Scan Fixture Pack v0 under
+  `control/audits/article-scan-fixture-pack-v0/` plus a tiny
+  synthetic/recorded article-scan fixture source with parent issue lineage,
+  page-range metadata, and OCR-like fixture text that moves current archive
+  evals to `satisfied=6` without live source behavior, scraping, OCR engines,
+  PDF/image parsing, real magazine scans, copyrighted article text, weakened
+  hard evals, or external baseline claims
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -210,7 +217,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Article/Scan Fixture Pack v0
+> Manual External Baseline Observation Pack v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -224,7 +231,8 @@ v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0,
 Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
 Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
 v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0,
-Old-Platform Result Refinement Pack v0, and More Source Coverage Expansion v1
+Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1,
+and Article/Scan Fixture Pack v0
 are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
@@ -243,13 +251,13 @@ user-cost explanation layer, first source-backed compatibility evidence layer,
 first measured usefulness-delta reporting pack, first expanded old-platform
 fixture coverage pack, second measured usefulness-delta reporting pack, and
 first hard-eval satisfaction mapping/report pack, plus first strict
-old-platform hard-eval result-shape refinement pack and targeted old-platform
-fixture evidence expansion pack.
+old-platform hard-eval result-shape refinement pack, targeted old-platform
+fixture evidence expansion pack, and bounded article/page/scan fixture pack.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Article/Scan Fixture Pack v0
-2. Manual External Baseline Observation Pack v0
+1. Manual External Baseline Observation Pack v0
+2. More Source Coverage Expansion v2
 3. Rust Query Planner Parity Candidate v0
 4. Public Alpha Rehearsal Evidence v0
 5. Compatibility Surface Strategy v0

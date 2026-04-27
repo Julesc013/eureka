@@ -167,6 +167,19 @@ article-inside-scan capability gap. It does not add live source behavior,
 scraping, arbitrary local ingestion, real binaries, or external baseline
 claims.
 
+Article/Scan Fixture Pack v0 is validated with:
+
+```bash
+python -m unittest tests.evals.test_article_scan_fixture_pack
+```
+
+The validation checks the article/scan fixture report, the `satisfied=6`
+archive-eval posture, source-backed article-segment evidence, page-range
+evidence, OCR-like fixture text evidence, and no-live/no-OCR/no-real-scan
+guardrails. It does not add live source behavior, scraping, OCR engines,
+PDF/image parsing, real scans, copyrighted article text, or external baseline
+claims.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

@@ -63,6 +63,11 @@ The eval suite now has two executable guardrails:
 - Old-Platform Result Refinement Pack v0 scores deterministic primary
   candidate shape, expected lanes, and bad-result avoidance for the current
   old-platform hard eval partials without adding production ranking
+- More Source Coverage Expansion v1 adds source-backed evidence for the
+  remaining old-platform hard partials
+- Article/Scan Fixture Pack v0 adds one bounded synthetic article/page/scan
+  fixture so the article-inside-scan hard task can be evaluated against
+  article-segment, page-range, and OCR-like text evidence without real OCR
 - it includes bounded result-lane and user-cost annotations where current
   result records expose them
 - it emits stable JSON per-task and suite reports
@@ -78,10 +83,10 @@ The eval suite now has two executable guardrails:
 This is not a full relevance benchmark. It does not score production ranking,
 fuzzy retrieval, vector or semantic search, LLM planning, crawling, live source
 sync, or production search quality. Current lane/user-cost fields are bounded
-Eureka observation details, not proof that final relevance ranking exists. Many
-hard tasks should currently report `capability_gap`; that is the honest result
-until the corpus and bounded resolver capabilities can satisfy their
-direct-artifact, member-level, article, or evidence expectations.
+Eureka observation details, not proof that final relevance ranking exists. The
+current hard archive-resolution packet now reports `satisfied=6`, but that is
+satisfaction against tiny fixture-backed checks only. It is not broad corpus
+coverage, production ranking, live OCR, or external search comparison.
 
 The usefulness audit is also not an automated Google or Internet Archive
 comparison. External baseline observations are placeholders until a human

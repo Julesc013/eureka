@@ -37,8 +37,10 @@
 
 - Needs bounded scan/OCR/article/page evidence before it can leave
   `capability_gap`.
-- Still open after More Source Coverage Expansion v1; no scan/page/OCR/article
-  evidence was added.
+- Follow-up: Article/Scan Fixture Pack v0 adds bounded synthetic article/page
+  fixture evidence with OCR-like text and parent issue lineage. The current hard
+  eval now satisfies strict fixture-backed checks without adding live OCR, real
+  scans, or copyrighted article text.
 
 Deferred:
 

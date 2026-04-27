@@ -60,6 +60,10 @@ steps:
     run: python -m unittest tests.evals.test_hard_eval_satisfaction_pack
   - id: old_platform_result_refinement_validation
     run: python -m unittest tests.evals.test_old_platform_result_refinement
+  - id: more_source_coverage_expansion_v1_validation
+    run: python -m unittest tests.evals.test_more_source_coverage_expansion_v1
+  - id: article_scan_fixture_pack_validation
+    run: python -m unittest tests.evals.test_article_scan_fixture_pack
   - id: source_coverage_capability_tests
     run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
   - id: real_source_coverage_pack_tests
@@ -150,6 +154,8 @@ steps:
     run: python -m unittest tests.operations.test_search_usefulness_audit_delta_v1
   - id: hard_eval_satisfaction_report_validation
     run: python -m unittest tests.evals.test_hard_eval_satisfaction_pack
+  - id: article_scan_fixture_report_validation
+    run: python -m unittest tests.evals.test_article_scan_fixture_pack
   - id: search_usefulness_manual_baseline_template
     run: python scripts/record_search_baseline_observation.py --query windows_7_apps --system google
   - id: test_eval_command_matrix
@@ -357,6 +363,7 @@ notes:
   - Hard Eval Satisfaction Pack v0 maps existing source-backed archive hard-eval candidates into structured expected-result checks; it does not weaken hard evals, add source behavior, or fabricate evidence.
   - Old-Platform Result Refinement Pack v0 scores deterministic result-shape, expected-lane, and bad-result checks over current hard eval candidates; it does not add production ranking, fuzzy/vector retrieval, LLM behavior, live source behavior, or new connectors.
   - More Source Coverage Expansion v1 adds targeted tiny fixture evidence for remaining old-platform hard partials; it does not add live source behavior, scraping, arbitrary local ingestion, real binaries, or external baseline claims.
+  - Article/Scan Fixture Pack v0 adds one tiny synthetic article/page/scan fixture with OCR-like text; it does not add live source behavior, scraping, OCR engines, PDF/image parsing, real scans, copyrighted article text, or external baseline claims.
   - Source Coverage and Capability Model v0 adds source capability and coverage-depth metadata/projection only; it does not add connectors, live source probing, crawling, or acquisition behavior.
   - Real Source Coverage Pack v0 adds committed recorded Internet Archive-like fixtures and local bundle fixtures only; it does not add live Internet Archive API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Source Coverage Expansion v0 expands committed old-platform fixtures only; it does not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.

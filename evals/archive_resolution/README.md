@@ -83,9 +83,12 @@ result-shape or evidence limits. The article-inside-scan task remains a true
 capability gap because no bounded article/page/OCR fixture exists.
 
 More Source Coverage Expansion v1 then adds targeted tiny recorded fixture
-evidence for the four remaining old-platform partials. Current
-archive-resolution evals now report `capability_gap=1` and `satisfied=5`: the
-Firefox XP, blue FTP client XP, Windows 98 registry repair, Windows 7 apps, and
-support-CD driver tasks satisfy the current strict source/evidence/result-shape
-checks. `article_inside_magazine_scan` remains the only hard capability gap and
-is intentionally deferred to an Article/Scan Fixture Pack.
+evidence for the four remaining old-platform partials. That moved the old
+platform tasks to source-backed satisfied results while leaving
+`article_inside_magazine_scan` as the only hard capability gap.
+
+Article/Scan Fixture Pack v0 adds one tiny synthetic/recorded article-scan
+fixture with parent issue lineage, page-range metadata, and OCR-like fixture
+text. Current archive-resolution evals now report `satisfied=6`. This is still
+a bootstrap hard-query guardrail, not broad article search, OCR, PDF/image
+ingestion, scraping, live source behavior, or a production relevance benchmark.

@@ -4,9 +4,9 @@ Source coverage remains the largest usefulness pressure even after the first
 fixture expansion. After Real Source Coverage Pack v0, Old-Platform Software
 Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost
 Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0,
-Old-Platform Source Coverage Expansion v0, and More Source Coverage Expansion
-v1, Search Usefulness Audit v0 reports `covered=5`, `partial=21`,
-`source_gap=27`, `capability_gap=9`, and
+Old-Platform Source Coverage Expansion v0, More Source Coverage Expansion v1,
+and Article/Scan Fixture Pack v0, Search Usefulness Audit v0 reports
+`covered=5`, `partial=22`, `source_gap=26`, `capability_gap=9`, and
 `unknown=2`. The current failure labels still include
 `source_coverage_gap=49`, because many query fixtures intentionally keep their
 future-work labels until a later delta pack reviews whether those labels should
@@ -20,6 +20,7 @@ Current active or fixture-backed source families:
 2. recorded GitHub Releases fixtures
 3. recorded Internet Archive-like metadata/file-list fixtures
 4. local bundle fixtures
+5. article-scan recorded fixtures
 
 These are enough for deterministic sanity checks, source registry validation,
 Python-oracle goldens, a few covered queries, and initial source-backed
@@ -67,10 +68,11 @@ hard tasks to partial. Old-Platform Result Refinement Pack v0 then satisfied
 the driver support-CD member task and left four old-platform tasks partial with
 explicit evidence/result-shape limits. More Source Coverage Expansion v1 then
 added targeted tiny fixture evidence for those four old-platform hard partials,
-and archive evals now report `capability_gap=1` and `satisfied=5`.
-Placeholder source records remain placeholders. The next usefulness work should
-add bounded article/page/scan fixture evidence for the remaining hard
-capability gap before external baselines or Rust parity.
+and archive evals reported `capability_gap=1` and `satisfied=5`. Article/Scan
+Fixture Pack v0 then added bounded synthetic article/page/scan fixture
+evidence, and archive evals now report `satisfied=6`. Placeholder source
+records remain placeholders. The next usefulness work should record manual
+external baselines before Rust parity or public-alpha rehearsal claims.
 
 ## Why Capability Depth Comes Before More Connectors
 

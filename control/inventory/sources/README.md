@@ -48,6 +48,7 @@ Seed records currently cover:
 - `github-releases-recorded-fixtures`
 - `internet-archive-recorded-fixtures`
 - `local-bundle-fixtures`
+- `article-scan-recorded-fixtures`
 - `internet-archive-placeholder`
 - `wayback-memento-placeholder`
 - `software-heritage-placeholder`
@@ -65,6 +66,12 @@ notes, utility and registry-repair cases, and driver/support-media member
 paths. It does not promote any placeholder source and it still adds no live
 Internet Archive API calls, scraping, crawling, broad source federation, or
 arbitrary local filesystem ingestion.
+
+Article/Scan Fixture Pack v0 adds `article-scan-recorded-fixtures` as a
+separate active recorded-fixture source for one tiny synthetic article/page/scan
+example. It is `content_or_member_indexed` and fixture-backed only. It does not
+add live source calls, scraping, OCR, PDF parsing, image parsing, real magazine
+scans, copyrighted article text, or arbitrary local filesystem ingestion.
 
 Placeholder and future records are planning anchors only. They must not be
 described as implemented connectors until runtime code lands for them.

@@ -34,6 +34,12 @@ result-shape, expected-lane, and bad-result checks. `driver_inside_support_cd`
 is now satisfied; the Firefox, FTP, Windows 98 registry repair, and Windows 7
 app tasks remain partial with explicit evidence/result-shape limitations.
 
+Further follow-up status: More Source Coverage Expansion v1 and Article/Scan
+Fixture Pack v0 are now implemented. The current archive-resolution eval suite
+reports `satisfied=6`, including source-backed article segment evidence for
+`article_inside_magazine_scan`. This supersedes the original remaining hard
+capability gap without weakening the task.
+
 ## Still Deferred
 
 - live crawling

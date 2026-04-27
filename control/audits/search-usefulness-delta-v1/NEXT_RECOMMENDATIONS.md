@@ -24,6 +24,13 @@ source/evidence-backed satisfied under the current hard checks. The next
 recommended milestone is Article/Scan Fixture Pack v0 because
 `article_inside_magazine_scan` remains the only archive hard capability gap.
 
+Fourth follow-up status: Article/Scan Fixture Pack v0 is implemented under
+`control/audits/article-scan-fixture-pack-v0/`. Archive evals now report
+`satisfied=6`; the article hard task is backed by a tiny synthetic article
+segment, parent issue lineage, page-range metadata, and OCR-like fixture text.
+The next recommended milestone is Manual External Baseline Observation Pack v0
+because external baselines remain pending/manual for all 64 queries.
+
 ## Why This Comes Next
 
 Old-Platform Source Coverage Expansion v0 produced a meaningful local audit
@@ -83,8 +90,9 @@ live Internet Archive.
 
 ### Manual External Baseline Observation Pack v0
 
-Deferred. Internal usefulness is now better, but external baselines should stay
-manual and can wait until hard eval behavior is sharper.
+Now recommended after Article/Scan Fixture Pack v0. Internal hard-eval posture
+is sharper, and the next comparison step should be human-recorded external
+baseline evidence only.
 
 ### Rust Query Planner Parity Candidate v0
 

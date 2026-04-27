@@ -135,3 +135,12 @@ current local audit reports `covered=5`, `partial=21`, `source_gap=27`,
 `capability_gap=9`, and `unknown=2`; external baselines remain pending manual
 observation and the audit still adds no live crawling, scraping, fuzzy/vector
 retrieval, LLM behavior, or production benchmark claims.
+
+Article/Scan Fixture Pack v0 now lives under
+`control/audits/article-scan-fixture-pack-v0/`. It adds one tiny
+synthetic/recorded article-scan fixture with parent issue lineage, page-range
+metadata, and OCR-like fixture text. The current local audit reports
+`covered=5`, `partial=22`, `source_gap=26`, `capability_gap=9`, and
+`unknown=2`; external baselines remain pending manual observation and the audit
+still adds no live source calls, scraping, OCR, PDF/image parsing, real scans,
+fuzzy/vector retrieval, LLM behavior, or production benchmark claims.

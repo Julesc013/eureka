@@ -111,29 +111,36 @@
     {
       "id": "article_scan_fixture_pack_v0",
       "title": "Article/Scan Fixture Pack v0",
-      "status": "next",
+      "status": "completed",
       "priority": 16,
-      "notes": "Add bounded scan/page/article fixture evidence for the remaining article_inside_magazine_scan hard capability gap without scraping, live source calls, or broad OCR."
+      "notes": "Added a bounded article-scan recorded fixture source with synthetic OCR-like text, page-range metadata, and parent issue lineage. Archive evals now report satisfied=6 without scraping, live source calls, OCR engines, real scans, or copyrighted article text."
+    },
+    {
+      "id": "manual_external_baseline_observation_pack_v0",
+      "title": "Manual External Baseline Observation Pack v0",
+      "status": "next",
+      "priority": 17,
+      "notes": "Record human-observed Google and Internet Archive baseline evidence without scraping, live API collection, or fabricated external observations."
     },
     {
       "id": "rust_query_planner_parity_candidate_v0",
       "title": "Rust Query Planner Parity Candidate v0",
       "status": "queued",
-      "priority": 17,
+      "priority": 18,
       "notes": "Implement the next isolated Rust seam only after Python planner behavior stabilizes."
     },
     {
       "id": "public_alpha_rehearsal_evidence_v0",
       "title": "Public Alpha Rehearsal Evidence v0",
       "status": "queued",
-      "priority": 18,
+      "priority": 19,
       "notes": "Capture supervised rehearsal evidence using the hosting pack without deploying."
     },
     {
       "id": "compatibility_surface_strategy_v0",
       "title": "Compatibility Surface Strategy v0",
       "status": "queued",
-      "priority": 19,
+      "priority": 20,
       "notes": "Define presentation rules for known, unknown, inferred, and incompatible outcomes before app work."
     }
   ]

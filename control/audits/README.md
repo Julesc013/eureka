@@ -47,3 +47,9 @@ Current packs:
   Windows 98 registry repair, and Windows 7 utility/app fixture evidence was
   added without live source behavior, real binaries, or external baseline
   claims.
+- `article-scan-fixture-pack-v0/`: stable article/scan fixture report
+  recording the move to `satisfied=6` for current archive-resolution hard evals
+  after a tiny synthetic article segment, page-range locator, and OCR-like text
+  fixture were added without live source behavior, OCR engines, PDF/image
+  parsing, real magazine scans, copyrighted article text, or external baseline
+  claims.

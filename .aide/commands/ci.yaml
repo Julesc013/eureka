@@ -40,6 +40,8 @@ steps:
     run: python -m unittest tests.evals.test_old_platform_result_refinement
   - id: more_source_coverage_expansion_v1
     run: python -m unittest tests.evals.test_more_source_coverage_expansion_v1
+  - id: article_scan_fixture_pack
+    run: python -m unittest tests.evals.test_article_scan_fixture_pack
   - id: source_coverage_capability
     run: python -m unittest runtime.source_registry.tests.test_source_capability_coverage
   - id: real_source_coverage_pack
@@ -72,6 +74,7 @@ notes:
   - Hard Eval Satisfaction Pack v0 validates source-backed archive hard-eval partial movement only; it does not weaken hard evals, fabricate evidence, add live sources, or claim any hard task is fully satisfied.
   - Old-Platform Result Refinement Pack v0 validates deterministic result-shape, expected-lane, and bad-result checks for archive hard evals; it does not add production ranking, fuzzy/vector retrieval, LLM scoring, live source behavior, or new connectors.
   - More Source Coverage Expansion v1 validates targeted tiny fixture evidence for the old-platform hard partials; it does not add live source behavior, scraping, arbitrary local ingestion, real binaries, or external baseline claims.
+  - Article/Scan Fixture Pack v0 validates one tiny synthetic article/page/scan fixture with OCR-like text; it does not add live source behavior, scraping, OCR engines, PDF/image parsing, real scans, copyrighted article text, or external baseline claims.
   - Source Coverage and Capability Model v0 checks validate metadata and projection only; they do not add connectors, live source probing, or crawling.
   - Real Source Coverage Pack v0 checks validate committed recorded fixtures, local bundle fixtures, local-index visibility, and public projection only; they do not add live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Source Coverage Expansion v0 checks validate expanded committed old-platform fixtures, local bundle members, compatibility evidence, and index visibility only; they do not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.

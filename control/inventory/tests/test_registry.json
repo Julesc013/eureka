@@ -549,6 +549,28 @@
       "notes": "Added by More Source Coverage Expansion v1; validates targeted fixture evidence and hard-eval movement without weakening hard evals, adding live source behavior, arbitrary local ingestion, or real binaries."
     },
     {
+      "test_id": "article_scan_fixture_pack_validation",
+      "label": "Article/scan fixture pack validation",
+      "command": "python -m unittest tests.evals.test_article_scan_fixture_pack",
+      "category": "eval",
+      "owner_area": "control/audits/article-scan-fixture-pack-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where the archive eval runner builds a transient local index",
+      "expected_runtime": "seconds",
+      "failure_means": "The Article/Scan Fixture Pack v0 report, article segment evidence, hard-eval satisfaction, or no-live/no-OCR/no-real-scan guardrail regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Article/Scan Fixture Pack v0; validates tiny synthetic article-scan fixture evidence without adding OCR engines, PDF/image parsing, real scans, copyrighted article text, live source calls, or scraping."
+    },
+    {
       "test_id": "hardening_tests",
       "label": "Hard Test Pack v0 aggregate",
       "command": "python -m unittest discover -s tests/hardening -t .",

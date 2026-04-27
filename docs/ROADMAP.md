@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: forty-six local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, and More Source Coverage Expansion v1. The current Search Usefulness Audit status counts are 5 covered, 21 partial, 27 source gaps, 9 capability gaps, and 2 unknowns after the targeted fixture expansion, without changing external baseline posture or recording external observations.
+Current status within this stage: forty-seven local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, and Article/Scan Fixture Pack v0. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns after the targeted article-scan fixture expansion, without changing external baseline posture or recording external observations.
 
 ## Stage 3: Surface Skeletons
 
@@ -164,6 +164,13 @@ Windows 98 registry repair, and Windows 7 utility/app evidence. Archive evals
 now report `capability_gap=1` and `satisfied=5`; the remaining hard capability
 gap is `article_inside_magazine_scan`, which still needs bounded scan/page/OCR
 or article fixture evidence.
+Article/Scan Fixture Pack v0 now lives under
+`control/audits/article-scan-fixture-pack-v0/` and adds one tiny
+synthetic/recorded article-scan fixture source with parent issue lineage,
+page-range metadata, and OCR-like fixture text. Archive evals now report
+`satisfied=6`; this does not add live source behavior, scraping, OCR engines,
+PDF/image parsing, real magazine scans, copyrighted article text, broad article
+search, or external baseline claims.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
@@ -171,7 +178,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Article/Scan Fixture Pack v0
+> Manual External Baseline Observation Pack v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -186,12 +193,11 @@ Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
 Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
 v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0,
 Old-Platform Result Refinement Pack v0, and More Source Coverage Expansion v1
-now
+and Article/Scan Fixture Pack v0 now
 mark the start of a more evidence-led backend phase. The next step is to add
-bounded scan/page/article fixture evidence because the old-platform hard tasks
-are satisfied under current strict checks and `article_inside_magazine_scan`
-is the remaining archive hard capability gap; external baselines remain
-pending/manual.
+manual external baseline observation because all archive-resolution hard evals
+are now satisfied under current strict fixture-backed checks, while external
+Google and Internet Archive observations remain pending/manual.
 That next step must still avoid live crawling, external scraping, installer
-execution, fuzzy/vector search, LLM planning, broad source federation, broad
-OCR claims, external baseline fabrication, and production benchmark claims.
+execution, fuzzy/vector search, LLM planning, broad source federation, OCR
+claims, external baseline fabrication, and production benchmark claims.

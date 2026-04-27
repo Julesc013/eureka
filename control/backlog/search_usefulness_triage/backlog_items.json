@@ -4,14 +4,14 @@
   "created_by_slice": "search_usefulness_backlog_triage_v0",
   "selected_primary_wedge": "old_platform_software",
   "selected_secondary_wedge": "member_level_discovery",
-  "immediate_next_milestone": "Article/Scan Fixture Pack v0",
+  "immediate_next_milestone": "Manual External Baseline Observation Pack v0",
   "audit_snapshot": {
     "total_queries": 64,
     "eureka_status_counts": {
       "capability_gap": 9,
       "covered": 5,
-      "partial": 21,
-      "source_gap": 27,
+      "partial": 22,
+      "source_gap": 26,
       "unknown": 2
     },
     "external_baseline_pending_counts": {
@@ -326,7 +326,7 @@
       "id": "SU-T018",
       "title": "Article/Scan Fixture Pack v0",
       "priority": "P0",
-      "status": "selected",
+      "status": "implemented",
       "wedge": "member_level_discovery",
       "failure_modes": ["source_coverage_gap", "decomposition_gap", "member_access_gap", "representation_gap", "eval_truth_gap"],
       "evidence": {
@@ -337,14 +337,14 @@
       "user_value": "Adds the first bounded article/page/scan fixture evidence so Eureka can represent article-inside-scan discovery without pretending it has OCR or live source coverage.",
       "implementation_feasibility": "Medium; should add tiny recorded scan/page/article metadata and synthetic text snippets only, reusing existing recorded-fixture and member-lineage paths where possible.",
       "regression_risk": "Medium if article evidence is overclaimed as OCR coverage or real Internet Archive crawling.",
-      "expected_audit_delta": "Selected after More Source Coverage Expansion v1 because all old-platform archive hard tasks are satisfied and article_inside_magazine_scan is the only remaining hard capability gap.",
+      "expected_audit_delta": "Implemented: archive evals now report satisfied=6, and the broader Search Usefulness Audit moved to covered=5, partial=22, source_gap=26, capability_gap=9, and unknown=2.",
       "prerequisite_items": ["SU-T017"],
       "suggested_milestone": "Article/Scan Fixture Pack v0",
       "acceptance_criteria": ["scan/article fixtures are tiny and deterministic", "article/page/member evidence is source-backed", "no live OCR or Internet Archive scraping is added", "article_inside_magazine_scan remains unsatisfied unless strict evidence exists", "external baselines remain pending/manual"],
       "tests_to_add_first": ["article fixture provenance tests", "page/member lineage tests", "no fake OCR/article evidence guard", "hard eval capability-gap movement tests"],
-      "likely_files": ["runtime/connectors/internet_archive_recorded/", "runtime/engine/synthetic_records/", "evals/archive_resolution/", "tests/evals/", "tests/hardening/"],
+      "likely_files": ["runtime/connectors/article_scan_recorded/", "control/inventory/sources/", "runtime/engine/interfaces/", "evals/archive_resolution/", "tests/evals/", "tests/hardening/"],
       "do_not_do": ["do not scrape Internet Archive", "do not call live source APIs", "do not add broad OCR", "do not fabricate article text", "do not weaken hard evals"],
-      "notes": "Selected because More Source Coverage Expansion v1 satisfied the old-platform hard partials, leaving article_inside_magazine_scan as the only archive hard capability gap."
+      "notes": "Implemented under control/audits/article-scan-fixture-pack-v0 with a tiny synthetic article-scan fixture source, parent issue lineage, page-range metadata, and OCR-like fixture text. It adds no OCR engine, real scan, copyrighted article text, live source calls, scraping, or external baseline claims."
     },
     {
       "id": "SU-T008",
@@ -420,9 +420,9 @@
     },
     {
       "id": "SU-T011",
-      "title": "Manual Baseline Observation Workflow v0",
-      "priority": "P3",
-      "status": "proposed",
+      "title": "Manual External Baseline Observation Pack v0",
+      "priority": "P0",
+      "status": "selected",
       "wedge": "other",
       "failure_modes": ["external_baseline_pending", "eval_truth_gap"],
       "evidence": {
@@ -431,16 +431,16 @@
         "finding_ids": ["CTEA-EVAL-002"]
       },
       "user_value": "Lets humans record Google/Archive observations later without scraping or fabrication.",
-      "implementation_feasibility": "High; helper script already exists and can be hardened.",
+      "implementation_feasibility": "High; helper script already exists and can be hardened after all current archive hard evals are fixture-backed satisfied.",
       "regression_risk": "Low if strictly manual.",
       "expected_audit_delta": "External pending counts may decrease only when human evidence is committed.",
-      "prerequisite_items": [],
-      "suggested_milestone": "Manual Baseline Observation Workflow v0",
+      "prerequisite_items": ["SU-T018"],
+      "suggested_milestone": "Manual External Baseline Observation Pack v0",
       "acceptance_criteria": ["operator/date/source notes required", "no scraping language", "observations are reviewable"],
       "tests_to_add_first": ["manual observation required-field tests", "no observed baseline without evidence guard"],
       "likely_files": ["evals/search_usefulness/observations/", "scripts/record_search_baseline_observation.py", "tests/hardening/"],
       "do_not_do": ["do not scrape Google", "do not call Internet Archive APIs", "do not fill fake evidence"],
-      "notes": "Useful for comparison later, not a blocker for the next source/model work."
+      "notes": "Selected after Article/Scan Fixture Pack v0 because archive hard evals are now satisfied under current strict fixture-backed checks while all external baselines remain pending/manual."
     },
     {
       "id": "SU-T012",

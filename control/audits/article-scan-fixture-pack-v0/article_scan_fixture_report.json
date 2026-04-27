@@ -1,0 +1,116 @@
+{
+  "report_id": "article_scan_fixture_pack_v0",
+  "created_by_slice": "article_scan_fixture_pack_v0",
+  "targeted_task": "article_inside_magazine_scan",
+  "baseline": {
+    "label": "after_more_source_coverage_expansion_v1",
+    "source": "control/audits/more-source-coverage-expansion-v1/source_expansion_report.json",
+    "archive_eval_status_counts": {
+      "capability_gap": 1,
+      "satisfied": 5
+    },
+    "search_usefulness_status_counts": {
+      "capability_gap": 9,
+      "covered": 5,
+      "partial": 21,
+      "source_gap": 27,
+      "unknown": 2
+    }
+  },
+  "current": {
+    "label": "after_article_scan_fixture_pack_v0",
+    "source": "python scripts/run_archive_resolution_evals.py --json; python scripts/run_search_usefulness_audit.py --json",
+    "archive_eval_status_counts": {
+      "satisfied": 6
+    },
+    "search_usefulness_status_counts": {
+      "capability_gap": 9,
+      "covered": 5,
+      "partial": 22,
+      "source_gap": 26,
+      "unknown": 2
+    },
+    "external_baseline_pending_counts": {
+      "google": 64,
+      "internet_archive_full_text": 64,
+      "internet_archive_metadata": 64
+    }
+  },
+  "source_records_added": [
+    "article-scan-recorded-fixtures"
+  ],
+  "fixture_payloads_added": [
+    "runtime/connectors/article_scan_recorded/fixtures/article_scan_fixture.json",
+    "runtime/connectors/article_scan_recorded/fixtures/payloads/pc_magazine_1994_issue_manifest.json",
+    "runtime/connectors/article_scan_recorded/fixtures/payloads/pc_magazine_1994_ray_tracing_ocr.txt"
+  ],
+  "article_segment_record": {
+    "target_ref": "article-scan-recorded:pc-magazine-1994-ray-tracing-article",
+    "parent_target_ref": "article-scan-recorded:issue:pc.magazine.july.1994.fixture",
+    "source_id": "article-scan-recorded-fixtures",
+    "source_family": "article_scan_recorded",
+    "member_path": "articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt",
+    "member_kind": "article_segment",
+    "page_range": "123-128",
+    "topic": "ray tracing",
+    "evidence_kinds": [
+      "article_segment",
+      "source_metadata",
+      "page_range",
+      "ocr_text_fixture",
+      "file_listing"
+    ]
+  },
+  "hard_eval_impact": {
+    "article_inside_magazine_scan": "satisfied",
+    "archive_eval_status_delta": {
+      "capability_gap": -1,
+      "satisfied": 1
+    }
+  },
+  "search_usefulness_impact": {
+    "partial_delta": 1,
+    "source_gap_delta": -1,
+    "covered_delta": 0,
+    "capability_gap_delta": 0,
+    "unknown_delta": 0
+  },
+  "limitations": [
+    "The article text is synthetic OCR-like fixture text, not copied article text.",
+    "No OCR engine, PDF parser, image parser, or real scan ingestion was added.",
+    "The fixture demonstrates one bounded article/page segment and does not claim broad article search coverage.",
+    "External baselines remain pending manual observation."
+  ],
+  "do_not_do": [
+    "do not add OCR engines",
+    "do not add PDF parsing libraries",
+    "do not add real magazine scans",
+    "do not add copyrighted article text",
+    "do not add live source calls",
+    "do not scrape Google",
+    "do not scrape Internet Archive",
+    "do not add crawling",
+    "do not add arbitrary local filesystem ingestion",
+    "do not add fuzzy/vector/LLM retrieval",
+    "do not fabricate external baselines",
+    "do not claim production readiness"
+  ],
+  "recommended_next_milestone": "Manual External Baseline Observation Pack v0",
+  "alternatives_considered": [
+    {
+      "milestone": "More Source Coverage Expansion v2",
+      "decision": "defer",
+      "why": "Source gaps remain dominant, but all archive hard evals are now satisfied under current strict fixture-backed checks, making manual comparison evidence the clearer immediate measurement step."
+    },
+    {
+      "milestone": "Public Alpha Rehearsal Evidence v0",
+      "decision": "defer",
+      "why": "Hard eval posture is stronger, but external baseline observation should come before broader demo claims."
+    },
+    {
+      "milestone": "Rust Query Planner Parity Candidate v0",
+      "decision": "defer",
+      "why": "Python oracle behavior and goldens changed again with the new article-scan source shape."
+    }
+  ]
+}
