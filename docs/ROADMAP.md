@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: forty-seven local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, and Manual External Baseline Observation Pack v0. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns; the external-baseline pack adds 192 pending manual observation slots across 64 queries and three systems without recording observed external baselines.
+Current status within this stage: forty-seven local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, and Manual Observation Batch 0. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns; the external-baseline pack adds 192 pending manual observation slots across 64 queries and three systems, and Batch 0 adds 39 prioritized pending slots without recording observed external baselines.
 
 ## Stage 3: Surface Skeletons
 
@@ -178,13 +178,20 @@ schema, template, instructions, pending slots, validation, and status reporting
 for Google and Internet Archive observations. It performs no scraping,
 automated external querying, live API calls, or external baseline fabrication.
 
+Manual Observation Batch 0 now lives under
+`evals/search_usefulness/external_baselines/batches/batch_0/` and selects 13
+high-value query IDs across the three manual-only baseline systems. It creates
+39 batch-scoped pending slots, operator instructions, and a checklist for later
+human observation. It performs no observations, scraping, automation, live API
+calls, or fabricated baseline recording.
+
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
 ## Immediate Next Milestone
 
 The next implementation milestone is:
 
-> Manual Observation Batch 0
+> Manual Observation Batch 0 Execution
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -199,12 +206,14 @@ Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
 Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
 v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0,
 Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1,
-Article/Scan Fixture Pack v0, and Manual External Baseline Observation Pack v0 now
+Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, and
+Manual Observation Batch 0 now
 mark the start of a more evidence-led backend phase. The next step is to add
-the first human-filled manual observation batch because all archive-resolution
-hard evals are now satisfied under current strict fixture-backed checks and the
-manual observation protocol exists, while external Google and Internet Archive
-observations remain pending/manual.
+the first human-filled records for the selected batch because all
+archive-resolution hard evals are now satisfied under current strict
+fixture-backed checks, the manual observation protocol exists, and Batch 0
+already names the query/system slots while external Google and Internet
+Archive observations remain pending/manual.
 That next step must still avoid live crawling, external scraping, installer
 execution, fuzzy/vector search, LLM planning, broad source federation, OCR
 claims, external baseline fabrication, and production benchmark claims.

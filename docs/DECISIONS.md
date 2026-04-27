@@ -425,3 +425,9 @@
 - Status: accepted
 - Decision: Eureka now records Manual External Baseline Observation Pack v0 under `evals/search_usefulness/external_baselines/` with manual-only baseline systems, a JSON observation schema, a fillable template, operator instructions, a pending observation manifest, and stdlib validation/status-report scripts.
 - Why: Archive hard evals are now satisfied internally, but all Google and Internet Archive baselines remain pending/manual. The pack creates a repeatable way for a human operator to record Google web search, Internet Archive metadata search, and Internet Archive full-text/OCR observations for the 64-query audit corpus without scraping, automated external searches, live APIs, or fabricated results. It seeds 192 pending slots and recommends Manual Observation Batch 0 as the next milestone. It changes no retrieval behavior, records no observed external baselines, and makes no global Google/Internet Archive comparison claim.
+
+## ADR-072: Prepare Manual Observation Batch 0 Without Filling Results
+
+- Status: accepted
+- Decision: Eureka now records Manual Observation Batch 0 under `evals/search_usefulness/external_baselines/batches/batch_0/`, selecting 13 existing high-value query IDs across Google web search, Internet Archive metadata search, and Internet Archive full-text/OCR search for 39 pending query/system slots.
+- Why: The manual external baseline protocol exists, but a human operator still needs a manageable first batch before any comparison report. Batch 0 narrows the work to old-platform software, member-level discovery, driver/support-media, and article/scan queries where external comparison is most useful. It creates templates, instructions, validation, and reporting support only; it does not perform observations, scrape or automate external systems, call APIs, fabricate top results, or treat one future manual observation as global truth. The next selected milestone is Manual Observation Batch 0 Execution.

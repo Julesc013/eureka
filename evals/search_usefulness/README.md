@@ -62,6 +62,14 @@ human records observations with operator, timestamp, exact query, visible
 result, usefulness, and limitation metadata. One manual observation is
 time-sensitive and not global Google or Internet Archive truth.
 
+Manual Observation Batch 0 now lives under
+`external_baselines/batches/batch_0/`. It selects 13 high-value old-platform,
+member-discovery, driver/support-media, and article/scan query IDs across the
+three manual-only baseline systems, producing 39 batch-scoped pending slots.
+It is preparation only: it records no observed external results, performs no
+searches, scrapes nothing, automates nothing, and leaves the global 192
+external baseline slots pending until a human fills records later.
+
 ## Running
 
 ```bash
@@ -173,3 +181,9 @@ Manual External Baseline Observation Pack v0 now lives under
 instructions, pending slots, validation, and status reporting for manual Google
 and Internet Archive observations. It changes no retrieval behavior and records
 no observed external baselines by itself.
+
+Manual Observation Batch 0 now adds the first prioritized pending batch under
+`evals/search_usefulness/external_baselines/batches/batch_0/`. It prepares 39
+query/system slots for later human observation across Google web search,
+Internet Archive metadata search, and Internet Archive full-text/OCR search.
+It does not perform observations or change Eureka search behavior.

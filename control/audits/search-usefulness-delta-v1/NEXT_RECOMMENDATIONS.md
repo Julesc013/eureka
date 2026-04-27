@@ -37,6 +37,14 @@ pending manual observation slots and adds validation/reporting without
 recording observed baselines. The next recommended milestone is Manual
 Observation Batch 0.
 
+Sixth follow-up status: Manual Observation Batch 0 is implemented under
+`evals/search_usefulness/external_baselines/batches/batch_0/`. It selects 13
+existing high-value query IDs and creates 39 pending query/system slots across
+Google web search, Internet Archive metadata search, and Internet Archive
+full-text/OCR search. It records no observed baselines. The next recommended
+milestone is Manual Observation Batch 0 Execution, which must be performed by a
+human operator without scraping or automation.
+
 ## Why This Comes Next
 
 Old-Platform Source Coverage Expansion v0 produced a meaningful local audit
@@ -103,9 +111,10 @@ recording observed external baselines.
 
 ### Manual Observation Batch 0
 
-Now recommended after Manual External Baseline Observation Pack v0. The next
-comparison step should be a small human-recorded batch of external baseline
-evidence only.
+Now implemented as a pending-only preparation batch. It does not perform
+external observations. The next comparison step should be Manual Observation
+Batch 0 Execution, where a human records observed evidence for selected slots
+using the governed protocol.
 
 ### Rust Query Planner Parity Candidate v0
 

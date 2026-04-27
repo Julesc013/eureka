@@ -197,6 +197,20 @@ pending slots for Google web search, Internet Archive metadata search, and
 Internet Archive full-text/OCR search; and that no pending slot is counted as
 observed evidence.
 
+Manual Observation Batch 0 is validated with:
+
+```bash
+python -m unittest tests.evals.test_manual_observation_batch_0
+python scripts/validate_external_baseline_observations.py
+python scripts/report_external_baseline_status.py
+```
+
+The lane checks that the first prioritized batch selects 13 existing query IDs,
+covers all three manual-only baseline systems, produces 39 pending batch slots,
+and keeps every slot pending with no top results. It prepares human observation
+only; it does not scrape, automate external searches, or fabricate external
+baseline evidence.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

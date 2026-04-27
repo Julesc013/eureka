@@ -45,6 +45,10 @@ manual-only external baseline systems, schema, template, instructions, pending
 slots, validation, and status reporting without recording observed Google or
 Internet Archive baselines.
 
+Manual Observation Batch 0 is also implemented as pending preparation only. It
+selects 13 high-value query IDs across the three manual-only baseline systems
+and creates 39 batch-scoped slots without recording observed external results.
+
 ## Still Deferred
 
 - live crawling

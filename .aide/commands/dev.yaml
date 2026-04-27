@@ -66,6 +66,8 @@ steps:
     run: python -m unittest tests.evals.test_article_scan_fixture_pack
   - id: manual_external_baseline_pack_validation
     run: python -m unittest tests.evals.test_external_baseline_observations tests.scripts.test_external_baseline_observation_scripts
+  - id: manual_observation_batch_0_validation
+    run: python -m unittest tests.evals.test_manual_observation_batch_0
   - id: external_baseline_observation_validator
     run: python scripts/validate_external_baseline_observations.py
   - id: external_baseline_observation_validator_json
@@ -168,6 +170,8 @@ steps:
     run: python -m unittest tests.evals.test_article_scan_fixture_pack
   - id: manual_external_baseline_report_validation
     run: python -m unittest tests.evals.test_external_baseline_observations tests.scripts.test_external_baseline_observation_scripts
+  - id: manual_observation_batch_0_report_validation
+    run: python -m unittest tests.evals.test_manual_observation_batch_0
   - id: search_usefulness_manual_baseline_template
     run: python scripts/record_search_baseline_observation.py --query windows_7_apps --system google
   - id: test_eval_command_matrix
@@ -377,6 +381,7 @@ notes:
   - More Source Coverage Expansion v1 adds targeted tiny fixture evidence for remaining old-platform hard partials; it does not add live source behavior, scraping, arbitrary local ingestion, real binaries, or external baseline claims.
   - Article/Scan Fixture Pack v0 adds one tiny synthetic article/page/scan fixture with OCR-like text; it does not add live source behavior, scraping, OCR engines, PDF/image parsing, real scans, copyrighted article text, or external baseline claims.
   - Manual External Baseline Observation Pack v0 adds manual-only Google and Internet Archive observation schemas, templates, instructions, pending slots, validation, and status reporting; it does not scrape, automate external searches, call APIs, or record observed baselines by itself.
+  - Manual Observation Batch 0 adds 13 selected query IDs and 39 pending batch-scoped slots for later human observation; it does not perform observations, scrape, automate external searches, call APIs, or fabricate baselines.
   - Source Coverage and Capability Model v0 adds source capability and coverage-depth metadata/projection only; it does not add connectors, live source probing, crawling, or acquisition behavior.
   - Real Source Coverage Pack v0 adds committed recorded Internet Archive-like fixtures and local bundle fixtures only; it does not add live Internet Archive API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Source Coverage Expansion v0 expands committed old-platform fixtures only; it does not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.

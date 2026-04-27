@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus forty-seven executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus forty-seven executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -185,6 +185,13 @@ architectural oracle rather than as a throwaway scaffold.
   observations, seed 192 pending slots across 64 queries and three systems, and
   prevent pending slots from being treated as observed baselines without
   scraping, automated external querying, live APIs, or fabricated results
+- first Manual Observation Batch 0 under
+  `evals/search_usefulness/external_baselines/batches/batch_0/` that selects
+  13 high-value query IDs and creates 39 batch-scoped pending slots across
+  Google web search, Internet Archive metadata search, and Internet Archive
+  full-text/OCR search, with validation and reporting support but no observed
+  external results, scraping, automated querying, live APIs, or fabricated
+  baselines
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -224,7 +231,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Manual Observation Batch 0
+> Manual Observation Batch 0 Execution
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -239,8 +246,8 @@ Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0,
 Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
 v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0,
 Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1,
-Article/Scan Fixture Pack v0, and Manual External Baseline Observation Pack v0
-are
+Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0,
+and Manual Observation Batch 0 are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
 envelope, deterministic raw-query compiler, durable local search substrate,
@@ -259,12 +266,13 @@ first measured usefulness-delta reporting pack, first expanded old-platform
 fixture coverage pack, second measured usefulness-delta reporting pack, and
 first hard-eval satisfaction mapping/report pack, plus first strict
 old-platform hard-eval result-shape refinement pack, targeted old-platform
-fixture evidence expansion pack, bounded article/page/scan fixture pack, and
-manual external-baseline observation protocol.
+fixture evidence expansion pack, bounded article/page/scan fixture pack,
+manual external-baseline observation protocol, and first prioritized pending
+manual observation batch.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Manual Observation Batch 0
+1. Manual Observation Batch 0 Execution
 2. Search Usefulness Baseline Comparison Report v0
 3. Public Alpha Rehearsal Evidence v0
 4. Rust Query Planner Parity Candidate v0

@@ -593,6 +593,28 @@
       "notes": "Added by Manual External Baseline Observation Pack v0; validates manual-only Google/Internet Archive observation protocol without scraping, automated querying, API calls, or observed baseline claims."
     },
     {
+      "test_id": "manual_observation_batch_0_validation",
+      "label": "Manual Observation Batch 0 validation",
+      "command": "python -m unittest tests.evals.test_manual_observation_batch_0",
+      "category": "eval",
+      "owner_area": "evals/search_usefulness/external_baselines/batches/batch_0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The Batch 0 manifest, pending slots, template, or no-fabricated-baseline guardrail regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Manual Observation Batch 0; validates pending batch preparation only and performs no external searches."
+    },
+    {
       "test_id": "external_baseline_observation_validator",
       "label": "External baseline observation validator",
       "command": "python scripts/validate_external_baseline_observations.py",

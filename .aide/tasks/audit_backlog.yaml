@@ -108,8 +108,8 @@
         "CTEA-EVAL-002"
       ],
       "title": "Record the first human external baseline observation batch",
-      "status": "queued",
-      "suggested_milestone": "Manual Observation Batch 0"
+      "status": "prepared_by_manual_observation_batch_0",
+      "suggested_milestone": "Manual Observation Batch 0 Execution"
     }
   ]
 }

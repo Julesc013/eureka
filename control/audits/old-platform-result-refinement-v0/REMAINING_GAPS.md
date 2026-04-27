@@ -53,3 +53,8 @@ Deferred:
 - Rust behavior ports
 - native app work
 - external baseline claims without manual evidence
+
+Manual Observation Batch 0 follow-up: a prioritized 13-query/39-slot manual
+baseline batch now exists, but it remains pending-only. Observed Google and
+Internet Archive evidence still requires human operation under the governed
+manual protocol.

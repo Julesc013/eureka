@@ -74,6 +74,10 @@ The eval suite now has two executable guardrails:
   pending slots, validation, and status reporting. It does not scrape, automate
   external searches, call APIs, fabricate observations, or claim global
   baseline truth.
+- Manual Observation Batch 0 adds the first prioritized pending batch: 13
+  selected query IDs across Google web search, Internet Archive metadata
+  search, and Internet Archive full-text/OCR search, for 39 pending slots. It
+  prepares human operation only and records no observed baselines.
 - it includes bounded result-lane and user-cost annotations where current
   result records expose them
 - it emits stable JSON per-task and suite reports
@@ -99,3 +103,6 @@ comparison. External baseline observations are placeholders until a human
 reviewer records them manually. This keeps the audit focused on reproducible
 local Eureka behavior and prevents fabricated external wins or losses.
 Manual observations are time-sensitive operator records, not global truth.
+Batch 0 remains pending until a human operator records results with operator,
+timestamp, exact query, top visible results, first useful rank, scores,
+limitations, and staleness notes.

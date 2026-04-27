@@ -10,13 +10,15 @@
 - Compatibility, planner, representation, decomposition, member-access,
   identity, ranking, and surface gaps remain visible in the broader audit.
 - External Google and Internet Archive baselines now have governed manual
-  observation slots, but no observed external baseline records are committed.
+  observation slots plus a prioritized Batch 0, but no observed external
+  baseline records are committed.
 
-Recommended next milestone: `Manual Observation Batch 0`.
+Recommended next milestone: `Manual Observation Batch 0 Execution`.
 
 Rationale: archive-resolution hard evals are now all satisfied under current
-strict fixture-backed checks, and the manual observation protocol now exists.
-The next useful step is to manually fill a small first batch without scraping
+strict fixture-backed checks, the manual observation protocol exists, and
+Batch 0 now names the first 13-query/39-slot subset. The next useful step is
+for a human operator to manually fill selected Batch 0 records without scraping
 or fabricating baselines. If the team prefers implementation over measurement,
 `More Source Coverage Expansion v2` is the strongest alternative because source
 gaps remain dominant.

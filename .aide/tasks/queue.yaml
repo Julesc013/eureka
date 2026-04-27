@@ -125,29 +125,36 @@
     {
       "id": "manual_observation_batch_0",
       "title": "Manual Observation Batch 0",
-      "status": "next",
+      "status": "completed",
       "priority": 18,
-      "notes": "Manually fill 10-15 high-value external baseline observations using the governed protocol; pending slots remain pending where no human evidence exists."
+      "notes": "Selected 13 high-value query IDs and created 39 pending batch-scoped slots across Google web search, Internet Archive metadata search, and Internet Archive full-text/OCR search without performing observations."
+    },
+    {
+      "id": "manual_observation_batch_0_execution",
+      "title": "Manual Observation Batch 0 Execution",
+      "status": "next",
+      "priority": 19,
+      "notes": "Human-operated follow-up to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
     },
     {
       "id": "rust_query_planner_parity_candidate_v0",
       "title": "Rust Query Planner Parity Candidate v0",
       "status": "queued",
-      "priority": 19,
+      "priority": 20,
       "notes": "Implement the next isolated Rust seam only after Python planner behavior stabilizes."
     },
     {
       "id": "public_alpha_rehearsal_evidence_v0",
       "title": "Public Alpha Rehearsal Evidence v0",
       "status": "queued",
-      "priority": 20,
+      "priority": 21,
       "notes": "Capture supervised rehearsal evidence using the hosting pack without deploying."
     },
     {
       "id": "compatibility_surface_strategy_v0",
       "title": "Compatibility Surface Strategy v0",
       "status": "queued",
-      "priority": 21,
+      "priority": 22,
       "notes": "Define presentation rules for known, unknown, inferred, and incompatible outcomes before app work."
     }
   ]

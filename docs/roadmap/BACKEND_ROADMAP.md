@@ -122,6 +122,10 @@ The repo has already proven:
   metadata search, and Internet Archive full-text/OCR search observation
   records plus 192 pending slots without scraping, automated external queries,
   API calls, or fabricated baselines
+- Manual Observation Batch 0 as the first prioritized pending manual
+  observation batch, selecting 13 high-value query IDs and 39 query/system
+  slots across the three manual-only baselines without performing observations
+  or creating external baseline evidence
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -161,18 +165,19 @@ The next backend sequence is:
 29. More Source Coverage Expansion v1 (implemented as targeted recorded fixtures)
 30. Article/Scan Fixture Pack v0 (implemented)
 31. Manual External Baseline Observation Pack v0 (implemented)
-32. Manual Observation Batch 0
-33. Search Usefulness Baseline Comparison Report v0
-34. Public Alpha Rehearsal Evidence v0
-35. Rust Query Planner Parity Candidate v0
-36. More Source Coverage Expansion v2
-37. Native App Work Later
+32. Manual Observation Batch 0 (implemented as pending slots only)
+33. Manual Observation Batch 0 Execution
+34. Search Usefulness Baseline Comparison Report v0
+35. Public Alpha Rehearsal Evidence v0
+36. Rust Query Planner Parity Candidate v0
+37. More Source Coverage Expansion v2
+38. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Manual Observation Batch 0
+> Manual Observation Batch 0 Execution
 
 Why this comes next:
 
@@ -252,9 +257,12 @@ Why this comes next:
 - Manual External Baseline Observation Pack v0 adds the manual-only schema,
   templates, pending slots, validation, and status reporting needed to record
   external observations without scraping or fabricated baselines
-- the next backend bottleneck is actual human observation evidence: Google and
-  Internet Archive baselines remain pending/manual for all 64 queries, while
-  source gaps in the broader audit remain honest future work
+- Manual Observation Batch 0 selects the first 13-query, 39-slot subset for
+  human operation without filling or fabricating observations
+- the next backend bottleneck is actual human observation evidence for Batch 0:
+  Google and Internet Archive baselines remain pending/manual for all 64
+  queries globally, while source gaps in the broader audit remain honest future
+  work
 
 ## Explicit Deferrals
 

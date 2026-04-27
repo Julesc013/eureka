@@ -397,19 +397,53 @@ records no observed external baselines.
 ## 7h. Manual Observation Batch 0
 
 Why: the manual observation protocol now exists, but all external baseline
-slots remain pending. A first small human-filled batch should test the protocol
-before any comparison report claims.
+slots remain pending. A first small prioritized batch should test the protocol
+shape before any human-filled comparison report claims.
 
 Prerequisite: Manual External Baseline Observation Pack v0 validator and
 hardening tests remain green.
 
-Likely files: `evals/search_usefulness/external_baselines/observations/` and
-possibly `evals/search_usefulness/external_baselines/reports/`.
+Likely files: `evals/search_usefulness/external_baselines/batches/batch_0/`,
+`scripts/validate_external_baseline_observations.py`,
+`scripts/report_external_baseline_status.py`, `tests/evals/`, and
+`tests/scripts/`.
 
-Acceptance criteria: 10-15 high-value query/system observations are manually
-recorded with operator, timestamp, exact submitted query, top visible results,
-first useful rank, usefulness scores, limitations, and next-work notes.
-Pending slots remain pending where no human observation exists.
+Acceptance criteria: 10-15 high-value query IDs are selected; all three
+manual-only systems are covered; batch-specific pending slots and templates
+exist; validator/report scripts understand the batch; no slot is marked
+observed without human evidence.
+
+Tests to add first: batch manifest validation, pending-slot count checks,
+template-not-observed checks, no scraped/automated collection guard, and report
+checks that batch counts remain pending.
+
+Do not do: do not scrape Google or Internet Archive, do not automate external
+queries, do not fabricate top results, and do not claim global baseline truth.
+
+Expected audit effect: no external pending counts decrease yet; no product
+retrieval behavior changes.
+
+Status: implemented as Manual Observation Batch 0 under
+`evals/search_usefulness/external_baselines/batches/batch_0/`. It selects 13
+existing query IDs, creates 39 pending query/system slots across Google web
+search, Internet Archive metadata search, and Internet Archive full-text/OCR
+search, and updates validation/reporting without performing observations or
+fabricating external baselines.
+
+## 7i. Manual Observation Batch 0 Execution
+
+Why: Batch 0 now exists as pending slots only. A human operator must manually
+fill the first records before any baseline comparison report can be honest.
+
+Prerequisite: Manual Observation Batch 0 validator/report checks remain green.
+
+Likely files: `evals/search_usefulness/external_baselines/batches/batch_0/observations/`
+and possibly `evals/search_usefulness/external_baselines/batches/batch_0/reports/`.
+
+Acceptance criteria: a human records selected Batch 0 observations with
+operator, timestamp, browser/tool, exact submitted query, top visible results,
+first useful rank, bounded scores, limitations, and staleness notes; pending
+slots remain pending where no human observation exists.
 
 Tests to add first: observed-record metadata validation, no scraped/automated
 collection guard, and report checks that observed counts only change when
@@ -418,8 +452,8 @@ records have required metadata.
 Do not do: do not scrape Google or Internet Archive, do not automate external
 queries, do not fabricate top results, and do not claim global baseline truth.
 
-Expected audit effect: external pending counts may decrease for the observed
-batch only; no product retrieval behavior changes.
+Expected audit effect: external pending counts may decrease for manually
+observed Batch 0 slots only; no product retrieval behavior changes.
 
 ## 8. Rust Query Planner Parity Candidate v0
 

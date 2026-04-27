@@ -138,7 +138,11 @@ search, Internet Archive metadata search, and Internet Archive full-text/OCR
 observation protocol files plus 192 pending slots. It records no observed
 external baselines.
 
-Current next implementation milestone: Manual Observation Batch 0.
+Manual Observation Batch 0 then selected 13 high-value query IDs and created
+39 batch-scoped pending slots across the three manual-only baseline systems. It
+records no observed external baselines and performs no external searches.
+
+Current next implementation milestone: Manual Observation Batch 0 Execution.
 
 ## Evidence That Would Change The Plan
 
@@ -150,6 +154,7 @@ The plan should be revisited if:
   dominant
 - hardening tests reveal route/public-alpha/privacy constraints that prevent safe fixture work
 
-Until then, the next lowest-risk move is a manual external baseline observation
-pack because archive hard evals are now satisfied under strict fixture-backed
-checks and all Google/Internet Archive external baselines remain pending/manual.
+Until then, the next lowest-risk move is human execution of Batch 0 because
+archive hard evals are now satisfied under strict fixture-backed checks, the
+manual protocol exists, the first batch is prepared, and all Google/Internet
+Archive external baselines remain pending/manual.
