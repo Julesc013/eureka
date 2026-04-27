@@ -51,7 +51,7 @@
         "coverage": {
           "connector_mode": "fixture_only",
           "coverage_depth": "action_indexed",
-          "coverage_notes": "Committed ZIP fixtures exercise bundle representation, member listing, and member readback for the member-level discovery wedge.",
+          "coverage_notes": "Committed ZIP fixtures exercise bundle representation, member listing, member readback, registry-repair utility, Windows XP browser/tool, and legacy driver support cases for the member-level discovery wedge.",
           "coverage_status": "active_fixture_scope",
           "current_limitations": [
             "Committed fixture scope only",
@@ -68,7 +68,7 @@
             "action_paths"
           ],
           "last_fixture_update": "static_fixture",
-          "next_coverage_step": "Use these fixtures as the control corpus for Member-Level Synthetic Records v0."
+          "next_coverage_step": "Use the expanded fixtures as the control corpus for follow-up audit deltas, compatibility evidence expansion, and future old-platform source coverage work."
         },
         "coverage_depth": "action_indexed",
         "coverage_status": "active_fixture_scope",
@@ -95,7 +95,7 @@
         "legal_posture": "repo_governed_fixture",
         "live_access_mode": "none",
         "name": "Local Bundle Fixtures",
-        "next_coverage_step": "Use these fixtures as the control corpus for Member-Level Synthetic Records v0.",
+        "next_coverage_step": "Use the expanded fixtures as the control corpus for follow-up audit deltas, compatibility evidence expansion, and future old-platform source coverage work.",
         "notes": "Active repo-governed fixture source distinct from local-files-placeholder. It is not a local-files connector.",
         "object_types": [
           "software_bundle",

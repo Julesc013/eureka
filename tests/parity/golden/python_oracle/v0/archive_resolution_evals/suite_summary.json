@@ -15,8 +15,8 @@
   ],
   "status": "evaluated",
   "status_counts": {
-    "capability_gap": 5,
-    "not_satisfied": 1
+    "capability_gap": 1,
+    "not_satisfied": 5
   },
   "task_summaries": [
     {
@@ -34,17 +34,17 @@
       "task_id": "article_inside_magazine_scan"
     },
     {
-      "capability_gap_count": 1,
-      "failed_check_count": 0,
+      "capability_gap_count": 0,
+      "failed_check_count": 1,
       "not_evaluable_check_count": 2,
-      "overall_status": "capability_gap",
+      "overall_status": "not_satisfied",
       "planner_expected_task_kind": "find_driver",
       "planner_observed_task_kind": "find_driver",
       "planner_status": "satisfied",
       "query_family": "driver_by_hardware_and_platform",
       "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
       "search_mode": "local_index",
-      "search_observed_result_count": 0,
+      "search_observed_result_count": 50,
       "task_id": "driver_inside_support_cd"
     },
     {
@@ -58,49 +58,49 @@
       "query_family": "latest_compatible_release",
       "raw_query": "latest Firefox before XP support ended",
       "search_mode": "local_index",
-      "search_observed_result_count": 11,
+      "search_observed_result_count": 22,
       "task_id": "latest_firefox_before_xp_drop"
     },
     {
-      "capability_gap_count": 1,
-      "failed_check_count": 0,
+      "capability_gap_count": 0,
+      "failed_check_count": 1,
       "not_evaluable_check_count": 2,
-      "overall_status": "capability_gap",
+      "overall_status": "not_satisfied",
       "planner_expected_task_kind": "identify_software",
       "planner_observed_task_kind": "identify_software",
       "planner_status": "satisfied",
       "query_family": "vague_software_identity",
       "raw_query": "old blue FTP client for XP",
       "search_mode": "local_index",
-      "search_observed_result_count": 0,
+      "search_observed_result_count": 12,
       "task_id": "old_blue_ftp_client_xp"
     },
     {
-      "capability_gap_count": 1,
-      "failed_check_count": 0,
+      "capability_gap_count": 0,
+      "failed_check_count": 1,
       "not_evaluable_check_count": 2,
-      "overall_status": "capability_gap",
+      "overall_status": "not_satisfied",
       "planner_expected_task_kind": "identify_software",
       "planner_observed_task_kind": "identify_software",
       "planner_status": "satisfied",
       "query_family": "software_by_function_and_platform",
       "raw_query": "software to fix broken registry on Windows 98",
       "search_mode": "local_index",
-      "search_observed_result_count": 0,
+      "search_observed_result_count": 8,
       "task_id": "win98_registry_repair"
     },
     {
-      "capability_gap_count": 1,
-      "failed_check_count": 0,
+      "capability_gap_count": 0,
+      "failed_check_count": 1,
       "not_evaluable_check_count": 2,
-      "overall_status": "capability_gap",
+      "overall_status": "not_satisfied",
       "planner_expected_task_kind": "browse_software",
       "planner_observed_task_kind": "browse_software",
       "planner_status": "satisfied",
       "query_family": "software_by_platform",
       "raw_query": "Windows 7 apps",
       "search_mode": "local_index",
-      "search_observed_result_count": 0,
+      "search_observed_result_count": 11,
       "task_id": "windows_7_apps"
     }
   ],

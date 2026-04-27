@@ -4,15 +4,15 @@
       "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
       "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
       "index_path_kind": "bootstrap_local_path",
-      "record_count": 182,
+      "record_count": 428,
       "record_kind_counts": {
-        "evidence": 101,
-        "member": 12,
-        "representation": 26,
-        "resolved_object": 13,
+        "evidence": 269,
+        "member": 29,
+        "representation": 48,
+        "resolved_object": 24,
         "source_record": 8,
-        "state_or_release": 13,
-        "synthetic_member": 9
+        "state_or_release": 24,
+        "synthetic_member": 26
       }
     },
     "query": "archive",
@@ -447,6 +447,39 @@
       },
       {
         "evidence": [
+          "archive_item_file",
+          "classic-mac/browser-archive-readme.txt"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-mac-os9-browser-doc-fixture:rep.internet-archive-recorded.ia.mac.os9.browser.doc.fixture.file.0",
+        "label": "classic-mac/browser-archive-readme.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.mac.os9.browser.doc.fixture.file.0",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.mac.os9.browser.doc.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.mac.os9.browser.doc.fixture.file.0",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-mac-os9-browser-doc-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.mac.os9.browser.doc.fixture",
+        "summary": "archive_item_file representation for Mac OS 9 browser installer documentation fixture",
+        "target_ref": "internet-archive-recorded:ia-mac-os9-browser-doc-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.mac.os9.browser.doc.fixture.recorded"
+      },
+      {
+        "evidence": [
           "source_archive",
           "synthetic_resolution_fixture.json"
         ],
@@ -479,6 +512,225 @@
         "version_or_state": "3.2.1"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "mentions_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:5d587176c71a81f9e26fa0713d8e0839bea8e17ca7bd7c5b510237f98eda0276",
+            "evidence_kind": "source_metadata",
+            "evidence_text": "Creative CT1740 driver Windows 98 support media fixture",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-creative-ct1740-win98-driver-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 98",
+              "name": "Windows 98"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "mentions_platform",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:9b2b63ef5079fb743f8278f9265c07572d25d2bcf7753d7df47a4dd84cb2f7fc",
+            "evidence_kind": "file_path",
+            "evidence_text": "DRIVERS/SOUND/CREATIVE_CT1740/WINDOWS98/DRIVER.INF",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-creative-ct1740-win98-driver-fixture/files/0",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 98",
+              "name": "Windows 98"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:a8d918872382892c857d43a82051bf5c612d61ef6a9a4c9db6feb876b7739d5c",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 98; x86; driver; inf; readme; support_media",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-creative-ct1740-win98-driver-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 98",
+              "name": "Windows 98"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:d85f06446f09500da21d3e9962641ef0173b674d297e7adfa1eebebedd15e360",
+            "evidence_kind": "file_path",
+            "evidence_text": "DRIVERS/SOUND/CREATIVE_CT1740/WINDOWS98/README.TXT",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-creative-ct1740-win98-driver-fixture/files/1",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 98",
+              "name": "Windows 98"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture"
+          }
+        ],
+        "compatibility_summary": "Windows 98: mentions_platform via source_metadata (medium); Windows 98: mentions_platform via file_path (low); Windows 98: documentation_for_platform via compatibility_note (medium); +1 more",
+        "evidence": [
+          "label Creative CT1740 driver Windows 98 support media fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-creative-ct1740-win98-driver-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Recorded file-list evidence for a Creative CT1740 driver package with Windows 98 INF notes. Files are text stand-ins only. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note Windows 98; x86; driver; inf; readme; support_media internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing DRIVERS/SOUND/CREATIVE_CT1740/WINDOWS98/DRIVER.INF internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
+          "file_listing DRIVERS/SOUND/CREATIVE_CT1740/WINDOWS98/README.TXT internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "resolved_object:internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture",
+        "label": "Creative CT1740 driver Windows 98 support media fixture",
+        "primary_lane": "preservation",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+        "summary": "software from Internet Archive Recorded Fixtures",
+        "target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture",
+        "usefulness_summary": "preservation; user cost 3; why: preservation_source; source_evidence_present",
+        "user_cost_reasons": [
+          "preservation_source",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_metadata",
+          "internet_archive_items_fixture.json"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture:rep.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.metadata",
+        "label": "Creative CT1740 driver Windows 98 support media fixture metadata",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.metadata",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+        "summary": "archive_item_metadata representation for Creative CT1740 driver Windows 98 support media fixture",
+        "target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "DRIVERS/SOUND/CREATIVE_CT1740/WINDOWS98/DRIVER.INF"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture:rep.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.file.0",
+        "label": "DRIVERS/SOUND/CREATIVE_CT1740/WINDOWS98/DRIVER.INF",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.file.0",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.file.0",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+        "summary": "archive_item_file representation for Creative CT1740 driver Windows 98 support media fixture",
+        "target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "DRIVERS/SOUND/CREATIVE_CT1740/WINDOWS98/README.TXT"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture:rep.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.file.1",
+        "label": "DRIVERS/SOUND/CREATIVE_CT1740/WINDOWS98/README.TXT",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.file.1",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.file.1",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture",
+        "summary": "archive_item_file representation for Creative CT1740 driver Windows 98 support media fixture",
+        "target_ref": "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.creative.ct1740.win98.driver.fixture.recorded"
+      },
+      {
         "evidence": [
           "archive_item_file",
           "DRIVERS/WIFI/THINKPAD_T42/WIN2000/DRIVER.INF"
@@ -502,7 +754,7 @@
         "source_id": "internet-archive-recorded-fixtures",
         "source_label": "Internet Archive Recorded Fixtures",
         "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
-        "summary": "archive_item_file representation for ThinkPad T42 wireless driver support media recorded fixture",
+        "summary": "archive_item_file representation for ThinkPad T42 Wi-Fi wireless driver support media recorded fixture",
         "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
         "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
         "user_cost_reasons": [
@@ -535,7 +787,7 @@
         "source_id": "internet-archive-recorded-fixtures",
         "source_label": "Internet Archive Recorded Fixtures",
         "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
-        "summary": "archive_item_file representation for ThinkPad T42 wireless driver support media recorded fixture",
+        "summary": "archive_item_file representation for ThinkPad T42 Wi-Fi wireless driver support media recorded fixture",
         "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
         "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
         "user_cost_reasons": [
@@ -693,6 +945,903 @@
         "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
       },
       {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "mentions_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:2f7908a7c5b282eefb2bef9572e47919c7a44de2d76b26878ce55cd24b4551e5",
+            "evidence_kind": "source_metadata",
+            "evidence_text": "ia-opera-win2000-notes-fixture",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-opera-win2000-notes-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.opera.win2000.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-opera-win2000-notes-fixture"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:ade18f56d2493e0d9c0468246ea242692f7aa823777d003d6b97ae29dccd43c8",
+            "evidence_kind": "source_metadata",
+            "evidence_text": "last Opera for Windows 2000 compatibility note fixture",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-opera-win2000-notes-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.opera.win2000.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-opera-win2000-notes-fixture"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:b2c004d1ff2b90c4e1d0242d9eadb71c6ee670d7753f8cd0b255a604c772f920",
+            "evidence_kind": "file_path",
+            "evidence_text": "opera/windows2000-compatibility-note.txt",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-opera-win2000-notes-fixture/files/0",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.opera.win2000.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-opera-win2000-notes-fixture"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:d1c2e8cee276379eab1b85911c8cf008e6de4b4699e0ac70f3fac13b108fcd82",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 2000; Windows NT 5.0; x86; release_notes; versioned_release; compatibility_note",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-opera-win2000-notes-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 2000",
+              "name": "Windows 2000",
+              "version": "NT 5.0"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.opera.win2000.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-opera-win2000-notes-fixture"
+          }
+        ],
+        "compatibility_summary": "Windows 2000: mentions_platform via source_metadata (medium); Windows 2000: supports_platform via source_metadata (medium); Windows 2000: supports_platform via file_path (low); +1 more",
+        "evidence": [
+          "label last Opera for Windows 2000 compatibility note fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-opera-win2000-notes-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Recorded note for an Opera versioned release with a Windows 2000 compatibility note. This fixture is partial evidence and does not assert final release identity. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note Windows 2000; Windows NT 5.0; x86; release_notes; versioned_release; compatibility_note internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing opera/windows2000-compatibility-note.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "resolved_object:internet-archive-recorded:ia-opera-win2000-notes-fixture",
+        "label": "last Opera for Windows 2000 compatibility note fixture",
+        "primary_lane": "preservation",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.internet-archive-recorded.ia.opera.win2000.notes.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.opera.win2000.notes.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-opera-win2000-notes-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.opera.win2000.notes.fixture",
+        "summary": "software from Internet Archive Recorded Fixtures",
+        "target_ref": "internet-archive-recorded:ia-opera-win2000-notes-fixture",
+        "usefulness_summary": "preservation; user cost 3; why: preservation_source; source_evidence_present",
+        "user_cost_reasons": [
+          "preservation_source",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.opera.win2000.notes.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_metadata",
+          "internet_archive_items_fixture.json"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-opera-win2000-notes-fixture:rep.internet-archive-recorded.ia.opera.win2000.notes.fixture.metadata",
+        "label": "last Opera for Windows 2000 compatibility note fixture metadata",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.opera.win2000.notes.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.opera.win2000.notes.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.opera.win2000.notes.fixture.metadata",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-opera-win2000-notes-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.opera.win2000.notes.fixture",
+        "summary": "archive_item_metadata representation for last Opera for Windows 2000 compatibility note fixture",
+        "target_ref": "internet-archive-recorded:ia-opera-win2000-notes-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.opera.win2000.notes.fixture.recorded"
+      },
+      {
+        "compatibility_evidence": [
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:5a9eae9e17e3f5efff36dbb3ecca640e69feca85e68d6175dec8773364d062ac",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows 98; x86; versioned_installer_note; compatibility_note",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-winamp-win98-notes-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 98",
+              "name": "Windows 98"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.winamp.win98.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-winamp-win98-notes-fixture"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "mentions_platform",
+            "confidence": "low",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:67552eb3812903a994e6f33299b04c6e0d70382da0032ad15cd8a23458ce6d18",
+            "evidence_kind": "file_path",
+            "evidence_text": "winamp/winamp-versioned-installer-windows98.txt",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-winamp-win98-notes-fixture/files/0",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 98",
+              "name": "Windows 98"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.winamp.win98.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-winamp-win98-notes-fixture"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "mentions_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:b05fadc974c25e057edc804b23fdb87a4d5c958aa3eb9a8c7f7347d69c683f6a",
+            "evidence_kind": "source_metadata",
+            "evidence_text": "ia-winamp-win98-notes-fixture",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-winamp-win98-notes-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 98",
+              "name": "Windows 98"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.winamp.win98.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-winamp-win98-notes-fixture"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:b3eb3aa7ac139e3d5449ec9a78138d0e76d488df3db6bb7da01a41761f60b36f",
+            "evidence_kind": "source_metadata",
+            "evidence_text": "last Winamp for Windows 98 compatibility evidence fixture",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-winamp-win98-notes-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows 98",
+              "name": "Windows 98"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.winamp.win98.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-winamp-win98-notes-fixture"
+          }
+        ],
+        "compatibility_summary": "Windows 98: supports_platform via compatibility_note (medium); Windows 98: mentions_platform via file_path (low); Windows 98: mentions_platform via source_metadata (medium); +1 more",
+        "evidence": [
+          "label last Winamp for Windows 98 compatibility evidence fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-winamp-win98-notes-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Recorded notes for a Winamp versioned installer with Windows 98 compatibility evidence. This is a tiny text fixture and not a redistributed installer. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note Windows 98; x86; versioned_installer_note; compatibility_note internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing winamp/winamp-versioned-installer-windows98.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "resolved_object:internet-archive-recorded:ia-winamp-win98-notes-fixture",
+        "label": "last Winamp for Windows 98 compatibility evidence fixture",
+        "primary_lane": "preservation",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.internet-archive-recorded.ia.winamp.win98.notes.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.winamp.win98.notes.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-winamp-win98-notes-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.winamp.win98.notes.fixture",
+        "summary": "software from Internet Archive Recorded Fixtures",
+        "target_ref": "internet-archive-recorded:ia-winamp-win98-notes-fixture",
+        "usefulness_summary": "preservation; user cost 3; why: preservation_source; source_evidence_present",
+        "user_cost_reasons": [
+          "preservation_source",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.winamp.win98.notes.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_metadata",
+          "internet_archive_items_fixture.json"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-winamp-win98-notes-fixture:rep.internet-archive-recorded.ia.winamp.win98.notes.fixture.metadata",
+        "label": "last Winamp for Windows 98 compatibility evidence fixture metadata",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.winamp.win98.notes.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.winamp.win98.notes.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.winamp.win98.notes.fixture.metadata",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-winamp-win98-notes-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.winamp.win98.notes.fixture",
+        "summary": "archive_item_metadata representation for last Winamp for Windows 98 compatibility evidence fixture",
+        "target_ref": "internet-archive-recorded:ia-winamp-win98-notes-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.winamp.win98.notes.fixture.recorded"
+      },
+      {
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:313849e4a7a0558ceaff4d330b897b5a232aa4c0839b49830fa401a0ad2c9d42",
+            "evidence_kind": "source_metadata",
+            "evidence_text": "Recorded release-note fixture for a VLC versioned release with Windows XP compatibility evidence. This is partial source evidence and does not assert the actual final compatible VLC version.",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-vlc-xp-release-notes-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows XP",
+              "name": "Windows XP",
+              "version": "NT 5.1"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.vlc.xp.release.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-vlc-xp-release-notes-fixture"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "mentions_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:847b9942ce9b13d4827c5b9b07d6a028d0bd0c65a665f01d74e2f8f97b6faa4a",
+            "evidence_kind": "file_path",
+            "evidence_text": "vlc/windows-xp-release-notes.txt",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-vlc-xp-release-notes-fixture/files/0",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows XP",
+              "name": "Windows XP",
+              "version": "NT 5.1"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.vlc.xp.release.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-vlc-xp-release-notes-fixture"
+          },
+          {
+            "architecture": "x86",
+            "claim_type": "supports_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:ad3c3d76b14bdb4771f9e1ef85624e96cec5972aaba790f8496dad991ce5eb7c",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Windows XP; Windows NT 5.1; x86; release_notes; versioned_release; compatibility_note",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-vlc-xp-release-notes-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows XP",
+              "name": "Windows XP",
+              "version": "NT 5.1"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.vlc.xp.release.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-vlc-xp-release-notes-fixture"
+          },
+          {
+            "architecture": "unknown",
+            "claim_type": "mentions_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:e6f922d4b397c84e30cd9b3516b6c2f698f0afd58127f8c87c4c09041c50336c",
+            "evidence_kind": "source_metadata",
+            "evidence_text": "latest VLC for Windows XP versioned release notes fixture",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-vlc-xp-release-notes-fixture",
+            "platform": {
+              "family": "windows",
+              "marketing_alias": "Windows XP",
+              "name": "Windows XP",
+              "version": "NT 5.1"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.vlc.xp.release.notes.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-vlc-xp-release-notes-fixture"
+          }
+        ],
+        "compatibility_summary": "Windows XP: supports_platform via source_metadata (medium); Windows XP: mentions_platform via file_path (medium); Windows XP: supports_platform via compatibility_note (medium); +1 more",
+        "evidence": [
+          "label latest VLC for Windows XP versioned release notes fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-vlc-xp-release-notes-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Recorded release-note fixture for a VLC versioned release with Windows XP compatibility evidence. This is partial source evidence and does not assert the actual final compatible VLC version. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note Windows XP; Windows NT 5.1; x86; release_notes; versioned_release; compatibility_note internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing vlc/windows-xp-release-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "resolved_object:internet-archive-recorded:ia-vlc-xp-release-notes-fixture",
+        "label": "latest VLC for Windows XP versioned release notes fixture",
+        "primary_lane": "preservation",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.internet-archive-recorded.ia.vlc.xp.release.notes.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.vlc.xp.release.notes.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-vlc-xp-release-notes-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.vlc.xp.release.notes.fixture",
+        "summary": "software from Internet Archive Recorded Fixtures",
+        "target_ref": "internet-archive-recorded:ia-vlc-xp-release-notes-fixture",
+        "usefulness_summary": "preservation; user cost 3; why: preservation_source; source_evidence_present",
+        "user_cost_reasons": [
+          "preservation_source",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.vlc.xp.release.notes.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_metadata",
+          "internet_archive_items_fixture.json"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-vlc-xp-release-notes-fixture:rep.internet-archive-recorded.ia.vlc.xp.release.notes.fixture.metadata",
+        "label": "latest VLC for Windows XP versioned release notes fixture metadata",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.vlc.xp.release.notes.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.vlc.xp.release.notes.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.vlc.xp.release.notes.fixture.metadata",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-vlc-xp-release-notes-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.vlc.xp.release.notes.fixture",
+        "summary": "archive_item_metadata representation for latest VLC for Windows XP versioned release notes fixture",
+        "target_ref": "internet-archive-recorded:ia-vlc-xp-release-notes-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.vlc.xp.release.notes.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "fixture_archive",
+          "legacy_hardware_driver_support_bundle.zip"
+        ],
+        "index_record_id": "representation:local-bundle-fixture:legacy-hardware-driver-support-bundle@1.0:rep.local-bundle.legacy-hardware-driver-support-bundle.zip",
+        "label": "Legacy hardware driver support ZIP fixture",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.local-bundle.legacy-hardware-driver-support-bundle.zip",
+        "resolved_resource_id": "obj.local-bundle.legacy-hardware-driver-support-bundle",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.local-bundle.legacy-hardware-driver-support-bundle.zip",
+          "surface_route": "/representations",
+          "target_ref": "local-bundle-fixture:legacy-hardware-driver-support-bundle@1.0"
+        },
+        "source_family": "local_bundle_fixtures",
+        "source_id": "local-bundle-fixtures",
+        "source_label": "Local Bundle Fixtures",
+        "subject_key": "obj.local-bundle.legacy-hardware-driver-support-bundle",
+        "summary": "fixture_archive representation for Legacy hardware driver support bundle recorded fixture",
+        "target_ref": "local-bundle-fixture:legacy-hardware-driver-support-bundle@1.0",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "1.0"
+      },
+      {
+        "compatibility_evidence": [
+          {
+            "architecture": "unknown",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:78a3c46b505c59f15b4762accfe8aabaf1beebc101dbb88a88f5ee73f72a8cc0",
+            "evidence_kind": "source_metadata",
+            "evidence_text": "Mac OS 9 browser installer documentation fixture",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-mac-os9-browser-doc-fixture",
+            "platform": {
+              "family": "macos",
+              "marketing_alias": "Mac OS 9",
+              "name": "Mac OS 9"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.mac.os9.browser.doc.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-mac-os9-browser-doc-fixture"
+          },
+          {
+            "architecture": "ppc",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:bddf6f28f9873094e57d04660d04eb78ef2edd4119fb35ba818420061e16a8ad",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "Mac OS 9; Classic Mac OS; ppc; documentation; browser_archive_note",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-mac-os9-browser-doc-fixture",
+            "platform": {
+              "family": "macos",
+              "marketing_alias": "Mac OS 9",
+              "name": "Mac OS 9"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.mac.os9.browser.doc.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-mac-os9-browser-doc-fixture"
+          }
+        ],
+        "compatibility_summary": "Mac OS 9: documentation_for_platform via source_metadata (medium); Mac OS 9: documentation_for_platform via compatibility_note (medium)",
+        "evidence": [
+          "label Mac OS 9 browser installer documentation fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-mac-os9-browser-doc-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Documentation-only recorded fixture for a classic Mac browser archive and Mac OS 9 browser installer evidence. No executable artifact is included. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note Mac OS 9; Classic Mac OS; ppc; documentation; browser_archive_note internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing classic-mac/browser-archive-readme.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "resolved_object:internet-archive-recorded:ia-mac-os9-browser-doc-fixture",
+        "label": "Mac OS 9 browser installer documentation fixture",
+        "primary_lane": "preservation",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.internet-archive-recorded.ia.mac.os9.browser.doc.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.mac.os9.browser.doc.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-mac-os9-browser-doc-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.mac.os9.browser.doc.fixture",
+        "summary": "texts from Internet Archive Recorded Fixtures",
+        "target_ref": "internet-archive-recorded:ia-mac-os9-browser-doc-fixture",
+        "usefulness_summary": "preservation; user cost 3; why: preservation_source; source_evidence_present",
+        "user_cost_reasons": [
+          "preservation_source",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.mac.os9.browser.doc.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_metadata",
+          "internet_archive_items_fixture.json"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-mac-os9-browser-doc-fixture:rep.internet-archive-recorded.ia.mac.os9.browser.doc.fixture.metadata",
+        "label": "Mac OS 9 browser installer documentation fixture metadata",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.mac.os9.browser.doc.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.mac.os9.browser.doc.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.mac.os9.browser.doc.fixture.metadata",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-mac-os9-browser-doc-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.mac.os9.browser.doc.fixture",
+        "summary": "archive_item_metadata representation for Mac OS 9 browser installer documentation fixture",
+        "target_ref": "internet-archive-recorded:ia-mac-os9-browser-doc-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.mac.os9.browser.doc.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "opera/windows2000-compatibility-note.txt"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-opera-win2000-notes-fixture:rep.internet-archive-recorded.ia.opera.win2000.notes.fixture.file.0",
+        "label": "opera/windows2000-compatibility-note.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.opera.win2000.notes.fixture.file.0",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.opera.win2000.notes.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.opera.win2000.notes.fixture.file.0",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-opera-win2000-notes-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.opera.win2000.notes.fixture",
+        "summary": "archive_item_file representation for last Opera for Windows 2000 compatibility note fixture",
+        "target_ref": "internet-archive-recorded:ia-opera-win2000-notes-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.opera.win2000.notes.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "portable-app-package/individual-application-installer.exe.txt"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-win7-portable-apps-fixture:rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.1",
+        "label": "portable-app-package/individual-application-installer.exe.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.1",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.portable.apps.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.1",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-win7-portable-apps-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.win7.portable.apps.fixture",
+        "summary": "archive_item_file representation for Windows 7 portable apps archive recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-win7-portable-apps-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.win7.portable.apps.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "portable-app-package/README-windows7.txt"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-win7-portable-apps-fixture:rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.0",
+        "label": "portable-app-package/README-windows7.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.0",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.portable.apps.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.win7.portable.apps.fixture.file.0",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-win7-portable-apps-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.win7.portable.apps.fixture",
+        "summary": "archive_item_file representation for Windows 7 portable apps archive recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-win7-portable-apps-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.win7.portable.apps.fixture.recorded"
+      },
+      {
+        "compatibility_evidence": [
+          {
+            "architecture": "ppc",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:082e04947d321dc47df6853a3d986907bd83bda39e4360a96d79e7e50c2c2895",
+            "evidence_kind": "source_metadata",
+            "evidence_text": "PowerPC Mac OS X 10.4 browser build documentation fixture",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-powerpc-tiger-browser-fixture",
+            "platform": {
+              "family": "macos",
+              "marketing_alias": "Tiger",
+              "name": "Mac OS X 10.4",
+              "version": "10.4"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.powerpc.tiger.browser.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture"
+          },
+          {
+            "architecture": "ppc",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:146554483e5c109e8103c892876206315c134a05c3c4bd208f930c2423c827df",
+            "evidence_kind": "compatibility_note",
+            "evidence_text": "PowerPC Mac OS X 10.4; Mac OS X Tiger; ppc; documentation; browser_build_note; compatibility_note",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-powerpc-tiger-browser-fixture",
+            "platform": {
+              "family": "macos",
+              "marketing_alias": "Tiger",
+              "name": "Mac OS X 10.4",
+              "version": "10.4"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.powerpc.tiger.browser.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture"
+          },
+          {
+            "architecture": "ppc",
+            "claim_type": "documentation_for_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:5802dae5e78c825f40f9ef7de0bd165f9cabde59061a7369882efc46f0ce8c91",
+            "evidence_kind": "file_path",
+            "evidence_text": "powerpc/tiger-browser-build-readme.txt",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-powerpc-tiger-browser-fixture/files/0",
+            "platform": {
+              "family": "macos",
+              "marketing_alias": "Tiger",
+              "name": "Mac OS X 10.4",
+              "version": "10.4"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.powerpc.tiger.browser.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture"
+          },
+          {
+            "architecture": "ppc",
+            "claim_type": "mentions_platform",
+            "confidence": "medium",
+            "created_by_slice": "compatibility_evidence_pack_v0",
+            "evidence_id": "compat-evidence:sha256:f3f7b419320ede97cf644623faba4e59608c63dd6559d75a613d5f8edb7ec3fa",
+            "evidence_kind": "source_metadata",
+            "evidence_text": "ia-powerpc-tiger-browser-fixture",
+            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-powerpc-tiger-browser-fixture",
+            "platform": {
+              "family": "macos",
+              "marketing_alias": "Tiger",
+              "name": "Mac OS X 10.4",
+              "version": "10.4"
+            },
+            "source_family": "internet_archive_recorded",
+            "source_id": "internet-archive-recorded-fixtures",
+            "source_label": "Internet Archive Recorded Fixtures",
+            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.powerpc.tiger.browser.fixture",
+            "subject_target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture"
+          }
+        ],
+        "compatibility_summary": "Mac OS X 10.4: documentation_for_platform via source_metadata (medium); Mac OS X 10.4: documentation_for_platform via compatibility_note (medium); Mac OS X 10.4: documentation_for_platform via file_path (medium); +1 more",
+        "evidence": [
+          "label PowerPC Mac OS X 10.4 browser build documentation fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "source_identifier ia-powerpc-tiger-browser-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "description Documentation-only recorded fixture for a PowerPC browser build and Mac OS X 10.4 compatible release notes. No executable artifact is included. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "compatibility_note PowerPC Mac OS X 10.4; Mac OS X Tiger; ppc; documentation; browser_build_note; compatibility_note internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "file_listing powerpc/tiger-browser-build-readme.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
+        ],
+        "index_record_id": "resolved_object:internet-archive-recorded:ia-powerpc-tiger-browser-fixture",
+        "label": "PowerPC Mac OS X 10.4 browser build documentation fixture",
+        "primary_lane": "preservation",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.internet-archive-recorded.ia.powerpc.tiger.browser.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.powerpc.tiger.browser.fixture",
+        "result_lanes": [
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.powerpc.tiger.browser.fixture",
+        "summary": "texts from Internet Archive Recorded Fixtures",
+        "target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture",
+        "usefulness_summary": "preservation; user cost 3; why: preservation_source; source_evidence_present",
+        "user_cost_reasons": [
+          "preservation_source",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.powerpc.tiger.browser.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_metadata",
+          "internet_archive_items_fixture.json"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-powerpc-tiger-browser-fixture:rep.internet-archive-recorded.ia.powerpc.tiger.browser.fixture.metadata",
+        "label": "PowerPC Mac OS X 10.4 browser build documentation fixture metadata",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.powerpc.tiger.browser.fixture.metadata",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.powerpc.tiger.browser.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.powerpc.tiger.browser.fixture.metadata",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.powerpc.tiger.browser.fixture",
+        "summary": "archive_item_metadata representation for PowerPC Mac OS X 10.4 browser build documentation fixture",
+        "target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.powerpc.tiger.browser.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "powerpc/tiger-browser-build-readme.txt"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-powerpc-tiger-browser-fixture:rep.internet-archive-recorded.ia.powerpc.tiger.browser.fixture.file.0",
+        "label": "powerpc/tiger-browser-build-readme.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.powerpc.tiger.browser.fixture.file.0",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.powerpc.tiger.browser.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.powerpc.tiger.browser.fixture.file.0",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.powerpc.tiger.browser.fixture",
+        "summary": "archive_item_file representation for PowerPC Mac OS X 10.4 browser build documentation fixture",
+        "target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.powerpc.tiger.browser.fixture.recorded"
+      },
+      {
         "evidence": [
           "archive_item_file",
           "README-windows7.txt"
@@ -724,6 +1873,72 @@
         ],
         "user_cost_score": 3,
         "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "registry-repair/README-windows98.txt"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-win98-registry-repair-fixture:rep.internet-archive-recorded.ia.win98.registry.repair.fixture.file.1",
+        "label": "registry-repair/README-windows98.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.win98.registry.repair.fixture.file.1",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.win98.registry.repair.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.win98.registry.repair.fixture.file.1",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-win98-registry-repair-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.win98.registry.repair.fixture",
+        "summary": "archive_item_file representation for Windows 98 registry repair utility recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-win98-registry-repair-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.win98.registry.repair.fixture.recorded"
+      },
+      {
+        "evidence": [
+          "archive_item_file",
+          "registry-repair/registry-repair.exe.txt"
+        ],
+        "index_record_id": "representation:internet-archive-recorded:ia-win98-registry-repair-fixture:rep.internet-archive-recorded.ia.win98.registry.repair.fixture.file.0",
+        "label": "registry-repair/registry-repair.exe.txt",
+        "primary_lane": "inside_bundles",
+        "record_kind": "representation",
+        "representation_id": "rep.internet-archive-recorded.ia.win98.registry.repair.fixture.file.0",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.win98.registry.repair.fixture",
+        "result_lanes": [
+          "inside_bundles",
+          "preservation"
+        ],
+        "route_hints": {
+          "representation_id": "rep.internet-archive-recorded.ia.win98.registry.repair.fixture.file.0",
+          "surface_route": "/representations",
+          "target_ref": "internet-archive-recorded:ia-win98-registry-repair-fixture"
+        },
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.win98.registry.repair.fixture",
+        "summary": "archive_item_file representation for Windows 98 registry repair utility recorded fixture",
+        "target_ref": "internet-archive-recorded:ia-win98-registry-repair-fixture",
+        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+        "user_cost_reasons": [
+          "parent_bundle_context_only"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "state.internet-archive-recorded.ia.win98.registry.repair.fixture.recorded"
       },
       {
         "evidence": [
@@ -946,7 +2161,7 @@
         ],
         "compatibility_summary": "Windows 2000: documentation_for_platform via compatibility_note (medium); Windows 2000: driver_for_hardware via file_path (low); Windows 2000: driver_for_hardware via file_path (medium); +1 more",
         "evidence": [
-          "label ThinkPad T42 wireless driver support media recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
+          "label ThinkPad T42 Wi-Fi wireless driver support media recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
           "source_identifier ia-thinkpad-t42-wireless-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
           "description Recorded metadata for a support-media-shaped driver item with Windows 2000 compatibility hints. Payload entries are text stand-ins, not real driver binaries. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
           "compatibility_note Windows 2000; x86; driver; support_media; readme; inf internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
@@ -954,7 +2169,7 @@
           "file_listing DRIVERS/WIFI/THINKPAD_T42/WIN2000/README.TXT internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
         ],
         "index_record_id": "resolved_object:internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
-        "label": "ThinkPad T42 wireless driver support media recorded fixture",
+        "label": "ThinkPad T42 Wi-Fi wireless driver support media recorded fixture",
         "primary_lane": "preservation",
         "record_kind": "resolved_object",
         "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.metadata",
@@ -987,7 +2202,7 @@
           "internet_archive_items_fixture.json"
         ],
         "index_record_id": "representation:internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture:rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.metadata",
-        "label": "ThinkPad T42 wireless driver support media recorded fixture metadata",
+        "label": "ThinkPad T42 Wi-Fi wireless driver support media recorded fixture metadata",
         "primary_lane": "inside_bundles",
         "record_kind": "representation",
         "representation_id": "rep.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.metadata",
@@ -1005,7 +2220,7 @@
         "source_id": "internet-archive-recorded-fixtures",
         "source_label": "Internet Archive Recorded Fixtures",
         "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
-        "summary": "archive_item_metadata representation for ThinkPad T42 wireless driver support media recorded fixture",
+        "summary": "archive_item_metadata representation for ThinkPad T42 Wi-Fi wireless driver support media recorded fixture",
         "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
         "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
         "user_cost_reasons": [
@@ -1020,7 +2235,7 @@
           "driver_support_cd.zip"
         ],
         "index_record_id": "representation:local-bundle-fixture:driver-support-cd@1.0:rep.local-bundle.driver-support-cd.zip",
-        "label": "ThinkPad T42 wireless driver support ZIP fixture",
+        "label": "ThinkPad T42 Wi-Fi wireless driver support ZIP fixture",
         "primary_lane": "inside_bundles",
         "record_kind": "representation",
         "representation_id": "rep.local-bundle.driver-support-cd.zip",
@@ -1038,7 +2253,7 @@
         "source_id": "local-bundle-fixtures",
         "source_label": "Local Bundle Fixtures",
         "subject_key": "obj.local-bundle.driver-support-cd",
-        "summary": "fixture_archive representation for ThinkPad T42 wireless support bundle recorded fixture",
+        "summary": "fixture_archive representation for ThinkPad T42 Wi-Fi wireless support bundle recorded fixture",
         "target_ref": "local-bundle-fixture:driver-support-cd@1.0",
         "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
         "user_cost_reasons": [
@@ -1049,1076 +2264,36 @@
       },
       {
         "evidence": [
-          "fixture_archive",
-          "windows_utility_bundle.zip"
+          "archive_item_file",
+          "vlc/windows-xp-release-notes.txt"
         ],
-        "index_record_id": "representation:local-bundle-fixture:windows-utility-bundle@1.0:rep.local-bundle.windows-utility-bundle.zip",
-        "label": "Windows 7 utility bundle ZIP fixture",
+        "index_record_id": "representation:internet-archive-recorded:ia-vlc-xp-release-notes-fixture:rep.internet-archive-recorded.ia.vlc.xp.release.notes.fixture.file.0",
+        "label": "vlc/windows-xp-release-notes.txt",
         "primary_lane": "inside_bundles",
         "record_kind": "representation",
-        "representation_id": "rep.local-bundle.windows-utility-bundle.zip",
-        "resolved_resource_id": "obj.local-bundle.windows-utility-bundle",
+        "representation_id": "rep.internet-archive-recorded.ia.vlc.xp.release.notes.fixture.file.0",
+        "resolved_resource_id": "obj.internet-archive-recorded.ia.vlc.xp.release.notes.fixture",
         "result_lanes": [
           "inside_bundles",
           "preservation"
         ],
         "route_hints": {
-          "representation_id": "rep.local-bundle.windows-utility-bundle.zip",
+          "representation_id": "rep.internet-archive-recorded.ia.vlc.xp.release.notes.fixture.file.0",
           "surface_route": "/representations",
-          "target_ref": "local-bundle-fixture:windows-utility-bundle@1.0"
+          "target_ref": "internet-archive-recorded:ia-vlc-xp-release-notes-fixture"
         },
-        "source_family": "local_bundle_fixtures",
-        "source_id": "local-bundle-fixtures",
-        "source_label": "Local Bundle Fixtures",
-        "subject_key": "obj.local-bundle.windows-utility-bundle",
-        "summary": "fixture_archive representation for Windows 7 utility bundle recorded fixture",
-        "target_ref": "local-bundle-fixture:windows-utility-bundle@1.0",
+        "source_family": "internet_archive_recorded",
+        "source_id": "internet-archive-recorded-fixtures",
+        "source_label": "Internet Archive Recorded Fixtures",
+        "subject_key": "obj.internet-archive-recorded.ia.vlc.xp.release.notes.fixture",
+        "summary": "archive_item_file representation for latest VLC for Windows XP versioned release notes fixture",
+        "target_ref": "internet-archive-recorded:ia-vlc-xp-release-notes-fixture",
         "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
         "user_cost_reasons": [
           "parent_bundle_context_only"
         ],
         "user_cost_score": 3,
-        "version_or_state": "1.0"
-      },
-      {
-        "compatibility_evidence": [
-          {
-            "architecture": "unknown",
-            "claim_type": "supports_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:11da2938a96dcac27bfb7de77f3fdeb1c36842139a4cf217773c31177e00b366",
-            "evidence_kind": "source_metadata",
-            "evidence_text": "Recorded metadata for a small utility pack shaped around Windows 7 and Windows NT 6.1 compatibility evidence. Payload entries are text stand-ins, not redistributed executables.",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows 7",
-              "name": "Windows 7",
-              "version": "NT 6.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
-          },
-          {
-            "architecture": "x64",
-            "claim_type": "documentation_for_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:4325a810994897d7c790bc0487f4c0cf3a7ff58091844ff4ad498d65df657872",
-            "evidence_kind": "compatibility_note",
-            "evidence_text": "Windows 7; Windows NT 6.1; x86; x64; utility; installer_stub; readme",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows 7",
-              "name": "Windows 7",
-              "version": "NT 6.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
-          },
-          {
-            "architecture": "unknown",
-            "claim_type": "mentions_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:a0dba5e3ed3579a0fee1c2d07d97cbab4744fd387231a1aa5862ef7581f0068d",
-            "evidence_kind": "source_metadata",
-            "evidence_text": "Windows 7 Utility Pack recorded fixture",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-win7-utility-pack-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows 7",
-              "name": "Windows 7",
-              "version": "NT 6.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
-          }
-        ],
-        "compatibility_summary": "Windows 7: supports_platform via source_metadata (medium); Windows 7: documentation_for_platform via compatibility_note (medium); Windows 7: mentions_platform via source_metadata (medium)",
-        "evidence": [
-          "label Windows 7 Utility Pack recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "source_identifier ia-win7-utility-pack-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "description Recorded metadata for a small utility pack shaped around Windows 7 and Windows NT 6.1 compatibility evidence. Payload entries are text stand-ins, not redistributed executables. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "compatibility_note Windows 7; Windows NT 6.1; x86; x64; utility; installer_stub; readme internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "file_listing 7z920.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
-          "file_listing README-windows7.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
-          "file_listing SHA256SUMS.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "resolved_object:internet-archive-recorded:ia-win7-utility-pack-fixture",
-        "label": "Windows 7 Utility Pack recorded fixture",
-        "primary_lane": "preservation",
-        "record_kind": "resolved_object",
-        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.metadata",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "result_lanes": [
-          "preservation"
-        ],
-        "route_hints": {
-          "record_kind": "resolved_object",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "summary": "software from Internet Archive Recorded Fixtures",
-        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
-        "usefulness_summary": "preservation; user cost 3; why: preservation_source; source_evidence_present",
-        "user_cost_reasons": [
-          "preservation_source",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 3,
-        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "archive_item_metadata",
-          "internet_archive_items_fixture.json"
-        ],
-        "index_record_id": "representation:internet-archive-recorded:ia-win7-utility-pack-fixture:rep.internet-archive-recorded.ia.win7.utility.pack.fixture.metadata",
-        "label": "Windows 7 Utility Pack recorded fixture metadata",
-        "primary_lane": "inside_bundles",
-        "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.metadata",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "result_lanes": [
-          "inside_bundles",
-          "preservation"
-        ],
-        "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.metadata",
-          "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "summary": "archive_item_metadata representation for Windows 7 Utility Pack recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
-        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
-        "user_cost_reasons": [
-          "parent_bundle_context_only"
-        ],
-        "user_cost_score": 3,
-        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "file_listing firefox-xp-support-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
-          "file_listing release-family-manifest.json internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "state_or_release:state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded",
-        "label": "Firefox XP support notes recorded fixture state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded",
-        "primary_lane": "preservation",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "result_lanes": [
-          "preservation"
-        ],
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "recorded_item for Firefox XP support notes recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "usefulness_summary": "preservation; user cost 4; why: preservation_source",
-        "user_cost_reasons": [
-          "preservation_source"
-        ],
-        "user_cost_score": 4,
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "label ThinkPad T42 wireless driver support media recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "source_identifier ia-thinkpad-t42-wireless-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "description Recorded metadata for a support-media-shaped driver item with Windows 2000 compatibility hints. Payload entries are text stand-ins, not real driver binaries. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "compatibility_note Windows 2000; x86; driver; support_media; readme; inf internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "file_listing DRIVERS/WIFI/THINKPAD_T42/WIN2000/DRIVER.INF internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
-          "file_listing DRIVERS/WIFI/THINKPAD_T42/WIN2000/README.TXT internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "state_or_release:state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded",
-        "label": "ThinkPad T42 wireless driver support media recorded fixture state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded",
-        "primary_lane": "preservation",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
-        "result_lanes": [
-          "preservation"
-        ],
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture",
-        "summary": "recorded_item for ThinkPad T42 wireless driver support media recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
-        "usefulness_summary": "preservation; user cost 4; why: preservation_source",
-        "user_cost_reasons": [
-          "preservation_source"
-        ],
-        "user_cost_score": 4,
-        "version_or_state": "state.internet-archive-recorded.ia.thinkpad.t42.wireless.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "label Windows 7 Utility Pack recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "source_identifier ia-win7-utility-pack-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "description Recorded metadata for a small utility pack shaped around Windows 7 and Windows NT 6.1 compatibility evidence. Payload entries are text stand-ins, not redistributed executables. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "compatibility_note Windows 7; Windows NT 6.1; x86; x64; utility; installer_stub; readme internet_archive_recorded source_metadata Internet Archive Recorded Fixtures",
-          "file_listing 7z920.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
-          "file_listing README-windows7.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures",
-          "file_listing SHA256SUMS.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "state_or_release:state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded",
-        "label": "Windows 7 Utility Pack recorded fixture state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded",
-        "primary_lane": "preservation",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "result_lanes": [
-          "preservation"
-        ],
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "summary": "recorded_item for Windows 7 Utility Pack recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
-        "usefulness_summary": "preservation; user cost 4; why: preservation_source",
-        "user_cost_reasons": [
-          "preservation_source"
-        ],
-        "user_cost_score": 4,
-        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "state_or_release:state.archive-viewer.release",
-        "label": "Archive Viewer 0.9.0",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.archive-viewer",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archive-viewer@0.9.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archive-viewer",
-        "summary": "release for Archive Viewer",
-        "target_ref": "fixture:software/archive-viewer@0.9.0",
-        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
-        "user_cost_reasons": [
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "0.9.0"
-      },
-      {
-        "evidence": [
-          "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:0",
-        "label": "Archive Viewer evidence 1",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archive-viewer",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archive-viewer@0.9.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archive-viewer",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/archive-viewer@0.9.0",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "0.9.0"
-      },
-      {
-        "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:1",
-        "label": "Archive Viewer evidence 2",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archive-viewer",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archive-viewer@0.9.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archive-viewer",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/archive-viewer@0.9.0",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "0.9.0"
-      },
-      {
-        "evidence": [
-          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "state_or_release:state.archivebox.synthetic.release",
-        "label": "ArchiveBox 0.8.5 0.8.5",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "release for ArchiveBox 0.8.5",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
-        "user_cost_reasons": [
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:0",
-        "label": "ArchiveBox 0.8.5 evidence 1",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/archivebox@0.8.5:1",
-        "label": "ArchiveBox 0.8.5 evidence 2",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "0.8.5"
-      },
-      {
-        "evidence": [
-          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "state_or_release:state.compatibility-lab.release",
-        "label": "Compatibility Lab 3.2.1",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "release for Compatibility Lab",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
-        "user_cost_reasons": [
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "3.2.1"
-      },
-      {
-        "evidence": [
-          "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:0",
-        "label": "Compatibility Lab evidence 1",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "3.2.1"
-      },
-      {
-        "evidence": [
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/compatibility-lab@3.2.1:1",
-        "label": "Compatibility Lab evidence 2",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.compatibility-lab",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/compatibility-lab@3.2.1"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.compatibility-lab",
-        "summary": "source_locator from synthetic_fixture",
-        "target_ref": "fixture:software/compatibility-lab@3.2.1",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "3.2.1"
-      },
-      {
-        "compatibility_evidence": [
-          {
-            "architecture": "unknown",
-            "claim_type": "mentions_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:87bfa226afc4e6c69eea03e5933362d822a7f15405091f844d99e43b3b3c1e73",
-            "evidence_kind": "source_metadata",
-            "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          },
-          {
-            "architecture": "x86",
-            "claim_type": "supports_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:9b1050ab4e10752aa5c6bbd65d2b4f7a13c678f1740198742f4c155a8aa8092c",
-            "evidence_kind": "compatibility_note",
-            "evidence_text": "Windows XP; x86; release_notes; support_window",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          }
-        ],
-        "compatibility_summary": "Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium)",
-        "evidence": [
-          "label Firefox XP support notes recorded fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:0",
-        "label": "Firefox XP support notes recorded fixture evidence 1",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "label from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "compatibility_evidence": [
-          {
-            "architecture": "unknown",
-            "claim_type": "mentions_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:87bfa226afc4e6c69eea03e5933362d822a7f15405091f844d99e43b3b3c1e73",
-            "evidence_kind": "source_metadata",
-            "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          },
-          {
-            "architecture": "x86",
-            "claim_type": "supports_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:9b1050ab4e10752aa5c6bbd65d2b4f7a13c678f1740198742f4c155a8aa8092c",
-            "evidence_kind": "compatibility_note",
-            "evidence_text": "Windows XP; x86; release_notes; support_window",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          }
-        ],
-        "compatibility_summary": "Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium)",
-        "evidence": [
-          "source_identifier ia-firefox-xp-support-fixture internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:1",
-        "label": "Firefox XP support notes recorded fixture evidence 2",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "source_identifier from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "compatibility_evidence": [
-          {
-            "architecture": "unknown",
-            "claim_type": "mentions_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:87bfa226afc4e6c69eea03e5933362d822a7f15405091f844d99e43b3b3c1e73",
-            "evidence_kind": "source_metadata",
-            "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          },
-          {
-            "architecture": "x86",
-            "claim_type": "supports_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:9b1050ab4e10752aa5c6bbd65d2b4f7a13c678f1740198742f4c155a8aa8092c",
-            "evidence_kind": "compatibility_note",
-            "evidence_text": "Windows XP; x86; release_notes; support_window",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          }
-        ],
-        "compatibility_summary": "Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium)",
-        "evidence": [
-          "description Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release. internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:2",
-        "label": "Firefox XP support notes recorded fixture evidence 3",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "description from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "compatibility_evidence": [
-          {
-            "architecture": "unknown",
-            "claim_type": "mentions_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:87bfa226afc4e6c69eea03e5933362d822a7f15405091f844d99e43b3b3c1e73",
-            "evidence_kind": "source_metadata",
-            "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          },
-          {
-            "architecture": "x86",
-            "claim_type": "supports_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:9b1050ab4e10752aa5c6bbd65d2b4f7a13c678f1740198742f4c155a8aa8092c",
-            "evidence_kind": "compatibility_note",
-            "evidence_text": "Windows XP; x86; release_notes; support_window",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          }
-        ],
-        "compatibility_summary": "Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium)",
-        "evidence": [
-          "compatibility_note Windows XP; x86; release_notes; support_window internet_archive_recorded source_metadata Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:3",
-        "label": "Firefox XP support notes recorded fixture evidence 4",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "compatibility_note from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "compatibility_evidence": [
-          {
-            "architecture": "unknown",
-            "claim_type": "mentions_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:87bfa226afc4e6c69eea03e5933362d822a7f15405091f844d99e43b3b3c1e73",
-            "evidence_kind": "source_metadata",
-            "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          },
-          {
-            "architecture": "x86",
-            "claim_type": "supports_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:9b1050ab4e10752aa5c6bbd65d2b4f7a13c678f1740198742f4c155a8aa8092c",
-            "evidence_kind": "compatibility_note",
-            "evidence_text": "Windows XP; x86; release_notes; support_window",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          }
-        ],
-        "compatibility_summary": "Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium)",
-        "evidence": [
-          "file_listing firefox-xp-support-notes.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:4",
-        "label": "Firefox XP support notes recorded fixture evidence 5",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "file_listing from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "compatibility_evidence": [
-          {
-            "architecture": "unknown",
-            "claim_type": "mentions_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:87bfa226afc4e6c69eea03e5933362d822a7f15405091f844d99e43b3b3c1e73",
-            "evidence_kind": "source_metadata",
-            "evidence_text": "Recorded metadata for browser release-note evidence around Windows XP support. This fixture is partial and does not claim to identify the last compatible release.",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          },
-          {
-            "architecture": "x86",
-            "claim_type": "supports_platform",
-            "confidence": "medium",
-            "created_by_slice": "compatibility_evidence_pack_v0",
-            "evidence_id": "compat-evidence:sha256:9b1050ab4e10752aa5c6bbd65d2b4f7a13c678f1740198742f4c155a8aa8092c",
-            "evidence_kind": "compatibility_note",
-            "evidence_text": "Windows XP; x86; release_notes; support_window",
-            "locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture",
-            "platform": {
-              "family": "windows",
-              "marketing_alias": "Windows XP",
-              "name": "Windows XP",
-              "version": "NT 5.1"
-            },
-            "source_family": "internet_archive_recorded",
-            "source_id": "internet-archive-recorded-fixtures",
-            "source_label": "Internet Archive Recorded Fixtures",
-            "subject_resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-            "subject_target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          }
-        ],
-        "compatibility_summary": "Windows XP: mentions_platform via source_metadata (medium); Windows XP: supports_platform via compatibility_note (medium)",
-        "evidence": [
-          "file_listing release-family-manifest.json internet_archive_recorded file_listing Internet Archive Recorded Fixtures"
-        ],
-        "index_record_id": "evidence:internet-archive-recorded:ia-firefox-xp-support-fixture:5",
-        "label": "Firefox XP support notes recorded fixture evidence 6",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "file_listing from internet_archive_recorded",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "state_or_release:state.synthetic-demo-app.release",
-        "label": "Synthetic Demo App 1.0.0",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.synthetic-demo-app",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-app",
-        "summary": "release for Synthetic Demo App",
-        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
-        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
-        "user_cost_reasons": [
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "1.0.0"
-      },
-      {
-        "evidence": [
-          "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "evidence:fixture:software/synthetic-demo-app@1.0.0:0",
-        "label": "Synthetic Demo App evidence 1",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "evidence",
-        "resolved_resource_id": "obj.synthetic-demo-app",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "evidence",
-          "surface_route": "/",
-          "target_ref": "fixture:software/synthetic-demo-app@1.0.0"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.synthetic-demo-app",
-        "summary": "label from synthetic_fixture",
-        "target_ref": "fixture:software/synthetic-demo-app@1.0.0",
-        "usefulness_summary": "mentions or traces; user cost 6; why: mention_only; source_evidence_present",
-        "user_cost_reasons": [
-          "mention_only",
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "1.0.0"
+        "version_or_state": "state.internet-archive-recorded.ia.vlc.xp.release.notes.fixture.recorded"
       }
     ],
     "status": "queried"

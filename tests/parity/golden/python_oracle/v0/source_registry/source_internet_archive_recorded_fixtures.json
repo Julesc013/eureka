@@ -49,7 +49,7 @@
         "coverage": {
           "connector_mode": "recorded_fixture_only",
           "coverage_depth": "representation_indexed",
-          "coverage_notes": "Tiny Internet-Archive-shaped fixture records expose item metadata and file listings for old-platform software and driver/support-media examples.",
+          "coverage_notes": "Tiny Internet-Archive-shaped fixture records expose item metadata and file listings for old-platform software, latest-compatible release notes, browser documentation, utility, registry-repair, and driver/support-media examples.",
           "coverage_status": "active_recorded_fixture_scope",
           "current_limitations": [
             "Recorded fixture scope only",

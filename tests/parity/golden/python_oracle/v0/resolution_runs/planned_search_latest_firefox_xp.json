@@ -233,9 +233,122 @@
                 "source_id": "internet-archive-recorded-fixtures"
               },
               "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_by_family": "local_bundle_fixtures",
+                  "asserted_by_label": "Local Bundle Fixtures",
+                  "claim_kind": "member_listing",
+                  "claim_value": "browsers/firefox-xp-support/readme.txt",
+                  "evidence_kind": "member_listing",
+                  "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/2"
+                },
+                {
+                  "asserted_by_family": "local_bundle_fixtures",
+                  "asserted_by_label": "Local Bundle Fixtures",
+                  "claim_kind": "compatibility_note",
+                  "claim_value": "Readme for Firefox XP browser support notes fixture.",
+                  "evidence_kind": "compatibility_note",
+                  "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/2"
+                },
+                {
+                  "asserted_by_family": "local_bundle_fixtures",
+                  "asserted_by_label": "Local Bundle Fixtures",
+                  "claim_kind": "member_path",
+                  "claim_value": "browsers/firefox-xp-support/readme.txt",
+                  "evidence_kind": "member_listing",
+                  "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/readme.txt"
+                },
+                {
+                  "asserted_by_family": "local_bundle_fixtures",
+                  "asserted_by_label": "Local Bundle Fixtures",
+                  "claim_kind": "member_hash",
+                  "claim_value": "sha256:0dbd25cc0fa1e75926744518cd51fa6b7db3a53c91fc0880f9b78c1777bd7645",
+                  "evidence_kind": "member_listing",
+                  "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/readme.txt"
+                },
+                {
+                  "asserted_by_family": "local_bundle_fixtures",
+                  "asserted_by_label": "Local Bundle Fixtures",
+                  "claim_kind": "member_text",
+                  "claim_value": "Firefox XP browser support notes fixture. Mentions Windows XP compatibility evidence and support-window investigation.",
+                  "evidence_kind": "readme",
+                  "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/readme.txt"
+                }
+              ],
+              "object": {
+                "action_hints": [
+                  "inspect_parent_bundle",
+                  "read_member",
+                  "preview_member"
+                ],
+                "compatibility_evidence": [
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "documentation_for_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:6f89a8e6f72ebe6f0852cd7ca0ab41761ff764fc376f598a8f1709a81cbf0f17",
+                    "evidence_kind": "readme",
+                    "evidence_text": "Firefox XP browser support notes fixture. Mentions Windows XP compatibility evidence and support-window investigation.",
+                    "locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/browsers/firefox-xp-support/readme.txt",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "local_bundle_fixtures",
+                    "source_id": "local-bundle-fixtures",
+                    "source_label": "Local Bundle Fixtures",
+                    "subject_resolved_resource_id": "obj.synthetic-member.44bafbb6910656bb675bdd81",
+                    "subject_target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199"
+                  }
+                ],
+                "compatibility_summary": "Windows XP: documentation_for_platform via readme (medium)",
+                "content_hash": "sha256:0dbd25cc0fa1e75926744518cd51fa6b7db3a53c91fc0880f9b78c1777bd7645",
+                "id": "obj.synthetic-member.44bafbb6910656bb675bdd81",
+                "kind": "synthetic_member",
+                "label": "browsers/firefox-xp-support/readme.txt (browsers firefox xp support readme txt) in Windows XP browser and tools bundle recorded fixture",
+                "media_type": "text/plain",
+                "member_kind": "readme",
+                "member_label": "readme.txt",
+                "member_path": "browsers/firefox-xp-support/readme.txt",
+                "parent_object_label": "Windows XP browser and tools bundle recorded fixture",
+                "parent_representation_id": "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
+                "parent_resolved_resource_id": "resolved:sha256:e03e0d3b7a43c3839c4302403544c87a6dff59120b1b0a4f95d11aee20d05f5c",
+                "parent_target_ref": "local-bundle-fixture:windows-xp-browser-tools-bundle@1.0",
+                "primary_lane": "inside_bundles",
+                "record_kind": "synthetic_member",
+                "result_lanes": [
+                  "inside_bundles",
+                  "documentation"
+                ],
+                "size_bytes": 119,
+                "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; compatibility_evidence_present; documentation_only_compatibility_evidence; documentation_only",
+                "user_cost_reasons": [
+                  "inner_member_has_parent_lineage",
+                  "member_has_path",
+                  "action_available",
+                  "member_has_preview_or_readback_action",
+                  "compatibility_evidence_present",
+                  "documentation_only_compatibility_evidence",
+                  "documentation_only"
+                ],
+                "user_cost_score": 5
+              },
+              "resolved_resource_id": "resolved:sha256:86ac662b230963c1575544c15761762a2b703c208fb8c82201fd910674aa5089",
+              "source": {
+                "family": "local_bundle_fixtures",
+                "label": "Local Bundle Fixtures",
+                "locator": "rep.local-bundle.windows-xp-browser-tools-bundle.zip#browsers/firefox-xp-support/readme.txt",
+                "source_id": "local-bundle-fixtures"
+              },
+              "target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199"
             }
           ],
-          "result_count": 1,
+          "result_count": 2,
           "result_kind": "search_results"
         },
         "run_id": "run-planned-search-0001",

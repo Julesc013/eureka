@@ -100,6 +100,22 @@
             "claim_value": "release-family-manifest.json",
             "evidence_kind": "file_listing",
             "evidence_locator": "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json#ia-firefox-xp-support-fixture/files/1"
+          },
+          {
+            "asserted_by_family": "local_bundle_fixtures",
+            "asserted_by_label": "Local Bundle Fixtures",
+            "claim_kind": "member_listing",
+            "claim_value": "browsers/firefox-xp-support/readme.txt",
+            "evidence_kind": "member_listing",
+            "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/2"
+          },
+          {
+            "asserted_by_family": "local_bundle_fixtures",
+            "asserted_by_label": "Local Bundle Fixtures",
+            "claim_kind": "compatibility_note",
+            "claim_value": "Readme for Firefox XP browser support notes fixture.",
+            "evidence_kind": "compatibility_note",
+            "evidence_locator": "runtime/connectors/local_bundle_fixtures/fixtures/local_bundle_fixtures.json#rep.local-bundle.windows-xp-browser-tools-bundle.zip/members/2"
           }
         ],
         "invalidation_hints": {
@@ -190,12 +206,28 @@
               "source_id": "internet-archive-recorded-fixtures"
             },
             "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+          },
+          {
+            "object": {
+              "id": "obj.synthetic-member.44bafbb6910656bb675bdd81",
+              "kind": "synthetic_member",
+              "label": "browsers/firefox-xp-support/readme.txt (browsers firefox xp support readme txt) in Windows XP browser and tools bundle recorded fixture"
+            },
+            "resolved_resource_id": "resolved:sha256:86ac662b230963c1575544c15761762a2b703c208fb8c82201fd910674aa5089",
+            "source": {
+              "family": "local_bundle_fixtures",
+              "label": "Local Bundle Fixtures",
+              "locator": "rep.local-bundle.windows-xp-browser-tools-bundle.zip#browsers/firefox-xp-support/readme.txt",
+              "source_id": "local-bundle-fixtures"
+            },
+            "target_ref": "member:sha256:44bafbb6910656bb675bdd812da1537a8b3912b5953882c4d0595cb277cea199"
           }
         ],
         "source_run_id": "run-planned-search-0001",
         "task_kind": "find_latest_compatible_release",
         "useful_source_ids": [
-          "internet-archive-recorded-fixtures"
+          "internet-archive-recorded-fixtures",
+          "local-bundle-fixtures"
         ]
       }
     ],

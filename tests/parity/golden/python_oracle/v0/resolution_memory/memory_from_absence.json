@@ -3,14 +3,14 @@
     "memories": [
       {
         "absence_report": {
-          "checked_record_count": 22,
+          "checked_record_count": 50,
           "checked_source_families": [
             "synthetic_fixture",
             "github_releases",
             "internet_archive_recorded",
             "local_bundle_fixtures"
           ],
-          "checked_subject_count": 20,
+          "checked_subject_count": 48,
           "likely_reason_code": "subject_unknown_in_bounded_corpus",
           "near_matches": [],
           "next_steps": [
