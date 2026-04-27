@@ -22,6 +22,10 @@ steps:
     run: python scripts/generate_public_alpha_hosting_pack.py --check
   - id: public_alpha_hosting_pack
     run: python -m unittest tests.operations.test_public_alpha_hosting_pack
+  - id: public_static_site_validator
+    run: python scripts/validate_public_static_site.py
+  - id: public_static_site_pack
+    run: python -m unittest tests.operations.test_public_static_site_pack tests.scripts.test_validate_public_static_site
   - id: python_oracle_golden_check
     run: python scripts/generate_python_oracle_golden.py --check
   - id: test_eval_operating_layer
@@ -93,6 +97,7 @@ notes:
   - Article/Scan Fixture Pack v0 validates one tiny synthetic article/page/scan fixture with OCR-like text; it does not add live source behavior, scraping, OCR engines, PDF/image parsing, real scans, copyrighted article text, or external baseline claims.
   - Manual External Baseline Observation Pack v0 validates manual-only external baseline schemas, templates, instructions, pending slots, and scripts without scraping, automated external queries, APIs, or observed baseline claims.
   - Manual Observation Batch 0 validates the first prioritized pending batch without performing observations, scraping, automation, or fabricated baseline claims.
+  - LIVE_ALPHA_00 Static Public Site Pack validates static public-site documentation only; it does not deploy, add hosting infrastructure, add live probes, scrape, or claim production readiness.
   - Source Coverage and Capability Model v0 checks validate metadata and projection only; they do not add connectors, live source probing, or crawling.
   - Real Source Coverage Pack v0 checks validate committed recorded fixtures, local bundle fixtures, local-index visibility, and public projection only; they do not add live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Source Coverage Expansion v0 checks validate expanded committed old-platform fixtures, local bundle members, compatibility evidence, and index visibility only; they do not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.

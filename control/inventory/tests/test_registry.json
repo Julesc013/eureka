@@ -637,6 +637,50 @@
       "notes": "Added by Manual Observation Entry Helper v0; validates stdlib-only local entry tooling without scraping, URL fetching, browser automation, external queries, or fabricated observations."
     },
     {
+      "test_id": "public_static_site_validator",
+      "label": "Public static site validator",
+      "command": "python scripts/validate_public_static_site.py",
+      "category": "operations",
+      "owner_area": "public_site",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The static public-site pack may have broken pages, missing source IDs, missing cautionary claims, prohibited claims, or unresolved local links.",
+      "advisory_or_required": "required",
+      "notes": "Added by LIVE_ALPHA_00 Static Public Site Pack; validates static documentation only and performs no deployment, network calls, live probes, or scraping."
+    },
+    {
+      "test_id": "public_static_site_pack_validation",
+      "label": "Public static site pack tests",
+      "command": "python -m unittest tests.operations.test_public_static_site_pack tests.scripts.test_validate_public_static_site",
+      "category": "operations",
+      "owner_area": "public_site",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where validator tests copy the site pack",
+      "expected_runtime": "seconds",
+      "failure_means": "The public static site pack or validator behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by LIVE_ALPHA_00 Static Public Site Pack; checks no-JS static pages, source matrix honesty, prohibited claims, and validator JSON output without hosting or deployment behavior."
+    },
+    {
       "test_id": "external_baseline_observation_validator",
       "label": "External baseline observation validator",
       "command": "python scripts/validate_external_baseline_observations.py",
