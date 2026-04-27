@@ -1,0 +1,52 @@
+{
+  "observation_id": "batch_0::<query_id>::<system_id>::<manual observation date>",
+  "batch_id": "batch_0",
+  "query_id": "<query_id from batch_manifest.json>",
+  "query_text": "<query text from evals/search_usefulness/queries/search_usefulness_v0.json>",
+  "system_id": "<google_web_search|internet_archive_metadata_search|internet_archive_full_text_search>",
+  "observation_status": "pending_manual_observation",
+  "operator": "<operator>",
+  "observed_at": "<manual observation date/time>",
+  "browser_or_tool": "<manual browser/tool name>",
+  "location_context_optional": "<optional location/account/language context>",
+  "exact_query_submitted": "<exact manually submitted query>",
+  "filters_or_scope": "<manual filters/scope used, or none>",
+  "result_count_visible_optional": null,
+  "collection_method": "pending_manual_observation",
+  "top_results": [
+    {
+      "rank": 1,
+      "title": "<paste manually observed title>",
+      "url_or_locator": "<paste manually observed URL or locator>",
+      "snippet_or_visible_summary": "<short visible summary only>",
+      "result_type": "<organic|item|collection|file|article_page|parent_scan|irrelevant>",
+      "notes": "<manual notes>"
+    }
+  ],
+  "first_useful_result_rank": null,
+  "first_useful_result_reason": "<why the first useful result is useful, or why none was found>",
+  "usefulness_scores": {
+    "object_type_fit": 0,
+    "smallest_actionable_unit": 0,
+    "evidence_quality": 0,
+    "compatibility_clarity": 0,
+    "actionability": 0,
+    "absence_explanation": 0,
+    "duplicate_handling": 0,
+    "user_cost_reduction": 0,
+    "overall": 0
+  },
+  "failure_modes": [],
+  "comparison_notes": [
+    "<manual comparison notes>"
+  ],
+  "next_eureka_work": [],
+  "evidence_limitations": [
+    "<manual limitations and uncertainty>"
+  ],
+  "staleness_notes": [
+    "Manual observations are time-sensitive and not global truth."
+  ],
+  "created_by": "manual_observation_batch_0",
+  "schema_version": "manual_external_baseline_observation.v0"
+}

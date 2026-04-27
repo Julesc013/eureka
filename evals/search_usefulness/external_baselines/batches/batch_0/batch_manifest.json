@@ -1,0 +1,72 @@
+{
+  "batch_id": "batch_0",
+  "title": "Manual Observation Batch 0",
+  "status": "pending_manual_observation",
+  "created_by_slice": "manual_observation_batch_0",
+  "selected_query_ids": [
+    "windows_7_apps",
+    "windows_7_portable_apps_archive",
+    "latest_firefox_before_xp_support_ended",
+    "old_blue_ftp_client_xp",
+    "windows_98_registry_repair",
+    "driver_inf_inside_support_cd",
+    "driver_thinkpad_t42_wifi_windows_2000",
+    "pc_magazine_july_1994_ray_tracing",
+    "mac_os_9_browser",
+    "powerpc_osx_104_browser",
+    "windows_xp_software",
+    "creative_ct1740_driver_windows_98",
+    "threecom_3c905_windows_95_driver"
+  ],
+  "selected_system_ids": [
+    "google_web_search",
+    "internet_archive_metadata_search",
+    "internet_archive_full_text_search"
+  ],
+  "selection_rationale": {
+    "summary": "Prioritizes old-platform-compatible software, member-level discovery, driver/support-media, and article/page evidence queries where Eureka now has internal fixture-backed results or useful partial evidence.",
+    "criteria": [
+      "Selected primary wedge: old-platform-compatible software search.",
+      "Selected secondary wedge: member-level discovery inside bundles.",
+      "Queries are understandable for a human observer.",
+      "Queries can expose smallest-actionable-unit, compatibility clarity, source-backed evidence, or parent-vs-member differences.",
+      "The batch stays small enough for manual observation discipline."
+    ],
+    "query_family_coverage": [
+      "platform_software",
+      "latest_compatible_release",
+      "vague_identity",
+      "package_container_member",
+      "driver_hardware_support",
+      "article_inside_scan"
+    ]
+  },
+  "expected_observation_count": 39,
+  "required_metadata_fields": [
+    "operator",
+    "observed_at",
+    "browser_or_tool",
+    "exact_query_submitted",
+    "filters_or_scope",
+    "top_results",
+    "first_useful_result_rank",
+    "usefulness_scores",
+    "evidence_limitations",
+    "staleness_notes"
+  ],
+  "do_not_do": [
+    "do not scrape Google",
+    "do not scrape Internet Archive",
+    "do not automate external searches",
+    "do not call live Internet Archive APIs",
+    "do not call external web APIs",
+    "do not fabricate top results",
+    "do not mark pending slots observed without human evidence",
+    "do not treat one observation as global truth"
+  ],
+  "notes": [
+    "Batch 0 contains pending slots only.",
+    "Search Usefulness Audit status should not change until real human observations are committed.",
+    "Comparison reports should wait until observed records exist."
+  ]
+}
