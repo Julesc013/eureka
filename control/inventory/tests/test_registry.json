@@ -681,6 +681,52 @@
       "notes": "Added by LIVE_ALPHA_00 Static Public Site Pack; checks no-JS static pages, source matrix honesty, prohibited claims, and validator JSON output without hosting or deployment behavior."
     },
     {
+      "test_id": "public_alpha_rehearsal_evidence_check",
+      "label": "Public alpha rehearsal evidence check",
+      "command": "python scripts/generate_public_alpha_rehearsal_evidence.py --check",
+      "category": "operations",
+      "owner_area": "docs/operations/public_alpha_rehearsal_evidence_v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none in check mode",
+      "expected_runtime": "seconds",
+      "failure_means": "The public-alpha rehearsal evidence pack drifted from the static-site, smoke, route, eval, or external-baseline status it records.",
+      "advisory_or_required": "required",
+      "notes": "Added by Public Alpha Rehearsal Evidence v0; validates local/static evidence only and performs no deployment, live source probing, scraping, or external observation."
+    },
+    {
+      "test_id": "public_alpha_rehearsal_evidence_validation",
+      "label": "Public alpha rehearsal evidence tests",
+      "command": "python -m unittest tests.operations.test_public_alpha_rehearsal_evidence tests.scripts.test_public_alpha_rehearsal_evidence_script",
+      "category": "operations",
+      "owner_area": "docs/operations/public_alpha_rehearsal_evidence_v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The rehearsal evidence pack, manifest, signoff status, blockers, or generator JSON/check behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Public Alpha Rehearsal Evidence v0; checks unsigned signoff and no-deployment/no-production/no-external-observation claims."
+    },
+    {
       "test_id": "external_baseline_observation_validator",
       "label": "External baseline observation validator",
       "command": "python scripts/validate_external_baseline_observations.py",
