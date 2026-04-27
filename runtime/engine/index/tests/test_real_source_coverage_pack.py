@@ -98,6 +98,85 @@ class RealSourceCoveragePackIndexTestCase(unittest.TestCase):
         self.assertEqual(driver_member.parent_target_ref, "local-bundle-fixture:driver-support-cd@1.0")
         self.assertEqual(driver_member.parent_representation_id, "rep.local-bundle.driver-support-cd.zip")
 
+    def test_expanded_old_platform_fixture_queries_find_source_backed_candidates(self) -> None:
+        records = build_index_records(_build_current_catalog(), load_source_registry())
+        store = LocalIndexSqliteStore()
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            index_path = Path(temp_dir) / "local-index.sqlite3"
+            store.build(index_path, records)
+            query_results = {
+                query: store.query(index_path, query)[1]
+                for query in (
+                    "registry repair",
+                    "firefox xp",
+                    "xp browser",
+                    "mac os 9 browser",
+                    "powerpc browser",
+                    "creative ct1740",
+                    "3c905",
+                    "windows 7 utility",
+                    "driver.inf",
+                )
+            }
+
+        self.assertTrue(
+            any(
+                result.source_id == "local-bundle-fixtures"
+                and result.record_kind == "synthetic_member"
+                and result.member_path == "utilities/registry-repair/registry-repair.exe.txt"
+                and result.compatibility_evidence
+                for result in query_results["registry repair"]
+            )
+        )
+        self.assertTrue(
+            any(result.source_id == "internet-archive-recorded-fixtures" for result in query_results["firefox xp"])
+            or any(result.source_id == "local-bundle-fixtures" for result in query_results["firefox xp"])
+        )
+        self.assertTrue(
+            any(result.source_id == "local-bundle-fixtures" for result in query_results["xp browser"])
+        )
+        self.assertTrue(
+            any(result.source_id == "internet-archive-recorded-fixtures" for result in query_results["mac os 9 browser"])
+        )
+        self.assertTrue(
+            any(result.source_id == "internet-archive-recorded-fixtures" for result in query_results["powerpc browser"])
+        )
+        self.assertTrue(
+            any(
+                result.source_id == "local-bundle-fixtures"
+                and result.record_kind == "synthetic_member"
+                and result.member_path == "drivers/sound/creative_ct1740/windows98/driver.inf"
+                for result in query_results["creative ct1740"]
+            )
+        )
+        self.assertTrue(
+            any(
+                result.source_id == "local-bundle-fixtures"
+                and result.record_kind == "synthetic_member"
+                and result.member_path == "drivers/network/3com_3c905/windows95/driver.inf"
+                for result in query_results["3c905"]
+            )
+        )
+        self.assertTrue(
+            any(
+                result.source_id == "local-bundle-fixtures"
+                and result.record_kind == "synthetic_member"
+                and result.primary_lane == "inside_bundles"
+                and result.user_cost_score is not None
+                for result in query_results["windows 7 utility"]
+            )
+        )
+        self.assertTrue(
+            any(
+                result.record_kind == "synthetic_member"
+                and result.member_path
+                and result.member_path.endswith("driver.inf")
+                and result.compatibility_evidence
+                for result in query_results["driver.inf"]
+            )
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

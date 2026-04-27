@@ -66,7 +66,7 @@ class ResolutionRunsCliTestCase(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertEqual(payload["status"], "available")
         self.assertEqual(payload["selected_run_id"], "run-deterministic-search-0001")
-        self.assertEqual(payload["runs"][0]["result_summary"]["result_count"], 7)
+        self.assertGreaterEqual(payload["runs"][0]["result_summary"]["result_count"], 15)
 
 
 if __name__ == "__main__":

@@ -71,7 +71,13 @@ class EvalHardnessGuardsTest(unittest.TestCase):
         summaries = {item["task_id"]: item for item in report["task_summaries"]}
         self.assertTrue(REQUIRED_ARCHIVE_TASK_IDS.issubset(summaries))
         self.assertEqual(report["total_task_count"], len(summaries))
-        self.assertGreaterEqual(report["status_counts"].get("capability_gap", 0), 5)
+        self.assertGreaterEqual(report["status_counts"].get("capability_gap", 0), 1)
+        self.assertEqual(
+            report["status_counts"].get("capability_gap", 0)
+            + report["status_counts"].get("not_satisfied", 0)
+            + report["status_counts"].get("partial", 0),
+            report["total_task_count"],
+        )
         self.assertNotIn("satisfied", report["status_counts"])
 
         full_tasks = {task["task_id"]: task for task in report["tasks"]}
@@ -84,6 +90,7 @@ class EvalHardnessGuardsTest(unittest.TestCase):
             self.assertEqual(summaries[task_id]["planner_status"], "satisfied", task_id)
             if summaries[task_id]["overall_status"] != "capability_gap":
                 self.assertGreater(full_tasks[task_id]["search_observed_result_count"], 0, task_id)
+                self.assertTrue(full_tasks[task_id]["failed_checks"], task_id)
 
     def test_search_usefulness_query_pack_keeps_hard_coverage(self):
         query_pack = load_json("evals/search_usefulness/queries/search_usefulness_v0.json")

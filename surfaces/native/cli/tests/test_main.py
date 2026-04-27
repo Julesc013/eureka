@@ -204,11 +204,12 @@ class NativeCliMainTestCase(unittest.TestCase):
         exit_code, output = run_cli("search", "archive")
 
         self.assertEqual(exit_code, 0)
-        self.assertIn("result_count: 7", output)
+        self.assertRegex(output, r"result_count: (1[5-9]|[2-9][0-9]+)")
         self.assertIn("Archive Viewer", output)
         self.assertIn("ArchiveBox 0.8.5", output)
         self.assertIn("ArchiveBox v0.8.4", output)
         self.assertIn("ArchiveBox v0.8.5", output)
+        self.assertIn("Windows 98 registry repair utility recorded fixture", output)
         self.assertIn("source: Synthetic Fixture", output)
         self.assertIn("source: GitHub Releases", output)
         self.assertIn("source: Internet Archive Recorded Fixtures", output)

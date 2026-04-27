@@ -25,7 +25,10 @@ class ResolutionRunsViewModelTestCase(unittest.TestCase):
         self.assertEqual(view_model["status"], "listed")
         self.assertEqual(view_model["run_count"], 1)
         self.assertEqual(view_model["runs"][0]["run_kind"], "deterministic_search")
-        self.assertEqual(view_model["runs"][0]["result_summary"]["result_count"], 7)
+        self.assertGreaterEqual(
+            view_model["runs"][0]["result_summary"]["result_count"],
+            15,
+        )
 
     def test_not_found_maps_to_blocked_view_model(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

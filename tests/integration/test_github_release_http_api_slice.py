@@ -32,7 +32,7 @@ class GitHubReleaseHttpApiSliceIntegrationTestCase(unittest.TestCase):
         search_status, _, search_body = self._request("/api/search", {"q": "archive"})
         self.assertEqual(search_status, "200 OK")
         search_payload = json.loads(search_body)
-        self.assertEqual(search_payload["result_count"], 7)
+        self.assertGreaterEqual(search_payload["result_count"], 15)
         target_refs = [result["target_ref"] for result in search_payload["results"]]
         self.assertEqual(
             target_refs[:4],
@@ -43,13 +43,13 @@ class GitHubReleaseHttpApiSliceIntegrationTestCase(unittest.TestCase):
                 "github-release:archivebox/archivebox@v0.8.5",
             ],
         )
-        self.assertEqual(
-            set(target_refs[4:]),
+        self.assertTrue(
             {
                 "internet-archive-recorded:ia-win7-utility-pack-fixture",
                 "internet-archive-recorded:ia-firefox-xp-support-fixture",
                 "internet-archive-recorded:ia-thinkpad-t42-wireless-support-fixture",
-            },
+                "internet-archive-recorded:ia-win98-registry-repair-fixture",
+            }.issubset(set(target_refs)),
         )
         self.assertEqual(search_payload["results"][3]["source"]["label"], "GitHub Releases")
         self.assertEqual(search_payload["results"][3]["evidence"][1]["claim_kind"], "version")

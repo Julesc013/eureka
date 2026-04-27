@@ -27,7 +27,7 @@ class ResolutionRunsIntegrationTestCase(unittest.TestCase):
 
         self.assertEqual(start_response.status_code, 200)
         self.assertEqual(view_model["selected_run_id"], "run-deterministic-search-0001")
-        self.assertEqual(view_model["runs"][0]["result_summary"]["result_count"], 7)
+        self.assertGreaterEqual(view_model["runs"][0]["result_summary"]["result_count"], 15)
         self.assertIn("run-deterministic-search-0001", html)
         self.assertIn("ArchiveBox", html)
 

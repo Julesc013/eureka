@@ -75,6 +75,50 @@ class SyntheticMemberRecordSynthesisTestCase(unittest.TestCase):
         self.assertTrue(
             any(record.member_path == "utilities/ftp-blue-client/readme.txt" for record in records)
         )
+        self.assertTrue(
+            any(
+                record.member_path == "utilities/registry-repair/registry-repair.exe.txt"
+                for record in records
+            )
+        )
+        self.assertTrue(
+            any(
+                record.member_path == "browsers/firefox-xp-support/readme.txt"
+                for record in records
+            )
+        )
+        self.assertTrue(
+            any(
+                record.member_path == "drivers/sound/creative_ct1740/windows98/driver.inf"
+                for record in records
+            )
+        )
+        self.assertTrue(
+            any(
+                record.member_path == "drivers/network/3com_3c905/windows95/driver.inf"
+                for record in records
+            )
+        )
+
+    def test_expanded_fixture_synthesis_adds_expected_old_platform_members(self) -> None:
+        members = synthesize_member_records(_local_bundle_records())
+        by_path = {member.member_path: member for member in members}
+
+        registry_repair = by_path["utilities/registry-repair/registry-repair.exe.txt"]
+        self.assertEqual(
+            registry_repair.parent_target_ref,
+            "local-bundle-fixture:windows-98-registry-repair-bundle@1.0",
+        )
+        self.assertEqual(registry_repair.member_kind, "utility")
+        self.assertIn("read_member", registry_repair.action_hints)
+
+        creative_driver = by_path["drivers/sound/creative_ct1740/windows98/driver.inf"]
+        self.assertEqual(
+            creative_driver.parent_target_ref,
+            "local-bundle-fixture:legacy-hardware-driver-support-bundle@1.0",
+        )
+        self.assertEqual(creative_driver.member_kind, "driver")
+        self.assertRegex(creative_driver.content_hash or "", r"^sha256:[a-f0-9]{64}$")
 
 
 if __name__ == "__main__":

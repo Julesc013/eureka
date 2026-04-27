@@ -28,6 +28,11 @@ class CompatibilityEvidenceTestCase(unittest.TestCase):
         assert windows2000 is not None
         self.assertEqual(windows2000.name, "Windows 2000")
 
+        windows98 = normalize_platform("windows98")
+        self.assertIsNotNone(windows98)
+        assert windows98 is not None
+        self.assertEqual(windows98.name, "Windows 98")
+
         vista = normalize_platform("Windows NT 6.0")
         self.assertIsNotNone(vista)
         assert vista is not None
@@ -52,6 +57,85 @@ class CompatibilityEvidenceTestCase(unittest.TestCase):
         self.assertEqual(evidence[0].platform.name, "Windows 7")
         self.assertEqual(evidence[0].evidence_kind, "compatibility_note")
         self.assertEqual(evidence[0].claim_type, "supports_platform")
+
+    def test_expanded_old_platform_members_get_source_backed_compatibility_evidence(self) -> None:
+        registry_repair = self._record_by_member_path(
+            "utilities/registry-repair/registry-repair.exe.txt"
+        )
+        self.assertTrue(
+            any(
+                item.platform is not None
+                and item.platform.name == "Windows 98"
+                and item.claim_type == "supports_platform"
+                for item in registry_repair.compatibility_evidence
+            )
+        )
+
+        firefox_xp = self._record_by_member_path("browsers/firefox-xp-support/readme.txt")
+        self.assertTrue(
+            any(
+                item.platform is not None
+                and item.platform.name == "Windows XP"
+                and item.claim_type == "documentation_for_platform"
+                for item in firefox_xp.compatibility_evidence
+            )
+        )
+
+    def test_expanded_driver_members_get_platform_and_driver_evidence(self) -> None:
+        creative = self._record_by_member_path(
+            "drivers/sound/creative_ct1740/windows98/driver.inf"
+        )
+        self.assertTrue(
+            any(
+                item.platform is not None
+                and item.platform.name == "Windows 98"
+                and item.claim_type == "driver_for_hardware"
+                for item in creative.compatibility_evidence
+            )
+        )
+
+        threecom = self._record_by_member_path(
+            "drivers/network/3com_3c905/windows95/driver.inf"
+        )
+        self.assertTrue(
+            any(
+                item.platform is not None
+                and item.platform.name == "Windows 95"
+                and item.claim_type == "driver_for_hardware"
+                for item in threecom.compatibility_evidence
+            )
+        )
+
+    def test_expanded_mac_browser_fixtures_are_documentation_evidence_only(self) -> None:
+        mac_os9 = self.catalog.find_by_target_ref(
+            "internet-archive-recorded:ia-mac-os9-browser-doc-fixture"
+        )
+        self.assertIsNotNone(mac_os9)
+        assert mac_os9 is not None
+        self.assertTrue(
+            any(
+                item.platform is not None
+                and item.platform.name == "Mac OS 9"
+                and item.claim_type == "documentation_for_platform"
+                for item in mac_os9.compatibility_evidence
+            )
+        )
+        verdict = compatibility_evidence_verdict(mac_os9)
+        self.assertEqual(verdict.verdict, "documentation_only")
+
+        tiger = self.catalog.find_by_target_ref(
+            "internet-archive-recorded:ia-powerpc-tiger-browser-fixture"
+        )
+        self.assertIsNotNone(tiger)
+        assert tiger is not None
+        self.assertTrue(
+            any(
+                item.platform is not None
+                and item.platform.name == "Mac OS X 10.4"
+                and item.claim_type == "documentation_for_platform"
+                for item in tiger.compatibility_evidence
+            )
+        )
 
     def test_unrelated_record_keeps_unknown_compatibility(self) -> None:
         record = self.catalog.find_by_target_ref("fixture:software/synthetic-demo-app@1.0.0")

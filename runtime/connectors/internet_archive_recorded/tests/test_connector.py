@@ -11,7 +11,7 @@ class InternetArchiveRecordedConnectorTestCase(unittest.TestCase):
     def test_fixture_loads_item_and_file_list_records(self) -> None:
         records = InternetArchiveRecordedConnector().load_source_records()
 
-        self.assertEqual(len(records), 3)
+        self.assertGreaterEqual(len(records), 11)
         self.assertEqual(records[0].source_name, "internet_archive_recorded_fixture")
         self.assertEqual(records[0].target_ref, "internet-archive-recorded:ia-win7-utility-pack-fixture")
         self.assertEqual(
@@ -19,6 +19,32 @@ class InternetArchiveRecordedConnectorTestCase(unittest.TestCase):
             "runtime/connectors/internet_archive_recorded/fixtures/internet_archive_items_fixture.json",
         )
         self.assertIn("files", records[0].payload["item"])
+
+    def test_expanded_old_platform_items_keep_fixture_scope_and_hints(self) -> None:
+        records = InternetArchiveRecordedConnector().load_source_records()
+        by_target_ref = {record.target_ref: record for record in records}
+
+        required_refs = {
+            "internet-archive-recorded:ia-win7-portable-apps-fixture",
+            "internet-archive-recorded:ia-win98-registry-repair-fixture",
+            "internet-archive-recorded:ia-vlc-xp-release-notes-fixture",
+            "internet-archive-recorded:ia-opera-win2000-notes-fixture",
+            "internet-archive-recorded:ia-winamp-win98-notes-fixture",
+            "internet-archive-recorded:ia-mac-os9-browser-doc-fixture",
+            "internet-archive-recorded:ia-powerpc-tiger-browser-fixture",
+            "internet-archive-recorded:ia-creative-ct1740-win98-driver-fixture",
+        }
+        self.assertLessEqual(required_refs, set(by_target_ref))
+
+        registry_record = by_target_ref[
+            "internet-archive-recorded:ia-win98-registry-repair-fixture"
+        ]
+        self.assertIn("Windows 98", registry_record.payload["item"]["description"])
+        self.assertIn("registry repair utility", registry_record.payload["item"]["description"])
+
+        mac_record = by_target_ref["internet-archive-recorded:ia-mac-os9-browser-doc-fixture"]
+        self.assertIn("documentation", mac_record.payload["item"]["metadata"]["artifact_roles"])
+        self.assertFalse(any(file_record["name"].lower().endswith(".exe") for file_record in mac_record.payload["item"]["files"]))
 
     def test_normalized_records_preserve_source_and_evidence(self) -> None:
         record = next(

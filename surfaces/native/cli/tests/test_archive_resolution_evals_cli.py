@@ -20,7 +20,8 @@ class ArchiveResolutionEvalsCliTestCase(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertIn("Archive resolution evals", output)
         self.assertIn("windows_7_apps", output)
-        self.assertIn("capability_gap", output)
+        self.assertIn("not_satisfied", output)
+        self.assertNotIn("status_counts: satisfied=1", output)
 
     def test_eval_command_json_mode_works(self) -> None:
         exit_code, output = run_cli(
