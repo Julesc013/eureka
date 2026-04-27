@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eureka Status</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header>
+    <h1>Status Snapshot</h1>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="sources.html">Sources</a>
+      <a href="evals.html">Evals</a>
+      <a href="demo-queries.html">Demo Queries</a>
+      <a href="limitations.html">Limitations</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="local-quickstart.html">Local Quickstart</a>
+    </nav>
+  </header>
+  <main>
+    <section class="notice">
+      This is a manually maintained static snapshot from the local repo. It does not make live status calls.
+    </section>
+    <div class="grid">
+      <div class="panel">
+        <h2>Runtime</h2>
+        <p>Python remains the active reference/oracle lane. The Rust parity lane exists, but Rust is not the active runtime.</p>
+      </div>
+      <div class="panel">
+        <h2>Public Alpha</h2>
+        <p>Public Alpha Safe Mode exists and blocks caller-provided local path controls in constrained demo routes. Public alpha is not production and is not open live hosting approval.</p>
+      </div>
+      <div class="panel">
+        <h2>Archive Evals</h2>
+        <p>The Archive Resolution Eval Runner currently reports 6 hard tasks internally satisfied against the fixture-backed local corpus. Internal satisfaction is regression evidence, not a production relevance benchmark.</p>
+      </div>
+      <div class="panel">
+        <h2>Search Usefulness</h2>
+        <p>The current local audit reports 64 queries: 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknown. Source and capability gaps remain expected.</p>
+      </div>
+      <div class="panel">
+        <h2>External Baselines</h2>
+        <p>Google Web Search, Internet Archive metadata search, and Internet Archive full-text/OCR search remain external baselines pending/manual. Batch 0 has 39 pending slots and 0 observed records.</p>
+      </div>
+      <div class="panel">
+        <h2>Deferred Surfaces</h2>
+        <p>Native apps are deferred. Deployment infrastructure, live probes, source crawling, auth, accounts, rate limiting, TLS ownership, and production process supervision are not implemented here.</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    Eureka is a Python reference backend prototype, not production. This site uses no scraping, performs no live source probes, and makes no external search calls. external baselines pending/manual; source placeholders remain placeholders.
+  </footer>
+</body>
+</html>

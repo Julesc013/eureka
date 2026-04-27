@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eureka Source Matrix</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header>
+    <h1>Source Matrix</h1>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="status.html">Status</a>
+      <a href="evals.html">Evals</a>
+      <a href="demo-queries.html">Demo Queries</a>
+      <a href="limitations.html">Limitations</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="local-quickstart.html">Local Quickstart</a>
+    </nav>
+  </header>
+  <main>
+    <p>This matrix is derived from governed source inventory records. Fixture/live/manual state is explicit so placeholders remain placeholders.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>source_id</th>
+          <th>Label</th>
+          <th>Family</th>
+          <th>Posture / status</th>
+          <th>Coverage depth</th>
+          <th>Fixture / live / manual state</th>
+          <th>Capabilities summary</th>
+          <th>Current limitations</th>
+          <th>Next coverage step</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>synthetic-fixtures</code></td>
+          <td>Synthetic Fixtures</td>
+          <td>synthetic</td>
+          <td>active_fixture</td>
+          <td>action_indexed</td>
+          <td>Committed local fixture only; no live network access.</td>
+          <td>Search, item metadata, file listing, member listing, content text, action paths.</td>
+          <td>Synthetic scope only; no real-world source coverage.</td>
+          <td>Use as deterministic control while recorded source coverage expands.</td>
+        </tr>
+        <tr>
+          <td><code>github-releases-recorded-fixtures</code></td>
+          <td>GitHub Releases Recorded Fixtures</td>
+          <td>github_releases</td>
+          <td>active_recorded_fixture</td>
+          <td>representation_indexed</td>
+          <td>Recorded fixtures only; no live GitHub API access.</td>
+          <td>Release metadata, release assets, recorded payload fixture paths, hashes, action paths.</td>
+          <td>No live API, no source archive member extraction, no issue/discussion coverage.</td>
+          <td>Add more recorded source families before any live GitHub behavior.</td>
+        </tr>
+        <tr>
+          <td><code>internet-archive-recorded-fixtures</code></td>
+          <td>Internet Archive Recorded Fixtures</td>
+          <td>internet_archive_recorded</td>
+          <td>active_recorded_fixture</td>
+          <td>representation_indexed</td>
+          <td>Internet-Archive-shaped recorded fixtures only; no live Internet Archive calls.</td>
+          <td>Item metadata, file listings, compatibility hints, recorded hashes.</td>
+          <td>No live API, scraping, crawling, item payload fetch, or OCR/full-text source coverage.</td>
+          <td>Expand recorded metadata and item-file fixtures before any live connector behavior.</td>
+        </tr>
+        <tr>
+          <td><code>local-bundle-fixtures</code></td>
+          <td>Local Bundle Fixtures</td>
+          <td>local_bundle_fixtures</td>
+          <td>active_fixture</td>
+          <td>action_indexed</td>
+          <td>Committed ZIP fixtures only; not arbitrary local filesystem ingestion.</td>
+          <td>Bundle representations, member paths, member readback, compatibility hints, action paths.</td>
+          <td>Fixture scope only; no public-alpha local path access; no live source probing.</td>
+          <td>Use expanded fixtures for audit deltas and compatibility/member refinement.</td>
+        </tr>
+        <tr>
+          <td><code>article-scan-recorded-fixtures</code></td>
+          <td>Article Scan Recorded Fixtures</td>
+          <td>article_scan_recorded</td>
+          <td>active_recorded_fixture</td>
+          <td>content_or_member_indexed</td>
+          <td>Tiny synthetic article/scan-shaped recorded fixture text only.</td>
+          <td>Issue metadata, article segment, page range, OCR-like text fixture.</td>
+          <td>No real scans, no copyrighted article text, no OCR engine, no PDF/image parsing.</td>
+          <td>Validate bounded article/page result-shape checks before broader strategy.</td>
+        </tr>
+        <tr>
+          <td><code>internet-archive-placeholder</code></td>
+          <td>Internet Archive</td>
+          <td>internet_archive</td>
+          <td>placeholder</td>
+          <td>source_known</td>
+          <td>Planning placeholder only; no connector or live access.</td>
+          <td>No current search, metadata, file listing, member listing, or live probe capability.</td>
+          <td>No implemented Internet Archive connector and no live Internet Archive API calls.</td>
+          <td>Future live-probe work must wait for gateway contract and abuse controls.</td>
+        </tr>
+        <tr>
+          <td><code>wayback-memento-placeholder</code></td>
+          <td>Wayback / Memento</td>
+          <td>wayback_memento</td>
+          <td>placeholder</td>
+          <td>source_known</td>
+          <td>Planning placeholder only; no replay or Memento expansion.</td>
+          <td>No current temporal capture probing, replay, WARC/WACZ indexing, or live access.</td>
+          <td>No recorded capture fixtures and no live capture probing.</td>
+          <td>Add recorded temporal capture metadata fixtures before live probing.</td>
+        </tr>
+        <tr>
+          <td><code>software-heritage-placeholder</code></td>
+          <td>Software Heritage</td>
+          <td>software_heritage</td>
+          <td>placeholder</td>
+          <td>source_known</td>
+          <td>Planning placeholder only; no connector or API calls.</td>
+          <td>No current SWHID lookup, source tree member indexing, or live access.</td>
+          <td>No recorded Software Heritage fixtures and no live Software Heritage API calls.</td>
+          <td>Add recorded source snapshot fixtures before any connector behavior.</td>
+        </tr>
+        <tr>
+          <td><code>local-files-placeholder</code></td>
+          <td>Local Files</td>
+          <td>local_files</td>
+          <td>local_private_future</td>
+          <td>source_known</td>
+          <td>Future local/private source only; no current local-files ingestion.</td>
+          <td>No current public search, metadata, file listing, or action capability.</td>
+          <td>No arbitrary local path access and no public-alpha local path disclosure.</td>
+          <td>Keep private local workflows gated behind explicit future design.</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    Eureka is a Python reference backend prototype, not production. This site uses no scraping, performs no live source probes, and makes no external search calls. external baselines pending/manual; source placeholders remain placeholders.
+  </footer>
+</body>
+</html>

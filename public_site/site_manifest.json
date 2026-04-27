@@ -1,0 +1,45 @@
+{
+  "site_pack_id": "live_alpha_static_public_site_pack_v0",
+  "generated_or_authored_by_slice": "LIVE_ALPHA_00_static_public_site_pack",
+  "pages": [
+    "index.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html"
+  ],
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "source_matrix_source": "control/inventory/sources/*.source.json",
+  "eval_status_source": "scripts/run_archive_resolution_evals.py and scripts/run_search_usefulness_audit.py local outputs",
+  "limitations": [
+    "static only",
+    "no deployment performed",
+    "no backend hosting added",
+    "no live source probes",
+    "no scraping",
+    "manual external baselines remain pending",
+    "fixture-backed evidence is not global truth"
+  ],
+  "next_milestone": "Public Alpha Rehearsal Evidence v0",
+  "parallel_human_work": "Manual Observation Batch 0 Execution",
+  "no_network_required": true,
+  "no_deployment_performed": true
+}
