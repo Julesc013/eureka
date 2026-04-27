@@ -9,6 +9,9 @@ EXTERNAL_SYSTEMS = {
     "google",
     "internet_archive_metadata",
     "internet_archive_full_text",
+    "google_web_search",
+    "internet_archive_metadata_search",
+    "internet_archive_full_text_search",
 }
 
 
@@ -16,6 +19,11 @@ class ExternalBaselineGuardsTest(unittest.TestCase):
     def test_manual_observation_records_are_required_for_observed_baselines(self):
         observations_dir = repo_path("evals/search_usefulness/observations")
         observation_files = sorted(observations_dir.glob("*.json"))
+        observation_files.extend(
+            sorted(
+                repo_path("evals/search_usefulness/external_baselines/observations").glob("*.json")
+            )
+        )
 
         for path in observation_files:
             payload = json.loads(path.read_text(encoding="utf-8"))
@@ -30,9 +38,22 @@ class ExternalBaselineGuardsTest(unittest.TestCase):
                 self.assertTrue(record.get("observed_at") or record.get("date"), path)
                 self.assertTrue(record.get("source_notes") or record.get("notes"), path)
 
+    def test_external_baseline_pending_manifest_is_not_observed(self):
+        manifest = json.loads(
+            repo_path(
+                "evals/search_usefulness/external_baselines/observations/pending_observations.json"
+            ).read_text(encoding="utf-8")
+        )
+
+        self.assertEqual(manifest["observation_status"], "pending_manual_observation")
+        self.assertEqual(len(manifest["query_ids"]), 64)
+        self.assertEqual(len(manifest["required_system_ids"]), 3)
+        self.assertNotIn("top_results", manifest)
+
     def test_docs_record_manual_pending_external_baseline_policy(self):
         docs = [
             "evals/search_usefulness/README.md",
+            "evals/search_usefulness/external_baselines/README.md",
             "docs/evals/SEARCH_BENCHMARK_DESIGN.md",
             "control/audits/2026-04-25-comprehensive-test-eval-audit/CONTENT_COVERAGE_AUDIT.md",
         ]
@@ -49,6 +70,7 @@ class ExternalBaselineGuardsTest(unittest.TestCase):
             iter_text_files(
                 [
                     "evals/search_usefulness",
+                    "evals/search_usefulness/external_baselines",
                     "scripts",
                     "docs/evals",
                     "control/audits/2026-04-25-comprehensive-test-eval-audit",
