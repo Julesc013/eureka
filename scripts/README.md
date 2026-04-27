@@ -30,6 +30,11 @@ Current scripts:
   manual observation JSON file from a batch slot or prints it with `--stdout`;
   it never marks the record observed, populates top results, fetches URLs, or
   automates external searches
+- `validate_public_static_site.py`: validates the no-JS `public_site/` static
+  public-site pack, including its manifest, required pages, local links,
+  source matrix coverage, required cautionary phrases, prohibited claims, and
+  public-alpha limitations; it supports `--json`, performs no network calls,
+  starts no server, and deploys nothing
 - `public_alpha_smoke.py`: runs the local Public Alpha Deployment Readiness smoke checks directly against the stdlib WSGI app, verifies safe status/source/query/search/eval routes, verifies blocked local-path/readback routes, supports `--json`, and exits nonzero if the constrained public-alpha posture regresses
 - `generate_public_alpha_hosting_pack.py`: reads `control/inventory/public_alpha_routes.json` and emits or checks the Public Alpha Hosting Pack route-safety summary; it supports `--check` for repeatable docs validation and does not deploy, host, or mutate route behavior
 - `generate_python_oracle_golden.py`: generates or checks the Rust Parity Fixture Pack v0 Python-oracle golden outputs under `tests/parity/golden/python_oracle/v0/`; it supports `--check`, optional `--output-root`, and `--json`, normalizes unstable timestamps, local index paths, FTS mode, and generation metadata, and does not implement Rust behavior or replace Python runtime paths

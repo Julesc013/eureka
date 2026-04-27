@@ -130,6 +130,11 @@ The repo has already proven:
   listing pending slots, creating fillable pending files, validating one file
   or all files, and reporting Batch 0 progress without fetching URLs, opening
   browsers, scraping, automating external searches, or fabricating observations
+- LIVE_ALPHA_00 Static Public Site Pack as the first no-JS static public-site
+  source tree under `public_site/`, with identity, status, source matrix,
+  eval/audit state, demo queries, limitations, roadmap, and local quickstart
+  pages for later hosting review without deployment, backend hosting, live
+  probes, scraping, automated external searches, or production-readiness claims
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -171,18 +176,21 @@ The next backend sequence is:
 31. Manual External Baseline Observation Pack v0 (implemented)
 32. Manual Observation Batch 0 (implemented as pending slots only)
 33. Manual Observation Entry Helper v0 (implemented)
-34. Manual Observation Batch 0 Execution
-35. Search Usefulness Baseline Comparison Report v0
-36. Public Alpha Rehearsal Evidence v0
-37. Rust Query Planner Parity Candidate v0
-38. More Source Coverage Expansion v2
-39. Native App Work Later
+34. LIVE_ALPHA_00 Static Public Site Pack (implemented)
+35. Public Alpha Rehearsal Evidence v0
+36. Manual Observation Batch 0 Execution (human-operated parallel work)
+37. LIVE_ALPHA_01 Production Public-Alpha Wrapper
+38. LIVE_ALPHA_02 Deployment Config Pack
+39. LIVE_ALPHA_04 Live Probe Gateway Contract
+40. Rust Query Planner Parity Candidate v0
+41. Compatibility Surface Strategy v0
+42. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Manual Observation Batch 0 Execution
+> Public Alpha Rehearsal Evidence v0
 
 Why this comes next:
 
@@ -267,10 +275,14 @@ Why this comes next:
 - Manual Observation Entry Helper v0 now makes the human entry workflow safer:
   it lists pending slots, creates fillable pending files, validates one file or
   all files, and reports Batch 0 progress without performing any observation
-- the next backend bottleneck is actual human observation evidence for Batch 0:
-  Google and Internet Archive baselines remain pending/manual for all 64
-  queries globally, while source gaps in the broader audit remain honest future
-  work
+- LIVE_ALPHA_00 Static Public Site Pack now gives the project a committed
+  static public-facing explanation of prototype status, source matrix,
+  eval/audit posture, demo queries, limitations, roadmap, and local quickstart
+  without deploying anything or adding live source behavior
+- the next Codex-side bottleneck is supervised public-alpha rehearsal evidence
+  for the current constrained posture; actual Batch 0 observation evidence is
+  still a human-operated parallel task, and Google/Internet Archive baselines
+  remain pending/manual for all 64 queries globally
 
 ## Explicit Deferrals
 
@@ -282,6 +294,7 @@ The backend roadmap intentionally defers:
 - production Rust rewrite
 - Rust behavior ports that do not match Python-oracle fixtures
 - automated Google or Internet Archive scraping
+- live Internet Archive probes before a gateway contract and abuse controls
 - installer or download automation
 - trust scoring
 - production relevance benchmarking

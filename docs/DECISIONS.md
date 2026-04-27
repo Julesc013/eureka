@@ -437,3 +437,9 @@
 - Status: accepted
 - Decision: Eureka now adds Manual Observation Entry Helper v0 through stdlib-only scripts for listing manual external-baseline slots, creating one fillable pending observation file from a Batch 0 slot, validating one file or the full observation area, and reporting Batch 0 progress.
 - Why: Batch 0 exists, but human entry needs a safer local workflow before any observations are manually filled. The helpers reduce friction while preserving the boundary that Codex and scripts do not perform observations: they do not fetch URLs, open browsers, scrape Google or Internet Archive, automate external searches, call APIs, populate top results, mark pending records observed, fabricate external baselines, or claim global Google/Internet Archive truth. The next milestone remains Manual Observation Batch 0 Execution by a human operator.
+
+## ADR-074: Add LIVE_ALPHA_00 Static Public Site Pack Without Deployment
+
+- Status: accepted
+- Decision: Eureka now records LIVE_ALPHA_00 Static Public Site Pack under `public_site/` with plain static HTML/CSS pages for identity, status, source matrix, eval/audit state, demo queries, limitations, roadmap, and local quickstart, plus a stdlib validator at `scripts/validate_public_static_site.py`.
+- Why: live-alpha preparation needs honest public-facing material before backend hosting. This pack is static documentation only: it does not deploy Eureka, add hosting infrastructure, add DNS or cloud configuration, start a server, add live source probes, scrape Google or Internet Archive, automate external searches, fabricate external baselines, weaken evals, or claim production readiness. The next Codex-side milestone is Public Alpha Rehearsal Evidence v0, while Manual Observation Batch 0 Execution remains human-operated parallel work.

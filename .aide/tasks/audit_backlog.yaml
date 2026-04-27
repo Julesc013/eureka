@@ -110,6 +110,16 @@
       "title": "Record the first human external baseline observation batch",
       "status": "prepared_by_manual_observation_entry_helper_v0",
       "suggested_milestone": "Manual Observation Batch 0 Execution"
+    },
+    {
+      "id": "audit-backlog-live-alpha-static-site",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Publish a static public-facing project/status/source/eval pack for later live-alpha review",
+      "status": "addressed_by_live_alpha_00_static_public_site_pack",
+      "suggested_milestone": "Public Alpha Rehearsal Evidence v0"
     }
   ]
 }

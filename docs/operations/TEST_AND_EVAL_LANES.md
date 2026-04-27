@@ -227,6 +227,22 @@ creates fillable pending JSON, validates one file or all files, and summarizes
 Batch 0 progress without opening browsers, fetching URLs, scraping, automated
 external searches, or observed-baseline fabrication.
 
+## LIVE_ALPHA_00 Static Public Site Pack
+
+LIVE_ALPHA_00 Static Public Site Pack is validated with:
+
+```bash
+python scripts/validate_public_static_site.py
+python scripts/validate_public_static_site.py --json
+python -m unittest tests.operations.test_public_static_site_pack tests.scripts.test_validate_public_static_site
+```
+
+The lane checks the committed no-JS `public_site/` pack, manifest, local links,
+source matrix coverage, required cautionary phrases, prohibited claims, and
+public-alpha limitations. It performs no network calls, starts no server,
+deploys nothing, and does not add backend hosting, live probes, scraping, or
+production-readiness claims.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

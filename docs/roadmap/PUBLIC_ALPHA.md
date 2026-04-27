@@ -19,6 +19,8 @@ The minimum public-alpha entry gate should include:
   smoke checks, and operator checklist)
 - Public Alpha Hosting Pack v0 (implemented as a supervised rehearsal evidence
   packet)
+- LIVE_ALPHA_00 Static Public Site Pack (implemented as a no-JS static site
+  source pack for later hosting review, not deployment)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -96,3 +98,9 @@ Source Coverage and Capability Model v0 adds safe source capability and
 coverage-depth metadata to source pages and API responses in public-alpha mode.
 This is descriptive registry projection only; it does not add live source
 probing, source sync, crawling, or implemented placeholder connectors.
+LIVE_ALPHA_00 Static Public Site Pack now adds `public_site/`, a plain static
+HTML/CSS public-facing documentation pack with status, source matrix,
+eval/audit state, demo queries, limitations, roadmap, and local quickstart
+pages. The pack is static only: it starts no server, performs no deployment,
+adds no backend hosting, makes no live source calls, performs no scraping, and
+does not claim production readiness.

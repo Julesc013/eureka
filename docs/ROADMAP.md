@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: forty-eight local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, and Manual Observation Entry Helper v0. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns; the external-baseline pack adds 192 pending manual observation slots across 64 queries and three systems, Batch 0 adds 39 prioritized pending slots, and the entry helper adds local list/create/validate/report tooling without recording observed external baselines.
+Current status within this stage: forty-nine local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, and LIVE_ALPHA_00 Static Public Site Pack. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns; the external-baseline pack adds 192 pending manual observation slots across 64 queries and three systems, Batch 0 adds 39 prioritized pending slots, the entry helper adds local list/create/validate/report tooling without recording observed external baselines, and the static public site pack adds no-JS pages under `public_site/` without deployment, backend hosting, live probes, scraping, or production claims.
 
 ## Stage 3: Surface Skeletons
 
@@ -192,13 +192,20 @@ does not perform observations, open browsers, fetch URLs, scrape, automate
 external searches, fill top results, or count pending/template records as
 observed baselines.
 
+LIVE_ALPHA_00 Static Public Site Pack now lives under `public_site/` and adds
+plain no-JS static pages for identity, status, source matrix, eval/audit state,
+demo queries, limitations, roadmap, and local quickstart. It is a committed
+site source pack for later hosting review only; it does not deploy Eureka, add
+backend hosting, add DNS or cloud configuration, add live source probes, scrape
+external systems, automate external searches, or claim production readiness.
+
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
 ## Immediate Next Milestone
 
 The next implementation milestone is:
 
-> Manual Observation Batch 0 Execution
+> Public Alpha Rehearsal Evidence v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -214,14 +221,14 @@ Search Usefulness Audit Delta v0, and Old-Platform Source Coverage Expansion
 v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0,
 Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1,
 Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0,
-Manual Observation Batch 0, and Manual Observation Entry Helper v0 now
+Manual Observation Batch 0, Manual Observation Entry Helper v0, and
+LIVE_ALPHA_00 Static Public Site Pack now
 mark the start of a more evidence-led backend phase. The next step is to add
-the first human-filled records for the selected batch because all
-archive-resolution hard evals are now satisfied under current strict
-fixture-backed checks, the manual observation protocol exists, and Batch 0
-already names the query/system slots while local helper tooling can create and
-validate fillable pending files. External Google and Internet Archive
-observations remain pending/manual.
-That next step must still avoid live crawling, external scraping, installer
-execution, fuzzy/vector search, LLM planning, broad source federation, OCR
-claims, external baseline fabrication, and production benchmark claims.
+public-alpha rehearsal evidence because the static public site pack, hosting
+pack, public-alpha safe mode, and smoke checks now exist without deployment.
+Manual Observation Batch 0 Execution remains human-operated parallel work:
+external Google and Internet Archive observations remain pending/manual. The
+next Codex-side work must still avoid live crawling, external scraping,
+deployment infrastructure, live probes, installer execution, fuzzy/vector
+search, LLM planning, broad source federation, OCR claims, external baseline
+fabrication, and production benchmark claims.

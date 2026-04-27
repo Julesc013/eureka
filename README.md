@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -65,6 +65,9 @@ member-access gaps.
 External Google and Internet Archive baselines remain pending/manual; Manual
 Observation Batch 0 only prepares 39 prioritized slots for later human
 observation and records no external results.
+The static public site pack under `public_site/` is no-JS documentation for
+later hosting review. It does not deploy Eureka, add backend hosting, add live
+source probes, scrape external systems, or claim production readiness.
 
 ## Quickstart
 
@@ -97,6 +100,7 @@ python scripts/run_search_usefulness_audit.py
 python scripts/public_alpha_smoke.py
 python scripts/generate_python_oracle_golden.py --check
 python -m unittest discover -s tests/hardening -t .
+python scripts/validate_public_static_site.py
 ```
 
 For larger tasks, the command registry and lane guidance live in
@@ -268,6 +272,7 @@ production queues, and production Rust services remain future work.
 | `docs/` | Vision, architecture, roadmap, operations, standards, decisions |
 | `docs/operations/public_alpha_hosting_pack/` | Supervised public-alpha rehearsal evidence packet |
 | `evals/` | Archive-resolution eval packet and related eval scaffolding |
+| `public_site/` | No-JS static public site pack for later live-alpha hosting review; no deployment or live source behavior |
 | `runtime/` | Python reference engine, connectors, gateway public boundary, source registry |
 | `scripts/` | Demo commands, eval runner, safety checks, golden generators |
 | `surfaces/` | Server-rendered web workbench, local HTTP API, native CLI surface |
@@ -345,23 +350,25 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Manual Observation Batch 0
-2. Search Usefulness Baseline Comparison Report v0
-3. Public Alpha Rehearsal Evidence v0
+1. Public Alpha Rehearsal Evidence v0
+2. Manual Observation Batch 0 Execution (human-operated parallel work)
+3. LIVE_ALPHA_01 Production Public-Alpha Wrapper
 
 Broader near-term direction:
 
-1. fill a first manual Google and Internet Archive baseline batch without
+1. rehearse the constrained public-alpha posture using static-site and hosting
+   evidence without deployment
+2. fill a first manual Google and Internet Archive baseline batch without
    scraping or fabricated comparisons
-2. keep using audit deltas to measure source, planner, representation,
+3. keep using audit deltas to measure source, planner, representation,
    member, lane, and compatibility-evidence movement
-3. keep Python as oracle while adding Rust candidates only when parity fixtures
+4. keep Python as oracle while adding Rust candidates only when parity fixtures
    exist
-4. preserve public-alpha safety checks and capture rehearsal evidence
-5. expand source and eval coverage without weakening hard queries
-6. harden backend contracts, run models, memory, and local index behavior
-7. move toward hosted alpha only after explicit blockers are resolved
-8. keep native app shells later, after backend infrastructure is stronger
+5. preserve public-alpha safety checks and capture rehearsal evidence
+6. expand source and eval coverage without weakening hard queries
+7. harden backend contracts, run models, memory, and local index behavior
+8. move toward hosted alpha only after explicit blockers are resolved
+9. keep native app shells later, after backend infrastructure is stronger
 
 No exact dates are promised.
 

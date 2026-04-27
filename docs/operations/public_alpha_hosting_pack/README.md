@@ -8,6 +8,12 @@ operator checklist links, known blockers, mode guidance, route safety summary,
 and rehearsal runbook. It does not deploy Eureka and does not add deployment
 infrastructure.
 
+LIVE_ALPHA_00 Static Public Site Pack complements this operator packet with a
+committed no-JS `public_site/` source tree for later static-hosting review. The
+static pack is documentation only; it does not start a server, deploy Eureka,
+add backend hosting, add live probes, scrape external systems, or approve open
+public internet exposure.
+
 ## What This Pack Is
 
 - an operator-readable packet for rehearsing the constrained `public_alpha`
@@ -54,6 +60,10 @@ work and that caller-provided local path controls are blocked in
   `control/inventory/public_alpha_routes.json`
 - Smoke script:
   `scripts/public_alpha_smoke.py`
+- Static public site pack:
+  `public_site/`
+- Static site validator:
+  `scripts/validate_public_static_site.py`
 
 ## Pack Contents
 

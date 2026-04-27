@@ -25,6 +25,8 @@ process manager, or multi-user isolation.
 - Smoke command: `python scripts/public_alpha_smoke.py`
 - JSON smoke command: `python scripts/public_alpha_smoke.py --json`
 - Hosting pack: `docs/operations/public_alpha_hosting_pack/`
+- Static public site pack: `public_site/`
+- Static site validator: `python scripts/validate_public_static_site.py`
 - Inventory validator: `python -m unittest tests.operations.test_public_alpha_route_inventory`
 - Script smoke tests: `python -m unittest tests.scripts.test_public_alpha_scripts`
 
@@ -91,9 +93,19 @@ metadata and should be manually reviewed again before any real hosted demo.
 - No final public route contract.
 - No audit logging or operational monitoring policy.
 
+## Static Site Pack
+
+LIVE_ALPHA_00 Static Public Site Pack adds a committed no-JS `public_site/`
+tree for later static-hosting review. It explains Eureka's prototype status,
+source matrix, eval/audit state, safe demo queries, limitations, roadmap, and
+local quickstart without starting a server, deploying anything, adding backend
+hosting, adding live source probes, scraping external systems, or claiming
+production readiness.
+
 ## Next Recommendation
 
-Public Alpha Hosting Pack v0 now packages this inventory, smoke report, and
-checklist into a bounded operator evidence packet for supervised rehearsal. A
-real hosted alpha remains blocked on external hosting posture, final route
+Public Alpha Rehearsal Evidence v0 should come next on the Codex-side
+live-alpha lane. Public Alpha Hosting Pack v0 and LIVE_ALPHA_00 Static Public
+Site Pack now package enough local/static evidence for rehearsal planning, but
+a real hosted alpha remains blocked on external hosting posture, final route
 review, abuse-control decisions, TLS/auth ownership, and operator approval.
