@@ -231,7 +231,7 @@
       "id": "manual_observation_batch_0_execution",
       "title": "Manual Observation Batch 0 Execution",
       "status": "human_operated_parallel",
-      "priority": 39,
+      "priority": 40,
       "notes": "Human-operated parallel follow-up to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
     },
     {
@@ -258,14 +258,14 @@
     {
       "id": "relay_surface_design_v0",
       "title": "Relay Surface Design v0",
-      "status": "next",
+      "status": "completed",
       "priority": 36,
-      "notes": "Design a future local relay surface and operator/security policy without implementing FTP, SMB, WebDAV, live backend behavior, native-client runtime, or executable/download mirroring."
+      "notes": "Added future local/LAN relay design inventory, architecture/reference/security docs, unsigned operator checklist, validator, and tests without implementing a relay runtime, sockets, FTP, SMB, WebDAV, Gopher, protocol proxy, private data exposure, write/admin routes, live-probe passthrough, native-client runtime, or executable/download mirroring."
     },
     {
       "id": "rust_source_registry_parity_catch_up_v0",
       "title": "Rust Source Registry Parity Catch-up v0",
-      "status": "queued",
+      "status": "next",
       "priority": 37,
       "notes": "Update the isolated Rust source-registry candidate to current Python source capability/coverage fields before any broader Rust source work."
     },
@@ -275,6 +275,20 @@
       "status": "queued",
       "priority": 38,
       "notes": "Plan Rust local-index parity around Python oracle member, lane, user-cost, compatibility, and article/scan shapes before implementing index behavior."
+    },
+    {
+      "id": "signed_snapshot_consumer_contract_v0",
+      "title": "Signed Snapshot Consumer Contract v0",
+      "status": "queued",
+      "priority": 39,
+      "notes": "Define how future clients, relays, and native surfaces consume signed/offline snapshot manifests without implementing relay runtime, native apps, downloads, or production signing."
+    },
+    {
+      "id": "native_client_contract_v0",
+      "title": "Native Client Contract v0",
+      "status": "queued",
+      "priority": 41,
+      "notes": "Define future native client boundaries and prerequisites without creating Visual Studio/Xcode projects, installers, native sidecars, or runtime wiring."
     }
   ]
 }

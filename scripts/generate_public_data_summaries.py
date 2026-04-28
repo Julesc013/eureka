@@ -93,6 +93,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     live_backend_routes = _load_json(PUBLICATION_DIR / "live_backend_routes.json")
     live_probe_gateway = _load_json(PUBLICATION_DIR / "live_probe_gateway.json")
     public_data_contract = _load_json(PUBLICATION_DIR / "public_data_contract.json")
+    relay_surface = _load_json(PUBLICATION_DIR / "relay_surface.json")
     snapshot_contract = _load_json(PUBLICATION_DIR / "snapshot_contract.json")
     static_hosting_targets = _load_json(PUBLICATION_DIR / "static_hosting_targets.json")
     surface_capabilities = _load_json(PUBLICATION_DIR / "surface_capabilities.json")
@@ -113,6 +114,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
         live_backend_routes,
         live_probe_gateway,
         public_data_contract,
+        relay_surface,
         snapshot_contract,
         static_hosting_targets,
         surface_capabilities,
@@ -183,6 +185,7 @@ def _build_data_site_manifest(
     live_backend_routes: Mapping[str, Any],
     live_probe_gateway: Mapping[str, Any],
     public_data_contract: Mapping[str, Any],
+    relay_surface: Mapping[str, Any],
     snapshot_contract: Mapping[str, Any],
     static_hosting_targets: Mapping[str, Any],
     surface_capabilities: Mapping[str, Any],
@@ -264,6 +267,17 @@ def _build_data_site_manifest(
         for source in live_probe_gateway.get("future_candidate_sources", [])
         if isinstance(source, Mapping)
     ]
+    relay_protocol_candidates = [
+        {
+            "id": candidate.get("id"),
+            "status": candidate.get("status"),
+            "implemented": candidate.get("implemented"),
+            "default_scope": candidate.get("default_scope"),
+            "allowed_data": candidate.get("allowed_data"),
+        }
+        for candidate in relay_surface.get("future_protocol_candidates", [])
+        if isinstance(candidate, Mapping)
+    ]
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_by": GENERATED_BY,
@@ -314,6 +328,24 @@ def _build_data_site_manifest(
             "candidate_sources": live_probe_candidates,
             "manual_only_sources": live_probe_gateway.get("manual_only_sources", []),
         },
+        "relay_surface": {
+            "status": "implemented_contract_only_runtime_absent",
+            "relay_surface_id": relay_surface.get("relay_surface_id"),
+            "no_relay_implemented": relay_surface.get("no_relay_implemented"),
+            "no_network_services_implemented": relay_surface.get("no_network_services_implemented"),
+            "no_protocol_servers_implemented": relay_surface.get("no_protocol_servers_implemented"),
+            "default_scope": relay_surface.get("default_scope"),
+            "default_mode": relay_surface.get("default_mode"),
+            "public_data_only_by_default": relay_surface.get("public_data_only_by_default"),
+            "private_data_disabled_by_default": relay_surface.get("private_data_disabled_by_default"),
+            "write_actions_disabled_by_default": relay_surface.get("write_actions_disabled_by_default"),
+            "live_probes_disabled_by_default": relay_surface.get("live_probes_disabled_by_default"),
+            "admin_routes_disabled_for_old_clients": relay_surface.get(
+                "admin_routes_disabled_for_old_clients"
+            ),
+            "protocol_candidate_count": len(relay_protocol_candidates),
+            "protocol_candidates": relay_protocol_candidates,
+        },
         "snapshot_format": {
             "status": "implemented_contract_seed_example",
             "snapshot_contract_id": snapshot_contract.get("snapshot_contract_id"),
@@ -343,6 +375,7 @@ def _build_data_site_manifest(
             "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
             "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
             "Google remains manual-baseline only and is not a live probe source.",
+            "Relay Surface Design v0 is contract-only; no relay runtime, protocol server, network listener, private data exposure, write/admin route exposure, or live-probe passthrough is implemented.",
             "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
             "Signed Snapshot Format v0 is a contract and seed example only; real signing keys, production signatures, executable downloads, public /snapshots/ route, relay behavior, native-client runtime, live backend behavior, and live probes remain absent.",
         ],
@@ -355,6 +388,7 @@ def _build_data_site_manifest(
             "control/inventory/publication/live_backend_routes.json",
             "control/inventory/publication/live_probe_gateway.json",
             "control/inventory/publication/public_data_contract.json",
+            "control/inventory/publication/relay_surface.json",
             "control/inventory/publication/snapshot_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
             "control/inventory/publication/surface_capabilities.json",
@@ -617,6 +651,7 @@ def _build_build_manifest(public_data_contract: Mapping[str, Any]) -> dict[str, 
             "python scripts/validate_static_host_readiness.py",
             "python scripts/validate_live_backend_handoff.py",
             "python scripts/validate_live_probe_gateway.py",
+            "python scripts/validate_relay_surface_design.py",
             "python scripts/generate_static_snapshot.py --check",
             "python scripts/validate_static_snapshot.py",
         ],
@@ -628,6 +663,7 @@ def _build_build_manifest(public_data_contract: Mapping[str, Any]) -> dict[str, 
             "control/inventory/publication/live_backend_handoff.json",
             "control/inventory/publication/live_backend_routes.json",
             "control/inventory/publication/live_probe_gateway.json",
+            "control/inventory/publication/relay_surface.json",
             "control/inventory/publication/snapshot_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
             "control/inventory/publication/surface_capabilities.json",

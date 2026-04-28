@@ -37,7 +37,8 @@
       <li><strong>Rust Query Planner Parity Candidate v0</strong>: implemented as an isolated Rust planner candidate against expanded Python-oracle goldens; Python remains the oracle and Rust is not wired into runtime.</li>
       <li><strong>Compatibility Surface Strategy v0</strong>: implemented as cross-surface strategy, capability matrix, route matrix, and old-client/native/snapshot/relay readiness policy; no new runtime behavior.</li>
       <li><strong>Signed Snapshot Format v0</strong>: implemented as a static/offline snapshot format contract, checksum policy, signature-placeholder policy, and deterministic repo seed example under snapshots/examples/static_snapshot_v0; no production signing keys, executable downloads, public /snapshots/ route, relay, or native runtime.</li>
-      <li><strong>Relay Surface Design v0</strong>: recommended next non-network design milestone for future operator-controlled local relay surfaces; no FTP, SMB, WebDAV, proxy, backend, or native runtime is implemented here.</li>
+      <li><strong>Relay Surface Design v0</strong>: implemented as future local/LAN relay design, inventory, validator, security/privacy defaults, and unsigned operator checklist only; no FTP, SMB, WebDAV, Gopher, proxy, backend, network listener, private-data exposure, live-probe passthrough, or native runtime.</li>
+      <li><strong>Rust Source Registry Parity Catch-up v0</strong>: recommended next non-network Codex milestone for bringing the isolated Rust source-registry candidate up to the expanded Python source capability and coverage fields.</li>
       <li><strong>Manual Observation Batch 0 Execution</strong>: human-operated external baseline observations for selected query/system slots; remains parallel manual work.</li>
       <li><strong>Internet Archive Live Probe v0</strong>: future only, after explicit human approval, live probe gateway review, and source-policy review; not queued for unattended implementation.</li>
     </ol>
@@ -52,7 +53,7 @@
           <li><a href="text/index.txt">Text surface</a></li>
           <li><a href="files/index.html">Files surface</a></li>
           <li><a href="demo/index.html">Static resolver demos</a></li>
-          <li><a href="data/site_manifest.json">Surface capability summaries</a></li>
+          <li><a href="data/site_manifest.json">Relay/static capability summaries</a></li>
         </ul>
       </div>
     </section>

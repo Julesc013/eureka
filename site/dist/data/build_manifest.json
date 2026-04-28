@@ -27,6 +27,7 @@
     "control/inventory/publication/live_backend_handoff.json",
     "control/inventory/publication/live_backend_routes.json",
     "control/inventory/publication/live_probe_gateway.json",
+    "control/inventory/publication/relay_surface.json",
     "control/inventory/publication/snapshot_contract.json",
     "control/inventory/publication/static_hosting_targets.json",
     "control/inventory/publication/surface_capabilities.json",
@@ -45,6 +46,7 @@
     "python scripts/validate_static_host_readiness.py",
     "python scripts/validate_live_backend_handoff.py",
     "python scripts/validate_live_probe_gateway.py",
+    "python scripts/validate_relay_surface_design.py",
     "python scripts/generate_static_snapshot.py --check",
     "python scripts/validate_static_snapshot.py"
   ]

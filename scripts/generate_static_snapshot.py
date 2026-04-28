@@ -268,7 +268,7 @@ def _snapshot_manifest(
             "public_site": "public_site remains the current GitHub Pages static artifact.",
             "files_surface": "public_site/files references this seed format but does not publish production snapshots.",
             "live_backend": "Snapshots are static offline data and are not live backend routes.",
-            "relay": "Future relay surfaces may consume snapshots after separate design and operator policy.",
+            "relay": "Relay Surface Design v0 records future relay policy; runtime consumption remains future/deferred.",
             "native_client": "Future native clients may consume snapshots after readiness prerequisites are met.",
         },
         "limitations": [

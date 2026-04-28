@@ -482,6 +482,24 @@ performs no network calls, adds no real signing keys, creates no production
 signatures, publishes no executable downloads, adds no public `/snapshots/`
 route, and implements no relay or native-client runtime.
 
+## Relay Surface Design
+
+Relay Surface Design v0 is validated with:
+
+```bash
+python scripts/validate_relay_surface_design.py
+python scripts/validate_relay_surface_design.py --json
+python -m unittest tests.operations.test_relay_surface_design tests.scripts.test_validate_relay_surface_design
+```
+
+The lane checks `relay_surface.json`, protocol candidates, disabled defaults,
+relay architecture/reference/security docs, the unsigned future operator
+checklist, surface capability alignment, route-matrix posture, and no-runtime
+claims. It performs no network calls, opens no sockets, implements no relay
+runtime, adds no FTP, SMB, WebDAV, AFP, NFS, Gopher, local HTTP relay, protocol
+proxy, private data exposure, write/admin route, live-probe passthrough, native
+sidecar, backend hosting, or production relay claim.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

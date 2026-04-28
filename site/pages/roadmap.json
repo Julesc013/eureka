@@ -94,7 +94,11 @@
         },
         {
           "title": "Relay Surface Design v0",
-          "text": "recommended next non-network design milestone for future operator-controlled local relay surfaces; no FTP, SMB, WebDAV, proxy, backend, or native runtime is implemented here."
+          "text": "implemented as future local/LAN relay design, inventory, validator, security/privacy defaults, and unsigned operator checklist only; no FTP, SMB, WebDAV, Gopher, proxy, backend, network listener, private-data exposure, live-probe passthrough, or native runtime."
+        },
+        {
+          "title": "Rust Source Registry Parity Catch-up v0",
+          "text": "recommended next non-network Codex milestone for bringing the isolated Rust source-registry candidate up to the expanded Python source capability and coverage fields."
         },
         {
           "title": "Manual Observation Batch 0 Execution",
@@ -141,7 +145,7 @@
             },
             {
               "href": "data/site_manifest.json",
-              "text": "Surface capability summaries"
+              "text": "Relay/static capability summaries"
             }
           ]
         }

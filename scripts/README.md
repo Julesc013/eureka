@@ -108,6 +108,13 @@ Current scripts:
   rejects private keys, env files, executables, large/binary artifacts, local
   absolute paths, live backend/probe claims, external-observation claims, and
   production signing claims; it supports `--json` and performs no network calls
+- `validate_relay_surface_design.py`: validates the Relay Surface Design v0
+  inventory, docs, unsigned future operator checklist, surface capability
+  alignment, route-matrix posture, and disabled-by-default relay safety flags;
+  it supports `--json`, performs no network calls, opens no sockets, and adds
+  no relay runtime, protocol server, local HTTP relay, proxy, private data path,
+  write/admin route, live-probe passthrough, native sidecar, or production relay
+  claim
 - `generate_static_resolver_demos.py`: generates, updates, or checks static
   resolver demo snapshots under `public_site/demo/` by default from generated
   public data summaries and fixture-backed Python-oracle outputs; it supports

@@ -7,6 +7,7 @@ No live backend, live probes, crawling, scraping, or external observations are i
 The /api/v1 route family is reserved for future backend handoff only and is not live.
 Live Probe Gateway Contract v0 is policy only; live probes, downloads, and arbitrary URL fetching remain disabled.
 Signed Snapshot Format v0 seed example: snapshots/examples/static_snapshot_v0/ (repo path, not a public /snapshots/ route).
+Relay Surface Design v0: contract only; no relay runtime, protocol server, network listener, private data exposure, or write/admin path.
 Production signed snapshots: not available.
 
 Public data summaries:

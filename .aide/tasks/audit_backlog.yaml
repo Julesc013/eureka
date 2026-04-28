@@ -259,7 +259,7 @@
       ],
       "title": "Define deterministic signed/offline snapshot format before relay or native clients",
       "status": "addressed_by_signed_snapshot_format_v0",
-      "suggested_milestone": "Relay Surface Design v0"
+      "suggested_milestone": "Rust Source Registry Parity Catch-up v0"
     },
     {
       "id": "audit-backlog-post-queue-state-checkpoint",
@@ -269,7 +269,17 @@
       ],
       "title": "Record a durable post-queue state checkpoint before further design work",
       "status": "addressed_by_post_queue_state_checkpoint_v0",
-      "suggested_milestone": "Relay Surface Design v0"
+      "suggested_milestone": "Rust Source Registry Parity Catch-up v0"
+    },
+    {
+      "id": "audit-backlog-relay-surface-design",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Define future local relay surface policy before any old-client protocol bridge",
+      "status": "addressed_by_relay_surface_design_v0",
+      "suggested_milestone": "Rust Source Registry Parity Catch-up v0"
     }
   ]
 }

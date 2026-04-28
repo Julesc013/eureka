@@ -449,6 +449,7 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
         "live_probe_gateway_source": "control/inventory/publication/live_probe_gateway.json",
         "surface_capabilities_source": "control/inventory/publication/surface_capabilities.json",
         "snapshot_contract_source": "control/inventory/publication/snapshot_contract.json",
+        "relay_surface_source": "control/inventory/publication/relay_surface.json",
         "snapshot_seed_example_root": "snapshots/examples/static_snapshot_v0",
         "snapshot_public_route_enabled": False,
         "limitations": [
@@ -467,6 +468,7 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
             "no production signed snapshots",
             "no real signing keys",
             "no executable downloads",
+            "no relay runtime or protocol server",
             "no scraping",
             "manual external baselines remain pending",
             "fixture-backed evidence is not global truth",
@@ -498,7 +500,7 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
             "/eureka/",
             "/",
         ],
-        "next_milestone": "Relay Surface Design v0",
+        "next_milestone": "Rust Source Registry Parity Catch-up v0",
         "parallel_human_work": "Manual Observation Batch 0 Execution",
         "no_network_required": True,
         "no_deployment_performed": True,
@@ -622,7 +624,11 @@ def _output_readme() -> str:
         "fixture-backed resolver examples; it does not add live search, a live "
         "API, backend hosting, external observations, or production behavior.\n\n"
         "`public_site/` remains the GitHub Pages deployment artifact for Static "
-        "Site Generation Migration v0.\n"
+        "Site Generation Migration v0.\n\n"
+        "Relay Surface Design v0 is contract and inventory work only; generated "
+        "output does not include a relay runtime, protocol server, network "
+        "listener, private-data exposure, live-probe passthrough, or write/admin "
+        "surface.\n"
     )
 
 

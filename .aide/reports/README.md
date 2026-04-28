@@ -90,3 +90,11 @@ Post-Queue State Checkpoint v0 records its committed audit/reporting pack under
 report is needed; the pack is repo-governance evidence and does not add product
 runtime behavior, deployment behavior, live probes, external observations,
 production signing, relay services, or native clients.
+
+Relay Surface Design v0 records its future relay inventory, architecture and
+reference docs, security/privacy posture, unsigned operator checklist,
+validator, and tests under `control/inventory/publication/`, `docs/`, and
+`scripts/`. No separate AIDE runtime report is needed; this is design and
+governance only and does not add a relay runtime, sockets, protocol servers,
+private data exposure, write/admin routes, live-probe passthrough, native
+sidecars, or production relay claims.

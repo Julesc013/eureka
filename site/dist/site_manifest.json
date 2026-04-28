@@ -43,6 +43,7 @@
     "no production signed snapshots",
     "no real signing keys",
     "no executable downloads",
+    "no relay runtime or protocol server",
     "no scraping",
     "manual external baselines remain pending",
     "fixture-backed evidence is not global truth"
@@ -53,7 +54,7 @@
   "live_probe_gateway_contract_only": true,
   "live_probe_gateway_source": "control/inventory/publication/live_probe_gateway.json",
   "live_probes_enabled": false,
-  "next_milestone": "Relay Surface Design v0",
+  "next_milestone": "Rust Source Registry Parity Catch-up v0",
   "no_backend": true,
   "no_cname_file_committed": true,
   "no_custom_domain_configured": true,
@@ -95,6 +96,7 @@
   "public_snapshots_route_enabled": false,
   "publication_contract_source": "control/inventory/publication/publication_contract.json",
   "real_signing_keys_present": false,
+  "relay_surface_source": "control/inventory/publication/relay_surface.json",
   "required_claims": [
     "Python reference backend prototype",
     "not production",

@@ -60,6 +60,7 @@
     "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
     "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
     "Google remains manual-baseline only and is not a live probe source.",
+    "Relay Surface Design v0 is contract-only; no relay runtime, protocol server, network listener, private data exposure, write/admin route exposure, or live-probe passthrough is implemented.",
     "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
     "Signed Snapshot Format v0 is a contract and seed example only; real signing keys, production signatures, executable downloads, public /snapshots/ route, relay behavior, native-client runtime, live backend behavior, and live probes remain absent."
   ],
@@ -910,6 +911,100 @@
   ],
   "publication_contract_id": "eureka-publication-plane",
   "publication_contract_version": "0.1.0",
+  "relay_surface": {
+    "admin_routes_disabled_for_old_clients": true,
+    "default_mode": "read_only_future",
+    "default_scope": "local_or_lan_future",
+    "live_probes_disabled_by_default": true,
+    "no_network_services_implemented": true,
+    "no_protocol_servers_implemented": true,
+    "no_relay_implemented": true,
+    "private_data_disabled_by_default": true,
+    "protocol_candidate_count": 11,
+    "protocol_candidates": [
+      {
+        "allowed_data": "public_static_or_snapshot_only",
+        "default_scope": "local_or_lan",
+        "id": "local_static_http",
+        "implemented": false,
+        "status": "future_deferred"
+      },
+      {
+        "allowed_data": "public_text_only",
+        "default_scope": "local_or_lan",
+        "id": "local_text_http",
+        "implemented": false,
+        "status": "future_deferred"
+      },
+      {
+        "allowed_data": "public_manifest_checksum_snapshot_only",
+        "default_scope": "local_or_lan",
+        "id": "local_file_tree_http",
+        "implemented": false,
+        "status": "future_deferred"
+      },
+      {
+        "allowed_data": "public_snapshot_or_file_tree_only",
+        "default_scope": "trusted_lan_only",
+        "id": "read_only_ftp_mirror",
+        "implemented": false,
+        "status": "future_deferred"
+      },
+      {
+        "allowed_data": "public_snapshot_or_file_tree_only",
+        "default_scope": "trusted_lan_only",
+        "id": "webdav_read_only",
+        "implemented": false,
+        "status": "future_deferred"
+      },
+      {
+        "allowed_data": "public_snapshot_or_file_tree_only",
+        "default_scope": "trusted_lan_only",
+        "id": "smb_read_only",
+        "implemented": false,
+        "status": "future_deferred"
+      },
+      {
+        "allowed_data": "public_snapshot_or_file_tree_only",
+        "default_scope": "trusted_lan_only",
+        "id": "afp_read_only",
+        "implemented": false,
+        "status": "future_deferred"
+      },
+      {
+        "allowed_data": "public_snapshot_or_file_tree_only",
+        "default_scope": "trusted_lan_only",
+        "id": "nfs_read_only",
+        "implemented": false,
+        "status": "future_deferred"
+      },
+      {
+        "allowed_data": "public_text_and_file_index_only",
+        "default_scope": "trusted_lan_only",
+        "id": "gopher_experimental",
+        "implemented": false,
+        "status": "future_deferred"
+      },
+      {
+        "allowed_data": "operator_selected_public_or_private_after_policy",
+        "default_scope": "local_host_only",
+        "id": "native_sidecar",
+        "implemented": false,
+        "status": "future_deferred"
+      },
+      {
+        "allowed_data": "verified_snapshot_only",
+        "default_scope": "local_or_lan",
+        "id": "snapshot_mount",
+        "implemented": false,
+        "status": "future_deferred"
+      }
+    ],
+    "public_data_only_by_default": true,
+    "relay_surface_id": "eureka-local-relay-surface",
+    "status": "implemented_contract_only_runtime_absent",
+    "write_actions_disabled_by_default": true
+  },
   "schema_version": "0.1.0",
   "snapshot_format": {
     "contains_real_binaries": false,
@@ -930,6 +1025,7 @@
     "control/inventory/publication/live_backend_routes.json",
     "control/inventory/publication/live_probe_gateway.json",
     "control/inventory/publication/public_data_contract.json",
+    "control/inventory/publication/relay_surface.json",
     "control/inventory/publication/snapshot_contract.json",
     "control/inventory/publication/static_hosting_targets.json",
     "control/inventory/publication/surface_capabilities.json",

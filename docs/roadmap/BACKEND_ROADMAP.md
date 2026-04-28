@@ -259,17 +259,18 @@ The next backend sequence is:
 46. Rust Query Planner Parity Candidate v0 (implemented as isolated parity seam)
 47. Compatibility Surface Strategy v0 (implemented as strategy/contracts/inventory only; no new runtime behavior)
 48. Signed Snapshot Format v0 (implemented as contract and repo seed example; no real keys, production signatures, downloads, public route, relay, native runtime, live backend, or live probes)
-49. Relay Surface Design v0
+49. Relay Surface Design v0 (implemented as design/contract/checklist only; no relay runtime, sockets, protocol servers, private data exposure, write/admin routes, or live-probe passthrough)
 50. Rust Source Registry Parity Catch-up v0
 51. Rust Local Index Parity Planning v0
-52. Manual Observation Batch 0 Execution (human-operated parallel work)
-53. Native App Work Later
+52. Signed Snapshot Consumer Contract v0
+53. Manual Observation Batch 0 Execution (human-operated parallel work)
+54. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Relay Surface Design v0
+> Rust Source Registry Parity Catch-up v0
 
 Why this comes next:
 
@@ -292,9 +293,14 @@ Why this comes next:
   signature-placeholder policy, with no real signing keys, production
   signatures, executable downloads, public `/snapshots/` route, relay/native
   runtime, live backend behavior, or live probes.
-- Relay Surface Design v0 is now the next non-network planning step for future
-  old-client/local-network compatibility without implementing FTP, SMB, WebDAV,
-  proxy behavior, backend hosting, or native clients.
+- Relay Surface Design v0 is implemented as design, inventory, validation, and
+  operator/security guidance only. It defines the future local/LAN relay posture
+  without implementing FTP, SMB, WebDAV, Gopher, proxy behavior, sockets,
+  backend hosting, native clients, private data exposure, write/admin routes, or
+  live-probe passthrough.
+- Rust Source Registry Parity Catch-up v0 is now the next non-network planning
+  step because the source/capability shape has expanded since the first isolated
+  Rust source-registry parity seam.
 - Internet Archive Live Probe v0 should remain unstarted unless a human
   explicitly approves live external-source behavior after separate review.
 

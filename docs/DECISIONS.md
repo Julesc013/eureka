@@ -539,3 +539,25 @@ queue. It does not add product runtime behavior, live probes, deployment
 behavior, external observations, production signing, relay services, or native
 clients. Relay Surface Design v0 is the next recommended Codex-safe milestone;
 Manual Observation Batch 0 remains human-operated parallel work.
+
+## ADR-090: Define Relay Surface Design Without Relay Runtime
+
+Status: accepted
+
+Relay Surface Design v0 is recorded through
+`control/inventory/publication/relay_surface.json`,
+`docs/architecture/RELAY_SURFACE.md`,
+`docs/reference/RELAY_SURFACE_CONTRACT.md`,
+`docs/reference/RELAY_SECURITY_AND_PRIVACY.md`,
+`docs/operations/RELAY_OPERATOR_CHECKLIST.md`,
+`scripts/validate_relay_surface_design.py`, and tests.
+
+The decision keeps future relay work local/LAN, operator-controlled, read-only
+by default, public-data-only by default, and dependent on snapshots, public
+data summaries, lite/text/files surfaces, and later explicit policy. It adds no
+relay runtime, network socket, local HTTP relay, FTP, SMB, WebDAV, AFP, NFS,
+Gopher, protocol proxy, native sidecar, private data exposure, write/admin
+route, live-probe passthrough, backend hosting, external call, deployment
+behavior, or production relay claim. The next Codex-safe milestone should be
+Rust Source Registry Parity Catch-up v0; Manual Observation Batch 0 remains
+human-operated parallel work.
