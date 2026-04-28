@@ -14,6 +14,11 @@ Preferred fallback order:
    snapshots for offline or TLS-limited systems
 6. future local relay for systems that cannot consume modern static HTTPS
 
+Relay Surface Design v0 now records the future local/LAN relay contract,
+security/privacy defaults, protocol candidates, and unsigned operator
+checklist. It does not implement a relay runtime, protocol server, network
+listener, private data exposure, live-probe passthrough, or write/admin route.
+
 Old-client surfaces must not require JavaScript, a live API, login, private
 user state, arbitrary local path access, or live source probes.
 

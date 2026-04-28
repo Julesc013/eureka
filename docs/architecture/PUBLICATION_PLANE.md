@@ -84,6 +84,17 @@ and seed example only: no production signed release, real signing keys,
 executable downloads, public `/snapshots/` route, relay behavior, native app,
 live backend behavior, or live probe is implemented.
 
+Relay Surface Design v0 adds
+`control/inventory/publication/relay_surface.json`,
+`docs/architecture/RELAY_SURFACE.md`,
+`docs/reference/RELAY_SURFACE_CONTRACT.md`,
+`docs/reference/RELAY_SECURITY_AND_PRIVACY.md`,
+`docs/operations/RELAY_OPERATOR_CHECKLIST.md`, and
+`scripts/validate_relay_surface_design.py`. This is future relay policy only:
+no relay server, network listener, protocol bridge, FTP, SMB, WebDAV, Gopher,
+private data exposure, write/admin route, live-probe passthrough, or native
+runtime is implemented.
+
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
 expectations, deployment target semantics, and redirects.
@@ -161,5 +172,7 @@ routes and disabled capabilities. Live Probe Gateway Contract v0 now defines
 the disabled source-probe gateway policy before any external probe exists.
 Compatibility Surface Strategy v0 now records the cross-surface policy for
 old-browser, text, file-tree, snapshot, relay, API, CLI, web, and future native
-clients. Production signed snapshots, public `/snapshots/`, relays, native
-clients, and any actual Internet Archive live probe remain future work.
+clients. Relay Surface Design v0 now records future local/LAN bridge policy
+without implementing bridge behavior. Production signed snapshots, public
+`/snapshots/`, relay runtime, native clients, and any actual Internet Archive
+live probe remain future work.

@@ -1,0 +1,266 @@
+{
+  "schema_version": "0.1.0",
+  "relay_surface_id": "eureka-local-relay-surface",
+  "status": "design_only",
+  "stability": "experimental",
+  "no_relay_implemented": true,
+  "no_network_services_implemented": true,
+  "no_protocol_servers_implemented": true,
+  "default_scope": "local_or_lan_future",
+  "default_mode": "read_only_future",
+  "public_data_only_by_default": true,
+  "private_data_disabled_by_default": true,
+  "write_actions_disabled_by_default": true,
+  "live_probes_disabled_by_default": true,
+  "admin_routes_disabled_for_old_clients": true,
+  "supported_future_modes": [
+    {
+      "id": "public_data_projection",
+      "status": "future_deferred",
+      "description": "Project generated public data summaries into old-client-friendly read views."
+    },
+    {
+      "id": "snapshot_projection",
+      "status": "future_deferred",
+      "description": "Serve a verified static snapshot tree to local or LAN clients after snapshot consumer policy exists."
+    },
+    {
+      "id": "text_projection",
+      "status": "future_deferred",
+      "description": "Project plain text summaries for text browsers, terminals, and screen readers."
+    },
+    {
+      "id": "file_tree_projection",
+      "status": "future_deferred",
+      "description": "Expose manifests, checksums, and file-tree indexes as read-only public data."
+    },
+    {
+      "id": "modern_host_bridge",
+      "status": "future_deferred",
+      "description": "Let a modern trusted host mediate optional future live backend results without exposing unsafe old-client control paths."
+    }
+  ],
+  "forbidden_v0_behaviors": [
+    "relay runtime",
+    "network listener",
+    "FTP server",
+    "SMB server",
+    "AFP server",
+    "WebDAV server",
+    "NFS server",
+    "Gopher server",
+    "local HTTP relay server",
+    "proxying",
+    "protocol translation",
+    "write or admin route exposure",
+    "private user data exposure",
+    "private local path exposure",
+    "live source probing",
+    "external source calls",
+    "installer execution",
+    "executable download mirror"
+  ],
+  "future_protocol_candidates": [
+    {
+      "id": "local_static_http",
+      "label": "Local static HTTP projection",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "local_or_lan",
+      "allowed_data": "public_static_or_snapshot_only",
+      "notes": "Would require an operator-controlled bind policy before any listener exists."
+    },
+    {
+      "id": "local_text_http",
+      "label": "Local text HTTP projection",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "local_or_lan",
+      "allowed_data": "public_text_only",
+      "notes": "Would expose plain text projections only after relay runtime policy exists."
+    },
+    {
+      "id": "local_file_tree_http",
+      "label": "Local file-tree HTTP projection",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "local_or_lan",
+      "allowed_data": "public_manifest_checksum_snapshot_only",
+      "notes": "Would serve read-only manifests and checksums only."
+    },
+    {
+      "id": "read_only_ftp_mirror",
+      "label": "Read-only FTP-style mirror",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "trusted_lan_only",
+      "allowed_data": "public_snapshot_or_file_tree_only",
+      "notes": "Insecure transport would be public/read-only only and would not carry credentials."
+    },
+    {
+      "id": "webdav_read_only",
+      "label": "Read-only WebDAV projection",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "trusted_lan_only",
+      "allowed_data": "public_snapshot_or_file_tree_only",
+      "notes": "Requires threat-model review before implementation."
+    },
+    {
+      "id": "smb_read_only",
+      "label": "Read-only SMB projection",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "trusted_lan_only",
+      "allowed_data": "public_snapshot_or_file_tree_only",
+      "notes": "Requires platform and permissions review before implementation."
+    },
+    {
+      "id": "afp_read_only",
+      "label": "Read-only AFP projection",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "trusted_lan_only",
+      "allowed_data": "public_snapshot_or_file_tree_only",
+      "notes": "Legacy-protocol candidate only; not implemented."
+    },
+    {
+      "id": "nfs_read_only",
+      "label": "Read-only NFS projection",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "trusted_lan_only",
+      "allowed_data": "public_snapshot_or_file_tree_only",
+      "notes": "Requires export-root and LAN trust review before implementation."
+    },
+    {
+      "id": "gopher_experimental",
+      "label": "Experimental Gopher-style projection",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "trusted_lan_only",
+      "allowed_data": "public_text_and_file_index_only",
+      "notes": "Experimental old-client candidate only; not implemented."
+    },
+    {
+      "id": "native_sidecar",
+      "label": "Native client sidecar",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "local_host_only",
+      "allowed_data": "operator_selected_public_or_private_after_policy",
+      "notes": "Would require native-client contract, private-data policy, and explicit operator controls."
+    },
+    {
+      "id": "snapshot_mount",
+      "label": "Static snapshot mount or browse root",
+      "status": "future_deferred",
+      "implemented": false,
+      "default_scope": "local_or_lan",
+      "allowed_data": "verified_snapshot_only",
+      "notes": "Depends on future snapshot consumer and verification policy."
+    }
+  ],
+  "data_sources": [
+    {
+      "path": "public_site/data/",
+      "status": "implemented_static_input",
+      "contains_private_data": false
+    },
+    {
+      "path": "public_site/lite/",
+      "status": "implemented_static_seed_input",
+      "contains_private_data": false
+    },
+    {
+      "path": "public_site/text/",
+      "status": "implemented_static_seed_input",
+      "contains_private_data": false
+    },
+    {
+      "path": "public_site/files/",
+      "status": "implemented_static_seed_input",
+      "contains_private_data": false
+    },
+    {
+      "path": "snapshots/examples/static_snapshot_v0/",
+      "status": "implemented_repo_seed_input",
+      "contains_private_data": false
+    },
+    {
+      "path": "future /api/v1 responses",
+      "status": "future_disabled",
+      "contains_private_data": "unresolved_policy_required"
+    }
+  ],
+  "trust_and_integrity_model": {
+    "relay_is_not_trust_oracle": true,
+    "resolver_truth_source": "governed source/evidence records and static snapshot manifests",
+    "integrity_sources": [
+      "snapshot manifests",
+      "SHA256 checksums",
+      "future signature metadata"
+    ],
+    "insecure_transport_limit": "Insecure future transports may carry only public read-only data and cannot provide authenticity by themselves.",
+    "requires_future_signature_policy_for_authenticity": true
+  },
+  "snapshot_dependency": {
+    "contract": "docs/reference/SNAPSHOT_FORMAT_CONTRACT.md",
+    "seed_example": "snapshots/examples/static_snapshot_v0/",
+    "production_snapshots_required_before_broad_relay": true,
+    "real_signatures_required_before_authenticity_claims": true
+  },
+  "operator_controls_required": [
+    "choose local host",
+    "choose network scope",
+    "choose allowed protocols",
+    "choose data root",
+    "verify read-only mode",
+    "verify no private data exposure",
+    "verify no write/admin routes for old clients",
+    "verify live probes remain disabled unless future policy explicitly enables them",
+    "verify firewall or LAN-only posture",
+    "verify logging and privacy posture",
+    "verify rollback or disable procedure"
+  ],
+  "security_requirements": [
+    "local or trusted LAN by default",
+    "read-only by default",
+    "public data only by default",
+    "no credentials to old clients",
+    "no admin routes to old clients",
+    "no write actions to old clients",
+    "no installer execution in v0",
+    "no executable mirrors in v0",
+    "future threat model required before implementation"
+  ],
+  "privacy_requirements": [
+    "no private user state by default",
+    "no private local paths by default",
+    "no account or session data over insecure transports",
+    "logs must avoid private queries or paths unless a future policy explicitly permits them",
+    "local cache exposure requires separate operator signoff"
+  ],
+  "client_profiles": [
+    "relay",
+    "snapshot",
+    "text",
+    "file_tree",
+    "native_client"
+  ],
+  "next_milestones": [
+    "Rust Source Registry Parity Catch-up v0",
+    "Rust Local Index Parity Planning v0",
+    "Signed Snapshot Consumer Contract v0",
+    "Native Client Contract v0"
+  ],
+  "created_by_slice": "relay_surface_design_v0",
+  "notes": [
+    "Relay Surface Design v0 is contract, inventory, and checklist work only.",
+    "No relay runtime, socket listener, or protocol server is introduced.",
+    "The relay remains future/deferred in surface capability and route matrices.",
+    "Snapshots, lite, text, files, and public data are the current compatibility path.",
+    "Manual Observation Batch 0 remains human-operated parallel work.",
+    "Internet Archive live probe work remains gated by explicit human approval and live probe gateway review."
+  ]
+}

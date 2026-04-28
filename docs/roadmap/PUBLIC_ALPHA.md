@@ -218,6 +218,12 @@ probes disabled by default, keeps Google manual-baseline-only, and adds no
 Internet Archive calls, URL fetching, scraping, crawling, downloads, adapters,
 or production source behavior.
 
+Relay Surface Design v0 now records the future local/LAN relay posture for old
+or constrained clients. It is public-alpha-adjacent contract work only: no relay
+runtime, network listener, FTP, SMB, WebDAV, protocol proxy, private data
+exposure, write/admin route, live-probe passthrough, backend hosting, or
+production relay claim is added.
+
 ## Public Alpha Checkpoint
 
 Post-Queue State Checkpoint v0 records the current post-queue evidence and

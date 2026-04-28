@@ -235,7 +235,7 @@
       "client_profiles": [
         "relay"
       ],
-      "notes": "Future local LAN/protocol bridge; not represented as a public static route."
+      "notes": "Relay Surface Design v0 is implemented as design/contract/checklist only. Future local LAN/protocol bridge work remains deferred and is not represented as a public static route."
     },
     {
       "id": "native_client",

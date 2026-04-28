@@ -75,6 +75,12 @@ snapshots, add real signing keys, add executable downloads, implement relay or
 native-client runtime behavior, make public JSON a production API, or enable
 live backend/probe behavior.
 
+Relay Surface Design v0 adds relay design metadata to `/data/site_manifest.json`
+and validation provenance to `/data/build_manifest.json`. These fields describe
+future local/LAN relay policy only. They do not implement a relay runtime,
+protocol server, network listener, private data exposure, live-probe passthrough,
+write/admin route, or old-client protocol bridge.
+
 Implemented file-tree public data files include:
 
 - `/files/manifest.json`

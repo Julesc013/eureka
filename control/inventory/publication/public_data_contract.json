@@ -35,6 +35,7 @@
         "control/inventory/publication/live_backend_handoff.json",
         "control/inventory/publication/live_backend_routes.json",
         "control/inventory/publication/live_probe_gateway.json",
+        "control/inventory/publication/relay_surface.json",
         "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/publication/surface_capabilities.json",
         "control/inventory/publication/surface_route_matrix.json",
@@ -148,12 +149,14 @@
         "control/inventory/publication/live_backend_handoff.json",
         "control/inventory/publication/live_backend_routes.json",
         "control/inventory/publication/live_probe_gateway.json",
+        "control/inventory/publication/relay_surface.json",
         "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/publication/surface_capabilities.json",
         "control/inventory/publication/surface_route_matrix.json",
         "control/inventory/sources/*.source.json",
         "control/inventory/public_alpha_routes.json",
-        "control/inventory/publication/snapshot_contract.json"
+        "control/inventory/publication/snapshot_contract.json",
+        "control/inventory/publication/relay_surface.json"
       ],
       "consumer_profiles": [
         "api_client",

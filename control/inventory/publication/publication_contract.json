@@ -28,6 +28,8 @@
   "live_probe_gateway_status": "planned_disabled",
   "live_probe_gateway": "control/inventory/publication/live_probe_gateway.json",
   "compatibility_surface_strategy_status": "implemented",
+  "relay_surface_design_status": "implemented_contract_only",
+  "relay_surface": "control/inventory/publication/relay_surface.json",
   "surface_capabilities": "control/inventory/publication/surface_capabilities.json",
   "surface_route_matrix": "control/inventory/publication/surface_route_matrix.json",
   "domain_plan": "control/inventory/publication/domain_plan.json",
@@ -44,6 +46,7 @@
     "govern future static-to-live backend handoff routes without implementing a hosted backend",
     "govern future live source probe policy without implementing probes or network calls",
     "govern compatibility-surface projections without implementing snapshots, relay, native apps, or new runtime behavior",
+    "govern future local relay surface design, security/privacy defaults, operator controls, and protocol candidates without implementing relay runtime",
     "govern public claim traceability before public hosting",
     "govern signed/offline snapshot format, checksums, and signature-placeholder policy without real signing keys",
     "govern seed snapshot example separately from the current public_site deployment artifact"
@@ -132,9 +135,10 @@
     }
   ],
   "next_expected_milestones": [
-    "Relay Surface Design v0",
     "Rust Source Registry Parity Catch-up v0",
     "Rust Local Index Parity Planning v0",
+    "Signed Snapshot Consumer Contract v0",
+    "Native Client Contract v0",
     "Manual Observation Batch 0 Execution",
     "Internet Archive Live Probe v0 only after explicit human approval and live probe gateway review"
   ],
@@ -154,7 +158,8 @@
     "Compatibility Surface Strategy v0 records surface capability and route matrices plus old-client/native/snapshot/relay readiness policy without implementing new runtime behavior.",
     "No provider backend configuration, live backend, or live source probe is added by this contract.",
     "Signed Snapshot Format v0 adds a snapshot contract, checksum/signature-placeholder policy, and deterministic repo seed example under snapshots/examples/static_snapshot_v0 without adding real signing keys, executable downloads, production signatures, relay behavior, native clients, or a public /snapshots/ route.",
-    "The public /snapshots/ route remains future/deferred; public_site remains the current static deployment artifact."
+    "The public /snapshots/ route remains future/deferred; public_site remains the current static deployment artifact.",
+    "Relay Surface Design v0 adds a future local/LAN relay design inventory, reference docs, security/privacy defaults, and unsigned operator checklist without implementing a relay server, opening sockets, adding FTP/SMB/WebDAV/Gopher behavior, exposing private data, or enabling live probes."
   ],
   "snapshot_format_contract_status": "implemented",
   "snapshot_contract": "control/inventory/publication/snapshot_contract.json",

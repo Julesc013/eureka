@@ -13,6 +13,7 @@ Prerequisites before native GUI client work starts:
   client consumption
 - rights/security/download policy before any fetch/install workflow
 - clear local-cache and offline snapshot semantics
+- relay security/privacy and operator policy for any sidecar or LAN bridge
 - no dependency on private engine internals
 
 Installer automation remains deferred until rights, security, executable-risk,
@@ -22,4 +23,6 @@ Future Windows and macOS lane docs may define prototypes later, but they must
 consume governed public data, future production snapshots, or live handoff
 contracts. They must not become a back door into runtime internals. The current
 snapshot seed includes no real signing keys, no production signatures, no
-executable downloads, no relay service, and no native-client runtime.
+executable downloads, no relay service, and no native-client runtime. Relay
+Surface Design v0 records sidecar/LAN bridge policy only and does not add a
+native sidecar or protocol implementation.

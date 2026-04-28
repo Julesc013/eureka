@@ -92,9 +92,11 @@ The v0 format explicitly excludes:
 
 ## Clients
 
-Old clients should treat snapshots as read-only public data. Future relay and
-native clients may consume snapshots only after their own operator/security and
-client-readiness policies are accepted.
+Old clients should treat snapshots as read-only public data. Relay Surface
+Design v0 now defines the future relay policy that may later consume production
+snapshots, but no relay runtime exists. Future relay and native clients may
+consume snapshots only after their own operator/security and client-readiness
+policies are accepted.
 
 No login or private user data may be layered onto insecure compatibility
 snapshot transports.

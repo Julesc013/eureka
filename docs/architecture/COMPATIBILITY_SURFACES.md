@@ -31,7 +31,7 @@ Compatibility Surface Strategy v0 does not implement new runtime product behavio
 | App | deferred | `/app/` | unresolved | yes | no | Future richer browser app; no framework exists. |
 | API | planned contract | `/api/v1/` | yes | no | no | Future live backend handoff, not production API. |
 | Snapshots | deferred with seed example | `/snapshots/` future, `snapshots/examples/static_snapshot_v0/` repo seed | no | no | yes | Format contract and seed example exist; production signed releases and public route remain future. |
-| Relay | deferred | local LAN/protocol bridge | yes | no | no | Future operator-controlled bridge; no FTP/SMB/WebDAV implemented. |
+| Relay | deferred with design contract | local LAN/protocol bridge | yes | no | no | Relay Surface Design v0 records future local/LAN bridge policy; no relay runtime, FTP/SMB/WebDAV/Gopher, socket listener, private-data exposure, or write/admin route is implemented. |
 | Native clients | deferred | consume `/data`, `/api`, snapshots | no by default | no | no | Future Windows/macOS/etc clients; CLI is the current local surface. |
 
 The governed machine-readable versions of this matrix are:
@@ -84,8 +84,10 @@ The seed example under `snapshots/examples/static_snapshot_v0/` is not a
 production signed release, does not contain real signing keys, does not include
 software binaries, and is not published as a public `/snapshots/` route.
 
-Relay requires a separate network/security/operator contract. No FTP, SMB,
-WebDAV, proxy, or LAN protocol bridge exists now.
+Relay Surface Design v0 now records the separate network/security/operator
+contract, protocol-candidate inventory, security/privacy defaults, and unsigned
+operator checklist for future relay work. No FTP, SMB, WebDAV, Gopher, proxy,
+socket listener, or LAN protocol bridge exists now.
 
 Native clients must wait for stable-enough public data, snapshot, action,
 rights/security, and live handoff contracts. Native apps must consume governed
@@ -95,7 +97,7 @@ contracts, not engine internals.
 
 - no new runtime behavior
 - no production signed snapshots, real keys, or public `/snapshots/` route
-- no relay/protocol bridge
+- no relay/protocol bridge or network listener
 - no native app project
 - no live `/api/v1`
 - no live probes
