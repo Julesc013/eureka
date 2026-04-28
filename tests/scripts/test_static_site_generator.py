@@ -66,6 +66,8 @@ class StaticSiteGeneratorScriptTest(unittest.TestCase):
                 "text/index.txt",
                 "files/manifest.json",
                 "files/SHA256SUMS",
+                "demo/index.html",
+                "demo/data/demo_snapshots.json",
             ):
                 with self.subTest(relative=relative):
                     self.assertTrue((output / relative).exists())
@@ -110,6 +112,7 @@ class StaticSiteGeneratorScriptTest(unittest.TestCase):
         self.assertEqual(payload["status"], "valid")
         self.assertEqual(payload["page_count"], 8)
         self.assertEqual(payload["dist_validation_status"], "valid")
+        self.assertIn("demo/index.html", payload["dist_demo_files"])
 
 
 if __name__ == "__main__":

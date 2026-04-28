@@ -65,6 +65,7 @@ REQUIRED_PUBLIC_DATA_PATHS = {
     "/files/manifest.json",
     "/files/index.txt",
     "/files/SHA256SUMS",
+    "/demo/data/demo_snapshots.json",
 }
 REQUIRED_GENERATED_PUBLIC_DATA_PATHS = {
     "/data/site_manifest.json",
@@ -78,6 +79,17 @@ REQUIRED_FILE_SURFACE_PATHS = {
     "/files/manifest.json",
     "/files/index.txt",
     "/files/SHA256SUMS",
+}
+REQUIRED_DEMO_ROUTES = {
+    "/demo/",
+    "/demo/query-plan-windows-7-apps.html",
+    "/demo/result-member-driver-inside-support-cd.html",
+    "/demo/result-firefox-xp.html",
+    "/demo/result-article-scan.html",
+    "/demo/absence-example.html",
+    "/demo/comparison-example.html",
+    "/demo/source-example.html",
+    "/demo/eval-summary.html",
 }
 
 
@@ -171,6 +183,18 @@ class PublicationInventoryTest(unittest.TestCase):
                 self.assertIsInstance(route["source_file"], str)
                 self.assertTrue((REPO_ROOT / route["source_file"]).exists())
 
+        self.assertTrue(REQUIRED_DEMO_ROUTES.issubset(routes))
+        for route_path in REQUIRED_DEMO_ROUTES:
+            with self.subTest(route_path=route_path):
+                route = routes[route_path]
+                self.assertEqual(route["status"], "static_demo")
+                self.assertEqual(route["stability"], "stable_draft")
+                self.assertFalse(route["requires_javascript"])
+                self.assertFalse(route["live_backend_required"])
+                self.assertFalse(route["external_observation_required"])
+                self.assertIsInstance(route["source_file"], str)
+                self.assertTrue((REPO_ROOT / route["source_file"]).exists())
+
     def test_client_profiles_include_required_profiles(self) -> None:
         payload = load_json("client_profiles.json")
         profiles = {profile["id"]: profile for profile in payload["profiles"]}
@@ -248,6 +272,15 @@ class PublicationInventoryTest(unittest.TestCase):
                 self.assertFalse(entry["contains_live_data"])
                 self.assertFalse(entry["contains_external_observations"])
                 self.assertTrue(entry["safe_for_static_hosting"])
+
+        demo_entry = entries["/demo/data/demo_snapshots.json"]
+        self.assertEqual(demo_entry["status"], "static_demo")
+        self.assertEqual(demo_entry["stability"], "stable_draft")
+        self.assertEqual(demo_entry["generated_by"], "scripts/generate_static_resolver_demos.py")
+        self.assertTrue((PUBLIC_SITE / "demo" / "data" / "demo_snapshots.json").exists())
+        self.assertFalse(demo_entry["contains_live_data"])
+        self.assertFalse(demo_entry["contains_external_observations"])
+        self.assertTrue(demo_entry["safe_for_static_hosting"])
 
     def test_redirects_start_empty(self) -> None:
         payload = load_json("redirects.json")

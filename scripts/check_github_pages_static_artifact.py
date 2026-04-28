@@ -53,6 +53,17 @@ REQUIRED_STATIC_FILES = {
     "text/index.txt",
     "text/limitations.txt",
     "text/sources.txt",
+    "demo/README.txt",
+    "demo/data/demo_snapshots.json",
+    "demo/index.html",
+    "demo/query-plan-windows-7-apps.html",
+    "demo/result-member-driver-inside-support-cd.html",
+    "demo/result-firefox-xp.html",
+    "demo/result-article-scan.html",
+    "demo/absence-example.html",
+    "demo/comparison-example.html",
+    "demo/source-example.html",
+    "demo/eval-summary.html",
 }
 FORBIDDEN_DIR_NAMES = {
     ".aide",

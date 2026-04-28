@@ -49,6 +49,17 @@ REQUIRED_FILES = {
     "text/index.txt",
     "text/limitations.txt",
     "text/sources.txt",
+    "demo/README.txt",
+    "demo/data/demo_snapshots.json",
+    "demo/index.html",
+    "demo/query-plan-windows-7-apps.html",
+    "demo/result-member-driver-inside-support-cd.html",
+    "demo/result-firefox-xp.html",
+    "demo/result-article-scan.html",
+    "demo/absence-example.html",
+    "demo/comparison-example.html",
+    "demo/source-example.html",
+    "demo/eval-summary.html",
 }
 REQUIRED_PUBLIC_DATA_FILES = (
     "data/site_manifest.json",
@@ -77,6 +88,19 @@ REQUIRED_COMPATIBILITY_FILES = (
     "files/manifest.json",
     "files/SHA256SUMS",
     "files/data/README.txt",
+)
+REQUIRED_DEMO_FILES = (
+    "demo/index.html",
+    "demo/query-plan-windows-7-apps.html",
+    "demo/result-member-driver-inside-support-cd.html",
+    "demo/result-firefox-xp.html",
+    "demo/result-article-scan.html",
+    "demo/absence-example.html",
+    "demo/comparison-example.html",
+    "demo/source-example.html",
+    "demo/eval-summary.html",
+    "demo/README.txt",
+    "demo/data/demo_snapshots.json",
 )
 REQUIRED_PHRASES = (
     "Python reference backend prototype",
@@ -222,6 +246,7 @@ def validate_public_static_site(site_dir: Path = DEFAULT_SITE_DIR) -> dict[str, 
 
     _validate_public_data_files(site_dir, errors)
     compatibility_report = _validate_compatibility_surfaces(site_dir, errors)
+    demo_report = _validate_demo_snapshots(site_dir, errors)
 
     return {
         "status": "valid" if not errors else "invalid",
@@ -235,6 +260,8 @@ def validate_public_static_site(site_dir: Path = DEFAULT_SITE_DIR) -> dict[str, 
         "public_data_files_checked": list(REQUIRED_PUBLIC_DATA_FILES),
         "compatibility_surface_files_checked": list(REQUIRED_COMPATIBILITY_FILES),
         "compatibility_surface_report": compatibility_report,
+        "demo_snapshot_files_checked": list(REQUIRED_DEMO_FILES),
+        "demo_snapshot_report": demo_report,
         "missing_source_ids": missing_source_ids,
         "required_phrases": list(REQUIRED_PHRASES),
         "prohibited_claims": prohibited_claims,
@@ -443,6 +470,75 @@ def _validate_compatibility_surfaces(site_dir: Path, errors: list[str]) -> dict[
     sha_path = site_dir / "files" / "SHA256SUMS"
     if sha_path.exists():
         report["sha256_entries"] = _validate_sha256sums(site_dir, sha_path, errors)
+    return report
+
+
+def _validate_demo_snapshots(site_dir: Path, errors: list[str]) -> dict[str, Any]:
+    report: dict[str, Any] = {
+        "demo_pages": [],
+        "demo_count": None,
+        "demo_data_status": None,
+    }
+    for relative in REQUIRED_DEMO_FILES:
+        path = site_dir / relative
+        if not path.exists():
+            errors.append(f"{_rel(path)}: required demo snapshot file is missing.")
+
+    data = _load_json(site_dir / "demo" / "data" / "demo_snapshots.json", errors)
+    if isinstance(data, Mapping):
+        report["demo_count"] = data.get("demo_count")
+        report["demo_data_status"] = "parsed"
+        if data.get("generated_by") != "scripts/generate_static_resolver_demos.py":
+            errors.append("demo/data/demo_snapshots.json: generated_by must be scripts/generate_static_resolver_demos.py.")
+        if data.get("no_live_backend") is not True:
+            errors.append("demo/data/demo_snapshots.json: no_live_backend must be true.")
+        if data.get("no_external_observations") is not True:
+            errors.append("demo/data/demo_snapshots.json: no_external_observations must be true.")
+        if data.get("no_deployment_claim") is not True:
+            errors.append("demo/data/demo_snapshots.json: no_deployment_claim must be true.")
+        if data.get("contains_live_data") is not False:
+            errors.append("demo/data/demo_snapshots.json: contains_live_data must be false.")
+        demos = data.get("demos")
+        if not isinstance(demos, list) or len(demos) < 8:
+            errors.append("demo/data/demo_snapshots.json: demos must contain at least 8 demo entries.")
+        elif any(not isinstance(item, Mapping) for item in demos):
+            errors.append("demo/data/demo_snapshots.json: demos entries must be objects.")
+        else:
+            for demo in demos:
+                if demo.get("status") != "static_demo":
+                    errors.append(f"demo/data/demo_snapshots.json: {demo.get('id')} status must be static_demo.")
+                if demo.get("live_backend_required") is not False:
+                    errors.append(f"demo/data/demo_snapshots.json: {demo.get('id')} live_backend_required must be false.")
+                if demo.get("external_observation_required") is not False:
+                    errors.append(f"demo/data/demo_snapshots.json: {demo.get('id')} external_observation_required must be false.")
+
+    for relative in REQUIRED_DEMO_FILES:
+        if not relative.endswith(".html"):
+            continue
+        path = site_dir / relative
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        parser = LinkParser()
+        parser.feed(text)
+        report["demo_pages"].append(relative)
+        if parser.script_count:
+            errors.append(f"{relative}: demo snapshots must not include JavaScript.")
+        lowered = text.casefold()
+        for phrase in ("static demo snapshot", "fixture-backed", "not live search", "not production"):
+            if phrase not in lowered:
+                errors.append(f"{relative}: missing demo limitation phrase {phrase!r}.")
+        for marker in ("D:\\", "C:\\", "/Users/", "/home/"):
+            if marker in text:
+                errors.append(f"{relative}: private/local filesystem path marker is present.")
+        for link in parser.links:
+            if link.startswith("/"):
+                errors.append(f"{relative}: link must be relative for /eureka/ portability: {link}.")
+            if _is_external_or_fragment(link):
+                continue
+            target = link.split("#", 1)[0]
+            if target and not (path.parent / target).exists():
+                errors.append(f"{relative}: local link does not resolve: {link}.")
     return report
 
 

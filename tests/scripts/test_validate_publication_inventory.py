@@ -31,6 +31,7 @@ class ValidatePublicationInventoryScriptTest(unittest.TestCase):
         self.assertIn("/lite/", payload["reserved_routes"])
         self.assertIn("modern_web", payload["required_client_profiles"])
         self.assertIn("/data/site_manifest.json", payload["required_public_data_paths"])
+        self.assertIn("/demo/data/demo_snapshots.json", payload["required_public_data_paths"])
         self.assertEqual(payload["errors"], [])
 
     def test_validator_reports_missing_status_taxonomy_value(self) -> None:
@@ -108,4 +109,3 @@ class ValidatePublicationInventoryScriptTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

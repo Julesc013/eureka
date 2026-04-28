@@ -1456,6 +1456,50 @@
       "failure_means": "Lite/text/files seed surfaces, no-JS/no-download posture, checksums, or publication inventory profile status regressed.",
       "advisory_or_required": "required",
       "notes": "Added by Lite/Text/Files Seed Surfaces v0; checks static old-browser/text/file-tree surfaces without adding snapshots, relay/native runtime, live backend behavior, or executable downloads."
+    },
+    {
+      "test_id": "static_resolver_demo_snapshots_check",
+      "label": "Static resolver demo snapshots generator check",
+      "command": "python scripts/generate_static_resolver_demos.py --check",
+      "category": "publication",
+      "owner_area": "public_site/demo",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none in check mode",
+      "expected_runtime": "seconds",
+      "failure_means": "Committed static resolver demo snapshots drifted from governed public data summaries or fixture-backed Python-oracle outputs.",
+      "advisory_or_required": "required",
+      "notes": "Added by Static Resolver Demo Snapshots v0; validates static no-JS demo snapshots only and performs no live search, live API calls, backend deployment, or external observation recording."
+    },
+    {
+      "test_id": "static_resolver_demo_snapshot_tests",
+      "label": "Static resolver demo snapshot tests",
+      "command": "python -m unittest tests.operations.test_static_resolver_demo_snapshots tests.scripts.test_generate_static_resolver_demos",
+      "category": "publication",
+      "owner_area": "public_site/demo",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary generated output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Static resolver demo pages, manifest posture, limitation text, no-JS/no-live claims, or publication inventory coverage regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Static Resolver Demo Snapshots v0; checks fixture-backed static demos without adding live search, live API semantics, backend hosting, external observations, snapshots, relay/native runtime, or production behavior."
     }
   ]
 }

@@ -52,7 +52,7 @@ class GeneratedPublicDataSummariesTest(unittest.TestCase):
                 self.assertEqual(by_path[implemented]["status"], "implemented")
                 self.assertTrue(by_path[implemented]["safe_for_static_hosting"])
 
-        for seeded in ("/lite/", "/text/", "/files/"):
+        for seeded in ("/lite/", "/text/", "/files/", "/demo/"):
             with self.subTest(seeded=seeded):
                 self.assertEqual(by_path[seeded]["status"], "static_demo")
                 self.assertTrue(by_path[seeded]["safe_for_static_hosting"])
