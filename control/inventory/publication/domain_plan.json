@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1.0",
+  "plan_id": "eureka-custom-domain-alternate-host-readiness",
+  "status": "planned",
+  "no_domain_configured": true,
+  "no_dns_changes_performed": true,
+  "no_cname_file_committed": true,
+  "custom_domain_status": "future",
+  "github_pages_project_status": "implemented",
+  "custom_domain_static_status": "future",
+  "required_before_custom_domain": [
+    "operator selects and records the intended domain in a later governed task",
+    "domain ownership is verified in the hosting provider outside this repo",
+    "DNS changes are reviewed outside this repo",
+    "static artifact validation passes for public_site",
+    "publication inventory validation passes",
+    "static host readiness validation passes",
+    "root-relative internal link checks pass for /eureka/ and / portability",
+    "no backend, live probe, production, or deployment-success claim is introduced",
+    "rollback and domain removal steps are recorded",
+    "operator signoff is recorded"
+  ],
+  "domain_verification_required": true,
+  "takeover_risk_note": "A custom domain must not be pointed at a static host until ownership verification and host binding are complete. Dangling DNS or removed host bindings can create domain takeover risk.",
+  "base_path_transition": {
+    "from": "/eureka/",
+    "to": "/",
+    "status": "future",
+    "notes": "GitHub Pages project hosting uses /eureka/. A future custom domain or alternate static host may serve the same artifact at /. Static artifacts must keep internal links relative so both base paths remain valid."
+  },
+  "canonical_url_policy": {
+    "current_canonical_base": "https://julesc013.github.io/eureka/",
+    "custom_domain_canonical_base": null,
+    "absolute_public_urls_allowed": false,
+    "reason": "Absolute public URLs can freeze host choice before a domain is configured. Static pages should prefer relative links until a future domain task updates this policy."
+  },
+  "prohibited_claims": [
+    "custom domain configured",
+    "alternate host configured",
+    "DNS records applied",
+    "CNAME committed",
+    "backend deployed",
+    "live probes enabled",
+    "production ready",
+    "public deployment succeeded"
+  ],
+  "created_by_slice": "custom_domain_alternate_host_readiness_v0",
+  "notes": [
+    "This plan prepares host portability only.",
+    "No real domain is configured by this plan.",
+    "No DNS records are added by this plan.",
+    "No public_site/CNAME file is committed by this plan.",
+    "No alternate static host project or provider config is added by this plan.",
+    "The current GitHub Pages project target remains static-only and deployment-success-unverified."
+  ]
+}

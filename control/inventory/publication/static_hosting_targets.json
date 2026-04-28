@@ -1,0 +1,102 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-static-hosting-targets",
+  "status": "planned",
+  "created_by_slice": "custom_domain_alternate_host_readiness_v0",
+  "targets": [
+    {
+      "id": "github_pages_project",
+      "status": "implemented",
+      "kind": "static",
+      "base_path": "/eureka/",
+      "artifact_root": "public_site",
+      "workflow_path": ".github/workflows/pages.yml",
+      "workflow_configured": true,
+      "deployment_success_claimed": false,
+      "backend_supported": false,
+      "live_probes_supported": false,
+      "custom_domain_status": "future",
+      "requires_relative_internal_links": true,
+      "notes": [
+        "Current static GitHub Pages target.",
+        "The workflow uploads public_site only.",
+        "No backend, live probes, custom domain, or deployment-success claim is included."
+      ]
+    },
+    {
+      "id": "github_pages_custom_domain",
+      "status": "future",
+      "kind": "static",
+      "base_path": "/",
+      "artifact_root": "public_site",
+      "requires_domain_verification": true,
+      "requires_cname_or_pages_settings": true,
+      "dns_config_not_in_repo": true,
+      "backend_supported": false,
+      "live_probes_supported": false,
+      "provider_config_committed": false,
+      "notes": [
+        "Future GitHub Pages custom-domain target.",
+        "No CNAME file or Pages custom-domain setting is configured by this slice.",
+        "Domain ownership and DNS must be handled by a later operator task."
+      ]
+    },
+    {
+      "id": "cloudflare_pages_static",
+      "status": "future",
+      "kind": "static",
+      "base_path": "/",
+      "artifact_root": "public_site",
+      "future_artifact_root": "site/dist",
+      "backend_supported_by_this_repo": false,
+      "functions_not_used": true,
+      "live_probes_supported": false,
+      "provider_config_committed": false,
+      "notes": [
+        "Future alternate static-host candidate only.",
+        "No Cloudflare project files, functions, secrets, DNS, or deployment config are added by this repo slice."
+      ]
+    },
+    {
+      "id": "generic_static_host",
+      "status": "future",
+      "kind": "static",
+      "base_path": "/",
+      "artifact_root": "public_site",
+      "future_artifact_root": "site/dist",
+      "backend_supported_by_this_repo": false,
+      "live_probes_supported": false,
+      "provider_config_committed": false,
+      "requirements": [
+        "serve static files from the artifact root",
+        "preserve relative links",
+        "serve JSON and text files as static files",
+        "avoid server-only route assumptions",
+        "avoid requiring secrets or backend processes"
+      ],
+      "notes": [
+        "Future provider-neutral static-host candidate.",
+        "No alternate host is configured by this inventory."
+      ]
+    },
+    {
+      "id": "local_file_preview",
+      "status": "planned",
+      "kind": "static_preview",
+      "base_path": "relative",
+      "artifact_root": "public_site",
+      "backend_supported_by_this_repo": false,
+      "live_probes_supported": false,
+      "provider_config_committed": false,
+      "notes": [
+        "Opening static files locally can preview simple pages, but browser file:// behavior varies.",
+        "Local preview is not public hosting, custom-domain configuration, or production deployment."
+      ]
+    }
+  ],
+  "notes": [
+    "This registry is readiness detail. High-level deployment targets remain in deployment_targets.json.",
+    "All targets except github_pages_project are future or planned and inactive.",
+    "No DNS, CNAME, provider secrets, alternate-host config, backend hosting, or live probes are added here."
+  ]
+}
