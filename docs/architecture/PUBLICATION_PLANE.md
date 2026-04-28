@@ -33,6 +33,14 @@ inspection. `site/build.py` emits matching validation copies into `site/dist/`.
 These files are not live search, executable downloads, snapshots, relay
 behavior, or native-client runtime.
 
+`public_site/demo/` contains Static Resolver Demo Snapshots v0: static no-JS
+examples of query planning, member-level results, compatibility evidence,
+absence, comparison/disagreement, source detail, article/scan fixtures, and
+eval summaries. `site/build.py` emits matching validation copies into
+`site/dist/demo/`. These files are fixture-backed publication examples, not
+live search, a live API, backend hosting, external observations, or production
+behavior.
+
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
 expectations, deployment target semantics, and redirects.
@@ -97,3 +105,9 @@ Lite/Text/Files Seed Surfaces v0 consumes those summaries for static
 compatibility output. Snapshots, relay surfaces, native clients, custom
 domains, and live backend handoff work remain future work after the seed
 surfaces.
+
+Static Resolver Demo Snapshots v0 adds `/demo/` static examples from governed
+data and fixture-backed Python-oracle outputs. They make current behavior easier
+to inspect without creating a live resolver endpoint or API promise. Custom
+domain and alternate-host readiness, live backend handoff, live probe gateway
+contracts, signed snapshots, relays, and native clients remain future work.

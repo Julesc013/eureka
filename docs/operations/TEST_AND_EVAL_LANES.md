@@ -374,6 +374,22 @@ performs no network calls, starts no backend, adds no live search, adds no
 executable downloads, creates no signed snapshot, and adds no relay or native
 runtime behavior.
 
+## Static Resolver Demo Snapshots
+
+Static Resolver Demo Snapshots v0 is validated with:
+
+```bash
+python scripts/generate_static_resolver_demos.py --check
+python scripts/generate_static_resolver_demos.py --json
+python -m unittest tests.operations.test_static_resolver_demo_snapshots tests.scripts.test_generate_static_resolver_demos
+```
+
+The lane checks static no-JS demo pages under `public_site/demo/`, generated
+copies under `site/dist/demo/`, the static demo manifest, relative-link posture,
+fixture-backed limitation text, and publication-inventory coverage. It performs
+no network calls, starts no backend, adds no live search, creates no live API,
+records no external observations, and makes no production-readiness claim.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

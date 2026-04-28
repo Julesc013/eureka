@@ -44,6 +44,9 @@ The minimum public-alpha entry gate should include:
   compatibility seed surfaces under `public_site/lite/`, `public_site/text/`,
   and `public_site/files/`; no live search, snapshots, relay/native runtime,
   executable downloads, or production support claim)
+- Static Resolver Demo Snapshots v0 (implemented as static no-JS
+  fixture-backed resolver examples under `public_site/demo/`; no live search,
+  live API, backend hosting, external observations, or production behavior)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -170,3 +173,11 @@ publish static compatibility seed surfaces under `public_site/lite/`,
 do not host backend behavior, do not enable live probes, do not record external
 observations, do not add executable downloads, and do not create snapshots,
 relay behavior, or native-client runtime.
+
+Static Resolver Demo Snapshots v0 now publishes static fixture-backed examples
+under `public_site/demo/` and generated validation copies under
+`site/dist/demo/`. These examples show current bounded resolver behavior for
+query planning, member-level results, compatibility evidence, absence,
+comparison, source detail, article/scan fixtures, and eval summaries. They do
+not add live search, a live API, external observations, backend hosting, or
+production behavior.

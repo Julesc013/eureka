@@ -22,6 +22,10 @@ Current boundary:
   Lite/Text/Files Seed Surfaces v0 static compatibility artifacts generated
   from the public data summaries. They add no live search, executable
   downloads, snapshots, relay runtime, or native-client runtime behavior.
+- `public_site/demo/` and `site/dist/demo/` contain Static Resolver Demo
+  Snapshots v0 static fixture-backed examples. They add no live search, live
+  API semantics, backend hosting, external observations, or production
+  behavior.
 - `control/inventory/publication/` owns the publication contracts and
   inventories.
 - `.github/workflows/pages.yml` is the static-only GitHub Pages publishing
@@ -34,4 +38,5 @@ python scripts/validate_publication_inventory.py
 python scripts/validate_publication_inventory.py --json
 python scripts/generate_public_data_summaries.py --check
 python scripts/generate_compatibility_surfaces.py --check
+python scripts/generate_static_resolver_demos.py --check
 ```

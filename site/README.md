@@ -11,6 +11,8 @@ Current boundary:
   validation against the current static publication data.
 - `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/` are populated by
   Lite/Text/Files Seed Surfaces v0 for static compatibility validation.
+- `site/dist/demo/` is populated by Static Resolver Demo Snapshots v0 for
+  fixture-backed static resolver demo validation.
 - `public_site/` remains the GitHub Pages deployment artifact for this
   milestone.
 
@@ -32,6 +34,7 @@ The public data generator can also be checked directly:
 ```bash
 python scripts/generate_public_data_summaries.py --check
 python scripts/generate_compatibility_surfaces.py --check
+python scripts/generate_static_resolver_demos.py --check
 ```
 
 Generated output is no-JS static HTML with relative links so it can work under
@@ -44,4 +47,6 @@ so generated output cannot replace the deployable artifact by accident.
 Generated public data and compatibility surfaces remain static only. They do
 not create a live API, enable live probes, record external observations, add
 executable downloads, create snapshots, add relay/native runtime behavior, or
-change deployment behavior.
+change deployment behavior. Static resolver demos under `site/dist/demo/` are
+also static fixture-backed examples only; they add no live search, backend
+hosting, or production behavior.

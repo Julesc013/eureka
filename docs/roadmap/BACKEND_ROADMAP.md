@@ -175,6 +175,12 @@ The repo has already proven:
   manifest/checksum views, and `site/dist/` validation copies from public data
   summaries without adding live search, executable downloads, snapshots,
   relay/native runtime behavior, or production support claims
+- Static Resolver Demo Snapshots v0 as the first static resolver example layer
+  under `public_site/demo/`, with generated `site/dist/demo/` validation copies
+  and a static demo manifest showing query planning, member results,
+  compatibility evidence, absence, comparison, source detail, article/scan
+  results, and eval summaries without live search, live API semantics, backend
+  hosting, external observations, or production behavior
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -224,7 +230,7 @@ The next backend sequence is:
 39. Static Site Generation Migration v0 (implemented; generated output not deployed)
 40. Generated Public Data Summaries v0 (implemented as static JSON summaries)
 41. Lite/Text/Files Seed Surfaces v0 (implemented as static compatibility seed surfaces)
-42. Static Resolver Demo Snapshots v0
+42. Static Resolver Demo Snapshots v0 (implemented as static fixture-backed demos)
 43. Custom Domain / Alternate Host Readiness v0
 44. Live Backend Handoff Contract v0
 45. Live Probe Gateway Contract v0
@@ -237,7 +243,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Static Resolver Demo Snapshots v0
+> Custom Domain / Alternate Host Readiness v0
 
 Why this comes next:
 
@@ -258,8 +264,12 @@ Why this comes next:
   behavior, live probes, executable downloads, snapshots, relay/native runtime,
   provider-neutral backend deployment config, DNS configuration, external
   baseline observations, or production claims.
-- The next step is to add static resolver demo snapshots that show bounded
-  representative resolver outputs without turning static files into a live API.
+- Static Resolver Demo Snapshots v0 now provides static `/demo/` examples from
+  governed data and fixture-backed outputs without turning static files into a
+  live search route, API, backend host, or production claim.
+- The next step is to review custom-domain and alternate-host readiness without
+  configuring DNS, changing deployment behavior, or claiming a public
+  deployment.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.

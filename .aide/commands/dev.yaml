@@ -84,6 +84,12 @@ steps:
     run: python scripts/generate_compatibility_surfaces.py --json
   - id: lite_text_files_surface_tests
     run: python -m unittest tests.operations.test_lite_text_files_surfaces tests.scripts.test_generate_compatibility_surfaces
+  - id: static_resolver_demo_snapshots_check
+    run: python scripts/generate_static_resolver_demos.py --check
+  - id: static_resolver_demo_snapshots_json
+    run: python scripts/generate_static_resolver_demos.py --json
+  - id: static_resolver_demo_snapshots_tests
+    run: python -m unittest tests.operations.test_static_resolver_demo_snapshots tests.scripts.test_generate_static_resolver_demos
   - id: public_alpha_rehearsal_evidence_summary
     run: python scripts/generate_public_alpha_rehearsal_evidence.py
   - id: public_alpha_rehearsal_evidence_json

@@ -42,3 +42,9 @@ surfaces under `public_site/lite/`, `public_site/text/`, and
 No separate AIDE runtime report is needed; those files are publication
 artifacts and do not add live search, downloads, snapshots, relay behavior, or
 native-client runtime.
+
+Static Resolver Demo Snapshots v0 records committed static resolver examples
+under `public_site/demo/`, with generated validation copies under
+`site/dist/demo/`. No separate AIDE runtime report is needed; those files are
+publication artifacts and do not add live search, live API semantics, backend
+hosting, external observations, or production behavior.

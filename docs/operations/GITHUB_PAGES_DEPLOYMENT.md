@@ -97,6 +97,12 @@ are part of the static artifact and are generated from public data summaries.
 They are not live search, executable downloads, signed snapshots, relay
 runtime, or native-client runtime behavior.
 
+Static Resolver Demo Snapshots v0 commits static fixture-backed examples under
+`public_site/demo/`; those files are part of the static artifact and are
+generated from governed public data plus Python-oracle fixture outputs. They
+are not live search, a live API, backend hosting, external observations, or
+production resolver behavior.
+
 Generated `site/dist/` output is not uploaded by this workflow yet. A later
 artifact migration must explicitly prove equivalence and update this document,
 the publication inventory, and the workflow together.

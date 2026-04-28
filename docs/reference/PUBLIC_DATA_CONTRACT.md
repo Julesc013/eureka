@@ -51,6 +51,15 @@ They are produced by `scripts/generate_compatibility_surfaces.py` from
 live data, no external observations, no executable downloads, and no signed
 snapshot guarantee.
 
+Implemented static demo data files include:
+
+- `/demo/data/demo_snapshots.json`
+
+This file is produced by `scripts/generate_static_resolver_demos.py` from
+governed public data summaries and fixture-backed Python-oracle outputs. It is a
+static demo manifest only: no live backend, no live search, no live API, no
+external observations, and no production resolver guarantee.
+
 The current `public_site/site_manifest.json` is an implemented static artifact
 manifest, not the final generated public data layout. Static Site Generation
 Migration v0 also emits a generated `site/dist/site_manifest.json` for

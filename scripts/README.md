@@ -64,11 +64,19 @@ Current scripts:
   performs no network calls, runs no live search or probes, records no external
   observations, adds no executable downloads, and does not create snapshots,
   relay behavior, native-client runtime, or live API semantics
+- `generate_static_resolver_demos.py`: generates, updates, or checks static
+  resolver demo snapshots under `public_site/demo/` by default from generated
+  public data summaries and fixture-backed Python-oracle outputs; it supports
+  `--update`, `--check`, `--output-root`, `--data-root`, and `--json`, performs
+  no network calls, runs no live search or probes, records no external
+  observations, starts no backend, and does not create live API semantics,
+  snapshots, relay behavior, native-client runtime, or production behavior
 - `site/build.py` and `site/validate.py`: build and validate the stdlib-only
   static-site source tree into `site/dist/` for Static Site Generation
   Migration v0; `site/build.py` also emits generated public data summaries into
   `site/dist/data/` and generated lite/text/files seed surfaces into
-  `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`; they keep
+  `site/dist/lite/`, `site/dist/text/`, `site/dist/files/`, and static resolver
+  demo snapshots into `site/dist/demo/`; they keep
   `public_site/` as the deployment artifact and add no Node/npm, frontend
   framework, live backend calls, live probes, external web APIs, downloads, or
   deployment behavior

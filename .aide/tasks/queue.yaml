@@ -195,14 +195,14 @@
     {
       "id": "static_resolver_demo_snapshots_v0",
       "title": "Static Resolver Demo Snapshots v0",
-      "status": "next",
+      "status": "completed",
       "priority": 28,
-      "notes": "Next static publication step: generate representative resolver demo snapshots from governed data and fixture-backed outputs without adding live APIs or snapshot signing yet."
+      "notes": "Added static no-JS fixture-backed resolver demo snapshots under public_site/demo and generated site/dist/demo validation copies without adding live search, live API semantics, backend hosting, external observations, or production behavior."
     },
     {
       "id": "custom_domain_alternate_host_readiness_v0",
       "title": "Custom Domain / Alternate Host Readiness v0",
-      "status": "queued",
+      "status": "next",
       "priority": 29,
       "notes": "Future static-host portability review; no DNS configuration should precede explicit domain verification and takeover-risk review."
     },

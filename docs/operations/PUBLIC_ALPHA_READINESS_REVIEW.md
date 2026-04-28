@@ -145,6 +145,12 @@ summaries only; they do not add live search, executable downloads, signed
 snapshots, relay runtime, native-client runtime, backend hosting, or live
 probes.
 
+Static Resolver Demo Snapshots v0 adds static fixture-backed examples under
+`public_site/demo/`, with generated copies under `site/dist/demo/`. These
+examples consume governed data and Python-oracle fixture outputs only; they do
+not add live search, a live API, backend hosting, external observations, or
+production behavior.
+
 ## Public Alpha Wrapper
 
 LIVE_ALPHA_01 Production Public-Alpha Wrapper adds a provider-neutral stdlib

@@ -16,11 +16,17 @@ to add static compatibility seed surfaces under `public_site/lite/`,
 API, executable downloads, snapshots, relay behavior, native-client runtime, or
 a production contract.
 
+Static Resolver Demo Snapshots v0 adds static no-JS fixture-backed examples
+under `public_site/demo/`. They show current bounded resolver behavior without
+adding live search, a live API, backend hosting, external observations, or a
+production claim.
+
 Validate it with:
 
 ```bash
 python scripts/generate_public_data_summaries.py --check
 python scripts/generate_compatibility_surfaces.py --check
+python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_public_static_site.py
 python scripts/validate_public_static_site.py --json
 python scripts/check_github_pages_static_artifact.py

@@ -31,3 +31,8 @@ Lite/Text/Files Seed Surfaces v0 promotes `/lite/`, `/text/`, and `/files/` to
 `/data/` as a route root, `/api/`, and `/snapshots/` remain reserved route
 families. Their presence in the registry is reservation only, not an
 implementation claim.
+
+Static Resolver Demo Snapshots v0 promotes `/demo/` and the committed
+`/demo/*.html` snapshot pages to `static_demo` routes. These routes are
+fixture-backed static examples only; they are not live search routes, API
+routes, backend hosting, or production resolver claims.

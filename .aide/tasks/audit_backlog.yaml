@@ -190,6 +190,16 @@
       "title": "Seed static compatibility surfaces from public data before snapshots or relay/native clients",
       "status": "addressed_by_lite_text_files_seed_surfaces_v0",
       "suggested_milestone": "Static Resolver Demo Snapshots v0"
+    },
+    {
+      "id": "audit-backlog-static-resolver-demo-snapshots",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Add static resolver demo snapshots before domain readiness or live handoff work",
+      "status": "addressed_by_static_resolver_demo_snapshots_v0",
+      "suggested_milestone": "Custom Domain / Alternate Host Readiness v0"
     }
   ]
 }

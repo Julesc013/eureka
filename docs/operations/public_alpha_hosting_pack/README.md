@@ -48,6 +48,11 @@ from public data summaries. They are not live search, executable downloads,
 signed snapshots, relay runtime, native-client runtime, backend hosting, or
 public-alpha approval.
 
+Static Resolver Demo Snapshots v0 adds static fixture-backed examples under
+`public_site/demo/`, with generated copies under `site/dist/demo/`. They are
+not live search, a live API, backend hosting, external observations, or
+production behavior.
+
 ## What This Pack Is
 
 - an operator-readable packet for rehearsing the constrained `public_alpha`

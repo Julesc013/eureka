@@ -17,6 +17,7 @@ public_site/
   lite/
   text/
   files/
+  demo/
   assets/
 ```
 
@@ -47,6 +48,7 @@ site/dist/
   lite/
   text/
   files/
+  demo/
   assets/
 ```
 
@@ -105,6 +107,27 @@ public_site/files/
 `site/dist/text/`, and `site/dist/files/`. These are static compatibility
 surfaces, not live search, executable downloads, signed snapshots, relay
 behavior, or native-client runtime.
+
+Static Resolver Demo Snapshots v0 adds:
+
+```text
+public_site/demo/
+  index.html
+  query-plan-windows-7-apps.html
+  result-member-driver-inside-support-cd.html
+  result-firefox-xp.html
+  result-article-scan.html
+  absence-example.html
+  comparison-example.html
+  source-example.html
+  eval-summary.html
+  README.txt
+  data/demo_snapshots.json
+```
+
+`site/build.py` emits matching validation copies into `site/dist/demo/`. These
+are static, fixture-backed resolver examples. They are not live search, a live
+API, external observations, backend hosting, or production resolver behavior.
 
 Expected future static data areas:
 

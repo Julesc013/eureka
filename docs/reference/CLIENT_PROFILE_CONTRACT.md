@@ -35,5 +35,8 @@ Required profiles:
 
 Profiles describe consumption contracts. Lite/Text/Files Seed Surfaces v0 now
 implements seed static surfaces for `lite_html`, `text`, and `file_tree`.
-Profiles still do not implement `/app/`, snapshots, relay behavior, native
-clients, or live APIs by themselves.
+Static Resolver Demo Snapshots v0 adds static `/demo/` examples for
+`standard_web` and `lite_html` consumption, but it does not add interactive app,
+snapshot, relay, native-client, or live API behavior. Profiles still do not
+implement `/app/`, snapshots, relay behavior, native clients, or live APIs by
+themselves.
