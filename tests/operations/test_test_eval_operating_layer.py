@@ -27,6 +27,8 @@ class TestTestEvalOperatingLayer(unittest.TestCase):
             "hosting_pack_generator_check",
             "publication_inventory_validator",
             "publication_inventory_tests",
+            "github_pages_static_artifact_checker",
+            "github_pages_deployment_enablement_tests",
             "python_oracle_golden_check",
             "archive_resolution_eval_runner",
             "search_usefulness_audit_runner",

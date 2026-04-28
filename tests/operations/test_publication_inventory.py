@@ -161,7 +161,7 @@ class PublicationInventoryTest(unittest.TestCase):
 
         project = targets["github_pages_project"]
         self.assertEqual(project["kind"], "static")
-        self.assertEqual(project["status"], "planned")
+        self.assertEqual(project["status"], "implemented")
         self.assertEqual(project["artifact_root"], "public_site")
         self.assertEqual(project["base_path"], "/eureka/")
         self.assertEqual(project["canonical_base_url"], "https://julesc013.github.io/eureka/")
@@ -169,6 +169,13 @@ class PublicationInventoryTest(unittest.TestCase):
         self.assertTrue(project["no_backend"])
         self.assertTrue(project["no_live_probes"])
         self.assertTrue(project["no_secrets"])
+        self.assertEqual(project["deployment_workflow_path"], ".github/workflows/pages.yml")
+        self.assertTrue(project["workflow_configured"])
+        self.assertFalse(project["deployment_success_claimed"])
+        self.assertEqual(
+            project["deployment_status"],
+            "workflow_configured_deployment_unverified",
+        )
 
         custom = targets["custom_domain_static"]
         self.assertEqual(custom["status"], "future")
@@ -216,14 +223,15 @@ class PublicationInventoryTest(unittest.TestCase):
         ):
             self.assertIn(phrase, text)
 
-    def test_no_deployment_workflow_or_provider_config_is_added(self) -> None:
+    def test_no_provider_config_or_custom_domain_is_added(self) -> None:
         forbidden_paths = [
-            ".github/workflows/pages.yml",
             "vercel.json",
             "netlify.toml",
             "fly.toml",
             "render.yaml",
             "wrangler.toml",
+            "CNAME",
+            "public_site/CNAME",
         ]
         for relative in forbidden_paths:
             with self.subTest(relative=relative):
@@ -246,4 +254,3 @@ class PublicationInventoryTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
