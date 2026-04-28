@@ -11,7 +11,7 @@ Limitations:
 - Google manual-baseline only
 - no scraping
 - no executable downloads or mirrors
-- no snapshots yet
+- no public /snapshots/ route or production signed snapshots yet
 - no relay or native-client runtime behavior
 - public JSON remains pre-alpha stable_draft, not a production API
 

@@ -1,0 +1,35 @@
+{
+  "artifact_kind": "seed_snapshot_example",
+  "contains_external_observations": false,
+  "contains_live_backend": false,
+  "contains_live_probes": false,
+  "contains_real_binaries": false,
+  "deployment_performed": false,
+  "generated_by": "scripts/generate_static_snapshot.py",
+  "production_signed_release": false,
+  "public_build_manifest": {
+    "branch": "main",
+    "built_at": "UNKNOWN_UNTIL_CI",
+    "commit": "UNKNOWN_UNTIL_CI",
+    "repo": "Julesc013/eureka",
+    "source": "generated_public_data_summaries_v0"
+  },
+  "real_signing_keys_present": false,
+  "schema_version": "0.1.0",
+  "snapshot_contract_id": "eureka-static-snapshot-format",
+  "snapshot_example_root": "snapshots/examples/static_snapshot_v0",
+  "snapshot_format_version": "0.1.0",
+  "source": "signed_snapshot_format_v0",
+  "source_inputs": [
+    "control/inventory/publication/snapshot_contract.json",
+    "public_site/data/source_summary.json",
+    "public_site/data/eval_summary.json",
+    "public_site/data/route_summary.json",
+    "public_site/data/page_registry.json",
+    "public_site/data/build_manifest.json"
+  ],
+  "validations_expected": [
+    "python scripts/generate_static_snapshot.py --check",
+    "python scripts/validate_static_snapshot.py"
+  ]
+}

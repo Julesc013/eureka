@@ -53,7 +53,8 @@ class LiteTextFilesSurfacesTest(unittest.TestCase):
         self.assertIn("not production", index)
         self.assertIn("not live search", index)
         self.assertIn("no executable downloads or mirrors", limitations)
-        self.assertIn("no snapshots yet", limitations)
+        self.assertIn("no public /snapshots/ route", limitations)
+        self.assertIn("production signed snapshots yet", limitations)
 
     def test_files_surface_manifest_and_checksums_are_static_only(self) -> None:
         manifest = json.loads((PUBLIC_SITE / "files" / "manifest.json").read_text(encoding="utf-8"))

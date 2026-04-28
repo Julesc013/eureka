@@ -191,7 +191,7 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         '<li><a href="../files/index.html">Static files surface</a></li>',
         '<li><a href="../demo/index.html">Static resolver demos</a></li>',
         "</ul>",
-        "<p>Compatibility Surface Strategy v0 governs these projections as static views of the same resolver truth. It does not add snapshots, relay, native clients, live API behavior, or runtime product behavior.</p>",
+        "<p>Compatibility Surface Strategy v0 governs these projections as static views of the same resolver truth. Signed Snapshot Format v0 adds a repo seed example only; it does not publish a public /snapshots/ route, production signed snapshots, relay, native clients, live API behavior, or runtime product behavior.</p>",
         "<h2>Current static status</h2>",
         "<ul>",
         f"<li>Source records summarized: {escape(str(source.get('source_count', 'unknown')))}</li>",
@@ -255,7 +255,7 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "<ul>",
         *(f"<li>{escape(str(item))}</li>" for item in limitations),
         "<li>No public executable downloads or mirrors are provided by this seed surface.</li>",
-        "<li>Snapshots, relay behavior, native clients, and live APIs remain future work.</li>",
+        "<li>Public /snapshots/ routes, production signed snapshots, relay behavior, native clients, and live APIs remain future work.</li>",
         "<li>/api/v1 is reserved by contract only and is not a live backend on the static site.</li>",
         "<li>Live Probe Gateway Contract v0 is policy only; Internet Archive live probing remains future and disabled.</li>",
         "<li>Google remains manual-baseline only and is not a live probe source.</li>",
@@ -366,7 +366,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "- Google manual-baseline only",
         "- no scraping",
         "- no executable downloads or mirrors",
-        "- no snapshots yet",
+        "- no public /snapshots/ route or production signed snapshots yet",
         "- no relay or native-client runtime behavior",
         "- public JSON remains pre-alpha stable_draft, not a production API",
         "",
@@ -379,7 +379,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
             "Plain text static files for text browsers, terminals, screen readers, and simple automation.",
             "These files are generated from public_site/data summaries.",
             "No live search, live backend, live probes, external observations, or downloads are added.",
-            "Compatibility Surface Strategy v0 guides future snapshots, relay, and native clients but does not implement them.",
+            "Compatibility Surface Strategy v0 guides future public snapshot routes, relay, and native clients; Signed Snapshot Format v0 adds only a repo seed snapshot example.",
         ],
     )
     return {
@@ -409,6 +409,10 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
         "contains_external_observations": False,
         "contains_executable_downloads": False,
         "downloads_available": False,
+        "snapshot_format_contract": "docs/reference/SNAPSHOT_FORMAT_CONTRACT.md",
+        "snapshot_seed_example": "snapshots/examples/static_snapshot_v0",
+        "production_signed_snapshots_available": False,
+        "real_signing_keys_present": False,
         "checksum_file": "files/SHA256SUMS",
         "public_data_files": [f"data/{name}" for name in PUBLIC_DATA_FILES],
         "files": [
@@ -435,7 +439,8 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
         ],
         "limitations": [
             "Static file-tree seed surface only.",
-            "No executable downloads, mirrors, snapshots, relay runtime, or native-client runtime behavior.",
+            "No executable downloads, mirrors, production signed snapshots, relay runtime, or native-client runtime behavior.",
+            "Signed Snapshot Format v0 defines a repo seed example only under snapshots/examples/static_snapshot_v0.",
             "Future download or snapshot surfaces require rights and security policy first.",
         ],
     }
@@ -444,10 +449,12 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
         "Eureka Files Surface",
         [
             "Static file-tree seed surface.",
-            "No public executable downloads are present in v0.",
+            "No executable downloads are present in v0.",
             "No live backend, live probes, crawling, scraping, or external observations are included.",
             "The /api/v1 route family is reserved for future backend handoff only and is not live.",
             "Live Probe Gateway Contract v0 is policy only; live probes, downloads, and arbitrary URL fetching remain disabled.",
+            "Signed Snapshot Format v0 seed example: snapshots/examples/static_snapshot_v0/ (repo path, not a public /snapshots/ route).",
+            "Production signed snapshots: not available.",
             "",
             "Public data summaries:",
             *(f"- ../data/{name}" for name in PUBLIC_DATA_FILES),
@@ -472,6 +479,7 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "It does not expose a live /api/v1 backend.",
             "It does not expose live probes or Internet Archive live access.",
             "Compatibility Surface Strategy v0 is policy only; snapshots, relay, and native clients remain future.",
+            "Signed Snapshot Format v0 adds a deterministic seed snapshot example under snapshots/examples/static_snapshot_v0, but no production signed release, no real signing keys, no executable downloads, relay service, or native-client runtime.",
         ],
     )
     data_readme = _text_page(
@@ -487,9 +495,11 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
         "Eureka Files Surface",
         [
             "<p>This is a static file-tree seed surface. It contains manifests, checksums, and links to public data summaries.</p>",
-            "<p>No public executable downloads, mirrors, snapshots, live backend calls, or live source probes are provided in v0.</p>",
+            "<p>No executable downloads, public mirrors, production signed snapshots, live backend calls, or live source probes are provided in v0.</p>",
+            "<p>Production signed snapshots are not available.</p>",
             "<p>The reserved /api/v1 route family is contract-only and not live on this static surface.</p>",
             "<p>Live Probe Gateway Contract v0 is policy-only. There are no live probes, no downloads, and no arbitrary URL fetching here.</p>",
+            "<p>Signed Snapshot Format v0 defines a repo seed example at snapshots/examples/static_snapshot_v0/. It is not a public /snapshots/ route, production signed release, or executable download surface.</p>",
             "<ul>",
             '<li><a href="index.txt">index.txt</a></li>',
             '<li><a href="manifest.json">manifest.json</a></li>',

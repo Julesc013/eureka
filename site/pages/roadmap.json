@@ -36,22 +36,74 @@
     {
       "type": "ordered",
       "items": [
-        {"title": "Public Alpha Rehearsal Evidence v0", "text": "implemented as supervised local/static evidence using existing safe-mode checks; no deployment was performed."},
-        {"title": "LIVE_ALPHA_01 Production Public-Alpha Wrapper", "text": "implemented as a localhost-default public-alpha wrapper and config check; no deployment, no live source probes, and no production approval."},
-        {"title": "Public Publication Plane Contracts v0", "text": "implemented as route, data, client profile, deployment target, redirect, and base-path governance before deployment."},
-        {"title": "GitHub Pages Deployment Enablement v0", "text": "implemented as a static-only workflow and artifact check for publishing public_site; deployment success is unverified until GitHub Actions evidence exists."},
-        {"title": "Static Site Generation Migration v0", "text": "implemented as a stdlib-only generator that writes site/dist while public_site remains the deployable artifact."},
-        {"title": "Generated Public Data Summaries v0", "text": "implemented as deterministic static /data summaries from governed inventories and eval/audit sources; no live API, probes, or external observations."},
-        {"title": "Lite/Text/Files Seed Surfaces v0", "text": "implemented as static no-JS/no-download compatibility seed surfaces under lite/, text/, and files/."},
-        {"title": "Static Resolver Demo Snapshots v0", "text": "implemented as fixture-backed static no-JS demo snapshots under demo/; no live search, API, backend hosting, or external observations."},
-        {"title": "Custom Domain / Alternate Host Readiness v0", "text": "implemented as provider-neutral static-host readiness inventory, base-path policy, operator checklist, and validator; no DNS, CNAME, alternate-host deployment, provider config, or backend hosting."},
-        {"title": "Live Backend Handoff Contract v0", "text": "implemented as a contract-only /api/v1 reservation, capability flag, and error-envelope layer; no backend is hosted and /api/v1 is not live."},
-        {"title": "Live Probe Gateway Contract v0", "text": "implemented as disabled-by-default source probe policy, caps, cache/evidence requirements, and operator gates; no probes or network calls."},
-        {"title": "Rust Query Planner Parity Candidate v0", "text": "implemented as an isolated Rust planner candidate against expanded Python-oracle goldens; Python remains the oracle and Rust is not wired into runtime."},
-        {"title": "Compatibility Surface Strategy v0", "text": "implemented as cross-surface strategy, capability matrix, route matrix, and old-client/native/snapshot/relay readiness policy; no new runtime behavior."},
-        {"title": "Signed Snapshot Format v0", "text": "recommended next non-network contract milestone for offline bundle layout, manifests, checksums, and future signatures."},
-        {"title": "Manual Observation Batch 0 Execution", "text": "human-operated external baseline observations for selected query/system slots."},
-        {"title": "Internet Archive Live Probe v0", "text": "future only, after explicit human approval and source-policy review."}
+        {
+          "title": "Public Alpha Rehearsal Evidence v0",
+          "text": "implemented as supervised local/static evidence using existing safe-mode checks; no deployment was performed."
+        },
+        {
+          "title": "LIVE_ALPHA_01 Production Public-Alpha Wrapper",
+          "text": "implemented as a localhost-default public-alpha wrapper and config check; no deployment, no live source probes, and no production approval."
+        },
+        {
+          "title": "Public Publication Plane Contracts v0",
+          "text": "implemented as route, data, client profile, deployment target, redirect, and base-path governance before deployment."
+        },
+        {
+          "title": "GitHub Pages Deployment Enablement v0",
+          "text": "implemented as a static-only workflow and artifact check for publishing public_site; deployment success is unverified until GitHub Actions evidence exists."
+        },
+        {
+          "title": "Static Site Generation Migration v0",
+          "text": "implemented as a stdlib-only generator that writes site/dist while public_site remains the deployable artifact."
+        },
+        {
+          "title": "Generated Public Data Summaries v0",
+          "text": "implemented as deterministic static /data summaries from governed inventories and eval/audit sources; no live API, probes, or external observations."
+        },
+        {
+          "title": "Lite/Text/Files Seed Surfaces v0",
+          "text": "implemented as static no-JS/no-download compatibility seed surfaces under lite/, text/, and files/."
+        },
+        {
+          "title": "Static Resolver Demo Snapshots v0",
+          "text": "implemented as fixture-backed static no-JS demo snapshots under demo/; no live search, API, backend hosting, or external observations."
+        },
+        {
+          "title": "Custom Domain / Alternate Host Readiness v0",
+          "text": "implemented as provider-neutral static-host readiness inventory, base-path policy, operator checklist, and validator; no DNS, CNAME, alternate-host deployment, provider config, or backend hosting."
+        },
+        {
+          "title": "Live Backend Handoff Contract v0",
+          "text": "implemented as a contract-only /api/v1 reservation, capability flag, and error-envelope layer; no backend is hosted and /api/v1 is not live."
+        },
+        {
+          "title": "Live Probe Gateway Contract v0",
+          "text": "implemented as disabled-by-default source probe policy, caps, cache/evidence requirements, and operator gates; no probes or network calls."
+        },
+        {
+          "title": "Rust Query Planner Parity Candidate v0",
+          "text": "implemented as an isolated Rust planner candidate against expanded Python-oracle goldens; Python remains the oracle and Rust is not wired into runtime."
+        },
+        {
+          "title": "Compatibility Surface Strategy v0",
+          "text": "implemented as cross-surface strategy, capability matrix, route matrix, and old-client/native/snapshot/relay readiness policy; no new runtime behavior."
+        },
+        {
+          "title": "Signed Snapshot Format v0",
+          "text": "implemented as a static/offline snapshot format contract, checksum policy, signature-placeholder policy, and deterministic repo seed example under snapshots/examples/static_snapshot_v0; no production signing keys, executable downloads, public /snapshots/ route, relay, or native runtime."
+        },
+        {
+          "title": "Relay Surface Design v0",
+          "text": "recommended next non-network design milestone for future operator-controlled local relay surfaces; no FTP, SMB, WebDAV, proxy, backend, or native runtime is implemented here."
+        },
+        {
+          "title": "Manual Observation Batch 0 Execution",
+          "text": "human-operated external baseline observations for selected query/system slots; remains parallel manual work."
+        },
+        {
+          "title": "Internet Archive Live Probe v0",
+          "text": "future only, after explicit human approval, live probe gateway review, and source-policy review; not queued for unattended implementation."
+        }
       ]
     },
     {

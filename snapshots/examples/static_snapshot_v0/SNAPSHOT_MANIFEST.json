@@ -1,0 +1,86 @@
+{
+  "artifact_kind": "seed_example",
+  "checksum_algorithm": "sha256",
+  "checksum_file": "CHECKSUMS.SHA256",
+  "checksummed_files": [
+    "BUILD_MANIFEST.json",
+    "EVAL_SUMMARY.json",
+    "PAGE_REGISTRY.json",
+    "README_FIRST.txt",
+    "ROUTE_SUMMARY.json",
+    "SIGNATURES.README.txt",
+    "SNAPSHOT_MANIFEST.json",
+    "SOURCE_SUMMARY.json",
+    "data/README.txt",
+    "index.html",
+    "index.txt"
+  ],
+  "contains_external_observations": false,
+  "contains_live_backend": false,
+  "contains_live_probes": false,
+  "contains_real_binaries": false,
+  "created_by_slice": "signed_snapshot_format_v0",
+  "files": [
+    "BUILD_MANIFEST.json",
+    "CHECKSUMS.SHA256",
+    "EVAL_SUMMARY.json",
+    "PAGE_REGISTRY.json",
+    "README_FIRST.txt",
+    "ROUTE_SUMMARY.json",
+    "SIGNATURES.README.txt",
+    "SNAPSHOT_MANIFEST.json",
+    "SOURCE_SUMMARY.json",
+    "data/README.txt",
+    "index.html",
+    "index.txt"
+  ],
+  "generated_by": "scripts/generate_static_snapshot.py",
+  "limitations": [
+    "This is not a production signed release.",
+    "No real signing keys are included.",
+    "No executable downloads or software binaries are included.",
+    "No live backend data, live probe data, or external observations are included.",
+    "The public /snapshots/ route remains future/deferred."
+  ],
+  "production_signed_release": false,
+  "public_data_files": [
+    "SOURCE_SUMMARY.json",
+    "EVAL_SUMMARY.json",
+    "ROUTE_SUMMARY.json",
+    "PAGE_REGISTRY.json",
+    "BUILD_MANIFEST.json"
+  ],
+  "real_signing_keys_present": false,
+  "relationships": {
+    "files_surface": "public_site/files references this seed format but does not publish production snapshots.",
+    "live_backend": "Snapshots are static offline data and are not live backend routes.",
+    "native_client": "Future native clients may consume snapshots after readiness prerequisites are met.",
+    "public_site": "public_site remains the current GitHub Pages static artifact.",
+    "relay": "Future relay surfaces may consume snapshots after separate design and operator policy."
+  },
+  "required_files": [
+    "SNAPSHOT_MANIFEST.json",
+    "BUILD_MANIFEST.json",
+    "SOURCE_SUMMARY.json",
+    "EVAL_SUMMARY.json",
+    "ROUTE_SUMMARY.json",
+    "PAGE_REGISTRY.json",
+    "CHECKSUMS.SHA256",
+    "SIGNATURES.README.txt",
+    "README_FIRST.txt",
+    "index.html",
+    "index.txt"
+  ],
+  "schema_version": "0.1.0",
+  "signature_placeholder": "SIGNATURES.README.txt",
+  "snapshot_format_version": "0.1.0",
+  "snapshot_id": "eureka-static-snapshot-v0-seed",
+  "source_counts": {
+    "archive_eval_tasks": 6,
+    "public_pages": 43,
+    "search_audit_queries": 64,
+    "sources": 9
+  },
+  "stability": "experimental",
+  "status": "static_demo"
+}

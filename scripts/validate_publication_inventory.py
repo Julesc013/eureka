@@ -23,6 +23,7 @@ REQUIRED_FILES = {
     "live_probe_gateway.json",
     "public_data_contract.json",
     "redirects.json",
+    "snapshot_contract.json",
     "static_hosting_targets.json",
     "surface_capabilities.json",
     "surface_route_matrix.json",
@@ -309,6 +310,9 @@ def validate_publication_inventory(
             inventory_dir / "public_data_contract.json", errors, repo_root
         ),
         "redirects.json": _load_json(inventory_dir / "redirects.json", errors, repo_root),
+        "snapshot_contract.json": _load_json(
+            inventory_dir / "snapshot_contract.json", errors, repo_root
+        ),
         "static_hosting_targets.json": _load_json(
             inventory_dir / "static_hosting_targets.json", errors, repo_root
         ),
@@ -332,6 +336,7 @@ def validate_publication_inventory(
     _validate_live_probe_gateway(payloads["live_probe_gateway.json"], errors)
     _validate_public_data_contract(payloads["public_data_contract.json"], site_dir, errors)
     _validate_redirects(payloads["redirects.json"], errors)
+    _validate_snapshot_contract(payloads["snapshot_contract.json"], errors)
     _validate_static_hosting_targets(payloads["static_hosting_targets.json"], errors)
     _validate_surface_capabilities(payloads["surface_capabilities.json"], errors)
     _validate_claim_traceability_doc(repo_root, errors)
@@ -353,6 +358,7 @@ def validate_publication_inventory(
         "live_backend_handoff_checked": "live_backend_handoff.json" in existing_files,
         "live_backend_routes_checked": "live_backend_routes.json" in existing_files,
         "live_probe_gateway_checked": "live_probe_gateway.json" in existing_files,
+        "snapshot_contract_checked": "snapshot_contract.json" in existing_files,
         "static_hosting_targets_checked": "static_hosting_targets.json" in existing_files,
         "surface_capabilities_checked": "surface_capabilities.json" in existing_files,
         "surface_route_matrix_checked": "surface_route_matrix.json" in existing_files,
@@ -921,6 +927,68 @@ def _validate_redirects(payload: Any, errors: list[str]) -> None:
         errors.append("redirects.json: redirects must start as an empty list.")
     if payload.get("supports_server_side_redirects") is not False:
         errors.append("redirects.json: supports_server_side_redirects must be false.")
+
+
+def _validate_snapshot_contract(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("snapshot_contract.json: must be a JSON object.")
+        return
+    required = {
+        "schema_version",
+        "snapshot_contract_id",
+        "status",
+        "stability",
+        "snapshot_format_version",
+        "production_signed_release",
+        "real_signing_keys_present",
+        "contains_real_binaries",
+        "contains_live_backend",
+        "contains_live_probes",
+        "contains_external_observations",
+        "required_files",
+        "checksum_policy",
+        "signature_policy",
+        "public_data_included",
+        "client_profiles",
+        "prohibited_contents",
+    }
+    missing = sorted(required - set(payload))
+    if missing:
+        errors.append(f"snapshot_contract.json: missing fields {missing}.")
+    if payload.get("schema_version") != "0.1.0":
+        errors.append("snapshot_contract.json: schema_version must be 0.1.0.")
+    if payload.get("snapshot_format_version") != "0.1.0":
+        errors.append("snapshot_contract.json: snapshot_format_version must be 0.1.0.")
+    for flag in (
+        "production_signed_release",
+        "real_signing_keys_present",
+        "contains_real_binaries",
+        "contains_live_backend",
+        "contains_live_probes",
+        "contains_external_observations",
+    ):
+        if payload.get(flag) is not False:
+            errors.append(f"snapshot_contract.json: {flag} must be false.")
+    required_files = set(_string_list(payload.get("required_files")))
+    for required_file in (
+        "SNAPSHOT_MANIFEST.json",
+        "BUILD_MANIFEST.json",
+        "CHECKSUMS.SHA256",
+        "SIGNATURES.README.txt",
+        "README_FIRST.txt",
+        "index.html",
+        "index.txt",
+    ):
+        if required_file not in required_files:
+            errors.append(f"snapshot_contract.json: required_files missing {required_file}.")
+    signature = payload.get("signature_policy")
+    if isinstance(signature, Mapping):
+        if signature.get("status") != "placeholder_only":
+            errors.append("snapshot_contract.json: signature_policy.status must be placeholder_only.")
+        if signature.get("real_private_keys_allowed_in_repo") is not False:
+            errors.append("snapshot_contract.json: signature_policy must disallow private keys.")
+    else:
+        errors.append("snapshot_contract.json: signature_policy must be an object.")
 
 
 def _validate_static_hosting_targets(payload: Any, errors: list[str]) -> None:

@@ -39,6 +39,10 @@
     "no custom domain configured",
     "no DNS changes performed",
     "no CNAME file committed",
+    "no public /snapshots/ route",
+    "no production signed snapshots",
+    "no real signing keys",
+    "no executable downloads",
     "no scraping",
     "manual external baselines remain pending",
     "fixture-backed evidence is not global truth"
@@ -49,7 +53,7 @@
   "live_probe_gateway_contract_only": true,
   "live_probe_gateway_source": "control/inventory/publication/live_probe_gateway.json",
   "live_probes_enabled": false,
-  "next_milestone": "Signed Snapshot Format v0",
+  "next_milestone": "Relay Surface Design v0",
   "no_backend": true,
   "no_cname_file_committed": true,
   "no_custom_domain_configured": true,
@@ -69,6 +73,7 @@
     "local-quickstart.html"
   ],
   "parallel_human_work": "Manual Observation Batch 0 Execution",
+  "production_signed_snapshots_available": false,
   "prohibited_claims": [
     "production ready",
     "live Google search",
@@ -87,7 +92,9 @@
     "data/build_manifest.json"
   ],
   "public_data_source": "scripts/generate_public_data_summaries.py",
+  "public_snapshots_route_enabled": false,
   "publication_contract_source": "control/inventory/publication/publication_contract.json",
+  "real_signing_keys_present": false,
   "required_claims": [
     "Python reference backend prototype",
     "not production",
@@ -96,6 +103,9 @@
     "placeholders remain placeholders"
   ],
   "site_pack_id": "live_alpha_static_public_site_pack_v0",
+  "snapshot_contract_source": "control/inventory/publication/snapshot_contract.json",
+  "snapshot_public_route_enabled": false,
+  "snapshot_seed_example_root": "snapshots/examples/static_snapshot_v0",
   "source_matrix_source": "control/inventory/sources/*.source.json",
   "source_root": "site",
   "static_hosting_targets_source": "control/inventory/publication/static_hosting_targets.json",

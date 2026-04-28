@@ -15,6 +15,7 @@ REQUIRED_JSON_FILES = {
     "deployment_targets.json",
     "public_data_contract.json",
     "redirects.json",
+    "snapshot_contract.json",
 }
 REQUIRED_STATUS_VALUES = {
     "implemented",
@@ -127,6 +128,10 @@ class PublicationInventoryTest(unittest.TestCase):
         self.assertEqual(contract["future_generated_artifact"], "site/dist")
         self.assertEqual(contract["generator_status"], "implemented")
         self.assertFalse(contract["generated_artifact_deployed"])
+        self.assertEqual(contract["snapshot_format_contract_status"], "implemented")
+        self.assertEqual(contract["snapshot_contract"], "control/inventory/publication/snapshot_contract.json")
+        self.assertEqual(contract["snapshot_seed_example_root"], "snapshots/examples/static_snapshot_v0")
+        self.assertIsNone(contract["snapshot_seed_example_public_route"])
         self.assertEqual(contract["deploy_artifact_current"], "public_site")
         self.assertEqual(contract["base_path_policy"], "deployment_target_defined")
         self.assertTrue(contract["no_live_backend"])
@@ -243,6 +248,31 @@ class PublicationInventoryTest(unittest.TestCase):
         backend = targets["hosted_public_alpha_backend"]
         self.assertEqual(backend["status"], "future")
         self.assertTrue(backend["no_live_probes_by_default"])
+
+    def test_snapshot_contract_records_seed_only_posture(self) -> None:
+        payload = load_json("snapshot_contract.json")
+
+        self.assertEqual(payload["schema_version"], "0.1.0")
+        self.assertEqual(payload["snapshot_format_version"], "0.1.0")
+        self.assertEqual(payload["status"], "planned")
+        self.assertFalse(payload["production_signed_release"])
+        self.assertFalse(payload["real_signing_keys_present"])
+        self.assertFalse(payload["contains_real_binaries"])
+        self.assertFalse(payload["contains_live_backend"])
+        self.assertFalse(payload["contains_live_probes"])
+        self.assertFalse(payload["contains_external_observations"])
+        for required in (
+            "SNAPSHOT_MANIFEST.json",
+            "BUILD_MANIFEST.json",
+            "CHECKSUMS.SHA256",
+            "SIGNATURES.README.txt",
+            "README_FIRST.txt",
+            "index.html",
+            "index.txt",
+        ):
+            self.assertIn(required, payload["required_files"])
+        self.assertEqual(payload["signature_policy"]["status"], "placeholder_only")
+        self.assertFalse(payload["signature_policy"]["real_private_keys_allowed_in_repo"])
 
     def test_public_data_contract_includes_required_files(self) -> None:
         payload = load_json("public_data_contract.json")

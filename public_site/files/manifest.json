@@ -20,13 +20,15 @@
   "generated_by": "scripts/generate_compatibility_surfaces.py",
   "limitations": [
     "Static file-tree seed surface only.",
-    "No executable downloads, mirrors, snapshots, relay runtime, or native-client runtime behavior.",
+    "No executable downloads, mirrors, production signed snapshots, relay runtime, or native-client runtime behavior.",
+    "Signed Snapshot Format v0 defines a repo seed example only under snapshots/examples/static_snapshot_v0.",
     "Future download or snapshot surfaces require rights and security policy first."
   ],
   "manual_external_baselines": {
     "global_observed_count": 0,
     "global_pending_count": 192
   },
+  "production_signed_snapshots_available": false,
   "public_data_files": [
     "data/site_manifest.json",
     "data/page_registry.json",
@@ -35,7 +37,10 @@
     "data/route_summary.json",
     "data/build_manifest.json"
   ],
+  "real_signing_keys_present": false,
   "schema_version": "0.1.0",
+  "snapshot_format_contract": "docs/reference/SNAPSHOT_FORMAT_CONTRACT.md",
+  "snapshot_seed_example": "snapshots/examples/static_snapshot_v0",
   "source_inputs": [
     "public_site/data/site_manifest.json",
     "public_site/data/page_registry.json",

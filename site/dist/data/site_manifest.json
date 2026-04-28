@@ -60,7 +60,8 @@
     "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
     "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
     "Google remains manual-baseline only and is not a live probe source.",
-    "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred."
+    "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
+    "Signed Snapshot Format v0 is a contract and seed example only; real signing keys, production signatures, executable downloads, public /snapshots/ route, relay behavior, native-client runtime, live backend behavior, and live probes remain absent."
   ],
   "live_backend_handoff": {
     "auth_policy_status": "unresolved",
@@ -910,6 +911,16 @@
   "publication_contract_id": "eureka-publication-plane",
   "publication_contract_version": "0.1.0",
   "schema_version": "0.1.0",
+  "snapshot_format": {
+    "contains_real_binaries": false,
+    "production_signed_release": false,
+    "public_snapshots_route_status": "future_deferred",
+    "real_signing_keys_present": false,
+    "seed_example_root": "snapshots/examples/static_snapshot_v0",
+    "snapshot_contract_id": "eureka-static-snapshot-format",
+    "snapshot_format_version": "0.1.0",
+    "status": "implemented_contract_seed_example"
+  },
   "source_inputs": [
     "control/inventory/publication/publication_contract.json",
     "control/inventory/publication/page_registry.json",
@@ -919,6 +930,7 @@
     "control/inventory/publication/live_backend_routes.json",
     "control/inventory/publication/live_probe_gateway.json",
     "control/inventory/publication/public_data_contract.json",
+    "control/inventory/publication/snapshot_contract.json",
     "control/inventory/publication/static_hosting_targets.json",
     "control/inventory/publication/surface_capabilities.json",
     "control/inventory/publication/surface_route_matrix.json"

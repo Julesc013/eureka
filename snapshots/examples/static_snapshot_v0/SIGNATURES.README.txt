@@ -1,0 +1,12 @@
+Snapshot Signature Placeholder
+==============================
+
+No production signing is performed for Signed Snapshot Format v0.
+No private keys are stored in this repository.
+No production trust chain exists for this seed example.
+This file is documentation only; it is not a detached signature.
+
+CHECKSUMS.SHA256 can detect accidental corruption or generator drift.
+Checksums obtained from the same untrusted channel are not full authenticity proof.
+
+Future real signatures require key management, release provenance, revocation, rotation, and operator signoff.

@@ -1,0 +1,24 @@
+Eureka Static Snapshot v0
+=========================
+
+Format: 0.1.0
+Status: seed example, not production
+Signing: placeholder documentation only
+Private keys: none
+Executable downloads: none
+Live backend: none
+Live probes: none
+External observations: none
+
+Source records summarized: 9
+Public-alpha routes summarized: 89
+
+Files:
+- SNAPSHOT_MANIFEST.json
+- BUILD_MANIFEST.json
+- SOURCE_SUMMARY.json
+- EVAL_SUMMARY.json
+- ROUTE_SUMMARY.json
+- PAGE_REGISTRY.json
+- CHECKSUMS.SHA256
+- SIGNATURES.README.txt

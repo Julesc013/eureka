@@ -93,6 +93,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     live_backend_routes = _load_json(PUBLICATION_DIR / "live_backend_routes.json")
     live_probe_gateway = _load_json(PUBLICATION_DIR / "live_probe_gateway.json")
     public_data_contract = _load_json(PUBLICATION_DIR / "public_data_contract.json")
+    snapshot_contract = _load_json(PUBLICATION_DIR / "snapshot_contract.json")
     static_hosting_targets = _load_json(PUBLICATION_DIR / "static_hosting_targets.json")
     surface_capabilities = _load_json(PUBLICATION_DIR / "surface_capabilities.json")
     source_records = _load_source_records()
@@ -112,6 +113,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
         live_backend_routes,
         live_probe_gateway,
         public_data_contract,
+        snapshot_contract,
         static_hosting_targets,
         surface_capabilities,
     )
@@ -181,6 +183,7 @@ def _build_data_site_manifest(
     live_backend_routes: Mapping[str, Any],
     live_probe_gateway: Mapping[str, Any],
     public_data_contract: Mapping[str, Any],
+    snapshot_contract: Mapping[str, Any],
     static_hosting_targets: Mapping[str, Any],
     surface_capabilities: Mapping[str, Any],
 ) -> dict[str, Any]:
@@ -311,6 +314,20 @@ def _build_data_site_manifest(
             "candidate_sources": live_probe_candidates,
             "manual_only_sources": live_probe_gateway.get("manual_only_sources", []),
         },
+        "snapshot_format": {
+            "status": "implemented_contract_seed_example",
+            "snapshot_contract_id": snapshot_contract.get("snapshot_contract_id"),
+            "snapshot_format_version": snapshot_contract.get("snapshot_format_version"),
+            "production_signed_release": snapshot_contract.get("production_signed_release"),
+            "real_signing_keys_present": snapshot_contract.get("real_signing_keys_present"),
+            "contains_real_binaries": snapshot_contract.get("contains_real_binaries"),
+            "seed_example_root": _mapping(snapshot_contract.get("file_tree_policy")).get(
+                "snapshot_example_root"
+            ),
+            "public_snapshots_route_status": _mapping(snapshot_contract.get("file_tree_policy")).get(
+                "public_snapshots_route_status"
+            ),
+        },
         "surface_capabilities": capabilities,
         "base_path_targets": base_paths,
         "contains_live_backend": False,
@@ -327,6 +344,7 @@ def _build_data_site_manifest(
             "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
             "Google remains manual-baseline only and is not a live probe source.",
             "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
+            "Signed Snapshot Format v0 is a contract and seed example only; real signing keys, production signatures, executable downloads, public /snapshots/ route, relay behavior, native-client runtime, live backend behavior, and live probes remain absent.",
         ],
         "source_inputs": [
             "control/inventory/publication/publication_contract.json",
@@ -337,6 +355,7 @@ def _build_data_site_manifest(
             "control/inventory/publication/live_backend_routes.json",
             "control/inventory/publication/live_probe_gateway.json",
             "control/inventory/publication/public_data_contract.json",
+            "control/inventory/publication/snapshot_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
             "control/inventory/publication/surface_capabilities.json",
             "control/inventory/publication/surface_route_matrix.json",
@@ -598,6 +617,8 @@ def _build_build_manifest(public_data_contract: Mapping[str, Any]) -> dict[str, 
             "python scripts/validate_static_host_readiness.py",
             "python scripts/validate_live_backend_handoff.py",
             "python scripts/validate_live_probe_gateway.py",
+            "python scripts/generate_static_snapshot.py --check",
+            "python scripts/validate_static_snapshot.py",
         ],
         "source_inputs": [
             "control/inventory/publication/public_data_contract.json",
@@ -607,6 +628,7 @@ def _build_build_manifest(public_data_contract: Mapping[str, Any]) -> dict[str, 
             "control/inventory/publication/live_backend_handoff.json",
             "control/inventory/publication/live_backend_routes.json",
             "control/inventory/publication/live_probe_gateway.json",
+            "control/inventory/publication/snapshot_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
             "control/inventory/publication/surface_capabilities.json",
             "control/inventory/publication/surface_route_matrix.json",

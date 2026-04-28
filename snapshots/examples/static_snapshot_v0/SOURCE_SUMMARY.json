@@ -1,0 +1,366 @@
+{
+  "contains_external_observations": false,
+  "contains_live_data": false,
+  "contains_live_probes": false,
+  "generated_by": "scripts/generate_public_data_summaries.py",
+  "limitations": [
+    "Source records are governed inventory summaries, not live source health checks.",
+    "Placeholder sources are planning records and do not imply implemented connectors.",
+    "Private local filesystem paths are not exposed in this public summary."
+  ],
+  "schema_version": "0.1.0",
+  "source_count": 9,
+  "source_inputs": [
+    "control/inventory/sources/*.source.json"
+  ],
+  "sources": [
+    {
+      "capabilities": {
+        "supported": [
+          "fixture_backed",
+          "live_deferred",
+          "recorded_fixture_backed",
+          "supports_content_text",
+          "supports_file_listing",
+          "supports_hashes",
+          "supports_item_metadata",
+          "supports_member_listing",
+          "supports_search"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": true,
+        "supports_file_listing": true,
+        "supports_hashes": true,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": true,
+        "supports_search": true
+      },
+      "coverage_depth": "content_or_member_indexed",
+      "family": "article_scan_recorded",
+      "fixture_backed": true,
+      "future_marker": false,
+      "label": "Article Scan Recorded Fixtures",
+      "limitations": [
+        "Recorded fixture scope only",
+        "No real magazine scans",
+        "No copyrighted article text",
+        "No OCR engine",
+        "No PDF or image parsing",
+        "No live source access"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Use this fixture to validate bounded article/page result-shape checks before considering any broader scan/article source strategy.",
+      "placeholder": false,
+      "posture": "recorded_fixture_backed_no_live_probe",
+      "recorded_fixture_backed": true,
+      "source_id": "article-scan-recorded-fixtures",
+      "status": "active_recorded_fixture"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "live_deferred",
+          "recorded_fixture_backed",
+          "supports_action_paths",
+          "supports_file_listing",
+          "supports_hashes",
+          "supports_item_metadata",
+          "supports_search"
+        ],
+        "supports_action_paths": true,
+        "supports_content_text": false,
+        "supports_file_listing": true,
+        "supports_hashes": true,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": true
+      },
+      "coverage_depth": "representation_indexed",
+      "family": "github_releases",
+      "fixture_backed": false,
+      "future_marker": false,
+      "label": "GitHub Releases Recorded Fixtures",
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live GitHub API access",
+        "No source archive member extraction",
+        "No reviews, discussion, or issue coverage"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Add more recorded source families before considering any live GitHub connector behavior.",
+      "placeholder": false,
+      "posture": "recorded_fixture_backed_no_live_probe",
+      "recorded_fixture_backed": true,
+      "source_id": "github-releases-recorded-fixtures",
+      "status": "active_recorded_fixture"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "live_deferred"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": false,
+        "supports_file_listing": false,
+        "supports_hashes": false,
+        "supports_item_metadata": false,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": false
+      },
+      "coverage_depth": "source_known",
+      "family": "internet_archive",
+      "fixture_backed": false,
+      "future_marker": true,
+      "label": "Internet Archive",
+      "limitations": [
+        "No recorded Internet Archive fixtures",
+        "No item-file listing",
+        "No metadata search",
+        "No live Internet Archive API calls"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Add recorded metadata and item-file fixtures for a small governed Internet Archive slice.",
+      "placeholder": true,
+      "posture": "placeholder_not_implemented",
+      "recorded_fixture_backed": false,
+      "source_id": "internet-archive-placeholder",
+      "status": "placeholder"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "fixture_backed",
+          "live_deferred",
+          "recorded_fixture_backed",
+          "supports_file_listing",
+          "supports_hashes",
+          "supports_item_metadata",
+          "supports_search"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": false,
+        "supports_file_listing": true,
+        "supports_hashes": true,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": true
+      },
+      "coverage_depth": "representation_indexed",
+      "family": "internet_archive_recorded",
+      "fixture_backed": true,
+      "future_marker": false,
+      "label": "Internet Archive Recorded Fixtures",
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live Internet Archive API access",
+        "No scraping or crawling",
+        "No item payload fetch",
+        "No OCR/full-text source coverage"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Expand recorded metadata and item-file fixtures before considering any live Internet Archive connector behavior.",
+      "placeholder": false,
+      "posture": "recorded_fixture_backed_no_live_probe",
+      "recorded_fixture_backed": true,
+      "source_id": "internet-archive-recorded-fixtures",
+      "status": "active_recorded_fixture"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "fixture_backed",
+          "supports_action_paths",
+          "supports_content_text",
+          "supports_file_listing",
+          "supports_hashes",
+          "supports_item_metadata",
+          "supports_member_listing",
+          "supports_search"
+        ],
+        "supports_action_paths": true,
+        "supports_content_text": true,
+        "supports_file_listing": true,
+        "supports_hashes": true,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": true,
+        "supports_search": true
+      },
+      "coverage_depth": "action_indexed",
+      "family": "local_bundle_fixtures",
+      "fixture_backed": true,
+      "future_marker": false,
+      "label": "Local Bundle Fixtures",
+      "limitations": [
+        "Committed fixture scope only",
+        "No arbitrary user filesystem ingestion",
+        "No public-alpha local path access",
+        "No live source probing"
+      ],
+      "live_deferred": false,
+      "live_supported": false,
+      "next_step": "Use the expanded fixtures as the control corpus for follow-up audit deltas, compatibility evidence expansion, and future old-platform source coverage work.",
+      "placeholder": false,
+      "posture": "fixture_backed_no_live_probe",
+      "recorded_fixture_backed": false,
+      "source_id": "local-bundle-fixtures",
+      "status": "active_fixture"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "live_deferred",
+          "local_private"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": false,
+        "supports_file_listing": false,
+        "supports_hashes": false,
+        "supports_item_metadata": false,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": false
+      },
+      "coverage_depth": "source_known",
+      "family": "local_files",
+      "fixture_backed": false,
+      "future_marker": true,
+      "label": "Local Files",
+      "limitations": [
+        "No implemented local-files ingestion connector",
+        "No public-alpha arbitrary local path access",
+        "No local bundle fixture corpus yet"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Add a governed local bundle fixture corpus before any private local-files workflow.",
+      "placeholder": false,
+      "posture": "future_local_private_not_ingested",
+      "recorded_fixture_backed": false,
+      "source_id": "local-files-placeholder",
+      "status": "local_private_future"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "live_deferred"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": false,
+        "supports_file_listing": false,
+        "supports_hashes": false,
+        "supports_item_metadata": false,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": false
+      },
+      "coverage_depth": "source_known",
+      "family": "software_heritage",
+      "fixture_backed": false,
+      "future_marker": true,
+      "label": "Software Heritage",
+      "limitations": [
+        "No recorded Software Heritage fixtures",
+        "No SWHID lookup",
+        "No source tree member indexing",
+        "No live Software Heritage API calls"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Add recorded source snapshot fixtures and provenance examples before any connector behavior.",
+      "placeholder": true,
+      "posture": "placeholder_not_implemented",
+      "recorded_fixture_backed": false,
+      "source_id": "software-heritage-placeholder",
+      "status": "placeholder"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "fixture_backed",
+          "supports_action_paths",
+          "supports_content_text",
+          "supports_file_listing",
+          "supports_hashes",
+          "supports_item_metadata",
+          "supports_member_listing",
+          "supports_search"
+        ],
+        "supports_action_paths": true,
+        "supports_content_text": true,
+        "supports_file_listing": true,
+        "supports_hashes": true,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": true,
+        "supports_search": true
+      },
+      "coverage_depth": "action_indexed",
+      "family": "synthetic",
+      "fixture_backed": true,
+      "future_marker": false,
+      "label": "Synthetic Fixtures",
+      "limitations": [
+        "Synthetic fixture scope only",
+        "No real-world source coverage",
+        "No live network acquisition"
+      ],
+      "live_deferred": false,
+      "live_supported": false,
+      "next_step": "Use this as a deterministic fixture control while recorded real-source coverage is added separately.",
+      "placeholder": false,
+      "posture": "fixture_backed_no_live_probe",
+      "recorded_fixture_backed": false,
+      "source_id": "synthetic-fixtures",
+      "status": "active_fixture"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "live_deferred"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": false,
+        "supports_file_listing": false,
+        "supports_hashes": false,
+        "supports_item_metadata": false,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": false
+      },
+      "coverage_depth": "source_known",
+      "family": "wayback_memento",
+      "fixture_backed": false,
+      "future_marker": true,
+      "label": "Wayback / Memento",
+      "limitations": [
+        "No recorded capture fixtures",
+        "No replay or memento expansion",
+        "No live capture probing",
+        "No WARC/WACZ member indexing"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Add recorded temporal capture metadata fixtures before any live probing is considered.",
+      "placeholder": true,
+      "posture": "placeholder_not_implemented",
+      "recorded_fixture_backed": false,
+      "source_id": "wayback-memento-placeholder",
+      "status": "placeholder"
+    }
+  ],
+  "status_counts": {
+    "active_fixture": 2,
+    "active_recorded_fixture": 3,
+    "local_private_future": 1,
+    "placeholder": 3
+  }
+}
