@@ -44,7 +44,8 @@
         {"title": "Generated Public Data Summaries v0", "text": "implemented as deterministic static /data summaries from governed inventories and eval/audit sources; no live API, probes, or external observations."},
         {"title": "Lite/Text/Files Seed Surfaces v0", "text": "implemented as static no-JS/no-download compatibility seed surfaces under lite/, text/, and files/."},
         {"title": "Static Resolver Demo Snapshots v0", "text": "implemented as fixture-backed static no-JS demo snapshots under demo/; no live search, API, backend hosting, or external observations."},
-        {"title": "Custom Domain / Alternate Host Readiness v0", "text": "next provider-neutral readiness check for static hosting alternatives; no DNS change here."},
+        {"title": "Custom Domain / Alternate Host Readiness v0", "text": "implemented as provider-neutral static-host readiness inventory, base-path policy, operator checklist, and validator; no DNS, CNAME, alternate-host deployment, provider config, or backend hosting."},
+        {"title": "Live Backend Handoff Contract v0", "text": "next contract for future status/search/query-plan/source/evidence handoff routes before any hosted backend claim."},
         {"title": "Live Probe Gateway Contract", "text": "later contract and abuse-control design before any live probing."},
         {"title": "Manual Observation Batch 0 Execution", "text": "human-operated external baseline observations for selected query/system slots."},
         {"title": "Rust Query Planner Parity Candidate v0", "text": "parity catch-up when Python behavior is stable enough."}

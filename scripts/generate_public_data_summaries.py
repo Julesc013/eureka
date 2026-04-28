@@ -88,7 +88,9 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     publication_contract = _load_json(PUBLICATION_DIR / "publication_contract.json")
     page_registry = _load_json(PUBLICATION_DIR / "page_registry.json")
     deployment_targets = _load_json(PUBLICATION_DIR / "deployment_targets.json")
+    domain_plan = _load_json(PUBLICATION_DIR / "domain_plan.json")
     public_data_contract = _load_json(PUBLICATION_DIR / "public_data_contract.json")
+    static_hosting_targets = _load_json(PUBLICATION_DIR / "static_hosting_targets.json")
     source_records = _load_source_records()
     route_inventory = _load_json(PUBLIC_ALPHA_ROUTES)
 
@@ -101,7 +103,9 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
         publication_contract,
         page_registry_summary,
         deployment_targets,
+        domain_plan,
         public_data_contract,
+        static_hosting_targets,
     )
 
     return {
@@ -164,7 +168,9 @@ def _build_data_site_manifest(
     publication_contract: Mapping[str, Any],
     page_registry_summary: Mapping[str, Any],
     deployment_targets: Mapping[str, Any],
+    domain_plan: Mapping[str, Any],
     public_data_contract: Mapping[str, Any],
+    static_hosting_targets: Mapping[str, Any],
 ) -> dict[str, Any]:
     targets = [
         {
@@ -192,6 +198,19 @@ def _build_data_site_manifest(
         for entry in public_data_contract.get("entries", [])
         if isinstance(entry, Mapping) and str(entry.get("path", "")).startswith("/data/")
     ]
+    host_targets = [
+        {
+            "id": target.get("id"),
+            "status": target.get("status"),
+            "base_path": target.get("base_path"),
+            "artifact_root": target.get("artifact_root"),
+            "backend_supported": target.get("backend_supported", target.get("backend_supported_by_this_repo", False)),
+            "live_probes_supported": target.get("live_probes_supported", False),
+            "provider_config_committed": target.get("provider_config_committed", False),
+        }
+        for target in static_hosting_targets.get("targets", [])
+        if isinstance(target, Mapping)
+    ]
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_by": GENERATED_BY,
@@ -202,6 +221,17 @@ def _build_data_site_manifest(
         "pages": page_registry_summary.get("pages", []),
         "public_data_files": sorted(public_data_files),
         "deployment_targets": targets,
+        "static_hosting_targets": host_targets,
+        "custom_domain_readiness": {
+            "status": "implemented",
+            "plan_id": domain_plan.get("plan_id"),
+            "no_domain_configured": domain_plan.get("no_domain_configured"),
+            "no_dns_changes_performed": domain_plan.get("no_dns_changes_performed"),
+            "no_cname_file_committed": domain_plan.get("no_cname_file_committed"),
+            "custom_domain_status": domain_plan.get("custom_domain_status"),
+            "custom_domain_static_status": domain_plan.get("custom_domain_static_status"),
+            "domain_verification_required": domain_plan.get("domain_verification_required"),
+        },
         "base_path_targets": base_paths,
         "contains_live_backend": False,
         "contains_live_probes": False,
@@ -212,12 +242,15 @@ def _build_data_site_manifest(
             "No live backend or live source probes are represented.",
             "Manual external baselines remain pending unless human observations are recorded later.",
             "Public JSON is stable_draft for pre-alpha clients, not a production API promise.",
+            "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.",
         ],
         "source_inputs": [
             "control/inventory/publication/publication_contract.json",
             "control/inventory/publication/page_registry.json",
             "control/inventory/publication/deployment_targets.json",
+            "control/inventory/publication/domain_plan.json",
             "control/inventory/publication/public_data_contract.json",
+            "control/inventory/publication/static_hosting_targets.json",
         ],
     }
 
@@ -473,11 +506,14 @@ def _build_build_manifest(public_data_contract: Mapping[str, Any]) -> dict[str, 
             "python scripts/validate_public_static_site.py",
             "python scripts/validate_publication_inventory.py",
             "python scripts/check_github_pages_static_artifact.py",
+            "python scripts/validate_static_host_readiness.py",
         ],
         "source_inputs": [
             "control/inventory/publication/public_data_contract.json",
             "control/inventory/publication/publication_contract.json",
             "control/inventory/publication/page_registry.json",
+            "control/inventory/publication/domain_plan.json",
+            "control/inventory/publication/static_hosting_targets.json",
             "control/inventory/sources/*.source.json",
             "control/inventory/public_alpha_routes.json",
             "scripts/run_archive_resolution_evals.py --json",

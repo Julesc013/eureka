@@ -20,3 +20,6 @@ No route should move to `stable` until its base-path behavior, claim source,
 client profile, public data dependencies, and redirect/deprecation story are
 clear.
 
+Custom-domain readiness does not make a route stable. A route that works under
+both `/eureka/` and `/` may still remain `stable_draft` until public data,
+redirect, and deprecation policies mature.

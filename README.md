@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -109,6 +109,12 @@ examples under `public_site/demo/` and generated validation copies under
 compatibility evidence, absence, comparison, source detail, article/scan
 fixtures, and eval summaries; they are not live search, a live API, backend
 hosting, external observations, or production resolver behavior.
+Custom Domain / Alternate Host Readiness v0 now adds governed domain and
+alternate-static-host readiness records, base-path portability guidance,
+operator checklist, and `scripts/validate_static_host_readiness.py`. It does
+not configure DNS, add `public_site/CNAME`, deploy an alternate host, add
+provider config, enable live probes, host a backend, or claim production
+readiness.
 
 ## Quickstart
 
@@ -413,6 +419,9 @@ Eureka is substantial, but it is still a prototype/reference backend:
 - Static Resolver Demo Snapshots v0 adds static fixture-backed demo pages under
   `public_site/demo/`. They do not add live search, a live API, external
   observations, backend hosting, or production behavior.
+- Custom Domain / Alternate Host Readiness v0 adds static-host portability
+  contracts and validation. It does not configure DNS, add CNAME, deploy an
+  alternate host, add provider config, or make Eureka production-ready.
 - The hosting pack supports supervised rehearsal evidence, not open-internet
   approval.
 - Rust has a workspace, parity fixtures, and one isolated source-registry
@@ -428,11 +437,11 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Custom Domain / Alternate Host Readiness v0
-2. Live Backend Handoff Contract v0
-3. Live Probe Gateway Contract v0
-4. Manual Observation Batch 0 Execution (human-operated parallel work)
-5. Rust Query Planner Parity Candidate v0
+1. Live Backend Handoff Contract v0
+2. Live Probe Gateway Contract v0
+3. Manual Observation Batch 0 Execution (human-operated parallel work)
+4. Rust Query Planner Parity Candidate v0
+5. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
 
 Broader near-term direction:
 

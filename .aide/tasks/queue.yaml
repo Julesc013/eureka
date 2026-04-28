@@ -202,14 +202,14 @@
     {
       "id": "custom_domain_alternate_host_readiness_v0",
       "title": "Custom Domain / Alternate Host Readiness v0",
-      "status": "next",
+      "status": "completed",
       "priority": 29,
-      "notes": "Future static-host portability review; no DNS configuration should precede explicit domain verification and takeover-risk review."
+      "notes": "Added governed domain/static-host readiness inventories, base-path portability docs, unsigned future operator checklist, validator, and tests without DNS, CNAME, provider config, alternate-host deployment, backend hosting, live probes, or production claims."
     },
     {
       "id": "live_backend_handoff_contract_v0",
       "title": "Live Backend Handoff Contract v0",
-      "status": "queued",
+      "status": "next",
       "priority": 30,
       "notes": "Future API/status/capability handoff contract before any hosted backend claim."
     },

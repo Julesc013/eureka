@@ -231,7 +231,7 @@ The next backend sequence is:
 40. Generated Public Data Summaries v0 (implemented as static JSON summaries)
 41. Lite/Text/Files Seed Surfaces v0 (implemented as static compatibility seed surfaces)
 42. Static Resolver Demo Snapshots v0 (implemented as static fixture-backed demos)
-43. Custom Domain / Alternate Host Readiness v0
+43. Custom Domain / Alternate Host Readiness v0 (implemented as static host readiness policy; no DNS/CNAME/provider config)
 44. Live Backend Handoff Contract v0
 45. Live Probe Gateway Contract v0
 46. Manual Observation Batch 0 Execution (human-operated parallel work)
@@ -243,7 +243,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Custom Domain / Alternate Host Readiness v0
+> Live Backend Handoff Contract v0
 
 Why this comes next:
 
@@ -267,9 +267,11 @@ Why this comes next:
 - Static Resolver Demo Snapshots v0 now provides static `/demo/` examples from
   governed data and fixture-backed outputs without turning static files into a
   live search route, API, backend host, or production claim.
-- The next step is to review custom-domain and alternate-host readiness without
-  configuring DNS, changing deployment behavior, or claiming a public
-  deployment.
+- Custom Domain / Alternate Host Readiness v0 now records host portability
+  policy and validates no DNS, CNAME, provider config, alternate-host
+  deployment, backend hosting, live probes, or custom-domain claim was added.
+- The next step is to define the future live backend handoff contract before
+  any hosted backend claim, API stability promise, or live route exposure.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.

@@ -41,6 +41,14 @@ eval summaries. `site/build.py` emits matching validation copies into
 live search, a live API, backend hosting, external observations, or production
 behavior.
 
+Custom Domain / Alternate Host Readiness v0 adds
+`control/inventory/publication/domain_plan.json`,
+`control/inventory/publication/static_hosting_targets.json`,
+`docs/operations/CUSTOM_DOMAIN_AND_ALTERNATE_HOST_READINESS.md`, and
+`scripts/validate_static_host_readiness.py`. This is host-portability policy
+only: no DNS record, `CNAME`, provider config, alternate host deployment,
+backend hosting, or live probe is configured.
+
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
 expectations, deployment target semantics, and redirects.
@@ -109,5 +117,7 @@ surfaces.
 Static Resolver Demo Snapshots v0 adds `/demo/` static examples from governed
 data and fixture-backed Python-oracle outputs. They make current behavior easier
 to inspect without creating a live resolver endpoint or API promise. Custom
-domain and alternate-host readiness, live backend handoff, live probe gateway
-contracts, signed snapshots, relays, and native clients remain future work.
+Domain / Alternate Host Readiness v0 now records future host prerequisites and
+validates static host portability without configuring a domain or alternate
+host. Live backend handoff, live probe gateway contracts, signed snapshots,
+relays, and native clients remain future work.

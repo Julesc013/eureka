@@ -19,11 +19,13 @@
       "workflow_configured": true,
       "deployment_success_claimed": false,
       "deployment_status": "workflow_configured_deployment_unverified",
+      "static_host_readiness_validator": "scripts/validate_static_host_readiness.py",
       "notes": [
         "Project Pages must not define public route architecture.",
         "The workflow validates generated public data freshness, publication inventory, and public_site before uploading the artifact.",
         "Static Site Generation Migration v0 generates site/dist for validation, but the workflow still uploads public_site.",
         "Workflow configuration does not prove a GitHub Actions deployment run succeeded.",
+        "Custom Domain / Alternate Host Readiness v0 confirms this target remains project-path static hosting under /eureka/.",
         "No Python backend, live probes, custom domain, secrets, or generator deployment is added by this target."
       ]
     },
@@ -35,11 +37,16 @@
       "base_path": "/",
       "canonical_base_url": null,
       "requires_domain_verification": true,
+      "domain_plan": "control/inventory/publication/domain_plan.json",
+      "static_hosting_target": "github_pages_custom_domain",
+      "no_cname_file_committed": true,
+      "no_dns_changes_performed": true,
       "no_backend": true,
       "no_live_probes": true,
       "notes": [
         "Custom domain use is future work.",
         "DNS configuration and domain verification are not part of this slice.",
+        "Custom Domain / Alternate Host Readiness v0 adds readiness docs and validation only.",
         "Routes must remain portable between /eureka/ and /."
       ]
     },

@@ -137,3 +137,8 @@ Expected future static data areas:
 - signed snapshot manifests/checksums later, after a snapshot slice exists
 
 Static exports must remain portable between `/eureka/` and `/`.
+
+Custom Domain / Alternate Host Readiness v0 adds host-portability validation
+and policy records for future custom-domain or alternate-static-host work. It
+does not add `public_site/CNAME`, DNS records, provider config, backend
+hosting, live probes, or an alternate deployed artifact.

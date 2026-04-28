@@ -8,6 +8,16 @@
   "contains_live_backend": false,
   "contains_live_probes": false,
   "current_static_artifact": "public_site",
+  "custom_domain_readiness": {
+    "custom_domain_static_status": "future",
+    "custom_domain_status": "future",
+    "domain_verification_required": true,
+    "no_cname_file_committed": true,
+    "no_dns_changes_performed": true,
+    "no_domain_configured": true,
+    "plan_id": "eureka-custom-domain-alternate-host-readiness",
+    "status": "implemented"
+  },
   "deployment_targets": [
     {
       "artifact_root": "public_site",
@@ -45,7 +55,8 @@
     "Static data summaries only; not a live API.",
     "No live backend or live source probes are represented.",
     "Manual external baselines remain pending unless human observations are recorded later.",
-    "Public JSON is stable_draft for pre-alpha clients, not a production API promise."
+    "Public JSON is stable_draft for pre-alpha clients, not a production API promise.",
+    "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured."
   ],
   "no_deployment_claim": true,
   "pages": [
@@ -637,6 +648,55 @@
     "control/inventory/publication/publication_contract.json",
     "control/inventory/publication/page_registry.json",
     "control/inventory/publication/deployment_targets.json",
-    "control/inventory/publication/public_data_contract.json"
+    "control/inventory/publication/domain_plan.json",
+    "control/inventory/publication/public_data_contract.json",
+    "control/inventory/publication/static_hosting_targets.json"
+  ],
+  "static_hosting_targets": [
+    {
+      "artifact_root": "public_site",
+      "backend_supported": false,
+      "base_path": "/eureka/",
+      "id": "github_pages_project",
+      "live_probes_supported": false,
+      "provider_config_committed": false,
+      "status": "implemented"
+    },
+    {
+      "artifact_root": "public_site",
+      "backend_supported": false,
+      "base_path": "/",
+      "id": "github_pages_custom_domain",
+      "live_probes_supported": false,
+      "provider_config_committed": false,
+      "status": "future"
+    },
+    {
+      "artifact_root": "public_site",
+      "backend_supported": false,
+      "base_path": "/",
+      "id": "cloudflare_pages_static",
+      "live_probes_supported": false,
+      "provider_config_committed": false,
+      "status": "future"
+    },
+    {
+      "artifact_root": "public_site",
+      "backend_supported": false,
+      "base_path": "/",
+      "id": "generic_static_host",
+      "live_probes_supported": false,
+      "provider_config_committed": false,
+      "status": "future"
+    },
+    {
+      "artifact_root": "public_site",
+      "backend_supported": false,
+      "base_path": "relative",
+      "id": "local_file_preview",
+      "live_probes_supported": false,
+      "provider_config_committed": false,
+      "status": "planned"
+    }
   ]
 }

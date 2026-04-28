@@ -40,6 +40,7 @@ python scripts/generate_public_data_summaries.py --check
 python scripts/validate_publication_inventory.py
 python scripts/validate_public_static_site.py
 python scripts/check_github_pages_static_artifact.py
+python scripts/validate_static_host_readiness.py
 ```
 
 Then it configures Pages, uploads `public_site/` with
@@ -62,6 +63,12 @@ Settings -> Pages -> Build and deployment -> Source: GitHub Actions
 
 This repository does not add custom domain configuration in this milestone.
 No `CNAME` file is added.
+
+Custom Domain / Alternate Host Readiness v0 adds readiness inventories,
+operator docs, base-path policy, and `scripts/validate_static_host_readiness.py`
+for future custom-domain or alternate-static-host work. It still does not
+configure a custom domain, add DNS, add `public_site/CNAME`, or deploy an
+alternate host.
 
 No deployment secrets are required.
 

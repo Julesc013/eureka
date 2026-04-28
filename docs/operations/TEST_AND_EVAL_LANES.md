@@ -390,6 +390,22 @@ fixture-backed limitation text, and publication-inventory coverage. It performs
 no network calls, starts no backend, adds no live search, creates no live API,
 records no external observations, and makes no production-readiness claim.
 
+## Custom Domain And Alternate Host Readiness
+
+Custom Domain / Alternate Host Readiness v0 is validated with:
+
+```bash
+python scripts/validate_static_host_readiness.py
+python scripts/validate_static_host_readiness.py --json
+python -m unittest tests.operations.test_custom_domain_alternate_host_readiness tests.scripts.test_validate_static_host_readiness
+```
+
+The lane checks `domain_plan.json`, `static_hosting_targets.json`, `/eureka/`
+and `/` base-path policy, no `public_site/CNAME`, no DNS/provider config,
+relative static links, and no custom-domain/backend/live-probe/production
+claims. It performs no network calls, DNS lookups, URL fetches, provider
+actions, deployments, backend hosting, or live source probing.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

@@ -54,6 +54,10 @@ steps:
     run: python scripts/generate_static_resolver_demos.py --check
   - id: static_resolver_demo_snapshots_tests
     run: python -m unittest tests.operations.test_static_resolver_demo_snapshots tests.scripts.test_generate_static_resolver_demos
+  - id: static_host_readiness_validator
+    run: python scripts/validate_static_host_readiness.py
+  - id: custom_domain_alternate_host_readiness_tests
+    run: python -m unittest tests.operations.test_custom_domain_alternate_host_readiness tests.scripts.test_validate_static_host_readiness
   - id: public_alpha_rehearsal_evidence_check
     run: python scripts/generate_public_alpha_rehearsal_evidence.py --check
   - id: public_alpha_rehearsal_evidence_tests
@@ -148,6 +152,7 @@ notes:
   - Generated Public Data Summaries v0 validates deterministic static JSON summaries under `public_site/data/` and `site/dist/data/`; it adds no live API, backend deployment, live probes, external observations, Node/npm, or production API stability claim.
   - Lite/Text/Files Seed Surfaces v0 validates static compatibility surfaces under `public_site/lite/`, `public_site/text/`, and `public_site/files/`; it adds no live search, executable downloads, snapshots, relay/native runtime behavior, backend deployment, or production support claim.
   - Static Resolver Demo Snapshots v0 validates static fixture-backed resolver examples under `public_site/demo/` and generated `site/dist/demo/`; it adds no live search, live API semantics, backend hosting, external observations, deployment behavior, or production claim.
+  - Custom Domain / Alternate Host Readiness v0 validates static host portability, base-path policy, and no DNS/CNAME/provider-config/custom-domain/backend/live-probe claim; it performs no network calls and deploys nothing.
   - Source Coverage and Capability Model v0 checks validate metadata and projection only; they do not add connectors, live source probing, or crawling.
   - Real Source Coverage Pack v0 checks validate committed recorded fixtures, local bundle fixtures, local-index visibility, and public projection only; they do not add live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Source Coverage Expansion v0 checks validate expanded committed old-platform fixtures, local bundle members, compatibility evidence, and index visibility only; they do not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.

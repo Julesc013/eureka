@@ -48,3 +48,9 @@ under `public_site/demo/`, with generated validation copies under
 `site/dist/demo/`. No separate AIDE runtime report is needed; those files are
 publication artifacts and do not add live search, live API semantics, backend
 hosting, external observations, or production behavior.
+
+Custom Domain / Alternate Host Readiness v0 records readiness inventories under
+`control/inventory/publication/` and operations/reference docs under `docs/`.
+No separate AIDE runtime report is needed; this is host-portability governance
+only and does not add DNS records, `CNAME`, provider config, alternate-host
+deployment, backend hosting, live probes, or production behavior.

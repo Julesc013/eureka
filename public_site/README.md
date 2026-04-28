@@ -21,6 +21,11 @@ under `public_site/demo/`. They show current bounded resolver behavior without
 adding live search, a live API, backend hosting, external observations, or a
 production claim.
 
+Custom Domain / Alternate Host Readiness v0 adds readiness contracts and
+validation for future host portability. It does not configure DNS, add
+`public_site/CNAME`, deploy alternate hosts, add provider config, enable live
+probes, or host a backend.
+
 Validate it with:
 
 ```bash
@@ -30,6 +35,7 @@ python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_public_static_site.py
 python scripts/validate_public_static_site.py --json
 python scripts/check_github_pages_static_artifact.py
+python scripts/validate_static_host_readiness.py
 ```
 
 The content intentionally describes Eureka as a Python reference backend

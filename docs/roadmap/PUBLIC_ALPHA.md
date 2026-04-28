@@ -47,6 +47,9 @@ The minimum public-alpha entry gate should include:
 - Static Resolver Demo Snapshots v0 (implemented as static no-JS
   fixture-backed resolver examples under `public_site/demo/`; no live search,
   live API, backend hosting, external observations, or production behavior)
+- Custom Domain / Alternate Host Readiness v0 (implemented as static-host
+  portability inventories, docs, checklist, and validation; no DNS, CNAME,
+  alternate-host deployment, provider config, backend hosting, or live probes)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -181,3 +184,8 @@ query planning, member-level results, compatibility evidence, absence,
 comparison, source detail, article/scan fixtures, and eval summaries. They do
 not add live search, a live API, external observations, backend hosting, or
 production behavior.
+
+Custom Domain / Alternate Host Readiness v0 now records future custom-domain
+and alternate-static-host prerequisites, base-path portability, and an operator
+checklist. It adds no DNS records, no `CNAME`, no provider config, no alternate
+host deployment, no backend hosting, no live probes, and no production claim.

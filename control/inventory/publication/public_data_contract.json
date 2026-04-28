@@ -31,6 +31,8 @@
         "control/inventory/publication/publication_contract.json",
         "control/inventory/publication/page_registry.json",
         "control/inventory/publication/deployment_targets.json",
+        "control/inventory/publication/domain_plan.json",
+        "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/publication/public_data_contract.json"
       ],
       "consumer_profiles": [
@@ -136,6 +138,8 @@
         "control/inventory/publication/public_data_contract.json",
         "control/inventory/publication/publication_contract.json",
         "control/inventory/publication/page_registry.json",
+        "control/inventory/publication/domain_plan.json",
+        "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/sources/*.source.json",
         "control/inventory/public_alpha_routes.json"
       ],

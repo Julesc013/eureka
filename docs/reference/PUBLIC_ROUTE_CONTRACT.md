@@ -36,3 +36,8 @@ Static Resolver Demo Snapshots v0 promotes `/demo/` and the committed
 `/demo/*.html` snapshot pages to `static_demo` routes. These routes are
 fixture-backed static examples only; they are not live search routes, API
 routes, backend hosting, or production resolver claims.
+
+Custom Domain / Alternate Host Readiness v0 does not promote any new public
+route. It reinforces that all existing static routes must keep relative links
+and remain portable between the GitHub Pages project base path `/eureka/` and a
+future root-hosted static target `/`.

@@ -40,6 +40,12 @@ into `site/dist/data/` by `site/build.py`. They remain `stable_draft`, static,
 and pre-alpha. They are not a live API, do not include live data, and do not
 record external observations.
 
+Custom Domain / Alternate Host Readiness v0 adds static host readiness fields
+to `/data/site_manifest.json` and readiness validation provenance to
+`/data/build_manifest.json`. These fields describe future host portability
+only; they do not configure DNS, add a `CNAME`, activate an alternate host, or
+claim deployment success.
+
 Implemented file-tree public data files include:
 
 - `/files/manifest.json`

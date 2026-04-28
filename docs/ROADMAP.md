@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: fifty-six local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, and Static Resolver Demo Snapshots v0. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns; the external-baseline pack adds 192 pending manual observation slots across 64 queries and three systems, Batch 0 adds 39 prioritized pending slots, the entry helper adds local list/create/validate/report tooling without recording observed external baselines, the static public site pack adds no-JS pages under `public_site/`, the rehearsal evidence pack records local static/smoke/route/eval/baseline evidence without deployment, backend hosting, live probes, scraping, production claims, or observed external baselines, the wrapper adds a localhost-default public-alpha process/config guard without deployment, provider files, live probes, auth/TLS, rate limiting, or production approval, the publication plane adds governed route/data/client/deployment-target inventories, the GitHub Pages slice adds a static-only workflow plus artifact checks for `public_site/`, the static generation slice adds `site/` plus generated `site/dist/` validation while keeping `public_site/` as the deployment artifact, the public-data slice adds static JSON summaries under `public_site/data/` and `site/dist/data/` without live API semantics, the compatibility-surface slice adds static lite/text/files seed surfaces without live search, downloads, snapshots, relay/native runtime, or production claims, and the demo-snapshot slice adds static fixture-backed resolver examples under `public_site/demo/` and `site/dist/demo/` without live search, live API semantics, external observations, backend hosting, or production claims.
+Current status within this stage: fifty-seven local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, and Custom Domain / Alternate Host Readiness v0. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns; the external-baseline pack adds 192 pending manual observation slots across 64 queries and three systems, Batch 0 adds 39 prioritized pending slots, the entry helper adds local list/create/validate/report tooling without recording observed external baselines, the static public site pack adds no-JS pages under `public_site/`, the rehearsal evidence pack records local static/smoke/route/eval/baseline evidence without deployment, backend hosting, live probes, scraping, production claims, or observed external baselines, the wrapper adds a localhost-default public-alpha process/config guard without deployment, provider files, live probes, auth/TLS, rate limiting, or production approval, the publication plane adds governed route/data/client/deployment-target inventories, the GitHub Pages slice adds a static-only workflow plus artifact checks for `public_site/`, the static generation slice adds `site/` plus generated `site/dist/` validation while keeping `public_site/` as the deployment artifact, the public-data slice adds static JSON summaries under `public_site/data/` and `site/dist/data/` without live API semantics, the compatibility-surface slice adds static lite/text/files seed surfaces without live search, downloads, snapshots, relay/native runtime, or production claims, the demo-snapshot slice adds static fixture-backed resolver examples under `public_site/demo/` and `site/dist/demo/` without live search, live API semantics, external observations, backend hosting, or production claims, and the static host readiness slice adds domain/alternate-host policy and validation without DNS, CNAME, provider config, alternate-host deployment, backend hosting, or live probes.
 
 ## Stage 3: Surface Skeletons
 
@@ -259,13 +259,19 @@ results, compatibility evidence, absence, comparison, source detail,
 article/scan fixture results, and eval summaries. They add no live search, live
 API semantics, backend hosting, external observations, or production behavior.
 
+Custom Domain / Alternate Host Readiness v0 now adds domain and alternate
+static-host readiness inventories, base-path portability guidance, an operator
+checklist, `scripts/validate_static_host_readiness.py`, and tests. It adds no
+DNS records, `CNAME`, provider config, alternate-host deployment, backend
+hosting, live probes, or production claim.
+
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
 ## Immediate Next Milestone
 
 The next implementation milestone is:
 
-> Custom Domain / Alternate Host Readiness v0
+> Live Backend Handoff Contract v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -286,11 +292,11 @@ LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, and
 LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane
 Contracts v0, GitHub Pages Deployment Enablement v0, Static Site
 Generation Migration v0, Generated Public Data Summaries v0,
-Lite/Text/Files Seed Surfaces v0, and Static Resolver Demo Snapshots v0
-now
-mark the start of a more evidence-led backend phase. The next step is to review
-custom-domain and alternate-host readiness without configuring DNS, changing
-deployment behavior, or claiming a public deployment. Manual Observation Batch 0 Execution remains
+Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, and
+Custom Domain / Alternate Host Readiness v0 now
+mark the start of a more evidence-led backend phase. The next step is to define
+the live backend handoff contract before any hosted backend claim. Manual
+Observation Batch 0 Execution remains
 human-operated parallel work: external Google and Internet Archive observations
 remain pending/manual. The next Codex-side work must still avoid live crawling,
 external scraping, live probes, installer execution, fuzzy/vector search, LLM

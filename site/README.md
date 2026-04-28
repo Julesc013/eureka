@@ -13,6 +13,9 @@ Current boundary:
   Lite/Text/Files Seed Surfaces v0 for static compatibility validation.
 - `site/dist/demo/` is populated by Static Resolver Demo Snapshots v0 for
   fixture-backed static resolver demo validation.
+- Host-portability policy is validated by
+  `scripts/validate_static_host_readiness.py`; it does not configure DNS,
+  CNAME, provider files, alternate hosts, backend hosting, or live probes.
 - `public_site/` remains the GitHub Pages deployment artifact for this
   milestone.
 
