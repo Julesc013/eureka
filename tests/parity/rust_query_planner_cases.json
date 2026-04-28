@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1.0",
+  "fixture_set_id": "rust_query_planner_parity_candidate_v0",
+  "status": "candidate",
+  "python_oracle_root": "tests/parity/golden/python_oracle/v0/query_planner",
+  "rust_candidate_module": "crates/eureka-core/src/query_planner.rs",
+  "python_remains_oracle": true,
+  "runtime_wiring_allowed": false,
+  "cases": [
+    {
+      "case_id": "windows_7_apps",
+      "query": "Windows 7 apps",
+      "python_oracle_file": "windows_7_apps.json",
+      "required_task_kind": "browse_software"
+    },
+    {
+      "case_id": "windows_nt_61_utilities",
+      "query": "Windows NT 6.1 utilities",
+      "python_oracle_file": "windows_nt_61_utilities.json",
+      "required_task_kind": "browse_software"
+    },
+    {
+      "case_id": "windows_xp_software",
+      "query": "Windows XP software",
+      "python_oracle_file": "windows_xp_software.json",
+      "required_task_kind": "browse_software"
+    },
+    {
+      "case_id": "windows_98_registry_repair",
+      "query": "Windows 98 registry repair",
+      "python_oracle_file": "windows_98_registry_repair.json",
+      "required_task_kind": "identify_software"
+    },
+    {
+      "case_id": "latest_firefox_before_xp_support_ended",
+      "query": "latest Firefox before XP support ended",
+      "python_oracle_file": "latest_firefox_before_xp_support_ended.json",
+      "required_task_kind": "find_latest_compatible_release"
+    },
+    {
+      "case_id": "latest_vlc_for_windows_xp",
+      "query": "latest VLC for Windows XP",
+      "python_oracle_file": "latest_vlc_for_windows_xp.json",
+      "required_task_kind": "find_latest_compatible_release"
+    },
+    {
+      "case_id": "driver_thinkpad_t42_wifi_windows_2000",
+      "query": "ThinkPad T42 wifi driver Windows 2000",
+      "python_oracle_file": "driver_thinkpad_t42_wifi_windows_2000.json",
+      "required_task_kind": "find_driver"
+    },
+    {
+      "case_id": "creative_ct1740_driver_windows_98",
+      "query": "Creative CT1740 driver Windows 98",
+      "python_oracle_file": "creative_ct1740_driver_windows_98.json",
+      "required_task_kind": "find_driver"
+    },
+    {
+      "case_id": "old_blue_ftp_client_xp",
+      "query": "old blue FTP client for XP",
+      "python_oracle_file": "old_blue_ftp_client_xp.json",
+      "required_task_kind": "identify_software"
+    },
+    {
+      "case_id": "driver_inside_support_cd",
+      "query": "driver inside support CD",
+      "python_oracle_file": "driver_inside_support_cd.json",
+      "required_task_kind": "find_member_in_container"
+    },
+    {
+      "case_id": "installer_inside_iso",
+      "query": "installer inside ISO",
+      "python_oracle_file": "installer_inside_iso.json",
+      "required_task_kind": "find_member_in_container"
+    },
+    {
+      "case_id": "manual_sound_blaster_ct1740",
+      "query": "manual for Sound Blaster CT1740",
+      "python_oracle_file": "manual_sound_blaster_ct1740.json",
+      "required_task_kind": "find_documentation"
+    },
+    {
+      "case_id": "mac_os_9_browser",
+      "query": "Mac OS 9 browser",
+      "python_oracle_file": "mac_os_9_browser.json",
+      "required_task_kind": "browse_software"
+    },
+    {
+      "case_id": "powerpc_mac_os_x_10_4_browser",
+      "query": "PowerPC Mac OS X 10.4 browser",
+      "python_oracle_file": "powerpc_mac_os_x_10_4_browser.json",
+      "required_task_kind": "browse_software"
+    },
+    {
+      "case_id": "article_ray_tracing_1994_magazine",
+      "query": "article about ray tracing in 1994 magazine",
+      "python_oracle_file": "article_ray_tracing_1994_magazine.json",
+      "required_task_kind": "find_document_article"
+    },
+    {
+      "case_id": "generic_unknown_query",
+      "query": "obscure utility with no known fixture",
+      "python_oracle_file": "generic_unknown_query.json",
+      "required_task_kind": "generic_search"
+    }
+  ],
+  "notes": [
+    "Python remains the oracle for all listed outputs.",
+    "Rust candidate parity is isolated to eureka-core and is not wired into Python runtime, web, CLI, API, workers, or public-alpha paths.",
+    "Cargo execution is optional until the repo explicitly requires a Rust toolchain."
+  ]
+}

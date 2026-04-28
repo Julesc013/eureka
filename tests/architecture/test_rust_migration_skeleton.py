@@ -51,7 +51,7 @@ class RustMigrationSkeletonTestCase(unittest.TestCase):
                 )
                 self.assertIn("placeholder_only_python_oracle_active", lib_rs)
 
-    def test_eureka_core_declares_source_registry_candidate_only(self) -> None:
+    def test_eureka_core_declares_isolated_parity_candidates_only(self) -> None:
         lib_rs = (CRATES_ROOT / "eureka-core" / "src" / "lib.rs").read_text(
             encoding="utf-8"
         )
@@ -61,15 +61,24 @@ class RustMigrationSkeletonTestCase(unittest.TestCase):
         source_registry = (
             CRATES_ROOT / "eureka-core" / "src" / "source_registry.rs"
         ).read_text(encoding="utf-8")
+        query_planner = (
+            CRATES_ROOT / "eureka-core" / "src" / "query_planner.rs"
+        ).read_text(encoding="utf-8")
 
         self.assertIn("pub mod source_registry;", lib_rs)
-        self.assertIn("source_registry_parity_candidate_v0_python_oracle_active", lib_rs)
+        self.assertIn("pub mod query_planner;", lib_rs)
+        self.assertIn(
+            "source_registry_and_query_planner_parity_candidates_v0_python_oracle_active",
+            lib_rs,
+        )
         self.assertIn("serde", cargo_toml)
         self.assertIn("serde_json", cargo_toml)
         self.assertNotIn("tokio", cargo_toml)
         self.assertNotIn("reqwest", cargo_toml)
         self.assertIn("load_source_registry", source_registry)
         self.assertIn("list_sources_response", source_registry)
+        self.assertIn("pub fn plan_query", query_planner)
+        self.assertIn("query_planner_candidate_matches_python_oracle_goldens", query_planner)
 
     def test_docs_record_python_oracle_and_parity_rules(self) -> None:
         docs = "\n".join(

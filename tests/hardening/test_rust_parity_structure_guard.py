@@ -11,15 +11,20 @@ class RustParityStructureGuardTest(unittest.TestCase):
             "crates/eureka-core/Cargo.toml",
             "crates/eureka-core/src/lib.rs",
             "crates/eureka-core/src/source_registry.rs",
+            "crates/eureka-core/src/query_planner.rs",
             "crates/eureka-contracts/Cargo.toml",
             "crates/eureka-store/Cargo.toml",
             "crates/eureka-resolver/Cargo.toml",
+            "tests/parity/rust_query_planner_cases.json",
         ]
         missing = [path for path in expected if not repo_path(path).exists()]
         self.assertEqual(missing, [])
         source_registry = read_text("crates/eureka-core/src/source_registry.rs")
+        query_planner = read_text("crates/eureka-core/src/query_planner.rs")
         self.assertIn("list_output_matches_python_oracle_golden", source_registry)
         self.assertIn("#[cfg(test)]", source_registry)
+        self.assertIn("query_planner_candidate_matches_python_oracle_goldens", query_planner)
+        self.assertIn("#[cfg(test)]", query_planner)
 
     def test_python_runtime_and_surfaces_do_not_import_rust_candidate(self):
         forbidden = re.compile(r"eureka_core|source_registry_parity|crates[\\/]eureka-core")
@@ -62,6 +67,10 @@ class RustParityStructureGuardTest(unittest.TestCase):
         self.assertEqual(lanes["rust_optional"]["required_status"], "optional")
         self.assertEqual(records["cargo_check_optional"]["advisory_or_required"], "optional")
         self.assertEqual(records["cargo_test_optional"]["advisory_or_required"], "optional")
+        self.assertEqual(
+            records["rust_query_planner_parity_check"]["advisory_or_required"],
+            "required",
+        )
 
     def test_allowed_divergence_placeholder_exists_without_accepted_records(self):
         path = repo_path("tests/parity/ALLOWED_DIVERGENCES.md")
