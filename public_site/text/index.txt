@@ -6,6 +6,7 @@ This is a plain-text static seed surface generated from public data summaries.
 It is not command-line interactivity and it is not live search.
 The /api/v1 route family is reserved for future live backend handoff only; it is not live here.
 Live Probe Gateway Contract v0 records disabled source-probe policy only; no network calls are made.
+Compatibility Surface Strategy v0 says old clients should degrade through static, lite, text, files, future snapshots, and future relay projections rather than one modern app.
 
 Files:
 - sources.txt

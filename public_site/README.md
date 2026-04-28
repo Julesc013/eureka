@@ -41,6 +41,13 @@ against expanded Python-oracle query-planner goldens. It does not replace the
 Python planner, wire Rust into runtime surfaces, call live sources, or make
 Rust a production backend.
 
+Compatibility Surface Strategy v0 records how modern web, standard web,
+lite HTML, text, file-tree, static data, demo snapshots, future API handoff,
+future snapshots, future relay, CLI, and future native clients share the same
+resolver truth through different static or local projections. It does not add
+new runtime behavior, live API routes, snapshots, relay services, native apps,
+frontend frameworks, or production support claims.
+
 Validate it with:
 
 ```bash
@@ -49,6 +56,7 @@ python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_live_backend_handoff.py
 python scripts/validate_live_probe_gateway.py
+python scripts/validate_compatibility_surfaces.py
 python scripts/check_rust_query_planner_parity.py
 python scripts/validate_public_static_site.py
 python scripts/validate_public_static_site.py --json

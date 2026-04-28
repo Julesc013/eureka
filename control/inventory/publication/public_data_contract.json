@@ -37,6 +37,7 @@
         "control/inventory/publication/live_probe_gateway.json",
         "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/publication/surface_capabilities.json",
+        "control/inventory/publication/surface_route_matrix.json",
         "control/inventory/publication/public_data_contract.json"
       ],
       "consumer_profiles": [
@@ -148,6 +149,7 @@
         "control/inventory/publication/live_probe_gateway.json",
         "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/publication/surface_capabilities.json",
+        "control/inventory/publication/surface_route_matrix.json",
         "control/inventory/sources/*.source.json",
         "control/inventory/public_alpha_routes.json"
       ],

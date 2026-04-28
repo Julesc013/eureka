@@ -29,6 +29,7 @@
     "control/inventory/publication/live_probe_gateway.json",
     "control/inventory/publication/static_hosting_targets.json",
     "control/inventory/publication/surface_capabilities.json",
+    "control/inventory/publication/surface_route_matrix.json",
     "control/inventory/sources/*.source.json",
     "control/inventory/public_alpha_routes.json",
     "scripts/run_archive_resolution_evals.py --json",

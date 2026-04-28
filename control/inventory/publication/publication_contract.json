@@ -27,7 +27,9 @@
   "live_probe_gateway_contract_status": "implemented",
   "live_probe_gateway_status": "planned_disabled",
   "live_probe_gateway": "control/inventory/publication/live_probe_gateway.json",
+  "compatibility_surface_strategy_status": "implemented",
   "surface_capabilities": "control/inventory/publication/surface_capabilities.json",
+  "surface_route_matrix": "control/inventory/publication/surface_route_matrix.json",
   "domain_plan": "control/inventory/publication/domain_plan.json",
   "static_hosting_targets": "control/inventory/publication/static_hosting_targets.json",
   "deploy_artifact_current": "public_site",
@@ -41,6 +43,7 @@
     "govern future custom-domain and alternate-static-host readiness without configuring hosts",
     "govern future static-to-live backend handoff routes without implementing a hosted backend",
     "govern future live source probe policy without implementing probes or network calls",
+    "govern compatibility-surface projections without implementing snapshots, relay, native apps, or new runtime behavior",
     "govern public claim traceability before public hosting"
   ],
   "no_live_backend": true,
@@ -127,7 +130,8 @@
     }
   ],
   "next_expected_milestones": [
-    "Compatibility Surface Strategy v0 or Signed Snapshot Format v0",
+    "Signed Snapshot Format v0",
+    "Relay Surface Design v0",
     "Manual Observation Batch 0 Execution",
     "Rust Source Registry Parity Catch-up v0",
     "Rust Local Index Parity Planning v0",
@@ -146,6 +150,7 @@
     "Live Backend Handoff Contract v0 reserves /api/v1 route families, capability flags, and error-envelope expectations without deploying a backend or making /api/v1 live.",
     "Live Probe Gateway Contract v0 records disabled-by-default live probe source policy, limits, cache/evidence requirements, and operator gates without implementing probes or making network calls.",
     "Rust Query Planner Parity Candidate v0 adds an isolated Rust planner candidate against Python-oracle goldens without replacing Python or wiring Rust into runtime surfaces.",
+    "Compatibility Surface Strategy v0 records surface capability and route matrices plus old-client/native/snapshot/relay readiness policy without implementing new runtime behavior.",
     "No provider backend configuration, live backend, or live source probe is added by this contract."
   ]
 }

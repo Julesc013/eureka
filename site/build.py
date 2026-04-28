@@ -488,7 +488,7 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
             "/eureka/",
             "/",
         ],
-        "next_milestone": "Compatibility Surface Strategy v0 or Signed Snapshot Format v0",
+        "next_milestone": "Signed Snapshot Format v0",
         "parallel_human_work": "Manual Observation Batch 0 Execution",
         "no_network_required": True,
         "no_deployment_performed": True,

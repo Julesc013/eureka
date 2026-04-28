@@ -48,7 +48,8 @@
         {"title": "Live Backend Handoff Contract v0", "text": "implemented as a contract-only /api/v1 reservation, capability flag, and error-envelope layer; no backend is hosted and /api/v1 is not live."},
         {"title": "Live Probe Gateway Contract v0", "text": "implemented as disabled-by-default source probe policy, caps, cache/evidence requirements, and operator gates; no probes or network calls."},
         {"title": "Rust Query Planner Parity Candidate v0", "text": "implemented as an isolated Rust planner candidate against expanded Python-oracle goldens; Python remains the oracle and Rust is not wired into runtime."},
-        {"title": "Compatibility Surface Strategy v0 or Signed Snapshot Format v0", "text": "recommended next non-network contract milestone after static public data, lite/text/files surfaces, and static demos."},
+        {"title": "Compatibility Surface Strategy v0", "text": "implemented as cross-surface strategy, capability matrix, route matrix, and old-client/native/snapshot/relay readiness policy; no new runtime behavior."},
+        {"title": "Signed Snapshot Format v0", "text": "recommended next non-network contract milestone for offline bundle layout, manifests, checksums, and future signatures."},
         {"title": "Manual Observation Batch 0 Execution", "text": "human-operated external baseline observations for selected query/system slots."},
         {"title": "Internet Archive Live Probe v0", "text": "future only, after explicit human approval and source-policy review."}
       ]
@@ -85,6 +86,10 @@
             {
               "href": "demo/index.html",
               "text": "Static resolver demos"
+            },
+            {
+              "href": "data/site_manifest.json",
+              "text": "Surface capability summaries"
             }
           ]
         }

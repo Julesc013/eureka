@@ -326,6 +326,7 @@ def _build_data_site_manifest(
             "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
             "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
             "Google remains manual-baseline only and is not a live probe source.",
+            "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
         ],
         "source_inputs": [
             "control/inventory/publication/publication_contract.json",
@@ -338,6 +339,7 @@ def _build_data_site_manifest(
             "control/inventory/publication/public_data_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
             "control/inventory/publication/surface_capabilities.json",
+            "control/inventory/publication/surface_route_matrix.json",
         ],
     }
 
@@ -607,6 +609,7 @@ def _build_build_manifest(public_data_contract: Mapping[str, Any]) -> dict[str, 
             "control/inventory/publication/live_probe_gateway.json",
             "control/inventory/publication/static_hosting_targets.json",
             "control/inventory/publication/surface_capabilities.json",
+            "control/inventory/publication/surface_route_matrix.json",
             "control/inventory/sources/*.source.json",
             "control/inventory/public_alpha_routes.json",
             "scripts/run_archive_resolution_evals.py --json",

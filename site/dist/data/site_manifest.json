@@ -59,7 +59,8 @@
     "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.",
     "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
     "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
-    "Google remains manual-baseline only and is not a live probe source."
+    "Google remains manual-baseline only and is not a live probe source.",
+    "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred."
   ],
   "live_backend_handoff": {
     "auth_policy_status": "unresolved",
@@ -919,7 +920,8 @@
     "control/inventory/publication/live_probe_gateway.json",
     "control/inventory/publication/public_data_contract.json",
     "control/inventory/publication/static_hosting_targets.json",
-    "control/inventory/publication/surface_capabilities.json"
+    "control/inventory/publication/surface_capabilities.json",
+    "control/inventory/publication/surface_route_matrix.json"
   ],
   "static_hosting_targets": [
     {
@@ -970,6 +972,118 @@
   ],
   "surface_capabilities": [
     {
+      "enabled_by_default": false,
+      "id": "app",
+      "requires_backend": false,
+      "safe_for_static_hosting": false,
+      "status": "deferred"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "web",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "implemented"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "lite",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "static_demo"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "text",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "static_demo"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "files",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "static_demo"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "data",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "implemented"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "demo",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "static_demo"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "api",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "planned"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "snapshots",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "deferred"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "relay",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "deferred"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "cli",
+      "requires_backend": false,
+      "safe_for_static_hosting": false,
+      "status": "implemented"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "native_client",
+      "requires_backend": false,
+      "safe_for_static_hosting": false,
+      "status": "deferred"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "public_static_site",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "implemented"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "public_alpha_wrapper",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "implemented"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "live_backend",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "planned"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "live_probe_gateway",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "planned"
+    },
+    {
       "enabled_by_default": true,
       "id": "static_site",
       "requires_backend": false,
@@ -1013,28 +1127,7 @@
     },
     {
       "enabled_by_default": false,
-      "id": "public_alpha_wrapper",
-      "requires_backend": true,
-      "safe_for_static_hosting": false,
-      "status": "implemented"
-    },
-    {
-      "enabled_by_default": false,
-      "id": "live_backend",
-      "requires_backend": true,
-      "safe_for_static_hosting": false,
-      "status": "planned"
-    },
-    {
-      "enabled_by_default": false,
       "id": "live_search",
-      "requires_backend": true,
-      "safe_for_static_hosting": false,
-      "status": "planned"
-    },
-    {
-      "enabled_by_default": false,
-      "id": "live_probe_gateway",
       "requires_backend": true,
       "safe_for_static_hosting": false,
       "status": "planned"

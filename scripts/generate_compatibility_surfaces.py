@@ -191,6 +191,7 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         '<li><a href="../files/index.html">Static files surface</a></li>',
         '<li><a href="../demo/index.html">Static resolver demos</a></li>',
         "</ul>",
+        "<p>Compatibility Surface Strategy v0 governs these projections as static views of the same resolver truth. It does not add snapshots, relay, native clients, live API behavior, or runtime product behavior.</p>",
         "<h2>Current static status</h2>",
         "<ul>",
         f"<li>Source records summarized: {escape(str(source.get('source_count', 'unknown')))}</li>",
@@ -301,6 +302,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
             "It is not command-line interactivity and it is not live search.",
             "The /api/v1 route family is reserved for future live backend handoff only; it is not live here.",
             "Live Probe Gateway Contract v0 records disabled source-probe policy only; no network calls are made.",
+            "Compatibility Surface Strategy v0 says old clients should degrade through static, lite, text, files, future snapshots, and future relay projections rather than one modern app.",
             "",
             "Files:",
             "- sources.txt",
@@ -360,6 +362,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "- no live source probes",
         "- /api/v1 reserved only, not live",
         "- live probe gateway policy only; no probes implemented",
+        "- compatibility surface strategy only; no new runtime behavior",
         "- Google manual-baseline only",
         "- no scraping",
         "- no executable downloads or mirrors",
@@ -376,6 +379,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
             "Plain text static files for text browsers, terminals, screen readers, and simple automation.",
             "These files are generated from public_site/data summaries.",
             "No live search, live backend, live probes, external observations, or downloads are added.",
+            "Compatibility Surface Strategy v0 guides future snapshots, relay, and native clients but does not implement them.",
         ],
     )
     return {
@@ -467,6 +471,7 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "It does not contain software downloads, executable mirrors, private stores, or live source output.",
             "It does not expose a live /api/v1 backend.",
             "It does not expose live probes or Internet Archive live access.",
+            "Compatibility Surface Strategy v0 is policy only; snapshots, relay, and native clients remain future.",
         ],
     )
     data_readme = _text_page(
