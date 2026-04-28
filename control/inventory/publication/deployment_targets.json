@@ -21,7 +21,7 @@
       "deployment_status": "workflow_configured_deployment_unverified",
       "notes": [
         "Project Pages must not define public route architecture.",
-        "The workflow validates the publication inventory and public_site before uploading the artifact.",
+        "The workflow validates generated public data freshness, publication inventory, and public_site before uploading the artifact.",
         "Static Site Generation Migration v0 generates site/dist for validation, but the workflow still uploads public_site.",
         "Workflow configuration does not prove a GitHub Actions deployment run succeeded.",
         "No Python backend, live probes, custom domain, secrets, or generator deployment is added by this target."

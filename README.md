@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -90,6 +90,12 @@ Static Site Generation Migration v0 now adds a stdlib-only `site/` source tree
 and generator that renders no-JS pages into `site/dist/` for validation.
 `public_site/` remains the GitHub Pages deployment artifact; generated output
 is not deployed yet and no Node/npm or frontend framework is introduced.
+Generated Public Data Summaries v0 now adds deterministic static JSON summaries
+under `public_site/data/` and `site/dist/data/` for page, source, eval, route,
+and build state. These files are static summaries for future lite/text/files,
+snapshot, relay, and native-client consumers; they are not a live API, do not
+add live probes or external observations, and do not make production stability
+claims.
 
 ## Quickstart
 
@@ -128,6 +134,7 @@ python scripts/validate_publication_inventory.py
 python scripts/check_github_pages_static_artifact.py
 python site/build.py --check
 python site/validate.py
+python scripts/generate_public_data_summaries.py --check
 python scripts/generate_public_alpha_rehearsal_evidence.py --check
 ```
 
@@ -381,6 +388,9 @@ Eureka is substantial, but it is still a prototype/reference backend:
 - Static Site Generation Migration v0 adds a stdlib-only generator under
   `site/` that builds `site/dist/` for validation. It does not switch the
   Pages artifact away from `public_site/`.
+- Generated Public Data Summaries v0 adds static machine-readable summaries
+  under `public_site/data/` and generated `site/dist/data/`. They are not live
+  API semantics and do not add external observations.
 - The hosting pack supports supervised rehearsal evidence, not open-internet
   approval.
 - Rust has a workspace, parity fixtures, and one isolated source-registry
@@ -396,9 +406,9 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Generated Public Data Summaries v0
-2. Lite/Text/Files Seed Surfaces v0
-3. Static Resolver Demo Snapshots v0
+1. Lite/Text/Files Seed Surfaces v0
+2. Static Resolver Demo Snapshots v0
+3. Custom Domain / Alternate Host Readiness v0
 4. Manual Observation Batch 0 Execution (human-operated parallel work)
 5. Rust Query Planner Parity Candidate v0
 

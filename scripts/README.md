@@ -50,11 +50,18 @@ Current scripts:
   files, no backend, and no live probes; it supports `--json`, performs no
   network calls, starts no server, adds no custom domain, and does not claim a
   successful deployment
+- `generate_public_data_summaries.py`: generates, updates, or checks
+  deterministic static JSON summaries under `public_site/data/` by default,
+  including site, page-registry, source, eval, route, and build summaries; it
+  supports `--update`, `--check`, `--output-root`, and `--json`, performs no
+  network calls, runs no live probes, records no external observations, starts
+  no server, deploys nothing, and does not create live API semantics
 - `site/build.py` and `site/validate.py`: build and validate the stdlib-only
   static-site source tree into `site/dist/` for Static Site Generation
-  Migration v0; they keep `public_site/` as the deployment artifact and add no
-  Node/npm, frontend framework, live backend calls, live probes, external web
-  APIs, or deployment behavior
+  Migration v0; `site/build.py` also emits generated public data summaries into
+  `site/dist/data/`; they keep `public_site/` as the deployment artifact and
+  add no Node/npm, frontend framework, live backend calls, live probes,
+  external web APIs, or deployment behavior
 - `generate_public_alpha_rehearsal_evidence.py`: summarizes, updates, or
   checks Public Alpha Rehearsal Evidence v0 by validating the static site,
   running the in-process public-alpha smoke checks, counting route inventory
@@ -100,7 +107,8 @@ Deterministic tests and demo flows now cover a bounded mixed corpus composed
 from governed synthetic fixtures, small recorded GitHub Releases fixtures, tiny
 recorded Internet Archive-like fixtures, and committed local bundle fixtures.
 They also surface the current bounded engine, public-alpha, publication,
-GitHub Pages artifact, and stdlib static-site generator checks without implying
+GitHub Pages artifact, generated public-data summary, and stdlib static-site
+generator checks without implying
 a final provenance, trust, merge, object-identity, ranking, compatibility
 oracle, fuzzy retrieval, vector search, download, installer, extraction,
 runtime-routing, personalization, async scheduling, distributed workers,

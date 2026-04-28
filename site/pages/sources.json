@@ -40,6 +40,23 @@
       "text": "This matrix is generated from governed source inventory records. Fixture/live/manual state is explicit so placeholders remain placeholders."
     },
     {
+      "type": "grid",
+      "panels": [
+        {
+          "title": "Machine-Readable Summary",
+          "paragraphs": [
+            "Generated Public Data Summaries v0 publishes a static source summary for future lite/text/files, snapshot, relay, and native-client consumers."
+          ],
+          "links": [
+            {
+              "href": "data/source_summary.json",
+              "text": "Source summary JSON"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "source_matrix"
     }
   ]

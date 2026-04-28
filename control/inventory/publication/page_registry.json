@@ -113,7 +113,7 @@
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
       "public_claim_scope": "near-term milestone ordering only",
-      "notes": "Records static-only Pages workflow configuration and notes that generated public data is the next publication milestone."
+      "notes": "Records static-only Pages workflow configuration and notes that Lite/Text/Files Seed Surfaces v0 are the next publication milestone."
     },
     {
       "path": "/local-quickstart.html",
@@ -228,7 +228,7 @@
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
       "public_claim_scope": "reserved route family only",
-      "notes": "Reserved for generated machine-readable public data; not implemented."
+      "notes": "The /data/*.json files exist as static summaries, but the /data/ route-root surface is still reserved and not implemented."
     },
     {
       "path": "/api/",

@@ -47,6 +47,14 @@
         <p>Google Web Search, Internet Archive metadata search, and Internet Archive full-text/OCR search remain external baselines pending/manual. Batch 0 has 39 pending slots and 0 observed records.</p>
       </div>
       <div class="panel">
+        <h2>Static Public Data</h2>
+        <p>Generated Public Data Summaries v0 now publishes deterministic JSON summaries under data/. These files are static summaries for future clients, not a live API.</p>
+        <ul>
+          <li><a href="data/site_manifest.json">Machine-readable site summary</a></li>
+          <li><a href="data/page_registry.json">Machine-readable page registry</a></li>
+        </ul>
+      </div>
+      <div class="panel">
         <h2>Deferred Surfaces</h2>
         <p>Native apps are deferred. Backend deployment infrastructure is absent; no live source probes, source crawling, auth, accounts, rate limiting, TLS ownership, or production process supervision are implemented here.</p>
       </div>

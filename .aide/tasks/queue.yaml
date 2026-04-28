@@ -181,16 +181,16 @@
     {
       "id": "generated_public_data_summaries_v0",
       "title": "Generated Public Data Summaries v0",
-      "status": "next",
+      "status": "completed",
       "priority": 26,
-      "notes": "Generate static public data summaries under /data/ only after the public data contract is stable enough for static clients."
+      "notes": "Generated deterministic static public data summaries under public_site/data and site/dist/data from governed publication inventory, source inventory, eval/audit outputs, and route inventory without adding live APIs, live probes, deployment behavior, or external observations."
     },
     {
       "id": "lite_text_files_seed_surfaces_v0",
       "title": "Lite/Text/Files Seed Surfaces v0",
-      "status": "queued",
+      "status": "next",
       "priority": 27,
-      "notes": "Seed compatibility-oriented /lite, /text, and /files surfaces using the publication profiles without implying native apps or relay support."
+      "notes": "Seed compatibility-oriented /lite, /text, and /files surfaces using the generated public data summaries and publication profiles without implying native apps or relay support."
     },
     {
       "id": "static_resolver_demo_snapshots_v0",

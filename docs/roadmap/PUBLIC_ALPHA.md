@@ -37,6 +37,9 @@ The minimum public-alpha entry gate should include:
 - Static Site Generation Migration v0 (implemented as a stdlib-only `site/`
   source/generator tree producing `site/dist/` for validation; `public_site/`
   remains the deployment artifact)
+- Generated Public Data Summaries v0 (implemented as deterministic static JSON
+  under `public_site/data/` and `site/dist/data/`; no live API, live probes,
+  external observations, or production JSON stability claim)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -154,3 +157,9 @@ The generated output is validation evidence, not the GitHub Pages artifact yet.
 This keeps public-alpha backend readiness unchanged and adds no Node/npm,
 frontend framework, live backend behavior, live probes, custom domain, or
 production-readiness claim.
+
+Generated Public Data Summaries v0 now adds static JSON summaries under
+`public_site/data/` and `site/dist/data/` for page, source, eval, route, and
+build state. These files prepare later static compatibility surfaces, but they
+are not a live API, do not host backend behavior, do not enable live probes,
+and do not record external observations.

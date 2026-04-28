@@ -21,6 +21,11 @@ assets, `site/build.py`, and `site/validate.py`.
 `site/dist/` is the generated static output used for validation. It is not the
 GitHub Pages deployment artifact yet.
 
+`public_site/data/` contains Generated Public Data Summaries v0: deterministic
+static JSON projections of site, page, source, eval, route, and build state.
+`site/build.py` also emits matching summaries into `site/dist/data/` for
+generated-output validation. These files are not a live API.
+
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
 expectations, deployment target semantics, and redirects.
@@ -77,10 +82,10 @@ Static Site Generation Migration v0 introduces `site/` and `site/dist/`, but
 changes that contract. The generator must preserve the route, data, client, and
 redirect contracts here.
 
-Generated Public Data Summaries v0 should project safe machine-readable files
-under `/data/` without live data or external observations unless evidence
-records exist.
+Generated Public Data Summaries v0 projects safe machine-readable files under
+`/data/` without live data or external observations. Those files prepare later
+static clients but do not create production API semantics.
 
 Lite, text, files, snapshots, relay surfaces, native clients, custom domains,
-and live backend handoff work are reserved by this plane, but they are not
-implemented by this milestone.
+and live backend handoff work are reserved by this plane, but they remain
+future work after Generated Public Data Summaries v0.

@@ -13,6 +13,7 @@ public_site/
   roadmap.html
   local-quickstart.html
   site_manifest.json
+  data/
   assets/
 ```
 
@@ -39,12 +40,34 @@ site/dist/
   roadmap.html
   local-quickstart.html
   site_manifest.json
+  data/
   assets/
 ```
 
 Static Site Generation Migration v0 creates this stdlib-only generator shape.
 The generated `site/dist/` output is validation evidence and is not the GitHub
 Pages artifact yet.
+
+Generated Public Data Summaries v0 adds:
+
+```text
+public_site/data/
+  site_manifest.json
+  page_registry.json
+  source_summary.json
+  eval_summary.json
+  route_summary.json
+  build_manifest.json
+site/dist/data/
+  site_manifest.json
+  page_registry.json
+  source_summary.json
+  eval_summary.json
+  route_summary.json
+  build_manifest.json
+```
+
+These are deterministic static JSON summaries, not live API routes.
 
 Expected future static data areas:
 

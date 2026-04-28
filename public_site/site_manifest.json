@@ -29,6 +29,15 @@
   ],
   "source_matrix_source": "control/inventory/sources/*.source.json",
   "eval_status_source": "scripts/run_archive_resolution_evals.py and scripts/run_search_usefulness_audit.py local outputs",
+  "public_data_source": "scripts/generate_public_data_summaries.py",
+  "public_data_files": [
+    "data/site_manifest.json",
+    "data/page_registry.json",
+    "data/source_summary.json",
+    "data/eval_summary.json",
+    "data/route_summary.json",
+    "data/build_manifest.json"
+  ],
   "limitations": [
     "static only",
     "no deployment performed",
@@ -49,7 +58,7 @@
   "static_only": true,
   "no_backend": true,
   "no_live_probes": true,
-  "next_milestone": "Generated Public Data Summaries v0",
+  "next_milestone": "Lite/Text/Files Seed Surfaces v0",
   "parallel_human_work": "Manual Observation Batch 0 Execution",
   "no_network_required": true,
   "no_deployment_performed": true

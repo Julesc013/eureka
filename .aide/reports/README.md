@@ -30,3 +30,8 @@ Old-Platform Result Refinement Pack v0 records the archive-resolution
 result-shape refinement pass under
 `control/audits/old-platform-result-refinement-v0/`. It is deterministic eval
 evidence, not AIDE runtime state.
+
+Generated Public Data Summaries v0 records committed static machine-readable
+summaries under `public_site/data/` and generated validation copies under
+`site/dist/data/`. No separate AIDE runtime report is needed; those JSON files
+are publication artifacts, not AIDE product state.

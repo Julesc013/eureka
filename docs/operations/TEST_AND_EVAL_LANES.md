@@ -339,6 +339,23 @@ artifact, performs no network calls, adds no Node/npm or frontend framework,
 does not deploy generated output, starts no backend, enables no live probes,
 and makes no production-readiness claim.
 
+## Generated Public Data Summaries
+
+Generated Public Data Summaries v0 is validated with:
+
+```bash
+python scripts/generate_public_data_summaries.py --check
+python scripts/generate_public_data_summaries.py --json
+python -m unittest tests.operations.test_generated_public_data_summaries tests.scripts.test_generate_public_data_summaries
+```
+
+The lane checks deterministic static JSON under `public_site/data/`, generated
+copies under `site/dist/data/`, public-data contract coverage, source-summary
+placeholder honesty, eval/audit counts, route-summary posture, and build
+manifest no-deployment claims. It performs no network calls, starts no backend,
+adds no live API, enables no live probes, records no external observations, and
+does not change the GitHub Pages artifact.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

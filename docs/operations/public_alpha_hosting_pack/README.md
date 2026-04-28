@@ -37,6 +37,11 @@ Static Site Generation Migration v0 later adds a stdlib-only `site/` generator
 and `site/dist/` validation output. It does not change this hosting pack or the
 Pages artifact: `public_site/` remains the deployable static artifact.
 
+Generated Public Data Summaries v0 adds deterministic static JSON under
+`public_site/data/` and `site/dist/data/`. Those summaries support later static
+compatibility surfaces; they are not a live API, do not run backend code, do
+not enable live probes, and do not record external observations.
+
 ## What This Pack Is
 
 - an operator-readable packet for rehearsing the constrained `public_alpha`

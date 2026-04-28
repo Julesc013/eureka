@@ -31,6 +31,8 @@ process manager, or multi-user isolation.
   `docs/operations/GITHUB_PAGES_DEPLOYMENT.md`
 - GitHub Pages artifact checker:
   `python scripts/check_github_pages_static_artifact.py`
+- Generated public data summary check:
+  `python scripts/generate_public_data_summaries.py --check`
 - Public Alpha Rehearsal Evidence v0:
   `docs/operations/public_alpha_rehearsal_evidence_v0/`
 - Public Alpha Wrapper:
@@ -129,6 +131,11 @@ Static Site Generation Migration v0 adds `site/` and generated `site/dist/`
 validation output after the Pages workflow, but the workflow still deploys
 `public_site/`. It adds no backend hosting, live probes, Node/npm, frontend
 framework, or production-readiness claim.
+
+Generated Public Data Summaries v0 adds static JSON under `public_site/data/`
+and `site/dist/data/`. It prepares later static compatibility surfaces, but it
+does not add live API behavior, backend hosting, live probes, external
+observations, or production JSON stability claims.
 
 ## Public Alpha Wrapper
 

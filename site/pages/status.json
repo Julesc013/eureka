@@ -71,6 +71,22 @@
           ]
         },
         {
+          "title": "Static Public Data",
+          "paragraphs": [
+            "Generated Public Data Summaries v0 now publishes deterministic JSON summaries under data/. These files are static summaries for future clients, not a live API."
+          ],
+          "links": [
+            {
+              "href": "data/site_manifest.json",
+              "text": "Machine-readable site summary"
+            },
+            {
+              "href": "data/page_registry.json",
+              "text": "Machine-readable page registry"
+            }
+          ]
+        },
+        {
           "title": "Deferred Surfaces",
           "paragraphs": [
             "Native apps are deferred. Backend deployment infrastructure is absent; no live source probes, source crawling, auth, accounts, rate limiting, TLS ownership, or production process supervision are implemented here."

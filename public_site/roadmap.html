@@ -28,12 +28,22 @@
       <li><strong>Public Publication Plane Contracts v0</strong>: implemented as route, data, client profile, deployment target, redirect, and base-path governance before deployment.</li>
       <li><strong>GitHub Pages Deployment Enablement v0</strong>: implemented as a static-only workflow and artifact check for publishing this artifact; deployment success is unverified until GitHub Actions evidence exists.</li>
       <li><strong>Static Site Generation Migration v0</strong>: implemented as a stdlib-only <code>site/</code> generator that writes <code>site/dist/</code> for validation while this <code>public_site/</code> artifact remains the Pages artifact.</li>
-      <li><strong>Generated Public Data Summaries v0</strong>: next static data projection work, still without live data or external observations.</li>
-      <li><strong>Lite/Text/Files Seed Surfaces v0</strong>: later compatibility surfaces using the publication contracts.</li>
+      <li><strong>Generated Public Data Summaries v0</strong>: implemented as deterministic static <code>data/</code> summaries from governed inventories and eval/audit sources; no live API, probes, or external observations.</li>
+      <li><strong>Lite/Text/Files Seed Surfaces v0</strong>: next compatibility surfaces using the generated public data summaries.</li>
       <li><strong>Live Probe Gateway Contract</strong>: later contract and abuse-control design before any live probing.</li>
       <li><strong>Internet Archive Live Probe v0</strong>: later and gated; not before static site, rehearsal, wrapper, and gateway contract work.</li>
       <li><strong>Rust Query Planner Parity Candidate v0</strong>: parity catch-up when Python behavior is stable enough.</li>
     </ol>
+    <section class="grid">
+      <div class="panel">
+        <h2>Machine-Readable Publication State</h2>
+        <p>Generated public data includes build and route summaries for future static compatibility surfaces.</p>
+        <ul>
+          <li><a href="data/build_manifest.json">Build manifest JSON</a></li>
+          <li><a href="data/route_summary.json">Route summary JSON</a></li>
+        </ul>
+      </div>
+    </section>
   </main>
   <footer>
     Eureka is a Python reference backend prototype, not production. This site uses no scraping, performs no live source probes, and makes no external search calls. external baselines pending/manual; source placeholders remain placeholders.

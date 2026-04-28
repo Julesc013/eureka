@@ -15,6 +15,9 @@ Current boundary:
   deployment artifact.
 - `site/` is the stdlib-only source/generator tree.
 - `site/dist/` is generated output for validation, not deployment.
+- `public_site/data/` and `site/dist/data/` contain Generated Public Data
+  Summaries v0 static JSON. They are not a live API and do not record external
+  observations.
 - `control/inventory/publication/` owns the publication contracts and
   inventories.
 - `.github/workflows/pages.yml` is the static-only GitHub Pages publishing
@@ -25,4 +28,5 @@ The publication-plane validator is:
 ```bash
 python scripts/validate_publication_inventory.py
 python scripts/validate_publication_inventory.py --json
+python scripts/generate_public_data_summaries.py --check
 ```

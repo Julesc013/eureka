@@ -36,6 +36,7 @@ id-token: write
 The workflow validates before upload:
 
 ```bash
+python scripts/generate_public_data_summaries.py --check
 python scripts/validate_publication_inventory.py
 python scripts/validate_public_static_site.py
 python scripts/check_github_pages_static_artifact.py
@@ -84,6 +85,11 @@ root-relative links such as `/sources.html`.
 ## Artifact Safety
 
 The Pages artifact is `public_site/` only.
+
+Generated Public Data Summaries v0 commits static JSON under
+`public_site/data/`; those files are part of the static artifact and are checked
+for freshness and static-only safety before upload. They are not live API
+routes and do not include live probes or external observations.
 
 Generated `site/dist/` output is not uploaded by this workflow yet. A later
 artifact migration must explicitly prove equivalence and update this document,

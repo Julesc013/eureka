@@ -59,6 +59,12 @@
           "paragraphs": [
             "Google Web Search, Internet Archive metadata search, and Internet Archive full-text/OCR search remain pending/manual. Global slots: 192 pending and 0 observed. Batch 0: 39 pending and 0 observed.",
             "No external baseline observations are fabricated or automated. Comparison reports should wait for human-entered records."
+          ],
+          "links": [
+            {
+              "href": "data/eval_summary.json",
+              "text": "Eval summary JSON"
+            }
           ]
         },
         {

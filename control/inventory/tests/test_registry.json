@@ -1368,6 +1368,50 @@
       "failure_means": "Optional Rust parity tests failed in an environment with Cargo.",
       "advisory_or_required": "optional",
       "notes": "Optional until the repo explicitly requires a Rust toolchain."
+    },
+    {
+      "test_id": "generated_public_data_summaries_check",
+      "label": "Generated public data summaries check",
+      "command": "python scripts/generate_public_data_summaries.py --check",
+      "category": "publication",
+      "owner_area": "public_site/data",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none in check mode",
+      "expected_runtime": "seconds",
+      "failure_means": "Committed public_site/data summaries drifted from governed publication inventory, source inventory, eval/audit status, or route inventory inputs.",
+      "advisory_or_required": "required",
+      "notes": "Added by Generated Public Data Summaries v0; validates static JSON summaries only and performs no external searches, live probes, backend deployment, or external observation recording."
+    },
+    {
+      "test_id": "generated_public_data_summaries_tests",
+      "label": "Generated public data summaries tests",
+      "command": "python -m unittest tests.operations.test_generated_public_data_summaries tests.scripts.test_generate_public_data_summaries",
+      "category": "publication",
+      "owner_area": "public_site/data",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary generated output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Generated public data file shape, safety posture, contract coverage, source/eval/route counts, or site/dist integration regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Generated Public Data Summaries v0; checks static summaries for no-live/no-deployment/no-fabricated-baseline posture."
     }
   ]
 }

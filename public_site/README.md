@@ -9,9 +9,15 @@ after validation, but the directory itself does not add backend hosting,
 configure DNS, fetch external data, run live source probes, scrape external
 systems, or start a server.
 
+Generated Public Data Summaries v0 adds deterministic JSON summaries under
+`public_site/data/`. They are static public summaries for future lite/text/files,
+snapshot, relay, and native-client surfaces, not a live API or production
+contract.
+
 Validate it with:
 
 ```bash
+python scripts/generate_public_data_summaries.py --check
 python scripts/validate_public_static_site.py
 python scripts/validate_public_static_site.py --json
 python scripts/check_github_pages_static_artifact.py

@@ -164,6 +164,11 @@ The repo has already proven:
   into `site/dist/` for validation while keeping `public_site/` as the GitHub
   Pages deployment artifact and avoiding Node/npm, frontend frameworks,
   deployment changes, live backend behavior, live probes, and production claims
+- Generated Public Data Summaries v0 as the first static machine-readable
+  publication data layer under `public_site/data/` and `site/dist/data/`,
+  projecting page, source, eval, route, and build summaries from governed repo
+  inputs without adding live API semantics, live probes, external observations,
+  deployment behavior, or production API stability claims
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -211,7 +216,7 @@ The next backend sequence is:
 37. Public Publication Plane Contracts v0 (implemented)
 38. GitHub Pages Deployment Enablement v0 (implemented as static workflow configuration; deployment success unverified)
 39. Static Site Generation Migration v0 (implemented; generated output not deployed)
-40. Generated Public Data Summaries v0
+40. Generated Public Data Summaries v0 (implemented as static JSON summaries)
 41. Lite/Text/Files Seed Surfaces v0
 42. Static Resolver Demo Snapshots v0
 43. Custom Domain / Alternate Host Readiness v0
@@ -226,7 +231,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Generated Public Data Summaries v0
+> Lite/Text/Files Seed Surfaces v0
 
 Why this comes next:
 
@@ -239,10 +244,11 @@ Why this comes next:
   workflow over the existing `public_site/` artifact and these contracts.
 - Static Site Generation Migration v0 now generates `site/dist/` from governed
   `site/` sources, but `public_site/` remains the deployed artifact.
-- The next step is to generate safe `/data/` summaries from governed
-  inventories and eval outputs without live data, observed external baselines,
-  or public deployment-success claims.
-- Generated public data must not add live backend behavior, live probes,
+- Generated Public Data Summaries v0 now provides safe `/data/` summaries from
+  governed inventories and eval outputs without live data, observed external
+  baselines, or public deployment-success claims.
+- The next step is to seed `/lite`, `/text`, and `/files` surfaces from those
+  static summaries without adding live backend behavior, live probes,
   provider-neutral backend deployment config, DNS configuration, external
   baseline observations, or production claims.
 - Manual Observation Batch 0 remains human-operated parallel work, and all

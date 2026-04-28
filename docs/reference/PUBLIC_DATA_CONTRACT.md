@@ -10,6 +10,8 @@ Every public data entry must declare:
 - `stability`
 - `schema_version`
 - `producer`
+- `source_inputs`
+- `generated_by`
 - `consumer_profiles`
 - `contains_live_data`
 - `contains_external_observations`
@@ -24,7 +26,7 @@ No live claims without source. No public data file may claim live source
 coverage, external comparison results, or public deployment unless a repo source
 records that evidence.
 
-Planned public data files include:
+Implemented generated public data files include:
 
 - `/data/site_manifest.json`
 - `/data/page_registry.json`
@@ -32,11 +34,20 @@ Planned public data files include:
 - `/data/eval_summary.json`
 - `/data/route_summary.json`
 - `/data/build_manifest.json`
+
+They are produced by `scripts/generate_public_data_summaries.py` and mirrored
+into `site/dist/data/` by `site/build.py`. They remain `stable_draft`, static,
+and pre-alpha. They are not a live API, do not include live data, and do not
+record external observations.
+
+Planned file-tree public data files include:
+
 - `/files/index.txt`
 - `/files/SHA256SUMS`
 
 The current `public_site/site_manifest.json` is an implemented static artifact
 manifest, not the final generated public data layout. Static Site Generation
 Migration v0 also emits a generated `site/dist/site_manifest.json` for
-validation, but the broader `/data/` summaries remain planned for Generated
-Public Data Summaries v0.
+validation. The root manifest and `/data/site_manifest.json` are intentionally
+separate: the root manifest describes the page pack, while the `/data/` manifest
+summarizes static public data for future clients.
