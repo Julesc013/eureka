@@ -9,41 +9,46 @@
 <body>
   <header>
     <h1>Live-Alpha Preparation Roadmap</h1>
+
     <nav>
       <a href="index.html">Overview</a>
-      <a href="status.html">Status</a>
-      <a href="sources.html">Sources</a>
-      <a href="evals.html">Evals</a>
+      <a href="status.html">Status Snapshot</a>
+      <a href="sources.html">Source Matrix</a>
+      <a href="evals.html">Eval And Audit Status</a>
       <a href="demo-queries.html">Demo Queries</a>
-      <a href="limitations.html">Limitations</a>
+      <a href="limitations.html">Limitations And Public-Alpha Boundaries</a>
+      <a href="roadmap.html">Live-Alpha Preparation Roadmap</a>
       <a href="local-quickstart.html">Local Quickstart</a>
     </nav>
   </header>
   <main>
     <ol>
       <li><strong>Public Alpha Rehearsal Evidence v0</strong>: implemented as supervised local/static evidence using existing safe-mode checks; no deployment was performed.</li>
-      <li><strong>Manual Observation Batch 0 Execution</strong>: human-operated external baseline observations for selected query/system slots.</li>
-      <li><strong>Search Usefulness Baseline Comparison Report v0</strong>: only after real observations exist.</li>
       <li><strong>LIVE_ALPHA_01 Production Public-Alpha Wrapper</strong>: implemented as a localhost-default public-alpha wrapper and config check; no deployment, no live source probes, and no production approval.</li>
       <li><strong>Public Publication Plane Contracts v0</strong>: implemented as route, data, client profile, deployment target, redirect, and base-path governance before deployment.</li>
-      <li><strong>GitHub Pages Deployment Enablement v0</strong>: implemented as a static-only workflow and artifact check for publishing this artifact; deployment success is unverified until GitHub Actions evidence exists.</li>
-      <li><strong>Static Site Generation Migration v0</strong>: implemented as a stdlib-only <code>site/</code> generator that writes <code>site/dist/</code> for validation while this <code>public_site/</code> artifact remains the Pages artifact.</li>
-      <li><strong>Generated Public Data Summaries v0</strong>: implemented as deterministic static <code>data/</code> summaries from governed inventories and eval/audit sources; no live API, probes, or external observations.</li>
-      <li><strong>Lite/Text/Files Seed Surfaces v0</strong>: next compatibility surfaces using the generated public data summaries.</li>
+      <li><strong>GitHub Pages Deployment Enablement v0</strong>: implemented as a static-only workflow and artifact check for publishing public_site; deployment success is unverified until GitHub Actions evidence exists.</li>
+      <li><strong>Static Site Generation Migration v0</strong>: implemented as a stdlib-only generator that writes site/dist while public_site remains the deployable artifact.</li>
+      <li><strong>Generated Public Data Summaries v0</strong>: implemented as deterministic static /data summaries from governed inventories and eval/audit sources; no live API, probes, or external observations.</li>
+      <li><strong>Lite/Text/Files Seed Surfaces v0</strong>: implemented as static no-JS/no-download compatibility seed surfaces under lite/, text/, and files/.</li>
+      <li><strong>Static Resolver Demo Snapshots v0</strong>: next generated static demo snapshots after compatibility surfaces exist.</li>
       <li><strong>Live Probe Gateway Contract</strong>: later contract and abuse-control design before any live probing.</li>
-      <li><strong>Internet Archive Live Probe v0</strong>: later and gated; not before static site, rehearsal, wrapper, and gateway contract work.</li>
+      <li><strong>Manual Observation Batch 0 Execution</strong>: human-operated external baseline observations for selected query/system slots.</li>
       <li><strong>Rust Query Planner Parity Candidate v0</strong>: parity catch-up when Python behavior is stable enough.</li>
     </ol>
     <section class="grid">
       <div class="panel">
         <h2>Machine-Readable Publication State</h2>
-        <p>Generated public data includes build and route summaries for future static compatibility surfaces.</p>
+        <p>Generated public data feeds lite, text, and files seed surfaces while preserving the static-only publication posture.</p>
         <ul>
           <li><a href="data/build_manifest.json">Build manifest JSON</a></li>
           <li><a href="data/route_summary.json">Route summary JSON</a></li>
+          <li><a href="lite/index.html">Lite surface</a></li>
+          <li><a href="text/index.txt">Text surface</a></li>
+          <li><a href="files/index.html">Files surface</a></li>
         </ul>
       </div>
     </section>
+
   </main>
   <footer>
     Eureka is a Python reference backend prototype, not production. This site uses no scraping, performs no live source probes, and makes no external search calls. external baselines pending/manual; source placeholders remain placeholders.

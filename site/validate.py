@@ -35,6 +35,26 @@ REQUIRED_DIST_DATA_FILES = (
     "data/route_summary.json",
     "data/build_manifest.json",
 )
+REQUIRED_DIST_COMPATIBILITY_FILES = (
+    "lite/index.html",
+    "lite/sources.html",
+    "lite/evals.html",
+    "lite/demo-queries.html",
+    "lite/limitations.html",
+    "lite/README.txt",
+    "text/index.txt",
+    "text/sources.txt",
+    "text/evals.txt",
+    "text/demo-queries.txt",
+    "text/limitations.txt",
+    "text/README.txt",
+    "files/index.html",
+    "files/index.txt",
+    "files/README.txt",
+    "files/manifest.json",
+    "files/SHA256SUMS",
+    "files/data/README.txt",
+)
 FORBIDDEN_NAMES = {
     "package.json",
     "package-lock.json",
@@ -102,6 +122,7 @@ def validate_site_tree() -> dict[str, Any]:
     dist_dir = site_build.DEFAULT_OUTPUT
     dist_validation: Mapping[str, Any] | None = None
     dist_data_files: list[str] = []
+    dist_compatibility_files: list[str] = []
     if dist_dir.exists() and any(dist_dir.glob("*.html")):
         dist_validation = validate_public_static_site(dist_dir)
         if dist_validation["status"] != "valid":
@@ -116,6 +137,12 @@ def validate_site_tree() -> dict[str, Any]:
                 json.loads(path.read_text(encoding="utf-8"))
             except json.JSONDecodeError as exc:
                 errors.append(f"site/dist/{relative}: invalid JSON: {exc}.")
+        for relative in REQUIRED_DIST_COMPATIBILITY_FILES:
+            path = dist_dir / relative
+            if not path.exists():
+                errors.append(f"site/dist/{relative}: generated compatibility surface file is missing.")
+                continue
+            dist_compatibility_files.append(relative)
     else:
         warnings.append("site/dist has not been generated yet.")
 
@@ -128,6 +155,8 @@ def validate_site_tree() -> dict[str, Any]:
         "page_count": len(page_configs),
         "required_dist_data_files": list(REQUIRED_DIST_DATA_FILES),
         "dist_data_files": dist_data_files,
+        "required_dist_compatibility_files": list(REQUIRED_DIST_COMPATIBILITY_FILES),
+        "dist_compatibility_files": dist_compatibility_files,
         "dist_validation_status": dist_validation.get("status") if dist_validation else None,
         "errors": errors,
         "warnings": warnings,

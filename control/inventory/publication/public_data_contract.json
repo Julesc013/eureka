@@ -152,33 +152,14 @@
       "notes": "Stable build provenance summary with UNKNOWN_UNTIL_CI placeholders for commit/build time. It does not claim deployment was performed."
     },
     {
-      "path": "/files/index.txt",
-      "status": "planned",
-      "stability": "experimental",
+      "path": "/files/manifest.json",
+      "status": "static_demo",
+      "stability": "stable_draft",
       "schema_version": "0.1.0",
-      "producer": "future Lite/Text/Files Seed Surfaces v0",
+      "producer": "Lite/Text/Files Seed Surfaces v0",
       "source_inputs": [
-        "public_site/data/*.json"
-      ],
-      "consumer_profiles": [
-        "file_tree",
-        "text",
-        "snapshot"
-      ],
-      "contains_live_data": false,
-      "contains_external_observations": false,
-      "safe_for_static_hosting": true,
-      "generated_by": "future_lite_text_files_seed_surfaces_v0",
-      "notes": "Future static file-tree index."
-    },
-    {
-      "path": "/files/SHA256SUMS",
-      "status": "planned",
-      "stability": "experimental",
-      "schema_version": "0.1.0",
-      "producer": "future Lite/Text/Files Seed Surfaces v0",
-      "source_inputs": [
-        "public_site/data/*.json"
+        "public_site/data/*.json",
+        "scripts/generate_compatibility_surfaces.py"
       ],
       "consumer_profiles": [
         "file_tree",
@@ -188,8 +169,50 @@
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
-      "generated_by": "future_lite_text_files_seed_surfaces_v0",
-      "notes": "Future checksums file; no checksums are generated in this slice."
+      "generated_by": "scripts/generate_compatibility_surfaces.py",
+      "notes": "Static file-tree manifest for lite/text/files seed surfaces. It is not a signed snapshot and contains no executable downloads."
+    },
+    {
+      "path": "/files/index.txt",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "schema_version": "0.1.0",
+      "producer": "Lite/Text/Files Seed Surfaces v0",
+      "source_inputs": [
+        "public_site/data/*.json",
+        "scripts/generate_compatibility_surfaces.py"
+      ],
+      "consumer_profiles": [
+        "file_tree",
+        "text",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "generated_by": "scripts/generate_compatibility_surfaces.py",
+      "notes": "Static file-tree text index for public data summaries and seed-surface artifacts. It contains no executable downloads."
+    },
+    {
+      "path": "/files/SHA256SUMS",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "schema_version": "0.1.0",
+      "producer": "Lite/Text/Files Seed Surfaces v0",
+      "source_inputs": [
+        "public_site/data/*.json",
+        "scripts/generate_compatibility_surfaces.py"
+      ],
+      "consumer_profiles": [
+        "file_tree",
+        "snapshot",
+        "native_client"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "generated_by": "scripts/generate_compatibility_surfaces.py",
+      "notes": "Static checksum list for public data summaries and selected files-surface artifacts. It does not imply signed snapshots or download trust."
     }
   ]
 }

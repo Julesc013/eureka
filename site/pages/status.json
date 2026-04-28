@@ -73,7 +73,7 @@
         {
           "title": "Static Public Data",
           "paragraphs": [
-            "Generated Public Data Summaries v0 now publishes deterministic JSON summaries under data/. These files are static summaries for future clients, not a live API."
+            "Generated Public Data Summaries v0 publishes deterministic JSON summaries under data/. Lite/Text/Files Seed Surfaces v0 now consumes those summaries to publish static no-JS/no-download compatibility surfaces."
           ],
           "links": [
             {
@@ -83,6 +83,18 @@
             {
               "href": "data/page_registry.json",
               "text": "Machine-readable page registry"
+            },
+            {
+              "href": "lite/index.html",
+              "text": "Lite HTML surface"
+            },
+            {
+              "href": "text/index.txt",
+              "text": "Text surface"
+            },
+            {
+              "href": "files/index.html",
+              "text": "Files surface"
             }
           ]
         },

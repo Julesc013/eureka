@@ -4,6 +4,12 @@
     "/eureka/",
     "/"
   ],
+  "compatibility_surface_source": "scripts/generate_compatibility_surfaces.py",
+  "compatibility_surfaces": [
+    "lite/",
+    "text/",
+    "files/"
+  ],
   "deploy_artifact_current": "public_site",
   "deployment_status": "workflow_configured_deployment_unverified",
   "deployment_workflow_configured": true,
@@ -23,7 +29,7 @@
     "manual external baselines remain pending",
     "fixture-backed evidence is not global truth"
   ],
-  "next_milestone": "Lite/Text/Files Seed Surfaces v0",
+  "next_milestone": "Static Resolver Demo Snapshots v0",
   "no_backend": true,
   "no_deployment_performed": true,
   "no_live_backend": true,

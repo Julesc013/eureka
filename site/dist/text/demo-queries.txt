@@ -1,0 +1,19 @@
+Demo Queries
+============
+
+Demo queries are examples for local prototype behavior only.
+They do not invoke live hosted search.
+No live search is performed by this static text file.
+
+- Windows 7 apps
+- latest Firefox before XP support ended
+- old blue FTP client for XP
+- Windows 98 registry repair
+- driver inside support CD
+- driver for ThinkPad T42 Wi-Fi Windows 2000
+- PC Magazine July 1994 ray tracing
+- Mac OS 9 browser
+- PowerPC Mac OS X 10.4 browser
+- Creative CT1740 driver Windows 98
+- 3Com 3C905 Windows 95 driver
+

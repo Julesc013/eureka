@@ -11,6 +11,12 @@
   "generated_artifact_deployed": false,
   "public_data_summaries_status": "implemented",
   "public_data_summaries_root": "public_site/data",
+  "compatibility_surfaces_status": "static_demo",
+  "compatibility_surfaces_roots": [
+    "public_site/lite",
+    "public_site/text",
+    "public_site/files"
+  ],
   "deploy_artifact_current": "public_site",
   "base_path_policy": "deployment_target_defined",
   "publication_scope": [
@@ -105,11 +111,11 @@
     }
   ],
   "next_expected_milestones": [
-    "Lite/Text/Files Seed Surfaces v0",
     "Static Resolver Demo Snapshots v0",
     "Custom Domain / Alternate Host Readiness v0",
     "Live Backend Handoff Contract v0",
-    "Live Probe Gateway Contract v0"
+    "Live Probe Gateway Contract v0",
+    "Manual Observation Batch 0 Execution"
   ],
   "created_by_slice": "public_publication_plane_contracts_v0",
   "notes": [
@@ -118,6 +124,7 @@
     "The current static artifact remains public_site and is not renamed by this slice.",
     "Static Site Generation Migration v0 adds site/ and site/dist, but public_site remains the current deployment artifact.",
     "Generated Public Data Summaries v0 adds static machine-readable summaries under public_site/data and site/dist/data.",
+    "Lite/Text/Files Seed Surfaces v0 adds static compatibility seed surfaces under public_site/lite, public_site/text, and public_site/files.",
     "No provider backend configuration, live backend, or live source probe is added by this contract."
   ]
 }

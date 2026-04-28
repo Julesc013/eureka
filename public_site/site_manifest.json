@@ -38,6 +38,32 @@
     "data/route_summary.json",
     "data/build_manifest.json"
   ],
+  "compatibility_surface_source": "scripts/generate_compatibility_surfaces.py",
+  "compatibility_surfaces": [
+    "lite/",
+    "text/",
+    "files/"
+  ],
+  "compatibility_surface_files": [
+    "lite/index.html",
+    "lite/sources.html",
+    "lite/evals.html",
+    "lite/demo-queries.html",
+    "lite/limitations.html",
+    "lite/README.txt",
+    "text/index.txt",
+    "text/sources.txt",
+    "text/evals.txt",
+    "text/demo-queries.txt",
+    "text/limitations.txt",
+    "text/README.txt",
+    "files/index.html",
+    "files/index.txt",
+    "files/README.txt",
+    "files/manifest.json",
+    "files/SHA256SUMS",
+    "files/data/README.txt"
+  ],
   "limitations": [
     "static only",
     "no deployment performed",
@@ -58,7 +84,7 @@
   "static_only": true,
   "no_backend": true,
   "no_live_probes": true,
-  "next_milestone": "Lite/Text/Files Seed Surfaces v0",
+  "next_milestone": "Static Resolver Demo Snapshots v0",
   "parallel_human_work": "Manual Observation Batch 0 Execution",
   "no_network_required": true,
   "no_deployment_performed": true

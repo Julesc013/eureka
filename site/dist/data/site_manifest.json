@@ -187,10 +187,62 @@
       "path": "/lite/",
       "requires_javascript": false,
       "safe_for_static_hosting": true,
-      "source_file": null,
-      "stability": "experimental",
-      "status": "planned",
-      "title": "Future Lite HTML Surface",
+      "source_file": "public_site/lite/index.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Lite HTML Surface",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "lite_html"
+      ],
+      "path": "/lite/sources.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/lite/sources.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Lite Source Summary",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "lite_html"
+      ],
+      "path": "/lite/evals.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/lite/evals.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Lite Eval Summary",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "lite_html"
+      ],
+      "path": "/lite/demo-queries.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/lite/demo-queries.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Lite Demo Queries",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "lite_html"
+      ],
+      "path": "/lite/limitations.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/lite/limitations.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Lite Limitations",
       "works_under_project_base_path": true
     },
     {
@@ -200,10 +252,62 @@
       "path": "/text/",
       "requires_javascript": false,
       "safe_for_static_hosting": true,
-      "source_file": null,
-      "stability": "experimental",
-      "status": "planned",
-      "title": "Future Text Surface",
+      "source_file": "public_site/text/index.txt",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Text Surface",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "text"
+      ],
+      "path": "/text/sources.txt",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/text/sources.txt",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Text Source Summary",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "text"
+      ],
+      "path": "/text/evals.txt",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/text/evals.txt",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Text Eval Summary",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "text"
+      ],
+      "path": "/text/demo-queries.txt",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/text/demo-queries.txt",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Text Demo Queries",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "text"
+      ],
+      "path": "/text/limitations.txt",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/text/limitations.txt",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Text Limitations",
       "works_under_project_base_path": true
     },
     {
@@ -213,10 +317,54 @@
       "path": "/files/",
       "requires_javascript": false,
       "safe_for_static_hosting": true,
-      "source_file": null,
-      "stability": "experimental",
-      "status": "planned",
-      "title": "Future File Tree Surface",
+      "source_file": "public_site/files/index.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "File Tree Surface",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "file_tree",
+        "text"
+      ],
+      "path": "/files/index.txt",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/files/index.txt",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "File Tree Text Index",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "file_tree",
+        "snapshot",
+        "native_client"
+      ],
+      "path": "/files/manifest.json",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/files/manifest.json",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "File Tree Manifest",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "file_tree",
+        "snapshot",
+        "native_client"
+      ],
+      "path": "/files/SHA256SUMS",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/files/SHA256SUMS",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "File Tree Checksums",
       "works_under_project_base_path": true
     },
     {

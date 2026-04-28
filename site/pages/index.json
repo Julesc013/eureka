@@ -74,6 +74,18 @@
               "href": "evals.html"
             },
             {
+              "text": "Open the lite surface",
+              "href": "lite/index.html"
+            },
+            {
+              "text": "Read the text surface",
+              "href": "text/index.txt"
+            },
+            {
+              "text": "Browse the files surface",
+              "href": "files/index.html"
+            },
+            {
               "text": "Check public-alpha limitations",
               "href": "limitations.html"
             },

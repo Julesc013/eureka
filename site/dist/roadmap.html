@@ -9,7 +9,7 @@
 <body>
   <header>
     <h1>Live-Alpha Preparation Roadmap</h1>
-    
+
     <nav>
       <a href="index.html">Overview</a>
       <a href="status.html">Status Snapshot</a>
@@ -29,8 +29,8 @@
       <li><strong>GitHub Pages Deployment Enablement v0</strong>: implemented as a static-only workflow and artifact check for publishing public_site; deployment success is unverified until GitHub Actions evidence exists.</li>
       <li><strong>Static Site Generation Migration v0</strong>: implemented as a stdlib-only generator that writes site/dist while public_site remains the deployable artifact.</li>
       <li><strong>Generated Public Data Summaries v0</strong>: implemented as deterministic static /data summaries from governed inventories and eval/audit sources; no live API, probes, or external observations.</li>
-      <li><strong>Lite/Text/Files Seed Surfaces v0</strong>: next compatibility surfaces using the generated public data summaries.</li>
-      <li><strong>Static Resolver Demo Snapshots v0</strong>: later generated demo snapshots after public data summaries exist.</li>
+      <li><strong>Lite/Text/Files Seed Surfaces v0</strong>: implemented as static no-JS/no-download compatibility seed surfaces under lite/, text/, and files/.</li>
+      <li><strong>Static Resolver Demo Snapshots v0</strong>: next generated static demo snapshots after compatibility surfaces exist.</li>
       <li><strong>Live Probe Gateway Contract</strong>: later contract and abuse-control design before any live probing.</li>
       <li><strong>Manual Observation Batch 0 Execution</strong>: human-operated external baseline observations for selected query/system slots.</li>
       <li><strong>Rust Query Planner Parity Candidate v0</strong>: parity catch-up when Python behavior is stable enough.</li>
@@ -38,10 +38,13 @@
     <section class="grid">
       <div class="panel">
         <h2>Machine-Readable Publication State</h2>
-        <p>Generated public data includes build and route summaries for future static compatibility surfaces.</p>
+        <p>Generated public data feeds lite, text, and files seed surfaces while preserving the static-only publication posture.</p>
         <ul>
           <li><a href="data/build_manifest.json">Build manifest JSON</a></li>
           <li><a href="data/route_summary.json">Route summary JSON</a></li>
+          <li><a href="lite/index.html">Lite surface</a></li>
+          <li><a href="text/index.txt">Text surface</a></li>
+          <li><a href="files/index.html">Files surface</a></li>
         </ul>
       </div>
     </section>

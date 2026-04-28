@@ -1,0 +1,16 @@
+Limitations
+===========
+
+Limitations:
+- not production
+- no live search
+- no live source probes
+- no scraping
+- no executable downloads or mirrors
+- no snapshots yet
+- no relay or native-client runtime behavior
+- public JSON remains pre-alpha stable_draft, not a production API
+
+route_count_summarized: 89
+build_source: generated_public_data_summaries_v0
+

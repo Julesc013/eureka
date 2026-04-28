@@ -42,6 +42,7 @@
         "Public Publication Plane Contracts v0 define route, data, client, and deployment-target governance; the static generator consumes those contracts without changing deployment.",
         "GitHub Pages Deployment Enablement v0 configures static artifact publishing only; it does not host the Python backend or prove deployment success without GitHub Actions evidence.",
         "Static Site Generation Migration v0 generates site/dist for validation, while public_site remains the deployable artifact.",
+        "Lite/Text/Files Seed Surfaces v0 adds static compatibility seed surfaces only; it does not add live search, executable downloads, snapshots, relay behavior, or native-client runtime behavior.",
         "No live crawling, live source probes, or external source calls are included.",
         "No live source probes are enabled by the wrapper.",
         "No scraping and no automated Google or Internet Archive baseline collection.",

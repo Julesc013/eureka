@@ -9,13 +9,15 @@
 <body>
   <header>
     <h1>Safe Demo Query Set</h1>
+
     <nav>
       <a href="index.html">Overview</a>
-      <a href="status.html">Status</a>
-      <a href="sources.html">Sources</a>
-      <a href="evals.html">Evals</a>
-      <a href="limitations.html">Limitations</a>
-      <a href="roadmap.html">Roadmap</a>
+      <a href="status.html">Status Snapshot</a>
+      <a href="sources.html">Source Matrix</a>
+      <a href="evals.html">Eval And Audit Status</a>
+      <a href="demo-queries.html">Demo Queries</a>
+      <a href="limitations.html">Limitations And Public-Alpha Boundaries</a>
+      <a href="roadmap.html">Live-Alpha Preparation Roadmap</a>
       <a href="local-quickstart.html">Local Quickstart</a>
     </nav>
   </header>
@@ -31,19 +33,75 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Windows 7 apps</td><td>Old-platform intent, utility/app records, source and lane summaries.</td><td>Fixture-backed; external baselines pending/manual.</td><td>Not a broad app catalog.</td></tr>
-        <tr><td>latest Firefox before XP support ended</td><td>Latest-compatible intent, Windows XP compatibility evidence, release-note-style evidence.</td><td>Recorded fixture-backed; external baselines pending/manual.</td><td>Not a universal latest-version oracle.</td></tr>
-        <tr><td>old blue FTP client for XP</td><td>Vague identity handling, FTP-client evidence, Windows XP hints.</td><td>Fixture-backed; external baselines pending/manual.</td><td>Exact identity remains bounded by fixture evidence.</td></tr>
-        <tr><td>Windows 98 registry repair</td><td>Utility function evidence, Windows 98 compatibility hints, actionable fixture members.</td><td>Fixture-backed; external baselines pending/manual.</td><td>No malware/trust scoring.</td></tr>
-        <tr><td>driver inside support CD</td><td>Member-vs-parent discovery, driver-like member path, lineage to support bundle.</td><td>Local bundle fixture-backed; external baselines pending/manual.</td><td>Not broad ISO/support-media extraction.</td></tr>
-        <tr><td>driver for ThinkPad T42 Wi-Fi Windows 2000</td><td>Driver/hardware/OS interpretation and member-level evidence.</td><td>Local bundle fixture-backed; external baselines pending/manual.</td><td>Fixture evidence only, not vendor coverage.</td></tr>
-        <tr><td>PC Magazine July 1994 ray tracing</td><td>Article segment, parent issue, page range, OCR-like synthetic fixture text.</td><td>Article-scan recorded fixture-backed; external baselines pending/manual.</td><td>No real scan/PDF/OCR pipeline.</td></tr>
-        <tr><td>Mac OS 9 browser</td><td>Platform software intent and documentation-style result evidence.</td><td>Recorded fixture-backed; external baselines pending/manual.</td><td>Documentation may be clearer than runnable artifact evidence.</td></tr>
-        <tr><td>PowerPC Mac OS X 10.4 browser</td><td>PowerPC/Tiger platform hints and browser documentation evidence.</td><td>Recorded fixture-backed; external baselines pending/manual.</td><td>Not broad PowerPC software coverage.</td></tr>
-        <tr><td>Creative CT1740 driver Windows 98</td><td>Driver/hardware query interpretation and Windows 98 support evidence.</td><td>Fixture-backed; external baselines pending/manual.</td><td>Fixture scope only.</td></tr>
-        <tr><td>3Com 3C905 Windows 95 driver</td><td>Driver/hardware query interpretation and Windows 95 member evidence.</td><td>Fixture-backed; external baselines pending/manual.</td><td>Fixture scope only.</td></tr>
+        <tr>
+          <td>Windows 7 apps</td>
+          <td>Old-platform intent, utility/app records, source and lane summaries.</td>
+          <td>Fixture-backed; external baselines pending/manual.</td>
+          <td>Not a broad app catalog.</td>
+        </tr>
+        <tr>
+          <td>latest Firefox before XP support ended</td>
+          <td>Latest-compatible intent, Windows XP compatibility evidence, release-note-style evidence.</td>
+          <td>Recorded fixture-backed; external baselines pending/manual.</td>
+          <td>Not a universal latest-version oracle.</td>
+        </tr>
+        <tr>
+          <td>old blue FTP client for XP</td>
+          <td>Vague identity handling, FTP-client evidence, Windows XP hints.</td>
+          <td>Fixture-backed; external baselines pending/manual.</td>
+          <td>Exact identity remains bounded by fixture evidence.</td>
+        </tr>
+        <tr>
+          <td>Windows 98 registry repair</td>
+          <td>Utility function evidence, Windows 98 compatibility hints, actionable fixture members.</td>
+          <td>Fixture-backed; external baselines pending/manual.</td>
+          <td>No malware/trust scoring.</td>
+        </tr>
+        <tr>
+          <td>driver inside support CD</td>
+          <td>Member-vs-parent discovery, driver-like member path, lineage to support bundle.</td>
+          <td>Local bundle fixture-backed; external baselines pending/manual.</td>
+          <td>Not broad ISO/support-media extraction.</td>
+        </tr>
+        <tr>
+          <td>driver for ThinkPad T42 Wi-Fi Windows 2000</td>
+          <td>Driver/hardware/OS interpretation and member-level evidence.</td>
+          <td>Local bundle fixture-backed; external baselines pending/manual.</td>
+          <td>Fixture evidence only, not vendor coverage.</td>
+        </tr>
+        <tr>
+          <td>PC Magazine July 1994 ray tracing</td>
+          <td>Article segment, parent issue, page range, OCR-like synthetic fixture text.</td>
+          <td>Article-scan recorded fixture-backed; external baselines pending/manual.</td>
+          <td>No real scan/PDF/OCR pipeline.</td>
+        </tr>
+        <tr>
+          <td>Mac OS 9 browser</td>
+          <td>Platform software intent and documentation-style result evidence.</td>
+          <td>Recorded fixture-backed; external baselines pending/manual.</td>
+          <td>Documentation may be clearer than runnable artifact evidence.</td>
+        </tr>
+        <tr>
+          <td>PowerPC Mac OS X 10.4 browser</td>
+          <td>PowerPC/Tiger platform hints and browser documentation evidence.</td>
+          <td>Recorded fixture-backed; external baselines pending/manual.</td>
+          <td>Not broad PowerPC software coverage.</td>
+        </tr>
+        <tr>
+          <td>Creative CT1740 driver Windows 98</td>
+          <td>Driver/hardware query interpretation and Windows 98 support evidence.</td>
+          <td>Fixture-backed; external baselines pending/manual.</td>
+          <td>Fixture scope only.</td>
+        </tr>
+        <tr>
+          <td>3Com 3C905 Windows 95 driver</td>
+          <td>Driver/hardware query interpretation and Windows 95 member evidence.</td>
+          <td>Fixture-backed; external baselines pending/manual.</td>
+          <td>Fixture scope only.</td>
+        </tr>
       </tbody>
     </table>
+
   </main>
   <footer>
     Eureka is a Python reference backend prototype, not production. This site uses no scraping, performs no live source probes, and makes no external search calls. external baselines pending/manual; source placeholders remain placeholders.

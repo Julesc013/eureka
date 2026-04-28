@@ -59,7 +59,7 @@
     },
     {
       "id": "lite_html",
-      "status": "planned",
+      "status": "static_demo",
       "intended_clients": [
         "old browsers",
         "low-capability HTML clients"
@@ -80,12 +80,12 @@
         "framework hydration",
         "root-only asset paths"
       ],
-      "current_support_level": "not implemented",
-      "notes": "Future old-browser HTML surface."
+      "current_support_level": "seed static surface under public_site/lite",
+      "notes": "Lite/Text/Files Seed Surfaces v0 implements simple no-JS/no-CSS HTML pages generated from public data summaries."
     },
     {
       "id": "text",
-      "status": "planned",
+      "status": "static_demo",
       "intended_clients": [
         "text browsers",
         "terminal readers",
@@ -107,12 +107,12 @@
         "JavaScript-only navigation",
         "binary-only data"
       ],
-      "current_support_level": "not implemented",
-      "notes": "Future text-browser or terminal surface."
+      "current_support_level": "seed static surface under public_site/text",
+      "notes": "Lite/Text/Files Seed Surfaces v0 implements plain text files generated from public data summaries."
     },
     {
       "id": "file_tree",
-      "status": "planned",
+      "status": "static_demo",
       "intended_clients": [
         "static file browsers",
         "mirror tools",
@@ -126,7 +126,7 @@
       ],
       "must_support": [
         "manifest files",
-        "future checksums",
+        "checksums",
         "static host portability"
       ],
       "prohibited_dependencies": [
@@ -134,8 +134,8 @@
         "live backend calls",
         "mutable unversioned data"
       ],
-      "current_support_level": "not implemented",
-      "notes": "Future static file/manifest/checksum tree."
+      "current_support_level": "seed static surface under public_site/files",
+      "notes": "Lite/Text/Files Seed Surfaces v0 implements a static file-tree index, manifest, and SHA256SUMS without executable downloads."
     },
     {
       "id": "snapshot",
@@ -249,4 +249,3 @@
     }
   ]
 }
-

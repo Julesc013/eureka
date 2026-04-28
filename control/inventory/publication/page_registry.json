@@ -113,7 +113,7 @@
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
       "public_claim_scope": "near-term milestone ordering only",
-      "notes": "Records static-only Pages workflow configuration and notes that Lite/Text/Files Seed Surfaces v0 are the next publication milestone."
+      "notes": "Records static-only Pages workflow configuration and notes that Static Resolver Demo Snapshots v0 are the next publication milestone."
     },
     {
       "path": "/local-quickstart.html",
@@ -166,10 +166,10 @@
     },
     {
       "path": "/lite/",
-      "title": "Future Lite HTML Surface",
-      "status": "planned",
-      "stability": "experimental",
-      "source_file": null,
+      "title": "Lite HTML Surface",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/lite/index.html",
       "client_profiles": [
         "lite_html"
       ],
@@ -177,15 +177,79 @@
       "requires_css": false,
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
-      "public_claim_scope": "reserved route family only",
-      "notes": "Reserved for old-browser no-JS HTML; not implemented."
+      "public_claim_scope": "static old-browser HTML seed surface generated from public data summaries",
+      "notes": "Implemented as static no-JS/no-CSS seed pages; not live search or a hosted app."
+    },
+    {
+      "path": "/lite/sources.html",
+      "title": "Lite Source Summary",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/lite/sources.html",
+      "client_profiles": [
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "static source summary projection only",
+      "notes": "Generated from /data/source_summary.json; placeholders remain placeholders."
+    },
+    {
+      "path": "/lite/evals.html",
+      "title": "Lite Eval Summary",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/lite/evals.html",
+      "client_profiles": [
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "static local eval/audit summary only",
+      "notes": "Generated from /data/eval_summary.json; external observations remain pending/manual."
+    },
+    {
+      "path": "/lite/demo-queries.html",
+      "title": "Lite Demo Queries",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/lite/demo-queries.html",
+      "client_profiles": [
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "static demo-query list only",
+      "notes": "Does not imply live hosted search."
+    },
+    {
+      "path": "/lite/limitations.html",
+      "title": "Lite Limitations",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/lite/limitations.html",
+      "client_profiles": [
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "static compatibility surface caveats",
+      "notes": "Keeps no-live-search, no-downloads, no-snapshots, no-relay, and no-native-runtime limits visible."
     },
     {
       "path": "/text/",
-      "title": "Future Text Surface",
-      "status": "planned",
-      "stability": "experimental",
-      "source_file": null,
+      "title": "Text Surface",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/text/index.txt",
       "client_profiles": [
         "text"
       ],
@@ -193,15 +257,79 @@
       "requires_css": false,
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
-      "public_claim_scope": "reserved route family only",
-      "notes": "Reserved for text-browser and terminal consumption; not implemented."
+      "public_claim_scope": "plain-text static seed surface generated from public data summaries",
+      "notes": "Implemented as static text files; not command-line interactivity or live search."
+    },
+    {
+      "path": "/text/sources.txt",
+      "title": "Text Source Summary",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/text/sources.txt",
+      "client_profiles": [
+        "text"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "plain-text source summary projection only",
+      "notes": "Generated from /data/source_summary.json."
+    },
+    {
+      "path": "/text/evals.txt",
+      "title": "Text Eval Summary",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/text/evals.txt",
+      "client_profiles": [
+        "text"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "plain-text local eval/audit summary only",
+      "notes": "Generated from /data/eval_summary.json."
+    },
+    {
+      "path": "/text/demo-queries.txt",
+      "title": "Text Demo Queries",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/text/demo-queries.txt",
+      "client_profiles": [
+        "text"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "plain-text demo-query list only",
+      "notes": "Does not imply live hosted search."
+    },
+    {
+      "path": "/text/limitations.txt",
+      "title": "Text Limitations",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/text/limitations.txt",
+      "client_profiles": [
+        "text"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "plain-text compatibility surface caveats",
+      "notes": "Keeps no-live-search and no-download limits visible."
     },
     {
       "path": "/files/",
-      "title": "Future File Tree Surface",
-      "status": "planned",
-      "stability": "experimental",
-      "source_file": null,
+      "title": "File Tree Surface",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/files/index.html",
       "client_profiles": [
         "file_tree"
       ],
@@ -209,8 +337,61 @@
       "requires_css": false,
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
-      "public_claim_scope": "reserved route family only",
-      "notes": "Reserved for static manifests, checksums, and file-like projections; not implemented."
+      "public_claim_scope": "static file-tree seed surface with manifests and checksums",
+      "notes": "Implemented without executable downloads, mirrors, snapshots, relay behavior, or native runtime."
+    },
+    {
+      "path": "/files/index.txt",
+      "title": "File Tree Text Index",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/files/index.txt",
+      "client_profiles": [
+        "file_tree",
+        "text"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "static file-tree index only",
+      "notes": "Lists public data summaries and file-surface artifacts; no executable downloads."
+    },
+    {
+      "path": "/files/manifest.json",
+      "title": "File Tree Manifest",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/files/manifest.json",
+      "client_profiles": [
+        "file_tree",
+        "snapshot",
+        "native_client"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "static file-tree manifest only",
+      "notes": "Static manifest for file-tree seed artifacts; not a signed snapshot."
+    },
+    {
+      "path": "/files/SHA256SUMS",
+      "title": "File Tree Checksums",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/files/SHA256SUMS",
+      "client_profiles": [
+        "file_tree",
+        "snapshot",
+        "native_client"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "static checksum list for public data and file-surface artifacts",
+      "notes": "Checksum list does not imply signed snapshots or download trust."
     },
     {
       "path": "/data/",

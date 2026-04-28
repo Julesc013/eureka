@@ -1,0 +1,20 @@
+Eureka Text Surface
+===================
+
+Eureka is a Python reference backend prototype, not production.
+This is a plain-text static seed surface generated from public data summaries.
+It is not command-line interactivity and it is not live search.
+
+Files:
+- sources.txt
+- evals.txt
+- demo-queries.txt
+- limitations.txt
+- ../files/index.txt
+
+Machine-readable data:
+- ../data/site_manifest.json
+- ../data/source_summary.json
+- ../data/eval_summary.json
+- ../data/route_summary.json
+

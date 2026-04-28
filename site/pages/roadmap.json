@@ -42,8 +42,8 @@
         {"title": "GitHub Pages Deployment Enablement v0", "text": "implemented as a static-only workflow and artifact check for publishing public_site; deployment success is unverified until GitHub Actions evidence exists."},
         {"title": "Static Site Generation Migration v0", "text": "implemented as a stdlib-only generator that writes site/dist while public_site remains the deployable artifact."},
         {"title": "Generated Public Data Summaries v0", "text": "implemented as deterministic static /data summaries from governed inventories and eval/audit sources; no live API, probes, or external observations."},
-        {"title": "Lite/Text/Files Seed Surfaces v0", "text": "next compatibility surfaces using the generated public data summaries."},
-        {"title": "Static Resolver Demo Snapshots v0", "text": "later generated demo snapshots after public data summaries exist."},
+        {"title": "Lite/Text/Files Seed Surfaces v0", "text": "implemented as static no-JS/no-download compatibility seed surfaces under lite/, text/, and files/."},
+        {"title": "Static Resolver Demo Snapshots v0", "text": "next generated static demo snapshots after compatibility surfaces exist."},
         {"title": "Live Probe Gateway Contract", "text": "later contract and abuse-control design before any live probing."},
         {"title": "Manual Observation Batch 0 Execution", "text": "human-operated external baseline observations for selected query/system slots."},
         {"title": "Rust Query Planner Parity Candidate v0", "text": "parity catch-up when Python behavior is stable enough."}
@@ -55,7 +55,7 @@
         {
           "title": "Machine-Readable Publication State",
           "paragraphs": [
-            "Generated public data includes build and route summaries for future static compatibility surfaces."
+            "Generated public data feeds lite, text, and files seed surfaces while preserving the static-only publication posture."
           ],
           "links": [
             {
@@ -65,6 +65,18 @@
             {
               "href": "data/route_summary.json",
               "text": "Route summary JSON"
+            },
+            {
+              "href": "lite/index.html",
+              "text": "Lite surface"
+            },
+            {
+              "href": "text/index.txt",
+              "text": "Text surface"
+            },
+            {
+              "href": "files/index.html",
+              "text": "Files surface"
             }
           ]
         }

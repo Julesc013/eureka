@@ -45,7 +45,7 @@
         {
           "title": "Machine-Readable Summary",
           "paragraphs": [
-            "Generated Public Data Summaries v0 publishes a static source summary for future lite/text/files, snapshot, relay, and native-client consumers."
+            "Generated Public Data Summaries v0 publishes a static source summary for lite/text/files seed surfaces and future snapshot, relay, and native-client consumers."
           ],
           "links": [
             {

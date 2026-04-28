@@ -9,23 +9,27 @@
 <body>
   <header>
     <h1>Limitations And Public-Alpha Boundaries</h1>
+
     <nav>
       <a href="index.html">Overview</a>
-      <a href="status.html">Status</a>
-      <a href="sources.html">Sources</a>
-      <a href="evals.html">Evals</a>
+      <a href="status.html">Status Snapshot</a>
+      <a href="sources.html">Source Matrix</a>
+      <a href="evals.html">Eval And Audit Status</a>
       <a href="demo-queries.html">Demo Queries</a>
-      <a href="roadmap.html">Roadmap</a>
+      <a href="limitations.html">Limitations And Public-Alpha Boundaries</a>
+      <a href="roadmap.html">Live-Alpha Preparation Roadmap</a>
       <a href="local-quickstart.html">Local Quickstart</a>
     </nav>
   </header>
   <main>
     <ul>
-      <li>No production hosting is included in this pack.</li>
+      <li>No production hosting is included in this generated output.</li>
       <li>No public deployment is recorded by Public Alpha Rehearsal Evidence v0.</li>
       <li>The LIVE_ALPHA_01 public-alpha wrapper is a local entrypoint and config guard only; it is not hosting approval.</li>
-      <li>Public Publication Plane Contracts v0 define route, data, client, and deployment-target governance only; they do not deploy this site.</li>
+      <li>Public Publication Plane Contracts v0 define route, data, client, and deployment-target governance; the static generator consumes those contracts without changing deployment.</li>
       <li>GitHub Pages Deployment Enablement v0 configures static artifact publishing only; it does not host the Python backend or prove deployment success without GitHub Actions evidence.</li>
+      <li>Static Site Generation Migration v0 generates site/dist for validation, while public_site remains the deployable artifact.</li>
+      <li>Lite/Text/Files Seed Surfaces v0 adds static compatibility seed surfaces only; it does not add live search, executable downloads, snapshots, relay behavior, or native-client runtime behavior.</li>
       <li>No live crawling, live source probes, or external source calls are included.</li>
       <li>No live source probes are enabled by the wrapper.</li>
       <li>No scraping and no automated Google or Internet Archive baseline collection.</li>
@@ -39,6 +43,7 @@
       <li>Fixture-backed evidence is not global truth.</li>
       <li>External baselines are manual and time-sensitive until human observation records exist.</li>
     </ul>
+
   </main>
   <footer>
     Eureka is a Python reference backend prototype, not production. This site uses no scraping, performs no live source probes, and makes no external search calls. external baselines pending/manual; source placeholders remain placeholders.

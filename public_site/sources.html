@@ -9,22 +9,24 @@
 <body>
   <header>
     <h1>Source Matrix</h1>
+
     <nav>
       <a href="index.html">Overview</a>
-      <a href="status.html">Status</a>
-      <a href="evals.html">Evals</a>
+      <a href="status.html">Status Snapshot</a>
+      <a href="sources.html">Source Matrix</a>
+      <a href="evals.html">Eval And Audit Status</a>
       <a href="demo-queries.html">Demo Queries</a>
-      <a href="limitations.html">Limitations</a>
-      <a href="roadmap.html">Roadmap</a>
+      <a href="limitations.html">Limitations And Public-Alpha Boundaries</a>
+      <a href="roadmap.html">Live-Alpha Preparation Roadmap</a>
       <a href="local-quickstart.html">Local Quickstart</a>
     </nav>
   </header>
   <main>
-    <p>This matrix is derived from governed source inventory records. Fixture/live/manual state is explicit so placeholders remain placeholders.</p>
+    <p>This matrix is generated from governed source inventory records. Fixture/live/manual state is explicit so placeholders remain placeholders.</p>
     <section class="grid">
       <div class="panel">
         <h2>Machine-Readable Summary</h2>
-        <p>Generated Public Data Summaries v0 publishes a static source summary for future lite/text/files, snapshot, relay, and native-client consumers.</p>
+        <p>Generated Public Data Summaries v0 publishes a static source summary for lite/text/files seed surfaces and future snapshot, relay, and native-client consumers.</p>
         <ul>
           <li><a href="data/source_summary.json">Source summary JSON</a></li>
         </ul>
@@ -52,9 +54,9 @@
           <td>active_fixture</td>
           <td>action_indexed</td>
           <td>Committed local fixture only; no live network access.</td>
-          <td>Search, item metadata, file listing, member listing, content text, action paths.</td>
-          <td>Synthetic scope only; no real-world source coverage.</td>
-          <td>Use as deterministic control while recorded source coverage expands.</td>
+          <td>Search, item metadata, file listing, member listing, content text, hashes, action paths.</td>
+          <td>Synthetic fixture scope only; No real-world source coverage; No live network acquisition</td>
+          <td>Use this as a deterministic fixture control while recorded real-source coverage is added separately.</td>
         </tr>
         <tr>
           <td><code>github-releases-recorded-fixtures</code></td>
@@ -62,10 +64,10 @@
           <td>github_releases</td>
           <td>active_recorded_fixture</td>
           <td>representation_indexed</td>
-          <td>Recorded fixtures only; no live GitHub API access.</td>
-          <td>Release metadata, release assets, recorded payload fixture paths, hashes, action paths.</td>
-          <td>No live API, no source archive member extraction, no issue/discussion coverage.</td>
-          <td>Add more recorded source families before any live GitHub behavior.</td>
+          <td>Recorded fixtures only; no live network access.</td>
+          <td>Search, item metadata, file listing, hashes, action paths.</td>
+          <td>Recorded fixture scope only; No live GitHub API access; No source archive member extraction; No reviews, discussion, or issue coverage</td>
+          <td>Add more recorded source families before considering any live GitHub connector behavior.</td>
         </tr>
         <tr>
           <td><code>internet-archive-recorded-fixtures</code></td>
@@ -73,10 +75,10 @@
           <td>internet_archive_recorded</td>
           <td>active_recorded_fixture</td>
           <td>representation_indexed</td>
-          <td>Internet-Archive-shaped recorded fixtures only; no live Internet Archive calls.</td>
-          <td>Item metadata, file listings, compatibility hints, recorded hashes.</td>
-          <td>No live API, scraping, crawling, item payload fetch, or OCR/full-text source coverage.</td>
-          <td>Expand recorded metadata and item-file fixtures before any live connector behavior.</td>
+          <td>Recorded fixtures only; no live network access.</td>
+          <td>Search, item metadata, file listing, hashes.</td>
+          <td>Recorded fixture scope only; No live Internet Archive API access; No scraping or crawling; No item payload fetch; No OCR/full-text source coverage</td>
+          <td>Expand recorded metadata and item-file fixtures before considering any live Internet Archive connector behavior.</td>
         </tr>
         <tr>
           <td><code>local-bundle-fixtures</code></td>
@@ -84,10 +86,10 @@
           <td>local_bundle_fixtures</td>
           <td>active_fixture</td>
           <td>action_indexed</td>
-          <td>Committed ZIP fixtures only; not arbitrary local filesystem ingestion.</td>
-          <td>Bundle representations, member paths, member readback, compatibility hints, action paths.</td>
-          <td>Fixture scope only; no public-alpha local path access; no live source probing.</td>
-          <td>Use expanded fixtures for audit deltas and compatibility/member refinement.</td>
+          <td>Committed local fixture only; no live network access.</td>
+          <td>Search, item metadata, file listing, member listing, content text, hashes, action paths.</td>
+          <td>Committed fixture scope only; No arbitrary user filesystem ingestion; No public-alpha local path access; No live source probing</td>
+          <td>Use the expanded fixtures as the control corpus for follow-up audit deltas, compatibility evidence expansion, and future old-platform source coverage work.</td>
         </tr>
         <tr>
           <td><code>article-scan-recorded-fixtures</code></td>
@@ -95,10 +97,10 @@
           <td>article_scan_recorded</td>
           <td>active_recorded_fixture</td>
           <td>content_or_member_indexed</td>
-          <td>Tiny synthetic article/scan-shaped recorded fixture text only.</td>
-          <td>Issue metadata, article segment, page range, OCR-like text fixture.</td>
-          <td>No real scans, no copyrighted article text, no OCR engine, no PDF/image parsing.</td>
-          <td>Validate bounded article/page result-shape checks before broader strategy.</td>
+          <td>Recorded fixtures only; no live network access.</td>
+          <td>Search, item metadata, file listing, member listing, content text, hashes.</td>
+          <td>Recorded fixture scope only; No real magazine scans; No copyrighted article text; No OCR engine; No PDF or image parsing; No live source access</td>
+          <td>Use this fixture to validate bounded article/page result-shape checks before considering any broader scan/article source strategy.</td>
         </tr>
         <tr>
           <td><code>internet-archive-placeholder</code></td>
@@ -108,8 +110,8 @@
           <td>source_known</td>
           <td>Planning placeholder only; no connector or live access.</td>
           <td>No current search, metadata, file listing, member listing, or live probe capability.</td>
-          <td>No implemented Internet Archive connector and no live Internet Archive API calls.</td>
-          <td>Future live-probe work must wait for gateway contract and abuse controls.</td>
+          <td>No recorded Internet Archive fixtures; No item-file listing; No metadata search; No live Internet Archive API calls</td>
+          <td>Add recorded metadata and item-file fixtures for a small governed Internet Archive slice.</td>
         </tr>
         <tr>
           <td><code>wayback-memento-placeholder</code></td>
@@ -117,10 +119,10 @@
           <td>wayback_memento</td>
           <td>placeholder</td>
           <td>source_known</td>
-          <td>Planning placeholder only; no replay or Memento expansion.</td>
-          <td>No current temporal capture probing, replay, WARC/WACZ indexing, or live access.</td>
-          <td>No recorded capture fixtures and no live capture probing.</td>
-          <td>Add recorded temporal capture metadata fixtures before live probing.</td>
+          <td>Planning placeholder only; no connector or live access.</td>
+          <td>No current search, metadata, file listing, member listing, or live probe capability.</td>
+          <td>No recorded capture fixtures; No replay or memento expansion; No live capture probing; No WARC/WACZ member indexing</td>
+          <td>Add recorded temporal capture metadata fixtures before any live probing is considered.</td>
         </tr>
         <tr>
           <td><code>software-heritage-placeholder</code></td>
@@ -128,10 +130,10 @@
           <td>software_heritage</td>
           <td>placeholder</td>
           <td>source_known</td>
-          <td>Planning placeholder only; no connector or API calls.</td>
-          <td>No current SWHID lookup, source tree member indexing, or live access.</td>
-          <td>No recorded Software Heritage fixtures and no live Software Heritage API calls.</td>
-          <td>Add recorded source snapshot fixtures before any connector behavior.</td>
+          <td>Planning placeholder only; no connector or live access.</td>
+          <td>No current search, metadata, file listing, member listing, or live probe capability.</td>
+          <td>No recorded Software Heritage fixtures; No SWHID lookup; No source tree member indexing; No live Software Heritage API calls</td>
+          <td>Add recorded source snapshot fixtures and provenance examples before any connector behavior.</td>
         </tr>
         <tr>
           <td><code>local-files-placeholder</code></td>
@@ -140,12 +142,13 @@
           <td>local_private_future</td>
           <td>source_known</td>
           <td>Future local/private source only; no current local-files ingestion.</td>
-          <td>No current public search, metadata, file listing, or action capability.</td>
-          <td>No arbitrary local path access and no public-alpha local path disclosure.</td>
-          <td>Keep private local workflows gated behind explicit future design.</td>
+          <td>No current search, metadata, file listing, member listing, or live probe capability.</td>
+          <td>No implemented local-files ingestion connector; No public-alpha arbitrary local path access; No local bundle fixture corpus yet</td>
+          <td>Add a governed local bundle fixture corpus before any private local-files workflow.</td>
         </tr>
       </tbody>
     </table>
+
   </main>
   <footer>
     Eureka is a Python reference backend prototype, not production. This site uses no scraping, performs no live source probes, and makes no external search calls. external baselines pending/manual; source placeholders remain placeholders.

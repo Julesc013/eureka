@@ -1,0 +1,19 @@
+Sources
+=======
+
+source_count: 9
+
+- article-scan-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / content_or_member_indexed
+- github-releases-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / representation_indexed
+- internet-archive-placeholder: placeholder / placeholder_not_implemented / source_known
+- internet-archive-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / representation_indexed
+- local-bundle-fixtures: active_fixture / fixture_backed_no_live_probe / action_indexed
+- local-files-placeholder: local_private_future / future_local_private_not_ingested / source_known
+- software-heritage-placeholder: placeholder / placeholder_not_implemented / source_known
+- synthetic-fixtures: active_fixture / fixture_backed_no_live_probe / action_indexed
+- wayback-memento-placeholder: placeholder / placeholder_not_implemented / source_known
+
+Placeholders remain placeholders. No live source probes are enabled.
+No live search is performed by this static text file.
+machine_readable: ../data/source_summary.json
+
