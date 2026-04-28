@@ -38,7 +38,8 @@
         "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/publication/surface_capabilities.json",
         "control/inventory/publication/surface_route_matrix.json",
-        "control/inventory/publication/public_data_contract.json"
+        "control/inventory/publication/public_data_contract.json",
+        "control/inventory/publication/snapshot_contract.json"
       ],
       "consumer_profiles": [
         "api_client",
@@ -49,7 +50,7 @@
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_public_data_summaries.py",
-      "notes": "Machine-readable summary manifest for static public data. It includes disabled live backend handoff and live probe gateway capability state; it is not a live API and carries no deployment-success claim."
+      "notes": "Machine-readable summary manifest for static public data. It includes disabled live backend/probe state and Signed Snapshot Format v0 seed-contract status; it is not a live API and carries no deployment-success or production snapshot claim."
     },
     {
       "path": "/data/page_registry.json",
@@ -151,7 +152,8 @@
         "control/inventory/publication/surface_capabilities.json",
         "control/inventory/publication/surface_route_matrix.json",
         "control/inventory/sources/*.source.json",
-        "control/inventory/public_alpha_routes.json"
+        "control/inventory/public_alpha_routes.json",
+        "control/inventory/publication/snapshot_contract.json"
       ],
       "consumer_profiles": [
         "api_client",
@@ -163,7 +165,7 @@
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_public_data_summaries.py",
-      "notes": "Stable build provenance summary with UNKNOWN_UNTIL_CI placeholders for commit/build time. It does not claim deployment was performed."
+      "notes": "Stable build provenance summary with UNKNOWN_UNTIL_CI placeholders for commit/build time. It does not claim deployment, production signing, real signing keys, executable downloads, or public /snapshots/ availability."
     },
     {
       "path": "/files/manifest.json",
@@ -173,7 +175,8 @@
       "producer": "Lite/Text/Files Seed Surfaces v0",
       "source_inputs": [
         "public_site/data/*.json",
-        "scripts/generate_compatibility_surfaces.py"
+        "scripts/generate_compatibility_surfaces.py",
+        "control/inventory/publication/snapshot_contract.json"
       ],
       "consumer_profiles": [
         "file_tree",
@@ -184,7 +187,7 @@
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_compatibility_surfaces.py",
-      "notes": "Static file-tree manifest for lite/text/files seed surfaces. It is not a signed snapshot and contains no executable downloads."
+      "notes": "Static file-tree manifest for lite/text/files seed surfaces. It references Signed Snapshot Format v0 as a repo seed example only and contains no executable downloads, production signed snapshots, or public /snapshots/ route."
     },
     {
       "path": "/files/index.txt",
@@ -205,7 +208,7 @@
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_compatibility_surfaces.py",
-      "notes": "Static file-tree text index for public data summaries and seed-surface artifacts. It contains no executable downloads."
+      "notes": "Static file-tree text index for public data summaries and seed-surface artifacts. It points to snapshot-format limitations and contains no executable downloads or production signed snapshots."
     },
     {
       "path": "/files/SHA256SUMS",
@@ -226,7 +229,7 @@
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_compatibility_surfaces.py",
-      "notes": "Static checksum list for public data summaries and selected files-surface artifacts. It does not imply signed snapshots or download trust."
+      "notes": "Static checksum list for public data summaries and selected files-surface artifacts. It does not imply production snapshot authenticity, release signing, or download trust."
     },
     {
       "path": "/demo/data/demo_snapshots.json",

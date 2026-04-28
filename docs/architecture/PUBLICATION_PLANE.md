@@ -30,8 +30,8 @@ generated-output validation. These files are not a live API.
 Lite/Text/Files Seed Surfaces v0: static compatibility surfaces generated from
 public data summaries for old browsers, plain-text readers, and file-tree
 inspection. `site/build.py` emits matching validation copies into `site/dist/`.
-These files are not live search, executable downloads, snapshots, relay
-behavior, or native-client runtime.
+These files are not live search, executable downloads, production signed
+snapshots, relay behavior, or native-client runtime.
 
 `public_site/demo/` contains Static Resolver Demo Snapshots v0: static no-JS
 examples of query planning, member-level results, compatibility evidence,
@@ -74,8 +74,15 @@ Compatibility Surface Strategy v0 adds
 `surface_capabilities.json` records. This governs modern web, standard web,
 lite, text, files, data, demo, future API, future snapshots, future relay,
 CLI, and future native client projections as multiple views of the same
-resolver truth. It does not implement new runtime behavior, snapshots, relay,
-native apps, live backend behavior, or live probes.
+resolver truth.
+
+Signed Snapshot Format v0 adds `snapshot_contract.json`,
+`docs/reference/SNAPSHOT_FORMAT_CONTRACT.md`,
+`docs/reference/SNAPSHOT_SIGNATURE_POLICY.md`, and a deterministic repo-local
+seed example under `snapshots/examples/static_snapshot_v0/`. It is a contract
+and seed example only: no production signed release, real signing keys,
+executable downloads, public `/snapshots/` route, relay behavior, native app,
+live backend behavior, or live probe is implemented.
 
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
@@ -139,9 +146,10 @@ Generated Public Data Summaries v0 projects safe machine-readable files under
 static clients but do not create production API semantics.
 
 Lite/Text/Files Seed Surfaces v0 consumes those summaries for static
-compatibility output. Snapshots, relay surfaces, native clients, custom
-domains, and live backend handoff work remain future work after the seed
-surfaces.
+compatibility output. Signed Snapshot Format v0 now defines a repo-local
+offline seed format with checksums and signature-placeholder documentation, but
+the public `/snapshots/` route, production signing, relay surfaces, native
+clients, custom domains, and hosted backend work remain future.
 
 Static Resolver Demo Snapshots v0 adds `/demo/` static examples from governed
 data and fixture-backed Python-oracle outputs. They make current behavior easier
@@ -153,5 +161,5 @@ routes and disabled capabilities. Live Probe Gateway Contract v0 now defines
 the disabled source-probe gateway policy before any external probe exists.
 Compatibility Surface Strategy v0 now records the cross-surface policy for
 old-browser, text, file-tree, snapshot, relay, API, CLI, web, and future native
-clients. Signed snapshots, relays, native clients, and any actual Internet
-Archive live probe remain future work.
+clients. Production signed snapshots, public `/snapshots/`, relays, native
+clients, and any actual Internet Archive live probe remain future work.

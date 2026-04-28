@@ -1,20 +1,29 @@
 # Snapshot Surface Contract
 
-Snapshot surfaces are future/deferred. No `/snapshots/` artifact, signed
-bundle, snapshot manifest, or offline snapshot contract is implemented yet.
+Snapshot surfaces remain future/deferred as public routes. No public
+`/snapshots/` artifact is published by the current GitHub Pages static site.
 
-Future snapshots must be static, deterministic, and safe to copy. A later
-Signed Snapshot Format v0 should define:
+Signed Snapshot Format v0 now defines the first seed format and example under:
 
-- bundle layout
-- manifest schema
-- checksum list
-- future signature policy
-- data/source/eval/demo inputs
-- base-path behavior
-- no private local paths
-- no executable download claim
+```text
+snapshots/examples/static_snapshot_v0/
+```
 
-Snapshots are the preferred future path for offline clients and clients that
-cannot consume modern hosted TLS reliably. They must not imply live backend,
-live probe, or production API availability.
+That seed example contains deterministic public data summaries, manifests,
+checksums, and signature-placeholder documentation. It is not a production
+signed release and it is not exposed as a public download surface.
+
+Current boundary:
+
+- snapshot format contract: implemented as experimental contract
+- seed example: implemented under repo `snapshots/examples/static_snapshot_v0/`
+- public `/snapshots/` route: future/deferred
+- real signatures: future
+- private signing keys: absent and prohibited
+- executable downloads or software mirrors: absent and prohibited
+- relay/native runtime behavior: future/deferred
+
+Future public snapshot surfaces must remain static, deterministic, and safe to
+copy. They must include manifests, checksums, signature metadata, source/eval
+data provenance, and no private local paths. They must not imply live backend,
+live probe, production API, or production signing availability.

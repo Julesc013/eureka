@@ -11,9 +11,13 @@
       "public_label": "Future rich web app",
       "status": "deferred",
       "stability": "experimental",
-      "client_profiles": ["modern_web"],
+      "client_profiles": [
+        "modern_web"
+      ],
       "implemented_paths": [],
-      "reserved_paths": ["/app/"],
+      "reserved_paths": [
+        "/app/"
+      ],
       "requires_backend": false,
       "requires_javascript": true,
       "safe_for_static_hosting": false,
@@ -34,9 +38,16 @@
       "public_label": "Local web workbench",
       "status": "implemented",
       "stability": "experimental",
-      "client_profiles": ["standard_web", "modern_web"],
-      "implemented_paths": ["surfaces/web/"],
-      "reserved_paths": ["/web/"],
+      "client_profiles": [
+        "standard_web",
+        "modern_web"
+      ],
+      "implemented_paths": [
+        "surfaces/web/"
+      ],
+      "reserved_paths": [
+        "/web/"
+      ],
       "requires_backend": true,
       "requires_javascript": false,
       "safe_for_static_hosting": false,
@@ -57,9 +68,15 @@
       "public_label": "Lite HTML surface",
       "status": "static_demo",
       "stability": "stable_draft",
-      "client_profiles": ["lite_html"],
-      "implemented_paths": ["public_site/lite/"],
-      "reserved_paths": ["/lite/"],
+      "client_profiles": [
+        "lite_html"
+      ],
+      "implemented_paths": [
+        "public_site/lite/"
+      ],
+      "reserved_paths": [
+        "/lite/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -80,9 +97,15 @@
       "public_label": "Plain text surface",
       "status": "static_demo",
       "stability": "stable_draft",
-      "client_profiles": ["text"],
-      "implemented_paths": ["public_site/text/"],
-      "reserved_paths": ["/text/"],
+      "client_profiles": [
+        "text"
+      ],
+      "implemented_paths": [
+        "public_site/text/"
+      ],
+      "reserved_paths": [
+        "/text/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -103,9 +126,15 @@
       "public_label": "File-tree surface",
       "status": "static_demo",
       "stability": "stable_draft",
-      "client_profiles": ["file_tree"],
-      "implemented_paths": ["public_site/files/"],
-      "reserved_paths": ["/files/"],
+      "client_profiles": [
+        "file_tree"
+      ],
+      "implemented_paths": [
+        "public_site/files/"
+      ],
+      "reserved_paths": [
+        "/files/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -116,8 +145,8 @@
       "supports_external_sources": false,
       "enabled_by_default": true,
       "requires_operator_signoff": false,
-      "current_limitations": "Seed manifests/checksums only; no executable downloads or mirrors.",
-      "next_step": "Feed future snapshot manifest work without implying signed snapshots.",
+      "current_limitations": "Seed manifests/checksums only; no executable downloads, mirrors, production signed snapshots, or public /snapshots/ route.",
+      "next_step": "Reference Signed Snapshot Format v0 seed example while keeping downloads and production snapshots future.",
       "notes": "Includes manifest and SHA256SUMS for static public data/file-surface artifacts."
     },
     {
@@ -126,9 +155,18 @@
       "public_label": "Static public data",
       "status": "implemented",
       "stability": "stable_draft",
-      "client_profiles": ["api_client", "snapshot", "native_client", "file_tree"],
-      "implemented_paths": ["public_site/data/"],
-      "reserved_paths": ["/data/"],
+      "client_profiles": [
+        "api_client",
+        "snapshot",
+        "native_client",
+        "file_tree"
+      ],
+      "implemented_paths": [
+        "public_site/data/"
+      ],
+      "reserved_paths": [
+        "/data/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -140,7 +178,7 @@
       "enabled_by_default": true,
       "requires_operator_signoff": false,
       "current_limitations": "Static JSON summaries only; not a stable production API.",
-      "next_step": "Use as input for snapshots, text/files projections, and future native/relay consumers.",
+      "next_step": "Use as input for snapshots, text/files projections, relay design, and future native consumers.",
       "notes": "Generated Public Data Summaries v0 seeded public_site/data."
     },
     {
@@ -149,9 +187,16 @@
       "public_label": "Static resolver demo snapshots",
       "status": "static_demo",
       "stability": "stable_draft",
-      "client_profiles": ["standard_web", "lite_html"],
-      "implemented_paths": ["public_site/demo/"],
-      "reserved_paths": ["/demo/"],
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "implemented_paths": [
+        "public_site/demo/"
+      ],
+      "reserved_paths": [
+        "/demo/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -172,9 +217,15 @@
       "public_label": "Future live backend API handoff",
       "status": "planned",
       "stability": "experimental",
-      "client_profiles": ["api_client", "native_client"],
+      "client_profiles": [
+        "api_client",
+        "native_client"
+      ],
       "implemented_paths": [],
-      "reserved_paths": ["/api/", "/api/v1/"],
+      "reserved_paths": [
+        "/api/",
+        "/api/v1/"
+      ],
       "requires_backend": true,
       "requires_javascript": false,
       "safe_for_static_hosting": false,
@@ -195,9 +246,17 @@
       "public_label": "Future signed/offline snapshots",
       "status": "deferred",
       "stability": "experimental",
-      "client_profiles": ["snapshot", "native_client", "relay"],
-      "implemented_paths": [],
-      "reserved_paths": ["/snapshots/"],
+      "client_profiles": [
+        "snapshot",
+        "native_client",
+        "relay"
+      ],
+      "implemented_paths": [
+        "snapshots/examples/static_snapshot_v0/"
+      ],
+      "reserved_paths": [
+        "/snapshots/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -208,9 +267,9 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "No snapshot bundles, manifests, signatures, or offline contract exist yet.",
-      "next_step": "Implement Signed Snapshot Format v0 before snapshot artifacts.",
-      "notes": "Future trust comes from manifests/checksums/signatures, not insecure transport."
+      "current_limitations": "Signed Snapshot Format v0 defines a contract and repo seed example only; no public /snapshots/ route, production signed release, signing keys, executable downloads, relay service, or native-client runtime exists.",
+      "next_step": "Design Relay Surface Design v0 and future production signing/key-management policy before public snapshot releases.",
+      "notes": "Seed example is repo-local under snapshots/examples/static_snapshot_v0 and is validated by scripts/generate_static_snapshot.py --check plus scripts/validate_static_snapshot.py."
     },
     {
       "id": "relay",
@@ -218,7 +277,9 @@
       "public_label": "Future local relay surface",
       "status": "deferred",
       "stability": "experimental",
-      "client_profiles": ["relay"],
+      "client_profiles": [
+        "relay"
+      ],
       "implemented_paths": [],
       "reserved_paths": [],
       "requires_backend": true,
@@ -241,8 +302,13 @@
       "public_label": "Local CLI surface",
       "status": "implemented",
       "stability": "experimental",
-      "client_profiles": ["api_client"],
-      "implemented_paths": ["scripts/", "surfaces/native/cli/"],
+      "client_profiles": [
+        "api_client"
+      ],
+      "implemented_paths": [
+        "scripts/",
+        "surfaces/native/cli/"
+      ],
       "reserved_paths": [],
       "requires_backend": false,
       "requires_javascript": false,
@@ -264,7 +330,9 @@
       "public_label": "Future native clients",
       "status": "deferred",
       "stability": "experimental",
-      "client_profiles": ["native_client"],
+      "client_profiles": [
+        "native_client"
+      ],
       "implemented_paths": [],
       "reserved_paths": [],
       "requires_backend": false,
@@ -287,9 +355,15 @@
       "public_label": "Static public site",
       "status": "implemented",
       "stability": "stable_draft",
-      "client_profiles": ["standard_web"],
-      "implemented_paths": ["public_site/"],
-      "reserved_paths": ["/"],
+      "client_profiles": [
+        "standard_web"
+      ],
+      "implemented_paths": [
+        "public_site/"
+      ],
+      "reserved_paths": [
+        "/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -310,8 +384,14 @@
       "public_label": "Public-alpha wrapper",
       "status": "implemented",
       "stability": "experimental",
-      "client_profiles": ["standard_web", "api_client"],
-      "implemented_paths": ["scripts/run_public_alpha_server.py", "surfaces/web/server/public_alpha_config.py"],
+      "client_profiles": [
+        "standard_web",
+        "api_client"
+      ],
+      "implemented_paths": [
+        "scripts/run_public_alpha_server.py",
+        "surfaces/web/server/public_alpha_config.py"
+      ],
       "reserved_paths": [],
       "requires_backend": true,
       "requires_javascript": false,
@@ -333,9 +413,15 @@
       "public_label": "Future live backend",
       "status": "planned",
       "stability": "experimental",
-      "client_profiles": ["api_client", "modern_web", "native_client"],
+      "client_profiles": [
+        "api_client",
+        "modern_web",
+        "native_client"
+      ],
       "implemented_paths": [],
-      "reserved_paths": ["/api/v1/"],
+      "reserved_paths": [
+        "/api/v1/"
+      ],
       "requires_backend": true,
       "requires_javascript": false,
       "safe_for_static_hosting": false,
@@ -356,9 +442,13 @@
       "public_label": "Future live probe gateway",
       "status": "planned",
       "stability": "experimental",
-      "client_profiles": ["api_client"],
+      "client_profiles": [
+        "api_client"
+      ],
       "implemented_paths": [],
-      "reserved_paths": ["/api/v1/live-probe"],
+      "reserved_paths": [
+        "/api/v1/live-probe"
+      ],
       "requires_backend": true,
       "requires_javascript": false,
       "safe_for_static_hosting": false,
@@ -379,9 +469,15 @@
       "public_label": "Static public site",
       "status": "implemented",
       "stability": "stable_draft",
-      "client_profiles": ["standard_web"],
-      "implemented_paths": ["public_site/"],
-      "reserved_paths": ["/"],
+      "client_profiles": [
+        "standard_web"
+      ],
+      "implemented_paths": [
+        "public_site/"
+      ],
+      "reserved_paths": [
+        "/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -402,9 +498,18 @@
       "public_label": "Generated public data summaries",
       "status": "implemented",
       "stability": "stable_draft",
-      "client_profiles": ["api_client", "snapshot", "native_client", "file_tree"],
-      "implemented_paths": ["public_site/data/"],
-      "reserved_paths": ["/data/"],
+      "client_profiles": [
+        "api_client",
+        "snapshot",
+        "native_client",
+        "file_tree"
+      ],
+      "implemented_paths": [
+        "public_site/data/"
+      ],
+      "reserved_paths": [
+        "/data/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -425,9 +530,15 @@
       "public_label": "Lite HTML surface",
       "status": "static_demo",
       "stability": "stable_draft",
-      "client_profiles": ["lite_html"],
-      "implemented_paths": ["public_site/lite/"],
-      "reserved_paths": ["/lite/"],
+      "client_profiles": [
+        "lite_html"
+      ],
+      "implemented_paths": [
+        "public_site/lite/"
+      ],
+      "reserved_paths": [
+        "/lite/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -448,9 +559,15 @@
       "public_label": "Text surface",
       "status": "static_demo",
       "stability": "stable_draft",
-      "client_profiles": ["text"],
-      "implemented_paths": ["public_site/text/"],
-      "reserved_paths": ["/text/"],
+      "client_profiles": [
+        "text"
+      ],
+      "implemented_paths": [
+        "public_site/text/"
+      ],
+      "reserved_paths": [
+        "/text/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -471,9 +588,15 @@
       "public_label": "Files surface",
       "status": "static_demo",
       "stability": "stable_draft",
-      "client_profiles": ["file_tree"],
-      "implemented_paths": ["public_site/files/"],
-      "reserved_paths": ["/files/"],
+      "client_profiles": [
+        "file_tree"
+      ],
+      "implemented_paths": [
+        "public_site/files/"
+      ],
+      "reserved_paths": [
+        "/files/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -494,9 +617,16 @@
       "public_label": "Static resolver demo snapshots",
       "status": "static_demo",
       "stability": "stable_draft",
-      "client_profiles": ["standard_web", "lite_html"],
-      "implemented_paths": ["public_site/demo/"],
-      "reserved_paths": ["/demo/"],
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "implemented_paths": [
+        "public_site/demo/"
+      ],
+      "reserved_paths": [
+        "/demo/"
+      ],
       "requires_backend": false,
       "requires_javascript": false,
       "safe_for_static_hosting": true,
@@ -517,9 +647,15 @@
       "public_label": "Future live search",
       "status": "planned",
       "stability": "experimental",
-      "client_profiles": ["api_client", "modern_web", "native_client"],
+      "client_profiles": [
+        "api_client",
+        "modern_web",
+        "native_client"
+      ],
       "implemented_paths": [],
-      "reserved_paths": ["/api/v1/search"],
+      "reserved_paths": [
+        "/api/v1/search"
+      ],
       "requires_backend": true,
       "requires_javascript": false,
       "safe_for_static_hosting": false,
@@ -540,9 +676,13 @@
       "public_label": "Internet Archive live probe",
       "status": "blocked",
       "stability": "experimental",
-      "client_profiles": ["api_client"],
+      "client_profiles": [
+        "api_client"
+      ],
       "implemented_paths": [],
-      "reserved_paths": ["/api/v1/live-probe"],
+      "reserved_paths": [
+        "/api/v1/live-probe"
+      ],
       "requires_backend": true,
       "requires_javascript": false,
       "safe_for_static_hosting": false,
@@ -563,7 +703,11 @@
       "public_label": "External baseline observations",
       "status": "planned",
       "stability": "experimental",
-      "client_profiles": ["standard_web", "text", "file_tree"],
+      "client_profiles": [
+        "standard_web",
+        "text",
+        "file_tree"
+      ],
       "implemented_paths": [],
       "reserved_paths": [],
       "requires_backend": false,
@@ -586,7 +730,9 @@
       "public_label": "Native clients",
       "status": "deferred",
       "stability": "experimental",
-      "client_profiles": ["native_client"],
+      "client_profiles": [
+        "native_client"
+      ],
       "implemented_paths": [],
       "reserved_paths": [],
       "requires_backend": false,
@@ -609,7 +755,9 @@
       "public_label": "Rust runtime",
       "status": "deferred",
       "stability": "experimental",
-      "client_profiles": ["api_client"],
+      "client_profiles": [
+        "api_client"
+      ],
       "implemented_paths": [],
       "reserved_paths": [],
       "requires_backend": true,
@@ -633,6 +781,8 @@
     "Compatibility Surface Strategy v0 records multiple projections of the same resolver truth instead of making one modern app serve every client.",
     "Legacy IDs are retained for validators added by earlier publication, handoff, and live-probe milestones.",
     "All live backend and live probe capabilities are disabled by default.",
-    "Snapshots, relay, native clients, /app, and live /api/v1 remain future/deferred or contract-only."
+    "Snapshots, relay, native clients, /app, and live /api/v1 remain future/deferred or contract-only.",
+    "Signed Snapshot Format v0 adds a repo-local seed snapshot example and contract, while the public /snapshots/ route remains deferred.",
+    "Production signed snapshots, real signing keys, executable downloads, relay services, and native clients remain future work."
   ]
 }

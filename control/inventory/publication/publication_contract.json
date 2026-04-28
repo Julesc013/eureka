@@ -44,7 +44,9 @@
     "govern future static-to-live backend handoff routes without implementing a hosted backend",
     "govern future live source probe policy without implementing probes or network calls",
     "govern compatibility-surface projections without implementing snapshots, relay, native apps, or new runtime behavior",
-    "govern public claim traceability before public hosting"
+    "govern public claim traceability before public hosting",
+    "govern signed/offline snapshot format, checksums, and signature-placeholder policy without real signing keys",
+    "govern seed snapshot example separately from the current public_site deployment artifact"
   ],
   "no_live_backend": true,
   "no_deployment_performed": true,
@@ -130,12 +132,11 @@
     }
   ],
   "next_expected_milestones": [
-    "Signed Snapshot Format v0",
     "Relay Surface Design v0",
-    "Manual Observation Batch 0 Execution",
     "Rust Source Registry Parity Catch-up v0",
     "Rust Local Index Parity Planning v0",
-    "Internet Archive Live Probe v0 only after explicit human approval"
+    "Manual Observation Batch 0 Execution",
+    "Internet Archive Live Probe v0 only after explicit human approval and live probe gateway review"
   ],
   "created_by_slice": "public_publication_plane_contracts_v0",
   "notes": [
@@ -151,6 +152,13 @@
     "Live Probe Gateway Contract v0 records disabled-by-default live probe source policy, limits, cache/evidence requirements, and operator gates without implementing probes or making network calls.",
     "Rust Query Planner Parity Candidate v0 adds an isolated Rust planner candidate against Python-oracle goldens without replacing Python or wiring Rust into runtime surfaces.",
     "Compatibility Surface Strategy v0 records surface capability and route matrices plus old-client/native/snapshot/relay readiness policy without implementing new runtime behavior.",
-    "No provider backend configuration, live backend, or live source probe is added by this contract."
-  ]
+    "No provider backend configuration, live backend, or live source probe is added by this contract.",
+    "Signed Snapshot Format v0 adds a snapshot contract, checksum/signature-placeholder policy, and deterministic repo seed example under snapshots/examples/static_snapshot_v0 without adding real signing keys, executable downloads, production signatures, relay behavior, native clients, or a public /snapshots/ route.",
+    "The public /snapshots/ route remains future/deferred; public_site remains the current static deployment artifact."
+  ],
+  "snapshot_format_contract_status": "implemented",
+  "snapshot_contract": "control/inventory/publication/snapshot_contract.json",
+  "snapshot_seed_example_root": "snapshots/examples/static_snapshot_v0",
+  "snapshot_seed_example_public_route": null,
+  "production_signed_snapshots_status": "future"
 }

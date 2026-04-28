@@ -105,7 +105,7 @@ public_site/files/
 
 `site/build.py` emits matching validation copies into `site/dist/lite/`,
 `site/dist/text/`, and `site/dist/files/`. These are static compatibility
-surfaces, not live search, executable downloads, signed snapshots, relay
+surfaces, not live search, executable downloads, production signed snapshots, relay
 behavior, or native-client runtime.
 
 Static Resolver Demo Snapshots v0 adds:
@@ -129,12 +129,36 @@ public_site/demo/
 are static, fixture-backed resolver examples. They are not live search, a live
 API, external observations, backend hosting, or production resolver behavior.
 
+Signed Snapshot Format v0 adds a repo-local seed format:
+
+```text
+snapshots/examples/static_snapshot_v0/
+  README_FIRST.txt
+  index.html
+  index.txt
+  SNAPSHOT_MANIFEST.json
+  BUILD_MANIFEST.json
+  SOURCE_SUMMARY.json
+  EVAL_SUMMARY.json
+  ROUTE_SUMMARY.json
+  PAGE_REGISTRY.json
+  CHECKSUMS.SHA256
+  SIGNATURES.README.txt
+  data/README.txt
+```
+
+The seed snapshot is not part of the current `public_site/` artifact, is not a
+production signed release, contains no real signing keys, contains no
+executable downloads, and does not make `/snapshots/` an implemented public
+route.
+
 Expected future static data areas:
 
 - `data/` for schema-versioned public JSON
 - `snapshots/` for offline static bundles
 - `data/build_manifest.json` for build provenance
-- signed snapshot manifests/checksums later, after a snapshot slice exists
+- production signed snapshot manifests/checksums later, after key-management
+  and release-signing policy exists
 
 Static exports must remain portable between `/eureka/` and `/`.
 
@@ -157,6 +181,7 @@ probe availability.
 Compatibility Surface Strategy v0 records the cross-surface contract for the
 current static site, `/data/`, `/lite/`, `/text/`, `/files/`, `/demo/`, future
 `/app/`, future `/web/`, future `/api/v1/`, future `/snapshots/`, future relay,
-CLI, and future native clients. The current export still does not include
-snapshot bundles, relay services, native apps, live API routes, live probes, or
-new runtime behavior.
+CLI, and future native clients. Signed Snapshot Format v0 adds only a
+repo-local seed example and contract. The current export still does not include
+public snapshot bundles, production signatures, relay services, native apps,
+live API routes, live probes, or new runtime behavior.

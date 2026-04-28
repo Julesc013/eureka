@@ -1,0 +1,37 @@
+{
+  "schema_id": "eureka.snapshot_manifest.v0",
+  "schema_version": "0.1.0",
+  "status": "draft",
+  "stability": "experimental",
+  "required_fields": [
+    "schema_version",
+    "snapshot_id",
+    "snapshot_format_version",
+    "status",
+    "generated_by",
+    "production_signed_release",
+    "real_signing_keys_present",
+    "contains_real_binaries",
+    "contains_live_backend",
+    "contains_live_probes",
+    "contains_external_observations",
+    "required_files",
+    "public_data_files",
+    "checksum_file",
+    "signature_placeholder",
+    "limitations"
+  ],
+  "boolean_invariants": {
+    "production_signed_release": false,
+    "real_signing_keys_present": false,
+    "contains_real_binaries": false,
+    "contains_live_backend": false,
+    "contains_live_probes": false,
+    "contains_external_observations": false
+  },
+  "notes": [
+    "This is a compact schema note, not a production JSON Schema commitment.",
+    "The v0 seed snapshot is static and deterministic.",
+    "No private keys, production signatures, executable downloads, live backend output, or live probe output are permitted."
+  ]
+}

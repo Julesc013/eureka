@@ -338,7 +338,7 @@
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
       "public_claim_scope": "static file-tree seed surface with manifests and checksums",
-      "notes": "Implemented without executable downloads, mirrors, snapshots, relay behavior, or native runtime."
+      "notes": "Implemented without executable downloads, mirrors, production signed snapshots, public /snapshots/ route, relay behavior, or native runtime; references the repo-local Signed Snapshot Format v0 seed example."
     },
     {
       "path": "/files/index.txt",
@@ -373,7 +373,7 @@
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
       "public_claim_scope": "static file-tree manifest only",
-      "notes": "Static manifest for file-tree seed artifacts; not a signed snapshot."
+      "notes": "Static manifest for file-tree seed artifacts; references Signed Snapshot Format v0 seed policy but is not a production signed snapshot."
     },
     {
       "path": "/files/SHA256SUMS",
@@ -632,7 +632,7 @@
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
       "public_claim_scope": "reserved route family only",
-      "notes": "Reserved for offline/static snapshot bundles; not implemented."
+      "notes": "Reserved for future public snapshot bundles. Signed Snapshot Format v0 adds a repo-local seed example under snapshots/examples/static_snapshot_v0, but no public /snapshots/ route, production signed release, executable download, relay service, or native-client runtime exists."
     },
     {
       "path": "/source-policy.html",

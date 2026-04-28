@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_contract_id": "eureka-static-snapshot-format",
+  "status": "planned",
+  "stability": "experimental",
+  "snapshot_format_version": "0.1.0",
+  "production_signed_release": false,
+  "real_signing_keys_present": false,
+  "contains_real_binaries": false,
+  "contains_live_backend": false,
+  "contains_live_probes": false,
+  "contains_external_observations": false,
+  "required_files": [
+    "SNAPSHOT_MANIFEST.json",
+    "BUILD_MANIFEST.json",
+    "SOURCE_SUMMARY.json",
+    "EVAL_SUMMARY.json",
+    "ROUTE_SUMMARY.json",
+    "PAGE_REGISTRY.json",
+    "CHECKSUMS.SHA256",
+    "SIGNATURES.README.txt",
+    "README_FIRST.txt",
+    "index.html",
+    "index.txt"
+  ],
+  "optional_files": [
+    "data/README.txt",
+    "demo/DESCRIPTION.txt",
+    "docs/README.txt"
+  ],
+  "checksum_policy": {
+    "algorithm": "sha256",
+    "required": true,
+    "file": "CHECKSUMS.SHA256",
+    "scope": "all committed seed snapshot files except CHECKSUMS.SHA256 itself",
+    "sort_order": "lexicographic_relative_paths",
+    "integrity_limitations": [
+      "Checksums detect accidental corruption and local drift.",
+      "Checksums delivered over the same untrusted channel are not a complete authenticity proof."
+    ]
+  },
+  "signature_policy": {
+    "status": "placeholder_only",
+    "file": "SIGNATURES.README.txt",
+    "real_private_keys_allowed_in_repo": false,
+    "production_trust_chain": false,
+    "future_requires": [
+      "key management decision",
+      "operator signing ceremony",
+      "release provenance policy",
+      "revocation and rotation policy"
+    ]
+  },
+  "public_data_included": [
+    "public_site/data/source_summary.json",
+    "public_site/data/eval_summary.json",
+    "public_site/data/route_summary.json",
+    "public_site/data/page_registry.json",
+    "public_site/data/build_manifest.json"
+  ],
+  "file_tree_policy": {
+    "public_site_files_surface": "public_site/files",
+    "snapshot_example_root": "snapshots/examples/static_snapshot_v0",
+    "public_snapshots_route": "/snapshots/",
+    "public_snapshots_route_status": "future_deferred",
+    "no_executable_downloads": true,
+    "no_software_mirror": true
+  },
+  "client_profiles": [
+    "snapshot",
+    "file_tree",
+    "text",
+    "native_client",
+    "relay"
+  ],
+  "prohibited_contents": [
+    "private signing keys",
+    "real production signatures",
+    "software binaries",
+    "executable downloads",
+    "local stores",
+    "SQLite databases",
+    "cache directories",
+    "live backend output",
+    "live probe results",
+    "external observations not committed by a human"
+  ],
+  "created_by_slice": "signed_snapshot_format_v0",
+  "notes": [
+    "Signed Snapshot Format v0 defines a static/offline seed format and example only.",
+    "The seed example is not a production signed release and includes no private keys.",
+    "The current public /snapshots/ route remains reserved/future; the example lives under snapshots/examples/static_snapshot_v0.",
+    "Snapshots differ from public_site: public_site is the current Pages artifact, while snapshots are future offline bundles consumed by old clients, file-tree surfaces, relay designs, and native clients.",
+    "Snapshots differ from the live backend: they are immutable static data copies and cannot perform live search, live probes, auth, accounts, or dynamic source access."
+  ]
+}

@@ -9,9 +9,10 @@ file manifests, future snapshots, future relays, future native clients, and
 future live API routes must all preserve the same source/evidence/status
 meaning. They may differ in presentation and transport, not in truth.
 
-This is strategy, contract, and inventory work only. It does not implement new
-runtime product behavior, deploy anything, add snapshots, add relay services,
-add native clients, make `/api/v1` live, or enable live probes.
+This is strategy, contract, and inventory work only. Signed Snapshot Format v0
+now adds a repo-local seed snapshot example, but no runtime product behavior,
+deployment, public `/snapshots/` route, production signed snapshot release,
+relay service, native client, live `/api/v1`, or live probe is implemented.
 
 Compatibility Surface Strategy v0 does not implement new runtime product behavior.
 
@@ -29,7 +30,7 @@ Compatibility Surface Strategy v0 does not implement new runtime product behavio
 | Demo | static_demo seed | `/demo/` | no | no | yes | Fixture-backed resolver examples, not live search. |
 | App | deferred | `/app/` | unresolved | yes | no | Future richer browser app; no framework exists. |
 | API | planned contract | `/api/v1/` | yes | no | no | Future live backend handoff, not production API. |
-| Snapshots | deferred | `/snapshots/` | no | no | yes | Future offline bundles with manifests/checksums/signatures. |
+| Snapshots | deferred with seed example | `/snapshots/` future, `snapshots/examples/static_snapshot_v0/` repo seed | no | no | yes | Format contract and seed example exist; production signed releases and public route remain future. |
 | Relay | deferred | local LAN/protocol bridge | yes | no | no | Future operator-controlled bridge; no FTP/SMB/WebDAV implemented. |
 | Native clients | deferred | consume `/data`, `/api`, snapshots | no by default | no | no | Future Windows/macOS/etc clients; CLI is the current local surface. |
 
@@ -70,13 +71,18 @@ source gates.
 
 ## Snapshot, Relay, And Native Readiness
 
-Snapshots require a signed/offline format before artifacts exist:
+Snapshots now have Signed Snapshot Format v0 as a repo-local seed contract and
+example. Production/public snapshots still require:
 
 - deterministic manifest
 - checksums
 - future signature policy
 - no executable download claims
 - no private data
+
+The seed example under `snapshots/examples/static_snapshot_v0/` is not a
+production signed release, does not contain real signing keys, does not include
+software binaries, and is not published as a public `/snapshots/` route.
 
 Relay requires a separate network/security/operator contract. No FTP, SMB,
 WebDAV, proxy, or LAN protocol bridge exists now.
@@ -88,7 +94,7 @@ contracts, not engine internals.
 ## Non-Goals
 
 - no new runtime behavior
-- no snapshots or signatures
+- no production signed snapshots, real keys, or public `/snapshots/` route
 - no relay/protocol bridge
 - no native app project
 - no live `/api/v1`

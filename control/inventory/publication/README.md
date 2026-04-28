@@ -43,6 +43,12 @@ Current boundary:
   lite, text, files, data, API handoff, snapshots, relay, CLI, and future
   native clients. They do not implement snapshots, relay, native apps, live
   API behavior, or new runtime product behavior.
+- `snapshot_contract.json` contains Signed Snapshot Format v0 policy for the
+  repo-local seed example under `snapshots/examples/static_snapshot_v0/`. It
+  records required manifests, checksum policy, signature-placeholder policy,
+  prohibited contents, and client profiles without adding real signing keys,
+  production signed releases, executable downloads, a public `/snapshots/`
+  route, relay behavior, or native-client runtime.
 - `control/inventory/publication/` owns the publication contracts and
   inventories.
 - `.github/workflows/pages.yml` is the static-only GitHub Pages publishing
@@ -60,4 +66,6 @@ python scripts/validate_static_host_readiness.py
 python scripts/validate_live_backend_handoff.py
 python scripts/validate_live_probe_gateway.py
 python scripts/validate_compatibility_surfaces.py
+python scripts/generate_static_snapshot.py --check
+python scripts/validate_static_snapshot.py
 ```
