@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-public-deployment-targets",
+  "targets": [
+    {
+      "id": "github_pages_project",
+      "kind": "static",
+      "status": "planned",
+      "artifact_root": "public_site",
+      "base_path": "/eureka/",
+      "canonical_base_url": "https://julesc013.github.io/eureka/",
+      "requires_base_path_safe_links": true,
+      "no_backend": true,
+      "no_live_probes": true,
+      "no_secrets": true,
+      "notes": [
+        "Project Pages must not define public route architecture.",
+        "Future deployment enablement should validate this inventory before publishing.",
+        "No GitHub Pages workflow is added by this contract slice."
+      ]
+    },
+    {
+      "id": "custom_domain_static",
+      "kind": "static",
+      "status": "future",
+      "artifact_root": "public_site",
+      "base_path": "/",
+      "canonical_base_url": null,
+      "requires_domain_verification": true,
+      "no_backend": true,
+      "no_live_probes": true,
+      "notes": [
+        "Custom domain use is future work.",
+        "DNS configuration and domain verification are not part of this slice.",
+        "Routes must remain portable between /eureka/ and /."
+      ]
+    },
+    {
+      "id": "hosted_public_alpha_backend",
+      "kind": "backend",
+      "status": "future",
+      "artifact_root": null,
+      "base_path": "/",
+      "depends_on": [
+        "public_alpha_wrapper",
+        "deployment_config_pack",
+        "rate_limit_or_abuse_controls",
+        "operator_signoff"
+      ],
+      "no_live_probes_by_default": true,
+      "notes": [
+        "This target is not deployment approval.",
+        "Provider-neutral deployment config and operator approval must come later.",
+        "Live probes stay disabled by default until a separate gateway contract exists."
+      ]
+    }
+  ]
+}
+

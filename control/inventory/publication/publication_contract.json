@@ -1,0 +1,119 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "eureka-publication-plane",
+  "status": "draft",
+  "stability": "pre_alpha",
+  "current_static_artifact": "public_site",
+  "future_generator_root": "site",
+  "future_generated_artifact": "site/dist",
+  "base_path_policy": "deployment_target_defined",
+  "publication_scope": [
+    "govern public route names before deployment",
+    "govern public route stability and status vocabulary",
+    "govern public data files and future schema expectations",
+    "govern static artifact and future generated-artifact separation",
+    "govern base-path and domain portability expectations",
+    "govern public claim traceability before public hosting"
+  ],
+  "no_live_backend": true,
+  "no_deployment_performed": true,
+  "no_external_observations": true,
+  "public_claim_source_policy": {
+    "rule": "No public claim without a repo source.",
+    "allowed_sources": [
+      "README/status docs",
+      "source inventory",
+      "route inventory",
+      "eval/audit outputs",
+      "manual baseline records",
+      "static site manifest",
+      "publication inventory"
+    ],
+    "prohibited_without_source": [
+      "production readiness",
+      "public deployment",
+      "live backend availability",
+      "live source coverage",
+      "external baseline comparison",
+      "implemented client surface"
+    ]
+  },
+  "public_status_taxonomy": [
+    {
+      "id": "implemented",
+      "meaning": "The referenced artifact or route exists in the current repo artifact."
+    },
+    {
+      "id": "recorded_fixture",
+      "meaning": "The claim or data comes from committed recorded fixtures, not live systems."
+    },
+    {
+      "id": "static_demo",
+      "meaning": "The route or file is safe static demonstration material, not live backend behavior."
+    },
+    {
+      "id": "placeholder",
+      "meaning": "The item is named for planning but does not implement behavior."
+    },
+    {
+      "id": "planned",
+      "meaning": "The item is accepted as future work but is not implemented."
+    },
+    {
+      "id": "deferred",
+      "meaning": "The item is intentionally out of the current milestone."
+    },
+    {
+      "id": "blocked",
+      "meaning": "The item depends on an unmet prerequisite."
+    },
+    {
+      "id": "unsafe_for_public_alpha",
+      "meaning": "The item is not safe to expose in the current public-alpha posture."
+    },
+    {
+      "id": "removed",
+      "meaning": "The item was removed from the public contract."
+    }
+  ],
+  "route_stability_levels": [
+    {
+      "id": "experimental",
+      "meaning": "May change while publication contracts are still pre-alpha."
+    },
+    {
+      "id": "stable_draft",
+      "meaning": "Intended to persist, but still subject to review before stable status."
+    },
+    {
+      "id": "stable",
+      "meaning": "Durable public route or data contract; changes require deprecation."
+    },
+    {
+      "id": "deprecated",
+      "meaning": "Still present but scheduled for removal or replacement."
+    },
+    {
+      "id": "removed",
+      "meaning": "No longer present in the active public contract."
+    }
+  ],
+  "next_expected_milestones": [
+    "GitHub Pages Deployment Enablement v0",
+    "Static Site Generation Migration v0",
+    "Generated Public Data Summaries v0",
+    "Lite/Text/Files Seed Surfaces v0",
+    "Static Resolver Demo Snapshots v0",
+    "Custom Domain / Alternate Host Readiness v0",
+    "Live Backend Handoff Contract v0",
+    "Live Probe Gateway Contract v0"
+  ],
+  "created_by_slice": "public_publication_plane_contracts_v0",
+  "notes": [
+    "This contract supersedes the previous immediate Deployment Config Pack ordering.",
+    "GitHub Pages deployment mechanics must consume these contracts rather than define public architecture.",
+    "The current static artifact remains public_site and is not renamed by this slice.",
+    "No site generator, deployment workflow, provider configuration, live backend, or live source probe is added by this slice."
+  ]
+}
+

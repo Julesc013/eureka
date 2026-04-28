@@ -1,0 +1,252 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-public-client-profiles",
+  "profiles": [
+    {
+      "id": "modern_web",
+      "status": "planned",
+      "intended_clients": [
+        "current evergreen browsers",
+        "future richer browser experience"
+      ],
+      "requires_javascript": true,
+      "requires_css": true,
+      "requires_https": false,
+      "intended_path_prefixes": [
+        "/app/",
+        "/web/"
+      ],
+      "must_support": [
+        "base-path aware links",
+        "clear non-production public-alpha status",
+        "source-linked claims"
+      ],
+      "prohibited_dependencies": [
+        "engine internals",
+        "live probes by default",
+        "root-only deployment assumptions"
+      ],
+      "current_support_level": "not implemented as an app surface",
+      "notes": "Reserved for a future richer browser experience."
+    },
+    {
+      "id": "standard_web",
+      "status": "implemented",
+      "intended_clients": [
+        "normal browsers",
+        "current no-JS static public pages"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "requires_https": false,
+      "intended_path_prefixes": [
+        "/",
+        "/web/"
+      ],
+      "must_support": [
+        "no-JS reading",
+        "relative links under /eureka/",
+        "not-production caveats",
+        "public claim source traceability"
+      ],
+      "prohibited_dependencies": [
+        "client-side build chain",
+        "live source calls",
+        "engine internals"
+      ],
+      "current_support_level": "current public_site static pages",
+      "notes": "The active profile for the current hand-authored public_site artifact."
+    },
+    {
+      "id": "lite_html",
+      "status": "planned",
+      "intended_clients": [
+        "old browsers",
+        "low-capability HTML clients"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "requires_https": false,
+      "intended_path_prefixes": [
+        "/lite/"
+      ],
+      "must_support": [
+        "simple HTML",
+        "base-path aware links",
+        "no required scripting"
+      ],
+      "prohibited_dependencies": [
+        "modern JavaScript",
+        "framework hydration",
+        "root-only asset paths"
+      ],
+      "current_support_level": "not implemented",
+      "notes": "Future old-browser HTML surface."
+    },
+    {
+      "id": "text",
+      "status": "planned",
+      "intended_clients": [
+        "text browsers",
+        "terminal readers",
+        "screen-reader-friendly simple output"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "requires_https": false,
+      "intended_path_prefixes": [
+        "/text/"
+      ],
+      "must_support": [
+        "plain text first",
+        "stable route names",
+        "source-linked claim summaries"
+      ],
+      "prohibited_dependencies": [
+        "CSS-only meaning",
+        "JavaScript-only navigation",
+        "binary-only data"
+      ],
+      "current_support_level": "not implemented",
+      "notes": "Future text-browser or terminal surface."
+    },
+    {
+      "id": "file_tree",
+      "status": "planned",
+      "intended_clients": [
+        "static file browsers",
+        "mirror tools",
+        "manual inspection"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "requires_https": false,
+      "intended_path_prefixes": [
+        "/files/"
+      ],
+      "must_support": [
+        "manifest files",
+        "future checksums",
+        "static host portability"
+      ],
+      "prohibited_dependencies": [
+        "server-side directory listing",
+        "live backend calls",
+        "mutable unversioned data"
+      ],
+      "current_support_level": "not implemented",
+      "notes": "Future static file/manifest/checksum tree."
+    },
+    {
+      "id": "snapshot",
+      "status": "planned",
+      "intended_clients": [
+        "offline bundle readers",
+        "static mirrors",
+        "future signed snapshot consumers"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "requires_https": false,
+      "intended_path_prefixes": [
+        "/snapshots/",
+        "/data/"
+      ],
+      "must_support": [
+        "offline static use",
+        "build manifest",
+        "future checksums"
+      ],
+      "prohibited_dependencies": [
+        "live backend requirements",
+        "unrecorded external observations",
+        "root-only absolute links"
+      ],
+      "current_support_level": "not implemented",
+      "notes": "Future offline static bundle profile."
+    },
+    {
+      "id": "native_client",
+      "status": "deferred",
+      "intended_clients": [
+        "future desktop clients",
+        "future local-first clients"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "requires_https": false,
+      "intended_path_prefixes": [
+        "/data/",
+        "/api/",
+        "/snapshots/"
+      ],
+      "must_support": [
+        "schema-versioned data",
+        "explicit public-alpha status",
+        "offline snapshot compatibility when available"
+      ],
+      "prohibited_dependencies": [
+        "private engine internals",
+        "undocumented JSON fields",
+        "implicit production-readiness claims"
+      ],
+      "current_support_level": "not implemented",
+      "notes": "Native app work remains deferred until public data/API/snapshot contracts mature."
+    },
+    {
+      "id": "relay",
+      "status": "deferred",
+      "intended_clients": [
+        "future local LAN relay",
+        "legacy protocol bridge consumers"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "requires_https": false,
+      "intended_path_prefixes": [
+        "/snapshots/",
+        "/files/"
+      ],
+      "must_support": [
+        "explicit source of truth",
+        "static snapshot compatibility",
+        "operator-controlled exposure"
+      ],
+      "prohibited_dependencies": [
+        "open relay behavior",
+        "live probes by default",
+        "private local path exposure"
+      ],
+      "current_support_level": "not implemented",
+      "notes": "Future local protocol bridge profile."
+    },
+    {
+      "id": "api_client",
+      "status": "planned",
+      "intended_clients": [
+        "future public data clients",
+        "future live API clients"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "requires_https": false,
+      "intended_path_prefixes": [
+        "/data/",
+        "/api/"
+      ],
+      "must_support": [
+        "schema_version fields",
+        "typed status vocabulary",
+        "no live-backend assumption unless a handoff contract says so"
+      ],
+      "prohibited_dependencies": [
+        "undocumented response fields",
+        "live backend assumptions in static data",
+        "unversioned public JSON"
+      ],
+      "current_support_level": "planned for static data, deferred for live backend",
+      "notes": "The profile does not guarantee a live public backend exists."
+    }
+  ]
+}
+

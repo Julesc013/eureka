@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.1.0",
+  "static_redirect_policy": "Static hosts may not support server-side redirects. Route changes should prefer deprecation, static redirect pages, and canonical links when supported by a later publication slice.",
+  "supports_server_side_redirects": false,
+  "redirects": [],
+  "notes": [
+    "No redirects are active in v0.",
+    "Route removals require deprecation first unless the route was never implemented.",
+    "Provider-specific redirect files are not added by this slice."
+  ]
+}
+

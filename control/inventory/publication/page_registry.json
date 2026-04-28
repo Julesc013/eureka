@@ -1,0 +1,372 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-public-page-registry",
+  "artifact_root": "public_site",
+  "routes": [
+    {
+      "path": "/",
+      "title": "Eureka Overview",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "public_site/index.html",
+      "client_profiles": [
+        "standard_web"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "prototype identity, not-production status, current local/static capability summary",
+      "notes": "Static host root maps to the current index.html artifact."
+    },
+    {
+      "path": "/status.html",
+      "title": "Status",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "public_site/status.html",
+      "client_profiles": [
+        "standard_web"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "current prototype milestone status with no production or deployment claim",
+      "notes": "Claims must trace to repo status docs and static-site manifest."
+    },
+    {
+      "path": "/sources.html",
+      "title": "Sources",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "public_site/sources.html",
+      "client_profiles": [
+        "standard_web"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "source inventory summaries and placeholder posture",
+      "notes": "Source IDs come from control/inventory/sources/*.source.json."
+    },
+    {
+      "path": "/evals.html",
+      "title": "Evals",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "public_site/evals.html",
+      "client_profiles": [
+        "standard_web"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "local eval and audit status only; external baselines remain pending/manual",
+      "notes": "Claims must trace to local eval/audit scripts and committed evidence docs."
+    },
+    {
+      "path": "/demo-queries.html",
+      "title": "Demo Queries",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "public_site/demo-queries.html",
+      "client_profiles": [
+        "standard_web"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "bounded local demo-query examples only",
+      "notes": "Does not imply hosted search, live source calls, or broad coverage."
+    },
+    {
+      "path": "/limitations.html",
+      "title": "Limitations",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "public_site/limitations.html",
+      "client_profiles": [
+        "standard_web"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "public-alpha caveats, non-production boundaries, and prohibited claims",
+      "notes": "Must remain explicit about no deployment, no live probes, no scraping, and no production readiness."
+    },
+    {
+      "path": "/roadmap.html",
+      "title": "Roadmap",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "public_site/roadmap.html",
+      "client_profiles": [
+        "standard_web"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "near-term milestone ordering only",
+      "notes": "Next deployment work is deferred until publication contracts exist."
+    },
+    {
+      "path": "/local-quickstart.html",
+      "title": "Local Quickstart",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "public_site/local-quickstart.html",
+      "client_profiles": [
+        "standard_web"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "local verification and demo commands only",
+      "notes": "Commands are local and do not deploy or query external systems."
+    },
+    {
+      "path": "/app/",
+      "title": "Future App Surface",
+      "status": "deferred",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "modern_web"
+      ],
+      "requires_javascript": true,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": false,
+      "public_claim_scope": "reserved route family only",
+      "notes": "Reserved for a future richer app surface; not implemented."
+    },
+    {
+      "path": "/web/",
+      "title": "Future Standard Web Surface",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "standard_web",
+        "modern_web"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved route family only",
+      "notes": "Reserved for future organized web routes; not implemented."
+    },
+    {
+      "path": "/lite/",
+      "title": "Future Lite HTML Surface",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved route family only",
+      "notes": "Reserved for old-browser no-JS HTML; not implemented."
+    },
+    {
+      "path": "/text/",
+      "title": "Future Text Surface",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "text"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved route family only",
+      "notes": "Reserved for text-browser and terminal consumption; not implemented."
+    },
+    {
+      "path": "/files/",
+      "title": "Future File Tree Surface",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "file_tree"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved route family only",
+      "notes": "Reserved for static manifests, checksums, and file-like projections; not implemented."
+    },
+    {
+      "path": "/data/",
+      "title": "Future Public Data Root",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "api_client",
+        "native_client",
+        "snapshot"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved route family only",
+      "notes": "Reserved for generated machine-readable public data; not implemented."
+    },
+    {
+      "path": "/api/",
+      "title": "Future API Root",
+      "status": "deferred",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "api_client",
+        "native_client"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": false,
+      "public_claim_scope": "reserved route family only",
+      "notes": "Reserved for a later live backend handoff contract; not implemented."
+    },
+    {
+      "path": "/snapshots/",
+      "title": "Future Snapshot Surface",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "snapshot",
+        "native_client",
+        "relay"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved route family only",
+      "notes": "Reserved for offline/static snapshot bundles; not implemented."
+    },
+    {
+      "path": "/source-policy.html",
+      "title": "Future Source Policy",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved policy page only",
+      "notes": "Reserved for later source/claim policy text; not implemented."
+    },
+    {
+      "path": "/rights-and-access.html",
+      "title": "Future Rights And Access",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved policy page only",
+      "notes": "Reserved for later rights and access boundaries; not implemented."
+    },
+    {
+      "path": "/security.html",
+      "title": "Future Security Policy",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved policy page only",
+      "notes": "Reserved for later public security language; not implemented."
+    },
+    {
+      "path": "/downloads.html",
+      "title": "Future Downloads Policy",
+      "status": "deferred",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved policy page only",
+      "notes": "Reserved for later download policy; no public downloads are implemented."
+    },
+    {
+      "path": "/404.html",
+      "title": "Future Static Not Found Page",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved error page only",
+      "notes": "Reserved for static hosts that support a custom 404 page; not implemented."
+    },
+    {
+      "path": "/robots.txt",
+      "title": "Future Robots Policy",
+      "status": "planned",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "standard_web",
+        "api_client"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "reserved crawler policy only",
+      "notes": "Reserved for later static hosting; not implemented."
+    }
+  ]
+}
+

@@ -1,0 +1,150 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-public-data-contract",
+  "entries": [
+    {
+      "path": "/site_manifest.json",
+      "status": "implemented",
+      "stability": "experimental",
+      "schema_version": "0.1.0",
+      "producer": "LIVE_ALPHA_00 Static Public Site Pack",
+      "consumer_profiles": [
+        "standard_web"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "notes": "Current root static-site manifest; future generated summaries should move under /data/."
+    },
+    {
+      "path": "/data/site_manifest.json",
+      "status": "planned",
+      "stability": "experimental",
+      "schema_version": "0.1.0",
+      "producer": "future Generated Public Data Summaries v0",
+      "consumer_profiles": [
+        "api_client",
+        "native_client",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "notes": "Future generated public data root manifest."
+    },
+    {
+      "path": "/data/page_registry.json",
+      "status": "planned",
+      "stability": "experimental",
+      "schema_version": "0.1.0",
+      "producer": "future Generated Public Data Summaries v0",
+      "consumer_profiles": [
+        "api_client",
+        "native_client",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "notes": "Future machine-readable projection of governed public routes."
+    },
+    {
+      "path": "/data/source_summary.json",
+      "status": "planned",
+      "stability": "experimental",
+      "schema_version": "0.1.0",
+      "producer": "future Generated Public Data Summaries v0",
+      "consumer_profiles": [
+        "api_client",
+        "native_client",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "notes": "Future projection of governed source inventory status, with placeholders kept honest."
+    },
+    {
+      "path": "/data/eval_summary.json",
+      "status": "planned",
+      "stability": "experimental",
+      "schema_version": "0.1.0",
+      "producer": "future Generated Public Data Summaries v0",
+      "consumer_profiles": [
+        "api_client",
+        "native_client",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "notes": "Future projection of local eval/audit status. External observations stay false until human evidence records exist."
+    },
+    {
+      "path": "/data/route_summary.json",
+      "status": "planned",
+      "stability": "experimental",
+      "schema_version": "0.1.0",
+      "producer": "future Generated Public Data Summaries v0",
+      "consumer_profiles": [
+        "api_client",
+        "native_client",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "notes": "Future projection of public route and stability metadata."
+    },
+    {
+      "path": "/data/build_manifest.json",
+      "status": "planned",
+      "stability": "experimental",
+      "schema_version": "0.1.0",
+      "producer": "future static export process",
+      "consumer_profiles": [
+        "api_client",
+        "native_client",
+        "snapshot",
+        "file_tree"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "notes": "Future build provenance manifest with commit and build metadata supplied by a later process."
+    },
+    {
+      "path": "/files/index.txt",
+      "status": "planned",
+      "stability": "experimental",
+      "schema_version": "0.1.0",
+      "producer": "future Lite/Text/Files Seed Surfaces v0",
+      "consumer_profiles": [
+        "file_tree",
+        "text",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "notes": "Future static file-tree index."
+    },
+    {
+      "path": "/files/SHA256SUMS",
+      "status": "planned",
+      "stability": "experimental",
+      "schema_version": "0.1.0",
+      "producer": "future Lite/Text/Files Seed Surfaces v0",
+      "consumer_profiles": [
+        "file_tree",
+        "snapshot",
+        "native_client"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "notes": "Future checksums file; no checksums are generated in this slice."
+    }
+  ]
+}
+
