@@ -17,7 +17,7 @@
     "archive_resolution_evals"
   ],
   "limitations": [
-    "No Rust parity runner is implemented in this milestone.",
+    "Rust query-planner parity is an isolated candidate seam only.",
     "Golden outputs are v0 and may evolve through explicit migration updates.",
     "Local Index FTS mode is normalized because SQLite FTS5 availability can vary by environment.",
     "Archive-resolution eval outputs intentionally preserve capability gaps and hard-query misses."

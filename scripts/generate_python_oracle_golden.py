@@ -28,9 +28,19 @@ FTS_MODE_PLACEHOLDER = "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>"
 
 QUERY_PLANNER_FIXTURES = {
     "windows_7_apps": "Windows 7 apps",
+    "windows_nt_61_utilities": "Windows NT 6.1 utilities",
+    "windows_xp_software": "Windows XP software",
+    "windows_98_registry_repair": "Windows 98 registry repair",
     "latest_firefox_before_xp_support_ended": "latest Firefox before XP support ended",
+    "latest_vlc_for_windows_xp": "latest VLC for Windows XP",
     "old_blue_ftp_client_xp": "old blue FTP client for XP",
     "driver_thinkpad_t42_wifi_windows_2000": "ThinkPad T42 wifi driver Windows 2000",
+    "creative_ct1740_driver_windows_98": "Creative CT1740 driver Windows 98",
+    "driver_inside_support_cd": "driver inside support CD",
+    "installer_inside_iso": "installer inside ISO",
+    "manual_sound_blaster_ct1740": "manual for Sound Blaster CT1740",
+    "mac_os_9_browser": "Mac OS 9 browser",
+    "powerpc_mac_os_x_10_4_browser": "PowerPC Mac OS X 10.4 browser",
     "article_ray_tracing_1994_magazine": "article about ray tracing in 1994 magazine",
     "generic_unknown_query": "obscure utility with no known fixture",
 }
@@ -138,7 +148,7 @@ def _manifest() -> dict[str, Any]:
             "This fixture pack captures current bounded behavior only; it does not implement Rust behavior.",
         ],
         "limitations": [
-            "No Rust parity runner is implemented in this milestone.",
+            "Rust query-planner parity is an isolated candidate seam only.",
             "Golden outputs are v0 and may evolve through explicit migration updates.",
             "Local Index FTS mode is normalized because SQLite FTS5 availability can vary by environment.",
             "Archive-resolution eval outputs intentionally preserve capability gaps and hard-query misses.",

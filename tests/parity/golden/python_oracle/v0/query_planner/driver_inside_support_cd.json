@@ -1,0 +1,55 @@
+{
+  "body": {
+    "query_plan": {
+      "action_hints": [
+        "inspect_members",
+        "decompose",
+        "preview_member",
+        "fetch_if_available",
+        "export_manifest"
+      ],
+      "constraints": {
+        "container_hint": "support_cd",
+        "member_discovery_hints": {
+          "member_preview": true,
+          "prefer_member_path": true,
+          "preserve_parent_lineage": true
+        },
+        "member_type_hint": "driver",
+        "representation_hints": [
+          "member_path",
+          "member_hash",
+          "member_content_type",
+          "support_cd",
+          "parent_lineage",
+          "member_preview"
+        ]
+      },
+      "exclude": [
+        "parent_container_only_without_member_trace",
+        "generic_collection_without_member_index"
+      ],
+      "object_type": "package_member",
+      "planner_confidence": "high",
+      "planner_notes": [
+        "Recognized a member or container discovery query.",
+        "Member-level target records are future work; this plan only emits bounded decomposition hints."
+      ],
+      "prefer": [
+        "member_record",
+        "member_path",
+        "parent_bundle_with_relevant_member",
+        "compatibility_evidence"
+      ],
+      "raw_query": "driver inside support CD",
+      "source_hints": [
+        "local_bundle_fixtures",
+        "internet_archive_recorded",
+        "internet_archive_placeholder"
+      ],
+      "task_kind": "find_member_in_container"
+    },
+    "status": "planned"
+  },
+  "status_code": 200
+}

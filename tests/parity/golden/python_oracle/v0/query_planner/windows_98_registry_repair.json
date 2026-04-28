@@ -1,0 +1,54 @@
+{
+  "body": {
+    "query_plan": {
+      "action_hints": [
+        "inspect_candidates",
+        "compare",
+        "search_documentation",
+        "export_manifest"
+      ],
+      "constraints": {
+        "function_hint": "registry repair",
+        "platform": {
+          "aliases": [
+            "Win98"
+          ],
+          "family": "Windows",
+          "marketing_alias": "Windows 98",
+          "platform_family": "Win9x",
+          "version": "4.1"
+        },
+        "uncertainty_notes": [
+          "Vague identity query; exact software identity is not asserted by the planner."
+        ]
+      },
+      "exclude": [
+        "generic_advice_only",
+        "operating_system_image",
+        "os_iso_image",
+        "operating_system_install_media",
+        "generic_all_system_dump_without_member_index",
+        "unrelated_support_cd_parent_without_relevant_member"
+      ],
+      "object_type": "software",
+      "planner_confidence": "medium",
+      "planner_notes": [
+        "Vague identity query; exact software identity is not asserted by the planner."
+      ],
+      "prefer": [
+        "named_software_artifact",
+        "descriptive_release_notes",
+        "compatibility_evidence"
+      ],
+      "raw_query": "Windows 98 registry repair",
+      "source_hints": [
+        "internet_archive_recorded",
+        "local_bundle_fixtures",
+        "wayback_memento_placeholder"
+      ],
+      "task_kind": "identify_software"
+    },
+    "status": "planned"
+  },
+  "status_code": 200
+}

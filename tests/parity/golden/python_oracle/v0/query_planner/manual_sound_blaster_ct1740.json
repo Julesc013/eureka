@@ -1,0 +1,47 @@
+{
+  "body": {
+    "query_plan": {
+      "action_hints": [
+        "inspect",
+        "view_read",
+        "cite",
+        "export_manifest"
+      ],
+      "constraints": {
+        "document_hint": "manual",
+        "product_hint": "Sound Blaster CT1740",
+        "representation_hints": [
+          "manual",
+          "PDF",
+          "TXT",
+          "README",
+          "scan"
+        ]
+      },
+      "exclude": [
+        "generic_forum_post",
+        "unattributed_summary"
+      ],
+      "object_type": "documentation",
+      "planner_confidence": "high",
+      "planner_notes": [
+        "Recognized a manual or documentation lookup query."
+      ],
+      "prefer": [
+        "manual_pdf_or_scan",
+        "documentation_record",
+        "readme_member",
+        "citeable_scan"
+      ],
+      "raw_query": "manual for Sound Blaster CT1740",
+      "source_hints": [
+        "internet_archive_recorded",
+        "internet_archive_placeholder",
+        "wayback_memento_placeholder"
+      ],
+      "task_kind": "find_documentation"
+    },
+    "status": "planned"
+  },
+  "status_code": 200
+}

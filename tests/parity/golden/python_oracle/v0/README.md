@@ -1,7 +1,7 @@
 # Python Oracle Golden v0
 
 This fixture pack captures stable JSON outputs from the current Python
-reference backend for the first Rust parity lane.
+reference backend for isolated Rust parity candidates.
 
 Included seams:
 
@@ -26,5 +26,12 @@ Unstable fields are normalized:
 - local index FTS mode: `<PYTHON_ORACLE_FTS_MODE_NORMALIZED>`
 - manifest commit and generation time placeholders
 
-The archive-resolution eval outputs intentionally preserve current capability
-gaps. Do not weaken hard eval fixtures to make the report look greener.
+The query-planner family now includes the expanded old-platform cases used by
+Rust Query Planner Parity Candidate v0, including Windows/Mac aliases,
+latest-compatible release intent, driver and member/container discovery,
+manual/document intent, article/scan intent, vague software identity
+uncertainty, and generic fallback.
+
+The archive-resolution eval outputs intentionally preserve current satisfied
+or gap statuses as produced by the Python oracle. Do not weaken hard eval
+fixtures to make the report look greener.

@@ -1,0 +1,63 @@
+{
+  "body": {
+    "query_plan": {
+      "action_hints": [
+        "inspect",
+        "inspect_members",
+        "decompose",
+        "fetch_if_available",
+        "export_manifest"
+      ],
+      "constraints": {
+        "hardware_hint": "Creative CT1740",
+        "member_discovery_hints": {
+          "prefer_inf_member": true,
+          "support_media_member": true
+        },
+        "platform": {
+          "aliases": [
+            "Win98"
+          ],
+          "family": "Windows",
+          "marketing_alias": "Windows 98",
+          "platform_family": "Win9x",
+          "version": "4.1"
+        },
+        "representation_hints": [
+          "driver_package",
+          "INF",
+          "support_media_member",
+          "readme",
+          "manual"
+        ]
+      },
+      "exclude": [
+        "generic_advice_only",
+        "unrelated_full_os_media",
+        "parent_support_cd_without_matching_driver_member"
+      ],
+      "object_type": "driver",
+      "planner_confidence": "high",
+      "planner_notes": [
+        "Recognized a driver lookup query.",
+        "Hardware and platform hints remain bounded extracted constraints only."
+      ],
+      "prefer": [
+        "driver_package",
+        "inf_member",
+        "support_bundle_member",
+        "documentation_with_driver_locator"
+      ],
+      "raw_query": "Creative CT1740 driver Windows 98",
+      "source_hints": [
+        "local_bundle_fixtures",
+        "internet_archive_recorded",
+        "wayback_memento_placeholder",
+        "vendor_archive_future"
+      ],
+      "task_kind": "find_driver"
+    },
+    "status": "planned"
+  },
+  "status_code": 200
+}
