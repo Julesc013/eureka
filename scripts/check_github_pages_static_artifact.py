@@ -91,6 +91,7 @@ FORBIDDEN_FILE_NAMES = {
     ".env",
     ".env.local",
     ".env.production",
+    "CNAME",
     "Dockerfile",
     "docker-compose.yml",
     "package-lock.json",

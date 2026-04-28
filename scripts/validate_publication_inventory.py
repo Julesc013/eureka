@@ -17,8 +17,10 @@ REQUIRED_FILES = {
     "page_registry.json",
     "client_profiles.json",
     "deployment_targets.json",
+    "domain_plan.json",
     "public_data_contract.json",
     "redirects.json",
+    "static_hosting_targets.json",
 }
 REQUIRED_CONTRACT_FIELDS = {
     "schema_version",
@@ -239,10 +241,16 @@ def validate_publication_inventory(
         "deployment_targets.json": _load_json(
             inventory_dir / "deployment_targets.json", errors, repo_root
         ),
+        "domain_plan.json": _load_json(
+            inventory_dir / "domain_plan.json", errors, repo_root
+        ),
         "public_data_contract.json": _load_json(
             inventory_dir / "public_data_contract.json", errors, repo_root
         ),
         "redirects.json": _load_json(inventory_dir / "redirects.json", errors, repo_root),
+        "static_hosting_targets.json": _load_json(
+            inventory_dir / "static_hosting_targets.json", errors, repo_root
+        ),
     }
 
     _validate_contract(payloads["publication_contract.json"], errors)
@@ -251,8 +259,10 @@ def validate_publication_inventory(
     )
     _validate_client_profiles(payloads["client_profiles.json"], errors)
     _validate_deployment_targets(payloads["deployment_targets.json"], errors)
+    _validate_domain_plan(payloads["domain_plan.json"], errors)
     _validate_public_data_contract(payloads["public_data_contract.json"], site_dir, errors)
     _validate_redirects(payloads["redirects.json"], errors)
+    _validate_static_hosting_targets(payloads["static_hosting_targets.json"], errors)
     _validate_claim_traceability_doc(repo_root, errors)
 
     return {
@@ -268,6 +278,8 @@ def validate_publication_inventory(
         "reserved_routes": sorted(REQUIRED_RESERVED_ROUTES),
         "required_client_profiles": sorted(REQUIRED_CLIENT_PROFILES),
         "required_public_data_paths": sorted(REQUIRED_PUBLIC_DATA_PATHS),
+        "domain_plan_checked": "domain_plan.json" in existing_files,
+        "static_hosting_targets_checked": "static_hosting_targets.json" in existing_files,
         "errors": errors,
         "warnings": warnings,
     }
@@ -543,6 +555,36 @@ def _validate_deployment_targets(payload: Any, errors: list[str]) -> None:
             )
 
 
+def _validate_domain_plan(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("domain_plan.json: must be a JSON object.")
+        return
+    expected = {
+        "schema_version": "0.1.0",
+        "plan_id": "eureka-custom-domain-alternate-host-readiness",
+        "status": "planned",
+        "no_domain_configured": True,
+        "no_dns_changes_performed": True,
+        "no_cname_file_committed": True,
+        "custom_domain_status": "future",
+        "github_pages_project_status": "implemented",
+        "custom_domain_static_status": "future",
+        "domain_verification_required": True,
+        "created_by_slice": "custom_domain_alternate_host_readiness_v0",
+    }
+    _expect_mapping_values("domain_plan.json", payload, expected, errors)
+    transition = payload.get("base_path_transition")
+    if not isinstance(transition, Mapping):
+        errors.append("domain_plan.json: base_path_transition must be an object.")
+    else:
+        if transition.get("from") != "/eureka/":
+            errors.append("domain_plan.json: base_path_transition.from must be /eureka/.")
+        if transition.get("to") != "/":
+            errors.append("domain_plan.json: base_path_transition.to must be /.")
+        if transition.get("status") != "future":
+            errors.append("domain_plan.json: base_path_transition.status must be future.")
+
+
 def _validate_public_data_contract(payload: Any, site_dir: Path, errors: list[str]) -> None:
     if not isinstance(payload, Mapping):
         errors.append("public_data_contract.json: must be a JSON object.")
@@ -659,6 +701,76 @@ def _validate_redirects(payload: Any, errors: list[str]) -> None:
         errors.append("redirects.json: redirects must start as an empty list.")
     if payload.get("supports_server_side_redirects") is not False:
         errors.append("redirects.json: supports_server_side_redirects must be false.")
+
+
+def _validate_static_hosting_targets(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("static_hosting_targets.json: must be a JSON object.")
+        return
+    if payload.get("schema_version") != "0.1.0":
+        errors.append("static_hosting_targets.json: schema_version must be 0.1.0.")
+    targets = payload.get("targets")
+    if not isinstance(targets, list):
+        errors.append("static_hosting_targets.json: targets must be a list.")
+        return
+    by_id = {
+        target.get("id"): target
+        for target in targets
+        if isinstance(target, Mapping) and isinstance(target.get("id"), str)
+    }
+    required = {
+        "github_pages_project",
+        "github_pages_custom_domain",
+        "cloudflare_pages_static",
+        "generic_static_host",
+        "local_file_preview",
+    }
+    missing = sorted(required - set(by_id))
+    if missing:
+        errors.append(f"static_hosting_targets.json: missing targets {missing}.")
+    project = by_id.get("github_pages_project")
+    if isinstance(project, Mapping):
+        expected = {
+            "status": "implemented",
+            "kind": "static",
+            "base_path": "/eureka/",
+            "artifact_root": "public_site",
+            "workflow_configured": True,
+            "deployment_success_claimed": False,
+            "backend_supported": False,
+            "live_probes_supported": False,
+            "custom_domain_status": "future",
+        }
+        _expect_mapping_values(
+            "static_hosting_targets.json: github_pages_project", project, expected, errors
+        )
+    custom = by_id.get("github_pages_custom_domain")
+    if isinstance(custom, Mapping):
+        expected = {
+            "status": "future",
+            "kind": "static",
+            "base_path": "/",
+            "artifact_root": "public_site",
+            "requires_domain_verification": True,
+            "dns_config_not_in_repo": True,
+            "backend_supported": False,
+            "live_probes_supported": False,
+            "provider_config_committed": False,
+        }
+        _expect_mapping_values(
+            "static_hosting_targets.json: github_pages_custom_domain", custom, expected, errors
+        )
+    for target_id in ("cloudflare_pages_static", "generic_static_host"):
+        target = by_id.get(target_id)
+        if isinstance(target, Mapping):
+            if target.get("status") != "future":
+                errors.append(f"static_hosting_targets.json: {target_id}.status must be future.")
+            if target.get("base_path") != "/":
+                errors.append(f"static_hosting_targets.json: {target_id}.base_path must be /.")
+            if target.get("provider_config_committed") is not False:
+                errors.append(
+                    f"static_hosting_targets.json: {target_id}.provider_config_committed must be false."
+                )
 
 
 def _validate_claim_traceability_doc(repo_root: Path, errors: list[str]) -> None:
