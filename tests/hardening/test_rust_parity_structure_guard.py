@@ -15,7 +15,9 @@ class RustParityStructureGuardTest(unittest.TestCase):
             "crates/eureka-contracts/Cargo.toml",
             "crates/eureka-store/Cargo.toml",
             "crates/eureka-resolver/Cargo.toml",
+            "tests/parity/rust_source_registry_cases.json",
             "tests/parity/rust_query_planner_cases.json",
+            "scripts/check_rust_source_registry_parity.py",
         ]
         missing = [path for path in expected if not repo_path(path).exists()]
         self.assertEqual(missing, [])
@@ -28,13 +30,19 @@ class RustParityStructureGuardTest(unittest.TestCase):
 
     def test_python_runtime_and_surfaces_do_not_import_rust_candidate(self):
         forbidden = re.compile(r"eureka_core|source_registry_parity|crates[\\/]eureka-core")
+        allowed_scripts = {
+            "scripts\\check_rust_source_registry_parity.py",
+        }
         violations = []
         for path in iter_text_files(["runtime", "surfaces", "scripts"]):
             if path.suffix != ".py":
                 continue
+            relative = str(path.relative_to(repo_path("."))).replace("/", "\\")
+            if relative in allowed_scripts:
+                continue
             text = path.read_text(encoding="utf-8")
             if forbidden.search(text):
-                violations.append(str(path.relative_to(repo_path("."))))
+                violations.append(relative)
         self.assertEqual(violations, [])
 
     def test_docs_keep_python_oracle_and_no_production_rust_claims(self):
@@ -69,6 +77,10 @@ class RustParityStructureGuardTest(unittest.TestCase):
         self.assertEqual(records["cargo_test_optional"]["advisory_or_required"], "optional")
         self.assertEqual(
             records["rust_query_planner_parity_check"]["advisory_or_required"],
+            "required",
+        )
+        self.assertEqual(
+            records["rust_source_registry_parity_check"]["advisory_or_required"],
             "required",
         )
 

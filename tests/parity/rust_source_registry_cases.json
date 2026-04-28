@@ -1,0 +1,123 @@
+{
+  "fixture_kind": "eureka.rust_source_registry_parity_cases",
+  "version": "0.1.0",
+  "created_by_slice": "rust_source_registry_parity_catch_up_v0",
+  "python_remains_oracle": true,
+  "runtime_wiring_allowed": false,
+  "source_inventory_root": "control/inventory/sources",
+  "python_oracle_root": "tests/parity/golden/python_oracle/v0/source_registry",
+  "expected_source_count": 9,
+  "required_capability_fields": [
+    "supports_search",
+    "supports_item_metadata",
+    "supports_file_listing",
+    "supports_bulk_access",
+    "supports_delta_or_feed",
+    "supports_live_probe",
+    "supports_member_listing",
+    "supports_reviews_or_comments",
+    "supports_hashes",
+    "supports_signatures",
+    "supports_content_text",
+    "supports_temporal_captures",
+    "supports_action_paths",
+    "auth_required",
+    "network_required",
+    "local_private",
+    "fixture_backed",
+    "recorded_fixture_backed",
+    "live_supported",
+    "live_deferred"
+  ],
+  "required_coverage_fields": [
+    "coverage_depth",
+    "coverage_status",
+    "indexed_scopes",
+    "connector_mode",
+    "last_fixture_update",
+    "coverage_notes",
+    "current_limitations",
+    "next_coverage_step"
+  ],
+  "cases": [
+    {
+      "case_id": "sources_list",
+      "source_id": null,
+      "python_oracle_file": "sources_list.json",
+      "expected_status_code": 200,
+      "expected_source_count": 9
+    },
+    {
+      "case_id": "synthetic_fixtures",
+      "source_id": "synthetic-fixtures",
+      "python_oracle_file": "source_synthetic_fixtures.json",
+      "expected_status": "active_fixture",
+      "expected_coverage_depth": "action_indexed",
+      "expected_connector_mode": "fixture_only"
+    },
+    {
+      "case_id": "github_releases_recorded_fixtures",
+      "source_id": "github-releases-recorded-fixtures",
+      "python_oracle_file": "source_github_releases_recorded_fixtures.json",
+      "expected_status": "active_recorded_fixture",
+      "expected_coverage_depth": "representation_indexed",
+      "expected_connector_mode": "recorded_fixture_only"
+    },
+    {
+      "case_id": "internet_archive_recorded_fixtures",
+      "source_id": "internet-archive-recorded-fixtures",
+      "python_oracle_file": "source_internet_archive_recorded_fixtures.json",
+      "expected_status": "active_recorded_fixture",
+      "expected_coverage_depth": "representation_indexed",
+      "expected_connector_mode": "recorded_fixture_only"
+    },
+    {
+      "case_id": "local_bundle_fixtures",
+      "source_id": "local-bundle-fixtures",
+      "python_oracle_file": "source_local_bundle_fixtures.json",
+      "expected_status": "active_fixture",
+      "expected_coverage_depth": "action_indexed",
+      "expected_connector_mode": "fixture_only"
+    },
+    {
+      "case_id": "article_scan_recorded_fixtures",
+      "source_id": "article-scan-recorded-fixtures",
+      "python_oracle_file": "source_article_scan_recorded_fixtures.json",
+      "expected_status": "active_recorded_fixture",
+      "expected_coverage_depth": "content_or_member_indexed",
+      "expected_connector_mode": "recorded_fixture_only"
+    },
+    {
+      "case_id": "internet_archive_placeholder",
+      "source_id": "internet-archive-placeholder",
+      "python_oracle_file": "source_internet_archive_placeholder.json",
+      "expected_status": "placeholder",
+      "expected_coverage_depth": "source_known",
+      "expected_connector_mode": "not_implemented"
+    },
+    {
+      "case_id": "local_files_placeholder",
+      "source_id": "local-files-placeholder",
+      "python_oracle_file": "source_local_files_placeholder.json",
+      "expected_status": "local_private_future",
+      "expected_coverage_depth": "source_known",
+      "expected_connector_mode": "local_private_future"
+    },
+    {
+      "case_id": "software_heritage_placeholder",
+      "source_id": "software-heritage-placeholder",
+      "python_oracle_file": "source_software_heritage_placeholder.json",
+      "expected_status": "placeholder",
+      "expected_coverage_depth": "source_known",
+      "expected_connector_mode": "not_implemented"
+    },
+    {
+      "case_id": "wayback_memento_placeholder",
+      "source_id": "wayback-memento-placeholder",
+      "python_oracle_file": "source_wayback_memento_placeholder.json",
+      "expected_status": "placeholder",
+      "expected_coverage_depth": "source_known",
+      "expected_connector_mode": "not_implemented"
+    }
+  ]
+}
