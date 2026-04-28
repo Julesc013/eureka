@@ -53,3 +53,8 @@ automate Google searches through this gateway.
 Internet Archive live probing comes after this contract. A future first probe
 should be metadata-only, disabled by default, bounded by caps, cache-first, and
 evidence-linked. This architecture document does not implement that probe.
+
+Compatibility Surface Strategy v0 keeps live probes out of all current static,
+lite, text, files, demo, snapshot, relay, and native-client plans unless a
+future backend explicitly enables them through the gateway policy and operator
+signoff.

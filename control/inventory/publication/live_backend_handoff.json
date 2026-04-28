@@ -94,6 +94,7 @@
     "This is a route-reservation and handoff contract only.",
     "GitHub Pages remains a static-only publication target.",
     "No backend hosting, live source probe, auth, account, CORS, rate-limit, provider deployment, or production API guarantee is added.",
-    "Live Probe Gateway Contract v0 now defines disabled-by-default probe policy, but /api/v1/live-probe remains blocked until later explicit implementation approval."
+    "Live Probe Gateway Contract v0 now defines disabled-by-default probe policy, but /api/v1/live-probe remains blocked until later explicit implementation approval.",
+    "Compatibility Surface Strategy v0 treats /api/v1 as a future optional projection alongside static data, lite/text/files, snapshots, relay, CLI, and native-client plans."
   ]
 }

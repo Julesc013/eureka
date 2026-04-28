@@ -59,6 +59,13 @@ Live Probe Gateway Contract v0 adds disabled source-probe gateway summaries to
 not implement live probes, call external sources, fetch URLs, enable downloads,
 or turn static JSON into a live probe API.
 
+Compatibility Surface Strategy v0 records surface capability and route matrix
+inputs for public data consumers. These fields describe which static
+projections exist now and which app, API, snapshot, relay, and native-client
+surfaces remain future/deferred. They do not make public JSON a production API,
+implement snapshots, add relay services, start native app projects, make
+`/api/v1` live, or enable live probes.
+
 Implemented file-tree public data files include:
 
 - `/files/manifest.json`

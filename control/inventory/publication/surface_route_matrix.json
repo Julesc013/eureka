@@ -1,0 +1,171 @@
+{
+  "schema_version": "0.1.0",
+  "matrix_id": "eureka-compatibility-surface-route-matrix",
+  "status": "draft",
+  "stability": "experimental",
+  "created_by_slice": "compatibility_surface_strategy_v0",
+  "surfaces": [
+    {
+      "id": "public_static_site",
+      "route_roots": ["/"],
+      "status": "implemented",
+      "stability": "stable_draft",
+      "implemented_now": true,
+      "implemented_paths": ["public_site/index.html", "public_site/status.html", "public_site/sources.html", "public_site/evals.html", "public_site/demo-queries.html", "public_site/limitations.html", "public_site/roadmap.html", "public_site/local-quickstart.html"],
+      "live_backend_required": false,
+      "static_host_safe": true,
+      "client_profiles": ["standard_web"],
+      "notes": "Current static public artifact and GitHub Pages upload root."
+    },
+    {
+      "id": "data",
+      "route_roots": ["/data/"],
+      "status": "implemented",
+      "stability": "stable_draft",
+      "implemented_now": true,
+      "implemented_paths": ["public_site/data/site_manifest.json", "public_site/data/page_registry.json", "public_site/data/source_summary.json", "public_site/data/eval_summary.json", "public_site/data/route_summary.json", "public_site/data/build_manifest.json"],
+      "live_backend_required": false,
+      "static_host_safe": true,
+      "client_profiles": ["api_client", "file_tree", "snapshot", "native_client"],
+      "notes": "Static public JSON summaries; not a live API."
+    },
+    {
+      "id": "lite",
+      "route_roots": ["/lite/"],
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "implemented_now": true,
+      "implemented_paths": ["public_site/lite/index.html", "public_site/lite/sources.html", "public_site/lite/evals.html", "public_site/lite/demo-queries.html", "public_site/lite/limitations.html"],
+      "live_backend_required": false,
+      "static_host_safe": true,
+      "client_profiles": ["lite_html"],
+      "notes": "Seed static old-browser HTML projection generated from public data."
+    },
+    {
+      "id": "text",
+      "route_roots": ["/text/"],
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "implemented_now": true,
+      "implemented_paths": ["public_site/text/index.txt", "public_site/text/sources.txt", "public_site/text/evals.txt", "public_site/text/demo-queries.txt", "public_site/text/limitations.txt"],
+      "live_backend_required": false,
+      "static_host_safe": true,
+      "client_profiles": ["text"],
+      "notes": "Seed plain-text projection for text browsers, terminals, screen readers, and simple automation."
+    },
+    {
+      "id": "files",
+      "route_roots": ["/files/"],
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "implemented_now": true,
+      "implemented_paths": ["public_site/files/index.html", "public_site/files/index.txt", "public_site/files/manifest.json", "public_site/files/SHA256SUMS", "public_site/files/README.txt"],
+      "live_backend_required": false,
+      "static_host_safe": true,
+      "client_profiles": ["file_tree"],
+      "notes": "Seed file-tree projection with manifests/checksums and no executable downloads."
+    },
+    {
+      "id": "demo",
+      "route_roots": ["/demo/"],
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "implemented_now": true,
+      "implemented_paths": ["public_site/demo/index.html", "public_site/demo/query-plan-windows-7-apps.html", "public_site/demo/result-member-driver-inside-support-cd.html", "public_site/demo/result-firefox-xp.html", "public_site/demo/result-article-scan.html", "public_site/demo/absence-example.html", "public_site/demo/comparison-example.html", "public_site/demo/source-example.html", "public_site/demo/eval-summary.html", "public_site/demo/data/demo_snapshots.json"],
+      "live_backend_required": false,
+      "static_host_safe": true,
+      "client_profiles": ["standard_web", "lite_html"],
+      "notes": "Static fixture-backed resolver examples; not live search or API behavior."
+    },
+    {
+      "id": "web",
+      "route_roots": ["/web/"],
+      "status": "planned",
+      "stability": "experimental",
+      "implemented_now": false,
+      "implemented_paths": ["surfaces/web/"],
+      "live_backend_required": true,
+      "static_host_safe": false,
+      "client_profiles": ["standard_web", "modern_web"],
+      "notes": "Local web surface exists under surfaces/web, but the public /web/ route family is reserved/future."
+    },
+    {
+      "id": "app",
+      "route_roots": ["/app/"],
+      "status": "deferred",
+      "stability": "experimental",
+      "implemented_now": false,
+      "implemented_paths": [],
+      "live_backend_required": false,
+      "static_host_safe": false,
+      "client_profiles": ["modern_web"],
+      "notes": "Future richer browser app; no app implementation or frontend framework exists."
+    },
+    {
+      "id": "api",
+      "route_roots": ["/api/", "/api/v1/"],
+      "status": "planned",
+      "stability": "experimental",
+      "implemented_now": false,
+      "implemented_paths": [],
+      "live_backend_required": true,
+      "static_host_safe": false,
+      "client_profiles": ["api_client", "native_client"],
+      "notes": "/api/v1 is reserved by Live Backend Handoff Contract v0; it is not live in the static artifact."
+    },
+    {
+      "id": "snapshots",
+      "route_roots": ["/snapshots/"],
+      "status": "deferred",
+      "stability": "experimental",
+      "implemented_now": false,
+      "implemented_paths": [],
+      "live_backend_required": false,
+      "static_host_safe": true,
+      "client_profiles": ["snapshot", "native_client", "relay"],
+      "notes": "Future signed/offline bundle surface; no snapshots are generated yet."
+    },
+    {
+      "id": "relay",
+      "route_roots": [],
+      "status": "deferred",
+      "stability": "experimental",
+      "implemented_now": false,
+      "implemented_paths": [],
+      "live_backend_required": true,
+      "static_host_safe": false,
+      "client_profiles": ["relay"],
+      "notes": "Future local LAN/protocol bridge; not represented as a public static route."
+    },
+    {
+      "id": "native_client",
+      "route_roots": [],
+      "status": "deferred",
+      "stability": "experimental",
+      "implemented_now": false,
+      "implemented_paths": [],
+      "live_backend_required": false,
+      "static_host_safe": false,
+      "client_profiles": ["native_client"],
+      "notes": "Future clients will consume /data, /api, and snapshots after contracts mature."
+    },
+    {
+      "id": "cli",
+      "route_roots": [],
+      "status": "implemented",
+      "stability": "experimental",
+      "implemented_now": true,
+      "implemented_paths": ["scripts/", "surfaces/native/cli/"],
+      "live_backend_required": false,
+      "static_host_safe": false,
+      "client_profiles": ["api_client"],
+      "notes": "Current local native-style command surface, not a packaged native app."
+    }
+  ],
+  "notes": [
+    "Route roots are publication-plane roots, not proof of deployed public availability.",
+    "Implemented static roots must exist under public_site where applicable.",
+    "Future live /api/v1 routes remain contract-only and disabled.",
+    "Snapshots, relay, app, /web, and native clients remain future/deferred."
+  ]
+}

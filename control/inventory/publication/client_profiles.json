@@ -27,7 +27,7 @@
         "root-only deployment assumptions"
       ],
       "current_support_level": "not implemented as an app surface",
-      "notes": "Reserved for a future richer browser experience."
+      "notes": "Reserved for a future richer browser experience; Compatibility Surface Strategy v0 keeps this separate from lite/text/files and does not make one app serve every client."
     },
     {
       "id": "standard_web",
@@ -56,7 +56,7 @@
         "engine internals"
       ],
       "current_support_level": "current public_site static pages",
-      "notes": "The active profile for the current hand-authored public_site artifact."
+      "notes": "The active profile for the current public_site artifact and static demo pages; Compatibility Surface Strategy v0 keeps this as one projection of the same resolver truth."
     },
     {
       "id": "lite_html",
@@ -83,7 +83,7 @@
         "root-only asset paths"
       ],
       "current_support_level": "seed static surface under public_site/lite",
-      "notes": "Lite/Text/Files Seed Surfaces v0 implements simple no-JS/no-CSS HTML pages generated from public data summaries."
+      "notes": "Lite/Text/Files Seed Surfaces v0 implements simple no-JS/no-CSS HTML pages generated from public data summaries; Compatibility Surface Strategy v0 defines this as a seeded static projection, not a live app."
     },
     {
       "id": "text",
@@ -110,7 +110,7 @@
         "binary-only data"
       ],
       "current_support_level": "seed static surface under public_site/text",
-      "notes": "Lite/Text/Files Seed Surfaces v0 implements plain text files generated from public data summaries."
+      "notes": "Lite/Text/Files Seed Surfaces v0 implements plain text files generated from public data summaries; Compatibility Surface Strategy v0 defines this as the text-browser and automation-friendly seed projection."
     },
     {
       "id": "file_tree",
@@ -137,7 +137,7 @@
         "mutable unversioned data"
       ],
       "current_support_level": "seed static surface under public_site/files",
-      "notes": "Lite/Text/Files Seed Surfaces v0 implements a static file-tree index, manifest, and SHA256SUMS without executable downloads."
+      "notes": "Lite/Text/Files Seed Surfaces v0 implements a static file-tree index, manifest, and SHA256SUMS without executable downloads; Compatibility Surface Strategy v0 keeps snapshots and mirrors future."
     },
     {
       "id": "snapshot",
@@ -165,7 +165,7 @@
         "root-only absolute links"
       ],
       "current_support_level": "not implemented",
-      "notes": "Future offline static bundle profile."
+      "notes": "Future offline static bundle profile; Compatibility Surface Strategy v0 requires Signed Snapshot Format v0 before snapshot artifacts are implemented."
     },
     {
       "id": "native_client",
@@ -193,7 +193,7 @@
         "implicit production-readiness claims"
       ],
       "current_support_level": "not implemented",
-      "notes": "Native app work remains deferred until public data/API/snapshot contracts mature."
+      "notes": "Native app work remains deferred until public data/API/snapshot contracts mature; Compatibility Surface Strategy v0 points to the native-client readiness policy and keeps CLI as the current local native surface."
     },
     {
       "id": "relay",
@@ -220,7 +220,7 @@
         "private local path exposure"
       ],
       "current_support_level": "not implemented",
-      "notes": "Future local protocol bridge profile."
+      "notes": "Future local protocol bridge profile; Compatibility Surface Strategy v0 requires a relay design and operator/security policy before any relay behavior exists."
     },
     {
       "id": "api_client",
@@ -248,7 +248,7 @@
         "unversioned public JSON"
       ],
       "current_support_level": "static data implemented, /api/v1 live backend handoff reserved only",
-      "notes": "The profile does not guarantee a live public backend exists; Live Backend Handoff Contract v0 reserves /api/v1 as future experimental contract-only work."
+      "notes": "The profile does not guarantee a live public backend exists; Live Backend Handoff Contract v0 reserves /api/v1 as future experimental contract-only work, and Compatibility Surface Strategy v0 keeps static data distinct from live API behavior."
     }
   ]
 }

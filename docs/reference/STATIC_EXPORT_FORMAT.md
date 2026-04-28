@@ -153,3 +153,10 @@ It only records disabled future source-probe policy in publication inventory and
 generated static data summaries. Static exports must not fetch URLs, call
 Internet Archive or other external services, enable downloads, or imply live
 probe availability.
+
+Compatibility Surface Strategy v0 records the cross-surface contract for the
+current static site, `/data/`, `/lite/`, `/text/`, `/files/`, `/demo/`, future
+`/app/`, future `/web/`, future `/api/v1/`, future `/snapshots/`, future relay,
+CLI, and future native clients. The current export still does not include
+snapshot bundles, relay services, native apps, live API routes, live probes, or
+new runtime behavior.

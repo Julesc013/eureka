@@ -68,6 +68,15 @@ policy for future external metadata probes. It does not implement probes, call
 external services, fetch URLs, scrape, crawl, enable downloads, or make Google
 a live probe source.
 
+Compatibility Surface Strategy v0 adds
+`docs/architecture/COMPATIBILITY_SURFACES.md`,
+`control/inventory/publication/surface_route_matrix.json`, and expanded
+`surface_capabilities.json` records. This governs modern web, standard web,
+lite, text, files, data, demo, future API, future snapshots, future relay,
+CLI, and future native client projections as multiple views of the same
+resolver truth. It does not implement new runtime behavior, snapshots, relay,
+native apps, live backend behavior, or live probes.
+
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
 expectations, deployment target semantics, and redirects.
@@ -142,5 +151,7 @@ validates static host portability without configuring a domain or alternate
 host. Live Backend Handoff Contract v0 now reserves `/api/v1` contract-only
 routes and disabled capabilities. Live Probe Gateway Contract v0 now defines
 the disabled source-probe gateway policy before any external probe exists.
-Signed snapshots, relays, native clients, and any actual Internet Archive live
-probe remain future work.
+Compatibility Surface Strategy v0 now records the cross-surface policy for
+old-browser, text, file-tree, snapshot, relay, API, CLI, web, and future native
+clients. Signed snapshots, relays, native clients, and any actual Internet
+Archive live probe remain future work.

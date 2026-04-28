@@ -3,6 +3,12 @@
 Client profiles are registered in
 `control/inventory/publication/client_profiles.json`.
 
+Compatibility Surface Strategy v0 aligns these profiles with
+`control/inventory/publication/surface_capabilities.json` and
+`control/inventory/publication/surface_route_matrix.json`. Profiles describe
+which clients may consume a surface; they do not implement the surface by
+themselves.
+
 Every profile must define:
 
 - `id`
@@ -49,3 +55,9 @@ Live Probe Gateway Contract v0 adds a related caveat: static clients may read
 the disabled live-probe capability summaries, but they must not assume Internet
 Archive, Wayback, GitHub, package-registry, or other external source probes are
 available unless a later hosted backend explicitly enables those capabilities.
+
+Old-client degradation is explicit: do not make one modern web app serve every
+old client. Use standard static pages, lite HTML, text, files, future
+snapshots, and future relay projections as appropriate. Native clients remain
+deferred until public data, snapshot, handoff, rights, and security policies
+are stable enough for client consumption.

@@ -47,3 +47,9 @@ endpoint templates in `live_backend_routes.json`. These are not static pages,
 not GitHub Pages routes, and not live backend routes today. Static pages may
 describe `/api/v1` as future/reserved but must not link to it as an available
 service.
+
+Compatibility Surface Strategy v0 adds
+`surface_route_matrix.json` as the cross-surface route map. It distinguishes
+implemented static roots such as `/lite/`, `/text/`, `/files/`, `/data/`, and
+`/demo/` from future/deferred roots such as `/app/`, `/web/`, `/api/v1/`,
+`/snapshots/`, relay, and native-client consumption paths.

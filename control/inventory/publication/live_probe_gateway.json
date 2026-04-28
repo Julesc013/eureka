@@ -396,6 +396,7 @@
     "This is a contract and policy layer only.",
     "No source adapter, live probe endpoint, URL fetch, crawler, scraper, or external API call is added.",
     "Internet Archive live probing remains future and disabled until explicit human review and implementation approval.",
-    "Google remains manual-baseline only and is not a live probe source."
+    "Google remains manual-baseline only and is not a live probe source.",
+    "Compatibility Surface Strategy v0 keeps live probe results out of static, lite, text, files, snapshot, relay, and native-client projections unless a later gated backend explicitly enables them."
   ]
 }

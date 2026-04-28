@@ -12,6 +12,11 @@ The static site can expose current repo truth through:
 
 It must not assume a backend exists.
 
+Compatibility Surface Strategy v0 treats `/api/v1` as one optional future
+projection among static, lite, text, files, snapshot, relay, CLI, web, and
+future native client surfaces. Static and old-client surfaces must degrade
+without a live backend.
+
 ## Reserved Live Boundary
 
 Live Backend Handoff Contract v0 reserves `/api/v1/` for future hosted

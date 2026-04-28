@@ -28,6 +28,11 @@ Rust Source Registry Parity Candidate v0 does not change that policy either. It
 is a crate-local source-registry parity seam, not a native SDK, FFI layer, app
 shell, or runtime replacement.
 
+Compatibility Surface Strategy v0 also keeps that policy. It records native
+client readiness rules and surface capability matrices, but it does not create
+a Windows/macOS project, native SDK, installer, FFI layer, sync client, or app
+shell. The CLI remains the current local native-style surface.
+
 ## Host-Shell Principle
 
 Future native apps should remain shells over the core. They should consume
@@ -51,5 +56,8 @@ Serious native host work should wait until:
 - resolution runs exist
 - local index work is underway
 - public-alpha-safe boundaries are clearer
+- public data contracts and static export contracts are stable enough
+- signed/offline snapshot format exists
+- rights, security, download, and action-handoff policies exist
 - Rust parity boundaries are clearer if native shells later consume Rust
   libraries directly
