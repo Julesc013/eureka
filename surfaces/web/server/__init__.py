@@ -1,6 +1,10 @@
 """Server-facing helpers for the bootstrap Eureka web workbench."""
 
 from surfaces.web.server.api_routes import build_api_index_document
+from surfaces.web.server.public_alpha_config import (
+    PublicAlphaWrapperConfig,
+    load_public_alpha_wrapper_config,
+)
 from surfaces.web.server.route_policy import PublicAlphaRoutePolicy, RoutePolicyDecision
 from surfaces.web.server.server_config import WebServerConfig, default_web_server_config
 from surfaces.web.server.workbench_server import (
@@ -37,10 +41,12 @@ from surfaces.web.server.workbench_server import (
 __all__ = [
     "WorkbenchWsgiApp",
     "PublicAlphaRoutePolicy",
+    "PublicAlphaWrapperConfig",
     "RoutePolicyDecision",
     "WebServerConfig",
     "build_api_index_document",
     "default_web_server_config",
+    "load_public_alpha_wrapper_config",
     "render_action_plan_page",
     "render_resolve_absence_page",
     "render_search_absence_page",

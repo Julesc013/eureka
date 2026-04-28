@@ -21,6 +21,13 @@ class WebServerConfig:
     allow_write_actions: bool = True
     allow_eval_runner: bool = True
     allow_bundle_path_inspection: bool = True
+    allow_live_probes: bool = False
+    allow_live_internet_archive: bool = False
+    downloads_enabled: bool = True
+    user_storage_enabled: bool = True
+    deployment_approved: bool = False
+    production_ready: bool = False
+    wrapper_config_summary: Mapping[str, object] | None = None
     public_base_url: str | None = None
     created_by_slice: str = CREATED_BY_SLICE
 
@@ -36,6 +43,16 @@ class WebServerConfig:
                 raise ValueError("public_alpha mode must disable write-like actions.")
             if self.allow_bundle_path_inspection:
                 raise ValueError("public_alpha mode must disable arbitrary bundle-path inspection.")
+            if self.allow_live_probes:
+                raise ValueError("public_alpha mode must disable live source probes.")
+            if self.allow_live_internet_archive:
+                raise ValueError("public_alpha mode must disable live Internet Archive access.")
+            if self.downloads_enabled:
+                raise ValueError("public_alpha mode must disable downloads and payload readback.")
+            if self.user_storage_enabled:
+                raise ValueError("public_alpha mode must disable user storage.")
+            if self.deployment_approved or self.production_ready:
+                raise ValueError("public_alpha mode must not claim deployment approval or production readiness.")
         for field_name in (
             "index_root",
             "run_store_root",
@@ -56,6 +73,12 @@ class WebServerConfig:
             "allow_write_actions": True,
             "allow_eval_runner": True,
             "allow_bundle_path_inspection": True,
+            "allow_live_probes": False,
+            "allow_live_internet_archive": False,
+            "downloads_enabled": True,
+            "user_storage_enabled": True,
+            "deployment_approved": False,
+            "production_ready": False,
         }
         values.update(overrides)
         return cls(**values)
@@ -68,6 +91,12 @@ class WebServerConfig:
             "allow_write_actions": False,
             "allow_eval_runner": True,
             "allow_bundle_path_inspection": False,
+            "allow_live_probes": False,
+            "allow_live_internet_archive": False,
+            "downloads_enabled": False,
+            "user_storage_enabled": False,
+            "deployment_approved": False,
+            "production_ready": False,
         }
         values.update(overrides)
         return cls(**values)
@@ -122,6 +151,13 @@ class WebServerConfig:
             "safe_mode_enabled": self.safe_mode_enabled,
             "created_by_slice": self.created_by_slice,
             "public_base_url_configured": self.public_base_url is not None,
+            "live_probes_enabled": self.allow_live_probes,
+            "live_internet_archive_enabled": self.allow_live_internet_archive,
+            "downloads_enabled": self.downloads_enabled,
+            "local_paths_enabled": self.allow_local_paths,
+            "user_storage_enabled": self.user_storage_enabled,
+            "deployment_approved": self.deployment_approved,
+            "production_ready": self.production_ready,
             "configured_root_kinds": {
                 "index_root": _root_state(self.index_root),
                 "run_store_root": _root_state(self.run_store_root),
@@ -131,6 +167,17 @@ class WebServerConfig:
             },
             "enabled_capabilities": _enabled_capabilities(self),
             "disabled_capabilities": _disabled_capabilities(self),
+            "external_baseline_observations": {
+                "status": "pending_manual",
+                "observed_count": 0,
+                "pending_count": 192,
+                "source": "evals/search_usefulness/external_baselines/",
+                "notes": "Use scripts/report_external_baseline_status.py for the current committed manual-baseline status.",
+            },
+            "source_mode_summary": _source_mode_summary(self),
+            "route_policy_summary": _route_policy_summary(self),
+            "limitations": _limitations(self),
+            "wrapper_config_summary": _safe_wrapper_summary(self.wrapper_config_summary),
             "notices": _mode_notices(self),
         }
 
@@ -190,6 +237,10 @@ def _enabled_capabilities(config: WebServerConfig) -> list[str]:
         capabilities.append("caller_bundle_path_inspection")
     if config.allow_write_actions:
         capabilities.append("local_write_actions")
+    if config.downloads_enabled:
+        capabilities.append("payload_downloads")
+    if config.user_storage_enabled:
+        capabilities.append("user_storage")
     return capabilities
 
 
@@ -211,7 +262,81 @@ def _disabled_capabilities(config: WebServerConfig) -> list[str]:
         disabled.append("caller_bundle_path_inspection")
     if not config.allow_eval_runner:
         disabled.append("archive_resolution_evals")
+    if not config.allow_live_probes:
+        disabled.append("live_source_probes")
+    if not config.allow_live_internet_archive:
+        disabled.append("live_internet_archive")
+    if not config.downloads_enabled:
+        disabled.append("payload_downloads")
+    if not config.user_storage_enabled:
+        disabled.append("user_storage")
+    if not config.deployment_approved:
+        disabled.append("deployment_approval")
     return disabled
+
+
+def _route_policy_summary(config: WebServerConfig) -> dict[str, object]:
+    return {
+        "mode": config.mode,
+        "local_path_controls": "enabled" if config.allow_local_paths else "disabled",
+        "write_actions": "enabled" if config.allow_write_actions else "disabled",
+        "bundle_path_inspection": "enabled" if config.allow_bundle_path_inspection else "disabled",
+        "downloads": "enabled" if config.downloads_enabled else "disabled_or_route_blocked",
+        "user_storage": "enabled" if config.user_storage_enabled else "disabled",
+        "live_probes": "enabled" if config.allow_live_probes else "disabled",
+    }
+
+
+def _source_mode_summary(config: WebServerConfig) -> dict[str, object]:
+    return {
+        "active_source_posture": "fixture_backed_local_corpus",
+        "live_source_probes_enabled": config.allow_live_probes,
+        "live_internet_archive_enabled": config.allow_live_internet_archive,
+        "manual_external_baselines": "pending_manual",
+        "placeholder_sources": "remain_placeholders",
+    }
+
+
+def _limitations(config: WebServerConfig) -> list[str]:
+    if config.mode != "public_alpha":
+        return ["local_dev is trusted-operator bootstrap behavior, not production."]
+    return [
+        "Public alpha is not production.",
+        "No deployment approval is represented by this server.",
+        "Live source probes are disabled.",
+        "Caller-provided local path controls are blocked.",
+        "Downloads, payload readback, and user storage are disabled or route-blocked.",
+        "Auth, TLS, rate limiting, and process supervision remain external future responsibilities.",
+        "External baselines remain pending/manual unless a human records observations.",
+    ]
+
+
+def _safe_wrapper_summary(value: Mapping[str, object] | None) -> dict[str, object] | None:
+    if value is None:
+        return None
+    allowed_keys = {
+        "config_kind",
+        "status",
+        "created_by_slice",
+        "mode",
+        "host",
+        "port",
+        "bind_scope",
+        "allow_nonlocal_bind",
+        "live_probes_enabled",
+        "live_internet_archive_enabled",
+        "downloads_enabled",
+        "local_paths_enabled",
+        "user_storage_enabled",
+        "deployment_performed",
+        "deployment_approved",
+        "production_ready",
+        "limits",
+        "configured_path_env_vars",
+        "route_policy",
+        "warnings",
+    }
+    return {key: item for key, item in value.items() if key in allowed_keys}
 
 
 def _mode_notices(config: WebServerConfig) -> list[dict[str, str]]:

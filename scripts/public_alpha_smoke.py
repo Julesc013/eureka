@@ -362,6 +362,13 @@ def _status_payload_is_safe(payload: dict[str, object], text: str) -> bool:
         and "caller_task_store_roots" in disabled
         and "caller_memory_store_roots" in disabled
         and "caller_export_store_roots" in disabled
+        and payload.get("live_probes_enabled") is False
+        and payload.get("live_internet_archive_enabled") is False
+        and payload.get("downloads_enabled") is False
+        and payload.get("local_paths_enabled") is False
+        and payload.get("user_storage_enabled") is False
+        and payload.get("deployment_approved") is False
+        and payload.get("production_ready") is False
         and PRIVATE_PATH_SENTINEL not in text
     )
 
