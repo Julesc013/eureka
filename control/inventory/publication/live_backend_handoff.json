@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1.0",
+  "handoff_id": "eureka-live-backend-handoff",
+  "status": "planned",
+  "stability": "experimental",
+  "no_live_backend_implemented": true,
+  "no_deployment_performed": true,
+  "static_site_current": true,
+  "public_alpha_backend_future": true,
+  "endpoint_prefixes_reserved": [
+    "/api/v1/status",
+    "/api/v1/search",
+    "/api/v1/query-plan",
+    "/api/v1/sources",
+    "/api/v1/source/{source_id}",
+    "/api/v1/evidence/{evidence_id}",
+    "/api/v1/object/{object_id}",
+    "/api/v1/result/{result_id}",
+    "/api/v1/absence",
+    "/api/v1/compare",
+    "/api/v1/live-probe"
+  ],
+  "capability_flags_required": [
+    "live_backend",
+    "live_search",
+    "live_probe_gateway",
+    "internet_archive_live_probe"
+  ],
+  "error_envelope": {
+    "shape": {
+      "ok": false,
+      "error": {
+        "code": "live_backend_unavailable",
+        "message": "Live backend is not available for this static deployment.",
+        "status": 503,
+        "retryable": false,
+        "capability_required": "live_backend",
+        "docs": "docs/reference/LIVE_BACKEND_HANDOFF_CONTRACT.md"
+      }
+    },
+    "required_error_codes": [
+      "live_backend_unavailable",
+      "capability_disabled",
+      "live_probes_disabled",
+      "route_not_public_alpha_safe",
+      "rate_limited",
+      "source_disabled",
+      "source_timeout",
+      "bad_request",
+      "not_found",
+      "internal_error"
+    ]
+  },
+  "static_to_live_link_policy": {
+    "static_pages_may_describe_reserved_routes": true,
+    "static_pages_must_not_link_as_live": true,
+    "static_pages_must_check_capability_flags_first": true,
+    "static_pages_must_label_api_v1_as_future_reserved": true,
+    "static_demo_routes_are_not_live_api_routes": true
+  },
+  "cors_policy_status": "unresolved",
+  "auth_policy_status": "unresolved",
+  "rate_limit_policy_status": "unresolved",
+  "live_probe_dependency_status": "requires_live_probe_gateway_contract_v0",
+  "client_profiles": [
+    "standard_web",
+    "modern_web",
+    "api_client",
+    "native_client",
+    "relay"
+  ],
+  "current_local_http_api_status": {
+    "prefix": "/api",
+    "status": "local_prototype_public_alpha_routes",
+    "stable_public_api": false,
+    "notes": [
+      "The current stdlib HTTP API is used for local demo/public-alpha wrapper checks.",
+      "It is not the future /api/v1 public handoff contract and is not a stable production API."
+    ]
+  },
+  "prohibited_claims": [
+    "live backend exists",
+    "public API is production stable",
+    "/api/v1 is live",
+    "live probes enabled",
+    "Internet Archive live probe enabled",
+    "backend deployed",
+    "production ready"
+  ],
+  "created_by_slice": "live_backend_handoff_contract_v0",
+  "notes": [
+    "This is a route-reservation and handoff contract only.",
+    "GitHub Pages remains a static-only publication target.",
+    "No backend hosting, live source probe, auth, account, CORS, rate-limit, provider deployment, or production API guarantee is added.",
+    "Live probe routes require the later Live Probe Gateway Contract v0 before any implementation or public-alpha exposure."
+  ]
+}

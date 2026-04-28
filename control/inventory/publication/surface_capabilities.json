@@ -1,0 +1,153 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-public-surface-capabilities",
+  "status": "draft",
+  "stability": "experimental",
+  "capabilities": [
+    {
+      "id": "static_site",
+      "status": "implemented",
+      "public_label": "Static public site",
+      "enabled_by_default": true,
+      "safe_for_static_hosting": true,
+      "requires_backend": false,
+      "requires_operator_signoff": false,
+      "notes": "Current public_site artifact."
+    },
+    {
+      "id": "generated_public_data",
+      "status": "implemented",
+      "public_label": "Generated public data summaries",
+      "enabled_by_default": true,
+      "safe_for_static_hosting": true,
+      "requires_backend": false,
+      "requires_operator_signoff": false,
+      "notes": "Static JSON under public_site/data; not a live API."
+    },
+    {
+      "id": "lite_surface",
+      "status": "static_demo",
+      "public_label": "Lite HTML surface",
+      "enabled_by_default": true,
+      "safe_for_static_hosting": true,
+      "requires_backend": false,
+      "requires_operator_signoff": false,
+      "notes": "Static no-JS/no-CSS seed surface."
+    },
+    {
+      "id": "text_surface",
+      "status": "static_demo",
+      "public_label": "Text surface",
+      "enabled_by_default": true,
+      "safe_for_static_hosting": true,
+      "requires_backend": false,
+      "requires_operator_signoff": false,
+      "notes": "Static plain-text seed surface."
+    },
+    {
+      "id": "files_surface",
+      "status": "static_demo",
+      "public_label": "Files surface",
+      "enabled_by_default": true,
+      "safe_for_static_hosting": true,
+      "requires_backend": false,
+      "requires_operator_signoff": false,
+      "notes": "Static file-tree seed surface with manifest and checksums; no executable downloads."
+    },
+    {
+      "id": "demo_snapshots",
+      "status": "static_demo",
+      "public_label": "Static resolver demo snapshots",
+      "enabled_by_default": true,
+      "safe_for_static_hosting": true,
+      "requires_backend": false,
+      "requires_operator_signoff": false,
+      "notes": "Fixture-backed no-JS demo pages under public_site/demo."
+    },
+    {
+      "id": "public_alpha_wrapper",
+      "status": "implemented",
+      "public_label": "Public-alpha wrapper",
+      "enabled_by_default": false,
+      "safe_for_static_hosting": false,
+      "requires_backend": true,
+      "requires_operator_signoff": true,
+      "notes": "Local stdlib wrapper with localhost defaults; not deployed by the static publication plane."
+    },
+    {
+      "id": "live_backend",
+      "status": "planned",
+      "public_label": "Live backend",
+      "enabled_by_default": false,
+      "safe_for_static_hosting": false,
+      "requires_backend": true,
+      "requires_operator_signoff": true,
+      "notes": "Future hosted backend capability; disabled and not implemented by Live Backend Handoff Contract v0."
+    },
+    {
+      "id": "live_search",
+      "status": "planned",
+      "public_label": "Live search",
+      "enabled_by_default": false,
+      "safe_for_static_hosting": false,
+      "requires_backend": true,
+      "requires_operator_signoff": true,
+      "notes": "Future backend search handoff; no live route exists in the static site."
+    },
+    {
+      "id": "live_probe_gateway",
+      "status": "deferred",
+      "public_label": "Live probe gateway",
+      "enabled_by_default": false,
+      "safe_for_static_hosting": false,
+      "requires_backend": true,
+      "requires_operator_signoff": true,
+      "notes": "Requires Live Probe Gateway Contract v0 before implementation."
+    },
+    {
+      "id": "internet_archive_live_probe",
+      "status": "blocked",
+      "public_label": "Internet Archive live probe",
+      "enabled_by_default": false,
+      "safe_for_static_hosting": false,
+      "requires_backend": true,
+      "requires_operator_signoff": true,
+      "notes": "Blocked until live probe gateway, source policy, caps, and abuse controls exist."
+    },
+    {
+      "id": "external_baseline_observations",
+      "status": "planned",
+      "public_label": "External baseline observations",
+      "enabled_by_default": false,
+      "safe_for_static_hosting": true,
+      "requires_backend": false,
+      "requires_operator_signoff": true,
+      "notes": "Manual human-operated observation path remains pending; no automation is added."
+    },
+    {
+      "id": "native_clients",
+      "status": "deferred",
+      "public_label": "Native clients",
+      "enabled_by_default": false,
+      "safe_for_static_hosting": false,
+      "requires_backend": false,
+      "requires_operator_signoff": true,
+      "notes": "Native app projects remain deferred."
+    },
+    {
+      "id": "rust_runtime",
+      "status": "deferred",
+      "public_label": "Rust runtime",
+      "enabled_by_default": false,
+      "safe_for_static_hosting": false,
+      "requires_backend": true,
+      "requires_operator_signoff": true,
+      "notes": "Rust remains a parity lane, not the production runtime."
+    }
+  ],
+  "created_by_slice": "live_backend_handoff_contract_v0",
+  "notes": [
+    "Capability flags let static clients distinguish implemented static surfaces from future backend behavior.",
+    "All live backend and live probe capabilities are disabled by default."
+  ]
+}
