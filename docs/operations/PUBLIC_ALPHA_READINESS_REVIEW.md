@@ -158,6 +158,11 @@ future hosted public-alpha backend. It does not host a backend, make `/api/v1`
 live, enable live probes, implement production CORS/auth/rate-limit behavior,
 or change the static GitHub Pages target.
 
+Live Probe Gateway Contract v0 adds disabled-by-default source-probe policy for
+future hosted backends. It does not implement probes, call Internet Archive or
+other external sources, fetch URLs, scrape, crawl, enable downloads, or change
+the public-alpha readiness verdict.
+
 ## Public Alpha Wrapper
 
 LIVE_ALPHA_01 Production Public-Alpha Wrapper adds a provider-neutral stdlib

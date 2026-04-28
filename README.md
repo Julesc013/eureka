@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -120,6 +120,12 @@ reservations, disabled live capability flags, and a future error-envelope
 reference. It does not deploy or host a backend, make `/api/v1` live, enable
 live probes, finalize CORS/auth/rate-limit policy, or create production API
 guarantees.
+Live Probe Gateway Contract v0 now adds disabled-by-default source-probe
+policy, candidate source limits, cache/evidence expectations, and operator
+gates before any external probe. It does not implement live probes, call
+Internet Archive, Wayback, GitHub, Software Heritage, package registries, or
+other external sources, fetch URLs, scrape, crawl, enable downloads, or turn
+Google into a live probe source.
 
 ## Quickstart
 
@@ -142,6 +148,7 @@ python -m unittest discover -s surfaces -t .
 python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
 python scripts/validate_live_backend_handoff.py
+python scripts/validate_live_probe_gateway.py
 ```
 
 ### Run Evals and Safety Checks
@@ -162,6 +169,7 @@ python site/validate.py
 python scripts/generate_public_data_summaries.py --check
 python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
+python scripts/validate_live_probe_gateway.py
 python scripts/generate_public_alpha_rehearsal_evidence.py --check
 ```
 
@@ -372,6 +380,7 @@ Architecture:
 - [AI Policy](docs/architecture/AI_POLICY.md)
 - [Rust Backend Lane](docs/architecture/RUST_BACKEND_LANE.md)
 - [Publication Plane](docs/architecture/PUBLICATION_PLANE.md)
+- [Live Probe Gateway](docs/architecture/LIVE_PROBE_GATEWAY.md)
 
 Roadmaps and operations:
 
@@ -385,6 +394,7 @@ Roadmaps and operations:
 - [Public Route Contract](docs/reference/PUBLIC_ROUTE_CONTRACT.md)
 - [Public Data Contract](docs/reference/PUBLIC_DATA_CONTRACT.md)
 - [Client Profile Contract](docs/reference/CLIENT_PROFILE_CONTRACT.md)
+- [Live Probe Gateway Contract](docs/reference/LIVE_PROBE_GATEWAY_CONTRACT.md)
 - [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md)
 - [Hard Test Pack](docs/operations/HARD_TEST_PACK.md)
 - [Comprehensive Audit Pack](control/audits/2026-04-25-comprehensive-test-eval-audit/README.md)
@@ -432,6 +442,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
   an error-envelope expectation for a future hosted backend. It does not make
   `/api/v1` live, deploy backend hosting, enable live probes, or create a
   stable production API.
+- Live Probe Gateway Contract v0 defines disabled-by-default source-probe
+  policy, per-source caps, cache/evidence expectations, and operator gates.
+  It does not implement probes, call external sources, fetch URLs, scrape,
+  crawl, enable downloads, or promote Google beyond manual baselines.
 - The hosting pack supports supervised rehearsal evidence, not open-internet
   approval.
 - Rust has a workspace, parity fixtures, and one isolated source-registry
@@ -447,10 +461,11 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Live Probe Gateway Contract v0
+1. Rust Query Planner Parity Candidate v0
 2. Manual Observation Batch 0 Execution (human-operated parallel work)
-3. Rust Query Planner Parity Candidate v0
-4. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
+3. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
+4. Internet Archive Live Probe v0 only after explicit human approval and
+   separate implementation review
 
 Broader near-term direction:
 

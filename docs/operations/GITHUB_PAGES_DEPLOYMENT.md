@@ -42,6 +42,7 @@ python scripts/validate_public_static_site.py
 python scripts/check_github_pages_static_artifact.py
 python scripts/validate_static_host_readiness.py
 python scripts/validate_live_backend_handoff.py
+python scripts/validate_live_probe_gateway.py
 ```
 
 Then it configures Pages, uploads `public_site/` with
@@ -75,6 +76,10 @@ Live Backend Handoff Contract v0 reserves future `/api/v1` backend route
 families and disabled capability flags. GitHub Pages still serves only static
 files; it does not make `/api/v1` live, proxy to Python, or provide a
 production API.
+
+Live Probe Gateway Contract v0 records disabled future source-probe policy.
+GitHub Pages still performs no source probes, URL fetches, Internet Archive
+calls, scraping, crawling, or downloads.
 
 No deployment secrets are required.
 

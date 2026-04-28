@@ -1590,6 +1590,52 @@
       "failure_means": "Live backend handoff inventories, required reserved endpoints, disabled live capabilities, docs, or validator JSON output regressed.",
       "advisory_or_required": "required",
       "notes": "Added by Live Backend Handoff Contract v0; checks reserved /api/v1 routes stay future-only and no backend, live probes, or production API guarantees are introduced."
+    },
+    {
+      "test_id": "live_probe_gateway_validator",
+      "label": "Live probe gateway validator",
+      "command": "python scripts/validate_live_probe_gateway.py",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Disabled-by-default live probe gateway policy, candidate source gates, public-alpha live-probe closure, or no-network/no-download posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Live Probe Gateway Contract v0; validates policy only and performs no network calls, source probes, URL fetches, scraping, downloads, or adapter execution."
+    },
+    {
+      "test_id": "live_probe_gateway_tests",
+      "label": "Live probe gateway contract tests",
+      "command": "python -m unittest tests.operations.test_live_probe_gateway_contract tests.scripts.test_validate_live_probe_gateway",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary repo copy for negative validator checks",
+      "expected_runtime": "seconds",
+      "failure_means": "Live probe gateway inventory, source candidate status, Google manual-baseline-only posture, wrapper defaults, docs, or validator JSON output regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Live Probe Gateway Contract v0; checks candidates remain future-disabled and no live probes, external calls, downloads, arbitrary URL fetching, or Internet Archive live access are introduced."
     }
   ]
 }

@@ -190,6 +190,11 @@ The repo has already proven:
   capability flags, and error-envelope expectations without hosting a backend,
   making `/api/v1` live, enabling live probes, or creating production API
   guarantees
+- Live Probe Gateway Contract v0 as the first disabled-by-default source-probe
+  policy layer, defining candidate sources, global and per-source caps,
+  cache/evidence requirements, retry/circuit-breaker posture, and operator
+  gates without implementing adapters, calling external services, fetching
+  URLs, scraping, crawling, enabling downloads, or making Google a live source
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -242,52 +247,33 @@ The next backend sequence is:
 42. Static Resolver Demo Snapshots v0 (implemented as static fixture-backed demos)
 43. Custom Domain / Alternate Host Readiness v0 (implemented as static host readiness policy; no DNS/CNAME/provider config)
 44. Live Backend Handoff Contract v0 (implemented as contract-only `/api/v1` handoff reservation; no live backend)
-45. Live Probe Gateway Contract v0
-46. Manual Observation Batch 0 Execution (human-operated parallel work)
-47. Rust Query Planner Parity Candidate v0
-48. Compatibility Surface Strategy v0
+45. Live Probe Gateway Contract v0 (implemented as contract-only source-probe policy; no probes or network calls)
+46. Rust Query Planner Parity Candidate v0
+47. Manual Observation Batch 0 Execution (human-operated parallel work)
+48. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
 49. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Live Probe Gateway Contract v0
+> Rust Query Planner Parity Candidate v0
 
 Why this comes next:
 
-- `public_site/` exists as the current no-JS static public artifact.
-- Public Publication Plane Contracts v0 now defines route names, route
-  stability, public status vocabulary, client profiles, public data files,
-  static export expectations, base-path portability, deployment target
-  semantics, redirect policy, and public claim traceability.
-- GitHub Pages deployment enablement is now configured as a static-only
-  workflow over the existing `public_site/` artifact and these contracts.
-- Static Site Generation Migration v0 now generates `site/dist/` from governed
-  `site/` sources, but `public_site/` remains the deployed artifact.
-- Generated Public Data Summaries v0 now provides safe `/data/` summaries from
-  governed inventories and eval outputs without live data, observed external
-  baselines, or public deployment-success claims.
-- Lite/Text/Files Seed Surfaces v0 now provides static `/lite`, `/text`, and
-  `/files` seed surfaces from those summaries without adding live backend
-  behavior, live probes, executable downloads, snapshots, relay/native runtime,
-  provider-neutral backend deployment config, DNS configuration, external
-  baseline observations, or production claims.
-- Static Resolver Demo Snapshots v0 now provides static `/demo/` examples from
-  governed data and fixture-backed outputs without turning static files into a
-  live search route, API, backend host, or production claim.
-- Custom Domain / Alternate Host Readiness v0 now records host portability
-  policy and validates no DNS, CNAME, provider config, alternate-host
-  deployment, backend hosting, live probes, or custom-domain claim was added.
-- Live Backend Handoff Contract v0 now reserves future `/api/v1` endpoint
-  families, disabled live capability flags, and error-envelope expectations
-  without hosting a backend, making `/api/v1` live, enabling live probes, or
-  creating production API guarantees.
-- The next step is to define the live probe gateway contract before any live
-  source probe can be exposed through a future backend.
+- Live Probe Gateway Contract v0 now defines the disabled-by-default source
+  policy that must exist before any live external probe.
+- The repo still has no live probe implementation, no Internet Archive live
+  calls, no URL fetching, no downloads, and no source adapters for external
+  probing.
+- Rust Query Planner Parity Candidate v0 is a non-network next step that can
+  compare future Rust planner behavior against the Python oracle without
+  exposing external sources.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.
+- Internet Archive Live Probe v0 should remain unstarted unless a human
+  explicitly approves live external-source behavior after separate review.
 
 ## Explicit Deferrals
 

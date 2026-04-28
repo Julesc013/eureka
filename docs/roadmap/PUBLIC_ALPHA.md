@@ -53,6 +53,10 @@ The minimum public-alpha entry gate should include:
 - Live Backend Handoff Contract v0 (implemented as contract-only `/api/v1`
   route reservations, capability flags, and error-envelope expectations; no
   live backend, live probes, backend hosting, or production API guarantee)
+- Live Probe Gateway Contract v0 (implemented as disabled-by-default source
+  probe policy, candidate-source caps, cache/evidence expectations, and
+  operator gates; no live probes, network calls, downloads, scraping, or
+  Internet Archive access)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -198,3 +202,10 @@ reservations, disabled live capability flags, static-to-live handoff policy, and
 error-envelope expectations. It is a contract-only public-alpha input: it does
 not host a backend, make `/api/v1` live, enable live probes, configure CORS/auth
 or rate limits for production, or make a stable public API guarantee.
+
+Live Probe Gateway Contract v0 now records the future source-probe gateway
+policy that any hosted backend would have to obey before external metadata
+probes exist. It keeps all candidates future-disabled, keeps public-alpha live
+probes disabled by default, keeps Google manual-baseline-only, and adds no
+Internet Archive calls, URL fetching, scraping, crawling, downloads, adapters,
+or production source behavior.

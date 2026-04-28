@@ -31,7 +31,8 @@ control/inventory/publication/surface_capabilities.json
 
 The current static capabilities are enabled. Live backend, live search, live
 probe gateway, and Internet Archive live probe capabilities are disabled by
-default and remain future/deferred/blocked.
+default. Live Probe Gateway Contract v0 defines policy for future probes, but
+does not make any live probe available.
 
 ## Relationship To Current Local API
 
@@ -53,7 +54,7 @@ operator and contract work defines:
 - auth/account stance
 - rate-limit and abuse controls
 - status/capability response shape
-- live probe gateway rules
+- live probe gateway runtime implementation after the contract-only policy
 - rollback and disabled-by-default behavior
 
 This milestone adds none of those runtime behaviors.

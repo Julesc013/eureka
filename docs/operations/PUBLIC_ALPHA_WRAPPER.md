@@ -124,3 +124,8 @@ Live Backend Handoff Contract v0 now reserves `/api/v1` as a future hosted
 public-alpha handoff prefix. The wrapper's current local `/api` routes remain
 local/prototype public-alpha routes; they are not the future `/api/v1`
 contract and not a production API.
+
+Live Probe Gateway Contract v0 now defines the future source-probe gateway
+policy, but the wrapper still reports live probes and live Internet Archive
+access as disabled by default. No external source probe, adapter, download, URL
+fetch, or Internet Archive call is implemented here.

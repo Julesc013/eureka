@@ -44,3 +44,8 @@ themselves.
 Live Backend Handoff Contract v0 updates the `api_client` expectation: clients
 may know that `/api/v1` is reserved, but they must treat it as future and
 disabled unless a status/capability document says `live_backend` is enabled.
+
+Live Probe Gateway Contract v0 adds a related caveat: static clients may read
+the disabled live-probe capability summaries, but they must not assume Internet
+Archive, Wayback, GitHub, package-registry, or other external source probes are
+available unless a later hosted backend explicitly enables those capabilities.

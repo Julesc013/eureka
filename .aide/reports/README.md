@@ -61,3 +61,10 @@ under `control/inventory/publication/` and architecture/reference docs under
 publication governance and does not host a backend, make `/api/v1` live, enable
 live probes, implement CORS/auth/rate limits, or create production API
 guarantees.
+
+Live Probe Gateway Contract v0 records disabled-by-default source-probe policy
+under `control/inventory/publication/` and architecture/reference/operations
+docs under `docs/`. No separate AIDE runtime report is needed; this is
+contract and policy governance only and does not implement probes, call
+external sources, fetch URLs, scrape, crawl, enable downloads, or make Google a
+live probe source.

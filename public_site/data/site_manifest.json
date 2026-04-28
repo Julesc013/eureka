@@ -57,7 +57,9 @@
     "Manual external baselines remain pending unless human observations are recorded later.",
     "Public JSON is stable_draft for pre-alpha clients, not a production API promise.",
     "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.",
-    "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live."
+    "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
+    "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
+    "Google remains manual-baseline only and is not a live probe source."
   ],
   "live_backend_handoff": {
     "auth_policy_status": "unresolved",
@@ -161,6 +163,151 @@
     ],
     "route_prefix": "/api/v1",
     "status": "implemented_contract_only"
+  },
+  "live_probe_gateway": {
+    "allow_arbitrary_url_fetch": false,
+    "allow_downloads": false,
+    "candidate_source_count": 9,
+    "candidate_sources": [
+      {
+        "allowed_modes": [
+          "metadata_search"
+        ],
+        "cache_required": true,
+        "default_result_cap": 10,
+        "default_timeout_ms": 5000,
+        "evidence_required": true,
+        "id": "internet_archive_metadata",
+        "live_supported_now": false,
+        "requires_operator_enable": true,
+        "status": "future_disabled"
+      },
+      {
+        "allowed_modes": [
+          "item_metadata",
+          "file_listing"
+        ],
+        "cache_required": true,
+        "default_result_cap": 5,
+        "default_timeout_ms": 5000,
+        "evidence_required": true,
+        "id": "internet_archive_item_metadata",
+        "live_supported_now": false,
+        "requires_operator_enable": true,
+        "status": "future_disabled"
+      },
+      {
+        "allowed_modes": [
+          "availability_check"
+        ],
+        "cache_required": true,
+        "default_result_cap": 5,
+        "default_timeout_ms": 5000,
+        "evidence_required": true,
+        "id": "wayback_availability",
+        "live_supported_now": false,
+        "requires_operator_enable": true,
+        "status": "future_disabled"
+      },
+      {
+        "allowed_modes": [
+          "metadata_search",
+          "availability_check"
+        ],
+        "cache_required": true,
+        "default_result_cap": 10,
+        "default_timeout_ms": 5000,
+        "evidence_required": true,
+        "id": "wayback_cdx_metadata",
+        "live_supported_now": false,
+        "requires_operator_enable": true,
+        "status": "future_disabled"
+      },
+      {
+        "allowed_modes": [
+          "item_metadata",
+          "file_listing"
+        ],
+        "cache_required": true,
+        "default_result_cap": 10,
+        "default_timeout_ms": 5000,
+        "evidence_required": true,
+        "id": "github_releases_metadata",
+        "live_supported_now": false,
+        "requires_operator_enable": true,
+        "status": "future_disabled"
+      },
+      {
+        "allowed_modes": [
+          "item_metadata",
+          "availability_check"
+        ],
+        "cache_required": true,
+        "default_result_cap": 10,
+        "default_timeout_ms": 5000,
+        "evidence_required": true,
+        "id": "software_heritage_metadata",
+        "live_supported_now": false,
+        "requires_operator_enable": true,
+        "status": "future_disabled"
+      },
+      {
+        "allowed_modes": [
+          "item_metadata",
+          "metadata_search"
+        ],
+        "cache_required": true,
+        "default_result_cap": 10,
+        "default_timeout_ms": 5000,
+        "evidence_required": true,
+        "id": "pypi_package_metadata",
+        "live_supported_now": false,
+        "requires_operator_enable": true,
+        "status": "future_disabled"
+      },
+      {
+        "allowed_modes": [
+          "item_metadata",
+          "metadata_search"
+        ],
+        "cache_required": true,
+        "default_result_cap": 10,
+        "default_timeout_ms": 5000,
+        "evidence_required": true,
+        "id": "npm_package_metadata",
+        "live_supported_now": false,
+        "requires_operator_enable": true,
+        "status": "future_disabled"
+      },
+      {
+        "allowed_modes": [
+          "metadata_search",
+          "item_metadata"
+        ],
+        "cache_required": true,
+        "default_result_cap": 10,
+        "default_timeout_ms": 5000,
+        "evidence_required": true,
+        "id": "wikidata_metadata",
+        "live_supported_now": false,
+        "requires_operator_enable": true,
+        "status": "future_disabled"
+      }
+    ],
+    "enabled_by_default": false,
+    "gateway_id": "eureka-live-probe-gateway",
+    "manual_only_sources": [
+      {
+        "id": "google_web_search",
+        "live_probe_candidate": false,
+        "notes": "Google remains a human-operated manual baseline path only. Eureka does not scrape Google or automate Google searches.",
+        "status": "manual_external_baseline"
+      }
+    ],
+    "no_live_probes_implemented": true,
+    "no_network_calls_performed": true,
+    "public_alpha_default_enabled": false,
+    "status": "implemented_contract_only_runtime_disabled"
   },
   "no_deployment_claim": true,
   "pages": [
@@ -769,6 +916,7 @@
     "control/inventory/publication/domain_plan.json",
     "control/inventory/publication/live_backend_handoff.json",
     "control/inventory/publication/live_backend_routes.json",
+    "control/inventory/publication/live_probe_gateway.json",
     "control/inventory/publication/public_data_contract.json",
     "control/inventory/publication/static_hosting_targets.json",
     "control/inventory/publication/surface_capabilities.json"
@@ -889,7 +1037,7 @@
       "id": "live_probe_gateway",
       "requires_backend": true,
       "safe_for_static_hosting": false,
-      "status": "deferred"
+      "status": "planned"
     },
     {
       "enabled_by_default": false,

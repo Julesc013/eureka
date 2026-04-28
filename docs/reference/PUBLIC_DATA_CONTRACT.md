@@ -53,6 +53,12 @@ validation provenance to `/data/build_manifest.json`. These fields are static
 contract metadata only. They do not make `/api/v1` live, do not expose a live
 API, and do not change the `stable_draft` pre-alpha posture of public JSON.
 
+Live Probe Gateway Contract v0 adds disabled source-probe gateway summaries to
+`/data/site_manifest.json` and validation provenance to
+`/data/build_manifest.json`. These fields describe future policy only. They do
+not implement live probes, call external sources, fetch URLs, enable downloads,
+or turn static JSON into a live probe API.
+
 Implemented file-tree public data files include:
 
 - `/files/manifest.json`

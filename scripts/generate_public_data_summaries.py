@@ -91,6 +91,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     domain_plan = _load_json(PUBLICATION_DIR / "domain_plan.json")
     live_backend_handoff = _load_json(PUBLICATION_DIR / "live_backend_handoff.json")
     live_backend_routes = _load_json(PUBLICATION_DIR / "live_backend_routes.json")
+    live_probe_gateway = _load_json(PUBLICATION_DIR / "live_probe_gateway.json")
     public_data_contract = _load_json(PUBLICATION_DIR / "public_data_contract.json")
     static_hosting_targets = _load_json(PUBLICATION_DIR / "static_hosting_targets.json")
     surface_capabilities = _load_json(PUBLICATION_DIR / "surface_capabilities.json")
@@ -109,6 +110,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
         domain_plan,
         live_backend_handoff,
         live_backend_routes,
+        live_probe_gateway,
         public_data_contract,
         static_hosting_targets,
         surface_capabilities,
@@ -177,6 +179,7 @@ def _build_data_site_manifest(
     domain_plan: Mapping[str, Any],
     live_backend_handoff: Mapping[str, Any],
     live_backend_routes: Mapping[str, Any],
+    live_probe_gateway: Mapping[str, Any],
     public_data_contract: Mapping[str, Any],
     static_hosting_targets: Mapping[str, Any],
     surface_capabilities: Mapping[str, Any],
@@ -243,6 +246,21 @@ def _build_data_site_manifest(
         for route in live_backend_routes.get("routes", [])
         if isinstance(route, Mapping)
     ]
+    live_probe_candidates = [
+        {
+            "id": source.get("id"),
+            "status": source.get("status"),
+            "live_supported_now": source.get("live_supported_now"),
+            "requires_operator_enable": source.get("requires_operator_enable"),
+            "allowed_modes": source.get("allowed_modes", []),
+            "default_result_cap": source.get("default_result_cap"),
+            "default_timeout_ms": source.get("default_timeout_ms"),
+            "cache_required": source.get("cache_required"),
+            "evidence_required": source.get("evidence_required"),
+        }
+        for source in live_probe_gateway.get("future_candidate_sources", [])
+        if isinstance(source, Mapping)
+    ]
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_by": GENERATED_BY,
@@ -278,6 +296,21 @@ def _build_data_site_manifest(
             "reserved_endpoint_count": len(live_routes),
             "reserved_endpoints": live_routes,
         },
+        "live_probe_gateway": {
+            "status": "implemented_contract_only_runtime_disabled",
+            "gateway_id": live_probe_gateway.get("gateway_id"),
+            "no_live_probes_implemented": live_probe_gateway.get("no_live_probes_implemented"),
+            "no_network_calls_performed": live_probe_gateway.get("no_network_calls_performed"),
+            "enabled_by_default": live_probe_gateway.get("enabled_by_default"),
+            "public_alpha_default_enabled": live_probe_gateway.get("public_alpha_default_enabled"),
+            "allow_arbitrary_url_fetch": _mapping(live_probe_gateway.get("global_limits")).get(
+                "allow_arbitrary_url_fetch"
+            ),
+            "allow_downloads": _mapping(live_probe_gateway.get("global_limits")).get("allow_downloads"),
+            "candidate_source_count": len(live_probe_candidates),
+            "candidate_sources": live_probe_candidates,
+            "manual_only_sources": live_probe_gateway.get("manual_only_sources", []),
+        },
         "surface_capabilities": capabilities,
         "base_path_targets": base_paths,
         "contains_live_backend": False,
@@ -291,6 +324,8 @@ def _build_data_site_manifest(
             "Public JSON is stable_draft for pre-alpha clients, not a production API promise.",
             "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.",
             "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
+            "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
+            "Google remains manual-baseline only and is not a live probe source.",
         ],
         "source_inputs": [
             "control/inventory/publication/publication_contract.json",
@@ -299,6 +334,7 @@ def _build_data_site_manifest(
             "control/inventory/publication/domain_plan.json",
             "control/inventory/publication/live_backend_handoff.json",
             "control/inventory/publication/live_backend_routes.json",
+            "control/inventory/publication/live_probe_gateway.json",
             "control/inventory/publication/public_data_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
             "control/inventory/publication/surface_capabilities.json",
@@ -559,6 +595,7 @@ def _build_build_manifest(public_data_contract: Mapping[str, Any]) -> dict[str, 
             "python scripts/check_github_pages_static_artifact.py",
             "python scripts/validate_static_host_readiness.py",
             "python scripts/validate_live_backend_handoff.py",
+            "python scripts/validate_live_probe_gateway.py",
         ],
         "source_inputs": [
             "control/inventory/publication/public_data_contract.json",
@@ -567,6 +604,7 @@ def _build_build_manifest(public_data_contract: Mapping[str, Any]) -> dict[str, 
             "control/inventory/publication/domain_plan.json",
             "control/inventory/publication/live_backend_handoff.json",
             "control/inventory/publication/live_backend_routes.json",
+            "control/inventory/publication/live_probe_gateway.json",
             "control/inventory/publication/static_hosting_targets.json",
             "control/inventory/publication/surface_capabilities.json",
             "control/inventory/sources/*.source.json",

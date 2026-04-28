@@ -62,6 +62,8 @@
   "auth_policy_status": "unresolved",
   "rate_limit_policy_status": "unresolved",
   "live_probe_dependency_status": "requires_live_probe_gateway_contract_v0",
+  "live_probe_gateway_contract": "control/inventory/publication/live_probe_gateway.json",
+  "live_probe_gateway_contract_status": "implemented_contract_only_runtime_disabled",
   "client_profiles": [
     "standard_web",
     "modern_web",
@@ -92,6 +94,6 @@
     "This is a route-reservation and handoff contract only.",
     "GitHub Pages remains a static-only publication target.",
     "No backend hosting, live source probe, auth, account, CORS, rate-limit, provider deployment, or production API guarantee is added.",
-    "Live probe routes require the later Live Probe Gateway Contract v0 before any implementation or public-alpha exposure."
+    "Live Probe Gateway Contract v0 now defines disabled-by-default probe policy, but /api/v1/live-probe remains blocked until later explicit implementation approval."
   ]
 }

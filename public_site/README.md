@@ -31,6 +31,11 @@ reservations, disabled live capability flags, and error-envelope expectations.
 It does not make `/api/v1` live, host a backend, enable live probes, implement
 production CORS/auth/rate limits, or create a production API guarantee.
 
+Live Probe Gateway Contract v0 adds disabled-by-default source-probe policy,
+candidate-source caps, cache/evidence expectations, and operator gates. It
+does not implement probes, call external sources, fetch URLs, scrape, crawl,
+enable downloads, or make Google a live probe source.
+
 Validate it with:
 
 ```bash
@@ -38,6 +43,7 @@ python scripts/generate_public_data_summaries.py --check
 python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_live_backend_handoff.py
+python scripts/validate_live_probe_gateway.py
 python scripts/validate_public_static_site.py
 python scripts/validate_public_static_site.py --json
 python scripts/check_github_pages_static_artifact.py

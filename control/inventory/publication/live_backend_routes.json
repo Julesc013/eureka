@@ -153,14 +153,14 @@
       "method": "POST",
       "status": "blocked",
       "stability": "experimental",
-      "current_implementation_status": "not_implemented_requires_live_probe_gateway_contract",
+      "current_implementation_status": "not_implemented_gateway_contract_defined_runtime_disabled",
       "static_handoff_allowed": false,
       "requires_live_backend": true,
       "requires_auth": false,
       "live_probe_related": true,
       "public_alpha_allowed": false,
       "expected_response_kind": "disabled_or_gateway_error",
-      "notes": "Explicitly blocked until Live Probe Gateway Contract v0 and abuse controls exist."
+      "notes": "Explicitly blocked. Live Probe Gateway Contract v0 defines policy only; runtime probing, source adapters, and external calls remain unimplemented."
     }
   ],
   "created_by_slice": "live_backend_handoff_contract_v0",

@@ -423,6 +423,23 @@ and absence of backend deployment config. It performs no network calls, starts
 no backend, adds no route handlers, enables no live probes, and creates no
 production API guarantee.
 
+## Live Probe Gateway Contract
+
+Live Probe Gateway Contract v0 is validated with:
+
+```bash
+python scripts/validate_live_probe_gateway.py
+python scripts/validate_live_probe_gateway.py --json
+python -m unittest tests.operations.test_live_probe_gateway_contract tests.scripts.test_validate_live_probe_gateway
+```
+
+The lane checks `live_probe_gateway.json`, disabled candidate source posture,
+global and per-source limits, cache/evidence policy, Google manual-baseline-only
+status, public-alpha wrapper live-probe closure, `/api/v1/live-probe` remaining
+blocked, and docs/static pages for no-live-probe claims. It performs no network
+calls, implements no adapters, fetches no URLs, enables no downloads, calls no
+external sources, and does not make Internet Archive live probing available.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

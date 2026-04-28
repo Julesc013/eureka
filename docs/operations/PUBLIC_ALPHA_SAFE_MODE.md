@@ -93,6 +93,11 @@ Live Backend Handoff Contract v0 reserves future `/api/v1` routes separately
 from these current local `/api` helper routes. Public Alpha Safe Mode does not
 make `/api/v1` live and does not enable live probes.
 
+Live Probe Gateway Contract v0 defines future disabled-by-default probe policy
+separately from safe-mode runtime behavior. Public Alpha Safe Mode still does
+not call external sources, fetch URLs, enable downloads, or make Internet
+Archive live probing available.
+
 ## Still Not Production
 
 Public Alpha Safe Mode v0 does not settle:

@@ -220,6 +220,16 @@
       "title": "Reserve static-to-live backend handoff routes before any hosted backend claim",
       "status": "addressed_by_live_backend_handoff_contract_v0",
       "suggested_milestone": "Live Probe Gateway Contract v0"
+    },
+    {
+      "id": "audit-backlog-live-probe-gateway-contract",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Define disabled live probe gateway policy before any external source probe",
+      "status": "addressed_by_live_probe_gateway_contract_v0",
+      "suggested_milestone": "Rust Query Planner Parity Candidate v0"
     }
   ]
 }

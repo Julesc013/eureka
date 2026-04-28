@@ -2,8 +2,8 @@
 
 This directory holds the governed publication-plane contracts for Eureka's
 public routes, public data files, client profiles, deployment target semantics,
-custom-domain/static-host readiness, future live backend handoff, and redirect
-policy.
+custom-domain/static-host readiness, future live backend handoff, live probe
+gateway policy, and redirect policy.
 
 The inventory governs publication shape for static deployment and later public
 surfaces. It does not deploy generated output, add live backend behavior,
@@ -34,6 +34,10 @@ Current boundary:
   `surface_capabilities.json` contain Live Backend Handoff Contract v0 policy
   records. They reserve `/api/v1` and disabled live capability flags without
   making a backend or API route live.
+- `live_probe_gateway.json` contains Live Probe Gateway Contract v0 policy
+  records. It records disabled future source candidates, caps, cache/evidence
+  posture, and operator gates without implementing probes or making network
+  calls.
 - `control/inventory/publication/` owns the publication contracts and
   inventories.
 - `.github/workflows/pages.yml` is the static-only GitHub Pages publishing
@@ -49,4 +53,5 @@ python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_static_host_readiness.py
 python scripts/validate_live_backend_handoff.py
+python scripts/validate_live_probe_gateway.py
 ```

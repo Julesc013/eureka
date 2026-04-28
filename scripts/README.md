@@ -60,6 +60,13 @@ Current scripts:
   capability flags, error-envelope docs, and static-page no-live-backend
   claims; it supports `--json`, performs no network calls, starts no backend,
   adds no route handlers, and does not make `/api/v1` live
+- `validate_live_probe_gateway.py`: validates the Live Probe Gateway Contract
+  v0 inventory, disabled candidate-source gates, cache/evidence policies,
+  Google-manual-baseline-only posture, public-alpha wrapper live-probe closure,
+  live backend handoff alignment, and docs/static-page no-live-probe claims; it
+  supports `--json`, performs no network calls, implements no adapters, fetches
+  no URLs, enables no downloads, and does not call Internet Archive or any
+  external source
 - `generate_public_data_summaries.py`: generates, updates, or checks
   deterministic static JSON summaries under `public_site/data/` by default,
   including site, page-registry, source, eval, route, and build summaries; it
@@ -136,7 +143,8 @@ from governed synthetic fixtures, small recorded GitHub Releases fixtures, tiny
 recorded Internet Archive-like fixtures, and committed local bundle fixtures.
 They also surface the current bounded engine, public-alpha, publication,
 GitHub Pages artifact, generated public-data summary, and stdlib static-site
-generator checks plus static-host readiness and live-backend handoff checks
+generator checks plus static-host readiness, live-backend handoff, and live
+probe gateway checks
 without implying
 a final provenance, trust, merge, object-identity, ranking, compatibility
 oracle, fuzzy retrieval, vector search, download, installer, extraction,
@@ -146,7 +154,7 @@ HTTPS/TLS, accounts, rate limiting, production logging, production process
 management, backend deployment infrastructure, generated-artifact deployment,
 custom-domain configuration, alternate-host deployment, DNS changes, CNAME
 configuration, live `/api/v1` backend, production API guarantee, Rust runtime
-replacement, live source probing, crawling, live Internet Archive
+replacement, live source probing, live probe adapters, crawling, live Internet Archive
 API access, arbitrary local filesystem ingestion, or full
 investigation-planning architecture. Live GitHub acquisition remains
 intentionally deferred.

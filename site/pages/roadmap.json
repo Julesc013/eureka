@@ -46,9 +46,10 @@
         {"title": "Static Resolver Demo Snapshots v0", "text": "implemented as fixture-backed static no-JS demo snapshots under demo/; no live search, API, backend hosting, or external observations."},
         {"title": "Custom Domain / Alternate Host Readiness v0", "text": "implemented as provider-neutral static-host readiness inventory, base-path policy, operator checklist, and validator; no DNS, CNAME, alternate-host deployment, provider config, or backend hosting."},
         {"title": "Live Backend Handoff Contract v0", "text": "implemented as a contract-only /api/v1 reservation, capability flag, and error-envelope layer; no backend is hosted and /api/v1 is not live."},
-        {"title": "Live Probe Gateway Contract v0", "text": "next contract and abuse-control design before any live probing."},
+        {"title": "Live Probe Gateway Contract v0", "text": "implemented as disabled-by-default source probe policy, caps, cache/evidence requirements, and operator gates; no probes or network calls."},
+        {"title": "Rust Query Planner Parity Candidate v0", "text": "recommended next non-network milestone while live probes remain future and gated."},
         {"title": "Manual Observation Batch 0 Execution", "text": "human-operated external baseline observations for selected query/system slots."},
-        {"title": "Rust Query Planner Parity Candidate v0", "text": "parity catch-up when Python behavior is stable enough."}
+        {"title": "Internet Archive Live Probe v0", "text": "future only, after explicit human approval and source-policy review."}
       ]
     },
     {

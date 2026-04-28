@@ -96,13 +96,13 @@
     },
     {
       "id": "live_probe_gateway",
-      "status": "deferred",
+      "status": "planned",
       "public_label": "Live probe gateway",
       "enabled_by_default": false,
       "safe_for_static_hosting": false,
       "requires_backend": true,
       "requires_operator_signoff": true,
-      "notes": "Requires Live Probe Gateway Contract v0 before implementation."
+      "notes": "Live Probe Gateway Contract v0 is implemented as policy only; runtime probes remain disabled and future."
     },
     {
       "id": "internet_archive_live_probe",
@@ -112,7 +112,7 @@
       "safe_for_static_hosting": false,
       "requires_backend": true,
       "requires_operator_signoff": true,
-      "notes": "Blocked until live probe gateway, source policy, caps, and abuse controls exist."
+      "notes": "Blocked until explicit human approval after live probe gateway policy review; no Internet Archive live calls are implemented."
     },
     {
       "id": "external_baseline_observations",
@@ -148,6 +148,7 @@
   "created_by_slice": "live_backend_handoff_contract_v0",
   "notes": [
     "Capability flags let static clients distinguish implemented static surfaces from future backend behavior.",
-    "All live backend and live probe capabilities are disabled by default."
+    "All live backend and live probe capabilities are disabled by default.",
+    "Live Probe Gateway Contract v0 defines policy only and does not enable probes."
   ]
 }

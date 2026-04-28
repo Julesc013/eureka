@@ -72,4 +72,7 @@ This contract does not add:
 - provider deployment configuration
 - custom domain configuration
 
-Live probe behavior remains deferred until Live Probe Gateway Contract v0.
+Live Probe Gateway Contract v0 now defines disabled-by-default source policy,
+limits, cache/evidence expectations, and operator gates. It is policy only.
+`/api/v1/live-probe` remains reserved and blocked for public alpha until a
+later explicitly approved implementation exists.

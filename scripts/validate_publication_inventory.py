@@ -20,6 +20,7 @@ REQUIRED_FILES = {
     "domain_plan.json",
     "live_backend_handoff.json",
     "live_backend_routes.json",
+    "live_probe_gateway.json",
     "public_data_contract.json",
     "redirects.json",
     "static_hosting_targets.json",
@@ -186,6 +187,17 @@ REQUIRED_SURFACE_CAPABILITIES = {
     "native_clients",
     "rust_runtime",
 }
+REQUIRED_LIVE_PROBE_CANDIDATE_SOURCES = {
+    "internet_archive_metadata",
+    "internet_archive_item_metadata",
+    "wayback_availability",
+    "wayback_cdx_metadata",
+    "github_releases_metadata",
+    "software_heritage_metadata",
+    "pypi_package_metadata",
+    "npm_package_metadata",
+    "wikidata_metadata",
+}
 DISABLED_LIVE_CAPABILITIES = {
     "live_backend",
     "live_search",
@@ -289,6 +301,9 @@ def validate_publication_inventory(
         "live_backend_routes.json": _load_json(
             inventory_dir / "live_backend_routes.json", errors, repo_root
         ),
+        "live_probe_gateway.json": _load_json(
+            inventory_dir / "live_probe_gateway.json", errors, repo_root
+        ),
         "public_data_contract.json": _load_json(
             inventory_dir / "public_data_contract.json", errors, repo_root
         ),
@@ -310,6 +325,7 @@ def validate_publication_inventory(
     _validate_domain_plan(payloads["domain_plan.json"], errors)
     _validate_live_backend_handoff(payloads["live_backend_handoff.json"], errors)
     _validate_live_backend_routes(payloads["live_backend_routes.json"], errors)
+    _validate_live_probe_gateway(payloads["live_probe_gateway.json"], errors)
     _validate_public_data_contract(payloads["public_data_contract.json"], site_dir, errors)
     _validate_redirects(payloads["redirects.json"], errors)
     _validate_static_hosting_targets(payloads["static_hosting_targets.json"], errors)
@@ -332,6 +348,7 @@ def validate_publication_inventory(
         "domain_plan_checked": "domain_plan.json" in existing_files,
         "live_backend_handoff_checked": "live_backend_handoff.json" in existing_files,
         "live_backend_routes_checked": "live_backend_routes.json" in existing_files,
+        "live_probe_gateway_checked": "live_probe_gateway.json" in existing_files,
         "static_hosting_targets_checked": "static_hosting_targets.json" in existing_files,
         "surface_capabilities_checked": "surface_capabilities.json" in existing_files,
         "errors": errors,
@@ -707,6 +724,80 @@ def _validate_live_backend_routes(payload: Any, errors: list[str]) -> None:
             errors.append("live_backend_routes.json: /api/v1/live-probe must not be public-alpha allowed.")
         if live_probe.get("static_handoff_allowed") is not False:
             errors.append("live_backend_routes.json: /api/v1/live-probe must not allow static handoff.")
+
+
+def _validate_live_probe_gateway(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("live_probe_gateway.json: must be a JSON object.")
+        return
+    expected = {
+        "schema_version": "0.1.0",
+        "gateway_id": "eureka-live-probe-gateway",
+        "status": "planned",
+        "stability": "experimental",
+        "no_live_probes_implemented": True,
+        "no_network_calls_performed": True,
+        "enabled_by_default": False,
+        "public_alpha_default_enabled": False,
+        "requires_live_backend_handoff": True,
+        "requires_operator_signoff": True,
+        "requires_abuse_controls": True,
+        "requires_source_policy_review": True,
+        "created_by_slice": "live_probe_gateway_contract_v0",
+    }
+    _expect_mapping_values("live_probe_gateway.json", payload, expected, errors)
+    global_limits = payload.get("global_limits")
+    if not isinstance(global_limits, Mapping):
+        errors.append("live_probe_gateway.json: global_limits must be an object.")
+    else:
+        for key in (
+            "allow_arbitrary_url_fetch",
+            "allow_downloads",
+            "allow_write_actions",
+            "allow_auth_user_credentials",
+        ):
+            if global_limits.get(key) is not False:
+                errors.append(f"live_probe_gateway.json: global_limits.{key} must be false.")
+    candidates = payload.get("future_candidate_sources")
+    if not isinstance(candidates, list):
+        errors.append("live_probe_gateway.json: future_candidate_sources must be a list.")
+        return
+    by_id = {
+        item.get("id"): item
+        for item in candidates
+        if isinstance(item, Mapping) and isinstance(item.get("id"), str)
+    }
+    missing = sorted(REQUIRED_LIVE_PROBE_CANDIDATE_SOURCES - set(by_id))
+    if missing:
+        errors.append(f"live_probe_gateway.json: missing candidate sources {missing}.")
+    if "google_web_search" in by_id:
+        errors.append("live_probe_gateway.json: google_web_search must not be a live probe candidate.")
+    disabled = set(_string_list(payload.get("disabled_sources")))
+    missing_disabled = sorted(REQUIRED_LIVE_PROBE_CANDIDATE_SOURCES - disabled)
+    if missing_disabled:
+        errors.append(f"live_probe_gateway.json: disabled_sources missing {missing_disabled}.")
+    for source_id, candidate in by_id.items():
+        if candidate.get("status") != "future_disabled":
+            errors.append(f"live_probe_gateway.json: {source_id}.status must be future_disabled.")
+        if candidate.get("live_supported_now") is not False:
+            errors.append(f"live_probe_gateway.json: {source_id}.live_supported_now must be false.")
+        if candidate.get("requires_operator_enable") is not True:
+            errors.append(f"live_probe_gateway.json: {source_id}.requires_operator_enable must be true.")
+        if candidate.get("cache_required") is not True:
+            errors.append(f"live_probe_gateway.json: {source_id}.cache_required must be true.")
+        if candidate.get("evidence_required") is not True:
+            errors.append(f"live_probe_gateway.json: {source_id}.evidence_required must be true.")
+    manual = payload.get("manual_only_sources")
+    if not isinstance(manual, list):
+        errors.append("live_probe_gateway.json: manual_only_sources must be a list.")
+    elif not any(
+        isinstance(item, Mapping)
+        and item.get("id") == "google_web_search"
+        and item.get("status") == "manual_external_baseline"
+        and item.get("live_probe_candidate") is False
+        for item in manual
+    ):
+        errors.append("live_probe_gateway.json: google_web_search manual-only baseline record is required.")
 
 
 def _validate_public_data_contract(payload: Any, site_dir: Path, errors: list[str]) -> None:

@@ -6,6 +6,8 @@ Limitations:
 - no live search
 - no live source probes
 - /api/v1 reserved only, not live
+- live probe gateway policy only; no probes implemented
+- Google manual-baseline only
 - no scraping
 - no executable downloads or mirrors
 - no snapshots yet

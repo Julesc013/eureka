@@ -3,6 +3,7 @@ Eureka Static Resolver Demo Snapshots
 These files are generated static publication examples.
 They are not live search, not a live API, not backend hosting, and not production.
 The reserved /api/v1 route family is future handoff contract only and is not live here.
+Live Probe Gateway Contract v0 is policy-only; demo snapshots make no live source calls.
 
 Pages:
 - query-plan-windows-7-apps.html: Query Plan: Windows 7 Apps

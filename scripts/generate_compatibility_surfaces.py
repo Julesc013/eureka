@@ -198,8 +198,10 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         f"<li>Search audit queries: {escape(str(_mapping(evals.get('search_usefulness')).get('query_count', 'unknown')))}</li>",
         f"<li>Public-alpha routes summarized: {escape(str(_mapping(route.get('route_counts')).get('total', 'unknown')))}</li>",
         f"<li>Future live backend endpoints reserved: {escape(str(_mapping(site.get('live_backend_handoff')).get('reserved_endpoint_count', 0)))}</li>",
+        f"<li>Future live probe candidates disabled: {escape(str(_mapping(site.get('live_probe_gateway')).get('candidate_source_count', 0)))}</li>",
         "</ul>",
         "<p>The reserved /api/v1 route family is not live in this static artifact.</p>",
+        "<p>Live Probe Gateway Contract v0 is policy only; no live probes or network calls are implemented.</p>",
         "<p>Machine-readable summaries: <a href=\"../data/site_manifest.json\">site</a>, <a href=\"../data/source_summary.json\">sources</a>, <a href=\"../data/eval_summary.json\">evals</a>, <a href=\"../data/route_summary.json\">routes</a>.</p>",
     ]
 
@@ -254,6 +256,8 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "<li>No public executable downloads or mirrors are provided by this seed surface.</li>",
         "<li>Snapshots, relay behavior, native clients, and live APIs remain future work.</li>",
         "<li>/api/v1 is reserved by contract only and is not a live backend on the static site.</li>",
+        "<li>Live Probe Gateway Contract v0 is policy only; Internet Archive live probing remains future and disabled.</li>",
+        "<li>Google remains manual-baseline only and is not a live probe source.</li>",
         "</ul>",
     ]
 
@@ -296,6 +300,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
             "This is a plain-text static seed surface generated from public data summaries.",
             "It is not command-line interactivity and it is not live search.",
             "The /api/v1 route family is reserved for future live backend handoff only; it is not live here.",
+            "Live Probe Gateway Contract v0 records disabled source-probe policy only; no network calls are made.",
             "",
             "Files:",
             "- sources.txt",
@@ -354,6 +359,8 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "- no live search",
         "- no live source probes",
         "- /api/v1 reserved only, not live",
+        "- live probe gateway policy only; no probes implemented",
+        "- Google manual-baseline only",
         "- no scraping",
         "- no executable downloads or mirrors",
         "- no snapshots yet",
@@ -436,6 +443,7 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "No public executable downloads are present in v0.",
             "No live backend, live probes, crawling, scraping, or external observations are included.",
             "The /api/v1 route family is reserved for future backend handoff only and is not live.",
+            "Live Probe Gateway Contract v0 is policy only; live probes, downloads, and arbitrary URL fetching remain disabled.",
             "",
             "Public data summaries:",
             *(f"- ../data/{name}" for name in PUBLIC_DATA_FILES),
@@ -458,6 +466,7 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "It contains manifests and checksums for public data summaries.",
             "It does not contain software downloads, executable mirrors, private stores, or live source output.",
             "It does not expose a live /api/v1 backend.",
+            "It does not expose live probes or Internet Archive live access.",
         ],
     )
     data_readme = _text_page(
@@ -475,6 +484,7 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "<p>This is a static file-tree seed surface. It contains manifests, checksums, and links to public data summaries.</p>",
             "<p>No public executable downloads, mirrors, snapshots, live backend calls, or live source probes are provided in v0.</p>",
             "<p>The reserved /api/v1 route family is contract-only and not live on this static surface.</p>",
+            "<p>Live Probe Gateway Contract v0 is policy-only. There are no live probes, no downloads, and no arbitrary URL fetching here.</p>",
             "<ul>",
             '<li><a href="index.txt">index.txt</a></li>',
             '<li><a href="manifest.json">manifest.json</a></li>',

@@ -147,3 +147,9 @@ Live Backend Handoff Contract v0 adds no files under `/api/` and no route
 handlers. It only records future `/api/v1` reservations and disabled
 capability flags in publication inventory and generated static data summaries.
 Static exports must continue to work with no backend at all.
+
+Live Probe Gateway Contract v0 adds no source adapters and no network behavior.
+It only records disabled future source-probe policy in publication inventory and
+generated static data summaries. Static exports must not fetch URLs, call
+Internet Archive or other external services, enable downloads, or imply live
+probe availability.

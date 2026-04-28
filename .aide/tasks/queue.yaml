@@ -216,30 +216,30 @@
     {
       "id": "live_probe_gateway_contract_v0",
       "title": "Live Probe Gateway Contract v0",
-      "status": "next",
+      "status": "completed",
       "priority": 31,
-      "notes": "Future gateway contract before any live source probes, with abuse controls and explicit source boundaries."
+      "notes": "Added disabled-by-default live probe gateway policy, candidate-source limits, cache/evidence expectations, operator gates, validator, and tests without implementing probes, calling external sources, or enabling network behavior."
+    },
+    {
+      "id": "rust_query_planner_parity_candidate_v0",
+      "title": "Rust Query Planner Parity Candidate v0",
+      "status": "next",
+      "priority": 32,
+      "notes": "Implement the next isolated Rust seam only after Python planner behavior remains the oracle; do not wire Rust into runtime or surfaces."
     },
     {
       "id": "manual_observation_batch_0_execution",
       "title": "Manual Observation Batch 0 Execution",
       "status": "human_operated_parallel",
-      "priority": 32,
-      "notes": "Human-operated parallel follow-up to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
-    },
-    {
-      "id": "rust_query_planner_parity_candidate_v0",
-      "title": "Rust Query Planner Parity Candidate v0",
-      "status": "queued",
       "priority": 33,
-      "notes": "Implement the next isolated Rust seam only after Python planner behavior stabilizes and product-value work can pause."
+      "notes": "Human-operated parallel follow-up to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
     },
     {
       "id": "compatibility_surface_strategy_v0",
       "title": "Compatibility Surface Strategy v0",
       "status": "queued",
       "priority": 34,
-      "notes": "Define presentation rules for known, unknown, inferred, and incompatible outcomes before app work."
+      "notes": "Define presentation rules for known, unknown, inferred, and incompatible outcomes before app work; signed snapshot format may supersede this if snapshot work is selected next."
     }
   ]
 }

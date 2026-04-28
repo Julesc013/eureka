@@ -34,6 +34,7 @@
         "control/inventory/publication/domain_plan.json",
         "control/inventory/publication/live_backend_handoff.json",
         "control/inventory/publication/live_backend_routes.json",
+        "control/inventory/publication/live_probe_gateway.json",
         "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/publication/surface_capabilities.json",
         "control/inventory/publication/public_data_contract.json"
@@ -47,7 +48,7 @@
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_public_data_summaries.py",
-      "notes": "Machine-readable summary manifest for static public data. It includes disabled live backend handoff capability state; it is not a live API and carries no deployment-success claim."
+      "notes": "Machine-readable summary manifest for static public data. It includes disabled live backend handoff and live probe gateway capability state; it is not a live API and carries no deployment-success claim."
     },
     {
       "path": "/data/page_registry.json",
@@ -144,6 +145,7 @@
         "control/inventory/publication/domain_plan.json",
         "control/inventory/publication/live_backend_handoff.json",
         "control/inventory/publication/live_backend_routes.json",
+        "control/inventory/publication/live_probe_gateway.json",
         "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/publication/surface_capabilities.json",
         "control/inventory/sources/*.source.json",

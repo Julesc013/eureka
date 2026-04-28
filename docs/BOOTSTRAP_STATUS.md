@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus fifty-eight executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus fifty-nine executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -278,6 +278,16 @@ architectural oracle rather than as a throwaway scaffold.
   reservations, disabled live capability flags, and error-envelope
   expectations without hosting a backend, making `/api/v1` live, enabling live
   probes, or creating production API guarantees
+- first Live Probe Gateway Contract v0 under
+  `control/inventory/publication/live_probe_gateway.json`,
+  `docs/reference/LIVE_PROBE_GATEWAY_CONTRACT.md`,
+  `docs/architecture/LIVE_PROBE_GATEWAY.md`,
+  `docs/operations/LIVE_PROBE_POLICY.md`, and
+  `scripts/validate_live_probe_gateway.py`, adding disabled-by-default
+  source-probe policy, per-source caps, cache/evidence requirements, operator
+  gates, and candidate-source posture without implementing probes, calling
+  external sources, fetching URLs, scraping, crawling, enabling downloads, or
+  turning Google into a live probe source
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -317,7 +327,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Live Probe Gateway Contract v0
+> Rust Query Planner Parity Candidate v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -340,7 +350,7 @@ Contracts v0, GitHub Pages Deployment Enablement v0, Static Site
 Generation Migration v0, Generated Public Data Summaries v0,
 Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0,
 Custom Domain / Alternate Host Readiness v0, and Live Backend Handoff Contract
-v0
+v0, and Live Probe Gateway Contract v0
 are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
@@ -380,13 +390,18 @@ deployment, backend hosting, or live probes.
 The live backend handoff layer reserves `/api/v1` and disabled capability flags
 without adding route handlers, backend hosting, live probes, CORS/auth/rate
 limit policy, or production API guarantees.
+The live probe gateway contract records disabled-by-default source policy,
+candidate source caps, cache/evidence expectations, and operator gates without
+adding adapters, network calls, downloads, scraping, crawling, or live source
+behavior.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Live Probe Gateway Contract v0
+1. Rust Query Planner Parity Candidate v0
 2. Manual Observation Batch 0 Execution (human-operated parallel work)
-3. Rust Query Planner Parity Candidate v0
-4. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
+3. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
+4. Internet Archive Live Probe v0 only after explicit human approval and
+   separate implementation review
 
 ## Deferred Priorities
 

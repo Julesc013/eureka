@@ -24,6 +24,9 @@
   "live_backend_status": "planned",
   "live_backend_handoff": "control/inventory/publication/live_backend_handoff.json",
   "live_backend_routes": "control/inventory/publication/live_backend_routes.json",
+  "live_probe_gateway_contract_status": "implemented",
+  "live_probe_gateway_status": "planned_disabled",
+  "live_probe_gateway": "control/inventory/publication/live_probe_gateway.json",
   "surface_capabilities": "control/inventory/publication/surface_capabilities.json",
   "domain_plan": "control/inventory/publication/domain_plan.json",
   "static_hosting_targets": "control/inventory/publication/static_hosting_targets.json",
@@ -37,6 +40,7 @@
     "govern base-path and domain portability expectations",
     "govern future custom-domain and alternate-static-host readiness without configuring hosts",
     "govern future static-to-live backend handoff routes without implementing a hosted backend",
+    "govern future live source probe policy without implementing probes or network calls",
     "govern public claim traceability before public hosting"
   ],
   "no_live_backend": true,
@@ -123,9 +127,9 @@
     }
   ],
   "next_expected_milestones": [
-    "Live Probe Gateway Contract v0",
-    "Manual Observation Batch 0 Execution",
     "Rust Query Planner Parity Candidate v0",
+    "Manual Observation Batch 0 Execution",
+    "Internet Archive Live Probe v0 only after explicit human approval",
     "Compatibility Surface Strategy v0 or Signed Snapshot Format v0"
   ],
   "created_by_slice": "public_publication_plane_contracts_v0",
@@ -139,6 +143,7 @@
     "Static Resolver Demo Snapshots v0 adds fixture-backed static resolver demo pages under public_site/demo and site/dist/demo.",
     "Custom Domain / Alternate Host Readiness v0 adds domain/static-host readiness inventories, base-path portability docs, and validation without DNS, CNAME, alternate-host config, or backend deployment.",
     "Live Backend Handoff Contract v0 reserves /api/v1 route families, capability flags, and error-envelope expectations without deploying a backend or making /api/v1 live.",
+    "Live Probe Gateway Contract v0 records disabled-by-default live probe source policy, limits, cache/evidence requirements, and operator gates without implementing probes or making network calls.",
     "No provider backend configuration, live backend, or live source probe is added by this contract."
   ]
 }

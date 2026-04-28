@@ -26,6 +26,7 @@
     "control/inventory/publication/domain_plan.json",
     "control/inventory/publication/live_backend_handoff.json",
     "control/inventory/publication/live_backend_routes.json",
+    "control/inventory/publication/live_probe_gateway.json",
     "control/inventory/publication/static_hosting_targets.json",
     "control/inventory/publication/surface_capabilities.json",
     "control/inventory/sources/*.source.json",
@@ -40,6 +41,7 @@
     "python scripts/validate_publication_inventory.py",
     "python scripts/check_github_pages_static_artifact.py",
     "python scripts/validate_static_host_readiness.py",
-    "python scripts/validate_live_backend_handoff.py"
+    "python scripts/validate_live_backend_handoff.py",
+    "python scripts/validate_live_probe_gateway.py"
   ]
 }

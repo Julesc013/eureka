@@ -59,6 +59,15 @@ disabled live capability flags for future hosted-backend work. It does not
 make `/api/v1` live, deploy a backend, enable live probes, or create a
 production API guarantee.
 
+Live Probe Gateway Contract v0 adds
+`control/inventory/publication/live_probe_gateway.json`,
+`docs/reference/LIVE_PROBE_GATEWAY_CONTRACT.md`,
+`docs/architecture/LIVE_PROBE_GATEWAY.md`, and
+`scripts/validate_live_probe_gateway.py`. This is disabled-by-default source
+policy for future external metadata probes. It does not implement probes, call
+external services, fetch URLs, scrape, crawl, enable downloads, or make Google
+a live probe source.
+
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
 expectations, deployment target semantics, and redirects.
@@ -131,5 +140,7 @@ to inspect without creating a live resolver endpoint or API promise. Custom
 Domain / Alternate Host Readiness v0 now records future host prerequisites and
 validates static host portability without configuring a domain or alternate
 host. Live Backend Handoff Contract v0 now reserves `/api/v1` contract-only
-routes and disabled capabilities. Live probe gateway contracts, signed
-snapshots, relays, and native clients remain future work.
+routes and disabled capabilities. Live Probe Gateway Contract v0 now defines
+the disabled source-probe gateway policy before any external probe exists.
+Signed snapshots, relays, native clients, and any actual Internet Archive live
+probe remain future work.
