@@ -34,6 +34,9 @@ The minimum public-alpha entry gate should include:
 - GitHub Pages Deployment Enablement v0 (implemented as static-only workflow
   configuration for `public_site/`; no backend deployment, live probes, custom
   domain, generator, or verified deployment-success claim)
+- Static Site Generation Migration v0 (implemented as a stdlib-only `site/`
+  source/generator tree producing `site/dist/` for validation; `public_site/`
+  remains the deployment artifact)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -144,3 +147,10 @@ after validation. This does not change public-alpha backend readiness: it does
 not host the Python backend, enable live probes, configure a custom domain, add
 a generator, add secrets, or claim deployment success without GitHub Actions
 evidence.
+
+Static Site Generation Migration v0 now adds `site/`, `site/build.py`,
+`site/validate.py`, page JSON, templates, and generated `site/dist/` output.
+The generated output is validation evidence, not the GitHub Pages artifact yet.
+This keeps public-alpha backend readiness unchanged and adds no Node/npm,
+frontend framework, live backend behavior, live probes, custom domain, or
+production-readiness claim.

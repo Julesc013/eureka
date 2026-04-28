@@ -14,11 +14,12 @@ public architecture by accident.
 no-JS, already validated by `scripts/validate_public_static_site.py`, and safe
 for later static-hosting review.
 
-`site/` is reserved for a future source or generator tree. It is not created by
-the current GitHub Pages enablement work.
+`site/` is the stdlib-only static-site source and generator tree introduced by
+Static Site Generation Migration v0. It contains page JSON, templates, static
+assets, `site/build.py`, and `site/validate.py`.
 
-`site/dist/` is reserved for a future generated static artifact. It is not
-created by the current GitHub Pages enablement work.
+`site/dist/` is the generated static output used for validation. It is not the
+GitHub Pages deployment artifact yet.
 
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
@@ -30,8 +31,8 @@ The current publication plane governs static public material only. GitHub Pages
 Deployment Enablement v0 consumes this plane to upload `public_site/` as a
 static artifact, but it does not start or approve a live backend. It does not
 add live source probes, Internet Archive calls, Google scraping, crawling,
-auth, accounts, TLS, rate limiting, DNS, process management, or a static site
-generator.
+auth, accounts, TLS, rate limiting, DNS, process management, or generated
+artifact deployment.
 
 A future live backend handoff contract may define public API routes and
 capability flags, but that is separate from the static artifact contract.
@@ -71,8 +72,10 @@ GitHub Pages Deployment Enablement v0 configures publishing of the current
 `public_site/` artifact only after validating this inventory and the artifact.
 Workflow configuration is not a deployment-success claim.
 
-Static Site Generation Migration v0 may introduce `site/` and `site/dist/`, but
-it must preserve the route, data, client, and redirect contracts here.
+Static Site Generation Migration v0 introduces `site/` and `site/dist/`, but
+`public_site/` remains the deployment artifact until a later explicit migration
+changes that contract. The generator must preserve the route, data, client, and
+redirect contracts here.
 
 Generated Public Data Summaries v0 should project safe machine-readable files
 under `/data/` without live data or external observations unless evidence

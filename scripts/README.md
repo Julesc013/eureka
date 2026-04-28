@@ -31,7 +31,8 @@ Current scripts:
   it never marks the record observed, populates top results, fetches URLs, or
   automates external searches
 - `validate_public_static_site.py`: validates the no-JS `public_site/` static
-  public-site pack, including its manifest, required pages, local links,
+  public-site pack by default, or a generated artifact with `--site-root`,
+  including its manifest, required pages, local links,
   source matrix coverage, required cautionary phrases, prohibited claims, and
   public-alpha limitations; it supports `--json`, performs no network calls,
   starts no server, and deploys nothing
@@ -49,6 +50,11 @@ Current scripts:
   files, no backend, and no live probes; it supports `--json`, performs no
   network calls, starts no server, adds no custom domain, and does not claim a
   successful deployment
+- `site/build.py` and `site/validate.py`: build and validate the stdlib-only
+  static-site source tree into `site/dist/` for Static Site Generation
+  Migration v0; they keep `public_site/` as the deployment artifact and add no
+  Node/npm, frontend framework, live backend calls, live probes, external web
+  APIs, or deployment behavior
 - `generate_public_alpha_rehearsal_evidence.py`: summarizes, updates, or
   checks Public Alpha Rehearsal Evidence v0 by validating the static site,
   running the in-process public-alpha smoke checks, counting route inventory
@@ -90,4 +96,18 @@ eval runners, Python-oracle golden checks, Hard Test Pack v0 under
 `tests/hardening/`, and optional Cargo checks without turning them into product
 runtime behavior.
 
-Deterministic tests and demo flows now cover a bounded mixed corpus composed from governed synthetic fixtures, small recorded GitHub Releases fixtures, tiny recorded Internet Archive-like fixtures, and committed local bundle fixtures. They also surface the first bounded evidence-summary seam, the first bounded comparison/disagreement seam, the first bounded object/state timeline seam, the first bounded absence-reasoning seam, the first bounded representation/access-path seam, the first bounded compatibility seam, the first bounded compatibility-evidence seam, the first bounded action-routing seam, the first bounded user-strategy seam, the first bounded representation-selection and handoff seam, the first bounded acquisition and fetch seam, the first bounded decomposition and package-member seam, the first bounded member-readback and preview seam, the first bounded synchronous local-task seam, the first bounded synchronous resolution-run seam, the first bounded explicit local resolution-memory seam, the first bounded deterministic query-planner seam, Old-Platform Software Planner Pack v0, the first bounded local SQLite index seam, the first executable archive-resolution eval-runner seam, the first public-alpha safe-mode seam, the first public-alpha readiness smoke seam, the first public-alpha hosting-pack summary seam, the first publication-plane inventory validator, the first GitHub Pages static artifact checker, the first Python-oracle golden fixture-pack seam, the first high-risk hardening test pack, the first source coverage/capability metadata seam, Real Source Coverage Pack v0, Member-Level Synthetic Records v0, and Result Lanes + User-Cost Ranking v0 without implying a final provenance, trust, merge, object-identity, ranking, compatibility oracle, fuzzy retrieval, vector search, download, installer, extraction, runtime-routing, personalization, async scheduling, distributed workers, execution, streaming, cloud memory, production relevance benchmark, auth, HTTPS/TLS, accounts, rate limiting, production logging, production process management, backend deployment infrastructure, static site generation, Rust runtime replacement, live source probing, crawling, live Internet Archive API access, arbitrary local filesystem ingestion, or full investigation-planning architecture. Live GitHub acquisition remains intentionally deferred.
+Deterministic tests and demo flows now cover a bounded mixed corpus composed
+from governed synthetic fixtures, small recorded GitHub Releases fixtures, tiny
+recorded Internet Archive-like fixtures, and committed local bundle fixtures.
+They also surface the current bounded engine, public-alpha, publication,
+GitHub Pages artifact, and stdlib static-site generator checks without implying
+a final provenance, trust, merge, object-identity, ranking, compatibility
+oracle, fuzzy retrieval, vector search, download, installer, extraction,
+runtime-routing, personalization, async scheduling, distributed workers,
+execution, streaming, cloud memory, production relevance benchmark, auth,
+HTTPS/TLS, accounts, rate limiting, production logging, production process
+management, backend deployment infrastructure, generated-artifact deployment,
+Rust runtime replacement, live source probing, crawling, live Internet Archive
+API access, arbitrary local filesystem ingestion, or full
+investigation-planning architecture. Live GitHub acquisition remains
+intentionally deferred.

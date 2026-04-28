@@ -8,9 +8,11 @@ No public deployment happened.
 
 LIVE_ALPHA_01 adds a public alpha wrapper after this evidence snapshot; it still performs no deployment, keeps live probes disabled, and does not approve production.
 
-Public Publication Plane Contracts v0 now sits after the wrapper and before any static generation or live backend handoff. It governs routes, client profiles, public data, base-path portability, deployment targets, redirects, and public claim traceability without adding a generator or enabling live backend behavior.
+Public Publication Plane Contracts v0 sits after the wrapper and governs static generation plus any later live backend handoff. It governs routes, client profiles, public data, base-path portability, deployment targets, redirects, and public claim traceability without enabling live backend behavior.
 
 GitHub Pages Deployment Enablement v0 now configures a static-only workflow for public_site. It does not host the Python backend, enable live probes, add a custom domain, or prove deployment success without GitHub Actions evidence.
+
+Static Site Generation Migration v0 now adds a stdlib-only site generator and site/dist validation output, but public_site remains the deployable GitHub Pages artifact. The generated output is not a backend, live probe, custom domain, or production-readiness claim.
 
 ## Contents
 
@@ -30,7 +32,7 @@ GitHub Pages Deployment Enablement v0 now configures a static-only workflow for 
 ## Current Summary
 
 - branch: `main`
-- recorded commit sha: `e6bc849111adfaa57ed05e5c8678e4fbc3baaaff`
+- recorded commit sha: `a006c16822d9635105d560e639ddf0fe1b876e9b`
 - static site validation: `valid`
 - public-alpha smoke: `passed`
 - signoff status: `unsigned`

@@ -39,7 +39,7 @@ The command matrix defines these lanes:
 - `docs_only`: docs/audit/index validation plus whitespace diff checks
 - `public_alpha`: route inventory, smoke, wrapper, and hosting-pack safety checks
 - `publication_static_site`: publication inventory plus current static-site
-  artifact checks before deployment or static generation
+  artifact and generated-site checks before deployment or artifact migration
 - `parity`: Python oracle, source-registry, and source coverage/capability
   validation checks, plus current Python-oracle shape guards such as planner,
   member, result-lane, and compatibility-evidence fields
@@ -318,6 +318,26 @@ directories, Python files, and SQLite databases. It performs no network calls,
 does not manually deploy anything, uploads no backend, adds no live probes,
 adds no custom domain, adds no generator, and makes no deployment-success claim
 without GitHub Actions evidence.
+
+## Static Site Generation Migration
+
+Static Site Generation Migration v0 is validated with:
+
+```bash
+python site/build.py --check
+python site/build.py --json
+python site/validate.py
+python site/validate.py --json
+python -m unittest tests.operations.test_static_site_generation_migration tests.scripts.test_static_site_generator
+python scripts/validate_public_static_site.py --site-root site/dist
+```
+
+The lane checks the stdlib-only `site/` source tree, templates, page JSON,
+generated `site/dist/` output, no-JS pages, relative links, source-list
+coverage, and manifest posture. It keeps `public_site/` as the GitHub Pages
+artifact, performs no network calls, adds no Node/npm or frontend framework,
+does not deploy generated output, starts no backend, enables no live probes,
+and makes no production-readiness claim.
 
 ## Source Coverage And Capability
 

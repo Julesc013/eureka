@@ -16,10 +16,10 @@ public_site/
   assets/
 ```
 
-`public_site/` is the active hand-authored static public artifact. GitHub Pages
-Deployment Enablement v0 uploads this directory as-is after validation.
+`public_site/` is the active static public artifact. GitHub Pages Deployment
+Enablement v0 uploads this directory as-is after validation.
 
-Future generated export:
+Generated v0 export:
 
 ```text
 site/
@@ -28,15 +28,23 @@ site/
   data/
   assets/
   build.py
+  validate.py
 site/dist/
   index.html
-  data/
-  files/
-  snapshots/
+  status.html
+  sources.html
+  evals.html
+  demo-queries.html
+  limitations.html
+  roadmap.html
+  local-quickstart.html
+  site_manifest.json
+  assets/
 ```
 
-The future shape is reserved only. The GitHub Pages enablement work does not
-create a generator, Node/npm chain, frontend framework, or `site/` tree.
+Static Site Generation Migration v0 creates this stdlib-only generator shape.
+The generated `site/dist/` output is validation evidence and is not the GitHub
+Pages artifact yet.
 
 Expected future static data areas:
 

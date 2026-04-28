@@ -36,5 +36,7 @@ Planned public data files include:
 - `/files/SHA256SUMS`
 
 The current `public_site/site_manifest.json` is an implemented static artifact
-manifest, not the final generated public data layout.
-
+manifest, not the final generated public data layout. Static Site Generation
+Migration v0 also emits a generated `site/dist/site_manifest.json` for
+validation, but the broader `/data/` summaries remain planned for Generated
+Public Data Summaries v0.

@@ -775,6 +775,94 @@
       "notes": "Added by GitHub Pages Deployment Enablement v0; validates a static-only public_site Pages workflow without Node/npm, backend deployment, live probes, custom domain configuration, generators, secrets, or production claims."
     },
     {
+      "test_id": "static_site_generator_check",
+      "label": "Static site generator check",
+      "command": "python site/build.py --check",
+      "category": "publication",
+      "owner_area": "site",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary generated output only in check mode",
+      "expected_runtime": "sub-second",
+      "failure_means": "The stdlib static-site generator can no longer render and validate the current public page contract.",
+      "advisory_or_required": "required",
+      "notes": "Added by Static Site Generation Migration v0; builds generated output for validation only and does not deploy, call external systems, use Node/npm, enable live probes, or replace public_site."
+    },
+    {
+      "test_id": "static_site_validation",
+      "label": "Static site source validation",
+      "command": "python site/validate.py",
+      "category": "publication",
+      "owner_area": "site",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The site source tree, templates, page JSON, generated output, or prohibited dependency checks regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Static Site Generation Migration v0; validates the stdlib-only site/ tree without adding a frontend framework, deployment behavior, live backend, or live probes."
+    },
+    {
+      "test_id": "generated_static_site_validator",
+      "label": "Generated static site artifact validation",
+      "command": "python scripts/validate_public_static_site.py --site-root site/dist",
+      "category": "publication",
+      "owner_area": "site/dist",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The generated site/dist artifact no longer satisfies the public static-site contract.",
+      "advisory_or_required": "required",
+      "notes": "Added by Static Site Generation Migration v0; validates generated output while keeping public_site as the Pages artifact."
+    },
+    {
+      "test_id": "static_site_generation_migration_tests",
+      "label": "Static site generation migration tests",
+      "command": "python -m unittest tests.operations.test_static_site_generation_migration tests.scripts.test_static_site_generator",
+      "category": "publication",
+      "owner_area": "site",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary generated output only",
+      "expected_runtime": "seconds",
+      "failure_means": "The site tree, generator JSON/check modes, generated no-JS output, source-list coverage, or Pages artifact boundary regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Static Site Generation Migration v0; ensures generated output remains validation-only and the Pages workflow still uploads public_site."
+    },
+    {
       "test_id": "public_alpha_rehearsal_evidence_check",
       "label": "Public alpha rehearsal evidence check",
       "command": "python scripts/generate_public_alpha_rehearsal_evidence.py --check",

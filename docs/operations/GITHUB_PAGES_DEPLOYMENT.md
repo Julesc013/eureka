@@ -7,10 +7,12 @@ for Eureka's current public artifact:
 public_site/
 ```
 
-It does not host the Python backend, does not enable live probes, make live Internet
-Archive calls, configure a custom domain, add deployment secrets, create a
-static site generator, or make Eureka production-ready. This is not production
-approval.
+It does not host the Python backend, does not enable live probes, make live
+Internet Archive calls, configure a custom domain, add deployment secrets,
+deploy generated `site/dist/`, or make Eureka production-ready. This is not
+production approval.
+
+Eureka is not production.
 
 ## Workflow
 
@@ -43,7 +45,9 @@ Then it configures Pages, uploads `public_site/` with
 `actions/upload-pages-artifact`, and deploys with `actions/deploy-pages`.
 
 No Node, npm, frontend framework, generated site build, backend process, or
-runtime server step is part of this workflow.
+runtime server step is part of this workflow. Static Site Generation Migration
+v0 builds `site/dist/` for validation, but this workflow still uploads
+`public_site/`.
 
 ## Repository Settings
 
@@ -80,6 +84,10 @@ root-relative links such as `/sources.html`.
 ## Artifact Safety
 
 The Pages artifact is `public_site/` only.
+
+Generated `site/dist/` output is not uploaded by this workflow yet. A later
+artifact migration must explicitly prove equivalence and update this document,
+the publication inventory, and the workflow together.
 
 The artifact checker rejects Python/runtime source files, local stores, SQLite
 databases, `.env` files, cache directories, backend directories, root-relative

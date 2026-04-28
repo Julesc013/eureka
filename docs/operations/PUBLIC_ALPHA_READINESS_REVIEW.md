@@ -122,8 +122,13 @@ production readiness.
 GitHub Pages Deployment Enablement v0 configures a static-only workflow for
 `public_site/` and a Pages artifact checker. This target is separate from the
 public-alpha backend: it does not host Python, enable live probes, add auth,
-add rate limiting, configure a custom domain, introduce a generator, or prove a
+add rate limiting, configure a custom domain, deploy generated output, or prove a
 successful deployment without GitHub Actions evidence.
+
+Static Site Generation Migration v0 adds `site/` and generated `site/dist/`
+validation output after the Pages workflow, but the workflow still deploys
+`public_site/`. It adds no backend hosting, live probes, Node/npm, frontend
+framework, or production-readiness claim.
 
 ## Public Alpha Wrapper
 

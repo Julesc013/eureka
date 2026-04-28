@@ -159,6 +159,11 @@ The repo has already proven:
   validating the publication inventory and static site, without deploying the
   Python backend, enabling live probes, adding a custom domain, adding a
   generator, or claiming deployment success without Actions evidence
+- Static Site Generation Migration v0 as the first stdlib-only static-site
+  source/generator tree under `site/`, rendering the current no-JS public pages
+  into `site/dist/` for validation while keeping `public_site/` as the GitHub
+  Pages deployment artifact and avoiding Node/npm, frontend frameworks,
+  deployment changes, live backend behavior, live probes, and production claims
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -205,7 +210,7 @@ The next backend sequence is:
 36. LIVE_ALPHA_01 Production Public-Alpha Wrapper (implemented)
 37. Public Publication Plane Contracts v0 (implemented)
 38. GitHub Pages Deployment Enablement v0 (implemented as static workflow configuration; deployment success unverified)
-39. Static Site Generation Migration v0
+39. Static Site Generation Migration v0 (implemented; generated output not deployed)
 40. Generated Public Data Summaries v0
 41. Lite/Text/Files Seed Surfaces v0
 42. Static Resolver Demo Snapshots v0
@@ -221,7 +226,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Static Site Generation Migration v0
+> Generated Public Data Summaries v0
 
 Why this comes next:
 
@@ -232,9 +237,12 @@ Why this comes next:
   semantics, redirect policy, and public claim traceability.
 - GitHub Pages deployment enablement is now configured as a static-only
   workflow over the existing `public_site/` artifact and these contracts.
-- The next step is to make the static artifact generated from governed repo
-  sources without changing public routes by accident.
-- Static generation migration must not add live backend behavior, live probes,
+- Static Site Generation Migration v0 now generates `site/dist/` from governed
+  `site/` sources, but `public_site/` remains the deployed artifact.
+- The next step is to generate safe `/data/` summaries from governed
+  inventories and eval outputs without live data, observed external baselines,
+  or public deployment-success claims.
+- Generated public data must not add live backend behavior, live probes,
   provider-neutral backend deployment config, DNS configuration, external
   baseline observations, or production claims.
 - Manual Observation Batch 0 remains human-operated parallel work, and all

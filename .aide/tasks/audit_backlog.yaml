@@ -160,6 +160,16 @@
       "title": "Enable static GitHub Pages publishing only after publication and artifact validation",
       "status": "addressed_by_github_pages_deployment_enablement_v0",
       "suggested_milestone": "Static Site Generation Migration v0"
+    },
+    {
+      "id": "audit-backlog-static-site-generation-migration",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Move static public pages toward governed generated output without replacing the deployed artifact early",
+      "status": "addressed_by_static_site_generation_migration_v0",
+      "suggested_milestone": "Generated Public Data Summaries v0"
     }
   ]
 }

@@ -60,6 +60,18 @@ steps:
     run: python scripts/check_github_pages_static_artifact.py --json
   - id: github_pages_deployment_enablement_tests
     run: python -m unittest tests.operations.test_github_pages_deployment_enablement tests.scripts.test_check_github_pages_static_artifact
+  - id: static_site_build_check
+    run: python site/build.py --check
+  - id: static_site_build_json
+    run: python site/build.py --json
+  - id: static_site_validation
+    run: python site/validate.py
+  - id: static_site_validation_json
+    run: python site/validate.py --json
+  - id: generated_static_site_validator
+    run: python scripts/validate_public_static_site.py --site-root site/dist
+  - id: static_site_generation_migration_tests
+    run: python -m unittest tests.operations.test_static_site_generation_migration tests.scripts.test_static_site_generator
   - id: public_alpha_rehearsal_evidence_summary
     run: python scripts/generate_public_alpha_rehearsal_evidence.py
   - id: public_alpha_rehearsal_evidence_json
@@ -423,6 +435,7 @@ notes:
   - LIVE_ALPHA_01 Production Public-Alpha Wrapper adds a stdlib public-alpha entrypoint and config guard without deploying, adding provider files, enabling live probes, adding auth/TLS/rate limiting/process management, or approving production.
   - Public Publication Plane Contracts v0 adds governed route/data/client/deployment-target/redirect inventories and validation before GitHub Pages or static generation; it does not deploy, add provider config, create a generator, or enable live backend behavior.
   - GitHub Pages Deployment Enablement v0 adds a static-only workflow and artifact checker for public_site; it does not deploy the Python backend, enable live probes, configure a custom domain, create a generator, add secrets, or prove deployment success without GitHub Actions evidence.
+  - Static Site Generation Migration v0 adds a stdlib-only site/ source tree and site/dist generated output for validation; public_site remains the GitHub Pages artifact, with no Node/npm, frontend framework, deployment change, live backend, or live probes.
   - Rust Migration Skeleton and Parity Plan v0 established initial Rust crates and parity docs; Python remains the oracle, Rust is not an active backend, and the Rust workspace check is optional because it requires a local Rust toolchain.
   - Rust Parity Fixture Pack v0 adds Python-oracle golden outputs and a stdlib generator/check script only; it does not implement Rust behavior, replace Python runtime paths, or require Rust tooling for normal checks.
   - Rust Source Registry Parity Candidate v0 is the first isolated Rust behavior seam under `crates/eureka-core`; it is compared to Python-oracle source-registry goldens and is not wired into Python runtime, web, CLI, HTTP API, workers, or production paths.

@@ -33,6 +33,10 @@ backend hosting path: it does not run Python, enable live probes, configure a
 custom domain, add secrets, create a generator, or prove deployment success
 without GitHub Actions evidence.
 
+Static Site Generation Migration v0 later adds a stdlib-only `site/` generator
+and `site/dist/` validation output. It does not change this hosting pack or the
+Pages artifact: `public_site/` remains the deployable static artifact.
+
 ## What This Pack Is
 
 - an operator-readable packet for rehearsing the constrained `public_alpha`

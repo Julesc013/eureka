@@ -174,14 +174,14 @@
     {
       "id": "static_site_generation_migration_v0",
       "title": "Static Site Generation Migration v0",
-      "status": "next",
+      "status": "completed",
       "priority": 25,
-      "notes": "Next Codex-side milestone: migrate from hand-authored public_site toward a governed site/ source tree and site/dist generated artifact after static Pages enablement, without changing public routes or adding live backend behavior."
+      "notes": "Added a stdlib-only site/ source tree, generator, validation, and generated site/dist output while keeping public_site as the GitHub Pages artifact."
     },
     {
       "id": "generated_public_data_summaries_v0",
       "title": "Generated Public Data Summaries v0",
-      "status": "queued",
+      "status": "next",
       "priority": 26,
       "notes": "Generate static public data summaries under /data/ only after the public data contract is stable enough for static clients."
     },
