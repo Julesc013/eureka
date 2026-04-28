@@ -583,3 +583,27 @@ behavior, live probes, external API calls, scraping, crawling, provider config,
 deployment behavior, native app project, or production Rust backend claim. The
 next Codex-safe milestone should be Rust Local Index Parity Planning v0;
 Manual Observation Batch 0 remains human-operated parallel work.
+
+## ADR-092: Plan Rust Local Index Parity Before Implementing It
+
+Status: accepted
+
+Rust Local Index Parity Planning v0 adds
+`tests/parity/RUST_LOCAL_INDEX_PARITY_PLAN.md`,
+`tests/parity/rust_local_index_cases.json`,
+`tests/parity/local_index_acceptance.schema.json`,
+`scripts/validate_rust_local_index_parity_plan.py`, and structure tests.
+
+The decision is to define the future local-index parity target before writing
+Rust index behavior. The plan names the current Python-oracle local-index
+goldens, the 489-record bounded build status, required record kinds,
+source/member/article/compatibility/lane/user-cost fields, current and future
+query cases, deterministic ordering, FTS/fallback normalization, path privacy,
+and allowed/forbidden divergences. Python remains the oracle, Rust remains
+unwired, and this adds no Rust local-index implementation, SQLite/indexing
+behavior, Python runtime replacement, web/CLI/HTTP API integration, worker or
+gateway behavior, public-alpha route change, live probes, external API calls,
+scraping, crawling, provider config, deployment behavior, native app project,
+or production Rust backend claim. The next Codex-safe milestone should be
+Signed Snapshot Consumer Contract v0; Manual Observation Batch 0 remains
+human-operated parallel work.

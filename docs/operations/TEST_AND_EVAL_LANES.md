@@ -41,9 +41,9 @@ The command matrix defines these lanes:
 - `publication_static_site`: publication inventory plus current static-site
   artifact and generated-site checks before deployment or artifact migration
 - `parity`: Python oracle, source-registry, Rust query-planner parity
-  structure, and source coverage/capability validation checks, plus current
-  Python-oracle shape guards such as planner, member, result-lane, and
-  compatibility-evidence fields
+  structure, Rust local-index parity planning, and source coverage/capability
+  validation checks, plus current Python-oracle shape guards such as planner,
+  member, result-lane, and compatibility-evidence fields
 - `audit`: archive-resolution and search-usefulness eval/audit runners
 - `hardening`: high-risk regression guards for eval truth, path safety,
   route/docs/README drift, parity/golden discipline, and AIDE/test registry
@@ -58,9 +58,11 @@ required local tooling is unavailable.
 
 Current Cargo commands are optional. Cargo may not be installed in every
 execution environment, and Python remains the reference/oracle lane. The Rust
-query-planner parity script is a required Python-side structure check; when
-Cargo is unavailable it reports Rust execution as skipped instead of failing
-normal Python verification.
+source-registry and query-planner parity scripts are required Python-side
+structure checks; when Cargo is unavailable they report Rust execution as
+skipped instead of failing normal Python verification. The Rust local-index
+parity plan validator is planning-only and does not require Cargo because no
+Rust local-index implementation exists yet.
 
 ## Network Policy
 

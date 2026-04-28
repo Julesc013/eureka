@@ -272,14 +272,14 @@
     {
       "id": "rust_local_index_parity_planning_v0",
       "title": "Rust Local Index Parity Planning v0",
-      "status": "next",
+      "status": "completed",
       "priority": 38,
-      "notes": "Plan Rust local-index parity around Python oracle member, lane, user-cost, compatibility, and article/scan shapes before implementing index behavior."
+      "notes": "Added planning-only Rust local-index parity plan, case map, acceptance schema, validator, tests, and divergence guidance around Python oracle member, lane, user-cost, compatibility, article/scan, source, and local-index shapes before implementing any Rust index behavior."
     },
     {
       "id": "signed_snapshot_consumer_contract_v0",
       "title": "Signed Snapshot Consumer Contract v0",
-      "status": "queued",
+      "status": "next",
       "priority": 39,
       "notes": "Define how future clients, relays, and native surfaces consume signed/offline snapshot manifests without implementing relay runtime, native apps, downloads, or production signing."
     },
@@ -289,6 +289,13 @@
       "status": "queued",
       "priority": 41,
       "notes": "Define future native client boundaries and prerequisites without creating Visual Studio/Xcode projects, installers, native sidecars, or runtime wiring."
+    },
+    {
+      "id": "rust_local_index_parity_candidate_v0",
+      "title": "Rust Local Index Parity Candidate v0",
+      "status": "blocked_pending_review_and_cargo",
+      "priority": 42,
+      "notes": "Future implementation-only-after-review lane for Rust local-index parity; blocked until the P12 plan is reviewed and Cargo availability/requirements are explicit."
     }
   ]
 }

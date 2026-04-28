@@ -1395,6 +1395,48 @@
       "notes": "Does not require Cargo for the normal passing path; Python remains the oracle and Rust remains isolated."
     },
     {
+      "test_id": "rust_local_index_parity_plan_validator",
+      "label": "Rust local index parity planning validator",
+      "command": "python scripts/validate_rust_local_index_parity_plan.py",
+      "category": "parity",
+      "owner_area": "tests/parity",
+      "required_for": [
+        "standard",
+        "full",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The planning-only Rust local-index parity plan, fixture map, acceptance schema, Python-oracle references, or no-runtime-wiring guard drifted.",
+      "advisory_or_required": "required",
+      "notes": "Added by Rust Local Index Parity Planning v0; validates planning artifacts only and does not require Cargo, implement Rust index behavior, or wire Rust into runtime or surfaces."
+    },
+    {
+      "test_id": "rust_local_index_parity_plan_tests",
+      "label": "Rust local index parity planning tests",
+      "command": "python -m unittest tests.parity.test_rust_local_index_parity_planning tests.scripts.test_validate_rust_local_index_parity_plan",
+      "category": "parity",
+      "owner_area": "tests/parity",
+      "required_for": [
+        "standard",
+        "full",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The Rust local-index parity planning docs, query/record cases, validator JSON, or no-implementation/no-wiring guards regressed.",
+      "advisory_or_required": "required",
+      "notes": "Planning-only tests; Python remains the oracle and Rust Local Index parity implementation is not started."
+    },
+    {
       "test_id": "docs_diff_check",
       "label": "Whitespace diff check",
       "command": "git diff --check",

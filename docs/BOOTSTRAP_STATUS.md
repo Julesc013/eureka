@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus sixty executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Rust Source Registry Parity Catch-up v0, the first isolated Rust query-planner parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Compatibility Surface Strategy v0, Signed Snapshot Format v0, Post-Queue State Checkpoint v0, Relay Surface Design v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus sixty executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Rust Source Registry Parity Catch-up v0, the first isolated Rust query-planner parity candidate, Rust Local Index Parity Planning v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Compatibility Surface Strategy v0, Signed Snapshot Format v0, Post-Queue State Checkpoint v0, Relay Surface Design v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -334,7 +334,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Rust Local Index Parity Planning v0
+> Signed Snapshot Consumer Contract v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -359,7 +359,8 @@ Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0,
 Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract
 v0, Live Probe Gateway Contract v0, Rust Query Planner Parity Candidate v0,
 Compatibility Surface Strategy v0, Signed Snapshot Format v0, Relay
-Surface Design v0, and Rust Source Registry Parity Catch-up v0
+Surface Design v0, Rust Source Registry Parity Catch-up v0, and Rust Local
+Index Parity Planning v0
 are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
@@ -413,6 +414,10 @@ source-registry candidate to the current nine-source Python source inventory
 shape, including capability booleans, coverage metadata, connector mode,
 limitations, next coverage steps, and placeholder warnings; Python remains the
 oracle and Rust remains unwired from runtime and surfaces.
+Rust Local Index Parity Planning v0 records the future Rust local-index parity
+lane with a plan, fixture map, acceptance-report schema, validator, and tests.
+It is planning only: no Rust local-index implementation, SQLite/indexing
+behavior, Python local-index replacement, or runtime/surface wiring is added.
 The compatibility surface strategy records current and future surface families,
 old-client degradation, native-client prerequisites, snapshot readiness, relay
 readiness, and route/capability matrices without adding runtime behavior.
@@ -429,9 +434,10 @@ passthrough, native sidecar, or production relay claim.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Rust Local Index Parity Planning v0
-2. Signed Snapshot Consumer Contract v0
-3. Native Client Contract v0
+1. Signed Snapshot Consumer Contract v0
+2. Native Client Contract v0
+3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+   availability expectations are explicit
 4. Manual Observation Batch 0 Execution (human-operated parallel work)
 5. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review

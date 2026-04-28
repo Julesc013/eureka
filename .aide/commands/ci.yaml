@@ -158,6 +158,12 @@ steps:
     run: python scripts/validate_post_queue_checkpoint.py --json
   - id: post_queue_checkpoint_tests
     run: python -m unittest tests.operations.test_post_queue_state_checkpoint tests.scripts.test_validate_post_queue_checkpoint
+  - id: rust_local_index_parity_plan_validator
+    run: python scripts/validate_rust_local_index_parity_plan.py
+  - id: rust_local_index_parity_plan_validator_json
+    run: python scripts/validate_rust_local_index_parity_plan.py --json
+  - id: rust_local_index_parity_plan_tests
+    run: python -m unittest tests.parity.test_rust_local_index_parity_planning tests.scripts.test_validate_rust_local_index_parity_plan
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.
@@ -186,6 +192,7 @@ notes:
   - Signed Snapshot Format v0 validates a repo-local static/offline snapshot contract and deterministic seed example only; it adds no real signing keys, production signatures, executable downloads, public `/snapshots/` route, relay behavior, native-client runtime, live backend behavior, or live probes.
   - Relay Surface Design v0 validates future local/LAN relay policy only; it opens no sockets, implements no FTP/SMB/WebDAV/Gopher/protocol bridge, exposes no private data, adds no write/admin route, passes through no live probes, and creates no native sidecar.
   - Rust Source Registry Parity Catch-up v0 validates the isolated Rust source-registry candidate against the current nine-source Python capability/coverage shape; it does not wire Rust into runtime or surfaces.
+  - Rust Local Index Parity Planning v0 validates planning-only Rust local-index parity contracts and fixtures; it does not add Rust index behavior, SQLite/indexing, Python replacement, runtime wiring, or surface behavior.
   - Source Coverage and Capability Model v0 checks validate metadata and projection only; they do not add connectors, live source probing, or crawling.
   - Real Source Coverage Pack v0 checks validate committed recorded fixtures, local bundle fixtures, local-index visibility, and public projection only; they do not add live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Source Coverage Expansion v0 checks validate expanded committed old-platform fixtures, local bundle members, compatibility evidence, and index visibility only; they do not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.

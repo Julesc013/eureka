@@ -14,6 +14,8 @@ explicitly promoted.
 - `crates/eureka-core/` contains Rust Source Registry Parity Candidate v0,
   Rust Source Registry Parity Catch-up v0, and Rust Query Planner Parity
   Candidate v0, the first isolated Rust behavior seams.
+- Rust Local Index Parity Planning v0 records the future local-index parity
+  lane without adding Rust index behavior.
 - The remaining initial crates are documented placeholders.
 - `tests/parity/golden/python_oracle/v0/` contains the first committed
   Python-oracle golden outputs for future Rust parity checks.
@@ -148,6 +150,21 @@ compatibility evidence records and summaries. Future Rust compatibility,
 local-index, deterministic-search, exact-resolution, and result projection
 parity must match those shapes or record explicit allowed divergences before
 any replacement claim.
+
+Rust Local Index Parity Planning v0 now records the next local-index parity
+contract in `tests/parity/RUST_LOCAL_INDEX_PARITY_PLAN.md`, with planned cases
+in `tests/parity/rust_local_index_cases.json`, a planned acceptance-report
+shape in `tests/parity/local_index_acceptance.schema.json`, and a stdlib
+validator at `scripts/validate_rust_local_index_parity_plan.py`. The plan
+points at the current Python-oracle local-index goldens and requires any
+future candidate to account for source records, resolved objects, states,
+representations, members, synthetic members, evidence, article/scan records,
+compatibility evidence, result lanes, user-cost annotations, deterministic
+ordering, and FTS/fallback normalization.
+
+This is planning only. Rust Local Index parity implementation is not started,
+Rust remains unwired, and no Python runtime, gateway, web, CLI, HTTP API,
+worker, public-alpha wrapper, or surface calls Rust local-index behavior.
 
 These candidates are tested only inside the Rust workspace when Cargo is
 available, with Python-side structure checks when Cargo is unavailable. They

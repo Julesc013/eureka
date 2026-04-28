@@ -290,6 +290,16 @@
       "title": "Catch up isolated Rust source-registry candidate to expanded Python capability and coverage shape",
       "status": "addressed_by_rust_source_registry_parity_catch_up_v0",
       "suggested_milestone": "Rust Local Index Parity Planning v0"
+    },
+    {
+      "id": "audit-backlog-rust-local-index-parity-planning",
+      "finding_refs": [
+        "CTEA-BEHAVIOR-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Plan Rust local-index parity before implementing index behavior",
+      "status": "addressed_by_rust_local_index_parity_planning_v0",
+      "suggested_milestone": "Signed Snapshot Consumer Contract v0"
     }
   ]
 }

@@ -131,6 +131,11 @@ planner model under `crates/eureka-core/`, expands Python-oracle planner
 goldens, and adds a stdlib parity-structure check. Python remains the planner
 oracle; Rust is not wired into web, CLI, HTTP API, workers, public-alpha paths,
 or production runtime.
+Rust Source Registry Parity Catch-up v0 updates the isolated Rust source model
+to the current nine-source Python capability/coverage shape. Rust Local Index
+Parity Planning v0 adds the future local-index parity plan, cases, acceptance
+schema, and validator only; it does not implement a Rust index, add SQLite
+behavior, or wire Rust into runtime surfaces.
 Compatibility Surface Strategy v0 now adds governed multi-surface strategy,
 expanded surface capability records, a surface route matrix, old-client
 degradation policy, and native/snapshot/relay readiness docs. It does not add
@@ -495,9 +500,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Relay Surface Design v0
-2. Rust Source Registry Parity Catch-up v0
-3. Rust Local Index Parity Planning v0
+1. Signed Snapshot Consumer Contract v0
+2. Native Client Contract v0
+3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+   availability expectations are explicit
 4. Manual Observation Batch 0 Execution (human-operated parallel work)
 5. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review

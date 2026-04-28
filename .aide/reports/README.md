@@ -105,3 +105,10 @@ structure tests under `crates/eureka-core/`, `tests/parity/`, `tests/scripts/`,
 and `scripts/`. No separate AIDE runtime report is needed; this is isolated
 parity governance only and does not wire Rust into Python runtime, web, CLI,
 HTTP API, workers, public-alpha paths, or production behavior.
+
+Rust Local Index Parity Planning v0 records a planning-only parity lane under
+`tests/parity/`, `tests/scripts/`, and `scripts/`. No separate AIDE runtime
+report is needed; this adds a future parity plan, fixture map, acceptance
+schema, validator, and tests only, with no Rust local-index implementation,
+SQLite/indexing behavior, Python runtime replacement, or runtime/surface
+wiring.

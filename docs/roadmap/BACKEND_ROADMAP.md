@@ -261,49 +261,33 @@ The next backend sequence is:
 48. Signed Snapshot Format v0 (implemented as contract and repo seed example; no real keys, production signatures, downloads, public route, relay, native runtime, live backend, or live probes)
 49. Relay Surface Design v0 (implemented as design/contract/checklist only; no relay runtime, sockets, protocol servers, private data exposure, write/admin routes, or live-probe passthrough)
 50. Rust Source Registry Parity Catch-up v0 (implemented as isolated current-shape source registry parity; no runtime wiring)
-51. Rust Local Index Parity Planning v0
+51. Rust Local Index Parity Planning v0 (implemented as planning/contract only; no Rust index implementation or runtime wiring)
 52. Signed Snapshot Consumer Contract v0
-53. Manual Observation Batch 0 Execution (human-operated parallel work)
-54. Native App Work Later
+53. Native Client Contract v0
+54. Rust Local Index Parity Candidate v0 (blocked pending planning review and Cargo availability)
+55. Manual Observation Batch 0 Execution (human-operated parallel work)
+56. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Rust Local Index Parity Planning v0
+> Signed Snapshot Consumer Contract v0
 
 Why this comes next:
 
-- Live Probe Gateway Contract v0 now defines the disabled-by-default source
-  policy that must exist before any live external probe.
-- The repo still has no live probe implementation, no Internet Archive live
-  calls, no URL fetching, no downloads, and no source adapters for external
-  probing.
-- Rust Query Planner Parity Candidate v0 is now implemented as a non-network,
-  isolated candidate and remains unwired from runtime behavior.
+- Rust Local Index Parity Planning v0 is implemented as a planning-only parity
+  lane. It adds a plan, case map, acceptance-report schema, validator, and
+  tests for the future Rust local-index candidate without adding Rust index
+  behavior, SQLite/indexing behavior, or runtime wiring.
+- Signed Snapshot Format v0 already defines the static/offline snapshot
+  structure and deterministic seed. A consumer contract is now the next
+  non-network step before relay/native clients can depend on snapshots.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.
-- Compatibility Surface Strategy v0 is now implemented as strategy, route
-  matrix, capability matrix, and old-client/native/snapshot/relay readiness
-  policy without new runtime behavior.
-- Signed Snapshot Format v0 is implemented as the current non-network contract
-  step after lite/text/files, public data summaries, static demo snapshots, and
-  surface strategy. It adds only a deterministic seed example plus checksum and
-  signature-placeholder policy, with no real signing keys, production
-  signatures, executable downloads, public `/snapshots/` route, relay/native
-  runtime, live backend behavior, or live probes.
-- Relay Surface Design v0 is implemented as design, inventory, validation, and
-  operator/security guidance only. It defines the future local/LAN relay posture
-  without implementing FTP, SMB, WebDAV, Gopher, proxy behavior, sockets,
-  backend hosting, native clients, private data exposure, write/admin routes, or
-  live-probe passthrough.
-- Rust Source Registry Parity Catch-up v0 is implemented as isolated
-  current-shape parity for the nine-source Python source inventory, including
-  capabilities, coverage metadata, connector modes, limitations, next coverage
-  steps, and placeholder warnings. It did not wire Rust into runtime behavior.
-- Rust Local Index Parity Planning v0 is now the next non-network planning step
-  before any broader Rust local-index implementation.
+- Rust Local Index Parity Candidate v0 should not start until the planning lane
+  is reviewed and Cargo availability/expectations are explicit.
 - Internet Archive Live Probe v0 should remain unstarted unless a human
   explicitly approves live external-source behavior after separate review.
 

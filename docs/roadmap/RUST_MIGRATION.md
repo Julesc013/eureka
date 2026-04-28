@@ -3,8 +3,9 @@
 Rust is the intended production backend lane for later. The current Rust lane
 has a minimal workspace, Python-oracle fixtures, the first isolated source
 registry parity candidate, the Rust source-registry catch-up to the current
-Python source shape, and the first isolated query-planner candidate. It does
-not replace Python runtime behavior or start a production Rust backend.
+Python source shape, the first isolated query-planner candidate, and a
+planning-only Rust Local Index parity lane. It does not replace Python runtime
+behavior or start a production Rust backend.
 
 ## Language Policy
 
@@ -75,6 +76,14 @@ Future Rust local-index, deterministic-search, exact-resolution,
 compatibility, and result-projection parity must match those shapes or record
 explicit allowed divergences before any replacement is considered.
 
+Rust Local Index Parity Planning v0 now adds the planning artifacts for that
+future candidate: `tests/parity/RUST_LOCAL_INDEX_PARITY_PLAN.md`,
+`tests/parity/rust_local_index_cases.json`,
+`tests/parity/local_index_acceptance.schema.json`, and
+`scripts/validate_rust_local_index_parity_plan.py`. This is planning only.
+Rust Local Index parity implementation is not started, Python remains the
+oracle, and Rust remains unwired from runtime and surfaces.
+
 ## Suggested Future Layout
 
 ```text
@@ -125,11 +134,12 @@ before replacement.
 
 The Rust migration lane is scaffolded and has two isolated parity candidates,
 with the source-registry candidate caught up to the current Python source
-inventory shape.
+inventory shape, plus a planning-only local-index parity lane.
 The workspace under `crates/` contains:
 
 - `eureka-core`: Rust Source Registry Parity Candidate v0, Rust Query Planner
-  Parity Candidate v0, plus future core placeholder scope
+  Parity Candidate v0, plus future core placeholder scope; no Rust local-index
+  implementation is present
 - `eureka-contracts`: placeholder
 - `eureka-store`: placeholder
 - `eureka-resolver`: placeholder
@@ -149,6 +159,12 @@ The source-registry and query-planner candidates are not wired into runtime
 behavior. No Rust gateway, CLI, FFI, worker, connector, production service,
 resolver, runtime query planner, local index, or memory implementation is
 active.
+
+Rust Local Index Parity Planning v0 targets the current Python-oracle
+local-index goldens, including the 489-record bounded build status and the
+current `synthetic`, `archive`, and no-result query outputs. Additional
+old-platform, member, article/scan, and source-id query cases are explicitly
+marked as future Python-oracle extensions before a Rust candidate begins.
 
 ## Python Oracle Fixture Pack
 
@@ -183,13 +199,16 @@ cargo test --workspace --manifest-path crates/Cargo.toml
 Normal Python verification does not require Rust tooling.
 
 Rust Source Registry Parity Catch-up v0 and Rust Query Planner Parity
-Candidate v0 provide stdlib parity structure checks:
+Candidate v0 provide stdlib parity structure checks. Rust Local Index Parity
+Planning v0 adds a planning validator:
 
 ```powershell
 python scripts/check_rust_source_registry_parity.py
 python scripts/check_rust_source_registry_parity.py --json
 python scripts/check_rust_query_planner_parity.py
 python scripts/check_rust_query_planner_parity.py --json
+python scripts/validate_rust_local_index_parity_plan.py
+python scripts/validate_rust_local_index_parity_plan.py --json
 ```
 
 These commands validate fixture maps and Rust candidate structure with the
