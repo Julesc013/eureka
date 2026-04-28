@@ -167,16 +167,16 @@
     {
       "id": "github_pages_deployment_enablement_v0",
       "title": "GitHub Pages Deployment Enablement v0",
-      "status": "next",
+      "status": "completed",
       "priority": 24,
-      "notes": "Next Codex-side milestone: enable static publishing of the current public_site artifact using the publication contracts, without adding live backend behavior or letting deployment mechanics define public routes/data."
+      "notes": "Added a static-only GitHub Pages workflow, artifact checker, operations docs, and tests for publishing public_site through the publication contracts, without deploying the Python backend, adding live probes, configuring a custom domain, adding a generator, or claiming deployment success without GitHub Actions evidence."
     },
     {
       "id": "static_site_generation_migration_v0",
       "title": "Static Site Generation Migration v0",
-      "status": "queued",
+      "status": "next",
       "priority": 25,
-      "notes": "Future migration toward a governed site/ source tree and site/dist generated artifact after publication routes, data, clients, and base-path contracts are validated."
+      "notes": "Next Codex-side milestone: migrate from hand-authored public_site toward a governed site/ source tree and site/dist generated artifact after static Pages enablement, without changing public routes or adding live backend behavior."
     },
     {
       "id": "generated_public_data_summaries_v0",

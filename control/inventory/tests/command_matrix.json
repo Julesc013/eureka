@@ -38,6 +38,8 @@
         "public_static_site_pack_validation",
         "publication_inventory_validator",
         "publication_inventory_tests",
+        "github_pages_static_artifact_checker",
+        "github_pages_deployment_enablement_tests",
         "public_alpha_rehearsal_evidence_check",
         "public_alpha_rehearsal_evidence_validation",
         "public_alpha_wrapper_config_check",
@@ -93,6 +95,8 @@
         "public_static_site_pack_validation",
         "publication_inventory_validator",
         "publication_inventory_tests",
+        "github_pages_static_artifact_checker",
+        "github_pages_deployment_enablement_tests",
         "public_alpha_rehearsal_evidence_check",
         "public_alpha_rehearsal_evidence_validation",
         "public_alpha_wrapper_config_check",
@@ -130,6 +134,8 @@
         "public_static_site_pack_validation",
         "publication_inventory_validator",
         "publication_inventory_tests",
+        "github_pages_static_artifact_checker",
+        "github_pages_deployment_enablement_tests",
         "public_alpha_rehearsal_evidence_check",
         "public_alpha_rehearsal_evidence_validation",
         "public_alpha_wrapper_docs_validation",
@@ -153,6 +159,8 @@
         "public_static_site_pack_validation",
         "publication_inventory_validator",
         "publication_inventory_tests",
+        "github_pages_static_artifact_checker",
+        "github_pages_deployment_enablement_tests",
         "public_alpha_rehearsal_evidence_check",
         "public_alpha_rehearsal_evidence_validation",
         "public_alpha_wrapper_config_check",
@@ -172,13 +180,15 @@
       "commands": [
         "publication_inventory_validator",
         "publication_inventory_tests",
+        "github_pages_static_artifact_checker",
+        "github_pages_deployment_enablement_tests",
         "public_static_site_validator",
         "public_static_site_pack_validation",
         "docs_diff_check"
       ],
       "required_status": "required",
-      "when_to_run": "After publication inventory, public static site, route/data/client contract, base-path, or future static-hosting preparation changes.",
-      "notes": "Validates contracts and the current static artifact only; it does not deploy, add provider files, create a generator, enable live backend behavior, or record external observations."
+      "when_to_run": "After publication inventory, public static site, route/data/client contract, base-path, GitHub Pages workflow, or future static-hosting preparation changes.",
+      "notes": "Validates contracts, the current static artifact, and static Pages workflow readiness only; it does not manually deploy, add backend provider files, create a generator, enable live backend behavior, or record external observations."
     },
     {
       "lane_id": "parity",

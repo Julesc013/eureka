@@ -99,7 +99,6 @@
     }
   ],
   "next_expected_milestones": [
-    "GitHub Pages Deployment Enablement v0",
     "Static Site Generation Migration v0",
     "Generated Public Data Summaries v0",
     "Lite/Text/Files Seed Surfaces v0",
@@ -111,9 +110,8 @@
   "created_by_slice": "public_publication_plane_contracts_v0",
   "notes": [
     "This contract supersedes the previous immediate Deployment Config Pack ordering.",
-    "GitHub Pages deployment mechanics must consume these contracts rather than define public architecture.",
+    "GitHub Pages deployment mechanics consume these contracts rather than define public architecture.",
     "The current static artifact remains public_site and is not renamed by this slice.",
-    "No site generator, deployment workflow, provider configuration, live backend, or live source probe is added by this slice."
+    "No site generator, provider backend configuration, live backend, or live source probe is added by this contract."
   ]
 }
-

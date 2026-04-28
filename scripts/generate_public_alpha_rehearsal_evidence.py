@@ -71,6 +71,8 @@ LIMITATIONS = (
 )
 REQUIRED_BEFORE_REAL_DEPLOYMENT = (
     "validate Public Publication Plane Contracts v0",
+    "validate GitHub Pages static artifact readiness if publishing public_site",
+    "keep GitHub Pages static publishing separate from backend hosting",
     "keep public_site as the current static artifact until a generator is deliberately introduced",
     "choose a hosting target",
     "deploy from a reviewed commit",
@@ -321,7 +323,9 @@ def render_pack_files(manifest: Mapping[str, Any]) -> dict[str, str]:
             "",
             "LIVE_ALPHA_01 adds a public alpha wrapper after this evidence snapshot; it still performs no deployment, keeps live probes disabled, and does not approve production.",
             "",
-            "Public Publication Plane Contracts v0 now sits after the wrapper and before GitHub Pages deployment enablement. It governs routes, client profiles, public data, base-path portability, deployment targets, redirects, and public claim traceability without deploying, adding a generator, or enabling live backend behavior.",
+            "Public Publication Plane Contracts v0 now sits after the wrapper and before any static generation or live backend handoff. It governs routes, client profiles, public data, base-path portability, deployment targets, redirects, and public claim traceability without adding a generator or enabling live backend behavior.",
+            "",
+            "GitHub Pages Deployment Enablement v0 now configures a static-only workflow for public_site. It does not host the Python backend, enable live probes, add a custom domain, or prove deployment success without GitHub Actions evidence.",
             "",
             "## Contents",
             "",
@@ -366,6 +370,7 @@ def render_pack_files(manifest: Mapping[str, Any]) -> dict[str, str]:
             "## Referenced Artifacts",
             "",
             "- static site pack: `public_site/`",
+            "- GitHub Pages artifact checker: `scripts/check_github_pages_static_artifact.py`",
             "- static validator: `scripts/validate_public_static_site.py`",
             "- route inventory: `control/inventory/public_alpha_routes.json`",
             "- smoke script: `scripts/public_alpha_smoke.py`",
@@ -390,7 +395,7 @@ def render_pack_files(manifest: Mapping[str, Any]) -> dict[str, str]:
             "",
             "Required cautionary claims include Python reference backend prototype, not production, no scraping, external baselines pending/manual, and placeholders remain placeholders.",
             "",
-            "The static site pack is static-only. It performs no deployment and starts no server.",
+            "The static site pack is static-only. GitHub Pages may upload it through the configured workflow after validation, but the artifact itself starts no server and hosts no Python backend.",
             "",
         ),
         "SAFE_MODE_EVIDENCE.md": _lines(

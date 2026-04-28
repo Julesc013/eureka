@@ -1,8 +1,8 @@
 # Public Alpha
 
-Public backend hosting is not the next step. Static GitHub Pages enablement may
-follow the publication-plane contracts, but hosted backend exposure remains a
-later milestone that should begin only after the backend has a safer and more
+Public backend hosting is not the next step. Static GitHub Pages enablement now
+exists for `public_site/`, but hosted backend exposure remains a later
+milestone that should begin only after the backend has a safer and more
 coherent operational shape.
 
 ## Minimum Requirements Before Hosting
@@ -31,6 +31,9 @@ The minimum public-alpha entry gate should include:
 - Public Publication Plane Contracts v0 (implemented as route, data, client,
   deployment-target, redirect, base-path, and claim-traceability governance;
   no deployment, generator, or live backend behavior)
+- GitHub Pages Deployment Enablement v0 (implemented as static-only workflow
+  configuration for `public_site/`; no backend deployment, live probes, custom
+  domain, generator, or verified deployment-success claim)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -131,6 +134,13 @@ Public Publication Plane Contracts v0 now adds
 reference docs, a stdlib inventory validator, and tests. It commits the
 distinction between the current `public_site/` artifact, future `site/`
 generator source, and future `site/dist/` generated artifact before GitHub
-Pages or custom-domain work. It performs no deployment, adds no GitHub Pages
-workflow, creates no generator, enables no live backend, and records no
-external observations.
+Pages or custom-domain work. The contract slice itself performed no deployment,
+added no GitHub Pages workflow, created no generator, enabled no live backend,
+and recorded no external observations.
+
+GitHub Pages Deployment Enablement v0 now adds the static-only Pages workflow,
+artifact checker, operations docs, and tests for publishing only `public_site/`
+after validation. This does not change public-alpha backend readiness: it does
+not host the Python backend, enable live probes, configure a custom domain, add
+a generator, add secrets, or claim deployment success without GitHub Actions
+evidence.

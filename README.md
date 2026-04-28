@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -78,8 +78,14 @@ Public Publication Plane Contracts v0 under
 `control/inventory/publication/` now governs public routes, route stability,
 status vocabulary, client profiles, public data files, base-path portability,
 deployment target semantics, and redirects before any GitHub Pages deployment
-or static-generation migration. It adds no deployment workflow, generator, DNS,
-provider configuration, live backend behavior, or external observations.
+or static-generation migration. The contract slice itself added no deployment
+workflow, generator, DNS, provider configuration, live backend behavior, or
+external observations.
+GitHub Pages Deployment Enablement v0 now adds a workflow and artifact checker
+for publishing only `public_site/` as a static Pages artifact after validation.
+It does not deploy the Python backend, enable live probes, add a custom domain,
+introduce a generator, or claim a successful public deployment without GitHub
+Actions evidence.
 
 ## Quickstart
 
@@ -115,6 +121,7 @@ python scripts/generate_python_oracle_golden.py --check
 python -m unittest discover -s tests/hardening -t .
 python scripts/validate_public_static_site.py
 python scripts/validate_publication_inventory.py
+python scripts/check_github_pages_static_artifact.py
 python scripts/generate_public_alpha_rehearsal_evidence.py --check
 ```
 
@@ -291,7 +298,7 @@ production queues, and production Rust services remain future work.
 | `docs/operations/public_alpha_hosting_pack/` | Supervised public-alpha hosting-pack runbook and templates |
 | `docs/operations/public_alpha_rehearsal_evidence_v0/` | Supervised local/static public-alpha rehearsal evidence pack; no deployment approval |
 | `evals/` | Archive-resolution eval packet and related eval scaffolding |
-| `public_site/` | No-JS static public site pack for later live-alpha hosting review; no deployment or live source behavior |
+| `public_site/` | No-JS static public artifact for static Pages publication review; no backend or live source behavior |
 | `runtime/` | Python reference engine, connectors, gateway public boundary, source registry |
 | `scripts/` | Demo commands, eval runner, safety checks, golden generators |
 | `surfaces/` | Server-rendered web workbench, local HTTP API, native CLI surface |
@@ -362,6 +369,9 @@ Eureka is substantial, but it is still a prototype/reference backend:
   hosting infrastructure or production approval.
 - Public Publication Plane Contracts v0 exist as route/data/client/deployment
   inventory governance. They do not deploy anything or add static generation.
+- GitHub Pages Deployment Enablement v0 configures a static-only workflow for
+  `public_site/`, with deployment success still unverified until GitHub Actions
+  evidence exists.
 - The hosting pack supports supervised rehearsal evidence, not open-internet
   approval.
 - Rust has a workspace, parity fixtures, and one isolated source-registry
@@ -377,17 +387,17 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. GitHub Pages Deployment Enablement v0
-2. Static Site Generation Migration v0
-3. Generated Public Data Summaries v0
-4. Lite/Text/Files Seed Surfaces v0
+1. Static Site Generation Migration v0
+2. Generated Public Data Summaries v0
+3. Lite/Text/Files Seed Surfaces v0
+4. Static Resolver Demo Snapshots v0
 5. Manual Observation Batch 0 Execution (human-operated parallel work)
 6. Rust Query Planner Parity Candidate v0
 
 Broader near-term direction:
 
-1. use the publication-plane contracts to enable GitHub Pages for `public_site/`
-   without turning deployment mechanics into public architecture
+1. keep the GitHub Pages workflow static-only and driven by publication-plane
+   contracts, with `public_site/` as the only uploaded artifact
 2. migrate toward generated static output only after route, data, client, and
    base-path contracts are validated
 3. fill a first manual Google and Internet Archive baseline batch without

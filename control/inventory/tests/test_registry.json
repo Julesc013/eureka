@@ -729,6 +729,52 @@
       "notes": "Added by Public Publication Plane Contracts v0; checks route/data/client/deployment-target governance without adding deployment workflows, provider files, a generator, live backend behavior, or production claims."
     },
     {
+      "test_id": "github_pages_static_artifact_checker",
+      "label": "GitHub Pages static artifact checker",
+      "command": "python scripts/check_github_pages_static_artifact.py",
+      "category": "publication",
+      "owner_area": "public_site",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The public_site artifact may not be safe to upload to GitHub Pages, or the github_pages_project deployment target may have drifted.",
+      "advisory_or_required": "required",
+      "notes": "Added by GitHub Pages Deployment Enablement v0; checks static artifact readiness, base-path-safe links, no runtime/secrets/local stores, no backend, and no live probes without network calls or deployment-success claims."
+    },
+    {
+      "test_id": "github_pages_deployment_enablement_tests",
+      "label": "GitHub Pages deployment enablement tests",
+      "command": "python -m unittest tests.operations.test_github_pages_deployment_enablement tests.scripts.test_check_github_pages_static_artifact",
+      "category": "publication",
+      "owner_area": ".github/workflows",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where artifact checker tests copy public_site",
+      "expected_runtime": "seconds",
+      "failure_means": "The GitHub Pages workflow, deployment target contract, artifact checker, static-only docs, or custom-domain/backend exclusions regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by GitHub Pages Deployment Enablement v0; validates a static-only public_site Pages workflow without Node/npm, backend deployment, live probes, custom domain configuration, generators, secrets, or production claims."
+    },
+    {
       "test_id": "public_alpha_rehearsal_evidence_check",
       "label": "Public alpha rehearsal evidence check",
       "command": "python scripts/generate_public_alpha_rehearsal_evidence.py --check",

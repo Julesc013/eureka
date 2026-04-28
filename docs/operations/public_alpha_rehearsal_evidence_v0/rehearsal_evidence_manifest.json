@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit_sha": "101d9131bad4e745fe722ba633d5d579750b81b2",
+  "commit_sha": "e6bc849111adfaa57ed05e5c8678e4fbc3baaaff",
   "created_by_slice": "public_alpha_rehearsal_evidence_v0",
   "eval_audit": {
     "archive_eval_status": {
@@ -73,6 +73,8 @@
   "repository": "Julesc013/eureka",
   "required_before_real_deployment": [
     "validate Public Publication Plane Contracts v0",
+    "validate GitHub Pages static artifact readiness if publishing public_site",
+    "keep GitHub Pages static publishing separate from backend hosting",
     "keep public_site as the current static artifact until a generator is deliberately introduced",
     "choose a hosting target",
     "deploy from a reviewed commit",

@@ -301,6 +301,24 @@ entries, empty redirect policy, and claim traceability docs. It performs no
 network calls, deploys nothing, adds no provider files, creates no static site
 generator, enables no live backend, and records no external observations.
 
+## GitHub Pages Deployment Enablement
+
+GitHub Pages Deployment Enablement v0 is validated with:
+
+```bash
+python scripts/check_github_pages_static_artifact.py
+python scripts/check_github_pages_static_artifact.py --json
+python -m unittest tests.operations.test_github_pages_deployment_enablement tests.scripts.test_check_github_pages_static_artifact
+```
+
+The lane checks `.github/workflows/pages.yml`, the `github_pages_project`
+deployment target, the current `public_site/` artifact, base-path-safe links,
+and artifact exclusion rules for runtime source, secrets, local stores, cache
+directories, Python files, and SQLite databases. It performs no network calls,
+does not manually deploy anything, uploads no backend, adds no live probes,
+adds no custom domain, adds no generator, and makes no deployment-success claim
+without GitHub Actions evidence.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

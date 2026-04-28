@@ -150,6 +150,16 @@
       "title": "Govern public routes, data, client profiles, and base-path rules before deployment",
       "status": "addressed_by_public_publication_plane_contracts_v0",
       "suggested_milestone": "GitHub Pages Deployment Enablement v0"
+    },
+    {
+      "id": "audit-backlog-github-pages-deployment-enablement",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Enable static GitHub Pages publishing only after publication and artifact validation",
+      "status": "addressed_by_github_pages_deployment_enablement_v0",
+      "suggested_milestone": "Static Site Generation Migration v0"
     }
   ]
 }

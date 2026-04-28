@@ -16,8 +16,8 @@ public_site/
   assets/
 ```
 
-`public_site/` is the active hand-authored static public artifact. It remains in
-place for this milestone.
+`public_site/` is the active hand-authored static public artifact. GitHub Pages
+Deployment Enablement v0 uploads this directory as-is after validation.
 
 Future generated export:
 
@@ -35,8 +35,8 @@ site/dist/
   snapshots/
 ```
 
-The future shape is reserved only. This milestone does not create a generator,
-Node/npm chain, frontend framework, or `site/` tree.
+The future shape is reserved only. The GitHub Pages enablement work does not
+create a generator, Node/npm chain, frontend framework, or `site/` tree.
 
 Expected future static data areas:
 
@@ -47,4 +47,3 @@ Expected future static data areas:
 - checksum files later, after a checksum-producing slice exists
 
 Static exports must remain portable between `/eureka/` and `/`.
-

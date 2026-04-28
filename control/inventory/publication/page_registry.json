@@ -113,7 +113,7 @@
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
       "public_claim_scope": "near-term milestone ordering only",
-      "notes": "Next deployment work is deferred until publication contracts exist."
+      "notes": "Records static-only Pages workflow configuration and keeps static generation as the next publication milestone."
     },
     {
       "path": "/local-quickstart.html",
@@ -369,4 +369,3 @@
     }
   ]
 }
-

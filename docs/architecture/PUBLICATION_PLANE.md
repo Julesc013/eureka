@@ -14,11 +14,11 @@ public architecture by accident.
 no-JS, already validated by `scripts/validate_public_static_site.py`, and safe
 for later static-hosting review.
 
-`site/` is reserved for a future source or generator tree. It is not required
-for this milestone.
+`site/` is reserved for a future source or generator tree. It is not created by
+the current GitHub Pages enablement work.
 
 `site/dist/` is reserved for a future generated static artifact. It is not
-created by this milestone.
+created by the current GitHub Pages enablement work.
 
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
@@ -26,10 +26,12 @@ expectations, deployment target semantics, and redirects.
 
 ## Static Artifact Versus Live Backend
 
-The current publication plane governs static public material only. It does not
-start or approve a live backend. It does not add live source probes, Internet
-Archive calls, Google scraping, crawling, auth, accounts, TLS, rate limiting,
-provider configuration, DNS, process management, or a static site generator.
+The current publication plane governs static public material only. GitHub Pages
+Deployment Enablement v0 consumes this plane to upload `public_site/` as a
+static artifact, but it does not start or approve a live backend. It does not
+add live source probes, Internet Archive calls, Google scraping, crawling,
+auth, accounts, TLS, rate limiting, DNS, process management, or a static site
+generator.
 
 A future live backend handoff contract may define public API routes and
 capability flags, but that is separate from the static artifact contract.
@@ -65,8 +67,9 @@ Root-only assumptions are not allowed in public contracts.
 
 ## Relationship To Future Milestones
 
-GitHub Pages Deployment Enablement v0 should publish the current `public_site/`
-artifact only after validating this inventory.
+GitHub Pages Deployment Enablement v0 configures publishing of the current
+`public_site/` artifact only after validating this inventory and the artifact.
+Workflow configuration is not a deployment-success claim.
 
 Static Site Generation Migration v0 may introduce `site/` and `site/dist/`, but
 it must preserve the route, data, client, and redirect contracts here.
@@ -78,4 +81,3 @@ records exist.
 Lite, text, files, snapshots, relay surfaces, native clients, custom domains,
 and live backend handoff work are reserved by this plane, but they are not
 implemented by this milestone.
-

@@ -153,6 +153,12 @@ The repo has already proven:
   redirect inventories before GitHub Pages or static-generation work, without
   adding deployment workflows, provider configuration, a generator, live backend
   behavior, live probes, or external observations
+- GitHub Pages Deployment Enablement v0 as the first static-only Pages
+  publishing path for `public_site/`, adding a workflow, artifact checker,
+  operations doc, and safety tests that upload only the static artifact after
+  validating the publication inventory and static site, without deploying the
+  Python backend, enabling live probes, adding a custom domain, adding a
+  generator, or claiming deployment success without Actions evidence
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -198,7 +204,7 @@ The next backend sequence is:
 35. Public Alpha Rehearsal Evidence v0 (implemented)
 36. LIVE_ALPHA_01 Production Public-Alpha Wrapper (implemented)
 37. Public Publication Plane Contracts v0 (implemented)
-38. GitHub Pages Deployment Enablement v0
+38. GitHub Pages Deployment Enablement v0 (implemented as static workflow configuration; deployment success unverified)
 39. Static Site Generation Migration v0
 40. Generated Public Data Summaries v0
 41. Lite/Text/Files Seed Surfaces v0
@@ -215,7 +221,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> GitHub Pages Deployment Enablement v0
+> Static Site Generation Migration v0
 
 Why this comes next:
 
@@ -224,11 +230,13 @@ Why this comes next:
   stability, public status vocabulary, client profiles, public data files,
   static export expectations, base-path portability, deployment target
   semantics, redirect policy, and public claim traceability.
-- GitHub Pages deployment mechanics should now be a small publishing layer over
-  the existing `public_site/` artifact and these contracts.
-- GitHub Pages enablement must not add live backend behavior, live probes,
-  provider-neutral backend deployment config, DNS configuration, a static site
-  generator, external baseline observations, or production claims.
+- GitHub Pages deployment enablement is now configured as a static-only
+  workflow over the existing `public_site/` artifact and these contracts.
+- The next step is to make the static artifact generated from governed repo
+  sources without changing public routes by accident.
+- Static generation migration must not add live backend behavior, live probes,
+  provider-neutral backend deployment config, DNS configuration, external
+  baseline observations, or production claims.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.

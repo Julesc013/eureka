@@ -8,5 +8,5 @@ The validator confirms required pages, local links, current source IDs, required
 
 Required cautionary claims include Python reference backend prototype, not production, no scraping, external baselines pending/manual, and placeholders remain placeholders.
 
-The static site pack is static-only. It performs no deployment and starts no server.
+The static site pack is static-only. GitHub Pages may upload it through the configured workflow after validation, but the artifact itself starts no server and hosts no Python backend.
 

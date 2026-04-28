@@ -23,9 +23,15 @@ without explicit operator acknowledgement.
 
 Public Publication Plane Contracts v0 adds the public route, data, client
 profile, deployment target, redirect, and base-path inventory layer that must
-be validated before GitHub Pages or any later static-hosting enablement. It
-does not deploy Eureka, add provider configuration, add a static generator, or
-enable live backend behavior.
+be validated before GitHub Pages or any later static-hosting enablement. That
+contract slice did not deploy Eureka, add provider configuration, add a static
+generator, or enable live backend behavior.
+
+GitHub Pages Deployment Enablement v0 adds a static-only workflow and artifact
+checker for uploading `public_site/` after validation. That workflow is not a
+backend hosting path: it does not run Python, enable live probes, configure a
+custom domain, add secrets, create a generator, or prove deployment success
+without GitHub Actions evidence.
 
 ## What This Pack Is
 
@@ -87,6 +93,10 @@ work and that caller-provided local path controls are blocked in
   `control/inventory/publication/`
 - Publication inventory validator:
   `python scripts/validate_publication_inventory.py`
+- GitHub Pages static deployment docs:
+  `docs/operations/GITHUB_PAGES_DEPLOYMENT.md`
+- GitHub Pages artifact checker:
+  `python scripts/check_github_pages_static_artifact.py`
 
 ## Pack Contents
 

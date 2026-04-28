@@ -27,6 +27,10 @@ process manager, or multi-user isolation.
 - Hosting pack: `docs/operations/public_alpha_hosting_pack/`
 - Static public site pack: `public_site/`
 - Static site validator: `python scripts/validate_public_static_site.py`
+- GitHub Pages static deployment docs:
+  `docs/operations/GITHUB_PAGES_DEPLOYMENT.md`
+- GitHub Pages artifact checker:
+  `python scripts/check_github_pages_static_artifact.py`
 - Public Alpha Rehearsal Evidence v0:
   `docs/operations/public_alpha_rehearsal_evidence_v0/`
 - Public Alpha Wrapper:
@@ -101,7 +105,7 @@ metadata and should be manually reviewed again before any real hosted demo.
 - No production process manager.
 - No durable public storage model.
 - No multi-user isolation.
-- No final public route contract.
+- No final live-backend public API route contract.
 - No audit logging or operational monitoring policy.
 
 ## Static Site Pack
@@ -112,6 +116,14 @@ source matrix, eval/audit state, safe demo queries, limitations, roadmap, and
 local quickstart without starting a server, deploying anything, adding backend
 hosting, adding live source probes, scraping external systems, or claiming
 production readiness.
+
+## GitHub Pages Static Target
+
+GitHub Pages Deployment Enablement v0 configures a static-only workflow for
+`public_site/` and a Pages artifact checker. This target is separate from the
+public-alpha backend: it does not host Python, enable live probes, add auth,
+add rate limiting, configure a custom domain, introduce a generator, or prove a
+successful deployment without GitHub Actions evidence.
 
 ## Public Alpha Wrapper
 
