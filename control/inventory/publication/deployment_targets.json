@@ -5,7 +5,7 @@
     {
       "id": "github_pages_project",
       "kind": "static",
-      "status": "planned",
+      "status": "implemented",
       "artifact_root": "public_site",
       "base_path": "/eureka/",
       "canonical_base_url": "https://julesc013.github.io/eureka/",
@@ -13,10 +13,15 @@
       "no_backend": true,
       "no_live_probes": true,
       "no_secrets": true,
+      "deployment_workflow_path": ".github/workflows/pages.yml",
+      "workflow_configured": true,
+      "deployment_success_claimed": false,
+      "deployment_status": "workflow_configured_deployment_unverified",
       "notes": [
         "Project Pages must not define public route architecture.",
-        "Future deployment enablement should validate this inventory before publishing.",
-        "No GitHub Pages workflow is added by this contract slice."
+        "The workflow validates the publication inventory and public_site before uploading the artifact.",
+        "Workflow configuration does not prove a GitHub Actions deployment run succeeded.",
+        "No Python backend, live probes, custom domain, secrets, or site generator are added by this target."
       ]
     },
     {
@@ -56,4 +61,3 @@
     }
   ]
 }
-

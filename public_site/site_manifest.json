@@ -39,7 +39,14 @@
     "fixture-backed evidence is not global truth"
   ],
   "publication_contract_source": "control/inventory/publication/publication_contract.json",
-  "next_milestone": "GitHub Pages Deployment Enablement v0",
+  "github_pages_target": "github_pages_project",
+  "github_pages_base_path": "/eureka/",
+  "deployment_workflow_configured": true,
+  "deployment_status": "workflow_configured_deployment_unverified",
+  "static_only": true,
+  "no_backend": true,
+  "no_live_probes": true,
+  "next_milestone": "Static Site Generation Migration v0",
   "parallel_human_work": "Manual Observation Batch 0 Execution",
   "no_network_required": true,
   "no_deployment_performed": true

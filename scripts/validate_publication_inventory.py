@@ -432,7 +432,7 @@ def _validate_deployment_targets(payload: Any, errors: list[str]) -> None:
     else:
         expected = {
             "kind": "static",
-            "status": "planned",
+            "status": "implemented",
             "artifact_root": "public_site",
             "base_path": "/eureka/",
             "canonical_base_url": "https://julesc013.github.io/eureka/",
@@ -440,6 +440,10 @@ def _validate_deployment_targets(payload: Any, errors: list[str]) -> None:
             "no_backend": True,
             "no_live_probes": True,
             "no_secrets": True,
+            "deployment_workflow_path": ".github/workflows/pages.yml",
+            "workflow_configured": True,
+            "deployment_success_claimed": False,
+            "deployment_status": "workflow_configured_deployment_unverified",
         }
         _expect_mapping_values("deployment_targets.json: github_pages_project", github_pages, expected, errors)
 
@@ -622,4 +626,3 @@ def _rel(path: Path, repo_root: Path) -> str:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
