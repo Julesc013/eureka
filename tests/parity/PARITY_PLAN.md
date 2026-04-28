@@ -91,6 +91,17 @@ summaries. Future Rust parity for local index, exact resolution, deterministic
 search, and public result projection must reproduce these annotations or record
 an explicit allowed divergence before replacement is considered.
 
+Rust Local Index Parity Planning v0 records the future local-index parity lane
+before any Rust index implementation starts. The plan lives in
+`tests/parity/RUST_LOCAL_INDEX_PARITY_PLAN.md`, the planned case map lives in
+`tests/parity/rust_local_index_cases.json`, and the planned acceptance-report
+shape lives in `tests/parity/local_index_acceptance.schema.json`. The stdlib
+validator `scripts/validate_rust_local_index_parity_plan.py` checks that the
+plan names Python as oracle, keeps Rust unwired, references the current
+local-index goldens, covers the current record kinds, and marks additional
+old-platform/member/article/source-id query cases as future oracle extensions.
+This is planning only: Rust Local Index parity implementation is not started.
+
 ## Golden Outputs
 
 Rust Parity Fixture Pack v0 now commits the first Python-oracle golden outputs

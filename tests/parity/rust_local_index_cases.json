@@ -1,0 +1,314 @@
+{
+  "fixture_kind": "eureka.rust_local_index_parity_planning_cases",
+  "schema_version": "0.1.0",
+  "created_by_slice": "rust_local_index_parity_planning_v0",
+  "status": "planning_only",
+  "python_remains_oracle": true,
+  "rust_local_index_implemented": false,
+  "runtime_wiring_allowed": false,
+  "oracle_root": "tests/parity/golden/python_oracle/v0/local_index",
+  "current_oracle_outputs": [
+    "local_index/status_after_build.json",
+    "local_index/query_synthetic.json",
+    "local_index/query_archive.json",
+    "local_index/query_no_result.json"
+  ],
+  "build_status_case": {
+    "case_id": "build_status_current_bounded_corpus",
+    "input_corpus": "current bounded demo corpus",
+    "golden_file": "local_index/status_after_build.json",
+    "expected_record_count": 489,
+    "expected_record_kind_counts": {
+      "evidence": 313,
+      "member": 33,
+      "representation": 53,
+      "resolved_object": 25,
+      "source_record": 9,
+      "state_or_release": 25,
+      "synthetic_member": 31
+    },
+    "expected_fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
+    "expected_index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>"
+  },
+  "required_record_kinds": [
+    "source_record",
+    "resolved_object",
+    "state_or_release",
+    "representation",
+    "member",
+    "synthetic_member",
+    "evidence"
+  ],
+  "required_result_fields": [
+    "index_record_id",
+    "record_kind",
+    "label",
+    "summary",
+    "target_ref",
+    "resolved_resource_id",
+    "source_id",
+    "source_family",
+    "source_label",
+    "subject_key",
+    "version_or_state",
+    "representation_id",
+    "member_path",
+    "parent_target_ref",
+    "parent_resolved_resource_id",
+    "parent_representation_id",
+    "parent_object_label",
+    "member_kind",
+    "media_type",
+    "size_bytes",
+    "content_hash",
+    "content_text",
+    "evidence",
+    "action_hints",
+    "compatibility_evidence",
+    "compatibility_summary",
+    "result_lanes",
+    "primary_lane",
+    "user_cost_score",
+    "user_cost_reasons",
+    "usefulness_summary",
+    "route_hints",
+    "created_by_slice"
+  ],
+  "required_field_groups": {
+    "source": [
+      "source_id",
+      "source_family",
+      "source_label"
+    ],
+    "member_lineage": [
+      "member_path",
+      "parent_target_ref",
+      "parent_resolved_resource_id",
+      "parent_representation_id",
+      "parent_object_label"
+    ],
+    "lane_user_cost": [
+      "result_lanes",
+      "primary_lane",
+      "user_cost_score",
+      "user_cost_reasons",
+      "usefulness_summary"
+    ],
+    "compatibility": [
+      "compatibility_evidence",
+      "compatibility_summary"
+    ],
+    "article_scan": [
+      "content_text",
+      "evidence",
+      "source_id",
+      "route_hints"
+    ],
+    "route_hints": [
+      "route_hints"
+    ]
+  },
+  "query_cases": [
+    {
+      "case_id": "query_synthetic",
+      "query": "synthetic",
+      "golden_file": "local_index/query_synthetic.json",
+      "golden_status": "current",
+      "expected_status_code": 200,
+      "expected_query_status": "queried",
+      "required_field_groups": [
+        "source",
+        "member_lineage",
+        "lane_user_cost",
+        "compatibility",
+        "route_hints"
+      ],
+      "notes": "Current oracle case with synthetic member and parent lineage results."
+    },
+    {
+      "case_id": "query_archive",
+      "query": "archive",
+      "golden_file": "local_index/query_archive.json",
+      "golden_status": "current",
+      "expected_status_code": 200,
+      "expected_query_status": "queried",
+      "required_field_groups": [
+        "source",
+        "lane_user_cost",
+        "compatibility",
+        "route_hints"
+      ],
+      "notes": "Current oracle case with ordinary resolved-object and representation results."
+    },
+    {
+      "case_id": "query_windows_7",
+      "query": "windows 7",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "lane_user_cost",
+        "compatibility"
+      ],
+      "notes": "Planned old-platform local-index query case before Rust implementation."
+    },
+    {
+      "case_id": "query_firefox_xp",
+      "query": "firefox xp",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "lane_user_cost",
+        "compatibility"
+      ],
+      "notes": "Planned latest-compatible old-browser fixture query case."
+    },
+    {
+      "case_id": "query_registry_repair",
+      "query": "registry repair",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "lane_user_cost",
+        "compatibility"
+      ],
+      "notes": "Planned Windows 98 utility fixture query case."
+    },
+    {
+      "case_id": "query_blue_ftp",
+      "query": "blue ftp",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "lane_user_cost",
+        "compatibility"
+      ],
+      "notes": "Planned vague software identity query case."
+    },
+    {
+      "case_id": "query_thinkpad",
+      "query": "thinkpad",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "lane_user_cost",
+        "compatibility"
+      ],
+      "notes": "Planned hardware-driver fixture query case."
+    },
+    {
+      "case_id": "query_driver_inf",
+      "query": "driver.inf",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "member_lineage",
+        "lane_user_cost",
+        "compatibility"
+      ],
+      "notes": "Planned member-level driver/support-media query case."
+    },
+    {
+      "case_id": "query_ray_tracing",
+      "query": "ray tracing",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "article_scan",
+        "lane_user_cost"
+      ],
+      "notes": "Planned article/scan fixture query case."
+    },
+    {
+      "case_id": "query_pc_magazine",
+      "query": "pc magazine",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "article_scan",
+        "lane_user_cost"
+      ],
+      "notes": "Planned parent-issue and article/scan query case."
+    },
+    {
+      "case_id": "query_creative_ct1740",
+      "query": "creative ct1740",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "lane_user_cost",
+        "compatibility"
+      ],
+      "notes": "Planned sound-card manual/driver query case."
+    },
+    {
+      "case_id": "query_3c905",
+      "query": "3c905",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "lane_user_cost",
+        "compatibility"
+      ],
+      "notes": "Planned network-adapter driver query case."
+    },
+    {
+      "case_id": "query_internet_archive_recorded_fixtures",
+      "query": "internet-archive-recorded-fixtures",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [
+        "source",
+        "lane_user_cost"
+      ],
+      "notes": "Planned source-id search query case."
+    },
+    {
+      "case_id": "query_no_result_current",
+      "query": "no-such-record",
+      "golden_file": "local_index/query_no_result.json",
+      "golden_status": "current",
+      "expected_status_code": 200,
+      "expected_query_status": "queried",
+      "required_field_groups": [],
+      "notes": "Current oracle absence-style local-index query case."
+    },
+    {
+      "case_id": "query_no_such_local_index_hit",
+      "query": "no-such-local-index-hit",
+      "golden_file": null,
+      "golden_status": "planned_future_oracle_extension",
+      "required_field_groups": [],
+      "notes": "Planned named no-result query case for future Rust parity reports."
+    }
+  ],
+  "allowed_divergence_refs": [
+    "tests/parity/ALLOWED_DIVERGENCES.md#future-rust-local-index-divergences"
+  ],
+  "forbidden_divergence_refs": [
+    "tests/parity/RUST_LOCAL_INDEX_PARITY_PLAN.md#forbidden-divergences"
+  ],
+  "normalization_policy": {
+    "normalize_index_path": true,
+    "normalize_fts_mode": true,
+    "normalize_timestamps": true,
+    "normalize_commit_metadata": true,
+    "preserve_public_ordering": true,
+    "private_absolute_paths_allowed": false
+  },
+  "future_candidate_rules": {
+    "rust_local_index_may_read_python_goldens": true,
+    "rust_local_index_may_call_live_sources": false,
+    "rust_local_index_may_ingest_arbitrary_local_files": false,
+    "rust_local_index_may_be_called_by_runtime": false
+  }
+}

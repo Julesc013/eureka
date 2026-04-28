@@ -35,3 +35,29 @@ Example:
 ```
 
 The v0 fixture pack records no accepted divergences.
+
+## Future Rust Local Index Divergences
+
+Rust Local Index Parity Planning v0 does not record accepted divergences. It
+only names the narrow classes that a future Rust Local Index Parity Candidate
+may ask to record after review.
+
+Allowed in a future candidate only if explicitly recorded:
+
+- FTS5 availability differences after normalization.
+- SQLite implementation/version metadata differences after normalization.
+- Internal row IDs if public output stays stable.
+- Non-public timing/performance differences.
+
+Not allowed:
+
+- Missing record kinds.
+- Missing source IDs.
+- Missing synthetic members.
+- Missing parent/member lineage.
+- Missing article/scan records where Python has them.
+- Missing compatibility evidence where Python has it.
+- Missing result lanes or user-cost fields.
+- Unstable query result ordering after normalization.
+- Private path leakage.
+- Source placeholder overclaiming.

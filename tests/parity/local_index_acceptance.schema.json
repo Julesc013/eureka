@@ -1,0 +1,90 @@
+{
+  "schema_kind": "eureka.rust_local_index_parity_acceptance_report_schema",
+  "schema_version": "0.1.0",
+  "created_by_slice": "rust_local_index_parity_planning_v0",
+  "status": "planning_schema",
+  "description": "Planned machine-readable report shape for a future Rust Local Index Parity Candidate.",
+  "required_top_level_fields": [
+    "parity_id",
+    "oracle_version",
+    "rust_candidate_version",
+    "cargo_status",
+    "build_status",
+    "query_cases",
+    "normalized_outputs",
+    "divergences",
+    "accepted_divergences",
+    "failed_cases",
+    "notes"
+  ],
+  "field_contract": {
+    "parity_id": {
+      "type": "string",
+      "description": "Stable identifier for the parity run."
+    },
+    "oracle_version": {
+      "type": "string",
+      "description": "Python-oracle fixture pack or local-index oracle version."
+    },
+    "rust_candidate_version": {
+      "type": "string",
+      "description": "Future Rust local-index candidate version; not present as implementation in this planning milestone."
+    },
+    "cargo_status": {
+      "type": "object",
+      "required_fields": [
+        "status",
+        "cargo_available"
+      ],
+      "status_values": [
+        "passed",
+        "failed",
+        "skipped_unavailable"
+      ]
+    },
+    "build_status": {
+      "type": "object",
+      "required_fields": [
+        "status",
+        "record_count",
+        "record_kind_counts"
+      ],
+      "description": "Normalized build/status comparison against the Python Local Index oracle."
+    },
+    "query_cases": {
+      "type": "array",
+      "item_required_fields": [
+        "case_id",
+        "query",
+        "status",
+        "golden_file"
+      ],
+      "description": "Per-query normalized parity results."
+    },
+    "normalized_outputs": {
+      "type": "object",
+      "description": "Paths or embedded summaries for normalized Rust and Python outputs."
+    },
+    "divergences": {
+      "type": "array",
+      "description": "All observed Python/Rust differences after normalization."
+    },
+    "accepted_divergences": {
+      "type": "array",
+      "description": "Subset of divergences that are explicitly accepted under tests/parity/ALLOWED_DIVERGENCES.md."
+    },
+    "failed_cases": {
+      "type": "array",
+      "description": "Case IDs that did not match and were not accepted divergences."
+    },
+    "notes": {
+      "type": "array",
+      "description": "Human-readable planning or environment notes."
+    }
+  },
+  "non_goals": [
+    "This schema does not implement Rust local-index behavior.",
+    "This schema does not require Cargo for Python-only planning validation.",
+    "This schema does not wire Rust into runtime or surfaces."
+  ]
+}
