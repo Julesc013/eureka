@@ -607,3 +607,27 @@ scraping, crawling, provider config, deployment behavior, native app project,
 or production Rust backend claim. The next Codex-safe milestone should be
 Signed Snapshot Consumer Contract v0; Manual Observation Batch 0 remains
 human-operated parallel work.
+
+## ADR-093: Define Snapshot Consumer Contract Before Native Or Relay Runtime
+
+Status: accepted
+
+Signed Snapshot Consumer Contract v0 adds
+`control/inventory/publication/snapshot_consumer_contract.json`,
+`control/inventory/publication/snapshot_consumer_profiles.json`,
+`docs/reference/SNAPSHOT_CONSUMER_CONTRACT.md`,
+`scripts/validate_snapshot_consumer_contract.py`, and focused operations/script
+tests.
+
+The decision is to define how future file-tree, text, lite HTML, relay, native,
+and audit-tool consumers read and validate static snapshots before any consumer
+runtime exists. The contract fixes the required read order, checksum semantics,
+v0 signature-placeholder handling, missing optional file behavior, unsupported
+feature posture, and consumer profile limits. It keeps Signed Snapshot Format
+v0 as a static/experimental seed, keeps relay/native consumption future, and
+adds no snapshot reader runtime, relay service, native client, production
+signing, real signing keys, executable downloads, live backend behavior, live
+probes, external API calls, scraping, crawling, deployment behavior, or
+production authenticity claim. The next Codex-safe milestone should be Native
+Client Contract v0; Manual Observation Batch 0 remains human-operated parallel
+work.

@@ -13,10 +13,17 @@ That seed example contains deterministic public data summaries, manifests,
 checksums, and signature-placeholder documentation. It is not a production
 signed release and it is not exposed as a public download surface.
 
+Signed Snapshot Consumer Contract v0 now defines how future consumers should
+read those files, validate checksums, treat v0 signatures as placeholders, and
+handle missing optional files. It is contract-only and does not implement a
+snapshot reader runtime, relay, native client, production signing, real keys,
+executable downloads, live backend, or live probes.
+
 Current boundary:
 
 - snapshot format contract: implemented as experimental contract
 - seed example: implemented under repo `snapshots/examples/static_snapshot_v0/`
+- snapshot consumer contract: implemented as design/contract only
 - public `/snapshots/` route: future/deferred
 - real signatures: future
 - private signing keys: absent and prohibited

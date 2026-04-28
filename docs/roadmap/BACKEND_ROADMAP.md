@@ -262,7 +262,7 @@ The next backend sequence is:
 49. Relay Surface Design v0 (implemented as design/contract/checklist only; no relay runtime, sockets, protocol servers, private data exposure, write/admin routes, or live-probe passthrough)
 50. Rust Source Registry Parity Catch-up v0 (implemented as isolated current-shape source registry parity; no runtime wiring)
 51. Rust Local Index Parity Planning v0 (implemented as planning/contract only; no Rust index implementation or runtime wiring)
-52. Signed Snapshot Consumer Contract v0
+52. Signed Snapshot Consumer Contract v0 (implemented as contract/design only; no consumer runtime, relay, native client, production signing, real keys, downloads, live backend, or live probes)
 53. Native Client Contract v0
 54. Rust Local Index Parity Candidate v0 (blocked pending planning review and Cargo availability)
 55. Manual Observation Batch 0 Execution (human-operated parallel work)
@@ -272,7 +272,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Signed Snapshot Consumer Contract v0
+> Native Client Contract v0
 
 Why this comes next:
 
@@ -280,9 +280,10 @@ Why this comes next:
   lane. It adds a plan, case map, acceptance-report schema, validator, and
   tests for the future Rust local-index candidate without adding Rust index
   behavior, SQLite/indexing behavior, or runtime wiring.
-- Signed Snapshot Format v0 already defines the static/offline snapshot
-  structure and deterministic seed. A consumer contract is now the next
-  non-network step before relay/native clients can depend on snapshots.
+- Signed Snapshot Consumer Contract v0 now defines the static/offline snapshot
+  read order, checksum semantics, v0 signature-placeholder handling, and
+  future consumer profiles. Native Client Contract v0 can reference that
+  contract without starting native runtime work.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.

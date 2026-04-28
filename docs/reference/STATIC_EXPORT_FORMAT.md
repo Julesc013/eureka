@@ -152,6 +152,13 @@ production signed release, contains no real signing keys, contains no
 executable downloads, and does not make `/snapshots/` an implemented public
 route.
 
+Signed Snapshot Consumer Contract v0 adds no static export tree. It records how
+future consumers should read snapshot manifests, validate checksums, handle v0
+signature placeholders, and respond to missing optional files. The current
+static export still contains no snapshot reader runtime, relay runtime, native
+client, production signing, real keys, executable downloads, live backend, or
+live probes.
+
 Relay Surface Design v0 adds no static export tree. It only records
 `control/inventory/publication/relay_surface.json`, reference docs, an unsigned
 operator checklist, and validation for future local/LAN relay work. Static
@@ -188,7 +195,9 @@ Compatibility Surface Strategy v0 records the cross-surface contract for the
 current static site, `/data/`, `/lite/`, `/text/`, `/files/`, `/demo/`, future
 `/app/`, future `/web/`, future `/api/v1/`, future `/snapshots/`, future relay,
 CLI, and future native clients. Signed Snapshot Format v0 adds only a
-repo-local seed example and contract. Relay Surface Design v0 adds only
+repo-local seed example and contract. Signed Snapshot Consumer Contract v0 adds
+only future-consumer policy and validation. Relay Surface Design v0 adds only
 future-relay policy and validation. The current export still does not include
-public snapshot bundles, production signatures, relay services, protocol
-bridges, native apps, live API routes, live probes, or new runtime behavior.
+public snapshot bundles, production signatures, snapshot reader runtimes, relay
+services, protocol bridges, native apps, live API routes, live probes, or new
+runtime behavior.

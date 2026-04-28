@@ -279,14 +279,14 @@
     {
       "id": "signed_snapshot_consumer_contract_v0",
       "title": "Signed Snapshot Consumer Contract v0",
-      "status": "next",
+      "status": "completed",
       "priority": 39,
-      "notes": "Define how future clients, relays, and native surfaces consume signed/offline snapshot manifests without implementing relay runtime, native apps, downloads, or production signing."
+      "notes": "Added future snapshot consumer contract and profile inventories, reference docs, validator, and tests for read order, checksum semantics, v0 signature-placeholder handling, and old-client/native/relay/audit consumer posture without implementing a consumer, relay runtime, native app, production signing, real keys, downloads, live backend, or live probes."
     },
     {
       "id": "native_client_contract_v0",
       "title": "Native Client Contract v0",
-      "status": "queued",
+      "status": "next",
       "priority": 41,
       "notes": "Define future native client boundaries and prerequisites without creating Visual Studio/Xcode projects, installers, native sidecars, or runtime wiring."
     },
@@ -296,6 +296,13 @@
       "status": "blocked_pending_review_and_cargo",
       "priority": 42,
       "notes": "Future implementation-only-after-review lane for Rust local-index parity; blocked until the P12 plan is reviewed and Cargo availability/requirements are explicit."
+    },
+    {
+      "id": "relay_prototype_planning_v0",
+      "title": "Relay Prototype Planning v0",
+      "status": "queued_after_native_contract",
+      "priority": 43,
+      "notes": "Future planning-only milestone for a relay prototype after relay and snapshot-consumer contracts; not a relay runtime implementation and not a protocol server."
     }
   ]
 }

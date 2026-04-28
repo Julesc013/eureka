@@ -39,6 +39,13 @@ does not create production signed releases, real signing keys, executable
 downloads, a native SDK, app shell, sync client, relay runtime, or any native
 project.
 
+Signed Snapshot Consumer Contract v0 also keeps that policy. It defines how
+future file-tree, text, lite HTML, relay, native, and audit consumers should
+read snapshot manifests, validate checksums, and treat v0 signatures as
+placeholders, but it does not implement a native consumer, SDK, sidecar,
+installer, app shell, production signing, real keys, executable downloads, or
+relay runtime.
+
 Relay Surface Design v0 also keeps that policy. It defines future local/LAN
 relay architecture, security/privacy defaults, protocol candidates, and an
 operator checklist, but it does not create a native sidecar, app shell, SDK,
@@ -70,6 +77,8 @@ Serious native host work should wait until:
 - public-alpha-safe boundaries are clearer
 - public data contracts and static export contracts are stable enough
 - signed/offline snapshot format exists
+- snapshot consumer read order, checksum, and signature-placeholder contract
+  exists
 - relay security/privacy and operator policy exists, with runtime still
   explicitly deferred
 - rights, security, download, and action-handoff policies exist

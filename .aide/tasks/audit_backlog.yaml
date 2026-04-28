@@ -300,6 +300,16 @@
       "title": "Plan Rust local-index parity before implementing index behavior",
       "status": "addressed_by_rust_local_index_parity_planning_v0",
       "suggested_milestone": "Signed Snapshot Consumer Contract v0"
+    },
+    {
+      "id": "audit-backlog-signed-snapshot-consumer-contract",
+      "finding_refs": [
+        "CTEA-BEHAVIOR-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Define snapshot consumer contract before native or relay runtime work",
+      "status": "addressed_by_signed_snapshot_consumer_contract_v0",
+      "suggested_milestone": "Native Client Contract v0"
     }
   ]
 }

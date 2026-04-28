@@ -84,6 +84,15 @@ and seed example only: no production signed release, real signing keys,
 executable downloads, public `/snapshots/` route, relay behavior, native app,
 live backend behavior, or live probe is implemented.
 
+Signed Snapshot Consumer Contract v0 adds
+`snapshot_consumer_contract.json`, `snapshot_consumer_profiles.json`,
+`docs/reference/SNAPSHOT_CONSUMER_CONTRACT.md`, and
+`scripts/validate_snapshot_consumer_contract.py`. It defines future snapshot
+read order, checksum semantics, v0 signature-placeholder handling, and
+file-tree/text/lite/relay/native/audit consumer profiles only: no snapshot
+reader runtime, relay runtime, native client, production signing, real keys,
+executable downloads, live backend, or live probes are implemented.
+
 Relay Surface Design v0 adds
 `control/inventory/publication/relay_surface.json`,
 `docs/architecture/RELAY_SURFACE.md`,
@@ -158,9 +167,11 @@ static clients but do not create production API semantics.
 
 Lite/Text/Files Seed Surfaces v0 consumes those summaries for static
 compatibility output. Signed Snapshot Format v0 now defines a repo-local
-offline seed format with checksums and signature-placeholder documentation, but
-the public `/snapshots/` route, production signing, relay surfaces, native
-clients, custom domains, and hosted backend work remain future.
+offline seed format with checksums and signature-placeholder documentation.
+Signed Snapshot Consumer Contract v0 defines future consumer read order and
+validation posture for that format, but the public `/snapshots/` route,
+snapshot reader runtime, production signing, relay surfaces, native clients,
+custom domains, and hosted backend work remain future.
 
 Static Resolver Demo Snapshots v0 adds `/demo/` static examples from governed
 data and fixture-backed Python-oracle outputs. They make current behavior easier

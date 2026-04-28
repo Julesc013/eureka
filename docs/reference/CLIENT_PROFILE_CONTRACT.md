@@ -47,6 +47,13 @@ snapshot, relay, native-client, or live API behavior. Profiles still do not
 implement `/app/`, snapshots, relay behavior, native clients, or live APIs by
 themselves.
 
+Signed Snapshot Consumer Contract v0 updates the `snapshot` profile
+expectation: future consumers must read the required snapshot files in the
+governed order, validate checksums where possible, and treat v0 signatures as
+placeholders. This does not implement a snapshot consumer, relay, native
+client, production signing, real signing keys, executable downloads, live
+backend behavior, or live probes.
+
 Live Backend Handoff Contract v0 updates the `api_client` expectation: clients
 may know that `/api/v1` is reserved, but they must treat it as future and
 disabled unless a status/capability document says `live_backend` is enabled.

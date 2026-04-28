@@ -65,6 +65,11 @@ The minimum public-alpha entry gate should include:
   and repo seed example under `snapshots/examples/static_snapshot_v0/`; no real
   signing keys, production signatures, executable downloads, public
   `/snapshots/` route, relay runtime, native-client runtime, or live behavior)
+- Signed Snapshot Consumer Contract v0 (implemented as contract/design only for
+  future file-tree, text, lite HTML, relay, native, and audit snapshot
+  consumers; no snapshot reader runtime, relay runtime, native client,
+  production signing, real keys, executable downloads, live backend, or live
+  probes)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as

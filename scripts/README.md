@@ -108,6 +108,13 @@ Current scripts:
   rejects private keys, env files, executables, large/binary artifacts, local
   absolute paths, live backend/probe claims, external-observation claims, and
   production signing claims; it supports `--json` and performs no network calls
+- `validate_snapshot_consumer_contract.py`: validates the Signed Snapshot
+  Consumer Contract v0 inventories, docs, required read order against the seed
+  snapshot, disabled production/native/relay consumer flags, checksum and v0
+  signature-placeholder language, profile limits, and no-key posture; it
+  supports `--json`, performs no network calls, and implements no consumer,
+  relay, native client, production signing, executable download, live backend,
+  or live probe behavior
 - `validate_relay_surface_design.py`: validates the Relay Surface Design v0
   inventory, docs, unsigned future operator checklist, surface capability
   alignment, route-matrix posture, and disabled-by-default relay safety flags;

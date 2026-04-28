@@ -68,6 +68,12 @@ steps:
     run: python scripts/validate_static_snapshot.py
   - id: signed_snapshot_format_tests
     run: python -m unittest tests.operations.test_signed_snapshot_format tests.scripts.test_static_snapshot_tools
+  - id: snapshot_consumer_contract_validator
+    run: python scripts/validate_snapshot_consumer_contract.py
+  - id: snapshot_consumer_contract_validator_json
+    run: python scripts/validate_snapshot_consumer_contract.py --json
+  - id: snapshot_consumer_contract_tests
+    run: python -m unittest tests.operations.test_signed_snapshot_consumer_contract tests.scripts.test_validate_snapshot_consumer_contract
   - id: relay_surface_design_validator
     run: python scripts/validate_relay_surface_design.py
   - id: relay_surface_design_tests
@@ -190,6 +196,7 @@ notes:
   - Live Backend Handoff Contract v0 validates future `/api/v1` route reservations, disabled live capability flags, and error-envelope docs only; it performs no network calls, hosts no backend, enables no live probes, and creates no production API guarantee.
   - Live Probe Gateway Contract v0 validates disabled candidate-source gates, cache/evidence policy, public-alpha live-probe closure, and Google manual-baseline-only posture only; it performs no network calls, implements no probes, fetches no URLs, enables no downloads, and calls no external sources.
   - Signed Snapshot Format v0 validates a repo-local static/offline snapshot contract and deterministic seed example only; it adds no real signing keys, production signatures, executable downloads, public `/snapshots/` route, relay behavior, native-client runtime, live backend behavior, or live probes.
+  - Signed Snapshot Consumer Contract v0 validates future snapshot consumption contracts only; it adds no snapshot reader runtime, relay, native client, production signing, real keys, executable downloads, live backend behavior, or live probes.
   - Relay Surface Design v0 validates future local/LAN relay policy only; it opens no sockets, implements no FTP/SMB/WebDAV/Gopher/protocol bridge, exposes no private data, adds no write/admin route, passes through no live probes, and creates no native sidecar.
   - Rust Source Registry Parity Catch-up v0 validates the isolated Rust source-registry candidate against the current nine-source Python capability/coverage shape; it does not wire Rust into runtime or surfaces.
   - Rust Local Index Parity Planning v0 validates planning-only Rust local-index parity contracts and fixtures; it does not add Rust index behavior, SQLite/indexing, Python replacement, runtime wiring, or surface behavior.

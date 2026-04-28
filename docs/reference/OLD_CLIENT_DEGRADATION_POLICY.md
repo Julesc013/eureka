@@ -30,6 +30,13 @@ signature-placeholder documentation only; it has no real signing keys, no
 production signatures, no executable downloads, and no public `/snapshots/`
 route.
 
+Signed Snapshot Consumer Contract v0 defines how future old-client-oriented
+file-tree, text, lite HTML, relay, native, and audit consumers should read
+snapshot files, validate checksums where capable, and treat v0 signatures as
+placeholders. It does not implement a consumer, relay, native client,
+production signing, real keys, executable downloads, live backend, or live
+probes.
+
 No login, private data, write action, download execution, or user-specific
 state is allowed over insecure compatibility surfaces without a later explicit
 security contract.

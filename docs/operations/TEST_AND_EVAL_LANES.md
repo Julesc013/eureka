@@ -484,6 +484,25 @@ performs no network calls, adds no real signing keys, creates no production
 signatures, publishes no executable downloads, adds no public `/snapshots/`
 route, and implements no relay or native-client runtime.
 
+## Signed Snapshot Consumer Contract
+
+Signed Snapshot Consumer Contract v0 is validated with:
+
+```bash
+python scripts/validate_snapshot_consumer_contract.py
+python scripts/validate_snapshot_consumer_contract.py --json
+python -m unittest tests.operations.test_signed_snapshot_consumer_contract tests.scripts.test_validate_snapshot_consumer_contract
+```
+
+The lane checks `snapshot_consumer_contract.json`,
+`snapshot_consumer_profiles.json`, `SNAPSHOT_CONSUMER_CONTRACT.md`, the
+required read order against `snapshots/examples/static_snapshot_v0/`, checksum
+and v0 signature-placeholder language, disabled production/native/relay
+consumer flags, profile limits, and no-key posture. It performs no network
+calls, implements no snapshot reader runtime, creates no relay or native
+client, adds no production signing, real signing keys, executable downloads,
+live backend behavior, or live probes.
+
 ## Relay Surface Design
 
 Relay Surface Design v0 is validated with:
