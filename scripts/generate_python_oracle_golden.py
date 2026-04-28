@@ -45,6 +45,18 @@ QUERY_PLANNER_FIXTURES = {
     "generic_unknown_query": "obscure utility with no known fixture",
 }
 
+SOURCE_REGISTRY_DETAIL_FIXTURES = {
+    "synthetic-fixtures": "source_synthetic_fixtures.json",
+    "github-releases-recorded-fixtures": "source_github_releases_recorded_fixtures.json",
+    "internet-archive-recorded-fixtures": "source_internet_archive_recorded_fixtures.json",
+    "local-bundle-fixtures": "source_local_bundle_fixtures.json",
+    "article-scan-recorded-fixtures": "source_article_scan_recorded_fixtures.json",
+    "internet-archive-placeholder": "source_internet_archive_placeholder.json",
+    "local-files-placeholder": "source_local_files_placeholder.json",
+    "software-heritage-placeholder": "source_software_heritage_placeholder.json",
+    "wayback-memento-placeholder": "source_wayback_memento_placeholder.json",
+}
+
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
@@ -92,21 +104,7 @@ def build_fixture_pack() -> dict[Path, Any]:
     return {
         Path("manifest.json"): _manifest(),
         Path("source_registry/sources_list.json"): _source_registry_list(),
-        Path("source_registry/source_synthetic_fixtures.json"): _source_registry_source(
-            "synthetic-fixtures"
-        ),
-        Path("source_registry/source_github_releases_recorded_fixtures.json"): (
-            _source_registry_source("github-releases-recorded-fixtures")
-        ),
-        Path("source_registry/source_internet_archive_recorded_fixtures.json"): (
-            _source_registry_source("internet-archive-recorded-fixtures")
-        ),
-        Path("source_registry/source_local_bundle_fixtures.json"): _source_registry_source(
-            "local-bundle-fixtures"
-        ),
-        Path("source_registry/source_article_scan_recorded_fixtures.json"): (
-            _source_registry_source("article-scan-recorded-fixtures")
-        ),
+        **_source_registry_detail_outputs(),
         **_query_planner_outputs(),
         **_resolution_run_outputs(),
         **_local_index_outputs(),
@@ -178,6 +176,13 @@ def _source_registry_source(source_id: str) -> dict[str, Any]:
         SourceReadRequest.from_parts(source_id)
     )
     return _public_response(response)
+
+
+def _source_registry_detail_outputs() -> dict[Path, Any]:
+    return {
+        Path("source_registry") / file_name: _source_registry_source(source_id)
+        for source_id, file_name in SOURCE_REGISTRY_DETAIL_FIXTURES.items()
+    }
 
 
 def _query_planner_outputs() -> dict[Path, Any]:

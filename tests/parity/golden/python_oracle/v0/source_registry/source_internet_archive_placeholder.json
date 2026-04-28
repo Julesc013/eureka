@@ -1,0 +1,112 @@
+{
+  "body": {
+    "selected_source_id": "internet-archive-placeholder",
+    "source_count": 1,
+    "sources": [
+      {
+        "artifact_types": [
+          "archive_item",
+          "downloadable_file",
+          "metadata_record"
+        ],
+        "authority_class": "public_archive",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": false,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": false,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": false,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": false,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Internet Archive connector",
+          "status": "unimplemented"
+        },
+        "connector_mode": "not_implemented",
+        "coverage": {
+          "connector_mode": "not_implemented",
+          "coverage_depth": "source_known",
+          "coverage_notes": "The Internet Archive source is registered for planning only; no connector, recorded fixture, or live access is implemented.",
+          "coverage_status": "placeholder",
+          "current_limitations": [
+            "No recorded Internet Archive fixtures",
+            "No item-file listing",
+            "No metadata search",
+            "No live Internet Archive API calls"
+          ],
+          "indexed_scopes": [
+            "registry_record"
+          ],
+          "last_fixture_update": "not_applicable",
+          "next_coverage_step": "Add recorded metadata and item-file fixtures for a small governed Internet Archive slice."
+        },
+        "coverage_depth": "source_known",
+        "coverage_status": "placeholder",
+        "current_limitations": [
+          "No recorded Internet Archive fixtures",
+          "No item-file listing",
+          "No metadata search",
+          "No live Internet Archive API calls"
+        ],
+        "extraction_mode": "deferred",
+        "freshness_model": "deferred",
+        "identifier_types_emitted": [
+          "archive_org_identifier"
+        ],
+        "indexed_scopes": [
+          "registry_record"
+        ],
+        "legal_posture": "deferred_placeholder",
+        "live_access_mode": "deferred",
+        "name": "Internet Archive",
+        "next_coverage_step": "Add recorded metadata and item-file fixtures for a small governed Internet Archive slice.",
+        "notes": "Planning placeholder only. This record must not be read as an implemented connector.",
+        "object_types": [
+          "software_release",
+          "manual",
+          "article",
+          "dataset"
+        ],
+        "placeholder_warning": "Placeholder only; no connector, fixture coverage, or live access is implemented.",
+        "rights_notes": "Rights and access vary per item; no runtime policy is implemented yet.",
+        "roles": [
+          "preservation_anchor",
+          "discovery_index",
+          "action_provider",
+          "citation_source"
+        ],
+        "source_family": "internet_archive",
+        "source_id": "internet-archive-placeholder",
+        "status": "placeholder",
+        "status_summary": "Placeholder record only. No runtime connector is implemented yet.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "artifact_download",
+          "bulk_dump",
+          "delta_feed"
+        ],
+        "trust_lane": "preservation"
+      }
+    ],
+    "status": "available"
+  },
+  "status_code": 200
+}

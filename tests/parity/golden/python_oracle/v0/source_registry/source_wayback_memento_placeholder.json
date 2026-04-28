@@ -1,0 +1,106 @@
+{
+  "body": {
+    "selected_source_id": "wayback-memento-placeholder",
+    "source_count": 1,
+    "sources": [
+      {
+        "artifact_types": [
+          "web_capture",
+          "replay_record"
+        ],
+        "authority_class": "web_archive",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": false,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": false,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": false,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": false,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Wayback / Memento connector",
+          "status": "unimplemented"
+        },
+        "connector_mode": "not_implemented",
+        "coverage": {
+          "connector_mode": "not_implemented",
+          "coverage_depth": "source_known",
+          "coverage_notes": "Wayback/Memento is registered as a future temporal-capture source family only.",
+          "coverage_status": "placeholder",
+          "current_limitations": [
+            "No recorded capture fixtures",
+            "No replay or memento expansion",
+            "No live capture probing",
+            "No WARC/WACZ member indexing"
+          ],
+          "indexed_scopes": [
+            "registry_record"
+          ],
+          "last_fixture_update": "not_applicable",
+          "next_coverage_step": "Add recorded temporal capture metadata fixtures before any live probing is considered."
+        },
+        "coverage_depth": "source_known",
+        "coverage_status": "placeholder",
+        "current_limitations": [
+          "No recorded capture fixtures",
+          "No replay or memento expansion",
+          "No live capture probing",
+          "No WARC/WACZ member indexing"
+        ],
+        "extraction_mode": "deferred",
+        "freshness_model": "deferred",
+        "identifier_types_emitted": [
+          "url",
+          "capture_datetime"
+        ],
+        "indexed_scopes": [
+          "registry_record"
+        ],
+        "legal_posture": "deferred_placeholder",
+        "live_access_mode": "deferred",
+        "name": "Wayback / Memento",
+        "next_coverage_step": "Add recorded temporal capture metadata fixtures before any live probing is considered.",
+        "notes": "Planning placeholder only. This record should guide future registry growth, not imply live replay support.",
+        "object_types": [
+          "website",
+          "web_page"
+        ],
+        "placeholder_warning": "Placeholder only; no connector, fixture coverage, or live access is implemented.",
+        "rights_notes": "Replay availability and access conditions vary by capture and provider.",
+        "roles": [
+          "preservation_anchor",
+          "discovery_index",
+          "citation_source"
+        ],
+        "source_family": "wayback_memento",
+        "source_id": "wayback-memento-placeholder",
+        "status": "placeholder",
+        "status_summary": "Placeholder record only. No runtime connector is implemented yet.",
+        "surfaces": [
+          "item_record",
+          "replay"
+        ],
+        "trust_lane": "preservation"
+      }
+    ],
+    "status": "available"
+  },
+  "status_code": 200
+}

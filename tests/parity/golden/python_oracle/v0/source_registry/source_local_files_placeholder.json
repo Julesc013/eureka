@@ -1,0 +1,104 @@
+{
+  "body": {
+    "selected_source_id": "local-files-placeholder",
+    "source_count": 1,
+    "sources": [
+      {
+        "artifact_types": [
+          "local_file",
+          "local_archive"
+        ],
+        "authority_class": "local_private_user_controlled",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": false,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": true,
+          "network_required": false,
+          "recorded_fixture_backed": false,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": false,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": false,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "local_private",
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Local files connector",
+          "status": "deferred"
+        },
+        "connector_mode": "local_private_future",
+        "coverage": {
+          "connector_mode": "local_private_future",
+          "coverage_depth": "source_known",
+          "coverage_notes": "Local files are registered as a future local/private source family only; no local-files ingestion connector exists.",
+          "coverage_status": "local_private_future",
+          "current_limitations": [
+            "No implemented local-files ingestion connector",
+            "No public-alpha arbitrary local path access",
+            "No local bundle fixture corpus yet"
+          ],
+          "indexed_scopes": [
+            "registry_record"
+          ],
+          "last_fixture_update": "not_applicable",
+          "next_coverage_step": "Add a governed local bundle fixture corpus before any private local-files workflow."
+        },
+        "coverage_depth": "source_known",
+        "coverage_status": "local_private_future",
+        "current_limitations": [
+          "No implemented local-files ingestion connector",
+          "No public-alpha arbitrary local path access",
+          "No local bundle fixture corpus yet"
+        ],
+        "extraction_mode": "local_private_later",
+        "freshness_model": "local_mutable",
+        "identifier_types_emitted": [
+          "filesystem_path"
+        ],
+        "indexed_scopes": [
+          "registry_record"
+        ],
+        "legal_posture": "local_private_user_controlled",
+        "live_access_mode": "local_private_later",
+        "name": "Local Files",
+        "next_coverage_step": "Add a governed local bundle fixture corpus before any private local-files workflow.",
+        "notes": "Future local-private source only. No current runtime connector exists, and local path disclosure remains out of bounds.",
+        "object_types": [
+          "software_release",
+          "manual",
+          "dataset"
+        ],
+        "placeholder_warning": "Future-only source; no runtime connector is implemented.",
+        "rights_notes": "Local paths and user-controlled material are private by default and must not leak through public surfaces.",
+        "roles": [
+          "action_provider",
+          "citation_source"
+        ],
+        "source_family": "local_files",
+        "source_id": "local-files-placeholder",
+        "status": "local_private_future",
+        "status_summary": "Future local/private source record only. Runtime behavior remains deferred.",
+        "surfaces": [
+          "item_record",
+          "artifact_download"
+        ],
+        "trust_lane": "unknown"
+      }
+    ],
+    "status": "available"
+  },
+  "status_code": 200
+}

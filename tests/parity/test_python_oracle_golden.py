@@ -20,6 +20,10 @@ REQUIRED_FILES = (
     "source_registry/source_internet_archive_recorded_fixtures.json",
     "source_registry/source_local_bundle_fixtures.json",
     "source_registry/source_article_scan_recorded_fixtures.json",
+    "source_registry/source_internet_archive_placeholder.json",
+    "source_registry/source_local_files_placeholder.json",
+    "source_registry/source_software_heritage_placeholder.json",
+    "source_registry/source_wayback_memento_placeholder.json",
     "query_planner/windows_7_apps.json",
     "query_planner/windows_nt_61_utilities.json",
     "query_planner/windows_xp_software.json",
@@ -170,6 +174,10 @@ class PythonOracleGoldenTestCase(unittest.TestCase):
         self.assertIn("internet-archive-recorded-fixtures", source_ids)
         self.assertIn("local-bundle-fixtures", source_ids)
         self.assertIn("article-scan-recorded-fixtures", source_ids)
+        self.assertIn("internet-archive-placeholder", source_ids)
+        self.assertIn("local-files-placeholder", source_ids)
+        self.assertIn("software-heritage-placeholder", source_ids)
+        self.assertIn("wayback-memento-placeholder", source_ids)
 
         synthetic = _load_json("source_registry/source_synthetic_fixtures.json")
         github = _load_json("source_registry/source_github_releases_recorded_fixtures.json")
@@ -178,6 +186,10 @@ class PythonOracleGoldenTestCase(unittest.TestCase):
         )
         local_bundle = _load_json("source_registry/source_local_bundle_fixtures.json")
         article_scan = _load_json("source_registry/source_article_scan_recorded_fixtures.json")
+        internet_archive_placeholder = _load_json(
+            "source_registry/source_internet_archive_placeholder.json"
+        )
+        local_files_placeholder = _load_json("source_registry/source_local_files_placeholder.json")
         self.assertEqual(synthetic["body"]["selected_source_id"], "synthetic-fixtures")
         self.assertEqual(
             github["body"]["selected_source_id"],
@@ -192,6 +204,17 @@ class PythonOracleGoldenTestCase(unittest.TestCase):
             article_scan["body"]["selected_source_id"],
             "article-scan-recorded-fixtures",
         )
+        self.assertEqual(
+            internet_archive_placeholder["body"]["selected_source_id"],
+            "internet-archive-placeholder",
+        )
+        self.assertEqual(
+            local_files_placeholder["body"]["selected_source_id"],
+            "local-files-placeholder",
+        )
+        local_files = local_files_placeholder["body"]["sources"][0]
+        self.assertTrue(local_files["capabilities"]["local_private"])
+        self.assertEqual(local_files["connector_mode"], "local_private_future")
 
     def test_local_index_fts_mode_is_normalized(self) -> None:
         status = _load_json("local_index/status_after_build.json")
