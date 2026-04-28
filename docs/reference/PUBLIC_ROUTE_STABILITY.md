@@ -1,0 +1,22 @@
+# Public Route Stability
+
+Route stability is controlled by
+`control/inventory/publication/publication_contract.json` and used by
+`page_registry.json`.
+
+`experimental`: May change while publication contracts are still pre-alpha.
+
+`stable_draft`: Intended to persist, but still subject to review before stable
+status.
+
+`stable`: Durable public route or data contract. Changes require a deprecation
+path.
+
+`deprecated`: Still present, but scheduled for removal or replacement.
+
+`removed`: No longer present in the active public contract.
+
+No route should move to `stable` until its base-path behavior, claim source,
+client profile, public data dependencies, and redirect/deprecation story are
+clear.
+
