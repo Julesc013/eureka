@@ -1,0 +1,1278 @@
+{
+  "branch": "main",
+  "command_results": [
+    {
+      "command": "git status --short --branch",
+      "exit_code": 0,
+      "notes": "exit=0; duration=1.4s",
+      "output_summary": "## main...origin/main\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "git log --oneline -n 20",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "bdb2317 chore(snapshot): record snapshot roadmap and verification lanes\r\n9c5a5e8 feat(snapshot): add deterministic static snapshot seed\r\na65d5f7 docs(snapshot): define signed snapshot format contract\r\n6d11847 docs(roadmap): record compatibility surface milestone\r\n4fd15a6 docs(publication): reflect compatibility strategy in static artifacts\r\n4ad0e3b test(surfaces): validate compatibility surface contracts\r\ne89b089 docs(surfaces): add compatibility surface strategy\r\nd2820bb test(parity): make parity tests discoverable\r\n63ea39e docs(rust): record query planner parity milestone\r\n6767885 test(rust): add query planner parity checks\r\n0a1e3e4 feat(rust): add query planner parity candidate\r\n9609a59 d ...",
+      "status": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "exit_code": 0,
+      "notes": "exit=0; duration=28.6s",
+      "output_summary": "..........................................................................\r\n----------------------------------------------------------------------\r\nRan 74 tests in 28.360s\r\n\r\nOK\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.5s",
+      "output_summary": "........................................................................................................................................................\r\n----------------------------------------------------------------------\r\nRan 152 tests in 0.084s\r\n\r\nOK\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "exit_code": 0,
+      "notes": "exit=0; duration=5.3s",
+      "output_summary": "..............................................\r\n----------------------------------------------------------------------\r\nRan 46 tests in 4.943s\r\n\r\nOK\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "exit_code": 0,
+      "notes": "exit=0; duration=1.2s",
+      "output_summary": "............\r\n----------------------------------------------------------------------\r\nRan 12 tests in 1.007s\r\n\r\nOK\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/evals -t .",
+      "exit_code": 0,
+      "notes": "exit=0; duration=3.6s",
+      "output_summary": "...........................................\r\n----------------------------------------------------------------------\r\nRan 43 tests in 3.311s\r\n\r\nOK\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "exit_code": 0,
+      "notes": "exit=0; duration=4.7s",
+      "output_summary": "...........................................................................................................................................................................................................................................................................................................\r\n----------------------------------------------------------------------\r\nRan 299 tests in 4.325s\r\n\r\nOK\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "exit_code": 0,
+      "notes": "exit=0; duration=28.3s",
+      "output_summary": "..................................................................................................................................................................\r\n----------------------------------------------------------------------\r\nRan 162 tests in 27.888s\r\n\r\nOK\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "exit_code": 0,
+      "notes": "exit=0; duration=39.3s",
+      "output_summary": "....................................................................................................................................................................................................................................................................................................................................................................................\r\n----------------------------------------------------------------------\r\nRan 372 tests in 38.847s\r\n\r\nOK\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.7s",
+      "output_summary": "Checked 428 Python files under <local-path>\r\nNo architecture-boundary violations found.\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "exit_code": 0,
+      "notes": "exit=0; duration=1.0s",
+      "output_summary": "Python oracle golden fixture pack\r\nstatus: passed\r\nfixture_pack_id: python_oracle_golden_v0\r\nfixture_pack_version: 0.1.0\r\noutput_root: <local-path>\r\nfile_count: 36\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.5s",
+      "output_summary": "Archive resolution evals\r\ncreated_by_slice: archive_resolution_eval_runner_v0\r\ntask_count: 6\r\nstatus_counts: satisfied=6\r\n\r\nTasks\r\n- article_inside_magazine_scan: satisfied (planner=satisfied, search=local_index, results=9)\r\n- driver_inside_support_cd: satisfied (planner=satisfied, search=local_index, results=50)\r\n- latest_firefox_before_xp_drop: satisfied (planner=satisfied, search=local_index, results=50)\r\n- old_blue_ftp_client_xp: satisfied (planner=satisfied, search=local_index, results=44)\r\n- win98_registry_repair: satisfied (planner=satisfied, search=local_index, results=26)\r\n- windows_7_apps: satisfied (planner=satisfied, search=local_index, results=29)\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.5s",
+      "output_summary": "{\r\n  \"created_at\": \"2026-04-28T08:27:29.167998+00:00\",\r\n  \"created_by_slice\": \"archive_resolution_eval_runner_v0\",\r\n  \"load_errors\": [],\r\n  \"notices\": [\r\n    {\r\n      \"code\": \"transient_local_index\",\r\n      \"message\": \"Built a transient Local Index v0 database for this eval run. The report omits the temporary path so JSON remains inspectable.\",\r\n      \"severity\": \"info\"\r\n    },\r\n    {\r\n      \"code\": \"local_index_built_for_eval\",\r\n      \"message\": \"Built Local Index v0 once for this synchronous archive-resolution eval suite.\",\r\n      \"severity\": \"info\"\r\n    }\r\n  ],\r\n  \"status_counts\": {\r\n    \"satisfied\": 6\r\n  },\r\n  \"task_summaries\": [\r\n    {\r\n      \"capability_gap_count\": 0,\r\n      \"failed_ch ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.9s",
+      "output_summary": "Search usefulness audit\r\ncreated_by_slice: search_usefulness_audit_v0\r\nquery_count: 64\r\neureka_status_counts: capability_gap=9, covered=5, partial=22, source_gap=26, unknown=2\r\nexternal_pending_counts: google=64, internet_archive_full_text=64, internet_archive_metadata=64\r\nfailure_mode_counts: absence_reasoning_gap=2, actionability_gap=2, compatibility_evidence_gap=25, decomposition_gap=12, external_baseline_pending=64, identity_cluster_gap=13, index_gap=3, live_source_gap=10, member_access_gap=12, planner_gap=24, query_interpretation_gap=21, ranking_gap=8, representation_gap=14, source_coverage_gap=49, surface_ux_gap=4\r\n\r\nTop future-work recommendations\r\n- source_coverage_gap: 49 (Add gover ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.6s",
+      "output_summary": "{\r\n  \"created_at\": \"2026-04-28T08:27:30.599252+00:00\",\r\n  \"created_by_slice\": \"search_usefulness_audit_v0\",\r\n  \"eureka_status_counts\": {\r\n    \"capability_gap\": 9,\r\n    \"covered\": 5,\r\n    \"partial\": 22,\r\n    \"source_gap\": 26,\r\n    \"unknown\": 2\r\n  },\r\n  \"external_baseline_pending_counts\": {\r\n    \"google\": 64,\r\n    \"internet_archive_full_text\": 64,\r\n    \"internet_archive_metadata\": 64\r\n  },\r\n  \"failure_mode_counts\": {\r\n    \"absence_reasoning_gap\": 2,\r\n    \"actionability_gap\": 2,\r\n    \"compatibility_evidence_gap\": 25,\r\n    \"decomposition_gap\": 12,\r\n    \"external_baseline_pending\": 64,\r\n    \"identity_cluster_gap\": 13,\r\n    \"index_gap\": 3,\r\n    \"live_source_gap\": 10,\r\n    \"member_access_gap\": 12,\r ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Publication inventory validation\r\nstatus: valid\r\nregistered_routes: 43\r\ncurrent_public_site_pages: 8\r\nrequired_client_profiles: 9\r\nrequired_public_data_paths: 10\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"covered_public_site_pages\": [\r\n    \"public_site/demo-queries.html\",\r\n    \"public_site/evals.html\",\r\n    \"public_site/index.html\",\r\n    \"public_site/limitations.html\",\r\n    \"public_site/local-quickstart.html\",\r\n    \"public_site/roadmap.html\",\r\n    \"public_site/sources.html\",\r\n    \"public_site/status.html\"\r\n  ],\r\n  \"created_by\": \"publication_inventory_validator_v0\",\r\n  \"current_public_site_pages\": [\r\n    \"public_site/demo-queries.html\",\r\n    \"public_site/evals.html\",\r\n    \"public_site/index.html\",\r\n    \"public_site/limitations.html\",\r\n    \"public_site/local-quickstart.html\",\r\n    \"public_site/roadmap.html\",\r\n    \"public_site/sources.html\",\r\n    \"public_site/status.html\"\r\n  ],\r\n  \"domain_ ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Public static site validation\r\nstatus: valid\r\npages: 8\r\nsource_ids_checked: 9\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"compatibility_surface_files_checked\": [\r\n    \"lite/index.html\",\r\n    \"lite/sources.html\",\r\n    \"lite/evals.html\",\r\n    \"lite/demo-queries.html\",\r\n    \"lite/limitations.html\",\r\n    \"lite/README.txt\",\r\n    \"text/index.txt\",\r\n    \"text/sources.txt\",\r\n    \"text/evals.txt\",\r\n    \"text/demo-queries.txt\",\r\n    \"text/limitations.txt\",\r\n    \"text/README.txt\",\r\n    \"files/index.html\",\r\n    \"files/index.txt\",\r\n    \"files/README.txt\",\r\n    \"files/manifest.json\",\r\n    \"files/SHA256SUMS\",\r\n    \"files/data/README.txt\"\r\n  ],\r\n  \"compatibility_surface_report\": {\r\n    \"files_manifest_status\": \"static_demo\",\r\n    \"lite_html_pages\": [\r\n      \"lite/index.html\",\r\n      \"lite/sources.html\",\r\n      \"lite/eval ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.3s",
+      "output_summary": "GitHub Pages static artifact check\r\nstatus: valid\r\nsite_dir: <local-path>\r\nstatic_site_validator: valid\r\npublication_inventory_validator: valid\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.3s",
+      "output_summary": "{\r\n  \"created_by\": \"github_pages_static_artifact_checker_v0\",\r\n  \"deployment_target\": {\r\n    \"artifact_root\": \"public_site\",\r\n    \"base_path\": \"/eureka/\",\r\n    \"canonical_base_url\": \"https://julesc013.github.io/eureka/\",\r\n    \"deployment_status\": \"workflow_configured_deployment_unverified\",\r\n    \"deployment_success_claimed\": false,\r\n    \"deployment_workflow_path\": \".github/workflows/pages.yml\",\r\n    \"generated_artifact_deployed\": false,\r\n    \"generated_artifact_root\": \"site/dist\",\r\n    \"id\": \"github_pages_project\",\r\n    \"kind\": \"static\",\r\n    \"no_backend\": true,\r\n    \"no_live_probes\": true,\r\n    \"no_secrets\": true,\r\n    \"notes\": [\r\n      \"Project Pages must not define public route architectu ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/generate_public_alpha_rehearsal_evidence.py --check",
+      "exit_code": 0,
+      "notes": "exit=0; duration=1.1s",
+      "output_summary": "Public Alpha Rehearsal Evidence Check\r\nstatus: valid\r\npack_dir: <local-path>\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/run_public_alpha_server.py --check-config",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.4s",
+      "output_summary": "Public Alpha Wrapper Config\r\nstatus: valid\r\nmode: public_alpha\r\nbind: 127.0.0.1:8781 (local)\r\nlive_probes_enabled: False\r\nlive_internet_archive_enabled: False\r\ndownloads_enabled: False\r\nlocal_paths_enabled: False\r\nuser_storage_enabled: False\r\ndeployment_approved: False\r\nproduction_ready: False\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/run_public_alpha_server.py --print-config-json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.4s",
+      "output_summary": "{\r\n  \"allow_nonlocal_bind\": false,\r\n  \"bind_scope\": \"local\",\r\n  \"config_kind\": \"eureka.public_alpha_wrapper_config\",\r\n  \"configured_path_env_vars\": [],\r\n  \"created_by_slice\": \"live_alpha_01_public_alpha_wrapper\",\r\n  \"deployment_approved\": false,\r\n  \"deployment_performed\": false,\r\n  \"downloads_enabled\": false,\r\n  \"errors\": [],\r\n  \"host\": \"127.0.0.1\",\r\n  \"limits\": {\r\n    \"global_timeout_ms\": 10000,\r\n    \"max_query_len\": 160,\r\n    \"max_results_per_source\": 10,\r\n    \"source_timeout_ms\": 5000\r\n  },\r\n  \"live_internet_archive_enabled\": false,\r\n  \"live_probes_enabled\": false,\r\n  \"local_paths_enabled\": false,\r\n  \"mode\": \"public_alpha\",\r\n  \"port\": 8781,\r\n  \"production_ready\": false,\r\n  \"route_policy\": ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.7s",
+      "output_summary": "Public Alpha Smoke\r\nstatus: passed\r\nmode: public_alpha\r\nchecks: 13/13 passed\r\n\r\n[PASS] status: /api/status (ok)\r\n[PASS] source list: /api/sources (ok)\r\n[PASS] query plan: /api/query-plan?q=Windows+7+apps (ok)\r\n[PASS] search: /api/search?q=synthetic (ok)\r\n[PASS] archive resolution evals: /api/evals/archive-resolution (ok)\r\n[PASS] local index path: /api/index/status?index_path=D%3A%2Fprivate%2Feureka-index.sqlite3 (local_path_parameters_blocked)\r\n[PASS] run store root: /api/runs?run_store_root=D%3A%2Fprivate%2Feureka-runs (local_path_parameters_blocked)\r\n[PASS] task store root: /api/tasks?task_store_root=D%3A%2Fprivate%2Feureka-tasks (local_path_parameters_blocked)\r\n[PASS] memory store root: / ...",
+      "status": "passed"
+    },
+    {
+      "command": "python site/build.py --check",
+      "exit_code": 0,
+      "notes": "exit=0; duration=1.1s",
+      "output_summary": "Static site generator\r\nstatus: valid\r\nsource_root: site\r\ndeploy_artifact_current: public_site\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python site/build.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=1.0s",
+      "output_summary": "{\r\n  \"compatibility_surface_files\": [\r\n    \"files/README.txt\",\r\n    \"files/SHA256SUMS\",\r\n    \"files/data/README.txt\",\r\n    \"files/index.html\",\r\n    \"files/index.txt\",\r\n    \"files/manifest.json\",\r\n    \"lite/README.txt\",\r\n    \"lite/demo-queries.html\",\r\n    \"lite/evals.html\",\r\n    \"lite/index.html\",\r\n    \"lite/limitations.html\",\r\n    \"lite/sources.html\",\r\n    \"text/README.txt\",\r\n    \"text/demo-queries.txt\",\r\n    \"text/evals.txt\",\r\n    \"text/index.txt\",\r\n    \"text/limitations.txt\",\r\n    \"text/sources.txt\"\r\n  ],\r\n  \"created_by\": \"static_site_generation_migration_v0\",\r\n  \"deploy_artifact_current\": \"public_site\",\r\n  \"errors\": [],\r\n  \"generated_output_deployed\": false,\r\n  \"no_deployment_performed\":  ...",
+      "status": "passed"
+    },
+    {
+      "command": "python site/validate.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.3s",
+      "output_summary": "Static site generator validation\r\nstatus: valid\r\npage_count: 8\r\ndist_validation: valid\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python site/validate.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"created_by\": \"static_site_generation_migration_validator_v0\",\r\n  \"dist_compatibility_files\": [\r\n    \"lite/index.html\",\r\n    \"lite/sources.html\",\r\n    \"lite/evals.html\",\r\n    \"lite/demo-queries.html\",\r\n    \"lite/limitations.html\",\r\n    \"lite/README.txt\",\r\n    \"text/index.txt\",\r\n    \"text/sources.txt\",\r\n    \"text/evals.txt\",\r\n    \"text/demo-queries.txt\",\r\n    \"text/limitations.txt\",\r\n    \"text/README.txt\",\r\n    \"files/index.html\",\r\n    \"files/index.txt\",\r\n    \"files/README.txt\",\r\n    \"files/manifest.json\",\r\n    \"files/SHA256SUMS\",\r\n    \"files/data/README.txt\"\r\n  ],\r\n  \"dist_data_files\": [\r\n    \"data/site_manifest.json\",\r\n    \"data/page_registry.json\",\r\n    \"data/source_summary.json\",\r\n   ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/generate_public_data_summaries.py --check",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.9s",
+      "output_summary": "Generated public data summaries\r\nstatus: valid\r\noutput_root: public_site/data\r\ndata_files: 6\r\ncheck_mode: true\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/generate_public_data_summaries.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=1.0s",
+      "output_summary": "{\r\n  \"contains_external_observations\": false,\r\n  \"contains_live_backend\": false,\r\n  \"contains_live_probes\": false,\r\n  \"created_by\": \"generated_public_data_summaries_v0\",\r\n  \"data_files\": [\r\n    \"build_manifest.json\",\r\n    \"eval_summary.json\",\r\n    \"page_registry.json\",\r\n    \"route_summary.json\",\r\n    \"site_manifest.json\",\r\n    \"source_summary.json\"\r\n  ],\r\n  \"deployment_performed\": false,\r\n  \"errors\": [],\r\n  \"generated_by\": \"scripts/generate_public_data_summaries.py\",\r\n  \"output_root\": \"public_site/data\",\r\n  \"public_data_paths\": [\r\n    \"/data/build_manifest.json\",\r\n    \"/data/eval_summary.json\",\r\n    \"/data/page_registry.json\",\r\n    \"/data/route_summary.json\",\r\n    \"/data/site_manifest.json\", ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/generate_compatibility_surfaces.py --check",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Compatibility surface generation\r\nstatus: valid\r\noutput_root: public_site\r\nsurface_roots: lite, text, files\r\ncheck_mode: true\r\nfiles: 18\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/generate_compatibility_surfaces.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"checksum_paths\": [\r\n    \"data/site_manifest.json\",\r\n    \"data/page_registry.json\",\r\n    \"data/source_summary.json\",\r\n    \"data/eval_summary.json\",\r\n    \"data/route_summary.json\",\r\n    \"data/build_manifest.json\",\r\n    \"files/manifest.json\",\r\n    \"files/index.txt\",\r\n    \"files/README.txt\"\r\n  ],\r\n  \"contains_executable_downloads\": false,\r\n  \"contains_external_observations\": false,\r\n  \"contains_live_backend\": false,\r\n  \"contains_live_probes\": false,\r\n  \"created_by\": \"lite_text_files_seed_surfaces_v0\",\r\n  \"data_root\": \"public_site/data\",\r\n  \"errors\": [],\r\n  \"file_count\": 18,\r\n  \"files\": [\r\n    \"files/README.txt\",\r\n    \"files/SHA256SUMS\",\r\n    \"files/data/README.txt\",\r\n    \"files/index.html\" ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/generate_static_resolver_demos.py --check",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Static resolver demo snapshot generation\r\nstatus: valid\r\noutput_root: public_site\r\ndemo_count: 8\r\ncheck_mode: true\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/generate_static_resolver_demos.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"contains_external_observations\": false,\r\n  \"contains_live_backend\": false,\r\n  \"contains_live_probes\": false,\r\n  \"created_by\": \"static_resolver_demo_snapshots_v0\",\r\n  \"data_root\": \"public_site/data\",\r\n  \"demo_count\": 8,\r\n  \"demo_root\": \"public_site/demo\",\r\n  \"errors\": [],\r\n  \"file_count\": 11,\r\n  \"files\": [\r\n    \"demo/README.txt\",\r\n    \"demo/absence-example.html\",\r\n    \"demo/comparison-example.html\",\r\n    \"demo/data/demo_snapshots.json\",\r\n    \"demo/eval-summary.html\",\r\n    \"demo/index.html\",\r\n    \"demo/query-plan-windows-7-apps.html\",\r\n    \"demo/result-article-scan.html\",\r\n    \"demo/result-firefox-xp.html\",\r\n    \"demo/result-member-driver-inside-support-cd.html\",\r\n    \"demo/source-exampl ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_static_host_readiness.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Static host readiness validation\r\nstatus: valid\r\ngithub_pages_project_base_path: /eureka/\r\ncustom_domain_base_path: /\r\nroot_relative_link_count: 0\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_static_host_readiness.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"created_by\": \"static_host_readiness_validator_v0\",\r\n  \"custom_domain_base_path\": \"/\",\r\n  \"deployment_targets\": \"control/inventory/publication/deployment_targets.json\",\r\n  \"domain_plan\": \"control/inventory/publication/domain_plan.json\",\r\n  \"errors\": [],\r\n  \"github_pages_project_base_path\": \"/eureka/\",\r\n  \"no_cname_file_committed\": true,\r\n  \"no_dns_changes_performed\": true,\r\n  \"no_domain_configured\": true,\r\n  \"provider_config_paths_checked\": [\r\n    \"CNAME\",\r\n    \"public_site/CNAME\",\r\n    \".cloudflare\",\r\n    \".vercel\",\r\n    \"wrangler.toml\",\r\n    \"vercel.json\",\r\n    \"netlify.toml\",\r\n    \"render.yaml\",\r\n    \"fly.toml\",\r\n    \"Dockerfile\",\r\n    \"docker-compose.yml\"\r\n  ],\r\n  \"repo_root\": \"<local-path>",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_live_backend_handoff.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Live backend handoff validation\r\nstatus: valid\r\nreserved_endpoints: 11\r\nregistered_endpoints: 11\r\ndisabled_live_capabilities: 4\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_live_backend_handoff.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"api_v1_static_links\": [],\r\n  \"capability_inventory\": \"control/inventory/publication/surface_capabilities.json\",\r\n  \"created_by\": \"live_backend_handoff_validator_v0\",\r\n  \"disabled_live_capabilities\": [\r\n    \"internet_archive_live_probe\",\r\n    \"live_backend\",\r\n    \"live_probe_gateway\",\r\n    \"live_search\"\r\n  ],\r\n  \"errors\": [],\r\n  \"handoff_inventory\": \"control/inventory/publication/live_backend_handoff.json\",\r\n  \"registered_endpoints\": [\r\n    \"/api/v1/absence\",\r\n    \"/api/v1/compare\",\r\n    \"/api/v1/evidence/{evidence_id}\",\r\n    \"/api/v1/live-probe\",\r\n    \"/api/v1/object/{object_id}\",\r\n    \"/api/v1/query-plan\",\r\n    \"/api/v1/result/{result_id}\",\r\n    \"/api/v1/search\",\r\n    \"/api/v1/source/ ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_live_probe_gateway.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.3s",
+      "output_summary": "Live probe gateway validation\r\nstatus: valid\r\ncandidate_sources: 9\r\ndisabled_sources: 9\r\nwrapper_live_probes_enabled: False\r\nwrapper_live_internet_archive_enabled: False\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_live_probe_gateway.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.4s",
+      "output_summary": "{\r\n  \"candidate_sources\": [\r\n    \"github_releases_metadata\",\r\n    \"internet_archive_item_metadata\",\r\n    \"internet_archive_metadata\",\r\n    \"npm_package_metadata\",\r\n    \"pypi_package_metadata\",\r\n    \"software_heritage_metadata\",\r\n    \"wayback_availability\",\r\n    \"wayback_cdx_metadata\",\r\n    \"wikidata_metadata\"\r\n  ],\r\n  \"created_by\": \"live_probe_gateway_validator_v0\",\r\n  \"disabled_sources\": [\r\n    \"github_releases_metadata\",\r\n    \"internet_archive_item_metadata\",\r\n    \"internet_archive_metadata\",\r\n    \"npm_package_metadata\",\r\n    \"pypi_package_metadata\",\r\n    \"software_heritage_metadata\",\r\n    \"wayback_availability\",\r\n    \"wayback_cdx_metadata\",\r\n    \"wikidata_metadata\"\r\n  ],\r\n  \"errors\": [],\r ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_compatibility_surfaces.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Compatibility surface validation\r\nstatus: valid\r\nsurface_count: 27\r\nroute_surface_count: 13\r\nimplemented_static_surfaces: 6\r\nfuture_disabled_surfaces: 7\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_compatibility_surfaces.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"created_by\": \"compatibility_surface_strategy_validator_v0\",\r\n  \"errors\": [],\r\n  \"future_disabled_surfaces\": [\r\n    \"api\",\r\n    \"app\",\r\n    \"live_backend\",\r\n    \"live_probe_gateway\",\r\n    \"native_client\",\r\n    \"relay\",\r\n    \"snapshots\"\r\n  ],\r\n  \"implemented_static_surfaces\": [\r\n    \"data\",\r\n    \"demo\",\r\n    \"files\",\r\n    \"lite\",\r\n    \"public_static_site\",\r\n    \"text\"\r\n  ],\r\n  \"repo_root\": \"<local-path>\",\r\n  \"route_surface_count\": 13,\r\n  \"status\": \"valid\",\r\n  \"surface_capabilities\": \"control/inventory/publication/surface_capabilities.json\",\r\n  \"surface_count\": 27,\r\n  \"surface_route_matrix\": \"control/inventory/publication/surface_route_matrix.json\",\r\n  \"warnings\": []\r\n}\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/generate_static_snapshot.py --check",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Static snapshot generation\r\nstatus: valid\r\noutput_root: snapshots/examples/static_snapshot_v0\r\ncheck_mode: true\r\nfiles: 12\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/generate_static_snapshot.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"checksum_file\": \"CHECKSUMS.SHA256\",\r\n  \"contains_external_observations\": false,\r\n  \"contains_live_backend\": false,\r\n  \"contains_live_probes\": false,\r\n  \"contains_real_binaries\": false,\r\n  \"created_by\": \"signed_snapshot_format_v0\",\r\n  \"data_root\": \"public_site/data\",\r\n  \"errors\": [],\r\n  \"file_count\": 12,\r\n  \"files\": [\r\n    \"BUILD_MANIFEST.json\",\r\n    \"CHECKSUMS.SHA256\",\r\n    \"EVAL_SUMMARY.json\",\r\n    \"PAGE_REGISTRY.json\",\r\n    \"README_FIRST.txt\",\r\n    \"ROUTE_SUMMARY.json\",\r\n    \"SIGNATURES.README.txt\",\r\n    \"SNAPSHOT_MANIFEST.json\",\r\n    \"SOURCE_SUMMARY.json\",\r\n    \"data/README.txt\",\r\n    \"index.html\",\r\n    \"index.txt\"\r\n  ],\r\n  \"generated_by\": \"scripts/generate_static_snapshot.py\",\r\n  \" ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_static_snapshot.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Static snapshot validation\r\nstatus: valid\r\nsnapshot_root: snapshots/examples/static_snapshot_v0\r\nchecksum_entries: 11\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_static_snapshot.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"checksum_entries\": [\r\n    \"BUILD_MANIFEST.json\",\r\n    \"EVAL_SUMMARY.json\",\r\n    \"PAGE_REGISTRY.json\",\r\n    \"README_FIRST.txt\",\r\n    \"ROUTE_SUMMARY.json\",\r\n    \"SIGNATURES.README.txt\",\r\n    \"SNAPSHOT_MANIFEST.json\",\r\n    \"SOURCE_SUMMARY.json\",\r\n    \"data/README.txt\",\r\n    \"index.html\",\r\n    \"index.txt\"\r\n  ],\r\n  \"created_by\": \"static_snapshot_validator_v0\",\r\n  \"errors\": [],\r\n  \"json_files\": [\r\n    \"BUILD_MANIFEST.json\",\r\n    \"EVAL_SUMMARY.json\",\r\n    \"PAGE_REGISTRY.json\",\r\n    \"ROUTE_SUMMARY.json\",\r\n    \"SNAPSHOT_MANIFEST.json\",\r\n    \"SOURCE_SUMMARY.json\"\r\n  ],\r\n  \"required_files\": [\r\n    \"BUILD_MANIFEST.json\",\r\n    \"CHECKSUMS.SHA256\",\r\n    \"EVAL_SUMMARY.json\",\r\n    \"PAGE_REGISTRY.json\", ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_external_baseline_observations.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Manual external baseline observations\r\nstatus: valid\r\nquery_count: 64\r\nobservation_files: 1\r\n\r\nSystems\r\n- google_web_search: pending=64, observed=0, expected_queries=64\r\n- internet_archive_full_text_search: pending=64, observed=0, expected_queries=64\r\n- internet_archive_metadata_search: pending=64, observed=0, expected_queries=64\r\n\r\nBatches\r\n- batch_0: pending=39, observed=0, expected=39, completion=0.0%\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_external_baseline_observations.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.3s",
+      "output_summary": "{\r\n  \"batches\": {\r\n    \"batch_0\": {\r\n      \"completion_percent\": 0.0,\r\n      \"directory\": \"<local-path>\",\r\n      \"expected_observation_count\": 39,\r\n      \"missing_observation_slots\": [],\r\n      \"next_pending_slots\": [\r\n        {\r\n          \"batch_id\": \"batch_0\",\r\n          \"observation_id\": \"batch_0::windows_7_apps::google_web_search\",\r\n          \"observation_status\": \"pending_manual_observation\",\r\n          \"query_id\": \"windows_7_apps\",\r\n          \"query_text\": \"Windows 7 apps\",\r\n          \"system_id\": \"google_web_search\"\r\n        },\r\n        {\r\n          \"batch_id\": \"batch_0\",\r\n          \"observation_id\": \"batc ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "External baseline observation status\r\nstatus: ready\r\nquery_count: 64\r\nglobal_pending_slots: 192\r\nglobal_observed_slots: 0\r\n\r\nSystems\r\n- google_web_search: pending=64, observed=0, expected_queries=64\r\n- internet_archive_full_text_search: pending=64, observed=0, expected_queries=64\r\n- internet_archive_metadata_search: pending=64, observed=0, expected_queries=64\r\n\r\nBatches\r\n- batch_0: pending=39, observed=0, expected=39, completion=0.0%\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"batches\": {\r\n    \"batch_0\": {\r\n      \"completion_percent\": 0.0,\r\n      \"directory\": \"<local-path>\",\r\n      \"expected_observation_count\": 39,\r\n      \"missing_observation_slots\": [],\r\n      \"next_pending_slots\": [\r\n        {\r\n          \"batch_id\": \"batch_0\",\r\n          \"observation_id\": \"batch_0::windows_7_apps::google_web_search\",\r\n          \"observation_status\": \"pending_manual_observation\",\r\n          \"query_id\": \"windows_7_apps\",\r\n          \"query_text\": \"Windows 7 apps\",\r\n          \"system_id\": \"google_web_search\"\r\n        },\r\n        {\r\n          \"batch_id\": \"batch_0\",\r\n          \"observation_id\": \"batc ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/list_external_baseline_observations.py --batch batch_0",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Manual external baseline observation slots\r\nstatus: ready\r\nslot_count: 39\r\nbatch_0 / windows_7_apps / google_web_search / pending_manual_observation\r\nbatch_0 / windows_7_apps / internet_archive_metadata_search / pending_manual_observation\r\nbatch_0 / windows_7_apps / internet_archive_full_text_search / pending_manual_observation\r\nbatch_0 / windows_7_portable_apps_archive / google_web_search / pending_manual_observation\r\nbatch_0 / windows_7_portable_apps_archive / internet_archive_metadata_search / pending_manual_observation\r\nbatch_0 / windows_7_portable_apps_archive / internet_archive_full_text_search / pending_manual_observation\r\nbatch_0 / latest_firefox_before_xp_support_ended / google_web_ ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/list_external_baseline_observations.py --batch batch_0 --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"created_by\": \"manual_observation_entry_helper_v0\",\r\n  \"errors\": [],\r\n  \"filters\": {\r\n    \"batch\": \"batch_0\",\r\n    \"query_id\": null,\r\n    \"status\": null,\r\n    \"system_id\": null\r\n  },\r\n  \"slot_count\": 39,\r\n  \"slots\": [\r\n    {\r\n      \"batch_id\": \"batch_0\",\r\n      \"observation_id\": \"batch_0::windows_7_apps::google_web_search\",\r\n      \"observation_status\": \"pending_manual_observation\",\r\n      \"query_id\": \"windows_7_apps\",\r\n      \"query_text\": \"Windows 7 apps\",\r\n      \"system_id\": \"google_web_search\"\r\n    },\r\n    {\r\n      \"batch_id\": \"batch_0\",\r\n      \"observation_id\": \"batch_0::windows_7_apps::internet_archive_metadata_search\",\r\n      \"observation_status\": \"pending_manual_observation\",\r\n    ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/create_external_baseline_observation.py --batch batch_0 --query-id windows_7_apps --system-id google_web_search --stdout",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"browser_or_tool\": null,\r\n  \"collection_method\": \"pending_manual_observation\",\r\n  \"comparison_notes\": [],\r\n  \"created_by\": \"manual_observation_entry_helper_v0\",\r\n  \"evidence_limitations\": [\r\n    \"Generated pending entry only; human observation is required before observed status.\"\r\n  ],\r\n  \"exact_query_submitted\": null,\r\n  \"failure_modes\": [\r\n    \"external_baseline_pending\"\r\n  ],\r\n  \"filters_or_scope\": null,\r\n  \"first_useful_result_rank\": null,\r\n  \"first_useful_result_reason\": null,\r\n  \"location_context_optional\": null,\r\n  \"next_eureka_work\": [],\r\n  \"notes\": [\r\n    \"Created by Manual Observation Entry Helper v0 for later human editing.\",\r\n    \"Do not mark observed until manual top result ...",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/check_rust_query_planner_parity.py",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "Rust query planner parity candidate check\r\nstatus: skipped_cargo_unavailable\r\ncase_count: 16\r\nstructure: passed\r\ncargo: skipped\r\ncargo_reason: Cargo is not available in PATH.\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/check_rust_query_planner_parity.py --json",
+      "exit_code": 0,
+      "notes": "exit=0; duration=0.2s",
+      "output_summary": "{\r\n  \"cargo\": {\r\n    \"cargo_available\": false,\r\n    \"reason\": \"Cargo is not available in PATH.\",\r\n    \"status\": \"skipped\"\r\n  },\r\n  \"check_id\": \"rust_query_planner_parity_candidate_v0\",\r\n  \"python_remains_oracle\": true,\r\n  \"runtime_wiring_allowed\": false,\r\n  \"status\": \"skipped_cargo_unavailable\",\r\n  \"structure\": {\r\n    \"case_count\": 16,\r\n    \"errors\": [],\r\n    \"status\": \"passed\"\r\n  }\r\n}\r\n",
+      "status": "passed"
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "exit_code": null,
+      "notes": "tool unavailable: cargo",
+      "output_summary": "tool unavailable: cargo\r\n",
+      "status": "unavailable"
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "exit_code": null,
+      "notes": "tool unavailable: cargo",
+      "output_summary": "tool unavailable: cargo\r\n",
+      "status": "unavailable"
+    },
+    {
+      "command": "python scripts/validate_post_queue_checkpoint.py",
+      "exit_code": 0,
+      "notes": "post-generation focused checkpoint verification passed",
+      "output_summary": "passed",
+      "status": "passed"
+    },
+    {
+      "command": "python scripts/validate_post_queue_checkpoint.py --json",
+      "exit_code": 0,
+      "notes": "post-generation focused checkpoint verification passed",
+      "output_summary": "passed",
+      "status": "passed"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_post_queue_state_checkpoint tests.scripts.test_validate_post_queue_checkpoint",
+      "exit_code": 0,
+      "notes": "post-generation focused checkpoint verification passed",
+      "output_summary": "passed",
+      "status": "passed"
+    }
+  ],
+  "command_summary": {
+    "passed": 61,
+    "unavailable": 2
+  },
+  "commit_sha": "bdb231776e52399ab0b8ed0782b9385f795d417c",
+  "compatibility_status": {
+    "capability_count": 27,
+    "future_deferred_surfaces": [
+      "snapshots",
+      "relay",
+      "native_client",
+      "app",
+      "api/live_backend"
+    ],
+    "implemented_static_seed_surfaces": [
+      "lite",
+      "text",
+      "files",
+      "data",
+      "demo"
+    ],
+    "strategy_doc": "docs/architecture/COMPATIBILITY_SURFACES.md"
+  },
+  "created_by_slice": "post_queue_state_checkpoint_v0",
+  "current_milestones": {
+    "blocked": [
+      "Optional Cargo workspace verification is unavailable because cargo is not in PATH."
+    ],
+    "implemented": [
+      "Public Publication Plane Contracts v0",
+      "GitHub Pages Deployment Enablement v0",
+      "Static Site Generation Migration v0",
+      "Generated Public Data Summaries v0",
+      "Lite/Text/Files Seed Surfaces v0",
+      "Static Resolver Demo Snapshots v0",
+      "Custom Domain / Alternate Host Readiness v0",
+      "Live Backend Handoff Contract v0",
+      "Live Probe Gateway Contract v0",
+      "Rust Query Planner Parity Candidate v0",
+      "Compatibility Surface Strategy v0",
+      "Signed Snapshot Format v0"
+    ],
+    "missing": [],
+    "partially_implemented": []
+  },
+  "eval_status": {
+    "archive_resolution": {
+      "fixture_backed": true,
+      "notes": [
+        "Internal hard eval satisfaction is fixture-backed local regression evidence.",
+        "This summary does not claim production relevance or global recall."
+      ],
+      "source_command": "python scripts/run_archive_resolution_evals.py --json",
+      "status_counts": {
+        "satisfied": 6
+      },
+      "task_count": 6
+    },
+    "external_baselines": {
+      "batch_0_expected_observation_count": 39,
+      "batch_0_observed_count": 0,
+      "batch_0_pending_count": 39,
+      "global_observed_count": 0,
+      "global_pending_count": 192,
+      "source_command": "python scripts/report_external_baseline_status.py --json"
+    },
+    "search_usefulness": {
+      "capability_gap_count": 9,
+      "external_baseline_pending_counts": {
+        "google": 64,
+        "internet_archive_full_text": 64,
+        "internet_archive_metadata": 64
+      },
+      "failure_mode_counts": {
+        "absence_reasoning_gap": 2,
+        "actionability_gap": 2,
+        "compatibility_evidence_gap": 25,
+        "decomposition_gap": 12,
+        "external_baseline_pending": 64,
+        "identity_cluster_gap": 13,
+        "index_gap": 3,
+        "live_source_gap": 10,
+        "member_access_gap": 12,
+        "planner_gap": 24,
+        "query_interpretation_gap": 21,
+        "ranking_gap": 8,
+        "representation_gap": 14,
+        "source_coverage_gap": 49,
+        "surface_ux_gap": 4
+      },
+      "query_count": 64,
+      "source_command": "python scripts/run_search_usefulness_audit.py --json",
+      "source_gap_count": 26,
+      "status_counts": {
+        "capability_gap": 9,
+        "covered": 5,
+        "partial": 22,
+        "source_gap": 26,
+        "unknown": 2
+      }
+    }
+  },
+  "explicit_deferrals": [
+    "No Internet Archive live probe until explicit approval.",
+    "No Google scraping or automated Google querying.",
+    "No live backend hosting or production API guarantees.",
+    "No production signed snapshots, real signing keys, or executable mirrors/downloads.",
+    "No relay services, FTP/SMB/WebDAV bridge, or native app projects yet.",
+    "No Rust runtime replacement or wiring into Python/web/CLI/API surfaces.",
+    "No auth/accounts/TLS/rate limiting/process manager work in this checkpoint."
+  ],
+  "final_recommendation": "Run Relay Surface Design v0 next as a contract/design-only Codex task, while Manual Observation Batch 0 remains human-operated parallel work.",
+  "generated_at_note": "Generated on 2026-04-28 from local repo state; time-of-day is not used as evidence.",
+  "git_status": "## main...origin/main",
+  "human_operated_work": [
+    "Manual Observation Batch 0 Execution: humans observe Google web search, Internet Archive metadata search, and Internet Archive full-text/OCR search slots and record evidence manually.",
+    "GitHub Pages deployment run review: check Actions/UI before claiming a public deployment succeeded.",
+    "Any custom domain/DNS/provider configuration: requires operator action and signoff outside this checkpoint.",
+    "Any live source probe approval: requires explicit human review after Live Probe Gateway Contract."
+  ],
+  "key_risks": [
+    "Public route/data contract drift between inventories, public_site, and site/dist.",
+    "Accidental production-readiness or deployment-success claims without evidence.",
+    "External baseline fabrication or accidental automation of Google/Internet Archive observations.",
+    "Placeholder source overclaiming as implemented source behavior.",
+    "Live probe overreach before gateway policy, operator approval, and abuse controls are enforced.",
+    "Hard eval weakening disguised as milestone progress.",
+    "Rust divergence from Python oracle without recorded allowed divergence.",
+    "Base-path breakage under /eureka/ or root-relative internal links in static artifacts.",
+    "Generated output drift across public_site, site/dist, public data, demos, files, and snapshots.",
+    "Private path leakage from reports, public data, snapshots, or baseline tooling.",
+    "Docs/test registry drift after rapid queue progress."
+  ],
+  "milestone_rows": [
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "control/inventory/publication/",
+      "milestone": "Public Publication Plane Contracts v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python scripts/validate_publication_inventory.py"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": ".github/workflows/pages.yml",
+      "milestone": "GitHub Pages Deployment Enablement v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python scripts/check_github_pages_static_artifact.py"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "site/build.py",
+      "milestone": "Static Site Generation Migration v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python site/build.py --check"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "public_site/data/site_manifest.json",
+      "milestone": "Generated Public Data Summaries v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python scripts/generate_public_data_summaries.py --check"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "public_site/lite/",
+      "milestone": "Lite/Text/Files Seed Surfaces v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python scripts/generate_compatibility_surfaces.py --check"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "public_site/demo/",
+      "milestone": "Static Resolver Demo Snapshots v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python scripts/generate_static_resolver_demos.py --check"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "control/inventory/publication/domain_plan.json",
+      "milestone": "Custom Domain / Alternate Host Readiness v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python scripts/validate_static_host_readiness.py"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "control/inventory/publication/live_backend_handoff.json",
+      "milestone": "Live Backend Handoff Contract v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python scripts/validate_live_backend_handoff.py"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "control/inventory/publication/live_probe_gateway.json",
+      "milestone": "Live Probe Gateway Contract v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python scripts/validate_live_probe_gateway.py"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "crates/eureka-core/src/query_planner.rs",
+      "milestone": "Rust Query Planner Parity Candidate v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented; optional Cargo unavailable",
+      "validation_command": "python scripts/check_rust_query_planner_parity.py"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "docs/architecture/COMPATIBILITY_SURFACES.md",
+      "milestone": "Compatibility Surface Strategy v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python scripts/validate_compatibility_surfaces.py"
+    },
+    {
+      "current_limitations": "Pre-product; no production readiness, live probes, external observations, or deployment success claim unless explicitly evidenced.",
+      "evidence": "snapshots/examples/static_snapshot_v0/",
+      "milestone": "Signed Snapshot Format v0",
+      "next_follow_up": "See NEXT_MILESTONE_PLAN.md.",
+      "status": "implemented",
+      "validation_command": "python scripts/validate_static_snapshot.py"
+    }
+  ],
+  "next_recommended_milestones": [
+    {
+      "mode": "Codex-safe",
+      "name": "Relay Surface Design v0",
+      "rationale": "Signed Snapshot Format v0 exists; relay can now be designed as contract/policy only without runtime implementation."
+    },
+    {
+      "mode": "Codex-safe",
+      "name": "Rust Source Registry Parity Catch-up v0",
+      "rationale": "Rust source parity should catch up to expanded Python source/capability shape before broader Rust work."
+    },
+    {
+      "mode": "Codex-safe planning",
+      "name": "Rust Local Index Parity Planning v0",
+      "rationale": "Plan parity around member, lane, user-cost, compatibility, and article/scan shapes before implementation."
+    },
+    {
+      "mode": "Codex-safe",
+      "name": "Signed Snapshot Consumer Contract v0",
+      "rationale": "Define how old clients/native/relay would consume snapshots without building clients."
+    },
+    {
+      "mode": "Codex-safe",
+      "name": "Public Data Contract Stability Review v0",
+      "rationale": "Review whether stable_draft public JSON is ready for broader consumers."
+    },
+    {
+      "mode": "Codex-safe",
+      "name": "Generated Public Data Drift Guard v0",
+      "rationale": "Strengthen checks for public data and static output drift across generators."
+    },
+    {
+      "mode": "Human-operated",
+      "name": "Manual Observation Batch 0 Execution",
+      "rationale": "Requires human observation of external systems; no automation or scraping."
+    },
+    {
+      "mode": "Blocked until observations exist",
+      "name": "Search Usefulness Baseline Comparison Report v0",
+      "rationale": "Needs real observed external baseline records."
+    },
+    {
+      "mode": "Explicit approval only",
+      "name": "Internet Archive Live Probe v0",
+      "rationale": "Live external source behavior must wait for human approval after gateway review."
+    },
+    {
+      "mode": "Operator-signoff only",
+      "name": "Public Alpha Hosted Rehearsal v0",
+      "rationale": "Requires hosting/settings evidence and must not be inferred from repo config."
+    }
+  ],
+  "origin_sync_status": "synced",
+  "public_alpha_status": {
+    "blocked_routes": [
+      {
+        "classification": "blocked_public_alpha",
+        "local_path_parameters": [
+          "store_root"
+        ],
+        "method": "GET",
+        "reason": "store_root is a caller-provided local filesystem control.",
+        "route_pattern": "/api/resolve?store_root",
+        "surface_type": "api"
+      },
+      {
+        "classification": "blocked_public_alpha",
+        "local_path_parameters": [
+          "store_root"
+        ],
+        "method": "GET",
+        "reason": "store_root is a caller-provided local filesystem control.",
+        "route_pattern": "/api/action-plan?store_root",
+        "surface_type": "api"
+      },
+      {
+        "classification": "blocked_public_alpha",
+        "local_path_parameters": [
+          "index_path"
+        ],
+        "method": "GET",
+        "reason": "index_path is a caller-provided local filesystem control.",
+        "route_pattern": "/evals/archive-resolution?index_path",
+        "surface_type": "html"
+      },
+      {
+        "classification": "blocked_public_alpha",
+        "local_path_parameters": [
+          "index_path"
+        ],
+        "method": "GET",
+        "reason": "index_path is a caller-provided local filesystem control.",
+        "route_pattern": "/api/evals/archive-resolution?index_path",
+        "surface_type": "api"
+      },
+      {
+        "classification": "blocked_public_alpha",
+        "local_path_parameters": [
+          "output"
+        ],
+        "method": "GET",
+        "reason": "output is treated as an arbitrary local filesystem control.",
+        "route_pattern": "/*?output",
+        "surface_type": "debug/demo"
+      }
+    ],
+    "mode": "public_alpha local wrapper only",
+    "production_blockers": [
+      "No hosted backend deployment",
+      "No production approval",
+      "No auth/TLS/rate limiting/process manager",
+      "Review-required routes remain review-required"
+    ],
+    "review_required_routes": [
+      {
+        "classification": "review_required",
+        "local_path_parameters": [],
+        "method": "GET",
+        "reason": "Response-only manifest export is not a local filesystem write, but it exposes structured resolution metadata.",
+        "route_pattern": "/actions/export-resolution-manifest",
+        "surface_type": "html"
+      },
+      {
+        "classification": "review_required",
+        "local_path_parameters": [],
+        "method": "GET",
+        "reason": "Response-only manifest export is not a local filesystem write, but it exposes structured resolution metadata.",
+        "route_pattern": "/api/export/manifest",
+        "surface_type": "api"
+      }
+    ],
+    "route_counts": {
+      "blocked_public_alpha": 5,
+      "deferred": 0,
+      "local_dev_only": 49,
+      "review_required": 2,
+      "safe_public_alpha": 33,
+      "total": 89
+    },
+    "wrapper_config": "valid; deployment_approved=false; deployment_performed=false; production_ready=false; live_probes_enabled=false; live_internet_archive_enabled=false"
+  },
+  "publication_status": {
+    "generated_public_data": "implemented static summaries under public_site/data/",
+    "github_pages_status": "workflow configured for public_site; Actions deployment status unverified in this checkpoint",
+    "live_backend_status": {
+      "auth_policy_status": "unresolved",
+      "cors_policy_status": "unresolved",
+      "handoff_id": "eureka-live-backend-handoff",
+      "live_probe_dependency_status": "requires_live_probe_gateway_contract_v0",
+      "no_deployment_performed": true,
+      "no_live_backend_implemented": true,
+      "public_alpha_backend_future": true,
+      "rate_limit_policy_status": "unresolved",
+      "reserved_endpoint_count": 11,
+      "reserved_endpoints": [
+        {
+          "live_probe_related": false,
+          "method": "GET",
+          "path_template": "/api/v1/status",
+          "public_alpha_allowed": true,
+          "static_handoff_allowed": true,
+          "status": "planned"
+        },
+        {
+          "live_probe_related": false,
+          "method": "GET",
+          "path_template": "/api/v1/search",
+          "public_alpha_allowed": false,
+          "static_handoff_allowed": true,
+          "status": "planned"
+        },
+        {
+          "live_probe_related": false,
+          "method": "GET",
+          "path_template": "/api/v1/query-plan",
+          "public_alpha_allowed": false,
+          "static_handoff_allowed": true,
+          "status": "planned"
+        },
+        {
+          "live_probe_related": false,
+          "method": "GET",
+          "path_template": "/api/v1/sources",
+          "public_alpha_allowed": false,
+          "static_handoff_allowed": true,
+          "status": "planned"
+        },
+        {
+          "live_probe_related": false,
+          "method": "GET",
+          "path_template": "/api/v1/source/{source_id}",
+          "public_alpha_allowed": false,
+          "static_handoff_allowed": true,
+          "status": "planned"
+        },
+        {
+          "live_probe_related": false,
+          "method": "GET",
+          "path_template": "/api/v1/evidence/{evidence_id}",
+          "public_alpha_allowed": false,
+          "static_handoff_allowed": true,
+          "status": "planned"
+        },
+        {
+          "live_probe_related": false,
+          "method": "GET",
+          "path_template": "/api/v1/object/{object_id}",
+          "public_alpha_allowed": false,
+          "static_handoff_allowed": true,
+          "status": "planned"
+        },
+        {
+          "live_probe_related": false,
+          "method": "GET",
+          "path_template": "/api/v1/result/{result_id}",
+          "public_alpha_allowed": false,
+          "static_handoff_allowed": true,
+          "status": "planned"
+        },
+        {
+          "live_probe_related": false,
+          "method": "GET",
+          "path_template": "/api/v1/absence",
+          "public_alpha_allowed": false,
+          "static_handoff_allowed": true,
+          "status": "planned"
+        },
+        {
+          "live_probe_related": false,
+          "method": "GET",
+          "path_template": "/api/v1/compare",
+          "public_alpha_allowed": false,
+          "static_handoff_allowed": true,
+          "status": "planned"
+        },
+        {
+          "live_probe_related": true,
+          "method": "POST",
+          "path_template": "/api/v1/live-probe",
+          "public_alpha_allowed": false,
+          "static_handoff_allowed": false,
+          "status": "blocked"
+        }
+      ],
+      "route_prefix": "/api/v1",
+      "status": "implemented_contract_only"
+    },
+    "live_probe_status": {
+      "allow_arbitrary_url_fetch": false,
+      "allow_downloads": false,
+      "candidate_source_count": 9,
+      "candidate_sources": [
+        {
+          "allowed_modes": [
+            "metadata_search"
+          ],
+          "cache_required": true,
+          "default_result_cap": 10,
+          "default_timeout_ms": 5000,
+          "evidence_required": true,
+          "id": "internet_archive_metadata",
+          "live_supported_now": false,
+          "requires_operator_enable": true,
+          "status": "future_disabled"
+        },
+        {
+          "allowed_modes": [
+            "item_metadata",
+            "file_listing"
+          ],
+          "cache_required": true,
+          "default_result_cap": 5,
+          "default_timeout_ms": 5000,
+          "evidence_required": true,
+          "id": "internet_archive_item_metadata",
+          "live_supported_now": false,
+          "requires_operator_enable": true,
+          "status": "future_disabled"
+        },
+        {
+          "allowed_modes": [
+            "availability_check"
+          ],
+          "cache_required": true,
+          "default_result_cap": 5,
+          "default_timeout_ms": 5000,
+          "evidence_required": true,
+          "id": "wayback_availability",
+          "live_supported_now": false,
+          "requires_operator_enable": true,
+          "status": "future_disabled"
+        },
+        {
+          "allowed_modes": [
+            "metadata_search",
+            "availability_check"
+          ],
+          "cache_required": true,
+          "default_result_cap": 10,
+          "default_timeout_ms": 5000,
+          "evidence_required": true,
+          "id": "wayback_cdx_metadata",
+          "live_supported_now": false,
+          "requires_operator_enable": true,
+          "status": "future_disabled"
+        },
+        {
+          "allowed_modes": [
+            "item_metadata",
+            "file_listing"
+          ],
+          "cache_required": true,
+          "default_result_cap": 10,
+          "default_timeout_ms": 5000,
+          "evidence_required": true,
+          "id": "github_releases_metadata",
+          "live_supported_now": false,
+          "requires_operator_enable": true,
+          "status": "future_disabled"
+        },
+        {
+          "allowed_modes": [
+            "item_metadata",
+            "availability_check"
+          ],
+          "cache_required": true,
+          "default_result_cap": 10,
+          "default_timeout_ms": 5000,
+          "evidence_required": true,
+          "id": "software_heritage_metadata",
+          "live_supported_now": false,
+          "requires_operator_enable": true,
+          "status": "future_disabled"
+        },
+        {
+          "allowed_modes": [
+            "item_metadata",
+            "metadata_search"
+          ],
+          "cache_required": true,
+          "default_result_cap": 10,
+          "default_timeout_ms": 5000,
+          "evidence_required": true,
+          "id": "pypi_package_metadata",
+          "live_supported_now": false,
+          "requires_operator_enable": true,
+          "status": "future_disabled"
+        },
+        {
+          "allowed_modes": [
+            "item_metadata",
+            "metadata_search"
+          ],
+          "cache_required": true,
+          "default_result_cap": 10,
+          "default_timeout_ms": 5000,
+          "evidence_required": true,
+          "id": "npm_package_metadata",
+          "live_supported_now": false,
+          "requires_operator_enable": true,
+          "status": "future_disabled"
+        },
+        {
+          "allowed_modes": [
+            "metadata_search",
+            "item_metadata"
+          ],
+          "cache_required": true,
+          "default_result_cap": 10,
+          "default_timeout_ms": 5000,
+          "evidence_required": true,
+          "id": "wikidata_metadata",
+          "live_supported_now": false,
+          "requires_operator_enable": true,
+          "status": "future_disabled"
+        }
+      ],
+      "enabled_by_default": false,
+      "gateway_id": "eureka-live-probe-gateway",
+      "manual_only_sources": [
+        {
+          "id": "google_web_search",
+          "live_probe_candidate": false,
+          "notes": "Google remains a human-operated manual baseline path only. Eureka does not scrape Google or automate Google searches.",
+          "status": "manual_external_baseline"
+        }
+      ],
+      "no_live_probes_implemented": true,
+      "no_network_calls_performed": true,
+      "public_alpha_default_enabled": false,
+      "status": "implemented_contract_only_runtime_disabled"
+    },
+    "publication_contracts": "present under control/inventory/publication/",
+    "snapshot_status": {
+      "contains_real_binaries": false,
+      "production_signed_release": false,
+      "public_snapshots_route_status": "future_deferred",
+      "real_signing_keys_present": false,
+      "seed_example_root": "snapshots/examples/static_snapshot_v0",
+      "snapshot_contract_id": "eureka-static-snapshot-format",
+      "snapshot_format_version": "0.1.0",
+      "status": "implemented_contract_seed_example"
+    },
+    "static_host_status": [
+      {
+        "artifact_root": "public_site",
+        "backend_supported": false,
+        "base_path": "/eureka/",
+        "id": "github_pages_project",
+        "live_probes_supported": false,
+        "provider_config_committed": false,
+        "status": "implemented"
+      },
+      {
+        "artifact_root": "public_site",
+        "backend_supported": false,
+        "base_path": "/",
+        "id": "github_pages_custom_domain",
+        "live_probes_supported": false,
+        "provider_config_committed": false,
+        "status": "future"
+      },
+      {
+        "artifact_root": "public_site",
+        "backend_supported": false,
+        "base_path": "/",
+        "id": "cloudflare_pages_static",
+        "live_probes_supported": false,
+        "provider_config_committed": false,
+        "status": "future"
+      },
+      {
+        "artifact_root": "public_site",
+        "backend_supported": false,
+        "base_path": "/",
+        "id": "generic_static_host",
+        "live_probes_supported": false,
+        "provider_config_committed": false,
+        "status": "future"
+      },
+      {
+        "artifact_root": "public_site",
+        "backend_supported": false,
+        "base_path": "relative",
+        "id": "local_file_preview",
+        "live_probes_supported": false,
+        "provider_config_committed": false,
+        "status": "planned"
+      }
+    ]
+  },
+  "repo": "Julesc013/eureka",
+  "report_id": "post_queue_state_checkpoint_v0",
+  "rust_status": {
+    "cargo": "unavailable in this environment",
+    "python_remains_oracle": true,
+    "query_planner_parity": "isolated candidate present; Python structure/parity checks passed",
+    "runtime_wiring": "not wired into Python runtime, web, CLI, HTTP API, or surfaces",
+    "source_registry_parity": "isolated candidate present from prior work"
+  },
+  "snapshot_status": {
+    "contract": {
+      "checksum_policy": {
+        "algorithm": "sha256",
+        "file": "CHECKSUMS.SHA256",
+        "integrity_limitations": [
+          "Checksums detect accidental corruption and local drift.",
+          "Checksums delivered over the same untrusted channel are not a complete authenticity proof."
+        ],
+        "required": true,
+        "scope": "all committed seed snapshot files except CHECKSUMS.SHA256 itself",
+        "sort_order": "lexicographic_relative_paths"
+      },
+      "client_profiles": [
+        "snapshot",
+        "file_tree",
+        "text",
+        "native_client",
+        "relay"
+      ],
+      "contains_external_observations": false,
+      "contains_live_backend": false,
+      "contains_live_probes": false,
+      "contains_real_binaries": false,
+      "created_by_slice": "signed_snapshot_format_v0",
+      "file_tree_policy": {
+        "no_executable_downloads": true,
+        "no_software_mirror": true,
+        "public_site_files_surface": "public_site/files",
+        "public_snapshots_route": "/snapshots/",
+        "public_snapshots_route_status": "future_deferred",
+        "snapshot_example_root": "snapshots/examples/static_snapshot_v0"
+      },
+      "notes": [
+        "Signed Snapshot Format v0 defines a static/offline seed format and example only.",
+        "The seed example is not a production signed release and includes no private keys.",
+        "The current public /snapshots/ route remains reserved/future; the example lives under snapshots/examples/static_snapshot_v0.",
+        "Snapshots differ from public_site: public_site is the current Pages artifact, while snapshots are future offline bundles consumed by old clients, file-tree surfaces, relay designs, and native clients.",
+        "Snapshots differ from the live backend: they are immutable static data copies and cannot perform live search, live probes, auth, accounts, or dynamic source access."
+      ],
+      "optional_files": [
+        "data/README.txt",
+        "demo/DESCRIPTION.txt",
+        "docs/README.txt"
+      ],
+      "production_signed_release": false,
+      "prohibited_contents": [
+        "private signing keys",
+        "real production signatures",
+        "software binaries",
+        "executable downloads",
+        "local stores",
+        "SQLite databases",
+        "cache directories",
+        "live backend output",
+        "live probe results",
+        "external observations not committed by a human"
+      ],
+      "public_data_included": [
+        "public_site/data/source_summary.json",
+        "public_site/data/eval_summary.json",
+        "public_site/data/route_summary.json",
+        "public_site/data/page_registry.json",
+        "public_site/data/build_manifest.json"
+      ],
+      "real_signing_keys_present": false,
+      "required_files": [
+        "SNAPSHOT_MANIFEST.json",
+        "BUILD_MANIFEST.json",
+        "SOURCE_SUMMARY.json",
+        "EVAL_SUMMARY.json",
+        "ROUTE_SUMMARY.json",
+        "PAGE_REGISTRY.json",
+        "CHECKSUMS.SHA256",
+        "SIGNATURES.README.txt",
+        "README_FIRST.txt",
+        "index.html",
+        "index.txt"
+      ],
+      "schema_version": "0.1.0",
+      "signature_policy": {
+        "file": "SIGNATURES.README.txt",
+        "future_requires": [
+          "key management decision",
+          "operator signing ceremony",
+          "release provenance policy",
+          "revocation and rotation policy"
+        ],
+        "production_trust_chain": false,
+        "real_private_keys_allowed_in_repo": false,
+        "status": "placeholder_only"
+      },
+      "snapshot_contract_id": "eureka-static-snapshot-format",
+      "snapshot_format_version": "0.1.0",
+      "stability": "experimental",
+      "status": "planned"
+    },
+    "production_signed_release": false,
+    "public_snapshots_route": "future/deferred",
+    "real_signing_keys_present": false,
+    "seed_example": "snapshots/examples/static_snapshot_v0/"
+  },
+  "source_status": {
+    "limitations": [
+      "Source records are governed inventory summaries, not live source health checks.",
+      "Placeholder sources are planning records and do not imply implemented connectors.",
+      "Private local filesystem paths are not exposed in this public summary."
+    ],
+    "live_supported_count": 0,
+    "placeholders": [
+      "internet-archive-placeholder",
+      "software-heritage-placeholder",
+      "wayback-memento-placeholder"
+    ],
+    "source_count": 9,
+    "status_counts": {
+      "active_fixture": 2,
+      "active_recorded_fixture": 3,
+      "local_private_future": 1,
+      "placeholder": 3
+    }
+  },
+  "static_site_status": {
+    "base_path_targets": [
+      "/",
+      "/eureka/"
+    ],
+    "contains_live_backend": false,
+    "contains_live_probes": false,
+    "current_static_artifact": "public_site",
+    "deployment_success_claimed": false,
+    "generated_output": "site/dist",
+    "public_data_files": [
+      "/data/build_manifest.json",
+      "/data/eval_summary.json",
+      "/data/page_registry.json",
+      "/data/route_summary.json",
+      "/data/site_manifest.json",
+      "/data/source_summary.json"
+    ]
+  }
+}
