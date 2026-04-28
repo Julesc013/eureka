@@ -2,7 +2,7 @@
 
 - operator: `<operator>`
 - date/time: `<manual timestamp>`
-- commit sha: `afb55dd28514036e843967bf90db7da9084b8188`
+- commit sha: `ec6b51168ee8de290c7b24448a747aa043e6b1e7`
 - hosting target, if any: `<none for this pack>`
 - static validator status: `<pass/fail>`
 - public-alpha smoke status: `<pass/fail>`

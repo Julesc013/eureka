@@ -38,7 +38,7 @@ Static Resolver Demo Snapshots v0 now adds static fixture-backed examples under 
 ## Current Summary
 
 - branch: `main`
-- recorded commit sha: `afb55dd28514036e843967bf90db7da9084b8188`
+- recorded commit sha: `ec6b51168ee8de290c7b24448a747aa043e6b1e7`
 - static site validation: `valid`
 - public-alpha smoke: `passed`
 - signoff status: `unsigned`

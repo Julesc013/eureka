@@ -333,6 +333,8 @@ def render_pack_files(manifest: Mapping[str, Any]) -> dict[str, str]:
             "",
             "Lite/Text/Files Seed Surfaces v0 now adds static compatibility outputs under public_site/lite, public_site/text, and public_site/files, with generated copies under site/dist. These surfaces are no-JS/no-download publication artifacts only; they are not live search, executable mirrors, signed snapshots, relay runtime, native-client runtime, or public-alpha backend approval.",
             "",
+            "Static Resolver Demo Snapshots v0 now adds static fixture-backed examples under public_site/demo, with generated copies under site/dist/demo. These examples are no-JS publication artifacts only; they are not live search, a live API, backend hosting, external observations, or production behavior.",
+            "",
             "## Contents",
             "",
             *[f"- `{name}`" for name in REQUIRED_FILES if name != "README.md"],
