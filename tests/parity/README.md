@@ -4,10 +4,11 @@
 future Python-to-Rust parity checks.
 
 Python remains the oracle. Rust Source Registry Parity Candidate v0 is the
-first narrow Rust behavior seam, and Rust Query Planner Parity Candidate v0 is
-the second isolated candidate seam. Both live under `crates/eureka-core/` and
-are not wired into Python runtime, web, CLI, HTTP API, workers, public-alpha
-paths, or production paths.
+first narrow Rust behavior seam, Rust Source Registry Parity Catch-up v0 keeps
+that seam aligned with the current source inventory shape, and Rust Query
+Planner Parity Candidate v0 is the second isolated candidate seam. These live
+under `crates/eureka-core/` and are not wired into Python runtime, web, CLI,
+HTTP API, workers, public-alpha paths, or production paths.
 
 Current assets:
 
@@ -20,11 +21,18 @@ Current assets:
   query-planner candidate compared against Python-oracle query-planner goldens
 - `rust_query_planner_cases.json`: compact map of query inputs to Python-oracle
   golden files for the Rust planner candidate
+- `rust_source_registry_cases.json`: compact map of current source-registry
+  list/detail cases to Python-oracle golden files for the Rust source-registry
+  candidate
+- `scripts/check_rust_source_registry_parity.py`: stdlib structure and fixture
+  check for Rust Source Registry Parity Catch-up v0
 
 Source Coverage and Capability Model v0 expands the Python source-registry
-goldens with capability and coverage-depth fields. The Rust source-registry
-candidate must be updated in a later Rust parity task before it can claim
-current source-registry parity again; Python remains authoritative.
+goldens with capability and coverage-depth fields. Rust Source Registry Parity
+Catch-up v0 updates the isolated Rust source-registry candidate to preserve
+those fields, the current connector modes, limitations, next coverage steps,
+placeholder warnings, and all nine current source records. Python remains
+authoritative.
 
 Real Source Coverage Pack v0 expands the Python-oracle source-registry and
 local-index goldens with `internet-archive-recorded-fixtures` and
@@ -62,6 +70,13 @@ check. If Cargo is available, the script can run the crate-local Rust
 query-planner tests; if Cargo is unavailable, it reports the Cargo check as
 skipped while still validating the committed fixture map and source structure.
 Cargo remains optional for normal Python verification.
+
+Rust Source Registry Parity Catch-up v0 adds
+`scripts/check_rust_source_registry_parity.py` as a stdlib
+structure/candidate check. If Cargo is available, the script can run the
+crate-local Rust source-registry tests; if Cargo is unavailable, it reports the
+Cargo check as skipped while still validating the committed fixture map and
+source structure. Cargo remains optional for normal Python verification.
 
 The Rust planner candidate is not a replacement claim. Future parity assets
 should remain fixture-driven, JSON-inspectable, and explicit about allowed

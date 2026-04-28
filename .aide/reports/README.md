@@ -98,3 +98,10 @@ validator, and tests under `control/inventory/publication/`, `docs/`, and
 governance only and does not add a relay runtime, sockets, protocol servers,
 private data exposure, write/admin routes, live-probe passthrough, native
 sidecars, or production relay claims.
+
+Rust Source Registry Parity Catch-up v0 records its Rust candidate update,
+Python-oracle source-registry goldens, parity case map, stdlib checker, and
+structure tests under `crates/eureka-core/`, `tests/parity/`, `tests/scripts/`,
+and `scripts/`. No separate AIDE runtime report is needed; this is isolated
+parity governance only and does not wire Rust into Python runtime, web, CLI,
+HTTP API, workers, public-alpha paths, or production behavior.

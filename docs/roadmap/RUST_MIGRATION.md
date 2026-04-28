@@ -1,9 +1,10 @@
 # Rust Migration
 
 Rust is the intended production backend lane for later. The current Rust lane
-has a minimal workspace, Python-oracle fixtures, and the first isolated source
-registry parity candidate. It does not replace Python runtime behavior or start
-a production Rust backend.
+has a minimal workspace, Python-oracle fixtures, the first isolated source
+registry parity candidate, the Rust source-registry catch-up to the current
+Python source shape, and the first isolated query-planner candidate. It does
+not replace Python runtime behavior or start a production Rust backend.
 
 ## Language Policy
 
@@ -38,6 +39,13 @@ Rust Source Registry Parity Candidate v0 is the first such candidate. It loads
 the governed source inventory and compares source-registry public envelopes
 against the committed Python-oracle source-registry goldens.
 
+Rust Source Registry Parity Catch-up v0 updates that first candidate to the
+current Python source-registry shape, including capability booleans,
+coverage-depth metadata, connector mode, current limitations, next coverage
+step, placeholder warnings, and all nine current source records. It keeps
+Python as oracle and leaves Rust unwired from runtime, web, CLI, HTTP API,
+workers, public-alpha, and production paths.
+
 Rust Query Planner Parity Candidate v0 is the second isolated candidate. It
 adds a deterministic Rust query-planner model and rule set in `eureka-core`,
 expands the Python-oracle query-planner golden set, and records a compact case
@@ -45,16 +53,11 @@ map for old-platform planner parity. It is not wired into Python runtime, web,
 CLI, HTTP API, workers, public-alpha paths, or production behavior.
 
 Source Coverage and Capability Model v0 expands the Python source-registry
-oracle shape with capability and coverage-depth fields. Future Rust
-source-registry parity work must learn those fields before any source-registry
-replacement can be considered; this milestone does not wire Rust into Python
-runtime behavior.
-
-Real Source Coverage Pack v0 adds two more governed source records and expands
-the Python-oracle source-registry and local-index goldens. Rust source-registry
-parity must later account for `internet-archive-recorded-fixtures` and
-`local-bundle-fixtures`, but this task does not implement Rust behavior or wire
-Rust into runtime paths.
+oracle shape with capability and coverage-depth fields. Real Source Coverage
+Pack v0, Article/Scan Fixture Pack v0, and old-platform fixture expansions add
+recorded fixture and placeholder records. Rust Source Registry Parity Catch-up
+v0 now accounts for those source-registry fields and records in the isolated
+candidate without implementing Rust runtime behavior.
 
 Old-Platform Software Planner Pack v0 refreshes the Python-oracle query planner
 goldens with deterministic old-platform OS aliases, latest-compatible release
@@ -120,7 +123,9 @@ before replacement.
 
 ## Current Status
 
-The Rust migration lane is scaffolded and has two isolated parity candidates.
+The Rust migration lane is scaffolded and has two isolated parity candidates,
+with the source-registry candidate caught up to the current Python source
+inventory shape.
 The workspace under `crates/` contains:
 
 - `eureka-core`: Rust Source Registry Parity Candidate v0, Rust Query Planner
@@ -177,16 +182,19 @@ cargo test --workspace --manifest-path crates/Cargo.toml
 
 Normal Python verification does not require Rust tooling.
 
-Rust Query Planner Parity Candidate v0 additionally provides:
+Rust Source Registry Parity Catch-up v0 and Rust Query Planner Parity
+Candidate v0 provide stdlib parity structure checks:
 
 ```powershell
+python scripts/check_rust_source_registry_parity.py
+python scripts/check_rust_source_registry_parity.py --json
 python scripts/check_rust_query_planner_parity.py
 python scripts/check_rust_query_planner_parity.py --json
 ```
 
-These commands validate the fixture map and Rust candidate structure with the
-Python standard library. If Cargo is installed, the script also runs the
-crate-local Rust query-planner tests; otherwise it reports Cargo as skipped.
+These commands validate fixture maps and Rust candidate structure with the
+Python standard library. If Cargo is installed, the scripts also run the
+crate-local Rust candidate tests; otherwise they report Cargo as skipped.
 
 ## Rust Checkpoint
 

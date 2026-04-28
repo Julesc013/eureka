@@ -11,9 +11,9 @@ explicitly promoted.
 ## Current Status
 
 - `crates/` exists as a minimal Rust workspace skeleton.
-- `crates/eureka-core/` contains Rust Source Registry Parity Candidate v0 and
-  Rust Query Planner Parity Candidate v0, the first two isolated Rust behavior
-  seams.
+- `crates/eureka-core/` contains Rust Source Registry Parity Candidate v0,
+  Rust Source Registry Parity Catch-up v0, and Rust Query Planner Parity
+  Candidate v0, the first isolated Rust behavior seams.
 - The remaining initial crates are documented placeholders.
 - `tests/parity/golden/python_oracle/v0/` contains the first committed
   Python-oracle golden outputs for future Rust parity checks.
@@ -96,19 +96,23 @@ Rust behavior and do not make the Rust workspace an active backend.
 Rust Source Registry Parity Candidate v0 loads `.source.json` records from
 `control/inventory/sources/`, validates required bounded fields, detects
 duplicate `source_id` values, sorts records deterministically by `source_id`,
-and emits the same source-registry public envelope shape captured in the Python
-oracle goldens.
+and emits source-registry public envelopes captured in the Python oracle
+goldens.
 
-Source Coverage and Capability Model v0 expands that Python oracle shape with
-source capability booleans and coverage-depth metadata. The Rust candidate must
-eventually match those fields through parity tests, but this documentation
-change does not activate Rust in any Python runtime, gateway, surface, worker,
-or public-alpha path.
+Rust Source Registry Parity Catch-up v0 updates that isolated candidate to the
+current Python source-registry shape. The Rust model now preserves the governed
+capability booleans, coverage-depth metadata, connector mode, current
+limitations, next coverage step, placeholder warnings, and all nine current
+source records, including `article-scan-recorded-fixtures`,
+`internet-archive-placeholder`, `local-files-placeholder`,
+`software-heritage-placeholder`, and `wayback-memento-placeholder`.
 
-Real Source Coverage Pack v0 further expands the Python oracle with two
-additional source records and recorded fixture outputs. Rust candidate parity
-will need a later catch-up step for those fields and records; no Rust runtime
-path is activated by that fixture pack.
+The catch-up also adds `tests/parity/rust_source_registry_cases.json` and
+`scripts/check_rust_source_registry_parity.py` so Python verification can check
+the committed oracle fixture map and Rust source structure even when Cargo is
+not installed. Python remains the oracle, and this does not activate Rust in
+any Python runtime, gateway, surface, worker, public-alpha wrapper, or
+production path.
 
 Old-Platform Software Planner Pack v0 further expands the Python query-planner
 oracle with deterministic old-platform interpretation fields. A future Rust

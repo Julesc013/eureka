@@ -561,3 +561,25 @@ route, live-probe passthrough, backend hosting, external call, deployment
 behavior, or production relay claim. The next Codex-safe milestone should be
 Rust Source Registry Parity Catch-up v0; Manual Observation Batch 0 remains
 human-operated parallel work.
+
+## ADR-091: Catch Up Rust Source Registry Candidate To Current Python Shape
+
+Status: accepted
+
+Rust Source Registry Parity Catch-up v0 updates the isolated Rust
+source-registry candidate through `crates/eureka-core/src/source_registry.rs`,
+expanded Python-oracle source-registry goldens,
+`tests/parity/rust_source_registry_cases.json`,
+`scripts/check_rust_source_registry_parity.py`, and parity structure tests.
+
+The decision makes the Rust candidate preserve the current nine-source Python
+source-registry shape, including capability booleans, coverage depth/status,
+connector mode, current limitations, next coverage step, placeholder warnings,
+recorded fixture flags, local/private future source posture, and article-scan
+source records. It keeps Python as the oracle, treats Cargo as optional where
+the toolchain is unavailable, and adds no Rust runtime wiring, Python source
+registry replacement, web/CLI/HTTP API integration, public-alpha route
+behavior, live probes, external API calls, scraping, crawling, provider config,
+deployment behavior, native app project, or production Rust backend claim. The
+next Codex-safe milestone should be Rust Local Index Parity Planning v0;
+Manual Observation Batch 0 remains human-operated parallel work.

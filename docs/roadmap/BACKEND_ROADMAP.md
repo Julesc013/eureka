@@ -260,7 +260,7 @@ The next backend sequence is:
 47. Compatibility Surface Strategy v0 (implemented as strategy/contracts/inventory only; no new runtime behavior)
 48. Signed Snapshot Format v0 (implemented as contract and repo seed example; no real keys, production signatures, downloads, public route, relay, native runtime, live backend, or live probes)
 49. Relay Surface Design v0 (implemented as design/contract/checklist only; no relay runtime, sockets, protocol servers, private data exposure, write/admin routes, or live-probe passthrough)
-50. Rust Source Registry Parity Catch-up v0
+50. Rust Source Registry Parity Catch-up v0 (implemented as isolated current-shape source registry parity; no runtime wiring)
 51. Rust Local Index Parity Planning v0
 52. Signed Snapshot Consumer Contract v0
 53. Manual Observation Batch 0 Execution (human-operated parallel work)
@@ -270,7 +270,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Rust Source Registry Parity Catch-up v0
+> Rust Local Index Parity Planning v0
 
 Why this comes next:
 
@@ -298,9 +298,12 @@ Why this comes next:
   without implementing FTP, SMB, WebDAV, Gopher, proxy behavior, sockets,
   backend hosting, native clients, private data exposure, write/admin routes, or
   live-probe passthrough.
-- Rust Source Registry Parity Catch-up v0 is now the next non-network planning
-  step because the source/capability shape has expanded since the first isolated
-  Rust source-registry parity seam.
+- Rust Source Registry Parity Catch-up v0 is implemented as isolated
+  current-shape parity for the nine-source Python source inventory, including
+  capabilities, coverage metadata, connector modes, limitations, next coverage
+  steps, and placeholder warnings. It did not wire Rust into runtime behavior.
+- Rust Local Index Parity Planning v0 is now the next non-network planning step
+  before any broader Rust local-index implementation.
 - Internet Archive Live Probe v0 should remain unstarted unless a human
   explicitly approves live external-source behavior after separate review.
 

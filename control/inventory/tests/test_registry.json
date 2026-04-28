@@ -1311,6 +1311,48 @@
       "notes": "Does not require a local AIDE runtime."
     },
     {
+      "test_id": "rust_source_registry_parity_check",
+      "label": "Rust source registry parity catch-up check",
+      "command": "python scripts/check_rust_source_registry_parity.py",
+      "category": "parity",
+      "owner_area": "tests/parity",
+      "required_for": [
+        "standard",
+        "full",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none unless Cargo is available and optional Rust tests create target artifacts",
+      "expected_runtime": "sub-second without Cargo; toolchain-dependent if Cargo is available",
+      "failure_means": "The Rust source-registry candidate fixture map, current source shape, or optional crate-local parity tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Rust Source Registry Parity Catch-up v0; validates the isolated candidate structure against the current nine-source Python oracle shape and treats missing Cargo as a reported skip rather than a Python verification failure."
+    },
+    {
+      "test_id": "rust_source_registry_parity_tests",
+      "label": "Rust source registry parity catch-up tests",
+      "command": "python -m unittest tests.parity.test_rust_source_registry_parity_catchup tests.scripts.test_check_rust_source_registry_parity",
+      "category": "parity",
+      "owner_area": "tests/parity",
+      "required_for": [
+        "standard",
+        "full",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary Cargo target artifacts only if Cargo is available and --require-cargo test path runs",
+      "expected_runtime": "seconds",
+      "failure_means": "The Rust source-registry field coverage, docs, no-runtime-wiring guard, or parity script JSON behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Does not require Cargo for the normal passing path; Python remains the oracle and Rust remains isolated."
+    },
+    {
       "test_id": "rust_query_planner_parity_check",
       "label": "Rust query planner parity candidate check",
       "command": "python scripts/check_rust_query_planner_parity.py",

@@ -265,14 +265,14 @@
     {
       "id": "rust_source_registry_parity_catch_up_v0",
       "title": "Rust Source Registry Parity Catch-up v0",
-      "status": "next",
+      "status": "completed",
       "priority": 37,
-      "notes": "Update the isolated Rust source-registry candidate to current Python source capability/coverage fields before any broader Rust source work."
+      "notes": "Updated the isolated Rust source-registry candidate to the current nine-source Python source capability/coverage shape, with Python remaining oracle and no Rust runtime wiring."
     },
     {
       "id": "rust_local_index_parity_planning_v0",
       "title": "Rust Local Index Parity Planning v0",
-      "status": "queued",
+      "status": "next",
       "priority": 38,
       "notes": "Plan Rust local-index parity around Python oracle member, lane, user-cost, compatibility, and article/scan shapes before implementing index behavior."
     },

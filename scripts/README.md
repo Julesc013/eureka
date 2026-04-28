@@ -148,6 +148,12 @@ Current scripts:
 - `public_alpha_smoke.py`: runs the local Public Alpha Deployment Readiness smoke checks directly against the stdlib WSGI app, verifies safe status/source/query/search/eval routes, verifies blocked local-path/readback routes, supports `--json`, and exits nonzero if the constrained public-alpha posture regresses
 - `generate_public_alpha_hosting_pack.py`: reads `control/inventory/public_alpha_routes.json` and emits or checks the Public Alpha Hosting Pack route-safety summary; it supports `--check` for repeatable docs validation and does not deploy, host, or mutate route behavior
 - `generate_python_oracle_golden.py`: generates or checks the Rust Parity Fixture Pack v0 Python-oracle golden outputs under `tests/parity/golden/python_oracle/v0/`; it supports `--check`, optional `--output-root`, and `--json`, normalizes unstable timestamps, local index paths, FTS mode, and generation metadata, and does not implement Rust behavior or replace Python runtime paths
+- `check_rust_source_registry_parity.py`: validates the Rust Source Registry
+  Parity Catch-up v0 fixture map and isolated Rust source structure against
+  the current nine-source Python oracle shape; it supports `--json` and
+  `--require-cargo`, runs crate-local Rust source-registry tests only when
+  Cargo is available, reports Cargo as skipped otherwise, and does not wire
+  Rust into Python runtime, web, CLI, HTTP API, workers, or public-alpha paths
 - `check_rust_query_planner_parity.py`: validates the Rust Query Planner
   Parity Candidate v0 fixture map and isolated Rust source structure; it
   supports `--json` and `--require-cargo`, runs crate-local Rust

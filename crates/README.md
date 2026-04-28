@@ -8,9 +8,10 @@ Nothing under this workspace replaces Python runtime behavior yet.
 
 Current crates:
 
-- `eureka-core`: Rust Source Registry Parity Candidate v0 and Rust Query
-  Planner Parity Candidate v0, plus future core object, state,
-  representation, evidence, and domain type scope
+- `eureka-core`: Rust Source Registry Parity Candidate v0, Rust Source
+  Registry Parity Catch-up v0, and Rust Query Planner Parity Candidate v0,
+  plus future core object, state, representation, evidence, and domain type
+  scope
 - `eureka-contracts`: future schema-aligned contract structs
 - `eureka-store`: future content-addressed and local store primitives
 - `eureka-resolver`: future resolution, search, and planner logic
@@ -33,12 +34,15 @@ cargo test --workspace --manifest-path crates/Cargo.toml
 This command requires a local Rust toolchain. Normal Python verification does
 not require Rust tooling.
 
-The Rust query-planner candidate can also be checked from Python with:
+The Rust source-registry and query-planner candidates can also be checked from
+Python with:
 
 ```powershell
+python scripts/check_rust_source_registry_parity.py
+python scripts/check_rust_source_registry_parity.py --json
 python scripts/check_rust_query_planner_parity.py
 python scripts/check_rust_query_planner_parity.py --json
 ```
 
-That script validates the committed fixture map and source structure even when
-Cargo is unavailable. It does not wire Rust into the Python runtime.
+These scripts validate committed fixture maps and source structure even when
+Cargo is unavailable. They do not wire Rust into the Python runtime.

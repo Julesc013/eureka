@@ -27,9 +27,25 @@ tests compare the generated source-registry public envelopes with:
 - `tests/parity/golden/python_oracle/v0/source_registry/sources_list.json`
 - `tests/parity/golden/python_oracle/v0/source_registry/source_synthetic_fixtures.json`
 - `tests/parity/golden/python_oracle/v0/source_registry/source_github_releases_recorded_fixtures.json`
+- `tests/parity/golden/python_oracle/v0/source_registry/source_internet_archive_recorded_fixtures.json`
+- `tests/parity/golden/python_oracle/v0/source_registry/source_local_bundle_fixtures.json`
+- `tests/parity/golden/python_oracle/v0/source_registry/source_article_scan_recorded_fixtures.json`
+- `tests/parity/golden/python_oracle/v0/source_registry/source_internet_archive_placeholder.json`
+- `tests/parity/golden/python_oracle/v0/source_registry/source_local_files_placeholder.json`
+- `tests/parity/golden/python_oracle/v0/source_registry/source_software_heritage_placeholder.json`
+- `tests/parity/golden/python_oracle/v0/source_registry/source_wayback_memento_placeholder.json`
 
 Passing those tests does not replace Python behavior. It only proves that this
 isolated Rust candidate can match the committed Python-oracle fixture shape.
+
+Rust Source Registry Parity Catch-up v0 updates this first seam to the current
+Python source-registry shape. The candidate now models capability booleans,
+coverage-depth metadata, connector mode, limitations, next coverage steps,
+placeholder warnings, and the current nine-source inventory. The source cases
+are listed in `tests/parity/rust_source_registry_cases.json`; the stdlib
+checker `scripts/check_rust_source_registry_parity.py` validates the fixture
+map and Rust source structure, and runs crate-local source-registry tests only
+when Cargo is available.
 
 Rust Query Planner Parity Candidate v0 is the second candidate seam. Its Rust
 model and deterministic rules live under `crates/eureka-core/src/query_planner.rs`
@@ -49,9 +65,10 @@ is unavailable.
 
 Source Coverage and Capability Model v0 intentionally changes the Python
 source-registry oracle shape by adding capability booleans, coverage-depth
-metadata, connector mode, limitations, and next coverage steps. Updating the
-Rust candidate to match those fields is future Rust parity work; this source
-coverage milestone does not port Rust behavior or wire Rust into runtime paths.
+metadata, connector mode, limitations, and next coverage steps. Rust Source
+Registry Parity Catch-up v0 now mirrors those fields in the isolated Rust
+candidate without porting Python runtime behavior or wiring Rust into runtime
+paths.
 
 Old-Platform Software Planner Pack v0 intentionally changes the Python
 query-planner oracle shape for selected hard old-platform queries. Future Rust
