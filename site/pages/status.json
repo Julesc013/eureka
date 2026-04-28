@@ -1,0 +1,82 @@
+{
+  "slug": "status",
+  "output_path": "status.html",
+  "title": "Eureka Status",
+  "heading": "Status Snapshot",
+  "summary": "",
+  "status": "implemented",
+  "links": [
+    "index.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html"
+  ],
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "source_inventory_refs": [],
+  "sections": [
+    {
+      "type": "notice",
+      "text": "This is a generated static snapshot from the local repo. It does not make live status calls."
+    },
+    {
+      "type": "grid",
+      "panels": [
+        {
+          "title": "Runtime",
+          "paragraphs": [
+            "Python remains the active reference/oracle lane. The Rust parity lane exists, but Rust is not the active runtime."
+          ]
+        },
+        {
+          "title": "Public Alpha",
+          "paragraphs": [
+            "Public Alpha Safe Mode exists and blocks caller-provided local path controls in constrained demo routes. Public Alpha Rehearsal Evidence v0 records local static-site, smoke, route, eval, and baseline-status evidence. LIVE_ALPHA_01 adds a public-alpha wrapper with localhost defaults, closed live-probe gates, and config checks. Public alpha is not production and is not open live hosting approval."
+          ]
+        },
+        {
+          "title": "Archive Evals",
+          "paragraphs": [
+            "The Archive Resolution Eval Runner currently reports 6 hard tasks internally satisfied against the fixture-backed local corpus. Internal satisfaction is regression evidence, not a production relevance benchmark."
+          ]
+        },
+        {
+          "title": "Search Usefulness",
+          "paragraphs": [
+            "The current local audit reports 64 queries: 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknown. Source and capability gaps remain expected."
+          ]
+        },
+        {
+          "title": "External Baselines",
+          "paragraphs": [
+            "Google Web Search, Internet Archive metadata search, and Internet Archive full-text/OCR search remain external baselines pending/manual. Batch 0 has 39 pending slots and 0 observed records."
+          ]
+        },
+        {
+          "title": "Deferred Surfaces",
+          "paragraphs": [
+            "Native apps are deferred. Backend deployment infrastructure is absent; no live source probes, source crawling, auth, accounts, rate limiting, TLS ownership, or production process supervision are implemented here."
+          ]
+        }
+      ]
+    }
+  ]
+}

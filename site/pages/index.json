@@ -1,0 +1,89 @@
+{
+  "slug": "index",
+  "output_path": "index.html",
+  "title": "Eureka Static Public Site Pack",
+  "heading": "Eureka",
+  "summary": "Eureka is a Python reference backend prototype for evidence-backed archive resolution, with a current usefulness wedge around old-platform-compatible software search and member-level discovery inside bundles.",
+  "status": "implemented",
+  "links": [
+    "index.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html"
+  ],
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "source_inventory_refs": [],
+  "sections": [
+    {
+      "type": "notice",
+      "text": "Current maturity: Eureka is not production. This generated static output is public-facing documentation only; it does not deploy a backend or run live searches."
+    },
+    {
+      "type": "grid",
+      "panels": [
+        {
+          "title": "What It Is",
+          "paragraphs": [
+            "A local-first reference backend that records sources, plans bounded archive/software queries, exposes result lanes, compatibility evidence, member records, and eval reports through CLI, HTTP API, and server-rendered web surfaces."
+          ]
+        },
+        {
+          "title": "What It Is Not",
+          "paragraphs": [
+            "It is not broad live archive search, not a native GUI app, not an app-store product, and not a production hosted service."
+          ]
+        },
+        {
+          "title": "Current Demo Shape",
+          "paragraphs": [
+            "The safe demo corpus is fixture-backed: synthetic fixtures, recorded GitHub release fixtures, Internet-Archive-shaped recorded fixtures, local bundle fixtures, and article/scan recorded fixtures."
+          ]
+        },
+        {
+          "title": "Useful Starting Points",
+          "links": [
+            {
+              "text": "Try the local CLI/API/web workbench",
+              "href": "local-quickstart.html"
+            },
+            {
+              "text": "Review the source matrix",
+              "href": "sources.html"
+            },
+            {
+              "text": "Read the eval and audit status",
+              "href": "evals.html"
+            },
+            {
+              "text": "Check public-alpha limitations",
+              "href": "limitations.html"
+            },
+            {
+              "text": "GitHub repository",
+              "href": "https://github.com/Julesc013/eureka"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

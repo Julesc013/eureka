@@ -1,0 +1,73 @@
+{
+  "slug": "evals",
+  "output_path": "evals.html",
+  "title": "Eureka Eval Status",
+  "heading": "Eval And Audit Status",
+  "summary": "",
+  "status": "implemented",
+  "links": [
+    "index.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html"
+  ],
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "source_inventory_refs": [
+    "scripts/run_archive_resolution_evals.py",
+    "scripts/run_search_usefulness_audit.py",
+    "evals/search_usefulness/external_baselines/"
+  ],
+  "sections": [
+    {
+      "type": "grid",
+      "panels": [
+        {
+          "title": "Archive Resolution Eval Runner",
+          "paragraphs": [
+            "Current local status: 6 hard tasks, status_counts: satisfied=6. The tasks are satisfied against committed fixture-backed evidence and strict local checks.",
+            "This means the regression harness currently recognizes source-backed candidate shapes. It does not mean broad archive search or production relevance is solved."
+          ]
+        },
+        {
+          "title": "Search Usefulness Audit",
+          "paragraphs": [
+            "Current local status: 64 queries, with 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknown.",
+            "Dominant failure modes still include source coverage, compatibility evidence, planner, query interpretation, representation, decomposition, and member-access gaps."
+          ]
+        },
+        {
+          "title": "Manual External Baselines",
+          "paragraphs": [
+            "Google Web Search, Internet Archive metadata search, and Internet Archive full-text/OCR search remain pending/manual. Global slots: 192 pending and 0 observed. Batch 0: 39 pending and 0 observed.",
+            "No external baseline observations are fabricated or automated. Comparison reports should wait for human-entered records."
+          ]
+        },
+        {
+          "title": "Hard Test Pack",
+          "paragraphs": [
+            "Hardening tests guard path leakage, route inventory drift, external baseline honesty, source placeholder honesty, eval hardness, and docs/command drift."
+          ]
+        }
+      ]
+    }
+  ]
+}

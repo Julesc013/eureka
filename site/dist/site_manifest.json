@@ -1,0 +1,64 @@
+{
+  "artifact_root": "site/dist",
+  "base_path_targets": [
+    "/eureka/",
+    "/"
+  ],
+  "deploy_artifact_current": "public_site",
+  "deployment_status": "workflow_configured_deployment_unverified",
+  "deployment_workflow_configured": true,
+  "eval_status_source": "static page JSON with references to scripts/run_archive_resolution_evals.py and scripts/run_search_usefulness_audit.py",
+  "generated_at": "STATIC_SITE_GENERATION_MIGRATION_V0_STABLE_BUILD",
+  "generated_by": "site/build.py",
+  "generated_or_authored_by_slice": "static_site_generation_migration_v0",
+  "generated_output_deployed": false,
+  "github_pages_base_path": "/eureka/",
+  "github_pages_target": "github_pages_project",
+  "limitations": [
+    "static only",
+    "no deployment performed",
+    "no backend hosting added",
+    "no live source probes",
+    "no scraping",
+    "manual external baselines remain pending",
+    "fixture-backed evidence is not global truth"
+  ],
+  "next_milestone": "Generated Public Data Summaries v0",
+  "no_backend": true,
+  "no_deployment_performed": true,
+  "no_live_backend": true,
+  "no_live_probes": true,
+  "no_network_required": true,
+  "pages": [
+    "index.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html"
+  ],
+  "parallel_human_work": "Manual Observation Batch 0 Execution",
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "publication_contract_source": "control/inventory/publication/publication_contract.json",
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "site_pack_id": "live_alpha_static_public_site_pack_v0",
+  "source_matrix_source": "control/inventory/sources/*.source.json",
+  "source_root": "site",
+  "static_only": true
+}

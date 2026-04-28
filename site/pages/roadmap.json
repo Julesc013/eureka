@@ -1,0 +1,53 @@
+{
+  "slug": "roadmap",
+  "output_path": "roadmap.html",
+  "title": "Eureka Roadmap",
+  "heading": "Live-Alpha Preparation Roadmap",
+  "summary": "",
+  "status": "implemented",
+  "links": [
+    "index.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html"
+  ],
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "source_inventory_refs": [],
+  "sections": [
+    {
+      "type": "ordered",
+      "items": [
+        {"title": "Public Alpha Rehearsal Evidence v0", "text": "implemented as supervised local/static evidence using existing safe-mode checks; no deployment was performed."},
+        {"title": "LIVE_ALPHA_01 Production Public-Alpha Wrapper", "text": "implemented as a localhost-default public-alpha wrapper and config check; no deployment, no live source probes, and no production approval."},
+        {"title": "Public Publication Plane Contracts v0", "text": "implemented as route, data, client profile, deployment target, redirect, and base-path governance before deployment."},
+        {"title": "GitHub Pages Deployment Enablement v0", "text": "implemented as a static-only workflow and artifact check for publishing public_site; deployment success is unverified until GitHub Actions evidence exists."},
+        {"title": "Static Site Generation Migration v0", "text": "implemented as a stdlib-only generator that writes site/dist while public_site remains the deployable artifact."},
+        {"title": "Generated Public Data Summaries v0", "text": "next generated /data summaries from governed inventories and eval/audit sources."},
+        {"title": "Lite/Text/Files Seed Surfaces v0", "text": "later compatibility surfaces using the publication contracts."},
+        {"title": "Static Resolver Demo Snapshots v0", "text": "later generated demo snapshots after public data summaries exist."},
+        {"title": "Live Probe Gateway Contract", "text": "later contract and abuse-control design before any live probing."},
+        {"title": "Manual Observation Batch 0 Execution", "text": "human-operated external baseline observations for selected query/system slots."},
+        {"title": "Rust Query Planner Parity Candidate v0", "text": "parity catch-up when Python behavior is stable enough."}
+      ]
+    }
+  ]
+}

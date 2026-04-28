@@ -1,0 +1,63 @@
+{
+  "slug": "demo-queries",
+  "output_path": "demo-queries.html",
+  "title": "Eureka Demo Queries",
+  "heading": "Safe Demo Query Set",
+  "summary": "",
+  "status": "implemented",
+  "links": [
+    "index.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html"
+  ],
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "source_inventory_refs": [],
+  "sections": [
+    {
+      "type": "paragraph",
+      "text": "These are local prototype queries, not live hosted searches. Each is fixture-backed or fixture-adjacent, and external baselines remain pending/manual."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Query",
+        "Current local prototype can show",
+        "Backing",
+        "Current limitation"
+      ],
+      "rows": [
+        ["Windows 7 apps", "Old-platform intent, utility/app records, source and lane summaries.", "Fixture-backed; external baselines pending/manual.", "Not a broad app catalog."],
+        ["latest Firefox before XP support ended", "Latest-compatible intent, Windows XP compatibility evidence, release-note-style evidence.", "Recorded fixture-backed; external baselines pending/manual.", "Not a universal latest-version oracle."],
+        ["old blue FTP client for XP", "Vague identity handling, FTP-client evidence, Windows XP hints.", "Fixture-backed; external baselines pending/manual.", "Exact identity remains bounded by fixture evidence."],
+        ["Windows 98 registry repair", "Utility function evidence, Windows 98 compatibility hints, actionable fixture members.", "Fixture-backed; external baselines pending/manual.", "No malware/trust scoring."],
+        ["driver inside support CD", "Member-vs-parent discovery, driver-like member path, lineage to support bundle.", "Local bundle fixture-backed; external baselines pending/manual.", "Not broad ISO/support-media extraction."],
+        ["driver for ThinkPad T42 Wi-Fi Windows 2000", "Driver/hardware/OS interpretation and member-level evidence.", "Local bundle fixture-backed; external baselines pending/manual.", "Fixture evidence only, not vendor coverage."],
+        ["PC Magazine July 1994 ray tracing", "Article segment, parent issue, page range, OCR-like synthetic fixture text.", "Article-scan recorded fixture-backed; external baselines pending/manual.", "No real scan/PDF/OCR pipeline."],
+        ["Mac OS 9 browser", "Platform software intent and documentation-style result evidence.", "Recorded fixture-backed; external baselines pending/manual.", "Documentation may be clearer than runnable artifact evidence."],
+        ["PowerPC Mac OS X 10.4 browser", "PowerPC/Tiger platform hints and browser documentation evidence.", "Recorded fixture-backed; external baselines pending/manual.", "Not broad PowerPC software coverage."],
+        ["Creative CT1740 driver Windows 98", "Driver/hardware query interpretation and Windows 98 support evidence.", "Fixture-backed; external baselines pending/manual.", "Fixture scope only."],
+        ["3Com 3C905 Windows 95 driver", "Driver/hardware query interpretation and Windows 95 member evidence.", "Fixture-backed; external baselines pending/manual.", "Fixture scope only."]
+      ]
+    }
+  ]
+}

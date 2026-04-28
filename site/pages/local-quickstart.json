@@ -1,0 +1,90 @@
+{
+  "slug": "local-quickstart",
+  "output_path": "local-quickstart.html",
+  "title": "Eureka Local Quickstart",
+  "heading": "Local Quickstart",
+  "summary": "",
+  "status": "implemented",
+  "links": [
+    "index.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html"
+  ],
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "source_inventory_refs": [],
+  "sections": [
+    {
+      "type": "notice",
+      "text": "These commands are local development and verification commands. They are not deployment commands."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Clone And Verify"
+    },
+    {
+      "type": "pre",
+      "text": "git clone https://github.com/Julesc013/eureka.git\ncd eureka\npython -m unittest discover -s tests -t .\npython scripts/run_archive_resolution_evals.py\npython scripts/run_search_usefulness_audit.py\npython scripts/run_public_alpha_server.py --check-config\npython scripts/public_alpha_smoke.py"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Build The Generated Static Site"
+    },
+    {
+      "type": "pre",
+      "text": "python site/build.py --check\npython site/build.py --json\npython site/validate.py"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Try CLI Queries"
+    },
+    {
+      "type": "pre",
+      "text": "python scripts/demo_cli_workbench.py query-plan \"Windows 7 apps\"\npython scripts/demo_cli_workbench.py search \"windows 98 registry repair\"\npython scripts/demo_cli_workbench.py sources\npython scripts/demo_cli_workbench.py source internet-archive-recorded-fixtures\npython scripts/demo_cli_workbench.py evals-archive-resolution"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Try The Local Web/API Workbench"
+    },
+    {
+      "type": "paragraph",
+      "text": "local_dev is for trusted local experiments with local path controls. public_alpha blocks public-alpha unsafe local path controls and local write/readback route groups."
+    },
+    {
+      "type": "pre",
+      "text": "python scripts/run_public_alpha_server.py --print-config-json\npython scripts/demo_web_workbench.py --serve --mode local_dev\npython scripts/demo_web_workbench.py --serve --mode public_alpha"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Try The Local HTTP API Helper"
+    },
+    {
+      "type": "pre",
+      "text": "python scripts/demo_http_api.py --mode public_alpha status\npython scripts/demo_http_api.py --mode public_alpha query-plan --query \"latest Firefox before XP support ended\"\npython scripts/demo_http_api.py --mode public_alpha sources"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "sources",
+  "output_path": "sources.html",
+  "title": "Eureka Source Matrix",
+  "heading": "Source Matrix",
+  "summary": "",
+  "status": "implemented",
+  "links": [
+    "index.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html"
+  ],
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "source_inventory_refs": [
+    "control/inventory/sources/*.source.json"
+  ],
+  "sections": [
+    {
+      "type": "paragraph",
+      "text": "This matrix is generated from governed source inventory records. Fixture/live/manual state is explicit so placeholders remain placeholders."
+    },
+    {
+      "type": "source_matrix"
+    }
+  ]
+}

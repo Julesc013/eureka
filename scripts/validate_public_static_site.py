@@ -69,6 +69,8 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
     )
     parser.add_argument(
         "--site-dir",
+        "--site-root",
+        dest="site_dir",
         default=str(DEFAULT_SITE_DIR),
         help="Static site directory to validate.",
     )

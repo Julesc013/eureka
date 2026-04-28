@@ -1,0 +1,60 @@
+{
+  "slug": "limitations",
+  "output_path": "limitations.html",
+  "title": "Eureka Limitations",
+  "heading": "Limitations And Public-Alpha Boundaries",
+  "summary": "",
+  "status": "implemented",
+  "links": [
+    "index.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html"
+  ],
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "source_inventory_refs": [],
+  "sections": [
+    {
+      "type": "list",
+      "items": [
+        "No production hosting is included in this generated output.",
+        "No public deployment is recorded by Public Alpha Rehearsal Evidence v0.",
+        "The LIVE_ALPHA_01 public-alpha wrapper is a local entrypoint and config guard only; it is not hosting approval.",
+        "Public Publication Plane Contracts v0 define route, data, client, and deployment-target governance; the static generator consumes those contracts without changing deployment.",
+        "GitHub Pages Deployment Enablement v0 configures static artifact publishing only; it does not host the Python backend or prove deployment success without GitHub Actions evidence.",
+        "Static Site Generation Migration v0 generates site/dist for validation, while public_site remains the deployable artifact.",
+        "No live crawling, live source probes, or external source calls are included.",
+        "No live source probes are enabled by the wrapper.",
+        "No scraping and no automated Google or Internet Archive baseline collection.",
+        "No arbitrary local path access in public-alpha mode.",
+        "No auth, accounts, rate limiting, TLS ownership, logging policy, monitoring, or process supervision.",
+        "No production Rust backend.",
+        "No native GUI apps.",
+        "No installer automation, launch automation, or app-store workflow.",
+        "No universal compatibility oracle; compatibility evidence remains source-backed and bounded.",
+        "No trust, malware, safety, or reputation scoring.",
+        "Fixture-backed evidence is not global truth.",
+        "External baselines are manual and time-sensitive until human observation records exist."
+      ]
+    }
+  ]
+}
