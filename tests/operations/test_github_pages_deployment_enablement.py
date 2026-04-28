@@ -23,6 +23,7 @@ class GitHubPagesDeploymentEnablementTest(unittest.TestCase):
         self.assertIn("actions/upload-pages-artifact@", text)
         self.assertIn("actions/deploy-pages@", text)
         self.assertIn("path: public_site", text)
+        self.assertIn("python scripts/generate_public_data_summaries.py --check", text)
         self.assertIn("python scripts/validate_publication_inventory.py", text)
         self.assertIn("python scripts/validate_public_static_site.py", text)
         self.assertIn("python scripts/check_github_pages_static_artifact.py", text)

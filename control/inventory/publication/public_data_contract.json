@@ -7,21 +7,32 @@
       "status": "implemented",
       "stability": "experimental",
       "schema_version": "0.1.0",
-      "producer": "LIVE_ALPHA_00 Static Public Site Pack",
+      "producer": "LIVE_ALPHA_00 Static Public Site Pack and site/build.py",
+      "source_inputs": [
+        "public_site/site_manifest.json",
+        "site/build.py"
+      ],
       "consumer_profiles": [
         "standard_web"
       ],
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
-      "notes": "Current root static-site manifest. Static Site Generation Migration v0 can generate the equivalent manifest in site/dist, while future generated summaries should move under /data/."
+      "generated_by": "site/build.py",
+      "notes": "Root static-site manifest for the page pack. It is separate from /data/site_manifest.json, which is the machine-readable public data summary manifest."
     },
     {
       "path": "/data/site_manifest.json",
-      "status": "planned",
-      "stability": "experimental",
+      "status": "implemented",
+      "stability": "stable_draft",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
+      "producer": "Generated Public Data Summaries v0",
+      "source_inputs": [
+        "control/inventory/publication/publication_contract.json",
+        "control/inventory/publication/page_registry.json",
+        "control/inventory/publication/deployment_targets.json",
+        "control/inventory/publication/public_data_contract.json"
+      ],
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -30,14 +41,18 @@
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
-      "notes": "Future generated public data root manifest."
+      "generated_by": "scripts/generate_public_data_summaries.py",
+      "notes": "Machine-readable summary manifest for static public data. It is not a live API and carries no deployment-success claim."
     },
     {
       "path": "/data/page_registry.json",
-      "status": "planned",
-      "stability": "experimental",
+      "status": "implemented",
+      "stability": "stable_draft",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
+      "producer": "Generated Public Data Summaries v0",
+      "source_inputs": [
+        "control/inventory/publication/page_registry.json"
+      ],
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -46,14 +61,18 @@
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
-      "notes": "Future machine-readable projection of governed public routes."
+      "generated_by": "scripts/generate_public_data_summaries.py",
+      "notes": "Machine-readable projection of governed public routes, including future reservations that remain unimplemented."
     },
     {
       "path": "/data/source_summary.json",
-      "status": "planned",
-      "stability": "experimental",
+      "status": "implemented",
+      "stability": "stable_draft",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
+      "producer": "Generated Public Data Summaries v0",
+      "source_inputs": [
+        "control/inventory/sources/*.source.json"
+      ],
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -62,14 +81,20 @@
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
-      "notes": "Future projection of governed source inventory status, with placeholders kept honest."
+      "generated_by": "scripts/generate_public_data_summaries.py",
+      "notes": "Projection of governed source inventory status. Placeholder sources remain marked as not implemented."
     },
     {
       "path": "/data/eval_summary.json",
-      "status": "planned",
-      "stability": "experimental",
+      "status": "implemented",
+      "stability": "stable_draft",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
+      "producer": "Generated Public Data Summaries v0",
+      "source_inputs": [
+        "scripts/run_archive_resolution_evals.py --json",
+        "scripts/run_search_usefulness_audit.py --json",
+        "scripts/report_external_baseline_status.py --json"
+      ],
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -78,14 +103,18 @@
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
-      "notes": "Future projection of local eval/audit status. External observations stay false until human evidence records exist."
+      "generated_by": "scripts/generate_public_data_summaries.py",
+      "notes": "Projection of local eval/audit status. External observations stay false until human evidence records exist."
     },
     {
       "path": "/data/route_summary.json",
-      "status": "planned",
-      "stability": "experimental",
+      "status": "implemented",
+      "stability": "stable_draft",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
+      "producer": "Generated Public Data Summaries v0",
+      "source_inputs": [
+        "control/inventory/public_alpha_routes.json"
+      ],
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -94,14 +123,22 @@
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
-      "notes": "Future projection of public route and stability metadata."
+      "generated_by": "scripts/generate_public_data_summaries.py",
+      "notes": "Projection of public-alpha route posture. It is not GitHub Pages routing and not production API discovery."
     },
     {
       "path": "/data/build_manifest.json",
-      "status": "planned",
-      "stability": "experimental",
+      "status": "implemented",
+      "stability": "stable_draft",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
+      "producer": "Generated Public Data Summaries v0",
+      "source_inputs": [
+        "control/inventory/publication/public_data_contract.json",
+        "control/inventory/publication/publication_contract.json",
+        "control/inventory/publication/page_registry.json",
+        "control/inventory/sources/*.source.json",
+        "control/inventory/public_alpha_routes.json"
+      ],
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -111,7 +148,8 @@
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
-      "notes": "Future build provenance manifest with commit and build metadata supplied by a later process."
+      "generated_by": "scripts/generate_public_data_summaries.py",
+      "notes": "Stable build provenance summary with UNKNOWN_UNTIL_CI placeholders for commit/build time. It does not claim deployment was performed."
     },
     {
       "path": "/files/index.txt",
@@ -119,6 +157,9 @@
       "stability": "experimental",
       "schema_version": "0.1.0",
       "producer": "future Lite/Text/Files Seed Surfaces v0",
+      "source_inputs": [
+        "public_site/data/*.json"
+      ],
       "consumer_profiles": [
         "file_tree",
         "text",
@@ -127,6 +168,7 @@
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
+      "generated_by": "future_lite_text_files_seed_surfaces_v0",
       "notes": "Future static file-tree index."
     },
     {
@@ -135,6 +177,9 @@
       "stability": "experimental",
       "schema_version": "0.1.0",
       "producer": "future Lite/Text/Files Seed Surfaces v0",
+      "source_inputs": [
+        "public_site/data/*.json"
+      ],
       "consumer_profiles": [
         "file_tree",
         "snapshot",
@@ -143,6 +188,7 @@
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
+      "generated_by": "future_lite_text_files_seed_surfaces_v0",
       "notes": "Future checksums file; no checksums are generated in this slice."
     }
   ]

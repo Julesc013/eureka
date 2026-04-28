@@ -27,6 +27,14 @@ REQUIRED_PATHS = (
     "data/README.md",
     "assets/site.css",
 )
+REQUIRED_DIST_DATA_FILES = (
+    "data/site_manifest.json",
+    "data/page_registry.json",
+    "data/source_summary.json",
+    "data/eval_summary.json",
+    "data/route_summary.json",
+    "data/build_manifest.json",
+)
 FORBIDDEN_NAMES = {
     "package.json",
     "package-lock.json",
@@ -93,10 +101,21 @@ def validate_site_tree() -> dict[str, Any]:
 
     dist_dir = site_build.DEFAULT_OUTPUT
     dist_validation: Mapping[str, Any] | None = None
+    dist_data_files: list[str] = []
     if dist_dir.exists() and any(dist_dir.glob("*.html")):
         dist_validation = validate_public_static_site(dist_dir)
         if dist_validation["status"] != "valid":
             errors.extend(f"site/dist validation: {error}" for error in dist_validation["errors"])
+        for relative in REQUIRED_DIST_DATA_FILES:
+            path = dist_dir / relative
+            if not path.exists():
+                errors.append(f"site/dist/{relative}: generated public data file is missing.")
+                continue
+            dist_data_files.append(relative)
+            try:
+                json.loads(path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as exc:
+                errors.append(f"site/dist/{relative}: invalid JSON: {exc}.")
     else:
         warnings.append("site/dist has not been generated yet.")
 
@@ -107,6 +126,8 @@ def validate_site_tree() -> dict[str, Any]:
         "required_paths": list(REQUIRED_PATHS),
         "existing_paths": existing_paths,
         "page_count": len(page_configs),
+        "required_dist_data_files": list(REQUIRED_DIST_DATA_FILES),
+        "dist_data_files": dist_data_files,
         "dist_validation_status": dist_validation.get("status") if dist_validation else None,
         "errors": errors,
         "warnings": warnings,

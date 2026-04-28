@@ -63,6 +63,18 @@ REQUIRED_PUBLIC_DATA_PATHS = {
     "/files/index.txt",
     "/files/SHA256SUMS",
 }
+REQUIRED_GENERATED_PUBLIC_DATA_PATHS = {
+    "/data/site_manifest.json",
+    "/data/page_registry.json",
+    "/data/source_summary.json",
+    "/data/eval_summary.json",
+    "/data/route_summary.json",
+    "/data/build_manifest.json",
+}
+REQUIRED_FUTURE_FILE_SURFACE_PATHS = {
+    "/files/index.txt",
+    "/files/SHA256SUMS",
+}
 
 
 def load_json(name: str) -> dict:
@@ -192,12 +204,25 @@ class PublicationInventoryTest(unittest.TestCase):
         self.assertEqual(backend["status"], "future")
         self.assertTrue(backend["no_live_probes_by_default"])
 
-    def test_public_data_contract_includes_required_future_files(self) -> None:
+    def test_public_data_contract_includes_required_files(self) -> None:
         payload = load_json("public_data_contract.json")
         entries = {entry["path"]: entry for entry in payload["entries"]}
 
         self.assertTrue(REQUIRED_PUBLIC_DATA_PATHS.issubset(entries))
-        for path in REQUIRED_PUBLIC_DATA_PATHS:
+        for path in REQUIRED_GENERATED_PUBLIC_DATA_PATHS:
+            with self.subTest(path=path):
+                entry = entries[path]
+                self.assertEqual(entry["status"], "implemented")
+                self.assertEqual(entry["stability"], "stable_draft")
+                self.assertEqual(entry["generated_by"], "scripts/generate_public_data_summaries.py")
+                self.assertTrue((PUBLIC_SITE / path.removeprefix("/")).exists())
+                self.assertIsInstance(entry["source_inputs"], list)
+                self.assertTrue(entry["source_inputs"])
+                self.assertFalse(entry["contains_live_data"])
+                self.assertFalse(entry["contains_external_observations"])
+                self.assertTrue(entry["safe_for_static_hosting"])
+
+        for path in REQUIRED_FUTURE_FILE_SURFACE_PATHS:
             with self.subTest(path=path):
                 entry = entries[path]
                 self.assertNotEqual(entry["status"], "implemented")

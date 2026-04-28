@@ -23,7 +23,7 @@
     "manual external baselines remain pending",
     "fixture-backed evidence is not global truth"
   ],
-  "next_milestone": "Generated Public Data Summaries v0",
+  "next_milestone": "Lite/Text/Files Seed Surfaces v0",
   "no_backend": true,
   "no_deployment_performed": true,
   "no_live_backend": true,
@@ -49,6 +49,15 @@
     "app store",
     "installer"
   ],
+  "public_data_files": [
+    "data/site_manifest.json",
+    "data/page_registry.json",
+    "data/source_summary.json",
+    "data/eval_summary.json",
+    "data/route_summary.json",
+    "data/build_manifest.json"
+  ],
+  "public_data_source": "scripts/generate_public_data_summaries.py",
   "publication_contract_source": "control/inventory/publication/publication_contract.json",
   "required_claims": [
     "Python reference backend prototype",

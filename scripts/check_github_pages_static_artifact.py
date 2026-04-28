@@ -29,6 +29,12 @@ REQUIRED_STATIC_FILES = {
     "local-quickstart.html",
     "assets/README.md",
     "assets/site.css",
+    "data/build_manifest.json",
+    "data/eval_summary.json",
+    "data/page_registry.json",
+    "data/route_summary.json",
+    "data/site_manifest.json",
+    "data/source_summary.json",
 }
 FORBIDDEN_DIR_NAMES = {
     ".aide",

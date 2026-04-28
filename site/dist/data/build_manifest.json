@@ -1,0 +1,38 @@
+{
+  "artifact_root": "public_site",
+  "branch": "main",
+  "built_at": "UNKNOWN_UNTIL_CI",
+  "commit": "UNKNOWN_UNTIL_CI",
+  "contains_external_observations": false,
+  "contains_live_backend": false,
+  "contains_live_probes": false,
+  "data_files": [
+    "/data/build_manifest.json",
+    "/data/eval_summary.json",
+    "/data/page_registry.json",
+    "/data/route_summary.json",
+    "/data/site_manifest.json",
+    "/data/source_summary.json"
+  ],
+  "deployment_performed": false,
+  "generated_by": "scripts/generate_public_data_summaries.py",
+  "repo": "Julesc013/eureka",
+  "schema_version": "0.1.0",
+  "source": "generated_public_data_summaries_v0",
+  "source_inputs": [
+    "control/inventory/publication/public_data_contract.json",
+    "control/inventory/publication/publication_contract.json",
+    "control/inventory/publication/page_registry.json",
+    "control/inventory/sources/*.source.json",
+    "control/inventory/public_alpha_routes.json",
+    "scripts/run_archive_resolution_evals.py --json",
+    "scripts/run_search_usefulness_audit.py --json",
+    "scripts/report_external_baseline_status.py --json"
+  ],
+  "validations_expected": [
+    "python scripts/generate_public_data_summaries.py --check",
+    "python scripts/validate_public_static_site.py",
+    "python scripts/validate_publication_inventory.py",
+    "python scripts/check_github_pages_static_artifact.py"
+  ]
+}

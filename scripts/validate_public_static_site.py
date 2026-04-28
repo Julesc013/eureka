@@ -24,7 +24,21 @@ REQUIRED_FILES = {
     "local-quickstart.html",
     "assets/README.md",
     "assets/site.css",
+    "data/build_manifest.json",
+    "data/eval_summary.json",
+    "data/page_registry.json",
+    "data/route_summary.json",
+    "data/site_manifest.json",
+    "data/source_summary.json",
 }
+REQUIRED_PUBLIC_DATA_FILES = (
+    "data/site_manifest.json",
+    "data/page_registry.json",
+    "data/source_summary.json",
+    "data/eval_summary.json",
+    "data/route_summary.json",
+    "data/build_manifest.json",
+)
 REQUIRED_PHRASES = (
     "Python reference backend prototype",
     "not production",
@@ -167,6 +181,8 @@ def validate_public_static_site(site_dir: Path = DEFAULT_SITE_DIR) -> dict[str, 
     else:
         warnings.append("Manifest could not be inspected beyond JSON parse status.")
 
+    _validate_public_data_files(site_dir, errors)
+
     return {
         "status": "valid" if not errors else "invalid",
         "created_by": "live_alpha_static_public_site_pack_validator_v0",
@@ -176,6 +192,7 @@ def validate_public_static_site(site_dir: Path = DEFAULT_SITE_DIR) -> dict[str, 
         "pages": pages,
         "page_reports": page_reports,
         "source_ids_checked": source_ids,
+        "public_data_files_checked": list(REQUIRED_PUBLIC_DATA_FILES),
         "missing_source_ids": missing_source_ids,
         "required_phrases": list(REQUIRED_PHRASES),
         "prohibited_claims": prohibited_claims,
@@ -267,6 +284,44 @@ def _source_ids(errors: list[str]) -> list[str]:
             else:
                 errors.append(f"{_rel(path)}: source_id must be a string.")
     return source_ids
+
+
+def _validate_public_data_files(site_dir: Path, errors: list[str]) -> None:
+    for relative in REQUIRED_PUBLIC_DATA_FILES:
+        path = site_dir / relative
+        payload = _load_json(path, errors)
+        if not isinstance(payload, Mapping):
+            errors.append(f"{_rel(path)}: public data file must contain a JSON object.")
+            continue
+        if payload.get("schema_version") != "0.1.0":
+            errors.append(f"{relative}: schema_version must be 0.1.0.")
+        if payload.get("generated_by") != "scripts/generate_public_data_summaries.py":
+            errors.append(f"{relative}: generated_by must be scripts/generate_public_data_summaries.py.")
+        text = json.dumps(payload, sort_keys=True)
+        for marker in ("D:\\", "C:\\", "/Users/", "/home/"):
+            if marker in text:
+                errors.append(f"{relative}: private/local filesystem path marker is present.")
+        for flag in ("contains_live_backend", "contains_live_probes", "contains_live_data"):
+            if payload.get(flag) is True:
+                errors.append(f"{relative}: {flag} must not be true.")
+        if relative == "data/site_manifest.json":
+            if payload.get("no_deployment_claim") is not True:
+                errors.append("data/site_manifest.json: no_deployment_claim must be true.")
+            if payload.get("contains_external_observations") is not False:
+                errors.append(
+                    "data/site_manifest.json: contains_external_observations must be false."
+                )
+        if relative == "data/build_manifest.json":
+            if payload.get("deployment_performed") is not False:
+                errors.append("data/build_manifest.json: deployment_performed must be false.")
+        if relative == "data/eval_summary.json":
+            baselines = payload.get("manual_external_baselines")
+            if not isinstance(baselines, Mapping):
+                errors.append("data/eval_summary.json: manual_external_baselines must be an object.")
+            elif baselines.get("global_observed_count") != 0:
+                errors.append(
+                    "data/eval_summary.json: global_observed_count must remain 0 until manual evidence exists."
+                )
 
 
 def _load_json(path: Path, errors: list[str]) -> Any:

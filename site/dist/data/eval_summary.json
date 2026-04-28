@@ -1,0 +1,72 @@
+{
+  "archive_resolution": {
+    "fixture_backed": true,
+    "notes": [
+      "Internal hard eval satisfaction is fixture-backed local regression evidence.",
+      "This summary does not claim production relevance or global recall."
+    ],
+    "source_command": "python scripts/run_archive_resolution_evals.py --json",
+    "status_counts": {
+      "satisfied": 6
+    },
+    "task_count": 6
+  },
+  "contains_external_observations": false,
+  "contains_live_data": false,
+  "contains_live_probes": false,
+  "generated_by": "scripts/generate_public_data_summaries.py",
+  "limitations": [
+    "No external searches are run by this generator.",
+    "Manual baseline slots remain pending unless human observations are committed.",
+    "Eval counts summarize local deterministic scripts and omit volatile run timestamps."
+  ],
+  "manual_external_baselines": {
+    "batch_0_expected_observation_count": 39,
+    "batch_0_observed_count": 0,
+    "batch_0_pending_count": 39,
+    "global_observed_count": 0,
+    "global_pending_count": 192,
+    "source_command": "python scripts/report_external_baseline_status.py --json"
+  },
+  "schema_version": "0.1.0",
+  "search_usefulness": {
+    "capability_gap_count": 9,
+    "external_baseline_pending_counts": {
+      "google": 64,
+      "internet_archive_full_text": 64,
+      "internet_archive_metadata": 64
+    },
+    "failure_mode_counts": {
+      "absence_reasoning_gap": 2,
+      "actionability_gap": 2,
+      "compatibility_evidence_gap": 25,
+      "decomposition_gap": 12,
+      "external_baseline_pending": 64,
+      "identity_cluster_gap": 13,
+      "index_gap": 3,
+      "live_source_gap": 10,
+      "member_access_gap": 12,
+      "planner_gap": 24,
+      "query_interpretation_gap": 21,
+      "ranking_gap": 8,
+      "representation_gap": 14,
+      "source_coverage_gap": 49,
+      "surface_ux_gap": 4
+    },
+    "query_count": 64,
+    "source_command": "python scripts/run_search_usefulness_audit.py --json",
+    "source_gap_count": 26,
+    "status_counts": {
+      "capability_gap": 9,
+      "covered": 5,
+      "partial": 22,
+      "source_gap": 26,
+      "unknown": 2
+    }
+  },
+  "source_inputs": [
+    "scripts/run_archive_resolution_evals.py --json",
+    "scripts/run_search_usefulness_audit.py --json",
+    "scripts/report_external_baseline_status.py --json"
+  ]
+}

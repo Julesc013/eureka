@@ -122,16 +122,30 @@ REQUIRED_PUBLIC_DATA_PATHS = {
     "/files/index.txt",
     "/files/SHA256SUMS",
 }
+REQUIRED_GENERATED_PUBLIC_DATA_PATHS = {
+    "/data/site_manifest.json",
+    "/data/page_registry.json",
+    "/data/source_summary.json",
+    "/data/eval_summary.json",
+    "/data/route_summary.json",
+    "/data/build_manifest.json",
+}
+REQUIRED_FUTURE_FILE_SURFACE_PATHS = {
+    "/files/index.txt",
+    "/files/SHA256SUMS",
+}
 REQUIRED_PUBLIC_DATA_FIELDS = {
     "path",
     "status",
     "stability",
     "schema_version",
     "producer",
+    "source_inputs",
     "consumer_profiles",
     "contains_live_data",
     "contains_external_observations",
     "safe_for_static_hosting",
+    "generated_by",
     "notes",
 }
 NON_IMPLEMENTED_STATUSES = {
@@ -220,7 +234,7 @@ def validate_publication_inventory(
     )
     _validate_client_profiles(payloads["client_profiles.json"], errors)
     _validate_deployment_targets(payloads["deployment_targets.json"], errors)
-    _validate_public_data_contract(payloads["public_data_contract.json"], errors)
+    _validate_public_data_contract(payloads["public_data_contract.json"], site_dir, errors)
     _validate_redirects(payloads["redirects.json"], errors)
     _validate_claim_traceability_doc(repo_root, errors)
 
@@ -486,7 +500,7 @@ def _validate_deployment_targets(payload: Any, errors: list[str]) -> None:
             )
 
 
-def _validate_public_data_contract(payload: Any, errors: list[str]) -> None:
+def _validate_public_data_contract(payload: Any, site_dir: Path, errors: list[str]) -> None:
     if not isinstance(payload, Mapping):
         errors.append("public_data_contract.json: must be a JSON object.")
         return
@@ -525,12 +539,34 @@ def _validate_public_data_contract(payload: Any, errors: list[str]) -> None:
             )
         if entry.get("safe_for_static_hosting") is not True:
             errors.append(f"public_data_contract.json: entry {path} must be safe for static hosting.")
+        if not isinstance(entry.get("source_inputs"), list) or not entry.get("source_inputs"):
+            errors.append(f"public_data_contract.json: entry {path} must name source_inputs.")
+        if not isinstance(entry.get("generated_by"), str) or not entry.get("generated_by"):
+            errors.append(f"public_data_contract.json: entry {path} must name generated_by.")
 
     missing_paths = sorted(REQUIRED_PUBLIC_DATA_PATHS - set(by_path))
     if missing_paths:
         errors.append(f"public_data_contract.json: missing required paths {missing_paths}.")
 
-    for required_path in sorted(REQUIRED_PUBLIC_DATA_PATHS):
+    for required_path in sorted(REQUIRED_GENERATED_PUBLIC_DATA_PATHS):
+        entry = by_path.get(required_path)
+        if not entry:
+            continue
+        if entry.get("status") != "implemented":
+            errors.append(
+                f"public_data_contract.json: generated data path {required_path} must be implemented."
+            )
+        if entry.get("stability") != "stable_draft":
+            errors.append(
+                f"public_data_contract.json: generated data path {required_path} must be stable_draft."
+            )
+        generated_file = site_dir / required_path.removeprefix("/")
+        if not generated_file.exists():
+            errors.append(
+                f"public_data_contract.json: generated data path {required_path} is missing from public_site."
+            )
+
+    for required_path in sorted(REQUIRED_FUTURE_FILE_SURFACE_PATHS):
         entry = by_path.get(required_path)
         if entry and entry.get("status") not in NON_IMPLEMENTED_STATUSES:
             errors.append(

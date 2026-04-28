@@ -31,6 +31,9 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Check generated public data summaries
+        run: python scripts/generate_public_data_summaries.py --check
+
       - name: Validate publication inventory
         run: python scripts/validate_publication_inventory.py
 
@@ -51,4 +54,3 @@ jobs:
       - name: Deploy static public site to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
