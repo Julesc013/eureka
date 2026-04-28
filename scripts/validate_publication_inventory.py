@@ -25,6 +25,7 @@ REQUIRED_FILES = {
     "redirects.json",
     "static_hosting_targets.json",
     "surface_capabilities.json",
+    "surface_route_matrix.json",
 }
 REQUIRED_CONTRACT_FIELDS = {
     "schema_version",
@@ -314,6 +315,9 @@ def validate_publication_inventory(
         "surface_capabilities.json": _load_json(
             inventory_dir / "surface_capabilities.json", errors, repo_root
         ),
+        "surface_route_matrix.json": _load_json(
+            inventory_dir / "surface_route_matrix.json", errors, repo_root
+        ),
     }
 
     _validate_contract(payloads["publication_contract.json"], errors)
@@ -351,6 +355,7 @@ def validate_publication_inventory(
         "live_probe_gateway_checked": "live_probe_gateway.json" in existing_files,
         "static_hosting_targets_checked": "static_hosting_targets.json" in existing_files,
         "surface_capabilities_checked": "surface_capabilities.json" in existing_files,
+        "surface_route_matrix_checked": "surface_route_matrix.json" in existing_files,
         "errors": errors,
         "warnings": warnings,
     }
