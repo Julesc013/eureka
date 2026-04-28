@@ -1,0 +1,401 @@
+{
+  "schema_version": "0.1.0",
+  "gateway_id": "eureka-live-probe-gateway",
+  "status": "planned",
+  "stability": "experimental",
+  "no_live_probes_implemented": true,
+  "no_network_calls_performed": true,
+  "enabled_by_default": false,
+  "public_alpha_default_enabled": false,
+  "requires_live_backend_handoff": true,
+  "requires_operator_signoff": true,
+  "requires_abuse_controls": true,
+  "requires_source_policy_review": true,
+  "source_probe_contract_version": "0.1.0",
+  "global_limits": {
+    "max_query_length": 160,
+    "max_total_results": 20,
+    "max_results_per_source": 10,
+    "global_timeout_ms": 10000,
+    "source_timeout_ms": 5000,
+    "max_sources_per_request": 2,
+    "allow_arbitrary_url_fetch": false,
+    "allow_downloads": false,
+    "allow_write_actions": false,
+    "allow_auth_user_credentials": false
+  },
+  "source_limits": {
+    "internet_archive_metadata": {
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000
+    },
+    "internet_archive_item_metadata": {
+      "default_result_cap": 5,
+      "default_timeout_ms": 5000
+    },
+    "wayback_availability": {
+      "default_result_cap": 5,
+      "default_timeout_ms": 5000
+    },
+    "wayback_cdx_metadata": {
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000
+    },
+    "github_releases_metadata": {
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000
+    },
+    "software_heritage_metadata": {
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000
+    },
+    "pypi_package_metadata": {
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000
+    },
+    "npm_package_metadata": {
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000
+    },
+    "wikidata_metadata": {
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000
+    }
+  },
+  "cache_policy": {
+    "cache_required": true,
+    "cache_first": true,
+    "cache_key_inputs": [
+      "source_id",
+      "probe_mode",
+      "normalized_query",
+      "source_limits_version"
+    ],
+    "cache_ttl_policy": "future_operator_defined",
+    "must_record_cache_hit": true,
+    "notes": "Future live probes must prefer cache reuse and must record whether a result came from cache or a live request."
+  },
+  "evidence_policy": {
+    "evidence_required": true,
+    "must_record_source_id": true,
+    "must_record_probe_mode": true,
+    "must_record_observed_at": true,
+    "must_record_limits": true,
+    "must_record_source_response_summary": true,
+    "must_not_store_private_credentials": true,
+    "notes": "Future probe output is not product truth until evidence records can be inspected and invalidated."
+  },
+  "user_agent_policy": {
+    "required": true,
+    "default_status": "operator_configured_future",
+    "must_identify_project": true,
+    "must_include_contact_or_docs": true,
+    "notes": "No user-agent string is configured by this contract-only milestone."
+  },
+  "retry_policy": {
+    "max_retries": 1,
+    "retry_after_respected": true,
+    "backoff_required": true,
+    "retryable_statuses": [
+      429,
+      500,
+      502,
+      503,
+      504
+    ],
+    "notes": "Retry behavior remains future implementation work and must stay bounded."
+  },
+  "circuit_breaker_policy": {
+    "required": true,
+    "per_source_disable_switch_required": true,
+    "failure_threshold": "operator_defined_future",
+    "cooldown_required": true,
+    "notes": "A later runtime must be able to disable any source quickly without code changes."
+  },
+  "download_policy": {
+    "allow_downloads": false,
+    "allow_executable_downloads": false,
+    "metadata_first": true,
+    "file_listing_only_when_allowed": true,
+    "notes": "Live Probe Gateway Contract v0 permits no downloads. Future download surfaces require rights and security policy first."
+  },
+  "privacy_policy": {
+    "allow_auth_user_credentials": false,
+    "allow_private_account_data": false,
+    "allow_private_local_paths": false,
+    "query_logging_status": "bounded_redacted_future",
+    "notes": "No private account, credential, or arbitrary local path material may be sent to external sources."
+  },
+  "logging_policy": {
+    "must_log_source_id": true,
+    "must_log_probe_mode": true,
+    "must_log_limit_profile": true,
+    "must_not_log_private_credentials": true,
+    "must_distinguish_cache_hit": true,
+    "notes": "Operational logging policy remains future and must avoid private data disclosure."
+  },
+  "disabled_sources": [
+    "internet_archive_metadata",
+    "internet_archive_item_metadata",
+    "wayback_availability",
+    "wayback_cdx_metadata",
+    "github_releases_metadata",
+    "software_heritage_metadata",
+    "pypi_package_metadata",
+    "npm_package_metadata",
+    "wikidata_metadata"
+  ],
+  "future_candidate_sources": [
+    {
+      "id": "internet_archive_metadata",
+      "status": "future_disabled",
+      "live_supported_now": false,
+      "requires_operator_enable": true,
+      "allowed_modes": [
+        "metadata_search"
+      ],
+      "forbidden_modes": [
+        "downloads",
+        "scraping",
+        "bulk crawling",
+        "arbitrary URL fetching",
+        "account/private data"
+      ],
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000,
+      "cache_required": true,
+      "evidence_required": true,
+      "notes": "Future metadata-only Internet Archive search candidate; no live IA calls are implemented."
+    },
+    {
+      "id": "internet_archive_item_metadata",
+      "status": "future_disabled",
+      "live_supported_now": false,
+      "requires_operator_enable": true,
+      "allowed_modes": [
+        "item_metadata",
+        "file_listing"
+      ],
+      "forbidden_modes": [
+        "downloads",
+        "scraping",
+        "bulk crawling",
+        "arbitrary URL fetching",
+        "account/private data"
+      ],
+      "default_result_cap": 5,
+      "default_timeout_ms": 5000,
+      "cache_required": true,
+      "evidence_required": true,
+      "notes": "Future item metadata and bounded file listing candidate; no downloads."
+    },
+    {
+      "id": "wayback_availability",
+      "status": "future_disabled",
+      "live_supported_now": false,
+      "requires_operator_enable": true,
+      "allowed_modes": [
+        "availability_check"
+      ],
+      "forbidden_modes": [
+        "downloads",
+        "scraping",
+        "bulk crawling",
+        "arbitrary URL fetching",
+        "account/private data"
+      ],
+      "default_result_cap": 5,
+      "default_timeout_ms": 5000,
+      "cache_required": true,
+      "evidence_required": true,
+      "notes": "Future availability-check candidate only; no replay crawling."
+    },
+    {
+      "id": "wayback_cdx_metadata",
+      "status": "future_disabled",
+      "live_supported_now": false,
+      "requires_operator_enable": true,
+      "allowed_modes": [
+        "metadata_search",
+        "availability_check"
+      ],
+      "forbidden_modes": [
+        "downloads",
+        "scraping",
+        "bulk crawling",
+        "arbitrary URL fetching",
+        "account/private data"
+      ],
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000,
+      "cache_required": true,
+      "evidence_required": true,
+      "notes": "Future CDX metadata candidate; must not become broad capture crawling."
+    },
+    {
+      "id": "github_releases_metadata",
+      "status": "future_disabled",
+      "live_supported_now": false,
+      "requires_operator_enable": true,
+      "allowed_modes": [
+        "item_metadata",
+        "file_listing"
+      ],
+      "forbidden_modes": [
+        "downloads",
+        "scraping",
+        "bulk crawling",
+        "arbitrary URL fetching",
+        "account/private data"
+      ],
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000,
+      "cache_required": true,
+      "evidence_required": true,
+      "notes": "Future public release metadata candidate; no GitHub API calls are implemented."
+    },
+    {
+      "id": "software_heritage_metadata",
+      "status": "future_disabled",
+      "live_supported_now": false,
+      "requires_operator_enable": true,
+      "allowed_modes": [
+        "item_metadata",
+        "availability_check"
+      ],
+      "forbidden_modes": [
+        "downloads",
+        "scraping",
+        "bulk crawling",
+        "arbitrary URL fetching",
+        "account/private data"
+      ],
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000,
+      "cache_required": true,
+      "evidence_required": true,
+      "notes": "Future source preservation metadata candidate; no live Software Heritage calls are implemented."
+    },
+    {
+      "id": "pypi_package_metadata",
+      "status": "future_disabled",
+      "live_supported_now": false,
+      "requires_operator_enable": true,
+      "allowed_modes": [
+        "item_metadata",
+        "metadata_search"
+      ],
+      "forbidden_modes": [
+        "downloads",
+        "scraping",
+        "bulk crawling",
+        "arbitrary URL fetching",
+        "account/private data"
+      ],
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000,
+      "cache_required": true,
+      "evidence_required": true,
+      "notes": "Future package metadata candidate; no package registry calls are implemented."
+    },
+    {
+      "id": "npm_package_metadata",
+      "status": "future_disabled",
+      "live_supported_now": false,
+      "requires_operator_enable": true,
+      "allowed_modes": [
+        "item_metadata",
+        "metadata_search"
+      ],
+      "forbidden_modes": [
+        "downloads",
+        "scraping",
+        "bulk crawling",
+        "arbitrary URL fetching",
+        "account/private data"
+      ],
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000,
+      "cache_required": true,
+      "evidence_required": true,
+      "notes": "Future package metadata candidate; no package registry calls are implemented."
+    },
+    {
+      "id": "wikidata_metadata",
+      "status": "future_disabled",
+      "live_supported_now": false,
+      "requires_operator_enable": true,
+      "allowed_modes": [
+        "metadata_search",
+        "item_metadata"
+      ],
+      "forbidden_modes": [
+        "downloads",
+        "scraping",
+        "bulk crawling",
+        "arbitrary URL fetching",
+        "account/private data"
+      ],
+      "default_result_cap": 10,
+      "default_timeout_ms": 5000,
+      "cache_required": true,
+      "evidence_required": true,
+      "notes": "Future public metadata candidate; no live Wikidata calls are implemented."
+    }
+  ],
+  "manual_only_sources": [
+    {
+      "id": "google_web_search",
+      "status": "manual_external_baseline",
+      "live_probe_candidate": false,
+      "notes": "Google remains a human-operated manual baseline path only. Eureka does not scrape Google or automate Google searches."
+    }
+  ],
+  "prohibited_behaviors": [
+    "live probe implementation",
+    "network calls",
+    "URL fetching",
+    "downloads",
+    "scraping",
+    "bulk crawling",
+    "arbitrary URL fetching",
+    "private account data access",
+    "user credential forwarding",
+    "production readiness claims",
+    "live probe availability claims"
+  ],
+  "response_envelope": {
+    "ok": true,
+    "source_id": "internet_archive_metadata",
+    "probe_status": "disabled",
+    "query": "example query",
+    "results": [],
+    "evidence_records": [],
+    "notices": [
+      "Live probes are disabled in this static/public-alpha build."
+    ],
+    "limits": {
+      "max_total_results": 20,
+      "max_results_per_source": 10,
+      "source_timeout_ms": 5000
+    }
+  },
+  "error_envelope_alignment": {
+    "docs": "docs/reference/LIVE_BACKEND_ERROR_ENVELOPE.md",
+    "required_error_codes": [
+      "capability_disabled",
+      "live_probes_disabled",
+      "source_disabled",
+      "source_timeout",
+      "rate_limited",
+      "bad_request"
+    ]
+  },
+  "created_by_slice": "live_probe_gateway_contract_v0",
+  "notes": [
+    "This is a contract and policy layer only.",
+    "No source adapter, live probe endpoint, URL fetch, crawler, scraper, or external API call is added.",
+    "Internet Archive live probing remains future and disabled until explicit human review and implementation approval.",
+    "Google remains manual-baseline only and is not a live probe source."
+  ]
+}
