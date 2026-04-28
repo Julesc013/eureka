@@ -56,12 +56,22 @@ Current scripts:
   supports `--update`, `--check`, `--output-root`, and `--json`, performs no
   network calls, runs no live probes, records no external observations, starts
   no server, deploys nothing, and does not create live API semantics
+- `generate_compatibility_surfaces.py`: generates, updates, or checks static
+  lite/text/files compatibility seed surfaces under `public_site/lite/`,
+  `public_site/text/`, and `public_site/files/` by default from generated
+  public data summaries; it supports `--update`, `--check`, `--output-root`,
+  `--data-root`, and `--json`, generates a file-tree manifest and SHA256SUMS,
+  performs no network calls, runs no live search or probes, records no external
+  observations, adds no executable downloads, and does not create snapshots,
+  relay behavior, native-client runtime, or live API semantics
 - `site/build.py` and `site/validate.py`: build and validate the stdlib-only
   static-site source tree into `site/dist/` for Static Site Generation
   Migration v0; `site/build.py` also emits generated public data summaries into
-  `site/dist/data/`; they keep `public_site/` as the deployment artifact and
-  add no Node/npm, frontend framework, live backend calls, live probes,
-  external web APIs, or deployment behavior
+  `site/dist/data/` and generated lite/text/files seed surfaces into
+  `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`; they keep
+  `public_site/` as the deployment artifact and add no Node/npm, frontend
+  framework, live backend calls, live probes, external web APIs, downloads, or
+  deployment behavior
 - `generate_public_alpha_rehearsal_evidence.py`: summarizes, updates, or
   checks Public Alpha Rehearsal Evidence v0 by validating the static site,
   running the in-process public-alpha smoke checks, counting route inventory

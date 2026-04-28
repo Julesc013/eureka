@@ -35,3 +35,10 @@ Generated Public Data Summaries v0 records committed static machine-readable
 summaries under `public_site/data/` and generated validation copies under
 `site/dist/data/`. No separate AIDE runtime report is needed; those JSON files
 are publication artifacts, not AIDE product state.
+
+Lite/Text/Files Seed Surfaces v0 records committed static compatibility
+surfaces under `public_site/lite/`, `public_site/text/`, and
+`public_site/files/`, with generated validation copies under `site/dist/`.
+No separate AIDE runtime report is needed; those files are publication
+artifacts and do not add live search, downloads, snapshots, relay behavior, or
+native-client runtime.

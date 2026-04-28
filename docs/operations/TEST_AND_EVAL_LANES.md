@@ -356,6 +356,24 @@ manifest no-deployment claims. It performs no network calls, starts no backend,
 adds no live API, enables no live probes, records no external observations, and
 does not change the GitHub Pages artifact.
 
+## Lite/Text/Files Seed Surfaces
+
+Lite/Text/Files Seed Surfaces v0 is validated with:
+
+```bash
+python scripts/generate_compatibility_surfaces.py --check
+python scripts/generate_compatibility_surfaces.py --json
+python -m unittest tests.operations.test_lite_text_files_surfaces tests.scripts.test_generate_compatibility_surfaces
+```
+
+The lane checks static no-JS compatibility surfaces under `public_site/lite/`,
+plain-text files under `public_site/text/`, file-tree manifests and SHA256SUMS
+under `public_site/files/`, generated copies under `site/dist/`, relative-link
+posture, public data references, and no-download/no-live-search caveats. It
+performs no network calls, starts no backend, adds no live search, adds no
+executable downloads, creates no signed snapshot, and adds no relay or native
+runtime behavior.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

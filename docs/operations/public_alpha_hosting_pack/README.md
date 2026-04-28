@@ -42,6 +42,12 @@ Generated Public Data Summaries v0 adds deterministic static JSON under
 compatibility surfaces; they are not a live API, do not run backend code, do
 not enable live probes, and do not record external observations.
 
+Lite/Text/Files Seed Surfaces v0 adds static compatibility outputs under
+`public_site/lite/`, `public_site/text/`, and `public_site/files/`, generated
+from public data summaries. They are not live search, executable downloads,
+signed snapshots, relay runtime, native-client runtime, backend hosting, or
+public-alpha approval.
+
 ## What This Pack Is
 
 - an operator-readable packet for rehearsing the constrained `public_alpha`
@@ -106,6 +112,8 @@ work and that caller-provided local path controls are blocked in
   `docs/operations/GITHUB_PAGES_DEPLOYMENT.md`
 - GitHub Pages artifact checker:
   `python scripts/check_github_pages_static_artifact.py`
+- Compatibility surface generator:
+  `python scripts/generate_compatibility_surfaces.py --check`
 
 ## Pack Contents
 

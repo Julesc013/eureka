@@ -14,6 +14,9 @@ public_site/
   local-quickstart.html
   site_manifest.json
   data/
+  lite/
+  text/
+  files/
   assets/
 ```
 
@@ -41,6 +44,9 @@ site/dist/
   local-quickstart.html
   site_manifest.json
   data/
+  lite/
+  text/
+  files/
   assets/
 ```
 
@@ -69,12 +75,42 @@ site/dist/data/
 
 These are deterministic static JSON summaries, not live API routes.
 
+Lite/Text/Files Seed Surfaces v0 adds:
+
+```text
+public_site/lite/
+  index.html
+  sources.html
+  evals.html
+  demo-queries.html
+  limitations.html
+  README.txt
+public_site/text/
+  index.txt
+  sources.txt
+  evals.txt
+  demo-queries.txt
+  limitations.txt
+  README.txt
+public_site/files/
+  index.html
+  index.txt
+  README.txt
+  manifest.json
+  SHA256SUMS
+  data/README.txt
+```
+
+`site/build.py` emits matching validation copies into `site/dist/lite/`,
+`site/dist/text/`, and `site/dist/files/`. These are static compatibility
+surfaces, not live search, executable downloads, signed snapshots, relay
+behavior, or native-client runtime.
+
 Expected future static data areas:
 
 - `data/` for schema-versioned public JSON
-- `files/` for text manifests and checksums
 - `snapshots/` for offline static bundles
 - `data/build_manifest.json` for build provenance
-- checksum files later, after a checksum-producing slice exists
+- signed snapshot manifests/checksums later, after a snapshot slice exists
 
 Static exports must remain portable between `/eureka/` and `/`.

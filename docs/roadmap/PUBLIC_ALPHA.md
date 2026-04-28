@@ -40,6 +40,10 @@ The minimum public-alpha entry gate should include:
 - Generated Public Data Summaries v0 (implemented as deterministic static JSON
   under `public_site/data/` and `site/dist/data/`; no live API, live probes,
   external observations, or production JSON stability claim)
+- Lite/Text/Files Seed Surfaces v0 (implemented as static no-JS/no-download
+  compatibility seed surfaces under `public_site/lite/`, `public_site/text/`,
+  and `public_site/files/`; no live search, snapshots, relay/native runtime,
+  executable downloads, or production support claim)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -160,6 +164,9 @@ production-readiness claim.
 
 Generated Public Data Summaries v0 now adds static JSON summaries under
 `public_site/data/` and `site/dist/data/` for page, source, eval, route, and
-build state. These files prepare later static compatibility surfaces, but they
-are not a live API, do not host backend behavior, do not enable live probes,
-and do not record external observations.
+build state. Lite/Text/Files Seed Surfaces v0 now consumes those summaries to
+publish static compatibility seed surfaces under `public_site/lite/`,
+`public_site/text/`, and `public_site/files/`. These files are not a live API,
+do not host backend behavior, do not enable live probes, do not record external
+observations, do not add executable downloads, and do not create snapshots,
+relay behavior, or native-client runtime.

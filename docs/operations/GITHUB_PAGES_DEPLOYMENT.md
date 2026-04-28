@@ -91,6 +91,12 @@ Generated Public Data Summaries v0 commits static JSON under
 for freshness and static-only safety before upload. They are not live API
 routes and do not include live probes or external observations.
 
+Lite/Text/Files Seed Surfaces v0 commits static compatibility outputs under
+`public_site/lite/`, `public_site/text/`, and `public_site/files/`; those files
+are part of the static artifact and are generated from public data summaries.
+They are not live search, executable downloads, signed snapshots, relay
+runtime, or native-client runtime behavior.
+
 Generated `site/dist/` output is not uploaded by this workflow yet. A later
 artifact migration must explicitly prove equivalence and update this document,
 the publication inventory, and the workflow together.

@@ -14,6 +14,10 @@ GitHub Pages Deployment Enablement v0 now configures a static-only workflow for 
 
 Static Site Generation Migration v0 now adds a stdlib-only site generator and site/dist validation output, but public_site remains the deployable GitHub Pages artifact. The generated output is not a backend, live probe, custom domain, or production-readiness claim.
 
+Generated Public Data Summaries v0 now adds deterministic static JSON under public_site/data and site/dist/data. Those files are static summaries only; they are not a live API, live probe, external observation record, or production JSON stability claim.
+
+Lite/Text/Files Seed Surfaces v0 now adds static compatibility outputs under public_site/lite, public_site/text, and public_site/files, with generated copies under site/dist. These surfaces are no-JS/no-download publication artifacts only; they are not live search, executable mirrors, signed snapshots, relay runtime, native-client runtime, or public-alpha backend approval.
+
 ## Contents
 
 - `REHEARSAL_SCOPE.md`

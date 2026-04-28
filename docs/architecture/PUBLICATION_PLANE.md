@@ -26,6 +26,13 @@ static JSON projections of site, page, source, eval, route, and build state.
 `site/build.py` also emits matching summaries into `site/dist/data/` for
 generated-output validation. These files are not a live API.
 
+`public_site/lite/`, `public_site/text/`, and `public_site/files/` contain
+Lite/Text/Files Seed Surfaces v0: static compatibility surfaces generated from
+public data summaries for old browsers, plain-text readers, and file-tree
+inspection. `site/build.py` emits matching validation copies into `site/dist/`.
+These files are not live search, executable downloads, snapshots, relay
+behavior, or native-client runtime.
+
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
 expectations, deployment target semantics, and redirects.
@@ -86,6 +93,7 @@ Generated Public Data Summaries v0 projects safe machine-readable files under
 `/data/` without live data or external observations. Those files prepare later
 static clients but do not create production API semantics.
 
-Lite, text, files, snapshots, relay surfaces, native clients, custom domains,
-and live backend handoff work are reserved by this plane, but they remain
-future work after Generated Public Data Summaries v0.
+Lite/Text/Files Seed Surfaces v0 consumes those summaries for static
+compatibility output. Snapshots, relay surfaces, native clients, custom
+domains, and live backend handoff work remain future work after the seed
+surfaces.

@@ -9,6 +9,8 @@ Current boundary:
 - `site/dist/` is generated output from `python site/build.py`.
 - `site/dist/data/` is populated by Generated Public Data Summaries v0 for
   validation against the current static publication data.
+- `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/` are populated by
+  Lite/Text/Files Seed Surfaces v0 for static compatibility validation.
 - `public_site/` remains the GitHub Pages deployment artifact for this
   milestone.
 
@@ -29,6 +31,7 @@ The public data generator can also be checked directly:
 
 ```bash
 python scripts/generate_public_data_summaries.py --check
+python scripts/generate_compatibility_surfaces.py --check
 ```
 
 Generated output is no-JS static HTML with relative links so it can work under
@@ -38,6 +41,7 @@ path `/`.
 `site/build.py --output public_site` is intentionally refused in this milestone
 so generated output cannot replace the deployable artifact by accident.
 
-Generated public data remains static JSON only. It does not create a live API,
-enable live probes, record external observations, or change deployment
-behavior.
+Generated public data and compatibility surfaces remain static only. They do
+not create a live API, enable live probes, record external observations, add
+executable downloads, create snapshots, add relay/native runtime behavior, or
+change deployment behavior.

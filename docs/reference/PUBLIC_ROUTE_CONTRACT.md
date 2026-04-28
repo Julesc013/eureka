@@ -18,14 +18,16 @@ Every current public route record must include:
 - `public_claim_scope`
 - `notes`
 
-Current implemented routes point at files under `public_site/`. Reserved future
-routes use `source_file: null` and must stay `planned`, `deferred`, `blocked`,
-or another non-implemented status until an artifact exists.
+Current implemented and `static_demo` routes point at files under
+`public_site/`. Reserved future routes use `source_file: null` and must stay
+`planned`, `deferred`, `blocked`, or another non-implemented status until an
+artifact exists.
 
 Routes must work under the GitHub Pages project base path `/eureka/` and under a
 future custom-domain root `/`. Relative links are preferred for static pages.
 
-Reserved route families include `/app/`, `/web/`, `/lite/`, `/text/`,
-`/files/`, `/data/`, `/api/`, and `/snapshots/`. Their presence in the registry
-is reservation only, not an implementation claim.
-
+Lite/Text/Files Seed Surfaces v0 promotes `/lite/`, `/text/`, and `/files/` to
+`static_demo` route families backed by committed files. `/app/`, `/web/`,
+`/data/` as a route root, `/api/`, and `/snapshots/` remain reserved route
+families. Their presence in the registry is reservation only, not an
+implementation claim.

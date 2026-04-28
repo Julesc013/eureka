@@ -188,16 +188,16 @@
     {
       "id": "lite_text_files_seed_surfaces_v0",
       "title": "Lite/Text/Files Seed Surfaces v0",
-      "status": "next",
+      "status": "completed",
       "priority": 27,
-      "notes": "Seed compatibility-oriented /lite, /text, and /files surfaces using the generated public data summaries and publication profiles without implying native apps or relay support."
+      "notes": "Added static no-JS/no-download compatibility seed surfaces under public_site/lite, public_site/text, and public_site/files from generated public data summaries, with file-tree manifest/checksums and no snapshots, relay/native runtime, live backend, live probes, or executable downloads."
     },
     {
       "id": "static_resolver_demo_snapshots_v0",
       "title": "Static Resolver Demo Snapshots v0",
-      "status": "queued",
+      "status": "next",
       "priority": 28,
-      "notes": "Future static resolver demo snapshots after data summaries and static export rules exist."
+      "notes": "Next static publication step: generate representative resolver demo snapshots from governed data and fixture-backed outputs without adding live APIs or snapshot signing yet."
     },
     {
       "id": "custom_domain_alternate_host_readiness_v0",

@@ -21,9 +21,11 @@ Required profiles:
 
 - `modern_web`: future richer browser experience; not active as an app surface.
 - `standard_web`: current no-JS static public pages where applicable.
-- `lite_html`: future old-browser HTML surface.
-- `text`: future text-browser and terminal-readable surface.
-- `file_tree`: future static file, manifest, and checksum tree.
+- `lite_html`: static_demo old-browser HTML seed surface under `/lite/`.
+- `text`: static_demo text-browser and terminal-readable seed surface under
+  `/text/`.
+- `file_tree`: static_demo static file, manifest, and checksum seed tree under
+  `/files/`.
 - `snapshot`: future offline static bundle profile.
 - `native_client`: future native clients consuming public data, API, or
   snapshots.
@@ -31,7 +33,7 @@ Required profiles:
 - `api_client`: future public data and API consumer profile; not a live backend
   guarantee.
 
-Profiles describe consumption contracts. They do not implement `/app/`, `/lite/`,
-`/text/`, `/files/`, snapshots, relay behavior, native clients, or live APIs by
-themselves.
-
+Profiles describe consumption contracts. Lite/Text/Files Seed Surfaces v0 now
+implements seed static surfaces for `lite_html`, `text`, and `file_tree`.
+Profiles still do not implement `/app/`, snapshots, relay behavior, native
+clients, or live APIs by themselves.

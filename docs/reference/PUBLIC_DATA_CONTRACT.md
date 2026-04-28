@@ -40,10 +40,16 @@ into `site/dist/data/` by `site/build.py`. They remain `stable_draft`, static,
 and pre-alpha. They are not a live API, do not include live data, and do not
 record external observations.
 
-Planned file-tree public data files include:
+Implemented file-tree public data files include:
 
+- `/files/manifest.json`
 - `/files/index.txt`
 - `/files/SHA256SUMS`
+
+They are produced by `scripts/generate_compatibility_surfaces.py` from
+`public_site/data/*.json`. They are static file-tree seed artifacts only: no
+live data, no external observations, no executable downloads, and no signed
+snapshot guarantee.
 
 The current `public_site/site_manifest.json` is an implemented static artifact
 manifest, not the final generated public data layout. Static Site Generation

@@ -18,6 +18,10 @@ Current boundary:
 - `public_site/data/` and `site/dist/data/` contain Generated Public Data
   Summaries v0 static JSON. They are not a live API and do not record external
   observations.
+- `public_site/lite/`, `public_site/text/`, and `public_site/files/` contain
+  Lite/Text/Files Seed Surfaces v0 static compatibility artifacts generated
+  from the public data summaries. They add no live search, executable
+  downloads, snapshots, relay runtime, or native-client runtime behavior.
 - `control/inventory/publication/` owns the publication contracts and
   inventories.
 - `.github/workflows/pages.yml` is the static-only GitHub Pages publishing
@@ -29,4 +33,5 @@ The publication-plane validator is:
 python scripts/validate_publication_inventory.py
 python scripts/validate_publication_inventory.py --json
 python scripts/generate_public_data_summaries.py --check
+python scripts/generate_compatibility_surfaces.py --check
 ```

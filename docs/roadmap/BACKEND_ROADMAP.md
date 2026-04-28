@@ -169,6 +169,12 @@ The repo has already proven:
   projecting page, source, eval, route, and build summaries from governed repo
   inputs without adding live API semantics, live probes, external observations,
   deployment behavior, or production API stability claims
+- Lite/Text/Files Seed Surfaces v0 as the first static compatibility surface
+  layer under `public_site/lite/`, `public_site/text/`, and
+  `public_site/files/`, generating old-browser HTML, plain text, file-tree
+  manifest/checksum views, and `site/dist/` validation copies from public data
+  summaries without adding live search, executable downloads, snapshots,
+  relay/native runtime behavior, or production support claims
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -217,7 +223,7 @@ The next backend sequence is:
 38. GitHub Pages Deployment Enablement v0 (implemented as static workflow configuration; deployment success unverified)
 39. Static Site Generation Migration v0 (implemented; generated output not deployed)
 40. Generated Public Data Summaries v0 (implemented as static JSON summaries)
-41. Lite/Text/Files Seed Surfaces v0
+41. Lite/Text/Files Seed Surfaces v0 (implemented as static compatibility seed surfaces)
 42. Static Resolver Demo Snapshots v0
 43. Custom Domain / Alternate Host Readiness v0
 44. Live Backend Handoff Contract v0
@@ -231,7 +237,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Lite/Text/Files Seed Surfaces v0
+> Static Resolver Demo Snapshots v0
 
 Why this comes next:
 
@@ -247,10 +253,13 @@ Why this comes next:
 - Generated Public Data Summaries v0 now provides safe `/data/` summaries from
   governed inventories and eval outputs without live data, observed external
   baselines, or public deployment-success claims.
-- The next step is to seed `/lite`, `/text`, and `/files` surfaces from those
-  static summaries without adding live backend behavior, live probes,
+- Lite/Text/Files Seed Surfaces v0 now provides static `/lite`, `/text`, and
+  `/files` seed surfaces from those summaries without adding live backend
+  behavior, live probes, executable downloads, snapshots, relay/native runtime,
   provider-neutral backend deployment config, DNS configuration, external
   baseline observations, or production claims.
+- The next step is to add static resolver demo snapshots that show bounded
+  representative resolver outputs without turning static files into a live API.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.

@@ -133,9 +133,17 @@ validation output after the Pages workflow, but the workflow still deploys
 framework, or production-readiness claim.
 
 Generated Public Data Summaries v0 adds static JSON under `public_site/data/`
-and `site/dist/data/`. It prepares later static compatibility surfaces, but it
-does not add live API behavior, backend hosting, live probes, external
-observations, or production JSON stability claims.
+and `site/dist/data/`. It feeds the static compatibility seed surfaces and
+future snapshot/relay/native-client planning, but it does not add live API
+behavior, backend hosting, live probes, external observations, or production
+JSON stability claims.
+
+Lite/Text/Files Seed Surfaces v0 adds static compatibility outputs under
+`public_site/lite/`, `public_site/text/`, and `public_site/files/`, with
+generated copies under `site/dist/`. These surfaces consume static public data
+summaries only; they do not add live search, executable downloads, signed
+snapshots, relay runtime, native-client runtime, backend hosting, or live
+probes.
 
 ## Public Alpha Wrapper
 

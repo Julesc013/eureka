@@ -10,14 +10,17 @@ configure DNS, fetch external data, run live source probes, scrape external
 systems, or start a server.
 
 Generated Public Data Summaries v0 adds deterministic JSON summaries under
-`public_site/data/`. They are static public summaries for future lite/text/files,
-snapshot, relay, and native-client surfaces, not a live API or production
-contract.
+`public_site/data/`. Lite/Text/Files Seed Surfaces v0 consumes those summaries
+to add static compatibility seed surfaces under `public_site/lite/`,
+`public_site/text/`, and `public_site/files/`. They are not live search, a live
+API, executable downloads, snapshots, relay behavior, native-client runtime, or
+a production contract.
 
 Validate it with:
 
 ```bash
 python scripts/generate_public_data_summaries.py --check
+python scripts/generate_compatibility_surfaces.py --check
 python scripts/validate_public_static_site.py
 python scripts/validate_public_static_site.py --json
 python scripts/check_github_pages_static_artifact.py

@@ -180,6 +180,16 @@
       "title": "Generate static public data summaries from governed inventories and eval outputs before compatibility surfaces",
       "status": "addressed_by_generated_public_data_summaries_v0",
       "suggested_milestone": "Lite/Text/Files Seed Surfaces v0"
+    },
+    {
+      "id": "audit-backlog-lite-text-files-seed-surfaces",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Seed static compatibility surfaces from public data before snapshots or relay/native clients",
+      "status": "addressed_by_lite_text_files_seed_surfaces_v0",
+      "suggested_milestone": "Static Resolver Demo Snapshots v0"
     }
   ]
 }
