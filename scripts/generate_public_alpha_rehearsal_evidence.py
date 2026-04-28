@@ -70,6 +70,8 @@ LIMITATIONS = (
     "Rust is not the active runtime",
 )
 REQUIRED_BEFORE_REAL_DEPLOYMENT = (
+    "validate Public Publication Plane Contracts v0",
+    "keep public_site as the current static artifact until a generator is deliberately introduced",
     "choose a hosting target",
     "deploy from a reviewed commit",
     "configure HTTPS/TLS",
@@ -318,6 +320,8 @@ def render_pack_files(manifest: Mapping[str, Any]) -> dict[str, str]:
             "No public deployment happened.",
             "",
             "LIVE_ALPHA_01 adds a public alpha wrapper after this evidence snapshot; it still performs no deployment, keeps live probes disabled, and does not approve production.",
+            "",
+            "Public Publication Plane Contracts v0 now sits after the wrapper and before GitHub Pages deployment enablement. It governs routes, client profiles, public data, base-path portability, deployment targets, redirects, and public claim traceability without deploying, adding a generator, or enabling live backend behavior.",
             "",
             "## Contents",
             "",

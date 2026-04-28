@@ -8,6 +8,9 @@ Current inventory coverage:
 - `sources/` for Source Registry v0 seed records
 - `tests/` for the Test and Eval Operating Layer v0 registry and command
   matrix
+- `publication/` for Public Publication Plane Contracts v0 public route,
+  client-profile, deployment-target, public-data, redirect, and base-path
+  inventories
 - `public_alpha_routes.json` for the Public Alpha Deployment Readiness Review
   route inventory and current safe/blocked route classification
 - `docs/operations/public_alpha_hosting_pack/ROUTE_SAFETY_SUMMARY.md` consumes
@@ -29,4 +32,6 @@ They are not:
 - auth configuration
 - background scheduling metadata
 - deployment configuration
+- deployment execution
+- static site generation
 - a substitute for connector implementation

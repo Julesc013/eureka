@@ -144,52 +144,101 @@
       "notes": "Added a no-JS static public site pack under public_site plus a stdlib validator, without deploying, adding backend hosting, adding live probes, scraping, or making production-readiness claims."
     },
     {
-      "id": "manual_observation_batch_0_execution",
-      "title": "Manual Observation Batch 0 Execution",
-      "status": "human_operated_parallel",
-      "priority": 21,
-      "notes": "Human-operated parallel follow-up to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
-    },
-    {
       "id": "public_alpha_rehearsal_evidence_v0",
       "title": "Public Alpha Rehearsal Evidence v0",
       "status": "completed",
-      "priority": 22,
+      "priority": 21,
       "notes": "Captured supervised local/static rehearsal evidence using the hosting pack, static site pack, smoke checks, route inventory, eval/audit status, external-baseline pending status, blockers, and unsigned signoff without deploying."
     },
     {
       "id": "live_alpha_01_production_public_alpha_wrapper",
       "title": "LIVE_ALPHA_01 Production Public-Alpha Wrapper",
       "status": "completed",
-      "priority": 23,
+      "priority": 22,
       "notes": "Added a stdlib public-alpha wrapper entrypoint, safe config model, check/JSON modes, nonlocal-bind guard, closed live-probe/live-IA gates, and safe status projection without deployment, provider files, auth/TLS/rate limiting/process management, or production approval."
     },
     {
-      "id": "live_alpha_02_deployment_config_pack",
-      "title": "LIVE_ALPHA_02 Deployment Config Pack",
-      "status": "next",
-      "priority": 24,
-      "notes": "Next Codex-side live-alpha milestone after the wrapper; should remain deployment-config evidence only unless a provider is explicitly selected, and still must not perform real deployment."
+      "id": "public_publication_plane_contracts_v0",
+      "title": "Public Publication Plane Contracts v0",
+      "status": "completed",
+      "priority": 23,
+      "notes": "Added governed publication-plane contracts, inventories, docs, validator, and tests for public routes, status vocabulary, client profiles, public data, base-path portability, deployment target semantics, redirects, and claim traceability without deploying, adding a generator, provider config, or live backend behavior."
     },
     {
-      "id": "live_alpha_04_live_probe_gateway_contract",
-      "title": "LIVE_ALPHA_04 Live Probe Gateway Contract",
+      "id": "github_pages_deployment_enablement_v0",
+      "title": "GitHub Pages Deployment Enablement v0",
+      "status": "next",
+      "priority": 24,
+      "notes": "Next Codex-side milestone: enable static publishing of the current public_site artifact using the publication contracts, without adding live backend behavior or letting deployment mechanics define public routes/data."
+    },
+    {
+      "id": "static_site_generation_migration_v0",
+      "title": "Static Site Generation Migration v0",
       "status": "queued",
       "priority": 25,
+      "notes": "Future migration toward a governed site/ source tree and site/dist generated artifact after publication routes, data, clients, and base-path contracts are validated."
+    },
+    {
+      "id": "generated_public_data_summaries_v0",
+      "title": "Generated Public Data Summaries v0",
+      "status": "queued",
+      "priority": 26,
+      "notes": "Generate static public data summaries under /data/ only after the public data contract is stable enough for static clients."
+    },
+    {
+      "id": "lite_text_files_seed_surfaces_v0",
+      "title": "Lite/Text/Files Seed Surfaces v0",
+      "status": "queued",
+      "priority": 27,
+      "notes": "Seed compatibility-oriented /lite, /text, and /files surfaces using the publication profiles without implying native apps or relay support."
+    },
+    {
+      "id": "static_resolver_demo_snapshots_v0",
+      "title": "Static Resolver Demo Snapshots v0",
+      "status": "queued",
+      "priority": 28,
+      "notes": "Future static resolver demo snapshots after data summaries and static export rules exist."
+    },
+    {
+      "id": "custom_domain_alternate_host_readiness_v0",
+      "title": "Custom Domain / Alternate Host Readiness v0",
+      "status": "queued",
+      "priority": 29,
+      "notes": "Future static-host portability review; no DNS configuration should precede explicit domain verification and takeover-risk review."
+    },
+    {
+      "id": "live_backend_handoff_contract_v0",
+      "title": "Live Backend Handoff Contract v0",
+      "status": "queued",
+      "priority": 30,
+      "notes": "Future API/status/capability handoff contract before any hosted backend claim."
+    },
+    {
+      "id": "live_probe_gateway_contract_v0",
+      "title": "Live Probe Gateway Contract v0",
+      "status": "queued",
+      "priority": 31,
       "notes": "Future gateway contract before any live source probes, with abuse controls and explicit source boundaries."
+    },
+    {
+      "id": "manual_observation_batch_0_execution",
+      "title": "Manual Observation Batch 0 Execution",
+      "status": "human_operated_parallel",
+      "priority": 32,
+      "notes": "Human-operated parallel follow-up to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
     },
     {
       "id": "rust_query_planner_parity_candidate_v0",
       "title": "Rust Query Planner Parity Candidate v0",
       "status": "queued",
-      "priority": 26,
+      "priority": 33,
       "notes": "Implement the next isolated Rust seam only after Python planner behavior stabilizes and product-value work can pause."
     },
     {
       "id": "compatibility_surface_strategy_v0",
       "title": "Compatibility Surface Strategy v0",
       "status": "queued",
-      "priority": 27,
+      "priority": 34,
       "notes": "Define presentation rules for known, unknown, inferred, and incompatible outcomes before app work."
     }
   ]

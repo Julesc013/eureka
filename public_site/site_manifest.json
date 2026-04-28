@@ -38,7 +38,8 @@
     "manual external baselines remain pending",
     "fixture-backed evidence is not global truth"
   ],
-  "next_milestone": "LIVE_ALPHA_02 Deployment Config Pack",
+  "publication_contract_source": "control/inventory/publication/publication_contract.json",
+  "next_milestone": "GitHub Pages Deployment Enablement v0",
   "parallel_human_work": "Manual Observation Batch 0 Execution",
   "no_network_required": true,
   "no_deployment_performed": true

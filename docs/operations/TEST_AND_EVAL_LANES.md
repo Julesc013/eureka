@@ -19,6 +19,8 @@ Command records use these categories:
 - `audit`: usefulness or repo-governance audit checks
 - `parity`: Python oracle and optional Rust candidate checks
 - `operations`: public-alpha, hosting-pack, and audit-pack checks
+- `publication`: publication-plane, route/data/client inventory, and static
+  site artifact checks
 - `public_alpha`: constrained demo posture checks
 - `golden`: committed Python-oracle fixture checks
 - `smoke`: narrow end-to-end posture checks
@@ -36,6 +38,8 @@ The command matrix defines these lanes:
   oracle golden check, archive eval runner, and search usefulness audit
 - `docs_only`: docs/audit/index validation plus whitespace diff checks
 - `public_alpha`: route inventory, smoke, wrapper, and hosting-pack safety checks
+- `publication_static_site`: publication inventory plus current static-site
+  artifact checks before deployment or static generation
 - `parity`: Python oracle, source-registry, and source coverage/capability
   validation checks, plus current Python-oracle shape guards such as planner,
   member, result-lane, and compatibility-evidence fields
@@ -279,6 +283,23 @@ download/readback and user-storage disablement, status projection, and docs
 caveats. It does not start a persistent server during validation, deploy
 Eureka, add provider files, enable live probes, add auth/TLS/rate limiting, or
 approve production.
+
+## Public Publication Plane Contracts
+
+Public Publication Plane Contracts v0 is validated with:
+
+```bash
+python scripts/validate_publication_inventory.py
+python scripts/validate_publication_inventory.py --json
+python -m unittest tests.operations.test_publication_inventory tests.scripts.test_validate_publication_inventory
+```
+
+The lane checks `control/inventory/publication/`, route stability vocabulary,
+public status taxonomy, current `public_site/` page coverage, future reserved
+routes, client profiles, deployment target semantics, public data contract
+entries, empty redirect policy, and claim traceability docs. It performs no
+network calls, deploys nothing, adds no provider files, creates no static site
+generator, enables no live backend, and records no external observations.
 
 ## Source Coverage And Capability
 

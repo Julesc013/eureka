@@ -21,6 +21,12 @@ adds no hosting provider configuration, keeps live probes and live Internet
 Archive access disabled, defaults to localhost, and refuses nonlocal binds
 without explicit operator acknowledgement.
 
+Public Publication Plane Contracts v0 adds the public route, data, client
+profile, deployment target, redirect, and base-path inventory layer that must
+be validated before GitHub Pages or any later static-hosting enablement. It
+does not deploy Eureka, add provider configuration, add a static generator, or
+enable live backend behavior.
+
 ## What This Pack Is
 
 - an operator-readable packet for rehearsing the constrained `public_alpha`
@@ -77,6 +83,10 @@ work and that caller-provided local path controls are blocked in
   `docs/operations/PUBLIC_ALPHA_WRAPPER.md`
 - Wrapper config check:
   `python scripts/run_public_alpha_server.py --check-config`
+- Publication inventory:
+  `control/inventory/publication/`
+- Publication inventory validator:
+  `python scripts/validate_publication_inventory.py`
 
 ## Pack Contents
 

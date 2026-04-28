@@ -48,6 +48,12 @@ steps:
     run: python scripts/validate_public_static_site.py --json
   - id: public_static_site_pack_tests
     run: python -m unittest tests.operations.test_public_static_site_pack tests.scripts.test_validate_public_static_site
+  - id: publication_inventory_validator
+    run: python scripts/validate_publication_inventory.py
+  - id: publication_inventory_validator_json
+    run: python scripts/validate_publication_inventory.py --json
+  - id: publication_inventory_tests
+    run: python -m unittest tests.operations.test_publication_inventory tests.scripts.test_validate_publication_inventory
   - id: public_alpha_rehearsal_evidence_summary
     run: python scripts/generate_public_alpha_rehearsal_evidence.py
   - id: public_alpha_rehearsal_evidence_json
@@ -409,6 +415,7 @@ notes:
   - LIVE_ALPHA_00 Static Public Site Pack adds no-JS public_site pages and validation for later static-hosting review; it does not deploy, add backend hosting, add live probes, scrape external systems, or claim production readiness.
   - Public Alpha Rehearsal Evidence v0 packages static-site validation, public-alpha smoke, route inventory, eval/audit status, external-baseline pending status, blockers, next deployment requirements, and unsigned signoff without deploying, approving production, adding live probes, or recording external observations.
   - LIVE_ALPHA_01 Production Public-Alpha Wrapper adds a stdlib public-alpha entrypoint and config guard without deploying, adding provider files, enabling live probes, adding auth/TLS/rate limiting/process management, or approving production.
+  - Public Publication Plane Contracts v0 adds governed route/data/client/deployment-target/redirect inventories and validation before GitHub Pages or static generation; it does not deploy, add provider config, create a generator, or enable live backend behavior.
   - Rust Migration Skeleton and Parity Plan v0 established initial Rust crates and parity docs; Python remains the oracle, Rust is not an active backend, and the Rust workspace check is optional because it requires a local Rust toolchain.
   - Rust Parity Fixture Pack v0 adds Python-oracle golden outputs and a stdlib generator/check script only; it does not implement Rust behavior, replace Python runtime paths, or require Rust tooling for normal checks.
   - Rust Source Registry Parity Candidate v0 is the first isolated Rust behavior seam under `crates/eureka-core`; it is compared to Python-oracle source-registry goldens and is not wired into Python runtime, web, CLI, HTTP API, workers, or production paths.

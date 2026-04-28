@@ -35,7 +35,7 @@ backend development.
 - add gateway service boundaries and internal implementation seams
 - scaffold connector adapters against `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, and `runtime/engine/interfaces/normalize/**`
 
-Current status within this stage: fifty-one local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, and LIVE_ALPHA_01 Production Public-Alpha Wrapper. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns; the external-baseline pack adds 192 pending manual observation slots across 64 queries and three systems, Batch 0 adds 39 prioritized pending slots, the entry helper adds local list/create/validate/report tooling without recording observed external baselines, the static public site pack adds no-JS pages under `public_site/`, the rehearsal evidence pack records local static/smoke/route/eval/baseline evidence without deployment, backend hosting, live probes, scraping, production claims, or observed external baselines, and the wrapper adds a localhost-default public-alpha process/config guard without deployment, provider files, live probes, auth/TLS, rate limiting, or production approval.
+Current status within this stage: fifty-two local deterministic Python thin slices now exist in the Python stdlib bootstrap lane, alongside a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, Old-Platform Software Planner Pack v0, Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, Compatibility Evidence Pack v0, Search Usefulness Audit Delta v0, Old-Platform Source Coverage Expansion v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, and Public Publication Plane Contracts v0. The current Search Usefulness Audit status counts are 5 covered, 22 partial, 26 source gaps, 9 capability gaps, and 2 unknowns; the external-baseline pack adds 192 pending manual observation slots across 64 queries and three systems, Batch 0 adds 39 prioritized pending slots, the entry helper adds local list/create/validate/report tooling without recording observed external baselines, the static public site pack adds no-JS pages under `public_site/`, the rehearsal evidence pack records local static/smoke/route/eval/baseline evidence without deployment, backend hosting, live probes, scraping, production claims, or observed external baselines, the wrapper adds a localhost-default public-alpha process/config guard without deployment, provider files, live probes, auth/TLS, rate limiting, or production approval, and the publication plane adds governed route/data/client/deployment-target inventories without deploying, generating a site, or adding live backend behavior.
 
 ## Stage 3: Surface Skeletons
 
@@ -214,13 +214,23 @@ fields, and keeps live probes, live Internet Archive access, caller-provided
 local paths, downloads/readback, and user storage disabled. It performs no
 deployment, adds no provider configuration, and gives no production approval.
 
+Public Publication Plane Contracts v0 now lives under
+`control/inventory/publication/` with reference docs under `docs/architecture/`
+and `docs/reference/`. It defines public route names, route stability, status
+vocabulary, client profiles, public data expectations, static artifact/source
+separation, base-path portability, deployment target semantics, redirect
+policy, and the rule that no public claim may be published without a repo
+source. It does not deploy Eureka, add a GitHub Pages workflow, add DNS or
+provider configuration, create `site/`, add a generator, start a live backend,
+enable live probes, or record external observations.
+
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
 ## Immediate Next Milestone
 
 The next implementation milestone is:
 
-> LIVE_ALPHA_02 Deployment Config Pack
+> GitHub Pages Deployment Enablement v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -238,14 +248,16 @@ Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1,
 Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0,
 Manual Observation Batch 0, Manual Observation Entry Helper v0,
 LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, and
-LIVE_ALPHA_01 Production Public-Alpha Wrapper
+LIVE_ALPHA_01 Production Public-Alpha Wrapper, and Public Publication Plane
+Contracts v0
 now
 mark the start of a more evidence-led backend phase. The next step is to add
-a deployment config pack because the static site, hosting pack, safe mode,
-smoke checks, rehearsal evidence, and public-alpha wrapper now exist without
-deployment. Manual Observation Batch 0 Execution remains human-operated
-parallel work: external Google and Internet Archive observations remain
-pending/manual. The next Codex-side work must still avoid live crawling,
-external scraping, live probes, installer execution, fuzzy/vector search, LLM
-planning, broad source federation, OCR claims, external baseline fabrication,
-and production benchmark claims.
+GitHub Pages deployment enablement for the current `public_site/` artifact,
+using the publication contracts rather than allowing deployment mechanics to
+define public route or data architecture. Manual Observation Batch 0 Execution
+remains human-operated parallel work: external Google and Internet Archive
+observations remain pending/manual. The next Codex-side work must still avoid
+live crawling, external scraping, live probes, installer execution,
+fuzzy/vector search, LLM planning, broad source federation, OCR claims,
+external baseline fabrication, provider-specific hosting overreach, and
+production benchmark claims.

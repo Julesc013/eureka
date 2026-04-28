@@ -25,6 +25,8 @@ class TestTestEvalOperatingLayer(unittest.TestCase):
             "architecture_boundaries",
             "public_alpha_smoke",
             "hosting_pack_generator_check",
+            "publication_inventory_validator",
+            "publication_inventory_tests",
             "python_oracle_golden_check",
             "archive_resolution_eval_runner",
             "search_usefulness_audit_runner",
@@ -65,6 +67,7 @@ class TestTestEvalOperatingLayer(unittest.TestCase):
                 "full",
                 "docs_only",
                 "public_alpha",
+                "publication_static_site",
                 "parity",
                 "audit",
                 "rust_optional",
@@ -113,4 +116,3 @@ class TestTestEvalOperatingLayer(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

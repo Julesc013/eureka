@@ -2,6 +2,8 @@
 
 Before any real public hosting, a separate future milestone must:
 
+- validate Public Publication Plane Contracts v0
+- keep public_site as the current static artifact until a generator is deliberately introduced
 - choose a hosting target
 - deploy from a reviewed commit
 - configure HTTPS/TLS

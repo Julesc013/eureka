@@ -26,6 +26,10 @@ steps:
     run: python scripts/validate_public_static_site.py
   - id: public_static_site_pack
     run: python -m unittest tests.operations.test_public_static_site_pack tests.scripts.test_validate_public_static_site
+  - id: publication_inventory_validator
+    run: python scripts/validate_publication_inventory.py
+  - id: publication_inventory_tests
+    run: python -m unittest tests.operations.test_publication_inventory tests.scripts.test_validate_publication_inventory
   - id: public_alpha_rehearsal_evidence_check
     run: python scripts/generate_public_alpha_rehearsal_evidence.py --check
   - id: public_alpha_rehearsal_evidence_tests
@@ -114,6 +118,7 @@ notes:
   - LIVE_ALPHA_00 Static Public Site Pack validates static public-site documentation only; it does not deploy, add hosting infrastructure, add live probes, scrape, or claim production readiness.
   - Public Alpha Rehearsal Evidence v0 validates supervised local/static evidence only; it does not deploy, approve production, add live probes, or record external observations.
   - LIVE_ALPHA_01 Production Public-Alpha Wrapper validates a stdlib public-alpha entrypoint and config guard only; it does not deploy, add provider files, enable live probes, add auth/TLS/rate limiting/process management, or approve production.
+  - Public Publication Plane Contracts v0 validates public route/data/client/deployment-target/redirect governance before GitHub Pages or static generation; it does not deploy, add provider config, create a generator, enable live backend behavior, or record external observations.
   - Source Coverage and Capability Model v0 checks validate metadata and projection only; they do not add connectors, live source probing, or crawling.
   - Real Source Coverage Pack v0 checks validate committed recorded fixtures, local bundle fixtures, local-index visibility, and public projection only; they do not add live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Source Coverage Expansion v0 checks validate expanded committed old-platform fixtures, local bundle members, compatibility evidence, and index visibility only; they do not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.

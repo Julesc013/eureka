@@ -1,7 +1,9 @@
 # Public Alpha
 
-Public hosting is not the next step. It is a later milestone that should begin
-only after the backend has a safer and more coherent operational shape.
+Public backend hosting is not the next step. Static GitHub Pages enablement may
+follow the publication-plane contracts, but hosted backend exposure remains a
+later milestone that should begin only after the backend has a safer and more
+coherent operational shape.
 
 ## Minimum Requirements Before Hosting
 
@@ -26,6 +28,9 @@ The minimum public-alpha entry gate should include:
 - LIVE_ALPHA_01 Production Public-Alpha Wrapper (implemented as a stdlib
   entrypoint/config guard for supervised public-alpha runs; no deployment and
   no live probes)
+- Public Publication Plane Contracts v0 (implemented as route, data, client,
+  deployment-target, redirect, base-path, and claim-traceability governance;
+  no deployment, generator, or live backend behavior)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -121,3 +126,11 @@ The wrapper defaults to localhost, refuses unsupported modes, guards nonlocal
 binds, reports safe capability flags, disables local path controls, downloads,
 user storage, live probes, and live Internet Archive access, and still performs
 no deployment or production approval.
+Public Publication Plane Contracts v0 now adds
+`control/inventory/publication/`, `docs/architecture/PUBLICATION_PLANE.md`,
+reference docs, a stdlib inventory validator, and tests. It commits the
+distinction between the current `public_site/` artifact, future `site/`
+generator source, and future `site/dist/` generated artifact before GitHub
+Pages or custom-domain work. It performs no deployment, adds no GitHub Pages
+workflow, creates no generator, enables no live backend, and records no
+external observations.

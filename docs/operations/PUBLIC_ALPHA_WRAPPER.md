@@ -111,7 +111,11 @@ The wrapper deliberately does not provide:
 - external baseline observations
 - arbitrary local filesystem ingestion
 
-A later LIVE_ALPHA_02 Deployment Config Pack may define provider-neutral
-deployment configuration evidence or a reviewed provider template. That future
-pack must still preserve public-alpha safe defaults and keep live probes closed
-until a source-probe gateway contract and abuse-control posture exist.
+Public Publication Plane Contracts v0 now defines the route, data, client,
+base-path, deployment-target, redirect, and claim-traceability layer that sits
+between this wrapper and any static deployment work. The next deployment-facing
+step is GitHub Pages Deployment Enablement v0, which must consume those
+contracts and still keep live probes closed until a source-probe gateway
+contract and abuse-control posture exist. A later deployment config pack may
+define provider-neutral backend deployment configuration evidence, but it is
+not part of this wrapper.

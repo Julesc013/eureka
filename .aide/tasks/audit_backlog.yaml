@@ -139,7 +139,17 @@
       ],
       "title": "Add an explicit public-alpha wrapper before deployment config work",
       "status": "addressed_by_live_alpha_01_public_alpha_wrapper",
-      "suggested_milestone": "LIVE_ALPHA_02 Deployment Config Pack"
+      "suggested_milestone": "Public Publication Plane Contracts v0"
+    },
+    {
+      "id": "audit-backlog-publication-plane-contracts",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Govern public routes, data, client profiles, and base-path rules before deployment",
+      "status": "addressed_by_public_publication_plane_contracts_v0",
+      "suggested_milestone": "GitHub Pages Deployment Enablement v0"
     }
   ]
 }

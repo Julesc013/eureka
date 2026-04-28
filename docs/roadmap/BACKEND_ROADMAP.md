@@ -147,6 +147,12 @@ The repo has already proven:
   status/capability reporting, and disabled local path/download/user-storage
   controls without deployment, provider configuration, auth/TLS, rate limiting,
   process management, or production approval
+- Public Publication Plane Contracts v0 as the first governed public
+  publication contract layer, adding route, route-stability, public status,
+  client-profile, public-data, static-export, base-path, deployment-target, and
+  redirect inventories before GitHub Pages or static-generation work, without
+  adding deployment workflows, provider configuration, a generator, live backend
+  behavior, live probes, or external observations
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -191,118 +197,41 @@ The next backend sequence is:
 34. LIVE_ALPHA_00 Static Public Site Pack (implemented)
 35. Public Alpha Rehearsal Evidence v0 (implemented)
 36. LIVE_ALPHA_01 Production Public-Alpha Wrapper (implemented)
-37. LIVE_ALPHA_02 Deployment Config Pack
-38. Manual Observation Batch 0 Execution (human-operated parallel work)
-39. LIVE_ALPHA_04 Live Probe Gateway Contract
-40. Rust Query Planner Parity Candidate v0
-41. Compatibility Surface Strategy v0
-42. Native App Work Later
+37. Public Publication Plane Contracts v0 (implemented)
+38. GitHub Pages Deployment Enablement v0
+39. Static Site Generation Migration v0
+40. Generated Public Data Summaries v0
+41. Lite/Text/Files Seed Surfaces v0
+42. Static Resolver Demo Snapshots v0
+43. Custom Domain / Alternate Host Readiness v0
+44. Live Backend Handoff Contract v0
+45. Live Probe Gateway Contract v0
+46. Manual Observation Batch 0 Execution (human-operated parallel work)
+47. Rust Query Planner Parity Candidate v0
+48. Compatibility Surface Strategy v0
+49. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> LIVE_ALPHA_02 Deployment Config Pack
+> GitHub Pages Deployment Enablement v0
 
 Why this comes next:
 
-- Source Registry v0 is now present as the bounded source inventory plane
-- Resolution Run Model v0 now provides a synchronous durable investigation
-  envelope
-- Query Planner v0 now provides deterministic structured intent for current
-  archive-resolution families
-- Local Index v0 now provides the first durable local search substrate
-- Local Worker and Task Model v0 now provides the first bounded synchronous
-  execution substrate for repeatable backend jobs
-- Resolution Memory v0 now provides the first bounded reusable solved-work layer
-- Archive Resolution Eval Runner v0 now provides the first executable regression
-  harness over the hard-query packet, including explicit capability gaps
-- Public Alpha Safe Mode v0 now blocks arbitrary local-path controls in
-  public-alpha mode while preserving local-dev behavior
-- Public Alpha Deployment Readiness Review now inventories route safety,
-  validates policy alignment, and smoke-tests public-alpha behavior
-- Public Alpha Hosting Pack v0 now packages route inventory status, smoke
-  evidence templates, operator signoff, blockers, and a supervised rehearsal
-  runbook without adding deployment infrastructure
-- Rust Migration Skeleton and Parity Plan v0 now creates placeholder crates and
-  parity documentation without porting behavior or replacing Python
-- Rust Parity Fixture Pack v0 now captures Python oracle outputs as stable
-  parity fixtures before any Rust seam ports begin
-- Rust Source Registry Parity Candidate v0 now proves the first isolated Rust
-  behavior seam against committed Python goldens without replacing Python
-- Search Usefulness Audit v0 now shows a broad observed backlog dominated by
-  source coverage, planner/query-interpretation, compatibility evidence,
-  representation, decomposition, and member-access gaps
-- Comprehensive Test/Eval Operating Layer and Repo Audit v0 now records hard
-  test proposals and structured findings that should become executable
-  guardrails before source, planner, or Rust parity work widens
-- Hard Test Pack v0 now turns the first selected audit findings into
-  executable guardrails without changing runtime behavior
-- Search Usefulness Backlog Triage v0 now selects old-platform-compatible
-  software search as the primary wedge and member-level discovery as the
-  secondary wedge
-- Source Coverage and Capability Model v0 now defines source capability depth
-  and placeholder posture so recorded fixture coverage can improve usefulness
-  without slipping into live crawling, ranking, fuzzy/vector retrieval, or
-  source-coverage overreach
-- Real Source Coverage Pack v0 has added the first recorded source coverage
-  fixtures
-- Old-Platform Software Planner Pack v0 has reduced planner/query
-  interpretation gaps with deterministic hints while preserving hard eval
-  honesty
-- Member-Level Synthetic Records v0 has added member-level target refs,
-  member-level index records, and parent lineage over the existing fixture
-  corpus
-- Result Lanes + User-Cost Ranking v0 now adds bounded deterministic
-  presentation hints for member-vs-parent usefulness without becoming final
-  production ranking
-- Compatibility Evidence Pack v0 now adds source-backed Windows 7, Windows XP,
-  and Windows 2000 fixture evidence where current records support it while
-  preserving unknown compatibility
-- Search Usefulness Audit Delta v0 records a modest measured movement: partial
-  results increased from 1 to 5, `source_gap` decreased from 43 to 41, and
-  `capability_gap` decreased from 13 to 11 against the historical reported
-  aggregate baseline
-- Old-Platform Source Coverage Expansion v0 expanded recorded fixtures and the
-  current Search Usefulness Audit now reports `covered=5`, `partial=20`,
-  `source_gap=28`, `capability_gap=9`, and `unknown=2`
-- Search Usefulness Audit Delta v1 records that movement and shows archive
-  evals at `capability_gap=1` and `not_satisfied=5`
-- Hard Eval Satisfaction Pack v0 maps current source-backed candidates into
-  hard expected-result checks without weakening task definitions; archive evals
-  now report `capability_gap=1` and `partial=5`
-- Old-Platform Result Refinement Pack v0 scores expected lanes, bad-result
-  avoidance, and result-shape quality for the current source-backed partials;
-  archive evals now report `capability_gap=1`, `partial=4`, and `satisfied=1`
-- More Source Coverage Expansion v1 adds targeted tiny recorded fixture
-  evidence for the four old-platform partials; archive evals now report
-  `capability_gap=1` and `satisfied=5`
-- Article/Scan Fixture Pack v0 adds bounded synthetic article/page/scan
-  evidence; archive evals now report `satisfied=6`
-- Manual External Baseline Observation Pack v0 adds the manual-only schema,
-  templates, pending slots, validation, and status reporting needed to record
-  external observations without scraping or fabricated baselines
-- Manual Observation Batch 0 selects the first 13-query, 39-slot subset for
-  human operation without filling or fabricating observations
-- Manual Observation Entry Helper v0 now makes the human entry workflow safer:
-  it lists pending slots, creates fillable pending files, validates one file or
-  all files, and reports Batch 0 progress without performing any observation
-- LIVE_ALPHA_00 Static Public Site Pack now gives the project a committed
-  static public-facing explanation of prototype status, source matrix,
-  eval/audit posture, demo queries, limitations, roadmap, and local quickstart
-  without deploying anything or adding live source behavior
-- Public Alpha Rehearsal Evidence v0 now records the static validator,
-  smoke-check, route inventory, eval/audit, baseline pending status, blockers,
-  next requirements, and unsigned signoff evidence without deploying or
-  approving production
-- LIVE_ALPHA_01 Production Public-Alpha Wrapper now gives the constrained
-  posture an explicit stdlib entrypoint, config validation, nonlocal bind
-  guard, and safe status reporting without deploying, enabling live probes, or
-  adding provider-specific infrastructure
-- the next Codex-side bottleneck is deployment-configuration evidence around
-  the current constrained posture; actual Batch 0 observation evidence is
-  still a human-operated parallel task, and Google/Internet Archive baselines
-  remain pending/manual for all 64 queries globally
+- `public_site/` exists as the current no-JS static public artifact.
+- Public Publication Plane Contracts v0 now defines route names, route
+  stability, public status vocabulary, client profiles, public data files,
+  static export expectations, base-path portability, deployment target
+  semantics, redirect policy, and public claim traceability.
+- GitHub Pages deployment mechanics should now be a small publishing layer over
+  the existing `public_site/` artifact and these contracts.
+- GitHub Pages enablement must not add live backend behavior, live probes,
+  provider-neutral backend deployment config, DNS configuration, a static site
+  generator, external baseline observations, or production claims.
+- Manual Observation Batch 0 remains human-operated parallel work, and all
+  Google/Internet Archive baseline observations remain pending/manual until
+  real human evidence records exist.
 
 ## Explicit Deferrals
 

@@ -646,7 +646,8 @@
         "standard",
         "full",
         "docs_only",
-        "public_alpha"
+        "public_alpha",
+        "publication_static_site"
       ],
       "requires": [
         "python"
@@ -668,7 +669,8 @@
         "standard",
         "full",
         "docs_only",
-        "public_alpha"
+        "public_alpha",
+        "publication_static_site"
       ],
       "requires": [
         "python"
@@ -679,6 +681,52 @@
       "failure_means": "The public static site pack or validator behavior regressed.",
       "advisory_or_required": "required",
       "notes": "Added by LIVE_ALPHA_00 Static Public Site Pack; checks no-JS static pages, source matrix honesty, prohibited claims, and validator JSON output without hosting or deployment behavior."
+    },
+    {
+      "test_id": "publication_inventory_validator",
+      "label": "Publication inventory validator",
+      "command": "python scripts/validate_publication_inventory.py",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The publication-plane contracts, current public_site page coverage, reserved routes, client profiles, deployment targets, public data entries, or redirect policy regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Public Publication Plane Contracts v0; validates contracts and inventories only, with no deployment, provider configuration, static generation, live backend behavior, live probes, scraping, or external observations."
+    },
+    {
+      "test_id": "publication_inventory_tests",
+      "label": "Publication inventory tests",
+      "command": "python -m unittest tests.operations.test_publication_inventory tests.scripts.test_validate_publication_inventory",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only where validator tests copy the publication inventory",
+      "expected_runtime": "seconds",
+      "failure_means": "The publication inventory structure, validator behavior, route reservations, client profiles, deployment target contracts, or public data contracts regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Public Publication Plane Contracts v0; checks route/data/client/deployment-target governance without adding deployment workflows, provider files, a generator, live backend behavior, or production claims."
     },
     {
       "test_id": "public_alpha_rehearsal_evidence_check",
