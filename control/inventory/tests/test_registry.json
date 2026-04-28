@@ -727,6 +727,91 @@
       "notes": "Added by Public Alpha Rehearsal Evidence v0; checks unsigned signoff and no-deployment/no-production/no-external-observation claims."
     },
     {
+      "test_id": "public_alpha_wrapper_config_check",
+      "label": "Public alpha wrapper config check",
+      "command": "python scripts/run_public_alpha_server.py --check-config",
+      "category": "public_alpha",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The public-alpha wrapper no longer validates its safe default configuration.",
+      "advisory_or_required": "required",
+      "notes": "Added by LIVE_ALPHA_01 Production Public-Alpha Wrapper; validates config only and does not start a server, deploy, enable live probes, or add provider configuration."
+    },
+    {
+      "test_id": "public_alpha_wrapper_script_validation",
+      "label": "Public alpha wrapper script tests",
+      "command": "python -m unittest tests.scripts.test_public_alpha_wrapper",
+      "category": "public_alpha",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The public-alpha wrapper CLI flags, JSON output, nonlocal-bind guard, live-probe guard, or path-redaction behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by LIVE_ALPHA_01 Production Public-Alpha Wrapper; tests local helper behavior only, with no deployment, network calls, live probes, scraping, or external APIs."
+    },
+    {
+      "test_id": "public_alpha_wrapper_config_validation",
+      "label": "Public alpha wrapper config/status tests",
+      "command": "python -m unittest surfaces.web.tests.test_public_alpha_wrapper_config",
+      "category": "public_alpha",
+      "owner_area": "surfaces/web",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The public-alpha wrapper config model or safe status projection regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by LIVE_ALPHA_01 Production Public-Alpha Wrapper; checks closed defaults and JSON-safe status fields without adding runtime deployment behavior."
+    },
+    {
+      "test_id": "public_alpha_wrapper_docs_validation",
+      "label": "Public alpha wrapper docs tests",
+      "command": "python -m unittest tests.operations.test_public_alpha_wrapper_docs",
+      "category": "operations",
+      "owner_area": "docs/operations",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Wrapper docs or static-site references may have lost no-deployment, no-live-probe, or no-production caveats.",
+      "advisory_or_required": "required",
+      "notes": "Added by LIVE_ALPHA_01 Production Public-Alpha Wrapper; validates documentation claims only and does not deploy."
+    },
+    {
       "test_id": "external_baseline_observation_validator",
       "label": "External baseline observation validator",
       "command": "python scripts/validate_external_baseline_observations.py",

@@ -56,6 +56,16 @@ steps:
     run: python scripts/generate_public_alpha_rehearsal_evidence.py --check
   - id: public_alpha_rehearsal_evidence_tests
     run: python -m unittest tests.operations.test_public_alpha_rehearsal_evidence tests.scripts.test_public_alpha_rehearsal_evidence_script
+  - id: public_alpha_wrapper_config_check
+    run: python scripts/run_public_alpha_server.py --check-config
+  - id: public_alpha_wrapper_config_json
+    run: python scripts/run_public_alpha_server.py --print-config-json
+  - id: public_alpha_wrapper_script_tests
+    run: python -m unittest tests.scripts.test_public_alpha_wrapper
+  - id: public_alpha_wrapper_config_tests
+    run: python -m unittest surfaces.web.tests.test_public_alpha_wrapper_config
+  - id: public_alpha_wrapper_docs_tests
+    run: python -m unittest tests.operations.test_public_alpha_wrapper_docs
   - id: python_oracle_golden_check
     run: python scripts/generate_python_oracle_golden.py --check
   - id: python_oracle_golden_tests
@@ -398,6 +408,7 @@ notes:
   - Public Alpha Hosting Pack v0 packages route inventory status, smoke evidence templates, operator signoff, blockers, and a supervised rehearsal runbook without adding deployment infrastructure or production-readiness claims.
   - LIVE_ALPHA_00 Static Public Site Pack adds no-JS public_site pages and validation for later static-hosting review; it does not deploy, add backend hosting, add live probes, scrape external systems, or claim production readiness.
   - Public Alpha Rehearsal Evidence v0 packages static-site validation, public-alpha smoke, route inventory, eval/audit status, external-baseline pending status, blockers, next deployment requirements, and unsigned signoff without deploying, approving production, adding live probes, or recording external observations.
+  - LIVE_ALPHA_01 Production Public-Alpha Wrapper adds a stdlib public-alpha entrypoint and config guard without deploying, adding provider files, enabling live probes, adding auth/TLS/rate limiting/process management, or approving production.
   - Rust Migration Skeleton and Parity Plan v0 established initial Rust crates and parity docs; Python remains the oracle, Rust is not an active backend, and the Rust workspace check is optional because it requires a local Rust toolchain.
   - Rust Parity Fixture Pack v0 adds Python-oracle golden outputs and a stdlib generator/check script only; it does not implement Rust behavior, replace Python runtime paths, or require Rust tooling for normal checks.
   - Rust Source Registry Parity Candidate v0 is the first isolated Rust behavior seam under `crates/eureka-core`; it is compared to Python-oracle source-registry goldens and is not wired into Python runtime, web, CLI, HTTP API, workers, or production paths.
