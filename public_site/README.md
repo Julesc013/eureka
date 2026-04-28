@@ -48,6 +48,12 @@ resolver truth through different static or local projections. It does not add
 new runtime behavior, live API routes, snapshots, relay services, native apps,
 frontend frameworks, or production support claims.
 
+Signed Snapshot Format v0 records a static/offline snapshot contract and a
+deterministic repo-local seed example under
+`snapshots/examples/static_snapshot_v0/`. It does not add real signing keys,
+production signatures, executable downloads, a public `/snapshots/` route,
+relay behavior, native-client runtime, live backend behavior, or live probes.
+
 Validate it with:
 
 ```bash
@@ -57,6 +63,8 @@ python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_live_backend_handoff.py
 python scripts/validate_live_probe_gateway.py
 python scripts/validate_compatibility_surfaces.py
+python scripts/generate_static_snapshot.py --check
+python scripts/validate_static_snapshot.py
 python scripts/check_rust_query_planner_parity.py
 python scripts/validate_public_static_site.py
 python scripts/validate_public_static_site.py --json

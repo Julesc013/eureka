@@ -1722,6 +1722,72 @@
       "failure_means": "Compatibility strategy docs, surface matrices, static route roots, future surface status, or validator JSON behavior regressed.",
       "advisory_or_required": "required",
       "notes": "Checks that lite/text/files/data/demo are honest static surfaces while app/API/snapshots/relay/native/live backend/live probes remain future or disabled."
+    },
+    {
+      "test_id": "static_snapshot_generator_check",
+      "label": "Static snapshot generator check",
+      "command": "python scripts/generate_static_snapshot.py --check",
+      "category": "publication",
+      "owner_area": "snapshots/examples/static_snapshot_v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none in check mode",
+      "expected_runtime": "sub-second",
+      "failure_means": "The committed seed static snapshot example drifted from public data summaries or the snapshot contract.",
+      "advisory_or_required": "required",
+      "notes": "Added by Signed Snapshot Format v0; validates deterministic snapshot output only and adds no real signing keys, production signatures, executable downloads, public /snapshots/ route, relay runtime, native-client runtime, live backend, live probes, or external observations."
+    },
+    {
+      "test_id": "static_snapshot_validator",
+      "label": "Static snapshot validator",
+      "command": "python scripts/validate_static_snapshot.py",
+      "category": "publication",
+      "owner_area": "snapshots/examples/static_snapshot_v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The snapshot contract, required files, checksums, signature-placeholder posture, or no-binary/no-key/no-live claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Signed Snapshot Format v0; validates the seed snapshot as static public data and rejects private keys, executable binaries, local stores, live backend/probe claims, and production signing claims."
+    },
+    {
+      "test_id": "signed_snapshot_format_tests",
+      "label": "Signed snapshot format tests",
+      "command": "python -m unittest tests.operations.test_signed_snapshot_format tests.scripts.test_static_snapshot_tools",
+      "category": "publication",
+      "owner_area": "snapshots",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary generated snapshot output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Snapshot format docs, seed files, checksum behavior, files-surface references, or no-production-signing/no-download posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks the contract and tiny seed example only; it does not create production signed releases, add real keys, publish executable downloads, implement relay services, or start native client work."
     }
   ]
 }

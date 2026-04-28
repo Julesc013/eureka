@@ -244,16 +244,16 @@
     {
       "id": "signed_snapshot_format_v0",
       "title": "Signed Snapshot Format v0",
-      "status": "next",
+      "status": "completed",
       "priority": 34,
-      "notes": "Define deterministic offline snapshot bundle shape, manifests, checksums, and future signatures without adding live downloads or deployment behavior."
+      "notes": "Implemented Signed Snapshot Format v0 as a static/offline contract plus deterministic repo seed example under snapshots/examples/static_snapshot_v0 with checksums and signature-placeholder docs only; no real signing keys, production signatures, executable downloads, public /snapshots/ route, relay runtime, native-client runtime, live backend, or live probes."
     },
     {
       "id": "relay_surface_design_v0",
       "title": "Relay Surface Design v0",
-      "status": "queued",
+      "status": "next",
       "priority": 35,
-      "notes": "Design a future local relay surface and operator/security policy without implementing FTP, SMB, WebDAV, live backend behavior, or native-client runtime."
+      "notes": "Design a future local relay surface and operator/security policy without implementing FTP, SMB, WebDAV, live backend behavior, native-client runtime, or executable/download mirroring."
     },
     {
       "id": "rust_source_registry_parity_catch_up_v0",

@@ -258,18 +258,18 @@ The next backend sequence is:
 45. Live Probe Gateway Contract v0 (implemented as contract-only source-probe policy; no probes or network calls)
 46. Rust Query Planner Parity Candidate v0 (implemented as isolated parity seam)
 47. Compatibility Surface Strategy v0 (implemented as strategy/contracts/inventory only; no new runtime behavior)
-48. Signed Snapshot Format v0
+48. Signed Snapshot Format v0 (implemented as contract and repo seed example; no real keys, production signatures, downloads, public route, relay, native runtime, live backend, or live probes)
 49. Relay Surface Design v0
-50. Manual Observation Batch 0 Execution (human-operated parallel work)
-51. Rust Source Registry Parity Catch-up v0
-52. Rust Local Index Parity Planning v0
+50. Rust Source Registry Parity Catch-up v0
+51. Rust Local Index Parity Planning v0
+52. Manual Observation Batch 0 Execution (human-operated parallel work)
 53. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Signed Snapshot Format v0
+> Relay Surface Design v0
 
 Why this comes next:
 
@@ -286,9 +286,15 @@ Why this comes next:
 - Compatibility Surface Strategy v0 is now implemented as strategy, route
   matrix, capability matrix, and old-client/native/snapshot/relay readiness
   policy without new runtime behavior.
-- Signed Snapshot Format v0 is the next useful non-network contract step after
-  lite/text/files, public data summaries, static demo snapshots, and surface
-  strategy.
+- Signed Snapshot Format v0 is implemented as the current non-network contract
+  step after lite/text/files, public data summaries, static demo snapshots, and
+  surface strategy. It adds only a deterministic seed example plus checksum and
+  signature-placeholder policy, with no real signing keys, production
+  signatures, executable downloads, public `/snapshots/` route, relay/native
+  runtime, live backend behavior, or live probes.
+- Relay Surface Design v0 is now the next non-network planning step for future
+  old-client/local-network compatibility without implementing FTP, SMB, WebDAV,
+  proxy behavior, backend hosting, or native clients.
 - Internet Archive Live Probe v0 should remain unstarted unless a human
   explicitly approves live external-source behavior after separate review.
 

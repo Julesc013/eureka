@@ -86,8 +86,22 @@ Current scripts:
   public data summaries; it supports `--update`, `--check`, `--output-root`,
   `--data-root`, and `--json`, generates a file-tree manifest and SHA256SUMS,
   performs no network calls, runs no live search or probes, records no external
-  observations, adds no executable downloads, and does not create snapshots,
-  relay behavior, native-client runtime, or live API semantics
+  observations, adds no executable downloads, and does not create production
+  signed snapshots, a public `/snapshots/` route, relay behavior,
+  native-client runtime, or live API semantics
+- `generate_static_snapshot.py`: generates, updates, or checks the
+  deterministic Signed Snapshot Format v0 seed example under
+  `snapshots/examples/static_snapshot_v0/`; it supports `--update`, `--check`,
+  `--output-root`, `--data-root`, and `--json`, generates
+  `SNAPSHOT_MANIFEST.json`, `BUILD_MANIFEST.json`, uppercase public-data
+  projections, `CHECKSUMS.SHA256`, and `SIGNATURES.README.txt`, performs no
+  network calls, includes no real signing keys or executable downloads, and
+  does not publish a public `/snapshots/` route
+- `validate_static_snapshot.py`: validates the Signed Snapshot Format v0
+  contract and seed example, checks JSON parsing and SHA256SUMS entries,
+  rejects private keys, env files, executables, large/binary artifacts, local
+  absolute paths, live backend/probe claims, external-observation claims, and
+  production signing claims; it supports `--json` and performs no network calls
 - `generate_static_resolver_demos.py`: generates, updates, or checks static
   resolver demo snapshots under `public_site/demo/` by default from generated
   public data summaries and fixture-backed Python-oracle outputs; it supports
@@ -156,8 +170,8 @@ from governed synthetic fixtures, small recorded GitHub Releases fixtures, tiny
 recorded Internet Archive-like fixtures, and committed local bundle fixtures.
 They also surface the current bounded engine, public-alpha, publication,
 GitHub Pages artifact, generated public-data summary, and stdlib static-site
-generator checks plus static-host readiness, live-backend handoff, live probe
-gateway, compatibility-surface strategy, and isolated Rust query-planner
+generator checks plus static snapshot generation/validation, static-host
+readiness, live-backend handoff, live probe gateway, compatibility-surface strategy, and isolated Rust query-planner
 parity structure checks,
 without implying
 a final provenance, trust, merge, object-identity, ranking, compatibility
@@ -168,8 +182,8 @@ HTTPS/TLS, accounts, rate limiting, production logging, production process
 management, backend deployment infrastructure, generated-artifact deployment,
 custom-domain configuration, alternate-host deployment, DNS changes, CNAME
 configuration, live `/api/v1` backend, production API guarantee, Rust runtime
-replacement, Rust planner runtime wiring, snapshot implementation, relay
-service, native app project, live source probing, live probe adapters,
+replacement, Rust planner runtime wiring, production signed snapshot release,
+real signing keys, public `/snapshots/` route, relay service, native app project, live source probing, live probe adapters,
 crawling, live Internet Archive API access, arbitrary local filesystem
 ingestion, or full
 investigation-planning architecture. Live GitHub acquisition remains

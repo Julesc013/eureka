@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Signed Snapshot Format v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus isolated source-registry and query-planner parity candidates; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -136,6 +136,12 @@ expanded surface capability records, a surface route matrix, old-client
 degradation policy, and native/snapshot/relay readiness docs. It does not add
 new runtime behavior, snapshots, relay services, native app projects, live
 `/api/v1`, live probes, or production API guarantees.
+Signed Snapshot Format v0 now adds an experimental static/offline snapshot
+contract and a deterministic seed example under
+`snapshots/examples/static_snapshot_v0/`, with checksums and
+signature-placeholder documentation only. It does not add real signing keys,
+production signatures, executable downloads, a public `/snapshots/` route,
+relay services, native-client runtime, live backend behavior, or live probes.
 
 ## Quickstart
 
@@ -183,6 +189,8 @@ python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_live_probe_gateway.py
 python scripts/validate_compatibility_surfaces.py
+python scripts/generate_static_snapshot.py --check
+python scripts/validate_static_snapshot.py
 python scripts/check_rust_query_planner_parity.py
 python scripts/generate_public_alpha_rehearsal_evidence.py --check
 ```
@@ -363,6 +371,7 @@ production queues, and production Rust services remain future work.
 | `public_site/` | No-JS static public artifact for static Pages publication review; no backend or live source behavior |
 | `runtime/` | Python reference engine, connectors, gateway public boundary, source registry |
 | `scripts/` | Demo commands, eval runner, safety checks, golden generators |
+| `snapshots/` | Static/offline snapshot format schema and deterministic seed examples; no real keys or executable downloads |
 | `surfaces/` | Server-rendered web workbench, local HTTP API, native CLI surface |
 | `tests/` | Integration, operations, parity, architecture, and script tests |
 
@@ -395,6 +404,7 @@ Architecture:
 - [Rust Backend Lane](docs/architecture/RUST_BACKEND_LANE.md)
 - [Publication Plane](docs/architecture/PUBLICATION_PLANE.md)
 - [Live Probe Gateway](docs/architecture/LIVE_PROBE_GATEWAY.md)
+- [Compatibility Surfaces](docs/architecture/COMPATIBILITY_SURFACES.md)
 
 Roadmaps and operations:
 
@@ -409,6 +419,8 @@ Roadmaps and operations:
 - [Public Data Contract](docs/reference/PUBLIC_DATA_CONTRACT.md)
 - [Client Profile Contract](docs/reference/CLIENT_PROFILE_CONTRACT.md)
 - [Live Probe Gateway Contract](docs/reference/LIVE_PROBE_GATEWAY_CONTRACT.md)
+- [Snapshot Format Contract](docs/reference/SNAPSHOT_FORMAT_CONTRACT.md)
+- [Snapshot Signature Policy](docs/reference/SNAPSHOT_SIGNATURE_POLICY.md)
 - [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md)
 - [Hard Test Pack](docs/operations/HARD_TEST_PACK.md)
 - [Comprehensive Audit Pack](control/audits/2026-04-25-comprehensive-test-eval-audit/README.md)
@@ -469,6 +481,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
   guides old-browser, text, file-tree, snapshot, relay, API, CLI, web, and
   future native clients without implementing snapshots, relay services, native
   apps, live API behavior, or new runtime behavior.
+- Signed Snapshot Format v0 is a contract and deterministic seed example only.
+  It does not add real signing keys, production signatures, executable
+  downloads, a public `/snapshots/` route, relay behavior, native-client
+  runtime, live backend behavior, or live probes.
 - Native apps are deferred. The current native surface is a stdlib CLI proof.
 - Live crawling, source sync, fuzzy retrieval, vector search, LLM planning,
   auth, accounts, HTTPS/TLS, rate limiting, process supervision, and deployment
@@ -479,12 +495,11 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Signed Snapshot Format v0
-2. Relay Surface Design v0
-3. Manual Observation Batch 0 Execution (human-operated parallel work)
-4. Rust Source Registry Parity Catch-up v0
-5. Rust Local Index Parity Planning v0
-6. Internet Archive Live Probe v0 only after explicit human approval and
+1. Relay Surface Design v0
+2. Rust Source Registry Parity Catch-up v0
+3. Rust Local Index Parity Planning v0
+4. Manual Observation Batch 0 Execution (human-operated parallel work)
+5. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 Broader near-term direction:
@@ -500,10 +515,12 @@ Broader near-term direction:
 5. keep Python as oracle while adding Rust candidates only when parity fixtures
    exist
 6. preserve public-alpha safety checks and capture rehearsal evidence
-7. expand source and eval coverage without weakening hard queries
-8. harden backend contracts, run models, memory, and local index behavior
-9. move toward hosted alpha only after explicit blockers are resolved
-10. keep native app shells later, after backend infrastructure is stronger
+7. keep snapshot contracts checksum/signature-policy governed before relay or
+   native-client consumption
+8. expand source and eval coverage without weakening hard queries
+9. harden backend contracts, run models, memory, and local index behavior
+10. move toward hosted alpha only after explicit blockers are resolved
+11. keep native app shells later, after backend infrastructure is stronger
 
 No exact dates are promised.
 

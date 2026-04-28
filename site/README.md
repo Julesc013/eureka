@@ -27,6 +27,13 @@ Current boundary:
   `scripts/validate_compatibility_surfaces.py`; it records surface capability
   and route matrices plus old-client/native/snapshot/relay readiness without
   adding runtime behavior.
+- Signed Snapshot Format v0 is validated separately by
+  `scripts/generate_static_snapshot.py --check` and
+  `scripts/validate_static_snapshot.py`; it records a repo-local seed example
+  under `snapshots/examples/static_snapshot_v0/` without adding real signing
+  keys, production signatures, executable downloads, a public `/snapshots/`
+  route, relay behavior, native-client runtime, live backend behavior, or live
+  probes.
 - `public_site/` remains the GitHub Pages deployment artifact for this
   milestone.
 
@@ -52,6 +59,8 @@ python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_live_backend_handoff.py
 python scripts/validate_live_probe_gateway.py
 python scripts/validate_compatibility_surfaces.py
+python scripts/generate_static_snapshot.py --check
+python scripts/validate_static_snapshot.py
 ```
 
 Generated output is no-JS static HTML with relative links so it can work under
@@ -72,3 +81,6 @@ policy is also contract-only; generated output must not call Internet Archive,
 Wayback, GitHub, package registries, or any external source. Compatibility
 surface strategy is likewise contract-only in this tree: snapshots, relay
 services, native app projects, and live API surfaces remain future/deferred.
+Signed Snapshot Format v0 is a separate static export contract and seed
+example outside `public_site/`; generated site output does not publish a public
+`/snapshots/` route or production signed snapshots.

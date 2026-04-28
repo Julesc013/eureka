@@ -66,6 +66,15 @@ surfaces remain future/deferred. They do not make public JSON a production API,
 implement snapshots, add relay services, start native app projects, make
 `/api/v1` live, or enable live probes.
 
+Signed Snapshot Format v0 adds snapshot-format contract metadata to
+`/data/site_manifest.json` and validation provenance to
+`/data/build_manifest.json`. These fields describe the repo-local seed example
+under `snapshots/examples/static_snapshot_v0/` and keep the public
+`/snapshots/` route future/deferred. They do not publish production signed
+snapshots, add real signing keys, add executable downloads, implement relay or
+native-client runtime behavior, make public JSON a production API, or enable
+live backend/probe behavior.
+
 Implemented file-tree public data files include:
 
 - `/files/manifest.json`

@@ -76,3 +76,11 @@ snapshot/relay readiness notes under `control/inventory/publication/` and
 contract governance only and does not add runtime behavior, snapshots, relay
 services, native apps, live backend routes, live probes, or frontend
 frameworks.
+
+Signed Snapshot Format v0 records its contract, schema notes, generator,
+validator, and deterministic seed example under `control/inventory/publication/`,
+`docs/reference/`, `scripts/`, and `snapshots/examples/static_snapshot_v0/`.
+No separate AIDE runtime report is needed; this is static export governance and
+does not add real signing keys, production signatures, executable downloads, a
+public `/snapshots/` route, relay behavior, native-client runtime, live backend
+behavior, or live probes.

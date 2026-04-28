@@ -61,6 +61,10 @@ The minimum public-alpha entry gate should include:
   matrix, route matrix, old-client degradation policy, and
   native/snapshot/relay readiness guidance; no new runtime behavior,
   snapshots, relay services, native apps, live API behavior, or live probes)
+- Signed Snapshot Format v0 (implemented as a static/offline snapshot contract
+  and repo seed example under `snapshots/examples/static_snapshot_v0/`; no real
+  signing keys, production signatures, executable downloads, public
+  `/snapshots/` route, relay runtime, native-client runtime, or live behavior)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -185,8 +189,8 @@ build state. Lite/Text/Files Seed Surfaces v0 now consumes those summaries to
 publish static compatibility seed surfaces under `public_site/lite/`,
 `public_site/text/`, and `public_site/files/`. These files are not a live API,
 do not host backend behavior, do not enable live probes, do not record external
-observations, do not add executable downloads, and do not create snapshots,
-relay behavior, or native-client runtime.
+observations, do not add executable downloads, and do not create production
+signed snapshots, public `/snapshots/` routes, relay behavior, or native-client runtime.
 
 Static Resolver Demo Snapshots v0 now publishes static fixture-backed examples
 under `public_site/demo/` and generated validation copies under

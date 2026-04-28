@@ -102,6 +102,16 @@ steps:
     run: python scripts/validate_compatibility_surfaces.py --json
   - id: compatibility_surface_strategy_tests
     run: python -m unittest tests.operations.test_compatibility_surface_strategy tests.scripts.test_validate_compatibility_surfaces
+  - id: static_snapshot_generator_check
+    run: python scripts/generate_static_snapshot.py --check
+  - id: static_snapshot_generator_json
+    run: python scripts/generate_static_snapshot.py --json
+  - id: static_snapshot_validator
+    run: python scripts/validate_static_snapshot.py
+  - id: static_snapshot_validator_json
+    run: python scripts/validate_static_snapshot.py --json
+  - id: signed_snapshot_format_tests
+    run: python -m unittest tests.operations.test_signed_snapshot_format tests.scripts.test_static_snapshot_tools
   - id: public_alpha_rehearsal_evidence_summary
     run: python scripts/generate_public_alpha_rehearsal_evidence.py
   - id: public_alpha_rehearsal_evidence_json
@@ -476,6 +486,7 @@ notes:
   - Custom Domain / Alternate Host Readiness v0 adds static-host portability inventories, docs, checklist, validation, and tests; it does not add DNS records, CNAME, provider config, alternate-host deployment, backend hosting, live probes, custom-domain claims, or production behavior.
   - Live Backend Handoff Contract v0 reserves future `/api/v1` route families, disabled live capability flags, and error-envelope expectations; it does not host a backend, make `/api/v1` live, enable live probes, implement CORS/auth/rate limits, or create production API guarantees.
   - Live Probe Gateway Contract v0 defines disabled-by-default source-probe policy, source caps, cache/evidence expectations, and operator gates; it does not implement probes, call external sources, fetch URLs, scrape, crawl, enable downloads, or make Google a live source.
+  - Signed Snapshot Format v0 defines the static/offline snapshot contract plus a deterministic repo-local seed example under `snapshots/examples/static_snapshot_v0/`; it does not add real signing keys, production signatures, executable downloads, a public `/snapshots/` route, relay behavior, native-client runtime, live backend behavior, or live probes.
   - Rust Migration Skeleton and Parity Plan v0 established initial Rust crates and parity docs; Python remains the oracle, Rust is not an active backend, and the Rust workspace check is optional because it requires a local Rust toolchain.
   - Rust Parity Fixture Pack v0 adds Python-oracle golden outputs and a stdlib generator/check script only; it does not implement Rust behavior, replace Python runtime paths, or require Rust tooling for normal checks.
   - Rust Source Registry Parity Candidate v0 is the first isolated Rust behavior seam under `crates/eureka-core`; it is compared to Python-oracle source-registry goldens and is not wired into Python runtime, web, CLI, HTTP API, workers, or production paths.

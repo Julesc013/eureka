@@ -462,6 +462,26 @@ performs no network calls, adds no runtime behavior, implements no snapshots,
 relay service, native app, live backend, live probes, or frontend framework,
 and keeps `public_site/` as the current static artifact.
 
+## Signed Snapshot Format
+
+Signed Snapshot Format v0 is validated with:
+
+```bash
+python scripts/generate_static_snapshot.py --check
+python scripts/generate_static_snapshot.py --json
+python scripts/validate_static_snapshot.py
+python scripts/validate_static_snapshot.py --json
+python -m unittest tests.operations.test_signed_snapshot_format tests.scripts.test_static_snapshot_tools
+```
+
+The lane checks `snapshot_contract.json`, snapshot format/signature policy
+docs, the deterministic seed example under
+`snapshots/examples/static_snapshot_v0/`, checksums, signature-placeholder
+language, no-key/no-binary/no-live claims, and files-surface references. It
+performs no network calls, adds no real signing keys, creates no production
+signatures, publishes no executable downloads, adds no public `/snapshots/`
+route, and implements no relay or native-client runtime.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

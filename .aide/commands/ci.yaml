@@ -62,6 +62,12 @@ steps:
     run: python scripts/validate_compatibility_surfaces.py
   - id: compatibility_surface_strategy_tests
     run: python -m unittest tests.operations.test_compatibility_surface_strategy tests.scripts.test_validate_compatibility_surfaces
+  - id: static_snapshot_generator_check
+    run: python scripts/generate_static_snapshot.py --check
+  - id: static_snapshot_validator
+    run: python scripts/validate_static_snapshot.py
+  - id: signed_snapshot_format_tests
+    run: python -m unittest tests.operations.test_signed_snapshot_format tests.scripts.test_static_snapshot_tools
   - id: public_alpha_rehearsal_evidence_check
     run: python scripts/generate_public_alpha_rehearsal_evidence.py --check
   - id: public_alpha_rehearsal_evidence_tests
@@ -163,6 +169,7 @@ notes:
   - Custom Domain / Alternate Host Readiness v0 validates static host portability, base-path policy, and no DNS/CNAME/provider-config/custom-domain/backend/live-probe claim; it performs no network calls and deploys nothing.
   - Live Backend Handoff Contract v0 validates future `/api/v1` route reservations, disabled live capability flags, and error-envelope docs only; it performs no network calls, hosts no backend, enables no live probes, and creates no production API guarantee.
   - Live Probe Gateway Contract v0 validates disabled candidate-source gates, cache/evidence policy, public-alpha live-probe closure, and Google manual-baseline-only posture only; it performs no network calls, implements no probes, fetches no URLs, enables no downloads, and calls no external sources.
+  - Signed Snapshot Format v0 validates a repo-local static/offline snapshot contract and deterministic seed example only; it adds no real signing keys, production signatures, executable downloads, public `/snapshots/` route, relay behavior, native-client runtime, live backend behavior, or live probes.
   - Source Coverage and Capability Model v0 checks validate metadata and projection only; they do not add connectors, live source probing, or crawling.
   - Real Source Coverage Pack v0 checks validate committed recorded fixtures, local bundle fixtures, local-index visibility, and public projection only; they do not add live API calls, scraping, crawling, broad source federation, or arbitrary local filesystem ingestion.
   - Old-Platform Source Coverage Expansion v0 checks validate expanded committed old-platform fixtures, local bundle members, compatibility evidence, and index visibility only; they do not add live source calls, scraping, crawling, broad source federation, arbitrary local filesystem ingestion, real binaries, or production source claims.

@@ -33,6 +33,12 @@ client readiness rules and surface capability matrices, but it does not create
 a Windows/macOS project, native SDK, installer, FFI layer, sync client, or app
 shell. The CLI remains the current local native-style surface.
 
+Signed Snapshot Format v0 also keeps that policy. It defines a static/offline
+snapshot contract and deterministic seed example for future clients, but it
+does not create production signed releases, real signing keys, executable
+downloads, a native SDK, app shell, sync client, relay runtime, or any native
+project.
+
 ## Host-Shell Principle
 
 Future native apps should remain shells over the core. They should consume
