@@ -35,12 +35,14 @@ REQUIRED_STABILITY_VALUES = {
     "removed",
 }
 REQUIRED_RESERVED_ROUTES = {
-    "/lite/",
-    "/text/",
-    "/files/",
     "/data/",
     "/api/",
     "/snapshots/",
+}
+REQUIRED_SEEDED_COMPATIBILITY_ROUTES = {
+    "/lite/",
+    "/text/",
+    "/files/",
 }
 REQUIRED_CLIENT_PROFILES = {
     "modern_web",
@@ -60,6 +62,7 @@ REQUIRED_PUBLIC_DATA_PATHS = {
     "/data/eval_summary.json",
     "/data/route_summary.json",
     "/data/build_manifest.json",
+    "/files/manifest.json",
     "/files/index.txt",
     "/files/SHA256SUMS",
 }
@@ -71,7 +74,8 @@ REQUIRED_GENERATED_PUBLIC_DATA_PATHS = {
     "/data/route_summary.json",
     "/data/build_manifest.json",
 }
-REQUIRED_FUTURE_FILE_SURFACE_PATHS = {
+REQUIRED_FILE_SURFACE_PATHS = {
+    "/files/manifest.json",
     "/files/index.txt",
     "/files/SHA256SUMS",
 }
@@ -158,6 +162,15 @@ class PublicationInventoryTest(unittest.TestCase):
                 self.assertNotEqual(route["status"], "implemented")
                 self.assertIsNone(route["source_file"])
 
+        self.assertTrue(REQUIRED_SEEDED_COMPATIBILITY_ROUTES.issubset(routes))
+        for route_path in REQUIRED_SEEDED_COMPATIBILITY_ROUTES:
+            with self.subTest(route_path=route_path):
+                route = routes[route_path]
+                self.assertEqual(route["status"], "static_demo")
+                self.assertEqual(route["stability"], "stable_draft")
+                self.assertIsInstance(route["source_file"], str)
+                self.assertTrue((REPO_ROOT / route["source_file"]).exists())
+
     def test_client_profiles_include_required_profiles(self) -> None:
         payload = load_json("client_profiles.json")
         profiles = {profile["id"]: profile for profile in payload["profiles"]}
@@ -168,6 +181,9 @@ class PublicationInventoryTest(unittest.TestCase):
             "current public_site static pages",
         )
         self.assertIn("/data/", profiles["api_client"]["intended_path_prefixes"])
+        self.assertEqual(profiles["lite_html"]["status"], "static_demo")
+        self.assertEqual(profiles["text"]["status"], "static_demo")
+        self.assertEqual(profiles["file_tree"]["status"], "static_demo")
         self.assertNotEqual(profiles["native_client"]["status"], "implemented")
 
     def test_deployment_targets_record_project_pages_and_custom_domain_contracts(self) -> None:
@@ -222,10 +238,13 @@ class PublicationInventoryTest(unittest.TestCase):
                 self.assertFalse(entry["contains_external_observations"])
                 self.assertTrue(entry["safe_for_static_hosting"])
 
-        for path in REQUIRED_FUTURE_FILE_SURFACE_PATHS:
+        for path in REQUIRED_FILE_SURFACE_PATHS:
             with self.subTest(path=path):
                 entry = entries[path]
-                self.assertNotEqual(entry["status"], "implemented")
+                self.assertEqual(entry["status"], "static_demo")
+                self.assertEqual(entry["stability"], "stable_draft")
+                self.assertEqual(entry["generated_by"], "scripts/generate_compatibility_surfaces.py")
+                self.assertTrue((PUBLIC_SITE / path.removeprefix("/")).exists())
                 self.assertFalse(entry["contains_live_data"])
                 self.assertFalse(entry["contains_external_observations"])
                 self.assertTrue(entry["safe_for_static_hosting"])

@@ -1412,6 +1412,50 @@
       "failure_means": "Generated public data file shape, safety posture, contract coverage, source/eval/route counts, or site/dist integration regressed.",
       "advisory_or_required": "required",
       "notes": "Added by Generated Public Data Summaries v0; checks static summaries for no-live/no-deployment/no-fabricated-baseline posture."
+    },
+    {
+      "test_id": "compatibility_surfaces_generator_check",
+      "label": "Lite/text/files compatibility surface generator check",
+      "command": "python scripts/generate_compatibility_surfaces.py --check",
+      "category": "publication",
+      "owner_area": "public_site/lite,text,files",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none in check mode",
+      "expected_runtime": "seconds",
+      "failure_means": "Committed lite/text/files static surfaces drifted from generated public data summaries or checksum expectations.",
+      "advisory_or_required": "required",
+      "notes": "Added by Lite/Text/Files Seed Surfaces v0; validates static compatibility surfaces only and performs no live search, downloads, probes, backend deployment, or external observation recording."
+    },
+    {
+      "test_id": "lite_text_files_surface_tests",
+      "label": "Lite/text/files static surface tests",
+      "command": "python -m unittest tests.operations.test_lite_text_files_surfaces tests.scripts.test_generate_compatibility_surfaces",
+      "category": "publication",
+      "owner_area": "public_site/lite,text,files",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary generated output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Lite/text/files seed surfaces, no-JS/no-download posture, checksums, or publication inventory profile status regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Lite/Text/Files Seed Surfaces v0; checks static old-browser/text/file-tree surfaces without adding snapshots, relay/native runtime, live backend behavior, or executable downloads."
     }
   ]
 }

@@ -119,6 +119,7 @@ REQUIRED_PUBLIC_DATA_PATHS = {
     "/data/eval_summary.json",
     "/data/route_summary.json",
     "/data/build_manifest.json",
+    "/files/manifest.json",
     "/files/index.txt",
     "/files/SHA256SUMS",
 }
@@ -130,9 +131,19 @@ REQUIRED_GENERATED_PUBLIC_DATA_PATHS = {
     "/data/route_summary.json",
     "/data/build_manifest.json",
 }
-REQUIRED_FUTURE_FILE_SURFACE_PATHS = {
+REQUIRED_FILE_SURFACE_PATHS = {
+    "/files/manifest.json",
     "/files/index.txt",
     "/files/SHA256SUMS",
+}
+IMPLEMENTED_ROUTE_STATUSES = {
+    "implemented",
+    "static_demo",
+}
+SEEDED_COMPATIBILITY_ROUTES = {
+    "/lite/",
+    "/text/",
+    "/files/",
 }
 REQUIRED_PUBLIC_DATA_FIELDS = {
     "path",
@@ -148,15 +159,6 @@ REQUIRED_PUBLIC_DATA_FIELDS = {
     "generated_by",
     "notes",
 }
-NON_IMPLEMENTED_STATUSES = {
-    "planned",
-    "deferred",
-    "blocked",
-    "placeholder",
-    "unsafe_for_public_alpha",
-    "removed",
-}
-
 
 def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> int:
     parser = argparse.ArgumentParser(
@@ -374,7 +376,7 @@ def _validate_page_registry(
         source_file = route.get("source_file")
         if isinstance(source_file, str):
             source_files.add(source_file.replace("\\", "/"))
-            if status == "implemented" and not (repo_root / source_file).exists():
+            if status in IMPLEMENTED_ROUTE_STATUSES and not (repo_root / source_file).exists():
                 errors.append(
                     f"page_registry.json: implemented route {path} source_file is missing: {source_file}."
                 )
@@ -384,10 +386,20 @@ def _validate_page_registry(
         if route is None:
             errors.append(f"page_registry.json: missing reserved route {reserved}.")
             continue
-        if route.get("status") == "implemented":
-            errors.append(f"page_registry.json: reserved route {reserved} is marked implemented.")
-        if route.get("source_file") is not None:
-            errors.append(f"page_registry.json: reserved route {reserved} must not claim a source_file.")
+        if reserved in SEEDED_COMPATIBILITY_ROUTES:
+            if route.get("status") not in IMPLEMENTED_ROUTE_STATUSES:
+                errors.append(
+                    f"page_registry.json: seeded compatibility route {reserved} must be implemented or static_demo."
+                )
+            if not isinstance(route.get("source_file"), str):
+                errors.append(
+                    f"page_registry.json: seeded compatibility route {reserved} must claim a source_file."
+                )
+        else:
+            if route.get("status") in IMPLEMENTED_ROUTE_STATUSES:
+                errors.append(f"page_registry.json: reserved route {reserved} is marked implemented.")
+            if route.get("source_file") is not None:
+                errors.append(f"page_registry.json: reserved route {reserved} must not claim a source_file.")
 
     current_pages = sorted(
         _to_posix(path.relative_to(repo_root))
@@ -566,11 +578,22 @@ def _validate_public_data_contract(payload: Any, site_dir: Path, errors: list[st
                 f"public_data_contract.json: generated data path {required_path} is missing from public_site."
             )
 
-    for required_path in sorted(REQUIRED_FUTURE_FILE_SURFACE_PATHS):
+    for required_path in sorted(REQUIRED_FILE_SURFACE_PATHS):
         entry = by_path.get(required_path)
-        if entry and entry.get("status") not in NON_IMPLEMENTED_STATUSES:
+        if not entry:
+            continue
+        if entry.get("status") not in IMPLEMENTED_ROUTE_STATUSES:
             errors.append(
-                f"public_data_contract.json: future data path {required_path} must not be implemented in v0."
+                f"public_data_contract.json: file surface path {required_path} must be implemented or static_demo."
+            )
+        if entry.get("stability") != "stable_draft":
+            errors.append(
+                f"public_data_contract.json: file surface path {required_path} must be stable_draft."
+            )
+        generated_file = site_dir / required_path.removeprefix("/")
+        if not generated_file.exists():
+            errors.append(
+                f"public_data_contract.json: file surface path {required_path} is missing from public_site."
             )
 
 

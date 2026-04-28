@@ -62,6 +62,10 @@ class StaticSiteGeneratorScriptTest(unittest.TestCase):
                 "local-quickstart.html",
                 "site_manifest.json",
                 "assets/site.css",
+                "lite/index.html",
+                "text/index.txt",
+                "files/manifest.json",
+                "files/SHA256SUMS",
             ):
                 with self.subTest(relative=relative):
                     self.assertTrue((output / relative).exists())

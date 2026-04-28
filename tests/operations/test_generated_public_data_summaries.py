@@ -52,9 +52,14 @@ class GeneratedPublicDataSummariesTest(unittest.TestCase):
                 self.assertEqual(by_path[implemented]["status"], "implemented")
                 self.assertTrue(by_path[implemented]["safe_for_static_hosting"])
 
-        for reserved in ("/lite/", "/text/", "/files/", "/data/", "/api/", "/snapshots/"):
+        for seeded in ("/lite/", "/text/", "/files/"):
+            with self.subTest(seeded=seeded):
+                self.assertEqual(by_path[seeded]["status"], "static_demo")
+                self.assertTrue(by_path[seeded]["safe_for_static_hosting"])
+
+        for reserved in ("/data/", "/api/", "/snapshots/"):
             with self.subTest(reserved=reserved):
-                self.assertNotEqual(by_path[reserved]["status"], "implemented")
+                self.assertNotIn(by_path[reserved]["status"], {"implemented", "static_demo"})
 
     def test_source_summary_marks_placeholders_and_fixtures_honestly(self) -> None:
         summary = json.loads((PUBLIC_DATA / "source_summary.json").read_text(encoding="utf-8"))

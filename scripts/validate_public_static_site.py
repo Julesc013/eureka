@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -30,6 +31,24 @@ REQUIRED_FILES = {
     "data/route_summary.json",
     "data/site_manifest.json",
     "data/source_summary.json",
+    "files/README.txt",
+    "files/SHA256SUMS",
+    "files/data/README.txt",
+    "files/index.html",
+    "files/index.txt",
+    "files/manifest.json",
+    "lite/README.txt",
+    "lite/demo-queries.html",
+    "lite/evals.html",
+    "lite/index.html",
+    "lite/limitations.html",
+    "lite/sources.html",
+    "text/README.txt",
+    "text/demo-queries.txt",
+    "text/evals.txt",
+    "text/index.txt",
+    "text/limitations.txt",
+    "text/sources.txt",
 }
 REQUIRED_PUBLIC_DATA_FILES = (
     "data/site_manifest.json",
@@ -38,6 +57,26 @@ REQUIRED_PUBLIC_DATA_FILES = (
     "data/eval_summary.json",
     "data/route_summary.json",
     "data/build_manifest.json",
+)
+REQUIRED_COMPATIBILITY_FILES = (
+    "lite/index.html",
+    "lite/sources.html",
+    "lite/evals.html",
+    "lite/demo-queries.html",
+    "lite/limitations.html",
+    "lite/README.txt",
+    "text/index.txt",
+    "text/sources.txt",
+    "text/evals.txt",
+    "text/demo-queries.txt",
+    "text/limitations.txt",
+    "text/README.txt",
+    "files/index.html",
+    "files/index.txt",
+    "files/README.txt",
+    "files/manifest.json",
+    "files/SHA256SUMS",
+    "files/data/README.txt",
 )
 REQUIRED_PHRASES = (
     "Python reference backend prototype",
@@ -182,6 +221,7 @@ def validate_public_static_site(site_dir: Path = DEFAULT_SITE_DIR) -> dict[str, 
         warnings.append("Manifest could not be inspected beyond JSON parse status.")
 
     _validate_public_data_files(site_dir, errors)
+    compatibility_report = _validate_compatibility_surfaces(site_dir, errors)
 
     return {
         "status": "valid" if not errors else "invalid",
@@ -193,6 +233,8 @@ def validate_public_static_site(site_dir: Path = DEFAULT_SITE_DIR) -> dict[str, 
         "page_reports": page_reports,
         "source_ids_checked": source_ids,
         "public_data_files_checked": list(REQUIRED_PUBLIC_DATA_FILES),
+        "compatibility_surface_files_checked": list(REQUIRED_COMPATIBILITY_FILES),
+        "compatibility_surface_report": compatibility_report,
         "missing_source_ids": missing_source_ids,
         "required_phrases": list(REQUIRED_PHRASES),
         "prohibited_claims": prohibited_claims,
@@ -322,6 +364,120 @@ def _validate_public_data_files(site_dir: Path, errors: list[str]) -> None:
                 errors.append(
                     "data/eval_summary.json: global_observed_count must remain 0 until manual evidence exists."
                 )
+
+
+def _validate_compatibility_surfaces(site_dir: Path, errors: list[str]) -> dict[str, Any]:
+    report: dict[str, Any] = {
+        "lite_html_pages": [],
+        "text_files": [],
+        "files_manifest_status": None,
+        "sha256_entries": [],
+    }
+    for relative in REQUIRED_COMPATIBILITY_FILES:
+        path = site_dir / relative
+        if not path.exists():
+            errors.append(f"{_rel(path)}: required compatibility surface file is missing.")
+
+    for relative in (
+        "lite/index.html",
+        "lite/sources.html",
+        "lite/evals.html",
+        "lite/demo-queries.html",
+        "lite/limitations.html",
+        "files/index.html",
+    ):
+        path = site_dir / relative
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        parser = LinkParser()
+        parser.feed(text)
+        report["lite_html_pages"].append(relative)
+        if parser.script_count:
+            errors.append(f"{relative}: compatibility surfaces must not include JavaScript.")
+        for link in parser.links:
+            if link.startswith("/"):
+                errors.append(f"{relative}: link must be relative for /eureka/ portability: {link}.")
+            if _is_external_or_fragment(link):
+                continue
+            target = link.split("#", 1)[0]
+            if target and not (path.parent / target).exists():
+                errors.append(f"{relative}: local link does not resolve: {link}.")
+        lowered = text.casefold()
+        for phrase in ("no live search", "no live source probes"):
+            if phrase not in lowered:
+                errors.append(f"{relative}: missing static compatibility caveat {phrase!r}.")
+
+    for relative in (
+        "text/index.txt",
+        "text/sources.txt",
+        "text/evals.txt",
+        "text/demo-queries.txt",
+        "text/limitations.txt",
+        "text/README.txt",
+    ):
+        path = site_dir / relative
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        report["text_files"].append(relative)
+        if "live search" not in text.casefold() and relative != "text/sources.txt":
+            errors.append(f"{relative}: must state the no-live-search boundary.")
+
+    manifest = _load_json(site_dir / "files" / "manifest.json", errors)
+    if isinstance(manifest, Mapping):
+        report["files_manifest_status"] = manifest.get("status")
+        if manifest.get("generated_by") != "scripts/generate_compatibility_surfaces.py":
+            errors.append("files/manifest.json: generated_by must be scripts/generate_compatibility_surfaces.py.")
+        for flag in (
+            "contains_live_backend",
+            "contains_live_probes",
+            "contains_live_data",
+            "contains_external_observations",
+            "contains_executable_downloads",
+            "downloads_available",
+        ):
+            if manifest.get(flag) is not False:
+                errors.append(f"files/manifest.json: {flag} must be false.")
+
+    sha_path = site_dir / "files" / "SHA256SUMS"
+    if sha_path.exists():
+        report["sha256_entries"] = _validate_sha256sums(site_dir, sha_path, errors)
+    return report
+
+
+def _validate_sha256sums(site_dir: Path, sha_path: Path, errors: list[str]) -> list[str]:
+    entries: list[str] = []
+    for line_number, line in enumerate(sha_path.read_text(encoding="utf-8").splitlines(), start=1):
+        if not line.strip():
+            continue
+        parts = line.split()
+        if len(parts) != 2:
+            errors.append(f"files/SHA256SUMS:{line_number}: expected '<sha256>  <path>'.")
+            continue
+        digest, relative = parts
+        entries.append(relative)
+        target = site_dir / relative
+        if not target.exists() or not target.is_file():
+            errors.append(f"files/SHA256SUMS:{line_number}: target is missing: {relative}.")
+            continue
+        actual = hashlib.sha256(target.read_bytes()).hexdigest()
+        if actual != digest:
+            errors.append(f"files/SHA256SUMS:{line_number}: checksum mismatch for {relative}.")
+    for required in (
+        "data/site_manifest.json",
+        "data/page_registry.json",
+        "data/source_summary.json",
+        "data/eval_summary.json",
+        "data/route_summary.json",
+        "data/build_manifest.json",
+        "files/manifest.json",
+        "files/index.txt",
+        "files/README.txt",
+    ):
+        if required not in entries:
+            errors.append(f"files/SHA256SUMS: missing checksum entry for {required}.")
+    return entries
 
 
 def _load_json(path: Path, errors: list[str]) -> Any:
