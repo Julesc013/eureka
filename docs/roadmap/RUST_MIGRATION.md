@@ -187,3 +187,11 @@ python scripts/check_rust_query_planner_parity.py --json
 These commands validate the fixture map and Rust candidate structure with the
 Python standard library. If Cargo is installed, the script also runs the
 crate-local Rust query-planner tests; otherwise it reports Cargo as skipped.
+
+## Rust Checkpoint
+
+Post-Queue State Checkpoint v0 records the current post-queue evidence and
+verification state under `control/audits/post-queue-state-checkpoint-v0/`. It
+is audit/reporting only; it does not add backend hosting, live probes,
+production deployment, Rust runtime wiring, relay services, or native app
+projects.

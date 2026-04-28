@@ -217,3 +217,11 @@ probes exist. It keeps all candidates future-disabled, keeps public-alpha live
 probes disabled by default, keeps Google manual-baseline-only, and adds no
 Internet Archive calls, URL fetching, scraping, crawling, downloads, adapters,
 or production source behavior.
+
+## Public Alpha Checkpoint
+
+Post-Queue State Checkpoint v0 records the current post-queue evidence and
+verification state under `control/audits/post-queue-state-checkpoint-v0/`. It
+is audit/reporting only; it does not add backend hosting, live probes,
+production deployment, Rust runtime wiring, relay services, or native app
+projects.

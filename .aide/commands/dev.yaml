@@ -440,6 +440,12 @@ steps:
     run: python -c "from pathlib import Path; import subprocess, sys, tempfile, zipfile; bundle = Path(tempfile.gettempdir()) / 'eureka-http-api-demo-bundle.zip'; bundle.write_bytes(subprocess.check_output([sys.executable, 'scripts/demo_http_api.py', 'export-bundle', 'fixture:software/synthetic-demo-app@1.0.0'])); print(bundle); zf = zipfile.ZipFile(bundle); print('\\n'.join(zf.namelist())); zf.close()"
   - id: http_api_store_bundle_known
     run: python scripts/demo_http_api.py store-bundle fixture:software/synthetic-demo-app@1.0.0 --store-root .demo-store
+  - id: post_queue_checkpoint_validator
+    run: python scripts/validate_post_queue_checkpoint.py
+  - id: post_queue_checkpoint_validator_json
+    run: python scripts/validate_post_queue_checkpoint.py --json
+  - id: post_queue_checkpoint_tests
+    run: python -m unittest tests.operations.test_post_queue_state_checkpoint tests.scripts.test_validate_post_queue_checkpoint
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.

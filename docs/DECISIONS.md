@@ -527,3 +527,15 @@
 - Status: accepted
 - Decision: Eureka now adds Signed Snapshot Format v0 through `control/inventory/publication/snapshot_contract.json`, `docs/reference/SNAPSHOT_FORMAT_CONTRACT.md`, `docs/reference/SNAPSHOT_SIGNATURE_POLICY.md`, `snapshots/schema/`, `scripts/generate_static_snapshot.py`, `scripts/validate_static_snapshot.py`, and a deterministic seed example under `snapshots/examples/static_snapshot_v0/`.
 - Why: after the compatibility surface strategy, Eureka needs an offline/static snapshot contract before relay designs, native clients, or future downloadable snapshot surfaces can safely consume publication-plane data. The v0 format records required manifests, public data projections, checksums, and signature-placeholder documentation while keeping `public_site/` as the current GitHub Pages artifact. It adds no real signing keys, production signatures, executable downloads, real software binaries, public `/snapshots/` route, relay service, native-client runtime, live backend behavior, live probes, external API calls, scraping, crawling, provider config, or production-authentic release claim. The next non-network milestone should be Relay Surface Design v0.
+
+## ADR-089: Record Post-Queue State Checkpoint As Audit Metadata
+
+Status: accepted
+
+Post-Queue State Checkpoint v0 is recorded under
+`control/audits/post-queue-state-checkpoint-v0/` as durable repo-state evidence
+and planning metadata after the publication/static/live-alpha/Rust/snapshot
+queue. It does not add product runtime behavior, live probes, deployment
+behavior, external observations, production signing, relay services, or native
+clients. Relay Surface Design v0 is the next recommended Codex-safe milestone;
+Manual Observation Batch 0 remains human-operated parallel work.

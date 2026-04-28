@@ -84,3 +84,9 @@ No separate AIDE runtime report is needed; this is static export governance and
 does not add real signing keys, production signatures, executable downloads, a
 public `/snapshots/` route, relay behavior, native-client runtime, live backend
 behavior, or live probes.
+
+Post-Queue State Checkpoint v0 records its committed audit/reporting pack under
+`control/audits/post-queue-state-checkpoint-v0/`. No separate AIDE runtime
+report is needed; the pack is repo-governance evidence and does not add product
+runtime behavior, deployment behavior, live probes, external observations,
+production signing, relay services, or native clients.

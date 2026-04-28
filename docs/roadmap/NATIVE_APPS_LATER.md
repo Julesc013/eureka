@@ -67,3 +67,11 @@ Serious native host work should wait until:
 - rights, security, download, and action-handoff policies exist
 - Rust parity boundaries are clearer if native shells later consume Rust
   libraries directly
+
+## Native/Relay Checkpoint
+
+Post-Queue State Checkpoint v0 records the current post-queue evidence and
+verification state under `control/audits/post-queue-state-checkpoint-v0/`. It
+is audit/reporting only; it does not add backend hosting, live probes,
+production deployment, Rust runtime wiring, relay services, or native app
+projects.

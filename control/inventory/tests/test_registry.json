@@ -1788,6 +1788,50 @@
       "failure_means": "Snapshot format docs, seed files, checksum behavior, files-surface references, or no-production-signing/no-download posture regressed.",
       "advisory_or_required": "required",
       "notes": "Checks the contract and tiny seed example only; it does not create production signed releases, add real keys, publish executable downloads, implement relay services, or start native client work."
+    },
+    {
+      "test_id": "post_queue_checkpoint_validator",
+      "label": "Post-queue checkpoint validator",
+      "command": "python scripts/validate_post_queue_checkpoint.py",
+      "category": "audit",
+      "owner_area": "control/audits/post-queue-state-checkpoint-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The post-queue checkpoint pack lost required files, structured report fields, command results, external-baseline status, or no-production/no-live guardrails.",
+      "advisory_or_required": "required",
+      "notes": "Added by Post-Queue State Checkpoint v0; validates audit/reporting artifacts only and adds no product runtime behavior."
+    },
+    {
+      "test_id": "post_queue_checkpoint_tests",
+      "label": "Post-queue checkpoint tests",
+      "command": "python -m unittest tests.operations.test_post_queue_state_checkpoint tests.scripts.test_validate_post_queue_checkpoint",
+      "category": "audit",
+      "owner_area": "control/audits/post-queue-state-checkpoint-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The checkpoint pack, validator, JSON output, manual-work notes, deferrals, or no-fake-success guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks the committed checkpoint pack; no external searches, live probes, deployments, or product behavior are added."
     }
   ]
 }

@@ -571,3 +571,12 @@ package-inspection, and reproducibility ecosystems. This README also borrows
 general quality principles from public README curation projects: strong
 opening identity, honest status, useful quickstart commands, clear navigation,
 and no decorative claims the repo cannot support.
+
+## Current Checkpoint
+
+Post-Queue State Checkpoint v0 now lives under
+`control/audits/post-queue-state-checkpoint-v0/`. It records the post-P01..P09
+repo state, verification results, eval/audit status, external-baseline pending
+status, risks, deferrals, and next recommended work. It is audit/reporting only
+and does not add product runtime behavior, deployment behavior, live probes,
+external observations, production signing, relay services, or native clients.

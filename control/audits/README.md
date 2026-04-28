@@ -53,3 +53,8 @@ Current packs:
   fixture were added without live source behavior, OCR engines, PDF/image
   parsing, real magazine scans, copyrighted article text, or external baseline
   claims.
+
+- `post-queue-state-checkpoint-v0/`: post-queue repo-state checkpoint after the
+  publication/static/live-alpha/Rust/snapshot queue. It records milestone
+  evidence, command results, eval/audit status, external-baseline pending
+  status, risks, deferrals, and next planning without adding product behavior.

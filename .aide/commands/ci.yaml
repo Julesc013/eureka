@@ -144,6 +144,12 @@ steps:
     run: python -m unittest discover -s surfaces -t .
   - id: integration_tests
     run: python -m unittest discover -s tests -t .
+  - id: post_queue_checkpoint_validator
+    run: python scripts/validate_post_queue_checkpoint.py
+  - id: post_queue_checkpoint_validator_json
+    run: python scripts/validate_post_queue_checkpoint.py --json
+  - id: post_queue_checkpoint_tests
+    run: python -m unittest tests.operations.test_post_queue_state_checkpoint tests.scripts.test_validate_post_queue_checkpoint
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.

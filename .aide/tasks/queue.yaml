@@ -231,7 +231,7 @@
       "id": "manual_observation_batch_0_execution",
       "title": "Manual Observation Batch 0 Execution",
       "status": "human_operated_parallel",
-      "priority": 38,
+      "priority": 39,
       "notes": "Human-operated parallel follow-up to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
     },
     {
@@ -249,24 +249,31 @@
       "notes": "Implemented Signed Snapshot Format v0 as a static/offline contract plus deterministic repo seed example under snapshots/examples/static_snapshot_v0 with checksums and signature-placeholder docs only; no real signing keys, production signatures, executable downloads, public /snapshots/ route, relay runtime, native-client runtime, live backend, or live probes."
     },
     {
+      "id": "post_queue_state_checkpoint_v0",
+      "title": "Post-Queue State, Test, Audit, and Planning Checkpoint",
+      "status": "completed",
+      "priority": 35,
+      "notes": "Added a durable repo-state checkpoint pack, validator, tests, command results, risk register, deferrals, and next milestone plan after the queued publication/static/live-alpha/Rust/snapshot work; audit/reporting only with no product runtime behavior, live probes, deployment changes, external observations, production signing, relay services, or native clients."
+    },
+    {
       "id": "relay_surface_design_v0",
       "title": "Relay Surface Design v0",
       "status": "next",
-      "priority": 35,
+      "priority": 36,
       "notes": "Design a future local relay surface and operator/security policy without implementing FTP, SMB, WebDAV, live backend behavior, native-client runtime, or executable/download mirroring."
     },
     {
       "id": "rust_source_registry_parity_catch_up_v0",
       "title": "Rust Source Registry Parity Catch-up v0",
       "status": "queued",
-      "priority": 36,
+      "priority": 37,
       "notes": "Update the isolated Rust source-registry candidate to current Python source capability/coverage fields before any broader Rust source work."
     },
     {
       "id": "rust_local_index_parity_planning_v0",
       "title": "Rust Local Index Parity Planning v0",
       "status": "queued",
-      "priority": 37,
+      "priority": 38,
       "notes": "Plan Rust local-index parity around Python oracle member, lane, user-cost, compatibility, and article/scan shapes before implementing index behavior."
     }
   ]

@@ -316,3 +316,11 @@ The backend roadmap intentionally defers:
 - LLM-heavy planning
 - broad live federation
 - auth, HTTPS/TLS, accounts, and production deployment remain outside this slice
+
+## Backend Roadmap Checkpoint
+
+Post-Queue State Checkpoint v0 records the current post-queue evidence and
+verification state under `control/audits/post-queue-state-checkpoint-v0/`. It
+is audit/reporting only; it does not add backend hosting, live probes,
+production deployment, Rust runtime wiring, relay services, or native app
+projects.

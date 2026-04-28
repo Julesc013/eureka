@@ -579,3 +579,15 @@ surface rendering for bounded fixture-backed records. It preserves unknown
 compatibility and does not add a compatibility oracle, installer/runtime
 execution, live source behavior, scraping, fuzzy/vector retrieval, LLM
 behavior, Rust behavior, or source connectors.
+
+## Post-Queue Checkpoint Lane
+
+Post-Queue State Checkpoint v0 is validated with:
+
+- `python scripts/validate_post_queue_checkpoint.py`
+- `python scripts/validate_post_queue_checkpoint.py --json`
+- `python -m unittest tests.operations.test_post_queue_state_checkpoint tests.scripts.test_validate_post_queue_checkpoint`
+
+The checkpoint lane is audit/reporting only. It records command outcomes,
+eval/audit state, external-baseline pending status, risks, deferrals, and next
+planning without adding product runtime behavior or live network behavior.

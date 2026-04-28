@@ -97,6 +97,12 @@ Current scripts:
   projections, `CHECKSUMS.SHA256`, and `SIGNATURES.README.txt`, performs no
   network calls, includes no real signing keys or executable downloads, and
   does not publish a public `/snapshots/` route
+- `validate_post_queue_checkpoint.py`: validates the committed post-queue
+  checkpoint audit pack under `control/audits/post-queue-state-checkpoint-v0/`,
+  including required files, structured JSON report shape, command results,
+  eval/audit status, external-baseline representation, next milestones,
+  human-operated work, and no production/live/external-observation claims; it
+  supports `--json`, performs no network calls, and adds no product behavior
 - `validate_static_snapshot.py`: validates the Signed Snapshot Format v0
   contract and seed example, checks JSON parsing and SHA256SUMS entries,
   rejects private keys, env files, executables, large/binary artifacts, local
