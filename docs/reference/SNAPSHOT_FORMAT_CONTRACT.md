@@ -100,3 +100,10 @@ policies are accepted.
 
 No login or private user data may be layered onto insecure compatibility
 snapshot transports.
+
+Signed Snapshot Consumer Contract v0 now defines the future read order,
+checksum-validation posture, missing-optional-file behavior, and v0
+signature-placeholder handling for file-tree, text, lite HTML, relay, native,
+and audit consumers. It is contract-only: no production consumer, snapshot
+reader runtime, relay runtime, native client, production signing, real signing
+keys, or executable downloads are implemented.

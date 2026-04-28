@@ -36,6 +36,10 @@ The relay must not ingest arbitrary local filesystem roots by default, and it
 must not treat private local cache content as public data without a separate
 operator policy.
 
+Signed Snapshot Consumer Contract v0 now defines the future snapshot read
+order, checksum posture, and v0 signature-placeholder handling that any relay
+snapshot projection must follow. No relay snapshot consumer is implemented.
+
 ## Future Outputs
 
 Possible future relay outputs are projections of the same resolver truth:

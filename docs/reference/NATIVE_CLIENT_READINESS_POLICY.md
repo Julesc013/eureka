@@ -8,6 +8,8 @@ Prerequisites before native GUI client work starts:
 - stable-enough public data contracts
 - static export and snapshot format contracts; Signed Snapshot Format v0 is a
   seed example and contract only, not a native-client release format guarantee
+- Signed Snapshot Consumer Contract v0 for read order, checksum validation,
+  v0 signature-placeholder handling, and missing optional file behavior
 - live backend handoff contract for optional online mode
 - source, evidence, result-lane, action, and absence models stable enough for
   client consumption
@@ -26,3 +28,8 @@ snapshot seed includes no real signing keys, no production signatures, no
 executable downloads, no relay service, and no native-client runtime. Relay
 Surface Design v0 records sidecar/LAN bridge policy only and does not add a
 native sidecar or protocol implementation.
+
+Signed Snapshot Consumer Contract v0 does not implement a native consumer. It
+defines the future snapshot consumption contract that Native Client Contract v0
+can reference without starting Visual Studio, Xcode, installer, sidecar, or
+packaged runtime work.

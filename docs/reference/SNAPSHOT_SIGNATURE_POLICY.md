@@ -15,6 +15,11 @@ The seed example includes `SIGNATURES.README.txt` so clients can learn where
 signature metadata will live later without mistaking v0 for a signed release.
 It is not a production signed release.
 
+Signed Snapshot Consumer Contract v0 requires consumers to treat v0 signatures
+as placeholders. Consumers must say that no real signing keys are present, no
+private keys are stored in the repo, no production signing is performed, and
+no production trust chain exists. There is no production consumer in v0.
+
 Checksums in `CHECKSUMS.SHA256` provide deterministic integrity checks against
 accidental corruption and generator drift. A checksum obtained from the same
 untrusted location as the snapshot is not full authenticity proof.

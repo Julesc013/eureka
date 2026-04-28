@@ -10,9 +10,11 @@ future live API routes must all preserve the same source/evidence/status
 meaning. They may differ in presentation and transport, not in truth.
 
 This is strategy, contract, and inventory work only. Signed Snapshot Format v0
-now adds a repo-local seed snapshot example, but no runtime product behavior,
-deployment, public `/snapshots/` route, production signed snapshot release,
-relay service, native client, live `/api/v1`, or live probe is implemented.
+now adds a repo-local seed snapshot example, and Signed Snapshot Consumer
+Contract v0 now defines future consumer read order and checksum/signature
+handling, but no runtime product behavior, deployment, public `/snapshots/`
+route, production signed snapshot release, snapshot reader runtime, relay
+service, native client, live `/api/v1`, or live probe is implemented.
 
 Compatibility Surface Strategy v0 does not implement new runtime product behavior.
 
@@ -72,17 +74,21 @@ source gates.
 ## Snapshot, Relay, And Native Readiness
 
 Snapshots now have Signed Snapshot Format v0 as a repo-local seed contract and
-example. Production/public snapshots still require:
+example. Signed Snapshot Consumer Contract v0 defines future file-tree, text,
+lite HTML, relay, native, and audit-tool consumption behavior for that format.
+Production/public snapshots still require:
 
 - deterministic manifest
 - checksums
 - future signature policy
+- consumer contract adherence
 - no executable download claims
 - no private data
 
 The seed example under `snapshots/examples/static_snapshot_v0/` is not a
 production signed release, does not contain real signing keys, does not include
-software binaries, and is not published as a public `/snapshots/` route.
+software binaries, is not consumed by a production consumer, and is not
+published as a public `/snapshots/` route.
 
 Relay Surface Design v0 now records the separate network/security/operator
 contract, protocol-candidate inventory, security/privacy defaults, and unsigned
@@ -97,6 +103,7 @@ contracts, not engine internals.
 
 - no new runtime behavior
 - no production signed snapshots, real keys, or public `/snapshots/` route
+- no snapshot reader runtime or production consumer
 - no relay/protocol bridge or network listener
 - no native app project
 - no live `/api/v1`

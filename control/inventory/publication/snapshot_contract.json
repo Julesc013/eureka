@@ -92,6 +92,7 @@
     "The current public /snapshots/ route remains reserved/future; the example lives under snapshots/examples/static_snapshot_v0.",
     "Snapshots differ from public_site: public_site is the current Pages artifact, while snapshots are future offline bundles consumed by old clients, file-tree surfaces, relay designs, and native clients.",
     "Snapshots differ from the live backend: they are immutable static data copies and cannot perform live search, live probes, auth, accounts, or dynamic source access.",
-    "Relay Surface Design v0 may consume future production snapshots later, but no relay runtime or public snapshot route exists now."
+    "Relay Surface Design v0 may consume future production snapshots later, but no relay runtime or public snapshot route exists now.",
+    "Signed Snapshot Consumer Contract v0 defines future consumer read order, checksum posture, and v0 signature-placeholder handling without implementing a consumer."
   ]
 }

@@ -1,0 +1,152 @@
+{
+  "schema_version": "0.1.0",
+  "consumer_contract_id": "eureka-static-snapshot-consumer-contract",
+  "status": "design_only",
+  "stability": "experimental",
+  "snapshot_format_dependency": {
+    "snapshot_contract_id": "eureka-static-snapshot-format",
+    "snapshot_format_version": "0.1.0",
+    "seed_example_root": "snapshots/examples/static_snapshot_v0",
+    "required_before_runtime_consumers": true
+  },
+  "production_consumer_implemented": false,
+  "native_consumer_implemented": false,
+  "relay_consumer_implemented": false,
+  "minimum_consumer_profile": {
+    "profile_id": "minimal_file_tree_consumer",
+    "requires_live_backend": false,
+    "requires_network": false,
+    "requires_javascript": false,
+    "required_capabilities": [
+      "read README_FIRST.txt",
+      "read SNAPSHOT_MANIFEST.json",
+      "read CHECKSUMS.SHA256",
+      "treat SIGNATURES.README.txt as placeholder documentation",
+      "warn or fail closed when checksum verification is unavailable"
+    ],
+    "must_not_claim": [
+      "production authenticity",
+      "live backend availability",
+      "complete object coverage",
+      "real signature verification"
+    ]
+  },
+  "full_consumer_profile": {
+    "profile_id": "future_full_snapshot_consumer",
+    "requires_live_backend": false,
+    "requires_network": false,
+    "requires_javascript": false,
+    "required_capabilities": [
+      "verify every CHECKSUMS.SHA256 entry",
+      "parse required JSON manifests",
+      "enforce snapshot_format_version compatibility",
+      "render or expose index.html and index.txt when supported",
+      "list sources, evals, routes, and pages from summary files",
+      "handle missing optional files without treating the snapshot as corrupt",
+      "surface v0 signature placeholder limitations"
+    ],
+    "future_capabilities_after_separate_policy": [
+      "verify production signatures",
+      "validate release provenance",
+      "consume production snapshot bundles",
+      "serve relay/native read projections"
+    ]
+  },
+  "required_read_order": [
+    "README_FIRST.txt",
+    "SNAPSHOT_MANIFEST.json",
+    "BUILD_MANIFEST.json",
+    "CHECKSUMS.SHA256",
+    "SOURCE_SUMMARY.json",
+    "EVAL_SUMMARY.json",
+    "ROUTE_SUMMARY.json",
+    "PAGE_REGISTRY.json"
+  ],
+  "required_validation_steps": [
+    "Read README_FIRST.txt before interpreting the snapshot.",
+    "Parse SNAPSHOT_MANIFEST.json and confirm snapshot_format_version is supported.",
+    "Confirm the manifest flags do not claim a production signed release, real signing keys, real binaries, live backend, live probes, or external observations.",
+    "Parse BUILD_MANIFEST.json for build provenance and static/export limitations.",
+    "Verify CHECKSUMS.SHA256 entries for all files when the consumer can compute SHA-256.",
+    "Parse SOURCE_SUMMARY.json, EVAL_SUMMARY.json, ROUTE_SUMMARY.json, and PAGE_REGISTRY.json only after manifest and checksum checks.",
+    "Read SIGNATURES.README.txt as placeholder documentation and do not treat v0 as a real signed release.",
+    "Report unsupported features as unavailable rather than silently ignoring them."
+  ],
+  "optional_validation_steps": [
+    "Render index.html when the client supports HTML.",
+    "Render index.txt when the client supports plain text.",
+    "Read data/README.txt when present.",
+    "Compare public data counts with manifest source_counts where available.",
+    "Record local validation output outside the snapshot tree."
+  ],
+  "checksum_policy": {
+    "algorithm": "sha256",
+    "required_for_compliant_consumers": true,
+    "checksum_file": "CHECKSUMS.SHA256",
+    "minimum_behavior_without_hashing": "warn_and_do_not_claim_integrity",
+    "authenticity_limit": "Checksums delivered with the same untrusted snapshot are not a complete authenticity proof."
+  },
+  "signature_policy": {
+    "status": "placeholder_only",
+    "signature_file": "SIGNATURES.README.txt",
+    "v0_consumer_behavior": "display_or_record_placeholder_limitations",
+    "can_verify_real_signatures_in_v0": false,
+    "real_signing_keys_expected_in_repo": false,
+    "future_requires": [
+      "real key-management policy",
+      "public key distribution",
+      "release provenance policy",
+      "revocation and rotation policy",
+      "consumer signature-verification tests"
+    ]
+  },
+  "missing_optional_file_policy": {
+    "optional_files_may_be_absent": true,
+    "required_behavior": "continue_with_notice",
+    "must_not_do": [
+      "treat missing optional docs as corruption",
+      "invent replacement data",
+      "fetch missing files from the network"
+    ]
+  },
+  "unsupported_feature_policy": {
+    "required_behavior": "explicit_not_supported_notice",
+    "must_not_assume": [
+      "live backend",
+      "live probes",
+      "private data",
+      "complete coverage",
+      "production signatures",
+      "native runtime",
+      "relay runtime"
+    ]
+  },
+  "client_profiles": [
+    "minimal_file_tree_consumer",
+    "text_snapshot_consumer",
+    "lite_html_snapshot_consumer",
+    "relay_snapshot_consumer",
+    "native_snapshot_consumer",
+    "audit_tool_consumer"
+  ],
+  "prohibited_assumptions": [
+    "snapshot consumption is implemented",
+    "native clients are implemented",
+    "relay consumption is implemented",
+    "v0 signatures are real production signatures",
+    "checksums alone prove authenticity when delivered over an untrusted channel",
+    "snapshots include executable downloads",
+    "snapshots include live backend responses",
+    "snapshots include live probe output",
+    "snapshots include private user data",
+    "missing optional files can be fetched automatically",
+    "a snapshot is a production API"
+  ],
+  "created_by_slice": "signed_snapshot_consumer_contract_v0",
+  "notes": [
+    "Signed Snapshot Consumer Contract v0 defines future consumption behavior only.",
+    "No production, native, or relay consumer is implemented by this contract.",
+    "Future old-browser, text, file-tree, relay, native, and audit consumers should share the same read order, checksum posture, and v0 signature-placeholder limitations.",
+    "Consumers must not perform network fetches, live probes, scraping, or arbitrary local filesystem ingestion to fill missing snapshot data."
+  ]
+}

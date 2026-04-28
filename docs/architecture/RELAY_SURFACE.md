@@ -43,6 +43,9 @@ live backend:
 - `public_site/text/` for plain text output
 - `public_site/files/` for file-tree manifests and checksums
 - `snapshots/examples/static_snapshot_v0/` as the current seed snapshot format
+- Signed Snapshot Consumer Contract v0 for future snapshot read order,
+  checksum checks, missing optional file behavior, and v0 signature-placeholder
+  limits
 - future production snapshots only after signing/key policy exists
 - future `/api/v1` responses only after live backend handoff policy enables
   them
@@ -97,6 +100,8 @@ operator policy explicitly enables those capabilities.
 ## Implementation Boundary
 
 Relay Surface Design v0 prepares future Relay Prototype v0 and Native Client
-Contract v0. It does not implement a relay server, open sockets, expose private
-data, enable write/admin paths, add protocol libraries, or claim old-client
-support beyond the existing static seed surfaces.
+Contract v0. Signed Snapshot Consumer Contract v0 prepares the snapshot
+consumption side of that future relay without creating the relay. This does not
+implement a relay server, open sockets, expose private data, enable write/admin
+paths, add protocol libraries, or claim old-client support beyond the existing
+static seed surfaces.

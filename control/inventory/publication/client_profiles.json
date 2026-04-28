@@ -157,15 +157,17 @@
       "must_support": [
         "offline static use",
         "build manifest",
-        "future checksums"
+        "checksum validation where available",
+        "v0 signature-placeholder limitations",
+        "snapshot consumer contract read order"
       ],
       "prohibited_dependencies": [
         "live backend requirements",
         "unrecorded external observations",
         "root-only absolute links"
       ],
-      "current_support_level": "not implemented",
-      "notes": "Future offline static bundle profile; Compatibility Surface Strategy v0 requires Signed Snapshot Format v0 before snapshot artifacts are implemented."
+      "current_support_level": "consumer contract exists, runtime not implemented",
+      "notes": "Future offline static bundle profile; Signed Snapshot Consumer Contract v0 defines read order, checksum posture, and v0 signature-placeholder limitations without implementing a snapshot reader runtime."
     },
     {
       "id": "native_client",

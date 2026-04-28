@@ -1,0 +1,177 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-snapshot-consumer-profiles",
+  "status": "design_only",
+  "stability": "experimental",
+  "created_by_slice": "signed_snapshot_consumer_contract_v0",
+  "profiles": [
+    {
+      "id": "minimal_file_tree_consumer",
+      "status": "design_only",
+      "current_implementation_status": "future_contract_only",
+      "required_files": [
+        "README_FIRST.txt",
+        "SNAPSHOT_MANIFEST.json",
+        "CHECKSUMS.SHA256",
+        "SIGNATURES.README.txt",
+        "index.txt"
+      ],
+      "optional_files": [
+        "index.html",
+        "SOURCE_SUMMARY.json",
+        "EVAL_SUMMARY.json",
+        "ROUTE_SUMMARY.json",
+        "PAGE_REGISTRY.json"
+      ],
+      "can_verify_checksums": true,
+      "can_verify_signatures": false,
+      "can_render_html": false,
+      "can_render_text": true,
+      "can_use_public_data_json": false,
+      "can_use_file_tree": true,
+      "can_handle_private_data": false,
+      "requires_live_backend": false,
+      "notes": "Minimum future consumer profile for static file-tree inspection. It may warn if checksum computation is unavailable, but it must not claim integrity or authenticity without validation."
+    },
+    {
+      "id": "text_snapshot_consumer",
+      "status": "design_only",
+      "current_implementation_status": "public_site/text exists as a seed surface, not as snapshot consumer runtime",
+      "required_files": [
+        "README_FIRST.txt",
+        "SNAPSHOT_MANIFEST.json",
+        "CHECKSUMS.SHA256",
+        "index.txt"
+      ],
+      "optional_files": [
+        "SOURCE_SUMMARY.json",
+        "EVAL_SUMMARY.json",
+        "ROUTE_SUMMARY.json",
+        "PAGE_REGISTRY.json"
+      ],
+      "can_verify_checksums": true,
+      "can_verify_signatures": false,
+      "can_render_html": false,
+      "can_render_text": true,
+      "can_use_public_data_json": true,
+      "can_use_file_tree": true,
+      "can_handle_private_data": false,
+      "requires_live_backend": false,
+      "notes": "Future text-first consumer profile. Existing text surfaces are static publication seeds and do not implement snapshot reading."
+    },
+    {
+      "id": "lite_html_snapshot_consumer",
+      "status": "design_only",
+      "current_implementation_status": "public_site/lite exists as a seed surface, not as snapshot consumer runtime",
+      "required_files": [
+        "README_FIRST.txt",
+        "SNAPSHOT_MANIFEST.json",
+        "CHECKSUMS.SHA256",
+        "index.html",
+        "index.txt"
+      ],
+      "optional_files": [
+        "SOURCE_SUMMARY.json",
+        "EVAL_SUMMARY.json",
+        "ROUTE_SUMMARY.json",
+        "PAGE_REGISTRY.json"
+      ],
+      "can_verify_checksums": true,
+      "can_verify_signatures": false,
+      "can_render_html": true,
+      "can_render_text": true,
+      "can_use_public_data_json": true,
+      "can_use_file_tree": true,
+      "can_handle_private_data": false,
+      "requires_live_backend": false,
+      "notes": "Future lite HTML consumer profile for old browsers. Existing lite HTML pages are generated static seeds and do not read snapshots."
+    },
+    {
+      "id": "relay_snapshot_consumer",
+      "status": "future_deferred",
+      "current_implementation_status": "relay design exists; no relay runtime or snapshot consumer is implemented",
+      "required_files": [
+        "README_FIRST.txt",
+        "SNAPSHOT_MANIFEST.json",
+        "BUILD_MANIFEST.json",
+        "CHECKSUMS.SHA256",
+        "SOURCE_SUMMARY.json",
+        "EVAL_SUMMARY.json",
+        "ROUTE_SUMMARY.json",
+        "PAGE_REGISTRY.json"
+      ],
+      "optional_files": [
+        "index.html",
+        "index.txt",
+        "data/README.txt"
+      ],
+      "can_verify_checksums": true,
+      "can_verify_signatures": false,
+      "can_render_html": true,
+      "can_render_text": true,
+      "can_use_public_data_json": true,
+      "can_use_file_tree": true,
+      "can_handle_private_data": false,
+      "requires_live_backend": false,
+      "notes": "Future relay profile. It remains read-only/public-only by default and depends on separate relay prototype planning before any network service exists."
+    },
+    {
+      "id": "native_snapshot_consumer",
+      "status": "future_deferred",
+      "current_implementation_status": "native apps are deferred; no native snapshot consumer is implemented",
+      "required_files": [
+        "README_FIRST.txt",
+        "SNAPSHOT_MANIFEST.json",
+        "BUILD_MANIFEST.json",
+        "CHECKSUMS.SHA256",
+        "SOURCE_SUMMARY.json",
+        "EVAL_SUMMARY.json",
+        "ROUTE_SUMMARY.json",
+        "PAGE_REGISTRY.json"
+      ],
+      "optional_files": [
+        "index.html",
+        "index.txt",
+        "data/README.txt"
+      ],
+      "can_verify_checksums": true,
+      "can_verify_signatures": false,
+      "can_render_html": true,
+      "can_render_text": true,
+      "can_use_public_data_json": true,
+      "can_use_file_tree": true,
+      "can_handle_private_data": false,
+      "requires_live_backend": false,
+      "notes": "Future native client profile. It must not depend on engine internals and cannot claim production signature verification until real signing policy exists."
+    },
+    {
+      "id": "audit_tool_consumer",
+      "status": "design_only",
+      "current_implementation_status": "static snapshot validator exists, but no reusable snapshot reader runtime is implemented",
+      "required_files": [
+        "README_FIRST.txt",
+        "SNAPSHOT_MANIFEST.json",
+        "BUILD_MANIFEST.json",
+        "CHECKSUMS.SHA256",
+        "SOURCE_SUMMARY.json",
+        "EVAL_SUMMARY.json",
+        "ROUTE_SUMMARY.json",
+        "PAGE_REGISTRY.json"
+      ],
+      "optional_files": [
+        "index.html",
+        "index.txt",
+        "data/README.txt"
+      ],
+      "can_verify_checksums": true,
+      "can_verify_signatures": false,
+      "can_render_html": false,
+      "can_render_text": true,
+      "can_use_public_data_json": true,
+      "can_use_file_tree": true,
+      "can_handle_private_data": false,
+      "requires_live_backend": false,
+      "notes": "Future audit-tool profile. Current validators prove seed integrity, but they are not product snapshot consumer runtime."
+    }
+  ]
+}

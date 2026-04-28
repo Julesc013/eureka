@@ -206,7 +206,9 @@
   },
   "snapshot_dependency": {
     "contract": "docs/reference/SNAPSHOT_FORMAT_CONTRACT.md",
+    "consumer_contract": "docs/reference/SNAPSHOT_CONSUMER_CONTRACT.md",
     "seed_example": "snapshots/examples/static_snapshot_v0/",
+    "snapshot_consumer_policy_required_before_runtime": true,
     "production_snapshots_required_before_broad_relay": true,
     "real_signatures_required_before_authenticity_claims": true
   },

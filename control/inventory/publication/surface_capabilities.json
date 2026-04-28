@@ -267,9 +267,9 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "Signed Snapshot Format v0 defines a contract and repo seed example only; no public /snapshots/ route, production signed release, signing keys, executable downloads, relay service, or native-client runtime exists.",
-      "next_step": "Define a snapshot consumer contract and future production signing/key-management policy before public snapshot releases.",
-      "notes": "Seed example is repo-local under snapshots/examples/static_snapshot_v0 and is validated by scripts/generate_static_snapshot.py --check plus scripts/validate_static_snapshot.py."
+      "current_limitations": "Signed Snapshot Format v0 defines a contract and repo seed example, and Signed Snapshot Consumer Contract v0 defines future consumer behavior; no public /snapshots/ route, production signed release, signing keys, executable downloads, relay service, native-client runtime, or snapshot reader runtime exists.",
+      "next_step": "Use the snapshot consumer contract as input to Native Client Contract v0 and later relay prototype planning; future production signing/key-management policy remains separate.",
+      "notes": "Seed example is repo-local under snapshots/examples/static_snapshot_v0 and is validated by scripts/generate_static_snapshot.py --check plus scripts/validate_static_snapshot.py. Consumer behavior is contract-only under control/inventory/publication/snapshot_consumer_contract.json."
     },
     {
       "id": "relay",
