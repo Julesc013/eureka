@@ -15,6 +15,7 @@ REQUIRED_JSON_FILES = {
     "deployment_targets.json",
     "public_data_contract.json",
     "redirects.json",
+    "relay_surface.json",
     "snapshot_contract.json",
 }
 REQUIRED_STATUS_VALUES = {
@@ -273,6 +274,33 @@ class PublicationInventoryTest(unittest.TestCase):
             self.assertIn(required, payload["required_files"])
         self.assertEqual(payload["signature_policy"]["status"], "placeholder_only")
         self.assertFalse(payload["signature_policy"]["real_private_keys_allowed_in_repo"])
+
+    def test_relay_surface_records_design_only_posture(self) -> None:
+        payload = load_json("relay_surface.json")
+
+        self.assertEqual(payload["schema_version"], "0.1.0")
+        self.assertEqual(payload["status"], "design_only")
+        self.assertTrue(payload["no_relay_implemented"])
+        self.assertTrue(payload["no_network_services_implemented"])
+        self.assertTrue(payload["no_protocol_servers_implemented"])
+        self.assertTrue(payload["public_data_only_by_default"])
+        self.assertTrue(payload["private_data_disabled_by_default"])
+        self.assertTrue(payload["write_actions_disabled_by_default"])
+        self.assertTrue(payload["live_probes_disabled_by_default"])
+        self.assertTrue(payload["admin_routes_disabled_for_old_clients"])
+
+        candidates = {item["id"]: item for item in payload["future_protocol_candidates"]}
+        for candidate_id in (
+            "local_static_http",
+            "read_only_ftp_mirror",
+            "webdav_read_only",
+            "smb_read_only",
+            "gopher_experimental",
+            "snapshot_mount",
+        ):
+            with self.subTest(candidate_id=candidate_id):
+                self.assertEqual(candidates[candidate_id]["status"], "future_deferred")
+                self.assertFalse(candidates[candidate_id]["implemented"])
 
     def test_public_data_contract_includes_required_files(self) -> None:
         payload = load_json("public_data_contract.json")

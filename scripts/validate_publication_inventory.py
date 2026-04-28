@@ -23,6 +23,7 @@ REQUIRED_FILES = {
     "live_probe_gateway.json",
     "public_data_contract.json",
     "redirects.json",
+    "relay_surface.json",
     "snapshot_contract.json",
     "static_hosting_targets.json",
     "surface_capabilities.json",
@@ -310,6 +311,9 @@ def validate_publication_inventory(
             inventory_dir / "public_data_contract.json", errors, repo_root
         ),
         "redirects.json": _load_json(inventory_dir / "redirects.json", errors, repo_root),
+        "relay_surface.json": _load_json(
+            inventory_dir / "relay_surface.json", errors, repo_root
+        ),
         "snapshot_contract.json": _load_json(
             inventory_dir / "snapshot_contract.json", errors, repo_root
         ),
@@ -336,6 +340,7 @@ def validate_publication_inventory(
     _validate_live_probe_gateway(payloads["live_probe_gateway.json"], errors)
     _validate_public_data_contract(payloads["public_data_contract.json"], site_dir, errors)
     _validate_redirects(payloads["redirects.json"], errors)
+    _validate_relay_surface(payloads["relay_surface.json"], errors)
     _validate_snapshot_contract(payloads["snapshot_contract.json"], errors)
     _validate_static_hosting_targets(payloads["static_hosting_targets.json"], errors)
     _validate_surface_capabilities(payloads["surface_capabilities.json"], errors)
@@ -358,6 +363,7 @@ def validate_publication_inventory(
         "live_backend_handoff_checked": "live_backend_handoff.json" in existing_files,
         "live_backend_routes_checked": "live_backend_routes.json" in existing_files,
         "live_probe_gateway_checked": "live_probe_gateway.json" in existing_files,
+        "relay_surface_checked": "relay_surface.json" in existing_files,
         "snapshot_contract_checked": "snapshot_contract.json" in existing_files,
         "static_hosting_targets_checked": "static_hosting_targets.json" in existing_files,
         "surface_capabilities_checked": "surface_capabilities.json" in existing_files,
@@ -927,6 +933,58 @@ def _validate_redirects(payload: Any, errors: list[str]) -> None:
         errors.append("redirects.json: redirects must start as an empty list.")
     if payload.get("supports_server_side_redirects") is not False:
         errors.append("redirects.json: supports_server_side_redirects must be false.")
+
+
+def _validate_relay_surface(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("relay_surface.json: must be a JSON object.")
+        return
+    expected = {
+        "schema_version": "0.1.0",
+        "relay_surface_id": "eureka-local-relay-surface",
+        "status": "design_only",
+        "stability": "experimental",
+        "no_relay_implemented": True,
+        "no_network_services_implemented": True,
+        "no_protocol_servers_implemented": True,
+        "public_data_only_by_default": True,
+        "private_data_disabled_by_default": True,
+        "write_actions_disabled_by_default": True,
+        "live_probes_disabled_by_default": True,
+        "admin_routes_disabled_for_old_clients": True,
+        "created_by_slice": "relay_surface_design_v0",
+    }
+    _expect_mapping_values("relay_surface.json", payload, expected, errors)
+    candidates = payload.get("future_protocol_candidates")
+    if not isinstance(candidates, list):
+        errors.append("relay_surface.json: future_protocol_candidates must be a list.")
+        return
+    by_id = {
+        item.get("id"): item
+        for item in candidates
+        if isinstance(item, Mapping) and isinstance(item.get("id"), str)
+    }
+    required = {
+        "local_static_http",
+        "local_text_http",
+        "local_file_tree_http",
+        "read_only_ftp_mirror",
+        "webdav_read_only",
+        "smb_read_only",
+        "afp_read_only",
+        "nfs_read_only",
+        "gopher_experimental",
+        "native_sidecar",
+        "snapshot_mount",
+    }
+    missing = sorted(required - set(by_id))
+    if missing:
+        errors.append(f"relay_surface.json: missing protocol candidates {missing}.")
+    for candidate_id, candidate in by_id.items():
+        if candidate.get("status") != "future_deferred":
+            errors.append(f"relay_surface.json: {candidate_id}.status must be future_deferred.")
+        if candidate.get("implemented") is not False:
+            errors.append(f"relay_surface.json: {candidate_id}.implemented must be false.")
 
 
 def _validate_snapshot_contract(payload: Any, errors: list[str]) -> None:
