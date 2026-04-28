@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Result: Article Inside Scan Fixture</title>
+</head>
+<body>
+  <header>
+    <h1>Result: Article Inside Scan Fixture</h1>
+    <nav>
+      <a href="index.html">Demo index</a>
+      <a href="query-plan-windows-7-apps.html">Query plan</a>
+      <a href="result-member-driver-inside-support-cd.html">Member result</a>
+      <a href="result-firefox-xp.html">Firefox XP</a>
+      <a href="absence-example.html">Absence</a>
+      <a href="comparison-example.html">Comparison</a>
+      <a href="source-example.html">Source</a>
+      <a href="eval-summary.html">Evals</a>
+      <a href="../index.html">Main site</a>
+    </nav>
+  </header>
+  <main>
+<p><strong>Static demo snapshot.</strong> Fixture-backed. Not live search. Not production.</p>
+<p>Shows an article segment with parent issue lineage and page-range style evidence.</p>
+<h2>Snapshot Facts</h2>
+    <dl>
+      <dt>Raw query</dt><dd>article inside 1994 magazine scan about ray tracing</dd>
+      <dt>Planner task</dt><dd>find_document_article</dd>
+      <dt>Topic hint</dt><dd>ray tracing</dd>
+      <dt>Page/member preference</dt><dd>article_member, page_range_hit, ocr_text_snippet</dd>
+    </dl>
+<h2>Details</h2>
+    <section><h3>Article segment result</h3>
+    <dl>
+      <dt>Label</dt><dd>Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop</dd>
+      <dt>Record kind</dt><dd>synthetic_member</dd>
+      <dt>Target ref</dt><dd>article-scan-recorded:pc-magazine-1994-ray-tracing-article</dd>
+      <dt>Member path</dt><dd>articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt</dd>
+      <dt>Parent target ref</dt><dd>article-scan-recorded:issue:pc.magazine.july.1994.fixture</dd>
+      <dt>Parent object</dt><dd>PC Magazine July 1994 Issue Fixture</dd>
+      <dt>Source id</dt><dd>article-scan-recorded-fixtures</dd>
+      <dt>Source family</dt><dd>article_scan_recorded</dd>
+      <dt>Primary lane</dt><dd>inside_bundles</dd>
+      <dt>Result lanes</dt><dd>inside_bundles, best_direct_answer, documentation</dd>
+      <dt>User cost</dt><dd>2</dd>
+      <dt>User-cost reasons</dt><dd>inner_member_has_parent_lineage, member_has_path, action_available, source_evidence_present, compatibility_hint_present, article_segment_has_page_locator</dd>
+      <dt>Usefulness</dt><dd>inside bundles; user cost 2; why: inner_member_has_parent_lineage; member_has_path; action_available; source_evidence_present; compatibility_hint_present; article_segment_has_page_locator</dd>
+      <dt>Summary</dt><dd>article_segment member of PC Magazine July 1994 Issue Fixture</dd>
+    </dl>
+    <h4>Evidence Summary</h4>
+    <ul>
+      <li>label Article inside 1994 magazine scan about ray tracing - Ray Tracing on the Desktop article_scan_recorded article_segment Article Scan Recorded Fixtures</li>
+      <li>parent_issue PC Magazine July 1994 Issue Fixture article_scan_recorded source_metadata Article Scan Recorded Fixtures</li>
+      <li>page_range 123-128 article_scan_recorded page_range Article Scan Recorded Fixtures</li>
+      <li>member_path articles/ray-tracing-on-the-desktop/pages-123-128.ocr.txt article_scan_recorded article_segment Article Scan Recorded Fixtures</li>
+      <li>topic ray tracing article_scan_recorded article_segment Article Scan Recorded Fixtures</li>
+      <li>ocr_text_fixture Synthetic OCR-like fixture text: the article segment is inside a scanned 1994 magazine issue fixture and discusses ray tracing for PC graphics. article_scan_recorded ocr_text_fixture Article Scan Recorded Fixtures</li>
+    </ul></section>
+<h2>Source Data</h2>
+    <ul>
+      <li>archive_resolution_evals/full_report.json#article_inside_magazine_scan</li>
+    </ul>
+<h2>Limitations</h2>
+    <ul>
+      <li>Static demo snapshot.</li>
+      <li>Fixture-backed.</li>
+      <li>Not live search.</li>
+      <li>Not production.</li>
+      <li>The article text is OCR-like synthetic fixture text.</li>
+      <li>No real scan parsing, OCR engine, copyrighted article body, or live Internet Archive call is included.</li>
+    </ul>
+<h2>Related Static Data</h2>
+    <ul>
+      <li><a href="../data/source_summary.json">Source summary JSON</a></li>
+      <li><a href="../limitations.html">Public limitations</a></li>
+    </ul>
+  </main>
+  <footer>
+    Static demo snapshot. Fixture-backed. Not live search. Not production. No live backend, live probes, or external observations are included.
+  </footer>
+</body>
+</html>

@@ -18,6 +18,8 @@ Files:
 - SHA256SUMS
 - README.txt
 - data/README.txt
+- ../demo/index.html
+- ../demo/data/demo_snapshots.json
 
 Future files, snapshots, or downloads require rights and security policy first.
 

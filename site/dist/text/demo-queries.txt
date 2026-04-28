@@ -4,6 +4,7 @@ Demo Queries
 Demo queries are examples for local prototype behavior only.
 They do not invoke live hosted search.
 No live search is performed by this static text file.
+Static demo snapshots: ../demo/index.html
 
 - Windows 7 apps
 - latest Firefox before XP support ended

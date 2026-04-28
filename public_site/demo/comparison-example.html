@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comparison Example: ArchiveBox Fixture Records</title>
+</head>
+<body>
+  <header>
+    <h1>Comparison Example: ArchiveBox Fixture Records</h1>
+    <nav>
+      <a href="index.html">Demo index</a>
+      <a href="query-plan-windows-7-apps.html">Query plan</a>
+      <a href="result-member-driver-inside-support-cd.html">Member result</a>
+      <a href="result-firefox-xp.html">Firefox XP</a>
+      <a href="result-article-scan.html">Article scan</a>
+      <a href="absence-example.html">Absence</a>
+      <a href="source-example.html">Source</a>
+      <a href="eval-summary.html">Evals</a>
+      <a href="../index.html">Main site</a>
+    </nav>
+  </header>
+  <main>
+<p><strong>Static demo snapshot.</strong> Fixture-backed. Not live search. Not production.</p>
+<p>Shows side-by-side evidence without merging or truth selection.</p>
+<h2>Snapshot Facts</h2>
+    <dl>
+      <dt>Comparison subject</dt><dd>ArchiveBox-like records from deterministic search results</dd>
+      <dt>Agreement</dt><dd>Both sides are software records with source-backed ArchiveBox labels.</dd>
+      <dt>Disagreement</dt><dd>Version labels, source family, source locator, and trust lane differ.</dd>
+    </dl>
+<h2>Details</h2>
+    <section><h3>Left record</h3>
+    <dl>
+      <dt>Label</dt><dd>ArchiveBox 0.8.5</dd>
+      <dt>Record kind</dt><dd>software</dd>
+      <dt>Target ref</dt><dd>fixture:software/archivebox@0.8.5</dd>
+      <dt>Source id</dt><dd>synthetic-fixtures</dd>
+      <dt>Source family</dt><dd>synthetic_fixture</dd>
+      <dt>Primary lane</dt><dd>installable_or_usable_now</dd>
+      <dt>Result lanes</dt><dd>installable_or_usable_now</dd>
+      <dt>User cost</dt><dd>2</dd>
+      <dt>User-cost reasons</dt><dd>direct_bounded_record</dd>
+      <dt>Usefulness</dt><dd>installable or usable now; user cost 2; why: direct_bounded_record</dd>
+    </dl>
+    <h4>Evidence Summary</h4>
+    <ul>
+      <li>No compact evidence summary available in this snapshot.</li>
+    </ul></section>
+    <section><h3>Right record</h3>
+    <dl>
+      <dt>Label</dt><dd>ArchiveBox v0.8.5</dd>
+      <dt>Record kind</dt><dd>software</dd>
+      <dt>Target ref</dt><dd>github-release:archivebox/archivebox@v0.8.5</dd>
+      <dt>Source id</dt><dd>github-releases-recorded-fixtures</dd>
+      <dt>Source family</dt><dd>github_releases</dd>
+      <dt>Primary lane</dt><dd>community</dd>
+      <dt>Result lanes</dt><dd>community, installable_or_usable_now</dd>
+      <dt>User cost</dt><dd>2</dd>
+      <dt>User-cost reasons</dt><dd>community_release_source</dd>
+      <dt>Usefulness</dt><dd>community; user cost 2; why: community_release_source</dd>
+    </dl>
+    <h4>Evidence Summary</h4>
+    <ul>
+      <li>No compact evidence summary available in this snapshot.</li>
+    </ul></section>
+<h2>Source Data</h2>
+    <ul>
+      <li>resolution_runs/deterministic_search_archive.json</li>
+    </ul>
+<h2>Limitations</h2>
+    <ul>
+      <li>Static demo snapshot.</li>
+      <li>Fixture-backed.</li>
+      <li>Not live search.</li>
+      <li>Not production.</li>
+      <li>The comparison preserves disagreement instead of merging records.</li>
+      <li>This is a static example, not a live compare route.</li>
+    </ul>
+<h2>Related Static Data</h2>
+    <ul>
+      <li><a href="../data/route_summary.json">Route summary JSON</a></li>
+      <li><a href="../limitations.html">Public limitations</a></li>
+    </ul>
+  </main>
+  <footer>
+    Static demo snapshot. Fixture-backed. Not live search. Not production. No live backend, live probes, or external observations are included.
+  </footer>
+</body>
+</html>

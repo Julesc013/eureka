@@ -369,6 +369,132 @@
     },
     {
       "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "path": "/demo/",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/demo/index.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Static Resolver Demo Snapshots",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "path": "/demo/query-plan-windows-7-apps.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/demo/query-plan-windows-7-apps.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Static Demo: Windows 7 Apps Query Plan",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "path": "/demo/result-member-driver-inside-support-cd.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/demo/result-member-driver-inside-support-cd.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Static Demo: Driver Member Result",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "path": "/demo/result-firefox-xp.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/demo/result-firefox-xp.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Static Demo: Firefox XP Result",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "path": "/demo/result-article-scan.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/demo/result-article-scan.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Static Demo: Article Scan Result",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "path": "/demo/absence-example.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/demo/absence-example.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Static Demo: Absence Example",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "path": "/demo/comparison-example.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/demo/comparison-example.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Static Demo: Comparison Example",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "path": "/demo/source-example.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/demo/source-example.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Static Demo: Source Example",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "path": "/demo/eval-summary.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "public_site/demo/eval-summary.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Static Demo: Eval Summary",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
         "api_client",
         "native_client",
         "snapshot"

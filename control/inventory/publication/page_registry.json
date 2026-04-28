@@ -394,6 +394,177 @@
       "notes": "Checksum list does not imply signed snapshots or download trust."
     },
     {
+      "path": "/demo/",
+      "title": "Static Resolver Demo Snapshots",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/demo/index.html",
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "live_backend_required": false,
+      "external_observation_required": false,
+      "public_claim_scope": "static fixture-backed resolver demo index only",
+      "notes": "Generated from committed Python-oracle goldens and public data summaries; not live search, live API, backend hosting, or production behavior."
+    },
+    {
+      "path": "/demo/query-plan-windows-7-apps.html",
+      "title": "Static Demo: Windows 7 Apps Query Plan",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/demo/query-plan-windows-7-apps.html",
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "live_backend_required": false,
+      "external_observation_required": false,
+      "public_claim_scope": "static deterministic query-plan example only",
+      "notes": "Shows platform-as-constraint planning from Python-oracle fixture output."
+    },
+    {
+      "path": "/demo/result-member-driver-inside-support-cd.html",
+      "title": "Static Demo: Driver Member Result",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/demo/result-member-driver-inside-support-cd.html",
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "live_backend_required": false,
+      "external_observation_required": false,
+      "public_claim_scope": "static member-level result example only",
+      "notes": "Shows a fixture-backed synthetic member result with parent bundle lineage, lane, user-cost, source, and compatibility evidence."
+    },
+    {
+      "path": "/demo/result-firefox-xp.html",
+      "title": "Static Demo: Firefox XP Result",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/demo/result-firefox-xp.html",
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "live_backend_required": false,
+      "external_observation_required": false,
+      "public_claim_scope": "static latest-compatible result evidence example only",
+      "notes": "Shows Firefox XP fixture evidence without claiming a universal latest-version oracle."
+    },
+    {
+      "path": "/demo/result-article-scan.html",
+      "title": "Static Demo: Article Scan Result",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/demo/result-article-scan.html",
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "live_backend_required": false,
+      "external_observation_required": false,
+      "public_claim_scope": "static article/scan fixture result example only",
+      "notes": "Shows article segment lineage and OCR-like synthetic fixture text without real scans, OCR, or live Internet Archive behavior."
+    },
+    {
+      "path": "/demo/absence-example.html",
+      "title": "Static Demo: Absence Example",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/demo/absence-example.html",
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "live_backend_required": false,
+      "external_observation_required": false,
+      "public_claim_scope": "static bounded absence example only",
+      "notes": "Shows local-corpus absence reasoning without making a global non-existence claim."
+    },
+    {
+      "path": "/demo/comparison-example.html",
+      "title": "Static Demo: Comparison Example",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/demo/comparison-example.html",
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "live_backend_required": false,
+      "external_observation_required": false,
+      "public_claim_scope": "static side-by-side comparison example only",
+      "notes": "Preserves agreements and disagreements without selecting global truth or merging records."
+    },
+    {
+      "path": "/demo/source-example.html",
+      "title": "Static Demo: Source Example",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/demo/source-example.html",
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "live_backend_required": false,
+      "external_observation_required": false,
+      "public_claim_scope": "static source posture example only",
+      "notes": "Shows fixture-backed source posture and placeholder honesty from public source summaries."
+    },
+    {
+      "path": "/demo/eval-summary.html",
+      "title": "Static Demo: Eval Summary",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "public_site/demo/eval-summary.html",
+      "client_profiles": [
+        "standard_web",
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "live_backend_required": false,
+      "external_observation_required": false,
+      "public_claim_scope": "static eval/audit demo summary only",
+      "notes": "Shows local hard eval and search audit counts while keeping external baselines pending/manual."
+    },
+    {
       "path": "/data/",
       "title": "Future Public Data Root",
       "status": "planned",

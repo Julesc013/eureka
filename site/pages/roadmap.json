@@ -43,7 +43,8 @@
         {"title": "Static Site Generation Migration v0", "text": "implemented as a stdlib-only generator that writes site/dist while public_site remains the deployable artifact."},
         {"title": "Generated Public Data Summaries v0", "text": "implemented as deterministic static /data summaries from governed inventories and eval/audit sources; no live API, probes, or external observations."},
         {"title": "Lite/Text/Files Seed Surfaces v0", "text": "implemented as static no-JS/no-download compatibility seed surfaces under lite/, text/, and files/."},
-        {"title": "Static Resolver Demo Snapshots v0", "text": "next generated static demo snapshots after compatibility surfaces exist."},
+        {"title": "Static Resolver Demo Snapshots v0", "text": "implemented as fixture-backed static no-JS demo snapshots under demo/; no live search, API, backend hosting, or external observations."},
+        {"title": "Custom Domain / Alternate Host Readiness v0", "text": "next provider-neutral readiness check for static hosting alternatives; no DNS change here."},
         {"title": "Live Probe Gateway Contract", "text": "later contract and abuse-control design before any live probing."},
         {"title": "Manual Observation Batch 0 Execution", "text": "human-operated external baseline observations for selected query/system slots."},
         {"title": "Rust Query Planner Parity Candidate v0", "text": "parity catch-up when Python behavior is stable enough."}
@@ -77,6 +78,10 @@
             {
               "href": "files/index.html",
               "text": "Files surface"
+            },
+            {
+              "href": "demo/index.html",
+              "text": "Static resolver demos"
             }
           ]
         }

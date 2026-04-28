@@ -11,6 +11,7 @@ Files:
 - demo-queries.txt
 - limitations.txt
 - ../files/index.txt
+- ../demo/index.html
 
 Machine-readable data:
 - ../data/site_manifest.json

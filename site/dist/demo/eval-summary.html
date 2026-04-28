@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eval Summary Demo</title>
+</head>
+<body>
+  <header>
+    <h1>Eval Summary Demo</h1>
+    <nav>
+      <a href="index.html">Demo index</a>
+      <a href="query-plan-windows-7-apps.html">Query plan</a>
+      <a href="result-member-driver-inside-support-cd.html">Member result</a>
+      <a href="result-firefox-xp.html">Firefox XP</a>
+      <a href="result-article-scan.html">Article scan</a>
+      <a href="absence-example.html">Absence</a>
+      <a href="comparison-example.html">Comparison</a>
+      <a href="source-example.html">Source</a>
+      <a href="../index.html">Main site</a>
+    </nav>
+  </header>
+  <main>
+<p><strong>Static demo snapshot.</strong> Fixture-backed. Not live search. Not production.</p>
+<p>Shows archive hard eval status, search usefulness counts, and pending manual baselines.</p>
+<h2>Snapshot Facts</h2>
+    <dl>
+      <dt>Archive hard eval tasks</dt><dd>6</dd>
+      <dt>Archive hard eval status counts</dt><dd>{&quot;satisfied&quot;: 6}</dd>
+      <dt>Search audit queries</dt><dd>64</dd>
+      <dt>Search audit status counts</dt><dd>{&quot;capability_gap&quot;: 9, &quot;covered&quot;: 5, &quot;partial&quot;: 22, &quot;source_gap&quot;: 26, &quot;unknown&quot;: 2}</dd>
+      <dt>Manual baseline pending</dt><dd>192</dd>
+      <dt>Manual baseline observed</dt><dd>0</dd>
+    </dl>
+<h2>Details</h2>
+    <table>
+      <tr><th>task_id</th><th>status</th><th>planner</th><th>results</th></tr>
+      <tr><td>article_inside_magazine_scan</td><td>satisfied</td><td>find_document_article</td><td>9</td></tr>
+      <tr><td>driver_inside_support_cd</td><td>satisfied</td><td>find_driver</td><td>50</td></tr>
+      <tr><td>latest_firefox_before_xp_drop</td><td>satisfied</td><td>find_latest_compatible_release</td><td>50</td></tr>
+      <tr><td>old_blue_ftp_client_xp</td><td>satisfied</td><td>identify_software</td><td>44</td></tr>
+      <tr><td>win98_registry_repair</td><td>satisfied</td><td>identify_software</td><td>26</td></tr>
+      <tr><td>windows_7_apps</td><td>satisfied</td><td>browse_software</td><td>29</td></tr>
+    </table>
+<h2>Source Data</h2>
+    <ul>
+      <li>public_site/data/eval_summary.json</li>
+      <li>archive_resolution_evals/full_report.json</li>
+    </ul>
+<h2>Limitations</h2>
+    <ul>
+      <li>Static demo snapshot.</li>
+      <li>Fixture-backed.</li>
+      <li>Not live search.</li>
+      <li>Not production.</li>
+      <li>Archive hard eval satisfaction is local and fixture-backed.</li>
+      <li>Manual external baselines remain pending until a human records observations.</li>
+    </ul>
+<h2>Related Static Data</h2>
+    <ul>
+      <li><a href="../data/eval_summary.json">Eval summary JSON</a></li>
+      <li><a href="../limitations.html">Public limitations</a></li>
+    </ul>
+  </main>
+  <footer>
+    Static demo snapshot. Fixture-backed. Not live search. Not production. No live backend, live probes, or external observations are included.
+  </footer>
+</body>
+</html>

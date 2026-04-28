@@ -213,6 +213,33 @@
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_compatibility_surfaces.py",
       "notes": "Static checksum list for public data summaries and selected files-surface artifacts. It does not imply signed snapshots or download trust."
+    },
+    {
+      "path": "/demo/data/demo_snapshots.json",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "schema_version": "0.1.0",
+      "producer": "Static Resolver Demo Snapshots v0",
+      "source_inputs": [
+        "tests/parity/golden/python_oracle/v0/query_planner/*.json",
+        "tests/parity/golden/python_oracle/v0/resolution_runs/*.json",
+        "tests/parity/golden/python_oracle/v0/archive_resolution_evals/full_report.json",
+        "public_site/data/*.json",
+        "scripts/generate_static_resolver_demos.py"
+      ],
+      "consumer_profiles": [
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree",
+        "snapshot",
+        "native_client"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "generated_by": "scripts/generate_static_resolver_demos.py",
+      "notes": "Static resolver demo snapshot manifest for fixture-backed publication examples. It is not a live API, signed snapshot, backend route, or production behavior claim."
     }
   ]
 }

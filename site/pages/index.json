@@ -86,6 +86,10 @@
               "href": "files/index.html"
             },
             {
+              "text": "View static resolver demos",
+              "href": "demo/index.html"
+            },
+            {
               "text": "Check public-alpha limitations",
               "href": "limitations.html"
             },

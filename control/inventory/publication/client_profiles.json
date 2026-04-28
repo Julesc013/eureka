@@ -41,6 +41,7 @@
       "requires_https": false,
       "intended_path_prefixes": [
         "/",
+        "/demo/",
         "/web/"
       ],
       "must_support": [
@@ -68,6 +69,7 @@
       "requires_css": false,
       "requires_https": false,
       "intended_path_prefixes": [
+        "/demo/",
         "/lite/"
       ],
       "must_support": [

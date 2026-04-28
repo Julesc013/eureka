@@ -13,7 +13,9 @@
     "files/README.txt",
     "files/manifest.json",
     "files/SHA256SUMS",
-    "files/data/README.txt"
+    "files/data/README.txt",
+    "demo/index.html",
+    "demo/data/demo_snapshots.json"
   ],
   "generated_by": "scripts/generate_compatibility_surfaces.py",
   "limitations": [

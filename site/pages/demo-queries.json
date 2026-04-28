@@ -38,6 +38,27 @@
       "text": "These are local prototype queries, not live hosted searches. Each is fixture-backed or fixture-adjacent, and external baselines remain pending/manual."
     },
     {
+      "type": "grid",
+      "panels": [
+        {
+          "title": "Static Resolver Demo Snapshots",
+          "paragraphs": [
+            "Static Resolver Demo Snapshots v0 publishes fixed no-JS examples for selected fixture-backed queries and result shapes. They are not live searches or API calls."
+          ],
+          "links": [
+            {
+              "href": "demo/index.html",
+              "text": "Open static demo snapshots"
+            },
+            {
+              "href": "demo/data/demo_snapshots.json",
+              "text": "Demo snapshot JSON"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "table",
       "headers": [
         "Query",

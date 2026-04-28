@@ -29,7 +29,7 @@
     "manual external baselines remain pending",
     "fixture-backed evidence is not global truth"
   ],
-  "next_milestone": "Static Resolver Demo Snapshots v0",
+  "next_milestone": "Custom Domain / Alternate Host Readiness v0",
   "no_backend": true,
   "no_deployment_performed": true,
   "no_live_backend": true,
@@ -75,5 +75,9 @@
   "site_pack_id": "live_alpha_static_public_site_pack_v0",
   "source_matrix_source": "control/inventory/sources/*.source.json",
   "source_root": "site",
-  "static_only": true
+  "static_only": true,
+  "static_resolver_demo_source": "scripts/generate_static_resolver_demos.py",
+  "static_resolver_demos": [
+    "demo/"
+  ]
 }
