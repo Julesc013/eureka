@@ -56,8 +56,112 @@
     "No live backend or live source probes are represented.",
     "Manual external baselines remain pending unless human observations are recorded later.",
     "Public JSON is stable_draft for pre-alpha clients, not a production API promise.",
-    "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured."
+    "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.",
+    "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live."
   ],
+  "live_backend_handoff": {
+    "auth_policy_status": "unresolved",
+    "cors_policy_status": "unresolved",
+    "handoff_id": "eureka-live-backend-handoff",
+    "live_probe_dependency_status": "requires_live_probe_gateway_contract_v0",
+    "no_deployment_performed": true,
+    "no_live_backend_implemented": true,
+    "public_alpha_backend_future": true,
+    "rate_limit_policy_status": "unresolved",
+    "reserved_endpoint_count": 11,
+    "reserved_endpoints": [
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/status",
+        "public_alpha_allowed": true,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/search",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/query-plan",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/sources",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/source/{source_id}",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/evidence/{evidence_id}",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/object/{object_id}",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/result/{result_id}",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/absence",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/compare",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": true,
+        "method": "POST",
+        "path_template": "/api/v1/live-probe",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": false,
+        "status": "blocked"
+      }
+    ],
+    "route_prefix": "/api/v1",
+    "status": "implemented_contract_only"
+  },
   "no_deployment_claim": true,
   "pages": [
     {
@@ -535,6 +639,20 @@
     },
     {
       "client_profiles": [
+        "api_client",
+        "native_client"
+      ],
+      "path": "/api/v1/",
+      "requires_javascript": false,
+      "safe_for_static_hosting": false,
+      "source_file": null,
+      "stability": "experimental",
+      "status": "deferred",
+      "title": "Future Live Backend Handoff API",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
         "snapshot",
         "native_client",
         "relay"
@@ -649,8 +767,11 @@
     "control/inventory/publication/page_registry.json",
     "control/inventory/publication/deployment_targets.json",
     "control/inventory/publication/domain_plan.json",
+    "control/inventory/publication/live_backend_handoff.json",
+    "control/inventory/publication/live_backend_routes.json",
     "control/inventory/publication/public_data_contract.json",
-    "control/inventory/publication/static_hosting_targets.json"
+    "control/inventory/publication/static_hosting_targets.json",
+    "control/inventory/publication/surface_capabilities.json"
   ],
   "static_hosting_targets": [
     {
@@ -697,6 +818,106 @@
       "live_probes_supported": false,
       "provider_config_committed": false,
       "status": "planned"
+    }
+  ],
+  "surface_capabilities": [
+    {
+      "enabled_by_default": true,
+      "id": "static_site",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "implemented"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "generated_public_data",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "implemented"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "lite_surface",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "static_demo"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "text_surface",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "static_demo"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "files_surface",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "static_demo"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "demo_snapshots",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "static_demo"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "public_alpha_wrapper",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "implemented"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "live_backend",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "planned"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "live_search",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "planned"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "live_probe_gateway",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "deferred"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "internet_archive_live_probe",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "blocked"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "external_baseline_observations",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
+      "status": "planned"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "native_clients",
+      "requires_backend": false,
+      "safe_for_static_hosting": false,
+      "status": "deferred"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "rust_runtime",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "deferred"
     }
   ]
 }

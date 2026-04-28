@@ -58,6 +58,7 @@
       "base_path": "/",
       "depends_on": [
         "public_alpha_wrapper",
+        "live_backend_handoff_contract",
         "deployment_config_pack",
         "rate_limit_or_abuse_controls",
         "operator_signoff"
@@ -65,6 +66,7 @@
       "no_live_probes_by_default": true,
       "notes": [
         "This target is not deployment approval.",
+        "Live Backend Handoff Contract v0 reserves future /api/v1 route semantics before any hosted backend target becomes active.",
         "Provider-neutral deployment config and operator approval must come later.",
         "Live probes stay disabled by default until a separate gateway contract exists."
       ]

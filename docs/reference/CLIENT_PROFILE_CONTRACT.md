@@ -30,8 +30,8 @@ Required profiles:
 - `native_client`: future native clients consuming public data, API, or
   snapshots.
 - `relay`: future local LAN or legacy protocol bridge.
-- `api_client`: future public data and API consumer profile; not a live backend
-  guarantee.
+- `api_client`: current static public data consumer and future `/api/v1`
+  handoff consumer profile; not a live backend guarantee.
 
 Profiles describe consumption contracts. Lite/Text/Files Seed Surfaces v0 now
 implements seed static surfaces for `lite_html`, `text`, and `file_tree`.
@@ -40,3 +40,7 @@ Static Resolver Demo Snapshots v0 adds static `/demo/` examples for
 snapshot, relay, native-client, or live API behavior. Profiles still do not
 implement `/app/`, snapshots, relay behavior, native clients, or live APIs by
 themselves.
+
+Live Backend Handoff Contract v0 updates the `api_client` expectation: clients
+may know that `/api/v1` is reserved, but they must treat it as future and
+disabled unless a status/capability document says `live_backend` is enabled.

@@ -119,3 +119,8 @@ static-only workflow for `public_site/`. It still keeps live probes closed
 until a source-probe gateway contract and abuse-control posture exist. A later
 deployment config pack may define provider-neutral backend deployment
 configuration evidence, but it is not part of this wrapper.
+
+Live Backend Handoff Contract v0 now reserves `/api/v1` as a future hosted
+public-alpha handoff prefix. The wrapper's current local `/api` routes remain
+local/prototype public-alpha routes; they are not the future `/api/v1`
+contract and not a production API.

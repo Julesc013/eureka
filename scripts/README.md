@@ -55,6 +55,11 @@ Current scripts:
   custom-domain claim, backend hosting, live probes, or root-relative static
   links are present, supports `--json`, performs no network calls, and deploys
   nothing
+- `validate_live_backend_handoff.py`: validates the Live Backend Handoff
+  Contract v0 inventories, reserved `/api/v1` route registry, disabled live
+  capability flags, error-envelope docs, and static-page no-live-backend
+  claims; it supports `--json`, performs no network calls, starts no backend,
+  adds no route handlers, and does not make `/api/v1` live
 - `generate_public_data_summaries.py`: generates, updates, or checks
   deterministic static JSON summaries under `public_site/data/` by default,
   including site, page-registry, source, eval, route, and build summaries; it
@@ -131,7 +136,8 @@ from governed synthetic fixtures, small recorded GitHub Releases fixtures, tiny
 recorded Internet Archive-like fixtures, and committed local bundle fixtures.
 They also surface the current bounded engine, public-alpha, publication,
 GitHub Pages artifact, generated public-data summary, and stdlib static-site
-generator checks plus static-host readiness checks without implying
+generator checks plus static-host readiness and live-backend handoff checks
+without implying
 a final provenance, trust, merge, object-identity, ranking, compatibility
 oracle, fuzzy retrieval, vector search, download, installer, extraction,
 runtime-routing, personalization, async scheduling, distributed workers,
@@ -139,7 +145,8 @@ execution, streaming, cloud memory, production relevance benchmark, auth,
 HTTPS/TLS, accounts, rate limiting, production logging, production process
 management, backend deployment infrastructure, generated-artifact deployment,
 custom-domain configuration, alternate-host deployment, DNS changes, CNAME
-configuration, Rust runtime replacement, live source probing, crawling, live Internet Archive
+configuration, live `/api/v1` backend, production API guarantee, Rust runtime
+replacement, live source probing, crawling, live Internet Archive
 API access, arbitrary local filesystem ingestion, or full
 investigation-planning architecture. Live GitHub acquisition remains
 intentionally deferred.

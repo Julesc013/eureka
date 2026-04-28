@@ -54,3 +54,10 @@ Custom Domain / Alternate Host Readiness v0 records readiness inventories under
 No separate AIDE runtime report is needed; this is host-portability governance
 only and does not add DNS records, `CNAME`, provider config, alternate-host
 deployment, backend hosting, live probes, or production behavior.
+
+Live Backend Handoff Contract v0 records future `/api/v1` handoff inventories
+under `control/inventory/publication/` and architecture/reference docs under
+`docs/`. No separate AIDE runtime report is needed; this is contract-only
+publication governance and does not host a backend, make `/api/v1` live, enable
+live probes, implement CORS/auth/rate limits, or create production API
+guarantees.

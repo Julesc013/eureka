@@ -89,8 +89,11 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     page_registry = _load_json(PUBLICATION_DIR / "page_registry.json")
     deployment_targets = _load_json(PUBLICATION_DIR / "deployment_targets.json")
     domain_plan = _load_json(PUBLICATION_DIR / "domain_plan.json")
+    live_backend_handoff = _load_json(PUBLICATION_DIR / "live_backend_handoff.json")
+    live_backend_routes = _load_json(PUBLICATION_DIR / "live_backend_routes.json")
     public_data_contract = _load_json(PUBLICATION_DIR / "public_data_contract.json")
     static_hosting_targets = _load_json(PUBLICATION_DIR / "static_hosting_targets.json")
+    surface_capabilities = _load_json(PUBLICATION_DIR / "surface_capabilities.json")
     source_records = _load_source_records()
     route_inventory = _load_json(PUBLIC_ALPHA_ROUTES)
 
@@ -104,8 +107,11 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
         page_registry_summary,
         deployment_targets,
         domain_plan,
+        live_backend_handoff,
+        live_backend_routes,
         public_data_contract,
         static_hosting_targets,
+        surface_capabilities,
     )
 
     return {
@@ -169,8 +175,11 @@ def _build_data_site_manifest(
     page_registry_summary: Mapping[str, Any],
     deployment_targets: Mapping[str, Any],
     domain_plan: Mapping[str, Any],
+    live_backend_handoff: Mapping[str, Any],
+    live_backend_routes: Mapping[str, Any],
     public_data_contract: Mapping[str, Any],
     static_hosting_targets: Mapping[str, Any],
+    surface_capabilities: Mapping[str, Any],
 ) -> dict[str, Any]:
     targets = [
         {
@@ -211,6 +220,29 @@ def _build_data_site_manifest(
         for target in static_hosting_targets.get("targets", [])
         if isinstance(target, Mapping)
     ]
+    capabilities = [
+        {
+            "id": capability.get("id"),
+            "status": capability.get("status"),
+            "enabled_by_default": capability.get("enabled_by_default"),
+            "requires_backend": capability.get("requires_backend"),
+            "safe_for_static_hosting": capability.get("safe_for_static_hosting"),
+        }
+        for capability in surface_capabilities.get("capabilities", [])
+        if isinstance(capability, Mapping)
+    ]
+    live_routes = [
+        {
+            "path_template": route.get("path_template"),
+            "method": route.get("method"),
+            "status": route.get("status"),
+            "static_handoff_allowed": route.get("static_handoff_allowed"),
+            "public_alpha_allowed": route.get("public_alpha_allowed"),
+            "live_probe_related": route.get("live_probe_related"),
+        }
+        for route in live_backend_routes.get("routes", [])
+        if isinstance(route, Mapping)
+    ]
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_by": GENERATED_BY,
@@ -232,6 +264,21 @@ def _build_data_site_manifest(
             "custom_domain_static_status": domain_plan.get("custom_domain_static_status"),
             "domain_verification_required": domain_plan.get("domain_verification_required"),
         },
+        "live_backend_handoff": {
+            "status": "implemented_contract_only",
+            "handoff_id": live_backend_handoff.get("handoff_id"),
+            "route_prefix": live_backend_routes.get("route_prefix"),
+            "no_live_backend_implemented": live_backend_handoff.get("no_live_backend_implemented"),
+            "no_deployment_performed": live_backend_handoff.get("no_deployment_performed"),
+            "public_alpha_backend_future": live_backend_handoff.get("public_alpha_backend_future"),
+            "cors_policy_status": live_backend_handoff.get("cors_policy_status"),
+            "auth_policy_status": live_backend_handoff.get("auth_policy_status"),
+            "rate_limit_policy_status": live_backend_handoff.get("rate_limit_policy_status"),
+            "live_probe_dependency_status": live_backend_handoff.get("live_probe_dependency_status"),
+            "reserved_endpoint_count": len(live_routes),
+            "reserved_endpoints": live_routes,
+        },
+        "surface_capabilities": capabilities,
         "base_path_targets": base_paths,
         "contains_live_backend": False,
         "contains_live_probes": False,
@@ -243,14 +290,18 @@ def _build_data_site_manifest(
             "Manual external baselines remain pending unless human observations are recorded later.",
             "Public JSON is stable_draft for pre-alpha clients, not a production API promise.",
             "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.",
+            "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
         ],
         "source_inputs": [
             "control/inventory/publication/publication_contract.json",
             "control/inventory/publication/page_registry.json",
             "control/inventory/publication/deployment_targets.json",
             "control/inventory/publication/domain_plan.json",
+            "control/inventory/publication/live_backend_handoff.json",
+            "control/inventory/publication/live_backend_routes.json",
             "control/inventory/publication/public_data_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
+            "control/inventory/publication/surface_capabilities.json",
         ],
     }
 
@@ -507,13 +558,17 @@ def _build_build_manifest(public_data_contract: Mapping[str, Any]) -> dict[str, 
             "python scripts/validate_publication_inventory.py",
             "python scripts/check_github_pages_static_artifact.py",
             "python scripts/validate_static_host_readiness.py",
+            "python scripts/validate_live_backend_handoff.py",
         ],
         "source_inputs": [
             "control/inventory/publication/public_data_contract.json",
             "control/inventory/publication/publication_contract.json",
             "control/inventory/publication/page_registry.json",
             "control/inventory/publication/domain_plan.json",
+            "control/inventory/publication/live_backend_handoff.json",
+            "control/inventory/publication/live_backend_routes.json",
             "control/inventory/publication/static_hosting_targets.json",
+            "control/inventory/publication/surface_capabilities.json",
             "control/inventory/sources/*.source.json",
             "control/inventory/public_alpha_routes.json",
             "scripts/run_archive_resolution_evals.py --json",

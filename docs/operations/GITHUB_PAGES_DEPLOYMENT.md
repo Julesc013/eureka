@@ -41,6 +41,7 @@ python scripts/validate_publication_inventory.py
 python scripts/validate_public_static_site.py
 python scripts/check_github_pages_static_artifact.py
 python scripts/validate_static_host_readiness.py
+python scripts/validate_live_backend_handoff.py
 ```
 
 Then it configures Pages, uploads `public_site/` with
@@ -69,6 +70,11 @@ operator docs, base-path policy, and `scripts/validate_static_host_readiness.py`
 for future custom-domain or alternate-static-host work. It still does not
 configure a custom domain, add DNS, add `public_site/CNAME`, or deploy an
 alternate host.
+
+Live Backend Handoff Contract v0 reserves future `/api/v1` backend route
+families and disabled capability flags. GitHub Pages still serves only static
+files; it does not make `/api/v1` live, proxy to Python, or provide a
+production API.
 
 No deployment secrets are required.
 

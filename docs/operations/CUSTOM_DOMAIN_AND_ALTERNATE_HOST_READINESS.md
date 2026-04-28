@@ -19,6 +19,12 @@ Current state:
 - No backend hosting or live source probing is enabled.
 - No live probes are configured.
 - No live source probing is configured.
+- `/api/v1` live backend handoff is not active.
+
+Live Backend Handoff Contract v0 is separate from this static-host readiness
+layer. A custom domain or alternate static host would still be static-only
+unless a later backend deployment milestone explicitly configures live backend
+handoff.
 
 ## Future Host Targets
 

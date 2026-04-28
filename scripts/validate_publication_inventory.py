@@ -18,9 +18,12 @@ REQUIRED_FILES = {
     "client_profiles.json",
     "deployment_targets.json",
     "domain_plan.json",
+    "live_backend_handoff.json",
+    "live_backend_routes.json",
     "public_data_contract.json",
     "redirects.json",
     "static_hosting_targets.json",
+    "surface_capabilities.json",
 }
 REQUIRED_CONTRACT_FIELDS = {
     "schema_version",
@@ -82,6 +85,7 @@ REQUIRED_RESERVED_ROUTES = {
     "/files/",
     "/data/",
     "/api/",
+    "/api/v1/",
     "/snapshots/",
     "/source-policy.html",
     "/rights-and-access.html",
@@ -152,6 +156,41 @@ REQUIRED_DEMO_ROUTES = {
 }
 REQUIRED_DEMO_DATA_PATHS = {
     "/demo/data/demo_snapshots.json",
+}
+REQUIRED_LIVE_BACKEND_ENDPOINTS = {
+    "/api/v1/status",
+    "/api/v1/search",
+    "/api/v1/query-plan",
+    "/api/v1/sources",
+    "/api/v1/source/{source_id}",
+    "/api/v1/evidence/{evidence_id}",
+    "/api/v1/object/{object_id}",
+    "/api/v1/result/{result_id}",
+    "/api/v1/absence",
+    "/api/v1/compare",
+    "/api/v1/live-probe",
+}
+REQUIRED_SURFACE_CAPABILITIES = {
+    "static_site",
+    "generated_public_data",
+    "lite_surface",
+    "text_surface",
+    "files_surface",
+    "demo_snapshots",
+    "public_alpha_wrapper",
+    "live_backend",
+    "live_search",
+    "live_probe_gateway",
+    "internet_archive_live_probe",
+    "external_baseline_observations",
+    "native_clients",
+    "rust_runtime",
+}
+DISABLED_LIVE_CAPABILITIES = {
+    "live_backend",
+    "live_search",
+    "live_probe_gateway",
+    "internet_archive_live_probe",
 }
 IMPLEMENTED_ROUTE_STATUSES = {
     "implemented",
@@ -244,12 +283,21 @@ def validate_publication_inventory(
         "domain_plan.json": _load_json(
             inventory_dir / "domain_plan.json", errors, repo_root
         ),
+        "live_backend_handoff.json": _load_json(
+            inventory_dir / "live_backend_handoff.json", errors, repo_root
+        ),
+        "live_backend_routes.json": _load_json(
+            inventory_dir / "live_backend_routes.json", errors, repo_root
+        ),
         "public_data_contract.json": _load_json(
             inventory_dir / "public_data_contract.json", errors, repo_root
         ),
         "redirects.json": _load_json(inventory_dir / "redirects.json", errors, repo_root),
         "static_hosting_targets.json": _load_json(
             inventory_dir / "static_hosting_targets.json", errors, repo_root
+        ),
+        "surface_capabilities.json": _load_json(
+            inventory_dir / "surface_capabilities.json", errors, repo_root
         ),
     }
 
@@ -260,9 +308,12 @@ def validate_publication_inventory(
     _validate_client_profiles(payloads["client_profiles.json"], errors)
     _validate_deployment_targets(payloads["deployment_targets.json"], errors)
     _validate_domain_plan(payloads["domain_plan.json"], errors)
+    _validate_live_backend_handoff(payloads["live_backend_handoff.json"], errors)
+    _validate_live_backend_routes(payloads["live_backend_routes.json"], errors)
     _validate_public_data_contract(payloads["public_data_contract.json"], site_dir, errors)
     _validate_redirects(payloads["redirects.json"], errors)
     _validate_static_hosting_targets(payloads["static_hosting_targets.json"], errors)
+    _validate_surface_capabilities(payloads["surface_capabilities.json"], errors)
     _validate_claim_traceability_doc(repo_root, errors)
 
     return {
@@ -279,7 +330,10 @@ def validate_publication_inventory(
         "required_client_profiles": sorted(REQUIRED_CLIENT_PROFILES),
         "required_public_data_paths": sorted(REQUIRED_PUBLIC_DATA_PATHS),
         "domain_plan_checked": "domain_plan.json" in existing_files,
+        "live_backend_handoff_checked": "live_backend_handoff.json" in existing_files,
+        "live_backend_routes_checked": "live_backend_routes.json" in existing_files,
         "static_hosting_targets_checked": "static_hosting_targets.json" in existing_files,
+        "surface_capabilities_checked": "surface_capabilities.json" in existing_files,
         "errors": errors,
         "warnings": warnings,
     }
@@ -585,6 +639,76 @@ def _validate_domain_plan(payload: Any, errors: list[str]) -> None:
             errors.append("domain_plan.json: base_path_transition.status must be future.")
 
 
+def _validate_live_backend_handoff(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("live_backend_handoff.json: must be a JSON object.")
+        return
+    expected = {
+        "schema_version": "0.1.0",
+        "handoff_id": "eureka-live-backend-handoff",
+        "status": "planned",
+        "stability": "experimental",
+        "no_live_backend_implemented": True,
+        "no_deployment_performed": True,
+        "static_site_current": True,
+        "public_alpha_backend_future": True,
+        "created_by_slice": "live_backend_handoff_contract_v0",
+    }
+    _expect_mapping_values("live_backend_handoff.json", payload, expected, errors)
+    endpoints = set(_string_list(payload.get("endpoint_prefixes_reserved")))
+    missing = sorted(REQUIRED_LIVE_BACKEND_ENDPOINTS - endpoints)
+    if missing:
+        errors.append(f"live_backend_handoff.json: missing reserved endpoints {missing}.")
+    for key in ("cors_policy_status", "auth_policy_status", "rate_limit_policy_status"):
+        if payload.get(key) != "unresolved":
+            errors.append(f"live_backend_handoff.json: {key} must be unresolved.")
+    if payload.get("live_probe_dependency_status") != "requires_live_probe_gateway_contract_v0":
+        errors.append(
+            "live_backend_handoff.json: live_probe_dependency_status must require Live Probe Gateway Contract v0."
+        )
+
+
+def _validate_live_backend_routes(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("live_backend_routes.json: must be a JSON object.")
+        return
+    expected = {
+        "schema_version": "0.1.0",
+        "registry_id": "eureka-live-backend-routes",
+        "status": "planned",
+        "stability": "experimental",
+        "route_prefix": "/api/v1",
+        "no_live_backend_implemented": True,
+        "current_local_api_public_contract": False,
+    }
+    _expect_mapping_values("live_backend_routes.json", payload, expected, errors)
+    routes = payload.get("routes")
+    if not isinstance(routes, list):
+        errors.append("live_backend_routes.json: routes must be a list.")
+        return
+    by_path = {
+        route.get("path_template"): route
+        for route in routes
+        if isinstance(route, Mapping) and isinstance(route.get("path_template"), str)
+    }
+    missing = sorted(REQUIRED_LIVE_BACKEND_ENDPOINTS - set(by_path))
+    if missing:
+        errors.append(f"live_backend_routes.json: missing endpoints {missing}.")
+    for path, route in by_path.items():
+        if route.get("status") in IMPLEMENTED_ROUTE_STATUSES:
+            errors.append(f"live_backend_routes.json: {path} must not be implemented.")
+        if route.get("requires_live_backend") is not True:
+            errors.append(f"live_backend_routes.json: {path} must require live backend.")
+    live_probe = by_path.get("/api/v1/live-probe")
+    if isinstance(live_probe, Mapping):
+        if live_probe.get("status") not in {"blocked", "deferred", "unsafe_for_public_alpha"}:
+            errors.append("live_backend_routes.json: /api/v1/live-probe must be blocked/deferred.")
+        if live_probe.get("public_alpha_allowed") is not False:
+            errors.append("live_backend_routes.json: /api/v1/live-probe must not be public-alpha allowed.")
+        if live_probe.get("static_handoff_allowed") is not False:
+            errors.append("live_backend_routes.json: /api/v1/live-probe must not allow static handoff.")
+
+
 def _validate_public_data_contract(payload: Any, site_dir: Path, errors: list[str]) -> None:
     if not isinstance(payload, Mapping):
         errors.append("public_data_contract.json: must be a JSON object.")
@@ -773,6 +897,48 @@ def _validate_static_hosting_targets(payload: Any, errors: list[str]) -> None:
                 )
 
 
+def _validate_surface_capabilities(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("surface_capabilities.json: must be a JSON object.")
+        return
+    if payload.get("schema_version") != "0.1.0":
+        errors.append("surface_capabilities.json: schema_version must be 0.1.0.")
+    capabilities = payload.get("capabilities")
+    if not isinstance(capabilities, list):
+        errors.append("surface_capabilities.json: capabilities must be a list.")
+        return
+    by_id = {
+        item.get("id"): item
+        for item in capabilities
+        if isinstance(item, Mapping) and isinstance(item.get("id"), str)
+    }
+    missing = sorted(REQUIRED_SURFACE_CAPABILITIES - set(by_id))
+    if missing:
+        errors.append(f"surface_capabilities.json: missing capabilities {missing}.")
+    for capability_id in ("static_site", "generated_public_data"):
+        capability = by_id.get(capability_id)
+        if isinstance(capability, Mapping):
+            if capability.get("status") != "implemented":
+                errors.append(f"surface_capabilities.json: {capability_id}.status must be implemented.")
+            if capability.get("enabled_by_default") is not True:
+                errors.append(
+                    f"surface_capabilities.json: {capability_id}.enabled_by_default must be true."
+                )
+    for capability_id in DISABLED_LIVE_CAPABILITIES:
+        capability = by_id.get(capability_id)
+        if isinstance(capability, Mapping):
+            if capability.get("enabled_by_default") is not False:
+                errors.append(
+                    f"surface_capabilities.json: {capability_id}.enabled_by_default must be false."
+                )
+            if capability.get("requires_backend") is not True:
+                errors.append(f"surface_capabilities.json: {capability_id}.requires_backend must be true.")
+            if capability.get("status") in IMPLEMENTED_ROUTE_STATUSES:
+                errors.append(
+                    f"surface_capabilities.json: {capability_id}.status must remain future/deferred/blocked."
+                )
+
+
 def _validate_claim_traceability_doc(repo_root: Path, errors: list[str]) -> None:
     doc_path = repo_root / "docs" / "architecture" / "PUBLICATION_PLANE.md"
     try:
@@ -815,6 +981,12 @@ def _ids(value: Any) -> set[str]:
         elif isinstance(item, Mapping) and isinstance(item.get("id"), str):
             ids.add(item["id"])
     return ids
+
+
+def _string_list(value: Any) -> list[str]:
+    if isinstance(value, list):
+        return [str(item) for item in value]
+    return []
 
 
 def _load_json(path: Path, errors: list[str], repo_root: Path) -> Any:

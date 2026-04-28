@@ -89,6 +89,10 @@ checklist live at:
 - `docs/operations/PUBLIC_ALPHA_WRAPPER.md`
 - `docs/operations/public_alpha_hosting_pack/`
 
+Live Backend Handoff Contract v0 reserves future `/api/v1` routes separately
+from these current local `/api` helper routes. Public Alpha Safe Mode does not
+make `/api/v1` live and does not enable live probes.
+
 ## Still Not Production
 
 Public Alpha Safe Mode v0 does not settle:
@@ -102,6 +106,7 @@ Public Alpha Safe Mode v0 does not settle:
 - production deployment
 - live source sync or crawling
 - live source probes or live Internet Archive calls
+- live `/api/v1` backend handoff
 - ranking, fuzzy retrieval, vector search, or LLM planning
 
 It is a bounded public-demo posture for the current local backend, intended to

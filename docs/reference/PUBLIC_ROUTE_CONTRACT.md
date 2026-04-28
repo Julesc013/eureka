@@ -41,3 +41,9 @@ Custom Domain / Alternate Host Readiness v0 does not promote any new public
 route. It reinforces that all existing static routes must keep relative links
 and remain portable between the GitHub Pages project base path `/eureka/` and a
 future root-hosted static target `/`.
+
+Live Backend Handoff Contract v0 reserves `/api/v1/` plus specific future
+endpoint templates in `live_backend_routes.json`. These are not static pages,
+not GitHub Pages routes, and not live backend routes today. Static pages may
+describe `/api/v1` as future/reserved but must not link to it as an available
+service.

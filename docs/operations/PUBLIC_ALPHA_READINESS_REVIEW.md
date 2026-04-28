@@ -107,7 +107,8 @@ metadata and should be manually reviewed again before any real hosted demo.
 - No production process manager.
 - No durable public storage model.
 - No multi-user isolation.
-- No final live-backend public API route contract.
+- No live-probe gateway contract or public abuse-control policy.
+- No hosted live-backend deployment target or operator approval.
 - No audit logging or operational monitoring policy.
 
 ## Static Site Pack
@@ -150,6 +151,12 @@ Static Resolver Demo Snapshots v0 adds static fixture-backed examples under
 examples consume governed data and Python-oracle fixture outputs only; they do
 not add live search, a live API, backend hosting, external observations, or
 production behavior.
+
+Live Backend Handoff Contract v0 adds contract-only `/api/v1` route
+reservations, disabled capability flags, and error-envelope expectations for a
+future hosted public-alpha backend. It does not host a backend, make `/api/v1`
+live, enable live probes, implement production CORS/auth/rate-limit behavior,
+or change the static GitHub Pages target.
 
 ## Public Alpha Wrapper
 

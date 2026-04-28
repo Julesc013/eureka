@@ -454,6 +454,7 @@ def _render_index(demos: Sequence[Mapping[str, Any]]) -> str:
     body = [
         "<p>These are static resolver demo snapshots generated from committed Python-oracle fixture outputs and public data summaries.</p>",
         "<p>They are not live search, not a live API, not backend hosting, and not production.</p>",
+        "<p>The reserved /api/v1 route family belongs to future live backend handoff work and is not live from these demo pages.</p>",
         "<ul>",
         items,
         "</ul>",
@@ -552,6 +553,7 @@ def _readme_text(demos: Sequence[Mapping[str, Any]]) -> str:
         "",
         "These files are generated static publication examples.",
         "They are not live search, not a live API, not backend hosting, and not production.",
+        "The reserved /api/v1 route family is future handoff contract only and is not live here.",
         "",
         "Pages:",
     ]

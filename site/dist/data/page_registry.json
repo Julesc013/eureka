@@ -484,6 +484,20 @@
     },
     {
       "client_profiles": [
+        "api_client",
+        "native_client"
+      ],
+      "path": "/api/v1/",
+      "requires_javascript": false,
+      "safe_for_static_hosting": false,
+      "source_file": null,
+      "stability": "experimental",
+      "status": "deferred",
+      "title": "Future Live Backend Handoff API",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
         "snapshot",
         "native_client",
         "relay"
@@ -583,8 +597,8 @@
     }
   ],
   "registry_id": "eureka-public-page-registry",
-  "reserved_route_count": 34,
-  "route_count": 42,
+  "reserved_route_count": 35,
+  "route_count": 43,
   "schema_version": "0.1.0",
   "source_inputs": [
     "control/inventory/publication/page_registry.json"

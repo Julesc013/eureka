@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -115,6 +115,11 @@ operator checklist, and `scripts/validate_static_host_readiness.py`. It does
 not configure DNS, add `public_site/CNAME`, deploy an alternate host, add
 provider config, enable live probes, host a backend, or claim production
 readiness.
+Live Backend Handoff Contract v0 now adds contract-only `/api/v1` route
+reservations, disabled live capability flags, and a future error-envelope
+reference. It does not deploy or host a backend, make `/api/v1` live, enable
+live probes, finalize CORS/auth/rate-limit policy, or create production API
+guarantees.
 
 ## Quickstart
 
@@ -136,6 +141,7 @@ python -m unittest discover -s runtime -t .
 python -m unittest discover -s surfaces -t .
 python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
+python scripts/validate_live_backend_handoff.py
 ```
 
 ### Run Evals and Safety Checks
@@ -422,6 +428,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 - Custom Domain / Alternate Host Readiness v0 adds static-host portability
   contracts and validation. It does not configure DNS, add CNAME, deploy an
   alternate host, add provider config, or make Eureka production-ready.
+- Live Backend Handoff Contract v0 reserves `/api/v1`, capability flags, and
+  an error-envelope expectation for a future hosted backend. It does not make
+  `/api/v1` live, deploy backend hosting, enable live probes, or create a
+  stable production API.
 - The hosting pack supports supervised rehearsal evidence, not open-internet
   approval.
 - Rust has a workspace, parity fixtures, and one isolated source-registry
@@ -437,11 +447,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Live Backend Handoff Contract v0
-2. Live Probe Gateway Contract v0
-3. Manual Observation Batch 0 Execution (human-operated parallel work)
-4. Rust Query Planner Parity Candidate v0
-5. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
+1. Live Probe Gateway Contract v0
+2. Manual Observation Batch 0 Execution (human-operated parallel work)
+3. Rust Query Planner Parity Candidate v0
+4. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
 
 Broader near-term direction:
 

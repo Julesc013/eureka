@@ -49,6 +49,16 @@ Custom Domain / Alternate Host Readiness v0 adds
 only: no DNS record, `CNAME`, provider config, alternate host deployment,
 backend hosting, or live probe is configured.
 
+Live Backend Handoff Contract v0 adds
+`control/inventory/publication/live_backend_handoff.json`,
+`control/inventory/publication/live_backend_routes.json`,
+`control/inventory/publication/surface_capabilities.json`,
+`docs/architecture/LIVE_BACKEND_HANDOFF.md`, and
+`scripts/validate_live_backend_handoff.py`. This reserves `/api/v1` and
+disabled live capability flags for future hosted-backend work. It does not
+make `/api/v1` live, deploy a backend, enable live probes, or create a
+production API guarantee.
+
 `control/inventory/publication/` owns the publication contracts and inventories:
 routes, route stability, public status vocabulary, client profiles, public data
 expectations, deployment target semantics, and redirects.
@@ -62,8 +72,9 @@ add live source probes, Internet Archive calls, Google scraping, crawling,
 auth, accounts, TLS, rate limiting, DNS, process management, or generated
 artifact deployment.
 
-A future live backend handoff contract may define public API routes and
-capability flags, but that is separate from the static artifact contract.
+The live backend handoff contract defines future public API route reservations
+and capability flags, but that remains separate from the static artifact
+contract. The current static site must treat `/api/v1` as future/reserved.
 
 ## Claim Traceability
 
@@ -119,5 +130,6 @@ data and fixture-backed Python-oracle outputs. They make current behavior easier
 to inspect without creating a live resolver endpoint or API promise. Custom
 Domain / Alternate Host Readiness v0 now records future host prerequisites and
 validates static host portability without configuring a domain or alternate
-host. Live backend handoff, live probe gateway contracts, signed snapshots,
-relays, and native clients remain future work.
+host. Live Backend Handoff Contract v0 now reserves `/api/v1` contract-only
+routes and disabled capabilities. Live probe gateway contracts, signed
+snapshots, relays, and native clients remain future work.

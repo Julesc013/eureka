@@ -4,6 +4,7 @@ Eureka Files Surface
 Static file-tree seed surface.
 No public executable downloads are present in v0.
 No live backend, live probes, crawling, scraping, or external observations are included.
+The /api/v1 route family is reserved for future backend handoff only and is not live.
 
 Public data summaries:
 - ../data/site_manifest.json

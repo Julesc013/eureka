@@ -406,6 +406,23 @@ relative static links, and no custom-domain/backend/live-probe/production
 claims. It performs no network calls, DNS lookups, URL fetches, provider
 actions, deployments, backend hosting, or live source probing.
 
+## Live Backend Handoff Contract
+
+Live Backend Handoff Contract v0 is validated with:
+
+```bash
+python scripts/validate_live_backend_handoff.py
+python scripts/validate_live_backend_handoff.py --json
+python -m unittest tests.operations.test_live_backend_handoff_contract tests.scripts.test_validate_live_backend_handoff
+```
+
+The lane checks `live_backend_handoff.json`, `live_backend_routes.json`,
+`surface_capabilities.json`, reserved `/api/v1` endpoint posture, disabled
+live backend/probe capability flags, error-envelope docs, static page claims,
+and absence of backend deployment config. It performs no network calls, starts
+no backend, adds no route handlers, enables no live probes, and creates no
+production API guarantee.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

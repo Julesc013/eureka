@@ -20,7 +20,8 @@ Every public data entry must declare:
 
 Public JSON fields are compatibility-sensitive. New generated data should carry
 a `schema_version`, avoid undocumented fields, and avoid implying live backend
-availability unless a later live backend handoff contract says so.
+availability unless capability flags explicitly enable it in a later hosted
+backend milestone.
 
 No live claims without source. No public data file may claim live source
 coverage, external comparison results, or public deployment unless a repo source
@@ -45,6 +46,12 @@ to `/data/site_manifest.json` and readiness validation provenance to
 `/data/build_manifest.json`. These fields describe future host portability
 only; they do not configure DNS, add a `CNAME`, activate an alternate host, or
 claim deployment success.
+
+Live Backend Handoff Contract v0 adds disabled live capability summaries and
+reserved `/api/v1` endpoint summaries to `/data/site_manifest.json`, plus
+validation provenance to `/data/build_manifest.json`. These fields are static
+contract metadata only. They do not make `/api/v1` live, do not expose a live
+API, and do not change the `stable_draft` pre-alpha posture of public JSON.
 
 Implemented file-tree public data files include:
 

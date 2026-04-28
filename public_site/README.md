@@ -26,12 +26,18 @@ validation for future host portability. It does not configure DNS, add
 `public_site/CNAME`, deploy alternate hosts, add provider config, enable live
 probes, or host a backend.
 
+Live Backend Handoff Contract v0 adds contract-only future `/api/v1`
+reservations, disabled live capability flags, and error-envelope expectations.
+It does not make `/api/v1` live, host a backend, enable live probes, implement
+production CORS/auth/rate limits, or create a production API guarantee.
+
 Validate it with:
 
 ```bash
 python scripts/generate_public_data_summaries.py --check
 python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
+python scripts/validate_live_backend_handoff.py
 python scripts/validate_public_static_site.py
 python scripts/validate_public_static_site.py --json
 python scripts/check_github_pages_static_artifact.py

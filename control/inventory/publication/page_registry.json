@@ -600,6 +600,23 @@
       "notes": "Reserved for a later live backend handoff contract; not implemented."
     },
     {
+      "path": "/api/v1/",
+      "title": "Future Live Backend Handoff API",
+      "status": "deferred",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "api_client",
+        "native_client"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": false,
+      "public_claim_scope": "reserved live backend route family only",
+      "notes": "Live Backend Handoff Contract v0 reserves /api/v1 for future hosted public-alpha backend routes. It is not live on the static site and not a production API."
+    },
+    {
       "path": "/snapshots/",
       "title": "Future Snapshot Surface",
       "status": "planned",

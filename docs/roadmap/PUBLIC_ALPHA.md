@@ -50,6 +50,9 @@ The minimum public-alpha entry gate should include:
 - Custom Domain / Alternate Host Readiness v0 (implemented as static-host
   portability inventories, docs, checklist, and validation; no DNS, CNAME,
   alternate-host deployment, provider config, backend hosting, or live probes)
+- Live Backend Handoff Contract v0 (implemented as contract-only `/api/v1`
+  route reservations, capability flags, and error-envelope expectations; no
+  live backend, live probes, backend hosting, or production API guarantee)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -189,3 +192,9 @@ Custom Domain / Alternate Host Readiness v0 now records future custom-domain
 and alternate-static-host prerequisites, base-path portability, and an operator
 checklist. It adds no DNS records, no `CNAME`, no provider config, no alternate
 host deployment, no backend hosting, no live probes, and no production claim.
+
+Live Backend Handoff Contract v0 now records future `/api/v1` endpoint
+reservations, disabled live capability flags, static-to-live handoff policy, and
+error-envelope expectations. It is a contract-only public-alpha input: it does
+not host a backend, make `/api/v1` live, enable live probes, configure CORS/auth
+or rate limits for production, or make a stable public API guarantee.

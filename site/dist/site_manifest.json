@@ -1,4 +1,6 @@
 {
+  "api_v1_live": false,
+  "api_v1_reserved": true,
   "artifact_root": "site/dist",
   "base_path_targets": [
     "/eureka/",
@@ -27,6 +29,8 @@
     "no deployment performed",
     "no backend hosting added",
     "no live source probes",
+    "/api/v1 reserved only; not live",
+    "no production API guarantee",
     "no custom domain configured",
     "no DNS changes performed",
     "no CNAME file committed",
@@ -34,7 +38,10 @@
     "manual external baselines remain pending",
     "fixture-backed evidence is not global truth"
   ],
-  "next_milestone": "Live Backend Handoff Contract v0",
+  "live_backend_handoff_contract_only": true,
+  "live_backend_handoff_source": "control/inventory/publication/live_backend_handoff.json",
+  "live_backend_routes_source": "control/inventory/publication/live_backend_routes.json",
+  "next_milestone": "Live Probe Gateway Contract v0",
   "no_backend": true,
   "no_cname_file_committed": true,
   "no_custom_domain_configured": true,
@@ -88,5 +95,6 @@
   "static_resolver_demo_source": "scripts/generate_static_resolver_demos.py",
   "static_resolver_demos": [
     "demo/"
-  ]
+  ],
+  "surface_capabilities_source": "control/inventory/publication/surface_capabilities.json"
 }

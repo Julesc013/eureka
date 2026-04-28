@@ -209,14 +209,14 @@
     {
       "id": "live_backend_handoff_contract_v0",
       "title": "Live Backend Handoff Contract v0",
-      "status": "next",
+      "status": "completed",
       "priority": 30,
-      "notes": "Future API/status/capability handoff contract before any hosted backend claim."
+      "notes": "Added contract-only /api/v1 route reservations, disabled live capability flags, error-envelope docs, validator, and tests without hosting a backend, making /api/v1 live, enabling live probes, or creating production API guarantees."
     },
     {
       "id": "live_probe_gateway_contract_v0",
       "title": "Live Probe Gateway Contract v0",
-      "status": "queued",
+      "status": "next",
       "priority": 31,
       "notes": "Future gateway contract before any live source probes, with abuse controls and explicit source boundaries."
     },

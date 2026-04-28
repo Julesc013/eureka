@@ -181,6 +181,15 @@ The repo has already proven:
   compatibility evidence, absence, comparison, source detail, article/scan
   results, and eval summaries without live search, live API semantics, backend
   hosting, external observations, or production behavior
+- Custom Domain / Alternate Host Readiness v0 as the first static host
+  portability readiness layer, adding domain/host inventories, base-path
+  guidance, and an unsigned future operator checklist without DNS, `CNAME`,
+  provider config, alternate-host deployment, backend hosting, or live probes
+- Live Backend Handoff Contract v0 as the first contract-only static-to-live
+  handoff layer, reserving future `/api/v1` endpoint families, disabled
+  capability flags, and error-envelope expectations without hosting a backend,
+  making `/api/v1` live, enabling live probes, or creating production API
+  guarantees
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -232,7 +241,7 @@ The next backend sequence is:
 41. Lite/Text/Files Seed Surfaces v0 (implemented as static compatibility seed surfaces)
 42. Static Resolver Demo Snapshots v0 (implemented as static fixture-backed demos)
 43. Custom Domain / Alternate Host Readiness v0 (implemented as static host readiness policy; no DNS/CNAME/provider config)
-44. Live Backend Handoff Contract v0
+44. Live Backend Handoff Contract v0 (implemented as contract-only `/api/v1` handoff reservation; no live backend)
 45. Live Probe Gateway Contract v0
 46. Manual Observation Batch 0 Execution (human-operated parallel work)
 47. Rust Query Planner Parity Candidate v0
@@ -243,7 +252,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Live Backend Handoff Contract v0
+> Live Probe Gateway Contract v0
 
 Why this comes next:
 
@@ -270,8 +279,12 @@ Why this comes next:
 - Custom Domain / Alternate Host Readiness v0 now records host portability
   policy and validates no DNS, CNAME, provider config, alternate-host
   deployment, backend hosting, live probes, or custom-domain claim was added.
-- The next step is to define the future live backend handoff contract before
-  any hosted backend claim, API stability promise, or live route exposure.
+- Live Backend Handoff Contract v0 now reserves future `/api/v1` endpoint
+  families, disabled live capability flags, and error-envelope expectations
+  without hosting a backend, making `/api/v1` live, enabling live probes, or
+  creating production API guarantees.
+- The next step is to define the live probe gateway contract before any live
+  source probe can be exposed through a future backend.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.

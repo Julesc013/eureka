@@ -16,6 +16,9 @@ Current boundary:
 - Host-portability policy is validated by
   `scripts/validate_static_host_readiness.py`; it does not configure DNS,
   CNAME, provider files, alternate hosts, backend hosting, or live probes.
+- Live Backend Handoff Contract v0 is validated by
+  `scripts/validate_live_backend_handoff.py`; it reserves future `/api/v1`
+  routes and disabled live capability flags without making a live API.
 - `public_site/` remains the GitHub Pages deployment artifact for this
   milestone.
 
@@ -38,6 +41,7 @@ The public data generator can also be checked directly:
 python scripts/generate_public_data_summaries.py --check
 python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
+python scripts/validate_live_backend_handoff.py
 ```
 
 Generated output is no-JS static HTML with relative links so it can work under
@@ -52,4 +56,5 @@ not create a live API, enable live probes, record external observations, add
 executable downloads, create snapshots, add relay/native runtime behavior, or
 change deployment behavior. Static resolver demos under `site/dist/demo/` are
 also static fixture-backed examples only; they add no live search, backend
-hosting, or production behavior.
+hosting, or production behavior. Future `/api/v1` handoff routes are reserved
+by contract only and are not live in generated output.

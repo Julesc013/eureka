@@ -142,3 +142,8 @@ Custom Domain / Alternate Host Readiness v0 adds host-portability validation
 and policy records for future custom-domain or alternate-static-host work. It
 does not add `public_site/CNAME`, DNS records, provider config, backend
 hosting, live probes, or an alternate deployed artifact.
+
+Live Backend Handoff Contract v0 adds no files under `/api/` and no route
+handlers. It only records future `/api/v1` reservations and disabled
+capability flags in publication inventory and generated static data summaries.
+Static exports must continue to work with no backend at all.

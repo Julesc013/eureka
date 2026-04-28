@@ -200,6 +200,26 @@
       "title": "Add static resolver demo snapshots before domain readiness or live handoff work",
       "status": "addressed_by_static_resolver_demo_snapshots_v0",
       "suggested_milestone": "Custom Domain / Alternate Host Readiness v0"
+    },
+    {
+      "id": "audit-backlog-custom-domain-alternate-host-readiness",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Record custom-domain and alternate-static-host readiness before host changes",
+      "status": "addressed_by_custom_domain_alternate_host_readiness_v0",
+      "suggested_milestone": "Live Backend Handoff Contract v0"
+    },
+    {
+      "id": "audit-backlog-live-backend-handoff-contract",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Reserve static-to-live backend handoff routes before any hosted backend claim",
+      "status": "addressed_by_live_backend_handoff_contract_v0",
+      "suggested_milestone": "Live Probe Gateway Contract v0"
     }
   ]
 }

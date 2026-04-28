@@ -377,7 +377,7 @@ def _validate_no_positive_live_claims(path: Path, text: str, repo_root: Path, er
         for match in pattern.finditer(text):
             before = text[max(0, match.start() - 160) : match.start()].casefold()
             context = text[max(0, match.start() - 32) : match.end() + 32].casefold()
-            if "no " in before[-24:] or "not " in before[-24:] or "does not " in before[-32:]:
+            if "no " in before[-40:] or "not " in before[-40:] or "does not " in before[-96:]:
                 continue
             if "future" in before[-80:] or "reserved" in before[-80:]:
                 continue

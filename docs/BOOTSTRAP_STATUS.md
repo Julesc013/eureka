@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus fifty-seven executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus fifty-eight executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -269,6 +269,15 @@ architectural oracle rather than as a throwaway scaffold.
   `scripts/validate_static_host_readiness.py`, adding provider-neutral static
   host readiness checks without DNS, CNAME, alternate-host deployment,
   provider config, backend hosting, live probes, or production claims
+- first Live Backend Handoff Contract v0 under
+  `control/inventory/publication/live_backend_handoff.json`,
+  `control/inventory/publication/live_backend_routes.json`,
+  `control/inventory/publication/surface_capabilities.json`,
+  `docs/architecture/LIVE_BACKEND_HANDOFF.md`, and
+  `scripts/validate_live_backend_handoff.py`, adding contract-only `/api/v1`
+  reservations, disabled live capability flags, and error-envelope
+  expectations without hosting a backend, making `/api/v1` live, enabling live
+  probes, or creating production API guarantees
 - runtime component layout for engine, gateway, and connectors, including explicit engine interface boundaries
 - surface layout for web and native
 - component-local and root integration tests for the executable slices
@@ -308,7 +317,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Live Backend Handoff Contract v0
+> Live Probe Gateway Contract v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -329,8 +338,9 @@ LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0,
 LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane
 Contracts v0, GitHub Pages Deployment Enablement v0, Static Site
 Generation Migration v0, Generated Public Data Summaries v0,
-Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, and
-Custom Domain / Alternate Host Readiness v0
+Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0,
+Custom Domain / Alternate Host Readiness v0, and Live Backend Handoff Contract
+v0
 are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
@@ -367,14 +377,16 @@ fixture-backed resolver examples without adding live search or API behavior.
 The static host readiness layer records custom-domain and alternate-host
 prerequisites without adding DNS, CNAME, provider config, alternate-host
 deployment, backend hosting, or live probes.
+The live backend handoff layer reserves `/api/v1` and disabled capability flags
+without adding route handlers, backend hosting, live probes, CORS/auth/rate
+limit policy, or production API guarantees.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Live Backend Handoff Contract v0
-2. Live Probe Gateway Contract v0
-3. Manual Observation Batch 0 Execution (human-operated parallel work)
-4. Rust Query Planner Parity Candidate v0
-5. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
+1. Live Probe Gateway Contract v0
+2. Manual Observation Batch 0 Execution (human-operated parallel work)
+3. Rust Query Planner Parity Candidate v0
+4. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
 
 ## Deferred Priorities
 

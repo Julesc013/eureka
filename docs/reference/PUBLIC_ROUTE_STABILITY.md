@@ -23,3 +23,7 @@ clear.
 Custom-domain readiness does not make a route stable. A route that works under
 both `/eureka/` and `/` may still remain `stable_draft` until public data,
 redirect, and deprecation policies mature.
+
+Live backend handoff readiness does not make `/api/v1` stable or live. The
+reserved `/api/v1` route family stays `experimental` until a later hosted
+backend milestone defines and verifies runtime behavior.
