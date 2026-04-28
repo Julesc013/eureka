@@ -130,6 +130,16 @@
       "title": "Package supervised public-alpha rehearsal evidence before wrapper or deployment-config work",
       "status": "addressed_by_public_alpha_rehearsal_evidence_v0",
       "suggested_milestone": "LIVE_ALPHA_01 Production Public-Alpha Wrapper"
+    },
+    {
+      "id": "audit-backlog-public-alpha-wrapper",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Add an explicit public-alpha wrapper before deployment config work",
+      "status": "addressed_by_live_alpha_01_public_alpha_wrapper",
+      "suggested_milestone": "LIVE_ALPHA_02 Deployment Config Pack"
     }
   ]
 }

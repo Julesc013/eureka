@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -70,6 +70,10 @@ Evidence v0 under `docs/operations/public_alpha_rehearsal_evidence_v0/` are
 documentation/evidence packs for later hosting review. They do not deploy
 Eureka, add backend hosting, add live source probes, scrape external systems,
 or claim production readiness.
+The public-alpha wrapper under `scripts/run_public_alpha_server.py` adds a
+localhost-default process/config guard for future supervised rehearsals. It
+does not deploy, add provider files, enable live probes, add auth/TLS/rate
+limiting/process management, or approve production.
 
 ## Quickstart
 
@@ -100,6 +104,7 @@ python scripts/run_archive_resolution_evals.py
 python scripts/run_archive_resolution_evals.py --json
 python scripts/run_search_usefulness_audit.py
 python scripts/public_alpha_smoke.py
+python scripts/run_public_alpha_server.py --check-config
 python scripts/generate_python_oracle_golden.py --check
 python -m unittest discover -s tests/hardening -t .
 python scripts/validate_public_static_site.py
@@ -147,6 +152,8 @@ python scripts/demo_web_workbench.py --mode local_dev
 Start the constrained public-alpha mode locally:
 
 ```bash
+python scripts/run_public_alpha_server.py --check-config
+python scripts/run_public_alpha_server.py --print-config-json
 python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080
 ```
 
@@ -339,6 +346,8 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 - Python is the executable specification, reference backend, and oracle.
 - Public-alpha safe mode exists, but it is not production deployment.
+- The public-alpha wrapper exists as a local process/config guard; it is not
+  hosting infrastructure or production approval.
 - The hosting pack supports supervised rehearsal evidence, not open-internet
   approval.
 - Rust has a workspace, parity fixtures, and one isolated source-registry
@@ -354,14 +363,14 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Public Alpha Rehearsal Evidence v0
+1. LIVE_ALPHA_02 Deployment Config Pack
 2. Manual Observation Batch 0 Execution (human-operated parallel work)
-3. LIVE_ALPHA_01 Production Public-Alpha Wrapper
+3. Rust Query Planner Parity Candidate v0
 
 Broader near-term direction:
 
-1. rehearse the constrained public-alpha posture using static-site and hosting
-   evidence without deployment
+1. prepare deployment-config evidence around the constrained public-alpha
+   wrapper without performing deployment
 2. fill a first manual Google and Internet Archive baseline batch without
    scraping or fabricated comparisons
 3. keep using audit deltas to measure source, planner, representation,

@@ -35,7 +35,7 @@ The command matrix defines these lanes:
 - `full`: standard checks plus public-alpha smoke, hosting-pack check, Python
   oracle golden check, archive eval runner, and search usefulness audit
 - `docs_only`: docs/audit/index validation plus whitespace diff checks
-- `public_alpha`: route inventory, smoke, and hosting-pack safety checks
+- `public_alpha`: route inventory, smoke, wrapper, and hosting-pack safety checks
 - `parity`: Python oracle, source-registry, and source coverage/capability
   validation checks, plus current Python-oracle shape guards such as planner,
   member, result-lane, and compatibility-evidence fields
@@ -260,6 +260,25 @@ validation, public-alpha smoke evidence, route inventory counts, eval/audit
 status, external-baseline pending/observed counts, blockers, and unsigned
 operator signoff. It does not deploy, approve production, add live probes, or
 record external observations.
+
+## LIVE_ALPHA_01 Public Alpha Wrapper
+
+LIVE_ALPHA_01 Production Public-Alpha Wrapper is validated with:
+
+```bash
+python scripts/run_public_alpha_server.py --check-config
+python scripts/run_public_alpha_server.py --print-config-json
+python -m unittest tests.scripts.test_public_alpha_wrapper
+python -m unittest surfaces.web.tests.test_public_alpha_wrapper_config
+python -m unittest tests.operations.test_public_alpha_wrapper_docs
+```
+
+The lane checks the stdlib public-alpha entrypoint, safe default config,
+nonlocal-bind guard, live-probe/live-IA closed gates, local path refusal,
+download/readback and user-storage disablement, status projection, and docs
+caveats. It does not start a persistent server during validation, deploy
+Eureka, add provider files, enable live probes, add auth/TLS/rate limiting, or
+approve production.
 
 ## Source Coverage And Capability
 

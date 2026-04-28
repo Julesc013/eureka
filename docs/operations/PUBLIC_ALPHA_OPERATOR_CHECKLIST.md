@@ -14,14 +14,24 @@ rehearsal. It is not deployment infrastructure.
   `docs/operations/public_alpha_hosting_pack/README.md`.
 - Confirm Public Alpha Rehearsal Evidence v0 has been read:
   `docs/operations/public_alpha_rehearsal_evidence_v0/README.md`.
+- Confirm Public Alpha Wrapper guidance has been read:
+  `docs/operations/PUBLIC_ALPHA_WRAPPER.md`.
 - Confirm the demo does not need auth, accounts, private user state, live
   crawling, broad downloads, installer behavior, or background workers.
 
 ## Configuration
 
-- Start only with `--mode public_alpha`.
+- Prefer `python scripts/run_public_alpha_server.py` for the process
+  entrypoint.
+- Run `python scripts/run_public_alpha_server.py --check-config` before any
+  supervised rehearsal.
+- Start only with `public_alpha` mode.
+- Do not bind outside localhost unless a supervisor explicitly acknowledges the
+  wrapper's nonlocal bind warning. This is still no deployment approval.
 - Do not pass local-dev roots such as `--store-root`, `--run-store-root`,
   `--task-store-root`, or `--memory-store-root`.
+- Keep live probes, live Internet Archive access, downloads/readback, local
+  path controls, and user storage disabled.
 - Do not expose `local_dev` mode to a public network.
 - Keep any external reverse proxy, TLS, access controls, logging, or abuse
   controls outside this repo until a future hosting pack defines them.
@@ -51,6 +61,8 @@ Run:
 ```powershell
 python scripts/public_alpha_smoke.py
 python scripts/public_alpha_smoke.py --json
+python scripts/run_public_alpha_server.py --check-config
+python scripts/run_public_alpha_server.py --print-config-json
 python scripts/generate_public_alpha_hosting_pack.py --check
 python scripts/generate_public_alpha_rehearsal_evidence.py --check
 python -m unittest tests.operations.test_public_alpha_route_inventory
@@ -87,6 +99,7 @@ For a supervised rehearsal, record the result in:
 - No multi-user storage isolation.
 - No final public route contract.
 - No live source sync or crawling.
+- No live probes or live Internet Archive access.
 - No installer, execution, restore, or import behavior.
 
 ## Do Not Expose If

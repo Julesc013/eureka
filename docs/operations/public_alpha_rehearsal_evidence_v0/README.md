@@ -6,6 +6,8 @@ It is evidence and runbook material only. It does not deploy Eureka, approve pro
 
 No public deployment happened.
 
+LIVE_ALPHA_01 adds a public alpha wrapper after this evidence snapshot; it still performs no deployment, keeps live probes disabled, and does not approve production.
+
 ## Contents
 
 - `REHEARSAL_SCOPE.md`

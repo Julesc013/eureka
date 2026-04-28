@@ -14,6 +14,13 @@ static pack is documentation only; it does not start a server, deploy Eureka,
 add backend hosting, add live probes, scrape external systems, or approve open
 public internet exposure.
 
+LIVE_ALPHA_01 Production Public-Alpha Wrapper adds
+`scripts/run_public_alpha_server.py` as a provider-neutral stdlib entrypoint for
+future supervised public-alpha rehearsals. The wrapper performs no deployment,
+adds no hosting provider configuration, keeps live probes and live Internet
+Archive access disabled, defaults to localhost, and refuses nonlocal binds
+without explicit operator acknowledgement.
+
 ## What This Pack Is
 
 - an operator-readable packet for rehearsing the constrained `public_alpha`
@@ -66,6 +73,10 @@ work and that caller-provided local path controls are blocked in
   `scripts/validate_public_static_site.py`
 - Public Alpha Rehearsal Evidence v0:
   `docs/operations/public_alpha_rehearsal_evidence_v0/`
+- Public Alpha Wrapper:
+  `docs/operations/PUBLIC_ALPHA_WRAPPER.md`
+- Wrapper config check:
+  `python scripts/run_public_alpha_server.py --check-config`
 
 ## Pack Contents
 

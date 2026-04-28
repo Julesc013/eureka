@@ -12,10 +12,21 @@ or durable public storage.
 Run the demo server in public-alpha mode with:
 
 ```powershell
+python scripts/run_public_alpha_server.py --check-config
+python scripts/run_public_alpha_server.py --print-config-json
 python scripts/demo_web_workbench.py --mode public_alpha
 python scripts/demo_http_api.py --mode public_alpha status
 python scripts/public_alpha_smoke.py
 ```
+
+LIVE_ALPHA_01 Production Public-Alpha Wrapper adds
+`scripts/run_public_alpha_server.py` as the preferred public-alpha process
+entrypoint for future supervised rehearsals. The wrapper defaults to
+`127.0.0.1:8781`, requires `public_alpha` mode, refuses nonlocal bind hosts
+unless explicitly acknowledged, and keeps live probes, live Internet Archive
+access, caller-provided local paths, downloads/readback, user storage,
+deployment approval, and production readiness closed by default. It performs
+no deployment and adds no auth, TLS, rate limiting, or process manager.
 
 The mode can also be selected with:
 
@@ -75,6 +86,7 @@ checklist live at:
 
 - `docs/operations/PUBLIC_ALPHA_READINESS_REVIEW.md`
 - `docs/operations/PUBLIC_ALPHA_OPERATOR_CHECKLIST.md`
+- `docs/operations/PUBLIC_ALPHA_WRAPPER.md`
 - `docs/operations/public_alpha_hosting_pack/`
 
 ## Still Not Production
@@ -89,6 +101,7 @@ Public Alpha Safe Mode v0 does not settle:
 - private user storage
 - production deployment
 - live source sync or crawling
+- live source probes or live Internet Archive calls
 - ranking, fuzzy retrieval, vector search, or LLM planning
 
 It is a bounded public-demo posture for the current local backend, intended to

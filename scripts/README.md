@@ -41,6 +41,14 @@ Current scripts:
   classifications, running archive/search eval summaries, and checking manual
   external-baseline status without deployment, browser automation, network
   calls, live probes, scraping, or external observation collection
+- `run_public_alpha_server.py`: validates or starts the existing stdlib web/API
+  backend through the LIVE_ALPHA_01 public-alpha wrapper with safe defaults,
+  localhost binding, explicit nonlocal-bind acknowledgement, live probes and
+  live Internet Archive access disabled, local path controls refused,
+  downloads/readback and user storage disabled or route-blocked, and
+  JSON-safe config/status summaries; it does not deploy, add provider
+  configuration, add auth/TLS/rate limiting/process management, scrape, crawl,
+  or call external APIs
 - `public_alpha_smoke.py`: runs the local Public Alpha Deployment Readiness smoke checks directly against the stdlib WSGI app, verifies safe status/source/query/search/eval routes, verifies blocked local-path/readback routes, supports `--json`, and exits nonzero if the constrained public-alpha posture regresses
 - `generate_public_alpha_hosting_pack.py`: reads `control/inventory/public_alpha_routes.json` and emits or checks the Public Alpha Hosting Pack route-safety summary; it supports `--check` for repeatable docs validation and does not deploy, host, or mutate route behavior
 - `generate_python_oracle_golden.py`: generates or checks the Rust Parity Fixture Pack v0 Python-oracle golden outputs under `tests/parity/golden/python_oracle/v0/`; it supports `--check`, optional `--output-root`, and `--json`, normalizes unstable timestamps, local index paths, FTS mode, and generation metadata, and does not implement Rust behavior or replace Python runtime paths

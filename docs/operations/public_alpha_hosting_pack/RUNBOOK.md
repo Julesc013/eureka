@@ -35,6 +35,7 @@ Run:
 ```powershell
 python scripts/public_alpha_smoke.py
 python scripts/public_alpha_smoke.py --json
+python scripts/run_public_alpha_server.py --check-config
 python scripts/generate_public_alpha_hosting_pack.py --check
 python -m unittest discover -s runtime -t .
 python -m unittest discover -s surfaces -t .
@@ -48,18 +49,20 @@ evidence template. Stop if any command fails.
 
 ## 4. Choose `public_alpha` Mode
 
-Use `public_alpha` explicitly. Do not expose `local_dev` mode for a public-alpha
-rehearsal.
+Use the public-alpha wrapper where possible and keep `public_alpha` explicit.
+Do not expose `local_dev` mode for a public-alpha rehearsal.
 
 Status-only check:
 
 ```powershell
+python scripts/run_public_alpha_server.py --print-config-json
 python scripts/demo_http_api.py --mode public_alpha status
 ```
 
 Local demo server:
 
 ```powershell
+python scripts/run_public_alpha_server.py --host 127.0.0.1 --port 8781
 python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8781
 ```
 

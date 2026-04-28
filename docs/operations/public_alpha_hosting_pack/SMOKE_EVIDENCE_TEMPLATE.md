@@ -26,6 +26,7 @@ Do not pre-fill this template. Complete it after running the rehearsal checks.
 
 - `python scripts/public_alpha_smoke.py`:
 - `python scripts/public_alpha_smoke.py --json`:
+- `python scripts/run_public_alpha_server.py --check-config`:
 - `python scripts/generate_public_alpha_hosting_pack.py --check`:
 - `python -m unittest discover -s runtime -t .`:
 - `python -m unittest discover -s surfaces -t .`:

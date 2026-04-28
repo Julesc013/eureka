@@ -317,6 +317,8 @@ def render_pack_files(manifest: Mapping[str, Any]) -> dict[str, str]:
             "",
             "No public deployment happened.",
             "",
+            "LIVE_ALPHA_01 adds a public alpha wrapper after this evidence snapshot; it still performs no deployment, keeps live probes disabled, and does not approve production.",
+            "",
             "## Contents",
             "",
             *[f"- `{name}`" for name in REQUIRED_FILES if name != "README.md"],

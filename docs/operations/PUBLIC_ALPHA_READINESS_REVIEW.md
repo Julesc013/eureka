@@ -29,6 +29,10 @@ process manager, or multi-user isolation.
 - Static site validator: `python scripts/validate_public_static_site.py`
 - Public Alpha Rehearsal Evidence v0:
   `docs/operations/public_alpha_rehearsal_evidence_v0/`
+- Public Alpha Wrapper:
+  `docs/operations/PUBLIC_ALPHA_WRAPPER.md`
+- Wrapper config check:
+  `python scripts/run_public_alpha_server.py --check-config`
 - Inventory validator: `python -m unittest tests.operations.test_public_alpha_route_inventory`
 - Script smoke tests: `python -m unittest tests.scripts.test_public_alpha_scripts`
 
@@ -72,9 +76,14 @@ metadata and should be manually reviewed again before any real hosted demo.
 
 ## Required Manual Checks Before Hosting
 
-- Confirm the process is started with `--mode public_alpha`.
+- Confirm the process is started through
+  `python scripts/run_public_alpha_server.py` or with equivalent
+  `public_alpha` mode settings.
+- Confirm `python scripts/run_public_alpha_server.py --check-config` passes.
 - Confirm `/api/status` reports `mode: public_alpha` and
   `safe_mode_enabled: true`.
+- Confirm `/api/status` reports live probes, live Internet Archive access,
+  downloads/readback, local path controls, and user storage disabled.
 - Confirm status output does not show absolute local paths.
 - Run `python scripts/public_alpha_smoke.py --json` and retain the report.
 - Inspect `control/inventory/public_alpha_routes.json` for every route that
@@ -104,10 +113,21 @@ local quickstart without starting a server, deploying anything, adding backend
 hosting, adding live source probes, scraping external systems, or claiming
 production readiness.
 
+## Public Alpha Wrapper
+
+LIVE_ALPHA_01 Production Public-Alpha Wrapper adds a provider-neutral stdlib
+entrypoint at `scripts/run_public_alpha_server.py`. It loads explicit
+public-alpha configuration, defaults to localhost, rejects unsupported modes,
+guards nonlocal binds, and reports safe capability flags. It does no
+deployment, adds no hosting provider files, enables no live probes, and does
+not change the verdict: Eureka is still not production and is still blocked for
+open public internet exposure without external auth/TLS/rate-limit/process
+supervision decisions.
+
 ## Next Recommendation
 
 Public Alpha Rehearsal Evidence v0 now packages the static validator,
 public-alpha smoke, route inventory, eval/audit, and external-baseline status
 into a supervised local rehearsal evidence pack. A real hosted alpha remains
 blocked on external hosting posture, final route review, abuse-control
-decisions, TLS/auth ownership, and operator approval.
+decisions, TLS/auth ownership, operator approval, and later deployment config.

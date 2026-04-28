@@ -23,6 +23,9 @@ The minimum public-alpha entry gate should include:
   source pack for later hosting review, not deployment)
 - Public Alpha Rehearsal Evidence v0 (implemented as local/static
   evidence/runbook material, not deployment approval)
+- LIVE_ALPHA_01 Production Public-Alpha Wrapper (implemented as a stdlib
+  entrypoint/config guard for supervised public-alpha runs; no deployment and
+  no live probes)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -112,3 +115,9 @@ and check script. It records static-site validation, public-alpha smoke,
 route-inventory, eval/audit, external-baseline pending status, blocker, and
 unsigned signoff evidence. It performs no deployment, approves no production
 hosting, adds no live probes, and records no external observations.
+LIVE_ALPHA_01 Production Public-Alpha Wrapper now adds
+`scripts/run_public_alpha_server.py` plus a bounded public-alpha config model.
+The wrapper defaults to localhost, refuses unsupported modes, guards nonlocal
+binds, reports safe capability flags, disables local path controls, downloads,
+user storage, live probes, and live Internet Archive access, and still performs
+no deployment or production approval.

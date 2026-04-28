@@ -141,6 +141,12 @@ The repo has already proven:
   blockers, next deployment requirements, and unsigned signoff preparation
   without deployment, production approval, live probes, or observed external
   baselines
+- LIVE_ALPHA_01 Production Public-Alpha Wrapper as the first explicit
+  public-alpha process/config guard, adding a localhost-default stdlib
+  entrypoint, closed live-probe/live-IA gates, nonlocal bind validation, safe
+  status/capability reporting, and disabled local path/download/user-storage
+  controls without deployment, provider configuration, auth/TLS, rate limiting,
+  process management, or production approval
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -184,7 +190,7 @@ The next backend sequence is:
 33. Manual Observation Entry Helper v0 (implemented)
 34. LIVE_ALPHA_00 Static Public Site Pack (implemented)
 35. Public Alpha Rehearsal Evidence v0 (implemented)
-36. LIVE_ALPHA_01 Production Public-Alpha Wrapper
+36. LIVE_ALPHA_01 Production Public-Alpha Wrapper (implemented)
 37. LIVE_ALPHA_02 Deployment Config Pack
 38. Manual Observation Batch 0 Execution (human-operated parallel work)
 39. LIVE_ALPHA_04 Live Probe Gateway Contract
@@ -196,7 +202,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> LIVE_ALPHA_01 Production Public-Alpha Wrapper
+> LIVE_ALPHA_02 Deployment Config Pack
 
 Why this comes next:
 
@@ -289,10 +295,14 @@ Why this comes next:
   smoke-check, route inventory, eval/audit, baseline pending status, blockers,
   next requirements, and unsigned signoff evidence without deploying or
   approving production
-- the next Codex-side bottleneck is a bounded production public-alpha wrapper
-  design around the current constrained posture; actual Batch 0 observation
-  evidence is still a human-operated parallel task, and Google/Internet
-  Archive baselines remain pending/manual for all 64 queries globally
+- LIVE_ALPHA_01 Production Public-Alpha Wrapper now gives the constrained
+  posture an explicit stdlib entrypoint, config validation, nonlocal bind
+  guard, and safe status reporting without deploying, enabling live probes, or
+  adding provider-specific infrastructure
+- the next Codex-side bottleneck is deployment-configuration evidence around
+  the current constrained posture; actual Batch 0 observation evidence is
+  still a human-operated parallel task, and Google/Internet Archive baselines
+  remain pending/manual for all 64 queries globally
 
 ## Explicit Deferrals
 

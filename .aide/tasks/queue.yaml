@@ -160,16 +160,16 @@
     {
       "id": "live_alpha_01_production_public_alpha_wrapper",
       "title": "LIVE_ALPHA_01 Production Public-Alpha Wrapper",
-      "status": "next",
+      "status": "completed",
       "priority": 23,
-      "notes": "Future wrapper work after rehearsal evidence; must not bypass auth, TLS, abuse-control, route-review, or operator gates."
+      "notes": "Added a stdlib public-alpha wrapper entrypoint, safe config model, check/JSON modes, nonlocal-bind guard, closed live-probe/live-IA gates, and safe status projection without deployment, provider files, auth/TLS/rate limiting/process management, or production approval."
     },
     {
       "id": "live_alpha_02_deployment_config_pack",
       "title": "LIVE_ALPHA_02 Deployment Config Pack",
-      "status": "queued",
+      "status": "next",
       "priority": 24,
-      "notes": "Future deployment-config evidence only after wrapper and operator decisions; no deployment belongs to LIVE_ALPHA_00."
+      "notes": "Next Codex-side live-alpha milestone after the wrapper; should remain deployment-config evidence only unless a provider is explicitly selected, and still must not perform real deployment."
     },
     {
       "id": "live_alpha_04_live_probe_gateway_contract",

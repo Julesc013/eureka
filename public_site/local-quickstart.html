@@ -29,6 +29,7 @@ cd eureka
 python -m unittest discover -s tests -t .
 python scripts/run_archive_resolution_evals.py
 python scripts/run_search_usefulness_audit.py
+python scripts/run_public_alpha_server.py --check-config
 python scripts/public_alpha_smoke.py</code></pre>
     <h2>Try CLI Queries</h2>
     <pre><code>python scripts/demo_cli_workbench.py query-plan "Windows 7 apps"
@@ -38,7 +39,8 @@ python scripts/demo_cli_workbench.py source internet-archive-recorded-fixtures
 python scripts/demo_cli_workbench.py evals-archive-resolution</code></pre>
     <h2>Try The Local Web/API Workbench</h2>
     <p><code>local_dev</code> is for trusted local experiments with local path controls. <code>public_alpha</code> blocks public-alpha unsafe local path controls and local write/readback route groups.</p>
-    <pre><code>python scripts/demo_web_workbench.py --serve --mode local_dev
+    <pre><code>python scripts/run_public_alpha_server.py --print-config-json
+python scripts/demo_web_workbench.py --serve --mode local_dev
 python scripts/demo_web_workbench.py --serve --mode public_alpha</code></pre>
     <h2>Try The Local HTTP API Helper</h2>
     <pre><code>python scripts/demo_http_api.py --mode public_alpha status
