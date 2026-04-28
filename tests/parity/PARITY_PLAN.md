@@ -31,6 +31,22 @@ tests compare the generated source-registry public envelopes with:
 Passing those tests does not replace Python behavior. It only proves that this
 isolated Rust candidate can match the committed Python-oracle fixture shape.
 
+Rust Query Planner Parity Candidate v0 is the second candidate seam. Its Rust
+model and deterministic rules live under `crates/eureka-core/src/query_planner.rs`
+and compare query-plan public envelopes with the Python-oracle
+`tests/parity/golden/python_oracle/v0/query_planner/*.json` files listed in
+`tests/parity/rust_query_planner_cases.json`. The candidate covers the bounded
+old-platform planner families captured by the Python oracle: Windows and Mac
+OS aliases, platform-as-constraint, latest-compatible release intent,
+driver/hardware intent, vague software identity uncertainty, manual/document
+intent, member/container discovery, article/scan intent, and generic fallback.
+
+Passing those tests does not replace Python behavior. It proves only that this
+isolated Rust candidate can match the committed Python-oracle query planner
+fixture shape where Cargo is available. Normal Python verification still treats
+Cargo as optional and uses the stdlib parity structure script when Rust tooling
+is unavailable.
+
 Source Coverage and Capability Model v0 intentionally changes the Python
 source-registry oracle shape by adding capability booleans, coverage-depth
 metadata, connector mode, limitations, and next coverage steps. Updating the
@@ -120,9 +136,9 @@ This order favors smaller, inspectable data contracts before broader behavior.
 
 ## Non-Goals For This Milestone
 
-- no parity runner
+- no production parity runner
 - no Python runtime replacement
-- no Rust behavior beyond source-registry inventory loading and public-envelope
+- no Rust behavior beyond isolated source-registry and query-planner candidate
   parity
 - no Rust gateway
 - no Rust CLI

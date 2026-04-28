@@ -127,10 +127,11 @@
     }
   ],
   "next_expected_milestones": [
-    "Rust Query Planner Parity Candidate v0",
+    "Compatibility Surface Strategy v0 or Signed Snapshot Format v0",
     "Manual Observation Batch 0 Execution",
-    "Internet Archive Live Probe v0 only after explicit human approval",
-    "Compatibility Surface Strategy v0 or Signed Snapshot Format v0"
+    "Rust Source Registry Parity Catch-up v0",
+    "Rust Local Index Parity Planning v0",
+    "Internet Archive Live Probe v0 only after explicit human approval"
   ],
   "created_by_slice": "public_publication_plane_contracts_v0",
   "notes": [
@@ -144,6 +145,7 @@
     "Custom Domain / Alternate Host Readiness v0 adds domain/static-host readiness inventories, base-path portability docs, and validation without DNS, CNAME, alternate-host config, or backend deployment.",
     "Live Backend Handoff Contract v0 reserves /api/v1 route families, capability flags, and error-envelope expectations without deploying a backend or making /api/v1 live.",
     "Live Probe Gateway Contract v0 records disabled-by-default live probe source policy, limits, cache/evidence requirements, and operator gates without implementing probes or making network calls.",
+    "Rust Query Planner Parity Candidate v0 adds an isolated Rust planner candidate against Python-oracle goldens without replacing Python or wiring Rust into runtime surfaces.",
     "No provider backend configuration, live backend, or live source probe is added by this contract."
   ]
 }

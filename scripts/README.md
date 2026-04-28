@@ -114,6 +114,12 @@ Current scripts:
 - `public_alpha_smoke.py`: runs the local Public Alpha Deployment Readiness smoke checks directly against the stdlib WSGI app, verifies safe status/source/query/search/eval routes, verifies blocked local-path/readback routes, supports `--json`, and exits nonzero if the constrained public-alpha posture regresses
 - `generate_public_alpha_hosting_pack.py`: reads `control/inventory/public_alpha_routes.json` and emits or checks the Public Alpha Hosting Pack route-safety summary; it supports `--check` for repeatable docs validation and does not deploy, host, or mutate route behavior
 - `generate_python_oracle_golden.py`: generates or checks the Rust Parity Fixture Pack v0 Python-oracle golden outputs under `tests/parity/golden/python_oracle/v0/`; it supports `--check`, optional `--output-root`, and `--json`, normalizes unstable timestamps, local index paths, FTS mode, and generation metadata, and does not implement Rust behavior or replace Python runtime paths
+- `check_rust_query_planner_parity.py`: validates the Rust Query Planner
+  Parity Candidate v0 fixture map and isolated Rust source structure; it
+  supports `--json` and `--require-cargo`, runs crate-local Rust
+  query-planner tests only when Cargo is available, reports Cargo as skipped
+  otherwise, and does not wire Rust into Python runtime, web, CLI, HTTP API,
+  workers, or public-alpha paths
 - `demo_resolution_slice.py`: submits and reads the local deterministic gateway thin slice against the bounded demo corpus, with an optional shared workbench session view-model projection
 - `demo_web_workbench.py`: renders the compatibility-first web workbench, deterministic search page, deterministic query-plan page, bootstrap local-index pages, bounded source-registry page, bounded source detail page, bounded synchronous local-task pages, bounded synchronous resolution-runs page, explicit local resolution-memory pages, bounded representations page, bounded compatibility page, bounded handoff page, bounded action-plan page, bounded acquisition page, bounded member-preview page, or bundle inspection page either once to stdout, or starts a tiny stdlib local server that also exposes the bounded subject/state page plus the bounded decomposition page, exports a bounded resolution manifest as JSON, exports a deterministic resolution bundle ZIP to stdout, builds and queries a bootstrap local SQLite index through shared public boundaries, fetches one bounded local payload fixture for one explicit representation, inspects one fetched bounded representation into a compact member listing when the format is supported, reads one bounded member from one decomposed representation as a compact preview when the member is text-like, stores manifest or bundle exports under a caller-provided local store root, prints bounded resolution-run URLs when a caller provides a bootstrap run-store root, prints bounded local-task URLs when a caller provides a bootstrap task-store root, prints bounded resolution-memory URLs when a caller provides a bootstrap memory-store root, lists stored exports for a target, reads stored artifacts by stable artifact identity, or inspects a local bundle path as JSON, while supporting `--mode local_dev` and `--mode public_alpha`; public-alpha mode blocks caller-provided local path controls and local write/readback route groups without adding auth, HTTPS/TLS, accounts, or production deployment semantics
 - `demo_cli_workbench.py`: exposes the same bootstrap exact-resolution, deterministic search, deterministic query planning, bootstrap local-index build plus query plus status, synchronous local-task creation plus lookup plus listing, bounded synchronous resolution-run creation plus lookup, explicit local resolution-memory creation plus lookup plus listing, bounded source-registry listing/detail lookup plus coverage/capability filters, bounded representations listing, bounded handoff evaluation, bounded acquisition and fetch, bounded decomposition and member inspection, bounded member preview and readback, bounded action-plan evaluation, bounded strategy-aware action-plan evaluation, bounded compatibility evaluation with source-backed compatibility evidence where current fixtures support it, bounded absence reasoning, bounded subject/state listing, side-by-side comparison, manifest export, bundle export, bundle inspection, and local stored-export capabilities through the first stdlib-only native CLI surface, staying on the public side of the architecture without committing to a final CLI or TUI stack
@@ -144,7 +150,8 @@ recorded Internet Archive-like fixtures, and committed local bundle fixtures.
 They also surface the current bounded engine, public-alpha, publication,
 GitHub Pages artifact, generated public-data summary, and stdlib static-site
 generator checks plus static-host readiness, live-backend handoff, and live
-probe gateway checks
+probe gateway checks, plus the isolated Rust query-planner parity structure
+check,
 without implying
 a final provenance, trust, merge, object-identity, ranking, compatibility
 oracle, fuzzy retrieval, vector search, download, installer, extraction,
@@ -154,7 +161,7 @@ HTTPS/TLS, accounts, rate limiting, production logging, production process
 management, backend deployment infrastructure, generated-artifact deployment,
 custom-domain configuration, alternate-host deployment, DNS changes, CNAME
 configuration, live `/api/v1` backend, production API guarantee, Rust runtime
-replacement, live source probing, live probe adapters, crawling, live Internet Archive
+replacement, Rust planner runtime wiring, live source probing, live probe adapters, crawling, live Internet Archive
 API access, arbitrary local filesystem ingestion, or full
 investigation-planning architecture. Live GitHub acquisition remains
 intentionally deferred.

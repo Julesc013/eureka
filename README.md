@@ -55,7 +55,7 @@ results are canonical truth.
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
 | Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
-| Rust lane | minimal workspace plus first isolated source-registry parity candidate; not wired into Python runtime or surfaces |
+| Rust lane | minimal workspace plus isolated source-registry and query-planner parity candidates; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
 eval packet is satisfied under strict fixture-backed checks, but that does not
@@ -126,6 +126,11 @@ gates before any external probe. It does not implement live probes, call
 Internet Archive, Wayback, GitHub, Software Heritage, package registries, or
 other external sources, fetch URLs, scrape, crawl, enable downloads, or turn
 Google into a live probe source.
+Rust Query Planner Parity Candidate v0 now adds an isolated deterministic Rust
+planner model under `crates/eureka-core/`, expands Python-oracle planner
+goldens, and adds a stdlib parity-structure check. Python remains the planner
+oracle; Rust is not wired into web, CLI, HTTP API, workers, public-alpha paths,
+or production runtime.
 
 ## Quickstart
 
@@ -149,6 +154,7 @@ python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
 python scripts/validate_live_backend_handoff.py
 python scripts/validate_live_probe_gateway.py
+python scripts/check_rust_query_planner_parity.py
 ```
 
 ### Run Evals and Safety Checks
@@ -170,6 +176,7 @@ python scripts/generate_public_data_summaries.py --check
 python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_live_probe_gateway.py
+python scripts/check_rust_query_planner_parity.py
 python scripts/generate_public_alpha_rehearsal_evidence.py --check
 ```
 
@@ -448,9 +455,9 @@ Eureka is substantial, but it is still a prototype/reference backend:
   crawl, enable downloads, or promote Google beyond manual baselines.
 - The hosting pack supports supervised rehearsal evidence, not open-internet
   approval.
-- Rust has a workspace, parity fixtures, and one isolated source-registry
-  candidate. It does not replace Python and is not used by web, CLI, HTTP API,
-  workers, or production paths.
+- Rust has a workspace, parity fixtures, and isolated source-registry plus
+  query-planner candidates. It does not replace Python and is not used by web,
+  CLI, HTTP API, workers, public-alpha paths, or production paths.
 - Native apps are deferred. The current native surface is a stdlib CLI proof.
 - Live crawling, source sync, fuzzy retrieval, vector search, LLM planning,
   auth, accounts, HTTPS/TLS, rate limiting, process supervision, and deployment
@@ -461,10 +468,11 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Rust Query Planner Parity Candidate v0
+1. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
 2. Manual Observation Batch 0 Execution (human-operated parallel work)
-3. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
-4. Internet Archive Live Probe v0 only after explicit human approval and
+3. Rust Source Registry Parity Catch-up v0
+4. Rust Local Index Parity Planning v0
+5. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 Broader near-term direction:

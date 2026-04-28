@@ -38,6 +38,12 @@ Rust Source Registry Parity Candidate v0 is the first such candidate. It loads
 the governed source inventory and compares source-registry public envelopes
 against the committed Python-oracle source-registry goldens.
 
+Rust Query Planner Parity Candidate v0 is the second isolated candidate. It
+adds a deterministic Rust query-planner model and rule set in `eureka-core`,
+expands the Python-oracle query-planner golden set, and records a compact case
+map for old-platform planner parity. It is not wired into Python runtime, web,
+CLI, HTTP API, workers, public-alpha paths, or production behavior.
+
 Source Coverage and Capability Model v0 expands the Python source-registry
 oracle shape with capability and coverage-depth fields. Future Rust
 source-registry parity work must learn those fields before any source-registry
@@ -53,9 +59,10 @@ Rust into runtime paths.
 Old-Platform Software Planner Pack v0 refreshes the Python-oracle query planner
 goldens with deterministic old-platform OS aliases, latest-compatible release
 intent, driver/hardware intent, vague identity uncertainty, documentation
-intent, member-discovery hints, and app-vs-OS-media suppression hints. Future
-Rust Query Planner Parity Candidate v0 must match those Python outputs before
-any planner replacement is considered.
+intent, member-discovery hints, and app-vs-OS-media suppression hints. Rust
+Query Planner Parity Candidate v0 now targets those Python outputs as an
+isolated candidate; matching them still does not promote Rust into active
+planner runtime.
 
 Member-Level Synthetic Records v0, Result Lanes + User-Cost Ranking v0, and
 Compatibility Evidence Pack v0 further refresh the Python-oracle local-index,
@@ -113,11 +120,11 @@ before replacement.
 
 ## Current Status
 
-The Rust migration lane is scaffolded and has one isolated parity candidate. The
-workspace under `crates/` contains:
+The Rust migration lane is scaffolded and has two isolated parity candidates.
+The workspace under `crates/` contains:
 
-- `eureka-core`: Rust Source Registry Parity Candidate v0 plus future core
-  placeholder scope
+- `eureka-core`: Rust Source Registry Parity Candidate v0, Rust Query Planner
+  Parity Candidate v0, plus future core placeholder scope
 - `eureka-contracts`: placeholder
 - `eureka-store`: placeholder
 - `eureka-resolver`: placeholder
@@ -133,9 +140,10 @@ The first Python-oracle golden fixture pack exists for:
 
 Current Python CLI, web, and local HTTP API behavior remain authoritative.
 Python remains the executable specification, reference backend, and oracle.
-The source-registry candidate is not wired into runtime behavior. No Rust
-gateway, CLI, FFI, worker, connector, production service, resolver, query
-planner, local index, or memory implementation is active.
+The source-registry and query-planner candidates are not wired into runtime
+behavior. No Rust gateway, CLI, FFI, worker, connector, production service,
+resolver, runtime query planner, local index, or memory implementation is
+active.
 
 ## Python Oracle Fixture Pack
 
@@ -168,3 +176,14 @@ cargo test --workspace --manifest-path crates/Cargo.toml
 ```
 
 Normal Python verification does not require Rust tooling.
+
+Rust Query Planner Parity Candidate v0 additionally provides:
+
+```powershell
+python scripts/check_rust_query_planner_parity.py
+python scripts/check_rust_query_planner_parity.py --json
+```
+
+These commands validate the fixture map and Rust candidate structure with the
+Python standard library. If Cargo is installed, the script also runs the
+crate-local Rust query-planner tests; otherwise it reports Cargo as skipped.

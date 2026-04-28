@@ -1311,6 +1311,48 @@
       "notes": "Does not require a local AIDE runtime."
     },
     {
+      "test_id": "rust_query_planner_parity_check",
+      "label": "Rust query planner parity candidate check",
+      "command": "python scripts/check_rust_query_planner_parity.py",
+      "category": "parity",
+      "owner_area": "tests/parity",
+      "required_for": [
+        "standard",
+        "full",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none unless Cargo is available and optional Rust tests create target artifacts",
+      "expected_runtime": "sub-second without Cargo; toolchain-dependent if Cargo is available",
+      "failure_means": "The Rust query-planner candidate fixture map, source structure, or optional crate-local parity tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Rust Query Planner Parity Candidate v0; validates isolated candidate structure and treats missing Cargo as a reported skip rather than a Python verification failure."
+    },
+    {
+      "test_id": "rust_query_planner_parity_tests",
+      "label": "Rust query planner parity structure tests",
+      "command": "python -m unittest tests.parity.test_rust_query_planner_parity_candidate tests.scripts.test_check_rust_query_planner_parity",
+      "category": "parity",
+      "owner_area": "tests/parity",
+      "required_for": [
+        "standard",
+        "full",
+        "parity"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary Cargo target artifacts only if Cargo is available and --require-cargo test path runs",
+      "expected_runtime": "seconds",
+      "failure_means": "The Rust planner fixture coverage, docs, no-runtime-wiring guard, or parity script JSON behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Does not require Cargo for the normal passing path; Python remains the oracle and Rust remains isolated."
+    },
+    {
       "test_id": "docs_diff_check",
       "label": "Whitespace diff check",
       "command": "git diff --check",

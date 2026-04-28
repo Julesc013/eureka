@@ -223,9 +223,9 @@
     {
       "id": "rust_query_planner_parity_candidate_v0",
       "title": "Rust Query Planner Parity Candidate v0",
-      "status": "next",
+      "status": "completed",
       "priority": 32,
-      "notes": "Implement the next isolated Rust seam only after Python planner behavior remains the oracle; do not wire Rust into runtime or surfaces."
+      "notes": "Added an isolated Rust deterministic query-planner candidate against expanded Python-oracle goldens, plus fixture map and stdlib parity structure checks, without wiring Rust into runtime or surfaces."
     },
     {
       "id": "manual_observation_batch_0_execution",
@@ -237,9 +237,30 @@
     {
       "id": "compatibility_surface_strategy_v0",
       "title": "Compatibility Surface Strategy v0",
-      "status": "queued",
+      "status": "next",
       "priority": 34,
       "notes": "Define presentation rules for known, unknown, inferred, and incompatible outcomes before app work; signed snapshot format may supersede this if snapshot work is selected next."
+    },
+    {
+      "id": "signed_snapshot_format_v0",
+      "title": "Signed Snapshot Format v0",
+      "status": "queued",
+      "priority": 35,
+      "notes": "Define deterministic offline snapshot bundle shape, manifests, checksums, and future signatures without adding live downloads or deployment behavior."
+    },
+    {
+      "id": "rust_source_registry_parity_catch_up_v0",
+      "title": "Rust Source Registry Parity Catch-up v0",
+      "status": "queued",
+      "priority": 36,
+      "notes": "Update the isolated Rust source-registry candidate to current Python source capability/coverage fields before any broader Rust source work."
+    },
+    {
+      "id": "rust_local_index_parity_planning_v0",
+      "title": "Rust Local Index Parity Planning v0",
+      "status": "queued",
+      "priority": 37,
+      "notes": "Plan Rust local-index parity around Python oracle member, lane, user-cost, compatibility, and article/scan shapes before implementing index behavior."
     }
   ]
 }

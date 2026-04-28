@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus fifty-nine executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus fifty-nine executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, the first isolated Rust query-planner parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -69,6 +69,12 @@ architectural oracle rather than as a throwaway scaffold.
 - first Rust Migration Skeleton and Parity Plan v0 seam under `crates/`, `docs/architecture/RUST_BACKEND_LANE.md`, and `tests/parity/` that records Rust as the later production backend lane while keeping Python authoritative and requiring seam-by-seam parity before replacement
 - first Rust Parity Fixture Pack v0 seam under `tests/parity/golden/python_oracle/v0/` plus `scripts/generate_python_oracle_golden.py` that captures stable Python-oracle JSON outputs for source registry, query planner, resolution runs, local index, resolution memory, and archive-resolution evals without porting Rust behavior, replacing Python, or adding a Rust parity runner
 - first Rust Source Registry Parity Candidate v0 seam under `crates/eureka-core/` that loads governed source inventory records, validates bounded source fields, detects duplicate source ids, and compares source-registry public envelopes to Python-oracle goldens without wiring Rust into Python runtime, web, CLI, HTTP API, workers, or production paths
+- first Rust Query Planner Parity Candidate v0 seam under `crates/eureka-core/`,
+  `tests/parity/rust_query_planner_cases.json`, and
+  `scripts/check_rust_query_planner_parity.py` that adds an isolated
+  deterministic Rust planner model and rule set compared against expanded
+  Python-oracle query-planner goldens without wiring Rust into Python runtime,
+  web, CLI, HTTP API, workers, public-alpha paths, or production behavior
 - first Search Usefulness Audit v0 seam under `evals/search_usefulness/`,
   `runtime/engine/evals/search_usefulness_runner.py`, and
   `scripts/run_search_usefulness_audit.py` that runs a broad 64-query
@@ -327,7 +333,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Rust Query Planner Parity Candidate v0
+> Compatibility Surface Strategy v0 or Signed Snapshot Format v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -349,8 +355,8 @@ LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane
 Contracts v0, GitHub Pages Deployment Enablement v0, Static Site
 Generation Migration v0, Generated Public Data Summaries v0,
 Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0,
-Custom Domain / Alternate Host Readiness v0, and Live Backend Handoff Contract
-v0, and Live Probe Gateway Contract v0
+Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract
+v0, Live Probe Gateway Contract v0, and Rust Query Planner Parity Candidate v0
 are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
@@ -359,7 +365,7 @@ synchronous local execution substrate, explicit local reusable investigation
 memory layer, executable eval guardrail, constrained public-demo posture, and
 auditable public-alpha route/smoke checklist plus supervised rehearsal evidence
 packet, committed Python-oracle golden fixture pack, isolated Rust
-source-registry parity seam, broad usefulness-audit backlog generator, and
+source-registry parity seam, isolated Rust query-planner parity seam, broad usefulness-audit backlog generator, and
 repo-native test/eval governance, executable hardening guard layer,
 evidence-backed usefulness backlog, explicit source capability/coverage
 metadata layer, first recorded source-coverage fixture pack, deterministic
@@ -394,13 +400,18 @@ The live probe gateway contract records disabled-by-default source policy,
 candidate source caps, cache/evidence expectations, and operator gates without
 adding adapters, network calls, downloads, scraping, crawling, or live source
 behavior.
+The Rust query-planner parity candidate matches the expanded Python-oracle
+query-planner fixture map as an isolated Rust seam only; it does not replace
+the Python planner or wire Rust into web, CLI, HTTP API, workers, public-alpha,
+or production paths.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Rust Query Planner Parity Candidate v0
+1. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
 2. Manual Observation Batch 0 Execution (human-operated parallel work)
-3. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
-4. Internet Archive Live Probe v0 only after explicit human approval and
+3. Rust Source Registry Parity Catch-up v0
+4. Rust Local Index Parity Planning v0
+5. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 ## Deferred Priorities

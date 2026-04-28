@@ -4,9 +4,10 @@
 future Python-to-Rust parity checks.
 
 Python remains the oracle. Rust Source Registry Parity Candidate v0 is the
-first narrow Rust behavior seam, and it is isolated under `crates/eureka-core/`.
-It is not wired into Python runtime, web, CLI, HTTP API, workers, or production
-paths.
+first narrow Rust behavior seam, and Rust Query Planner Parity Candidate v0 is
+the second isolated candidate seam. Both live under `crates/eureka-core/` and
+are not wired into Python runtime, web, CLI, HTTP API, workers, public-alpha
+paths, or production paths.
 
 Current assets:
 
@@ -15,6 +16,10 @@ Current assets:
 - `golden/python_oracle/v0/`: committed Python-oracle golden outputs
 - `crates/eureka-core/src/source_registry.rs`: first Rust source-registry
   candidate compared against the Python-oracle source-registry goldens
+- `crates/eureka-core/src/query_planner.rs`: isolated Rust deterministic
+  query-planner candidate compared against Python-oracle query-planner goldens
+- `rust_query_planner_cases.json`: compact map of query inputs to Python-oracle
+  golden files for the Rust planner candidate
 
 Source Coverage and Capability Model v0 expands the Python source-registry
 goldens with capability and coverage-depth fields. The Rust source-registry
@@ -51,6 +56,13 @@ records. Future Rust planner/index/compatibility parity must account for this
 shape before any replacement claim; no Rust behavior is implemented or wired in
 here.
 
-There is still no Rust parity runner in this milestone. Future parity assets
+Rust Query Planner Parity Candidate v0 adds
+`scripts/check_rust_query_planner_parity.py` as a stdlib structure/candidate
+check. If Cargo is available, the script can run the crate-local Rust
+query-planner tests; if Cargo is unavailable, it reports the Cargo check as
+skipped while still validating the committed fixture map and source structure.
+Cargo remains optional for normal Python verification.
+
+The Rust planner candidate is not a replacement claim. Future parity assets
 should remain fixture-driven, JSON-inspectable, and explicit about allowed
 divergences.

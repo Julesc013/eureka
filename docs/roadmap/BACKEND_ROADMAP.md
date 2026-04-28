@@ -42,6 +42,9 @@ The repo has already proven:
 - Rust Source Registry Parity Candidate v0 as the first isolated Rust behavior
   seam, compared against Python-oracle source-registry goldens and not wired
   into runtime behavior
+- Rust Query Planner Parity Candidate v0 as the second isolated Rust behavior
+  seam, compared against expanded Python-oracle query-planner goldens and not
+  wired into runtime behavior
 - Search Usefulness Audit v0 as the first broad usefulness/backlog audit over
   64 archive-resolution-style queries, with external baselines left pending
   manual observation and no scraping or new retrieval semantics
@@ -195,6 +198,11 @@ The repo has already proven:
   cache/evidence requirements, retry/circuit-breaker posture, and operator
   gates without implementing adapters, calling external services, fetching
   URLs, scraping, crawling, enabling downloads, or making Google a live source
+- Rust Query Planner Parity Candidate v0 as the isolated Rust planner
+  candidate under `crates/eureka-core/`, with expanded Python-oracle planner
+  goldens, a case map, and a stdlib parity check, without wiring Rust into the
+  Python planner, gateway, web, CLI, HTTP API, workers, public-alpha paths, or
+  production behavior
 
 The current Python implementation should therefore be treated as the reference
 backend and architectural oracle for the next phase.
@@ -248,16 +256,18 @@ The next backend sequence is:
 43. Custom Domain / Alternate Host Readiness v0 (implemented as static host readiness policy; no DNS/CNAME/provider config)
 44. Live Backend Handoff Contract v0 (implemented as contract-only `/api/v1` handoff reservation; no live backend)
 45. Live Probe Gateway Contract v0 (implemented as contract-only source-probe policy; no probes or network calls)
-46. Rust Query Planner Parity Candidate v0
+46. Rust Query Planner Parity Candidate v0 (implemented as isolated parity seam)
 47. Manual Observation Batch 0 Execution (human-operated parallel work)
 48. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
-49. Native App Work Later
+49. Rust Source Registry Parity Catch-up v0
+50. Rust Local Index Parity Planning v0
+51. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Rust Query Planner Parity Candidate v0
+> Compatibility Surface Strategy v0 or Signed Snapshot Format v0
 
 Why this comes next:
 
@@ -266,12 +276,14 @@ Why this comes next:
 - The repo still has no live probe implementation, no Internet Archive live
   calls, no URL fetching, no downloads, and no source adapters for external
   probing.
-- Rust Query Planner Parity Candidate v0 is a non-network next step that can
-  compare future Rust planner behavior against the Python oracle without
-  exposing external sources.
+- Rust Query Planner Parity Candidate v0 is now implemented as a non-network,
+  isolated candidate and remains unwired from runtime behavior.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.
+- Compatibility Surface Strategy v0 or Signed Snapshot Format v0 is the next
+  useful non-network contract step after lite/text/files, public data summaries,
+  and static demo snapshots.
 - Internet Archive Live Probe v0 should remain unstarted unless a human
   explicitly approves live external-source behavior after separate review.
 

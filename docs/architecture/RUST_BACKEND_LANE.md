@@ -11,8 +11,9 @@ explicitly promoted.
 ## Current Status
 
 - `crates/` exists as a minimal Rust workspace skeleton.
-- `crates/eureka-core/` contains Rust Source Registry Parity Candidate v0, the
-  first isolated Rust behavior seam.
+- `crates/eureka-core/` contains Rust Source Registry Parity Candidate v0 and
+  Rust Query Planner Parity Candidate v0, the first two isolated Rust behavior
+  seams.
 - The remaining initial crates are documented placeholders.
 - `tests/parity/golden/python_oracle/v0/` contains the first committed
   Python-oracle golden outputs for future Rust parity checks.
@@ -32,15 +33,16 @@ explicitly promoted.
 
 ## Initial Crate Responsibilities
 
-- `eureka-core`: current home of the isolated source-registry parity candidate;
-  future core object, state, representation, evidence, and domain types
+- `eureka-core`: current home of the isolated source-registry and
+  query-planner parity candidates; future core object, state, representation,
+  evidence, and domain types
 - `eureka-contracts`: future schema-aligned contract structs
 - `eureka-store`: future content-addressed and local store primitives
 - `eureka-resolver`: future resolution, search, and planner logic
 
-Except for the narrow source-registry parity candidate in `eureka-core`, these
-crates do not implement those responsibilities yet. They reserve the first
-bounded Rust workspace shape.
+Except for the narrow source-registry and query-planner parity candidates in
+`eureka-core`, these crates do not implement those responsibilities yet. They
+reserve the first bounded Rust workspace shape.
 
 ## Future Crates
 
@@ -114,6 +116,21 @@ Query Planner Parity Candidate must compare against those refreshed goldens;
 this does not activate Rust in the planner, gateway, CLI, HTTP API, workers, or
 public-alpha path.
 
+Rust Query Planner Parity Candidate v0 now adds an isolated deterministic Rust
+planner model and rule set under `crates/eureka-core/src/query_planner.rs`.
+It targets the committed Python-oracle query-planner goldens for current
+old-platform cases, including platform aliases, latest-compatible release
+intent, driver/hardware intent, vague software identity uncertainty,
+member/container discovery, documentation, article/scan intent, and generic
+fallback. It also adds a stdlib structure check under
+`scripts/check_rust_query_planner_parity.py` and a compact case map under
+`tests/parity/rust_query_planner_cases.json`.
+
+This candidate is still isolated. It is not called by Python runtime, gateway,
+web, CLI, HTTP API, workers, public-alpha wrapper, GitHub Pages publication,
+or any production path. Python remains authoritative, and Cargo checks remain
+optional when the local Rust toolchain is unavailable.
+
 Member-Level Synthetic Records v0 and Result Lanes + User-Cost Ranking v0
 further expand Python local-index, search, exact-resolution, and eval-visible
 outputs with synthetic member records plus lane/user-cost annotations. Future
@@ -128,6 +145,7 @@ local-index, deterministic-search, exact-resolution, and result projection
 parity must match those shapes or record explicit allowed divergences before
 any replacement claim.
 
-This candidate is tested only inside the Rust workspace. It is not used by
-Python runtime, gateway, web, CLI, HTTP API, local workers, or public-alpha
-paths.
+These candidates are tested only inside the Rust workspace when Cargo is
+available, with Python-side structure checks when Cargo is unavailable. They
+are not used by Python runtime, gateway, web, CLI, HTTP API, local workers, or
+public-alpha paths.

@@ -230,6 +230,16 @@
       "title": "Define disabled live probe gateway policy before any external source probe",
       "status": "addressed_by_live_probe_gateway_contract_v0",
       "suggested_milestone": "Rust Query Planner Parity Candidate v0"
+    },
+    {
+      "id": "audit-backlog-rust-query-planner-parity",
+      "finding_refs": [
+        "CTEA-BEHAVIOR-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Add isolated Rust query-planner parity candidate after Python planner goldens stabilize",
+      "status": "addressed_by_rust_query_planner_parity_candidate_v0",
+      "suggested_milestone": "Compatibility Surface Strategy v0 or Signed Snapshot Format v0"
     }
   ]
 }

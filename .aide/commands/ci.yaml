@@ -74,6 +74,10 @@ steps:
     run: python -m unittest tests.operations.test_public_alpha_wrapper_docs
   - id: python_oracle_golden_check
     run: python scripts/generate_python_oracle_golden.py --check
+  - id: rust_query_planner_parity_check
+    run: python scripts/check_rust_query_planner_parity.py
+  - id: rust_query_planner_parity_tests
+    run: python -m unittest tests.parity.test_rust_query_planner_parity_candidate tests.scripts.test_check_rust_query_planner_parity
   - id: test_eval_operating_layer
     run: python -m unittest tests.operations.test_test_eval_operating_layer
   - id: comprehensive_audit_pack

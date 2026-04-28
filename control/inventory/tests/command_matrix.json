@@ -66,6 +66,8 @@
         "public_alpha_wrapper_docs_validation",
         "external_baseline_observation_validator",
         "source_coverage_capability_validation",
+        "rust_query_planner_parity_check",
+        "rust_query_planner_parity_tests",
         "real_source_coverage_pack_validation",
         "old_platform_source_coverage_expansion_validation",
         "old_platform_planner_pack_validation",
@@ -90,6 +92,8 @@
         "public_alpha_smoke",
         "hosting_pack_generator_check",
         "python_oracle_golden_check",
+        "rust_query_planner_parity_check",
+        "rust_query_planner_parity_tests",
         "archive_resolution_eval_runner",
         "search_usefulness_audit_runner",
         "source_coverage_capability_validation",
@@ -263,6 +267,8 @@
         "python_oracle_golden_check",
         "source_registry_validation",
         "source_coverage_capability_validation",
+        "rust_query_planner_parity_check",
+        "rust_query_planner_parity_tests",
         "old_platform_planner_pack_validation",
         "member_level_synthetic_records_validation",
         "result_lanes_user_cost_validation",
@@ -272,7 +278,7 @@
       ],
       "required_status": "required",
       "when_to_run": "After Python oracle, source-registry, query-planner, local-index, memory, or Rust parity fixture changes.",
-      "notes": "Rust candidate commands live in rust_optional until Cargo is required."
+      "notes": "Python-side Rust parity structure checks are required; Cargo workspace execution remains optional until the repo requires a Rust toolchain."
     },
     {
       "lane_id": "audit",
