@@ -57,6 +57,10 @@ The minimum public-alpha entry gate should include:
   probe policy, candidate-source caps, cache/evidence expectations, and
   operator gates; no live probes, network calls, downloads, scraping, or
   Internet Archive access)
+- Compatibility Surface Strategy v0 (implemented as strategy, capability
+  matrix, route matrix, old-client degradation policy, and
+  native/snapshot/relay readiness guidance; no new runtime behavior,
+  snapshots, relay services, native apps, live API behavior, or live probes)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as

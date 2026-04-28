@@ -257,17 +257,19 @@ The next backend sequence is:
 44. Live Backend Handoff Contract v0 (implemented as contract-only `/api/v1` handoff reservation; no live backend)
 45. Live Probe Gateway Contract v0 (implemented as contract-only source-probe policy; no probes or network calls)
 46. Rust Query Planner Parity Candidate v0 (implemented as isolated parity seam)
-47. Manual Observation Batch 0 Execution (human-operated parallel work)
-48. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
-49. Rust Source Registry Parity Catch-up v0
-50. Rust Local Index Parity Planning v0
-51. Native App Work Later
+47. Compatibility Surface Strategy v0 (implemented as strategy/contracts/inventory only; no new runtime behavior)
+48. Signed Snapshot Format v0
+49. Relay Surface Design v0
+50. Manual Observation Batch 0 Execution (human-operated parallel work)
+51. Rust Source Registry Parity Catch-up v0
+52. Rust Local Index Parity Planning v0
+53. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Compatibility Surface Strategy v0 or Signed Snapshot Format v0
+> Signed Snapshot Format v0
 
 Why this comes next:
 
@@ -281,9 +283,12 @@ Why this comes next:
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.
-- Compatibility Surface Strategy v0 or Signed Snapshot Format v0 is the next
-  useful non-network contract step after lite/text/files, public data summaries,
-  and static demo snapshots.
+- Compatibility Surface Strategy v0 is now implemented as strategy, route
+  matrix, capability matrix, and old-client/native/snapshot/relay readiness
+  policy without new runtime behavior.
+- Signed Snapshot Format v0 is the next useful non-network contract step after
+  lite/text/files, public data summaries, static demo snapshots, and surface
+  strategy.
 - Internet Archive Live Probe v0 should remain unstarted unless a human
   explicitly approves live external-source behavior after separate review.
 

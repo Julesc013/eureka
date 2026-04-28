@@ -68,3 +68,11 @@ docs under `docs/`. No separate AIDE runtime report is needed; this is
 contract and policy governance only and does not implement probes, call
 external sources, fetch URLs, scrape, crawl, enable downloads, or make Google a
 live probe source.
+
+Compatibility Surface Strategy v0 records cross-surface strategy, capability
+and route matrices, old-client degradation policy, native-client readiness, and
+snapshot/relay readiness notes under `control/inventory/publication/` and
+`docs/`. No separate AIDE runtime report is needed; this is strategy and
+contract governance only and does not add runtime behavior, snapshots, relay
+services, native apps, live backend routes, live probes, or frontend
+frameworks.

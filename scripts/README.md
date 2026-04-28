@@ -67,6 +67,13 @@ Current scripts:
   supports `--json`, performs no network calls, implements no adapters, fetches
   no URLs, enables no downloads, and does not call Internet Archive or any
   external source
+- `validate_compatibility_surfaces.py`: validates Compatibility Surface
+  Strategy v0 inventories, including the surface capability matrix, route
+  matrix, client-profile alignment, implemented static route roots, future
+  snapshot/relay/native/API posture, old-client degradation docs, and static
+  page no-live/no-production claims; it supports `--json`, performs no network
+  calls, adds no runtime behavior, and does not make snapshots, relay services,
+  native clients, live backend routes, or live probes available
 - `generate_public_data_summaries.py`: generates, updates, or checks
   deterministic static JSON summaries under `public_site/data/` by default,
   including site, page-registry, source, eval, route, and build summaries; it
@@ -149,9 +156,9 @@ from governed synthetic fixtures, small recorded GitHub Releases fixtures, tiny
 recorded Internet Archive-like fixtures, and committed local bundle fixtures.
 They also surface the current bounded engine, public-alpha, publication,
 GitHub Pages artifact, generated public-data summary, and stdlib static-site
-generator checks plus static-host readiness, live-backend handoff, and live
-probe gateway checks, plus the isolated Rust query-planner parity structure
-check,
+generator checks plus static-host readiness, live-backend handoff, live probe
+gateway, compatibility-surface strategy, and isolated Rust query-planner
+parity structure checks,
 without implying
 a final provenance, trust, merge, object-identity, ranking, compatibility
 oracle, fuzzy retrieval, vector search, download, installer, extraction,
@@ -161,7 +168,9 @@ HTTPS/TLS, accounts, rate limiting, production logging, production process
 management, backend deployment infrastructure, generated-artifact deployment,
 custom-domain configuration, alternate-host deployment, DNS changes, CNAME
 configuration, live `/api/v1` backend, production API guarantee, Rust runtime
-replacement, Rust planner runtime wiring, live source probing, live probe adapters, crawling, live Internet Archive
-API access, arbitrary local filesystem ingestion, or full
+replacement, Rust planner runtime wiring, snapshot implementation, relay
+service, native app project, live source probing, live probe adapters,
+crawling, live Internet Archive API access, arbitrary local filesystem
+ingestion, or full
 investigation-planning architecture. Live GitHub acquisition remains
 intentionally deferred.

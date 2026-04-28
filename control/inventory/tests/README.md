@@ -24,3 +24,6 @@ Network policy:
   Python reference lane when Cargo is unavailable
 - the Rust query-planner parity script remains a Python-side structure check
   and reports Cargo execution as skipped when the toolchain is unavailable
+- publication compatibility-surface checks validate route/profile/data
+  strategy only; they do not add snapshots, relay services, native apps, live
+  backend routes, live probes, or frontend framework behavior

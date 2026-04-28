@@ -444,6 +444,24 @@ blocked, and docs/static pages for no-live-probe claims. It performs no network
 calls, implements no adapters, fetches no URLs, enables no downloads, calls no
 external sources, and does not make Internet Archive live probing available.
 
+## Compatibility Surface Strategy
+
+Compatibility Surface Strategy v0 is validated with:
+
+```bash
+python scripts/validate_compatibility_surfaces.py
+python scripts/validate_compatibility_surfaces.py --json
+python -m unittest tests.operations.test_compatibility_surface_strategy tests.scripts.test_validate_compatibility_surfaces
+```
+
+The lane checks `surface_capabilities.json`, `surface_route_matrix.json`,
+client-profile alignment, implemented static route roots, future snapshot,
+relay, native, app, and `/api/v1` posture, old-client degradation docs,
+native-client readiness docs, and static page no-live/no-production claims. It
+performs no network calls, adds no runtime behavior, implements no snapshots,
+relay service, native app, live backend, live probes, or frontend framework,
+and keeps `public_site/` as the current static artifact.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

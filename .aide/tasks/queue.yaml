@@ -231,22 +231,29 @@
       "id": "manual_observation_batch_0_execution",
       "title": "Manual Observation Batch 0 Execution",
       "status": "human_operated_parallel",
-      "priority": 33,
+      "priority": 38,
       "notes": "Human-operated parallel follow-up to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
     },
     {
       "id": "compatibility_surface_strategy_v0",
       "title": "Compatibility Surface Strategy v0",
-      "status": "next",
-      "priority": 34,
-      "notes": "Define presentation rules for known, unknown, inferred, and incompatible outcomes before app work; signed snapshot format may supersede this if snapshot work is selected next."
+      "status": "completed",
+      "priority": 33,
+      "notes": "Added governed compatibility-surface strategy, capability and route matrices, old-client degradation policy, native-client readiness policy, snapshot/relay readiness notes, validator, and tests without adding runtime behavior."
     },
     {
       "id": "signed_snapshot_format_v0",
       "title": "Signed Snapshot Format v0",
+      "status": "next",
+      "priority": 34,
+      "notes": "Define deterministic offline snapshot bundle shape, manifests, checksums, and future signatures without adding live downloads or deployment behavior."
+    },
+    {
+      "id": "relay_surface_design_v0",
+      "title": "Relay Surface Design v0",
       "status": "queued",
       "priority": 35,
-      "notes": "Define deterministic offline snapshot bundle shape, manifests, checksums, and future signatures without adding live downloads or deployment behavior."
+      "notes": "Design a future local relay surface and operator/security policy without implementing FTP, SMB, WebDAV, live backend behavior, or native-client runtime."
     },
     {
       "id": "rust_source_registry_parity_catch_up_v0",

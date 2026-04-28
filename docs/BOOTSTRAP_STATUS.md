@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus fifty-nine executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, the first isolated Rust query-planner parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus sixty executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, the first isolated Rust query-planner parity candidate, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Compatibility Surface Strategy v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -333,7 +333,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Compatibility Surface Strategy v0 or Signed Snapshot Format v0
+> Signed Snapshot Format v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -356,7 +356,8 @@ Contracts v0, GitHub Pages Deployment Enablement v0, Static Site
 Generation Migration v0, Generated Public Data Summaries v0,
 Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0,
 Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract
-v0, Live Probe Gateway Contract v0, and Rust Query Planner Parity Candidate v0
+v0, Live Probe Gateway Contract v0, Rust Query Planner Parity Candidate v0,
+and Compatibility Surface Strategy v0
 are
 now implemented as the first
 inventory-backed source-control plane, synchronous durable investigation
@@ -404,14 +405,18 @@ The Rust query-planner parity candidate matches the expanded Python-oracle
 query-planner fixture map as an isolated Rust seam only; it does not replace
 the Python planner or wire Rust into web, CLI, HTTP API, workers, public-alpha,
 or production paths.
+The compatibility surface strategy records current and future surface families,
+old-client degradation, native-client prerequisites, snapshot readiness, relay
+readiness, and route/capability matrices without adding runtime behavior.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
-2. Manual Observation Batch 0 Execution (human-operated parallel work)
-3. Rust Source Registry Parity Catch-up v0
-4. Rust Local Index Parity Planning v0
-5. Internet Archive Live Probe v0 only after explicit human approval and
+1. Signed Snapshot Format v0
+2. Relay Surface Design v0
+3. Manual Observation Batch 0 Execution (human-operated parallel work)
+4. Rust Source Registry Parity Catch-up v0
+5. Rust Local Index Parity Planning v0
+6. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 ## Deferred Priorities

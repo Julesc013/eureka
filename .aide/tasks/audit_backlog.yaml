@@ -240,6 +240,16 @@
       "title": "Add isolated Rust query-planner parity candidate after Python planner goldens stabilize",
       "status": "addressed_by_rust_query_planner_parity_candidate_v0",
       "suggested_milestone": "Compatibility Surface Strategy v0 or Signed Snapshot Format v0"
+    },
+    {
+      "id": "audit-backlog-compatibility-surface-strategy",
+      "finding_refs": [
+        "CTEA-STRUCT-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Govern multi-surface compatibility before snapshots, relay, or native client work",
+      "status": "addressed_by_compatibility_surface_strategy_v0",
+      "suggested_milestone": "Signed Snapshot Format v0"
     }
   ]
 }

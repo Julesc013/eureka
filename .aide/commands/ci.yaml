@@ -58,6 +58,10 @@ steps:
     run: python scripts/validate_static_host_readiness.py
   - id: custom_domain_alternate_host_readiness_tests
     run: python -m unittest tests.operations.test_custom_domain_alternate_host_readiness tests.scripts.test_validate_static_host_readiness
+  - id: compatibility_surface_strategy_validator
+    run: python scripts/validate_compatibility_surfaces.py
+  - id: compatibility_surface_strategy_tests
+    run: python -m unittest tests.operations.test_compatibility_surface_strategy tests.scripts.test_validate_compatibility_surfaces
   - id: public_alpha_rehearsal_evidence_check
     run: python scripts/generate_public_alpha_rehearsal_evidence.py --check
   - id: public_alpha_rehearsal_evidence_tests

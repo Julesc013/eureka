@@ -23,6 +23,10 @@ Current boundary:
   `scripts/validate_live_probe_gateway.py`; it defines disabled-by-default
   future source-probe policy without implementing probes or making network
   calls.
+- Compatibility Surface Strategy v0 is validated by
+  `scripts/validate_compatibility_surfaces.py`; it records surface capability
+  and route matrices plus old-client/native/snapshot/relay readiness without
+  adding runtime behavior.
 - `public_site/` remains the GitHub Pages deployment artifact for this
   milestone.
 
@@ -47,6 +51,7 @@ python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_live_backend_handoff.py
 python scripts/validate_live_probe_gateway.py
+python scripts/validate_compatibility_surfaces.py
 ```
 
 Generated output is no-JS static HTML with relative links so it can work under
@@ -64,4 +69,6 @@ also static fixture-backed examples only; they add no live search, backend
 hosting, or production behavior. Future `/api/v1` handoff routes are reserved
 by contract only and are not live in generated output. The live probe gateway
 policy is also contract-only; generated output must not call Internet Archive,
-Wayback, GitHub, package registries, or any external source.
+Wayback, GitHub, package registries, or any external source. Compatibility
+surface strategy is likewise contract-only in this tree: snapshots, relay
+services, native app projects, and live API surfaces remain future/deferred.

@@ -131,6 +131,11 @@ planner model under `crates/eureka-core/`, expands Python-oracle planner
 goldens, and adds a stdlib parity-structure check. Python remains the planner
 oracle; Rust is not wired into web, CLI, HTTP API, workers, public-alpha paths,
 or production runtime.
+Compatibility Surface Strategy v0 now adds governed multi-surface strategy,
+expanded surface capability records, a surface route matrix, old-client
+degradation policy, and native/snapshot/relay readiness docs. It does not add
+new runtime behavior, snapshots, relay services, native app projects, live
+`/api/v1`, live probes, or production API guarantees.
 
 ## Quickstart
 
@@ -154,6 +159,7 @@ python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
 python scripts/validate_live_backend_handoff.py
 python scripts/validate_live_probe_gateway.py
+python scripts/validate_compatibility_surfaces.py
 python scripts/check_rust_query_planner_parity.py
 ```
 
@@ -176,6 +182,7 @@ python scripts/generate_public_data_summaries.py --check
 python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_live_probe_gateway.py
+python scripts/validate_compatibility_surfaces.py
 python scripts/check_rust_query_planner_parity.py
 python scripts/generate_public_alpha_rehearsal_evidence.py --check
 ```
@@ -458,6 +465,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 - Rust has a workspace, parity fixtures, and isolated source-registry plus
   query-planner candidates. It does not replace Python and is not used by web,
   CLI, HTTP API, workers, public-alpha paths, or production paths.
+- Compatibility Surface Strategy v0 is strategy/contracts/inventory only. It
+  guides old-browser, text, file-tree, snapshot, relay, API, CLI, web, and
+  future native clients without implementing snapshots, relay services, native
+  apps, live API behavior, or new runtime behavior.
 - Native apps are deferred. The current native surface is a stdlib CLI proof.
 - Live crawling, source sync, fuzzy retrieval, vector search, LLM planning,
   auth, accounts, HTTPS/TLS, rate limiting, process supervision, and deployment
@@ -468,11 +479,12 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Compatibility Surface Strategy v0 or Signed Snapshot Format v0
-2. Manual Observation Batch 0 Execution (human-operated parallel work)
-3. Rust Source Registry Parity Catch-up v0
-4. Rust Local Index Parity Planning v0
-5. Internet Archive Live Probe v0 only after explicit human approval and
+1. Signed Snapshot Format v0
+2. Relay Surface Design v0
+3. Manual Observation Batch 0 Execution (human-operated parallel work)
+4. Rust Source Registry Parity Catch-up v0
+5. Rust Local Index Parity Planning v0
+6. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 Broader near-term direction:

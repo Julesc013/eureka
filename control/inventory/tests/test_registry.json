@@ -1678,6 +1678,50 @@
       "failure_means": "Live probe gateway inventory, source candidate status, Google manual-baseline-only posture, wrapper defaults, docs, or validator JSON output regressed.",
       "advisory_or_required": "required",
       "notes": "Added by Live Probe Gateway Contract v0; checks candidates remain future-disabled and no live probes, external calls, downloads, arbitrary URL fetching, or Internet Archive live access are introduced."
+    },
+    {
+      "test_id": "compatibility_surface_strategy_validator",
+      "label": "Compatibility surface strategy validator",
+      "command": "python scripts/validate_compatibility_surfaces.py",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Surface capability/route matrices, client profile alignment, future-surface posture, or no-live/no-production claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Compatibility Surface Strategy v0; validates strategy/contracts only and does not implement snapshots, relay services, native apps, live backend routes, live probes, or runtime behavior."
+    },
+    {
+      "test_id": "compatibility_surface_strategy_tests",
+      "label": "Compatibility surface strategy tests",
+      "command": "python -m unittest tests.operations.test_compatibility_surface_strategy tests.scripts.test_validate_compatibility_surfaces",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary repo copy for negative validator checks only if future tests add one",
+      "expected_runtime": "seconds",
+      "failure_means": "Compatibility strategy docs, surface matrices, static route roots, future surface status, or validator JSON behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks that lite/text/files/data/demo are honest static surfaces while app/API/snapshots/relay/native/live backend/live probes remain future or disabled."
     }
   ]
 }
