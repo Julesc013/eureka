@@ -7,6 +7,8 @@
       "kind": "static",
       "status": "implemented",
       "artifact_root": "public_site",
+      "generated_artifact_root": "site/dist",
+      "generated_artifact_deployed": false,
       "base_path": "/eureka/",
       "canonical_base_url": "https://julesc013.github.io/eureka/",
       "requires_base_path_safe_links": true,
@@ -20,8 +22,9 @@
       "notes": [
         "Project Pages must not define public route architecture.",
         "The workflow validates the publication inventory and public_site before uploading the artifact.",
+        "Static Site Generation Migration v0 generates site/dist for validation, but the workflow still uploads public_site.",
         "Workflow configuration does not prove a GitHub Actions deployment run succeeded.",
-        "No Python backend, live probes, custom domain, secrets, or site generator are added by this target."
+        "No Python backend, live probes, custom domain, secrets, or generator deployment is added by this target."
       ]
     },
     {

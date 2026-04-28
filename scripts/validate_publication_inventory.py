@@ -261,6 +261,14 @@ def _validate_contract(payload: Any, errors: list[str]) -> None:
         errors.append(
             "publication_contract.json: future_generated_artifact must be site/dist."
         )
+    if payload.get("generator_status") != "implemented":
+        errors.append("publication_contract.json: generator_status must be implemented.")
+    if payload.get("generated_artifact_deployed") is not False:
+        errors.append(
+            "publication_contract.json: generated_artifact_deployed must be false."
+        )
+    if payload.get("deploy_artifact_current") != "public_site":
+        errors.append("publication_contract.json: deploy_artifact_current must be public_site.")
     if payload.get("base_path_policy") != "deployment_target_defined":
         errors.append(
             "publication_contract.json: base_path_policy must be deployment_target_defined."
@@ -432,9 +440,11 @@ def _validate_deployment_targets(payload: Any, errors: list[str]) -> None:
     else:
         expected = {
             "kind": "static",
-            "status": "implemented",
-            "artifact_root": "public_site",
-            "base_path": "/eureka/",
+        "status": "implemented",
+        "artifact_root": "public_site",
+        "generated_artifact_root": "site/dist",
+        "generated_artifact_deployed": False,
+        "base_path": "/eureka/",
             "canonical_base_url": "https://julesc013.github.io/eureka/",
             "requires_base_path_safe_links": True,
             "no_backend": True,

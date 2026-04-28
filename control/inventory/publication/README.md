@@ -5,15 +5,16 @@ public routes, public data files, client profiles, deployment target semantics,
 and redirect policy.
 
 The inventory governs publication shape for static deployment and later public
-surfaces. It does not create a static site generator, add live backend
-behavior, configure DNS, add provider-specific backend hosting files, or record
-external observations.
+surfaces. It does not deploy generated output, add live backend behavior,
+configure DNS, add provider-specific backend hosting files, or record external
+observations.
 
 Current boundary:
 
-- `public_site/` is the current hand-authored no-JS static public artifact.
-- `site/` is reserved for a future source or generator tree.
-- `site/dist/` is reserved for a future generated static artifact.
+- `public_site/` is the current no-JS static public artifact and GitHub Pages
+  deployment artifact.
+- `site/` is the stdlib-only source/generator tree.
+- `site/dist/` is generated output for validation, not deployment.
 - `control/inventory/publication/` owns the publication contracts and
   inventories.
 - `.github/workflows/pages.yml` is the static-only GitHub Pages publishing

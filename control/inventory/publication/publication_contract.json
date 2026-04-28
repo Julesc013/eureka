@@ -6,6 +6,10 @@
   "current_static_artifact": "public_site",
   "future_generator_root": "site",
   "future_generated_artifact": "site/dist",
+  "generator_status": "implemented",
+  "generated_artifact_status": "implemented",
+  "generated_artifact_deployed": false,
+  "deploy_artifact_current": "public_site",
   "base_path_policy": "deployment_target_defined",
   "publication_scope": [
     "govern public route names before deployment",
@@ -99,7 +103,6 @@
     }
   ],
   "next_expected_milestones": [
-    "Static Site Generation Migration v0",
     "Generated Public Data Summaries v0",
     "Lite/Text/Files Seed Surfaces v0",
     "Static Resolver Demo Snapshots v0",
@@ -112,6 +115,7 @@
     "This contract supersedes the previous immediate Deployment Config Pack ordering.",
     "GitHub Pages deployment mechanics consume these contracts rather than define public architecture.",
     "The current static artifact remains public_site and is not renamed by this slice.",
-    "No site generator, provider backend configuration, live backend, or live source probe is added by this contract."
+    "Static Site Generation Migration v0 adds site/ and site/dist, but public_site remains the current deployment artifact.",
+    "No provider backend configuration, live backend, or live source probe is added by this contract."
   ]
 }

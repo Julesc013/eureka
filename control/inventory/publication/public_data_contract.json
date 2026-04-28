@@ -14,14 +14,14 @@
       "contains_live_data": false,
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
-      "notes": "Current root static-site manifest; future generated summaries should move under /data/."
+      "notes": "Current root static-site manifest. Static Site Generation Migration v0 can generate the equivalent manifest in site/dist, while future generated summaries should move under /data/."
     },
     {
       "path": "/data/site_manifest.json",
       "status": "planned",
       "stability": "experimental",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0",
+      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -37,7 +37,7 @@
       "status": "planned",
       "stability": "experimental",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0",
+      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -53,7 +53,7 @@
       "status": "planned",
       "stability": "experimental",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0",
+      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -69,7 +69,7 @@
       "status": "planned",
       "stability": "experimental",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0",
+      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -85,7 +85,7 @@
       "status": "planned",
       "stability": "experimental",
       "schema_version": "0.1.0",
-      "producer": "future Generated Public Data Summaries v0",
+      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -101,7 +101,7 @@
       "status": "planned",
       "stability": "experimental",
       "schema_version": "0.1.0",
-      "producer": "future static export process",
+      "producer": "future Generated Public Data Summaries v0, building on site/build.py",
       "consumer_profiles": [
         "api_client",
         "native_client",
@@ -147,4 +147,3 @@
     }
   ]
 }
-
