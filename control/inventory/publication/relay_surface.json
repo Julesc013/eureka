@@ -212,6 +212,16 @@
     "production_snapshots_required_before_broad_relay": true,
     "real_signatures_required_before_authenticity_claims": true
   },
+  "action_policy_dependency": {
+    "policy": "control/inventory/publication/action_policy.json",
+    "status": "policy_only",
+    "downloads_enabled": false,
+    "install_automation_enabled": false,
+    "mirror_enabled": false,
+    "execute_enabled": false,
+    "private_uploads_enabled": false,
+    "notes": "Native Action / Download / Install Policy v0 keeps relay projections read-only by default and prohibits download, install, execute, mirror, private-upload, write/admin, or live-probe actions for old/insecure clients."
+  },
   "operator_controls_required": [
     "choose local host",
     "choose network scope",

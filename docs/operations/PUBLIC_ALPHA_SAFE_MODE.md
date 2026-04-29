@@ -98,6 +98,12 @@ separately from safe-mode runtime behavior. Public Alpha Safe Mode still does
 not call external sources, fetch URLs, enable downloads, or make Internet
 Archive live probing available.
 
+Native Action / Download / Install Policy v0 keeps public-alpha action posture
+read-only and metadata-first. Public-alpha does not enable downloads, fixture
+byte fetch, install handoff, package-manager handoff, mirrors, execution,
+malware scanning, rights-clearance claims, private uploads, or system-changing
+actions.
+
 ## Still Not Production
 
 Public Alpha Safe Mode v0 does not settle:
@@ -112,6 +118,8 @@ Public Alpha Safe Mode v0 does not settle:
 - live source sync or crawling
 - live source probes or live Internet Archive calls
 - live `/api/v1` backend handoff
+- download, mirror, install, execute, restore, uninstall, or rollback actions
+- malware scanning or rights-clearance claims
 - ranking, fuzzy retrieval, vector search, or LLM planning
 
 It is a bounded public-demo posture for the current local backend, intended to

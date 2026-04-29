@@ -161,6 +161,11 @@ Both future surfaces must treat snapshots as read-only public data by default
 and must not expose private data, write/admin controls, executable downloads,
 or live probes through snapshot consumption.
 
+Native Action / Download / Install Policy v0 adds one more rule for snapshot
+consumers: a snapshot may support inspect, preview, read, and checksum
+verification, but snapshot presence is not permission to download, mirror,
+install, execute, restore, or claim rights clearance or malware safety.
+
 ## Error Handling
 
 Consumers should report clear statuses:

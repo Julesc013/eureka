@@ -1,0 +1,352 @@
+{
+  "schema_version": "0.1.0",
+  "action_policy_id": "eureka-native-action-download-install-policy",
+  "status": "policy_only",
+  "stability": "experimental",
+  "no_install_automation_implemented": true,
+  "no_download_surface_implemented": true,
+  "no_package_manager_integration_implemented": true,
+  "no_malware_scanning_claim": true,
+  "no_rights_clearance_claim": true,
+  "current_safe_actions": [
+    {
+      "id": "inspect",
+      "status": "implemented_bounded",
+      "risk_class": "low",
+      "current_scope": "Inspect source, representation, provenance, compatibility, absence, or comparison summaries through local/static surfaces.",
+      "requires_user_confirmation": false,
+      "writes_to_system": false
+    },
+    {
+      "id": "preview",
+      "status": "implemented_bounded",
+      "risk_class": "low",
+      "current_scope": "Preview bounded text/member summaries from committed fixture-backed data only.",
+      "requires_user_confirmation": false,
+      "writes_to_system": false
+    },
+    {
+      "id": "read",
+      "status": "implemented_bounded",
+      "risk_class": "low",
+      "current_scope": "Read static docs, public data summaries, snapshot seed manifests, and bounded local fixture text.",
+      "requires_user_confirmation": false,
+      "writes_to_system": false
+    },
+    {
+      "id": "cite",
+      "status": "implemented_bounded",
+      "risk_class": "low",
+      "current_scope": "Show source/evidence labels and cite-like provenance fields already present in governed records.",
+      "requires_user_confirmation": false,
+      "writes_to_system": false
+    },
+    {
+      "id": "export_manifest",
+      "status": "implemented_bounded_local",
+      "risk_class": "low",
+      "current_scope": "Export deterministic local resolution manifests for known bounded records.",
+      "requires_user_confirmation": false,
+      "writes_to_system": true
+    },
+    {
+      "id": "view_provenance",
+      "status": "implemented_bounded",
+      "risk_class": "low",
+      "current_scope": "Display source, evidence, fixture, and placeholder posture without rewriting truth.",
+      "requires_user_confirmation": false,
+      "writes_to_system": false
+    },
+    {
+      "id": "compare",
+      "status": "implemented_bounded",
+      "risk_class": "low",
+      "current_scope": "Compare explicit bounded target pairs and show disagreements without merging identity.",
+      "requires_user_confirmation": false,
+      "writes_to_system": false
+    },
+    {
+      "id": "view_absence_report",
+      "status": "implemented_bounded",
+      "risk_class": "low",
+      "current_scope": "Show checked-source and near-match absence reports for current local/search paths.",
+      "requires_user_confirmation": false,
+      "writes_to_system": false
+    },
+    {
+      "id": "view_source",
+      "status": "implemented_bounded",
+      "risk_class": "low",
+      "current_scope": "View governed source registry records and capability/coverage summaries.",
+      "requires_user_confirmation": false,
+      "writes_to_system": false
+    }
+  ],
+  "current_bounded_actions": [
+    {
+      "id": "fetch_fixture_payload",
+      "status": "implemented_local_fixture_only",
+      "risk_class": "bounded_fixture",
+      "current_scope": "Fetch tiny committed local fixture payloads by explicit representation id only.",
+      "public_alpha_enabled": false,
+      "static_site_enabled": false,
+      "notes": "This is not a download surface and not live acquisition."
+    },
+    {
+      "id": "member_preview",
+      "status": "implemented_local_fixture_only",
+      "risk_class": "bounded_fixture",
+      "current_scope": "Preview bounded member text from committed local bundle fixtures.",
+      "public_alpha_enabled": false,
+      "static_site_enabled": true,
+      "notes": "Static demos may show committed text summaries, not arbitrary member extraction."
+    },
+    {
+      "id": "local_export_manifest",
+      "status": "implemented_local_only",
+      "risk_class": "local_write",
+      "current_scope": "Write deterministic manifest JSON only under caller-selected local developer paths.",
+      "public_alpha_enabled": false,
+      "static_site_enabled": false,
+      "notes": "Public-alpha blocks caller-provided local output paths."
+    },
+    {
+      "id": "local_store_artifact_fixture",
+      "status": "implemented_local_only",
+      "risk_class": "local_write",
+      "current_scope": "Store bounded manifest/bundle artifacts in a local developer store.",
+      "public_alpha_enabled": false,
+      "static_site_enabled": false,
+      "notes": "This is local developer storage, not public mirroring or download hosting."
+    }
+  ],
+  "future_gated_actions": [
+    "download",
+    "download_member",
+    "mirror",
+    "install_handoff",
+    "package_manager_handoff",
+    "emulator_handoff",
+    "vm_handoff",
+    "restore_manifest_apply",
+    "uninstall",
+    "rollback",
+    "execute",
+    "scan_for_malware",
+    "quarantine",
+    "submit_feedback",
+    "upload_local_source"
+  ],
+  "prohibited_until_policy": [
+    "silent_install",
+    "auto_execute",
+    "privileged_install",
+    "destructive_restore",
+    "write_to_system_paths",
+    "upload_private_files",
+    "send_private_inventory",
+    "bypass_rights_warning",
+    "bypass_hash_warning"
+  ],
+  "action_classes": [
+    {
+      "id": "safe_read_only",
+      "risk_level": "low",
+      "members": [
+        "inspect",
+        "preview",
+        "read",
+        "cite",
+        "view_provenance",
+        "compare",
+        "view_absence_report",
+        "view_source"
+      ],
+      "allowed_now": true,
+      "requires_network": false,
+      "requires_backend": false,
+      "requires_user_confirmation": false,
+      "notes": "Safe actions can present existing governed/static/local fixture-backed facts but must preserve uncertainty."
+    },
+    {
+      "id": "bounded_local_artifact",
+      "risk_level": "bounded",
+      "members": [
+        "export_manifest",
+        "fetch_fixture_payload",
+        "member_preview",
+        "local_export_manifest",
+        "local_store_artifact_fixture"
+      ],
+      "allowed_now": true,
+      "requires_network": false,
+      "requires_backend": false,
+      "requires_user_confirmation": true,
+      "notes": "Current local-only actions remain bounded to deterministic fixtures, manifests, and developer-selected local paths."
+    },
+    {
+      "id": "future_download_or_mirror",
+      "risk_level": "high",
+      "members": [
+        "download",
+        "download_member",
+        "mirror"
+      ],
+      "allowed_now": false,
+      "requires_policy": [
+        "rights_policy",
+        "security_policy",
+        "checksum_policy",
+        "operator_signoff"
+      ],
+      "requires_user_confirmation": true,
+      "notes": "No public download surface or mirroring behavior exists."
+    },
+    {
+      "id": "future_install_or_execute",
+      "risk_level": "critical",
+      "members": [
+        "install_handoff",
+        "package_manager_handoff",
+        "emulator_handoff",
+        "vm_handoff",
+        "restore_manifest_apply",
+        "uninstall",
+        "rollback",
+        "execute"
+      ],
+      "allowed_now": false,
+      "requires_policy": [
+        "native_action_download_install_policy",
+        "executable_risk_policy",
+        "rights_and_access_policy",
+        "operator_signoff"
+      ],
+      "requires_user_confirmation": true,
+      "notes": "Install handoff remains future and user-initiated only; install automation is not implemented."
+    },
+    {
+      "id": "future_private_or_write",
+      "risk_level": "critical",
+      "members": [
+        "upload_local_source",
+        "submit_feedback"
+      ],
+      "allowed_now": false,
+      "requires_policy": [
+        "privacy_policy",
+        "auth_policy",
+        "abuse_controls",
+        "operator_signoff"
+      ],
+      "requires_user_confirmation": true,
+      "notes": "No private upload, telemetry, account, or feedback surface exists."
+    }
+  ],
+  "required_evidence_fields": [
+    "source_id",
+    "source_family",
+    "source_label",
+    "record_kind",
+    "target_ref_or_resolved_resource_id",
+    "representation_id_if_applicable",
+    "member_path_if_applicable",
+    "evidence_summary",
+    "compatibility_summary_if_available",
+    "rights_label_or_unknown",
+    "hash_or_checksum_if_available",
+    "signature_status_if_available",
+    "fixture_or_live_source_status"
+  ],
+  "required_user_confirmations": [
+    {
+      "action_class": "bounded_local_artifact",
+      "confirmation": "Confirm local write path and that output is a local developer artifact, not a public download."
+    },
+    {
+      "action_class": "future_download_or_mirror",
+      "confirmation": "Confirm source, rights/access label, hash availability, executable-risk warning, and operator policy before any future download or mirror action."
+    },
+    {
+      "action_class": "future_install_or_execute",
+      "confirmation": "Confirm user-initiated handoff, source/provenance, hash/signature display, compatibility caveats, executable risk, and rollback limitations before any future install or execute handoff."
+    }
+  ],
+  "required_warning_classes": [
+    "not_production",
+    "metadata_not_rights_clearance",
+    "hash_identity_not_safety",
+    "signature_placeholder_not_authenticity",
+    "executable_risk_unknown",
+    "malware_scanning_not_available",
+    "rights_clearance_not_available",
+    "compatibility_not_guaranteed",
+    "rollback_not_guaranteed",
+    "public_alpha_risky_actions_disabled",
+    "static_site_no_download_or_install_surface"
+  ],
+  "public_alpha_defaults": {
+    "read_only_metadata_first": true,
+    "downloads_enabled": false,
+    "install_handoff_enabled": false,
+    "package_manager_handoff_enabled": false,
+    "mirror_enabled": false,
+    "execute_enabled": false,
+    "malware_scanning_enabled": false,
+    "rights_clearance_claimed": false,
+    "private_uploads_enabled": false,
+    "fixture_fetch_enabled": false,
+    "notes": "Public-alpha remains read-only/metadata-first and blocks risky action surfaces."
+  },
+  "static_site_defaults": {
+    "static_pages_only": true,
+    "downloads_enabled": false,
+    "install_handoff_enabled": false,
+    "package_manager_handoff_enabled": false,
+    "mirror_enabled": false,
+    "execute_enabled": false,
+    "malware_scanning_enabled": false,
+    "rights_clearance_claimed": false,
+    "notes": "GitHub Pages/static publication may show policy and metadata but must not offer download, install, execute, or mirror behavior."
+  },
+  "native_client_requirements": [
+    "Native clients must display action class and risk warnings before future handoff actions.",
+    "Native clients must show source, provenance, compatibility caveats, rights/access label or unknown state, and hash/checksum availability before future handoff.",
+    "Native clients must distinguish install handoff from install automation.",
+    "Native clients must not claim malware safety, executable trust, or rights clearance unless future evidence and policy explicitly support that claim.",
+    "Native clients must keep download, mirror, execute, installer, package-manager, restore, uninstall, and rollback actions disabled until future policy and implementation exist."
+  ],
+  "snapshot_consumer_requirements": [
+    "Snapshot consumers may inspect, preview, read, and verify checksums.",
+    "Snapshot consumers must not treat snapshot presence as permission to download, install, mirror, execute, or restore software.",
+    "Snapshot consumers must state that v0 signatures are placeholders and that checksums do not prove executable safety."
+  ],
+  "relay_requirements": [
+    "Relay projections must remain public/read-only by default.",
+    "Relay surfaces must not expose download, install, execute, mirror, private upload, write/admin, or live-probe actions to old/insecure clients.",
+    "Relay surfaces must preserve rights/access and executable-risk warnings if future policy allows any handoff metadata."
+  ],
+  "rights_policy_dependency": {
+    "status": "policy_seeded_by_v0",
+    "document": "docs/reference/RIGHTS_AND_ACCESS_POLICY.md",
+    "rights_clearance_claimed": false,
+    "notes": "Source metadata is not rights clearance. Future downloads, mirrors, and artifact distribution require rights/access review."
+  },
+  "security_policy_dependency": {
+    "status": "policy_seeded_by_v0",
+    "documents": [
+      "docs/reference/EXECUTABLE_RISK_POLICY.md",
+      "docs/reference/INSTALL_HANDOFF_CONTRACT.md"
+    ],
+    "malware_scanning_claimed": false,
+    "executable_safety_claimed": false,
+    "notes": "No scanner, sandbox, quarantine, or executable-safety claim exists in v0."
+  },
+  "created_by_slice": "native_action_download_install_policy_v0",
+  "notes": [
+    "Native Action / Download / Install Policy v0 is policy, contract, validation, and documentation only.",
+    "No download surface, installer, package-manager integration, native client, relay runtime, live probe, malware scanner, rights-clearance workflow, or executable trust claim is implemented.",
+    "Current bounded local actions remain fixture/manifest/developer-local only and do not imply public downloads or install automation.",
+    "Future native clients must use this policy before adding download, install handoff, package-manager handoff, mirror, execute, restore, uninstall, or rollback behavior."
+  ]
+}

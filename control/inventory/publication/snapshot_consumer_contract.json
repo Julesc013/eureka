@@ -118,8 +118,23 @@
       "complete coverage",
       "production signatures",
       "native runtime",
-      "relay runtime"
+      "relay runtime",
+      "download permission",
+      "install permission",
+      "executable safety",
+      "rights clearance"
     ]
+  },
+  "action_policy_dependency": {
+    "policy": "control/inventory/publication/action_policy.json",
+    "status": "policy_only",
+    "downloads_enabled": false,
+    "install_automation_enabled": false,
+    "mirror_enabled": false,
+    "execute_enabled": false,
+    "malware_scanning_claimed": false,
+    "rights_clearance_claimed": false,
+    "notes": "Native Action / Download / Install Policy v0 says snapshots may be inspected, read, previewed, and checksum-verified, but snapshot presence is not permission to download, mirror, install, execute, restore, or claim rights clearance."
   },
   "client_profiles": [
     "minimal_file_tree_consumer",
@@ -136,6 +151,10 @@
     "v0 signatures are real production signatures",
     "checksums alone prove authenticity when delivered over an untrusted channel",
     "snapshots include executable downloads",
+    "snapshots imply download permission",
+    "snapshots imply install permission",
+    "snapshots imply executable safety",
+    "snapshots imply rights clearance",
     "snapshots include live backend responses",
     "snapshots include live probe output",
     "snapshots include private user data",

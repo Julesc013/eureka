@@ -83,6 +83,8 @@ These are candidates, not implemented transports.
 - No credentials, sessions, account state, or private history over insecure
   transports.
 - No installer execution or executable mirror behavior.
+- No download, install, execute, restore, uninstall, rollback, private upload,
+  malware-scanning, or rights-clearance claim.
 - Integrity should come from manifests, checksums, and future signatures, not
   from insecure transport.
 
@@ -96,6 +98,12 @@ translate access patterns.
 The relay is also downstream from the live backend handoff and live probe
 gateway contracts. It must not expose live search or live probing unless future
 operator policy explicitly enables those capabilities.
+
+The relay is downstream from Native Action / Download / Install Policy v0 as
+well. It may eventually project action metadata, but old or insecure relay
+clients must not receive download, mirror, install handoff, package-manager
+handoff, execute, restore, uninstall, rollback, private upload, write/admin, or
+live-probe controls.
 
 ## Implementation Boundary
 

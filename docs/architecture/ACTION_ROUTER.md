@@ -19,6 +19,13 @@ Important bounded action families include:
 
 High-risk actions such as installer execution or restore flows remain deferred.
 
+Native Action / Download / Install Policy v0 governs the boundary between safe
+read-only actions, bounded local fixture/manifest actions, and future risky
+actions. It keeps download, mirror, install handoff, package-manager handoff,
+execute, restore, uninstall, rollback, malware scanning, private upload, and
+rights-clearance claims disabled until separate policy and implementation work
+exists.
+
 ## Usefulness and User Cost
 
 Eureka should rank results by more than keyword relevance. Important dimensions
@@ -61,3 +68,8 @@ The resolver should be able to explain:
 - why a parent bundle was demoted
 - why a compatibility hint matters
 - why an action is recommended, available, or unavailable
+
+It should also explain when an action is blocked by policy. A future result
+must not hide executable risk, missing rights/access clearance, missing hash or
+signature evidence, unknown compatibility, or rollback limits behind a single
+button.

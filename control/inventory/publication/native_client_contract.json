@@ -103,6 +103,22 @@
     "probe live sources",
     "serve a relay sidecar"
   ],
+  "action_policy_dependency": {
+    "policy": "control/inventory/publication/action_policy.json",
+    "documents": [
+      "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+      "docs/reference/EXECUTABLE_RISK_POLICY.md",
+      "docs/reference/RIGHTS_AND_ACCESS_POLICY.md",
+      "docs/reference/INSTALL_HANDOFF_CONTRACT.md"
+    ],
+    "status": "policy_only",
+    "downloads_enabled": false,
+    "install_automation_enabled": false,
+    "package_manager_integration_enabled": false,
+    "malware_scanning_claimed": false,
+    "rights_clearance_claimed": false,
+    "notes": "Native Action / Download / Install Policy v0 is required before any native download, install handoff, package-manager handoff, mirror, execute, restore, uninstall, or rollback behavior."
+  },
   "snapshot_dependency": {
     "format_contract": "docs/reference/SNAPSHOT_FORMAT_CONTRACT.md",
     "consumer_contract": "docs/reference/SNAPSHOT_CONSUMER_CONTRACT.md",
@@ -183,13 +199,13 @@
       "verify production snapshot signatures",
       "use a local cache with privacy controls",
       "integrate with a local relay sidecar",
-      "hand off to installers or package managers after action/download/install policy exists"
+    "hand off to installers or package managers only after action/download/install policy, security, rights/access, user-confirmation, and implementation work exists"
     ]
   },
   "created_by_slice": "native_client_contract_v0",
   "notes": [
     "Native Client Contract v0 is design, inventory, validation, and documentation only.",
-    "No Visual Studio project, Xcode project, native GUI app, native snapshot reader runtime, relay, FFI, installer automation, package-manager behavior, download automation, execution automation, live source probe, or Rust runtime wiring is implemented.",
+    "No Visual Studio project, Xcode project, native GUI app, native snapshot reader runtime, relay, FFI, installer automation, package-manager behavior, download automation, execution automation, malware scanning, rights clearance, live source probe, or Rust runtime wiring is implemented.",
     "CLI remains the only current native-like surface.",
     "Future native clients are super-clients over governed public data, snapshots, live handoff, and relay contracts, not website wrappers and not alternative truth engines."
   ]

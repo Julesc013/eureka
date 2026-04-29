@@ -14,6 +14,10 @@ Windows, macOS, or other native client project starts.
 - [ ] Build/test host for the selected lane is available.
 - [ ] Action, security, rights, download, and install policy exists before any
       install/open/download/restore automation.
+- [ ] Native Action / Download / Install Policy v0 has been reviewed for the
+      proposed lane and action class.
+- [ ] No malware safety claim, rights-clearance claim, or executable trust
+      claim is made without later evidence and policy.
 - [ ] Download policy has been reviewed.
 - [ ] Local cache and privacy policy has been reviewed.
 - [ ] Relay integration is explicitly in or out of scope.

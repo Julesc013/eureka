@@ -95,9 +95,12 @@ Native clients may eventually hand off to:
 - a restore/import workflow
 
 Those actions are prohibited until Native Action / Download / Install Policy v0
-or a successor exists. v0 native clients must not download executable
-artifacts, run installers, mutate package managers, restore system state, or
-claim executable trust.
+or a successor exists. That policy now defines safe read-only actions, bounded
+local fixture/manifest actions, future gated downloads and handoffs, executable
+risk warnings, rights/access labels, and user-confirmation requirements. v0
+native clients must not download executable artifacts, run installers, mutate
+package managers, restore system state, claim executable trust, claim malware
+safety, or claim rights clearance.
 
 ## Relay Integration
 

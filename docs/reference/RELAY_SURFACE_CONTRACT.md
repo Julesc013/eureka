@@ -90,6 +90,12 @@ The following must never be exposed through insecure old-client surfaces:
 - private caches by default
 - live probe controls
 - installer execution controls
+- executable download, mirror, package-manager handoff, or restore controls
+
+Native Action / Download / Install Policy v0 applies to future relay work. A
+relay may project read-only metadata, text, manifests, checksums, and snapshot
+summaries, but it must not expose download, install, execute, mirror, private
+upload, write/admin, or live-probe behavior to old or insecure clients.
 
 ## Versioning
 
