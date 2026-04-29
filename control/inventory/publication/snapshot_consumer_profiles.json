@@ -142,7 +142,7 @@
       "can_use_file_tree": true,
       "can_handle_private_data": false,
       "requires_live_backend": false,
-      "notes": "Future native client profile. It must not depend on engine internals and cannot claim production signature verification until real signing policy exists."
+      "notes": "Future native client profile. Native Client Contract v0 defines lane and input constraints; this profile must not depend on engine internals and cannot claim production signature verification until real signing policy exists."
     },
     {
       "id": "audit_tool_consumer",

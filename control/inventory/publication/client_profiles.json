@@ -187,15 +187,19 @@
       "must_support": [
         "schema-versioned data",
         "explicit public-alpha status",
-        "offline snapshot compatibility when available"
+        "offline snapshot compatibility when available",
+        "Native Client Contract v0 lane and input limits",
+        "checksum verification where snapshot consumption is in scope"
       ],
       "prohibited_dependencies": [
         "private engine internals",
         "undocumented JSON fields",
-        "implicit production-readiness claims"
+        "implicit production-readiness claims",
+        "installer automation before policy",
+        "download or execution automation before policy"
       ],
-      "current_support_level": "not implemented",
-      "notes": "Native app work remains deferred until public data/API/snapshot contracts mature; Compatibility Surface Strategy v0 points to the native-client readiness policy and keeps CLI as the current local native surface."
+      "current_support_level": "contract/design only; CLI is current local native-like surface",
+      "notes": "Native Client Contract v0 defines future Windows/macOS/native lanes, inputs, verification requirements, and prohibitions without implementing GUI clients, native projects, installer automation, FFI, relay sidecars, or runtime wiring."
     },
     {
       "id": "relay",

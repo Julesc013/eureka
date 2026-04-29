@@ -1,0 +1,212 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-native-client-lanes",
+  "status": "design_only",
+  "stability": "experimental",
+  "created_by_slice": "native_client_contract_v0",
+  "lanes": [
+    {
+      "lane_id": "windows_7_x64_winforms_net48",
+      "platform_family": "windows",
+      "target_os_range": "Windows 7 SP1+ x64",
+      "architecture": "x64",
+      "implementation_stack": "WinForms / .NET Framework 4.8 / VS 2022",
+      "status": "future",
+      "verification_status": "not_verified",
+      "first_allowed_scope": "read-only public data and snapshot inspection prototype after native contract review",
+      "prohibited_scope": [
+        "installer automation",
+        "download execution",
+        "package-manager mutation",
+        "private data by default",
+        "Rust FFI runtime"
+      ],
+      "depends_on": [
+        "native_client_contract_v0",
+        "signed_snapshot_consumer_contract_v0",
+        "native_action_download_install_policy_v0"
+      ],
+      "notes": "First pragmatic native GUI candidate, not implemented by this milestone."
+    },
+    {
+      "lane_id": "windows_xp_x86_win32_unicode",
+      "platform_family": "windows",
+      "target_os_range": "Windows XP SP3+ x86",
+      "architecture": "x86",
+      "implementation_stack": "Win32 Unicode / VS 2017 v141_xp",
+      "status": "lab_verify",
+      "verification_status": "toolchain_and_runtime_unverified",
+      "first_allowed_scope": "legacy rich client research with read-only public data and snapshot views",
+      "prohibited_scope": [
+        "modern TLS assumption",
+        "installer automation",
+        "download execution",
+        "private data by default",
+        "live backend requirement"
+      ],
+      "depends_on": [
+        "native_client_contract_v0",
+        "signed_snapshot_consumer_contract_v0",
+        "old_client_degradation_policy"
+      ],
+      "notes": "Legacy rich client candidate only; no project or build target exists."
+    },
+    {
+      "lane_id": "windows_95_nt4_x86_win32_ansi",
+      "platform_family": "windows",
+      "target_os_range": "Windows 95+ / NT4+ x86",
+      "architecture": "x86",
+      "implementation_stack": "Win32 ANSI / VS6-era",
+      "status": "lab_verify",
+      "verification_status": "toolchain_and_runtime_unverified",
+      "first_allowed_scope": "thin read-only file/text/snapshot browser research",
+      "prohibited_scope": [
+        "Unicode-only assumptions",
+        "modern TLS assumption",
+        "installer automation",
+        "download execution",
+        "private data by default",
+        "live backend requirement"
+      ],
+      "depends_on": [
+        "native_client_contract_v0",
+        "signed_snapshot_consumer_contract_v0",
+        "relay_surface_design_v0"
+      ],
+      "notes": "Lab-verify thin client candidate; not implemented."
+    },
+    {
+      "lane_id": "windows_win16_research",
+      "platform_family": "windows",
+      "target_os_range": "Windows 3.1 / Win16",
+      "architecture": "16-bit x86",
+      "implementation_stack": "Win16 research only",
+      "status": "research",
+      "verification_status": "not_verified",
+      "first_allowed_scope": "future research into text/file/snapshot display only",
+      "prohibited_scope": [
+        "native execution on x64 or ARM64 Windows",
+        "live backend requirement",
+        "installer automation",
+        "download execution",
+        "private data by default"
+      ],
+      "depends_on": [
+        "old_client_degradation_policy",
+        "relay_surface_design_v0"
+      ],
+      "notes": "Win16 does not run natively on x64/ARM64 Windows; this lane is future research only."
+    },
+    {
+      "lane_id": "windows_modern_winui_future",
+      "platform_family": "windows",
+      "target_os_range": "Windows 10/11 modern",
+      "architecture": "x64/arm64",
+      "implementation_stack": "WinUI / Windows App SDK future optional",
+      "status": "future_deferred",
+      "verification_status": "not_verified",
+      "first_allowed_scope": "future richer native client after simpler lanes and policies mature",
+      "prohibited_scope": [
+        "production claims",
+        "installer automation before policy",
+        "download execution",
+        "Rust runtime replacement",
+        "private data by default"
+      ],
+      "depends_on": [
+        "native_client_contract_v0",
+        "native_action_download_install_policy_v0"
+      ],
+      "notes": "Modern Windows lane remains optional and deferred."
+    },
+    {
+      "lane_id": "macos_10_6_10_15_intel_appkit",
+      "platform_family": "macos",
+      "target_os_range": "Mac OS X 10.6-10.15 Intel",
+      "architecture": "i386+x86_64",
+      "implementation_stack": "AppKit / Objective-C / Xcode 9.4-or-earlier lab-verify",
+      "status": "lab_verify",
+      "verification_status": "toolchain_matrix_unverified",
+      "first_allowed_scope": "legacy Intel Mac read-only public data and snapshot client candidate",
+      "prohibited_scope": [
+        "Catalina-only assumptions",
+        "installer automation",
+        "download execution",
+        "private data by default",
+        "live backend requirement"
+      ],
+      "depends_on": [
+        "native_client_contract_v0",
+        "signed_snapshot_consumer_contract_v0"
+      ],
+      "notes": "Catalina does not force a split by itself, but the exact 10.6-10.15 i386+x86_64 toolchain remains lab-verify."
+    },
+    {
+      "lane_id": "macos_11_plus_modern",
+      "platform_family": "macos",
+      "target_os_range": "macOS 11+",
+      "architecture": "x86_64/arm64",
+      "implementation_stack": "Modern AppKit or SwiftUI future optional",
+      "status": "future_deferred",
+      "verification_status": "not_verified",
+      "first_allowed_scope": "future modern macOS client after native policy and simpler contracts mature",
+      "prohibited_scope": [
+        "production claims",
+        "installer automation before policy",
+        "download execution",
+        "private data by default",
+        "Rust runtime replacement"
+      ],
+      "depends_on": [
+        "native_client_contract_v0",
+        "native_action_download_install_policy_v0"
+      ],
+      "notes": "Modern macOS lane remains optional and deferred."
+    },
+    {
+      "lane_id": "macos_10_4_10_5_ppc_intel_research",
+      "platform_family": "macos",
+      "target_os_range": "Mac OS X 10.4-10.5 PPC/i386",
+      "architecture": "PowerPC/i386",
+      "implementation_stack": "AppKit / Objective-C research",
+      "status": "research",
+      "verification_status": "not_verified",
+      "first_allowed_scope": "read-only snapshot/text/file display research",
+      "prohibited_scope": [
+        "modern TLS assumption",
+        "installer automation",
+        "download execution",
+        "live backend requirement",
+        "private data by default"
+      ],
+      "depends_on": [
+        "old_client_degradation_policy",
+        "signed_snapshot_consumer_contract_v0",
+        "relay_surface_design_v0"
+      ],
+      "notes": "Research/lab lane only; no project or build target exists."
+    },
+    {
+      "lane_id": "classic_mac_7_1_9_2_research",
+      "platform_family": "classic_mac",
+      "target_os_range": "Mac OS 7.1-9.2.2 Classic",
+      "architecture": "68k/PPC",
+      "implementation_stack": "CodeWarrior 68k/PPC future research",
+      "status": "research",
+      "verification_status": "not_verified",
+      "first_allowed_scope": "future text/file/snapshot display research only",
+      "prohibited_scope": [
+        "modern TLS assumption",
+        "live backend requirement",
+        "installer automation",
+        "download execution",
+        "private data by default"
+      ],
+      "depends_on": [
+        "old_client_degradation_policy",
+        "relay_surface_design_v0"
+      ],
+      "notes": "Classic Mac lane is future research only and not implemented."
+    }
+  ]
+}

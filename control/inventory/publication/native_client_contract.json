@@ -1,0 +1,196 @@
+{
+  "schema_version": "0.1.0",
+  "native_client_contract_id": "eureka-native-client-contract",
+  "status": "design_only",
+  "stability": "experimental",
+  "native_gui_implemented": false,
+  "cli_surface_implemented": true,
+  "first_candidate_lane": "windows_7_x64_winforms_net48",
+  "required_inputs": [
+    {
+      "id": "public_data_summaries",
+      "path": "public_site/data/",
+      "status": "implemented_static_input",
+      "required_for_minimum_client": true
+    },
+    {
+      "id": "snapshot_consumer_contract",
+      "path": "control/inventory/publication/snapshot_consumer_contract.json",
+      "status": "implemented_contract",
+      "required_for_minimum_client": true
+    },
+    {
+      "id": "snapshot_seed_example",
+      "path": "snapshots/examples/static_snapshot_v0/",
+      "status": "implemented_seed_example",
+      "required_for_minimum_client": false
+    },
+    {
+      "id": "client_profile_contract",
+      "path": "control/inventory/publication/client_profiles.json",
+      "status": "implemented_contract",
+      "required_for_minimum_client": true
+    }
+  ],
+  "optional_inputs": [
+    {
+      "id": "future_live_backend",
+      "path": "/api/v1/",
+      "status": "future_disabled",
+      "notes": "Native clients may consume live backend responses only after Live Backend Handoff Contract policies and a hosted backend exist."
+    },
+    {
+      "id": "future_relay",
+      "path": "local_or_lan_relay_future",
+      "status": "future_deferred",
+      "notes": "Relay integration remains optional and future; no relay runtime exists."
+    },
+    {
+      "id": "future_production_snapshots",
+      "path": "/snapshots/",
+      "status": "future_deferred",
+      "notes": "Production signed snapshots require signing/key policy and release provenance before native clients can claim authenticity."
+    }
+  ],
+  "prohibited_behaviors_v0": [
+    "Visual Studio project creation",
+    "Xcode project creation",
+    "native GUI implementation",
+    "installer automation",
+    "package-manager behavior",
+    "download automation",
+    "execution automation",
+    "native snapshot reader runtime",
+    "relay runtime",
+    "FFI binding",
+    "Rust runtime wiring",
+    "live source probes",
+    "external API calls",
+    "URL fetching",
+    "scraping",
+    "arbitrary local filesystem ingestion",
+    "private data by default",
+    "production readiness claims",
+    "production signing or real key material"
+  ],
+  "required_verification_behaviors": [
+    "verify native GUI implemented flags remain false",
+    "verify CLI is described as the current local native-like surface",
+    "verify public data and snapshot consumer dependencies exist",
+    "verify future GUI lanes remain future, deferred, or lab-verify",
+    "verify no Visual Studio or Xcode project files are introduced",
+    "verify install, download, and execution automation remain policy-blocked",
+    "verify Rust remains parity-only and unwired"
+  ],
+  "allowed_actions_future": [
+    "search, browse, and inspect public results",
+    "display evidence and provenance",
+    "open or import static snapshots after consumer contract review",
+    "verify checksums and future signatures",
+    "maintain local cache after privacy policy exists",
+    "hand off to package managers or installers after action, rights, and security policy exists",
+    "integrate with a relay after relay prototype planning and operator signoff"
+  ],
+  "disallowed_actions_until_policy": [
+    "download executable artifacts",
+    "run installers",
+    "install software",
+    "restore system state",
+    "modify package manager state",
+    "open private local paths",
+    "collect private user history",
+    "send telemetry",
+    "probe live sources",
+    "serve a relay sidecar"
+  ],
+  "snapshot_dependency": {
+    "format_contract": "docs/reference/SNAPSHOT_FORMAT_CONTRACT.md",
+    "consumer_contract": "docs/reference/SNAPSHOT_CONSUMER_CONTRACT.md",
+    "consumer_profiles": "control/inventory/publication/snapshot_consumer_profiles.json",
+    "seed_example": "snapshots/examples/static_snapshot_v0/",
+    "required_before_native_snapshot_runtime": true,
+    "production_signing_required_before_authenticity_claims": true
+  },
+  "public_data_dependency": {
+    "path": "public_site/data/",
+    "status": "implemented_static_summaries",
+    "stable_production_api": false,
+    "notes": "Native clients may read static public data summaries, but must not treat them as a live production API."
+  },
+  "live_backend_dependency": {
+    "contract": "control/inventory/publication/live_backend_handoff.json",
+    "status": "future_disabled",
+    "api_prefix": "/api/v1/",
+    "native_client_must_check_capability_flags": true,
+    "production_api_guarantee": false
+  },
+  "relay_dependency": {
+    "contract": "control/inventory/publication/relay_surface.json",
+    "status": "future_deferred",
+    "native_sidecar_implemented": false,
+    "operator_signoff_required": true
+  },
+  "rust_dependency_status": {
+    "status": "parity_only_unwired",
+    "python_remains_oracle": true,
+    "native_ffi_implemented": false,
+    "production_rust_backend": false,
+    "notes": "Rust source-registry/query-planner/local-index work remains isolated parity or planning and is not a native SDK or FFI dependency."
+  },
+  "python_oracle_status": {
+    "status": "active_reference",
+    "native_clients_must_not_replace_oracle": true,
+    "notes": "Future clients consume governed public data, snapshot, API, or relay contracts rather than engine internals."
+  },
+  "client_lane_policy": {
+    "all_gui_lanes_future": true,
+    "first_candidate_lane": "windows_7_x64_winforms_net48",
+    "lane_inventory": "control/inventory/publication/native_client_lanes.json",
+    "no_lane_implemented_by_v0": true,
+    "minimum_lane_statuses": [
+      "future",
+      "future_deferred",
+      "lab_verify",
+      "research"
+    ]
+  },
+  "minimum_native_client_profile": {
+    "profile_id": "minimum_native_client",
+    "requires_live_backend": false,
+    "requires_relay": false,
+    "requires_javascript": false,
+    "required_capabilities": [
+      "read static public data summaries",
+      "display non-production and capability status",
+      "open a snapshot directory only after following the snapshot consumer contract",
+      "verify checksums where supported",
+      "display evidence and provenance without rewriting truth"
+    ],
+    "must_not_do": [
+      "download or execute software",
+      "claim production readiness",
+      "consume private data by default",
+      "depend on engine internals"
+    ]
+  },
+  "full_native_client_profile": {
+    "profile_id": "future_full_native_client",
+    "requires_live_backend": false,
+    "requires_relay": false,
+    "requires_operator_signoff_for_live_or_relay": true,
+    "future_capabilities_after_policy": [
+      "consume live backend handoff responses",
+      "verify production snapshot signatures",
+      "use a local cache with privacy controls",
+      "integrate with a local relay sidecar",
+      "hand off to installers or package managers after action/download/install policy exists"
+    ]
+  },
+  "created_by_slice": "native_client_contract_v0",
+  "notes": [
+    "Native Client Contract v0 is design, inventory, validation, and documentation only.",
+    "No Visual Studio project, Xcode project, native GUI app, native snapshot reader runtime, relay, FFI, installer automation, package-manager behavior, download automation, execution automation, live source probe, or Rust runtime wiring is implemented.",
+    "CLI remains the only current native-like surface.",
+    "Future native clients are super-clients over governed public data, snapshots, live handoff, and relay contracts, not website wrappers and not alternative truth engines."
+  ]
+}

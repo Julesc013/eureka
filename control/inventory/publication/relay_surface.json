@@ -254,7 +254,8 @@
     "Rust Source Registry Parity Catch-up v0",
     "Rust Local Index Parity Planning v0",
     "Signed Snapshot Consumer Contract v0",
-    "Native Client Contract v0"
+    "Native Client Contract v0",
+    "Native Action / Download / Install Policy v0"
   ],
   "created_by_slice": "relay_surface_design_v0",
   "notes": [
@@ -262,6 +263,7 @@
     "No relay runtime, socket listener, or protocol server is introduced.",
     "The relay remains future/deferred in surface capability and route matrices.",
     "Snapshots, lite, text, files, and public data are the current compatibility path.",
+    "Native Client Contract v0 is required before any native sidecar or native relay control surface.",
     "Manual Observation Batch 0 remains human-operated parallel work.",
     "Internet Archive live probe work remains gated by explicit human approval and live probe gateway review."
   ]
