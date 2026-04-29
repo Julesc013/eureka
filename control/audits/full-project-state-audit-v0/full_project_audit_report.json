@@ -1,0 +1,252 @@
+{
+  "report_id": "full_project_state_audit_v0",
+  "created_by_slice": "full_project_state_audit_v0",
+  "repo": "Julesc013/eureka",
+  "branch": "main",
+  "commit_sha": "57e8fa654d32ef88e8884092315e215eea4a2a28",
+  "git_status": "## main...origin/main",
+  "origin_sync_status": "synced",
+  "report_scope": "Full repo-state audit after backend, source, eval, publication, snapshot, relay, native-policy, native-planning, and Rust-parity planning sequence through Relay Prototype Planning v0.",
+  "milestone_counts": {
+    "implemented": 35,
+    "contract_only": 10,
+    "planning_only": 4,
+    "future_deferred": 7,
+    "blocked": 6,
+    "human_operated": 3,
+    "seed_example": 1
+  },
+  "verification_summary": {
+    "passed_count": 81,
+    "failed_count": 0,
+    "unavailable_count": 3,
+    "skipped_count": 0,
+    "unavailable_commands": [
+      "cargo --version",
+      "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "cargo test --workspace --manifest-path crates/Cargo.toml"
+    ]
+  },
+  "eval_status": {
+    "archive_resolution": {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "passed",
+      "task_count": 6,
+      "status_counts": {
+        "satisfied": 6
+      },
+      "hard_eval_weakened": false
+    },
+    "search_usefulness": {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "passed",
+      "query_count": 64,
+      "eureka_status_counts": {
+        "capability_gap": 9,
+        "covered": 5,
+        "partial": 22,
+        "source_gap": 26,
+        "unknown": 2
+      },
+      "top_failure_modes": {
+        "source_coverage_gap": 49,
+        "compatibility_evidence_gap": 25,
+        "planner_gap": 24,
+        "query_interpretation_gap": 21,
+        "representation_gap": 14,
+        "decomposition_gap": 12,
+        "member_access_gap": 12,
+        "live_source_gap": 10
+      }
+    }
+  },
+  "search_usefulness_status": {
+    "comparison_report_eligible": false,
+    "reason": "External baseline observed count is zero."
+  },
+  "external_baseline_status": {
+    "status": "ready",
+    "query_count": 64,
+    "systems": [
+      "google_web_search",
+      "internet_archive_full_text_search",
+      "internet_archive_metadata_search"
+    ],
+    "global_pending_slots": 192,
+    "global_observed_slots": 0,
+    "batch_0_pending_slots": 39,
+    "batch_0_observed_slots": 0,
+    "comparison_report_eligible": false
+  },
+  "publication_status": {
+    "publication_inventory": "valid",
+    "registered_routes": 43,
+    "public_site_pages": 8,
+    "client_profiles": 9,
+    "public_data_paths": 10,
+    "current_static_artifact": "public_site",
+    "generated_site_output": "site/dist",
+    "github_pages_artifact_check": "valid",
+    "github_pages_deployment_status": "workflow_configured_deployment_unverified"
+  },
+  "public_alpha_status": {
+    "wrapper_config": "valid",
+    "smoke": "13/13 passed",
+    "deployment_approved": false,
+    "deployment_performed": false,
+    "production_ready": false,
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "local_paths_enabled": false
+  },
+  "live_backend_status": {
+    "status": "contract_only",
+    "reserved_endpoints": 11,
+    "registered_endpoints": 11,
+    "implemented": false
+  },
+  "live_probe_status": {
+    "status": "contract_only_disabled",
+    "candidate_sources": 9,
+    "disabled_sources": 9,
+    "implemented": false,
+    "network_calls_performed": false
+  },
+  "snapshot_status": {
+    "format_status": "contract_seed_example",
+    "seed_root": "snapshots/examples/static_snapshot_v0",
+    "file_count": 12,
+    "checksum_entries": 11,
+    "consumer_contract_status": "contract_only",
+    "production_signed_release": false,
+    "real_signing_keys_present": false,
+    "consumer_runtime_implemented": false
+  },
+  "relay_status": {
+    "surface_design": "valid_contract_only",
+    "prototype_plan": "planning_only",
+    "recommended_first_prototype": "local_static_http_relay_prototype",
+    "implementation_approved": false,
+    "human_approval_required": true,
+    "runtime_implemented": false,
+    "network_sockets_opened": false,
+    "protocol_servers_implemented": false
+  },
+  "native_status": {
+    "cli_surface_implemented": true,
+    "gui_native_implemented": false,
+    "first_candidate_lane": "windows_7_x64_winforms_net48",
+    "readiness_decision": "ready_for_minimal_project_skeleton_after_human_approval",
+    "winforms_planning_status": "planning_only",
+    "human_approval_required": true,
+    "visual_studio_or_xcode_projects_added": false
+  },
+  "rust_status": {
+    "python_remains_oracle": true,
+    "runtime_wiring": "not_wired",
+    "source_registry_structure_check": "passed_cargo_unavailable",
+    "query_planner_structure_check": "passed_cargo_unavailable",
+    "local_index_parity_plan": "passed",
+    "cargo_available": false,
+    "cargo_check_status": "unavailable",
+    "cargo_test_status": "unavailable"
+  },
+  "privacy_security_action_policy_status": {
+    "action_policy": "valid",
+    "current_safe_actions": 9,
+    "current_bounded_actions": 4,
+    "future_gated_actions": 15,
+    "prohibited_actions": 9,
+    "local_cache_privacy_policy": "valid",
+    "privacy_default": "local_private_off_by_default",
+    "cache_runtime_implemented": false,
+    "private_ingestion_implemented": false,
+    "telemetry_implemented": false,
+    "accounts_implemented": false,
+    "cloud_sync_implemented": false
+  },
+  "source_status": {
+    "source_count": 9,
+    "status_counts": {
+      "active_fixture": 2,
+      "active_recorded_fixture": 3,
+      "placeholder": 3,
+      "local_private_future": 1
+    },
+    "live_supported_count": 0,
+    "live_probes_disabled": true
+  },
+  "risks": [
+    "public route/data contract drift",
+    "generated artifact drift",
+    "static site/publication mismatch",
+    "external baseline fabrication",
+    "source placeholder overclaiming",
+    "live probe overreach",
+    "native implementation before approval",
+    "download/install overreach",
+    "privacy/path leakage",
+    "Rust parity drift",
+    "Cargo unavailable",
+    "GitHub Actions deployment unverified",
+    "snapshot checksum/signature misunderstanding",
+    "relay/private-data exposure risk",
+    "docs/test registry drift"
+  ],
+  "blockers": [
+    "Cargo unavailable for Rust workspace checks",
+    "Manual external baseline comparison blocked until human observations exist",
+    "Native skeleton implementation blocked pending explicit human approval",
+    "Relay prototype implementation blocked pending explicit human approval",
+    "Internet Archive live probe blocked pending explicit approval and gateway review",
+    "Hosted public-alpha rehearsal blocked pending operator signoff and checked Actions/Pages evidence"
+  ],
+  "next_recommended_milestones": [
+    "Public Data Contract Stability Review v0",
+    "Generated Artifact Drift Guard v0",
+    "Snapshot Consumer Tooling Plan v0",
+    "Search Usefulness Source Expansion v2, fixture-only",
+    "Rust Local Index Parity Candidate v0 only after review and Cargo availability",
+    "Public Static Artifact Promotion Review v0",
+    "GitHub Pages Run Evidence Review v0, human-assisted",
+    "Public Alpha Hosted Rehearsal Plan v0, operator-signoff only",
+    "Windows 7 WinForms Native Skeleton Implementation v0 only after explicit human approval",
+    "Relay Prototype Implementation v0 only after explicit human approval"
+  ],
+  "human_operated_parallel_work": [
+    "Manual Observation Batch 0 Execution",
+    "GitHub Actions/Pages run review",
+    "Cargo/toolchain setup or CI review",
+    "Native implementation approval decision",
+    "Relay implementation approval decision",
+    "Live probe approval decision"
+  ],
+  "explicit_deferrals": [
+    "No relay runtime, sockets, or protocol servers",
+    "No native GUI projects or Visual Studio/Xcode scaffolding without explicit approval",
+    "No downloads, installers, package-manager integration, or executable launch",
+    "No live probes, Internet Archive calls, Google scraping, URL fetching, or external API automation",
+    "No local cache runtime, private file ingestion, telemetry, accounts, or cloud sync",
+    "No production signing, real signing keys, production deployment approval, or rights/malware safety claims"
+  ],
+  "immediate_next_codex_prompt": "Public Data Contract Stability Review v0",
+  "github_actions_status": "unverified",
+  "notes": [
+    "This audit is governance/reporting only and adds no product behavior.",
+    "The audited base commit is the synced main commit before this audit pack was added.",
+    "GitHub Actions workflow status was not checked; only local static artifact readiness was checked."
+  ],
+  "command_results": [
+    {"command": "git status --short --branch", "status": "passed", "summary": "## main...origin/main"},
+    {"command": "python scripts/validate_full_project_state_audit.py", "status": "passed", "summary": "23 required audit files checked"},
+    {"command": "python scripts/validate_full_project_state_audit.py --json", "status": "passed", "summary": "JSON output parsed with no errors"},
+    {"command": "python -m unittest tests.operations.test_full_project_state_audit tests.scripts.test_validate_full_project_state_audit", "status": "passed", "summary": "6 focused audit tests passed"},
+    {"command": "python -m unittest discover -s tests -t .", "status": "passed", "summary": "471 tests passed"},
+    {"command": "python scripts/run_archive_resolution_evals.py", "status": "passed", "summary": "6 tasks; satisfied=6"},
+    {"command": "python scripts/run_search_usefulness_audit.py", "status": "passed", "summary": "64 queries; covered=5, partial=22, source_gap=26, capability_gap=9, unknown=2"},
+    {"command": "python scripts/public_alpha_smoke.py", "status": "passed", "summary": "13/13 checks passed"},
+    {"command": "python scripts/validate_external_baseline_observations.py", "status": "passed", "summary": "192 pending; 0 observed"},
+    {"command": "python scripts/check_rust_source_registry_parity.py", "status": "passed", "summary": "structure passed; Cargo unavailable"},
+    {"command": "cargo check --workspace --manifest-path crates/Cargo.toml", "status": "unavailable", "summary": "Cargo is not available in PATH"}
+  ]
+}
