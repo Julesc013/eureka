@@ -77,13 +77,16 @@ unknowns into positives.
 
 ## Local Cache Policy
 
-Local cache is future policy work. A future cache may store public data,
-snapshot validation results, and user-selected public artifacts only after
-privacy and storage policy exists.
+Native Local Cache / Privacy Policy v0 now defines the future privacy and cache
+contract. A future cache may store public data, snapshot validation results,
+and user-selected public artifacts only after implementation review. Private
+cache remains explicit opt-in future work.
 
 Private data is disabled by default. Native clients must not collect private
-user history, private local paths, account/session data, or telemetry without a
-separate explicit policy and operator/user consent.
+user history, private local paths, account/session data, telemetry, diagnostics
+uploads, source credentials, or cloud sync without separate explicit policy and
+user consent. Native clients must not scan local archives or private user
+folders by default.
 
 ## Handoff And Install Policy
 

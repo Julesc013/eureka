@@ -222,6 +222,14 @@
     "private_uploads_enabled": false,
     "notes": "Native Action / Download / Install Policy v0 keeps relay projections read-only by default and prohibits download, install, execute, mirror, private-upload, write/admin, or live-probe actions for old/insecure clients."
   },
+  "local_cache_privacy_policy_dependency": {
+    "policy": "control/inventory/publication/local_cache_privacy_policy.json",
+    "status": "policy_only",
+    "private_data_through_old_clients_by_default": false,
+    "telemetry_enabled": false,
+    "credentials_to_old_clients": false,
+    "notes": "Native Local Cache / Privacy Policy v0 keeps private cache, local paths, credentials, user history, telemetry, diagnostics, and uploads out of relay/old-client surfaces by default."
+  },
   "operator_controls_required": [
     "choose local host",
     "choose network scope",
@@ -251,7 +259,9 @@
     "no private local paths by default",
     "no account or session data over insecure transports",
     "logs must avoid private queries or paths unless a future policy explicitly permits them",
-    "local cache exposure requires separate operator signoff"
+    "local cache exposure requires separate operator signoff",
+    "private cache exposure requires Native Local Cache / Privacy Policy v0 plus future implementation review",
+    "telemetry and diagnostics upload remain disabled by default"
   ],
   "client_profiles": [
     "relay",

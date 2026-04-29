@@ -136,6 +136,15 @@
     "rights_clearance_claimed": false,
     "notes": "Native Action / Download / Install Policy v0 says snapshots may be inspected, read, previewed, and checksum-verified, but snapshot presence is not permission to download, mirror, install, execute, restore, or claim rights clearance."
   },
+  "local_cache_privacy_policy_dependency": {
+    "policy": "control/inventory/publication/local_cache_privacy_policy.json",
+    "status": "policy_only",
+    "snapshots_include_private_data": false,
+    "snapshots_include_secrets": false,
+    "telemetry_enabled": false,
+    "private_cache_runtime_implemented": false,
+    "notes": "Native Local Cache / Privacy Policy v0 keeps snapshots public/offline and excludes private cache, local paths, credentials, telemetry, account data, and private user history."
+  },
   "client_profiles": [
     "minimal_file_tree_consumer",
     "text_snapshot_consumer",

@@ -1,0 +1,167 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eureka-native-local-cache-privacy-policy",
+  "status": "policy_only",
+  "stability": "experimental",
+  "no_cache_runtime_implemented": true,
+  "no_private_ingestion_implemented": true,
+  "no_telemetry_implemented": true,
+  "no_accounts_implemented": true,
+  "no_cloud_sync_implemented": true,
+  "privacy_default": "local_private_off_by_default",
+  "public_cache_policy": {
+    "status": "future_policy_only",
+    "allowed_future_contents": [
+      "static public data summaries",
+      "snapshot manifests",
+      "checksum verification results",
+      "public source and eval summaries",
+      "public route and page summaries"
+    ],
+    "must_not_contain": [
+      "private user files",
+      "private local paths",
+      "credentials",
+      "account/session data",
+      "telemetry payloads"
+    ],
+    "enabled_by_default_in_v0": false,
+    "notes": "A future public cache may store already-public metadata separately from private/user-selected data, but no cache runtime exists."
+  },
+  "private_cache_policy": {
+    "status": "future_explicit_opt_in_only",
+    "enabled_by_default": false,
+    "requires_user_selected_root": true,
+    "requires_clear_reset_export_controls": true,
+    "requires_private_path_redaction_for_public_reports": true,
+    "future_encryption_policy_required": true,
+    "notes": "Private cache is not implemented. Any future private cache requires explicit user choice, privacy review, and deletion/export controls."
+  },
+  "local_path_policy": {
+    "private_paths_in_public_reports": false,
+    "caller_supplied_paths_in_public_alpha": false,
+    "absolute_paths_in_snapshots": false,
+    "path_examples_must_be_placeholders": true,
+    "notes": "Public-alpha status and static/public artifacts must not expose private local paths."
+  },
+  "user_state_policy": {
+    "preferences_future": true,
+    "strategy_memory_future": true,
+    "private_history_enabled_by_default": false,
+    "accounts_required": false,
+    "cloud_identity_required": false,
+    "notes": "Future native preferences or strategy memory must remain local and explicit unless a later account/sync policy exists."
+  },
+  "resolution_memory_policy": {
+    "current_runtime_exists": true,
+    "public_alpha_exposes_memory_routes": false,
+    "native_private_memory_future_only": true,
+    "must_redact_private_paths": true,
+    "notes": "Existing resolution-memory runtime remains local developer/reference behavior. Native private memory requires this policy and future implementation review."
+  },
+  "telemetry_policy": {
+    "implemented": false,
+    "default_enabled": false,
+    "analytics_enabled": false,
+    "external_uploads_enabled": false,
+    "crash_report_uploads_enabled": false,
+    "future_opt_in_required": true,
+    "notes": "No telemetry, analytics, diagnostics upload, or crash-report upload exists in v0."
+  },
+  "logging_policy": {
+    "status": "local_developer_logs_only",
+    "avoid_private_paths": true,
+    "avoid_secrets": true,
+    "public_alpha_must_not_expose_private_paths": true,
+    "retention_policy_future": true,
+    "notes": "Logs are not telemetry. Future native logs need retention, redaction, and user controls."
+  },
+  "diagnostics_policy": {
+    "implemented": false,
+    "default_upload_enabled": false,
+    "future_explicit_user_export_only": true,
+    "must_redact_private_paths_and_secrets": true,
+    "notes": "Diagnostics and crash reports are future and must be explicit user exports, not automatic uploads."
+  },
+  "credential_policy": {
+    "source_credentials_supported": false,
+    "credentials_in_snapshots": false,
+    "credentials_in_public_data": false,
+    "credentials_to_relay_old_clients": false,
+    "credential_export_allowed": false,
+    "notes": "No credential store exists. Future source credentials require a separate auth/secrets policy."
+  },
+  "deletion_reset_policy": {
+    "future_required_controls": [
+      "clear public cache",
+      "clear private cache",
+      "clear local preferences",
+      "clear local resolution memory",
+      "clear local diagnostics",
+      "reset portable mode state"
+    ],
+    "implemented_now": false,
+    "notes": "Deletion/reset controls are required before any native private cache implementation."
+  },
+  "export_policy": {
+    "future_user_export_allowed": "explicit_user_selected_only",
+    "public_report_must_redact_private_paths": true,
+    "no_automatic_uploads": true,
+    "notes": "Future exports must be user-initiated and distinguish public metadata from private state."
+  },
+  "portable_mode_policy": {
+    "status": "future_contract_only",
+    "portable_roots_user_controlled": true,
+    "must_not_write_outside_selected_root": true,
+    "must_support_offline_snapshots": true,
+    "must_keep_private_state_out_of_public_snapshots": true,
+    "notes": "Portable/offline mode is future; it must keep cache roots explicit and resettable."
+  },
+  "relay_policy": {
+    "private_data_through_old_clients_by_default": false,
+    "old_client_private_relay_allowed": false,
+    "credentials_to_old_clients": false,
+    "public_read_only_default": true,
+    "notes": "Relay surfaces remain public/read-only by default and must not expose private cache, credentials, user history, or write/admin controls to old clients."
+  },
+  "snapshot_policy": {
+    "snapshots_include_private_data": false,
+    "snapshots_include_secrets": false,
+    "snapshots_include_accounts": false,
+    "snapshots_include_telemetry": false,
+    "notes": "Static snapshots remain public/offline artifacts and must not contain private cache or user state."
+  },
+  "native_client_requirements": [
+    "Native clients must keep private cache, telemetry, accounts, cloud sync, and private file ingestion disabled by default.",
+    "Native clients must separate public cache from private cache.",
+    "Native clients must require user-selected cache roots before writing private state.",
+    "Native clients must provide clear deletion, reset, and export controls before private cache implementation.",
+    "Native clients must avoid private local paths in public reports, snapshots, static pages, relay views, and support artifacts.",
+    "Native clients must not upload logs, diagnostics, crash reports, private inventories, or source credentials unless a future explicit opt-in policy exists."
+  ],
+  "prohibited_behaviors": [
+    "automatic_local_archive_scan",
+    "private_file_ingestion_by_default",
+    "private_uploads",
+    "send_private_inventory",
+    "telemetry_by_default",
+    "analytics_by_default",
+    "crash_report_upload_by_default",
+    "cloud_sync_by_default",
+    "account_creation_without_policy",
+    "public_path_leakage",
+    "absolute_private_paths_in_public_reports",
+    "secrets_in_snapshots_or_public_data",
+    "credential_export",
+    "credential_storage_without_policy",
+    "old_client_private_relay",
+    "private_data_over_insecure_transport"
+  ],
+  "created_by_slice": "native_local_cache_privacy_policy_v0",
+  "notes": [
+    "Native Local Cache / Privacy Policy v0 is policy, contract, validation, and documentation only.",
+    "No cache runtime, private file ingestion, local archive scanning, telemetry, accounts, cloud sync, uploads, native client, relay runtime, or GUI behavior is implemented.",
+    "The default posture is privacy-first: local/private features are off by default and public artifacts must not leak private paths or secrets.",
+    "This policy gates future native cache, relay private-data handling, diagnostics, portable mode, and local/offline client work."
+  ]
+}

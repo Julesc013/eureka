@@ -201,6 +201,11 @@ Consumers must not use a snapshot as permission to fetch URLs, scrape external
 sources, ingest arbitrary local filesystem roots, run installers, or expose
 private paths.
 
+Consumers must not treat a snapshot as private cache. Native Local Cache /
+Privacy Policy v0 keeps snapshots public/offline and excludes private cache,
+private local paths, credentials, telemetry, account data, diagnostics, and
+private user history from snapshot contents.
+
 ## Not Implemented
 
 This contract does not implement:

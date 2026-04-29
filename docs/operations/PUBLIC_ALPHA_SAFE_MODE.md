@@ -104,6 +104,11 @@ byte fetch, install handoff, package-manager handoff, mirrors, execution,
 malware scanning, rights-clearance claims, private uploads, or system-changing
 actions.
 
+Native Local Cache / Privacy Policy v0 keeps public-alpha privacy posture
+closed by default. Public-alpha does not enable private cache, private file
+ingestion, local archive scanning, telemetry, analytics, accounts, cloud sync,
+diagnostics upload, source credentials, or private path exposure.
+
 ## Still Not Production
 
 Public Alpha Safe Mode v0 does not settle:
@@ -114,6 +119,8 @@ Public Alpha Safe Mode v0 does not settle:
 - abuse controls
 - audit logging
 - private user storage
+- private cache or private file ingestion
+- telemetry, analytics, diagnostics upload, accounts, or cloud sync
 - production deployment
 - live source sync or crawling
 - live source probes or live Internet Archive calls

@@ -59,8 +59,9 @@ implementation work exists:
 
 Future gating requires at minimum source/provenance display, rights/access
 posture, hash/checksum availability, executable-risk warnings, explicit user
-confirmation, operator signoff where relevant, and tests that prove disabled
-defaults remain disabled.
+confirmation, privacy/local-cache review where private state is involved,
+operator signoff where relevant, and tests that prove disabled defaults remain
+disabled.
 
 ## Prohibited Actions
 
@@ -74,6 +75,8 @@ them:
 - writes to system paths
 - uploading private files
 - sending private inventory
+- automatic local archive scanning
+- telemetry by default
 - bypassing rights warnings
 - bypassing hash warnings
 
@@ -138,6 +141,10 @@ live action endpoint.
 Future native clients must implement this policy before any download, install
 handoff, package-manager handoff, mirror, execute, restore, uninstall, or
 rollback behavior.
+
+Native Local Cache / Privacy Policy v0 must also be followed before any private
+cache, private upload, diagnostics upload, source credential handling, local
+archive scanning, account state, telemetry, or cloud sync behavior.
 
 Snapshot consumers may inspect, read, preview, and verify checksums. Snapshot
 consumption is not permission to download, install, execute, mirror, or restore

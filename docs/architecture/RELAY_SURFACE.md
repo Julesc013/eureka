@@ -52,6 +52,11 @@ live backend:
 
 The relay should not import engine internals or create a separate truth model.
 
+Native Local Cache / Privacy Policy v0 keeps future relay projections
+public/read-only by default. A relay must not expose private cache, private
+local paths, credentials, user history, diagnostics, telemetry, account/session
+state, or private uploads to old or insecure clients by default.
+
 ## Future Protocol Candidates
 
 Future protocol candidates are recorded in

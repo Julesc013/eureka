@@ -235,6 +235,7 @@
       "allowed_now": false,
       "requires_policy": [
         "privacy_policy",
+        "local_cache_privacy_policy",
         "auth_policy",
         "abuse_controls",
         "operator_signoff"
@@ -316,6 +317,14 @@
     "Native clients must not claim malware safety, executable trust, or rights clearance unless future evidence and policy explicitly support that claim.",
     "Native clients must keep download, mirror, execute, installer, package-manager, restore, uninstall, and rollback actions disabled until future policy and implementation exist."
   ],
+  "local_cache_privacy_policy_dependency": {
+    "policy": "control/inventory/publication/local_cache_privacy_policy.json",
+    "status": "policy_only",
+    "private_uploads_enabled": false,
+    "telemetry_enabled": false,
+    "automatic_local_scan_enabled": false,
+    "notes": "Native Local Cache / Privacy Policy v0 governs future private uploads, diagnostics, cache roots, user state, local path redaction, and telemetry posture."
+  },
   "snapshot_consumer_requirements": [
     "Snapshot consumers may inspect, preview, read, and verify checksums.",
     "Snapshot consumers must not treat snapshot presence as permission to download, install, mirror, execute, or restore software.",

@@ -100,6 +100,8 @@
     "open private local paths",
     "collect private user history",
     "send telemetry",
+    "write private cache by default",
+    "upload logs or diagnostics by default",
     "probe live sources",
     "serve a relay sidecar"
   ],
@@ -118,6 +120,21 @@
     "malware_scanning_claimed": false,
     "rights_clearance_claimed": false,
     "notes": "Native Action / Download / Install Policy v0 is required before any native download, install handoff, package-manager handoff, mirror, execute, restore, uninstall, or rollback behavior."
+  },
+  "local_cache_privacy_policy_dependency": {
+    "policy": "control/inventory/publication/local_cache_privacy_policy.json",
+    "documents": [
+      "docs/reference/LOCAL_CACHE_PRIVACY_POLICY.md",
+      "docs/reference/NATIVE_LOCAL_CACHE_CONTRACT.md",
+      "docs/reference/TELEMETRY_AND_LOGGING_POLICY.md"
+    ],
+    "status": "policy_only",
+    "local_cache_runtime_implemented": false,
+    "private_ingestion_implemented": false,
+    "telemetry_implemented": false,
+    "accounts_implemented": false,
+    "cloud_sync_implemented": false,
+    "notes": "Native Local Cache / Privacy Policy v0 is required before any native local cache, private cache, telemetry, diagnostics upload, accounts, cloud sync, or private file ingestion behavior."
   },
   "snapshot_dependency": {
     "format_contract": "docs/reference/SNAPSHOT_FORMAT_CONTRACT.md",
@@ -197,7 +214,7 @@
     "future_capabilities_after_policy": [
       "consume live backend handoff responses",
       "verify production snapshot signatures",
-      "use a local cache with privacy controls",
+      "use a local cache only after Native Local Cache / Privacy Policy v0 and implementation review",
       "integrate with a local relay sidecar",
     "hand off to installers or package managers only after action/download/install policy, security, rights/access, user-confirmation, and implementation work exists"
     ]
