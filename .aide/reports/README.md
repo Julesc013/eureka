@@ -157,3 +157,11 @@ report is needed; this adds a future parity plan, fixture map, acceptance
 schema, validator, and tests only, with no Rust local-index implementation,
 SQLite/indexing behavior, Python runtime replacement, or runtime/surface
 wiring.
+
+Full Project State Audit and Forward Plan v0 records its committed audit pack
+under `control/audits/full-project-state-audit-v0/`, plus a validator and tests
+under `scripts/` and `tests/`. No separate AIDE runtime report is needed; this
+is audit/reporting governance only and does not add product runtime behavior,
+relay runtime, native project scaffolding, live probes, deployment changes,
+external observations, downloads, installers, local cache runtime, telemetry,
+accounts, or cloud sync.

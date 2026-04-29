@@ -553,6 +553,13 @@ Eureka is substantial, but it is still a prototype/reference backend:
   FTP, SMB, AFP, NFS, WebDAV, Gopher, protocol translation, native sidecar,
   snapshot mount, private file serving, live backend proxying, live probes, or
   old-client relay support.
+- Full Project State Audit v0 records the current full repo checkpoint under
+  `control/audits/full-project-state-audit-v0/`, including milestone status,
+  broad verification, eval/search state, external-baseline pending state,
+  publication/static/public-alpha status, source/retrieval state,
+  snapshot/relay/native/Rust status, risks, blockers, human-operated work,
+  explicit deferrals, and next milestone recommendations. It is
+  audit/reporting only and adds no product runtime behavior.
 - Native apps are deferred. The current native surface is a stdlib CLI proof.
 - Live crawling, source sync, fuzzy retrieval, vector search, LLM planning,
   auth, accounts, HTTPS/TLS, rate limiting, process supervision, and deployment

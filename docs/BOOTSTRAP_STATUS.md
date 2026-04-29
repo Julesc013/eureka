@@ -481,18 +481,27 @@ relay server, socket listener, local HTTP relay, FTP, SMB, AFP, NFS, WebDAV,
 Gopher, TLS/protocol translation, native sidecar, snapshot mount, private file
 serving, live backend proxy, live source probe, write/admin route, telemetry,
 download/install behavior, or old-client relay support claim.
+Full Project State Audit v0 records a repo-native full checkpoint under
+`control/audits/full-project-state-audit-v0/`. It captures current milestone
+classifications, broad verification, eval/search status, external-baseline
+pending status, publication/static/public-alpha status, source/retrieval state,
+snapshot/relay/native/Rust status, risks, blockers, human-operated work,
+explicit deferrals, and next milestone recommendations. It is audit/reporting
+only and adds no product runtime behavior.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+1. Public Data Contract Stability Review v0
+2. Generated Artifact Drift Guard v0
+3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
-2. Relay Prototype Implementation v0, only after explicit human approval and
+4. Relay Prototype Implementation v0, only after explicit human approval and
    limited to the approved localhost-only/read-only/static relay scope
-3. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
+5. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
    human approval and limited to the approved read-only static-data/snapshot-demo
    skeleton scope
-4. Manual Observation Batch 0 Execution (human-operated parallel work)
-5. Internet Archive Live Probe v0 only after explicit human approval and
+6. Manual Observation Batch 0 Execution (human-operated parallel work)
+7. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 ## Deferred Priorities

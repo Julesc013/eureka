@@ -2268,6 +2268,50 @@
       "failure_means": "The checkpoint pack, validator, JSON output, manual-work notes, deferrals, or no-fake-success guardrails regressed.",
       "advisory_or_required": "required",
       "notes": "Checks the committed checkpoint pack; no external searches, live probes, deployments, or product behavior are added."
+    },
+    {
+      "test_id": "full_project_state_audit_validator",
+      "label": "Full project state audit validator",
+      "command": "python scripts/validate_full_project_state_audit.py",
+      "category": "audit",
+      "owner_area": "control/audits/full-project-state-audit-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The full project audit pack lost required files, structured report fields, verification summary, external-baseline status, risk register, next milestone plan, human-operated work, or no-overclaim guardrails.",
+      "advisory_or_required": "required",
+      "notes": "Added by Full Project State Audit and Forward Plan v0; validates audit/reporting artifacts only and adds no product runtime behavior."
+    },
+    {
+      "test_id": "full_project_state_audit_tests",
+      "label": "Full project state audit tests",
+      "command": "python -m unittest tests.operations.test_full_project_state_audit tests.scripts.test_validate_full_project_state_audit",
+      "category": "audit",
+      "owner_area": "control/audits/full-project-state-audit-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "The full project audit pack, JSON report, validator JSON output, next milestone recommendation, human-operated work, explicit deferrals, or Cargo/external-baseline posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks the committed full project audit pack; no external searches, live probes, deployments, native projects, relay runtime, or product behavior are added."
     }
   ]
 }

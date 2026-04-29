@@ -352,6 +352,27 @@
       "status": "blocked_pending_explicit_approval",
       "priority": 50,
       "notes": "Future live external-source behavior; do not run unattended before explicit human approval and live probe gateway review."
+    },
+    {
+      "id": "full_project_state_audit_v0",
+      "title": "Full Project State Audit and Forward Plan v0",
+      "status": "completed",
+      "priority": 51,
+      "notes": "Added a repo-native full project audit pack after the backend/publication/snapshot/relay/native-policy/Rust planning sequence, with verification matrix, risk register, blockers, human-operated work, deferrals, and next milestone recommendations. Audit/reporting only; no product behavior was added."
+    },
+    {
+      "id": "public_data_contract_stability_review_v0",
+      "title": "Public Data Contract Stability Review v0",
+      "status": "recommended_next",
+      "priority": 52,
+      "notes": "Recommended next Codex-safe milestone from Full Project State Audit v0. Review and stabilize static public data semantics before native, relay, or snapshot-consumer implementation work."
+    },
+    {
+      "id": "generated_artifact_drift_guard_v0",
+      "title": "Generated Artifact Drift Guard v0",
+      "status": "recommended_alternative",
+      "priority": 53,
+      "notes": "Alternative Codex-safe follow-up to strengthen drift checks across site source, site/dist, public_site, generated data, compatibility surfaces, demo snapshots, and seed snapshots."
     }
   ]
 }

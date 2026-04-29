@@ -102,7 +102,9 @@
         "hardening_tests",
         "docs_diff_check",
         "post_queue_checkpoint_validator",
-        "post_queue_checkpoint_tests"
+        "post_queue_checkpoint_tests",
+        "full_project_state_audit_validator",
+        "full_project_state_audit_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -200,7 +202,9 @@
         "hardening_tests",
         "docs_diff_check",
         "post_queue_checkpoint_validator",
-        "post_queue_checkpoint_tests"
+        "post_queue_checkpoint_tests",
+        "full_project_state_audit_validator",
+        "full_project_state_audit_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -273,7 +277,9 @@
         "tests.hardening.readme_command_drift",
         "docs_diff_check",
         "post_queue_checkpoint_validator",
-        "post_queue_checkpoint_tests"
+        "post_queue_checkpoint_tests",
+        "full_project_state_audit_validator",
+        "full_project_state_audit_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -423,7 +429,9 @@
         "relay_prototype_plan_validator",
         "relay_prototype_plan_tests",
         "post_queue_checkpoint_validator",
-        "post_queue_checkpoint_tests"
+        "post_queue_checkpoint_tests",
+        "full_project_state_audit_validator",
+        "full_project_state_audit_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",

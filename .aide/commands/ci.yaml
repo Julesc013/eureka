@@ -206,6 +206,12 @@ steps:
     run: python scripts/validate_rust_local_index_parity_plan.py --json
   - id: rust_local_index_parity_plan_tests
     run: python -m unittest tests.parity.test_rust_local_index_parity_planning tests.scripts.test_validate_rust_local_index_parity_plan
+  - id: full_project_state_audit_validator
+    run: python scripts/validate_full_project_state_audit.py
+  - id: full_project_state_audit_validator_json
+    run: python scripts/validate_full_project_state_audit.py --json
+  - id: full_project_state_audit_tests
+    run: python -m unittest tests.operations.test_full_project_state_audit tests.scripts.test_validate_full_project_state_audit
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.

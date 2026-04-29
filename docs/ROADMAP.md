@@ -286,7 +286,14 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Rust Local Index Parity Candidate v0, only after planning review and Cargo availability expectations are explicit
+> Public Data Contract Stability Review v0
+
+Full Project State Audit v0 recommends this before native, relay, or
+snapshot-consumer implementation work because the static public data contract
+now feeds generated public data, lite/text/files surfaces, demo snapshots,
+snapshot contracts, relay planning, native contracts, and future clients.
+Generated Artifact Drift Guard v0 is the closest alternative. Rust Local Index
+Parity Candidate v0 remains blocked on planning review and Cargo availability.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -376,6 +383,12 @@ implement a relay server, open sockets, add local HTTP relay behavior, add
 FTP/SMB/AFP/NFS/WebDAV/Gopher support, translate protocols, mount snapshots,
 serve private files, expose native sidecars, proxy a live backend, enable live
 probes, or claim old-client relay support.
+Full Project State Audit v0 is implemented as audit/reporting only under
+`control/audits/full-project-state-audit-v0/`; it records current milestone
+status, verification, eval/search state, external-baseline pending state,
+publication/static/public-alpha status, source/retrieval state,
+snapshot/relay/native/Rust status, risks, blockers, human-operated work,
+deferrals, and next milestones without adding product behavior.
 Rust Query Planner Parity Candidate v0 remains isolated and does not wire Rust
 into runtime behavior. Rust Local Index Parity Planning v0 is implemented as
 planning-only parity governance for future local-index Rust work; it adds no

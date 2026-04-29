@@ -775,3 +775,24 @@ serving, live backend proxying, live source probes, arbitrary local filesystem
 ingestion, downloads, installers, telemetry, accounts, deployment behavior, or
 production readiness claim. A future Relay Prototype Implementation v0 prompt
 must include explicit human approval before any relay runtime is created.
+
+## ADR-100: Use Full Project Audit Before Implementation Growth
+
+Status: accepted
+
+Full Project State Audit and Forward Plan v0 adds
+`control/audits/full-project-state-audit-v0/`,
+`scripts/validate_full_project_state_audit.py`, and focused
+operations/script tests.
+
+The decision is to checkpoint the whole repo after the
+backend/publication/snapshot/relay/native-policy/Rust planning sequence before
+starting approved-but-riskier implementation work. The audit records milestone
+status, command results, eval/search status, external-baseline pending state,
+publication/static/public-alpha status, source/retrieval state,
+snapshot/relay/native/Rust status, risks, blockers, human-operated work,
+deferrals, and the next 20 recommended milestones. It recommends Public Data
+Contract Stability Review v0 next, with Generated Artifact Drift Guard v0 as
+the alternative. This adds no runtime behavior, relay service, native project,
+live probe, deployment behavior, external observation, download, installer,
+local cache, telemetry, account, cloud sync, or production claim.

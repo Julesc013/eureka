@@ -335,3 +335,10 @@ verification state under `control/audits/post-queue-state-checkpoint-v0/`. It
 is audit/reporting only; it does not add backend hosting, live probes,
 production deployment, Rust runtime wiring, relay services, or native app
 projects.
+
+Full Project State Audit v0 records the current post-relay-planning project
+state under `control/audits/full-project-state-audit-v0/`. Its immediate
+recommendation is Public Data Contract Stability Review v0, with Generated
+Artifact Drift Guard v0 as the alternative. Rust Local Index Parity Candidate
+v0 remains blocked on review and Cargo availability; native and relay
+implementation remain blocked on explicit human approval.

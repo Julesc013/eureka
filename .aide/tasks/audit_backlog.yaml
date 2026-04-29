@@ -373,6 +373,17 @@
       "title": "Plan the first relay prototype protocol, input/output contract, privacy boundaries, and approval gate before runtime work",
       "status": "addressed_by_relay_prototype_planning_v0",
       "suggested_milestone": "Relay Prototype Implementation v0 only after explicit human approval"
+    },
+    {
+      "id": "audit-backlog-full-project-state-audit",
+      "finding_refs": [
+        "CTEA-DOCS-001",
+        "CTEA-TEST-002",
+        "CTEA-BEHAVIOR-001"
+      ],
+      "title": "Record a full project state audit and forward plan after the backend/publication/snapshot/relay/native/Rust planning sequence",
+      "status": "addressed_by_full_project_state_audit_v0",
+      "suggested_milestone": "Public Data Contract Stability Review v0"
     }
   ]
 }

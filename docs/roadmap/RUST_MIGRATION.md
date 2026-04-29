@@ -226,3 +226,9 @@ verification state under `control/audits/post-queue-state-checkpoint-v0/`. It
 is audit/reporting only; it does not add backend hosting, live probes,
 production deployment, Rust runtime wiring, relay services, or native app
 projects.
+
+Full Project State Audit v0 records Rust parity status after the relay/native
+planning sequence. Python oracle checks and Rust structure checks pass, but
+Cargo is unavailable locally, so Cargo workspace checks remain unverified.
+Rust Local Index Parity Candidate v0 should wait for planning review and Cargo
+availability.

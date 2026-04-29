@@ -720,3 +720,18 @@ Post-Queue State Checkpoint v0 is validated with:
 The checkpoint lane is audit/reporting only. It records command outcomes,
 eval/audit state, external-baseline pending status, risks, deferrals, and next
 planning without adding product runtime behavior or live network behavior.
+
+## Full Project State Audit Lane
+
+Full Project State Audit v0 is validated with:
+
+- `python scripts/validate_full_project_state_audit.py`
+- `python scripts/validate_full_project_state_audit.py --json`
+- `python -m unittest tests.operations.test_full_project_state_audit tests.scripts.test_validate_full_project_state_audit`
+
+The audit lane records the post-relay-planning project state, broad
+verification, Cargo availability status, external-baseline pending status,
+risks, blockers, human-operated work, deferrals, and next milestone
+recommendations. It does not add product behavior, live network behavior,
+native project files, relay runtime, downloads, installers, telemetry, or
+deployment changes.

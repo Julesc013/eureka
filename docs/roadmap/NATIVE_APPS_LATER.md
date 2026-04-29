@@ -147,3 +147,10 @@ verification state under `control/audits/post-queue-state-checkpoint-v0/`. It
 is audit/reporting only; it does not add backend hosting, live probes,
 production deployment, Rust runtime wiring, relay services, or native app
 projects.
+
+Full Project State Audit v0 records the current native and relay state after
+the Windows 7 WinForms skeleton plan and Relay Prototype Planning v0. The
+Windows skeleton and relay prototype are both ready only as human-approved
+future implementation candidates; no Visual Studio/Xcode project, GUI, relay
+runtime, socket, cache runtime, download/install behavior, telemetry, or live
+probe was added.

@@ -76,3 +76,11 @@ Current packs:
   boundaries without creating a relay server, opening sockets, adding protocol
   support, serving private files, proxying a live backend, enabling live probes,
   or claiming old-client relay support.
+- `full-project-state-audit-v0/`: full project checkpoint after the
+  backend/source/eval/publication/snapshot/relay/native-policy/native-planning
+  and Rust parity planning sequence. It records milestone status, verification
+  results, eval/search status, external-baseline pending state,
+  publication/static/public-alpha posture, source/retrieval state,
+  snapshot/relay/native/Rust status, risks, blockers, human-operated work,
+  explicit deferrals, and next milestone recommendations without changing
+  product behavior.

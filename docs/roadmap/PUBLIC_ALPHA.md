@@ -250,3 +250,9 @@ verification state under `control/audits/post-queue-state-checkpoint-v0/`. It
 is audit/reporting only; it does not add backend hosting, live probes,
 production deployment, Rust runtime wiring, relay services, or native app
 projects.
+
+Full Project State Audit v0 records the current publication/static/public-alpha
+state under `control/audits/full-project-state-audit-v0/`. Local static
+artifact checks and public-alpha smoke passed, but GitHub Actions/Pages
+deployment success remains unverified and should be reviewed by a human or
+operator before any hosted-alpha claim.
