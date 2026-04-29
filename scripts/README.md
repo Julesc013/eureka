@@ -115,6 +115,13 @@ Current scripts:
   supports `--json`, performs no network calls, and implements no consumer,
   relay, native client, production signing, executable download, live backend,
   or live probe behavior
+- `validate_native_client_contract.py`: validates the Native Client Contract v0
+  inventories, Windows/Mac lane registry, CLI current-state flag, snapshot and
+  public-data dependencies, readiness checklist, no native project-file
+  posture, no install/download automation claims, and no Rust FFI/runtime
+  wiring; it supports `--json`, performs no network calls, and implements no
+  native client, GUI, installer, relay, FFI, live backend, or live probe
+  behavior
 - `validate_relay_surface_design.py`: validates the Relay Surface Design v0
   inventory, docs, unsigned future operator checklist, surface capability
   alignment, route-matrix posture, and disabled-by-default relay safety flags;

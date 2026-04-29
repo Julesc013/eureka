@@ -263,16 +263,17 @@ The next backend sequence is:
 50. Rust Source Registry Parity Catch-up v0 (implemented as isolated current-shape source registry parity; no runtime wiring)
 51. Rust Local Index Parity Planning v0 (implemented as planning/contract only; no Rust index implementation or runtime wiring)
 52. Signed Snapshot Consumer Contract v0 (implemented as contract/design only; no consumer runtime, relay, native client, production signing, real keys, downloads, live backend, or live probes)
-53. Native Client Contract v0
-54. Rust Local Index Parity Candidate v0 (blocked pending planning review and Cargo availability)
-55. Manual Observation Batch 0 Execution (human-operated parallel work)
-56. Native App Work Later
+53. Native Client Contract v0 (implemented as contract/design only; no Visual Studio/Xcode projects, GUI, FFI, installers, downloads, relay sidecars, live probes, or Rust runtime wiring)
+54. Native Action / Download / Install Policy v0
+55. Rust Local Index Parity Candidate v0 (blocked pending planning review and Cargo availability)
+56. Manual Observation Batch 0 Execution (human-operated parallel work)
+57. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Native Client Contract v0
+> Native Action / Download / Install Policy v0
 
 Why this comes next:
 
@@ -280,10 +281,10 @@ Why this comes next:
   lane. It adds a plan, case map, acceptance-report schema, validator, and
   tests for the future Rust local-index candidate without adding Rust index
   behavior, SQLite/indexing behavior, or runtime wiring.
-- Signed Snapshot Consumer Contract v0 now defines the static/offline snapshot
-  read order, checksum semantics, v0 signature-placeholder handling, and
-  future consumer profiles. Native Client Contract v0 can reference that
-  contract without starting native runtime work.
+- Native Client Contract v0 now defines future Windows/macOS/native lanes,
+  allowed inputs, readiness gates, and action prohibitions without creating
+  native projects. The next safe step is policy for action, download, install,
+  open, restore, and package-manager handoff before any automation exists.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.

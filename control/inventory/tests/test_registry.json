@@ -1918,6 +1918,50 @@
       "notes": "Checks future file-tree, text, lite HTML, relay, native, and audit consumer contracts without implementing any consumer, relay runtime, native app, production signing, executable download, live backend, or live probe behavior."
     },
     {
+      "test_id": "native_client_contract_validator",
+      "label": "Native client contract validator",
+      "command": "python scripts/validate_native_client_contract.py",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Native client inventories, lane posture, CLI status, readiness docs, no-project-file posture, or no-install/download/Rust-wiring claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Native Client Contract v0; validates contract/design artifacts only and implements no Visual Studio/Xcode project, native GUI, FFI, installer automation, package-manager behavior, executable download/execution automation, relay sidecar, live probes, or Rust runtime wiring."
+    },
+    {
+      "test_id": "native_client_contract_tests",
+      "label": "Native client contract tests",
+      "command": "python -m unittest tests.operations.test_native_client_contract tests.scripts.test_validate_native_client_contract",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Native client contract docs, lane inventory, validator JSON output, dependency records, or no-project/no-install/no-runtime posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks future Windows/Mac/native lane contracts and CLI honesty without adding native app projects, GUI runtime, FFI, installers, downloads, relay sidecars, live backend behavior, live probes, or Rust runtime wiring."
+    },
+    {
       "test_id": "relay_surface_design_validator",
       "label": "Relay surface design validator",
       "command": "python scripts/validate_relay_surface_design.py",

@@ -16,6 +16,9 @@ Prerequisites before native GUI client work starts:
 - rights/security/download policy before any fetch/install workflow
 - clear local-cache and offline snapshot semantics
 - relay security/privacy and operator policy for any sidecar or LAN bridge
+- Native Client Contract v0 lane and readiness checklist reviewed
+- Native Action / Download / Install Policy v0 before any download, install,
+  open, restore, or package-manager handoff behavior
 - no dependency on private engine internals
 
 Installer automation remains deferred until rights, security, executable-risk,
@@ -33,3 +36,10 @@ Signed Snapshot Consumer Contract v0 does not implement a native consumer. It
 defines the future snapshot consumption contract that Native Client Contract v0
 can reference without starting Visual Studio, Xcode, installer, sidecar, or
 packaged runtime work.
+
+Native Client Contract v0 is now implemented as contract/design only. It
+records future Windows and Mac lanes, CLI current-state boundaries, allowed
+inputs, prohibited actions, and verification checks, but it does not create
+native GUI clients, Visual Studio or Xcode projects, FFI, native snapshot
+reader runtimes, relay sidecars, installer automation, package-manager
+behavior, download/execution automation, live probes, or Rust runtime wiring.

@@ -14,7 +14,8 @@ now adds a repo-local seed snapshot example, and Signed Snapshot Consumer
 Contract v0 now defines future consumer read order and checksum/signature
 handling, but no runtime product behavior, deployment, public `/snapshots/`
 route, production signed snapshot release, snapshot reader runtime, relay
-service, native client, live `/api/v1`, or live probe is implemented.
+service, native client, native GUI project, FFI, installer automation, live
+`/api/v1`, or live probe is implemented.
 
 Compatibility Surface Strategy v0 does not implement new runtime product behavior.
 
@@ -34,7 +35,7 @@ Compatibility Surface Strategy v0 does not implement new runtime product behavio
 | API | planned contract | `/api/v1/` | yes | no | no | Future live backend handoff, not production API. |
 | Snapshots | deferred with seed example | `/snapshots/` future, `snapshots/examples/static_snapshot_v0/` repo seed | no | no | yes | Format contract and seed example exist; production signed releases and public route remain future. |
 | Relay | deferred with design contract | local LAN/protocol bridge | yes | no | no | Relay Surface Design v0 records future local/LAN bridge policy; no relay runtime, FTP/SMB/WebDAV/Gopher, socket listener, private-data exposure, or write/admin route is implemented. |
-| Native clients | deferred | consume `/data`, `/api`, snapshots | no by default | no | no | Future Windows/macOS/etc clients; CLI is the current local surface. |
+| Native clients | deferred with design contract | consume `/data`, `/api`, snapshots | no by default | no | no | Native Client Contract v0 records future Windows/macOS lanes; CLI is the current local surface. |
 
 The governed machine-readable versions of this matrix are:
 
@@ -95,9 +96,12 @@ contract, protocol-candidate inventory, security/privacy defaults, and unsigned
 operator checklist for future relay work. No FTP, SMB, WebDAV, Gopher, proxy,
 socket listener, or LAN protocol bridge exists now.
 
-Native clients must wait for stable-enough public data, snapshot, action,
+Native Client Contract v0 now records future Windows/macOS/native lanes,
+allowed inputs, CLI current-state boundaries, and readiness gates. Native
+clients must wait for stable-enough public data, snapshot, action,
 rights/security, and live handoff contracts. Native apps must consume governed
-contracts, not engine internals.
+contracts, not engine internals, and no Visual Studio/Xcode project, native
+GUI, FFI, installer automation, relay sidecar, or Rust runtime wiring exists.
 
 ## Non-Goals
 
@@ -106,6 +110,7 @@ contracts, not engine internals.
 - no snapshot reader runtime or production consumer
 - no relay/protocol bridge or network listener
 - no native app project
+- no native GUI, FFI, installer automation, or executable download automation
 - no live `/api/v1`
 - no live probes
 - no external observations

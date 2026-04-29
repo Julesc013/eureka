@@ -93,6 +93,16 @@ file-tree/text/lite/relay/native/audit consumer profiles only: no snapshot
 reader runtime, relay runtime, native client, production signing, real keys,
 executable downloads, live backend, or live probes are implemented.
 
+Native Client Contract v0 adds `native_client_contract.json`,
+`native_client_lanes.json`, `docs/reference/NATIVE_CLIENT_CONTRACT.md`,
+`docs/reference/NATIVE_CLIENT_LANES.md`,
+`docs/operations/NATIVE_CLIENT_READINESS_CHECKLIST.md`, and
+`scripts/validate_native_client_contract.py`. It defines future native client
+inputs, Windows/Mac lane policy, CLI current-state boundaries, and readiness
+gates only: no Visual Studio/Xcode project, native GUI, FFI, installer
+automation, download/execution automation, relay sidecar, live probe, or Rust
+runtime wiring is implemented.
+
 Relay Surface Design v0 adds
 `control/inventory/publication/relay_surface.json`,
 `docs/architecture/RELAY_SURFACE.md`,
@@ -169,9 +179,10 @@ Lite/Text/Files Seed Surfaces v0 consumes those summaries for static
 compatibility output. Signed Snapshot Format v0 now defines a repo-local
 offline seed format with checksums and signature-placeholder documentation.
 Signed Snapshot Consumer Contract v0 defines future consumer read order and
-validation posture for that format, but the public `/snapshots/` route,
-snapshot reader runtime, production signing, relay surfaces, native clients,
-custom domains, and hosted backend work remain future.
+validation posture for that format. Native Client Contract v0 defines future
+native client lane/readiness policy, but the public `/snapshots/` route,
+snapshot reader runtime, production signing, relay surfaces, native GUI
+clients, custom domains, and hosted backend work remain future.
 
 Static Resolver Demo Snapshots v0 adds `/demo/` static examples from governed
 data and fixture-backed Python-oracle outputs. They make current behavior easier

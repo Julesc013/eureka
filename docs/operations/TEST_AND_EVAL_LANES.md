@@ -521,6 +521,25 @@ runtime, adds no FTP, SMB, WebDAV, AFP, NFS, Gopher, local HTTP relay, protocol
 proxy, private data exposure, write/admin route, live-probe passthrough, native
 sidecar, backend hosting, or production relay claim.
 
+## Native Client Contract
+
+Native Client Contract v0 is validated with:
+
+```bash
+python scripts/validate_native_client_contract.py
+python scripts/validate_native_client_contract.py --json
+python -m unittest tests.operations.test_native_client_contract tests.scripts.test_validate_native_client_contract
+```
+
+The lane checks `native_client_contract.json`, `native_client_lanes.json`,
+Native Client reference docs, the unsigned readiness checklist, CLI current
+state, snapshot/public-data dependencies, future Windows/Mac lane posture,
+absence of Visual Studio/Xcode project files, and no installer/download/Rust
+wiring claims. It performs no network calls, creates no native app project,
+implements no GUI, adds no FFI, relay sidecar, package-manager behavior,
+native snapshot reader runtime, executable download/execution automation, live
+backend behavior, or live probes.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

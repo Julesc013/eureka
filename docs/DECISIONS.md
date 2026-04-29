@@ -631,3 +631,30 @@ probes, external API calls, scraping, crawling, deployment behavior, or
 production authenticity claim. The next Codex-safe milestone should be Native
 Client Contract v0; Manual Observation Batch 0 remains human-operated parallel
 work.
+
+## ADR-094: Define Native Client Contract Before App Projects
+
+Status: accepted
+
+Native Client Contract v0 adds
+`control/inventory/publication/native_client_contract.json`,
+`control/inventory/publication/native_client_lanes.json`,
+`docs/reference/NATIVE_CLIENT_CONTRACT.md`,
+`docs/reference/NATIVE_CLIENT_LANES.md`,
+`docs/operations/NATIVE_CLIENT_READINESS_CHECKLIST.md`,
+`scripts/validate_native_client_contract.py`, and focused operations/script
+tests.
+
+The decision is to define future native client inputs, Windows/Mac lane policy,
+readiness gates, CLI current-state boundaries, snapshot/public-data/live
+handoff/relay dependencies, Python oracle status, and Rust parity-only status
+before any native app project exists. Windows 7 x64 WinForms/.NET 4.8 is the
+first pragmatic future candidate, while XP, Windows 95/NT4, Win16, legacy Mac,
+modern macOS, and Classic Mac lanes remain future, lab-verify, or research.
+This adds no Visual Studio project, Xcode project, native GUI, FFI, native
+snapshot reader runtime, relay sidecar, installer automation, package-manager
+behavior, executable download/execution automation, live probes, external API
+calls, scraping, crawling, deployment behavior, production native-client claim,
+or Rust runtime wiring. The next Codex-safe milestone should be Native Action /
+Download / Install Policy v0; Manual Observation Batch 0 remains human-operated
+parallel work.

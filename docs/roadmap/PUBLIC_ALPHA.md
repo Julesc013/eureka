@@ -70,6 +70,10 @@ The minimum public-alpha entry gate should include:
   consumers; no snapshot reader runtime, relay runtime, native client,
   production signing, real keys, executable downloads, live backend, or live
   probes)
+- Native Client Contract v0 (implemented as contract/design only for future
+  Windows/macOS/native client lanes and readiness gates; no Visual Studio/Xcode
+  projects, native GUI, FFI, installers, downloads, relay sidecars, live
+  probes, Rust runtime wiring, or production native-client claim)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as

@@ -105,3 +105,8 @@ consumption side of that future relay without creating the relay. This does not
 implement a relay server, open sockets, expose private data, enable write/admin
 paths, add protocol libraries, or claim old-client support beyond the existing
 static seed surfaces.
+
+Native Client Contract v0 now records the future native side of relay
+integration. It does not create a native sidecar, GUI project, FFI layer,
+installer automation, download/execution automation, relay runtime, or Rust
+runtime wiring.

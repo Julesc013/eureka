@@ -221,7 +221,7 @@
         "native_client",
         "relay"
       ],
-      "notes": "Signed Snapshot Format v0 provides a repo-local seed example and contract. The public /snapshots/ route, production signed releases, relay consumption, and native-client runtime remain future/deferred."
+      "notes": "Signed Snapshot Format v0 provides a repo-local seed example and contract. Signed Snapshot Consumer Contract v0 and Native Client Contract v0 define future consumption policy. The public /snapshots/ route, production signed releases, relay consumption, and native-client runtime remain future/deferred."
     },
     {
       "id": "relay",
@@ -249,7 +249,7 @@
       "client_profiles": [
         "native_client"
       ],
-      "notes": "Future clients will consume /data, /api, and snapshots after contracts mature."
+      "notes": "Native Client Contract v0 is design-only and records future Windows/Mac lane policy; GUI native clients, Visual Studio/Xcode projects, FFI, installers, downloads, relay sidecars, and Rust runtime wiring remain unimplemented."
     },
     {
       "id": "cli",

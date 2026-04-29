@@ -93,6 +93,14 @@ and does not implement a snapshot reader runtime, relay, native client,
 production signing, real signing keys, executable downloads, live backend
 behavior, or live probes.
 
+Native Client Contract v0 records future native client contracts, lane
+inventories, readiness checklist, validator, and tests under
+`control/inventory/publication/`, `docs/reference/`, `docs/operations/`,
+`scripts/`, and `tests/`. No separate AIDE runtime report is needed; this is
+contract/design governance and does not create Visual Studio/Xcode projects,
+native GUI clients, FFI, installers, downloads, relay sidecars, live probes, or
+Rust runtime wiring.
+
 Post-Queue State Checkpoint v0 records its committed audit/reporting pack under
 `control/audits/post-queue-state-checkpoint-v0/`. No separate AIDE runtime
 report is needed; the pack is repo-governance evidence and does not add product

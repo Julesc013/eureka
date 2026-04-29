@@ -52,6 +52,13 @@ operator checklist, but it does not create a native sidecar, app shell, SDK,
 network service, protocol bridge, private-data path, write/admin route, or live
 probe passthrough.
 
+Native Client Contract v0 also keeps that policy. It defines future Windows and
+Mac client lanes, CLI current-state boundaries, snapshot/public-data/live
+handoff/relay/Rust dependencies, and readiness gates, but it does not create a
+Visual Studio project, Xcode project, native GUI, FFI layer, native snapshot
+reader runtime, relay sidecar, installer automation, package-manager behavior,
+download/execution automation, live probes, or Rust runtime wiring.
+
 ## Host-Shell Principle
 
 Future native apps should remain shells over the core. They should consume
@@ -79,6 +86,9 @@ Serious native host work should wait until:
 - signed/offline snapshot format exists
 - snapshot consumer read order, checksum, and signature-placeholder contract
   exists
+- native client lane, dependency, and readiness contract exists
+- Native Action / Download / Install Policy exists before any download,
+  install, open, restore, or package-manager handoff behavior
 - relay security/privacy and operator policy exists, with runtime still
   explicitly deferred
 - rights, security, download, and action-handoff policies exist

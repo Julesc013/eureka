@@ -118,6 +118,12 @@ steps:
     run: python scripts/validate_snapshot_consumer_contract.py --json
   - id: snapshot_consumer_contract_tests
     run: python -m unittest tests.operations.test_signed_snapshot_consumer_contract tests.scripts.test_validate_snapshot_consumer_contract
+  - id: native_client_contract_validator
+    run: python scripts/validate_native_client_contract.py
+  - id: native_client_contract_validator_json
+    run: python scripts/validate_native_client_contract.py --json
+  - id: native_client_contract_tests
+    run: python -m unittest tests.operations.test_native_client_contract tests.scripts.test_validate_native_client_contract
   - id: relay_surface_design_validator
     run: python scripts/validate_relay_surface_design.py
   - id: relay_surface_design_validator_json
@@ -518,6 +524,7 @@ notes:
   - Live Probe Gateway Contract v0 defines disabled-by-default source-probe policy, source caps, cache/evidence expectations, and operator gates; it does not implement probes, call external sources, fetch URLs, scrape, crawl, enable downloads, or make Google a live source.
   - Signed Snapshot Format v0 defines the static/offline snapshot contract plus a deterministic repo-local seed example under `snapshots/examples/static_snapshot_v0/`; it does not add real signing keys, production signatures, executable downloads, a public `/snapshots/` route, relay behavior, native-client runtime, live backend behavior, or live probes.
   - Signed Snapshot Consumer Contract v0 defines future file-tree, text, lite HTML, relay, native, and audit snapshot consumer rules; it does not implement a consumer runtime, relay, native client, production signing, real keys, executable downloads, live backend behavior, or live probes.
+  - Native Client Contract v0 defines future Windows/macOS/native client lanes, dependencies, readiness gates, and action prohibitions; it does not create Visual Studio/Xcode projects, native GUI clients, FFI, installers, downloads, relay sidecars, live probes, or Rust runtime wiring.
   - Relay Surface Design v0 defines future local/LAN relay policy, protocol candidates, and operator/security guardrails only; it does not add a relay runtime, socket, FTP, SMB, WebDAV, Gopher, protocol proxy, private data exposure, write/admin routes, live-probe passthrough, native sidecar, or production relay claim.
   - Rust Migration Skeleton and Parity Plan v0 established initial Rust crates and parity docs; Python remains the oracle, Rust is not an active backend, and the Rust workspace check is optional because it requires a local Rust toolchain.
   - Rust Parity Fixture Pack v0 adds Python-oracle golden outputs and a stdlib generator/check script only; it does not implement Rust behavior, replace Python runtime paths, or require Rust tooling for normal checks.

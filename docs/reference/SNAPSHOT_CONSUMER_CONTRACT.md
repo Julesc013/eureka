@@ -152,6 +152,10 @@ network service, socket, protocol server, or LAN bridge exists.
 
 Native consumers remain future/deferred and require Native Client Contract v0
 before any native project, installer, sidecar, or packaged runtime exists.
+Native Client Contract v0 now defines those future native lanes and confirms
+that no native GUI client, Visual Studio/Xcode project, FFI, installer
+automation, native snapshot reader runtime, relay sidecar, or Rust runtime
+wiring exists.
 
 Both future surfaces must treat snapshots as read-only public data by default
 and must not expose private data, write/admin controls, executable downloads,

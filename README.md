@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus isolated source-registry and query-planner parity candidates; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -152,6 +152,12 @@ HTML, relay, native, and audit consumers should read that snapshot format,
 validate checksums, and treat v0 signatures as placeholders. It does not
 implement a snapshot reader runtime, relay, native client, production signing,
 real signing keys, executable downloads, live backend behavior, or live probes.
+Native Client Contract v0 defines future Windows/macOS/native client inputs,
+lane policy, readiness checks, and prohibited actions while keeping CLI as the
+only current native-like surface. It does not create Visual Studio or Xcode
+projects, native GUI apps, FFI, installer automation, package-manager behavior,
+download/execution automation, relay sidecars, live probes, or Rust runtime
+wiring.
 
 ## Quickstart
 
@@ -202,6 +208,7 @@ python scripts/validate_compatibility_surfaces.py
 python scripts/generate_static_snapshot.py --check
 python scripts/validate_static_snapshot.py
 python scripts/validate_snapshot_consumer_contract.py
+python scripts/validate_native_client_contract.py
 python scripts/check_rust_query_planner_parity.py
 python scripts/generate_public_alpha_rehearsal_evidence.py --check
 ```
@@ -500,6 +507,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
   implement a snapshot reader runtime, relay, native client, production signing,
   real signing keys, executable downloads, live backend behavior, or live
   probes.
+- Native Client Contract v0 is contract/design only. It does not create native
+  app projects, GUI clients, FFI, installer automation, downloads, relay
+  sidecars, live probes, or Rust runtime wiring; CLI remains the only current
+  native-like surface.
 - Native apps are deferred. The current native surface is a stdlib CLI proof.
 - Live crawling, source sync, fuzzy retrieval, vector search, LLM planning,
   auth, accounts, HTTPS/TLS, rate limiting, process supervision, and deployment
@@ -510,7 +521,7 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Native Client Contract v0
+1. Native Action / Download / Install Policy v0
 2. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
 3. Manual Observation Batch 0 Execution (human-operated parallel work)

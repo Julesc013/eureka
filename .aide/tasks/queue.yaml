@@ -286,22 +286,29 @@
     {
       "id": "native_client_contract_v0",
       "title": "Native Client Contract v0",
-      "status": "next",
+      "status": "completed",
       "priority": 41,
-      "notes": "Define future native client boundaries and prerequisites without creating Visual Studio/Xcode projects, installers, native sidecars, or runtime wiring."
+      "notes": "Defined future native client boundaries, Windows/Mac lane registry, readiness checklist, CLI current-state posture, snapshot/public-data/live-backend/relay/Rust dependencies, and install/download prohibitions without creating Visual Studio/Xcode projects, GUI clients, FFI, installers, package-manager behavior, relay sidecars, live probes, or Rust runtime wiring."
+    },
+    {
+      "id": "native_action_download_install_policy_v0",
+      "title": "Native Action / Download / Install Policy v0",
+      "status": "next",
+      "priority": 42,
+      "notes": "Define future native action, download, open, restore, package-manager, and installer handoff policy before any automation exists."
     },
     {
       "id": "rust_local_index_parity_candidate_v0",
       "title": "Rust Local Index Parity Candidate v0",
       "status": "blocked_pending_review_and_cargo",
-      "priority": 42,
+      "priority": 43,
       "notes": "Future implementation-only-after-review lane for Rust local-index parity; blocked until the P12 plan is reviewed and Cargo availability/requirements are explicit."
     },
     {
       "id": "relay_prototype_planning_v0",
       "title": "Relay Prototype Planning v0",
       "status": "queued_after_native_contract",
-      "priority": 43,
+      "priority": 44,
       "notes": "Future planning-only milestone for a relay prototype after relay and snapshot-consumer contracts; not a relay runtime implementation and not a protocol server."
     }
   ]

@@ -84,6 +84,10 @@ future candidate: `tests/parity/RUST_LOCAL_INDEX_PARITY_PLAN.md`,
 Rust Local Index parity implementation is not started, Python remains the
 oracle, and Rust remains unwired from runtime and surfaces.
 
+Native Client Contract v0 keeps Rust out of native client runtime paths. Rust
+remains parity/planning only: no native FFI, native SDK, GUI binding, packaged
+runtime, or production backend is introduced for Windows or macOS clients.
+
 ## Suggested Future Layout
 
 ```text

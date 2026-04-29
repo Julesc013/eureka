@@ -310,6 +310,16 @@
       "title": "Define snapshot consumer contract before native or relay runtime work",
       "status": "addressed_by_signed_snapshot_consumer_contract_v0",
       "suggested_milestone": "Native Client Contract v0"
+    },
+    {
+      "id": "audit-backlog-native-client-contract",
+      "finding_refs": [
+        "CTEA-BEHAVIOR-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Define native client boundaries before native app or installer work",
+      "status": "addressed_by_native_client_contract_v0",
+      "suggested_milestone": "Native Action / Download / Install Policy v0"
     }
   ]
 }
