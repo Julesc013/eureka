@@ -274,15 +274,23 @@ The next backend sequence is:
 61. Relay Prototype Implementation v0 (blocked pending explicit human approval; localhost-only read-only static relay scope only)
 62. Manual Observation Batch 0 Execution (human-operated parallel work)
 63. Native App Work Later
+64. Public Data Contract Stability Review v0 (implemented as field-level public data stability governance; no production API claim)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Rust Local Index Parity Candidate v0, only after planning review and Cargo availability expectations are explicit
+> Generated Artifact Drift Guard v0
 
 Why this comes next:
 
+- Public Data Contract Stability Review v0 now classifies generated public JSON
+  files and fields as `stable_draft`, `experimental`, `volatile`, `internal`,
+  `deprecated`, or `future`, while keeping public JSON pre-alpha and not a
+  production API.
+- The next practical risk is generated artifact drift across `public_site`,
+  `site/dist`, public data, lite/text/files surfaces, demo snapshots, and seed
+  snapshots.
 - Native Client Project Readiness Review v0 now records the evidence decision
   `ready_for_minimal_project_skeleton_after_human_approval` for the
   `windows_7_x64_winforms_net48` lane only.

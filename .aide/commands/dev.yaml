@@ -512,6 +512,12 @@ steps:
     run: python scripts/validate_full_project_state_audit.py --json
   - id: full_project_state_audit_tests
     run: python -m unittest tests.operations.test_full_project_state_audit tests.scripts.test_validate_full_project_state_audit
+  - id: public_data_stability_validator
+    run: python scripts/validate_public_data_stability.py
+  - id: public_data_stability_validator_json
+    run: python scripts/validate_public_data_stability.py --json
+  - id: public_data_stability_tests
+    run: python -m unittest tests.operations.test_public_data_contract_stability_review tests.scripts.test_validate_public_data_stability
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
@@ -553,6 +559,7 @@ notes:
   - GitHub Pages Deployment Enablement v0 adds a static-only workflow and artifact checker for public_site; it does not deploy the Python backend, enable live probes, configure a custom domain, create a generator, add secrets, or prove deployment success without GitHub Actions evidence.
   - Static Site Generation Migration v0 adds a stdlib-only site/ source tree and site/dist generated output for validation; public_site remains the GitHub Pages artifact, with no Node/npm, frontend framework, deployment change, live backend, or live probes.
   - Generated Public Data Summaries v0 adds deterministic static JSON summaries under `public_site/data/` and `site/dist/data/`; it does not add a live API, backend deployment, live probes, external observations, Node/npm, or production API stability claims.
+  - Public Data Contract Stability Review v0 classifies generated public JSON fields as `stable_draft`, `experimental`, `volatile`, `internal`, `deprecated`, or `future`; it does not make public JSON a production API or change runtime behavior.
   - Lite/Text/Files Seed Surfaces v0 adds static compatibility seed surfaces under `public_site/lite/`, `public_site/text/`, and `public_site/files/`; it does not add live search, executable downloads, snapshots, relay/native runtime behavior, backend deployment, or production support claims.
   - Static Resolver Demo Snapshots v0 adds static no-JS fixture-backed examples under `public_site/demo/`; it does not add live search, live API semantics, backend hosting, external observations, deployment behavior, or production claims.
   - Custom Domain / Alternate Host Readiness v0 adds static-host portability inventories, docs, checklist, validation, and tests; it does not add DNS records, CNAME, provider config, alternate-host deployment, backend hosting, live probes, custom-domain claims, or production behavior.

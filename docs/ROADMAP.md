@@ -286,14 +286,19 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Public Data Contract Stability Review v0
+> Generated Artifact Drift Guard v0
 
-Full Project State Audit v0 recommends this before native, relay, or
-snapshot-consumer implementation work because the static public data contract
-now feeds generated public data, lite/text/files surfaces, demo snapshots,
-snapshot contracts, relay planning, native contracts, and future clients.
-Generated Artifact Drift Guard v0 is the closest alternative. Rust Local Index
-Parity Candidate v0 remains blocked on planning review and Cargo availability.
+Public Data Contract Stability Review v0 is now implemented as field-level
+contract governance under
+`control/audits/public-data-contract-stability-review-v0/` and
+`docs/reference/PUBLIC_DATA_STABILITY_POLICY.md`. It classifies generated
+public JSON fields as `stable_draft`, `experimental`, `volatile`, `internal`,
+`deprecated`, or `future` without making public JSON a production API.
+Generated Artifact Drift Guard v0 is now the closest Codex-safe follow-up
+because the static public data contract feeds generated public data,
+lite/text/files surfaces, demo snapshots, snapshot contracts, relay planning,
+native contracts, and future clients. Rust Local Index Parity Candidate v0
+remains blocked on planning review and Cargo availability.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution

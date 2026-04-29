@@ -796,3 +796,25 @@ Contract Stability Review v0 next, with Generated Artifact Drift Guard v0 as
 the alternative. This adds no runtime behavior, relay service, native project,
 live probe, deployment behavior, external observation, download, installer,
 local cache, telemetry, account, cloud sync, or production claim.
+
+## ADR-101: Classify Public Data Stability Before Client Dependence
+
+Status: accepted
+
+Public Data Contract Stability Review v0 adds
+`control/audits/public-data-contract-stability-review-v0/`,
+`docs/reference/PUBLIC_DATA_STABILITY_POLICY.md`,
+`scripts/validate_public_data_stability.py`, and focused operations/script
+tests.
+
+The decision is to keep generated public JSON under `public_site/data/` as
+pre-alpha static data while classifying individual field paths as
+`stable_draft`, `experimental`, `volatile`, `internal`, `deprecated`, or
+`future`. Future static, snapshot, relay, and native clients may depend only on
+named `stable_draft` field paths with `schema_version` checks; experimental
+fields are display-only unless version-pinned, volatile fields are diagnostic,
+and internal fields are not public API. This adds no product behavior, live
+API, live backend, live probes, relay runtime, native client, snapshot reader,
+download/install behavior, deployment behavior, external observation, or
+production API stability claim. The next Codex-safe milestone is Generated
+Artifact Drift Guard v0.

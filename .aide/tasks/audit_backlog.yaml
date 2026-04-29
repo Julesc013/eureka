@@ -384,6 +384,17 @@
       "title": "Record a full project state audit and forward plan after the backend/publication/snapshot/relay/native/Rust planning sequence",
       "status": "addressed_by_full_project_state_audit_v0",
       "suggested_milestone": "Public Data Contract Stability Review v0"
+    },
+    {
+      "id": "audit-backlog-public-data-contract-stability-review",
+      "finding_refs": [
+        "CTEA-DOCS-001",
+        "CTEA-TEST-002",
+        "CTEA-BEHAVIOR-001"
+      ],
+      "title": "Classify generated public data field stability before future snapshot, native, or relay clients depend on it",
+      "status": "addressed_by_public_data_contract_stability_review_v0",
+      "suggested_milestone": "Generated Artifact Drift Guard v0"
     }
   ]
 }

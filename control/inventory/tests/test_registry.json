@@ -2312,6 +2312,50 @@
       "failure_means": "The full project audit pack, JSON report, validator JSON output, next milestone recommendation, human-operated work, explicit deferrals, or Cargo/external-baseline posture regressed.",
       "advisory_or_required": "required",
       "notes": "Checks the committed full project audit pack; no external searches, live probes, deployments, native projects, relay runtime, or product behavior are added."
+    },
+    {
+      "test_id": "public_data_stability_validator",
+      "label": "Public data stability validator",
+      "command": "python scripts/validate_public_data_stability.py",
+      "category": "publication",
+      "owner_area": "control/audits/public-data-contract-stability-review-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The public data stability review pack, field classification, contract references, policy docs, or no-production-API posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Public Data Contract Stability Review v0; validates contract-governance artifacts only and implements no live API, runtime behavior, relay, native client, snapshot reader, deployment behavior, or production API guarantee."
+    },
+    {
+      "test_id": "public_data_stability_tests",
+      "label": "Public data stability tests",
+      "command": "python -m unittest tests.operations.test_public_data_contract_stability_review tests.scripts.test_validate_public_data_stability",
+      "category": "publication",
+      "owner_area": "control/audits/public-data-contract-stability-review-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "The public data stability report, validator JSON output, field classifications, or public_data_contract metadata regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks field-level stability decisions for generated public JSON without making public JSON a production API or adding runtime behavior."
     }
   ]
 }

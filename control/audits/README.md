@@ -84,3 +84,9 @@ Current packs:
   snapshot/relay/native/Rust status, risks, blockers, human-operated work,
   explicit deferrals, and next milestone recommendations without changing
   product behavior.
+- `public-data-contract-stability-review-v0/`: field-level public data
+  stability review for generated static JSON under `public_site/data/`. It
+  classifies files and fields as `stable_draft`, `experimental`, `volatile`,
+  `internal`, `deprecated`, or `future`, records versioning/breaking-change
+  policy, and recommends Generated Artifact Drift Guard v0 without changing
+  product behavior or claiming production API stability.

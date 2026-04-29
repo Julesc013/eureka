@@ -363,16 +363,30 @@
     {
       "id": "public_data_contract_stability_review_v0",
       "title": "Public Data Contract Stability Review v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 52,
-      "notes": "Recommended next Codex-safe milestone from Full Project State Audit v0. Review and stabilize static public data semantics before native, relay, or snapshot-consumer implementation work."
+      "notes": "Added field-level stability governance for generated public JSON under public_site/data, classifying fields as stable_draft, experimental, volatile, internal, deprecated, or future without making public JSON a production API or changing runtime behavior."
     },
     {
       "id": "generated_artifact_drift_guard_v0",
       "title": "Generated Artifact Drift Guard v0",
-      "status": "recommended_alternative",
+      "status": "recommended_next",
       "priority": 53,
-      "notes": "Alternative Codex-safe follow-up to strengthen drift checks across site source, site/dist, public_site, generated data, compatibility surfaces, demo snapshots, and seed snapshots."
+      "notes": "Recommended next Codex-safe follow-up after Public Data Contract Stability Review v0. Strengthen drift checks across site source, site/dist, public_site, generated data, compatibility surfaces, demo snapshots, and seed snapshots."
+    },
+    {
+      "id": "snapshot_consumer_tooling_plan_v0",
+      "title": "Snapshot Consumer Tooling Plan v0",
+      "status": "recommended_follow_up",
+      "priority": 54,
+      "notes": "Plan-only follow-up for future snapshot consumer tooling; do not implement a consumer runtime without explicit scope."
+    },
+    {
+      "id": "search_usefulness_source_expansion_v2_fixture_only",
+      "title": "Search Usefulness Source Expansion v2, fixture-only",
+      "status": "recommended_follow_up",
+      "priority": 55,
+      "notes": "Fixture-only source expansion candidate; no live source calls, scraping, crawling, external observations, or arbitrary local ingestion."
     }
   ]
 }

@@ -488,20 +488,29 @@ pending status, publication/static/public-alpha status, source/retrieval state,
 snapshot/relay/native/Rust status, risks, blockers, human-operated work,
 explicit deferrals, and next milestone recommendations. It is audit/reporting
 only and adds no product runtime behavior.
+Public Data Contract Stability Review v0 records a field-level stability review
+under `control/audits/public-data-contract-stability-review-v0/` and
+`docs/reference/PUBLIC_DATA_STABILITY_POLICY.md`. It classifies generated
+public JSON files and fields as `stable_draft`, `experimental`, `volatile`,
+`internal`, `deprecated`, or `future` so future snapshot, relay, native, and
+static clients know what they may consume. It does not change runtime behavior,
+generated public data output, live APIs, deployment behavior, relay/native
+runtime, or production API stability.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Public Data Contract Stability Review v0
-2. Generated Artifact Drift Guard v0
-3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+1. Generated Artifact Drift Guard v0
+2. Snapshot Consumer Tooling Plan v0
+3. Search Usefulness Source Expansion v2, fixture-only
+4. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
-4. Relay Prototype Implementation v0, only after explicit human approval and
+5. Relay Prototype Implementation v0, only after explicit human approval and
    limited to the approved localhost-only/read-only/static relay scope
-5. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
+6. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
    human approval and limited to the approved read-only static-data/snapshot-demo
    skeleton scope
-6. Manual Observation Batch 0 Execution (human-operated parallel work)
-7. Internet Archive Live Probe v0 only after explicit human approval and
+7. Manual Observation Batch 0 Execution (human-operated parallel work)
+8. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 ## Deferred Priorities
