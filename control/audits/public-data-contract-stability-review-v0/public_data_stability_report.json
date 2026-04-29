@@ -1,0 +1,639 @@
+{
+  "report_id": "public-data-contract-stability-review-v0",
+  "schema_version": "0.1.0",
+  "created_by_slice": "public_data_contract_stability_review_v0",
+  "report_scope": "Classifies generated static public data files and fields without changing runtime behavior or creating production API stability.",
+  "stability_classes": {
+    "stable_draft": "Pre-alpha field path that cautious clients may consume with schema/version checks.",
+    "experimental": "Display-only or version-pinned field path that may change as contracts mature.",
+    "volatile": "Diagnostic value or text that may change between generated artifacts.",
+    "internal": "Repo, generator, command, or path detail not intended as client API.",
+    "deprecated": "No current fields; reserved for documented migration windows.",
+    "future": "Reserved future surface or field semantics that do not imply implementation."
+  },
+  "public_data_files": [
+    {
+      "file_name": "site_manifest.json",
+      "path": "/data/site_manifest.json",
+      "stability_class": "stable_draft",
+      "field_stability_profile": "stable_draft high-level static/no-live flags; experimental nested policy/surface details",
+      "intended_consumers": [
+        "static clients",
+        "snapshot planning",
+        "future native planning",
+        "future relay planning",
+        "audit tools"
+      ],
+      "allowed_client_use": "Read high-level static artifact identity, public data file list, no-live flags, and base-path targets.",
+      "prohibited_client_use": "Do not treat nested policy objects as production runtime capability, deployment proof, or live API discovery.",
+      "breaking_change_sensitivity": "High for high-level stable_draft flags and public_data_files; medium for nested experimental details.",
+      "current_gaps": [
+        "Nested policy summaries evolve with their source inventories.",
+        "No production public data API exists."
+      ],
+      "next_guard": "Generated Artifact Drift Guard v0"
+    },
+    {
+      "file_name": "page_registry.json",
+      "path": "/data/page_registry.json",
+      "stability_class": "stable_draft",
+      "field_stability_profile": "stable_draft route basics; internal source_file paths",
+      "intended_consumers": [
+        "static clients",
+        "snapshot consumers",
+        "future native clients",
+        "future relay planning"
+      ],
+      "allowed_client_use": "Display route path, title, status, stability, JavaScript requirement, base-path portability, and static-hosting posture.",
+      "prohibited_client_use": "Do not assume reserved routes are implemented or consume source_file as public API.",
+      "breaking_change_sensitivity": "High for route path/status/stability basics.",
+      "current_gaps": [
+        "Reserved routes are intentionally listed before implementation."
+      ],
+      "next_guard": "Route/data contract drift guard"
+    },
+    {
+      "file_name": "source_summary.json",
+      "path": "/data/source_summary.json",
+      "stability_class": "stable_draft",
+      "field_stability_profile": "stable_draft source identity/status/coverage basics; experimental capability details",
+      "intended_consumers": [
+        "static clients",
+        "snapshot consumers",
+        "future native clients",
+        "future relay planning",
+        "Rust parity docs"
+      ],
+      "allowed_client_use": "Display source IDs, labels, families, status/posture, coverage depth, placeholder/future markers, fixture markers, and no-live flags.",
+      "prohibited_client_use": "Do not treat individual capability booleans as finalized connector contracts or live support.",
+      "breaking_change_sensitivity": "High for source_id and placeholder/live posture semantics.",
+      "current_gaps": [
+        "Capability detail shape may evolve with source coverage work."
+      ],
+      "next_guard": "Source/public-data field drift guard"
+    },
+    {
+      "file_name": "eval_summary.json",
+      "path": "/data/eval_summary.json",
+      "stability_class": "experimental",
+      "field_stability_profile": "stable_draft safety flags; experimental audit sections; volatile failure-mode details",
+      "intended_consumers": [
+        "static status pages",
+        "audit tools",
+        "future dashboards"
+      ],
+      "allowed_client_use": "Display local eval, search-usefulness, and manual-baseline posture with limitations.",
+      "prohibited_client_use": "Do not treat counts as production benchmark, global recall, or observed external baseline evidence.",
+      "breaking_change_sensitivity": "Medium for section names; low for count values.",
+      "current_gaps": [
+        "Search-usefulness taxonomy remains active audit machinery.",
+        "External baselines remain pending/manual."
+      ],
+      "next_guard": "Eval summary drift guard"
+    },
+    {
+      "file_name": "route_summary.json",
+      "path": "/data/route_summary.json",
+      "stability_class": "stable_draft",
+      "field_stability_profile": "stable_draft route count keys and public-alpha non-production flag; experimental route detail arrays",
+      "intended_consumers": [
+        "public-alpha reviewers",
+        "static status pages",
+        "future operators"
+      ],
+      "allowed_client_use": "Display public-alpha posture counts and current review/blocked summaries.",
+      "prohibited_client_use": "Do not treat as GitHub Pages routing, production API discovery, or implementation proof.",
+      "breaking_change_sensitivity": "High for public_alpha_not_production and route_counts keys.",
+      "current_gaps": [
+        "Detail arrays depend on evolving local route inventory."
+      ],
+      "next_guard": "Public-alpha route/data drift guard"
+    },
+    {
+      "file_name": "build_manifest.json",
+      "path": "/data/build_manifest.json",
+      "stability_class": "volatile",
+      "field_stability_profile": "stable_draft safety flags and file list; volatile CI provenance; internal command/source lists",
+      "intended_consumers": [
+        "CI/static artifact checks",
+        "audit tools"
+      ],
+      "allowed_client_use": "Check schema, generator, artifact root, data file list, and disabled behavior flags.",
+      "prohibited_client_use": "Do not depend on commit, built_at, source_inputs, or validation command lists as durable API.",
+      "breaking_change_sensitivity": "High for disabled-behavior flags; low for provenance values.",
+      "current_gaps": [
+        "Committed artifacts use UNKNOWN_UNTIL_CI placeholders for provenance."
+      ],
+      "next_guard": "Generated Artifact Drift Guard v0"
+    }
+  ],
+  "field_stability": {
+    "site_manifest.json": [
+      {
+        "field_path": "schema_version",
+        "stability": "stable_draft",
+        "consumer_guidance": "Check before interpreting the file.",
+        "notes": "Current version is 0.1.0."
+      },
+      {
+        "field_path": "generated_by",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display or validate generator provenance.",
+        "notes": "Static generator only."
+      },
+      {
+        "field_path": "artifact",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display current public data artifact label.",
+        "notes": "Currently public_site/data."
+      },
+      {
+        "field_path": "current_static_artifact",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display current static artifact root.",
+        "notes": "Currently public_site."
+      },
+      {
+        "field_path": "public_data_files[]",
+        "stability": "stable_draft",
+        "consumer_guidance": "Discover generated public data files.",
+        "notes": "Does not imply live API routes."
+      },
+      {
+        "field_path": "contains_live_backend",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until a later contract changes it.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "contains_live_probes",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until a later contract changes it.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "contains_external_observations",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until human observations exist.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "no_deployment_claim",
+        "stability": "stable_draft",
+        "consumer_guidance": "Use to avoid deployment overclaims.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "base_path_targets[]",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display supported static base path targets.",
+        "notes": "Not deployment proof."
+      },
+      {
+        "field_path": "pages[]",
+        "stability": "experimental",
+        "consumer_guidance": "Prefer page_registry.json for route details.",
+        "notes": "Copy of page summary."
+      },
+      {
+        "field_path": "live_backend_handoff",
+        "stability": "experimental",
+        "consumer_guidance": "Display disabled/future contract posture only.",
+        "notes": "Not a live API."
+      },
+      {
+        "field_path": "live_probe_gateway",
+        "stability": "experimental",
+        "consumer_guidance": "Display disabled/future probe posture only.",
+        "notes": "No network calls."
+      },
+      {
+        "field_path": "action_policy",
+        "stability": "experimental",
+        "consumer_guidance": "Display disabled risky-action posture.",
+        "notes": "Not action implementation."
+      },
+      {
+        "field_path": "local_cache_privacy_policy",
+        "stability": "experimental",
+        "consumer_guidance": "Display privacy defaults.",
+        "notes": "Not cache implementation."
+      },
+      {
+        "field_path": "relay_surface",
+        "stability": "experimental",
+        "consumer_guidance": "Display relay future/deferred posture.",
+        "notes": "No relay exists."
+      },
+      {
+        "field_path": "snapshot_format",
+        "stability": "experimental",
+        "consumer_guidance": "Display seed snapshot contract posture.",
+        "notes": "Not production signing."
+      },
+      {
+        "field_path": "source_inputs[]",
+        "stability": "internal",
+        "consumer_guidance": "Diagnostic only.",
+        "notes": "Repo path list."
+      }
+    ],
+    "page_registry.json": [
+      {
+        "field_path": "schema_version",
+        "stability": "stable_draft",
+        "consumer_guidance": "Check before interpreting the file.",
+        "notes": "Current version is 0.1.0."
+      },
+      {
+        "field_path": "generated_by",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display generator provenance.",
+        "notes": "Static generator only."
+      },
+      {
+        "field_path": "registry_id",
+        "stability": "stable_draft",
+        "consumer_guidance": "Identify registry kind.",
+        "notes": "Public page registry."
+      },
+      {
+        "field_path": "pages[].path",
+        "stability": "stable_draft",
+        "consumer_guidance": "Safe for static clients to list/link.",
+        "notes": "Reserved paths may be unimplemented."
+      },
+      {
+        "field_path": "pages[].status",
+        "stability": "stable_draft",
+        "consumer_guidance": "Safe to distinguish implemented/static_demo/planned/deferred.",
+        "notes": "Status vocabulary remains governed."
+      },
+      {
+        "field_path": "pages[].stability",
+        "stability": "stable_draft",
+        "consumer_guidance": "Safe to show route stability.",
+        "notes": "Route stability, not field stability."
+      },
+      {
+        "field_path": "pages[].title",
+        "stability": "stable_draft",
+        "consumer_guidance": "Safe display label.",
+        "notes": "Text can be corrected."
+      },
+      {
+        "field_path": "pages[].source_file",
+        "stability": "internal",
+        "consumer_guidance": "Do not consume as public API.",
+        "notes": "Repo path diagnostic."
+      },
+      {
+        "field_path": "source_inputs[]",
+        "stability": "internal",
+        "consumer_guidance": "Diagnostic only.",
+        "notes": "Repo path list."
+      }
+    ],
+    "source_summary.json": [
+      {
+        "field_path": "schema_version",
+        "stability": "stable_draft",
+        "consumer_guidance": "Check before interpreting the file.",
+        "notes": "Current version is 0.1.0."
+      },
+      {
+        "field_path": "generated_by",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display generator provenance.",
+        "notes": "Static generator only."
+      },
+      {
+        "field_path": "source_count",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display current count.",
+        "notes": "Value may change as sources are added."
+      },
+      {
+        "field_path": "sources[].source_id",
+        "stability": "stable_draft",
+        "consumer_guidance": "Safe for static clients to display/link and for snapshots to reference.",
+        "notes": "Do not infer live access."
+      },
+      {
+        "field_path": "sources[].label",
+        "stability": "stable_draft",
+        "consumer_guidance": "Safe display label.",
+        "notes": "Text can be corrected."
+      },
+      {
+        "field_path": "sources[].status",
+        "stability": "stable_draft",
+        "consumer_guidance": "Safe to distinguish active fixture, placeholder, and local-private future.",
+        "notes": "Status vocabulary remains governed."
+      },
+      {
+        "field_path": "sources[].coverage_depth",
+        "stability": "stable_draft",
+        "consumer_guidance": "Safe to display current coverage depth.",
+        "notes": "Vocabulary may grow by version."
+      },
+      {
+        "field_path": "sources[].capabilities",
+        "stability": "experimental",
+        "consumer_guidance": "Display only; avoid branching unless version-pinned.",
+        "notes": "Capability shape may evolve."
+      },
+      {
+        "field_path": "sources[].limitations[]",
+        "stability": "volatile",
+        "consumer_guidance": "Display text only.",
+        "notes": "Wording may change."
+      },
+      {
+        "field_path": "sources[].next_step",
+        "stability": "volatile",
+        "consumer_guidance": "Display text only.",
+        "notes": "Planning note."
+      },
+      {
+        "field_path": "source_inputs[]",
+        "stability": "internal",
+        "consumer_guidance": "Diagnostic only.",
+        "notes": "Repo glob."
+      }
+    ],
+    "eval_summary.json": [
+      {
+        "field_path": "schema_version",
+        "stability": "stable_draft",
+        "consumer_guidance": "Check before interpreting the file.",
+        "notes": "Current version is 0.1.0."
+      },
+      {
+        "field_path": "generated_by",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display generator provenance.",
+        "notes": "Static generator only."
+      },
+      {
+        "field_path": "contains_external_observations",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false unless human observations exist.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "archive_resolution.task_count",
+        "stability": "experimental",
+        "consumer_guidance": "Display current local eval count.",
+        "notes": "Not production relevance."
+      },
+      {
+        "field_path": "search_usefulness.status_counts",
+        "stability": "experimental",
+        "consumer_guidance": "Display current local status summary.",
+        "notes": "Taxonomy may evolve."
+      },
+      {
+        "field_path": "search_usefulness.failure_mode_counts",
+        "stability": "volatile",
+        "consumer_guidance": "Display current audit detail only.",
+        "notes": "Failure taxonomy changes."
+      },
+      {
+        "field_path": "source_inputs[]",
+        "stability": "internal",
+        "consumer_guidance": "Diagnostic only.",
+        "notes": "Command list."
+      }
+    ],
+    "route_summary.json": [
+      {
+        "field_path": "schema_version",
+        "stability": "stable_draft",
+        "consumer_guidance": "Check before interpreting the file.",
+        "notes": "Current version is 0.1.0."
+      },
+      {
+        "field_path": "generated_by",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display generator provenance.",
+        "notes": "Static generator only."
+      },
+      {
+        "field_path": "public_alpha_not_production",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must stay true for this summary.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "route_counts.total",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display current route inventory count.",
+        "notes": "Value may change."
+      },
+      {
+        "field_path": "route_counts.safe_public_alpha",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display current route posture count.",
+        "notes": "Value may change."
+      },
+      {
+        "field_path": "review_required_routes[]",
+        "stability": "experimental",
+        "consumer_guidance": "Display current review-required examples only.",
+        "notes": "Route details may change."
+      },
+      {
+        "field_path": "blocked_routes[]",
+        "stability": "experimental",
+        "consumer_guidance": "Display current blocked examples only.",
+        "notes": "Route details may change."
+      },
+      {
+        "field_path": "source_inputs[]",
+        "stability": "internal",
+        "consumer_guidance": "Diagnostic only.",
+        "notes": "Repo path list."
+      }
+    ],
+    "build_manifest.json": [
+      {
+        "field_path": "schema_version",
+        "stability": "stable_draft",
+        "consumer_guidance": "Check before interpreting the file.",
+        "notes": "Current version is 0.1.0."
+      },
+      {
+        "field_path": "generated_by",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display generator provenance.",
+        "notes": "Static generator only."
+      },
+      {
+        "field_path": "repo",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display repo identity.",
+        "notes": "Not deployment proof."
+      },
+      {
+        "field_path": "artifact_root",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display static artifact root.",
+        "notes": "Currently public_site."
+      },
+      {
+        "field_path": "data_files[]",
+        "stability": "stable_draft",
+        "consumer_guidance": "Discover generated public data files.",
+        "notes": "Not live API discovery."
+      },
+      {
+        "field_path": "deployment_performed",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false for committed static artifact.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "downloads_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "install_automation_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "commit",
+        "stability": "volatile",
+        "consumer_guidance": "Diagnostic only.",
+        "notes": "UNKNOWN_UNTIL_CI in committed artifact."
+      },
+      {
+        "field_path": "built_at",
+        "stability": "volatile",
+        "consumer_guidance": "Diagnostic only.",
+        "notes": "UNKNOWN_UNTIL_CI in committed artifact."
+      },
+      {
+        "field_path": "source_inputs[]",
+        "stability": "internal",
+        "consumer_guidance": "Diagnostic only.",
+        "notes": "Repo path and command list."
+      }
+    ]
+  },
+  "stable_draft_fields": [
+    {
+      "file_name": "site_manifest.json",
+      "field_path": "schema_version"
+    },
+    {
+      "file_name": "site_manifest.json",
+      "field_path": "generated_by"
+    },
+    {
+      "file_name": "site_manifest.json",
+      "field_path": "artifact"
+    },
+    {
+      "file_name": "site_manifest.json",
+      "field_path": "public_data_files[]"
+    },
+    {
+      "file_name": "page_registry.json",
+      "field_path": "pages[].path"
+    },
+    {
+      "file_name": "page_registry.json",
+      "field_path": "pages[].status"
+    },
+    {
+      "file_name": "source_summary.json",
+      "field_path": "sources[].source_id"
+    },
+    {
+      "file_name": "source_summary.json",
+      "field_path": "sources[].status"
+    },
+    {
+      "file_name": "source_summary.json",
+      "field_path": "sources[].coverage_depth"
+    },
+    {
+      "file_name": "route_summary.json",
+      "field_path": "public_alpha_not_production"
+    },
+    {
+      "file_name": "build_manifest.json",
+      "field_path": "data_files[]"
+    },
+    {
+      "file_name": "build_manifest.json",
+      "field_path": "deployment_performed"
+    }
+  ],
+  "experimental_fields": [
+    "site_manifest.action_policy",
+    "site_manifest.live_backend_handoff",
+    "site_manifest.live_probe_gateway",
+    "site_manifest.relay_surface",
+    "source_summary.sources[].capabilities",
+    "eval_summary.archive_resolution",
+    "eval_summary.search_usefulness",
+    "route_summary.review_required_routes[]"
+  ],
+  "volatile_fields": [
+    "build_manifest.commit",
+    "build_manifest.built_at",
+    "source_summary.sources[].limitations[]",
+    "source_summary.sources[].next_step",
+    "eval_summary.search_usefulness.failure_mode_counts"
+  ],
+  "internal_fields": [
+    "site_manifest.source_inputs[]",
+    "page_registry.pages[].source_file",
+    "page_registry.source_inputs[]",
+    "source_summary.source_inputs[]",
+    "eval_summary.source_inputs[]",
+    "route_summary.source_inputs[]",
+    "build_manifest.source_inputs[]",
+    "build_manifest.validations_expected[]"
+  ],
+  "deprecated_fields": [],
+  "future_fields": [
+    "site_manifest.live_backend_handoff.reserved_endpoints[]",
+    "site_manifest.live_probe_gateway.candidate_sources[]",
+    "site_manifest.relay_surface.protocol_candidates[]"
+  ],
+  "consumer_guidance": {
+    "safe_current_use": [
+      "Use stable_draft fields with schema_version checks.",
+      "Display experimental fields as status/limitations only.",
+      "Ignore unknown fields.",
+      "Treat volatile fields as diagnostics only."
+    ],
+    "prohibited_current_use": [
+      "Do not treat public JSON as a production API.",
+      "Do not infer live backend, live probe, deployment, external observation, malware-safety, rights-clearance, native-client, or relay implementation.",
+      "Do not consume internal repo path fields as public API.",
+      "Do not branch on experimental capability booleans without version pinning."
+    ]
+  },
+  "breaking_change_rules": [
+    "Removing or renaming a stable_draft field requires a breaking-change note.",
+    "Changing the type of a stable_draft field requires a breaking-change note.",
+    "Changing disabled safety flags to enabled requires a new enabling contract and implementation evidence.",
+    "Adding fields is non-breaking unless a consumer contract says otherwise.",
+    "Changing volatile count values or text is non-breaking."
+  ],
+  "next_recommended_guard": "Generated Artifact Drift Guard v0",
+  "notes": [
+    "Public JSON is not a production API.",
+    "The file-level stable_draft status is narrowed by this field-level matrix.",
+    "Snapshot, native, and relay consumers must version-check and respect field stability classes.",
+    "This review adds no product behavior, live APIs, relay runtime, native client, snapshot reader, downloads, installers, deployment behavior, or external observations."
+  ]
+}
