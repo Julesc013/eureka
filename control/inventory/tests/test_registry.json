@@ -2356,6 +2356,50 @@
       "failure_means": "The public data stability report, validator JSON output, field classifications, or public_data_contract metadata regressed.",
       "advisory_or_required": "required",
       "notes": "Checks field-level stability decisions for generated public JSON without making public JSON a production API or adding runtime behavior."
+    },
+    {
+      "test_id": "generated_artifact_drift_guard",
+      "label": "Generated artifact drift guard",
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "category": "publication",
+      "owner_area": "control/inventory/generated_artifacts",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Committed generated or generated-like artifacts drifted from their owning check commands, validators, or source contracts.",
+      "advisory_or_required": "required",
+      "notes": "Added by Generated Artifact Drift Guard v0; validates public data, compatibility surfaces, static demos, snapshot seed files, site output, Python oracle goldens, public-alpha rehearsal evidence, publication inventories, test registry metadata, and AIDE metadata without regenerating artifacts, calling external services, opening sockets, deploying, or changing runtime behavior."
+    },
+    {
+      "test_id": "generated_artifact_drift_guard_tests",
+      "label": "Generated artifact drift guard tests",
+      "command": "python -m unittest tests.operations.test_generated_artifact_drift_guard tests.scripts.test_check_generated_artifact_drift",
+      "category": "publication",
+      "owner_area": "control/inventory/generated_artifacts",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Generated artifact inventory, drift policy, docs, audit report, command matrix, or checker JSON/list/default behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks the drift guard validation layer without mutating generated artifacts, implementing product behavior, deploying, or adding live network behavior."
     }
   ]
 }

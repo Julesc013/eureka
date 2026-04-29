@@ -818,3 +818,27 @@ API, live backend, live probes, relay runtime, native client, snapshot reader,
 download/install behavior, deployment behavior, external observation, or
 production API stability claim. The next Codex-safe milestone is Generated
 Artifact Drift Guard v0.
+
+## ADR-102: Guard Generated Artifact Drift Without Mutation
+
+Status: accepted
+
+Generated Artifact Drift Guard v0 adds
+`control/inventory/generated_artifacts/`,
+`docs/operations/GENERATED_ARTIFACT_DRIFT_GUARD.md`,
+`control/audits/generated-artifact-drift-guard-v0/`,
+`scripts/check_generated_artifact_drift.py`, and focused operations/script
+tests.
+
+The decision is to record ownership and deterministic check commands for
+committed generated and generated-like artifacts before future clients depend
+more heavily on static data and snapshots. The guard covers public data,
+lite/text/files surfaces, static resolver demos, static snapshot seed files,
+`site/dist`, Python oracle goldens, public-alpha rehearsal evidence,
+publication inventories, test registry metadata, and AIDE metadata. Default
+mode is non-mutating: it runs check commands and validators, not update
+commands. This adds no product behavior, live API, live backend, live probes,
+relay runtime, native client, snapshot reader, deployment behavior, external
+observation, download/install behavior, network calls, or production API
+stability claim. The next Codex-safe milestone is Snapshot Consumer Tooling
+Plan v0.

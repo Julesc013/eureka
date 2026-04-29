@@ -165,3 +165,18 @@ is audit/reporting governance only and does not add product runtime behavior,
 relay runtime, native project scaffolding, live probes, deployment changes,
 external observations, downloads, installers, local cache runtime, telemetry,
 accounts, or cloud sync.
+
+Public Data Contract Stability Review v0 records its committed audit pack under
+`control/audits/public-data-contract-stability-review-v0/`, plus a stability
+policy, validator, and tests under `docs/reference/`, `scripts/`, and `tests/`.
+No separate AIDE runtime report is needed; this is contract-governance only and
+does not add product runtime behavior, live APIs, deployment behavior, or a
+production API stability claim.
+
+Generated Artifact Drift Guard v0 records its generated-artifact inventory under
+`control/inventory/generated_artifacts/`, operations doc, audit pack, checker,
+and tests under `docs/operations/`,
+`control/audits/generated-artifact-drift-guard-v0/`, `scripts/`, and `tests/`.
+No separate AIDE runtime report is needed; this is validation/audit governance
+only and does not regenerate artifacts by default, change runtime behavior,
+deploy, call external services, open sockets, or claim production readiness.

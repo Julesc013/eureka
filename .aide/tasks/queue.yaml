@@ -370,14 +370,14 @@
     {
       "id": "generated_artifact_drift_guard_v0",
       "title": "Generated Artifact Drift Guard v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 53,
-      "notes": "Recommended next Codex-safe follow-up after Public Data Contract Stability Review v0. Strengthen drift checks across site source, site/dist, public_site, generated data, compatibility surfaces, demo snapshots, and seed snapshots."
+      "notes": "Added generated-artifact inventory, drift policy, non-mutating drift checker, audit pack, docs, tests, and command-matrix/AIDE wiring for public data, compatibility surfaces, static demos, seed snapshots, site/dist, Python oracle goldens, public-alpha rehearsal evidence, publication inventories, test registry metadata, and AIDE metadata."
     },
     {
       "id": "snapshot_consumer_tooling_plan_v0",
       "title": "Snapshot Consumer Tooling Plan v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 54,
       "notes": "Plan-only follow-up for future snapshot consumer tooling; do not implement a consumer runtime without explicit scope."
     },

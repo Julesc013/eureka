@@ -362,6 +362,40 @@ manifest no-deployment claims. It performs no network calls, starts no backend,
 adds no live API, enables no live probes, records no external observations, and
 does not change the GitHub Pages artifact.
 
+## Public Data Stability
+
+Public Data Contract Stability Review v0 is validated with:
+
+```bash
+python scripts/validate_public_data_stability.py
+python scripts/validate_public_data_stability.py --json
+python -m unittest tests.operations.test_public_data_contract_stability_review tests.scripts.test_validate_public_data_stability
+```
+
+The lane checks field-level stability classifications for generated public JSON
+under `public_site/data/`. It keeps public JSON from being treated as a
+production API, separates stable-draft fields from experimental and volatile
+fields, and changes no runtime behavior.
+
+## Generated Artifact Drift Guard
+
+Generated Artifact Drift Guard v0 is validated with:
+
+```bash
+python scripts/check_generated_artifact_drift.py
+python scripts/check_generated_artifact_drift.py --json
+python scripts/check_generated_artifact_drift.py --list
+python -m unittest tests.operations.test_generated_artifact_drift_guard tests.scripts.test_check_generated_artifact_drift
+```
+
+The lane checks committed generated and generated-like artifacts against their
+owning check commands: public data, lite/text/files surfaces, static demos,
+static snapshot seed files, `site/dist`, Python oracle goldens, public-alpha
+rehearsal evidence, publication inventories, test registry metadata, and AIDE
+metadata. It is validation/audit only; default mode does not run update
+commands, mutate artifacts, deploy, call external services, open sockets, or add
+runtime behavior.
+
 ## Lite/Text/Files Seed Surfaces
 
 Lite/Text/Files Seed Surfaces v0 is validated with:

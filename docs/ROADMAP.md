@@ -286,7 +286,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Generated Artifact Drift Guard v0
+> Snapshot Consumer Tooling Plan v0
 
 Public Data Contract Stability Review v0 is now implemented as field-level
 contract governance under
@@ -294,11 +294,17 @@ contract governance under
 `docs/reference/PUBLIC_DATA_STABILITY_POLICY.md`. It classifies generated
 public JSON fields as `stable_draft`, `experimental`, `volatile`, `internal`,
 `deprecated`, or `future` without making public JSON a production API.
-Generated Artifact Drift Guard v0 is now the closest Codex-safe follow-up
-because the static public data contract feeds generated public data,
-lite/text/files surfaces, demo snapshots, snapshot contracts, relay planning,
-native contracts, and future clients. Rust Local Index Parity Candidate v0
-remains blocked on planning review and Cargo availability.
+Generated Artifact Drift Guard v0 is now implemented as validation/audit
+governance under `control/inventory/generated_artifacts/`,
+`docs/operations/GENERATED_ARTIFACT_DRIFT_GUARD.md`,
+`control/audits/generated-artifact-drift-guard-v0/`, and
+`scripts/check_generated_artifact_drift.py`. It checks generated public data,
+lite/text/files surfaces, demo snapshots, static snapshot seed files,
+`site/dist`, Python oracle goldens, public-alpha rehearsal evidence,
+publication inventories, test registry metadata, and AIDE metadata without
+regenerating artifacts by default, changing runtime behavior, deploying, or
+calling external services. Rust Local Index Parity Candidate v0 remains blocked
+on planning review and Cargo availability.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -325,7 +331,8 @@ v0, Live Probe Gateway Contract v0, Rust Query Planner Parity Candidate v0,
 Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot
 Consumer Contract v0, Native Client Contract v0, Native Action / Download /
 Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client
-Project Readiness Review v0, Relay Surface Design v0, Rust Source Registry
+Project Readiness Review v0, Relay Surface Design v0, Generated Artifact Drift
+Guard v0, Rust Source Registry
 Parity
 Catch-up v0, and Rust Local Index
 Parity Planning v0 now

@@ -90,3 +90,9 @@ Current packs:
   `internal`, `deprecated`, or `future`, records versioning/breaking-change
   policy, and recommends Generated Artifact Drift Guard v0 without changing
   product behavior or claiming production API stability.
+- `generated-artifact-drift-guard-v0/`: validation/audit pack for generated and
+  generated-like artifact ownership. It covers public data, compatibility
+  surfaces, static demos, seed snapshots, `site/dist`, Python oracle goldens,
+  public-alpha rehearsal evidence, publication inventories, test registry
+  metadata, and AIDE metadata without regenerating artifacts by default,
+  changing product behavior, deploying, or calling external services.

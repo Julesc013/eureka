@@ -395,6 +395,17 @@
       "title": "Classify generated public data field stability before future snapshot, native, or relay clients depend on it",
       "status": "addressed_by_public_data_contract_stability_review_v0",
       "suggested_milestone": "Generated Artifact Drift Guard v0"
+    },
+    {
+      "id": "audit-backlog-generated-artifact-drift-guard",
+      "finding_refs": [
+        "CTEA-DOCS-001",
+        "CTEA-TEST-002",
+        "CTEA-BEHAVIOR-001"
+      ],
+      "title": "Add a non-mutating guard for committed generated and generated-like artifact drift",
+      "status": "addressed_by_generated_artifact_drift_guard_v0",
+      "suggested_milestone": "Snapshot Consumer Tooling Plan v0"
     }
   ]
 }

@@ -275,12 +275,13 @@ The next backend sequence is:
 62. Manual Observation Batch 0 Execution (human-operated parallel work)
 63. Native App Work Later
 64. Public Data Contract Stability Review v0 (implemented as field-level public data stability governance; no production API claim)
+65. Generated Artifact Drift Guard v0 (implemented as validation/audit only; no regeneration by default, runtime behavior, deployment, or network behavior)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Generated Artifact Drift Guard v0
+> Snapshot Consumer Tooling Plan v0
 
 Why this comes next:
 
@@ -288,9 +289,14 @@ Why this comes next:
   files and fields as `stable_draft`, `experimental`, `volatile`, `internal`,
   `deprecated`, or `future`, while keeping public JSON pre-alpha and not a
   production API.
-- The next practical risk is generated artifact drift across `public_site`,
-  `site/dist`, public data, lite/text/files surfaces, demo snapshots, and seed
-  snapshots.
+- Generated Artifact Drift Guard v0 now checks generated and generated-like
+  committed artifacts across `public_site`, `site/dist`, public data,
+  lite/text/files surfaces, demo snapshots, seed snapshots, Python oracle
+  goldens, public-alpha rehearsal evidence, publication inventories, test
+  registry metadata, and AIDE metadata without regenerating artifacts by
+  default or changing runtime behavior.
+- Snapshot Consumer Tooling Plan v0 is the next safe planning step before any
+  snapshot reader runtime or client implementation exists.
 - Native Client Project Readiness Review v0 now records the evidence decision
   `ready_for_minimal_project_skeleton_after_human_approval` for the
   `windows_7_x64_winforms_net48` lane only.

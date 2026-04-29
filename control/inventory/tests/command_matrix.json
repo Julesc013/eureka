@@ -106,7 +106,9 @@
         "full_project_state_audit_validator",
         "full_project_state_audit_tests",
         "public_data_stability_validator",
-        "public_data_stability_tests"
+        "public_data_stability_tests",
+        "generated_artifact_drift_guard",
+        "generated_artifact_drift_guard_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -208,7 +210,9 @@
         "full_project_state_audit_validator",
         "full_project_state_audit_tests",
         "public_data_stability_validator",
-        "public_data_stability_tests"
+        "public_data_stability_tests",
+        "generated_artifact_drift_guard",
+        "generated_artifact_drift_guard_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -285,7 +289,9 @@
         "full_project_state_audit_validator",
         "full_project_state_audit_tests",
         "public_data_stability_validator",
-        "public_data_stability_tests"
+        "public_data_stability_tests",
+        "generated_artifact_drift_guard",
+        "generated_artifact_drift_guard_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -364,6 +370,8 @@
         "relay_prototype_plan_tests",
         "public_data_stability_validator",
         "public_data_stability_tests",
+        "generated_artifact_drift_guard",
+        "generated_artifact_drift_guard_tests",
         "public_static_site_validator",
         "public_static_site_pack_validation",
         "docs_diff_check"

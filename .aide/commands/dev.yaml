@@ -518,6 +518,14 @@ steps:
     run: python scripts/validate_public_data_stability.py --json
   - id: public_data_stability_tests
     run: python -m unittest tests.operations.test_public_data_contract_stability_review tests.scripts.test_validate_public_data_stability
+  - id: generated_artifact_drift_guard
+    run: python scripts/check_generated_artifact_drift.py
+  - id: generated_artifact_drift_guard_json
+    run: python scripts/check_generated_artifact_drift.py --json
+  - id: generated_artifact_drift_guard_list
+    run: python scripts/check_generated_artifact_drift.py --list
+  - id: generated_artifact_drift_guard_tests
+    run: python -m unittest tests.operations.test_generated_artifact_drift_guard tests.scripts.test_check_generated_artifact_drift
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.

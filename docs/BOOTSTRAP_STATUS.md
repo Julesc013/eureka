@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus sixty-three executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Rust Source Registry Parity Catch-up v0, the first isolated Rust query-planner parity candidate, Rust Local Index Parity Planning v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Windows 7 WinForms Native Skeleton Planning v0, Post-Queue State Checkpoint v0, Relay Surface Design v0, Relay Prototype Planning v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus sixty-three executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Rust Source Registry Parity Catch-up v0, the first isolated Rust query-planner parity candidate, Rust Local Index Parity Planning v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Windows 7 WinForms Native Skeleton Planning v0, Post-Queue State Checkpoint v0, Relay Surface Design v0, Relay Prototype Planning v0, Full Project State Audit v0, Public Data Contract Stability Review v0, Generated Artifact Drift Guard v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -496,21 +496,29 @@ public JSON files and fields as `stable_draft`, `experimental`, `volatile`,
 static clients know what they may consume. It does not change runtime behavior,
 generated public data output, live APIs, deployment behavior, relay/native
 runtime, or production API stability.
+Generated Artifact Drift Guard v0 records generated and generated-like artifact
+ownership under `control/inventory/generated_artifacts/`, adds
+`scripts/check_generated_artifact_drift.py`, and records an audit pack under
+`control/audits/generated-artifact-drift-guard-v0/`. It checks public data,
+compatibility surfaces, static demos, snapshot seed files, `site/dist`, Python
+oracle goldens, public-alpha rehearsal evidence, publication inventories, test
+registry metadata, and AIDE metadata without regenerating artifacts by default,
+changing runtime behavior, deploying, calling external services, or opening
+network sockets.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Generated Artifact Drift Guard v0
-2. Snapshot Consumer Tooling Plan v0
-3. Search Usefulness Source Expansion v2, fixture-only
-4. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+1. Snapshot Consumer Tooling Plan v0
+2. Search Usefulness Source Expansion v2, fixture-only
+3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
-5. Relay Prototype Implementation v0, only after explicit human approval and
+4. Relay Prototype Implementation v0, only after explicit human approval and
    limited to the approved localhost-only/read-only/static relay scope
-6. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
+5. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
    human approval and limited to the approved read-only static-data/snapshot-demo
    skeleton scope
-7. Manual Observation Batch 0 Execution (human-operated parallel work)
-8. Internet Archive Live Probe v0 only after explicit human approval and
+6. Manual Observation Batch 0 Execution (human-operated parallel work)
+7. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 ## Deferred Priorities

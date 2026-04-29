@@ -1,0 +1,47 @@
+{
+  "report_id": "generated-artifact-drift-guard-v0",
+  "schema_version": "0.1.0",
+  "created_by_slice": "generated_artifact_drift_guard_v0",
+  "status": "validation_audit_only",
+  "inventory": "control/inventory/generated_artifacts/generated_artifacts.json",
+  "policy": "control/inventory/generated_artifacts/drift_policy.json",
+  "artifact_groups_covered": [
+    "public_data_summaries",
+    "compatibility_surfaces",
+    "static_resolver_demos",
+    "static_snapshot_example",
+    "site_dist",
+    "python_oracle_goldens",
+    "public_alpha_rehearsal_evidence",
+    "publication_inventory",
+    "test_registry",
+    "aide_metadata"
+  ],
+  "current_drift_status": "no_drift_detected",
+  "initial_command": "python scripts/check_generated_artifact_drift.py",
+  "initial_status_counts": {
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0,
+    "unavailable": 0
+  },
+  "non_mutating_by_default": true,
+  "update_commands_run_by_default": false,
+  "network_calls_allowed": false,
+  "cargo_required": false,
+  "runtime_behavior_changed": false,
+  "production_readiness_claimed": false,
+  "drift_policy_summary": [
+    "Required artifact paths must exist.",
+    "Required Python/std-lib check commands must resolve and pass.",
+    "Generated outputs must be refreshed only through owning update commands.",
+    "Hybrid governance metadata must be edited deliberately and validated.",
+    "Known volatile fields must be normalized or documented."
+  ],
+  "next_recommended_milestone": "Snapshot Consumer Tooling Plan v0",
+  "notes": [
+    "The guard delegates to existing generators and validators.",
+    "The guard does not mutate artifacts or add runtime behavior.",
+    "GitHub Actions status is not recorded by this local audit pack."
+  ]
+}
