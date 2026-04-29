@@ -10,6 +10,7 @@ PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
 PUBLIC_SITE = REPO_ROOT / "public_site"
 REQUIRED_JSON_FILES = {
     "action_policy.json",
+    "local_cache_privacy_policy.json",
     "publication_contract.json",
     "page_registry.json",
     "client_profiles.json",
@@ -136,6 +137,13 @@ class PublicationInventoryTest(unittest.TestCase):
         self.assertIsNone(contract["snapshot_seed_example_public_route"])
         self.assertEqual(contract["action_policy_status"], "implemented_policy_only")
         self.assertEqual(contract["action_policy"], "control/inventory/publication/action_policy.json")
+        self.assertEqual(
+            contract["local_cache_privacy_policy_status"], "implemented_policy_only"
+        )
+        self.assertEqual(
+            contract["local_cache_privacy_policy"],
+            "control/inventory/publication/local_cache_privacy_policy.json",
+        )
         self.assertEqual(contract["deploy_artifact_current"], "public_site")
         self.assertEqual(contract["base_path_policy"], "deployment_target_defined")
         self.assertTrue(contract["no_live_backend"])
@@ -390,6 +398,36 @@ class PublicationInventoryTest(unittest.TestCase):
             self.assertFalse(defaults["execute_enabled"])
             self.assertFalse(defaults["malware_scanning_enabled"])
             self.assertFalse(defaults["rights_clearance_claimed"])
+
+    def test_local_cache_privacy_policy_records_policy_only_posture(self) -> None:
+        payload = load_json("local_cache_privacy_policy.json")
+
+        self.assertEqual(payload["schema_version"], "0.1.0")
+        self.assertEqual(payload["policy_id"], "eureka-native-local-cache-privacy-policy")
+        self.assertEqual(payload["status"], "policy_only")
+        self.assertTrue(payload["no_cache_runtime_implemented"])
+        self.assertTrue(payload["no_private_ingestion_implemented"])
+        self.assertTrue(payload["no_telemetry_implemented"])
+        self.assertTrue(payload["no_accounts_implemented"])
+        self.assertTrue(payload["no_cloud_sync_implemented"])
+        self.assertEqual(payload["privacy_default"], "local_private_off_by_default")
+        for behavior in (
+            "automatic_local_archive_scan",
+            "private_file_ingestion_by_default",
+            "private_uploads",
+            "telemetry_by_default",
+            "analytics_by_default",
+            "cloud_sync_by_default",
+            "public_path_leakage",
+            "credential_export",
+            "old_client_private_relay",
+        ):
+            self.assertIn(behavior, payload["prohibited_behaviors"])
+        self.assertFalse(payload["private_cache_policy"]["enabled_by_default"])
+        self.assertFalse(payload["telemetry_policy"]["implemented"])
+        self.assertFalse(payload["telemetry_policy"]["default_enabled"])
+        self.assertFalse(payload["telemetry_policy"]["analytics_enabled"])
+        self.assertFalse(payload["telemetry_policy"]["external_uploads_enabled"])
 
     def test_no_provider_config_or_custom_domain_is_added(self) -> None:
         forbidden_paths = [

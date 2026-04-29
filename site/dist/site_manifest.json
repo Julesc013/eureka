@@ -1,4 +1,5 @@
 {
+  "accounts_implemented": false,
   "action_policy_source": "control/inventory/publication/action_policy.json",
   "api_v1_live": false,
   "api_v1_reserved": true,
@@ -8,6 +9,7 @@
     "/eureka/",
     "/"
   ],
+  "cloud_sync_implemented": false,
   "compatibility_surface_source": "scripts/generate_compatibility_surfaces.py",
   "compatibility_surfaces": [
     "lite/",
@@ -49,6 +51,11 @@
     "no package-manager integration",
     "no malware safety claim",
     "no rights clearance claim",
+    "no local cache runtime",
+    "no private file ingestion",
+    "no local archive scanning",
+    "no telemetry or analytics",
+    "no accounts or cloud sync",
     "no relay runtime or protocol server",
     "no scraping",
     "manual external baselines remain pending",
@@ -60,8 +67,10 @@
   "live_probe_gateway_contract_only": true,
   "live_probe_gateway_source": "control/inventory/publication/live_probe_gateway.json",
   "live_probes_enabled": false,
+  "local_cache_privacy_policy_source": "control/inventory/publication/local_cache_privacy_policy.json",
+  "local_cache_runtime_implemented": false,
   "malware_scanning_claimed": false,
-  "next_milestone": "Native Local Cache / Privacy Policy v0",
+  "next_milestone": "Native Client Project Readiness Review v0",
   "no_backend": true,
   "no_cname_file_committed": true,
   "no_custom_domain_configured": true,
@@ -82,6 +91,7 @@
     "local-quickstart.html"
   ],
   "parallel_human_work": "Manual Observation Batch 0 Execution",
+  "private_ingestion_implemented": false,
   "production_signed_snapshots_available": false,
   "prohibited_claims": [
     "production ready",
@@ -125,5 +135,6 @@
   "static_resolver_demos": [
     "demo/"
   ],
-  "surface_capabilities_source": "control/inventory/publication/surface_capabilities.json"
+  "surface_capabilities_source": "control/inventory/publication/surface_capabilities.json",
+  "telemetry_implemented": false
 }

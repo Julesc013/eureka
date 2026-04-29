@@ -86,6 +86,12 @@ steps:
     run: python scripts/validate_action_policy.py --json
   - id: action_policy_tests
     run: python -m unittest tests.operations.test_action_download_install_policy tests.scripts.test_validate_action_policy
+  - id: local_cache_privacy_policy_validator
+    run: python scripts/validate_local_cache_privacy_policy.py
+  - id: local_cache_privacy_policy_validator_json
+    run: python scripts/validate_local_cache_privacy_policy.py --json
+  - id: local_cache_privacy_policy_tests
+    run: python -m unittest tests.operations.test_native_local_cache_privacy_policy tests.scripts.test_validate_local_cache_privacy_policy
   - id: relay_surface_design_validator
     run: python scripts/validate_relay_surface_design.py
   - id: relay_surface_design_tests

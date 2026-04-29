@@ -87,6 +87,9 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
 def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     publication_contract = _load_json(PUBLICATION_DIR / "publication_contract.json")
     action_policy = _load_json(PUBLICATION_DIR / "action_policy.json")
+    local_cache_privacy_policy = _load_json(
+        PUBLICATION_DIR / "local_cache_privacy_policy.json"
+    )
     page_registry = _load_json(PUBLICATION_DIR / "page_registry.json")
     deployment_targets = _load_json(PUBLICATION_DIR / "deployment_targets.json")
     domain_plan = _load_json(PUBLICATION_DIR / "domain_plan.json")
@@ -105,10 +108,13 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     source_summary = _build_source_summary(source_records)
     eval_summary = _build_eval_summary()
     route_summary = _build_route_summary(route_inventory)
-    build_manifest = _build_build_manifest(public_data_contract, action_policy)
+    build_manifest = _build_build_manifest(
+        public_data_contract, action_policy, local_cache_privacy_policy
+    )
     site_manifest = _build_data_site_manifest(
         publication_contract,
         action_policy,
+        local_cache_privacy_policy,
         page_registry_summary,
         deployment_targets,
         domain_plan,
@@ -181,6 +187,7 @@ def check_public_data_summaries(output_root: Path = DEFAULT_OUTPUT_ROOT) -> dict
 def _build_data_site_manifest(
     publication_contract: Mapping[str, Any],
     action_policy: Mapping[str, Any],
+    local_cache_privacy_policy: Mapping[str, Any],
     page_registry_summary: Mapping[str, Any],
     deployment_targets: Mapping[str, Any],
     domain_plan: Mapping[str, Any],
@@ -379,6 +386,32 @@ def _build_data_site_manifest(
             "public_alpha_defaults": action_policy.get("public_alpha_defaults", {}),
             "static_site_defaults": action_policy.get("static_site_defaults", {}),
         },
+        "local_cache_privacy_policy": {
+            "status": "implemented_policy_only",
+            "policy_id": local_cache_privacy_policy.get("policy_id"),
+            "privacy_default": local_cache_privacy_policy.get("privacy_default"),
+            "no_cache_runtime_implemented": local_cache_privacy_policy.get(
+                "no_cache_runtime_implemented"
+            ),
+            "no_private_ingestion_implemented": local_cache_privacy_policy.get(
+                "no_private_ingestion_implemented"
+            ),
+            "no_telemetry_implemented": local_cache_privacy_policy.get(
+                "no_telemetry_implemented"
+            ),
+            "no_accounts_implemented": local_cache_privacy_policy.get(
+                "no_accounts_implemented"
+            ),
+            "no_cloud_sync_implemented": local_cache_privacy_policy.get(
+                "no_cloud_sync_implemented"
+            ),
+            "prohibited_behaviors": local_cache_privacy_policy.get(
+                "prohibited_behaviors", []
+            ),
+            "telemetry_policy": local_cache_privacy_policy.get("telemetry_policy", {}),
+            "relay_policy": local_cache_privacy_policy.get("relay_policy", {}),
+            "snapshot_policy": local_cache_privacy_policy.get("snapshot_policy", {}),
+        },
         "surface_capabilities": capabilities,
         "base_path_targets": base_paths,
         "contains_live_backend": False,
@@ -398,10 +431,12 @@ def _build_data_site_manifest(
             "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
             "Signed Snapshot Format v0 is a contract and seed example only; real signing keys, production signatures, executable downloads, public /snapshots/ route, relay behavior, native-client runtime, live backend behavior, and live probes remain absent.",
             "Native Action / Download / Install Policy v0 is policy-only; downloads, mirrors, install handoff, package-manager handoff, execute, restore, uninstall, rollback, malware scanning, rights clearance, native clients, relay runtime, and executable trust claims remain absent.",
+            "Native Local Cache / Privacy Policy v0 is policy-only; local cache runtime, private file ingestion, local archive scanning, telemetry, accounts, cloud sync, uploads, native clients, relay runtime, and private-data relay behavior remain absent.",
         ],
         "source_inputs": [
             "control/inventory/publication/publication_contract.json",
             "control/inventory/publication/action_policy.json",
+            "control/inventory/publication/local_cache_privacy_policy.json",
             "control/inventory/publication/page_registry.json",
             "control/inventory/publication/deployment_targets.json",
             "control/inventory/publication/domain_plan.json",
@@ -645,7 +680,9 @@ def _route_projection(route: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def _build_build_manifest(
-    public_data_contract: Mapping[str, Any], action_policy: Mapping[str, Any]
+    public_data_contract: Mapping[str, Any],
+    action_policy: Mapping[str, Any],
+    local_cache_privacy_policy: Mapping[str, Any],
 ) -> dict[str, Any]:
     data_files = [
         entry.get("path")
@@ -668,6 +705,11 @@ def _build_build_manifest(
         "install_automation_enabled": False,
         "malware_scanning_claimed": False,
         "rights_clearance_claimed": False,
+        "local_cache_runtime_implemented": False,
+        "private_ingestion_implemented": False,
+        "telemetry_implemented": False,
+        "accounts_implemented": False,
+        "cloud_sync_implemented": False,
         "artifact_root": "public_site",
         "data_files": sorted(data_files),
         "action_policy": {
@@ -675,6 +717,14 @@ def _build_build_manifest(
             "action_policy_id": action_policy.get("action_policy_id"),
             "future_gated_actions": action_policy.get("future_gated_actions", []),
             "prohibited_until_policy": action_policy.get("prohibited_until_policy", []),
+        },
+        "local_cache_privacy_policy": {
+            "status": "implemented_policy_only",
+            "policy_id": local_cache_privacy_policy.get("policy_id"),
+            "privacy_default": local_cache_privacy_policy.get("privacy_default"),
+            "prohibited_behaviors": local_cache_privacy_policy.get(
+                "prohibited_behaviors", []
+            ),
         },
         "validations_expected": [
             "python scripts/generate_public_data_summaries.py --check",
@@ -686,12 +736,14 @@ def _build_build_manifest(
             "python scripts/validate_live_probe_gateway.py",
             "python scripts/validate_relay_surface_design.py",
             "python scripts/validate_action_policy.py",
+            "python scripts/validate_local_cache_privacy_policy.py",
             "python scripts/generate_static_snapshot.py --check",
             "python scripts/validate_static_snapshot.py",
         ],
         "source_inputs": [
             "control/inventory/publication/public_data_contract.json",
             "control/inventory/publication/action_policy.json",
+            "control/inventory/publication/local_cache_privacy_policy.json",
             "control/inventory/publication/publication_contract.json",
             "control/inventory/publication/page_registry.json",
             "control/inventory/publication/domain_plan.json",

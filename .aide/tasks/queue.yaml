@@ -300,14 +300,14 @@
     {
       "id": "native_local_cache_privacy_policy_v0",
       "title": "Native Local Cache / Privacy Policy v0",
-      "status": "next",
+      "status": "completed",
       "priority": 43,
-      "notes": "Define future native/local cache, retention, private-data, path-safety, and privacy policy before project-readiness or runtime work."
+      "notes": "Defined future native/local cache, retention, private-data, path-safety, telemetry/logging, credentials, deletion/export/reset, and portable-mode policy without implementing cache runtime, private ingestion, telemetry, accounts, cloud sync, uploads, native clients, or relay runtime."
     },
     {
       "id": "native_client_project_readiness_review_v0",
       "title": "Native Client Project Readiness Review v0",
-      "status": "queued_after_cache_policy",
+      "status": "next",
       "priority": 44,
       "notes": "Review native-client prerequisites after local cache/privacy policy; not a Visual Studio/Xcode project creation task."
     },
@@ -321,9 +321,16 @@
     {
       "id": "relay_prototype_planning_v0",
       "title": "Relay Prototype Planning v0",
-      "status": "queued_after_native_cache_policy",
+      "status": "queued_after_readiness_review",
       "priority": 46,
       "notes": "Future planning-only milestone for a relay prototype after relay and snapshot-consumer contracts; not a relay runtime implementation and not a protocol server."
+    },
+    {
+      "id": "internet_archive_live_probe_v0",
+      "title": "Internet Archive Live Probe v0",
+      "status": "blocked_pending_explicit_approval",
+      "priority": 47,
+      "notes": "Future live external-source behavior; do not run unattended before explicit human approval and live probe gateway review."
     }
   ]
 }

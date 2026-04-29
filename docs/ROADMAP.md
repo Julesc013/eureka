@@ -286,7 +286,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Native Local Cache / Privacy Policy v0
+> Native Client Project Readiness Review v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -312,7 +312,8 @@ Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract
 v0, Live Probe Gateway Contract v0, Rust Query Planner Parity Candidate v0,
 Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot
 Consumer Contract v0, Native Client Contract v0, Native Action / Download /
-Install Policy v0, Relay Surface Design v0, Rust Source Registry Parity
+Install Policy v0, Native Local Cache / Privacy Policy v0, Relay Surface
+Design v0, Rust Source Registry Parity
 Catch-up v0, and Rust Local Index
 Parity Planning v0 now
 mark the start of a more evidence-led backend phase. Rust source-registry
@@ -346,6 +347,12 @@ classes, prohibited silent/privileged/private actions, warning classes, and
 static/public-alpha defaults while adding no downloads, installers,
 package-manager integration, malware scanning, rights clearance, native clients,
 relay runtime, or executable trust claims.
+Native Local Cache / Privacy Policy v0 is implemented as policy/contract only;
+it defines future public/private cache, local path, user state, resolution
+memory, telemetry/logging, credentials, deletion/export/reset, portable-mode,
+snapshot, relay, and public-alpha privacy gates while adding no cache runtime,
+private file ingestion, local archive scanning, telemetry, accounts, cloud
+sync, uploads, native clients, relay runtime, or private-data relay behavior.
 Rust Query Planner Parity Candidate v0 remains isolated and does not wire Rust
 into runtime behavior. Rust Local Index Parity Planning v0 is implemented as
 planning-only parity governance for future local-index Rust work; it adds no

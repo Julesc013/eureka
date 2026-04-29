@@ -74,6 +74,14 @@ The minimum public-alpha entry gate should include:
   Windows/macOS/native client lanes and readiness gates; no Visual Studio/Xcode
   projects, native GUI, FFI, installers, downloads, relay sidecars, live
   probes, Rust runtime wiring, or production native-client claim)
+- Native Action / Download / Install Policy v0 (implemented as policy-only
+  gates for future risky actions; no downloads, installers, package-manager
+  integration, malware scanning, rights clearance, native clients, relay
+  runtime, or executable trust claim)
+- Native Local Cache / Privacy Policy v0 (implemented as policy-only cache,
+  privacy, path, telemetry/logging, credential, deletion/export/reset, and
+  portable-mode gates; no cache runtime, private ingestion, telemetry, accounts,
+  cloud sync, uploads, native clients, or relay runtime)
 - Search Usefulness Audit v0 (implemented as a local usefulness/backlog audit
   with no external scraping)
 - Comprehensive Test/Eval Operating Layer and Repo Audit v0 (implemented as
@@ -97,6 +105,8 @@ A public alpha should assume:
 - no hidden access to local store roots outside configured safe paths
 - no hidden access to local memory-store roots outside configured safe paths
 - no assumption that auth or user accounts exist yet
+- no telemetry, analytics, cloud sync, account state, private cache runtime, or
+  private file ingestion
 - no silent escalation from local bootstrap behavior into public network
   behavior
 

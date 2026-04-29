@@ -14,6 +14,7 @@ DEFAULT_SITE_DIR = REPO_ROOT / "public_site"
 REQUIRED_FILES = {
     "README.md",
     "action_policy.json",
+    "local_cache_privacy_policy.json",
     "publication_contract.json",
     "page_registry.json",
     "client_profiles.json",
@@ -293,6 +294,9 @@ def validate_publication_inventory(
         "action_policy.json": _load_json(
             inventory_dir / "action_policy.json", errors, repo_root
         ),
+        "local_cache_privacy_policy.json": _load_json(
+            inventory_dir / "local_cache_privacy_policy.json", errors, repo_root
+        ),
         "client_profiles.json": _load_json(
             inventory_dir / "client_profiles.json", errors, repo_root
         ),
@@ -334,6 +338,9 @@ def validate_publication_inventory(
 
     _validate_contract(payloads["publication_contract.json"], errors)
     _validate_action_policy(payloads["action_policy.json"], errors)
+    _validate_local_cache_privacy_policy(
+        payloads["local_cache_privacy_policy.json"], errors
+    )
     page_summary = _validate_page_registry(
         payloads["page_registry.json"], site_dir, repo_root, errors
     )
@@ -363,6 +370,8 @@ def validate_publication_inventory(
         "registered_routes": page_summary["registered_routes"],
         "reserved_routes": sorted(REQUIRED_RESERVED_ROUTES),
         "action_policy_checked": "action_policy.json" in existing_files,
+        "local_cache_privacy_policy_checked": "local_cache_privacy_policy.json"
+        in existing_files,
         "required_client_profiles": sorted(REQUIRED_CLIENT_PROFILES),
         "required_public_data_paths": sorted(REQUIRED_PUBLIC_DATA_PATHS),
         "domain_plan_checked": "domain_plan.json" in existing_files,
@@ -492,6 +501,64 @@ def _validate_action_policy(payload: Any, errors: list[str]) -> None:
         ):
             if defaults.get(flag) is not False:
                 errors.append(f"action_policy.json: {defaults_name}.{flag} must be false.")
+
+
+def _validate_local_cache_privacy_policy(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("local_cache_privacy_policy.json: must be a JSON object.")
+        return
+    expected = {
+        "schema_version": "0.1.0",
+        "policy_id": "eureka-native-local-cache-privacy-policy",
+        "status": "policy_only",
+        "stability": "experimental",
+        "no_cache_runtime_implemented": True,
+        "no_private_ingestion_implemented": True,
+        "no_telemetry_implemented": True,
+        "no_accounts_implemented": True,
+        "no_cloud_sync_implemented": True,
+        "privacy_default": "local_private_off_by_default",
+        "created_by_slice": "native_local_cache_privacy_policy_v0",
+    }
+    _expect_mapping_values("local_cache_privacy_policy.json", payload, expected, errors)
+    for prohibited in (
+        "automatic_local_archive_scan",
+        "private_file_ingestion_by_default",
+        "private_uploads",
+        "telemetry_by_default",
+        "analytics_by_default",
+        "cloud_sync_by_default",
+        "public_path_leakage",
+        "credential_export",
+        "old_client_private_relay",
+    ):
+        if prohibited not in _string_list(payload.get("prohibited_behaviors")):
+            errors.append(
+                f"local_cache_privacy_policy.json: prohibited_behaviors missing {prohibited}."
+            )
+    private_cache = payload.get("private_cache_policy")
+    if not isinstance(private_cache, Mapping):
+        errors.append(
+            "local_cache_privacy_policy.json: private_cache_policy must be an object."
+        )
+    elif private_cache.get("enabled_by_default") is not False:
+        errors.append(
+            "local_cache_privacy_policy.json: private cache must be disabled by default."
+        )
+    telemetry = payload.get("telemetry_policy")
+    if not isinstance(telemetry, Mapping):
+        errors.append("local_cache_privacy_policy.json: telemetry_policy must be an object.")
+    else:
+        for flag in (
+            "implemented",
+            "default_enabled",
+            "analytics_enabled",
+            "external_uploads_enabled",
+        ):
+            if telemetry.get(flag) is not False:
+                errors.append(
+                    f"local_cache_privacy_policy.json: telemetry_policy.{flag} must be false."
+                )
 
 
 def _validate_page_registry(

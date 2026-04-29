@@ -1,4 +1,5 @@
 {
+  "accounts_implemented": false,
   "action_policy": {
     "action_policy_id": "eureka-native-action-download-install-policy",
     "future_gated_actions": [
@@ -34,6 +35,7 @@
   "artifact_root": "public_site",
   "branch": "main",
   "built_at": "UNKNOWN_UNTIL_CI",
+  "cloud_sync_implemented": false,
   "commit": "UNKNOWN_UNTIL_CI",
   "contains_external_observations": false,
   "contains_live_backend": false,
@@ -50,7 +52,32 @@
   "downloads_enabled": false,
   "generated_by": "scripts/generate_public_data_summaries.py",
   "install_automation_enabled": false,
+  "local_cache_privacy_policy": {
+    "policy_id": "eureka-native-local-cache-privacy-policy",
+    "privacy_default": "local_private_off_by_default",
+    "prohibited_behaviors": [
+      "automatic_local_archive_scan",
+      "private_file_ingestion_by_default",
+      "private_uploads",
+      "send_private_inventory",
+      "telemetry_by_default",
+      "analytics_by_default",
+      "crash_report_upload_by_default",
+      "cloud_sync_by_default",
+      "account_creation_without_policy",
+      "public_path_leakage",
+      "absolute_private_paths_in_public_reports",
+      "secrets_in_snapshots_or_public_data",
+      "credential_export",
+      "credential_storage_without_policy",
+      "old_client_private_relay",
+      "private_data_over_insecure_transport"
+    ],
+    "status": "implemented_policy_only"
+  },
+  "local_cache_runtime_implemented": false,
   "malware_scanning_claimed": false,
+  "private_ingestion_implemented": false,
   "repo": "Julesc013/eureka",
   "rights_clearance_claimed": false,
   "schema_version": "0.1.0",
@@ -58,6 +85,7 @@
   "source_inputs": [
     "control/inventory/publication/public_data_contract.json",
     "control/inventory/publication/action_policy.json",
+    "control/inventory/publication/local_cache_privacy_policy.json",
     "control/inventory/publication/publication_contract.json",
     "control/inventory/publication/page_registry.json",
     "control/inventory/publication/domain_plan.json",
@@ -75,6 +103,7 @@
     "scripts/run_search_usefulness_audit.py --json",
     "scripts/report_external_baseline_status.py --json"
   ],
+  "telemetry_implemented": false,
   "validations_expected": [
     "python scripts/generate_public_data_summaries.py --check",
     "python scripts/validate_public_static_site.py",
@@ -85,6 +114,7 @@
     "python scripts/validate_live_probe_gateway.py",
     "python scripts/validate_relay_surface_design.py",
     "python scripts/validate_action_policy.py",
+    "python scripts/validate_local_cache_privacy_policy.py",
     "python scripts/generate_static_snapshot.py --check",
     "python scripts/validate_static_snapshot.py"
   ]

@@ -38,6 +38,7 @@
       <li>Signed Snapshot Format v0 defines a static/offline snapshot contract and repo seed example only; it does not add production signed releases, real signing keys, executable downloads, a public /snapshots/ route, relay behavior, or native-client runtime.</li>
       <li>Relay Surface Design v0 defines future local/LAN bridge policy only; it does not add a relay runtime, protocol server, network listener, private data exposure, live-probe passthrough, or write/admin path.</li>
       <li>Native Action / Download / Install Policy v0 defines policy gates for future downloads, mirrors, install handoff, package-manager handoff, execute, restore, uninstall, and rollback actions only; no installer tooling, package-manager integration, malware scanning, rights clearance, executable trust, native clients, or relay runtime is implemented.</li>
+      <li>Native Local Cache / Privacy Policy v0 defines policy gates for future local cache, private cache, local paths, user state, telemetry, diagnostics, credentials, deletion/export/reset, and portable mode only; no local cache runtime, private file ingestion, local archive scanning, telemetry, accounts, cloud sync, uploads, native clients, or relay runtime is implemented.</li>
       <li>Google remains manual-baseline only and is not a live probe source.</li>
       <li>Internet Archive live probing remains future, disabled, and gated behind explicit human review.</li>
       <li>No live crawling, live source probes, or external source calls are included.</li>
@@ -46,6 +47,7 @@
       <li>No scraping and no automated Google or Internet Archive baseline collection.</li>
       <li>No arbitrary local path access in public-alpha mode.</li>
       <li>No auth, accounts, rate limiting, TLS ownership, logging policy, monitoring, or process supervision.</li>
+      <li>No telemetry, analytics, diagnostics upload, account system, cloud sync, private cache runtime, or private file ingestion.</li>
       <li>No CORS, auth, or rate-limit policy is finalized for a public live backend.</li>
       <li>No production Rust backend.</li>
       <li>No native GUI apps.</li>

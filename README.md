@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus isolated source-registry and query-planner parity candidates; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -164,6 +164,12 @@ restore, uninstall, rollback, malware-scan, and rights/access policy before any
 native or public download surface exists. It does not implement downloads,
 installers, package-manager integration, malware scanning, rights clearance,
 native clients, relay runtime, or executable trust claims.
+Native Local Cache / Privacy Policy v0 defines future public/private cache,
+local path, user state, resolution memory, telemetry/logging, credentials,
+deletion/export/reset, portable-mode, snapshot, relay, and public-alpha privacy
+policy before native project readiness work. It does not implement cache
+runtime, private file ingestion, local archive scanning, telemetry, analytics,
+accounts, cloud sync, uploads, native clients, or relay runtime.
 
 ## Quickstart
 
@@ -215,6 +221,8 @@ python scripts/generate_static_snapshot.py --check
 python scripts/validate_static_snapshot.py
 python scripts/validate_snapshot_consumer_contract.py
 python scripts/validate_native_client_contract.py
+python scripts/validate_action_policy.py
+python scripts/validate_local_cache_privacy_policy.py
 python scripts/check_rust_query_planner_parity.py
 python scripts/generate_public_alpha_rehearsal_evidence.py --check
 ```
@@ -521,6 +529,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
   not implement downloads, installers, package-manager integration, malware
   scanning, rights clearance, native clients, relay runtime, or executable
   trust claims.
+- Native Local Cache / Privacy Policy v0 is policy/contract only. It does not
+  implement local cache runtime, private file ingestion, local archive scanning,
+  telemetry, analytics, accounts, cloud sync, uploads, native clients, or relay
+  runtime.
 - Native apps are deferred. The current native surface is a stdlib CLI proof.
 - Live crawling, source sync, fuzzy retrieval, vector search, LLM planning,
   auth, accounts, HTTPS/TLS, rate limiting, process supervision, and deployment
@@ -531,14 +543,13 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Native Local Cache / Privacy Policy v0
-2. Native Client Project Readiness Review v0
+1. Native Client Project Readiness Review v0
+2. Relay Prototype Planning v0, not implementation
 3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
 4. Manual Observation Batch 0 Execution (human-operated parallel work)
 5. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
-6. Relay Prototype Planning v0, not implementation
 
 Broader near-term direction:
 

@@ -108,6 +108,13 @@ rights/access, and executable-risk policy those clients must obey. It is
 policy-only and adds no downloads, installers, package-manager integration,
 malware scanning, rights clearance, native client runtime, or relay runtime.
 
+Native Local Cache / Privacy Policy v0 now records the future cache/privacy,
+private-data, local-path, telemetry/logging, credential, deletion/export/reset,
+portable-mode, snapshot, relay, and public-alpha policy those clients must
+obey. It is policy-only and adds no cache runtime, private file ingestion,
+local archive scanning, telemetry, accounts, cloud sync, uploads, native client
+runtime, private-data relay behavior, or relay runtime.
+
 ## Non-Goals
 
 - no new runtime behavior
@@ -116,6 +123,8 @@ malware scanning, rights clearance, native client runtime, or relay runtime.
 - no relay/protocol bridge or network listener
 - no native app project
 - no native GUI, FFI, installer automation, or executable download automation
+- no native cache runtime, private ingestion, telemetry, accounts, cloud sync,
+  uploads, or local archive scanning
 - no malware safety claim, rights clearance claim, package-manager integration,
   mirror behavior, or install handoff implementation
 - no live `/api/v1`

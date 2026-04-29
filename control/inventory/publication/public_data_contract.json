@@ -30,6 +30,7 @@
       "source_inputs": [
         "control/inventory/publication/publication_contract.json",
         "control/inventory/publication/action_policy.json",
+        "control/inventory/publication/local_cache_privacy_policy.json",
         "control/inventory/publication/page_registry.json",
         "control/inventory/publication/deployment_targets.json",
         "control/inventory/publication/domain_plan.json",
@@ -52,7 +53,7 @@
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_public_data_summaries.py",
-      "notes": "Machine-readable summary manifest for static public data. It includes disabled live backend/probe state, Signed Snapshot Format v0 seed-contract status, and Native Action / Download / Install Policy v0 disabled risky-action posture; it is not a live API and carries no deployment-success, production snapshot, download, installer, malware-safety, or rights-clearance claim."
+      "notes": "Machine-readable summary manifest for static public data. It includes disabled live backend/probe state, Signed Snapshot Format v0 seed-contract status, Native Action / Download / Install Policy v0 disabled risky-action posture, and Native Local Cache / Privacy Policy v0 disabled private-cache/telemetry posture; it is not a live API and carries no deployment-success, production snapshot, download, installer, malware-safety, rights-clearance, telemetry, account, or cloud-sync claim."
     },
     {
       "path": "/data/page_registry.json",
@@ -145,6 +146,7 @@
       "source_inputs": [
         "control/inventory/publication/public_data_contract.json",
         "control/inventory/publication/action_policy.json",
+        "control/inventory/publication/local_cache_privacy_policy.json",
         "control/inventory/publication/publication_contract.json",
         "control/inventory/publication/page_registry.json",
         "control/inventory/publication/domain_plan.json",
@@ -170,7 +172,7 @@
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_public_data_summaries.py",
-      "notes": "Stable build provenance summary with UNKNOWN_UNTIL_CI placeholders for commit/build time. It does not claim deployment, production signing, real signing keys, executable downloads, installer automation, malware scanning, rights clearance, or public /snapshots/ availability."
+      "notes": "Stable build provenance summary with UNKNOWN_UNTIL_CI placeholders for commit/build time. It does not claim deployment, production signing, real signing keys, executable downloads, installer automation, malware scanning, rights clearance, telemetry, accounts, cloud sync, local cache runtime, private ingestion, or public /snapshots/ availability."
     },
     {
       "path": "/files/manifest.json",

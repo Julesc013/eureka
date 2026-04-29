@@ -32,6 +32,8 @@
   "relay_surface": "control/inventory/publication/relay_surface.json",
   "action_policy_status": "implemented_policy_only",
   "action_policy": "control/inventory/publication/action_policy.json",
+  "local_cache_privacy_policy_status": "implemented_policy_only",
+  "local_cache_privacy_policy": "control/inventory/publication/local_cache_privacy_policy.json",
   "surface_capabilities": "control/inventory/publication/surface_capabilities.json",
   "surface_route_matrix": "control/inventory/publication/surface_route_matrix.json",
   "domain_plan": "control/inventory/publication/domain_plan.json",
@@ -52,7 +54,8 @@
     "govern public claim traceability before public hosting",
     "govern signed/offline snapshot format, checksums, and signature-placeholder policy without real signing keys",
     "govern seed snapshot example separately from the current public_site deployment artifact",
-    "govern future native action, download, install handoff, package-manager handoff, mirror, execute, restore, uninstall, rollback, malware-scan, and rights-warning policy without implementing those actions"
+    "govern future native action, download, install handoff, package-manager handoff, mirror, execute, restore, uninstall, rollback, malware-scan, and rights-warning policy without implementing those actions",
+    "govern future native/local cache, privacy, private data, local path, telemetry, logging, credential, deletion, export, portable-mode, and relay privacy policy without implementing cache runtime or private ingestion"
   ],
   "no_live_backend": true,
   "no_deployment_performed": true,
@@ -138,12 +141,11 @@
     }
   ],
   "next_expected_milestones": [
-    "Native Local Cache / Privacy Policy v0",
     "Native Client Project Readiness Review v0",
+    "Relay Prototype Planning v0, not implementation",
     "Manual Observation Batch 0 Execution",
     "Rust Local Index Parity Candidate v0 only after review and Cargo availability",
-    "Internet Archive Live Probe v0 only after explicit human approval and live probe gateway review",
-    "Relay Prototype Planning v0, not implementation"
+    "Internet Archive Live Probe v0 only after explicit human approval and live probe gateway review"
   ],
   "created_by_slice": "public_publication_plane_contracts_v0",
   "notes": [
@@ -163,7 +165,8 @@
     "Signed Snapshot Format v0 adds a snapshot contract, checksum/signature-placeholder policy, and deterministic repo seed example under snapshots/examples/static_snapshot_v0 without adding real signing keys, executable downloads, production signatures, relay behavior, native clients, or a public /snapshots/ route.",
     "The public /snapshots/ route remains future/deferred; public_site remains the current static deployment artifact.",
     "Relay Surface Design v0 adds a future local/LAN relay design inventory, reference docs, security/privacy defaults, and unsigned operator checklist without implementing a relay server, opening sockets, adding FTP/SMB/WebDAV/Gopher behavior, exposing private data, or enabling live probes.",
-    "Native Action / Download / Install Policy v0 adds policy-only action classes, warning classes, public-alpha/static defaults, and native/snapshot/relay gates for future download, mirror, install handoff, package-manager handoff, execute, restore, uninstall, rollback, malware-scan, and rights/access behavior without implementing downloads, installers, package-manager integration, malware scanning, rights clearance, native clients, relay runtime, or executable trust claims."
+    "Native Action / Download / Install Policy v0 adds policy-only action classes, warning classes, public-alpha/static defaults, and native/snapshot/relay gates for future download, mirror, install handoff, package-manager handoff, execute, restore, uninstall, rollback, malware-scan, and rights/access behavior without implementing downloads, installers, package-manager integration, malware scanning, rights clearance, native clients, relay runtime, or executable trust claims.",
+    "Native Local Cache / Privacy Policy v0 adds policy-only privacy/cache defaults, prohibited private-data behaviors, telemetry/logging/credential rules, and native/snapshot/relay/public-alpha gates without implementing cache runtime, private file ingestion, local archive scanning, telemetry, accounts, cloud sync, uploads, native clients, or relay runtime."
   ],
   "snapshot_format_contract_status": "implemented",
   "snapshot_contract": "control/inventory/publication/snapshot_contract.json",

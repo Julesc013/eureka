@@ -66,6 +66,14 @@ and rights/access gates, but it does not implement downloads, installers,
 package-manager integration, malware scanning, rights clearance, executable
 trust claims, native clients, relay runtime, or any public download surface.
 
+Native Local Cache / Privacy Policy v0 also keeps that policy. It defines
+future public/private cache, local path, user state, telemetry/logging,
+diagnostics, credentials, deletion/export/reset, portable mode, snapshot,
+relay, and public-alpha privacy gates, but it does not implement cache runtime,
+private file ingestion, local archive scanning, telemetry, analytics, accounts,
+cloud sync, uploads, native clients, relay runtime, or any private-data relay
+surface.
+
 ## Host-Shell Principle
 
 Future native apps should remain shells over the core. They should consume

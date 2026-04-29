@@ -557,6 +557,24 @@ It performs no network calls and implements no downloads, installers,
 package-manager integration, malware scanning, rights clearance, native
 clients, relay runtime, public download surface, or executable trust claim.
 
+## Native Local Cache / Privacy Policy
+
+Native Local Cache / Privacy Policy v0 is validated with:
+
+```bash
+python scripts/validate_local_cache_privacy_policy.py
+python scripts/validate_local_cache_privacy_policy.py --json
+python -m unittest tests.operations.test_native_local_cache_privacy_policy tests.scripts.test_validate_local_cache_privacy_policy
+```
+
+The lane checks `local_cache_privacy_policy.json`, local cache/privacy docs,
+native cache contract docs, telemetry/logging policy docs, related
+native/snapshot/relay/public-alpha references, disabled telemetry/account/cloud
+sync flags, and prohibited private-data behavior. It performs no network calls
+and implements no cache runtime, private file ingestion, local archive scanning,
+telemetry, analytics, accounts, cloud sync, uploads, native clients, relay
+runtime, or private-data relay behavior.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

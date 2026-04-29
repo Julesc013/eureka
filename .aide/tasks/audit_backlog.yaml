@@ -330,6 +330,16 @@
       "title": "Define action, download, install, executable-risk, and rights policy before native or public download work",
       "status": "addressed_by_native_action_download_install_policy_v0",
       "suggested_milestone": "Native Local Cache / Privacy Policy v0"
+    },
+    {
+      "id": "audit-backlog-native-local-cache-privacy-policy",
+      "finding_refs": [
+        "CTEA-BEHAVIOR-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Define local cache, privacy, local path, telemetry, and private-data policy before native project work",
+      "status": "addressed_by_native_local_cache_privacy_policy_v0",
+      "suggested_milestone": "Native Client Project Readiness Review v0"
     }
   ]
 }

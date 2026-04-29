@@ -684,3 +684,28 @@ trust claims, live probes, external API calls, scraping, deployment behavior,
 or production readiness. The next Codex-safe milestone should be Native Local
 Cache / Privacy Policy v0; Manual Observation Batch 0 remains human-operated
 parallel work.
+
+## ADR-096: Define Native Local Cache Privacy Policy Before Project Readiness
+
+Status: accepted
+
+Native Local Cache / Privacy Policy v0 adds
+`control/inventory/publication/local_cache_privacy_policy.json`,
+`docs/reference/LOCAL_CACHE_PRIVACY_POLICY.md`,
+`docs/reference/NATIVE_LOCAL_CACHE_CONTRACT.md`,
+`docs/reference/TELEMETRY_AND_LOGGING_POLICY.md`,
+`scripts/validate_local_cache_privacy_policy.py`, and focused
+operations/script tests.
+
+The decision is to define future native/local cache, private-data, local-path,
+telemetry/logging, diagnostics, credentials, deletion/export/reset, portable
+mode, snapshot, relay, and public-alpha privacy policy before any native
+project readiness review or cache runtime work. The policy keeps private cache,
+private ingestion, telemetry, analytics, accounts, cloud sync, uploads,
+old-client private relay, and local archive scanning disabled by default. This
+adds no cache runtime, private file ingestion, local archive scanning,
+telemetry implementation, account system, cloud sync, uploads, native client,
+relay runtime, live probes, external API calls, scraping, deployment behavior,
+or production readiness. The next Codex-safe milestone should be Native Client
+Project Readiness Review v0; Manual Observation Batch 0 remains
+human-operated parallel work.

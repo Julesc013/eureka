@@ -345,8 +345,8 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "Native Client Contract v0 is implemented as design and inventory only; no Windows/macOS/native app project, native GUI, installer automation, FFI, relay sidecar, native snapshot reader runtime, or Rust runtime wiring exists.",
-      "next_step": "Native Action / Download / Install Policy v0 before any download, install, open, restore, or package-manager handoff behavior.",
+      "current_limitations": "Native Client Contract v0 is implemented as design and inventory only; no Windows/macOS/native app project, native GUI, local cache runtime, private ingestion, telemetry, accounts, cloud sync, installer automation, FFI, relay sidecar, native snapshot reader runtime, or Rust runtime wiring exists.",
+      "next_step": "Native Client Project Readiness Review v0 before any native project scaffolding.",
       "notes": "CLI is the current local native-like surface; native GUI apps remain future/deferred and must consume governed public data, snapshot, live-backend handoff, or relay contracts rather than engine internals."
     },
     {

@@ -19,6 +19,9 @@ Prerequisites before native GUI client work starts:
 - Native Client Contract v0 lane and readiness checklist reviewed
 - Native Action / Download / Install Policy v0 before any download, install,
   open, restore, or package-manager handoff behavior
+- Native Local Cache / Privacy Policy v0 before any native cache runtime,
+  private cache, private ingestion, telemetry, diagnostics upload, accounts,
+  cloud sync, or local archive scanning behavior
 - executable-risk and rights/access labels before any future risky handoff
 - no dependency on private engine internals
 
@@ -27,6 +30,12 @@ hash/checksum, and action-handoff policies exist.
 Native Action / Download / Install Policy v0 now seeds those gates as policy
 only: no downloads, installers, package-manager integration, malware scanning,
 rights clearance, or executable trust claims are implemented.
+
+Native Local Cache / Privacy Policy v0 now seeds local cache, private data,
+local path, telemetry/logging, credential, deletion/export/reset, portable
+mode, snapshot, relay, and public-alpha privacy gates as policy only. It adds
+no cache runtime, private file ingestion, local archive scanning, telemetry,
+accounts, cloud sync, uploads, native clients, or relay runtime.
 
 Future Windows and macOS lane docs may define prototypes later, but they must
 consume governed public data, future production snapshots, or live handoff

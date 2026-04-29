@@ -130,6 +130,14 @@ Current scripts:
   installers, package-manager integration, malware scanning, rights clearance,
   native clients, relay runtime, public download surface, or executable trust
   claim
+- `validate_local_cache_privacy_policy.py`: validates the Native Local Cache /
+  Privacy Policy v0 inventory, local cache/privacy docs, native cache contract,
+  telemetry/logging policy, disabled cache/private-ingestion/telemetry/account/
+  cloud-sync flags, prohibited private-data behaviors, and native/snapshot/
+  relay/public-alpha references; it supports `--json`, performs no network
+  calls, and implements no cache runtime, private file ingestion, local archive
+  scanning, telemetry, analytics, accounts, cloud sync, uploads, native clients,
+  or relay runtime
 - `validate_relay_surface_design.py`: validates the Relay Surface Design v0
   inventory, docs, unsigned future operator checklist, surface capability
   alignment, route-matrix posture, and disabled-by-default relay safety flags;

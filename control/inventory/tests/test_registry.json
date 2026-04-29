@@ -2006,6 +2006,50 @@
       "notes": "Checks future action/download/install policy without implementing downloads, installers, package-manager integration, malware scanning, rights clearance, native clients, relay runtime, public download surfaces, or executable trust claims."
     },
     {
+      "test_id": "local_cache_privacy_policy_validator",
+      "label": "Native local cache/privacy policy validator",
+      "command": "python scripts/validate_local_cache_privacy_policy.py",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Local cache/privacy policy inventory, disabled telemetry/accounts/cloud-sync flags, prohibited private-data behavior, or related docs regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Native Local Cache / Privacy Policy v0; validates policy only and implements no cache runtime, private file ingestion, telemetry, accounts, cloud sync, uploads, native clients, relay runtime, or local archive scanning."
+    },
+    {
+      "test_id": "local_cache_privacy_policy_tests",
+      "label": "Native local cache/privacy policy tests",
+      "command": "python -m unittest tests.operations.test_native_local_cache_privacy_policy tests.scripts.test_validate_local_cache_privacy_policy",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Local cache/privacy docs, native/snapshot/relay/public-alpha references, validator JSON output, or no-telemetry/no-private-ingestion posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks future native/local cache and privacy policy without implementing cache runtime, private ingestion, telemetry, analytics, accounts, cloud sync, uploads, native clients, relay runtime, or private-data relay behavior."
+    },
+    {
       "test_id": "relay_surface_design_validator",
       "label": "Relay surface design validator",
       "command": "python scripts/validate_relay_surface_design.py",

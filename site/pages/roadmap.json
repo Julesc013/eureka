@@ -118,7 +118,11 @@
         },
         {
           "title": "Native Local Cache / Privacy Policy v0",
-          "text": "recommended next Codex-safe milestone for defining local cache, privacy, retention, and private-data handling before native project work."
+          "text": "implemented as policy-only local cache, private-data, local-path, telemetry/logging, credential, deletion/export/reset, and portable-mode gates; no cache runtime, private ingestion, telemetry, accounts, cloud sync, uploads, native clients, or relay runtime."
+        },
+        {
+          "title": "Native Client Project Readiness Review v0",
+          "text": "recommended next Codex-safe milestone before any Visual Studio, Xcode, GUI, FFI, native cache runtime, install automation, or package-manager work."
         },
         {
           "title": "Manual Observation Batch 0 Execution",
