@@ -1,4 +1,5 @@
 {
+  "action_policy_source": "control/inventory/publication/action_policy.json",
   "api_v1_live": false,
   "api_v1_reserved": true,
   "arbitrary_url_fetch_enabled": false,
@@ -26,6 +27,7 @@
   "generated_output_deployed": false,
   "github_pages_base_path": "/eureka/",
   "github_pages_target": "github_pages_project",
+  "install_automation_enabled": false,
   "internet_archive_live_probe_enabled": false,
   "limitations": [
     "static only",
@@ -43,6 +45,10 @@
     "no production signed snapshots",
     "no real signing keys",
     "no executable downloads",
+    "no installer automation",
+    "no package-manager integration",
+    "no malware safety claim",
+    "no rights clearance claim",
     "no relay runtime or protocol server",
     "no scraping",
     "manual external baselines remain pending",
@@ -54,7 +60,8 @@
   "live_probe_gateway_contract_only": true,
   "live_probe_gateway_source": "control/inventory/publication/live_probe_gateway.json",
   "live_probes_enabled": false,
-  "next_milestone": "Rust Source Registry Parity Catch-up v0",
+  "malware_scanning_claimed": false,
+  "next_milestone": "Native Local Cache / Privacy Policy v0",
   "no_backend": true,
   "no_cname_file_committed": true,
   "no_custom_domain_configured": true,
@@ -63,6 +70,7 @@
   "no_live_backend": true,
   "no_live_probes": true,
   "no_network_required": true,
+  "package_manager_integration_enabled": false,
   "pages": [
     "index.html",
     "status.html",
@@ -104,6 +112,7 @@
     "external baselines pending/manual",
     "placeholders remain placeholders"
   ],
+  "rights_clearance_claimed": false,
   "site_pack_id": "live_alpha_static_public_site_pack_v0",
   "snapshot_contract_source": "control/inventory/publication/snapshot_contract.json",
   "snapshot_public_route_enabled": false,

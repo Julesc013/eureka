@@ -122,6 +122,14 @@ Current scripts:
   wiring; it supports `--json`, performs no network calls, and implements no
   native client, GUI, installer, relay, FFI, live backend, or live probe
   behavior
+- `validate_action_policy.py`: validates the Native Action / Download /
+  Install Policy v0 inventory, action/download/install policy docs,
+  executable-risk and rights/access docs, install-handoff contract,
+  public-alpha/static defaults, and related native/snapshot/relay references;
+  it supports `--json`, performs no network calls, and implements no downloads,
+  installers, package-manager integration, malware scanning, rights clearance,
+  native clients, relay runtime, public download surface, or executable trust
+  claim
 - `validate_relay_surface_design.py`: validates the Relay Surface Design v0
   inventory, docs, unsigned future operator checklist, surface capability
   alignment, route-matrix posture, and disabled-by-default relay safety flags;

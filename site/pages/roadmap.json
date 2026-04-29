@@ -98,7 +98,27 @@
         },
         {
           "title": "Rust Source Registry Parity Catch-up v0",
-          "text": "recommended next non-network Codex milestone for bringing the isolated Rust source-registry candidate up to the expanded Python source capability and coverage fields."
+          "text": "implemented as isolated Rust source-registry parity catch-up against the current Python source capability and coverage shape; Python remains the oracle and Rust remains unwired."
+        },
+        {
+          "title": "Rust Local Index Parity Planning v0",
+          "text": "implemented as planning-only parity maps, acceptance criteria, and validation for a future Rust local-index candidate; no Rust index implementation or runtime wiring."
+        },
+        {
+          "title": "Signed Snapshot Consumer Contract v0",
+          "text": "implemented as future file-tree, text, lite HTML, relay, native, and audit snapshot consumer contracts only; no consumer runtime, relay, native app, production signing, keys, downloads, live backend, or live probes."
+        },
+        {
+          "title": "Native Client Contract v0",
+          "text": "implemented as future Windows/macOS/native lane contracts and readiness gates only; no native app projects, no GUI, no FFI, no installer tooling, no downloads, no relay sidecars, no live probes, and no Rust runtime wiring."
+        },
+        {
+          "title": "Native Action / Download / Install Policy v0",
+          "text": "implemented as policy-only action, download, install handoff, package-manager handoff, mirror, execute, rights/access, and executable-risk gates; no downloads, no installer tooling, no package-manager integration, no malware scanning, no rights clearance, no native clients, and no relay runtime."
+        },
+        {
+          "title": "Native Local Cache / Privacy Policy v0",
+          "text": "recommended next Codex-safe milestone for defining local cache, privacy, retention, and private-data handling before native project work."
         },
         {
           "title": "Manual Observation Batch 0 Execution",

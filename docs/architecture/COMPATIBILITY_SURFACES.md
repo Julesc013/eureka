@@ -102,6 +102,11 @@ clients must wait for stable-enough public data, snapshot, action,
 rights/security, and live handoff contracts. Native apps must consume governed
 contracts, not engine internals, and no Visual Studio/Xcode project, native
 GUI, FFI, installer automation, relay sidecar, or Rust runtime wiring exists.
+Native Action / Download / Install Policy v0 now records the future action,
+download, install handoff, package-manager handoff, mirror, execute,
+rights/access, and executable-risk policy those clients must obey. It is
+policy-only and adds no downloads, installers, package-manager integration,
+malware scanning, rights clearance, native client runtime, or relay runtime.
 
 ## Non-Goals
 
@@ -111,6 +116,8 @@ GUI, FFI, installer automation, relay sidecar, or Rust runtime wiring exists.
 - no relay/protocol bridge or network listener
 - no native app project
 - no native GUI, FFI, installer automation, or executable download automation
+- no malware safety claim, rights clearance claim, package-manager integration,
+  mirror behavior, or install handoff implementation
 - no live `/api/v1`
 - no live probes
 - no external observations

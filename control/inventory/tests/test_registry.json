@@ -1962,6 +1962,50 @@
       "notes": "Checks future Windows/Mac/native lane contracts and CLI honesty without adding native app projects, GUI runtime, FFI, installers, downloads, relay sidecars, live backend behavior, live probes, or Rust runtime wiring."
     },
     {
+      "test_id": "action_policy_validator",
+      "label": "Native action/download/install policy validator",
+      "command": "python scripts/validate_action_policy.py",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Action policy inventory, risky-action disabled defaults, required warnings, or no-download/no-install/no-malware/no-rights posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Native Action / Download / Install Policy v0; validates policy only and implements no downloads, installers, package-manager integration, malware scanning, rights clearance, native clients, relay runtime, or executable trust claims."
+    },
+    {
+      "test_id": "action_policy_tests",
+      "label": "Native action/download/install policy tests",
+      "command": "python -m unittest tests.operations.test_action_download_install_policy tests.scripts.test_validate_action_policy",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Action policy docs, public-alpha/static defaults, prohibited actions, related contract references, or validator JSON output regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks future action/download/install policy without implementing downloads, installers, package-manager integration, malware scanning, rights clearance, native clients, relay runtime, public download surfaces, or executable trust claims."
+    },
+    {
       "test_id": "relay_surface_design_validator",
       "label": "Relay surface design validator",
       "command": "python scripts/validate_relay_surface_design.py",

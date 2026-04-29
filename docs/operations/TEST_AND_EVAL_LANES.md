@@ -540,6 +540,23 @@ implements no GUI, adds no FFI, relay sidecar, package-manager behavior,
 native snapshot reader runtime, executable download/execution automation, live
 backend behavior, or live probes.
 
+## Native Action / Download / Install Policy
+
+Native Action / Download / Install Policy v0 is validated with:
+
+```bash
+python scripts/validate_action_policy.py
+python scripts/validate_action_policy.py --json
+python -m unittest tests.operations.test_action_download_install_policy tests.scripts.test_validate_action_policy
+```
+
+The lane checks `action_policy.json`, action/download/install policy docs,
+executable-risk docs, rights/access docs, install-handoff docs, related
+native/snapshot/relay contract references, and public-alpha/static defaults.
+It performs no network calls and implements no downloads, installers,
+package-manager integration, malware scanning, rights clearance, native
+clients, relay runtime, public download surface, or executable trust claim.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

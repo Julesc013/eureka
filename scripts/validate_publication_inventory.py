@@ -13,6 +13,7 @@ DEFAULT_SITE_DIR = REPO_ROOT / "public_site"
 
 REQUIRED_FILES = {
     "README.md",
+    "action_policy.json",
     "publication_contract.json",
     "page_registry.json",
     "client_profiles.json",
@@ -289,6 +290,9 @@ def validate_publication_inventory(
         "page_registry.json": _load_json(
             inventory_dir / "page_registry.json", errors, repo_root
         ),
+        "action_policy.json": _load_json(
+            inventory_dir / "action_policy.json", errors, repo_root
+        ),
         "client_profiles.json": _load_json(
             inventory_dir / "client_profiles.json", errors, repo_root
         ),
@@ -329,6 +333,7 @@ def validate_publication_inventory(
     }
 
     _validate_contract(payloads["publication_contract.json"], errors)
+    _validate_action_policy(payloads["action_policy.json"], errors)
     page_summary = _validate_page_registry(
         payloads["page_registry.json"], site_dir, repo_root, errors
     )
@@ -357,6 +362,7 @@ def validate_publication_inventory(
         "covered_public_site_pages": page_summary["covered_public_site_pages"],
         "registered_routes": page_summary["registered_routes"],
         "reserved_routes": sorted(REQUIRED_RESERVED_ROUTES),
+        "action_policy_checked": "action_policy.json" in existing_files,
         "required_client_profiles": sorted(REQUIRED_CLIENT_PROFILES),
         "required_public_data_paths": sorted(REQUIRED_PUBLIC_DATA_PATHS),
         "domain_plan_checked": "domain_plan.json" in existing_files,
@@ -431,6 +437,61 @@ def _validate_contract(payload: Any, errors: list[str]) -> None:
         errors.append("publication_contract.json: public_claim_source_policy must be an object.")
     elif policy.get("rule") != "No public claim without a repo source.":
         errors.append("publication_contract.json: claim source rule is missing.")
+
+
+def _validate_action_policy(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("action_policy.json: must be a JSON object.")
+        return
+    expected = {
+        "schema_version": "0.1.0",
+        "action_policy_id": "eureka-native-action-download-install-policy",
+        "status": "policy_only",
+        "stability": "experimental",
+        "no_install_automation_implemented": True,
+        "no_download_surface_implemented": True,
+        "no_malware_scanning_claim": True,
+        "no_rights_clearance_claim": True,
+        "created_by_slice": "native_action_download_install_policy_v0",
+    }
+    _expect_mapping_values("action_policy.json", payload, expected, errors)
+    for required in (
+        "download",
+        "download_member",
+        "mirror",
+        "install_handoff",
+        "package_manager_handoff",
+        "execute",
+        "scan_for_malware",
+    ):
+        if required not in _string_list(payload.get("future_gated_actions")):
+            errors.append(f"action_policy.json: future_gated_actions missing {required}.")
+    for prohibited in (
+        "silent_install",
+        "auto_execute",
+        "privileged_install",
+        "upload_private_files",
+        "bypass_rights_warning",
+        "bypass_hash_warning",
+    ):
+        if prohibited not in _string_list(payload.get("prohibited_until_policy")):
+            errors.append(f"action_policy.json: prohibited_until_policy missing {prohibited}.")
+    for defaults_name in ("public_alpha_defaults", "static_site_defaults"):
+        defaults = payload.get(defaults_name)
+        if not isinstance(defaults, Mapping):
+            errors.append(f"action_policy.json: {defaults_name} must be an object.")
+            continue
+        for flag in (
+            "downloads_enabled",
+            "install_handoff_enabled",
+            "package_manager_handoff_enabled",
+            "mirror_enabled",
+            "execute_enabled",
+            "malware_scanning_enabled",
+            "rights_clearance_claimed",
+        ):
+            if defaults.get(flag) is not False:
+                errors.append(f"action_policy.json: {defaults_name}.{flag} must be false.")
 
 
 def _validate_page_registry(

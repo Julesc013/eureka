@@ -103,6 +103,18 @@ gates only: no Visual Studio/Xcode project, native GUI, FFI, installer
 automation, download/execution automation, relay sidecar, live probe, or Rust
 runtime wiring is implemented.
 
+Native Action / Download / Install Policy v0 adds
+`control/inventory/publication/action_policy.json`,
+`docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md`,
+`docs/reference/EXECUTABLE_RISK_POLICY.md`,
+`docs/reference/RIGHTS_AND_ACCESS_POLICY.md`,
+`docs/reference/INSTALL_HANDOFF_CONTRACT.md`, and
+`scripts/validate_action_policy.py`. It defines future action classes, warning
+classes, public-alpha/static defaults, and native/snapshot/relay requirements
+only: no downloads, installers, package-manager integration, malware scanning,
+rights clearance, native clients, relay runtime, executable trust claims, or
+public download surface is implemented.
+
 Relay Surface Design v0 adds
 `control/inventory/publication/relay_surface.json`,
 `docs/architecture/RELAY_SURFACE.md`,

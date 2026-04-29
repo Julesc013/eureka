@@ -124,6 +124,12 @@ steps:
     run: python scripts/validate_native_client_contract.py --json
   - id: native_client_contract_tests
     run: python -m unittest tests.operations.test_native_client_contract tests.scripts.test_validate_native_client_contract
+  - id: action_policy_validator
+    run: python scripts/validate_action_policy.py
+  - id: action_policy_validator_json
+    run: python scripts/validate_action_policy.py --json
+  - id: action_policy_tests
+    run: python -m unittest tests.operations.test_action_download_install_policy tests.scripts.test_validate_action_policy
   - id: relay_surface_design_validator
     run: python scripts/validate_relay_surface_design.py
   - id: relay_surface_design_validator_json

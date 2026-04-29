@@ -658,3 +658,29 @@ calls, scraping, crawling, deployment behavior, production native-client claim,
 or Rust runtime wiring. The next Codex-safe milestone should be Native Action /
 Download / Install Policy v0; Manual Observation Batch 0 remains human-operated
 parallel work.
+
+## ADR-095: Define Native Action Policy Before Download Or Install Work
+
+Status: accepted
+
+Native Action / Download / Install Policy v0 adds
+`control/inventory/publication/action_policy.json`,
+`docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md`,
+`docs/reference/EXECUTABLE_RISK_POLICY.md`,
+`docs/reference/RIGHTS_AND_ACCESS_POLICY.md`,
+`docs/reference/INSTALL_HANDOFF_CONTRACT.md`,
+`scripts/validate_action_policy.py`, and focused operations/script tests.
+
+The decision is to define future action, download, mirror, install handoff,
+package-manager handoff, execute, restore, uninstall, rollback, malware-scan,
+and rights/access policy before any native client, relay, snapshot consumer,
+or public download surface implements those behaviors. The policy separates
+safe read-only actions from risky future actions, requires future warnings and
+explicit confirmation, keeps public-alpha/static Pages risky actions disabled,
+and records that hashes prove identity/integrity rather than safety. This adds
+no downloads, installers, install automation, package-manager integration,
+malware scanning, rights clearance, native clients, relay runtime, executable
+trust claims, live probes, external API calls, scraping, deployment behavior,
+or production readiness. The next Codex-safe milestone should be Native Local
+Cache / Privacy Policy v0; Manual Observation Batch 0 remains human-operated
+parallel work.

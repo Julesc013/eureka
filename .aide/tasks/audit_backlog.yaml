@@ -320,6 +320,16 @@
       "title": "Define native client boundaries before native app or installer work",
       "status": "addressed_by_native_client_contract_v0",
       "suggested_milestone": "Native Action / Download / Install Policy v0"
+    },
+    {
+      "id": "audit-backlog-native-action-download-install-policy",
+      "finding_refs": [
+        "CTEA-BEHAVIOR-001",
+        "CTEA-TEST-002"
+      ],
+      "title": "Define action, download, install, executable-risk, and rights policy before native or public download work",
+      "status": "addressed_by_native_action_download_install_policy_v0",
+      "suggested_milestone": "Native Local Cache / Privacy Policy v0"
     }
   ]
 }

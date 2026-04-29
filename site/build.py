@@ -450,6 +450,7 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
         "surface_capabilities_source": "control/inventory/publication/surface_capabilities.json",
         "snapshot_contract_source": "control/inventory/publication/snapshot_contract.json",
         "relay_surface_source": "control/inventory/publication/relay_surface.json",
+        "action_policy_source": "control/inventory/publication/action_policy.json",
         "snapshot_seed_example_root": "snapshots/examples/static_snapshot_v0",
         "snapshot_public_route_enabled": False,
         "limitations": [
@@ -468,6 +469,10 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
             "no production signed snapshots",
             "no real signing keys",
             "no executable downloads",
+            "no installer automation",
+            "no package-manager integration",
+            "no malware safety claim",
+            "no rights clearance claim",
             "no relay runtime or protocol server",
             "no scraping",
             "manual external baselines remain pending",
@@ -490,6 +495,10 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
         "internet_archive_live_probe_enabled": False,
         "arbitrary_url_fetch_enabled": False,
         "downloads_enabled": False,
+        "install_automation_enabled": False,
+        "package_manager_integration_enabled": False,
+        "malware_scanning_claimed": False,
+        "rights_clearance_claimed": False,
         "production_signed_snapshots_available": False,
         "real_signing_keys_present": False,
         "public_snapshots_route_enabled": False,
@@ -500,7 +509,7 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
             "/eureka/",
             "/",
         ],
-        "next_milestone": "Rust Source Registry Parity Catch-up v0",
+        "next_milestone": "Native Local Cache / Privacy Policy v0",
         "parallel_human_work": "Manual Observation Batch 0 Execution",
         "no_network_required": True,
         "no_deployment_performed": True,
@@ -629,6 +638,11 @@ def _output_readme() -> str:
         "output does not include a relay runtime, protocol server, network "
         "listener, private-data exposure, live-probe passthrough, or write/admin "
         "surface.\n"
+        "\n"
+        "Native Action / Download / Install Policy v0 is policy-only; generated "
+        "output does not include downloads, installers, package-manager "
+        "integration, malware scanning, rights clearance, executable trust "
+        "claims, native clients, or relay runtime.\n"
     )
 
 

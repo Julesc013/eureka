@@ -9,6 +9,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
 PUBLIC_SITE = REPO_ROOT / "public_site"
 REQUIRED_JSON_FILES = {
+    "action_policy.json",
     "publication_contract.json",
     "page_registry.json",
     "client_profiles.json",
@@ -133,6 +134,8 @@ class PublicationInventoryTest(unittest.TestCase):
         self.assertEqual(contract["snapshot_contract"], "control/inventory/publication/snapshot_contract.json")
         self.assertEqual(contract["snapshot_seed_example_root"], "snapshots/examples/static_snapshot_v0")
         self.assertIsNone(contract["snapshot_seed_example_public_route"])
+        self.assertEqual(contract["action_policy_status"], "implemented_policy_only")
+        self.assertEqual(contract["action_policy"], "control/inventory/publication/action_policy.json")
         self.assertEqual(contract["deploy_artifact_current"], "public_site")
         self.assertEqual(contract["base_path_policy"], "deployment_target_defined")
         self.assertTrue(contract["no_live_backend"])
@@ -362,6 +365,31 @@ class PublicationInventoryTest(unittest.TestCase):
             "publication inventory",
         ):
             self.assertIn(phrase, text)
+
+    def test_action_policy_records_policy_only_posture(self) -> None:
+        payload = load_json("action_policy.json")
+
+        self.assertEqual(payload["schema_version"], "0.1.0")
+        self.assertEqual(payload["status"], "policy_only")
+        self.assertTrue(payload["no_install_automation_implemented"])
+        self.assertTrue(payload["no_download_surface_implemented"])
+        self.assertTrue(payload["no_malware_scanning_claim"])
+        self.assertTrue(payload["no_rights_clearance_claim"])
+        self.assertIn("download", payload["future_gated_actions"])
+        self.assertIn("install_handoff", payload["future_gated_actions"])
+        self.assertIn("package_manager_handoff", payload["future_gated_actions"])
+        self.assertIn("execute", payload["future_gated_actions"])
+        self.assertIn("silent_install", payload["prohibited_until_policy"])
+        self.assertIn("auto_execute", payload["prohibited_until_policy"])
+        self.assertIn("privileged_install", payload["prohibited_until_policy"])
+        for defaults_name in ("public_alpha_defaults", "static_site_defaults"):
+            defaults = payload[defaults_name]
+            self.assertFalse(defaults["downloads_enabled"])
+            self.assertFalse(defaults["install_handoff_enabled"])
+            self.assertFalse(defaults["package_manager_handoff_enabled"])
+            self.assertFalse(defaults["execute_enabled"])
+            self.assertFalse(defaults["malware_scanning_enabled"])
+            self.assertFalse(defaults["rights_clearance_claimed"])
 
     def test_no_provider_config_or_custom_domain_is_added(self) -> None:
         forbidden_paths = [

@@ -1,4 +1,64 @@
 {
+  "action_policy": {
+    "action_policy_id": "eureka-native-action-download-install-policy",
+    "future_gated_actions": [
+      "download",
+      "download_member",
+      "mirror",
+      "install_handoff",
+      "package_manager_handoff",
+      "emulator_handoff",
+      "vm_handoff",
+      "restore_manifest_apply",
+      "uninstall",
+      "rollback",
+      "execute",
+      "scan_for_malware",
+      "quarantine",
+      "submit_feedback",
+      "upload_local_source"
+    ],
+    "no_download_surface_implemented": true,
+    "no_install_automation_implemented": true,
+    "no_malware_scanning_claim": true,
+    "no_rights_clearance_claim": true,
+    "prohibited_until_policy": [
+      "silent_install",
+      "auto_execute",
+      "privileged_install",
+      "destructive_restore",
+      "write_to_system_paths",
+      "upload_private_files",
+      "send_private_inventory",
+      "bypass_rights_warning",
+      "bypass_hash_warning"
+    ],
+    "public_alpha_defaults": {
+      "downloads_enabled": false,
+      "execute_enabled": false,
+      "fixture_fetch_enabled": false,
+      "install_handoff_enabled": false,
+      "malware_scanning_enabled": false,
+      "mirror_enabled": false,
+      "notes": "Public-alpha remains read-only/metadata-first and blocks risky action surfaces.",
+      "package_manager_handoff_enabled": false,
+      "private_uploads_enabled": false,
+      "read_only_metadata_first": true,
+      "rights_clearance_claimed": false
+    },
+    "static_site_defaults": {
+      "downloads_enabled": false,
+      "execute_enabled": false,
+      "install_handoff_enabled": false,
+      "malware_scanning_enabled": false,
+      "mirror_enabled": false,
+      "notes": "GitHub Pages/static publication may show policy and metadata but must not offer download, install, execute, or mirror behavior.",
+      "package_manager_handoff_enabled": false,
+      "rights_clearance_claimed": false,
+      "static_pages_only": true
+    },
+    "status": "implemented_policy_only"
+  },
   "artifact": "public_site/data",
   "base_path_targets": [
     "/",
@@ -62,7 +122,8 @@
     "Google remains manual-baseline only and is not a live probe source.",
     "Relay Surface Design v0 is contract-only; no relay runtime, protocol server, network listener, private data exposure, write/admin route exposure, or live-probe passthrough is implemented.",
     "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
-    "Signed Snapshot Format v0 is a contract and seed example only; real signing keys, production signatures, executable downloads, public /snapshots/ route, relay behavior, native-client runtime, live backend behavior, and live probes remain absent."
+    "Signed Snapshot Format v0 is a contract and seed example only; real signing keys, production signatures, executable downloads, public /snapshots/ route, relay behavior, native-client runtime, live backend behavior, and live probes remain absent.",
+    "Native Action / Download / Install Policy v0 is policy-only; downloads, mirrors, install handoff, package-manager handoff, execute, restore, uninstall, rollback, malware scanning, rights clearance, native clients, relay runtime, and executable trust claims remain absent."
   ],
   "live_backend_handoff": {
     "auth_policy_status": "unresolved",
@@ -1018,6 +1079,7 @@
   },
   "source_inputs": [
     "control/inventory/publication/publication_contract.json",
+    "control/inventory/publication/action_policy.json",
     "control/inventory/publication/page_registry.json",
     "control/inventory/publication/deployment_targets.json",
     "control/inventory/publication/domain_plan.json",

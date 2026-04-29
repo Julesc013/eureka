@@ -3,6 +3,13 @@
 This directory is reserved for repo-operating reports. It does not contain
 product runtime state and should not be treated as a source of product truth.
 
+Native Action / Download / Install Policy v0 records policy/contract
+validation for future action, download, install handoff, package-manager
+handoff, mirror, execute, executable-risk, and rights/access behavior without
+implementing downloads, installers, package-manager integration, malware
+scanning, rights clearance, native clients, relay runtime, or executable trust
+claims.
+
 Audit reports that belong under version control should usually live in
 `control/audits/` with structured findings. Temporary local run output should
 stay outside the repo unless a prompt explicitly asks for a committed evidence

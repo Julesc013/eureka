@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus sixty executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Rust Source Registry Parity Catch-up v0, the first isolated Rust query-planner parity candidate, Rust Local Index Parity Planning v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Post-Queue State Checkpoint v0, Relay Surface Design v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus sixty-one executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Rust Source Registry Parity Catch-up v0, the first isolated Rust query-planner parity candidate, Rust Local Index Parity Planning v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Post-Queue State Checkpoint v0, Relay Surface Design v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -334,7 +334,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Native Action / Download / Install Policy v0
+> Native Local Cache / Privacy Policy v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -359,7 +359,8 @@ Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0,
 Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract
 v0, Live Probe Gateway Contract v0, Rust Query Planner Parity Candidate v0,
 Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot
-Consumer Contract v0, Native Client Contract v0, Relay
+Consumer Contract v0, Native Client Contract v0, Native Action / Download /
+Install Policy v0, Relay
 Surface Design v0, Rust Source Registry Parity Catch-up v0, and Rust Local
 Index Parity Planning v0
 are
@@ -445,16 +446,23 @@ candidates, security/privacy defaults, and an unsigned operator checklist as
 design governance only; it adds no relay runtime, sockets, FTP, SMB, WebDAV,
 Gopher, protocol proxy, private data exposure, write/admin routes, live-probe
 passthrough, native sidecar, or production relay claim.
+Native Action / Download / Install Policy v0 records future inspect, preview,
+export, download, mirror, install handoff, package-manager handoff, execute,
+restore, uninstall, rollback, malware-scan, and rights/access gates as policy
+only. It adds no downloads, installers, package-manager integration, malware
+scanning, rights clearance, native clients, relay runtime, or executable trust
+claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Native Action / Download / Install Policy v0
-2. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+1. Native Local Cache / Privacy Policy v0
+2. Native Client Project Readiness Review v0
+3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
-3. Manual Observation Batch 0 Execution (human-operated parallel work)
-4. Internet Archive Live Probe v0 only after explicit human approval and
+4. Manual Observation Batch 0 Execution (human-operated parallel work)
+5. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
-5. Relay Prototype Planning v0, not implementation
+6. Relay Prototype Planning v0, not implementation
 
 ## Deferred Priorities
 

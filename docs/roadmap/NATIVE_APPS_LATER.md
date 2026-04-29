@@ -59,6 +59,13 @@ Visual Studio project, Xcode project, native GUI, FFI layer, native snapshot
 reader runtime, relay sidecar, installer automation, package-manager behavior,
 download/execution automation, live probes, or Rust runtime wiring.
 
+Native Action / Download / Install Policy v0 also keeps that policy. It defines
+future inspect, preview, export, download, mirror, install handoff,
+package-manager handoff, execute, restore, uninstall, rollback, malware-scan,
+and rights/access gates, but it does not implement downloads, installers,
+package-manager integration, malware scanning, rights clearance, executable
+trust claims, native clients, relay runtime, or any public download surface.
+
 ## Host-Shell Principle
 
 Future native apps should remain shells over the core. They should consume
@@ -87,8 +94,9 @@ Serious native host work should wait until:
 - snapshot consumer read order, checksum, and signature-placeholder contract
   exists
 - native client lane, dependency, and readiness contract exists
-- Native Action / Download / Install Policy exists before any download,
+- Native Action / Download / Install Policy v0 exists before any download,
   install, open, restore, or package-manager handoff behavior
+- local cache, retention, and privacy policy exists before native project work
 - relay security/privacy and operator policy exists, with runtime still
   explicitly deferred
 - rights, security, download, and action-handoff policies exist
