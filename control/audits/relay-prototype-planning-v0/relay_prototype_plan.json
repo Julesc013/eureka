@@ -1,0 +1,151 @@
+{
+  "report_id": "relay_prototype_planning_v0",
+  "created_by_slice": "relay_prototype_planning_v0",
+  "decision": "first_future_relay_prototype_should_be_local_static_http",
+  "recommended_first_prototype": "local_static_http_relay_prototype",
+  "status": "planning_only",
+  "implementation_approved": false,
+  "human_approval_required": true,
+  "no_relay_runtime_implemented": true,
+  "no_network_sockets_opened": true,
+  "no_protocol_servers_implemented": true,
+  "first_protocol_candidate": {
+    "id": "local_static_http",
+    "status": "future_candidate_planned",
+    "default_bind_scope": "localhost_only",
+    "mode": "read_only",
+    "reason": "Smallest testable bridge over existing static public data and seed snapshot files without old/insecure protocol implementation."
+  },
+  "rejected_first_protocol_candidates": [
+    {
+      "id": "local_text_http",
+      "reason": "Useful later but should be a projection within the local static HTTP prototype, not a separate first protocol."
+    },
+    {
+      "id": "local_file_tree_http",
+      "reason": "Useful later but requires the same path traversal and allowlist controls as local static HTTP."
+    },
+    {
+      "id": "read_only_ftp_mirror",
+      "reason": "Insecure transport and credential confusion make it unsuitable for the first prototype."
+    },
+    {
+      "id": "webdav_read_only",
+      "reason": "Complex write semantics and client expectations require a later threat model."
+    },
+    {
+      "id": "smb_read_only",
+      "reason": "Platform permission and credential risks require separate review."
+    },
+    {
+      "id": "afp_read_only",
+      "reason": "Legacy protocol candidate requiring lab-host review."
+    },
+    {
+      "id": "nfs_read_only",
+      "reason": "Export-root and LAN trust risks require separate review."
+    },
+    {
+      "id": "gopher_experimental",
+      "reason": "Research protocol only; not first implementation."
+    },
+    {
+      "id": "native_sidecar",
+      "reason": "Depends on future native client implementation and private-data lifecycle review."
+    },
+    {
+      "id": "snapshot_mount",
+      "reason": "Depends on future snapshot consumer implementation and signature/authenticity policy."
+    }
+  ],
+  "allowed_initial_inputs": [
+    "public_site/data/*.json",
+    "public_site/text/*",
+    "public_site/files/*",
+    "snapshots/examples/static_snapshot_v0/*",
+    "generated public data summaries",
+    "static snapshot manifests and checksums"
+  ],
+  "prohibited_initial_inputs": [
+    "arbitrary user directories",
+    "private cache roots",
+    "credentials",
+    "accounts",
+    "local browser history",
+    "private search history",
+    "unreviewed downloads",
+    "live API responses",
+    "live probe outputs",
+    "external URLs",
+    "caller-supplied absolute local paths"
+  ],
+  "allowed_initial_outputs": [
+    "read-only HTTP pages",
+    "plain text pages",
+    "JSON static summaries",
+    "file-tree index views",
+    "checksum files",
+    "snapshot manifest views"
+  ],
+  "prohibited_initial_outputs": [
+    "write endpoints",
+    "upload endpoints",
+    "admin endpoints",
+    "install automation",
+    "download automation",
+    "package-manager handoff",
+    "executable launch",
+    "live probe endpoints",
+    "live backend proxy routes",
+    "arbitrary file serving",
+    "private path display",
+    "credential display",
+    "telemetry endpoints",
+    "account/session views"
+  ],
+  "security_defaults": {
+    "bind_scope": "localhost_only",
+    "lan_bind_allowed": false,
+    "public_internet_exposure_allowed": false,
+    "read_only": true,
+    "public_data_only": true,
+    "private_data_allowed": false,
+    "writes_allowed": false,
+    "uploads_allowed": false,
+    "admin_routes_allowed": false,
+    "live_backend_proxy_allowed": false,
+    "live_probes_allowed": false,
+    "telemetry_allowed": false,
+    "downloads_allowed": false,
+    "installer_actions_allowed": false,
+    "executable_launch_allowed": false,
+    "log_policy": "minimal_sanitized_no_private_paths_or_secrets"
+  },
+  "required_before_implementation": [
+    "explicit human approval",
+    "prototype path/name approval",
+    "bind scope approval",
+    "input roots approval",
+    "privacy review",
+    "action policy review",
+    "local cache/privacy policy review",
+    "snapshot consumer review",
+    "test plan approval",
+    "rollback/disable path",
+    "no private data confirmation",
+    "no live probe confirmation",
+    "no live backend proxy confirmation",
+    "no download/install automation confirmation"
+  ],
+  "next_recommended_milestone": "Rust Local Index Parity Candidate v0 only after Cargo availability and review",
+  "alternative_next_milestones": [
+    "Relay Prototype Implementation v0 only after explicit human approval",
+    "Windows 7 WinForms Native Skeleton Implementation v0 only after explicit human approval",
+    "Manual Observation Batch 0 Execution, human-operated"
+  ],
+  "notes": [
+    "Relay Prototype Planning v0 is planning only.",
+    "No relay runtime, socket listener, protocol server, native sidecar, snapshot mount, live backend proxy, live probe, private file server, download surface, installer action, telemetry, or account behavior is implemented.",
+    "The first future prototype should be local-only, read-only, static, allowlisted, and explicitly approved before implementation."
+  ]
+}
