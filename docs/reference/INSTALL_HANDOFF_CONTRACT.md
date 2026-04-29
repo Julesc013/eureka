@@ -3,8 +3,8 @@
 Install Handoff Contract v0 defines the future meaning of install handoff
 without implementing it.
 
-Install handoff is user-initiated delegation after evidence display. It is not
-silent installation, not package-manager mutation, not privilege escalation,
+Install handoff is user-initiated delegation after evidence display. It is not silent installation,
+not package-manager mutation, not privilege escalation,
 and not executable safety.
 
 ## Future Semantics
