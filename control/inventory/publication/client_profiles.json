@@ -227,7 +227,7 @@
         "write/admin route exposure to old clients"
       ],
       "current_support_level": "design-only contract exists, runtime not implemented",
-      "notes": "Relay Surface Design v0 records the future local protocol bridge profile, operator checklist, and security/privacy defaults. No relay behavior, network service, protocol server, private-data exposure, live probe, or write/admin route is implemented."
+      "notes": "Relay Surface Design v0 records the future local protocol bridge profile, operator checklist, and security/privacy defaults. Relay Prototype Planning v0 selects a future localhost-only read-only static local HTTP prototype shape. No relay behavior, network service, protocol server, private-data exposure, live backend proxy, live probe, or write/admin route is implemented."
     },
     {
       "id": "api_client",

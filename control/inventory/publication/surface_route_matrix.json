@@ -235,7 +235,7 @@
       "client_profiles": [
         "relay"
       ],
-      "notes": "Relay Surface Design v0 is implemented as design/contract/checklist only. Future local LAN/protocol bridge work remains deferred and is not represented as a public static route."
+      "notes": "Relay Surface Design v0 and Relay Prototype Planning v0 are implemented as design/contract/checklist/planning only. Future local static HTTP relay work remains deferred, requires explicit human approval, and is not represented as a public static route."
     },
     {
       "id": "native_client",

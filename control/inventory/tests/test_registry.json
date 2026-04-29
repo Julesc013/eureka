@@ -2182,6 +2182,50 @@
       "notes": "Checks that relay remains future/deferred/design-only and that no FTP, SMB, WebDAV, Gopher, local HTTP relay, protocol proxy, private data path, write/admin route, live-probe passthrough, or production relay claim is introduced."
     },
     {
+      "test_id": "relay_prototype_plan_validator",
+      "label": "Relay prototype planning validator",
+      "command": "python scripts/validate_relay_prototype_plan.py",
+      "category": "audit",
+      "owner_area": "control/audits/relay-prototype-planning-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The relay prototype plan, first protocol decision, allowed/prohibited inputs and outputs, localhost-only/read-only/static defaults, approval gate, or no-runtime/no-socket posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Relay Prototype Planning v0; validates planning artifacts only and implements no relay server, local HTTP relay, protocol support, socket listener, private file serving, live backend proxying, live probes, native sidecar, snapshot mount, downloads, installers, telemetry, or relay runtime wiring."
+    },
+    {
+      "test_id": "relay_prototype_plan_tests",
+      "label": "Relay prototype planning tests",
+      "command": "python -m unittest tests.operations.test_relay_prototype_planning tests.scripts.test_validate_relay_prototype_plan",
+      "category": "audit",
+      "owner_area": "control/audits/relay-prototype-planning-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "The relay prototype planning pack, JSON report, first candidate decision, security defaults, prohibited features, or validator JSON output regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks the future local static HTTP relay prototype plan without creating a relay runtime, sockets, local HTTP relay, protocol server, private data path, live backend proxy, live probe endpoint, native sidecar, snapshot mount, download surface, installer action, or telemetry behavior."
+    },
+    {
       "test_id": "post_queue_checkpoint_validator",
       "label": "Post-queue checkpoint validator",
       "command": "python scripts/validate_post_queue_checkpoint.py",

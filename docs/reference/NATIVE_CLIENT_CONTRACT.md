@@ -117,11 +117,16 @@ safety, or claim rights clearance.
 ## Relay Integration
 
 Relay integration is future and optional. A native client may later host or
-control a relay sidecar only after relay prototype planning, security/privacy
-review, operator controls, and rollback procedures exist.
+control a relay sidecar only after relay prototype planning, explicit
+implementation approval, security/privacy review, operator controls, and
+rollback procedures exist.
 
 No native sidecar, socket listener, protocol bridge, FTP/SMB/WebDAV/NFS/Gopher
 service, or local HTTP relay is implemented by this contract.
+
+Relay Prototype Planning v0 selects a future local static HTTP prototype shape,
+but that plan does not implement or approve native sidecar behavior. Native
+clients must continue treating relay integration as deferred.
 
 ## Rust And Python Boundary
 

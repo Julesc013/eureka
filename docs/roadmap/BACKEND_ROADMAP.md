@@ -269,15 +269,17 @@ The next backend sequence is:
 56. Native Client Project Readiness Review v0 (implemented as review/evidence only; decision is minimal Windows 7 WinForms skeleton after explicit human approval)
 57. Windows 7 WinForms Native Skeleton Planning v0 (implemented as planning only; no project creation)
 58. Windows 7 WinForms Native Skeleton Implementation v0 (blocked pending explicit human approval; read-only static-data/snapshot-demo skeleton scope only)
-59. Rust Local Index Parity Candidate v0 (blocked pending planning review and Cargo availability)
-60. Manual Observation Batch 0 Execution (human-operated parallel work)
-61. Native App Work Later
+59. Relay Prototype Planning v0 (implemented as planning only; no relay runtime, sockets, protocol servers, private data, live backend proxy, or live probes)
+60. Rust Local Index Parity Candidate v0 (blocked pending planning review and Cargo availability)
+61. Relay Prototype Implementation v0 (blocked pending explicit human approval; localhost-only read-only static relay scope only)
+62. Manual Observation Batch 0 Execution (human-operated parallel work)
+63. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Windows 7 WinForms Native Skeleton Implementation v0, only after explicit human approval
+> Rust Local Index Parity Candidate v0, only after planning review and Cargo availability expectations are explicit
 
 Why this comes next:
 
@@ -292,6 +294,13 @@ Why this comes next:
   without creating project files.
 - Any skeleton implementation must wait for explicit human approval and must
   remain inside the approved read-only planning scope.
+- Relay Prototype Planning v0 now records the recommended first future relay
+  prototype as `local_static_http_relay_prototype`, localhost-only by default,
+  read-only, static, and limited to allowlisted public data plus seed snapshot
+  files. It adds no relay runtime, sockets, local HTTP relay, protocol server,
+  private data, live backend proxy, live probes, or old-client relay support.
+- Relay Prototype Implementation v0 must wait for explicit human approval and
+  must remain inside that approved localhost-only/read-only/static scope.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.

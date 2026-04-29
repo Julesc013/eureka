@@ -175,6 +175,7 @@
     "Signed Snapshot Consumer Contract v0 defines future consumption behavior only.",
     "No production, native, or relay consumer is implemented by this contract.",
     "Native Client Contract v0 defines how future native clients may consume snapshot/public-data contracts without adding a native project or runtime.",
+    "Relay Prototype Planning v0 selects a future local static HTTP relay shape that may read seed snapshots as allowlisted static files after explicit human approval, but no relay snapshot consumer, socket listener, snapshot mount, live backend proxy, or live probe behavior is implemented.",
     "Future old-browser, text, file-tree, relay, native, and audit consumers should share the same read order, checksum posture, and v0 signature-placeholder limitations.",
     "Consumers must not perform network fetches, live probes, scraping, or arbitrary local filesystem ingestion to fill missing snapshot data."
   ]

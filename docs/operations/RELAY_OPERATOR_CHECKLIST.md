@@ -3,6 +3,11 @@
 Status: future/unsigned. This checklist is planning material only. There is no
 relay runtime to run yet.
 
+Relay Prototype Planning v0 records `local_static_http_relay_prototype` as the
+first future prototype candidate. That plan is not implementation approval. A
+future implementation still requires explicit human approval and an approved
+localhost-only/read-only/static scope.
+
 Operator signoff:
 
 - operator:
@@ -14,7 +19,8 @@ Operator signoff:
 Future checklist:
 
 - choose the local host
-- choose local-only or trusted-LAN network scope
+- choose local-only or trusted-LAN network scope; first prototype defaults to
+  localhost-only
 - choose allowed protocols
 - choose snapshot or public-data root
 - confirm read-only mode

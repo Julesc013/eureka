@@ -76,6 +76,13 @@ Future protocol candidates are recorded in
 
 These are candidates, not implemented transports.
 
+Relay Prototype Planning v0 selects local static HTTP as the first future
+prototype candidate. That decision is planning only: the future prototype would
+be localhost-only by default, read-only, and limited to allowlisted static
+public data plus seed snapshot files. No relay server, local HTTP relay,
+socket listener, protocol server, native sidecar, snapshot mount, private file
+serving, live backend proxy, live probe, or runtime path exists now.
+
 ## Safety Invariants
 
 - Local or trusted LAN by default.
@@ -123,3 +130,9 @@ Native Client Contract v0 now records the future native side of relay
 integration. It does not create a native sidecar, GUI project, FFI layer,
 installer automation, download/execution automation, relay runtime, or Rust
 runtime wiring.
+
+Relay Prototype Planning v0 records the first implementation-ready plan for a
+future local static HTTP prototype. It requires explicit human approval before
+implementation and keeps LAN exposure, private data, writes, live backend
+proxying, live probes, downloads, installers, telemetry, and executable launch
+out of the initial scope.

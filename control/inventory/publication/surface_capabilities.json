@@ -292,8 +292,8 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "Relay Surface Design v0 is implemented as contract, inventory, validation, and checklist work only; no LAN/protocol bridge, FTP, SMB, WebDAV, Gopher, proxy relay, network listener, or relay runtime is implemented.",
-      "next_step": "Keep relay future/deferred until a later Relay Prototype v0 has a threat model, operator signoff, and snapshot/public-data consumer policy.",
+      "current_limitations": "Relay Surface Design v0 and Relay Prototype Planning v0 are implemented as contract, inventory, validation, checklist, and planning work only; no LAN/protocol bridge, FTP, SMB, WebDAV, Gopher, proxy relay, network listener, local HTTP relay, or relay runtime is implemented.",
+      "next_step": "Keep relay future/deferred. A local static HTTP relay prototype may be implemented only after explicit human approval, threat-model review, operator signoff, and snapshot/public-data consumer policy validation.",
       "notes": "Future relay must be operator-controlled, local-or-LAN scoped, public/read-only by default, private-data-disabled by default, write/admin-disabled for old clients, and live-probe-disabled unless stronger future policy exists."
     },
     {

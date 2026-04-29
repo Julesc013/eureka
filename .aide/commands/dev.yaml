@@ -154,6 +154,12 @@ steps:
     run: python scripts/validate_relay_surface_design.py --json
   - id: relay_surface_design_tests
     run: python -m unittest tests.operations.test_relay_surface_design tests.scripts.test_validate_relay_surface_design
+  - id: relay_prototype_plan_validator
+    run: python scripts/validate_relay_prototype_plan.py
+  - id: relay_prototype_plan_validator_json
+    run: python scripts/validate_relay_prototype_plan.py --json
+  - id: relay_prototype_plan_tests
+    run: python -m unittest tests.operations.test_relay_prototype_planning tests.scripts.test_validate_relay_prototype_plan
   - id: public_alpha_rehearsal_evidence_summary
     run: python scripts/generate_public_alpha_rehearsal_evidence.py
   - id: public_alpha_rehearsal_evidence_json

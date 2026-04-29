@@ -158,6 +158,14 @@ Current scripts:
   no relay runtime, protocol server, local HTTP relay, proxy, private data path,
   write/admin route, live-probe passthrough, native sidecar, or production relay
   claim
+- `validate_relay_prototype_plan.py`: validates the Relay Prototype Planning v0
+  pack, local static HTTP first-candidate decision, allowed/prohibited
+  input/output contracts, localhost-only/read-only/static security defaults,
+  human-approval gate, and no-runtime/no-socket posture; it supports `--json`,
+  performs no network calls, opens no sockets, and adds no relay server, local
+  HTTP relay, protocol support, private file serving, live backend proxying,
+  live probes, native sidecar, snapshot mount, downloads, installers, telemetry,
+  or relay runtime wiring
 - `generate_static_resolver_demos.py`: generates, updates, or checks static
   resolver demo snapshots under `public_site/demo/` by default from generated
   public data summaries and fixture-backed Python-oracle outputs; it supports

@@ -212,6 +212,22 @@
     "production_snapshots_required_before_broad_relay": true,
     "real_signatures_required_before_authenticity_claims": true
   },
+  "prototype_planning": {
+    "planning_pack": "control/audits/relay-prototype-planning-v0/",
+    "status": "planning_only",
+    "recommended_first_prototype": "local_static_http_relay_prototype",
+    "first_protocol_candidate": "local_static_http",
+    "implementation_approved": false,
+    "human_approval_required": true,
+    "default_bind_scope": "localhost_only",
+    "read_only": true,
+    "public_static_inputs_only": true,
+    "no_relay_runtime_implemented": true,
+    "no_network_sockets_opened": true,
+    "no_private_data": true,
+    "no_live_backend_proxy": true,
+    "no_live_probes": true
+  },
   "action_policy_dependency": {
     "policy": "control/inventory/publication/action_policy.json",
     "status": "policy_only",
@@ -271,11 +287,10 @@
     "native_client"
   ],
   "next_milestones": [
-    "Rust Source Registry Parity Catch-up v0",
-    "Rust Local Index Parity Planning v0",
-    "Signed Snapshot Consumer Contract v0",
-    "Native Client Contract v0",
-    "Native Action / Download / Install Policy v0"
+    "Rust Local Index Parity Candidate v0 only after Cargo availability and review",
+    "Relay Prototype Implementation v0 only after explicit human approval",
+    "Windows 7 WinForms Native Skeleton Implementation v0 only after explicit human approval",
+    "Manual Observation Batch 0 Execution, human-operated"
   ],
   "created_by_slice": "relay_surface_design_v0",
   "notes": [
@@ -284,6 +299,7 @@
     "The relay remains future/deferred in surface capability and route matrices.",
     "Snapshots, lite, text, files, and public data are the current compatibility path.",
     "Native Client Contract v0 is required before any native sidecar or native relay control surface.",
+    "Relay Prototype Planning v0 selects a future local static HTTP prototype shape but does not implement a relay runtime or open sockets.",
     "Manual Observation Batch 0 remains human-operated parallel work.",
     "Internet Archive live probe work remains gated by explicit human approval and live probe gateway review."
   ]

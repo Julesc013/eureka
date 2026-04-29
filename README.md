@@ -546,6 +546,13 @@ Eureka is substantial, but it is still a prototype/reference backend:
   It does not create `clients/`, a Visual Studio solution, `.csproj`, C# source,
   GUI behavior, FFI, cache runtime, downloads, installers, telemetry, relay
   runtime, live probes, or runtime wiring.
+- Relay Prototype Planning v0 is planning only. It selects a future
+  `local_static_http_relay_prototype` as the first relay candidate, with
+  localhost-only/read-only/static defaults over allowlisted public data and seed
+  snapshot files. It does not implement a relay server, open sockets, add HTTP,
+  FTP, SMB, AFP, NFS, WebDAV, Gopher, protocol translation, native sidecar,
+  snapshot mount, private file serving, live backend proxying, live probes, or
+  old-client relay support.
 - Native apps are deferred. The current native surface is a stdlib CLI proof.
 - Live crawling, source sync, fuzzy retrieval, vector search, LLM planning,
   auth, accounts, HTTPS/TLS, rate limiting, process supervision, and deployment
@@ -556,12 +563,13 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
+1. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+   availability expectations are explicit
+2. Relay Prototype Implementation v0 only after explicit human approval and
+   limited to the approved localhost-only/read-only/static relay scope
+3. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
    human approval and limited to the approved read-only static-data/snapshot-demo
    skeleton scope
-2. Relay Prototype Planning v0, not implementation
-3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
-   availability expectations are explicit
 4. Manual Observation Batch 0 Execution (human-operated parallel work)
 5. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review

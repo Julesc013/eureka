@@ -40,6 +40,13 @@ Signed Snapshot Consumer Contract v0 now defines the future snapshot read
 order, checksum posture, and v0 signature-placeholder handling that any relay
 snapshot projection must follow. No relay snapshot consumer is implemented.
 
+Relay Prototype Planning v0 chooses the first future relay prototype shape:
+`local_static_http_relay_prototype`. It may consume only allowlisted static
+public data, text/files seed surfaces, and seed snapshot files if a later
+human-approved implementation milestone exists. It must not consume arbitrary
+user directories, private cache roots, credentials, live API responses, live
+probe outputs, or external URLs.
+
 ## Future Outputs
 
 Possible future relay outputs are projections of the same resolver truth:
@@ -96,6 +103,13 @@ Native Action / Download / Install Policy v0 applies to future relay work. A
 relay may project read-only metadata, text, manifests, checksums, and snapshot
 summaries, but it must not expose download, install, execute, mirror, private
 upload, write/admin, or live-probe behavior to old or insecure clients.
+
+Relay Prototype Planning v0 limits the first future outputs to read-only HTTP
+pages, plain text pages, JSON static summaries, file-tree index views, checksum
+files, and snapshot manifest views. Write endpoints, uploads, admin endpoints,
+live probe endpoints, live backend proxy routes, arbitrary file serving,
+private path display, credential display, telemetry endpoints, and executable
+launch remain prohibited.
 
 ## Versioning
 

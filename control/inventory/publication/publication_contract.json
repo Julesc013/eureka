@@ -141,10 +141,10 @@
     }
   ],
   "next_expected_milestones": [
-    "Native Client Project Readiness Review v0",
-    "Relay Prototype Planning v0, not implementation",
-    "Manual Observation Batch 0 Execution",
     "Rust Local Index Parity Candidate v0 only after review and Cargo availability",
+    "Relay Prototype Implementation v0 only after explicit human approval",
+    "Windows 7 WinForms Native Skeleton Implementation v0 only after explicit human approval",
+    "Manual Observation Batch 0 Execution",
     "Internet Archive Live Probe v0 only after explicit human approval and live probe gateway review"
   ],
   "created_by_slice": "public_publication_plane_contracts_v0",
@@ -165,6 +165,7 @@
     "Signed Snapshot Format v0 adds a snapshot contract, checksum/signature-placeholder policy, and deterministic repo seed example under snapshots/examples/static_snapshot_v0 without adding real signing keys, executable downloads, production signatures, relay behavior, native clients, or a public /snapshots/ route.",
     "The public /snapshots/ route remains future/deferred; public_site remains the current static deployment artifact.",
     "Relay Surface Design v0 adds a future local/LAN relay design inventory, reference docs, security/privacy defaults, and unsigned operator checklist without implementing a relay server, opening sockets, adding FTP/SMB/WebDAV/Gopher behavior, exposing private data, or enabling live probes.",
+    "Relay Prototype Planning v0 selects a future localhost-only read-only static local HTTP relay prototype over allowlisted public data and seed snapshot files without implementing a relay server, opening sockets, adding protocol behavior, serving private files, proxying a live backend, enabling live probes, or claiming old-client relay support.",
     "Native Action / Download / Install Policy v0 adds policy-only action classes, warning classes, public-alpha/static defaults, and native/snapshot/relay gates for future download, mirror, install handoff, package-manager handoff, execute, restore, uninstall, rollback, malware-scan, and rights/access behavior without implementing downloads, installers, package-manager integration, malware scanning, rights clearance, native clients, relay runtime, or executable trust claims.",
     "Native Local Cache / Privacy Policy v0 adds policy-only privacy/cache defaults, prohibited private-data behaviors, telemetry/logging/credential rules, and native/snapshot/relay/public-alpha gates without implementing cache runtime, private file ingestion, local archive scanning, telemetry, accounts, cloud sync, uploads, native clients, or relay runtime."
   ],

@@ -362,6 +362,17 @@
       "title": "Plan the first Windows 7 WinForms skeleton path, namespace, scope, and approval gate before project files",
       "status": "addressed_by_windows_7_winforms_native_skeleton_planning_v0",
       "suggested_milestone": "Windows 7 WinForms Native Skeleton Implementation v0 only after explicit human approval"
+    },
+    {
+      "id": "audit-backlog-relay-prototype-planning",
+      "finding_refs": [
+        "CTEA-BEHAVIOR-001",
+        "CTEA-TEST-002",
+        "CTEA-DOCS-001"
+      ],
+      "title": "Plan the first relay prototype protocol, input/output contract, privacy boundaries, and approval gate before runtime work",
+      "status": "addressed_by_relay_prototype_planning_v0",
+      "suggested_milestone": "Relay Prototype Implementation v0 only after explicit human approval"
     }
   ]
 }

@@ -86,6 +86,12 @@ Relay surfaces remain public/read-only by default. Old or insecure clients must
 not receive private cache, credentials, user history, write/admin controls, or
 private local paths.
 
+Relay Prototype Planning v0 keeps the first future relay prototype public,
+read-only, localhost-only by default, and static. It does not allow private
+cache roots, arbitrary user directories, credentials, browser history, private
+search history, telemetry, uploads, or private local paths as inputs or
+outputs.
+
 Native clients remain future. Before they implement a local cache, they must
 follow this policy, the Native Client Contract, the Snapshot Consumer Contract,
 the Relay Surface Design, and the Native Action / Download / Install Policy.

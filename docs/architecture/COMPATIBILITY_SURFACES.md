@@ -96,6 +96,13 @@ contract, protocol-candidate inventory, security/privacy defaults, and unsigned
 operator checklist for future relay work. No FTP, SMB, WebDAV, Gopher, proxy,
 socket listener, or LAN protocol bridge exists now.
 
+Relay Prototype Planning v0 now records the first future prototype choice:
+local static HTTP, localhost-only by default, read-only, and limited to
+allowlisted public data plus seed snapshot files. It is planning only and adds
+no relay runtime, socket listener, local HTTP relay, protocol server, private
+file serving, live backend proxy, live probe path, native sidecar, or old-client
+relay support claim.
+
 Native Client Contract v0 now records future Windows/macOS/native lanes,
 allowed inputs, CLI current-state boundaries, and readiness gates. Native
 clients must wait for stable-enough public data, snapshot, action,

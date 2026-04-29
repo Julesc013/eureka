@@ -521,6 +521,25 @@ runtime, adds no FTP, SMB, WebDAV, AFP, NFS, Gopher, local HTTP relay, protocol
 proxy, private data exposure, write/admin route, live-probe passthrough, native
 sidecar, backend hosting, or production relay claim.
 
+## Relay Prototype Planning
+
+Relay Prototype Planning v0 is validated with:
+
+```bash
+python scripts/validate_relay_prototype_plan.py
+python scripts/validate_relay_prototype_plan.py --json
+python -m unittest tests.operations.test_relay_prototype_planning tests.scripts.test_validate_relay_prototype_plan
+```
+
+The lane checks the planning pack under
+`control/audits/relay-prototype-planning-v0/`, the local static HTTP first
+candidate decision, allowed/prohibited input/output contracts,
+localhost-only/read-only/static security defaults, explicit human approval
+gate, and no-runtime/no-socket posture. It performs no network calls, opens no
+sockets, implements no relay server, local HTTP relay, protocol support,
+private file serving, live backend proxying, live probes, native sidecar,
+snapshot mount, downloads, installers, telemetry, or relay runtime wiring.
+
 ## Native Client Contract
 
 Native Client Contract v0 is validated with:

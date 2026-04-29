@@ -123,6 +123,13 @@ runtime report is needed; this is planning only and does not create
 downloads, installers, cache runtime, telemetry, relay runtime, live probes, or
 runtime wiring.
 
+Relay Prototype Planning v0 records its committed planning pack under
+`control/audits/relay-prototype-planning-v0/`, plus a validator and tests under
+`scripts/` and `tests/`. No separate AIDE runtime report is needed; this is
+planning only and does not implement a relay server, open sockets, add local
+HTTP/FTP/SMB/AFP/NFS/WebDAV/Gopher behavior, expose private data, proxy a live
+backend, enable live probes, or claim old-client relay support.
+
 Post-Queue State Checkpoint v0 records its committed audit/reporting pack under
 `control/audits/post-queue-state-checkpoint-v0/`. No separate AIDE runtime
 report is needed; the pack is repo-governance evidence and does not add product

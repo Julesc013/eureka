@@ -322,7 +322,7 @@
       "id": "windows_7_winforms_native_skeleton_implementation_v0",
       "title": "Windows 7 WinForms Native Skeleton Implementation v0",
       "status": "blocked_pending_explicit_human_approval",
-      "priority": 46,
+      "priority": 48,
       "notes": "Future implementation may create the minimal skeleton only after explicit human approval and must stay within read-only static public data / seed snapshot demo scope. Do not run unattended."
     },
     {
@@ -335,15 +335,22 @@
     {
       "id": "relay_prototype_planning_v0",
       "title": "Relay Prototype Planning v0",
-      "status": "queued_after_native_approval_decision",
-      "priority": 48,
-      "notes": "Future planning-only milestone for a relay prototype after relay and snapshot-consumer contracts; not a relay runtime implementation and not a protocol server."
+      "status": "completed",
+      "priority": 46,
+      "notes": "Added a planning pack for a future local_static_http_relay_prototype with localhost-only, read-only, static public-data/seed-snapshot scope. No relay server, sockets, local HTTP relay, FTP/SMB/AFP/NFS/WebDAV/Gopher behavior, protocol translation, native sidecar, snapshot mount, private file serving, live backend proxy, live probes, or old-client relay support was implemented."
+    },
+    {
+      "id": "relay_prototype_implementation_v0",
+      "title": "Relay Prototype Implementation v0",
+      "status": "blocked_pending_explicit_human_approval",
+      "priority": 49,
+      "notes": "Future implementation may create only the approved localhost-only/read-only/static relay prototype after explicit human approval. Do not run unattended and do not add LAN/public exposure, private data, writes, live backend proxying, live probes, downloads, installers, or protocol servers."
     },
     {
       "id": "internet_archive_live_probe_v0",
       "title": "Internet Archive Live Probe v0",
       "status": "blocked_pending_explicit_approval",
-      "priority": 49,
+      "priority": 50,
       "notes": "Future live external-source behavior; do not run unattended before explicit human approval and live probe gateway review."
     }
   ]

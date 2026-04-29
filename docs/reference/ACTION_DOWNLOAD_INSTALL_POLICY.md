@@ -154,6 +154,11 @@ Relay surfaces remain public/read-only by default. Insecure old-client
 transports must not expose private data, write/admin controls, download,
 install, execute, mirror, live-probe, or upload behavior.
 
+Relay Prototype Planning v0 keeps the first future relay prototype inside that
+rule: local static HTTP, localhost-only by default, read-only, static, and no
+downloads, mirrors, installers, executable launch, write/admin routes, live
+backend proxying, or live probes.
+
 ## Malware And Rights Disclaimers
 
 No malware safety claim exists. No scanner, sandbox, quarantine workflow, or

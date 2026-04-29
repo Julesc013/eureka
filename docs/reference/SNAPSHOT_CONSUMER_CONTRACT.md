@@ -150,6 +150,12 @@ Future relay and native clients must use this same contract. Relay consumers
 remain future/deferred and require separate relay prototype planning before any
 network service, socket, protocol server, or LAN bridge exists.
 
+Relay Prototype Planning v0 now records that the first future relay prototype
+would consume seed snapshots only as read-only static files through an
+allowlisted local static HTTP projection after explicit human approval. No
+relay snapshot consumer, socket listener, snapshot mount, live backend proxy,
+or live probe behavior is implemented.
+
 Native consumers remain future/deferred and require Native Client Contract v0
 before any native project, installer, sidecar, or packaged runtime exists.
 Native Client Contract v0 now defines those future native lanes and confirms

@@ -162,6 +162,7 @@
     "Native Local Cache / Privacy Policy v0 is policy, contract, validation, and documentation only.",
     "No cache runtime, private file ingestion, local archive scanning, telemetry, accounts, cloud sync, uploads, native client, relay runtime, or GUI behavior is implemented.",
     "The default posture is privacy-first: local/private features are off by default and public artifacts must not leak private paths or secrets.",
+    "Relay Prototype Planning v0 keeps the first future relay prototype public, read-only, localhost-only by default, and static; no private cache roots, arbitrary user directories, credentials, telemetry, uploads, private paths, or private data are allowed.",
     "This policy gates future native cache, relay private-data handling, diagnostics, portable mode, and local/offline client work."
   ]
 }

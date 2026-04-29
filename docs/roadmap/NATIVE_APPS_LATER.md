@@ -52,6 +52,12 @@ operator checklist, but it does not create a native sidecar, app shell, SDK,
 network service, protocol bridge, private-data path, write/admin route, or live
 probe passthrough.
 
+Relay Prototype Planning v0 also keeps that policy. It chooses a future
+localhost-only/read-only/static local HTTP relay prototype shape for public
+data and seed snapshots, but it does not create a relay runtime, socket,
+native sidecar, snapshot mount, private file server, live backend proxy, live
+probe path, or old-client relay support.
+
 Native Client Contract v0 also keeps that policy. It defines future Windows and
 Mac client lanes, CLI current-state boundaries, snapshot/public-data/live
 handoff/relay/Rust dependencies, and readiness gates, but it does not create a

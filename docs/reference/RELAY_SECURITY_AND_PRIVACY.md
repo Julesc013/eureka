@@ -8,6 +8,8 @@ source probes.
 
 - No public internet exposure by default.
 - Local or trusted-LAN scope only for any future v0 prototype.
+- Relay Prototype Planning v0 narrows the first future prototype to
+  localhost-only by default.
 - Read-only by default.
 - Public data only by default.
 - No credentials to old clients.
@@ -50,3 +52,10 @@ Before implementation, a relay prototype needs a threat model covering:
 - old-client credential and session risks
 
 No implementation should proceed until that review is committed and validated.
+
+Relay Prototype Planning v0 records the first future threat-model target:
+`local_static_http_relay_prototype`. It remains planning only and opens no
+sockets. A later implementation must prove localhost-only bind behavior,
+allowlisted static roots, path traversal rejection, no writes/uploads/admin
+routes, no live backend proxy, no live probes, and sanitized logs before it can
+be considered implemented.

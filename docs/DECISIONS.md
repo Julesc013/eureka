@@ -753,3 +753,25 @@ local cache runtime, downloads, installers, package-manager integration,
 telemetry, accounts, relay runtime, live probes, external API calls, scraping,
 deployment behavior, or production readiness. A future implementation prompt
 must include explicit human approval before any skeleton is created.
+
+## ADR-099: Plan Local Static Relay Before Runtime
+
+Status: accepted
+
+Relay Prototype Planning v0 adds
+`control/audits/relay-prototype-planning-v0/`,
+`scripts/validate_relay_prototype_plan.py`, and focused operations/script
+tests.
+
+The decision is to make the first future relay prototype a
+`local_static_http_relay_prototype`: localhost-only by default, read-only, and
+limited to allowlisted static public data, text/files seed surfaces, and seed
+snapshot files. The plan records allowed inputs and outputs, prohibited inputs
+and outputs, security/privacy defaults, operator gates, and future test
+requirements before any runtime exists. This adds no relay server, socket
+listener, local HTTP relay behavior, FTP, SMB, AFP, NFS, WebDAV, Gopher, TLS
+translation, protocol translation, native sidecar, snapshot mount, private file
+serving, live backend proxying, live source probes, arbitrary local filesystem
+ingestion, downloads, installers, telemetry, accounts, deployment behavior, or
+production readiness claim. A future Relay Prototype Implementation v0 prompt
+must include explicit human approval before any relay runtime is created.

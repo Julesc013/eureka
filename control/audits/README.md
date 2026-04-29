@@ -69,3 +69,10 @@ Current packs:
   initial scope, data inputs, and approval gates without creating `clients/`,
   Visual Studio project files, C# source, GUI behavior, FFI, downloads,
   installers, cache runtime, relay runtime, or live probes.
+- `relay-prototype-planning-v0/`: planning pack for the first future relay
+  prototype. It selects a localhost-only/read-only/static
+  `local_static_http_relay_prototype`, records input/output contracts,
+  security/privacy defaults, operator gates, risks, and implementation
+  boundaries without creating a relay server, opening sockets, adding protocol
+  support, serving private files, proxying a live backend, enabling live probes,
+  or claiming old-client relay support.
