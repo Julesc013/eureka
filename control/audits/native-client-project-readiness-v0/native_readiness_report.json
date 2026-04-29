@@ -1,0 +1,232 @@
+{
+  "report_id": "native_client_project_readiness_review_v0",
+  "created_by_slice": "native_client_project_readiness_review_v0",
+  "decision": "ready_for_minimal_project_skeleton_after_human_approval",
+  "first_candidate_lane": "windows_7_x64_winforms_net48",
+  "human_approval_required": true,
+  "native_gui_implemented": false,
+  "native_project_files_added": false,
+  "production_ready": false,
+  "contract_coverage": [
+    {
+      "id": "native_client_contract",
+      "path": "control/inventory/publication/native_client_contract.json",
+      "validation_command": "python scripts/validate_native_client_contract.py",
+      "exists": true,
+      "enough_for_minimal_skeleton": true,
+      "missing_pieces": [
+        "explicit human approval",
+        "project path and naming decision"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "native_client_lanes",
+      "path": "control/inventory/publication/native_client_lanes.json",
+      "validation_command": "python scripts/validate_native_client_contract.py",
+      "exists": true,
+      "enough_for_minimal_skeleton": true,
+      "missing_pieces": [
+        "selected build host",
+        "verified toolchain"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "action_download_install_policy",
+      "path": "control/inventory/publication/action_policy.json",
+      "validation_command": "python scripts/validate_action_policy.py",
+      "exists": true,
+      "enough_for_minimal_skeleton": true,
+      "missing_pieces": [
+        "no future risky action implementation is approved"
+      ],
+      "risk": "high_if_ignored"
+    },
+    {
+      "id": "local_cache_privacy_policy",
+      "path": "control/inventory/publication/local_cache_privacy_policy.json",
+      "validation_command": "python scripts/validate_local_cache_privacy_policy.py",
+      "exists": true,
+      "enough_for_minimal_skeleton": true,
+      "missing_pieces": [
+        "no cache runtime is approved"
+      ],
+      "risk": "high_if_ignored"
+    },
+    {
+      "id": "snapshot_consumer_contract",
+      "path": "control/inventory/publication/snapshot_consumer_contract.json",
+      "validation_command": "python scripts/validate_snapshot_consumer_contract.py",
+      "exists": true,
+      "enough_for_minimal_skeleton": true,
+      "missing_pieces": [
+        "native snapshot reader runtime remains future"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "relay_surface_design",
+      "path": "control/inventory/publication/relay_surface.json",
+      "validation_command": "python scripts/validate_relay_surface_design.py",
+      "exists": true,
+      "enough_for_minimal_skeleton": false,
+      "missing_pieces": [
+        "relay runtime remains future"
+      ],
+      "risk": "medium_if_overclaimed"
+    },
+    {
+      "id": "public_data_contract",
+      "path": "control/inventory/publication/public_data_contract.json",
+      "validation_command": "python scripts/validate_publication_inventory.py",
+      "exists": true,
+      "enough_for_minimal_skeleton": true,
+      "missing_pieces": [
+        "no public API stability promise"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "rust_parity",
+      "path": "tests/parity/",
+      "validation_command": "python scripts/validate_rust_local_index_parity_plan.py",
+      "exists": true,
+      "enough_for_minimal_skeleton": false,
+      "missing_pieces": [
+        "Cargo availability is not required for skeleton",
+        "Rust remains unwired"
+      ],
+      "risk": "medium_if_treated_as_runtime"
+    }
+  ],
+  "lane_readiness": [
+    {
+      "lane_id": "windows_7_x64_winforms_net48",
+      "readiness": "first_candidate_after_human_approval",
+      "first_allowed_scope": "read-only public data and seed snapshot inspection skeleton",
+      "blockers": [
+        "explicit human approval",
+        "project path and namespace decision",
+        "build host and toolchain verification"
+      ]
+    },
+    {
+      "lane_id": "windows_xp_x86_win32_unicode",
+      "readiness": "lab_verify_not_ready",
+      "first_allowed_scope": "legacy read-only research after first lane and toolchain review",
+      "blockers": [
+        "v141_xp toolchain",
+        "legacy UI constraints",
+        "no live backend requirement"
+      ]
+    },
+    {
+      "lane_id": "windows_95_nt4_x86_win32_ansi",
+      "readiness": "lab_verify_not_ready",
+      "first_allowed_scope": "thin read-only file/text/snapshot browser research",
+      "blockers": [
+        "VS6-era toolchain",
+        "ANSI constraints",
+        "dependency minimization"
+      ]
+    },
+    {
+      "lane_id": "windows_win16_research",
+      "readiness": "research_not_ready",
+      "first_allowed_scope": "future text/file/snapshot display research",
+      "blockers": [
+        "runtime and host constraints"
+      ]
+    },
+    {
+      "lane_id": "windows_modern_winui_future",
+      "readiness": "deferred",
+      "first_allowed_scope": "optional modern client later",
+      "blockers": [
+        "lower priority than first Windows 7 lane"
+      ]
+    },
+    {
+      "lane_id": "macos_10_6_10_15_intel_appkit",
+      "readiness": "lab_verify_not_ready",
+      "first_allowed_scope": "legacy Intel Mac read-only candidate",
+      "blockers": [
+        "Xcode/toolchain matrix",
+        "host availability"
+      ]
+    },
+    {
+      "lane_id": "macos_11_plus_modern",
+      "readiness": "deferred",
+      "first_allowed_scope": "optional modern macOS client later",
+      "blockers": [
+        "lower priority than first Windows 7 lane"
+      ]
+    },
+    {
+      "lane_id": "macos_10_4_10_5_ppc_intel_research",
+      "readiness": "research_not_ready",
+      "first_allowed_scope": "read-only snapshot/text/file research",
+      "blockers": [
+        "PPC/i386 toolchain",
+        "runtime constraints"
+      ]
+    },
+    {
+      "lane_id": "classic_mac_7_1_9_2_research",
+      "readiness": "research_not_ready",
+      "first_allowed_scope": "future text/file/snapshot display research",
+      "blockers": [
+        "classic Mac lab environment"
+      ]
+    }
+  ],
+  "blockers": [
+    "Explicit human approval is required before any native project scaffold.",
+    "Build host and selected lane toolchain availability must be verified.",
+    "Project path, namespace, and ownership boundary must be selected.",
+    "Initial UI scope must be reviewed as read-only public data and snapshot/status/evidence display only.",
+    "No install, download, cache, telemetry, relay, live backend, live probe, FFI, or production scope may enter the skeleton."
+  ],
+  "required_before_project_creation": [
+    "human approval",
+    "selected first lane",
+    "project path and namespace",
+    "build host and toolchain verification",
+    "accepted no-download/no-install scope",
+    "accepted no-cache/no-private-ingestion scope",
+    "accepted no-telemetry/no-account/no-cloud-sync scope",
+    "accepted no-live-backend/no-live-probe/no-relay scope",
+    "accepted no-Rust-FFI/no-runtime-replacement scope"
+  ],
+  "prohibited_initial_scope": [
+    "Visual Studio project creation without explicit future approval",
+    "Xcode project creation",
+    "native app prototype behavior",
+    "downloads",
+    "installers",
+    "package-manager integration",
+    "execute or restore actions",
+    "local cache runtime",
+    "private file ingestion",
+    "telemetry",
+    "accounts",
+    "cloud sync",
+    "relay runtime",
+    "live backend dependency",
+    "live probes",
+    "Rust FFI",
+    "production readiness claims"
+  ],
+  "recommended_next_milestone": "Windows 7 WinForms Native Skeleton Planning v0",
+  "human_operated_parallel_work": [
+    "Manual Observation Batch 0 Execution"
+  ],
+  "notes": [
+    "This review is evidence-only and does not create native project files.",
+    "The repo is ready only for a human-approved minimal skeleton planning path, not for prototype behavior.",
+    "All non-Windows-7 GUI lanes remain deferred, lab-verify, or research."
+  ]
+}
+
