@@ -1,0 +1,266 @@
+{
+  "schema_version": "0.1.0",
+  "inventory_id": "generated-artifacts-v0",
+  "created_by_slice": "generated_artifact_drift_guard_v0",
+  "status": "validation_audit_only",
+  "artifact_groups": [
+    {
+      "artifact_id": "public_data_summaries",
+      "status": "generated_committed",
+      "artifact_paths": [
+        "public_site/data/*.json"
+      ],
+      "generator_command": "python scripts/generate_public_data_summaries.py --update",
+      "check_command": "python scripts/generate_public_data_summaries.py --check",
+      "validator_commands": [
+        "python scripts/validate_public_static_site.py",
+        "python scripts/validate_public_data_stability.py"
+      ],
+      "source_inputs": [
+        "control/inventory/publication/*.json",
+        "control/inventory/sources/*.json",
+        "control/inventory/public_alpha_routes.json",
+        "runtime/engine/evals/**",
+        "scripts/generate_public_data_summaries.py"
+      ],
+      "deterministic": true,
+      "volatile_fields": [
+        "build_manifest.json.commit",
+        "build_manifest.json.built_at",
+        "build_manifest.json.branch"
+      ],
+      "committed_output_policy": "Committed static public JSON must match the generator in check mode. Volatile fields must stay normalized or explicitly classified by the public data stability policy.",
+      "update_command": "python scripts/generate_public_data_summaries.py --update",
+      "notes": "Public JSON is a static artifact and not a production API."
+    },
+    {
+      "artifact_id": "compatibility_surfaces",
+      "status": "generated_committed",
+      "artifact_paths": [
+        "public_site/lite",
+        "public_site/text",
+        "public_site/files"
+      ],
+      "generator_command": "python scripts/generate_compatibility_surfaces.py --update",
+      "check_command": "python scripts/generate_compatibility_surfaces.py --check",
+      "validator_commands": [
+        "python scripts/validate_compatibility_surfaces.py"
+      ],
+      "source_inputs": [
+        "public_site/data/*.json",
+        "scripts/generate_compatibility_surfaces.py",
+        "control/inventory/publication/surface_capabilities.json"
+      ],
+      "deterministic": true,
+      "volatile_fields": [],
+      "committed_output_policy": "Lite, text, and files seed surfaces are committed compatibility projections and must match the generator in check mode.",
+      "update_command": "python scripts/generate_compatibility_surfaces.py --update",
+      "notes": "These surfaces remain static seed surfaces and do not imply relay, native, download, or live API behavior."
+    },
+    {
+      "artifact_id": "static_resolver_demos",
+      "status": "generated_committed",
+      "artifact_paths": [
+        "public_site/demo",
+        "public_site/demo/data/demo_snapshots.json"
+      ],
+      "generator_command": "python scripts/generate_static_resolver_demos.py --update",
+      "check_command": "python scripts/generate_static_resolver_demos.py --check",
+      "validator_commands": [
+        "python scripts/validate_public_static_site.py"
+      ],
+      "source_inputs": [
+        "public_site/data/*.json",
+        "tests/parity/golden/python_oracle/v0/**/*.json",
+        "scripts/generate_static_resolver_demos.py"
+      ],
+      "deterministic": true,
+      "volatile_fields": [],
+      "committed_output_policy": "Static resolver demo pages and JSON snapshots must match the generator in check mode.",
+      "update_command": "python scripts/generate_static_resolver_demos.py --update",
+      "notes": "Demo snapshots are fixture-backed static examples, not live search behavior."
+    },
+    {
+      "artifact_id": "static_snapshot_example",
+      "status": "generated_committed_seed_example",
+      "artifact_paths": [
+        "snapshots/examples/static_snapshot_v0"
+      ],
+      "generator_command": "python scripts/generate_static_snapshot.py --update",
+      "check_command": "python scripts/generate_static_snapshot.py --check",
+      "validator_commands": [
+        "python scripts/validate_static_snapshot.py",
+        "python scripts/validate_snapshot_consumer_contract.py"
+      ],
+      "source_inputs": [
+        "public_site/data/*.json",
+        "control/inventory/publication/snapshot_contract.json",
+        "control/inventory/publication/snapshot_consumer_contract.json",
+        "scripts/generate_static_snapshot.py"
+      ],
+      "deterministic": true,
+      "volatile_fields": [
+        "BUILD_MANIFEST.json.public_build_manifest.commit",
+        "BUILD_MANIFEST.json.public_build_manifest.built_at"
+      ],
+      "committed_output_policy": "The repo-local seed snapshot example must match the generator and validator. It is not a production signed snapshot.",
+      "update_command": "python scripts/generate_static_snapshot.py --update",
+      "notes": "No real signing keys, production signatures, consumer runtime, relay runtime, or executable downloads are implied."
+    },
+    {
+      "artifact_id": "site_dist",
+      "status": "generated_committed_validation_output",
+      "artifact_paths": [
+        "site/dist",
+        "site/dist/.eureka-static-site-generated"
+      ],
+      "generator_command": "python site/build.py --clean",
+      "check_command": "python site/build.py --check",
+      "validator_commands": [
+        "python site/validate.py"
+      ],
+      "source_inputs": [
+        "site/pages/*.json",
+        "site/templates/*.html",
+        "site/assets/*",
+        "public_site/data/*.json",
+        "control/inventory/sources/*.json",
+        "site/build.py"
+      ],
+      "deterministic": true,
+      "volatile_fields": [],
+      "committed_output_policy": "site/dist remains generated validation output. public_site remains the current deployable static artifact unless a future milestone changes that explicitly.",
+      "update_command": "python site/build.py --clean",
+      "notes": "The check builds into a temporary directory and validates without mutating committed output."
+    },
+    {
+      "artifact_id": "python_oracle_goldens",
+      "status": "generated_committed",
+      "artifact_paths": [
+        "tests/parity/golden/python_oracle/v0"
+      ],
+      "generator_command": "python scripts/generate_python_oracle_golden.py",
+      "check_command": "python scripts/generate_python_oracle_golden.py --check",
+      "validator_commands": [
+        "python -m unittest tests.hardening.test_python_oracle_golden_guard"
+      ],
+      "source_inputs": [
+        "runtime/**",
+        "surfaces/**",
+        "control/inventory/sources/*.json",
+        "scripts/generate_python_oracle_golden.py"
+      ],
+      "deterministic": true,
+      "volatile_fields": [
+        "generated_from_commit",
+        "generated_at",
+        "local_index_paths",
+        "local_index_fts_mode"
+      ],
+      "committed_output_policy": "Python oracle goldens must match current Python reference behavior after generator normalization.",
+      "update_command": "python scripts/generate_python_oracle_golden.py",
+      "notes": "Python remains the oracle; this does not require Rust or wire Rust into runtime paths."
+    },
+    {
+      "artifact_id": "public_alpha_rehearsal_evidence",
+      "status": "generated_committed_evidence_pack",
+      "artifact_paths": [
+        "docs/operations/public_alpha_rehearsal_evidence_v0"
+      ],
+      "generator_command": "python scripts/generate_public_alpha_rehearsal_evidence.py --update",
+      "check_command": "python scripts/generate_public_alpha_rehearsal_evidence.py --check",
+      "validator_commands": [
+        "python scripts/public_alpha_smoke.py"
+      ],
+      "source_inputs": [
+        "control/inventory/public_alpha_routes.json",
+        "public_site/**",
+        "runtime/engine/evals/**",
+        "control/external_baselines/**",
+        "scripts/generate_public_alpha_rehearsal_evidence.py"
+      ],
+      "deterministic": true,
+      "volatile_fields": [
+        "rehearsal_evidence_manifest.json.commit_sha",
+        "rehearsal_evidence_manifest.json.generated_or_recorded_at"
+      ],
+      "committed_output_policy": "Rehearsal evidence must match the generator in check mode and must not claim deployment or production readiness.",
+      "update_command": "python scripts/generate_public_alpha_rehearsal_evidence.py --update",
+      "notes": "Evidence is local/static rehearsal evidence only; external baseline observations remain manual unless committed separately."
+    },
+    {
+      "artifact_id": "publication_inventory",
+      "status": "hybrid_governance_committed",
+      "artifact_paths": [
+        "control/inventory/publication/*.json",
+        "control/inventory/publication/README.md"
+      ],
+      "generator_command": "manual governed edits plus slice-specific validators",
+      "check_command": "python scripts/validate_publication_inventory.py",
+      "validator_commands": [
+        "python scripts/validate_publication_inventory.py --json",
+        "python scripts/validate_public_static_site.py"
+      ],
+      "source_inputs": [
+        "control/inventory/publication/*.json",
+        "docs/reference/*.md",
+        "docs/architecture/*.md",
+        "public_site/**"
+      ],
+      "deterministic": true,
+      "volatile_fields": [],
+      "committed_output_policy": "Publication inventories are governed committed metadata. They must parse and pass publication validators after related contract changes.",
+      "update_command": "manual governed edit only",
+      "notes": "Inventory updates do not deploy, add live backend behavior, or create production API guarantees."
+    },
+    {
+      "artifact_id": "test_registry",
+      "status": "hybrid_governance_committed",
+      "artifact_paths": [
+        "control/inventory/tests/test_registry.json",
+        "control/inventory/tests/command_matrix.json"
+      ],
+      "generator_command": "manual governed edits",
+      "check_command": "python -m unittest tests.operations.test_test_eval_operating_layer",
+      "validator_commands": [
+        "python -m unittest tests.hardening.test_aide_test_registry_consistency"
+      ],
+      "source_inputs": [
+        "control/inventory/tests/*.json",
+        ".aide/commands/*.yaml",
+        "docs/operations/TEST_AND_EVAL_LANES.md"
+      ],
+      "deterministic": true,
+      "volatile_fields": [],
+      "committed_output_policy": "The test registry and command matrix are committed governance metadata and must remain machine-readable and consistent with AIDE test lanes.",
+      "update_command": "manual governed edit only",
+      "notes": "This metadata is repo-operating guidance, not runtime product behavior."
+    },
+    {
+      "artifact_id": "aide_metadata",
+      "status": "hybrid_governance_committed",
+      "artifact_paths": [
+        ".aide/commands/dev.yaml",
+        ".aide/commands/ci.yaml",
+        ".aide/tasks/queue.yaml",
+        ".aide/reports/README.md"
+      ],
+      "generator_command": "manual governed edits",
+      "check_command": "python -m unittest tests.hardening.test_aide_test_registry_consistency",
+      "validator_commands": [
+        "python -m unittest tests.operations.test_test_eval_operating_layer"
+      ],
+      "source_inputs": [
+        ".aide/commands/*.yaml",
+        ".aide/tasks/*.yaml",
+        ".aide/reports/*.md",
+        "control/inventory/tests/*.json"
+      ],
+      "deterministic": true,
+      "volatile_fields": [],
+      "committed_output_policy": "AIDE metadata is committed repo-operating metadata only. It must stay parseable and aligned with the test registry where commands are referenced.",
+      "update_command": "manual governed edit only",
+      "notes": "AIDE metadata must not define product runtime behavior."
+    }
+  ]
+}

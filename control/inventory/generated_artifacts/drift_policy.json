@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "generated-artifact-drift-policy-v0",
+  "created_by_slice": "generated_artifact_drift_guard_v0",
+  "status": "validation_audit_only",
+  "drift_classes": {
+    "missing_artifact": "A required committed generated or generated-like artifact path is absent.",
+    "stale_generated_output": "An owning check command reports that committed output no longer matches current source inputs.",
+    "generator_missing": "A declared generator command points at a missing repo-local generator script.",
+    "check_command_missing": "A required check command cannot be resolved to a repo-local script or unittest lane.",
+    "volatile_field_uncontrolled": "A committed artifact includes known volatile values without a documented normalization or volatility policy.",
+    "untracked_generated_output": "A generated output group creates committed artifacts that are not listed in the inventory.",
+    "orphan_generated_output": "A committed generated-like artifact is listed without an owner, source inputs, or check command."
+  },
+  "allowed_skips": [
+    {
+      "skip_id": "optional_future_artifact",
+      "policy": "Artifacts marked optional or future may be reported as skipped rather than failed when paths are absent."
+    },
+    {
+      "skip_id": "unavailable_optional_tool",
+      "policy": "Optional toolchains may be reported as unavailable when they are not required for the Python/std-lib validation lane."
+    }
+  ],
+  "unavailable_tool_policy": "Required Python stdlib scripts and unittest lanes are failures when unavailable. Optional non-Python tools may be reported as unavailable and must not be hidden.",
+  "cargo_unavailable_policy": "Cargo is optional for this guard. Cargo absence must not fail generated artifact drift checks unless a future artifact group explicitly marks Cargo as required.",
+  "no_network_policy": "Drift checks must be deterministic, repo-local, and must not call external web APIs, fetch URLs, scrape, crawl, run live probes, deploy, or open persistent network services.",
+  "default_mode_policy": "Default mode verifies committed artifacts and runs check commands. It does not run update commands or mutate artifacts.",
+  "strict_mode_policy": "Strict mode additionally fails optional/future missing artifacts and command resolution gaps that default mode may report as skipped or unavailable.",
+  "notes": [
+    "Generated Artifact Drift Guard v0 is validation/audit only.",
+    "Existing generators remain the source of truth for their own outputs.",
+    "Known volatile values must be normalized by the owning generator or documented in the artifact group."
+  ]
+}
+
