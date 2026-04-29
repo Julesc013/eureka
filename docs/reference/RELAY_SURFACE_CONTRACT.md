@@ -36,6 +36,12 @@ The relay must not ingest arbitrary local filesystem roots by default, and it
 must not treat private local cache content as public data without a separate
 operator policy.
 
+Future relay consumers of generated public data must follow
+`docs/reference/PUBLIC_DATA_STABILITY_POLICY.md`. Stable-draft field paths may
+be projected read-only after explicit implementation approval; experimental,
+volatile, and internal fields must not become relay protocol promises or
+old-client compatibility guarantees.
+
 Signed Snapshot Consumer Contract v0 now defines the future snapshot read
 order, checksum posture, and v0 signature-placeholder handling that any relay
 snapshot projection must follow. No relay snapshot consumer is implemented.

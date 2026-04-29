@@ -130,6 +130,12 @@ Snapshots do not promise complete global coverage. Consumers must display
 unknown, placeholder, capability-gap, source-gap, or pending-manual states
 honestly.
 
+When a snapshot includes generated public data copied from `public_site/data/`,
+consumers must follow `docs/reference/PUBLIC_DATA_STABILITY_POLICY.md`.
+Only `stable_draft` field paths are safe for cautious pre-alpha dependence;
+experimental fields are display-only unless a consumer version-pins them.
+This does not make public JSON or snapshots a production API.
+
 ## Old-Client Degradation
 
 Old or weak clients should degrade by capability:

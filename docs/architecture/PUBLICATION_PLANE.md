@@ -25,6 +25,12 @@ GitHub Pages deployment artifact yet.
 static JSON projections of site, page, source, eval, route, and build state.
 `site/build.py` also emits matching summaries into `site/dist/data/` for
 generated-output validation. These files are not a live API.
+Public Data Contract Stability Review v0 now classifies generated public data
+fields as `stable_draft`, `experimental`, `volatile`, `internal`,
+`deprecated`, or `future` through
+`docs/reference/PUBLIC_DATA_STABILITY_POLICY.md` and the audit pack under
+`control/audits/public-data-contract-stability-review-v0/`. The review is
+field-level governance only and does not make public JSON a production API.
 
 `public_site/lite/`, `public_site/text/`, and `public_site/files/` contain
 Lite/Text/Files Seed Surfaces v0: static compatibility surfaces generated from

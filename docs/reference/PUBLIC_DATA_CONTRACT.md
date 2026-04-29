@@ -3,6 +3,14 @@
 Public data files are registered in
 `control/inventory/publication/public_data_contract.json`.
 
+Field-level stability is governed by
+`docs/reference/PUBLIC_DATA_STABILITY_POLICY.md` and the review pack under
+`control/audits/public-data-contract-stability-review-v0/`. File-level
+`stable_draft` means a generated JSON file is acceptable for cautious pre-alpha
+clients, not that every nested field is stable. Future clients must consume
+only the field paths marked `stable_draft` unless they deliberately
+version-pin experimental fields.
+
 Every public data entry must declare:
 
 - `path`
@@ -39,7 +47,8 @@ Implemented generated public data files include:
 They are produced by `scripts/generate_public_data_summaries.py` and mirrored
 into `site/dist/data/` by `site/build.py`. They remain `stable_draft`, static,
 and pre-alpha. They are not a live API, do not include live data, and do not
-record external observations.
+record external observations. Public JSON is not a production API and carries
+no production stability guarantee.
 
 Custom Domain / Alternate Host Readiness v0 adds static host readiness fields
 to `/data/site_manifest.json` and readiness validation provenance to

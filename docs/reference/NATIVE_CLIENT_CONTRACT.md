@@ -48,6 +48,12 @@ Public data and snapshots are static inputs, not a production live API. Native
 clients must display status, limitations, source posture, and non-production
 labels honestly.
 
+Native clients must also follow
+`docs/reference/PUBLIC_DATA_STABILITY_POLICY.md`. Public JSON is not a
+production API; only named `stable_draft` field paths should drive durable
+client behavior. Experimental fields may be displayed with version checks, and
+volatile/internal fields must not become native-client compatibility promises.
+
 ## Snapshot Consumption
 
 Native snapshot consumers must follow

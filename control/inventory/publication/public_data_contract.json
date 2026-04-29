@@ -1,6 +1,69 @@
 {
   "schema_version": "0.1.0",
   "registry_id": "eureka-public-data-contract",
+  "stability": "pre_alpha_field_level_reviewed",
+  "stability_policy": "docs/reference/PUBLIC_DATA_STABILITY_POLICY.md",
+  "stability_review": "control/audits/public-data-contract-stability-review-v0/public_data_stability_report.json",
+  "client_consumption_status": "field_level_stable_draft_only",
+  "field_stability_summary": {
+    "stable_draft": [
+      "/data/site_manifest.json:schema_version",
+      "/data/site_manifest.json:generated_by",
+      "/data/site_manifest.json:public_data_files[]",
+      "/data/page_registry.json:pages[].path",
+      "/data/page_registry.json:pages[].status",
+      "/data/page_registry.json:pages[].stability",
+      "/data/source_summary.json:sources[].source_id",
+      "/data/source_summary.json:sources[].status",
+      "/data/source_summary.json:sources[].coverage_depth",
+      "/data/route_summary.json:public_alpha_not_production",
+      "/data/route_summary.json:route_counts.*",
+      "/data/build_manifest.json:data_files[]",
+      "/data/build_manifest.json:disabled behavior flags"
+    ],
+    "experimental": [
+      "/data/site_manifest.json nested policy and future-surface summaries",
+      "/data/source_summary.json sources[].capabilities",
+      "/data/eval_summary.json audit/search sections",
+      "/data/route_summary.json review_required_routes[] and blocked_routes[]"
+    ],
+    "volatile": [
+      "/data/build_manifest.json commit",
+      "/data/build_manifest.json built_at",
+      "/data/eval_summary.json failure_mode_counts",
+      "/data/source_summary.json limitations[] and next_step"
+    ],
+    "internal": [
+      "source_inputs[] fields",
+      "page_registry.pages[].source_file",
+      "build_manifest.validations_expected[]"
+    ],
+    "deprecated": [],
+    "future": [
+      "future live backend/probe/relay detail fields remain display-only until later contracts implement them"
+    ]
+  },
+  "breaking_change_policy": {
+    "stable_draft_field_removal_requires_note": true,
+    "stable_draft_field_rename_requires_note": true,
+    "stable_draft_type_change_requires_note": true,
+    "new_fields_are_non_breaking": true,
+    "count_value_movement_is_non_breaking": true,
+    "production_api_stability_claimed": false
+  },
+  "versioning_policy": {
+    "schema_version_required": true,
+    "clients_must_check_schema_version": true,
+    "unknown_fields_must_be_ignored": true,
+    "experimental_fields_display_only_by_default": true,
+    "volatile_fields_diagnostic_only": true,
+    "internal_fields_not_client_api": true
+  },
+  "notes": [
+    "Public Data Contract Stability Review v0 narrows generated public JSON stability to named field paths. The file-level stable_draft posture does not make every nested field stable.",
+    "Public JSON is not a production API and carries no live backend, live probe, deployment-success, external-observation, download, installer, malware-safety, rights-clearance, telemetry, account, relay-runtime, native-client, or production-readiness claim.",
+    "Snapshot, relay, and native consumers must use docs/reference/PUBLIC_DATA_STABILITY_POLICY.md and the field stability review before depending on generated public data."
+  ],
   "entries": [
     {
       "path": "/site_manifest.json",

@@ -6,6 +6,8 @@ for generated static public JSON under `public_site/data/`.
 This policy does not make public JSON a production API. Eureka remains
 pre-product and public-alpha/non-production.
 
+No current public JSON file is production-stable.
+
 ## Stability Classes
 
 `stable_draft`
