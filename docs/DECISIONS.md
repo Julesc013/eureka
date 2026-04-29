@@ -709,3 +709,26 @@ relay runtime, live probes, external API calls, scraping, deployment behavior,
 or production readiness. The next Codex-safe milestone should be Native Client
 Project Readiness Review v0; Manual Observation Batch 0 remains
 human-operated parallel work.
+
+## ADR-097: Require Native Project Readiness Evidence Before Scaffolding
+
+Status: accepted
+
+Native Client Project Readiness Review v0 adds
+`control/audits/native-client-project-readiness-v0/`,
+`scripts/validate_native_project_readiness_review.py`, and focused
+operations/script tests.
+
+The decision is to record a conservative evidence review before any Visual
+Studio, Xcode, GUI, FFI, cache runtime, download, installer, relay, live-probe,
+or native runtime work. The review decision is
+`ready_for_minimal_project_skeleton_after_human_approval` for the
+`windows_7_x64_winforms_net48` lane only. That is not approval to create a
+project in this milestone; it means a future human-approved planning milestone
+may define project path, namespace, build-host assumptions, minimum read-only
+screens, and validation strategy. This adds no native project files, native app
+source tree, GUI behavior, FFI, local cache runtime, downloads, installers,
+relay runtime, live probes, external API calls, scraping, deployment behavior,
+or production readiness. The next Codex-safe milestone should be Windows 7
+WinForms Native Skeleton Planning v0, not implementation. Manual Observation
+Batch 0 remains human-operated parallel work.

@@ -340,6 +340,17 @@
       "title": "Define local cache, privacy, local path, telemetry, and private-data policy before native project work",
       "status": "addressed_by_native_local_cache_privacy_policy_v0",
       "suggested_milestone": "Native Client Project Readiness Review v0"
+    },
+    {
+      "id": "audit-backlog-native-project-readiness-review",
+      "finding_refs": [
+        "CTEA-BEHAVIOR-001",
+        "CTEA-TEST-002",
+        "CTEA-DOCS-001"
+      ],
+      "title": "Record native project readiness evidence and human-approval gates before any Visual Studio or Xcode scaffold",
+      "status": "addressed_by_native_client_project_readiness_review_v0",
+      "suggested_milestone": "Windows 7 WinForms Native Skeleton Planning v0"
     }
   ]
 }

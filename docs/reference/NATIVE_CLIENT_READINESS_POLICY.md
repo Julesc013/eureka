@@ -22,6 +22,9 @@ Prerequisites before native GUI client work starts:
 - Native Local Cache / Privacy Policy v0 before any native cache runtime,
   private cache, private ingestion, telemetry, diagnostics upload, accounts,
   cloud sync, or local archive scanning behavior
+- Native Client Project Readiness Review v0 before any Visual Studio, Xcode,
+  GUI, FFI, cache runtime, download, installer, relay, live-probe, or native
+  project scaffolding work
 - executable-risk and rights/access labels before any future risky handoff
 - no dependency on private engine internals
 
@@ -36,6 +39,12 @@ local path, telemetry/logging, credential, deletion/export/reset, portable
 mode, snapshot, relay, and public-alpha privacy gates as policy only. It adds
 no cache runtime, private file ingestion, local archive scanning, telemetry,
 accounts, cloud sync, uploads, native clients, or relay runtime.
+
+Native Client Project Readiness Review v0 now records the first readiness
+decision: `ready_for_minimal_project_skeleton_after_human_approval` for
+`windows_7_x64_winforms_net48` only. This is review/evidence only and does not
+create native project files, app source trees, GUI behavior, FFI, cache runtime,
+downloads, installers, relay runtime, live probes, or runtime wiring.
 
 Future Windows and macOS lane docs may define prototypes later, but they must
 consume governed public data, future production snapshots, or live handoff

@@ -58,3 +58,8 @@ Current packs:
   publication/static/live-alpha/Rust/snapshot queue. It records milestone
   evidence, command results, eval/audit status, external-baseline pending
   status, risks, deferrals, and next planning without adding product behavior.
+- `native-client-project-readiness-v0/`: conservative readiness review for
+  future native client project scaffolding. It records contract coverage, lane
+  readiness, risks, a pre-native checklist, and a human-approval gate without
+  adding Visual Studio/Xcode projects, native app code, GUI behavior, FFI,
+  downloads, installers, cache runtime, relay runtime, or live probes.

@@ -575,6 +575,23 @@ and implements no cache runtime, private file ingestion, local archive scanning,
 telemetry, analytics, accounts, cloud sync, uploads, native clients, relay
 runtime, or private-data relay behavior.
 
+## Native Project Readiness Review
+
+Native Client Project Readiness Review v0 is validated with:
+
+```bash
+python scripts/validate_native_project_readiness_review.py
+python scripts/validate_native_project_readiness_review.py --json
+python -m unittest tests.operations.test_native_project_readiness_review tests.scripts.test_validate_native_project_readiness_review
+```
+
+The lane checks the audit pack under
+`control/audits/native-client-project-readiness-v0/`, its JSON readiness
+decision, first candidate lane, pre-native checklist, human-approval gate, and
+the absence of Visual Studio/Xcode project files. It performs no network calls
+and implements no native app, GUI behavior, FFI, cache runtime, downloads,
+installers, relay runtime, live probes, or runtime wiring.
+
 ## Source Coverage And Capability
 
 Source Coverage and Capability Model v0 is validated with:

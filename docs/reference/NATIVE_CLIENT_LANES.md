@@ -21,6 +21,12 @@ installer, FFI layer, relay sidecar, or packaged runtime is implemented.
 The machine-readable lane registry is
 `control/inventory/publication/native_client_lanes.json`.
 
+Native Client Project Readiness Review v0 keeps this ordering and records
+`windows_7_x64_winforms_net48` as the first candidate for a minimal skeleton
+only after explicit human approval. No lane is approved for prototype behavior,
+downloads, installers, cache runtime, telemetry, relay sidecars, live probes,
+Rust FFI, or production claims.
+
 ## Ordering Rationale
 
 Windows 7 x64 WinForms is the first pragmatic native client candidate because

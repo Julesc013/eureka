@@ -108,6 +108,13 @@ contract/design governance and does not create Visual Studio/Xcode projects,
 native GUI clients, FFI, installers, downloads, relay sidecars, live probes, or
 Rust runtime wiring.
 
+Native Client Project Readiness Review v0 records its committed audit/evidence
+pack under `control/audits/native-client-project-readiness-v0/`, plus a
+validator and tests under `scripts/` and `tests/`. No separate AIDE runtime
+report is needed; this is readiness review only and does not create Visual
+Studio/Xcode projects, native app source trees, GUI behavior, FFI, cache
+runtime, downloads, installers, relay runtime, live probes, or runtime wiring.
+
 Post-Queue State Checkpoint v0 records its committed audit/reporting pack under
 `control/audits/post-queue-state-checkpoint-v0/`. No separate AIDE runtime
 report is needed; the pack is repo-governance evidence and does not add product

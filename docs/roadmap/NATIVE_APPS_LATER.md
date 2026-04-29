@@ -74,6 +74,14 @@ private file ingestion, local archive scanning, telemetry, analytics, accounts,
 cloud sync, uploads, native clients, relay runtime, or any private-data relay
 surface.
 
+Native Client Project Readiness Review v0 records the first evidence-based
+native project decision. The repo is ready for a minimal
+`windows_7_x64_winforms_net48` skeleton only after explicit human approval, and
+only as read-only public data / seed snapshot inspection planning. It does not
+create a Visual Studio project, Xcode project, native app source tree, GUI
+behavior, FFI, local cache runtime, downloads, installers, relay runtime, live
+probes, or runtime wiring.
+
 ## Host-Shell Principle
 
 Future native apps should remain shells over the core. They should consume
@@ -105,6 +113,8 @@ Serious native host work should wait until:
 - Native Action / Download / Install Policy v0 exists before any download,
   install, open, restore, or package-manager handoff behavior
 - local cache, retention, and privacy policy exists before native project work
+- native project readiness review records a human-approval gate and first-lane
+  decision before any Visual Studio or Xcode scaffold
 - relay security/privacy and operator policy exists, with runtime still
   explicitly deferred
 - rights, security, download, and action-handoff policies exist

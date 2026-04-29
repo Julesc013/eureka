@@ -6,6 +6,11 @@ Native Client Contract v0 does not approve native app implementation. This
 checklist records what a later operator/reviewer must confirm before any
 Windows, macOS, or other native client project starts.
 
+Native Client Project Readiness Review v0 records the current evidence
+decision: a minimal `windows_7_x64_winforms_net48` skeleton is acceptable only
+after explicit human approval and a separate planning milestone. This checklist
+remains unsigned and does not approve project creation.
+
 ## Required Review
 
 - [ ] Public data contract is stable enough for the proposed client scope.
@@ -20,6 +25,8 @@ Windows, macOS, or other native client project starts.
       cache, private data, local path, telemetry/logging, diagnostic,
       credential, deletion/export/reset, portable-mode, relay, or snapshot
       behavior.
+- [ ] Native Client Project Readiness Review v0 has been reviewed and its
+      human-approval gate is explicitly accepted.
 - [ ] No malware safety claim, rights-clearance claim, or executable trust
       claim is made without later evidence and policy.
 - [ ] Download policy has been reviewed.

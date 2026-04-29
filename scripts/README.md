@@ -138,6 +138,12 @@ Current scripts:
   calls, and implements no cache runtime, private file ingestion, local archive
   scanning, telemetry, analytics, accounts, cloud sync, uploads, native clients,
   or relay runtime
+- `validate_native_project_readiness_review.py`: validates the Native Client
+  Project Readiness Review v0 audit pack, JSON decision, first candidate lane,
+  pre-native checklist, human-approval gate, and no-native-project-file posture;
+  it supports `--json`, performs no network calls, and implements no Visual
+  Studio/Xcode project, native app, GUI behavior, FFI, downloads, installers,
+  cache runtime, relay runtime, live probes, or runtime wiring
 - `validate_relay_surface_design.py`: validates the Relay Surface Design v0
   inventory, docs, unsigned future operator checklist, surface capability
   alignment, route-matrix posture, and disabled-by-default relay safety flags;

@@ -266,16 +266,17 @@ The next backend sequence is:
 53. Native Client Contract v0 (implemented as contract/design only; no Visual Studio/Xcode projects, GUI, FFI, installers, downloads, relay sidecars, live probes, or Rust runtime wiring)
 54. Native Action / Download / Install Policy v0 (implemented as policy/contract only; no downloads, installers, package-manager integration, malware scanning, rights clearance, native clients, relay runtime, or executable trust claims)
 55. Native Local Cache / Privacy Policy v0 (implemented as policy/contract only; no cache runtime, private ingestion, telemetry, accounts, cloud sync, uploads, native clients, or relay runtime)
-56. Native Client Project Readiness Review v0
-57. Rust Local Index Parity Candidate v0 (blocked pending planning review and Cargo availability)
-58. Manual Observation Batch 0 Execution (human-operated parallel work)
-59. Native App Work Later
+56. Native Client Project Readiness Review v0 (implemented as review/evidence only; decision is minimal Windows 7 WinForms skeleton after explicit human approval)
+57. Windows 7 WinForms Native Skeleton Planning v0 (next; planning only, not project creation)
+58. Rust Local Index Parity Candidate v0 (blocked pending planning review and Cargo availability)
+59. Manual Observation Batch 0 Execution (human-operated parallel work)
+60. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Native Client Project Readiness Review v0
+> Windows 7 WinForms Native Skeleton Planning v0
 
 Why this comes next:
 
@@ -286,9 +287,12 @@ Why this comes next:
 - Native Local Cache / Privacy Policy v0 now defines future cache/privacy,
   private-data, local-path, telemetry/logging, credential, deletion/export/
   reset, portable-mode, snapshot, relay, and public-alpha gates without
-  implementing any of them. The next safe step is a native client project
-  readiness review before any Visual Studio, Xcode, GUI, FFI, cache runtime, or
-  installer work.
+  implementing any of them.
+- Native Client Project Readiness Review v0 now records the evidence decision
+  `ready_for_minimal_project_skeleton_after_human_approval` for the
+  `windows_7_x64_winforms_net48` lane only. The next safe step is planning the
+  skeleton scope, project path, namespace, build-host assumptions, and
+  validation strategy, not creating project files.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.

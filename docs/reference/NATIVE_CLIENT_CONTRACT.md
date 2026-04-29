@@ -88,6 +88,15 @@ uploads, source credentials, or cloud sync without separate explicit policy and
 user consent. Native clients must not scan local archives or private user
 folders by default.
 
+## Project Readiness Review
+
+Native Client Project Readiness Review v0 records that the repo is ready for a
+minimal `windows_7_x64_winforms_net48` skeleton only after explicit human
+approval. That decision is not an implementation approval. It requires a future
+planning milestone to choose project path, namespace, build-host assumptions,
+minimum read-only screens, and validation strategy before any Visual Studio or
+Xcode project file is created.
+
 ## Handoff And Install Policy
 
 Native clients may eventually hand off to:

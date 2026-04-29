@@ -2050,6 +2050,50 @@
       "notes": "Checks future native/local cache and privacy policy without implementing cache runtime, private ingestion, telemetry, analytics, accounts, cloud sync, uploads, native clients, relay runtime, or private-data relay behavior."
     },
     {
+      "test_id": "native_project_readiness_review_validator",
+      "label": "Native project readiness review validator",
+      "command": "python scripts/validate_native_project_readiness_review.py",
+      "category": "audit",
+      "owner_area": "control/audits/native-client-project-readiness-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The native project readiness review pack, decision, first lane, human-approval gate, or no-native-project-file posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Native Client Project Readiness Review v0; validates review/evidence artifacts only and implements no Visual Studio/Xcode project, native app, GUI, FFI, cache runtime, downloads, installers, relay runtime, live probes, or runtime wiring."
+    },
+    {
+      "test_id": "native_project_readiness_review_tests",
+      "label": "Native project readiness review tests",
+      "command": "python -m unittest tests.operations.test_native_project_readiness_review tests.scripts.test_validate_native_project_readiness_review",
+      "category": "audit",
+      "owner_area": "control/audits/native-client-project-readiness-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "The readiness review report, pre-native checklist, lane decision, no-project-file guardrail, or validator JSON output regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks the conservative native readiness decision and human-approval gate without adding native project scaffolds, GUI behavior, downloads, installers, cache runtime, telemetry, relay runtime, live probes, or Rust FFI."
+    },
+    {
       "test_id": "relay_surface_design_validator",
       "label": "Relay surface design validator",
       "command": "python scripts/validate_relay_surface_design.py",
