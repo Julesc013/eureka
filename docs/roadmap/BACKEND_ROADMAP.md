@@ -267,32 +267,31 @@ The next backend sequence is:
 54. Native Action / Download / Install Policy v0 (implemented as policy/contract only; no downloads, installers, package-manager integration, malware scanning, rights clearance, native clients, relay runtime, or executable trust claims)
 55. Native Local Cache / Privacy Policy v0 (implemented as policy/contract only; no cache runtime, private ingestion, telemetry, accounts, cloud sync, uploads, native clients, or relay runtime)
 56. Native Client Project Readiness Review v0 (implemented as review/evidence only; decision is minimal Windows 7 WinForms skeleton after explicit human approval)
-57. Windows 7 WinForms Native Skeleton Planning v0 (next; planning only, not project creation)
-58. Rust Local Index Parity Candidate v0 (blocked pending planning review and Cargo availability)
-59. Manual Observation Batch 0 Execution (human-operated parallel work)
-60. Native App Work Later
+57. Windows 7 WinForms Native Skeleton Planning v0 (implemented as planning only; no project creation)
+58. Windows 7 WinForms Native Skeleton Implementation v0 (blocked pending explicit human approval; read-only static-data/snapshot-demo skeleton scope only)
+59. Rust Local Index Parity Candidate v0 (blocked pending planning review and Cargo availability)
+60. Manual Observation Batch 0 Execution (human-operated parallel work)
+61. Native App Work Later
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Windows 7 WinForms Native Skeleton Planning v0
+> Windows 7 WinForms Native Skeleton Implementation v0, only after explicit human approval
 
 Why this comes next:
 
-- Rust Local Index Parity Planning v0 is implemented as a planning-only parity
-  lane. It adds a plan, case map, acceptance-report schema, validator, and
-  tests for the future Rust local-index candidate without adding Rust index
-  behavior, SQLite/indexing behavior, or runtime wiring.
-- Native Local Cache / Privacy Policy v0 now defines future cache/privacy,
-  private-data, local-path, telemetry/logging, credential, deletion/export/
-  reset, portable-mode, snapshot, relay, and public-alpha gates without
-  implementing any of them.
 - Native Client Project Readiness Review v0 now records the evidence decision
   `ready_for_minimal_project_skeleton_after_human_approval` for the
-  `windows_7_x64_winforms_net48` lane only. The next safe step is planning the
-  skeleton scope, project path, namespace, build-host assumptions, and
-  validation strategy, not creating project files.
+  `windows_7_x64_winforms_net48` lane only.
+- Windows 7 WinForms Native Skeleton Planning v0 now records the proposed
+  `clients/windows/winforms-net48/` path,
+  `Eureka.Clients.Windows.WinForms` namespace, Windows host / Visual Studio
+  2022 / .NET Framework 4.8 / x64 / Windows 7 SP1+ requirements, read-only
+  static-data/snapshot-demo scope, prohibited features, and approval gate
+  without creating project files.
+- Any skeleton implementation must wait for explicit human approval and must
+  remain inside the approved read-only planning scope.
 - Manual Observation Batch 0 remains human-operated parallel work, and all
   Google/Internet Archive baseline observations remain pending/manual until
   real human evidence records exist.

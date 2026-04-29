@@ -115,6 +115,14 @@ report is needed; this is readiness review only and does not create Visual
 Studio/Xcode projects, native app source trees, GUI behavior, FFI, cache
 runtime, downloads, installers, relay runtime, live probes, or runtime wiring.
 
+Windows 7 WinForms Native Skeleton Planning v0 records its committed planning
+pack under `control/audits/windows-7-winforms-native-skeleton-planning-v0/`,
+plus a validator and tests under `scripts/` and `tests/`. No separate AIDE
+runtime report is needed; this is planning only and does not create
+`clients/`, Visual Studio solutions, C# projects, C# source, GUI behavior, FFI,
+downloads, installers, cache runtime, telemetry, relay runtime, live probes, or
+runtime wiring.
+
 Post-Queue State Checkpoint v0 records its committed audit/reporting pack under
 `control/audits/post-queue-state-checkpoint-v0/`. No separate AIDE runtime
 report is needed; the pack is repo-governance evidence and does not add product

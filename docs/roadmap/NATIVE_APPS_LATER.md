@@ -82,6 +82,16 @@ create a Visual Studio project, Xcode project, native app source tree, GUI
 behavior, FFI, local cache runtime, downloads, installers, relay runtime, live
 probes, or runtime wiring.
 
+Windows 7 WinForms Native Skeleton Planning v0 records the first future
+Windows skeleton plan. It proposes `clients/windows/winforms-net48/` and
+`Eureka.Clients.Windows.WinForms`, documents Windows host, Visual Studio 2022,
+.NET Framework 4.8, x64, Windows 7 SP1+ requirements, and limits any future
+skeleton to read-only static public data and seed snapshot demo inspection. It
+does not create `clients/`, a Visual Studio solution, `.csproj`, C# source,
+GUI behavior, FFI, local cache runtime, downloads, installers, telemetry,
+relay runtime, live probes, or runtime wiring. Any implementation still
+requires explicit human approval.
+
 ## Host-Shell Principle
 
 Future native apps should remain shells over the core. They should consume
@@ -115,6 +125,9 @@ Serious native host work should wait until:
 - local cache, retention, and privacy policy exists before native project work
 - native project readiness review records a human-approval gate and first-lane
   decision before any Visual Studio or Xcode scaffold
+- Windows 7 WinForms Native Skeleton Planning v0 is reviewed and its proposed
+  path, namespace, read-only scope, build-host requirements, and approval gate
+  are explicitly accepted before any skeleton implementation
 - relay security/privacy and operator policy exists, with runtime still
   explicitly deferred
 - rights, security, download, and action-handoff policies exist

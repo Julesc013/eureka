@@ -11,6 +11,13 @@ decision: a minimal `windows_7_x64_winforms_net48` skeleton is acceptable only
 after explicit human approval and a separate planning milestone. This checklist
 remains unsigned and does not approve project creation.
 
+Windows 7 WinForms Native Skeleton Planning v0 now supplies that separate
+planning milestone. It proposes `clients/windows/winforms-net48/` and
+`Eureka.Clients.Windows.WinForms`, and keeps any future skeleton limited to
+read-only static public data and seed snapshot demo inspection. The checklist
+remains unsigned; explicit human approval is still required before creating
+Visual Studio, `.csproj`, or C# files.
+
 ## Required Review
 
 - [ ] Public data contract is stable enough for the proposed client scope.
@@ -27,6 +34,9 @@ remains unsigned and does not approve project creation.
       behavior.
 - [ ] Native Client Project Readiness Review v0 has been reviewed and its
       human-approval gate is explicitly accepted.
+- [ ] Windows 7 WinForms Native Skeleton Planning v0 has been reviewed and its
+      proposed path, namespace, build-host requirements, read-only scope, and
+      prohibited-feature list are explicitly accepted.
 - [ ] No malware safety claim, rights-clearance claim, or executable trust
       claim is made without later evidence and policy.
 - [ ] Download policy has been reviewed.

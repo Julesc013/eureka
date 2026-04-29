@@ -144,6 +144,13 @@ Current scripts:
   it supports `--json`, performs no network calls, and implements no Visual
   Studio/Xcode project, native app, GUI behavior, FFI, downloads, installers,
   cache runtime, relay runtime, live probes, or runtime wiring
+- `validate_windows_winforms_skeleton_plan.py`: validates the Windows 7
+  WinForms Native Skeleton Planning v0 pack, proposed path/namespace, build-host
+  requirements, human-approval gate, allowed static-data/snapshot-demo scope,
+  prohibited features, and no-native-project-file posture; it supports `--json`,
+  performs no network calls, and implements no Visual Studio solution, C#
+  project, C# source, GUI behavior, FFI, downloads, installers, cache runtime,
+  telemetry, relay runtime, live probes, or runtime wiring
 - `validate_relay_surface_design.py`: validates the Relay Surface Design v0
   inventory, docs, unsigned future operator checklist, surface capability
   alignment, route-matrix posture, and disabled-by-default relay safety flags;

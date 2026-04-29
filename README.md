@@ -538,6 +538,14 @@ Eureka is substantial, but it is still a prototype/reference backend:
   `windows_7_x64_winforms_net48` lane, but it does not create Visual Studio or
   Xcode projects, native app source trees, GUI behavior, FFI, cache runtime,
   downloads, installers, relay runtime, live probes, or runtime wiring.
+- Windows 7 WinForms Native Skeleton Planning v0 is planning only. It proposes
+  `clients/windows/winforms-net48/` and
+  `Eureka.Clients.Windows.WinForms`, records Windows host / Visual Studio 2022 /
+  .NET Framework 4.8 / x64 / Windows 7 SP1+ requirements, and limits any future
+  skeleton to read-only static public data and seed snapshot demo inspection.
+  It does not create `clients/`, a Visual Studio solution, `.csproj`, C# source,
+  GUI behavior, FFI, cache runtime, downloads, installers, telemetry, relay
+  runtime, live probes, or runtime wiring.
 - Native apps are deferred. The current native surface is a stdlib CLI proof.
 - Live crawling, source sync, fuzzy retrieval, vector search, LLM planning,
   auth, accounts, HTTPS/TLS, rate limiting, process supervision, and deployment
@@ -548,7 +556,9 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Windows 7 WinForms Native Skeleton Planning v0, not implementation
+1. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
+   human approval and limited to the approved read-only static-data/snapshot-demo
+   skeleton scope
 2. Relay Prototype Planning v0, not implementation
 3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit

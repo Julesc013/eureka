@@ -334,7 +334,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Windows 7 WinForms Native Skeleton Planning v0
+> Windows 7 WinForms Native Skeleton Implementation v0, only after explicit human approval
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -464,10 +464,21 @@ under `control/audits/native-client-project-readiness-v0/`. Its decision is
 `windows_7_x64_winforms_net48` lane only. It adds no Visual Studio/Xcode
 project, native app source tree, GUI behavior, FFI, cache runtime, downloads,
 installers, relay runtime, live probes, or runtime wiring.
+Windows 7 WinForms Native Skeleton Planning v0 records a planning pack under
+`control/audits/windows-7-winforms-native-skeleton-planning-v0/`. It proposes
+`clients/windows/winforms-net48/` and
+`Eureka.Clients.Windows.WinForms`, defines Windows host, Visual Studio 2022,
+.NET Framework 4.8, x64, and Windows 7 SP1+ build-host requirements, and keeps
+the future skeleton read-only/static-data/snapshot-demo only. It adds no
+`clients/`, Visual Studio solution, `.csproj`, C# source, GUI behavior, FFI,
+cache runtime, downloads, installers, telemetry, relay runtime, live probes, or
+runtime wiring. Implementation remains blocked until explicit human approval.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Windows 7 WinForms Native Skeleton Planning v0, not implementation
+1. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
+   human approval and limited to the approved read-only static-data/snapshot-demo
+   skeleton scope
 2. Relay Prototype Planning v0, not implementation
 3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit

@@ -2094,6 +2094,50 @@
       "notes": "Checks the conservative native readiness decision and human-approval gate without adding native project scaffolds, GUI behavior, downloads, installers, cache runtime, telemetry, relay runtime, live probes, or Rust FFI."
     },
     {
+      "test_id": "windows_winforms_skeleton_plan_validator",
+      "label": "Windows 7 WinForms skeleton planning validator",
+      "command": "python scripts/validate_windows_winforms_skeleton_plan.py",
+      "category": "audit",
+      "owner_area": "control/audits/windows-7-winforms-native-skeleton-planning-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The Windows 7 WinForms skeleton plan, proposed path/namespace, approval gate, build-host requirements, prohibited scope, or no-project-file posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Windows 7 WinForms Native Skeleton Planning v0; validates planning artifacts only and implements no Visual Studio solution, C# project, C# source, GUI behavior, FFI, downloads, installers, cache runtime, telemetry, relay runtime, live probes, or native runtime wiring."
+    },
+    {
+      "test_id": "windows_winforms_skeleton_plan_tests",
+      "label": "Windows 7 WinForms skeleton planning tests",
+      "command": "python -m unittest tests.operations.test_windows_winforms_skeleton_planning tests.scripts.test_validate_windows_winforms_skeleton_plan",
+      "category": "audit",
+      "owner_area": "control/audits/windows-7-winforms-native-skeleton-planning-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "The Windows WinForms planning pack, plan JSON, build-host requirements, approval gate, prohibited features, or validator JSON output regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks the future Windows 7 WinForms skeleton plan without creating clients/windows/winforms-net48, Visual Studio project files, C# source, GUI behavior, downloads, installers, cache runtime, telemetry, relay runtime, live probes, or Rust FFI."
+    },
+    {
       "test_id": "relay_surface_design_validator",
       "label": "Relay surface design validator",
       "command": "python scripts/validate_relay_surface_design.py",

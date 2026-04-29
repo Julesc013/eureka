@@ -63,3 +63,9 @@ Current packs:
   readiness, risks, a pre-native checklist, and a human-approval gate without
   adding Visual Studio/Xcode projects, native app code, GUI behavior, FFI,
   downloads, installers, cache runtime, relay runtime, or live probes.
+- `windows-7-winforms-native-skeleton-planning-v0/`: planning pack for the
+  first future Windows 7 SP1+ x64 WinForms .NET Framework 4.8 skeleton. It
+  records proposed path, namespace, build-host requirements, allowed/prohibited
+  initial scope, data inputs, and approval gates without creating `clients/`,
+  Visual Studio project files, C# source, GUI behavior, FFI, downloads,
+  installers, cache runtime, relay runtime, or live probes.

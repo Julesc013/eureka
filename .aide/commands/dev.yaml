@@ -142,6 +142,12 @@ steps:
     run: python scripts/validate_native_project_readiness_review.py --json
   - id: native_project_readiness_review_tests
     run: python -m unittest tests.operations.test_native_project_readiness_review tests.scripts.test_validate_native_project_readiness_review
+  - id: windows_winforms_skeleton_plan_validator
+    run: python scripts/validate_windows_winforms_skeleton_plan.py
+  - id: windows_winforms_skeleton_plan_validator_json
+    run: python scripts/validate_windows_winforms_skeleton_plan.py --json
+  - id: windows_winforms_skeleton_plan_tests
+    run: python -m unittest tests.operations.test_windows_winforms_skeleton_planning tests.scripts.test_validate_windows_winforms_skeleton_plan
   - id: relay_surface_design_validator
     run: python scripts/validate_relay_surface_design.py
   - id: relay_surface_design_validator_json

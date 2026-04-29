@@ -732,3 +732,24 @@ relay runtime, live probes, external API calls, scraping, deployment behavior,
 or production readiness. The next Codex-safe milestone should be Windows 7
 WinForms Native Skeleton Planning v0, not implementation. Manual Observation
 Batch 0 remains human-operated parallel work.
+
+## ADR-098: Plan Windows 7 WinForms Skeleton Before Project Files
+
+Status: accepted
+
+Windows 7 WinForms Native Skeleton Planning v0 adds
+`control/audits/windows-7-winforms-native-skeleton-planning-v0/`,
+`scripts/validate_windows_winforms_skeleton_plan.py`, and focused
+operations/script tests.
+
+The decision is to record the first future Windows native skeleton scope before
+creating any project files. The plan proposes `clients/windows/winforms-net48/`
+and `Eureka.Clients.Windows.WinForms`, requires a Windows host with Visual
+Studio 2022, .NET Framework 4.8 targeting/developer pack, x64 target, and
+Windows 7 SP1+ runtime verification, and limits any future skeleton to
+read-only static public data and seed snapshot demo inspection. This adds no
+`clients/`, Visual Studio solution, `.csproj`, C# source, GUI behavior, FFI,
+local cache runtime, downloads, installers, package-manager integration,
+telemetry, accounts, relay runtime, live probes, external API calls, scraping,
+deployment behavior, or production readiness. A future implementation prompt
+must include explicit human approval before any skeleton is created.

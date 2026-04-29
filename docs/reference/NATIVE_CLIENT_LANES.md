@@ -27,6 +27,15 @@ only after explicit human approval. No lane is approved for prototype behavior,
 downloads, installers, cache runtime, telemetry, relay sidecars, live probes,
 Rust FFI, or production claims.
 
+Windows 7 WinForms Native Skeleton Planning v0 adds a planning pack for that
+first lane only. It proposes the future path `clients/windows/winforms-net48/`
+and namespace `Eureka.Clients.Windows.WinForms`, and keeps the initial scope
+read-only/static-data/snapshot-demo only. The plan creates no project
+directory, Visual Studio solution, `.csproj`, C# source, GUI behavior, FFI,
+downloads, installers, cache runtime, telemetry, relay runtime, live probes, or
+runtime wiring. A future skeleton implementation still requires explicit human
+approval.
+
 ## Ordering Rationale
 
 Windows 7 x64 WinForms is the first pragmatic native client candidate because

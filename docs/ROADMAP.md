@@ -286,7 +286,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Windows 7 WinForms Native Skeleton Planning v0
+> Windows 7 WinForms Native Skeleton Implementation v0, only after explicit human approval
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -361,6 +361,14 @@ checklist, and the decision
 `windows_7_x64_winforms_net48` lane. It does not create Visual Studio/Xcode
 projects, native app source trees, GUI behavior, FFI, cache runtime, downloads,
 installers, relay runtime, live probes, or runtime wiring.
+Windows 7 WinForms Native Skeleton Planning v0 is implemented as planning only;
+it proposes the future path `clients/windows/winforms-net48/` and namespace
+`Eureka.Clients.Windows.WinForms`, records Windows host, Visual Studio 2022,
+.NET Framework 4.8, x64, and Windows 7 SP1+ build-host requirements, and keeps
+the future skeleton read-only/static-data/snapshot-demo only. It does not create
+`clients/`, Visual Studio solutions, `.csproj`, C# source, GUI behavior, FFI,
+cache runtime, downloads, installers, telemetry, relay runtime, live probes, or
+runtime wiring. Implementation remains blocked until explicit human approval.
 Rust Query Planner Parity Candidate v0 remains isolated and does not wire Rust
 into runtime behavior. Rust Local Index Parity Planning v0 is implemented as
 planning-only parity governance for future local-index Rust work; it adds no

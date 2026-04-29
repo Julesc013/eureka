@@ -314,29 +314,36 @@
     {
       "id": "windows_7_winforms_native_skeleton_planning_v0",
       "title": "Windows 7 WinForms Native Skeleton Planning v0",
-      "status": "next_after_human_approval",
+      "status": "completed",
       "priority": 45,
-      "notes": "Planning-only follow-up to choose project path, namespace, build-host assumptions, minimum read-only screens, and validation strategy before any approved native scaffold creation. Not an implementation or project-file creation task."
+      "notes": "Added the planning pack for a future Windows 7 SP1+ x64 WinForms .NET Framework 4.8 skeleton, proposing clients/windows/winforms-net48/ and Eureka.Clients.Windows.WinForms with strict read-only static-data/snapshot-demo scope. No Visual Studio solution, C# project, C# source, GUI behavior, FFI, cache runtime, downloads, installers, telemetry, relay runtime, live probes, or runtime wiring was added."
+    },
+    {
+      "id": "windows_7_winforms_native_skeleton_implementation_v0",
+      "title": "Windows 7 WinForms Native Skeleton Implementation v0",
+      "status": "blocked_pending_explicit_human_approval",
+      "priority": 46,
+      "notes": "Future implementation may create the minimal skeleton only after explicit human approval and must stay within read-only static public data / seed snapshot demo scope. Do not run unattended."
     },
     {
       "id": "rust_local_index_parity_candidate_v0",
       "title": "Rust Local Index Parity Candidate v0",
       "status": "blocked_pending_review_and_cargo",
-      "priority": 46,
+      "priority": 47,
       "notes": "Future implementation-only-after-review lane for Rust local-index parity; blocked until the P12 plan is reviewed and Cargo availability/requirements are explicit."
     },
     {
       "id": "relay_prototype_planning_v0",
       "title": "Relay Prototype Planning v0",
-      "status": "queued_after_native_skeleton_planning",
-      "priority": 47,
+      "status": "queued_after_native_approval_decision",
+      "priority": 48,
       "notes": "Future planning-only milestone for a relay prototype after relay and snapshot-consumer contracts; not a relay runtime implementation and not a protocol server."
     },
     {
       "id": "internet_archive_live_probe_v0",
       "title": "Internet Archive Live Probe v0",
       "status": "blocked_pending_explicit_approval",
-      "priority": 48,
+      "priority": 49,
       "notes": "Future live external-source behavior; do not run unattended before explicit human approval and live probe gateway review."
     }
   ]
