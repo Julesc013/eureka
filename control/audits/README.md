@@ -106,6 +106,12 @@ Current packs:
   current-head run failure at Pages configuration, absence of an uploaded Pages
   artifact, failed deployment status, local validation evidence, and operator
   follow-up without triggering deployment or adding backend behavior.
+- `public-search-rehearsal-v0/`: local/prototype public search rehearsal
+  evidence. It records route coverage, safe-query outcomes, blocked-request
+  outcomes, static handoff review, public-alpha review, contract alignment, and
+  a structured report without deploying hosted search, calling external
+  sources, enabling live probes, downloads, installs, uploads, local path
+  search, accounts, telemetry, or production claims.
 
 Public Search API Contract v0 is governed under `contracts/api/`,
 `control/inventory/publication/public_search_routes.json`, and

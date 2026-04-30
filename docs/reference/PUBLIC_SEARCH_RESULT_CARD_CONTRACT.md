@@ -213,6 +213,11 @@ production API claim was added by accident.
 Hosted public exposure must still pass the runtime readiness checklist at
 `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`; this checklist
 does not approve hosted deployment by itself.
+Public Search Rehearsal v0 now records local/prototype evidence that emitted
+cards remain aligned with this contract for representative safe queries and
+absence cases. It adds no hosted backend, live probes, downloads, installers,
+uploads, execution, malware-safety claim, rights-clearance claim, telemetry, or
+production ranking guarantee.
 
 ## Out Of Scope
 

@@ -73,6 +73,10 @@ The minimum public-alpha entry gate should include:
 - Public Search Static Handoff v0 (implemented as static/no-JS handoff pages
   and `data/search_handoff.json` under `site/dist`; hosted backend search is
   unavailable/unverified and GitHub Pages remains static-only)
+- Public Search Rehearsal v0 (implemented as local/prototype route, safe-query,
+  blocked-request, static-handoff, public-alpha, and contract-alignment
+  evidence only; no hosted backend, live probes, downloads, uploads, local path
+  search, accounts, telemetry, or production claim)
 - Public Search Result Card Contract v0 (implemented as contract-only future
   result-card schema, examples, audit pack, docs, validator, and tests; no live
   search route, live probe, download, install, execute, upload, malware-safety
@@ -272,6 +276,11 @@ local/prototype runtime without pretending hosted search exists. It does not
 host a backend, enable live probes, fetch URLs, crawl, download, install,
 upload, search local paths, add accounts/telemetry, or claim production API
 stability.
+Public Search Rehearsal v0 records local/prototype evidence for those routes:
+route matrix coverage, safe query outcomes, governed blocked request errors,
+static handoff honesty, public-alpha posture, and contract alignment. It does
+not deploy hosted search, enable live probes, enable downloads/installs/uploads
+or local path search, add accounts or telemetry, or claim production readiness.
 
 Public Search Result Card Contract v0 now defines the canonical future result
 card for public search and old-client/native/relay/snapshot consumers. It keeps

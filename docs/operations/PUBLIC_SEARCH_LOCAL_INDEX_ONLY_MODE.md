@@ -63,6 +63,13 @@ Public Search Safety / Abuse Guard v0 is now implemented as guardrails in
 Runtime v0 satisfies the first local route gate; hosted public exposure still
 must satisfy `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`.
 
+Public Search Rehearsal v0 now records local/prototype evidence for this mode
+under `control/audits/public-search-rehearsal-v0/`. The rehearsal exercises
+safe queries, no-result responses, blocked unsafe parameters, static handoff
+honesty, and public-alpha posture without hosted deployment, live probes,
+downloads, installs, uploads, local path search, accounts, telemetry, or
+external calls.
+
 ## Privacy And Logging Notes
 
 Future public search logs must avoid private local paths, credentials, uploaded

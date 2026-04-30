@@ -71,7 +71,7 @@
   "local_cache_privacy_policy_source": "control/inventory/publication/local_cache_privacy_policy.json",
   "local_cache_runtime_implemented": false,
   "malware_scanning_claimed": false,
-  "next_milestone": "Public Search Rehearsal v0",
+  "next_milestone": "Search Usefulness Source Expansion v2, fixture-only",
   "next_repository_shape_milestone": "Static Artifact Promotion Review v0",
   "no_backend": true,
   "no_cname_file_committed": true,

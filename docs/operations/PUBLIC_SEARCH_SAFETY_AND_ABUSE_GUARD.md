@@ -265,3 +265,8 @@ Implemented static publication only:
   `lite/search.html`, `text/search.txt`, `files/search.README.txt`, and
   `data/search_handoff.json`; it does not configure hosted search or weaken the
   disabled live-probe/download/upload/local-path posture.
+- Public Search Rehearsal v0 records local/prototype route coverage, safe-query
+  evidence, blocked-request evidence, static handoff review, public-alpha
+  review, and contract alignment without deploying hosted search or enabling
+  live probes, downloads, installs, uploads, local path search, accounts,
+  telemetry, or external calls.

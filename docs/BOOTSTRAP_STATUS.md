@@ -333,7 +333,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Public Search Rehearsal v0
+> Search Usefulness Source Expansion v2, fixture-only
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -546,7 +546,7 @@ Public Search Safety / Abuse Guard v0 defines guardrails under
 `control/inventory/publication/public_search_safety.json`,
 `docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md`, and
 `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`. It fixes
-`local_index_only` as the only allowed v0 mode, bounds query/result/time
+	`local_index_only` as the only allowed v0 mode, bounds query/result/time
 behavior, forbids URL/local path/credential/download/install/upload parameters,
 maps disallowed behavior to the P26 error envelope, keeps telemetry/logging
 runtime off, and lists future operator controls. It adds no public search
@@ -554,25 +554,33 @@ runtime, rate-limit middleware, auth/accounts, telemetry runtime, hosted
 backend, live probes, downloads, uploads, local path search, arbitrary URL
 fetch, or production safety claim. Public Search Static Handoff v0 now records
 the static handoff without enabling hosted search.
+Public Search Rehearsal v0 is now implemented as local/prototype evidence under
+`control/audits/public-search-rehearsal-v0/`, `scripts/public_search_smoke.py`,
+and `scripts/validate_public_search_rehearsal.py`. It records route coverage,
+safe query outcomes, blocked request outcomes, static handoff review,
+public-alpha review, and contract alignment without deploying hosted search,
+calling external sources, enabling live probes, downloads, installs, uploads,
+local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Public Search Rehearsal v0
-2. Search Usefulness Source Expansion v2, fixture-only
-3. Source Pack Contract v0
-4. Evidence Pack Contract v0
-5. Index Pack Contract v0
-6. Index Pack Contract v0
-7. Contribution Pack Contract v0
-8. Master Index Review Queue Contract v0
-9. AI Provider Contract v0
+1. Search Usefulness Source Expansion v2, fixture-only
+2. Source Pack Contract v0
+3. Evidence Pack Contract v0
+4. Index Pack Contract v0
+5. Contribution Pack Contract v0
+6. Master Index Review Queue Contract v0
+7. AI Provider Contract v0
+8. Manual Observation Batch 0 Execution, human-operated
+9. IA Metadata Live Probe Approval Pack v0 only after explicit approval
 10. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
-11. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+11. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
+12. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
-12. Relay Prototype Implementation v0, only after explicit human approval and
+13. Relay Prototype Implementation v0, only after explicit human approval and
    limited to the approved localhost-only/read-only/static relay scope
-13. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
+14. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
    human approval and limited to the approved read-only static-data/snapshot-demo
    skeleton scope
 14. Manual Observation Batch 0 Execution (human-operated parallel work)

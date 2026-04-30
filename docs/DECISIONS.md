@@ -1030,4 +1030,26 @@ unavailable/unverified, and the handoff adds no backend hosting, provider
 configuration, fake hosted URL, live probes, external calls, arbitrary URL
 fetching, crawling, downloads, installers, uploads, local path search, accounts,
 telemetry, production API stability, or production readiness claim. The next
-Codex-safe milestone is Public Search Rehearsal v0.
+Codex-safe milestone was Public Search Rehearsal v0, which is now implemented.
+
+## ADR-111: Record Local Public Search Rehearsal Evidence
+
+Status: accepted
+
+Public Search Rehearsal v0 adds
+`control/audits/public-search-rehearsal-v0/`, expands
+`scripts/public_search_smoke.py`, adds
+`scripts/validate_public_search_rehearsal.py`, and adds focused script,
+operations, and hardening tests.
+
+The decision is to rehearse the local/prototype public search stack before any
+source expansion or hosted-search planning. The rehearsal records route
+coverage for `/search`, `/api/v1/search`, `/api/v1/query-plan`,
+`/api/v1/status`, `/api/v1/sources`, and `/api/v1/source/{source_id}`,
+representative safe-query outcomes, governed blocked-request outcomes, static
+handoff honesty, public-alpha posture, and contract alignment. It is evidence
+only: no hosted deployment, provider config, custom domain, live probes,
+external source calls, scraping, crawling, downloads, installers, uploads,
+local path search, accounts, telemetry, rate-limit middleware, production API
+stability, or production readiness claim is added. The next Codex-safe
+milestone is Search Usefulness Source Expansion v2, fixture-only.

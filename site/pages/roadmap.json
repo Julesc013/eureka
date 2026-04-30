@@ -101,6 +101,10 @@
           "text": "implemented as no-JS static handoff outputs under site/dist, including search.html, lite/text/files search surfaces, and data/search_handoff.json; hosted backend search remains unavailable/unverified."
         },
         {
+          "title": "Public Search Rehearsal v0",
+          "text": "implemented as local/prototype rehearsal evidence for public search routes, safe queries, blocked requests, static handoff honesty, public-alpha posture, and contract alignment; no hosted backend, live probes, downloads, uploads, installs, local path search, accounts, telemetry, or production claim."
+        },
+        {
           "title": "Rust Query Planner Parity Candidate v0",
           "text": "implemented as an isolated Rust planner candidate against expanded Python-oracle goldens; Python remains the oracle and Rust is not wired into runtime."
         },

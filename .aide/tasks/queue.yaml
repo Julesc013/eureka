@@ -440,14 +440,14 @@
     {
       "id": "public_search_rehearsal_v0",
       "title": "Public Search Rehearsal v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 63,
-      "notes": "Immediate next milestone after the static handoff. Rehearse local/prototype public search with static handoff evidence while preserving no hosted deployment, no live probes, no downloads/uploads, and no production claim."
+      "notes": "Implemented local/prototype public search rehearsal evidence with route matrix, safe-query results, blocked-request results, static handoff review, public-alpha review, contract alignment review, smoke script coverage, validator, and tests. No hosted deployment, live probes, downloads/uploads/installs, local path search, accounts, telemetry, or production claim was added."
     },
     {
       "id": "search_usefulness_source_expansion_v2_fixture_only",
       "title": "Search Usefulness Source Expansion v2, fixture-only",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 64,
       "notes": "Fixture-only source expansion candidate; no live source calls, scraping, crawling, external observations, or arbitrary local ingestion."
     },
@@ -499,6 +499,13 @@
       "status": "blocked_pending_explicit_approval",
       "priority": 71,
       "notes": "Future approval pack only after explicit human approval and live-probe gateway review. Do not call Internet Archive, fetch URLs, scrape, crawl, enable live probes, or automate external searches in unattended Codex work."
+    },
+    {
+      "id": "public_hosted_search_rehearsal_plan_v0",
+      "title": "Public Hosted Search Rehearsal Plan v0",
+      "status": "recommended_future_after_source_safety_confidence",
+      "priority": 72,
+      "notes": "Future hosted rehearsal plan only after source usefulness and safety confidence improve. Do not deploy, add provider files, enable live probes, or claim hosted public search before explicit approval and evidence."
     }
   ]
 }

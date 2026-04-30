@@ -116,6 +116,12 @@ and unverified; GitHub Pages does not run Python, and the handoff does not add
 backend hosting, live probes, external calls, URL fetching, scraping, crawling,
 downloads, installers, uploads, local path search, accounts, telemetry, or
 production API stability.
+Public Search Rehearsal v0 now records local/prototype route evidence under
+`control/audits/public-search-rehearsal-v0/` and expands
+`scripts/public_search_smoke.py` to cover representative safe queries and
+blocked request cases. It does not deploy hosted search, enable live probes,
+enable downloads/installs/uploads/local paths, add accounts or telemetry, or
+claim production API stability.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -555,6 +561,12 @@ Eureka is substantial, but it is still a prototype/reference backend:
   search while keeping hosted backend search unconfigured/unverified and
   preserving no-JS, no-live-probe, no-download, no-upload, no-local-path-search
   boundaries.
+- Public Search Rehearsal v0 is implemented as local/prototype evidence only.
+  It records route coverage, nine representative safe-query outcomes, fourteen
+  blocked-request outcomes, static handoff review, public-alpha review, and
+  contract alignment without hosted deployment, live probes, downloads,
+  installs, uploads, local path search, accounts, telemetry, or production
+  claims.
 - Public Search Result Card Contract v0 is implemented as contract/governance
   only. It defines the future result card used by public search responses and
   old-client/native/relay/snapshot consumers, but it does not make search live,
@@ -654,10 +666,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Public Search Rehearsal v0
-2. Search Usefulness Source Expansion v2, fixture-only
-3. Source Pack Contract v0
-4. Evidence Pack Contract v0
+1. Search Usefulness Source Expansion v2, fixture-only
+2. Source Pack Contract v0
+3. Evidence Pack Contract v0
+4. Index Pack Contract v0
 5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

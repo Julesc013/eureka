@@ -184,6 +184,13 @@ behavior, telemetry, or production claims were added by accident. Public Search
 Result Card Contract v0 is the governed `results[]` card contract. Public
 Search Safety / Abuse Guard v0 now constrains the local runtime and still blocks
 hosted public exposure until the runtime readiness checklist is satisfied.
+Public Search Rehearsal v0 now records local/prototype evidence for this
+contract under `control/audits/public-search-rehearsal-v0/`, including safe
+query results, blocked request results, static handoff review, public-alpha
+review, and contract alignment. The rehearsal does not make `/search` or
+`/api/v1/search` hosted, does not enable live probes, and does not add
+downloads, installs, uploads, local path search, accounts, telemetry, or
+external source calls.
 
 ## Out Of Scope
 

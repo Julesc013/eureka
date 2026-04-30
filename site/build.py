@@ -596,7 +596,7 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
             "/eureka/",
             "/",
         ],
-        "next_milestone": "Public Search Rehearsal v0",
+        "next_milestone": "Search Usefulness Source Expansion v2, fixture-only",
         "next_repository_shape_milestone": "Static Artifact Promotion Review v0",
         "parallel_human_work": "Manual Observation Batch 0 Execution",
         "no_network_required": True,

@@ -266,7 +266,9 @@
         "surfaces/web/server/api_routes.py",
         "surfaces/web/server/workbench_server.py",
         "surfaces/web/workbench/render_public_search.py",
-        "scripts/public_search_smoke.py"
+        "scripts/public_search_smoke.py",
+        "scripts/validate_public_search_rehearsal.py",
+        "control/audits/public-search-rehearsal-v0/public_search_rehearsal_report.json"
       ],
       "reserved_paths": [
         "/search",
@@ -287,8 +289,8 @@
       "enabled_by_default": true,
       "requires_operator_signoff": true,
       "current_limitations": "Local/prototype backend runtime only with static handoff pages; no hosted backend, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
-      "next_step": "Public Search Rehearsal v0; keep local_index_only and disabled live/external behavior.",
-      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0."
+      "next_step": "Search Usefulness Source Expansion v2, fixture-only.",
+      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0. Public Search Rehearsal v0 records local safe-query and blocked-request evidence."
     },
     {
       "id": "public_search_static_handoff",
@@ -329,7 +331,7 @@
       "enabled_by_default": true,
       "requires_operator_signoff": false,
       "current_limitations": "Static handoff and local-runtime instructions only; hosted backend URL is unavailable/unverified and the form is disabled until a future approved backend exists.",
-      "next_step": "Public Search Rehearsal v0.",
+      "next_step": "Search Usefulness Source Expansion v2, fixture-only.",
       "notes": "No JavaScript, no hosted search claim, no live probes, no downloads, no installs, no uploads, no local path search, and no telemetry."
     },
     {
@@ -876,6 +878,7 @@
     "Snapshots, relay, native clients, /app, and live /api/v1 remain future/deferred or contract-only.",
     "Signed Snapshot Format v0 adds a repo-local seed snapshot example and contract, while the public /snapshots/ route remains deferred.",
     "Production signed snapshots, real signing keys, executable downloads, relay services, and native clients remain future work.",
-    "Public Search Safety / Abuse Guard v0 constrains Local Public Search Runtime v0 with limits, forbidden parameters, privacy defaults, and operator controls while hosted search remains future."
+    "Public Search Safety / Abuse Guard v0 constrains Local Public Search Runtime v0 with limits, forbidden parameters, privacy defaults, and operator controls while hosted search remains future.",
+    "Public Search Rehearsal v0 validates the local/prototype route stack and static handoff without enabling hosted or live behavior."
   ]
 }

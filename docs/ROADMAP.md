@@ -54,6 +54,12 @@ installs, uploads, local path search, accounts, telemetry, or production API
 stability. Public Search Static Handoff v0 now adds `site/dist/search.html`,
 lite/text/files handoff outputs, and `data/search_handoff.json` as static/no-JS
 handoff surfaces only; hosted public search remains unavailable/unverified.
+Public Search Rehearsal v0 now records local/prototype route coverage, safe
+query outcomes, blocked request outcomes, static handoff review, public-alpha
+review, and contract alignment under
+`control/audits/public-search-rehearsal-v0/`. It does not deploy hosted search,
+enable live probes, enable downloads/installs/uploads/local paths, add
+accounts or telemetry, or claim production API stability.
 
 ## Stage 3: Surface Skeletons
 
@@ -303,7 +309,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Public Search Rehearsal v0
+> Search Usefulness Source Expansion v2, fixture-only
 
 Public Data Contract Stability Review v0 is now implemented as field-level
 contract governance under
@@ -354,7 +360,10 @@ runtime off, and records future operator controls. The local runtime and static
 handoff add no rate-limit middleware, hosted backend, live probe,
 download/install/upload surface, arbitrary URL fetch, account/session behavior,
 telemetry persistence, or production safety claim. The next milestone is
-Public Search Rehearsal v0. GitHub Pages
+Search Usefulness Source Expansion v2, fixture-only. Public Search Rehearsal v0
+is implemented as local/prototype evidence only and adds no hosted deployment,
+live probes, downloads, installs, uploads, local path search, accounts,
+telemetry, or production claim. GitHub Pages
 Workflow Repair v0 remains an operator/Pages follow-up before any hosted
 deployment success claim is made.
 Rust Local Index Parity Candidate v0 remains blocked on planning review and

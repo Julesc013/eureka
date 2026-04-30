@@ -300,12 +300,13 @@ The next backend sequence is:
 71. Public Search Safety / Abuse Guard v0 (implemented as safety, abuse, privacy, operator-control, validator, and readiness-checklist governance; no hosted runtime or middleware)
 72. Local Public Search Runtime v0 (implemented as local/prototype backend runtime only; no hosted deployment, live probes, downloads, uploads, accounts, telemetry, or production claim)
 73. Public Search Static Handoff v0 (implemented as static/no-JS `site/dist` handoff only; hosted backend remains unavailable/unverified)
+74. Public Search Rehearsal v0 (implemented as local/prototype route, safe-query, blocked-request, static-handoff, public-alpha, and contract-alignment evidence only; no hosted deployment, live probes, downloads, uploads, local path search, accounts, telemetry, or production claim)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Public Search Rehearsal v0
+> Search Usefulness Source Expansion v2, fixture-only
 
 Why this comes next:
 
@@ -348,6 +349,14 @@ Why this comes next:
 - Public Search Static Handoff v0 now connects the static publication plane to
   the already-local route with no-JS `site/dist` handoff outputs while keeping
   hosted backend search unavailable/unverified and GitHub Pages static-only.
+- Public Search Rehearsal v0 now records local/prototype route checks, nine
+  safe-query outcomes, fourteen blocked-request outcomes, static handoff
+  review, public-alpha review, and contract alignment without hosted
+  deployment, live probes, downloads, uploads, local path search, accounts,
+  telemetry, or production claims.
+- Search Usefulness Source Expansion v2 should be fixture-only so the next
+  product movement improves local-index usefulness without live source calls,
+  scraping, crawling, external observations, or arbitrary local ingestion.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision
