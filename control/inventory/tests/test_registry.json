@@ -2841,6 +2841,50 @@
       "failure_means": "The local public search smoke path no longer validates status, search, query-plan, sources, HTML, representative safe queries, or blocked unsafe parameters.",
       "advisory_or_required": "required",
       "notes": "Updated by Public Search Rehearsal v0; runs in-process against the stdlib WSGI app without opening an external listener, deploying, calling external sources, or enabling live probes/downloads/uploads/local paths."
+    },
+    {
+      "test_id": "source_expansion_v2_validator",
+      "label": "Search usefulness source expansion v2 validator",
+      "command": "python scripts/validate_source_expansion_v2.py",
+      "category": "audit",
+      "owner_area": "control/audits/search-usefulness-source-expansion-v2",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Search Usefulness Source Expansion v2 audit evidence, fixture-only source records, final counts, or no-live/no-fake-baseline guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Search Usefulness Source Expansion v2; validates selected query targets, recorded fixture source families, committed fixture files, final broad audit counts, pending/manual external baselines, and no live probes, scraping, crawling, downloads, uploads, local path search, hosted search, or production relevance claims."
+    },
+    {
+      "test_id": "source_expansion_v2_tests",
+      "label": "Search usefulness source expansion v2 tests",
+      "command": "python -m unittest tests.operations.test_search_usefulness_source_expansion_v2 tests.scripts.test_validate_source_expansion_v2 tests.evals.test_search_usefulness_source_expansion_v2 runtime.connectors.source_expansion_recorded.tests.test_connector runtime.engine.index.tests.test_source_expansion_v2 runtime.gateway.tests.test_public_search_source_expansion_v2",
+      "category": "audit",
+      "owner_area": "runtime/connectors/source_expansion_recorded",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary local indexes and subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Source Expansion v2 fixtures, normalization, local index visibility, public search projection, audit report, or fixture-only safety tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers fixture loader behavior, source inventory honesty, selected query movement, local index records, public result-card safety, no download/install actions, no private path leakage, and pending/manual external baselines without live source behavior."
     }
   ]
 }

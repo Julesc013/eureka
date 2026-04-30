@@ -572,7 +572,7 @@ expanded Python-oracle source-registry goldens,
 `tests/parity/rust_source_registry_cases.json`,
 `scripts/check_rust_source_registry_parity.py`, and parity structure tests.
 
-The decision makes the Rust candidate preserve the current nine-source Python
+The decision makes the Rust candidate preserve the current Python
 source-registry shape, including capability booleans, coverage depth/status,
 connector mode, current limitations, next coverage step, placeholder warnings,
 recorded fixture flags, local/private future source posture, and article-scan
@@ -1052,4 +1052,31 @@ only: no hosted deployment, provider config, custom domain, live probes,
 external source calls, scraping, crawling, downloads, installers, uploads,
 local path search, accounts, telemetry, rate-limit middleware, production API
 stability, or production readiness claim is added. The next Codex-safe
-milestone is Search Usefulness Source Expansion v2, fixture-only.
+milestone was Search Usefulness Source Expansion v2, fixture-only, which is now
+implemented.
+
+## ADR-112: Expand Search Usefulness Sources With Fixture-Only Recorded Metadata
+
+Status: accepted
+
+Search Usefulness Source Expansion v2 adds
+`runtime/connectors/source_expansion_recorded/`, six fixture-only source records
+under `control/inventory/sources/`, 15 tiny recorded metadata fixture records,
+local catalog/index/public-search integration, an audit pack under
+`control/audits/search-usefulness-source-expansion-v2/`,
+`scripts/validate_source_expansion_v2.py`, and focused connector, index,
+gateway, eval, operations, and script tests.
+
+The decision is to improve the local search corpus only with committed
+synthetic/recorded metadata fixtures for Wayback/Memento traces, Software
+Heritage-style source snapshots, SourceForge-style releases, package registry
+metadata, manuals/documents, and review/description notes. The broad
+Search Usefulness Audit moved from `covered=5`, `partial=22`,
+`source_gap=26`, `capability_gap=9`, `unknown=2` to `covered=5`,
+`partial=40`, `source_gap=10`, `capability_gap=7`, `unknown=2`, while all
+external baselines remain pending/manual. This adds no live probes, external
+API calls, URL fetching, scraping, crawling, real binaries, downloads,
+installers, uploads, arbitrary local ingestion, local path search, telemetry,
+accounts, hosted search, malware-safety claim, rights-clearance claim,
+production relevance claim, or production readiness claim. The next
+Codex-safe milestone is Search Usefulness Delta v2.

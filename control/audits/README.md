@@ -112,6 +112,13 @@ Current packs:
   a structured report without deploying hosted search, calling external
   sources, enabling live probes, downloads, installs, uploads, local path
   search, accounts, telemetry, or production claims.
+- `search-usefulness-source-expansion-v2/`: fixture-only source expansion
+  evidence for selected broad search-usefulness gaps. It records baseline and
+  final counts, selected query targets, source-family selection, fixture
+  inventory, normalization/indexing notes, query impact, remaining gaps, risks,
+  and next source work without live probes, scraping, crawling, external
+  observations, real binaries, download/install/upload actions, local path
+  search, hosted search, or production relevance claims.
 
 Public Search API Contract v0 is governed under `contracts/api/`,
 `control/inventory/publication/public_search_routes.json`, and

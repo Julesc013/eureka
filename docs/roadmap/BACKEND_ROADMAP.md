@@ -301,12 +301,13 @@ The next backend sequence is:
 72. Local Public Search Runtime v0 (implemented as local/prototype backend runtime only; no hosted deployment, live probes, downloads, uploads, accounts, telemetry, or production claim)
 73. Public Search Static Handoff v0 (implemented as static/no-JS `site/dist` handoff only; hosted backend remains unavailable/unverified)
 74. Public Search Rehearsal v0 (implemented as local/prototype route, safe-query, blocked-request, static-handoff, public-alpha, and contract-alignment evidence only; no hosted deployment, live probes, downloads, uploads, local path search, accounts, telemetry, or production claim)
+75. Search Usefulness Source Expansion v2, fixture-only (implemented as six recorded fixture source families and 15 tiny metadata records; no live calls, scraping, crawling, external observations, real binaries, download/install/upload actions, hosted search, or production relevance claim)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Search Usefulness Source Expansion v2, fixture-only
+> Search Usefulness Delta v2
 
 Why this comes next:
 
@@ -354,9 +355,12 @@ Why this comes next:
   review, public-alpha review, and contract alignment without hosted
   deployment, live probes, downloads, uploads, local path search, accounts,
   telemetry, or production claims.
-- Search Usefulness Source Expansion v2 should be fixture-only so the next
-  product movement improves local-index usefulness without live source calls,
-  scraping, crawling, external observations, or arbitrary local ingestion.
+- Search Usefulness Source Expansion v2 is implemented as fixture-only source
+  coverage. It moved the current audit from covered=5/partial=22/source_gap=26/
+  capability_gap=9/unknown=2 to covered=5/partial=40/source_gap=10/
+  capability_gap=7/unknown=2 without live source calls, scraping, crawling,
+  external observations, arbitrary local ingestion, real binaries, downloads,
+  uploads, hosted search, or production relevance claims.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

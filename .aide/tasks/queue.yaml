@@ -447,64 +447,71 @@
     {
       "id": "search_usefulness_source_expansion_v2_fixture_only",
       "title": "Search Usefulness Source Expansion v2, fixture-only",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 64,
-      "notes": "Fixture-only source expansion candidate; no live source calls, scraping, crawling, external observations, or arbitrary local ingestion."
+      "notes": "Implemented fixture-only source expansion with six recorded fixture source families and 15 tiny metadata records. Search usefulness counts moved from covered=5/partial=22/source_gap=26/capability_gap=9/unknown=2 to covered=5/partial=40/source_gap=10/capability_gap=7/unknown=2 without live calls, scraping, crawling, external observations, downloads, uploads, local path search, or production claims."
+    },
+    {
+      "id": "search_usefulness_delta_v2",
+      "title": "Search Usefulness Delta v2",
+      "status": "recommended_next",
+      "priority": 65,
+      "notes": "Record and analyze the measured Source Expansion v2 usefulness delta, remaining source/capability gaps, and next source/evidence priorities without changing retrieval behavior or fabricating external baselines."
     },
     {
       "id": "source_pack_contract_v0",
       "title": "Source Pack Contract v0",
       "status": "recommended_follow_up",
-      "priority": 65,
+      "priority": 66,
       "notes": "Future contract for source packs only; do not implement downloads, installers, crawling, or live sync."
     },
     {
       "id": "evidence_pack_contract_v0",
       "title": "Evidence Pack Contract v0",
       "status": "recommended_follow_up",
-      "priority": 66,
+      "priority": 67,
       "notes": "Future evidence-pack contract work; do not fabricate external baselines or claim rights/security review."
     },
     {
       "id": "index_pack_contract_v0",
       "title": "Index Pack Contract v0",
       "status": "recommended_follow_up",
-      "priority": 67,
+      "priority": 68,
       "notes": "Future index-pack contract work; do not add live source sync, crawling, hosted indexing, arbitrary local ingestion, or production search claims."
     },
     {
       "id": "contribution_pack_contract_v0",
       "title": "Contribution Pack Contract v0",
       "status": "recommended_follow_up",
-      "priority": 68,
+      "priority": 69,
       "notes": "Future contribution-pack contract work only; do not add accounts, uploads, moderation infrastructure, telemetry, or live backend behavior."
     },
     {
       "id": "master_index_review_queue_contract_v0",
       "title": "Master Index Review Queue Contract v0",
       "status": "recommended_follow_up",
-      "priority": 69,
+      "priority": 70,
       "notes": "Future contract for master-index review queues only; do not add hosted indexing, accounts, uploads, moderation infrastructure, live source sync, crawling, or production search claims."
     },
     {
       "id": "ai_provider_contract_v0",
       "title": "AI Provider Contract v0",
       "status": "recommended_follow_up",
-      "priority": 70,
+      "priority": 71,
       "notes": "Future contract-only provider boundary. Do not add provider credentials, network calls, hosted inference, telemetry, accounts, runtime integration, or production AI claims."
     },
     {
       "id": "ia_metadata_live_probe_approval_pack_v0",
       "title": "IA Metadata Live Probe Approval Pack v0",
       "status": "blocked_pending_explicit_approval",
-      "priority": 71,
+      "priority": 72,
       "notes": "Future approval pack only after explicit human approval and live-probe gateway review. Do not call Internet Archive, fetch URLs, scrape, crawl, enable live probes, or automate external searches in unattended Codex work."
     },
     {
       "id": "public_hosted_search_rehearsal_plan_v0",
       "title": "Public Hosted Search Rehearsal Plan v0",
       "status": "recommended_future_after_source_safety_confidence",
-      "priority": 72,
+      "priority": 73,
       "notes": "Future hosted rehearsal plan only after source usefulness and safety confidence improve. Do not deploy, add provider files, enable live probes, or claim hosted public search before explicit approval and evidence."
     }
   ]

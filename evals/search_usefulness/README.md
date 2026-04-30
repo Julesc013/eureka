@@ -207,3 +207,15 @@ Manual Observation Entry Helper v0 now adds stdlib-only listing, creation,
 file-validation, and Batch 0 progress helpers for those pending slots. It does
 not perform observations, fetch URLs, open browsers, or fabricate external
 baseline results.
+
+Search Usefulness Source Expansion v2 now lives under
+`control/audits/search-usefulness-source-expansion-v2/`. It adds six
+fixture-only recorded source families and 15 tiny metadata records for selected
+Wayback/Memento, Software Heritage, SourceForge, package registry, manual, and
+review/description gaps. The current local audit reports `covered=5`,
+`partial=40`, `source_gap=10`, `capability_gap=7`, and `unknown=2`, moving
+selected source and capability gaps into honest partial coverage without live
+source calls. External Google and Internet Archive baselines remain pending
+manual observation, and the audit still adds no live probing, URL fetching,
+scraping, crawling, real binaries, downloads, local path search, fuzzy/vector
+retrieval, LLM behavior, or production benchmark claim.

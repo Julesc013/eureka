@@ -69,7 +69,7 @@ architectural oracle rather than as a throwaway scaffold.
 - first Rust Migration Skeleton and Parity Plan v0 seam under `crates/`, `docs/architecture/RUST_BACKEND_LANE.md`, and `tests/parity/` that records Rust as the later production backend lane while keeping Python authoritative and requiring seam-by-seam parity before replacement
 - first Rust Parity Fixture Pack v0 seam under `tests/parity/golden/python_oracle/v0/` plus `scripts/generate_python_oracle_golden.py` that captures stable Python-oracle JSON outputs for source registry, query planner, resolution runs, local index, resolution memory, and archive-resolution evals without porting Rust behavior, replacing Python, or adding a Rust parity runner
 - first Rust Source Registry Parity Candidate v0 seam under `crates/eureka-core/` that loads governed source inventory records, validates bounded source fields, detects duplicate source ids, and compares source-registry public envelopes to Python-oracle goldens without wiring Rust into Python runtime, web, CLI, HTTP API, workers, or production paths
-- Rust Source Registry Parity Catch-up v0 under `crates/eureka-core/src/source_registry.rs`, `tests/parity/rust_source_registry_cases.json`, and `scripts/check_rust_source_registry_parity.py` that updates the isolated Rust source-registry candidate to the current nine-source Python oracle shape, including capability booleans, coverage metadata, connector mode, limitations, next coverage steps, and placeholder warnings, while keeping Python authoritative and Rust unwired
+- Rust Source Registry Parity Catch-up v0 under `crates/eureka-core/src/source_registry.rs`, `tests/parity/rust_source_registry_cases.json`, and `scripts/check_rust_source_registry_parity.py` that updates the isolated Rust source-registry candidate to the current Python oracle shape, including capability booleans, coverage metadata, connector mode, limitations, next coverage steps, and placeholder warnings, while keeping Python authoritative and Rust unwired
 - first Rust Query Planner Parity Candidate v0 seam under `crates/eureka-core/`,
   `tests/parity/rust_query_planner_cases.json`, and
   `scripts/check_rust_query_planner_parity.py` that adds an isolated
@@ -333,7 +333,18 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Search Usefulness Source Expansion v2, fixture-only
+> Search Usefulness Delta v2
+
+Search Usefulness Source Expansion v2 is now implemented as fixture-only source
+coverage under `runtime/connectors/source_expansion_recorded/`,
+`control/inventory/sources/`, and
+`control/audits/search-usefulness-source-expansion-v2/`. It adds six recorded
+fixture source families and 15 tiny metadata records, moving the current audit
+from covered=5/partial=22/source_gap=26/capability_gap=9/unknown=2 to
+covered=5/partial=40/source_gap=10/capability_gap=7/unknown=2. It adds no live
+source calls, scraping, crawling, external observations, real binaries,
+downloads, installs, uploads, local path search, telemetry, hosted search,
+malware-safety claim, rights-clearance claim, or production relevance claim.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -411,7 +422,7 @@ query-planner fixture map as an isolated Rust seam only; it does not replace
 the Python planner or wire Rust into web, CLI, HTTP API, workers, public-alpha,
 or production paths.
 Rust Source Registry Parity Catch-up v0 updates the isolated Rust
-source-registry candidate to the current nine-source Python source inventory
+source-registry candidate to the current Python source inventory
 shape, including capability booleans, coverage metadata, connector mode,
 limitations, next coverage steps, and placeholder warnings; Python remains the
 oracle and Rust remains unwired from runtime and surfaces.
@@ -564,7 +575,7 @@ local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Search Usefulness Source Expansion v2, fixture-only
+1. Search Usefulness Delta v2
 2. Source Pack Contract v0
 3. Evidence Pack Contract v0
 4. Index Pack Contract v0

@@ -71,6 +71,16 @@ instructions, pending manifest, validator, and status report under
 `evals/search_usefulness/external_baselines/`. It seeds 192 pending slots
 across 64 queries and three systems without recording observed baselines. The
 next milestone is Manual Observation Batch 0.
+Public Search Rehearsal v0 then established local/prototype public search
+evidence, and Search Usefulness Source Expansion v2 now adds six fixture-only
+recorded source families plus 15 tiny metadata records to the local corpus.
+The broad Search Usefulness Audit moved from `covered=5`, `partial=22`,
+`source_gap=26`, `capability_gap=9`, `unknown=2` to `covered=5`,
+`partial=40`, `source_gap=10`, `capability_gap=7`, `unknown=2` without live
+probes, scraping, crawling, URL fetching, external observations, real binaries,
+downloads, uploads, local path search, hosted search, or production relevance
+claims. The next milestone is Search Usefulness Delta v2 to record and analyze
+that movement.
 
 ## Contents
 

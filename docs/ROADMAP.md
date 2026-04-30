@@ -309,7 +309,15 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Search Usefulness Source Expansion v2, fixture-only
+> Search Usefulness Delta v2
+
+Search Usefulness Source Expansion v2 is now implemented as fixture-only source
+coverage. It adds six recorded fixture source families and 15 tiny metadata
+records, moving the current audit from covered=5/partial=22/source_gap=26/
+capability_gap=9/unknown=2 to covered=5/partial=40/source_gap=10/
+capability_gap=7/unknown=2 without live source calls, scraping, crawling,
+external observations, arbitrary local ingestion, real binaries, downloads,
+uploads, hosted search, or production relevance claims.
 
 Public Data Contract Stability Review v0 is now implemented as field-level
 contract governance under
@@ -359,11 +367,12 @@ maps disallowed behavior to the P26 error envelope, keeps telemetry/logging
 runtime off, and records future operator controls. The local runtime and static
 handoff add no rate-limit middleware, hosted backend, live probe,
 download/install/upload surface, arbitrary URL fetch, account/session behavior,
-telemetry persistence, or production safety claim. The next milestone is
-Search Usefulness Source Expansion v2, fixture-only. Public Search Rehearsal v0
-is implemented as local/prototype evidence only and adds no hosted deployment,
-live probes, downloads, installs, uploads, local path search, accounts,
-telemetry, or production claim. GitHub Pages
+telemetry persistence, or production safety claim. Search Usefulness Source
+Expansion v2 is implemented fixture-only and the next milestone is Search
+Usefulness Delta v2. Public Search Rehearsal v0 is implemented as
+local/prototype evidence only and adds no hosted deployment, live probes,
+downloads, installs, uploads, local path search, accounts, telemetry, or
+production claim. GitHub Pages
 Workflow Repair v0 remains an operator/Pages follow-up before any hosted
 deployment success claim is made.
 Rust Local Index Parity Candidate v0 remains blocked on planning review and
@@ -401,7 +410,7 @@ Catch-up v0, and Rust Local Index
 Parity Planning v0 now
 mark the start of a more evidence-led backend phase. Rust source-registry
 parity now catches up to the expanded Python source capability and coverage
-shape for the current nine-source inventory without wiring Rust into runtime
+shape for the current source inventory without wiring Rust into runtime
 behavior. Relay Surface
 Design v0 is implemented as contract/checklist work only
 and does not add relay services, protocol bridges, sockets, private data

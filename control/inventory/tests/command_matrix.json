@@ -128,7 +128,9 @@
         "public_search_static_handoff_tests",
         "public_search_rehearsal_validator",
         "public_search_rehearsal_tests",
-        "public_search_smoke"
+        "public_search_smoke",
+        "source_expansion_v2_validator",
+        "source_expansion_v2_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -252,7 +254,9 @@
         "public_search_static_handoff_tests",
         "public_search_rehearsal_validator",
         "public_search_rehearsal_tests",
-        "public_search_smoke"
+        "public_search_smoke",
+        "source_expansion_v2_validator",
+        "source_expansion_v2_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -348,7 +352,9 @@
         "local_public_search_runtime_validator",
         "public_search_static_handoff_validator",
         "public_search_rehearsal_validator",
-        "public_search_rehearsal_tests"
+        "public_search_rehearsal_tests",
+        "source_expansion_v2_validator",
+        "source_expansion_v2_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -534,7 +540,9 @@
         "full_project_state_audit_validator",
         "full_project_state_audit_tests",
         "public_search_rehearsal_validator",
-        "public_search_rehearsal_tests"
+        "public_search_rehearsal_tests",
+        "source_expansion_v2_validator",
+        "source_expansion_v2_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -576,6 +584,7 @@
     "Public Search Safety / Abuse Guard v0 validation is stdlib-only and constrains the local public search runtime plus future hosted review; it does not implement rate-limit middleware, telemetry runtime, hosted backend, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production claims.",
     "Local Public Search Runtime v0 validation is stdlib-only local/prototype backend verification; it opens no public listener, deploys nothing, calls no external sources, and adds no hosted backend, downloads, installs, uploads, accounts, telemetry, live probes, or production claims.",
     "Public Search Static Handoff v0 validation is stdlib-only static publication verification; it adds no backend hosting, fake hosted URL, live probes, downloads, installs, uploads, local path search, telemetry, JavaScript requirement, or production claim.",
-    "Public Search Rehearsal v0 validation is stdlib-only local/prototype evidence review. It records safe-query and blocked-request evidence without deploying, calling external sources, enabling hosted search, live probes, downloads, installs, uploads, local path search, accounts, telemetry, or production claims."
+    "Public Search Rehearsal v0 validation is stdlib-only local/prototype evidence review. It records safe-query and blocked-request evidence without deploying, calling external sources, enabling hosted search, live probes, downloads, installs, uploads, local path search, accounts, telemetry, or production claims.",
+    "Search Usefulness Source Expansion v2 validation is stdlib-only and fixture-only; it checks recorded source metadata, local-index/public-search projection, audit-count movement, pending/manual external baselines, and no live calls, scraping, crawling, real binaries, download/install/upload actions, local path search, hosted search, or production relevance claims."
   ]
 }

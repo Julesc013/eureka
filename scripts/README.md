@@ -243,7 +243,7 @@ Current scripts:
 - `generate_python_oracle_golden.py`: generates or checks the Rust Parity Fixture Pack v0 Python-oracle golden outputs under `tests/parity/golden/python_oracle/v0/`; it supports `--check`, optional `--output-root`, and `--json`, normalizes unstable timestamps, local index paths, FTS mode, and generation metadata, and does not implement Rust behavior or replace Python runtime paths
 - `check_rust_source_registry_parity.py`: validates the Rust Source Registry
   Parity Catch-up v0 fixture map and isolated Rust source structure against
-  the current nine-source Python oracle shape; it supports `--json` and
+  the current 15-source Python oracle shape; it supports `--json` and
   `--require-cargo`, runs crate-local Rust source-registry tests only when
   Cargo is available, reports Cargo as skipped otherwise, and does not wire
   Rust into Python runtime, web, CLI, HTTP API, workers, or public-alpha paths
@@ -294,6 +294,11 @@ Current scripts:
   blocked-request evidence, static handoff review, public-alpha review,
   contract alignment, no hosted-search claim, and disabled live probe/download/
   install/upload/local path/telemetry posture without network calls
+- `validate_source_expansion_v2.py`: validates Search Usefulness Source
+  Expansion v2, enforcing the audit pack, selected query targets, fixture-only
+  source records, committed source-expansion fixtures, final audit counts,
+  pending/manual external baselines, and no live source/download/local-path/
+  hosted-search claims; it supports `--json` and performs no network calls
 - `public_search_smoke.py`: runs the local/prototype public search rehearsal
   smoke checks in-process against the stdlib WSGI app, covering status, search,
   query-plan, sources, source detail, HTML search, representative safe queries,

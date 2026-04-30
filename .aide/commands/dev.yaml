@@ -46,6 +46,12 @@ steps:
     run: python scripts/validate_public_search_rehearsal.py --json
   - id: public_search_rehearsal_tests
     run: python -m unittest tests.operations.test_public_search_rehearsal tests.scripts.test_validate_public_search_rehearsal tests.hardening.test_public_search_rehearsal_safety
+  - id: source_expansion_v2_validator
+    run: python scripts/validate_source_expansion_v2.py
+  - id: source_expansion_v2_validator_json
+    run: python scripts/validate_source_expansion_v2.py --json
+  - id: source_expansion_v2_tests
+    run: python -m unittest tests.operations.test_search_usefulness_source_expansion_v2 tests.scripts.test_validate_source_expansion_v2 tests.evals.test_search_usefulness_source_expansion_v2 runtime.connectors.source_expansion_recorded.tests.test_connector runtime.engine.index.tests.test_source_expansion_v2 runtime.gateway.tests.test_public_search_source_expansion_v2
   - id: public_search_demo
     run: python scripts/demo_http_api.py public-search "windows 7 apps" --limit 2
   - id: public_search_query_plan_demo
@@ -610,6 +616,7 @@ notes:
   - The native CLI proof remains bootstrap-scale and does not imply a final CLI, TUI, GUI, or packaging direction.
   - The local stdlib HTTP API proof remains bootstrap-scale and does not imply final auth, HTTPS/TLS, deployment, or durable public route semantics.
   - Public Search API Contract v0 is contract-first, Local Public Search Runtime v0 implements local/prototype backend `/search` and `/api/v1` search routes, Public Search Static Handoff v0 adds static/no-JS `site/dist` handoff outputs, and Public Search Rehearsal v0 records local safe-query and blocked-request evidence without hosted deployment, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, accounts, telemetry, or production API claims.
+  - Search Usefulness Source Expansion v2 is fixture-only: it adds six recorded fixture source families and 15 tiny metadata records to the local corpus, moving selected broad audit gaps without live calls, scraping, crawling, external observations, real binaries, download/install/upload actions, local path search, hosted search, or production relevance claims.
   - Public Search Result Card Contract v0 is contract-only. It defines future result-card semantics without making public search live, adding route handlers, enabling downloads, installs, execution, uploads, malware-safety claims, rights-clearance claims, or production ranking guarantees.
   - Public Search Safety / Abuse Guard v0 now constrains the local public search runtime and future hosted review. It defines local_index_only safety limits, forbidden parameters, disabled modes, privacy defaults, operator controls, and runtime readiness gates without adding middleware, telemetry runtime, hosted backend, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production safety claims.
   - Deterministic tests and demos use recorded GitHub Releases fixtures only; live GitHub acquisition is not required and remains deferred.

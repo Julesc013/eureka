@@ -190,6 +190,21 @@ guardrails. It does not add live source behavior, scraping, OCR engines,
 PDF/image parsing, real scans, copyrighted article text, or external baseline
 claims.
 
+Search Usefulness Source Expansion v2 is validated with:
+
+```bash
+python scripts/validate_source_expansion_v2.py
+python scripts/validate_source_expansion_v2.py --json
+python -m unittest tests.operations.test_search_usefulness_source_expansion_v2 tests.scripts.test_validate_source_expansion_v2 tests.evals.test_search_usefulness_source_expansion_v2 runtime.connectors.source_expansion_recorded.tests.test_connector runtime.engine.index.tests.test_source_expansion_v2 runtime.gateway.tests.test_public_search_source_expansion_v2
+```
+
+The validation checks the fixture-only audit pack, selected query targets,
+source inventory records, committed fixture files, local-index/public-search
+projection, final broad audit counts, pending/manual external baseline posture,
+and no-live/no-download/no-local-path guardrails. It does not add live source
+behavior, scraping, crawling, URL fetching, real binaries, arbitrary local
+ingestion, hosted search, or production relevance claims.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

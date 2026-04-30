@@ -77,6 +77,14 @@ The minimum public-alpha entry gate should include:
   blocked-request, static-handoff, public-alpha, and contract-alignment
   evidence only; no hosted backend, live probes, downloads, uploads, local path
   search, accounts, telemetry, or production claim)
+- Search Usefulness Source Expansion v2 (implemented as fixture-only source
+  coverage for the local index and public-search corpus; six recorded fixture
+  families and 15 tiny metadata records moved the broad audit from
+  `covered=5`, `partial=22`, `source_gap=26`, `capability_gap=9`, `unknown=2`
+  to `covered=5`, `partial=40`, `source_gap=10`, `capability_gap=7`,
+  `unknown=2`; no live probes, scraping, crawling, external observations,
+  downloads, uploads, local path search, hosted search, or production relevance
+  claim is added)
 - Public Search Result Card Contract v0 (implemented as contract-only future
   result-card schema, examples, audit pack, docs, validator, and tests; no live
   search route, live probe, download, install, execute, upload, malware-safety

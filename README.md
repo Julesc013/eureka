@@ -122,6 +122,18 @@ Public Search Rehearsal v0 now records local/prototype route evidence under
 blocked request cases. It does not deploy hosted search, enable live probes,
 enable downloads/installs/uploads/local paths, add accounts or telemetry, or
 claim production API stability.
+Search Usefulness Source Expansion v2 now adds fixture-only recorded metadata
+for selected source-gap families under
+`runtime/connectors/source_expansion_recorded/`,
+`control/inventory/sources/`, and
+`control/audits/search-usefulness-source-expansion-v2/`. The current
+search-usefulness audit moved from covered=5/partial=22/source_gap=26/
+capability_gap=9/unknown=2 to covered=5/partial=40/source_gap=10/
+capability_gap=7/unknown=2. The expansion remains deterministic and
+fixture-only: no live source calls, scraping, crawling, external observations,
+real binaries, downloads, installs, uploads, local path search, telemetry,
+hosted search, malware-safety claim, rights-clearance claim, or production
+relevance claim was added.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -567,6 +579,12 @@ Eureka is substantial, but it is still a prototype/reference backend:
   contract alignment without hosted deployment, live probes, downloads,
   installs, uploads, local path search, accounts, telemetry, or production
   claims.
+- Search Usefulness Source Expansion v2 is implemented as fixture-only source
+  coverage. It adds six recorded fixture source families and 15 tiny metadata
+  records, reducing source_gap from 26 to 10 and increasing partial from 22 to
+  40 without live probes, scraping, crawling, external observations, real
+  binaries, download/install/upload actions, local path search, telemetry,
+  hosted search, or production relevance claims.
 - Public Search Result Card Contract v0 is implemented as contract/governance
   only. It defines the future result card used by public search responses and
   old-client/native/relay/snapshot consumers, but it does not make search live,
@@ -666,7 +684,7 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Search Usefulness Source Expansion v2, fixture-only
+1. Search Usefulness Delta v2
 2. Source Pack Contract v0
 3. Evidence Pack Contract v0
 4. Index Pack Contract v0
