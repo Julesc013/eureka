@@ -1,15 +1,17 @@
 # Pack Import Report Format v0
 
-Pack Import Report Format v0 defines the durable report that a future
-validate-only pack import tool should emit after pack validation and before any
-future staging or review action. It is format/validation/example-only.
+Pack Import Report Format v0 defines Pack Import Report v0, the durable report
+that Validate-Only Pack Import Tool v0 emits after pack validation and before
+any future staging or review action. It is format/validation/example-only.
 
 It does not implement import. It does not stage packs. It does not mutate local
 index state, runtime source registry state, or public search. It does not
 mutate the master index. It does not upload, submit, moderate, call models,
 call networks, fetch URLs, or accept pack records as truth.
+It does not index.
 It does not mutate local index state.
 It does not mutate the master index.
+Validate-Only Pack Import Tool v0 emits Pack Import Report v0 and does not import, does not stage, does not index, does not upload, and does not mutate the master index.
 
 ## Purpose
 
@@ -173,8 +175,9 @@ authority claims.
 ## Relationships
 
 Pack Import Validator Aggregator v0 validates packs. Pack Import Report Format
-v0 records validation outcomes. A future Validate-Only Pack Import Tool v0
-should combine both by running validators and writing a report in this format.
+v0 records validation outcomes. Validate-Only Pack Import Tool v0 now combines
+both by running validators and writing a report in this format without import,
+staging, indexing, upload, runtime mutation, or master-index mutation.
 
 Typed AI Output Validator v0 can validate typed AI output candidates. A pack
 import report may record those validation results as `ai_output_bundle`, but it

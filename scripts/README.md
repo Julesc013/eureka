@@ -325,6 +325,14 @@ Current scripts:
   fields, private-path redaction, no secrets, and no positive truth/rights/
   malware authority claims; and does not import, stage, index, upload, call
   networks, call models, mutate runtime state, or mutate a master index
+- `validate_only_pack_import.py`: runs Validate-Only Pack Import Tool v0. It
+  supports repeatable `--pack-root`, `--all-examples`, `--include-ai-outputs`,
+  `--output`, `--strict`, `--list-examples`, and `--json`; delegates to the
+  existing pack validators through the aggregate validation layer; emits Pack
+  Import Report v0 JSON; redacts local absolute paths; writes only an explicit
+  report file when requested; and does not import, stage, index, upload, call
+  networks, call models, mutate runtime state, mutate public search, or mutate
+  a master index
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

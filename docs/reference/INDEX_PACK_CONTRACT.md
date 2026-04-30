@@ -11,6 +11,10 @@ This contract is validation and governance only. It does not implement index
 pack import, merge, uploads, hosted submission, live connectors, raw database
 export, executable plugins, master-index acceptance, or canonical truth
 selection.
+Validate-Only Pack Import Tool v0 may run this contract validator for an
+explicit index pack root and emit Pack Import Report v0, but that report is
+still not import, staging, indexing, upload, local index mutation, or master
+index acceptance.
 
 ## Pack Layout
 

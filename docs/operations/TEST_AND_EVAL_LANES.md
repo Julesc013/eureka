@@ -361,6 +361,23 @@ reports, pack-result statuses, issue types, next actions, redacted
 private-path failures, no secrets, no authority claims, and hard false
 import/staging/index/upload/runtime/master-index/network mutation fields.
 
+Validate-Only Pack Import Tool v0 is validated with:
+
+```bash
+python scripts/validate_only_pack_import.py --list-examples
+python scripts/validate_only_pack_import.py --all-examples
+python scripts/validate_only_pack_import.py --all-examples --json
+python -m unittest tests.operations.test_validate_only_pack_import_tool tests.scripts.test_validate_only_pack_import
+```
+
+The validation checks explicit-root and all-example validate-only preflight,
+Pack Import Report v0 generation, optional typed AI output example inclusion,
+strict unknown-type failure handling, explicit `--output` report writing, and
+hard false import/staging/index/upload/runtime/master-index/network/model
+mutation fields. It does not import, stage, index, upload, mutate runtime
+state, mutate public search, call networks, call models, or accept anything
+into the master index.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

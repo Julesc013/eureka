@@ -120,7 +120,15 @@ format under `contracts/packs/pack_import_report.v0.json`,
 results, issues, privacy/rights/risk posture, provenance, next actions, and
 hard false mutation fields without implementing import, staging, local index
 mutation, uploads, runtime mutation, model calls, or master-index mutation.
-Validate-Only Pack Import Tool v0 is the next recommended milestone.
+Validate-Only Pack Import Tool v0 is now implemented under
+`scripts/validate_only_pack_import.py`,
+`docs/operations/VALIDATE_ONLY_PACK_IMPORT.md`, and
+`control/audits/validate-only-pack-import-tool-v0/`. It validates explicit pack
+roots or known examples and emits Pack Import Report v0 without import,
+staging, indexing, upload, runtime mutation, network calls, model calls, or
+master-index mutation. Manual Observation Batch 0 Execution, human-operated,
+is now the next recommended milestone; Local Quarantine/Staging Model v0 is
+the Codex-safe planning alternative.
 
 ## Stage 3: Surface Skeletons
 

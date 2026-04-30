@@ -1,0 +1,60 @@
+{
+  "report_id": "validate-only-pack-import-tool-v0",
+  "created_by_slice": "validate_only_pack_import_tool_v0",
+  "status": "implemented_validate_only",
+  "validate_only_tool_implemented": true,
+  "import_runtime_implemented": false,
+  "staging_implemented": false,
+  "indexing_implemented": false,
+  "upload_implemented": false,
+  "runtime_mutation_implemented": false,
+  "master_index_mutation_implemented": false,
+  "network_calls_performed": false,
+  "model_calls_performed": false,
+  "hidden_state_written": false,
+  "default_mode": "all_known_examples_validate_only",
+  "supported_inputs": [
+    "explicit_pack_root",
+    "repo_example_root",
+    "typed_ai_output_examples_with_include_ai_outputs"
+  ],
+  "generated_report_schema": "pack_import_report.v0",
+  "example_run_summary": {
+    "command": "python scripts/validate_only_pack_import.py --all-examples --json",
+    "report_status": "validate_only_passed",
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "unavailable": 0,
+    "unknown_type": 0,
+    "import_performed": false,
+    "staging_performed": false,
+    "indexing_performed": false,
+    "upload_performed": false,
+    "runtime_mutation_performed": false,
+    "master_index_mutation_performed": false,
+    "network_performed": false
+  },
+  "prohibited_behaviors": [
+    "pack_import",
+    "staging",
+    "quarantine_directory_creation",
+    "local_index_mutation",
+    "runtime_source_registry_mutation",
+    "public_search_mutation",
+    "master_index_mutation",
+    "upload",
+    "submission",
+    "network_fetch",
+    "model_call",
+    "recursive_arbitrary_directory_scan",
+    "executable_plugin_loading"
+  ],
+  "next_recommended_milestone": "Manual Observation Batch 0 Execution, human-operated",
+  "codex_safe_alternative": "Local Quarantine/Staging Model v0, planning only",
+  "notes": [
+    "Validate-only success is not import, truth, rights clearance, malware safety, or master-index acceptance.",
+    "The tool writes only an explicit report file when --output is supplied.",
+    "Future staging/import work remains separate and review-gated."
+  ]
+}

@@ -1352,9 +1352,9 @@ logging runtime, telemetry, embeddings, vector search, AI extraction runtime,
 evidence-pack import, contribution-pack import, local index mutation, public
 search AI, uploads, accounts, hosted/master-index mutation, rights clearance,
 malware-safety claims, canonical truth selection, source-trust authority,
-automatic acceptance, or production AI support. The next Codex-safe milestone
-was Pack Import Report Format v0, now implemented; the current next pack-import
-milestone is Validate-Only Pack Import Tool v0.
+automatic acceptance, or production AI support. Pack Import Report Format v0
+and Validate-Only Pack Import Tool v0 are now implemented; the next
+recommended milestone is Manual Observation Batch 0 Execution, human-operated.
 
 ## ADR-123: Record Pack Validation Outcomes Before Import Tooling
 
@@ -1381,5 +1381,33 @@ mutation, upload, submission, moderation UI, accounts, identity, hosted/master
 index mutation, model calls, API keys, live fetch, external observation
 collection, executable plugin loading, downloads, installers, private cache
 sharing, rights clearance, malware-safety claims, canonical truth selection,
-or production support. The next Codex-safe milestone is Validate-Only Pack
-Import Tool v0.
+or production support. Validate-Only Pack Import Tool v0 is now implemented as
+the next validate-only step; the next recommended milestone is Manual
+Observation Batch 0 Execution, human-operated, with Local Quarantine/Staging
+Model v0 as the Codex-safe planning-only alternative.
+
+## ADR-124: Emit Pack Import Reports From Validate-Only Preflight
+
+Status: accepted
+
+Validate-Only Pack Import Tool v0 adds `scripts/validate_only_pack_import.py`,
+`docs/operations/VALIDATE_ONLY_PACK_IMPORT.md`, focused tests, and
+`control/audits/validate-only-pack-import-tool-v0/`.
+
+The decision is to make explicit-root/all-examples validation the first
+pack-import-related tool. The tool delegates to existing pack validators,
+optionally includes typed AI output examples when requested, and emits Pack
+Import Report v0 so users and maintainers can review validation status before
+any future staging, quarantine, local indexing, contribution submission, or
+master-index review path.
+
+P44 deliberately does not implement pack import runtime, staging/quarantine
+directories, source/evidence/index/contribution pack import, master-index queue
+import, local index mutation, runtime source registry mutation, public-search
+mutation, upload, submission, moderation UI, accounts, identity, hosted/master
+index mutation, model calls, API keys, live fetch, external observation
+collection, executable plugin loading, downloads, installers, private cache
+sharing, rights clearance, malware-safety claims, canonical truth selection,
+or production support. The next recommended milestone is Manual Observation
+Batch 0 Execution, human-operated; Local Quarantine/Staging Model v0 remains a
+Codex-safe planning-only alternative.

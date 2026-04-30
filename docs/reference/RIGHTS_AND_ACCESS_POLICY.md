@@ -50,6 +50,11 @@ executable download surface, and does not mirror software artifacts in v0.
   structurally validated, but they must not claim rights clearance, malware
   safety, canonical truth, public-search eligibility, or master-index
   acceptance.
+- Validate-Only Pack Import Tool v0 carries this posture into the first
+  preflight tool. A Pack Import Report v0 can record validation status for
+  explicit roots and known examples, but report success is not import, rights
+  clearance, malware safety, canonical truth, upload, or master-index
+  acceptance.
 - AI Provider Contract v0 carries this posture into future AI assistance.
   Model output is not rights clearance, artifact distribution permission,
   malware safety, canonical truth, source trust, or accepted-public authority.

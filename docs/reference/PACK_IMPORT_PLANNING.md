@@ -86,6 +86,21 @@ upload or submit anything.
 It does not mutate local index state.
 It does not mutate the master index.
 
+Validate-Only Pack Import Tool v0 is now implemented:
+
+```bash
+python scripts/validate_only_pack_import.py --list-examples
+python scripts/validate_only_pack_import.py --all-examples --json
+```
+
+It validates explicit pack roots or known examples, emits Pack Import Report
+v0, and does not import, does not stage, does not index, does not upload, does
+not mutate local indexes, does not mutate runtime state, and does not mutate
+the master index. Local quarantine/staging and local index candidate import
+remain future milestones.
+
+Validate-Only Pack Import Tool v0 emits Pack Import Report v0 and does not import, does not stage, does not index, does not upload, and does not mutate the master index.
+
 AI Provider Contract v0 is separate from pack import. Typed AI outputs may
 later help draft pack/contribution candidates. Typed AI Output Validator v0 now
 validates those outputs through `scripts/validate_ai_output.py` before any

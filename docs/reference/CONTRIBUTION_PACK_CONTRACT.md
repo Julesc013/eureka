@@ -11,6 +11,10 @@ contribution upload, source/evidence/index pack import, moderation UI, accounts,
 identity, master-index review queue runtime, live connectors, downloads,
 installers, executable plugins, automatic acceptance, or production extension
 support.
+Validate-Only Pack Import Tool v0 may run this contract validator for an
+explicit contribution pack root and emit Pack Import Report v0, but that report
+is still not import, staging, upload, moderation, automatic acceptance, or
+master index acceptance.
 
 ## Pack Layout
 

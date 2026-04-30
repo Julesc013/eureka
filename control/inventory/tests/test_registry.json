@@ -3349,6 +3349,69 @@
       "failure_means": "Pack import report CLI behavior, JSON output, examples, docs, negative validation cases, or no-mutation flags regressed.",
       "advisory_or_required": "required",
       "notes": "Covers example report parsing, no import/staging/index/upload/runtime/master-index mutation, unknown pack type reporting, redacted private-path failures, secret rejection, unsupported next actions, and success/failure consistency."
+    },
+    {
+      "test_id": "validate-only-pack-import-tool-v0",
+      "label": "Validate-only pack import tool",
+      "command": "python scripts/validate_only_pack_import.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only unless --output explicitly names an existing-parent report path",
+      "expected_runtime": "seconds",
+      "failure_means": "Validate-only preflight, report generation, hard mutation-safety fields, or known example pack validation regressed.",
+      "advisory_or_required": "required",
+      "notes": "Delegates to existing pack validators and emits Pack Import Report v0; it does not import, stage, index, upload, call networks, call models, mutate runtime state, mutate public search, or mutate a master index."
+    },
+    {
+      "test_id": "validate_only_pack_import_tool_examples",
+      "label": "Validate-only pack import example listing",
+      "command": "python scripts/validate_only_pack_import.py --list-examples",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Known example pack registry discovery for validate-only import preflight regressed.",
+      "advisory_or_required": "required",
+      "notes": "Lists only known examples from the registry; it does not recursively scan arbitrary directories or mutate state."
+    },
+    {
+      "test_id": "validate_only_pack_import_tool_tests",
+      "label": "Validate-only pack import tool tests",
+      "command": "python -m unittest tests.operations.test_validate_only_pack_import_tool tests.scripts.test_validate_only_pack_import",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary directories only for explicit --output and negative root cases",
+      "expected_runtime": "seconds",
+      "failure_means": "Validate-only CLI behavior, JSON report generation, explicit output behavior, unknown-root handling, docs, audit pack, or metadata regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers all-examples, explicit pack roots, optional AI output examples, report validation, hard false mutation fields, strict unknown-type failure, and no staging/import/index/upload side effects."
     }
   ]
 }

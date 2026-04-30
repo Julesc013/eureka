@@ -152,7 +152,10 @@
         "typed_ai_output_validator_tests",
         "typed_ai_output_validator",
         "pack_import_report_format_tests",
-        "pack_import_report_validator"
+        "pack_import_report_validator",
+        "validate_only_pack_import_tool_examples",
+        "validate-only-pack-import-tool-v0",
+        "validate_only_pack_import_tool_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -300,7 +303,10 @@
         "typed_ai_output_validator_tests",
         "typed_ai_output_validator",
         "pack_import_report_format_tests",
-        "pack_import_report_validator"
+        "pack_import_report_validator",
+        "validate_only_pack_import_tool_examples",
+        "validate-only-pack-import-tool-v0",
+        "validate_only_pack_import_tool_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -420,7 +426,10 @@
         "typed_ai_output_validator_tests",
         "typed_ai_output_validator",
         "pack_import_report_format_tests",
-        "pack_import_report_validator"
+        "pack_import_report_validator",
+        "validate_only_pack_import_tool_examples",
+        "validate-only-pack-import-tool-v0",
+        "validate_only_pack_import_tool_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -630,7 +639,10 @@
         "typed_ai_output_validator_tests",
         "typed_ai_output_validator",
         "pack_import_report_format_tests",
-        "pack_import_report_validator"
+        "pack_import_report_validator",
+        "validate_only_pack_import_tool_examples",
+        "validate-only-pack-import-tool-v0",
+        "validate_only_pack_import_tool_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -674,6 +686,7 @@
     "Public Search Static Handoff v0 validation is stdlib-only static publication verification; it adds no backend hosting, fake hosted URL, live probes, downloads, installs, uploads, local path search, telemetry, JavaScript requirement, or production claim.",
     "Public Search Rehearsal v0 validation is stdlib-only local/prototype evidence review. It records safe-query and blocked-request evidence without deploying, calling external sources, enabling hosted search, live probes, downloads, installs, uploads, local path search, accounts, telemetry, or production claims.",
     "Search Usefulness Source Expansion v2 validation is stdlib-only and fixture-only; it checks recorded source metadata, local-index/public-search projection, audit-count movement, pending/manual external baselines, and no live calls, scraping, crawling, real binaries, download/install/upload actions, local path search, hosted search, or production relevance claims.",
-    "Search Usefulness Delta v2 validation is stdlib-only and audit-only; it checks P32 baseline provenance, current audit counts, status deltas, selected query movement, source-family impact, hard-eval/public-search status, pending/manual external baselines, remaining gaps, and no unsupported superiority claims."
+    "Search Usefulness Delta v2 validation is stdlib-only and audit-only; it checks P32 baseline provenance, current audit counts, status deltas, selected query movement, source-family impact, hard-eval/public-search status, pending/manual external baselines, remaining gaps, and no unsupported superiority claims.",
+    "Validate-Only Pack Import Tool v0 validates explicit pack roots or known examples and emits Pack Import Report v0 without import, staging, indexing, uploads, network calls, model calls, runtime mutation, public-search mutation, or master-index mutation."
   ]
 }

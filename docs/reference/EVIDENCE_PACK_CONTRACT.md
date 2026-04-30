@@ -10,6 +10,10 @@ This contract is validation and governance only. It does not implement evidence
 pack import, indexing, uploads, hosted submission, live connectors, downloads,
 installers, executable plugins, master-index acceptance, or canonical truth
 selection.
+Validate-Only Pack Import Tool v0 may run this contract validator for an
+explicit evidence pack root and emit Pack Import Report v0, but that report is
+still not import, staging, indexing, upload, canonical truth selection, or
+master index acceptance.
 
 ## Pack Layout
 

@@ -213,6 +213,11 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   validate-only tooling path without implementing import, staging, indexing,
   upload, runtime mutation, model calls, network behavior, or master-index
   mutation.
+- `validate-only-pack-import-tool-v0/`: validate-only tooling audit pack for
+  the first report-producing pack import preflight. It records command usage,
+  report generation, example run results, and no-mutation posture without
+  implementing import, staging, indexing, uploads, runtime mutation, network
+  calls, model calls, or master-index mutation.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

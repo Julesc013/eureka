@@ -35,6 +35,12 @@ entries. Queue entries do not grant local filesystem access and cannot convert
 private cache records into accepted public records without separate privacy
 review.
 
+Validate-Only Pack Import Tool v0 preserves this boundary by reading only
+explicit pack roots or known examples, redacting local absolute paths in
+reports where possible, writing only an explicit report file when requested,
+and not creating staging, import, cache, local index, upload, or master index
+state.
+
 Private cache is future explicit user state. It may later hold user-selected
 artifacts, preferences, local strategy notes, private resolution memory, or
 native-client working state. Private cache is disabled by default and requires

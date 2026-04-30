@@ -13,6 +13,10 @@ Typed AI Output Validator v0 adds offline typed output validation through
 `scripts/validate_ai_output.py`. This is validation-only: it does not load a
 provider, call a model, import evidence, create contribution records, mutate
 local search, mutate a local index, upload, submit, or write a master index.
+Validate-Only Pack Import Tool v0 can include the committed typed AI output
+examples in a Pack Import Report v0 when `--include-ai-outputs` is explicitly
+provided. That report does not accept AI output as evidence, import it into a
+contribution pack, mutate search, call a model, or write the master index.
 
 ## Output Envelope
 

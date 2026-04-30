@@ -232,6 +232,13 @@ v0 now adds `contracts/packs/pack_import_report.v0.json`,
 report envelope for pack validation outcomes. It does not implement import,
 staging, indexing, uploads, runtime mutation, model calls, network behavior, or
 master-index mutation.
+Validate-Only Pack Import Tool v0 now adds
+`scripts/validate_only_pack_import.py`,
+`docs/operations/VALIDATE_ONLY_PACK_IMPORT.md`, and
+`control/audits/validate-only-pack-import-tool-v0/`. It validates explicit pack
+roots or known examples, emits Pack Import Report v0, and does not import,
+stage, index, upload, call networks, call models, mutate runtime state, mutate
+public search, or mutate the master index.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -782,11 +789,12 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Validate-Only Pack Import Tool v0
-2. Manual Observation Batch 0 Execution, human-operated
-3. Search Usefulness Baseline Comparison Report v0 after observations
-4. IA Metadata Live Probe Approval Pack v0 only after explicit approval
-5. Public Hosted Search Rehearsal Plan v0
+1. Manual Observation Batch 0 Execution, human-operated
+2. Search Usefulness Baseline Comparison Report v0 after observations
+3. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+4. Public Hosted Search Rehearsal Plan v0
+5. Local Quarantine/Staging Model v0, planning only, as a Codex-safe
+   alternative
 6. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

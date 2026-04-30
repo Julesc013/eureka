@@ -492,8 +492,17 @@
         "CTEA-BEHAVIOR-001"
       ],
       "title": "Define a durable validate-only pack import report before any import or staging tooling",
-      "status": "addressed_by_pack_import_report_format_v0",
-      "suggested_milestone": "Validate-Only Pack Import Tool v0"
+      "status": "addressed_by_validate_only_pack_import_tool_v0",
+      "suggested_milestone": "Manual Observation Batch 0 Execution, human-operated"
+    },
+    {
+      "id": "audit-backlog-validate-only-pack-import-tool",
+      "finding_refs": [
+        "validate-only-pack-import-tool-v0"
+      ],
+      "title": "Review validate-only pack import reports before staging or local indexing exists",
+      "status": "open_follow_up",
+      "suggested_milestone": "Local Quarantine/Staging Model v0, planning only"
     }
   ]
 }

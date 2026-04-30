@@ -6,6 +6,10 @@ index. It is contract, validation, and synthetic example work only. It does not
 implement uploads, imports, moderation UI, accounts, hosted master-index
 services, master-index writes, live probes, or automatic acceptance.
 In plain terms: this contract does not implement uploads or hosted intake.
+Validate-Only Pack Import Tool v0 may validate a synthetic or explicit review
+queue root and emit Pack Import Report v0, but that report does not import,
+stage, index, upload, mutate runtime state, mutate the master index, or accept
+any contribution.
 
 Contribution packs remain review candidates, not truth. Queue entries and
 decisions preserve provenance, uncertainty, conflicts, and review posture before

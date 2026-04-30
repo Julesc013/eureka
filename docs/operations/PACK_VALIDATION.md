@@ -122,10 +122,19 @@ does not upload or submit anything.
 It does not mutate local index state.
 It does not mutate the master index.
 
-A future Validate-Only Pack Import Tool v0 should combine aggregate validation
-with this report format. Actual import, staging, local index candidate
-handling, contribution queue export, hosted submission, and master-index review
-remain separate future milestones.
+Validate-Only Pack Import Tool v0 is implemented as the first report-producing
+preflight:
+
+```bash
+python scripts/validate_only_pack_import.py --list-examples
+python scripts/validate_only_pack_import.py --all-examples --json
+```
+
+It emits Pack Import Report v0 JSON for explicit roots or known examples. It
+does not import, does not stage, does not index, does not upload, and does not
+mutate runtime state, local indexes, public search, or the master index.
+Actual staging, local index candidate handling, contribution queue export,
+hosted submission, and master-index review remain separate future milestones.
 
 AI Provider Contract v0 is validated separately with
 `python scripts/validate_ai_provider_contract.py`. AI providers are not source,

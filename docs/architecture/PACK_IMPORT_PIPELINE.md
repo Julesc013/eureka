@@ -42,6 +42,21 @@ submit anything.
 It does not mutate local index state.
 It does not mutate the master index.
 
+Validate-Only Pack Import Tool v0 implements the first report-producing
+pipeline command:
+
+```bash
+python scripts/validate_only_pack_import.py --all-examples --json
+```
+
+It validates explicit pack roots or known examples and emits Pack Import
+Report v0. It does not import, does not stage, does not index, does not upload,
+does not mutate runtime state, does not mutate public search, and does not
+mutate the master index. It writes only an explicit report file when
+`--output` is supplied.
+
+Validate-Only Pack Import Tool v0 emits Pack Import Report v0 and does not import, does not stage, does not index, does not upload, and does not mutate the master index.
+
 AI Provider Contract v0 is adjacent but not part of import runtime. Future AI
 outputs can be validated as typed suggestions through
 `scripts/validate_ai_output.py` before they draft contributions, but the import

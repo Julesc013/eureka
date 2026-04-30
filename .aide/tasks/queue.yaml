@@ -127,7 +127,7 @@
       "title": "Manual Observation Batch 0",
       "status": "completed",
       "priority": 18,
-      "notes": "Selected 13 high-value query IDs and created 39 pending batch-scoped slots across Google web search, Internet Archive metadata search, and Internet Archive full-text/OCR search without performing observations."
+      "notes": "Immediate human-operated next milestone after Validate-Only Pack Import Tool v0. Fill selected Batch 0 observation records manually; no scraping, automated querying, APIs, live probes, or fabricated baselines."
     },
     {
       "id": "manual_observation_entry_helper_v0",
@@ -531,9 +531,9 @@
     {
       "id": "validate_only_pack_import_tool_v0",
       "title": "Validate-Only Pack Import Tool v0",
-      "status": "recommended_follow_up",
+      "status": "completed",
       "priority": 76,
-      "notes": "Immediate next milestone. Future validate-only local tool after the aggregator and report format. It may emit pack_import_report.v0 reports but must not stage, index, mutate canonical records, upload, fetch, call models, or submit anything."
+      "notes": "Implemented validate-only pack import preflight tooling. The tool validates explicit pack roots or known examples, optionally includes typed AI output examples, delegates to existing validators, emits Pack Import Report v0, and adds no import runtime, staging, indexing, uploads, network calls, model calls, runtime mutation, public-search mutation, or master-index mutation."
     },
     {
       "id": "ai_assisted_evidence_drafting_plan_v0",
@@ -568,7 +568,7 @@
       "title": "Local Quarantine/Staging Model v0",
       "status": "recommended_follow_up",
       "priority": 81,
-      "notes": "Future local private staging design after validate-only tooling. Do not create public staging, mutate local search/index, scan arbitrary directories, or leak private paths."
+      "notes": "Codex-safe alternative follow-up as planning only after validate-only tooling. Do not create runtime staging directories, public staging, local search/index mutation, arbitrary directory scanning, uploads, or private-path leakage."
     },
     {
       "id": "staged_pack_inspector_v0",

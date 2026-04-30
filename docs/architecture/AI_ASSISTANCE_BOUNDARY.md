@@ -62,6 +62,10 @@ secret leakage, and short generated text.
 Pack Import Report Format v0 may later record typed AI output validation
 results beside pack validation outcomes. A report is still not AI acceptance,
 evidence acceptance, contribution import, or master-index review.
+Validate-Only Pack Import Tool v0 implements that reporting handoff for
+committed typed AI output examples only when `--include-ai-outputs` is
+explicitly supplied. It still does not call models, load providers, import AI
+outputs, mutate public search, or mutate the master index.
 
 ## Public Search Boundary
 

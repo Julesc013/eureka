@@ -9,6 +9,9 @@ filesystem access, executable plugin authority, or master-index acceptance.
 This contract is validation and governance only. It does not implement source
 pack import, local indexing, uploads, hosted submission, live connectors,
 downloads, installers, executable plugins, or public master-index acceptance.
+Validate-Only Pack Import Tool v0 may run this contract validator for an
+explicit source pack root and emit Pack Import Report v0, but that report is
+still not import, staging, indexing, upload, or master index acceptance.
 
 ## Pack Layout
 
