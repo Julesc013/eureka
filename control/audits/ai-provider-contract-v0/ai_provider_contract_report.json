@@ -1,0 +1,70 @@
+{
+  "report_id": "ai_provider_contract_v0",
+  "created_by_slice": "ai_provider_contract_v0",
+  "status": "implemented_contract_validation_example_only",
+  "contracts": [
+    "contracts/ai/ai_provider_manifest.v0.json",
+    "contracts/ai/typed_ai_output.v0.json",
+    "contracts/ai/ai_task_request.v0.json"
+  ],
+  "inventory": [
+    "control/inventory/ai_providers/ai_provider_policy.json",
+    "control/inventory/ai_providers/example_ai_providers.json"
+  ],
+  "example_provider_root": "examples/ai_providers/disabled_stub_provider_v0",
+  "validator": {
+    "path": "scripts/validate_ai_provider_contract.py",
+    "status": "valid",
+    "stdlib_only": true,
+    "performs_model_calls": false,
+    "performs_network": false,
+    "performs_runtime_provider_loading": false,
+    "performs_public_search_ai": false,
+    "performs_telemetry": false,
+    "stores_credentials": false
+  },
+  "provider_defaults": {
+    "default_enabled": false,
+    "private_data_allowed_by_default": false,
+    "telemetry_enabled_by_default": false,
+    "prompt_logging_enabled_by_default": false,
+    "output_logging_enabled_by_default": false,
+    "remote_providers_require_credentials_and_approval": true
+  },
+  "typed_output_policy": {
+    "outputs_are_suggestions_or_candidates": true,
+    "required_review": true,
+    "prohibited_uses": [
+      "canonical_truth",
+      "rights_clearance",
+      "malware_safety",
+      "automatic_acceptance"
+    ],
+    "canonical_truth_authority": false,
+    "rights_clearance_authority": false,
+    "malware_safety_authority": false,
+    "automatic_acceptance_authority": false
+  },
+  "example_validation_result": {
+    "provider_id": "example.disabled_stub_provider_v0",
+    "typed_output_count": 2,
+    "status": "valid"
+  },
+  "public_search_impact": {
+    "ai_enabled_in_public_search": false,
+    "public_search_mode_changed": false,
+    "local_index_mutation": false
+  },
+  "master_index_impact": {
+    "master_index_mutation": false,
+    "review_queue_runtime": false,
+    "automatic_acceptance": false
+  },
+  "next_recommended_milestone": "Typed AI Output Validator v0",
+  "alternative_next_milestone": "Pack Import Report Format v0",
+  "notes": [
+    "AI Provider Contract v0 is contract/validation/example-only.",
+    "The disabled stub provider is synthetic and non-operational.",
+    "No API keys, model calls, prompt logging runtime, telemetry, public-search AI, or production AI support were added."
+  ]
+}

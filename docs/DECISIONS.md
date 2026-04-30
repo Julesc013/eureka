@@ -1296,3 +1296,34 @@ installers, private cache sharing, rights clearance, malware-safety claims,
 canonical truth selection, or production extension support. The next
 Codex-safe milestone is AI Provider Contract v0; Pack Import Report Format v0
 remains the next pack-import-specific milestone.
+
+## ADR-121: Define AI Providers Before AI Runtime
+
+Status: accepted
+
+AI Provider Contract v0 adds `contracts/ai/`,
+`control/inventory/ai_providers/`,
+`examples/ai_providers/disabled_stub_provider_v0/`,
+`docs/reference/AI_PROVIDER_CONTRACT.md`,
+`docs/reference/TYPED_AI_OUTPUT_CONTRACT.md`,
+`docs/architecture/AI_ASSISTANCE_BOUNDARY.md`,
+`scripts/validate_ai_provider_contract.py`, focused tests, and
+`control/audits/ai-provider-contract-v0/`.
+
+The decision is to define provider manifests, future task requests, and typed
+AI output envelopes before any model runtime exists. Providers are disabled by
+default. Remote providers require future explicit credentials and approval.
+Private data, telemetry, prompt logging, output logging, cache runtime, local
+filesystem access, and live source access are disabled by default. AI output is
+a suggestion or review candidate, not truth.
+
+P41 deliberately does not implement model calls, OpenAI/Anthropic/Ollama/LM
+Studio calls, local model execution, browser AI, provider runtime loading,
+API keys, credential storage, prompt logging runtime, telemetry, embeddings,
+vector search, LLM reranking, AI extraction runtime, AI in public search,
+AI-generated evidence acceptance, local index mutation, uploads, accounts,
+hosted/master-index mutation, rights clearance, malware-safety claims,
+canonical truth selection, source-trust authority, automatic identity merge,
+automatic acceptance, or production AI support. The next Codex-safe milestone
+is Typed AI Output Validator v0; Pack Import Report Format v0 remains the next
+pack-import-specific milestone.

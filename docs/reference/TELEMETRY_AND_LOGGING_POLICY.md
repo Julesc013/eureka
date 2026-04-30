@@ -34,6 +34,11 @@ and avoid uploading anything automatically.
 No clean/safe executable verdict, malware scan result, rights clearance, or
 production readiness statement may be inferred from logs or diagnostics.
 
+AI Provider Contract v0 keeps prompt logging, output logging, telemetry, and
+external log upload disabled by default. No AI prompt log runtime, model-call
+log runtime, provider telemetry, analytics, or remote diagnostics upload is
+implemented.
+
 ## Credentials And Accounts
 
 No account system exists. No credential store exists. Source credentials,

@@ -162,6 +162,12 @@ tooling exists. Native clients must not scan arbitrary directories, expose
 private staged packs through public surfaces, mutate local public search by
 default, or submit staged packs to a master index without separate review.
 
+AI Provider Contract v0 says future native clients may describe local or native
+model providers only as disabled-by-default manifests until a separate runtime
+milestone exists. Native clients must not send private data to model providers,
+store credentials, log prompts, enable telemetry, or treat AI output as truth
+without explicit future policy and review.
+
 ## Versioning Expectations
 
 Native clients must check schema/version fields before interpreting data. If a

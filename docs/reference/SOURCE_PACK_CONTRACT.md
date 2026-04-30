@@ -232,8 +232,11 @@ Snapshots, native clients, and relay clients may eventually consume
 public-safe source-pack summaries through their own contracts. Source Pack v0
 does not implement those consumers.
 
-AI provider packs are future and separate. A source pack is not an AI prompt,
-agent, executable plugin, or model provider configuration.
+AI Provider Contract v0 is now separate from source packs. A source pack is not
+an AI prompt, agent, executable plugin, or model provider configuration. Future
+AI outputs may draft source-record candidates only as typed suggestions that
+require evidence links and review; they cannot bypass source-pack validation or
+canonical source-registry governance.
 
 ## Out Of Scope
 

@@ -212,6 +212,12 @@ through `python scripts/validate_pack_set.py --all-examples` or an explicit
 `validate_contribution_pack.py` and does not upload, import, moderate, accept,
 or submit contribution records.
 
+AI Provider Contract v0 defines a future source of typed suggestions for
+contribution drafts. AI output remains a candidate, not truth. A contribution
+pack may later reference typed AI output only after output validation, evidence
+linking where possible, and review policy are in place; AI cannot trigger
+automatic acceptance or master-index mutation.
+
 ## Not Implemented
 
 Contribution Pack Contract v0 does not implement contribution upload, source

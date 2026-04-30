@@ -321,6 +321,20 @@ index/contribution/master-index review queue examples, explicit one-pack
 validation, unknown-type handling, unavailable-validator reporting, JSON output,
 and no mutation/import/staging/indexing/network side effects.
 
+AI Provider Contract v0 is validated with:
+
+```bash
+python scripts/validate_ai_provider_contract.py
+python scripts/validate_ai_provider_contract.py --json
+python -m unittest tests.operations.test_ai_provider_contract tests.scripts.test_validate_ai_provider_contract
+```
+
+The validation checks AI schemas, provider inventory, disabled stub example,
+typed output examples, checksums, disabled-by-default provider posture,
+privacy/credential/logging defaults, required review, forbidden truth/rights/
+malware/auto-acceptance uses, no API keys/secrets, no model calls, and no AI
+runtime/public-search/master-index mutation claims.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

@@ -302,6 +302,14 @@ Current scripts:
   reports passed/failed/unavailable/unknown_type status. It does not import,
   stage, index, upload, submit, mutate a master index, fetch, scrape, crawl, or
   contact a network
+- `validate_ai_provider_contract.py`: validates AI Provider Contract v0
+  schemas, AI provider policy inventory, the disabled stub provider example,
+  typed output examples, checksums, default-disabled posture,
+  privacy/credential/logging/cache rules, forbidden tasks and prohibited uses,
+  no API keys/secrets, and no AI runtime path. It supports `--provider-root`,
+  `--strict`, and `--json`; it does not call models, load providers, open
+  network connections, store credentials, emit telemetry, enable public-search
+  AI, mutate local indexes, or mutate a master index
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

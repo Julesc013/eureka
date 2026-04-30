@@ -209,6 +209,19 @@ one offline command and reports pass/fail/unavailable/unknown-type status, but
 it does not implement import, staging, local index mutation, uploads,
 submissions, hosted/master-index mutation, rights clearance, malware safety,
 canonical truth, or production extension support.
+AI Provider Contract v0 now adds `contracts/ai/`,
+`control/inventory/ai_providers/`,
+`examples/ai_providers/disabled_stub_provider_v0/`,
+`docs/reference/AI_PROVIDER_CONTRACT.md`,
+`docs/reference/TYPED_AI_OUTPUT_CONTRACT.md`,
+`docs/architecture/AI_ASSISTANCE_BOUNDARY.md`, and
+`control/audits/ai-provider-contract-v0/`. It defines disabled-by-default
+provider manifests, future task requests, typed AI output envelopes, privacy,
+credential, logging, evidence-linking, and review policy, plus a validator and
+tests. It does not implement model calls, runtime provider loading, API keys,
+credential storage, telemetry, embeddings, vector search, LLM reranking, AI in
+public search, AI-generated evidence acceptance, local index mutation, or
+master-index mutation.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -759,7 +772,7 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. AI Provider Contract v0
+1. Typed AI Output Validator v0
 2. Pack Import Report Format v0
 3. Validate-Only Pack Import Tool v0
 4. Manual Observation Batch 0 Execution, human-operated

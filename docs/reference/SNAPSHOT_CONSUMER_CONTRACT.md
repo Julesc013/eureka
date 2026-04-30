@@ -244,6 +244,11 @@ and local. Snapshots may include pack-derived records only after separate
 review/publication milestones; validate-only or quarantined packs must not
 change snapshot contents by default.
 
+AI Provider Contract v0 keeps AI output out of snapshots by default. Future
+snapshots may include AI-derived public records only after typed output
+validation, evidence review, provenance retention, and master-index/publication
+review; model output alone is not snapshot truth.
+
 ## Not Implemented
 
 This contract does not implement:

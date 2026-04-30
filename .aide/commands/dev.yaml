@@ -112,6 +112,14 @@ steps:
     run: python scripts/validate_pack_set.py --all-examples --json
   - id: pack_set_validation_tests
     run: python -m unittest tests.operations.test_pack_import_validator_aggregator tests.scripts.test_validate_pack_set
+  - id: ai_provider_contract_validator
+    run: python scripts/validate_ai_provider_contract.py
+  - id: ai_provider_contract_validator_json
+    run: python scripts/validate_ai_provider_contract.py --json
+  - id: ai_provider_contract_validator_strict
+    run: python scripts/validate_ai_provider_contract.py --strict
+  - id: ai_provider_contract_tests
+    run: python -m unittest tests.operations.test_ai_provider_contract tests.scripts.test_validate_ai_provider_contract
   - id: public_search_demo
     run: python scripts/demo_http_api.py public-search "windows 7 apps" --limit 2
   - id: public_search_query_plan_demo

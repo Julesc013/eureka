@@ -192,6 +192,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   pipeline relationship without implementing import, staging, local index
   mutation, uploads, hosted/master-index mutation, automatic acceptance,
   rights-clearance claims, malware-safety claims, or canonical-truth claims.
+- `ai-provider-contract-v0/`: contract/validation/example-only audit pack for
+  future optional AI providers. It records provider manifests, task request and
+  typed output contracts, disabled stub example review, privacy/credential/
+  logging policy, evidence/review policy, forbidden uses, and next steps
+  without implementing model calls, provider runtime loading, API keys,
+  credential storage, telemetry, AI in public search, AI-generated evidence
+  acceptance, local index mutation, or master-index mutation.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

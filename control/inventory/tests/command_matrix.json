@@ -146,7 +146,9 @@
         "pack_import_planning_tests",
         "pack_import_planning_validator",
         "pack_set_validation_tests",
-        "pack_set_validator"
+        "pack_set_validator",
+        "ai_provider_contract_tests",
+        "ai_provider_contract_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -288,7 +290,9 @@
         "pack_import_planning_tests",
         "pack_import_planning_validator",
         "pack_set_validation_tests",
-        "pack_set_validator"
+        "pack_set_validator",
+        "ai_provider_contract_tests",
+        "ai_provider_contract_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -402,7 +406,9 @@
         "pack_import_planning_tests",
         "pack_import_planning_validator",
         "pack_set_validation_tests",
-        "pack_set_validator"
+        "pack_set_validator",
+        "ai_provider_contract_tests",
+        "ai_provider_contract_validator"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -606,7 +612,9 @@
         "pack_import_planning_tests",
         "pack_import_planning_validator",
         "pack_set_validation_tests",
-        "pack_set_validator"
+        "pack_set_validator",
+        "ai_provider_contract_tests",
+        "ai_provider_contract_validator"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",

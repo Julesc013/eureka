@@ -110,3 +110,9 @@ validate-only import tool. A later import report format may reuse this output,
 but actual import, staging, local index candidate handling, contribution queue
 export, hosted submission, and master-index review remain separate future
 milestones.
+
+AI Provider Contract v0 is validated separately with
+`python scripts/validate_ai_provider_contract.py`. AI providers are not source,
+evidence, index, contribution, or review-queue packs. AI outputs may later help
+draft candidates only as typed, review-required suggestions; validation is not
+truth, rights clearance, malware safety, or acceptance.

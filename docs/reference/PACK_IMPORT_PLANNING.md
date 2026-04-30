@@ -70,6 +70,11 @@ known examples or one explicit root, reports pass/fail/unavailable/unknown
 type, and still does not import, stage, index, upload, submit, or mutate a
 master index.
 
+AI Provider Contract v0 is separate from pack import. Typed AI outputs may
+later help draft pack/contribution candidates, but pack import remains
+validate-only first and cannot treat AI output as truth, rights clearance,
+malware safety, source trust, or automatic acceptance.
+
 ## Privacy, Rights, And Risk
 
 Future import must detect private paths, credentials, `local_private` versus

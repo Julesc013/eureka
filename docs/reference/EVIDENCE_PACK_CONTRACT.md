@@ -188,6 +188,12 @@ through `python scripts/validate_pack_set.py --all-examples` or an explicit
 `--pack-root`. Aggregated validation delegates to `validate_evidence_pack.py`
 and does not import, stage, index, upload, or make evidence canonical.
 
+AI Provider Contract v0 is separate from evidence packs. AI output is not
+evidence truth. Future AI output may draft evidence candidates only when typed,
+validated, linked to source/evidence references where possible, and reviewed.
+It cannot bypass evidence-pack validation, rights/privacy checks, contribution
+review, or master-index review.
+
 ## Not Implemented
 
 Evidence Pack Contract v0 does not implement evidence pack import, local or

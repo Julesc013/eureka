@@ -431,6 +431,18 @@ status. It adds no import runtime, staging directories, local index mutation,
 uploads, submissions, hosted/master-index mutation, automatic acceptance,
 network calls, rights-clearance claim, malware-safety claim, canonical truth
 claim, or production extension behavior.
+AI Provider Contract v0 is now implemented as contract/validation/example-only
+work under `contracts/ai/`, `control/inventory/ai_providers/`,
+`examples/ai_providers/disabled_stub_provider_v0/`,
+`docs/reference/AI_PROVIDER_CONTRACT.md`,
+`docs/reference/TYPED_AI_OUTPUT_CONTRACT.md`,
+`docs/architecture/AI_ASSISTANCE_BOUNDARY.md`, and
+`control/audits/ai-provider-contract-v0/`. It defines disabled-by-default
+provider manifests, task request contracts, typed output contracts, privacy,
+credential, logging, cache, evidence-linking, and human-review policies. It
+adds no model calls, API keys, credential storage, prompt logging runtime,
+telemetry, AI provider runtime, public-search AI, AI evidence acceptance, local
+index mutation, or master-index mutation.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -661,7 +673,7 @@ local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. AI Provider Contract v0
+1. Typed AI Output Validator v0
 2. Pack Import Report Format v0
 3. Validate-Only Pack Import Tool v0
 4. Local Quarantine/Staging Model v0

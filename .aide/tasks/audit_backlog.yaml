@@ -472,6 +472,17 @@
       "title": "Define governed public search safety, abuse, privacy, and operator guardrails before runtime work",
       "status": "addressed_by_public_search_safety_abuse_guard_v0_local_public_search_runtime_v0_static_handoff_v0_and_rehearsal_v0",
       "suggested_milestone": "Source/Evidence/Index Pack Import Planning v0"
+    },
+    {
+      "id": "audit-backlog-ai-provider-contract",
+      "finding_refs": [
+        "CTEA-DOCS-001",
+        "CTEA-TEST-002",
+        "CTEA-BEHAVIOR-001"
+      ],
+      "title": "Define disabled-by-default AI provider and typed output boundaries before any AI runtime or evidence drafting work",
+      "status": "addressed_by_ai_provider_contract_v0",
+      "suggested_milestone": "Typed AI Output Validator v0"
     }
   ]
 }

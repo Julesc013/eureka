@@ -135,6 +135,11 @@ by default. Relay surfaces must not expose private staged packs, import
 reports, local paths, or local quarantine contents unless a later reviewed
 public output explicitly allows it.
 
+AI Provider Contract v0 keeps AI providers and outputs out of relay surfaces by
+default. Relay must not expose private prompts, provider credentials, model
+logs, unreviewed AI suggestions, or AI-generated trust/rights/malware decisions
+to old or insecure clients.
+
 ## Versioning
 
 The v0 relay contract is experimental. Future implementations must keep the

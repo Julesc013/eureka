@@ -14,3 +14,10 @@ future review queue manifests, entries, and decisions. It is contract and
 validation only; it does not implement queue runtime, uploads, accounts,
 moderation UI, hosted master-index writes, live connectors, or automatic
 acceptance.
+
+`contracts/ai/` defines AI Provider Contract v0 for future optional provider
+manifests, task requests, and typed AI output envelopes. It is contract and
+validation only; it does not implement model calls, runtime provider loading,
+API keys, credential storage, telemetry, embeddings, vector search, LLM
+reranking, AI in public search, AI-generated evidence acceptance, or
+master-index mutation.

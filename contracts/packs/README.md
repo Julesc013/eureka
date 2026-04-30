@@ -45,3 +45,8 @@ python scripts/validate_pack_set.py --all-examples
 
 The aggregate command delegates to the individual validators and does not
 import, stage, index, upload, or accept packs.
+
+AI Provider Contract v0 lives under `contracts/ai/`, not `contracts/packs/`.
+AI outputs may later draft pack or contribution candidates only as typed,
+review-required suggestions; they are not pack truth, rights clearance, malware
+safety, or automatic acceptance.

@@ -310,12 +310,13 @@ The next backend sequence is:
 81. Master Index Review Queue Contract v0 (implemented as contract/validation/example-only queue governance, synthetic defer-decision example queue, schemas, inventory, validator, docs, and audit pack; no queue runtime, upload, import, moderation, accounts, hosted master index, master-index writes, automatic acceptance, live connectors, canonical truth selection, rights-clearance claim, malware-safety claim, or production claim)
 82. Source/Evidence/Index Pack Import Planning v0 (implemented as planning-only import boundary, audit pack, docs, validator, and tests; validate-only is the first future mode and private local quarantine is the next future mode; no import runtime, staging directories, local search/index mutation, canonical registry mutation, uploads, hosted/master-index mutation, automatic acceptance, live fetch, arbitrary directory scan, executable plugin behavior, or production claim)
 83. Pack Import Validator Aggregator v0 (implemented as validate-only aggregate command, example-pack registry, docs, audit pack, and tests; validates all known source/evidence/index/contribution/master-index review queue examples without import, staging, indexing, uploads, hosted/master-index mutation, automatic acceptance, rights-clearance claim, malware-safety claim, or production claim)
+84. AI Provider Contract v0 (implemented as contract/validation/example-only provider manifests, task requests, typed output schemas, disabled stub provider example, policy inventory, validator, docs, audit pack, and tests; no model calls, API keys, credential storage, telemetry, provider runtime loading, AI in public search, AI-generated evidence acceptance, local index mutation, or master-index mutation)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> AI Provider Contract v0
+> Typed AI Output Validator v0
 
 Why this comes next:
 
@@ -421,9 +422,14 @@ Why this comes next:
   examples through existing validators, reports pass/fail/unavailable/
   unknown-type status, and still adds no import, staging, local index mutation,
   upload, hosted/master-index mutation, automatic acceptance, rights-clearance
-  claim, malware-safety claim, or production claim. AI Provider Contract v0 is
-  next so provider boundaries are set before any AI-assisted evidence or pack
-  suggestion work appears.
+  claim, malware-safety claim, or production claim.
+- AI Provider Contract v0 is implemented as a disabled-by-default AI boundary.
+  It defines provider manifests, typed output shape, task requests, privacy,
+  credential, logging, evidence-linking, and review posture without model
+  calls, API keys, telemetry, provider runtime loading, AI in public search,
+  local-index mutation, or master-index mutation. Typed AI Output Validator v0
+  is next so standalone output records are validated before any AI-assisted
+  evidence or contribution workflow appears.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

@@ -208,6 +208,12 @@ through `python scripts/validate_pack_set.py --all-examples` or an explicit
 does not import, merge, index, upload, export raw databases, or accept index
 records.
 
+AI Provider Contract v0 is separate from index packs. AI outputs may later
+suggest explanations, source matches, or duplicate candidates, but index packs
+remain coverage/build/record-summary metadata. AI output cannot become index
+truth, mutate a local index, change public search, or merge index summaries
+without separate validation and review.
+
 ## Not Implemented
 
 Index Pack Contract v0 does not implement index pack import, merge, local cache

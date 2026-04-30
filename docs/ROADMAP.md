@@ -99,6 +99,14 @@ command for known pack examples. `python scripts/validate_pack_set.py
 master-index review queue validators and reports all five current examples as
 passed without import, staging, local indexing, uploads, hosted/master-index
 mutation, or acceptance claims.
+AI Provider Contract v0 now defines the disabled-by-default future provider
+boundary under `contracts/ai/`, `control/inventory/ai_providers/`,
+`examples/ai_providers/disabled_stub_provider_v0/`, and
+`control/audits/ai-provider-contract-v0/`. It validates provider manifests,
+future task requests, typed output examples, privacy/credential/logging
+posture, and forbidden truth/rights/malware/auto-acceptance uses without model
+calls, API keys, telemetry, public-search AI, local-index mutation, or
+master-index mutation.
 
 ## Stage 3: Surface Skeletons
 

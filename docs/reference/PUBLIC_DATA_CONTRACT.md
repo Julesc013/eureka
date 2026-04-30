@@ -146,3 +146,8 @@ data for future clients.
 Source/Evidence/Index Pack Import Planning v0 does not add generated public
 data. Validate-only and local quarantine modes have no public data, public
 search, or static site impact by default.
+
+AI Provider Contract v0 does not add generated public data. AI provider
+manifests and typed output examples remain contract fixtures; no AI provider
+state, prompt log, output log, model output, telemetry, or AI public-search
+result is published into `site/dist/data`.

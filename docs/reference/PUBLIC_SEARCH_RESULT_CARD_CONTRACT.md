@@ -217,6 +217,10 @@ Source/Evidence/Index Pack Import Planning v0 does not change result cards.
 Future validated or quarantined packs remain local claims/candidates and must
 not appear in public result cards until a later explicit local-index or
 master-index review milestone permits reviewed public output.
+AI Provider Contract v0 does not add AI result cards or generated snippets.
+Future AI explanations may appear only as typed, review-required suggestions
+after separate output validation and public-search contract updates. They are
+not canonical truth, rights clearance, malware safety, or ranking authority.
 
 ## Runtime Preconditions
 

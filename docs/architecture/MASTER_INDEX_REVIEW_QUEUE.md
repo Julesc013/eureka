@@ -37,8 +37,10 @@ and index packs provide supporting metadata, claims, observations, coverage, and
 record-summary context. Public search, snapshots, native clients, and relay
 surfaces should consume only later reviewed outputs, not raw queue entries.
 
-AI provider outputs, if introduced later, must be treated as suggestions that
-require evidence review. They do not become accepted records by themselves.
+AI Provider Contract v0 now defines future AI provider and typed-output
+boundaries. AI outputs remain suggestions that require evidence review. They do
+not become accepted records by themselves and cannot decide truth, rights,
+malware safety, source trust, identity merges, or acceptance.
 
 Source/Evidence/Index Pack Import Planning v0 keeps import local and
 validate-only first. A staged pack is not submitted, uploaded, accepted,

@@ -38,6 +38,9 @@ Source/Evidence/Index Pack Import Planning v0 keeps executable payloads out of
 the future validate-only and public/shareable quarantine path. Import planning
 does not create executable plugin loading, malware scanning, downloads,
 installers, or safety claims.
+AI Provider Contract v0 does not allow model output to make executable risk or
+malware-safety decisions. AI providers are not executable plugins and cannot
+authorize downloads, installers, execution, sandbox results, or safety claims.
 
 ## Required Future Warnings
 

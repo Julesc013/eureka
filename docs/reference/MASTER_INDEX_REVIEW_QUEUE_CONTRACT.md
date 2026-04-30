@@ -109,8 +109,11 @@ rejected, quarantined, revised, superseded, or accepted for limited public use.
 
 Manual observations are accepted as references only when their observation
 status and provenance are honest. Pending observations remain pending. AI
-suggestions, if future packs include them, are suggestions for review and not
-canonical evidence.
+Provider Contract v0 now defines typed AI output boundaries: AI suggestions are
+review candidates, not canonical evidence, truth, rights clearance, malware
+safety, source trust, or automatic acceptance. Any future queue entry that
+references AI output must preserve provider provenance, limitations, evidence
+links where possible, and review status.
 
 ## Runtime Consumers
 
@@ -158,7 +161,7 @@ The validator is stdlib-only and does not perform network calls.
 
 ## Next Work
 
-The next recommended milestone is Pack Import Validator Aggregator v0. That
-aggregator should route source, evidence, index, and contribution packs to
-existing validators while still avoiding import runtime, staging, hosted review
-tooling, uploads, and master-index mutation.
+Pack Import Validator Aggregator v0 and AI Provider Contract v0 are now
+implemented as validation/contract-only milestones. The next recommended AI
+follow-up is Typed AI Output Validator v0; the next pack-import follow-up is
+Pack Import Report Format v0.

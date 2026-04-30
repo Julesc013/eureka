@@ -50,6 +50,11 @@ executable download surface, and does not mirror software artifacts in v0.
   structurally validated, but they must not claim rights clearance, malware
   safety, canonical truth, public-search eligibility, or master-index
   acceptance.
+- AI Provider Contract v0 carries this posture into future AI assistance.
+  Model output is not rights clearance, artifact distribution permission,
+  malware safety, canonical truth, source trust, or accepted-public authority.
+  AI providers remain disabled by default and cannot bypass rights/access
+  review.
 
 ## Labels
 

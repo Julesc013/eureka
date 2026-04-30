@@ -3223,6 +3223,48 @@
       "failure_means": "Aggregate pack validation CLI behavior, registry metadata, JSON output, unknown-type handling, missing-validator reporting, docs, or no-mutation claims regressed.",
       "advisory_or_required": "required",
       "notes": "Covers list-examples, all-examples, explicit pack roots, unknown roots, type mismatches, simulated missing validators, JSON side-effect flags, and docs that validation is not import or acceptance."
+    },
+    {
+      "test_id": "ai_provider_contract_validator",
+      "label": "AI provider contract validator",
+      "command": "python scripts/validate_ai_provider_contract.py",
+      "category": "contract",
+      "owner_area": "contracts/ai",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "AI Provider Contract v0 schemas, provider policy inventory, disabled stub example, typed output examples, checksums, privacy/credential/logging posture, or no-runtime claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates contract/example metadata only; it performs no model calls, provider loading, network calls, API-key handling, telemetry, public-search AI, or master-index mutation."
+    },
+    {
+      "test_id": "ai_provider_contract_tests",
+      "label": "AI provider contract tests",
+      "command": "python -m unittest tests.operations.test_ai_provider_contract tests.scripts.test_validate_ai_provider_contract",
+      "category": "contract",
+      "owner_area": "contracts/ai",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary directories only for negative validator cases",
+      "expected_runtime": "seconds",
+      "failure_means": "AI provider schemas, docs, audit report, disabled defaults, forbidden uses, negative validation cases, or no-model-call boundaries regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers disabled-by-default providers, remote credential gating, private-data and telemetry defaults, typed-output review requirements, forbidden truth/rights/malware/auto-acceptance uses, and absence of API keys or secrets."
     }
   ]
 }

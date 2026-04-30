@@ -221,6 +221,10 @@ Source/Evidence/Index Pack Import Planning v0 keeps future pack import local
 and validate-only first. Validated or quarantined packs have no public-search
 impact by default and must not affect `local_index_only` search until a later
 explicit import/index milestone adds an opt-in local mode.
+AI Provider Contract v0 does not enable AI in public search. Public search
+remains `local_index_only`; model reranking, AI query expansion, embeddings,
+generated snippets, remote model calls, and AI evidence acceptance remain
+future/deferred and require separate approval.
 
 ## Out Of Scope
 

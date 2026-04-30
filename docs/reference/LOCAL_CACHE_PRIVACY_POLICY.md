@@ -86,6 +86,13 @@ Public Search Safety / Abuse Guard v0 follows this posture for future public
 search. It forbids local path, user file, credential, telemetry-by-default,
 query-log-upload, and private source parameters before any runtime route exists.
 
+AI Provider Contract v0 follows this posture for future model providers. AI
+providers are disabled by default, private data is disabled by default, prompt
+and output logging are disabled by default, and remote providers require
+explicit credentials and consent before any future runtime exists. Provider
+manifests must not contain API keys, secrets, private paths, or credential
+storage behavior.
+
 ## Deletion, Reset, Export, And Portable Mode
 
 Future native/private cache work requires controls to clear public cache, clear
