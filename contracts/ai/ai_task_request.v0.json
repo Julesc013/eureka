@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/ai/ai_task_request.v0.json",
+  "title": "EurekaAITaskRequestV0",
+  "description": "Schema for future AI task requests. This is contract-only and does not implement dispatch, model calls, prompt logging, telemetry, or runtime provider integration.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "task_type",
+    "input_refs",
+    "input_policy",
+    "privacy_classification",
+    "allowed_provider_types",
+    "required_output_type",
+    "user_or_operator_approval_required",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "ai_task_request.v0"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{2,160}$"
+    },
+    "task_type": {
+      "$ref": "ai_provider_manifest.v0.json#/$defs/allowed_task_type"
+    },
+    "input_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "input_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "private_data_included",
+        "private_data_requires_explicit_approval",
+        "local_paths_allowed",
+        "remote_transfer_allowed",
+        "live_fetch_allowed",
+        "notes"
+      ],
+      "properties": {
+        "private_data_included": {
+          "type": "boolean"
+        },
+        "private_data_requires_explicit_approval": {
+          "const": true
+        },
+        "local_paths_allowed": {
+          "const": false
+        },
+        "remote_transfer_allowed": {
+          "const": false
+        },
+        "live_fetch_allowed": {
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "privacy_classification": {
+      "type": "string",
+      "enum": [
+        "public_safe",
+        "local_private",
+        "review_required",
+        "restricted",
+        "unknown"
+      ]
+    },
+    "allowed_provider_types": {
+      "type": "array",
+      "items": {
+        "$ref": "ai_provider_manifest.v0.json#/properties/provider_type"
+      },
+      "uniqueItems": true
+    },
+    "required_output_type": {
+      "$ref": "ai_provider_manifest.v0.json#/$defs/allowed_output_type"
+    },
+    "max_input_chars": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "max_output_chars": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "evidence_required": {
+      "type": "boolean"
+    },
+    "user_or_operator_approval_required": {
+      "const": true
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-contract_id": "eureka_ai_task_request_v0",
+  "x-contract_status": "contract_validation_example_only",
+  "x-runtime_implemented": false,
+  "x-no_silent_private_data_transfer": true
+}

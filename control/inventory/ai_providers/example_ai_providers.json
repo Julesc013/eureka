@@ -1,0 +1,56 @@
+{
+  "inventory_id": "eureka_example_ai_providers_v0",
+  "status": "contract_only_non_operational_examples",
+  "providers": [
+    {
+      "provider_id": "example.disabled_stub_provider_v0",
+      "provider_type": "disabled_stub",
+      "default_enabled": false,
+      "network_required": false,
+      "credential_required": false,
+      "runtime_implemented": false,
+      "notes": [
+        "Synthetic disabled provider used for contract validation."
+      ]
+    },
+    {
+      "provider_id": "future.local_ollama_provider_v0",
+      "provider_type": "local_server",
+      "default_enabled": false,
+      "network_required": false,
+      "local_loopback_required": true,
+      "credential_required": false,
+      "runtime_implemented": false,
+      "future_only": true,
+      "notes": [
+        "Illustrative local server provider class only. No Ollama call, endpoint, or integration exists."
+      ]
+    },
+    {
+      "provider_id": "future.lm_studio_provider_v0",
+      "provider_type": "local_server",
+      "default_enabled": false,
+      "network_required": false,
+      "local_loopback_required": true,
+      "credential_required": false,
+      "runtime_implemented": false,
+      "future_only": true,
+      "notes": [
+        "Illustrative local server provider class only. No LM Studio call, endpoint, or integration exists."
+      ]
+    },
+    {
+      "provider_id": "future.remote_api_provider_v0",
+      "provider_type": "remote_api",
+      "default_enabled": false,
+      "network_required": true,
+      "credential_required": true,
+      "explicit_operator_approval_required": true,
+      "runtime_implemented": false,
+      "future_only": true,
+      "notes": [
+        "Illustrative hosted API provider class only. No endpoint, API key, credential store, or model call exists."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/ai/typed_ai_output.v0.json",
+  "title": "EurekaTypedAIOutputV0",
+  "description": "Schema for typed AI output candidates. Outputs are suggestions only and require review; they are not canonical truth, rights clearance, malware safety, source trust, or automatic acceptance. This schema validates recorded output shape only and does not implement model calls.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "output_id",
+    "provider_ref",
+    "task_type",
+    "output_type",
+    "status",
+    "limitations",
+    "required_review",
+    "prohibited_uses",
+    "created_by_provider",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "typed_ai_output.v0"
+    },
+    "output_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{2,160}$"
+    },
+    "provider_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider_id",
+        "provider_version",
+        "provider_type"
+      ],
+      "properties": {
+        "provider_id": {
+          "type": "string"
+        },
+        "provider_version": {
+          "type": "string"
+        },
+        "provider_type": {
+          "$ref": "ai_provider_manifest.v0.json#/properties/provider_type"
+        }
+      }
+    },
+    "task_type": {
+      "$ref": "ai_provider_manifest.v0.json#/$defs/allowed_task_type"
+    },
+    "output_type": {
+      "$ref": "ai_provider_manifest.v0.json#/$defs/allowed_output_type"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "suggestion",
+        "candidate",
+        "rejected",
+        "superseded",
+        "accepted_for_review"
+      ]
+    },
+    "subject_ref": {
+      "type": "string"
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generated_text": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "structured_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_type",
+          "claim_value",
+          "review_required"
+        ],
+        "properties": {
+          "claim_type": {
+            "type": "string"
+          },
+          "claim_value": {},
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "review_required": {
+            "const": true
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "unknown"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "required_review": {
+      "const": true
+    },
+    "prohibited_uses": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "canonical_truth",
+          "rights_clearance",
+          "malware_safety",
+          "automatic_acceptance",
+          "source_trust_final_decision",
+          "automatic_identity_merge"
+        ]
+      },
+      "uniqueItems": true,
+      "minItems": 4
+    },
+    "created_by_provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider_id",
+        "provider_version",
+        "model_identity_recorded",
+        "runtime_call_performed"
+      ],
+      "properties": {
+        "provider_id": {
+          "type": "string"
+        },
+        "provider_version": {
+          "type": "string"
+        },
+        "model_identity_recorded": {
+          "type": "boolean"
+        },
+        "runtime_call_performed": {
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-contract_id": "eureka_typed_ai_output_v0",
+  "x-contract_status": "contract_validation_example_only",
+  "x-outputs_are_suggestions": true,
+  "x-required_review": true,
+  "x-runtime_implemented": false
+}

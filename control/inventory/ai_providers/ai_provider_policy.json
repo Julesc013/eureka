@@ -1,0 +1,52 @@
+{
+  "policy_id": "eureka_ai_provider_policy_v0",
+  "status": "contract_only",
+  "no_runtime_implemented": true,
+  "no_model_calls_implemented": true,
+  "default_enabled": false,
+  "remote_providers_disabled_by_default": true,
+  "local_providers_disabled_by_default": true,
+  "private_data_disabled_by_default": true,
+  "telemetry_disabled_by_default": true,
+  "allowed_task_types": [
+    "query_interpretation_suggestion",
+    "alias_suggestion",
+    "metadata_extraction_suggestion",
+    "compatibility_claim_candidate",
+    "review_description_claim_extraction",
+    "member_path_candidate_extraction",
+    "source_matching_suggestion",
+    "duplicate_identity_candidate",
+    "explanation_draft",
+    "OCR_cleanup_suggestion",
+    "absence_explanation_draft",
+    "contribution_pack_draft_assist"
+  ],
+  "forbidden_task_types": [
+    "canonical_truth_decision",
+    "source_trust_final_decision",
+    "rights_clearance_decision",
+    "malware_safety_decision",
+    "automatic_identity_merge",
+    "automatic_master_index_acceptance",
+    "silent_private_data_processing",
+    "unbounded_web_browsing",
+    "arbitrary_url_fetch",
+    "credential_extraction",
+    "installer_execution",
+    "download_execution",
+    "telemetry_collection"
+  ],
+  "required_review": true,
+  "evidence_linking_required_where_possible": true,
+  "no_truth_authority": true,
+  "no_rights_clearance": true,
+  "no_malware_safety": true,
+  "no_auto_acceptance": true,
+  "notes": [
+    "AI Provider Contract v0 is contract/validation/example-only.",
+    "Provider manifests are not executable plugins and do not grant local filesystem or live source access.",
+    "Remote providers require explicit future credential and operator approval policy before any runtime exists.",
+    "Model outputs remain suggestions or review candidates, not evidence truth or master-index mutations."
+  ]
+}

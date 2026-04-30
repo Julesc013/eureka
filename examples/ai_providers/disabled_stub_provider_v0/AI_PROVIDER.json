@@ -1,0 +1,133 @@
+{
+  "schema_version": "ai_provider_manifest.v0",
+  "provider_id": "example.disabled_stub_provider_v0",
+  "provider_version": "0.1.0",
+  "provider_label": "Disabled Stub AI Provider v0",
+  "provider_type": "disabled_stub",
+  "status": "disabled_by_default",
+  "default_enabled": false,
+  "network_required": false,
+  "local_loopback_required": false,
+  "local_filesystem_required": false,
+  "credential_required": false,
+  "credential_policy": {
+    "credentials_supported": false,
+    "credentials_in_manifest_allowed": false,
+    "explicit_operator_approval_required": true,
+    "storage_implemented": false,
+    "notes": [
+      "The disabled stub provider has no credentials and no credential storage."
+    ]
+  },
+  "privacy_policy": {
+    "private_data_allowed_by_default": false,
+    "requires_explicit_consent_for_private_data": true,
+    "remote_private_data_transfer_allowed": false,
+    "local_paths_allowed_by_default": false,
+    "notes": [
+      "The example uses only synthetic public-safe inputs."
+    ]
+  },
+  "logging_policy": {
+    "prompt_logging_enabled_by_default": false,
+    "output_logging_enabled_by_default": false,
+    "telemetry_enabled_by_default": false,
+    "external_log_upload_enabled": false,
+    "notes": [
+      "No prompt logging runtime, output logging runtime, or telemetry exists."
+    ]
+  },
+  "supported_tasks": [
+    "alias_suggestion",
+    "explanation_draft"
+  ],
+  "allowed_output_types": [
+    "alias_candidate",
+    "explanation_draft"
+  ],
+  "forbidden_output_types": [
+    "canonical_truth_decision",
+    "source_trust_final_decision",
+    "rights_clearance_decision",
+    "malware_safety_decision",
+    "automatic_identity_merge",
+    "automatic_master_index_acceptance",
+    "silent_private_data_processing",
+    "unbounded_web_browsing",
+    "arbitrary_url_fetch",
+    "credential_extraction",
+    "installer_execution",
+    "download_execution",
+    "telemetry_collection"
+  ],
+  "input_data_policy": {
+    "allowed_input_classes": [
+      "synthetic_public_metadata",
+      "public_safe_fixture_summary"
+    ],
+    "private_inputs_allowed_by_default": false,
+    "local_source_access_granted": false,
+    "live_source_access_granted": false,
+    "silent_private_data_processing_allowed": false,
+    "notes": [
+      "No private data, local source reads, or live source access are granted."
+    ]
+  },
+  "output_policy": {
+    "outputs_are_suggestions_only": true,
+    "required_review": true,
+    "canonical_truth_allowed": false,
+    "rights_clearance_allowed": false,
+    "malware_safety_allowed": false,
+    "automatic_acceptance_allowed": false,
+    "notes": [
+      "Synthetic outputs are examples of typed suggestions, not evidence truth."
+    ]
+  },
+  "cache_policy": {
+    "cache_enabled_by_default": false,
+    "private_cache_allowed_by_default": false,
+    "cache_runtime_implemented": false,
+    "notes": [
+      "No AI cache runtime exists."
+    ]
+  },
+  "invalidation_policy": {
+    "model_version_change_invalidates_outputs": true,
+    "prompt_policy_change_invalidates_outputs": true,
+    "source_evidence_change_invalidates_outputs": true,
+    "notes": [
+      "Future generated outputs must preserve provider and policy provenance."
+    ]
+  },
+  "evidence_linking_policy": {
+    "evidence_required_where_possible": true,
+    "source_refs_supported": true,
+    "unsupported_claims_require_review": true,
+    "notes": [
+      "Outputs should link to source or evidence references where possible."
+    ]
+  },
+  "human_review_policy": {
+    "review_required_for_all_outputs": true,
+    "master_index_acceptance_requires_review_queue": true,
+    "notes": [
+      "AI suggestions require review before contribution or master-index use."
+    ]
+  },
+  "safety_boundaries": [
+    "no_model_calls",
+    "no_runtime_provider_loading",
+    "no_api_keys",
+    "no_telemetry",
+    "no_private_data_by_default",
+    "no_truth_authority",
+    "no_rights_clearance",
+    "no_malware_safety",
+    "no_automatic_acceptance"
+  ],
+  "notes": [
+    "Synthetic disabled example for AI Provider Contract v0 validation.",
+    "This manifest is not executable and does not configure a runnable provider."
+  ]
+}

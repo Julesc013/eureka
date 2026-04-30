@@ -1,0 +1,62 @@
+{
+  "schema_version": "typed_ai_output.v0",
+  "output_id": "example.ai.alias_candidate.browser_alias.v0",
+  "provider_ref": {
+    "provider_id": "example.disabled_stub_provider_v0",
+    "provider_version": "0.1.0",
+    "provider_type": "disabled_stub"
+  },
+  "task_type": "alias_suggestion",
+  "output_type": "alias_candidate",
+  "status": "candidate",
+  "subject_ref": "synthetic:software:example-browser",
+  "source_refs": [
+    "fixture:synthetic-public-metadata"
+  ],
+  "evidence_refs": [
+    "evidence:synthetic-alias-note"
+  ],
+  "generated_text": "The phrase Example Browser Classic may be an alias candidate for Example Browser.",
+  "structured_claims": [
+    {
+      "claim_type": "alias_candidate",
+      "claim_value": {
+        "candidate_alias": "Example Browser Classic",
+        "target_label": "Example Browser"
+      },
+      "evidence_refs": [
+        "evidence:synthetic-alias-note"
+      ],
+      "review_required": true,
+      "limitations": [
+        "Synthetic example only",
+        "Requires source-backed human review"
+      ]
+    }
+  ],
+  "confidence": "low",
+  "limitations": [
+    "Synthetic typed output fixture",
+    "No model call was performed",
+    "Alias remains a review candidate"
+  ],
+  "required_review": true,
+  "prohibited_uses": [
+    "canonical_truth",
+    "rights_clearance",
+    "malware_safety",
+    "automatic_acceptance"
+  ],
+  "created_by_provider": {
+    "provider_id": "example.disabled_stub_provider_v0",
+    "provider_version": "0.1.0",
+    "model_identity_recorded": false,
+    "runtime_call_performed": false,
+    "notes": [
+      "Hand-authored synthetic fixture output"
+    ]
+  },
+  "notes": [
+    "This output demonstrates schema shape only."
+  ]
+}

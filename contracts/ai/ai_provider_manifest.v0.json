@@ -1,0 +1,471 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/ai/ai_provider_manifest.v0.json",
+  "title": "EurekaAIProviderManifestV0",
+  "description": "Manifest schema for AI Provider Contract v0. This defines optional future provider metadata only; it does not implement model calls, provider loading, API keys, telemetry, embeddings, vector search, LLM reranking, public-search AI, or runtime behavior.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "provider_id",
+    "provider_version",
+    "provider_label",
+    "provider_type",
+    "status",
+    "default_enabled",
+    "network_required",
+    "local_filesystem_required",
+    "credential_required",
+    "credential_policy",
+    "privacy_policy",
+    "logging_policy",
+    "supported_tasks",
+    "allowed_output_types",
+    "forbidden_output_types",
+    "input_data_policy",
+    "output_policy",
+    "cache_policy",
+    "invalidation_policy",
+    "evidence_linking_policy",
+    "human_review_policy",
+    "safety_boundaries",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "ai_provider_manifest.v0"
+    },
+    "provider_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "provider_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([-.][A-Za-z0-9.]+)?$"
+    },
+    "provider_label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "provider_type": {
+      "type": "string",
+      "enum": [
+        "local_model",
+        "local_server",
+        "remote_api",
+        "browser_model",
+        "native_model",
+        "development_tool",
+        "disabled_stub"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "local_private",
+        "disabled_by_default",
+        "review_required",
+        "allowed_for_local_testing",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "default_enabled": {
+      "const": false
+    },
+    "network_required": {
+      "type": "boolean"
+    },
+    "local_loopback_required": {
+      "type": "boolean"
+    },
+    "local_filesystem_required": {
+      "type": "boolean"
+    },
+    "credential_required": {
+      "type": "boolean"
+    },
+    "credential_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "credentials_supported",
+        "credentials_in_manifest_allowed",
+        "explicit_operator_approval_required",
+        "storage_implemented",
+        "notes"
+      ],
+      "properties": {
+        "credentials_supported": {
+          "type": "boolean"
+        },
+        "credentials_in_manifest_allowed": {
+          "const": false
+        },
+        "explicit_operator_approval_required": {
+          "type": "boolean"
+        },
+        "storage_implemented": {
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "privacy_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "private_data_allowed_by_default",
+        "requires_explicit_consent_for_private_data",
+        "remote_private_data_transfer_allowed",
+        "local_paths_allowed_by_default",
+        "notes"
+      ],
+      "properties": {
+        "private_data_allowed_by_default": {
+          "const": false
+        },
+        "requires_explicit_consent_for_private_data": {
+          "type": "boolean"
+        },
+        "remote_private_data_transfer_allowed": {
+          "const": false
+        },
+        "local_paths_allowed_by_default": {
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "logging_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prompt_logging_enabled_by_default",
+        "output_logging_enabled_by_default",
+        "telemetry_enabled_by_default",
+        "external_log_upload_enabled",
+        "notes"
+      ],
+      "properties": {
+        "prompt_logging_enabled_by_default": {
+          "const": false
+        },
+        "output_logging_enabled_by_default": {
+          "const": false
+        },
+        "telemetry_enabled_by_default": {
+          "const": false
+        },
+        "external_log_upload_enabled": {
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "supported_tasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/allowed_task_type"
+      },
+      "uniqueItems": true
+    },
+    "allowed_output_types": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/allowed_output_type"
+      },
+      "uniqueItems": true
+    },
+    "forbidden_output_types": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/forbidden_task_or_output"
+      },
+      "uniqueItems": true
+    },
+    "input_data_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_input_classes",
+        "private_inputs_allowed_by_default",
+        "local_source_access_granted",
+        "live_source_access_granted",
+        "silent_private_data_processing_allowed",
+        "notes"
+      ],
+      "properties": {
+        "allowed_input_classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "private_inputs_allowed_by_default": {
+          "const": false
+        },
+        "local_source_access_granted": {
+          "const": false
+        },
+        "live_source_access_granted": {
+          "const": false
+        },
+        "silent_private_data_processing_allowed": {
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "output_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outputs_are_suggestions_only",
+        "required_review",
+        "canonical_truth_allowed",
+        "rights_clearance_allowed",
+        "malware_safety_allowed",
+        "automatic_acceptance_allowed",
+        "notes"
+      ],
+      "properties": {
+        "outputs_are_suggestions_only": {
+          "const": true
+        },
+        "required_review": {
+          "const": true
+        },
+        "canonical_truth_allowed": {
+          "const": false
+        },
+        "rights_clearance_allowed": {
+          "const": false
+        },
+        "malware_safety_allowed": {
+          "const": false
+        },
+        "automatic_acceptance_allowed": {
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "cache_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cache_enabled_by_default",
+        "private_cache_allowed_by_default",
+        "cache_runtime_implemented",
+        "notes"
+      ],
+      "properties": {
+        "cache_enabled_by_default": {
+          "const": false
+        },
+        "private_cache_allowed_by_default": {
+          "const": false
+        },
+        "cache_runtime_implemented": {
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "invalidation_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_version_change_invalidates_outputs",
+        "prompt_policy_change_invalidates_outputs",
+        "source_evidence_change_invalidates_outputs",
+        "notes"
+      ],
+      "properties": {
+        "model_version_change_invalidates_outputs": {
+          "type": "boolean"
+        },
+        "prompt_policy_change_invalidates_outputs": {
+          "type": "boolean"
+        },
+        "source_evidence_change_invalidates_outputs": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence_linking_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_required_where_possible",
+        "source_refs_supported",
+        "unsupported_claims_require_review",
+        "notes"
+      ],
+      "properties": {
+        "evidence_required_where_possible": {
+          "type": "boolean"
+        },
+        "source_refs_supported": {
+          "type": "boolean"
+        },
+        "unsupported_claims_require_review": {
+          "const": true
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "human_review_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_required_for_all_outputs",
+        "master_index_acceptance_requires_review_queue",
+        "notes"
+      ],
+      "properties": {
+        "review_required_for_all_outputs": {
+          "const": true
+        },
+        "master_index_acceptance_requires_review_queue": {
+          "const": true
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "safety_boundaries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "allowed_task_type": {
+      "type": "string",
+      "enum": [
+        "query_interpretation_suggestion",
+        "alias_suggestion",
+        "metadata_extraction_suggestion",
+        "compatibility_claim_candidate",
+        "review_description_claim_extraction",
+        "member_path_candidate_extraction",
+        "source_matching_suggestion",
+        "duplicate_identity_candidate",
+        "explanation_draft",
+        "OCR_cleanup_suggestion",
+        "absence_explanation_draft",
+        "contribution_pack_draft_assist"
+      ]
+    },
+    "allowed_output_type": {
+      "type": "string",
+      "enum": [
+        "interpreted_query_candidate",
+        "alias_candidate",
+        "metadata_claim_candidate",
+        "compatibility_claim_candidate",
+        "review_claim_candidate",
+        "member_path_candidate",
+        "source_match_candidate",
+        "identity_match_candidate",
+        "explanation_draft",
+        "ocr_cleanup_candidate",
+        "absence_explanation_draft",
+        "contribution_draft_candidate"
+      ]
+    },
+    "forbidden_task_or_output": {
+      "type": "string",
+      "enum": [
+        "canonical_truth_decision",
+        "source_trust_final_decision",
+        "rights_clearance_decision",
+        "malware_safety_decision",
+        "automatic_identity_merge",
+        "automatic_master_index_acceptance",
+        "silent_private_data_processing",
+        "unbounded_web_browsing",
+        "arbitrary_url_fetch",
+        "credential_extraction",
+        "installer_execution",
+        "download_execution",
+        "telemetry_collection"
+      ]
+    }
+  },
+  "x-contract_id": "eureka_ai_provider_manifest_v0",
+  "x-contract_status": "contract_validation_example_only",
+  "x-runtime_implemented": false,
+  "x-model_calls_implemented": false,
+  "x-default_enabled_required": false,
+  "x-non_goals": [
+    "model calls",
+    "runtime provider loading",
+    "API keys",
+    "credential storage",
+    "prompt logging runtime",
+    "telemetry",
+    "embeddings",
+    "vector search",
+    "LLM reranking",
+    "AI in public search",
+    "automatic evidence acceptance"
+  ]
+}

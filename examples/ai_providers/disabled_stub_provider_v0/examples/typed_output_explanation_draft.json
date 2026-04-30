@@ -1,0 +1,61 @@
+{
+  "schema_version": "typed_ai_output.v0",
+  "output_id": "example.ai.explanation_draft.result_summary.v0",
+  "provider_ref": {
+    "provider_id": "example.disabled_stub_provider_v0",
+    "provider_version": "0.1.0",
+    "provider_type": "disabled_stub"
+  },
+  "task_type": "explanation_draft",
+  "output_type": "explanation_draft",
+  "status": "suggestion",
+  "subject_ref": "synthetic:result:example-browser-windows-xp",
+  "source_refs": [
+    "fixture:synthetic-public-metadata"
+  ],
+  "evidence_refs": [
+    "evidence:synthetic-compatibility-note"
+  ],
+  "generated_text": "Draft explanation: this synthetic result appears relevant because its fixture metadata mentions the example browser and a Windows XP compatibility note.",
+  "structured_claims": [
+    {
+      "claim_type": "explanation_draft",
+      "claim_value": {
+        "summary": "Synthetic result explanation candidate tied to fixture evidence."
+      },
+      "evidence_refs": [
+        "evidence:synthetic-compatibility-note"
+      ],
+      "review_required": true,
+      "limitations": [
+        "Synthetic example only",
+        "Not a ranking, trust, rights, or malware decision"
+      ]
+    }
+  ],
+  "confidence": "low",
+  "limitations": [
+    "Synthetic typed output fixture",
+    "No model call was performed",
+    "Explanation remains a draft"
+  ],
+  "required_review": true,
+  "prohibited_uses": [
+    "canonical_truth",
+    "rights_clearance",
+    "malware_safety",
+    "automatic_acceptance"
+  ],
+  "created_by_provider": {
+    "provider_id": "example.disabled_stub_provider_v0",
+    "provider_version": "0.1.0",
+    "model_identity_recorded": false,
+    "runtime_call_performed": false,
+    "notes": [
+      "Hand-authored synthetic fixture output"
+    ]
+  },
+  "notes": [
+    "This output demonstrates a review-required explanation draft."
+  ]
+}
