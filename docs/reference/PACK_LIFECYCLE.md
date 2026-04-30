@@ -17,9 +17,10 @@ default for newly created packs.
 
 `validated_local`
 
-Future generic status for a pack that passed local validation. Source Pack
-Contract v0 keeps this as lifecycle guidance; the manifest status enum uses
-`shareable_candidate` when a pack is intended for public-safe sharing.
+Generic status for a pack that passed local validation. Source Pack Contract v0
+keeps this as lifecycle guidance; Evidence Pack Contract v0 includes it in the
+manifest enum for claim/observation bundles that have passed local validation
+but are not yet intended as shareable candidates.
 
 `shareable_candidate`
 

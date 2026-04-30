@@ -25,6 +25,11 @@ executable download surface, and does not mirror software artifacts in v0.
   self-authored fixtures, but validation is not rights clearance, metadata is
   not redistribution permission, and a pack must not claim malware safety.
   Binary artifacts or executable payloads require a later policy milestone.
+- Evidence Pack Contract v0 carries this posture into future public-safe claim
+  and observation bundles. Evidence records are not rights clearance, malware
+  safety, or canonical truth; snippets must stay short and public-safe, and
+  executable payloads, raw copyrighted long-form text, credentials, and private
+  paths are forbidden in shareable examples.
 
 ## Labels
 

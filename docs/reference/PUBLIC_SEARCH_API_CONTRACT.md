@@ -197,6 +197,12 @@ do not grant live connector behavior. A future import milestone must preserve
 `local_index_only`, public-safe records, disabled downloads/uploads/local paths,
 and checksum/rights/privacy validation before any source pack can influence
 public search results.
+Evidence Pack Contract v0 defines a future validated claim/observation input
+format. Evidence packs are not imported by the current public search runtime,
+do not make evidence canonical truth, and do not grant live fetch behavior.
+Future public search use must pass review, redaction, checksum, rights/privacy,
+snippet-limit, and conflict-handling gates before evidence-pack records can
+affect result-card evidence.
 
 ## Out Of Scope
 

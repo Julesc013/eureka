@@ -1,0 +1,493 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/packs/evidence_pack.v0.json",
+  "title": "EurekaEvidencePackManifestV0",
+  "description": "Manifest schema for Evidence Pack Contract v0. This defines portable public-safe claims, observations, source locators, snippets, compatibility notes, member notes, absence notes, and provenance records only; it does not implement import, upload, indexing, live connectors, executable plugins, or master-index acceptance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pack_id",
+    "pack_version",
+    "title",
+    "description",
+    "status",
+    "producer",
+    "privacy",
+    "rights_and_access",
+    "evidence_files",
+    "source_reference_files",
+    "checksum_policy",
+    "validation",
+    "prohibited_contents",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "evidence_pack.v0"
+    },
+    "pack_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "pack_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([-.][A-Za-z0-9.]+)?$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "local_private",
+        "validated_local",
+        "shareable_candidate",
+        "submitted",
+        "quarantined",
+        "review_required",
+        "accepted_public",
+        "rejected",
+        "superseded"
+      ],
+      "description": "Lifecycle status. accepted_public must only be used after a future governed review path accepts the pack."
+    },
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        },
+        "tool": {
+          "type": "string"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "description": "Optional ISO-like timestamp. Deterministic example packs may omit it."
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "contains_private_paths",
+        "contains_credentials",
+        "contains_restricted_snippets",
+        "local_private_records_allowed"
+      ],
+      "properties": {
+        "classification": {
+          "type": "string",
+          "enum": [
+            "public_safe",
+            "local_private",
+            "review_required",
+            "restricted",
+            "unknown"
+          ]
+        },
+        "contains_private_paths": {
+          "type": "boolean"
+        },
+        "contains_credentials": {
+          "type": "boolean"
+        },
+        "contains_restricted_snippets": {
+          "type": "boolean"
+        },
+        "local_private_records_allowed": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "rights_and_access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rights_status",
+        "rights_doc",
+        "distribution_allowed",
+        "snippets_policy",
+        "artifact_distribution_permission"
+      ],
+      "properties": {
+        "rights_status": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "public_metadata_only",
+            "source_terms_apply",
+            "restricted",
+            "review_required",
+            "not_applicable"
+          ]
+        },
+        "rights_doc": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "distribution_allowed": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "unknown"
+          ]
+        },
+        "snippets_policy": {
+          "type": "string"
+        },
+        "artifact_distribution_permission": {
+          "type": "string",
+          "enum": [
+            "not_included",
+            "unknown",
+            "review_required"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/relative_path"
+      }
+    },
+    "source_reference_files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relative_path"
+      }
+    },
+    "checksum_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "checksum_file",
+        "covers",
+        "required_for_shareable",
+        "production_signing"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "checksum_file": {
+          "const": "CHECKSUMS.SHA256"
+        },
+        "covers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relative_path"
+          }
+        },
+        "required_for_shareable": {
+          "type": "boolean"
+        },
+        "production_signing": {
+          "type": "string",
+          "enum": [
+            "future",
+            "not_implemented"
+          ]
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "validator",
+        "strict_public_safe_required",
+        "snippet_max_chars",
+        "no_import_performed",
+        "no_indexing_performed",
+        "no_network_performed",
+        "no_upload_performed"
+      ],
+      "properties": {
+        "validator": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "strict_public_safe_required": {
+          "type": "boolean"
+        },
+        "snippet_max_chars": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2000
+        },
+        "no_import_performed": {
+          "type": "boolean"
+        },
+        "no_indexing_performed": {
+          "type": "boolean"
+        },
+        "no_network_performed": {
+          "type": "boolean"
+        },
+        "no_upload_performed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "prohibited_contents": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "credentials",
+          "api_key",
+          "auth_token",
+          "password",
+          "private_key",
+          "private_local_paths",
+          "raw_private_files",
+          "raw_copyrighted_long_form_text",
+          "real_executables",
+          "installer_payloads",
+          "malware_safety_claims",
+          "rights_clearance_claims",
+          "live_fetch_authority",
+          "master_index_auto_acceptance",
+          "canonical_truth_claims"
+        ]
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\.\\.)[A-Za-z0-9._/@+-]+$"
+    },
+    "evidence_record": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "evidence_id",
+        "evidence_kind",
+        "claim_type",
+        "subject_ref",
+        "locator",
+        "summary",
+        "created_by_pack",
+        "limitations",
+        "privacy_classification",
+        "rights_classification"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string"
+        },
+        "evidence_kind": {
+          "type": "string",
+          "enum": [
+            "source_observation",
+            "metadata_claim",
+            "compatibility_claim",
+            "member_path_claim",
+            "checksum_observation",
+            "version_observation",
+            "release_note_observation",
+            "manual_document_observation",
+            "review_description_observation",
+            "absence_observation",
+            "identity_candidate",
+            "provenance_note",
+            "actionability_note"
+          ]
+        },
+        "claim_type": {
+          "type": "string",
+          "enum": [
+            "describes",
+            "mentions",
+            "supports_platform",
+            "does_not_support_platform",
+            "requires_runtime",
+            "has_version",
+            "latest_known_for_platform",
+            "contains_member",
+            "has_checksum",
+            "documents_hardware",
+            "documents_install_step",
+            "reports_works_on",
+            "reports_failure_on",
+            "source_missing",
+            "dead_link_observed",
+            "archived_trace_exists",
+            "same_as_candidate",
+            "variant_of_candidate",
+            "evidence_for_absence",
+            "actionability_hint"
+          ]
+        },
+        "subject_ref": {
+          "type": "string"
+        },
+        "source_ref": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "locator": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "claim_value": true,
+        "snippet": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "observed_at": {
+          "type": "string"
+        },
+        "asserted_by": {
+          "type": "string"
+        },
+        "created_by_pack": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "privacy_classification": {
+          "type": "string",
+          "enum": [
+            "public_safe",
+            "local_private",
+            "review_required",
+            "restricted",
+            "unknown"
+          ]
+        },
+        "rights_classification": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "public_metadata_only",
+            "source_terms_apply",
+            "restricted",
+            "review_required",
+            "not_applicable"
+          ]
+        }
+      }
+    },
+    "source_reference_record": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "source_ref",
+        "label",
+        "locator",
+        "locator_kind",
+        "network_required_to_verify",
+        "rights_notes",
+        "limitations"
+      ],
+      "properties": {
+        "source_ref": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "source_family": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "locator": {
+          "type": "string"
+        },
+        "locator_kind": {
+          "type": "string",
+          "enum": [
+            "fixture_locator",
+            "source_url_reference",
+            "archive_identifier_reference",
+            "package_identifier",
+            "manual_reference",
+            "local_private_reference"
+          ]
+        },
+        "network_required_to_verify": {
+          "type": "boolean"
+        },
+        "rights_notes": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "x-contract_id": "eureka_evidence_pack_v0",
+  "x-status": "stable_draft",
+  "x-snippet_max_chars": 500,
+  "x-non_goals": [
+    "runtime import",
+    "evidence indexing",
+    "upload handling",
+    "live connector behavior",
+    "master-index acceptance",
+    "canonical truth selection",
+    "executable plugin support",
+    "production signing"
+  ]
+}

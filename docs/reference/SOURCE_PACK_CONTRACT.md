@@ -108,6 +108,18 @@ Forbidden evidence contents include private absolute paths, credentials, API
 keys, raw private files, raw copyrighted long-form dumps, malware-safety
 assertions, rights-clearance assertions, and executable payloads.
 
+## Difference From Evidence Packs
+
+A source pack can define source metadata, source-family posture, fixture files,
+and evidence inputs together. An evidence pack is claim and observation
+focused: it carries public-safe evidence records, source references, snippets,
+and provenance without defining canonical source registry records or shipping
+source fixtures. Both pack types are validation-only until future import and
+submission workflows exist.
+
+An evidence pack is claim and observation focused; a source pack is source
+metadata and fixture focused.
+
 ## Fixture Policy
 
 Allowed fixture payloads:

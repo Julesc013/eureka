@@ -1,0 +1,55 @@
+{
+  "report_id": "evidence-pack-contract-v0",
+  "created_by_slice": "evidence_pack_contract_v0",
+  "status": "implemented_contract_validation_example_only",
+  "contract": {
+    "schema": "contracts/packs/evidence_pack.v0.json",
+    "manifest": "EVIDENCE_PACK.json",
+    "contract_id": "eureka_evidence_pack_v0",
+    "snippet_max_chars": 500
+  },
+  "example_pack": {
+    "path": "examples/evidence_packs/minimal_evidence_pack_v0",
+    "synthetic": true,
+    "evidence_record_count": 4,
+    "source_reference_count": 1,
+    "contains_executables": false,
+    "contains_private_paths": false,
+    "contains_live_urls": false,
+    "contains_long_copyrighted_text": false
+  },
+  "validator": {
+    "path": "scripts/validate_evidence_pack.py",
+    "supports_json": true,
+    "supports_strict": true,
+    "performs_import": false,
+    "performs_indexing": false,
+    "performs_upload": false,
+    "performs_network": false
+  },
+  "claims_are_canonical_truth": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "master_index_acceptance_claimed": false,
+  "disabled_or_deferred": {
+    "runtime_import": true,
+    "indexing": true,
+    "upload": true,
+    "live_connectors": true,
+    "live_probes": true,
+    "arbitrary_url_fetch": true,
+    "scraping": true,
+    "crawling": true,
+    "executable_plugins": true,
+    "downloads": true,
+    "installers": true,
+    "master_index_acceptance": true,
+    "production_signing": true
+  },
+  "next_recommended_milestone": "Index Pack Contract v0",
+  "notes": [
+    "Evidence packs carry claims and observations, not canonical truth.",
+    "Source URL references are locators only and do not authorize live fetches.",
+    "Future import/submission requires review and redaction gates."
+  ]
+}

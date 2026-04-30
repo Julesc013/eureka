@@ -200,6 +200,11 @@ governs rights caveats. Native, relay, and snapshot contracts may reference this
 card as a future input shape, but this milestone does not implement native
 clients, relay runtime, or snapshot reader runtime.
 
+Future reviewed evidence packs may supply public-safe evidence summaries,
+source locators, compatibility caveats, member notes, and absence notes for
+result cards. Evidence Pack Contract v0 does not import those packs, make claims
+canonical, or change current local public search runtime behavior.
+
 ## Runtime Preconditions
 
 Local Public Search Runtime v0 emits public result cards after satisfying the

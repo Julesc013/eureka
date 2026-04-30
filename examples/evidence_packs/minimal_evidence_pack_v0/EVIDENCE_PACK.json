@@ -1,0 +1,84 @@
+{
+  "schema_version": "evidence_pack.v0",
+  "pack_id": "example.minimal_evidence_pack_v0",
+  "pack_version": "0.1.0",
+  "title": "Minimal Evidence Pack v0",
+  "description": "Synthetic public-safe evidence pack demonstrating metadata, compatibility, member-path, and absence claims without import, indexing, upload, live fetch, executable payloads, or master-index acceptance.",
+  "status": "shareable_candidate",
+  "producer": {
+    "name": "Eureka project",
+    "tool": "Evidence Pack Contract v0 example"
+  },
+  "privacy": {
+    "classification": "public_safe",
+    "contains_private_paths": false,
+    "contains_credentials": false,
+    "contains_restricted_snippets": false,
+    "local_private_records_allowed": false,
+    "notes": [
+      "All example records are synthetic and public-safe.",
+      "This pack contains no local-private records or private local paths."
+    ]
+  },
+  "rights_and_access": {
+    "rights_status": "public_metadata_only",
+    "rights_doc": "RIGHTS_AND_ACCESS.md",
+    "distribution_allowed": "unknown",
+    "snippets_policy": "Only short self-authored synthetic snippets are included.",
+    "artifact_distribution_permission": "not_included",
+    "notes": [
+      "Evidence claims are not rights clearance.",
+      "No executable, installer, binary artifact, or long copyrighted text is included."
+    ]
+  },
+  "evidence_files": [
+    "evidence_records.jsonl"
+  ],
+  "source_reference_files": [
+    "source_references.jsonl"
+  ],
+  "checksum_policy": {
+    "algorithm": "sha256",
+    "checksum_file": "CHECKSUMS.SHA256",
+    "covers": [
+      "EVIDENCE_PACK.json",
+      "README.md",
+      "RIGHTS_AND_ACCESS.md",
+      "evidence_records.jsonl",
+      "source_references.jsonl"
+    ],
+    "required_for_shareable": true,
+    "production_signing": "future"
+  },
+  "validation": {
+    "validator": "scripts/validate_evidence_pack.py",
+    "strict_public_safe_required": true,
+    "snippet_max_chars": 500,
+    "no_import_performed": true,
+    "no_indexing_performed": true,
+    "no_network_performed": true,
+    "no_upload_performed": true
+  },
+  "prohibited_contents": [
+    "credentials",
+    "api_key",
+    "auth_token",
+    "password",
+    "private_key",
+    "private_local_paths",
+    "raw_private_files",
+    "raw_copyrighted_long_form_text",
+    "real_executables",
+    "installer_payloads",
+    "malware_safety_claims",
+    "rights_clearance_claims",
+    "live_fetch_authority",
+    "master_index_auto_acceptance",
+    "canonical_truth_claims"
+  ],
+  "notes": [
+    "This example is synthetic and self-authored for contract testing.",
+    "Source locators are fixture-style references and do not authorize network fetches.",
+    "Claims are observations, not canonical truth."
+  ]
+}
