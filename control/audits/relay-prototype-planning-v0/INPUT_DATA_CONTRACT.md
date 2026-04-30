@@ -2,9 +2,9 @@
 
 Allowed initial inputs for a future approved prototype:
 
-- `public_site/data/*.json`
-- `public_site/text/*`
-- `public_site/files/*`
+- `site/dist/data/*.json`
+- `site/dist/text/*`
+- `site/dist/files/*`
 - `snapshots/examples/static_snapshot_v0/*`
 - generated public data summaries
 - static snapshot manifests and checksums
