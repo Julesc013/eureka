@@ -175,6 +175,11 @@ The repo has already proven:
   static Pages workflow, recording a current-head failure at Pages configuration
   after static checks passed and before artifact upload, without triggering
   deployment or adding backend behavior
+- Public Search API Contract v0 as the governed contract-only definition of
+  future `local_index_only` public search request, response, error, and route
+  envelopes, without making `/search` or `/api/v1/search` live, adding runtime
+  handlers, enabling live probes, fetching URLs, crawling, downloads, installs,
+  uploads, local path search, or production API guarantees
 - Generated Public Data Summaries v0 as the first static machine-readable
   publication data layer under `site/dist/data/`,
   projecting page, source, eval, route, and build summaries from governed repo
@@ -287,12 +292,16 @@ The next backend sequence is:
 66. Repository Shape Consolidation v0 (implemented; site/dist is the single generated static artifact and external is the outside-reference root)
 67. Static Artifact Promotion Review v0 (implemented; site/dist is conditionally promoted as active repo-local static artifact)
 68. GitHub Pages Run Evidence Review v0 (implemented; current-head Pages run failed at configuration before artifact upload)
+69. Public Search API Contract v0 (implemented as contract-only local_index_only request/response/error/route envelopes; no runtime routes or live probes)
+70. Public Search Result Card Contract v0
+71. Public Search Safety / Abuse Guard v0
+72. Local Public Search Runtime v0, only after contract and safety review
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> GitHub Pages Workflow Repair v0
+> Public Search Result Card Contract v0
 
 Why this comes next:
 
@@ -314,8 +323,13 @@ Why this comes next:
 - GitHub Pages Run Evidence Review v0 is implemented as the passive workflow
   evidence review. It records a current-head failure at Pages configuration,
   with no artifact uploaded and no deployment URL available.
-- GitHub Pages Workflow Repair v0 is the next safe Pages milestone before any
-  hosted deployment-success claim is made.
+- Public Search API Contract v0 is implemented as contract/governance only. It
+  reserves future local-index-only search routes and envelopes without adding
+  runtime routes, live probes, backend hosting, or production API stability.
+- Public Search Result Card Contract v0 is the next safe contract milestone
+  before result presentation, safety copy, or runtime search work.
+- GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
+  any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision
   `ready_for_minimal_project_skeleton_after_human_approval` for the
   `windows_7_x64_winforms_net48` lane only.

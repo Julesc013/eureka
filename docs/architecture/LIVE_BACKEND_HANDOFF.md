@@ -26,6 +26,11 @@ Static pages may describe `/api/v1/` as future/reserved. They must not link to
 it as an available service, and clients must check capability flags before
 attempting live behavior.
 
+Public Search API Contract v0 now reserves `/search` and `/api/v1/search` as
+future `local_index_only` search routes. This is contract-only: no route
+handler, hosted backend, live probe, download/install/upload behavior, local
+path search, arbitrary URL fetch, or production API stability is added.
+
 ## Capability Flags
 
 Capability state is recorded in:
@@ -60,6 +65,7 @@ operator and contract work defines:
 - rate-limit and abuse controls
 - status/capability response shape
 - live probe gateway runtime implementation after the contract-only policy
+- public search safety and abuse controls before search runtime is hosted
 - rollback and disabled-by-default behavior
 
 This milestone adds none of those runtime behaviors.

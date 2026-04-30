@@ -439,6 +439,17 @@
       "title": "Record actual GitHub Pages workflow evidence and separate local artifact readiness from deployment success",
       "status": "addressed_by_github_pages_run_evidence_review_v0",
       "suggested_milestone": "GitHub Pages Workflow Repair v0"
+    },
+    {
+      "id": "audit-backlog-public-search-api-contract",
+      "finding_refs": [
+        "CTEA-DOCS-001",
+        "CTEA-TEST-002",
+        "CTEA-BEHAVIOR-001"
+      ],
+      "title": "Define governed public search request, response, error, and reserved route contracts before runtime work",
+      "status": "addressed_by_public_search_api_contract_v0",
+      "suggested_milestone": "Public Search Result Card Contract v0"
     }
   ]
 }

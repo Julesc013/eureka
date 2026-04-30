@@ -64,6 +64,17 @@ disabled live capability flags for future hosted-backend work. It does not
 make `/api/v1` live, deploy a backend, enable live probes, or create a
 production API guarantee.
 
+Public Search API Contract v0 adds `contracts/api/search_request.v0.json`,
+`contracts/api/search_response.v0.json`,
+`contracts/api/error_response.v0.json`,
+`control/inventory/publication/public_search_routes.json`,
+`docs/reference/PUBLIC_SEARCH_API_CONTRACT.md`, and
+`docs/operations/PUBLIC_SEARCH_LOCAL_INDEX_ONLY_MODE.md`. This defines the
+future `local_index_only` request, response, error, and reserved-route envelope
+before runtime exists. It does not implement `/search` or `/api/v1/search`,
+host a backend, enable live probes, fetch URLs, scrape, download, install,
+upload, search local paths, or create a production API guarantee.
+
 Live Probe Gateway Contract v0 adds
 `control/inventory/publication/live_probe_gateway.json`,
 `docs/reference/LIVE_PROBE_GATEWAY_CONTRACT.md`,
@@ -146,7 +157,9 @@ deployment claims.
 
 The live backend handoff contract defines future public API route reservations
 and capability flags, but that remains separate from the static artifact
-contract. The current static site must treat `/api/v1` as future/reserved.
+contract. Public Search API Contract v0 narrows the future search part of that
+handoff to `local_index_only` while still keeping the current static site from
+treating `/search` or `/api/v1/search` as live.
 
 ## Claim Traceability
 
@@ -211,8 +224,10 @@ to inspect without creating a live resolver endpoint or API promise. Custom
 Domain / Alternate Host Readiness v0 now records future host prerequisites and
 validates static host portability without configuring a domain or alternate
 host. Live Backend Handoff Contract v0 now reserves `/api/v1` contract-only
-routes and disabled capabilities. Live Probe Gateway Contract v0 now defines
-the disabled source-probe gateway policy before any external probe exists.
+routes and disabled capabilities. Public Search API Contract v0 now reserves
+future local-index-only search envelopes and routes without implementing search
+runtime. Live Probe Gateway Contract v0 now defines the disabled source-probe
+gateway policy before any external probe exists.
 Compatibility Surface Strategy v0 now records the cross-surface policy for
 old-browser, text, file-tree, snapshot, relay, API, CLI, web, and future native
 clients. Relay Surface Design v0 now records future local/LAN bridge policy

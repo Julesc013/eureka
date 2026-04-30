@@ -42,6 +42,7 @@ python scripts/check_generated_artifact_drift.py
 python scripts/check_generated_artifact_drift.py --json
 python scripts/check_generated_artifact_drift.py --list
 python scripts/check_generated_artifact_drift.py --artifact public_data_summaries
+python scripts/check_generated_artifact_drift.py --artifact static_site_dist
 ```
 
 The checker reads `generated_artifacts.json` and `drift_policy.json`, verifies
@@ -70,6 +71,10 @@ python scripts/generate_public_alpha_rehearsal_evidence.py --update
 Hybrid governance artifacts such as publication inventories, test registry
 metadata, and AIDE metadata are hand-authored. They should be updated through
 bounded governed edits and then validated with their declared check commands.
+Public Search API Contract v0 adds the hand-authored
+`control/inventory/publication/public_search_routes.json` inventory and static
+public data projections derived from it; update the inventory and contract
+docs first, then regenerate/check public data and `site/dist`.
 
 ## Volatile Values
 

@@ -8,6 +8,8 @@
   "enabled_by_default": false,
   "public_alpha_default_enabled": false,
   "requires_live_backend_handoff": true,
+  "public_search_contract_default_mode": "local_index_only",
+  "public_search_live_probe_mode_implemented": false,
   "requires_operator_signoff": true,
   "requires_abuse_controls": true,
   "requires_source_policy_review": true,
@@ -395,6 +397,7 @@
   "notes": [
     "This is a contract and policy layer only.",
     "No source adapter, live probe endpoint, URL fetch, crawler, scraper, or external API call is added.",
+    "Public Search API Contract v0 uses local_index_only only; live probe mode is not implemented or accepted by the public search request schema.",
     "Internet Archive live probing remains future and disabled until explicit human review and implementation approval.",
     "Google remains manual-baseline only and is not a live probe source.",
     "Compatibility Surface Strategy v0 keeps live probe results out of static, lite, text, files, snapshot, relay, and native-client projections unless a later gated backend explicitly enables them."

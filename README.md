@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Repository Shape Consolidation v0, Static Artifact Promotion Review v0, GitHub Pages Run Evidence Review v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Repository Shape Consolidation v0, Static Artifact Promotion Review v0, GitHub Pages Run Evidence Review v0, Public Search API Contract v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus isolated source-registry and query-planner parity candidates; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -101,6 +101,13 @@ configured for `site/dist/`, and the remote pre-upload validation steps passed,
 but the run failed while configuring Pages because the repository Pages site was
 not enabled/configured for GitHub Actions. No Pages artifact was uploaded, no
 deployment URL was emitted, and no deployment success claim is allowed.
+Public Search API Contract v0 now defines contract-only request, response,
+error, and route envelopes for future `local_index_only` public search under
+`contracts/api/`, `control/inventory/publication/public_search_routes.json`,
+and `docs/reference/PUBLIC_SEARCH_API_CONTRACT.md`. It does not make `/search`
+or `/api/v1/search` live, add runtime routes, host a backend, enable live
+probes, call external systems, fetch URLs, scrape, crawl, download, install,
+upload, search local paths, or claim production API stability.
 Generated Public Data Summaries v0 now adds deterministic static JSON summaries
 under `site/dist/data/` for page, source, eval, route, and build state. These
 files feed the lite/text/files seed surfaces and remain inputs for future
@@ -203,6 +210,7 @@ python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
 python scripts/validate_live_backend_handoff.py
 python scripts/validate_live_probe_gateway.py
+python scripts/validate_public_search_contract.py
 python scripts/validate_compatibility_surfaces.py
 python scripts/check_rust_query_planner_parity.py
 ```
@@ -459,6 +467,7 @@ Roadmaps and operations:
 - [Public Alpha Hosting Pack](docs/operations/public_alpha_hosting_pack/README.md)
 - [Public Route Contract](docs/reference/PUBLIC_ROUTE_CONTRACT.md)
 - [Public Data Contract](docs/reference/PUBLIC_DATA_CONTRACT.md)
+- [Public Search API Contract](docs/reference/PUBLIC_SEARCH_API_CONTRACT.md)
 - [Client Profile Contract](docs/reference/CLIENT_PROFILE_CONTRACT.md)
 - [Live Probe Gateway Contract](docs/reference/LIVE_PROBE_GATEWAY_CONTRACT.md)
 - [Snapshot Format Contract](docs/reference/SNAPSHOT_FORMAT_CONTRACT.md)
@@ -500,6 +509,11 @@ Eureka is substantial, but it is still a prototype/reference backend:
 - GitHub Pages Run Evidence Review v0 records a current-head Pages workflow
   failure at the Pages configuration step. The `site/dist` checks passed before
   the failure, but no Pages artifact or deployment URL exists yet.
+- Public Search API Contract v0 is implemented as contract/governance only. It
+  reserves future `local_index_only` `/search` and `/api/v1/search` envelopes,
+  but public search is not live and no runtime routes, live probes, downloads,
+  installs, uploads, local path search, arbitrary URL fetch, or production API
+  stability claim exists.
 - Generated Public Data Summaries v0 adds static machine-readable summaries
   under `site/dist/data/`. They are not live API semantics and do not add
   external observations.
@@ -587,16 +601,12 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Rust Local Index Parity Candidate v0 only after planning review and Cargo
-   availability expectations are explicit
-2. Relay Prototype Implementation v0 only after explicit human approval and
-   limited to the approved localhost-only/read-only/static relay scope
-3. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
-   human approval and limited to the approved read-only static-data/snapshot-demo
-   skeleton scope
-4. Manual Observation Batch 0 Execution (human-operated parallel work)
-5. Internet Archive Live Probe v0 only after explicit human approval and
-   separate implementation review
+1. Public Search Result Card Contract v0
+2. Public Search Safety / Abuse Guard v0
+3. Local Public Search Runtime v0 after contract and safety review
+4. Public Search Static Handoff v0
+5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
+   deployment-success claim
 
 Broader near-term direction:
 

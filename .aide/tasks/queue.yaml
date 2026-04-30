@@ -398,21 +398,21 @@
     {
       "id": "github_pages_workflow_repair_v0",
       "title": "GitHub Pages Workflow Repair v0",
-      "status": "recommended_next",
+      "status": "recommended_operator_follow_up",
       "priority": 57,
-      "notes": "Repair or configure the static-only Pages workflow/repository settings so the site/dist artifact can upload and deploy. Do not add backend hosting, live search, custom domains, secrets, or production claims."
+      "notes": "Repair or configure the static-only Pages workflow/repository settings so the site/dist artifact can upload and deploy. This remains an operator/Pages follow-up and does not block contract-only public search work. Do not add backend hosting, live search, custom domains, secrets, or production claims."
     },
     {
       "id": "public_search_api_contract_v0",
       "title": "Public Search API Contract v0",
-      "status": "recommended_follow_up",
+      "status": "completed",
       "priority": 58,
-      "notes": "Contract-only planning for future public search routes; do not implement API routes, backend hosting, live probes, crawling, or external searches."
+      "notes": "Implemented contract-only request, response, error, and reserved route inventories for future local_index_only public search. This did not implement API routes, backend hosting, live probes, crawling, arbitrary URL fetch, downloads, installs, uploads, local path search, or external searches."
     },
     {
       "id": "public_search_result_card_contract_v0",
       "title": "Public Search Result Card Contract v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 59,
       "notes": "Define future result-card fields and safety copy before UI/runtime implementation; do not add search runtime behavior."
     },
@@ -438,32 +438,46 @@
       "notes": "Future handoff from static publication to search contracts; keep GitHub Pages static-only unless separately approved."
     },
     {
+      "id": "public_search_rehearsal_v0",
+      "title": "Public Search Rehearsal v0",
+      "status": "recommended_follow_up",
+      "priority": 63,
+      "notes": "Future supervised rehearsal after contract, result-card, safety, and local runtime milestones; no public deployment, live probes, or production claim is implied."
+    },
+    {
       "id": "search_usefulness_source_expansion_v2_fixture_only",
       "title": "Search Usefulness Source Expansion v2, fixture-only",
       "status": "recommended_follow_up",
-      "priority": 63,
+      "priority": 64,
       "notes": "Fixture-only source expansion candidate; no live source calls, scraping, crawling, external observations, or arbitrary local ingestion."
     },
     {
       "id": "source_pack_contract_v0",
       "title": "Source Pack Contract v0",
       "status": "recommended_follow_up",
-      "priority": 64,
+      "priority": 65,
       "notes": "Future contract for source packs only; do not implement downloads, installers, crawling, or live sync."
     },
     {
       "id": "evidence_pack_contract_v0",
       "title": "Evidence Pack Contract v0",
       "status": "recommended_follow_up",
-      "priority": 65,
+      "priority": 66,
       "notes": "Future evidence-pack contract work; do not fabricate external baselines or claim rights/security review."
     },
     {
       "id": "index_pack_contract_v0",
       "title": "Index Pack Contract v0",
       "status": "recommended_follow_up",
-      "priority": 66,
+      "priority": 67,
       "notes": "Future index-pack contract work; do not add live source sync, crawling, hosted indexing, arbitrary local ingestion, or production search claims."
+    },
+    {
+      "id": "contribution_pack_contract_v0",
+      "title": "Contribution Pack Contract v0",
+      "status": "recommended_follow_up",
+      "priority": 68,
+      "notes": "Future contribution-pack contract work only; do not add accounts, uploads, moderation infrastructure, telemetry, or live backend behavior."
     }
   ]
 }

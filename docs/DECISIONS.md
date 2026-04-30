@@ -903,3 +903,31 @@ runtime, live probes, crawling, external source calls, custom domain, secrets,
 auth, telemetry, downloads, native clients, relay runtime, or production
 readiness claim. The next Codex-safe Pages milestone is GitHub Pages Workflow
 Repair v0.
+
+## ADR-106: Define Public Search Contract Before Runtime
+
+Status: accepted
+
+Public Search API Contract v0 adds
+`contracts/api/search_request.v0.json`,
+`contracts/api/search_response.v0.json`,
+`contracts/api/error_response.v0.json`,
+`control/inventory/publication/public_search_routes.json`,
+`docs/reference/PUBLIC_SEARCH_API_CONTRACT.md`,
+`docs/operations/PUBLIC_SEARCH_LOCAL_INDEX_ONLY_MODE.md`,
+`scripts/validate_public_search_contract.py`, and focused tests.
+
+The decision is to define the future public search API as governed contract
+data before any hosted route or runtime handler exists. The first allowed mode
+is `local_index_only`; `/search`, `/api/v1/search`, `/api/v1/query-plan`,
+`/api/v1/status`, `/api/v1/sources`, and `/api/v1/source/{source_id}` are
+reserved/future routes, not live routes. The contract records bounded request
+limits, a response envelope with result lanes, user-cost, compatibility,
+evidence, source, action, gap, warning, and absence fields, plus a stable error
+envelope. This adds no route implementation, backend hosting, live probes,
+external search automation, arbitrary URL fetch, crawling, downloads,
+installs, uploads, local path search, credentials, accounts, telemetry, auth,
+rate limiting implementation, or production API stability claim. The next
+Codex-safe milestone is Public Search Result Card Contract v0; GitHub Pages
+Workflow Repair v0 remains a separate operator/Pages follow-up before any
+hosted deployment-success claim.

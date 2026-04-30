@@ -70,3 +70,8 @@ Snapshots, relay prototypes, and native clients must use this policy alongside
 their own contracts. This review does not implement snapshot readers, relay
 runtime, native clients, live APIs, live probes, downloads, installers,
 telemetry, accounts, production signing, or deployment behavior.
+
+Public Search API Contract v0 may reference static public data as future input,
+but it does not make public JSON a live search API. Public search remains
+contract-only until a later runtime and safety milestone implements
+`local_index_only` behavior.

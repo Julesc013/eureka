@@ -97,6 +97,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     live_backend_routes = _load_json(PUBLICATION_DIR / "live_backend_routes.json")
     live_probe_gateway = _load_json(PUBLICATION_DIR / "live_probe_gateway.json")
     public_data_contract = _load_json(PUBLICATION_DIR / "public_data_contract.json")
+    public_search_routes = _load_json(PUBLICATION_DIR / "public_search_routes.json")
     relay_surface = _load_json(PUBLICATION_DIR / "relay_surface.json")
     snapshot_contract = _load_json(PUBLICATION_DIR / "snapshot_contract.json")
     static_hosting_targets = _load_json(PUBLICATION_DIR / "static_hosting_targets.json")
@@ -122,6 +123,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
         live_backend_routes,
         live_probe_gateway,
         public_data_contract,
+        public_search_routes,
         relay_surface,
         snapshot_contract,
         static_hosting_targets,
@@ -195,6 +197,7 @@ def _build_data_site_manifest(
     live_backend_routes: Mapping[str, Any],
     live_probe_gateway: Mapping[str, Any],
     public_data_contract: Mapping[str, Any],
+    public_search_routes: Mapping[str, Any],
     relay_surface: Mapping[str, Any],
     snapshot_contract: Mapping[str, Any],
     static_hosting_targets: Mapping[str, Any],
@@ -260,6 +263,23 @@ def _build_data_site_manifest(
             "live_probe_related": route.get("live_probe_related"),
         }
         for route in live_backend_routes.get("routes", [])
+        if isinstance(route, Mapping)
+    ]
+    public_search_route_records = [
+        {
+            "path_template": route.get("path_template"),
+            "method": route.get("method"),
+            "status": route.get("status"),
+            "implemented_now": route.get("implemented_now"),
+            "requires_backend": route.get("requires_backend"),
+            "static_site_route": route.get("static_site_route"),
+            "allowed_modes": route.get("allowed_modes", []),
+            "live_probe_allowed": route.get("live_probe_allowed"),
+            "downloads_allowed": route.get("downloads_allowed"),
+            "local_paths_allowed": route.get("local_paths_allowed"),
+            "uploads_allowed": route.get("uploads_allowed"),
+        }
+        for route in public_search_routes.get("routes", [])
         if isinstance(route, Mapping)
     ]
     live_probe_candidates = [
@@ -337,6 +357,19 @@ def _build_data_site_manifest(
             "candidate_source_count": len(live_probe_candidates),
             "candidate_sources": live_probe_candidates,
             "manual_only_sources": live_probe_gateway.get("manual_only_sources", []),
+        },
+        "public_search_api_contract": {
+            "status": "implemented_contract_only",
+            "contract_id": public_search_routes.get("contract_id"),
+            "first_allowed_mode": public_search_routes.get("first_allowed_mode"),
+            "runtime_routes_implemented": public_search_routes.get(
+                "runtime_routes_implemented"
+            ),
+            "route_count": len(public_search_route_records),
+            "routes": public_search_route_records,
+            "request_schema": public_search_routes.get("request_schema"),
+            "response_schema": public_search_routes.get("response_schema"),
+            "error_schema": public_search_routes.get("error_schema"),
         },
         "relay_surface": {
             "status": "implemented_contract_only_runtime_absent",
@@ -426,6 +459,7 @@ def _build_data_site_manifest(
             "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.",
             "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
             "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
+            "Public Search API Contract v0 is contract-only; /search and /api/v1/search are reserved for future local-index-only runtime and are not live.",
             "Google remains manual-baseline only and is not a live probe source.",
             "Relay Surface Design v0 is contract-only; no relay runtime, protocol server, network listener, private data exposure, write/admin route exposure, or live-probe passthrough is implemented.",
             "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
@@ -444,6 +478,7 @@ def _build_data_site_manifest(
             "control/inventory/publication/live_backend_routes.json",
             "control/inventory/publication/live_probe_gateway.json",
             "control/inventory/publication/public_data_contract.json",
+            "control/inventory/publication/public_search_routes.json",
             "control/inventory/publication/relay_surface.json",
             "control/inventory/publication/snapshot_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
@@ -750,6 +785,7 @@ def _build_build_manifest(
             "control/inventory/publication/live_backend_handoff.json",
             "control/inventory/publication/live_backend_routes.json",
             "control/inventory/publication/live_probe_gateway.json",
+            "control/inventory/publication/public_search_routes.json",
             "control/inventory/publication/relay_surface.json",
             "control/inventory/publication/snapshot_contract.json",
             "control/inventory/publication/static_hosting_targets.json",

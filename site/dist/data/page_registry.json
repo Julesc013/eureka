@@ -142,6 +142,21 @@
     },
     {
       "client_profiles": [
+        "standard_web",
+        "lite_html",
+        "text"
+      ],
+      "path": "/search",
+      "requires_javascript": false,
+      "safe_for_static_hosting": false,
+      "source_file": null,
+      "stability": "experimental",
+      "status": "deferred",
+      "title": "Future Public Search",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
         "lite_html"
       ],
       "path": "/lite/",
@@ -597,8 +612,8 @@
     }
   ],
   "registry_id": "eureka-public-page-registry",
-  "reserved_route_count": 35,
-  "route_count": 43,
+  "reserved_route_count": 36,
+  "route_count": 44,
   "schema_version": "0.1.0",
   "source_inputs": [
     "control/inventory/publication/page_registry.json"

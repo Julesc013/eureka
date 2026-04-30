@@ -67,6 +67,13 @@ Current scripts:
   supports `--json`, performs no network calls, implements no adapters, fetches
   no URLs, enables no downloads, and does not call Internet Archive or any
   external source
+- `validate_public_search_contract.py`: validates Public Search API Contract
+  v0 request, response, error, and reserved-route envelopes, enforcing
+  `local_index_only` as the only implemented mode, required error codes,
+  forbidden URL/local-path/download/install/upload/credential parameters,
+  disabled live probes, future/reserved route status, and no live public-search
+  or production API claim; it supports `--json`, performs no network calls, and
+  implements no runtime route behavior
 - `validate_compatibility_surfaces.py`: validates Compatibility Surface
   Strategy v0 inventories, including the surface capability matrix, route
   matrix, client-profile alignment, implemented static route roots, future

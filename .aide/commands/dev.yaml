@@ -546,6 +546,12 @@ steps:
     run: python scripts/validate_github_pages_run_evidence.py --json
   - id: github_pages_run_evidence_tests
     run: python -m unittest tests.operations.test_github_pages_run_evidence tests.scripts.test_validate_github_pages_run_evidence
+  - id: public_search_contract_validator
+    run: python scripts/validate_public_search_contract.py
+  - id: public_search_contract_validator_json
+    run: python scripts/validate_public_search_contract.py --json
+  - id: public_search_contract_tests
+    run: python -m unittest tests.operations.test_public_search_api_contract tests.scripts.test_validate_public_search_contract
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
@@ -563,6 +569,7 @@ notes:
   - Bundle inspection remains a local bootstrap readback seam; path-based inspection is a demo choice and not a final upload or import contract.
   - The native CLI proof remains bootstrap-scale and does not imply a final CLI, TUI, GUI, or packaging direction.
   - The local stdlib HTTP API proof remains bootstrap-scale and does not imply final auth, HTTPS/TLS, deployment, or durable public route semantics.
+  - Public Search API Contract v0 is contract-only. It reserves future local_index_only `/search` and `/api/v1/search` envelopes without making public search live, adding route handlers, enabling live probes, or allowing downloads, installs, uploads, local path search, or arbitrary URL fetch.
   - Deterministic tests and demos use recorded GitHub Releases fixtures only; live GitHub acquisition is not required and remains deferred.
   - The bounded representations proof remains bootstrap-scale and does not imply final download, install, import, restore, or representation-selection semantics.
   - The bounded compatibility proof remains bootstrap-scale, uses small fixed host profile presets only, and does not imply a final compatibility oracle, installer model, or runtime-routing engine.

@@ -71,6 +71,13 @@ Live Probe Gateway Contract v0 adds disabled source-probe gateway summaries to
 not implement live probes, call external sources, fetch URLs, enable downloads,
 or turn static JSON into a live probe API.
 
+Public Search API Contract v0 adds contract-only public-search route summaries
+to `/data/site_manifest.json` and validation provenance to
+`/data/build_manifest.json`. These fields describe future `local_index_only`
+search envelopes only. They do not make `/search` or `/api/v1/search` live,
+host a backend, enable live probes, add downloads, installs, uploads, local
+path search, arbitrary URL fetch, or turn static JSON into a live search API.
+
 Compatibility Surface Strategy v0 records surface capability and route matrix
 inputs for public data consumers. These fields describe which static
 projections exist now and which app, API, snapshot, relay, and native-client

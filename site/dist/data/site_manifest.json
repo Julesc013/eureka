@@ -119,6 +119,7 @@
     "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.",
     "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
     "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
+    "Public Search API Contract v0 is contract-only; /search and /api/v1/search are reserved for future local-index-only runtime and are not live.",
     "Google remains manual-baseline only and is not a live probe source.",
     "Relay Surface Design v0 is contract-only; no relay runtime, protocol server, network listener, private data exposure, write/admin route exposure, or live-probe passthrough is implemented.",
     "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
@@ -556,6 +557,21 @@
       "stability": "experimental",
       "status": "planned",
       "title": "Future Standard Web Surface",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "standard_web",
+        "lite_html",
+        "text"
+      ],
+      "path": "/search",
+      "requires_javascript": false,
+      "safe_for_static_hosting": false,
+      "source_file": null,
+      "stability": "experimental",
+      "status": "deferred",
+      "title": "Future Public Search",
       "works_under_project_base_path": true
     },
     {
@@ -1022,6 +1038,108 @@
     "/data/site_manifest.json",
     "/data/source_summary.json"
   ],
+  "public_search_api_contract": {
+    "contract_id": "public_search_api_contract_v0",
+    "error_schema": "contracts/api/error_response.v0.json",
+    "first_allowed_mode": "local_index_only",
+    "request_schema": "contracts/api/search_request.v0.json",
+    "response_schema": "contracts/api/search_response.v0.json",
+    "route_count": 6,
+    "routes": [
+      {
+        "allowed_modes": [
+          "local_index_only"
+        ],
+        "downloads_allowed": false,
+        "implemented_now": false,
+        "live_probe_allowed": false,
+        "local_paths_allowed": false,
+        "method": "GET",
+        "path_template": "/search",
+        "requires_backend": true,
+        "static_site_route": false,
+        "status": "future_contract",
+        "uploads_allowed": false
+      },
+      {
+        "allowed_modes": [
+          "local_index_only"
+        ],
+        "downloads_allowed": false,
+        "implemented_now": false,
+        "live_probe_allowed": false,
+        "local_paths_allowed": false,
+        "method": "GET",
+        "path_template": "/api/v1/search",
+        "requires_backend": true,
+        "static_site_route": false,
+        "status": "future_contract",
+        "uploads_allowed": false
+      },
+      {
+        "allowed_modes": [
+          "local_index_only"
+        ],
+        "downloads_allowed": false,
+        "implemented_now": false,
+        "live_probe_allowed": false,
+        "local_paths_allowed": false,
+        "method": "GET",
+        "path_template": "/api/v1/query-plan",
+        "requires_backend": true,
+        "static_site_route": false,
+        "status": "future_contract",
+        "uploads_allowed": false
+      },
+      {
+        "allowed_modes": [
+          "local_index_only"
+        ],
+        "downloads_allowed": false,
+        "implemented_now": false,
+        "live_probe_allowed": false,
+        "local_paths_allowed": false,
+        "method": "GET",
+        "path_template": "/api/v1/status",
+        "requires_backend": true,
+        "static_site_route": false,
+        "status": "future_contract",
+        "uploads_allowed": false
+      },
+      {
+        "allowed_modes": [
+          "local_index_only"
+        ],
+        "downloads_allowed": false,
+        "implemented_now": false,
+        "live_probe_allowed": false,
+        "local_paths_allowed": false,
+        "method": "GET",
+        "path_template": "/api/v1/sources",
+        "requires_backend": true,
+        "static_site_route": false,
+        "status": "future_contract",
+        "uploads_allowed": false
+      },
+      {
+        "allowed_modes": [
+          "local_index_only"
+        ],
+        "downloads_allowed": false,
+        "implemented_now": false,
+        "live_probe_allowed": false,
+        "local_paths_allowed": false,
+        "method": "GET",
+        "path_template": "/api/v1/source/{source_id}",
+        "requires_backend": true,
+        "static_site_route": false,
+        "status": "future_contract",
+        "uploads_allowed": false
+      }
+    ],
+    "runtime_routes_implemented": false,
+    "status": "implemented_contract_only"
+  },
   "publication_contract_id": "eureka-publication-plane",
   "publication_contract_version": "0.1.0",
   "relay_surface": {
@@ -1140,6 +1258,7 @@
     "control/inventory/publication/live_backend_routes.json",
     "control/inventory/publication/live_probe_gateway.json",
     "control/inventory/publication/public_data_contract.json",
+    "control/inventory/publication/public_search_routes.json",
     "control/inventory/publication/relay_surface.json",
     "control/inventory/publication/snapshot_contract.json",
     "control/inventory/publication/static_hosting_targets.json",
@@ -1246,6 +1365,13 @@
     {
       "enabled_by_default": false,
       "id": "api",
+      "requires_backend": true,
+      "safe_for_static_hosting": false,
+      "status": "planned"
+    },
+    {
+      "enabled_by_default": false,
+      "id": "public_search_api",
       "requires_backend": true,
       "safe_for_static_hosting": false,
       "status": "planned"

@@ -63,6 +63,11 @@ The minimum public-alpha entry gate should include:
   probe policy, candidate-source caps, cache/evidence expectations, and
   operator gates; no live probes, network calls, downloads, scraping, or
   Internet Archive access)
+- Public Search API Contract v0 (implemented as contract-only future
+  `local_index_only` request, response, error, and route envelopes; `/search`
+  and `/api/v1/search` are not live and no runtime route, live probe, download,
+  install, upload, local path search, arbitrary URL fetch, or production API
+  stability is added)
 - Compatibility Surface Strategy v0 (implemented as strategy, capability
   matrix, route matrix, old-client degradation policy, and
   native/snapshot/relay readiness guidance; no new runtime behavior,
@@ -241,6 +246,12 @@ probes exist. It keeps all candidates future-disabled, keeps public-alpha live
 probes disabled by default, keeps Google manual-baseline-only, and adds no
 Internet Archive calls, URL fetching, scraping, crawling, downloads, adapters,
 or production source behavior.
+
+Public Search API Contract v0 now defines the first future public-search
+contract in `local_index_only` mode. It reserves `/search` and
+`/api/v1/search` but does not make search live, add route handlers, host a
+backend, enable live probes, fetch URLs, crawl, download, install, upload,
+search local paths, or claim production API stability.
 
 Relay Surface Design v0 now records the future local/LAN relay posture for old
 or constrained clients. It is public-alpha-adjacent contract work only: no relay

@@ -24,7 +24,14 @@ Reserved endpoint families are recorded in:
 ```text
 control/inventory/publication/live_backend_handoff.json
 control/inventory/publication/live_backend_routes.json
+control/inventory/publication/public_search_routes.json
 ```
+
+Public Search API Contract v0 reserves the future `/search` and
+`/api/v1/search` search contract separately. Its first allowed mode is
+`local_index_only`; it does not make search live or allow live probes,
+downloads, installs, uploads, local path search, arbitrary URL fetch, or
+external source fanout.
 
 ## Required Client Behavior
 
@@ -71,6 +78,7 @@ This contract does not add:
 - rate limiting or abuse controls
 - provider deployment configuration
 - custom domain configuration
+- public search runtime
 
 Live Probe Gateway Contract v0 now defines disabled-by-default source policy,
 limits, cache/evidence expectations, and operator gates. It is policy only.

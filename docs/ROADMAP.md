@@ -43,6 +43,14 @@ after `site/dist` build/validation checks passed and before artifact upload,
 so deployment success is not claimable and the next Pages milestone is repair
 or repository settings configuration.
 
+Public Search API Contract v0 now defines future `local_index_only` public
+search request, response, error, and route envelopes under `contracts/api/` and
+`control/inventory/publication/public_search_routes.json`. It reserves
+`/search` and `/api/v1/search` as future routes only; it does not make public
+search live, add runtime handlers, host a backend, enable live probes, fetch
+URLs, scrape, crawl, download, install, upload, search local paths, or claim
+production API stability.
+
 ## Stage 3: Surface Skeletons
 
 - add the initial web workbench shell against gateway public contracts
@@ -291,7 +299,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> GitHub Pages Workflow Repair v0
+> Public Search Result Card Contract v0
 
 Public Data Contract Stability Review v0 is now implemented as field-level
 contract governance under
@@ -317,6 +325,11 @@ active repo-local static artifact and records the local audit pack under
 deployment evidence has now been checked by GitHub Pages Run Evidence Review
 v0. The current-head run failed at Pages configuration before artifact upload,
 so no deployment success claim is allowed.
+Public Search API Contract v0 is now implemented as contract/governance only.
+The next contract milestone should refine result-card fields, limitations, and
+display safety before any public-search runtime work. GitHub Pages Workflow
+Repair v0 remains an operator/Pages follow-up before any hosted deployment
+success claim is made.
 Rust Local Index Parity Candidate v0 remains blocked on planning review and
 Cargo availability.
 

@@ -2,8 +2,9 @@
 
 This directory holds the governed publication-plane contracts for Eureka's
 public routes, public data files, client profiles, deployment target semantics,
-custom-domain/static-host readiness, future live backend handoff, live probe
-gateway policy, compatibility-surface strategy, and redirect policy.
+custom-domain/static-host readiness, future live backend handoff, public search
+API contract, live probe gateway policy, compatibility-surface strategy, and
+redirect policy.
 
 The inventory governs publication shape for static deployment and later public
 surfaces. It does not prove GitHub Pages deployment success, add live backend
@@ -31,6 +32,11 @@ Current boundary:
   `surface_capabilities.json` contain Live Backend Handoff Contract v0 policy
   records. They reserve `/api/v1` and disabled live capability flags without
   making a backend or API route live.
+- `public_search_routes.json` contains Public Search API Contract v0 route
+  reservations for future `local_index_only` public search. It adds no
+  `/search` or `/api/v1/search` runtime, live backend hosting, live probes,
+  downloads, installs, uploads, local path search, arbitrary URL fetch, or
+  production API guarantee.
 - `live_probe_gateway.json` contains Live Probe Gateway Contract v0 policy
   records. It records disabled future source candidates, caps, cache/evidence
   posture, and operator gates without implementing probes or making network
@@ -61,6 +67,7 @@ python scripts/generate_compatibility_surfaces.py --check
 python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_static_host_readiness.py
 python scripts/validate_live_backend_handoff.py
+python scripts/validate_public_search_contract.py
 python scripts/validate_live_probe_gateway.py
 python scripts/validate_compatibility_surfaces.py
 python scripts/generate_static_snapshot.py --check

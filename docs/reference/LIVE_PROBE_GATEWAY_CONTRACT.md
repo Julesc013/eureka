@@ -9,6 +9,10 @@ The gateway sits behind the future live backend handoff. Static publication
 surfaces may describe that the gateway contract exists, but they must not imply
 that live probes are available.
 
+Public Search API Contract v0 does not use live probes. Its first allowed mode
+is `local_index_only`, and its request schema rejects live-probe mode, URL
+fetch, downloads, installs, uploads, local path search, and source credentials.
+
 ## Rules
 
 - Live probes are disabled by default.
@@ -76,6 +80,6 @@ include `capability_disabled`, `live_probes_disabled`, `source_disabled`,
 
 ## Not Implemented
 
-This milestone adds no adapters, no endpoint handlers, no URL fetching, no live
-Internet Archive behavior, no crawling, no scraping, no downloads, no auth,
-and no production API stability promise.
+This milestone adds no adapters, no endpoint handlers, no public search
+runtime, no URL fetching, no live Internet Archive behavior, no crawling, no
+scraping, no downloads, no auth, and no production API stability promise.

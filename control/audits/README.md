@@ -106,3 +106,9 @@ Current packs:
   current-head run failure at Pages configuration, absence of an uploaded Pages
   artifact, failed deployment status, local validation evidence, and operator
   follow-up without triggering deployment or adding backend behavior.
+
+Public Search API Contract v0 is governed under `contracts/api/`,
+`control/inventory/publication/public_search_routes.json`, and
+`docs/reference/PUBLIC_SEARCH_API_CONTRACT.md` rather than an audit pack. It is
+contract-only and adds no public-search runtime, live probes, backend hosting,
+downloads, installs, uploads, local path search, or production API claim.

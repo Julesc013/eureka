@@ -64,6 +64,10 @@
   "live_probe_dependency_status": "requires_live_probe_gateway_contract_v0",
   "live_probe_gateway_contract": "control/inventory/publication/live_probe_gateway.json",
   "live_probe_gateway_contract_status": "implemented_contract_only_runtime_disabled",
+  "public_search_api_contract": "control/inventory/publication/public_search_routes.json",
+  "public_search_api_contract_status": "implemented_contract_only",
+  "public_search_first_allowed_mode": "local_index_only",
+  "public_search_runtime_implemented": false,
   "client_profiles": [
     "standard_web",
     "modern_web",
@@ -95,6 +99,7 @@
     "GitHub Pages remains a static-only publication target.",
     "No backend hosting, live source probe, auth, account, CORS, rate-limit, provider deployment, or production API guarantee is added.",
     "Live Probe Gateway Contract v0 now defines disabled-by-default probe policy, but /api/v1/live-probe remains blocked until later explicit implementation approval.",
+    "Public Search API Contract v0 reserves /search and /api/v1/search for future local-index-only search without making the API live or enabling live probes.",
     "Compatibility Surface Strategy v0 treats /api/v1 as a future optional projection alongside static data, lite/text/files, snapshots, relay, CLI, and native-client plans."
   ]
 }

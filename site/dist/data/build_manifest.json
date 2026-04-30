@@ -92,6 +92,7 @@
     "control/inventory/publication/live_backend_handoff.json",
     "control/inventory/publication/live_backend_routes.json",
     "control/inventory/publication/live_probe_gateway.json",
+    "control/inventory/publication/public_search_routes.json",
     "control/inventory/publication/relay_surface.json",
     "control/inventory/publication/snapshot_contract.json",
     "control/inventory/publication/static_hosting_targets.json",

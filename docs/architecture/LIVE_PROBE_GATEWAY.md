@@ -22,6 +22,11 @@ The gateway is also separate from recorded fixtures. Recorded fixtures are
 committed repo inputs. Live probes would be fresh external observations and must
 not silently replace fixture-backed truth.
 
+Public Search API Contract v0 is also separate from this gateway. Its first
+mode is `local_index_only`, so future public search must use a controlled local
+index rather than live source fanout. Live probe modes remain disabled and are
+not accepted by the v0 search request schema.
+
 ## Anti-Crawl Boundary
 
 The gateway is designed to prevent uncontrolled crawling:

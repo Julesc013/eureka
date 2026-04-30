@@ -24,6 +24,7 @@ REQUIRED_FILES = {
     "live_backend_routes.json",
     "live_probe_gateway.json",
     "public_data_contract.json",
+    "public_search_routes.json",
     "redirects.json",
     "relay_surface.json",
     "snapshot_contract.json",
@@ -162,6 +163,14 @@ REQUIRED_DEMO_ROUTES = {
 }
 REQUIRED_DEMO_DATA_PATHS = {
     "/demo/data/demo_snapshots.json",
+}
+REQUIRED_PUBLIC_SEARCH_ROUTES = {
+    "GET /search",
+    "GET /api/v1/search",
+    "GET /api/v1/query-plan",
+    "GET /api/v1/status",
+    "GET /api/v1/sources",
+    "GET /api/v1/source/{source_id}",
 }
 REQUIRED_LIVE_BACKEND_ENDPOINTS = {
     "/api/v1/status",
@@ -318,6 +327,9 @@ def validate_publication_inventory(
         "public_data_contract.json": _load_json(
             inventory_dir / "public_data_contract.json", errors, repo_root
         ),
+        "public_search_routes.json": _load_json(
+            inventory_dir / "public_search_routes.json", errors, repo_root
+        ),
         "redirects.json": _load_json(inventory_dir / "redirects.json", errors, repo_root),
         "relay_surface.json": _load_json(
             inventory_dir / "relay_surface.json", errors, repo_root
@@ -351,6 +363,7 @@ def validate_publication_inventory(
     _validate_live_backend_routes(payloads["live_backend_routes.json"], errors)
     _validate_live_probe_gateway(payloads["live_probe_gateway.json"], errors)
     _validate_public_data_contract(payloads["public_data_contract.json"], site_dir, errors)
+    _validate_public_search_routes(payloads["public_search_routes.json"], errors)
     _validate_redirects(payloads["redirects.json"], errors)
     _validate_relay_surface(payloads["relay_surface.json"], errors)
     _validate_snapshot_contract(payloads["snapshot_contract.json"], errors)
@@ -374,6 +387,7 @@ def validate_publication_inventory(
         in existing_files,
         "required_client_profiles": sorted(REQUIRED_CLIENT_PROFILES),
         "required_public_data_paths": sorted(REQUIRED_PUBLIC_DATA_PATHS),
+        "public_search_routes_checked": "public_search_routes.json" in existing_files,
         "domain_plan_checked": "domain_plan.json" in existing_files,
         "live_backend_handoff_checked": "live_backend_handoff.json" in existing_files,
         "live_backend_routes_checked": "live_backend_routes.json" in existing_files,
@@ -1050,6 +1064,59 @@ def _validate_public_data_contract(payload: Any, site_dir: Path, errors: list[st
             errors.append(
                 f"public_data_contract.json: demo data path {required_path} is missing from site/dist."
             )
+
+
+def _validate_public_search_routes(payload: Any, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("public_search_routes.json: must be a JSON object.")
+        return
+    expected = {
+        "schema_version": "0.1.0",
+        "registry_id": "eureka-public-search-routes",
+        "contract_id": "public_search_api_contract_v0",
+        "status": "contract_only",
+        "implemented_now": False,
+        "runtime_routes_implemented": False,
+        "first_allowed_mode": "local_index_only",
+    }
+    _expect_mapping_values("public_search_routes.json", payload, expected, errors)
+    if _string_list(payload.get("contract_modes")) != ["local_index_only"]:
+        errors.append("public_search_routes.json: contract_modes must contain only local_index_only.")
+    if payload.get("runtime_modes_implemented") != []:
+        errors.append("public_search_routes.json: runtime_modes_implemented must be empty.")
+    routes = payload.get("routes")
+    if not isinstance(routes, list):
+        errors.append("public_search_routes.json: routes must be a list.")
+        return
+    registered: set[str] = set()
+    for index, route in enumerate(routes):
+        if not isinstance(route, Mapping):
+            errors.append(f"public_search_routes.json: routes[{index}] must be an object.")
+            continue
+        route_id = f"{route.get('method')} {route.get('path_template')}"
+        registered.add(route_id)
+        if route.get("status") not in {"future_contract", "reserved", "planned", "deferred"}:
+            errors.append(f"public_search_routes.json: route {route_id} must remain future/reserved.")
+        if route.get("implemented_now") is not False:
+            errors.append(f"public_search_routes.json: route {route_id}.implemented_now must be false.")
+        if route.get("requires_backend") is not True:
+            errors.append(f"public_search_routes.json: route {route_id}.requires_backend must be true.")
+        for flag in (
+            "static_site_route",
+            "live_probe_allowed",
+            "downloads_allowed",
+            "local_paths_allowed",
+            "uploads_allowed",
+        ):
+            if route.get(flag) is not False:
+                errors.append(f"public_search_routes.json: route {route_id}.{flag} must be false.")
+        if _string_list(route.get("allowed_modes")) != ["local_index_only"]:
+            errors.append(
+                f"public_search_routes.json: route {route_id} must allow only local_index_only."
+            )
+    missing = sorted(REQUIRED_PUBLIC_SEARCH_ROUTES - registered)
+    if missing:
+        errors.append(f"public_search_routes.json: missing routes {missing}.")
 
 
 def _validate_redirects(payload: Any, errors: list[str]) -> None:

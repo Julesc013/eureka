@@ -2554,6 +2554,50 @@
       "failure_means": "GitHub Pages Run Evidence Review v0 tests failed, allowing missing audit evidence, incorrect workflow upload path, or false deployment claims to regress.",
       "advisory_or_required": "required",
       "notes": "Checks the run-evidence audit report, validator JSON behavior, site/dist upload path, failed current-head evidence, absent artifact/deployment URL, and required operator actions without deploying or changing runtime behavior."
+    },
+    {
+      "test_id": "public_search_contract_validator",
+      "label": "Public search contract validator",
+      "command": "python scripts/validate_public_search_contract.py",
+      "category": "publication",
+      "owner_area": "contracts/api",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Public Search API Contract v0 no longer validates its request, response, error, route, safety, or no-live-search posture.",
+      "advisory_or_required": "required",
+      "notes": "Added by Public Search API Contract v0; validates local_index_only as the only implemented mode, forbidden parameters, reserved future routes, required error codes, live-probe/download/local-path prohibitions, and no production API or live-search claim."
+    },
+    {
+      "test_id": "public_search_contract_tests",
+      "label": "Public search contract tests",
+      "command": "python -m unittest tests.operations.test_public_search_api_contract tests.scripts.test_validate_public_search_contract",
+      "category": "publication",
+      "owner_area": "contracts/api",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Public Search API Contract v0 tests failed, allowing live-search claims, unsupported modes, missing forbidden parameters, missing route reservations, or schema drift to regress.",
+      "advisory_or_required": "required",
+      "notes": "Checks schema parsing, validator JSON behavior, route reservation status, local_index_only mode, required error codes, forbidden inputs, disabled live probes, and static-site no-live-search posture without adding runtime behavior."
     }
   ]
 }

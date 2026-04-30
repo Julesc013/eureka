@@ -165,6 +165,24 @@
       "notes": "Reserved for future organized web routes; not implemented."
     },
     {
+      "path": "/search",
+      "title": "Future Public Search",
+      "status": "deferred",
+      "stability": "experimental",
+      "source_file": null,
+      "client_profiles": [
+        "standard_web",
+        "lite_html",
+        "text"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": false,
+      "public_claim_scope": "reserved future public search route only",
+      "notes": "Reserved by Public Search API Contract v0 for future local-index-only hosted search. It is not implemented in site/dist and is not live."
+    },
+    {
       "path": "/lite/",
       "title": "Lite HTML Surface",
       "status": "static_demo",

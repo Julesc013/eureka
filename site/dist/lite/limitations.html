@@ -24,6 +24,7 @@
 <li>Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.</li>
 <li>Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.</li>
 <li>Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.</li>
+<li>Public Search API Contract v0 is contract-only; /search and /api/v1/search are reserved for future local-index-only runtime and are not live.</li>
 <li>Google remains manual-baseline only and is not a live probe source.</li>
 <li>Relay Surface Design v0 is contract-only; no relay runtime, protocol server, network listener, private data exposure, write/admin route exposure, or live-probe passthrough is implemented.</li>
 <li>Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.</li>
