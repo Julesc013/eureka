@@ -81,6 +81,22 @@
           "text": "implemented as disabled-by-default source probe policy, caps, cache/evidence requirements, and operator gates; no probes or network calls."
         },
         {
+          "title": "Public Search API Contract v0",
+          "text": "implemented as contract-only local_index_only request, response, error, and route envelopes; /search and /api/v1/search are not live."
+        },
+        {
+          "title": "Public Search Result Card Contract v0",
+          "text": "implemented as contract-only result-card schema, examples, docs, validator, and tests for future web/API/lite/text/native/relay/snapshot consumers; no runtime search or unsafe actions."
+        },
+        {
+          "title": "Public Search Safety / Abuse Guard v0",
+          "text": "implemented as policy-only local_index_only guardrails, request/result/time limits, forbidden parameters, privacy posture, operator controls, validator, tests, and runtime readiness checklist; no runtime routes or middleware."
+        },
+        {
+          "title": "Local Public Search Runtime v0",
+          "text": "next recommended implementation milestone after API, result-card, and safety contracts; must remain local_index_only and must not add live probes, downloads, uploads, local path search, arbitrary URL fetch, telemetry by default, or production claims."
+        },
+        {
           "title": "Rust Query Planner Parity Candidate v0",
           "text": "implemented as an isolated Rust planner candidate against expanded Python-oracle goldens; Python remains the oracle and Rust is not wired into runtime."
         },
@@ -122,7 +138,7 @@
         },
         {
           "title": "Native Client Project Readiness Review v0",
-          "text": "recommended next Codex-safe milestone before any Visual Studio, Xcode, GUI, FFI, native cache runtime, install automation, or package-manager work."
+          "text": "implemented as evidence-only readiness review; minimal native skeleton work remains blocked pending explicit human approval."
         },
         {
           "title": "Manual Observation Batch 0 Execution",

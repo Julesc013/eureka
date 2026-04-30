@@ -956,5 +956,29 @@ v0. The contract does not add runtime public search, `/search`, `/api/v1/search`
 backend hosting, live probes, arbitrary URL fetch, downloads, installers,
 execution, uploads, native clients, relay runtime, snapshot reader runtime,
 malware-safety claims, rights-clearance claims, production ranking guarantees,
-or production API stability. The next Codex-safe milestone is Public Search
+or production API stability. The next Codex-safe milestone was Public Search
 Safety / Abuse Guard v0.
+
+## ADR-108: Gate Public Search Runtime With Safety Policy
+
+Status: accepted
+
+Public Search Safety / Abuse Guard v0 adds
+`control/inventory/publication/public_search_safety.json`,
+`docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md`,
+`docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`,
+`scripts/validate_public_search_safety.py`, and focused tests.
+
+The decision is to define safety, abuse, privacy, boundedness, and operator
+guardrails before any public search runtime route exists. The first and only
+allowed v0 mode is `local_index_only`; public search must not become live
+external fanout, arbitrary URL fetch, caller-provided local path search,
+downloads/installers/uploads, telemetry by default, or a production safety
+claim. The policy defines request/result/time limits, forbidden parameters,
+disabled behaviors, error mapping to the P26 envelope, privacy/logging posture,
+future operator controls, public-alpha/static defaults, and runtime
+prerequisites. It adds no runtime search route, rate-limit middleware,
+auth/accounts, telemetry runtime, hosted backend, live probe,
+download/install/upload surface, local path search, arbitrary URL fetch, or
+production readiness claim. The next Codex-safe milestone is Local Public
+Search Runtime v0 under these gates.

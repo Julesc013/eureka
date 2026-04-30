@@ -41,6 +41,12 @@ Current boundary:
   Contract v0 for future result cards. It adds no live result output, runtime
   routes, downloads, installers, execution, uploads, malware-safety claim,
   rights-clearance claim, or production ranking guarantee.
+- `public_search_safety.json` contains Public Search Safety / Abuse Guard v0
+  policy for future public search. It fixes `local_index_only`, request/result
+  limits, forbidden parameters, disabled modes, error mapping, privacy defaults,
+  operator controls, and runtime readiness gates without implementing runtime
+  search, middleware, telemetry, live probes, downloads, uploads, or local path
+  search.
 - `live_probe_gateway.json` contains Live Probe Gateway Contract v0 policy
   records. It records disabled future source candidates, caps, cache/evidence
   posture, and operator gates without implementing probes or making network
@@ -73,6 +79,7 @@ python scripts/validate_static_host_readiness.py
 python scripts/validate_live_backend_handoff.py
 python scripts/validate_public_search_contract.py
 python scripts/validate_public_search_result_card_contract.py
+python scripts/validate_public_search_safety.py
 python scripts/validate_live_probe_gateway.py
 python scripts/validate_compatibility_surfaces.py
 python scripts/generate_static_snapshot.py --check

@@ -117,6 +117,14 @@ lite/text, native, relay, snapshot, and contribution consumers while adding no
 runtime routes, live search, live probes, downloads, installers, execution,
 uploads, malware-safety claim, rights-clearance claim, or production ranking
 claim.
+Public Search Safety / Abuse Guard v0 now defines the policy-only guardrails
+required before runtime search work: `local_index_only` only, bounded
+request/result/time limits, forbidden URL/local path/credential/download/install
+/upload parameters, disabled live/external modes, privacy-first logging posture,
+operator controls, runtime-readiness checklist, validator, and tests. It adds no
+runtime routes, rate-limit middleware, auth/accounts/session behavior, telemetry
+runtime, hosted backend, live probes, downloads, installers, uploads, local path
+search, arbitrary URL fetch, or production safety claim.
 Generated Public Data Summaries v0 now adds deterministic static JSON summaries
 under `site/dist/data/` for page, source, eval, route, and build state. These
 files feed the lite/text/files seed surfaces and remain inputs for future
@@ -479,6 +487,8 @@ Roadmaps and operations:
 - [Public Data Contract](docs/reference/PUBLIC_DATA_CONTRACT.md)
 - [Public Search API Contract](docs/reference/PUBLIC_SEARCH_API_CONTRACT.md)
 - [Public Search Result Card Contract](docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md)
+- [Public Search Safety / Abuse Guard](docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md)
+- [Public Search Runtime Readiness Checklist](docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md)
 - [Client Profile Contract](docs/reference/CLIENT_PROFILE_CONTRACT.md)
 - [Live Probe Gateway Contract](docs/reference/LIVE_PROBE_GATEWAY_CONTRACT.md)
 - [Snapshot Format Contract](docs/reference/SNAPSHOT_FORMAT_CONTRACT.md)
@@ -530,6 +540,13 @@ Eureka is substantial, but it is still a prototype/reference backend:
   old-client/native/relay/snapshot consumers, but it does not make search live,
   add route handlers, enable downloads, installers, execution, uploads, malware
   safety, rights clearance, or production ranking guarantees.
+- Public Search Safety / Abuse Guard v0 is implemented as policy/governance
+  only. It defines request/result/time limits, forbidden parameters, disabled
+  modes, error mapping, logging/privacy posture, operator controls, and the
+  runtime readiness checklist, but it does not implement public search runtime,
+  rate-limit middleware, auth/accounts, telemetry runtime, live probes,
+  downloads, uploads, local path search, arbitrary URL fetch, or production
+  safety guarantees.
 - Generated Public Data Summaries v0 adds static machine-readable summaries
   under `site/dist/data/`. They are not live API semantics and do not add
   external observations.
@@ -617,10 +634,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Public Search Safety / Abuse Guard v0
-2. Local Public Search Runtime v0 after contract and safety review
-3. Public Search Static Handoff v0
-4. Public Search Rehearsal v0
+1. Local Public Search Runtime v0 after API, result-card, and safety review
+2. Public Search Static Handoff v0
+3. Public Search Rehearsal v0
+4. Search Usefulness Source Expansion v2, fixture-only
 5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

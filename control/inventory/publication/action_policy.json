@@ -356,6 +356,16 @@
     "Native Action / Download / Install Policy v0 is policy, contract, validation, and documentation only.",
     "No download surface, installer, package-manager integration, native client, relay runtime, live probe, malware scanner, rights-clearance workflow, or executable trust claim is implemented.",
     "Current bounded local actions remain fixture/manifest/developer-local only and do not imply public downloads or install automation.",
-    "Future native clients must use this policy before adding download, install handoff, package-manager handoff, mirror, execute, restore, uninstall, or rollback behavior."
-  ]
+    "Future native clients must use this policy before adding download, install handoff, package-manager handoff, mirror, execute, restore, uninstall, or rollback behavior.",
+    "Public Search Safety / Abuse Guard v0 reuses this action policy to keep downloads, installs, execute, upload, mirror, and restore-style actions disabled in public search v0."
+  ],
+  "public_search_safety_policy_dependency": {
+    "policy": "control/inventory/publication/public_search_safety.json",
+    "status": "policy_only",
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execute_enabled": false,
+    "uploads_enabled": false,
+    "notes": "Public Search Safety / Abuse Guard v0 maps public-search download, install, execute, upload, and local-path attempts to disabled/forbidden error codes before any runtime exists."
+  }
 }

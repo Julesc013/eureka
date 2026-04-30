@@ -294,14 +294,14 @@ The next backend sequence is:
 68. GitHub Pages Run Evidence Review v0 (implemented; current-head Pages run failed at configuration before artifact upload)
 69. Public Search API Contract v0 (implemented as contract-only local_index_only request/response/error/route envelopes; no runtime routes or live probes)
 70. Public Search Result Card Contract v0 (implemented as contract-only result-card schema, examples, audit pack, docs, validator, and tests; no runtime routes or download/install/execute behavior)
-71. Public Search Safety / Abuse Guard v0
-72. Local Public Search Runtime v0, only after contract and safety review
+71. Public Search Safety / Abuse Guard v0 (implemented as policy-only safety, abuse, privacy, operator-control, validator, and readiness-checklist governance; no runtime routes or middleware)
+72. Local Public Search Runtime v0, only after API, result-card, and safety review
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Public Search Safety / Abuse Guard v0
+> Local Public Search Runtime v0
 
 Why this comes next:
 
@@ -332,8 +332,14 @@ Why this comes next:
   live, adding route handlers, enabling downloads/installers/execution/uploads,
   claiming malware safety, claiming rights clearance, or promising production
   ranking.
-- Public Search Safety / Abuse Guard v0 is the next safe contract milestone
-  before runtime search work.
+- Public Search Safety / Abuse Guard v0 is implemented as policy/governance
+  only. It defines local_index_only mode, request/result/time limits, forbidden
+  parameters, disabled live/external behavior, error mapping, logging/privacy
+  defaults, operator controls, and runtime readiness gates without adding route
+  handlers, rate-limit middleware, telemetry runtime, hosted backend, live
+  probes, downloads, uploads, local path search, or production safety claims.
+- Local Public Search Runtime v0 is the next safe implementation milestone and
+  must stay inside those contract and safety gates.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

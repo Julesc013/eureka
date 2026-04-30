@@ -2642,6 +2642,52 @@
       "failure_means": "Public Search Result Card Contract v0 tests failed, allowing result-card schema drift, unsafe allowed actions, missing lanes, or false live-search/safety claims to regress.",
       "advisory_or_required": "required",
       "notes": "Checks schema and example parsing, validator JSON behavior, result lanes, allowed/blocked/future-gated action separation, search-response alignment, and no downloads/installers/live backend behavior."
+    },
+    {
+      "test_id": "public_search_safety_validator",
+      "label": "Public search safety guard validator",
+      "command": "python scripts/validate_public_search_safety.py",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Public Search Safety / Abuse Guard v0 no longer validates local_index_only-only mode, limits, forbidden parameters, disabled behaviors, error mapping, privacy posture, operator controls, or runtime-readiness gates.",
+      "advisory_or_required": "required",
+      "notes": "Added by Public Search Safety / Abuse Guard v0; validates policy/contract artifacts only and adds no runtime search, route handlers, rate-limit middleware, telemetry runtime, live probes, downloads, installs, uploads, local path search, or production claims."
+    },
+    {
+      "test_id": "public_search_safety_tests",
+      "label": "Public search safety guard tests",
+      "command": "python -m unittest tests.operations.test_public_search_safety_abuse_guard tests.scripts.test_validate_public_search_safety",
+      "category": "publication",
+      "owner_area": "control/inventory/publication",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Public search safety tests failed, allowing unsafe modes, missing forbidden parameters, telemetry defaults, live route claims, or readiness checklist drift to regress.",
+      "advisory_or_required": "required",
+      "notes": "Checks the safety inventory, validator JSON behavior, disabled modes, forbidden URL/local-path/download/install/upload/credential parameters, error mapping, route future status, docs no-live-search posture, and public-alpha compatibility without implementing runtime behavior."
     }
   ]
 }

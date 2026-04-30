@@ -101,6 +101,10 @@
     "Live Probe Gateway Contract v0 now defines disabled-by-default probe policy, but /api/v1/live-probe remains blocked until later explicit implementation approval.",
     "Public Search API Contract v0 reserves /search and /api/v1/search for future local-index-only search without making the API live or enabling live probes.",
     "Public Search Result Card Contract v0 defines the future result-card output for those reserved routes without implementing route handlers or live backend behavior.",
-    "Compatibility Surface Strategy v0 treats /api/v1 as a future optional projection alongside static data, lite/text/files, snapshots, relay, CLI, and native-client plans."
-  ]
+    "Compatibility Surface Strategy v0 treats /api/v1 as a future optional projection alongside static data, lite/text/files, snapshots, relay, CLI, and native-client plans.",
+    "Public Search Safety / Abuse Guard v0 now defines policy-only local_index_only safety, abuse, privacy, and operator-control requirements before /api/v1/search can be implemented; the live backend remains future and rate-limit middleware remains unimplemented."
+  ],
+  "public_search_safety_policy": "control/inventory/publication/public_search_safety.json",
+  "public_search_safety_policy_status": "implemented_policy_only_runtime_disabled",
+  "public_search_runtime_readiness_checklist": "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md"
 }

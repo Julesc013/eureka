@@ -84,6 +84,18 @@ public search live, add route handlers, enable downloads/installers/execution,
 enable uploads, claim malware safety, claim rights clearance, or create a
 production ranking guarantee.
 
+Public Search Safety / Abuse Guard v0 adds
+`control/inventory/publication/public_search_safety.json`,
+`docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md`,
+`docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`, and
+`scripts/validate_public_search_safety.py`. This defines policy-only
+`local_index_only` limits, forbidden parameters, disabled live/external modes,
+error mapping, privacy posture, operator controls, and runtime gates before
+public search runtime exists. It does not implement route handlers, rate-limit
+middleware, telemetry runtime, auth/accounts, hosted backend behavior, live
+probes, downloads, uploads, local path search, arbitrary URL fetch, or
+production safety claims.
+
 Live Probe Gateway Contract v0 adds
 `control/inventory/publication/live_probe_gateway.json`,
 `docs/reference/LIVE_PROBE_GATEWAY_CONTRACT.md`,
@@ -235,7 +247,9 @@ validates static host portability without configuring a domain or alternate
 host. Live Backend Handoff Contract v0 now reserves `/api/v1` contract-only
 routes and disabled capabilities. Public Search API Contract v0 now reserves
 future local-index-only search envelopes and routes without implementing search
-runtime. Live Probe Gateway Contract v0 now defines the disabled source-probe
+runtime. Public Search Safety / Abuse Guard v0 now defines the safety and abuse
+policy required before Local Public Search Runtime v0. Live Probe Gateway
+Contract v0 now defines the disabled source-probe
 gateway policy before any external probe exists.
 Compatibility Surface Strategy v0 now records the cross-surface policy for
 old-browser, text, file-tree, snapshot, relay, API, CLI, web, and future native

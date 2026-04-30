@@ -169,10 +169,15 @@ signoff, and validation proving no live probes, downloads, uploads, local path
 search, arbitrary URL fetch, account behavior, telemetry, or production claims
 were added by accident. Public Search Result Card Contract v0 is now the
 governed `results[]` card contract; it still does not make public search live.
-The named next safety milestone is Public Search Safety / Abuse Guard v0.
 Public Search Safety / Abuse Guard v0 is now implemented as policy/contract
-only. The next runtime milestone must satisfy its inventory, validator, and
-runtime readiness checklist before adding route behavior.
+only. It defines `local_index_only` as the only allowed v0 mode, bounded
+request/result/time limits, forbidden URL/local-path/credential/action
+parameters, disabled live/external modes, error mapping, privacy defaults, and
+operator controls without implementing route handlers, rate-limit middleware,
+telemetry runtime, live probes, downloads, uploads, arbitrary URL fetch, or
+production safety claims. The next runtime milestone must satisfy its
+inventory, validator, and runtime readiness checklist before adding route
+behavior.
 
 ## Out Of Scope
 

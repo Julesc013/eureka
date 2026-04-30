@@ -64,7 +64,8 @@
     "govern signed/offline snapshot format, checksums, and signature-placeholder policy without real signing keys",
     "govern seed snapshot example separately from the current site/dist deployment artifact",
     "govern future native action, download, install handoff, package-manager handoff, mirror, execute, restore, uninstall, rollback, malware-scan, and rights-warning policy without implementing those actions",
-    "govern future native/local cache, privacy, private data, local path, telemetry, logging, credential, deletion, export, portable-mode, and relay privacy policy without implementing cache runtime or private ingestion"
+    "govern future native/local cache, privacy, private data, local path, telemetry, logging, credential, deletion, export, portable-mode, and relay privacy policy without implementing cache runtime or private ingestion",
+    "govern future public search safety, abuse, privacy, boundedness, disabled modes, and operator controls before implementing public search runtime"
   ],
   "no_live_backend": true,
   "no_deployment_performed": true,
@@ -150,13 +151,17 @@
     }
   ],
   "next_expected_milestones": [
-    "Public Search Safety / Abuse Guard v0",
     "Local Public Search Runtime v0 only after contract and safety review",
-    "Rust Local Index Parity Candidate v0 only after review and Cargo availability",
-    "Relay Prototype Implementation v0 only after explicit human approval",
-    "Windows 7 WinForms Native Skeleton Implementation v0 only after explicit human approval",
-    "Manual Observation Batch 0 Execution",
-    "Internet Archive Live Probe v0 only after explicit human approval and live probe gateway review"
+    "Public Search Static Handoff v0",
+    "Public Search Rehearsal v0",
+    "Search Usefulness Source Expansion v2, fixture-only",
+    "Source Pack Contract v0",
+    "Evidence Pack Contract v0",
+    "Index Pack Contract v0",
+    "Contribution Pack Contract v0",
+    "Master Index Review Queue Contract v0",
+    "AI Provider Contract v0",
+    "GitHub Pages Workflow Repair v0 as operator follow-up before any deployment-success claim"
   ],
   "created_by_slice": "public_publication_plane_contracts_v0",
   "notes": [
@@ -180,11 +185,16 @@
     "Relay Surface Design v0 adds a future local/LAN relay design inventory, reference docs, security/privacy defaults, and unsigned operator checklist without implementing a relay server, opening sockets, adding FTP/SMB/WebDAV/Gopher behavior, exposing private data, or enabling live probes.",
     "Relay Prototype Planning v0 selects a future localhost-only read-only static local HTTP relay prototype over allowlisted public data and seed snapshot files without implementing a relay server, opening sockets, adding protocol behavior, serving private files, proxying a live backend, enabling live probes, or claiming old-client relay support.",
     "Native Action / Download / Install Policy v0 adds policy-only action classes, warning classes, public-alpha/static defaults, and native/snapshot/relay gates for future download, mirror, install handoff, package-manager handoff, execute, restore, uninstall, rollback, malware-scan, and rights/access behavior without implementing downloads, installers, package-manager integration, malware scanning, rights clearance, native clients, relay runtime, or executable trust claims.",
-    "Native Local Cache / Privacy Policy v0 adds policy-only privacy/cache defaults, prohibited private-data behaviors, telemetry/logging/credential rules, and native/snapshot/relay/public-alpha gates without implementing cache runtime, private file ingestion, local archive scanning, telemetry, accounts, cloud sync, uploads, native clients, or relay runtime."
+    "Native Local Cache / Privacy Policy v0 adds policy-only privacy/cache defaults, prohibited private-data behaviors, telemetry/logging/credential rules, and native/snapshot/relay/public-alpha gates without implementing cache runtime, private file ingestion, local archive scanning, telemetry, accounts, cloud sync, uploads, native clients, or relay runtime.",
+    "Public Search Safety / Abuse Guard v0 defines policy-only local_index_only limits, forbidden parameters, disabled live/external modes, privacy defaults, error mapping, and operator controls before public search runtime work.",
+    "Public search runtime, rate-limit middleware, auth/accounts, telemetry runtime, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, and production API claims remain unimplemented."
   ],
   "snapshot_format_contract_status": "implemented",
   "snapshot_contract": "control/inventory/publication/snapshot_contract.json",
   "snapshot_seed_example_root": "snapshots/examples/static_snapshot_v0",
   "snapshot_seed_example_public_route": null,
-  "production_signed_snapshots_status": "future"
+  "production_signed_snapshots_status": "future",
+  "public_search_safety_guard_status": "implemented_policy_only",
+  "public_search_safety": "control/inventory/publication/public_search_safety.json",
+  "public_search_runtime_readiness_checklist": "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md"
 }

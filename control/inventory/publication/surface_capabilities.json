@@ -257,7 +257,10 @@
         "contracts/api/search_response.v0.json",
         "contracts/api/error_response.v0.json",
         "contracts/api/search_result_card.v0.json",
-        "control/inventory/publication/public_search_routes.json"
+        "control/inventory/publication/public_search_routes.json",
+        "control/inventory/publication/public_search_safety.json",
+        "docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md",
+        "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md"
       ],
       "reserved_paths": [
         "/search",
@@ -277,9 +280,9 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "Contract-only; no public search runtime, route handler, hosted backend, live probes, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
-      "next_step": "Public Search Safety / Abuse Guard v0 before any local public-search runtime.",
-      "notes": "First allowed mode is local_index_only. Public Search Result Card Contract v0 defines future results[] cards, but static site may describe the contract only and must not claim hosted search is live."
+      "current_limitations": "Contract and safety-policy only; no public search runtime, route handler, hosted backend, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
+      "next_step": "Local Public Search Runtime v0 after public search API, result-card, and safety/readiness validation; keep local_index_only and disabled live/external behavior.",
+      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 now governs limits, forbidden parameters, error mapping, privacy posture, and operator controls before any runtime route exists."
     },
     {
       "id": "snapshots",
@@ -707,9 +710,9 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "Future live backend search only; static site has no live search. Public Search API Contract v0 and Public Search Result Card Contract v0 are contract-only and local_index_only.",
-      "next_step": "Requires Public Search Safety / Abuse Guard v0, local runtime, live backend handoff, and operator signoff before any hosted use.",
-      "notes": "No live probes are enabled by live search, and /api/v1/search is not live."
+      "current_limitations": "Future live backend search only; static site has no live search. Public Search API Contract v0, Public Search Result Card Contract v0, and Public Search Safety / Abuse Guard v0 are contract/policy-only and local_index_only.",
+      "next_step": "Requires Local Public Search Runtime v0, static handoff, live backend handoff, runtime guard implementation, and operator signoff before any hosted use.",
+      "notes": "No live probes are enabled by live search, /api/v1/search is not live, and safety policy keeps public search local_index_only with live/external behavior disabled."
     },
     {
       "id": "internet_archive_live_probe",
@@ -824,6 +827,7 @@
     "All live backend and live probe capabilities are disabled by default.",
     "Snapshots, relay, native clients, /app, and live /api/v1 remain future/deferred or contract-only.",
     "Signed Snapshot Format v0 adds a repo-local seed snapshot example and contract, while the public /snapshots/ route remains deferred.",
-    "Production signed snapshots, real signing keys, executable downloads, relay services, and native clients remain future work."
+    "Production signed snapshots, real signing keys, executable downloads, relay services, and native clients remain future work.",
+    "Public Search Safety / Abuse Guard v0 adds policy-only limits, forbidden parameters, privacy defaults, and operator controls for future public search without changing surface runtime behavior."
   ]
 }

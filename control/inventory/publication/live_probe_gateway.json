@@ -401,6 +401,10 @@
     "Public Search Result Card Contract v0 may describe future_live_probe as a source posture label only; it does not enable live probes.",
     "Internet Archive live probing remains future and disabled until explicit human review and implementation approval.",
     "Google remains manual-baseline only and is not a live probe source.",
-    "Compatibility Surface Strategy v0 keeps live probe results out of static, lite, text, files, snapshot, relay, and native-client projections unless a later gated backend explicitly enables them."
-  ]
+    "Compatibility Surface Strategy v0 keeps live probe results out of static, lite, text, files, snapshot, relay, and native-client projections unless a later gated backend explicitly enables them.",
+    "Public Search Safety / Abuse Guard v0 keeps public search local_index_only with max_live_sources_v0=0; live_probe mode remains disabled and unimplemented."
+  ],
+  "public_search_safety_policy": "control/inventory/publication/public_search_safety.json",
+  "public_search_safety_max_live_sources_v0": 0,
+  "public_search_safety_allows_live_probe_mode": false
 }

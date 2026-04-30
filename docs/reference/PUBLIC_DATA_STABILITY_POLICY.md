@@ -80,3 +80,8 @@ Public Search Result Card Contract v0 is also contract-only. Its stable-draft
 card fields may inform future public search outputs, but the schema and examples
 do not make public JSON a production API, live search API, download surface,
 installer surface, malware-safety statement, or rights-clearance statement.
+
+Public Search Safety / Abuse Guard v0 is policy/contract-only. Its safety
+inventory and docs may be referenced by future static status data, but they do
+not add runtime search output, telemetry runtime, live probes, downloads,
+uploads, arbitrary URL fetch, local path search, or production safety claims.

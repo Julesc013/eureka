@@ -24,7 +24,9 @@
         "local_index_only"
       ],
       "expected_response_kind": "status_and_capability_flags",
-      "notes": "Future status document for backend availability and public-search capability flags; not served by GitHub Pages."
+      "notes": "Future status document for backend availability and public-search capability flags; not served by GitHub Pages.",
+      "public_search_safety_required": true,
+      "runtime_readiness_checklist_required": true
     },
     {
       "path_template": "/api/v1/search",
@@ -45,7 +47,9 @@
       "local_paths_allowed": false,
       "uploads_allowed": false,
       "expected_response_kind": "search_results",
-      "notes": "Future deterministic public-alpha search handoff reserved by Public Search API Contract v0; local_index_only only, with rate-limit and abuse policy still unresolved."
+      "notes": "Future deterministic public-alpha search handoff reserved by Public Search API Contract v0; local_index_only only, with Public Search Safety / Abuse Guard v0 defined as policy and runtime/middleware still unimplemented.",
+      "public_search_safety_required": true,
+      "runtime_readiness_checklist_required": true
     },
     {
       "path_template": "/api/v1/query-plan",
@@ -63,7 +67,9 @@
         "local_index_only"
       ],
       "expected_response_kind": "query_plan",
-      "notes": "Future deterministic planner handoff for local-index-only public search; not a live route in the static artifact."
+      "notes": "Future deterministic planner handoff for local-index-only public search; not a live route in the static artifact.",
+      "public_search_safety_required": true,
+      "runtime_readiness_checklist_required": true
     },
     {
       "path_template": "/api/v1/sources",
@@ -81,7 +87,9 @@
         "local_index_only"
       ],
       "expected_response_kind": "source_collection",
-      "notes": "Future source summary endpoint for public search clients; static /data/source_summary.json remains the current public data path."
+      "notes": "Future source summary endpoint for public search clients; static /data/source_summary.json remains the current public data path.",
+      "public_search_safety_required": true,
+      "runtime_readiness_checklist_required": true
     },
     {
       "path_template": "/api/v1/source/{source_id}",
@@ -99,7 +107,9 @@
         "local_index_only"
       ],
       "expected_response_kind": "source_detail",
-      "notes": "Future source detail endpoint for public search clients; must preserve placeholder honesty."
+      "notes": "Future source detail endpoint for public search clients; must preserve placeholder honesty.",
+      "public_search_safety_required": true,
+      "runtime_readiness_checklist_required": true
     },
     {
       "path_template": "/api/v1/evidence/{evidence_id}",
@@ -189,6 +199,8 @@
   "created_by_slice": "live_backend_handoff_contract_v0",
   "notes": [
     "All routes in this file are future reservations.",
-    "The registry does not create route handlers, deploy a backend, or define a production-stable API."
+    "The registry does not create route handlers, deploy a backend, or define a production-stable API.",
+    "Public Search Safety / Abuse Guard v0 is policy-only and required before reserved public search backend routes can become runtime routes.",
+    "No live backend, rate-limit middleware, live probes, downloads, uploads, local path search, or arbitrary URL fetch is implemented by the safety guard."
   ]
 }

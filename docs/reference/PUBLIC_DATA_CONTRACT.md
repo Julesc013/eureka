@@ -81,6 +81,11 @@ Public Search Result Card Contract v0 adds a hand-authored API schema and
 examples for future result cards. It does not add live public-data output,
 search runtime output, downloads, installers, execution, uploads, malware-safety
 claims, rights-clearance claims, or production API stability.
+Public Search Safety / Abuse Guard v0 adds hand-authored safety policy and
+runtime readiness metadata for future public search. It does not turn static
+JSON into a live search API, implement route handlers, enable telemetry,
+download/install/upload behavior, live probes, arbitrary URL fetch, or local
+path search.
 
 Compatibility Surface Strategy v0 records surface capability and route matrix
 inputs for public data consumers. These fields describe which static

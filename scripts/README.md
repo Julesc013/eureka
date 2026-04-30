@@ -81,6 +81,13 @@ Current scripts:
   and no live-search, malware-safety, rights-clearance, download/install/execute
   or production-ranking claim; it supports `--json`, performs no network calls,
   and implements no runtime route behavior
+- `validate_public_search_safety.py`: validates Public Search Safety / Abuse
+  Guard v0 inventory, docs, request/error schema alignment, route future status,
+  disabled modes, request/result/time limits, forbidden URL/local-path/action
+  and credential parameters, logging/privacy defaults, operator controls, and
+  runtime-readiness checklist; it supports `--json`, performs no network calls,
+  and implements no route handlers, rate-limit middleware, telemetry runtime, or
+  public search behavior
 - `validate_compatibility_surfaces.py`: validates Compatibility Surface
   Strategy v0 inventories, including the surface capability matrix, route
   matrix, client-profile alignment, implemented static route roots, future

@@ -15,7 +15,7 @@ path search. It does not claim production ranking quality, production API
 stability, malware safety, rights clearance, or production readiness.
 
 In short: the result card is not a production ranking guarantee, must not claim
-malware safety, must not claim rights clearance, and prepares the next safety
+malware safety, must not claim rights clearance, and prepared the safety
 milestone, Public Search Safety / Abuse Guard v0, rather than replacing it.
 Public Search Safety / Abuse Guard v0 is now implemented as policy and
 contract-only guardrails; result cards still must wait for a future runtime that
@@ -200,8 +200,9 @@ clients, relay runtime, or snapshot reader runtime.
 
 ## Runtime Preconditions
 
-Before any runtime emits public result cards, Eureka needs Public Search Safety
-/ Abuse Guard v0, Local Public Search Runtime v0, local index ownership, public
+Before any runtime emits public result cards, Eureka needs the implemented
+Public Search Safety / Abuse Guard v0 policy, Local Public Search Runtime v0,
+local index ownership, public
 route validation, bounded query/result limits, no-live-probe enforcement,
 action-policy enforcement, and tests proving no downloads, installers,
 execution, uploads, arbitrary URL fetch, local path search, private data

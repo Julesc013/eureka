@@ -419,16 +419,16 @@
     {
       "id": "public_search_safety_abuse_guard_v0",
       "title": "Public Search Safety / Abuse Guard v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 60,
-      "notes": "Define public-search safety and abuse guardrails before runtime work; do not add auth, rate limiting, hosted services, or live probes in this milestone."
+      "notes": "Implemented policy-only safety and abuse guardrails for future public search: local_index_only only, bounded request/result/time limits, forbidden URL/local path/credential/download/install/upload parameters, telemetry/logging defaults, operator controls, runtime readiness checklist, validator, and tests. No runtime routes, middleware, hosted backend, live probes, or production claims were added."
     },
     {
       "id": "local_public_search_runtime_v0",
       "title": "Local Public Search Runtime v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 61,
-      "notes": "Future local-only runtime milestone after contracts and safety; no hosted backend, external search automation, crawling, or live source probing is implied."
+      "notes": "Next implementation milestone after API, result-card, and safety contracts. Must remain local_index_only, server-owned index path only, no live probes, no downloads/installs/uploads/local paths, no telemetry by default, and no production claim."
     },
     {
       "id": "public_search_static_handoff_v0",
@@ -485,6 +485,13 @@
       "status": "recommended_follow_up",
       "priority": 69,
       "notes": "Future contract for master-index review queues only; do not add hosted indexing, accounts, uploads, moderation infrastructure, live source sync, crawling, or production search claims."
+    },
+    {
+      "id": "ai_provider_contract_v0",
+      "title": "AI Provider Contract v0",
+      "status": "recommended_follow_up",
+      "priority": 70,
+      "notes": "Future contract-only provider boundary. Do not add provider credentials, network calls, hosted inference, telemetry, accounts, runtime integration, or production AI claims."
     }
   ]
 }

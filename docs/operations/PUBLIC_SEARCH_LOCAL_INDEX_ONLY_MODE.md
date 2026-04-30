@@ -49,10 +49,10 @@ error codes. Forbidden fields should use `forbidden_parameter` or the more
 specific `local_paths_forbidden`, `downloads_disabled`, `installs_disabled`,
 `uploads_disabled`, or `live_probes_disabled` codes.
 
-The future Public Search Safety / Abuse Guard v0 milestone must define runtime
-controls before the contract is hosted. This policy does not implement rate
-limiting, TLS, auth, abuse detection, process management, logging, or runtime
-deployment.
+The future Public Search Safety / Abuse Guard v0 milestone has now defined
+policy-only runtime controls before the contract is hosted. This local-index
+mode policy still does not implement rate limiting, TLS, auth, abuse detection,
+process management, logging, or runtime deployment.
 
 Public Search Safety / Abuse Guard v0 is now implemented as policy and
 contract-only guardrails in

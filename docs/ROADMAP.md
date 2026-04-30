@@ -299,7 +299,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Public Search Safety / Abuse Guard v0
+> Local Public Search Runtime v0
 
 Public Data Contract Stability Review v0 is now implemented as field-level
 contract governance under
@@ -334,9 +334,20 @@ result-card fields, lanes, user-cost, evidence, compatibility, member context,
 actions, rights, risk, warnings, limitations, and gaps without making public
 search live, adding runtime routes, enabling downloads/installers/execution,
 claiming malware safety, claiming rights clearance, or promising production
-ranking. The next contract milestone should define safety and abuse guardrails
-before any public-search runtime work. GitHub Pages Workflow Repair v0 remains
-an operator/Pages follow-up before any hosted deployment success claim is made.
+ranking.
+Public Search Safety / Abuse Guard v0 is now implemented as policy/governance
+only under `control/inventory/publication/public_search_safety.json`,
+`docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md`, and
+`docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`. It fixes
+`local_index_only` as the only allowed v0 mode, bounds request/result/time
+behavior, forbids URL/local path/credential/download/install/upload parameters,
+maps disallowed behavior to the P26 error envelope, keeps telemetry/logging
+runtime off, and records future operator controls. It adds no runtime route,
+rate-limit middleware, hosted backend, live probe, download/install/upload
+surface, arbitrary URL fetch, or production safety claim. The next milestone is
+the local-only runtime implementation under those guards. GitHub Pages Workflow
+Repair v0 remains an operator/Pages follow-up before any hosted deployment
+success claim is made.
 Rust Local Index Parity Candidate v0 remains blocked on planning review and
 Cargo availability.
 

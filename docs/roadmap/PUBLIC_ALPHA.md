@@ -72,6 +72,11 @@ The minimum public-alpha entry gate should include:
   result-card schema, examples, audit pack, docs, validator, and tests; no live
   search route, live probe, download, install, execute, upload, malware-safety
   claim, rights-clearance claim, or production ranking guarantee is added)
+- Public Search Safety / Abuse Guard v0 (implemented as policy-only
+  local_index_only guardrails, request/result/time limits, forbidden
+  parameters, privacy posture, operator controls, validator, tests, and runtime
+  readiness checklist; no runtime search, middleware, telemetry runtime, live
+  probes, downloads, uploads, or hosted backend is added)
 - Compatibility Surface Strategy v0 (implemented as strategy, capability
   matrix, route matrix, old-client degradation policy, and
   native/snapshot/relay readiness guidance; no new runtime behavior,
@@ -263,6 +268,14 @@ actions read-only or blocked/future-gated in v0, preserves rights and risk
 caveats, and adds no runtime routes, live backend behavior, downloads,
 installers, execution, uploads, malware-safety claim, rights-clearance claim, or
 production ranking guarantee.
+
+Public Search Safety / Abuse Guard v0 now defines the policy-only public-search
+safety posture before runtime work. Public search remains not live. The only
+allowed v0 mode is `local_index_only`; live probes, arbitrary URL fetch, local
+path search, downloads, installs, uploads, telemetry by default, and external
+source fanout remain disabled. This prepares Local Public Search Runtime v0
+without adding route handlers, rate-limit middleware, auth/accounts, hosted
+backend behavior, or production safety claims.
 
 Relay Surface Design v0 now records the future local/LAN relay posture for old
 or constrained clients. It is public-alpha-adjacent contract work only: no relay

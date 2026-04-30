@@ -119,3 +119,12 @@ downloads, installs, uploads, local path search, or production API claim.
   public search runtime, live routes, live probes, downloads, installers,
   execution, uploads, malware-safety claims, rights-clearance claims, or
   production ranking claims.
+
+Public Search Safety / Abuse Guard v0 is governed under
+`control/inventory/publication/public_search_safety.json`,
+`docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md`, and
+`docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md` rather than a
+separate audit pack. It is policy/contract-only and adds no runtime search,
+rate-limit middleware, auth/accounts, telemetry runtime, hosted backend, live
+probes, downloads, uploads, local path search, arbitrary URL fetch, or
+production safety claim.

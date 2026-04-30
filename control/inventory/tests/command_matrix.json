@@ -119,7 +119,9 @@
         "public_search_contract_validator",
         "public_search_contract_tests",
         "public_search_result_card_contract_validator",
-        "public_search_result_card_contract_tests"
+        "public_search_result_card_contract_tests",
+        "public_search_safety_tests",
+        "public_search_safety_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -234,7 +236,9 @@
         "public_search_contract_validator",
         "public_search_contract_tests",
         "public_search_result_card_contract_validator",
-        "public_search_result_card_contract_tests"
+        "public_search_result_card_contract_tests",
+        "public_search_safety_tests",
+        "public_search_safety_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -324,7 +328,9 @@
         "public_search_contract_validator",
         "public_search_contract_tests",
         "public_search_result_card_contract_validator",
-        "public_search_result_card_contract_tests"
+        "public_search_result_card_contract_tests",
+        "public_search_safety_tests",
+        "public_search_safety_validator"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -350,7 +356,9 @@
         "public_alpha_wrapper_config_validation",
         "public_alpha_wrapper_docs_validation",
         "tests.hardening.public_alpha_path_leakage",
-        "tests.hardening.route_inventory_drift"
+        "tests.hardening.route_inventory_drift",
+        "public_search_safety_validator",
+        "public_search_safety_tests"
       ],
       "required_status": "required",
       "when_to_run": "After web/API route-policy, status, route inventory, or hosting-pack changes.",
@@ -418,6 +426,8 @@
         "public_search_contract_tests",
         "public_search_result_card_contract_validator",
         "public_search_result_card_contract_tests",
+        "public_search_safety_tests",
+        "public_search_safety_validator",
         "docs_diff_check"
       ],
       "required_status": "required",
@@ -528,5 +538,8 @@
       "when_to_run": "Only when Cargo is installed in the local environment.",
       "notes": "Never fail normal Python verification solely because Cargo is unavailable."
     }
+  ],
+  "notes": [
+    "Public Search Safety / Abuse Guard v0 validation is stdlib-only and policy/contract-only; it does not implement public search routes, rate-limit middleware, telemetry runtime, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production claims."
   ]
 }
