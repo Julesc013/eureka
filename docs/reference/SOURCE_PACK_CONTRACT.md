@@ -111,11 +111,11 @@ assertions, rights-clearance assertions, and executable payloads.
 ## Difference From Evidence And Index Packs
 
 A source pack can define source metadata, source-family posture, fixture files,
-and evidence inputs together. An evidence pack is claim and observation
-focused: it carries public-safe evidence records, source references, snippets,
-and provenance without defining canonical source registry records or shipping
-source fixtures. Both pack types are validation-only until future import and
-submission workflows exist.
+and evidence inputs together. An evidence pack is claim and observation focused:
+it carries public-safe evidence records, source references, snippets, and
+provenance without defining canonical source registry records or shipping source
+fixtures. Both pack types are validation-only until future import and submission
+workflows exist.
 
 An index pack is coverage and record-summary focused: it describes index build
 metadata, source coverage, field coverage, query examples, and public-safe
