@@ -150,7 +150,9 @@
         "ai_provider_contract_tests",
         "ai_provider_contract_validator",
         "typed_ai_output_validator_tests",
-        "typed_ai_output_validator"
+        "typed_ai_output_validator",
+        "pack_import_report_format_tests",
+        "pack_import_report_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -296,7 +298,9 @@
         "ai_provider_contract_tests",
         "ai_provider_contract_validator",
         "typed_ai_output_validator_tests",
-        "typed_ai_output_validator"
+        "typed_ai_output_validator",
+        "pack_import_report_format_tests",
+        "pack_import_report_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -414,7 +418,9 @@
         "ai_provider_contract_tests",
         "ai_provider_contract_validator",
         "typed_ai_output_validator_tests",
-        "typed_ai_output_validator"
+        "typed_ai_output_validator",
+        "pack_import_report_format_tests",
+        "pack_import_report_validator"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -622,7 +628,9 @@
         "ai_provider_contract_tests",
         "ai_provider_contract_validator",
         "typed_ai_output_validator_tests",
-        "typed_ai_output_validator"
+        "typed_ai_output_validator",
+        "pack_import_report_format_tests",
+        "pack_import_report_validator"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",

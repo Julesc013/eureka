@@ -46,6 +46,12 @@ python scripts/validate_pack_set.py --all-examples
 The aggregate command delegates to the individual validators and does not
 import, stage, index, upload, or accept packs.
 
+Pack Import Report Format v0 adds `pack_import_report.v0.json` as the future
+validate-only report envelope. Reports record validation outcomes, issues,
+privacy/rights/risk posture, provenance, next actions, and hard false
+mutation-safety fields. They do not import, stage, index, upload, mutate
+runtime state, or mutate the master index.
+
 AI Provider Contract v0 lives under `contracts/ai/`, not `contracts/packs/`.
 AI outputs may later draft pack or contribution candidates only as typed,
 review-required suggestions; they are not pack truth, rights clearance, malware

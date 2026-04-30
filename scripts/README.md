@@ -318,6 +318,13 @@ Current scripts:
   structured claims; and does not call models, load providers, import evidence,
   draft contributions, stage packs, mutate local indexes, upload, or mutate a
   master index
+- `validate_pack_import_report.py`: validates Pack Import Report Format v0
+  examples or one explicit report. It supports `--report`, `--all-examples`,
+  `--strict`, and `--json`; checks report status and mode values, pack-result
+  statuses, issue severities/types, next actions, hard false mutation-safety
+  fields, private-path redaction, no secrets, and no positive truth/rights/
+  malware authority claims; and does not import, stage, index, upload, call
+  networks, call models, mutate runtime state, or mutate a master index
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

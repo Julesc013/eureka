@@ -60,7 +60,8 @@
     "rights_clearance",
     "malware_safety"
   ],
-  "next_recommended_milestone": "Pack Import Report Format v0",
+  "next_recommended_milestone": "Validate-Only Pack Import Tool v0",
+  "implemented_follow_up": "Pack Import Report Format v0",
   "notes": [
     "Typed outputs remain suggestions/candidates, not truth.",
     "Invalid examples are covered in tempfile-based tests.",

@@ -208,6 +208,11 @@ through `python scripts/validate_pack_set.py --all-examples` or an explicit
 does not import, merge, index, upload, export raw databases, or accept index
 records.
 
+Pack Import Report Format v0 now defines the future report envelope for
+recording index-pack validation outcomes and coverage summaries. Reports can
+record summary-only index pack results, but they do not import index summaries,
+stage packs, mutate a local index, upload, or mutate the master index.
+
 AI Provider Contract v0 is separate from index packs. AI outputs may later
 suggest explanations, source matches, or duplicate candidates, but index packs
 remain coverage/build/record-summary metadata. AI output cannot become index

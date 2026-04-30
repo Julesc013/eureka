@@ -137,6 +137,12 @@ through `python scripts/validate_pack_set.py --all-examples` or an explicit
 `validate_master_index_review_queue.py` and does not implement queue import,
 hosted queue runtime, review automation, or master-index writes.
 
+Pack Import Report Format v0 now defines the future report envelope for
+recording validation results before any queue intake or review action. A report
+can cite a review-queue example or contribution candidate result, but it does
+not submit, accept, reject, supersede, publish, or mutate hosted/master-index
+state.
+
 ## Validation Command
 
 ```powershell
@@ -164,6 +170,7 @@ The validator is stdlib-only and does not perform network calls.
 
 ## Next Work
 
-Pack Import Validator Aggregator v0, AI Provider Contract v0, and Typed AI
-Output Validator v0 are now implemented as validation/contract-only
-milestones. The next pack-import follow-up is Pack Import Report Format v0.
+Pack Import Validator Aggregator v0, AI Provider Contract v0, Typed AI Output
+Validator v0, and Pack Import Report Format v0 are now implemented as
+validation/contract-only milestones. The next pack-import follow-up is
+Validate-Only Pack Import Tool v0.

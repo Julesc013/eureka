@@ -311,12 +311,14 @@ The next backend sequence is:
 82. Source/Evidence/Index Pack Import Planning v0 (implemented as planning-only import boundary, audit pack, docs, validator, and tests; validate-only is the first future mode and private local quarantine is the next future mode; no import runtime, staging directories, local search/index mutation, canonical registry mutation, uploads, hosted/master-index mutation, automatic acceptance, live fetch, arbitrary directory scan, executable plugin behavior, or production claim)
 83. Pack Import Validator Aggregator v0 (implemented as validate-only aggregate command, example-pack registry, docs, audit pack, and tests; validates all known source/evidence/index/contribution/master-index review queue examples without import, staging, indexing, uploads, hosted/master-index mutation, automatic acceptance, rights-clearance claim, malware-safety claim, or production claim)
 84. AI Provider Contract v0 (implemented as contract/validation/example-only provider manifests, task requests, typed output schemas, disabled stub provider example, policy inventory, validator, docs, audit pack, and tests; no model calls, API keys, credential storage, telemetry, provider runtime loading, AI in public search, AI-generated evidence acceptance, local index mutation, or master-index mutation)
+85. Typed AI Output Validator v0 (implemented as offline typed-output validation module, CLI, registry, synthetic examples, docs, audit pack, and tests; no model calls, provider runtime, API keys, telemetry, evidence import, contribution import, local index mutation, public-search AI, upload, or master-index mutation)
+86. Pack Import Report Format v0 (implemented as report schema, synthetic passed/failed/unknown examples, stdlib validator, docs, audit pack, and tests; no import runtime, staging, indexing, uploads, runtime mutation, model calls, network behavior, or master-index mutation)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Typed AI Output Validator v0
+> Validate-Only Pack Import Tool v0
 
 Why this comes next:
 
@@ -434,8 +436,13 @@ Why this comes next:
   pack, and tests; it enforces required review, prohibited truth/rights/
   malware/auto-acceptance uses, provider alignment, generated-text bounds,
   private-path and secret rejection, and no model/network/import/mutation side
-  effects. Pack Import Report Format v0 is next so validate-only pack tooling
-  can record structured reports before any import runtime.
+  effects.
+- Pack Import Report Format v0 is implemented as format/validation/example-only
+  work. It defines `pack_import_report.v0`, validates synthetic passed/failed/
+  unknown reports, records privacy/rights/risk and issue outcomes, and keeps
+  import/staging/index/upload/runtime/master-index mutation fields false.
+  Validate-Only Pack Import Tool v0 is next so validation can emit the durable
+  report format without staging or importing packs.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

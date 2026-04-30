@@ -1,14 +1,13 @@
 # Next Steps
 
-Recommended immediate next milestone: AI Provider Contract v0.
+Recommended immediate next milestone: Validate-Only Pack Import Tool v0.
 
-Pack validation foundations are now complete enough that AI provider boundaries
-should be defined before any AI-assisted evidence, claim, ranking, or pack
-suggestion work appears.
+Pack validation foundations, AI provider boundaries, typed output validation,
+and Pack Import Report Format v0 are now in place. The next safe pack-import
+step is a validate-only tool that runs validation and emits the report format
+without staging or importing.
 
-Alternative next milestone: Pack Import Report Format v0.
+Alternative next milestone: Manual Observation Batch 0 Execution, human-operated.
 
-Pack Import Report Format v0 should come before Validate-Only Pack Import Tool
-v0 if the project wants a stable committed report schema before any import
-command exists.
-
+Manual observation remains human-operated and must not be automated or
+fabricated.

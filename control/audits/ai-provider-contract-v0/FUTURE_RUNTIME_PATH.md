@@ -4,8 +4,8 @@ Future runtime work must be separate and explicitly approved.
 
 Required future sequence:
 
-1. Typed AI Output Validator v0
-2. Pack Import Report Format v0
+1. Typed AI Output Validator v0 - implemented
+2. Pack Import Report Format v0 - implemented
 3. AI task request/report review policy
 4. Provider consent and credential policy
 5. Local-only provider runtime plan

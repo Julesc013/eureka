@@ -206,6 +206,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   runtime boundary without implementing provider runtime, API keys, telemetry,
   evidence import, contribution import, local-index mutation, public-search AI,
   upload, or master-index mutation.
+- `pack-import-report-format-v0/`: format/validation/example-only audit pack
+  for future validate-only import reports. It records the report schema,
+  synthetic passed/failed/unknown examples, status/mode/pack-result/issue
+  models, privacy/rights/risk summaries, mutation-safety fields, and future
+  validate-only tooling path without implementing import, staging, indexing,
+  upload, runtime mutation, model calls, network behavior, or master-index
+  mutation.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

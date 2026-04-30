@@ -1295,7 +1295,7 @@ fetch, external observation collection, executable plugin loading, downloads,
 installers, private cache sharing, rights clearance, malware-safety claims,
 canonical truth selection, or production extension support. The next
 Codex-safe milestone is AI Provider Contract v0; Pack Import Report Format v0
-remains the next pack-import-specific milestone.
+was the next pack-import-specific milestone and is now implemented.
 
 ## ADR-121: Define AI Providers Before AI Runtime
 
@@ -1325,8 +1325,8 @@ AI-generated evidence acceptance, local index mutation, uploads, accounts,
 hosted/master-index mutation, rights clearance, malware-safety claims,
 canonical truth selection, source-trust authority, automatic identity merge,
 automatic acceptance, or production AI support. The next Codex-safe milestone
-is Typed AI Output Validator v0; Pack Import Report Format v0 remains the next
-pack-import-specific milestone.
+was Typed AI Output Validator v0; Pack Import Report Format v0 was the next
+pack-import-specific milestone and is now implemented.
 
 ## ADR-122: Validate Typed AI Outputs Before AI-Assisted Workflows
 
@@ -1353,4 +1353,33 @@ evidence-pack import, contribution-pack import, local index mutation, public
 search AI, uploads, accounts, hosted/master-index mutation, rights clearance,
 malware-safety claims, canonical truth selection, source-trust authority,
 automatic acceptance, or production AI support. The next Codex-safe milestone
-is Pack Import Report Format v0.
+was Pack Import Report Format v0, now implemented; the current next pack-import
+milestone is Validate-Only Pack Import Tool v0.
+
+## ADR-123: Record Pack Validation Outcomes Before Import Tooling
+
+Status: accepted
+
+Pack Import Report Format v0 adds
+`contracts/packs/pack_import_report.v0.json`,
+`examples/import_reports/`, `scripts/validate_pack_import_report.py`,
+`docs/reference/PACK_IMPORT_REPORT_FORMAT.md`, focused tests, and
+`control/audits/pack-import-report-format-v0/`.
+
+The decision is to define a durable, local, machine-readable and human-readable
+report format between aggregate validation and any future validate-only import
+tool. Reports record pack results, issue records, privacy/rights/risk
+summaries, provenance, next actions, and hard false mutation-safety fields.
+They can represent passed validation, failed validation, private-path blocks,
+unknown pack types, unavailable validators, or future-gated actions without
+turning validation into import or acceptance.
+
+P43 deliberately does not implement pack import runtime, staging/quarantine
+directories, source/evidence/index/contribution pack import, master-index queue
+import, local index mutation, runtime source registry mutation, public-search
+mutation, upload, submission, moderation UI, accounts, identity, hosted/master
+index mutation, model calls, API keys, live fetch, external observation
+collection, executable plugin loading, downloads, installers, private cache
+sharing, rights clearance, malware-safety claims, canonical truth selection,
+or production support. The next Codex-safe milestone is Validate-Only Pack
+Import Tool v0.

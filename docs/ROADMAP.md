@@ -112,8 +112,15 @@ candidates through `scripts/validate_ai_output.py` and the pure
 `runtime/engine/ai/typed_output_validator.py` helper. It checks four synthetic
 disabled-stub examples, required review, prohibited uses, provider alignment,
 generated-text bounds, private-path and secret leakage, and reports no model,
-network, import, or mutation side effects. Pack Import Report Format v0 is the
-next recommended milestone.
+network, import, or mutation side effects.
+Pack Import Report Format v0 now defines the durable validate-only report
+format under `contracts/packs/pack_import_report.v0.json`,
+`examples/import_reports/`, `scripts/validate_pack_import_report.py`, and
+`control/audits/pack-import-report-format-v0/`. It records pack validation
+results, issues, privacy/rights/risk posture, provenance, next actions, and
+hard false mutation fields without implementing import, staging, local index
+mutation, uploads, runtime mutation, model calls, or master-index mutation.
+Validate-Only Pack Import Tool v0 is the next recommended milestone.
 
 ## Stage 3: Surface Skeletons
 

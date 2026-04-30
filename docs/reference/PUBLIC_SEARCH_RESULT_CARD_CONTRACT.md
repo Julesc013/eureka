@@ -224,6 +224,10 @@ not canonical truth, rights clearance, malware safety, or ranking authority.
 Typed AI Output Validator v0 adds that offline output validation step through
 `scripts/validate_ai_output.py`, but it does not display AI output on result
 cards, import AI output into evidence/contribution packs, or alter ranking.
+Pack Import Report Format v0 may record future validation outcomes for packs
+or typed AI output bundles before reviewed public records exist. It does not
+change result-card fields, import packs, stage packs, mutate local indexes,
+upload, or mutate public search or the master index.
 
 ## Runtime Preconditions
 

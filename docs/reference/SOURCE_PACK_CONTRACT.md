@@ -228,6 +228,12 @@ through `python scripts/validate_pack_set.py --all-examples` or an explicit
 `--pack-root`. Aggregated validation delegates to `validate_source_pack.py` and
 does not import, stage, index, upload, or accept the pack.
 
+Pack Import Report Format v0 now defines the future report envelope for
+recording source-pack validation outcomes. A report may record checksum,
+privacy, rights, risk, and provenance status for a source pack, but it still
+does not import, stage, index, upload, mutate public search, or mutate the
+master index.
+
 Snapshots, native clients, and relay clients may eventually consume
 public-safe source-pack summaries through their own contracts. Source Pack v0
 does not implement those consumers.

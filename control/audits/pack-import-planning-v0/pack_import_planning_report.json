@@ -92,7 +92,13 @@
     "automatic_acceptance": false,
     "hosted_master_index_mutation": false
   },
-  "next_recommended_milestone": "Pack Import Validator Aggregator v0",
+  "next_recommended_milestone": "Validate-Only Pack Import Tool v0",
+  "implemented_follow_ups": [
+    "Pack Import Validator Aggregator v0",
+    "AI Provider Contract v0",
+    "Typed AI Output Validator v0",
+    "Pack Import Report Format v0"
+  ],
   "following_recommended_milestone": "AI Provider Contract v0",
   "notes": [
     "P39 does not implement pack import.",

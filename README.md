@@ -222,6 +222,16 @@ tests. It does not implement model calls, runtime provider loading, API keys,
 credential storage, telemetry, embeddings, vector search, LLM reranking, AI in
 public search, AI-generated evidence acceptance, local index mutation, or
 master-index mutation.
+Typed AI Output Validator v0 now validates standalone typed AI output
+candidates through `scripts/validate_ai_output.py` without model calls,
+provider runtime, telemetry, evidence import, contribution import, public-search
+AI, local index mutation, or master-index mutation. Pack Import Report Format
+v0 now adds `contracts/packs/pack_import_report.v0.json`,
+`examples/import_reports/`, `scripts/validate_pack_import_report.py`, and
+`control/audits/pack-import-report-format-v0/` as a durable validate-only
+report envelope for pack validation outcomes. It does not implement import,
+staging, indexing, uploads, runtime mutation, model calls, network behavior, or
+master-index mutation.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -772,11 +782,11 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Typed AI Output Validator v0
-2. Pack Import Report Format v0
-3. Validate-Only Pack Import Tool v0
-4. Manual Observation Batch 0 Execution, human-operated
-5. Search Usefulness Baseline Comparison Report v0 after observations
+1. Validate-Only Pack Import Tool v0
+2. Manual Observation Batch 0 Execution, human-operated
+3. Search Usefulness Baseline Comparison Report v0 after observations
+4. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+5. Public Hosted Search Rehearsal Plan v0
 6. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

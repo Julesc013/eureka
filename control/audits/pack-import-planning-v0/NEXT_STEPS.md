@@ -1,13 +1,13 @@
 # Next Steps
 
-Recommended immediate next milestone: Pack Import Validator Aggregator v0.
+Recommended immediate next milestone: Validate-Only Pack Import Tool v0.
 
-The aggregator should detect pack type, run the existing pack validators, and
-emit a local validation summary. It should still avoid staging, import,
-search/index mutation, uploads, and master-index mutation.
+Pack Import Validator Aggregator v0 and Pack Import Report Format v0 are now
+implemented. The next safe step should run validation and emit the durable
+report format while still avoiding staging, import, search/index mutation,
+uploads, and master-index mutation.
 
-Recommended follow-up: AI Provider Contract v0.
+Recommended follow-up: Manual Observation Batch 0 Execution, human-operated.
 
-AI Provider Contract v0 should define provider boundaries before AI-generated
-pack suggestions, scoring, summaries, or contribution candidates are allowed.
-
+Manual observation remains separate and must not be automated, scraped, or
+fabricated.

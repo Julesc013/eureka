@@ -2,8 +2,8 @@
 
 Recommended sequence:
 
-1. Pack Import Validator Aggregator v0
-2. Pack Import Report Format v0
+1. Pack Import Validator Aggregator v0 - implemented
+2. Pack Import Report Format v0 - implemented
 3. Validate-Only Pack Import Tool v0
 4. Local Quarantine/Staging Model v0
 5. Staged Pack Inspector v0
@@ -16,4 +16,3 @@ Pack Import Validator Aggregator v0 should come first because the source,
 evidence, index, contribution, and master-index review validators already
 exist. A single safe command can identify pack type and run the right validator
 before any import runtime, staging, or indexing authority exists.
-

@@ -212,6 +212,12 @@ through `python scripts/validate_pack_set.py --all-examples` or an explicit
 `validate_contribution_pack.py` and does not upload, import, moderate, accept,
 or submit contribution records.
 
+Pack Import Report Format v0 now defines the future report envelope for
+recording contribution-pack validation outcomes. A report can preserve
+candidate status, failed checks, and next actions, but it is not upload,
+submission, moderation, review-queue intake, automatic acceptance, or
+master-index mutation.
+
 AI Provider Contract v0 defines a future source of typed suggestions for
 contribution drafts. Typed AI Output Validator v0 now provides
 `scripts/validate_ai_output.py` for offline typed output validation. AI output

@@ -139,6 +139,11 @@ be user controlled, not committed to git, outside `site/dist`, outside
 reviewed. Staged packs must not affect public search or the master index by
 default.
 
+Pack Import Report Format v0 records validate-only outcomes without creating
+local staging state. Reports must not include unredacted private absolute paths,
+credentials, or private cache contents, and successful reports do not authorize
+cache import, local-index mutation, upload, or master-index mutation.
+
 ## Not Implemented
 
 This policy does not implement:

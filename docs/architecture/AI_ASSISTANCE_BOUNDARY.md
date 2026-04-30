@@ -59,6 +59,10 @@ public-search AI, or master-index mutation. It only verifies typed candidate
 shape, provider references, required review, prohibited uses, private-path and
 secret leakage, and short generated text.
 
+Pack Import Report Format v0 may later record typed AI output validation
+results beside pack validation outcomes. A report is still not AI acceptance,
+evidence acceptance, contribution import, or master-index review.
+
 ## Public Search Boundary
 
 Public search remains local/prototype and `local_index_only`. AI Provider

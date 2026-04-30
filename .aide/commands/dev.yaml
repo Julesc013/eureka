@@ -128,6 +128,12 @@ steps:
     run: python scripts/validate_ai_output.py --bundle-root examples/ai_providers/disabled_stub_provider_v0
   - id: typed_ai_output_validator_tests
     run: python -m unittest runtime.engine.ai.tests.test_typed_output_validator tests.operations.test_typed_ai_output_validator tests.scripts.test_validate_ai_output
+  - id: pack_import_report_validator
+    run: python scripts/validate_pack_import_report.py --all-examples
+  - id: pack_import_report_validator_json
+    run: python scripts/validate_pack_import_report.py --all-examples --json
+  - id: pack_import_report_format_tests
+    run: python -m unittest tests.operations.test_pack_import_report_format tests.scripts.test_validate_pack_import_report
   - id: public_search_demo
     run: python scripts/demo_http_api.py public-search "windows 7 apps" --limit 2
   - id: public_search_query_plan_demo

@@ -454,6 +454,15 @@ generated-text limits, private-path rejection, and secret rejection without
 model calls, provider runtime loading, API keys, telemetry, evidence import,
 contribution import, local-index mutation, public-search AI, or master-index
 mutation.
+Pack Import Report Format v0 is now implemented as format/validation/example
+work under `contracts/packs/pack_import_report.v0.json`,
+`examples/import_reports/`, `scripts/validate_pack_import_report.py`,
+`docs/reference/PACK_IMPORT_REPORT_FORMAT.md`, and
+`control/audits/pack-import-report-format-v0/`. It records validate-only pack
+results, issue summaries, privacy/rights/risk posture, provenance, next
+actions, and hard false mutation-safety fields without implementing import,
+staging, local index mutation, runtime mutation, uploads, network calls, model
+calls, or master-index mutation.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -684,21 +693,23 @@ local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Typed AI Output Validator v0
-2. Pack Import Report Format v0
-3. Validate-Only Pack Import Tool v0
-4. Local Quarantine/Staging Model v0
-5. Manual Observation Batch 0 Execution, human-operated
-6. Search Usefulness Baseline Comparison Report v0 after observations
-7. IA Metadata Live Probe Approval Pack v0 only after explicit approval
-8. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
+1. Validate-Only Pack Import Tool v0
+2. Manual Observation Batch 0 Execution, human-operated
+3. Search Usefulness Baseline Comparison Report v0 after observations
+4. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+5. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
+6. Local Quarantine/Staging Model v0
+7. Staged Pack Inspector v0
+8. AI-Assisted Evidence Drafting Plan v0
 9. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
-10. Staged Pack Inspector v0
-11. Source Pack Import Runtime v0 only after validate-only import tooling
+10. Source Pack Import Runtime v0 only after validate-only import tooling and
+   staging model
+11. Contribution Submission Tooling Plan v0
 12. Index Pack Import/Compare Tooling Plan v0
-13. Contribution Submission Tooling Plan v0
-14. Master Index Review Queue Runtime Planning v0
+13. Master Index Review Queue Runtime Planning v0
+14. Pack Import Report generator hardening only if the validate-only tool needs
+   additional schema coverage
 15. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
 16. Relay Prototype Implementation v0, only after explicit human approval and

@@ -3307,6 +3307,48 @@
       "failure_means": "Typed AI output module behavior, CLI JSON output, valid examples, negative validation cases, docs, or no-mutation flags regressed.",
       "advisory_or_required": "required",
       "notes": "Covers required review, prohibited truth/rights/malware/auto-acceptance uses, private-path and secret rejection, provider disabled-default checks, and JSON side-effect flags."
+    },
+    {
+      "test_id": "pack_import_report_validator",
+      "label": "Pack import report validator",
+      "command": "python scripts/validate_pack_import_report.py --all-examples",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Pack Import Report Format v0 schema, examples, mutation-safety flags, issue/status model, private-path redaction, or no-authority posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic pack import reports only; it does not import, stage, index, upload, call networks, call models, mutate runtime state, or mutate a master index."
+    },
+    {
+      "test_id": "pack_import_report_format_tests",
+      "label": "Pack import report format tests",
+      "command": "python -m unittest tests.operations.test_pack_import_report_format tests.scripts.test_validate_pack_import_report",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary directories only for negative report fixtures",
+      "expected_runtime": "seconds",
+      "failure_means": "Pack import report CLI behavior, JSON output, examples, docs, negative validation cases, or no-mutation flags regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers example report parsing, no import/staging/index/upload/runtime/master-index mutation, unknown pack type reporting, redacted private-path failures, secret rejection, unsupported next actions, and success/failure consistency."
     }
   ]
 }

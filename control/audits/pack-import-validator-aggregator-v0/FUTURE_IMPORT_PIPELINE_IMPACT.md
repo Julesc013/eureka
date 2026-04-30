@@ -10,9 +10,12 @@ Future use:
 3. emit a pack import report
 4. stop without staging or mutation
 
-Still future:
+Implemented follow-up:
 
 - Pack Import Report Format v0
+
+Still future:
+
 - Validate-Only Pack Import Tool v0
 - Local Quarantine/Staging Model v0
 - Staged Pack Inspector v0
@@ -20,4 +23,3 @@ Still future:
 - Contribution Queue Candidate Export v0
 
 The aggregate validator does not itself implement any of those future modes.
-

@@ -1,9 +1,10 @@
 # Next Steps
 
-Recommended immediate next milestone: Typed AI Output Validator v0.
+Recommended immediate next milestone: Validate-Only Pack Import Tool v0.
 
-That milestone should validate typed output records independently before any
-AI-assisted evidence, contribution, or review workflow is considered.
+Typed AI Output Validator v0 and Pack Import Report Format v0 are now
+implemented. The next pack-import milestone should emit the report format
+without staging or importing packs.
 
-Alternative next milestone: Pack Import Report Format v0, if the pack-import
-lane takes priority.
+Alternative next milestone: AI-Assisted Evidence Drafting Plan v0, only after
+typed outputs remain validation-only and no model runtime is introduced.

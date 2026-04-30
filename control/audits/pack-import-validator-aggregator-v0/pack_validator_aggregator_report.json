@@ -72,11 +72,16 @@
   "malware_safety_claimed": false,
   "canonical_truth_claimed": false,
   "production_readiness_claimed": false,
-  "next_recommended_milestone": "AI Provider Contract v0",
-  "alternative_next_milestone": "Pack Import Report Format v0",
+  "next_recommended_milestone": "Validate-Only Pack Import Tool v0",
+  "implemented_follow_ups": [
+    "AI Provider Contract v0",
+    "Typed AI Output Validator v0",
+    "Pack Import Report Format v0"
+  ],
+  "alternative_next_milestone": "Manual Observation Batch 0 Execution, human-operated",
   "notes": [
     "Aggregate validation is validate-only.",
     "Successful validation is not import, staging, indexing, upload, submission, master-index acceptance, rights clearance, malware safety, canonical truth, or production readiness.",
-    "Pack Import Report Format v0 remains future work."
+    "Pack Import Report Format v0 is now implemented; validate-only import tooling remains future work."
   ]
 }

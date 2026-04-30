@@ -335,6 +335,32 @@ privacy/credential/logging defaults, required review, forbidden truth/rights/
 malware/auto-acceptance uses, no API keys/secrets, no model calls, and no AI
 runtime/public-search/master-index mutation claims.
 
+Typed AI Output Validator v0 is validated with:
+
+```bash
+python scripts/validate_ai_output.py --all-examples
+python scripts/validate_ai_output.py --all-examples --json
+python -m unittest runtime.engine.ai.tests.test_typed_output_validator tests.operations.test_typed_ai_output_validator tests.scripts.test_validate_ai_output
+```
+
+The validation checks standalone typed AI output examples, required review,
+forbidden truth/rights/malware/auto-acceptance uses, provider alignment,
+private-path and secret rejection, generated-text bounds, and no
+model/network/import/mutation side effects.
+
+Pack Import Report Format v0 is validated with:
+
+```bash
+python scripts/validate_pack_import_report.py --all-examples
+python scripts/validate_pack_import_report.py --all-examples --json
+python -m unittest tests.operations.test_pack_import_report_format tests.scripts.test_validate_pack_import_report
+```
+
+The validation checks the report schema, synthetic passed/failed/unknown
+reports, pack-result statuses, issue types, next actions, redacted
+private-path failures, no secrets, no authority claims, and hard false
+import/staging/index/upload/runtime/master-index/network mutation fields.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

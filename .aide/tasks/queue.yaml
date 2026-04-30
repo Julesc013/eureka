@@ -231,8 +231,8 @@
       "id": "manual_observation_batch_0_execution",
       "title": "Manual Observation Batch 0 Execution",
       "status": "human_operated_parallel",
-      "priority": 40,
-      "notes": "Human-operated parallel follow-up to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
+      "priority": 77,
+      "notes": "Human-operated parallel follow-up after Validate-Only Pack Import Tool v0 to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
     },
     {
       "id": "compatibility_surface_strategy_v0",
@@ -524,22 +524,22 @@
     {
       "id": "pack_import_report_format_v0",
       "title": "Pack Import Report Format v0",
-      "status": "recommended_follow_up",
+      "status": "completed",
       "priority": 75,
-      "notes": "Future report schema for validate-only pack import results. Do not implement import, staging, indexing, uploads, or master-index mutation."
+      "notes": "Implemented Pack Import Report Format v0 as format/validation/example-only work with a schema, synthetic reports, stdlib validator, docs, audit pack, and tests. It records validate-only outcomes, issues, privacy/rights/risk posture, provenance, next actions, and hard mutation-safety fields without implementing import, staging, indexing, uploads, runtime mutation, network behavior, model calls, or master-index mutation."
     },
     {
       "id": "validate_only_pack_import_tool_v0",
       "title": "Validate-Only Pack Import Tool v0",
       "status": "recommended_follow_up",
       "priority": 76,
-      "notes": "Future validate-only local tool after the aggregator and report format. It may emit reports but must not stage, index, mutate canonical records, upload, fetch, or submit anything."
+      "notes": "Immediate next milestone. Future validate-only local tool after the aggregator and report format. It may emit pack_import_report.v0 reports but must not stage, index, mutate canonical records, upload, fetch, call models, or submit anything."
     },
     {
       "id": "ai_assisted_evidence_drafting_plan_v0",
       "title": "AI-Assisted Evidence Drafting Plan v0",
       "status": "recommended_follow_up",
-      "priority": 77,
+      "priority": 83,
       "notes": "Future planning only for using validated typed AI outputs to draft evidence/contribution candidates. Do not call models, accept outputs as truth, import into evidence packs automatically, or mutate local/master indexes."
     },
     {
@@ -581,35 +581,35 @@
       "id": "source_pack_import_runtime_v0",
       "title": "Source Pack Import Runtime v0",
       "status": "blocked_until_import_planning",
-      "priority": 83,
+      "priority": 84,
       "notes": "Future runtime only after validate-only import tooling and local quarantine/staging model. Do not implement import, indexing, uploads, live connectors, arbitrary local ingestion, or master-index acceptance before those milestones."
     },
     {
       "id": "index_pack_import_compare_tooling_plan_v0",
       "title": "Index Pack Import/Compare Tooling Plan v0",
       "status": "recommended_follow_up",
-      "priority": 84,
+      "priority": 86,
       "notes": "Future planning only for comparing index-pack summaries against source/evidence provenance. Do not merge raw databases, export caches, import packs, or accept index summaries as canonical truth."
     },
     {
       "id": "ai_runtime_integration_planning_v0",
       "title": "AI Runtime Integration Planning v0",
       "status": "blocked_pending_explicit_approval",
-      "priority": 85,
+      "priority": 87,
       "notes": "Future planning only after explicit approval, typed output validation maturity, provider policy, consent, credential, privacy, and logging policy. Do not implement model calls, provider loading, telemetry, public-search AI, evidence acceptance, or master-index mutation without approval."
     },
     {
       "id": "contribution_submission_tooling_plan_v0",
       "title": "Contribution Submission Tooling Plan v0",
       "status": "recommended_follow_up",
-      "priority": 86,
+      "priority": 85,
       "notes": "Future planning only for local contribution submission tooling after review queue contracts. Do not add uploads, accounts, identity, moderation runtime, automatic acceptance, or hosted intake behavior."
     },
     {
       "id": "master_index_review_queue_runtime_planning_v0",
       "title": "Master Index Review Queue Runtime Planning v0",
       "status": "recommended_future_after_import_planning",
-      "priority": 87,
+      "priority": 88,
       "notes": "Future planning only after import planning and AI/manual-observation governance. Do not implement hosted queue runtime, uploads, accounts, moderation UI, master-index writes, automatic acceptance, live probes, or production claims."
     }
   ]

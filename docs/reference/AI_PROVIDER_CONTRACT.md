@@ -118,6 +118,11 @@ It does not implement model calls, provider loading, prompt logging, telemetry,
 evidence import, contribution import, local-index mutation, public-search AI, or
 master-index mutation.
 
+Pack Import Report Format v0 may record typed AI output validation results as
+`ai_output_bundle` entries in future validate-only reports. Such reports do not
+accept AI output as evidence, contribution material, truth, rights clearance,
+malware safety, or master-index input.
+
 ## Public Search
 
 Public search remains `local_index_only` and does not use AI providers. This

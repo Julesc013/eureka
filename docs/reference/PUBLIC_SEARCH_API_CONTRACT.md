@@ -229,6 +229,10 @@ Typed AI Output Validator v0 does not change public search. It validates
 standalone typed AI output examples offline and does not enable generated
 snippets, model calls, query expansion, reranking, local-index mutation, or
 public API output changes.
+Pack Import Report Format v0 does not change public search. It records future
+validate-only pack validation outcomes and hard false mutation fields, but does
+not import packs, stage packs, mutate local indexes, upload, or mutate public
+search or the master index.
 
 ## Out Of Scope
 

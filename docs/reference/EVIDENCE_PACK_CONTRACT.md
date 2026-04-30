@@ -188,6 +188,12 @@ through `python scripts/validate_pack_set.py --all-examples` or an explicit
 `--pack-root`. Aggregated validation delegates to `validate_evidence_pack.py`
 and does not import, stage, index, upload, or make evidence canonical.
 
+Pack Import Report Format v0 now defines the future report envelope for
+recording evidence-pack validation outcomes. Reports can preserve failed,
+review-required, or passed evidence-pack checks, but a report is not evidence
+acceptance and does not import, stage, index, upload, mutate public search, or
+mutate the master index.
+
 AI Provider Contract v0 is separate from evidence packs. AI output is not
 evidence truth. Typed AI Output Validator v0 now provides
 `scripts/validate_ai_output.py` for offline typed output validation before any

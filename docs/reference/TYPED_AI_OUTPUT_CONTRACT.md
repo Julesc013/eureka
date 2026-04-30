@@ -102,6 +102,11 @@ The JSON report includes `model_calls_performed: false`,
 `network_performed: false`, `mutation_performed: false`, and
 `import_performed: false`.
 
+Pack Import Report Format v0 can record typed AI output validation results in a
+future validate-only report as `ai_output_bundle` results. The report does not
+accept AI output, import evidence, create contribution records, mutate local
+indexes, change public search, or mutate the master index.
+
 ## Evidence Links
 
 Outputs should link to source or evidence references where possible. Missing

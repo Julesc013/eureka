@@ -135,7 +135,7 @@ Allowed next actions are:
 - `reject`
 - `unsupported`
 
-No action means automatic import or acceptance.
+No allowed action performs automatic import or acceptance.
 
 ## Examples
 
