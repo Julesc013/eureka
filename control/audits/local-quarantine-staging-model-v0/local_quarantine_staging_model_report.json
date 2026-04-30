@@ -1,0 +1,68 @@
+{
+  "report_id": "local_quarantine_staging_model_v0",
+  "created_by_slice": "local_quarantine_staging_model_v0",
+  "status": "planning_only",
+  "staging_runtime_implemented": false,
+  "default_visibility": "local_private",
+  "default_search_impact": "none",
+  "default_master_index_impact": "none",
+  "default_telemetry_enabled": false,
+  "suggested_dev_root": ".eureka-local/",
+  "prohibited_roots": [
+    "site/dist",
+    "site/",
+    "public data",
+    "external",
+    "runtime",
+    "control/inventory canonical source files",
+    "evals",
+    "snapshots/examples committed examples",
+    "crates",
+    "docs"
+  ],
+  "staged_entities": [
+    "staged_pack_reference",
+    "staged_validation_report",
+    "staged_source_candidate",
+    "staged_evidence_candidate",
+    "staged_index_summary",
+    "staged_contribution_candidate",
+    "staged_ai_output_candidate",
+    "staged_issue",
+    "staged_decision_note"
+  ],
+  "required_future_operations": [
+    "list_staged_packs",
+    "inspect_staged_pack_metadata",
+    "delete_staged_pack",
+    "clear_all_staged_state",
+    "export_staging_report_only",
+    "export_public_safe_contribution_candidate_future"
+  ],
+  "prohibited_behaviors": [
+    "staging_runtime",
+    "runtime_staging_directory_creation",
+    "pack_file_copy",
+    "pack_import",
+    "local_index_mutation",
+    "runtime_source_registry_mutation",
+    "public_search_mutation",
+    "master_index_mutation",
+    "upload",
+    "submission",
+    "network_fetch",
+    "model_call",
+    "telemetry",
+    "raw_database_staging",
+    "executable_payload_staging",
+    "private_path_public_leakage"
+  ],
+  "next_recommended_milestone": "Staging Report Path Contract v0",
+  "alternative_next_milestone": "Local Staging Manifest Format v0",
+  "notes": [
+    "Local quarantine/staging remains planning-only.",
+    "No .eureka-local directory is created.",
+    "Staged records remain claims or candidates and do not affect search or the master index.",
+    "Staging success is not truth, rights clearance, malware safety, or public acceptance."
+  ]
+}

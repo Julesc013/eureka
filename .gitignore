@@ -30,3 +30,7 @@ coverage/
 target/
 tmp/
 
+# Future Eureka local/private state (must not be committed)
+.eureka-local/
+.eureka-cache/
+.eureka-staging/

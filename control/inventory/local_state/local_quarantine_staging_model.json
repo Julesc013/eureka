@@ -1,0 +1,175 @@
+{
+  "schema_version": "local_quarantine_staging_model.v0",
+  "model_id": "local_quarantine_staging_model_v0",
+  "status": "planning_only",
+  "staging_runtime_implemented": false,
+  "default_enabled": false,
+  "default_visibility": "local_private",
+  "default_search_impact": "none",
+  "default_master_index_impact": "none",
+  "default_network_required": false,
+  "default_telemetry_enabled": false,
+  "supported_future_modes": [
+    "validate_only_completed",
+    "stage_local_quarantine",
+    "inspect_staged",
+    "delete_staged",
+    "export_staging_report",
+    "local_index_candidate_future",
+    "contribution_queue_candidate_future"
+  ],
+  "staged_entities": [
+    {
+      "entity_type": "staged_pack_reference",
+      "default_visibility": "local_private",
+      "review_status": "quarantined_candidate",
+      "local_index_candidate_future_allowed": false,
+      "contribution_queue_candidate_future_allowed": true
+    },
+    {
+      "entity_type": "staged_validation_report",
+      "default_visibility": "local_private",
+      "review_status": "validated_or_failed_report",
+      "local_index_candidate_future_allowed": false,
+      "contribution_queue_candidate_future_allowed": true
+    },
+    {
+      "entity_type": "staged_source_candidate",
+      "default_visibility": "local_private",
+      "review_status": "claim_candidate",
+      "local_index_candidate_future_allowed": true,
+      "contribution_queue_candidate_future_allowed": true
+    },
+    {
+      "entity_type": "staged_evidence_candidate",
+      "default_visibility": "local_private",
+      "review_status": "claim_candidate",
+      "local_index_candidate_future_allowed": true,
+      "contribution_queue_candidate_future_allowed": true
+    },
+    {
+      "entity_type": "staged_index_summary",
+      "default_visibility": "local_private",
+      "review_status": "summary_candidate",
+      "local_index_candidate_future_allowed": false,
+      "contribution_queue_candidate_future_allowed": true
+    },
+    {
+      "entity_type": "staged_contribution_candidate",
+      "default_visibility": "local_private",
+      "review_status": "review_required",
+      "local_index_candidate_future_allowed": false,
+      "contribution_queue_candidate_future_allowed": true
+    },
+    {
+      "entity_type": "staged_ai_output_candidate",
+      "default_visibility": "local_private",
+      "review_status": "typed_review_required",
+      "local_index_candidate_future_allowed": false,
+      "contribution_queue_candidate_future_allowed": true
+    },
+    {
+      "entity_type": "staged_issue",
+      "default_visibility": "local_private",
+      "review_status": "diagnostic",
+      "local_index_candidate_future_allowed": false,
+      "contribution_queue_candidate_future_allowed": true
+    },
+    {
+      "entity_type": "staged_decision_note",
+      "default_visibility": "local_private",
+      "review_status": "operator_note_future",
+      "local_index_candidate_future_allowed": false,
+      "contribution_queue_candidate_future_allowed": true
+    }
+  ],
+  "prohibited_entities": [
+    "raw_sqlite_database",
+    "raw_local_cache",
+    "executable_payload",
+    "credential",
+    "secret",
+    "unredacted_private_absolute_path",
+    "raw_copyrighted_long_form_text",
+    "telemetry_payload",
+    "account_or_session_state"
+  ],
+  "path_policy": "control/inventory/local_state/local_state_path_policy.json",
+  "privacy_policy": {
+    "default": "local_private",
+    "public_safe_requires": [
+      "validate_only_report_passed",
+      "no_private_paths",
+      "no_credentials",
+      "review_required_if_uncertain"
+    ],
+    "quarantine_on_uncertainty": true
+  },
+  "rights_policy": {
+    "default": "review_required",
+    "no_rights_clearance_claim": true,
+    "source_terms_preserved": true
+  },
+  "risk_policy": {
+    "default": "metadata_only_or_review_required",
+    "no_malware_safety_claim": true,
+    "no_executable_payloads_by_default": true,
+    "no_raw_database_or_cache_by_default": true
+  },
+  "provenance_policy": {
+    "required_links": [
+      "pack_id",
+      "pack_version",
+      "pack_checksum",
+      "validate_only_import_report_id",
+      "validator_tool_ids",
+      "source_pack_refs",
+      "evidence_pack_refs",
+      "index_pack_refs",
+      "contribution_pack_refs"
+    ],
+    "user_account_identity_required": false
+  },
+  "reset_delete_policy": {
+    "future_operations": [
+      "list_staged_packs",
+      "inspect_staged_pack_metadata",
+      "delete_staged_pack",
+      "clear_all_staged_state",
+      "export_staging_report_only",
+      "export_public_safe_contribution_candidate_future"
+    ],
+    "irreversible_mutation_requires_confirmation": true,
+    "private_content_export_default": "forbidden"
+  },
+  "native_client_policy": {
+    "future_ui_allowed": true,
+    "private_by_default": true,
+    "app_local_storage_only": true
+  },
+  "relay_policy": {
+    "expose_staged_data_by_default": false,
+    "old_client_projection_allowed": false
+  },
+  "snapshot_policy": {
+    "include_staged_private_data_by_default": false,
+    "public_export_requires_validation": true
+  },
+  "public_search_policy": {
+    "staged_packs_visible_by_default": false,
+    "local_index_candidate_requires_future_mode": true,
+    "hosted_public_search_impact": "none"
+  },
+  "master_index_policy": {
+    "submission_performed_by_staging": false,
+    "auto_acceptance": false,
+    "acceptance_requires_review_queue": true,
+    "conflicts_preserved": true
+  },
+  "created_by_slice": "local_quarantine_staging_model_v0",
+  "notes": [
+    "This model is planning-only and creates no runtime staging state.",
+    "Staged records remain claims or candidates, not canonical truth.",
+    "Staging success is not rights clearance, malware safety, public acceptance, or master-index acceptance."
+  ]
+}

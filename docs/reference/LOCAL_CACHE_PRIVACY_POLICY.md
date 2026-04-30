@@ -41,6 +41,14 @@ reports where possible, writing only an explicit report file when requested,
 and not creating staging, import, cache, local index, upload, or master index
 state.
 
+Local Quarantine/Staging Model v0 preserves this boundary as planning only. No
+staging runtime exists, it does not create staged state, and it does not
+import, does not stage, does not index, does not upload, and does not mutate
+public search or the master index. Future staged metadata remains
+local_private by default and must be resettable, deletable, and excluded from
+public reports unless validated and redacted.
+No staging runtime exists in Local Quarantine/Staging Model v0, and it does not create, does not import, does not stage, does not index, does not upload, and does not mutate public search or the master index.
+
 Private cache is future explicit user state. It may later hold user-selected
 artifacts, preferences, local strategy notes, private resolution memory, or
 native-client working state. Private cache is disabled by default and requires

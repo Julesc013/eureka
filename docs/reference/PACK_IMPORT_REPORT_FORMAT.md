@@ -12,6 +12,10 @@ It does not index.
 It does not mutate local index state.
 It does not mutate the master index.
 Validate-Only Pack Import Tool v0 emits Pack Import Report v0 and does not import, does not stage, does not index, does not upload, and does not mutate the master index.
+Local Quarantine/Staging Model v0 is planning-only. No staging runtime exists,
+it does not create staged state, and it does not import, does not stage, does
+not index, does not upload, and does not mutate public search or the master
+index. Future staged metadata must link back to Pack Import Report v0.
 
 ## Purpose
 

@@ -57,6 +57,13 @@ mutate the master index. It writes only an explicit report file when
 
 Validate-Only Pack Import Tool v0 emits Pack Import Report v0 and does not import, does not stage, does not index, does not upload, and does not mutate the master index.
 
+Local Quarantine/Staging Model v0 is now implemented as planning/governance
+only. No staging runtime exists, it does not create staged state, and it does
+not import, does not stage, does not index, does not upload, and does not
+mutate public search or the master index. It defines future private roots,
+staged entity vocabulary, provenance links, and delete/reset/export
+requirements.
+
 AI Provider Contract v0 is adjacent but not part of import runtime. Future AI
 outputs can be validated as typed suggestions through
 `scripts/validate_ai_output.py` before they draft contributions, but the import

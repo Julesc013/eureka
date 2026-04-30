@@ -1,0 +1,47 @@
+{
+  "schema_version": "local_state_path_policy.v0",
+  "policy_id": "local_state_path_policy_v0",
+  "status": "planning_only",
+  "allowed_future_roots": [
+    "user_configured_cache_root",
+    "application_local_data_root",
+    "repo_local_ignored_root_for_dev_only"
+  ],
+  "suggested_dev_root": ".eureka-local/",
+  "additional_ignored_dev_roots": [
+    ".eureka-cache/",
+    ".eureka-staging/"
+  ],
+  "prohibited_roots": [
+    "site/dist",
+    "site/",
+    "public data",
+    "external",
+    "runtime",
+    "control/inventory canonical source files",
+    "evals",
+    "snapshots/examples committed examples",
+    "crates",
+    "docs"
+  ],
+  "git_policy": {
+    "must_be_ignored": true,
+    "committed_state_forbidden": true,
+    "gitignore_entries_required": [
+      ".eureka-local/",
+      ".eureka-cache/",
+      ".eureka-staging/"
+    ]
+  },
+  "path_leakage_policy": {
+    "public_reports_must_redact_private_absolute_paths": true,
+    "local_paths_private_by_default": true,
+    "repo_relative_public_fixture_paths_allowed": true,
+    "private_path_export_default": "forbidden"
+  },
+  "notes": [
+    "The suggested dev root is documentation and ignore policy only.",
+    "This policy does not create .eureka-local/ or any staging runtime state.",
+    "Future native clients may use application-local private roots instead of a repo-local dev root."
+  ]
+}

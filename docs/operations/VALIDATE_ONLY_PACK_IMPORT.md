@@ -13,6 +13,12 @@ write hidden local state.
 
 Validate-Only Pack Import Tool v0 emits Pack Import Report v0 and does not import, does not stage, does not index, does not upload, and does not mutate the master index.
 
+Local Quarantine/Staging Model v0 is planning-only. No staging runtime exists,
+it does not create staged state, and it does not import, does not stage, does
+not index, does not upload, and does not mutate public search or the master
+index. It defines the future private/local path and reset/delete/export model
+after this validate-only report step.
+
 ## Command Usage
 
 List known examples:
