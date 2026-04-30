@@ -1,0 +1,85 @@
+{
+  "report_id": "static_artifact_promotion_review_v0",
+  "created_by_slice": "static_artifact_promotion_review_v0",
+  "decision": "conditionally_promoted_pending_github_actions_evidence",
+  "active_static_artifact": "site/dist",
+  "source_root": "site",
+  "generator_command": "python site/build.py",
+  "public_site_exists": false,
+  "external_exists": true,
+  "third_party_exists": false,
+  "workflow_path": ".github/workflows/pages.yml",
+  "workflow_upload_path": "site/dist",
+  "repository_layout_valid": true,
+  "static_site_valid": true,
+  "pages_artifact_valid": true,
+  "generated_artifact_id": "static_site_dist",
+  "generated_artifact_drift_status": "passed",
+  "manual_edits_allowed": false,
+  "public_data_surfaces": {
+    "data": {
+      "path": "site/dist/data",
+      "present": true,
+      "validated": true
+    },
+    "lite": {
+      "path": "site/dist/lite",
+      "present": true,
+      "validated": true
+    },
+    "text": {
+      "path": "site/dist/text",
+      "present": true,
+      "validated": true
+    },
+    "files": {
+      "path": "site/dist/files",
+      "present": true,
+      "validated": true
+    },
+    "demo": {
+      "path": "site/dist/demo",
+      "present": true,
+      "validated": true
+    },
+    "assets": {
+      "path": "site/dist/assets",
+      "present": true,
+      "validated": true
+    },
+    "nojekyll": {
+      "path": "site/dist/.nojekyll",
+      "present": true,
+      "validated": true
+    }
+  },
+  "stale_reference_summary": {
+    "public_site": {
+      "active_current_references": 0,
+      "historical_references_allowed": true
+    },
+    "third_party": {
+      "active_current_references": 0,
+      "historical_references_allowed": true
+    },
+    "third-party": {
+      "active_current_references": 0,
+      "historical_references_allowed": false
+    },
+    "Third Party": {
+      "active_current_references": 0,
+      "historical_references_allowed": false
+    }
+  },
+  "github_actions_status": "unverified",
+  "deployment_success_claimed": false,
+  "blockers": [
+    "GitHub Actions Pages deployment run evidence is not recorded in this review."
+  ],
+  "next_recommended_milestone": "GitHub Pages Run Evidence Review v0",
+  "notes": [
+    "site/dist is valid as the active repo-local static artifact and configured Pages upload artifact.",
+    "This review does not deploy, fetch URLs, call external search systems, add public search runtime, add backend hosting, enable live probes, or claim production readiness.",
+    "Public deployment success remains unverified until GitHub Actions evidence is checked and recorded."
+  ]
+}
