@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Eureka</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header>
+    <h1>Search Eureka</h1>
+    <p class="lede">Static handoff for Eureka public search. The local/prototype runtime exists, but hosted public search is not configured or verified.</p>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="search.html">Search</a>
+      <a href="status.html">Status Snapshot</a>
+      <a href="sources.html">Source Matrix</a>
+      <a href="evals.html">Eval And Audit Status</a>
+      <a href="demo-queries.html">Demo Queries</a>
+      <a href="limitations.html">Limitations And Public-Alpha Boundaries</a>
+      <a href="roadmap.html">Live-Alpha Preparation Roadmap</a>
+      <a href="local-quickstart.html">Local Quickstart</a>
+    </nav>
+  </header>
+  <main>
+    <section class="notice">
+      Public Search Static Handoff v0 is implemented as static publication only. This page does not make hosted search live and does not add backend hosting.
+    </section>
+    <section class="notice search-handoff-status">
+      <h2>Hosted Search Status</h2>
+      <p><strong>Hosted public search is not configured.</strong> This static page is a handoff surface only. GitHub Pages serves files from <code>site/dist</code>; it does not run the Python public search runtime.</p>
+    </section>
+    <section class="search-handoff">
+      <h2>Static Search Handoff</h2>
+      <form class="search-form" method="get" action="" aria-label="Disabled hosted search handoff">
+        <label for="q">Search query</label>
+        <input id="q" name="q" type="search" maxlength="160" placeholder="windows 7 apps" disabled>
+        <input name="limit" type="number" min="1" max="25" value="10" disabled>
+        <input name="mode" type="hidden" value="local_index_only">
+        <button type="submit" disabled>Hosted search not configured</button>
+      </form>
+      <p>The first allowed runtime mode is <code>local_index_only</code>. The static handoff keeps live probes, downloads, installs, uploads, accounts, arbitrary URL fetch, local path search, and telemetry disabled.</p>
+    </section>
+    <section class="grid">
+      <div class="panel">
+        <h2>Use The Local Runtime</h2>
+        <p>From a checkout, validate the public-alpha wrapper and start the local workbench. The commands are local-only and do not deploy Eureka.</p>
+        <pre><code>python scripts/run_public_alpha_server.py --check-config
+python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080</code></pre>
+        <p>Then open <code>http://127.0.0.1:8080/search?q=windows+7+apps</code> or <code>http://127.0.0.1:8080/api/v1/search?q=windows+7+apps</code>.</p>
+      </div>
+      <div class="panel">
+        <h2>Try These Queries Locally</h2>
+        <ul>
+      <li><code>windows 7 apps</code></li>
+      <li><code>latest firefox before xp support ended</code></li>
+      <li><code>driver.inf</code></li>
+      <li><code>thinkpad t42 wifi windows 2000</code></li>
+      <li><code>pc magazine ray tracing</code></li>
+        </ul>
+      </div>
+    </section>
+    <section class="grid">
+      <div class="panel">
+        <h2>Static Alternatives</h2>
+        <ul>
+          <li><a href="demo/index.html">Static resolver demos</a></li>
+          <li><a href="lite/search.html">Lite search handoff</a></li>
+          <li><a href="text/search.txt">Text search handoff</a></li>
+          <li><a href="files/search.README.txt">Files search handoff note</a></li>
+          <li><a href="data/search_handoff.json">Search handoff data</a></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>Boundaries</h2>
+        <ul>
+          <li>No hosted backend is configured or verified by this page.</li>
+          <li>No live probes, scraping, crawling, arbitrary URL fetch, downloads, installs, uploads, accounts, local path search, or telemetry are enabled.</li>
+          <li>Public search remains local/prototype until a later rehearsal and operator approval.</li>
+        </ul>
+      </div>
+    </section>
+    <h2>Published Capability Data</h2>
+    <p>The static handoff publishes data/search_handoff.json so old clients, static readers, and future rehearsal tooling can tell that hosted search is unavailable, local runtime instructions exist, local_index_only is the first mode, and unsafe behavior remains disabled.</p>
+    <ul>
+      <li>Static site does not run Python.</li>
+      <li>Hosted backend status is unavailable or unverified unless future evidence says otherwise.</li>
+      <li>The local runtime uses server-owned local index records and rejects caller-provided local paths or URLs.</li>
+      <li>No live probes, downloads, installs, uploads, accounts, local path search, telemetry, arbitrary URL fetch, scraping, or crawling are enabled; API stability remains pre-production.</li>
+      <li>Public Search Rehearsal v0 remains future work.</li>
+    </ul>
+
+  </main>
+  <footer>
+    Eureka is a Python reference backend prototype, not production. This site uses no scraping, performs no live source probes, and makes no external search calls. external baselines pending/manual; source placeholders remain placeholders.
+  </footer>
+</body>
+</html>

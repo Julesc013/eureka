@@ -259,6 +259,7 @@
         "contracts/api/search_result_card.v0.json",
         "control/inventory/publication/public_search_routes.json",
         "control/inventory/publication/public_search_safety.json",
+        "control/inventory/publication/public_search_handoff.json",
         "docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md",
         "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md",
         "runtime/gateway/public_api/public_search.py",
@@ -285,9 +286,51 @@
       "supports_external_sources": false,
       "enabled_by_default": true,
       "requires_operator_signoff": true,
-      "current_limitations": "Local/prototype backend runtime only; no hosted backend, static search handoff, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
-      "next_step": "Public Search Static Handoff v0, then Public Search Rehearsal v0; keep local_index_only and disabled live/external behavior.",
+      "current_limitations": "Local/prototype backend runtime only with static handoff pages; no hosted backend, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
+      "next_step": "Public Search Rehearsal v0; keep local_index_only and disabled live/external behavior.",
       "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0."
+    },
+    {
+      "id": "public_search_static_handoff",
+      "label": "Static public search handoff",
+      "public_label": "Search handoff",
+      "status": "implemented",
+      "stability": "experimental",
+      "client_profiles": [
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree"
+      ],
+      "implemented_paths": [
+        "site/dist/search.html",
+        "site/dist/lite/search.html",
+        "site/dist/text/search.txt",
+        "site/dist/files/search.README.txt",
+        "site/dist/data/search_handoff.json",
+        "control/inventory/publication/public_search_handoff.json",
+        "scripts/validate_public_search_static_handoff.py"
+      ],
+      "reserved_paths": [
+        "/search.html",
+        "/lite/search.html",
+        "/text/search.txt",
+        "/files/search.README.txt",
+        "/data/search_handoff.json"
+      ],
+      "requires_backend": false,
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "supports_static_data": true,
+      "supports_live_data": false,
+      "supports_downloads": false,
+      "supports_private_user_state": false,
+      "supports_external_sources": false,
+      "enabled_by_default": true,
+      "requires_operator_signoff": false,
+      "current_limitations": "Static handoff and local-runtime instructions only; hosted backend URL is unavailable/unverified and the form is disabled until a future approved backend exists.",
+      "next_step": "Public Search Rehearsal v0.",
+      "notes": "No JavaScript, no hosted search claim, no live probes, no downloads, no installs, no uploads, no local path search, and no telemetry."
     },
     {
       "id": "snapshots",
@@ -716,7 +759,7 @@
       "enabled_by_default": false,
       "requires_operator_signoff": true,
       "current_limitations": "Future hosted live backend search only; static site has no live search. Local Public Search Runtime v0 exists separately as local_index_only prototype runtime.",
-      "next_step": "Requires static handoff, live backend handoff, hosted rehearsal, rate-limit policy, and operator signoff before any hosted use.",
+      "next_step": "Requires hosted rehearsal, rate-limit policy, live backend handoff review, and operator signoff before any hosted use.",
       "notes": "No live probes are enabled by live search, hosted /api/v1/search is not deployed, and safety policy keeps public search local_index_only with live/external behavior disabled."
     },
     {

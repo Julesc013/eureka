@@ -134,7 +134,7 @@ REQUIRED_DOC_PHRASES = {
     READINESS_DOC: (
         "Local Public Search Runtime v0",
         "hosted_public_runtime_approved: false",
-        "static_search_handoff_approved: false",
+        "Static handoff is implemented by Public Search Static Handoff v0",
         "production_claim_allowed: false",
     ),
     API_DOC: (
@@ -386,8 +386,12 @@ def _validate_dependencies(payload: Mapping[str, Any], errors: list[str]) -> Non
     static_defaults = _mapping(payload.get("static_site_defaults"))
     if static_defaults.get("github_pages_static_only") is not True:
         errors.append("public_search_safety.json: GitHub Pages must remain static-only.")
-    if static_defaults.get("search_form_added") is not False:
-        errors.append("public_search_safety.json: search form must not be added by P28.")
+    if static_defaults.get("search_form_added") is not True:
+        errors.append("public_search_safety.json: static search handoff form must be recorded as added.")
+    if static_defaults.get("static_search_handoff_added") is not True:
+        errors.append("public_search_safety.json: static_search_handoff_added must be true.")
+    if static_defaults.get("hosted_form_enabled") is not False:
+        errors.append("public_search_safety.json: hosted_form_enabled must remain false.")
     for key in ("live_backend_dependency", "live_probe_dependency", "action_policy_dependency", "local_cache_privacy_dependency"):
         dependency = _mapping(payload.get(key))
         if not dependency:
@@ -458,8 +462,8 @@ def _validate_routes(payload: Any, errors: list[str]) -> None:
         errors.append("public_search_routes.json: local public search runtime routes must be implemented.")
     if payload.get("hosted_public_runtime_implemented") is not False:
         errors.append("public_search_routes.json: hosted public runtime must remain unimplemented.")
-    if payload.get("static_handoff_implemented") is not False:
-        errors.append("public_search_routes.json: static search handoff must remain unimplemented.")
+    if payload.get("static_handoff_implemented") is not True:
+        errors.append("public_search_routes.json: static search handoff must be implemented by P30.")
     if set(_string_list(payload.get("contract_modes"))) != REQUIRED_ALLOWED_MODES:
         errors.append("public_search_routes.json: contract_modes must contain only local_index_only.")
     routes = payload.get("routes")

@@ -110,6 +110,27 @@
       "next_guard": "Public-alpha route/data drift guard"
     },
     {
+      "file_name": "search_handoff.json",
+      "path": "/data/search_handoff.json",
+      "stability_class": "stable_draft",
+      "field_stability_profile": "stable_draft static handoff safety/status flags; experimental route/local-runtime hints; internal source inputs",
+      "intended_consumers": [
+        "static clients",
+        "old-client handoff pages",
+        "future rehearsal tooling",
+        "snapshot consumers",
+        "future native and relay planning"
+      ],
+      "allowed_client_use": "Display static handoff status, unavailable hosted backend posture, local_index_only mode, disabled unsafe behaviors, and local/prototype runtime instructions.",
+      "prohibited_client_use": "Do not treat local runtime hints as public deployment evidence, hosted backend availability, live source access, or production API stability.",
+      "breaking_change_sensitivity": "High for hosted backend status, disabled behavior flags, no-hosted-search claim, query limits, and first mode.",
+      "current_gaps": [
+        "Hosted backend remains unavailable/unverified.",
+        "Local runtime hints are not deployment evidence."
+      ],
+      "next_guard": "Public Search Static Handoff v0 validator"
+    },
+    {
       "file_name": "build_manifest.json",
       "path": "/data/build_manifest.json",
       "stability_class": "volatile",
@@ -456,6 +477,110 @@
         "notes": "Repo path list."
       }
     ],
+    "search_handoff.json": [
+      {
+        "field_path": "schema_version",
+        "stability": "stable_draft",
+        "consumer_guidance": "Check before interpreting the file.",
+        "notes": "Current version is 0.1.0."
+      },
+      {
+        "field_path": "generated_by",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display or validate generator provenance.",
+        "notes": "Static generator only."
+      },
+      {
+        "field_path": "search_handoff_status",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display whether the static handoff is implemented.",
+        "notes": "Does not imply hosted search is live."
+      },
+      {
+        "field_path": "hosted_backend_status",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display hosted backend availability honestly.",
+        "notes": "Currently unavailable."
+      },
+      {
+        "field_path": "default_backend_mode",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display whether the static form has a configured backend.",
+        "notes": "Currently not_configured."
+      },
+      {
+        "field_path": "first_mode",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display the first allowed public search mode.",
+        "notes": "Currently local_index_only."
+      },
+      {
+        "field_path": "max_query_length",
+        "stability": "stable_draft",
+        "consumer_guidance": "Use for static form maxlength and old-client guidance.",
+        "notes": "Must align with public search safety policy."
+      },
+      {
+        "field_path": "default_result_limit",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display default result limit for local/prototype runtime.",
+        "notes": "Does not imply hosted runtime availability."
+      },
+      {
+        "field_path": "disabled_behaviors.live_probes_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until explicit future approval.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "disabled_behaviors.downloads_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until explicit future approval.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "disabled_behaviors.installs_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until explicit future approval.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "disabled_behaviors.uploads_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until explicit future approval.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "disabled_behaviors.local_path_search_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until explicit future approval.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "no_hosted_search_claim",
+        "stability": "stable_draft",
+        "consumer_guidance": "Use to avoid hosted-search overclaims.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "local_runtime_instructions",
+        "stability": "experimental",
+        "consumer_guidance": "Display as localhost/prototype instructions only.",
+        "notes": "Command shape may evolve."
+      },
+      {
+        "field_path": "backend_routes[]",
+        "stability": "experimental",
+        "consumer_guidance": "Display local/prototype route availability only.",
+        "notes": "Not hosted deployment proof."
+      },
+      {
+        "field_path": "source_inputs[]",
+        "stability": "internal",
+        "consumer_guidance": "Diagnostic only.",
+        "notes": "Repo path list."
+      }
+    ],
     "build_manifest.json": [
       {
         "field_path": "schema_version",
@@ -567,6 +692,26 @@
       "field_path": "public_alpha_not_production"
     },
     {
+      "file_name": "search_handoff.json",
+      "field_path": "search_handoff_status"
+    },
+    {
+      "file_name": "search_handoff.json",
+      "field_path": "hosted_backend_status"
+    },
+    {
+      "file_name": "search_handoff.json",
+      "field_path": "first_mode"
+    },
+    {
+      "file_name": "search_handoff.json",
+      "field_path": "disabled_behaviors.live_probes_enabled"
+    },
+    {
+      "file_name": "search_handoff.json",
+      "field_path": "no_hosted_search_claim"
+    },
+    {
       "file_name": "build_manifest.json",
       "field_path": "data_files[]"
     },
@@ -583,7 +728,9 @@
     "source_summary.sources[].capabilities",
     "eval_summary.archive_resolution",
     "eval_summary.search_usefulness",
-    "route_summary.review_required_routes[]"
+    "route_summary.review_required_routes[]",
+    "search_handoff.local_runtime_instructions",
+    "search_handoff.backend_routes[]"
   ],
   "volatile_fields": [
     "build_manifest.commit",
@@ -599,6 +746,7 @@
     "source_summary.source_inputs[]",
     "eval_summary.source_inputs[]",
     "route_summary.source_inputs[]",
+    "search_handoff.source_inputs[]",
     "build_manifest.source_inputs[]",
     "build_manifest.validations_expected[]"
   ],

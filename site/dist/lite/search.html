@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Eureka Lite Search</title>
+</head>
+<body>
+  <h1>Lite Search Handoff</h1>
+  <p><strong>Static seed surface.</strong> No JavaScript, no live search, no live source probes, no downloads.</p>
+  <nav>
+    <a href="index.html">Lite Overview</a>
+    <a href="search.html">Search</a>
+    <a href="sources.html">Sources</a>
+    <a href="evals.html">Evals</a>
+    <a href="demo-queries.html">Demo Queries</a>
+    <a href="limitations.html">Limitations</a>
+  </nav>
+  <hr>
+<p>This is a static no-JS search handoff for old browsers. Hosted public search is not configured, and this page does not run Python.</p>
+<p>The local/prototype runtime mode is <code>local_index_only</code>. No live probes, downloads, installs, uploads, accounts, arbitrary URL fetch, local path search, scraping, crawling, or telemetry are enabled.</p>
+<p>The hosted form is intentionally disabled until a future backend is configured and verified.</p>
+<form method="get" action="" aria-label="Disabled hosted search handoff">
+<p><label for="q">Search query</label> <input id="q" name="q" maxlength="160" disabled></p>
+<p><button type="submit" disabled>Hosted search not configured</button></p>
+</form>
+<p>For local prototype use, run <code>python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080</code> from a checkout and open <code>http://127.0.0.1:8080/search?q=windows+7+apps</code>.</p>
+<ul>
+<li>windows 7 apps</li>
+<li>latest firefox before xp support ended</li>
+<li>driver.inf</li>
+<li>thinkpad t42 wifi windows 2000</li>
+<li>pc magazine ray tracing</li>
+</ul>
+<p>Machine-readable handoff: <a href="../data/search_handoff.json">../data/search_handoff.json</a></p>
+  <hr>
+  <p>Eureka is a Python reference backend prototype, not production. This surface uses no scraping, performs no live source probes, and makes no external search calls. external baselines pending/manual; source placeholders remain placeholders.</p>
+</body>
+</html>

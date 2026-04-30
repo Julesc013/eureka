@@ -132,6 +132,25 @@
       "notes": "Commands are local and do not deploy or query external systems."
     },
     {
+      "path": "/search.html",
+      "title": "Search Eureka",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "site/dist/search.html",
+      "client_profiles": [
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree"
+      ],
+      "requires_javascript": false,
+      "requires_css": true,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "static public search handoff only; hosted backend unavailable and local runtime instructions only",
+      "notes": "Public Search Static Handoff v0 page. It does not make hosted search live, does not run Python on GitHub Pages, and keeps live probes/downloads/uploads/local paths disabled."
+    },
+    {
       "path": "/app/",
       "title": "Future App Surface",
       "status": "deferred",
@@ -166,7 +185,7 @@
     },
     {
       "path": "/search",
-      "title": "Future Public Search",
+      "title": "Local Runtime Public Search",
       "status": "deferred",
       "stability": "experimental",
       "source_file": null,
@@ -179,8 +198,8 @@
       "requires_css": true,
       "works_under_project_base_path": true,
       "safe_for_static_hosting": false,
-      "public_claim_scope": "reserved future public search route only",
-      "notes": "Reserved by Public Search API Contract v0 for future local-index-only hosted search. It is not implemented in site/dist and is not live."
+      "public_claim_scope": "local/prototype backend route only, not a static GitHub Pages route",
+      "notes": "Implemented by Local Public Search Runtime v0 for local stdlib server use. Static publication exposes search.html as the handoff page instead."
     },
     {
       "path": "/lite/",
@@ -197,6 +216,22 @@
       "safe_for_static_hosting": true,
       "public_claim_scope": "static old-browser HTML seed surface generated from public data summaries",
       "notes": "Implemented as static no-JS/no-CSS seed pages; not live search or a hosted app."
+    },
+    {
+      "path": "/lite/search.html",
+      "title": "Lite Search Handoff",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "site/dist/lite/search.html",
+      "client_profiles": [
+        "lite_html"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "old-browser static search handoff only",
+      "notes": "No hosted backend claim; generated from public search handoff data."
     },
     {
       "path": "/lite/sources.html",
@@ -277,6 +312,22 @@
       "safe_for_static_hosting": true,
       "public_claim_scope": "plain-text static seed surface generated from public data summaries",
       "notes": "Implemented as static text files; not command-line interactivity or live search."
+    },
+    {
+      "path": "/text/search.txt",
+      "title": "Text Search Handoff",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "site/dist/text/search.txt",
+      "client_profiles": [
+        "text"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "plain-text static search handoff only",
+      "notes": "No hosted backend claim; generated from public search handoff data."
     },
     {
       "path": "/text/sources.txt",
@@ -374,6 +425,23 @@
       "safe_for_static_hosting": true,
       "public_claim_scope": "static file-tree index only",
       "notes": "Lists public data summaries and file-surface artifacts; no executable downloads."
+    },
+    {
+      "path": "/files/search.README.txt",
+      "title": "File Tree Search Handoff",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "source_file": "site/dist/files/search.README.txt",
+      "client_profiles": [
+        "file_tree",
+        "text"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "file-tree static search handoff note only",
+      "notes": "Explains that dynamic search is not part of the static file tree."
     },
     {
       "path": "/files/manifest.json",
@@ -581,6 +649,26 @@
       "external_observation_required": false,
       "public_claim_scope": "static eval/audit demo summary only",
       "notes": "Shows local hard eval and search audit counts while keeping external baselines pending/manual."
+    },
+    {
+      "path": "/data/search_handoff.json",
+      "title": "Search Handoff Data",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "site/dist/data/search_handoff.json",
+      "client_profiles": [
+        "api_client",
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "machine-readable static search handoff capability summary",
+      "notes": "Static data only. Hosted backend remains unavailable unless future evidence updates the handoff inventory."
     },
     {
       "path": "/data/",

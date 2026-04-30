@@ -130,13 +130,15 @@
       ],
       "validator_commands": [
         "python site/validate.py",
-        "python scripts/check_github_pages_static_artifact.py --path site/dist"
+        "python scripts/check_github_pages_static_artifact.py --path site/dist",
+        "python scripts/validate_public_search_static_handoff.py"
       ],
       "source_inputs": [
         "site/pages",
         "site/templates",
         "site/assets",
         "control/inventory/publication",
+        "control/inventory/publication/public_search_handoff.json",
         "control/inventory/sources",
         "evals",
         "snapshots/examples/static_snapshot_v0",
@@ -152,7 +154,7 @@
       "volatile_fields": [],
       "committed_output_policy": "site/dist is the single generated static deployment artifact for GitHub Pages. Manual edits are not allowed; update source inputs and regenerate.",
       "update_command": "python site/build.py --clean",
-      "notes": "Repository Shape Consolidation v0 promotes site/dist to the canonical generated static artifact. This does not claim GitHub Pages deployment success or add backend, search, live probes, or production behavior."
+      "notes": "Repository Shape Consolidation v0 promotes site/dist to the canonical generated static artifact. Public Search Static Handoff v0 adds static/no-JS search handoff outputs under site/dist without claiming hosted search. This does not claim GitHub Pages deployment success or add backend hosting, live probes, downloads, uploads, or production behavior."
     },
     {
       "artifact_id": "python_oracle_goldens",

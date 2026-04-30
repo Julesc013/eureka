@@ -15,7 +15,8 @@
   ],
   "implementation_scope": "local_prototype_backend",
   "hosted_public_runtime_implemented": false,
-  "static_handoff_implemented": false,
+  "static_handoff_implemented": true,
+  "static_handoff": "control/inventory/publication/public_search_handoff.json",
   "request_schema": "contracts/api/search_request.v0.json",
   "response_schema": "contracts/api/search_response.v0.json",
   "error_schema": "contracts/api/error_response.v0.json",
@@ -63,7 +64,7 @@
       "uploads_allowed": false,
       "auth_required": false,
       "rate_limit_required_before_public": true,
-      "notes": "Local/prototype backend HTML search route implemented through the stdlib workbench server. Static search handoff and hosted public deployment remain future.",
+      "notes": "Local/prototype backend HTML search route implemented through the stdlib workbench server. Static search handoff is implemented at /search.html; hosted public deployment remains future.",
       "public_search_safety_required": true,
       "runtime_readiness_checklist_required": true
     },
@@ -212,9 +213,9 @@
   "notes": [
     "This inventory records Local Public Search Runtime v0 route handlers for local/prototype backend use only.",
     "No hosted backend behavior, live probes, source adapters, external API calls, downloads, uploads, account behavior, telemetry, or production API guarantee are added.",
-    "The current static site remains site/dist and hosted public search is not deployed.",
+    "The current static site remains site/dist and now includes an honest /search.html handoff. Hosted public search is not deployed.",
     "Public Search Safety / Abuse Guard v0 now defines the policy-only request limits, forbidden parameters, disabled modes, privacy posture, and operator controls required before any reserved public search route can be implemented.",
-    "Local public search runtime is implemented; static search handoff and hosted public deployment remain future."
+    "Local public search runtime and static search handoff are implemented; hosted public deployment remains future."
   ],
   "safety_policy": "control/inventory/publication/public_search_safety.json",
   "safety_doc": "docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md",

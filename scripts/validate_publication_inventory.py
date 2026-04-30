@@ -24,6 +24,7 @@ REQUIRED_FILES = {
     "live_backend_routes.json",
     "live_probe_gateway.json",
     "public_data_contract.json",
+    "public_search_handoff.json",
     "public_search_routes.json",
     "redirects.json",
     "relay_surface.json",
@@ -132,8 +133,10 @@ REQUIRED_PUBLIC_DATA_PATHS = {
     "/data/eval_summary.json",
     "/data/route_summary.json",
     "/data/build_manifest.json",
+    "/data/search_handoff.json",
     "/files/manifest.json",
     "/files/index.txt",
+    "/files/search.README.txt",
     "/files/SHA256SUMS",
     "/demo/data/demo_snapshots.json",
 }
@@ -144,10 +147,12 @@ REQUIRED_GENERATED_PUBLIC_DATA_PATHS = {
     "/data/eval_summary.json",
     "/data/route_summary.json",
     "/data/build_manifest.json",
+    "/data/search_handoff.json",
 }
 REQUIRED_FILE_SURFACE_PATHS = {
     "/files/manifest.json",
     "/files/index.txt",
+    "/files/search.README.txt",
     "/files/SHA256SUMS",
 }
 REQUIRED_DEMO_ROUTES = {
@@ -200,6 +205,7 @@ REQUIRED_SURFACE_CAPABILITIES = {
     "external_baseline_observations",
     "native_clients",
     "rust_runtime",
+    "public_search_static_handoff",
 }
 REQUIRED_LIVE_PROBE_CANDIDATE_SOURCES = {
     "internet_archive_metadata",
@@ -330,6 +336,9 @@ def validate_publication_inventory(
         "public_search_routes.json": _load_json(
             inventory_dir / "public_search_routes.json", errors, repo_root
         ),
+        "public_search_handoff.json": _load_json(
+            inventory_dir / "public_search_handoff.json", errors, repo_root
+        ),
         "redirects.json": _load_json(inventory_dir / "redirects.json", errors, repo_root),
         "relay_surface.json": _load_json(
             inventory_dir / "relay_surface.json", errors, repo_root
@@ -364,6 +373,7 @@ def validate_publication_inventory(
     _validate_live_probe_gateway(payloads["live_probe_gateway.json"], errors)
     _validate_public_data_contract(payloads["public_data_contract.json"], site_dir, errors)
     _validate_public_search_routes(payloads["public_search_routes.json"], errors)
+    _validate_public_search_handoff(payloads["public_search_handoff.json"], site_dir, errors)
     _validate_redirects(payloads["redirects.json"], errors)
     _validate_relay_surface(payloads["relay_surface.json"], errors)
     _validate_snapshot_contract(payloads["snapshot_contract.json"], errors)
@@ -784,6 +794,33 @@ def _validate_deployment_targets(payload: Any, errors: list[str]) -> None:
                 "deployment_targets.json: hosted_public_alpha_backend.no_live_probes_by_default must be true."
             )
 
+    public_search_backend = by_id.get("public_search_backend")
+    if not isinstance(public_search_backend, Mapping):
+        errors.append("deployment_targets.json: missing public_search_backend target.")
+    else:
+        expected = {
+            "kind": "backend",
+            "status": "not_deployed",
+            "base_url": None,
+            "hosted_url": None,
+            "local_dev_url": "http://127.0.0.1:8080/search",
+            "deployment_approved": False,
+            "workflow_configured": False,
+            "deployment_success_claimed": False,
+            "live_probes_enabled": False,
+            "downloads_enabled": False,
+            "installs_enabled": False,
+            "uploads_enabled": False,
+            "local_paths_enabled": False,
+            "telemetry_enabled": False,
+        }
+        _expect_mapping_values(
+            "deployment_targets.json: public_search_backend",
+            public_search_backend,
+            expected,
+            errors,
+        )
+
 
 def _validate_domain_plan(payload: Any, errors: list[str]) -> None:
     if not isinstance(payload, Mapping):
@@ -1078,6 +1115,8 @@ def _validate_public_search_routes(payload: Any, errors: list[str]) -> None:
         "implemented_now": True,
         "runtime_routes_implemented": True,
         "first_allowed_mode": "local_index_only",
+        "static_handoff_implemented": True,
+        "hosted_public_runtime_implemented": False,
     }
     _expect_mapping_values("public_search_routes.json", payload, expected, errors)
     if _string_list(payload.get("contract_modes")) != ["local_index_only"]:
@@ -1117,6 +1156,79 @@ def _validate_public_search_routes(payload: Any, errors: list[str]) -> None:
     missing = sorted(REQUIRED_PUBLIC_SEARCH_ROUTES - registered)
     if missing:
         errors.append(f"public_search_routes.json: missing routes {missing}.")
+
+
+def _validate_public_search_handoff(payload: Any, site_dir: Path, errors: list[str]) -> None:
+    if not isinstance(payload, Mapping):
+        errors.append("public_search_handoff.json: must be a JSON object.")
+        return
+    expected = {
+        "schema_version": "0.1.0",
+        "handoff_id": "eureka-public-search-static-handoff-v0",
+        "status": "implemented_static_handoff",
+        "stability": "experimental",
+        "static_artifact": "site/dist",
+        "runtime_dependency": "local_public_search_runtime_v0",
+        "hosted_backend_status": "unavailable",
+        "default_backend_mode": "not_configured",
+        "no_js_required": True,
+    }
+    _expect_mapping_values("public_search_handoff.json", payload, expected, errors)
+    backend_policy = _mapping(payload.get("backend_url_policy"))
+    if backend_policy.get("hosted_backend_url") is not None:
+        errors.append("public_search_handoff.json: hosted_backend_url must remain null.")
+    if backend_policy.get("hosted_backend_url_configured") is not False:
+        errors.append("public_search_handoff.json: hosted_backend_url_configured must be false.")
+    if backend_policy.get("hosted_backend_url_verified") is not False:
+        errors.append("public_search_handoff.json: hosted_backend_url_verified must be false.")
+    if backend_policy.get("fake_hosted_urls_allowed") is not False:
+        errors.append("public_search_handoff.json: fake hosted backend URLs must be disallowed.")
+    form_policy = _mapping(payload.get("form_policy"))
+    if form_policy.get("hosted_form_enabled") is not False:
+        errors.append("public_search_handoff.json: hosted form must remain disabled.")
+    if form_policy.get("disabled_static_form_rendered") is not True:
+        errors.append("public_search_handoff.json: disabled static form must be rendered.")
+    if form_policy.get("query_parameter") != "q":
+        errors.append("public_search_handoff.json: query_parameter must be q.")
+    max_len = form_policy.get("query_maxlength")
+    if not isinstance(max_len, int) or max_len > 160:
+        errors.append("public_search_handoff.json: query_maxlength must be <= 160.")
+    if form_policy.get("mode") != "local_index_only":
+        errors.append("public_search_handoff.json: form mode must be local_index_only.")
+    static_routes = _route_outputs_from_inventory(payload.get("static_routes"))
+    for key, relative in {
+        "standard": "search.html",
+        "lite": "lite/search.html",
+        "text": "text/search.txt",
+        "files": "files/search.README.txt",
+        "data": "data/search_handoff.json",
+    }.items():
+        if static_routes.get(key) != f"site/dist/{relative}":
+            errors.append(
+                f"public_search_handoff.json: static_routes.{key} must be site/dist/{relative}."
+            )
+        if not (site_dir / relative).exists():
+            errors.append(f"public_search_handoff.json: site/dist/{relative} is missing.")
+    disabled = _mapping(payload.get("disabled_behaviors"))
+    for key in (
+        "live_probes_enabled",
+        "downloads_enabled",
+        "installs_enabled",
+        "uploads_enabled",
+        "accounts_enabled",
+        "telemetry_enabled",
+        "local_path_search_enabled",
+        "arbitrary_url_fetch_enabled",
+        "scraping_enabled",
+        "crawling_enabled",
+    ):
+        if disabled.get(key) is not False:
+            errors.append(f"public_search_handoff.json: disabled_behaviors.{key} must be false.")
+    query_limits = _mapping(payload.get("query_limits"))
+    if query_limits.get("max_query_length") != 160:
+        errors.append("public_search_handoff.json: max_query_length must be 160.")
+    if query_limits.get("default_result_limit") != 10:
+        errors.append("public_search_handoff.json: default_result_limit must be 10.")
 
 
 def _validate_redirects(payload: Any, errors: list[str]) -> None:
@@ -1398,6 +1510,33 @@ def _ids(value: Any) -> set[str]:
         elif isinstance(item, Mapping) and isinstance(item.get("id"), str):
             ids.add(item["id"])
     return ids
+
+
+def _mapping(value: Any) -> Mapping[str, Any]:
+    return value if isinstance(value, Mapping) else {}
+
+
+def _route_outputs_from_inventory(value: Any) -> Mapping[str, str]:
+    routes: dict[str, str] = {}
+    if not isinstance(value, list):
+        return routes
+    for item in value:
+        if not isinstance(item, Mapping):
+            continue
+        profile = item.get("profile")
+        output_path = item.get("output_path")
+        if not isinstance(profile, str) or not isinstance(output_path, str):
+            continue
+        key = {
+            "standard_web": "standard",
+            "lite_html": "lite",
+            "text": "text",
+            "file_tree": "files",
+            "api_client": "data",
+        }.get(profile)
+        if key:
+            routes[key] = output_path
+    return routes
 
 
 def _string_list(value: Any) -> list[str]:

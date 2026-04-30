@@ -26,6 +26,7 @@ PUBLIC_DATA_FILES = (
     "source_summary.json",
     "eval_summary.json",
     "route_summary.json",
+    "search_handoff.json",
     "build_manifest.json",
 )
 CHECKSUM_PATHS = (
@@ -34,10 +35,12 @@ CHECKSUM_PATHS = (
     "data/source_summary.json",
     "data/eval_summary.json",
     "data/route_summary.json",
+    "data/search_handoff.json",
     "data/build_manifest.json",
     "files/manifest.json",
     "files/index.txt",
     "files/README.txt",
+    "files/search.README.txt",
 )
 DEMO_QUERIES = (
     "Windows 7 apps",
@@ -178,6 +181,7 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
     source = data["source_summary.json"]
     evals = data["eval_summary.json"]
     route = data["route_summary.json"]
+    handoff = data["search_handoff.json"]
     sources = list(source.get("sources", []))
 
     index_body = [
@@ -186,6 +190,7 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         '<li><a href="sources.html">Lite source summary</a></li>',
         '<li><a href="evals.html">Lite eval summary</a></li>',
         '<li><a href="demo-queries.html">Lite demo query list</a></li>',
+        '<li><a href="search.html">Lite search handoff</a></li>',
         '<li><a href="limitations.html">Lite limitations</a></li>',
         '<li><a href="../text/index.txt">Plain text surface</a></li>',
         '<li><a href="../files/index.html">Static files surface</a></li>',
@@ -198,6 +203,7 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         f"<li>Archive hard eval tasks: {escape(str(_mapping(evals.get('archive_resolution')).get('task_count', 'unknown')))}</li>",
         f"<li>Search audit queries: {escape(str(_mapping(evals.get('search_usefulness')).get('query_count', 'unknown')))}</li>",
         f"<li>Public-alpha routes summarized: {escape(str(_mapping(route.get('route_counts')).get('total', 'unknown')))}</li>",
+        f"<li>Hosted search backend: {escape(str(handoff.get('hosted_backend_status', 'unknown')))}</li>",
         f"<li>Future live backend endpoints reserved: {escape(str(_mapping(site.get('live_backend_handoff')).get('reserved_endpoint_count', 0)))}</li>",
         f"<li>Future live probe candidates disabled: {escape(str(_mapping(site.get('live_probe_gateway')).get('candidate_source_count', 0)))}</li>",
         "</ul>",
@@ -249,6 +255,28 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         '<p>Standard page: <a href="../demo-queries.html">../demo-queries.html</a></p>',
     ]
 
+    sample_queries = [
+        "windows 7 apps",
+        "latest firefox before xp support ended",
+        "driver.inf",
+        "thinkpad t42 wifi windows 2000",
+        "pc magazine ray tracing",
+    ]
+    search_body = [
+        "<p>This is a static no-JS search handoff for old browsers. Hosted public search is not configured, and this page does not run Python.</p>",
+        "<p>The local/prototype runtime mode is <code>local_index_only</code>. No live probes, downloads, installs, uploads, accounts, arbitrary URL fetch, local path search, scraping, crawling, or telemetry are enabled.</p>",
+        "<p>The hosted form is intentionally disabled until a future backend is configured and verified.</p>",
+        '<form method="get" action="" aria-label="Disabled hosted search handoff">',
+        f'<p><label for="q">Search query</label> <input id="q" name="q" maxlength="{escape(str(handoff.get("max_query_length", 160)))}" disabled></p>',
+        '<p><button type="submit" disabled>Hosted search not configured</button></p>',
+        "</form>",
+        "<p>For local prototype use, run <code>python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080</code> from a checkout and open <code>http://127.0.0.1:8080/search?q=windows+7+apps</code>.</p>",
+        "<ul>",
+        *(f"<li>{escape(query)}</li>" for query in sample_queries),
+        "</ul>",
+        '<p>Machine-readable handoff: <a href="../data/search_handoff.json">../data/search_handoff.json</a></p>',
+    ]
+
     limitations = list(site.get("limitations", []))
     limitations_body = [
         "<p>The lite surface is static. It does not search, crawl, probe, download, authenticate, or execute code.</p>",
@@ -280,6 +308,7 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "lite/sources.html": _lite_html("Eureka Lite Sources", "Lite Source Summary", sources_body),
         "lite/evals.html": _lite_html("Eureka Lite Evals", "Lite Eval Summary", eval_body),
         "lite/demo-queries.html": _lite_html("Eureka Lite Demo Queries", "Lite Demo Queries", demo_body),
+        "lite/search.html": _lite_html("Eureka Lite Search", "Lite Search Handoff", search_body),
         "lite/limitations.html": _lite_html("Eureka Lite Limitations", "Lite Limitations", limitations_body),
         "lite/README.txt": readme,
     }
@@ -289,6 +318,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
     source = data["source_summary.json"]
     evals = data["eval_summary.json"]
     route = data["route_summary.json"]
+    handoff = data["search_handoff.json"]
     build = data["build_manifest.json"]
     sources = [item for item in source.get("sources", []) if isinstance(item, Mapping)]
     archive = _mapping(evals.get("archive_resolution"))
@@ -310,6 +340,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
             "- sources.txt",
             "- evals.txt",
             "- demo-queries.txt",
+            "- search.txt",
             "- limitations.txt",
             "- ../files/index.txt",
             "- ../demo/index.html",
@@ -319,6 +350,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
             "- ../data/source_summary.json",
             "- ../data/eval_summary.json",
             "- ../data/route_summary.json",
+            "- ../data/search_handoff.json",
         ],
     )
     source_lines = [
@@ -357,6 +389,43 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "",
         *(f"- {query}" for query in DEMO_QUERIES),
     ]
+    search_lines = [
+        "Static search handoff",
+        "",
+        "Hosted public search is not configured.",
+        "This static text file does not run Python and does not perform live search.",
+        f"handoff_status: {handoff.get('search_handoff_status', 'unknown')}",
+        f"hosted_backend_status: {handoff.get('hosted_backend_status', 'unknown')}",
+        f"first_mode: {handoff.get('first_mode', 'local_index_only')}",
+        f"max_query_length: {handoff.get('max_query_length', 160)}",
+        f"default_result_limit: {handoff.get('default_result_limit', 10)}",
+        "",
+        "Local runtime instructions:",
+        "- python scripts/run_public_alpha_server.py --check-config",
+        "- python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080",
+        "- http://127.0.0.1:8080/search?q=windows+7+apps",
+        "- http://127.0.0.1:8080/api/v1/search?q=windows+7+apps",
+        "",
+        "Sample queries:",
+        "- windows 7 apps",
+        "- latest firefox before xp support ended",
+        "- driver.inf",
+        "- thinkpad t42 wifi windows 2000",
+        "- pc magazine ray tracing",
+        "",
+        "Disabled behavior:",
+        "- no live probes",
+        "- no downloads",
+        "- no installs",
+        "- no uploads",
+        "- no accounts",
+        "- no arbitrary URL fetch",
+        "- no local path search",
+        "- no scraping or crawling",
+        "- no telemetry",
+        "",
+        "machine_readable: ../data/search_handoff.json",
+    ]
     limitation_lines = [
         "Limitations:",
         "- not production",
@@ -390,6 +459,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "text/sources.txt": _text_page("Sources", source_lines),
         "text/evals.txt": _text_page("Evals", eval_lines),
         "text/demo-queries.txt": _text_page("Demo Queries", demo_lines),
+        "text/search.txt": _text_page("Search Handoff", search_lines),
         "text/limitations.txt": _text_page("Limitations", limitation_lines),
         "text/README.txt": readme,
     }
@@ -424,6 +494,7 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "files/index.html",
             "files/index.txt",
             "files/README.txt",
+            "files/search.README.txt",
             "files/manifest.json",
             "files/SHA256SUMS",
             "files/data/README.txt",
@@ -440,10 +511,12 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "site/dist/data/source_summary.json",
             "site/dist/data/eval_summary.json",
             "site/dist/data/route_summary.json",
+            "site/dist/data/search_handoff.json",
             "site/dist/data/build_manifest.json",
         ],
         "limitations": [
             "Static file-tree seed surface only.",
+            "Dynamic search is not part of the static file tree; search.README.txt is a handoff note only.",
             "No executable downloads, mirrors, production signed snapshots, relay runtime, or native-client runtime behavior.",
             "Signed Snapshot Format v0 defines a repo seed example only under snapshots/examples/static_snapshot_v0.",
             "Relay Surface Design v0 defines future local/LAN relay policy only; no relay server, protocol bridge, network listener, private-data exposure, or write/admin route exists.",
@@ -470,6 +543,7 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "- manifest.json",
             "- SHA256SUMS",
             "- README.txt",
+            "- search.README.txt",
             "- data/README.txt",
             "- ../demo/index.html",
             "- ../demo/data/demo_snapshots.json",
@@ -488,6 +562,38 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "Compatibility Surface Strategy v0 is policy only; snapshots, relay, and native clients remain future.",
             "Signed Snapshot Format v0 adds a deterministic seed snapshot example under snapshots/examples/static_snapshot_v0, but no production signed release, no real signing keys, no executable downloads, relay service, or native-client runtime.",
             "Relay Surface Design v0 records future local/LAN bridge policy only and does not add protocol servers or network behavior.",
+        ],
+    )
+    search_readme = _text_page(
+        "Search Handoff README",
+        [
+            "Dynamic search is not part of this static file tree.",
+            "Public Search Static Handoff v0 publishes search.html, lite/search.html, text/search.txt, files/search.README.txt, and data/search_handoff.json.",
+            "Hosted public search is not configured and no backend URL is verified.",
+            "The static site does not run Python.",
+            "The local/prototype runtime can be started from a checkout with:",
+            "python scripts/run_public_alpha_server.py --check-config",
+            "python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080",
+            "",
+            "Local examples:",
+            "http://127.0.0.1:8080/search?q=windows+7+apps",
+            "http://127.0.0.1:8080/api/v1/search?q=windows+7+apps",
+            "",
+            "Sample queries:",
+            "windows 7 apps",
+            "latest firefox before xp support ended",
+            "driver.inf",
+            "thinkpad t42 wifi windows 2000",
+            "pc magazine ray tracing",
+            "",
+            "Static demos and data:",
+            "../demo/index.html",
+            "../data/search_handoff.json",
+            "../data/site_manifest.json",
+            "",
+            "No live probes run from the static handoff.",
+            "The handoff remains local_index_only and disables live probes, downloads, installs, uploads, accounts, arbitrary URL fetch, local path search, scraping, crawling, and telemetry.",
+            "No executable downloads, production hosting, malware safety, rights clearance, or production-grade API stability are claimed.",
         ],
     )
     data_readme = _text_page(
@@ -514,6 +620,7 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             '<li><a href="manifest.json">manifest.json</a></li>',
             '<li><a href="SHA256SUMS">SHA256SUMS</a></li>',
             '<li><a href="README.txt">README.txt</a></li>',
+            '<li><a href="search.README.txt">search.README.txt</a></li>',
             '<li><a href="data/README.txt">data/README.txt</a></li>',
             '<li><a href="../data/site_manifest.json">../data/site_manifest.json</a></li>',
             '<li><a href="../data/source_summary.json">../data/source_summary.json</a></li>',
@@ -529,6 +636,7 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
         "files/index.html": index_html,
         "files/index.txt": index_txt,
         "files/README.txt": readme,
+        "files/search.README.txt": search_readme,
         "files/manifest.json": manifest_text,
         "files/data/README.txt": data_readme,
     }
@@ -556,6 +664,7 @@ def _lite_html(
     if nav_prefix:
         nav_targets = (
             ("index.html", "Overview"),
+            ("search.html", "Search"),
             ("status.html", "Status"),
             ("sources.html", "Sources"),
             ("evals.html", "Evals"),
@@ -566,6 +675,7 @@ def _lite_html(
     else:
         nav_targets = (
             ("index.html", "Lite Overview"),
+            ("search.html", "Search"),
             ("sources.html", "Sources"),
             ("evals.html", "Evals"),
             ("demo-queries.html", "Demo Queries"),

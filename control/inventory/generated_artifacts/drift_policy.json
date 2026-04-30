@@ -31,6 +31,7 @@
     "Generated Artifact Drift Guard v0 is validation/audit only.",
     "Existing generators remain the source of truth for their own outputs.",
     "Repository Shape Consolidation v0 makes static_site_dist the generated static deployment artifact group for site/dist.",
+    "Public Search Static Handoff v0 keeps search handoff outputs under static_site_dist and validates them without network calls or hosted backend claims.",
     "Known volatile values must be normalized by the owning generator or documented in the artifact group."
   ]
 }

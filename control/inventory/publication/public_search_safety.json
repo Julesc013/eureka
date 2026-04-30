@@ -209,11 +209,12 @@
     "github_pages_static_only": true,
     "site_dist_static_artifact": true,
     "public_search_live": false,
-    "search_form_added": false,
+    "search_form_added": true,
     "runtime_routes_added": true,
-    "static_search_handoff_added": false,
+    "static_search_handoff_added": true,
+    "hosted_form_enabled": false,
     "live_backend_required": false,
-    "notes": "Static pages may describe the local runtime but must not add a static search handoff page or claim hosted public search exists."
+    "notes": "Static pages include a no-JS disabled search handoff for local/prototype instructions. They must not claim hosted public search exists."
   },
   "live_backend_dependency": {
     "contract": "control/inventory/publication/live_backend_handoff.json",

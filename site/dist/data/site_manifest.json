@@ -108,6 +108,16 @@
       "no_backend": false,
       "no_live_probes": true,
       "status": "future"
+    },
+    {
+      "artifact_root": null,
+      "base_path": "/",
+      "deployment_success_claimed": false,
+      "id": "public_search_backend",
+      "kind": "backend",
+      "no_backend": false,
+      "no_live_probes": true,
+      "status": "not_deployed"
     }
   ],
   "generated_by": "scripts/generate_public_data_summaries.py",
@@ -119,7 +129,7 @@
     "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.",
     "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
     "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
-    "Public Search API Contract v0 is contract-only; /search and /api/v1/search are reserved for future local-index-only runtime and are not live.",
+    "Public Search API Contract v0 has local/prototype runtime routes and a static handoff, but hosted search remains unavailable and not live on GitHub Pages.",
     "Google remains manual-baseline only and is not a live probe source.",
     "Relay Surface Design v0 is contract-only; no relay runtime, protocol server, network listener, private data exposure, write/admin route exposure, or live-probe passthrough is implemented.",
     "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
@@ -534,6 +544,22 @@
     },
     {
       "client_profiles": [
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree"
+      ],
+      "path": "/search.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/search.html",
+      "stability": "stable_draft",
+      "status": "implemented",
+      "title": "Search Eureka",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
         "modern_web"
       ],
       "path": "/app/",
@@ -571,7 +597,7 @@
       "source_file": null,
       "stability": "experimental",
       "status": "deferred",
-      "title": "Future Public Search",
+      "title": "Local Runtime Public Search",
       "works_under_project_base_path": true
     },
     {
@@ -585,6 +611,19 @@
       "stability": "stable_draft",
       "status": "static_demo",
       "title": "Lite HTML Surface",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "lite_html"
+      ],
+      "path": "/lite/search.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/lite/search.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Lite Search Handoff",
       "works_under_project_base_path": true
     },
     {
@@ -650,6 +689,19 @@
       "stability": "stable_draft",
       "status": "static_demo",
       "title": "Text Surface",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "text"
+      ],
+      "path": "/text/search.txt",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/text/search.txt",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Text Search Handoff",
       "works_under_project_base_path": true
     },
     {
@@ -729,6 +781,20 @@
       "stability": "stable_draft",
       "status": "static_demo",
       "title": "File Tree Text Index",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "file_tree",
+        "text"
+      ],
+      "path": "/files/search.README.txt",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/files/search.README.txt",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "File Tree Search Handoff",
       "works_under_project_base_path": true
     },
     {
@@ -890,6 +956,23 @@
     {
       "client_profiles": [
         "api_client",
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree"
+      ],
+      "path": "/data/search_handoff.json",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/data/search_handoff.json",
+      "stability": "stable_draft",
+      "status": "implemented",
+      "title": "Search Handoff Data",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "api_client",
         "native_client",
         "snapshot"
       ],
@@ -1035,6 +1118,7 @@
     "/data/eval_summary.json",
     "/data/page_registry.json",
     "/data/route_summary.json",
+    "/data/search_handoff.json",
     "/data/site_manifest.json",
     "/data/source_summary.json"
   ],
@@ -1138,7 +1222,61 @@
       }
     ],
     "runtime_routes_implemented": true,
-    "status": "implemented_contract_only"
+    "static_handoff_implemented": true,
+    "status": "implemented_contract_local_runtime_static_handoff"
+  },
+  "public_search_static_handoff": {
+    "data_path": "/data/search_handoff.json",
+    "default_backend_mode": "not_configured",
+    "handoff_id": "eureka-public-search-static-handoff-v0",
+    "hosted_backend_status": "unavailable",
+    "hosted_backend_url_configured": false,
+    "hosted_backend_url_verified": false,
+    "local_runtime_url_is_public_deployment": false,
+    "no_js_required": true,
+    "static_routes": [
+      {
+        "hosted_backend_claim": false,
+        "output_path": "site/dist/search.html",
+        "path": "/search.html",
+        "profile": "standard_web",
+        "requires_javascript": false,
+        "status": "implemented"
+      },
+      {
+        "hosted_backend_claim": false,
+        "output_path": "site/dist/lite/search.html",
+        "path": "/lite/search.html",
+        "profile": "lite_html",
+        "requires_javascript": false,
+        "status": "implemented"
+      },
+      {
+        "hosted_backend_claim": false,
+        "output_path": "site/dist/text/search.txt",
+        "path": "/text/search.txt",
+        "profile": "text",
+        "requires_javascript": false,
+        "status": "implemented"
+      },
+      {
+        "hosted_backend_claim": false,
+        "output_path": "site/dist/files/search.README.txt",
+        "path": "/files/search.README.txt",
+        "profile": "file_tree",
+        "requires_javascript": false,
+        "status": "implemented"
+      },
+      {
+        "hosted_backend_claim": false,
+        "output_path": "site/dist/data/search_handoff.json",
+        "path": "/data/search_handoff.json",
+        "profile": "api_client",
+        "requires_javascript": false,
+        "status": "implemented"
+      }
+    ],
+    "status": "implemented_static_handoff"
   },
   "publication_contract_id": "eureka-publication-plane",
   "publication_contract_version": "0.1.0",
@@ -1258,6 +1396,7 @@
     "control/inventory/publication/live_backend_routes.json",
     "control/inventory/publication/live_probe_gateway.json",
     "control/inventory/publication/public_data_contract.json",
+    "control/inventory/publication/public_search_handoff.json",
     "control/inventory/publication/public_search_routes.json",
     "control/inventory/publication/relay_surface.json",
     "control/inventory/publication/snapshot_contract.json",
@@ -1374,6 +1513,13 @@
       "id": "public_search_api",
       "requires_backend": true,
       "safe_for_static_hosting": false,
+      "status": "implemented"
+    },
+    {
+      "enabled_by_default": true,
+      "id": "public_search_static_handoff",
+      "requires_backend": false,
+      "safe_for_static_hosting": true,
       "status": "implemented"
     },
     {

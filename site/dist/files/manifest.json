@@ -11,6 +11,7 @@
     "files/index.html",
     "files/index.txt",
     "files/README.txt",
+    "files/search.README.txt",
     "files/manifest.json",
     "files/SHA256SUMS",
     "files/data/README.txt",
@@ -20,6 +21,7 @@
   "generated_by": "scripts/generate_compatibility_surfaces.py",
   "limitations": [
     "Static file-tree seed surface only.",
+    "Dynamic search is not part of the static file tree; search.README.txt is a handoff note only.",
     "No executable downloads, mirrors, production signed snapshots, relay runtime, or native-client runtime behavior.",
     "Signed Snapshot Format v0 defines a repo seed example only under snapshots/examples/static_snapshot_v0.",
     "Relay Surface Design v0 defines future local/LAN relay policy only; no relay server, protocol bridge, network listener, private-data exposure, or write/admin route exists.",
@@ -36,6 +38,7 @@
     "data/source_summary.json",
     "data/eval_summary.json",
     "data/route_summary.json",
+    "data/search_handoff.json",
     "data/build_manifest.json"
   ],
   "real_signing_keys_present": false,
@@ -50,6 +53,7 @@
     "site/dist/data/source_summary.json",
     "site/dist/data/eval_summary.json",
     "site/dist/data/route_summary.json",
+    "site/dist/data/search_handoff.json",
     "site/dist/data/build_manifest.json"
   ],
   "stability": "stable_draft",

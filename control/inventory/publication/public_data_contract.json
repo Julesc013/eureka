@@ -18,6 +18,11 @@
       "/data/source_summary.json:sources[].coverage_depth",
       "/data/route_summary.json:public_alpha_not_production",
       "/data/route_summary.json:route_counts.*",
+      "/data/search_handoff.json:search_handoff_status",
+      "/data/search_handoff.json:hosted_backend_status",
+      "/data/search_handoff.json:first_mode",
+      "/data/search_handoff.json:backend_url",
+      "/data/search_handoff.json:disabled_behaviors.*",
       "/data/build_manifest.json:data_files[]",
       "/data/build_manifest.json:disabled behavior flags"
     ],
@@ -101,6 +106,7 @@
         "control/inventory/publication/live_backend_routes.json",
         "control/inventory/publication/live_probe_gateway.json",
         "control/inventory/publication/public_search_routes.json",
+        "control/inventory/publication/public_search_handoff.json",
         "control/inventory/publication/relay_surface.json",
         "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/publication/surface_capabilities.json",
@@ -117,7 +123,34 @@
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_public_data_summaries.py",
-      "notes": "Machine-readable summary manifest for static public data. It includes disabled live backend/probe state, Public Search API Contract v0 contract-only local-index-only route posture, Signed Snapshot Format v0 seed-contract status, Native Action / Download / Install Policy v0 disabled risky-action posture, and Native Local Cache / Privacy Policy v0 disabled private-cache/telemetry posture; it is not a live API and carries no deployment-success, hosted search, production snapshot, download, installer, malware-safety, rights-clearance, telemetry, account, or cloud-sync claim."
+      "notes": "Machine-readable summary manifest for static public data. It includes disabled live backend/probe state, Public Search API Contract v0 local-index-only route posture, Public Search Static Handoff v0 status, Signed Snapshot Format v0 seed-contract status, Native Action / Download / Install Policy v0 disabled risky-action posture, and Native Local Cache / Privacy Policy v0 disabled private-cache/telemetry posture; it is not a live API and carries no deployment-success, hosted search, production snapshot, download, installer, malware-safety, rights-clearance, telemetry, account, or cloud-sync claim."
+    },
+    {
+      "path": "/data/search_handoff.json",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "schema_version": "0.1.0",
+      "producer": "Generated Public Data Summaries v0",
+      "source_inputs": [
+        "control/inventory/publication/public_search_handoff.json",
+        "control/inventory/publication/public_search_safety.json",
+        "control/inventory/publication/public_search_routes.json",
+        "control/inventory/publication/deployment_targets.json"
+      ],
+      "consumer_profiles": [
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree",
+        "api_client",
+        "native_client",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "generated_by": "scripts/generate_public_data_summaries.py",
+      "notes": "Machine-readable static public search handoff summary. It records that hosted backend search is unavailable/unverified, the default backend mode is not_configured, local runtime instructions are localhost/prototype only, and live probes/downloads/installs/uploads/local paths remain disabled."
     },
     {
       "path": "/data/page_registry.json",
@@ -218,6 +251,7 @@
         "control/inventory/publication/live_backend_routes.json",
         "control/inventory/publication/live_probe_gateway.json",
         "control/inventory/publication/public_search_routes.json",
+        "control/inventory/publication/public_search_handoff.json",
         "control/inventory/publication/relay_surface.json",
         "control/inventory/publication/static_hosting_targets.json",
         "control/inventory/publication/surface_capabilities.json",
@@ -281,6 +315,28 @@
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_compatibility_surfaces.py",
       "notes": "Static file-tree text index for public data summaries and seed-surface artifacts. It points to snapshot-format limitations and contains no executable downloads or production signed snapshots."
+    },
+    {
+      "path": "/files/search.README.txt",
+      "status": "static_demo",
+      "stability": "stable_draft",
+      "schema_version": "0.1.0",
+      "producer": "Lite/Text/Files Seed Surfaces v0",
+      "source_inputs": [
+        "site/dist/data/search_handoff.json",
+        "scripts/generate_compatibility_surfaces.py",
+        "control/inventory/publication/public_search_handoff.json"
+      ],
+      "consumer_profiles": [
+        "file_tree",
+        "text",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "generated_by": "scripts/generate_compatibility_surfaces.py",
+      "notes": "Static file-tree search handoff note. It explains that dynamic search is not part of the static file tree, hosted backend search is unavailable, and local runtime instructions are prototype-only."
     },
     {
       "path": "/files/SHA256SUMS",

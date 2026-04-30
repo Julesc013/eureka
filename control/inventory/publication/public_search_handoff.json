@@ -1,0 +1,167 @@
+{
+  "schema_version": "0.1.0",
+  "handoff_id": "eureka-public-search-static-handoff-v0",
+  "status": "implemented_static_handoff",
+  "stability": "experimental",
+  "static_artifact": "site/dist",
+  "runtime_dependency": "local_public_search_runtime_v0",
+  "hosted_backend_status": "unavailable",
+  "default_backend_mode": "not_configured",
+  "backend_url_policy": {
+    "hosted_backend_url": null,
+    "hosted_backend_url_configured": false,
+    "hosted_backend_url_verified": false,
+    "fake_hosted_urls_allowed": false,
+    "local_runtime_url": "http://127.0.0.1:8080",
+    "local_runtime_url_is_public_deployment": false,
+    "operator_configuration_required": true,
+    "notes": "No hosted backend URL is configured. Static pages may show local runtime examples only when clearly labeled local/prototype."
+  },
+  "form_policy": {
+    "no_js_required": true,
+    "hosted_form_enabled": false,
+    "disabled_static_form_rendered": true,
+    "form_action_when_unconfigured": "",
+    "query_parameter": "q",
+    "query_maxlength": 160,
+    "default_limit": 10,
+    "max_limit": 25,
+    "method": "get",
+    "mode": "local_index_only",
+    "notes": "The static page renders a disabled/non-submitting form until a hosted backend is explicitly configured and verified."
+  },
+  "no_js_required": true,
+  "old_client_profiles": [
+    "standard_web",
+    "lite_html",
+    "text",
+    "file_tree"
+  ],
+  "static_routes": [
+    {
+      "path": "/search.html",
+      "output_path": "site/dist/search.html",
+      "profile": "standard_web",
+      "status": "implemented",
+      "requires_javascript": false,
+      "hosted_backend_claim": false
+    },
+    {
+      "path": "/lite/search.html",
+      "output_path": "site/dist/lite/search.html",
+      "profile": "lite_html",
+      "status": "implemented",
+      "requires_javascript": false,
+      "hosted_backend_claim": false
+    },
+    {
+      "path": "/text/search.txt",
+      "output_path": "site/dist/text/search.txt",
+      "profile": "text",
+      "status": "implemented",
+      "requires_javascript": false,
+      "hosted_backend_claim": false
+    },
+    {
+      "path": "/files/search.README.txt",
+      "output_path": "site/dist/files/search.README.txt",
+      "profile": "file_tree",
+      "status": "implemented",
+      "requires_javascript": false,
+      "hosted_backend_claim": false
+    },
+    {
+      "path": "/data/search_handoff.json",
+      "output_path": "site/dist/data/search_handoff.json",
+      "profile": "api_client",
+      "status": "implemented",
+      "requires_javascript": false,
+      "hosted_backend_claim": false
+    }
+  ],
+  "backend_routes": [
+    {
+      "path": "/search",
+      "status": "local_runtime_implemented",
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only"
+    },
+    {
+      "path": "/api/v1/search",
+      "status": "local_runtime_implemented",
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only"
+    },
+    {
+      "path": "/api/v1/query-plan",
+      "status": "local_runtime_implemented",
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only"
+    },
+    {
+      "path": "/api/v1/status",
+      "status": "local_runtime_implemented",
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only"
+    },
+    {
+      "path": "/api/v1/sources",
+      "status": "local_runtime_implemented",
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only"
+    },
+    {
+      "path": "/api/v1/source/{source_id}",
+      "status": "local_runtime_implemented",
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only"
+    }
+  ],
+  "query_limits": {
+    "max_query_length": 160,
+    "default_result_limit": 10,
+    "max_result_limit": 25,
+    "first_mode": "local_index_only"
+  },
+  "disabled_behaviors": {
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "local_path_search_enabled": false,
+    "arbitrary_url_fetch_enabled": false,
+    "scraping_enabled": false,
+    "crawling_enabled": false
+  },
+  "local_runtime_instructions": {
+    "status": "available_for_local_prototype",
+    "commands": [
+      "python scripts/run_public_alpha_server.py --check-config",
+      "python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080"
+    ],
+    "sample_urls": [
+      "http://127.0.0.1:8080/search?q=windows+7+apps",
+      "http://127.0.0.1:8080/api/v1/search?q=windows+7+apps",
+      "http://127.0.0.1:8080/api/v1/status"
+    ],
+    "notes": "Local runtime examples are localhost/prototype instructions only and are not public deployment evidence."
+  },
+  "operator_configuration_required": {
+    "hosted_backend": true,
+    "github_pages_python_runtime": false,
+    "provider_config_committed": false,
+    "deployment_approved": false,
+    "rate_limit_policy_required_before_public": true,
+    "operator_signoff_required_before_public": true
+  },
+  "created_by_slice": "public_search_static_handoff_v0",
+  "notes": [
+    "Public Search Static Handoff v0 connects site/dist to Local Public Search Runtime v0 without deploying a backend.",
+    "The static page is no-JS and honest when no hosted backend URL is configured.",
+    "GitHub Pages remains static-only and does not run Python.",
+    "Hosted public search remains unavailable until a later rehearsal/deployment milestone records real evidence.",
+    "Live probes, downloads, installs, uploads, accounts, local path search, arbitrary URL fetch, scraping, crawling, and telemetry remain disabled."
+  ]
+}

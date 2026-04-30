@@ -11,6 +11,9 @@ Repository Shape Consolidation v0 records `static_site_dist` as the current
 generated static deployment artifact group. Its artifact path is `site/dist/`,
 manual edits are disallowed, and GitHub Pages workflow checks consume that
 path directly.
+Public Search Static Handoff v0 extends that artifact with no-JS search
+handoff pages and `data/search_handoff.json`; hosted backend search remains
+unavailable/unverified and the handoff validator is static-only.
 
 The guard is validation-only. It delegates to existing generator `--check`
 commands, validators, and governance tests. It does not run update commands,

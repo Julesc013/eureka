@@ -57,7 +57,7 @@ REQUIRED_DOC_PHRASES = {
     READINESS_DOC: (
         "Local Public Search Runtime v0",
         "hosted_public_runtime_approved: false",
-        "static_search_handoff_approved: false",
+        "Static handoff is implemented by Public Search Static Handoff v0",
     ),
 }
 
@@ -99,7 +99,7 @@ def validate_local_public_search_runtime() -> dict[str, Any]:
         "mode": "local_index_only",
         "routes": sorted(REQUIRED_ROUTES),
         "hosted_public_deployment": False,
-        "static_search_handoff": False,
+        "static_search_handoff": True,
         "errors": errors,
         "warnings": warnings,
     }
@@ -155,7 +155,7 @@ def _validate_route_inventory(payload: Any, errors: list[str]) -> None:
         "first_allowed_mode": "local_index_only",
         "implementation_scope": "local_prototype_backend",
         "hosted_public_runtime_implemented": False,
-        "static_handoff_implemented": False,
+        "static_handoff_implemented": True,
     }
     _expect_values("public_search_routes.json", payload, expected, errors)
     if payload.get("runtime_modes_implemented") != ["local_index_only"]:

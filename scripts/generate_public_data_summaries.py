@@ -26,6 +26,7 @@ REQUIRED_DATA_FILES = (
     "source_summary.json",
     "eval_summary.json",
     "route_summary.json",
+    "search_handoff.json",
     "build_manifest.json",
 )
 PUBLIC_DATA_PATHS = tuple(f"/data/{name}" for name in REQUIRED_DATA_FILES)
@@ -97,7 +98,9 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     live_backend_routes = _load_json(PUBLICATION_DIR / "live_backend_routes.json")
     live_probe_gateway = _load_json(PUBLICATION_DIR / "live_probe_gateway.json")
     public_data_contract = _load_json(PUBLICATION_DIR / "public_data_contract.json")
+    public_search_handoff = _load_json(PUBLICATION_DIR / "public_search_handoff.json")
     public_search_routes = _load_json(PUBLICATION_DIR / "public_search_routes.json")
+    public_search_safety = _load_json(PUBLICATION_DIR / "public_search_safety.json")
     relay_surface = _load_json(PUBLICATION_DIR / "relay_surface.json")
     snapshot_contract = _load_json(PUBLICATION_DIR / "snapshot_contract.json")
     static_hosting_targets = _load_json(PUBLICATION_DIR / "static_hosting_targets.json")
@@ -109,6 +112,12 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     source_summary = _build_source_summary(source_records)
     eval_summary = _build_eval_summary()
     route_summary = _build_route_summary(route_inventory)
+    search_handoff = _build_search_handoff_summary(
+        public_search_handoff,
+        public_search_safety,
+        public_search_routes,
+        deployment_targets,
+    )
     build_manifest = _build_build_manifest(
         public_data_contract, action_policy, local_cache_privacy_policy
     )
@@ -123,6 +132,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
         live_backend_routes,
         live_probe_gateway,
         public_data_contract,
+        public_search_handoff,
         public_search_routes,
         relay_surface,
         snapshot_contract,
@@ -136,6 +146,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
         "source_summary.json": source_summary,
         "eval_summary.json": eval_summary,
         "route_summary.json": route_summary,
+        "search_handoff.json": search_handoff,
         "build_manifest.json": build_manifest,
     }
 
@@ -197,6 +208,7 @@ def _build_data_site_manifest(
     live_backend_routes: Mapping[str, Any],
     live_probe_gateway: Mapping[str, Any],
     public_data_contract: Mapping[str, Any],
+    public_search_handoff: Mapping[str, Any],
     public_search_routes: Mapping[str, Any],
     relay_surface: Mapping[str, Any],
     snapshot_contract: Mapping[str, Any],
@@ -359,17 +371,38 @@ def _build_data_site_manifest(
             "manual_only_sources": live_probe_gateway.get("manual_only_sources", []),
         },
         "public_search_api_contract": {
-            "status": "implemented_contract_only",
+            "status": "implemented_contract_local_runtime_static_handoff",
             "contract_id": public_search_routes.get("contract_id"),
             "first_allowed_mode": public_search_routes.get("first_allowed_mode"),
             "runtime_routes_implemented": public_search_routes.get(
                 "runtime_routes_implemented"
+            ),
+            "static_handoff_implemented": public_search_routes.get(
+                "static_handoff_implemented"
             ),
             "route_count": len(public_search_route_records),
             "routes": public_search_route_records,
             "request_schema": public_search_routes.get("request_schema"),
             "response_schema": public_search_routes.get("response_schema"),
             "error_schema": public_search_routes.get("error_schema"),
+        },
+        "public_search_static_handoff": {
+            "status": public_search_handoff.get("status"),
+            "handoff_id": public_search_handoff.get("handoff_id"),
+            "hosted_backend_status": public_search_handoff.get("hosted_backend_status"),
+            "default_backend_mode": public_search_handoff.get("default_backend_mode"),
+            "hosted_backend_url_configured": _mapping(
+                public_search_handoff.get("backend_url_policy")
+            ).get("hosted_backend_url_configured"),
+            "hosted_backend_url_verified": _mapping(
+                public_search_handoff.get("backend_url_policy")
+            ).get("hosted_backend_url_verified"),
+            "local_runtime_url_is_public_deployment": _mapping(
+                public_search_handoff.get("backend_url_policy")
+            ).get("local_runtime_url_is_public_deployment"),
+            "no_js_required": public_search_handoff.get("no_js_required"),
+            "static_routes": public_search_handoff.get("static_routes", []),
+            "data_path": "/data/search_handoff.json",
         },
         "relay_surface": {
             "status": "implemented_contract_only_runtime_absent",
@@ -459,7 +492,7 @@ def _build_data_site_manifest(
             "Custom-domain and alternate-host readiness is policy only; no DNS, CNAME, or alternate host is configured.",
             "Live Backend Handoff Contract v0 is contract-only; /api/v1 is reserved but not live.",
             "Live Probe Gateway Contract v0 is contract-only; live probes, downloads, arbitrary URL fetching, and network calls remain disabled.",
-            "Public Search API Contract v0 is contract-only; /search and /api/v1/search are reserved for future local-index-only runtime and are not live.",
+            "Public Search API Contract v0 has local/prototype runtime routes and a static handoff, but hosted search remains unavailable and not live on GitHub Pages.",
             "Google remains manual-baseline only and is not a live probe source.",
             "Relay Surface Design v0 is contract-only; no relay runtime, protocol server, network listener, private data exposure, write/admin route exposure, or live-probe passthrough is implemented.",
             "Compatibility Surface Strategy v0 is contract and inventory only; snapshots, relay, native clients, live API behavior, and new runtime product behavior remain future/deferred.",
@@ -478,6 +511,7 @@ def _build_data_site_manifest(
             "control/inventory/publication/live_backend_routes.json",
             "control/inventory/publication/live_probe_gateway.json",
             "control/inventory/publication/public_data_contract.json",
+            "control/inventory/publication/public_search_handoff.json",
             "control/inventory/publication/public_search_routes.json",
             "control/inventory/publication/relay_surface.json",
             "control/inventory/publication/snapshot_contract.json",
@@ -703,6 +737,107 @@ def _build_route_summary(route_inventory: Mapping[str, Any]) -> dict[str, Any]:
     }
 
 
+def _build_search_handoff_summary(
+    handoff: Mapping[str, Any],
+    safety: Mapping[str, Any],
+    routes: Mapping[str, Any],
+    deployment_targets: Mapping[str, Any],
+) -> dict[str, Any]:
+    backend_policy = _mapping(handoff.get("backend_url_policy"))
+    form_policy = _mapping(handoff.get("form_policy"))
+    disabled = _mapping(handoff.get("disabled_behaviors"))
+    query_limits = _mapping(handoff.get("query_limits"))
+    local_runtime = _mapping(handoff.get("local_runtime_instructions"))
+    backend_target = _find_target(deployment_targets, "public_search_backend")
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "generated_by": GENERATED_BY,
+        "search_handoff_status": handoff.get("status"),
+        "handoff_id": handoff.get("handoff_id"),
+        "static_artifact": handoff.get("static_artifact"),
+        "hosted_backend_status": handoff.get("hosted_backend_status"),
+        "default_backend_mode": handoff.get("default_backend_mode"),
+        "hosted_backend_url_configured": backend_policy.get("hosted_backend_url_configured"),
+        "hosted_backend_url_verified": backend_policy.get("hosted_backend_url_verified"),
+        "backend_url": backend_policy.get("hosted_backend_url"),
+        "local_runtime_available": bool(local_runtime),
+        "local_runtime_hint": backend_policy.get("local_runtime_url"),
+        "local_runtime_hint_is_public_deployment": backend_policy.get(
+            "local_runtime_url_is_public_deployment"
+        ),
+        "first_mode": query_limits.get("first_mode", routes.get("first_allowed_mode")),
+        "max_query_length": query_limits.get(
+            "max_query_length",
+            _mapping(safety.get("request_limits")).get("max_query_length"),
+        ),
+        "default_result_limit": query_limits.get(
+            "default_result_limit",
+            _mapping(safety.get("result_limits")).get("default_result_limit"),
+        ),
+        "max_result_limit": query_limits.get(
+            "max_result_limit",
+            _mapping(safety.get("result_limits")).get("max_result_limit"),
+        ),
+        "form_policy": {
+            "no_js_required": form_policy.get("no_js_required"),
+            "hosted_form_enabled": form_policy.get("hosted_form_enabled"),
+            "disabled_static_form_rendered": form_policy.get(
+                "disabled_static_form_rendered"
+            ),
+            "query_parameter": form_policy.get("query_parameter"),
+            "query_maxlength": form_policy.get("query_maxlength"),
+            "method": form_policy.get("method"),
+            "mode": form_policy.get("mode"),
+        },
+        "static_routes": handoff.get("static_routes", []),
+        "backend_routes": handoff.get("backend_routes", []),
+        "disabled_behaviors": {
+            "live_probes_enabled": disabled.get("live_probes_enabled", False),
+            "downloads_enabled": disabled.get("downloads_enabled", False),
+            "installs_enabled": disabled.get("installs_enabled", False),
+            "uploads_enabled": disabled.get("uploads_enabled", False),
+            "accounts_enabled": disabled.get("accounts_enabled", False),
+            "telemetry_enabled": disabled.get("telemetry_enabled", False),
+            "local_path_search_enabled": disabled.get("local_path_search_enabled", False),
+            "arbitrary_url_fetch_enabled": disabled.get("arbitrary_url_fetch_enabled", False),
+            "scraping_enabled": disabled.get("scraping_enabled", False),
+            "crawling_enabled": disabled.get("crawling_enabled", False),
+        },
+        "local_runtime_instructions": {
+            "status": local_runtime.get("status"),
+            "commands": local_runtime.get("commands", []),
+            "sample_urls": local_runtime.get("sample_urls", []),
+        },
+        "public_search_backend_target": {
+            "status": backend_target.get("status"),
+            "base_url": backend_target.get("base_url"),
+            "hosted_url": backend_target.get("hosted_url"),
+            "local_dev_url": backend_target.get("local_dev_url"),
+            "deployment_approved": backend_target.get("deployment_approved"),
+            "deployment_success_claimed": backend_target.get(
+                "deployment_success_claimed"
+            ),
+        },
+        "contains_live_backend": False,
+        "contains_live_probes": False,
+        "contains_external_observations": False,
+        "deployment_performed": False,
+        "no_hosted_search_claim": True,
+        "source_inputs": [
+            "control/inventory/publication/public_search_handoff.json",
+            "control/inventory/publication/public_search_safety.json",
+            "control/inventory/publication/public_search_routes.json",
+            "control/inventory/publication/deployment_targets.json",
+        ],
+        "limitations": [
+            "Static handoff only; GitHub Pages does not run Python.",
+            "Hosted public search is unavailable unless future evidence configures and verifies it.",
+            "Local runtime URLs are localhost/prototype hints, not public deployment evidence.",
+            "No live probes, downloads, installs, uploads, accounts, telemetry, arbitrary URL fetch, scraping, crawling, or local path search are enabled.",
+        ],
+    }
+
+
 def _route_projection(route: Mapping[str, Any]) -> dict[str, Any]:
     return {
         "method": route.get("method"),
@@ -786,6 +921,7 @@ def _build_build_manifest(
             "control/inventory/publication/live_backend_routes.json",
             "control/inventory/publication/live_probe_gateway.json",
             "control/inventory/publication/public_search_routes.json",
+            "control/inventory/publication/public_search_handoff.json",
             "control/inventory/publication/relay_surface.json",
             "control/inventory/publication/snapshot_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
@@ -865,6 +1001,13 @@ def _summary_report(
 
 def _mapping(value: Any) -> Mapping[str, Any]:
     return value if isinstance(value, Mapping) else {}
+
+
+def _find_target(payload: Mapping[str, Any], target_id: str) -> Mapping[str, Any]:
+    for target in payload.get("targets", []):
+        if isinstance(target, Mapping) and target.get("id") == target_id:
+            return target
+    return {}
 
 
 def _string_list(value: Any) -> list[str]:

@@ -1,0 +1,157 @@
+{
+  "backend_routes": [
+    {
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only",
+      "path": "/search",
+      "status": "local_runtime_implemented"
+    },
+    {
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only",
+      "path": "/api/v1/search",
+      "status": "local_runtime_implemented"
+    },
+    {
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only",
+      "path": "/api/v1/query-plan",
+      "status": "local_runtime_implemented"
+    },
+    {
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only",
+      "path": "/api/v1/status",
+      "status": "local_runtime_implemented"
+    },
+    {
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only",
+      "path": "/api/v1/sources",
+      "status": "local_runtime_implemented"
+    },
+    {
+      "hosted_status": "not_deployed",
+      "mode": "local_index_only",
+      "path": "/api/v1/source/{source_id}",
+      "status": "local_runtime_implemented"
+    }
+  ],
+  "backend_url": null,
+  "contains_external_observations": false,
+  "contains_live_backend": false,
+  "contains_live_probes": false,
+  "default_backend_mode": "not_configured",
+  "default_result_limit": 10,
+  "deployment_performed": false,
+  "disabled_behaviors": {
+    "accounts_enabled": false,
+    "arbitrary_url_fetch_enabled": false,
+    "crawling_enabled": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "live_probes_enabled": false,
+    "local_path_search_enabled": false,
+    "scraping_enabled": false,
+    "telemetry_enabled": false,
+    "uploads_enabled": false
+  },
+  "first_mode": "local_index_only",
+  "form_policy": {
+    "disabled_static_form_rendered": true,
+    "hosted_form_enabled": false,
+    "method": "get",
+    "mode": "local_index_only",
+    "no_js_required": true,
+    "query_maxlength": 160,
+    "query_parameter": "q"
+  },
+  "generated_by": "scripts/generate_public_data_summaries.py",
+  "handoff_id": "eureka-public-search-static-handoff-v0",
+  "hosted_backend_status": "unavailable",
+  "hosted_backend_url_configured": false,
+  "hosted_backend_url_verified": false,
+  "limitations": [
+    "Static handoff only; GitHub Pages does not run Python.",
+    "Hosted public search is unavailable unless future evidence configures and verifies it.",
+    "Local runtime URLs are localhost/prototype hints, not public deployment evidence.",
+    "No live probes, downloads, installs, uploads, accounts, telemetry, arbitrary URL fetch, scraping, crawling, or local path search are enabled."
+  ],
+  "local_runtime_available": true,
+  "local_runtime_hint": "http://127.0.0.1:8080",
+  "local_runtime_hint_is_public_deployment": false,
+  "local_runtime_instructions": {
+    "commands": [
+      "python scripts/run_public_alpha_server.py --check-config",
+      "python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080"
+    ],
+    "sample_urls": [
+      "http://127.0.0.1:8080/search?q=windows+7+apps",
+      "http://127.0.0.1:8080/api/v1/search?q=windows+7+apps",
+      "http://127.0.0.1:8080/api/v1/status"
+    ],
+    "status": "available_for_local_prototype"
+  },
+  "max_query_length": 160,
+  "max_result_limit": 25,
+  "no_hosted_search_claim": true,
+  "public_search_backend_target": {
+    "base_url": null,
+    "deployment_approved": false,
+    "deployment_success_claimed": false,
+    "hosted_url": null,
+    "local_dev_url": "http://127.0.0.1:8080/search",
+    "status": "not_deployed"
+  },
+  "schema_version": "0.1.0",
+  "search_handoff_status": "implemented_static_handoff",
+  "source_inputs": [
+    "control/inventory/publication/public_search_handoff.json",
+    "control/inventory/publication/public_search_safety.json",
+    "control/inventory/publication/public_search_routes.json",
+    "control/inventory/publication/deployment_targets.json"
+  ],
+  "static_artifact": "site/dist",
+  "static_routes": [
+    {
+      "hosted_backend_claim": false,
+      "output_path": "site/dist/search.html",
+      "path": "/search.html",
+      "profile": "standard_web",
+      "requires_javascript": false,
+      "status": "implemented"
+    },
+    {
+      "hosted_backend_claim": false,
+      "output_path": "site/dist/lite/search.html",
+      "path": "/lite/search.html",
+      "profile": "lite_html",
+      "requires_javascript": false,
+      "status": "implemented"
+    },
+    {
+      "hosted_backend_claim": false,
+      "output_path": "site/dist/text/search.txt",
+      "path": "/text/search.txt",
+      "profile": "text",
+      "requires_javascript": false,
+      "status": "implemented"
+    },
+    {
+      "hosted_backend_claim": false,
+      "output_path": "site/dist/files/search.README.txt",
+      "path": "/files/search.README.txt",
+      "profile": "file_tree",
+      "requires_javascript": false,
+      "status": "implemented"
+    },
+    {
+      "hosted_backend_claim": false,
+      "output_path": "site/dist/data/search_handoff.json",
+      "path": "/data/search_handoff.json",
+      "profile": "api_client",
+      "requires_javascript": false,
+      "status": "implemented"
+    }
+  ]
+}

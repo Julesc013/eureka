@@ -331,7 +331,7 @@ def _validate_route_inventory(payload: Any, errors: list[str]) -> dict[str, Any]
         "first_allowed_mode": "local_index_only",
         "implementation_scope": "local_prototype_backend",
         "hosted_public_runtime_implemented": False,
-        "static_handoff_implemented": False,
+        "static_handoff_implemented": True,
     }
     _expect_mapping_values("public_search_routes.json", payload, expected, errors)
     if _string_list(payload.get("contract_modes")) != ["local_index_only"]:

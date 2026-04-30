@@ -27,6 +27,7 @@ NOJEKYLL_FILE = ".nojekyll"
 
 PAGE_ORDER = (
     "index",
+    "search",
     "status",
     "sources",
     "evals",
@@ -274,6 +275,7 @@ def render_nav(all_pages: Sequence[Mapping[str, Any]]) -> str:
     lines = []
     labels = {
         "index": "Overview",
+        "search": "Search",
         "demo-queries": "Demo Queries",
         "local-quickstart": "Local Quickstart",
     }
@@ -316,6 +318,8 @@ def render_section(
         return render_table(section["headers"], section["rows"])
     if section_type == "source_matrix":
         return render_source_matrix(source_records)
+    if section_type == "search_handoff":
+        return render_search_handoff(section)
     raise BuildError(f"unknown section type: {section_type!r}")
 
 
@@ -351,6 +355,82 @@ def render_table(headers: Sequence[str], rows: Sequence[Sequence[str]]) -> str:
         + "\n".join(row_html)
         + "\n      </tbody>\n"
         "    </table>"
+    )
+
+
+def render_search_handoff(section: Mapping[str, Any]) -> str:
+    max_query_length = int(section.get("max_query_length", 160))
+    default_limit = int(section.get("default_limit", 10))
+    local_base_url = str(section.get("local_runtime_url", "http://127.0.0.1:8080"))
+    sample_queries = [
+        str(query)
+        for query in section.get(
+            "sample_queries",
+            [
+                "windows 7 apps",
+                "latest firefox before xp support ended",
+                "driver.inf",
+                "thinkpad t42 wifi windows 2000",
+                "pc magazine ray tracing",
+            ],
+        )
+    ]
+    escaped_local = escape(local_base_url)
+    sample_items = "\n".join(
+        f"      <li><code>{escape(query)}</code></li>" for query in sample_queries
+    )
+    return "\n".join(
+        [
+            '    <section class="notice search-handoff-status">',
+            "      <h2>Hosted Search Status</h2>",
+            "      <p><strong>Hosted public search is not configured.</strong> This static page is a handoff surface only. GitHub Pages serves files from <code>site/dist</code>; it does not run the Python public search runtime.</p>",
+            "    </section>",
+            '    <section class="search-handoff">',
+            "      <h2>Static Search Handoff</h2>",
+            '      <form class="search-form" method="get" action="" aria-label="Disabled hosted search handoff">',
+            "        <label for=\"q\">Search query</label>",
+            f'        <input id="q" name="q" type="search" maxlength="{max_query_length}" placeholder="windows 7 apps" disabled>',
+            f'        <input name="limit" type="number" min="1" max="25" value="{default_limit}" disabled>',
+            '        <input name="mode" type="hidden" value="local_index_only">',
+            '        <button type="submit" disabled>Hosted search not configured</button>',
+            "      </form>",
+            "      <p>The first allowed runtime mode is <code>local_index_only</code>. The static handoff keeps live probes, downloads, installs, uploads, accounts, arbitrary URL fetch, local path search, and telemetry disabled.</p>",
+            "    </section>",
+            '    <section class="grid">',
+            '      <div class="panel">',
+            "        <h2>Use The Local Runtime</h2>",
+            "        <p>From a checkout, validate the public-alpha wrapper and start the local workbench. The commands are local-only and do not deploy Eureka.</p>",
+            "        <pre><code>python scripts/run_public_alpha_server.py --check-config\npython scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080</code></pre>",
+            f'        <p>Then open <code>{escaped_local}/search?q=windows+7+apps</code> or <code>{escaped_local}/api/v1/search?q=windows+7+apps</code>.</p>',
+            "      </div>",
+            '      <div class="panel">',
+            "        <h2>Try These Queries Locally</h2>",
+            "        <ul>",
+            sample_items,
+            "        </ul>",
+            "      </div>",
+            "    </section>",
+            '    <section class="grid">',
+            '      <div class="panel">',
+            "        <h2>Static Alternatives</h2>",
+            "        <ul>",
+            '          <li><a href="demo/index.html">Static resolver demos</a></li>',
+            '          <li><a href="lite/search.html">Lite search handoff</a></li>',
+            '          <li><a href="text/search.txt">Text search handoff</a></li>',
+            '          <li><a href="files/search.README.txt">Files search handoff note</a></li>',
+            '          <li><a href="data/search_handoff.json">Search handoff data</a></li>',
+            "        </ul>",
+            "      </div>",
+            '      <div class="panel">',
+            "        <h2>Boundaries</h2>",
+            "        <ul>",
+            "          <li>No hosted backend is configured or verified by this page.</li>",
+            "          <li>No live probes, scraping, crawling, arbitrary URL fetch, downloads, installs, uploads, accounts, local path search, or telemetry are enabled.</li>",
+            "          <li>Public search remains local/prototype until a later rehearsal and operator approval.</li>",
+            "        </ul>",
+            "      </div>",
+            "    </section>",
+        ]
     )
 
 
@@ -423,6 +503,7 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
             "data/source_summary.json",
             "data/eval_summary.json",
             "data/route_summary.json",
+            "data/search_handoff.json",
             "data/build_manifest.json",
         ],
         "compatibility_surfaces": [
@@ -453,7 +534,8 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
             "no deployment performed",
             "no backend hosting added",
             "no live source probes",
-            "/api/v1 reserved only; not live",
+            "hosted /api/v1 not live on the static site",
+            "static search handoff is informational only",
             "live probe gateway contract-only; no probes implemented",
             "Google manual baseline only",
             "no production API guarantee",
@@ -514,7 +596,7 @@ def build_manifest(pages: Sequence[str]) -> dict[str, Any]:
             "/eureka/",
             "/",
         ],
-        "next_milestone": "Native Client Project Readiness Review v0",
+        "next_milestone": "Public Search Rehearsal v0",
         "next_repository_shape_milestone": "Static Artifact Promotion Review v0",
         "parallel_human_work": "Manual Observation Batch 0 Execution",
         "no_network_required": True,

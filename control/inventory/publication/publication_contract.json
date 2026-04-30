@@ -32,6 +32,8 @@
   "public_search_result_card_schema": "contracts/api/search_result_card.v0.json",
   "public_search_result_card_contract": "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
   "public_search_runtime_status": "local_prototype_implemented_hosted_not_implemented",
+  "public_search_static_handoff_status": "implemented_static_handoff",
+  "public_search_static_handoff": "control/inventory/publication/public_search_handoff.json",
   "public_search_first_allowed_mode": "local_index_only",
   "public_search_routes": "control/inventory/publication/public_search_routes.json",
   "compatibility_surface_strategy_status": "implemented",
@@ -65,7 +67,8 @@
     "govern seed snapshot example separately from the current site/dist deployment artifact",
     "govern future native action, download, install handoff, package-manager handoff, mirror, execute, restore, uninstall, rollback, malware-scan, and rights-warning policy without implementing those actions",
     "govern future native/local cache, privacy, private data, local path, telemetry, logging, credential, deletion, export, portable-mode, and relay privacy policy without implementing cache runtime or private ingestion",
-    "govern public search safety, abuse, privacy, boundedness, disabled modes, and operator controls for local runtime and future hosted review"
+    "govern public search safety, abuse, privacy, boundedness, disabled modes, and operator controls for local runtime and future hosted review",
+    "govern static public search handoff from site/dist without pretending GitHub Pages runs Python or hosted search is live"
   ],
   "no_live_backend": true,
   "no_deployment_performed": true,
@@ -187,7 +190,7 @@
     "Native Action / Download / Install Policy v0 adds policy-only action classes, warning classes, public-alpha/static defaults, and native/snapshot/relay gates for future download, mirror, install handoff, package-manager handoff, execute, restore, uninstall, rollback, malware-scan, and rights/access behavior without implementing downloads, installers, package-manager integration, malware scanning, rights clearance, native clients, relay runtime, or executable trust claims.",
     "Native Local Cache / Privacy Policy v0 adds policy-only privacy/cache defaults, prohibited private-data behaviors, telemetry/logging/credential rules, and native/snapshot/relay/public-alpha gates without implementing cache runtime, private file ingestion, local archive scanning, telemetry, accounts, cloud sync, uploads, native clients, or relay runtime.",
     "Public Search Safety / Abuse Guard v0 defines local_index_only limits, forbidden parameters, disabled live/external modes, privacy defaults, error mapping, and operator controls for local runtime and future hosted review.",
-    "Hosted public search, static search handoff, rate-limit middleware, auth/accounts, telemetry runtime, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, and production API claims remain unimplemented."
+    "Hosted public search, rate-limit middleware, auth/accounts, telemetry runtime, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, and production API claims remain unimplemented. Public Search Static Handoff v0 is static-only and does not configure hosted search."
   ],
   "snapshot_format_contract_status": "implemented",
   "snapshot_contract": "control/inventory/publication/snapshot_contract.json",

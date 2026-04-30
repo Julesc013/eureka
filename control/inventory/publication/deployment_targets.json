@@ -70,6 +70,38 @@
         "Provider-neutral deployment config and operator approval must come later.",
         "Live probes stay disabled by default until a separate gateway contract exists."
       ]
+    },
+    {
+      "id": "public_search_backend",
+      "kind": "backend",
+      "status": "not_deployed",
+      "artifact_root": null,
+      "base_path": "/",
+      "base_url": null,
+      "hosted_url": null,
+      "local_dev_url": "http://127.0.0.1:8080/search",
+      "deployment_approved": false,
+      "workflow_configured": false,
+      "deployment_success_claimed": false,
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "installs_enabled": false,
+      "uploads_enabled": false,
+      "local_paths_enabled": false,
+      "telemetry_enabled": false,
+      "depends_on": [
+        "local_public_search_runtime_v0",
+        "public_search_static_handoff_v0",
+        "public_search_rehearsal_v0",
+        "rate_limit_or_abuse_controls",
+        "operator_signoff"
+      ],
+      "notes": [
+        "Public Search Static Handoff v0 does not configure or deploy this backend.",
+        "The only current URL is a localhost local-runtime hint, not public deployment evidence.",
+        "Hosted search must remain unavailable until a later rehearsal/deployment milestone records approved configuration and evidence.",
+        "Live probes, downloads, installs, uploads, local paths, accounts, and telemetry remain disabled."
+      ]
     }
   ]
 }

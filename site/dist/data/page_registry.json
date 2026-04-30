@@ -3,7 +3,7 @@
   "contains_live_backend": false,
   "contains_live_probes": false,
   "generated_by": "scripts/generate_public_data_summaries.py",
-  "implemented_route_count": 8,
+  "implemented_route_count": 10,
   "limitations": [
     "Future reserved routes are included so clients can avoid assuming implementation.",
     "This is a static route summary, not a live router or API discovery document."
@@ -115,6 +115,22 @@
     },
     {
       "client_profiles": [
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree"
+      ],
+      "path": "/search.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/search.html",
+      "stability": "stable_draft",
+      "status": "implemented",
+      "title": "Search Eureka",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
         "modern_web"
       ],
       "path": "/app/",
@@ -152,7 +168,7 @@
       "source_file": null,
       "stability": "experimental",
       "status": "deferred",
-      "title": "Future Public Search",
+      "title": "Local Runtime Public Search",
       "works_under_project_base_path": true
     },
     {
@@ -166,6 +182,19 @@
       "stability": "stable_draft",
       "status": "static_demo",
       "title": "Lite HTML Surface",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "lite_html"
+      ],
+      "path": "/lite/search.html",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/lite/search.html",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Lite Search Handoff",
       "works_under_project_base_path": true
     },
     {
@@ -231,6 +260,19 @@
       "stability": "stable_draft",
       "status": "static_demo",
       "title": "Text Surface",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "text"
+      ],
+      "path": "/text/search.txt",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/text/search.txt",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "Text Search Handoff",
       "works_under_project_base_path": true
     },
     {
@@ -310,6 +352,20 @@
       "stability": "stable_draft",
       "status": "static_demo",
       "title": "File Tree Text Index",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "file_tree",
+        "text"
+      ],
+      "path": "/files/search.README.txt",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/files/search.README.txt",
+      "stability": "stable_draft",
+      "status": "static_demo",
+      "title": "File Tree Search Handoff",
       "works_under_project_base_path": true
     },
     {
@@ -471,6 +527,23 @@
     {
       "client_profiles": [
         "api_client",
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree"
+      ],
+      "path": "/data/search_handoff.json",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/data/search_handoff.json",
+      "stability": "stable_draft",
+      "status": "implemented",
+      "title": "Search Handoff Data",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "api_client",
         "native_client",
         "snapshot"
       ],
@@ -612,8 +685,8 @@
     }
   ],
   "registry_id": "eureka-public-page-registry",
-  "reserved_route_count": 36,
-  "route_count": 44,
+  "reserved_route_count": 39,
+  "route_count": 49,
   "schema_version": "0.1.0",
   "source_inputs": [
     "control/inventory/publication/page_registry.json"

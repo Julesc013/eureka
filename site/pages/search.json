@@ -1,0 +1,79 @@
+{
+  "slug": "search",
+  "output_path": "search.html",
+  "title": "Search Eureka",
+  "heading": "Search Eureka",
+  "summary": "Static handoff for Eureka public search. The local/prototype runtime exists, but hosted public search is not configured or verified.",
+  "status": "implemented",
+  "links": [
+    "index.html",
+    "search.html",
+    "status.html",
+    "sources.html",
+    "evals.html",
+    "demo-queries.html",
+    "limitations.html",
+    "roadmap.html",
+    "local-quickstart.html",
+    "data/search_handoff.json",
+    "lite/search.html",
+    "text/search.txt",
+    "files/search.README.txt",
+    "demo/index.html"
+  ],
+  "required_claims": [
+    "Python reference backend prototype",
+    "not production",
+    "no scraping",
+    "external baselines pending/manual",
+    "placeholders remain placeholders"
+  ],
+  "prohibited_claims": [
+    "production ready",
+    "live Google search",
+    "live Internet Archive search",
+    "native app available",
+    "Rust production backend",
+    "app store",
+    "installer"
+  ],
+  "source_inventory_refs": [],
+  "sections": [
+    {
+      "type": "notice",
+      "text": "Public Search Static Handoff v0 is implemented as static publication only. This page does not make hosted search live and does not add backend hosting."
+    },
+    {
+      "type": "search_handoff",
+      "max_query_length": 160,
+      "default_limit": 10,
+      "local_runtime_url": "http://127.0.0.1:8080",
+      "sample_queries": [
+        "windows 7 apps",
+        "latest firefox before xp support ended",
+        "driver.inf",
+        "thinkpad t42 wifi windows 2000",
+        "pc magazine ray tracing"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Published Capability Data"
+    },
+    {
+      "type": "paragraph",
+      "text": "The static handoff publishes data/search_handoff.json so old clients, static readers, and future rehearsal tooling can tell that hosted search is unavailable, local runtime instructions exist, local_index_only is the first mode, and unsafe behavior remains disabled."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Static site does not run Python.",
+        "Hosted backend status is unavailable or unverified unless future evidence says otherwise.",
+        "The local runtime uses server-owned local index records and rejects caller-provided local paths or URLs.",
+        "No live probes, downloads, installs, uploads, accounts, local path search, telemetry, arbitrary URL fetch, scraping, or crawling are enabled; API stability remains pre-production.",
+        "Public Search Rehearsal v0 remains future work."
+      ]
+    }
+  ]
+}

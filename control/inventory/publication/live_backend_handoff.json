@@ -56,6 +56,7 @@
     "static_pages_must_not_link_as_live": true,
     "static_pages_must_check_capability_flags_first": true,
     "static_pages_must_label_api_v1_as_future_reserved": true,
+    "static_pages_must_label_api_v1_as_local_or_future_unless_backend_verified": true,
     "static_demo_routes_are_not_live_api_routes": true
   },
   "cors_policy_status": "unresolved",
@@ -69,6 +70,8 @@
   "public_search_first_allowed_mode": "local_index_only",
   "public_search_runtime_implemented": true,
   "public_search_runtime_scope": "local_prototype_backend",
+  "public_search_static_handoff": "control/inventory/publication/public_search_handoff.json",
+  "public_search_static_handoff_status": "implemented_static_handoff_hosted_backend_unavailable",
   "hosted_public_search_runtime_implemented": false,
   "client_profiles": [
     "standard_web",
@@ -102,6 +105,7 @@
     "No backend hosting, live source probe, auth, account, CORS, rate-limit, provider deployment, or production API guarantee is added.",
     "Live Probe Gateway Contract v0 now defines disabled-by-default probe policy, but /api/v1/live-probe remains blocked until later explicit implementation approval.",
     "Public Search API Contract v0 now has Local Public Search Runtime v0 route handlers for local/prototype /search and /api/v1/search without making hosted search live or enabling live probes.",
+    "Public Search Static Handoff v0 adds static /search.html and old-client handoff outputs that point to local runtime instructions while keeping hosted backend status unavailable.",
     "Public Search Result Card Contract v0 defines the result-card output used by the local runtime without adding live backend behavior.",
     "Compatibility Surface Strategy v0 treats /api/v1 as a future optional projection alongside static data, lite/text/files, snapshots, relay, CLI, and native-client plans.",
     "Public Search Safety / Abuse Guard v0 now constrains local_index_only safety, abuse, privacy, and operator-control requirements; the live backend remains future and rate-limit middleware remains unimplemented."

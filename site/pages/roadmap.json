@@ -82,7 +82,7 @@
         },
         {
           "title": "Public Search API Contract v0",
-          "text": "implemented as contract-only local_index_only request, response, error, and route envelopes; /search and /api/v1/search are not live."
+          "text": "implemented as local_index_only request, response, error, and route envelopes; local/prototype runtime routes exist, hosted /search and /api/v1/search are not live."
         },
         {
           "title": "Public Search Result Card Contract v0",
@@ -90,11 +90,15 @@
         },
         {
           "title": "Public Search Safety / Abuse Guard v0",
-          "text": "implemented as policy-only local_index_only guardrails, request/result/time limits, forbidden parameters, privacy posture, operator controls, validator, tests, and runtime readiness checklist; no runtime routes or middleware."
+          "text": "implemented as local_index_only guardrails, request/result/time limits, forbidden parameters, privacy posture, operator controls, validator, tests, and runtime readiness checklist; no hosted middleware."
         },
         {
           "title": "Local Public Search Runtime v0",
-          "text": "next recommended implementation milestone after API, result-card, and safety contracts; must remain local_index_only and must not add live probes, downloads, uploads, local path search, arbitrary URL fetch, telemetry by default, or production claims."
+          "text": "implemented as local/prototype backend routes for /search and /api/v1 search; remains local_index_only and adds no hosted deployment, live probes, downloads, uploads, local path search, arbitrary URL fetch, telemetry by default, or production claims."
+        },
+        {
+          "title": "Public Search Static Handoff v0",
+          "text": "implemented as no-JS static handoff outputs under site/dist, including search.html, lite/text/files search surfaces, and data/search_handoff.json; hosted backend search remains unavailable/unverified."
         },
         {
           "title": "Rust Query Planner Parity Candidate v0",
