@@ -108,7 +108,7 @@ Forbidden evidence contents include private absolute paths, credentials, API
 keys, raw private files, raw copyrighted long-form dumps, malware-safety
 assertions, rights-clearance assertions, and executable payloads.
 
-## Difference From Evidence Packs
+## Difference From Evidence And Index Packs
 
 A source pack can define source metadata, source-family posture, fixture files,
 and evidence inputs together. An evidence pack is claim and observation
@@ -117,8 +117,11 @@ and provenance without defining canonical source registry records or shipping
 source fixtures. Both pack types are validation-only until future import and
 submission workflows exist.
 
-An evidence pack is claim and observation focused; a source pack is source
-metadata and fixture focused.
+An index pack is coverage and record-summary focused: it describes index build
+metadata, source coverage, field coverage, query examples, and public-safe
+record summaries without exporting a raw cache or SQLite database. Source,
+evidence, and index packs all remain validation-only until future import,
+merge, submission, and review workflows exist.
 
 ## Fixture Policy
 
@@ -191,11 +194,12 @@ notes exist. It does not import, index, upload, execute, or contact a network.
 
 Source packs answer "what source metadata and fixture evidence inputs exist?"
 
-Evidence packs should later answer "what normalized evidence envelope can be
-reviewed and reused across sources?"
+Evidence packs answer "what normalized evidence envelope can be reviewed and
+reused across sources?"
 
-Index packs should later answer "what portable index artifact can be consumed
-without rebuilding from raw pack inputs?"
+Index packs answer "what index build, source coverage, field coverage, query
+examples, and public-safe record summaries exist without sharing a raw cache or
+SQLite database?"
 
 Contribution packs should later answer "what submission envelope, reviewer
 notes, provenance, and acceptance status carry a pack through review?"

@@ -31,6 +31,11 @@ snapshot pack writes it. It does not implement a snapshot reader runtime, live
 search, downloads, installers, execution, uploads, malware-safety claims, or
 rights-clearance claims.
 
+Index Pack Contract v0 defines summary-only index coverage metadata that a
+future reviewed snapshot may reference. It does not allow snapshots to carry raw
+SQLite databases, local cache exports, private paths, executable payloads, or
+canonical-truth claims.
+
 ## Minimum Compliant Consumer
 
 The minimum compliant consumer:

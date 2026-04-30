@@ -138,6 +138,13 @@ Current packs:
   import/submission path without implementing import, indexing, upload, live
   connectors, executable plugins, canonical truth selection, or master-index
   acceptance.
+- `index-pack-contract-v0/`: contract/validation/example-only review for the
+  first portable index-pack format. It records the manifest schema, file
+  layout, index coverage model, record summary model, privacy/rights posture,
+  validation rules, synthetic summary-only example-pack review, and future
+  import/merge path without implementing import, merge, upload, raw
+  SQLite/local-cache export, live connectors, executable plugins, canonical
+  truth selection, or master-index acceptance.
 
 Public Search API Contract v0 is governed under `contracts/api/`,
 `control/inventory/publication/public_search_routes.json`, and

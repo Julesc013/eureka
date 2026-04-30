@@ -1,0 +1,118 @@
+{
+  "schema_version": "index_pack.v0",
+  "pack_id": "example.minimal_index_pack_v0",
+  "pack_version": "0.1.0",
+  "title": "Minimal Index Pack v0",
+  "description": "Synthetic public-safe summary-only index pack demonstrating index build metadata, source coverage, field coverage, query examples, and record summaries without import, merge, upload, database export, live fetch, executable payloads, or master-index acceptance.",
+  "status": "shareable_candidate",
+  "producer": {
+    "name": "Eureka project",
+    "tool": "Index Pack Contract v0 example"
+  },
+  "index_build": {
+    "index_build_id": "example-index-build-v0",
+    "index_format": "summary_only",
+    "producer_tool": "Index Pack Contract v0 example",
+    "producer_version": "0.1.0",
+    "input_pack_refs": [
+      "example.minimal_source_pack_v0",
+      "example.minimal_evidence_pack_v0"
+    ],
+    "source_count": 2,
+    "record_count": 4,
+    "evidence_count": 2,
+    "member_record_count": 1,
+    "compatibility_record_count": 1,
+    "generated_artifact_refs": [],
+    "deterministic": true,
+    "private_data_included": false,
+    "raw_cache_included": false,
+    "database_included": false
+  },
+  "source_inventory_reference": "synthetic_fixture_source_inventory",
+  "schema_versions": {
+    "source_pack": "source_pack.v0",
+    "evidence_pack": "evidence_pack.v0",
+    "search_result_card": "search_result_card.v0"
+  },
+  "index_mode": "local_index_only",
+  "privacy": {
+    "classification": "public_safe",
+    "contains_private_paths": false,
+    "contains_credentials": false,
+    "contains_raw_cache": false,
+    "contains_database_files": false,
+    "local_private_records_allowed": false,
+    "notes": [
+      "All records are synthetic public-safe summaries.",
+      "No raw cache, SQLite database, local-private record, or private local path is included."
+    ]
+  },
+  "rights_and_access": {
+    "rights_status": "public_metadata_only",
+    "rights_doc": "PRIVACY_AND_RIGHTS.md",
+    "artifact_distribution_permission": "not_included",
+    "notes": [
+      "Index summaries are not rights clearance.",
+      "No executable, installer, binary artifact, raw cache, database, or long copyrighted text is included."
+    ]
+  },
+  "files": {
+    "index_summary": "index_summary.json",
+    "source_coverage": "source_coverage.json",
+    "record_summaries": "record_summaries.jsonl",
+    "field_coverage": "field_coverage.json",
+    "query_examples": "query_examples.jsonl"
+  },
+  "checksum_policy": {
+    "algorithm": "sha256",
+    "checksum_file": "CHECKSUMS.SHA256",
+    "covers": [
+      "INDEX_PACK.json",
+      "README.md",
+      "PRIVACY_AND_RIGHTS.md",
+      "index_summary.json",
+      "source_coverage.json",
+      "record_summaries.jsonl",
+      "field_coverage.json",
+      "query_examples.jsonl"
+    ],
+    "required_for_shareable": true,
+    "production_signing": "future"
+  },
+  "validation": {
+    "validator": "scripts/validate_index_pack.py",
+    "strict_public_safe_required": true,
+    "no_import_performed": true,
+    "no_merge_performed": true,
+    "no_network_performed": true,
+    "no_upload_performed": true,
+    "no_database_export_performed": true
+  },
+  "prohibited_contents": [
+    "credentials",
+    "api_key",
+    "auth_token",
+    "password",
+    "private_key",
+    "private_local_paths",
+    "raw_private_files",
+    "raw_cache_export",
+    "raw_sqlite_database",
+    "raw_copyrighted_long_form_text",
+    "real_executables",
+    "installer_payloads",
+    "binary_blobs",
+    "download_install_urls",
+    "malware_safety_claims",
+    "rights_clearance_claims",
+    "live_fetch_authority",
+    "master_index_auto_acceptance",
+    "canonical_truth_claims"
+  ],
+  "notes": [
+    "This example is synthetic and self-authored for contract testing.",
+    "Index records are coverage summaries, not canonical proof.",
+    "No raw local index database or cache is exported."
+  ]
+}

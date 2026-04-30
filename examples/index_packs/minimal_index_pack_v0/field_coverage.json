@@ -1,0 +1,47 @@
+{
+  "schema_version": "field_coverage.v0",
+  "searchable_fields": [
+    "title",
+    "summary",
+    "synthetic_keywords",
+    "compatibility_terms",
+    "member_path_terms"
+  ],
+  "indexed_fields": [
+    "record_id",
+    "record_kind",
+    "title",
+    "source_id",
+    "source_family",
+    "public_target_ref",
+    "representation_kind",
+    "member_path",
+    "result_lane"
+  ],
+  "display_fields": [
+    "title",
+    "source_id",
+    "source_family",
+    "representation_kind",
+    "result_lane",
+    "compatibility_summary",
+    "limitations"
+  ],
+  "internal_fields_excluded": [
+    "sqlite_row_id",
+    "local_cache_key",
+    "worker_run_id",
+    "private_debug_notes"
+  ],
+  "private_fields_excluded": [
+    "private_absolute_path",
+    "credential",
+    "api_key",
+    "auth_token",
+    "raw_payload"
+  ],
+  "stability_notes": [
+    "Field coverage is example-only and stable_draft for the contract.",
+    "Future import or compare tooling must validate redaction before consuming fields."
+  ]
+}

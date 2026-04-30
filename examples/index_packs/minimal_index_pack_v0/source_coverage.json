@@ -1,0 +1,35 @@
+{
+  "schema_version": "source_coverage.v0",
+  "sources": [
+    {
+      "source_id": "example.synthetic_release_source",
+      "source_family": "synthetic_project_metadata",
+      "coverage_depth": "metadata_indexed",
+      "status": "synthetic_fixture",
+      "record_count": 3,
+      "evidence_count": 1,
+      "member_count": 1,
+      "compatibility_count": 1,
+      "limitations": [
+        "Synthetic release metadata for contract testing only.",
+        "No live connector, download, installer, or artifact payload is included."
+      ],
+      "public_safe": true
+    },
+    {
+      "source_id": "example.synthetic_manual_source",
+      "source_family": "synthetic_manual_metadata",
+      "coverage_depth": "representation_indexed",
+      "status": "synthetic_fixture",
+      "record_count": 1,
+      "evidence_count": 1,
+      "member_count": 0,
+      "compatibility_count": 0,
+      "limitations": [
+        "Synthetic manual metadata for contract testing only.",
+        "No copyrighted manual text or raw scan is included."
+      ],
+      "public_safe": true
+    }
+  ]
+}

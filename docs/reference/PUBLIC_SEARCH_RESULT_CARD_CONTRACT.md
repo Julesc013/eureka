@@ -204,6 +204,10 @@ Future reviewed evidence packs may supply public-safe evidence summaries,
 source locators, compatibility caveats, member notes, and absence notes for
 result cards. Evidence Pack Contract v0 does not import those packs, make claims
 canonical, or change current local public search runtime behavior.
+Future reviewed index packs may supply public-safe coverage and record-summary
+metadata for result cards. Index Pack Contract v0 does not import or merge
+those packs, export raw databases or caches, make summaries canonical proof, or
+change current local public search runtime behavior.
 
 ## Runtime Preconditions
 

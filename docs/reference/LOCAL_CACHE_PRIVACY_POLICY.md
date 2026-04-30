@@ -20,6 +20,11 @@ eval summaries, page registries, and checksum validation results. A public
 cache must not contain private user files, private local paths, credentials,
 account/session state, telemetry payloads, or private inventories.
 
+Index Pack Contract v0 defines public-safe index coverage summaries, not a
+local cache export. Index packs must not include raw SQLite databases, raw
+local cache files, private local paths, credentials, executable payloads, or
+private user search history.
+
 Private cache is future explicit user state. It may later hold user-selected
 artifacts, preferences, local strategy notes, private resolution memory, or
 native-client working state. Private cache is disabled by default and requires

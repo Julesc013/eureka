@@ -30,6 +30,11 @@ executable download surface, and does not mirror software artifacts in v0.
   safety, or canonical truth; snippets must stay short and public-safe, and
   executable payloads, raw copyrighted long-form text, credentials, and private
   paths are forbidden in shareable examples.
+- Index Pack Contract v0 carries this posture into future public-safe index
+  coverage metadata. Index summaries and record summaries are not rights
+  clearance, artifact distribution permission, malware safety, or canonical
+  truth; raw caches, raw SQLite databases, executable payloads, credentials,
+  and private paths are forbidden in shareable examples.
 
 ## Labels
 

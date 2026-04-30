@@ -1,0 +1,47 @@
+{
+  "schema_version": "index_summary.v0",
+  "index_build_id": "example-index-build-v0",
+  "index_mode": "local_index_only",
+  "record_count": 4,
+  "record_kind_counts": {
+    "source_record": 1,
+    "state_or_release": 1,
+    "member": 1,
+    "evidence": 1
+  },
+  "source_count": 2,
+  "source_family_counts": {
+    "synthetic_project_metadata": 1,
+    "synthetic_manual_metadata": 1
+  },
+  "field_coverage_summary": {
+    "searchable_fields": [
+      "title",
+      "summary",
+      "synthetic_keywords",
+      "compatibility_terms",
+      "member_path_terms"
+    ],
+    "private_fields_excluded": true,
+    "raw_payload_fields_excluded": true
+  },
+  "query_profile_summary": {
+    "profiles": [
+      "standard_web",
+      "lite_html",
+      "text",
+      "api_client"
+    ],
+    "ranking_status": "example_only_not_production"
+  },
+  "limitations": [
+    "Synthetic summary-only index metadata.",
+    "No raw database, raw cache, raw payload, live fetch, or production ranking is included.",
+    "Record summaries are coverage hints, not canonical truth."
+  ],
+  "generated_from": [
+    "synthetic source metadata",
+    "synthetic evidence claims"
+  ],
+  "privacy_classification": "public_safe"
+}

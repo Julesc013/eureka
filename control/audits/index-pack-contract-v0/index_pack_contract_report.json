@@ -1,0 +1,62 @@
+{
+  "report_id": "index-pack-contract-v0",
+  "created_by_slice": "index_pack_contract_v0",
+  "status": "implemented_contract_validation_example_only",
+  "contract": {
+    "schema": "contracts/packs/index_pack.v0.json",
+    "manifest": "INDEX_PACK.json",
+    "contract_id": "eureka_index_pack_v0",
+    "index_format_default": "summary_only"
+  },
+  "example_pack": {
+    "path": "examples/index_packs/minimal_index_pack_v0",
+    "synthetic": true,
+    "source_count": 2,
+    "record_count": 4,
+    "contains_sqlite_database": false,
+    "contains_raw_cache": false,
+    "contains_executables": false,
+    "contains_private_paths": false,
+    "contains_live_urls": false,
+    "contains_raw_payloads": false,
+    "contains_long_copyrighted_text": false
+  },
+  "validator": {
+    "path": "scripts/validate_index_pack.py",
+    "supports_json": true,
+    "supports_strict": true,
+    "performs_import": false,
+    "performs_merge": false,
+    "performs_indexing": false,
+    "performs_upload": false,
+    "performs_network": false,
+    "exports_database": false
+  },
+  "index_records_are_canonical_truth": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "master_index_acceptance_claimed": false,
+  "disabled_or_deferred": {
+    "runtime_import": true,
+    "merge": true,
+    "upload": true,
+    "raw_database_export": true,
+    "raw_cache_export": true,
+    "live_connectors": true,
+    "live_probes": true,
+    "arbitrary_url_fetch": true,
+    "scraping": true,
+    "crawling": true,
+    "executable_plugins": true,
+    "downloads": true,
+    "installers": true,
+    "master_index_acceptance": true,
+    "production_signing": true
+  },
+  "next_recommended_milestone": "Contribution Pack Contract v0",
+  "notes": [
+    "Index packs carry coverage and record-summary metadata, not canonical truth.",
+    "The v0 example is summary-only and includes no raw database or cache.",
+    "Future import, compare, and merge tooling requires separate planning and review gates."
+  ]
+}

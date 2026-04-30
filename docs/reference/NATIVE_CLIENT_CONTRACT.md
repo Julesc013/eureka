@@ -45,6 +45,8 @@ Future native clients may consume:
 - static snapshot manifests and summaries
 - checksums and future signature metadata
 - source, eval, route, page, evidence, absence, and comparison summaries
+- future reviewed index-pack coverage and record-summary metadata, without raw
+  SQLite databases or local cache export
 - future live backend responses only when capability flags enable them
 - future relay projections only with operator signoff
 

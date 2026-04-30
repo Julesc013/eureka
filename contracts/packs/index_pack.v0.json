@@ -1,0 +1,438 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/packs/index_pack.v0.json",
+  "title": "EurekaIndexPackManifestV0",
+  "description": "Manifest schema for Index Pack Contract v0. This defines portable index-build, source-coverage, field-coverage, query-example, and public-safe record-summary metadata only; it does not implement import, merge, upload, raw database export, live connectors, executable plugins, or master-index acceptance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pack_id",
+    "pack_version",
+    "title",
+    "description",
+    "status",
+    "producer",
+    "index_build",
+    "source_inventory_reference",
+    "schema_versions",
+    "index_mode",
+    "privacy",
+    "rights_and_access",
+    "files",
+    "checksum_policy",
+    "validation",
+    "prohibited_contents",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "index_pack.v0"
+    },
+    "pack_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "pack_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([-.][A-Za-z0-9.]+)?$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "local_private",
+        "validated_local",
+        "shareable_candidate",
+        "submitted",
+        "quarantined",
+        "review_required",
+        "accepted_public",
+        "rejected",
+        "superseded"
+      ],
+      "description": "Lifecycle status. accepted_public must only be used after a future governed review path accepts the pack."
+    },
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        },
+        "tool": {
+          "type": "string"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "description": "Optional ISO-like timestamp. Deterministic example packs may omit it."
+    },
+    "index_build": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index_build_id",
+        "index_format",
+        "producer_tool",
+        "source_count",
+        "record_count",
+        "deterministic",
+        "private_data_included",
+        "raw_cache_included",
+        "database_included"
+      ],
+      "properties": {
+        "index_build_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "index_format": {
+          "type": "string",
+          "enum": [
+            "summary_only",
+            "sqlite_not_included",
+            "future_sqlite"
+          ]
+        },
+        "producer_tool": {
+          "type": "string",
+          "minLength": 1
+        },
+        "producer_version": {
+          "type": "string"
+        },
+        "input_pack_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "source_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evidence_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "member_record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "compatibility_record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "generated_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "deterministic": {
+          "type": "boolean"
+        },
+        "private_data_included": {
+          "const": false
+        },
+        "raw_cache_included": {
+          "const": false
+        },
+        "database_included": {
+          "const": false
+        }
+      }
+    },
+    "source_inventory_reference": {
+      "type": "string",
+      "description": "Reference to the source inventory or source-pack basis used to describe coverage. This is metadata only."
+    },
+    "schema_versions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "index_mode": {
+      "type": "string",
+      "enum": [
+        "local_index_only",
+        "snapshot_index",
+        "source_pack_index",
+        "evidence_pack_index",
+        "hosted_master_candidate"
+      ]
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "contains_private_paths",
+        "contains_credentials",
+        "contains_raw_cache",
+        "contains_database_files",
+        "local_private_records_allowed"
+      ],
+      "properties": {
+        "classification": {
+          "type": "string",
+          "enum": [
+            "public_safe",
+            "local_private",
+            "review_required",
+            "restricted",
+            "unknown"
+          ]
+        },
+        "contains_private_paths": {
+          "type": "boolean"
+        },
+        "contains_credentials": {
+          "type": "boolean"
+        },
+        "contains_raw_cache": {
+          "type": "boolean"
+        },
+        "contains_database_files": {
+          "type": "boolean"
+        },
+        "local_private_records_allowed": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      }
+    },
+    "rights_and_access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rights_status",
+        "rights_doc",
+        "artifact_distribution_permission",
+        "notes"
+      ],
+      "properties": {
+        "rights_status": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "public_metadata_only",
+            "source_terms_apply",
+            "restricted",
+            "review_required",
+            "not_applicable"
+          ]
+        },
+        "rights_doc": {
+          "const": "PRIVACY_AND_RIGHTS.md"
+        },
+        "artifact_distribution_permission": {
+          "type": "string",
+          "enum": [
+            "not_included",
+            "unknown",
+            "review_required"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index_summary",
+        "source_coverage",
+        "record_summaries"
+      ],
+      "properties": {
+        "index_summary": {
+          "const": "index_summary.json"
+        },
+        "source_coverage": {
+          "const": "source_coverage.json"
+        },
+        "record_summaries": {
+          "const": "record_summaries.jsonl"
+        },
+        "field_coverage": {
+          "type": "string"
+        },
+        "query_examples": {
+          "type": "string"
+        },
+        "evidence_references": {
+          "type": "string"
+        },
+        "source_references": {
+          "type": "string"
+        },
+        "compatibility_summary": {
+          "type": "string"
+        },
+        "member_summary": {
+          "type": "string"
+        },
+        "absent_or_gap_summary": {
+          "type": "string"
+        }
+      }
+    },
+    "checksum_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "checksum_file",
+        "covers",
+        "required_for_shareable",
+        "production_signing"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "checksum_file": {
+          "const": "CHECKSUMS.SHA256"
+        },
+        "covers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "required_for_shareable": {
+          "type": "boolean"
+        },
+        "production_signing": {
+          "type": "string",
+          "enum": [
+            "future",
+            "not_implemented"
+          ]
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "validator",
+        "strict_public_safe_required",
+        "no_import_performed",
+        "no_merge_performed",
+        "no_network_performed",
+        "no_upload_performed",
+        "no_database_export_performed"
+      ],
+      "properties": {
+        "validator": {
+          "const": "scripts/validate_index_pack.py"
+        },
+        "strict_public_safe_required": {
+          "type": "boolean"
+        },
+        "no_import_performed": {
+          "const": true
+        },
+        "no_merge_performed": {
+          "const": true
+        },
+        "no_network_performed": {
+          "const": true
+        },
+        "no_upload_performed": {
+          "const": true
+        },
+        "no_database_export_performed": {
+          "const": true
+        }
+      }
+    },
+    "prohibited_contents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-contract_id": "eureka_index_pack_v0",
+  "x-status": "stable_draft",
+  "x-required_files": [
+    "INDEX_PACK.json",
+    "README.md",
+    "PRIVACY_AND_RIGHTS.md",
+    "CHECKSUMS.SHA256",
+    "index_summary.json",
+    "source_coverage.json",
+    "record_summaries.jsonl"
+  ],
+  "x-optional_files": [
+    "field_coverage.json",
+    "query_examples.jsonl",
+    "evidence_references.jsonl",
+    "source_references.jsonl",
+    "compatibility_summary.json",
+    "member_summary.json",
+    "absent_or_gap_summary.json",
+    "manifests/",
+    "tests/",
+    "licenses/",
+    "references/"
+  ],
+  "x-non_goals": [
+    "index pack import",
+    "index pack merge",
+    "index pack upload",
+    "raw SQLite or cache export",
+    "local cache export",
+    "public hosted index ingestion",
+    "master-index acceptance",
+    "canonical truth selection",
+    "live connector behavior",
+    "executable plugin support",
+    "download or install behavior"
+  ]
+}

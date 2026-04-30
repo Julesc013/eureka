@@ -29,6 +29,8 @@ A future relay may consume:
 - file-tree manifests and checksums from `site/dist/files/`
 - future public search result cards after a later runtime emits them under
   Public Search Result Card Contract v0
+- future reviewed index-pack coverage and record-summary metadata, without raw
+  SQLite databases, raw cache files, private paths, or canonical-truth claims
 - static snapshot manifests and checksums
 - route, source, eval, and page summaries
 - future live backend responses only after capability flags and handoff policy

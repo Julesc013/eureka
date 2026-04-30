@@ -203,6 +203,13 @@ do not make evidence canonical truth, and do not grant live fetch behavior.
 Future public search use must pass review, redaction, checksum, rights/privacy,
 snippet-limit, and conflict-handling gates before evidence-pack records can
 affect result-card evidence.
+Index Pack Contract v0 defines a future validated index coverage and
+record-summary metadata format. Index packs are not imported or merged by the
+current public search runtime, do not export raw SQLite or local cache data, do
+not make index summaries canonical truth, and do not grant hosted ingestion or
+live fetch behavior. Future public search use must pass review, redaction,
+source/evidence comparison, checksum, rights/privacy, and conflict-handling
+gates before index-pack summaries can affect public search results.
 
 ## Out Of Scope
 

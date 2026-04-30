@@ -160,11 +160,12 @@ Source packs define source metadata plus optional fixture/evidence inputs.
 Evidence packs are narrower: they carry claims and observations and do not
 register sources by themselves.
 
-Index packs are future and would describe built index artifacts or index
-metadata. Contribution packs are future and would wrap a submitted bundle plus
-review metadata. The master index review queue is future and would decide which
-public-safe claims can become accepted records. P35 implements none of those
-runtime or hosted workflows.
+Index packs describe index build metadata, source coverage, field coverage,
+query examples, and public-safe record summaries without exporting raw caches
+or SQLite databases. Contribution packs are future and would wrap a submitted
+bundle plus review metadata. The master index review queue is future and would
+decide which public-safe claims and summaries can become accepted records. P35
+and P36 implement none of those runtime or hosted workflows.
 
 ## Runtime Consumers
 
