@@ -416,7 +416,18 @@
       ],
       "title": "Consolidate the active repository layout around one static artifact and one outside-reference root",
       "status": "addressed_by_repository_shape_consolidation_v0",
-      "suggested_milestone": "Static Artifact Promotion Review v0"
+      "suggested_milestone": "GitHub Pages Run Evidence Review v0"
+    },
+    {
+      "id": "audit-backlog-static-artifact-promotion-review",
+      "finding_refs": [
+        "CTEA-DOCS-001",
+        "CTEA-TEST-002",
+        "CTEA-BEHAVIOR-001"
+      ],
+      "title": "Review the promoted static artifact before any hosted deployment-success claim",
+      "status": "addressed_by_static_artifact_promotion_review_v0",
+      "suggested_milestone": "GitHub Pages Run Evidence Review v0"
     }
   ]
 }

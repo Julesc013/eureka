@@ -16,6 +16,9 @@ page JSON, templates, static assets, `site/build.py`, and `site/validate.py`.
 `site/dist/` is the canonical generated static public artifact. Repository
 Shape Consolidation v0 makes it the only GitHub Pages artifact path in active
 workflow, validator, and publication inventory configuration.
+Static Artifact Promotion Review v0 conditionally promotes this artifact as
+the active repo-local static publication artifact, pending GitHub Actions run
+evidence before any hosted deployment-success claim.
 
 `site/dist/data/` contains Generated Public Data Summaries v0: deterministic
 static JSON projections of site, page, source, eval, route, and build state.
@@ -184,6 +187,10 @@ Static Site Generation Migration v0 introduces `site/` and `site/dist/`, but
 `site/dist/` remains the deployment artifact until a later explicit migration
 changes that contract. The generator must preserve the route, data, client, and
 redirect contracts here.
+Repository Shape Consolidation v0 and Static Artifact Promotion Review v0 make
+`site/dist/` the active static artifact for local validation and Pages upload
+configuration. They do not add public search, backend hosting, live probes, or
+production claims.
 
 Generated Public Data Summaries v0 projects safe machine-readable files under
 `/data/` without live data or external observations. Those files prepare later

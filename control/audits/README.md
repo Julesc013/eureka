@@ -85,7 +85,7 @@ Current packs:
   explicit deferrals, and next milestone recommendations without changing
   product behavior.
 - `public-data-contract-stability-review-v0/`: field-level public data
-  stability review for generated static JSON under `public_site/data/`. It
+  stability review for generated static JSON under `site/dist/data/`. It
   classifies files and fields as `stable_draft`, `experimental`, `volatile`,
   `internal`, `deprecated`, or `future`, records versioning/breaking-change
   policy, and recommends Generated Artifact Drift Guard v0 without changing
@@ -96,3 +96,8 @@ Current packs:
   public-alpha rehearsal evidence, publication inventories, test registry
   metadata, and AIDE metadata without regenerating artifacts by default,
   changing product behavior, deploying, or calling external services.
+- `static-artifact-promotion-review-v0/`: local promotion review for the
+  generated `site/dist` artifact. It conditionally promotes `site/dist` as the
+  active repo-local static artifact, records workflow/generated-artifact/safety
+  and stale-reference evidence, and leaves GitHub Actions deployment evidence
+  unverified without adding runtime behavior or production claims.

@@ -36,6 +36,9 @@ Current boundary:
   probes.
 - `site/dist/` remains the GitHub Pages deployment artifact for this
   milestone.
+- Static Artifact Promotion Review v0 conditionally promotes `site/dist/` as
+  the active repo-local static artifact, pending GitHub Actions run evidence
+  before any deployment-success claim.
 
 The generator uses only Python standard library modules. It does not use
 Node/npm, frontend frameworks, live backend calls, live source probes, external
@@ -61,6 +64,7 @@ python scripts/validate_live_probe_gateway.py
 python scripts/validate_compatibility_surfaces.py
 python scripts/generate_static_snapshot.py --check
 python scripts/validate_static_snapshot.py
+python scripts/validate_static_artifact_promotion_review.py
 ```
 
 Generated output is no-JS static HTML with relative links so it can work under

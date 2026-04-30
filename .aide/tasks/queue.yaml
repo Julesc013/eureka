@@ -384,14 +384,14 @@
     {
       "id": "static_artifact_promotion_review_v0",
       "title": "Static Artifact Promotion Review v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 55,
-      "notes": "Review the promoted site/dist artifact and publication evidence before treating any hosted result as deployment evidence. Do not add public search, live backend behavior, or production claims."
+      "notes": "Conditionally promoted site/dist as the active repo-local static artifact, with audit evidence and validation, while keeping GitHub Actions deployment status unverified and adding no public search, live backend behavior, or production claims."
     },
     {
       "id": "github_pages_run_evidence_review_v0",
       "title": "GitHub Pages Run Evidence Review v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 56,
       "notes": "Check and record actual GitHub Actions Pages run evidence after the workflow is pushed; do not claim deployment success without observed run status."
     },
@@ -450,6 +450,13 @@
       "status": "recommended_follow_up",
       "priority": 64,
       "notes": "Future evidence-pack contract work; do not fabricate external baselines or claim rights/security review."
+    },
+    {
+      "id": "index_pack_contract_v0",
+      "title": "Index Pack Contract v0",
+      "status": "recommended_follow_up",
+      "priority": 65,
+      "notes": "Future index-pack contract work; do not add live source sync, crawling, hosted indexing, arbitrary local ingestion, or production search claims."
     }
   ]
 }

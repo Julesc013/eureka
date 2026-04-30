@@ -281,12 +281,13 @@ The next backend sequence is:
 64. Public Data Contract Stability Review v0 (implemented as field-level public data stability governance; no production API claim)
 65. Generated Artifact Drift Guard v0 (implemented as validation/audit only; no regeneration by default, runtime behavior, deployment, or network behavior)
 66. Repository Shape Consolidation v0 (implemented; site/dist is the single generated static artifact and external is the outside-reference root)
+67. Static Artifact Promotion Review v0 (implemented; site/dist is conditionally promoted as active repo-local static artifact pending GitHub Actions evidence)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Static Artifact Promotion Review v0
+> GitHub Pages Run Evidence Review v0
 
 Why this comes next:
 
@@ -303,8 +304,12 @@ Why this comes next:
   goldens, public-alpha rehearsal evidence, publication inventories, test
   registry metadata, and AIDE metadata without regenerating artifacts by
   default or changing runtime behavior.
-- Static Artifact Promotion Review v0 is the next safe review step before any
-  GitHub Pages run evidence or public-search contract work is treated as ready.
+- Static Artifact Promotion Review v0 is implemented as the local artifact
+  promotion review for `site/dist`; it records conditional promotion while
+  GitHub Actions deployment evidence remains unverified.
+- GitHub Pages Run Evidence Review v0 is the next safe review step before any
+  hosted deployment-success claim or public-search contract work is treated as
+  ready.
 - Native Client Project Readiness Review v0 now records the evidence decision
   `ready_for_minimal_project_skeleton_after_human_approval` for the
   `windows_7_x64_winforms_net48` lane only.

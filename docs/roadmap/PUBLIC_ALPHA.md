@@ -258,3 +258,9 @@ state under `control/audits/full-project-state-audit-v0/`. Local static
 artifact checks and public-alpha smoke passed, but GitHub Actions/Pages
 deployment success remains unverified and should be reviewed by a human or
 operator before any hosted-alpha claim.
+
+Static Artifact Promotion Review v0 records the local artifact review under
+`control/audits/static-artifact-promotion-review-v0/`. It conditionally
+promotes `site/dist` as the active repo-local static artifact and keeps
+Actions/Pages deployment success unverified until GitHub Pages Run Evidence
+Review v0 records actual run evidence.

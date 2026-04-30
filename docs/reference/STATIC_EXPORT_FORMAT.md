@@ -23,6 +23,9 @@ site/dist/
 
 `site/dist/` is the active static public artifact. GitHub Pages Deployment
 Enablement v0 uploads this directory as-is after validation.
+Static Artifact Promotion Review v0 conditionally promotes `site/dist/` as the
+active repo-local static artifact; GitHub Actions deployment evidence remains
+unverified until a run-evidence review records it.
 
 Generated v0 export:
 

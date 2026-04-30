@@ -36,13 +36,14 @@ id-token: write
 The workflow validates before upload:
 
 ```bash
+python site/build.py
 python scripts/generate_public_data_summaries.py --check
+python scripts/generate_compatibility_surfaces.py --check
+python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_publication_inventory.py
-python scripts/validate_public_static_site.py
-python scripts/check_github_pages_static_artifact.py
-python scripts/validate_static_host_readiness.py
-python scripts/validate_live_backend_handoff.py
-python scripts/validate_live_probe_gateway.py
+python site/validate.py
+python scripts/check_github_pages_static_artifact.py --path site/dist
+python scripts/check_generated_artifact_drift.py --artifact static_site_dist
 ```
 
 Then it configures Pages, uploads `site/dist/` with
@@ -51,6 +52,9 @@ Then it configures Pages, uploads `site/dist/` with
 No Node, npm, frontend framework, backend process, or runtime server step is
 part of this workflow. Repository Shape Consolidation v0 makes `site/dist/`
 the single generated static artifact for this workflow.
+Static Artifact Promotion Review v0 conditionally promotes `site/dist/` as the
+active repo-local static publication artifact, but GitHub Actions deployment
+success remains unverified until a run-evidence review records it.
 
 ## Repository Settings
 
@@ -124,6 +128,8 @@ Repository Shape Consolidation v0 promotes generated `site/dist/` output as
 the single Pages artifact uploaded by this workflow. GitHub Actions deployment
 success is still unverified until an actual workflow run is checked and
 recorded.
+Static Artifact Promotion Review v0 confirms local artifact readiness and keeps
+the next evidence step as GitHub Pages Run Evidence Review v0.
 
 The artifact checker rejects Python/runtime source files, local stores, SQLite
 databases, `.env` files, cache directories, backend directories, root-relative

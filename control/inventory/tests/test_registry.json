@@ -2466,6 +2466,50 @@
       "failure_means": "Repository Shape Consolidation v0 tests failed, allowing stale static artifact or outside-reference assumptions to return.",
       "advisory_or_required": "required",
       "notes": "Checks site/dist ownership, external root boundaries, workflow upload path, publication inventory, generated artifact inventory, drift guard support, and validator JSON behavior without adding product runtime behavior."
+    },
+    {
+      "test_id": "static_artifact_promotion_review_validator",
+      "label": "Static artifact promotion review validator",
+      "command": "python scripts/validate_static_artifact_promotion_review.py",
+      "category": "publication",
+      "owner_area": "control/audits/static-artifact-promotion-review-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Static Artifact Promotion Review v0 no longer validates site/dist as conditionally promoted with honest GitHub Actions status.",
+      "advisory_or_required": "required",
+      "notes": "Added by Static Artifact Promotion Review v0; validates the audit pack, site/dist active artifact, site/dist workflow upload, static_site_dist ownership, stale-reference review, and unverified Actions status without deploying, adding public search, or changing runtime behavior."
+    },
+    {
+      "test_id": "static_artifact_promotion_review_tests",
+      "label": "Static artifact promotion review tests",
+      "command": "python -m unittest tests.operations.test_static_artifact_promotion_review tests.scripts.test_validate_static_artifact_promotion_review",
+      "category": "publication",
+      "owner_area": "control/audits/static-artifact-promotion-review-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Static Artifact Promotion Review v0 tests failed, allowing site/dist promotion evidence, workflow upload path, stale-reference review, or Actions-status honesty to regress.",
+      "advisory_or_required": "required",
+      "notes": "Checks the promotion audit report, validator JSON behavior, site/dist upload path, absent retired roots, external root presence, and no deployment-success claim without Actions evidence."
     }
   ]
 }

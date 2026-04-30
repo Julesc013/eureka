@@ -860,3 +860,24 @@ API routes, live backend hosting, live source probes, crawling, external search
 automation, relay runtime, native client, downloads, accounts, telemetry, auth,
 TLS, rate limiting, production signing, or production readiness claim. The next
 Codex-safe milestone is Static Artifact Promotion Review v0.
+
+## ADR-104: Conditionally Promote Site Dist As Active Static Artifact
+
+Status: accepted
+
+Static Artifact Promotion Review v0 adds
+`control/audits/static-artifact-promotion-review-v0/`,
+`scripts/validate_static_artifact_promotion_review.py`, and focused tests for
+the promotion review.
+
+The decision is to conditionally promote `site/dist/` as the active repo-local
+static publication artifact after repository shape consolidation. The review
+records local validation evidence, workflow upload path, generated artifact
+ownership, static safety, base-path behavior, public data surfaces, and
+stale-reference classification. The condition is GitHub Actions evidence:
+deployment success remains unverified until a run-evidence review checks and
+records an actual Pages run. This adds no public search runtime, API routes,
+backend hosting, live probes, crawling, external search automation, relay
+runtime, native client, downloads, accounts, telemetry, auth, TLS, rate
+limiting, production signing, or production readiness claim. The next
+Codex-safe milestone is GitHub Pages Run Evidence Review v0.

@@ -8,6 +8,9 @@ match their current source inputs.
 This guard is validation/audit only. It does not regenerate artifacts by
 default, deploy, add runtime behavior, call external services, fetch URLs,
 scrape, crawl, open sockets, or claim production readiness.
+Static Artifact Promotion Review v0 now records `site/dist/` as conditionally
+promoted for repo-local static publication while GitHub Actions deployment
+status remains unverified.
 
 ## Covered Artifacts
 

@@ -49,6 +49,9 @@ into `site/dist/data/` by `site/build.py`. They remain `stable_draft`, static,
 and pre-alpha. They are not a live API, do not include live data, and do not
 record external observations. Public JSON is not a production API and carries
 no production stability guarantee.
+Static Artifact Promotion Review v0 keeps these files under the active
+repo-local `site/dist/data/` artifact and does not treat them as deployment
+success evidence while GitHub Actions status is unverified.
 
 Custom Domain / Alternate Host Readiness v0 adds static host readiness fields
 to `/data/site_manifest.json` and readiness validation provenance to
