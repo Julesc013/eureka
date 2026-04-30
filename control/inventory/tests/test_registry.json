@@ -2776,8 +2776,54 @@
       "notes": "Covers handoff inventory parsing, validator JSON behavior, no-JS static outputs, disabled search form, q maxlength policy, sample queries, search_handoff public data, and local/prototype-only posture."
     },
     {
+      "test_id": "public_search_rehearsal_validator",
+      "label": "Public search rehearsal validator",
+      "command": "python scripts/validate_public_search_rehearsal.py",
+      "category": "audit",
+      "owner_area": "control/audits/public-search-rehearsal-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Public Search Rehearsal v0 no longer validates its audit pack, safe-query evidence, blocked-request evidence, static handoff review, public-alpha review, or no-hosted/no-live posture.",
+      "advisory_or_required": "required",
+      "notes": "Added by Public Search Rehearsal v0; validates local_index_only rehearsal evidence without deploying, opening public listeners, calling external sources, enabling live probes, downloads, installs, uploads, local path search, accounts, telemetry, or hosted search claims."
+    },
+    {
+      "test_id": "public_search_rehearsal_tests",
+      "label": "Public search rehearsal tests",
+      "command": "python -m unittest tests.operations.test_public_search_rehearsal tests.scripts.test_validate_public_search_rehearsal tests.hardening.test_public_search_rehearsal_safety",
+      "category": "audit",
+      "owner_area": "control/audits/public-search-rehearsal-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Public Search Rehearsal v0 tests failed, allowing missing evidence, unsafe capability drift, false hosted-search claims, or blocked-request regressions.",
+      "advisory_or_required": "required",
+      "notes": "Checks the rehearsal audit pack, structured report, validator JSON behavior, safe query rows, blocked request rows, static handoff posture, public-alpha route posture, and no private path leakage."
+    },
+    {
       "test_id": "public_search_smoke",
-      "label": "Local public search smoke",
+      "label": "Public search rehearsal smoke",
       "command": "python scripts/public_search_smoke.py",
       "category": "runtime",
       "owner_area": "scripts",
@@ -2792,9 +2838,9 @@
       "network": "none",
       "writes": "none",
       "expected_runtime": "seconds",
-      "failure_means": "The local public search smoke path no longer validates status, search, query-plan, sources, HTML, and blocked unsafe parameters.",
+      "failure_means": "The local public search smoke path no longer validates status, search, query-plan, sources, HTML, representative safe queries, or blocked unsafe parameters.",
       "advisory_or_required": "required",
-      "notes": "Runs in-process against the stdlib WSGI app without opening an external listener, deploying, calling external sources, or enabling live probes/downloads/uploads/local paths."
+      "notes": "Updated by Public Search Rehearsal v0; runs in-process against the stdlib WSGI app without opening an external listener, deploying, calling external sources, or enabling live probes/downloads/uploads/local paths."
     }
   ]
 }

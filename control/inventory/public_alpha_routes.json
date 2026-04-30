@@ -20,8 +20,11 @@
   "notes": [
     "This inventory records current stdlib web/API route posture for Public Alpha Deployment Readiness Review.",
     "Routes with caller-provided local filesystem controls are blocked in public_alpha mode.",
-    "Routes marked safe_public_alpha are safe only for the constrained demo posture; this is not production readiness."
+    "Routes marked safe_public_alpha are safe only for the constrained demo posture; this is not production readiness.",
+    "Public Search Rehearsal v0 records local safe-query and blocked-request evidence for the public search routes."
   ],
+  "public_search_rehearsal_status": "completed",
+  "public_search_rehearsal": "control/audits/public-search-rehearsal-v0/public_search_rehearsal_report.json",
   "routes": [
     {
       "classification": "safe_public_alpha",

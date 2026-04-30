@@ -126,6 +126,8 @@
         "local_public_search_runtime_tests",
         "public_search_static_handoff_validator",
         "public_search_static_handoff_tests",
+        "public_search_rehearsal_validator",
+        "public_search_rehearsal_tests",
         "public_search_smoke"
       ],
       "required_status": "required",
@@ -248,6 +250,8 @@
         "local_public_search_runtime_tests",
         "public_search_static_handoff_validator",
         "public_search_static_handoff_tests",
+        "public_search_rehearsal_validator",
+        "public_search_rehearsal_tests",
         "public_search_smoke"
       ],
       "required_status": "required",
@@ -340,7 +344,11 @@
         "public_search_result_card_contract_validator",
         "public_search_result_card_contract_tests",
         "public_search_safety_tests",
-        "public_search_safety_validator"
+        "public_search_safety_validator",
+        "local_public_search_runtime_validator",
+        "public_search_static_handoff_validator",
+        "public_search_rehearsal_validator",
+        "public_search_rehearsal_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -373,6 +381,8 @@
         "local_public_search_runtime_tests",
         "public_search_static_handoff_validator",
         "public_search_static_handoff_tests",
+        "public_search_rehearsal_validator",
+        "public_search_rehearsal_tests",
         "public_search_smoke"
       ],
       "required_status": "required",
@@ -447,6 +457,8 @@
         "local_public_search_runtime_tests",
         "public_search_static_handoff_validator",
         "public_search_static_handoff_tests",
+        "public_search_rehearsal_validator",
+        "public_search_rehearsal_tests",
         "docs_diff_check"
       ],
       "required_status": "required",
@@ -520,7 +532,9 @@
         "post_queue_checkpoint_validator",
         "post_queue_checkpoint_tests",
         "full_project_state_audit_validator",
-        "full_project_state_audit_tests"
+        "full_project_state_audit_tests",
+        "public_search_rehearsal_validator",
+        "public_search_rehearsal_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -561,6 +575,7 @@
   "notes": [
     "Public Search Safety / Abuse Guard v0 validation is stdlib-only and constrains the local public search runtime plus future hosted review; it does not implement rate-limit middleware, telemetry runtime, hosted backend, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production claims.",
     "Local Public Search Runtime v0 validation is stdlib-only local/prototype backend verification; it opens no public listener, deploys nothing, calls no external sources, and adds no hosted backend, downloads, installs, uploads, accounts, telemetry, live probes, or production claims.",
-    "Public Search Static Handoff v0 validation is stdlib-only static publication verification; it adds no backend hosting, fake hosted URL, live probes, downloads, installs, uploads, local path search, telemetry, JavaScript requirement, or production claim."
+    "Public Search Static Handoff v0 validation is stdlib-only static publication verification; it adds no backend hosting, fake hosted URL, live probes, downloads, installs, uploads, local path search, telemetry, JavaScript requirement, or production claim.",
+    "Public Search Rehearsal v0 validation is stdlib-only local/prototype evidence review. It records safe-query and blocked-request evidence without deploying, calling external sources, enabling hosted search, live probes, downloads, installs, uploads, local path search, accounts, telemetry, or production claims."
   ]
 }

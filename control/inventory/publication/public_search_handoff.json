@@ -5,6 +5,8 @@
   "stability": "experimental",
   "static_artifact": "site/dist",
   "runtime_dependency": "local_public_search_runtime_v0",
+  "local_rehearsal_status": "completed",
+  "local_rehearsal": "control/audits/public-search-rehearsal-v0/public_search_rehearsal_report.json",
   "hosted_backend_status": "unavailable",
   "default_backend_mode": "not_configured",
   "backend_url_policy": {
@@ -162,6 +164,7 @@
     "The static page is no-JS and honest when no hosted backend URL is configured.",
     "GitHub Pages remains static-only and does not run Python.",
     "Hosted public search remains unavailable until a later rehearsal/deployment milestone records real evidence.",
+    "Public Search Rehearsal v0 confirms the local runtime and static handoff work together without hosted search.",
     "Live probes, downloads, installs, uploads, accounts, local path search, arbitrary URL fetch, scraping, crawling, and telemetry remain disabled."
   ]
 }

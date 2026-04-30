@@ -17,6 +17,9 @@
   "hosted_public_runtime_implemented": false,
   "static_handoff_implemented": true,
   "static_handoff": "control/inventory/publication/public_search_handoff.json",
+  "local_rehearsal_status": "completed",
+  "local_rehearsal": "control/audits/public-search-rehearsal-v0/public_search_rehearsal_report.json",
+  "local_rehearsal_smoke": "scripts/public_search_smoke.py",
   "request_schema": "contracts/api/search_request.v0.json",
   "response_schema": "contracts/api/search_response.v0.json",
   "error_schema": "contracts/api/error_response.v0.json",
@@ -215,7 +218,8 @@
     "No hosted backend behavior, live probes, source adapters, external API calls, downloads, uploads, account behavior, telemetry, or production API guarantee are added.",
     "The current static site remains site/dist and now includes an honest /search.html handoff. Hosted public search is not deployed.",
     "Public Search Safety / Abuse Guard v0 now defines the policy-only request limits, forbidden parameters, disabled modes, privacy posture, and operator controls required before any reserved public search route can be implemented.",
-    "Local public search runtime and static search handoff are implemented; hosted public deployment remains future."
+    "Local public search runtime and static search handoff are implemented; hosted public deployment remains future.",
+    "Public Search Rehearsal v0 exercised local/prototype safe and blocked routes without enabling hosted search, live probes, downloads, uploads, installs, telemetry, accounts, or caller-provided local paths."
   ],
   "safety_policy": "control/inventory/publication/public_search_safety.json",
   "safety_doc": "docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md",

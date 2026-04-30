@@ -6,6 +6,8 @@
   "no_runtime_implemented": false,
   "local_public_search_runtime_implemented": true,
   "hosted_public_search_runtime_implemented": false,
+  "local_rehearsal_status": "completed",
+  "local_rehearsal": "control/audits/public-search-rehearsal-v0/public_search_rehearsal_report.json",
   "no_public_search_live": true,
   "no_hosted_public_search_live": true,
   "first_allowed_mode": "local_index_only",
@@ -266,6 +268,7 @@
   "notes": [
     "Public Search Safety / Abuse Guard v0 is now enforced by Local Public Search Runtime v0 for local/prototype routes.",
     "It does not implement rate-limit middleware, auth, sessions, telemetry, logging runtime, live probes, downloads, installers, uploads, local path ingestion, or backend hosting.",
-    "Hosted public search exposure remains blocked until the readiness checklist, operator controls, and rehearsal gates are satisfied."
+    "Public Search Rehearsal v0 records local safe-query and blocked-request evidence.",
+    "Hosted public search exposure remains blocked until the readiness checklist, operator controls, and hosted rehearsal gates are satisfied."
   ]
 }
