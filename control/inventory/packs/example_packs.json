@@ -1,0 +1,61 @@
+{
+  "inventory_kind": "eureka.example_pack_registry",
+  "version": "0.1.0",
+  "created_by_slice": "pack_import_validator_aggregator_v0",
+  "examples": [
+    {
+      "pack_id": "example.minimal_recorded_source_pack_v0",
+      "pack_type": "source_pack",
+      "path": "examples/source_packs/minimal_recorded_source_pack_v0",
+      "status": "active_example",
+      "owning_contract": "Source Pack Contract v0",
+      "validator": "python scripts/validate_source_pack.py",
+      "expected_validation_status": "pass",
+      "notes": "Synthetic source-pack example with rights/access docs and checksums."
+    },
+    {
+      "pack_id": "example.minimal_evidence_pack_v0",
+      "pack_type": "evidence_pack",
+      "path": "examples/evidence_packs/minimal_evidence_pack_v0",
+      "status": "active_example",
+      "owning_contract": "Evidence Pack Contract v0",
+      "validator": "python scripts/validate_evidence_pack.py",
+      "expected_validation_status": "pass",
+      "notes": "Synthetic evidence-pack example with public-safe claims and snippets."
+    },
+    {
+      "pack_id": "example.minimal_index_pack_v0",
+      "pack_type": "index_pack",
+      "path": "examples/index_packs/minimal_index_pack_v0",
+      "status": "active_example",
+      "owning_contract": "Index Pack Contract v0",
+      "validator": "python scripts/validate_index_pack.py",
+      "expected_validation_status": "pass",
+      "notes": "Synthetic summary-only index-pack example with no raw database."
+    },
+    {
+      "pack_id": "example.minimal_contribution_pack_v0",
+      "pack_type": "contribution_pack",
+      "path": "examples/contribution_packs/minimal_contribution_pack_v0",
+      "status": "active_example",
+      "owning_contract": "Contribution Pack Contract v0",
+      "validator": "python scripts/validate_contribution_pack.py",
+      "expected_validation_status": "pass",
+      "notes": "Synthetic review-candidate contribution-pack example with no upload behavior."
+    },
+    {
+      "pack_id": "example.master_index_review_queue_v0",
+      "pack_type": "master_index_review_queue",
+      "path": "examples/master_index_review_queue/minimal_review_queue_v0",
+      "status": "active_example",
+      "owning_contract": "Master Index Review Queue Contract v0",
+      "validator": "python scripts/validate_master_index_review_queue.py",
+      "expected_validation_status": "pass",
+      "notes": "Synthetic review-queue example with one deferred decision and no hosted runtime."
+    }
+  ],
+  "notes": [
+    "This registry lists repo-owned examples only.",
+    "Aggregate validation is validate-only and does not import, stage, index, upload, or mutate any master index."
+  ]
+}
