@@ -307,12 +307,13 @@ The next backend sequence is:
 78. Evidence Pack Contract v0 (implemented as contract/validation/example-only evidence-pack format, synthetic example pack, checksum validator, docs, and audit pack; no import, indexing, upload, live connectors, executable plugins, canonical truth selection, hosted submission, or master-index acceptance)
 79. Index Pack Contract v0 (implemented as contract/validation/example-only index-pack format, synthetic summary-only example pack, checksum validator, docs, and audit pack; no import, merge, upload, raw SQLite/local-cache export, live connectors, executable plugins, canonical truth selection, hosted ingestion, or master-index acceptance)
 80. Contribution Pack Contract v0 (implemented as contract/validation/example-only contribution-pack format, synthetic review-candidate example pack, checksum validator, docs, and audit pack; no upload, import, moderation, accounts, master-index review queue runtime, automatic acceptance, live connectors, executable plugins, canonical truth selection, hosted ingestion, or master-index acceptance)
+81. Master Index Review Queue Contract v0 (implemented as contract/validation/example-only queue governance, synthetic defer-decision example queue, schemas, inventory, validator, docs, and audit pack; no queue runtime, upload, import, moderation, accounts, hosted master index, master-index writes, automatic acceptance, live connectors, canonical truth selection, rights-clearance claim, malware-safety claim, or production claim)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Master Index Review Queue Contract v0
+> Source/Evidence/Index Pack Import Planning v0
 
 Why this comes next:
 
@@ -396,8 +397,16 @@ Why this comes next:
   and checksum validation without upload, import, moderation, accounts,
   master-index review queue runtime, automatic acceptance, live connectors,
   executable plugins, hosted ingestion, downloads, or master-index acceptance.
-  Master Index Review Queue Contract v0 is next so contribution candidates can
-  have governed review states before any intake behavior exists.
+- Master Index Review Queue Contract v0 is implemented as
+  contract/validation/example-only work. It defines queue entries, review
+  decisions, validation/review states, acceptance requirements,
+  privacy/rights/risk review, conflict preservation, and publication policy
+  without queue runtime, upload, import, moderation, accounts, hosted master
+  index, master-index writes, automatic acceptance, live connectors,
+  executable plugins, rights-clearance claims, malware-safety claims, or
+  production claims. Source/Evidence/Index Pack Import Planning v0 is next so
+  local import boundaries are designed before any runtime import or hosted
+  review tooling exists.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

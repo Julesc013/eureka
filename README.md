@@ -177,6 +177,19 @@ absence reports, privacy/rights posture, and no raw DB/cache or executable
 payloads, but it does not implement upload, import, moderation, accounts,
 master-index review queue runtime, automatic acceptance, live connectors,
 canonical truth selection, or master-index acceptance.
+Master Index Review Queue Contract v0 now defines the future governance layer
+under `contracts/master_index/`,
+`docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md`,
+`docs/architecture/MASTER_INDEX_REVIEW_QUEUE.md`,
+`examples/master_index_review_queue/minimal_review_queue_v0/`, and
+`control/audits/master-index-review-queue-contract-v0/`. It adds queue-entry,
+review-decision, queue-manifest, policy, taxonomy, acceptance-requirement,
+validator, and test coverage for review candidates, conflict preservation,
+privacy/rights/risk review, and limited accepted_public posture, but it does
+not implement queue runtime, uploads, imports, moderation, accounts, hosted
+master index writes, automatic acceptance, live connectors, rights-clearance
+claims, malware-safety claims, canonical truth selection, or production
+readiness.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -727,10 +740,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Master Index Review Queue Contract v0
-2. Source/Evidence/Index Pack Import Planning v0
-3. AI Provider Contract v0
-4. Manual Observation Batch 0 Execution, human-operated
+1. Source/Evidence/Index Pack Import Planning v0
+2. AI Provider Contract v0
+3. Manual Observation Batch 0 Execution, human-operated
+4. Search Usefulness Baseline Comparison Report v0 after observations
 5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

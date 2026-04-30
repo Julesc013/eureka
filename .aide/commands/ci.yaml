@@ -44,6 +44,12 @@ steps:
     run: python scripts/validate_contribution_pack.py --json
   - id: contribution_pack_contract_tests
     run: python -m unittest tests.operations.test_contribution_pack_contract tests.scripts.test_validate_contribution_pack
+  - id: master_index_review_queue_validator
+    run: python scripts/validate_master_index_review_queue.py
+  - id: master_index_review_queue_validator_json
+    run: python scripts/validate_master_index_review_queue.py --json
+  - id: master_index_review_queue_contract_tests
+    run: python -m unittest tests.operations.test_master_index_review_queue_contract tests.scripts.test_validate_master_index_review_queue
   - id: public_alpha_status
     run: python scripts/demo_http_api.py --mode public_alpha status
   - id: public_alpha_smoke

@@ -489,14 +489,14 @@
     {
       "id": "master_index_review_queue_contract_v0",
       "title": "Master Index Review Queue Contract v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 70,
-      "notes": "Future contract for master-index review queues only; do not add hosted indexing, accounts, uploads, moderation infrastructure, live source sync, crawling, or production search claims."
+      "notes": "Implemented Master Index Review Queue Contract v0 as contract/validation/example-only work, including queue manifest, queue entry, review decision schemas, master-index review inventory, synthetic defer-decision example queue, checksum validator, docs, audit pack, and tests without queue runtime, upload, import, moderation UI, accounts, hosted master index, master-index writes, automatic acceptance, live connectors, executable plugins, rights-clearance claims, malware-safety claims, canonical truth selection, or production claims."
     },
     {
       "id": "source_evidence_index_pack_import_planning_v0",
       "title": "Source/Evidence/Index Pack Import Planning v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 71,
       "notes": "Future planning only for local validated source/evidence/index pack import and index-pack comparison. Do not implement import, indexing, merge, uploads, live connectors, arbitrary local ingestion, canonical truth selection, raw database export, or master-index acceptance without separate approval."
     },
@@ -541,6 +541,13 @@
       "status": "recommended_follow_up",
       "priority": 77,
       "notes": "Future planning only for local contribution submission tooling after review queue contracts. Do not add uploads, accounts, identity, moderation runtime, automatic acceptance, or hosted intake behavior."
+    },
+    {
+      "id": "master_index_review_queue_runtime_planning_v0",
+      "title": "Master Index Review Queue Runtime Planning v0",
+      "status": "recommended_future_after_import_planning",
+      "priority": 78,
+      "notes": "Future planning only after import planning and AI/manual-observation governance. Do not implement hosted queue runtime, uploads, accounts, moderation UI, master-index writes, automatic acceptance, live probes, or production claims."
     }
   ]
 }

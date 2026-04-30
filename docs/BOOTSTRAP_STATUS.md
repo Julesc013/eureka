@@ -333,7 +333,7 @@ subsystem choices.
 
 The latest implementation milestone is:
 
-> Contribution Pack Contract v0
+> Master Index Review Queue Contract v0
 
 Search Usefulness Source Expansion v2 is now implemented as fixture-only source
 coverage under `runtime/connectors/source_expansion_recorded/`,
@@ -395,6 +395,19 @@ no upload, import, moderation UI, accounts, identity, master-index review queue
 runtime, automatic acceptance, live connector, executable plugin, hosted
 ingestion, canonical truth selection, download, installer, or production
 extension behavior.
+Master Index Review Queue Contract v0 is now implemented as
+contract/validation/example-only work under `contracts/master_index/`,
+`docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md`,
+`docs/architecture/MASTER_INDEX_REVIEW_QUEUE.md`,
+`control/inventory/master_index/`,
+`examples/master_index_review_queue/minimal_review_queue_v0/`, and
+`control/audits/master-index-review-queue-contract-v0/`. It defines queue
+manifests, review queue entries, review decisions, validation/review state
+taxonomy, acceptance requirements, privacy/rights/risk/conflict review, and a
+synthetic defer-decision example. It adds no queue runtime, uploads, imports,
+moderation UI, accounts, hosted master index, master-index writes, automatic
+acceptance, live connectors, rights-clearance claim, malware-safety claim,
+canonical truth selection, or production extension behavior.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -625,18 +638,18 @@ local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Master Index Review Queue Contract v0
-2. Source/Evidence/Index Pack Import Planning v0
-3. AI Provider Contract v0
-4. Manual Observation Batch 0 Execution, human-operated
-5. Search Usefulness Baseline Comparison Report v0 after observations
-6. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+1. Source/Evidence/Index Pack Import Planning v0
+2. AI Provider Contract v0
+3. Manual Observation Batch 0 Execution, human-operated
+4. Search Usefulness Baseline Comparison Report v0 after observations
+5. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+6. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
 7. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
-8. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
-9. Source Pack Import Runtime v0 only after import planning
-10. Index Pack Import/Compare Tooling Plan v0
-11. Contribution Submission Tooling Plan v0
+8. Source Pack Import Runtime v0 only after import planning
+9. Index Pack Import/Compare Tooling Plan v0
+10. Contribution Submission Tooling Plan v0
+11. Master Index Review Queue Runtime Planning v0
 12. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
 13. Relay Prototype Implementation v0, only after explicit human approval and

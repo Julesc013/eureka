@@ -242,5 +242,8 @@ truth. Contribution Pack Contract v0 is now implemented as the review-candidate
 wrapper: validated contribution packs can reference source/evidence/index packs
 and propose corrections, aliases, compatibility notes, absence reports, or
 result feedback, but they are not uploaded, imported, automatically accepted, or
-treated as canonical truth. Future usefulness work should use Master Index
-Review Queue contracts before pack import affects audit results.
+treated as canonical truth. Master Index Review Queue Contract v0 is now
+implemented as the governance layer for future queue entries and decisions, but
+it still does not import packs or affect audit results. Future usefulness work
+should use Source/Evidence/Index Pack Import Planning v0 before pack import
+affects audit results.

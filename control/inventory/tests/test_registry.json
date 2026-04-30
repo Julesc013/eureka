@@ -3097,6 +3097,48 @@
       "failure_means": "Contribution pack schema, example pack, checksums, docs, contribution item types, proposed actions, referenced pack records, manual observations, or negative safety tests regressed.",
       "advisory_or_required": "required",
       "notes": "Covers manifest structure, contribution items, proposed actions, referenced packs, pending manual observations, checksums, privacy/rights docs, fake observed-observation rejection, invalid contribution/action rejection, private path rejection, SQLite DB rejection, and executable payload rejection."
+    },
+    {
+      "test_id": "master_index_review_queue_validator",
+      "label": "Master index review queue contract validator",
+      "command": "python scripts/validate_master_index_review_queue.py",
+      "category": "contract",
+      "owner_area": "contracts/master_index",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Master Index Review Queue Contract v0 schema, inventory, example queue, checksum, privacy posture, no-auto-acceptance, no-runtime, or payload safety regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates the synthetic example master-index review queue; it does not upload, import, moderate, create accounts, host a master index, write index records, automatically accept records, fetch, scrape, crawl, or contact a network."
+    },
+    {
+      "test_id": "master_index_review_queue_contract_tests",
+      "label": "Master index review queue contract tests",
+      "command": "python -m unittest tests.operations.test_master_index_review_queue_contract tests.scripts.test_validate_master_index_review_queue",
+      "category": "contract",
+      "owner_area": "contracts/master_index",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only for negative validator fixtures",
+      "expected_runtime": "seconds",
+      "failure_means": "Review queue schemas, inventory, example queue, decisions, checksums, docs, no-auto-acceptance, no-hosted-runtime, or negative safety tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers queue manifests, queue entries, review decisions, decision references, defer posture, checksums, no hosted runtime/upload/account claims, private path rejection, executable payload rejection, and accept_public limitation enforcement."
     }
   ]
 }

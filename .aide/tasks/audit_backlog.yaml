@@ -449,7 +449,7 @@
       ],
       "title": "Define governed public search request, response, error, and reserved route contracts before runtime work",
       "status": "addressed_by_public_search_api_contract_v0_and_public_search_rehearsal_v0",
-      "suggested_milestone": "Master Index Review Queue Contract v0"
+      "suggested_milestone": "Source/Evidence/Index Pack Import Planning v0"
     },
     {
       "id": "audit-backlog-public-search-result-card-contract",
@@ -460,7 +460,7 @@
       ],
       "title": "Define governed public search result-card fields, action gating, rights/risk caveats, and old-client rendering before runtime work",
       "status": "addressed_by_public_search_result_card_contract_v0_public_search_safety_abuse_guard_v0_and_public_search_rehearsal_v0",
-      "suggested_milestone": "Master Index Review Queue Contract v0"
+      "suggested_milestone": "Source/Evidence/Index Pack Import Planning v0"
     },
     {
       "id": "audit-backlog-public-search-safety-abuse-guard",
@@ -471,7 +471,7 @@
       ],
       "title": "Define governed public search safety, abuse, privacy, and operator guardrails before runtime work",
       "status": "addressed_by_public_search_safety_abuse_guard_v0_local_public_search_runtime_v0_static_handoff_v0_and_rehearsal_v0",
-      "suggested_milestone": "Master Index Review Queue Contract v0"
+      "suggested_milestone": "Source/Evidence/Index Pack Import Planning v0"
     }
   ]
 }

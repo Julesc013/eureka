@@ -92,7 +92,10 @@ summaries without raw SQLite/cache export. Contribution Pack Contract v0 is now
 implemented as a contract/validation-only wrapper for review-candidate proposed
 changes, referenced packs, pending manual-observation placeholders, and result
 feedback without upload/import/moderation/automatic-acceptance behavior. The
-next milestone is Master Index Review Queue Contract v0.
+Master Index Review Queue Contract v0 is now implemented as the
+contract/validation-only governance layer for queue entries, review decisions,
+acceptance requirements, and conflict preservation. The next milestone is
+Source/Evidence/Index Pack Import Planning v0.
 
 ## Contents
 
