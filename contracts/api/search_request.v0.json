@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/api/search_request.v0.json",
+  "title": "EurekaPublicSearchRequestV0",
+  "description": "Contract-only public search request shape for future local-index-only public search. No runtime route is implemented by this schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "q"
+  ],
+  "properties": {
+    "q": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160,
+      "description": "User query. Future runtimes must trim whitespace and reject values that are empty after trimming."
+    },
+    "limit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 25,
+      "default": 10,
+      "description": "Maximum returned result count for contract v0."
+    },
+    "offset": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "description": "Experimental offset pagination hint. Future cursor pagination may replace it before stable API status.",
+      "x-stability": "experimental"
+    },
+    "cursor": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 128,
+      "description": "Future pagination token. Not required by contract v0 and not implemented by the first runtime milestone.",
+      "x-stability": "future"
+    },
+    "profile": {
+      "type": "string",
+      "enum": [
+        "standard_web",
+        "lite_html",
+        "text",
+        "api_client"
+      ],
+      "default": "standard_web",
+      "description": "Response projection profile requested by the client."
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "local_index_only"
+      ],
+      "default": "local_index_only",
+      "description": "The only allowed v0 execution mode. Live probe and external fanout modes are not accepted."
+    },
+    "include": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "query_plan",
+          "source_summaries",
+          "evidence_summaries",
+          "compatibility_summaries",
+          "absence_summary"
+        ]
+      },
+      "default": [],
+      "description": "Optional summary expansions. Raw source payloads, private data, and executable download details are not valid includes."
+    },
+    "source_policy": {
+      "type": "string",
+      "enum": [
+        "local_index_only"
+      ],
+      "default": "local_index_only",
+      "description": "Restricts search to a controlled local index. Future values require a new contract review."
+    }
+  },
+  "not": {
+    "anyOf": [
+      {
+        "required": [
+          "index_path"
+        ]
+      },
+      {
+        "required": [
+          "store_root"
+        ]
+      },
+      {
+        "required": [
+          "run_store_root"
+        ]
+      },
+      {
+        "required": [
+          "task_store_root"
+        ]
+      },
+      {
+        "required": [
+          "memory_store_root"
+        ]
+      },
+      {
+        "required": [
+          "local_path"
+        ]
+      },
+      {
+        "required": [
+          "path"
+        ]
+      },
+      {
+        "required": [
+          "url"
+        ]
+      },
+      {
+        "required": [
+          "fetch_url"
+        ]
+      },
+      {
+        "required": [
+          "download"
+        ]
+      },
+      {
+        "required": [
+          "install"
+        ]
+      },
+      {
+        "required": [
+          "upload"
+        ]
+      },
+      {
+        "required": [
+          "user_file"
+        ]
+      },
+      {
+        "required": [
+          "live_probe"
+        ]
+      },
+      {
+        "required": [
+          "source_credentials"
+        ]
+      }
+    ]
+  },
+  "x-contract_id": "eureka_public_search_request_v0",
+  "x-schema_version": "0.1.0",
+  "x-created_by_slice": "public_search_api_contract_v0",
+  "x-status": "contract_only",
+  "x-first_runtime_method": "GET",
+  "x-transport": {
+    "get_query_parameters": true,
+    "future_json_body_equivalent": true,
+    "post_body_implemented_now": false
+  },
+  "x-allowed_modes": [
+    "local_index_only"
+  ],
+  "x-implemented_runtime_modes": [],
+  "x-forbidden_parameters": [
+    "index_path",
+    "store_root",
+    "run_store_root",
+    "task_store_root",
+    "memory_store_root",
+    "local_path",
+    "path",
+    "url",
+    "fetch_url",
+    "download",
+    "install",
+    "upload",
+    "user_file",
+    "live_probe",
+    "source_credentials"
+  ],
+  "x-forbidden_behaviors": [
+    "live_probe",
+    "external_search",
+    "arbitrary_url_fetch",
+    "download",
+    "install",
+    "upload",
+    "local_filesystem_ingestion",
+    "credential_forwarding"
+  ],
+  "x-field_stability": {
+    "stable_draft": [
+      "q",
+      "limit",
+      "profile",
+      "mode",
+      "include",
+      "source_policy"
+    ],
+    "experimental": [
+      "offset"
+    ],
+    "future": [
+      "cursor"
+    ],
+    "volatile": []
+  }
+}

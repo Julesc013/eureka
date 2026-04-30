@@ -1,0 +1,186 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-public-search-routes",
+  "contract_id": "public_search_api_contract_v0",
+  "status": "contract_only",
+  "stability": "experimental",
+  "implemented_now": false,
+  "runtime_routes_implemented": false,
+  "first_allowed_mode": "local_index_only",
+  "contract_modes": [
+    "local_index_only"
+  ],
+  "runtime_modes_implemented": [],
+  "request_schema": "contracts/api/search_request.v0.json",
+  "response_schema": "contracts/api/search_response.v0.json",
+  "error_schema": "contracts/api/error_response.v0.json",
+  "local_index_only_contract": "docs/operations/PUBLIC_SEARCH_LOCAL_INDEX_ONLY_MODE.md",
+  "reference_doc": "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+  "forbidden_in_v0": [
+    "live_probe",
+    "external_search",
+    "automated_google_query",
+    "automated_internet_archive_query",
+    "arbitrary_url_fetch",
+    "download",
+    "install",
+    "upload",
+    "local_path_search",
+    "source_credentials",
+    "production_api_stability_claim"
+  ],
+  "routes": [
+    {
+      "method": "GET",
+      "path_template": "/search",
+      "status": "future_contract",
+      "stability": "experimental",
+      "implemented_now": false,
+      "requires_backend": true,
+      "static_site_route": false,
+      "response_kind": "html",
+      "default_profile": "standard_web",
+      "allowed_profiles": [
+        "standard_web",
+        "lite_html",
+        "text"
+      ],
+      "allowed_modes": [
+        "local_index_only"
+      ],
+      "live_probe_allowed": false,
+      "downloads_allowed": false,
+      "local_paths_allowed": false,
+      "uploads_allowed": false,
+      "auth_required": false,
+      "rate_limit_required_before_public": true,
+      "notes": "Reserved future hosted HTML search route. Static search handoff remains future and no route handler is added by Public Search API Contract v0."
+    },
+    {
+      "method": "GET",
+      "path_template": "/api/v1/search",
+      "status": "future_contract",
+      "stability": "experimental",
+      "implemented_now": false,
+      "requires_backend": true,
+      "static_site_route": false,
+      "response_kind": "json",
+      "default_profile": "api_client",
+      "allowed_profiles": [
+        "api_client"
+      ],
+      "allowed_modes": [
+        "local_index_only"
+      ],
+      "live_probe_allowed": false,
+      "downloads_allowed": false,
+      "local_paths_allowed": false,
+      "uploads_allowed": false,
+      "auth_required": false,
+      "rate_limit_required_before_public": true,
+      "notes": "Reserved future JSON search endpoint. It is not live, not deployed, and does not fan out to external sources."
+    },
+    {
+      "method": "GET",
+      "path_template": "/api/v1/query-plan",
+      "status": "future_contract",
+      "stability": "experimental",
+      "implemented_now": false,
+      "requires_backend": true,
+      "static_site_route": false,
+      "response_kind": "json",
+      "default_profile": "api_client",
+      "allowed_profiles": [
+        "api_client"
+      ],
+      "allowed_modes": [
+        "local_index_only"
+      ],
+      "live_probe_allowed": false,
+      "downloads_allowed": false,
+      "local_paths_allowed": false,
+      "uploads_allowed": false,
+      "auth_required": false,
+      "rate_limit_required_before_public": true,
+      "notes": "Reserved future deterministic planner endpoint over local indexed records only."
+    },
+    {
+      "method": "GET",
+      "path_template": "/api/v1/status",
+      "status": "future_contract",
+      "stability": "experimental",
+      "implemented_now": false,
+      "requires_backend": true,
+      "static_site_route": false,
+      "response_kind": "json",
+      "default_profile": "api_client",
+      "allowed_profiles": [
+        "api_client"
+      ],
+      "allowed_modes": [
+        "local_index_only"
+      ],
+      "live_probe_allowed": false,
+      "downloads_allowed": false,
+      "local_paths_allowed": false,
+      "uploads_allowed": false,
+      "auth_required": false,
+      "rate_limit_required_before_public": true,
+      "notes": "Reserved future backend status and capability-flags endpoint. Static Pages status remains the current implemented status surface."
+    },
+    {
+      "method": "GET",
+      "path_template": "/api/v1/sources",
+      "status": "future_contract",
+      "stability": "experimental",
+      "implemented_now": false,
+      "requires_backend": true,
+      "static_site_route": false,
+      "response_kind": "json",
+      "default_profile": "api_client",
+      "allowed_profiles": [
+        "api_client"
+      ],
+      "allowed_modes": [
+        "local_index_only"
+      ],
+      "live_probe_allowed": false,
+      "downloads_allowed": false,
+      "local_paths_allowed": false,
+      "uploads_allowed": false,
+      "auth_required": false,
+      "rate_limit_required_before_public": true,
+      "notes": "Reserved future source summary endpoint. Current source summaries remain static data under site/dist/data."
+    },
+    {
+      "method": "GET",
+      "path_template": "/api/v1/source/{source_id}",
+      "status": "future_contract",
+      "stability": "experimental",
+      "implemented_now": false,
+      "requires_backend": true,
+      "static_site_route": false,
+      "response_kind": "json",
+      "default_profile": "api_client",
+      "allowed_profiles": [
+        "api_client"
+      ],
+      "allowed_modes": [
+        "local_index_only"
+      ],
+      "live_probe_allowed": false,
+      "downloads_allowed": false,
+      "local_paths_allowed": false,
+      "uploads_allowed": false,
+      "auth_required": false,
+      "rate_limit_required_before_public": true,
+      "notes": "Reserved future source detail endpoint. Source IDs must come from governed inventories or local index records."
+    }
+  ],
+  "created_by_slice": "public_search_api_contract_v0",
+  "notes": [
+    "This inventory reserves future public search routes only.",
+    "No route handlers, hosted backend behavior, live probes, source adapters, external API calls, downloads, uploads, account behavior, telemetry, or production API guarantee are added.",
+    "The current static site remains site/dist and public search is not live."
+  ]
+}

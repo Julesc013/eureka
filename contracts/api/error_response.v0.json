@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/api/error_response.v0.json",
+  "title": "EurekaPublicSearchErrorResponseV0",
+  "description": "Contract-only public search error envelope. This defines future behavior only and does not implement runtime errors.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ok",
+    "schema_version",
+    "contract_id",
+    "error"
+  ],
+  "properties": {
+    "ok": {
+      "const": false
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "contract_id": {
+      "type": "string",
+      "const": "eureka_public_search_error_response_v0"
+    },
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message",
+        "status",
+        "retryable"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "bad_request",
+            "query_required",
+            "query_too_long",
+            "limit_too_large",
+            "unsupported_mode",
+            "unsupported_profile",
+            "unsupported_include",
+            "forbidden_parameter",
+            "local_paths_forbidden",
+            "downloads_disabled",
+            "installs_disabled",
+            "uploads_disabled",
+            "live_probes_disabled",
+            "live_backend_unavailable",
+            "rate_limited",
+            "timeout",
+            "not_found",
+            "internal_error"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "integer",
+          "minimum": 400,
+          "maximum": 599
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "capability_required": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "parameter": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "docs": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "warning_type",
+          "message"
+        ],
+        "properties": {
+          "warning_type": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "query_length_limit": {
+          "type": "integer",
+          "const": 160
+        },
+        "max_result_limit": {
+          "type": "integer",
+          "const": 25
+        }
+      }
+    }
+  },
+  "x-contract_id": "eureka_public_search_error_response_v0",
+  "x-created_by_slice": "public_search_api_contract_v0",
+  "x-status": "contract_only",
+  "x-required_error_codes": [
+    "bad_request",
+    "query_required",
+    "query_too_long",
+    "limit_too_large",
+    "unsupported_mode",
+    "unsupported_profile",
+    "unsupported_include",
+    "forbidden_parameter",
+    "local_paths_forbidden",
+    "downloads_disabled",
+    "installs_disabled",
+    "uploads_disabled",
+    "live_probes_disabled",
+    "live_backend_unavailable",
+    "rate_limited",
+    "timeout",
+    "not_found",
+    "internal_error"
+  ],
+  "x-notes": [
+    "This envelope is reserved for future public search runtime behavior.",
+    "The current milestone does not add route handlers or live backend hosting.",
+    "live_backend_unavailable remains valid for static-only deployments."
+  ]
+}
