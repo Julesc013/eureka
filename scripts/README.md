@@ -265,6 +265,15 @@ Current scripts:
   SQLite/cache rejection, and executable payload rejection. It supports
   `--pack-root`, `--json`, and `--strict`, and does not import, merge, index,
   upload, export databases, execute, fetch, scrape, or contact a network
+- `validate_contribution_pack.py`: validates Contribution Pack Contract v0
+  directories. By default it checks the synthetic example pack under
+  `examples/contribution_packs/minimal_contribution_pack_v0/`, including
+  `CONTRIBUTION_PACK.json`, contribution-item JSONL, referenced pack JSONL,
+  pending manual-observation placeholders, checksums, privacy/status
+  consistency, private-path rejection, raw SQLite/cache rejection, executable
+  payload rejection, and fake observed-observation rejection. It supports
+  `--pack-root`, `--json`, and `--strict`, and does not upload, import, review,
+  moderate, accept, execute, fetch, scrape, or contact a network
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

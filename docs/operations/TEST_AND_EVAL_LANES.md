@@ -262,6 +262,22 @@ docs, checksum coverage, disabled live/network posture, no import/merge/upload
 or raw SQLite/local-cache export behavior, no private paths, and no executable
 payloads.
 
+Contribution Pack Contract v0 is validated with:
+
+```bash
+python scripts/validate_contribution_pack.py
+python scripts/validate_contribution_pack.py --json
+python -m unittest tests.operations.test_contribution_pack_contract tests.scripts.test_validate_contribution_pack
+```
+
+The validation checks the contribution-pack manifest schema, synthetic
+review-candidate example pack, contribution item JSONL, referenced pack records,
+pending manual-observation placeholders, allowed contribution types, allowed
+proposed actions, privacy/rights docs, checksum coverage, disabled live/network
+posture, no upload/import/moderation/automatic-acceptance behavior, no private
+paths, no raw SQLite/cache files, no fake observed external observations, and no
+executable payloads.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash
