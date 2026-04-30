@@ -540,6 +540,12 @@ steps:
     run: python scripts/validate_static_artifact_promotion_review.py --json
   - id: static_artifact_promotion_review_tests
     run: python -m unittest tests.operations.test_static_artifact_promotion_review tests.scripts.test_validate_static_artifact_promotion_review
+  - id: github_pages_run_evidence_validator
+    run: python scripts/validate_github_pages_run_evidence.py
+  - id: github_pages_run_evidence_validator_json
+    run: python scripts/validate_github_pages_run_evidence.py --json
+  - id: github_pages_run_evidence_tests
+    run: python -m unittest tests.operations.test_github_pages_run_evidence tests.scripts.test_validate_github_pages_run_evidence
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
@@ -581,6 +587,7 @@ notes:
   - GitHub Pages Deployment Enablement v0 adds a static-only workflow and artifact checker for site/dist; it does not deploy the Python backend, enable live probes, configure a custom domain, create a generator, add secrets, or prove deployment success without GitHub Actions evidence.
   - Static Site Generation Migration v0 adds a stdlib-only site/ source tree. Repository Shape Consolidation v0 makes site/dist the single generated GitHub Pages artifact, with no Node/npm, frontend framework, live backend, live probes, or production claims.
   - Static Artifact Promotion Review v0 conditionally promotes site/dist as the active repo-local static artifact and leaves GitHub Actions deployment status unverified; it adds no public search, live backend behavior, live probes, or production claims.
+  - GitHub Pages Run Evidence Review v0 records a current-head Pages workflow failure at configuration after static checks passed and before artifact upload; it adds no deployment behavior, backend hosting, live search, live probes, or production claims.
   - Generated Public Data Summaries v0 adds deterministic static JSON summaries under `site/dist/data/` and `site/dist/data/`; it does not add a live API, backend deployment, live probes, external observations, Node/npm, or production API stability claims.
   - Public Data Contract Stability Review v0 classifies generated public JSON fields as `stable_draft`, `experimental`, `volatile`, `internal`, `deprecated`, or `future`; it does not make public JSON a production API or change runtime behavior.
   - Lite/Text/Files Seed Surfaces v0 adds static compatibility seed surfaces under `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`; it does not add live search, executable downloads, snapshots, relay/native runtime behavior, backend deployment, or production support claims.

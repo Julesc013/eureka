@@ -54,7 +54,11 @@ part of this workflow. Repository Shape Consolidation v0 makes `site/dist/`
 the single generated static artifact for this workflow.
 Static Artifact Promotion Review v0 conditionally promotes `site/dist/` as the
 active repo-local static publication artifact, but GitHub Actions deployment
-success remains unverified until a run-evidence review records it.
+success depends on run evidence.
+GitHub Pages Run Evidence Review v0 records that the current-head workflow run
+failed at `actions/configure-pages@v5` because the repository Pages site was
+not found/enabled for GitHub Actions. The static build and validation steps
+passed before that failure, but artifact upload and deployment were skipped.
 
 ## Repository Settings
 
@@ -125,11 +129,12 @@ are not live search, a live API, backend hosting, external observations, or
 production resolver behavior.
 
 Repository Shape Consolidation v0 promotes generated `site/dist/` output as
-the single Pages artifact uploaded by this workflow. GitHub Actions deployment
-success is still unverified until an actual workflow run is checked and
-recorded.
-Static Artifact Promotion Review v0 confirms local artifact readiness and keeps
-the next evidence step as GitHub Pages Run Evidence Review v0.
+the single Pages artifact uploaded by this workflow.
+Static Artifact Promotion Review v0 confirms local artifact readiness.
+GitHub Pages Run Evidence Review v0 records the current Actions evidence as a
+failed Pages configuration run: local artifact checks passed, no Pages artifact
+was uploaded, no deployment URL was emitted, and deployment success is not
+claimable.
 
 The artifact checker rejects Python/runtime source files, local stores, SQLite
 databases, `.env` files, cache directories, backend directories, root-relative
@@ -167,3 +172,6 @@ files.
   enabled.
 - A workflow file or queued run is not proof that a public deployment
   succeeded. Deployment success requires GitHub Actions evidence.
+- Current evidence shows the workflow fails before artifact upload until the
+  repository Pages site is enabled/configured for GitHub Actions or the
+  workflow is repaired under an approved follow-up.

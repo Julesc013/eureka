@@ -881,3 +881,25 @@ backend hosting, live probes, crawling, external search automation, relay
 runtime, native client, downloads, accounts, telemetry, auth, TLS, rate
 limiting, production signing, or production readiness claim. The next
 Codex-safe milestone is GitHub Pages Run Evidence Review v0.
+
+## ADR-105: Record Pages Run Evidence Before Deployment Claims
+
+Status: accepted
+
+GitHub Pages Run Evidence Review v0 adds
+`control/audits/github-pages-run-evidence-v0/`,
+`scripts/validate_github_pages_run_evidence.py`, and focused tests for the
+run-evidence review.
+
+The decision is to treat local `site/dist` readiness and public deployment
+evidence as separate gates. The current-head Pages workflow run exists and
+matched the promoted static artifact state, but it failed at
+`actions/configure-pages@v5` because the repository Pages site was not
+found/enabled for GitHub Actions. Static build and validation steps passed
+before the failure; the Pages artifact upload and deployment steps were
+skipped; no deployment URL was emitted; and no deployment-success claim is
+allowed. This adds no deployment implementation, backend hosting, public search
+runtime, live probes, crawling, external source calls, custom domain, secrets,
+auth, telemetry, downloads, native clients, relay runtime, or production
+readiness claim. The next Codex-safe Pages milestone is GitHub Pages Workflow
+Repair v0.

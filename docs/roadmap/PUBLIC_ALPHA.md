@@ -34,6 +34,9 @@ The minimum public-alpha entry gate should include:
 - GitHub Pages Deployment Enablement v0 (implemented as static-only workflow
   configuration for `site/dist/`; no backend deployment, live probes, custom
   domain, generator, or verified deployment-success claim)
+- GitHub Pages Run Evidence Review v0 (implemented as passive Actions evidence
+  capture; current-head Pages run failed at configuration before artifact
+  upload or deployment)
 - Static Site Generation Migration v0 (implemented as a stdlib-only `site/`
   source/generator tree producing `site/dist/`)
 - Repository Shape Consolidation v0 (implemented as `site/dist/` as the single
@@ -262,5 +265,10 @@ operator before any hosted-alpha claim.
 Static Artifact Promotion Review v0 records the local artifact review under
 `control/audits/static-artifact-promotion-review-v0/`. It conditionally
 promotes `site/dist` as the active repo-local static artifact and keeps
-Actions/Pages deployment success unverified until GitHub Pages Run Evidence
-Review v0 records actual run evidence.
+Actions/Pages deployment success separate from local artifact validity.
+
+GitHub Pages Run Evidence Review v0 records actual workflow evidence under
+`control/audits/github-pages-run-evidence-v0/`. The current-head run validated
+the static artifact, then failed while configuring Pages because the repository
+Pages site was not found/enabled for GitHub Actions. Artifact upload and deploy
+were skipped, so public-alpha hosted deployment remains unapproved.

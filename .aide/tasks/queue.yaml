@@ -391,71 +391,78 @@
     {
       "id": "github_pages_run_evidence_review_v0",
       "title": "GitHub Pages Run Evidence Review v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 56,
-      "notes": "Check and record actual GitHub Actions Pages run evidence after the workflow is pushed; do not claim deployment success without observed run status."
+      "notes": "Recorded current-head GitHub Actions Pages evidence. The workflow validated site/dist but failed at Pages configuration before artifact upload because the repository Pages site was not found/enabled for GitHub Actions; no deployment success claim is allowed."
+    },
+    {
+      "id": "github_pages_workflow_repair_v0",
+      "title": "GitHub Pages Workflow Repair v0",
+      "status": "recommended_next",
+      "priority": 57,
+      "notes": "Repair or configure the static-only Pages workflow/repository settings so the site/dist artifact can upload and deploy. Do not add backend hosting, live search, custom domains, secrets, or production claims."
     },
     {
       "id": "public_search_api_contract_v0",
       "title": "Public Search API Contract v0",
       "status": "recommended_follow_up",
-      "priority": 57,
+      "priority": 58,
       "notes": "Contract-only planning for future public search routes; do not implement API routes, backend hosting, live probes, crawling, or external searches."
     },
     {
       "id": "public_search_result_card_contract_v0",
       "title": "Public Search Result Card Contract v0",
       "status": "recommended_follow_up",
-      "priority": 58,
+      "priority": 59,
       "notes": "Define future result-card fields and safety copy before UI/runtime implementation; do not add search runtime behavior."
     },
     {
       "id": "public_search_safety_abuse_guard_v0",
       "title": "Public Search Safety / Abuse Guard v0",
       "status": "recommended_follow_up",
-      "priority": 59,
+      "priority": 60,
       "notes": "Define public-search safety and abuse guardrails before runtime work; do not add auth, rate limiting, hosted services, or live probes in this milestone."
     },
     {
       "id": "local_public_search_runtime_v0",
       "title": "Local Public Search Runtime v0",
       "status": "recommended_follow_up",
-      "priority": 60,
+      "priority": 61,
       "notes": "Future local-only runtime milestone after contracts and safety; no hosted backend, external search automation, crawling, or live source probing is implied."
     },
     {
       "id": "public_search_static_handoff_v0",
       "title": "Public Search Static Handoff v0",
       "status": "recommended_follow_up",
-      "priority": 61,
+      "priority": 62,
       "notes": "Future handoff from static publication to search contracts; keep GitHub Pages static-only unless separately approved."
     },
     {
       "id": "search_usefulness_source_expansion_v2_fixture_only",
       "title": "Search Usefulness Source Expansion v2, fixture-only",
       "status": "recommended_follow_up",
-      "priority": 62,
+      "priority": 63,
       "notes": "Fixture-only source expansion candidate; no live source calls, scraping, crawling, external observations, or arbitrary local ingestion."
     },
     {
       "id": "source_pack_contract_v0",
       "title": "Source Pack Contract v0",
       "status": "recommended_follow_up",
-      "priority": 63,
+      "priority": 64,
       "notes": "Future contract for source packs only; do not implement downloads, installers, crawling, or live sync."
     },
     {
       "id": "evidence_pack_contract_v0",
       "title": "Evidence Pack Contract v0",
       "status": "recommended_follow_up",
-      "priority": 64,
+      "priority": 65,
       "notes": "Future evidence-pack contract work; do not fabricate external baselines or claim rights/security review."
     },
     {
       "id": "index_pack_contract_v0",
       "title": "Index Pack Contract v0",
       "status": "recommended_follow_up",
-      "priority": 65,
+      "priority": 66,
       "notes": "Future index-pack contract work; do not add live source sync, crawling, hosted indexing, arbitrary local ingestion, or production search claims."
     }
   ]

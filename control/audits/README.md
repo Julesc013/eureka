@@ -101,3 +101,8 @@ Current packs:
   active repo-local static artifact, records workflow/generated-artifact/safety
   and stale-reference evidence, and leaves GitHub Actions deployment evidence
   unverified without adding runtime behavior or production claims.
+- `github-pages-run-evidence-v0/`: passive GitHub Actions evidence review for
+  the static Pages workflow after `site/dist` promotion. It records the
+  current-head run failure at Pages configuration, absence of an uploaded Pages
+  artifact, failed deployment status, local validation evidence, and operator
+  follow-up without triggering deployment or adding backend behavior.

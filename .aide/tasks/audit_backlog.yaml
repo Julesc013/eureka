@@ -428,6 +428,17 @@
       "title": "Review the promoted static artifact before any hosted deployment-success claim",
       "status": "addressed_by_static_artifact_promotion_review_v0",
       "suggested_milestone": "GitHub Pages Run Evidence Review v0"
+    },
+    {
+      "id": "audit-backlog-github-pages-run-evidence",
+      "finding_refs": [
+        "CTEA-DOCS-001",
+        "CTEA-TEST-002",
+        "CTEA-BEHAVIOR-001"
+      ],
+      "title": "Record actual GitHub Pages workflow evidence and separate local artifact readiness from deployment success",
+      "status": "addressed_by_github_pages_run_evidence_review_v0",
+      "suggested_milestone": "GitHub Pages Workflow Repair v0"
     }
   ]
 }

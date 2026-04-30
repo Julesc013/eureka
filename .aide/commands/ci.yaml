@@ -236,6 +236,10 @@ steps:
     run: python scripts/validate_static_artifact_promotion_review.py
   - id: static_artifact_promotion_review_tests
     run: python -m unittest tests.operations.test_static_artifact_promotion_review tests.scripts.test_validate_static_artifact_promotion_review
+  - id: github_pages_run_evidence_validator
+    run: python scripts/validate_github_pages_run_evidence.py
+  - id: github_pages_run_evidence_tests
+    run: python -m unittest tests.operations.test_github_pages_run_evidence tests.scripts.test_validate_github_pages_run_evidence
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.
@@ -256,6 +260,7 @@ notes:
   - GitHub Pages Deployment Enablement v0 validates static-only publication of site/dist through a GitHub Pages artifact workflow; it does not deploy the Python backend, enable live probes, configure a custom domain, add a generator, add secrets, or claim deployment success without Actions evidence.
   - Static Site Generation Migration v0 validates a stdlib-only site/ generator and site/dist output while keeping site/dist as the deployment artifact; it adds no Node/npm, frontend framework, deployment change, live backend, live probes, or production claim.
   - Static Artifact Promotion Review v0 validates conditional promotion of site/dist as the active repo-local static artifact while keeping GitHub Actions deployment status unverified; it adds no public search, backend hosting, live probes, or production claims.
+  - GitHub Pages Run Evidence Review v0 validates recorded current-head Pages workflow evidence, including the failed Pages configuration step before artifact upload; it adds no deployment behavior, backend hosting, live search, live probes, or production claims.
   - Generated Public Data Summaries v0 validates deterministic static JSON summaries under `site/dist/data/` and `site/dist/data/`; it adds no live API, backend deployment, live probes, external observations, Node/npm, or production API stability claim.
   - Public Data Contract Stability Review v0 validates field-level generated public JSON stability governance; it adds no live API, backend deployment, live probes, external observations, runtime behavior, or production API stability claim.
   - Lite/Text/Files Seed Surfaces v0 validates static compatibility surfaces under `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`; it adds no live search, executable downloads, snapshots, relay/native runtime behavior, backend deployment, or production support claim.

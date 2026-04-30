@@ -2510,6 +2510,50 @@
       "failure_means": "Static Artifact Promotion Review v0 tests failed, allowing site/dist promotion evidence, workflow upload path, stale-reference review, or Actions-status honesty to regress.",
       "advisory_or_required": "required",
       "notes": "Checks the promotion audit report, validator JSON behavior, site/dist upload path, absent retired roots, external root presence, and no deployment-success claim without Actions evidence."
+    },
+    {
+      "test_id": "github_pages_run_evidence_validator",
+      "label": "GitHub Pages run evidence validator",
+      "command": "python scripts/validate_github_pages_run_evidence.py",
+      "category": "publication",
+      "owner_area": "control/audits/github-pages-run-evidence-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "GitHub Pages Run Evidence Review v0 no longer validates recorded run evidence, workflow upload path, or deployment-claim honesty.",
+      "advisory_or_required": "required",
+      "notes": "Added by GitHub Pages Run Evidence Review v0; validates the audit pack, site/dist upload path, static-only workflow posture, recorded Actions evidence status, no deployment-success claim without evidence, and operator actions for failed or unavailable evidence without making network calls."
+    },
+    {
+      "test_id": "github_pages_run_evidence_tests",
+      "label": "GitHub Pages run evidence tests",
+      "command": "python -m unittest tests.operations.test_github_pages_run_evidence tests.scripts.test_validate_github_pages_run_evidence",
+      "category": "publication",
+      "owner_area": "control/audits/github-pages-run-evidence-v0",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "GitHub Pages Run Evidence Review v0 tests failed, allowing missing audit evidence, incorrect workflow upload path, or false deployment claims to regress.",
+      "advisory_or_required": "required",
+      "notes": "Checks the run-evidence audit report, validator JSON behavior, site/dist upload path, failed current-head evidence, absent artifact/deployment URL, and required operator actions without deploying or changing runtime behavior."
     }
   ]
 }

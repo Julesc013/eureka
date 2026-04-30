@@ -54,7 +54,7 @@ results are canonical truth.
 | Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
 | Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
 | Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Repository Shape Consolidation v0, Static Artifact Promotion Review v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
+| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Repository Shape Consolidation v0, Static Artifact Promotion Review v0, GitHub Pages Run Evidence Review v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
 | Rust lane | minimal workspace plus isolated source-registry and query-planner parity candidates; not wired into Python runtime or surfaces |
 
 The current corpus is intentionally small. The current archive-resolution hard
@@ -95,6 +95,12 @@ active repo-local static publication artifact and records local validation,
 workflow, generated-artifact, safety, base-path, public-data, and stale-reference
 evidence. GitHub Actions deployment status remains unverified until run evidence
 is checked.
+GitHub Pages Run Evidence Review v0 records the current-head Pages workflow
+evidence under `control/audits/github-pages-run-evidence-v0/`. The workflow is
+configured for `site/dist/`, and the remote pre-upload validation steps passed,
+but the run failed while configuring Pages because the repository Pages site was
+not enabled/configured for GitHub Actions. No Pages artifact was uploaded, no
+deployment URL was emitted, and no deployment success claim is allowed.
 Generated Public Data Summaries v0 now adds deterministic static JSON summaries
 under `site/dist/data/` for page, source, eval, route, and build state. These
 files feed the lite/text/files seed surfaces and remain inputs for future
@@ -491,6 +497,9 @@ Eureka is substantial, but it is still a prototype/reference backend:
   the active repo-local static artifact. It records no GitHub Actions
   deployment success, backend hosting, live probes, public search runtime, or
   production-readiness claim.
+- GitHub Pages Run Evidence Review v0 records a current-head Pages workflow
+  failure at the Pages configuration step. The `site/dist` checks passed before
+  the failure, but no Pages artifact or deployment URL exists yet.
 - Generated Public Data Summaries v0 adds static machine-readable summaries
   under `site/dist/data/`. They are not live API semantics and do not add
   external observations.
@@ -593,8 +602,8 @@ Broader near-term direction:
 
 1. keep the GitHub Pages workflow static-only and driven by publication-plane
    contracts, with `site/dist/` as the only uploaded artifact
-2. run GitHub Pages Run Evidence Review v0 before recording any hosted result
-   as deployment evidence
+2. repair or configure GitHub Pages so the static workflow can pass before
+   recording any hosted result as deployment evidence
 3. fill a first manual Google and Internet Archive baseline batch without
    scraping or fabricated comparisons
 4. keep using audit deltas to measure source, planner, representation,

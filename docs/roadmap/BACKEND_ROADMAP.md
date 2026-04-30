@@ -171,6 +171,10 @@ The repo has already proven:
   active legacy static artifact path, and confirms `external/` as the
   outside-reference root without adding public search, backend hosting, live
   probes, relay runtime, native clients, or production claims
+- GitHub Pages Run Evidence Review v0 as the passive evidence audit for the
+  static Pages workflow, recording a current-head failure at Pages configuration
+  after static checks passed and before artifact upload, without triggering
+  deployment or adding backend behavior
 - Generated Public Data Summaries v0 as the first static machine-readable
   publication data layer under `site/dist/data/`,
   projecting page, source, eval, route, and build summaries from governed repo
@@ -281,13 +285,14 @@ The next backend sequence is:
 64. Public Data Contract Stability Review v0 (implemented as field-level public data stability governance; no production API claim)
 65. Generated Artifact Drift Guard v0 (implemented as validation/audit only; no regeneration by default, runtime behavior, deployment, or network behavior)
 66. Repository Shape Consolidation v0 (implemented; site/dist is the single generated static artifact and external is the outside-reference root)
-67. Static Artifact Promotion Review v0 (implemented; site/dist is conditionally promoted as active repo-local static artifact pending GitHub Actions evidence)
+67. Static Artifact Promotion Review v0 (implemented; site/dist is conditionally promoted as active repo-local static artifact)
+68. GitHub Pages Run Evidence Review v0 (implemented; current-head Pages run failed at configuration before artifact upload)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> GitHub Pages Run Evidence Review v0
+> GitHub Pages Workflow Repair v0
 
 Why this comes next:
 
@@ -305,11 +310,12 @@ Why this comes next:
   registry metadata, and AIDE metadata without regenerating artifacts by
   default or changing runtime behavior.
 - Static Artifact Promotion Review v0 is implemented as the local artifact
-  promotion review for `site/dist`; it records conditional promotion while
-  GitHub Actions deployment evidence remains unverified.
-- GitHub Pages Run Evidence Review v0 is the next safe review step before any
-  hosted deployment-success claim or public-search contract work is treated as
-  ready.
+  promotion review for `site/dist`.
+- GitHub Pages Run Evidence Review v0 is implemented as the passive workflow
+  evidence review. It records a current-head failure at Pages configuration,
+  with no artifact uploaded and no deployment URL available.
+- GitHub Pages Workflow Repair v0 is the next safe Pages milestone before any
+  hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision
   `ready_for_minimal_project_skeleton_after_human_approval` for the
   `windows_7_x64_winforms_net48` lane only.

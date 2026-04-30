@@ -113,7 +113,9 @@
         "repository_layout_validator",
         "repository_shape_consolidation_tests",
         "static_artifact_promotion_review_validator",
-        "static_artifact_promotion_review_tests"
+        "static_artifact_promotion_review_tests",
+        "github_pages_run_evidence_validator",
+        "github_pages_run_evidence_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -222,7 +224,9 @@
         "repository_layout_validator",
         "repository_shape_consolidation_tests",
         "static_artifact_promotion_review_validator",
-        "static_artifact_promotion_review_tests"
+        "static_artifact_promotion_review_tests",
+        "github_pages_run_evidence_validator",
+        "github_pages_run_evidence_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -306,7 +310,9 @@
         "repository_layout_validator",
         "repository_shape_consolidation_tests",
         "static_artifact_promotion_review_validator",
-        "static_artifact_promotion_review_tests"
+        "static_artifact_promotion_review_tests",
+        "github_pages_run_evidence_validator",
+        "github_pages_run_evidence_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -394,6 +400,8 @@
         "repository_shape_consolidation_tests",
         "static_artifact_promotion_review_validator",
         "static_artifact_promotion_review_tests",
+        "github_pages_run_evidence_validator",
+        "github_pages_run_evidence_tests",
         "docs_diff_check"
       ],
       "required_status": "required",
