@@ -119,6 +119,12 @@ Current packs:
   and next source work without live probes, scraping, crawling, external
   observations, real binaries, download/install/upload actions, local path
   search, hosted search, or production relevance claims.
+- `search-usefulness-delta-v2/`: audit-only measurement of Source Expansion
+  v2. It records baseline provenance, current counts, status deltas, selected
+  query movement, current failure modes, source-family impact, public-search
+  smoke status, hard-eval status, external-baseline pending status, remaining
+  gaps, and Source Pack Contract v0 as the next recommendation without adding
+  source/runtime behavior or external observations.
 
 Public Search API Contract v0 is governed under `contracts/api/`,
 `control/inventory/publication/public_search_routes.json`, and

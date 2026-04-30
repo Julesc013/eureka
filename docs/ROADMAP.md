@@ -305,9 +305,9 @@ crawling, enabling downloads, or turning Google into a live source.
 
 Out of scope for bootstrap: finalized runtime semantics, mature connector coverage, production ranking systems, release automation, retrieval strategy expansion, and native runtime embedding beyond scaffolding.
 
-## Immediate Next Milestone
+## Latest Implementation Milestone
 
-The next implementation milestone is:
+The latest implementation milestone is:
 
 > Search Usefulness Delta v2
 
@@ -318,6 +318,12 @@ capability_gap=9/unknown=2 to covered=5/partial=40/source_gap=10/
 capability_gap=7/unknown=2 without live source calls, scraping, crawling,
 external observations, arbitrary local ingestion, real binaries, downloads,
 uploads, hosted search, or production relevance claims.
+Search Usefulness Delta v2 is now implemented as audit/governance under
+`control/audits/search-usefulness-delta-v2/`. It records the P32 baseline
+source, current counts, status deltas, selected query movement, current
+failure-mode counts, source-family impact, public-search smoke status,
+hard-eval status, external-baseline pending status, remaining gaps, and the
+Source Pack Contract v0 recommendation without changing retrieval behavior.
 
 Public Data Contract Stability Review v0 is now implemented as field-level
 contract governance under

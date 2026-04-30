@@ -302,12 +302,13 @@ The next backend sequence is:
 73. Public Search Static Handoff v0 (implemented as static/no-JS `site/dist` handoff only; hosted backend remains unavailable/unverified)
 74. Public Search Rehearsal v0 (implemented as local/prototype route, safe-query, blocked-request, static-handoff, public-alpha, and contract-alignment evidence only; no hosted deployment, live probes, downloads, uploads, local path search, accounts, telemetry, or production claim)
 75. Search Usefulness Source Expansion v2, fixture-only (implemented as six recorded fixture source families and 15 tiny metadata records; no live calls, scraping, crawling, external observations, real binaries, download/install/upload actions, hosted search, or production relevance claim)
+76. Search Usefulness Delta v2 (implemented as audit-only measurement of Source Expansion v2 status deltas, query movement, source-family impact, remaining gaps, hard-eval status, public-search smoke status, and pending/manual external baselines)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Search Usefulness Delta v2
+> Source Pack Contract v0
 
 Why this comes next:
 
@@ -361,6 +362,11 @@ Why this comes next:
   capability_gap=7/unknown=2 without live source calls, scraping, crawling,
   external observations, arbitrary local ingestion, real binaries, downloads,
   uploads, hosted search, or production relevance claims.
+- Search Usefulness Delta v2 is implemented as audit/governance. It records
+  the measured Source Expansion v2 delta, selected query movement,
+  source-family impact, current failure modes, public-search smoke status,
+  hard-eval status, external-baseline pending status, and remaining gaps
+  without adding source/runtime behavior.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

@@ -454,14 +454,14 @@
     {
       "id": "search_usefulness_delta_v2",
       "title": "Search Usefulness Delta v2",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 65,
-      "notes": "Record and analyze the measured Source Expansion v2 usefulness delta, remaining source/capability gaps, and next source/evidence priorities without changing retrieval behavior or fabricating external baselines."
+      "notes": "Implemented audit-only delta measurement for Source Expansion v2, recording the P32 baseline source, current counts, status deltas, selected query movement, current failure modes, source-family impact, public-search smoke status, hard-eval status, external-baseline pending status, remaining gaps, and Source Pack Contract v0 recommendation without changing retrieval behavior or fabricating external baselines."
     },
     {
       "id": "source_pack_contract_v0",
       "title": "Source Pack Contract v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 66,
       "notes": "Future contract for source packs only; do not implement downloads, installers, crawling, or live sync."
     },

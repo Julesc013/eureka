@@ -219,3 +219,11 @@ source calls. External Google and Internet Archive baselines remain pending
 manual observation, and the audit still adds no live probing, URL fetching,
 scraping, crawling, real binaries, downloads, local path search, fuzzy/vector
 retrieval, LLM behavior, or production benchmark claim.
+
+Search Usefulness Delta v2 now lives under
+`control/audits/search-usefulness-delta-v2/`. It measures the Source Expansion
+v2 effect using the committed P32 report as baseline: `partial` increased by
+18, `source_gap` decreased by 16, `capability_gap` decreased by 2, and
+`covered`/`unknown` stayed unchanged. Exact failure-mode deltas are marked
+unavailable because the pre-P32 failure-mode baseline was not committed as
+machine-readable JSON. External baselines remain pending/manual.

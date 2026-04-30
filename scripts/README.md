@@ -234,6 +234,13 @@ Current scripts:
   status, search, query-plan, sources, HTML search, forbidden local path/URL
   parameters, disabled live probes, and query length limits; it supports
   `--json` and performs no external network calls
+- `validate_search_usefulness_delta_v2.py`: validates the Search Usefulness
+  Delta v2 audit pack, compares current counts to
+  `run_search_usefulness_audit.py --json`, checks the P32 baseline/report
+  relationship, confirms external baselines remain pending/manual, and enforces
+  source-family impact, hard-eval status, public-search smoke status, remaining
+  gaps, recommendations, and no unsupported superiority/hosted-readiness claims;
+  it supports `--json` and performs no network calls
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

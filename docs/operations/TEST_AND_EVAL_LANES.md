@@ -205,6 +205,21 @@ and no-live/no-download/no-local-path guardrails. It does not add live source
 behavior, scraping, crawling, URL fetching, real binaries, arbitrary local
 ingestion, hosted search, or production relevance claims.
 
+Search Usefulness Delta v2 is validated with:
+
+```bash
+python scripts/validate_search_usefulness_delta_v2.py
+python scripts/validate_search_usefulness_delta_v2.py --json
+python -m unittest tests.operations.test_search_usefulness_delta_v2 tests.scripts.test_validate_search_usefulness_delta_v2
+```
+
+The validation checks the audit-only delta pack, P32 baseline provenance,
+current broad audit counts, status deltas, selected query movement,
+source-family impact, current failure-mode counts, hard-eval status,
+public-search smoke status, pending/manual external baselines, remaining gaps,
+and next recommendations. It adds no source/runtime behavior and records no
+external observations.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

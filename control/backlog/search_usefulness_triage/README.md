@@ -79,8 +79,11 @@ The broad Search Usefulness Audit moved from `covered=5`, `partial=22`,
 `partial=40`, `source_gap=10`, `capability_gap=7`, `unknown=2` without live
 probes, scraping, crawling, URL fetching, external observations, real binaries,
 downloads, uploads, local path search, hosted search, or production relevance
-claims. The next milestone is Search Usefulness Delta v2 to record and analyze
-that movement.
+claims. Search Usefulness Delta v2 now records that movement under
+`control/audits/search-usefulness-delta-v2/`, including selected query
+movement, source-family impact, current failure modes, hard-eval status,
+public-search smoke status, external-baseline pending status, and remaining
+gaps. The next milestone is Source Pack Contract v0.
 
 ## Contents
 

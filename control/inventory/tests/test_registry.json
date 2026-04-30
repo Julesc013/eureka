@@ -2885,6 +2885,50 @@
       "failure_means": "Source Expansion v2 fixtures, normalization, local index visibility, public search projection, audit report, or fixture-only safety tests regressed.",
       "advisory_or_required": "required",
       "notes": "Covers fixture loader behavior, source inventory honesty, selected query movement, local index records, public result-card safety, no download/install actions, no private path leakage, and pending/manual external baselines without live source behavior."
+    },
+    {
+      "test_id": "search_usefulness_delta_v2_validator",
+      "label": "Search usefulness delta v2 validator",
+      "command": "python scripts/validate_search_usefulness_delta_v2.py",
+      "category": "audit",
+      "owner_area": "control/audits/search-usefulness-delta-v2",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Search Usefulness Delta v2 baseline provenance, current counts, status deltas, source-family impact, hard-eval/public-search status, external-baseline honesty, or recommendations regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Search Usefulness Delta v2; validates the audit-only delta pack against the P32 report, current broad audit output, external baseline status report, and no unsupported superiority or hosted-readiness claims."
+    },
+    {
+      "test_id": "search_usefulness_delta_v2_tests",
+      "label": "Search usefulness delta v2 tests",
+      "command": "python -m unittest tests.operations.test_search_usefulness_delta_v2 tests.scripts.test_validate_search_usefulness_delta_v2",
+      "category": "audit",
+      "owner_area": "control/audits/search-usefulness-delta-v2",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Search Usefulness Delta v2 audit tests failed, allowing missing query movement, source-family impact, external-baseline pending status, hard-eval status, public-search status, or unsupported claims to regress.",
+      "advisory_or_required": "required",
+      "notes": "Covers delta report parsing, count deltas, selected query movement, source-family impact, pending/manual external baselines, hard-eval/public-search status, recommendations, and no unsupported superiority or hosted-readiness claims."
     }
   ]
 }

@@ -1078,5 +1078,26 @@ external baselines remain pending/manual. This adds no live probes, external
 API calls, URL fetching, scraping, crawling, real binaries, downloads,
 installers, uploads, arbitrary local ingestion, local path search, telemetry,
 accounts, hosted search, malware-safety claim, rights-clearance claim,
-production relevance claim, or production readiness claim. The next
-Codex-safe milestone is Search Usefulness Delta v2.
+hosted relevance claim, or production readiness claim. The next Codex-safe
+milestone is Search Usefulness Delta v2, which is now implemented.
+
+## ADR-113: Measure Source Expansion v2 With an Audit-Only Delta Pack
+
+Status: accepted
+
+Search Usefulness Delta v2 adds
+`control/audits/search-usefulness-delta-v2/`,
+`scripts/validate_search_usefulness_delta_v2.py`, and focused script and
+operations tests. It measures Source Expansion v2 against the committed P32
+report, recording baseline/current counts, exact status deltas, selected query
+movement, current failure-mode counts, source-family impact, public-search
+smoke status, hard-eval status, external-baseline pending status, remaining
+gaps, and recommendations.
+
+The decision is to treat the delta as governance evidence only. It adds no new
+retrieval behavior, source loaders, live probes, URL fetching, scraping,
+crawling, external observations, real binaries, downloads, installers, uploads,
+local path search, telemetry, accounts, hosted search, or hosted-readiness
+claim. Exact failure-mode deltas are marked unavailable because the pre-P32
+failure-mode baseline was not committed as machine-readable JSON. The next
+Codex-safe milestone is Source Pack Contract v0.

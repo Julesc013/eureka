@@ -329,9 +329,9 @@ research rather than a claim that the current repo already implements shared
 evidence services, streaming run phases, hosted operation, or production
 subsystem choices.
 
-## Next Implementation Milestone
+## Latest Implementation Milestone
 
-The next implementation milestone is:
+The latest implementation milestone is:
 
 > Search Usefulness Delta v2
 
@@ -345,6 +345,12 @@ covered=5/partial=40/source_gap=10/capability_gap=7/unknown=2. It adds no live
 source calls, scraping, crawling, external observations, real binaries,
 downloads, installs, uploads, local path search, telemetry, hosted search,
 malware-safety claim, rights-clearance claim, or production relevance claim.
+Search Usefulness Delta v2 records the measured effect under
+`control/audits/search-usefulness-delta-v2/`, with the P32 report as the
+machine-derived baseline. It records exact status-count deltas, selected query
+movement, current failure modes, source-family impact, public-search smoke
+status, hard-eval status, external-baseline pending status, and remaining gaps.
+It adds no source/runtime behavior and records no external observations.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -575,14 +581,14 @@ local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Search Usefulness Delta v2
-2. Source Pack Contract v0
-3. Evidence Pack Contract v0
-4. Index Pack Contract v0
-5. Contribution Pack Contract v0
-6. Master Index Review Queue Contract v0
-7. AI Provider Contract v0
-8. Manual Observation Batch 0 Execution, human-operated
+1. Source Pack Contract v0
+2. Evidence Pack Contract v0
+3. Index Pack Contract v0
+4. Contribution Pack Contract v0
+5. Master Index Review Queue Contract v0
+6. AI Provider Contract v0
+7. Manual Observation Batch 0 Execution, human-operated
+8. Search Usefulness Baseline Comparison Report v0 after observations
 9. IA Metadata Live Probe Approval Pack v0 only after explicit approval
 10. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim

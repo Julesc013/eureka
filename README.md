@@ -134,6 +134,13 @@ fixture-only: no live source calls, scraping, crawling, external observations,
 real binaries, downloads, installs, uploads, local path search, telemetry,
 hosted search, malware-safety claim, rights-clearance claim, or production
 relevance claim was added.
+Search Usefulness Delta v2 now records the measured effect of that fixture-only
+source expansion under `control/audits/search-usefulness-delta-v2/`. It uses
+the committed P32 report as the machine-derived baseline, confirms the current
+audit counts above, records selected query movement and source-family impact,
+marks exact failure-mode deltas as unavailable, and recommends Source Pack
+Contract v0 next. It adds no new source/runtime behavior and keeps external
+baselines pending/manual.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -684,10 +691,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Search Usefulness Delta v2
-2. Source Pack Contract v0
-3. Evidence Pack Contract v0
-4. Index Pack Contract v0
+1. Source Pack Contract v0
+2. Evidence Pack Contract v0
+3. Index Pack Contract v0
+4. Contribution Pack Contract v0
 5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 
