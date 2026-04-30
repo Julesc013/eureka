@@ -135,7 +135,7 @@ class ActionDownloadInstallPolicyTestCase(unittest.TestCase):
         self.assertFalse(relay["action_policy_dependency"]["downloads_enabled"])
 
     def test_static_site_does_not_claim_installer_or_app_store_behavior(self) -> None:
-        text = (REPO_ROOT / "public_site" / "limitations.html").read_text(
+        text = (REPO_ROOT / "site/dist" / "limitations.html").read_text(
             encoding="utf-8"
         ).casefold()
 

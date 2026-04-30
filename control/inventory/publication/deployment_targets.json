@@ -6,7 +6,7 @@
       "id": "github_pages_project",
       "kind": "static",
       "status": "implemented",
-      "artifact_root": "public_site",
+      "artifact_root": "site/dist",
       "generated_artifact_root": "site/dist",
       "generated_artifact_deployed": false,
       "base_path": "/eureka/",
@@ -22,8 +22,8 @@
       "static_host_readiness_validator": "scripts/validate_static_host_readiness.py",
       "notes": [
         "Project Pages must not define public route architecture.",
-        "The workflow validates generated public data freshness, publication inventory, and public_site before uploading the artifact.",
-        "Static Site Generation Migration v0 generates site/dist for validation, but the workflow still uploads public_site.",
+        "The workflow validates generated public data freshness, publication inventory, and site/dist before uploading the artifact.",
+        "Repository Shape Consolidation v0 makes site/dist the single generated static artifact uploaded by the workflow.",
         "Workflow configuration does not prove a GitHub Actions deployment run succeeded.",
         "Custom Domain / Alternate Host Readiness v0 confirms this target remains project-path static hosting under /eureka/.",
         "No Python backend, live probes, custom domain, secrets, or generator deployment is added by this target."
@@ -33,7 +33,7 @@
       "id": "custom_domain_static",
       "kind": "static",
       "status": "future",
-      "artifact_root": "public_site",
+      "artifact_root": "site/dist",
       "base_path": "/",
       "canonical_base_url": null,
       "requires_domain_verification": true,

@@ -8,7 +8,7 @@ import unittest
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
 SNAPSHOT_ROOT = REPO_ROOT / "snapshots" / "examples" / "static_snapshot_v0"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 
 REQUIRED_SNAPSHOT_FILES = {
     "README_FIRST.txt",

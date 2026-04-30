@@ -52,14 +52,14 @@
     ]
   },
   "public_data_included": [
-    "public_site/data/source_summary.json",
-    "public_site/data/eval_summary.json",
-    "public_site/data/route_summary.json",
-    "public_site/data/page_registry.json",
-    "public_site/data/build_manifest.json"
+    "site/dist/data/source_summary.json",
+    "site/dist/data/eval_summary.json",
+    "site/dist/data/route_summary.json",
+    "site/dist/data/page_registry.json",
+    "site/dist/data/build_manifest.json"
   ],
   "file_tree_policy": {
-    "public_site_files_surface": "public_site/files",
+    "static_site_dist_files_surface": "site/dist/files",
     "snapshot_example_root": "snapshots/examples/static_snapshot_v0",
     "public_snapshots_route": "/snapshots/",
     "public_snapshots_route_status": "future_deferred",
@@ -90,7 +90,7 @@
     "Signed Snapshot Format v0 defines a static/offline seed format and example only.",
     "The seed example is not a production signed release and includes no private keys.",
     "The current public /snapshots/ route remains reserved/future; the example lives under snapshots/examples/static_snapshot_v0.",
-    "Snapshots differ from public_site: public_site is the current Pages artifact, while snapshots are future offline bundles consumed by old clients, file-tree surfaces, relay designs, and native clients.",
+    "Snapshots differ from site/dist: site/dist is the current Pages artifact, while snapshots are future offline bundles consumed by old clients, file-tree surfaces, relay designs, and native clients.",
     "Snapshots differ from the live backend: they are immutable static data copies and cannot perform live search, live probes, auth, accounts, or dynamic source access.",
     "Relay Surface Design v0 may consume future production snapshots later, but no relay runtime or public snapshot route exists now.",
     "Signed Snapshot Consumer Contract v0 defines future consumer read order, checksum posture, and v0 signature-placeholder handling without implementing a consumer."

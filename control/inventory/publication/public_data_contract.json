@@ -72,7 +72,7 @@
       "schema_version": "0.1.0",
       "producer": "LIVE_ALPHA_00 Static Public Site Pack and site/build.py",
       "source_inputs": [
-        "public_site/site_manifest.json",
+        "site/dist/site_manifest.json",
         "site/build.py"
       ],
       "consumer_profiles": [
@@ -244,7 +244,7 @@
       "schema_version": "0.1.0",
       "producer": "Lite/Text/Files Seed Surfaces v0",
       "source_inputs": [
-        "public_site/data/*.json",
+        "site/dist/data/*.json",
         "scripts/generate_compatibility_surfaces.py",
         "control/inventory/publication/snapshot_contract.json"
       ],
@@ -266,7 +266,7 @@
       "schema_version": "0.1.0",
       "producer": "Lite/Text/Files Seed Surfaces v0",
       "source_inputs": [
-        "public_site/data/*.json",
+        "site/dist/data/*.json",
         "scripts/generate_compatibility_surfaces.py"
       ],
       "consumer_profiles": [
@@ -287,7 +287,7 @@
       "schema_version": "0.1.0",
       "producer": "Lite/Text/Files Seed Surfaces v0",
       "source_inputs": [
-        "public_site/data/*.json",
+        "site/dist/data/*.json",
         "scripts/generate_compatibility_surfaces.py"
       ],
       "consumer_profiles": [
@@ -311,7 +311,7 @@
         "tests/parity/golden/python_oracle/v0/query_planner/*.json",
         "tests/parity/golden/python_oracle/v0/resolution_runs/*.json",
         "tests/parity/golden/python_oracle/v0/archive_resolution_evals/full_report.json",
-        "public_site/data/*.json",
+        "site/dist/data/*.json",
         "scripts/generate_static_resolver_demos.py"
       ],
       "consumer_profiles": [

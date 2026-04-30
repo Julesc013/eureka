@@ -8,7 +8,7 @@
       "artifact_id": "public_data_summaries",
       "status": "generated_committed",
       "artifact_paths": [
-        "public_site/data/*.json"
+        "site/dist/data/*.json"
       ],
       "generator_command": "python scripts/generate_public_data_summaries.py --update",
       "check_command": "python scripts/generate_public_data_summaries.py --check",
@@ -37,9 +37,9 @@
       "artifact_id": "compatibility_surfaces",
       "status": "generated_committed",
       "artifact_paths": [
-        "public_site/lite",
-        "public_site/text",
-        "public_site/files"
+        "site/dist/lite",
+        "site/dist/text",
+        "site/dist/files"
       ],
       "generator_command": "python scripts/generate_compatibility_surfaces.py --update",
       "check_command": "python scripts/generate_compatibility_surfaces.py --check",
@@ -47,7 +47,7 @@
         "python scripts/validate_compatibility_surfaces.py"
       ],
       "source_inputs": [
-        "public_site/data/*.json",
+        "site/dist/data/*.json",
         "scripts/generate_compatibility_surfaces.py",
         "control/inventory/publication/surface_capabilities.json"
       ],
@@ -61,8 +61,8 @@
       "artifact_id": "static_resolver_demos",
       "status": "generated_committed",
       "artifact_paths": [
-        "public_site/demo",
-        "public_site/demo/data/demo_snapshots.json"
+        "site/dist/demo",
+        "site/dist/demo/data/demo_snapshots.json"
       ],
       "generator_command": "python scripts/generate_static_resolver_demos.py --update",
       "check_command": "python scripts/generate_static_resolver_demos.py --check",
@@ -70,7 +70,7 @@
         "python scripts/validate_public_static_site.py"
       ],
       "source_inputs": [
-        "public_site/data/*.json",
+        "site/dist/data/*.json",
         "tests/parity/golden/python_oracle/v0/**/*.json",
         "scripts/generate_static_resolver_demos.py"
       ],
@@ -93,7 +93,7 @@
         "python scripts/validate_snapshot_consumer_contract.py"
       ],
       "source_inputs": [
-        "public_site/data/*.json",
+        "site/dist/data/*.json",
         "control/inventory/publication/snapshot_contract.json",
         "control/inventory/publication/snapshot_consumer_contract.json",
         "scripts/generate_static_snapshot.py"
@@ -108,30 +108,51 @@
       "notes": "No real signing keys, production signatures, consumer runtime, relay runtime, or executable downloads are implied."
     },
     {
-      "artifact_id": "site_dist",
-      "status": "generated_committed_validation_output",
+      "artifact_id": "static_site_dist",
+      "status": "implemented",
       "artifact_paths": [
         "site/dist",
-        "site/dist/.eureka-static-site-generated"
+        "site/dist/.eureka-static-site-generated",
+        "site/dist/.nojekyll"
       ],
       "generator_command": "python site/build.py --clean",
+      "generator_commands": [
+        "python site/build.py",
+        "python scripts/generate_public_data_summaries.py --check",
+        "python scripts/generate_compatibility_surfaces.py --check",
+        "python scripts/generate_static_resolver_demos.py --check"
+      ],
       "check_command": "python site/build.py --check",
+      "check_commands": [
+        "python site/build.py --check",
+        "python site/validate.py",
+        "python scripts/check_github_pages_static_artifact.py --path site/dist"
+      ],
       "validator_commands": [
-        "python site/validate.py"
+        "python site/validate.py",
+        "python scripts/check_github_pages_static_artifact.py --path site/dist"
       ],
       "source_inputs": [
-        "site/pages/*.json",
-        "site/templates/*.html",
-        "site/assets/*",
-        "public_site/data/*.json",
-        "control/inventory/sources/*.json",
-        "site/build.py"
+        "site/pages",
+        "site/templates",
+        "site/assets",
+        "control/inventory/publication",
+        "control/inventory/sources",
+        "evals",
+        "snapshots/examples/static_snapshot_v0",
+        "site/build.py",
+        "scripts/generate_public_data_summaries.py",
+        "scripts/generate_compatibility_surfaces.py",
+        "scripts/generate_static_resolver_demos.py"
       ],
+      "deployment_target": "github_pages_project",
+      "generated": true,
+      "manual_edits_allowed": false,
       "deterministic": true,
       "volatile_fields": [],
-      "committed_output_policy": "site/dist remains generated validation output. public_site remains the current deployable static artifact unless a future milestone changes that explicitly.",
+      "committed_output_policy": "site/dist is the single generated static deployment artifact for GitHub Pages. Manual edits are not allowed; update source inputs and regenerate.",
       "update_command": "python site/build.py --clean",
-      "notes": "The check builds into a temporary directory and validates without mutating committed output."
+      "notes": "Repository Shape Consolidation v0 promotes site/dist to the canonical generated static artifact. This does not claim GitHub Pages deployment success or add backend, search, live probes, or production behavior."
     },
     {
       "artifact_id": "python_oracle_goldens",
@@ -174,7 +195,7 @@
       ],
       "source_inputs": [
         "control/inventory/public_alpha_routes.json",
-        "public_site/**",
+        "site/dist/**",
         "runtime/engine/evals/**",
         "control/external_baselines/**",
         "scripts/generate_public_alpha_rehearsal_evidence.py"
@@ -205,7 +226,7 @@
         "control/inventory/publication/*.json",
         "docs/reference/*.md",
         "docs/architecture/*.md",
-        "public_site/**"
+        "site/dist/**"
       ],
       "deterministic": true,
       "volatile_fields": [],

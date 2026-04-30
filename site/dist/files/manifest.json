@@ -1,5 +1,5 @@
 {
-  "artifact_root": "public_site",
+  "artifact_root": "site/dist",
   "checksum_file": "files/SHA256SUMS",
   "contains_executable_downloads": false,
   "contains_external_observations": false,
@@ -45,15 +45,15 @@
   "snapshot_format_contract": "docs/reference/SNAPSHOT_FORMAT_CONTRACT.md",
   "snapshot_seed_example": "snapshots/examples/static_snapshot_v0",
   "source_inputs": [
-    "public_site/data/site_manifest.json",
-    "public_site/data/page_registry.json",
-    "public_site/data/source_summary.json",
-    "public_site/data/eval_summary.json",
-    "public_site/data/route_summary.json",
-    "public_site/data/build_manifest.json"
+    "site/dist/data/site_manifest.json",
+    "site/dist/data/page_registry.json",
+    "site/dist/data/source_summary.json",
+    "site/dist/data/eval_summary.json",
+    "site/dist/data/route_summary.json",
+    "site/dist/data/build_manifest.json"
   ],
   "stability": "stable_draft",
   "status": "static_demo",
   "surface_id": "eureka-files-seed",
-  "surface_root": "public_site/files"
+  "surface_root": "site/dist/files"
 }

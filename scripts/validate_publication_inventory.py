@@ -9,7 +9,7 @@ from typing import Any, Iterable, Mapping, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INVENTORY_DIR = REPO_ROOT / "control" / "inventory" / "publication"
-DEFAULT_SITE_DIR = REPO_ROOT / "public_site"
+DEFAULT_SITE_DIR = REPO_ROOT / "site/dist"
 
 REQUIRED_FILES = {
     "README.md",
@@ -365,8 +365,8 @@ def validate_publication_inventory(
         "site_dir": str(site_dir),
         "required_files": sorted(REQUIRED_FILES),
         "existing_files": sorted(existing_files),
-        "current_public_site_pages": page_summary["current_public_site_pages"],
-        "covered_public_site_pages": page_summary["covered_public_site_pages"],
+        "current_static_artifact_pages": page_summary["current_static_artifact_pages"],
+        "covered_static_artifact_pages": page_summary["covered_static_artifact_pages"],
         "registered_routes": page_summary["registered_routes"],
         "reserved_routes": sorted(REQUIRED_RESERVED_ROUTES),
         "action_policy_checked": "action_policy.json" in existing_files,
@@ -399,8 +399,8 @@ def _validate_contract(payload: Any, errors: list[str]) -> None:
         errors.append("publication_contract.json: schema_version must be 0.1.0.")
     if payload.get("contract_id") != "eureka-publication-plane":
         errors.append("publication_contract.json: unexpected contract_id.")
-    if payload.get("current_static_artifact") != "public_site":
-        errors.append("publication_contract.json: current_static_artifact must be public_site.")
+    if payload.get("current_static_artifact") != "site/dist":
+        errors.append("publication_contract.json: current_static_artifact must be site/dist.")
     if payload.get("future_generator_root") != "site":
         errors.append("publication_contract.json: future_generator_root must be site.")
     if payload.get("future_generated_artifact") != "site/dist":
@@ -413,8 +413,8 @@ def _validate_contract(payload: Any, errors: list[str]) -> None:
         errors.append(
             "publication_contract.json: generated_artifact_deployed must be false."
         )
-    if payload.get("deploy_artifact_current") != "public_site":
-        errors.append("publication_contract.json: deploy_artifact_current must be public_site.")
+    if payload.get("deploy_artifact_current") != "site/dist":
+        errors.append("publication_contract.json: deploy_artifact_current must be site/dist.")
     if payload.get("base_path_policy") != "deployment_target_defined":
         errors.append(
             "publication_contract.json: base_path_policy must be deployment_target_defined."
@@ -565,8 +565,8 @@ def _validate_page_registry(
     payload: Any, site_dir: Path, repo_root: Path, errors: list[str]
 ) -> dict[str, list[str]]:
     summary = {
-        "current_public_site_pages": [],
-        "covered_public_site_pages": [],
+        "current_static_artifact_pages": [],
+        "covered_static_artifact_pages": [],
         "registered_routes": [],
     }
     if not isinstance(payload, Mapping):
@@ -665,12 +665,12 @@ def _validate_page_registry(
         for path in site_dir.glob("*.html")
         if path.is_file()
     )
-    summary["current_public_site_pages"] = current_pages
+    summary["current_static_artifact_pages"] = current_pages
     covered = sorted(page for page in current_pages if page in source_files)
-    summary["covered_public_site_pages"] = covered
+    summary["covered_static_artifact_pages"] = covered
     missing_pages = sorted(set(current_pages) - source_files)
     if missing_pages:
-        errors.append(f"page_registry.json: current public_site pages are not covered: {missing_pages}.")
+        errors.append(f"page_registry.json: current site/dist pages are not covered: {missing_pages}.")
 
     return summary
 
@@ -726,7 +726,7 @@ def _validate_deployment_targets(payload: Any, errors: list[str]) -> None:
         expected = {
             "kind": "static",
         "status": "implemented",
-        "artifact_root": "public_site",
+        "artifact_root": "site/dist",
         "generated_artifact_root": "site/dist",
         "generated_artifact_deployed": False,
         "base_path": "/eureka/",
@@ -749,7 +749,7 @@ def _validate_deployment_targets(payload: Any, errors: list[str]) -> None:
         expected = {
             "kind": "static",
             "status": "future",
-            "artifact_root": "public_site",
+            "artifact_root": "site/dist",
             "base_path": "/",
             "requires_domain_verification": True,
             "no_backend": True,
@@ -1008,7 +1008,7 @@ def _validate_public_data_contract(payload: Any, site_dir: Path, errors: list[st
         generated_file = site_dir / required_path.removeprefix("/")
         if not generated_file.exists():
             errors.append(
-                f"public_data_contract.json: generated data path {required_path} is missing from public_site."
+                f"public_data_contract.json: generated data path {required_path} is missing from site/dist."
             )
 
     for required_path in sorted(REQUIRED_FILE_SURFACE_PATHS):
@@ -1026,7 +1026,7 @@ def _validate_public_data_contract(payload: Any, site_dir: Path, errors: list[st
         generated_file = site_dir / required_path.removeprefix("/")
         if not generated_file.exists():
             errors.append(
-                f"public_data_contract.json: file surface path {required_path} is missing from public_site."
+                f"public_data_contract.json: file surface path {required_path} is missing from site/dist."
             )
 
     for required_path in sorted(REQUIRED_DEMO_DATA_PATHS):
@@ -1048,7 +1048,7 @@ def _validate_public_data_contract(payload: Any, site_dir: Path, errors: list[st
         generated_file = site_dir / required_path.removeprefix("/")
         if not generated_file.exists():
             errors.append(
-                f"public_data_contract.json: demo data path {required_path} is missing from public_site."
+                f"public_data_contract.json: demo data path {required_path} is missing from site/dist."
             )
 
 
@@ -1208,7 +1208,7 @@ def _validate_static_hosting_targets(payload: Any, errors: list[str]) -> None:
             "status": "implemented",
             "kind": "static",
             "base_path": "/eureka/",
-            "artifact_root": "public_site",
+            "artifact_root": "site/dist",
             "workflow_configured": True,
             "deployment_success_claimed": False,
             "backend_supported": False,
@@ -1224,7 +1224,7 @@ def _validate_static_hosting_targets(payload: Any, errors: list[str]) -> None:
             "status": "future",
             "kind": "static",
             "base_path": "/",
-            "artifact_root": "public_site",
+            "artifact_root": "site/dist",
             "requires_domain_verification": True,
             "dns_config_not_in_repo": True,
             "backend_supported": False,
@@ -1354,7 +1354,7 @@ def _format_plain(report: Mapping[str, Any]) -> str:
         "Publication inventory validation",
         f"status: {report['status']}",
         f"registered_routes: {len(report['registered_routes'])}",
-        f"current_public_site_pages: {len(report['current_public_site_pages'])}",
+        f"current_static_artifact_pages: {len(report['current_static_artifact_pages'])}",
         f"required_client_profiles: {len(report['required_client_profiles'])}",
         f"required_public_data_paths: {len(report['required_public_data_paths'])}",
     ]

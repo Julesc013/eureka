@@ -6,27 +6,24 @@ custom-domain/static-host readiness, future live backend handoff, live probe
 gateway policy, compatibility-surface strategy, and redirect policy.
 
 The inventory governs publication shape for static deployment and later public
-surfaces. It does not deploy generated output, add live backend behavior,
-configure DNS, add provider-specific backend hosting files, or record external
-observations.
+surfaces. It does not prove GitHub Pages deployment success, add live backend
+behavior, configure DNS, add provider-specific backend hosting files, or record
+external observations.
 
 Current boundary:
 
-- `public_site/` is the current no-JS static public artifact and GitHub Pages
-  deployment artifact.
 - `site/` is the stdlib-only source/generator tree.
-- `site/dist/` is generated output for validation, not deployment.
-- `public_site/data/` and `site/dist/data/` contain Generated Public Data
-  Summaries v0 static JSON. They are not a live API and do not record external
-  observations.
-- `public_site/lite/`, `public_site/text/`, and `public_site/files/` contain
+- `site/dist/` is the single generated no-JS static public artifact and GitHub
+  Pages deployment artifact path.
+- `site/dist/data/` contains Generated Public Data Summaries v0 static JSON.
+  They are not a live API and do not record external observations.
+- `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/` contain
   Lite/Text/Files Seed Surfaces v0 static compatibility artifacts generated
   from the public data summaries. They add no live search, executable
   downloads, snapshots, relay runtime, or native-client runtime behavior.
-- `public_site/demo/` and `site/dist/demo/` contain Static Resolver Demo
-  Snapshots v0 static fixture-backed examples. They add no live search, live
-  API semantics, backend hosting, external observations, or production
-  behavior.
+- `site/dist/demo/` contains Static Resolver Demo Snapshots v0 static
+  fixture-backed examples. They add no live search, live API semantics, backend
+  hosting, external observations, or production behavior.
 - `domain_plan.json` and `static_hosting_targets.json` contain Custom Domain /
   Alternate Host Readiness v0 policy records. They add no DNS records, no
   `CNAME`, no alternate-host config, no backend hosting, and no live probes.
@@ -52,7 +49,7 @@ Current boundary:
 - `control/inventory/publication/` owns the publication contracts and
   inventories.
 - `.github/workflows/pages.yml` is the static-only GitHub Pages publishing
-  workflow for `public_site/`; it is not a backend deployment path.
+  workflow for `site/dist/`; it is not a backend deployment path.
 
 The publication-plane validator is:
 

@@ -14,14 +14,14 @@
       "stability": "stable_draft",
       "implemented_now": true,
       "implemented_paths": [
-        "public_site/index.html",
-        "public_site/status.html",
-        "public_site/sources.html",
-        "public_site/evals.html",
-        "public_site/demo-queries.html",
-        "public_site/limitations.html",
-        "public_site/roadmap.html",
-        "public_site/local-quickstart.html"
+        "site/dist/index.html",
+        "site/dist/status.html",
+        "site/dist/sources.html",
+        "site/dist/evals.html",
+        "site/dist/demo-queries.html",
+        "site/dist/limitations.html",
+        "site/dist/roadmap.html",
+        "site/dist/local-quickstart.html"
       ],
       "live_backend_required": false,
       "static_host_safe": true,
@@ -39,12 +39,12 @@
       "stability": "stable_draft",
       "implemented_now": true,
       "implemented_paths": [
-        "public_site/data/site_manifest.json",
-        "public_site/data/page_registry.json",
-        "public_site/data/source_summary.json",
-        "public_site/data/eval_summary.json",
-        "public_site/data/route_summary.json",
-        "public_site/data/build_manifest.json"
+        "site/dist/data/site_manifest.json",
+        "site/dist/data/page_registry.json",
+        "site/dist/data/source_summary.json",
+        "site/dist/data/eval_summary.json",
+        "site/dist/data/route_summary.json",
+        "site/dist/data/build_manifest.json"
       ],
       "live_backend_required": false,
       "static_host_safe": true,
@@ -65,11 +65,11 @@
       "stability": "stable_draft",
       "implemented_now": true,
       "implemented_paths": [
-        "public_site/lite/index.html",
-        "public_site/lite/sources.html",
-        "public_site/lite/evals.html",
-        "public_site/lite/demo-queries.html",
-        "public_site/lite/limitations.html"
+        "site/dist/lite/index.html",
+        "site/dist/lite/sources.html",
+        "site/dist/lite/evals.html",
+        "site/dist/lite/demo-queries.html",
+        "site/dist/lite/limitations.html"
       ],
       "live_backend_required": false,
       "static_host_safe": true,
@@ -87,11 +87,11 @@
       "stability": "stable_draft",
       "implemented_now": true,
       "implemented_paths": [
-        "public_site/text/index.txt",
-        "public_site/text/sources.txt",
-        "public_site/text/evals.txt",
-        "public_site/text/demo-queries.txt",
-        "public_site/text/limitations.txt"
+        "site/dist/text/index.txt",
+        "site/dist/text/sources.txt",
+        "site/dist/text/evals.txt",
+        "site/dist/text/demo-queries.txt",
+        "site/dist/text/limitations.txt"
       ],
       "live_backend_required": false,
       "static_host_safe": true,
@@ -109,11 +109,11 @@
       "stability": "stable_draft",
       "implemented_now": true,
       "implemented_paths": [
-        "public_site/files/index.html",
-        "public_site/files/index.txt",
-        "public_site/files/manifest.json",
-        "public_site/files/SHA256SUMS",
-        "public_site/files/README.txt"
+        "site/dist/files/index.html",
+        "site/dist/files/index.txt",
+        "site/dist/files/manifest.json",
+        "site/dist/files/SHA256SUMS",
+        "site/dist/files/README.txt"
       ],
       "live_backend_required": false,
       "static_host_safe": true,
@@ -131,16 +131,16 @@
       "stability": "stable_draft",
       "implemented_now": true,
       "implemented_paths": [
-        "public_site/demo/index.html",
-        "public_site/demo/query-plan-windows-7-apps.html",
-        "public_site/demo/result-member-driver-inside-support-cd.html",
-        "public_site/demo/result-firefox-xp.html",
-        "public_site/demo/result-article-scan.html",
-        "public_site/demo/absence-example.html",
-        "public_site/demo/comparison-example.html",
-        "public_site/demo/source-example.html",
-        "public_site/demo/eval-summary.html",
-        "public_site/demo/data/demo_snapshots.json"
+        "site/dist/demo/index.html",
+        "site/dist/demo/query-plan-windows-7-apps.html",
+        "site/dist/demo/result-member-driver-inside-support-cd.html",
+        "site/dist/demo/result-firefox-xp.html",
+        "site/dist/demo/result-article-scan.html",
+        "site/dist/demo/absence-example.html",
+        "site/dist/demo/comparison-example.html",
+        "site/dist/demo/source-example.html",
+        "site/dist/demo/eval-summary.html",
+        "site/dist/demo/data/demo_snapshots.json"
       ],
       "live_backend_required": false,
       "static_host_safe": true,
@@ -271,7 +271,7 @@
   ],
   "notes": [
     "Route roots are publication-plane roots, not proof of deployed public availability.",
-    "Implemented static roots must exist under public_site where applicable.",
+    "Implemented static roots must exist under site/dist where applicable.",
     "Future live /api/v1 routes remain contract-only and disabled.",
     "Snapshots, relay, app, /web, and native clients remain future/deferred.",
     "Signed Snapshot Format v0 validates a repo-local seed example; it does not make /snapshots/ a public implemented route.",

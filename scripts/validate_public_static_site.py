@@ -10,10 +10,11 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_SITE_DIR = REPO_ROOT / "public_site"
+DEFAULT_SITE_DIR = REPO_ROOT / "site/dist"
 SOURCE_INVENTORY_DIR = REPO_ROOT / "control" / "inventory" / "sources"
+LEGACY_STATIC_ARTIFACT_NAME = "public" + "_site"
 REQUIRED_FILES = {
-    "README.md",
+    ".nojekyll",
     "site_manifest.json",
     "index.html",
     "status.html",
@@ -23,7 +24,6 @@ REQUIRED_FILES = {
     "limitations.html",
     "roadmap.html",
     "local-quickstart.html",
-    "assets/README.md",
     "assets/site.css",
     "data/build_manifest.json",
     "data/eval_summary.json",
@@ -168,6 +168,8 @@ def validate_public_static_site(site_dir: Path = DEFAULT_SITE_DIR) -> dict[str, 
     warnings: list[str] = []
     required_files = sorted(REQUIRED_FILES)
     existing_files: list[str] = []
+    if _is_legacy_static_artifact_path(site_dir):
+        errors.append("legacy static artifact paths are not valid active site roots.")
 
     if not site_dir.exists():
         errors.append(f"{_rel(site_dir)}: site directory does not exist.")
@@ -239,7 +241,7 @@ def validate_public_static_site(site_dir: Path = DEFAULT_SITE_DIR) -> dict[str, 
             errors.append("site_manifest.json: no_network_required must be true.")
         if manifest.get("no_deployment_performed") is not True:
             errors.append("site_manifest.json: no_deployment_performed must be true.")
-        if manifest.get("site_pack_id") != "live_alpha_static_public_site_pack_v0":
+        if manifest.get("site_pack_id") != "eureka_static_site_dist_v0":
             errors.append("site_manifest.json: unexpected site_pack_id.")
     else:
         warnings.append("Manifest could not be inspected beyond JSON parse status.")
@@ -250,7 +252,7 @@ def validate_public_static_site(site_dir: Path = DEFAULT_SITE_DIR) -> dict[str, 
 
     return {
         "status": "valid" if not errors else "invalid",
-        "created_by": "live_alpha_static_public_site_pack_validator_v0",
+        "created_by": "eureka_static_site_dist_validator_v0",
         "site_dir": str(site_dir),
         "required_files": required_files,
         "existing_files": sorted(existing_files),
@@ -337,6 +339,10 @@ def _is_external_or_fragment(link: str) -> bool:
         or lowered.startswith("mailto:")
         or lowered.startswith("#")
     )
+
+
+def _is_legacy_static_artifact_path(path: Path) -> bool:
+    return LEGACY_STATIC_ARTIFACT_NAME in path.as_posix().split("/")
 
 
 def _source_ids(errors: list[str]) -> list[str]:

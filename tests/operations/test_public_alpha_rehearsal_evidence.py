@@ -42,7 +42,7 @@ class PublicAlphaRehearsalEvidenceTest(unittest.TestCase):
 
     def test_manifest_references_current_evidence_sources(self) -> None:
         manifest = self._manifest()
-        self.assertEqual(manifest["static_site_pack"]["path"], "public_site/")
+        self.assertEqual(manifest["static_site_pack"]["path"], "site/dist/")
         self.assertEqual(
             manifest["static_site_pack"]["validator_command"],
             "python scripts/validate_public_static_site.py",

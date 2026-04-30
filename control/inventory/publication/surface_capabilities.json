@@ -72,7 +72,7 @@
         "lite_html"
       ],
       "implemented_paths": [
-        "public_site/lite/"
+        "site/dist/lite/"
       ],
       "reserved_paths": [
         "/lite/"
@@ -101,7 +101,7 @@
         "text"
       ],
       "implemented_paths": [
-        "public_site/text/"
+        "site/dist/text/"
       ],
       "reserved_paths": [
         "/text/"
@@ -130,7 +130,7 @@
         "file_tree"
       ],
       "implemented_paths": [
-        "public_site/files/"
+        "site/dist/files/"
       ],
       "reserved_paths": [
         "/files/"
@@ -162,7 +162,7 @@
         "file_tree"
       ],
       "implemented_paths": [
-        "public_site/data/"
+        "site/dist/data/"
       ],
       "reserved_paths": [
         "/data/"
@@ -179,7 +179,7 @@
       "requires_operator_signoff": false,
       "current_limitations": "Static JSON summaries only; not a stable production API.",
       "next_step": "Use as input for snapshots, text/files projections, relay design, and future native consumers.",
-      "notes": "Generated Public Data Summaries v0 seeded public_site/data."
+      "notes": "Generated Public Data Summaries v0 seeded site/dist/data."
     },
     {
       "id": "demo",
@@ -192,7 +192,7 @@
         "lite_html"
       ],
       "implemented_paths": [
-        "public_site/demo/"
+        "site/dist/demo/"
       ],
       "reserved_paths": [
         "/demo/"
@@ -359,7 +359,7 @@
         "standard_web"
       ],
       "implemented_paths": [
-        "public_site/"
+        "site/dist/"
       ],
       "reserved_paths": [
         "/"
@@ -375,8 +375,8 @@
       "enabled_by_default": true,
       "requires_operator_signoff": false,
       "current_limitations": "Static publication artifact only; no backend or deployment success claim.",
-      "next_step": "Keep public_site as current deploy artifact until a later explicit migration.",
-      "notes": "GitHub Pages workflow uploads public_site as static artifact after validation."
+      "next_step": "Keep site/dist as current deploy artifact until a later explicit migration.",
+      "notes": "GitHub Pages workflow uploads site/dist as static artifact after validation."
     },
     {
       "id": "public_alpha_wrapper",
@@ -473,7 +473,7 @@
         "standard_web"
       ],
       "implemented_paths": [
-        "public_site/"
+        "site/dist/"
       ],
       "reserved_paths": [
         "/"
@@ -505,7 +505,7 @@
         "file_tree"
       ],
       "implemented_paths": [
-        "public_site/data/"
+        "site/dist/data/"
       ],
       "reserved_paths": [
         "/data/"
@@ -534,7 +534,7 @@
         "lite_html"
       ],
       "implemented_paths": [
-        "public_site/lite/"
+        "site/dist/lite/"
       ],
       "reserved_paths": [
         "/lite/"
@@ -563,7 +563,7 @@
         "text"
       ],
       "implemented_paths": [
-        "public_site/text/"
+        "site/dist/text/"
       ],
       "reserved_paths": [
         "/text/"
@@ -592,7 +592,7 @@
         "file_tree"
       ],
       "implemented_paths": [
-        "public_site/files/"
+        "site/dist/files/"
       ],
       "reserved_paths": [
         "/files/"
@@ -622,7 +622,7 @@
         "lite_html"
       ],
       "implemented_paths": [
-        "public_site/demo/"
+        "site/dist/demo/"
       ],
       "reserved_paths": [
         "/demo/"

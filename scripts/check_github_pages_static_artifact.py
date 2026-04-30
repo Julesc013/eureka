@@ -12,12 +12,13 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
-DEFAULT_SITE_DIR = REPO_ROOT / "public_site"
+DEFAULT_SITE_DIR = REPO_ROOT / "site/dist"
 DEPLOYMENT_TARGETS = REPO_ROOT / "control" / "inventory" / "publication" / "deployment_targets.json"
 WORKFLOW_PATH = REPO_ROOT / ".github" / "workflows" / "pages.yml"
+LEGACY_STATIC_ARTIFACT_NAME = "public" + "_site"
 
 REQUIRED_STATIC_FILES = {
-    "README.md",
+    ".nojekyll",
     "site_manifest.json",
     "index.html",
     "status.html",
@@ -27,7 +28,6 @@ REQUIRED_STATIC_FILES = {
     "limitations.html",
     "roadmap.html",
     "local-quickstart.html",
-    "assets/README.md",
     "assets/site.css",
     "data/build_manifest.json",
     "data/eval_summary.json",
@@ -131,10 +131,12 @@ class StaticLinkParser(HTMLParser):
 
 def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Check that public_site is safe to upload as a GitHub Pages artifact."
+        description="Check that site/dist is safe to upload as a GitHub Pages artifact."
     )
     parser.add_argument(
         "--site-dir",
+        "--path",
+        dest="site_dir",
         default=str(DEFAULT_SITE_DIR),
         help="Static artifact directory to check.",
     )
@@ -151,6 +153,7 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
 
 
 def check_github_pages_static_artifact(site_dir: Path = DEFAULT_SITE_DIR) -> dict[str, Any]:
+    site_dir = site_dir.resolve()
     errors: list[str] = []
     warnings: list[str] = []
 
@@ -158,10 +161,11 @@ def check_github_pages_static_artifact(site_dir: Path = DEFAULT_SITE_DIR) -> dic
     publication_report = _run_publication_inventory_validator(site_dir)
     _extend_prefixed_errors(errors, "static site validator", static_site_report)
     _extend_prefixed_errors(errors, "publication inventory validator", publication_report)
+    _validate_requested_artifact_path(site_dir, errors)
 
     existing_files: list[str] = []
     if not site_dir.is_dir():
-        errors.append(f"{_rel(site_dir)}: public_site artifact directory is missing.")
+        errors.append(f"{_rel(site_dir)}: site/dist artifact directory is missing.")
     else:
         for relative in sorted(REQUIRED_STATIC_FILES):
             path = site_dir / relative
@@ -176,6 +180,7 @@ def check_github_pages_static_artifact(site_dir: Path = DEFAULT_SITE_DIR) -> dic
 
     deployment_target = _load_github_pages_target(errors)
     _validate_github_pages_target(deployment_target, errors)
+    _validate_workflow_upload_path(errors)
 
     return {
         "status": "valid" if not errors else "invalid",
@@ -202,7 +207,7 @@ def _run_publication_inventory_validator(site_dir: Path) -> Mapping[str, Any]:
     from scripts.validate_publication_inventory import validate_publication_inventory
 
     inventory_dir = REPO_ROOT / "control" / "inventory" / "publication"
-    # The publication inventory governs the committed public_site artifact. For
+    # The publication inventory governs the committed site/dist artifact. For
     # temporary artifact copies used in checker tests, validate the committed
     # inventory against the committed artifact and validate the copy separately
     # with the artifact-specific checks below.
@@ -232,6 +237,11 @@ def _validate_artifact_tree(site_dir: Path, errors: list[str]) -> None:
             errors.append(f"{relative}: forbidden deployment/runtime file in Pages artifact.")
         if path.suffix.casefold() in FORBIDDEN_SUFFIXES:
             errors.append(f"{relative}: forbidden runtime or local-data suffix in Pages artifact.")
+
+
+def _validate_requested_artifact_path(site_dir: Path, errors: list[str]) -> None:
+    if LEGACY_STATIC_ARTIFACT_NAME in site_dir.as_posix().split("/"):
+        errors.append("legacy static artifact paths are not valid Pages upload artifacts.")
 
 
 def _validate_base_path_safe_links(site_dir: Path, errors: list[str]) -> None:
@@ -313,7 +323,7 @@ def _validate_github_pages_target(target: Mapping[str, Any], errors: list[str]) 
     expected = {
         "kind": "static",
         "status": "implemented",
-        "artifact_root": "public_site",
+        "artifact_root": "site/dist",
         "base_path": "/eureka/",
         "canonical_base_url": "https://julesc013.github.io/eureka/",
         "requires_base_path_safe_links": True,
@@ -327,6 +337,19 @@ def _validate_github_pages_target(target: Mapping[str, Any], errors: list[str]) 
     for key, value in expected.items():
         if target.get(key) != value:
             errors.append(f"deployment_targets.json: github_pages_project.{key} must be {value!r}.")
+
+
+def _validate_workflow_upload_path(errors: list[str]) -> None:
+    try:
+        text = WORKFLOW_PATH.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        errors.append(f"{_rel(WORKFLOW_PATH)}: workflow is missing.")
+        return
+    if "path: site/dist" not in text:
+        errors.append("pages.yml: upload-pages-artifact must upload site/dist.")
+    legacy_path_text = "path: " + LEGACY_STATIC_ARTIFACT_NAME
+    if legacy_path_text in text:
+        errors.append("pages.yml: upload-pages-artifact uses the retired static artifact.")
 
 
 def _is_external(target: str) -> bool:

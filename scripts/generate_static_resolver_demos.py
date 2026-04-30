@@ -11,7 +11,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-PUBLIC_SITE_ROOT = REPO_ROOT / "public_site"
+PUBLIC_SITE_ROOT = REPO_ROOT / "site/dist"
 DEFAULT_OUTPUT_ROOT = PUBLIC_SITE_ROOT
 DEFAULT_DATA_ROOT = PUBLIC_SITE_ROOT / "data"
 GOLDEN_ROOT = REPO_ROOT / "tests" / "parity" / "golden" / "python_oracle" / "v0"
@@ -60,7 +60,7 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
     parser.add_argument(
         "--data-root",
         default=None,
-        help="Directory containing public data summaries. Defaults to <output-root>/data when present, otherwise public_site/data.",
+        help="Directory containing public data summaries. Defaults to <output-root>/data when present, otherwise site/dist/data.",
     )
     parser.add_argument("--update", action="store_true", help="Write generated demo snapshots.")
     parser.add_argument("--check", action="store_true", help="Verify committed demo snapshots match generated output.")
@@ -334,7 +334,7 @@ def _build_demo_models(
             "Source Example: Fixture and Placeholder Honesty",
             "source-example.html",
             "Shows source coverage, capability metadata, and placeholder posture.",
-            ["public_site/data/source_summary.json"],
+            ["site/dist/data/source_summary.json"],
             [],
             [
                 _kv("Source count", str(source_summary.get("source_count"))),
@@ -353,7 +353,7 @@ def _build_demo_models(
             "Eval Summary Demo",
             "eval-summary.html",
             "Shows archive hard eval status, search usefulness counts, and pending manual baselines.",
-            ["public_site/data/eval_summary.json", "archive_resolution_evals/full_report.json"],
+            ["site/dist/data/eval_summary.json", "archive_resolution_evals/full_report.json"],
             [],
             [
                 _kv("Archive hard eval tasks", str(_mapping(eval_summary.get("archive_resolution")).get("task_count"))),
@@ -441,7 +441,7 @@ def _build_demo_manifest(demos: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
             "tests/parity/golden/python_oracle/v0/query_planner/*.json",
             "tests/parity/golden/python_oracle/v0/resolution_runs/*.json",
             "tests/parity/golden/python_oracle/v0/archive_resolution_evals/full_report.json",
-            "public_site/data/*.json",
+            "site/dist/data/*.json",
         ],
     }
 

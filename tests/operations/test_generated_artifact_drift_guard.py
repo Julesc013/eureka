@@ -20,7 +20,7 @@ REQUIRED_GROUPS = {
     "compatibility_surfaces",
     "static_resolver_demos",
     "static_snapshot_example",
-    "site_dist",
+    "static_site_dist",
     "python_oracle_goldens",
     "public_alpha_rehearsal_evidence",
     "publication_inventory",

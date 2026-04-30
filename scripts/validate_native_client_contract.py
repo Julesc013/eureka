@@ -18,7 +18,7 @@ SNAPSHOT_CONSUMER_CONTRACT = PUBLICATION_DIR / "snapshot_consumer_contract.json"
 SNAPSHOT_CONSUMER_PROFILES = PUBLICATION_DIR / "snapshot_consumer_profiles.json"
 RELAY_SURFACE = PUBLICATION_DIR / "relay_surface.json"
 CLI_ROOT = REPO_ROOT / "surfaces" / "native" / "cli"
-PUBLIC_DATA_ROOT = REPO_ROOT / "public_site" / "data"
+PUBLIC_DATA_ROOT = REPO_ROOT / "site/dist" / "data"
 SNAPSHOT_ROOT = REPO_ROOT / "snapshots" / "examples" / "static_snapshot_v0"
 
 REQUIRED_CONTRACT_FIELDS = {
@@ -180,8 +180,8 @@ def _validate_contract(payload: Any, repo_root: Path, errors: list[str]) -> set[
     for required_id in ("public_data_summaries", "snapshot_consumer_contract", "client_profile_contract"):
         if required_id not in input_ids:
             errors.append(f"native_client_contract.json: required_inputs missing {required_id}.")
-    if not (repo_root / "public_site" / "data").is_dir():
-        errors.append("public_site/data: required public data dependency is missing.")
+    if not (repo_root / "site/dist" / "data").is_dir():
+        errors.append("site/dist/data: required public data dependency is missing.")
     if not (repo_root / "snapshots" / "examples" / "static_snapshot_v0").is_dir():
         errors.append("snapshots/examples/static_snapshot_v0: snapshot seed dependency is missing.")
 

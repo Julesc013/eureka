@@ -14,7 +14,7 @@ POLICY = PUBLICATION_DIR / "action_policy.json"
 NATIVE_CONTRACT = PUBLICATION_DIR / "native_client_contract.json"
 SNAPSHOT_CONSUMER_CONTRACT = PUBLICATION_DIR / "snapshot_consumer_contract.json"
 RELAY_SURFACE = PUBLICATION_DIR / "relay_surface.json"
-PUBLIC_SITE_LIMITATIONS = REPO_ROOT / "public_site" / "limitations.html"
+PUBLIC_SITE_LIMITATIONS = REPO_ROOT / "site/dist" / "limitations.html"
 
 REQUIRED_FIELDS = {
     "schema_version",
@@ -356,18 +356,18 @@ def _validate_docs(repo_root: Path, errors: list[str]) -> None:
 
 
 def _validate_public_static_limitations(repo_root: Path, errors: list[str]) -> None:
-    path = repo_root / "public_site" / "limitations.html"
+    path = repo_root / "site/dist" / "limitations.html"
     try:
         text = path.read_text(encoding="utf-8").casefold()
     except FileNotFoundError:
-        errors.append("public_site/limitations.html: file is missing.")
+        errors.append("site/dist/limitations.html: file is missing.")
         return
     for phrase in ("no installer automation", "no", "download"):
         if phrase not in text:
-            errors.append(f"public_site/limitations.html: missing action-policy limitation phrase {phrase!r}.")
+            errors.append(f"site/dist/limitations.html: missing action-policy limitation phrase {phrase!r}.")
     for forbidden in ("app store workflow is available", "installer available", "downloads are enabled"):
         if forbidden in text:
-            errors.append(f"public_site/limitations.html: forbidden static-site claim {forbidden!r}.")
+            errors.append(f"site/dist/limitations.html: forbidden static-site claim {forbidden!r}.")
 
 
 def _risky_flags_enabled(defaults: Mapping[str, Any]) -> list[str]:

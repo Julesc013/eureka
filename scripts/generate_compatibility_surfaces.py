@@ -12,7 +12,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-PUBLIC_SITE_ROOT = REPO_ROOT / "public_site"
+PUBLIC_SITE_ROOT = REPO_ROOT / "site/dist"
 DEFAULT_OUTPUT_ROOT = PUBLIC_SITE_ROOT
 DEFAULT_DATA_ROOT = PUBLIC_SITE_ROOT / "data"
 
@@ -70,7 +70,7 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
     parser.add_argument(
         "--data-root",
         default=None,
-        help="Directory containing generated public data JSON. Defaults to <output-root>/data when present, otherwise public_site/data.",
+        help="Directory containing generated public data JSON. Defaults to <output-root>/data when present, otherwise site/dist/data.",
     )
     parser.add_argument("--update", action="store_true", help="Write generated surfaces.")
     parser.add_argument("--check", action="store_true", help="Verify committed surfaces match generated output.")
@@ -380,7 +380,7 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "README",
         [
             "Plain text static files for text browsers, terminals, screen readers, and simple automation.",
-            "These files are generated from public_site/data summaries.",
+            "These files are generated from site/dist/data summaries.",
             "No live search, live backend, live probes, external observations, or downloads are added.",
             "Compatibility Surface Strategy v0 guides future public snapshot routes, relay, and native clients; Signed Snapshot Format v0 adds only a repo seed snapshot example; Relay Surface Design v0 adds only future relay policy.",
         ],
@@ -404,8 +404,8 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
         "surface_id": "eureka-files-seed",
         "status": "static_demo",
         "stability": "stable_draft",
-        "artifact_root": "public_site",
-        "surface_root": "public_site/files",
+        "artifact_root": "site/dist",
+        "surface_root": "site/dist/files",
         "contains_live_backend": False,
         "contains_live_probes": False,
         "contains_live_data": False,
@@ -435,12 +435,12 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "global_observed_count": baselines.get("global_observed_count", 0),
         },
         "source_inputs": [
-            "public_site/data/site_manifest.json",
-            "public_site/data/page_registry.json",
-            "public_site/data/source_summary.json",
-            "public_site/data/eval_summary.json",
-            "public_site/data/route_summary.json",
-            "public_site/data/build_manifest.json",
+            "site/dist/data/site_manifest.json",
+            "site/dist/data/page_registry.json",
+            "site/dist/data/source_summary.json",
+            "site/dist/data/eval_summary.json",
+            "site/dist/data/route_summary.json",
+            "site/dist/data/build_manifest.json",
         ],
         "limitations": [
             "Static file-tree seed surface only.",
@@ -672,7 +672,7 @@ def _format_plain(report: Mapping[str, Any]) -> str:
     lines = [
         "Compatibility surface generation",
         f"status: {report['status']}",
-        f"output_root: {report.get('output_root', 'public_site')}",
+        f"output_root: {report.get('output_root', 'site/dist')}",
         f"surface_roots: {', '.join(report.get('surface_roots', []))}",
     ]
     if report.get("check_mode"):

@@ -14,7 +14,7 @@ reported all ten artifact groups as `passed`:
 - `compatibility_surfaces`
 - `static_resolver_demos`
 - `static_snapshot_example`
-- `site_dist`
+- `static_site_dist`
 - `python_oracle_goldens`
 - `public_alpha_rehearsal_evidence`
 - `publication_inventory`
@@ -24,4 +24,3 @@ reported all ten artifact groups as `passed`:
 This status is a local validation result only. It is not a deployment result,
 GitHub Actions result, production API guarantee, external observation, or
 production-readiness claim.
-

@@ -8,7 +8,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 
 
 class _ScriptParser(HTMLParser):

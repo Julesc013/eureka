@@ -55,8 +55,8 @@
         "live source calls",
         "engine internals"
       ],
-      "current_support_level": "current public_site static pages",
-      "notes": "The active profile for the current public_site artifact and static demo pages; Compatibility Surface Strategy v0 keeps this as one projection of the same resolver truth."
+      "current_support_level": "current site/dist static pages",
+      "notes": "The active profile for the current site/dist artifact and static demo pages; Compatibility Surface Strategy v0 keeps this as one projection of the same resolver truth."
     },
     {
       "id": "lite_html",
@@ -82,7 +82,7 @@
         "framework hydration",
         "root-only asset paths"
       ],
-      "current_support_level": "seed static surface under public_site/lite",
+      "current_support_level": "seed static surface under site/dist/lite",
       "notes": "Lite/Text/Files Seed Surfaces v0 implements simple no-JS/no-CSS HTML pages generated from public data summaries; Compatibility Surface Strategy v0 defines this as a seeded static projection, not a live app."
     },
     {
@@ -109,7 +109,7 @@
         "JavaScript-only navigation",
         "binary-only data"
       ],
-      "current_support_level": "seed static surface under public_site/text",
+      "current_support_level": "seed static surface under site/dist/text",
       "notes": "Lite/Text/Files Seed Surfaces v0 implements plain text files generated from public data summaries; Compatibility Surface Strategy v0 defines this as the text-browser and automation-friendly seed projection."
     },
     {
@@ -136,7 +136,7 @@
         "live backend calls",
         "mutable unversioned data"
       ],
-      "current_support_level": "seed static surface under public_site/files",
+      "current_support_level": "seed static surface under site/dist/files",
       "notes": "Lite/Text/Files Seed Surfaces v0 implements a static file-tree index, manifest, and SHA256SUMS without executable downloads; Compatibility Surface Strategy v0 keeps snapshots and mirrors future."
     },
     {

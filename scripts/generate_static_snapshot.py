@@ -13,7 +13,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_ROOT = REPO_ROOT / "snapshots" / "examples" / "static_snapshot_v0"
-DEFAULT_DATA_ROOT = REPO_ROOT / "public_site" / "data"
+DEFAULT_DATA_ROOT = REPO_ROOT / "site/dist" / "data"
 SNAPSHOT_CONTRACT = REPO_ROOT / "control" / "inventory" / "publication" / "snapshot_contract.json"
 
 SCHEMA_VERSION = "0.1.0"
@@ -210,11 +210,11 @@ def _build_manifest(
         "deployment_performed": False,
         "source_inputs": [
             "control/inventory/publication/snapshot_contract.json",
-            "public_site/data/source_summary.json",
-            "public_site/data/eval_summary.json",
-            "public_site/data/route_summary.json",
-            "public_site/data/page_registry.json",
-            "public_site/data/build_manifest.json",
+            "site/dist/data/source_summary.json",
+            "site/dist/data/eval_summary.json",
+            "site/dist/data/route_summary.json",
+            "site/dist/data/page_registry.json",
+            "site/dist/data/build_manifest.json",
         ],
         "validations_expected": [
             "python scripts/generate_static_snapshot.py --check",
@@ -265,8 +265,8 @@ def _snapshot_manifest(
             "public_pages": len(public_data["page_registry.json"].get("pages", [])),
         },
         "relationships": {
-            "public_site": "public_site remains the current GitHub Pages static artifact.",
-            "files_surface": "public_site/files references this seed format but does not publish production snapshots.",
+            "site/dist": "site/dist remains the current GitHub Pages static artifact.",
+            "files_surface": "site/dist/files references this seed format but does not publish production snapshots.",
             "live_backend": "Snapshots are static offline data and are not live backend routes.",
             "relay": "Relay Surface Design v0 records future relay policy; runtime consumption remains future/deferred.",
             "native_client": "Future native clients may consume snapshots after readiness prerequisites are met.",

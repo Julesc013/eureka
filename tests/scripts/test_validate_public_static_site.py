@@ -10,7 +10,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 VALIDATOR = REPO_ROOT / "scripts" / "validate_public_static_site.py"
-SITE_DIR = REPO_ROOT / "public_site"
+SITE_DIR = REPO_ROOT / "site/dist"
 
 
 class ValidatePublicStaticSiteScriptTest(unittest.TestCase):

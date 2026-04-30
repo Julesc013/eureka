@@ -14,7 +14,7 @@ POLICY = PUBLICATION_DIR / "local_cache_privacy_policy.json"
 NATIVE_CONTRACT = PUBLICATION_DIR / "native_client_contract.json"
 RELAY_SURFACE = PUBLICATION_DIR / "relay_surface.json"
 SNAPSHOT_CONSUMER = PUBLICATION_DIR / "snapshot_consumer_contract.json"
-PUBLIC_SITE_LIMITATIONS = REPO_ROOT / "public_site" / "limitations.html"
+PUBLIC_SITE_LIMITATIONS = REPO_ROOT / "site/dist" / "limitations.html"
 
 REQUIRED_FIELDS = {
     "schema_version",
@@ -124,7 +124,7 @@ def validate_local_cache_privacy_policy(repo_root: Path = REPO_ROOT) -> dict[str
     _validate_related_inventories(native, relay, snapshot, errors)
     _validate_docs(repo_root, errors)
     _validate_public_alpha_path_safety(repo_root, errors)
-    _validate_public_site_limitations(repo_root, errors)
+    _validate_static_site_limitations(repo_root, errors)
 
     return {
         "status": "valid" if not errors else "invalid",
@@ -291,15 +291,15 @@ def _validate_public_alpha_path_safety(repo_root: Path, errors: list[str]) -> No
             errors.append(f"PUBLIC_ALPHA_SAFE_MODE.md: missing path/privacy phrase {phrase!r}.")
 
 
-def _validate_public_site_limitations(repo_root: Path, errors: list[str]) -> None:
-    path = repo_root / "public_site" / "limitations.html"
+def _validate_static_site_limitations(repo_root: Path, errors: list[str]) -> None:
+    path = repo_root / "site/dist" / "limitations.html"
     if not path.is_file():
-        errors.append("public_site/limitations.html: missing.")
+        errors.append("site/dist/limitations.html: missing.")
         return
     text = path.read_text(encoding="utf-8")
     for pattern in FORBIDDEN_PUBLIC_SITE_PATTERNS:
         if pattern.search(text):
-            errors.append(f"public_site/limitations.html: forbidden positive claim {pattern.pattern!r}.")
+            errors.append(f"site/dist/limitations.html: forbidden positive claim {pattern.pattern!r}.")
 
 
 def _load_json(path: Path, repo_root: Path, errors: list[str]) -> Any:

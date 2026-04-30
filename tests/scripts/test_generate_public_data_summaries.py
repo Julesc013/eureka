@@ -11,7 +11,7 @@ import unittest
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = REPO_ROOT / "scripts" / "generate_public_data_summaries.py"
 SITE_BUILD = REPO_ROOT / "site" / "build.py"
-PUBLIC_DATA = REPO_ROOT / "public_site" / "data"
+PUBLIC_DATA = REPO_ROOT / "site/dist" / "data"
 SOURCE_DIR = REPO_ROOT / "control" / "inventory" / "sources"
 PUBLIC_DATA_CONTRACT = (
     REPO_ROOT / "control" / "inventory" / "publication" / "public_data_contract.json"

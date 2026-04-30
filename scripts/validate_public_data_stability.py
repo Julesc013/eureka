@@ -9,7 +9,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 AUDIT_DIR = REPO_ROOT / "control" / "audits" / "public-data-contract-stability-review-v0"
-PUBLIC_DATA_DIR = REPO_ROOT / "public_site" / "data"
+PUBLIC_DATA_DIR = REPO_ROOT / "site/dist" / "data"
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
 
 REPORT_NAME = "public_data_stability_report.json"

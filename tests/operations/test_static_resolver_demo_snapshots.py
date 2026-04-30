@@ -7,7 +7,7 @@ import unittest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
 DEMO_ROOT = PUBLIC_SITE / "demo"
 REQUIRED_DEMO_PAGES = {

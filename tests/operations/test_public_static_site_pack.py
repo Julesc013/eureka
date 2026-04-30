@@ -7,7 +7,7 @@ import unittest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SITE_DIR = REPO_ROOT / "public_site"
+SITE_DIR = REPO_ROOT / "site/dist"
 SOURCE_DIR = REPO_ROOT / "control" / "inventory" / "sources"
 REQUIRED_PAGES = {
     "index.html",
@@ -38,11 +38,11 @@ class _ScriptCounter(HTMLParser):
 
 
 class PublicStaticSitePackTest(unittest.TestCase):
-    def test_public_site_directory_and_manifest_exist(self) -> None:
+    def test_site_dist_directory_and_manifest_exist(self) -> None:
         self.assertTrue(SITE_DIR.is_dir())
         manifest = json.loads((SITE_DIR / "site_manifest.json").read_text(encoding="utf-8"))
 
-        self.assertEqual(manifest["site_pack_id"], "live_alpha_static_public_site_pack_v0")
+        self.assertEqual(manifest["site_pack_id"], "eureka_static_site_dist_v0")
         self.assertTrue(manifest["no_network_required"])
         self.assertTrue(manifest["no_deployment_performed"])
         self.assertEqual(set(manifest["pages"]), REQUIRED_PAGES)

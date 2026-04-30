@@ -32,7 +32,7 @@
     ],
     "status": "implemented_policy_only"
   },
-  "artifact_root": "public_site",
+  "artifact_root": "site/dist",
   "branch": "main",
   "built_at": "UNKNOWN_UNTIL_CI",
   "cloud_sync_implemented": false,

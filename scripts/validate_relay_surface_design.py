@@ -62,10 +62,10 @@ REQUIRED_DOCS = {
         "design, contract, inventory",
         "No relay runtime is implemented",
         "No network listeners",
-        "public_site/data/",
-        "public_site/lite/",
-        "public_site/text/",
-        "public_site/files/",
+        "site/dist/data/",
+        "site/dist/lite/",
+        "site/dist/text/",
+        "site/dist/files/",
         "snapshots/examples/static_snapshot_v0/",
     ],
     "docs/reference/RELAY_SURFACE_CONTRACT.md": [
@@ -212,10 +212,10 @@ def _validate_relay_inventory(payload: Any, errors: list[str]) -> set[str]:
 
     data_source_paths = {str(item.get("path")) for item in _mapping_list(payload.get("data_sources"))}
     for required_path in (
-        "public_site/data/",
-        "public_site/lite/",
-        "public_site/text/",
-        "public_site/files/",
+        "site/dist/data/",
+        "site/dist/lite/",
+        "site/dist/text/",
+        "site/dist/files/",
         "snapshots/examples/static_snapshot_v0/",
     ):
         if required_path not in data_source_paths:

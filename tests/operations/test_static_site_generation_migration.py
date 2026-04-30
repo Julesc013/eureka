@@ -8,7 +8,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SITE_ROOT = REPO_ROOT / "site"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 WORKFLOW = REPO_ROOT / ".github" / "workflows" / "pages.yml"
 SOURCE_DIR = REPO_ROOT / "control" / "inventory" / "sources"
 
@@ -85,7 +85,7 @@ class StaticSiteGenerationMigrationTest(unittest.TestCase):
         self.assertEqual(manifest["generated_by"], "site/build.py")
         self.assertEqual(manifest["source_root"], "site")
         self.assertEqual(manifest["artifact_root"], "site/dist")
-        self.assertEqual(manifest["deploy_artifact_current"], "public_site")
+        self.assertEqual(manifest["deploy_artifact_current"], "site/dist")
         self.assertFalse(manifest["generated_output_deployed"])
         self.assertTrue(manifest["no_deployment_performed"])
         self.assertTrue(manifest["no_network_required"])
@@ -94,12 +94,11 @@ class StaticSiteGenerationMigrationTest(unittest.TestCase):
         self.assertIn("/eureka/", manifest["base_path_targets"])
         self.assertIn("/", manifest["base_path_targets"])
 
-    def test_public_site_remains_deployment_artifact(self) -> None:
+    def test_site_dist_remains_deployment_artifact(self) -> None:
         self.assertTrue(PUBLIC_SITE.exists())
         self.assertTrue((PUBLIC_SITE / "site_manifest.json").exists())
         workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("path: public_site", workflow)
-        self.assertNotIn("path: site/dist", workflow)
+        self.assertIn("path: site/dist", workflow)
 
     def test_no_node_or_frontend_build_chain_was_added(self) -> None:
         forbidden = [

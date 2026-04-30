@@ -163,22 +163,22 @@
   ],
   "data_sources": [
     {
-      "path": "public_site/data/",
+      "path": "site/dist/data/",
       "status": "implemented_static_input",
       "contains_private_data": false
     },
     {
-      "path": "public_site/lite/",
+      "path": "site/dist/lite/",
       "status": "implemented_static_seed_input",
       "contains_private_data": false
     },
     {
-      "path": "public_site/text/",
+      "path": "site/dist/text/",
       "status": "implemented_static_seed_input",
       "contains_private_data": false
     },
     {
-      "path": "public_site/files/",
+      "path": "site/dist/files/",
       "status": "implemented_static_seed_input",
       "contains_private_data": false
     },

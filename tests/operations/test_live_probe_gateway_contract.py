@@ -9,7 +9,7 @@ from surfaces.web.server.public_alpha_config import load_public_alpha_wrapper_co
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 
 
 class LiveProbeGatewayContractTest(unittest.TestCase):

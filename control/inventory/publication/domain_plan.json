@@ -12,7 +12,7 @@
     "operator selects and records the intended domain in a later governed task",
     "domain ownership is verified in the hosting provider outside this repo",
     "DNS changes are reviewed outside this repo",
-    "static artifact validation passes for public_site",
+    "static artifact validation passes for site/dist",
     "publication inventory validation passes",
     "static host readiness validation passes",
     "root-relative internal link checks pass for /eureka/ and / portability",
@@ -49,7 +49,7 @@
     "This plan prepares host portability only.",
     "No real domain is configured by this plan.",
     "No DNS records are added by this plan.",
-    "No public_site/CNAME file is committed by this plan.",
+    "No site/dist/CNAME file is committed by this plan.",
     "No alternate static host project or provider config is added by this plan.",
     "The current GitHub Pages project target remains static-only and deployment-success-unverified."
   ]

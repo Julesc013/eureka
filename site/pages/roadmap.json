@@ -50,11 +50,11 @@
         },
         {
           "title": "GitHub Pages Deployment Enablement v0",
-          "text": "implemented as a static-only workflow and artifact check for publishing public_site; deployment success is unverified until GitHub Actions evidence exists."
+          "text": "implemented as a static-only workflow and artifact check for publishing site/dist; deployment success is unverified until GitHub Actions evidence exists."
         },
         {
           "title": "Static Site Generation Migration v0",
-          "text": "implemented as a stdlib-only generator that writes site/dist while public_site remains the deployable artifact."
+          "text": "implemented as a stdlib-only generator that writes site/dist while site/dist remains the deployable artifact."
         },
         {
           "title": "Generated Public Data Summaries v0",

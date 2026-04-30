@@ -11,7 +11,7 @@ DEPLOYMENT_TARGETS = (
     REPO_ROOT / "control" / "inventory" / "publication" / "deployment_targets.json"
 )
 DOC = REPO_ROOT / "docs" / "operations" / "GITHUB_PAGES_DEPLOYMENT.md"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 
 
 class GitHubPagesDeploymentEnablementTest(unittest.TestCase):
@@ -22,7 +22,7 @@ class GitHubPagesDeploymentEnablementTest(unittest.TestCase):
         self.assertIn("actions/configure-pages@", text)
         self.assertIn("actions/upload-pages-artifact@", text)
         self.assertIn("actions/deploy-pages@", text)
-        self.assertIn("path: public_site", text)
+        self.assertIn("path: site/dist", text)
         self.assertIn("python scripts/generate_public_data_summaries.py --check", text)
         self.assertIn("python scripts/validate_publication_inventory.py", text)
         self.assertIn("python scripts/validate_public_static_site.py", text)
@@ -70,7 +70,7 @@ class GitHubPagesDeploymentEnablementTest(unittest.TestCase):
 
         self.assertEqual(project["status"], "implemented")
         self.assertEqual(project["kind"], "static")
-        self.assertEqual(project["artifact_root"], "public_site")
+        self.assertEqual(project["artifact_root"], "site/dist")
         self.assertEqual(project["base_path"], "/eureka/")
         self.assertEqual(project["deployment_workflow_path"], ".github/workflows/pages.yml")
         self.assertTrue(project["workflow_configured"])
@@ -88,7 +88,7 @@ class GitHubPagesDeploymentEnablementTest(unittest.TestCase):
 
         for phrase in (
             "static only",
-            "public_site/",
+            "site/dist/",
             "does not host the python backend",
             "does not enable live probes",
             "not production",
@@ -127,7 +127,7 @@ class GitHubPagesDeploymentEnablementTest(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertFalse(path.exists())
 
-    def test_public_site_contains_no_runtime_or_secret_files(self) -> None:
+    def test_site_dist_contains_no_runtime_or_secret_files(self) -> None:
         forbidden_suffixes = {".py", ".pyc", ".pyo", ".sqlite", ".sqlite3", ".db"}
         forbidden_names = {".env", ".env.local", "package.json", "Dockerfile"}
         forbidden_dirs = {"runtime", "surfaces", "scripts", "control", "contracts", ".git"}

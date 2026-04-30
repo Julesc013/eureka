@@ -67,7 +67,7 @@ class NativeClientContractTestCase(unittest.TestCase):
         text = json.dumps(contract).casefold()
 
         self.assertIn("snapshot_consumer_contract", text)
-        self.assertIn("public_site/data/", text)
+        self.assertIn("site/dist/data/", text)
         self.assertIn("live_backend_dependency", text)
         self.assertIn("relay_dependency", text)
         self.assertIn("parity_only_unwired", text)

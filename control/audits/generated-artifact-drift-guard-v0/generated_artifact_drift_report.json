@@ -10,7 +10,7 @@
     "compatibility_surfaces",
     "static_resolver_demos",
     "static_snapshot_example",
-    "site_dist",
+    "static_site_dist",
     "python_oracle_goldens",
     "public_alpha_rehearsal_evidence",
     "publication_inventory",
@@ -38,7 +38,7 @@
     "Hybrid governance metadata must be edited deliberately and validated.",
     "Known volatile fields must be normalized or documented."
   ],
-  "next_recommended_milestone": "Snapshot Consumer Tooling Plan v0",
+  "next_recommended_milestone": "Static Artifact Promotion Review v0",
   "notes": [
     "The guard delegates to existing generators and validators.",
     "The guard does not mutate artifacts or add runtime behavior.",

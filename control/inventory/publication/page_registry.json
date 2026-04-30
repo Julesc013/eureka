@@ -1,14 +1,14 @@
 {
   "schema_version": "0.1.0",
   "registry_id": "eureka-public-page-registry",
-  "artifact_root": "public_site",
+  "artifact_root": "site/dist",
   "routes": [
     {
       "path": "/",
       "title": "Eureka Overview",
       "status": "implemented",
       "stability": "stable_draft",
-      "source_file": "public_site/index.html",
+      "source_file": "site/dist/index.html",
       "client_profiles": [
         "standard_web"
       ],
@@ -24,7 +24,7 @@
       "title": "Status",
       "status": "implemented",
       "stability": "stable_draft",
-      "source_file": "public_site/status.html",
+      "source_file": "site/dist/status.html",
       "client_profiles": [
         "standard_web"
       ],
@@ -40,7 +40,7 @@
       "title": "Sources",
       "status": "implemented",
       "stability": "stable_draft",
-      "source_file": "public_site/sources.html",
+      "source_file": "site/dist/sources.html",
       "client_profiles": [
         "standard_web"
       ],
@@ -56,7 +56,7 @@
       "title": "Evals",
       "status": "implemented",
       "stability": "stable_draft",
-      "source_file": "public_site/evals.html",
+      "source_file": "site/dist/evals.html",
       "client_profiles": [
         "standard_web"
       ],
@@ -72,7 +72,7 @@
       "title": "Demo Queries",
       "status": "implemented",
       "stability": "stable_draft",
-      "source_file": "public_site/demo-queries.html",
+      "source_file": "site/dist/demo-queries.html",
       "client_profiles": [
         "standard_web"
       ],
@@ -88,7 +88,7 @@
       "title": "Limitations",
       "status": "implemented",
       "stability": "stable_draft",
-      "source_file": "public_site/limitations.html",
+      "source_file": "site/dist/limitations.html",
       "client_profiles": [
         "standard_web"
       ],
@@ -104,7 +104,7 @@
       "title": "Roadmap",
       "status": "implemented",
       "stability": "stable_draft",
-      "source_file": "public_site/roadmap.html",
+      "source_file": "site/dist/roadmap.html",
       "client_profiles": [
         "standard_web"
       ],
@@ -120,7 +120,7 @@
       "title": "Local Quickstart",
       "status": "implemented",
       "stability": "stable_draft",
-      "source_file": "public_site/local-quickstart.html",
+      "source_file": "site/dist/local-quickstart.html",
       "client_profiles": [
         "standard_web"
       ],
@@ -169,7 +169,7 @@
       "title": "Lite HTML Surface",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/lite/index.html",
+      "source_file": "site/dist/lite/index.html",
       "client_profiles": [
         "lite_html"
       ],
@@ -185,7 +185,7 @@
       "title": "Lite Source Summary",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/lite/sources.html",
+      "source_file": "site/dist/lite/sources.html",
       "client_profiles": [
         "lite_html"
       ],
@@ -201,7 +201,7 @@
       "title": "Lite Eval Summary",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/lite/evals.html",
+      "source_file": "site/dist/lite/evals.html",
       "client_profiles": [
         "lite_html"
       ],
@@ -217,7 +217,7 @@
       "title": "Lite Demo Queries",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/lite/demo-queries.html",
+      "source_file": "site/dist/lite/demo-queries.html",
       "client_profiles": [
         "lite_html"
       ],
@@ -233,7 +233,7 @@
       "title": "Lite Limitations",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/lite/limitations.html",
+      "source_file": "site/dist/lite/limitations.html",
       "client_profiles": [
         "lite_html"
       ],
@@ -249,7 +249,7 @@
       "title": "Text Surface",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/text/index.txt",
+      "source_file": "site/dist/text/index.txt",
       "client_profiles": [
         "text"
       ],
@@ -265,7 +265,7 @@
       "title": "Text Source Summary",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/text/sources.txt",
+      "source_file": "site/dist/text/sources.txt",
       "client_profiles": [
         "text"
       ],
@@ -281,7 +281,7 @@
       "title": "Text Eval Summary",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/text/evals.txt",
+      "source_file": "site/dist/text/evals.txt",
       "client_profiles": [
         "text"
       ],
@@ -297,7 +297,7 @@
       "title": "Text Demo Queries",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/text/demo-queries.txt",
+      "source_file": "site/dist/text/demo-queries.txt",
       "client_profiles": [
         "text"
       ],
@@ -313,7 +313,7 @@
       "title": "Text Limitations",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/text/limitations.txt",
+      "source_file": "site/dist/text/limitations.txt",
       "client_profiles": [
         "text"
       ],
@@ -329,7 +329,7 @@
       "title": "File Tree Surface",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/files/index.html",
+      "source_file": "site/dist/files/index.html",
       "client_profiles": [
         "file_tree"
       ],
@@ -345,7 +345,7 @@
       "title": "File Tree Text Index",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/files/index.txt",
+      "source_file": "site/dist/files/index.txt",
       "client_profiles": [
         "file_tree",
         "text"
@@ -362,7 +362,7 @@
       "title": "File Tree Manifest",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/files/manifest.json",
+      "source_file": "site/dist/files/manifest.json",
       "client_profiles": [
         "file_tree",
         "snapshot",
@@ -380,7 +380,7 @@
       "title": "File Tree Checksums",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/files/SHA256SUMS",
+      "source_file": "site/dist/files/SHA256SUMS",
       "client_profiles": [
         "file_tree",
         "snapshot",
@@ -398,7 +398,7 @@
       "title": "Static Resolver Demo Snapshots",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/demo/index.html",
+      "source_file": "site/dist/demo/index.html",
       "client_profiles": [
         "standard_web",
         "lite_html"
@@ -417,7 +417,7 @@
       "title": "Static Demo: Windows 7 Apps Query Plan",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/demo/query-plan-windows-7-apps.html",
+      "source_file": "site/dist/demo/query-plan-windows-7-apps.html",
       "client_profiles": [
         "standard_web",
         "lite_html"
@@ -436,7 +436,7 @@
       "title": "Static Demo: Driver Member Result",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/demo/result-member-driver-inside-support-cd.html",
+      "source_file": "site/dist/demo/result-member-driver-inside-support-cd.html",
       "client_profiles": [
         "standard_web",
         "lite_html"
@@ -455,7 +455,7 @@
       "title": "Static Demo: Firefox XP Result",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/demo/result-firefox-xp.html",
+      "source_file": "site/dist/demo/result-firefox-xp.html",
       "client_profiles": [
         "standard_web",
         "lite_html"
@@ -474,7 +474,7 @@
       "title": "Static Demo: Article Scan Result",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/demo/result-article-scan.html",
+      "source_file": "site/dist/demo/result-article-scan.html",
       "client_profiles": [
         "standard_web",
         "lite_html"
@@ -493,7 +493,7 @@
       "title": "Static Demo: Absence Example",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/demo/absence-example.html",
+      "source_file": "site/dist/demo/absence-example.html",
       "client_profiles": [
         "standard_web",
         "lite_html"
@@ -512,7 +512,7 @@
       "title": "Static Demo: Comparison Example",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/demo/comparison-example.html",
+      "source_file": "site/dist/demo/comparison-example.html",
       "client_profiles": [
         "standard_web",
         "lite_html"
@@ -531,7 +531,7 @@
       "title": "Static Demo: Source Example",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/demo/source-example.html",
+      "source_file": "site/dist/demo/source-example.html",
       "client_profiles": [
         "standard_web",
         "lite_html"
@@ -550,7 +550,7 @@
       "title": "Static Demo: Eval Summary",
       "status": "static_demo",
       "stability": "stable_draft",
-      "source_file": "public_site/demo/eval-summary.html",
+      "source_file": "site/dist/demo/eval-summary.html",
       "client_profiles": [
         "standard_web",
         "lite_html"

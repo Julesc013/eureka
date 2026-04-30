@@ -49,9 +49,9 @@ class PublicAlphaWrapperDocsTest(unittest.TestCase):
 
     def test_static_site_mentions_wrapper_and_preserves_caveats(self) -> None:
         for path in [
-            "public_site/status.html",
-            "public_site/roadmap.html",
-            "public_site/limitations.html",
+            "site/dist/status.html",
+            "site/dist/roadmap.html",
+            "site/dist/limitations.html",
         ]:
             text = read_text(path).lower()
             self.assertIn("public-alpha wrapper", text, path)

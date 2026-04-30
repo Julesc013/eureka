@@ -11,7 +11,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = REPO_ROOT / "scripts" / "check_github_pages_static_artifact.py"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 
 
 class CheckGitHubPagesStaticArtifactScriptTest(unittest.TestCase):
@@ -31,13 +31,13 @@ class CheckGitHubPagesStaticArtifactScriptTest(unittest.TestCase):
         self.assertEqual(payload["status"], "valid")
         self.assertEqual(payload["errors"], [])
         self.assertEqual(payload["deployment_target"]["base_path"], "/eureka/")
-        self.assertEqual(payload["deployment_target"]["artifact_root"], "public_site")
+        self.assertEqual(payload["deployment_target"]["artifact_root"], "site/dist")
         self.assertTrue(payload["deployment_target"]["no_backend"])
         self.assertTrue(payload["deployment_target"]["no_live_probes"])
 
     def test_checker_rejects_runtime_source_inside_artifact(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
-            temp_site = Path(temp_dir) / "public_site"
+            temp_site = Path(temp_dir) / "site/dist"
             shutil.copytree(PUBLIC_SITE, temp_site)
             runtime_file = temp_site / "server.py"
             runtime_file.write_text("print('not static')\n", encoding="utf-8")
@@ -55,7 +55,7 @@ class CheckGitHubPagesStaticArtifactScriptTest(unittest.TestCase):
 
     def test_checker_rejects_root_relative_links(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
-            temp_site = Path(temp_dir) / "public_site"
+            temp_site = Path(temp_dir) / "site/dist"
             shutil.copytree(PUBLIC_SITE, temp_site)
             index = temp_site / "index.html"
             index.write_text(

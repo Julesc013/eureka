@@ -6,8 +6,8 @@ import unittest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-PUBLIC_DATA = REPO_ROOT / "public_site" / "data"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_DATA = REPO_ROOT / "site/dist" / "data"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 SITE_DIST = REPO_ROOT / "site" / "dist"
 WORKFLOW = REPO_ROOT / ".github" / "workflows" / "pages.yml"
 SOURCE_DIR = REPO_ROOT / "control" / "inventory" / "sources"
@@ -34,8 +34,8 @@ class GeneratedPublicDataSummariesTest(unittest.TestCase):
     def test_site_manifest_preserves_static_only_posture(self) -> None:
         manifest = json.loads((PUBLIC_DATA / "site_manifest.json").read_text(encoding="utf-8"))
 
-        self.assertEqual(manifest["artifact"], "public_site/data")
-        self.assertEqual(manifest["current_static_artifact"], "public_site")
+        self.assertEqual(manifest["artifact"], "site/dist/data")
+        self.assertEqual(manifest["current_static_artifact"], "site/dist")
         self.assertFalse(manifest["contains_live_backend"])
         self.assertFalse(manifest["contains_live_probes"])
         self.assertFalse(manifest["contains_external_observations"])
@@ -114,16 +114,15 @@ class GeneratedPublicDataSummariesTest(unittest.TestCase):
         self.assertFalse(manifest["contains_live_probes"])
         self.assertFalse(manifest["contains_external_observations"])
         self.assertFalse(manifest["deployment_performed"])
-        self.assertEqual(manifest["artifact_root"], "public_site")
+        self.assertEqual(manifest["artifact_root"], "site/dist")
 
-    def test_site_dist_contains_generated_public_data_but_pages_still_deploy_public_site(self) -> None:
+    def test_site_dist_contains_generated_public_data_and_pages_deploy_site_dist(self) -> None:
         for name in REQUIRED_DATA_FILES:
             with self.subTest(name=name):
                 self.assertTrue((SITE_DIST / "data" / name).exists())
 
         workflow = WORKFLOW.read_text(encoding="utf-8")
-        self.assertIn("path: public_site", workflow)
-        self.assertNotIn("path: site/dist", workflow)
+        self.assertIn("path: site/dist", workflow)
         self.assertTrue(PUBLIC_SITE.exists())
 
     def test_public_static_pages_link_to_selected_machine_readable_summaries(self) -> None:

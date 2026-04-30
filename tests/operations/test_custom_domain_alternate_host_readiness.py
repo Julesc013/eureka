@@ -8,7 +8,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 
 
 class _LinkParser(HTMLParser):
@@ -45,7 +45,7 @@ class CustomDomainAlternateHostReadinessTest(unittest.TestCase):
         project = targets["github_pages_project"]
         self.assertEqual(project["status"], "implemented")
         self.assertEqual(project["base_path"], "/eureka/")
-        self.assertEqual(project["artifact_root"], "public_site")
+        self.assertEqual(project["artifact_root"], "site/dist")
         self.assertFalse(project["backend_supported"])
         self.assertFalse(project["live_probes_supported"])
         self.assertFalse(project["deployment_success_claimed"])
@@ -77,7 +77,7 @@ class CustomDomainAlternateHostReadinessTest(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertFalse(path.exists())
 
-    def test_public_site_links_remain_relative(self) -> None:
+    def test_site_dist_links_remain_relative(self) -> None:
         for path in PUBLIC_SITE.rglob("*.html"):
             parser = _LinkParser()
             parser.feed(path.read_text(encoding="utf-8"))
@@ -94,7 +94,7 @@ class CustomDomainAlternateHostReadinessTest(unittest.TestCase):
         for phrase in (
             "no custom domain configured",
             "no dns changes",
-            "no `public_site/cname` file",
+            "no `site/dist/cname` file",
             "no backend hosting",
             "no live source probing",
             "/eureka/",

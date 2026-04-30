@@ -11,7 +11,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 
 CAPABILITIES_PATH = PUBLICATION_DIR / "surface_capabilities.json"
 ROUTE_MATRIX_PATH = PUBLICATION_DIR / "surface_route_matrix.json"
@@ -127,7 +127,7 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
 
 def validate_compatibility_surfaces(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
     publication_dir = repo_root / "control" / "inventory" / "publication"
-    public_site = repo_root / "public_site"
+    site_root = repo_root / "site" / "dist"
     errors: list[str] = []
     warnings: list[str] = []
 
@@ -138,9 +138,9 @@ def validate_compatibility_surfaces(repo_root: Path = REPO_ROOT) -> dict[str, An
     profile_ids = _validate_client_profiles(client_profiles, errors)
     capability_summary = _validate_capabilities(capabilities, profile_ids, repo_root, errors)
     route_summary = _validate_route_matrix(route_matrix, profile_ids, repo_root, errors)
-    _validate_static_surfaces(public_site, repo_root, errors)
+    _validate_static_surfaces(site_root, repo_root, errors)
     _validate_docs(repo_root, errors)
-    _validate_static_pages_claims(public_site, repo_root, errors)
+    _validate_static_pages_claims(site_root, repo_root, errors)
 
     return {
         "status": "valid" if not errors else "invalid",
@@ -305,7 +305,7 @@ def _validate_route_matrix(
     }
 
 
-def _validate_static_surfaces(public_site: Path, repo_root: Path, errors: list[str]) -> None:
+def _validate_static_surfaces(site_root: Path, repo_root: Path, errors: list[str]) -> None:
     for relative in (
         "lite/index.html",
         "text/index.txt",
@@ -314,9 +314,9 @@ def _validate_static_surfaces(public_site: Path, repo_root: Path, errors: list[s
         "data/site_manifest.json",
         "demo/index.html",
     ):
-        if not (public_site / relative).exists():
-            errors.append(f"public_site/{relative}: required compatibility surface artifact is missing.")
-    for html_path in sorted((public_site / "lite").glob("*.html")):
+        if not (site_root / relative).exists():
+            errors.append(f"site/dist/{relative}: required compatibility surface artifact is missing.")
+    for html_path in sorted((site_root / "lite").glob("*.html")):
         parser = LinkParser()
         parser.feed(html_path.read_text(encoding="utf-8"))
         if parser.script_count:
@@ -355,8 +355,8 @@ def _validate_docs(repo_root: Path, errors: list[str]) -> None:
                 errors.append(f"{relative}: missing phrase {phrase!r}.")
 
 
-def _validate_static_pages_claims(public_site: Path, repo_root: Path, errors: list[str]) -> None:
-    for path in sorted(public_site.rglob("*")):
+def _validate_static_pages_claims(site_root: Path, repo_root: Path, errors: list[str]) -> None:
+    for path in sorted(site_root.rglob("*")):
         if not path.is_file() or path.suffix.lower() not in {".html", ".txt", ".json"}:
             continue
         text = path.read_text(encoding="utf-8")

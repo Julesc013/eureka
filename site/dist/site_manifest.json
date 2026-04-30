@@ -17,7 +17,7 @@
     "files/"
   ],
   "custom_domain_readiness_source": "scripts/validate_static_host_readiness.py",
-  "deploy_artifact_current": "public_site",
+  "deploy_artifact_current": "site/dist",
   "deployment_status": "workflow_configured_deployment_unverified",
   "deployment_workflow_configured": true,
   "domain_plan_source": "control/inventory/publication/domain_plan.json",
@@ -71,6 +71,7 @@
   "local_cache_runtime_implemented": false,
   "malware_scanning_claimed": false,
   "next_milestone": "Native Client Project Readiness Review v0",
+  "next_repository_shape_milestone": "Static Artifact Promotion Review v0",
   "no_backend": true,
   "no_cname_file_committed": true,
   "no_custom_domain_configured": true,
@@ -123,7 +124,7 @@
     "placeholders remain placeholders"
   ],
   "rights_clearance_claimed": false,
-  "site_pack_id": "live_alpha_static_public_site_pack_v0",
+  "site_pack_id": "eureka_static_site_dist_v0",
   "snapshot_contract_source": "control/inventory/publication/snapshot_contract.json",
   "snapshot_public_route_enabled": false,
   "snapshot_seed_example_root": "snapshots/examples/static_snapshot_v0",

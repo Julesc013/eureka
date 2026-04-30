@@ -8,7 +8,7 @@ import unittest
 REPO_ROOT = Path(__file__).resolve().parents[2]
 AUDIT_DIR = REPO_ROOT / "control" / "audits" / "public-data-contract-stability-review-v0"
 REPORT = AUDIT_DIR / "public_data_stability_report.json"
-PUBLIC_DATA = REPO_ROOT / "public_site" / "data"
+PUBLIC_DATA = REPO_ROOT / "site/dist" / "data"
 PUBLIC_DATA_CONTRACT = (
     REPO_ROOT / "control" / "inventory" / "publication" / "public_data_contract.json"
 )

@@ -46,7 +46,7 @@ class ValidateStaticHostReadinessScriptTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_root = Path(temp_dir) / "eureka"
             shutil.copytree(REPO_ROOT, temp_root, ignore=shutil.ignore_patterns(".git"))
-            cname = temp_root / "public_site" / "CNAME"
+            cname = temp_root / "site/dist" / "CNAME"
             cname.write_text("example.org\n", encoding="utf-8")
 
             completed = subprocess.run(
@@ -64,7 +64,7 @@ class ValidateStaticHostReadinessScriptTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_root = Path(temp_dir) / "eureka"
             shutil.copytree(REPO_ROOT, temp_root, ignore=shutil.ignore_patterns(".git"))
-            index = temp_root / "public_site" / "index.html"
+            index = temp_root / "site/dist" / "index.html"
             index.write_text(
                 index.read_text(encoding="utf-8").replace(
                     'href="status.html"',

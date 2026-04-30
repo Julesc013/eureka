@@ -29,9 +29,9 @@ REQUIRED_FILES = {
 }
 
 REQUIRED_ALLOWED_INPUTS = {
-    "public_site/data/*.json",
-    "public_site/text/*",
-    "public_site/files/*",
+    "site/dist/data/*.json",
+    "site/dist/text/*",
+    "site/dist/files/*",
     "snapshots/examples/static_snapshot_v0/*",
     "generated public data summaries",
     "static snapshot manifests and checksums",
@@ -265,7 +265,7 @@ def _validate_markdown(plan_dir: Path, errors: list[str]) -> None:
             "no private file roots",
         ],
         "INPUT_DATA_CONTRACT.md": [
-            "public_site/data/*.json",
+            "site/dist/data/*.json",
             "arbitrary user directories",
             "external URLs",
         ],

@@ -9,7 +9,7 @@
   "required_inputs": [
     {
       "id": "public_data_summaries",
-      "path": "public_site/data/",
+      "path": "site/dist/data/",
       "status": "implemented_static_input",
       "required_for_minimum_client": true
     },
@@ -145,7 +145,7 @@
     "production_signing_required_before_authenticity_claims": true
   },
   "public_data_dependency": {
-    "path": "public_site/data/",
+    "path": "site/dist/data/",
     "status": "implemented_static_summaries",
     "stable_production_api": false,
     "notes": "Native clients may read static public data summaries, but must not treat them as a live production API."

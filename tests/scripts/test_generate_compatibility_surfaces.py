@@ -11,7 +11,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = REPO_ROOT / "scripts" / "generate_compatibility_surfaces.py"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 REQUIRED_FILES = {
     "lite/index.html",
     "lite/sources.html",
@@ -64,7 +64,7 @@ class GenerateCompatibilitySurfacesScriptTest(unittest.TestCase):
 
     def test_build_to_temp_output_produces_surfaces(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
-            output = Path(temp_dir) / "public_site"
+            output = Path(temp_dir) / "site/dist"
             data = output / "data"
             data.mkdir(parents=True)
             for path in (PUBLIC_SITE / "data").glob("*.json"):

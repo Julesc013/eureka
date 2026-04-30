@@ -36,7 +36,7 @@
     {
       "id": "text_snapshot_consumer",
       "status": "design_only",
-      "current_implementation_status": "public_site/text exists as a seed surface, not as snapshot consumer runtime",
+      "current_implementation_status": "site/dist/text exists as a seed surface, not as snapshot consumer runtime",
       "required_files": [
         "README_FIRST.txt",
         "SNAPSHOT_MANIFEST.json",
@@ -62,7 +62,7 @@
     {
       "id": "lite_html_snapshot_consumer",
       "status": "design_only",
-      "current_implementation_status": "public_site/lite exists as a seed surface, not as snapshot consumer runtime",
+      "current_implementation_status": "site/dist/lite exists as a seed surface, not as snapshot consumer runtime",
       "required_files": [
         "README_FIRST.txt",
         "SNAPSHOT_MANIFEST.json",

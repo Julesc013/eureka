@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: Validate and deploy public_site
+    name: Validate and deploy site/dist
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -31,17 +31,29 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Build static site
+        run: python site/build.py
+
       - name: Check generated public data summaries
         run: python scripts/generate_public_data_summaries.py --check
+
+      - name: Check compatibility surfaces
+        run: python scripts/generate_compatibility_surfaces.py --check
+
+      - name: Check static resolver demos
+        run: python scripts/generate_static_resolver_demos.py --check
 
       - name: Validate publication inventory
         run: python scripts/validate_publication_inventory.py
 
       - name: Validate static public site
-        run: python scripts/validate_public_static_site.py
+        run: python site/validate.py
 
       - name: Check GitHub Pages static artifact
-        run: python scripts/check_github_pages_static_artifact.py
+        run: python scripts/check_github_pages_static_artifact.py --path site/dist
+
+      - name: Check static site generated artifact drift
+        run: python scripts/check_generated_artifact_drift.py --artifact static_site_dist
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -49,7 +61,7 @@ jobs:
       - name: Upload static public site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public_site
+          path: site/dist
 
       - name: Deploy static public site to GitHub Pages
         id: deployment

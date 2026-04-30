@@ -7,7 +7,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 REQUIRED_JSON_FILES = {
     "action_policy.json",
     "local_cache_privacy_policy.json",
@@ -126,7 +126,7 @@ class PublicationInventoryTest(unittest.TestCase):
         self.assertEqual(contract["contract_id"], "eureka-publication-plane")
         self.assertEqual(contract["status"], "draft")
         self.assertEqual(contract["stability"], "pre_alpha")
-        self.assertEqual(contract["current_static_artifact"], "public_site")
+        self.assertEqual(contract["current_static_artifact"], "site/dist")
         self.assertEqual(contract["future_generator_root"], "site")
         self.assertEqual(contract["future_generated_artifact"], "site/dist")
         self.assertEqual(contract["generator_status"], "implemented")
@@ -144,7 +144,7 @@ class PublicationInventoryTest(unittest.TestCase):
             contract["local_cache_privacy_policy"],
             "control/inventory/publication/local_cache_privacy_policy.json",
         )
-        self.assertEqual(contract["deploy_artifact_current"], "public_site")
+        self.assertEqual(contract["deploy_artifact_current"], "site/dist")
         self.assertEqual(contract["base_path_policy"], "deployment_target_defined")
         self.assertTrue(contract["no_live_backend"])
         self.assertTrue(contract["no_deployment_performed"])
@@ -162,7 +162,7 @@ class PublicationInventoryTest(unittest.TestCase):
             REQUIRED_STABILITY_VALUES.issubset(ids(contract["route_stability_levels"]))
         )
 
-    def test_page_registry_covers_current_public_site_html_pages(self) -> None:
+    def test_page_registry_covers_current_site_dist_html_pages(self) -> None:
         registry = load_json("page_registry.json")
         routes = registry["routes"]
         source_files = {
@@ -219,7 +219,7 @@ class PublicationInventoryTest(unittest.TestCase):
         self.assertTrue(REQUIRED_CLIENT_PROFILES.issubset(profiles))
         self.assertEqual(
             profiles["standard_web"]["current_support_level"],
-            "current public_site static pages",
+            "current site/dist static pages",
         )
         self.assertIn("/data/", profiles["api_client"]["intended_path_prefixes"])
         self.assertEqual(profiles["lite_html"]["status"], "static_demo")
@@ -234,7 +234,7 @@ class PublicationInventoryTest(unittest.TestCase):
         project = targets["github_pages_project"]
         self.assertEqual(project["kind"], "static")
         self.assertEqual(project["status"], "implemented")
-        self.assertEqual(project["artifact_root"], "public_site")
+        self.assertEqual(project["artifact_root"], "site/dist")
         self.assertEqual(project["generated_artifact_root"], "site/dist")
         self.assertFalse(project["generated_artifact_deployed"])
         self.assertEqual(project["base_path"], "/eureka/")
@@ -437,7 +437,7 @@ class PublicationInventoryTest(unittest.TestCase):
             "render.yaml",
             "wrangler.toml",
             "CNAME",
-            "public_site/CNAME",
+            "site/dist/CNAME",
         ]
         for relative in forbidden_paths:
             with self.subTest(relative=relative):

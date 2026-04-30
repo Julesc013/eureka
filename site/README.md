@@ -34,7 +34,7 @@ Current boundary:
   keys, production signatures, executable downloads, a public `/snapshots/`
   route, relay behavior, native-client runtime, live backend behavior, or live
   probes.
-- `public_site/` remains the GitHub Pages deployment artifact for this
+- `site/dist/` remains the GitHub Pages deployment artifact for this
   milestone.
 
 The generator uses only Python standard library modules. It does not use
@@ -67,8 +67,9 @@ Generated output is no-JS static HTML with relative links so it can work under
 the GitHub Pages project base path `/eureka/` and a future custom-domain root
 path `/`.
 
-`site/build.py --output public_site` is intentionally refused in this milestone
-so generated output cannot replace the deployable artifact by accident.
+`site/build.py` writes the canonical generated static artifact to
+`site/dist/`. The generator still refuses the retired legacy static artifact
+path so active publication cannot split across two deployment roots again.
 
 Generated public data and compatibility surfaces remain static only. They do
 not create a live API, enable live probes, record external observations, add
@@ -82,5 +83,5 @@ Wayback, GitHub, package registries, or any external source. Compatibility
 surface strategy is likewise contract-only in this tree: snapshots, relay
 services, native app projects, and live API surfaces remain future/deferred.
 Signed Snapshot Format v0 is a separate static export contract and seed
-example outside `public_site/`; generated site output does not publish a public
+example outside `site/dist/`; generated site output does not publish a public
 `/snapshots/` route or production signed snapshots.

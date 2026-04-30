@@ -118,7 +118,7 @@ class ValidateLiveProbeGatewayScriptTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_root = Path(temp_dir) / "eureka"
             shutil.copytree(REPO_ROOT, temp_root, ignore=shutil.ignore_patterns(".git"))
-            status = temp_root / "public_site" / "status.html"
+            status = temp_root / "site/dist" / "status.html"
             status.write_text(
                 status.read_text(encoding="utf-8").replace(
                     "</main>",

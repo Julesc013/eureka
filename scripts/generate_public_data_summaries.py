@@ -10,8 +10,8 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT_ROOT = REPO_ROOT / "public_site" / "data"
-PUBLIC_SITE_ROOT = REPO_ROOT / "public_site"
+DEFAULT_OUTPUT_ROOT = REPO_ROOT / "site/dist" / "data"
+PUBLIC_SITE_ROOT = REPO_ROOT / "site/dist"
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
 SOURCE_INVENTORY_DIR = REPO_ROOT / "control" / "inventory" / "sources"
 PUBLIC_ALPHA_ROUTES = REPO_ROOT / "control" / "inventory" / "public_alpha_routes.json"
@@ -291,8 +291,8 @@ def _build_data_site_manifest(
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_by": GENERATED_BY,
-        "artifact": "public_site/data",
-        "current_static_artifact": publication_contract.get("current_static_artifact", "public_site"),
+        "artifact": "site/dist/data",
+        "current_static_artifact": publication_contract.get("current_static_artifact", "site/dist"),
         "publication_contract_id": publication_contract.get("contract_id"),
         "publication_contract_version": publication_contract.get("schema_version"),
         "pages": page_registry_summary.get("pages", []),
@@ -710,7 +710,7 @@ def _build_build_manifest(
         "telemetry_implemented": False,
         "accounts_implemented": False,
         "cloud_sync_implemented": False,
-        "artifact_root": "public_site",
+        "artifact_root": "site/dist",
         "data_files": sorted(data_files),
         "action_policy": {
             "status": "implemented_policy_only",

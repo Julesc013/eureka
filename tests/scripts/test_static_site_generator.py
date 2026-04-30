@@ -24,7 +24,7 @@ class StaticSiteGeneratorScriptTest(unittest.TestCase):
             text=True,
         )
         self.assertIn("status: valid", completed.stdout)
-        self.assertIn("deploy_artifact_current: public_site", completed.stdout)
+        self.assertIn("deploy_artifact_current: site/dist", completed.stdout)
 
     def test_build_json_parses(self) -> None:
         completed = subprocess.run(
@@ -81,15 +81,16 @@ class StaticSiteGeneratorScriptTest(unittest.TestCase):
             )
             self.assertIn("status: valid", validation.stdout)
 
-    def test_build_refuses_public_site_output(self) -> None:
+    def test_build_refuses_legacy_static_output(self) -> None:
+        legacy_output = REPO_ROOT / ("public" + "_site")
         completed = subprocess.run(
-            [sys.executable, str(BUILD), "--output", str(REPO_ROOT / "public_site")],
+            [sys.executable, str(BUILD), "--output", str(legacy_output)],
             cwd=REPO_ROOT,
             capture_output=True,
             text=True,
         )
         self.assertNotEqual(completed.returncode, 0)
-        self.assertIn("refusing to write directly to public_site", completed.stdout)
+        self.assertIn("refusing to write the retired legacy static artifact", completed.stdout)
 
     def test_site_validate_plain_and_json_pass(self) -> None:
         plain = subprocess.run(

@@ -22,11 +22,11 @@
   "source": "signed_snapshot_format_v0",
   "source_inputs": [
     "control/inventory/publication/snapshot_contract.json",
-    "public_site/data/source_summary.json",
-    "public_site/data/eval_summary.json",
-    "public_site/data/route_summary.json",
-    "public_site/data/page_registry.json",
-    "public_site/data/build_manifest.json"
+    "site/dist/data/source_summary.json",
+    "site/dist/data/eval_summary.json",
+    "site/dist/data/route_summary.json",
+    "site/dist/data/page_registry.json",
+    "site/dist/data/build_manifest.json"
   ],
   "validations_expected": [
     "python scripts/generate_static_snapshot.py --check",

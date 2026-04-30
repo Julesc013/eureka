@@ -52,11 +52,11 @@
   ],
   "real_signing_keys_present": false,
   "relationships": {
-    "files_surface": "public_site/files references this seed format but does not publish production snapshots.",
+    "files_surface": "site/dist/files references this seed format but does not publish production snapshots.",
     "live_backend": "Snapshots are static offline data and are not live backend routes.",
     "native_client": "Future native clients may consume snapshots after readiness prerequisites are met.",
-    "public_site": "public_site remains the current GitHub Pages static artifact.",
-    "relay": "Relay Surface Design v0 records future relay policy; runtime consumption remains future/deferred."
+    "relay": "Relay Surface Design v0 records future relay policy; runtime consumption remains future/deferred.",
+    "site/dist": "site/dist remains the current GitHub Pages static artifact."
   },
   "required_files": [
     "SNAPSHOT_MANIFEST.json",

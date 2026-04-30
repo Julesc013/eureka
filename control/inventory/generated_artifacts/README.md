@@ -7,6 +7,11 @@ oracle goldens, public-alpha rehearsal evidence, publication inventories, test
 registry metadata, and AIDE metadata can be checked without changing product
 runtime behavior.
 
+Repository Shape Consolidation v0 records `static_site_dist` as the current
+generated static deployment artifact group. Its artifact path is `site/dist/`,
+manual edits are disallowed, and GitHub Pages workflow checks consume that
+path directly.
+
 The guard is validation-only. It delegates to existing generator `--check`
 commands, validators, and governance tests. It does not run update commands,
 regenerate committed outputs, call external services, open network sockets,
@@ -18,4 +23,3 @@ Files:
   check commands, validators, volatility notes, and committed-output policy.
 - `drift_policy.json` defines drift classes, allowed skips, unavailable-tool
   handling, Cargo handling, and the no-network rule.
-

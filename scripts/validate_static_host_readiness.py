@@ -11,7 +11,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 
 DOMAIN_PLAN = PUBLICATION_DIR / "domain_plan.json"
 STATIC_HOSTING_TARGETS = PUBLICATION_DIR / "static_hosting_targets.json"
@@ -22,7 +22,7 @@ BASE_PATH_DOC = REPO_ROOT / "docs" / "reference" / "BASE_PATH_PORTABILITY.md"
 
 COMMON_PROVIDER_CONFIG_PATHS = (
     "CNAME",
-    "public_site/CNAME",
+    "site/dist/CNAME",
     ".cloudflare",
     ".vercel",
     "wrangler.toml",
@@ -82,7 +82,7 @@ def validate_static_host_readiness(repo_root: Path = REPO_ROOT) -> dict[str, Any
     warnings: list[str] = []
 
     publication_dir = repo_root / "control" / "inventory" / "publication"
-    public_site = repo_root / "public_site"
+    site_root = repo_root / "site" / "dist"
     domain_plan = _load_json(publication_dir / "domain_plan.json", repo_root, errors)
     static_targets = _load_json(publication_dir / "static_hosting_targets.json", repo_root, errors)
     deployment_targets = _load_json(publication_dir / "deployment_targets.json", repo_root, errors)
@@ -91,7 +91,7 @@ def validate_static_host_readiness(repo_root: Path = REPO_ROOT) -> dict[str, Any
     target_summary = _validate_static_hosting_targets(static_targets, errors)
     _validate_deployment_targets(deployment_targets, errors)
     provider_paths = _validate_no_provider_config(repo_root, errors)
-    root_relative_links = _validate_no_root_relative_links(public_site, repo_root, errors)
+    root_relative_links = _validate_no_root_relative_links(site_root, repo_root, errors)
     _validate_docs(repo_root, errors)
     _validate_prohibited_claims(repo_root, errors)
 
@@ -185,7 +185,7 @@ def _validate_static_hosting_targets(payload: Any, errors: list[str]) -> dict[st
             "status": "implemented",
             "kind": "static",
             "base_path": "/eureka/",
-            "artifact_root": "public_site",
+            "artifact_root": "site/dist",
             "workflow_configured": True,
             "deployment_success_claimed": False,
             "backend_supported": False,
@@ -201,7 +201,7 @@ def _validate_static_hosting_targets(payload: Any, errors: list[str]) -> dict[st
             "status": "future",
             "kind": "static",
             "base_path": "/",
-            "artifact_root": "public_site",
+            "artifact_root": "site/dist",
             "requires_domain_verification": True,
             "requires_cname_or_pages_settings": True,
             "dns_config_not_in_repo": True,
@@ -249,8 +249,8 @@ def _validate_deployment_targets(payload: Any, errors: list[str]) -> None:
     else:
         if project.get("base_path") != "/eureka/":
             errors.append("deployment_targets.json: github_pages_project.base_path must be /eureka/.")
-        if project.get("artifact_root") != "public_site":
-            errors.append("deployment_targets.json: github_pages_project.artifact_root must be public_site.")
+        if project.get("artifact_root") != "site/dist":
+            errors.append("deployment_targets.json: github_pages_project.artifact_root must be site/dist.")
         if project.get("no_backend") is not True:
             errors.append("deployment_targets.json: github_pages_project.no_backend must be true.")
         if project.get("no_live_probes") is not True:
@@ -280,13 +280,13 @@ def _validate_no_provider_config(repo_root: Path, errors: list[str]) -> list[str
 
 
 def _validate_no_root_relative_links(
-    public_site: Path, repo_root: Path, errors: list[str]
+    site_root: Path, repo_root: Path, errors: list[str]
 ) -> list[str]:
     hits: list[str] = []
-    if not public_site.exists():
-        errors.append("public_site: static artifact directory is missing.")
+    if not site_root.exists():
+        errors.append("site/dist: static artifact directory is missing.")
         return hits
-    for path in sorted(public_site.rglob("*.html")):
+    for path in sorted(site_root.rglob("*.html")):
         parser = LinkParser()
         parser.feed(path.read_text(encoding="utf-8"))
         for attr, value in parser.references:
@@ -349,9 +349,9 @@ def _validate_prohibited_claims(repo_root: Path, errors: list[str]) -> None:
         repo_root / "docs" / "operations" / "CUSTOM_DOMAIN_AND_ALTERNATE_HOST_READINESS.md",
         repo_root / "docs" / "operations" / "CUSTOM_DOMAIN_OPERATOR_CHECKLIST.md",
         repo_root / "docs" / "reference" / "BASE_PATH_PORTABILITY.md",
-        repo_root / "public_site" / "status.html",
-        repo_root / "public_site" / "limitations.html",
-        repo_root / "public_site" / "roadmap.html",
+        repo_root / "site/dist" / "status.html",
+        repo_root / "site/dist" / "limitations.html",
+        repo_root / "site/dist" / "roadmap.html",
     ]
     for path in checked_paths:
         if not path.exists():

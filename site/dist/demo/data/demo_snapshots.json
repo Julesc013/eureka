@@ -165,7 +165,7 @@
       "page": "/demo/source-example.html",
       "related_query_ids": [],
       "source_data": [
-        "public_site/data/source_summary.json"
+        "site/dist/data/source_summary.json"
       ],
       "stability": "stable_draft",
       "status": "static_demo",
@@ -187,7 +187,7 @@
       "page": "/demo/eval-summary.html",
       "related_query_ids": [],
       "source_data": [
-        "public_site/data/eval_summary.json",
+        "site/dist/data/eval_summary.json",
         "archive_resolution_evals/full_report.json"
       ],
       "stability": "stable_draft",
@@ -204,6 +204,6 @@
     "tests/parity/golden/python_oracle/v0/query_planner/*.json",
     "tests/parity/golden/python_oracle/v0/resolution_runs/*.json",
     "tests/parity/golden/python_oracle/v0/archive_resolution_evals/full_report.json",
-    "public_site/data/*.json"
+    "site/dist/data/*.json"
   ]
 }

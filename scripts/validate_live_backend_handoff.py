@@ -11,7 +11,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
-PUBLIC_SITE = REPO_ROOT / "public_site"
+PUBLIC_SITE = REPO_ROOT / "site/dist"
 
 HANDOFF_PATH = PUBLICATION_DIR / "live_backend_handoff.json"
 ROUTES_PATH = PUBLICATION_DIR / "live_backend_routes.json"
@@ -124,7 +124,7 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
 
 def validate_live_backend_handoff(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
     publication_dir = repo_root / "control" / "inventory" / "publication"
-    public_site = repo_root / "public_site"
+    site_root = repo_root / "site" / "dist"
     errors: list[str] = []
     warnings: list[str] = []
 
@@ -135,7 +135,7 @@ def validate_live_backend_handoff(repo_root: Path = REPO_ROOT) -> dict[str, Any]
     _validate_handoff(handoff, errors)
     route_summary = _validate_routes(routes, errors)
     capability_summary = _validate_capabilities(capabilities, errors)
-    api_v1_links = _validate_static_pages(public_site, repo_root, errors)
+    api_v1_links = _validate_static_pages(site_root, repo_root, errors)
     _validate_docs(repo_root, errors)
     _validate_no_backend_deployment_config(repo_root, errors)
 
@@ -316,12 +316,12 @@ def _validate_capabilities(payload: Any, errors: list[str]) -> dict[str, Any]:
     return {"disabled_live_capabilities": sorted(disabled)}
 
 
-def _validate_static_pages(public_site: Path, repo_root: Path, errors: list[str]) -> list[str]:
+def _validate_static_pages(site_root: Path, repo_root: Path, errors: list[str]) -> list[str]:
     hits: list[str] = []
-    if not public_site.exists():
-        errors.append("public_site: static artifact is missing.")
+    if not site_root.exists():
+        errors.append("site/dist: static artifact is missing.")
         return hits
-    for path in sorted(public_site.rglob("*")):
+    for path in sorted(site_root.rglob("*")):
         if not path.is_file() or path.suffix.lower() not in {".html", ".txt", ".json"}:
             continue
         text = path.read_text(encoding="utf-8")

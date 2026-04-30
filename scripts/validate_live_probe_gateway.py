@@ -11,7 +11,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
-PUBLIC_SITE_DIR = REPO_ROOT / "public_site"
+PUBLIC_SITE_DIR = REPO_ROOT / "site/dist"
 
 REQUIRED_CANDIDATE_SOURCES = {
     "internet_archive_metadata",
@@ -94,7 +94,7 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
 
 def validate_live_probe_gateway(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
     publication_dir = repo_root / "control" / "inventory" / "publication"
-    public_site = repo_root / "public_site"
+    site_root = repo_root / "site" / "dist"
     errors: list[str] = []
     warnings: list[str] = []
 
@@ -108,7 +108,7 @@ def validate_live_probe_gateway(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
     _validate_live_backend_handoff(handoff, errors)
     _validate_live_backend_routes(routes, errors)
     wrapper_report = _validate_public_alpha_wrapper(repo_root, errors)
-    static_hits = _validate_static_pages(public_site, repo_root, errors)
+    static_hits = _validate_static_pages(site_root, repo_root, errors)
     _validate_docs(repo_root, errors)
 
     return {
@@ -361,12 +361,12 @@ def _validate_public_alpha_wrapper(repo_root: Path, errors: list[str]) -> dict[s
     return summary
 
 
-def _validate_static_pages(public_site: Path, repo_root: Path, errors: list[str]) -> list[str]:
+def _validate_static_pages(site_root: Path, repo_root: Path, errors: list[str]) -> list[str]:
     hits: list[str] = []
-    if not public_site.exists():
-        errors.append("public_site: static artifact is missing.")
+    if not site_root.exists():
+        errors.append("site/dist: static artifact is missing.")
         return hits
-    for path in sorted(public_site.rglob("*")):
+    for path in sorted(site_root.rglob("*")):
         if not path.is_file() or path.suffix.lower() not in {".html", ".txt", ".json"}:
             continue
         text = path.read_text(encoding="utf-8")
