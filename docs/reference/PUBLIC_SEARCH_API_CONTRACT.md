@@ -152,11 +152,12 @@ New optional fields are non-breaking only when old clients can ignore them.
 ## Runtime Preconditions
 
 Before any runtime route implements this contract, the repo needs a separate
-runtime milestone, a result-card contract, a public-search safety and abuse
-guard, rate-limit policy, hosted backend handoff review, local-index ownership,
-public-alpha operator signoff, and validation proving no live probes, downloads,
-uploads, local path search, arbitrary URL fetch, account behavior, telemetry, or
-production claims were added by accident.
+runtime milestone, Public Search Result Card Contract v0, Public Search Safety /
+Abuse Guard v0, rate-limit policy, hosted backend handoff review, local-index
+ownership, public-alpha operator signoff, and validation proving no live probes,
+downloads, uploads, local path search, arbitrary URL fetch, account behavior,
+telemetry, or production claims were added by accident. The named safety
+milestone is Public Search Safety / Abuse Guard v0.
 
 ## Out Of Scope
 
