@@ -16,6 +16,6 @@ Limitations:
 - relay surface design contract only; no relay server or protocol implementation
 - public JSON remains pre-alpha stable_draft, not a production API
 
-route_count_summarized: 89
+route_count_summarized: 94
 build_source: generated_public_data_summaries_v0
 

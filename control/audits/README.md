@@ -109,9 +109,12 @@ Current packs:
 
 Public Search API Contract v0 is governed under `contracts/api/`,
 `control/inventory/publication/public_search_routes.json`, and
-`docs/reference/PUBLIC_SEARCH_API_CONTRACT.md` rather than an audit pack. It is
-contract-only and adds no public-search runtime, live probes, backend hosting,
-downloads, installs, uploads, local path search, or production API claim.
+`docs/reference/PUBLIC_SEARCH_API_CONTRACT.md` rather than an audit pack.
+Local Public Search Runtime v0 now implements the first local/prototype backend
+routes for the governed contract through `runtime/gateway/public_api/` and
+`surfaces/web/server/`. It adds no hosted deployment, static search handoff
+page, live probes, downloads, installs, uploads, local path search, accounts,
+telemetry, or production API claim.
 - `public-search-result-card-contract-v0/`: contract-governance audit pack for
   the future public search result-card envelope. It records field stability,
   old-client/native/relay/snapshot rendering guidance, action/risk/rights
@@ -124,7 +127,7 @@ Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,
 `docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md`, and
 `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md` rather than a
-separate audit pack. It is policy/contract-only and adds no runtime search,
-rate-limit middleware, auth/accounts, telemetry runtime, hosted backend, live
-probes, downloads, uploads, local path search, arbitrary URL fetch, or
-production safety claim.
+separate audit pack. It constrains the local runtime and future hosted review,
+and adds no rate-limit middleware, auth/accounts, telemetry runtime, hosted
+backend, live probes, downloads, uploads, local path search, arbitrary URL
+fetch, or production safety claim.

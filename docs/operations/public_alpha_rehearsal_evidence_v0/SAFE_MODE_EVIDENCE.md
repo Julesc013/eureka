@@ -4,7 +4,7 @@ Public Alpha Safe Mode exists as constrained local stdlib web/API behavior.
 
 - smoke command: `python scripts/public_alpha_smoke.py`
 - smoke status: `passed`
-- passed checks: 13 / 13
+- passed checks: 18 / 18
 
 The smoke checks verify safe read-only/search/eval routes and blocked caller-provided local path controls.
 

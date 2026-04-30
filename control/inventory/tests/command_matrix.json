@@ -121,7 +121,10 @@
         "public_search_result_card_contract_validator",
         "public_search_result_card_contract_tests",
         "public_search_safety_tests",
-        "public_search_safety_validator"
+        "public_search_safety_validator",
+        "local_public_search_runtime_validator",
+        "local_public_search_runtime_tests",
+        "public_search_smoke"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -238,7 +241,10 @@
         "public_search_result_card_contract_validator",
         "public_search_result_card_contract_tests",
         "public_search_safety_tests",
-        "public_search_safety_validator"
+        "public_search_safety_validator",
+        "local_public_search_runtime_validator",
+        "local_public_search_runtime_tests",
+        "public_search_smoke"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -358,7 +364,10 @@
         "tests.hardening.public_alpha_path_leakage",
         "tests.hardening.route_inventory_drift",
         "public_search_safety_validator",
-        "public_search_safety_tests"
+        "public_search_safety_tests",
+        "local_public_search_runtime_validator",
+        "local_public_search_runtime_tests",
+        "public_search_smoke"
       ],
       "required_status": "required",
       "when_to_run": "After web/API route-policy, status, route inventory, or hosting-pack changes.",
@@ -428,6 +437,7 @@
         "public_search_result_card_contract_tests",
         "public_search_safety_tests",
         "public_search_safety_validator",
+        "local_public_search_runtime_validator",
         "docs_diff_check"
       ],
       "required_status": "required",
@@ -540,6 +550,7 @@
     }
   ],
   "notes": [
-    "Public Search Safety / Abuse Guard v0 validation is stdlib-only and policy/contract-only; it does not implement public search routes, rate-limit middleware, telemetry runtime, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production claims."
+    "Public Search Safety / Abuse Guard v0 validation is stdlib-only and constrains the local public search runtime plus future hosted review; it does not implement rate-limit middleware, telemetry runtime, hosted backend, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production claims.",
+    "Local Public Search Runtime v0 validation is stdlib-only local/prototype backend verification; it opens no public listener, deploys nothing, calls no external sources, and adds no static search handoff, downloads, installs, uploads, accounts, telemetry, live probes, or production claims."
   ]
 }

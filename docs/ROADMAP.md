@@ -43,13 +43,15 @@ after `site/dist` build/validation checks passed and before artifact upload,
 so deployment success is not claimable and the next Pages milestone is repair
 or repository settings configuration.
 
-Public Search API Contract v0 now defines future `local_index_only` public
-search request, response, error, and route envelopes under `contracts/api/` and
-`control/inventory/publication/public_search_routes.json`. It reserves
-`/search` and `/api/v1/search` as future routes only; it does not make public
-search live, add runtime handlers, host a backend, enable live probes, fetch
-URLs, scrape, crawl, download, install, upload, search local paths, or claim
-production API stability.
+Public Search API Contract v0 now defines `local_index_only` public search
+request, response, error, and route envelopes under `contracts/api/` and
+`control/inventory/publication/public_search_routes.json`. Local Public Search
+Runtime v0 implements the first local/prototype backend routes for `/search`,
+`/api/v1/search`, `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`,
+and `/api/v1/source/{source_id}`. This remains local only: it does not add
+hosted deployment, a static search handoff page, live probes, URL fetching,
+scraping, crawling, downloads, installs, uploads, local path search, accounts,
+telemetry, or production API stability.
 
 ## Stage 3: Surface Skeletons
 
@@ -299,7 +301,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Local Public Search Runtime v0
+> Public Search Static Handoff v0
 
 Public Data Contract Stability Review v0 is now implemented as field-level
 contract governance under
@@ -325,7 +327,11 @@ active repo-local static artifact and records the local audit pack under
 deployment evidence has now been checked by GitHub Pages Run Evidence Review
 v0. The current-head run failed at Pages configuration before artifact upload,
 so no deployment success claim is allowed.
-Public Search API Contract v0 is now implemented as contract/governance only.
+Public Search API Contract v0 is now implemented as contract/governance, and
+Local Public Search Runtime v0 is implemented as local/prototype backend
+runtime only. It exposes `/search`, `/api/v1/search`, `/api/v1/query-plan`,
+`/api/v1/status`, `/api/v1/sources`, and `/api/v1/source/{source_id}` through
+the gateway and stdlib web server while staying `local_index_only`.
 Public Search Result Card Contract v0 is also implemented as contract/governance
 only under `contracts/api/search_result_card.v0.json`,
 `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`, and
@@ -336,18 +342,19 @@ search live, adding runtime routes, enabling downloads/installers/execution,
 claiming malware safety, claiming rights clearance, or promising production
 ranking.
 Public Search Safety / Abuse Guard v0 is now implemented as policy/governance
-only under `control/inventory/publication/public_search_safety.json`,
+under `control/inventory/publication/public_search_safety.json`,
 `docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md`, and
 `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`. It fixes
 `local_index_only` as the only allowed v0 mode, bounds request/result/time
 behavior, forbids URL/local path/credential/download/install/upload parameters,
 maps disallowed behavior to the P26 error envelope, keeps telemetry/logging
-runtime off, and records future operator controls. It adds no runtime route,
+runtime off, and records future operator controls. The local runtime adds no
 rate-limit middleware, hosted backend, live probe, download/install/upload
-surface, arbitrary URL fetch, or production safety claim. The next milestone is
-the local-only runtime implementation under those guards. GitHub Pages Workflow
-Repair v0 remains an operator/Pages follow-up before any hosted deployment
-success claim is made.
+surface, arbitrary URL fetch, account/session behavior, telemetry persistence,
+static search handoff page, or production safety claim. The next milestone is
+the static handoff from `site/dist` to the local search route. GitHub Pages
+Workflow Repair v0 remains an operator/Pages follow-up before any hosted
+deployment success claim is made.
 Rust Local Index Parity Candidate v0 remains blocked on planning review and
 Cargo availability.
 

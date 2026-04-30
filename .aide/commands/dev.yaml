@@ -36,6 +36,16 @@ steps:
     run: python scripts/public_alpha_smoke.py
   - id: public_alpha_smoke_json
     run: python scripts/public_alpha_smoke.py --json
+  - id: public_search_smoke
+    run: python scripts/public_search_smoke.py
+  - id: public_search_smoke_json
+    run: python scripts/public_search_smoke.py --json
+  - id: public_search_demo
+    run: python scripts/demo_http_api.py public-search "windows 7 apps" --limit 2
+  - id: public_search_query_plan_demo
+    run: python scripts/demo_http_api.py public-query-plan "windows 7 apps"
+  - id: public_search_status_demo
+    run: python scripts/demo_http_api.py public-status
   - id: public_alpha_route_inventory
     run: python -m unittest tests.operations.test_public_alpha_route_inventory
   - id: public_alpha_hosting_pack_summary
@@ -564,6 +574,12 @@ steps:
     run: python scripts/validate_public_search_safety.py --json
   - id: public_search_safety_tests
     run: python -m unittest tests.operations.test_public_search_safety_abuse_guard tests.scripts.test_validate_public_search_safety
+  - id: local_public_search_runtime_validator
+    run: python scripts/validate_local_public_search_runtime.py
+  - id: local_public_search_runtime_validator_json
+    run: python scripts/validate_local_public_search_runtime.py --json
+  - id: local_public_search_runtime_tests
+    run: python -m unittest runtime.gateway.tests.test_public_search_api runtime.gateway.tests.test_public_search_validation surfaces.web.tests.test_public_search_routes surfaces.web.tests.test_public_search_html tests.integration.test_public_search_runtime tests.hardening.test_public_search_safety_runtime tests.scripts.test_public_search_smoke tests.scripts.test_validate_local_public_search_runtime tests.operations.test_local_public_search_runtime
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
@@ -581,9 +597,9 @@ notes:
   - Bundle inspection remains a local bootstrap readback seam; path-based inspection is a demo choice and not a final upload or import contract.
   - The native CLI proof remains bootstrap-scale and does not imply a final CLI, TUI, GUI, or packaging direction.
   - The local stdlib HTTP API proof remains bootstrap-scale and does not imply final auth, HTTPS/TLS, deployment, or durable public route semantics.
-  - Public Search API Contract v0 is contract-only. It reserves future local_index_only `/search` and `/api/v1/search` envelopes without making public search live, adding route handlers, enabling live probes, or allowing downloads, installs, uploads, local path search, or arbitrary URL fetch.
+  - Public Search API Contract v0 is contract-first, and Local Public Search Runtime v0 implements local/prototype backend `/search` and `/api/v1` search routes without hosted deployment, static handoff, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, accounts, telemetry, or production API claims.
   - Public Search Result Card Contract v0 is contract-only. It defines future result-card semantics without making public search live, adding route handlers, enabling downloads, installs, execution, uploads, malware-safety claims, rights-clearance claims, or production ranking guarantees.
-  - Public Search Safety / Abuse Guard v0 is policy/contract-only. It defines local_index_only safety limits, forbidden parameters, disabled modes, privacy defaults, operator controls, and runtime readiness gates without adding route handlers, middleware, telemetry runtime, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production safety claims.
+  - Public Search Safety / Abuse Guard v0 now constrains the local public search runtime and future hosted review. It defines local_index_only safety limits, forbidden parameters, disabled modes, privacy defaults, operator controls, and runtime readiness gates without adding middleware, telemetry runtime, hosted backend, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production safety claims.
   - Deterministic tests and demos use recorded GitHub Releases fixtures only; live GitHub acquisition is not required and remains deferred.
   - The bounded representations proof remains bootstrap-scale and does not imply final download, install, import, restore, or representation-selection semantics.
   - The bounded compatibility proof remains bootstrap-scale, uses small fixed host profile presets only, and does not imply a final compatibility oracle, installer model, or runtime-routing engine.

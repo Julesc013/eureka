@@ -426,16 +426,16 @@
     {
       "id": "local_public_search_runtime_v0",
       "title": "Local Public Search Runtime v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 61,
-      "notes": "Next implementation milestone after API, result-card, and safety contracts. Must remain local_index_only, server-owned index path only, no live probes, no downloads/installs/uploads/local paths, no telemetry by default, and no production claim."
+      "notes": "Implemented local/prototype backend public search routes through the gateway and stdlib web server: /search, /api/v1/search, /api/v1/query-plan, /api/v1/status, /api/v1/sources, and /api/v1/source/{source_id}. The runtime remains local_index_only, uses server-owned demo/catalog behavior, rejects forbidden local path/URL/download/install/upload/live-probe parameters, and adds no hosted deployment, static search handoff, live probes, accounts, telemetry, downloads, installers, uploads, or production claim."
     },
     {
       "id": "public_search_static_handoff_v0",
       "title": "Public Search Static Handoff v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 62,
-      "notes": "Future handoff from static publication to search contracts; keep GitHub Pages static-only unless separately approved."
+      "notes": "Next milestone after the local runtime. Add the static-publication handoff without turning GitHub Pages into a dynamic backend and without enabling live probes, downloads, installs, uploads, accounts, telemetry, or production claims."
     },
     {
       "id": "public_search_rehearsal_v0",
@@ -492,6 +492,13 @@
       "status": "recommended_follow_up",
       "priority": 70,
       "notes": "Future contract-only provider boundary. Do not add provider credentials, network calls, hosted inference, telemetry, accounts, runtime integration, or production AI claims."
+    },
+    {
+      "id": "ia_metadata_live_probe_approval_pack_v0",
+      "title": "IA Metadata Live Probe Approval Pack v0",
+      "status": "blocked_pending_explicit_approval",
+      "priority": 71,
+      "notes": "Future approval pack only after explicit human approval and live-probe gateway review. Do not call Internet Archive, fetch URLs, scrape, crawl, enable live probes, or automate external searches in unattended Codex work."
     }
   ]
 }

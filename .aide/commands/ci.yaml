@@ -16,6 +16,8 @@ steps:
     run: python scripts/demo_http_api.py --mode public_alpha status
   - id: public_alpha_smoke
     run: python scripts/public_alpha_smoke.py --json
+  - id: public_search_smoke
+    run: python scripts/public_search_smoke.py --json
   - id: public_alpha_route_inventory
     run: python -m unittest tests.operations.test_public_alpha_route_inventory
   - id: public_alpha_hosting_pack_summary
@@ -252,14 +254,19 @@ steps:
     run: python scripts/validate_public_search_safety.py
   - id: public_search_safety_tests
     run: python -m unittest tests.operations.test_public_search_safety_abuse_guard tests.scripts.test_validate_public_search_safety
+  - id: local_public_search_runtime_validator
+    run: python scripts/validate_local_public_search_runtime.py
+  - id: local_public_search_runtime_tests
+    run: python -m unittest runtime.gateway.tests.test_public_search_api runtime.gateway.tests.test_public_search_validation surfaces.web.tests.test_public_search_routes surfaces.web.tests.test_public_search_html tests.integration.test_public_search_runtime tests.hardening.test_public_search_safety_runtime tests.scripts.test_public_search_smoke tests.scripts.test_validate_local_public_search_runtime tests.operations.test_local_public_search_runtime
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.
   - The Python-oracle golden check is stdlib-only and verifies committed future-Rust parity fixtures without requiring Rust tooling.
   - The search-usefulness audit is stdlib-only and keeps external baselines as pending manual observations; it does not scrape Google, Internet Archive, or any other external source.
-  - Public Search API Contract v0 validation is stdlib-only and contract-only; it does not make `/search` or `/api/v1/search` live, enable live probes, fetch URLs, scrape, download, install, upload, or search local paths.
+  - Public Search API Contract v0 validation is stdlib-only and contract-first; Local Public Search Runtime v0 remains local/prototype only and does not host `/search` or `/api/v1/search`, enable live probes, fetch URLs, scrape, download, install, upload, add accounts/telemetry, or search local paths.
   - Public Search Result Card Contract v0 validation is stdlib-only and contract-only; it does not emit live result cards, add runtime routes, enable downloads, installs, execution, uploads, malware-safety claims, rights-clearance claims, or production ranking guarantees.
-  - Public Search Safety / Abuse Guard v0 validation is stdlib-only and policy/contract-only; it does not implement public search routes, rate-limit middleware, telemetry runtime, auth/accounts, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production safety claims.
+  - Public Search Safety / Abuse Guard v0 validation is stdlib-only and constrains the local runtime; it does not implement rate-limit middleware, telemetry runtime, auth/accounts, hosted backend, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production safety claims.
+  - Local Public Search Runtime v0 validation is stdlib-only local/prototype backend verification; it opens no public listener, deploys nothing, calls no external sources, and adds no static search handoff, downloads, installs, uploads, accounts, telemetry, live probes, or production claims.
   - Search Usefulness Audit Delta v0 validates a stable audit/reporting pack over current local results only; it adds no retrieval behavior and records no external baseline observations.
   - Search Usefulness Audit Delta v1 validates the measured movement after Old-Platform Source Coverage Expansion v0 and recommends hard-eval satisfaction work; it adds no retrieval behavior and records no external baseline observations.
   - Hard Eval Satisfaction Pack v0 validates source-backed archive hard-eval partial movement only; it does not weaken hard evals, fabricate evidence, add live sources, or claim any hard task is fully satisfied.

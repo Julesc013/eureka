@@ -55,7 +55,7 @@
     "blocked_public_alpha": 5,
     "local_dev_only": 49,
     "review_required": 2,
-    "safe_public_alpha": 33
+    "safe_public_alpha": 38
   },
   "contains_live_backend": false,
   "contains_live_probes": false,
@@ -89,8 +89,8 @@
     "deferred": 0,
     "local_dev_only": 49,
     "review_required": 2,
-    "safe_public_alpha": 33,
-    "total": 89
+    "safe_public_alpha": 38,
+    "total": 94
   },
   "schema_version": "0.1.0",
   "source_inputs": [

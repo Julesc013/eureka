@@ -1,8 +1,8 @@
 # Route Inventory Evidence
 
 - route inventory: `control/inventory/public_alpha_routes.json`
-- total routes: 89
-- safe_public_alpha: 33
+- total routes: 94
+- safe_public_alpha: 38
 - blocked_public_alpha: 5
 - local_dev_only: 49
 - review_required: 2

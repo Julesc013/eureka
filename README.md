@@ -101,13 +101,18 @@ configured for `site/dist/`, and the remote pre-upload validation steps passed,
 but the run failed while configuring Pages because the repository Pages site was
 not enabled/configured for GitHub Actions. No Pages artifact was uploaded, no
 deployment URL was emitted, and no deployment success claim is allowed.
-Public Search API Contract v0 now defines contract-only request, response,
-error, and route envelopes for future `local_index_only` public search under
+Public Search API Contract v0 now defines contract-first request, response,
+error, and route envelopes for `local_index_only` public search under
 `contracts/api/`, `control/inventory/publication/public_search_routes.json`,
-and `docs/reference/PUBLIC_SEARCH_API_CONTRACT.md`. It does not make `/search`
-or `/api/v1/search` live, add runtime routes, host a backend, enable live
-probes, call external systems, fetch URLs, scrape, crawl, download, install,
-upload, search local paths, or claim production API stability.
+and `docs/reference/PUBLIC_SEARCH_API_CONTRACT.md`.
+Local Public Search Runtime v0 now implements those routes as a
+local/prototype backend runtime only through the gateway and stdlib web server:
+`/search`, `/api/v1/search`, `/api/v1/query-plan`, `/api/v1/status`,
+`/api/v1/sources`, and `/api/v1/source/{source_id}`. It is
+`local_index_only`; it does not add hosted deployment, a static search handoff
+page, live probes, external calls, URL fetching, scraping, crawling, downloads,
+installers, uploads, local path search, accounts, telemetry, or production API
+stability.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -117,12 +122,12 @@ lite/text, native, relay, snapshot, and contribution consumers while adding no
 runtime routes, live search, live probes, downloads, installers, execution,
 uploads, malware-safety claim, rights-clearance claim, or production ranking
 claim.
-Public Search Safety / Abuse Guard v0 now defines the policy-only guardrails
-required before runtime search work: `local_index_only` only, bounded
+Public Search Safety / Abuse Guard v0 now defines the guardrails for local
+runtime search and future hosted review: `local_index_only` only, bounded
 request/result/time limits, forbidden URL/local path/credential/download/install
 /upload parameters, disabled live/external modes, privacy-first logging posture,
 operator controls, runtime-readiness checklist, validator, and tests. It adds no
-runtime routes, rate-limit middleware, auth/accounts/session behavior, telemetry
+rate-limit middleware, auth/accounts/session behavior, telemetry
 runtime, hosted backend, live probes, downloads, installers, uploads, local path
 search, arbitrary URL fetch, or production safety claim.
 Generated Public Data Summaries v0 now adds deterministic static JSON summaries
@@ -229,6 +234,8 @@ python scripts/validate_live_backend_handoff.py
 python scripts/validate_live_probe_gateway.py
 python scripts/validate_public_search_contract.py
 python scripts/validate_public_search_result_card_contract.py
+python scripts/validate_public_search_safety.py
+python scripts/validate_local_public_search_runtime.py
 python scripts/validate_compatibility_surfaces.py
 python scripts/check_rust_query_planner_parity.py
 ```
@@ -239,6 +246,7 @@ python scripts/check_rust_query_planner_parity.py
 python scripts/run_archive_resolution_evals.py
 python scripts/run_archive_resolution_evals.py --json
 python scripts/run_search_usefulness_audit.py
+python scripts/public_search_smoke.py
 python scripts/public_alpha_smoke.py
 python scripts/run_public_alpha_server.py --check-config
 python scripts/generate_python_oracle_golden.py --check
@@ -530,23 +538,26 @@ Eureka is substantial, but it is still a prototype/reference backend:
 - GitHub Pages Run Evidence Review v0 records a current-head Pages workflow
   failure at the Pages configuration step. The `site/dist` checks passed before
   the failure, but no Pages artifact or deployment URL exists yet.
-- Public Search API Contract v0 is implemented as contract/governance only. It
-  reserves future `local_index_only` `/search` and `/api/v1/search` envelopes,
-  but public search is not live and no runtime routes, live probes, downloads,
-  installs, uploads, local path search, arbitrary URL fetch, or production API
-  stability claim exists.
+- Public Search API Contract v0 is implemented as contract/governance, and
+  Local Public Search Runtime v0 implements the first local/prototype backend
+  routes for `local_index_only` search: `/search`, `/api/v1/search`,
+  `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
+  `/api/v1/source/{source_id}`. This is not hosted deployment and does not add
+  a static search handoff page, live probes, downloads, installs, uploads,
+  local path search, arbitrary URL fetch, accounts, telemetry, or production
+  API stability.
 - Public Search Result Card Contract v0 is implemented as contract/governance
   only. It defines the future result card used by public search responses and
   old-client/native/relay/snapshot consumers, but it does not make search live,
   add route handlers, enable downloads, installers, execution, uploads, malware
   safety, rights clearance, or production ranking guarantees.
-- Public Search Safety / Abuse Guard v0 is implemented as policy/governance
-  only. It defines request/result/time limits, forbidden parameters, disabled
-  modes, error mapping, logging/privacy posture, operator controls, and the
-  runtime readiness checklist, but it does not implement public search runtime,
-  rate-limit middleware, auth/accounts, telemetry runtime, live probes,
-  downloads, uploads, local path search, arbitrary URL fetch, or production
-  safety guarantees.
+- Public Search Safety / Abuse Guard v0 now constrains the local runtime and
+  future hosted review. It defines request/result/time limits, forbidden
+  parameters, disabled modes, error mapping, logging/privacy posture, operator
+  controls, and the runtime readiness checklist, but it does not add hosted
+  deployment, rate-limit middleware, auth/accounts, telemetry runtime, live
+  probes, downloads, uploads, local path search, arbitrary URL fetch, or
+  production safety guarantees.
 - Generated Public Data Summaries v0 adds static machine-readable summaries
   under `site/dist/data/`. They are not live API semantics and do not add
   external observations.
@@ -634,10 +645,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Local Public Search Runtime v0 after API, result-card, and safety review
-2. Public Search Static Handoff v0
-3. Public Search Rehearsal v0
-4. Search Usefulness Source Expansion v2, fixture-only
+1. Public Search Static Handoff v0
+2. Public Search Rehearsal v0
+3. Search Usefulness Source Expansion v2, fixture-only
+4. Source Pack Contract v0
 5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

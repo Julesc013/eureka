@@ -175,11 +175,14 @@ The repo has already proven:
   static Pages workflow, recording a current-head failure at Pages configuration
   after static checks passed and before artifact upload, without triggering
   deployment or adding backend behavior
-- Public Search API Contract v0 as the governed contract-only definition of
-  future `local_index_only` public search request, response, error, and route
-  envelopes, without making `/search` or `/api/v1/search` live, adding runtime
-  handlers, enabling live probes, fetching URLs, crawling, downloads, installs,
-  uploads, local path search, or production API guarantees
+- Public Search API Contract v0 as the governed definition of
+  `local_index_only` public search request, response, error, and route
+  envelopes, followed by Local Public Search Runtime v0 as the first
+  local/prototype backend implementation of `/search`, `/api/v1/search`,
+  `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
+  `/api/v1/source/{source_id}` without hosted deployment, static search
+  handoff, live probes, fetching URLs, crawling, downloads, installs, uploads,
+  local path search, accounts, telemetry, or production API guarantees
 - Generated Public Data Summaries v0 as the first static machine-readable
   publication data layer under `site/dist/data/`,
   projecting page, source, eval, route, and build summaries from governed repo
@@ -292,16 +295,16 @@ The next backend sequence is:
 66. Repository Shape Consolidation v0 (implemented; site/dist is the single generated static artifact and external is the outside-reference root)
 67. Static Artifact Promotion Review v0 (implemented; site/dist is conditionally promoted as active repo-local static artifact)
 68. GitHub Pages Run Evidence Review v0 (implemented; current-head Pages run failed at configuration before artifact upload)
-69. Public Search API Contract v0 (implemented as contract-only local_index_only request/response/error/route envelopes; no runtime routes or live probes)
+69. Public Search API Contract v0 (implemented as governed local_index_only request/response/error/route envelopes)
 70. Public Search Result Card Contract v0 (implemented as contract-only result-card schema, examples, audit pack, docs, validator, and tests; no runtime routes or download/install/execute behavior)
-71. Public Search Safety / Abuse Guard v0 (implemented as policy-only safety, abuse, privacy, operator-control, validator, and readiness-checklist governance; no runtime routes or middleware)
-72. Local Public Search Runtime v0, only after API, result-card, and safety review
+71. Public Search Safety / Abuse Guard v0 (implemented as safety, abuse, privacy, operator-control, validator, and readiness-checklist governance; no hosted runtime or middleware)
+72. Local Public Search Runtime v0 (implemented as local/prototype backend runtime only; no hosted deployment, static handoff, live probes, downloads, uploads, accounts, telemetry, or production claim)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Local Public Search Runtime v0
+> Public Search Static Handoff v0
 
 Why this comes next:
 
@@ -323,9 +326,10 @@ Why this comes next:
 - GitHub Pages Run Evidence Review v0 is implemented as the passive workflow
   evidence review. It records a current-head failure at Pages configuration,
   with no artifact uploaded and no deployment URL available.
-- Public Search API Contract v0 is implemented as contract/governance only. It
-  reserves future local-index-only search routes and envelopes without adding
-  runtime routes, live probes, backend hosting, or production API stability.
+- Public Search API Contract v0 is implemented as contract/governance, and
+  Local Public Search Runtime v0 now implements the first local/prototype
+  backend routes through the gateway and stdlib web server while keeping
+  `local_index_only` as the only mode.
 - Public Search Result Card Contract v0 is implemented as contract/governance
   only. It defines the future public result-card shape for web/API/lite/text,
   native, relay, snapshot, and contribution consumers without making search
@@ -333,13 +337,16 @@ Why this comes next:
   claiming malware safety, claiming rights clearance, or promising production
   ranking.
 - Public Search Safety / Abuse Guard v0 is implemented as policy/governance
-  only. It defines local_index_only mode, request/result/time limits, forbidden
+  over the local runtime and future hosted review. It defines local_index_only
+  mode, request/result/time limits, forbidden
   parameters, disabled live/external behavior, error mapping, logging/privacy
-  defaults, operator controls, and runtime readiness gates without adding route
-  handlers, rate-limit middleware, telemetry runtime, hosted backend, live
-  probes, downloads, uploads, local path search, or production safety claims.
-- Local Public Search Runtime v0 is the next safe implementation milestone and
-  must stay inside those contract and safety gates.
+  defaults, operator controls, and runtime readiness gates without adding
+  rate-limit middleware, telemetry runtime, hosted backend, live probes,
+  downloads, uploads, local path search, accounts, static handoff, or
+  production safety claims.
+- Public Search Static Handoff v0 is the next safe implementation milestone and
+  should connect the static publication plane to the already-local route without
+  turning GitHub Pages into a dynamic backend.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

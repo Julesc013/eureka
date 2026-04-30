@@ -68,12 +68,11 @@ Current scripts:
   no URLs, enables no downloads, and does not call Internet Archive or any
   external source
 - `validate_public_search_contract.py`: validates Public Search API Contract
-  v0 request, response, error, and reserved-route envelopes, enforcing
+  v0 request, response, error, and local/prototype route envelopes, enforcing
   `local_index_only` as the only implemented mode, required error codes,
   forbidden URL/local-path/download/install/upload/credential parameters,
-  disabled live probes, future/reserved route status, and no live public-search
-  or production API claim; it supports `--json`, performs no network calls, and
-  implements no runtime route behavior
+  disabled live probes, local runtime route status, and no hosted public-search
+  or production API claim; it supports `--json` and performs no network calls
 - `validate_public_search_result_card_contract.py`: validates Public Search
   Result Card Contract v0 schema, examples, audit pack, docs, response-schema
   alignment, required result lanes, user-cost bounds, action status separation,
@@ -82,12 +81,17 @@ Current scripts:
   or production-ranking claim; it supports `--json`, performs no network calls,
   and implements no runtime route behavior
 - `validate_public_search_safety.py`: validates Public Search Safety / Abuse
-  Guard v0 inventory, docs, request/error schema alignment, route future status,
+  Guard v0 inventory, docs, request/error schema alignment, local runtime route status,
   disabled modes, request/result/time limits, forbidden URL/local-path/action
   and credential parameters, logging/privacy defaults, operator controls, and
   runtime-readiness checklist; it supports `--json`, performs no network calls,
-  and implements no route handlers, rate-limit middleware, telemetry runtime, or
-  public search behavior
+  and implements no rate-limit middleware, telemetry runtime, hosted backend, or
+  live search behavior
+- `validate_local_public_search_runtime.py`: validates Local Public Search
+  Runtime v0 files, route inventory, safety inventory, public-alpha route
+  inventory, docs, and no prohibited live/download/install/upload behavior; it
+  supports `--json`, performs no network calls, and does not deploy or host
+  public search
 - `validate_compatibility_surfaces.py`: validates Compatibility Surface
   Strategy v0 inventories, including the surface capability matrix, route
   matrix, client-profile alignment, implemented static route roots, future
@@ -218,6 +222,16 @@ Current scripts:
   configuration, add auth/TLS/rate limiting/process management, scrape, crawl,
   or call external APIs
 - `public_alpha_smoke.py`: runs the local Public Alpha Deployment Readiness smoke checks directly against the stdlib WSGI app, verifies safe status/source/query/search/eval routes, verifies blocked local-path/readback routes, supports `--json`, and exits nonzero if the constrained public-alpha posture regresses
+- `public_search_smoke.py`: runs Local Public Search Runtime v0 smoke checks
+  directly against the stdlib WSGI app without opening a listener, verifying
+  status, search, query-plan, sources, HTML search, forbidden local path/URL
+  parameters, disabled live probes, and query length limits; it supports
+  `--json` and performs no external network calls
+- `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
+  `public-sources`, and `public-source`: exercise the local public search
+  runtime through the existing demo HTTP API harness without live probes,
+  downloads, installs, uploads, caller-provided index paths, or hosted
+  deployment
 - `generate_public_alpha_hosting_pack.py`: reads `control/inventory/public_alpha_routes.json` and emits or checks the Public Alpha Hosting Pack route-safety summary; it supports `--check` for repeatable docs validation and does not deploy, host, or mutate route behavior
 - `generate_python_oracle_golden.py`: generates or checks the Rust Parity Fixture Pack v0 Python-oracle golden outputs under `tests/parity/golden/python_oracle/v0/`; it supports `--check`, optional `--output-root`, and `--json`, normalizes unstable timestamps, local index paths, FTS mode, and generation metadata, and does not implement Rust behavior or replace Python runtime paths
 - `check_rust_source_registry_parity.py`: validates the Rust Source Registry

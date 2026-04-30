@@ -982,3 +982,28 @@ auth/accounts, telemetry runtime, hosted backend, live probe,
 download/install/upload surface, local path search, arbitrary URL fetch, or
 production readiness claim. The next Codex-safe milestone is Local Public
 Search Runtime v0 under these gates.
+
+## ADR-109: Implement Local Public Search Runtime Behind the Gateway
+
+Status: accepted
+
+Local Public Search Runtime v0 adds
+`runtime/gateway/public_api/public_search.py`, no-JS HTML rendering under
+`surfaces/web/workbench/render_public_search.py`, stdlib web/API route wiring
+for `/search`, `/api/v1/search`, `/api/v1/query-plan`, `/api/v1/status`,
+`/api/v1/sources`, and `/api/v1/source/{source_id}`, `scripts/public_search_smoke.py`,
+`scripts/validate_local_public_search_runtime.py`, and focused runtime, web,
+integration, hardening, operations, and script tests.
+
+The decision is to make the first runtime slice local/prototype backend only:
+requests pass through the gateway public boundary, use `local_index_only`,
+enforce bounded query/result/include/profile/mode validation, reject forbidden
+URL/local-path/credential/download/install/upload/live-probe parameters, and
+emit governed success/error/result-card envelopes. The service uses repo-owned
+demo catalog and source-registry projections and does not accept caller-provided
+index paths or expose private paths. It adds no hosted deployment, static search
+handoff page, live probes, external source calls, arbitrary URL fetching,
+scraping, crawling, downloads, installers, uploads, accounts, telemetry
+persistence, rate-limit middleware, native clients, relay runtime, production
+API stability, or production readiness claim. The next Codex-safe milestone is
+Public Search Static Handoff v0.

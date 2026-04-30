@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit_sha": "57cbae9224ab673960d33596e5ee7899b2451790",
+  "commit_sha": "b24a05c48646df58baa81dea25a48ea73ffc7de6",
   "created_by_slice": "public_alpha_rehearsal_evidence_v0",
   "eval_audit": {
     "archive_eval_status": {
@@ -66,8 +66,8 @@
     "command": "python scripts/public_alpha_smoke.py",
     "status": "passed",
     "summary": {
-      "passed_checks": 13,
-      "total_checks": 13
+      "passed_checks": 18,
+      "total_checks": 18
     }
   },
   "repository": "Julesc013/eureka",
@@ -106,7 +106,7 @@
       "deferred": 0,
       "local_dev_only": 49,
       "review_required": 2,
-      "safe_public_alpha": 33
+      "safe_public_alpha": 38
     }
   },
   "signoff_status": "unsigned",

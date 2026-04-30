@@ -2573,9 +2573,9 @@
       "network": "none",
       "writes": "none",
       "expected_runtime": "sub-second",
-      "failure_means": "Public Search API Contract v0 no longer validates its request, response, error, route, safety, or no-live-search posture.",
+      "failure_means": "Public Search API Contract v0 no longer validates its request, response, error, route, safety, or no-hosted-search posture.",
       "advisory_or_required": "required",
-      "notes": "Added by Public Search API Contract v0; validates local_index_only as the only implemented mode, forbidden parameters, reserved future routes, required error codes, live-probe/download/local-path prohibitions, and no production API or live-search claim."
+      "notes": "Added by Public Search API Contract v0 and updated by Local Public Search Runtime v0; validates local_index_only as the only implemented mode, forbidden parameters, local runtime route status, required error codes, live-probe/download/local-path prohibitions, and no production API or hosted-search claim."
     },
     {
       "test_id": "public_search_contract_tests",
@@ -2595,9 +2595,9 @@
       "network": "none",
       "writes": "temporary subprocess output only",
       "expected_runtime": "seconds",
-      "failure_means": "Public Search API Contract v0 tests failed, allowing live-search claims, unsupported modes, missing forbidden parameters, missing route reservations, or schema drift to regress.",
+      "failure_means": "Public Search API Contract v0 tests failed, allowing hosted-search claims, unsupported modes, missing forbidden parameters, missing local runtime route status, or schema drift to regress.",
       "advisory_or_required": "required",
-      "notes": "Checks schema parsing, validator JSON behavior, route reservation status, local_index_only mode, required error codes, forbidden inputs, disabled live probes, and static-site no-live-search posture without adding runtime behavior."
+      "notes": "Checks schema parsing, validator JSON behavior, local runtime route status, local_index_only mode, required error codes, forbidden inputs, disabled live probes, and static-site no-hosted-search posture without adding hosted behavior."
     },
     {
       "test_id": "public_search_result_card_contract_validator",
@@ -2664,7 +2664,7 @@
       "expected_runtime": "sub-second",
       "failure_means": "Public Search Safety / Abuse Guard v0 no longer validates local_index_only-only mode, limits, forbidden parameters, disabled behaviors, error mapping, privacy posture, operator controls, or runtime-readiness gates.",
       "advisory_or_required": "required",
-      "notes": "Added by Public Search Safety / Abuse Guard v0; validates policy/contract artifacts only and adds no runtime search, route handlers, rate-limit middleware, telemetry runtime, live probes, downloads, installs, uploads, local path search, or production claims."
+      "notes": "Added by Public Search Safety / Abuse Guard v0 and updated by Local Public Search Runtime v0; validates the guardrails that constrain local public search and future hosted review while adding no rate-limit middleware, telemetry runtime, hosted backend, live probes, downloads, installs, uploads, local path search, or production claims."
     },
     {
       "test_id": "public_search_safety_tests",
@@ -2687,7 +2687,70 @@
       "expected_runtime": "seconds",
       "failure_means": "Public search safety tests failed, allowing unsafe modes, missing forbidden parameters, telemetry defaults, live route claims, or readiness checklist drift to regress.",
       "advisory_or_required": "required",
-      "notes": "Checks the safety inventory, validator JSON behavior, disabled modes, forbidden URL/local-path/download/install/upload/credential parameters, error mapping, route future status, docs no-live-search posture, and public-alpha compatibility without implementing runtime behavior."
+      "notes": "Checks the safety inventory, validator JSON behavior, disabled modes, forbidden URL/local-path/download/install/upload/credential parameters, error mapping, local runtime route status, docs no-hosted-search posture, and public-alpha compatibility."
+    },
+    {
+      "test_id": "local_public_search_runtime_validator",
+      "label": "Local public search runtime validator",
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "category": "runtime",
+      "owner_area": "runtime/gateway/public_api",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Local Public Search Runtime v0 files, route inventory, safety inventory, public-alpha route inventory, or no-hosted/no-live/no-download posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Added by Local Public Search Runtime v0; validates the gateway module, web/API route wiring, HTML renderer, smoke script, local runtime route status, safety posture, public-alpha availability, and docs without deploying, opening external network calls, adding static handoff, live probes, downloads, installs, uploads, accounts, telemetry, or production claims."
+    },
+    {
+      "test_id": "local_public_search_runtime_tests",
+      "label": "Local public search runtime tests",
+      "command": "python -m unittest runtime.gateway.tests.test_public_search_api runtime.gateway.tests.test_public_search_validation surfaces.web.tests.test_public_search_routes surfaces.web.tests.test_public_search_html tests.integration.test_public_search_runtime tests.hardening.test_public_search_safety_runtime tests.scripts.test_public_search_smoke tests.scripts.test_validate_local_public_search_runtime tests.operations.test_local_public_search_runtime",
+      "category": "runtime",
+      "owner_area": "runtime/gateway/public_api",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Local public search validation, envelopes, route rendering, smoke checks, hardening checks, or inventory/docs assertions regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers missing/too-long queries, forbidden local path/URL/live-probe parameters, local_index_only response envelopes, result-card safety fields, public-safe source projections, no private path leakage, no live probes, and no hosted deployment claims."
+    },
+    {
+      "test_id": "public_search_smoke",
+      "label": "Local public search smoke",
+      "command": "python scripts/public_search_smoke.py",
+      "category": "runtime",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The local public search smoke path no longer validates status, search, query-plan, sources, HTML, and blocked unsafe parameters.",
+      "advisory_or_required": "required",
+      "notes": "Runs in-process against the stdlib WSGI app without opening an external listener, deploying, calling external sources, or enabling live probes/downloads/uploads/local paths."
     }
   ]
 }
