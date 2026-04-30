@@ -202,6 +202,12 @@ packs remain coverage/build/record-summary metadata, not raw cache exports and
 not canonical proof. Planning does not implement import, merge, local index
 mutation, public-search mutation, hosted/master-index mutation, or acceptance.
 
+Pack Import Validator Aggregator v0 now validates the index-pack example
+through `python scripts/validate_pack_set.py --all-examples` or an explicit
+`--pack-root`. Aggregated validation delegates to `validate_index_pack.py` and
+does not import, merge, index, upload, export raw databases, or accept index
+records.
+
 ## Not Implemented
 
 Index Pack Contract v0 does not implement index pack import, merge, local cache

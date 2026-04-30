@@ -104,6 +104,14 @@ steps:
     run: python scripts/validate_pack_import_planning.py --json
   - id: pack_import_planning_tests
     run: python -m unittest tests.operations.test_pack_import_planning tests.scripts.test_validate_pack_import_planning
+  - id: pack_set_examples
+    run: python scripts/validate_pack_set.py --list-examples
+  - id: pack_set_validator
+    run: python scripts/validate_pack_set.py --all-examples
+  - id: pack_set_validator_json
+    run: python scripts/validate_pack_set.py --all-examples --json
+  - id: pack_set_validation_tests
+    run: python -m unittest tests.operations.test_pack_import_validator_aggregator tests.scripts.test_validate_pack_set
   - id: public_search_demo
     run: python scripts/demo_http_api.py public-search "windows 7 apps" --limit 2
   - id: public_search_query_plan_demo

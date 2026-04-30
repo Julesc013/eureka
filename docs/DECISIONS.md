@@ -1271,3 +1271,28 @@ automatic acceptance, executable plugins, downloads, installers, private cache
 sharing, rights clearance, malware-safety claims, canonical truth selection,
 or production extension support. The next Codex-safe milestone is Pack Import
 Validator Aggregator v0, followed by AI Provider Contract v0.
+
+## ADR-120: Aggregate Pack Validation Before Import Tooling
+
+Status: accepted
+
+Pack Import Validator Aggregator v0 adds `scripts/validate_pack_set.py`,
+`control/inventory/packs/example_packs.json`,
+`docs/operations/PACK_VALIDATION.md`, focused tests, and
+`control/audits/pack-import-validator-aggregator-v0/`.
+
+The decision is to route all known source, evidence, index, contribution, and
+master-index review queue examples through one validate-only command before any
+import runtime exists. The aggregate command detects pack type by root manifest,
+delegates to existing validators, reports passed/failed/unavailable/unknown
+type, emits machine-readable JSON, and records all side-effect flags as false.
+
+P40 deliberately does not implement source/evidence/index/contribution import,
+master-index queue import, staging/quarantine directories, local index
+mutation, canonical registry mutation, upload, submission, moderation UI,
+accounts, identity, hosted/master-index mutation, automatic acceptance, live
+fetch, external observation collection, executable plugin loading, downloads,
+installers, private cache sharing, rights clearance, malware-safety claims,
+canonical truth selection, or production extension support. The next
+Codex-safe milestone is AI Provider Contract v0; Pack Import Report Format v0
+remains the next pack-import-specific milestone.

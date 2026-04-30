@@ -503,14 +503,14 @@
     {
       "id": "pack_import_validator_aggregator_v0",
       "title": "Pack Import Validator Aggregator v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 72,
-      "notes": "Future safe command to detect source/evidence/index/contribution pack type and route to existing validators. Do not implement staging, import, indexing, uploads, live fetch, arbitrary directory scanning, canonical registry mutation, or master-index mutation."
+      "notes": "Implemented a validate-only aggregate command that lists and validates known source/evidence/index/contribution/master-index review queue examples, detects one explicit pack root by manifest, delegates to existing validators, reports passed/failed/unavailable/unknown_type, and adds no staging, import, indexing, uploads, live fetch, arbitrary directory scanning, canonical registry mutation, or master-index mutation."
     },
     {
       "id": "ai_provider_contract_v0",
       "title": "AI Provider Contract v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 73,
       "notes": "Future contract-only provider boundary. Do not add provider credentials, network calls, hosted inference, telemetry, accounts, runtime integration, or production AI claims."
     },

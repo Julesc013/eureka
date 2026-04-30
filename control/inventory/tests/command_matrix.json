@@ -144,7 +144,9 @@
         "master_index_review_queue_contract_tests",
         "master_index_review_queue_validator",
         "pack_import_planning_tests",
-        "pack_import_planning_validator"
+        "pack_import_planning_validator",
+        "pack_set_validation_tests",
+        "pack_set_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -284,7 +286,9 @@
         "master_index_review_queue_contract_tests",
         "master_index_review_queue_validator",
         "pack_import_planning_tests",
-        "pack_import_planning_validator"
+        "pack_import_planning_validator",
+        "pack_set_validation_tests",
+        "pack_set_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -396,7 +400,9 @@
         "master_index_review_queue_contract_tests",
         "master_index_review_queue_validator",
         "pack_import_planning_tests",
-        "pack_import_planning_validator"
+        "pack_import_planning_validator",
+        "pack_set_validation_tests",
+        "pack_set_validator"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -598,7 +604,9 @@
         "master_index_review_queue_contract_tests",
         "master_index_review_queue_validator",
         "pack_import_planning_tests",
-        "pack_import_planning_validator"
+        "pack_import_planning_validator",
+        "pack_set_validation_tests",
+        "pack_set_validator"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",

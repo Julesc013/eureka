@@ -35,3 +35,13 @@ Source/Evidence/Index Pack Import Planning v0 documents the future local import
 boundary for these contracts. Validate-only must come before any private local
 quarantine, and neither mode grants search, index, upload, hosted/master-index,
 or automatic-acceptance authority.
+
+Pack Import Validator Aggregator v0 provides one validate-only command for the
+repo-owned examples:
+
+```bash
+python scripts/validate_pack_set.py --all-examples
+```
+
+The aggregate command delegates to the individual validators and does not
+import, stage, index, upload, or accept packs.

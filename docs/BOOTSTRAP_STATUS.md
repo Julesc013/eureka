@@ -420,6 +420,17 @@ directories, public search mutation, local index mutation, canonical source
 registry mutation, uploads, hosted/master-index mutation, automatic acceptance,
 live fetch, arbitrary directory scan, executable plugin behavior, or production
 claim.
+Pack Import Validator Aggregator v0 is now implemented as validate-only
+reporting under `scripts/validate_pack_set.py`,
+`control/inventory/packs/example_packs.json`,
+`docs/operations/PACK_VALIDATION.md`, and
+`control/audits/pack-import-validator-aggregator-v0/`. It validates all five
+known source/evidence/index/contribution/master-index review queue examples
+through one offline command and reports pass/fail/unavailable/unknown-type
+status. It adds no import runtime, staging directories, local index mutation,
+uploads, submissions, hosted/master-index mutation, automatic acceptance,
+network calls, rights-clearance claim, malware-safety claim, canonical truth
+claim, or production extension behavior.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -650,31 +661,30 @@ local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Pack Import Validator Aggregator v0
-2. AI Provider Contract v0
-3. Pack Import Report Format v0
-4. Validate-Only Pack Import Tool v0
+1. AI Provider Contract v0
+2. Pack Import Report Format v0
+3. Validate-Only Pack Import Tool v0
+4. Local Quarantine/Staging Model v0
 5. Manual Observation Batch 0 Execution, human-operated
 6. Search Usefulness Baseline Comparison Report v0 after observations
 7. IA Metadata Live Probe Approval Pack v0 only after explicit approval
 8. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
 9. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
-10. Local Quarantine/Staging Model v0
-11. Staged Pack Inspector v0
-12. Source Pack Import Runtime v0 only after validate-only import tooling
-13. Index Pack Import/Compare Tooling Plan v0
-14. Contribution Submission Tooling Plan v0
-15. Master Index Review Queue Runtime Planning v0
-16. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+10. Staged Pack Inspector v0
+11. Source Pack Import Runtime v0 only after validate-only import tooling
+12. Index Pack Import/Compare Tooling Plan v0
+13. Contribution Submission Tooling Plan v0
+14. Master Index Review Queue Runtime Planning v0
+15. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
-17. Relay Prototype Implementation v0, only after explicit human approval and
+16. Relay Prototype Implementation v0, only after explicit human approval and
    limited to the approved localhost-only/read-only/static relay scope
-18. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
+17. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
    human approval and limited to the approved read-only static-data/snapshot-demo
    skeleton scope
-19. Manual Observation Batch 0 Execution (human-operated parallel work)
-20. Internet Archive Live Probe v0 only after explicit human approval and
+18. Manual Observation Batch 0 Execution (human-operated parallel work)
+19. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 ## Deferred Priorities

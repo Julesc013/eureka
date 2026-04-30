@@ -223,6 +223,11 @@ index candidates. Planning does not implement import, does not mutate the
 canonical source registry, does not change public search, and does not create
 master-index acceptance.
 
+Pack Import Validator Aggregator v0 now validates the source-pack example
+through `python scripts/validate_pack_set.py --all-examples` or an explicit
+`--pack-root`. Aggregated validation delegates to `validate_source_pack.py` and
+does not import, stage, index, upload, or accept the pack.
+
 Snapshots, native clients, and relay clients may eventually consume
 public-safe source-pack summaries through their own contracts. Source Pack v0
 does not implement those consumers.

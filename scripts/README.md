@@ -294,6 +294,14 @@ Current scripts:
   impact, and no master-index automatic acceptance. It supports `--json` and
   does not import, stage, index, upload, fetch, scrape, crawl, or contact a
   network
+- `validate_pack_set.py`: validates known repo pack examples or one explicit
+  pack root through the aggregate Pack Import Validator Aggregator v0. It
+  supports `--list-examples`, `--all-examples`, `--pack-root`, `--pack-type`,
+  `--strict`, and `--json`; detects pack type by manifest; delegates to the
+  source/evidence/index/contribution/master-index review queue validators; and
+  reports passed/failed/unavailable/unknown_type status. It does not import,
+  stage, index, upload, submit, mutate a master index, fetch, scrape, crawl, or
+  contact a network
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

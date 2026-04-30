@@ -307,6 +307,20 @@ contribution pack types, references to existing pack validators, prohibited
 import behaviors, private staging posture, no default local search/index
 impact, no master-index auto-acceptance, and no import-runtime claims.
 
+Pack Import Validator Aggregator v0 is validated with:
+
+```bash
+python scripts/validate_pack_set.py --list-examples
+python scripts/validate_pack_set.py --all-examples
+python scripts/validate_pack_set.py --all-examples --json
+python -m unittest tests.operations.test_pack_import_validator_aggregator tests.scripts.test_validate_pack_set
+```
+
+The validation checks the example-pack registry, all known source/evidence/
+index/contribution/master-index review queue examples, explicit one-pack
+validation, unknown-type handling, unavailable-validator reporting, JSON output,
+and no mutation/import/staging/indexing/network side effects.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

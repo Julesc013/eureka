@@ -200,6 +200,15 @@ import runtime, staging directories, local search/index mutation, canonical
 registry mutation, uploads, hosted/master-index mutation, automatic acceptance,
 live fetch, arbitrary directory scanning, executable plugin behavior, or
 production claims.
+Pack Import Validator Aggregator v0 now adds
+`scripts/validate_pack_set.py`, `control/inventory/packs/example_packs.json`,
+`docs/operations/PACK_VALIDATION.md`, and
+`control/audits/pack-import-validator-aggregator-v0/`. It validates all known
+source/evidence/index/contribution/master-index review queue examples through
+one offline command and reports pass/fail/unavailable/unknown-type status, but
+it does not implement import, staging, local index mutation, uploads,
+submissions, hosted/master-index mutation, rights clearance, malware safety,
+canonical truth, or production extension support.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -750,13 +759,12 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Pack Import Validator Aggregator v0
-2. AI Provider Contract v0
-3. Pack Import Report Format v0
-4. Validate-Only Pack Import Tool v0
-5. Manual Observation Batch 0 Execution, human-operated
-6. Search Usefulness Baseline Comparison Report v0 after observations
-7. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
+1. AI Provider Contract v0
+2. Pack Import Report Format v0
+3. Validate-Only Pack Import Tool v0
+4. Manual Observation Batch 0 Execution, human-operated
+5. Search Usefulness Baseline Comparison Report v0 after observations
+6. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 
 Broader near-term direction:

@@ -309,12 +309,13 @@ The next backend sequence is:
 80. Contribution Pack Contract v0 (implemented as contract/validation/example-only contribution-pack format, synthetic review-candidate example pack, checksum validator, docs, and audit pack; no upload, import, moderation, accounts, master-index review queue runtime, automatic acceptance, live connectors, executable plugins, canonical truth selection, hosted ingestion, or master-index acceptance)
 81. Master Index Review Queue Contract v0 (implemented as contract/validation/example-only queue governance, synthetic defer-decision example queue, schemas, inventory, validator, docs, and audit pack; no queue runtime, upload, import, moderation, accounts, hosted master index, master-index writes, automatic acceptance, live connectors, canonical truth selection, rights-clearance claim, malware-safety claim, or production claim)
 82. Source/Evidence/Index Pack Import Planning v0 (implemented as planning-only import boundary, audit pack, docs, validator, and tests; validate-only is the first future mode and private local quarantine is the next future mode; no import runtime, staging directories, local search/index mutation, canonical registry mutation, uploads, hosted/master-index mutation, automatic acceptance, live fetch, arbitrary directory scan, executable plugin behavior, or production claim)
+83. Pack Import Validator Aggregator v0 (implemented as validate-only aggregate command, example-pack registry, docs, audit pack, and tests; validates all known source/evidence/index/contribution/master-index review queue examples without import, staging, indexing, uploads, hosted/master-index mutation, automatic acceptance, rights-clearance claim, malware-safety claim, or production claim)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Pack Import Validator Aggregator v0
+> AI Provider Contract v0
 
 Why this comes next:
 
@@ -413,9 +414,16 @@ Why this comes next:
   interaction. It adds no import runtime, staging directories, local
   search/index mutation, canonical source registry mutation, upload,
   hosted/master-index mutation, automatic acceptance, live fetch, arbitrary
-  directory scanning, executable plugin behavior, or production claim. Pack
-  Import Validator Aggregator v0 is next so the existing validators can be
-  routed through one safe command before any import behavior exists.
+  directory scanning, executable plugin behavior, or production claim.
+- Pack Import Validator Aggregator v0 is implemented as validate-only
+  reporting. It adds `scripts/validate_pack_set.py` and
+  `control/inventory/packs/example_packs.json`, validates all five known
+  examples through existing validators, reports pass/fail/unavailable/
+  unknown-type status, and still adds no import, staging, local index mutation,
+  upload, hosted/master-index mutation, automatic acceptance, rights-clearance
+  claim, malware-safety claim, or production claim. AI Provider Contract v0 is
+  next so provider boundaries are set before any AI-assisted evidence or pack
+  suggestion work appears.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

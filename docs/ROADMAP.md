@@ -93,6 +93,12 @@ first future mode and private local quarantine as the next mode, while adding
 no import runtime, staging directories, local search/index mutation, canonical
 registry mutation, upload, hosted/master-index mutation, automatic acceptance,
 live fetch, arbitrary directory scan, or executable plugin behavior.
+Pack Import Validator Aggregator v0 now implements the validate-only aggregate
+command for known pack examples. `python scripts/validate_pack_set.py
+--all-examples` delegates to the source, evidence, index, contribution, and
+master-index review queue validators and reports all five current examples as
+passed without import, staging, local indexing, uploads, hosted/master-index
+mutation, or acceptance claims.
 
 ## Stage 3: Surface Skeletons
 

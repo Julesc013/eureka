@@ -125,6 +125,12 @@ submit, upload, accept, reject, supersede, publish, or mutate hosted/master
 index state. A contribution can reach accepted_public only through a later
 review decision with provenance and limitations.
 
+Pack Import Validator Aggregator v0 now validates the review-queue example
+through `python scripts/validate_pack_set.py --all-examples` or an explicit
+`--pack-root`. Aggregated validation delegates to
+`validate_master_index_review_queue.py` and does not implement queue import,
+hosted queue runtime, review automation, or master-index writes.
+
 ## Validation Command
 
 ```powershell

@@ -186,6 +186,12 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   implementing import runtime, staging directories, uploads, canonical registry
   mutation, hosted/master-index mutation, automatic acceptance, live fetch,
   arbitrary directory scanning, or executable plugin behavior.
+- `pack-import-validator-aggregator-v0/`: validate-only audit pack for the
+  aggregate pack validator. It records the example-pack registry, current
+  all-example validation results, mutation/safety posture, and future import
+  pipeline relationship without implementing import, staging, local index
+  mutation, uploads, hosted/master-index mutation, automatic acceptance,
+  rights-clearance claims, malware-safety claims, or canonical-truth claims.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

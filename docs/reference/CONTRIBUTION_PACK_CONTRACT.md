@@ -206,6 +206,12 @@ quarantine must come before any local index candidate or review queue export.
 Planning does not implement contribution import, upload, moderation, automatic
 acceptance, public-search mutation, or master-index mutation.
 
+Pack Import Validator Aggregator v0 now validates the contribution-pack example
+through `python scripts/validate_pack_set.py --all-examples` or an explicit
+`--pack-root`. Aggregated validation delegates to
+`validate_contribution_pack.py` and does not upload, import, moderate, accept,
+or submit contribution records.
+
 ## Not Implemented
 
 Contribution Pack Contract v0 does not implement contribution upload, source

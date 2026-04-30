@@ -183,6 +183,11 @@ claims/observations, not truth. Planning does not implement import, indexing,
 public-search mutation, canonical registry mutation, master-index mutation, or
 automatic acceptance.
 
+Pack Import Validator Aggregator v0 now validates the evidence-pack example
+through `python scripts/validate_pack_set.py --all-examples` or an explicit
+`--pack-root`. Aggregated validation delegates to `validate_evidence_pack.py`
+and does not import, stage, index, upload, or make evidence canonical.
+
 ## Not Implemented
 
 Evidence Pack Contract v0 does not implement evidence pack import, local or
