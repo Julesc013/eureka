@@ -73,7 +73,7 @@
         {
           "title": "Public Search Contracts",
           "paragraphs": [
-            "Public Search API Contract v0, Public Search Result Card Contract v0, and Public Search Safety / Abuse Guard v0 are implemented as contract and policy artifacts only. The first future mode is local_index_only, public search is not live, and no route handlers, live probes, downloads, uploads, local path search, arbitrary URL fetch, telemetry runtime, or production API/safety claim exists."
+            "Public Search API Contract v0, Public Search Result Card Contract v0, and Public Search Safety / Abuse Guard v0 are implemented as contract and policy artifacts only. The first future mode is local_index_only, public search is not live, and no route handlers, live probes, downloads, uploads, local path search, arbitrary URL fetch, telemetry runtime, or stable API or safety claim exists."
           ],
           "links": [
             {
