@@ -205,9 +205,11 @@ Contribution packs answer "what review-submission wrapper carries proposed
 changes, referenced packs, reviewer notes, provenance, and acceptance status
 through a future review process?"
 
-Master Index Review Queue Contract v0 should later answer "what public
-acceptance gates are required before a reviewed pack affects hosted/master
-index results?"
+Master Index Review Queue Contract v0 answers "what queue entry, review
+decision, validation, acceptance, conflict, and publication gates are required
+before a reviewed pack can become a future public master-index candidate?"
+Pack validation is not acceptance, and accepted_public remains limited,
+review-governed, and evidence/provenance-bound.
 
 ## Consumer Relationships
 

@@ -49,6 +49,8 @@ Future native clients may consume:
   SQLite databases or local cache export
 - future reviewed contribution-pack summaries, without upload/import authority,
   private cache export, accounts, or automatic acceptance
+- future master-index review queue outputs only after governed acceptance,
+  without queue runtime, upload/import behavior, or native moderation features
 - future live backend responses only when capability flags enable them
 - future relay projections only with operator signoff
 

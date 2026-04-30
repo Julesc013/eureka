@@ -42,6 +42,10 @@ snapshots to carry upload/import authority, raw caches, private paths,
 executable payloads, unreviewed observed external baselines, or canonical-truth
 claims.
 
+Master Index Review Queue Contract v0 defines the future acceptance and
+provenance review needed before contribution-derived records can appear in
+snapshot outputs.
+
 ## Minimum Compliant Consumer
 
 The minimum compliant consumer:

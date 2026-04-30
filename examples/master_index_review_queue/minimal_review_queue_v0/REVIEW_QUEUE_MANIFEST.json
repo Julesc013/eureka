@@ -1,0 +1,56 @@
+{
+  "schema_version": "master_index_review_queue_manifest.v0",
+  "queue_id": "example.master_index_review_queue_v0",
+  "title": "Minimal Master Index Review Queue v0",
+  "status": "local_review_example",
+  "queue_entries": [
+    "queue_entries.jsonl"
+  ],
+  "decision_files": [
+    "review_decisions.jsonl"
+  ],
+  "validation_policy": {
+    "structural_validation_required": true,
+    "checksum_validation_required": true,
+    "pack_validator_required": true,
+    "private_path_secret_scan_required": true,
+    "executable_payload_scan_required": true,
+    "raw_cache_database_scan_required": true
+  },
+  "privacy_policy": {
+    "public_safe_required_for_publication": true,
+    "local_private_entries_are_not_publishable": true,
+    "private_paths_forbidden_in_public_safe_entries": true
+  },
+  "rights_policy": {
+    "rights_review_required_before_publication": true,
+    "metadata_is_not_rights_clearance": true,
+    "source_terms_must_be_preserved": true
+  },
+  "risk_policy": {
+    "executable_payloads_forbidden_in_v0_example": true,
+    "malware_safety_not_claimed": true,
+    "risk_review_required_for_executable_references": true
+  },
+  "conflict_policy": {
+    "conflicts_must_be_recorded": true,
+    "disputes_preserve_conflicting_claims": true,
+    "conflicts_block_automatic_acceptance": true
+  },
+  "publication_policy": {
+    "accepted_public_requires_decision": true,
+    "accepted_public_is_not_rights_clearance": true,
+    "accepted_public_is_not_malware_safety": true,
+    "accepted_public_is_not_canonical_truth": true,
+    "hosted_master_index_publication": "future_deferred"
+  },
+  "no_runtime_implemented": true,
+  "no_upload_implemented": true,
+  "no_accounts_implemented": true,
+  "no_auto_acceptance": true,
+  "notes": [
+    "Synthetic example queue only.",
+    "The referenced contribution remains a review candidate, not truth.",
+    "The defer decision does not mutate any master index."
+  ]
+}

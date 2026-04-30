@@ -47,7 +47,9 @@ public use.
 
 Future status for a reviewed pack accepted into a public-safe catalog or master
 index. The source, evidence, index, and contribution pack contracts do not
-create an acceptance path.
+create an acceptance path. Master Index Review Queue Contract v0 defines the
+future review-entry and decision model for limited accepted_public decisions,
+but it still does not implement hosted intake, uploads, or master-index writes.
 
 `rejected`
 

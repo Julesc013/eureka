@@ -30,6 +30,11 @@ not a cache export or upload path. Contribution packs must not include raw
 cache files, raw SQLite databases, private local paths, credentials, executable
 payloads, telemetry payloads, or private user search history.
 
+Master Index Review Queue Contract v0 preserves this boundary for future queue
+entries. Queue entries do not grant local filesystem access and cannot convert
+private cache records into accepted public records without separate privacy
+review.
+
 Private cache is future explicit user state. It may later hold user-selected
 artifacts, preferences, local strategy notes, private resolution memory, or
 native-client working state. Private cache is disabled by default and requires

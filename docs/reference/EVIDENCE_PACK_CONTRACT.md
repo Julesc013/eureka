@@ -164,9 +164,10 @@ Index packs describe index build metadata, source coverage, field coverage,
 query examples, and public-safe record summaries without exporting raw caches
 or SQLite databases. Contribution packs wrap proposed changes, referenced
 packs, manual-observation placeholders, and review metadata as review
-candidates, not truth. The master index review queue is future and would decide
-which public-safe claims and summaries can become accepted records. P35, P36,
-and P37 implement none of those runtime or hosted workflows.
+candidates, not truth. Master Index Review Queue Contract v0 defines the
+future queue entry and decision model for deciding which public-safe claims and
+summaries may become limited accepted-public candidates. P35, P36, P37, and P38
+implement none of those runtime or hosted workflows.
 
 ## Runtime Consumers
 

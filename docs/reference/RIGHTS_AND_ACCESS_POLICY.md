@@ -41,6 +41,10 @@ executable download surface, and does not mirror software artifacts in v0.
   acceptance; raw caches, raw SQLite databases, executable payloads,
   credentials, private paths, and unreviewed observed external baselines are
   forbidden in shareable examples.
+- Master Index Review Queue Contract v0 carries this posture into future queue
+  decisions. `accepted_public` is limited and provenance-bound; it is not
+  rights clearance, malware safety, canonical truth, or artifact distribution
+  permission.
 
 ## Labels
 

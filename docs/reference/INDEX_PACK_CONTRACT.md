@@ -181,9 +181,11 @@ summaries. Contribution packs wrap proposed changes and/or source, evidence, and
 index pack references plus review metadata for a future governed submission
 flow. They are review candidates, not truth.
 
-Index packs do not replace source or evidence provenance. A future master index
-review queue would need to compare index summaries to source, evidence, and
-contribution packs before any public acceptance.
+Index packs do not replace source or evidence provenance. Master Index Review
+Queue Contract v0 defines how future queue review can compare index summaries
+to source, evidence, and contribution packs before any public acceptance.
+Validation is not acceptance, and accepted_public is limited,
+provenance-bound, and review-governed.
 
 ## Runtime Consumers
 

@@ -209,10 +209,10 @@ metadata for result cards. Index Pack Contract v0 does not import or merge
 those packs, export raw databases or caches, make summaries canonical proof, or
 change current local public search runtime behavior.
 Future reviewed contribution packs may supply accepted public deltas or review
-notes for result cards after a review queue exists. Contribution Pack Contract
-v0 does not upload, import, moderate, accept, or make contributed records
-canonical proof, and it does not change current local public search runtime
-behavior.
+notes for result cards only after Master Index Review Queue Contract v0-governed
+review. Contribution Pack Contract v0 does not upload, import, moderate,
+accept, or make contributed records canonical proof, and it does not change
+current local public search runtime behavior.
 
 ## Runtime Preconditions
 

@@ -171,6 +171,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   rules, and future review-queue needs without upload/import/moderation
   runtime, accounts, automatic acceptance, live connectors, raw cache export,
   executable plugins, or master-index acceptance.
+- `master-index-review-queue-contract-v0/`: review-queue governance contract
+  audit pack for future contribution candidates. It records queue entries,
+  decisions, state taxonomy, acceptance requirements, privacy/rights/risk
+  review, conflict preservation, and publication policy without queue runtime,
+  upload/import handling, moderation UI, accounts, hosted master index,
+  master-index writes, automatic acceptance, live connectors, rights-clearance
+  claims, malware-safety claims, or canonical-truth claims.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

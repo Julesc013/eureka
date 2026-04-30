@@ -31,6 +31,9 @@ Source, evidence, index, and contribution pack examples must not include real
 executable payloads. Contribution Pack Contract v0 treats contributed
 executable references as review candidates at most; it does not create upload,
 download, install, execute, malware-safety, or automatic-acceptance behavior.
+Master Index Review Queue Contract v0 preserves executable risk as review
+metadata only; queue acceptance does not prove malware safety and does not make
+executables downloadable or runnable.
 
 ## Required Future Warnings
 

@@ -1,0 +1,35 @@
+{
+  "requirements_id": "eureka_master_index_acceptance_requirements_v0",
+  "schema_version": "master_index_acceptance_requirements.v0",
+  "status": "contract_only",
+  "future_acceptance_requires": [
+    "structure_validates",
+    "checksums_pass",
+    "pack_validators_pass_or_deviation_recorded",
+    "privacy_public_safe_or_reviewed",
+    "rights_review_complete_or_public_scope_restricted",
+    "executable_and_malware_risk_not_claimed_safe",
+    "source_evidence_provenance_present",
+    "conflicts_recorded",
+    "manual_or_policy_review_decision_exists",
+    "public_output_fields_reviewed_for_stability",
+    "no_private_paths_or_secrets",
+    "no_raw_binaries_unless_future_policy_allows"
+  ],
+  "accept_public_limitations": [
+    "Acceptance allows limited provenance-bound public claims only.",
+    "Acceptance does not prove rights clearance.",
+    "Acceptance does not prove malware safety.",
+    "Acceptance does not make a claim canonical truth.",
+    "Accepted records require audit trail preservation."
+  ],
+  "rejection_or_supersession": [
+    "Rejected entries remain audit records and do not mutate the master index.",
+    "Superseded entries must point to successor decision or queue entry records.",
+    "Quarantined entries require explicit future review before publication."
+  ],
+  "notes": [
+    "This file defines future acceptance gates only.",
+    "No hosted master index or queue runtime exists in this milestone."
+  ]
+}

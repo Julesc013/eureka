@@ -1,0 +1,65 @@
+{
+  "policy_id": "eureka_master_index_review_queue_policy_v0",
+  "schema_version": "master_index_review_queue_policy.v0",
+  "status": "contract_only",
+  "no_runtime_implemented": true,
+  "no_hosted_master_index_implemented": true,
+  "no_upload_implemented": true,
+  "no_accounts_implemented": true,
+  "no_auto_acceptance": true,
+  "accepted_input_pack_types": [
+    "contribution_pack",
+    "source_pack",
+    "evidence_pack",
+    "index_pack"
+  ],
+  "required_validation_steps": [
+    "schema_parse",
+    "required_file_check",
+    "json_jsonl_parse",
+    "checksum_validation",
+    "source_evidence_index_contribution_pack_validator_results",
+    "private_path_secret_scan",
+    "executable_payload_scan",
+    "raw_cache_database_scan",
+    "live_network_authority_scan"
+  ],
+  "required_review_steps": [
+    "privacy_review",
+    "rights_review",
+    "risk_review",
+    "source_policy_review",
+    "evidence_provenance_review",
+    "conflict_review",
+    "publication_scope_review"
+  ],
+  "prohibited_inputs": [
+    "credentials",
+    "api_keys",
+    "private_absolute_paths",
+    "raw_private_files",
+    "raw_cache_exports",
+    "raw_sqlite_databases",
+    "real_executable_payloads",
+    "installer_payloads",
+    "live_fetch_authority",
+    "automatic_acceptance_requests",
+    "rights_clearance_claims",
+    "malware_safety_claims",
+    "canonical_truth_claims",
+    "production_readiness_claims"
+  ],
+  "output_publication_policy": {
+    "accepted_public_requires_review_decision": true,
+    "accepted_public_is_provenance_bound": true,
+    "accepted_public_is_not_rights_clearance": true,
+    "accepted_public_is_not_malware_safety": true,
+    "accepted_public_is_not_canonical_truth": true,
+    "hosted_publication_runtime": "future_deferred"
+  },
+  "notes": [
+    "The review queue is a governance contract only.",
+    "Queue entries are review candidates, not accepted master-index state.",
+    "Future hosted intake must be separately designed, approved, and validated."
+  ]
+}

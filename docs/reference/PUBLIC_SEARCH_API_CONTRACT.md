@@ -215,7 +215,8 @@ wrapper for proposed changes and referenced packs. Contribution packs are not
 imported by the current public search runtime, do not upload or accept records,
 do not make contributions canonical truth, and do not grant moderation,
 identity, live fetch, or master-index authority. Future public search use must
-wait for a governed review queue and accepted public records.
+wait for Master Index Review Queue Contract v0-governed review and accepted
+public records.
 
 ## Out Of Scope
 

@@ -1,0 +1,41 @@
+{
+  "report_id": "master_index_review_queue_contract_v0",
+  "created_by_slice": "master_index_review_queue_contract_v0",
+  "status": "implemented_contract_validation_example_only",
+  "schemas": [
+    "contracts/master_index/review_queue_manifest.v0.json",
+    "contracts/master_index/review_queue_entry.v0.json",
+    "contracts/master_index/review_decision.v0.json"
+  ],
+  "inventory_files": [
+    "control/inventory/master_index/review_queue_policy.json",
+    "control/inventory/master_index/review_state_taxonomy.json",
+    "control/inventory/master_index/acceptance_requirements.json"
+  ],
+  "example_queue": "examples/master_index_review_queue/minimal_review_queue_v0",
+  "example_queue_entry_count": 1,
+  "example_decision_count": 1,
+  "example_decision": "defer",
+  "runtime_implemented": false,
+  "upload_implemented": false,
+  "accounts_implemented": false,
+  "moderation_ui_implemented": false,
+  "hosted_master_index_implemented": false,
+  "automatic_acceptance_implemented": false,
+  "source_pack_import_implemented": false,
+  "evidence_pack_import_implemented": false,
+  "index_pack_import_implemented": false,
+  "contribution_pack_import_implemented": false,
+  "live_probes_enabled": false,
+  "external_observations_created": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "canonical_truth_claimed": false,
+  "production_readiness_claimed": false,
+  "next_recommended_milestone": "Source/Evidence/Index Pack Import Planning v0",
+  "notes": [
+    "Queue entries are review candidates, not truth.",
+    "accepted_public is limited, provenance-bound, and future-review governed.",
+    "The synthetic example defers review and does not publish public claims."
+  ]
+}

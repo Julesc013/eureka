@@ -181,13 +181,16 @@ they can later enter a governed review process.
 Contribution packs do not replace source/evidence/index provenance and do not
 make any referenced pack authoritative.
 
-## Future Master Index Review Queue
+## Master Index Review Queue
 
-A future Master Index Review Queue Contract should define intake records,
+Master Index Review Queue Contract v0 defines the future queue entries,
 reviewer states, conflict handling, quarantine states, accepted public deltas,
-rejection reasons, audit trails, takedown posture, and publication gates.
+rejection reasons, audit trails, and publication gates for contribution
+candidates.
+
 Contribution Pack Contract v0 only defines what a candidate submission bundle
-looks like before that queue exists.
+looks like. Queue validation is not acceptance, and accepted_public remains
+limited, review-governed, and evidence/provenance-bound.
 
 ## Runtime Consumers
 

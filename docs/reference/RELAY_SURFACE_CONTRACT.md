@@ -33,6 +33,8 @@ A future relay may consume:
   SQLite databases, raw cache files, private paths, or canonical-truth claims
 - future reviewed contribution-pack summaries, without upload/import authority,
   private paths, executable payloads, accounts, or automatic acceptance
+- future master-index review queue outputs only after governed acceptance,
+  without queue runtime, uploads, imports, accounts, or moderation behavior
 - static snapshot manifests and checksums
 - route, source, eval, and page summaries
 - future live backend responses only after capability flags and handoff policy

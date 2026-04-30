@@ -1,0 +1,72 @@
+{
+  "taxonomy_id": "eureka_master_index_review_state_taxonomy_v0",
+  "schema_version": "master_index_review_state_taxonomy.v0",
+  "status": "contract_only",
+  "pack_lifecycle_states": [
+    "draft",
+    "local_private",
+    "validated_local",
+    "shareable_candidate",
+    "submitted",
+    "quarantined",
+    "review_required",
+    "accepted_public",
+    "rejected",
+    "superseded"
+  ],
+  "validation_statuses": [
+    "not_checked",
+    "structurally_valid",
+    "structurally_invalid",
+    "checksum_failed",
+    "privacy_failed",
+    "rights_review_required",
+    "risk_review_required",
+    "conflict_detected",
+    "ready_for_review"
+  ],
+  "review_statuses": [
+    "unreviewed",
+    "automated_checks_pending",
+    "human_review_required",
+    "accepted_public",
+    "rejected",
+    "superseded",
+    "needs_revision",
+    "quarantined"
+  ],
+  "decision_values": [
+    "accept_public",
+    "reject",
+    "quarantine",
+    "request_revision",
+    "supersede",
+    "defer"
+  ],
+  "privacy_classes": [
+    "public_safe",
+    "local_private",
+    "review_required",
+    "restricted",
+    "unknown"
+  ],
+  "rights_classes": [
+    "public_metadata_only",
+    "source_terms_apply",
+    "review_required",
+    "restricted",
+    "unknown"
+  ],
+  "risk_classes": [
+    "metadata_only",
+    "executable_reference",
+    "private_data_risk",
+    "credential_risk",
+    "malware_review_required",
+    "unknown"
+  ],
+  "notes": [
+    "Validation states describe checks; review states describe governance posture.",
+    "accepted_public is limited and provenance-bound, not a rights or malware-safety claim."
+  ]
+}

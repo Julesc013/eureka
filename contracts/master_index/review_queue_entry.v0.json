@@ -1,0 +1,363 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/master_index/review_queue_entry.v0.json",
+  "title": "EurekaMasterIndexReviewQueueEntryV0",
+  "description": "Contract-only schema for a future master-index review queue entry. A queue entry is a review candidate, not accepted truth, and does not implement upload, import, accounts, moderation UI, hosted master index writes, live probes, or automatic acceptance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "queue_entry_id",
+    "queue_id",
+    "contribution_pack_ref",
+    "submitted_as_status",
+    "validation_status",
+    "review_status",
+    "privacy_classification",
+    "rights_classification",
+    "risk_classification",
+    "proposed_changes",
+    "referenced_packs",
+    "evidence_summary",
+    "conflict_summary",
+    "reviewer_notes",
+    "limitations",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "master_index_review_queue_entry.v0"
+    },
+    "queue_entry_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{2,160}$"
+    },
+    "queue_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{2,160}$"
+    },
+    "contribution_pack_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pack_id",
+        "pack_version",
+        "relative_path",
+        "checksum",
+        "validation_status"
+      ],
+      "properties": {
+        "pack_id": {
+          "type": "string"
+        },
+        "pack_version": {
+          "type": "string"
+        },
+        "relative_path": {
+          "type": "string"
+        },
+        "checksum": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "validation_status": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "submitted_as_status": {
+      "$ref": "#/$defs/pack_status"
+    },
+    "validation_status": {
+      "$ref": "#/$defs/validation_status"
+    },
+    "review_status": {
+      "$ref": "#/$defs/review_status"
+    },
+    "privacy_classification": {
+      "$ref": "#/$defs/privacy_classification"
+    },
+    "rights_classification": {
+      "$ref": "#/$defs/rights_classification"
+    },
+    "risk_classification": {
+      "$ref": "#/$defs/risk_classification"
+    },
+    "proposed_changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "change_id",
+          "contribution_id",
+          "change_type",
+          "proposed_action",
+          "summary",
+          "review_required"
+        ],
+        "properties": {
+          "change_id": {
+            "type": "string"
+          },
+          "contribution_id": {
+            "type": "string"
+          },
+          "change_type": {
+            "type": "string"
+          },
+          "proposed_action": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "review_required": {
+            "type": "boolean"
+          },
+          "target_ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "referenced_packs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "pack_ref",
+          "pack_type",
+          "pack_id",
+          "pack_version",
+          "validation_status"
+        ],
+        "properties": {
+          "pack_ref": {
+            "type": "string"
+          },
+          "pack_type": {
+            "enum": [
+              "source_pack",
+              "evidence_pack",
+              "index_pack",
+              "contribution_pack"
+            ]
+          },
+          "pack_id": {
+            "type": "string"
+          },
+          "pack_version": {
+            "type": "string"
+          },
+          "relative_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "checksum": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "validation_status": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "evidence_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_refs",
+        "manual_observation_refs",
+        "ai_suggestion_refs",
+        "provenance_notes",
+        "acceptance_evidence_complete"
+      ],
+      "properties": {
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "manual_observation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ai_suggestion_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "provenance_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "acceptance_evidence_complete": {
+          "type": "boolean"
+        }
+      }
+    },
+    "conflict_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conflict_status",
+        "conflicting_refs",
+        "dispute_notes"
+      ],
+      "properties": {
+        "conflict_status": {
+          "enum": [
+            "none_detected",
+            "conflict_detected",
+            "disputed",
+            "unknown"
+          ]
+        },
+        "conflicting_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dispute_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "reviewer_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision_ref": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "created_by_slice": {
+      "type": "string"
+    },
+    "submitted_by": {
+      "type": "string",
+      "description": "Optional non-account label. Real account or identity semantics are not required by v0."
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "pack_status": {
+      "enum": [
+        "draft",
+        "local_private",
+        "validated_local",
+        "shareable_candidate",
+        "submitted",
+        "quarantined",
+        "review_required",
+        "accepted_public",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "validation_status": {
+      "enum": [
+        "not_checked",
+        "structurally_valid",
+        "structurally_invalid",
+        "checksum_failed",
+        "privacy_failed",
+        "rights_review_required",
+        "risk_review_required",
+        "conflict_detected",
+        "ready_for_review"
+      ]
+    },
+    "review_status": {
+      "enum": [
+        "unreviewed",
+        "automated_checks_pending",
+        "human_review_required",
+        "accepted_public",
+        "rejected",
+        "superseded",
+        "needs_revision",
+        "quarantined"
+      ]
+    },
+    "privacy_classification": {
+      "enum": [
+        "public_safe",
+        "local_private",
+        "review_required",
+        "restricted",
+        "unknown"
+      ]
+    },
+    "rights_classification": {
+      "enum": [
+        "public_metadata_only",
+        "source_terms_apply",
+        "review_required",
+        "restricted",
+        "unknown"
+      ]
+    },
+    "risk_classification": {
+      "enum": [
+        "metadata_only",
+        "executable_reference",
+        "private_data_risk",
+        "credential_risk",
+        "malware_review_required",
+        "unknown"
+      ]
+    }
+  },
+  "x-contract_id": "eureka_master_index_review_queue_entry_v0",
+  "x-status": "stable_draft",
+  "x-review_candidate_only": true,
+  "x-no_runtime_implemented": true,
+  "x-no_upload_implemented": true,
+  "x-no_accounts_implemented": true,
+  "x-no_auto_acceptance": true
+}

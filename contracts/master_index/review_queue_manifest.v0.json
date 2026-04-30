@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/master_index/review_queue_manifest.v0.json",
+  "title": "EurekaMasterIndexReviewQueueManifestV0",
+  "description": "Contract-only schema for a future master-index review queue manifest. The manifest describes queue files, validation policy, review policy, and publication boundaries without implementing a hosted queue, upload handling, accounts, moderation UI, automatic acceptance, or master-index writes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "queue_id",
+    "title",
+    "status",
+    "queue_entries",
+    "decision_files",
+    "validation_policy",
+    "privacy_policy",
+    "rights_policy",
+    "risk_policy",
+    "conflict_policy",
+    "publication_policy",
+    "no_runtime_implemented",
+    "no_upload_implemented",
+    "no_accounts_implemented",
+    "no_auto_acceptance",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "master_index_review_queue_manifest.v0"
+    },
+    "queue_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{2,160}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "local_review_example",
+        "hosted_future",
+        "inactive"
+      ]
+    },
+    "queue_entries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "decision_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation_policy": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "structural_validation_required",
+        "checksum_validation_required",
+        "pack_validator_required"
+      ]
+    },
+    "privacy_policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "rights_policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "risk_policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "conflict_policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "publication_policy": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "accepted_public_requires_decision",
+        "accepted_public_is_not_rights_clearance",
+        "accepted_public_is_not_malware_safety",
+        "accepted_public_is_not_canonical_truth"
+      ]
+    },
+    "no_runtime_implemented": {
+      "const": true
+    },
+    "no_upload_implemented": {
+      "const": true
+    },
+    "no_accounts_implemented": {
+      "const": true
+    },
+    "no_auto_acceptance": {
+      "const": true
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-contract_id": "eureka_master_index_review_queue_manifest_v0",
+  "x-status": "stable_draft",
+  "x-no_runtime_implemented": true,
+  "x-no_upload_implemented": true,
+  "x-no_accounts_implemented": true,
+  "x-no_auto_acceptance": true
+}

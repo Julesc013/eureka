@@ -26,5 +26,7 @@ plugins, live connectors, hosted submission, or master-index acceptance.
   corrections, alias suggestions, compatibility suggestions, absence reports,
   result feedback, and checksum declarations without upload/import authority.
 
-Future contracts are expected for review queues. Pack contracts must stay
-separate so one pack type cannot silently gain the authority of another.
+Master-index review queue contracts now live under `contracts/master_index/`
+because queue entries and decisions are governance records, not pack formats.
+Pack contracts must stay separate so one pack type cannot silently gain the
+authority of another.

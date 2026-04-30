@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/master_index/review_decision.v0.json",
+  "title": "EurekaMasterIndexReviewDecisionV0",
+  "description": "Contract-only schema for future master-index review decisions. Decisions document review posture and do not implement automatic acceptance, hosted master-index writes, rights clearance, malware safety, or canonical truth selection.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "decision_id",
+    "queue_entry_id",
+    "decision",
+    "decision_basis",
+    "reviewer_notes",
+    "public_claims_allowed",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "master_index_review_decision.v0"
+    },
+    "decision_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{2,160}$"
+    },
+    "queue_entry_id": {
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "accept_public",
+        "reject",
+        "quarantine",
+        "request_revision",
+        "supersede",
+        "defer"
+      ]
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "structural_validation",
+          "evidence_review",
+          "source_policy_review",
+          "privacy_review",
+          "rights_review",
+          "risk_review",
+          "conflict_review",
+          "manual_reviewer",
+          "future_policy"
+        ]
+      },
+      "minItems": 1
+    },
+    "accepted_records": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rejected_records": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "superseded_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "public_claims_allowed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed",
+        "scope",
+        "claims",
+        "not_rights_clearance",
+        "not_malware_safety",
+        "not_canonical_truth"
+      ],
+      "properties": {
+        "allowed": {
+          "type": "boolean"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "not_rights_clearance": {
+          "const": true
+        },
+        "not_malware_safety": {
+          "const": true
+        },
+        "not_canonical_truth": {
+          "const": true
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "created_by_slice": {
+      "type": "string"
+    }
+  },
+  "x-contract_id": "eureka_master_index_review_decision_v0",
+  "x-status": "stable_draft",
+  "x-accept_public_is_limited": true,
+  "x-no_auto_acceptance": true,
+  "x-no_runtime_implemented": true
+}
