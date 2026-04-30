@@ -66,8 +66,10 @@ class PublicSearchSafetyAbuseGuardTest(unittest.TestCase):
     def test_safety_inventory_exists_and_parses(self) -> None:
         self.assertTrue(SAFETY.is_file())
         payload = json.loads(SAFETY.read_text(encoding="utf-8"))
-        self.assertEqual(payload["status"], "policy_only")
-        self.assertTrue(payload["no_runtime_implemented"])
+        self.assertEqual(payload["status"], "local_runtime_guard_active")
+        self.assertFalse(payload["no_runtime_implemented"])
+        self.assertTrue(payload["local_public_search_runtime_implemented"])
+        self.assertFalse(payload["hosted_public_search_runtime_implemented"])
         self.assertTrue(payload["no_public_search_live"])
 
     def test_local_index_only_is_only_allowed_mode(self) -> None:
@@ -133,14 +135,19 @@ class PublicSearchSafetyAbuseGuardTest(unittest.TestCase):
         self.assertEqual(flags["EUREKA_ALLOW_DOWNLOADS"], "0")
         self.assertEqual(flags["EUREKA_ALLOW_TELEMETRY"], "0")
 
-    def test_routes_remain_future_reserved(self) -> None:
+    def test_routes_are_local_runtime_only(self) -> None:
         payload = json.loads(ROUTES.read_text(encoding="utf-8"))
-        self.assertFalse(payload["implemented_now"])
-        self.assertFalse(payload["runtime_routes_implemented"])
+        self.assertTrue(payload["implemented_now"])
+        self.assertTrue(payload["runtime_routes_implemented"])
+        self.assertEqual(payload["implementation_scope"], "local_prototype_backend")
+        self.assertFalse(payload["hosted_public_runtime_implemented"])
+        self.assertFalse(payload["static_handoff_implemented"])
         for route in payload["routes"]:
             with self.subTest(route=route["path_template"]):
-                self.assertFalse(route["implemented_now"])
-                self.assertIn(route["status"], {"future_contract", "reserved", "planned"})
+                self.assertTrue(route["implemented_now"])
+                self.assertEqual(route["status"], "local_runtime_implemented")
+                self.assertEqual(route["implementation_scope"], "local_prototype_backend")
+                self.assertFalse(route["hosted_public_deployment"])
                 self.assertEqual(route["allowed_modes"], ["local_index_only"])
                 self.assertFalse(route["live_probe_allowed"])
                 self.assertFalse(route["downloads_allowed"])
@@ -153,8 +160,8 @@ class PublicSearchSafetyAbuseGuardTest(unittest.TestCase):
         self.assertTrue(READINESS.is_file())
         text = SAFETY_DOC.read_text(encoding="utf-8").casefold()
         for phrase in (
-            "policy and contract only",
-            "does not implement public search runtime",
+            "local public search runtime v0",
+            "does not add rate-limit middleware",
             "telemetry is not implemented and defaults off",
             "github pages remains static-only",
             "local_index_only",
@@ -162,14 +169,15 @@ class PublicSearchSafetyAbuseGuardTest(unittest.TestCase):
             self.assertIn(phrase, text)
         self.assertNotIn("public search is live", text)
         checklist = READINESS.read_text(encoding="utf-8")
-        self.assertIn("Status: future checklist, unsigned.", checklist)
-        self.assertIn("implementation_approved: false", checklist)
+        self.assertIn("Local Public Search Runtime v0", checklist)
+        self.assertIn("hosted_public_runtime_approved: false", checklist)
+        self.assertIn("static_search_handoff_approved: false", checklist)
         self.assertIn("production_claim_allowed: false", checklist)
 
     def test_public_alpha_safe_mode_remains_compatible(self) -> None:
         text = PUBLIC_ALPHA_SAFE_MODE.read_text(encoding="utf-8").casefold()
         self.assertIn("public search safety / abuse guard v0", text)
-        self.assertIn("public search is not live", text)
+        self.assertIn("hosted public search is not live", text)
         self.assertIn("telemetry defaults off", text)
 
 

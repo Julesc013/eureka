@@ -1,44 +1,46 @@
 # Public Search Runtime Readiness Checklist
 
-Status: future checklist, unsigned.
+Status: local runtime implemented; hosted checklist unsigned.
 
-This checklist gates Local Public Search Runtime v0. It is not approval to add a
-hosted backend, public deployment, live probes, downloads, installers, uploads,
-accounts, telemetry, rate-limit middleware, or production API claims.
+This checklist records Local Public Search Runtime v0 and gates future hosted
+public-search rehearsal. It is not approval to add hosted backend deployment,
+static search handoff, live probes, downloads, installers, uploads, accounts,
+telemetry, rate-limit middleware, or production API claims.
 
 ## Contract Gates
 
-- [ ] `python scripts/validate_public_search_contract.py` passes.
-- [ ] `python scripts/validate_public_search_result_card_contract.py` passes.
-- [ ] `python scripts/validate_public_search_safety.py` passes.
-- [ ] `contracts/api/search_request.v0.json` remains `local_index_only` only.
-- [ ] `contracts/api/search_response.v0.json` still aligns with result cards.
-- [ ] `contracts/api/error_response.v0.json` contains required safety error
+- [x] `python scripts/validate_public_search_contract.py` passes locally.
+- [x] `python scripts/validate_public_search_result_card_contract.py` passes locally.
+- [x] `python scripts/validate_public_search_safety.py` passes locally.
+- [x] `contracts/api/search_request.v0.json` remains `local_index_only` only.
+- [x] `contracts/api/search_response.v0.json` still aligns with result cards.
+- [x] `contracts/api/error_response.v0.json` contains required safety error
   codes.
 
 ## Runtime Boundary Gates
 
-- [ ] Local index root is server-owned, configured by operator policy, and never
+- [x] Local index root is server-owned, configured by operator policy, and never
   caller-provided.
-- [ ] Request parser rejects local path, URL, credential, download, install,
+- [x] Request parser rejects local path, URL, credential, download, install,
   execute, upload, live-probe, and arbitrary-source parameters.
-- [ ] No live probes or external source calls are reachable from public search.
-- [ ] No arbitrary URL fetch is reachable from public search.
-- [ ] No downloads, installers, execution, mirrors, restore, rollback, or uploads
+- [x] No live probes or external source calls are reachable from public search.
+- [x] No arbitrary URL fetch is reachable from public search.
+- [x] No downloads, installers, execution, mirrors, restore, rollback, or uploads
   are exposed.
-- [ ] Raw source payloads and private local paths are never returned.
-- [ ] Query length, include count, result limit, and timeout limits are enforced.
-- [ ] Stable error mapping is implemented for forbidden parameters and disabled
+- [x] Raw source payloads and private local paths are never returned.
+- [x] Query length, include count, and result limit are enforced locally; hosted
+  timeout middleware remains future.
+- [x] Stable error mapping is implemented for forbidden parameters and disabled
   capabilities.
 
 ## Surface Gates
 
-- [ ] HTML and JSON behavior are both defined for successful search.
-- [ ] Lite/text degradation preserves source, evidence, compatibility,
+- [x] HTML and JSON behavior are both defined for successful search.
+- [ ] Lite/text static handoff degradation preserves source, evidence, compatibility,
   limitations, and blocked action posture.
-- [ ] Result cards expose allowed, blocked, and future-gated actions honestly.
-- [ ] Absence reports remain bounded and do not imply global non-existence.
-- [ ] Static `site/dist` continues to be static-only.
+- [x] Result cards expose allowed, blocked, and future-gated actions honestly.
+- [x] Absence reports remain bounded and do not imply global non-existence.
+- [x] Static `site/dist` continues to be static-only.
 
 ## Operator And Privacy Gates
 
@@ -54,17 +56,19 @@ accounts, telemetry, rate-limit middleware, or production API claims.
 
 ## Verification Gates
 
-- [ ] Public search safety tests exist for disabled modes and forbidden
+- [x] Public search safety tests exist for disabled modes and forbidden
   parameters.
-- [ ] Public-alpha smoke tests remain compatible.
+- [x] Public-alpha smoke tests remain compatible.
 - [ ] Architecture-boundary checks pass.
 - [ ] Generated static artifact checks pass.
-- [ ] No documentation claims public search is live.
+- [x] No documentation claims hosted deployment success.
 - [ ] No documentation claims production API stability or production readiness.
 
 ## Approval State
 
-- checklist_status: `future_unsigned`
-- implementation_approved: false
+- checklist_status: `local_runtime_implemented_hosted_unsigned`
+- local_runtime_implemented: true
+- implementation_approved: true
 - hosted_public_runtime_approved: false
+- static_search_handoff_approved: false
 - production_claim_allowed: false

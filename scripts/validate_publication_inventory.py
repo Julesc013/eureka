@@ -1074,16 +1074,16 @@ def _validate_public_search_routes(payload: Any, errors: list[str]) -> None:
         "schema_version": "0.1.0",
         "registry_id": "eureka-public-search-routes",
         "contract_id": "public_search_api_contract_v0",
-        "status": "contract_only",
-        "implemented_now": False,
-        "runtime_routes_implemented": False,
+        "status": "local_runtime_implemented",
+        "implemented_now": True,
+        "runtime_routes_implemented": True,
         "first_allowed_mode": "local_index_only",
     }
     _expect_mapping_values("public_search_routes.json", payload, expected, errors)
     if _string_list(payload.get("contract_modes")) != ["local_index_only"]:
         errors.append("public_search_routes.json: contract_modes must contain only local_index_only.")
-    if payload.get("runtime_modes_implemented") != []:
-        errors.append("public_search_routes.json: runtime_modes_implemented must be empty.")
+    if payload.get("runtime_modes_implemented") != ["local_index_only"]:
+        errors.append("public_search_routes.json: runtime_modes_implemented must be [local_index_only].")
     routes = payload.get("routes")
     if not isinstance(routes, list):
         errors.append("public_search_routes.json: routes must be a list.")
@@ -1095,10 +1095,10 @@ def _validate_public_search_routes(payload: Any, errors: list[str]) -> None:
             continue
         route_id = f"{route.get('method')} {route.get('path_template')}"
         registered.add(route_id)
-        if route.get("status") not in {"future_contract", "reserved", "planned", "deferred"}:
-            errors.append(f"public_search_routes.json: route {route_id} must remain future/reserved.")
-        if route.get("implemented_now") is not False:
-            errors.append(f"public_search_routes.json: route {route_id}.implemented_now must be false.")
+        if route.get("status") != "local_runtime_implemented":
+            errors.append(f"public_search_routes.json: route {route_id} must be local_runtime_implemented.")
+        if route.get("implemented_now") is not True:
+            errors.append(f"public_search_routes.json: route {route_id}.implemented_now must be true.")
         if route.get("requires_backend") is not True:
             errors.append(f"public_search_routes.json: route {route_id}.requires_backend must be true.")
         for flag in (

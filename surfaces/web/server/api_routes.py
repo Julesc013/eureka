@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from typing import Any, Mapping
-from urllib.parse import parse_qs
+from urllib.parse import parse_qs, unquote
 
 from runtime.gateway.public_api import (
     AcquisitionFetchRequest,
@@ -47,6 +47,7 @@ from runtime.gateway.public_api import (
     ResolutionJobsPublicApi,
     QueryPlanRequest,
     QueryPlannerPublicApi,
+    PublicSearchPublicApi,
     ResolutionRunReadRequest,
     ResolutionWorkspaceReadError,
     SearchCatalogRequest,
@@ -60,6 +61,7 @@ from runtime.gateway.public_api import (
     build_demo_local_tasks_public_api,
     build_demo_local_index_public_api,
     build_demo_stored_exports_public_api,
+    build_demo_public_search_public_api,
     acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
     absence_envelope_to_view_model,
@@ -282,6 +284,44 @@ def build_api_index_document(
                 "response_content_types": ["application/json"],
             },
             {
+                "path": "/api/v1/status",
+                "method": "GET",
+                "query_parameters": [],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/v1/search",
+                "method": "GET",
+                "query_parameters": ["q", "limit", "profile", "mode", "include", "source_policy"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/v1/query-plan",
+                "method": "GET",
+                "query_parameters": ["q", "mode", "include"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/v1/sources",
+                "method": "GET",
+                "query_parameters": [
+                    "status",
+                    "family",
+                    "role",
+                    "surface",
+                    "coverage_depth",
+                    "capability",
+                    "connector_mode",
+                ],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/v1/source/{source_id}",
+                "method": "GET",
+                "query_parameters": [],
+                "response_content_types": ["application/json"],
+            },
+            {
                 "path": "/api/search",
                 "method": "GET",
                 "query_parameters": ["q"],
@@ -405,6 +445,7 @@ def handle_api_request(
     search_public_api: SearchPublicApi,
     source_registry_public_api: SourceRegistryPublicApi | None,
     session_id: str,
+    public_search_public_api: PublicSearchPublicApi | None = None,
     server_config: WebServerConfig | None = None,
 ) -> SerializedHttpResponse | None:
     if not path.startswith("/api"):
@@ -430,6 +471,32 @@ def handle_api_request(
 
     if path in {"/api", "/api/"}:
         return json_response(200, build_api_index_document(config))
+
+    if path == "/api/v1/status":
+        public_search_api = public_search_public_api or build_demo_public_search_public_api()
+        response = public_search_api.status(query)
+        return json_response(response.status_code, response.body)
+
+    if path == "/api/v1/search":
+        public_search_api = public_search_public_api or build_demo_public_search_public_api()
+        response = public_search_api.search(query, default_profile="api_client")
+        return json_response(response.status_code, response.body)
+
+    if path == "/api/v1/query-plan":
+        public_search_api = public_search_public_api or build_demo_public_search_public_api()
+        response = public_search_api.query_plan(query, default_profile="api_client")
+        return json_response(response.status_code, response.body)
+
+    if path == "/api/v1/sources":
+        public_search_api = public_search_public_api or build_demo_public_search_public_api()
+        response = public_search_api.list_sources(query)
+        return json_response(response.status_code, response.body)
+
+    if path.startswith("/api/v1/source/"):
+        public_search_api = public_search_public_api or build_demo_public_search_public_api()
+        source_id = unquote(path.removeprefix("/api/v1/source/"))
+        response = public_search_api.get_source(source_id, query)
+        return json_response(response.status_code, response.body)
 
     if path == "/api/evals/archive-resolution":
         if archive_resolution_evals_public_api is None:

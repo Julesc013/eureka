@@ -1,27 +1,30 @@
 # Public Search Local-Index-Only Mode
 
-Status: implemented as policy and contract text only.
+Status: implemented for Local Public Search Runtime v0 as local/prototype backend runtime only.
 
 `local_index_only` is the first allowed public search execution mode. It is a
-future runtime mode, not a current hosted API. The mode exists so later route
-work has a governed boundary before implementation starts.
+local/prototype backend runtime mode, not a hosted API and not a static search
+handoff page. The mode keeps public search bounded to controlled local index
+records owned by the Eureka runtime.
 
 ## Allowed Shape
 
-Future `local_index_only` search may:
+`local_index_only` search may:
 
 - accept a bounded public query with a 160 character maximum;
-- use a controlled local index owned by the future public-search runtime;
+- use a controlled local index owned by the public-search runtime;
 - return at most 25 results in contract v0, defaulting to 10;
 - expose result lanes, user-cost hints, compatibility summaries, evidence
   summaries, source summaries, warnings, and bounded absence reports;
-- emit result cards governed by Public Search Result Card Contract v0 only after
-  a future runtime implements them;
+- emit result cards governed by Public Search Result Card Contract v0;
 - produce `standard_web`, `lite_html`, `text`, and `api_client` projections;
 - return the stable error envelope defined by Public Search API Contract v0.
 
+Operational summary: no live probes, no downloads, no installs, no uploads, no
+caller-provided local paths, and no arbitrary URL fetches are allowed.
+
 The mode may read only governed public/local-index records selected by the
-future runtime milestone. It must not accept caller-provided index roots, store
+runtime. It must not accept caller-provided index roots, store
 roots, local filesystem paths, URLs, credentials, uploaded files, or source
 secrets.
 
@@ -49,18 +52,16 @@ error codes. Forbidden fields should use `forbidden_parameter` or the more
 specific `local_paths_forbidden`, `downloads_disabled`, `installs_disabled`,
 `uploads_disabled`, or `live_probes_disabled` codes.
 
-The future Public Search Safety / Abuse Guard v0 milestone has now defined
-policy-only runtime controls before the contract is hosted. This local-index
-mode policy still does not implement rate limiting, TLS, auth, abuse detection,
-process management, logging, or runtime deployment.
+Public Search Safety / Abuse Guard v0 now defines and constrains this local
+runtime. This local-index mode still does not implement rate limiting, TLS,
+auth, abuse detection, process management, logging, hosted deployment, or static
+search handoff.
 
-Public Search Safety / Abuse Guard v0 is now implemented as policy and
-contract-only guardrails in
+Public Search Safety / Abuse Guard v0 is now implemented as guardrails in
 `docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md` and
-`control/inventory/publication/public_search_safety.json`. A future runtime
-must satisfy those guardrails and
-`docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md` before
-`local_index_only` search is exposed.
+`control/inventory/publication/public_search_safety.json`. Local Public Search
+Runtime v0 satisfies the first local route gate; hosted public exposure still
+must satisfy `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`.
 
 ## Privacy And Logging Notes
 
@@ -74,6 +75,6 @@ runtime evidence.
 
 Static `site/dist` remains the active publication artifact and does not host
 live search. Public data, lite, text, files, and demo surfaces may describe the
-future contract, but they must not claim that public search is live. Native
-clients, relay surfaces, and snapshots may consume future stable fields only
-after their own contracts allow it.
+local runtime, but they must not claim hosted public search exists. Native
+clients, relay surfaces, and snapshots may consume stable fields only after
+their own contracts allow it.

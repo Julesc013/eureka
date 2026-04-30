@@ -26,10 +26,14 @@ Static pages may describe `/api/v1/` as future/reserved. They must not link to
 it as an available service, and clients must check capability flags before
 attempting live behavior.
 
-Public Search API Contract v0 now reserves `/search` and `/api/v1/search` as
-future `local_index_only` search routes. This is contract-only: no route
-handler, hosted backend, live probe, download/install/upload behavior, local
-path search, arbitrary URL fetch, or production API stability is added.
+Public Search API Contract v0 now governs `/search` and `/api/v1/search` as
+`local_index_only` search routes, and Local Public Search Runtime v0 implements
+the first local/prototype backend handlers for `/search`, `/api/v1/search`,
+`/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
+`/api/v1/source/{source_id}`. This does not host the backend, deploy a public
+service, add a static search handoff page, enable live probes,
+download/install/upload behavior, local path search, arbitrary URL fetch,
+accounts, telemetry, or production API stability.
 Public Search Result Card Contract v0 now defines the future `results[]` card
 for those routes, but it is also contract-only and does not make the backend or
 search response live.
@@ -69,6 +73,8 @@ operator and contract work defines:
 - status/capability response shape
 - live probe gateway runtime implementation after the contract-only policy
 - public search safety and abuse controls before search runtime is hosted
+- static search handoff from `site/dist` to the local route, without making
+  GitHub Pages dynamic
 - rollback and disabled-by-default behavior
 
 This milestone adds none of those runtime behaviors.

@@ -14,6 +14,7 @@ from surfaces.web.workbench.render_local_tasks import render_local_tasks_html
 from surfaces.web.workbench.render_decomposition import render_decomposition_html
 from surfaces.web.workbench.render_member_access import render_member_access_html
 from surfaces.web.workbench.render_query_plan import render_query_plan_html
+from surfaces.web.workbench.render_public_search import render_public_search_html
 from surfaces.web.workbench.render_search_results import render_search_results_html
 from surfaces.web.workbench.render_source_registry import render_source_registry_html
 from surfaces.web.workbench.render_resolution_workspace import render_resolution_workspace_html
@@ -36,6 +37,7 @@ __all__ = [
     "render_local_tasks_html",
     "render_member_access_html",
     "render_query_plan_html",
+    "render_public_search_html",
     "render_representations_html",
     "render_resolution_runs_html",
     "render_resolution_workspace_html",

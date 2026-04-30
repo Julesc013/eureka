@@ -114,8 +114,9 @@ class PublicSearchResultCardContractTest(unittest.TestCase):
         text = REFERENCE_DOC.read_text(encoding="utf-8").casefold()
         for phrase in (
             "contract-only",
-            "does not make public search live",
-            "does not add runtime routes",
+            "local public search runtime v0",
+            "local/prototype result",
+            "hosted public exposure still waits",
             "does not enable downloads",
             "installers",
             "execution",

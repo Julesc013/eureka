@@ -33,7 +33,7 @@ Compatibility Surface Strategy v0 does not implement new runtime product behavio
 | Demo | static_demo seed | `/demo/` | no | no | yes | Fixture-backed resolver examples, not live search. |
 | App | deferred | `/app/` | unresolved | yes | no | Future richer browser app; no framework exists. |
 | API | planned contract | `/api/v1/` | yes | no | no | Future live backend handoff, not production API. |
-| Public search API | planned contract | `/search`, `/api/v1/search` | yes | no | no | Public Search API Contract v0 reserves local-index-only search envelopes; no runtime route is live. |
+| Public search API | local prototype runtime | `/search`, `/api/v1/search` | yes | no | no | Public Search API Contract v0 plus Local Public Search Runtime v0 expose local-index-only search through the stdlib backend; hosted deployment and static handoff remain future. |
 | Snapshots | deferred with seed example | `/snapshots/` future, `snapshots/examples/static_snapshot_v0/` repo seed | no | no | yes | Format contract and seed example exist; production signed releases and public route remain future. |
 | Relay | deferred with design contract | local LAN/protocol bridge | yes | no | no | Relay Surface Design v0 records future local/LAN bridge policy; no relay runtime, FTP/SMB/WebDAV/Gopher, socket listener, private-data exposure, or write/admin route is implemented. |
 | Native clients | deferred with design contract | consume `/data`, `/api`, snapshots | no by default | no | no | Native Client Contract v0 records future Windows/macOS lanes; CLI is the current local surface. |
@@ -73,11 +73,14 @@ Contract. Live probes require the Live Probe Gateway Contract plus explicit
 operator approval, abuse controls, source policy review, and disabled-by-default
 source gates.
 
-Public Search API Contract v0 sits between those two layers: it defines future
-request, response, error, and route envelopes for `local_index_only` search, but
-does not implement `/search`, `/api/v1/search`, live probes, arbitrary URL
-fetching, downloads, installs, uploads, local path search, or production API
-stability.
+Public Search API Contract v0 sits between those two layers: it defines
+request, response, error, and route envelopes for `local_index_only` search.
+Local Public Search Runtime v0 implements `/search`, `/api/v1/search`,
+`/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
+`/api/v1/source/{source_id}` as local/prototype backend routes only. It does
+not add hosted deployment, static search handoff, live probes, arbitrary URL
+fetching, downloads, installs, uploads, local path search, accounts, telemetry,
+or production API stability.
 Public Search Result Card Contract v0 refines the future `results[]` unit that
 those envelopes will carry. It keeps lane, user-cost, source, evidence,
 compatibility, action gating, rights, risk, warnings, limitations, and gaps

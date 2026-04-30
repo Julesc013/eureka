@@ -153,12 +153,12 @@
         "local_dev": "allowed",
         "public_alpha": "allowed"
       },
-      "notes": "Uses current deterministic search over the bounded corpus with bounded lane/user-cost hints, not local-index, production ranking, fuzzy, vector, or semantic retrieval.",
+      "notes": "Uses Local Public Search Runtime v0 over controlled local-index records. No live probes, downloads, uploads, local path parameters, production ranking, fuzzy, vector, or semantic retrieval.",
       "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
-      "reason": "Deterministic search is read-only and uses no arbitrary local path parameter.",
+      "reason": "Local public search is read-only and rejects arbitrary local path, URL, live probe, download, install, upload, and credential parameters.",
       "route_pattern": "/search",
       "surface_type": "html",
-      "write_read_behavior": "read-only search HTML"
+      "write_read_behavior": "read-only local public-search HTML"
     },
     {
       "classification": "safe_public_alpha",
@@ -174,6 +174,81 @@
       "route_pattern": "/api/search",
       "surface_type": "api",
       "write_read_behavior": "read-only search JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Local Public Search Runtime v0 status route. Reports local_index_only and disabled live/download/upload/local-path/telemetry capabilities without private paths.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public search status is read-only and exposes safe capability flags only.",
+      "route_pattern": "/api/v1/status",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public-search status JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Local Public Search Runtime v0 JSON search route. It rejects forbidden local path, URL, live probe, download, install, upload, credential, and unsupported mode parameters.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public search is read-only, local_index_only, bounded by query/result limits, and uses no caller-provided paths.",
+      "route_pattern": "/api/v1/search",
+      "surface_type": "api",
+      "write_read_behavior": "read-only local public-search JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Local Public Search Runtime v0 query-plan route. It validates public-search request limits and does not perform live probes.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public query planning is deterministic, read-only, and local_index_only.",
+      "route_pattern": "/api/v1/query-plan",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public-search query-plan JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Local Public Search Runtime v0 source summaries. Returns governed source metadata without fixture paths or live source sync.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public source summaries are read-only and public-safe.",
+      "route_pattern": "/api/v1/sources",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public-search source summaries JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Local Public Search Runtime v0 source detail route by governed source_id. Returns public-safe source metadata only.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public source detail is read-only and uses governed source IDs, not local paths.",
+      "route_pattern": "/api/v1/source/{source_id}",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public-search source detail JSON"
     },
     {
       "classification": "safe_public_alpha",

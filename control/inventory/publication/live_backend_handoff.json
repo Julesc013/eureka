@@ -65,9 +65,11 @@
   "live_probe_gateway_contract": "control/inventory/publication/live_probe_gateway.json",
   "live_probe_gateway_contract_status": "implemented_contract_only_runtime_disabled",
   "public_search_api_contract": "control/inventory/publication/public_search_routes.json",
-  "public_search_api_contract_status": "implemented_contract_only",
+  "public_search_api_contract_status": "local_runtime_implemented_hosted_disabled",
   "public_search_first_allowed_mode": "local_index_only",
-  "public_search_runtime_implemented": false,
+  "public_search_runtime_implemented": true,
+  "public_search_runtime_scope": "local_prototype_backend",
+  "hosted_public_search_runtime_implemented": false,
   "client_profiles": [
     "standard_web",
     "modern_web",
@@ -99,12 +101,12 @@
     "GitHub Pages remains a static-only publication target.",
     "No backend hosting, live source probe, auth, account, CORS, rate-limit, provider deployment, or production API guarantee is added.",
     "Live Probe Gateway Contract v0 now defines disabled-by-default probe policy, but /api/v1/live-probe remains blocked until later explicit implementation approval.",
-    "Public Search API Contract v0 reserves /search and /api/v1/search for future local-index-only search without making the API live or enabling live probes.",
-    "Public Search Result Card Contract v0 defines the future result-card output for those reserved routes without implementing route handlers or live backend behavior.",
+    "Public Search API Contract v0 now has Local Public Search Runtime v0 route handlers for local/prototype /search and /api/v1/search without making hosted search live or enabling live probes.",
+    "Public Search Result Card Contract v0 defines the result-card output used by the local runtime without adding live backend behavior.",
     "Compatibility Surface Strategy v0 treats /api/v1 as a future optional projection alongside static data, lite/text/files, snapshots, relay, CLI, and native-client plans.",
-    "Public Search Safety / Abuse Guard v0 now defines policy-only local_index_only safety, abuse, privacy, and operator-control requirements before /api/v1/search can be implemented; the live backend remains future and rate-limit middleware remains unimplemented."
+    "Public Search Safety / Abuse Guard v0 now constrains local_index_only safety, abuse, privacy, and operator-control requirements; the live backend remains future and rate-limit middleware remains unimplemented."
   ],
   "public_search_safety_policy": "control/inventory/publication/public_search_safety.json",
-  "public_search_safety_policy_status": "implemented_policy_only_runtime_disabled",
+  "public_search_safety_policy_status": "local_runtime_guard_active_hosted_disabled",
   "public_search_runtime_readiness_checklist": "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md"
 }

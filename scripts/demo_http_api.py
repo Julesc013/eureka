@@ -6,7 +6,7 @@ from pathlib import Path
 import sys
 from threading import Thread
 from typing import Iterator
-from urllib.parse import urlencode
+from urllib.parse import quote, urlencode
 from urllib.request import HTTPError, urlopen
 from wsgiref.simple_server import WSGIRequestHandler, make_server
 
@@ -25,6 +25,7 @@ from runtime.gateway.public_api import (
     build_demo_decomposition_public_api,
     build_demo_local_index_public_api,
     build_demo_member_access_public_api,
+    build_demo_public_search_public_api,
     build_demo_query_planner_public_api,
     build_demo_representation_selection_public_api,
     build_demo_resolution_actions_public_api,
@@ -79,6 +80,28 @@ def main(argv: list[str] | None = None) -> int:
         help="Fetch a machine-readable deterministic query plan.",
     )
     query_plan_parser.add_argument("query")
+
+    public_search_parser = subparsers.add_parser(
+        "public-search",
+        help="Fetch governed local-index-only public search results.",
+    )
+    public_search_parser.add_argument("query")
+    public_search_parser.add_argument("--limit", type=int)
+
+    public_query_plan_parser = subparsers.add_parser(
+        "public-query-plan",
+        help="Fetch the governed public-search query-plan envelope.",
+    )
+    public_query_plan_parser.add_argument("query")
+
+    subparsers.add_parser("public-status", help="Fetch governed public-search status.")
+    subparsers.add_parser("public-sources", help="Fetch governed public-search source summaries.")
+
+    public_source_parser = subparsers.add_parser(
+        "public-source",
+        help="Fetch one governed public-search source summary.",
+    )
+    public_source_parser.add_argument("source_id")
 
     index_build_parser = subparsers.add_parser(
         "index-build",
@@ -334,6 +357,20 @@ def _fetch_command(base_url: str, args: argparse.Namespace) -> int:
         path = _path("/api/search", q=args.query)
     elif args.command == "query-plan":
         path = _path("/api/query-plan", q=args.query)
+    elif args.command == "public-search":
+        path = _path(
+            "/api/v1/search",
+            q=args.query,
+            limit=str(args.limit) if args.limit is not None else None,
+        )
+    elif args.command == "public-query-plan":
+        path = _path("/api/v1/query-plan", q=args.query)
+    elif args.command == "public-status":
+        path = "/api/v1/status"
+    elif args.command == "public-sources":
+        path = "/api/v1/sources"
+    elif args.command == "public-source":
+        path = "/api/v1/source/" + quote(args.source_id, safe="")
     elif args.command == "index-build":
         path = _path("/api/index/build", index_path=args.index_path)
     elif args.command == "index-status":
@@ -540,6 +577,7 @@ def _base_url_context(
         bundle_inspection_public_api=build_demo_resolution_bundle_inspection_public_api(),
         local_index_public_api=build_demo_local_index_public_api(),
         search_public_api=build_demo_search_public_api(),
+        public_search_public_api=build_demo_public_search_public_api(),
         source_registry_public_api=build_demo_source_registry_public_api(),
         default_target_ref=DEFAULT_TARGET_REF,
         server_config=server_config,

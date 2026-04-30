@@ -109,12 +109,12 @@ closed by default. Public-alpha does not enable private cache, private file
 ingestion, local archive scanning, telemetry, analytics, accounts, cloud sync,
 diagnostics upload, source credentials, or private path exposure.
 
-Public Search Safety / Abuse Guard v0 now defines the policy-only guardrails for
-future `/search` and `/api/v1/search` work. Public Alpha Safe Mode remains
-compatible with that guard: `local_index_only` is the only future allowed mode,
-public search is not live, live probes are disabled, downloads/installers/
-uploads/local paths are forbidden, telemetry defaults off, and no rate-limit,
-auth, account, or logging runtime is added by the safety policy.
+Public Search Safety / Abuse Guard v0 now defines the guardrails used by Local
+Public Search Runtime v0. Public Alpha Safe Mode remains compatible with that
+guard: `local_index_only` is the only allowed mode, hosted public search is not live,
+public search is not live as hosted deployment, live probes are disabled, downloads/installers/uploads/local paths are
+forbidden, telemetry defaults off, and no rate-limit, auth, account, or logging
+runtime is added by the safety policy.
 
 ## Still Not Production
 

@@ -319,7 +319,7 @@
   ],
   "local_cache_privacy_policy_dependency": {
     "policy": "control/inventory/publication/local_cache_privacy_policy.json",
-    "status": "policy_only",
+    "status": "local_runtime_guard_active",
     "private_uploads_enabled": false,
     "telemetry_enabled": false,
     "automatic_local_scan_enabled": false,
@@ -366,6 +366,6 @@
     "installs_enabled": false,
     "execute_enabled": false,
     "uploads_enabled": false,
-    "notes": "Public Search Safety / Abuse Guard v0 maps public-search download, install, execute, upload, and local-path attempts to disabled/forbidden error codes before any runtime exists."
+    "notes": "Public Search Safety / Abuse Guard v0 maps local public-search download, install, execute, upload, and local-path attempts to disabled/forbidden error codes and remains required before hosted exposure."
   }
 }

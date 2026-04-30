@@ -164,16 +164,16 @@
     "The default posture is privacy-first: local/private features are off by default and public artifacts must not leak private paths or secrets.",
     "Relay Prototype Planning v0 keeps the first future relay prototype public, read-only, localhost-only by default, and static; no private cache roots, arbitrary user directories, credentials, telemetry, uploads, private paths, or private data are allowed.",
     "This policy gates future native cache, relay private-data handling, diagnostics, portable mode, and local/offline client work.",
-    "Public Search Safety / Abuse Guard v0 forbids public-search private paths, credentials, user_file parameters, uploads, telemetry by default, raw source payload return, and external log uploads before any runtime exists."
+    "Public Search Safety / Abuse Guard v0 forbids local public-search private paths, credentials, user_file parameters, uploads, telemetry by default, raw source payload return, and external log uploads, and remains required before hosted exposure."
   ],
   "public_search_safety_policy_dependency": {
     "policy": "control/inventory/publication/public_search_safety.json",
-    "status": "policy_only",
+    "status": "local_runtime_guard_active",
     "telemetry_default_enabled": false,
     "raw_query_logging_default": "disabled",
     "private_paths_forbidden": true,
     "credentials_forbidden": true,
     "uploads_enabled": false,
-    "notes": "Public Search Safety / Abuse Guard v0 applies privacy-first defaults to future public search without adding telemetry, logging, accounts, uploads, or cache runtime."
+    "notes": "Public Search Safety / Abuse Guard v0 applies privacy-first defaults to local public search and future hosted review without adding telemetry persistence, logging infrastructure, accounts, uploads, or cache runtime."
   }
 }

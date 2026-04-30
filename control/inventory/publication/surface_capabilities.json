@@ -242,9 +242,9 @@
     },
     {
       "id": "public_search_api",
-      "label": "Future public search API contract",
-      "public_label": "Future public search",
-      "status": "planned",
+      "label": "Local public search API/runtime",
+      "public_label": "Local public search",
+      "status": "implemented",
       "stability": "experimental",
       "client_profiles": [
         "standard_web",
@@ -260,7 +260,12 @@
         "control/inventory/publication/public_search_routes.json",
         "control/inventory/publication/public_search_safety.json",
         "docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md",
-        "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md"
+        "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md",
+        "runtime/gateway/public_api/public_search.py",
+        "surfaces/web/server/api_routes.py",
+        "surfaces/web/server/workbench_server.py",
+        "surfaces/web/workbench/render_public_search.py",
+        "scripts/public_search_smoke.py"
       ],
       "reserved_paths": [
         "/search",
@@ -278,11 +283,11 @@
       "supports_downloads": false,
       "supports_private_user_state": false,
       "supports_external_sources": false,
-      "enabled_by_default": false,
+      "enabled_by_default": true,
       "requires_operator_signoff": true,
-      "current_limitations": "Contract and safety-policy only; no public search runtime, route handler, hosted backend, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
-      "next_step": "Local Public Search Runtime v0 after public search API, result-card, and safety/readiness validation; keep local_index_only and disabled live/external behavior.",
-      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 now governs limits, forbidden parameters, error mapping, privacy posture, and operator controls before any runtime route exists."
+      "current_limitations": "Local/prototype backend runtime only; no hosted backend, static search handoff, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
+      "next_step": "Public Search Static Handoff v0, then Public Search Rehearsal v0; keep local_index_only and disabled live/external behavior.",
+      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0."
     },
     {
       "id": "snapshots",
@@ -710,9 +715,9 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "Future live backend search only; static site has no live search. Public Search API Contract v0, Public Search Result Card Contract v0, and Public Search Safety / Abuse Guard v0 are contract/policy-only and local_index_only.",
-      "next_step": "Requires Local Public Search Runtime v0, static handoff, live backend handoff, runtime guard implementation, and operator signoff before any hosted use.",
-      "notes": "No live probes are enabled by live search, /api/v1/search is not live, and safety policy keeps public search local_index_only with live/external behavior disabled."
+      "current_limitations": "Future hosted live backend search only; static site has no live search. Local Public Search Runtime v0 exists separately as local_index_only prototype runtime.",
+      "next_step": "Requires static handoff, live backend handoff, hosted rehearsal, rate-limit policy, and operator signoff before any hosted use.",
+      "notes": "No live probes are enabled by live search, hosted /api/v1/search is not deployed, and safety policy keeps public search local_index_only with live/external behavior disabled."
     },
     {
       "id": "internet_archive_live_probe",
@@ -828,6 +833,6 @@
     "Snapshots, relay, native clients, /app, and live /api/v1 remain future/deferred or contract-only.",
     "Signed Snapshot Format v0 adds a repo-local seed snapshot example and contract, while the public /snapshots/ route remains deferred.",
     "Production signed snapshots, real signing keys, executable downloads, relay services, and native clients remain future work.",
-    "Public Search Safety / Abuse Guard v0 adds policy-only limits, forbidden parameters, privacy defaults, and operator controls for future public search without changing surface runtime behavior."
+    "Public Search Safety / Abuse Guard v0 constrains Local Public Search Runtime v0 with limits, forbidden parameters, privacy defaults, and operator controls while hosted search remains future."
   ]
 }

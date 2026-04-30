@@ -8,7 +8,10 @@ import zipfile
 from urllib.parse import quote
 import unittest
 
-from runtime.gateway.public_api import build_demo_source_registry_public_api
+from runtime.gateway.public_api import (
+    build_demo_public_search_public_api,
+    build_demo_source_registry_public_api,
+)
 from runtime.gateway.public_api import PublicApiResponse, PublicArtifactResponse
 from surfaces.web.server import (
     WorkbenchWsgiApp,
@@ -629,6 +632,7 @@ class WorkbenchServerTestCase(unittest.TestCase):
             actions_public_api=actions_public_api,
             bundle_inspection_public_api=bundle_inspection_public_api,
             search_public_api=search_public_api,
+            public_search_public_api=build_demo_public_search_public_api(),
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
 
@@ -651,8 +655,10 @@ class WorkbenchServerTestCase(unittest.TestCase):
         ).decode("utf-8")
 
         self.assertEqual(captured["status"], "200 OK")
-        self.assertEqual(search_public_api.queries, ["synthetic"])
-        self.assertIn("Synthetic Demo Suite", body)
+        self.assertEqual(search_public_api.queries, [])
+        self.assertIn("Eureka Public Search", body)
+        self.assertIn("local-index-only", body)
+        self.assertIn("Results", body)
 
     def test_server_renders_source_registry_page_via_public_boundary(self) -> None:
         html = render_source_registry_page(

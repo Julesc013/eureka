@@ -52,6 +52,7 @@ from runtime.gateway.public_api import (
     ResolutionJobsPublicApi,
     QueryPlanRequest,
     QueryPlannerPublicApi,
+    PublicSearchPublicApi,
     ResolutionRunReadRequest,
     ResolutionWorkspaceReadError,
     SearchCatalogRequest,
@@ -69,6 +70,7 @@ from runtime.gateway.public_api import (
     archive_resolution_evals_envelope_to_view_model,
     build_demo_local_index_public_api,
     build_demo_local_tasks_public_api,
+    build_demo_public_search_public_api,
     build_demo_archive_resolution_evals_public_api,
     build_demo_resolution_memory_public_api,
     build_demo_resolution_runs_public_api,
@@ -88,7 +90,7 @@ from runtime.gateway.public_api import (
     subject_states_envelope_to_view_model,
 )
 from surfaces.web.server.api_routes import handle_api_request
-from surfaces.web.server.api_serialization import SerializedHttpResponse
+from surfaces.web.server.api_serialization import SerializedHttpResponse, status_line
 from surfaces.web.server.route_policy import PublicAlphaRoutePolicy
 from surfaces.web.server.server_config import WebServerConfig, default_web_server_config
 from surfaces.web.workbench import (
@@ -106,6 +108,7 @@ from surfaces.web.workbench import (
     render_local_tasks_html,
     render_member_access_html,
     render_query_plan_html,
+    render_public_search_html,
     render_representations_html,
     render_resolution_runs_html,
     render_resolution_workspace_html,
@@ -580,6 +583,7 @@ class WorkbenchWsgiApp:
         local_index_public_api: LocalIndexPublicApi | None = None,
         stored_exports_public_api: StoredExportsPublicApi | None = None,
         search_public_api: SearchPublicApi,
+        public_search_public_api: PublicSearchPublicApi | None = None,
         source_registry_public_api: SourceRegistryPublicApi | None = None,
         default_target_ref: str,
         session_id: str = "session.web-workbench",
@@ -603,6 +607,7 @@ class WorkbenchWsgiApp:
         self._local_index_public_api = local_index_public_api
         self._stored_exports_public_api = stored_exports_public_api
         self._search_public_api = search_public_api
+        self._public_search_public_api = public_search_public_api
         self._source_registry_public_api = source_registry_public_api
         self._default_target_ref = default_target_ref
         self._session_id = session_id
@@ -639,6 +644,7 @@ class WorkbenchWsgiApp:
             search_public_api=self._search_public_api,
             source_registry_public_api=self._source_registry_public_api,
             session_id=self._session_id,
+            public_search_public_api=self._public_search_public_api,
             server_config=self._server_config,
         )
         if api_response is not None:
@@ -998,12 +1004,11 @@ class WorkbenchWsgiApp:
             )
             return self._respond(start_response, status="200 OK", body=page)
         if path == "/search":
-            query = self._resolve_search_query(query_string)
-            page = render_search_results_page(
-                self._search_public_api,
-                query,
+            status, page = render_public_search_page(
+                self._public_search_public_api or build_demo_public_search_public_api(),
+                parse_qs(query_string, keep_blank_values=False),
             )
-            return self._respond(start_response, status="200 OK", body=page)
+            return self._respond(start_response, status=status, body=page)
         if path == "/index/build":
             page = render_local_index_page(
                 self._local_index_public_api or build_demo_local_index_public_api(),
@@ -1465,6 +1470,18 @@ def _string_list(value: object) -> str:
     if not isinstance(value, list) or not value:
         return "(none)"
     return ", ".join(str(item) for item in value)
+
+
+def render_public_search_page(
+    public_api: PublicSearchPublicApi,
+    query: dict[str, list[str]],
+) -> tuple[str, str]:
+    raw_query_values = query.get("q") or []
+    if not query or (raw_query_values and not raw_query_values[0].strip() and len(query) == 1):
+        return "200 OK", render_public_search_html(None)
+
+    response = public_api.search(query, default_profile="standard_web")
+    return status_line(response.status_code), render_public_search_html(response.body)
 
 
 def render_search_results_page(

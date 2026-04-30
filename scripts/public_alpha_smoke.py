@@ -21,6 +21,7 @@ from runtime.gateway.public_api import (
     build_demo_comparison_public_api,
     build_demo_compatibility_public_api,
     build_demo_decomposition_public_api,
+    build_demo_public_search_public_api,
     build_demo_query_planner_public_api,
     build_demo_representation_selection_public_api,
     build_demo_representations_public_api,
@@ -120,6 +121,51 @@ def run_public_alpha_smoke() -> dict[str, object]:
     checks.append(
         _expect_json(
             app,
+            "public search status",
+            "/api/v1/status",
+            {},
+            lambda payload, text: (
+                payload.get("ok") is True
+                and isinstance(payload.get("public_search"), dict)
+                and payload["public_search"].get("implemented") is True
+                and payload["public_search"].get("mode") == "local_index_only"
+                and payload["public_search"].get("live_probes_enabled") is False
+                and payload["public_search"].get("downloads_enabled") is False
+                and payload["public_search"].get("installs_enabled") is False
+                and payload["public_search"].get("uploads_enabled") is False
+                and payload["public_search"].get("local_paths_enabled") is False
+                and payload["public_search"].get("telemetry_enabled") is False
+            ),
+            "200 JSON local public-search status with disabled live/download/upload/local-path capabilities",
+        )
+    )
+    checks.append(
+        _expect_json(
+            app,
+            "public search",
+            "/api/v1/search",
+            {"q": "windows 7 apps"},
+            lambda payload, text: (
+                payload.get("ok") is True
+                and payload.get("mode") == "local_index_only"
+                and isinstance(payload.get("results"), list)
+            ),
+            "200 JSON governed local-index-only public-search results",
+        )
+    )
+    checks.append(
+        _expect_json(
+            app,
+            "public query plan",
+            "/api/v1/query-plan",
+            {"q": "windows 7 apps"},
+            lambda payload, text: payload.get("ok") is True and payload.get("mode") == "local_index_only",
+            "200 JSON governed public-search query plan",
+        )
+    )
+    checks.append(
+        _expect_json(
+            app,
             "archive resolution evals",
             "/api/evals/archive-resolution",
             {},
@@ -191,6 +237,20 @@ def run_public_alpha_smoke() -> dict[str, object]:
                     "representation_id": "rep.synthetic-demo-app.source",
                 },
                 "route_disabled_in_public_alpha",
+            ),
+            _expect_public_search_error(
+                app,
+                "public search arbitrary url",
+                "/api/v1/search",
+                {"q": "archive", "url": "https://example.invalid/"},
+                "forbidden_parameter",
+            ),
+            _expect_public_search_error(
+                app,
+                "public search live probe",
+                "/api/v1/search",
+                {"q": "archive", "live_probe": "1"},
+                "live_probes_disabled",
             ),
         ]
     )
@@ -270,6 +330,7 @@ def _build_public_alpha_app() -> WorkbenchWsgiApp:
         query_planner_public_api=build_demo_query_planner_public_api(),
         representations_public_api=build_demo_representations_public_api(),
         search_public_api=build_demo_search_public_api(),
+        public_search_public_api=build_demo_public_search_public_api(),
         source_registry_public_api=build_demo_source_registry_public_api(),
         subject_states_public_api=build_demo_subject_states_public_api(),
         default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
@@ -347,6 +408,33 @@ def _expect_blocked(
         observed_status=response.status_code,
         passed=passed,
         code=actual_code or "missing_block_code",
+        message="Check passed." if passed else f"Observed {response.status_line} with payload {payload!r}.",
+    )
+
+
+def _expect_public_search_error(
+    app: WorkbenchWsgiApp,
+    name: str,
+    path: str,
+    query: Mapping[str, str],
+    expected_code: str,
+) -> SmokeCheckResult:
+    response = _request(app, path, query)
+    route = _route(path, query)
+    try:
+        payload = response.json_body()
+    except json.JSONDecodeError:
+        payload = {}
+    error = payload.get("error") if isinstance(payload.get("error"), dict) else {}
+    actual_code = str(error.get("code") or "")
+    passed = response.status_code == 400 and payload.get("ok") is False and actual_code == expected_code
+    return SmokeCheckResult(
+        name=name,
+        route=route,
+        expected=f"400 JSON public-search error response with code {expected_code}",
+        observed_status=response.status_code,
+        passed=passed,
+        code=actual_code or "missing_error_code",
         message="Check passed." if passed else f"Observed {response.status_line} with payload {payload!r}.",
     )
 

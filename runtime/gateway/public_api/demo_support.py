@@ -8,7 +8,7 @@ from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
 from runtime.engine.acquisition.service import DeterministicAcquisitionService
 from runtime.engine.decomposition.service import DeterministicDecompositionService
 from runtime.engine.evals import build_archive_resolution_eval_runner_from_corpus
-from runtime.engine.index import LocalIndexEngineService, LocalIndexSqliteStore
+from runtime.engine.index import LocalIndexEngineService, LocalIndexSqliteStore, build_index_records
 from runtime.engine.members.service import DeterministicMemberAccessService
 from runtime.engine.memory import (
     LocalResolutionMemoryService,
@@ -70,6 +70,7 @@ from runtime.gateway.public_api.representation_selection_boundary import (
     RepresentationSelectionPublicApi,
 )
 from runtime.gateway.public_api.search_boundary import SearchPublicApi
+from runtime.gateway.public_api.public_search import PublicSearchPublicApi
 from runtime.gateway.public_api.source_registry_boundary import SourceRegistryPublicApi
 from runtime.gateway.public_api.stored_exports import StoredExportsPublicApi
 from runtime.gateway.public_api.subject_states_boundary import SubjectStatesPublicApi
@@ -101,6 +102,17 @@ def build_demo_search_public_api() -> SearchPublicApi:
     catalog = _build_demo_normalized_catalog()
     search_service = DeterministicSearchService(catalog)
     return SearchPublicApi(search_service)
+
+
+def build_demo_public_search_public_api() -> PublicSearchPublicApi:
+    catalog = _build_demo_normalized_catalog()
+    source_registry = load_source_registry()
+    index_records = build_index_records(catalog, source_registry)
+    return PublicSearchPublicApi(
+        index_records=index_records,
+        source_registry=source_registry,
+        query_planner=DeterministicQueryPlannerService(),
+    )
 
 
 def build_demo_local_index_public_api() -> LocalIndexPublicApi:

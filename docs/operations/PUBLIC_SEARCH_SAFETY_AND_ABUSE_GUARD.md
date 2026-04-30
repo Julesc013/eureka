@@ -1,19 +1,23 @@
 # Public Search Safety And Abuse Guard v0
 
-Status: implemented as policy and contract only.
+Status: implemented as policy, contract, and local runtime guardrails.
 
 Public Search Safety / Abuse Guard v0 defines the safety, abuse, privacy,
-boundedness, and operator guardrails required before any public search runtime
-route is implemented. It does not implement public search runtime, `/search`,
-`/api/v1/search`, rate-limit middleware, auth, sessions, telemetry, logging
-runtime, backend hosting, live probes, downloads, installers, execution,
-uploads, local path search, or deployment provider configuration.
+boundedness, and operator guardrails required by Local Public Search Runtime
+v0. Local/prototype `/search`, `/api/v1/search`, `/api/v1/query-plan`,
+`/api/v1/status`, `/api/v1/sources`, and `/api/v1/source/{source_id}` now use
+these guardrails. This milestone still does not add rate-limit middleware,
+auth, sessions, telemetry, logging runtime, backend hosting, live probes,
+downloads, installers, execution, uploads, local path search, or deployment
+provider configuration.
+It does not enable live probes.
 
 ## Why This Exists
 
-Public search accepts user input. Before a future route handles that input, the
-repo needs fixed boundaries for request size, result count, source policy,
-privacy, disabled modes, disabled actions, and operator controls.
+Public search accepts user input. The repo needs fixed boundaries for request
+size, result count, source policy, privacy, disabled modes, disabled actions,
+and operator controls before local prototype routes can exist and before any
+hosted rehearsal can be considered.
 
 The first allowed mode remains `local_index_only`:
 
@@ -37,8 +41,10 @@ The machine-readable policy lives at:
 control/inventory/publication/public_search_safety.json
 ```
 
-The policy records `status: policy_only`, `no_runtime_implemented: true`, and
-`no_public_search_live: true`.
+The policy records `status: local_runtime_guard_active`,
+`local_public_search_runtime_implemented: true`,
+`hosted_public_search_runtime_implemented: false`, and
+`no_hosted_public_search_live: true`.
 
 ## Allowed Mode
 
@@ -57,7 +63,7 @@ Disabled modes are:
 
 ## Request, Result, And Time Limits
 
-Policy defaults for a future runtime are:
+Policy defaults for Local Public Search Runtime v0 are:
 
 - maximum query length: 160 characters
 - minimum query length after trim: 1 character
@@ -71,11 +77,12 @@ Policy defaults for a future runtime are:
 - checked sources in v0: controlled local index only
 - live sources in v0: 0
 
-These are policy targets, not middleware.
+These are local runtime bounds and hosted-exposure targets, not production
+middleware.
 
 ## Forbidden Parameters
 
-Future public search must reject:
+Public search must reject:
 
 - `index_path`
 - `store_root`
@@ -104,8 +111,8 @@ Future public search must reject:
 - `network`
 - `arbitrary_source`
 
-The future runtime must own the local index root. A caller must never provide an
-index path, store root, source URL, local path, credentials, or uploaded file to
+The runtime owns the local index root. A caller must never provide an index
+path, store root, source URL, local path, credentials, or uploaded file to
 public search.
 
 ## Forbidden Behaviors
@@ -174,7 +181,7 @@ external services by default.
 
 ## Operator Controls
 
-A future runtime must provide controls equivalent to:
+Hosted public search must provide controls equivalent to:
 
 - `EUREKA_PUBLIC_SEARCH_MODE=local_index_only`
 - `EUREKA_ALLOW_LIVE_PROBES=0`
@@ -189,25 +196,25 @@ A future runtime must provide controls equivalent to:
 - `EUREKA_PUBLIC_SEARCH_ENABLED=0`
 - `EUREKA_OPERATOR_KILL_SWITCH=1`
 
-These flags are future runtime requirements only. This milestone adds no
-process manager, provider configuration, rate-limit middleware, or deployment
-runtime.
+These flags remain hosted-runtime requirements. This milestone adds no process
+manager, provider configuration, rate-limit middleware, or deployment runtime.
 
 ## Public Alpha And Static Site
 
 Public Alpha Safe Mode remains non-production and local. It already blocks live
 probes, caller-provided local paths, downloads, fixture byte fetches, user
-storage, deployment approval, and production readiness by default. This safety
-guard does not make `/api/v1/search` live in public-alpha.
+storage, deployment approval, and production readiness by default. Local Public
+Search Runtime v0 may expose `/api/v1/search` in public-alpha only as
+local/prototype backend runtime with `local_index_only` validation. Hosted
+public search is not live.
 
 GitHub Pages remains static-only. `site/dist` may describe this policy but must
 not add a search form, claim hosted search exists, or imply backend deployment.
 
 ## Live Backend And Live Probe Relationships
 
-Live Backend Handoff Contract v0 remains future/reserved. Public search runtime
-requires a later backend/runtime milestone and capability flags before hosted
-routes exist.
+Live Backend Handoff Contract v0 remains future/reserved for hosted runtime.
+Local Public Search Runtime v0 does not create hosted routes.
 
 Live Probe Gateway Contract v0 remains disabled by default. `local_index_only`
 does not call Internet Archive, Wayback, Google, GitHub, package registries, or
@@ -225,26 +232,25 @@ credentials, and private path exposure disabled by default.
 
 ## Runtime Prerequisites
 
-Before Local Public Search Runtime v0 can be implemented, the runtime readiness
-checklist must remain valid:
+After Local Public Search Runtime v0, the runtime readiness checklist records
+which local gates are satisfied and which hosted gates remain blocked:
 
 ```text
 docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md
 ```
 
-The key gates are: API contract passes, result-card contract passes, safety
-guard passes, local index root is server-owned, no local path params, no live
-probes, no downloads, no uploads, stable error mapping, defined HTML/JSON
-behavior, operator flags, no production claim, and accepted logging/privacy
-posture.
+The key hosted gates are: API contract passes, result-card contract passes,
+safety guard passes, local index root remains server-owned, no local path
+params, no live probes, no downloads, no uploads, stable error mapping, defined
+HTML/JSON behavior, operator flags, no production claim, and accepted
+logging/privacy posture.
 
 ## Still Future
 
 Still future or blocked until explicit approval:
 
-- public search runtime
-- `/search` and `/api/v1/search` route behavior
 - hosted backend
+- static search handoff page
 - rate-limit middleware
 - auth, accounts, sessions, TLS, process management
 - live probes or external source fanout

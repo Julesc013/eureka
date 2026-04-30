@@ -1,11 +1,19 @@
 # Public Search API Contract v0
 
-Status: implemented as a contract only.
+Status: implemented as a contract-first local/prototype runtime boundary.
 
 Public Search API Contract v0 reserves the first public search request,
 response, error, and route shapes before any hosted public search runtime exists.
-It does not make `/search` or `/api/v1/search` live, does not deploy a backend,
-and does not claim production API stability.
+Local Public Search Runtime v0 now implements `/search`, `/api/v1/search`,
+`/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
+`/api/v1/source/{source_id}` through the local stdlib workbench server. This is
+local/prototype backend runtime only. It does not make public search hosted,
+does not add a static search handoff page, does not deploy a backend, and does
+not claim production API stability.
+This is not hosted public deployment.
+It does not claim production API stability.
+Public Search Safety / Abuse Guard v0 remains the safety source for these local
+routes and any later hosted rehearsal.
 
 ## Contract Files
 
@@ -116,42 +124,44 @@ Required v0 error codes are:
 - `not_found`
 - `internal_error`
 
-These codes are contract definitions only. They do not add runtime error
-handling.
+These codes are the governed vocabulary. Local Public Search Runtime v0 uses
+the bounded request-validation errors for local/prototype routes; hosted runtime
+and production error policy remain future.
 
-## Reserved Routes
+## Local Runtime Routes
 
-The route inventory reserves:
+The route inventory now records local/prototype runtime handlers for:
 
-- `GET /search`: future hosted HTML search for `standard_web`, `lite_html`, and
-  `text` profiles.
-- `GET /api/v1/search`: future JSON search for `api_client`.
-- `GET /api/v1/query-plan`: future deterministic query-plan endpoint.
-- `GET /api/v1/status`: future backend status/capability endpoint.
-- `GET /api/v1/sources`: future source summary endpoint.
-- `GET /api/v1/source/{source_id}`: future source detail endpoint.
+- `GET /search`: server-rendered no-JS HTML search for `standard_web`.
+- `GET /api/v1/search`: governed JSON search for `api_client`.
+- `GET /api/v1/query-plan`: deterministic public query-plan endpoint.
+- `GET /api/v1/status`: public-search status/capability endpoint.
+- `GET /api/v1/sources`: public-safe source summary endpoint.
+- `GET /api/v1/source/{source_id}`: public-safe source detail endpoint.
 
-Every route is `future_contract`, requires a future backend, and has
-`implemented_now: false`. Live probes, downloads, local paths, uploads, and
-external source fanout are disabled for all routes.
+Every route is marked `local_runtime_implemented`, `implementation_scope:
+local_prototype_backend`, and `hosted_public_deployment: false`. Live probes,
+downloads, local paths, uploads, and external source fanout are disabled for all
+routes. Rate limiting remains required before any hosted public exposure.
 
 ## Client Degradation
 
-`standard_web` may receive full HTML once a future runtime exists. `lite_html`
-must receive simple no-JS HTML. `text` must receive plain-text output or a
-static handoff page. `api_client` receives JSON only. Old clients should lose
-interactive affordances first; they should not lose source labels, result lanes,
-user-cost explanations, compatibility summaries, warnings, or absence notes.
+`standard_web` receives no-JS local/prototype HTML from `/search`. `lite_html`
+and `text` remain degradation profiles for later static handoff work and should
+preserve source labels, result lanes, user-cost explanations, compatibility
+summaries, warnings, and absence notes. `api_client` receives JSON only.
 
 ## Related Contracts
 
-The live backend handoff reserves `/api/v1` but keeps it future and not live.
-This contract narrows the public search part of that reservation. The live probe
-gateway remains disabled and does not become an implementation detail of
-`local_index_only`. Public data summaries under `site/dist/data` remain static
-publication artifacts, not a live search API. Native clients, relay consumers,
-and snapshot consumers may reference this contract as future input, but no
-native client, relay runtime, or snapshot reader runtime is implemented here.
+The live backend handoff still reserves hosted `/api/v1` behavior for future
+deployment review. Local Public Search Runtime v0 is not hosted public
+deployment and does not change GitHub Pages, which remains static-only. The
+live probe gateway remains disabled and does not become an implementation
+detail of `local_index_only`. Public data summaries under `site/dist/data`
+remain static publication artifacts, not a live search API. Native clients,
+relay consumers, and snapshot consumers may reference this contract as input,
+but no native client, relay runtime, or snapshot reader runtime is implemented
+here.
 
 ## Versioning
 
@@ -162,28 +172,20 @@ New optional fields are non-breaking only when old clients can ignore them.
 
 ## Runtime Preconditions
 
-Before any runtime route implements this contract, the repo needs Public Search
-Safety / Abuse Guard v0, Local Public Search Runtime v0, rate-limit policy,
-hosted backend handoff review, local-index ownership, public-alpha operator
-signoff, and validation proving no live probes, downloads, uploads, local path
-search, arbitrary URL fetch, account behavior, telemetry, or production claims
-were added by accident. Public Search Result Card Contract v0 is now the
-governed `results[]` card contract; it still does not make public search live.
-Public Search Safety / Abuse Guard v0 is now implemented as policy/contract
-only. It defines `local_index_only` as the only allowed v0 mode, bounded
-request/result/time limits, forbidden URL/local-path/credential/action
-parameters, disabled live/external modes, error mapping, privacy defaults, and
-operator controls without implementing route handlers, rate-limit middleware,
-telemetry runtime, live probes, downloads, uploads, arbitrary URL fetch, or
-production safety claims. The next runtime milestone must satisfy its
-inventory, validator, and runtime readiness checklist before adding route
-behavior.
+Local Public Search Runtime v0 satisfies the first local route implementation
+gate. Hosted rehearsal still needs rate-limit policy, hosted backend handoff
+review, operator controls, public-alpha signoff, and validation proving no live
+probes, downloads, uploads, local path search, arbitrary URL fetch, account
+behavior, telemetry, or production claims were added by accident. Public Search
+Result Card Contract v0 is the governed `results[]` card contract. Public
+Search Safety / Abuse Guard v0 now constrains the local runtime and still blocks
+hosted public exposure until the runtime readiness checklist is satisfied.
 
 ## Out Of Scope
 
-This contract does not implement public search runtime, hosted backend
-deployment, live source probes, Internet Archive calls, Google queries,
-arbitrary URL fetch, crawling, downloads, installers, uploads, accounts,
-telemetry, native clients, relay runtime, snapshot reader runtime, TLS, auth,
-rate limiting, process management, custom domains, production API stability, or
-production readiness.
+This contract and local runtime do not implement hosted backend deployment,
+static search handoff, live source probes, Internet Archive calls, Google
+queries, arbitrary URL fetch, crawling, downloads, installers, uploads,
+accounts, telemetry, native clients, relay runtime, snapshot reader runtime,
+TLS, auth, rate limiting, process management, custom domains, production API
+stability, or production readiness.

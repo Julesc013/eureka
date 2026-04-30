@@ -5,6 +5,7 @@ import unittest
 from urllib.parse import quote
 
 from runtime.gateway import build_demo_resolution_jobs_public_api, build_demo_search_public_api
+from runtime.gateway.public_api import build_demo_public_search_public_api
 from surfaces.web.server import WorkbenchWsgiApp
 
 
@@ -13,6 +14,7 @@ class WebSearchSliceIntegrationTestCase(unittest.TestCase):
         self.app = WorkbenchWsgiApp(
             build_demo_resolution_jobs_public_api(),
             search_public_api=build_demo_search_public_api(),
+            public_search_public_api=build_demo_public_search_public_api(),
             default_target_ref="fixture:software/synthetic-demo-app@1.0.0",
         )
 
@@ -21,22 +23,21 @@ class WebSearchSliceIntegrationTestCase(unittest.TestCase):
             status, body = self._fetch("synthetic")
             self.assertEqual(status, "200 OK")
             self.assertIn("synthetic", body)
-            self.assertIn("Synthetic Demo App", body)
-            self.assertIn("Synthetic Demo Suite", body)
-            self.assertIn("resolved:sha256:87e9ca7d6145c26282f042c3c65416d3a174e4629683e8c4da8afb169bcb58c2", body)
-            self.assertIn("/?target_ref=fixture%3Asoftware%2Fsynthetic-demo-suite%402.0.0", body)
+            self.assertIn("Results", body)
+            self.assertIn("local-index-only", body)
+            self.assertIn("Blocked actions", body)
 
         with self.subTest(query="compatibility"):
             status, body = self._fetch("compatibility")
             self.assertEqual(status, "200 OK")
             self.assertIn("Compatibility Lab", body)
-            self.assertIn("result count", body.lower())
+            self.assertIn("Results", body)
 
         with self.subTest(query="missing"):
             status, body = self._fetch("missing")
             self.assertEqual(status, "200 OK")
-            self.assertIn("search_no_matches", body)
-            self.assertIn("No bounded records matched query", body)
+            self.assertIn("No controlled local-index records matched this query", body)
+            self.assertIn("Gaps", body)
 
     def _fetch(self, query: str) -> tuple[str, str]:
         captured: dict[str, object] = {}

@@ -105,10 +105,13 @@ class PublicSearchApiContractTest(unittest.TestCase):
         codes = set(payload["properties"]["error"]["properties"]["code"]["enum"])
         self.assertTrue(REQUIRED_ERROR_CODES.issubset(codes))
 
-    def test_routes_are_future_reserved_not_live(self) -> None:
+    def test_routes_are_local_runtime_only_not_hosted(self) -> None:
         payload = json.loads(ROUTES.read_text(encoding="utf-8"))
-        self.assertFalse(payload["implemented_now"])
-        self.assertFalse(payload["runtime_routes_implemented"])
+        self.assertTrue(payload["implemented_now"])
+        self.assertTrue(payload["runtime_routes_implemented"])
+        self.assertEqual(payload["implementation_scope"], "local_prototype_backend")
+        self.assertFalse(payload["hosted_public_runtime_implemented"])
+        self.assertFalse(payload["static_handoff_implemented"])
         self.assertEqual(payload["contract_modes"], ["local_index_only"])
         by_path = {
             (route["method"], route["path_template"]): route
@@ -124,8 +127,10 @@ class PublicSearchApiContractTest(unittest.TestCase):
         ):
             with self.subTest(route=key):
                 route = by_path[key]
-                self.assertIn(route["status"], {"future_contract", "reserved", "planned"})
-                self.assertFalse(route["implemented_now"])
+                self.assertEqual(route["status"], "local_runtime_implemented")
+                self.assertTrue(route["implemented_now"])
+                self.assertEqual(route["implementation_scope"], "local_prototype_backend")
+                self.assertFalse(route["hosted_public_deployment"])
                 self.assertTrue(route["requires_backend"])
                 self.assertFalse(route["live_probe_allowed"])
                 self.assertFalse(route["downloads_allowed"])
@@ -140,8 +145,10 @@ class PublicSearchApiContractTest(unittest.TestCase):
             + MODE_DOC.read_text(encoding="utf-8")
         ).casefold()
         for phrase in (
-            "contract only",
-            "does not make `/search` or `/api/v1/search` live",
+            "contract-first",
+            "local public search runtime v0",
+            "local/prototype backend runtime only",
+            "does not make public search hosted",
             "does not claim production api stability",
             "live external calls",
             "local path search",

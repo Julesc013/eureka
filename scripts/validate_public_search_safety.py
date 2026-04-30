@@ -114,10 +114,10 @@ REQUIRED_OPERATOR_FLAGS = {
     "EUREKA_PUBLIC_SEARCH_ENABLED",
     "EUREKA_OPERATOR_KILL_SWITCH",
 }
-FUTURE_ROUTE_STATUSES = {"future_contract", "reserved", "planned", "deferred"}
+FUTURE_ROUTE_STATUSES = {"future_contract", "reserved", "planned", "deferred", "local_runtime_implemented"}
 REQUIRED_DOC_PHRASES = {
     SAFETY_DOC: (
-        "policy and contract only",
+        "Local Public Search Runtime v0",
         "local_index_only",
         "maximum query length: 160",
         "maximum result limit: 25",
@@ -128,12 +128,13 @@ REQUIRED_DOC_PHRASES = {
         "EUREKA_OPERATOR_KILL_SWITCH=1",
         "Public Alpha Safe Mode remains non-production",
         "GitHub Pages remains static-only",
-        "does not implement public search runtime",
+        "does not add rate-limit middleware",
+        "does not enable live probes",
     ),
     READINESS_DOC: (
-        "Status: future checklist, unsigned.",
-        "implementation_approved: false",
+        "Local Public Search Runtime v0",
         "hosted_public_runtime_approved: false",
+        "static_search_handoff_approved: false",
         "production_claim_allowed: false",
     ),
     API_DOC: (
@@ -141,7 +142,7 @@ REQUIRED_DOC_PHRASES = {
         "runtime readiness checklist",
     ),
     CARD_DOC: (
-        "Public Search Safety / Abuse Guard v0 is now implemented as policy",
+        "Public Search Safety / Abuse Guard v0",
         "runtime readiness checklist",
     ),
 }
@@ -221,10 +222,13 @@ def _validate_safety_inventory(payload: Any, errors: list[str]) -> None:
     expected = {
         "schema_version": "0.1.0",
         "safety_policy_id": "eureka-public-search-safety-abuse-guard-v0",
-        "status": "policy_only",
+        "status": "local_runtime_guard_active",
         "stability": "experimental",
-        "no_runtime_implemented": True,
+        "no_runtime_implemented": False,
+        "local_public_search_runtime_implemented": True,
+        "hosted_public_search_runtime_implemented": False,
         "no_public_search_live": True,
+        "no_hosted_public_search_live": True,
         "first_allowed_mode": "local_index_only",
         "created_by_slice": "public_search_safety_abuse_guard_v0",
     }
@@ -450,8 +454,12 @@ def _validate_routes(payload: Any, errors: list[str]) -> None:
     if not isinstance(payload, Mapping):
         errors.append("public_search_routes.json: must be a JSON object.")
         return
-    if payload.get("implemented_now") is not False or payload.get("runtime_routes_implemented") is not False:
-        errors.append("public_search_routes.json: public search routes must not be implemented.")
+    if payload.get("implemented_now") is not True or payload.get("runtime_routes_implemented") is not True:
+        errors.append("public_search_routes.json: local public search runtime routes must be implemented.")
+    if payload.get("hosted_public_runtime_implemented") is not False:
+        errors.append("public_search_routes.json: hosted public runtime must remain unimplemented.")
+    if payload.get("static_handoff_implemented") is not False:
+        errors.append("public_search_routes.json: static search handoff must remain unimplemented.")
     if set(_string_list(payload.get("contract_modes"))) != REQUIRED_ALLOWED_MODES:
         errors.append("public_search_routes.json: contract_modes must contain only local_index_only.")
     routes = payload.get("routes")
@@ -464,9 +472,16 @@ def _validate_routes(payload: Any, errors: list[str]) -> None:
             continue
         label = route.get("path_template", index)
         if route.get("status") not in FUTURE_ROUTE_STATUSES:
-            errors.append(f"public_search_routes.json: route {label} must remain future/reserved.")
-        if route.get("implemented_now") is not False:
-            errors.append(f"public_search_routes.json: route {label} must not be implemented.")
+            errors.append(f"public_search_routes.json: route {label} has unsupported status.")
+        if route.get("status") == "local_runtime_implemented":
+            if route.get("implemented_now") is not True:
+                errors.append(f"public_search_routes.json: route {label} must be implemented locally.")
+            if route.get("implementation_scope") != "local_prototype_backend":
+                errors.append(f"public_search_routes.json: route {label} must be local_prototype_backend.")
+            if route.get("hosted_public_deployment") is not False:
+                errors.append(f"public_search_routes.json: route {label} must not be hosted public deployment.")
+        elif route.get("implemented_now") is not False:
+            errors.append(f"public_search_routes.json: route {label} must not be implemented unless marked local_runtime_implemented.")
         for flag in ("live_probe_allowed", "downloads_allowed", "local_paths_allowed", "uploads_allowed"):
             if route.get(flag) is not False:
                 errors.append(f"public_search_routes.json: route {label} must keep {flag}=false.")

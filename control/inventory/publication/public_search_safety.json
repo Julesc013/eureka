@@ -1,10 +1,13 @@
 {
   "schema_version": "0.1.0",
   "safety_policy_id": "eureka-public-search-safety-abuse-guard-v0",
-  "status": "policy_only",
+  "status": "local_runtime_guard_active",
   "stability": "experimental",
-  "no_runtime_implemented": true,
+  "no_runtime_implemented": false,
+  "local_public_search_runtime_implemented": true,
+  "hosted_public_search_runtime_implemented": false,
   "no_public_search_live": true,
+  "no_hosted_public_search_live": true,
   "first_allowed_mode": "local_index_only",
   "allowed_modes": [
     "local_index_only"
@@ -44,7 +47,7 @@
     "source_timeout_ms": null,
     "live_source_timeout_ms": 0,
     "timeout_error_code": "timeout",
-    "notes": "This is a future runtime target. No timeout middleware or route behavior is implemented by this policy."
+    "notes": "This is a local runtime target. Local Public Search Runtime v0 validates bounded requests, but no production timeout middleware is added."
   },
   "forbidden_parameters": [
     "index_path",
@@ -165,7 +168,7 @@
       "operator-visible disabled state",
       "rate_limited error mapping"
     ],
-    "notes": "This milestone defines the requirement but adds no rate-limiting middleware."
+    "notes": "This policy defines the requirement before hosted public exposure but adds no rate-limiting middleware."
   },
   "operator_controls": {
     "required_future_flags": {
@@ -184,35 +187,41 @@
     },
     "kill_switch_required": true,
     "default_public_search_enabled": false,
+    "local_prototype_routes_enabled": true,
+    "hosted_public_search_enabled": false,
     "operator_override_policy": "future_review_required",
     "notes": "Flags are future runtime requirements only. No process manager or deployment provider config is added."
   },
   "public_alpha_defaults": {
     "compatible_with_public_alpha_safe_mode": true,
     "public_search_live": false,
+    "local_prototype_routes_allowed": true,
+    "hosted_public_search_live": false,
     "local_paths_allowed": false,
     "live_probes_allowed": false,
     "downloads_allowed": false,
     "installs_allowed": false,
     "uploads_allowed": false,
     "telemetry_allowed": false,
-    "notes": "Public-alpha safe mode remains non-production and does not expose /api/v1 search."
+    "notes": "Public-alpha safe mode remains non-production and may expose local/prototype /api/v1 search only under local_index_only constraints."
   },
   "static_site_defaults": {
     "github_pages_static_only": true,
     "site_dist_static_artifact": true,
     "public_search_live": false,
     "search_form_added": false,
-    "runtime_routes_added": false,
+    "runtime_routes_added": true,
+    "static_search_handoff_added": false,
     "live_backend_required": false,
-    "notes": "Static pages may describe the policy but must not claim hosted public search exists."
+    "notes": "Static pages may describe the local runtime but must not add a static search handoff page or claim hosted public search exists."
   },
   "live_backend_dependency": {
     "contract": "control/inventory/publication/live_backend_handoff.json",
     "status": "future_required_for_hosted_runtime",
     "live_backend_implemented": false,
+    "local_public_search_runtime_implemented": true,
     "live_backend_required_before_public_route": true,
-    "notes": "The safety guard does not make /api/v1 live."
+    "notes": "The safety guard now constrains local/prototype /api/v1 runtime routes. It does not make hosted public search live."
   },
   "live_probe_dependency": {
     "contract": "control/inventory/publication/live_probe_gateway.json",
@@ -254,8 +263,8 @@
   "runtime_readiness_checklist": "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md",
   "created_by_slice": "public_search_safety_abuse_guard_v0",
   "notes": [
-    "Public Search Safety / Abuse Guard v0 is policy, contract, validation, and documentation only.",
-    "It does not implement public search runtime, route handlers, rate-limit middleware, auth, sessions, telemetry, logging runtime, live probes, downloads, installers, uploads, local path ingestion, or backend hosting.",
-    "Local Public Search Runtime v0 may proceed only after this safety policy and the runtime readiness checklist remain valid."
+    "Public Search Safety / Abuse Guard v0 is now enforced by Local Public Search Runtime v0 for local/prototype routes.",
+    "It does not implement rate-limit middleware, auth, sessions, telemetry, logging runtime, live probes, downloads, installers, uploads, local path ingestion, or backend hosting.",
+    "Hosted public search exposure remains blocked until the readiness checklist, operator controls, and rehearsal gates are satisfied."
   ]
 }

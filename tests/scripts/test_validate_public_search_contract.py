@@ -22,7 +22,7 @@ class PublicSearchContractValidatorScriptTest(unittest.TestCase):
         )
         self.assertIn("status: valid", completed.stdout)
         self.assertIn("first_allowed_mode: local_index_only", completed.stdout)
-        self.assertIn("runtime_routes_implemented: False", completed.stdout)
+        self.assertIn("runtime_routes_implemented: True", completed.stdout)
 
     def test_validator_json_parses(self) -> None:
         completed = subprocess.run(
@@ -36,7 +36,7 @@ class PublicSearchContractValidatorScriptTest(unittest.TestCase):
         self.assertEqual(payload["status"], "valid")
         self.assertEqual(payload["contract_id"], "public_search_api_contract_v0")
         self.assertEqual(payload["first_allowed_mode"], "local_index_only")
-        self.assertFalse(payload["runtime_routes_implemented"])
+        self.assertTrue(payload["runtime_routes_implemented"])
         self.assertIn("GET /api/v1/search", payload["registered_routes"])
 
 

@@ -1,25 +1,27 @@
 # Public Search Result Card Contract v0
 
-Status: implemented as a contract-only reference.
+Status: implemented as a contract reference and used by Local Public Search Runtime v0.
 
 Public Search Result Card Contract v0 defines the public result-card envelope
-for future Eureka search displays and JSON responses. The card is the unit that
-future `/search` HTML, `/api/v1/search` JSON, lite/text surfaces, native
-clients, relay clients, snapshot consumers, and contribution/review tooling may
-read once a separate runtime milestone exists.
+for Eureka search displays and JSON responses. The card is the unit that local
+`/search` HTML and `/api/v1/search` JSON now emit in Local Public Search Runtime
+v0, and that lite/text surfaces, native clients, relay clients, snapshot
+consumers, and contribution/review tooling may consume after their own contracts
+allow it.
 
-This contract does not make public search live, does not add runtime routes,
-does not add `/search` or `/api/v1/search` behavior, does not enable live
-probes, and does not enable downloads, installers, execution, uploads, or local
-path search. It does not claim production ranking quality, production API
-stability, malware safety, rights clearance, or production readiness.
+This contract does not make public search hosted, does not add static search
+handoff, does not enable live probes, and does not enable downloads, installers,
+execution, uploads, or local path search. It does not claim production ranking
+quality, production API stability, malware safety, rights clearance, or
+production readiness.
 
 In short: the result card is not a production ranking guarantee, must not claim
 malware safety, must not claim rights clearance, and prepared the safety
 milestone, Public Search Safety / Abuse Guard v0, rather than replacing it.
-Public Search Safety / Abuse Guard v0 is now implemented as policy and
-contract-only guardrails; result cards still must wait for a future runtime that
-satisfies those guardrails.
+Public Search Safety / Abuse Guard v0 is now implemented as guardrails, and
+Local Public Search Runtime v0 uses those guardrails for local/prototype result
+cards. Hosted public exposure still waits for later rehearsal and operator
+approval.
 
 ## Contract Files
 
@@ -200,24 +202,23 @@ clients, relay runtime, or snapshot reader runtime.
 
 ## Runtime Preconditions
 
-Before any runtime emits public result cards, Eureka needs the implemented
-Public Search Safety / Abuse Guard v0 policy, Local Public Search Runtime v0,
-local index ownership, public
-route validation, bounded query/result limits, no-live-probe enforcement,
-action-policy enforcement, and tests proving no downloads, installers,
-execution, uploads, arbitrary URL fetch, local path search, private data
-exposure, malware-safety claim, rights-clearance claim, or production API claim
-was added by accident.
+Local Public Search Runtime v0 emits public result cards after satisfying the
+implemented Public Search Safety / Abuse Guard v0 policy, local index
+ownership, public route validation, bounded query/result limits,
+no-live-probe enforcement, action-policy enforcement, and tests proving no
+downloads, installers, execution, uploads, arbitrary URL fetch, local path
+search, private data exposure, malware-safety claim, rights-clearance claim, or
+production API claim was added by accident.
 
-The runtime must also pass the runtime readiness checklist at
+Hosted public exposure must still pass the runtime readiness checklist at
 `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`; this checklist
-is future/unsigned and does not approve route implementation by itself.
+does not approve hosted deployment by itself.
 
 ## Out Of Scope
 
-This contract does not implement public search runtime, hosted backend
-deployment, live source probes, Internet Archive calls, Google queries,
-arbitrary URL fetch, crawling, downloads, installers, uploads, accounts,
-telemetry, native clients, relay runtime, snapshot reader runtime, TLS, auth,
-rate limiting, process management, custom domains, production API stability, or
-production readiness.
+This contract and local runtime do not implement hosted backend deployment,
+static search handoff, live source probes, Internet Archive calls, Google
+queries, arbitrary URL fetch, crawling, downloads, installers, uploads,
+accounts, telemetry, native clients, relay runtime, snapshot reader runtime,
+TLS, auth, rate limiting, process management, custom domains, production API
+stability, or production readiness.

@@ -144,8 +144,9 @@ FORBIDDEN_PUBLIC_PROPERTY_KEYS = {
 }
 REQUIRED_DOC_PHRASES = (
     "contract-only",
-    "does not make public search live",
-    "does not add runtime routes",
+    "Local Public Search Runtime v0",
+    "local/prototype result",
+    "Hosted public exposure still waits",
     "does not enable downloads",
     "installers",
     "execution",

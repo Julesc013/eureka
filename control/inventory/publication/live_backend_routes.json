@@ -13,7 +13,7 @@
       "method": "GET",
       "status": "planned",
       "stability": "experimental",
-      "current_implementation_status": "not_currently_hosted_publicly",
+      "current_implementation_status": "local_prototype_runtime_not_hosted",
       "static_handoff_allowed": true,
       "requires_live_backend": true,
       "requires_auth": false,
@@ -24,7 +24,7 @@
         "local_index_only"
       ],
       "expected_response_kind": "status_and_capability_flags",
-      "notes": "Future status document for backend availability and public-search capability flags; not served by GitHub Pages.",
+      "notes": "Local/prototype status document for public-search capability flags; not served by GitHub Pages and not hosted public deployment.",
       "public_search_safety_required": true,
       "runtime_readiness_checklist_required": true
     },
@@ -33,12 +33,12 @@
       "method": "GET",
       "status": "planned",
       "stability": "experimental",
-      "current_implementation_status": "not_currently_hosted_publicly",
+      "current_implementation_status": "local_prototype_runtime_not_hosted",
       "static_handoff_allowed": true,
       "requires_live_backend": true,
       "requires_auth": false,
       "live_probe_related": false,
-      "public_alpha_allowed": false,
+      "public_alpha_allowed": true,
       "public_search_contract_route": true,
       "allowed_modes": [
         "local_index_only"
@@ -47,7 +47,7 @@
       "local_paths_allowed": false,
       "uploads_allowed": false,
       "expected_response_kind": "search_results",
-      "notes": "Future deterministic public-alpha search handoff reserved by Public Search API Contract v0; local_index_only only, with Public Search Safety / Abuse Guard v0 defined as policy and runtime/middleware still unimplemented.",
+      "notes": "Local/prototype public search route implemented for local_index_only only; hosted live backend, rate-limit middleware, live probes, downloads, uploads, and local path search remain unimplemented.",
       "public_search_safety_required": true,
       "runtime_readiness_checklist_required": true
     },
@@ -56,18 +56,18 @@
       "method": "GET",
       "status": "planned",
       "stability": "experimental",
-      "current_implementation_status": "not_currently_hosted_publicly",
+      "current_implementation_status": "local_prototype_runtime_not_hosted",
       "static_handoff_allowed": true,
       "requires_live_backend": true,
       "requires_auth": false,
       "live_probe_related": false,
-      "public_alpha_allowed": false,
+      "public_alpha_allowed": true,
       "public_search_contract_route": true,
       "allowed_modes": [
         "local_index_only"
       ],
       "expected_response_kind": "query_plan",
-      "notes": "Future deterministic planner handoff for local-index-only public search; not a live route in the static artifact.",
+      "notes": "Local/prototype deterministic planner handoff for local-index-only public search; not a live route in the static artifact and not hosted public deployment.",
       "public_search_safety_required": true,
       "runtime_readiness_checklist_required": true
     },
@@ -76,18 +76,18 @@
       "method": "GET",
       "status": "planned",
       "stability": "experimental",
-      "current_implementation_status": "not_currently_hosted_publicly",
+      "current_implementation_status": "local_prototype_runtime_not_hosted",
       "static_handoff_allowed": true,
       "requires_live_backend": true,
       "requires_auth": false,
       "live_probe_related": false,
-      "public_alpha_allowed": false,
+      "public_alpha_allowed": true,
       "public_search_contract_route": true,
       "allowed_modes": [
         "local_index_only"
       ],
       "expected_response_kind": "source_collection",
-      "notes": "Future source summary endpoint for public search clients; static /data/source_summary.json remains the current public data path.",
+      "notes": "Local/prototype source summary endpoint for public search clients; static /data/source_summary.json remains the current public data path.",
       "public_search_safety_required": true,
       "runtime_readiness_checklist_required": true
     },
@@ -96,18 +96,18 @@
       "method": "GET",
       "status": "planned",
       "stability": "experimental",
-      "current_implementation_status": "not_currently_hosted_publicly",
+      "current_implementation_status": "local_prototype_runtime_not_hosted",
       "static_handoff_allowed": true,
       "requires_live_backend": true,
       "requires_auth": false,
       "live_probe_related": false,
-      "public_alpha_allowed": false,
+      "public_alpha_allowed": true,
       "public_search_contract_route": true,
       "allowed_modes": [
         "local_index_only"
       ],
       "expected_response_kind": "source_detail",
-      "notes": "Future source detail endpoint for public search clients; must preserve placeholder honesty.",
+      "notes": "Local/prototype source detail endpoint for public search clients; must preserve placeholder honesty.",
       "public_search_safety_required": true,
       "runtime_readiness_checklist_required": true
     },
@@ -200,7 +200,7 @@
   "notes": [
     "All routes in this file are future reservations.",
     "The registry does not create route handlers, deploy a backend, or define a production-stable API.",
-    "Public Search Safety / Abuse Guard v0 is policy-only and required before reserved public search backend routes can become runtime routes.",
+    "Public Search Safety / Abuse Guard v0 constrains Local Public Search Runtime v0 while hosted backend routes remain undeployed.",
     "No live backend, rate-limit middleware, live probes, downloads, uploads, local path search, or arbitrary URL fetch is implemented by the safety guard."
   ]
 }
