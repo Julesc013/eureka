@@ -23,10 +23,17 @@ class GitHubPagesDeploymentEnablementTest(unittest.TestCase):
         self.assertIn("actions/upload-pages-artifact@", text)
         self.assertIn("actions/deploy-pages@", text)
         self.assertIn("path: site/dist", text)
+        self.assertIn("python site/build.py", text)
         self.assertIn("python scripts/generate_public_data_summaries.py --check", text)
+        self.assertIn("python scripts/generate_compatibility_surfaces.py --check", text)
+        self.assertIn("python scripts/generate_static_resolver_demos.py --check", text)
         self.assertIn("python scripts/validate_publication_inventory.py", text)
-        self.assertIn("python scripts/validate_public_static_site.py", text)
-        self.assertIn("python scripts/check_github_pages_static_artifact.py", text)
+        self.assertIn("python site/validate.py", text)
+        self.assertIn("python scripts/check_github_pages_static_artifact.py --path site/dist", text)
+        self.assertIn(
+            "python scripts/check_generated_artifact_drift.py --artifact static_site_dist",
+            text,
+        )
 
     def test_workflow_permissions_and_triggers_are_pages_scoped(self) -> None:
         text = WORKFLOW.read_text(encoding="utf-8")
