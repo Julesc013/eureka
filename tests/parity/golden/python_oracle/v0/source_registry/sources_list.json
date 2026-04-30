@@ -548,7 +548,7 @@
           "package_member"
         ],
         "placeholder_warning": "",
-        "rights_notes": "Repo-governed text fixtures only. No real third-party software or driver binaries are redistributed.",
+        "rights_notes": "Repo-governed text fixtures only. No real outside software or driver binaries are redistributed.",
         "roles": [
           "fixture",
           "discovery_index",

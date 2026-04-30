@@ -53,7 +53,7 @@
     "mode": "fixture_only",
     "notes": "The runtime can fetch and decompose the committed ZIP fixtures through existing bounded fixture paths only."
   },
-  "rights_notes": "Repo-governed text fixtures only. No real third-party software or driver binaries are redistributed.",
+  "rights_notes": "Repo-governed text fixtures only. No real outside software or driver binaries are redistributed.",
   "legal_posture": "repo_governed_fixture",
   "freshness_model": "static_fixture",
   "capabilities": {

@@ -89,7 +89,7 @@ eureka/
     system/
     replay/
   scripts/
-  third_party/
+  external/
 ```
 
 ## Ownership Intent
@@ -102,7 +102,7 @@ eureka/
 - `tests/`: root integration and end-to-end verification that crosses component boundaries
 - `evals/`: root system and replay evaluations used to measure behavior over time
 - `scripts/`: repo support scripts when lightweight automation becomes necessary
-- `third_party/`: pinned or vendored external materials, kept separate from product semantics
+- `external/`: pinned outside references, specs, upstream snapshots, and license notes kept separate from product semantics
 
 ## Test Boundary
 

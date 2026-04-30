@@ -904,7 +904,7 @@
       "target_object_type": "web_page",
       "constraints": {"vendor": "Creative Labs", "source_hint": "web archive"},
       "expected_useful_units": ["archived support page", "driver list", "capture URL"],
-      "known_bad_result_patterns": ["current marketing page", "third-party driver updater"],
+      "known_bad_result_patterns": ["current marketing page", "outside driver updater"],
       "minimum_granularity": "archived_page",
       "target_actions": ["inspect", "cite"],
       "expected_eureka_current_status": "source_gap",
