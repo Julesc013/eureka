@@ -25,6 +25,11 @@ local cache export. Index packs must not include raw SQLite databases, raw
 local cache files, private local paths, credentials, executable payloads, or
 private user search history.
 
+Contribution Pack Contract v0 defines public-safe review-candidate summaries,
+not a cache export or upload path. Contribution packs must not include raw
+cache files, raw SQLite databases, private local paths, credentials, executable
+payloads, telemetry payloads, or private user search history.
+
 Private cache is future explicit user state. It may later hold user-selected
 artifacts, preferences, local strategy notes, private resolution memory, or
 native-client working state. Private cache is disabled by default and requires

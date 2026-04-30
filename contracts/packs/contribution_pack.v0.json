@@ -1,0 +1,461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/packs/contribution_pack.v0.json",
+  "title": "EurekaContributionPackManifestV0",
+  "description": "Manifest schema for Contribution Pack Contract v0. This defines a portable review-submission wrapper for source, evidence, index, manual observation, metadata correction, alias, compatibility, member-path, absence, and result-feedback candidates. It does not implement upload, import, moderation, accounts, review queue runtime, automatic acceptance, live connectors, executable plugins, or master-index acceptance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pack_id",
+    "pack_version",
+    "title",
+    "description",
+    "status",
+    "producer",
+    "contribution_scope",
+    "contribution_item_files",
+    "referenced_packs",
+    "privacy",
+    "rights_and_access",
+    "review_requirements",
+    "checksum_policy",
+    "validation",
+    "prohibited_contents",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "contribution_pack.v0"
+    },
+    "pack_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "pack_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([-.][A-Za-z0-9.]+)?$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "local_private",
+        "validated_local",
+        "shareable_candidate",
+        "submitted",
+        "quarantined",
+        "review_required",
+        "accepted_public",
+        "rejected",
+        "superseded"
+      ],
+      "description": "Lifecycle status. accepted_public must only be used after a future governed review path accepts the contribution."
+    },
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        },
+        "tool": {
+          "type": "string"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "description": "Optional ISO-like timestamp. Deterministic example packs may omit it."
+    },
+    "contribution_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contribution_types",
+        "target_surfaces",
+        "contains_manual_observations",
+        "contains_pack_references",
+        "mutation_authority"
+      ],
+      "properties": {
+        "contribution_types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contribution_type"
+          },
+          "minItems": 1
+        },
+        "target_surfaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contains_manual_observations": {
+          "type": "boolean"
+        },
+        "contains_pack_references": {
+          "type": "boolean"
+        },
+        "mutation_authority": {
+          "const": "review_candidate_only"
+        }
+      }
+    },
+    "contribution_item_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "referenced_packs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_pack_refs_file",
+        "evidence_pack_refs_file",
+        "index_pack_refs_file",
+        "embedded_packs"
+      ],
+      "properties": {
+        "source_pack_refs_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_pack_refs_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "index_pack_refs_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "embedded_packs": {
+          "const": false
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "contains_private_paths",
+        "contains_credentials",
+        "contains_raw_cache",
+        "contains_database_files",
+        "contains_executables",
+        "contains_unreviewed_external_observations",
+        "local_private_records_allowed"
+      ],
+      "properties": {
+        "classification": {
+          "$ref": "#/$defs/privacy_class"
+        },
+        "contains_private_paths": {
+          "type": "boolean"
+        },
+        "contains_credentials": {
+          "type": "boolean"
+        },
+        "contains_raw_cache": {
+          "type": "boolean"
+        },
+        "contains_database_files": {
+          "type": "boolean"
+        },
+        "contains_executables": {
+          "type": "boolean"
+        },
+        "contains_unreviewed_external_observations": {
+          "type": "boolean"
+        },
+        "local_private_records_allowed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "rights_and_access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rights_classification",
+        "rights_doc",
+        "not_rights_clearance",
+        "not_malware_safety",
+        "not_canonical_truth",
+        "raw_binaries_included",
+        "long_copyrighted_text_included"
+      ],
+      "properties": {
+        "rights_classification": {
+          "type": "string",
+          "enum": [
+            "synthetic_self_authored",
+            "metadata_only",
+            "public_safe_claims",
+            "local_private",
+            "review_required",
+            "unknown"
+          ]
+        },
+        "rights_doc": {
+          "type": "string"
+        },
+        "not_rights_clearance": {
+          "const": true
+        },
+        "not_malware_safety": {
+          "const": true
+        },
+        "not_canonical_truth": {
+          "const": true
+        },
+        "raw_binaries_included": {
+          "const": false
+        },
+        "long_copyrighted_text_included": {
+          "const": false
+        }
+      }
+    },
+    "review_requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_review_required",
+        "automated_review_allowed",
+        "master_index_acceptance_requires_review",
+        "no_automatic_acceptance",
+        "review_queue_runtime_implemented"
+      ],
+      "properties": {
+        "human_review_required": {
+          "const": true
+        },
+        "automated_review_allowed": {
+          "type": "boolean"
+        },
+        "master_index_acceptance_requires_review": {
+          "const": true
+        },
+        "no_automatic_acceptance": {
+          "const": true
+        },
+        "review_queue_runtime_implemented": {
+          "const": false
+        }
+      }
+    },
+    "checksum_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "checksum_file",
+        "covers",
+        "required_for_shareable_status"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "checksum_file": {
+          "const": "CHECKSUMS.SHA256"
+        },
+        "covers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_for_shareable_status": {
+          "const": true
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "validator",
+        "no_upload_performed",
+        "no_import_performed",
+        "no_review_queue_runtime",
+        "no_network_performed",
+        "no_automatic_acceptance"
+      ],
+      "properties": {
+        "validator": {
+          "type": "string"
+        },
+        "no_upload_performed": {
+          "const": true
+        },
+        "no_import_performed": {
+          "const": true
+        },
+        "no_review_queue_runtime": {
+          "const": true
+        },
+        "no_network_performed": {
+          "const": true
+        },
+        "no_automatic_acceptance": {
+          "const": true
+        }
+      }
+    },
+    "prohibited_contents": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "credentials",
+          "api_key",
+          "auth_token",
+          "password",
+          "private_key",
+          "private_local_paths",
+          "raw_private_files",
+          "raw_cache_export",
+          "raw_sqlite_database",
+          "raw_copyrighted_long_form_text",
+          "real_executables",
+          "installer_payloads",
+          "binary_blobs",
+          "download_install_urls",
+          "malware_safety_claims",
+          "rights_clearance_claims",
+          "live_fetch_authority",
+          "master_index_auto_acceptance",
+          "canonical_truth_claims",
+          "accounts_or_identity",
+          "telemetry_payloads"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "privacy_class": {
+      "type": "string",
+      "enum": [
+        "public_safe",
+        "local_private",
+        "review_required",
+        "restricted",
+        "unknown"
+      ]
+    },
+    "contribution_type": {
+      "type": "string",
+      "enum": [
+        "source_record_candidate",
+        "evidence_record_candidate",
+        "index_coverage_candidate",
+        "manual_observation",
+        "metadata_correction",
+        "alias_suggestion",
+        "compatibility_suggestion",
+        "member_path_suggestion",
+        "checksum_observation",
+        "absence_report",
+        "dead_link_report",
+        "result_quality_feedback",
+        "source_coverage_report",
+        "duplicate_or_identity_candidate",
+        "documentation_hint",
+        "review_note"
+      ]
+    },
+    "proposed_action": {
+      "type": "string",
+      "enum": [
+        "add_candidate",
+        "update_candidate",
+        "deprecate_candidate",
+        "mark_review_required",
+        "link_existing_records",
+        "split_identity_candidate",
+        "merge_identity_candidate_for_review",
+        "add_absence_evidence",
+        "add_compatibility_evidence",
+        "add_member_path_evidence",
+        "add_alias_candidate",
+        "no_action_note"
+      ]
+    }
+  },
+  "x-contract_id": "eureka_contribution_pack_v0",
+  "x-status": "stable_draft",
+  "x-required_files": [
+    "CONTRIBUTION_PACK.json",
+    "README.md",
+    "PRIVACY_AND_RIGHTS.md",
+    "CHECKSUMS.SHA256",
+    "contribution_items.jsonl"
+  ],
+  "x-optional_files": [
+    "source_pack_refs.jsonl",
+    "evidence_pack_refs.jsonl",
+    "index_pack_refs.jsonl",
+    "manual_observations.jsonl",
+    "metadata_corrections.jsonl",
+    "alias_suggestions.jsonl",
+    "compatibility_suggestions.jsonl",
+    "member_path_suggestions.jsonl",
+    "absence_reports.jsonl",
+    "result_feedback.jsonl",
+    "review_notes.jsonl",
+    "manifests/",
+    "tests/",
+    "licenses/",
+    "references/"
+  ],
+  "x-contribution_items_are_review_candidates": true,
+  "x-non_goals": [
+    "contribution upload",
+    "runtime import",
+    "source/evidence/index pack import",
+    "master-index review queue runtime",
+    "automatic acceptance",
+    "moderation UI",
+    "accounts or identity",
+    "live connectors",
+    "live probes",
+    "raw SQLite or cache export",
+    "executable plugins",
+    "rights clearance",
+    "malware safety",
+    "canonical truth selection",
+    "production readiness"
+  ]
+}

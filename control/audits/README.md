@@ -163,6 +163,14 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   public search runtime, live routes, live probes, downloads, installers,
   execution, uploads, malware-safety claims, rights-clearance claims, or
   production ranking claims.
+- `source-pack-contract-v0/`, `evidence-pack-contract-v0/`,
+  `index-pack-contract-v0/`, and `contribution-pack-contract-v0/`: pack
+  contract audit packs for future source/evidence/index/contribution workflows.
+  Contribution Pack Contract v0 records review-candidate submission metadata,
+  referenced pack posture, pending manual observation placeholders, validation
+  rules, and future review-queue needs without upload/import/moderation
+  runtime, accounts, automatic acceptance, live connectors, raw cache export,
+  executable plugins, or master-index acceptance.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

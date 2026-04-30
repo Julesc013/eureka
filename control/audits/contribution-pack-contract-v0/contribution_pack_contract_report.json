@@ -1,0 +1,48 @@
+{
+  "report_id": "contribution_pack_contract_v0",
+  "created_by_slice": "contribution_pack_contract_v0",
+  "status": "implemented_contract_validation_example_only",
+  "contract": {
+    "schema": "contracts/packs/contribution_pack.v0.json",
+    "contract_id": "eureka_contribution_pack_v0",
+    "reference_doc": "docs/reference/CONTRIBUTION_PACK_CONTRACT.md"
+  },
+  "example_pack": {
+    "path": "examples/contribution_packs/minimal_contribution_pack_v0",
+    "pack_id": "example.minimal_contribution_pack_v0",
+    "status": "shareable_candidate",
+    "synthetic": true,
+    "contribution_item_count": 3,
+    "manual_observation_count": 1,
+    "manual_observations_are_observed": false,
+    "contains_source_pack_reference": true,
+    "contains_evidence_pack_reference": true,
+    "contains_index_pack_reference": false,
+    "contains_executables": false,
+    "contains_raw_database": false,
+    "contains_raw_cache": false,
+    "contains_private_paths": false,
+    "contains_credentials": false,
+    "contains_real_external_observations": false,
+    "contains_live_urls": false
+  },
+  "validator": {
+    "path": "scripts/validate_contribution_pack.py",
+    "performs_upload": false,
+    "performs_import": false,
+    "performs_review_queue_runtime": false,
+    "performs_network": false,
+    "performs_automatic_acceptance": false
+  },
+  "contributions_are_review_candidates": true,
+  "contributions_are_canonical_truth": false,
+  "master_index_acceptance_implemented": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "next_recommended_milestone": "Master Index Review Queue Contract v0",
+  "notes": [
+    "Contribution Pack Contract v0 defines the wrapper before submission or review runtime exists.",
+    "The example pack is synthetic and public-safe.",
+    "No external baseline observations were fabricated."
+  ]
+}

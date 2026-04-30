@@ -35,6 +35,12 @@ executable download surface, and does not mirror software artifacts in v0.
   clearance, artifact distribution permission, malware safety, or canonical
   truth; raw caches, raw SQLite databases, executable payloads, credentials,
   and private paths are forbidden in shareable examples.
+- Contribution Pack Contract v0 carries this posture into future review
+  candidate submissions. Contributions are not rights clearance, malware
+  safety, canonical truth, artifact distribution permission, or master-index
+  acceptance; raw caches, raw SQLite databases, executable payloads,
+  credentials, private paths, and unreviewed observed external baselines are
+  forbidden in shareable examples.
 
 ## Labels
 

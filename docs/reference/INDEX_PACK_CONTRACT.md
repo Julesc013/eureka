@@ -177,12 +177,13 @@ export raw databases, or accept index records into a master index.
 Source packs define source metadata plus optional fixture/evidence inputs.
 Evidence packs carry claims and observations. Index packs describe an index
 build, source coverage, field coverage, query examples, and public-safe record
-summaries. Contribution packs are future and would wrap one or more packs plus
-review metadata for a governed submission flow.
+summaries. Contribution packs wrap proposed changes and/or source, evidence, and
+index pack references plus review metadata for a future governed submission
+flow. They are review candidates, not truth.
 
 Index packs do not replace source or evidence provenance. A future master index
-review queue would need to compare index summaries to source and evidence packs
-before any public acceptance.
+review queue would need to compare index summaries to source, evidence, and
+contribution packs before any public acceptance.
 
 ## Runtime Consumers
 

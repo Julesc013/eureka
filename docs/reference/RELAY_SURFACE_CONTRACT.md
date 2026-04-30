@@ -31,6 +31,8 @@ A future relay may consume:
   Public Search Result Card Contract v0
 - future reviewed index-pack coverage and record-summary metadata, without raw
   SQLite databases, raw cache files, private paths, or canonical-truth claims
+- future reviewed contribution-pack summaries, without upload/import authority,
+  private paths, executable payloads, accounts, or automatic acceptance
 - static snapshot manifests and checksums
 - route, source, eval, and page summaries
 - future live backend responses only after capability flags and handoff policy

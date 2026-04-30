@@ -201,8 +201,9 @@ Index packs answer "what index build, source coverage, field coverage, query
 examples, and public-safe record summaries exist without sharing a raw cache or
 SQLite database?"
 
-Contribution packs should later answer "what submission envelope, reviewer
-notes, provenance, and acceptance status carry a pack through review?"
+Contribution packs answer "what review-submission wrapper carries proposed
+changes, referenced packs, reviewer notes, provenance, and acceptance status
+through a future review process?"
 
 Master Index Review Queue Contract v0 should later answer "what public
 acceptance gates are required before a reviewed pack affects hosted/master

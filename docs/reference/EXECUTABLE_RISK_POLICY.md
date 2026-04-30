@@ -27,6 +27,11 @@ block. Cards may report `metadata_only`, `executable_unknown`,
 safety, must not make executable artifacts downloadable, and must not expose
 execution or installer handoff as an allowed v0 action.
 
+Source, evidence, index, and contribution pack examples must not include real
+executable payloads. Contribution Pack Contract v0 treats contributed
+executable references as review candidates at most; it does not create upload,
+download, install, execute, malware-safety, or automatic-acceptance behavior.
+
 ## Required Future Warnings
 
 Before any future native-client handoff involving an executable-like artifact,

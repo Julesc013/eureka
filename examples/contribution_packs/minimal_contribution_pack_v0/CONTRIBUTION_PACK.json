@@ -1,0 +1,114 @@
+{
+  "schema_version": "contribution_pack.v0",
+  "pack_id": "example.minimal_contribution_pack_v0",
+  "pack_version": "0.1.0",
+  "title": "Minimal Synthetic Contribution Pack v0",
+  "description": "Synthetic public-safe contribution candidates for contract testing. The pack proposes review candidates only and does not upload, import, mutate, or accept records.",
+  "status": "shareable_candidate",
+  "producer": {
+    "name": "Eureka contract tests",
+    "tool": "hand-authored fixture"
+  },
+  "contribution_scope": {
+    "contribution_types": [
+      "compatibility_suggestion",
+      "alias_suggestion",
+      "absence_report",
+      "manual_observation"
+    ],
+    "target_surfaces": [
+      "future_master_index_review",
+      "local_review"
+    ],
+    "contains_manual_observations": true,
+    "contains_pack_references": true,
+    "mutation_authority": "review_candidate_only"
+  },
+  "contribution_item_files": [
+    "contribution_items.jsonl"
+  ],
+  "referenced_packs": {
+    "source_pack_refs_file": "source_pack_refs.jsonl",
+    "evidence_pack_refs_file": "evidence_pack_refs.jsonl",
+    "index_pack_refs_file": null,
+    "embedded_packs": false
+  },
+  "privacy": {
+    "classification": "public_safe",
+    "contains_private_paths": false,
+    "contains_credentials": false,
+    "contains_raw_cache": false,
+    "contains_database_files": false,
+    "contains_executables": false,
+    "contains_unreviewed_external_observations": false,
+    "local_private_records_allowed": false
+  },
+  "rights_and_access": {
+    "rights_classification": "synthetic_self_authored",
+    "rights_doc": "PRIVACY_AND_RIGHTS.md",
+    "not_rights_clearance": true,
+    "not_malware_safety": true,
+    "not_canonical_truth": true,
+    "raw_binaries_included": false,
+    "long_copyrighted_text_included": false
+  },
+  "review_requirements": {
+    "human_review_required": true,
+    "automated_review_allowed": true,
+    "master_index_acceptance_requires_review": true,
+    "no_automatic_acceptance": true,
+    "review_queue_runtime_implemented": false
+  },
+  "checksum_policy": {
+    "algorithm": "sha256",
+    "checksum_file": "CHECKSUMS.SHA256",
+    "covers": [
+      "CONTRIBUTION_PACK.json",
+      "README.md",
+      "PRIVACY_AND_RIGHTS.md",
+      "contribution_items.jsonl",
+      "source_pack_refs.jsonl",
+      "evidence_pack_refs.jsonl",
+      "manual_observations.jsonl",
+      "alias_suggestions.jsonl",
+      "absence_reports.jsonl"
+    ],
+    "required_for_shareable_status": true
+  },
+  "validation": {
+    "validator": "scripts/validate_contribution_pack.py",
+    "no_upload_performed": true,
+    "no_import_performed": true,
+    "no_review_queue_runtime": true,
+    "no_network_performed": true,
+    "no_automatic_acceptance": true
+  },
+  "prohibited_contents": [
+    "credentials",
+    "api_key",
+    "auth_token",
+    "password",
+    "private_key",
+    "private_local_paths",
+    "raw_private_files",
+    "raw_cache_export",
+    "raw_sqlite_database",
+    "raw_copyrighted_long_form_text",
+    "real_executables",
+    "installer_payloads",
+    "binary_blobs",
+    "download_install_urls",
+    "malware_safety_claims",
+    "rights_clearance_claims",
+    "live_fetch_authority",
+    "master_index_auto_acceptance",
+    "canonical_truth_claims",
+    "accounts_or_identity",
+    "telemetry_payloads"
+  ],
+  "notes": [
+    "Synthetic example for Contribution Pack Contract v0.",
+    "Contribution items are review candidates, not accepted public records.",
+    "No external baseline observation is claimed."
+  ]
+}

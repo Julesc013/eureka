@@ -20,7 +20,11 @@ plugins, live connectors, hosted submission, or master-index acceptance.
   packs carry index-build metadata, source coverage, field coverage, query
   examples, public-safe record summaries, and checksum declarations without raw
   cache or database export.
+- `contribution_pack.v0.json` - manifest schema for Contribution Pack Contract
+  v0. Contribution packs carry review-candidate items, optional references to
+  source/evidence/index packs, manual-observation placeholders, metadata
+  corrections, alias suggestions, compatibility suggestions, absence reports,
+  result feedback, and checksum declarations without upload/import authority.
 
-Future pack contracts are expected for contribution packs and review queues.
-Pack contracts must stay separate so one pack type cannot silently gain the
-authority of another.
+Future contracts are expected for review queues. Pack contracts must stay
+separate so one pack type cannot silently gain the authority of another.

@@ -210,6 +210,12 @@ not make index summaries canonical truth, and do not grant hosted ingestion or
 live fetch behavior. Future public search use must pass review, redaction,
 source/evidence comparison, checksum, rights/privacy, and conflict-handling
 gates before index-pack summaries can affect public search results.
+Contribution Pack Contract v0 defines a future validated review-candidate
+wrapper for proposed changes and referenced packs. Contribution packs are not
+imported by the current public search runtime, do not upload or accept records,
+do not make contributions canonical truth, and do not grant moderation,
+identity, live fetch, or master-index authority. Future public search use must
+wait for a governed review queue and accepted public records.
 
 ## Out Of Scope
 

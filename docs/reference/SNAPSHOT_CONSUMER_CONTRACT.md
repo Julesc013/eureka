@@ -36,6 +36,12 @@ future reviewed snapshot may reference. It does not allow snapshots to carry raw
 SQLite databases, local cache exports, private paths, executable payloads, or
 canonical-truth claims.
 
+Contribution Pack Contract v0 defines review-candidate submission metadata that
+a future reviewed snapshot may summarize after acceptance. It does not allow
+snapshots to carry upload/import authority, raw caches, private paths,
+executable payloads, unreviewed observed external baselines, or canonical-truth
+claims.
+
 ## Minimum Compliant Consumer
 
 The minimum compliant consumer:

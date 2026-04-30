@@ -47,6 +47,8 @@ Future native clients may consume:
 - source, eval, route, page, evidence, absence, and comparison summaries
 - future reviewed index-pack coverage and record-summary metadata, without raw
   SQLite databases or local cache export
+- future reviewed contribution-pack summaries, without upload/import authority,
+  private cache export, accounts, or automatic acceptance
 - future live backend responses only when capability flags enable them
 - future relay projections only with operator signoff
 
