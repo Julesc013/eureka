@@ -641,7 +641,7 @@
       "label": "Public static site validator",
       "command": "python scripts/validate_public_static_site.py",
       "category": "operations",
-      "owner_area": "public_site",
+      "owner_area": "site/dist",
       "required_for": [
         "standard",
         "full",
@@ -664,7 +664,7 @@
       "label": "Public static site pack tests",
       "command": "python -m unittest tests.operations.test_public_static_site_pack tests.scripts.test_validate_public_static_site",
       "category": "operations",
-      "owner_area": "public_site",
+      "owner_area": "site/dist",
       "required_for": [
         "standard",
         "full",
@@ -701,7 +701,7 @@
       "network": "none",
       "writes": "none",
       "expected_runtime": "sub-second",
-      "failure_means": "The publication-plane contracts, current public_site page coverage, reserved routes, client profiles, deployment targets, public data entries, or redirect policy regressed.",
+      "failure_means": "The publication-plane contracts, current site/dist page coverage, reserved routes, client profiles, deployment targets, public data entries, or redirect policy regressed.",
       "advisory_or_required": "required",
       "notes": "Added by Public Publication Plane Contracts v0; validates contracts and inventories only, with no deployment, provider configuration, static generation, live backend behavior, live probes, scraping, or external observations."
     },
@@ -731,9 +731,9 @@
     {
       "test_id": "github_pages_static_artifact_checker",
       "label": "GitHub Pages static artifact checker",
-      "command": "python scripts/check_github_pages_static_artifact.py",
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
       "category": "publication",
-      "owner_area": "public_site",
+      "owner_area": "site/dist",
       "required_for": [
         "standard",
         "full",
@@ -747,7 +747,7 @@
       "network": "none",
       "writes": "none",
       "expected_runtime": "sub-second",
-      "failure_means": "The public_site artifact may not be safe to upload to GitHub Pages, or the github_pages_project deployment target may have drifted.",
+      "failure_means": "The site/dist artifact may not be safe to upload to GitHub Pages, or the github_pages_project deployment target may have drifted.",
       "advisory_or_required": "required",
       "notes": "Added by GitHub Pages Deployment Enablement v0; checks static artifact readiness, base-path-safe links, no runtime/secrets/local stores, no backend, and no live probes without network calls or deployment-success claims."
     },
@@ -768,11 +768,11 @@
         "python"
       ],
       "network": "none",
-      "writes": "temporary files only where artifact checker tests copy public_site",
+      "writes": "temporary files only where artifact checker tests copy site/dist",
       "expected_runtime": "seconds",
       "failure_means": "The GitHub Pages workflow, deployment target contract, artifact checker, static-only docs, or custom-domain/backend exclusions regressed.",
       "advisory_or_required": "required",
-      "notes": "Added by GitHub Pages Deployment Enablement v0; validates a static-only public_site Pages workflow without Node/npm, backend deployment, live probes, custom domain configuration, generators, secrets, or production claims."
+      "notes": "Added by GitHub Pages Deployment Enablement v0; validates a static-only site/dist Pages workflow without Node/npm, backend deployment, live probes, custom domain configuration, generators, secrets, or production claims."
     },
     {
       "test_id": "static_site_generator_check",
@@ -794,7 +794,7 @@
       "expected_runtime": "sub-second",
       "failure_means": "The stdlib static-site generator can no longer render and validate the current public page contract.",
       "advisory_or_required": "required",
-      "notes": "Added by Static Site Generation Migration v0; builds generated output for validation only and does not deploy, call external systems, use Node/npm, enable live probes, or replace public_site."
+      "notes": "Updated by Repository Shape Consolidation v0; builds canonical site/dist output and does not call external systems, use Node/npm, enable live probes, add public search, or claim deployment success."
     },
     {
       "test_id": "static_site_validation",
@@ -838,7 +838,7 @@
       "expected_runtime": "sub-second",
       "failure_means": "The generated site/dist artifact no longer satisfies the public static-site contract.",
       "advisory_or_required": "required",
-      "notes": "Added by Static Site Generation Migration v0; validates generated output while keeping public_site as the Pages artifact."
+      "notes": "Added by Static Site Generation Migration v0; validates generated output while keeping site/dist as the Pages artifact."
     },
     {
       "test_id": "static_site_generation_migration_tests",
@@ -860,7 +860,7 @@
       "expected_runtime": "seconds",
       "failure_means": "The site tree, generator JSON/check modes, generated no-JS output, source-list coverage, or Pages artifact boundary regressed.",
       "advisory_or_required": "required",
-      "notes": "Added by Static Site Generation Migration v0; ensures generated output remains validation-only and the Pages workflow still uploads public_site."
+      "notes": "Updated by Repository Shape Consolidation v0; ensures site/dist remains the single generated static Pages artifact and that the Pages workflow uploads that path."
     },
     {
       "test_id": "public_alpha_rehearsal_evidence_check",
@@ -1500,7 +1500,7 @@
       "label": "Generated public data summaries check",
       "command": "python scripts/generate_public_data_summaries.py --check",
       "category": "publication",
-      "owner_area": "public_site/data",
+      "owner_area": "site/dist/data",
       "required_for": [
         "standard",
         "full",
@@ -1513,7 +1513,7 @@
       "network": "none",
       "writes": "none in check mode",
       "expected_runtime": "seconds",
-      "failure_means": "Committed public_site/data summaries drifted from governed publication inventory, source inventory, eval/audit status, or route inventory inputs.",
+      "failure_means": "Committed site/dist/data summaries drifted from governed publication inventory, source inventory, eval/audit status, or route inventory inputs.",
       "advisory_or_required": "required",
       "notes": "Added by Generated Public Data Summaries v0; validates static JSON summaries only and performs no external searches, live probes, backend deployment, or external observation recording."
     },
@@ -1522,7 +1522,7 @@
       "label": "Generated public data summaries tests",
       "command": "python -m unittest tests.operations.test_generated_public_data_summaries tests.scripts.test_generate_public_data_summaries",
       "category": "publication",
-      "owner_area": "public_site/data",
+      "owner_area": "site/dist/data",
       "required_for": [
         "standard",
         "full",
@@ -1544,7 +1544,7 @@
       "label": "Lite/text/files compatibility surface generator check",
       "command": "python scripts/generate_compatibility_surfaces.py --check",
       "category": "publication",
-      "owner_area": "public_site/lite,text,files",
+      "owner_area": "site/dist/lite,text,files",
       "required_for": [
         "standard",
         "full",
@@ -1566,7 +1566,7 @@
       "label": "Lite/text/files static surface tests",
       "command": "python -m unittest tests.operations.test_lite_text_files_surfaces tests.scripts.test_generate_compatibility_surfaces",
       "category": "publication",
-      "owner_area": "public_site/lite,text,files",
+      "owner_area": "site/dist/lite,text,files",
       "required_for": [
         "standard",
         "full",
@@ -1588,7 +1588,7 @@
       "label": "Static resolver demo snapshots generator check",
       "command": "python scripts/generate_static_resolver_demos.py --check",
       "category": "publication",
-      "owner_area": "public_site/demo",
+      "owner_area": "site/dist/demo",
       "required_for": [
         "standard",
         "full",
@@ -1610,7 +1610,7 @@
       "label": "Static resolver demo snapshot tests",
       "command": "python -m unittest tests.operations.test_static_resolver_demo_snapshots tests.scripts.test_generate_static_resolver_demos",
       "category": "publication",
-      "owner_area": "public_site/demo",
+      "owner_area": "site/dist/demo",
       "required_for": [
         "standard",
         "full",
@@ -2400,6 +2400,72 @@
       "failure_means": "Generated artifact inventory, drift policy, docs, audit report, command matrix, or checker JSON/list/default behavior regressed.",
       "advisory_or_required": "required",
       "notes": "Checks the drift guard validation layer without mutating generated artifacts, implementing product behavior, deploying, or adding live network behavior."
+    },
+    {
+      "test_id": "static_site_dist_drift_guard",
+      "label": "Static site dist drift guard",
+      "command": "python scripts/check_generated_artifact_drift.py --artifact static_site_dist",
+      "category": "publication",
+      "owner_area": "site/dist",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The static_site_dist generated artifact group drifted from the site generator, Pages checker, or committed site/dist output.",
+      "advisory_or_required": "required",
+      "notes": "Added by Repository Shape Consolidation v0; checks only the canonical site/dist generated static artifact without deploying, opening sockets, adding public search, or changing runtime behavior."
+    },
+    {
+      "test_id": "repository_layout_validator",
+      "label": "Repository layout validator",
+      "command": "python scripts/validate_repository_layout.py",
+      "category": "layout",
+      "owner_area": "repo",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The active repository layout no longer enforces site/dist as the single static artifact or external as the outside-reference root.",
+      "advisory_or_required": "required",
+      "notes": "Added by Repository Shape Consolidation v0; validates active layout, workflow, publication inventory, generated artifact inventory, and stale-path guards while allowing clearly historical audit references."
+    },
+    {
+      "test_id": "repository_shape_consolidation_tests",
+      "label": "Repository shape consolidation tests",
+      "command": "python -m unittest tests.operations.test_repository_shape_consolidation tests.scripts.test_validate_repository_layout",
+      "category": "layout",
+      "owner_area": "repo",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Repository Shape Consolidation v0 tests failed, allowing stale static artifact or outside-reference assumptions to return.",
+      "advisory_or_required": "required",
+      "notes": "Checks site/dist ownership, external root boundaries, workflow upload path, publication inventory, generated artifact inventory, drift guard support, and validator JSON behavior without adding product runtime behavior."
     }
   ]
 }

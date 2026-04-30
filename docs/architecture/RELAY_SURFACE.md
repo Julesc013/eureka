@@ -38,10 +38,10 @@ view.
 The relay should consume existing governed projections before it consumes any
 live backend:
 
-- `public_site/data/` for static public JSON summaries
-- `public_site/lite/` for old-browser HTML shape
-- `public_site/text/` for plain text output
-- `public_site/files/` for file-tree manifests and checksums
+- `site/dist/data/` for static public JSON summaries
+- `site/dist/lite/` for old-browser HTML shape
+- `site/dist/text/` for plain text output
+- `site/dist/files/` for file-tree manifests and checksums
 - `snapshots/examples/static_snapshot_v0/` as the current seed snapshot format
 - Signed Snapshot Consumer Contract v0 for future snapshot read order,
   checksum checks, missing optional file behavior, and v0 signature-placeholder

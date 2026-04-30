@@ -441,7 +441,7 @@
 ## ADR-074: Add LIVE_ALPHA_00 Static Public Site Pack Without Deployment
 
 - Status: accepted
-- Decision: Eureka now records LIVE_ALPHA_00 Static Public Site Pack under `public_site/` with plain static HTML/CSS pages for identity, status, source matrix, eval/audit state, demo queries, limitations, roadmap, and local quickstart, plus a stdlib validator at `scripts/validate_public_static_site.py`.
+- Decision: Eureka now records LIVE_ALPHA_00 Static Public Site Pack under `site/dist/` with plain static HTML/CSS pages for identity, status, source matrix, eval/audit state, demo queries, limitations, roadmap, and local quickstart, plus a stdlib validator at `scripts/validate_public_static_site.py`.
 - Why: live-alpha preparation needs honest public-facing material before backend hosting. This pack is static documentation only: it does not deploy Eureka, add hosting infrastructure, add DNS or cloud configuration, start a server, add live source probes, scrape Google or Internet Archive, automate external searches, fabricate external baselines, weaken evals, or claim production readiness. The next Codex-side milestone is Public Alpha Rehearsal Evidence v0, while Manual Observation Batch 0 Execution remains human-operated parallel work.
 
 ## ADR-075: Record Public Alpha Rehearsal Evidence Without Deploying
@@ -460,43 +460,43 @@
 
 - Status: accepted
 - Decision: Eureka now adds Public Publication Plane Contracts v0 under `control/inventory/publication/` with reference documentation and `scripts/validate_publication_inventory.py`.
-- Why: public routes, status vocabulary, public JSON fields, client profiles, base-path behavior, redirect policy, and claim traceability are harder to change than deployment mechanics. The publication plane defines `public_site/` as the current static artifact, reserves `site/` and `site/dist/` for later generation work, records GitHub Pages project-path semantics at `/eureka/`, keeps custom-domain and backend targets future, and validates that reserved `/lite/`, `/text/`, `/files/`, `/data/`, `/api/`, and `/snapshots/` route families are not implemented by claim alone. It does not deploy Eureka, add a GitHub Pages workflow, add DNS or provider configuration, create a generator, enable live backend behavior, add live probes, record external observations, weaken evals, or port Rust behavior. The next Codex-side milestone becomes GitHub Pages Deployment Enablement v0 using these contracts.
+- Why: public routes, status vocabulary, public JSON fields, client profiles, base-path behavior, redirect policy, and claim traceability are harder to change than deployment mechanics. The publication plane defines `site/dist/` as the current static artifact, reserves `site/` and `site/dist/` for later generation work, records GitHub Pages project-path semantics at `/eureka/`, keeps custom-domain and backend targets future, and validates that reserved `/lite/`, `/text/`, `/files/`, `/data/`, `/api/`, and `/snapshots/` route families are not implemented by claim alone. It does not deploy Eureka, add a GitHub Pages workflow, add DNS or provider configuration, create a generator, enable live backend behavior, add live probes, record external observations, weaken evals, or port Rust behavior. The next Codex-side milestone becomes GitHub Pages Deployment Enablement v0 using these contracts.
 
 ## ADR-078: Enable Static GitHub Pages Deployment Path Without Backend Hosting
 
 - Status: accepted
 - Decision: Eureka now adds GitHub Pages Deployment Enablement v0 through `.github/workflows/pages.yml`, `docs/operations/GITHUB_PAGES_DEPLOYMENT.md`, `scripts/check_github_pages_static_artifact.py`, and workflow/artifact safety tests.
-- Why: after the publication plane defined the public route, data, client, base-path, and deployment target contracts, GitHub Pages can be a small static publishing layer over `public_site/`. The workflow validates the publication inventory, validates the static site, checks the artifact for runtime/secrets/local-store leakage and base-path unsafe links, uploads only `public_site/`, and deploys through GitHub's Pages artifact actions. It does not deploy the Python backend, enable live probes or live Internet Archive access, add custom-domain configuration, add a generator or Node/npm chain, add secrets, add auth/TLS/rate limiting/process management, fabricate external observations, weaken hard evals, or claim a public deployment succeeded without GitHub Actions evidence. The next Codex-side milestone becomes Static Site Generation Migration v0.
+- Why: after the publication plane defined the public route, data, client, base-path, and deployment target contracts, GitHub Pages can be a small static publishing layer over `site/dist/`. The workflow validates the publication inventory, validates the static site, checks the artifact for runtime/secrets/local-store leakage and base-path unsafe links, uploads only `site/dist/`, and deploys through GitHub's Pages artifact actions. It does not deploy the Python backend, enable live probes or live Internet Archive access, add custom-domain configuration, add a generator or Node/npm chain, add secrets, add auth/TLS/rate limiting/process management, fabricate external observations, weaken hard evals, or claim a public deployment succeeded without GitHub Actions evidence. The next Codex-side milestone becomes Static Site Generation Migration v0.
 
 ## ADR-079: Add Stdlib Static Site Generator Without Replacing Public Site Artifact
 
 - Status: accepted
 - Decision: Eureka now adds Static Site Generation Migration v0 through `site/`, `site/build.py`, `site/validate.py`, page JSON, templates, copied static assets, generated `site/dist/`, and generated-site tests.
-- Why: after the publication plane and GitHub Pages workflow made `public_site/` governable and deployable as a static artifact, the next risk is hand-authored public pages drifting from repo inventories and contracts. The v0 generator renders the current no-JS pages from governed source files and source inventory reads into `site/dist/` for validation, while keeping `public_site/` as the GitHub Pages artifact. It adds no Node/npm, frontend framework, custom domain, deployment workflow change, live backend behavior, live probes, external baseline observations, fuzzy/vector/LLM retrieval, Rust behavior port, native app project, or production-readiness claim. The next Codex-side milestone becomes Generated Public Data Summaries v0.
+- Why: after the publication plane and GitHub Pages workflow made `site/dist/` governable and deployable as a static artifact, the next risk is hand-authored public pages drifting from repo inventories and contracts. The v0 generator renders the current no-JS pages from governed source files and source inventory reads into `site/dist/` for validation, while keeping `site/dist/` as the GitHub Pages artifact. It adds no Node/npm, frontend framework, custom domain, deployment workflow change, live backend behavior, live probes, external baseline observations, fuzzy/vector/LLM retrieval, Rust behavior port, native app project, or production-readiness claim. The next Codex-side milestone becomes Generated Public Data Summaries v0.
 
 ## ADR-080: Generate Static Public Data Summaries Without Creating a Live API
 
 - Status: accepted
-- Decision: Eureka now adds Generated Public Data Summaries v0 through `scripts/generate_public_data_summaries.py`, static JSON files under `public_site/data/`, generated copies under `site/dist/data/`, updated publication data contracts, validator checks, static-page links, and public-data tests.
-- Why: after the publication contracts, Pages workflow, and stdlib site generator established a safe static publication plane, the then-future lite/text/files surfaces, snapshots, relays, API handoff planning, and native clients needed machine-readable summaries that traced back to governed repo sources. The v0 summaries project page registry, source posture, eval/audit counts, public-alpha route posture, site summary, and build provenance from local inventories and deterministic scripts while keeping `public_site/` as the deployable artifact. They are static data summaries, not a live API or production JSON stability promise, and they add no deployment behavior, live backend, live probes, live Internet Archive calls, external searches, fabricated external observations, Node/npm chain, Rust behavior port, native app project, or production-readiness claim. The next Codex-side milestone became Lite/Text/Files Seed Surfaces v0.
+- Decision: Eureka now adds Generated Public Data Summaries v0 through `scripts/generate_public_data_summaries.py`, static JSON files under `site/dist/data/`, generated copies under `site/dist/data/`, updated publication data contracts, validator checks, static-page links, and public-data tests.
+- Why: after the publication contracts, Pages workflow, and stdlib site generator established a safe static publication plane, the then-future lite/text/files surfaces, snapshots, relays, API handoff planning, and native clients needed machine-readable summaries that traced back to governed repo sources. The v0 summaries project page registry, source posture, eval/audit counts, public-alpha route posture, site summary, and build provenance from local inventories and deterministic scripts while keeping `site/dist/` as the deployable artifact. They are static data summaries, not a live API or production JSON stability promise, and they add no deployment behavior, live backend, live probes, live Internet Archive calls, external searches, fabricated external observations, Node/npm chain, Rust behavior port, native app project, or production-readiness claim. The next Codex-side milestone became Lite/Text/Files Seed Surfaces v0.
 
 ## ADR-081: Seed Lite, Text, and Files Surfaces Without Live Search or Downloads
 
 - Status: accepted
-- Decision: Eureka now adds Lite/Text/Files Seed Surfaces v0 through `scripts/generate_compatibility_surfaces.py`, static seed surfaces under `public_site/lite/`, `public_site/text/`, and `public_site/files/`, generated copies under `site/dist/`, checksum metadata for public data files, publication inventory updates, validator checks, and surface tests.
-- Why: after generated public data summaries landed, old-browser, text-browser, simple file-tree, snapshot, relay, and future native-client consumption paths need static compatibility surfaces before any snapshot bundle or live handoff contract. The v0 surfaces consume committed public data summaries and keep `public_site/` as the GitHub Pages artifact. They add no live search, executable downloads, software mirror, signed snapshot, relay runtime, native-client runtime, live backend behavior, live probes, external observations, Node/npm chain, Rust behavior port, deployment change, or production-readiness claim. The next Codex-side milestone becomes Static Resolver Demo Snapshots v0.
+- Decision: Eureka now adds Lite/Text/Files Seed Surfaces v0 through `scripts/generate_compatibility_surfaces.py`, static seed surfaces under `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`, generated copies under `site/dist/`, checksum metadata for public data files, publication inventory updates, validator checks, and surface tests.
+- Why: after generated public data summaries landed, old-browser, text-browser, simple file-tree, snapshot, relay, and future native-client consumption paths need static compatibility surfaces before any snapshot bundle or live handoff contract. The v0 surfaces consume committed public data summaries and keep `site/dist/` as the GitHub Pages artifact. They add no live search, executable downloads, software mirror, signed snapshot, relay runtime, native-client runtime, live backend behavior, live probes, external observations, Node/npm chain, Rust behavior port, deployment change, or production-readiness claim. The next Codex-side milestone becomes Static Resolver Demo Snapshots v0.
 
 ## ADR-082: Add Static Resolver Demo Snapshots Without Live Search or API Semantics
 
 - Status: accepted
-- Decision: Eureka now adds Static Resolver Demo Snapshots v0 through `scripts/generate_static_resolver_demos.py`, static no-JS demo pages under `public_site/demo/`, generated validation copies under `site/dist/demo/`, a static demo manifest at `public_site/demo/data/demo_snapshots.json`, publication inventory updates, validator checks, and demo snapshot tests.
-- Why: after generated public data summaries and lite/text/files seed surfaces made the publication plane consumable by compatibility-first clients, Eureka needed representative static examples of current resolver behavior before snapshots, domain readiness, or live backend handoff. The v0 demos show fixture-backed query planning, member-level results, compatibility evidence, result lane/user-cost explanation, absence reasoning, comparison/disagreement, source detail, article/scan fixture results, and eval summaries while keeping `public_site/` as the GitHub Pages artifact. They add no live search, live API semantics, backend hosting, external observations, signed snapshots, relay/native runtime, Node/npm chain, Rust behavior port, deployment change, or production-readiness claim. The next Codex-side milestone becomes Custom Domain / Alternate Host Readiness v0.
+- Decision: Eureka now adds Static Resolver Demo Snapshots v0 through `scripts/generate_static_resolver_demos.py`, static no-JS demo pages under `site/dist/demo/`, generated validation copies under `site/dist/demo/`, a static demo manifest at `site/dist/demo/data/demo_snapshots.json`, publication inventory updates, validator checks, and demo snapshot tests.
+- Why: after generated public data summaries and lite/text/files seed surfaces made the publication plane consumable by compatibility-first clients, Eureka needed representative static examples of current resolver behavior before snapshots, domain readiness, or live backend handoff. The v0 demos show fixture-backed query planning, member-level results, compatibility evidence, result lane/user-cost explanation, absence reasoning, comparison/disagreement, source detail, article/scan fixture results, and eval summaries while keeping `site/dist/` as the GitHub Pages artifact. They add no live search, live API semantics, backend hosting, external observations, signed snapshots, relay/native runtime, Node/npm chain, Rust behavior port, deployment change, or production-readiness claim. The next Codex-side milestone becomes Custom Domain / Alternate Host Readiness v0.
 
 ## ADR-083: Record Host Readiness Without Configuring Domains Or Alternate Providers
 
 - Status: accepted
 - Decision: Eureka now adds Custom Domain / Alternate Host Readiness v0 through `control/inventory/publication/domain_plan.json`, `control/inventory/publication/static_hosting_targets.json`, `docs/operations/CUSTOM_DOMAIN_AND_ALTERNATE_HOST_READINESS.md`, `docs/operations/CUSTOM_DOMAIN_OPERATOR_CHECKLIST.md`, `docs/reference/BASE_PATH_PORTABILITY.md`, `scripts/validate_static_host_readiness.py`, and readiness tests.
-- Why: after static Pages deployment enablement, generated public data, compatibility seed surfaces, and static demo snapshots, the hardest remaining publication-plane risk is host portability and accidental public claims. The readiness layer records `/eureka/` versus `/` base-path expectations, future custom-domain prerequisites, takeover-risk language, prohibited claims, alternate-static-host candidates, and an unsigned operator checklist while preserving `public_site/` as the current artifact. It adds no DNS records, `CNAME`, provider config, alternate-host deployment, backend hosting, live probes, custom-domain claim, deployment-success claim, Node/npm chain, Rust behavior port, native app project, or production-readiness claim. The next Codex-side milestone becomes Live Backend Handoff Contract v0.
+- Why: after static Pages deployment enablement, generated public data, compatibility seed surfaces, and static demo snapshots, the hardest remaining publication-plane risk is host portability and accidental public claims. The readiness layer records `/eureka/` versus `/` base-path expectations, future custom-domain prerequisites, takeover-risk language, prohibited claims, alternate-static-host candidates, and an unsigned operator checklist while preserving `site/dist/` as the current artifact. It adds no DNS records, `CNAME`, provider config, alternate-host deployment, backend hosting, live probes, custom-domain claim, deployment-success claim, Node/npm chain, Rust behavior port, native app project, or production-readiness claim. The next Codex-side milestone becomes Live Backend Handoff Contract v0.
 
 ## ADR-084: Reserve Live Backend Handoff Without Making An API Live
 
@@ -526,7 +526,7 @@
 
 - Status: accepted
 - Decision: Eureka now adds Signed Snapshot Format v0 through `control/inventory/publication/snapshot_contract.json`, `docs/reference/SNAPSHOT_FORMAT_CONTRACT.md`, `docs/reference/SNAPSHOT_SIGNATURE_POLICY.md`, `snapshots/schema/`, `scripts/generate_static_snapshot.py`, `scripts/validate_static_snapshot.py`, and a deterministic seed example under `snapshots/examples/static_snapshot_v0/`.
-- Why: after the compatibility surface strategy, Eureka needs an offline/static snapshot contract before relay designs, native clients, or future downloadable snapshot surfaces can safely consume publication-plane data. The v0 format records required manifests, public data projections, checksums, and signature-placeholder documentation while keeping `public_site/` as the current GitHub Pages artifact. It adds no real signing keys, production signatures, executable downloads, real software binaries, public `/snapshots/` route, relay service, native-client runtime, live backend behavior, live probes, external API calls, scraping, crawling, provider config, or production-authentic release claim. The next non-network milestone should be Relay Surface Design v0.
+- Why: after the compatibility surface strategy, Eureka needs an offline/static snapshot contract before relay designs, native clients, or future downloadable snapshot surfaces can safely consume publication-plane data. The v0 format records required manifests, public data projections, checksums, and signature-placeholder documentation while keeping `site/dist/` as the current GitHub Pages artifact. It adds no real signing keys, production signatures, executable downloads, real software binaries, public `/snapshots/` route, relay service, native-client runtime, live backend behavior, live probes, external API calls, scraping, crawling, provider config, or production-authentic release claim. The next non-network milestone should be Relay Surface Design v0.
 
 ## ADR-089: Record Post-Queue State Checkpoint As Audit Metadata
 
@@ -807,7 +807,7 @@ Public Data Contract Stability Review v0 adds
 `scripts/validate_public_data_stability.py`, and focused operations/script
 tests.
 
-The decision is to keep generated public JSON under `public_site/data/` as
+The decision is to keep generated public JSON under `site/dist/data/` as
 pre-alpha static data while classifying individual field paths as
 `stable_draft`, `experimental`, `volatile`, `internal`, `deprecated`, or
 `future`. Future static, snapshot, relay, and native clients may depend only on
@@ -840,5 +840,23 @@ mode is non-mutating: it runs check commands and validators, not update
 commands. This adds no product behavior, live API, live backend, live probes,
 relay runtime, native client, snapshot reader, deployment behavior, external
 observation, download/install behavior, network calls, or production API
-stability claim. The next Codex-safe milestone is Snapshot Consumer Tooling
-Plan v0.
+stability claim. The next Codex-safe milestone is Repository Shape
+Consolidation v0.
+
+## ADR-103: Consolidate Static Publication Around Site Dist
+
+Status: accepted
+
+Repository Shape Consolidation v0 makes `site/dist/` the single generated
+static deployment artifact, updates the GitHub Pages workflow and artifact
+checkers to consume that path, removes the active legacy static artifact path,
+records `static_site_dist` in the generated artifact inventory, and confirms
+`external/` as the root for pinned outside references.
+
+The decision is to end the dual static-artifact model before public search,
+static publication review, source packs, snapshots, native clients, relay, or
+hosted services build on top of it. This adds no public search runtime, public
+API routes, live backend hosting, live source probes, crawling, external search
+automation, relay runtime, native client, downloads, accounts, telemetry, auth,
+TLS, rate limiting, production signing, or production readiness claim. The next
+Codex-safe milestone is Static Artifact Promotion Review v0.

@@ -39,19 +39,18 @@ result-shape refinement pass under
 evidence, not AIDE runtime state.
 
 Generated Public Data Summaries v0 records committed static machine-readable
-summaries under `public_site/data/` and generated validation copies under
-`site/dist/data/`. No separate AIDE runtime report is needed; those JSON files
-are publication artifacts, not AIDE product state.
+summaries under `site/dist/data/`. No separate AIDE runtime report is needed;
+those JSON files are publication artifacts, not AIDE product state.
 
 Lite/Text/Files Seed Surfaces v0 records committed static compatibility
-surfaces under `public_site/lite/`, `public_site/text/`, and
-`public_site/files/`, with generated validation copies under `site/dist/`.
+surfaces under `site/dist/lite/`, `site/dist/text/`, and
+`site/dist/files/`, with generated validation copies under `site/dist/`.
 No separate AIDE runtime report is needed; those files are publication
 artifacts and do not add live search, downloads, snapshots, relay behavior, or
 native-client runtime.
 
 Static Resolver Demo Snapshots v0 records committed static resolver examples
-under `public_site/demo/`, with generated validation copies under
+under `site/dist/demo/`, with generated validation copies under
 `site/dist/demo/`. No separate AIDE runtime report is needed; those files are
 publication artifacts and do not add live search, live API semantics, backend
 hosting, external observations, or production behavior.
@@ -180,3 +179,8 @@ and tests under `docs/operations/`,
 No separate AIDE runtime report is needed; this is validation/audit governance
 only and does not regenerate artifacts by default, change runtime behavior,
 deploy, call external services, open sockets, or claim production readiness.
+
+Repository Shape Consolidation v0 records no separate AIDE runtime report. It
+promotes `site/dist/` as the single generated static deployment artifact and
+confirms `external/` as the outside-reference root through active docs,
+inventories, validators, tests, and workflow metadata only.

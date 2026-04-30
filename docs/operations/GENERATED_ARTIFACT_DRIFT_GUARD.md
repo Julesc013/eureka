@@ -11,15 +11,16 @@ scrape, crawl, open sockets, or claim production readiness.
 
 ## Covered Artifacts
 
-- `public_site/data/*.json`: generated public data summaries owned by
+- `site/dist/data/*.json`: generated public data summaries owned by
   `scripts/generate_public_data_summaries.py`.
-- `public_site/lite/`, `public_site/text/`, and `public_site/files/`: static
+- `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`: static
   compatibility surfaces owned by `scripts/generate_compatibility_surfaces.py`.
-- `public_site/demo/`: static resolver demo snapshots owned by
+- `site/dist/demo/`: static resolver demo snapshots owned by
   `scripts/generate_static_resolver_demos.py`.
 - `snapshots/examples/static_snapshot_v0/`: deterministic static snapshot seed
   example owned by `scripts/generate_static_snapshot.py`.
-- `site/dist/`: generated static-site validation output owned by `site/build.py`.
+- `site/dist/`: canonical generated static deployment artifact owned by
+  `site/build.py` and checked as `static_site_dist`.
 - `tests/parity/golden/python_oracle/v0/`: Python oracle golden fixtures owned by
   `scripts/generate_python_oracle_golden.py`.
 - `docs/operations/public_alpha_rehearsal_evidence_v0/`: public-alpha rehearsal
@@ -97,4 +98,3 @@ When a check fails:
 
 Do not hide drift by editing generated output without reviewing the owning
 generator or source inputs.
-

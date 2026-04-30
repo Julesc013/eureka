@@ -65,7 +65,7 @@ member-access gaps.
 External Google and Internet Archive baselines remain pending/manual; Manual
 Observation Batch 0 only prepares 39 prioritized slots for later human
 observation and records no external results.
-The static public site pack under `public_site/` and Public Alpha Rehearsal
+The static public site pack under `site/dist/` and Public Alpha Rehearsal
 Evidence v0 under `docs/operations/public_alpha_rehearsal_evidence_v0/` are
 documentation/evidence packs for later hosting review. They do not deploy
 Eureka, add backend hosting, add live source probes, scrape external systems,
@@ -82,37 +82,36 @@ or static-generation migration. The contract slice itself added no deployment
 workflow, generator, DNS, provider configuration, live backend behavior, or
 external observations.
 GitHub Pages Deployment Enablement v0 now adds a workflow and artifact checker
-for publishing only `public_site/` as a static Pages artifact after validation.
+for publishing only `site/dist/` as a static Pages artifact after validation.
 It does not deploy the Python backend, enable live probes, add a custom domain,
 introduce a generator, or claim a successful public deployment without GitHub
 Actions evidence.
 Static Site Generation Migration v0 now adds a stdlib-only `site/` source tree
-and generator that renders no-JS pages into `site/dist/` for validation.
-`public_site/` remains the GitHub Pages deployment artifact; generated output
-is not deployed yet and no Node/npm or frontend framework is introduced.
+and generator that renders no-JS pages into `site/dist/`. Repository Shape
+Consolidation v0 makes `site/dist/` the single generated static deployment
+artifact, with no Node/npm or frontend framework introduced.
 Generated Public Data Summaries v0 now adds deterministic static JSON summaries
-under `public_site/data/` and `site/dist/data/` for page, source, eval, route,
-and build state. These files now feed the lite/text/files seed surfaces and
-remain inputs for future snapshot, relay, and native-client consumers; they are
-not a live API, do not add live probes or external observations, and do not
-make production stability claims.
+under `site/dist/data/` for page, source, eval, route, and build state. These
+files feed the lite/text/files seed surfaces and remain inputs for future
+snapshot, relay, and native-client consumers; they are not a live API, do not
+add live probes or external observations, and do not make production stability
+claims.
 Lite/Text/Files Seed Surfaces v0 now adds static compatibility seed surfaces
-under `public_site/lite/`, `public_site/text/`, and `public_site/files/`, with
-generated validation copies under `site/dist/`. They are no-JS/no-download
+under `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`. They are
+no-JS/no-download
 publication surfaces for old browsers, text readers, file-tree browsing, and
 future snapshot/relay/native-client planning; they are not live search,
 snapshots, relay behavior, native-client runtime, executable mirrors, or
 production support claims.
 Static Resolver Demo Snapshots v0 now adds fixture-backed static no-JS resolver
-examples under `public_site/demo/` and generated validation copies under
-`site/dist/demo/`. They show query planning, member-level results,
+examples under `site/dist/demo/`. They show query planning, member-level results,
 compatibility evidence, absence, comparison, source detail, article/scan
 fixtures, and eval summaries; they are not live search, a live API, backend
 hosting, external observations, or production resolver behavior.
 Custom Domain / Alternate Host Readiness v0 now adds governed domain and
 alternate-static-host readiness records, base-path portability guidance,
 operator checklist, and `scripts/validate_static_host_readiness.py`. It does
-not configure DNS, add `public_site/CNAME`, deploy an alternate host, add
+not configure DNS, add `site/dist/CNAME`, deploy an alternate host, add
 provider config, enable live probes, host a backend, or claim production
 readiness.
 Live Backend Handoff Contract v0 now adds contract-only `/api/v1` route
@@ -176,7 +175,7 @@ accounts, cloud sync, uploads, native clients, or relay runtime.
 ### Requirements
 
 - Python 3
-- no third-party Python packages for the current executable lane
+- no outside Python packages for the current executable lane
 - optional Rust toolchain only for the `crates/` workspace checks
 
 ```bash
@@ -209,7 +208,7 @@ python scripts/generate_python_oracle_golden.py --check
 python -m unittest discover -s tests/hardening -t .
 python scripts/validate_public_static_site.py
 python scripts/validate_publication_inventory.py
-python scripts/check_github_pages_static_artifact.py
+python scripts/check_github_pages_static_artifact.py --path site/dist
 python site/build.py --check
 python site/validate.py
 python scripts/generate_public_data_summaries.py --check
@@ -400,7 +399,7 @@ production queues, and production Rust services remain future work.
 | `docs/operations/public_alpha_hosting_pack/` | Supervised public-alpha hosting-pack runbook and templates |
 | `docs/operations/public_alpha_rehearsal_evidence_v0/` | Supervised local/static public-alpha rehearsal evidence pack; no deployment approval |
 | `evals/` | Archive-resolution eval packet and related eval scaffolding |
-| `public_site/` | No-JS static public artifact for static Pages publication review; no backend or live source behavior |
+| `site/dist/` | No-JS static public artifact for static Pages publication review; no backend or live source behavior |
 | `runtime/` | Python reference engine, connectors, gateway public boundary, source registry |
 | `scripts/` | Demo commands, eval runner, safety checks, golden generators |
 | `snapshots/` | Static/offline snapshot format schema and deterministic seed examples; no real keys or executable downloads |
@@ -478,20 +477,20 @@ Eureka is substantial, but it is still a prototype/reference backend:
 - Public Publication Plane Contracts v0 exist as route/data/client/deployment
   inventory governance. They do not deploy anything or add static generation.
 - GitHub Pages Deployment Enablement v0 configures a static-only workflow for
-  `public_site/`, with deployment success still unverified until GitHub Actions
+  `site/dist/`, with deployment success still unverified until GitHub Actions
   evidence exists.
 - Static Site Generation Migration v0 adds a stdlib-only generator under
-  `site/` that builds `site/dist/` for validation. It does not switch the
-  Pages artifact away from `public_site/`.
+  `site/`. Repository Shape Consolidation v0 makes generated `site/dist/` the
+  only active Pages artifact.
 - Generated Public Data Summaries v0 adds static machine-readable summaries
-  under `public_site/data/` and generated `site/dist/data/`. They are not live
-  API semantics and do not add external observations.
+  under `site/dist/data/`. They are not live API semantics and do not add
+  external observations.
 - Lite/Text/Files Seed Surfaces v0 adds static compatibility seed surfaces
-  under `public_site/lite/`, `public_site/text/`, and `public_site/files/`.
+  under `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`.
   They do not add live search, downloads, snapshots, relay behavior, or native
   runtime.
 - Static Resolver Demo Snapshots v0 adds static fixture-backed demo pages under
-  `public_site/demo/`. They do not add live search, a live API, external
+  `site/dist/demo/`. They do not add live search, a live API, external
   observations, backend hosting, or production behavior.
 - Custom Domain / Alternate Host Readiness v0 adds static-host portability
   contracts and validation. It does not configure DNS, add CNAME, deploy an
@@ -584,9 +583,9 @@ Accepted immediate next milestone:
 Broader near-term direction:
 
 1. keep the GitHub Pages workflow static-only and driven by publication-plane
-   contracts, with `public_site/` as the only uploaded artifact
-2. keep validating generated `site/dist/` against the current `public_site/`
-   artifact before changing the Pages deployment artifact
+   contracts, with `site/dist/` as the only uploaded artifact
+2. run Static Artifact Promotion Review v0 before recording any hosted result
+   as deployment evidence
 3. fill a first manual Google and Internet Archive baseline batch without
    scraping or fabricated comparisons
 4. keep using audit deltas to measure source, planner, representation,

@@ -5,8 +5,8 @@ live backend handoff routes.
 
 The static site can expose current repo truth through:
 
-- static HTML under `public_site/`
-- static JSON under `public_site/data/`
+- static HTML under `site/dist/`
+- static JSON under `site/dist/data/`
 - static compatibility surfaces under `lite/`, `text/`, and `files/`
 - static fixture-backed demos under `demo/`
 

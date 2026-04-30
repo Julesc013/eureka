@@ -137,11 +137,11 @@
       "notes": "Added stdlib-only local helpers to list pending baseline slots, create fillable pending observation files, validate one file or all files, and report Batch 0 progress without scraping, URL fetching, browser automation, or fabricated observations."
     },
     {
-      "id": "live_alpha_00_static_public_site_pack",
+      "id": "live_alpha_00_static_publication_pack",
       "title": "LIVE_ALPHA_00 Static Public Site Pack",
       "status": "completed",
       "priority": 20,
-      "notes": "Added a no-JS static public site pack under public_site plus a stdlib validator, without deploying, adding backend hosting, adding live probes, scraping, or making production-readiness claims."
+      "notes": "Added a no-JS static public site pack under site/dist plus a stdlib validator, without deploying, adding backend hosting, adding live probes, scraping, or making production-readiness claims."
     },
     {
       "id": "public_alpha_rehearsal_evidence_v0",
@@ -169,35 +169,35 @@
       "title": "GitHub Pages Deployment Enablement v0",
       "status": "completed",
       "priority": 24,
-      "notes": "Added a static-only GitHub Pages workflow, artifact checker, operations docs, and tests for publishing public_site through the publication contracts, without deploying the Python backend, adding live probes, configuring a custom domain, adding a generator, or claiming deployment success without GitHub Actions evidence."
+      "notes": "Added a static-only GitHub Pages workflow, artifact checker, operations docs, and tests for publishing site/dist through the publication contracts, without deploying the Python backend, adding live probes, configuring a custom domain, adding a generator, or claiming deployment success without GitHub Actions evidence."
     },
     {
       "id": "static_site_generation_migration_v0",
       "title": "Static Site Generation Migration v0",
       "status": "completed",
       "priority": 25,
-      "notes": "Added a stdlib-only site/ source tree, generator, validation, and generated site/dist output while keeping public_site as the GitHub Pages artifact."
+      "notes": "Added a stdlib-only site/ source tree, generator, validation, and generated site/dist output while keeping site/dist as the GitHub Pages artifact."
     },
     {
       "id": "generated_public_data_summaries_v0",
       "title": "Generated Public Data Summaries v0",
       "status": "completed",
       "priority": 26,
-      "notes": "Generated deterministic static public data summaries under public_site/data and site/dist/data from governed publication inventory, source inventory, eval/audit outputs, and route inventory without adding live APIs, live probes, deployment behavior, or external observations."
+      "notes": "Generated deterministic static public data summaries under site/dist/data from governed publication inventory, source inventory, eval/audit outputs, and route inventory without adding live APIs, live probes, deployment behavior, or external observations."
     },
     {
       "id": "lite_text_files_seed_surfaces_v0",
       "title": "Lite/Text/Files Seed Surfaces v0",
       "status": "completed",
       "priority": 27,
-      "notes": "Added static no-JS/no-download compatibility seed surfaces under public_site/lite, public_site/text, and public_site/files from generated public data summaries, with file-tree manifest/checksums and no snapshots, relay/native runtime, live backend, live probes, or executable downloads."
+      "notes": "Added static no-JS/no-download compatibility seed surfaces under site/dist/lite, site/dist/text, and site/dist/files from generated public data summaries, with file-tree manifest/checksums and no snapshots, relay/native runtime, live backend, live probes, or executable downloads."
     },
     {
       "id": "static_resolver_demo_snapshots_v0",
       "title": "Static Resolver Demo Snapshots v0",
       "status": "completed",
       "priority": 28,
-      "notes": "Added static no-JS fixture-backed resolver demo snapshots under public_site/demo and generated site/dist/demo validation copies without adding live search, live API semantics, backend hosting, external observations, or production behavior."
+      "notes": "Added static no-JS fixture-backed resolver demo snapshots under site/dist/demo and generated site/dist/demo validation copies without adding live search, live API semantics, backend hosting, external observations, or production behavior."
     },
     {
       "id": "custom_domain_alternate_host_readiness_v0",
@@ -365,7 +365,7 @@
       "title": "Public Data Contract Stability Review v0",
       "status": "completed",
       "priority": 52,
-      "notes": "Added field-level stability governance for generated public JSON under public_site/data, classifying fields as stable_draft, experimental, volatile, internal, deprecated, or future without making public JSON a production API or changing runtime behavior."
+      "notes": "Added field-level stability governance for generated public JSON under site/dist/data, classifying fields as stable_draft, experimental, volatile, internal, deprecated, or future without making public JSON a production API or changing runtime behavior."
     },
     {
       "id": "generated_artifact_drift_guard_v0",
@@ -375,18 +375,81 @@
       "notes": "Added generated-artifact inventory, drift policy, non-mutating drift checker, audit pack, docs, tests, and command-matrix/AIDE wiring for public data, compatibility surfaces, static demos, seed snapshots, site/dist, Python oracle goldens, public-alpha rehearsal evidence, publication inventories, test registry metadata, and AIDE metadata."
     },
     {
-      "id": "snapshot_consumer_tooling_plan_v0",
-      "title": "Snapshot Consumer Tooling Plan v0",
-      "status": "recommended_next",
+      "id": "repository_shape_consolidation_v0",
+      "title": "Repository Shape Consolidation v0",
+      "status": "completed",
       "priority": 54,
-      "notes": "Plan-only follow-up for future snapshot consumer tooling; do not implement a consumer runtime without explicit scope."
+      "notes": "Promoted site/dist as the single generated static deployment artifact, retired the active legacy static artifact path, confirmed external as the outside-reference root, and added repository layout validation without adding public search runtime, backend hosting, live probes, native clients, relay runtime, or production claims."
+    },
+    {
+      "id": "static_artifact_promotion_review_v0",
+      "title": "Static Artifact Promotion Review v0",
+      "status": "recommended_next",
+      "priority": 55,
+      "notes": "Review the promoted site/dist artifact and publication evidence before treating any hosted result as deployment evidence. Do not add public search, live backend behavior, or production claims."
+    },
+    {
+      "id": "github_pages_run_evidence_review_v0",
+      "title": "GitHub Pages Run Evidence Review v0",
+      "status": "recommended_follow_up",
+      "priority": 56,
+      "notes": "Check and record actual GitHub Actions Pages run evidence after the workflow is pushed; do not claim deployment success without observed run status."
+    },
+    {
+      "id": "public_search_api_contract_v0",
+      "title": "Public Search API Contract v0",
+      "status": "recommended_follow_up",
+      "priority": 57,
+      "notes": "Contract-only planning for future public search routes; do not implement API routes, backend hosting, live probes, crawling, or external searches."
+    },
+    {
+      "id": "public_search_result_card_contract_v0",
+      "title": "Public Search Result Card Contract v0",
+      "status": "recommended_follow_up",
+      "priority": 58,
+      "notes": "Define future result-card fields and safety copy before UI/runtime implementation; do not add search runtime behavior."
+    },
+    {
+      "id": "public_search_safety_abuse_guard_v0",
+      "title": "Public Search Safety / Abuse Guard v0",
+      "status": "recommended_follow_up",
+      "priority": 59,
+      "notes": "Define public-search safety and abuse guardrails before runtime work; do not add auth, rate limiting, hosted services, or live probes in this milestone."
+    },
+    {
+      "id": "local_public_search_runtime_v0",
+      "title": "Local Public Search Runtime v0",
+      "status": "recommended_follow_up",
+      "priority": 60,
+      "notes": "Future local-only runtime milestone after contracts and safety; no hosted backend, external search automation, crawling, or live source probing is implied."
+    },
+    {
+      "id": "public_search_static_handoff_v0",
+      "title": "Public Search Static Handoff v0",
+      "status": "recommended_follow_up",
+      "priority": 61,
+      "notes": "Future handoff from static publication to search contracts; keep GitHub Pages static-only unless separately approved."
     },
     {
       "id": "search_usefulness_source_expansion_v2_fixture_only",
       "title": "Search Usefulness Source Expansion v2, fixture-only",
       "status": "recommended_follow_up",
-      "priority": 55,
+      "priority": 62,
       "notes": "Fixture-only source expansion candidate; no live source calls, scraping, crawling, external observations, or arbitrary local ingestion."
+    },
+    {
+      "id": "source_pack_contract_v0",
+      "title": "Source Pack Contract v0",
+      "status": "recommended_follow_up",
+      "priority": 63,
+      "notes": "Future contract for source packs only; do not implement downloads, installers, crawling, or live sync."
+    },
+    {
+      "id": "evidence_pack_contract_v0",
+      "title": "Evidence Pack Contract v0",
+      "status": "recommended_follow_up",
+      "priority": 64,
+      "notes": "Future evidence-pack contract work; do not fabricate external baselines or claim rights/security review."
     }
   ]
 }

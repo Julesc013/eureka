@@ -108,7 +108,10 @@
         "public_data_stability_validator",
         "public_data_stability_tests",
         "generated_artifact_drift_guard",
-        "generated_artifact_drift_guard_tests"
+        "generated_artifact_drift_guard_tests",
+        "static_site_dist_drift_guard",
+        "repository_layout_validator",
+        "repository_shape_consolidation_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -212,7 +215,10 @@
         "public_data_stability_validator",
         "public_data_stability_tests",
         "generated_artifact_drift_guard",
-        "generated_artifact_drift_guard_tests"
+        "generated_artifact_drift_guard_tests",
+        "static_site_dist_drift_guard",
+        "repository_layout_validator",
+        "repository_shape_consolidation_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -291,7 +297,10 @@
         "public_data_stability_validator",
         "public_data_stability_tests",
         "generated_artifact_drift_guard",
-        "generated_artifact_drift_guard_tests"
+        "generated_artifact_drift_guard_tests",
+        "static_site_dist_drift_guard",
+        "repository_layout_validator",
+        "repository_shape_consolidation_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -325,7 +334,7 @@
     },
     {
       "lane_id": "publication_static_site",
-      "purpose": "Publication-plane, current static artifact, and generated static output checks before deployment or artifact migration.",
+      "purpose": "Publication-plane and canonical site/dist static artifact checks before deployment evidence review or artifact promotion.",
       "commands": [
         "publication_inventory_validator",
         "publication_inventory_tests",
@@ -374,11 +383,14 @@
         "generated_artifact_drift_guard_tests",
         "public_static_site_validator",
         "public_static_site_pack_validation",
+        "static_site_dist_drift_guard",
+        "repository_layout_validator",
+        "repository_shape_consolidation_tests",
         "docs_diff_check"
       ],
       "required_status": "required",
-      "when_to_run": "After publication inventory, public static site, generated static site, route/data/client contract, base-path, GitHub Pages workflow, or future static-hosting preparation changes.",
-      "notes": "Validates contracts, the current static artifact, generated site/dist output, static Pages workflow readiness, and the repo-local static snapshot seed only; it does not manually deploy, add backend provider files, deploy generated output, enable live backend behavior, publish production signed snapshots, add real signing keys, or record external observations."
+      "when_to_run": "After publication inventory, public static site, generated static site, route/data/client contract, base-path, GitHub Pages workflow, repository layout, or future static-hosting preparation changes.",
+      "notes": "Validates contracts, canonical site/dist output, static Pages workflow readiness, repository layout, and the repo-local static snapshot seed only; it does not manually deploy, add backend provider files, enable live backend behavior, publish production signed snapshots, add real signing keys, or record external observations."
     },
     {
       "lane_id": "parity",

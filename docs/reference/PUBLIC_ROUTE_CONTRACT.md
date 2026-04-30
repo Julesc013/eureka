@@ -19,7 +19,7 @@ Every current public route record must include:
 - `notes`
 
 Current implemented and `static_demo` routes point at files under
-`public_site/`. Reserved future routes use `source_file: null` and must stay
+`site/dist/`. Reserved future routes use `source_file: null` and must stay
 `planned`, `deferred`, `blocked`, or another non-implemented status until an
 artifact exists.
 

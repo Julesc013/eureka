@@ -204,7 +204,7 @@ architectural oracle rather than as a throwaway scaffold.
   batch slot, validates a single file or the full observation area, and reports
   Batch 0 progress without performing observations, opening browsers, fetching
   URLs, scraping, automated external querying, or fabricating baselines
-- first LIVE_ALPHA_00 Static Public Site Pack under `public_site/` plus
+- first LIVE_ALPHA_00 Static Public Site Pack under `site/dist/` plus
   `scripts/validate_public_static_site.py` that records a no-JS static public
   site source tree with status, source matrix, eval/audit state, demo queries,
   limitations, roadmap, and local quickstart pages for later hosting review
@@ -238,7 +238,7 @@ architectural oracle rather than as a throwaway scaffold.
 - first GitHub Pages Deployment Enablement v0 under
   `.github/workflows/pages.yml`, `docs/operations/GITHUB_PAGES_DEPLOYMENT.md`,
   `scripts/check_github_pages_static_artifact.py`, and workflow/artifact safety
-  tests that validate the publication inventory and `public_site/` before
+  tests that validate the publication inventory and `site/dist/` before
   uploading only the static artifact to GitHub Pages, without deploying the
   Python backend, enabling live probes, adding a custom domain, adding a
   generator, adding secrets, or claiming deployment success without GitHub
@@ -246,23 +246,22 @@ architectural oracle rather than as a throwaway scaffold.
 - first Static Site Generation Migration v0 under `site/`, adding a
   stdlib-only source tree, templates, page JSON, `site/build.py`,
   `site/validate.py`, generated `site/dist/`, and generator tests that render
-  the current no-JS static pages for validation while keeping `public_site/` as
-  the GitHub Pages artifact, without Node/npm, a frontend framework, deployment
-  changes, live backend behavior, live probes, or production claims
-- first Generated Public Data Summaries v0 under `public_site/data/`,
-  `site/dist/data/`, and `scripts/generate_public_data_summaries.py`, adding
+  the current no-JS static pages into the GitHub Pages artifact without
+  Node/npm, a frontend framework, live backend behavior, live probes, or
+  production claims
+- first Generated Public Data Summaries v0 under `site/dist/data/` and
+  `scripts/generate_public_data_summaries.py`, adding
   deterministic static JSON summaries for page, source, eval, route, and build
   state from governed repo inputs without adding a live API, deployment
   behavior, live probes, external observations, Node/npm, or production API
   stability claims
-- first Lite/Text/Files Seed Surfaces v0 under `public_site/lite/`,
-  `public_site/text/`, `public_site/files/`, generated validation copies under
-  `site/dist/`, and `scripts/generate_compatibility_surfaces.py`, adding
+- first Lite/Text/Files Seed Surfaces v0 under `site/dist/lite/`,
+  `site/dist/text/`, `site/dist/files/`, and
+  `scripts/generate_compatibility_surfaces.py`, adding
   static old-browser/text/file-tree seed surfaces with checksums and no live
   search, executable downloads, snapshots, relay/native runtime behavior,
   backend deployment, live probes, or production support claims
-- first Static Resolver Demo Snapshots v0 under `public_site/demo/`,
-  generated validation copies under `site/dist/demo/`, and
+- first Static Resolver Demo Snapshots v0 under `site/dist/demo/` and
   `scripts/generate_static_resolver_demos.py`, adding static fixture-backed
   demo snapshots for query planning, member results, compatibility evidence,
   absence, comparison, source detail, article/scan results, and eval summaries
@@ -392,10 +391,10 @@ public-alpha process wrapper and config guard, and the first publication-plane
 contract/inventory layer, plus the first static-only GitHub Pages workflow and
 artifact-readiness validation layer, plus the first stdlib static-site
 generation source tree and generated-output validation layer, plus the first
-deterministic public data summary layer under `public_site/data/` and
+deterministic public data summary layer under `site/dist/data/` and
 `site/dist/data/`, plus the first static compatibility seed surfaces under
-`public_site/lite/`, `public_site/text/`, and `public_site/files/`.
-The static demo snapshot layer under `public_site/demo/` shows representative
+`site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`.
+The static demo snapshot layer under `site/dist/demo/` shows representative
 fixture-backed resolver examples without adding live search or API behavior.
 The static host readiness layer records custom-domain and alternate-host
 prerequisites without adding DNS, CNAME, provider config, alternate-host
@@ -505,20 +504,33 @@ oracle goldens, public-alpha rehearsal evidence, publication inventories, test
 registry metadata, and AIDE metadata without regenerating artifacts by default,
 changing runtime behavior, deploying, calling external services, or opening
 network sockets.
+Repository Shape Consolidation v0 promotes `site/dist/` as the single generated
+static deployment artifact, removes the active legacy static artifact path,
+confirms `external/` as the outside-reference root, and adds layout validation
+without public search runtime, backend hosting, live probes, relay runtime,
+native clients, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Snapshot Consumer Tooling Plan v0
-2. Search Usefulness Source Expansion v2, fixture-only
-3. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+1. Static Artifact Promotion Review v0
+2. GitHub Pages Run Evidence Review v0
+3. Public Search API Contract v0
+4. Public Search Result Card Contract v0
+5. Public Search Safety / Abuse Guard v0
+6. Local Public Search Runtime v0
+7. Public Search Static Handoff v0
+8. Search Usefulness Source Expansion v2, fixture-only
+9. Source Pack Contract v0
+10. Evidence Pack Contract v0
+11. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
-4. Relay Prototype Implementation v0, only after explicit human approval and
+12. Relay Prototype Implementation v0, only after explicit human approval and
    limited to the approved localhost-only/read-only/static relay scope
-5. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
+13. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
    human approval and limited to the approved read-only static-data/snapshot-demo
    skeleton scope
-6. Manual Observation Batch 0 Execution (human-operated parallel work)
-7. Internet Archive Live Probe v0 only after explicit human approval and
+14. Manual Observation Batch 0 Execution (human-operated parallel work)
+15. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 ## Deferred Priorities

@@ -30,7 +30,7 @@ Current scripts:
   manual observation JSON file from a batch slot or prints it with `--stdout`;
   it never marks the record observed, populates top results, fetches URLs, or
   automates external searches
-- `validate_public_static_site.py`: validates the no-JS `public_site/` static
+- `validate_public_static_site.py`: validates the no-JS `site/dist/` static
   public-site pack by default, or a generated artifact with `--site-root`,
   including its manifest, required pages, local links,
   source matrix coverage, required cautionary phrases, prohibited claims, and
@@ -39,19 +39,19 @@ Current scripts:
 - `validate_publication_inventory.py`: validates the governed publication-plane
   inventory under `control/inventory/publication/`, including required contract
   files, route stability vocabulary, public status taxonomy, current
-  `public_site/` page coverage, future reserved routes, client profiles,
+  `site/dist/` page coverage, future reserved routes, client profiles,
   deployment target semantics, public data entries, empty redirect policy, and
   claim traceability docs; it supports `--json`, performs no network calls,
   starts no server, adds no provider configuration, creates no generator, and
   deploys nothing
-- `check_github_pages_static_artifact.py`: validates that `public_site/` is safe
+- `check_github_pages_static_artifact.py`: validates that `site/dist/` is safe
   to upload as the GitHub Pages artifact, including required files, publication
   target settings, base-path-safe links, no runtime/source/secrets/local-store
   files, no backend, and no live probes; it supports `--json`, performs no
   network calls, starts no server, adds no custom domain, and does not claim a
   successful deployment
 - `validate_static_host_readiness.py`: validates domain and alternate-static-host
-  readiness inventories, confirms no `public_site/CNAME`, DNS/provider config,
+  readiness inventories, confirms no `site/dist/CNAME`, DNS/provider config,
   custom-domain claim, backend hosting, live probes, or root-relative static
   links are present, supports `--json`, performs no network calls, and deploys
   nothing
@@ -75,14 +75,14 @@ Current scripts:
   calls, adds no runtime behavior, and does not make snapshots, relay services,
   native clients, live backend routes, or live probes available
 - `generate_public_data_summaries.py`: generates, updates, or checks
-  deterministic static JSON summaries under `public_site/data/` by default,
+  deterministic static JSON summaries under `site/dist/data/` by default,
   including site, page-registry, source, eval, route, and build summaries; it
   supports `--update`, `--check`, `--output-root`, and `--json`, performs no
   network calls, runs no live probes, records no external observations, starts
   no server, deploys nothing, and does not create live API semantics
 - `generate_compatibility_surfaces.py`: generates, updates, or checks static
-  lite/text/files compatibility seed surfaces under `public_site/lite/`,
-  `public_site/text/`, and `public_site/files/` by default from generated
+  lite/text/files compatibility seed surfaces under `site/dist/lite/`,
+  `site/dist/text/`, and `site/dist/files/` by default from generated
   public data summaries; it supports `--update`, `--check`, `--output-root`,
   `--data-root`, and `--json`, generates a file-tree manifest and SHA256SUMS,
   performs no network calls, runs no live search or probes, records no external
@@ -167,21 +167,21 @@ Current scripts:
   live probes, native sidecar, snapshot mount, downloads, installers, telemetry,
   or relay runtime wiring
 - `generate_static_resolver_demos.py`: generates, updates, or checks static
-  resolver demo snapshots under `public_site/demo/` by default from generated
+  resolver demo snapshots under `site/dist/demo/` by default from generated
   public data summaries and fixture-backed Python-oracle outputs; it supports
   `--update`, `--check`, `--output-root`, `--data-root`, and `--json`, performs
   no network calls, runs no live search or probes, records no external
   observations, starts no backend, and does not create live API semantics,
   snapshots, relay behavior, native-client runtime, or production behavior
 - `site/build.py` and `site/validate.py`: build and validate the stdlib-only
-  static-site source tree into `site/dist/` for Static Site Generation
-  Migration v0; `site/build.py` also emits generated public data summaries into
+  static-site source tree into canonical `site/dist/`; `site/build.py` also
+  emits generated public data summaries into
   `site/dist/data/` and generated lite/text/files seed surfaces into
   `site/dist/lite/`, `site/dist/text/`, `site/dist/files/`, and static resolver
-  demo snapshots into `site/dist/demo/`; they keep
-  `public_site/` as the deployment artifact and add no Node/npm, frontend
-  framework, live backend calls, live probes, external web APIs, downloads, or
-  deployment behavior
+  demo snapshots into `site/dist/demo/`; they keep `site/dist/` as the single
+  generated deployment artifact and add no Node/npm, frontend framework, live
+  backend calls, live probes, external web APIs, downloads, or production
+  deployment claim
 - `generate_public_alpha_rehearsal_evidence.py`: summarizes, updates, or
   checks Public Alpha Rehearsal Evidence v0 by validating the static site,
   running the in-process public-alpha smoke checks, counting route inventory

@@ -1,7 +1,7 @@
 # Public Alpha
 
 Public backend hosting is not the next step. Static GitHub Pages enablement now
-exists for `public_site/`, but hosted backend exposure remains a later
+exists for `site/dist/`, but hosted backend exposure remains a later
 milestone that should begin only after the backend has a safer and more
 coherent operational shape.
 
@@ -32,20 +32,23 @@ The minimum public-alpha entry gate should include:
   deployment-target, redirect, base-path, and claim-traceability governance;
   no deployment, generator, or live backend behavior)
 - GitHub Pages Deployment Enablement v0 (implemented as static-only workflow
-  configuration for `public_site/`; no backend deployment, live probes, custom
+  configuration for `site/dist/`; no backend deployment, live probes, custom
   domain, generator, or verified deployment-success claim)
 - Static Site Generation Migration v0 (implemented as a stdlib-only `site/`
-  source/generator tree producing `site/dist/` for validation; `public_site/`
-  remains the deployment artifact)
+  source/generator tree producing `site/dist/`)
+- Repository Shape Consolidation v0 (implemented as `site/dist/` as the single
+  generated static deployment artifact and `external/` as the outside-reference
+  root; no public search runtime, backend hosting, live probes, or production
+  claim)
 - Generated Public Data Summaries v0 (implemented as deterministic static JSON
-  under `public_site/data/` and `site/dist/data/`; no live API, live probes,
+  under `site/dist/data/`; no live API, live probes,
   external observations, or production JSON stability claim)
 - Lite/Text/Files Seed Surfaces v0 (implemented as static no-JS/no-download
-  compatibility seed surfaces under `public_site/lite/`, `public_site/text/`,
-  and `public_site/files/`; no live search, snapshots, relay/native runtime,
+  compatibility seed surfaces under `site/dist/lite/`, `site/dist/text/`,
+  and `site/dist/files/`; no live search, snapshots, relay/native runtime,
   executable downloads, or production support claim)
 - Static Resolver Demo Snapshots v0 (implemented as static no-JS
-  fixture-backed resolver examples under `public_site/demo/`; no live search,
+  fixture-backed resolver examples under `site/dist/demo/`; no live search,
   live API, backend hosting, external observations, or production behavior)
 - Custom Domain / Alternate Host Readiness v0 (implemented as static-host
   portability inventories, docs, checklist, and validation; no DNS, CNAME,
@@ -161,7 +164,7 @@ Source Coverage and Capability Model v0 adds safe source capability and
 coverage-depth metadata to source pages and API responses in public-alpha mode.
 This is descriptive registry projection only; it does not add live source
 probing, source sync, crawling, or implemented placeholder connectors.
-LIVE_ALPHA_00 Static Public Site Pack now adds `public_site/`, a plain static
+LIVE_ALPHA_00 Static Public Site Pack now adds `site/dist/`, a plain static
 HTML/CSS public-facing documentation pack with status, source matrix,
 eval/audit state, demo queries, limitations, roadmap, and local quickstart
 pages. The pack is static only: it starts no server, performs no deployment,
@@ -182,14 +185,14 @@ no deployment or production approval.
 Public Publication Plane Contracts v0 now adds
 `control/inventory/publication/`, `docs/architecture/PUBLICATION_PLANE.md`,
 reference docs, a stdlib inventory validator, and tests. It commits the
-distinction between the current `public_site/` artifact, future `site/`
+distinction between the current `site/dist/` artifact, future `site/`
 generator source, and future `site/dist/` generated artifact before GitHub
 Pages or custom-domain work. The contract slice itself performed no deployment,
 added no GitHub Pages workflow, created no generator, enabled no live backend,
 and recorded no external observations.
 
 GitHub Pages Deployment Enablement v0 now adds the static-only Pages workflow,
-artifact checker, operations docs, and tests for publishing only `public_site/`
+artifact checker, operations docs, and tests for publishing only `site/dist/`
 after validation. This does not change public-alpha backend readiness: it does
 not host the Python backend, enable live probes, configure a custom domain, add
 a generator, add secrets, or claim deployment success without GitHub Actions
@@ -197,23 +200,22 @@ evidence.
 
 Static Site Generation Migration v0 now adds `site/`, `site/build.py`,
 `site/validate.py`, page JSON, templates, and generated `site/dist/` output.
-The generated output is validation evidence, not the GitHub Pages artifact yet.
-This keeps public-alpha backend readiness unchanged and adds no Node/npm,
-frontend framework, live backend behavior, live probes, custom domain, or
-production-readiness claim.
+Repository Shape Consolidation v0 now makes generated `site/dist/` the single
+static GitHub Pages artifact path. This keeps public-alpha backend readiness
+unchanged and adds no Node/npm, frontend framework, live backend behavior, live
+probes, custom domain, or production-readiness claim.
 
 Generated Public Data Summaries v0 now adds static JSON summaries under
-`public_site/data/` and `site/dist/data/` for page, source, eval, route, and
-build state. Lite/Text/Files Seed Surfaces v0 now consumes those summaries to
-publish static compatibility seed surfaces under `public_site/lite/`,
-`public_site/text/`, and `public_site/files/`. These files are not a live API,
+`site/dist/data/` for page, source, eval, route, and build state.
+Lite/Text/Files Seed Surfaces v0 now consumes those summaries to
+publish static compatibility seed surfaces under `site/dist/lite/`,
+`site/dist/text/`, and `site/dist/files/`. These files are not a live API,
 do not host backend behavior, do not enable live probes, do not record external
 observations, do not add executable downloads, and do not create production
 signed snapshots, public `/snapshots/` routes, relay behavior, or native-client runtime.
 
 Static Resolver Demo Snapshots v0 now publishes static fixture-backed examples
-under `public_site/demo/` and generated validation copies under
-`site/dist/demo/`. These examples show current bounded resolver behavior for
+under `site/dist/demo/`. These examples show current bounded resolver behavior for
 query planning, member-level results, compatibility evidence, absence,
 comparison, source detail, article/scan fixtures, and eval summaries. They do
 not add live search, a live API, external observations, backend hosting, or

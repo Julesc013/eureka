@@ -3,7 +3,7 @@
 Current static export:
 
 ```text
-public_site/
+site/dist/
   index.html
   status.html
   sources.html
@@ -21,7 +21,7 @@ public_site/
   assets/
 ```
 
-`public_site/` is the active static public artifact. GitHub Pages Deployment
+`site/dist/` is the active static public artifact. GitHub Pages Deployment
 Enablement v0 uploads this directory as-is after validation.
 
 Generated v0 export:
@@ -53,19 +53,12 @@ site/dist/
 ```
 
 Static Site Generation Migration v0 creates this stdlib-only generator shape.
-The generated `site/dist/` output is validation evidence and is not the GitHub
-Pages artifact yet.
+Repository Shape Consolidation v0 makes generated `site/dist/` the single
+GitHub Pages static artifact path.
 
 Generated Public Data Summaries v0 adds:
 
 ```text
-public_site/data/
-  site_manifest.json
-  page_registry.json
-  source_summary.json
-  eval_summary.json
-  route_summary.json
-  build_manifest.json
 site/dist/data/
   site_manifest.json
   page_registry.json
@@ -80,21 +73,21 @@ These are deterministic static JSON summaries, not live API routes.
 Lite/Text/Files Seed Surfaces v0 adds:
 
 ```text
-public_site/lite/
+site/dist/lite/
   index.html
   sources.html
   evals.html
   demo-queries.html
   limitations.html
   README.txt
-public_site/text/
+site/dist/text/
   index.txt
   sources.txt
   evals.txt
   demo-queries.txt
   limitations.txt
   README.txt
-public_site/files/
+site/dist/files/
   index.html
   index.txt
   README.txt
@@ -111,7 +104,7 @@ behavior, or native-client runtime.
 Static Resolver Demo Snapshots v0 adds:
 
 ```text
-public_site/demo/
+site/dist/demo/
   index.html
   query-plan-windows-7-apps.html
   result-member-driver-inside-support-cd.html
@@ -147,7 +140,7 @@ snapshots/examples/static_snapshot_v0/
   data/README.txt
 ```
 
-The seed snapshot is not part of the current `public_site/` artifact, is not a
+The seed snapshot is not part of the current `site/dist/` artifact, is not a
 production signed release, contains no real signing keys, contains no
 executable downloads, and does not make `/snapshots/` an implemented public
 route.
@@ -177,7 +170,7 @@ Static exports must remain portable between `/eureka/` and `/`.
 
 Custom Domain / Alternate Host Readiness v0 adds host-portability validation
 and policy records for future custom-domain or alternate-static-host work. It
-does not add `public_site/CNAME`, DNS records, provider config, backend
+does not add `site/dist/CNAME`, DNS records, provider config, backend
 hosting, live probes, or an alternate deployed artifact.
 
 Live Backend Handoff Contract v0 adds no files under `/api/` and no route

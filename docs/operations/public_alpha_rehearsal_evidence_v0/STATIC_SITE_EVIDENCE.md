@@ -1,6 +1,6 @@
 # Static Site Evidence
 
-- path: `public_site/`
+- path: `site/dist/`
 - validator command: `python scripts/validate_public_static_site.py`
 - validator status: `valid`
 

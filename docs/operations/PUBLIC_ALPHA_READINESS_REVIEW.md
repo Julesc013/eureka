@@ -25,7 +25,7 @@ process manager, or multi-user isolation.
 - Smoke command: `python scripts/public_alpha_smoke.py`
 - JSON smoke command: `python scripts/public_alpha_smoke.py --json`
 - Hosting pack: `docs/operations/public_alpha_hosting_pack/`
-- Static public site pack: `public_site/`
+- Static public site pack: `site/dist/`
 - Static site validator: `python scripts/validate_public_static_site.py`
 - GitHub Pages static deployment docs:
   `docs/operations/GITHUB_PAGES_DEPLOYMENT.md`
@@ -113,7 +113,7 @@ metadata and should be manually reviewed again before any real hosted demo.
 
 ## Static Site Pack
 
-LIVE_ALPHA_00 Static Public Site Pack adds a committed no-JS `public_site/`
+LIVE_ALPHA_00 Static Public Site Pack adds a committed no-JS `site/dist/`
 tree for later static-hosting review. It explains Eureka's prototype status,
 source matrix, eval/audit state, safe demo queries, limitations, roadmap, and
 local quickstart without starting a server, deploying anything, adding backend
@@ -123,31 +123,29 @@ production readiness.
 ## GitHub Pages Static Target
 
 GitHub Pages Deployment Enablement v0 configures a static-only workflow for
-`public_site/` and a Pages artifact checker. This target is separate from the
+`site/dist/` and a Pages artifact checker. This target is separate from the
 public-alpha backend: it does not host Python, enable live probes, add auth,
-add rate limiting, configure a custom domain, deploy generated output, or prove a
-successful deployment without GitHub Actions evidence.
+add rate limiting, configure a custom domain, or prove a successful deployment
+without GitHub Actions evidence.
 
-Static Site Generation Migration v0 adds `site/` and generated `site/dist/`
-validation output after the Pages workflow, but the workflow still deploys
-`public_site/`. It adds no backend hosting, live probes, Node/npm, frontend
-framework, or production-readiness claim.
+Repository Shape Consolidation v0 makes generated `site/dist/` the single
+static artifact uploaded by the Pages workflow. It adds no backend hosting,
+live probes, Node/npm, frontend framework, or production-readiness claim.
 
-Generated Public Data Summaries v0 adds static JSON under `public_site/data/`
-and `site/dist/data/`. It feeds the static compatibility seed surfaces and
-future snapshot/relay/native-client planning, but it does not add live API
-behavior, backend hosting, live probes, external observations, or production
-JSON stability claims.
+Generated Public Data Summaries v0 adds static JSON under `site/dist/data/`
+for the static compatibility seed surfaces and future snapshot/relay/native
+planning, but it does not add live API behavior, backend hosting, live probes,
+external observations, or production JSON stability claims.
 
 Lite/Text/Files Seed Surfaces v0 adds static compatibility outputs under
-`public_site/lite/`, `public_site/text/`, and `public_site/files/`, with
+`site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`, with
 generated copies under `site/dist/`. These surfaces consume static public data
 summaries only; they do not add live search, executable downloads, signed
 snapshots, relay runtime, native-client runtime, backend hosting, or live
 probes.
 
 Static Resolver Demo Snapshots v0 adds static fixture-backed examples under
-`public_site/demo/`, with generated copies under `site/dist/demo/`. These
+`site/dist/demo/`, with generated copies under `site/dist/demo/`. These
 examples consume governed data and Python-oracle fixture outputs only; they do
 not add live search, a live API, backend hosting, external observations, or
 production behavior.

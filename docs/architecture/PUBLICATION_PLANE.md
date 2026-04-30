@@ -10,18 +10,14 @@ public architecture by accident.
 
 ## Current Boundary
 
-`public_site/` is the current static public artifact. It is hand-authored,
-no-JS, already validated by `scripts/validate_public_static_site.py`, and safe
-for later static-hosting review.
+`site/` is the stdlib-only static-site source and generator tree. It contains
+page JSON, templates, static assets, `site/build.py`, and `site/validate.py`.
 
-`site/` is the stdlib-only static-site source and generator tree introduced by
-Static Site Generation Migration v0. It contains page JSON, templates, static
-assets, `site/build.py`, and `site/validate.py`.
+`site/dist/` is the canonical generated static public artifact. Repository
+Shape Consolidation v0 makes it the only GitHub Pages artifact path in active
+workflow, validator, and publication inventory configuration.
 
-`site/dist/` is the generated static output used for validation. It is not the
-GitHub Pages deployment artifact yet.
-
-`public_site/data/` contains Generated Public Data Summaries v0: deterministic
+`site/dist/data/` contains Generated Public Data Summaries v0: deterministic
 static JSON projections of site, page, source, eval, route, and build state.
 `site/build.py` also emits matching summaries into `site/dist/data/` for
 generated-output validation. These files are not a live API.
@@ -32,14 +28,14 @@ fields as `stable_draft`, `experimental`, `volatile`, `internal`,
 `control/audits/public-data-contract-stability-review-v0/`. The review is
 field-level governance only and does not make public JSON a production API.
 
-`public_site/lite/`, `public_site/text/`, and `public_site/files/` contain
+`site/dist/lite/`, `site/dist/text/`, and `site/dist/files/` contain
 Lite/Text/Files Seed Surfaces v0: static compatibility surfaces generated from
 public data summaries for old browsers, plain-text readers, and file-tree
 inspection. `site/build.py` emits matching validation copies into `site/dist/`.
 These files are not live search, executable downloads, production signed
 snapshots, relay behavior, or native-client runtime.
 
-`public_site/demo/` contains Static Resolver Demo Snapshots v0: static no-JS
+`site/dist/demo/` contains Static Resolver Demo Snapshots v0: static no-JS
 examples of query planning, member-level results, compatibility evidence,
 absence, comparison/disagreement, source detail, article/scan fixtures, and
 eval summaries. `site/build.py` emits matching validation copies into
@@ -139,11 +135,11 @@ expectations, deployment target semantics, and redirects.
 ## Static Artifact Versus Live Backend
 
 The current publication plane governs static public material only. GitHub Pages
-Deployment Enablement v0 consumes this plane to upload `public_site/` as a
+Deployment Enablement v0 consumes this plane to upload `site/dist/` as a
 static artifact, but it does not start or approve a live backend. It does not
 add live source probes, Internet Archive calls, Google scraping, crawling,
-auth, accounts, TLS, rate limiting, DNS, process management, or generated
-artifact deployment.
+auth, accounts, TLS, rate limiting, DNS, process management, or production
+deployment claims.
 
 The live backend handoff contract defines future public API route reservations
 and capability flags, but that remains separate from the static artifact
@@ -181,11 +177,11 @@ Root-only assumptions are not allowed in public contracts.
 ## Relationship To Future Milestones
 
 GitHub Pages Deployment Enablement v0 configures publishing of the current
-`public_site/` artifact only after validating this inventory and the artifact.
+`site/dist/` artifact only after validating this inventory and the artifact.
 Workflow configuration is not a deployment-success claim.
 
 Static Site Generation Migration v0 introduces `site/` and `site/dist/`, but
-`public_site/` remains the deployment artifact until a later explicit migration
+`site/dist/` remains the deployment artifact until a later explicit migration
 changes that contract. The generator must preserve the route, data, client, and
 redirect contracts here.
 

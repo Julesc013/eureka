@@ -97,7 +97,7 @@ Implemented file-tree public data files include:
 - `/files/SHA256SUMS`
 
 They are produced by `scripts/generate_compatibility_surfaces.py` from
-`public_site/data/*.json`. They are static file-tree seed artifacts only: no
+`site/dist/data/*.json`. They are static file-tree seed artifacts only: no
 live data, no external observations, no executable downloads, and no signed
 snapshot guarantee.
 
@@ -110,9 +110,8 @@ governed public data summaries and fixture-backed Python-oracle outputs. It is a
 static demo manifest only: no live backend, no live search, no live API, no
 external observations, and no production resolver guarantee.
 
-The current `public_site/site_manifest.json` is an implemented static artifact
-manifest, not the final generated public data layout. Static Site Generation
-Migration v0 also emits a generated `site/dist/site_manifest.json` for
-validation. The root manifest and `/data/site_manifest.json` are intentionally
-separate: the root manifest describes the page pack, while the `/data/` manifest
-summarizes static public data for future clients.
+The current `site/dist/site_manifest.json` is an implemented generated static
+artifact manifest, not the final generated public data layout. The root manifest
+and `/data/site_manifest.json` are intentionally separate: the root manifest
+describes the page pack, while the `/data/` manifest summarizes static public
+data for future clients.

@@ -24,7 +24,7 @@ application, not a native SDK, not a relay sidecar, and not a GUI client.
 
 Future GUI clients must consume governed contracts:
 
-- static public data under `public_site/data/`
+- static public data under `site/dist/data/`
 - Signed Snapshot Format v0 and Signed Snapshot Consumer Contract v0
 - Live Backend Handoff Contract v0 when a hosted backend later exists
 - Relay Surface Design v0 only after relay prototype planning

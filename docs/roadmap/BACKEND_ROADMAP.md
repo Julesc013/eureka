@@ -134,7 +134,7 @@ The repo has already proven:
   or all files, and reporting Batch 0 progress without fetching URLs, opening
   browsers, scraping, automating external searches, or fabricating observations
 - LIVE_ALPHA_00 Static Public Site Pack as the first no-JS static public-site
-  source tree under `public_site/`, with identity, status, source matrix,
+  source tree under `site/dist/`, with identity, status, source matrix,
   eval/audit state, demo queries, limitations, roadmap, and local quickstart
   pages for later hosting review without deployment, backend hosting, live
   probes, scraping, automated external searches, or production-readiness claims
@@ -157,30 +157,34 @@ The repo has already proven:
   adding deployment workflows, provider configuration, a generator, live backend
   behavior, live probes, or external observations
 - GitHub Pages Deployment Enablement v0 as the first static-only Pages
-  publishing path for `public_site/`, adding a workflow, artifact checker,
+  publishing path for `site/dist/`, adding a workflow, artifact checker,
   operations doc, and safety tests that upload only the static artifact after
   validating the publication inventory and static site, without deploying the
   Python backend, enabling live probes, adding a custom domain, adding a
   generator, or claiming deployment success without Actions evidence
 - Static Site Generation Migration v0 as the first stdlib-only static-site
   source/generator tree under `site/`, rendering the current no-JS public pages
-  into `site/dist/` for validation while keeping `public_site/` as the GitHub
-  Pages deployment artifact and avoiding Node/npm, frontend frameworks,
-  deployment changes, live backend behavior, live probes, and production claims
+  into `site/dist/` while avoiding Node/npm, frontend frameworks, live backend
+  behavior, live probes, and production claims
+- Repository Shape Consolidation v0 as the layout consolidation pass that makes
+  `site/dist/` the single generated static deployment artifact, removes the
+  active legacy static artifact path, and confirms `external/` as the
+  outside-reference root without adding public search, backend hosting, live
+  probes, relay runtime, native clients, or production claims
 - Generated Public Data Summaries v0 as the first static machine-readable
-  publication data layer under `public_site/data/` and `site/dist/data/`,
+  publication data layer under `site/dist/data/`,
   projecting page, source, eval, route, and build summaries from governed repo
   inputs without adding live API semantics, live probes, external observations,
   deployment behavior, or production API stability claims
 - Lite/Text/Files Seed Surfaces v0 as the first static compatibility surface
-  layer under `public_site/lite/`, `public_site/text/`, and
-  `public_site/files/`, generating old-browser HTML, plain text, file-tree
-  manifest/checksum views, and `site/dist/` validation copies from public data
-  summaries without adding live search, executable downloads, snapshots,
+  layer under `site/dist/lite/`, `site/dist/text/`, and
+  `site/dist/files/`, generating old-browser HTML, plain text, file-tree
+  manifest/checksum views from public data summaries without adding live search,
+  executable downloads, snapshots,
   relay/native runtime behavior, or production support claims
 - Static Resolver Demo Snapshots v0 as the first static resolver example layer
-  under `public_site/demo/`, with generated `site/dist/demo/` validation copies
-  and a static demo manifest showing query planning, member results,
+  under `site/dist/demo/`, with a static demo manifest showing query planning,
+  member results,
   compatibility evidence, absence, comparison, source detail, article/scan
   results, and eval summaries without live search, live API semantics, backend
   hosting, external observations, or production behavior
@@ -249,7 +253,7 @@ The next backend sequence is:
 36. LIVE_ALPHA_01 Production Public-Alpha Wrapper (implemented)
 37. Public Publication Plane Contracts v0 (implemented)
 38. GitHub Pages Deployment Enablement v0 (implemented as static workflow configuration; deployment success unverified)
-39. Static Site Generation Migration v0 (implemented; generated output not deployed)
+39. Static Site Generation Migration v0 (implemented)
 40. Generated Public Data Summaries v0 (implemented as static JSON summaries)
 41. Lite/Text/Files Seed Surfaces v0 (implemented as static compatibility seed surfaces)
 42. Static Resolver Demo Snapshots v0 (implemented as static fixture-backed demos)
@@ -276,12 +280,13 @@ The next backend sequence is:
 63. Native App Work Later
 64. Public Data Contract Stability Review v0 (implemented as field-level public data stability governance; no production API claim)
 65. Generated Artifact Drift Guard v0 (implemented as validation/audit only; no regeneration by default, runtime behavior, deployment, or network behavior)
+66. Repository Shape Consolidation v0 (implemented; site/dist is the single generated static artifact and external is the outside-reference root)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Snapshot Consumer Tooling Plan v0
+> Static Artifact Promotion Review v0
 
 Why this comes next:
 
@@ -289,14 +294,17 @@ Why this comes next:
   files and fields as `stable_draft`, `experimental`, `volatile`, `internal`,
   `deprecated`, or `future`, while keeping public JSON pre-alpha and not a
   production API.
+- Repository Shape Consolidation v0 now removes the active dual-artifact model
+  and makes `site/dist` the single generated static artifact checked by the
+  workflow, validators, inventory, and drift guard.
 - Generated Artifact Drift Guard v0 now checks generated and generated-like
-  committed artifacts across `public_site`, `site/dist`, public data,
+  committed artifacts across `site/dist`, public data,
   lite/text/files surfaces, demo snapshots, seed snapshots, Python oracle
   goldens, public-alpha rehearsal evidence, publication inventories, test
   registry metadata, and AIDE metadata without regenerating artifacts by
   default or changing runtime behavior.
-- Snapshot Consumer Tooling Plan v0 is the next safe planning step before any
-  snapshot reader runtime or client implementation exists.
+- Static Artifact Promotion Review v0 is the next safe review step before any
+  GitHub Pages run evidence or public-search contract work is treated as ready.
 - Native Client Project Readiness Review v0 now records the evidence decision
   `ready_for_minimal_project_skeleton_after_human_approval` for the
   `windows_7_x64_winforms_net48` lane only.

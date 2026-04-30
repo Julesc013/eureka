@@ -2,12 +2,12 @@
 
 - repository: `Julesc013/eureka`
 - branch: `main`
-- recorded commit sha: `ec6b51168ee8de290c7b24448a747aa043e6b1e7`
+- recorded commit sha: `57cbae9224ab673960d33596e5ee7899b2451790`
 - recorded at: `2026-04-27 static rehearsal evidence snapshot`
 
 ## Referenced Artifacts
 
-- static site pack: `public_site/`
+- static site pack: `site/dist/`
 - GitHub Pages artifact checker: `scripts/check_github_pages_static_artifact.py`
 - static validator: `scripts/validate_public_static_site.py`
 - route inventory: `control/inventory/public_alpha_routes.json`

@@ -48,7 +48,7 @@ custom domain until a future domain task updates the publication inventory.
 
 ## Data References
 
-Public data summaries under `public_site/data/` are static files. Pages,
+Public data summaries under `site/dist/data/` are static files. Pages,
 lite/text/files surfaces, demo snapshots, and future generated output should
 reference them with relative paths so the same artifact can be served under
 `/eureka/` or `/`.

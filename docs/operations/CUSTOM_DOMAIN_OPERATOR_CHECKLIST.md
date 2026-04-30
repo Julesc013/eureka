@@ -10,7 +10,7 @@ DNS or add a `CNAME` file now.
 - [ ] Verify domain ownership in the hosting provider or GitHub outside this
   repo.
 - [ ] Review DNS changes outside this repo.
-- [ ] Decide whether a future task should add `public_site/CNAME` or configure
+- [ ] Decide whether a future task should add `site/dist/CNAME` or configure
   the domain only through host settings.
 - [ ] Run `python scripts/validate_static_host_readiness.py`.
 - [ ] Run `python scripts/validate_publication_inventory.py`.

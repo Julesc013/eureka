@@ -3,9 +3,9 @@
 Before any real public hosting, a separate future milestone must:
 
 - validate Public Publication Plane Contracts v0
-- validate GitHub Pages static artifact readiness if publishing public_site
+- validate GitHub Pages static artifact readiness if publishing site/dist
 - keep GitHub Pages static publishing separate from backend hosting
-- keep public_site as the current static artifact until a generator is deliberately introduced
+- keep site/dist as the single generated static artifact for GitHub Pages
 - choose a hosting target
 - deploy from a reviewed commit
 - configure HTTPS/TLS

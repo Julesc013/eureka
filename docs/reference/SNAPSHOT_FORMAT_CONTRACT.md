@@ -13,7 +13,7 @@ need a static copy of public publication-plane facts.
 Snapshots are not the live backend. They cannot perform search, live probes,
 auth, accounts, mutation, crawling, or dynamic source access.
 
-Snapshots are also not `public_site/`. `public_site/` is the current GitHub
+Snapshots are also not `site/dist/`. `site/dist/` is the current GitHub
 Pages static artifact. A snapshot is a future/offline export format derived
 from governed public data and publication inventory.
 
@@ -66,11 +66,11 @@ policy.
 
 The v0 seed example includes deterministic copies or projections of:
 
-- `public_site/data/source_summary.json`
-- `public_site/data/eval_summary.json`
-- `public_site/data/route_summary.json`
-- `public_site/data/page_registry.json`
-- `public_site/data/build_manifest.json`
+- `site/dist/data/source_summary.json`
+- `site/dist/data/eval_summary.json`
+- `site/dist/data/route_summary.json`
+- `site/dist/data/page_registry.json`
+- `site/dist/data/build_manifest.json`
 
 The snapshot may reference publication inventory as source input, but it must
 not include local absolute paths, secrets, caches, databases, or private stores.

@@ -118,7 +118,7 @@
         "CTEA-TEST-002"
       ],
       "title": "Publish a static public-facing project/status/source/eval pack for later live-alpha review",
-      "status": "addressed_by_live_alpha_00_static_public_site_pack",
+      "status": "addressed_by_repository_shape_consolidation_v0",
       "suggested_milestone": "Public Alpha Rehearsal Evidence v0"
     },
     {
@@ -405,7 +405,18 @@
       ],
       "title": "Add a non-mutating guard for committed generated and generated-like artifact drift",
       "status": "addressed_by_generated_artifact_drift_guard_v0",
-      "suggested_milestone": "Snapshot Consumer Tooling Plan v0"
+      "suggested_milestone": "Repository Shape Consolidation v0"
+    },
+    {
+      "id": "audit-backlog-repository-shape-consolidation",
+      "finding_refs": [
+        "CTEA-DOCS-001",
+        "CTEA-TEST-002",
+        "CTEA-BEHAVIOR-001"
+      ],
+      "title": "Consolidate the active repository layout around one static artifact and one outside-reference root",
+      "status": "addressed_by_repository_shape_consolidation_v0",
+      "suggested_milestone": "Static Artifact Promotion Review v0"
     }
   ]
 }

@@ -9,7 +9,7 @@ and rehearsal runbook. It does not deploy Eureka and does not add deployment
 infrastructure.
 
 LIVE_ALPHA_00 Static Public Site Pack complements this operator packet with a
-committed no-JS `public_site/` source tree for later static-hosting review. The
+committed no-JS `site/dist/` source tree for later static-hosting review. The
 static pack is documentation only; it does not start a server, deploy Eureka,
 add backend hosting, add live probes, scrape external systems, or approve open
 public internet exposure.
@@ -28,28 +28,28 @@ contract slice did not deploy Eureka, add provider configuration, add a static
 generator, or enable live backend behavior.
 
 GitHub Pages Deployment Enablement v0 adds a static-only workflow and artifact
-checker for uploading `public_site/` after validation. That workflow is not a
+checker for uploading `site/dist/` after validation. That workflow is not a
 backend hosting path: it does not run Python, enable live probes, configure a
 custom domain, add secrets, create a generator, or prove deployment success
 without GitHub Actions evidence.
 
-Static Site Generation Migration v0 later adds a stdlib-only `site/` generator
-and `site/dist/` validation output. It does not change this hosting pack or the
-Pages artifact: `public_site/` remains the deployable static artifact.
+Repository Shape Consolidation v0 later makes generated `site/dist/` the single
+static Pages artifact. It does not change this hosting pack or add backend
+hosting, live probes, external observations, or production claims.
 
 Generated Public Data Summaries v0 adds deterministic static JSON under
-`public_site/data/` and `site/dist/data/`. Those summaries support later static
-compatibility surfaces; they are not a live API, do not run backend code, do
-not enable live probes, and do not record external observations.
+`site/dist/data/`. Those summaries support later static compatibility surfaces;
+they are not a live API, do not run backend code, do not enable live probes,
+and do not record external observations.
 
 Lite/Text/Files Seed Surfaces v0 adds static compatibility outputs under
-`public_site/lite/`, `public_site/text/`, and `public_site/files/`, generated
+`site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`, generated
 from public data summaries. They are not live search, executable downloads,
 signed snapshots, relay runtime, native-client runtime, backend hosting, or
 public-alpha approval.
 
 Static Resolver Demo Snapshots v0 adds static fixture-backed examples under
-`public_site/demo/`, with generated copies under `site/dist/demo/`. They are
+`site/dist/demo/`, with generated copies under `site/dist/demo/`. They are
 not live search, a live API, backend hosting, external observations, or
 production behavior.
 
@@ -100,7 +100,7 @@ work and that caller-provided local path controls are blocked in
 - Smoke script:
   `scripts/public_alpha_smoke.py`
 - Static public site pack:
-  `public_site/`
+  `site/dist/`
 - Static site validator:
   `scripts/validate_public_static_site.py`
 - Public Alpha Rehearsal Evidence v0:

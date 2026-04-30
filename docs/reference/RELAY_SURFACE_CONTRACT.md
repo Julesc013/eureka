@@ -23,10 +23,10 @@ Relay records use these statuses:
 
 A future relay may consume:
 
-- public data summaries from `public_site/data/`
-- lite HTML from `public_site/lite/`
-- plain text from `public_site/text/`
-- file-tree manifests and checksums from `public_site/files/`
+- public data summaries from `site/dist/data/`
+- lite HTML from `site/dist/lite/`
+- plain text from `site/dist/text/`
+- file-tree manifests and checksums from `site/dist/files/`
 - static snapshot manifests and checksums
 - route, source, eval, and page summaries
 - future live backend responses only after capability flags and handoff policy

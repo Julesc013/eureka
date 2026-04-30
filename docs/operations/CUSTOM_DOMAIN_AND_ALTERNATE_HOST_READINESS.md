@@ -8,13 +8,13 @@ production use.
 
 Current state:
 
-- GitHub Pages project publishing is configured for the static `public_site/`
+- GitHub Pages project publishing is configured for the static `site/dist/`
   artifact.
 - The GitHub Pages project base path is `/eureka/`.
 - Deployment success is unverified unless a GitHub Actions run proves it.
 - No custom domain configured.
 - No DNS changes are performed by this repo.
-- No `public_site/CNAME` file is committed.
+- No `site/dist/CNAME` file is committed.
 - No alternate static host is configured.
 - No backend hosting or live source probing is enabled.
 - No live probes are configured.
@@ -32,7 +32,7 @@ Readiness detail lives in
 `control/inventory/publication/static_hosting_targets.json`.
 
 The current target is `github_pages_project`, which serves static files from
-`public_site/` under `/eureka/`.
+`site/dist/` under `/eureka/`.
 
 Future candidates are:
 

@@ -4,7 +4,7 @@ Live Backend Handoff Contract v0 reserves the future static-to-live backend
 boundary for Eureka. It is not a production API and does not make `/api/v1/` live.
 
 The current GitHub Pages publication target is static only. It publishes
-`public_site/`; it does not host Python, route requests to a backend, call live
+`site/dist/`; it does not host Python, route requests to a backend, call live
 sources, or enable live probes.
 
 ## Future Prefix

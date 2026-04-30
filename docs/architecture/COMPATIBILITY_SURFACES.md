@@ -25,7 +25,7 @@ Compatibility Surface Strategy v0 does not implement new runtime product behavio
 | --- | --- | --- | --- | --- | --- | --- |
 | CLI | implemented local | `scripts/`, `surfaces/native/cli/` | no | no | no | Current local native-style surface, not a packaged app. |
 | Web workbench | implemented local | `surfaces/web/` | yes | no | no | Local/server-rendered bootstrap surface. |
-| Static public site | implemented | `/` in `public_site/` | no | no | yes | Current GitHub Pages artifact. |
+| Static public site | implemented | `/` in `site/dist/` | no | no | yes | Current GitHub Pages artifact. |
 | Data | implemented | `/data/` files | no | no | yes | Static JSON summaries, not a live API. |
 | Lite | static_demo seed | `/lite/` | no | no | yes | Old-browser/static HTML projection. |
 | Text | static_demo seed | `/text/` | no | no | yes | Plain-text/text-browser projection. |

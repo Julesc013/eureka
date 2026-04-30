@@ -4,7 +4,7 @@ GitHub Pages Deployment Enablement v0 configures a static only deployment path
 for Eureka's current public artifact:
 
 ```text
-public_site/
+site/dist/
 ```
 
 It does not host the Python backend, does not enable live probes, make live
@@ -45,13 +45,12 @@ python scripts/validate_live_backend_handoff.py
 python scripts/validate_live_probe_gateway.py
 ```
 
-Then it configures Pages, uploads `public_site/` with
+Then it configures Pages, uploads `site/dist/` with
 `actions/upload-pages-artifact`, and deploys with `actions/deploy-pages`.
 
-No Node, npm, frontend framework, generated site build, backend process, or
-runtime server step is part of this workflow. Static Site Generation Migration
-v0 builds `site/dist/` for validation, but this workflow still uploads
-`public_site/`.
+No Node, npm, frontend framework, backend process, or runtime server step is
+part of this workflow. Repository Shape Consolidation v0 makes `site/dist/`
+the single generated static artifact for this workflow.
 
 ## Repository Settings
 
@@ -69,7 +68,7 @@ No `CNAME` file is added.
 Custom Domain / Alternate Host Readiness v0 adds readiness inventories,
 operator docs, base-path policy, and `scripts/validate_static_host_readiness.py`
 for future custom-domain or alternate-static-host work. It still does not
-configure a custom domain, add DNS, add `public_site/CNAME`, or deploy an
+configure a custom domain, add DNS, add `site/dist/CNAME`, or deploy an
 alternate host.
 
 Live Backend Handoff Contract v0 reserves future `/api/v1` backend route
@@ -102,28 +101,29 @@ root-relative links such as `/sources.html`.
 
 ## Artifact Safety
 
-The Pages artifact is `public_site/` only.
+The Pages artifact is `site/dist/` only.
 
 Generated Public Data Summaries v0 commits static JSON under
-`public_site/data/`; those files are part of the static artifact and are checked
+`site/dist/data/`; those files are part of the static artifact and are checked
 for freshness and static-only safety before upload. They are not live API
 routes and do not include live probes or external observations.
 
 Lite/Text/Files Seed Surfaces v0 commits static compatibility outputs under
-`public_site/lite/`, `public_site/text/`, and `public_site/files/`; those files
+`site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`; those files
 are part of the static artifact and are generated from public data summaries.
 They are not live search, executable downloads, signed snapshots, relay
 runtime, or native-client runtime behavior.
 
 Static Resolver Demo Snapshots v0 commits static fixture-backed examples under
-`public_site/demo/`; those files are part of the static artifact and are
+`site/dist/demo/`; those files are part of the static artifact and are
 generated from governed public data plus Python-oracle fixture outputs. They
 are not live search, a live API, backend hosting, external observations, or
 production resolver behavior.
 
-Generated `site/dist/` output is not uploaded by this workflow yet. A later
-artifact migration must explicitly prove equivalence and update this document,
-the publication inventory, and the workflow together.
+Repository Shape Consolidation v0 promotes generated `site/dist/` output as
+the single Pages artifact uploaded by this workflow. GitHub Actions deployment
+success is still unverified until an actual workflow run is checked and
+recorded.
 
 The artifact checker rejects Python/runtime source files, local stores, SQLite
 databases, `.env` files, cache directories, backend directories, root-relative

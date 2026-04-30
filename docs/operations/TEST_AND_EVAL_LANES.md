@@ -247,7 +247,7 @@ python scripts/validate_public_static_site.py --json
 python -m unittest tests.operations.test_public_static_site_pack tests.scripts.test_validate_public_static_site
 ```
 
-The lane checks the committed no-JS `public_site/` pack, manifest, local links,
+The lane checks the committed no-JS `site/dist/` pack, manifest, local links,
 source matrix coverage, required cautionary phrases, prohibited claims, and
 public-alpha limitations. It performs no network calls, starts no server,
 deploys nothing, and does not add backend hosting, live probes, scraping, or
@@ -301,7 +301,7 @@ python -m unittest tests.operations.test_publication_inventory tests.scripts.tes
 ```
 
 The lane checks `control/inventory/publication/`, route stability vocabulary,
-public status taxonomy, current `public_site/` page coverage, future reserved
+public status taxonomy, current `site/dist/` page coverage, future reserved
 routes, client profiles, deployment target semantics, public data contract
 entries, empty redirect policy, and claim traceability docs. It performs no
 network calls, deploys nothing, adds no provider files, creates no static site
@@ -312,13 +312,13 @@ generator, enables no live backend, and records no external observations.
 GitHub Pages Deployment Enablement v0 is validated with:
 
 ```bash
-python scripts/check_github_pages_static_artifact.py
-python scripts/check_github_pages_static_artifact.py --json
+python scripts/check_github_pages_static_artifact.py --path site/dist
+python scripts/check_github_pages_static_artifact.py --path site/dist --json
 python -m unittest tests.operations.test_github_pages_deployment_enablement tests.scripts.test_check_github_pages_static_artifact
 ```
 
 The lane checks `.github/workflows/pages.yml`, the `github_pages_project`
-deployment target, the current `public_site/` artifact, base-path-safe links,
+deployment target, the current `site/dist/` artifact, base-path-safe links,
 and artifact exclusion rules for runtime source, secrets, local stores, cache
 directories, Python files, and SQLite databases. It performs no network calls,
 does not manually deploy anything, uploads no backend, adds no live probes,
@@ -340,10 +340,10 @@ python scripts/validate_public_static_site.py --site-root site/dist
 
 The lane checks the stdlib-only `site/` source tree, templates, page JSON,
 generated `site/dist/` output, no-JS pages, relative links, source-list
-coverage, and manifest posture. It keeps `public_site/` as the GitHub Pages
-artifact, performs no network calls, adds no Node/npm or frontend framework,
-does not deploy generated output, starts no backend, enables no live probes,
-and makes no production-readiness claim.
+coverage, and manifest posture. Repository Shape Consolidation v0 keeps
+`site/dist/` as the single generated GitHub Pages artifact. The lane performs
+no network calls, adds no Node/npm or frontend framework, starts no backend,
+enables no live probes, and makes no production-readiness claim.
 
 ## Generated Public Data Summaries
 
@@ -355,9 +355,9 @@ python scripts/generate_public_data_summaries.py --json
 python -m unittest tests.operations.test_generated_public_data_summaries tests.scripts.test_generate_public_data_summaries
 ```
 
-The lane checks deterministic static JSON under `public_site/data/`, generated
-copies under `site/dist/data/`, public-data contract coverage, source-summary
-placeholder honesty, eval/audit counts, route-summary posture, and build
+The lane checks deterministic static JSON under `site/dist/data/`, public-data
+contract coverage, source-summary placeholder honesty, eval/audit counts,
+route-summary posture, and build
 manifest no-deployment claims. It performs no network calls, starts no backend,
 adds no live API, enables no live probes, records no external observations, and
 does not change the GitHub Pages artifact.
@@ -373,7 +373,7 @@ python -m unittest tests.operations.test_public_data_contract_stability_review t
 ```
 
 The lane checks field-level stability classifications for generated public JSON
-under `public_site/data/`. It keeps public JSON from being treated as a
+under `site/dist/data/`. It keeps public JSON from being treated as a
 production API, separates stable-draft fields from experimental and volatile
 fields, and changes no runtime behavior.
 
@@ -385,6 +385,7 @@ Generated Artifact Drift Guard v0 is validated with:
 python scripts/check_generated_artifact_drift.py
 python scripts/check_generated_artifact_drift.py --json
 python scripts/check_generated_artifact_drift.py --list
+python scripts/check_generated_artifact_drift.py --artifact static_site_dist
 python -m unittest tests.operations.test_generated_artifact_drift_guard tests.scripts.test_check_generated_artifact_drift
 ```
 
@@ -396,6 +397,23 @@ metadata. It is validation/audit only; default mode does not run update
 commands, mutate artifacts, deploy, call external services, open sockets, or add
 runtime behavior.
 
+## Repository Shape Consolidation
+
+Repository Shape Consolidation v0 is validated with:
+
+```bash
+python scripts/validate_repository_layout.py
+python scripts/validate_repository_layout.py --json
+python scripts/check_generated_artifact_drift.py --artifact static_site_dist
+python -m unittest tests.operations.test_repository_shape_consolidation tests.scripts.test_validate_repository_layout
+```
+
+The lane checks that `site/dist/` is the single generated static artifact,
+the retired legacy static artifact path is absent, `external/` is the
+outside-reference root, the Pages workflow uploads `site/dist/`, publication
+and generated-artifact inventories point at `site/dist/`, and historical audit
+references remain separate from active configuration.
+
 ## Lite/Text/Files Seed Surfaces
 
 Lite/Text/Files Seed Surfaces v0 is validated with:
@@ -406,9 +424,9 @@ python scripts/generate_compatibility_surfaces.py --json
 python -m unittest tests.operations.test_lite_text_files_surfaces tests.scripts.test_generate_compatibility_surfaces
 ```
 
-The lane checks static no-JS compatibility surfaces under `public_site/lite/`,
-plain-text files under `public_site/text/`, file-tree manifests and SHA256SUMS
-under `public_site/files/`, generated copies under `site/dist/`, relative-link
+The lane checks static no-JS compatibility surfaces under `site/dist/lite/`,
+plain-text files under `site/dist/text/`, file-tree manifests and SHA256SUMS
+under `site/dist/files/`, generated copies under `site/dist/`, relative-link
 posture, public data references, and no-download/no-live-search caveats. It
 performs no network calls, starts no backend, adds no live search, adds no
 executable downloads, creates no signed snapshot, and adds no relay or native
@@ -424,7 +442,7 @@ python scripts/generate_static_resolver_demos.py --json
 python -m unittest tests.operations.test_static_resolver_demo_snapshots tests.scripts.test_generate_static_resolver_demos
 ```
 
-The lane checks static no-JS demo pages under `public_site/demo/`, generated
+The lane checks static no-JS demo pages under `site/dist/demo/`, generated
 copies under `site/dist/demo/`, the static demo manifest, relative-link posture,
 fixture-backed limitation text, and publication-inventory coverage. It performs
 no network calls, starts no backend, adds no live search, creates no live API,
@@ -441,7 +459,7 @@ python -m unittest tests.operations.test_custom_domain_alternate_host_readiness 
 ```
 
 The lane checks `domain_plan.json`, `static_hosting_targets.json`, `/eureka/`
-and `/` base-path policy, no `public_site/CNAME`, no DNS/provider config,
+and `/` base-path policy, no `site/dist/CNAME`, no DNS/provider config,
 relative static links, and no custom-domain/backend/live-probe/production
 claims. It performs no network calls, DNS lookups, URL fetches, provider
 actions, deployments, backend hosting, or live source probing.
@@ -496,7 +514,7 @@ relay, native, app, and `/api/v1` posture, old-client degradation docs,
 native-client readiness docs, and static page no-live/no-production claims. It
 performs no network calls, adds no runtime behavior, implements no snapshots,
 relay service, native app, live backend, live probes, or frontend framework,
-and keeps `public_site/` as the current static artifact.
+and keeps `site/dist/` as the current static artifact.
 
 ## Signed Snapshot Format
 

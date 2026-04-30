@@ -1,7 +1,7 @@
 # Public Data Stability Policy
 
 Public Data Contract Stability Review v0 defines field-level stability classes
-for generated static public JSON under `public_site/data/`.
+for generated static public JSON under `site/dist/data/`.
 
 This policy does not make public JSON a production API. Eureka remains
 pre-product and public-alpha/non-production.
