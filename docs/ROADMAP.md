@@ -309,7 +309,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The latest implementation milestone is:
 
-> Search Usefulness Delta v2
+> Source Pack Contract v0
 
 Search Usefulness Source Expansion v2 is now implemented as fixture-only source
 coverage. It adds six recorded fixture source families and 15 tiny metadata
@@ -324,6 +324,15 @@ source, current counts, status deltas, selected query movement, current
 failure-mode counts, source-family impact, public-search smoke status,
 hard-eval status, external-baseline pending status, remaining gaps, and the
 Source Pack Contract v0 recommendation without changing retrieval behavior.
+Source Pack Contract v0 is now implemented under `contracts/packs/`,
+`examples/source_packs/minimal_recorded_source_pack_v0/`,
+`docs/reference/SOURCE_PACK_CONTRACT.md`, and
+`control/audits/source-pack-contract-v0/`. It defines a portable
+source-metadata/evidence-input pack format with required rights/privacy notes,
+checksum validation, prohibited behavior, and lifecycle guidance. It remains
+contract/validation/example-only and does not implement import, indexing,
+uploads, live connectors, executable plugins, hosted submission, downloads, or
+master-index acceptance.
 
 Public Data Contract Stability Review v0 is now implemented as field-level
 contract governance under

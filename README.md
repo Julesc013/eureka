@@ -141,6 +141,13 @@ audit counts above, records selected query movement and source-family impact,
 marks exact failure-mode deltas as unavailable, and recommends Source Pack
 Contract v0 next. It adds no new source/runtime behavior and keeps external
 baselines pending/manual.
+Source Pack Contract v0 now defines the first portable source-pack format under
+`contracts/packs/source_pack.v0.json`, `docs/reference/SOURCE_PACK_CONTRACT.md`,
+`examples/source_packs/minimal_recorded_source_pack_v0/`, and
+`control/audits/source-pack-contract-v0/`. It adds a checksum-validating
+stdlib validator and tests for a tiny synthetic example pack, but it does not
+implement import, indexing, uploads, live connectors, executable plugins,
+downloads/installers, or master-index acceptance.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -691,10 +698,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Source Pack Contract v0
-2. Evidence Pack Contract v0
-3. Index Pack Contract v0
-4. Contribution Pack Contract v0
+1. Evidence Pack Contract v0
+2. Index Pack Contract v0
+3. Contribution Pack Contract v0
+4. Master Index Review Queue Contract v0
 5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

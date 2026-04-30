@@ -241,6 +241,14 @@ Current scripts:
   source-family impact, hard-eval status, public-search smoke status, remaining
   gaps, recommendations, and no unsupported superiority/hosted-readiness claims;
   it supports `--json` and performs no network calls
+- `validate_source_pack.py`: validates Source Pack Contract v0 directories.
+  By default it checks the synthetic example pack under
+  `examples/source_packs/minimal_recorded_source_pack_v0/`, including
+  `SOURCE_PACK.json`, JSONL records, rights/privacy posture, disabled
+  live/network behavior, checksum coverage, private-path rejection, and
+  executable payload rejection. It supports `--pack-root`, `--json`, and
+  `--strict`, and does not import, index, upload, execute, or contact a
+  network
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

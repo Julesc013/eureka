@@ -461,14 +461,14 @@
     {
       "id": "source_pack_contract_v0",
       "title": "Source Pack Contract v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 66,
-      "notes": "Future contract for source packs only; do not implement downloads, installers, crawling, or live sync."
+      "notes": "Implemented Source Pack Contract v0 as contract/validation/example-only work, including manifest schema, synthetic example pack, checksum validator, lifecycle/docs, audit pack, and tests without import, indexing, upload, live connectors, executable plugins, or master-index acceptance."
     },
     {
       "id": "evidence_pack_contract_v0",
       "title": "Evidence Pack Contract v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 67,
       "notes": "Future evidence-pack contract work; do not fabricate external baselines or claim rights/security review."
     },
@@ -494,24 +494,31 @@
       "notes": "Future contract for master-index review queues only; do not add hosted indexing, accounts, uploads, moderation infrastructure, live source sync, crawling, or production search claims."
     },
     {
+      "id": "source_pack_import_planning_v0",
+      "title": "Source Pack Import Planning v0",
+      "status": "recommended_follow_up",
+      "priority": 71,
+      "notes": "Future planning only for local validated source-pack import. Do not implement import, indexing, uploads, live connectors, arbitrary local ingestion, or master-index acceptance without separate approval."
+    },
+    {
       "id": "ai_provider_contract_v0",
       "title": "AI Provider Contract v0",
       "status": "recommended_follow_up",
-      "priority": 71,
+      "priority": 72,
       "notes": "Future contract-only provider boundary. Do not add provider credentials, network calls, hosted inference, telemetry, accounts, runtime integration, or production AI claims."
     },
     {
       "id": "ia_metadata_live_probe_approval_pack_v0",
       "title": "IA Metadata Live Probe Approval Pack v0",
       "status": "blocked_pending_explicit_approval",
-      "priority": 72,
+      "priority": 73,
       "notes": "Future approval pack only after explicit human approval and live-probe gateway review. Do not call Internet Archive, fetch URLs, scrape, crawl, enable live probes, or automate external searches in unattended Codex work."
     },
     {
       "id": "public_hosted_search_rehearsal_plan_v0",
       "title": "Public Hosted Search Rehearsal Plan v0",
       "status": "recommended_future_after_source_safety_confidence",
-      "priority": 73,
+      "priority": 74,
       "notes": "Future hosted rehearsal plan only after source usefulness and safety confidence improve. Do not deploy, add provider files, enable live probes, or claim hosted public search before explicit approval and evidence."
     }
   ]

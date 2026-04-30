@@ -132,7 +132,9 @@
         "source_expansion_v2_validator",
         "source_expansion_v2_tests",
         "search_usefulness_delta_v2_validator",
-        "search_usefulness_delta_v2_tests"
+        "search_usefulness_delta_v2_tests",
+        "source_pack_contract_tests",
+        "source_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -260,7 +262,9 @@
         "source_expansion_v2_validator",
         "source_expansion_v2_tests",
         "search_usefulness_delta_v2_validator",
-        "search_usefulness_delta_v2_tests"
+        "search_usefulness_delta_v2_tests",
+        "source_pack_contract_tests",
+        "source_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -360,7 +364,9 @@
         "source_expansion_v2_validator",
         "source_expansion_v2_tests",
         "search_usefulness_delta_v2_validator",
-        "search_usefulness_delta_v2_tests"
+        "search_usefulness_delta_v2_tests",
+        "source_pack_contract_tests",
+        "source_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -550,7 +556,9 @@
         "source_expansion_v2_validator",
         "source_expansion_v2_tests",
         "search_usefulness_delta_v2_validator",
-        "search_usefulness_delta_v2_tests"
+        "search_usefulness_delta_v2_tests",
+        "source_pack_contract_tests",
+        "source_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",

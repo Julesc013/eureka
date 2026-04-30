@@ -303,12 +303,13 @@ The next backend sequence is:
 74. Public Search Rehearsal v0 (implemented as local/prototype route, safe-query, blocked-request, static-handoff, public-alpha, and contract-alignment evidence only; no hosted deployment, live probes, downloads, uploads, local path search, accounts, telemetry, or production claim)
 75. Search Usefulness Source Expansion v2, fixture-only (implemented as six recorded fixture source families and 15 tiny metadata records; no live calls, scraping, crawling, external observations, real binaries, download/install/upload actions, hosted search, or production relevance claim)
 76. Search Usefulness Delta v2 (implemented as audit-only measurement of Source Expansion v2 status deltas, query movement, source-family impact, remaining gaps, hard-eval status, public-search smoke status, and pending/manual external baselines)
+77. Source Pack Contract v0 (implemented as contract/validation/example-only source-pack format, synthetic example pack, checksum validator, lifecycle docs, and audit pack; no import, indexing, upload, live connectors, executable plugins, hosted submission, or master-index acceptance)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Source Pack Contract v0
+> Evidence Pack Contract v0
 
 Why this comes next:
 
@@ -367,6 +368,14 @@ Why this comes next:
   source-family impact, current failure modes, public-search smoke status,
   hard-eval status, external-baseline pending status, and remaining gaps
   without adding source/runtime behavior.
+- Source Pack Contract v0 is implemented as contract/validation/example-only
+  work. It defines portable source metadata packs, required rights/privacy
+  notes, checksum validation, source-record alignment, prohibited behavior,
+  and lifecycle guidance without import, indexing, upload, live connectors,
+  executable plugins, hosted submission, downloads, or master-index
+  acceptance. Evidence Pack Contract v0 is next so source-pack evidence inputs
+  can gain a reusable governed evidence envelope before import/submission
+  planning.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

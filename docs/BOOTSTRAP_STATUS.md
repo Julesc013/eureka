@@ -333,7 +333,7 @@ subsystem choices.
 
 The latest implementation milestone is:
 
-> Search Usefulness Delta v2
+> Source Pack Contract v0
 
 Search Usefulness Source Expansion v2 is now implemented as fixture-only source
 coverage under `runtime/connectors/source_expansion_recorded/`,
@@ -351,6 +351,16 @@ machine-derived baseline. It records exact status-count deltas, selected query
 movement, current failure modes, source-family impact, public-search smoke
 status, hard-eval status, external-baseline pending status, and remaining gaps.
 It adds no source/runtime behavior and records no external observations.
+Source Pack Contract v0 is now implemented as contract/validation/example-only
+work under `contracts/packs/`, `docs/reference/SOURCE_PACK_CONTRACT.md`,
+`docs/reference/PACK_LIFECYCLE.md`,
+`examples/source_packs/minimal_recorded_source_pack_v0/`, and
+`control/audits/source-pack-contract-v0/`. It defines the governed
+`SOURCE_PACK.json` manifest shape, source-record alignment, public-safe
+evidence inputs, fixture policy, privacy/rights posture, lifecycle status, and
+checksum validation. It adds no import, indexing, upload, live connector,
+executable plugin, hosted submission, master-index acceptance, download,
+installer, or production extension behavior.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -581,11 +591,11 @@ local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Source Pack Contract v0
-2. Evidence Pack Contract v0
-3. Index Pack Contract v0
-4. Contribution Pack Contract v0
-5. Master Index Review Queue Contract v0
+1. Evidence Pack Contract v0
+2. Index Pack Contract v0
+3. Contribution Pack Contract v0
+4. Master Index Review Queue Contract v0
+5. Source Pack Import Planning v0
 6. AI Provider Contract v0
 7. Manual Observation Batch 0 Execution, human-operated
 8. Search Usefulness Baseline Comparison Report v0 after observations

@@ -2929,6 +2929,48 @@
       "failure_means": "Search Usefulness Delta v2 audit tests failed, allowing missing query movement, source-family impact, external-baseline pending status, hard-eval status, public-search status, or unsupported claims to regress.",
       "advisory_or_required": "required",
       "notes": "Covers delta report parsing, count deltas, selected query movement, source-family impact, pending/manual external baselines, hard-eval/public-search status, recommendations, and no unsupported superiority or hosted-readiness claims."
+    },
+    {
+      "test_id": "source_pack_validator",
+      "label": "Source pack contract validator",
+      "command": "python scripts/validate_source_pack.py",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Source Pack Contract v0 schema/example validation or safety posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates the synthetic example source pack; it does not import, index, upload, execute, or contact a network."
+    },
+    {
+      "test_id": "source_pack_contract_tests",
+      "label": "Source pack contract tests",
+      "command": "python -m unittest tests.operations.test_source_pack_contract tests.scripts.test_validate_source_pack",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only for negative validator fixtures",
+      "expected_runtime": "seconds",
+      "failure_means": "Source pack schema, example pack, checksums, docs, or negative safety tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers manifest structure, JSONL records, checksum validation, rights/privacy docs, private path rejection, and executable payload rejection."
     }
   ]
 }

@@ -1099,5 +1099,33 @@ retrieval behavior, source loaders, live probes, URL fetching, scraping,
 crawling, external observations, real binaries, downloads, installers, uploads,
 local path search, telemetry, accounts, hosted search, or hosted-readiness
 claim. Exact failure-mode deltas are marked unavailable because the pre-P32
-failure-mode baseline was not committed as machine-readable JSON. The next
-Codex-safe milestone is Source Pack Contract v0.
+failure-mode baseline was not committed as machine-readable JSON. Source Pack
+Contract v0 is now implemented; the next Codex-safe milestone is Evidence Pack
+Contract v0.
+
+## ADR-114: Define Source Packs Before Import Or Submission
+
+Status: accepted
+
+Source Pack Contract v0 adds `contracts/packs/source_pack.v0.json`,
+`docs/reference/SOURCE_PACK_CONTRACT.md`, `docs/reference/PACK_LIFECYCLE.md`,
+`examples/source_packs/minimal_recorded_source_pack_v0/`,
+`scripts/validate_source_pack.py`, and
+`control/audits/source-pack-contract-v0/`.
+
+The decision is to define source packs as portable, validated source metadata
+and fixture-evidence bundles before any import, indexing, upload, hosted
+submission, or master-index review behavior exists. A source pack may declare
+source records, public-safe evidence records, fixture files, rights/access
+notes, privacy posture, disabled capabilities, prohibited behavior, and
+checksums. Source-pack source records align with Source Registry v0 vocabulary,
+but they are not canonical registry entries until a future review/import path
+accepts them.
+
+P34 deliberately does not implement source-pack import, indexing, upload,
+executable plugin loading, live connectors, live probes, arbitrary URL fetch,
+scraping, crawling, downloads, installers, private local path sharing,
+master-index acceptance, production signing, rights clearance, malware-safety
+claims, or production extension support. The next Codex-safe milestone is
+Evidence Pack Contract v0, followed by Index Pack Contract v0 and Contribution
+Pack Contract v0.

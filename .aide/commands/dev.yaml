@@ -58,6 +58,14 @@ steps:
     run: python scripts/validate_search_usefulness_delta_v2.py --json
   - id: search_usefulness_delta_v2_tests
     run: python -m unittest tests.operations.test_search_usefulness_delta_v2 tests.scripts.test_validate_search_usefulness_delta_v2
+  - id: source_pack_validator
+    run: python scripts/validate_source_pack.py
+  - id: source_pack_validator_json
+    run: python scripts/validate_source_pack.py --json
+  - id: source_pack_validator_strict
+    run: python scripts/validate_source_pack.py --strict
+  - id: source_pack_contract_tests
+    run: python -m unittest tests.operations.test_source_pack_contract tests.scripts.test_validate_source_pack
   - id: public_search_demo
     run: python scripts/demo_http_api.py public-search "windows 7 apps" --limit 2
   - id: public_search_query_plan_demo

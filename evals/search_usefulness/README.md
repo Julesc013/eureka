@@ -227,3 +227,9 @@ v2 effect using the committed P32 report as baseline: `partial` increased by
 `covered`/`unknown` stayed unchanged. Exact failure-mode deltas are marked
 unavailable because the pre-P32 failure-mode baseline was not committed as
 machine-readable JSON. External baselines remain pending/manual.
+
+Source Pack Contract v0 is now implemented as the next safe extension layer:
+validated source metadata packs can be authored and checked locally, but they
+are not imported into this audit, indexed, uploaded, or accepted into a master
+index. Future usefulness work should use Evidence Pack and Index Pack contracts
+before source-pack import affects audit results.

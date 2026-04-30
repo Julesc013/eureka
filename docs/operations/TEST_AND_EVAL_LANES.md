@@ -220,6 +220,19 @@ public-search smoke status, pending/manual external baselines, remaining gaps,
 and next recommendations. It adds no source/runtime behavior and records no
 external observations.
 
+Source Pack Contract v0 is validated with:
+
+```bash
+python scripts/validate_source_pack.py
+python scripts/validate_source_pack.py --json
+python -m unittest tests.operations.test_source_pack_contract tests.scripts.test_validate_source_pack
+```
+
+The validation checks the source-pack manifest schema, synthetic example pack,
+JSONL records, rights/privacy docs, checksum coverage, disabled live/network
+posture, no import/index/upload behavior, no private paths, and no executable
+payloads.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash
