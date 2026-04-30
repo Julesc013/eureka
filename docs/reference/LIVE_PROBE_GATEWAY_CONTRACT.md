@@ -12,6 +12,9 @@ that live probes are available.
 Public Search API Contract v0 does not use live probes. Its first allowed mode
 is `local_index_only`, and its request schema rejects live-probe mode, URL
 fetch, downloads, installs, uploads, local path search, and source credentials.
+Public Search Result Card Contract v0 may label source posture as
+`future_live_probe` for future compatibility, but that label is not an
+implementation and does not enable live probes.
 
 ## Rules
 

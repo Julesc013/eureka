@@ -37,6 +37,10 @@ Current boundary:
   `/search` or `/api/v1/search` runtime, live backend hosting, live probes,
   downloads, installs, uploads, local path search, arbitrary URL fetch, or
   production API guarantee.
+- `contracts/api/search_result_card.v0.json` contains Public Search Result Card
+  Contract v0 for future result cards. It adds no live result output, runtime
+  routes, downloads, installers, execution, uploads, malware-safety claim,
+  rights-clearance claim, or production ranking guarantee.
 - `live_probe_gateway.json` contains Live Probe Gateway Contract v0 policy
   records. It records disabled future source candidates, caps, cache/evidence
   posture, and operator gates without implementing probes or making network
@@ -68,6 +72,7 @@ python scripts/generate_static_resolver_demos.py --check
 python scripts/validate_static_host_readiness.py
 python scripts/validate_live_backend_handoff.py
 python scripts/validate_public_search_contract.py
+python scripts/validate_public_search_result_card_contract.py
 python scripts/validate_live_probe_gateway.py
 python scripts/validate_compatibility_surfaces.py
 python scripts/generate_static_snapshot.py --check

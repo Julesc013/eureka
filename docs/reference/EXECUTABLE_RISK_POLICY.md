@@ -21,6 +21,12 @@ safety.
   artifacts.
 - Static Pages must not expose an executable download or install surface.
 
+Public Search Result Card Contract v0 carries this posture through the `risk`
+block. Cards may report `metadata_only`, `executable_unknown`,
+`executable_present`, or `not_applicable`, but they must not claim malware
+safety, must not make executable artifacts downloadable, and must not expose
+execution or installer handoff as an allowed v0 action.
+
 ## Required Future Warnings
 
 Before any future native-client handoff involving an executable-like artifact,

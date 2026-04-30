@@ -68,6 +68,10 @@ The minimum public-alpha entry gate should include:
   and `/api/v1/search` are not live and no runtime route, live probe, download,
   install, upload, local path search, arbitrary URL fetch, or production API
   stability is added)
+- Public Search Result Card Contract v0 (implemented as contract-only future
+  result-card schema, examples, audit pack, docs, validator, and tests; no live
+  search route, live probe, download, install, execute, upload, malware-safety
+  claim, rights-clearance claim, or production ranking guarantee is added)
 - Compatibility Surface Strategy v0 (implemented as strategy, capability
   matrix, route matrix, old-client degradation policy, and
   native/snapshot/relay readiness guidance; no new runtime behavior,
@@ -252,6 +256,13 @@ contract in `local_index_only` mode. It reserves `/search` and
 `/api/v1/search` but does not make search live, add route handlers, host a
 backend, enable live probes, fetch URLs, crawl, download, install, upload,
 search local paths, or claim production API stability.
+
+Public Search Result Card Contract v0 now defines the canonical future result
+card for public search and old-client/native/relay/snapshot consumers. It keeps
+actions read-only or blocked/future-gated in v0, preserves rights and risk
+caveats, and adds no runtime routes, live backend behavior, downloads,
+installers, execution, uploads, malware-safety claim, rights-clearance claim, or
+production ranking guarantee.
 
 Relay Surface Design v0 now records the future local/LAN relay posture for old
 or constrained clients. It is public-alpha-adjacent contract work only: no relay

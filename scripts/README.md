@@ -74,6 +74,13 @@ Current scripts:
   disabled live probes, future/reserved route status, and no live public-search
   or production API claim; it supports `--json`, performs no network calls, and
   implements no runtime route behavior
+- `validate_public_search_result_card_contract.py`: validates Public Search
+  Result Card Contract v0 schema, examples, audit pack, docs, response-schema
+  alignment, required result lanes, user-cost bounds, action status separation,
+  blocked/future-gated unsafe actions, rights/risk caveats, field stability,
+  and no live-search, malware-safety, rights-clearance, download/install/execute
+  or production-ranking claim; it supports `--json`, performs no network calls,
+  and implements no runtime route behavior
 - `validate_compatibility_surfaces.py`: validates Compatibility Surface
   Strategy v0 inventories, including the surface capability matrix, route
   matrix, client-profile alignment, implemented static route roots, future

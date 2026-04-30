@@ -25,6 +25,8 @@ application, not a native SDK, not a relay sidecar, and not a GUI client.
 Future GUI clients must consume governed contracts:
 
 - static public data under `site/dist/data/`
+- Public Search Result Card Contract v0 after a future public search runtime
+  exists
 - Signed Snapshot Format v0 and Signed Snapshot Consumer Contract v0
 - Live Backend Handoff Contract v0 when a hosted backend later exists
 - Relay Surface Design v0 only after relay prototype planning
@@ -38,6 +40,8 @@ alternative truth engine.
 Future native clients may consume:
 
 - static public data summaries
+- future public search result cards as governed by
+  `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`
 - static snapshot manifests and summaries
 - checksums and future signature metadata
 - source, eval, route, page, evidence, absence, and comparison summaries

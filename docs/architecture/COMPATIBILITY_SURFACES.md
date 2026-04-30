@@ -78,6 +78,12 @@ request, response, error, and route envelopes for `local_index_only` search, but
 does not implement `/search`, `/api/v1/search`, live probes, arbitrary URL
 fetching, downloads, installs, uploads, local path search, or production API
 stability.
+Public Search Result Card Contract v0 refines the future `results[]` unit that
+those envelopes will carry. It keeps lane, user-cost, source, evidence,
+compatibility, action gating, rights, risk, warnings, limitations, and gaps
+visible to web/API/lite/text/native/relay/snapshot consumers without adding
+runtime search, downloads, installers, execution, uploads, live probes, malware
+safety, rights clearance, or production ranking guarantees.
 
 ## Snapshot, Relay, And Native Readiness
 

@@ -293,7 +293,7 @@ The next backend sequence is:
 67. Static Artifact Promotion Review v0 (implemented; site/dist is conditionally promoted as active repo-local static artifact)
 68. GitHub Pages Run Evidence Review v0 (implemented; current-head Pages run failed at configuration before artifact upload)
 69. Public Search API Contract v0 (implemented as contract-only local_index_only request/response/error/route envelopes; no runtime routes or live probes)
-70. Public Search Result Card Contract v0
+70. Public Search Result Card Contract v0 (implemented as contract-only result-card schema, examples, audit pack, docs, validator, and tests; no runtime routes or download/install/execute behavior)
 71. Public Search Safety / Abuse Guard v0
 72. Local Public Search Runtime v0, only after contract and safety review
 
@@ -301,7 +301,7 @@ The next backend sequence is:
 
 The next implementation milestone should be:
 
-> Public Search Result Card Contract v0
+> Public Search Safety / Abuse Guard v0
 
 Why this comes next:
 
@@ -326,8 +326,14 @@ Why this comes next:
 - Public Search API Contract v0 is implemented as contract/governance only. It
   reserves future local-index-only search routes and envelopes without adding
   runtime routes, live probes, backend hosting, or production API stability.
-- Public Search Result Card Contract v0 is the next safe contract milestone
-  before result presentation, safety copy, or runtime search work.
+- Public Search Result Card Contract v0 is implemented as contract/governance
+  only. It defines the future public result-card shape for web/API/lite/text,
+  native, relay, snapshot, and contribution consumers without making search
+  live, adding route handlers, enabling downloads/installers/execution/uploads,
+  claiming malware safety, claiming rights clearance, or promising production
+  ranking.
+- Public Search Safety / Abuse Guard v0 is the next safe contract milestone
+  before runtime search work.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

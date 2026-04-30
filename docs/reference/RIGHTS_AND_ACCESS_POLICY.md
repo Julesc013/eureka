@@ -36,6 +36,12 @@ labels include:
 
 Unknown is not clearance. Metadata-only is not distribution permission.
 
+Public Search Result Card Contract v0 carries this posture through the `rights`
+block. Cards may record `unknown`, `public_metadata_only`,
+`source_terms_apply`, `restricted`, `review_required`, or `not_applicable`, but
+they must not claim rights clearance and must not convert public metadata into a
+download, mirror, or redistribution permission.
+
 ## Public Static Surfaces
 
 Static Pages may show source summaries, eval state, route state, snapshot

@@ -75,6 +75,15 @@ before runtime exists. It does not implement `/search` or `/api/v1/search`,
 host a backend, enable live probes, fetch URLs, scrape, download, install,
 upload, search local paths, or create a production API guarantee.
 
+Public Search Result Card Contract v0 adds
+`contracts/api/search_result_card.v0.json`, fixture-safe examples,
+`docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`, and
+`control/audits/public-search-result-card-contract-v0/`. This defines the
+future `results[]` card carried by public search responses. It does not make
+public search live, add route handlers, enable downloads/installers/execution,
+enable uploads, claim malware safety, claim rights clearance, or create a
+production ranking guarantee.
+
 Live Probe Gateway Contract v0 adds
 `control/inventory/publication/live_probe_gateway.json`,
 `docs/reference/LIVE_PROBE_GATEWAY_CONTRACT.md`,

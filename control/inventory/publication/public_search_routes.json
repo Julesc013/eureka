@@ -14,6 +14,8 @@
   "request_schema": "contracts/api/search_request.v0.json",
   "response_schema": "contracts/api/search_response.v0.json",
   "error_schema": "contracts/api/error_response.v0.json",
+  "result_card_schema": "contracts/api/search_result_card.v0.json",
+  "result_card_contract": "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
   "local_index_only_contract": "docs/operations/PUBLIC_SEARCH_LOCAL_INDEX_ONLY_MODE.md",
   "reference_doc": "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
   "forbidden_in_v0": [

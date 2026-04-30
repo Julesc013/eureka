@@ -112,3 +112,10 @@ Public Search API Contract v0 is governed under `contracts/api/`,
 `docs/reference/PUBLIC_SEARCH_API_CONTRACT.md` rather than an audit pack. It is
 contract-only and adds no public-search runtime, live probes, backend hosting,
 downloads, installs, uploads, local path search, or production API claim.
+- `public-search-result-card-contract-v0/`: contract-governance audit pack for
+  the future public search result-card envelope. It records field stability,
+  old-client/native/relay/snapshot rendering guidance, action/risk/rights
+  posture, fixture-safe examples, and a structured report without implementing
+  public search runtime, live routes, live probes, downloads, installers,
+  execution, uploads, malware-safety claims, rights-clearance claims, or
+  production ranking claims.

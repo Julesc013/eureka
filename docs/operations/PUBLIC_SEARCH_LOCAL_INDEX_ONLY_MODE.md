@@ -15,6 +15,8 @@ Future `local_index_only` search may:
 - return at most 25 results in contract v0, defaulting to 10;
 - expose result lanes, user-cost hints, compatibility summaries, evidence
   summaries, source summaries, warnings, and bounded absence reports;
+- emit result cards governed by Public Search Result Card Contract v0 only after
+  a future runtime implements them;
 - produce `standard_web`, `lite_html`, `text`, and `api_client` projections;
 - return the stable error envelope defined by Public Search API Contract v0.
 

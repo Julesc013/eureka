@@ -931,3 +931,30 @@ rate limiting implementation, or production API stability claim. The next
 Codex-safe milestone is Public Search Result Card Contract v0; GitHub Pages
 Workflow Repair v0 remains a separate operator/Pages follow-up before any
 hosted deployment-success claim.
+
+## ADR-107: Define Public Search Result Cards Before Runtime
+
+Status: accepted
+
+Public Search Result Card Contract v0 adds
+`contracts/api/search_result_card.v0.json`,
+`contracts/api/examples/search_result_card_*.v0.json`,
+`docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
+`control/audits/public-search-result-card-contract-v0/`,
+`scripts/validate_public_search_result_card_contract.py`, and focused tests.
+It also aligns `contracts/api/search_response.v0.json` so `results[]` are
+explicitly public search result cards while preserving the compact aliases
+reserved by Public Search API Contract v0.
+
+The decision is to govern the reusable card shape before any search route
+emits results. A card must expose title, lane, user-cost, source identity,
+public identity, evidence, compatibility, parent/member context when relevant,
+allowed/blocked/future-gated actions, rights caveats, risk caveats, warnings,
+limitations, and gaps. Download, install, execute, upload, mirror, restore,
+rollback, and private-source submission concepts are blocked or future-gated in
+v0. The contract does not add runtime public search, `/search`, `/api/v1/search`,
+backend hosting, live probes, arbitrary URL fetch, downloads, installers,
+execution, uploads, native clients, relay runtime, snapshot reader runtime,
+malware-safety claims, rights-clearance claims, production ranking guarantees,
+or production API stability. The next Codex-safe milestone is Public Search
+Safety / Abuse Guard v0.

@@ -32,6 +32,9 @@ Public Search API Contract v0 reserves the future `/search` and
 `local_index_only`; it does not make search live or allow live probes,
 downloads, installs, uploads, local path search, arbitrary URL fetch, or
 external source fanout.
+Public Search Result Card Contract v0 now defines the future result-card shape
+for those reserved routes, but it also remains contract-only and does not make
+the live backend available.
 
 ## Required Client Behavior
 

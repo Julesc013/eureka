@@ -27,6 +27,8 @@ A future relay may consume:
 - lite HTML from `site/dist/lite/`
 - plain text from `site/dist/text/`
 - file-tree manifests and checksums from `site/dist/files/`
+- future public search result cards after a later runtime emits them under
+  Public Search Result Card Contract v0
 - static snapshot manifests and checksums
 - route, source, eval, and page summaries
 - future live backend responses only after capability flags and handoff policy
@@ -45,6 +47,11 @@ old-client compatibility guarantees.
 Signed Snapshot Consumer Contract v0 now defines the future snapshot read
 order, checksum posture, and v0 signature-placeholder handling that any relay
 snapshot projection must follow. No relay snapshot consumer is implemented.
+
+Public Search Result Card Contract v0 defines a future card shape that relay
+clients may project read-only. It does not implement a relay search endpoint,
+live backend proxy, download surface, install handoff, upload behavior, or
+runtime relay service.
 
 Relay Prototype Planning v0 chooses the first future relay prototype shape:
 `local_static_http_relay_prototype`. It may consume only allowlisted static

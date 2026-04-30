@@ -256,6 +256,7 @@
         "contracts/api/search_request.v0.json",
         "contracts/api/search_response.v0.json",
         "contracts/api/error_response.v0.json",
+        "contracts/api/search_result_card.v0.json",
         "control/inventory/publication/public_search_routes.json"
       ],
       "reserved_paths": [
@@ -276,9 +277,9 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "Contract-only; no public search runtime, route handler, hosted backend, live probes, downloads, uploads, local path search, arbitrary URL fetch, or production API guarantee exists.",
-      "next_step": "Public Search Result Card Contract v0, then Public Search Safety / Abuse Guard v0 before any local public-search runtime.",
-      "notes": "First allowed mode is local_index_only. Static site may describe the contract but must not claim hosted search is live."
+      "current_limitations": "Contract-only; no public search runtime, route handler, hosted backend, live probes, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
+      "next_step": "Public Search Safety / Abuse Guard v0 before any local public-search runtime.",
+      "notes": "First allowed mode is local_index_only. Public Search Result Card Contract v0 defines future results[] cards, but static site may describe the contract only and must not claim hosted search is live."
     },
     {
       "id": "snapshots",
@@ -706,8 +707,8 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "Future live backend search only; static site has no live search. Public Search API Contract v0 is contract-only and local_index_only.",
-      "next_step": "Requires Public Search Result Card Contract v0, Public Search Safety / Abuse Guard v0, live backend handoff, and operator signoff before any hosted use.",
+      "current_limitations": "Future live backend search only; static site has no live search. Public Search API Contract v0 and Public Search Result Card Contract v0 are contract-only and local_index_only.",
+      "next_step": "Requires Public Search Safety / Abuse Guard v0, local runtime, live backend handoff, and operator signoff before any hosted use.",
       "notes": "No live probes are enabled by live search, and /api/v1/search is not live."
     },
     {

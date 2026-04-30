@@ -36,6 +36,13 @@ license or safety statement.
 Public-alpha mode keeps risky actions closed. Static Pages keeps risky actions
 absent.
 
+Public Search Result Card Contract v0 must project these rules in every future
+search card. Read-only actions may appear under `actions.allowed`; downloads,
+member downloads, mirrors, install handoff, package-manager handoff, emulator or
+VM handoff, execution, restore, rollback, uninstall, uploads, and private-source
+submission must appear only as blocked or future-gated until a later accepted
+policy and implementation changes that posture.
+
 ## Future Gated Actions
 
 The following actions are future and disabled until later policy plus

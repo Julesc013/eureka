@@ -75,6 +75,10 @@ Public Search API Contract v0 adds the hand-authored
 `control/inventory/publication/public_search_routes.json` inventory and static
 public data projections derived from it; update the inventory and contract
 docs first, then regenerate/check public data and `site/dist`.
+Public Search Result Card Contract v0 adds hand-authored schemas, examples,
+docs, and an audit pack. Validate them with
+`python scripts/validate_public_search_result_card_contract.py`; they are not a
+generated static artifact and do not add runtime search output.
 
 ## Volatile Values
 

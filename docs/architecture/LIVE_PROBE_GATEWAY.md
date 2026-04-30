@@ -26,6 +26,9 @@ Public Search API Contract v0 is also separate from this gateway. Its first
 mode is `local_index_only`, so future public search must use a controlled local
 index rather than live source fanout. Live probe modes remain disabled and are
 not accepted by the v0 search request schema.
+Public Search Result Card Contract v0 keeps `future_live_probe` as a source
+posture label only. It does not enable live probes, external source calls, URL
+fetching, or live source fanout.
 
 ## Anti-Crawl Boundary
 

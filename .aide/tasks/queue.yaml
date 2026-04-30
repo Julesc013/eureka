@@ -412,14 +412,14 @@
     {
       "id": "public_search_result_card_contract_v0",
       "title": "Public Search Result Card Contract v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 59,
-      "notes": "Define future result-card fields and safety copy before UI/runtime implementation; do not add search runtime behavior."
+      "notes": "Implemented the contract-only public result-card schema, examples, audit pack, docs, validator, and tests. This did not add runtime search, route handlers, backend hosting, live probes, downloads, installers, execution, uploads, malware-safety claims, rights-clearance claims, or production ranking guarantees."
     },
     {
       "id": "public_search_safety_abuse_guard_v0",
       "title": "Public Search Safety / Abuse Guard v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 60,
       "notes": "Define public-search safety and abuse guardrails before runtime work; do not add auth, rate limiting, hosted services, or live probes in this milestone."
     },
@@ -478,6 +478,13 @@
       "status": "recommended_follow_up",
       "priority": 68,
       "notes": "Future contribution-pack contract work only; do not add accounts, uploads, moderation infrastructure, telemetry, or live backend behavior."
+    },
+    {
+      "id": "master_index_review_queue_contract_v0",
+      "title": "Master Index Review Queue Contract v0",
+      "status": "recommended_follow_up",
+      "priority": 69,
+      "notes": "Future contract for master-index review queues only; do not add hosted indexing, accounts, uploads, moderation infrastructure, live source sync, crawling, or production search claims."
     }
   ]
 }

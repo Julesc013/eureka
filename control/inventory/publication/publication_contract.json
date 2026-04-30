@@ -28,6 +28,9 @@
   "live_probe_gateway_status": "planned_disabled",
   "live_probe_gateway": "control/inventory/publication/live_probe_gateway.json",
   "public_search_api_contract_status": "implemented_contract_only",
+  "public_search_result_card_contract_status": "implemented_contract_only",
+  "public_search_result_card_schema": "contracts/api/search_result_card.v0.json",
+  "public_search_result_card_contract": "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
   "public_search_runtime_status": "future_not_implemented",
   "public_search_first_allowed_mode": "local_index_only",
   "public_search_routes": "control/inventory/publication/public_search_routes.json",
@@ -54,6 +57,7 @@
     "govern future static-to-live backend handoff routes without implementing a hosted backend",
     "govern future live source probe policy without implementing probes or network calls",
     "govern future public search request, response, error, and route envelopes before implementing public search runtime",
+    "govern future public search result cards, action gating, rights caveats, risk caveats, and old-client/native/relay/snapshot consumption before implementing public search runtime",
     "govern compatibility-surface projections without implementing snapshots, relay, native apps, or new runtime behavior",
     "govern future local relay surface design, security/privacy defaults, operator controls, and protocol candidates without implementing relay runtime",
     "govern public claim traceability before public hosting",
@@ -146,7 +150,6 @@
     }
   ],
   "next_expected_milestones": [
-    "Public Search Result Card Contract v0",
     "Public Search Safety / Abuse Guard v0",
     "Local Public Search Runtime v0 only after contract and safety review",
     "Rust Local Index Parity Candidate v0 only after review and Cargo availability",
@@ -168,6 +171,7 @@
     "Live Backend Handoff Contract v0 reserves /api/v1 route families, capability flags, and error-envelope expectations without deploying a backend or making /api/v1 live.",
     "Live Probe Gateway Contract v0 records disabled-by-default live probe source policy, limits, cache/evidence requirements, and operator gates without implementing probes or making network calls.",
     "Public Search API Contract v0 defines future local_index_only public search request, response, error, and route envelopes without implementing /search, /api/v1/search, backend hosting, live probes, downloads, installs, uploads, local path search, arbitrary URL fetching, or production API stability.",
+    "Public Search Result Card Contract v0 defines the future public search result-card schema, examples, docs, audit pack, validator, and tests without implementing runtime search, live routes, downloads, installers, execution, uploads, malware-safety claims, rights-clearance claims, or production ranking guarantees.",
     "Rust Query Planner Parity Candidate v0 adds an isolated Rust planner candidate against Python-oracle goldens without replacing Python or wiring Rust into runtime surfaces.",
     "Compatibility Surface Strategy v0 records surface capability and route matrices plus old-client/native/snapshot/relay readiness policy without implementing new runtime behavior.",
     "No provider backend configuration, live backend, or live source probe is added by this contract.",

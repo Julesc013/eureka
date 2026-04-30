@@ -248,7 +248,8 @@
         "typed status vocabulary",
         "no live-backend assumption unless capability flags enable it",
         "reserved /api/v1 routes must be treated as future until live_backend is enabled",
-        "Public Search API Contract v0 request, response, and error envelopes only after a future runtime implements them"
+        "Public Search API Contract v0 request, response, and error envelopes only after a future runtime implements them",
+        "Public Search Result Card Contract v0 result cards only after a future runtime emits them"
       ],
       "prohibited_dependencies": [
         "undocumented response fields",
@@ -257,7 +258,7 @@
         "assuming /api/v1/search is live from the static site"
       ],
       "current_support_level": "static data implemented, /api/v1 live backend handoff reserved only",
-      "notes": "The profile does not guarantee a live public backend exists; Live Backend Handoff Contract v0 reserves /api/v1 as future experimental contract-only work, Public Search API Contract v0 reserves local_index_only search envelopes without implementing runtime, and Compatibility Surface Strategy v0 keeps static data distinct from live API behavior."
+      "notes": "The profile does not guarantee a live public backend exists; Live Backend Handoff Contract v0 reserves /api/v1 as future experimental contract-only work, Public Search API Contract v0 reserves local_index_only search envelopes without implementing runtime, Public Search Result Card Contract v0 reserves future result-card semantics without emitting live cards, and Compatibility Surface Strategy v0 keeps static data distinct from live API behavior."
     }
   ]
 }

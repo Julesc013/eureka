@@ -77,6 +77,10 @@ to `/data/site_manifest.json` and validation provenance to
 search envelopes only. They do not make `/search` or `/api/v1/search` live,
 host a backend, enable live probes, add downloads, installs, uploads, local
 path search, arbitrary URL fetch, or turn static JSON into a live search API.
+Public Search Result Card Contract v0 adds a hand-authored API schema and
+examples for future result cards. It does not add live public-data output,
+search runtime output, downloads, installers, execution, uploads, malware-safety
+claims, rights-clearance claims, or production API stability.
 
 Compatibility Surface Strategy v0 records surface capability and route matrix
 inputs for public data consumers. These fields describe which static

@@ -75,3 +75,8 @@ Public Search API Contract v0 may reference static public data as future input,
 but it does not make public JSON a live search API. Public search remains
 contract-only until a later runtime and safety milestone implements
 `local_index_only` behavior.
+
+Public Search Result Card Contract v0 is also contract-only. Its stable-draft
+card fields may inform future public search outputs, but the schema and examples
+do not make public JSON a production API, live search API, download surface,
+installer surface, malware-safety statement, or rights-clearance statement.

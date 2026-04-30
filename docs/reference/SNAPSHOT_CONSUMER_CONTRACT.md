@@ -25,6 +25,12 @@ Consumers preserve resolver truth from snapshot manifests and summaries. They
 may change presentation, but they must not rewrite evidence, source posture,
 eval status, route status, or limitations.
 
+Public Search Result Card Contract v0 is a future search-output contract that
+snapshot consumers may preserve as static metadata after a later runtime or
+snapshot pack writes it. It does not implement a snapshot reader runtime, live
+search, downloads, installers, execution, uploads, malware-safety claims, or
+rights-clearance claims.
+
 ## Minimum Compliant Consumer
 
 The minimum compliant consumer:

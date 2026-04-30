@@ -30,6 +30,9 @@ Public Search API Contract v0 now reserves `/search` and `/api/v1/search` as
 future `local_index_only` search routes. This is contract-only: no route
 handler, hosted backend, live probe, download/install/upload behavior, local
 path search, arbitrary URL fetch, or production API stability is added.
+Public Search Result Card Contract v0 now defines the future `results[]` card
+for those routes, but it is also contract-only and does not make the backend or
+search response live.
 
 ## Capability Flags
 

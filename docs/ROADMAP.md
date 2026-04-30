@@ -299,7 +299,7 @@ Out of scope for bootstrap: finalized runtime semantics, mature connector covera
 
 The next implementation milestone is:
 
-> Public Search Result Card Contract v0
+> Public Search Safety / Abuse Guard v0
 
 Public Data Contract Stability Review v0 is now implemented as field-level
 contract governance under
@@ -326,10 +326,17 @@ deployment evidence has now been checked by GitHub Pages Run Evidence Review
 v0. The current-head run failed at Pages configuration before artifact upload,
 so no deployment success claim is allowed.
 Public Search API Contract v0 is now implemented as contract/governance only.
-The next contract milestone should refine result-card fields, limitations, and
-display safety before any public-search runtime work. GitHub Pages Workflow
-Repair v0 remains an operator/Pages follow-up before any hosted deployment
-success claim is made.
+Public Search Result Card Contract v0 is also implemented as contract/governance
+only under `contracts/api/search_result_card.v0.json`,
+`docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`, and
+`control/audits/public-search-result-card-contract-v0/`. It defines future
+result-card fields, lanes, user-cost, evidence, compatibility, member context,
+actions, rights, risk, warnings, limitations, and gaps without making public
+search live, adding runtime routes, enabling downloads/installers/execution,
+claiming malware safety, claiming rights clearance, or promising production
+ranking. The next contract milestone should define safety and abuse guardrails
+before any public-search runtime work. GitHub Pages Workflow Repair v0 remains
+an operator/Pages follow-up before any hosted deployment success claim is made.
 Rust Local Index Parity Candidate v0 remains blocked on planning review and
 Cargo availability.
 
