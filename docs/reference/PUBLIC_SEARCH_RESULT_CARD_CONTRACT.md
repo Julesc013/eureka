@@ -208,7 +208,7 @@ execution, uploads, arbitrary URL fetch, local path search, private data
 exposure, malware-safety claim, rights-clearance claim, or production API claim
 was added by accident.
 
-The runtime must also pass
+The runtime must also pass the runtime readiness checklist at
 `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`; this checklist
 is future/unsigned and does not approve route implementation by itself.
 
