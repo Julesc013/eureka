@@ -78,9 +78,10 @@ request, response, error, and route envelopes for `local_index_only` search.
 Local Public Search Runtime v0 implements `/search`, `/api/v1/search`,
 `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
 `/api/v1/source/{source_id}` as local/prototype backend routes only. It does
-not add hosted deployment, static search handoff, live probes, arbitrary URL
-fetching, downloads, installs, uploads, local path search, accounts, telemetry,
-or production API stability.
+not add hosted deployment, live probes, arbitrary URL fetching, downloads,
+installs, uploads, local path search, accounts, telemetry, or production API
+stability. Public Search Static Handoff v0 now adds static/no-JS standard,
+lite, text, files, and data handoff outputs without making hosted search live.
 Public Search Result Card Contract v0 refines the future `results[]` unit that
 those envelopes will carry. It keeps lane, user-cost, source, evidence,
 compatibility, action gating, rights, risk, warnings, limitations, and gaps

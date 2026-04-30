@@ -13,6 +13,11 @@ Current boundary:
   Lite/Text/Files Seed Surfaces v0 for static compatibility validation.
 - `site/dist/demo/` is populated by Static Resolver Demo Snapshots v0 for
   fixture-backed static resolver demo validation.
+- Public Search Static Handoff v0 publishes `site/dist/search.html`,
+  `site/dist/lite/search.html`, `site/dist/text/search.txt`,
+  `site/dist/files/search.README.txt`, and
+  `site/dist/data/search_handoff.json` as no-JS static handoff surfaces. Hosted
+  search is not configured or verified, and GitHub Pages does not run Python.
 - Host-portability policy is validated by
   `scripts/validate_static_host_readiness.py`; it does not configure DNS,
   CNAME, provider files, alternate hosts, backend hosting, or live probes.
@@ -65,6 +70,7 @@ python scripts/validate_compatibility_surfaces.py
 python scripts/generate_static_snapshot.py --check
 python scripts/validate_static_snapshot.py
 python scripts/validate_static_artifact_promotion_review.py
+python scripts/validate_public_search_static_handoff.py
 ```
 
 Generated output is no-JS static HTML with relative links so it can work under
@@ -80,8 +86,9 @@ not create a live API, enable live probes, record external observations, add
 executable downloads, create snapshots, add relay/native runtime behavior, or
 change deployment behavior. Static resolver demos under `site/dist/demo/` are
 also static fixture-backed examples only; they add no live search, backend
-hosting, or production behavior. Future `/api/v1` handoff routes are reserved
-by contract only and are not live in generated output. The live probe gateway
+hosting, or production behavior. Public search handoff pages point to the
+local/prototype runtime only and do not configure a hosted backend. Future
+hosted `/api/v1` behavior still requires separate evidence and approval. The live probe gateway
 policy is also contract-only; generated output must not call Internet Archive,
 Wayback, GitHub, package registries, or any external source. Compatibility
 surface strategy is likewise contract-only in this tree: snapshots, relay

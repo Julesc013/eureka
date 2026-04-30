@@ -112,9 +112,11 @@ Public Search API Contract v0 is governed under `contracts/api/`,
 `docs/reference/PUBLIC_SEARCH_API_CONTRACT.md` rather than an audit pack.
 Local Public Search Runtime v0 now implements the first local/prototype backend
 routes for the governed contract through `runtime/gateway/public_api/` and
-`surfaces/web/server/`. It adds no hosted deployment, static search handoff
-page, live probes, downloads, installs, uploads, local path search, accounts,
-telemetry, or production API claim.
+`surfaces/web/server/`. It adds no hosted deployment, live probes, downloads,
+installs, uploads, local path search, accounts, telemetry, or production API
+claim. Public Search Static Handoff v0 adds static/no-JS `site/dist` handoff
+outputs and `data/search_handoff.json` without adding an audit pack, hosted
+backend, fake hosted URL, live probes, downloads, uploads, or production claim.
 - `public-search-result-card-contract-v0/`: contract-governance audit pack for
   the future public search result-card envelope. It records field stability,
   old-client/native/relay/snapshot rendering guidance, action/risk/rights

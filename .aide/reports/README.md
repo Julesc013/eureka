@@ -49,6 +49,15 @@ No separate AIDE runtime report is needed; those files are publication
 artifacts and do not add live search, downloads, snapshots, relay behavior, or
 native-client runtime.
 
+Public Search Static Handoff v0 records its static handoff artifacts under
+`site/dist/search.html`, `site/dist/lite/search.html`,
+`site/dist/text/search.txt`, `site/dist/files/search.README.txt`, and
+`site/dist/data/search_handoff.json`, plus inventory and validation under
+`control/inventory/publication/` and `scripts/`. No separate AIDE runtime
+report is needed; this is static publication only and does not add backend
+hosting, fake hosted URLs, live probes, downloads, uploads, local path search,
+telemetry, or production claims.
+
 Static Resolver Demo Snapshots v0 records committed static resolver examples
 under `site/dist/demo/`, with generated validation copies under
 `site/dist/demo/`. No separate AIDE runtime report is needed; those files are

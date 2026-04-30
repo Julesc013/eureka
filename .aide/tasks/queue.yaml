@@ -428,21 +428,21 @@
       "title": "Local Public Search Runtime v0",
       "status": "completed",
       "priority": 61,
-      "notes": "Implemented local/prototype backend public search routes through the gateway and stdlib web server: /search, /api/v1/search, /api/v1/query-plan, /api/v1/status, /api/v1/sources, and /api/v1/source/{source_id}. The runtime remains local_index_only, uses server-owned demo/catalog behavior, rejects forbidden local path/URL/download/install/upload/live-probe parameters, and adds no hosted deployment, static search handoff, live probes, accounts, telemetry, downloads, installers, uploads, or production claim."
+      "notes": "Implemented local/prototype backend public search routes through the gateway and stdlib web server: /search, /api/v1/search, /api/v1/query-plan, /api/v1/status, /api/v1/sources, and /api/v1/source/{source_id}. The runtime remains local_index_only, uses server-owned demo/catalog behavior, rejects forbidden local path/URL/download/install/upload/live-probe parameters, and adds no hosted deployment, live probes, accounts, telemetry, downloads, installers, uploads, or production claim."
     },
     {
       "id": "public_search_static_handoff_v0",
       "title": "Public Search Static Handoff v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 62,
-      "notes": "Next milestone after the local runtime. Add the static-publication handoff without turning GitHub Pages into a dynamic backend and without enabling live probes, downloads, installs, uploads, accounts, telemetry, or production claims."
+      "notes": "Implemented the static-publication handoff from site/dist to the local/prototype public search runtime with no-JS search.html, lite/text/files handoff outputs, data/search_handoff.json, validator, and tests. Hosted backend search remains unavailable/unverified; GitHub Pages remains static-only and no live probes, downloads, installs, uploads, local path search, telemetry, or production claims were added."
     },
     {
       "id": "public_search_rehearsal_v0",
       "title": "Public Search Rehearsal v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 63,
-      "notes": "Future supervised rehearsal after contract, result-card, safety, and local runtime milestones; no public deployment, live probes, or production claim is implied."
+      "notes": "Immediate next milestone after the static handoff. Rehearse local/prototype public search with static handoff evidence while preserving no hosted deployment, no live probes, no downloads/uploads, and no production claim."
     },
     {
       "id": "search_usefulness_source_expansion_v2_fixture_only",

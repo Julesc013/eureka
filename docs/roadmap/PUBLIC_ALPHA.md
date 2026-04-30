@@ -67,9 +67,12 @@ The minimum public-alpha entry gate should include:
   (implemented as `local_index_only` request/response/error/route contracts
   plus local/prototype backend routes for `/search`, `/api/v1/search`,
   `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
-  `/api/v1/source/{source_id}`; no hosted deployment, static search handoff
-  page, live probe, download, install, upload, local path search, arbitrary URL
-  fetch, accounts, telemetry, or production API stability is added)
+  `/api/v1/source/{source_id}`; no hosted deployment, live probe, download,
+  install, upload, local path search, arbitrary URL fetch, accounts, telemetry,
+  or production API stability is added)
+- Public Search Static Handoff v0 (implemented as static/no-JS handoff pages
+  and `data/search_handoff.json` under `site/dist`; hosted backend search is
+  unavailable/unverified and GitHub Pages remains static-only)
 - Public Search Result Card Contract v0 (implemented as contract-only future
   result-card schema, examples, audit pack, docs, validator, and tests; no live
   search route, live probe, download, install, execute, upload, malware-safety
@@ -79,7 +82,7 @@ The minimum public-alpha entry gate should include:
   parameters, privacy posture, operator controls, validator, tests, and runtime
   readiness checklist for the local runtime and future hosted review; no
   middleware, telemetry runtime, live probes, downloads, uploads, accounts,
-  static search handoff, or hosted backend is added)
+  or hosted backend is added)
 - Compatibility Surface Strategy v0 (implemented as strategy, capability
   matrix, route matrix, old-client degradation policy, and
   native/snapshot/relay readiness guidance; no new runtime behavior,
@@ -263,9 +266,12 @@ Public Search API Contract v0 now defines the first public-search contract in
 `local_index_only` mode, and Local Public Search Runtime v0 implements the
 local/prototype backend route slice for `/search`, `/api/v1/search`,
 `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
-`/api/v1/source/{source_id}`. It does not host a backend, add a static search
-handoff page, enable live probes, fetch URLs, crawl, download, install, upload,
-search local paths, add accounts/telemetry, or claim production API stability.
+`/api/v1/source/{source_id}`. Public Search Static Handoff v0 adds no-JS
+`site/dist` handoff pages and `data/search_handoff.json` that point to the
+local/prototype runtime without pretending hosted search exists. It does not
+host a backend, enable live probes, fetch URLs, crawl, download, install,
+upload, search local paths, add accounts/telemetry, or claim production API
+stability.
 
 Public Search Result Card Contract v0 now defines the canonical future result
 card for public search and old-client/native/relay/snapshot consumers. It keeps
@@ -279,8 +285,9 @@ posture for the local runtime and future hosted review. The only allowed v0 mode
 is `local_index_only`; live probes, arbitrary URL fetch, local path search,
 downloads, installs, uploads, telemetry by default, and external source fanout
 remain disabled. Local Public Search Runtime v0 stays inside those guardrails
-without adding rate-limit middleware, auth/accounts, hosted backend behavior, a
-static search handoff page, or production safety claims.
+without adding rate-limit middleware, auth/accounts, hosted backend behavior, or
+production safety claims. The static handoff keeps the same disabled behavior
+posture.
 
 Relay Surface Design v0 now records the future local/LAN relay posture for old
 or constrained clients. It is public-alpha-adjacent contract work only: no relay

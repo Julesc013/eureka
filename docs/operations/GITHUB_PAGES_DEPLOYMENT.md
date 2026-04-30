@@ -84,6 +84,12 @@ families and disabled capability flags. GitHub Pages still serves only static
 files; it does not make `/api/v1` live, proxy to Python, or provide a
 production API.
 
+Public Search Static Handoff v0 adds `search.html`, `lite/search.html`,
+`text/search.txt`, `files/search.README.txt`, and
+`data/search_handoff.json` to `site/dist`. These are static handoff artifacts:
+the hosted backend URL is not configured or verified, the form is disabled for
+hosted search, and GitHub Pages still does not run Python.
+
 Live Probe Gateway Contract v0 records disabled future source-probe policy.
 GitHub Pages still performs no source probes, URL fetches, Internet Archive
 calls, scraping, crawling, or downloads.

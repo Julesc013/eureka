@@ -3,9 +3,10 @@
 Status: implemented for Local Public Search Runtime v0 as local/prototype backend runtime only.
 
 `local_index_only` is the first allowed public search execution mode. It is a
-local/prototype backend runtime mode, not a hosted API and not a static search
-handoff page. The mode keeps public search bounded to controlled local index
-records owned by the Eureka runtime.
+local/prototype backend runtime mode, not a hosted API. Public Search Static
+Handoff v0 now exposes a static/no-JS entry point to this mode, but the handoff
+does not run search on GitHub Pages. The mode keeps public search bounded to
+controlled local index records owned by the Eureka runtime.
 
 ## Allowed Shape
 
@@ -54,8 +55,7 @@ specific `local_paths_forbidden`, `downloads_disabled`, `installs_disabled`,
 
 Public Search Safety / Abuse Guard v0 now defines and constrains this local
 runtime. This local-index mode still does not implement rate limiting, TLS,
-auth, abuse detection, process management, logging, hosted deployment, or static
-search handoff.
+auth, abuse detection, process management, logging, or hosted deployment.
 
 Public Search Safety / Abuse Guard v0 is now implemented as guardrails in
 `docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md` and
@@ -74,7 +74,9 @@ runtime evidence.
 ## Relationship To Other Surfaces
 
 Static `site/dist` remains the active publication artifact and does not host
-live search. Public data, lite, text, files, and demo surfaces may describe the
-local runtime, but they must not claim hosted public search exists. Native
+live search. Public data, lite, text, files, and demo surfaces now include a
+search handoff page, text/file-tree notes, and `data/search_handoff.json`; they
+may describe local runtime usage, but they must not claim hosted public search
+exists. Native
 clients, relay surfaces, and snapshots may consume stable fields only after
 their own contracts allow it.

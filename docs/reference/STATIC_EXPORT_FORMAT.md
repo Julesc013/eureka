@@ -5,6 +5,7 @@ Current static export:
 ```text
 site/dist/
   index.html
+  search.html
   status.html
   sources.html
   evals.html
@@ -39,6 +40,7 @@ site/
   validate.py
 site/dist/
   index.html
+  search.html
   status.html
   sources.html
   evals.html
@@ -68,6 +70,7 @@ site/dist/data/
   source_summary.json
   eval_summary.json
   route_summary.json
+  search_handoff.json
   build_manifest.json
 ```
 
@@ -78,6 +81,7 @@ Lite/Text/Files Seed Surfaces v0 adds:
 ```text
 site/dist/lite/
   index.html
+  search.html
   sources.html
   evals.html
   demo-queries.html
@@ -85,6 +89,7 @@ site/dist/lite/
   README.txt
 site/dist/text/
   index.txt
+  search.txt
   sources.txt
   evals.txt
   demo-queries.txt
@@ -93,6 +98,7 @@ site/dist/text/
 site/dist/files/
   index.html
   index.txt
+  search.README.txt
   README.txt
   manifest.json
   SHA256SUMS
@@ -103,6 +109,13 @@ site/dist/files/
 `site/dist/text/`, and `site/dist/files/`. These are static compatibility
 surfaces, not live search, executable downloads, production signed snapshots, relay
 behavior, or native-client runtime.
+
+Public Search Static Handoff v0 adds `search.html`, `lite/search.html`,
+`text/search.txt`, `files/search.README.txt`, and `data/search_handoff.json`.
+These are no-JS static handoff artifacts only: hosted backend search is
+unavailable/unverified, GitHub Pages does not run Python, and no live probes,
+downloads, installs, uploads, local path search, telemetry, fake hosted URL, or
+production API claim is added.
 
 Static Resolver Demo Snapshots v0 adds:
 

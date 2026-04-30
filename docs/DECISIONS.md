@@ -1001,9 +1001,33 @@ enforce bounded query/result/include/profile/mode validation, reject forbidden
 URL/local-path/credential/download/install/upload/live-probe parameters, and
 emit governed success/error/result-card envelopes. The service uses repo-owned
 demo catalog and source-registry projections and does not accept caller-provided
-index paths or expose private paths. It adds no hosted deployment, static search
-handoff page, live probes, external source calls, arbitrary URL fetching,
+index paths or expose private paths. It adds no hosted deployment, live probes,
+external source calls, arbitrary URL fetching,
 scraping, crawling, downloads, installers, uploads, accounts, telemetry
 persistence, rate-limit middleware, native clients, relay runtime, production
 API stability, or production readiness claim. The next Codex-safe milestone is
 Public Search Static Handoff v0.
+
+## ADR-110: Add Static Public Search Handoff Without Hosting Search
+
+Status: accepted
+
+Public Search Static Handoff v0 adds
+`control/inventory/publication/public_search_handoff.json`,
+`site/dist/search.html`, `site/dist/lite/search.html`,
+`site/dist/text/search.txt`, `site/dist/files/search.README.txt`,
+`site/dist/data/search_handoff.json`,
+`scripts/validate_public_search_static_handoff.py`, and focused operations and
+script tests.
+
+The decision is to let the static publication site point users toward the
+local/prototype public search runtime without pretending GitHub Pages runs
+Python or that a hosted backend exists. The static page and old-client
+surfaces are no-JS, publish a disabled hosted-search form while no backend URL
+is configured, include local runtime instructions and sample queries, and
+publish machine-readable handoff status. Hosted backend status remains
+unavailable/unverified, and the handoff adds no backend hosting, provider
+configuration, fake hosted URL, live probes, external calls, arbitrary URL
+fetching, crawling, downloads, installers, uploads, local path search, accounts,
+telemetry, production API stability, or production readiness claim. The next
+Codex-safe milestone is Public Search Rehearsal v0.

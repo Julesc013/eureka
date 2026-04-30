@@ -85,3 +85,10 @@ Public Search Safety / Abuse Guard v0 is policy/contract-only. Its safety
 inventory and docs may be referenced by future static status data, but they do
 not add runtime search output, telemetry runtime, live probes, downloads,
 uploads, arbitrary URL fetch, local path search, or production safety claims.
+
+Public Search Static Handoff v0 adds `data/search_handoff.json` with
+`stable_draft` fields for handoff status, hosted backend status, first mode,
+backend URL, and disabled behavior flags. These fields are static publication
+metadata only. They do not make hosted search live, configure a backend URL,
+run Python on GitHub Pages, enable live probes, add downloads/uploads/local path
+search, or create production API stability.

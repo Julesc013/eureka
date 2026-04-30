@@ -92,6 +92,12 @@ Current scripts:
   inventory, docs, and no prohibited live/download/install/upload behavior; it
   supports `--json`, performs no network calls, and does not deploy or host
   public search
+- `validate_public_search_static_handoff.py`: validates Public Search Static
+  Handoff v0 inventory, generated `site/dist/search.html`, lite/text/files
+  handoff outputs, `data/search_handoff.json`, disabled hosted-search form,
+  query-length safety alignment, no-JS posture, no fake hosted URL, and no
+  live-probe/download/install/upload/local-path claim; it supports `--json`,
+  performs no network calls, starts no server, and deploys nothing
 - `validate_compatibility_surfaces.py`: validates Compatibility Surface
   Strategy v0 inventories, including the surface capability matrix, route
   matrix, client-profile alignment, implemented static route roots, future
@@ -101,14 +107,15 @@ Current scripts:
   native clients, live backend routes, or live probes available
 - `generate_public_data_summaries.py`: generates, updates, or checks
   deterministic static JSON summaries under `site/dist/data/` by default,
-  including site, page-registry, source, eval, route, and build summaries; it
+  including site, page-registry, source, eval, route, search-handoff, and build summaries; it
   supports `--update`, `--check`, `--output-root`, and `--json`, performs no
   network calls, runs no live probes, records no external observations, starts
   no server, deploys nothing, and does not create live API semantics
 - `generate_compatibility_surfaces.py`: generates, updates, or checks static
   lite/text/files compatibility seed surfaces under `site/dist/lite/`,
   `site/dist/text/`, and `site/dist/files/` by default from generated
-  public data summaries; it supports `--update`, `--check`, `--output-root`,
+  public data summaries, including the static search handoff pages for old
+  clients; it supports `--update`, `--check`, `--output-root`,
   `--data-root`, and `--json`, generates a file-tree manifest and SHA256SUMS,
   performs no network calls, runs no live search or probes, records no external
   observations, adds no executable downloads, and does not create production

@@ -298,13 +298,14 @@ The next backend sequence is:
 69. Public Search API Contract v0 (implemented as governed local_index_only request/response/error/route envelopes)
 70. Public Search Result Card Contract v0 (implemented as contract-only result-card schema, examples, audit pack, docs, validator, and tests; no runtime routes or download/install/execute behavior)
 71. Public Search Safety / Abuse Guard v0 (implemented as safety, abuse, privacy, operator-control, validator, and readiness-checklist governance; no hosted runtime or middleware)
-72. Local Public Search Runtime v0 (implemented as local/prototype backend runtime only; no hosted deployment, static handoff, live probes, downloads, uploads, accounts, telemetry, or production claim)
+72. Local Public Search Runtime v0 (implemented as local/prototype backend runtime only; no hosted deployment, live probes, downloads, uploads, accounts, telemetry, or production claim)
+73. Public Search Static Handoff v0 (implemented as static/no-JS `site/dist` handoff only; hosted backend remains unavailable/unverified)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Public Search Static Handoff v0
+> Public Search Rehearsal v0
 
 Why this comes next:
 
@@ -342,11 +343,11 @@ Why this comes next:
   parameters, disabled live/external behavior, error mapping, logging/privacy
   defaults, operator controls, and runtime readiness gates without adding
   rate-limit middleware, telemetry runtime, hosted backend, live probes,
-  downloads, uploads, local path search, accounts, static handoff, or
+  downloads, uploads, local path search, accounts, or
   production safety claims.
-- Public Search Static Handoff v0 is the next safe implementation milestone and
-  should connect the static publication plane to the already-local route without
-  turning GitHub Pages into a dynamic backend.
+- Public Search Static Handoff v0 now connects the static publication plane to
+  the already-local route with no-JS `site/dist` handoff outputs while keeping
+  hosted backend search unavailable/unverified and GitHub Pages static-only.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

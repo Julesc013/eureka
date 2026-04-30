@@ -250,7 +250,6 @@ logging/privacy posture.
 Still future or blocked until explicit approval:
 
 - hosted backend
-- static search handoff page
 - rate-limit middleware
 - auth, accounts, sessions, TLS, process management
 - live probes or external source fanout
@@ -259,3 +258,10 @@ Still future or blocked until explicit approval:
 - telemetry/logging runtime
 - native clients, relay runtime, snapshot reader runtime
 - production API stability or production readiness
+
+Implemented static publication only:
+
+- Public Search Static Handoff v0 adds no-JS `site/dist/search.html`,
+  `lite/search.html`, `text/search.txt`, `files/search.README.txt`, and
+  `data/search_handoff.json`; it does not configure hosted search or weaken the
+  disabled live-probe/download/upload/local-path posture.

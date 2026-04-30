@@ -4,8 +4,9 @@ Status: local runtime implemented; hosted checklist unsigned.
 
 This checklist records Local Public Search Runtime v0 and gates future hosted
 public-search rehearsal. It is not approval to add hosted backend deployment,
-static search handoff, live probes, downloads, installers, uploads, accounts,
-telemetry, rate-limit middleware, or production API claims.
+live probes, downloads, installers, uploads, accounts, telemetry, rate-limit
+middleware, or production API claims. Static handoff is implemented by Public
+Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
 
 ## Contract Gates
 
@@ -36,7 +37,7 @@ telemetry, rate-limit middleware, or production API claims.
 ## Surface Gates
 
 - [x] HTML and JSON behavior are both defined for successful search.
-- [ ] Lite/text static handoff degradation preserves source, evidence, compatibility,
+- [x] Lite/text static handoff degradation preserves source, evidence, compatibility,
   limitations, and blocked action posture.
 - [x] Result cards expose allowed, blocked, and future-gated actions honestly.
 - [x] Absence reports remain bounded and do not imply global non-existence.
@@ -69,6 +70,8 @@ telemetry, rate-limit middleware, or production API claims.
 - checklist_status: `local_runtime_implemented_hosted_unsigned`
 - local_runtime_implemented: true
 - implementation_approved: true
+- Static handoff is implemented by Public Search Static Handoff v0.
 - hosted_public_runtime_approved: false
-- static_search_handoff_approved: false
+- static_search_handoff_implemented: true
+- hosted_search_handoff_approved: false
 - production_claim_allowed: false

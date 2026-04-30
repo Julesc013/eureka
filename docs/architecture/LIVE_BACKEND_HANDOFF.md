@@ -31,9 +31,10 @@ Public Search API Contract v0 now governs `/search` and `/api/v1/search` as
 the first local/prototype backend handlers for `/search`, `/api/v1/search`,
 `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
 `/api/v1/source/{source_id}`. This does not host the backend, deploy a public
-service, add a static search handoff page, enable live probes,
-download/install/upload behavior, local path search, arbitrary URL fetch,
-accounts, telemetry, or production API stability.
+service, enable live probes, download/install/upload behavior, local path
+search, arbitrary URL fetch, accounts, telemetry, or production API stability.
+Public Search Static Handoff v0 adds static/no-JS handoff pages and
+`data/search_handoff.json` without configuring a hosted backend.
 Public Search Result Card Contract v0 now defines the future `results[]` card
 for those routes, but it is also contract-only and does not make the backend or
 search response live.
@@ -73,8 +74,8 @@ operator and contract work defines:
 - status/capability response shape
 - live probe gateway runtime implementation after the contract-only policy
 - public search safety and abuse controls before search runtime is hosted
-- static search handoff from `site/dist` to the local route, without making
-  GitHub Pages dynamic
+- hosted backend configuration for any static handoff action URL, without
+  making GitHub Pages dynamic
 - rollback and disabled-by-default behavior
 
 This milestone adds none of those runtime behaviors.

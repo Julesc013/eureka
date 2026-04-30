@@ -217,7 +217,7 @@ does not approve hosted deployment by itself.
 ## Out Of Scope
 
 This contract and local runtime do not implement hosted backend deployment,
-static search handoff, live source probes, Internet Archive calls, Google
+live source probes, Internet Archive calls, Google
 queries, arbitrary URL fetch, crawling, downloads, installers, uploads,
 accounts, telemetry, native clients, relay runtime, snapshot reader runtime,
 TLS, auth, rate limiting, process management, custom domains, production API

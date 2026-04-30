@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus sixty-five executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Rust Source Registry Parity Catch-up v0, the first isolated Rust query-planner parity candidate, Rust Local Index Parity Planning v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Public Search API Contract v0, Public Search Result Card Contract v0, Public Search Safety / Abuse Guard v0, Local Public Search Runtime v0, Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Windows 7 WinForms Native Skeleton Planning v0, Post-Queue State Checkpoint v0, Relay Surface Design v0, Relay Prototype Planning v0, Full Project State Audit v0, Public Data Contract Stability Review v0, Generated Artifact Drift Guard v0, Repository Shape Consolidation v0, Static Artifact Promotion Review v0, GitHub Pages Run Evidence Review v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus sixty-six executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Rust Source Registry Parity Catch-up v0, the first isolated Rust query-planner parity candidate, Rust Local Index Parity Planning v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Public Search API Contract v0, Public Search Result Card Contract v0, Public Search Safety / Abuse Guard v0, Local Public Search Runtime v0, Public Search Static Handoff v0, Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Windows 7 WinForms Native Skeleton Planning v0, Post-Queue State Checkpoint v0, Relay Surface Design v0, Relay Prototype Planning v0, Full Project State Audit v0, Public Data Contract Stability Review v0, Generated Artifact Drift Guard v0, Repository Shape Consolidation v0, Static Artifact Promotion Review v0, GitHub Pages Run Evidence Review v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -333,7 +333,7 @@ subsystem choices.
 
 The next implementation milestone is:
 
-> Public Search Static Handoff v0
+> Public Search Rehearsal v0
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -526,9 +526,13 @@ response, error, and route envelopes under `contracts/api/`,
 `local_index_only`. Local Public Search Runtime v0 implements `/search`,
 `/api/v1/search`, `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`,
 and `/api/v1/source/{source_id}` as local/prototype backend routes only. This
-adds no hosted deployment, static search handoff page, live probes, crawling,
-external search automation, arbitrary URL fetch, downloads, installs, uploads,
-local path search, accounts, telemetry, or production API stability claim.
+adds no hosted deployment, live probes, crawling, external search automation,
+arbitrary URL fetch, downloads, installs, uploads, local path search, accounts,
+telemetry, or production API stability claim. Public Search Static Handoff v0
+adds `site/dist/search.html`, `lite/search.html`, `text/search.txt`,
+`files/search.README.txt`, and `data/search_handoff.json` as static/no-JS
+handoff surfaces only; hosted public search remains unavailable/unverified and
+GitHub Pages remains static-only.
 Public Search Result Card Contract v0 defines the contract-only future result
 card under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -548,15 +552,16 @@ maps disallowed behavior to the P26 error envelope, keeps telemetry/logging
 runtime off, and lists future operator controls. It adds no public search
 runtime, rate-limit middleware, auth/accounts, telemetry runtime, hosted
 backend, live probes, downloads, uploads, local path search, arbitrary URL
-fetch, static search handoff, or production safety claim.
+fetch, or production safety claim. Public Search Static Handoff v0 now records
+the static handoff without enabling hosted search.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Public Search Static Handoff v0
-2. Public Search Rehearsal v0
-3. Search Usefulness Source Expansion v2, fixture-only
-4. Source Pack Contract v0
-5. Evidence Pack Contract v0
+1. Public Search Rehearsal v0
+2. Search Usefulness Source Expansion v2, fixture-only
+3. Source Pack Contract v0
+4. Evidence Pack Contract v0
+5. Index Pack Contract v0
 6. Index Pack Contract v0
 7. Contribution Pack Contract v0
 8. Master Index Review Queue Contract v0

@@ -8,8 +8,10 @@ Local Public Search Runtime v0 now implements `/search`, `/api/v1/search`,
 `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
 `/api/v1/source/{source_id}` through the local stdlib workbench server. This is
 local/prototype backend runtime only. It does not make public search hosted,
-does not add a static search handoff page, does not deploy a backend, and does
-not claim production API stability.
+does not deploy a backend, and does not claim production API stability. Public
+Search Static Handoff v0 now publishes the no-JS static handoff page and
+machine-readable handoff status under `site/dist`, but that handoff remains
+static publication only.
 This is not hosted public deployment.
 It does not claim production API stability.
 Public Search Safety / Abuse Guard v0 remains the safety source for these local
@@ -158,7 +160,9 @@ deployment review. Local Public Search Runtime v0 is not hosted public
 deployment and does not change GitHub Pages, which remains static-only. The
 live probe gateway remains disabled and does not become an implementation
 detail of `local_index_only`. Public data summaries under `site/dist/data`
-remain static publication artifacts, not a live search API. Native clients,
+remain static publication artifacts, not a live search API; this includes
+`site/dist/data/search_handoff.json`, which records that hosted search is
+unavailable/unverified. Native clients,
 relay consumers, and snapshot consumers may reference this contract as input,
 but no native client, relay runtime, or snapshot reader runtime is implemented
 here.
@@ -184,7 +188,7 @@ hosted public exposure until the runtime readiness checklist is satisfied.
 ## Out Of Scope
 
 This contract and local runtime do not implement hosted backend deployment,
-static search handoff, live source probes, Internet Archive calls, Google
+live source probes, Internet Archive calls, Google
 queries, arbitrary URL fetch, crawling, downloads, installers, uploads,
 accounts, telemetry, native clients, relay runtime, snapshot reader runtime,
 TLS, auth, rate limiting, process management, custom domains, production API

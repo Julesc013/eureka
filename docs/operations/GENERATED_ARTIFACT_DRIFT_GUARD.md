@@ -15,15 +15,19 @@ status remains unverified.
 ## Covered Artifacts
 
 - `site/dist/data/*.json`: generated public data summaries owned by
-  `scripts/generate_public_data_summaries.py`.
+  `scripts/generate_public_data_summaries.py`, including
+  `data/search_handoff.json`.
 - `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`: static
-  compatibility surfaces owned by `scripts/generate_compatibility_surfaces.py`.
+  compatibility surfaces owned by `scripts/generate_compatibility_surfaces.py`,
+  including the public search static handoff outputs for old-client profiles.
 - `site/dist/demo/`: static resolver demo snapshots owned by
   `scripts/generate_static_resolver_demos.py`.
 - `snapshots/examples/static_snapshot_v0/`: deterministic static snapshot seed
   example owned by `scripts/generate_static_snapshot.py`.
 - `site/dist/`: canonical generated static deployment artifact owned by
-  `site/build.py` and checked as `static_site_dist`.
+  `site/build.py` and checked as `static_site_dist`; Public Search Static
+  Handoff v0 adds static/no-JS handoff pages only and does not configure hosted
+  search.
 - `tests/parity/golden/python_oracle/v0/`: Python oracle golden fixtures owned by
   `scripts/generate_python_oracle_golden.py`.
 - `docs/operations/public_alpha_rehearsal_evidence_v0/`: public-alpha rehearsal

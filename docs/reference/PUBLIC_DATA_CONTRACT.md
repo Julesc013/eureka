@@ -42,6 +42,7 @@ Implemented generated public data files include:
 - `/data/source_summary.json`
 - `/data/eval_summary.json`
 - `/data/route_summary.json`
+- `/data/search_handoff.json`
 - `/data/build_manifest.json`
 
 They are produced by `scripts/generate_public_data_summaries.py` and mirrored
@@ -86,6 +87,12 @@ runtime readiness metadata for future public search. It does not turn static
 JSON into a live search API, implement route handlers, enable telemetry,
 download/install/upload behavior, live probes, arbitrary URL fetch, or local
 path search.
+Public Search Static Handoff v0 adds `/data/search_handoff.json`, generated
+from `public_search_handoff.json`, safety policy, route inventory, and
+deployment target state. It records that hosted backend search is unavailable
+or unverified, publishes local/prototype runtime hints, and keeps live probes,
+downloads, installs, uploads, local path search, telemetry, scraping, crawling,
+and deployment claims disabled.
 
 Compatibility Surface Strategy v0 records surface capability and route matrix
 inputs for public data consumers. These fields describe which static
@@ -113,6 +120,7 @@ Implemented file-tree public data files include:
 
 - `/files/manifest.json`
 - `/files/index.txt`
+- `/files/search.README.txt`
 - `/files/SHA256SUMS`
 
 They are produced by `scripts/generate_compatibility_surfaces.py` from

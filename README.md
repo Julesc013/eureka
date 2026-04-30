@@ -109,10 +109,13 @@ Local Public Search Runtime v0 now implements those routes as a
 local/prototype backend runtime only through the gateway and stdlib web server:
 `/search`, `/api/v1/search`, `/api/v1/query-plan`, `/api/v1/status`,
 `/api/v1/sources`, and `/api/v1/source/{source_id}`. It is
-`local_index_only`; it does not add hosted deployment, a static search handoff
-page, live probes, external calls, URL fetching, scraping, crawling, downloads,
-installers, uploads, local path search, accounts, telemetry, or production API
-stability.
+`local_index_only`. Public Search Static Handoff v0 now adds a no-JS static
+handoff at `site/dist/search.html`, plus lite/text/files handoff outputs and
+`site/dist/data/search_handoff.json`. Hosted public search remains unavailable
+and unverified; GitHub Pages does not run Python, and the handoff does not add
+backend hosting, live probes, external calls, URL fetching, scraping, crawling,
+downloads, installers, uploads, local path search, accounts, telemetry, or
+production API stability.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -543,9 +546,15 @@ Eureka is substantial, but it is still a prototype/reference backend:
   routes for `local_index_only` search: `/search`, `/api/v1/search`,
   `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
   `/api/v1/source/{source_id}`. This is not hosted deployment and does not add
-  a static search handoff page, live probes, downloads, installs, uploads,
-  local path search, arbitrary URL fetch, accounts, telemetry, or production
-  API stability.
+  live probes, downloads, installs, uploads, local path search, arbitrary URL
+  fetch, accounts, telemetry, or production API stability.
+- Public Search Static Handoff v0 is implemented as static publication only.
+  `site/dist/search.html`, `site/dist/lite/search.html`,
+  `site/dist/text/search.txt`, `site/dist/files/search.README.txt`, and
+  `site/dist/data/search_handoff.json` point users toward local/prototype
+  search while keeping hosted backend search unconfigured/unverified and
+  preserving no-JS, no-live-probe, no-download, no-upload, no-local-path-search
+  boundaries.
 - Public Search Result Card Contract v0 is implemented as contract/governance
   only. It defines the future result card used by public search responses and
   old-client/native/relay/snapshot consumers, but it does not make search live,
@@ -645,10 +654,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Public Search Static Handoff v0
-2. Public Search Rehearsal v0
-3. Search Usefulness Source Expansion v2, fixture-only
-4. Source Pack Contract v0
+1. Public Search Rehearsal v0
+2. Search Usefulness Source Expansion v2, fixture-only
+3. Source Pack Contract v0
+4. Evidence Pack Contract v0
 5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

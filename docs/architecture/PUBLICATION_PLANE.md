@@ -245,11 +245,14 @@ to inspect without creating a live resolver endpoint or API promise. Custom
 Domain / Alternate Host Readiness v0 now records future host prerequisites and
 validates static host portability without configuring a domain or alternate
 host. Live Backend Handoff Contract v0 now reserves `/api/v1` contract-only
-routes and disabled capabilities. Public Search API Contract v0 now reserves
-future local-index-only search envelopes and routes without implementing search
-runtime. Public Search Safety / Abuse Guard v0 now defines the safety and abuse
-policy required before Local Public Search Runtime v0. Live Probe Gateway
-Contract v0 now defines the disabled source-probe
+routes and disabled capabilities. Public Search API Contract v0 now defines
+local-index-only search envelopes and Local Public Search Runtime v0 implements
+local/prototype routes without hosted deployment. Public Search Static Handoff
+v0 now publishes static/no-JS `search.html`, lite/text/files handoff outputs,
+and `data/search_handoff.json` without making GitHub Pages dynamic or claiming
+hosted search. Public Search Safety / Abuse Guard v0 defines the safety and
+abuse policy around those surfaces. Live Probe Gateway Contract v0 now defines
+the disabled source-probe
 gateway policy before any external probe exists.
 Compatibility Surface Strategy v0 now records the cross-surface policy for
 old-browser, text, file-tree, snapshot, relay, API, CLI, web, and future native
