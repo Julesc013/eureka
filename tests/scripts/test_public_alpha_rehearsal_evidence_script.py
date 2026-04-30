@@ -9,6 +9,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = REPO_ROOT / "scripts" / "generate_public_alpha_rehearsal_evidence.py"
+ROUTE_INVENTORY = REPO_ROOT / "control" / "inventory" / "public_alpha_routes.json"
 
 
 class PublicAlphaRehearsalEvidenceScriptTest(unittest.TestCase):
@@ -37,7 +38,11 @@ class PublicAlphaRehearsalEvidenceScriptTest(unittest.TestCase):
         self.assertEqual(payload["status"], "ready")
         self.assertTrue(payload["manifest"]["no_deployment_performed"])
         self.assertEqual(payload["manifest"]["signoff_status"], "unsigned")
-        self.assertEqual(payload["summary"]["route_inventory"]["total_routes"], 89)
+        inventory = json.loads(ROUTE_INVENTORY.read_text(encoding="utf-8"))
+        self.assertEqual(
+            payload["summary"]["route_inventory"]["total_routes"],
+            len(inventory["routes"]),
+        )
 
     def test_check_mode_passes_plain_and_json(self) -> None:
         plain = subprocess.run(

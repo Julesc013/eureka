@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 import json
 from pathlib import Path
 import unittest
@@ -11,6 +12,7 @@ PUBLIC_SITE = REPO_ROOT / "site/dist"
 SITE_DIST = REPO_ROOT / "site" / "dist"
 WORKFLOW = REPO_ROOT / ".github" / "workflows" / "pages.yml"
 SOURCE_DIR = REPO_ROOT / "control" / "inventory" / "sources"
+PUBLIC_ALPHA_ROUTES = REPO_ROOT / "control" / "inventory" / "public_alpha_routes.json"
 REQUIRED_DATA_FILES = {
     "site_manifest.json",
     "page_registry.json",
@@ -94,14 +96,28 @@ class GeneratedPublicDataSummariesTest(unittest.TestCase):
 
     def test_route_summary_includes_public_alpha_posture_counts(self) -> None:
         summary = json.loads((PUBLIC_DATA / "route_summary.json").read_text(encoding="utf-8"))
+        inventory = json.loads(PUBLIC_ALPHA_ROUTES.read_text(encoding="utf-8"))
+        route_counts = Counter(route["classification"] for route in inventory["routes"])
 
-        self.assertEqual(summary["route_counts"]["total"], 89)
-        self.assertEqual(summary["route_counts"]["safe_public_alpha"], 33)
-        self.assertEqual(summary["route_counts"]["blocked_public_alpha"], 5)
-        self.assertEqual(summary["route_counts"]["local_dev_only"], 49)
-        self.assertEqual(summary["route_counts"]["review_required"], 2)
-        self.assertEqual(len(summary["review_required_routes"]), 2)
-        self.assertEqual(len(summary["blocked_routes"]), 5)
+        self.assertEqual(summary["route_counts"]["total"], len(inventory["routes"]))
+        self.assertEqual(
+            summary["route_counts"]["safe_public_alpha"],
+            route_counts["safe_public_alpha"],
+        )
+        self.assertEqual(
+            summary["route_counts"]["blocked_public_alpha"],
+            route_counts["blocked_public_alpha"],
+        )
+        self.assertEqual(
+            summary["route_counts"]["local_dev_only"],
+            route_counts["local_dev_only"],
+        )
+        self.assertEqual(
+            summary["route_counts"]["review_required"],
+            route_counts["review_required"],
+        )
+        self.assertEqual(len(summary["review_required_routes"]), route_counts["review_required"])
+        self.assertEqual(len(summary["blocked_routes"]), route_counts["blocked_public_alpha"])
         self.assertTrue(summary["public_alpha_not_production"])
 
     def test_build_manifest_does_not_claim_deployment_or_ci_provenance(self) -> None:

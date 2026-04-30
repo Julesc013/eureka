@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 import json
 from pathlib import Path
 import re
@@ -9,6 +10,7 @@ import unittest
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PACK_DIR = REPO_ROOT / "docs" / "operations" / "public_alpha_rehearsal_evidence_v0"
 MANIFEST_PATH = PACK_DIR / "rehearsal_evidence_manifest.json"
+ROUTE_INVENTORY = REPO_ROOT / "control" / "inventory" / "public_alpha_routes.json"
 REQUIRED_FILES = {
     "README.md",
     "REHEARSAL_SCOPE.md",
@@ -61,10 +63,12 @@ class PublicAlphaRehearsalEvidenceTest(unittest.TestCase):
     def test_manifest_route_eval_and_baseline_counts_are_honest(self) -> None:
         manifest = self._manifest()
         route_counts = manifest["route_inventory"]["route_counts"]
-        self.assertEqual(route_counts["safe_public_alpha"], 33)
-        self.assertEqual(route_counts["blocked_public_alpha"], 5)
-        self.assertEqual(route_counts["local_dev_only"], 49)
-        self.assertEqual(route_counts["review_required"], 2)
+        inventory = json.loads(ROUTE_INVENTORY.read_text(encoding="utf-8"))
+        current_counts = Counter(route["classification"] for route in inventory["routes"])
+        self.assertEqual(route_counts["safe_public_alpha"], current_counts["safe_public_alpha"])
+        self.assertEqual(route_counts["blocked_public_alpha"], current_counts["blocked_public_alpha"])
+        self.assertEqual(route_counts["local_dev_only"], current_counts["local_dev_only"])
+        self.assertEqual(route_counts["review_required"], current_counts["review_required"])
         self.assertIn("/api/export/manifest", manifest["route_inventory"]["review_required_routes"])
 
         archive = manifest["eval_audit"]["archive_eval_status"]

@@ -9,8 +9,8 @@ Public Alpha Hosting Pack v0.
 
 - inventory kind: `eureka.public_alpha_routes`
 - inventory version: `0.1.0`
-- total routes: 89
-- safe_public_alpha: 33
+- total routes: 94
+- safe_public_alpha: 38
 - blocked_public_alpha: 5
 - local_dev_only: 49
 - review_required: 2
