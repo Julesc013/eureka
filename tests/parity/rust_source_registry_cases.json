@@ -1,12 +1,12 @@
 {
   "fixture_kind": "eureka.rust_source_registry_parity_cases",
   "version": "0.1.0",
-  "created_by_slice": "rust_source_registry_parity_catch_up_v0",
+  "created_by_slice": "rust_source_registry_parity_catch_up_v0_updated_by_source_expansion_v2",
   "python_remains_oracle": true,
   "runtime_wiring_allowed": false,
   "source_inventory_root": "control/inventory/sources",
   "python_oracle_root": "tests/parity/golden/python_oracle/v0/source_registry",
-  "expected_source_count": 9,
+  "expected_source_count": 15,
   "required_capability_fields": [
     "supports_search",
     "supports_item_metadata",
@@ -45,7 +45,7 @@
       "source_id": null,
       "python_oracle_file": "sources_list.json",
       "expected_status_code": 200,
-      "expected_source_count": 9
+      "expected_source_count": 15
     },
     {
       "case_id": "synthetic_fixtures",

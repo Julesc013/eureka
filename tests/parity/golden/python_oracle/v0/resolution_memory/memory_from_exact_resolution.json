@@ -7,14 +7,26 @@
           "github_releases",
           "internet_archive_recorded",
           "local_bundle_fixtures",
-          "synthetic"
+          "manual_document_recorded",
+          "package_registry_recorded",
+          "review_description_recorded",
+          "software_heritage_recorded",
+          "sourceforge_recorded",
+          "synthetic",
+          "wayback_memento_recorded"
         ],
         "checked_source_ids": [
           "article-scan-recorded-fixtures",
           "github-releases-recorded-fixtures",
           "internet-archive-recorded-fixtures",
           "local-bundle-fixtures",
-          "synthetic-fixtures"
+          "manual-document-recorded-fixtures",
+          "package-registry-recorded-fixtures",
+          "review-description-recorded-fixtures",
+          "software-heritage-recorded-fixtures",
+          "sourceforge-recorded-fixtures",
+          "synthetic-fixtures",
+          "wayback-memento-recorded-fixtures"
         ],
         "checked_sources": [
           {
@@ -46,11 +58,53 @@
             "trust_lane": "fixture"
           },
           {
+            "name": "Manual Document Recorded Fixtures",
+            "source_family": "manual_document_recorded",
+            "source_id": "manual-document-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "documentation"
+          },
+          {
+            "name": "Package Registry Recorded Fixtures",
+            "source_family": "package_registry_recorded",
+            "source_id": "package-registry-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "community"
+          },
+          {
+            "name": "Review Description Recorded Fixtures",
+            "source_family": "review_description_recorded",
+            "source_id": "review-description-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "documentation"
+          },
+          {
+            "name": "Software Heritage Recorded Fixtures",
+            "source_family": "software_heritage_recorded",
+            "source_id": "software-heritage-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "preservation"
+          },
+          {
+            "name": "SourceForge Recorded Fixtures",
+            "source_family": "sourceforge_recorded",
+            "source_id": "sourceforge-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "community"
+          },
+          {
             "name": "Synthetic Fixtures",
             "source_family": "synthetic",
             "source_id": "synthetic-fixtures",
             "status": "active_fixture",
             "trust_lane": "fixture"
+          },
+          {
+            "name": "Wayback/Memento Recorded Fixtures",
+            "source_family": "wayback_memento_recorded",
+            "source_id": "wayback-memento-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "preservation"
           }
         ],
         "created_at": "<PYTHON_ORACLE_TIMESTAMP>",
@@ -79,7 +133,13 @@
             "github-releases-recorded-fixtures",
             "internet-archive-recorded-fixtures",
             "local-bundle-fixtures",
-            "synthetic-fixtures"
+            "manual-document-recorded-fixtures",
+            "package-registry-recorded-fixtures",
+            "review-description-recorded-fixtures",
+            "software-heritage-recorded-fixtures",
+            "sourceforge-recorded-fixtures",
+            "synthetic-fixtures",
+            "wayback-memento-recorded-fixtures"
           ],
           "created_from_run": "run-exact-resolution-0001",
           "invalidation_policy": "future_work"

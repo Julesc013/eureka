@@ -44,12 +44,15 @@ class ResolutionRunsCliTestCase(unittest.TestCase):
         self.assertIn("Resolution runs", resolve_output)
         self.assertIn("selected_run_id: run-exact-resolution-0001", resolve_output)
         self.assertIn(
-            "checked_source_ids: article-scan-recorded-fixtures, github-releases-recorded-fixtures, internet-archive-recorded-fixtures, local-bundle-fixtures, synthetic-fixtures",
+            "checked_source_ids: article-scan-recorded-fixtures, github-releases-recorded-fixtures, internet-archive-recorded-fixtures, local-bundle-fixtures, manual-document-recorded-fixtures, package-registry-recorded-fixtures, review-description-recorded-fixtures, software-heritage-recorded-fixtures, sourceforge-recorded-fixtures, synthetic-fixtures, wayback-memento-recorded-fixtures",
             status_output,
         )
         self.assertIn("Article Scan Recorded Fixtures [active_recorded_fixture]", status_output)
         self.assertIn("Internet Archive Recorded Fixtures [active_recorded_fixture]", status_output)
         self.assertIn("Local Bundle Fixtures [active_fixture]", status_output)
+        self.assertIn("Manual Document Recorded Fixtures [active_recorded_fixture]", status_output)
+        self.assertIn("SourceForge Recorded Fixtures [active_recorded_fixture]", status_output)
+        self.assertIn("Wayback/Memento Recorded Fixtures [active_recorded_fixture]", status_output)
         self.assertIn("Synthetic Fixtures [active_fixture]", status_output)
         self.assertIn("run-exact-resolution-0001", list_output)
 

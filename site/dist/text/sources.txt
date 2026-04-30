@@ -1,7 +1,7 @@
 Sources
 =======
 
-source_count: 9
+source_count: 15
 
 - article-scan-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / content_or_member_indexed
 - github-releases-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / representation_indexed
@@ -9,9 +9,15 @@ source_count: 9
 - internet-archive-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / representation_indexed
 - local-bundle-fixtures: active_fixture / fixture_backed_no_live_probe / action_indexed
 - local-files-placeholder: local_private_future / future_local_private_not_ingested / source_known
+- manual-document-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / content_or_member_indexed
+- package-registry-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / content_or_member_indexed
+- review-description-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / content_or_member_indexed
 - software-heritage-placeholder: placeholder / placeholder_not_implemented / source_known
+- software-heritage-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / metadata_indexed
+- sourceforge-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / metadata_indexed
 - synthetic-fixtures: active_fixture / fixture_backed_no_live_probe / action_indexed
 - wayback-memento-placeholder: placeholder / placeholder_not_implemented / source_known
+- wayback-memento-recorded-fixtures: active_recorded_fixture / recorded_fixture_backed_no_live_probe / metadata_indexed
 
 Placeholders remain placeholders. No live source probes are enabled.
 No live search is performed by this static text file.

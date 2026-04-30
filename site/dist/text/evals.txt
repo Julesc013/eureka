@@ -4,7 +4,7 @@ Evals
 archive_task_count: 6
 archive_status_counts: satisfied=6
 search_query_count: 64
-search_status_counts: capability_gap=9, covered=5, partial=22, source_gap=26, unknown=2
+search_status_counts: capability_gap=7, covered=5, partial=40, source_gap=10, unknown=2
 manual_external_baselines_pending: 192
 manual_external_baselines_observed: 0
 

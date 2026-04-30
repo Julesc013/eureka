@@ -10,7 +10,7 @@ Live backend: none
 Live probes: none
 External observations: none
 
-Source records summarized: 9
+Source records summarized: 15
 Public-alpha routes summarized: 94
 
 Files:

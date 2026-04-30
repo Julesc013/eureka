@@ -31,7 +31,7 @@ class RustSourceRegistryParityCatchupTestCase(unittest.TestCase):
             "wayback_memento_placeholder",
         }
 
-        self.assertEqual(fixture["expected_source_count"], 9)
+        self.assertEqual(fixture["expected_source_count"], 15)
         self.assertTrue(fixture["python_remains_oracle"])
         self.assertFalse(fixture["runtime_wiring_allowed"])
         self.assertLessEqual(required_cases, set(cases))
@@ -68,6 +68,12 @@ class RustSourceRegistryParityCatchupTestCase(unittest.TestCase):
             "article-scan-recorded-fixtures",
             "internet-archive-placeholder",
             "local-files-placeholder",
+            "manual-document-recorded-fixtures",
+            "package-registry-recorded-fixtures",
+            "review-description-recorded-fixtures",
+            "software-heritage-recorded-fixtures",
+            "sourceforge-recorded-fixtures",
+            "wayback-memento-recorded-fixtures",
         ):
             self.assertIn(source_id, rust)
         self.assertIn("pub mod source_registry;", lib)

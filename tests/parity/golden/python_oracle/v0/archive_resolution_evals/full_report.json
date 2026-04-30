@@ -2585,7 +2585,7 @@
               "rep.synthetic-member.c78fbddd993ef55a796e8e48",
               "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
               "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
-              "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
+              "rep.wayback-memento-recorded.archived-firefox-xp-release-notes.capture-summary",
               "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata"
             ],
             "required_evidence": [
@@ -2619,11 +2619,13 @@
             ],
             "source_families": [
               "internet_archive_recorded",
-              "local_bundle_fixtures"
+              "local_bundle_fixtures",
+              "wayback_memento_recorded"
             ],
             "source_ids": [
               "internet-archive-recorded-fixtures",
-              "local-bundle-fixtures"
+              "local-bundle-fixtures",
+              "wayback-memento-recorded-fixtures"
             ],
             "status": "satisfied",
             "top_result_count": 5,
@@ -2801,6 +2803,39 @@
                 "version_or_state": "1.0"
               },
               {
+                "evidence": [
+                  "recorded_memento_summary",
+                  "archived-firefox-xp-release-notes.fixture.json"
+                ],
+                "index_record_id": "representation:wayback-memento-recorded:archived-firefox-xp-release-notes:rep.wayback-memento-recorded.archived-firefox-xp-release-notes.capture-summary",
+                "label": "archived Firefox XP release notes recorded capture summary",
+                "primary_lane": "inside_bundles",
+                "record_kind": "representation",
+                "representation_id": "rep.wayback-memento-recorded.archived-firefox-xp-release-notes.capture-summary",
+                "resolved_resource_id": "obj.wayback-memento-recorded.archived-firefox-xp-release-notes",
+                "result_lanes": [
+                  "inside_bundles",
+                  "preservation"
+                ],
+                "route_hints": {
+                  "representation_id": "rep.wayback-memento-recorded.archived-firefox-xp-release-notes.capture-summary",
+                  "surface_route": "/representations",
+                  "target_ref": "wayback-memento-recorded:archived-firefox-xp-release-notes"
+                },
+                "source_family": "wayback_memento_recorded",
+                "source_id": "wayback-memento-recorded-fixtures",
+                "source_label": "Wayback/Memento Recorded Fixtures",
+                "subject_key": "obj.wayback-memento-recorded.archived-firefox-xp-release-notes",
+                "summary": "recorded_memento_summary representation for archived Firefox XP release notes - archived release notes support cutoff evidence",
+                "target_ref": "wayback-memento-recorded:archived-firefox-xp-release-notes",
+                "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+                "user_cost_reasons": [
+                  "parent_bundle_context_only"
+                ],
+                "user_cost_score": 3,
+                "version_or_state": "state.wayback-memento-recorded.archived-firefox-xp-release-notes.recorded"
+              },
+              {
                 "compatibility_evidence": [
                   {
                     "architecture": "unknown",
@@ -2880,39 +2915,6 @@
                 "user_cost_reasons": [
                   "preservation_source",
                   "source_evidence_present"
-                ],
-                "user_cost_score": 3,
-                "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-              },
-              {
-                "evidence": [
-                  "archive_item_metadata",
-                  "internet_archive_items_fixture.json"
-                ],
-                "index_record_id": "representation:internet-archive-recorded:ia-firefox-xp-support-fixture:rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
-                "label": "Firefox XP support notes recorded fixture metadata",
-                "primary_lane": "inside_bundles",
-                "record_kind": "representation",
-                "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
-                "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-                "result_lanes": [
-                  "inside_bundles",
-                  "preservation"
-                ],
-                "route_hints": {
-                  "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
-                  "surface_route": "/representations",
-                  "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-                },
-                "source_family": "internet_archive_recorded",
-                "source_id": "internet-archive-recorded-fixtures",
-                "source_label": "Internet Archive Recorded Fixtures",
-                "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-                "summary": "archive_item_metadata representation for Firefox XP support notes recorded fixture",
-                "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-                "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
-                "user_cost_reasons": [
-                  "parent_bundle_context_only"
                 ],
                 "user_cost_score": 3,
                 "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
@@ -3051,16 +3053,18 @@
               "rep.synthetic-member.c78fbddd993ef55a796e8e48",
               "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
               "rep.local-bundle.windows-xp-browser-tools-bundle.zip",
-              "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
+              "rep.wayback-memento-recorded.archived-firefox-xp-release-notes.capture-summary",
               "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata"
             ],
             "source_families": [
               "internet_archive_recorded",
-              "local_bundle_fixtures"
+              "local_bundle_fixtures",
+              "wayback_memento_recorded"
             ],
             "source_ids": [
               "internet-archive-recorded-fixtures",
-              "local-bundle-fixtures"
+              "local-bundle-fixtures",
+              "wayback-memento-recorded-fixtures"
             ],
             "top_result_count": 5
           },
@@ -3416,6 +3420,39 @@
           "version_or_state": "1.0"
         },
         {
+          "evidence": [
+            "recorded_memento_summary",
+            "archived-firefox-xp-release-notes.fixture.json"
+          ],
+          "index_record_id": "representation:wayback-memento-recorded:archived-firefox-xp-release-notes:rep.wayback-memento-recorded.archived-firefox-xp-release-notes.capture-summary",
+          "label": "archived Firefox XP release notes recorded capture summary",
+          "primary_lane": "inside_bundles",
+          "record_kind": "representation",
+          "representation_id": "rep.wayback-memento-recorded.archived-firefox-xp-release-notes.capture-summary",
+          "resolved_resource_id": "obj.wayback-memento-recorded.archived-firefox-xp-release-notes",
+          "result_lanes": [
+            "inside_bundles",
+            "preservation"
+          ],
+          "route_hints": {
+            "representation_id": "rep.wayback-memento-recorded.archived-firefox-xp-release-notes.capture-summary",
+            "surface_route": "/representations",
+            "target_ref": "wayback-memento-recorded:archived-firefox-xp-release-notes"
+          },
+          "source_family": "wayback_memento_recorded",
+          "source_id": "wayback-memento-recorded-fixtures",
+          "source_label": "Wayback/Memento Recorded Fixtures",
+          "subject_key": "obj.wayback-memento-recorded.archived-firefox-xp-release-notes",
+          "summary": "recorded_memento_summary representation for archived Firefox XP release notes - archived release notes support cutoff evidence",
+          "target_ref": "wayback-memento-recorded:archived-firefox-xp-release-notes",
+          "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
+          "user_cost_reasons": [
+            "parent_bundle_context_only"
+          ],
+          "user_cost_score": 3,
+          "version_or_state": "state.wayback-memento-recorded.archived-firefox-xp-release-notes.recorded"
+        },
+        {
           "compatibility_evidence": [
             {
               "architecture": "unknown",
@@ -3495,39 +3532,6 @@
           "user_cost_reasons": [
             "preservation_source",
             "source_evidence_present"
-          ],
-          "user_cost_score": 3,
-          "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-        },
-        {
-          "evidence": [
-            "archive_item_metadata",
-            "internet_archive_items_fixture.json"
-          ],
-          "index_record_id": "representation:internet-archive-recorded:ia-firefox-xp-support-fixture:rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
-          "label": "Firefox XP support notes recorded fixture metadata",
-          "primary_lane": "inside_bundles",
-          "record_kind": "representation",
-          "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
-          "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-          "result_lanes": [
-            "inside_bundles",
-            "preservation"
-          ],
-          "route_hints": {
-            "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.metadata",
-            "surface_route": "/representations",
-            "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
-          },
-          "source_family": "internet_archive_recorded",
-          "source_id": "internet-archive-recorded-fixtures",
-          "source_label": "Internet Archive Recorded Fixtures",
-          "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-          "summary": "archive_item_metadata representation for Firefox XP support notes recorded fixture",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
-          "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
-          "user_cost_reasons": [
-            "parent_bundle_context_only"
           ],
           "user_cost_score": 3,
           "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"

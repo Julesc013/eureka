@@ -4,15 +4,15 @@
       "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
       "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
       "index_path_kind": "bootstrap_local_path",
-      "record_count": 489,
+      "record_count": 584,
       "record_kind_counts": {
-        "evidence": 313,
+        "evidence": 359,
         "member": 33,
-        "representation": 53,
-        "resolved_object": 25,
-        "source_record": 9,
-        "state_or_release": 25,
-        "synthetic_member": 31
+        "representation": 67,
+        "resolved_object": 39,
+        "source_record": 15,
+        "state_or_release": 39,
+        "synthetic_member": 32
       }
     },
     "query": "archive",
@@ -1878,6 +1878,45 @@
         "version_or_state": "state.internet-archive-recorded.ia.opera.win2000.notes.fixture.recorded"
       },
       {
+        "action_hints": [
+          "inspect_package_metadata",
+          "cite_fixture"
+        ],
+        "evidence": [
+          "label package release with source tarball - release source tarball versioned source archive package_registry_recorded recorded_fixture_metadata Package Registry Recorded Fixtures",
+          "source_tarball release source tarball and versioned source archive metadata for package release with source tarball package_registry_recorded package_registry_metadata Package Registry Recorded Fixtures",
+          "version versioned source archive 1.2.3 fixture metadata package_registry_recorded package_release_metadata Package Registry Recorded Fixtures"
+        ],
+        "index_record_id": "resolved_object:package-registry-recorded:package-release-with-source-tarball",
+        "label": "package release with source tarball - release source tarball versioned source archive",
+        "primary_lane": "community",
+        "record_kind": "resolved_object",
+        "representation_id": "rep.package-registry-recorded.package-release-with-source-tarball.sdist",
+        "resolved_resource_id": "obj.package-registry-recorded.package-release-with-source-tarball",
+        "result_lanes": [
+          "community",
+          "preservation"
+        ],
+        "route_hints": {
+          "record_kind": "resolved_object",
+          "surface_route": "/",
+          "target_ref": "package-registry-recorded:package-release-with-source-tarball"
+        },
+        "source_family": "package_registry_recorded",
+        "source_id": "package-registry-recorded-fixtures",
+        "source_label": "Package Registry Recorded Fixtures",
+        "subject_key": "obj.package-registry-recorded.package-release-with-source-tarball",
+        "summary": "package_release_metadata from Package Registry Recorded Fixtures",
+        "target_ref": "package-registry-recorded:package-release-with-source-tarball",
+        "usefulness_summary": "community; user cost 3; why: recorded_project_or_package_metadata; source_evidence_present",
+        "user_cost_reasons": [
+          "recorded_project_or_package_metadata",
+          "source_evidence_present"
+        ],
+        "user_cost_score": 3,
+        "version_or_state": "versioned source archive 1.2.3 fixture metadata"
+      },
+      {
         "evidence": [
           "archive_item_file",
           "portable-app-package/individual-application-installer.exe.txt"
@@ -2233,69 +2272,36 @@
       },
       {
         "evidence": [
-          "archive_item_file",
-          "release-family-manifest.json"
+          "source_distribution_metadata",
+          "package-release-with-source-tarball.fixture.json"
         ],
-        "index_record_id": "representation:internet-archive-recorded:ia-firefox-xp-support-fixture:rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.3",
-        "label": "release-family-manifest.json",
+        "index_record_id": "representation:package-registry-recorded:package-release-with-source-tarball:rep.package-registry-recorded.package-release-with-source-tarball.sdist",
+        "label": "release source tarball versioned source archive metadata",
         "primary_lane": "inside_bundles",
         "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.3",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
+        "representation_id": "rep.package-registry-recorded.package-release-with-source-tarball.sdist",
+        "resolved_resource_id": "obj.package-registry-recorded.package-release-with-source-tarball",
         "result_lanes": [
           "inside_bundles",
           "preservation"
         ],
         "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.firefox.xp.support.fixture.file.3",
+          "representation_id": "rep.package-registry-recorded.package-release-with-source-tarball.sdist",
           "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture"
+          "target_ref": "package-registry-recorded:package-release-with-source-tarball"
         },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.firefox.xp.support.fixture",
-        "summary": "archive_item_file representation for Firefox XP support notes recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-firefox-xp-support-fixture",
+        "source_family": "package_registry_recorded",
+        "source_id": "package-registry-recorded-fixtures",
+        "source_label": "Package Registry Recorded Fixtures",
+        "subject_key": "obj.package-registry-recorded.package-release-with-source-tarball",
+        "summary": "source_distribution_metadata representation for package release with source tarball - release source tarball versioned source archive",
+        "target_ref": "package-registry-recorded:package-release-with-source-tarball",
         "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
         "user_cost_reasons": [
           "parent_bundle_context_only"
         ],
         "user_cost_score": 3,
-        "version_or_state": "state.internet-archive-recorded.ia.firefox.xp.support.fixture.recorded"
-      },
-      {
-        "evidence": [
-          "archive_item_file",
-          "SHA256SUMS.txt"
-        ],
-        "index_record_id": "representation:internet-archive-recorded:ia-win7-utility-pack-fixture:rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.2",
-        "label": "SHA256SUMS.txt",
-        "primary_lane": "inside_bundles",
-        "record_kind": "representation",
-        "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.2",
-        "resolved_resource_id": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "result_lanes": [
-          "inside_bundles",
-          "preservation"
-        ],
-        "route_hints": {
-          "representation_id": "rep.internet-archive-recorded.ia.win7.utility.pack.fixture.file.2",
-          "surface_route": "/representations",
-          "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture"
-        },
-        "source_family": "internet_archive_recorded",
-        "source_id": "internet-archive-recorded-fixtures",
-        "source_label": "Internet Archive Recorded Fixtures",
-        "subject_key": "obj.internet-archive-recorded.ia.win7.utility.pack.fixture",
-        "summary": "archive_item_file representation for Windows 7 Utility Pack recorded fixture",
-        "target_ref": "internet-archive-recorded:ia-win7-utility-pack-fixture",
-        "usefulness_summary": "inside bundles; user cost 3; why: parent_bundle_context_only",
-        "user_cost_reasons": [
-          "parent_bundle_context_only"
-        ],
-        "user_cost_score": 3,
-        "version_or_state": "state.internet-archive-recorded.ia.win7.utility.pack.fixture.recorded"
+        "version_or_state": "versioned source archive 1.2.3 fixture metadata"
       }
     ],
     "status": "queried"

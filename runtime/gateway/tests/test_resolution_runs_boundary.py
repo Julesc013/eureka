@@ -39,7 +39,13 @@ class ResolutionRunsPublicApiTestCase(unittest.TestCase):
             "github-releases-recorded-fixtures",
             "internet-archive-recorded-fixtures",
             "local-bundle-fixtures",
+            "manual-document-recorded-fixtures",
+            "package-registry-recorded-fixtures",
+            "review-description-recorded-fixtures",
+            "software-heritage-recorded-fixtures",
+            "sourceforge-recorded-fixtures",
             "synthetic-fixtures",
+            "wayback-memento-recorded-fixtures",
         ])
         self.assertEqual(search_response.status_code, 200)
         self.assertEqual(search_response.body["selected_run_id"], "run-deterministic-search-0002")

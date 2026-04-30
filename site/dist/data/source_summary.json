@@ -9,7 +9,7 @@
     "Private local filesystem paths are not exposed in this public summary."
   ],
   "schema_version": "0.1.0",
-  "source_count": 9,
+  "source_count": 15,
   "source_inputs": [
     "control/inventory/sources/*.source.json"
   ],
@@ -251,6 +251,126 @@
     {
       "capabilities": {
         "supported": [
+          "fixture_backed",
+          "live_deferred",
+          "recorded_fixture_backed",
+          "supports_content_text",
+          "supports_item_metadata",
+          "supports_search"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": true,
+        "supports_file_listing": false,
+        "supports_hashes": false,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": true
+      },
+      "coverage_depth": "content_or_member_indexed",
+      "family": "manual_document_recorded",
+      "fixture_backed": true,
+      "future_marker": false,
+      "label": "Manual Document Recorded Fixtures",
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live document source calls",
+        "No PDF download",
+        "No OCR/full-text extraction"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Define Evidence Pack contract before adding richer manual/page fixtures.",
+      "placeholder": false,
+      "posture": "recorded_fixture_backed_no_live_probe",
+      "recorded_fixture_backed": true,
+      "source_id": "manual-document-recorded-fixtures",
+      "status": "active_recorded_fixture"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "fixture_backed",
+          "live_deferred",
+          "recorded_fixture_backed",
+          "supports_content_text",
+          "supports_file_listing",
+          "supports_item_metadata",
+          "supports_member_listing",
+          "supports_search"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": true,
+        "supports_file_listing": true,
+        "supports_hashes": false,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": true,
+        "supports_search": true
+      },
+      "coverage_depth": "content_or_member_indexed",
+      "family": "package_registry_recorded",
+      "fixture_backed": true,
+      "future_marker": false,
+      "label": "Package Registry Recorded Fixtures",
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live package registry access",
+        "No package download",
+        "No install handoff"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Define Index Pack and Evidence Pack contracts before expanding package registry fixtures.",
+      "placeholder": false,
+      "posture": "recorded_fixture_backed_no_live_probe",
+      "recorded_fixture_backed": true,
+      "source_id": "package-registry-recorded-fixtures",
+      "status": "active_recorded_fixture"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "fixture_backed",
+          "live_deferred",
+          "recorded_fixture_backed",
+          "supports_content_text",
+          "supports_item_metadata",
+          "supports_reviews_or_comments",
+          "supports_search"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": true,
+        "supports_file_listing": false,
+        "supports_hashes": false,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": true
+      },
+      "coverage_depth": "content_or_member_indexed",
+      "family": "review_description_recorded",
+      "fixture_backed": true,
+      "future_marker": false,
+      "label": "Review Description Recorded Fixtures",
+      "limitations": [
+        "Recorded fixture scope only",
+        "Subjective evidence only",
+        "No live reviews/comments",
+        "No executable download or malware scan"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Define Evidence Pack and Contribution Pack contracts before adding broader review evidence.",
+      "placeholder": false,
+      "posture": "recorded_fixture_backed_no_live_probe",
+      "recorded_fixture_backed": true,
+      "source_id": "review-description-recorded-fixtures",
+      "status": "active_recorded_fixture"
+    },
+    {
+      "capabilities": {
+        "supported": [
           "live_deferred"
         ],
         "supports_action_paths": false,
@@ -281,6 +401,84 @@
       "recorded_fixture_backed": false,
       "source_id": "software-heritage-placeholder",
       "status": "placeholder"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "fixture_backed",
+          "live_deferred",
+          "recorded_fixture_backed",
+          "supports_hashes",
+          "supports_item_metadata",
+          "supports_search"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": false,
+        "supports_file_listing": false,
+        "supports_hashes": true,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": true
+      },
+      "coverage_depth": "metadata_indexed",
+      "family": "software_heritage_recorded",
+      "fixture_backed": true,
+      "future_marker": false,
+      "label": "Software Heritage Recorded Fixtures",
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live Software Heritage API access",
+        "No source tree fetch",
+        "No license clearance"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Define Source Pack and Evidence Pack contracts before adding broader source snapshot fixtures.",
+      "placeholder": false,
+      "posture": "recorded_fixture_backed_no_live_probe",
+      "recorded_fixture_backed": true,
+      "source_id": "software-heritage-recorded-fixtures",
+      "status": "active_recorded_fixture"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "fixture_backed",
+          "live_deferred",
+          "recorded_fixture_backed",
+          "supports_item_metadata",
+          "supports_reviews_or_comments",
+          "supports_search"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": false,
+        "supports_file_listing": false,
+        "supports_hashes": false,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": true
+      },
+      "coverage_depth": "metadata_indexed",
+      "family": "sourceforge_recorded",
+      "fixture_backed": true,
+      "future_marker": false,
+      "label": "SourceForge Recorded Fixtures",
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live project host access",
+        "No artifact download",
+        "No review truth claim"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Define Source Pack and Contribution Pack contracts before adding broader project-host fixtures.",
+      "placeholder": false,
+      "posture": "recorded_fixture_backed_no_live_probe",
+      "recorded_fixture_backed": true,
+      "source_id": "sourceforge-recorded-fixtures",
+      "status": "active_recorded_fixture"
     },
     {
       "capabilities": {
@@ -355,11 +553,50 @@
       "recorded_fixture_backed": false,
       "source_id": "wayback-memento-placeholder",
       "status": "placeholder"
+    },
+    {
+      "capabilities": {
+        "supported": [
+          "fixture_backed",
+          "live_deferred",
+          "recorded_fixture_backed",
+          "supports_item_metadata",
+          "supports_search",
+          "supports_temporal_captures"
+        ],
+        "supports_action_paths": false,
+        "supports_content_text": false,
+        "supports_file_listing": false,
+        "supports_hashes": false,
+        "supports_item_metadata": true,
+        "supports_live_probe": false,
+        "supports_member_listing": false,
+        "supports_search": true
+      },
+      "coverage_depth": "metadata_indexed",
+      "family": "wayback_memento_recorded",
+      "fixture_backed": true,
+      "future_marker": false,
+      "label": "Wayback/Memento Recorded Fixtures",
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live Wayback or Memento access",
+        "No replay fetch",
+        "No artifact download"
+      ],
+      "live_deferred": true,
+      "live_supported": false,
+      "next_step": "Define a source pack contract for temporal capture fixtures before any live probe approval.",
+      "placeholder": false,
+      "posture": "recorded_fixture_backed_no_live_probe",
+      "recorded_fixture_backed": true,
+      "source_id": "wayback-memento-recorded-fixtures",
+      "status": "active_recorded_fixture"
     }
   ],
   "status_counts": {
     "active_fixture": 2,
-    "active_recorded_fixture": 3,
+    "active_recorded_fixture": 9,
     "local_private_future": 1,
     "placeholder": 3
   }

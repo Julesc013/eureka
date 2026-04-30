@@ -73,9 +73,9 @@ class RustLocalIndexParityPlanningTestCase(unittest.TestCase):
             },
         )
         build_case = fixture["build_status_case"]
-        self.assertEqual(build_case["expected_record_count"], 489)
-        self.assertEqual(build_case["expected_record_kind_counts"]["source_record"], 9)
-        self.assertEqual(build_case["expected_record_kind_counts"]["synthetic_member"], 31)
+        self.assertEqual(build_case["expected_record_count"], 584)
+        self.assertEqual(build_case["expected_record_kind_counts"]["source_record"], 15)
+        self.assertEqual(build_case["expected_record_kind_counts"]["synthetic_member"], 32)
 
     def test_plan_keeps_python_oracle_and_no_runtime_wiring(self) -> None:
         text = PLAN.read_text(encoding="utf-8").lower()

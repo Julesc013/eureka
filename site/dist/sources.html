@@ -147,6 +147,72 @@
           <td>No implemented local-files ingestion connector; No public-alpha arbitrary local path access; No local bundle fixture corpus yet</td>
           <td>Add a governed local bundle fixture corpus before any private local-files workflow.</td>
         </tr>
+        <tr>
+          <td><code>manual-document-recorded-fixtures</code></td>
+          <td>Manual Document Recorded Fixtures</td>
+          <td>manual_document_recorded</td>
+          <td>active_recorded_fixture</td>
+          <td>content_or_member_indexed</td>
+          <td>Recorded fixtures only; no live network access.</td>
+          <td>Search, item metadata, content text.</td>
+          <td>Recorded fixture scope only; No live document source calls; No PDF download; No OCR/full-text extraction</td>
+          <td>Define Evidence Pack contract before adding richer manual/page fixtures.</td>
+        </tr>
+        <tr>
+          <td><code>package-registry-recorded-fixtures</code></td>
+          <td>Package Registry Recorded Fixtures</td>
+          <td>package_registry_recorded</td>
+          <td>active_recorded_fixture</td>
+          <td>content_or_member_indexed</td>
+          <td>Recorded fixtures only; no live network access.</td>
+          <td>Search, item metadata, file listing, member listing, content text.</td>
+          <td>Recorded fixture scope only; No live package registry access; No package download; No install handoff</td>
+          <td>Define Index Pack and Evidence Pack contracts before expanding package registry fixtures.</td>
+        </tr>
+        <tr>
+          <td><code>review-description-recorded-fixtures</code></td>
+          <td>Review Description Recorded Fixtures</td>
+          <td>review_description_recorded</td>
+          <td>active_recorded_fixture</td>
+          <td>content_or_member_indexed</td>
+          <td>Recorded fixtures only; no live network access.</td>
+          <td>Search, item metadata, content text.</td>
+          <td>Recorded fixture scope only; Subjective evidence only; No live reviews/comments; No executable download or malware scan</td>
+          <td>Define Evidence Pack and Contribution Pack contracts before adding broader review evidence.</td>
+        </tr>
+        <tr>
+          <td><code>software-heritage-recorded-fixtures</code></td>
+          <td>Software Heritage Recorded Fixtures</td>
+          <td>software_heritage_recorded</td>
+          <td>active_recorded_fixture</td>
+          <td>metadata_indexed</td>
+          <td>Recorded fixtures only; no live network access.</td>
+          <td>Search, item metadata, hashes.</td>
+          <td>Recorded fixture scope only; No live Software Heritage API access; No source tree fetch; No license clearance</td>
+          <td>Define Source Pack and Evidence Pack contracts before adding broader source snapshot fixtures.</td>
+        </tr>
+        <tr>
+          <td><code>sourceforge-recorded-fixtures</code></td>
+          <td>SourceForge Recorded Fixtures</td>
+          <td>sourceforge_recorded</td>
+          <td>active_recorded_fixture</td>
+          <td>metadata_indexed</td>
+          <td>Recorded fixtures only; no live network access.</td>
+          <td>Search, item metadata.</td>
+          <td>Recorded fixture scope only; No live project host access; No artifact download; No review truth claim</td>
+          <td>Define Source Pack and Contribution Pack contracts before adding broader project-host fixtures.</td>
+        </tr>
+        <tr>
+          <td><code>wayback-memento-recorded-fixtures</code></td>
+          <td>Wayback/Memento Recorded Fixtures</td>
+          <td>wayback_memento_recorded</td>
+          <td>active_recorded_fixture</td>
+          <td>metadata_indexed</td>
+          <td>Recorded fixtures only; no live network access.</td>
+          <td>Search, item metadata, temporal captures.</td>
+          <td>Recorded fixture scope only; No live Wayback or Memento access; No replay fetch; No artifact download</td>
+          <td>Define a source pack contract for temporal capture fixtures before any live probe approval.</td>
+        </tr>
       </tbody>
     </table>
 

@@ -45,6 +45,12 @@ class SourceRegistryCoverageProjectionTestCase(unittest.TestCase):
                 "article-scan-recorded-fixtures",
                 "github-releases-recorded-fixtures",
                 "internet-archive-recorded-fixtures",
+                "manual-document-recorded-fixtures",
+                "package-registry-recorded-fixtures",
+                "review-description-recorded-fixtures",
+                "software-heritage-recorded-fixtures",
+                "sourceforge-recorded-fixtures",
+                "wayback-memento-recorded-fixtures",
             ],
         )
 

@@ -77,8 +77,9 @@ class PublicAlphaRehearsalEvidenceTest(unittest.TestCase):
 
         search = manifest["eval_audit"]["search_usefulness_status"]
         self.assertEqual(search["query_count"], 64)
-        self.assertEqual(search["status_counts"]["source_gap"], 26)
-        self.assertEqual(search["status_counts"]["capability_gap"], 9)
+        self.assertEqual(search["status_counts"]["partial"], 40)
+        self.assertEqual(search["status_counts"]["source_gap"], 10)
+        self.assertEqual(search["status_counts"]["capability_gap"], 7)
 
         external = manifest["eval_audit"]["external_baseline_status"]
         self.assertEqual(external["global_pending_slots"], 192)

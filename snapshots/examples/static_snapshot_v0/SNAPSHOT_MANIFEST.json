@@ -79,7 +79,7 @@
     "archive_eval_tasks": 6,
     "public_pages": 49,
     "search_audit_queries": 64,
-    "sources": 9
+    "sources": 15
   },
   "stability": "experimental",
   "status": "static_demo"

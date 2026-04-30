@@ -220,11 +220,17 @@ class NativeCliMainTestCase(unittest.TestCase):
 
         self.assertEqual(exit_code, 0)
         self.assertIn("Source registry", output)
-        self.assertIn("source_count: 9", output)
+        self.assertIn("source_count: 15", output)
         self.assertIn("article-scan-recorded-fixtures", output)
         self.assertIn("synthetic-fixtures", output)
         self.assertIn("github-releases-recorded-fixtures", output)
         self.assertIn("internet-archive-recorded-fixtures", output)
+        self.assertIn("manual-document-recorded-fixtures", output)
+        self.assertIn("package-registry-recorded-fixtures", output)
+        self.assertIn("review-description-recorded-fixtures", output)
+        self.assertIn("software-heritage-recorded-fixtures", output)
+        self.assertIn("sourceforge-recorded-fixtures", output)
+        self.assertIn("wayback-memento-recorded-fixtures", output)
         self.assertIn("local-bundle-fixtures", output)
         self.assertIn("internet-archive-placeholder", output)
         self.assertIn("connector: Synthetic software connector [fixture_backed]", output)
@@ -260,6 +266,12 @@ class NativeCliMainTestCase(unittest.TestCase):
                 "article-scan-recorded-fixtures",
                 "github-releases-recorded-fixtures",
                 "internet-archive-recorded-fixtures",
+                "manual-document-recorded-fixtures",
+                "package-registry-recorded-fixtures",
+                "review-description-recorded-fixtures",
+                "software-heritage-recorded-fixtures",
+                "sourceforge-recorded-fixtures",
+                "wayback-memento-recorded-fixtures",
             ],
         )
 
@@ -315,6 +327,12 @@ class NativeCliMainTestCase(unittest.TestCase):
                 "internet_archive_recorded",
                 "local_bundle_fixtures",
                 "article_scan_recorded",
+                "wayback_memento_recorded",
+                "software_heritage_recorded",
+                "package_registry_recorded",
+                "manual_document_recorded",
+                "review_description_recorded",
+                "sourceforge_recorded",
             ],
         )
         self.assertGreaterEqual(len(payload["near_matches"]), 3)

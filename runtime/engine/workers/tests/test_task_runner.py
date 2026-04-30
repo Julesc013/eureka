@@ -54,7 +54,7 @@ class LocalTaskRunnerServiceTestCase(unittest.TestCase):
 
         self.assertEqual(task.status, "completed")
         self.assertEqual(task.task_kind, "validate_source_registry")
-        self.assertEqual(task.result_summary["source_count"], 9)
+        self.assertEqual(task.result_summary["source_count"], 15)
         self.assertEqual(
             task.result_summary["active_fixture_sources"],
             ["local-bundle-fixtures", "synthetic-fixtures"],
@@ -65,6 +65,12 @@ class LocalTaskRunnerServiceTestCase(unittest.TestCase):
                 "article-scan-recorded-fixtures",
                 "github-releases-recorded-fixtures",
                 "internet-archive-recorded-fixtures",
+                "manual-document-recorded-fixtures",
+                "package-registry-recorded-fixtures",
+                "review-description-recorded-fixtures",
+                "software-heritage-recorded-fixtures",
+                "sourceforge-recorded-fixtures",
+                "wayback-memento-recorded-fixtures",
             ],
         )
 

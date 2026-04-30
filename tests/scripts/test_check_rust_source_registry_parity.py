@@ -28,7 +28,7 @@ class RustSourceRegistryParityScriptTestCase(unittest.TestCase):
         self.assertTrue(payload["python_remains_oracle"])
         self.assertFalse(payload["runtime_wiring_allowed"])
         self.assertEqual(payload["structure"]["status"], "passed")
-        self.assertEqual(payload["structure"]["source_count"], 9)
+        self.assertEqual(payload["structure"]["source_count"], 15)
         self.assertGreaterEqual(payload["structure"]["case_count"], 10)
 
     def test_require_cargo_reports_cargo_availability_honestly(self) -> None:

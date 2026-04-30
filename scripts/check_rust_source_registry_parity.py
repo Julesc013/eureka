@@ -150,6 +150,12 @@ def _validate_structure() -> dict[str, Any]:
             "article-scan-recorded-fixtures",
             "internet-archive-placeholder",
             "local-files-placeholder",
+            "manual-document-recorded-fixtures",
+            "package-registry-recorded-fixtures",
+            "review-description-recorded-fixtures",
+            "software-heritage-recorded-fixtures",
+            "sourceforge-recorded-fixtures",
+            "wayback-memento-recorded-fixtures",
         ]:
             if source_id not in rust_text:
                 errors.append(f"{_rel(RUST_SOURCE_REGISTRY)} missing source case {source_id!r}")

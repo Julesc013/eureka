@@ -17,15 +17,15 @@
     "case_id": "build_status_current_bounded_corpus",
     "input_corpus": "current bounded demo corpus",
     "golden_file": "local_index/status_after_build.json",
-    "expected_record_count": 489,
+    "expected_record_count": 584,
     "expected_record_kind_counts": {
-      "evidence": 313,
+      "evidence": 359,
       "member": 33,
-      "representation": 53,
-      "resolved_object": 25,
-      "source_record": 9,
-      "state_or_release": 25,
-      "synthetic_member": 31
+      "representation": 67,
+      "resolved_object": 39,
+      "source_record": 15,
+      "state_or_release": 39,
+      "synthetic_member": 32
     },
     "expected_fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
     "expected_index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>"

@@ -9,14 +9,26 @@
           "github_releases",
           "internet_archive_recorded",
           "local_bundle_fixtures",
-          "synthetic"
+          "manual_document_recorded",
+          "package_registry_recorded",
+          "review_description_recorded",
+          "software_heritage_recorded",
+          "sourceforge_recorded",
+          "synthetic",
+          "wayback_memento_recorded"
         ],
         "checked_source_ids": [
           "article-scan-recorded-fixtures",
           "github-releases-recorded-fixtures",
           "internet-archive-recorded-fixtures",
           "local-bundle-fixtures",
-          "synthetic-fixtures"
+          "manual-document-recorded-fixtures",
+          "package-registry-recorded-fixtures",
+          "review-description-recorded-fixtures",
+          "software-heritage-recorded-fixtures",
+          "sourceforge-recorded-fixtures",
+          "synthetic-fixtures",
+          "wayback-memento-recorded-fixtures"
         ],
         "checked_sources": [
           {
@@ -48,11 +60,53 @@
             "trust_lane": "fixture"
           },
           {
+            "name": "Manual Document Recorded Fixtures",
+            "source_family": "manual_document_recorded",
+            "source_id": "manual-document-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "documentation"
+          },
+          {
+            "name": "Package Registry Recorded Fixtures",
+            "source_family": "package_registry_recorded",
+            "source_id": "package-registry-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "community"
+          },
+          {
+            "name": "Review Description Recorded Fixtures",
+            "source_family": "review_description_recorded",
+            "source_id": "review-description-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "documentation"
+          },
+          {
+            "name": "Software Heritage Recorded Fixtures",
+            "source_family": "software_heritage_recorded",
+            "source_id": "software-heritage-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "preservation"
+          },
+          {
+            "name": "SourceForge Recorded Fixtures",
+            "source_family": "sourceforge_recorded",
+            "source_id": "sourceforge-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "community"
+          },
+          {
             "name": "Synthetic Fixtures",
             "source_family": "synthetic",
             "source_id": "synthetic-fixtures",
             "status": "active_fixture",
             "trust_lane": "fixture"
+          },
+          {
+            "name": "Wayback/Memento Recorded Fixtures",
+            "source_family": "wayback_memento_recorded",
+            "source_id": "wayback-memento-recorded-fixtures",
+            "status": "active_recorded_fixture",
+            "trust_lane": "preservation"
           }
         ],
         "completed_at": "<PYTHON_ORACLE_TIMESTAMP>",
@@ -1314,6 +1368,61 @@
             {
               "evidence": [
                 {
+                  "asserted_by_family": "package_registry_recorded",
+                  "asserted_by_label": "Package Registry Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "package release with source tarball - release source tarball versioned source archive",
+                  "evidence_kind": "recorded_fixture_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#package-release-with-source-tarball/label"
+                },
+                {
+                  "asserted_by_family": "package_registry_recorded",
+                  "asserted_by_label": "Package Registry Recorded Fixtures",
+                  "claim_kind": "source_tarball",
+                  "claim_value": "release source tarball and versioned source archive metadata for package release with source tarball",
+                  "evidence_kind": "package_registry_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#package-release-with-source-tarball/evidence/0"
+                },
+                {
+                  "asserted_by_family": "package_registry_recorded",
+                  "asserted_by_label": "Package Registry Recorded Fixtures",
+                  "claim_kind": "version",
+                  "claim_value": "versioned source archive 1.2.3 fixture metadata",
+                  "evidence_kind": "package_release_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#package-release-with-source-tarball/evidence/1"
+                }
+              ],
+              "object": {
+                "action_hints": [
+                  "inspect_package_metadata",
+                  "cite_fixture"
+                ],
+                "id": "obj.package-registry-recorded.package-release-with-source-tarball",
+                "kind": "package_release_metadata",
+                "label": "package release with source tarball - release source tarball versioned source archive",
+                "primary_lane": "community",
+                "result_lanes": [
+                  "community",
+                  "preservation"
+                ],
+                "usefulness_summary": "community; user cost 3; why: recorded_project_or_package_metadata",
+                "user_cost_reasons": [
+                  "recorded_project_or_package_metadata"
+                ],
+                "user_cost_score": 3
+              },
+              "resolved_resource_id": "resolved:sha256:fc4c4f9692efc5c0dd8d3463bd4dbe2515ef85ca4beaa2a9cf457a3babd1acf4",
+              "source": {
+                "family": "package_registry_recorded",
+                "label": "Package Registry Recorded Fixtures",
+                "locator": "package-registry-recorded://package-release-with-source-tarball",
+                "source_id": "package-registry-recorded-fixtures"
+              },
+              "target_ref": "package-registry-recorded:package-release-with-source-tarball"
+            },
+            {
+              "evidence": [
+                {
                   "asserted_at": "2008",
                   "asserted_by_family": "internet_archive_recorded",
                   "asserted_by_label": "Internet Archive Recorded Fixtures",
@@ -1468,6 +1577,62 @@
                 "source_id": "internet-archive-recorded-fixtures"
               },
               "target_ref": "internet-archive-recorded:ia-powerpc-tiger-browser-fixture"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_by_family": "software_heritage_recorded",
+                  "asserted_by_label": "Software Heritage Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "software heritage source snapshot for old project - Software Heritage snapshot source archive SWHID",
+                  "evidence_kind": "recorded_fixture_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#software-heritage-snapshot-old-project/label"
+                },
+                {
+                  "asserted_by_family": "software_heritage_recorded",
+                  "asserted_by_label": "Software Heritage Recorded Fixtures",
+                  "claim_kind": "swhid",
+                  "claim_value": "SWHID fixture token swh:1:dir:0000000000000000000000000000000000000000 for Software Heritage snapshot",
+                  "evidence_kind": "recorded_source_snapshot_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#software-heritage-snapshot-old-project/evidence/0"
+                },
+                {
+                  "asserted_by_family": "software_heritage_recorded",
+                  "asserted_by_label": "Software Heritage Recorded Fixtures",
+                  "claim_kind": "source_archive",
+                  "claim_value": "source archive metadata for old project recorded fixture",
+                  "evidence_kind": "source_tree_snapshot",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#software-heritage-snapshot-old-project/evidence/1"
+                }
+              ],
+              "object": {
+                "action_hints": [
+                  "inspect_source_snapshot",
+                  "cite_fixture",
+                  "export_manifest"
+                ],
+                "id": "obj.software-heritage-recorded.snapshot-old-project",
+                "kind": "source_repository_snapshot",
+                "label": "software heritage source snapshot for old project - Software Heritage snapshot source archive SWHID",
+                "primary_lane": "preservation",
+                "result_lanes": [
+                  "preservation",
+                  "community"
+                ],
+                "usefulness_summary": "preservation; user cost 3; why: recorded_source_snapshot_metadata",
+                "user_cost_reasons": [
+                  "recorded_source_snapshot_metadata"
+                ],
+                "user_cost_score": 3
+              },
+              "resolved_resource_id": "resolved:sha256:decf1dce43baeb5b40c3d6539e281fadc60fab8f47a9e730a8d3b5ca3680eb22",
+              "source": {
+                "family": "software_heritage_recorded",
+                "label": "Software Heritage Recorded Fixtures",
+                "locator": "software-heritage-recorded://software-heritage-snapshot-old-project",
+                "source_id": "software-heritage-recorded-fixtures"
+              },
+              "target_ref": "software-heritage-recorded:software-heritage-snapshot-old-project"
             },
             {
               "evidence": [
@@ -2141,9 +2306,336 @@
                 "source_id": "internet-archive-recorded-fixtures"
               },
               "target_ref": "internet-archive-recorded:ia-win98-registry-repair-fixture"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "archived Firefox XP release notes - archived release notes support cutoff evidence",
+                  "evidence_kind": "recorded_fixture_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-firefox-xp-release-notes/label"
+                },
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "release_notes",
+                  "claim_value": "archived release notes for Firefox on Windows XP with support cutoff evidence and no live capture fetch",
+                  "evidence_kind": "recorded_memento_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-firefox-xp-release-notes/evidence/0"
+                },
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "compatibility_note",
+                  "claim_value": "Windows XP support cutoff evidence for Firefox release notes fixture; Windows NT 5.1 mentioned as recorded compatibility evidence",
+                  "evidence_kind": "release_notes",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-firefox-xp-release-notes/evidence/1"
+                },
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "capture_locator",
+                  "claim_value": "capture URL fixture token wayback-memento-recorded://archived-firefox-xp-release-notes",
+                  "evidence_kind": "recorded_capture_locator",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-firefox-xp-release-notes/evidence/2"
+                }
+              ],
+              "object": {
+                "action_hints": [
+                  "inspect_recorded_capture",
+                  "cite_fixture"
+                ],
+                "compatibility_evidence": [
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "supports_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:77b2f1150ace2bce9dd6fa45445c7c72426c124a94fb94380d8fb326ff0ce255",
+                    "evidence_kind": "compatibility_note",
+                    "evidence_text": "Windows XP support cutoff evidence for Firefox release notes fixture; Windows NT 5.1 mentioned as recorded compatibility evidence",
+                    "locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-firefox-xp-release-notes/evidence/1",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "wayback_memento_recorded",
+                    "source_id": "wayback-memento-recorded-fixtures",
+                    "source_label": "Wayback/Memento Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.wayback-memento-recorded.archived-firefox-xp-release-notes",
+                    "subject_target_ref": "wayback-memento-recorded:archived-firefox-xp-release-notes"
+                  },
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "mentions_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:85295d949040ed4f18e4f68dc108315b8ee916bccae0e086496438e87ad931b5",
+                    "evidence_kind": "release_notes",
+                    "evidence_text": "archived release notes for Firefox on Windows XP with support cutoff evidence and no live capture fetch",
+                    "locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-firefox-xp-release-notes/evidence/0",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows XP",
+                      "name": "Windows XP",
+                      "version": "NT 5.1"
+                    },
+                    "source_family": "wayback_memento_recorded",
+                    "source_id": "wayback-memento-recorded-fixtures",
+                    "source_label": "Wayback/Memento Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.wayback-memento-recorded.archived-firefox-xp-release-notes",
+                    "subject_target_ref": "wayback-memento-recorded:archived-firefox-xp-release-notes"
+                  }
+                ],
+                "compatibility_summary": "Windows XP: supports_platform via compatibility_note (medium); Windows XP: mentions_platform via release_notes (medium)",
+                "id": "obj.wayback-memento-recorded.archived-firefox-xp-release-notes",
+                "kind": "web_capture_metadata",
+                "label": "archived Firefox XP release notes - archived release notes support cutoff evidence",
+                "primary_lane": "preservation",
+                "result_lanes": [
+                  "preservation",
+                  "mentions_or_traces"
+                ],
+                "usefulness_summary": "preservation; user cost 4; why: recorded_web_capture_metadata",
+                "user_cost_reasons": [
+                  "recorded_web_capture_metadata"
+                ],
+                "user_cost_score": 4
+              },
+              "resolved_resource_id": "resolved:sha256:28f063315ffc1e30f4dff435313769ad56ce76d17cc962fec522e44791ae3b1b",
+              "source": {
+                "family": "wayback_memento_recorded",
+                "label": "Wayback/Memento Recorded Fixtures",
+                "locator": "wayback-memento-recorded://archived-firefox-xp-release-notes",
+                "source_id": "wayback-memento-recorded-fixtures"
+              },
+              "target_ref": "wayback-memento-recorded:archived-firefox-xp-release-notes"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "archived Microsoft Download Center DirectX 9.0c - archived download page download artifact metadata evidence",
+                  "evidence_kind": "recorded_fixture_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-microsoft-download-center-directx-90c/label"
+                },
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "download_page",
+                  "claim_value": "archived download page for Microsoft Download Center DirectX 9.0c with download artifact metadata evidence",
+                  "evidence_kind": "recorded_memento_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-microsoft-download-center-directx-90c/evidence/0"
+                },
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "compatibility_note",
+                  "claim_value": "offline installer Windows 98 compatibility evidence for DirectX 9.0c fixture; no executable is redistributed",
+                  "evidence_kind": "release_notes",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-microsoft-download-center-directx-90c/evidence/1"
+                },
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "artifact_listing",
+                  "claim_value": "offline installer artifact metadata only for DirectX 9.0c; download remains blocked",
+                  "evidence_kind": "recorded_artifact_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-microsoft-download-center-directx-90c/evidence/2"
+                }
+              ],
+              "object": {
+                "action_hints": [
+                  "inspect_recorded_capture",
+                  "cite_fixture"
+                ],
+                "compatibility_evidence": [
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "supports_platform",
+                    "confidence": "medium",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:918eee6e7c84c27f0634f0f5d08dac302d03f62b9be3ec747554869ce4e9f38d",
+                    "evidence_kind": "compatibility_note",
+                    "evidence_text": "offline installer Windows 98 compatibility evidence for DirectX 9.0c fixture; no executable is redistributed",
+                    "locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#archived-microsoft-download-center-directx-90c/evidence/1",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows 98",
+                      "name": "Windows 98"
+                    },
+                    "source_family": "wayback_memento_recorded",
+                    "source_id": "wayback-memento-recorded-fixtures",
+                    "source_label": "Wayback/Memento Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.wayback-memento-recorded.archived-microsoft-download-center-directx-90c",
+                    "subject_target_ref": "wayback-memento-recorded:archived-microsoft-download-center-directx-90c"
+                  }
+                ],
+                "compatibility_summary": "Windows 98: supports_platform via compatibility_note (medium)",
+                "id": "obj.wayback-memento-recorded.archived-microsoft-download-center-directx-90c",
+                "kind": "web_capture_metadata",
+                "label": "archived Microsoft Download Center DirectX 9.0c - archived download page download artifact metadata evidence",
+                "primary_lane": "preservation",
+                "result_lanes": [
+                  "preservation",
+                  "mentions_or_traces"
+                ],
+                "usefulness_summary": "preservation; user cost 4; why: recorded_web_capture_metadata",
+                "user_cost_reasons": [
+                  "recorded_web_capture_metadata"
+                ],
+                "user_cost_score": 4
+              },
+              "resolved_resource_id": "resolved:sha256:0d4e0050ac04b0c1fd5b58420339f7fde39e6edb452fa1a8faa3043e259900ac",
+              "source": {
+                "family": "wayback_memento_recorded",
+                "label": "Wayback/Memento Recorded Fixtures",
+                "locator": "wayback-memento-recorded://archived-microsoft-download-center-directx-90c",
+                "source_id": "wayback-memento-recorded-fixtures"
+              },
+              "target_ref": "wayback-memento-recorded:archived-microsoft-download-center-directx-90c"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "old Creative Labs driver page - archived support page driver list capture URL",
+                  "evidence_kind": "recorded_fixture_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#old-creative-labs-driver-page/label"
+                },
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "archived_support_page",
+                  "claim_value": "archived support page with driver list and capture URL fixture token for old Creative Labs driver page",
+                  "evidence_kind": "recorded_memento_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#old-creative-labs-driver-page/evidence/0"
+                },
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "driver_list",
+                  "claim_value": "Creative Labs driver list metadata includes Windows 98 support-page hints; no driver download is exposed",
+                  "evidence_kind": "driver_page_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#old-creative-labs-driver-page/evidence/1"
+                }
+              ],
+              "object": {
+                "action_hints": [
+                  "inspect_recorded_capture",
+                  "cite_fixture"
+                ],
+                "compatibility_evidence": [
+                  {
+                    "architecture": "unknown",
+                    "claim_type": "mentions_platform",
+                    "confidence": "low",
+                    "created_by_slice": "compatibility_evidence_pack_v0",
+                    "evidence_id": "compat-evidence:sha256:f10c8e72379679f6d3987c688770a620d7388a8a0978175e2a7776928e194362",
+                    "evidence_kind": "driver_page_metadata",
+                    "evidence_text": "Creative Labs driver list metadata includes Windows 98 support-page hints; no driver download is exposed",
+                    "locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#old-creative-labs-driver-page/evidence/1",
+                    "platform": {
+                      "family": "windows",
+                      "marketing_alias": "Windows 98",
+                      "name": "Windows 98"
+                    },
+                    "source_family": "wayback_memento_recorded",
+                    "source_id": "wayback-memento-recorded-fixtures",
+                    "source_label": "Wayback/Memento Recorded Fixtures",
+                    "subject_resolved_resource_id": "obj.wayback-memento-recorded.old-creative-labs-driver-page",
+                    "subject_target_ref": "wayback-memento-recorded:old-creative-labs-driver-page"
+                  }
+                ],
+                "compatibility_summary": "Windows 98: mentions_platform via driver_page_metadata (low)",
+                "id": "obj.wayback-memento-recorded.old-creative-labs-driver-page",
+                "kind": "web_capture_metadata",
+                "label": "old Creative Labs driver page - archived support page driver list capture URL",
+                "primary_lane": "preservation",
+                "result_lanes": [
+                  "preservation",
+                  "mentions_or_traces"
+                ],
+                "usefulness_summary": "preservation; user cost 4; why: recorded_web_capture_metadata",
+                "user_cost_reasons": [
+                  "recorded_web_capture_metadata"
+                ],
+                "user_cost_score": 4
+              },
+              "resolved_resource_id": "resolved:sha256:74ef7fcd22b7b92e44378e10706f56011685fafa4f08f39a6f7dc07f96503a51",
+              "source": {
+                "family": "wayback_memento_recorded",
+                "label": "Wayback/Memento Recorded Fixtures",
+                "locator": "wayback-memento-recorded://old-creative-labs-driver-page",
+                "source_id": "wayback-memento-recorded-fixtures"
+              },
+              "target_ref": "wayback-memento-recorded:old-creative-labs-driver-page"
+            },
+            {
+              "evidence": [
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "label",
+                  "claim_value": "old Netscape download page - archived download page version list download artifact metadata",
+                  "evidence_kind": "recorded_fixture_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#old-netscape-download-page/label"
+                },
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "download_page",
+                  "claim_value": "archived download page for old Netscape download page with version list and download artifact metadata only",
+                  "evidence_kind": "recorded_memento_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#old-netscape-download-page/evidence/0"
+                },
+                {
+                  "asserted_by_family": "wayback_memento_recorded",
+                  "asserted_by_label": "Wayback/Memento Recorded Fixtures",
+                  "claim_kind": "version_list",
+                  "claim_value": "version list fixture for a legacy Netscape browser page; download remains blocked",
+                  "evidence_kind": "recorded_page_metadata",
+                  "evidence_locator": "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json#old-netscape-download-page/evidence/1"
+                }
+              ],
+              "object": {
+                "action_hints": [
+                  "inspect_recorded_capture",
+                  "cite_fixture"
+                ],
+                "id": "obj.wayback-memento-recorded.old-netscape-download-page",
+                "kind": "web_capture_metadata",
+                "label": "old Netscape download page - archived download page version list download artifact metadata",
+                "primary_lane": "preservation",
+                "result_lanes": [
+                  "preservation",
+                  "mentions_or_traces"
+                ],
+                "usefulness_summary": "preservation; user cost 4; why: recorded_web_capture_metadata",
+                "user_cost_reasons": [
+                  "recorded_web_capture_metadata"
+                ],
+                "user_cost_score": 4
+              },
+              "resolved_resource_id": "resolved:sha256:3c534a8e98e68a6af30193fb0434fae0440805da582ebe50f6cc32158380e54e",
+              "source": {
+                "family": "wayback_memento_recorded",
+                "label": "Wayback/Memento Recorded Fixtures",
+                "locator": "wayback-memento-recorded://old-netscape-download-page",
+                "source_id": "wayback-memento-recorded-fixtures"
+              },
+              "target_ref": "wayback-memento-recorded:old-netscape-download-page"
             }
           ],
-          "result_count": 16,
+          "result_count": 22,
           "result_kind": "search_results"
         },
         "run_id": "run-deterministic-search-0001",

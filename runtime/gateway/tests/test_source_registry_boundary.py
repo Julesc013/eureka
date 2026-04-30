@@ -15,7 +15,7 @@ class SourceRegistryPublicApiTestCase(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.body["status"], "listed")
-        self.assertEqual(response.body["source_count"], 9)
+        self.assertEqual(response.body["source_count"], 15)
         self.assertEqual(response.body["sources"][0]["source_id"], "article-scan-recorded-fixtures")
         self.assertEqual(response.body["sources"][0]["connector"]["status"], "fixture_backed")
 
@@ -37,6 +37,12 @@ class SourceRegistryPublicApiTestCase(unittest.TestCase):
                 "article-scan-recorded-fixtures",
                 "github-releases-recorded-fixtures",
                 "internet-archive-recorded-fixtures",
+                "manual-document-recorded-fixtures",
+                "package-registry-recorded-fixtures",
+                "review-description-recorded-fixtures",
+                "software-heritage-recorded-fixtures",
+                "sourceforge-recorded-fixtures",
+                "wayback-memento-recorded-fixtures",
             ],
         )
 

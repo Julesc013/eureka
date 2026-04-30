@@ -41,7 +41,7 @@ isolated Rust candidate can match the committed Python-oracle fixture shape.
 Rust Source Registry Parity Catch-up v0 updates this first seam to the current
 Python source-registry shape. The candidate now models capability booleans,
 coverage-depth metadata, connector mode, limitations, next coverage steps,
-placeholder warnings, and the current nine-source inventory. The source cases
+placeholder warnings, and the current source inventory. The source cases
 are listed in `tests/parity/rust_source_registry_cases.json`; the stdlib
 checker `scripts/check_rust_source_registry_parity.py` validates the fixture
 map and Rust source structure, and runs crate-local source-registry tests only

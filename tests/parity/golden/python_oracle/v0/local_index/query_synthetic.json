@@ -4,15 +4,15 @@
       "fts_mode": "<PYTHON_ORACLE_FTS_MODE_NORMALIZED>",
       "index_path": "<PYTHON_ORACLE_LOCAL_INDEX_PATH>",
       "index_path_kind": "bootstrap_local_path",
-      "record_count": 489,
+      "record_count": 584,
       "record_kind_counts": {
-        "evidence": 313,
+        "evidence": 359,
         "member": 33,
-        "representation": 53,
-        "resolved_object": 25,
-        "source_record": 9,
-        "state_or_release": 25,
-        "synthetic_member": 31
+        "representation": 67,
+        "resolved_object": 39,
+        "source_record": 15,
+        "state_or_release": 39,
+        "synthetic_member": 32
       }
     },
     "query": "synthetic",
@@ -4266,6 +4266,61 @@
         "version_or_state": "state.synthetic-member.f44d165492900ffabbd5ef00.derived"
       },
       {
+        "action_hints": [
+          "inspect_parent_package",
+          "read_member",
+          "cite_fixture"
+        ],
+        "evidence": [
+          "label Visual C++ 6 service pack readme - service pack readme release notes readme member package_registry_recorded recorded_fixture_metadata Package Registry Recorded Fixtures",
+          "readme_member service pack readme release notes readme member for Visual C++ 6 service pack package_registry_recorded package_member_manifest Package Registry Recorded Fixtures",
+          "download_artifact Visual C++ 6.0 service pack download artifact metadata with service pack installer label; no download URL is exposed package_registry_recorded package_release_metadata Package Registry Recorded Fixtures"
+        ],
+        "index_record_id": "synthetic_member:package-registry-recorded:visual-cpp-6-service-pack-fixture",
+        "label": "Visual C++ 6 service pack readme - service pack readme release notes readme member",
+        "media_type": "text/plain",
+        "member_kind": "readme",
+        "member_path": "vc6sp/README-SP.txt",
+        "parent_object_label": "Visual C++ 6.0 service pack download recorded container fixture",
+        "parent_representation_id": "rep.package-registry-recorded.visual-cpp-6-service-pack-container.iso-manifest",
+        "parent_resolved_resource_id": "obj.package-registry-recorded.visual-cpp-6-service-pack-container",
+        "parent_target_ref": "package-registry-recorded:visual-cpp-6-service-pack-container",
+        "primary_lane": "inside_bundles",
+        "record_kind": "synthetic_member",
+        "representation_id": "rep.package-registry-recorded.visual-cpp-6-service-pack-fixture.readme",
+        "resolved_resource_id": "obj.package-registry-recorded.visual-cpp-6-service-pack-fixture.readme",
+        "result_lanes": [
+          "inside_bundles",
+          "documentation"
+        ],
+        "route_hints": {
+          "member_path": "vc6sp/README-SP.txt",
+          "parent_representation_id": "rep.package-registry-recorded.visual-cpp-6-service-pack-container.iso-manifest",
+          "parent_target_ref": "package-registry-recorded:visual-cpp-6-service-pack-container",
+          "record_kind": "synthetic_member",
+          "surface_route": "/",
+          "target_ref": "package-registry-recorded:visual-cpp-6-service-pack-fixture"
+        },
+        "size_bytes": 380,
+        "source_family": "package_registry_recorded",
+        "source_id": "package-registry-recorded-fixtures",
+        "source_label": "Package Registry Recorded Fixtures",
+        "subject_key": "obj.package-registry-recorded.visual-cpp-6-service-pack-fixture.readme",
+        "summary": "readme member of Visual C++ 6.0 service pack download recorded container fixture",
+        "target_ref": "package-registry-recorded:visual-cpp-6-service-pack-fixture",
+        "usefulness_summary": "inside bundles; user cost 5; why: inner_member_has_parent_lineage; member_has_path; action_available; member_has_preview_or_readback_action; source_evidence_present; documentation_only",
+        "user_cost_reasons": [
+          "inner_member_has_parent_lineage",
+          "member_has_path",
+          "action_available",
+          "member_has_preview_or_readback_action",
+          "source_evidence_present",
+          "documentation_only"
+        ],
+        "user_cost_score": 5,
+        "version_or_state": "state.package-registry-recorded.visual-cpp-6-service-pack-fixture.recorded"
+      },
+      {
         "evidence": [
           "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
           "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
@@ -4357,37 +4412,6 @@
         ],
         "user_cost_score": 6,
         "version_or_state": "0.9.0"
-      },
-      {
-        "evidence": [
-          "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/archive/fixtures/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
-        ],
-        "index_record_id": "state_or_release:state.archivebox.synthetic.release",
-        "label": "ArchiveBox 0.8.5 0.8.5",
-        "primary_lane": "mentions_or_traces",
-        "record_kind": "state_or_release",
-        "resolved_resource_id": "obj.archivebox.synthetic",
-        "result_lanes": [
-          "mentions_or_traces"
-        ],
-        "route_hints": {
-          "record_kind": "state_or_release",
-          "surface_route": "/",
-          "target_ref": "fixture:software/archivebox@0.8.5"
-        },
-        "source_family": "synthetic_fixture",
-        "source_id": "synthetic-fixtures",
-        "source_label": "Synthetic Fixture",
-        "subject_key": "obj.archivebox.synthetic",
-        "summary": "release for ArchiveBox 0.8.5",
-        "target_ref": "fixture:software/archivebox@0.8.5",
-        "usefulness_summary": "mentions or traces; user cost 6; why: source_evidence_present",
-        "user_cost_reasons": [
-          "source_evidence_present"
-        ],
-        "user_cost_score": 6,
-        "version_or_state": "0.8.5"
       }
     ],
     "status": "queried"

@@ -594,7 +594,7 @@ mod tests {
             .map(|record| record.source_id.as_str())
             .collect();
 
-        assert_eq!(source_ids.len(), 9);
+        assert_eq!(source_ids.len(), 15);
         assert_eq!(source_ids.first().copied(), Some("article-scan-recorded-fixtures"));
         assert!(source_ids.contains(&"synthetic-fixtures"));
         assert!(source_ids.contains(&"github-releases-recorded-fixtures"));
@@ -602,6 +602,12 @@ mod tests {
         assert!(source_ids.contains(&"local-bundle-fixtures"));
         assert!(source_ids.contains(&"article-scan-recorded-fixtures"));
         assert!(source_ids.contains(&"local-files-placeholder"));
+        assert!(source_ids.contains(&"manual-document-recorded-fixtures"));
+        assert!(source_ids.contains(&"package-registry-recorded-fixtures"));
+        assert!(source_ids.contains(&"review-description-recorded-fixtures"));
+        assert!(source_ids.contains(&"software-heritage-recorded-fixtures"));
+        assert!(source_ids.contains(&"sourceforge-recorded-fixtures"));
+        assert!(source_ids.contains(&"wayback-memento-recorded-fixtures"));
     }
 
     #[test]
@@ -618,7 +624,7 @@ mod tests {
             status: Some("active_recorded_fixture".to_string()),
             ..SourceFilter::default()
         });
-        assert_eq!(recorded.len(), 3);
+        assert_eq!(recorded.len(), 9);
 
         let member_listing = registry.list_records(SourceFilter {
             capability: Some("supports_member_listing".to_string()),
@@ -633,6 +639,7 @@ mod tests {
             vec![
                 "article-scan-recorded-fixtures",
                 "local-bundle-fixtures",
+                "package-registry-recorded-fixtures",
                 "synthetic-fixtures"
             ]
         );
@@ -653,7 +660,13 @@ mod tests {
                 "github-releases-recorded-fixtures",
                 "internet-archive-recorded-fixtures",
                 "local-bundle-fixtures",
-                "synthetic-fixtures"
+                "manual-document-recorded-fixtures",
+                "package-registry-recorded-fixtures",
+                "review-description-recorded-fixtures",
+                "software-heritage-recorded-fixtures",
+                "sourceforge-recorded-fixtures",
+                "synthetic-fixtures",
+                "wayback-memento-recorded-fixtures"
             ]
         );
     }

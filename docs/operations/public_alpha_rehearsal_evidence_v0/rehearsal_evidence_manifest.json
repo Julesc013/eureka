@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit_sha": "b24a05c48646df58baa81dea25a48ea73ffc7de6",
+  "commit_sha": "ee8a526450334ef351f674057a532565350c63e0",
   "created_by_slice": "public_alpha_rehearsal_evidence_v0",
   "eval_audit": {
     "archive_eval_status": {
@@ -25,10 +25,10 @@
       },
       "query_count": 64,
       "status_counts": {
-        "capability_gap": 9,
+        "capability_gap": 7,
         "covered": 5,
-        "partial": 22,
-        "source_gap": 26,
+        "partial": 40,
+        "source_gap": 10,
         "unknown": 2
       },
       "top_failure_modes": {

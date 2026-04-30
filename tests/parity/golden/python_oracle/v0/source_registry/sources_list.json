@@ -1,6 +1,6 @@
 {
   "body": {
-    "source_count": 9,
+    "source_count": 15,
     "sources": [
       {
         "artifact_types": [
@@ -663,6 +663,333 @@
       },
       {
         "artifact_types": [
+          "metadata_record",
+          "manual_pdf_metadata",
+          "page_summary"
+        ],
+        "authority_class": "recorded_document_fixture",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": true,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": true,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": true,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_content_text",
+          "fixture_backed",
+          "recorded_fixture_backed",
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Source expansion recorded fixture connector",
+          "status": "fixture_backed"
+        },
+        "connector_mode": "recorded_fixture_only",
+        "coverage": {
+          "connector_mode": "recorded_fixture_only",
+          "coverage_depth": "content_or_member_indexed",
+          "coverage_notes": "Tiny manual/document metadata for selected hardware and legacy documentation source gaps.",
+          "coverage_status": "active_recorded_fixture_scope",
+          "current_limitations": [
+            "Recorded fixture scope only",
+            "No live document source calls",
+            "No PDF download",
+            "No OCR/full-text extraction"
+          ],
+          "indexed_scopes": [
+            "manual_metadata",
+            "support_document_metadata",
+            "page_summary"
+          ],
+          "last_fixture_update": "search_usefulness_source_expansion_v2",
+          "next_coverage_step": "Define Evidence Pack contract before adding richer manual/page fixtures."
+        },
+        "coverage_depth": "content_or_member_indexed",
+        "coverage_status": "active_recorded_fixture_scope",
+        "current_limitations": [
+          "Recorded fixture scope only",
+          "No live document source calls",
+          "No PDF download",
+          "No OCR/full-text extraction"
+        ],
+        "extraction_mode": "recorded_fixture_only",
+        "freshness_model": "recorded_fixture_snapshot",
+        "identifier_types_emitted": [
+          "manual_fixture_id",
+          "target_ref"
+        ],
+        "indexed_scopes": [
+          "manual_metadata",
+          "support_document_metadata",
+          "page_summary"
+        ],
+        "legal_posture": "recorded_public_source_metadata",
+        "live_access_mode": "recorded_fixture_only",
+        "name": "Manual Document Recorded Fixtures",
+        "next_coverage_step": "Define Evidence Pack contract before adding richer manual/page fixtures.",
+        "notes": "Active recorded fixture source for manual/document metadata; it must not imply actual document redistribution.",
+        "object_types": [
+          "manual",
+          "support_document",
+          "book"
+        ],
+        "placeholder_warning": "",
+        "rights_notes": "Recorded document metadata only. No PDF/book/manual redistribution, rights clearance, OCR claim, or copied document text is included.",
+        "roles": [
+          "discovery_index",
+          "citation_source",
+          "fixture"
+        ],
+        "source_family": "manual_document_recorded",
+        "source_id": "manual-document-recorded-fixtures",
+        "status": "active_recorded_fixture",
+        "status_summary": "Active recorded-fixture source record. Live source access remains separate.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "fixture_file"
+        ],
+        "trust_lane": "documentation"
+      },
+      {
+        "artifact_types": [
+          "metadata_record",
+          "source_archive_metadata",
+          "member_listing"
+        ],
+        "authority_class": "recorded_package_registry_fixture",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": true,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": true,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": true,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": true,
+          "supports_hashes": false,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": true,
+          "supports_reviews_or_comments": false,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_file_listing",
+          "supports_member_listing",
+          "supports_content_text",
+          "fixture_backed",
+          "recorded_fixture_backed",
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Source expansion recorded fixture connector",
+          "status": "fixture_backed"
+        },
+        "connector_mode": "recorded_fixture_only",
+        "coverage": {
+          "connector_mode": "recorded_fixture_only",
+          "coverage_depth": "content_or_member_indexed",
+          "coverage_notes": "Tiny package release and README member metadata for source tarball and service-pack queries.",
+          "coverage_status": "active_recorded_fixture_scope",
+          "current_limitations": [
+            "Recorded fixture scope only",
+            "No live package registry access",
+            "No package download",
+            "No install handoff"
+          ],
+          "indexed_scopes": [
+            "package_release_metadata",
+            "source_archive_metadata",
+            "readme_member"
+          ],
+          "last_fixture_update": "search_usefulness_source_expansion_v2",
+          "next_coverage_step": "Define Index Pack and Evidence Pack contracts before expanding package registry fixtures."
+        },
+        "coverage_depth": "content_or_member_indexed",
+        "coverage_status": "active_recorded_fixture_scope",
+        "current_limitations": [
+          "Recorded fixture scope only",
+          "No live package registry access",
+          "No package download",
+          "No install handoff"
+        ],
+        "extraction_mode": "recorded_fixture_only",
+        "freshness_model": "recorded_fixture_snapshot",
+        "identifier_types_emitted": [
+          "package_fixture_id",
+          "target_ref"
+        ],
+        "indexed_scopes": [
+          "package_release_metadata",
+          "source_archive_metadata",
+          "readme_member"
+        ],
+        "legal_posture": "recorded_public_source_metadata",
+        "live_access_mode": "recorded_fixture_only",
+        "name": "Package Registry Recorded Fixtures",
+        "next_coverage_step": "Define Index Pack and Evidence Pack contracts before expanding package registry fixtures.",
+        "notes": "Active recorded fixture source for package-release metadata; it must not imply package download or installer support.",
+        "object_types": [
+          "package_release",
+          "software_release",
+          "package_member"
+        ],
+        "placeholder_warning": "",
+        "rights_notes": "Recorded package metadata only. No package download, install permission, malware scan, or rights clearance is claimed.",
+        "roles": [
+          "discovery_index",
+          "citation_source",
+          "fixture"
+        ],
+        "source_family": "package_registry_recorded",
+        "source_id": "package-registry-recorded-fixtures",
+        "status": "active_recorded_fixture",
+        "status_summary": "Active recorded-fixture source record. Live source access remains separate.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "fixture_file"
+        ],
+        "trust_lane": "community"
+      },
+      {
+        "artifact_types": [
+          "metadata_record",
+          "description_summary",
+          "compatibility_note"
+        ],
+        "authority_class": "recorded_review_description_fixture",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": true,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": true,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": true,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": true,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_reviews_or_comments",
+          "supports_content_text",
+          "fixture_backed",
+          "recorded_fixture_backed",
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Source expansion recorded fixture connector",
+          "status": "fixture_backed"
+        },
+        "connector_mode": "recorded_fixture_only",
+        "coverage": {
+          "connector_mode": "recorded_fixture_only",
+          "coverage_depth": "content_or_member_indexed",
+          "coverage_notes": "Tiny review/description metadata for compatibility and vague usefulness source gaps.",
+          "coverage_status": "active_recorded_fixture_scope",
+          "current_limitations": [
+            "Recorded fixture scope only",
+            "Subjective evidence only",
+            "No live reviews/comments",
+            "No executable download or malware scan"
+          ],
+          "indexed_scopes": [
+            "compatibility_note",
+            "description_summary",
+            "versioned_installer_metadata"
+          ],
+          "last_fixture_update": "search_usefulness_source_expansion_v2",
+          "next_coverage_step": "Define Evidence Pack and Contribution Pack contracts before adding broader review evidence."
+        },
+        "coverage_depth": "content_or_member_indexed",
+        "coverage_status": "active_recorded_fixture_scope",
+        "current_limitations": [
+          "Recorded fixture scope only",
+          "Subjective evidence only",
+          "No live reviews/comments",
+          "No executable download or malware scan"
+        ],
+        "extraction_mode": "recorded_fixture_only",
+        "freshness_model": "recorded_fixture_snapshot",
+        "identifier_types_emitted": [
+          "review_fixture_id",
+          "target_ref"
+        ],
+        "indexed_scopes": [
+          "compatibility_note",
+          "description_summary",
+          "versioned_installer_metadata"
+        ],
+        "legal_posture": "recorded_public_source_metadata",
+        "live_access_mode": "recorded_fixture_only",
+        "name": "Review Description Recorded Fixtures",
+        "next_coverage_step": "Define Evidence Pack and Contribution Pack contracts before adding broader review evidence.",
+        "notes": "Active recorded fixture source for subjective compatibility/usefulness descriptions; it must not be treated as canonical truth.",
+        "object_types": [
+          "compatibility_note",
+          "review_description",
+          "software"
+        ],
+        "placeholder_warning": "",
+        "rights_notes": "Recorded paraphrased metadata only. No review text copying, rights clearance, malware-safety claim, or installer trust claim is made.",
+        "roles": [
+          "discovery_index",
+          "citation_source",
+          "fixture"
+        ],
+        "source_family": "review_description_recorded",
+        "source_id": "review-description-recorded-fixtures",
+        "status": "active_recorded_fixture",
+        "status_summary": "Active recorded-fixture source record. Live source access remains separate.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "fixture_file"
+        ],
+        "trust_lane": "documentation"
+      },
+      {
+        "artifact_types": [
           "source_archive",
           "source_tree_snapshot"
         ],
@@ -756,6 +1083,222 @@
           "artifact_download"
         ],
         "trust_lane": "preservation"
+      },
+      {
+        "artifact_types": [
+          "metadata_record",
+          "source_tree_snapshot",
+          "source_archive_metadata"
+        ],
+        "authority_class": "recorded_software_preservation_fixture",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": true,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": true,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": true,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_hashes",
+          "fixture_backed",
+          "recorded_fixture_backed",
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Source expansion recorded fixture connector",
+          "status": "fixture_backed"
+        },
+        "connector_mode": "recorded_fixture_only",
+        "coverage": {
+          "connector_mode": "recorded_fixture_only",
+          "coverage_depth": "metadata_indexed",
+          "coverage_notes": "Tiny source snapshot fixture for source-code package-release search-usefulness gaps.",
+          "coverage_status": "active_recorded_fixture_scope",
+          "current_limitations": [
+            "Recorded fixture scope only",
+            "No live Software Heritage API access",
+            "No source tree fetch",
+            "No license clearance"
+          ],
+          "indexed_scopes": [
+            "source_snapshot_metadata",
+            "swhid_fixture",
+            "source_archive_metadata"
+          ],
+          "last_fixture_update": "search_usefulness_source_expansion_v2",
+          "next_coverage_step": "Define Source Pack and Evidence Pack contracts before adding broader source snapshot fixtures."
+        },
+        "coverage_depth": "metadata_indexed",
+        "coverage_status": "active_recorded_fixture_scope",
+        "current_limitations": [
+          "Recorded fixture scope only",
+          "No live Software Heritage API access",
+          "No source tree fetch",
+          "No license clearance"
+        ],
+        "extraction_mode": "recorded_fixture_only",
+        "freshness_model": "recorded_fixture_snapshot",
+        "identifier_types_emitted": [
+          "swhid_fixture",
+          "target_ref"
+        ],
+        "indexed_scopes": [
+          "source_snapshot_metadata",
+          "swhid_fixture",
+          "source_archive_metadata"
+        ],
+        "legal_posture": "recorded_public_source_metadata",
+        "live_access_mode": "recorded_fixture_only",
+        "name": "Software Heritage Recorded Fixtures",
+        "next_coverage_step": "Define Source Pack and Evidence Pack contracts before adding broader source snapshot fixtures.",
+        "notes": "Active recorded fixture source distinct from the Software Heritage placeholder; it must not imply live SWH lookup support.",
+        "object_types": [
+          "source_repository",
+          "software_release",
+          "source_snapshot"
+        ],
+        "placeholder_warning": "",
+        "rights_notes": "Recorded source metadata only. No source tree download, license clearance, or redistribution claim is made.",
+        "roles": [
+          "discovery_index",
+          "citation_source",
+          "fixture"
+        ],
+        "source_family": "software_heritage_recorded",
+        "source_id": "software-heritage-recorded-fixtures",
+        "status": "active_recorded_fixture",
+        "status_summary": "Active recorded-fixture source record. Live source access remains separate.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "fixture_file"
+        ],
+        "trust_lane": "preservation"
+      },
+      {
+        "artifact_types": [
+          "metadata_record",
+          "release_metadata",
+          "description_summary"
+        ],
+        "authority_class": "recorded_project_host_fixture",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": true,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": true,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": true,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": false
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_reviews_or_comments",
+          "fixture_backed",
+          "recorded_fixture_backed",
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Source expansion recorded fixture connector",
+          "status": "fixture_backed"
+        },
+        "connector_mode": "recorded_fixture_only",
+        "coverage": {
+          "connector_mode": "recorded_fixture_only",
+          "coverage_depth": "metadata_indexed",
+          "coverage_notes": "Tiny project metadata fixture for vague-identity and old FOSS release search gaps.",
+          "coverage_status": "active_recorded_fixture_scope",
+          "current_limitations": [
+            "Recorded fixture scope only",
+            "No live project host access",
+            "No artifact download",
+            "No review truth claim"
+          ],
+          "indexed_scopes": [
+            "project_metadata",
+            "release_metadata",
+            "description_summary"
+          ],
+          "last_fixture_update": "search_usefulness_source_expansion_v2",
+          "next_coverage_step": "Define Source Pack and Contribution Pack contracts before adding broader project-host fixtures."
+        },
+        "coverage_depth": "metadata_indexed",
+        "coverage_status": "active_recorded_fixture_scope",
+        "current_limitations": [
+          "Recorded fixture scope only",
+          "No live project host access",
+          "No artifact download",
+          "No review truth claim"
+        ],
+        "extraction_mode": "recorded_fixture_only",
+        "freshness_model": "recorded_fixture_snapshot",
+        "identifier_types_emitted": [
+          "project_fixture_id",
+          "target_ref"
+        ],
+        "indexed_scopes": [
+          "project_metadata",
+          "release_metadata",
+          "description_summary"
+        ],
+        "legal_posture": "recorded_public_source_metadata",
+        "live_access_mode": "recorded_fixture_only",
+        "name": "SourceForge Recorded Fixtures",
+        "next_coverage_step": "Define Source Pack and Contribution Pack contracts before adding broader project-host fixtures.",
+        "notes": "Active recorded fixture source for old project metadata; it must not imply live SourceForge support.",
+        "object_types": [
+          "project_release",
+          "software",
+          "project_description"
+        ],
+        "placeholder_warning": "",
+        "rights_notes": "Recorded project metadata only. No project artifact redistribution, download permission, malware scan, or rights clearance is claimed.",
+        "roles": [
+          "discovery_index",
+          "citation_source",
+          "fixture"
+        ],
+        "source_family": "sourceforge_recorded",
+        "source_id": "sourceforge-recorded-fixtures",
+        "status": "active_recorded_fixture",
+        "status_summary": "Active recorded-fixture source record. Live source access remains separate.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "fixture_file"
+        ],
+        "trust_lane": "community"
       },
       {
         "artifact_types": [
@@ -960,6 +1503,115 @@
         "surfaces": [
           "item_record",
           "replay"
+        ],
+        "trust_lane": "preservation"
+      },
+      {
+        "artifact_types": [
+          "metadata_record",
+          "web_capture_summary",
+          "recorded_artifact_metadata"
+        ],
+        "authority_class": "recorded_web_archive_fixture",
+        "capabilities": {
+          "auth_required": false,
+          "fixture_backed": true,
+          "live_deferred": true,
+          "live_supported": false,
+          "local_private": false,
+          "network_required": false,
+          "recorded_fixture_backed": true,
+          "supports_action_paths": false,
+          "supports_bulk_access": false,
+          "supports_content_text": false,
+          "supports_delta_or_feed": false,
+          "supports_file_listing": false,
+          "supports_hashes": false,
+          "supports_item_metadata": true,
+          "supports_live_probe": false,
+          "supports_member_listing": false,
+          "supports_reviews_or_comments": false,
+          "supports_search": true,
+          "supports_signatures": false,
+          "supports_temporal_captures": true
+        },
+        "capabilities_summary": [
+          "supports_search",
+          "supports_item_metadata",
+          "supports_temporal_captures",
+          "fixture_backed",
+          "recorded_fixture_backed",
+          "live_deferred"
+        ],
+        "connector": {
+          "label": "Source expansion recorded fixture connector",
+          "status": "fixture_backed"
+        },
+        "connector_mode": "recorded_fixture_only",
+        "coverage": {
+          "connector_mode": "recorded_fixture_only",
+          "coverage_depth": "metadata_indexed",
+          "coverage_notes": "Tiny recorded capture metadata for selected dead vendor pages, release notes, and archived download-page queries.",
+          "coverage_status": "active_recorded_fixture_scope",
+          "current_limitations": [
+            "Recorded fixture scope only",
+            "No live Wayback or Memento access",
+            "No replay fetch",
+            "No artifact download"
+          ],
+          "indexed_scopes": [
+            "recorded_capture_metadata",
+            "release_notes",
+            "support_page_metadata"
+          ],
+          "last_fixture_update": "search_usefulness_source_expansion_v2",
+          "next_coverage_step": "Define a source pack contract for temporal capture fixtures before any live probe approval."
+        },
+        "coverage_depth": "metadata_indexed",
+        "coverage_status": "active_recorded_fixture_scope",
+        "current_limitations": [
+          "Recorded fixture scope only",
+          "No live Wayback or Memento access",
+          "No replay fetch",
+          "No artifact download"
+        ],
+        "extraction_mode": "recorded_fixture_only",
+        "freshness_model": "recorded_fixture_snapshot",
+        "identifier_types_emitted": [
+          "fixture_capture_id",
+          "target_ref"
+        ],
+        "indexed_scopes": [
+          "recorded_capture_metadata",
+          "release_notes",
+          "support_page_metadata"
+        ],
+        "legal_posture": "recorded_public_source_metadata",
+        "live_access_mode": "recorded_fixture_only",
+        "name": "Wayback/Memento Recorded Fixtures",
+        "next_coverage_step": "Define a source pack contract for temporal capture fixtures before any live probe approval.",
+        "notes": "Active recorded fixture source distinct from the Wayback/Memento placeholder; it must not be described as live replay support.",
+        "object_types": [
+          "web_page",
+          "web_capture",
+          "release_notes",
+          "support_page"
+        ],
+        "placeholder_warning": "",
+        "rights_notes": "Recorded fixture shape only. No page replay, artifact redistribution, rights clearance, or download permission is claimed.",
+        "roles": [
+          "discovery_index",
+          "citation_source",
+          "fixture"
+        ],
+        "source_family": "wayback_memento_recorded",
+        "source_id": "wayback-memento-recorded-fixtures",
+        "status": "active_recorded_fixture",
+        "status_summary": "Active recorded-fixture source record. Live source access remains separate.",
+        "surfaces": [
+          "search",
+          "item_record",
+          "fixture_file"
         ],
         "trust_lane": "preservation"
       }
