@@ -43,6 +43,11 @@ VM handoff, execution, restore, rollback, uninstall, uploads, and private-source
 submission must appear only as blocked or future-gated until a later accepted
 policy and implementation changes that posture.
 
+Public Search Safety / Abuse Guard v0 applies the same posture before runtime:
+public search must reject download, install, execute, upload, and related action
+requests with the governed disabled-action error codes. The safety guard does
+not implement download/install middleware or action execution.
+
 ## Future Gated Actions
 
 The following actions are future and disabled until later policy plus

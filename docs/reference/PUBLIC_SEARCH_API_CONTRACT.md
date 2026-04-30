@@ -15,6 +15,9 @@ and does not claim production API stability.
 - Result-card schema: `contracts/api/search_result_card.v0.json`
 - Route inventory: `control/inventory/publication/public_search_routes.json`
 - Local-index-only mode: `docs/operations/PUBLIC_SEARCH_LOCAL_INDEX_ONLY_MODE.md`
+- Safety guard: `docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md`
+- Runtime readiness checklist:
+  `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`
 
 The first allowed mode is `local_index_only`. Future public search must accept a
 bounded user query, search a controlled local index, and return result lanes,
@@ -43,9 +46,11 @@ Optional fields:
 - `source_policy`: `local_index_only` only.
 
 Forbidden parameters include `index_path`, `store_root`, `run_store_root`,
-`task_store_root`, `memory_store_root`, `local_path`, `path`, `url`,
-`fetch_url`, `download`, `install`, `upload`, `user_file`, `live_probe`, and
-`source_credentials`.
+`task_store_root`, `memory_store_root`, `local_path`, `path`, `file_path`,
+`directory`, `root`, `url`, `fetch_url`, `crawl_url`, `source_url`, `download`,
+`install`, `execute`, `upload`, `user_file`, `live_probe`, `live_source`,
+`network`, `arbitrary_source`, `source_credentials`, `auth_token`, and
+`api_key`.
 
 ## Response
 
@@ -165,6 +170,9 @@ search, arbitrary URL fetch, account behavior, telemetry, or production claims
 were added by accident. Public Search Result Card Contract v0 is now the
 governed `results[]` card contract; it still does not make public search live.
 The named next safety milestone is Public Search Safety / Abuse Guard v0.
+Public Search Safety / Abuse Guard v0 is now implemented as policy/contract
+only. The next runtime milestone must satisfy its inventory, validator, and
+runtime readiness checklist before adding route behavior.
 
 ## Out Of Scope
 

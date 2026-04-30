@@ -15,6 +15,9 @@ fetch, downloads, installs, uploads, local path search, and source credentials.
 Public Search Result Card Contract v0 may label source posture as
 `future_live_probe` for future compatibility, but that label is not an
 implementation and does not enable live probes.
+Public Search Safety / Abuse Guard v0 keeps public search `local_index_only` and
+sets maximum live sources to zero. A future search runtime must not call this
+gateway unless a later contract explicitly adds a non-v0 mode.
 
 ## Rules
 

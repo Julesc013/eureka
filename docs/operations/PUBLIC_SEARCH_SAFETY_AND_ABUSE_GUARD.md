@@ -1,0 +1,255 @@
+# Public Search Safety And Abuse Guard v0
+
+Status: implemented as policy and contract only.
+
+Public Search Safety / Abuse Guard v0 defines the safety, abuse, privacy,
+boundedness, and operator guardrails required before any public search runtime
+route is implemented. It does not implement public search runtime, `/search`,
+`/api/v1/search`, rate-limit middleware, auth, sessions, telemetry, logging
+runtime, backend hosting, live probes, downloads, installers, execution,
+uploads, local path search, or deployment provider configuration.
+
+## Why This Exists
+
+Public search accepts user input. Before a future route handles that input, the
+repo needs fixed boundaries for request size, result count, source policy,
+privacy, disabled modes, disabled actions, and operator controls.
+
+The first allowed mode remains `local_index_only`:
+
+```text
+public query
+  -> query planner
+  -> controlled local index
+  -> public result-card envelope
+  -> source/evidence/compatibility/absence response
+```
+
+It must not become live external fanout, arbitrary URL fetch, local filesystem
+search, downloads, installers, uploads, accounts, telemetry by default, or
+unbounded query/result behavior.
+
+## Policy Inventory
+
+The machine-readable policy lives at:
+
+```text
+control/inventory/publication/public_search_safety.json
+```
+
+The policy records `status: policy_only`, `no_runtime_implemented: true`, and
+`no_public_search_live: true`.
+
+## Allowed Mode
+
+The only allowed v0 mode is:
+
+- `local_index_only`
+
+Disabled modes are:
+
+- `live_probe`
+- `live_federated`
+- `arbitrary_url_fetch`
+- `local_path_search`
+- `upload_search`
+- `download_or_install`
+
+## Request, Result, And Time Limits
+
+Policy defaults for a future runtime are:
+
+- maximum query length: 160 characters
+- minimum query length after trim: 1 character
+- default result limit: 10
+- maximum result limit: 25
+- maximum include items: 8
+- maximum request body bytes: 8192
+- v0 request method: GET
+- POST JSON body: future only
+- maximum runtime target: 3000 ms
+- checked sources in v0: controlled local index only
+- live sources in v0: 0
+
+These are policy targets, not middleware.
+
+## Forbidden Parameters
+
+Future public search must reject:
+
+- `index_path`
+- `store_root`
+- `run_store_root`
+- `task_store_root`
+- `memory_store_root`
+- `local_path`
+- `path`
+- `file_path`
+- `directory`
+- `root`
+- `url`
+- `fetch_url`
+- `crawl_url`
+- `source_url`
+- `download`
+- `install`
+- `execute`
+- `upload`
+- `user_file`
+- `source_credentials`
+- `auth_token`
+- `api_key`
+- `live_probe`
+- `live_source`
+- `network`
+- `arbitrary_source`
+
+The future runtime must own the local index root. A caller must never provide an
+index path, store root, source URL, local path, credentials, or uploaded file to
+public search.
+
+## Forbidden Behaviors
+
+Public search v0 forbids:
+
+- arbitrary URL fetching
+- live external source fanout
+- Google scraping
+- Internet Archive live calls
+- Wayback live calls
+- GitHub live calls
+- package registry live calls
+- local filesystem search
+- caller-provided index paths
+- caller-provided store roots
+- downloads
+- installs
+- executable launch
+- uploads
+- account or session requirement
+- telemetry by default
+- private path leakage
+- credential submission
+- raw source payload return
+- unbounded query or result behavior
+
+## Error Mapping
+
+The guard uses the Public Search API Contract v0 error envelope. Required codes
+include:
+
+- `query_required`
+- `query_too_long`
+- `limit_too_large`
+- `unsupported_mode`
+- `unsupported_profile`
+- `unsupported_include`
+- `forbidden_parameter`
+- `local_paths_forbidden`
+- `downloads_disabled`
+- `installs_disabled`
+- `uploads_disabled`
+- `live_probes_disabled`
+- `live_backend_unavailable`
+- `rate_limited`
+- `timeout`
+- `bad_request`
+
+Local path and root parameters should map to `local_paths_forbidden`. Download
+requests map to `downloads_disabled`. Install or execute requests map to
+`installs_disabled`. Upload or user-file requests map to `uploads_disabled`.
+Live-probe or live-source requests map to `live_probes_disabled`.
+
+## Logging And Privacy
+
+Telemetry is not implemented and defaults off. Raw query logging is disabled by
+default for the static/public-alpha contract. Any future hosted rehearsal may
+use only short-retention sanitized logs after a separate privacy review.
+
+Public search must not log private paths, credentials, user files, source
+secrets, raw source payloads, or account identifiers. IP retention, user-agent
+logging, and aggregate metrics remain future review items. Manual observations
+remain human-entered evidence, not telemetry. Query logs must not be uploaded to
+external services by default.
+
+## Operator Controls
+
+A future runtime must provide controls equivalent to:
+
+- `EUREKA_PUBLIC_SEARCH_MODE=local_index_only`
+- `EUREKA_ALLOW_LIVE_PROBES=0`
+- `EUREKA_ALLOW_DOWNLOADS=0`
+- `EUREKA_ALLOW_INSTALLS=0`
+- `EUREKA_ALLOW_LOCAL_PATHS=0`
+- `EUREKA_ALLOW_USER_UPLOADS=0`
+- `EUREKA_ALLOW_TELEMETRY=0`
+- `EUREKA_MAX_QUERY_LEN=160`
+- `EUREKA_MAX_RESULTS=25`
+- `EUREKA_SEARCH_TIMEOUT_MS=3000`
+- `EUREKA_PUBLIC_SEARCH_ENABLED=0`
+- `EUREKA_OPERATOR_KILL_SWITCH=1`
+
+These flags are future runtime requirements only. This milestone adds no
+process manager, provider configuration, rate-limit middleware, or deployment
+runtime.
+
+## Public Alpha And Static Site
+
+Public Alpha Safe Mode remains non-production and local. It already blocks live
+probes, caller-provided local paths, downloads, fixture byte fetches, user
+storage, deployment approval, and production readiness by default. This safety
+guard does not make `/api/v1/search` live in public-alpha.
+
+GitHub Pages remains static-only. `site/dist` may describe this policy but must
+not add a search form, claim hosted search exists, or imply backend deployment.
+
+## Live Backend And Live Probe Relationships
+
+Live Backend Handoff Contract v0 remains future/reserved. Public search runtime
+requires a later backend/runtime milestone and capability flags before hosted
+routes exist.
+
+Live Probe Gateway Contract v0 remains disabled by default. `local_index_only`
+does not call Internet Archive, Wayback, Google, GitHub, package registries, or
+any external source.
+
+## Action And Privacy Policy Relationships
+
+Native Action / Download / Install Policy v0 keeps downloads, mirrors, install
+handoff, package-manager handoff, execution, restore, rollback, and uploads
+blocked or future-gated.
+
+Native Local Cache / Privacy Policy v0 keeps private cache, private file
+ingestion, telemetry, accounts, cloud sync, diagnostics upload, source
+credentials, and private path exposure disabled by default.
+
+## Runtime Prerequisites
+
+Before Local Public Search Runtime v0 can be implemented, the runtime readiness
+checklist must remain valid:
+
+```text
+docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md
+```
+
+The key gates are: API contract passes, result-card contract passes, safety
+guard passes, local index root is server-owned, no local path params, no live
+probes, no downloads, no uploads, stable error mapping, defined HTML/JSON
+behavior, operator flags, no production claim, and accepted logging/privacy
+posture.
+
+## Still Future
+
+Still future or blocked until explicit approval:
+
+- public search runtime
+- `/search` and `/api/v1/search` route behavior
+- hosted backend
+- rate-limit middleware
+- auth, accounts, sessions, TLS, process management
+- live probes or external source fanout
+- local filesystem search
+- downloads, installers, execution, mirrors, uploads
+- telemetry/logging runtime
+- native clients, relay runtime, snapshot reader runtime
+- production API stability or production readiness

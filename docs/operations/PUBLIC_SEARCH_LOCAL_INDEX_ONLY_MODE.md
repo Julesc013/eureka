@@ -54,6 +54,14 @@ controls before the contract is hosted. This policy does not implement rate
 limiting, TLS, auth, abuse detection, process management, logging, or runtime
 deployment.
 
+Public Search Safety / Abuse Guard v0 is now implemented as policy and
+contract-only guardrails in
+`docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md` and
+`control/inventory/publication/public_search_safety.json`. A future runtime
+must satisfy those guardrails and
+`docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md` before
+`local_index_only` search is exposed.
+
 ## Privacy And Logging Notes
 
 Future public search logs must avoid private local paths, credentials, uploaded

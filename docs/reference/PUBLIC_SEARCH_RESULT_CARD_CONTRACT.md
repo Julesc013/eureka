@@ -17,6 +17,9 @@ stability, malware safety, rights clearance, or production readiness.
 In short: the result card is not a production ranking guarantee, must not claim
 malware safety, must not claim rights clearance, and prepares the next safety
 milestone, Public Search Safety / Abuse Guard v0, rather than replacing it.
+Public Search Safety / Abuse Guard v0 is now implemented as policy and
+contract-only guardrails; result cards still must wait for a future runtime that
+satisfies those guardrails.
 
 ## Contract Files
 
@@ -204,6 +207,10 @@ action-policy enforcement, and tests proving no downloads, installers,
 execution, uploads, arbitrary URL fetch, local path search, private data
 exposure, malware-safety claim, rights-clearance claim, or production API claim
 was added by accident.
+
+The runtime must also pass
+`docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`; this checklist
+is future/unsigned and does not approve route implementation by itself.
 
 ## Out Of Scope
 

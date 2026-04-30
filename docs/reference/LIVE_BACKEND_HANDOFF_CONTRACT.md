@@ -35,6 +35,11 @@ external source fanout.
 Public Search Result Card Contract v0 now defines the future result-card shape
 for those reserved routes, but it also remains contract-only and does not make
 the live backend available.
+Public Search Safety / Abuse Guard v0 now defines the required policy-only
+guardrails before any public search runtime uses those reserved backend routes:
+local-index-only mode, bounded query/result limits, no live probes, no
+downloads/installs/uploads/local paths, privacy-first logging posture, and
+operator kill switches.
 
 ## Required Client Behavior
 

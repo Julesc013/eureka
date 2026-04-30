@@ -122,6 +122,21 @@
       },
       {
         "required": [
+          "file_path"
+        ]
+      },
+      {
+        "required": [
+          "directory"
+        ]
+      },
+      {
+        "required": [
+          "root"
+        ]
+      },
+      {
+        "required": [
           "url"
         ]
       },
@@ -132,12 +147,27 @@
       },
       {
         "required": [
+          "crawl_url"
+        ]
+      },
+      {
+        "required": [
+          "source_url"
+        ]
+      },
+      {
+        "required": [
           "download"
         ]
       },
       {
         "required": [
           "install"
+        ]
+      },
+      {
+        "required": [
+          "execute"
         ]
       },
       {
@@ -158,6 +188,31 @@
       {
         "required": [
           "source_credentials"
+        ]
+      },
+      {
+        "required": [
+          "auth_token"
+        ]
+      },
+      {
+        "required": [
+          "api_key"
+        ]
+      },
+      {
+        "required": [
+          "live_source"
+        ]
+      },
+      {
+        "required": [
+          "network"
+        ]
+      },
+      {
+        "required": [
+          "arbitrary_source"
         ]
       }
     ]
@@ -184,23 +239,38 @@
     "memory_store_root",
     "local_path",
     "path",
+    "file_path",
+    "directory",
+    "root",
     "url",
     "fetch_url",
+    "crawl_url",
+    "source_url",
     "download",
     "install",
+    "execute",
     "upload",
     "user_file",
     "live_probe",
-    "source_credentials"
+    "source_credentials",
+    "auth_token",
+    "api_key",
+    "live_source",
+    "network",
+    "arbitrary_source"
   ],
   "x-forbidden_behaviors": [
     "live_probe",
+    "live_federated",
     "external_search",
     "arbitrary_url_fetch",
+    "local_path_search",
     "download",
     "install",
+    "execute",
     "upload",
     "local_filesystem_ingestion",
+    "credential_submission",
     "credential_forwarding"
   ],
   "x-field_stability": {

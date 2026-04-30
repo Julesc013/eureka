@@ -67,6 +67,10 @@ Source credentials are unsupported. Credentials must not appear in snapshots,
 public data, relay old-client projections, diagnostics, or support exports.
 Future credential handling requires a separate auth/secrets policy.
 
+Public Search Safety / Abuse Guard v0 follows this posture for future public
+search. It forbids local path, user file, credential, telemetry-by-default,
+query-log-upload, and private source parameters before any runtime route exists.
+
 ## Deletion, Reset, Export, And Portable Mode
 
 Future native/private cache work requires controls to clear public cache, clear
