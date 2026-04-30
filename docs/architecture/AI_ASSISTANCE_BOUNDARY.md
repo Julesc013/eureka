@@ -13,6 +13,8 @@ AI Provider Contract v0 defines the boundary before runtime integration:
 - remote providers require explicit credentials and consent before future use
 - outputs are typed suggestions or candidates
 - outputs require review
+- typed output validation must pass before future evidence, contribution, or
+  review workflows may inspect AI output
 - AI is not truth, rights clearance, malware safety, source trust, or automatic
   acceptance
 
@@ -44,6 +46,19 @@ The Master Index Review Queue remains the governance point for future public
 acceptance. AI output can enter that path only as a candidate with explicit
 review and provenance.
 
+Typed AI Output Validator v0 provides the current offline check:
+
+```bash
+python scripts/validate_ai_output.py --all-examples
+python scripts/validate_ai_output.py --all-examples --json
+```
+
+The validator does not implement model calls, runtime provider loading,
+telemetry, evidence import, contribution import, local-index mutation,
+public-search AI, or master-index mutation. It only verifies typed candidate
+shape, provider references, required review, prohibited uses, private-path and
+secret leakage, and short generated text.
+
 ## Public Search Boundary
 
 Public search remains local/prototype and `local_index_only`. AI Provider
@@ -55,5 +70,5 @@ result explanation runtime.
 
 Future runtime work needs separate approval for provider loading, consent UI,
 credential handling, prompt/output logging policy, cache invalidation,
-private-data redaction, typed-output validation at runtime, contribution-pack
+private-data redaction, typed-output validation integration, contribution-pack
 drafting, review queue export, and any public-search display.

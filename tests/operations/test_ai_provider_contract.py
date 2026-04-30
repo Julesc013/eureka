@@ -58,8 +58,10 @@ class AIProviderContractTestCase(unittest.TestCase):
             "README.md",
             "PRIVACY_AND_SAFETY.md",
             "CHECKSUMS.SHA256",
-            "examples/typed_output_alias_candidate.json",
-            "examples/typed_output_explanation_draft.json",
+            "examples/alias_candidate.valid.json",
+            "examples/compatibility_claim_candidate.valid.json",
+            "examples/explanation_draft.valid.json",
+            "examples/metadata_claim_candidate.valid.json",
         ):
             self.assertTrue((EXAMPLE_PROVIDER / rel_path).is_file(), rel_path)
 
@@ -91,10 +93,12 @@ class AIProviderContractTestCase(unittest.TestCase):
             json.loads(path.read_text(encoding="utf-8"))
             for path in sorted((EXAMPLE_PROVIDER / "examples").glob("*.json"))
         ]
-        self.assertEqual(len(outputs), 2)
+        self.assertEqual(len(outputs), 4)
         output_types = {item["output_type"] for item in outputs}
         self.assertIn("alias_candidate", output_types)
+        self.assertIn("compatibility_claim_candidate", output_types)
         self.assertIn("explanation_draft", output_types)
+        self.assertIn("metadata_claim_candidate", output_types)
         for item in outputs:
             self.assertTrue(item["required_review"])
             self.assertFalse(item["created_by_provider"]["runtime_call_performed"])
@@ -145,6 +149,8 @@ class AIProviderContractTestCase(unittest.TestCase):
             "contribution",
             "master index review queue",
             "aide/codex",
+            "validate_ai_output.py",
+            "typed output validation",
         ):
             self.assertIn(phrase, compact)
 

@@ -113,7 +113,10 @@ Provider Contract v0 now defines typed AI output boundaries: AI suggestions are
 review candidates, not canonical evidence, truth, rights clearance, malware
 safety, source trust, or automatic acceptance. Any future queue entry that
 references AI output must preserve provider provenance, limitations, evidence
-links where possible, and review status.
+links where possible, and review status. Typed AI Output Validator v0 now adds
+`scripts/validate_ai_output.py` as the offline pre-review check; validation is
+still not acceptance and does not mutate queue, contribution, evidence, or
+master-index state.
 
 ## Runtime Consumers
 
@@ -161,7 +164,6 @@ The validator is stdlib-only and does not perform network calls.
 
 ## Next Work
 
-Pack Import Validator Aggregator v0 and AI Provider Contract v0 are now
-implemented as validation/contract-only milestones. The next recommended AI
-follow-up is Typed AI Output Validator v0; the next pack-import follow-up is
-Pack Import Report Format v0.
+Pack Import Validator Aggregator v0, AI Provider Contract v0, and Typed AI
+Output Validator v0 are now implemented as validation/contract-only
+milestones. The next pack-import follow-up is Pack Import Report Format v0.

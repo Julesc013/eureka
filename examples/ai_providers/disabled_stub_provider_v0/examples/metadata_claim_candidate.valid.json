@@ -1,0 +1,63 @@
+{
+  "schema_version": "typed_ai_output.v0",
+  "output_id": "example.ai.metadata_claim.browser_release.v0",
+  "provider_ref": {
+    "provider_id": "example.disabled_stub_provider_v0",
+    "provider_version": "0.1.0",
+    "provider_type": "disabled_stub"
+  },
+  "task_type": "metadata_extraction_suggestion",
+  "output_type": "metadata_claim_candidate",
+  "status": "candidate",
+  "privacy_classification": "public_safe",
+  "subject_ref": "synthetic:software:example-browser@1.2.0",
+  "source_refs": [
+    "source-pack:example.minimal_recorded_source_pack_v0#source.synthetic_browser"
+  ],
+  "evidence_refs": [
+    "evidence-pack:example.minimal_evidence_pack_v0#ev.example-browser.metadata"
+  ],
+  "generated_text": "The synthetic fixture may support a metadata candidate for Example Browser version 1.2.0.",
+  "structured_claims": [
+    {
+      "claim_type": "metadata_claim_candidate",
+      "claim_value": {
+        "field": "version",
+        "candidate_value": "1.2.0"
+      },
+      "evidence_refs": [
+        "evidence-pack:example.minimal_evidence_pack_v0#ev.example-browser.metadata"
+      ],
+      "review_required": true,
+      "limitations": [
+        "Synthetic fixture only",
+        "Requires review against governed source and evidence records"
+      ]
+    }
+  ],
+  "confidence": "low",
+  "limitations": [
+    "Synthetic typed output fixture",
+    "No model call was performed",
+    "Metadata remains a review candidate"
+  ],
+  "required_review": true,
+  "prohibited_uses": [
+    "canonical_truth",
+    "rights_clearance",
+    "malware_safety",
+    "automatic_acceptance"
+  ],
+  "created_by_provider": {
+    "provider_id": "example.disabled_stub_provider_v0",
+    "provider_version": "0.1.0",
+    "model_identity_recorded": false,
+    "runtime_call_performed": false,
+    "notes": [
+      "Hand-authored synthetic fixture output"
+    ]
+  },
+  "notes": [
+    "This output demonstrates a review-required metadata candidate."
+  ]
+}

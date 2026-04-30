@@ -71,7 +71,9 @@ type, and still does not import, stage, index, upload, submit, or mutate a
 master index.
 
 AI Provider Contract v0 is separate from pack import. Typed AI outputs may
-later help draft pack/contribution candidates, but pack import remains
+later help draft pack/contribution candidates. Typed AI Output Validator v0 now
+validates those outputs through `scripts/validate_ai_output.py` before any
+future drafting workflow may inspect them, but pack import remains
 validate-only first and cannot treat AI output as truth, rights clearance,
 malware safety, source trust, or automatic acceptance.
 

@@ -37,7 +37,7 @@ class ValidateAIProviderContractScriptTestCase(unittest.TestCase):
         payload = json.loads(completed.stdout)
         self.assertEqual(payload["status"], "valid")
         self.assertEqual(payload["provider_id"], "example.disabled_stub_provider_v0")
-        self.assertEqual(payload["typed_output_count"], 2)
+        self.assertEqual(payload["typed_output_count"], 4)
         self.assertFalse(payload["runtime_implemented"])
         self.assertFalse(payload["model_calls_performed"])
         self.assertFalse(payload["network_performed"])
@@ -77,7 +77,7 @@ class ValidateAIProviderContractScriptTestCase(unittest.TestCase):
     def test_validator_rejects_typed_output_without_required_review(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = _copy_example(tmp, "unreviewed_output")
-            output_path = root / "examples" / "typed_output_alias_candidate.json"
+            output_path = root / "examples" / "alias_candidate.valid.json"
             output = json.loads(output_path.read_text(encoding="utf-8"))
             output["required_review"] = False
             output_path.write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")
@@ -88,7 +88,7 @@ class ValidateAIProviderContractScriptTestCase(unittest.TestCase):
     def test_validator_rejects_typed_output_without_prohibited_uses(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = _copy_example(tmp, "missing_prohibited_uses")
-            output_path = root / "examples" / "typed_output_alias_candidate.json"
+            output_path = root / "examples" / "alias_candidate.valid.json"
             output = json.loads(output_path.read_text(encoding="utf-8"))
             output["prohibited_uses"] = ["canonical_truth"]
             output_path.write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")
@@ -133,14 +133,12 @@ def _write_manifest(root: Path, manifest: dict[str, object]) -> None:
 
 def _write_checksums(root: Path) -> None:
     rel_paths = [
-        "AI_PROVIDER.json",
-        "README.md",
-        "PRIVACY_AND_SAFETY.md",
-        "examples/typed_output_alias_candidate.json",
-        "examples/typed_output_explanation_draft.json",
+        str(path.relative_to(root)).replace("\\", "/")
+        for path in root.rglob("*")
+        if path.is_file() and path.name != "CHECKSUMS.SHA256"
     ]
     lines = []
-    for rel_path in rel_paths:
+    for rel_path in sorted(rel_paths):
         digest = hashlib.sha256((root / rel_path).read_bytes()).hexdigest()
         lines.append(f"{digest}  {rel_path}")
     (root / "CHECKSUMS.SHA256").write_text("\n".join(lines) + "\n", encoding="utf-8")

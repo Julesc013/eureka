@@ -1,0 +1,63 @@
+{
+  "schema_version": "typed_ai_output.v0",
+  "output_id": "example.ai.compatibility_claim.browser_platform.v0",
+  "provider_ref": {
+    "provider_id": "example.disabled_stub_provider_v0",
+    "provider_version": "0.1.0",
+    "provider_type": "disabled_stub"
+  },
+  "task_type": "compatibility_claim_candidate",
+  "output_type": "compatibility_claim_candidate",
+  "status": "candidate",
+  "privacy_classification": "public_safe",
+  "subject_ref": "synthetic:software:example-browser@1.2.0",
+  "source_refs": [
+    "source-pack:example.minimal_recorded_source_pack_v0#source.synthetic_browser"
+  ],
+  "evidence_refs": [
+    "evidence-pack:example.minimal_evidence_pack_v0#ev.example-browser.compatibility"
+  ],
+  "generated_text": "The synthetic fixture suggests Example Browser 1.2.0 may have a Windows XP compatibility claim candidate.",
+  "structured_claims": [
+    {
+      "claim_type": "compatibility_claim_candidate",
+      "claim_value": {
+        "platform": "Windows XP",
+        "support_status": "candidate_reported_works_on"
+      },
+      "evidence_refs": [
+        "evidence-pack:example.minimal_evidence_pack_v0#ev.example-browser.compatibility"
+      ],
+      "review_required": true,
+      "limitations": [
+        "Synthetic fixture only",
+        "No installer, runtime execution, or compatibility oracle is involved"
+      ]
+    }
+  ],
+  "confidence": "low",
+  "limitations": [
+    "Synthetic typed output fixture",
+    "No model call was performed",
+    "Compatibility remains a review candidate"
+  ],
+  "required_review": true,
+  "prohibited_uses": [
+    "canonical_truth",
+    "rights_clearance",
+    "malware_safety",
+    "automatic_acceptance"
+  ],
+  "created_by_provider": {
+    "provider_id": "example.disabled_stub_provider_v0",
+    "provider_version": "0.1.0",
+    "model_identity_recorded": false,
+    "runtime_call_performed": false,
+    "notes": [
+      "Hand-authored synthetic fixture output"
+    ]
+  },
+  "notes": [
+    "This output demonstrates a review-required compatibility candidate."
+  ]
+}

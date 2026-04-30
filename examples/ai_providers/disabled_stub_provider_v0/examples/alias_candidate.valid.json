@@ -1,35 +1,37 @@
 {
   "schema_version": "typed_ai_output.v0",
-  "output_id": "example.ai.explanation_draft.result_summary.v0",
+  "output_id": "example.ai.alias_candidate.browser_alias.v0",
   "provider_ref": {
     "provider_id": "example.disabled_stub_provider_v0",
     "provider_version": "0.1.0",
     "provider_type": "disabled_stub"
   },
-  "task_type": "explanation_draft",
-  "output_type": "explanation_draft",
-  "status": "suggestion",
-  "subject_ref": "synthetic:result:example-browser-windows-xp",
+  "task_type": "alias_suggestion",
+  "output_type": "alias_candidate",
+  "status": "candidate",
+  "privacy_classification": "public_safe",
+  "subject_ref": "synthetic:software:example-browser",
   "source_refs": [
     "fixture:synthetic-public-metadata"
   ],
   "evidence_refs": [
-    "evidence:synthetic-compatibility-note"
+    "evidence:synthetic-alias-note"
   ],
-  "generated_text": "Draft explanation: this synthetic result appears relevant because its fixture metadata mentions the example browser and a Windows XP compatibility note.",
+  "generated_text": "The phrase Example Browser Classic may be an alias candidate for Example Browser.",
   "structured_claims": [
     {
-      "claim_type": "explanation_draft",
+      "claim_type": "alias_candidate",
       "claim_value": {
-        "summary": "Synthetic result explanation candidate tied to fixture evidence."
+        "candidate_alias": "Example Browser Classic",
+        "target_label": "Example Browser"
       },
       "evidence_refs": [
-        "evidence:synthetic-compatibility-note"
+        "evidence:synthetic-alias-note"
       ],
       "review_required": true,
       "limitations": [
         "Synthetic example only",
-        "Not a ranking, trust, rights, or malware decision"
+        "Requires source-backed human review"
       ]
     }
   ],
@@ -37,7 +39,7 @@
   "limitations": [
     "Synthetic typed output fixture",
     "No model call was performed",
-    "Explanation remains a draft"
+    "Alias remains a review candidate"
   ],
   "required_review": true,
   "prohibited_uses": [
@@ -56,6 +58,6 @@
     ]
   },
   "notes": [
-    "This output demonstrates a review-required explanation draft."
+    "This output demonstrates schema shape only."
   ]
 }

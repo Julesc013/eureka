@@ -225,6 +225,10 @@ AI Provider Contract v0 does not enable AI in public search. Public search
 remains `local_index_only`; model reranking, AI query expansion, embeddings,
 generated snippets, remote model calls, and AI evidence acceptance remain
 future/deferred and require separate approval.
+Typed AI Output Validator v0 does not change public search. It validates
+standalone typed AI output examples offline and does not enable generated
+snippets, model calls, query expansion, reranking, local-index mutation, or
+public API output changes.
 
 ## Out Of Scope
 

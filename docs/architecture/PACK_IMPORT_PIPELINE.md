@@ -32,9 +32,11 @@ pack root and still does not implement import, staging, indexing, upload, or
 master-index mutation.
 
 AI Provider Contract v0 is adjacent but not part of import runtime. Future AI
-outputs can be validated as typed suggestions before they draft contributions,
-but the import pipeline must not trust AI output as canonical truth or mutate
-search/master-index state from it.
+outputs can be validated as typed suggestions through
+`scripts/validate_ai_output.py` before they draft contributions, but the import
+pipeline must not trust AI output as canonical truth or mutate
+search/master-index state from it. Typed output validation is not pack import,
+staging, evidence import, contribution import, or master-index acceptance.
 
 ## Staging
 

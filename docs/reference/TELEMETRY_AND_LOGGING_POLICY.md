@@ -39,6 +39,11 @@ external log upload disabled by default. No AI prompt log runtime, model-call
 log runtime, provider telemetry, analytics, or remote diagnostics upload is
 implemented.
 
+Typed AI Output Validator v0 does not add prompt logging, output logging
+runtime, provider telemetry, analytics, diagnostics upload, or model-call logs.
+Its JSON reports only summarize local validation results and explicitly state
+that model calls, network calls, mutation, and import were not performed.
+
 ## Credentials And Accounts
 
 No account system exists. No credential store exists. Source credentials,

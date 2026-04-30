@@ -110,6 +110,14 @@ AI outputs do not bypass pack validation, pack import planning, contribution
 review, or the Master Index Review Queue Contract. An AI suggestion cannot
 become `accepted_public` without future review with provenance and limitations.
 
+Typed output validation is now provided by
+`runtime/engine/ai/typed_output_validator.py` and
+`scripts/validate_ai_output.py`. This validator checks typed AI output examples
+offline before any future evidence or contribution workflow may consider them.
+It does not implement model calls, provider loading, prompt logging, telemetry,
+evidence import, contribution import, local-index mutation, public-search AI, or
+master-index mutation.
+
 ## Public Search
 
 Public search remains `local_index_only` and does not use AI providers. This
@@ -127,10 +135,21 @@ python scripts/validate_ai_provider_contract.py --json
 python scripts/validate_ai_provider_contract.py --strict
 ```
 
+Validate typed output examples directly:
+
+```bash
+python scripts/validate_ai_output.py
+python scripts/validate_ai_output.py --json
+python scripts/validate_ai_output.py --all-examples
+python scripts/validate_ai_output.py --all-examples --json
+```
+
 The validator checks schema JSON, provider inventory, example manifest,
 typed-output examples, checksums, disabled-by-default posture, credential and
 privacy rules, logging/telemetry defaults, forbidden tasks and uses, no API
-keys or secrets, and no AI runtime directories.
+keys or secrets, and no AI provider runtime directories. The validation-only
+module under `runtime/engine/ai/` is allowed solely for typed output validation;
+it is not provider runtime behavior.
 
 ## Not Implemented
 

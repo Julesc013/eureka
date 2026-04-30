@@ -306,10 +306,18 @@ Current scripts:
   schemas, AI provider policy inventory, the disabled stub provider example,
   typed output examples, checksums, default-disabled posture,
   privacy/credential/logging/cache rules, forbidden tasks and prohibited uses,
-  no API keys/secrets, and no AI runtime path. It supports `--provider-root`,
+  no API keys/secrets, and no AI provider runtime path. It supports `--provider-root`,
   `--strict`, and `--json`; it does not call models, load providers, open
   network connections, store credentials, emit telemetry, enable public-search
   AI, mutate local indexes, or mutate a master index
+- `validate_ai_output.py`: validates Typed AI Output Validator v0 examples or
+  one explicit typed output file. It supports `--output`, `--provider`,
+  `--bundle-root`, `--all-examples`, `--strict`, and `--json`; checks
+  disabled-by-default provider references, required review, prohibited uses,
+  private-path and secret leakage, short generated text, and candidate-only
+  structured claims; and does not call models, load providers, import evidence,
+  draft contributions, stage packs, mutate local indexes, upload, or mutate a
+  master index
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

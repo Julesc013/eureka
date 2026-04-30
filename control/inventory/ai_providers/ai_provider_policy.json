@@ -47,6 +47,7 @@
     "AI Provider Contract v0 is contract/validation/example-only.",
     "Provider manifests are not executable plugins and do not grant local filesystem or live source access.",
     "Remote providers require explicit future credential and operator approval policy before any runtime exists.",
-    "Model outputs remain suggestions or review candidates, not evidence truth or master-index mutations."
+    "Model outputs remain suggestions or review candidates, not evidence truth or master-index mutations.",
+    "Typed AI Output Validator v0 validates recorded output candidates before future AI-assisted evidence or contribution workflows."
   ]
 }

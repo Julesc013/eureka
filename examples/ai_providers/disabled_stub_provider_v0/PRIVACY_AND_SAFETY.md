@@ -13,3 +13,7 @@ implemented.
 Model outputs cannot be used as canonical truth, source-trust decisions,
 rights clearance, malware safety, automatic identity merge, or automatic
 master-index acceptance.
+
+Typed output validation rejects secret-like fields and private absolute paths
+in public-safe output. Passing validation does not prove factual correctness,
+rights status, compatibility, identity, malware safety, or review acceptance.

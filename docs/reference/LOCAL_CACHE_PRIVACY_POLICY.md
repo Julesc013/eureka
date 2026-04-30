@@ -93,6 +93,12 @@ explicit credentials and consent before any future runtime exists. Provider
 manifests must not contain API keys, secrets, private paths, or credential
 storage behavior.
 
+Typed AI Output Validator v0 follows the same posture for recorded AI output
+candidates. It rejects secret-like fields and private absolute paths in
+public-safe output, records no prompt logs, performs no telemetry, calls no
+model, and does not import output into evidence, contribution, local index, or
+master-index state.
+
 ## Deletion, Reset, Export, And Portable Mode
 
 Future native/private cache work requires controls to clear public cache, clear

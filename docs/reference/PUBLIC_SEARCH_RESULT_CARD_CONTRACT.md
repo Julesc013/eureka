@@ -221,6 +221,9 @@ AI Provider Contract v0 does not add AI result cards or generated snippets.
 Future AI explanations may appear only as typed, review-required suggestions
 after separate output validation and public-search contract updates. They are
 not canonical truth, rights clearance, malware safety, or ranking authority.
+Typed AI Output Validator v0 adds that offline output validation step through
+`scripts/validate_ai_output.py`, but it does not display AI output on result
+cards, import AI output into evidence/contribution packs, or alter ranking.
 
 ## Runtime Preconditions
 

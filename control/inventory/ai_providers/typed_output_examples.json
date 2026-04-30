@@ -1,0 +1,47 @@
+{
+  "inventory_kind": "eureka.typed_ai_output_examples",
+  "schema_version": "typed_ai_output_examples.v0",
+  "created_by_slice": "typed_ai_output_validator_v0",
+  "examples": [
+    {
+      "example_id": "example.ai.alias_candidate.browser_alias.v0",
+      "provider_id": "example.disabled_stub_provider_v0",
+      "path": "examples/ai_providers/disabled_stub_provider_v0/examples/alias_candidate.valid.json",
+      "task_type": "alias_suggestion",
+      "output_type": "alias_candidate",
+      "expected_validation_status": "pass",
+      "notes": "Synthetic alias candidate; review-required and not truth."
+    },
+    {
+      "example_id": "example.ai.compatibility_claim.browser_platform.v0",
+      "provider_id": "example.disabled_stub_provider_v0",
+      "path": "examples/ai_providers/disabled_stub_provider_v0/examples/compatibility_claim_candidate.valid.json",
+      "task_type": "compatibility_claim_candidate",
+      "output_type": "compatibility_claim_candidate",
+      "expected_validation_status": "pass",
+      "notes": "Synthetic compatibility claim candidate; no runtime execution or compatibility oracle."
+    },
+    {
+      "example_id": "example.ai.explanation_draft.result_summary.v0",
+      "provider_id": "example.disabled_stub_provider_v0",
+      "path": "examples/ai_providers/disabled_stub_provider_v0/examples/explanation_draft.valid.json",
+      "task_type": "explanation_draft",
+      "output_type": "explanation_draft",
+      "expected_validation_status": "pass",
+      "notes": "Synthetic explanation draft; not ranking or trust authority."
+    },
+    {
+      "example_id": "example.ai.metadata_claim.browser_release.v0",
+      "provider_id": "example.disabled_stub_provider_v0",
+      "path": "examples/ai_providers/disabled_stub_provider_v0/examples/metadata_claim_candidate.valid.json",
+      "task_type": "metadata_extraction_suggestion",
+      "output_type": "metadata_claim_candidate",
+      "expected_validation_status": "pass",
+      "notes": "Synthetic metadata claim candidate; review required before any contribution workflow."
+    }
+  ],
+  "notes": [
+    "All examples are synthetic, provider-disabled, and validation-only.",
+    "Invalid output cases are created in tempfile-based tests instead of committed fixtures."
+  ]
+}

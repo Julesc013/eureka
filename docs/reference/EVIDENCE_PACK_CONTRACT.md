@@ -189,9 +189,12 @@ through `python scripts/validate_pack_set.py --all-examples` or an explicit
 and does not import, stage, index, upload, or make evidence canonical.
 
 AI Provider Contract v0 is separate from evidence packs. AI output is not
-evidence truth. Future AI output may draft evidence candidates only when typed,
-validated, linked to source/evidence references where possible, and reviewed.
-It cannot bypass evidence-pack validation, rights/privacy checks, contribution
+evidence truth. Typed AI Output Validator v0 now provides
+`scripts/validate_ai_output.py` for offline typed output validation before any
+future AI-assisted evidence drafting. Future AI output may draft evidence
+candidates only when typed, validated, linked to source/evidence references
+where possible, and reviewed. It does not enter evidence packs automatically
+and cannot bypass evidence-pack validation, rights/privacy checks, contribution
 review, or master-index review.
 
 ## Not Implemented

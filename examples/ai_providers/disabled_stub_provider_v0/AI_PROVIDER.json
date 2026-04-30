@@ -39,10 +39,14 @@
   },
   "supported_tasks": [
     "alias_suggestion",
+    "compatibility_claim_candidate",
+    "metadata_extraction_suggestion",
     "explanation_draft"
   ],
   "allowed_output_types": [
     "alias_candidate",
+    "compatibility_claim_candidate",
+    "metadata_claim_candidate",
     "explanation_draft"
   ],
   "forbidden_output_types": [

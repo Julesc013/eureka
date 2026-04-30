@@ -213,10 +213,12 @@ through `python scripts/validate_pack_set.py --all-examples` or an explicit
 or submit contribution records.
 
 AI Provider Contract v0 defines a future source of typed suggestions for
-contribution drafts. AI output remains a candidate, not truth. A contribution
-pack may later reference typed AI output only after output validation, evidence
-linking where possible, and review policy are in place; AI cannot trigger
-automatic acceptance or master-index mutation.
+contribution drafts. Typed AI Output Validator v0 now provides
+`scripts/validate_ai_output.py` for offline typed output validation. AI output
+remains a candidate, not truth. A contribution pack may later reference typed
+AI output only after output validation, evidence linking where possible, and
+review policy are in place. AI output does not enter contribution packs
+automatically and cannot trigger automatic acceptance or master-index mutation.
 
 ## Not Implemented
 

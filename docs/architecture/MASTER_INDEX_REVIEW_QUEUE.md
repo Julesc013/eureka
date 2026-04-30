@@ -42,6 +42,12 @@ boundaries. AI outputs remain suggestions that require evidence review. They do
 not become accepted records by themselves and cannot decide truth, rights,
 malware safety, source trust, identity merges, or acceptance.
 
+Typed AI Output Validator v0 adds `scripts/validate_ai_output.py` as an offline
+pre-review check for those suggestions. Passing validation only means the
+output shape, provider reference, required review, prohibited uses, and leakage
+checks passed; it does not enter evidence, contribution, queue, or master-index
+state automatically.
+
 Source/Evidence/Index Pack Import Planning v0 keeps import local and
 validate-only first. A staged pack is not submitted, uploaded, accepted,
 published, or merged into the master index. Future queue export must be a

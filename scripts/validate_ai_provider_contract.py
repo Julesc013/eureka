@@ -10,9 +10,15 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 CONTRACT_DIR = REPO_ROOT / "contracts" / "ai"
 INVENTORY_DIR = REPO_ROOT / "control" / "inventory" / "ai_providers"
 DEFAULT_PROVIDER_ROOT = REPO_ROOT / "examples" / "ai_providers" / "disabled_stub_provider_v0"
+TYPED_OUTPUT_VALIDATOR_MODULE = REPO_ROOT / "runtime" / "engine" / "ai" / "typed_output_validator.py"
+TYPED_OUTPUT_VALIDATOR_SCRIPT = REPO_ROOT / "scripts" / "validate_ai_output.py"
+AI_PROVIDER_DOC = REPO_ROOT / "docs" / "reference" / "AI_PROVIDER_CONTRACT.md"
+TYPED_OUTPUT_DOC = REPO_ROOT / "docs" / "reference" / "TYPED_AI_OUTPUT_CONTRACT.md"
 
 REQUIRED_SCHEMA_FILES = {
     "ai_provider_manifest.v0.json",
@@ -172,13 +178,19 @@ FORBIDDEN_EXTENSIONS = {
     ".sh",
 }
 FORBIDDEN_RUNTIME_PATHS = (
-    REPO_ROOT / "runtime" / "engine" / "ai",
     REPO_ROOT / "runtime" / "engine" / "ai_providers",
     REPO_ROOT / "runtime" / "gateway" / "ai",
     REPO_ROOT / "runtime" / "gateway" / "ai_providers",
     REPO_ROOT / "surfaces" / "web" / "ai",
     REPO_ROOT / "surfaces" / "native" / "ai",
 )
+ALLOWED_AI_VALIDATION_RUNTIME_FILES = {
+    "__init__.py",
+    "README.md",
+    "typed_output_validator.py",
+    "tests/__init__.py",
+    "tests/test_typed_output_validator.py",
+}
 
 
 def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> int:
@@ -207,6 +219,7 @@ def validate_ai_provider_contract(provider_root: Path, *, strict: bool = False) 
     policy = _validate_inventory(errors)
     manifest, typed_outputs = _validate_provider_root(root, strict=strict, errors=errors, warnings=warnings)
     _validate_runtime_absence(errors)
+    _validate_typed_output_validator_artifacts(errors)
 
     provider_id = manifest.get("provider_id") if isinstance(manifest, Mapping) else None
     return {
@@ -443,37 +456,13 @@ def _validate_typed_output(
     manifest: Mapping[str, Any],
     errors: list[str],
 ) -> None:
-    missing = sorted(REQUIRED_TYPED_OUTPUT_FIELDS - set(payload))
-    if missing:
-        errors.append(f"{label}: missing required typed output fields: {', '.join(missing)}.")
-    if payload.get("schema_version") != "typed_ai_output.v0":
-        errors.append(f"{label}: schema_version must be typed_ai_output.v0.")
-    if payload.get("task_type") not in ALLOWED_TASK_TYPES:
-        errors.append(f"{label}: unsupported task_type.")
-    if payload.get("output_type") not in ALLOWED_OUTPUT_TYPES:
-        errors.append(f"{label}: unsupported output_type.")
-    if payload.get("required_review") is not True:
-        errors.append(f"{label}: required_review must be true.")
-    prohibited_uses = set(payload.get("prohibited_uses", []))
-    if not REQUIRED_PROHIBITED_USES <= prohibited_uses:
-        errors.append(f"{label}: prohibited_uses must include canonical_truth, rights_clearance, malware_safety, and automatic_acceptance.")
-    created_by = _as_mapping(payload.get("created_by_provider"))
-    _require_false(created_by, "runtime_call_performed", label, errors)
-    provider_ref = _as_mapping(payload.get("provider_ref"))
-    if manifest:
-        if provider_ref.get("provider_id") != manifest.get("provider_id"):
-            errors.append(f"{label}: provider_ref.provider_id must match AI_PROVIDER.json.")
-        if provider_ref.get("provider_version") != manifest.get("provider_version"):
-            errors.append(f"{label}: provider_ref.provider_version must match AI_PROVIDER.json.")
-        if payload.get("task_type") not in set(manifest.get("supported_tasks", [])):
-            errors.append(f"{label}: task_type is not listed in provider supported_tasks.")
-        if payload.get("output_type") not in set(manifest.get("allowed_output_types", [])):
-            errors.append(f"{label}: output_type is not listed in provider allowed_output_types.")
-    for index, claim in enumerate(payload.get("structured_claims", [])):
-        if isinstance(claim, Mapping) and claim.get("review_required") is not True:
-            errors.append(f"{label}: structured_claims[{index}].review_required must be true.")
-    _scan_payload_for_secrets(payload, label, errors)
-    _scan_text_for_private_paths(json.dumps(payload, sort_keys=True), label, errors)
+    try:
+        from runtime.engine.ai.typed_output_validator import validate_typed_ai_output
+    except ImportError as exc:
+        errors.append(f"{label}: typed AI output validator module is unavailable: {exc}.")
+        return
+    for error in validate_typed_ai_output(payload, provider_manifest=manifest):
+        errors.append(f"{label}: {error}")
 
 
 def _validate_checksums(root: Path, *, strict: bool, errors: list[str]) -> None:
@@ -544,6 +533,27 @@ def _validate_runtime_absence(errors: list[str]) -> None:
     for path in FORBIDDEN_RUNTIME_PATHS:
         if path.exists():
             errors.append(f"{_rel(path)}: AI provider runtime path exists; P41 is contract-only.")
+    validation_dir = REPO_ROOT / "runtime" / "engine" / "ai"
+    if validation_dir.exists():
+        for path in validation_dir.rglob("*"):
+            if not path.is_file() or "__pycache__" in path.parts:
+                continue
+            rel_path = str(path.relative_to(validation_dir)).replace("\\", "/")
+            if rel_path not in ALLOWED_AI_VALIDATION_RUNTIME_FILES:
+                errors.append(f"{_rel(path)}: unexpected AI runtime file; only typed-output validation helpers and tests are allowed.")
+
+
+def _validate_typed_output_validator_artifacts(errors: list[str]) -> None:
+    for path in (TYPED_OUTPUT_VALIDATOR_MODULE, TYPED_OUTPUT_VALIDATOR_SCRIPT):
+        if not path.is_file():
+            errors.append(f"{_rel(path)}: typed AI output validation artifact is missing.")
+    for path in (AI_PROVIDER_DOC, TYPED_OUTPUT_DOC):
+        if not path.is_file():
+            errors.append(f"{_rel(path)}: AI contract doc is missing.")
+            continue
+        text = path.read_text(encoding="utf-8").lower()
+        if "validate_ai_output.py" not in text or "typed output validation" not in text:
+            errors.append(f"{_rel(path)}: must reference typed output validation and scripts/validate_ai_output.py.")
 
 
 def _load_json(path: Path, errors: list[str]) -> Any:

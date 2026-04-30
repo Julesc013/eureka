@@ -17,3 +17,9 @@ Current contracts:
 Every provider is disabled by default. Every AI output is a suggestion or
 candidate that requires review and must not be used as canonical truth, rights
 clearance, malware safety, source-trust authority, or automatic acceptance.
+
+Typed AI Output Validator v0 validates recorded typed outputs with
+`scripts/validate_ai_output.py` and the validation-only
+`runtime/engine/ai/typed_output_validator.py` helper. It does not call models,
+load providers, import evidence, create contribution records, mutate local
+indexes, or mutate a master index.
