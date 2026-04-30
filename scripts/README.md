@@ -257,6 +257,14 @@ Current scripts:
   checksum coverage, private-path rejection, and executable payload rejection.
   It supports `--pack-root`, `--json`, and `--strict`, and does not import,
   index, upload, execute, fetch, scrape, or contact a network
+- `validate_index_pack.py`: validates Index Pack Contract v0 directories. By
+  default it checks the synthetic example pack under
+  `examples/index_packs/minimal_index_pack_v0/`, including `INDEX_PACK.json`,
+  index/source/field coverage JSON, record-summary JSONL, query examples,
+  checksum coverage, privacy/status consistency, private-path rejection, raw
+  SQLite/cache rejection, and executable payload rejection. It supports
+  `--pack-root`, `--json`, and `--strict`, and does not import, merge, index,
+  upload, export databases, execute, fetch, scrape, or contact a network
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

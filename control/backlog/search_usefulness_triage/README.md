@@ -86,7 +86,10 @@ public-search smoke status, external-baseline pending status, and remaining
 gaps. Source Pack Contract v0 is now implemented as a contract/validation-only
 safe extension path for source metadata packs. Evidence Pack Contract v0 is now
 implemented as a contract/validation-only path for public-safe claims and
-observations. The next milestone is Index Pack Contract v0.
+observations. Index Pack Contract v0 is now implemented as a
+contract/validation-only path for public-safe index coverage and record
+summaries without raw SQLite/cache export. The next milestone is Contribution
+Pack Contract v0.
 
 ## Contents
 

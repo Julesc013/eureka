@@ -1100,8 +1100,8 @@ crawling, external observations, real binaries, downloads, installers, uploads,
 local path search, telemetry, accounts, hosted search, or hosted-readiness
 claim. Exact failure-mode deltas are marked unavailable because the pre-P32
 failure-mode baseline was not committed as machine-readable JSON. Source Pack
-Contract v0 and Evidence Pack Contract v0 are now implemented; the next
-Codex-safe milestone is Index Pack Contract v0.
+Contract v0, Evidence Pack Contract v0, and Index Pack Contract v0 are now
+implemented; the next Codex-safe milestone is Contribution Pack Contract v0.
 
 ## ADR-114: Define Source Packs Before Import Or Submission
 
@@ -1127,8 +1127,8 @@ executable plugin loading, live connectors, live probes, arbitrary URL fetch,
 scraping, crawling, downloads, installers, private local path sharing,
 master-index acceptance, production signing, rights clearance, malware-safety
 claims, or production extension support. Evidence Pack Contract v0 is now
-implemented; the next Codex-safe milestone is Index Pack Contract v0, followed
-by Contribution Pack Contract v0.
+implemented, and Index Pack Contract v0 is now implemented; the next Codex-safe
+milestone is Contribution Pack Contract v0.
 
 ## ADR-115: Define Evidence Packs As Claims Before Truth Selection
 
@@ -1151,6 +1151,31 @@ P35 deliberately does not implement evidence-pack import, indexing, upload,
 executable plugin loading, live connectors, live probes, arbitrary URL fetch,
 scraping, crawling, downloads, installers, private cache sharing,
 master-index acceptance, production signing, rights clearance, malware-safety
-claims, canonical truth selection, or production extension support. The next
-Codex-safe milestone is Index Pack Contract v0, followed by Contribution Pack
-Contract v0.
+claims, canonical truth selection, or production extension support. Index Pack
+Contract v0 is now implemented; the next Codex-safe milestone is Contribution
+Pack Contract v0.
+
+## ADR-116: Define Index Packs As Coverage Before Import Or Merge
+
+Status: accepted
+
+Index Pack Contract v0 adds `contracts/packs/index_pack.v0.json`,
+`docs/reference/INDEX_PACK_CONTRACT.md`,
+`examples/index_packs/minimal_index_pack_v0/`,
+`scripts/validate_index_pack.py`, and
+`control/audits/index-pack-contract-v0/`.
+
+The decision is to define index packs as portable, public-safe coverage and
+record-summary bundles before any import, merge, upload, hosted ingestion, or
+master-index review behavior exists. Index packs may describe an index build,
+source coverage, field coverage, query examples, and public-safe record
+summaries, but they are not raw caches, raw SQLite databases, production search
+indexes, or canonical proof.
+
+P36 deliberately does not implement index-pack import, merge, upload, local
+cache export, raw SQLite export, executable plugin loading, live connectors,
+live probes, arbitrary URL fetch, scraping, crawling, downloads, installers,
+private cache sharing, master-index acceptance, production signing, rights
+clearance, malware-safety claims, canonical truth selection, hosted ingestion,
+or production extension support. The next Codex-safe milestone is Contribution
+Pack Contract v0, followed by Master Index Review Queue Contract v0.

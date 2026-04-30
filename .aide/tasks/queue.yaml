@@ -475,14 +475,14 @@
     {
       "id": "index_pack_contract_v0",
       "title": "Index Pack Contract v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 68,
-      "notes": "Future index-pack contract work; do not add live source sync, crawling, hosted indexing, arbitrary local ingestion, or production search claims."
+      "notes": "Implemented Index Pack Contract v0 as contract/validation/example-only work, including manifest schema, synthetic summary-only example pack, checksum validator, docs, audit pack, and tests without import, merge, upload, raw SQLite/local-cache export, live connectors, executable plugins, canonical truth selection, or master-index acceptance."
     },
     {
       "id": "contribution_pack_contract_v0",
       "title": "Contribution Pack Contract v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 69,
       "notes": "Future contribution-pack contract work only; do not add accounts, uploads, moderation infrastructure, telemetry, or live backend behavior."
     },
@@ -494,11 +494,11 @@
       "notes": "Future contract for master-index review queues only; do not add hosted indexing, accounts, uploads, moderation infrastructure, live source sync, crawling, or production search claims."
     },
     {
-      "id": "source_evidence_pack_import_planning_v0",
-      "title": "Source/Evidence Pack Import Planning v0",
+      "id": "source_evidence_index_pack_import_planning_v0",
+      "title": "Source/Evidence/Index Pack Import Planning v0",
       "status": "recommended_follow_up",
       "priority": 71,
-      "notes": "Future planning only for local validated source/evidence pack import. Do not implement import, indexing, uploads, live connectors, arbitrary local ingestion, canonical truth selection, or master-index acceptance without separate approval."
+      "notes": "Future planning only for local validated source/evidence/index pack import and index-pack comparison. Do not implement import, indexing, merge, uploads, live connectors, arbitrary local ingestion, canonical truth selection, raw database export, or master-index acceptance without separate approval."
     },
     {
       "id": "ai_provider_contract_v0",

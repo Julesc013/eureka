@@ -234,5 +234,9 @@ are not imported into this audit, indexed, uploaded, or accepted into a master
 index. Evidence Pack Contract v0 is also implemented as the claim/observation
 layer: validated evidence packs can be authored and checked locally, but they
 are not imported into this audit, indexed, uploaded, accepted into a master
-index, or treated as canonical truth. Future usefulness work should use Index
-Pack and Contribution Pack contracts before pack import affects audit results.
+index, or treated as canonical truth. Index Pack Contract v0 is now implemented
+as the coverage/record-summary layer: validated index packs can describe what
+was indexed, but they are not imported, merged, uploaded, accepted into a
+master index, exported as raw SQLite/cache files, or treated as canonical
+truth. Future usefulness work should use Contribution Pack and Master Index
+Review Queue contracts before pack import affects audit results.

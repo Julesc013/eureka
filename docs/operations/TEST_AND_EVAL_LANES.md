@@ -247,6 +247,21 @@ evidence kinds and claim types, snippet limits, rights/privacy docs, checksum
 coverage, disabled live/network posture, no import/index/upload behavior, no
 private paths, and no executable payloads.
 
+Index Pack Contract v0 is validated with:
+
+```bash
+python scripts/validate_index_pack.py
+python scripts/validate_index_pack.py --json
+python -m unittest tests.operations.test_index_pack_contract tests.scripts.test_validate_index_pack
+```
+
+The validation checks the index-pack manifest schema, synthetic summary-only
+example pack, index/source/field coverage JSON, record-summary JSONL, query
+examples, record id uniqueness, source references, record kinds, privacy/rights
+docs, checksum coverage, disabled live/network posture, no import/merge/upload
+or raw SQLite/local-cache export behavior, no private paths, and no executable
+payloads.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

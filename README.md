@@ -157,6 +157,15 @@ stdlib validator and tests for public-safe claims, observations, snippets, and
 source references, but it does not implement import, indexing, uploads, live
 connectors, executable plugins, canonical truth selection, or master-index
 acceptance.
+Index Pack Contract v0 now defines the first portable index-pack format under
+`contracts/packs/index_pack.v0.json`, `docs/reference/INDEX_PACK_CONTRACT.md`,
+`examples/index_packs/minimal_index_pack_v0/`, and
+`control/audits/index-pack-contract-v0/`. It adds a checksum-validating stdlib
+validator and tests for summary-only index-build metadata, source coverage,
+field coverage, query examples, and public-safe record summaries, but it does
+not implement import, merge, uploads, raw SQLite/local-cache export, live
+connectors, executable plugins, canonical truth selection, or master-index
+acceptance.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -707,10 +716,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Index Pack Contract v0
-2. Contribution Pack Contract v0
-3. Master Index Review Queue Contract v0
-4. Source/Evidence Pack Import Planning v0
+1. Contribution Pack Contract v0
+2. Master Index Review Queue Contract v0
+3. Source/Evidence/Index Pack Import Planning v0
+4. AI Provider Contract v0
 5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

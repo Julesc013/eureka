@@ -305,12 +305,13 @@ The next backend sequence is:
 76. Search Usefulness Delta v2 (implemented as audit-only measurement of Source Expansion v2 status deltas, query movement, source-family impact, remaining gaps, hard-eval status, public-search smoke status, and pending/manual external baselines)
 77. Source Pack Contract v0 (implemented as contract/validation/example-only source-pack format, synthetic example pack, checksum validator, lifecycle docs, and audit pack; no import, indexing, upload, live connectors, executable plugins, hosted submission, or master-index acceptance)
 78. Evidence Pack Contract v0 (implemented as contract/validation/example-only evidence-pack format, synthetic example pack, checksum validator, docs, and audit pack; no import, indexing, upload, live connectors, executable plugins, canonical truth selection, hosted submission, or master-index acceptance)
+79. Index Pack Contract v0 (implemented as contract/validation/example-only index-pack format, synthetic summary-only example pack, checksum validator, docs, and audit pack; no import, merge, upload, raw SQLite/local-cache export, live connectors, executable plugins, canonical truth selection, hosted ingestion, or master-index acceptance)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Index Pack Contract v0
+> Contribution Pack Contract v0
 
 Why this comes next:
 
@@ -380,8 +381,15 @@ Why this comes next:
   evidence kinds and claim types, snippet limits, rights/privacy posture, and
   checksum validation without import, indexing, upload, live connectors,
   executable plugins, canonical truth selection, hosted submission, downloads,
-  or master-index acceptance. Index Pack Contract v0 is next so pack-derived
-  index artifacts can be governed before import/submission planning.
+  or master-index acceptance.
+- Index Pack Contract v0 is implemented as contract/validation/example-only
+  work. It defines summary-only index build metadata, source coverage, field
+  coverage, query examples, record summaries, privacy/rights posture, and
+  checksum validation without import, merge, upload, raw SQLite/local-cache
+  export, live connectors, executable plugins, canonical truth selection,
+  hosted ingestion, downloads, or master-index acceptance. Contribution Pack
+  Contract v0 is next so source/evidence/index bundles can be wrapped for
+  governed review without adding upload or hosted intake behavior.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

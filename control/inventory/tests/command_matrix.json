@@ -136,7 +136,9 @@
         "source_pack_contract_tests",
         "source_pack_validator",
         "evidence_pack_contract_tests",
-        "evidence_pack_validator"
+        "evidence_pack_validator",
+        "index_pack_contract_tests",
+        "index_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -268,7 +270,9 @@
         "source_pack_contract_tests",
         "source_pack_validator",
         "evidence_pack_contract_tests",
-        "evidence_pack_validator"
+        "evidence_pack_validator",
+        "index_pack_contract_tests",
+        "index_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -372,7 +376,9 @@
         "source_pack_contract_tests",
         "source_pack_validator",
         "evidence_pack_contract_tests",
-        "evidence_pack_validator"
+        "evidence_pack_validator",
+        "index_pack_contract_tests",
+        "index_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -566,7 +572,9 @@
         "source_pack_contract_tests",
         "source_pack_validator",
         "evidence_pack_contract_tests",
-        "evidence_pack_validator"
+        "evidence_pack_validator",
+        "index_pack_contract_tests",
+        "index_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
