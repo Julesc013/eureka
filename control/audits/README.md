@@ -218,6 +218,12 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   report generation, example run results, and no-mutation posture without
   implementing import, staging, indexing, uploads, runtime mutation, network
   calls, model calls, or master-index mutation.
+- `local-quarantine-staging-model-v0/`: planning/governance audit pack for
+  future local/private quarantine and staging. It records path policy, staged
+  entity vocabulary, report linking, privacy/rights/risk posture, reset/delete/
+  export requirements, native/relay/snapshot boundaries, and no-impact search
+  and master-index defaults without creating staging runtime, staged state,
+  local indexes, uploads, network calls, model calls, or master-index mutation.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

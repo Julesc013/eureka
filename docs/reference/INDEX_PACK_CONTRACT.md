@@ -15,6 +15,9 @@ Validate-Only Pack Import Tool v0 may run this contract validator for an
 explicit index pack root and emit Pack Import Report v0, but that report is
 still not import, staging, indexing, upload, local index mutation, or master
 index acceptance.
+Local Quarantine/Staging Model v0 may later stage index-pack summaries as
+local_private metadata linked to a validate-only report, but it forbids raw
+database/cache staging by default and creates no local index mutation.
 
 ## Pack Layout
 

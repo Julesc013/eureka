@@ -12,6 +12,9 @@ downloads, installers, executable plugins, or public master-index acceptance.
 Validate-Only Pack Import Tool v0 may run this contract validator for an
 explicit source pack root and emit Pack Import Report v0, but that report is
 still not import, staging, indexing, upload, or master index acceptance.
+Local Quarantine/Staging Model v0 may later stage source-pack metadata as a
+local_private candidate linked to a validate-only report, but it creates no
+staging runtime and does not mutate search, local indexes, or the master index.
 
 ## Pack Layout
 

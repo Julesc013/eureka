@@ -14,6 +14,10 @@ Validate-Only Pack Import Tool v0 may run this contract validator for an
 explicit evidence pack root and emit Pack Import Report v0, but that report is
 still not import, staging, indexing, upload, canonical truth selection, or
 master index acceptance.
+Local Quarantine/Staging Model v0 may later stage evidence metadata as a
+local_private candidate linked to a validate-only report, but it creates no
+staging runtime and does not turn evidence records into truth, search input, or
+master-index state.
 
 ## Pack Layout
 

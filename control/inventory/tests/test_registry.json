@@ -3412,6 +3412,48 @@
       "failure_means": "Validate-only CLI behavior, JSON report generation, explicit output behavior, unknown-root handling, docs, audit pack, or metadata regressed.",
       "advisory_or_required": "required",
       "notes": "Covers all-examples, explicit pack roots, optional AI output examples, report validation, hard false mutation fields, strict unknown-type failure, and no staging/import/index/upload side effects."
+    },
+    {
+      "test_id": "local_quarantine_staging_model_validator",
+      "label": "Local quarantine/staging model validator",
+      "command": "python scripts/validate_local_quarantine_staging_model.py",
+      "category": "contract",
+      "owner_area": "control/inventory/local_state",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Local Quarantine/Staging Model v0 inventory, audit pack, ignore policy, docs, or no-runtime posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates planning-only local staging policy; it creates no .eureka-local state, imports no packs, stages nothing, indexes nothing, uploads nothing, and mutates neither public search nor the master index."
+    },
+    {
+      "test_id": "local_quarantine_staging_model_tests",
+      "label": "Local quarantine/staging model tests",
+      "command": "python -m unittest tests.operations.test_local_quarantine_staging_model tests.scripts.test_validate_local_quarantine_staging_model",
+      "category": "contract",
+      "owner_area": "control/inventory/local_state",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Local staging model defaults, prohibited roots, ignored roots, audit docs, validator JSON, or no-runtime/no-directory checks regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers local_private defaults, no search/master-index impact, .eureka-local/.eureka-cache/.eureka-staging ignore policy, no committed runtime directories, reset/delete/export docs, and absence of staging runtime tooling."
     }
   ]
 }

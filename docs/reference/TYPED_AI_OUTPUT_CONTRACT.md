@@ -17,6 +17,9 @@ Validate-Only Pack Import Tool v0 can include the committed typed AI output
 examples in a Pack Import Report v0 when `--include-ai-outputs` is explicitly
 provided. That report does not accept AI output as evidence, import it into a
 contribution pack, mutate search, call a model, or write the master index.
+Local Quarantine/Staging Model v0 may later stage typed AI outputs only as
+local_private review-required candidates. Staging does not make AI output
+evidence, truth, search ranking input, or master-index state.
 
 ## Output Envelope
 

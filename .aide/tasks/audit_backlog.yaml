@@ -501,8 +501,17 @@
         "validate-only-pack-import-tool-v0"
       ],
       "title": "Review validate-only pack import reports before staging or local indexing exists",
+      "status": "addressed_by_local_quarantine_staging_model_v0",
+      "suggested_milestone": "Staging Report Path Contract v0"
+    },
+    {
+      "id": "audit-backlog-local-quarantine-staging-model",
+      "finding_refs": [
+        "local-quarantine-staging-model-v0"
+      ],
+      "title": "Define report-path and manifest contracts before any staging runtime writes local state",
       "status": "open_follow_up",
-      "suggested_milestone": "Local Quarantine/Staging Model v0, planning only"
+      "suggested_milestone": "Staging Report Path Contract v0"
     }
   ]
 }

@@ -378,6 +378,20 @@ mutation fields. It does not import, stage, index, upload, mutate runtime
 state, mutate public search, call networks, call models, or accept anything
 into the master index.
 
+Local Quarantine/Staging Model v0 is validated with:
+
+```bash
+python scripts/validate_local_quarantine_staging_model.py
+python scripts/validate_local_quarantine_staging_model.py --json
+python -m unittest tests.operations.test_local_quarantine_staging_model tests.scripts.test_validate_local_quarantine_staging_model
+```
+
+The validation checks local-state inventory files, planning-only status,
+local_private defaults, no search/master-index impact, prohibited roots,
+ignored future local-state roots, reset/delete/export documentation, native/
+relay/snapshot impact documentation, absence of `.eureka-local/` runtime
+state, and absence of staging runtime claims.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

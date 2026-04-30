@@ -239,6 +239,16 @@ Validate-Only Pack Import Tool v0 now adds
 roots or known examples, emits Pack Import Report v0, and does not import,
 stage, index, upload, call networks, call models, mutate runtime state, mutate
 public search, or mutate the master index.
+Local Quarantine/Staging Model v0 now adds
+`control/inventory/local_state/`,
+`docs/architecture/LOCAL_QUARANTINE_STAGING_MODEL.md`,
+`docs/reference/LOCAL_STAGING_PATH_POLICY.md`,
+`scripts/validate_local_quarantine_staging_model.py`, and
+`control/audits/local-quarantine-staging-model-v0/`. It is planning-only: no
+staging runtime exists, no staged state is created, and future local state is
+private by default, ignored for development roots, resettable/deletable, and
+kept out of public search and the master index. The next Codex-safe milestone
+is Staging Report Path Contract v0.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -789,13 +799,13 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Manual Observation Batch 0 Execution, human-operated
-2. Search Usefulness Baseline Comparison Report v0 after observations
-3. IA Metadata Live Probe Approval Pack v0 only after explicit approval
-4. Public Hosted Search Rehearsal Plan v0
-5. Local Quarantine/Staging Model v0, planning only, as a Codex-safe
-   alternative
-6. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
+1. Staging Report Path Contract v0
+2. Local Staging Manifest Format v0
+3. Staged Pack Inspector v0
+4. Manual Observation Batch 0 Execution, human-operated parallel work
+5. Search Usefulness Baseline Comparison Report v0 after observations
+6. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+7. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 
 Broader near-term direction:

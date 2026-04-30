@@ -11,6 +11,10 @@ OpenAI/Anthropic/Ollama/LM Studio calls, local model execution, provider
 loading, API keys, credential storage, prompt logging runtime, telemetry,
 embeddings, vector search, LLM reranking, AI extraction runtime, AI in public
 search, or master-index acceptance.
+Local Quarantine/Staging Model v0 may later stage typed AI output candidates
+only as local_private, review-required metadata linked to validation reports.
+It does not implement AI provider runtime, model calls, search mutation, or
+master-index mutation.
 
 ## Provider Types
 

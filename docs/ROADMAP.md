@@ -126,9 +126,17 @@ Validate-Only Pack Import Tool v0 is now implemented under
 `control/audits/validate-only-pack-import-tool-v0/`. It validates explicit pack
 roots or known examples and emits Pack Import Report v0 without import,
 staging, indexing, upload, runtime mutation, network calls, model calls, or
-master-index mutation. Manual Observation Batch 0 Execution, human-operated,
-is now the next recommended milestone; Local Quarantine/Staging Model v0 is
-the Codex-safe planning alternative.
+master-index mutation. Local Quarantine/Staging Model v0 is now implemented as
+the follow-up planning layer before any staging runtime or staged state exists.
+Local Quarantine/Staging Model v0 is now implemented as planning/governance
+under `control/inventory/local_state/`,
+`docs/architecture/LOCAL_QUARANTINE_STAGING_MODEL.md`,
+`docs/reference/LOCAL_STAGING_PATH_POLICY.md`,
+`scripts/validate_local_quarantine_staging_model.py`, and
+`control/audits/local-quarantine-staging-model-v0/`. It creates no staging
+runtime or staged state, keeps future local state private by default, and
+preserves no-impact defaults for search and the master index. The next
+Codex-safe milestone is Staging Report Path Contract v0.
 
 ## Stage 3: Surface Skeletons
 

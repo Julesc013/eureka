@@ -15,6 +15,10 @@ Validate-Only Pack Import Tool v0 may run this contract validator for an
 explicit contribution pack root and emit Pack Import Report v0, but that report
 is still not import, staging, upload, moderation, automatic acceptance, or
 master index acceptance.
+Local Quarantine/Staging Model v0 may later stage contribution candidates as
+local_private review material linked to a validate-only report, but it creates
+no submission path, moderation runtime, automatic acceptance, or master-index
+mutation.
 
 ## Pack Layout
 

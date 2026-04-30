@@ -314,12 +314,13 @@ The next backend sequence is:
 85. Typed AI Output Validator v0 (implemented as offline typed-output validation module, CLI, registry, synthetic examples, docs, audit pack, and tests; no model calls, provider runtime, API keys, telemetry, evidence import, contribution import, local index mutation, public-search AI, upload, or master-index mutation)
 86. Pack Import Report Format v0 (implemented as report schema, synthetic passed/failed/unknown examples, stdlib validator, docs, audit pack, and tests; no import runtime, staging, indexing, uploads, runtime mutation, model calls, network behavior, or master-index mutation)
 87. Validate-Only Pack Import Tool v0 (implemented as explicit-root/all-examples preflight tooling that delegates to existing validators and emits Pack Import Report v0; no import, staging, indexing, upload, runtime mutation, network behavior, model calls, public-search mutation, or master-index mutation)
+88. Local Quarantine/Staging Model v0 (implemented as planning/governance local-state model, path policy, audit pack, validator, and tests; no staging runtime, staged state, pack copying, import, local index mutation, public-search mutation, upload, network/model calls, or master-index mutation)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Manual Observation Batch 0 Execution, human-operated
+> Staging Report Path Contract v0
 
 Why this comes next:
 
@@ -449,9 +450,14 @@ Why this comes next:
   typed AI output examples when requested, writes only an explicit report file
   when `--output` is provided, and still does not import, stage, index, upload,
   mutate runtime state, mutate public search, call networks, call models, or
-  mutate the master index. Manual Observation Batch 0 Execution is now the
-  expected human-operated next milestone; Local Quarantine/Staging Model v0 is
-  the Codex-safe planning-only alternative.
+  mutate the master index.
+- Local Quarantine/Staging Model v0 is implemented as planning/governance only.
+  It defines future private roots, staged entity vocabulary, Pack Import
+  Report v0 linking, reset/delete/export requirements, and native/relay/
+  snapshot boundaries while creating no staging runtime or staged state and
+  preserving no-impact defaults for search and the master index. Staging
+  Report Path Contract v0 is the next Codex-safe milestone; Manual Observation
+  Batch 0 Execution remains human-operated parallel work.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

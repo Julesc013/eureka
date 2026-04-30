@@ -11,6 +11,12 @@ Future native clients must use user-controlled cache roots. A client must not
 write private state outside an explicitly selected root, and portable mode must
 be able to keep its state inside that selected root.
 
+Local Quarantine/Staging Model v0 defines future private pack-staging roots
+before native cache runtime exists. No staging runtime exists, no staged state
+is created, and any future native staging UI must remain local_private,
+resettable, deletable, and excluded from relay/snapshot/public-search output
+by default.
+
 Public cache and private cache must be separate:
 
 - public cache may contain already-public metadata and snapshot validation

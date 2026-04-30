@@ -10,6 +10,10 @@ Validate-Only Pack Import Tool v0 may validate a synthetic or explicit review
 queue root and emit Pack Import Report v0, but that report does not import,
 stage, index, upload, mutate runtime state, mutate the master index, or accept
 any contribution.
+Local Quarantine/Staging Model v0 keeps staging separate from this queue:
+future local staging does not submit, accept, reject, supersede, or mutate
+master-index review records. Contribution queue candidate export remains a
+separate future mode.
 
 Contribution packs remain review candidates, not truth. Queue entries and
 decisions preserve provenance, uncertainty, conflicts, and review posture before

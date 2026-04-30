@@ -142,6 +142,12 @@ steps:
     run: python scripts/validate_only_pack_import.py --all-examples --json
   - id: validate_only_pack_import_tool_tests
     run: python -m unittest tests.operations.test_validate_only_pack_import_tool tests.scripts.test_validate_only_pack_import
+  - id: local_quarantine_staging_model_validator
+    run: python scripts/validate_local_quarantine_staging_model.py
+  - id: local_quarantine_staging_model_validator_json
+    run: python scripts/validate_local_quarantine_staging_model.py --json
+  - id: local_quarantine_staging_model_tests
+    run: python -m unittest tests.operations.test_local_quarantine_staging_model tests.scripts.test_validate_local_quarantine_staging_model
   - id: public_search_demo
     run: python scripts/demo_http_api.py public-search "windows 7 apps" --limit 2
   - id: public_search_query_plan_demo

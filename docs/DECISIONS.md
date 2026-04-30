@@ -1408,6 +1408,37 @@ mutation, upload, submission, moderation UI, accounts, identity, hosted/master
 index mutation, model calls, API keys, live fetch, external observation
 collection, executable plugin loading, downloads, installers, private cache
 sharing, rights clearance, malware-safety claims, canonical truth selection,
-or production support. The next recommended milestone is Manual Observation
-Batch 0 Execution, human-operated; Local Quarantine/Staging Model v0 remains a
-Codex-safe planning-only alternative.
+or production support. Local Quarantine/Staging Model v0 is now implemented as
+the follow-up planning layer, and the next Codex-safe milestone is Staging
+Report Path Contract v0. Manual Observation Batch 0 Execution remains
+human-operated parallel work.
+
+## ADR-125: Model Local Staging Before Creating Local State
+
+Status: accepted
+
+Local Quarantine/Staging Model v0 adds
+`control/inventory/local_state/`,
+`docs/architecture/LOCAL_QUARANTINE_STAGING_MODEL.md`,
+`docs/reference/LOCAL_STAGING_PATH_POLICY.md`,
+`scripts/validate_local_quarantine_staging_model.py`, focused tests, and
+`control/audits/local-quarantine-staging-model-v0/`.
+
+The decision is to define future local quarantine/staging before any staging
+runtime writes local state. The model keeps future staged metadata
+`local_private` by default, links it to Pack Import Report v0 provenance,
+forbids public/generated/runtime/control/docs/example roots, requires
+reset/delete/export semantics, and keeps search, local indexes, hosted public
+search, relay, snapshots, and the master index unaffected by default.
+
+P45 deliberately does not implement staging runtime, create `.eureka-local/`
+or staged state, copy pack files, import source/evidence/index/contribution
+packs, import master-index queue entries, mutate local indexes, mutate runtime
+source registry state, mutate public search, upload, submit, add moderation
+UI, add accounts or identity, call models, add API keys, call networks, load
+executable plugins, add live connectors, add native clients, add relay runtime,
+add snapshot reader runtime, claim rights clearance, claim malware safety,
+claim canonical truth, or mutate the master index. The next Codex-safe
+milestone is Staging Report Path Contract v0; Local Staging Manifest Format v0
+is the alternative, while Manual Observation Batch 0 Execution remains
+human-operated parallel work.
