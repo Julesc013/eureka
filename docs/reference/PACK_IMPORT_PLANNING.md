@@ -56,6 +56,20 @@ queue artifacts:
 python scripts/validate_master_index_review_queue.py
 ```
 
+Pack Import Validator Aggregator v0 now provides the first single validate-only
+entrypoint:
+
+```bash
+python scripts/validate_pack_set.py --list-examples
+python scripts/validate_pack_set.py --all-examples
+python scripts/validate_pack_set.py --all-examples --json
+```
+
+The aggregate validator delegates to the individual validators. It validates
+known examples or one explicit root, reports pass/fail/unavailable/unknown
+type, and still does not import, stage, index, upload, submit, or mutate a
+master index.
+
 ## Privacy, Rights, And Risk
 
 Future import must detect private paths, credentials, `local_private` versus

@@ -1,0 +1,82 @@
+{
+  "report_id": "pack_import_validator_aggregator_v0",
+  "created_by_slice": "pack_import_validator_aggregator_v0",
+  "status": "implemented_validation_reporting_only",
+  "aggregate_validator": "scripts/validate_pack_set.py",
+  "example_registry": "control/inventory/packs/example_packs.json",
+  "schema_version": "pack_set_validation.v0",
+  "supported_pack_types": [
+    "source_pack",
+    "evidence_pack",
+    "index_pack",
+    "contribution_pack",
+    "master_index_review_queue"
+  ],
+  "current_validation": {
+    "command": "python scripts/validate_pack_set.py --all-examples --json",
+    "ok": true,
+    "summary": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "unavailable": 0,
+      "unknown_type": 0
+    },
+    "pack_results": [
+      {
+        "pack_root": "examples/source_packs/minimal_recorded_source_pack_v0",
+        "pack_type": "source_pack",
+        "validator_command": "python scripts/validate_source_pack.py --pack-root examples/source_packs/minimal_recorded_source_pack_v0",
+        "status": "passed",
+        "exit_code": 0
+      },
+      {
+        "pack_root": "examples/evidence_packs/minimal_evidence_pack_v0",
+        "pack_type": "evidence_pack",
+        "validator_command": "python scripts/validate_evidence_pack.py --pack-root examples/evidence_packs/minimal_evidence_pack_v0",
+        "status": "passed",
+        "exit_code": 0
+      },
+      {
+        "pack_root": "examples/index_packs/minimal_index_pack_v0",
+        "pack_type": "index_pack",
+        "validator_command": "python scripts/validate_index_pack.py --pack-root examples/index_packs/minimal_index_pack_v0",
+        "status": "passed",
+        "exit_code": 0
+      },
+      {
+        "pack_root": "examples/contribution_packs/minimal_contribution_pack_v0",
+        "pack_type": "contribution_pack",
+        "validator_command": "python scripts/validate_contribution_pack.py --pack-root examples/contribution_packs/minimal_contribution_pack_v0",
+        "status": "passed",
+        "exit_code": 0
+      },
+      {
+        "pack_root": "examples/master_index_review_queue/minimal_review_queue_v0",
+        "pack_type": "master_index_review_queue",
+        "validator_command": "python scripts/validate_master_index_review_queue.py --queue-root examples/master_index_review_queue/minimal_review_queue_v0",
+        "status": "passed",
+        "exit_code": 0
+      }
+    ]
+  },
+  "mutation_performed": false,
+  "import_performed": false,
+  "staging_performed": false,
+  "indexing_performed": false,
+  "upload_performed": false,
+  "submission_performed": false,
+  "master_index_mutation_performed": false,
+  "network_performed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "canonical_truth_claimed": false,
+  "production_readiness_claimed": false,
+  "next_recommended_milestone": "AI Provider Contract v0",
+  "alternative_next_milestone": "Pack Import Report Format v0",
+  "notes": [
+    "Aggregate validation is validate-only.",
+    "Successful validation is not import, staging, indexing, upload, submission, master-index acceptance, rights clearance, malware safety, canonical truth, or production readiness.",
+    "Pack Import Report Format v0 remains future work."
+  ]
+}

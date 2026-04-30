@@ -16,8 +16,8 @@ claims, candidates, or summaries; they do not become canonical truth.
 ## Pipeline
 
 1. User explicitly selects a pack.
-2. Tool identifies pack type from the manifest.
-3. Tool runs the matching validator.
+2. Pack Import Validator Aggregator v0 identifies pack type from the manifest.
+3. The aggregate validator runs the matching individual validator.
 4. Tool validates checksums and declared JSON/JSONL files.
 5. Tool classifies privacy, rights, and risk posture.
 6. Tool emits an import report.
@@ -25,6 +25,11 @@ claims, candidates, or summaries; they do not become canonical truth.
 
 The first future implementation should be `validate_only`. The next possible
 mode is `stage_local_quarantine`.
+
+P40 implements the aggregate validation step through
+`scripts/validate_pack_set.py`. It validates known examples or one explicit
+pack root and still does not implement import, staging, indexing, upload, or
+master-index mutation.
 
 ## Staging
 
