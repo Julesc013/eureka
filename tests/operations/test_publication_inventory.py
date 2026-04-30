@@ -16,6 +16,7 @@ REQUIRED_JSON_FILES = {
     "client_profiles.json",
     "deployment_targets.json",
     "public_data_contract.json",
+    "public_search_handoff.json",
     "redirects.json",
     "relay_surface.json",
     "snapshot_contract.json",
@@ -66,8 +67,10 @@ REQUIRED_PUBLIC_DATA_PATHS = {
     "/data/eval_summary.json",
     "/data/route_summary.json",
     "/data/build_manifest.json",
+    "/data/search_handoff.json",
     "/files/manifest.json",
     "/files/index.txt",
+    "/files/search.README.txt",
     "/files/SHA256SUMS",
     "/demo/data/demo_snapshots.json",
 }
@@ -78,10 +81,12 @@ REQUIRED_GENERATED_PUBLIC_DATA_PATHS = {
     "/data/eval_summary.json",
     "/data/route_summary.json",
     "/data/build_manifest.json",
+    "/data/search_handoff.json",
 }
 REQUIRED_FILE_SURFACE_PATHS = {
     "/files/manifest.json",
     "/files/index.txt",
+    "/files/search.README.txt",
     "/files/SHA256SUMS",
 }
 REQUIRED_DEMO_ROUTES = {
@@ -260,6 +265,16 @@ class PublicationInventoryTest(unittest.TestCase):
         backend = targets["hosted_public_alpha_backend"]
         self.assertEqual(backend["status"], "future")
         self.assertTrue(backend["no_live_probes_by_default"])
+
+        search_backend = targets["public_search_backend"]
+        self.assertEqual(search_backend["status"], "not_deployed")
+        self.assertIsNone(search_backend["base_url"])
+        self.assertIsNone(search_backend["hosted_url"])
+        self.assertEqual(search_backend["local_dev_url"], "http://127.0.0.1:8080/search")
+        self.assertFalse(search_backend["deployment_approved"])
+        self.assertFalse(search_backend["workflow_configured"])
+        self.assertFalse(search_backend["deployment_success_claimed"])
+        self.assertFalse(search_backend["live_probes_enabled"])
 
     def test_snapshot_contract_records_seed_only_posture(self) -> None:
         payload = load_json("snapshot_contract.json")

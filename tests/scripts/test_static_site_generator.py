@@ -53,6 +53,7 @@ class StaticSiteGeneratorScriptTest(unittest.TestCase):
             self.assertEqual(payload["status"], "valid")
             for relative in (
                 "index.html",
+                "search.html",
                 "status.html",
                 "sources.html",
                 "evals.html",
@@ -61,10 +62,14 @@ class StaticSiteGeneratorScriptTest(unittest.TestCase):
                 "roadmap.html",
                 "local-quickstart.html",
                 "site_manifest.json",
+                "data/search_handoff.json",
                 "assets/site.css",
                 "lite/index.html",
+                "lite/search.html",
                 "text/index.txt",
+                "text/search.txt",
                 "files/manifest.json",
+                "files/search.README.txt",
                 "files/SHA256SUMS",
                 "demo/index.html",
                 "demo/data/demo_snapshots.json",
@@ -111,7 +116,7 @@ class StaticSiteGeneratorScriptTest(unittest.TestCase):
         )
         payload = json.loads(completed.stdout)
         self.assertEqual(payload["status"], "valid")
-        self.assertEqual(payload["page_count"], 8)
+        self.assertEqual(payload["page_count"], 9)
         self.assertEqual(payload["dist_validation_status"], "valid")
         self.assertIn("demo/index.html", payload["dist_demo_files"])
 

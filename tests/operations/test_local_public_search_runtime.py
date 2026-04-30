@@ -17,7 +17,7 @@ class LocalPublicSearchRuntimeOperationTest(unittest.TestCase):
         self.assertTrue(routes["runtime_routes_implemented"])
         self.assertEqual(routes["implementation_scope"], "local_prototype_backend")
         self.assertFalse(routes["hosted_public_runtime_implemented"])
-        self.assertFalse(routes["static_handoff_implemented"])
+        self.assertTrue(routes["static_handoff_implemented"])
         self.assertTrue(safety["local_public_search_runtime_implemented"])
         self.assertFalse(safety["hosted_public_search_runtime_implemented"])
         self.assertFalse(safety["rate_limit_policy"]["runtime_middleware_implemented"])

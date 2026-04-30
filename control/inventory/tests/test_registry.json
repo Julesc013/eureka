@@ -2708,7 +2708,7 @@
       "expected_runtime": "sub-second",
       "failure_means": "Local Public Search Runtime v0 files, route inventory, safety inventory, public-alpha route inventory, or no-hosted/no-live/no-download posture regressed.",
       "advisory_or_required": "required",
-      "notes": "Added by Local Public Search Runtime v0; validates the gateway module, web/API route wiring, HTML renderer, smoke script, local runtime route status, safety posture, public-alpha availability, and docs without deploying, opening external network calls, adding static handoff, live probes, downloads, installs, uploads, accounts, telemetry, or production claims."
+      "notes": "Added by Local Public Search Runtime v0; validates the gateway module, web/API route wiring, HTML renderer, smoke script, local runtime route status, safety posture, public-alpha availability, and docs without deploying, opening external network calls, adding hosted backend behavior, live probes, downloads, installs, uploads, accounts, telemetry, or production claims."
     },
     {
       "test_id": "local_public_search_runtime_tests",
@@ -2730,6 +2730,50 @@
       "failure_means": "Local public search validation, envelopes, route rendering, smoke checks, hardening checks, or inventory/docs assertions regressed.",
       "advisory_or_required": "required",
       "notes": "Covers missing/too-long queries, forbidden local path/URL/live-probe parameters, local_index_only response envelopes, result-card safety fields, public-safe source projections, no private path leakage, no live probes, and no hosted deployment claims."
+    },
+    {
+      "test_id": "public_search_static_handoff_validator",
+      "label": "Public search static handoff validator",
+      "command": "python scripts/validate_public_search_static_handoff.py",
+      "category": "publication",
+      "owner_area": "site",
+      "required_for": [
+        "standard",
+        "full",
+        "publication_static_site",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Public Search Static Handoff v0 no longer validates its inventory, generated search outputs, no-JS posture, hosted-backend honesty, or safety-limit alignment.",
+      "advisory_or_required": "required",
+      "notes": "Added by Public Search Static Handoff v0; validates search.html, lite/text/files handoff outputs, data/search_handoff.json, disabled hosted form behavior, local_index_only language, no fake hosted URL, and no live probe/download/install/upload/local path claim."
+    },
+    {
+      "test_id": "public_search_static_handoff_tests",
+      "label": "Public search static handoff tests",
+      "command": "python -m unittest tests.operations.test_public_search_static_handoff tests.scripts.test_validate_public_search_static_handoff",
+      "category": "publication",
+      "owner_area": "site",
+      "required_for": [
+        "standard",
+        "full",
+        "publication_static_site",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Public Search Static Handoff v0 tests failed, allowing missing generated outputs, misleading hosted-search claims, JavaScript requirements, unsafe enabled behavior, or policy-limit drift.",
+      "advisory_or_required": "required",
+      "notes": "Covers handoff inventory parsing, validator JSON behavior, no-JS static outputs, disabled search form, q maxlength policy, sample queries, search_handoff public data, and local/prototype-only posture."
     },
     {
       "test_id": "public_search_smoke",

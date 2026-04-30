@@ -19,6 +19,7 @@ REQUIRED_DATA_FILES = {
     "source_summary.json",
     "eval_summary.json",
     "route_summary.json",
+    "search_handoff.json",
     "build_manifest.json",
 }
 
@@ -132,6 +133,28 @@ class GeneratedPublicDataSummariesTest(unittest.TestCase):
         self.assertFalse(manifest["deployment_performed"])
         self.assertEqual(manifest["artifact_root"], "site/dist")
 
+    def test_search_handoff_summary_preserves_static_handoff_posture(self) -> None:
+        summary = json.loads((PUBLIC_DATA / "search_handoff.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(summary["search_handoff_status"], "implemented_static_handoff")
+        self.assertEqual(summary["hosted_backend_status"], "unavailable")
+        self.assertEqual(summary["first_mode"], "local_index_only")
+        self.assertIsNone(summary["backend_url"])
+        self.assertTrue(summary["local_runtime_available"])
+        self.assertTrue(summary["no_hosted_search_claim"])
+        self.assertFalse(summary["contains_live_backend"])
+        self.assertFalse(summary["contains_live_probes"])
+        for key in (
+            "live_probes_enabled",
+            "downloads_enabled",
+            "installs_enabled",
+            "uploads_enabled",
+            "local_path_search_enabled",
+            "arbitrary_url_fetch_enabled",
+        ):
+            with self.subTest(key=key):
+                self.assertFalse(summary["disabled_behaviors"][key])
+
     def test_site_dist_contains_generated_public_data_and_pages_deploy_site_dist(self) -> None:
         for name in REQUIRED_DATA_FILES:
             with self.subTest(name=name):
@@ -146,6 +169,7 @@ class GeneratedPublicDataSummariesTest(unittest.TestCase):
             "status.html": ["data/site_manifest.json", "data/page_registry.json"],
             "sources.html": ["data/source_summary.json"],
             "evals.html": ["data/eval_summary.json"],
+            "search.html": ["data/search_handoff.json"],
             "roadmap.html": ["data/build_manifest.json", "data/route_summary.json"],
         }
         for page, links in expected_links.items():

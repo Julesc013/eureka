@@ -124,6 +124,8 @@
         "public_search_safety_validator",
         "local_public_search_runtime_validator",
         "local_public_search_runtime_tests",
+        "public_search_static_handoff_validator",
+        "public_search_static_handoff_tests",
         "public_search_smoke"
       ],
       "required_status": "required",
@@ -244,6 +246,8 @@
         "public_search_safety_validator",
         "local_public_search_runtime_validator",
         "local_public_search_runtime_tests",
+        "public_search_static_handoff_validator",
+        "public_search_static_handoff_tests",
         "public_search_smoke"
       ],
       "required_status": "required",
@@ -367,6 +371,8 @@
         "public_search_safety_tests",
         "local_public_search_runtime_validator",
         "local_public_search_runtime_tests",
+        "public_search_static_handoff_validator",
+        "public_search_static_handoff_tests",
         "public_search_smoke"
       ],
       "required_status": "required",
@@ -438,6 +444,9 @@
         "public_search_safety_tests",
         "public_search_safety_validator",
         "local_public_search_runtime_validator",
+        "local_public_search_runtime_tests",
+        "public_search_static_handoff_validator",
+        "public_search_static_handoff_tests",
         "docs_diff_check"
       ],
       "required_status": "required",
@@ -551,6 +560,7 @@
   ],
   "notes": [
     "Public Search Safety / Abuse Guard v0 validation is stdlib-only and constrains the local public search runtime plus future hosted review; it does not implement rate-limit middleware, telemetry runtime, hosted backend, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production claims.",
-    "Local Public Search Runtime v0 validation is stdlib-only local/prototype backend verification; it opens no public listener, deploys nothing, calls no external sources, and adds no static search handoff, downloads, installs, uploads, accounts, telemetry, live probes, or production claims."
+    "Local Public Search Runtime v0 validation is stdlib-only local/prototype backend verification; it opens no public listener, deploys nothing, calls no external sources, and adds no hosted backend, downloads, installs, uploads, accounts, telemetry, live probes, or production claims.",
+    "Public Search Static Handoff v0 validation is stdlib-only static publication verification; it adds no backend hosting, fake hosted URL, live probes, downloads, installs, uploads, local path search, telemetry, JavaScript requirement, or production claim."
   ]
 }

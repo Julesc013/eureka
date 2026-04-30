@@ -23,6 +23,7 @@ REQUIRED_DATA_FILES = {
     "eval_summary.json",
     "route_summary.json",
     "build_manifest.json",
+    "search_handoff.json",
 }
 
 

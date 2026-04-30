@@ -111,7 +111,7 @@ class PublicSearchApiContractTest(unittest.TestCase):
         self.assertTrue(payload["runtime_routes_implemented"])
         self.assertEqual(payload["implementation_scope"], "local_prototype_backend")
         self.assertFalse(payload["hosted_public_runtime_implemented"])
-        self.assertFalse(payload["static_handoff_implemented"])
+        self.assertTrue(payload["static_handoff_implemented"])
         self.assertEqual(payload["contract_modes"], ["local_index_only"])
         by_path = {
             (route["method"], route["path_template"]): route

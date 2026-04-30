@@ -32,6 +32,7 @@ class LiteTextFilesSurfacesTest(unittest.TestCase):
             "lite/sources.html",
             "lite/evals.html",
             "lite/demo-queries.html",
+            "lite/search.html",
             "lite/limitations.html",
         ):
             path = PUBLIC_SITE / relative
@@ -80,6 +81,7 @@ class LiteTextFilesSurfacesTest(unittest.TestCase):
             "data/source_summary.json",
             "data/eval_summary.json",
             "data/route_summary.json",
+            "data/search_handoff.json",
         ):
             with self.subTest(relative=relative):
                 self.assertIn(relative, combined)

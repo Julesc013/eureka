@@ -11,6 +11,7 @@ SITE_DIR = REPO_ROOT / "site/dist"
 SOURCE_DIR = REPO_ROOT / "control" / "inventory" / "sources"
 REQUIRED_PAGES = {
     "index.html",
+    "search.html",
     "status.html",
     "sources.html",
     "evals.html",

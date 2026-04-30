@@ -141,7 +141,7 @@ class PublicSearchSafetyAbuseGuardTest(unittest.TestCase):
         self.assertTrue(payload["runtime_routes_implemented"])
         self.assertEqual(payload["implementation_scope"], "local_prototype_backend")
         self.assertFalse(payload["hosted_public_runtime_implemented"])
-        self.assertFalse(payload["static_handoff_implemented"])
+        self.assertTrue(payload["static_handoff_implemented"])
         for route in payload["routes"]:
             with self.subTest(route=route["path_template"]):
                 self.assertTrue(route["implemented_now"])
@@ -171,7 +171,7 @@ class PublicSearchSafetyAbuseGuardTest(unittest.TestCase):
         checklist = READINESS.read_text(encoding="utf-8")
         self.assertIn("Local Public Search Runtime v0", checklist)
         self.assertIn("hosted_public_runtime_approved: false", checklist)
-        self.assertIn("static_search_handoff_approved: false", checklist)
+        self.assertIn("Static handoff is implemented by Public Search Static Handoff v0", checklist)
         self.assertIn("production_claim_allowed: false", checklist)
 
     def test_public_alpha_safe_mode_remains_compatible(self) -> None:

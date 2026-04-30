@@ -29,7 +29,7 @@ class ValidateLocalPublicSearchRuntimeScriptTest(unittest.TestCase):
         report = json.loads(completed.stdout)
         self.assertEqual(report["status"], "valid", report["errors"])
         self.assertFalse(report["hosted_public_deployment"])
-        self.assertFalse(report["static_search_handoff"])
+        self.assertTrue(report["static_search_handoff"])
 
 
 if __name__ == "__main__":
