@@ -1,0 +1,623 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/packs/pack_import_report.v0.json",
+  "title": "EurekaPackImportReportV0",
+  "description": "Report schema for Pack Import Report Format v0. This records validate-only pack validation outcomes, privacy/rights/risk issues, provenance, next actions, and hard mutation-safety fields; it does not implement import, staging, indexing, upload, runtime mutation, or master-index mutation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "report_version",
+    "report_kind",
+    "report_status",
+    "mode",
+    "created_by_tool",
+    "input_roots",
+    "pack_results",
+    "validation_summary",
+    "privacy_rights_risk_summary",
+    "provenance_summary",
+    "mutation_summary",
+    "next_actions",
+    "limitations",
+    "import_performed",
+    "staging_performed",
+    "indexing_performed",
+    "upload_performed",
+    "master_index_mutation_performed",
+    "runtime_mutation_performed",
+    "network_performed",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "pack_import_report.v0"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{2,160}$"
+    },
+    "report_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([-.][A-Za-z0-9.]+)?$"
+    },
+    "report_kind": {
+      "const": "pack_import_report"
+    },
+    "report_status": {
+      "$ref": "#/$defs/report_status"
+    },
+    "mode": {
+      "$ref": "#/$defs/mode"
+    },
+    "created_by_tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool_id",
+        "tool_version"
+      ],
+      "properties": {
+        "tool_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool_status": {
+          "type": "string",
+          "enum": [
+            "contract_example",
+            "validation_only",
+            "future_tool"
+          ]
+        }
+      }
+    },
+    "input_roots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/input_root"
+      }
+    },
+    "pack_results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/pack_result"
+      }
+    },
+    "validation_summary": {
+      "$ref": "#/$defs/validation_summary"
+    },
+    "privacy_rights_risk_summary": {
+      "$ref": "#/$defs/privacy_rights_risk_summary"
+    },
+    "provenance_summary": {
+      "$ref": "#/$defs/provenance_summary"
+    },
+    "mutation_summary": {
+      "$ref": "#/$defs/mutation_summary"
+    },
+    "next_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/next_action"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "import_performed": {
+      "const": false
+    },
+    "staging_performed": {
+      "const": false
+    },
+    "indexing_performed": {
+      "const": false
+    },
+    "upload_performed": {
+      "const": false
+    },
+    "master_index_mutation_performed": {
+      "const": false
+    },
+    "runtime_mutation_performed": {
+      "const": false
+    },
+    "network_performed": {
+      "const": false
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "report_status": {
+      "type": "string",
+      "enum": [
+        "validate_only_passed",
+        "validate_only_failed",
+        "partial_validation",
+        "unsupported_pack_type",
+        "blocked_by_policy",
+        "unavailable_validator",
+        "future_import_not_performed"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "validate_only",
+        "stage_local_quarantine_future",
+        "inspect_staged_future",
+        "local_index_candidate_future",
+        "contribution_queue_candidate_future"
+      ]
+    },
+    "input_root": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "root",
+        "root_kind"
+      ],
+      "properties": {
+        "root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "root_kind": {
+          "type": "string",
+          "enum": [
+            "explicit_pack_root",
+            "repo_example_root",
+            "aggregate_example_set",
+            "synthetic_failure_fixture"
+          ]
+        },
+        "provided_by": {
+          "type": "string"
+        },
+        "synthetic": {
+          "type": "boolean"
+        }
+      }
+    },
+    "pack_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pack_root",
+        "pack_type",
+        "validator_id",
+        "validation_status",
+        "checksum_status",
+        "schema_status",
+        "privacy_status",
+        "rights_status",
+        "risk_status",
+        "issue_count",
+        "issues",
+        "record_counts",
+        "limitations",
+        "recommended_next_action"
+      ],
+      "properties": {
+        "pack_root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pack_type": {
+          "$ref": "#/$defs/pack_type"
+        },
+        "pack_id": {
+          "type": "string"
+        },
+        "pack_version": {
+          "type": "string"
+        },
+        "validator_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validator_command": {
+          "type": "string"
+        },
+        "validation_status": {
+          "$ref": "#/$defs/validation_status"
+        },
+        "checksum_status": {
+          "$ref": "#/$defs/checksum_status"
+        },
+        "schema_status": {
+          "$ref": "#/$defs/schema_status"
+        },
+        "privacy_status": {
+          "$ref": "#/$defs/privacy_status"
+        },
+        "rights_status": {
+          "$ref": "#/$defs/rights_status"
+        },
+        "risk_status": {
+          "$ref": "#/$defs/risk_status"
+        },
+        "issue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/issue"
+          }
+        },
+        "record_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommended_next_action": {
+          "$ref": "#/$defs/next_action_type"
+        }
+      }
+    },
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issue_id",
+        "severity",
+        "issue_type",
+        "message"
+      ],
+      "properties": {
+        "issue_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "error",
+            "blocked"
+          ]
+        },
+        "issue_type": {
+          "type": "string",
+          "enum": [
+            "schema_error",
+            "checksum_error",
+            "privacy_error",
+            "rights_review_required",
+            "risk_review_required",
+            "executable_payload_detected",
+            "raw_database_detected",
+            "private_path_detected",
+            "credential_detected",
+            "unknown_pack_type",
+            "validator_unavailable",
+            "unsupported_feature",
+            "policy_blocked"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        },
+        "remediation": {
+          "type": "string"
+        }
+      }
+    },
+    "validation_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total",
+        "passed",
+        "failed",
+        "unavailable",
+        "unknown_type",
+        "skipped"
+      ],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "passed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unavailable": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unknown_type": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "skipped": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "privacy_rights_risk_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "privacy_issues",
+        "rights_issues",
+        "risk_issues",
+        "private_path_issues",
+        "credential_issues",
+        "executable_payload_issues",
+        "raw_database_issues"
+      ],
+      "properties": {
+        "privacy_issues": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rights_issues": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "risk_issues": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "private_path_issues": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "credential_issues": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "executable_payload_issues": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "raw_database_issues": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "provenance_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_roots_recorded",
+        "pack_checksums_recorded",
+        "validator_commands_recorded",
+        "source_reports"
+      ],
+      "properties": {
+        "input_roots_recorded": {
+          "type": "boolean"
+        },
+        "pack_checksums_recorded": {
+          "type": "boolean"
+        },
+        "validator_commands_recorded": {
+          "type": "boolean"
+        },
+        "source_reports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "mutation_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "import_performed",
+        "staging_performed",
+        "indexing_performed",
+        "upload_performed",
+        "master_index_mutation_performed",
+        "runtime_mutation_performed",
+        "network_performed",
+        "files_written",
+        "notes"
+      ],
+      "properties": {
+        "import_performed": {
+          "const": false
+        },
+        "staging_performed": {
+          "const": false
+        },
+        "indexing_performed": {
+          "const": false
+        },
+        "upload_performed": {
+          "const": false
+        },
+        "master_index_mutation_performed": {
+          "const": false
+        },
+        "runtime_mutation_performed": {
+          "const": false
+        },
+        "network_performed": {
+          "const": false
+        },
+        "files_written": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "next_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "reason"
+      ],
+      "properties": {
+        "action": {
+          "$ref": "#/$defs/next_action_type"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requires_future_milestone": {
+          "type": "boolean"
+        }
+      }
+    },
+    "next_action_type": {
+      "type": "string",
+      "enum": [
+        "no_action",
+        "fix_pack_and_revalidate",
+        "keep_local_private",
+        "quarantine_future",
+        "stage_local_quarantine_future",
+        "inspect_future",
+        "create_contribution_candidate_future",
+        "submit_for_review_future",
+        "reject",
+        "unsupported"
+      ]
+    },
+    "pack_type": {
+      "type": "string",
+      "enum": [
+        "source_pack",
+        "evidence_pack",
+        "index_pack",
+        "contribution_pack",
+        "master_index_review_queue",
+        "ai_output_bundle",
+        "unknown"
+      ]
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed",
+        "unavailable",
+        "unknown_type",
+        "skipped"
+      ]
+    },
+    "checksum_status": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed",
+        "unavailable",
+        "not_applicable"
+      ]
+    },
+    "schema_status": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed",
+        "unavailable"
+      ]
+    },
+    "privacy_status": {
+      "type": "string",
+      "enum": [
+        "public_safe",
+        "local_private",
+        "review_required",
+        "restricted",
+        "unknown",
+        "failed"
+      ]
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": [
+        "public_metadata_only",
+        "source_terms_apply",
+        "review_required",
+        "restricted",
+        "unknown",
+        "failed"
+      ]
+    },
+    "risk_status": {
+      "type": "string",
+      "enum": [
+        "metadata_only",
+        "executable_reference",
+        "raw_database_detected",
+        "private_data_risk",
+        "credential_risk",
+        "malware_review_required",
+        "unknown",
+        "failed"
+      ]
+    }
+  }
+}

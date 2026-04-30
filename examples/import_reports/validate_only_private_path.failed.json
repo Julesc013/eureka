@@ -1,0 +1,128 @@
+{
+  "schema_version": "pack_import_report.v0",
+  "report_id": "example.import_report.validate_only_private_path_failed",
+  "report_version": "0.1.0",
+  "report_kind": "pack_import_report",
+  "report_status": "validate_only_failed",
+  "mode": "validate_only",
+  "created_by_tool": {
+    "tool_id": "example.validate_only_pack_import_report_fixture",
+    "tool_version": "0.1.0",
+    "tool_status": "contract_example"
+  },
+  "input_roots": [
+    {
+      "root": "<redacted-local-path>/candidate-source-pack",
+      "root_kind": "synthetic_failure_fixture",
+      "provided_by": "pack_import_report_format_v0",
+      "synthetic": true
+    }
+  ],
+  "pack_results": [
+    {
+      "pack_root": "<redacted-local-path>/candidate-source-pack",
+      "pack_type": "source_pack",
+      "pack_id": "example.synthetic_private_path_failure",
+      "pack_version": "0.1.0",
+      "validator_id": "source_pack_validator_v0",
+      "validator_command": "python scripts/validate_source_pack.py --pack-root <redacted-local-path>/candidate-source-pack",
+      "validation_status": "failed",
+      "checksum_status": "unavailable",
+      "schema_status": "passed",
+      "privacy_status": "failed",
+      "rights_status": "review_required",
+      "risk_status": "private_data_risk",
+      "issue_count": 1,
+      "issues": [
+        {
+          "issue_id": "issue.synthetic.private_path_detected",
+          "severity": "blocked",
+          "issue_type": "private_path_detected",
+          "message": "A local private path was detected and redacted in this synthetic report.",
+          "path": "<redacted-local-path>/candidate-source-pack/SOURCE_PACK.json",
+          "field": "records[0].local_context",
+          "remediation": "Remove or redact private local paths, keep the pack local_private, and revalidate."
+        }
+      ],
+      "record_counts": {
+        "source_records": 1
+      },
+      "limitations": [
+        "The path is redacted and synthetic.",
+        "The pack must not be shared or imported while privacy validation fails."
+      ],
+      "recommended_next_action": "fix_pack_and_revalidate"
+    }
+  ],
+  "validation_summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "unavailable": 0,
+    "unknown_type": 0,
+    "skipped": 0
+  },
+  "privacy_rights_risk_summary": {
+    "privacy_issues": 1,
+    "rights_issues": 1,
+    "risk_issues": 1,
+    "private_path_issues": 1,
+    "credential_issues": 0,
+    "executable_payload_issues": 0,
+    "raw_database_issues": 0,
+    "notes": [
+      "Private path findings require remediation before any shareable report or future staging action."
+    ]
+  },
+  "provenance_summary": {
+    "input_roots_recorded": true,
+    "pack_checksums_recorded": false,
+    "validator_commands_recorded": true,
+    "source_reports": [
+      "Synthetic private-path failure fixture"
+    ],
+    "notes": [
+      "No raw private path is preserved in this example."
+    ]
+  },
+  "mutation_summary": {
+    "import_performed": false,
+    "staging_performed": false,
+    "indexing_performed": false,
+    "upload_performed": false,
+    "master_index_mutation_performed": false,
+    "runtime_mutation_performed": false,
+    "network_performed": false,
+    "files_written": [],
+    "notes": [
+      "The failed validation did not import, stage, index, upload, mutate runtime state, or mutate a master index."
+    ]
+  },
+  "next_actions": [
+    {
+      "action": "fix_pack_and_revalidate",
+      "reason": "Private paths must be removed or redacted before any future import-report workflow continues.",
+      "requires_future_milestone": false
+    },
+    {
+      "action": "keep_local_private",
+      "reason": "If the path cannot be redacted, the pack remains local_private and is not shareable.",
+      "requires_future_milestone": false
+    }
+  ],
+  "limitations": [
+    "This is a synthetic failure example.",
+    "It records a privacy block without preserving a real private path.",
+    "It does not import, stage, index, upload, submit, or mutate runtime or master-index state."
+  ],
+  "import_performed": false,
+  "staging_performed": false,
+  "indexing_performed": false,
+  "upload_performed": false,
+  "master_index_mutation_performed": false,
+  "runtime_mutation_performed": false,
+  "network_performed": false,
+  "notes": [
+    "Pack Import Report Format v0 records failures without turning them into runtime behavior."
+  ]
+}

@@ -70,6 +70,22 @@ known examples or one explicit root, reports pass/fail/unavailable/unknown
 type, and still does not import, stage, index, upload, submit, or mutate a
 master index.
 
+Pack Import Report Format v0 defines the report that future validate-only
+tooling should emit after validation:
+
+```bash
+python scripts/validate_pack_import_report.py --all-examples
+python scripts/validate_pack_import_report.py --all-examples --json
+```
+
+The report format records pack results, issues, privacy/rights/risk summaries,
+provenance, and explicit next actions. It does not implement import. It does
+not stage packs. It does not mutate local index state, runtime state, public
+search, or public output. It does not mutate the master index. It does not
+upload or submit anything.
+It does not mutate local index state.
+It does not mutate the master index.
+
 AI Provider Contract v0 is separate from pack import. Typed AI outputs may
 later help draft pack/contribution candidates. Typed AI Output Validator v0 now
 validates those outputs through `scripts/validate_ai_output.py` before any
@@ -94,8 +110,8 @@ summaries. Contribution packs wrap review candidates. The master-index review
 queue is the future review layer for public acceptance.
 
 Pack import planning connects those contracts without implementing import or
-acceptance. Validation is not indexing, staging is not publication, and import
-is not master-index review.
+acceptance. Validation is not indexing, reporting is not staging, staging is
+not publication, and import is not master-index review.
 
 ## Not Implemented
 

@@ -1,0 +1,122 @@
+{
+  "schema_version": "pack_import_report.v0",
+  "report_id": "example.import_report.validate_only_unknown_pack_type",
+  "report_version": "0.1.0",
+  "report_kind": "pack_import_report",
+  "report_status": "unsupported_pack_type",
+  "mode": "validate_only",
+  "created_by_tool": {
+    "tool_id": "example.validate_only_pack_import_report_fixture",
+    "tool_version": "0.1.0",
+    "tool_status": "contract_example"
+  },
+  "input_roots": [
+    {
+      "root": "examples/import_reports/synthetic_unknown_pack_root",
+      "root_kind": "synthetic_failure_fixture",
+      "provided_by": "pack_import_report_format_v0",
+      "synthetic": true
+    }
+  ],
+  "pack_results": [
+    {
+      "pack_root": "examples/import_reports/synthetic_unknown_pack_root",
+      "pack_type": "unknown",
+      "validator_id": "pack_import_validator_aggregator_v0",
+      "validator_command": "python scripts/validate_pack_set.py --pack-root examples/import_reports/synthetic_unknown_pack_root",
+      "validation_status": "unknown_type",
+      "checksum_status": "not_applicable",
+      "schema_status": "unavailable",
+      "privacy_status": "unknown",
+      "rights_status": "unknown",
+      "risk_status": "unknown",
+      "issue_count": 1,
+      "issues": [
+        {
+          "issue_id": "issue.synthetic.unknown_pack_type",
+          "severity": "error",
+          "issue_type": "unknown_pack_type",
+          "message": "No known source, evidence, index, contribution, master-index review queue, or AI output manifest was detected.",
+          "path": "examples/import_reports/synthetic_unknown_pack_root",
+          "remediation": "Use a supported pack contract or reject the input."
+        }
+      ],
+      "record_counts": {},
+      "limitations": [
+        "Unknown pack type validation cannot infer privacy, rights, or risk status."
+      ],
+      "recommended_next_action": "unsupported"
+    }
+  ],
+  "validation_summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 0,
+    "unavailable": 0,
+    "unknown_type": 1,
+    "skipped": 0
+  },
+  "privacy_rights_risk_summary": {
+    "privacy_issues": 0,
+    "rights_issues": 0,
+    "risk_issues": 0,
+    "private_path_issues": 0,
+    "credential_issues": 0,
+    "executable_payload_issues": 0,
+    "raw_database_issues": 0,
+    "notes": [
+      "Unknown pack types are not trusted, imported, staged, indexed, uploaded, or submitted."
+    ]
+  },
+  "provenance_summary": {
+    "input_roots_recorded": true,
+    "pack_checksums_recorded": false,
+    "validator_commands_recorded": true,
+    "source_reports": [
+      "Synthetic unknown-type failure fixture"
+    ],
+    "notes": [
+      "The unsupported input remains outside the pack import pipeline."
+    ]
+  },
+  "mutation_summary": {
+    "import_performed": false,
+    "staging_performed": false,
+    "indexing_performed": false,
+    "upload_performed": false,
+    "master_index_mutation_performed": false,
+    "runtime_mutation_performed": false,
+    "network_performed": false,
+    "files_written": [],
+    "notes": [
+      "Unsupported input caused no import, staging, indexing, upload, runtime mutation, network call, or master-index mutation."
+    ]
+  },
+  "next_actions": [
+    {
+      "action": "unsupported",
+      "reason": "The input does not match a governed pack or AI output bundle format.",
+      "requires_future_milestone": false
+    },
+    {
+      "action": "reject",
+      "reason": "Unsupported inputs should not proceed to future staging or review workflows.",
+      "requires_future_milestone": false
+    }
+  ],
+  "limitations": [
+    "This is a synthetic unsupported-type example.",
+    "Unsupported inputs do not produce canonical claims or accepted public records.",
+    "It does not import, stage, index, upload, submit, or mutate runtime or master-index state."
+  ],
+  "import_performed": false,
+  "staging_performed": false,
+  "indexing_performed": false,
+  "upload_performed": false,
+  "master_index_mutation_performed": false,
+  "runtime_mutation_performed": false,
+  "network_performed": false,
+  "notes": [
+    "Pack Import Report Format v0 represents unknown types as blocked validation outcomes."
+  ]
+}

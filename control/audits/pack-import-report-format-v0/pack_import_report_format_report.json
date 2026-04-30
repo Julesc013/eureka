@@ -1,0 +1,57 @@
+{
+  "report_id": "pack_import_report_format_v0",
+  "created_by_slice": "pack_import_report_format_v0",
+  "status": "implemented",
+  "contract": "contracts/packs/pack_import_report.v0.json",
+  "validator": "scripts/validate_pack_import_report.py",
+  "examples": [
+    {
+      "path": "examples/import_reports/validate_only_all_examples.passed.json",
+      "expected_status": "validate_only_passed",
+      "expected_validation_status": "pass"
+    },
+    {
+      "path": "examples/import_reports/validate_only_private_path.failed.json",
+      "expected_status": "validate_only_failed",
+      "expected_validation_status": "pass"
+    },
+    {
+      "path": "examples/import_reports/validate_only_unknown_pack_type.failed.json",
+      "expected_status": "unsupported_pack_type",
+      "expected_validation_status": "pass"
+    }
+  ],
+  "import_runtime_implemented": false,
+  "staging_implemented": false,
+  "indexing_implemented": false,
+  "upload_implemented": false,
+  "runtime_mutation_implemented": false,
+  "master_index_mutation_implemented": false,
+  "network_behavior_implemented": false,
+  "model_calls_implemented": false,
+  "example_reports_synthetic": true,
+  "hard_safety_fields": [
+    "import_performed",
+    "staging_performed",
+    "indexing_performed",
+    "upload_performed",
+    "master_index_mutation_performed",
+    "runtime_mutation_performed",
+    "network_performed"
+  ],
+  "supported_pack_result_types": [
+    "source_pack",
+    "evidence_pack",
+    "index_pack",
+    "contribution_pack",
+    "master_index_review_queue",
+    "ai_output_bundle",
+    "unknown"
+  ],
+  "next_recommended_milestone": "Validate-Only Pack Import Tool v0",
+  "notes": [
+    "Pack Import Report Format v0 is format/validation/example-only.",
+    "Report validation does not prove truth, rights clearance, malware safety, source trust, public-search eligibility, or master-index acceptance.",
+    "Future validate-only tooling should emit this format before any future staging or review action."
+  ]
+}

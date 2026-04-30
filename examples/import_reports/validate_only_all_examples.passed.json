@@ -1,0 +1,235 @@
+{
+  "schema_version": "pack_import_report.v0",
+  "report_id": "example.import_report.validate_only_all_examples",
+  "report_version": "0.1.0",
+  "report_kind": "pack_import_report",
+  "report_status": "validate_only_passed",
+  "mode": "validate_only",
+  "created_by_tool": {
+    "tool_id": "example.validate_only_pack_import_report_fixture",
+    "tool_version": "0.1.0",
+    "tool_status": "contract_example"
+  },
+  "input_roots": [
+    {
+      "root": "control/inventory/packs/example_packs.json",
+      "root_kind": "aggregate_example_set",
+      "provided_by": "pack_import_report_format_v0",
+      "synthetic": true
+    }
+  ],
+  "pack_results": [
+    {
+      "pack_root": "examples/source_packs/minimal_recorded_source_pack_v0",
+      "pack_type": "source_pack",
+      "pack_id": "example.minimal_recorded_source_pack_v0",
+      "pack_version": "0.1.0",
+      "validator_id": "source_pack_validator_v0",
+      "validator_command": "python scripts/validate_source_pack.py --pack-root examples/source_packs/minimal_recorded_source_pack_v0",
+      "validation_status": "passed",
+      "checksum_status": "passed",
+      "schema_status": "passed",
+      "privacy_status": "public_safe",
+      "rights_status": "public_metadata_only",
+      "risk_status": "metadata_only",
+      "issue_count": 0,
+      "issues": [],
+      "record_counts": {
+        "source_records": 1
+      },
+      "limitations": [
+        "Validation does not import the source pack or prove source truth."
+      ],
+      "recommended_next_action": "no_action"
+    },
+    {
+      "pack_root": "examples/evidence_packs/minimal_evidence_pack_v0",
+      "pack_type": "evidence_pack",
+      "pack_id": "example.minimal_evidence_pack_v0",
+      "pack_version": "0.1.0",
+      "validator_id": "evidence_pack_validator_v0",
+      "validator_command": "python scripts/validate_evidence_pack.py --pack-root examples/evidence_packs/minimal_evidence_pack_v0",
+      "validation_status": "passed",
+      "checksum_status": "passed",
+      "schema_status": "passed",
+      "privacy_status": "public_safe",
+      "rights_status": "review_required",
+      "risk_status": "metadata_only",
+      "issue_count": 0,
+      "issues": [],
+      "record_counts": {
+        "evidence_records": 1
+      },
+      "limitations": [
+        "Validation does not accept evidence as canonical truth."
+      ],
+      "recommended_next_action": "no_action"
+    },
+    {
+      "pack_root": "examples/index_packs/minimal_index_pack_v0",
+      "pack_type": "index_pack",
+      "pack_id": "example.minimal_index_pack_v0",
+      "pack_version": "0.1.0",
+      "validator_id": "index_pack_validator_v0",
+      "validator_command": "python scripts/validate_index_pack.py --pack-root examples/index_packs/minimal_index_pack_v0",
+      "validation_status": "passed",
+      "checksum_status": "passed",
+      "schema_status": "passed",
+      "privacy_status": "public_safe",
+      "rights_status": "public_metadata_only",
+      "risk_status": "metadata_only",
+      "issue_count": 0,
+      "issues": [],
+      "record_counts": {
+        "record_summaries": 1
+      },
+      "limitations": [
+        "Validation does not import index summaries or raw databases."
+      ],
+      "recommended_next_action": "no_action"
+    },
+    {
+      "pack_root": "examples/contribution_packs/minimal_contribution_pack_v0",
+      "pack_type": "contribution_pack",
+      "pack_id": "example.minimal_contribution_pack_v0",
+      "pack_version": "0.1.0",
+      "validator_id": "contribution_pack_validator_v0",
+      "validator_command": "python scripts/validate_contribution_pack.py --pack-root examples/contribution_packs/minimal_contribution_pack_v0",
+      "validation_status": "passed",
+      "checksum_status": "passed",
+      "schema_status": "passed",
+      "privacy_status": "public_safe",
+      "rights_status": "review_required",
+      "risk_status": "metadata_only",
+      "issue_count": 0,
+      "issues": [],
+      "record_counts": {
+        "contribution_items": 3
+      },
+      "limitations": [
+        "Validation does not upload, submit, or accept contribution candidates."
+      ],
+      "recommended_next_action": "inspect_future"
+    },
+    {
+      "pack_root": "examples/master_index_review_queue/minimal_review_queue_v0",
+      "pack_type": "master_index_review_queue",
+      "pack_id": "example.master_index_review_queue_v0",
+      "pack_version": "0.1.0",
+      "validator_id": "master_index_review_queue_validator_v0",
+      "validator_command": "python scripts/validate_master_index_review_queue.py --queue-root examples/master_index_review_queue/minimal_review_queue_v0",
+      "validation_status": "passed",
+      "checksum_status": "passed",
+      "schema_status": "passed",
+      "privacy_status": "public_safe",
+      "rights_status": "review_required",
+      "risk_status": "metadata_only",
+      "issue_count": 0,
+      "issues": [],
+      "record_counts": {
+        "queue_entries": 1,
+        "review_decisions": 1
+      },
+      "limitations": [
+        "Validation does not create a hosted review queue or mutate a master index."
+      ],
+      "recommended_next_action": "no_action"
+    },
+    {
+      "pack_root": "examples/ai_providers/disabled_stub_provider_v0/examples",
+      "pack_type": "ai_output_bundle",
+      "pack_id": "example.disabled_stub_provider_v0.typed_outputs",
+      "pack_version": "0.1.0",
+      "validator_id": "typed_ai_output_validator_v0",
+      "validator_command": "python scripts/validate_ai_output.py --all-examples",
+      "validation_status": "passed",
+      "checksum_status": "not_applicable",
+      "schema_status": "passed",
+      "privacy_status": "public_safe",
+      "rights_status": "review_required",
+      "risk_status": "metadata_only",
+      "issue_count": 0,
+      "issues": [],
+      "record_counts": {
+        "typed_ai_outputs": 4
+      },
+      "limitations": [
+        "Typed AI output validation does not call a model or accept output as evidence."
+      ],
+      "recommended_next_action": "no_action"
+    }
+  ],
+  "validation_summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "unavailable": 0,
+    "unknown_type": 0,
+    "skipped": 0
+  },
+  "privacy_rights_risk_summary": {
+    "privacy_issues": 0,
+    "rights_issues": 0,
+    "risk_issues": 0,
+    "private_path_issues": 0,
+    "credential_issues": 0,
+    "executable_payload_issues": 0,
+    "raw_database_issues": 0,
+    "notes": [
+      "All listed inputs are synthetic repo examples.",
+      "Validation success is not rights clearance, malware safety, or canonical truth."
+    ]
+  },
+  "provenance_summary": {
+    "input_roots_recorded": true,
+    "pack_checksums_recorded": true,
+    "validator_commands_recorded": true,
+    "source_reports": [
+      "Pack Import Validator Aggregator v0 JSON output",
+      "Typed AI Output Validator v0 JSON output"
+    ],
+    "notes": [
+      "This is a deterministic example report, not output from a runtime importer."
+    ]
+  },
+  "mutation_summary": {
+    "import_performed": false,
+    "staging_performed": false,
+    "indexing_performed": false,
+    "upload_performed": false,
+    "master_index_mutation_performed": false,
+    "runtime_mutation_performed": false,
+    "network_performed": false,
+    "files_written": [],
+    "notes": [
+      "No import, staging, indexing, upload, runtime mutation, network call, or master-index mutation occurred."
+    ]
+  },
+  "next_actions": [
+    {
+      "action": "no_action",
+      "reason": "All synthetic examples validate and no import action is implemented in this milestone.",
+      "requires_future_milestone": false
+    },
+    {
+      "action": "inspect_future",
+      "reason": "A future Validate-Only Pack Import Tool v0 may emit this report format for operator inspection.",
+      "requires_future_milestone": true
+    }
+  ],
+  "limitations": [
+    "This report is synthetic and deterministic.",
+    "It does not prove rights clearance, malware safety, source trust, or canonical truth.",
+    "It does not import, stage, index, upload, submit, or mutate runtime or master-index state."
+  ],
+  "import_performed": false,
+  "staging_performed": false,
+  "indexing_performed": false,
+  "upload_performed": false,
+  "master_index_mutation_performed": false,
+  "runtime_mutation_performed": false,
+  "network_performed": false,
+  "notes": [
+    "Pack Import Report Format v0 is format/validation/example-only."
+  ]
+}

@@ -106,10 +106,26 @@ Successful validation does not prove:
 ## Future Import Pipeline
 
 The aggregate validator is the first safe command before any future
-validate-only import tool. A later import report format may reuse this output,
-but actual import, staging, local index candidate handling, contribution queue
-export, hosted submission, and master-index review remain separate future
-milestones.
+validate-only import tool. Pack Import Report Format v0 now defines the durable
+report envelope for recording aggregate validation outcomes:
+
+```bash
+python scripts/validate_pack_import_report.py --all-examples
+python scripts/validate_pack_import_report.py --all-examples --json
+```
+
+The report format records validation results, issues, privacy/rights/risk
+status, provenance, next actions, and hard mutation-safety fields. It does not
+implement import. It does not stage packs. It does not mutate local index
+state, runtime state, or public search. It does not mutate the master index. It
+does not upload or submit anything.
+It does not mutate local index state.
+It does not mutate the master index.
+
+A future Validate-Only Pack Import Tool v0 should combine aggregate validation
+with this report format. Actual import, staging, local index candidate
+handling, contribution queue export, hosted submission, and master-index review
+remain separate future milestones.
 
 AI Provider Contract v0 is validated separately with
 `python scripts/validate_ai_provider_contract.py`. AI providers are not source,

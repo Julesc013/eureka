@@ -31,6 +31,17 @@ P40 implements the aggregate validation step through
 pack root and still does not implement import, staging, indexing, upload, or
 master-index mutation.
 
+Pack Import Report Format v0 now defines the durable report envelope for step
+6. `contracts/packs/pack_import_report.v0.json`,
+`examples/import_reports/`, and `scripts/validate_pack_import_report.py`
+record validation outcomes, privacy/rights/risk issues, provenance, next
+actions, and hard false mutation fields. This does not implement import. It
+does not stage packs. It does not mutate local index state, runtime state,
+or public search. It does not mutate the master index. It does not upload or
+submit anything.
+It does not mutate local index state.
+It does not mutate the master index.
+
 AI Provider Contract v0 is adjacent but not part of import runtime. Future AI
 outputs can be validated as typed suggestions through
 `scripts/validate_ai_output.py` before they draft contributions, but the import
