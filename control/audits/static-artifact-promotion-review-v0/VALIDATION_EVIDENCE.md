@@ -19,5 +19,5 @@ Additional final verification for the milestone is recorded in the final task
 report, including full drift guard, public-alpha checks, unittest discovery,
 architecture boundaries, archive-resolution evals, and search-usefulness audit.
 
-The evidence is local repository evidence only. It does not prove that a GitHub
-Actions Pages deployment run succeeded.
+The evidence is local repository evidence only. It does not prove a successful
+GitHub Actions Pages deployment run.

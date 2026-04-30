@@ -4,8 +4,8 @@
 
 No local repository blocker remains for static artifact promotion.
 
-GitHub Actions deployment evidence is unverified. That blocks any claim that
-the public GitHub Pages deployment succeeded.
+GitHub Actions deployment evidence is unverified. That blocks any claim of a
+successful public GitHub Pages deployment.
 
 ## Deferred
 
