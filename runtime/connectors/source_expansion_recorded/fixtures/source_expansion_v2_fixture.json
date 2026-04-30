@@ -1,0 +1,823 @@
+{
+  "fixture_id": "source_expansion_recorded_fixtures_v2",
+  "created_by_slice": "search_usefulness_source_expansion_v2",
+  "fixture_notes": [
+    "Tiny deterministic recorded-fixture metadata for selected search-usefulness source gaps.",
+    "No live API calls, URL fetches, scraping, crawling, external observations, real binaries, copied article text, malware-safety claim, or rights-clearance claim is represented.",
+    "Executable-like filenames are text stand-ins and metadata labels only; public search must continue blocking downloads, installs, execution, uploads, live probes, and local path search."
+  ],
+  "records": [
+    {
+      "fixture_id": "archived-firefox-xp-release-notes",
+      "source_family": "wayback_memento_recorded",
+      "source_family_label": "Wayback/Memento Recorded Fixtures",
+      "target_ref": "wayback-memento-recorded:archived-firefox-xp-release-notes",
+      "object": {
+        "id": "obj.wayback-memento-recorded.archived-firefox-xp-release-notes",
+        "kind": "web_capture_metadata",
+        "label": "archived Firefox XP release notes - archived release notes support cutoff evidence"
+      },
+      "state": {
+        "id": "state.wayback-memento-recorded.archived-firefox-xp-release-notes.recorded",
+        "kind": "recorded_capture"
+      },
+      "representations": [
+        {
+          "id": "rep.wayback-memento-recorded.archived-firefox-xp-release-notes.capture-summary",
+          "kind": "recorded_memento_summary",
+          "label": "archived Firefox XP release notes recorded capture summary",
+          "content_type": "application/json",
+          "filename": "archived-firefox-xp-release-notes.fixture.json",
+          "access_path": {
+            "id": "access.wayback-memento-recorded.archived-firefox-xp-release-notes.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "wayback-memento-recorded://archived-firefox-xp-release-notes",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "release_notes",
+          "claim_value": "archived release notes for Firefox on Windows XP with support cutoff evidence and no live capture fetch",
+          "evidence_kind": "recorded_memento_metadata"
+        },
+        {
+          "claim_kind": "compatibility_note",
+          "claim_value": "Windows XP support cutoff evidence for Firefox release notes fixture; Windows NT 5.1 mentioned as recorded compatibility evidence",
+          "evidence_kind": "release_notes"
+        },
+        {
+          "claim_kind": "capture_locator",
+          "claim_value": "capture URL fixture token wayback-memento-recorded://archived-firefox-xp-release-notes",
+          "evidence_kind": "recorded_capture_locator"
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows XP",
+          "Windows NT 5.1"
+        ]
+      },
+      "action_hints": [
+        "inspect_recorded_capture",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "archived-microsoft-download-center-directx-90c",
+      "source_family": "wayback_memento_recorded",
+      "source_family_label": "Wayback/Memento Recorded Fixtures",
+      "target_ref": "wayback-memento-recorded:archived-microsoft-download-center-directx-90c",
+      "object": {
+        "id": "obj.wayback-memento-recorded.archived-microsoft-download-center-directx-90c",
+        "kind": "web_capture_metadata",
+        "label": "archived Microsoft Download Center DirectX 9.0c - archived download page download artifact metadata evidence"
+      },
+      "state": {
+        "id": "state.wayback-memento-recorded.archived-microsoft-download-center-directx-90c.recorded",
+        "kind": "recorded_capture"
+      },
+      "representations": [
+        {
+          "id": "rep.wayback-memento-recorded.archived-microsoft-download-center-directx-90c.capture-summary",
+          "kind": "recorded_memento_summary",
+          "label": "archived DirectX 9.0c download page recorded capture summary",
+          "content_type": "application/json",
+          "filename": "archived-directx-90c.fixture.json",
+          "access_path": {
+            "id": "access.wayback-memento-recorded.archived-microsoft-download-center-directx-90c.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "wayback-memento-recorded://archived-microsoft-download-center-directx-90c",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "download_page",
+          "claim_value": "archived download page for Microsoft Download Center DirectX 9.0c with download artifact metadata evidence",
+          "evidence_kind": "recorded_memento_metadata"
+        },
+        {
+          "claim_kind": "compatibility_note",
+          "claim_value": "offline installer Windows 98 compatibility evidence for DirectX 9.0c fixture; no executable is redistributed",
+          "evidence_kind": "release_notes"
+        },
+        {
+          "claim_kind": "artifact_listing",
+          "claim_value": "offline installer artifact metadata only for DirectX 9.0c; download remains blocked",
+          "evidence_kind": "recorded_artifact_metadata"
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 98",
+          "DirectX 9.0c"
+        ]
+      },
+      "action_hints": [
+        "inspect_recorded_capture",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "old-creative-labs-driver-page",
+      "source_family": "wayback_memento_recorded",
+      "source_family_label": "Wayback/Memento Recorded Fixtures",
+      "target_ref": "wayback-memento-recorded:old-creative-labs-driver-page",
+      "object": {
+        "id": "obj.wayback-memento-recorded.old-creative-labs-driver-page",
+        "kind": "web_capture_metadata",
+        "label": "old Creative Labs driver page - archived support page driver list capture URL"
+      },
+      "state": {
+        "id": "state.wayback-memento-recorded.old-creative-labs-driver-page.recorded",
+        "kind": "recorded_capture"
+      },
+      "representations": [
+        {
+          "id": "rep.wayback-memento-recorded.old-creative-labs-driver-page.capture-summary",
+          "kind": "recorded_memento_summary",
+          "label": "old Creative Labs support page driver list recorded capture summary",
+          "content_type": "application/json",
+          "filename": "old-creative-labs-driver-page.fixture.json",
+          "access_path": {
+            "id": "access.wayback-memento-recorded.old-creative-labs-driver-page.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "wayback-memento-recorded://old-creative-labs-driver-page",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "archived_support_page",
+          "claim_value": "archived support page with driver list and capture URL fixture token for old Creative Labs driver page",
+          "evidence_kind": "recorded_memento_metadata"
+        },
+        {
+          "claim_kind": "driver_list",
+          "claim_value": "Creative Labs driver list metadata includes Windows 98 support-page hints; no driver download is exposed",
+          "evidence_kind": "driver_page_metadata"
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 98",
+          "Creative Labs"
+        ]
+      },
+      "action_hints": [
+        "inspect_recorded_capture",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "old-netscape-download-page",
+      "source_family": "wayback_memento_recorded",
+      "source_family_label": "Wayback/Memento Recorded Fixtures",
+      "target_ref": "wayback-memento-recorded:old-netscape-download-page",
+      "object": {
+        "id": "obj.wayback-memento-recorded.old-netscape-download-page",
+        "kind": "web_capture_metadata",
+        "label": "old Netscape download page - archived download page version list download artifact metadata"
+      },
+      "state": {
+        "id": "state.wayback-memento-recorded.old-netscape-download-page.recorded",
+        "kind": "recorded_capture"
+      },
+      "representations": [
+        {
+          "id": "rep.wayback-memento-recorded.old-netscape-download-page.capture-summary",
+          "kind": "recorded_memento_summary",
+          "label": "old Netscape download page recorded version-list summary",
+          "content_type": "application/json",
+          "filename": "old-netscape-download-page.fixture.json",
+          "access_path": {
+            "id": "access.wayback-memento-recorded.old-netscape-download-page.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "wayback-memento-recorded://old-netscape-download-page",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "download_page",
+          "claim_value": "archived download page for old Netscape download page with version list and download artifact metadata only",
+          "evidence_kind": "recorded_memento_metadata"
+        },
+        {
+          "claim_kind": "version_list",
+          "claim_value": "version list fixture for a legacy Netscape browser page; download remains blocked",
+          "evidence_kind": "recorded_page_metadata"
+        }
+      ],
+      "action_hints": [
+        "inspect_recorded_capture",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "software-heritage-snapshot-old-project",
+      "source_family": "software_heritage_recorded",
+      "source_family_label": "Software Heritage Recorded Fixtures",
+      "target_ref": "software-heritage-recorded:software-heritage-snapshot-old-project",
+      "object": {
+        "id": "obj.software-heritage-recorded.snapshot-old-project",
+        "kind": "source_repository_snapshot",
+        "label": "software heritage source snapshot for old project - Software Heritage snapshot source archive SWHID"
+      },
+      "state": {
+        "id": "state.software-heritage-recorded.snapshot-old-project.recorded",
+        "kind": "source_snapshot"
+      },
+      "representations": [
+        {
+          "id": "rep.software-heritage-recorded.snapshot-old-project.source-tree",
+          "kind": "source_tree_snapshot_metadata",
+          "label": "Software Heritage snapshot source archive SWHID metadata fixture",
+          "content_type": "application/json",
+          "filename": "software-heritage-snapshot-old-project.fixture.json",
+          "access_path": {
+            "id": "access.software-heritage-recorded.snapshot-old-project.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "software-heritage-recorded://software-heritage-snapshot-old-project",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "swhid",
+          "claim_value": "SWHID fixture token swh:1:dir:0000000000000000000000000000000000000000 for Software Heritage snapshot",
+          "evidence_kind": "recorded_source_snapshot_metadata"
+        },
+        {
+          "claim_kind": "source_archive",
+          "claim_value": "source archive metadata for old project recorded fixture",
+          "evidence_kind": "source_tree_snapshot"
+        }
+      ],
+      "action_hints": [
+        "inspect_source_snapshot",
+        "cite_fixture",
+        "export_manifest"
+      ]
+    },
+    {
+      "fixture_id": "package-release-with-source-tarball",
+      "source_family": "package_registry_recorded",
+      "source_family_label": "Package Registry Recorded Fixtures",
+      "target_ref": "package-registry-recorded:package-release-with-source-tarball",
+      "object": {
+        "id": "obj.package-registry-recorded.package-release-with-source-tarball",
+        "kind": "package_release_metadata",
+        "label": "package release with source tarball - release source tarball versioned source archive"
+      },
+      "state": {
+        "id": "state.package-registry-recorded.package-release-with-source-tarball.1.2.3",
+        "kind": "versioned_package_release"
+      },
+      "representations": [
+        {
+          "id": "rep.package-registry-recorded.package-release-with-source-tarball.sdist",
+          "kind": "source_distribution_metadata",
+          "label": "release source tarball versioned source archive metadata",
+          "content_type": "application/json",
+          "filename": "package-release-with-source-tarball.fixture.json",
+          "access_path": {
+            "id": "access.package-registry-recorded.package-release-with-source-tarball.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "package-registry-recorded://package-release-with-source-tarball",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "source_tarball",
+          "claim_value": "release source tarball and versioned source archive metadata for package release with source tarball",
+          "evidence_kind": "package_registry_metadata"
+        },
+        {
+          "claim_kind": "version",
+          "claim_value": "versioned source archive 1.2.3 fixture metadata",
+          "evidence_kind": "package_release_metadata"
+        }
+      ],
+      "action_hints": [
+        "inspect_package_metadata",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "visual-cpp-6-service-pack-fixture",
+      "source_family": "package_registry_recorded",
+      "source_family_label": "Package Registry Recorded Fixtures",
+      "target_ref": "package-registry-recorded:visual-cpp-6-service-pack-fixture",
+      "record_kind": "synthetic_member",
+      "object": {
+        "id": "obj.package-registry-recorded.visual-cpp-6-service-pack-fixture.readme",
+        "kind": "service_pack_readme_member",
+        "label": "Visual C++ 6 service pack readme - service pack readme release notes readme member"
+      },
+      "state": {
+        "id": "state.package-registry-recorded.visual-cpp-6-service-pack-fixture.recorded",
+        "kind": "package_member_fixture"
+      },
+      "parent": {
+        "target_ref": "package-registry-recorded:visual-cpp-6-service-pack-container",
+        "resolved_resource_id": "obj.package-registry-recorded.visual-cpp-6-service-pack-container",
+        "representation_id": "rep.package-registry-recorded.visual-cpp-6-service-pack-container.iso-manifest",
+        "object_label": "Visual C++ 6.0 service pack download recorded container fixture"
+      },
+      "member": {
+        "member_path": "vc6sp/README-SP.txt",
+        "member_label": "Visual C++ 6 service pack readme member",
+        "member_kind": "readme",
+        "media_type": "text/plain",
+        "size_bytes": 380
+      },
+      "parent_lineage": {
+        "source_id": "package-registry-recorded-fixtures",
+        "source_family": "package_registry_recorded",
+        "parent_target_ref": "package-registry-recorded:visual-cpp-6-service-pack-container",
+        "parent_object_label": "Visual C++ 6.0 service pack download recorded container fixture",
+        "member_path": "vc6sp/README-SP.txt",
+        "contained_in": "recorded service pack package manifest fixture"
+      },
+      "representations": [
+        {
+          "id": "rep.package-registry-recorded.visual-cpp-6-service-pack-fixture.readme",
+          "kind": "readme_member_text_fixture",
+          "label": "Visual C++ 6 service pack readme release notes member text fixture",
+          "content_type": "text/plain",
+          "filename": "README-SP.txt",
+          "byte_length": 380,
+          "access_path": {
+            "id": "access.package-registry-recorded.visual-cpp-6-service-pack-fixture.readme",
+            "kind": "read_recorded_fixture_text",
+            "locator": "package-registry-recorded://visual-cpp-6-service-pack-fixture/README-SP.txt",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "readme_member",
+          "claim_value": "service pack readme release notes readme member for Visual C++ 6 service pack",
+          "evidence_kind": "package_member_manifest"
+        },
+        {
+          "claim_kind": "download_artifact",
+          "claim_value": "Visual C++ 6.0 service pack download artifact metadata with service pack installer label; no download URL is exposed",
+          "evidence_kind": "package_release_metadata"
+        }
+      ],
+      "action_hints": [
+        "inspect_parent_package",
+        "read_member",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "sound-blaster-ct1740-manual",
+      "source_family": "manual_document_recorded",
+      "source_family_label": "Manual Document Recorded Fixtures",
+      "target_ref": "manual-document-recorded:sound-blaster-ct1740-manual",
+      "object": {
+        "id": "obj.manual-document-recorded.sound-blaster-ct1740-manual",
+        "kind": "manual_document_metadata",
+        "label": "manual for Sound Blaster CT1740 - manual PDF scanned manual page record"
+      },
+      "state": {
+        "id": "state.manual-document-recorded.sound-blaster-ct1740-manual.recorded",
+        "kind": "manual_metadata_fixture"
+      },
+      "representations": [
+        {
+          "id": "rep.manual-document-recorded.sound-blaster-ct1740-manual.pdf-summary",
+          "kind": "manual_pdf_metadata",
+          "label": "Sound Blaster CT1740 manual PDF scanned manual page record fixture",
+          "content_type": "application/json",
+          "filename": "sound-blaster-ct1740-manual.fixture.json",
+          "access_path": {
+            "id": "access.manual-document-recorded.sound-blaster-ct1740-manual.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "manual-document-recorded://sound-blaster-ct1740-manual",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "manual_pdf",
+          "claim_value": "manual PDF scanned manual page record for Sound Blaster CT1740",
+          "evidence_kind": "manual_metadata"
+        },
+        {
+          "claim_kind": "page_record",
+          "claim_value": "page record fixture for CT1740 setup and jumper reference",
+          "evidence_kind": "manual_page_summary"
+        }
+      ],
+      "action_hints": [
+        "inspect_manual_metadata",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "sound-blaster-live-manual",
+      "source_family": "manual_document_recorded",
+      "source_family_label": "Manual Document Recorded Fixtures",
+      "target_ref": "manual-document-recorded:sound-blaster-live-manual",
+      "object": {
+        "id": "obj.manual-document-recorded.sound-blaster-live-manual",
+        "kind": "manual_document_metadata",
+        "label": "manual for Sound Blaster Live - manual PDF scanned manual"
+      },
+      "state": {
+        "id": "state.manual-document-recorded.sound-blaster-live-manual.recorded",
+        "kind": "manual_metadata_fixture"
+      },
+      "representations": [
+        {
+          "id": "rep.manual-document-recorded.sound-blaster-live-manual.pdf-summary",
+          "kind": "manual_pdf_metadata",
+          "label": "Sound Blaster Live manual PDF scanned manual fixture",
+          "content_type": "application/json",
+          "filename": "sound-blaster-live-manual.fixture.json",
+          "access_path": {
+            "id": "access.manual-document-recorded.sound-blaster-live-manual.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "manual-document-recorded://sound-blaster-live-manual",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "manual_pdf",
+          "claim_value": "manual PDF scanned manual for Sound Blaster Live",
+          "evidence_kind": "manual_metadata"
+        }
+      ],
+      "action_hints": [
+        "inspect_manual_metadata",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "thinkpad-t42-hardware-maintenance-manual",
+      "source_family": "manual_document_recorded",
+      "source_family_label": "Manual Document Recorded Fixtures",
+      "target_ref": "manual-document-recorded:thinkpad-t42-hardware-maintenance-manual",
+      "object": {
+        "id": "obj.manual-document-recorded.thinkpad-t42-hardware-maintenance-manual",
+        "kind": "manual_document_metadata",
+        "label": "IBM ThinkPad T42 hardware maintenance manual - hardware maintenance manual PDF IBM support document"
+      },
+      "state": {
+        "id": "state.manual-document-recorded.thinkpad-t42-hardware-maintenance-manual.recorded",
+        "kind": "manual_metadata_fixture"
+      },
+      "representations": [
+        {
+          "id": "rep.manual-document-recorded.thinkpad-t42-hardware-maintenance-manual.pdf-summary",
+          "kind": "manual_pdf_metadata",
+          "label": "ThinkPad T42 hardware maintenance manual PDF IBM support document fixture",
+          "content_type": "application/json",
+          "filename": "thinkpad-t42-hardware-maintenance-manual.fixture.json",
+          "access_path": {
+            "id": "access.manual-document-recorded.thinkpad-t42-hardware-maintenance-manual.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "manual-document-recorded://thinkpad-t42-hardware-maintenance-manual",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "support_document",
+          "claim_value": "hardware maintenance manual PDF IBM support document for ThinkPad T42",
+          "evidence_kind": "manual_metadata"
+        }
+      ],
+      "action_hints": [
+        "inspect_manual_metadata",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "windows-98-resource-kit-pdf",
+      "source_family": "manual_document_recorded",
+      "source_family_label": "Manual Document Recorded Fixtures",
+      "target_ref": "manual-document-recorded:windows-98-resource-kit-pdf",
+      "object": {
+        "id": "obj.manual-document-recorded.windows-98-resource-kit-pdf",
+        "kind": "manual_document_metadata",
+        "label": "Windows 98 resource kit PDF - PDF scanned book page range"
+      },
+      "state": {
+        "id": "state.manual-document-recorded.windows-98-resource-kit-pdf.recorded",
+        "kind": "manual_metadata_fixture"
+      },
+      "representations": [
+        {
+          "id": "rep.manual-document-recorded.windows-98-resource-kit-pdf.summary",
+          "kind": "book_pdf_metadata",
+          "label": "Windows 98 resource kit PDF scanned book page range fixture",
+          "content_type": "application/json",
+          "filename": "windows-98-resource-kit-pdf.fixture.json",
+          "access_path": {
+            "id": "access.manual-document-recorded.windows-98-resource-kit-pdf.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "manual-document-recorded://windows-98-resource-kit-pdf",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "pdf",
+          "claim_value": "PDF scanned book page range fixture for Windows 98 resource kit PDF",
+          "evidence_kind": "manual_metadata"
+        },
+        {
+          "claim_kind": "compatibility_note",
+          "claim_value": "Windows 98 documentation-only source evidence; no rights clearance or redistributed book is included",
+          "evidence_kind": "manual_note"
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_features": [
+          "Windows 98"
+        ]
+      },
+      "action_hints": [
+        "inspect_manual_metadata",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "windows-2000-antivirus-catalog",
+      "source_family": "review_description_recorded",
+      "source_family_label": "Review Description Recorded Fixtures",
+      "target_ref": "review-description-recorded:windows-2000-antivirus-catalog",
+      "object": {
+        "id": "obj.review-description-recorded.windows-2000-antivirus-catalog",
+        "kind": "compatibility_review_metadata",
+        "label": "Windows 2000 compatible antivirus - Windows 2000 antivirus installer compatibility note"
+      },
+      "state": {
+        "id": "state.review-description-recorded.windows-2000-antivirus-catalog.recorded",
+        "kind": "review_description_fixture"
+      },
+      "representations": [
+        {
+          "id": "rep.review-description-recorded.windows-2000-antivirus-catalog.summary",
+          "kind": "review_description_metadata",
+          "label": "Windows 2000 antivirus installer compatibility note fixture",
+          "content_type": "application/json",
+          "filename": "windows-2000-antivirus.fixture.json",
+          "access_path": {
+            "id": "access.review-description-recorded.windows-2000-antivirus-catalog.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "review-description-recorded://windows-2000-antivirus-catalog",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "compatibility_note",
+          "claim_value": "Windows 2000 antivirus installer compatibility note from recorded review-description fixture",
+          "evidence_kind": "review_description"
+        },
+        {
+          "claim_kind": "installer_metadata",
+          "claim_value": "Windows 2000 antivirus installer metadata only; no executable download or malware-safety claim",
+          "evidence_kind": "review_description"
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows 2000",
+          "Windows NT 5.0"
+        ]
+      },
+      "action_hints": [
+        "inspect_review_metadata",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "last-chrome-for-windows-xp",
+      "source_family": "review_description_recorded",
+      "source_family_label": "Review Description Recorded Fixtures",
+      "target_ref": "review-description-recorded:last-chrome-for-windows-xp",
+      "object": {
+        "id": "obj.review-description-recorded.last-chrome-for-windows-xp",
+        "kind": "compatibility_review_metadata",
+        "label": "last Chrome for Windows XP - Chrome versioned installer XP support cutoff evidence"
+      },
+      "state": {
+        "id": "state.review-description-recorded.last-chrome-for-windows-xp.recorded",
+        "kind": "review_description_fixture"
+      },
+      "representations": [
+        {
+          "id": "rep.review-description-recorded.last-chrome-for-windows-xp.summary",
+          "kind": "review_description_metadata",
+          "label": "Chrome versioned installer XP support cutoff evidence fixture",
+          "content_type": "application/json",
+          "filename": "last-chrome-for-windows-xp.fixture.json",
+          "access_path": {
+            "id": "access.review-description-recorded.last-chrome-for-windows-xp.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "review-description-recorded://last-chrome-for-windows-xp",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "versioned_installer",
+          "claim_value": "Chrome versioned installer metadata with XP support cutoff evidence; fixture is not a latest-version oracle",
+          "evidence_kind": "review_description"
+        },
+        {
+          "claim_kind": "compatibility_note",
+          "claim_value": "Windows XP and Windows NT 5.1 support cutoff evidence for last Chrome for Windows XP query",
+          "evidence_kind": "compatibility_note"
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows XP",
+          "Windows NT 5.1"
+        ]
+      },
+      "action_hints": [
+        "inspect_review_metadata",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "last-itunes-for-windows-xp",
+      "source_family": "review_description_recorded",
+      "source_family_label": "Review Description Recorded Fixtures",
+      "target_ref": "review-description-recorded:last-itunes-for-windows-xp",
+      "object": {
+        "id": "obj.review-description-recorded.last-itunes-for-windows-xp",
+        "kind": "compatibility_review_metadata",
+        "label": "last iTunes for Windows XP - iTunes versioned installer XP compatibility evidence"
+      },
+      "state": {
+        "id": "state.review-description-recorded.last-itunes-for-windows-xp.recorded",
+        "kind": "review_description_fixture"
+      },
+      "representations": [
+        {
+          "id": "rep.review-description-recorded.last-itunes-for-windows-xp.summary",
+          "kind": "review_description_metadata",
+          "label": "iTunes versioned installer XP compatibility evidence fixture",
+          "content_type": "application/json",
+          "filename": "last-itunes-for-windows-xp.fixture.json",
+          "access_path": {
+            "id": "access.review-description-recorded.last-itunes-for-windows-xp.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "review-description-recorded://last-itunes-for-windows-xp",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "versioned_installer",
+          "claim_value": "iTunes versioned installer metadata with XP compatibility evidence; fixture is partial recorded description evidence",
+          "evidence_kind": "review_description"
+        },
+        {
+          "claim_kind": "compatibility_note",
+          "claim_value": "Windows XP compatibility evidence for iTunes recorded review-description fixture",
+          "evidence_kind": "compatibility_note"
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows XP",
+          "Windows NT 5.1"
+        ]
+      },
+      "action_hints": [
+        "inspect_review_metadata",
+        "cite_fixture"
+      ]
+    },
+    {
+      "fixture_id": "classic-windows-file-transfer-blue-globe",
+      "source_family": "sourceforge_recorded",
+      "source_family_label": "SourceForge Recorded Fixtures",
+      "target_ref": "sourceforge-recorded:classic-windows-file-transfer-blue-globe",
+      "object": {
+        "id": "obj.sourceforge-recorded.classic-windows-file-transfer-blue-globe",
+        "kind": "project_release_metadata",
+        "label": "classic Windows file transfer app blue globe - named application visual identity evidence downloadable artifact metadata"
+      },
+      "state": {
+        "id": "state.sourceforge-recorded.classic-windows-file-transfer-blue-globe.recorded",
+        "kind": "project_release_fixture"
+      },
+      "representations": [
+        {
+          "id": "rep.sourceforge-recorded.classic-windows-file-transfer-blue-globe.release-summary",
+          "kind": "project_release_metadata",
+          "label": "named application visual identity evidence blue globe file transfer artifact metadata fixture",
+          "content_type": "application/json",
+          "filename": "classic-blue-globe-file-transfer.fixture.json",
+          "access_path": {
+            "id": "access.sourceforge-recorded.classic-windows-file-transfer-blue-globe.summary",
+            "kind": "view_recorded_fixture",
+            "locator": "sourceforge-recorded://classic-windows-file-transfer-blue-globe",
+            "is_direct": false
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "claim_kind": "named_application",
+          "claim_value": "named application fixture for classic Windows file transfer app blue globe",
+          "evidence_kind": "project_release_metadata"
+        },
+        {
+          "claim_kind": "visual_identity",
+          "claim_value": "visual identity evidence says blue globe icon for file transfer client; downloadable artifact metadata only",
+          "evidence_kind": "project_description"
+        },
+        {
+          "claim_kind": "compatibility_note",
+          "claim_value": "Windows XP compatibility note for classic file transfer app fixture",
+          "evidence_kind": "project_description"
+        }
+      ],
+      "compatibility": {
+        "required_os_families": [
+          "windows"
+        ],
+        "required_architectures": [
+          "x86"
+        ],
+        "required_features": [
+          "Windows XP",
+          "file transfer"
+        ]
+      },
+      "action_hints": [
+        "inspect_project_metadata",
+        "cite_fixture"
+      ]
+    }
+  ]
+}

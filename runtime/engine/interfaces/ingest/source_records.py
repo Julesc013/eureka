@@ -42,3 +42,11 @@ class ArticleScanRecordedSourceRecord:
     source_name: str
     payload: dict[str, Any]
     source_locator: str
+
+
+@dataclass(frozen=True)
+class SourceExpansionRecordedSourceRecord:
+    target_ref: str
+    source_name: str
+    payload: dict[str, Any]
+    source_locator: str

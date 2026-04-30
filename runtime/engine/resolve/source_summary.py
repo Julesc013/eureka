@@ -10,6 +10,12 @@ _BOOTSTRAP_SOURCE_IDS_BY_FAMILY = {
     "github_releases": "github-releases-recorded-fixtures",
     "internet_archive_recorded": "internet-archive-recorded-fixtures",
     "local_bundle_fixtures": "local-bundle-fixtures",
+    "manual_document_recorded": "manual-document-recorded-fixtures",
+    "package_registry_recorded": "package-registry-recorded-fixtures",
+    "review_description_recorded": "review-description-recorded-fixtures",
+    "software_heritage_recorded": "software-heritage-recorded-fixtures",
+    "sourceforge_recorded": "sourceforge-recorded-fixtures",
+    "wayback_memento_recorded": "wayback-memento-recorded-fixtures",
 }
 
 

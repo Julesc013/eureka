@@ -7,6 +7,7 @@ from runtime.engine.interfaces.extract.extracted_records import (
     ExtractedGitHubReleaseRecord,
     ExtractedInternetArchiveRecordedItem,
     ExtractedLocalBundleRecord,
+    ExtractedSourceExpansionRecordedRecord,
     ExtractedSyntheticRecord,
 )
 from runtime.engine.interfaces.ingest import (
@@ -14,6 +15,7 @@ from runtime.engine.interfaces.ingest import (
     GitHubReleaseSourceRecord,
     InternetArchiveRecordedSourceRecord,
     LocalBundleSourceRecord,
+    SourceExpansionRecordedSourceRecord,
     SyntheticSourceRecord,
 )
 
@@ -110,6 +112,17 @@ def extract_article_scan_recorded_source_record(
         issue_record=_require_mapping(payload.get("issue"), "issue"),
         article_record=_require_mapping(payload.get("article"), "article"),
         file_records=_require_optional_mapping_sequence(payload.get("files"), "files"),
+    )
+
+
+def extract_source_expansion_recorded_source_record(
+    source_record: SourceExpansionRecordedSourceRecord,
+) -> ExtractedSourceExpansionRecordedRecord:
+    return ExtractedSourceExpansionRecordedRecord(
+        target_ref=source_record.target_ref,
+        source_name=source_record.source_name,
+        source_locator=source_record.source_locator,
+        record=_require_mapping(source_record.payload, "record"),
     )
 
 

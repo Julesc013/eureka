@@ -1200,6 +1200,12 @@ def _card_limitations(record: IndexRecord) -> list[str]:
         "internet-archive-recorded-fixtures",
         "github-releases-recorded-fixtures",
         "article-scan-recorded-fixtures",
+        "manual-document-recorded-fixtures",
+        "package-registry-recorded-fixtures",
+        "review-description-recorded-fixtures",
+        "software-heritage-recorded-fixtures",
+        "sourceforge-recorded-fixtures",
+        "wayback-memento-recorded-fixtures",
     }:
         limitations.add("fixture_backed")
     if record.record_kind == "source_record":

@@ -7,6 +7,7 @@ from runtime.engine.interfaces.normalize.steps import (
     normalize_github_release_record,
     normalize_internet_archive_recorded_item,
     normalize_local_bundle_record,
+    normalize_source_expansion_recorded_record,
 )
 
 __all__ = [
@@ -16,4 +17,5 @@ __all__ = [
     "normalize_github_release_record",
     "normalize_internet_archive_recorded_item",
     "normalize_local_bundle_record",
+    "normalize_source_expansion_recorded_record",
 ]

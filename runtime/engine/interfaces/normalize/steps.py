@@ -9,6 +9,7 @@ from runtime.engine.interfaces.extract import (
     ExtractedGitHubReleaseRecord,
     ExtractedInternetArchiveRecordedItem,
     ExtractedLocalBundleRecord,
+    ExtractedSourceExpansionRecordedRecord,
     ExtractedSyntheticRecord,
 )
 from runtime.engine.interfaces.normalize.normalized_records import NormalizedResolutionRecord
@@ -292,6 +293,94 @@ def normalize_article_scan_recorded_record(
             "export_manifest",
         ),
     )
+
+
+def normalize_source_expansion_recorded_record(
+    extracted_record: ExtractedSourceExpansionRecordedRecord,
+) -> NormalizedResolutionRecord:
+    raw_record = extracted_record.record
+    source_family = _require_string(raw_record.get("source_family"), "record.source_family")
+    source_family_label = (
+        _optional_string(raw_record.get("source_family_label"), "record.source_family_label")
+        or source_family.replace("_", " ").title()
+    )
+    fixture_id = _require_string(raw_record.get("fixture_id"), "record.fixture_id")
+    object_record = _require_mapping(raw_record.get("object"), "record.object")
+    state_record = _optional_mapping(raw_record.get("state"), "record.state") or {}
+    object_id = _require_string(object_record.get("id"), "record.object.id")
+    object_label = _optional_string(object_record.get("label"), "record.object.label") or object_id
+    representations = _source_expansion_representation_summaries(
+        extracted_record,
+        raw_record=raw_record,
+        fixture_id=fixture_id,
+        source_family=source_family,
+        source_family_label=source_family_label,
+        fallback_object_label=object_label,
+    )
+    primary_representation = representations[0]
+    parent = _optional_mapping(raw_record.get("parent"), "record.parent") or {}
+    member = _optional_mapping(raw_record.get("member"), "record.member") or {}
+    action_hints = _optional_string_sequence(raw_record.get("action_hints"), "record.action_hints")
+    record_kind = _optional_string(raw_record.get("record_kind"), "record.record_kind") or (
+        "synthetic_member" if member else "resolved_object"
+    )
+
+    normalized = NormalizedResolutionRecord(
+        target_ref=extracted_record.target_ref,
+        source_name=extracted_record.source_name,
+        source_locator=extracted_record.source_locator,
+        object_id=object_id,
+        record_kind=record_kind,
+        source_family=source_family,
+        source_family_label=source_family_label,
+        object_kind=_optional_string(object_record.get("kind"), "record.object.kind"),
+        object_label=object_label,
+        state_id=_optional_string(state_record.get("id"), "record.state.id"),
+        state_kind=_optional_string(state_record.get("kind"), "record.state.kind"),
+        representation_id=primary_representation.representation_id,
+        representation_kind=primary_representation.representation_kind,
+        access_path_id=primary_representation.access_path_id,
+        access_path_kind=primary_representation.access_kind,
+        access_path_locator=primary_representation.access_locator,
+        representations=representations,
+        compatibility_requirements=_compatibility_requirements(
+            _optional_mapping(raw_record.get("compatibility"), "record.compatibility"),
+            "record.compatibility",
+        ),
+        evidence=_source_expansion_evidence_summaries(
+            raw_record=raw_record,
+            source_locator=extracted_record.source_locator,
+            source_family=source_family,
+            source_family_label=source_family_label,
+            object_label=object_label,
+            fixture_id=fixture_id,
+        ),
+        parent_target_ref=_optional_string(
+            parent.get("target_ref"),
+            "record.parent.target_ref",
+        ),
+        parent_resolved_resource_id=_optional_string(
+            parent.get("resolved_resource_id"),
+            "record.parent.resolved_resource_id",
+        ),
+        parent_representation_id=_optional_string(
+            parent.get("representation_id"),
+            "record.parent.representation_id",
+        ),
+        parent_object_label=_optional_string(
+            parent.get("object_label"),
+            "record.parent.object_label",
+        ),
+        member_path=_optional_string(member.get("member_path"), "record.member.member_path"),
+        member_label=_optional_string(member.get("member_label"), "record.member.member_label"),
+        member_kind=_optional_string(member.get("member_kind"), "record.member.member_kind"),
+        media_type=_optional_string(member.get("media_type"), "record.member.media_type"),
+        size_bytes=_optional_int(member.get("size_bytes"), "record.member.size_bytes"),
+        content_hash=_optional_string(member.get("content_hash"), "record.member.content_hash"),
+        parent_lineage=_optional_mapping(raw_record.get("parent_lineage"), "record.parent_lineage"),
+        action_hints=action_hints,
+    )
+    return attach_compatibility_evidence(normalized)
 
 
 def _synthetic_representation_summaries(
@@ -636,6 +725,86 @@ def _article_scan_representation_summaries(
     return tuple(summaries)
 
 
+def _source_expansion_representation_summaries(
+    extracted_record: ExtractedSourceExpansionRecordedRecord,
+    *,
+    raw_record: dict[str, Any],
+    fixture_id: str,
+    source_family: str,
+    source_family_label: str,
+    fallback_object_label: str,
+) -> tuple[RepresentationSummary, ...]:
+    raw_representations = _optional_mapping_sequence(
+        raw_record.get("representations"),
+        "record.representations",
+    )
+    if not raw_representations:
+        raise ValueError("record.representations must contain at least one entry.")
+
+    summaries: list[RepresentationSummary] = []
+    for index, raw_representation in enumerate(raw_representations):
+        access_path = _optional_mapping(
+            raw_representation.get("access_path"),
+            f"record.representations[{index}].access_path",
+        ) or {}
+        representation_id = _require_string(
+            raw_representation.get("id"),
+            f"record.representations[{index}].id",
+        )
+        summaries.append(
+            RepresentationSummary(
+                representation_id=representation_id,
+                representation_kind=_require_string(
+                    raw_representation.get("kind"),
+                    f"record.representations[{index}].kind",
+                ),
+                label=_optional_string(
+                    raw_representation.get("label"),
+                    f"record.representations[{index}].label",
+                )
+                or fallback_object_label,
+                content_type=_optional_string(
+                    raw_representation.get("content_type"),
+                    f"record.representations[{index}].content_type",
+                ),
+                byte_length=_optional_int(
+                    raw_representation.get("byte_length"),
+                    f"record.representations[{index}].byte_length",
+                ),
+                filename=_optional_string(
+                    raw_representation.get("filename"),
+                    f"record.representations[{index}].filename",
+                ),
+                source_family=source_family,
+                source_label=source_family_label,
+                source_locator=extracted_record.source_locator,
+                access_path_id=_optional_string(
+                    access_path.get("id"),
+                    f"record.representations[{index}].access_path.id",
+                )
+                or f"access.source-expansion-recorded.{fixture_id}.{index}",
+                access_kind=_optional_string(
+                    access_path.get("kind"),
+                    f"record.representations[{index}].access_path.kind",
+                )
+                or "view_recorded_fixture",
+                access_locator=_optional_string(
+                    access_path.get("locator"),
+                    f"record.representations[{index}].access_path.locator",
+                )
+                or f"source-expansion-recorded://{fixture_id}/{index}",
+                is_direct=_optional_bool(
+                    access_path.get("is_direct"),
+                    f"record.representations[{index}].access_path.is_direct",
+                )
+                or False,
+                is_fetchable=False,
+                fetch_locator=None,
+            )
+        )
+    return tuple(summaries)
+
+
 def _synthetic_evidence_summaries(
     *,
     source_locator: str,
@@ -937,6 +1106,58 @@ def _article_scan_evidence_summaries(
                 evidence_kind="file_listing",
                 evidence_locator=f"{source_locator}#{issue_id}/files/{index}",
                 asserted_at=asserted_at,
+            )
+        )
+    return tuple(evidence)
+
+
+def _source_expansion_evidence_summaries(
+    *,
+    raw_record: dict[str, Any],
+    source_locator: str,
+    source_family: str,
+    source_family_label: str,
+    object_label: str,
+    fixture_id: str,
+) -> tuple[EvidenceSummary, ...]:
+    raw_evidence = _optional_mapping_sequence(raw_record.get("evidence"), "record.evidence")
+    evidence: list[EvidenceSummary] = [
+        EvidenceSummary(
+            claim_kind="label",
+            claim_value=object_label,
+            asserted_by_family=source_family,
+            asserted_by_label=source_family_label,
+            evidence_kind="recorded_fixture_metadata",
+            evidence_locator=f"{source_locator}#{fixture_id}/label",
+        )
+    ]
+    for index, item in enumerate(raw_evidence):
+        evidence.append(
+            EvidenceSummary(
+                claim_kind=_require_string(
+                    item.get("claim_kind"),
+                    f"record.evidence[{index}].claim_kind",
+                ),
+                claim_value=_require_string(
+                    item.get("claim_value"),
+                    f"record.evidence[{index}].claim_value",
+                ),
+                asserted_by_family=source_family,
+                asserted_by_label=source_family_label,
+                evidence_kind=_optional_string(
+                    item.get("evidence_kind"),
+                    f"record.evidence[{index}].evidence_kind",
+                )
+                or "recorded_fixture_metadata",
+                evidence_locator=_optional_string(
+                    item.get("evidence_locator"),
+                    f"record.evidence[{index}].evidence_locator",
+                )
+                or f"{source_locator}#{fixture_id}/evidence/{index}",
+                asserted_at=_optional_string(
+                    item.get("asserted_at"),
+                    f"record.evidence[{index}].asserted_at",
+                ),
             )
         )
     return tuple(evidence)

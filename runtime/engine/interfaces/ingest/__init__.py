@@ -5,6 +5,7 @@ from runtime.engine.interfaces.ingest.source_records import (
     GitHubReleaseSourceRecord,
     InternetArchiveRecordedSourceRecord,
     LocalBundleSourceRecord,
+    SourceExpansionRecordedSourceRecord,
     SyntheticSourceRecord,
 )
 
@@ -13,5 +14,6 @@ __all__ = [
     "GitHubReleaseSourceRecord",
     "InternetArchiveRecordedSourceRecord",
     "LocalBundleSourceRecord",
+    "SourceExpansionRecordedSourceRecord",
     "SyntheticSourceRecord",
 ]

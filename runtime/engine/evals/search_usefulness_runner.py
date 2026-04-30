@@ -1363,12 +1363,14 @@ def _build_default_catalog() -> NormalizedCatalog:
     from runtime.connectors.github_releases import GitHubReleasesConnector
     from runtime.connectors.internet_archive_recorded import InternetArchiveRecordedConnector
     from runtime.connectors.local_bundle_fixtures import LocalBundleFixturesConnector
+    from runtime.connectors.source_expansion_recorded import SourceExpansionRecordedConnector
     from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
     from runtime.engine.interfaces.extract import (
         extract_article_scan_recorded_source_record,
         extract_github_release_source_record,
         extract_internet_archive_recorded_source_record,
         extract_local_bundle_source_record,
+        extract_source_expansion_recorded_source_record,
         extract_synthetic_source_record,
     )
     from runtime.engine.interfaces.normalize import (
@@ -1377,6 +1379,7 @@ def _build_default_catalog() -> NormalizedCatalog:
         normalize_github_release_record,
         normalize_internet_archive_recorded_item,
         normalize_local_bundle_record,
+        normalize_source_expansion_recorded_record,
     )
 
     synthetic_connector = SyntheticSoftwareConnector()
@@ -1384,6 +1387,7 @@ def _build_default_catalog() -> NormalizedCatalog:
     internet_archive_connector = InternetArchiveRecordedConnector()
     local_bundle_connector = LocalBundleFixturesConnector()
     article_scan_connector = ArticleScanRecordedConnector()
+    source_expansion_connector = SourceExpansionRecordedConnector()
     synthetic_records = tuple(
         normalize_extracted_record(extract_synthetic_source_record(record))
         for record in synthetic_connector.load_source_records()
@@ -1408,10 +1412,17 @@ def _build_default_catalog() -> NormalizedCatalog:
         )
         for record in article_scan_connector.load_source_records()
     )
+    source_expansion_records = tuple(
+        normalize_source_expansion_recorded_record(
+            extract_source_expansion_recorded_source_record(record)
+        )
+        for record in source_expansion_connector.load_source_records()
+    )
     return NormalizedCatalog(
         synthetic_records
         + github_records
         + internet_archive_records
         + local_bundle_records
         + article_scan_records
+        + source_expansion_records
     )

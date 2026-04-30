@@ -45,13 +45,19 @@ class SourceCoverageCapabilitySliceTest(unittest.TestCase):
             SourceCatalogRequest.from_parts(capability="recorded_fixture_backed")
         )
 
-        self.assertEqual(response.body["source_count"], 3)
+        self.assertEqual(response.body["source_count"], 9)
         self.assertEqual(
             {source["source_id"] for source in response.body["sources"]},
             {
                 "article-scan-recorded-fixtures",
                 "github-releases-recorded-fixtures",
                 "internet-archive-recorded-fixtures",
+                "manual-document-recorded-fixtures",
+                "package-registry-recorded-fixtures",
+                "review-description-recorded-fixtures",
+                "software-heritage-recorded-fixtures",
+                "sourceforge-recorded-fixtures",
+                "wayback-memento-recorded-fixtures",
             },
         )
 

@@ -125,6 +125,36 @@ def assign_result_usefulness(
             if fields.sequence("evidence"):
                 reasons.append("source_evidence_present")
             return _summary(lanes, 2, reasons)
+        if source_family == "wayback_memento_recorded":
+            lanes.extend((PRESERVATION, MENTIONS_OR_TRACES))
+            reasons.append("recorded_web_capture_metadata")
+            if fields.sequence("evidence"):
+                reasons.append("source_evidence_present")
+            return _summary(lanes, 4, reasons)
+        if source_family == "software_heritage_recorded":
+            lanes.extend((PRESERVATION, COMMUNITY))
+            reasons.append("recorded_source_snapshot_metadata")
+            if fields.sequence("evidence"):
+                reasons.append("source_evidence_present")
+            return _summary(lanes, 3, reasons)
+        if source_family in {"sourceforge_recorded", "package_registry_recorded"}:
+            lanes.extend((COMMUNITY, PRESERVATION))
+            reasons.append("recorded_project_or_package_metadata")
+            if fields.sequence("evidence"):
+                reasons.append("source_evidence_present")
+            return _summary(lanes, 3, reasons)
+        if source_family == "manual_document_recorded":
+            lanes.append(DOCUMENTATION)
+            reasons.append("recorded_manual_metadata")
+            if fields.sequence("evidence"):
+                reasons.append("source_evidence_present")
+            return _summary(lanes, 4, reasons)
+        if source_family == "review_description_recorded":
+            lanes.extend((DOCUMENTATION, MENTIONS_OR_TRACES))
+            reasons.append("recorded_review_description_metadata")
+            if fields.sequence("evidence"):
+                reasons.append("source_evidence_present")
+            return _summary(lanes, 5, reasons)
         lanes.append(INSTALLABLE_OR_USABLE_NOW)
         if fields.sequence("evidence"):
             reasons.append("source_evidence_present")
@@ -150,6 +180,17 @@ def assign_result_usefulness(
         lanes.append(COMMUNITY)
         reasons.append("community_release_source")
         score = 4
+    elif source_family in {
+        "manual_document_recorded",
+        "package_registry_recorded",
+        "review_description_recorded",
+        "software_heritage_recorded",
+        "sourceforge_recorded",
+        "wayback_memento_recorded",
+    }:
+        lanes.append(PRESERVATION if source_family != "manual_document_recorded" else DOCUMENTATION)
+        reasons.append("recorded_fixture_source")
+        score = 5
     elif fields.sequence("evidence"):
         lanes.append(MENTIONS_OR_TRACES)
         reasons.append("source_evidence_present")

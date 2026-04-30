@@ -20,7 +20,7 @@ class SourceRegistryTestCase(unittest.TestCase):
     def test_load_source_registry_reads_all_seed_records(self) -> None:
         registry = load_source_registry()
 
-        self.assertEqual(len(registry.records), 9)
+        self.assertEqual(len(registry.records), 15)
         self.assertEqual(
             [record.source_id for record in registry.records],
             [
@@ -30,9 +30,15 @@ class SourceRegistryTestCase(unittest.TestCase):
                 "internet-archive-recorded-fixtures",
                 "local-bundle-fixtures",
                 "local-files-placeholder",
+                "manual-document-recorded-fixtures",
+                "package-registry-recorded-fixtures",
+                "review-description-recorded-fixtures",
                 "software-heritage-placeholder",
+                "software-heritage-recorded-fixtures",
+                "sourceforge-recorded-fixtures",
                 "synthetic-fixtures",
                 "wayback-memento-placeholder",
+                "wayback-memento-recorded-fixtures",
             ],
         )
 
@@ -59,6 +65,12 @@ class SourceRegistryTestCase(unittest.TestCase):
                 "article-scan-recorded-fixtures",
                 "github-releases-recorded-fixtures",
                 "internet-archive-recorded-fixtures",
+                "manual-document-recorded-fixtures",
+                "package-registry-recorded-fixtures",
+                "review-description-recorded-fixtures",
+                "software-heritage-recorded-fixtures",
+                "sourceforge-recorded-fixtures",
+                "wayback-memento-recorded-fixtures",
             },
         )
         self.assertEqual(

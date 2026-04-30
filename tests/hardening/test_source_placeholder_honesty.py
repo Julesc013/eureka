@@ -12,6 +12,12 @@ ACTIVE_FIXTURE_SOURCE_IDS = {
     "github-releases-recorded-fixtures",
     "internet-archive-recorded-fixtures",
     "local-bundle-fixtures",
+    "manual-document-recorded-fixtures",
+    "package-registry-recorded-fixtures",
+    "review-description-recorded-fixtures",
+    "software-heritage-recorded-fixtures",
+    "sourceforge-recorded-fixtures",
+    "wayback-memento-recorded-fixtures",
 }
 
 

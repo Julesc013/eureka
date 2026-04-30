@@ -58,3 +58,11 @@ class ExtractedArticleScanRecordedRecord:
     issue_record: dict[str, Any]
     article_record: dict[str, Any]
     file_records: tuple[dict[str, Any], ...] = ()
+
+
+@dataclass(frozen=True)
+class ExtractedSourceExpansionRecordedRecord:
+    target_ref: str
+    source_name: str
+    source_locator: str
+    record: dict[str, Any]

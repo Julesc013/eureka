@@ -27,7 +27,7 @@ class ValidatePublicStaticSiteScriptTest(unittest.TestCase):
         payload = self._run_json()
         self.assertEqual(payload["status"], "valid")
         self.assertEqual(len(payload["pages"]), 9)
-        self.assertEqual(len(payload["source_ids_checked"]), 9)
+        self.assertEqual(len(payload["source_ids_checked"]), 15)
         self.assertEqual(payload["missing_source_ids"], [])
 
     def test_validator_reports_local_links_and_no_scripts(self) -> None:
