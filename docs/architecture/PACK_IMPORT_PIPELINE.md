@@ -1,0 +1,62 @@
+# Pack Import Pipeline
+
+Pack Import Pipeline v0 is an architecture plan for future local import of
+source, evidence, index, and contribution packs. It is planning only and does
+not implement import. It also does not implement staging, indexing, upload,
+submission, or master-index mutation.
+
+This plan does not implement import.
+
+## Purpose
+
+Future import should let a user explicitly select one governed pack and run it
+through validation before anything else can happen. Imported records stay
+claims, candidates, or summaries; they do not become canonical truth.
+
+## Pipeline
+
+1. User explicitly selects a pack.
+2. Tool identifies pack type from the manifest.
+3. Tool runs the matching validator.
+4. Tool validates checksums and declared JSON/JSONL files.
+5. Tool classifies privacy, rights, and risk posture.
+6. Tool emits an import report.
+7. Future tools either stop at validate-only, stage locally, or reject/quarantine.
+
+The first future implementation should be `validate_only`. The next possible
+mode is `stage_local_quarantine`.
+
+## Staging
+
+Future staging roots are logical and private by default:
+
+- `.eureka-local/staged_packs/`
+- `.eureka-local/quarantine/`
+- `.eureka-local/import_reports/`
+
+These roots must not be under `site/dist`, `external`, or public data. P39 does
+not create these directories.
+
+## Search And Index Boundaries
+
+Validate-only and local quarantine have no search impact by default and no
+index impact by default. Source, evidence, and index packs must not affect the
+`local_index_only` public runtime until an explicit later import/index milestone
+creates a guarded opt-in mode.
+
+Hosted public search and the static public site are unaffected by local pack
+import planning.
+
+## Master Index Boundary
+
+Pack import is local. Master-index review is separate. Accepted public records
+need Master Index Review Queue decisions, provenance, conflict handling, and
+policy review. Import never creates automatic acceptance.
+
+## Not Implemented
+
+This plan does not implement source/evidence/index/contribution pack import,
+local index mutation, canonical registry mutation, uploads, accounts, hosted
+master index writes, executable plugins, live fetch, scraping, crawling,
+downloads, installers, native clients, relay runtime, or snapshot reader
+runtime.

@@ -1,0 +1,102 @@
+{
+  "report_id": "pack_import_planning_v0",
+  "created_by_slice": "source_evidence_index_pack_import_planning_v0",
+  "status": "planning_only",
+  "import_runtime_implemented": false,
+  "default_future_mode": "validate_only",
+  "next_future_mode": "stage_local_quarantine",
+  "supported_pack_types": [
+    "source_pack",
+    "evidence_pack",
+    "index_pack",
+    "contribution_pack"
+  ],
+  "prohibited_import_behaviors": [
+    "arbitrary_directory_scan",
+    "live_fetch",
+    "canonical_registry_merge",
+    "hosted_master_index_mutation",
+    "raw_db_import",
+    "executable_plugin_loading",
+    "upload",
+    "submission",
+    "local_index_mutation_by_default",
+    "public_search_impact_by_default",
+    "master_index_auto_acceptance",
+    "private_path_leakage",
+    "credential_ingestion",
+    "downloads",
+    "installers",
+    "telemetry_accounts"
+  ],
+  "validation_pipeline": {
+    "steps": [
+      "identify_pack_type",
+      "parse_manifest",
+      "validate_schema",
+      "validate_checksums",
+      "parse_jsonl_files",
+      "validate_privacy_status_consistency",
+      "scan_for_forbidden_fields_private_paths",
+      "scan_for_executable_payloads_raw_db_cache",
+      "validate_rights_access_docs",
+      "classify_risk",
+      "produce_import_report",
+      "stage_or_reject",
+      "never_mutate_canonical_records_by_default"
+    ],
+    "validator_commands": [
+      "python scripts/validate_source_pack.py",
+      "python scripts/validate_evidence_pack.py",
+      "python scripts/validate_index_pack.py",
+      "python scripts/validate_contribution_pack.py",
+      "python scripts/validate_master_index_review_queue.py"
+    ]
+  },
+  "staging_policy": {
+    "create_directories_now": false,
+    "logical_roots": [
+      ".eureka-local/staged_packs/",
+      ".eureka-local/quarantine/",
+      ".eureka-local/import_reports/"
+    ],
+    "private_by_default": true,
+    "not_committed_to_git": true,
+    "never_site_dist": true,
+    "never_external": true,
+    "no_public_leakage": true,
+    "deletable_resettable": true
+  },
+  "privacy_rights_risk_policy": {
+    "private_path_detection_required": true,
+    "credentials_detection_required": true,
+    "rights_access_docs_required": true,
+    "no_malware_safety_claim": true,
+    "no_rights_clearance_claim": true,
+    "no_executable_payloads_in_v0_public_import": true,
+    "no_raw_db_or_cache_import": true,
+    "quarantine_on_uncertainty": true
+  },
+  "local_search_impact": {
+    "validate_only": "no_impact",
+    "stage_local_quarantine": "no_impact_by_default",
+    "inspect_staged": "no_impact",
+    "local_index_candidate": "future_opt_in_not_implemented",
+    "public_search_runtime_impact": "none",
+    "public_static_site_impact": "none"
+  },
+  "master_index_review_impact": {
+    "import_is_local": true,
+    "review_is_separate": true,
+    "accepted_public_requires_review": true,
+    "automatic_acceptance": false,
+    "hosted_master_index_mutation": false
+  },
+  "next_recommended_milestone": "Pack Import Validator Aggregator v0",
+  "following_recommended_milestone": "AI Provider Contract v0",
+  "notes": [
+    "P39 does not implement pack import.",
+    "Validated packs remain claims, candidates, or summaries until separate review or opt-in local indexing milestones.",
+    "Public search remains local_index_only and is not affected by staged packs by default."
+  ]
+}
