@@ -199,6 +199,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   without implementing model calls, provider runtime loading, API keys,
   credential storage, telemetry, AI in public search, AI-generated evidence
   acceptance, local index mutation, or master-index mutation.
+- `typed-ai-output-validator-v0/`: validation-only audit pack for typed AI
+  output candidates. It records the reusable offline validator module, CLI,
+  example registry, required-review/prohibited-use checks, privacy/secret/path
+  checks, relation to evidence/contribution/review workflows, and no-model-call
+  runtime boundary without implementing provider runtime, API keys, telemetry,
+  evidence import, contribution import, local-index mutation, public-search AI,
+  upload, or master-index mutation.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

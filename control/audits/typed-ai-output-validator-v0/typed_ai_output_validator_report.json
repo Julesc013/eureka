@@ -1,0 +1,69 @@
+{
+  "report_id": "typed_ai_output_validator_v0",
+  "created_by_slice": "typed_ai_output_validator_v0",
+  "status": "implemented_validation_only",
+  "validator": {
+    "module": "runtime/engine/ai/typed_output_validator.py",
+    "script": "scripts/validate_ai_output.py",
+    "schema_version": "typed_ai_output_validation.v0",
+    "stdlib_only": true,
+    "performs_model_calls": false,
+    "performs_provider_runtime_loading": false,
+    "performs_network_calls": false,
+    "performs_telemetry": false,
+    "performs_import": false,
+    "performs_mutation": false
+  },
+  "example_registry": "control/inventory/ai_providers/typed_output_examples.json",
+  "example_provider": "examples/ai_providers/disabled_stub_provider_v0",
+  "example_outputs": [
+    "examples/ai_providers/disabled_stub_provider_v0/examples/alias_candidate.valid.json",
+    "examples/ai_providers/disabled_stub_provider_v0/examples/compatibility_claim_candidate.valid.json",
+    "examples/ai_providers/disabled_stub_provider_v0/examples/explanation_draft.valid.json",
+    "examples/ai_providers/disabled_stub_provider_v0/examples/metadata_claim_candidate.valid.json"
+  ],
+  "latest_validation_result": {
+    "command": "python scripts/validate_ai_output.py --all-examples --json",
+    "ok": true,
+    "passed": 4,
+    "failed": 0,
+    "model_calls_performed": false,
+    "network_performed": false,
+    "mutation_performed": false,
+    "import_performed": false
+  },
+  "required_review_enforced": true,
+  "prohibited_uses_enforced": [
+    "canonical_truth",
+    "rights_clearance",
+    "malware_safety",
+    "automatic_acceptance"
+  ],
+  "privacy_and_secret_checks": [
+    "secret_like_fields",
+    "api_key_like_values",
+    "private_absolute_paths_in_public_safe_output",
+    "generated_text_max_2000_chars"
+  ],
+  "not_implemented": [
+    "model_calls",
+    "provider_runtime",
+    "api_keys",
+    "telemetry",
+    "prompt_logging_runtime",
+    "evidence_import",
+    "contribution_import",
+    "local_index_mutation",
+    "public_search_ai",
+    "master_index_mutation",
+    "truth_authority",
+    "rights_clearance",
+    "malware_safety"
+  ],
+  "next_recommended_milestone": "Pack Import Report Format v0",
+  "notes": [
+    "Typed outputs remain suggestions/candidates, not truth.",
+    "Invalid examples are covered in tempfile-based tests.",
+    "Future AI-assisted evidence drafting must validate output first and then enter review explicitly."
+  ]
+}

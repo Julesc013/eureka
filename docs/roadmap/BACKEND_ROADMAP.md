@@ -427,9 +427,15 @@ Why this comes next:
   It defines provider manifests, typed output shape, task requests, privacy,
   credential, logging, evidence-linking, and review posture without model
   calls, API keys, telemetry, provider runtime loading, AI in public search,
-  local-index mutation, or master-index mutation. Typed AI Output Validator v0
-  is next so standalone output records are validated before any AI-assisted
-  evidence or contribution workflow appears.
+  local-index mutation, or master-index mutation.
+- Typed AI Output Validator v0 is implemented as an offline validation layer
+  for standalone typed AI output candidates. It adds a pure Python validation
+  module, CLI, example registry, four synthetic output examples, docs, audit
+  pack, and tests; it enforces required review, prohibited truth/rights/
+  malware/auto-acceptance uses, provider alignment, generated-text bounds,
+  private-path and secret rejection, and no model/network/import/mutation side
+  effects. Pack Import Report Format v0 is next so validate-only pack tooling
+  can record structured reports before any import runtime.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

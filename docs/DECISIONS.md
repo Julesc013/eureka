@@ -1327,3 +1327,30 @@ canonical truth selection, source-trust authority, automatic identity merge,
 automatic acceptance, or production AI support. The next Codex-safe milestone
 is Typed AI Output Validator v0; Pack Import Report Format v0 remains the next
 pack-import-specific milestone.
+
+## ADR-122: Validate Typed AI Outputs Before AI-Assisted Workflows
+
+Status: accepted
+
+Typed AI Output Validator v0 adds
+`runtime/engine/ai/typed_output_validator.py`,
+`scripts/validate_ai_output.py`,
+`control/inventory/ai_providers/typed_output_examples.json`,
+four disabled-stub typed output examples, `docs/operations/AI_OUTPUT_VALIDATION.md`,
+focused tests, and `control/audits/typed-ai-output-validator-v0/`.
+
+The decision is to make typed AI output validation the first reusable safety
+gate before any future AI-assisted evidence or contribution workflow. Outputs
+must be suggestions/candidates, require review, prohibit canonical truth,
+rights clearance, malware safety, and automatic acceptance, preserve provider
+provenance, keep generated text bounded, and avoid private-path or secret
+leakage.
+
+P42 deliberately does not implement model calls, OpenAI/Anthropic/Ollama/LM
+Studio calls, provider runtime loading, API keys, credential storage, prompt
+logging runtime, telemetry, embeddings, vector search, AI extraction runtime,
+evidence-pack import, contribution-pack import, local index mutation, public
+search AI, uploads, accounts, hosted/master-index mutation, rights clearance,
+malware-safety claims, canonical truth selection, source-trust authority,
+automatic acceptance, or production AI support. The next Codex-safe milestone
+is Pack Import Report Format v0.

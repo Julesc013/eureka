@@ -107,6 +107,13 @@ future task requests, typed output examples, privacy/credential/logging
 posture, and forbidden truth/rights/malware/auto-acceptance uses without model
 calls, API keys, telemetry, public-search AI, local-index mutation, or
 master-index mutation.
+Typed AI Output Validator v0 now validates standalone typed AI output
+candidates through `scripts/validate_ai_output.py` and the pure
+`runtime/engine/ai/typed_output_validator.py` helper. It checks four synthetic
+disabled-stub examples, required review, prohibited uses, provider alignment,
+generated-text bounds, private-path and secret leakage, and reports no model,
+network, import, or mutation side effects. Pack Import Report Format v0 is the
+next recommended milestone.
 
 ## Stage 3: Surface Skeletons
 

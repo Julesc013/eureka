@@ -481,8 +481,8 @@
         "CTEA-BEHAVIOR-001"
       ],
       "title": "Define disabled-by-default AI provider and typed output boundaries before any AI runtime or evidence drafting work",
-      "status": "addressed_by_ai_provider_contract_v0",
-      "suggested_milestone": "Typed AI Output Validator v0"
+      "status": "addressed_by_ai_provider_contract_v0_and_typed_ai_output_validator_v0",
+      "suggested_milestone": "AI-Assisted Evidence Drafting Plan v0 after Pack Import Report Format v0"
     }
   ]
 }

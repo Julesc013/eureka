@@ -443,6 +443,17 @@ credential, logging, cache, evidence-linking, and human-review policies. It
 adds no model calls, API keys, credential storage, prompt logging runtime,
 telemetry, AI provider runtime, public-search AI, AI evidence acceptance, local
 index mutation, or master-index mutation.
+Typed AI Output Validator v0 is now implemented as validation-only work under
+`runtime/engine/ai/`, `scripts/validate_ai_output.py`,
+`control/inventory/ai_providers/typed_output_examples.json`,
+`docs/operations/AI_OUTPUT_VALIDATION.md`, and
+`control/audits/typed-ai-output-validator-v0/`. It validates four synthetic
+disabled-stub output examples and enforces required review, prohibited truth/
+rights/malware/automatic-acceptance uses, provider-reference alignment,
+generated-text limits, private-path rejection, and secret rejection without
+model calls, provider runtime loading, API keys, telemetry, evidence import,
+contribution import, local-index mutation, public-search AI, or master-index
+mutation.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution

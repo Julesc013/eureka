@@ -517,9 +517,9 @@
     {
       "id": "typed_ai_output_validator_v0",
       "title": "Typed AI Output Validator v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 74,
-      "notes": "Future validator for standalone typed AI output records before any AI-assisted evidence or contribution workflow. Do not call models, load providers, accept AI output as truth, or mutate runtime/search/master-index state."
+      "notes": "Implemented validation-only typed AI output module, CLI, registry, examples, docs, audit pack, and tests. It validates output candidates offline before future AI-assisted evidence or contribution workflows and adds no model calls, provider loading, API keys, telemetry, evidence import, contribution import, local-index mutation, public-search AI, upload, or master-index mutation."
     },
     {
       "id": "pack_import_report_format_v0",
@@ -534,6 +534,13 @@
       "status": "recommended_follow_up",
       "priority": 76,
       "notes": "Future validate-only local tool after the aggregator and report format. It may emit reports but must not stage, index, mutate canonical records, upload, fetch, or submit anything."
+    },
+    {
+      "id": "ai_assisted_evidence_drafting_plan_v0",
+      "title": "AI-Assisted Evidence Drafting Plan v0",
+      "status": "recommended_follow_up",
+      "priority": 77,
+      "notes": "Future planning only for using validated typed AI outputs to draft evidence/contribution candidates. Do not call models, accept outputs as truth, import into evidence packs automatically, or mutate local/master indexes."
     },
     {
       "id": "search_usefulness_baseline_comparison_report_v0",
@@ -585,17 +592,24 @@
       "notes": "Future planning only for comparing index-pack summaries against source/evidence provenance. Do not merge raw databases, export caches, import packs, or accept index summaries as canonical truth."
     },
     {
+      "id": "ai_runtime_integration_planning_v0",
+      "title": "AI Runtime Integration Planning v0",
+      "status": "blocked_pending_explicit_approval",
+      "priority": 85,
+      "notes": "Future planning only after explicit approval, typed output validation maturity, provider policy, consent, credential, privacy, and logging policy. Do not implement model calls, provider loading, telemetry, public-search AI, evidence acceptance, or master-index mutation without approval."
+    },
+    {
       "id": "contribution_submission_tooling_plan_v0",
       "title": "Contribution Submission Tooling Plan v0",
       "status": "recommended_follow_up",
-      "priority": 85,
+      "priority": 86,
       "notes": "Future planning only for local contribution submission tooling after review queue contracts. Do not add uploads, accounts, identity, moderation runtime, automatic acceptance, or hosted intake behavior."
     },
     {
       "id": "master_index_review_queue_runtime_planning_v0",
       "title": "Master Index Review Queue Runtime Planning v0",
       "status": "recommended_future_after_import_planning",
-      "priority": 86,
+      "priority": 87,
       "notes": "Future planning only after import planning and AI/manual-observation governance. Do not implement hosted queue runtime, uploads, accounts, moderation UI, master-index writes, automatic acceptance, live probes, or production claims."
     }
   ]

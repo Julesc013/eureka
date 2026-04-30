@@ -3265,6 +3265,48 @@
       "failure_means": "AI provider schemas, docs, audit report, disabled defaults, forbidden uses, negative validation cases, or no-model-call boundaries regressed.",
       "advisory_or_required": "required",
       "notes": "Covers disabled-by-default providers, remote credential gating, private-data and telemetry defaults, typed-output review requirements, forbidden truth/rights/malware/auto-acceptance uses, and absence of API keys or secrets."
+    },
+    {
+      "test_id": "typed_ai_output_validator",
+      "label": "Typed AI output validator",
+      "command": "python scripts/validate_ai_output.py --all-examples",
+      "category": "contract",
+      "owner_area": "runtime/engine/ai",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Typed AI output example validation, provider-reference alignment, required-review enforcement, prohibited-use checks, privacy/path/secret checks, or no-model-call posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates typed AI output candidates only; it performs no model calls, provider loading, evidence import, contribution import, local-index mutation, public-search AI, upload, or master-index mutation."
+    },
+    {
+      "test_id": "typed_ai_output_validator_tests",
+      "label": "Typed AI output validator tests",
+      "command": "python -m unittest runtime.engine.ai.tests.test_typed_output_validator tests.operations.test_typed_ai_output_validator tests.scripts.test_validate_ai_output",
+      "category": "contract",
+      "owner_area": "runtime/engine/ai",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary directories only for negative validator cases",
+      "expected_runtime": "seconds",
+      "failure_means": "Typed AI output module behavior, CLI JSON output, valid examples, negative validation cases, docs, or no-mutation flags regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers required review, prohibited truth/rights/malware/auto-acceptance uses, private-path and secret rejection, provider disabled-default checks, and JSON side-effect flags."
     }
   ]
 }

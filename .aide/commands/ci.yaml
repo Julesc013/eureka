@@ -70,6 +70,12 @@ steps:
     run: python scripts/validate_ai_provider_contract.py --json
   - id: ai_provider_contract_tests
     run: python -m unittest tests.operations.test_ai_provider_contract tests.scripts.test_validate_ai_provider_contract
+  - id: typed_ai_output_validator
+    run: python scripts/validate_ai_output.py --all-examples
+  - id: typed_ai_output_validator_json
+    run: python scripts/validate_ai_output.py --all-examples --json
+  - id: typed_ai_output_validator_tests
+    run: python -m unittest runtime.engine.ai.tests.test_typed_output_validator tests.operations.test_typed_ai_output_validator tests.scripts.test_validate_ai_output
   - id: public_alpha_status
     run: python scripts/demo_http_api.py --mode public_alpha status
   - id: public_alpha_smoke
