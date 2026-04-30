@@ -1100,8 +1100,9 @@ crawling, external observations, real binaries, downloads, installers, uploads,
 local path search, telemetry, accounts, hosted search, or hosted-readiness
 claim. Exact failure-mode deltas are marked unavailable because the pre-P32
 failure-mode baseline was not committed as machine-readable JSON. Source Pack
-Contract v0, Evidence Pack Contract v0, and Index Pack Contract v0 are now
-implemented; the next Codex-safe milestone is Contribution Pack Contract v0.
+Contract v0, Evidence Pack Contract v0, Index Pack Contract v0, and
+Contribution Pack Contract v0 are now implemented; the next Codex-safe
+milestone is Master Index Review Queue Contract v0.
 
 ## ADR-114: Define Source Packs Before Import Or Submission
 
@@ -1126,9 +1127,9 @@ P34 deliberately does not implement source-pack import, indexing, upload,
 executable plugin loading, live connectors, live probes, arbitrary URL fetch,
 scraping, crawling, downloads, installers, private local path sharing,
 master-index acceptance, production signing, rights clearance, malware-safety
-claims, or production extension support. Evidence Pack Contract v0 is now
-implemented, and Index Pack Contract v0 is now implemented; the next Codex-safe
-milestone is Contribution Pack Contract v0.
+claims, or production extension support. Evidence Pack Contract v0, Index Pack
+Contract v0, and Contribution Pack Contract v0 are now implemented; the next
+Codex-safe milestone is Master Index Review Queue Contract v0.
 
 ## ADR-115: Define Evidence Packs As Claims Before Truth Selection
 
@@ -1152,8 +1153,8 @@ executable plugin loading, live connectors, live probes, arbitrary URL fetch,
 scraping, crawling, downloads, installers, private cache sharing,
 master-index acceptance, production signing, rights clearance, malware-safety
 claims, canonical truth selection, or production extension support. Index Pack
-Contract v0 is now implemented; the next Codex-safe milestone is Contribution
-Pack Contract v0.
+Contract v0 and Contribution Pack Contract v0 are now implemented; the next
+Codex-safe milestone is Master Index Review Queue Contract v0.
 
 ## ADR-116: Define Index Packs As Coverage Before Import Or Merge
 
@@ -1177,5 +1178,34 @@ cache export, raw SQLite export, executable plugin loading, live connectors,
 live probes, arbitrary URL fetch, scraping, crawling, downloads, installers,
 private cache sharing, master-index acceptance, production signing, rights
 clearance, malware-safety claims, canonical truth selection, hosted ingestion,
-or production extension support. The next Codex-safe milestone is Contribution
-Pack Contract v0, followed by Master Index Review Queue Contract v0.
+or production extension support. Contribution Pack Contract v0 is now
+implemented; the next Codex-safe milestone is Master Index Review Queue
+Contract v0, followed by Source/Evidence/Index Pack Import Planning v0.
+
+## ADR-117: Define Contribution Packs As Review Candidates Before Intake
+
+Status: accepted
+
+Contribution Pack Contract v0 adds
+`contracts/packs/contribution_pack.v0.json`,
+`docs/reference/CONTRIBUTION_PACK_CONTRACT.md`,
+`examples/contribution_packs/minimal_contribution_pack_v0/`,
+`scripts/validate_contribution_pack.py`, and
+`control/audits/contribution-pack-contract-v0/`.
+
+The decision is to define contribution packs as portable, public-safe
+review-candidate wrappers before any upload, import, moderation, identity,
+account, or master-index review queue behavior exists. Contribution packs may
+reference source/evidence/index packs and carry proposed metadata corrections,
+alias suggestions, compatibility suggestions, member-path suggestions, absence
+reports, pending manual observation placeholders, and result-quality feedback,
+but those items are not canonical truth and are not accepted public records.
+
+P37 deliberately does not implement contribution upload, source/evidence/index
+pack import, master-index review queue runtime, moderation UI, accounts,
+identity, automatic acceptance, executable plugin loading, live connectors,
+live probes, arbitrary URL fetch, scraping, crawling, downloads, installers,
+private cache sharing, raw SQLite export, master-index acceptance, production
+signing, rights clearance, malware-safety claims, canonical truth selection,
+hosted ingestion, or production extension support. The next Codex-safe
+milestone is Master Index Review Queue Contract v0.

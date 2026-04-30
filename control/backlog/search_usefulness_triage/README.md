@@ -88,8 +88,11 @@ safe extension path for source metadata packs. Evidence Pack Contract v0 is now
 implemented as a contract/validation-only path for public-safe claims and
 observations. Index Pack Contract v0 is now implemented as a
 contract/validation-only path for public-safe index coverage and record
-summaries without raw SQLite/cache export. The next milestone is Contribution
-Pack Contract v0.
+summaries without raw SQLite/cache export. Contribution Pack Contract v0 is now
+implemented as a contract/validation-only wrapper for review-candidate proposed
+changes, referenced packs, pending manual-observation placeholders, and result
+feedback without upload/import/moderation/automatic-acceptance behavior. The
+next milestone is Master Index Review Queue Contract v0.
 
 ## Contents
 

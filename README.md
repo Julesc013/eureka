@@ -166,6 +166,17 @@ field coverage, query examples, and public-safe record summaries, but it does
 not implement import, merge, uploads, raw SQLite/local-cache export, live
 connectors, executable plugins, canonical truth selection, or master-index
 acceptance.
+Contribution Pack Contract v0 now defines the first portable contribution-pack
+format under `contracts/packs/contribution_pack.v0.json`,
+`docs/reference/CONTRIBUTION_PACK_CONTRACT.md`,
+`examples/contribution_packs/minimal_contribution_pack_v0/`, and
+`control/audits/contribution-pack-contract-v0/`. It adds a checksum-validating
+stdlib validator and tests for review-candidate contribution items, referenced
+source/evidence packs, manual-observation placeholders, alias suggestions,
+absence reports, privacy/rights posture, and no raw DB/cache or executable
+payloads, but it does not implement upload, import, moderation, accounts,
+master-index review queue runtime, automatic acceptance, live connectors,
+canonical truth selection, or master-index acceptance.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -716,10 +727,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Contribution Pack Contract v0
-2. Master Index Review Queue Contract v0
-3. Source/Evidence/Index Pack Import Planning v0
-4. AI Provider Contract v0
+1. Master Index Review Queue Contract v0
+2. Source/Evidence/Index Pack Import Planning v0
+3. AI Provider Contract v0
+4. Manual Observation Batch 0 Execution, human-operated
 5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

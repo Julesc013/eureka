@@ -38,6 +38,12 @@ steps:
     run: python scripts/validate_index_pack.py --json
   - id: index_pack_contract_tests
     run: python -m unittest tests.operations.test_index_pack_contract tests.scripts.test_validate_index_pack
+  - id: contribution_pack_validator
+    run: python scripts/validate_contribution_pack.py
+  - id: contribution_pack_validator_json
+    run: python scripts/validate_contribution_pack.py --json
+  - id: contribution_pack_contract_tests
+    run: python -m unittest tests.operations.test_contribution_pack_contract tests.scripts.test_validate_contribution_pack
   - id: public_alpha_status
     run: python scripts/demo_http_api.py --mode public_alpha status
   - id: public_alpha_smoke

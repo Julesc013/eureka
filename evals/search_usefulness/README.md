@@ -238,5 +238,9 @@ index, or treated as canonical truth. Index Pack Contract v0 is now implemented
 as the coverage/record-summary layer: validated index packs can describe what
 was indexed, but they are not imported, merged, uploaded, accepted into a
 master index, exported as raw SQLite/cache files, or treated as canonical
-truth. Future usefulness work should use Contribution Pack and Master Index
+truth. Contribution Pack Contract v0 is now implemented as the review-candidate
+wrapper: validated contribution packs can reference source/evidence/index packs
+and propose corrections, aliases, compatibility notes, absence reports, or
+result feedback, but they are not uploaded, imported, automatically accepted, or
+treated as canonical truth. Future usefulness work should use Master Index
 Review Queue contracts before pack import affects audit results.

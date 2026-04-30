@@ -306,12 +306,13 @@ The next backend sequence is:
 77. Source Pack Contract v0 (implemented as contract/validation/example-only source-pack format, synthetic example pack, checksum validator, lifecycle docs, and audit pack; no import, indexing, upload, live connectors, executable plugins, hosted submission, or master-index acceptance)
 78. Evidence Pack Contract v0 (implemented as contract/validation/example-only evidence-pack format, synthetic example pack, checksum validator, docs, and audit pack; no import, indexing, upload, live connectors, executable plugins, canonical truth selection, hosted submission, or master-index acceptance)
 79. Index Pack Contract v0 (implemented as contract/validation/example-only index-pack format, synthetic summary-only example pack, checksum validator, docs, and audit pack; no import, merge, upload, raw SQLite/local-cache export, live connectors, executable plugins, canonical truth selection, hosted ingestion, or master-index acceptance)
+80. Contribution Pack Contract v0 (implemented as contract/validation/example-only contribution-pack format, synthetic review-candidate example pack, checksum validator, docs, and audit pack; no upload, import, moderation, accounts, master-index review queue runtime, automatic acceptance, live connectors, executable plugins, canonical truth selection, hosted ingestion, or master-index acceptance)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Contribution Pack Contract v0
+> Master Index Review Queue Contract v0
 
 Why this comes next:
 
@@ -387,9 +388,16 @@ Why this comes next:
   coverage, query examples, record summaries, privacy/rights posture, and
   checksum validation without import, merge, upload, raw SQLite/local-cache
   export, live connectors, executable plugins, canonical truth selection,
-  hosted ingestion, downloads, or master-index acceptance. Contribution Pack
-  Contract v0 is next so source/evidence/index bundles can be wrapped for
-  governed review without adding upload or hosted intake behavior.
+  hosted ingestion, downloads, or master-index acceptance.
+- Contribution Pack Contract v0 is implemented as contract/validation/example-only
+  work. It defines review-candidate contribution items, source/evidence/index
+  pack references, manual-observation placeholders, alias/compatibility/absence
+  and result-feedback candidates, privacy/rights posture, review requirements,
+  and checksum validation without upload, import, moderation, accounts,
+  master-index review queue runtime, automatic acceptance, live connectors,
+  executable plugins, hosted ingestion, downloads, or master-index acceptance.
+  Master Index Review Queue Contract v0 is next so contribution candidates can
+  have governed review states before any intake behavior exists.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

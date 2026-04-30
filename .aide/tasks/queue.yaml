@@ -482,14 +482,14 @@
     {
       "id": "contribution_pack_contract_v0",
       "title": "Contribution Pack Contract v0",
-      "status": "recommended_next",
+      "status": "completed",
       "priority": 69,
-      "notes": "Future contribution-pack contract work only; do not add accounts, uploads, moderation infrastructure, telemetry, or live backend behavior."
+      "notes": "Implemented Contribution Pack Contract v0 as contract/validation/example-only work, including manifest schema, synthetic review-candidate example pack, checksum validator, docs, audit pack, and tests without upload, import, moderation UI, accounts, identity, master-index review queue runtime, automatic acceptance, live connectors, executable plugins, canonical truth selection, or master-index acceptance."
     },
     {
       "id": "master_index_review_queue_contract_v0",
       "title": "Master Index Review Queue Contract v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next",
       "priority": 70,
       "notes": "Future contract for master-index review queues only; do not add hosted indexing, accounts, uploads, moderation infrastructure, live source sync, crawling, or production search claims."
     },
@@ -520,6 +520,27 @@
       "status": "recommended_future_after_source_safety_confidence",
       "priority": 74,
       "notes": "Future hosted rehearsal plan only after source usefulness and safety confidence improve. Do not deploy, add provider files, enable live probes, or claim hosted public search before explicit approval and evidence."
+    },
+    {
+      "id": "source_pack_import_runtime_v0",
+      "title": "Source Pack Import Runtime v0",
+      "status": "blocked_until_import_planning",
+      "priority": 75,
+      "notes": "Future runtime only after Source/Evidence/Index Pack Import Planning v0. Do not implement import, indexing, uploads, live connectors, arbitrary local ingestion, or master-index acceptance before that planning milestone."
+    },
+    {
+      "id": "index_pack_import_compare_tooling_plan_v0",
+      "title": "Index Pack Import/Compare Tooling Plan v0",
+      "status": "recommended_follow_up",
+      "priority": 76,
+      "notes": "Future planning only for comparing index-pack summaries against source/evidence provenance. Do not merge raw databases, export caches, import packs, or accept index summaries as canonical truth."
+    },
+    {
+      "id": "contribution_submission_tooling_plan_v0",
+      "title": "Contribution Submission Tooling Plan v0",
+      "status": "recommended_follow_up",
+      "priority": 77,
+      "notes": "Future planning only for local contribution submission tooling after review queue contracts. Do not add uploads, accounts, identity, moderation runtime, automatic acceptance, or hosted intake behavior."
     }
   ]
 }
