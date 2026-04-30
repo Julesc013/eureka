@@ -1,0 +1,359 @@
+{
+  "report_id": "public_search_rehearsal_v0",
+  "created_by_slice": "public_search_rehearsal_v0",
+  "mode": "local_index_only",
+  "decision": "local_rehearsal_passed",
+  "hosted_backend_status": "unavailable",
+  "public_search_runtime_available": true,
+  "static_handoff_available": true,
+  "live_probes_enabled": false,
+  "downloads_enabled": false,
+  "installs_enabled": false,
+  "uploads_enabled": false,
+  "local_paths_enabled": false,
+  "telemetry_enabled": false,
+  "route_results": [
+    {
+      "route": "GET /search",
+      "implemented_locally": true,
+      "public_alpha_safe": true,
+      "static_host_route": false,
+      "requires_backend": true,
+      "mode": "local_index_only",
+      "status": "passed",
+      "check": "/search?q=windows+7+apps"
+    },
+    {
+      "route": "GET /api/v1/search",
+      "implemented_locally": true,
+      "public_alpha_safe": true,
+      "static_host_route": false,
+      "requires_backend": true,
+      "mode": "local_index_only",
+      "status": "passed",
+      "check": "/api/v1/search?q=windows+7+apps"
+    },
+    {
+      "route": "GET /api/v1/query-plan",
+      "implemented_locally": true,
+      "public_alpha_safe": true,
+      "static_host_route": false,
+      "requires_backend": true,
+      "mode": "local_index_only",
+      "status": "passed",
+      "check": "/api/v1/query-plan?q=windows+7+apps"
+    },
+    {
+      "route": "GET /api/v1/status",
+      "implemented_locally": true,
+      "public_alpha_safe": true,
+      "static_host_route": false,
+      "requires_backend": true,
+      "mode": "local_index_only",
+      "status": "passed",
+      "check": "/api/v1/status"
+    },
+    {
+      "route": "GET /api/v1/sources",
+      "implemented_locally": true,
+      "public_alpha_safe": true,
+      "static_host_route": false,
+      "requires_backend": true,
+      "mode": "local_index_only",
+      "status": "passed",
+      "check": "/api/v1/sources"
+    },
+    {
+      "route": "GET /api/v1/source/{source_id}",
+      "implemented_locally": true,
+      "public_alpha_safe": true,
+      "static_host_route": false,
+      "requires_backend": true,
+      "mode": "local_index_only",
+      "status": "passed",
+      "check": "/api/v1/source/synthetic-fixtures"
+    }
+  ],
+  "safe_query_results": [
+    {
+      "query": "windows 7 apps",
+      "route": "/api/v1/search",
+      "status": "passed",
+      "result_count": 10,
+      "envelope_ok": true,
+      "result_cards_contract_ok": true,
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "query": "latest firefox before xp support ended",
+      "route": "/api/v1/search",
+      "status": "passed",
+      "result_count": 0,
+      "envelope_ok": true,
+      "result_cards_contract_ok": true,
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "query": "driver.inf",
+      "route": "/api/v1/search",
+      "status": "passed",
+      "result_count": 10,
+      "envelope_ok": true,
+      "result_cards_contract_ok": true,
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "query": "thinkpad t42 wifi windows 2000",
+      "route": "/api/v1/search",
+      "status": "passed",
+      "result_count": 10,
+      "envelope_ok": true,
+      "result_cards_contract_ok": true,
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "query": "registry repair",
+      "route": "/api/v1/search",
+      "status": "passed",
+      "result_count": 10,
+      "envelope_ok": true,
+      "result_cards_contract_ok": true,
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "query": "blue ftp",
+      "route": "/api/v1/search",
+      "status": "passed",
+      "result_count": 10,
+      "envelope_ok": true,
+      "result_cards_contract_ok": true,
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "query": "pc magazine ray tracing",
+      "route": "/api/v1/search",
+      "status": "passed",
+      "result_count": 9,
+      "envelope_ok": true,
+      "result_cards_contract_ok": true,
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "query": "archive",
+      "route": "/api/v1/search",
+      "status": "passed",
+      "result_count": 10,
+      "envelope_ok": true,
+      "result_cards_contract_ok": true,
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "query": "no-such-local-index-hit",
+      "route": "/api/v1/search",
+      "status": "passed",
+      "result_count": 0,
+      "envelope_ok": true,
+      "result_cards_contract_ok": true,
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "no_private_path_leakage": true
+    }
+  ],
+  "blocked_request_results": [
+    {
+      "case": "missing q",
+      "route": "/api/v1/search",
+      "expected_error_code": "query_required",
+      "actual_error_code": "query_required",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "query too long",
+      "route": "/api/v1/search",
+      "expected_error_code": "query_too_long",
+      "actual_error_code": "query_too_long",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "limit too large",
+      "route": "/api/v1/search",
+      "expected_error_code": "limit_too_large",
+      "actual_error_code": "limit_too_large",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "unsupported mode live_probe",
+      "route": "/api/v1/search",
+      "expected_error_code": "live_probes_disabled",
+      "actual_error_code": "live_probes_disabled",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "index_path parameter",
+      "route": "/api/v1/search",
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "store_root parameter",
+      "route": "/api/v1/search",
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "url parameter",
+      "route": "/api/v1/search",
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "fetch_url parameter",
+      "route": "/api/v1/search",
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "download=true",
+      "route": "/api/v1/search",
+      "expected_error_code": "downloads_disabled",
+      "actual_error_code": "downloads_disabled",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "install=true",
+      "route": "/api/v1/search",
+      "expected_error_code": "installs_disabled",
+      "actual_error_code": "installs_disabled",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "upload=true",
+      "route": "/api/v1/search",
+      "expected_error_code": "uploads_disabled",
+      "actual_error_code": "uploads_disabled",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "source_credentials parameter",
+      "route": "/api/v1/search",
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "api_key parameter",
+      "route": "/api/v1/search",
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    },
+    {
+      "case": "live_source parameter",
+      "route": "/api/v1/search",
+      "expected_error_code": "live_probes_disabled",
+      "actual_error_code": "live_probes_disabled",
+      "status": "passed",
+      "no_stack_trace": true,
+      "no_private_path_leakage": true
+    }
+  ],
+  "static_handoff_review": {
+    "status": "passed",
+    "outputs_present": [
+      "site/dist/search.html",
+      "site/dist/lite/search.html",
+      "site/dist/text/search.txt",
+      "site/dist/files/search.README.txt",
+      "site/dist/data/search_handoff.json"
+    ],
+    "no_script_tags": true,
+    "fake_hosted_backend_claim": false,
+    "q_maxlength": 160,
+    "local_runtime_instructions_present": true,
+    "sample_queries_present": true,
+    "hosted_backend_status": "unavailable"
+  },
+  "public_alpha_review": {
+    "status": "passed",
+    "route_inventory": "control/inventory/public_alpha_routes.json",
+    "public_search_routes_safe_public_alpha": true,
+    "public_alpha_smoke_includes_search": true,
+    "forbidden_parameters_blocked": true,
+    "disabled_capabilities_reported": true,
+    "no_private_path_leakage": true
+  },
+  "contract_alignment": {
+    "status": "passed",
+    "request_contract": "contracts/api/search_request.v0.json",
+    "response_contract": "contracts/api/search_response.v0.json",
+    "result_card_contract": "contracts/api/search_result_card.v0.json",
+    "error_contract": "contracts/api/error_response.v0.json",
+    "safety_policy": "control/inventory/publication/public_search_safety.json",
+    "live_backend_future": true,
+    "live_probe_future": true,
+    "deviations": []
+  },
+  "pass_count": 30,
+  "fail_count": 0,
+  "unavailable_count": 0,
+  "blockers": [],
+  "remaining_limitations": [
+    "Hosted public search is unavailable.",
+    "Search usefulness remains fixture/local-index limited.",
+    "Hosted rate-limit and timeout controls remain future.",
+    "Live probes require separate explicit approval.",
+    "GitHub Pages serves static files only and does not run the Python runtime."
+  ],
+  "next_recommended_milestone": "Search Usefulness Source Expansion v2, fixture-only",
+  "notes": [
+    "This rehearsal used local in-process route checks and did not open a public listener.",
+    "No external source calls, live probes, downloads, installs, uploads, accounts, telemetry, arbitrary URL fetch, or caller-provided local path search were enabled.",
+    "Public hosted search rehearsal remains future work after source usefulness and operator controls improve."
+  ]
+}
