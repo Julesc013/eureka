@@ -274,6 +274,17 @@ Current scripts:
   payload rejection, and fake observed-observation rejection. It supports
   `--pack-root`, `--json`, and `--strict`, and does not upload, import, review,
   moderate, accept, execute, fetch, scrape, or contact a network
+- `validate_master_index_review_queue.py`: validates Master Index Review Queue
+  Contract v0 schemas, inventory files, and example queue directories. By
+  default it checks
+  `examples/master_index_review_queue/minimal_review_queue_v0/`, including
+  `REVIEW_QUEUE_MANIFEST.json`, queue-entry JSONL, decision JSONL, checksums,
+  privacy/status consistency, no auto-acceptance, private-path rejection, raw
+  SQLite/cache rejection, executable payload rejection, and hosted-runtime
+  claim rejection. It supports `--queue-root`, `--json`, and `--strict`, and
+  does not implement queue runtime, upload, import, moderation, accounts,
+  hosted master index writes, acceptance automation, execute, fetch, scrape,
+  crawl, or contact a network
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

@@ -278,6 +278,20 @@ posture, no upload/import/moderation/automatic-acceptance behavior, no private
 paths, no raw SQLite/cache files, no fake observed external observations, and no
 executable payloads.
 
+Master Index Review Queue Contract v0 is validated with:
+
+```bash
+python scripts/validate_master_index_review_queue.py
+python scripts/validate_master_index_review_queue.py --json
+python -m unittest tests.operations.test_master_index_review_queue_contract tests.scripts.test_validate_master_index_review_queue
+```
+
+The validation checks the master-index review queue schemas, inventory files,
+synthetic example queue, queue-entry JSONL, decision JSONL, checksum coverage,
+allowed validation/review/decision states, privacy/rights/risk posture, no
+auto-acceptance, no hosted queue/runtime/upload/account behavior, no private
+paths, no raw SQLite/cache files, and no executable payloads.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash
