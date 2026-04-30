@@ -1,0 +1,150 @@
+{
+  "report_id": "search-usefulness-delta-v2",
+  "created_by_slice": "search_usefulness_delta_v2",
+  "status": "implemented_audit_only",
+  "baseline_source": {
+    "path": "control/audits/search-usefulness-source-expansion-v2/source_expansion_v2_report.json",
+    "source_type": "machine_derived_from_committed_p32_report",
+    "per_query_baseline": "selected_targets_plus_current_audit_expected_status",
+    "failure_mode_baseline": "unavailable"
+  },
+  "baseline_counts": {
+    "covered": 5,
+    "partial": 22,
+    "source_gap": 26,
+    "capability_gap": 9,
+    "unknown": 2
+  },
+  "current_counts": {
+    "covered": 5,
+    "partial": 40,
+    "source_gap": 10,
+    "capability_gap": 7,
+    "unknown": 2,
+    "total_query_count": 64
+  },
+  "status_deltas": {
+    "covered": 0,
+    "partial": 18,
+    "source_gap": -16,
+    "capability_gap": -2,
+    "unknown": 0
+  },
+  "query_movements": [
+    {"query_id": "archived_firefox_xp_release_notes", "query": "archived Firefox XP release notes", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "wayback_memento_recorded"},
+    {"query_id": "archived_microsoft_download_center_directx_90c", "query": "archived Microsoft Download Center DirectX 9.0c", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "wayback_memento_recorded"},
+    {"query_id": "old_creative_labs_driver_page", "query": "old Creative Labs driver page", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "wayback_memento_recorded"},
+    {"query_id": "old_netscape_download_page", "query": "old Netscape download page", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "wayback_memento_recorded"},
+    {"query_id": "software_heritage_snapshot_old_project", "query": "software heritage source snapshot for old project", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "software_heritage_recorded"},
+    {"query_id": "visual_cpp_6_sp_readme", "query": "Visual C++ 6 service pack readme", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "package_registry_recorded"},
+    {"query_id": "visual_cpp_6_service_pack_download", "query": "Visual C++ 6.0 service pack download", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "package_registry_recorded"},
+    {"query_id": "manual_sound_blaster_ct1740", "query": "manual for Sound Blaster CT1740", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "manual_document_recorded"},
+    {"query_id": "sound_blaster_live_manual", "query": "manual for Sound Blaster Live", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "manual_document_recorded"},
+    {"query_id": "thinkpad_t42_hardware_maintenance_manual", "query": "IBM ThinkPad T42 hardware maintenance manual", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "manual_document_recorded"},
+    {"query_id": "windows_98_resource_kit_pdf", "query": "Windows 98 resource kit PDF", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "manual_document_recorded"},
+    {"query_id": "windows_2000_antivirus", "query": "Windows 2000 compatible antivirus", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "review_description_recorded"},
+    {"query_id": "last_chrome_for_windows_xp", "query": "last Chrome for Windows XP", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "review_description_recorded"},
+    {"query_id": "last_itunes_for_windows_xp", "query": "last iTunes for Windows XP", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "review_description_recorded"},
+    {"query_id": "classic_windows_file_transfer_blue_globe", "query": "classic Windows file transfer app blue globe", "baseline_status": "source_gap", "current_status": "partial", "movement": "source_gap_to_partial", "source_family": "sourceforge_recorded"}
+  ],
+  "failure_mode_deltas": {
+    "baseline_source": "unavailable",
+    "current_counts": {
+      "external_baseline_pending": 64,
+      "source_coverage_gap": 49,
+      "compatibility_evidence_gap": 25,
+      "planner_gap": 24,
+      "query_interpretation_gap": 21,
+      "identity_cluster_gap": 14,
+      "representation_gap": 14,
+      "decomposition_gap": 12,
+      "member_access_gap": 12,
+      "live_source_gap": 10,
+      "ranking_gap": 9,
+      "surface_ux_gap": 4,
+      "absence_reasoning_gap": 2,
+      "actionability_gap": 2,
+      "index_gap": 2
+    },
+    "notes": [
+      "Exact pre-P32 failure-mode counts are not committed as machine-readable JSON.",
+      "Current counts are recorded without fabricated deltas."
+    ]
+  },
+  "source_family_impacts": [
+    {"source_id": "wayback-memento-recorded-fixtures", "source_family": "wayback_memento_recorded", "fixture_status": "recorded_fixture_only", "queries_helped": ["archived_firefox_xp_release_notes", "archived_microsoft_download_center_directx_90c", "old_creative_labs_driver_page", "old_netscape_download_page"]},
+    {"source_id": "software-heritage-recorded-fixtures", "source_family": "software_heritage_recorded", "fixture_status": "recorded_fixture_only", "queries_helped": ["software_heritage_snapshot_old_project"]},
+    {"source_id": "sourceforge-recorded-fixtures", "source_family": "sourceforge_recorded", "fixture_status": "recorded_fixture_only", "queries_helped": ["classic_windows_file_transfer_blue_globe"]},
+    {"source_id": "package-registry-recorded-fixtures", "source_family": "package_registry_recorded", "fixture_status": "recorded_fixture_only", "queries_helped": ["visual_cpp_6_sp_readme", "visual_cpp_6_service_pack_download"]},
+    {"source_id": "manual-document-recorded-fixtures", "source_family": "manual_document_recorded", "fixture_status": "recorded_fixture_only", "queries_helped": ["manual_sound_blaster_ct1740", "sound_blaster_live_manual", "thinkpad_t42_hardware_maintenance_manual", "windows_98_resource_kit_pdf"]},
+    {"source_id": "review-description-recorded-fixtures", "source_family": "review_description_recorded", "fixture_status": "recorded_fixture_only", "queries_helped": ["windows_2000_antivirus", "last_chrome_for_windows_xp", "last_itunes_for_windows_xp"]}
+  ],
+  "external_baseline_status": {
+    "automated_external_calls_performed": false,
+    "external_observations_added": false,
+    "global_slot_counts": {
+      "observed": 0,
+      "pending_manual_observation": 192
+    },
+    "batch_0": {
+      "observed_observation_count": 0,
+      "pending_observation_count": 39,
+      "completion_percent": 0.0
+    },
+    "pending_by_system": {
+      "google_web_search": 64,
+      "internet_archive_metadata_search": 64,
+      "internet_archive_full_text_search": 64
+    }
+  },
+  "hard_eval_status": {
+    "archive_resolution_eval_status_counts": {
+      "satisfied": 6
+    },
+    "regressions_found": false,
+    "python_oracle_golden_check": "passed",
+    "generated_artifact_drift_check": "passed"
+  },
+  "public_search_status": {
+    "smoke_status": "passed",
+    "mode": "local_index_only",
+    "hosted_public_deployment": false,
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "uploads_enabled": false,
+    "local_paths_enabled": false,
+    "telemetry_enabled": false,
+    "total_checks": 30,
+    "failed_checks": 0
+  },
+  "remaining_gaps": {
+    "source_gap": [
+      "article_ray_tracing_1994_magazine",
+      "ati_rage_128_windows_98_driver",
+      "byte_magazine_neural_networks_1988",
+      "compute_magazine_amiga_graphics",
+      "dead_vendor_support_page_driver",
+      "dos_norton_disk_editor",
+      "epson_scanner_windows_2000_driver",
+      "macworld_system_7_review",
+      "old_mac_compression_utility",
+      "sound_blaster_live_ct4830_driver_windows_98"
+    ],
+    "capability_gap": [
+      "archive_resolution_eval_runner_query",
+      "archivebox_release_085_source",
+      "github_cli_release_v2650_source",
+      "intentionally_missing_synthetic_target",
+      "missing_subject_query",
+      "missing_synthetic_target_absence",
+      "public_alpha_status_query"
+    ]
+  },
+  "next_recommended_milestone": "Source Pack Contract v0",
+  "notes": [
+    "This report measures fixture-only local-index movement and does not add runtime/source behavior.",
+    "Partial status means bounded fixture evidence is visible; it is not a broad source coverage or production relevance claim.",
+    "External baselines remain pending/manual."
+  ]
+}
