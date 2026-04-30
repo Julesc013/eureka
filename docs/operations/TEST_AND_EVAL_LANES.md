@@ -233,6 +233,20 @@ JSONL records, rights/privacy docs, checksum coverage, disabled live/network
 posture, no import/index/upload behavior, no private paths, and no executable
 payloads.
 
+Evidence Pack Contract v0 is validated with:
+
+```bash
+python scripts/validate_evidence_pack.py
+python scripts/validate_evidence_pack.py --json
+python -m unittest tests.operations.test_evidence_pack_contract tests.scripts.test_validate_evidence_pack
+```
+
+The validation checks the evidence-pack manifest schema, synthetic example
+pack, evidence/source-reference JSONL records, evidence id uniqueness, allowed
+evidence kinds and claim types, snippet limits, rights/privacy docs, checksum
+coverage, disabled live/network posture, no import/index/upload behavior, no
+private paths, and no executable payloads.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

@@ -2971,6 +2971,48 @@
       "failure_means": "Source pack schema, example pack, checksums, docs, or negative safety tests regressed.",
       "advisory_or_required": "required",
       "notes": "Covers manifest structure, JSONL records, checksum validation, rights/privacy docs, private path rejection, and executable payload rejection."
+    },
+    {
+      "test_id": "evidence_pack_validator",
+      "label": "Evidence pack contract validator",
+      "command": "python scripts/validate_evidence_pack.py",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Evidence Pack Contract v0 schema/example validation or safety posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates the synthetic example evidence pack; it does not import, index, upload, execute, fetch, scrape, or contact a network."
+    },
+    {
+      "test_id": "evidence_pack_contract_tests",
+      "label": "Evidence pack contract tests",
+      "command": "python -m unittest tests.operations.test_evidence_pack_contract tests.scripts.test_validate_evidence_pack",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only for negative validator fixtures",
+      "expected_runtime": "seconds",
+      "failure_means": "Evidence pack schema, example pack, checksums, docs, source references, snippet limits, claim types, or negative safety tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers manifest structure, JSONL evidence/source-reference records, checksum validation, rights/privacy docs, private path rejection, invalid claim rejection, long snippet rejection, and executable payload rejection."
     }
   ]
 }

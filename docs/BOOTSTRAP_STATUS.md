@@ -333,7 +333,7 @@ subsystem choices.
 
 The latest implementation milestone is:
 
-> Source Pack Contract v0
+> Evidence Pack Contract v0
 
 Search Usefulness Source Expansion v2 is now implemented as fixture-only source
 coverage under `runtime/connectors/source_expansion_recorded/`,
@@ -361,6 +361,16 @@ evidence inputs, fixture policy, privacy/rights posture, lifecycle status, and
 checksum validation. It adds no import, indexing, upload, live connector,
 executable plugin, hosted submission, master-index acceptance, download,
 installer, or production extension behavior.
+Evidence Pack Contract v0 is now implemented as contract/validation/example-only
+work under `contracts/packs/evidence_pack.v0.json`,
+`docs/reference/EVIDENCE_PACK_CONTRACT.md`,
+`examples/evidence_packs/minimal_evidence_pack_v0/`, and
+`control/audits/evidence-pack-contract-v0/`. It defines the governed
+`EVIDENCE_PACK.json` manifest shape, evidence kinds, claim types, source
+reference locators, snippet limits, privacy/rights posture, and checksum
+validation. It adds no import, indexing, upload, live connector, executable
+plugin, hosted submission, master-index acceptance, canonical truth selection,
+download, installer, or production extension behavior.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -591,21 +601,20 @@ local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Evidence Pack Contract v0
-2. Index Pack Contract v0
-3. Contribution Pack Contract v0
-4. Master Index Review Queue Contract v0
-5. Source Pack Import Planning v0
-6. AI Provider Contract v0
-7. Manual Observation Batch 0 Execution, human-operated
-8. Search Usefulness Baseline Comparison Report v0 after observations
-9. IA Metadata Live Probe Approval Pack v0 only after explicit approval
-10. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
+1. Index Pack Contract v0
+2. Contribution Pack Contract v0
+3. Master Index Review Queue Contract v0
+4. Source/Evidence Pack Import Planning v0
+5. AI Provider Contract v0
+6. Manual Observation Batch 0 Execution, human-operated
+7. Search Usefulness Baseline Comparison Report v0 after observations
+8. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+9. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
-11. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
-12. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+10. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
+11. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
-13. Relay Prototype Implementation v0, only after explicit human approval and
+12. Relay Prototype Implementation v0, only after explicit human approval and
    limited to the approved localhost-only/read-only/static relay scope
 14. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
    human approval and limited to the approved read-only static-data/snapshot-demo

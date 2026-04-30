@@ -304,12 +304,13 @@ The next backend sequence is:
 75. Search Usefulness Source Expansion v2, fixture-only (implemented as six recorded fixture source families and 15 tiny metadata records; no live calls, scraping, crawling, external observations, real binaries, download/install/upload actions, hosted search, or production relevance claim)
 76. Search Usefulness Delta v2 (implemented as audit-only measurement of Source Expansion v2 status deltas, query movement, source-family impact, remaining gaps, hard-eval status, public-search smoke status, and pending/manual external baselines)
 77. Source Pack Contract v0 (implemented as contract/validation/example-only source-pack format, synthetic example pack, checksum validator, lifecycle docs, and audit pack; no import, indexing, upload, live connectors, executable plugins, hosted submission, or master-index acceptance)
+78. Evidence Pack Contract v0 (implemented as contract/validation/example-only evidence-pack format, synthetic example pack, checksum validator, docs, and audit pack; no import, indexing, upload, live connectors, executable plugins, canonical truth selection, hosted submission, or master-index acceptance)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Evidence Pack Contract v0
+> Index Pack Contract v0
 
 Why this comes next:
 
@@ -373,9 +374,14 @@ Why this comes next:
   notes, checksum validation, source-record alignment, prohibited behavior,
   and lifecycle guidance without import, indexing, upload, live connectors,
   executable plugins, hosted submission, downloads, or master-index
-  acceptance. Evidence Pack Contract v0 is next so source-pack evidence inputs
-  can gain a reusable governed evidence envelope before import/submission
-  planning.
+  acceptance.
+- Evidence Pack Contract v0 is implemented as contract/validation/example-only
+  work. It defines portable claim/observation packs, source locators, allowed
+  evidence kinds and claim types, snippet limits, rights/privacy posture, and
+  checksum validation without import, indexing, upload, live connectors,
+  executable plugins, canonical truth selection, hosted submission, downloads,
+  or master-index acceptance. Index Pack Contract v0 is next so pack-derived
+  index artifacts can be governed before import/submission planning.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

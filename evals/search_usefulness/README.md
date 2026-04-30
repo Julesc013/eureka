@@ -231,5 +231,8 @@ machine-readable JSON. External baselines remain pending/manual.
 Source Pack Contract v0 is now implemented as the next safe extension layer:
 validated source metadata packs can be authored and checked locally, but they
 are not imported into this audit, indexed, uploaded, or accepted into a master
-index. Future usefulness work should use Evidence Pack and Index Pack contracts
-before source-pack import affects audit results.
+index. Evidence Pack Contract v0 is also implemented as the claim/observation
+layer: validated evidence packs can be authored and checked locally, but they
+are not imported into this audit, indexed, uploaded, accepted into a master
+index, or treated as canonical truth. Future usefulness work should use Index
+Pack and Contribution Pack contracts before pack import affects audit results.

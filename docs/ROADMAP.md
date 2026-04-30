@@ -60,6 +60,14 @@ review, and contract alignment under
 `control/audits/public-search-rehearsal-v0/`. It does not deploy hosted search,
 enable live probes, enable downloads/installs/uploads/local paths, add
 accounts or telemetry, or claim production API stability.
+Source Pack Contract v0 and Evidence Pack Contract v0 now define the first
+portable pack formats under `contracts/packs/` with synthetic checksum-validated
+examples, docs, audit packs, validators, and tests. Source packs cover source
+metadata and fixture/evidence inputs; evidence packs narrow that into
+public-safe claims, observations, source locators, snippets, and provenance.
+Both remain contract/validation/example-only and add no import, indexing,
+upload, live connector, executable plugin, master-index acceptance, canonical
+truth selection, or production extension behavior.
 
 ## Stage 3: Surface Skeletons
 

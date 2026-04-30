@@ -131,6 +131,13 @@ Current packs:
   review, and future import/submission path without implementing import,
   indexing, upload, live connectors, executable plugins, or master-index
   acceptance.
+- `evidence-pack-contract-v0/`: contract/validation/example-only review for
+  the first portable evidence-pack format. It records the manifest schema, file
+  layout, claim/evidence types, snippet limits, privacy/rights posture,
+  validation rules, synthetic example-pack review, and future
+  import/submission path without implementing import, indexing, upload, live
+  connectors, executable plugins, canonical truth selection, or master-index
+  acceptance.
 
 Public Search API Contract v0 is governed under `contracts/api/`,
 `control/inventory/publication/public_search_routes.json`, and

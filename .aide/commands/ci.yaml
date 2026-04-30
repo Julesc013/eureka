@@ -26,6 +26,12 @@ steps:
     run: python scripts/validate_source_pack.py --json
   - id: source_pack_contract_tests
     run: python -m unittest tests.operations.test_source_pack_contract tests.scripts.test_validate_source_pack
+  - id: evidence_pack_validator
+    run: python scripts/validate_evidence_pack.py
+  - id: evidence_pack_validator_json
+    run: python scripts/validate_evidence_pack.py --json
+  - id: evidence_pack_contract_tests
+    run: python -m unittest tests.operations.test_evidence_pack_contract tests.scripts.test_validate_evidence_pack
   - id: public_alpha_status
     run: python scripts/demo_http_api.py --mode public_alpha status
   - id: public_alpha_smoke

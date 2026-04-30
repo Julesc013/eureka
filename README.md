@@ -148,6 +148,15 @@ Source Pack Contract v0 now defines the first portable source-pack format under
 stdlib validator and tests for a tiny synthetic example pack, but it does not
 implement import, indexing, uploads, live connectors, executable plugins,
 downloads/installers, or master-index acceptance.
+Evidence Pack Contract v0 now defines the first portable evidence-pack format
+under `contracts/packs/evidence_pack.v0.json`,
+`docs/reference/EVIDENCE_PACK_CONTRACT.md`,
+`examples/evidence_packs/minimal_evidence_pack_v0/`, and
+`control/audits/evidence-pack-contract-v0/`. It adds a checksum-validating
+stdlib validator and tests for public-safe claims, observations, snippets, and
+source references, but it does not implement import, indexing, uploads, live
+connectors, executable plugins, canonical truth selection, or master-index
+acceptance.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -698,10 +707,10 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Evidence Pack Contract v0
-2. Index Pack Contract v0
-3. Contribution Pack Contract v0
-4. Master Index Review Queue Contract v0
+1. Index Pack Contract v0
+2. Contribution Pack Contract v0
+3. Master Index Review Queue Contract v0
+4. Source/Evidence Pack Import Planning v0
 5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

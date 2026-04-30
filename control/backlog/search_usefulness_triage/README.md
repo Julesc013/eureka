@@ -84,8 +84,9 @@ claims. Search Usefulness Delta v2 now records that movement under
 movement, source-family impact, current failure modes, hard-eval status,
 public-search smoke status, external-baseline pending status, and remaining
 gaps. Source Pack Contract v0 is now implemented as a contract/validation-only
-safe extension path for source metadata packs; the next milestone is Evidence
-Pack Contract v0.
+safe extension path for source metadata packs. Evidence Pack Contract v0 is now
+implemented as a contract/validation-only path for public-safe claims and
+observations. The next milestone is Index Pack Contract v0.
 
 ## Contents
 

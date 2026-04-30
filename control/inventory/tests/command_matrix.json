@@ -134,7 +134,9 @@
         "search_usefulness_delta_v2_validator",
         "search_usefulness_delta_v2_tests",
         "source_pack_contract_tests",
-        "source_pack_validator"
+        "source_pack_validator",
+        "evidence_pack_contract_tests",
+        "evidence_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -264,7 +266,9 @@
         "search_usefulness_delta_v2_validator",
         "search_usefulness_delta_v2_tests",
         "source_pack_contract_tests",
-        "source_pack_validator"
+        "source_pack_validator",
+        "evidence_pack_contract_tests",
+        "evidence_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -366,7 +370,9 @@
         "search_usefulness_delta_v2_validator",
         "search_usefulness_delta_v2_tests",
         "source_pack_contract_tests",
-        "source_pack_validator"
+        "source_pack_validator",
+        "evidence_pack_contract_tests",
+        "evidence_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -558,7 +564,9 @@
         "search_usefulness_delta_v2_validator",
         "search_usefulness_delta_v2_tests",
         "source_pack_contract_tests",
-        "source_pack_validator"
+        "source_pack_validator",
+        "evidence_pack_contract_tests",
+        "evidence_pack_validator"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",

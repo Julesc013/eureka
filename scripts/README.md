@@ -249,6 +249,14 @@ Current scripts:
   executable payload rejection. It supports `--pack-root`, `--json`, and
   `--strict`, and does not import, index, upload, execute, or contact a
   network
+- `validate_evidence_pack.py`: validates Evidence Pack Contract v0 directories.
+  By default it checks the synthetic example pack under
+  `examples/evidence_packs/minimal_evidence_pack_v0/`, including
+  `EVIDENCE_PACK.json`, JSONL evidence/source-reference records, evidence id
+  uniqueness, allowed claim types, snippet limits, rights/privacy posture,
+  checksum coverage, private-path rejection, and executable payload rejection.
+  It supports `--pack-root`, `--json`, and `--strict`, and does not import,
+  index, upload, execute, fetch, scrape, or contact a network
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,
