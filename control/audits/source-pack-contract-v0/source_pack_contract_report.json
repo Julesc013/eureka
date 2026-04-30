@@ -1,0 +1,64 @@
+{
+  "report_id": "source-pack-contract-v0",
+  "created_by_slice": "source_pack_contract_v0",
+  "status": "implemented_contract_validation_example_only",
+  "contract": {
+    "schema": "contracts/packs/source_pack.v0.json",
+    "reference_doc": "docs/reference/SOURCE_PACK_CONTRACT.md",
+    "lifecycle_doc": "docs/reference/PACK_LIFECYCLE.md"
+  },
+  "example_pack": {
+    "path": "examples/source_packs/minimal_recorded_source_pack_v0",
+    "pack_id": "example.minimal_recorded_source_pack_v0",
+    "status": "shareable_candidate",
+    "privacy_classification": "public_safe",
+    "source_record_count": 1,
+    "evidence_record_count": 2,
+    "representation_record_count": 1,
+    "fixture_file_count": 1,
+    "synthetic": true,
+    "checksummed": true
+  },
+  "validator": {
+    "path": "scripts/validate_source_pack.py",
+    "default_pack_root": "examples/source_packs/minimal_recorded_source_pack_v0",
+    "supports_json": true,
+    "supports_strict": true,
+    "performs_import": false,
+    "performs_indexing": false,
+    "performs_upload": false,
+    "performs_network": false
+  },
+  "disabled_or_forbidden": {
+    "runtime_import": true,
+    "runtime_indexing": true,
+    "upload": true,
+    "live_connectors": true,
+    "live_probes": true,
+    "arbitrary_url_fetch": true,
+    "scraping": true,
+    "crawling": true,
+    "executable_payloads": true,
+    "installer_payloads": true,
+    "downloads": true,
+    "private_paths_in_public_packs": true,
+    "credentials": true,
+    "master_index_auto_acceptance": true,
+    "production_extension_claim": true
+  },
+  "relationships": {
+    "source_registry": "Source records align with source-registry vocabulary but are not canonical registry entries until reviewed.",
+    "evidence_pack": "Future Evidence Pack Contract v0 should define reusable evidence semantics beyond source-pack inputs.",
+    "index_pack": "Future Index Pack Contract v0 should define portable index artifacts; Source Pack v0 does not index.",
+    "contribution_pack": "Future Contribution Pack Contract v0 should define submission/review envelopes.",
+    "master_index_review_queue": "Future review queue must gate public acceptance.",
+    "public_search": "Future import may feed local_index_only search after separate approval.",
+    "snapshots_native_relay": "Future consumers may read validated public-safe packs only through their own contracts."
+  },
+  "next_recommended_milestone": "Evidence Pack Contract v0",
+  "notes": [
+    "P34 is contract/validation/example-only.",
+    "The example pack is synthetic and does not prove real source coverage.",
+    "No hosted/master-index source pack acceptance exists."
+  ]
+}

@@ -1,6 +1,10 @@
 # Contracts
 
-`contracts/` holds governed assets that define shared meaning across Eureka. Bootstrap starts with archive-facing contracts first, then adds gateway public APIs and shared surface contracts in later commits.
+`contracts/` holds governed assets that define shared meaning across Eureka. Bootstrap starts with archive-facing contracts first, then adds gateway public APIs, shared surface contracts, and portable pack contracts in later commits.
 
 This tree is for governed semantics and public boundaries. It is not the place for hidden runtime coupling.
 
+`contracts/packs/source_pack.v0.json` defines Source Pack Contract v0 for
+portable source metadata and fixture-evidence bundles. It is contract and
+validation only; it does not implement import, indexing, uploads, live
+connectors, executable plugins, or master-index acceptance.

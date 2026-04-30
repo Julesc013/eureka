@@ -20,6 +20,11 @@ executable download surface, and does not mirror software artifacts in v0.
 - Future downloads, mirrors, package-manager handoff, and relay distribution
   require rights/access review.
 - Public-alpha remains read-only and metadata-first.
+- Source Pack Contract v0 carries this posture into future contributed source
+  metadata. A source pack may include rights/access notes and tiny synthetic or
+  self-authored fixtures, but validation is not rights clearance, metadata is
+  not redistribution permission, and a pack must not claim malware safety.
+  Binary artifacts or executable payloads require a later policy milestone.
 
 ## Labels
 

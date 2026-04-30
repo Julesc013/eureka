@@ -1,0 +1,471 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/packs/source_pack.v0.json",
+  "title": "EurekaSourcePackManifestV0",
+  "description": "Manifest schema for Source Pack Contract v0. This defines portable source metadata and fixture evidence bundles only; it does not implement import, upload, indexing, live connectors, executable plugins, or master-index acceptance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pack_id",
+    "pack_version",
+    "title",
+    "description",
+    "status",
+    "producer",
+    "source_families",
+    "source_records",
+    "evidence_files",
+    "fixture_files",
+    "rights_and_access",
+    "privacy",
+    "capabilities",
+    "prohibited_behaviors",
+    "checksums",
+    "validation",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source_pack.v0"
+    },
+    "pack_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "pack_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([-.][A-Za-z0-9.]+)?$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "local_private",
+        "shareable_candidate",
+        "submitted",
+        "accepted_public",
+        "rejected",
+        "superseded"
+      ],
+      "description": "Lifecycle status. accepted_public must only be used after a future governed review path accepts the pack."
+    },
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        },
+        "tool": {
+          "type": "string"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "description": "Optional ISO-like timestamp. Deterministic example packs may omit it."
+    },
+    "source_families": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      }
+    },
+    "source_records": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "file",
+            "inline",
+            "file_and_inline"
+          ]
+        },
+        "files": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/relative_path"
+          }
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source_record"
+          }
+        }
+      }
+    },
+    "evidence_files": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/relative_path"
+      }
+    },
+    "representation_files": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/relative_path"
+      },
+      "default": []
+    },
+    "compatibility_files": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/relative_path"
+      },
+      "default": []
+    },
+    "member_files": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/relative_path"
+      },
+      "default": []
+    },
+    "fixture_files": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/relative_path"
+      }
+    },
+    "rights_and_access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document",
+        "rights_status",
+        "redistribution_status",
+        "malware_scan_status",
+        "notes"
+      ],
+      "properties": {
+        "document": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "rights_status": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "synthetic_or_self_authored",
+            "source_terms_apply",
+            "restricted",
+            "review_required",
+            "not_applicable"
+          ]
+        },
+        "redistribution_status": {
+          "type": "string",
+          "enum": [
+            "metadata_only",
+            "fixture_only",
+            "local_private_only",
+            "review_required",
+            "not_allowed"
+          ]
+        },
+        "malware_scan_status": {
+          "type": "string",
+          "enum": [
+            "not_scanned",
+            "not_applicable",
+            "future"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "default_visibility",
+        "contains_private_paths",
+        "contains_credentials",
+        "contains_raw_private_files",
+        "notes"
+      ],
+      "properties": {
+        "classification": {
+          "type": "string",
+          "enum": [
+            "public_safe",
+            "local_private",
+            "review_required",
+            "restricted",
+            "unknown"
+          ]
+        },
+        "default_visibility": {
+          "type": "string",
+          "enum": [
+            "local_private_until_validated",
+            "shareable_after_validation",
+            "restricted"
+          ]
+        },
+        "contains_private_paths": {
+          "type": "boolean"
+        },
+        "contains_credentials": {
+          "type": "boolean"
+        },
+        "contains_raw_private_files": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "network_required",
+        "live_supported",
+        "fixture_backed",
+        "recorded_fixture_backed",
+        "allows_executables",
+        "allows_upload",
+        "allows_arbitrary_local_paths",
+        "import_implemented",
+        "indexing_implemented"
+      ],
+      "properties": {
+        "network_required": {
+          "type": "boolean"
+        },
+        "live_supported": {
+          "type": "boolean"
+        },
+        "fixture_backed": {
+          "type": "boolean"
+        },
+        "recorded_fixture_backed": {
+          "type": "boolean"
+        },
+        "allows_executables": {
+          "type": "boolean"
+        },
+        "allows_upload": {
+          "type": "boolean"
+        },
+        "allows_arbitrary_local_paths": {
+          "type": "boolean"
+        },
+        "import_implemented": {
+          "type": "boolean"
+        },
+        "indexing_implemented": {
+          "type": "boolean"
+        }
+      }
+    },
+    "prohibited_behaviors": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "live_network_fetch",
+          "arbitrary_url_fetch",
+          "scraping",
+          "crawling",
+          "executable_payloads",
+          "installer_payloads",
+          "downloads",
+          "uploads",
+          "credential_submission",
+          "private_path_publication",
+          "raw_private_file_export",
+          "malware_safety_claim",
+          "rights_clearance_claim",
+          "master_index_auto_acceptance",
+          "runtime_plugin_execution"
+        ]
+      }
+    },
+    "checksums": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "file",
+        "covers"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "file": {
+          "const": "CHECKSUMS.SHA256"
+        },
+        "covers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/relative_path"
+          }
+        },
+        "production_signing": {
+          "type": "string",
+          "enum": [
+            "future_deferred",
+            "not_applicable"
+          ],
+          "default": "future_deferred"
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "validator",
+        "strict_public_safe_required",
+        "no_import_performed",
+        "no_network_performed"
+      ],
+      "properties": {
+        "validator": {
+          "type": "string"
+        },
+        "strict_public_safe_required": {
+          "type": "boolean"
+        },
+        "no_import_performed": {
+          "type": "boolean"
+        },
+        "no_network_performed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\.\\.)[A-Za-z0-9._/@+-]+$"
+    },
+    "source_record": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "source_id",
+        "source_family",
+        "label",
+        "posture",
+        "coverage_depth",
+        "connector_mode",
+        "capabilities",
+        "limitations",
+        "next_coverage_step",
+        "rights_and_access",
+        "fixture_backed",
+        "live_supported",
+        "network_required"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "source_family": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "posture": {
+          "type": "string"
+        },
+        "coverage_depth": {
+          "type": "string"
+        },
+        "connector_mode": {
+          "type": "string"
+        },
+        "capabilities": {
+          "type": "object"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "next_coverage_step": {
+          "type": "string"
+        },
+        "rights_and_access": {
+          "type": "object"
+        },
+        "fixture_backed": {
+          "type": "boolean"
+        },
+        "live_supported": {
+          "type": "boolean"
+        },
+        "network_required": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "x-contract_id": "eureka_source_pack_v0",
+  "x-status": "stable_draft",
+  "x-non_goals": [
+    "runtime import",
+    "source indexing",
+    "upload handling",
+    "live connector behavior",
+    "master-index acceptance",
+    "executable plugin support",
+    "production signing"
+  ]
+}

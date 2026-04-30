@@ -1,0 +1,21 @@
+{
+  "fixture_kind": "synthetic_project_release_metadata",
+  "project": {
+    "name": "Example Minimal Project",
+    "summary": "Self-authored metadata fixture for Source Pack Contract v0 validation.",
+    "license_note": "Synthetic example text authored for this repository."
+  },
+  "release": {
+    "version": "1.0.0",
+    "state": "recorded_fixture",
+    "artifact_policy": "metadata_only_no_download"
+  },
+  "compatibility_notes": [
+    "Synthetic note: documentation mentions Windows 7 as an example platform."
+  ],
+  "limitations": [
+    "No live source observation.",
+    "No executable artifact.",
+    "No rights clearance or malware safety claim."
+  ]
+}

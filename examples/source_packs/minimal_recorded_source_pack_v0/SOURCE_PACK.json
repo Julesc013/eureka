@@ -1,0 +1,106 @@
+{
+  "schema_version": "source_pack.v0",
+  "pack_id": "example.minimal_recorded_source_pack_v0",
+  "pack_version": "0.1.0",
+  "title": "Example FOSS Project Release Metadata Fixture",
+  "description": "A tiny synthetic source pack that demonstrates source metadata, public-safe evidence records, representation metadata, fixture files, rights notes, privacy posture, and checksum validation without import, indexing, uploads, live connectors, or executable payloads.",
+  "status": "shareable_candidate",
+  "producer": {
+    "name": "Eureka maintainers",
+    "tool": "manual synthetic fixture"
+  },
+  "source_families": [
+    "source_pack_example_recorded"
+  ],
+  "source_records": {
+    "mode": "file",
+    "files": [
+      "source_records.jsonl"
+    ]
+  },
+  "evidence_files": [
+    "evidence_records.jsonl"
+  ],
+  "representation_files": [
+    "representation_records.jsonl"
+  ],
+  "compatibility_files": [],
+  "member_files": [],
+  "fixture_files": [
+    "fixtures/minimal_project_metadata.json"
+  ],
+  "rights_and_access": {
+    "document": "RIGHTS_AND_ACCESS.md",
+    "rights_status": "synthetic_or_self_authored",
+    "redistribution_status": "fixture_only",
+    "malware_scan_status": "not_applicable",
+    "notes": [
+      "Synthetic metadata only.",
+      "No rights clearance for real external artifacts is claimed.",
+      "No malware safety claim is made."
+    ]
+  },
+  "privacy": {
+    "classification": "public_safe",
+    "default_visibility": "shareable_after_validation",
+    "contains_private_paths": false,
+    "contains_credentials": false,
+    "contains_raw_private_files": false,
+    "notes": [
+      "All locators are pack-local fixture locators.",
+      "No private local filesystem paths are present."
+    ]
+  },
+  "capabilities": {
+    "network_required": false,
+    "live_supported": false,
+    "fixture_backed": true,
+    "recorded_fixture_backed": true,
+    "allows_executables": false,
+    "allows_upload": false,
+    "allows_arbitrary_local_paths": false,
+    "import_implemented": false,
+    "indexing_implemented": false
+  },
+  "prohibited_behaviors": [
+    "live_network_fetch",
+    "arbitrary_url_fetch",
+    "scraping",
+    "crawling",
+    "executable_payloads",
+    "installer_payloads",
+    "downloads",
+    "uploads",
+    "credential_submission",
+    "private_path_publication",
+    "raw_private_file_export",
+    "malware_safety_claim",
+    "rights_clearance_claim",
+    "master_index_auto_acceptance",
+    "runtime_plugin_execution"
+  ],
+  "checksums": {
+    "algorithm": "sha256",
+    "file": "CHECKSUMS.SHA256",
+    "covers": [
+      "SOURCE_PACK.json",
+      "README.md",
+      "RIGHTS_AND_ACCESS.md",
+      "source_records.jsonl",
+      "evidence_records.jsonl",
+      "representation_records.jsonl",
+      "fixtures/minimal_project_metadata.json"
+    ],
+    "production_signing": "future_deferred"
+  },
+  "validation": {
+    "validator": "python scripts/validate_source_pack.py --pack-root examples/source_packs/minimal_recorded_source_pack_v0",
+    "strict_public_safe_required": true,
+    "no_import_performed": true,
+    "no_network_performed": true
+  },
+  "notes": [
+    "This example pack is contract-test data only.",
+    "Future import, review, contribution, and master-index workflows require separate milestones."
+  ]
+}

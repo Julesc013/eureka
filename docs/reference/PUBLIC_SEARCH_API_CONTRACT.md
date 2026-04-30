@@ -191,6 +191,12 @@ review, and contract alignment. The rehearsal does not make `/search` or
 `/api/v1/search` hosted, does not enable live probes, and does not add
 downloads, installs, uploads, local path search, accounts, telemetry, or
 external source calls.
+Source Pack Contract v0 defines a future validated source metadata input
+format. Source packs are not imported by the current public search runtime and
+do not grant live connector behavior. A future import milestone must preserve
+`local_index_only`, public-safe records, disabled downloads/uploads/local paths,
+and checksum/rights/privacy validation before any source pack can influence
+public search results.
 
 ## Out Of Scope
 
