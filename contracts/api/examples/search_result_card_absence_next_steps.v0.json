@@ -1,0 +1,203 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "eureka_public_search_result_card_v0",
+  "stability": {
+    "stable_draft": [
+      "result_id",
+      "title",
+      "record_kind",
+      "result_lane",
+      "user_cost.score",
+      "source.source_id",
+      "source.source_family",
+      "identity.public_target_ref",
+      "actions.allowed[].status",
+      "actions.blocked[].status",
+      "warnings",
+      "limitations"
+    ],
+    "experimental": [
+      "why_ranked"
+    ],
+    "volatile": [
+      "matched_query_terms"
+    ],
+    "internal": [
+      "private_local_path",
+      "raw_source_payload",
+      "source_credentials"
+    ],
+    "future": [
+      "debug"
+    ]
+  },
+  "result_id": "card-absence-next-steps",
+  "title": "No local-index result yet",
+  "subtitle": "Absence and next steps",
+  "summary": "The controlled local index did not return a supported result. The card explains checked scope and gaps.",
+  "record_kind": "absence_report",
+  "matched_query_terms": [
+    "missing",
+    "old software"
+  ],
+  "why_matched": [
+    "absence card is generated when local_index_only coverage is insufficient"
+  ],
+  "why_ranked": [
+    "absence cards must not outrank concrete evidence when evidence exists"
+  ],
+  "result_lane": "absence_or_next_steps",
+  "user_cost": {
+    "score": 7,
+    "label": "high",
+    "reasons": [
+      "unresolved_absence",
+      "source_coverage_limited"
+    ],
+    "explanation": "Absence cards require user or future source work."
+  },
+  "source": {
+    "source_id": "local-index-summary",
+    "source_family": "local_index",
+    "source_label": "Controlled local index",
+    "source_status": "not_checked_live",
+    "posture": "local_index_only",
+    "coverage_depth": "static_summary",
+    "trust_lane": null,
+    "source_lane": null,
+    "checked_as": "not_checked",
+    "limitations": [
+      "local_index_only",
+      "source_coverage_limited"
+    ]
+  },
+  "identity": {
+    "public_target_ref": "absence:local-index:no-supported-result",
+    "target_ref": null,
+    "resolved_resource_id": null,
+    "object_id": null,
+    "release_or_state_id": null,
+    "representation_id": null,
+    "member_target_ref": null,
+    "native_source_id": null,
+    "identity_status": "unresolved",
+    "notes": [
+      "Absence is bounded to the controlled local index and is not global proof."
+    ]
+  },
+  "evidence": {
+    "evidence_count": 0,
+    "summaries": [],
+    "provenance_notes": [
+      "No source evidence was found in the controlled local index."
+    ],
+    "missing_evidence": [
+      "No live probes were run.",
+      "Manual external baselines may remain pending."
+    ]
+  },
+  "compatibility": {
+    "status": "unknown",
+    "target_platforms": [],
+    "architecture": "unknown",
+    "evidence_summaries": [],
+    "confidence": "unknown",
+    "caveats": [
+      "No object was found to evaluate."
+    ],
+    "unknowns": [
+      "Identity",
+      "source evidence",
+      "compatibility"
+    ]
+  },
+  "actions": {
+    "allowed": [
+      {
+        "action_id": "view_absence_report",
+        "status": "allowed",
+        "reason": "Show checked-scope and next-step explanation.",
+        "policy_reference": "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+        "requires_confirmation": false,
+        "requires_future_policy": false
+      }
+    ],
+    "blocked": [
+      {
+        "action_id": "download",
+        "status": "blocked",
+        "reason": "There is no result to download, and downloads are disabled.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      },
+      {
+        "action_id": "install_handoff",
+        "status": "blocked",
+        "reason": "There is no result to install, and install handoff is future-gated.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      },
+      {
+        "action_id": "upload",
+        "status": "blocked",
+        "reason": "Private uploads are not implemented.",
+        "policy_reference": "docs/reference/LOCAL_CACHE_PRIVACY_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      }
+    ],
+    "future_gated": [
+      {
+        "action_id": "submit_private_source",
+        "status": "future_gated",
+        "reason": "Contribution workflows need a future contribution-pack contract.",
+        "policy_reference": "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      }
+    ]
+  },
+  "rights": {
+    "rights_status": "not_applicable",
+    "distribution_allowed": false,
+    "notes": [
+      "No distribution is involved in an absence card."
+    ]
+  },
+  "risk": {
+    "executable_risk": "not_applicable",
+    "malware_scan_status": "not_applicable",
+    "warnings": []
+  },
+  "warnings": [
+    {
+      "warning_type": "bounded_absence",
+      "message": "No result in the local index is not proof that no result exists elsewhere.",
+      "severity": "caution"
+    }
+  ],
+  "limitations": [
+    "source_coverage_limited",
+    "no_live_probe",
+    "no_download",
+    "no_install",
+    "external_baseline_pending",
+    "local_index_only"
+  ],
+  "gaps": [
+    {
+      "gap_type": "source_coverage_gap",
+      "message": "The current local corpus may not include this source family.",
+      "next_action": "Future fixture-only source expansion may add coverage."
+    }
+  ],
+  "links": {
+    "inspect": null,
+    "source": "sources.html",
+    "evidence": null,
+    "absence": "demo/absence-example.html"
+  },
+  "debug": null
+}

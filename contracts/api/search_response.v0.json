@@ -86,6 +86,7 @@
       }
     },
     "results": {
+      "description": "Each entry is a public search result card aligned with contracts/api/search_result_card.v0.json. Compact aliases remain for P26 clients.",
       "type": "array",
       "items": {
         "$ref": "#/$defs/result"
@@ -256,14 +257,46 @@
             "null"
           ]
         },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "record_kind": {
           "type": "string"
+        },
+        "matched_query_terms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "why_matched": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "why_ranked": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Experimental ranking explanation, not a production ranking guarantee."
         },
         "source_id": {
           "type": "string"
         },
         "source_family": {
           "type": "string"
+        },
+        "source": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Optional full source block from the public search result-card contract."
         },
         "public_target_ref": {
           "type": "string",
@@ -281,6 +314,13 @@
             "string",
             "null"
           ]
+        },
+        "identity": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Optional full identity block from the public search result-card contract."
         },
         "result_lane": {
           "type": "string",
@@ -307,8 +347,54 @@
         "evidence": {
           "$ref": "#/$defs/evidence"
         },
+        "parent_lineage": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "member": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Optional smallest-actionable-unit member block."
+        },
+        "representation": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Optional public-safe representation block."
+        },
         "actions": {
           "$ref": "#/$defs/actions"
+        },
+        "rights": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Optional rights caveat block; never a rights-clearance claim."
+        },
+        "risk": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Optional executable-risk caveat block; never a malware-safety claim."
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/warning"
+          }
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gap"
+          }
         },
         "links": {
           "type": "object",
@@ -538,6 +624,8 @@
   "x-contract_id": "eureka_public_search_response_v0",
   "x-created_by_slice": "public_search_api_contract_v0",
   "x-status": "contract_only",
+  "x-result_card_schema": "contracts/api/search_result_card.v0.json",
+  "x-results_are_public_search_result_cards": true,
   "x-prohibited_result_fields": [
     "download_url",
     "install_url",
@@ -571,17 +659,30 @@
       "results[].record_kind",
       "results[].source_id",
       "results[].source_family",
+      "results[].source",
       "results[].public_target_ref",
+      "results[].identity",
       "results[].result_lane",
       "results[].user_cost",
       "results[].compatibility",
       "results[].evidence",
       "results[].actions",
+      "results[].rights",
+      "results[].risk",
+      "results[].warnings",
+      "results[].limitations",
       "checked_sources[]",
       "gaps[]",
       "warnings[]"
     ],
     "experimental": [
+      "results[].summary",
+      "results[].matched_query_terms",
+      "results[].why_matched",
+      "results[].why_ranked",
+      "results[].parent_lineage",
+      "results[].member",
+      "results[].representation",
       "results[].links",
       "links",
       "absence_summary"

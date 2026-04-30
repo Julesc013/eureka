@@ -1,0 +1,289 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "eureka_public_search_result_card_v0",
+  "stability": {
+    "stable_draft": [
+      "result_id",
+      "title",
+      "record_kind",
+      "result_lane",
+      "user_cost.score",
+      "source.source_id",
+      "source.source_family",
+      "identity.public_target_ref",
+      "actions.allowed[].status",
+      "actions.blocked[].status",
+      "warnings",
+      "limitations"
+    ],
+    "experimental": [
+      "why_ranked",
+      "compatibility.confidence",
+      "source.trust_lane"
+    ],
+    "volatile": [
+      "matched_query_terms"
+    ],
+    "internal": [
+      "private_local_path",
+      "raw_source_payload",
+      "source_credentials"
+    ],
+    "future": [
+      "debug",
+      "identity.object_id"
+    ]
+  },
+  "result_id": "card-driver-inside-support-cd",
+  "title": "ThinkPad T42 wireless driver INF inside support CD",
+  "subtitle": "Small member result inside a parent support bundle",
+  "summary": "A member-level driver file is more actionable than the parent bundle because it has source lineage, a member path, and compatibility clues.",
+  "record_kind": "synthetic_member",
+  "matched_query_terms": [
+    "thinkpad",
+    "t42",
+    "wireless",
+    "windows 2000"
+  ],
+  "why_matched": [
+    "member path contains driver and Windows 2000 hints",
+    "parent bundle is a recorded local fixture"
+  ],
+  "why_ranked": [
+    "member result has lower user cost than parent bundle"
+  ],
+  "result_lane": "inside_bundles",
+  "user_cost": {
+    "score": 1,
+    "label": "very_low",
+    "reasons": [
+      "inner_member_has_parent_lineage",
+      "member_has_path",
+      "compatibility_evidence_present"
+    ],
+    "explanation": "Lower score means less detective work; this is a deterministic hint, not production ranking."
+  },
+  "source": {
+    "source_id": "local-bundle-fixtures",
+    "source_family": "local_bundle_fixtures",
+    "source_label": "Local bundle fixtures",
+    "source_status": "active_recorded_fixture",
+    "posture": "fixture_only",
+    "coverage_depth": "recorded_fixture",
+    "trust_lane": null,
+    "source_lane": null,
+    "checked_as": "local_index",
+    "limitations": [
+      "fixture_backed",
+      "no_live_probe"
+    ]
+  },
+  "identity": {
+    "public_target_ref": "member:sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "target_ref": "member:sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "resolved_resource_id": "rrid:driver-inside-support-cd",
+    "object_id": null,
+    "release_or_state_id": null,
+    "representation_id": "rep.support-cd.zip",
+    "member_target_ref": "member:sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "native_source_id": null,
+    "identity_status": "synthetic_member",
+    "notes": [
+      "Member identity is derived from committed fixture metadata."
+    ]
+  },
+  "evidence": {
+    "evidence_count": 2,
+    "summaries": [
+      {
+        "evidence_id": "ev-driver-member-path",
+        "evidence_kind": "file_path",
+        "source_id": "local-bundle-fixtures",
+        "locator": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+        "snippet": "driver.inf path carries Windows 2000 and wireless driver context",
+        "confidence": "medium"
+      }
+    ],
+    "provenance_notes": [
+      "Evidence is fixture-backed and public-safe."
+    ],
+    "missing_evidence": [
+      "No live vendor verification was performed."
+    ]
+  },
+  "compatibility": {
+    "status": "candidate",
+    "target_platforms": [
+      "Windows 2000"
+    ],
+    "architecture": "x86",
+    "evidence_summaries": [
+      {
+        "evidence_id": "compat-driver-win2000",
+        "evidence_kind": "file_path",
+        "source_id": "local-bundle-fixtures",
+        "locator": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+        "snippet": "Windows 2000 appears in the member path.",
+        "confidence": "medium"
+      }
+    ],
+    "confidence": "medium",
+    "caveats": [
+      "No installer or hardware execution was performed."
+    ],
+    "unknowns": [
+      "Exact device revision remains unverified."
+    ]
+  },
+  "parent_lineage": [
+    {
+      "target_ref": "fixture:bundle/thinkpad-t42-support-cd",
+      "label": "ThinkPad T42 support CD fixture",
+      "relationship": "parent_bundle"
+    }
+  ],
+  "member": {
+    "member_path": "drivers/wifi/thinkpad_t42/windows2000/driver.inf",
+    "member_label": "driver.inf",
+    "member_kind": "driver",
+    "media_type": "text/plain",
+    "byte_length": 2048,
+    "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+    "parent_target_ref": "fixture:bundle/thinkpad-t42-support-cd",
+    "parent_label": "ThinkPad T42 support CD fixture",
+    "parent_lineage": [
+      {
+        "target_ref": "fixture:bundle/thinkpad-t42-support-cd",
+        "label": "ThinkPad T42 support CD fixture",
+        "relationship": "parent_bundle"
+      }
+    ]
+  },
+  "representation": {
+    "representation_id": "rep.support-cd.zip",
+    "representation_kind": "bundle",
+    "media_type": "application/zip",
+    "file_name": "thinkpad-t42-support-cd-fixture.zip",
+    "size": 4096,
+    "checksum": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+    "access_path_kind": "fixture_member",
+    "limitations": [
+      "fixture_only",
+      "not_downloadable"
+    ]
+  },
+  "actions": {
+    "allowed": [
+      {
+        "action_id": "inspect",
+        "status": "allowed",
+        "reason": "Inspect public-safe metadata and evidence.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": false,
+        "requires_future_policy": false
+      },
+      {
+        "action_id": "preview",
+        "status": "allowed",
+        "reason": "Preview committed fixture text only.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": false,
+        "requires_future_policy": false
+      }
+    ],
+    "blocked": [
+      {
+        "action_id": "download",
+        "status": "blocked",
+        "reason": "No public download surface exists in v0.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      },
+      {
+        "action_id": "install_handoff",
+        "status": "blocked",
+        "reason": "Installer handoff is disabled until future policy and implementation.",
+        "policy_reference": "docs/reference/EXECUTABLE_RISK_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      },
+      {
+        "action_id": "execute",
+        "status": "blocked",
+        "reason": "Execution is prohibited in v0.",
+        "policy_reference": "docs/reference/EXECUTABLE_RISK_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      },
+      {
+        "action_id": "upload",
+        "status": "blocked",
+        "reason": "Private upload is not implemented.",
+        "policy_reference": "docs/reference/LOCAL_CACHE_PRIVACY_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      }
+    ],
+    "future_gated": [
+      {
+        "action_id": "download_member",
+        "status": "future_gated",
+        "reason": "Member downloads require rights, safety, and operator policy.",
+        "policy_reference": "docs/reference/RIGHTS_AND_ACCESS_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      }
+    ]
+  },
+  "rights": {
+    "rights_status": "public_metadata_only",
+    "distribution_allowed": "unknown",
+    "notes": [
+      "Metadata is not rights clearance."
+    ]
+  },
+  "risk": {
+    "executable_risk": "executable_unknown",
+    "malware_scan_status": "not_scanned",
+    "warnings": [
+      {
+        "warning_type": "malware_scan_absent",
+        "message": "No malware scan was performed.",
+        "severity": "warning"
+      }
+    ]
+  },
+  "warnings": [
+    {
+      "warning_type": "no_download",
+      "message": "This card does not expose a download or installer.",
+      "severity": "blocked"
+    }
+  ],
+  "limitations": [
+    "fixture_backed",
+    "no_live_probe",
+    "no_download",
+    "no_install",
+    "no_execute",
+    "no_upload",
+    "no_malware_scan",
+    "no_rights_clearance",
+    "not_production_ranking"
+  ],
+  "gaps": [
+    {
+      "gap_type": "live_verification_absent",
+      "message": "No live source verification was performed.",
+      "next_action": "Future safety-reviewed source expansion may add evidence."
+    }
+  ],
+  "links": {
+    "inspect": "demo/result-member-driver-inside-support-cd.html",
+    "source": "sources.html",
+    "evidence": "demo/data/demo_snapshots.json",
+    "absence": null
+  },
+  "debug": null
+}

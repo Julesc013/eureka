@@ -1,0 +1,230 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "eureka_public_search_result_card_v0",
+  "stability": {
+    "stable_draft": [
+      "result_id",
+      "title",
+      "record_kind",
+      "result_lane",
+      "user_cost.score",
+      "source.source_id",
+      "source.source_family",
+      "identity.public_target_ref",
+      "actions.allowed[].status",
+      "actions.blocked[].status",
+      "warnings",
+      "limitations"
+    ],
+    "experimental": [
+      "compatibility.confidence",
+      "why_ranked"
+    ],
+    "volatile": [
+      "matched_query_terms"
+    ],
+    "internal": [
+      "private_local_path",
+      "raw_source_payload",
+      "source_credentials"
+    ],
+    "future": [
+      "debug",
+      "identity.object_id"
+    ]
+  },
+  "result_id": "card-firefox-xp-candidate",
+  "title": "Firefox XP compatibility candidate",
+  "subtitle": "Recorded fixture with compatibility evidence",
+  "summary": "A recorded fixture candidate with old-platform compatibility notes. It is not a download or installer.",
+  "record_kind": "resolved_object",
+  "matched_query_terms": [
+    "firefox",
+    "xp"
+  ],
+  "why_matched": [
+    "title and fixture metadata mention Firefox and Windows XP"
+  ],
+  "why_ranked": [
+    "source-backed compatibility evidence is present"
+  ],
+  "result_lane": "best_direct_answer",
+  "user_cost": {
+    "score": 2,
+    "label": "low",
+    "reasons": [
+      "source_evidence_present",
+      "compatibility_evidence_present"
+    ],
+    "explanation": "This is a bounded deterministic hint, not production ranking."
+  },
+  "source": {
+    "source_id": "internet-archive-recorded-fixtures",
+    "source_family": "internet_archive_recorded",
+    "source_label": "Internet Archive recorded fixtures",
+    "source_status": "active_recorded_fixture",
+    "posture": "recorded_fixture_only",
+    "coverage_depth": "recorded_fixture",
+    "trust_lane": null,
+    "source_lane": null,
+    "checked_as": "local_index",
+    "limitations": [
+      "recorded_fixture",
+      "no_live_probe"
+    ]
+  },
+  "identity": {
+    "public_target_ref": "fixture:software/firefox-xp-candidate",
+    "target_ref": "fixture:software/firefox-xp-candidate",
+    "resolved_resource_id": "rrid:firefox-xp-candidate",
+    "object_id": null,
+    "release_or_state_id": null,
+    "representation_id": "rep.firefox-xp.metadata",
+    "member_target_ref": null,
+    "native_source_id": null,
+    "identity_status": "candidate",
+    "notes": [
+      "Candidate identity remains reviewable until broader source evidence exists."
+    ]
+  },
+  "evidence": {
+    "evidence_count": 1,
+    "summaries": [
+      {
+        "evidence_id": "ev-firefox-xp-note",
+        "evidence_kind": "source_metadata",
+        "source_id": "internet-archive-recorded-fixtures",
+        "locator": "recorded fixture metadata",
+        "snippet": "Fixture metadata records a Windows XP compatibility note.",
+        "confidence": "medium"
+      }
+    ],
+    "provenance_notes": [
+      "Evidence is committed fixture metadata."
+    ],
+    "missing_evidence": [
+      "No live archive lookup was performed."
+    ]
+  },
+  "compatibility": {
+    "status": "candidate",
+    "target_platforms": [
+      "Windows XP"
+    ],
+    "architecture": "x86",
+    "evidence_summaries": [
+      {
+        "evidence_id": "compat-firefox-xp",
+        "evidence_kind": "source_metadata",
+        "source_id": "internet-archive-recorded-fixtures",
+        "locator": "recorded fixture metadata",
+        "snippet": "Windows XP is named by fixture metadata.",
+        "confidence": "medium"
+      }
+    ],
+    "confidence": "medium",
+    "caveats": [
+      "Compatibility evidence is not installer or runtime proof."
+    ],
+    "unknowns": [
+      "Exact host patch level is unknown."
+    ]
+  },
+  "actions": {
+    "allowed": [
+      {
+        "action_id": "inspect",
+        "status": "allowed",
+        "reason": "Inspect source and compatibility summaries.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": false,
+        "requires_future_policy": false
+      },
+      {
+        "action_id": "view_provenance",
+        "status": "allowed",
+        "reason": "View public-safe provenance summaries.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": false,
+        "requires_future_policy": false
+      }
+    ],
+    "blocked": [
+      {
+        "action_id": "download",
+        "status": "blocked",
+        "reason": "No executable download surface exists.",
+        "policy_reference": "docs/reference/RIGHTS_AND_ACCESS_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      },
+      {
+        "action_id": "execute",
+        "status": "blocked",
+        "reason": "Execution is prohibited in v0.",
+        "policy_reference": "docs/reference/EXECUTABLE_RISK_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      }
+    ],
+    "future_gated": [
+      {
+        "action_id": "install_handoff",
+        "status": "future_gated",
+        "reason": "Install handoff requires future policy, implementation, and user confirmation.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      }
+    ]
+  },
+  "rights": {
+    "rights_status": "source_terms_apply",
+    "distribution_allowed": "unknown",
+    "notes": [
+      "Source terms still apply; no redistribution permission is implied."
+    ]
+  },
+  "risk": {
+    "executable_risk": "metadata_only",
+    "malware_scan_status": "not_applicable",
+    "warnings": [
+      {
+        "warning_type": "metadata_only",
+        "message": "The card describes metadata and does not offer executable bytes.",
+        "severity": "info"
+      }
+    ]
+  },
+  "warnings": [
+    {
+      "warning_type": "compatibility_not_guaranteed",
+      "message": "Compatibility is a bounded candidate signal only.",
+      "severity": "caution"
+    }
+  ],
+  "limitations": [
+    "fixture_backed",
+    "compatibility_evidence_limited",
+    "no_live_probe",
+    "no_download",
+    "no_install",
+    "no_malware_scan",
+    "no_rights_clearance",
+    "not_production_ranking"
+  ],
+  "gaps": [
+    {
+      "gap_type": "external_baseline_pending",
+      "message": "Manual external baseline observations remain pending.",
+      "next_action": "Human-operated baseline review only."
+    }
+  ],
+  "links": {
+    "inspect": "demo/result-firefox-xp.html",
+    "source": "sources.html",
+    "evidence": "demo/data/demo_snapshots.json",
+    "absence": null
+  },
+  "debug": null
+}

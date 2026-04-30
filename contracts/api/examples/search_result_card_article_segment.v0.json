@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "eureka_public_search_result_card_v0",
+  "stability": {
+    "stable_draft": [
+      "result_id",
+      "title",
+      "record_kind",
+      "result_lane",
+      "user_cost.score",
+      "source.source_id",
+      "source.source_family",
+      "identity.public_target_ref",
+      "actions.allowed[].status",
+      "actions.blocked[].status",
+      "warnings",
+      "limitations"
+    ],
+    "experimental": [
+      "why_ranked",
+      "evidence.summaries[].confidence"
+    ],
+    "volatile": [
+      "matched_query_terms"
+    ],
+    "internal": [
+      "private_local_path",
+      "raw_source_payload",
+      "source_credentials"
+    ],
+    "future": [
+      "debug"
+    ]
+  },
+  "result_id": "card-article-scan-segment",
+  "title": "Ray tracing article segment in magazine scan fixture",
+  "subtitle": "Article/page-range result",
+  "summary": "A source-backed article segment with page-range evidence. It is display metadata, not a scan download.",
+  "record_kind": "synthetic_member",
+  "matched_query_terms": [
+    "ray tracing",
+    "magazine"
+  ],
+  "why_matched": [
+    "article segment title and OCR-like fixture text match the query"
+  ],
+  "why_ranked": [
+    "article segment points to a smaller unit than the issue-level parent"
+  ],
+  "result_lane": "documentation",
+  "user_cost": {
+    "score": 2,
+    "label": "low",
+    "reasons": [
+      "article_segment_has_page_locator",
+      "source_evidence_present"
+    ],
+    "explanation": "This score hints that the segment reduces browsing work."
+  },
+  "source": {
+    "source_id": "article-scan-recorded-fixtures",
+    "source_family": "article_scan_recorded",
+    "source_label": "Article/scan recorded fixtures",
+    "source_status": "active_recorded_fixture",
+    "posture": "fixture_only",
+    "coverage_depth": "recorded_fixture",
+    "trust_lane": null,
+    "source_lane": null,
+    "checked_as": "local_index",
+    "limitations": [
+      "fixture_backed",
+      "no_live_probe"
+    ]
+  },
+  "identity": {
+    "public_target_ref": "member:sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "target_ref": "member:sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "resolved_resource_id": "rrid:article-scan-segment",
+    "object_id": null,
+    "release_or_state_id": null,
+    "representation_id": "rep.article-scan-text",
+    "member_target_ref": "member:sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "native_source_id": null,
+    "identity_status": "article_segment",
+    "notes": [
+      "Article segment identity is fixture-derived."
+    ]
+  },
+  "evidence": {
+    "evidence_count": 1,
+    "summaries": [
+      {
+        "evidence_id": "ev-article-page-range",
+        "evidence_kind": "ocr_like_fixture_text",
+        "source_id": "article-scan-recorded-fixtures",
+        "locator": "pages 123-128",
+        "snippet": "Synthetic OCR-like excerpt names ray tracing and the page range.",
+        "confidence": "medium"
+      }
+    ],
+    "provenance_notes": [
+      "Snippet is a tiny synthetic fixture excerpt."
+    ],
+    "missing_evidence": [
+      "No real scan or live OCR was fetched."
+    ]
+  },
+  "compatibility": {
+    "status": "not_applicable",
+    "target_platforms": [],
+    "architecture": "not_applicable",
+    "evidence_summaries": [],
+    "confidence": "unknown",
+    "caveats": [
+      "Documentation result; compatibility is not applicable."
+    ],
+    "unknowns": []
+  },
+  "actions": {
+    "allowed": [
+      {
+        "action_id": "read",
+        "status": "allowed",
+        "reason": "Read public-safe fixture summary text.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": false,
+        "requires_future_policy": false
+      },
+      {
+        "action_id": "cite",
+        "status": "allowed",
+        "reason": "Show source and page-range summary fields.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": false,
+        "requires_future_policy": false
+      }
+    ],
+    "blocked": [
+      {
+        "action_id": "download",
+        "status": "blocked",
+        "reason": "No scan download is exposed.",
+        "policy_reference": "docs/reference/RIGHTS_AND_ACCESS_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      },
+      {
+        "action_id": "upload",
+        "status": "blocked",
+        "reason": "Private source upload is not implemented.",
+        "policy_reference": "docs/reference/LOCAL_CACHE_PRIVACY_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      }
+    ],
+    "future_gated": [
+      {
+        "action_id": "mirror",
+        "status": "future_gated",
+        "reason": "Mirroring requires rights and operator policy.",
+        "policy_reference": "docs/reference/RIGHTS_AND_ACCESS_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      }
+    ]
+  },
+  "rights": {
+    "rights_status": "public_metadata_only",
+    "distribution_allowed": "unknown",
+    "notes": [
+      "Fixture metadata is not rights clearance."
+    ]
+  },
+  "risk": {
+    "executable_risk": "none",
+    "malware_scan_status": "not_applicable",
+    "warnings": []
+  },
+  "warnings": [
+    {
+      "warning_type": "fixture_excerpt",
+      "message": "Example text is a tiny fixture summary, not a real scan.",
+      "severity": "info"
+    }
+  ],
+  "limitations": [
+    "fixture_backed",
+    "source_coverage_limited",
+    "no_live_probe",
+    "no_download",
+    "no_rights_clearance",
+    "not_production_ranking"
+  ],
+  "gaps": [
+    {
+      "gap_type": "real_scan_absent",
+      "message": "No real scan or live OCR is included.",
+      "next_action": "Future source pack contract may define source evidence requirements."
+    }
+  ],
+  "links": {
+    "inspect": "demo/result-article-scan.html",
+    "source": "sources.html",
+    "evidence": "demo/data/demo_snapshots.json",
+    "absence": null
+  },
+  "debug": null
+}

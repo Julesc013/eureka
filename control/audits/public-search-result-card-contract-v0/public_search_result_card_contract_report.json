@@ -1,0 +1,97 @@
+{
+  "report_id": "public_search_result_card_contract_v0",
+  "created_by_slice": "public_search_result_card_contract_v0",
+  "status": "implemented_contract_only",
+  "schema": "contracts/api/search_result_card.v0.json",
+  "response_schema": "contracts/api/search_response.v0.json",
+  "documentation": "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+  "examples": [
+    "contracts/api/examples/search_result_card_member_driver.v0.json",
+    "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json",
+    "contracts/api/examples/search_result_card_article_segment.v0.json",
+    "contracts/api/examples/search_result_card_documentation_only.v0.json",
+    "contracts/api/examples/search_result_card_absence_next_steps.v0.json"
+  ],
+  "required_result_lanes": [
+    "best_direct_answer",
+    "installable_or_usable_now",
+    "inside_bundles",
+    "official",
+    "preservation",
+    "community",
+    "documentation",
+    "mentions_or_traces",
+    "absence_or_next_steps",
+    "still_searching",
+    "other"
+  ],
+  "user_cost_scale": {
+    "minimum": 0,
+    "maximum": 9,
+    "lower_is_better": true,
+    "production_ranking_guarantee": false
+  },
+  "actions": {
+    "allowed_concepts": [
+      "inspect",
+      "preview",
+      "read",
+      "cite",
+      "export_manifest",
+      "view_provenance",
+      "compare",
+      "view_source",
+      "view_absence_report"
+    ],
+    "blocked_or_future_gated_concepts": [
+      "download",
+      "download_member",
+      "mirror",
+      "install_handoff",
+      "package_manager_handoff",
+      "emulator_handoff",
+      "vm_handoff",
+      "execute",
+      "restore_apply",
+      "uninstall",
+      "rollback",
+      "upload",
+      "submit_private_source"
+    ]
+  },
+  "field_stability_categories": [
+    "stable_draft",
+    "experimental",
+    "volatile",
+    "internal",
+    "future"
+  ],
+  "forbidden_public_fields": [
+    "private_local_path",
+    "raw_source_payload",
+    "source_credentials",
+    "download_url",
+    "install_url",
+    "execute_url"
+  ],
+  "explicit_non_goals": [
+    "public search runtime",
+    "live /search route",
+    "live /api/v1/search route",
+    "live probes",
+    "downloads",
+    "installers",
+    "uploads",
+    "native clients",
+    "relay runtime",
+    "snapshot reader runtime",
+    "malware safety claim",
+    "rights clearance claim",
+    "production API stability claim"
+  ],
+  "next_recommended_milestone": "Public Search Safety / Abuse Guard v0",
+  "notes": [
+    "Result cards are governed as a future public search output contract only.",
+    "Future runtimes must pass the result-card validator before emitting cards."
+  ]
+}

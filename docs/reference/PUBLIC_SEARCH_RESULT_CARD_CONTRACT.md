@@ -1,0 +1,215 @@
+# Public Search Result Card Contract v0
+
+Status: implemented as a contract-only reference.
+
+Public Search Result Card Contract v0 defines the public result-card envelope
+for future Eureka search displays and JSON responses. The card is the unit that
+future `/search` HTML, `/api/v1/search` JSON, lite/text surfaces, native
+clients, relay clients, snapshot consumers, and contribution/review tooling may
+read once a separate runtime milestone exists.
+
+This contract does not make public search live, does not add runtime routes,
+does not add `/search` or `/api/v1/search` behavior, does not enable live
+probes, and does not enable downloads, installers, execution, uploads, or local
+path search. It does not claim production ranking quality, production API
+stability, malware safety, rights clearance, or production readiness.
+
+In short: the result card is not a production ranking guarantee, must not claim
+malware safety, must not claim rights clearance, and prepares the next safety
+milestone, Public Search Safety / Abuse Guard v0, rather than replacing it.
+
+## Contract Files
+
+- Schema: `contracts/api/search_result_card.v0.json`
+- Examples: `contracts/api/examples/search_result_card_*.v0.json`
+- API response alignment: `contracts/api/search_response.v0.json`
+- Audit pack: `control/audits/public-search-result-card-contract-v0/`
+
+## Required Card Shape
+
+Every public result card must contain:
+
+- `schema_version` and `contract_id`
+- `stability`
+- `result_id`, `title`, and `record_kind`
+- `result_lane`
+- `user_cost`
+- `source`
+- `identity`
+- `evidence`
+- `compatibility`
+- `actions`
+- `rights`
+- `risk`
+- `warnings`
+- `limitations`
+- `gaps`
+
+Optional blocks include `subtitle`, `summary`, `matched_query_terms`,
+`why_matched`, `why_ranked`, `parent_lineage`, `member`, `representation`,
+`temporal`, `links`, and `debug`. Optional blocks must remain public-safe and
+must not leak private paths, raw source payloads, credentials, local store roots,
+or live fetch locators.
+
+## Lanes And User Cost
+
+`result_lane` uses the bounded vocabulary already aligned with the engine:
+
+- `best_direct_answer`
+- `installable_or_usable_now`
+- `inside_bundles`
+- `official`
+- `preservation`
+- `community`
+- `documentation`
+- `mentions_or_traces`
+- `absence_or_next_steps`
+- `still_searching`
+- `other`
+
+`user_cost.score` is an integer from 0 through 9. Lower scores mean less user
+detective work. The score is a deterministic stable-draft hint, not a
+production ranking guarantee. Cards must include `user_cost.reasons` so old and
+text clients can explain the score without rich UI.
+
+## Source And Identity
+
+The `source` block identifies the public source family, coverage depth, source
+posture, and whether the source was checked as a local index, recorded fixture,
+static summary, future live probe, or not checked. In v0, future live probe is a
+label for future contracts only; it does not enable live probes.
+
+The `identity` block carries a public-safe target reference plus optional
+resource, representation, member, native, object, or state identifiers.
+Identity status is explicit: exact, candidate, ambiguous, unresolved,
+synthetic_member, article_segment, or unknown. Private local paths and internal
+database row ids are not public identity.
+
+## Evidence And Compatibility
+
+The `evidence` block carries public-safe summaries, counts, provenance notes,
+and missing-evidence notes. It must not include raw source payloads by default.
+
+The `compatibility` block carries status, target platforms, architecture,
+evidence summaries, confidence, caveats, and unknowns. It must not claim
+universal compatibility. Compatibility status is a public signal, not proof that
+an artifact has been tested on every platform.
+
+## Parent, Member, And Representation
+
+Cards support smallest-actionable-unit behavior through `member`,
+`parent_lineage`, and `representation`. A member result may explain that a small
+driver, article segment, file, or documentation member is more useful than the
+larger bundle that contains it.
+
+Representation fields describe public-safe representation metadata such as kind,
+media type, file name, size, checksum, and limitations. They do not expose
+private local paths or executable handoff URLs.
+
+## Actions
+
+Actions are split into `allowed`, `blocked`, and `future_gated`.
+
+Allowed v0 concepts are read-only or inspection-oriented:
+
+- `inspect`
+- `preview`
+- `read`
+- `cite`
+- `export_manifest`
+- `view_provenance`
+- `compare`
+- `view_source`
+- `view_absence_report`
+
+Blocked or future-gated concepts include:
+
+- `download`
+- `download_member`
+- `mirror`
+- `install_handoff`
+- `package_manager_handoff`
+- `emulator_handoff`
+- `vm_handoff`
+- `execute`
+- `restore_apply`
+- `uninstall`
+- `rollback`
+- `upload`
+- `submit_private_source`
+
+Every action entry has an `action_id`, `status`, `reason`, optional
+`policy_reference`, and optional future-policy/confirmation flags. A future
+runtime must not treat a future-gated action as enabled.
+
+## Rights And Risk
+
+The `rights` block records public metadata posture, source-term caveats,
+restricted/review-required states, or unknown rights status. It must not claim
+rights clearance. `distribution_allowed: "unknown"` is not permission.
+
+The `risk` block records executable-risk posture and malware-scan status. It
+must not claim malware safety. In v0, executable artifacts are not made
+downloadable or executable through a result card.
+
+## Warnings, Limitations, And Gaps
+
+Warnings have a type, message, and severity: `info`, `caution`, `warning`, or
+`blocked`.
+
+Common limitations include fixture-backed evidence, limited source coverage,
+limited compatibility evidence, no live probe, no download, no install, no
+execute, no upload, no malware scan, no rights clearance, external-baseline
+pending, static summary only, local-index-only, and not production ranking.
+
+Gaps explain bounded absence and next actions. A card may say that the local
+index did not find a result, but it must not imply that the live web or external
+archives were checked.
+
+## Field Stability
+
+The field matrix in
+`control/audits/public-search-result-card-contract-v0/RESULT_CARD_FIELD_MATRIX.md`
+classifies fields as stable-draft, experimental, volatile, internal, or future.
+Stable-draft fields are intended for old-client and future-runtime continuity.
+Experimental fields may change before a runtime implementation. Internal fields
+are forbidden from public cards.
+
+## Old-Client Rendering
+
+Lite HTML and text clients should render at least title, lane, user-cost score
+and label, source id/family, public target ref, first evidence summary, allowed
+inspect/read actions, blocked unsafe actions, warnings, and limitations. They
+should degrade by dropping rich panels first, not by hiding source, uncertainty,
+or safety posture.
+
+## Relationship To Other Contracts
+
+Public Search API Contract v0 uses this card as the canonical shape for
+`results[]` in `contracts/api/search_response.v0.json`. The API contract remains
+contract-only.
+
+The Action Download Install Policy governs blocked and future-gated actions.
+Executable Risk Policy governs executable-risk caveats. Rights and Access Policy
+governs rights caveats. Native, relay, and snapshot contracts may reference this
+card as a future input shape, but this milestone does not implement native
+clients, relay runtime, or snapshot reader runtime.
+
+## Runtime Preconditions
+
+Before any runtime emits public result cards, Eureka needs Public Search Safety
+/ Abuse Guard v0, Local Public Search Runtime v0, local index ownership, public
+route validation, bounded query/result limits, no-live-probe enforcement,
+action-policy enforcement, and tests proving no downloads, installers,
+execution, uploads, arbitrary URL fetch, local path search, private data
+exposure, malware-safety claim, rights-clearance claim, or production API claim
+was added by accident.
+
+## Out Of Scope
+
+This contract does not implement public search runtime, hosted backend
+deployment, live source probes, Internet Archive calls, Google queries,
+arbitrary URL fetch, crawling, downloads, installers, uploads, accounts,
+telemetry, native clients, relay runtime, snapshot reader runtime, TLS, auth,
+rate limiting, process management, custom domains, production API stability, or
+production readiness.

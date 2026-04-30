@@ -12,6 +12,7 @@ and does not claim production API stability.
 - Request schema: `contracts/api/search_request.v0.json`
 - Response schema: `contracts/api/search_response.v0.json`
 - Error schema: `contracts/api/error_response.v0.json`
+- Result-card schema: `contracts/api/search_result_card.v0.json`
 - Route inventory: `control/inventory/publication/public_search_routes.json`
 - Local-index-only mode: `docs/operations/PUBLIC_SEARCH_LOCAL_INDEX_ONLY_MODE.md`
 
@@ -67,15 +68,20 @@ The envelope includes:
 - `stability`: field-level stability categories.
 - `links` and `debug`: optional fields; `debug` is future/disabled by default.
 
-The minimal v0 result shape includes `result_id`, `title`, optional `subtitle`,
-`record_kind`, `source_id`, `source_family`, `public_target_ref`, optional
-`resolved_resource_id`, `result_lane`, `user_cost`, `compatibility`, `evidence`,
-`actions`, `links`, and `limitations`.
+The v0 result shape is governed by Public Search Result Card Contract v0 in
+`contracts/api/search_result_card.v0.json` and
+`docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`. Compact P26 aliases
+remain in `search_response.v0.json` for old clients: `result_id`, `title`,
+optional `subtitle`, `record_kind`, `source_id`, `source_family`,
+`public_target_ref`, optional `resolved_resource_id`, `result_lane`,
+`user_cost`, `compatibility`, `evidence`, `actions`, `links`, and
+`limitations`.
 
 Result actions do not require or imply download URLs, install URLs, private local
 paths, raw source payloads, executable trust claims, rights clearance, or malware
-scan claims. The later Public Search Result Card Contract v0 may refine display
-fields without enabling those behaviors.
+scan claims. Public Search Result Card Contract v0 refines display fields,
+source/evidence/compatibility posture, action gating, rights caveats, and risk
+caveats without enabling those behaviors.
 
 ## Errors
 
@@ -151,13 +157,14 @@ New optional fields are non-breaking only when old clients can ignore them.
 
 ## Runtime Preconditions
 
-Before any runtime route implements this contract, the repo needs a separate
-runtime milestone, Public Search Result Card Contract v0, Public Search Safety /
-Abuse Guard v0, rate-limit policy, hosted backend handoff review, local-index
-ownership, public-alpha operator signoff, and validation proving no live probes,
-downloads, uploads, local path search, arbitrary URL fetch, account behavior,
-telemetry, or production claims were added by accident. The named safety
-milestone is Public Search Safety / Abuse Guard v0.
+Before any runtime route implements this contract, the repo needs Public Search
+Safety / Abuse Guard v0, Local Public Search Runtime v0, rate-limit policy,
+hosted backend handoff review, local-index ownership, public-alpha operator
+signoff, and validation proving no live probes, downloads, uploads, local path
+search, arbitrary URL fetch, account behavior, telemetry, or production claims
+were added by accident. Public Search Result Card Contract v0 is now the
+governed `results[]` card contract; it still does not make public search live.
+The named next safety milestone is Public Search Safety / Abuse Guard v0.
 
 ## Out Of Scope
 

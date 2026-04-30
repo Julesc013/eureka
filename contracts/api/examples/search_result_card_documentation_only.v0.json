@@ -1,0 +1,200 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "eureka_public_search_result_card_v0",
+  "stability": {
+    "stable_draft": [
+      "result_id",
+      "title",
+      "record_kind",
+      "result_lane",
+      "user_cost.score",
+      "source.source_id",
+      "source.source_family",
+      "identity.public_target_ref",
+      "actions.allowed[].status",
+      "actions.blocked[].status",
+      "warnings",
+      "limitations"
+    ],
+    "experimental": [
+      "compatibility.confidence"
+    ],
+    "volatile": [
+      "matched_query_terms"
+    ],
+    "internal": [
+      "private_local_path",
+      "raw_source_payload",
+      "source_credentials"
+    ],
+    "future": [
+      "debug"
+    ]
+  },
+  "result_id": "card-documentation-only",
+  "title": "Readme compatibility note",
+  "subtitle": "Documentation-only support signal",
+  "summary": "A readme-like member can explain compatibility without being an installable result.",
+  "record_kind": "synthetic_member",
+  "matched_query_terms": [
+    "readme",
+    "compatibility"
+  ],
+  "why_matched": [
+    "documentation member text matches the query"
+  ],
+  "why_ranked": [
+    "documentation helps interpret a parent bundle but is not direct software"
+  ],
+  "result_lane": "documentation",
+  "user_cost": {
+    "score": 5,
+    "label": "medium",
+    "reasons": [
+      "documentation_only",
+      "compatibility_evidence_limited"
+    ],
+    "explanation": "Documentation can reduce uncertainty but may not be directly actionable."
+  },
+  "source": {
+    "source_id": "local-bundle-fixtures",
+    "source_family": "local_bundle_fixtures",
+    "source_label": "Local bundle fixtures",
+    "source_status": "active_recorded_fixture",
+    "posture": "fixture_only",
+    "coverage_depth": "recorded_fixture",
+    "trust_lane": null,
+    "source_lane": null,
+    "checked_as": "local_index",
+    "limitations": [
+      "fixture_backed"
+    ]
+  },
+  "identity": {
+    "public_target_ref": "member:sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "target_ref": "member:sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "resolved_resource_id": "rrid:documentation-only",
+    "object_id": null,
+    "release_or_state_id": null,
+    "representation_id": "rep.readme-member",
+    "member_target_ref": "member:sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "native_source_id": null,
+    "identity_status": "synthetic_member",
+    "notes": [
+      "Documentation-only results must not be promoted to installable results."
+    ]
+  },
+  "evidence": {
+    "evidence_count": 1,
+    "summaries": [
+      {
+        "evidence_id": "ev-readme-note",
+        "evidence_kind": "readme",
+        "source_id": "local-bundle-fixtures",
+        "locator": "README.txt",
+        "snippet": "Readme fixture mentions compatibility guidance.",
+        "confidence": "low"
+      }
+    ],
+    "provenance_notes": [
+      "Public-safe text summary only."
+    ],
+    "missing_evidence": [
+      "No runtime compatibility test exists."
+    ]
+  },
+  "compatibility": {
+    "status": "unknown",
+    "target_platforms": [],
+    "architecture": "unknown",
+    "evidence_summaries": [],
+    "confidence": "low",
+    "caveats": [
+      "Documentation note is not compatibility proof."
+    ],
+    "unknowns": [
+      "Supported host range is unknown."
+    ]
+  },
+  "actions": {
+    "allowed": [
+      {
+        "action_id": "read",
+        "status": "allowed",
+        "reason": "Read public-safe documentation summary.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": false,
+        "requires_future_policy": false
+      }
+    ],
+    "blocked": [
+      {
+        "action_id": "install_handoff",
+        "status": "blocked",
+        "reason": "Documentation-only result cannot be installed.",
+        "policy_reference": "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      },
+      {
+        "action_id": "execute",
+        "status": "blocked",
+        "reason": "Execution is not available.",
+        "policy_reference": "docs/reference/EXECUTABLE_RISK_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      }
+    ],
+    "future_gated": [
+      {
+        "action_id": "submit_private_source",
+        "status": "future_gated",
+        "reason": "Contribution/upload behavior is future.",
+        "policy_reference": "docs/reference/LOCAL_CACHE_PRIVACY_POLICY.md",
+        "requires_confirmation": true,
+        "requires_future_policy": true
+      }
+    ]
+  },
+  "rights": {
+    "rights_status": "public_metadata_only",
+    "distribution_allowed": "unknown",
+    "notes": [
+      "Documentation summary does not clear rights."
+    ]
+  },
+  "risk": {
+    "executable_risk": "none",
+    "malware_scan_status": "not_applicable",
+    "warnings": []
+  },
+  "warnings": [
+    {
+      "warning_type": "documentation_only",
+      "message": "This card is evidence for reading, not installation.",
+      "severity": "caution"
+    }
+  ],
+  "limitations": [
+    "fixture_backed",
+    "compatibility_evidence_limited",
+    "no_download",
+    "no_install",
+    "no_execute",
+    "no_rights_clearance"
+  ],
+  "gaps": [
+    {
+      "gap_type": "compatibility_unknown",
+      "message": "Compatibility is not established by this documentation-only card.",
+      "next_action": "Use future compatibility evidence before runtime handoff."
+    }
+  ],
+  "links": {
+    "inspect": "demo/index.html",
+    "source": "sources.html",
+    "evidence": "demo/data/demo_snapshots.json",
+    "absence": null
+  },
+  "debug": null
+}
