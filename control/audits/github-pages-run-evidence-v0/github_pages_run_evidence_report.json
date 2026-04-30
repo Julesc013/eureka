@@ -1,0 +1,66 @@
+{
+  "report_id": "github_pages_run_evidence_v0",
+  "created_by_slice": "github_pages_run_evidence_review_v0",
+  "evidence_collected_at_utc": "2026-04-30T15:23:14Z",
+  "current_head": "8372ca71a3877de18503acfa34fb15d5685b38c6",
+  "origin_main_head": "8372ca71a3877de18503acfa34fb15d5685b38c6",
+  "workflow_path": ".github/workflows/pages.yml",
+  "workflow_name": "Deploy static public site to GitHub Pages",
+  "workflow_upload_path": "site/dist",
+  "workflow_static_only": true,
+  "workflow_runs_backend_or_live_probes": false,
+  "local_validation_status": "passed",
+  "github_actions_tool_status": "github_public_api_available_gh_unavailable",
+  "latest_pages_run": {
+    "available": true,
+    "run_id": 25171991131,
+    "run_number": 28,
+    "head_sha": "8372ca71a3877de18503acfa34fb15d5685b38c6",
+    "status": "completed",
+    "conclusion": "failure",
+    "url": "https://github.com/Julesc013/eureka/actions/runs/25171991131",
+    "event": "push",
+    "created_at": "2026-04-30T14:46:01Z",
+    "updated_at": "2026-04-30T14:46:19Z",
+    "matches_current_head": true,
+    "failed_job_id": 73793663478,
+    "failed_job_name": "Validate and deploy site/dist",
+    "failed_step": "Configure GitHub Pages",
+    "failure_summary": "actions/configure-pages@v5 failed because the repository Pages site was not found/enabled for GitHub Actions."
+  },
+  "artifact_evidence": {
+    "available": false,
+    "artifact_id": null,
+    "artifact_name": null,
+    "downloaded": false,
+    "verified_contents": false,
+    "reason": "The workflow failed before actions/upload-pages-artifact@v3; artifact list total_count was 0."
+  },
+  "deployment_evidence": {
+    "available": true,
+    "deployment_id": 4537439755,
+    "environment": "github-pages",
+    "page_url": null,
+    "deployment_state": "failure",
+    "success_claim_allowed": false,
+    "pages_site_api_status": "404_not_found",
+    "url_checked": false
+  },
+  "overall_decision": "failed",
+  "blockers": [
+    "GitHub Pages repository settings do not expose a Pages site configured for GitHub Actions.",
+    "actions/configure-pages@v5 failed before artifact upload.",
+    "No Pages artifact or deployment URL is available for the current-head run."
+  ],
+  "operator_actions": [
+    "Enable GitHub Pages with Source set to GitHub Actions, or approve a workflow repair that safely handles Pages enablement.",
+    "Rerun the Pages workflow after repository Pages configuration is fixed.",
+    "Inspect the uploaded Pages artifact and deployment URL after a successful run."
+  ],
+  "next_recommended_milestone": "GitHub Pages Workflow Repair v0",
+  "notes": [
+    "This evidence review is passive and did not trigger a deployment.",
+    "Local site/dist validation passed before the remote Pages configuration failure.",
+    "This audit adds no public search runtime, backend hosting, live probes, custom domain, auth, telemetry, downloads, native client, relay runtime, or production claim."
+  ]
+}
