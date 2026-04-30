@@ -142,3 +142,7 @@ artifact manifest, not the final generated public data layout. The root manifest
 and `/data/site_manifest.json` are intentionally separate: the root manifest
 describes the page pack, while the `/data/` manifest summarizes static public
 data for future clients.
+
+Source/Evidence/Index Pack Import Planning v0 does not add generated public
+data. Validate-only and local quarantine modes have no public data, public
+search, or static site impact by default.

@@ -40,6 +40,11 @@ surfaces should consume only later reviewed outputs, not raw queue entries.
 AI provider outputs, if introduced later, must be treated as suggestions that
 require evidence review. They do not become accepted records by themselves.
 
+Source/Evidence/Index Pack Import Planning v0 keeps import local and
+validate-only first. A staged pack is not submitted, uploaded, accepted,
+published, or merged into the master index. Future queue export must be a
+separate contribution/review step after private quarantine and inspection.
+
 ## Deferred Runtime
 
 Future runtime work must separately specify hosted intake, local import

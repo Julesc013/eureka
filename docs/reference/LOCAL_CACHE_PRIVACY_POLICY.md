@@ -119,6 +119,13 @@ Public-alpha remains non-production and metadata-first. It blocks
 caller-provided local paths and must not expose private local roots, user
 storage, private cache, telemetry, accounts, cloud sync, or uploads.
 
+Source/Evidence/Index Pack Import Planning v0 treats future pack staging as
+private local state. Validate-only comes first; any later quarantine root must
+be user controlled, not committed to git, outside `site/dist`, outside
+`external`, and excluded from public reports unless explicitly redacted and
+reviewed. Staged packs must not affect public search or the master index by
+default.
+
 ## Not Implemented
 
 This policy does not implement:

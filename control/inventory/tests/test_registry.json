@@ -3139,6 +3139,48 @@
       "failure_means": "Review queue schemas, inventory, example queue, decisions, checksums, docs, no-auto-acceptance, no-hosted-runtime, or negative safety tests regressed.",
       "advisory_or_required": "required",
       "notes": "Covers queue manifests, queue entries, review decisions, decision references, defer posture, checksums, no hosted runtime/upload/account claims, private path rejection, executable payload rejection, and accept_public limitation enforcement."
+    },
+    {
+      "test_id": "pack_import_planning_validator",
+      "label": "Pack import planning validator",
+      "command": "python scripts/validate_pack_import_planning.py",
+      "category": "contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Pack Import Planning v0 no-runtime, validate-only, staging, local-search, master-index, or prohibited-behavior posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates the planning audit pack only; it does not import, stage, index, upload, fetch, scrape, crawl, or contact a network."
+    },
+    {
+      "test_id": "pack_import_planning_tests",
+      "label": "Pack import planning tests",
+      "command": "python -m unittest tests.operations.test_pack_import_planning tests.scripts.test_validate_pack_import_planning",
+      "category": "contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Pack Import Planning v0 audit pack, report JSON, docs, validator JSON output, supported pack types, prohibited behaviors, or no-runtime claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers validate-only first mode, stage-local-quarantine next mode, pack validator references, no default local search/index impact, no master-index auto-acceptance, and no import runtime claims."
     }
   ]
 }

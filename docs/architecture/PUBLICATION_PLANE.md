@@ -257,6 +257,9 @@ gateway policy before any external probe exists.
 Compatibility Surface Strategy v0 now records the cross-surface policy for
 old-browser, text, file-tree, snapshot, relay, API, CLI, web, and future native
 clients. Relay Surface Design v0 now records future local/LAN bridge policy
-without implementing bridge behavior. Production signed snapshots, public
+without implementing bridge behavior. Source/Evidence/Index Pack Import
+Planning v0 does not publish pack-derived records; validate-only and private
+quarantine modes have no static publication or public-search impact by default.
+Production signed snapshots, public
 `/snapshots/`, relay runtime, native clients, and any actual Internet Archive
 live probe remain future work.

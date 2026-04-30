@@ -154,6 +154,14 @@ Future native clients may consume Rust libraries only after a separate runtime
 architecture decision. Native Client Contract v0 wires no Rust into native
 clients.
 
+## Future Pack Import
+
+Source/Evidence/Index Pack Import Planning v0 says future native clients may
+only stage validated packs into private local quarantine after validate-only
+tooling exists. Native clients must not scan arbitrary directories, expose
+private staged packs through public surfaces, mutate local public search by
+default, or submit staged packs to a master index without separate review.
+
 ## Versioning Expectations
 
 Native clients must check schema/version fields before interpreting data. If a

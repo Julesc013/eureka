@@ -190,6 +190,16 @@ not implement queue runtime, uploads, imports, moderation, accounts, hosted
 master index writes, automatic acceptance, live connectors, rights-clearance
 claims, malware-safety claims, canonical truth selection, or production
 readiness.
+Source/Evidence/Index Pack Import Planning v0 now defines the planning-only
+future local import boundary under
+`control/audits/pack-import-planning-v0/`,
+`docs/reference/PACK_IMPORT_PLANNING.md`, and
+`docs/architecture/PACK_IMPORT_PIPELINE.md`. It recommends validate-only as the
+first future mode and private local quarantine as the next mode while adding no
+import runtime, staging directories, local search/index mutation, canonical
+registry mutation, uploads, hosted/master-index mutation, automatic acceptance,
+live fetch, arbitrary directory scanning, executable plugin behavior, or
+production claims.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -740,11 +750,13 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Source/Evidence/Index Pack Import Planning v0
+1. Pack Import Validator Aggregator v0
 2. AI Provider Contract v0
-3. Manual Observation Batch 0 Execution, human-operated
-4. Search Usefulness Baseline Comparison Report v0 after observations
-5. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
+3. Pack Import Report Format v0
+4. Validate-Only Pack Import Tool v0
+5. Manual Observation Batch 0 Execution, human-operated
+6. Search Usefulness Baseline Comparison Report v0 after observations
+7. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 
 Broader near-term direction:

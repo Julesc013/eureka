@@ -119,6 +119,12 @@ consume accepted public master-index outputs only after separate import,
 review, and publication milestones. This contract does not add those consumers
 or mutate the local/public search runtime.
 
+Source/Evidence/Index Pack Import Planning v0 keeps pack import local and
+separate from master-index review. Validate-only and local quarantine do not
+submit, upload, accept, reject, supersede, publish, or mutate hosted/master
+index state. A contribution can reach accepted_public only through a later
+review decision with provenance and limitations.
+
 ## Validation Command
 
 ```powershell
@@ -146,6 +152,7 @@ The validator is stdlib-only and does not perform network calls.
 
 ## Next Work
 
-The next recommended milestone is Source/Evidence/Index Pack Import Planning v0.
-That planning should define local import boundaries before any runtime import
-or hosted review tooling is implemented.
+The next recommended milestone is Pack Import Validator Aggregator v0. That
+aggregator should route source, evidence, index, and contribution packs to
+existing validators while still avoiding import runtime, staging, hosted review
+tooling, uploads, and master-index mutation.

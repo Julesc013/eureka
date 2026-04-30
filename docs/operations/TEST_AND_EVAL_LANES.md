@@ -292,6 +292,21 @@ allowed validation/review/decision states, privacy/rights/risk posture, no
 auto-acceptance, no hosted queue/runtime/upload/account behavior, no private
 paths, no raw SQLite/cache files, and no executable payloads.
 
+Source/Evidence/Index Pack Import Planning v0 is validated with:
+
+```bash
+python scripts/validate_pack_import_planning.py
+python scripts/validate_pack_import_planning.py --json
+python -m unittest tests.operations.test_pack_import_planning tests.scripts.test_validate_pack_import_planning
+```
+
+The validation checks the planning audit pack and report, confirms
+`import_runtime_implemented=false`, `validate_only` as the first future mode,
+`stage_local_quarantine` as the next mode, supported source/evidence/index/
+contribution pack types, references to existing pack validators, prohibited
+import behaviors, private staging posture, no default local search/index
+impact, no master-index auto-acceptance, and no import-runtime claims.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

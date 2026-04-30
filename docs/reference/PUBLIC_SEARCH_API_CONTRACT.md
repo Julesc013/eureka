@@ -217,6 +217,10 @@ do not make contributions canonical truth, and do not grant moderation,
 identity, live fetch, or master-index authority. Future public search use must
 wait for Master Index Review Queue Contract v0-governed review and accepted
 public records.
+Source/Evidence/Index Pack Import Planning v0 keeps future pack import local
+and validate-only first. Validated or quarantined packs have no public-search
+impact by default and must not affect `local_index_only` search until a later
+explicit import/index milestone adds an opt-in local mode.
 
 ## Out Of Scope
 

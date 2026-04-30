@@ -130,6 +130,11 @@ live probe endpoints, live backend proxy routes, arbitrary file serving,
 private path display, credential display, telemetry endpoints, and executable
 launch remain prohibited.
 
+Source/Evidence/Index Pack Import Planning v0 keeps future staged packs private
+by default. Relay surfaces must not expose private staged packs, import
+reports, local paths, or local quarantine contents unless a later reviewed
+public output explicitly allows it.
+
 ## Versioning
 
 The v0 relay contract is experimental. Future implementations must keep the

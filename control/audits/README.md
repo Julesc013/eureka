@@ -178,6 +178,14 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   upload/import handling, moderation UI, accounts, hosted master index,
   master-index writes, automatic acceptance, live connectors, rights-clearance
   claims, malware-safety claims, or canonical-truth claims.
+- `pack-import-planning-v0/`: planning audit pack for future local
+  source/evidence/index/contribution pack import. It records validate-only as
+  the first future mode, private local quarantine as the next mode, validation
+  pipeline, staging/privacy/rights/risk posture, provenance model, no default
+  local search/index impact, and master-index review separation without
+  implementing import runtime, staging directories, uploads, canonical registry
+  mutation, hosted/master-index mutation, automatic acceptance, live fetch,
+  arbitrary directory scanning, or executable plugin behavior.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

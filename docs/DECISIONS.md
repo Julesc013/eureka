@@ -1244,3 +1244,30 @@ installers, private cache sharing, raw SQLite export, production signing,
 rights clearance, malware-safety claims, canonical truth selection, hosted
 ingestion, or production extension support. The next Codex-safe milestone is
 Source/Evidence/Index Pack Import Planning v0.
+
+## ADR-119: Plan Validate-Only Pack Import Before Import Runtime
+
+Status: accepted
+
+Source/Evidence/Index Pack Import Planning v0 adds
+`control/audits/pack-import-planning-v0/`,
+`docs/reference/PACK_IMPORT_PLANNING.md`,
+`docs/architecture/PACK_IMPORT_PIPELINE.md`,
+`scripts/validate_pack_import_planning.py`, and focused validator/tests.
+
+The decision is to define future pack import as explicit user-selected
+validation before any staging, indexing, public search, or master-index effect
+exists. The default future mode is `validate_only`; the next future mode is
+`stage_local_quarantine`. Staged records remain claims, candidates, or
+summaries, with pack ID/version/checksum and validation reports preserved as
+provenance. Pack import is local and separate from master-index review.
+
+P39 deliberately does not implement pack import runtime, source/evidence/index
+pack import, contribution pack import, master-index queue import, local
+staging directories, arbitrary directory scanning, live fetch, local
+search/index mutation, canonical source registry mutation, uploads,
+submission, moderation UI, accounts, identity, hosted/master-index mutation,
+automatic acceptance, executable plugins, downloads, installers, private cache
+sharing, rights clearance, malware-safety claims, canonical truth selection,
+or production extension support. The next Codex-safe milestone is Pack Import
+Validator Aggregator v0, followed by AI Provider Contract v0.

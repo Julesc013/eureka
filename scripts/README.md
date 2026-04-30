@@ -285,6 +285,15 @@ Current scripts:
   does not implement queue runtime, upload, import, moderation, accounts,
   hosted master index writes, acceptance automation, execute, fetch, scrape,
   crawl, or contact a network
+- `validate_pack_import_planning.py`: validates Source/Evidence/Index Pack
+  Import Planning v0 under `control/audits/pack-import-planning-v0/`. It checks
+  `import_runtime_implemented=false`, `validate_only` as the default future
+  mode, `stage_local_quarantine` as the next mode, supported source/evidence/
+  index/contribution pack types, prohibited import behaviors, references to
+  existing pack validators, private staging posture, no default local search
+  impact, and no master-index automatic acceptance. It supports `--json` and
+  does not import, stage, index, upload, fetch, scrape, crawl, or contact a
+  network
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

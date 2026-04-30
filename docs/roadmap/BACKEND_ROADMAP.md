@@ -308,12 +308,13 @@ The next backend sequence is:
 79. Index Pack Contract v0 (implemented as contract/validation/example-only index-pack format, synthetic summary-only example pack, checksum validator, docs, and audit pack; no import, merge, upload, raw SQLite/local-cache export, live connectors, executable plugins, canonical truth selection, hosted ingestion, or master-index acceptance)
 80. Contribution Pack Contract v0 (implemented as contract/validation/example-only contribution-pack format, synthetic review-candidate example pack, checksum validator, docs, and audit pack; no upload, import, moderation, accounts, master-index review queue runtime, automatic acceptance, live connectors, executable plugins, canonical truth selection, hosted ingestion, or master-index acceptance)
 81. Master Index Review Queue Contract v0 (implemented as contract/validation/example-only queue governance, synthetic defer-decision example queue, schemas, inventory, validator, docs, and audit pack; no queue runtime, upload, import, moderation, accounts, hosted master index, master-index writes, automatic acceptance, live connectors, canonical truth selection, rights-clearance claim, malware-safety claim, or production claim)
+82. Source/Evidence/Index Pack Import Planning v0 (implemented as planning-only import boundary, audit pack, docs, validator, and tests; validate-only is the first future mode and private local quarantine is the next future mode; no import runtime, staging directories, local search/index mutation, canonical registry mutation, uploads, hosted/master-index mutation, automatic acceptance, live fetch, arbitrary directory scan, executable plugin behavior, or production claim)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Source/Evidence/Index Pack Import Planning v0
+> Pack Import Validator Aggregator v0
 
 Why this comes next:
 
@@ -404,9 +405,17 @@ Why this comes next:
   without queue runtime, upload, import, moderation, accounts, hosted master
   index, master-index writes, automatic acceptance, live connectors,
   executable plugins, rights-clearance claims, malware-safety claims, or
-  production claims. Source/Evidence/Index Pack Import Planning v0 is next so
-  local import boundaries are designed before any runtime import or hosted
-  review tooling exists.
+  production claims.
+- Source/Evidence/Index Pack Import Planning v0 is implemented as planning
+  only. It defines import scope, validate-only and quarantine modes, staging
+  policy, validation pipeline, privacy/rights/risk review, provenance, local
+  search boundaries, native/snapshot/relay impact, and master-index review
+  interaction. It adds no import runtime, staging directories, local
+  search/index mutation, canonical source registry mutation, upload,
+  hosted/master-index mutation, automatic acceptance, live fetch, arbitrary
+  directory scanning, executable plugin behavior, or production claim. Pack
+  Import Validator Aggregator v0 is next so the existing validators can be
+  routed through one safe command before any import behavior exists.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

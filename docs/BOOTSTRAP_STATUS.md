@@ -408,6 +408,18 @@ synthetic defer-decision example. It adds no queue runtime, uploads, imports,
 moderation UI, accounts, hosted master index, master-index writes, automatic
 acceptance, live connectors, rights-clearance claim, malware-safety claim,
 canonical truth selection, or production extension behavior.
+Source/Evidence/Index Pack Import Planning v0 is now implemented as
+planning-only work under `control/audits/pack-import-planning-v0/`,
+`docs/reference/PACK_IMPORT_PLANNING.md`,
+`docs/architecture/PACK_IMPORT_PIPELINE.md`, and
+`scripts/validate_pack_import_planning.py`. It defines validate-only as the
+first future import mode, private local quarantine as the next mode, validation
+pipeline requirements, staging/privacy/rights/risk rules, provenance rules,
+and local search/master-index boundaries. It adds no import runtime, staging
+directories, public search mutation, local index mutation, canonical source
+registry mutation, uploads, hosted/master-index mutation, automatic acceptance,
+live fetch, arbitrary directory scan, executable plugin behavior, or production
+claim.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -638,27 +650,31 @@ local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Source/Evidence/Index Pack Import Planning v0
+1. Pack Import Validator Aggregator v0
 2. AI Provider Contract v0
-3. Manual Observation Batch 0 Execution, human-operated
-4. Search Usefulness Baseline Comparison Report v0 after observations
-5. IA Metadata Live Probe Approval Pack v0 only after explicit approval
-6. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
-7. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
+3. Pack Import Report Format v0
+4. Validate-Only Pack Import Tool v0
+5. Manual Observation Batch 0 Execution, human-operated
+6. Search Usefulness Baseline Comparison Report v0 after observations
+7. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+8. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
+9. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
-8. Source Pack Import Runtime v0 only after import planning
-9. Index Pack Import/Compare Tooling Plan v0
-10. Contribution Submission Tooling Plan v0
-11. Master Index Review Queue Runtime Planning v0
-12. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+10. Local Quarantine/Staging Model v0
+11. Staged Pack Inspector v0
+12. Source Pack Import Runtime v0 only after validate-only import tooling
+13. Index Pack Import/Compare Tooling Plan v0
+14. Contribution Submission Tooling Plan v0
+15. Master Index Review Queue Runtime Planning v0
+16. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
-13. Relay Prototype Implementation v0, only after explicit human approval and
+17. Relay Prototype Implementation v0, only after explicit human approval and
    limited to the approved localhost-only/read-only/static relay scope
-14. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
+18. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
    human approval and limited to the approved read-only static-data/snapshot-demo
    skeleton scope
-14. Manual Observation Batch 0 Execution (human-operated parallel work)
-15. Internet Archive Live Probe v0 only after explicit human approval and
+19. Manual Observation Batch 0 Execution (human-operated parallel work)
+20. Internet Archive Live Probe v0 only after explicit human approval and
    separate implementation review
 
 ## Deferred Priorities

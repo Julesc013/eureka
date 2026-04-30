@@ -239,6 +239,11 @@ Privacy Policy v0 keeps snapshots public/offline and excludes private cache,
 private local paths, credentials, telemetry, account data, diagnostics, and
 private user history from snapshot contents.
 
+Source/Evidence/Index Pack Import Planning v0 keeps future pack staging private
+and local. Snapshots may include pack-derived records only after separate
+review/publication milestones; validate-only or quarantined packs must not
+change snapshot contents by default.
+
 ## Not Implemented
 
 This contract does not implement:

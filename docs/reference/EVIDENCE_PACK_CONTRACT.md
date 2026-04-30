@@ -177,6 +177,12 @@ compatibility caveats, source locator summaries, absence reports, and
 provenance. Before that happens, import planning must define redaction,
 deduplication, source trust, conflict handling, and review gates.
 
+Source/Evidence/Index Pack Import Planning v0 defines that first boundary as
+validate-only before private local quarantine. Evidence packs remain
+claims/observations, not truth. Planning does not implement import, indexing,
+public-search mutation, canonical registry mutation, master-index mutation, or
+automatic acceptance.
+
 ## Not Implemented
 
 Evidence Pack Contract v0 does not implement evidence pack import, local or

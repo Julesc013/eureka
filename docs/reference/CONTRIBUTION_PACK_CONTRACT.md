@@ -199,6 +199,13 @@ rehearsals, and review tools may display or compare reviewed contribution-pack
 summaries after separate implementation milestones. Current public search
 remains local/prototype and `local_index_only`.
 
+Source/Evidence/Index Pack Import Planning v0 treats contribution packs as
+supported future validation inputs for local inspection and review-candidate
+preparation. Validate-only must come before private quarantine, and private
+quarantine must come before any local index candidate or review queue export.
+Planning does not implement contribution import, upload, moderation, automatic
+acceptance, public-search mutation, or master-index mutation.
+
 ## Not Implemented
 
 Contribution Pack Contract v0 does not implement contribution upload, source

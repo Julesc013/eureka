@@ -30,3 +30,8 @@ Master-index review queue contracts now live under `contracts/master_index/`
 because queue entries and decisions are governance records, not pack formats.
 Pack contracts must stay separate so one pack type cannot silently gain the
 authority of another.
+
+Source/Evidence/Index Pack Import Planning v0 documents the future local import
+boundary for these contracts. Validate-only must come before any private local
+quarantine, and neither mode grants search, index, upload, hosted/master-index,
+or automatic-acceptance authority.

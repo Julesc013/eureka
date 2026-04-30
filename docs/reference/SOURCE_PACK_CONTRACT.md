@@ -216,6 +216,13 @@ review-governed, and evidence/provenance-bound.
 Future local public search may import validated source packs only after a
 separate import/runtime milestone. Public search remains `local_index_only`.
 
+Source/Evidence/Index Pack Import Planning v0 now defines the future
+validate-only first path. Source packs must be validated, classified, and, in a
+later milestone, staged privately in quarantine before they can become local
+index candidates. Planning does not implement import, does not mutate the
+canonical source registry, does not change public search, and does not create
+master-index acceptance.
+
 Snapshots, native clients, and relay clients may eventually consume
 public-safe source-pack summaries through their own contracts. Source Pack v0
 does not implement those consumers.

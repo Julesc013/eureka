@@ -213,6 +213,10 @@ notes for result cards only after Master Index Review Queue Contract v0-governed
 review. Contribution Pack Contract v0 does not upload, import, moderate,
 accept, or make contributed records canonical proof, and it does not change
 current local public search runtime behavior.
+Source/Evidence/Index Pack Import Planning v0 does not change result cards.
+Future validated or quarantined packs remain local claims/candidates and must
+not appear in public result cards until a later explicit local-index or
+master-index review milestone permits reviewed public output.
 
 ## Runtime Preconditions
 

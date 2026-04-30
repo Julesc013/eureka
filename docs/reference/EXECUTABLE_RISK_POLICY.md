@@ -34,6 +34,10 @@ download, install, execute, malware-safety, or automatic-acceptance behavior.
 Master Index Review Queue Contract v0 preserves executable risk as review
 metadata only; queue acceptance does not prove malware safety and does not make
 executables downloadable or runnable.
+Source/Evidence/Index Pack Import Planning v0 keeps executable payloads out of
+the future validate-only and public/shareable quarantine path. Import planning
+does not create executable plugin loading, malware scanning, downloads,
+installers, or safety claims.
 
 ## Required Future Warnings
 

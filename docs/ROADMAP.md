@@ -85,6 +85,14 @@ remaining contract/validation/example-only. It does not implement uploads,
 imports, moderation, accounts, hosted master index writes, automatic
 acceptance, live connectors, canonical truth selection, rights clearance,
 malware safety, or production extension behavior.
+Source/Evidence/Index Pack Import Planning v0 now defines the planning-only
+future local import pipeline under `control/audits/pack-import-planning-v0/`,
+`docs/reference/PACK_IMPORT_PLANNING.md`, and
+`docs/architecture/PACK_IMPORT_PIPELINE.md`. It chooses validate-only as the
+first future mode and private local quarantine as the next mode, while adding
+no import runtime, staging directories, local search/index mutation, canonical
+registry mutation, upload, hosted/master-index mutation, automatic acceptance,
+live fetch, arbitrary directory scan, or executable plugin behavior.
 
 ## Stage 3: Surface Skeletons
 

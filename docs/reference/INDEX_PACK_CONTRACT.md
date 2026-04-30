@@ -196,6 +196,12 @@ Before that happens, import and merge planning must define redaction,
 deduplication, source trust, conflict handling, reproducibility, and review
 gates.
 
+Source/Evidence/Index Pack Import Planning v0 defines validate-only as the
+first future mode and stage-local-quarantine as the next future mode. Index
+packs remain coverage/build/record-summary metadata, not raw cache exports and
+not canonical proof. Planning does not implement import, merge, local index
+mutation, public-search mutation, hosted/master-index mutation, or acceptance.
+
 ## Not Implemented
 
 Index Pack Contract v0 does not implement index pack import, merge, local cache

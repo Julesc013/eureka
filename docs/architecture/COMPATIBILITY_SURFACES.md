@@ -139,6 +139,12 @@ obey. It is policy-only and adds no cache runtime, private file ingestion,
 local archive scanning, telemetry, accounts, cloud sync, uploads, native client
 runtime, private-data relay behavior, or relay runtime.
 
+Source/Evidence/Index Pack Import Planning v0 keeps future pack-derived
+compatibility evidence in validate-only or private quarantine mode until a
+separate opt-in import/index milestone. Staged compatibility claims do not
+change public search, snapshots, relay surfaces, native clients, or canonical
+truth by default.
+
 ## Non-Goals
 
 - no new runtime behavior

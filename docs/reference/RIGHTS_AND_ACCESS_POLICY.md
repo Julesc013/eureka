@@ -45,6 +45,11 @@ executable download surface, and does not mirror software artifacts in v0.
   decisions. `accepted_public` is limited and provenance-bound; it is not
   rights clearance, malware safety, canonical truth, or artifact distribution
   permission.
+- Source/Evidence/Index Pack Import Planning v0 carries this posture into
+  future local validation and quarantine. Import reports may say a pack
+  structurally validated, but they must not claim rights clearance, malware
+  safety, canonical truth, public-search eligibility, or master-index
+  acceptance.
 
 ## Labels
 
