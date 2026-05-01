@@ -1,0 +1,278 @@
+{
+  "schema_version": "0.1.0",
+  "search_need_id": "example.search_need.windows_7_compatible_application.v0",
+  "search_need_kind": "search_need_record",
+  "status": "draft_example",
+  "created_by_tool": "p62_search_need_record_v0_example",
+  "need_identity": {
+    "need_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "canonical_need_label|target_object.object_kind|source_and_capability_gaps.gap_type",
+      "value": "86320eb1fd7d1bbcf7e7e79119c93f1fcfd3494461852df7175f0e93f99b96a9",
+      "reversible": false,
+      "salt_policy": "unsalted_public_aggregate"
+    },
+    "canonical_need_label": "Windows 7 compatible application",
+    "normalized_need_terms": [
+      "windows",
+      "7",
+      "compatible",
+      "application"
+    ],
+    "disambiguation_terms": [
+      "Windows 7",
+      "application",
+      "compatibility evidence"
+    ],
+    "equivalence_keys": [
+      "software_version:windows_7_compatible_application",
+      "platform:windows_7"
+    ],
+    "alias_terms": [
+      "Windows 7 app",
+      "old platform utility"
+    ]
+  },
+  "target_object": {
+    "object_kind": "software_version",
+    "product_name": "Windows 7 compatible application",
+    "platform": "Windows 7",
+    "artifact_type": "application",
+    "compatibility_requirements": [
+      "Runs on Windows 7 or has source-backed compatibility evidence"
+    ],
+    "desired_action": "inspect"
+  },
+  "originating_inputs": {
+    "query_observation_refs": [
+      {
+        "ref_id": "example.query_observation.windows_7_apps.v0",
+        "ref_kind": "query_observation",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 0.4,
+        "limitations": [
+          "Synthetic ref only; no query observation runtime wrote this need."
+        ]
+      }
+    ],
+    "search_miss_ledger_refs": [
+      {
+        "ref_id": "example.search_miss_ledger.windows_7_apps_weak_hit.v0",
+        "ref_kind": "search_miss_ledger",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 0.6,
+        "limitations": [
+          "Synthetic ref only; P62 does not aggregate real misses."
+        ]
+      }
+    ],
+    "search_result_cache_refs": [
+      {
+        "ref_id": "example.search_result_cache.windows_7_apps.v0",
+        "ref_kind": "search_result_cache",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 0.2,
+        "limitations": [
+          "Synthetic ref only; no cache runtime was read or written."
+        ]
+      }
+    ],
+    "manual_observation_refs": [],
+    "source_pack_refs": [],
+    "evidence_pack_refs": []
+  },
+  "aggregate_summary": {
+    "occurrence_count": 1,
+    "distinct_query_fingerprint_count": 1,
+    "distinct_normalized_need_count": 1,
+    "first_seen_policy": "not_tracked_in_v0_example",
+    "last_seen_policy": "not_tracked_in_v0_example",
+    "representative_intents": [
+      "find_software_version",
+      "check_compatibility"
+    ],
+    "representative_platforms": [
+      "Windows 7"
+    ],
+    "representative_artifact_types": [
+      "application"
+    ],
+    "confidence": "medium",
+    "demand_classification": "single_example"
+  },
+  "source_and_capability_gaps": [
+    {
+      "gap_type": "compatibility_evidence_gap",
+      "source_family": "public_index_fixture_and_recorded_sources",
+      "capability": "source_backed_compatibility_evidence",
+      "explanation": "The synthetic need requires clearer source-backed compatibility evidence for Windows 7 application results.",
+      "blocking": true,
+      "suggested_resolution_future": "add_evidence_pack"
+    },
+    {
+      "gap_type": "source_coverage_gap",
+      "source_family": "future_source_cache",
+      "capability": "reviewed_source_coverage",
+      "explanation": "Future reviewed source packs may improve the evidence set, but P62 does not fetch or import sources.",
+      "blocking": false,
+      "suggested_resolution_future": "add_source_pack"
+    }
+  ],
+  "checked_scope": {
+    "checked_indexes": [
+      "public_index",
+      "local_index_only"
+    ],
+    "checked_sources": [
+      "data/public_index"
+    ],
+    "checked_source_families": [
+      "public_index_fixture_and_recorded_sources"
+    ],
+    "checked_capabilities": [
+      "lexical_public_index_search",
+      "result_card_summary",
+      "compatibility_summary"
+    ],
+    "checked_index_snapshot_refs": [
+      "eureka_public_search_index_v0"
+    ],
+    "live_probes_attempted": false,
+    "external_calls_performed": false
+  },
+  "not_checked_scope": {
+    "sources_not_checked": [
+      "future source cache",
+      "private local stores",
+      "approved live probes"
+    ],
+    "source_families_not_checked": [
+      "internet_archive_live_future",
+      "wayback_live_future",
+      "software_heritage_live_future"
+    ],
+    "capabilities_not_checked": [
+      "live_probe",
+      "candidate_index",
+      "probe_queue",
+      "master_index_promotion"
+    ],
+    "reasons_not_checked": [
+      "disabled_by_policy",
+      "approval_gated",
+      "not_implemented"
+    ],
+    "limitations": [
+      "This need is scoped to checked local_index_only public-index evidence and is not proof outside that scope."
+    ]
+  },
+  "evidence_and_result_context": {
+    "best_known_result_refs": [
+      "example.public_index_result.windows_7_application_summary"
+    ],
+    "near_miss_refs": [],
+    "weak_hit_refs": [
+      "example.search_miss_ledger.windows_7_apps_weak_hit.v0"
+    ],
+    "absence_refs": [],
+    "relevant_source_refs": [
+      "data/public_index/source_coverage.json"
+    ],
+    "relevant_evidence_refs": [
+      "data/public_index/index_stats.json"
+    ],
+    "confidence": "medium",
+    "limitations": [
+      "Context is synthetic and public-safe; it is not accepted evidence or master-index truth."
+    ]
+  },
+  "suggested_next_steps": [
+    {
+      "step_type": "run_manual_observation",
+      "reason": "A future human review could decide whether this unresolved need is meaningful after privacy and poisoning checks.",
+      "future_only": true,
+      "approval_required": false,
+      "human_required": true,
+      "operator_required": false
+    },
+    {
+      "step_type": "add_evidence_pack_future",
+      "reason": "A future reviewed evidence pack could improve compatibility support without making this need a truth record.",
+      "future_only": true,
+      "approval_required": true,
+      "human_required": true,
+      "operator_required": false
+    }
+  ],
+  "priority": {
+    "priority_class": "example_only",
+    "priority_basis": "single_miss_example",
+    "demand_count_claimed": false,
+    "notes": [
+      "Occurrence count is a synthetic example count, not public demand."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe search need; no raw query, user identifier, private path, sensitive token, or local result is retained."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "need_record_retention": "example_only",
+    "deletion_supported_future": true,
+    "notes": [
+      "P62 implements no retention runtime."
+    ]
+  },
+  "aggregation_policy": {
+    "aggregate_allowed": true,
+    "aggregate_fields_allowed": [
+      "need_fingerprint",
+      "object_kind",
+      "platform",
+      "artifact_type",
+      "source_family",
+      "gap_type",
+      "priority_class"
+    ],
+    "raw_query_aggregation_allowed": false,
+    "private_identifier_aggregation_allowed": false,
+    "notes": [
+      "Aggregate publication is future-only and must exclude raw queries and private identifiers."
+    ]
+  },
+  "limitations": [
+    "Synthetic search need only; not collected from a real user.",
+    "No persistent need store, telemetry, demand dashboard, probe job, candidate record, local index mutation, or master-index mutation was created."
+  ],
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "candidate_index_mutated": false,
+    "probe_enqueued": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "query_observation_mutated": false,
+    "telemetry_exported": false,
+    "external_calls_performed": false,
+    "public_need_runtime_created": false
+  },
+  "notes": [
+    "Search need records are durable future units for unresolved needs, not search results or accepted source evidence.",
+    "This example validates shape only and writes no runtime state."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/search_need_lifecycle.v0.json",
+  "title": "EurekaSearchNeedLifecycleV0",
+  "description": "Contract-only lifecycle values for future privacy-filtered search need records. P62 adds no persistent need store, runtime need creation, telemetry, probe queue, candidate index, demand dashboard, or master-index mutation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "review_state",
+    "resolution_state",
+    "runtime_store_implemented",
+    "probe_job_created",
+    "candidate_record_created",
+    "master_index_mutated"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "unresolved",
+        "local_private",
+        "public_aggregate_candidate",
+        "rejected_by_privacy_filter",
+        "merged_future",
+        "superseded_future",
+        "resolved_future"
+      ]
+    },
+    "review_state": {
+      "type": "string",
+      "enum": [
+        "example_only",
+        "future_review_required",
+        "future_reviewed",
+        "rejected_by_privacy_filter"
+      ]
+    },
+    "resolution_state": {
+      "type": "string",
+      "enum": [
+        "unresolved",
+        "merged_future",
+        "superseded_future",
+        "resolved_future",
+        "rejected_by_privacy_filter"
+      ]
+    },
+    "runtime_store_implemented": {
+      "type": "boolean",
+      "const": false
+    },
+    "probe_job_created": {
+      "type": "boolean",
+      "const": false
+    },
+    "candidate_record_created": {
+      "type": "boolean",
+      "const": false
+    },
+    "master_index_mutated": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_need_store_implemented": false,
+  "x-telemetry_implemented": false,
+  "x-probe_queue_implemented": false,
+  "x-candidate_index_implemented": false,
+  "x-master_index_mutation_allowed": false
+}

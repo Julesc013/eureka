@@ -62,8 +62,8 @@ sync, native clients, relay runtime, or production monitoring.
 
 ## Query Intelligence Contracts
 
-P59 Query Observation, P60 Shared Query/Result Cache, and P61 Search Miss
-Ledger are contract-only. They add validators, examples, and docs, but no
-telemetry runtime, no public query logging, no persistent cache storage, no
-runtime ledger writes, no search need creation, no probe enqueueing, no
-candidate-index mutation, and no master-index mutation.
+P59 Query Observation, P60 Shared Query/Result Cache, P61 Search Miss Ledger,
+and P62 Search Need Record are contract-only. They add validators, examples,
+and docs, but no telemetry runtime, no public query logging, no persistent cache
+or need storage, no runtime ledger writes, no demand-count runtime, no probe
+enqueueing, no candidate-index mutation, and no master-index mutation.

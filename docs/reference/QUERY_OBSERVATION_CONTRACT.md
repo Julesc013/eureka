@@ -74,3 +74,11 @@ miss layer. Miss entries may reference query observation fingerprints and
 optional cache refs, but P61 still does not persist observations, write miss
 ledger entries at runtime, create search needs, enqueue probes, mutate result
 caches, mutate candidate indexes, or mutate the master index.
+
+## Relation To Search Need Records
+
+P62 adds `contracts/query/search_need_record.v0.json` as the contract-only
+unresolved-need layer. Query observations may later contribute privacy-filtered
+input references to a search need record after miss/cache classification and
+review, but P62 adds no runtime need store, telemetry, public query logging,
+probe enqueueing, candidate mutation, or master-index mutation.

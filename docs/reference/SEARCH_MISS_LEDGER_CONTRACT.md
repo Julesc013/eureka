@@ -96,6 +96,13 @@ filtering. Raw query aggregation and private identifier aggregation are false.
 P61 does not wire public search routes to a miss ledger. The optional dry-run
 helper prints a candidate miss entry to stdout only and writes no files.
 
+## Relation To Search Need Records
+
+Search miss ledger entries can become inputs to a future search need record
+after privacy and poisoning review. P62 defines that search need record
+contract-only path. P61 entries do not create search needs, enqueue probes,
+mutate a candidate index, or mutate the master index.
+
 Validate examples with:
 
 ```bash

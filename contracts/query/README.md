@@ -26,6 +26,13 @@ Current contracts:
 - `search_miss_classification.v0.json`: reusable miss classification taxonomy
   for scoped absence and weak-result categories. It forbids global absence
   claims in v0.
+- `search_need_record.v0.json`: search need record contract for future
+  aggregation of privacy-filtered unresolved needs. P62 defines need identity,
+  target object, input refs, gap model, aggregation posture, and no-mutation
+  guarantees without adding a runtime need store, telemetry, probe queue,
+  candidate index, demand dashboard, or master-index mutation.
+- `search_need_lifecycle.v0.json`: reusable lifecycle status contract for
+  future search need review, merge, supersede, and resolve states.
 
 Query intelligence follows "fast learning, slow truth": public queries may
 eventually inform aggregate learning, but they must not mutate authoritative
@@ -34,3 +41,6 @@ Shared cache entries are summaries scoped to an index snapshot, never source
 truth or proof outside the checked scope.
 Miss ledger entries are scoped learning records, not search needs, probe jobs,
 candidate records, source truth, or master-index truth.
+Search need records are scoped unresolved-need records, not search results,
+probe jobs, candidate records, demand counts, source truth, or master-index
+truth.

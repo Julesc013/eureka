@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eureka_search_need_record_policy_v0",
+  "status": "contract_only",
+  "runtime_need_store_implemented": false,
+  "persistent_need_store_implemented": false,
+  "telemetry_implemented": false,
+  "public_query_logging_enabled": false,
+  "raw_query_retention_default": "none",
+  "privacy_filter_required": true,
+  "public_aggregate_allowed_after_filter": true,
+  "scoped_absence_required": true,
+  "global_absence_claims_allowed": false,
+  "demand_counts_runtime_implemented": false,
+  "master_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "probe_enqueue_allowed": false,
+  "result_cache_mutation_allowed": false,
+  "miss_ledger_mutation_allowed": false,
+  "external_calls_allowed": false,
+  "live_probes_allowed": false,
+  "next_contracts": [
+    "probe_queue",
+    "candidate_index",
+    "candidate_promotion_policy",
+    "known_absence_page",
+    "query_privacy_poisoning_guard",
+    "demand_dashboard"
+  ],
+  "notes": [
+    "P62 defines search need records only. It does not implement a runtime need store, persistent need storage, telemetry, public query logging, demand-count runtime, probe enqueueing, candidate-index mutation, result-cache mutation, miss-ledger mutation, local-index mutation, or master-index mutation.",
+    "Search needs are scoped, reviewable unresolved needs derived from privacy-filtered future inputs. They are not search results, miss ledger entries, probe jobs, candidate records, demand dashboards, or authoritative truth."
+  ]
+}

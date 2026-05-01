@@ -91,6 +91,13 @@ outcomes; miss ledger entries explain why those outcomes were scoped misses and
 what future-only work could follow. P60 still does not write miss ledger
 entries, and P61 does not write cache entries.
 
+## Search Need Record Relationship
+
+P62 adds search need records as the next contract-only layer. Shared cache
+entries may provide summary context for repeated scoped absence or weak-hit
+patterns, but cache entries do not create needs, enqueue probes, mutate
+candidates, or become master-index truth.
+
 ## Freshness And Invalidation
 
 Future cache entries become stale when the public index is rebuilt, source
