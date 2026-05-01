@@ -489,6 +489,24 @@ Current scripts:
   wrapper scripts, safe config check, inert deployment templates, docs,
   inventory posture, disabled hard booleans, and no hosted deployment claim. It
   supports `--json` and performs no network calls.
+- `build_public_search_index.py`: builds or drift-checks the P55 generated
+  public search index under `data/public_index` from governed source inventory
+  plus committed fixture/recorded metadata only. It writes JSON/NDJSON
+  manifests, source coverage, stats, and checksums; `--check` regenerates in a
+  temporary directory and compares without mutating the repo; `--json` emits a
+  machine-readable report. It performs no network calls, does not read
+  caller-selected source roots, and does not create live/source/import
+  behavior.
+- `validate_public_search_index.py`: validates the committed P55
+  `data/public_index` bundle, including required files, document fields,
+  source ids, checksums, count consistency, blocked actions, no private path or
+  secret markers, no live-source flags, and no executable payload flags. It
+  supports `--json` and performs no network calls.
+- `validate_public_search_index_builder.py`: validates the P55 audit pack,
+  builder/validator scripts, generated artifact inventory, docs, hard false
+  booleans, `validate_public_search_index.py`, and
+  `build_public_search_index.py --check`. It supports `--json` and performs no
+  network calls.
 - `demo_resolution_slice.py`: submits and reads the local deterministic gateway thin slice against the bounded demo corpus, with an optional shared workbench session view-model projection
 - `demo_web_workbench.py`: renders the compatibility-first web workbench, deterministic search page, deterministic query-plan page, bootstrap local-index pages, bounded source-registry page, bounded source detail page, bounded synchronous local-task pages, bounded synchronous resolution-runs page, explicit local resolution-memory pages, bounded representations page, bounded compatibility page, bounded handoff page, bounded action-plan page, bounded acquisition page, bounded member-preview page, or bundle inspection page either once to stdout, or starts a tiny stdlib local server that also exposes the bounded subject/state page plus the bounded decomposition page, exports a bounded resolution manifest as JSON, exports a deterministic resolution bundle ZIP to stdout, builds and queries a bootstrap local SQLite index through shared public boundaries, fetches one bounded local payload fixture for one explicit representation, inspects one fetched bounded representation into a compact member listing when the format is supported, reads one bounded member from one decomposed representation as a compact preview when the member is text-like, stores manifest or bundle exports under a caller-provided local store root, prints bounded resolution-run URLs when a caller provides a bootstrap run-store root, prints bounded local-task URLs when a caller provides a bootstrap task-store root, prints bounded resolution-memory URLs when a caller provides a bootstrap memory-store root, lists stored exports for a target, reads stored artifacts by stable artifact identity, or inspects a local bundle path as JSON, while supporting `--mode local_dev` and `--mode public_alpha`; public-alpha mode blocks caller-provided local path controls and local write/readback route groups without adding auth, HTTPS/TLS, accounts, or production deployment semantics
 - `demo_cli_workbench.py`: exposes the same bootstrap exact-resolution, deterministic search, deterministic query planning, bootstrap local-index build plus query plus status, synchronous local-task creation plus lookup plus listing, bounded synchronous resolution-run creation plus lookup, explicit local resolution-memory creation plus lookup plus listing, bounded source-registry listing/detail lookup plus coverage/capability filters, bounded representations listing, bounded handoff evaluation, bounded acquisition and fetch, bounded decomposition and member inspection, bounded member preview and readback, bounded action-plan evaluation, bounded strategy-aware action-plan evaluation, bounded compatibility evaluation with source-backed compatibility evidence where current fixtures support it, bounded absence reasoning, bounded subject/state listing, side-by-side comparison, manifest export, bundle export, bundle inspection, and local stored-export capabilities through the first stdlib-only native CLI surface, staying on the public side of the architecture without committing to a final CLI or TUI stack

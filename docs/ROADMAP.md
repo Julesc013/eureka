@@ -702,3 +702,14 @@ URL fetch, AI runtime, index mutation, pack import, staging runtime, or hosted
 availability claim is added. The next Codex-safe branch is
 `p55-public-search-index-builder-v0`; operator-parallel work is backend host
 deployment evidence capture.
+
+Public Search Index Builder v0 records the P55 checkpoint under
+`control/audits/public-search-index-builder-v0/`. It creates the first
+controlled public-safe generated search index under `data/public_index`, with
+584 JSON/NDJSON documents derived from committed fixture and recorded metadata,
+validated source coverage, deterministic drift checks, and local public-search
+runtime integration. SQLite/FTS5 availability is observed but not required for
+the committed artifact; the runtime remains deterministic lexical
+local_index_only search. The next Codex-safe branch is
+`p56-static-site-search-integration-v0`; hosted deployment evidence remains
+operator-gated.

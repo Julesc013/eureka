@@ -230,6 +230,14 @@ or typed AI output bundles before reviewed public records exist. It does not
 change result-card fields, import packs, stage packs, mutate local indexes,
 upload, or mutate public search or the master index.
 
+Public Search Index Builder v0 projects the controlled generated public index
+documents back into this result-card shape for the local/prototype public-search
+runtime. Each generated document carries source, evidence, compatibility,
+action, warning, and limitation summaries; blocked actions still include
+download, install handoff, execute, and upload. The generated index does not
+prove source truth, rights clearance, malware safety, production ranking
+quality, or hosted availability.
+
 ## Runtime Preconditions
 
 Local Public Search Runtime v0 emits public result cards after satisfying the

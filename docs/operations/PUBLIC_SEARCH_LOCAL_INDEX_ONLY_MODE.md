@@ -77,6 +77,15 @@ operator-controlled hosting. It does not change the mode contract or enable
 live probes, downloads, uploads, local paths, arbitrary URL fetch, accounts,
 telemetry, or source connectors.
 
+Public Search Index Builder v0 now provides the preferred controlled input for
+this mode under `data/public_index`. The runtime loads
+`search_documents.ndjson` when present and reports
+`index_status=generated_public_search_index`; hosted-wrapper config validation
+requires the generated public index to exist. Local development may still fall
+back to the old in-memory demo catalog if the generated index is absent, but
+public or hosted-safe checks should treat a missing index as drift to repair,
+not as permission to read private paths or call live sources.
+
 ## Privacy And Logging Notes
 
 Future public search logs must avoid private local paths, credentials, uploaded

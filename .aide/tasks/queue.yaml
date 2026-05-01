@@ -706,9 +706,9 @@
     {
       "id": "public_search_index_builder_v0",
       "title": "P55 Public Search Index Builder v0",
-      "status": "recommended_next_codex_safe",
+      "status": "completed",
       "priority": 96,
-      "notes": "Build the controlled public search index path for the hosted wrapper without live probes, arbitrary URL fetching, downloads, uploads, accounts, telemetry, or master-index mutation."
+      "notes": "Implemented the controlled generated public search index under data/public_index with builder, validator, runtime integration, audit pack, tests, docs, and drift metadata. It remains local_index_only and fixture/recorded-metadata only with no live probes, arbitrary URL fetching, downloads, uploads, accounts, telemetry, pack import, staging runtime, AI runtime, or master-index mutation."
     },
     {
       "id": "static_site_search_integration_v0",
@@ -772,6 +772,13 @@
       "status": "queued_codex_safe",
       "priority": 105,
       "notes": "Define candidate index boundaries and validation gates without mutating the master index."
+    },
+    {
+      "id": "candidate_promotion_policy_v0",
+      "title": "P65 Candidate Promotion Policy v0",
+      "status": "queued_codex_safe",
+      "priority": 106,
+      "notes": "Define validation-gated promotion from candidate index toward authoritative records without public-query or AI-driven master-index mutation."
     }
   ]
 }

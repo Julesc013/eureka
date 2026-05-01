@@ -593,6 +593,15 @@
       "title": "Deploy the hosted public search wrapper to an operator-selected backend and record evidence",
       "status": "operator_gated_follow_up",
       "suggested_milestone": "P58 Hosted Public Search Rehearsal v0"
+    },
+    {
+      "id": "audit-backlog-public-search-index-static-integration",
+      "finding_refs": [
+        "public-search-index-builder-v0"
+      ],
+      "title": "Wire the static search handoff to the generated public index and hosted wrapper only when honest backend evidence exists",
+      "status": "open_follow_up",
+      "suggested_milestone": "P56 Static Site Search Integration v0"
     }
   ]
 }

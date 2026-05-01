@@ -58,8 +58,9 @@ Hosted wrapper defaults must keep these flags false:
 - `arbitrary_url_fetch_enabled`
 - `telemetry_enabled`
 
-P54 may implement a hosted wrapper for `local_index_only` only. Live connectors,
-query intelligence, index building, and public contribution intake remain later
+P54 implements a hosted wrapper for `local_index_only` only. P55 implements the
+first controlled generated public search index under `data/public_index`; live
+connectors, query intelligence, and public contribution intake remain later
 milestones.
 
 P54 now implements the wrapper entrypoint and local rehearsal check:
@@ -71,3 +72,10 @@ P54 now implements the wrapper entrypoint and local rehearsal check:
 The wrapper remains deployment-unverified. It does not enable live probes,
 downloads, uploads, installs, local paths, arbitrary URL fetch, telemetry,
 accounts, source connectors, AI runtime, or index mutation.
+
+The P55 generated public index is the current preferred corpus for local and
+hosted-wrapper search rehearsal. It is built from governed source inventory
+plus committed fixture/recorded metadata only, and it does not authorize
+request-selected index paths, live source fanout, private local ingestion,
+pack import, staging runtime, master-index mutation, or hosted deployment
+claims.

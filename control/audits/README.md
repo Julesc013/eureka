@@ -287,6 +287,15 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   deployment, enabling live probes, downloads, uploads, accounts, telemetry,
   arbitrary URL fetch, source connectors, AI runtime, index mutation, pack
   import, staging runtime, or hosted availability claims.
+- `public-search-index-builder-v0/`: P55 generated public search index
+  checkpoint. It records the deterministic builder, committed
+  `data/public_index` JSON/NDJSON artifacts, source-family coverage,
+  fallback lexical search posture, local public-search integration, hosted
+  wrapper compatibility, drift checks, and validation evidence without live
+  source calls, arbitrary URL fetching, private path ingestion, executable
+  payloads, downloads, uploads, AI runtime, pack import, staging runtime,
+  master-index mutation, hosted deployment, or production search-quality
+  claims.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

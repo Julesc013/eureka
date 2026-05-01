@@ -13,6 +13,8 @@ accounts, and no telemetry by default.
 
 - `site/dist` is the static publication artifact.
 - `scripts/run_hosted_public_search.py` is the backend wrapper entrypoint.
+- `data/public_index` is the generated public-safe search index bundle used by
+  the wrapper and local public-search runtime.
 - Static pages may hand off to a configured backend only after a later evidence
   pack records the deployed URL and commit.
 - The static site must not hardcode localhost as a public backend URL.
@@ -22,20 +24,23 @@ accounts, and no telemetry by default.
 
 1. Choose a backend host.
 2. Create a service from the repository or Dockerfile.
-3. Set the safe environment variables documented in
+3. Validate the generated public index with
+   `python scripts/build_public_search_index.py --check` and
+   `python scripts/validate_public_search_index.py`.
+4. Set the safe environment variables documented in
    `docs/operations/PUBLIC_SEARCH_ENVIRONMENT.md`.
-4. Bind the service to `PORT` and `0.0.0.0` in the hosting environment.
-5. Deploy.
-6. Check `/healthz`.
-7. Check `/api/v1/status`.
-8. Check `/search?q=windows+7+apps`.
-9. Verify forbidden parameters such as `index_path`, `url`, `live_probe`,
+5. Bind the service to `PORT` and `0.0.0.0` in the hosting environment.
+6. Deploy.
+7. Check `/healthz`.
+8. Check `/api/v1/status`.
+9. Check `/search?q=windows+7+apps`.
+10. Verify forbidden parameters such as `index_path`, `url`, `live_probe`,
    `download`, and `upload` are rejected.
-10. Add rate limits or edge controls before broader exposure.
-11. Record deployed URL, commit, run ID or service revision, environment, and
+11. Add rate limits or edge controls before broader exposure.
+12. Record deployed URL, commit, run ID or service revision, environment, and
     route evidence in a later audit pack.
 
-These steps are instructions only. They have not been performed by P54.
+These steps are instructions only. They have not been performed by P54 or P55.
 
 ## Deployment Templates
 

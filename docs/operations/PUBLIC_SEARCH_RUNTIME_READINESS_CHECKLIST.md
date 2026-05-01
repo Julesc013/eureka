@@ -40,6 +40,8 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
   timeout middleware remains future.
 - [x] Stable error mapping is implemented for forbidden parameters and disabled
   capabilities.
+- [x] Generated public search index exists under server-owned `data/public_index`
+  and validates without live source calls or caller-provided paths.
 
 ## Surface Gates
 
@@ -68,6 +70,8 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
   parameters.
 - [x] Public-alpha smoke tests remain compatible.
 - [x] Hosted wrapper local rehearsal passes.
+- [x] Generated public index drift check passes for the current committed
+  bundle.
 - [ ] Architecture-boundary checks pass for the current final verification run.
 - [ ] Generated static artifact checks pass for the current final verification run.
 - [x] No documentation claims hosted deployment success.
@@ -80,6 +84,7 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
 - implementation_approved: true
 - Static handoff is implemented by Public Search Static Handoff v0.
 - hosted_wrapper_implemented: true
+- generated_public_search_index_available: true
 - hosted_wrapper_deployment_verified: false
 - hosted_public_runtime_approved: false
 - static_search_handoff_implemented: true

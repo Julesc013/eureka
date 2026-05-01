@@ -1688,3 +1688,31 @@ mutate indexes, import packs, stage packs, add telemetry/accounts/uploads/
 downloads/installers, add model calls, or claim hosted availability. The next
 Codex-safe branch is `p55-public-search-index-builder-v0`; operator-parallel
 work is deploying the wrapper and recording hosted evidence.
+
+## ADR-135: Generate Public Search Index From Controlled Corpus
+
+Status: accepted
+
+Public Search Index Builder v0 adds `scripts/build_public_search_index.py`,
+`scripts/validate_public_search_index.py`,
+`scripts/validate_public_search_index_builder.py`, generated
+`data/public_index` artifacts, runtime integration, docs, tests, drift
+metadata, and `control/audits/public-search-index-builder-v0/`.
+
+The decision is to add a deterministic committed public search index bundle and
+make the local/prototype public-search path prefer it over the older in-memory
+demo catalog. The P54 hosted wrapper now has a controlled public-safe corpus
+for local rehearsal and future operator deployment. The generated bundle is
+built from governed source inventory plus committed fixture/recorded metadata
+only, validates with drift checks, and records source coverage plus checksums.
+
+The committed artifact is JSON/NDJSON plus manifests rather than a SQLite
+binary. SQLite and FTS5 availability are recorded as optional local
+capabilities, while deterministic lexical fallback remains the runtime
+baseline.
+
+P55 deliberately does not add live source calls, scraping, arbitrary URL
+fetching, private local ingestion, executable payloads, downloads, uploads,
+telemetry, AI runtime, pack import, staging runtime, local/runtime/master-index
+mutation, hosted deployment, or production search-quality claims. The next
+Codex-safe branch is `p56-static-site-search-integration-v0`.

@@ -832,6 +832,19 @@ uploads, downloads, installers, arbitrary URL fetching, AI runtime, index
 mutation, pack import, staging runtime, or hosted-search evidence. The next
 Codex-safe branch is `p55-public-search-index-builder-v0`.
 
+Public Search Index Builder v0 is recorded under
+`control/audits/public-search-index-builder-v0/`. It adds a deterministic
+stdlib builder, validator, committed `data/public_index` JSON/NDJSON artifacts,
+generated-artifact drift metadata, docs, tests, and local public-search
+integration over controlled fixture/recorded metadata only. The local and
+hosted-wrapper paths now require the generated public index for hosted-safe
+checks and report `generated_public_search_index` with 584 documents in this
+checkout. It adds no live source calls, arbitrary URL fetching, private local
+ingestion, executable payloads, downloads, uploads, telemetry, AI runtime,
+pack import, staging runtime, master-index mutation, hosted deployment, or
+production search-quality claim. The next Codex-safe branch is
+`p56-static-site-search-integration-v0`.
+
 ## Deferred Priorities
 
 These are intentionally not the next milestone:

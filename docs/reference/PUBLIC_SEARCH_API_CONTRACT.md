@@ -249,6 +249,15 @@ validate-only pack validation outcomes and hard false mutation fields, but does
 not import packs, stage packs, mutate local indexes, upload, or mutate public
 search or the master index.
 
+Public Search Index Builder v0 now supplies the preferred local_index_only
+input bundle for the current local/prototype public-search runtime. The bundle
+lives under `data/public_index` and contains public-safe JSON/NDJSON documents,
+source coverage, stats, and checksums generated from controlled repo fixtures
+and recorded metadata only. Public requests still cannot choose an index path,
+store root, local path, URL, live source, or credential. Missing or stale index
+artifacts are build/validation problems, not permission to fan out to live
+sources.
+
 ## Out Of Scope
 
 This contract and local runtime do not implement hosted backend deployment,

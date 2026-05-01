@@ -3994,6 +3994,182 @@
       "failure_means": "P54 wrapper scripts, audit pack, deployment-template safety, or validator CLI behavior regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P54 tests; they do not call external sources, deploy, mutate indexes, import packs, stage packs, or load AI providers."
+    },
+    {
+      "category": "generated_artifact",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "no repo writes except --rebuild, which is not used by validation records",
+      "expected_runtime": "seconds",
+      "advisory_or_required": "required",
+      "test_id": "public_search_index_builder_check",
+      "label": "Public search index builder drift check",
+      "command": "python scripts/build_public_search_index.py --check",
+      "failure_means": "Generated public search index artifacts drifted.",
+      "notes": "P55 local_index_only generated index validation; no live source calls, deployment, downloads, uploads, arbitrary URL fetching, or master-index mutation."
+    },
+    {
+      "category": "generated_artifact",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "no repo writes except --rebuild, which is not used by validation records",
+      "expected_runtime": "seconds",
+      "advisory_or_required": "required",
+      "test_id": "public_search_index_builder_json",
+      "label": "Public search index builder JSON preview",
+      "command": "python scripts/build_public_search_index.py --json",
+      "failure_means": "Public search index builder JSON preview failed.",
+      "notes": "P55 local_index_only generated index validation; no live source calls, deployment, downloads, uploads, arbitrary URL fetching, or master-index mutation."
+    },
+    {
+      "category": "generated_artifact",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "no repo writes except --rebuild, which is not used by validation records",
+      "expected_runtime": "seconds",
+      "advisory_or_required": "required",
+      "test_id": "public_search_index_validator",
+      "label": "Public search index validator",
+      "command": "python scripts/validate_public_search_index.py",
+      "failure_means": "Committed public search index is invalid or unsafe.",
+      "notes": "P55 local_index_only generated index validation; no live source calls, deployment, downloads, uploads, arbitrary URL fetching, or master-index mutation."
+    },
+    {
+      "category": "generated_artifact",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "no repo writes except --rebuild, which is not used by validation records",
+      "expected_runtime": "seconds",
+      "advisory_or_required": "required",
+      "test_id": "public_search_index_validator_json",
+      "label": "Public search index validator JSON",
+      "command": "python scripts/validate_public_search_index.py --json",
+      "failure_means": "Committed public search index JSON validation failed.",
+      "notes": "P55 local_index_only generated index validation; no live source calls, deployment, downloads, uploads, arbitrary URL fetching, or master-index mutation."
+    },
+    {
+      "category": "generated_artifact",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "no repo writes except --rebuild, which is not used by validation records",
+      "expected_runtime": "seconds",
+      "advisory_or_required": "required",
+      "test_id": "public_search_index_builder_validator",
+      "label": "P55 public search index builder validator",
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "failure_means": "P55 audit, docs, artifacts, or hard booleans regressed.",
+      "notes": "P55 local_index_only generated index validation; no live source calls, deployment, downloads, uploads, arbitrary URL fetching, or master-index mutation."
+    },
+    {
+      "category": "generated_artifact",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "no repo writes except --rebuild, which is not used by validation records",
+      "expected_runtime": "seconds",
+      "advisory_or_required": "required",
+      "test_id": "public_search_index_builder_validator_json",
+      "label": "P55 public search index builder validator JSON",
+      "command": "python scripts/validate_public_search_index_builder.py --json",
+      "failure_means": "P55 validator JSON output failed.",
+      "notes": "P55 local_index_only generated index validation; no live source calls, deployment, downloads, uploads, arbitrary URL fetching, or master-index mutation."
+    },
+    {
+      "category": "generated_artifact",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "no repo writes except --rebuild, which is not used by validation records",
+      "expected_runtime": "seconds",
+      "advisory_or_required": "required",
+      "test_id": "public_search_index_drift_guard",
+      "label": "Public search index generated artifact drift guard",
+      "command": "python scripts/check_generated_artifact_drift.py --artifact public_search_index",
+      "failure_means": "Generated artifact drift guard failed for public_search_index.",
+      "notes": "P55 local_index_only generated index validation; no live source calls, deployment, downloads, uploads, arbitrary URL fetching, or master-index mutation."
+    },
+    {
+      "category": "generated_artifact",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "no repo writes except --rebuild, which is not used by validation records",
+      "expected_runtime": "seconds",
+      "advisory_or_required": "required",
+      "test_id": "public_search_index_builder_tests",
+      "label": "Public search index builder tests",
+      "command": "python -m unittest tests.operations.test_public_search_index_builder tests.scripts.test_build_public_search_index tests.scripts.test_validate_public_search_index",
+      "failure_means": "Public search index builder tests failed.",
+      "notes": "P55 local_index_only generated index validation; no live source calls, deployment, downloads, uploads, arbitrary URL fetching, or master-index mutation."
     }
   ]
 }

@@ -182,7 +182,15 @@
         "staged_pack_inspector",
         "staged_pack_inspector_validator",
         "staged_pack_inspector_tests",
-        "validate_only_pack_import_tool_tests"
+        "validate_only_pack_import_tool_tests",
+        "public_search_index_builder_check",
+        "public_search_index_builder_json",
+        "public_search_index_validator",
+        "public_search_index_validator_json",
+        "public_search_index_builder_validator",
+        "public_search_index_builder_validator_json",
+        "public_search_index_drift_guard",
+        "public_search_index_builder_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -360,7 +368,15 @@
         "staged_pack_inspector",
         "staged_pack_inspector_validator",
         "staged_pack_inspector_tests",
-        "validate_only_pack_import_tool_tests"
+        "validate_only_pack_import_tool_tests",
+        "public_search_index_builder_check",
+        "public_search_index_builder_json",
+        "public_search_index_validator",
+        "public_search_index_validator_json",
+        "public_search_index_builder_validator",
+        "public_search_index_builder_validator_json",
+        "public_search_index_drift_guard",
+        "public_search_index_builder_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -508,7 +524,9 @@
         "staged_pack_inspector",
         "staged_pack_inspector_validator",
         "staged_pack_inspector_tests",
-        "validate_only_pack_import_tool_tests"
+        "validate_only_pack_import_tool_tests",
+        "public_search_index_builder_validator",
+        "public_search_index_builder_validator_json"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -551,7 +569,15 @@
         "hosted_public_search_wrapper_validator",
         "hosted_public_search_wrapper_check_json",
         "hosted_public_search_wrapper_check",
-        "hosted_public_search_config_check"
+        "hosted_public_search_config_check",
+        "public_search_index_builder_check",
+        "public_search_index_builder_json",
+        "public_search_index_validator",
+        "public_search_index_validator_json",
+        "public_search_index_builder_validator",
+        "public_search_index_builder_validator_json",
+        "public_search_index_drift_guard",
+        "public_search_index_builder_tests"
       ],
       "required_status": "required",
       "when_to_run": "After web/API route-policy, status, route inventory, or hosting-pack changes.",
@@ -629,7 +655,10 @@
         "public_search_static_handoff_tests",
         "public_search_rehearsal_validator",
         "public_search_rehearsal_tests",
-        "docs_diff_check"
+        "docs_diff_check",
+        "public_search_index_builder_check",
+        "public_search_index_validator",
+        "public_search_index_drift_guard"
       ],
       "required_status": "required",
       "when_to_run": "After publication inventory, public static site, generated static site, route/data/client contract, base-path, GitHub Pages workflow, repository layout, or future static-hosting preparation changes.",
@@ -755,7 +784,15 @@
         "staged_pack_inspector",
         "staged_pack_inspector_validator",
         "staged_pack_inspector_tests",
-        "validate_only_pack_import_tool_tests"
+        "validate_only_pack_import_tool_tests",
+        "public_search_index_builder_check",
+        "public_search_index_builder_json",
+        "public_search_index_validator",
+        "public_search_index_validator_json",
+        "public_search_index_builder_validator",
+        "public_search_index_builder_validator_json",
+        "public_search_index_drift_guard",
+        "public_search_index_builder_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",

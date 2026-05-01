@@ -592,3 +592,15 @@ not deployed. Live probes, downloads, uploads, installs, local paths, arbitrary
 URL fetch, accounts, telemetry, source connectors, AI runtime, and index
 mutation remain disabled or absent. The next backend-facing branch is
 `p55-public-search-index-builder-v0`.
+
+Public Search Index Builder v0 records the P55 checkpoint under
+`control/audits/public-search-index-builder-v0/`. It builds and validates the
+first committed public-safe search index bundle under `data/public_index` from
+controlled source inventory plus fixture/recorded metadata, integrates that
+bundle into the local public-search API, and keeps hosted-wrapper compatibility
+without deploying a backend. The public index is JSON/NDJSON plus manifests and
+checksums; SQLite/FTS5 remains an optional local generation capability, not a
+committed runtime requirement. Live probes, external source calls, private path
+ingestion, executable payloads, downloads, uploads, telemetry, AI runtime,
+pack import, staging runtime, and master-index mutation remain absent. The
+next backend-facing branch is `p56-static-site-search-integration-v0`.

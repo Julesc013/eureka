@@ -246,10 +246,10 @@ docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md
 ```
 
 The key hosted gates are: API contract passes, result-card contract passes,
-safety guard passes, local index root remains server-owned, no local path
-params, no live probes, no downloads, no uploads, stable error mapping, defined
-HTML/JSON behavior, operator flags, no production claim, and accepted
-logging/privacy posture.
+safety guard passes, generated public index exists and validates, local index
+root remains server-owned, no local path params, no live probes, no downloads,
+no uploads, stable error mapping, defined HTML/JSON behavior, operator flags,
+no production claim, and accepted logging/privacy posture.
 
 ## Still Future
 
@@ -276,3 +276,6 @@ Implemented static publication only:
   review, and contract alignment without deploying hosted search or enabling
   live probes, downloads, installs, uploads, local path search, accounts,
   telemetry, or external calls.
+- Public Search Index Builder v0 adds the generated `data/public_index` bundle
+  and validates it without live source calls, private path ingestion,
+  executable payloads, downloads, uploads, or master-index mutation.
