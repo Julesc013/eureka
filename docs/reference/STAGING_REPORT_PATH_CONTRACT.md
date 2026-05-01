@@ -117,6 +117,13 @@ exists, no staged state is created, and the manifest format has no public
 search, local index, runtime source registry, upload, relay, snapshot, or
 master index impact.
 
+Staged Pack Inspector v0 now reads those manifests in read-only mode. It
+defaults to stdout, accepts explicit manifest paths or roots, validates first,
+and redacts obvious private paths and secrets. No staging runtime exists: the
+inspector does not stage, does not import, does not index, does not upload,
+does not mutate public search, does not mutate a local index, and does not
+mutate the master index. Staged records remain candidates.
+
 ## Surface Impact
 
 Native clients may later choose app-local private report roots. Relay surfaces
@@ -126,6 +133,6 @@ output must not read report roots by default.
 
 ## Deferred
 
-Still future: staged pack inspector, local quarantine/staging tool, staging
-report writer runtime, local index candidate mode, contribution queue candidate
-export, native staging UI, and any hosted submission path.
+Still future: local quarantine/staging tool, staging report writer runtime,
+local index candidate mode, contribution queue candidate export, native
+staging UI, and any hosted submission path.

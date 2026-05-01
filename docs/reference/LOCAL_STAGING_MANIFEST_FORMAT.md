@@ -178,6 +178,14 @@ Pack Inspector v0. The future inspector should read manifests, report staged
 candidate posture, and still avoid public search, local index, runtime source
 registry, relay, snapshot, upload, or master-index mutation.
 
+Staged Pack Inspector v0 is now implemented as a read-only inspection layer.
+It validates explicit manifests, explicit manifest roots, or committed
+synthetic examples, then summarizes staged candidates and no-mutation
+guarantees. It is not a staging runtime: no staging runtime exists, and the
+inspector does not stage, does not import, does not index, does not upload,
+does not mutate public search, does not mutate a local index, and does not
+mutate the master index.
+
 Native clients may later display local/private staging manifests from
 application-local data roots. Relay must not expose staged data by default.
 Snapshots must exclude local/private staging manifests by default. Typed AI
@@ -206,8 +214,7 @@ master-index mutation.
 
 ## Deferred
 
-Still future: Staged Pack Inspector v0, local staging tool, runtime staging
-directories, staged delete/reset tooling, local index candidate planning,
-contribution queue export, native staging UI, hosted submission, rights
-clearance, malware safety review, production readiness, and any master-index
-acceptance path.
+Still future: local staging tool, runtime staging directories, staged
+delete/reset tooling, local index candidate planning, contribution queue
+export, native staging UI, hosted submission, rights clearance, malware safety
+review, production readiness, and any master-index acceptance path.

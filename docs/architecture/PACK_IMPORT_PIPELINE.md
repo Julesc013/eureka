@@ -77,6 +77,13 @@ No staging runtime exists; it does not create staged state, copy pack contents,
 mutate public search, mutate a local index, mutate runtime source registry
 state, upload, or mutate the master index.
 
+Staged Pack Inspector v0 now provides read-only inspection of local staging
+manifests and committed synthetic examples. It validates manifests, summarizes
+candidate pack/entity metadata, redacts private paths and secrets, and reports
+hard no-mutation guarantees. It does not stage, does not import, does not
+index, does not upload, does not mutate public search, does not mutate a local
+index, and does not mutate the master index.
+
 AI Provider Contract v0 is adjacent but not part of import runtime. Future AI
 outputs can be validated as typed suggestions through
 `scripts/validate_ai_output.py` before they draft contributions, but the import

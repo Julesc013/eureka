@@ -1,0 +1,46 @@
+{
+  "report_id": "staged_pack_inspector_v0",
+  "created_by_slice": "staged_pack_inspector_v0",
+  "status": "implemented_read_only",
+  "inspector_script": "scripts/inspect_staged_pack.py",
+  "validator_script": "scripts/validate_staged_pack_inspector.py",
+  "example_manifest_root": "examples/local_staging_manifests/minimal_local_staging_manifest_v0",
+  "validation_command": "python scripts/validate_staged_pack_inspector.py",
+  "inspection_commands": [
+    "python scripts/inspect_staged_pack.py --list-examples",
+    "python scripts/inspect_staged_pack.py --all-examples",
+    "python scripts/inspect_staged_pack.py --all-examples --json"
+  ],
+  "staging_runtime_implemented": false,
+  "staging_performed": false,
+  "import_performed": false,
+  "indexing_performed": false,
+  "upload_performed": false,
+  "runtime_mutation_performed": false,
+  "master_index_mutation_performed": false,
+  "network_performed": false,
+  "model_calls_performed": false,
+  "public_search_mutated": false,
+  "local_index_mutated": false,
+  "read_only": true,
+  "examples_are_synthetic": true,
+  "redaction_policy": {
+    "private_paths_redacted": true,
+    "secret_like_values_redacted": true,
+    "committed_examples_contain_real_private_paths": false
+  },
+  "candidate_not_truth_policy": {
+    "staged_entities_are_candidates": true,
+    "canonical_truth_claimed": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "master_index_acceptance_claimed": false
+  },
+  "next_recommended_milestone": "Manual Observation Batch 0 Execution, human-operated",
+  "codex_safe_alternative": "AI-Assisted Evidence Drafting Plan v0",
+  "notes": [
+    "The inspector is read-only and validates manifests by default.",
+    "It writes no files and creates no local staging/report directories.",
+    "Future Local Quarantine/Staging Tool v0 remains deferred until explicit approval."
+  ]
+}

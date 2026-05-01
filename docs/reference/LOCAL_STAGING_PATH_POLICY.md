@@ -31,6 +31,13 @@ No staging runtime exists, no `.eureka-local/` state is created, and the
 manifest format does not mutate public search, local indexes, runtime source
 registry state, or the master index.
 
+Staged Pack Inspector v0 is read-only. It may inspect explicit manifests,
+explicit manifest roots, or committed synthetic examples and summarize
+candidate metadata, but it does not stage, does not import, does not index,
+does not upload, does not mutate public search, does not mutate a local index,
+and does not mutate the master index. It also creates no local staging
+directories.
+
 ## Prohibited Roots
 
 Future staging must not write under:

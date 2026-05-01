@@ -18,6 +18,11 @@ Current files:
   and path contract. The governed schema lives at
   `contracts/packs/local_staging_manifest.v0.json`, with a synthetic example
   under `examples/local_staging_manifests/`.
+- Staged Pack Inspector v0 is recorded in the staging model and path contract.
+  `scripts/inspect_staged_pack.py` is read-only and stdout-only: it inspects
+  explicit manifests, explicit roots, or committed synthetic examples and does
+  not create staging runtime, staged state, import behavior, local index
+  mutation, public-search mutation, upload, or master-index mutation.
 
 Future local staging remains disabled by default. No `.eureka-local/`,
 `.eureka-cache/`, `.eureka-staging/`, or `.eureka-reports/` directory should

@@ -174,6 +174,19 @@
     "staging_runtime_implemented": false,
     "future_dependency": "Staged Pack Inspector v0"
   },
+  "staged_pack_inspector": {
+    "script": "scripts/inspect_staged_pack.py",
+    "validator_command": "python scripts/validate_staged_pack_inspector.py",
+    "default_mode": "read_only_all_examples",
+    "status": "implemented_read_only",
+    "staging_runtime_implemented": false,
+    "creates_staged_state": false,
+    "imports_packs": false,
+    "mutates_public_search": false,
+    "mutates_local_index": false,
+    "mutates_master_index": false,
+    "future_dependency": "Local Quarantine/Staging Tool v0 requires explicit approval after inspector review"
+  },
   "created_by_slice": "local_quarantine_staging_model_v0",
   "notes": [
     "This model is planning-only and creates no runtime staging state.",

@@ -142,6 +142,19 @@
     "staging_runtime_implemented": false,
     "future_staged_inspector_dependency": true
   },
+  "staged_pack_inspector": {
+    "script": "scripts/inspect_staged_pack.py",
+    "validator_command": "python scripts/validate_staged_pack_inspector.py",
+    "default_output_mode": "stdout",
+    "file_write_supported": false,
+    "status": "implemented_read_only",
+    "redacts_private_paths": true,
+    "staging_runtime_implemented": false,
+    "creates_staged_state": false,
+    "mutates_public_search": false,
+    "mutates_local_index": false,
+    "mutates_master_index": false
+  },
   "native_client_policy": {
     "future_native_roots": "application-local-data root only unless user overrides",
     "private_by_default": true,

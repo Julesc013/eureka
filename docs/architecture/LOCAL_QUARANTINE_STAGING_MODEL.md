@@ -59,6 +59,13 @@ runtime exists and it does not create staged state, copy pack contents, mutate
 public search, mutate a local index, mutate the runtime source registry, or
 mutate the master index.
 
+Staged Pack Inspector v0 now provides read-only inspection of those manifests.
+It validates and summarizes explicit manifests, explicit manifest roots, or
+committed synthetic examples. It does not stage, does not import, does not
+index, does not upload, does not mutate public search, does not mutate a local
+index, and does not mutate the master index. Inspector output keeps staged
+records as candidates, not canonical records.
+
 Forbidden roots include `site/dist`, `site/`, public data, `external`,
 `runtime`, canonical `control/inventory` source files, `evals`,
 `snapshots/examples`, `crates`, and `docs`.
@@ -122,7 +129,6 @@ in a future review-gated path.
 
 ## Deferred
 
-Still future: staged pack inspector, local quarantine/staging tool, staged
-delete/reset tool, local index candidate planning, contribution queue
-candidate export, native staging UI planning, hosted submission, and any
-staging runtime.
+Still future: local quarantine/staging tool, staged delete/reset tool, local
+index candidate planning, contribution queue candidate export, native staging
+UI planning, hosted submission, and any staging runtime.
