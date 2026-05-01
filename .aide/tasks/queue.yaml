@@ -685,9 +685,9 @@
     {
       "id": "public_search_production_contract_v0",
       "title": "P53 Public Search Production Contract v0",
-      "status": "recommended_next_codex_safe",
+      "status": "completed",
       "priority": 93,
-      "notes": "Next Codex-safe branch should define production-facing public search contracts without hosting, live probes, source connector runtime, telemetry, accounts, uploads, downloads, AI runtime, or production claims. GitHub Pages operator evidence capture may proceed in parallel."
+      "notes": "Implemented P53 production-facing public search contract under control/audits/public-search-production-contract-v0 with hardened schemas, reference docs, validator/tests, and metadata. It adds no hosted backend, live probes, source connector runtime, telemetry runtime, accounts, uploads, downloads, installers, arbitrary URL fetching, AI runtime, index mutation, or hosted-search claim."
     },
     {
       "id": "github_pages_operator_evidence_capture_v0",
@@ -695,6 +695,13 @@
       "status": "operator_gated_parallel",
       "priority": 94,
       "notes": "Human/operator follow-up: enable Pages Source: GitHub Actions, rerun or dispatch the Pages workflow, record run URL, deployed URL, commit SHA, and page checks. Do not fabricate deployment evidence."
+    },
+    {
+      "id": "hosted_public_search_wrapper_v0",
+      "title": "P54 Hosted Public Search Wrapper v0",
+      "status": "recommended_next_codex_safe",
+      "priority": 95,
+      "notes": "Next Codex-safe branch should implement the P53 contract as a hosted wrapper in local_index_only mode only, preserving disabled live probes, downloads, uploads, installs, local paths, arbitrary URL fetch, accounts, telemetry, AI runtime, source connector runtime, and no production claim."
     }
   ]
 }

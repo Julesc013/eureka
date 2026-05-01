@@ -1637,3 +1637,28 @@ deployment provider config, custom-domain setup, index mutation, master-index
 mutation, or production readiness claims. The next Codex-safe branch is
 `p53-public-search-production-contract-v0`; GitHub Pages settings enablement
 and deployment evidence capture remain operator-parallel work.
+
+## ADR-133: Freeze Public Search Contract Before Hosting
+
+Status: accepted
+
+Public Search Production Contract v0 adds
+`control/audits/public-search-production-contract-v0/`,
+production-facing public-search schemas under `contracts/api/`, reference docs,
+`scripts/validate_public_search_production_contract.py`, focused tests, and
+operating metadata updates.
+
+The decision is to define the contract that P54 must implement before a hosted
+wrapper exists. The active mode remains `local_index_only`; v0 search is
+GET-compatible; query length is capped at 160; default/max result limits are
+10/25; errors are public-safe; and result-card, source-status,
+evidence-summary, absence, and status schemas align with the existing local
+prototype runtime and static handoff.
+
+P53 deliberately does not add hosted backend behavior, deployment provider
+config, live probes, source connectors, external source calls, scraping, model
+calls, AI runtime, credentials, telemetry runtime, accounts, uploads,
+downloads, installers, arbitrary URL fetching, local path access, index
+mutation, master-index mutation, or a hosted-search claim. The next Codex-safe
+branch is `p54-hosted-public-search-wrapper-v0`; GitHub Pages settings
+enablement and deployment evidence capture remain operator-parallel work.

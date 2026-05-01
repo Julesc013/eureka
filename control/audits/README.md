@@ -272,6 +272,14 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   unverified status without adding hosted backend behavior, public search
   hosting, live probes, credentials, telemetry, accounts, uploads, downloads,
   installers, or deployment-success claims.
+- `public-search-production-contract-v0/`: P53 production-facing public search
+  contract checkpoint for the future hosted local-index wrapper. It records
+  route classifications, request/response/error/result-card/source-status/
+  evidence-summary/absence/status schema alignment, safety limits, static
+  handoff rules, P54 wrapper requirements, verification, and remaining gaps
+  without adding hosted backend behavior, live probes, source connectors,
+  telemetry runtime, accounts, uploads, downloads, installers, arbitrary URL
+  fetching, index mutation, AI runtime, or hosted-search claims.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

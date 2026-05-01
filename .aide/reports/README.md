@@ -217,3 +217,11 @@ report is needed; this is static deployment evidence governance only and does
 not add backend hosting, public search hosting, live probes, source connectors,
 credentials, telemetry, accounts, uploads, downloads, installers, or
 deployment-success claims.
+
+Public Search Production Contract v0 records its committed audit pack under
+`control/audits/public-search-production-contract-v0/`, plus validator and
+tests under `scripts/` and `tests/`. No separate AIDE runtime report is needed;
+this is contract governance for the future hosted local-index wrapper only and
+does not add backend hosting, live probes, source connectors, telemetry
+runtime, accounts, uploads, downloads, installers, arbitrary URL fetching,
+index mutation, AI runtime, or hosted-search claims.

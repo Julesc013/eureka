@@ -810,6 +810,18 @@ claim. Codex-safe next work may proceed to
 `p53-public-search-production-contract-v0`; operator-parallel work remains
 GitHub Pages settings enablement and evidence capture.
 
+Public Search Production Contract v0 is recorded under
+`control/audits/public-search-production-contract-v0/`. It freezes the
+production-facing v0 contract for the future hosted local-index wrapper:
+`local_index_only` remains the only active mode, query length is capped at 160,
+the default/max result limits are 10/25, public-safe error codes are stable, and
+result-card/source-status/evidence-summary/absence/status schemas are aligned.
+P53 adds no hosted backend, live probes, source connector runtime, telemetry
+runtime, accounts, uploads, downloads, installers, arbitrary URL fetching, AI
+runtime, index mutation, or hosted-search claim. The next Codex-safe branch is
+`p54-hosted-public-search-wrapper-v0`; GitHub Pages evidence capture remains
+operator-parallel work.
+
 ## Deferred Priorities
 
 These are intentionally not the next milestone:

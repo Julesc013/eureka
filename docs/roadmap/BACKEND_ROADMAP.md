@@ -572,3 +572,14 @@ unverified; prior committed evidence still shows a Pages configuration failure
 before artifact upload. Backend behavior remains unchanged. The next
 backend-facing branch is `p53-public-search-production-contract-v0`, while
 GitHub Pages enablement and deployment evidence capture remain operator work.
+
+Public Search Production Contract v0 records the P53 checkpoint under
+`control/audits/public-search-production-contract-v0/`. It freezes the future
+hosted public-search wrapper contract around the current Python oracle and
+local/prototype public search behavior: `local_index_only` only, 160-character
+queries, 10/25 default/max results, public-safe errors, result-card alignment,
+source/evidence/absence/status schemas, static-to-dynamic handoff rules, and
+explicit disabled flags for live probes, downloads, uploads, installs, local
+paths, arbitrary URL fetch, accounts, and telemetry. Backend behavior remains
+unchanged. The next backend-facing branch is
+`p54-hosted-public-search-wrapper-v0`.

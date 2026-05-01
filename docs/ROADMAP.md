@@ -681,3 +681,13 @@ public search hosting, live probes, credentials, telemetry, accounts, uploads,
 downloads, installers, or production claim. The Codex-safe next branch is
 `p53-public-search-production-contract-v0`; the operator-parallel follow-up is
 GitHub Pages evidence capture after repository Pages settings are enabled.
+
+Public Search Production Contract v0 records the P53 checkpoint under
+`control/audits/public-search-production-contract-v0/`. It hardens the future
+hosted local-index contract without deploying it: GET-only v0 routes are
+classified, request/response/error/result-card/source/evidence/absence/status
+schemas are aligned, forbidden parameters cover local paths, arbitrary URL
+fetch, credentials, live probes, downloads, installs, uploads, and execution,
+and P54 wrapper requirements are documented. The next Codex-safe branch is
+`p54-hosted-public-search-wrapper-v0`; the wrapper must still implement
+local_index_only only and preserve all disabled capability flags.

@@ -2600,6 +2600,54 @@
       "notes": "Checks schema parsing, validator JSON behavior, local runtime route status, local_index_only mode, required error codes, forbidden inputs, disabled live probes, and static-site no-hosted-search posture without adding hosted behavior."
     },
     {
+      "test_id": "public_search_production_contract_validator",
+      "label": "Public search production contract validator",
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "category": "publication",
+      "owner_area": "contracts/api",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P53 public search production contract files, schemas, route classifications, disabled flags, or no-hosted/no-live posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates the P53 contract/audit pack only; it adds no hosted backend, live probes, source connectors, telemetry runtime, accounts, uploads, downloads, installers, arbitrary URL fetch, index mutation, AI runtime, or hosted-search claim."
+    },
+    {
+      "test_id": "public_search_production_contract_tests",
+      "label": "Public search production contract tests",
+      "command": "python -m unittest tests.operations.test_public_search_production_contract tests.scripts.test_validate_public_search_production_contract",
+      "category": "publication",
+      "owner_area": "contracts/api",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary subprocess output only",
+      "expected_runtime": "seconds",
+      "failure_means": "P53 production-facing request, response, error, result-card, source, evidence, absence, status, static-handoff, or P54 wrapper requirements regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused tests for the P53 validator and audit pack; they do not deploy, call external sources, mutate indexes, stage/import packs, enable live probes, or claim hosted search."
+    },
+    {
       "test_id": "public_search_result_card_contract_validator",
       "label": "Public search result-card contract validator",
       "command": "python scripts/validate_public_search_result_card_contract.py",
