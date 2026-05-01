@@ -720,16 +720,16 @@
     {
       "id": "public_search_safety_evidence_v0",
       "title": "P57 Public Search Safety Evidence v0",
-      "status": "queued_codex_safe",
+      "status": "completed",
       "priority": 98,
-      "notes": "Next Codex-safe milestone after P56: expand public search safety evidence without enabling live probes, downloads, uploads, local paths, accounts, telemetry, arbitrary URL fetch, or external calls."
+      "notes": "Implemented P57 public search safety evidence with local hosted-wrapper in-process runner, 32 blocked request cases, safe-query/limit/status/static-handoff/public-index/privacy checks, audit pack, validator/tests, and metadata. No hosted deployment, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, index mutation, AI runtime, or production claim was added."
     },
     {
       "id": "hosted_public_search_rehearsal_v0",
       "title": "P58 Hosted Public Search Rehearsal v0",
-      "status": "operator_gated_future",
+      "status": "queued_codex_safe",
       "priority": 99,
-      "notes": "Requires an operator-hosted wrapper URL and recorded deployment evidence before rehearsal can claim hosted behavior."
+      "notes": "Next Codex-safe branch after P57. Must not claim hosted behavior unless an operator-hosted wrapper URL and deployment evidence exist; local rehearsal may remain evidence-only."
     },
     {
       "id": "query_observation_contract_v0",
@@ -786,6 +786,13 @@
       "status": "queued_codex_safe",
       "priority": 107,
       "notes": "Future static/dynamic absence explanation page after candidate and promotion policies; no master-index mutation or global non-existence claim."
+    },
+    {
+      "id": "query_privacy_poisoning_guard_v0",
+      "title": "P67 Query Privacy and Poisoning Guard v0",
+      "status": "queued_codex_safe",
+      "priority": 108,
+      "notes": "Future query-intelligence safety milestone after known absence work; no telemetry or public query learning runtime until privacy/poisoning boundaries are governed."
     }
   ]
 }

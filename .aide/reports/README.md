@@ -251,3 +251,10 @@ runtime report is needed; this is static publication integration only and does
 not deploy a backend, configure a verified URL, enable live probes, add
 downloads/uploads/accounts/telemetry, fetch arbitrary URLs, mutate indexes,
 import packs, stage packs, or claim production search quality.
+
+Public Search Safety Evidence v0 records its committed audit pack under
+`control/audits/public-search-safety-evidence-v0/`, plus local evidence runner,
+validator, docs, and tests. No separate AIDE runtime report is needed; this is
+local/public-alpha safety evidence only and does not deploy a backend, enable
+live probes, add downloads/uploads/installs/accounts/telemetry, fetch arbitrary
+URLs, mutate indexes, or claim edge rate limits or production safety.

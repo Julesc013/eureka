@@ -440,6 +440,16 @@ steps:
     run: python scripts/validate_public_search_rehearsal.py
   - id: public_search_rehearsal_tests_final
     run: python -m unittest tests.operations.test_public_search_rehearsal tests.scripts.test_validate_public_search_rehearsal tests.hardening.test_public_search_rehearsal_safety
+  - id: public_search_safety_evidence_runner
+    run: python scripts/run_public_search_safety_evidence.py
+  - id: public_search_safety_evidence_runner_json
+    run: python scripts/run_public_search_safety_evidence.py --json
+  - id: public_search_safety_evidence_validator
+    run: python scripts/validate_public_search_safety_evidence.py
+  - id: public_search_safety_evidence_validator_json
+    run: python scripts/validate_public_search_safety_evidence.py --json
+  - id: public_search_safety_evidence_tests
+    run: python -m unittest tests.operations.test_public_search_safety_evidence tests.scripts.test_run_public_search_safety_evidence tests.scripts.test_validate_public_search_safety_evidence
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.
@@ -494,3 +504,4 @@ notes:
   - Rust workspace checking is intentionally not required here because normal Python verification must not depend on a Rust toolchain; use `cargo check --workspace --manifest-path crates/Cargo.toml` and `cargo test --workspace --manifest-path crates/Cargo.toml` as optional local checks.
   - AI-Assisted Evidence Drafting Plan v0 validation is planning/example-only: it checks disabled AI defaults, typed output validation, candidate-only examples, required review, no model calls, no API keys/secrets, no telemetry, and no public-search/local-index/master-index mutation.
   - This command contract is repo-operating metadata, not proof of a local AIDE product CLI.
+  - Public Search Safety Evidence v0 is stdlib-only local/public-alpha safety evidence using an in-process hosted-wrapper harness; it adds no deployment, live probes, external calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, index mutation, edge rate-limit claim, or production claim.

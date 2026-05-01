@@ -600,8 +600,9 @@
         "public-search-index-builder-v0"
       ],
       "title": "Wire the static search handoff to the generated public index and hosted wrapper only when honest backend evidence exists",
-      "status": "addressed_by_static_site_search_integration_v0_backend_still_unconfigured",
-      "suggested_milestone": "P57 Public Search Safety Evidence v0"
+      "status": "addressed_by_p57",
+      "suggested_milestone": "P57 Public Search Safety Evidence v0",
+      "addressed_by": "control/audits/public-search-safety-evidence-v0/public_search_safety_evidence_report.json"
     },
     {
       "id": "audit-backlog-static-search-backend-evidence",

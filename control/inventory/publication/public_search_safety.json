@@ -285,10 +285,18 @@
     "Public Search Rehearsal v0 records local safe-query and blocked-request evidence.",
     "Hosted public search exposure remains blocked until the readiness checklist, operator controls, and hosted rehearsal gates are satisfied.",
     "Hosted Public Search Wrapper v0 adds local/prototype wrapper readiness and rehearsal checks for local_index_only routes only. It does not deploy hosted search, enable live probes, add telemetry, add accounts, or change no_hosted_public_search_live.",
-    "Static Site Search Integration v0 adds no-JS search surfaces and public data summaries while preserving disabled hosted search, live probes, downloads, uploads, local paths, arbitrary URL fetch, accounts, and telemetry."
+    "Static Site Search Integration v0 adds no-JS search surfaces and public data summaries while preserving disabled hosted search, live probes, downloads, uploads, local paths, arbitrary URL fetch, accounts, and telemetry.",
+    "Public Search Safety Evidence v0 records local safe-query, blocked-request, limit/status, static handoff, public index, hosted-wrapper, privacy/redaction, and operator-gated rate-limit evidence without hosted deployment or live probes."
   ],
   "production_contract": "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
   "production_contract_status": "frozen_for_p54_hosted_wrapper",
   "hosted_wrapper_report": "control/audits/hosted-public-search-wrapper-v0/hosted_public_search_wrapper_report.json",
-  "hosted_wrapper_report_status": "implemented_local_prototype_not_deployed"
+  "hosted_wrapper_report_status": "implemented_local_prototype_not_deployed",
+  "safety_evidence_report": "control/audits/public-search-safety-evidence-v0/public_search_safety_evidence_report.json",
+  "safety_evidence_status": "passed_local_public_alpha",
+  "safety_evidence_runner": "scripts/run_public_search_safety_evidence.py",
+  "safety_evidence_validator": "scripts/validate_public_search_safety_evidence.py",
+  "blocked_request_evidence_count": 32,
+  "safe_query_evidence_count": 4,
+  "rate_limit_edge_evidence_status": "operator_gated"
 }

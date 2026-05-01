@@ -4265,6 +4265,109 @@
       "failure_means": "P56 audit pack, generated surfaces, config JSON, public index summary, or validator CLI behavior regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P56 tests; they do not call external sources, deploy, mutate indexes, import packs, stage packs, or load AI providers."
+    },
+    {
+      "test_id": "public_search_safety_evidence_runner",
+      "label": "Public search safety evidence runner",
+      "command": "python scripts/run_public_search_safety_evidence.py",
+      "category": "safety_evidence",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The local public search safety evidence matrix failed or stopped proving safe query, blocked request, status, static handoff, or public index safety.",
+      "advisory_or_required": "required",
+      "notes": "Added by P57; uses an in-process hosted-wrapper harness and performs no external calls, deployment, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or index mutation."
+    },
+    {
+      "test_id": "public_search_safety_evidence_runner_json",
+      "label": "Public search safety evidence runner JSON",
+      "command": "python scripts/run_public_search_safety_evidence.py --json",
+      "category": "safety_evidence",
+      "owner_area": "scripts",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Machine-readable public search safety evidence could not be produced.",
+      "advisory_or_required": "required",
+      "notes": "P57 JSON evidence for route, blocked-parameter, limit, static handoff, public index, and privacy/redaction checks."
+    },
+    {
+      "test_id": "public_search_safety_evidence_validator",
+      "label": "Public search safety evidence validator",
+      "command": "python scripts/validate_public_search_safety_evidence.py",
+      "category": "audit_validation",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The P57 audit pack, hard false booleans, forbidden-parameter coverage, rate-limit honesty, or docs drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates P57 without network calls or hosted deployment claims."
+    },
+    {
+      "test_id": "public_search_safety_evidence_validator_json",
+      "label": "Public search safety evidence validator JSON",
+      "command": "python scripts/validate_public_search_safety_evidence.py --json",
+      "category": "audit_validation",
+      "owner_area": "scripts",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Machine-readable P57 validation output stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable validator for P57."
+    },
+    {
+      "test_id": "public_search_safety_evidence_tests",
+      "label": "Public search safety evidence tests",
+      "command": "python -m unittest tests.operations.test_public_search_safety_evidence tests.scripts.test_run_public_search_safety_evidence tests.scripts.test_validate_public_search_safety_evidence",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P57 evidence, validator, audit pack, static handoff, public index, or hard false boolean tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P57 tests; no external calls, deployment, live probes, model calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or index mutation."
     }
   ]
 }

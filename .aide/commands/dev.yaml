@@ -786,6 +786,16 @@ steps:
     run: python scripts/validate_local_public_search_runtime.py --json
   - id: local_public_search_runtime_tests
     run: python -m unittest runtime.gateway.tests.test_public_search_api runtime.gateway.tests.test_public_search_validation surfaces.web.tests.test_public_search_routes surfaces.web.tests.test_public_search_html tests.integration.test_public_search_runtime tests.hardening.test_public_search_safety_runtime tests.scripts.test_public_search_smoke tests.scripts.test_validate_local_public_search_runtime tests.operations.test_local_public_search_runtime
+  - id: public_search_safety_evidence_runner
+    run: python scripts/run_public_search_safety_evidence.py
+  - id: public_search_safety_evidence_runner_json
+    run: python scripts/run_public_search_safety_evidence.py --json
+  - id: public_search_safety_evidence_validator
+    run: python scripts/validate_public_search_safety_evidence.py
+  - id: public_search_safety_evidence_validator_json
+    run: python scripts/validate_public_search_safety_evidence.py --json
+  - id: public_search_safety_evidence_tests
+    run: python -m unittest tests.operations.test_public_search_safety_evidence tests.scripts.test_run_public_search_safety_evidence tests.scripts.test_validate_public_search_safety_evidence
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
@@ -870,3 +880,4 @@ notes:
   - The bounded local-task proof remains bootstrap-scale, uses a caller-provided local task-store root only, persists synchronous JSON task records, and does not imply background scheduling, retries, priorities, worker daemons, or distributed queue semantics.
   - AI-Assisted Evidence Drafting Plan v0 is planning/example/validation-only: it defines optional AI drafting as candidate-only assistance behind typed output validation and required review, with disabled remote providers/private data by default and no model calls, API keys, telemetry, search/index, or master-index mutation.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.
+  - Public Search Safety Evidence v0 is stdlib-only local/public-alpha safety evidence using an in-process hosted-wrapper harness; it adds no deployment, live probes, external calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, index mutation, edge rate-limit claim, or production claim.
