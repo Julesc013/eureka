@@ -820,3 +820,7 @@ Known Absence Page v0 is contract-only. It defines scoped absence, not global ab
 
 After P67, the recommended next branch is P68 Demand Dashboard v0. Demand dashboard work must remain governed by privacy/poisoning guard outputs and must not fabricate demand counts, add telemetry, track accounts/IPs, or treat aggregate demand as truth.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## Query Intelligence After P68
+
+P68 completes the first Query Intelligence Plane contract sequence. Next recommended branch: P69 Source Sync Worker Contract v0. Do not turn demand dashboard examples into telemetry or real demand claims.

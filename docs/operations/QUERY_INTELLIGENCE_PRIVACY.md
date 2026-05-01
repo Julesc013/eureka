@@ -111,3 +111,7 @@ Known absence page work is contract-only and not telemetry. It adds no persisten
 
 The query privacy and poisoning guard is contract-only and not telemetry. It does not create persistent query logging, account tracking, IP tracking, analytics, WAF behavior, rate limiting, public search mutation, or query-intelligence mutation. It defines future decisions for redaction, rejection, quarantine, aggregate exclusion, and review before query learning.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## Demand Dashboard v0 Relation
+
+Demand Dashboard v0 is future/contract-only. It can later summarize privacy-filtered and poisoning-guarded aggregate demand, but P68 adds no telemetry, public query logging, account/IP tracking, real demand claims, runtime dashboard, candidate promotion, source sync, source cache/evidence ledger mutation, public-search ranking change, or index mutation.

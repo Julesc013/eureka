@@ -322,3 +322,7 @@ master-index mutation in any future candidate-aware work.
 
 P67 Query Privacy and Poisoning Guard v0 is contract-only and complements the existing public search safety posture. It does not implement WAF behavior, rate limiting, telemetry, account tracking, IP tracking, runtime moderation, public query logging, or hosted abuse protection. Future public search may reference guard decisions only after explicit runtime wiring and verification.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## Demand Dashboard v0 Relation
+
+Demand Dashboard v0 is future/contract-only. It can later summarize privacy-filtered and poisoning-guarded aggregate demand, but P68 adds no telemetry, public query logging, account/IP tracking, real demand claims, runtime dashboard, candidate promotion, source sync, source cache/evidence ledger mutation, public-search ranking change, or index mutation.

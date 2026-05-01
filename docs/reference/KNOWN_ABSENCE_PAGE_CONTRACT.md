@@ -37,3 +37,7 @@ Known absence pages can reference query observations, shared result cache entrie
 
 Query privacy and poisoning guard decisions are a future contract-only input for known absence pages. A known absence explanation should only use public-safe, privacy-filtered, poisoning-checked query context and must not let fake demand, source-stuffing, candidate-poisoning, private paths, secrets, IP addresses, account IDs, or private URLs into public aggregate learning. P67 does not create runtime known absence pages.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## Demand Dashboard v0 Relation
+
+Demand Dashboard v0 is future/contract-only. It can later summarize privacy-filtered and poisoning-guarded aggregate demand, but P68 adds no telemetry, public query logging, account/IP tracking, real demand claims, runtime dashboard, candidate promotion, source sync, source cache/evidence ledger mutation, public-search ranking change, or index mutation.

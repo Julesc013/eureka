@@ -340,3 +340,7 @@ Known Absence Page v0 is contract-only. It defines scoped absence, not global ab
 
 Future public search no-result/query-intelligence integration may include a query privacy and poisoning guard decision projection, but P67 is contract-only. Current public search does not persist guard decisions, mutate query observations/cache/miss/need/probe/candidate/known absence records, track accounts, track IPs, or export telemetry.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## Demand Dashboard v0 Relation
+
+Demand Dashboard v0 is future/contract-only. It can later summarize privacy-filtered and poisoning-guarded aggregate demand, but P68 adds no telemetry, public query logging, account/IP tracking, real demand claims, runtime dashboard, candidate promotion, source sync, source cache/evidence ledger mutation, public-search ranking change, or index mutation.

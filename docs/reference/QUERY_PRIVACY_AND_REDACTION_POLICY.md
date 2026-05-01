@@ -102,3 +102,7 @@ Known absence examples and future aggregates must reject or redact prohibited da
 
 P67 formalizes prohibited data handling for query-derived learning. Prohibited data includes raw private queries, private path values, secret values, API keys, auth tokens, passwords, private keys, private URLs, email addresses, phone numbers, IP address values, account ID values, local identifiers, and user file names. The query privacy and poisoning guard keeps raw query retention default none and blocks high privacy risk from public aggregation.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## Demand Dashboard v0 Relation
+
+Demand Dashboard v0 is future/contract-only. It can later summarize privacy-filtered and poisoning-guarded aggregate demand, but P68 adds no telemetry, public query logging, account/IP tracking, real demand claims, runtime dashboard, candidate promotion, source sync, source cache/evidence ledger mutation, public-search ranking change, or index mutation.

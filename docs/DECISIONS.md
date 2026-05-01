@@ -1855,3 +1855,7 @@ Known Absence Page v0 is contract-only. It defines scoped absence, not global ab
 
 Decision: P67 defines query privacy and poisoning guard as contract-only governance. Guard approval is not truth, source trust, candidate promotion, rights clearance, malware safety, or production abuse protection. Automatic acceptance and mutation are forbidden.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## P68 Decision
+
+Demand summaries are prioritization hints only. P68 examples are synthetic, privacy-filtered by policy, poisoning-aware, and not evidence of real public demand.

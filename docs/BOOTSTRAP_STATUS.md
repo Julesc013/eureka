@@ -973,3 +973,7 @@ Known Absence Page v0 is contract-only. It defines scoped absence, not global ab
 
 P67 Query Privacy and Poisoning Guard v0 is complete as contract/schema/example/validator work. It keeps raw query retention default none, classifies privacy and poisoning risk, blocks unsafe public aggregation, and adds no runtime guard, telemetry, account/IP tracking, query logging, external calls, or index mutation.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## P68 Demand Dashboard v0
+
+P68 adds the Demand Dashboard v0 contract, synthetic examples, validators, tests, and audit pack. It remains contract-only and does not implement analytics runtime, telemetry, account/IP tracking, real demand counts, source sync, or index mutation.

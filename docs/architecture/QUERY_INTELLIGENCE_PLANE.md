@@ -222,3 +222,7 @@ P67 Query Privacy and Poisoning Guard v0 adds privacy before learning and poison
 
 The guard classifies privacy risks, poisoning risks, policy actions, redaction, aggregate eligibility, and future object eligibility for query observations, shared result cache entries, miss ledgers, search needs, probe queue items, candidate records, promotion assessments, and known absence pages.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## Demand Dashboard v0
+
+Demand Dashboard v0 completes the first Query Intelligence Plane contract sequence with a future aggregate visibility layer for privacy-filtered aggregate demand. It is contract-only: no telemetry, account/IP tracking, persistent aggregation, public search mutation, query-intelligence mutation, source sync, candidate promotion, or index mutation is implemented.

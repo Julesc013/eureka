@@ -693,3 +693,7 @@ Known Absence Page v0 is contract-only. It defines scoped absence, not global ab
 
 Backend runtime must not wire query privacy and poisoning guard persistence until a future explicit runtime milestone. P67 only defines contract decisions and dry-run output; no database, queue, telemetry, account/IP tracking, public search blocking behavior, or index mutation is added.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## P68 Boundary
+
+Demand Dashboard v0 is not a backend service. Backend work must wait for governed source sync, source cache/evidence ledger, retention, and abuse-control contracts before any runtime aggregation exists.

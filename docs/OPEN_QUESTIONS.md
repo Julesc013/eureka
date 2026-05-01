@@ -213,3 +213,7 @@ Known Absence Page v0 is contract-only. It defines scoped absence, not global ab
 
 Open after P67: how future demand dashboard aggregation will prove privacy-filtered, poisoning-checked inputs without telemetry or fake counts; how deletion/export works if a runtime guard store is ever approved; and how operator rate limits remain separate from this contract.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## P68 Open Questions
+
+Future work must define retention/deletion, operator review, source sync, source cache/evidence ledger, connector approvals, and production abuse controls before a real demand dashboard can exist.

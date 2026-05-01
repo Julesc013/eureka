@@ -1,0 +1,525 @@
+{
+  "schema_version": "0.1.0",
+  "dashboard_snapshot_id": "example.demand_dashboard.minimal_dashboard_snapshot.v0",
+  "dashboard_snapshot_kind": "demand_dashboard_snapshot",
+  "status": "synthetic_example",
+  "created_by_tool": "p68_demand_dashboard_example_builder_v0",
+  "input_summary": {
+    "input_kind": "synthetic_example",
+    "input_refs": [
+      {
+        "ref_id": "example.query_guard.synthetic_public_safe",
+        "ref_kind": "query_guard_decision",
+        "status": "synthetic_example"
+      }
+    ],
+    "source_contracts_referenced": [
+      "query_observation",
+      "search_result_cache",
+      "search_miss_ledger",
+      "search_need_record",
+      "probe_queue",
+      "candidate_index",
+      "known_absence_page",
+      "query_guard_decision"
+    ],
+    "real_user_data_included": false,
+    "raw_queries_included": false,
+    "protected_data_included": false,
+    "limitations": [
+      "Inputs are synthetic contract examples only and are not read from logs, telemetry, accounts, IPs, or runtime stores."
+    ]
+  },
+  "privacy_guard_summary": {
+    "privacy_filter_required": true,
+    "guard_contract_ref": "contracts/query/query_guard_decision.v0.json",
+    "decisions_required_before_aggregation": true,
+    "high_privacy_risk_excluded": true,
+    "raw_query_aggregation_allowed": false,
+    "private_path_aggregation_allowed": false,
+    "secret_aggregation_allowed": false,
+    "user_identifier_aggregation_allowed": false,
+    "ip_address_aggregation_allowed": false,
+    "notes": [
+      "Raw queries, private paths, secrets, user identifiers, account identifiers, and IP addresses are not aggregate fields."
+    ]
+  },
+  "poisoning_guard_summary": {
+    "poisoning_filter_required": true,
+    "guard_contract_ref": "contracts/query/query_guard_decision.v0.json",
+    "fake_demand_excluded": true,
+    "spam_excluded": true,
+    "source_stuffing_excluded": true,
+    "candidate_poisoning_excluded": true,
+    "high_poisoning_risk_excluded": true,
+    "throttling_runtime_implemented": false,
+    "notes": [
+      "Fake demand, spam, source-stuffing, and candidate-poisoning are excluded before future aggregation."
+    ]
+  },
+  "dashboard_scope": {
+    "scope_kind": "synthetic_example",
+    "time_window_policy": "not_applicable_example",
+    "source_scope": [
+      "internet_archive_metadata",
+      "wayback_cdx_memento",
+      "github_releases"
+    ],
+    "query_scope": [
+      "old-platform software",
+      "compatibility evidence",
+      "source coverage gaps"
+    ],
+    "index_snapshot_refs": [
+      "public_index_snapshot_ref_future"
+    ],
+    "includes_live_probe_data": false,
+    "includes_external_calls": false,
+    "limitations": [
+      "No live probe data, external calls, runtime logs, or private local data are included."
+    ]
+  },
+  "aggregate_buckets": [
+    {
+      "bucket_id": "bucket.source_gap.internet_archive_metadata",
+      "bucket_type": "source_gap",
+      "label": "Internet Archive metadata source gap",
+      "normalized_key": "source_gap:internet_archive_metadata",
+      "count_policy": "synthetic_example_count",
+      "count_claimed_as_real_user_demand": false,
+      "privacy_safe": true,
+      "poisoning_filtered": true,
+      "limitations": [
+        "Synthetic or future-filtered bucket; no real user demand is claimed."
+      ],
+      "count_value": 3
+    },
+    {
+      "bucket_id": "bucket.source_gap.wayback",
+      "bucket_type": "source_gap",
+      "label": "Wayback/CDX/Memento source gap",
+      "normalized_key": "source_gap:wayback_cdx_memento",
+      "count_policy": "synthetic_example_count",
+      "count_claimed_as_real_user_demand": false,
+      "privacy_safe": true,
+      "poisoning_filtered": true,
+      "limitations": [
+        "Synthetic or future-filtered bucket; no real user demand is claimed."
+      ],
+      "count_value": 2
+    },
+    {
+      "bucket_id": "bucket.capability.member_enumeration",
+      "bucket_type": "capability_gap",
+      "label": "Container member enumeration gap",
+      "normalized_key": "capability:member_enumeration",
+      "count_policy": "synthetic_example_count",
+      "count_claimed_as_real_user_demand": false,
+      "privacy_safe": true,
+      "poisoning_filtered": true,
+      "limitations": [
+        "Synthetic or future-filtered bucket; no real user demand is claimed."
+      ],
+      "count_value": 1
+    },
+    {
+      "bucket_id": "bucket.manual_observation.batch0",
+      "bucket_type": "manual_observation_need",
+      "label": "Manual observation review needed",
+      "normalized_key": "manual_observation:batch0",
+      "count_policy": "synthetic_example_count",
+      "count_claimed_as_real_user_demand": false,
+      "privacy_safe": true,
+      "poisoning_filtered": true,
+      "limitations": [
+        "Synthetic or future-filtered bucket; no real user demand is claimed."
+      ],
+      "count_value": 1
+    }
+  ],
+  "demand_signals": [
+    {
+      "signal_id": "signal.source_gap.ia_metadata",
+      "signal_type": "source_gap",
+      "label": "Internet Archive metadata coverage is a synthetic priority hint",
+      "priority_class": "high",
+      "priority_basis": "synthetic example priority basis; not demand proof",
+      "supporting_refs": [
+        "example.demand_dashboard.synthetic_ref"
+      ],
+      "synthetic_or_real": "synthetic_example",
+      "real_user_demand_claimed": false,
+      "limitations": [
+        "Signal is a synthetic prioritization hint and not source trust or candidate promotion."
+      ]
+    },
+    {
+      "signal_id": "signal.capability.member_access",
+      "signal_type": "member_access_gap",
+      "label": "Container member access remains a synthetic priority hint",
+      "priority_class": "medium",
+      "priority_basis": "synthetic example priority basis; not demand proof",
+      "supporting_refs": [
+        "example.demand_dashboard.synthetic_ref"
+      ],
+      "synthetic_or_real": "synthetic_example",
+      "real_user_demand_claimed": false,
+      "limitations": [
+        "Signal is a synthetic prioritization hint and not source trust or candidate promotion."
+      ]
+    },
+    {
+      "signal_id": "signal.connector.github_releases",
+      "signal_type": "connector_needed",
+      "label": "GitHub releases connector approval is a synthetic priority hint",
+      "priority_class": "medium",
+      "priority_basis": "synthetic example priority basis; not demand proof",
+      "supporting_refs": [
+        "example.demand_dashboard.synthetic_ref"
+      ],
+      "synthetic_or_real": "synthetic_example",
+      "real_user_demand_claimed": false,
+      "limitations": [
+        "Signal is a synthetic prioritization hint and not source trust or candidate promotion."
+      ]
+    },
+    {
+      "signal_id": "signal.known_absence.weak_hits",
+      "signal_type": "known_absence_pattern",
+      "label": "Weak-hit known absence patterns need review",
+      "priority_class": "low",
+      "priority_basis": "synthetic example priority basis; not demand proof",
+      "supporting_refs": [
+        "example.demand_dashboard.synthetic_ref"
+      ],
+      "synthetic_or_real": "synthetic_example",
+      "real_user_demand_claimed": false,
+      "limitations": [
+        "Signal is a synthetic prioritization hint and not source trust or candidate promotion."
+      ]
+    }
+  ],
+  "source_gap_demand": [
+    {
+      "source_gap_id": "source_gap.internet_archive_metadata",
+      "source_family": "internet_archive",
+      "source_id": "internet_archive_metadata",
+      "gap_type": "connector_missing",
+      "priority_class": "high",
+      "suggested_future_work": "connector_approval_pack",
+      "approval_required": true,
+      "operator_required": false,
+      "human_required": true,
+      "limitations": [
+        "Future work suggestion only; no connector, live probe, source cache, or evidence ledger runtime is executed."
+      ]
+    },
+    {
+      "source_gap_id": "source_gap.wayback_cdx_memento",
+      "source_family": "web_archive",
+      "source_id": "wayback_cdx_memento",
+      "gap_type": "live_probe_disabled",
+      "priority_class": "medium",
+      "suggested_future_work": "connector_approval_pack",
+      "approval_required": true,
+      "operator_required": false,
+      "human_required": true,
+      "limitations": [
+        "Future work suggestion only; no connector, live probe, source cache, or evidence ledger runtime is executed."
+      ]
+    },
+    {
+      "source_gap_id": "source_gap.github_releases",
+      "source_family": "source_hosting",
+      "source_id": "github_releases",
+      "gap_type": "connector_missing",
+      "priority_class": "medium",
+      "suggested_future_work": "connector_approval_pack",
+      "approval_required": true,
+      "operator_required": false,
+      "human_required": true,
+      "limitations": [
+        "Future work suggestion only; no connector, live probe, source cache, or evidence ledger runtime is executed."
+      ]
+    }
+  ],
+  "capability_gap_demand": [
+    {
+      "capability_gap_id": "capability.member_enumeration",
+      "capability": "member_enumeration",
+      "priority_class": "medium",
+      "suggested_future_work": "Define safer container member enumeration requirements before runtime extraction.",
+      "approval_required": true,
+      "operator_required": false,
+      "limitations": [
+        "Capability priority is synthetic and does not implement runtime extraction or indexing."
+      ]
+    },
+    {
+      "capability_gap_id": "capability.compatibility_evidence",
+      "capability": "compatibility_evidence",
+      "priority_class": "medium",
+      "suggested_future_work": "Define source-backed compatibility evidence requirements before review.",
+      "approval_required": true,
+      "operator_required": false,
+      "limitations": [
+        "Capability priority is synthetic and does not implement runtime extraction or indexing."
+      ]
+    },
+    {
+      "capability_gap_id": "capability.source_cache",
+      "capability": "source_cache",
+      "priority_class": "high",
+      "suggested_future_work": "Define source cache/evidence ledger contract before source-derived aggregation.",
+      "approval_required": true,
+      "operator_required": false,
+      "limitations": [
+        "Capability priority is synthetic and does not implement runtime extraction or indexing."
+      ]
+    }
+  ],
+  "manual_observation_demand": [
+    {
+      "manual_observation_need_id": "manual_observation.batch0.review",
+      "batch_ref": "manual_observation_batch_0",
+      "query_family": "old-platform software search",
+      "source_family": "manual_external_baseline",
+      "reason": "external_baseline_pending",
+      "human_required": true,
+      "real_observation_count_claimed": false,
+      "limitations": [
+        "No manual observation count is imported or claimed by this synthetic dashboard."
+      ]
+    }
+  ],
+  "connector_priorities": [
+    {
+      "connector_priority_id": "connector.internet_archive_metadata",
+      "source_family": "internet_archive",
+      "connector_kind": "internet_archive_metadata",
+      "priority_class": "high",
+      "basis": "synthetic_example",
+      "approval_required": true,
+      "operator_required": false,
+      "prerequisites": [
+        "connector_approval_pack_future",
+        "source_policy_review_future",
+        "privacy_poisoning_guard_future"
+      ],
+      "limitations": [
+        "Connector priority is approval-gated future planning, not live connector runtime."
+      ]
+    },
+    {
+      "connector_priority_id": "connector.wayback_cdx_memento",
+      "source_family": "web_archive",
+      "connector_kind": "wayback_cdx_memento",
+      "priority_class": "medium",
+      "basis": "source_gap_future",
+      "approval_required": true,
+      "operator_required": false,
+      "prerequisites": [
+        "connector_approval_pack_future",
+        "source_policy_review_future",
+        "privacy_poisoning_guard_future"
+      ],
+      "limitations": [
+        "Connector priority is approval-gated future planning, not live connector runtime."
+      ]
+    },
+    {
+      "connector_priority_id": "connector.github_releases",
+      "source_family": "source_hosting",
+      "connector_kind": "github_releases",
+      "priority_class": "medium",
+      "basis": "manual_priority_future",
+      "approval_required": true,
+      "operator_required": false,
+      "prerequisites": [
+        "connector_approval_pack_future",
+        "source_policy_review_future",
+        "privacy_poisoning_guard_future"
+      ],
+      "limitations": [
+        "Connector priority is approval-gated future planning, not live connector runtime."
+      ]
+    }
+  ],
+  "deep_extraction_priorities": [
+    {
+      "extraction_priority_id": "extract.container_member_enumeration",
+      "extraction_kind": "container_member_enumeration",
+      "target_kind": "archived package member list",
+      "priority_class": "medium",
+      "prerequisites": [
+        "source_cache_evidence_ledger_contract_future",
+        "malware_risk_review_future"
+      ],
+      "safety_requirements": [
+        "no downloads",
+        "no execution",
+        "fixture or approved source cache only"
+      ],
+      "limitations": [
+        "No deep extraction runtime is implemented by P68."
+      ]
+    },
+    {
+      "extraction_priority_id": "extract.OCR_scan",
+      "extraction_kind": "OCR_scan",
+      "target_kind": "manual or article scan text",
+      "priority_class": "low",
+      "prerequisites": [
+        "rights_review_future",
+        "source_policy_review_future"
+      ],
+      "safety_requirements": [
+        "metadata-only dashboard signal",
+        "no raw scan payload dump"
+      ],
+      "limitations": [
+        "No OCR runtime is implemented by P68."
+      ]
+    }
+  ],
+  "candidate_review_priorities": [
+    {
+      "candidate_review_priority_id": "candidate_review.compatibility_claim",
+      "candidate_type": "compatibility_claim_candidate",
+      "review_kind": "evidence_review",
+      "priority_class": "medium",
+      "basis": "synthetic candidate-review pressure example",
+      "promotion_policy_ref": "contracts/query/candidate_promotion_assessment.v0.json",
+      "limitations": [
+        "This is not candidate promotion and does not mutate the candidate index."
+      ]
+    }
+  ],
+  "known_absence_patterns": [
+    {
+      "absence_pattern_id": "absence.scoped.source_coverage_gap",
+      "absence_status": "source_coverage_gap",
+      "pattern_label": "Scoped source coverage gap",
+      "checked_scope_summary": "Synthetic public index example only.",
+      "not_checked_scope_summary": "Live source probes, source cache, and evidence ledger are not implemented.",
+      "priority_class": "medium",
+      "suggested_future_work": "source_sync_worker_contract",
+      "limitations": [
+        "Known absence remains scoped and does not claim global absence."
+      ]
+    },
+    {
+      "absence_pattern_id": "absence.weak_hits.member_gap",
+      "absence_status": "weak_hits_only",
+      "pattern_label": "Weak hits without member evidence",
+      "checked_scope_summary": "Synthetic weak-hit pattern only.",
+      "not_checked_scope_summary": "Deep container extraction is future-only.",
+      "priority_class": "low",
+      "suggested_future_work": "deep_extraction_policy_future",
+      "limitations": [
+        "No runtime absence dashboard is created."
+      ]
+    }
+  ],
+  "priority_summary": {
+    "top_source_gaps": [
+      "internet_archive_metadata",
+      "wayback_cdx_memento",
+      "github_releases"
+    ],
+    "top_capability_gaps": [
+      "source_cache",
+      "member_enumeration",
+      "compatibility_evidence"
+    ],
+    "top_manual_observation_needs": [
+      "manual_observation_batch_0_review"
+    ],
+    "top_connector_priorities": [
+      "internet_archive_metadata",
+      "wayback_cdx_memento",
+      "github_releases"
+    ],
+    "top_deep_extraction_priorities": [
+      "container_member_enumeration",
+      "OCR_scan"
+    ],
+    "top_candidate_review_priorities": [
+      "compatibility_claim_candidate"
+    ],
+    "top_known_absence_patterns": [
+      "source_coverage_gap",
+      "weak_hits_only"
+    ],
+    "priority_basis": "synthetic_example",
+    "real_user_demand_claimed": false,
+    "limitations": [
+      "Priority ordering is deterministic synthetic example data, not real demand proof."
+    ]
+  },
+  "public_visibility": {
+    "public_dashboard_allowed": false,
+    "visibility_class": "synthetic_example_only",
+    "raw_queries_visible": false,
+    "private_data_visible": false,
+    "demand_counts_claimed_as_real": false,
+    "caveats_required": [
+      "contract-only",
+      "synthetic example",
+      "no telemetry",
+      "no account or IP tracking",
+      "no real demand counts"
+    ],
+    "limitations": [
+      "P68 does not publish a hosted or runtime demand dashboard."
+    ]
+  },
+  "freshness_and_invalidation": {
+    "snapshot_freshness_policy": "example_only",
+    "invalidation_required_on": [
+      "query_guard_policy_change",
+      "public_index_rebuild",
+      "source_cache_refresh",
+      "candidate_promotion_policy_change",
+      "privacy_policy_change",
+      "poisoning_policy_change"
+    ],
+    "invalidated": false,
+    "limitations": [
+      "Freshness is an example policy only; no snapshot store exists."
+    ]
+  },
+  "limitations": [
+    "Synthetic example only; no real public query analytics, telemetry, logs, accounts, IPs, or demand counts are included.",
+    "Manual Observation Batch 0 is referenced as a human-operated lane, not as imported dashboard evidence."
+  ],
+  "no_runtime_guarantees": {
+    "runtime_dashboard_implemented": false,
+    "persistent_dashboard_store_implemented": false,
+    "telemetry_exported": false,
+    "account_tracking_performed": false,
+    "ip_tracking_performed": false,
+    "public_query_logging_enabled": false,
+    "raw_query_retained": false,
+    "real_user_demand_claimed": false
+  },
+  "no_mutation_guarantees": {
+    "query_observation_mutated": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "probe_queue_mutated": false,
+    "candidate_index_mutated": false,
+    "candidate_promotion_mutated": false,
+    "known_absence_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "external_calls_performed": false,
+    "live_source_called": false
+  },
+  "notes": [
+    "P68 synthetic minimal dashboard snapshot; it is a prioritization hint model, not telemetry, production analytics, source trust, candidate promotion, or master-index truth.",
+    "Privacy filtering and poisoning exclusion are required before any future aggregate dashboard can be built."
+  ]
+}

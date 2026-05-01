@@ -39,3 +39,7 @@ Public search integration is future/contract-only. P67 does not change public se
 ## Future Work
 
 Future runtime would require retention design, deletion/export support, production abuse controls outside this contract, operator controls, bounded rate limits, review evidence, deployment evidence, and explicit integration tests.
+
+## Demand Dashboard v0 Relation
+
+Demand Dashboard v0 is future/contract-only. It can later summarize privacy-filtered and poisoning-guarded aggregate demand, but P68 adds no telemetry, public query logging, account/IP tracking, real demand claims, runtime dashboard, candidate promotion, source sync, source cache/evidence ledger mutation, public-search ranking change, or index mutation.

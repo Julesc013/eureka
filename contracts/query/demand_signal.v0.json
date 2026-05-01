@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/demand_signal.v0.json",
+  "title": "Eureka Demand Signal v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_dashboard_implemented": false,
+  "x-real_user_demand_claimed": false,
+  "required": [
+    "signal_id",
+    "signal_type",
+    "label",
+    "priority_class",
+    "priority_basis",
+    "supporting_refs",
+    "synthetic_or_real",
+    "real_user_demand_claimed",
+    "limitations"
+  ],
+  "$defs": {
+    "demand_signal_types": [
+      "repeated_need_future",
+      "repeated_miss_future",
+      "source_gap",
+      "capability_gap",
+      "compatibility_gap",
+      "member_access_gap",
+      "known_absence_pattern",
+      "manual_observation_needed",
+      "connector_needed",
+      "deep_extraction_needed",
+      "candidate_review_needed",
+      "policy_blocked_pattern",
+      "unknown"
+    ],
+    "priority_classes": [
+      "example_only",
+      "low",
+      "medium",
+      "high",
+      "unknown"
+    ],
+    "synthetic_or_real": [
+      "synthetic_example",
+      "future_privacy_filtered"
+    ]
+  }
+}
