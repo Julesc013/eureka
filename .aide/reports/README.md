@@ -302,3 +302,7 @@ Known absence page reporting is contract-only and points to `control/audits/know
 
 P67 report: `control/audits/query-privacy-poisoning-guard-v0/query_privacy_poisoning_guard_report.json` records the contract-only guard posture, examples, validators, command evidence, blockers, and next branch P68.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## P68 Demand Dashboard v0
+
+P68 report lives under `control/audits/demand-dashboard-v0/` and records synthetic aggregate-dashboard contract evidence only.

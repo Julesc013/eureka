@@ -396,3 +396,7 @@ See `control/audits/known-absence-page-v0/` for the scoped absence contract/audi
 
 See `control/audits/query-privacy-poisoning-guard-v0/` for the P67 privacy and poisoning guard contract/audit pack. It is not a runtime guard, telemetry system, WAF/rate-limit layer, account/IP tracker, query logger, or production abuse protection claim.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## Demand Dashboard v0
+
+`control/audits/demand-dashboard-v0/` records the P68 contract-only demand dashboard audit pack. It is not a production analytics, telemetry, or hosted-dashboard claim.

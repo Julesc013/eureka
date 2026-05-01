@@ -1,0 +1,783 @@
+{
+  "report_id": "demand_dashboard_v0",
+  "created_by_slice": "P68 Demand Dashboard v0",
+  "repo_head": "ea051c451b8197f22af9a1a0068f4e23189fe05e",
+  "branch": "main",
+  "worktree_status": "## main...origin/main\n?? _p68_demand_dashboard_scaffold.py\n?? contracts/query/demand_dashboard_snapshot.v0.json\n?? contracts/query/demand_signal.v0.json\n?? control/audits/demand-dashboard-v0/\n?? control/inventory/query_intelligence/demand_dashboard_policy.json\n?? examples/demand_dashboard/",
+  "contract_file": "contracts/query/demand_dashboard_snapshot.v0.json",
+  "validator_scripts": [
+    "scripts/validate_demand_dashboard_snapshot.py",
+    "scripts/validate_demand_dashboard_contract.py",
+    "scripts/dry_run_demand_dashboard_snapshot.py"
+  ],
+  "example_dashboard_snapshots": [
+    "examples/demand_dashboard/minimal_dashboard_snapshot_v0",
+    "examples/demand_dashboard/minimal_source_gap_dashboard_v0"
+  ],
+  "demand_dashboard_policy": "control/inventory/query_intelligence/demand_dashboard_policy.json",
+  "demand_signal_taxonomy": [
+    "repeated_need_future",
+    "repeated_miss_future",
+    "source_gap",
+    "capability_gap",
+    "compatibility_gap",
+    "member_access_gap",
+    "known_absence_pattern",
+    "manual_observation_needed",
+    "connector_needed",
+    "deep_extraction_needed",
+    "candidate_review_needed",
+    "policy_blocked_pattern",
+    "unknown"
+  ],
+  "aggregate_bucket_model": [
+    "object_kind",
+    "platform",
+    "artifact_type",
+    "source_family",
+    "source_gap",
+    "capability_gap",
+    "miss_type",
+    "probe_kind",
+    "candidate_type",
+    "known_absence_status",
+    "manual_observation_need",
+    "connector_priority",
+    "deep_extraction_need",
+    "unknown"
+  ],
+  "priority_ranking_model": {
+    "priority_classes": [
+      "example_only",
+      "low",
+      "medium",
+      "high",
+      "unknown"
+    ],
+    "priority_is_truth": false,
+    "priority_is_public_ranking": false
+  },
+  "source_gap_demand_model": "Source gaps are synthetic or future-filtered planning hints, not connector execution.",
+  "capability_gap_demand_model": "Capability gaps prioritize future OCR, member enumeration, deep extraction, compatibility, source cache, and evidence ledger work without runtime implementation.",
+  "manual_observation_demand_model": "Manual observation demand is human-required and does not claim imported observations or real demand counts.",
+  "connector_priority_model": "Connector priority requires future approval packs and does not call Internet Archive, Wayback, GitHub, PyPI, npm, SWH, or Wikidata.",
+  "deep_extraction_priority_model": "Deep extraction priorities are future-only and do not download, install, upload, execute, or fetch arbitrary URLs.",
+  "candidate_review_priority_model": "Candidate-review priorities do not promote candidates or mutate candidate records.",
+  "known_absence_pattern_model": "Known absence patterns are scoped and not global absence claims.",
+  "privacy_policy_summary": "Privacy filtering is required before aggregation; raw queries, private paths, secrets, IP addresses, account identifiers, and private URLs are disallowed.",
+  "poisoning_fake_demand_exclusion_policy": "Poisoning guard decisions must exclude fake demand, spam, source-stuffing, and candidate-poisoning before aggregation.",
+  "public_visibility_policy": "P68 examples are synthetic only and do not expose raw queries, private data, or real demand counts.",
+  "static_demo_projection": {
+    "static_demo_added": false,
+    "static_demo_path": null,
+    "reason": "Deferred to avoid implying a live or hosted dashboard; examples and contract fields cover the static projection."
+  },
+  "no_runtime_no_mutation_guarantees": {
+    "runtime_dashboard_implemented": false,
+    "persistent_dashboard_store_implemented": false,
+    "telemetry_implemented": false,
+    "account_tracking_implemented": false,
+    "ip_tracking_implemented": false,
+    "public_query_logging_enabled": false,
+    "raw_query_retention_default_none": true,
+    "real_user_demand_claimed": false,
+    "query_observation_mutation_allowed": false,
+    "result_cache_mutation_allowed": false,
+    "miss_ledger_mutation_allowed": false,
+    "search_need_mutation_allowed": false,
+    "probe_queue_mutation_allowed": false,
+    "candidate_index_mutation_allowed": false,
+    "known_absence_mutation_allowed": false,
+    "public_index_mutation_allowed": false,
+    "local_index_mutation_allowed": false,
+    "master_index_mutation_allowed": false,
+    "external_calls_performed": false,
+    "live_probes_enabled": false
+  },
+  "runtime_status": {
+    "public_search_runtime_wired": false,
+    "dashboard_runtime_implemented": false,
+    "persistent_store_implemented": false,
+    "telemetry_implemented": false,
+    "account_tracking_implemented": false,
+    "ip_tracking_implemented": false,
+    "real_user_demand_claimed": false
+  },
+  "command_results": [
+    {
+      "command": "python scripts/validate_demand_dashboard_snapshot.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.065,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_snapshot.py --all-examples --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.064,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.074,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_contract.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.072,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/dry_run_demand_dashboard_snapshot.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.047,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_query_guard_decision.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.061,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.075,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_known_absence_page.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.058,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_known_absence_page_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.075,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_assessment.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.063,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_policy.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.07,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_candidate_index_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.059,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_candidate_index_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.096,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_probe_queue_item.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.058,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_probe_queue_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_search_need_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.058,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_search_need_record_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.059,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_entry.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.058,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.059,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_search_result_cache_entry.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.057,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_shared_query_result_cache_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.058,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_query_observation.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.055,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_query_observation_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.056,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/run_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.978,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.992,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/run_public_search_safety_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.398,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_public_search_safety_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.407,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_static_site_search_integration.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.055,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.784,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.252,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.284,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.267,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.214,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.078,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.054,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.056,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.055,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_live_probe_gateway.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.228,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.056,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.052,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.051,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.536,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.534,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.474,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python site/build.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.984,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.083,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.058,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.075,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.142,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 9.437,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.576,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.305,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.316,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.342,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.37,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.055,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.878,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 89.798,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 8.788,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 5.62,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.443,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 4.951,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 30.864,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 111.53,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.499,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.084,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.043,
+      "optional": false,
+      "output_tail": "omitted from report",
+      "notes": "completed without recording command output"
+    },
+    {
+      "command": "cargo --version",
+      "status": "skipped",
+      "returncode": null,
+      "duration_seconds": 0,
+      "optional": true,
+      "output_tail": "omitted from report",
+      "notes": "optional tool cargo is unavailable"
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped",
+      "returncode": null,
+      "duration_seconds": 0,
+      "optional": true,
+      "output_tail": "omitted from report",
+      "notes": "optional tool cargo is unavailable"
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped",
+      "returncode": null,
+      "duration_seconds": 0,
+      "optional": true,
+      "output_tail": "omitted from report",
+      "notes": "optional tool cargo is unavailable"
+    }
+  ],
+  "remaining_blockers": [
+    "No persistent dashboard runtime, telemetry, account/IP tracking, or public query logging exists.",
+    "No source sync worker, source cache, evidence ledger, connector approvals, or production abuse-protection evidence exists."
+  ],
+  "next_recommended_branch": "P69 Source Sync Worker Contract v0",
+  "notes": [
+    "P68 completes the first Query Intelligence Plane contract sequence at the aggregate visibility layer.",
+    "All demand examples are synthetic and cannot be used as proof of real public demand."
+  ],
+  "runtime_dashboard_implemented": false,
+  "persistent_dashboard_store_implemented": false,
+  "telemetry_implemented": false,
+  "account_tracking_implemented": false,
+  "ip_tracking_implemented": false,
+  "public_query_logging_enabled": false,
+  "raw_query_retention_default_none": true,
+  "real_user_demand_claimed": false,
+  "query_observation_mutation_allowed": false,
+  "result_cache_mutation_allowed": false,
+  "miss_ledger_mutation_allowed": false,
+  "search_need_mutation_allowed": false,
+  "probe_queue_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "known_absence_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "external_calls_performed": false,
+  "live_probes_enabled": false,
+  "verification_summary": {
+    "total": 71,
+    "passed": 68,
+    "failed": 0,
+    "skipped": 3,
+    "output_policy": "stdout/stderr tails omitted from report to avoid local path or private machine detail retention."
+  }
+}
