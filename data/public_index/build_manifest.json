@@ -1,0 +1,37 @@
+{
+  "artifact_root": "data/public_index",
+  "created_by": "public_search_index_builder_v0",
+  "document_count": 584,
+  "executable_payloads_included": false,
+  "external_calls_performed": false,
+  "fallback_enabled": true,
+  "fts5_available": true,
+  "fts5_enabled": false,
+  "generated_files": [
+    "build_manifest.json",
+    "source_coverage.json",
+    "index_stats.json",
+    "search_documents.ndjson",
+    "checksums.sha256"
+  ],
+  "index_id": "eureka_public_search_index_v0",
+  "input_corpus": [
+    "control/inventory/sources/*.source.json",
+    "runtime/connectors/synthetic_software/fixtures/*",
+    "runtime/connectors/github_releases/fixtures/*",
+    "runtime/connectors/internet_archive_recorded/fixtures/*",
+    "runtime/connectors/local_bundle_fixtures/fixtures/*",
+    "runtime/connectors/article_scan_recorded/fixtures/*",
+    "runtime/connectors/source_expansion_recorded/fixtures/*"
+  ],
+  "live_sources_used": false,
+  "local_index_only": true,
+  "notes": [
+    "Committed public search index artifacts are JSON/NDJSON text files only.",
+    "No live source calls, private local paths, executables, downloads, uploads, or model calls are included."
+  ],
+  "private_paths_detected": false,
+  "schema_version": "0.1.0",
+  "source_count": 15,
+  "sqlite_available": true
+}

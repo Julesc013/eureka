@@ -1,0 +1,50 @@
+{
+  "created_by": "public_search_index_builder_v0",
+  "document_count": 584,
+  "executable_payloads_included": false,
+  "external_calls_performed": false,
+  "fallback_enabled": true,
+  "fts5_available": true,
+  "fts5_enabled": false,
+  "index_id": "eureka_public_search_index_v0",
+  "live_sources_used": false,
+  "private_paths_detected": false,
+  "record_kind_counts": {
+    "evidence": 359,
+    "member": 33,
+    "representation": 67,
+    "resolved_object": 39,
+    "source_record": 15,
+    "state_or_release": 39,
+    "synthetic_member": 32
+  },
+  "result_lane_counts": {
+    "community": 8,
+    "documentation": 11,
+    "inside_bundles": 124,
+    "installable_or_usable_now": 18,
+    "mentions_or_traces": 369,
+    "other": 15,
+    "preservation": 39
+  },
+  "schema_version": "0.1.0",
+  "source_family_counts": {
+    "article_scan_recorded": 10,
+    "github_releases": 23,
+    "internet_archive": 1,
+    "internet_archive_recorded": 129,
+    "local_bundle_fixtures": 292,
+    "local_files": 1,
+    "manual_document_recorded": 23,
+    "package_registry_recorded": 11,
+    "review_description_recorded": 19,
+    "software_heritage": 1,
+    "software_heritage_recorded": 7,
+    "sourceforge_recorded": 8,
+    "synthetic": 1,
+    "synthetic_fixture": 30,
+    "wayback_memento": 1,
+    "wayback_memento_recorded": 27
+  },
+  "sqlite_available": true
+}

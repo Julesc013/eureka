@@ -1,0 +1,328 @@
+{
+  "created_by": "public_search_index_builder_v0",
+  "external_calls_performed": false,
+  "index_id": "eureka_public_search_index_v0",
+  "live_sources_used": false,
+  "schema_version": "0.1.0",
+  "source_family_counts": {
+    "article_scan_recorded": 10,
+    "github_releases": 23,
+    "internet_archive": 1,
+    "internet_archive_recorded": 129,
+    "local_bundle_fixtures": 292,
+    "local_files": 1,
+    "manual_document_recorded": 23,
+    "package_registry_recorded": 11,
+    "review_description_recorded": 19,
+    "software_heritage": 1,
+    "software_heritage_recorded": 7,
+    "sourceforge_recorded": 8,
+    "synthetic": 1,
+    "synthetic_fixture": 30,
+    "wayback_memento": 1,
+    "wayback_memento_recorded": 27
+  },
+  "sources": [
+    {
+      "connector_mode": "recorded_fixture_only",
+      "coverage_depth": "content_or_member_indexed",
+      "document_count": 10,
+      "fixture_backed": true,
+      "limitations": [
+        "Recorded fixture scope only",
+        "No real magazine scans",
+        "No copyrighted article text",
+        "No OCR engine",
+        "No PDF or image parsing",
+        "No live source access"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": true,
+      "source_family": "article_scan_recorded",
+      "source_id": "article-scan-recorded-fixtures",
+      "source_status": "active_recorded_fixture"
+    },
+    {
+      "connector_mode": "recorded_fixture_only",
+      "coverage_depth": "representation_indexed",
+      "document_count": 23,
+      "fixture_backed": false,
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live GitHub API access",
+        "No source archive member extraction",
+        "No reviews, discussion, or issue coverage"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": true,
+      "source_family": "github_releases",
+      "source_id": "github-releases-recorded-fixtures",
+      "source_status": "active_recorded_fixture"
+    },
+    {
+      "connector_mode": "not_implemented",
+      "coverage_depth": "source_known",
+      "document_count": 1,
+      "fixture_backed": false,
+      "limitations": [
+        "No recorded Internet Archive fixtures",
+        "No item-file listing",
+        "No metadata search",
+        "No live Internet Archive API calls"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": false,
+      "source_family": "internet_archive",
+      "source_id": "internet-archive-placeholder",
+      "source_status": "placeholder"
+    },
+    {
+      "connector_mode": "recorded_fixture_only",
+      "coverage_depth": "representation_indexed",
+      "document_count": 129,
+      "fixture_backed": true,
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live Internet Archive API access",
+        "No scraping or crawling",
+        "No item payload fetch",
+        "No OCR/full-text source coverage"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": true,
+      "source_family": "internet_archive_recorded",
+      "source_id": "internet-archive-recorded-fixtures",
+      "source_status": "active_recorded_fixture"
+    },
+    {
+      "connector_mode": "fixture_only",
+      "coverage_depth": "action_indexed",
+      "document_count": 292,
+      "fixture_backed": true,
+      "limitations": [
+        "Committed fixture scope only",
+        "No arbitrary user filesystem ingestion",
+        "No public-alpha local path access",
+        "No live source probing"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": false,
+      "source_family": "local_bundle_fixtures",
+      "source_id": "local-bundle-fixtures",
+      "source_status": "active_fixture"
+    },
+    {
+      "connector_mode": "local_private_future",
+      "coverage_depth": "source_known",
+      "document_count": 1,
+      "fixture_backed": false,
+      "limitations": [
+        "No implemented local-files ingestion connector",
+        "No public-alpha arbitrary local path access",
+        "No local bundle fixture corpus yet"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": false,
+      "recorded_fixture_backed": false,
+      "source_family": "local_files",
+      "source_id": "local-files-placeholder",
+      "source_status": "local_private_future"
+    },
+    {
+      "connector_mode": "recorded_fixture_only",
+      "coverage_depth": "content_or_member_indexed",
+      "document_count": 23,
+      "fixture_backed": true,
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live document source calls",
+        "No PDF download",
+        "No OCR/full-text extraction"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": true,
+      "source_family": "manual_document_recorded",
+      "source_id": "manual-document-recorded-fixtures",
+      "source_status": "active_recorded_fixture"
+    },
+    {
+      "connector_mode": "recorded_fixture_only",
+      "coverage_depth": "content_or_member_indexed",
+      "document_count": 11,
+      "fixture_backed": true,
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live package registry access",
+        "No package download",
+        "No install handoff"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": true,
+      "source_family": "package_registry_recorded",
+      "source_id": "package-registry-recorded-fixtures",
+      "source_status": "active_recorded_fixture"
+    },
+    {
+      "connector_mode": "recorded_fixture_only",
+      "coverage_depth": "content_or_member_indexed",
+      "document_count": 19,
+      "fixture_backed": true,
+      "limitations": [
+        "Recorded fixture scope only",
+        "Subjective evidence only",
+        "No live reviews/comments",
+        "No executable download or malware scan"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": true,
+      "source_family": "review_description_recorded",
+      "source_id": "review-description-recorded-fixtures",
+      "source_status": "active_recorded_fixture"
+    },
+    {
+      "connector_mode": "not_implemented",
+      "coverage_depth": "source_known",
+      "document_count": 1,
+      "fixture_backed": false,
+      "limitations": [
+        "No recorded Software Heritage fixtures",
+        "No SWHID lookup",
+        "No source tree member indexing",
+        "No live Software Heritage API calls"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": false,
+      "source_family": "software_heritage",
+      "source_id": "software-heritage-placeholder",
+      "source_status": "placeholder"
+    },
+    {
+      "connector_mode": "recorded_fixture_only",
+      "coverage_depth": "metadata_indexed",
+      "document_count": 7,
+      "fixture_backed": true,
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live Software Heritage API access",
+        "No source tree fetch",
+        "No license clearance"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": true,
+      "source_family": "software_heritage_recorded",
+      "source_id": "software-heritage-recorded-fixtures",
+      "source_status": "active_recorded_fixture"
+    },
+    {
+      "connector_mode": "recorded_fixture_only",
+      "coverage_depth": "metadata_indexed",
+      "document_count": 8,
+      "fixture_backed": true,
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live project host access",
+        "No artifact download",
+        "No review truth claim"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": true,
+      "source_family": "sourceforge_recorded",
+      "source_id": "sourceforge-recorded-fixtures",
+      "source_status": "active_recorded_fixture"
+    },
+    {
+      "connector_mode": "fixture_only",
+      "coverage_depth": "action_indexed",
+      "document_count": 31,
+      "fixture_backed": true,
+      "limitations": [
+        "Synthetic fixture scope only",
+        "No real-world source coverage",
+        "No live network acquisition"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": false,
+      "source_family": "synthetic",
+      "source_id": "synthetic-fixtures",
+      "source_status": "active_fixture"
+    },
+    {
+      "connector_mode": "not_implemented",
+      "coverage_depth": "source_known",
+      "document_count": 1,
+      "fixture_backed": false,
+      "limitations": [
+        "No recorded capture fixtures",
+        "No replay or memento expansion",
+        "No live capture probing",
+        "No WARC/WACZ member indexing"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": false,
+      "source_family": "wayback_memento",
+      "source_id": "wayback-memento-placeholder",
+      "source_status": "placeholder"
+    },
+    {
+      "connector_mode": "recorded_fixture_only",
+      "coverage_depth": "metadata_indexed",
+      "document_count": 27,
+      "fixture_backed": true,
+      "limitations": [
+        "Recorded fixture scope only",
+        "No live Wayback or Memento access",
+        "No replay fetch",
+        "No artifact download"
+      ],
+      "live_enabled": false,
+      "live_supported": false,
+      "network_required": false,
+      "public_safe": true,
+      "recorded_fixture_backed": true,
+      "source_family": "wayback_memento_recorded",
+      "source_id": "wayback-memento-recorded-fixtures",
+      "source_status": "active_recorded_fixture"
+    }
+  ]
+}
