@@ -2,9 +2,9 @@
   "report_id": "post_p50_remediation_v0",
   "created_by_slice": "post_p50_remediation_pack_v0",
   "repo_head_before": "d26d093897e5c7b09cf233c5a2771186009e8bfb",
-  "repo_head_after": "25c47a626a3ecb01f45f0cc158cab107bb228058",
+  "repo_head_after": "47035b6d4d3b939be28435c6058a8741e286ed56",
   "branch": "main",
-  "worktree_status": "audit pack under construction after first remediation commit; final status recorded in final response",
+  "worktree_status": "final verification update in progress; final status recorded in final response",
   "p50_audit_ref": "control/audits/post-p49-platform-audit-v0/post_p49_platform_audit_report.json",
   "p50_findings_reviewed": [
     "root governance docs absent",
@@ -170,11 +170,12 @@
     "pack_validator_cli_aliases_recorded": true
   },
   "generated_artifact_status": {
-    "site_build_check": "pending_final_recheck",
-    "site_validate": "pending_final_recheck",
-    "publication_inventory": "pending_final_recheck",
-    "github_pages_artifact_check": "pending_final_recheck",
-    "generated_artifact_drift": "pending_final_recheck"
+    "site_build_check": "passed",
+    "site_validate": "passed",
+    "publication_inventory": "passed",
+    "github_pages_artifact_check": "passed",
+    "generated_artifact_drift": "passed",
+    "artifact_groups_passed": 10
   },
   "cargo_status": {
     "cargo_available": false,
@@ -204,6 +205,28 @@
     {"command": "python scripts/validate_pack_set.py --known-examples --json", "status": "pass", "notes": "5/5 examples passed."},
     {"command": "python scripts/validate_only_pack_import.py --known-examples --json", "status": "pass", "notes": "5/5 examples passed, no mutation."},
     {"command": "focused pack validator unittest set", "status": "pass", "notes": "54 tests passed."},
+    {"command": "python site/build.py --check", "status": "pass", "notes": "Static site generator valid."},
+    {"command": "python site/validate.py", "status": "pass", "notes": "9 pages, dist validation valid."},
+    {"command": "python scripts/validate_publication_inventory.py", "status": "pass", "notes": "49 registered routes."},
+    {"command": "python scripts/validate_public_static_site.py", "status": "pass", "notes": "9 pages and 15 source IDs checked."},
+    {"command": "python scripts/check_github_pages_static_artifact.py --path site/dist", "status": "pass", "notes": "Artifact valid; no deployment success claimed."},
+    {"command": "python scripts/check_generated_artifact_drift.py", "status": "pass", "notes": "10/10 artifact groups passed."},
+    {"command": "python scripts/public_search_smoke.py", "status": "pass", "notes": "30/30 checks passed in local_index_only mode."},
+    {"command": "python scripts/validate_local_quarantine_staging_model.py", "status": "pass", "notes": "No staging runtime or local-state roots present."},
+    {"command": "python scripts/inspect_staged_pack.py --all-examples", "status": "pass", "notes": "Read-only inspection passed; no mutation flags false."},
+    {"command": "python scripts/validate_ai_assisted_drafting_plan.py", "status": "pass", "notes": "Planning/example-only AI drafting plan valid; no runtime."},
+    {"command": "python scripts/run_archive_resolution_evals.py --json", "status": "pass", "notes": "6/6 archive eval tasks satisfied."},
+    {"command": "python scripts/run_search_usefulness_audit.py --json", "status": "pass", "notes": "64 queries: 5 covered, 40 partial, 10 source_gap, 7 capability_gap, 2 unknown."},
+    {"command": "python -m unittest discover -s tests/scripts -t .", "status": "fail_then_pass", "notes": "Initial repository-layout wording drift from stale third_party-era token was fixed; rerun passed 225 tests."},
+    {"command": "python -m unittest discover -s tests/operations -t .", "status": "pass", "notes": "396 tests passed."},
+    {"command": "python -m unittest discover -s tests/hardening -t .", "status": "pass", "notes": "53 tests passed."},
+    {"command": "python -m unittest discover -s tests/parity -t .", "status": "pass", "notes": "25 tests passed."},
+    {"command": "python -m unittest discover -s tests/evals -t .", "status": "pass", "notes": "45 tests passed."},
+    {"command": "python -m unittest discover -s runtime -t .", "status": "pass", "notes": "320 tests passed."},
+    {"command": "python -m unittest discover -s surfaces -t .", "status": "pass", "notes": "168 tests passed."},
+    {"command": "python -m unittest discover -s tests -t .", "status": "pass", "notes": "790 tests passed."},
+    {"command": "cargo check --workspace --manifest-path crates/Cargo.toml", "status": "unavailable", "notes": "Cargo command not found."},
+    {"command": "cargo test --workspace --manifest-path crates/Cargo.toml", "status": "unavailable", "notes": "Cargo command not found."},
     {"command": "git diff --check", "status": "pass", "notes": "No whitespace errors; line-ending warnings only."}
   ],
   "remaining_blockers": [

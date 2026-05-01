@@ -11,7 +11,8 @@ python scripts/check_github_pages_static_artifact.py --path site/dist
 python scripts/check_generated_artifact_drift.py
 ```
 
-Result summary is recorded in `COMMAND_RESULTS.md` and
-`post_p50_remediation_report.json`.
+Result summary: passed. `check_generated_artifact_drift.py` reported 10/10
+artifact groups passed, including `static_site_dist`, `test_registry`, and
+`aide_metadata`.
 
 No generated artifact is intentionally used to hide unrelated behavior changes.

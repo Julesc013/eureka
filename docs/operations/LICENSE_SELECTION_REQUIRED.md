@@ -17,7 +17,7 @@ The future license decision should answer:
 - Which license applies to source code.
 - Which terms apply to documentation, examples, fixtures, generated static
   artifacts, audit packs, and schemas.
-- Whether third-party notices or separate fixture/source terms are required.
+- Whether outside-reference notices or separate fixture/source terms are required.
 - Whether generated artifacts should carry the same license as source.
 - Whether contribution terms need a developer certificate of origin, contributor
   license agreement, or simpler pull request attestation.
