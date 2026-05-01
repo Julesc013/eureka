@@ -98,6 +98,13 @@ entries may provide summary context for repeated scoped absence or weak-hit
 patterns, but cache entries do not create needs, enqueue probes, mutate
 candidates, or become master-index truth.
 
+## Probe Queue Relationship
+
+P63 adds probe queue items as the next contract-only future work-request layer.
+Shared cache entries may be referenced as context for future probe planning, but
+cache entries do not create queue items, execute probes, mutate source cache,
+mutate evidence ledger, mutate candidates, or become master-index truth.
+
 ## Freshness And Invalidation
 
 Future cache entries become stale when the public index is rebuilt, source

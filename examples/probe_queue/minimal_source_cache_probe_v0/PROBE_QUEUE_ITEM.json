@@ -1,0 +1,214 @@
+{
+  "schema_version": "0.1.0",
+  "probe_item_id": "example.probe_queue.source_metadata.windows_7_apps.v0",
+  "probe_item_kind": "probe_queue_item",
+  "status": "approval_required",
+  "created_by_tool": "p63_probe_queue_v0_example",
+  "probe_identity": {
+    "probe_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "canonical_probe_label|target.target_kind|probe_kind.kind",
+      "value": "4ecc18b608951a00cc14c5716e8626cc06e1039a907a06327829079075d7499a",
+      "reversible": false,
+      "salt_policy": "unsalted_public_aggregate"
+    },
+    "canonical_probe_label": "Future source metadata review for Windows 7 application need",
+    "normalized_probe_terms": [
+      "future",
+      "source",
+      "metadata",
+      "windows",
+      "7",
+      "application"
+    ]
+  },
+  "probe_kind": {
+    "kind": "source_metadata_probe",
+    "execution_class": "approval_gated_live_probe_future",
+    "live_network_required_future": true,
+    "approval_required": true,
+    "operator_required": true,
+    "human_required": true
+  },
+  "source_policy": {
+    "source_policy_kind": "live_metadata_probe_after_approval",
+    "allowed_source_ids": [],
+    "allowed_source_families": [
+      "internet_archive_metadata_future"
+    ],
+    "prohibited_source_families": [
+      "unapproved_live_network_sources",
+      "private_local_stores",
+      "raw_payload_sources"
+    ],
+    "live_probe_enabled": false,
+    "source_rate_limit_policy_ref": "future.source_rate_limit_policy.required",
+    "source_terms_review_required": true,
+    "rights_review_required": true,
+    "notes": [
+      "This is approval-gated future planning only; P63 performs no metadata request."
+    ]
+  },
+  "input_refs": {
+    "query_observation_refs": [],
+    "search_result_cache_refs": [
+      {
+        "ref_id": "example.search_result_cache.windows_7_apps.v0",
+        "ref_kind": "search_result_cache",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 0.2,
+        "limitations": [
+          "Synthetic cache ref only; no result cache runtime emitted this item."
+        ]
+      }
+    ],
+    "search_miss_ledger_refs": [
+      {
+        "ref_id": "example.search_miss_ledger.windows_7_apps_weak_hit.v0",
+        "ref_kind": "search_miss_ledger",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 0.4,
+        "limitations": [
+          "Synthetic miss ref only; no ledger runtime emitted this item."
+        ]
+      }
+    ],
+    "search_need_refs": [
+      {
+        "ref_id": "example.search_need.windows_7_compatible_application.v0",
+        "ref_kind": "search_need",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 1.0,
+        "limitations": [
+          "Synthetic search need ref only; no probe queue runtime consumed it."
+        ]
+      }
+    ],
+    "manual_observation_refs": [],
+    "source_pack_refs": [],
+    "evidence_pack_refs": []
+  },
+  "target": {
+    "target_kind": "source_family",
+    "product_name": "Windows 7 compatible application",
+    "platform": "Windows 7",
+    "artifact_type": "metadata summary",
+    "source_family": "internet_archive_metadata_future",
+    "desired_evidence_kind": "source_cache_record",
+    "limitations": [
+      "Target names a future approved source family only; no identifier or URL is fetched."
+    ]
+  },
+  "priority": {
+    "priority_class": "example_only",
+    "priority_basis": "single_need_example",
+    "demand_count_claimed": false,
+    "notes": [
+      "Priority is synthetic and does not claim public demand."
+    ]
+  },
+  "scheduling": {
+    "schedule_status": "future_after_approval",
+    "earliest_run_policy": "after_source_policy_review_future",
+    "retry_policy": "future_bounded_retry",
+    "timeout_policy": "future_bounded_timeout",
+    "notes": [
+      "No schedule is created in P63; future execution would require approval and operator setup."
+    ]
+  },
+  "expected_outputs": {
+    "expected_output_kinds": [
+      "source_cache_record",
+      "evidence_record_candidate"
+    ],
+    "output_destination_policy": "source_cache_future",
+    "public_output_allowed_after_review": false,
+    "requires_validation": true,
+    "requires_review": true,
+    "notes": [
+      "Future output would enter reviewed cache/evidence workflows, not authoritative truth."
+    ]
+  },
+  "safety_requirements": {
+    "max_runtime_ms_future": 5000,
+    "rate_limit_required_future": true,
+    "retry_backoff_required_future": true,
+    "circuit_breaker_required_future": true,
+    "user_agent_required_future": true,
+    "source_terms_review_required": true,
+    "robots_or_source_policy_review_required": true,
+    "cache_required_before_public_use": true,
+    "no_downloads": true,
+    "no_installs": true,
+    "no_execution": true,
+    "no_uploads": true,
+    "no_private_paths": true,
+    "no_credentials": true,
+    "no_arbitrary_url_fetch": true
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe probe item; no raw query or user identifier is retained."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "probe_item_retention": "example_only",
+    "deletion_supported_future": true,
+    "notes": [
+      "P63 implements no retention runtime."
+    ]
+  },
+  "aggregation_policy": {
+    "aggregate_allowed": true,
+    "aggregate_fields_allowed": [
+      "probe_kind",
+      "source_family",
+      "target_kind",
+      "priority_class",
+      "approval_required",
+      "operator_required"
+    ],
+    "raw_query_aggregation_allowed": false,
+    "private_identifier_aggregation_allowed": false,
+    "notes": [
+      "Aggregate publication is future-only and excludes raw queries and private identifiers."
+    ]
+  },
+  "limitations": [
+    "Synthetic probe item only; no job was created from a real user.",
+    "No source request, runtime queue, source cache write, evidence ledger write, candidate record, local index mutation, or master-index mutation was created."
+  ],
+  "no_execution_guarantees": {
+    "probe_executed": false,
+    "live_source_called": false,
+    "external_calls_performed": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "telemetry_exported": false
+  },
+  "notes": [
+    "Future source metadata probes require approval, source policy, cache, timeout, rate limit, and circuit breaker controls."
+  ]
+}

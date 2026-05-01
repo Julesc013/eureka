@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eureka_probe_queue_policy_v0",
+  "status": "contract_only",
+  "runtime_probe_queue_implemented": false,
+  "persistent_probe_queue_implemented": false,
+  "telemetry_implemented": false,
+  "public_query_logging_enabled": false,
+  "raw_query_retention_default": "none",
+  "privacy_filter_required": true,
+  "public_aggregate_allowed_after_filter": true,
+  "live_probe_execution_allowed": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "search_need_mutation_allowed": false,
+  "result_cache_mutation_allowed": false,
+  "miss_ledger_mutation_allowed": false,
+  "external_calls_allowed": false,
+  "approval_required_for_live_network_probe": true,
+  "operator_required_for_worker_runtime": true,
+  "next_contracts": [
+    "candidate_index",
+    "candidate_promotion_policy",
+    "known_absence_page",
+    "query_privacy_poisoning_guard",
+    "demand_dashboard",
+    "source_sync_worker",
+    "source_cache_evidence_ledger"
+  ],
+  "notes": [
+    "P63 defines probe queue items only. It does not implement a runtime queue, persistent queue, worker, connector execution, source cache mutation, evidence ledger mutation, candidate-index mutation, local-index mutation, master-index mutation, telemetry, public query logging, external calls, or live probe execution.",
+    "Probe queue items are future work requests derived from privacy-filtered search needs and other query-intelligence refs. They are not evidence, candidates, source truth, or authoritative truth."
+  ]
+}

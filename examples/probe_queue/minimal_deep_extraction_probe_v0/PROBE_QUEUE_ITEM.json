@@ -1,0 +1,208 @@
+{
+  "schema_version": "0.1.0",
+  "probe_item_id": "example.probe_queue.deep_extraction.windows_7_bundle.v0",
+  "probe_item_kind": "probe_queue_item",
+  "status": "operator_required",
+  "created_by_tool": "p63_probe_queue_v0_example",
+  "probe_identity": {
+    "probe_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "canonical_probe_label|target.target_kind|probe_kind.kind",
+      "value": "76029c0acc7c8be1251a7673c83e544b9ae9581dcd167429f88ce4fd9042f426",
+      "reversible": false,
+      "salt_policy": "unsalted_public_aggregate"
+    },
+    "canonical_probe_label": "Future deep extraction for Windows 7 utility bundle member evidence",
+    "normalized_probe_terms": [
+      "future",
+      "deep",
+      "extraction",
+      "windows",
+      "7",
+      "utility",
+      "bundle"
+    ]
+  },
+  "probe_kind": {
+    "kind": "deep_container_extraction",
+    "execution_class": "local_offline_extraction_future",
+    "live_network_required_future": false,
+    "approval_required": true,
+    "operator_required": true,
+    "human_required": true
+  },
+  "source_policy": {
+    "source_policy_kind": "local_offline_extraction_after_approval",
+    "allowed_source_ids": [
+      "local-bundle-fixtures"
+    ],
+    "allowed_source_families": [
+      "local_bundle_fixtures",
+      "future_source_cache_reviewed_objects"
+    ],
+    "prohibited_source_families": [
+      "private_local_stores",
+      "unapproved_live_network_sources",
+      "raw_payload_sources"
+    ],
+    "live_probe_enabled": false,
+    "source_terms_review_required": true,
+    "rights_review_required": true,
+    "notes": [
+      "Offline extraction is future review work only; this example performs no extraction."
+    ]
+  },
+  "input_refs": {
+    "query_observation_refs": [],
+    "search_result_cache_refs": [],
+    "search_miss_ledger_refs": [
+      {
+        "ref_id": "example.search_miss_ledger.driver_inf_inside_support_cd.v0",
+        "ref_kind": "search_miss_ledger",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 0.5,
+        "limitations": [
+          "Synthetic miss ref only; no ledger runtime emitted this item."
+        ]
+      }
+    ],
+    "search_need_refs": [
+      {
+        "ref_id": "example.search_need.bundle_member_evidence.v0",
+        "ref_kind": "search_need",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 1.0,
+        "limitations": [
+          "Synthetic search need ref only; no probe queue runtime consumed it."
+        ]
+      }
+    ],
+    "manual_observation_refs": [],
+    "source_pack_refs": [],
+    "evidence_pack_refs": []
+  },
+  "target": {
+    "target_kind": "file_inside_container",
+    "product_name": "Windows 7 utility bundle member evidence",
+    "platform": "Windows 7",
+    "artifact_type": "container member",
+    "source_family": "local_bundle_fixtures",
+    "source_id": "local-bundle-fixtures",
+    "desired_evidence_kind": "extraction_report",
+    "limitations": [
+      "Target references a committed fixture family and future reviewed extraction, not private local ingestion."
+    ]
+  },
+  "priority": {
+    "priority_class": "example_only",
+    "priority_basis": "single_need_example",
+    "demand_count_claimed": false,
+    "notes": [
+      "Priority is synthetic and does not claim public demand."
+    ]
+  },
+  "scheduling": {
+    "schedule_status": "future_after_approval",
+    "earliest_run_policy": "after_operator_setup_future",
+    "retry_policy": "none_v0",
+    "timeout_policy": "future_bounded_timeout",
+    "notes": [
+      "No schedule is created in P63; future offline extraction would require approval and bounded tooling."
+    ]
+  },
+  "expected_outputs": {
+    "expected_output_kinds": [
+      "extraction_report",
+      "evidence_record_candidate"
+    ],
+    "output_destination_policy": "evidence_ledger_future",
+    "public_output_allowed_after_review": false,
+    "requires_validation": true,
+    "requires_review": true,
+    "notes": [
+      "Future extraction output would require validation and review before reuse."
+    ]
+  },
+  "safety_requirements": {
+    "max_runtime_ms_future": 5000,
+    "rate_limit_required_future": false,
+    "retry_backoff_required_future": false,
+    "circuit_breaker_required_future": false,
+    "user_agent_required_future": false,
+    "source_terms_review_required": true,
+    "robots_or_source_policy_review_required": false,
+    "cache_required_before_public_use": true,
+    "no_downloads": true,
+    "no_installs": true,
+    "no_execution": true,
+    "no_uploads": true,
+    "no_private_paths": true,
+    "no_credentials": true,
+    "no_arbitrary_url_fetch": true
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe probe item; no raw query or user identifier is retained."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "probe_item_retention": "example_only",
+    "deletion_supported_future": true,
+    "notes": [
+      "P63 implements no retention runtime."
+    ]
+  },
+  "aggregation_policy": {
+    "aggregate_allowed": true,
+    "aggregate_fields_allowed": [
+      "probe_kind",
+      "source_family",
+      "target_kind",
+      "priority_class",
+      "approval_required",
+      "operator_required",
+      "human_required"
+    ],
+    "raw_query_aggregation_allowed": false,
+    "private_identifier_aggregation_allowed": false,
+    "notes": [
+      "Aggregate publication is future-only and excludes raw queries and private identifiers."
+    ]
+  },
+  "limitations": [
+    "Synthetic probe item only; no job was created from a real user.",
+    "No extraction, runtime queue, source cache write, evidence ledger write, candidate record, local index mutation, or master-index mutation was created."
+  ],
+  "no_execution_guarantees": {
+    "probe_executed": false,
+    "live_source_called": false,
+    "external_calls_performed": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "telemetry_exported": false
+  },
+  "notes": [
+    "Deep extraction probe items are future planning records and do not import private local files."
+  ]
+}

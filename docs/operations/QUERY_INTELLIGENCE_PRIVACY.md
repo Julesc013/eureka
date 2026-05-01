@@ -1,6 +1,6 @@
 # Query Intelligence Privacy
 
-Status: P59/P60/P61/P62 contract-only operations guidance.
+Status: P59/P60/P61/P62/P63 contract-only operations guidance.
 
 Query intelligence is not telemetry. P59 adds no persistent query logging, no
 analytics, no IP storage, no account identifiers, no raw private-looking query
@@ -8,6 +8,8 @@ retention, no public observation feed, and no runtime hook from public search.
 P60 adds no runtime cache writes and no persistent result cache.
 P61 adds no runtime ledger writes and no persistent miss ledger.
 P62 adds no runtime need store and no persistent search need storage.
+P63 adds no runtime probe queue, no persistent probe queue, and no probe
+execution.
 
 ## Operator Posture
 
@@ -56,12 +58,24 @@ addresses, account identifiers, broad absence claims, demand-count claims,
 probe enqueueing, candidate-index mutation, hard mutation flags, and unsafe raw
 query retention.
 
+`scripts/dry_run_probe_queue_item.py` emits a non-persistent probe queue item
+to stdout only. It is useful for validating the probe queue contract shape, not
+for collecting user data, writing queue state, running probes, or writing source
+cache/evidence/candidate state.
+
+`scripts/validate_probe_queue_item.py` validates committed probe queue examples
+and rejects private paths, private URLs, credential markers, IP addresses,
+account identifiers, probe execution, live source calls, source cache mutation,
+evidence ledger mutation, candidate-index mutation, hard mutation flags, and
+unsafe raw query retention.
+
 ## Operator-Gated Future Work
 
 Hosted deployment, edge/rate-limit evidence, public aggregate publication,
 retention/deletion controls, poisoning protection, and any query collection
 runtime remain operator-gated or future-milestone work.
 
-P59/P60/P61/P62 do not add probes, result cache runtime, miss ledger runtime,
-search need runtime, candidate indexes, telemetry, uploads, accounts, live
-source calls, or production public-query learning claims.
+P59/P60/P61/P62/P63 add no result cache runtime, no miss ledger runtime, no
+search need runtime, no runtime probe queue, no candidate indexes, no
+telemetry, no uploads, no accounts, no live source calls, and no production
+public-query learning claims.

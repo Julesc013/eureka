@@ -1,0 +1,206 @@
+{
+  "schema_version": "0.1.0",
+  "probe_item_id": "example.probe_queue.manual_observation.windows_7_apps.v0",
+  "probe_item_kind": "probe_queue_item",
+  "status": "draft_example",
+  "created_by_tool": "p63_probe_queue_v0_example",
+  "probe_identity": {
+    "probe_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "canonical_probe_label|target.target_kind|probe_kind.kind",
+      "value": "0fcde2bd395e0c6312499238d333a7d78b90dc876ddc238d648b858e47897eb2",
+      "reversible": false,
+      "salt_policy": "unsalted_public_aggregate"
+    },
+    "canonical_probe_label": "Manual observation for Windows 7 application search need",
+    "normalized_probe_terms": [
+      "manual",
+      "observation",
+      "windows",
+      "7",
+      "application"
+    ]
+  },
+  "probe_kind": {
+    "kind": "manual_observation",
+    "execution_class": "human_operated_future",
+    "live_network_required_future": false,
+    "approval_required": false,
+    "operator_required": false,
+    "human_required": true
+  },
+  "source_policy": {
+    "source_policy_kind": "manual_only",
+    "allowed_source_ids": [],
+    "allowed_source_families": [
+      "manual_external_baseline_future"
+    ],
+    "prohibited_source_families": [
+      "unapproved_live_network_sources",
+      "private_local_stores"
+    ],
+    "live_probe_enabled": false,
+    "source_terms_review_required": true,
+    "rights_review_required": true,
+    "notes": [
+      "Manual observation is future review work only; this example performs no source call."
+    ]
+  },
+  "input_refs": {
+    "query_observation_refs": [
+      {
+        "ref_id": "example.query_observation.windows_7_apps.v0",
+        "ref_kind": "query_observation",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 0.2,
+        "limitations": [
+          "Synthetic ref only; no runtime observation emitted this item."
+        ]
+      }
+    ],
+    "search_result_cache_refs": [],
+    "search_miss_ledger_refs": [
+      {
+        "ref_id": "example.search_miss_ledger.windows_7_apps_weak_hit.v0",
+        "ref_kind": "search_miss_ledger",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 0.3,
+        "limitations": [
+          "Synthetic ref only; no miss ledger runtime emitted this item."
+        ]
+      }
+    ],
+    "search_need_refs": [
+      {
+        "ref_id": "example.search_need.windows_7_compatible_application.v0",
+        "ref_kind": "search_need",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "contribution_weight": 1.0,
+        "limitations": [
+          "Synthetic search need ref only; no probe queue runtime consumed it."
+        ]
+      }
+    ],
+    "manual_observation_refs": [],
+    "source_pack_refs": [],
+    "evidence_pack_refs": []
+  },
+  "target": {
+    "target_kind": "compatibility_evidence",
+    "product_name": "Windows 7 compatible application",
+    "platform": "Windows 7",
+    "artifact_type": "manual observation baseline",
+    "desired_evidence_kind": "manual_observation",
+    "limitations": [
+      "Target is a future review topic, not evidence or a search result."
+    ]
+  },
+  "priority": {
+    "priority_class": "example_only",
+    "priority_basis": "single_need_example",
+    "demand_count_claimed": false,
+    "notes": [
+      "Priority is synthetic and does not claim public demand."
+    ]
+  },
+  "scheduling": {
+    "schedule_status": "future_manual",
+    "earliest_run_policy": "not_applicable_v0",
+    "retry_policy": "none_v0",
+    "timeout_policy": "none_v0",
+    "notes": [
+      "No schedule is created in P63."
+    ]
+  },
+  "expected_outputs": {
+    "expected_output_kinds": [
+      "manual_observation"
+    ],
+    "output_destination_policy": "manual_report_future",
+    "public_output_allowed_after_review": false,
+    "requires_validation": true,
+    "requires_review": true,
+    "notes": [
+      "Any future manual report would require review before reuse."
+    ]
+  },
+  "safety_requirements": {
+    "rate_limit_required_future": false,
+    "retry_backoff_required_future": false,
+    "circuit_breaker_required_future": false,
+    "user_agent_required_future": false,
+    "source_terms_review_required": true,
+    "robots_or_source_policy_review_required": true,
+    "cache_required_before_public_use": false,
+    "no_downloads": true,
+    "no_installs": true,
+    "no_execution": true,
+    "no_uploads": true,
+    "no_private_paths": true,
+    "no_credentials": true,
+    "no_arbitrary_url_fetch": true
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe probe item; no raw query or user identifier is retained."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "probe_item_retention": "example_only",
+    "deletion_supported_future": true,
+    "notes": [
+      "P63 implements no retention runtime."
+    ]
+  },
+  "aggregation_policy": {
+    "aggregate_allowed": true,
+    "aggregate_fields_allowed": [
+      "probe_kind",
+      "target_kind",
+      "priority_class",
+      "human_required"
+    ],
+    "raw_query_aggregation_allowed": false,
+    "private_identifier_aggregation_allowed": false,
+    "notes": [
+      "Aggregate publication is future-only and excludes raw queries and private identifiers."
+    ]
+  },
+  "limitations": [
+    "Synthetic probe item only; no job was created from a real user.",
+    "No probe execution, runtime queue, source cache write, evidence ledger write, candidate record, local index mutation, or master-index mutation was created."
+  ],
+  "no_execution_guarantees": {
+    "probe_executed": false,
+    "live_source_called": false,
+    "external_calls_performed": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "telemetry_exported": false
+  },
+  "notes": [
+    "Probe queue items are future work requests, not evidence or accepted source records."
+  ]
+}

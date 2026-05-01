@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/probe_kind.v0.json",
+  "title": "EurekaProbeKindV0",
+  "description": "Reusable Probe Queue v0 kind taxonomy. P63 is contract/example/validation only and defines future probe planning categories without executing probes, calling external sources, creating workers, mutating source cache/evidence/candidates/indexes, exporting telemetry, or enabling live probes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "execution_class",
+    "live_network_required_future",
+    "approval_required",
+    "operator_required",
+    "human_required"
+  ],
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "manual_observation",
+        "source_cache_refresh",
+        "source_metadata_probe",
+        "source_identifier_probe",
+        "wayback_availability_probe",
+        "package_metadata_probe",
+        "repository_release_probe",
+        "deep_container_extraction",
+        "member_enumeration",
+        "OCR_or_scan_extraction",
+        "compatibility_evidence_request",
+        "source_pack_request",
+        "evidence_pack_request",
+        "index_pack_request",
+        "query_parser_improvement_request",
+        "unknown"
+      ]
+    },
+    "execution_class": {
+      "type": "string",
+      "enum": [
+        "human_operated_future",
+        "scheduled_worker_future",
+        "approval_gated_live_probe_future",
+        "local_offline_extraction_future",
+        "connector_runtime_future",
+        "no_execution_v0"
+      ]
+    },
+    "live_network_required_future": {
+      "type": "boolean"
+    },
+    "approval_required": {
+      "type": "boolean"
+    },
+    "operator_required": {
+      "type": "boolean"
+    },
+    "human_required": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_probe_queue_implemented": false,
+  "x-probe_execution_implemented": false,
+  "x-live_probes_allowed": false,
+  "x-external_calls_allowed": false
+}

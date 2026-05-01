@@ -11,6 +11,7 @@
   "public_aggregate_allowed_after_filter": true,
   "scoped_absence_required": true,
   "search_need_record_status": "contract_only_p62",
+  "probe_queue_status": "contract_only_p63",
   "global_absence_claims_allowed": false,
   "master_index_mutation_allowed": false,
   "local_index_mutation_allowed": false,
@@ -32,6 +33,7 @@
   "notes": [
     "P61 defines search miss ledger entries only. It does not implement runtime ledger writes, persistent ledger storage, telemetry, public query logging, search need creation, probe enqueueing, result cache mutation, candidate index mutation, local index mutation, or master-index mutation.",
     "P62 defines search need records as contract-only future consumers of reviewed miss entries; P61 still creates none at runtime.",
+    "P63 defines probe queue items as contract-only future work requests; P61 still enqueues no probes and mutates no source cache, evidence ledger, candidate index, local index, or master index.",
     "Miss entries must preserve checked and not-checked scope. Scoped absence is not proof outside the checked indexes, sources, capabilities, and snapshots."
   ]
 }

@@ -15,6 +15,11 @@ public query logging, no demand-count runtime, no probe enqueueing, no
 candidate-index mutation, no result-cache mutation, no miss-ledger mutation, no
 local-index mutation, and no master-index mutation.
 
+P63 adds the probe queue contract as contract-only future planning. Search need
+records may be referenced by future probe queue items, but P63 does not make
+search needs create queue records, execute probes, mutate source cache, mutate
+evidence ledger, mutate candidate index, or call external sources.
+
 ## Record Shape
 
 `contracts/query/search_need_record.v0.json` requires:
@@ -109,3 +114,7 @@ P62 does not wire public search routes to write search need records. The
 optional dry-run helper emits JSON to stdout only. Future runtime integration
 requires a separate privacy and poisoning guard, storage contract, operator
 policy, and no-mutation review.
+
+Probe queue integration remains future-only and approval-gated. A search need
+record is still not a probe job, not evidence, not a candidate record, and not
+master-index truth.

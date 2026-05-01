@@ -33,6 +33,15 @@ Current contracts:
   candidate index, demand dashboard, or master-index mutation.
 - `search_need_lifecycle.v0.json`: reusable lifecycle status contract for
   future search need review, merge, supersede, and resolve states.
+- `probe_queue_item.v0.json`: probe queue item contract for future
+  approval-gated work requests derived from privacy-filtered search needs.
+  P63 defines probe identity, source policy, input refs, expected outputs,
+  safety requirements, and no-execution/no-mutation guarantees without adding a
+  runtime queue, probe execution, source cache mutation, evidence ledger
+  mutation, candidate index, telemetry, external calls, or live probes.
+- `probe_kind.v0.json`: reusable probe kind taxonomy for future manual,
+  source-cache, metadata, repository, extraction, evidence-pack, index-pack,
+  and query-parser work requests.
 
 Query intelligence follows "fast learning, slow truth": public queries may
 eventually inform aggregate learning, but they must not mutate authoritative
@@ -44,3 +53,5 @@ candidate records, source truth, or master-index truth.
 Search need records are scoped unresolved-need records, not search results,
 probe jobs, candidate records, demand counts, source truth, or master-index
 truth.
+Probe queue items are future work requests, not probe execution, not source
+cache/evidence/candidate mutation, and not master-index truth.

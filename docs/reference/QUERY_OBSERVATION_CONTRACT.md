@@ -82,3 +82,12 @@ unresolved-need layer. Query observations may later contribute privacy-filtered
 input references to a search need record after miss/cache classification and
 review, but P62 adds no runtime need store, telemetry, public query logging,
 probe enqueueing, candidate mutation, or master-index mutation.
+
+## Relation To Probe Queue
+
+P63 adds `contracts/query/probe_queue_item.v0.json` as the contract-only future
+work-request layer. Query observations may be referenced by later probe queue
+items only after privacy filtering and review. P63 adds no runtime probe queue,
+probe execution, source cache mutation, evidence ledger mutation,
+candidate-index mutation, external calls, live probes, or master-index
+mutation.

@@ -1,0 +1,949 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/probe_queue_item.v0.json",
+  "title": "EurekaProbeQueueItemV0",
+  "description": "Probe Queue v0 contract for future, reviewable probe planning items derived from privacy-filtered search needs. P63 is contract/example/validation only and adds no runtime probe queue, persistence, probe execution, source cache runtime, evidence ledger runtime, candidate index runtime, telemetry, external calls, live probes, or master-index mutation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "probe_item_id",
+    "probe_item_kind",
+    "status",
+    "created_by_tool",
+    "probe_identity",
+    "probe_kind",
+    "source_policy",
+    "input_refs",
+    "target",
+    "priority",
+    "scheduling",
+    "expected_outputs",
+    "safety_requirements",
+    "privacy",
+    "retention_policy",
+    "aggregation_policy",
+    "limitations",
+    "no_execution_guarantees",
+    "no_mutation_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "probe_item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "probe_item_kind": {
+      "type": "string",
+      "const": "probe_queue_item"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "queued_future",
+        "local_private",
+        "public_aggregate_candidate",
+        "rejected_by_privacy_filter",
+        "approval_required",
+        "operator_required",
+        "blocked_by_policy",
+        "superseded_future",
+        "completed_future",
+        "cancelled_future"
+      ]
+    },
+    "created_by_tool": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "description": "Optional future timestamp. Examples should avoid volatile required timestamps."
+    },
+    "updated_at": {
+      "type": "string",
+      "description": "Optional future timestamp. Examples should avoid volatile required timestamps."
+    },
+    "probe_identity": {
+      "$ref": "#/$defs/probe_identity"
+    },
+    "probe_kind": {
+      "$ref": "#/$defs/probe_kind"
+    },
+    "source_policy": {
+      "$ref": "#/$defs/source_policy"
+    },
+    "input_refs": {
+      "$ref": "#/$defs/input_refs"
+    },
+    "target": {
+      "$ref": "#/$defs/target"
+    },
+    "priority": {
+      "$ref": "#/$defs/priority"
+    },
+    "scheduling": {
+      "$ref": "#/$defs/scheduling"
+    },
+    "expected_outputs": {
+      "$ref": "#/$defs/expected_outputs"
+    },
+    "safety_requirements": {
+      "$ref": "#/$defs/safety_requirements"
+    },
+    "privacy": {
+      "$ref": "#/$defs/privacy"
+    },
+    "retention_policy": {
+      "$ref": "#/$defs/retention_policy"
+    },
+    "aggregation_policy": {
+      "$ref": "#/$defs/aggregation_policy"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "no_execution_guarantees": {
+      "$ref": "#/$defs/no_execution_guarantees"
+    },
+    "no_mutation_guarantees": {
+      "$ref": "#/$defs/no_mutation_guarantees"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "probe_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "probe_fingerprint",
+        "canonical_probe_label",
+        "normalized_probe_terms"
+      ],
+      "properties": {
+        "probe_fingerprint": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "algorithm",
+            "normalized_basis",
+            "value",
+            "reversible",
+            "salt_policy"
+          ],
+          "properties": {
+            "algorithm": {
+              "type": "string",
+              "enum": [
+                "sha256"
+              ]
+            },
+            "normalized_basis": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "reversible": {
+              "type": "boolean",
+              "const": false
+            },
+            "salt_policy": {
+              "type": "string",
+              "enum": [
+                "unsalted_public_aggregate",
+                "deployment_secret_salted_future",
+                "local_private_salted_future"
+              ]
+            }
+          }
+        },
+        "canonical_probe_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_probe_terms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "duplicate_of": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": "string"
+        }
+      }
+    },
+    "probe_kind": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "execution_class",
+        "live_network_required_future",
+        "approval_required",
+        "operator_required",
+        "human_required"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "manual_observation",
+            "source_cache_refresh",
+            "source_metadata_probe",
+            "source_identifier_probe",
+            "wayback_availability_probe",
+            "package_metadata_probe",
+            "repository_release_probe",
+            "deep_container_extraction",
+            "member_enumeration",
+            "OCR_or_scan_extraction",
+            "compatibility_evidence_request",
+            "source_pack_request",
+            "evidence_pack_request",
+            "index_pack_request",
+            "query_parser_improvement_request",
+            "unknown"
+          ]
+        },
+        "execution_class": {
+          "type": "string",
+          "enum": [
+            "human_operated_future",
+            "scheduled_worker_future",
+            "approval_gated_live_probe_future",
+            "local_offline_extraction_future",
+            "connector_runtime_future",
+            "no_execution_v0"
+          ]
+        },
+        "live_network_required_future": {
+          "type": "boolean"
+        },
+        "approval_required": {
+          "type": "boolean"
+        },
+        "operator_required": {
+          "type": "boolean"
+        },
+        "human_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "source_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_policy_kind",
+        "allowed_source_ids",
+        "allowed_source_families",
+        "prohibited_source_families",
+        "live_probe_enabled",
+        "source_terms_review_required",
+        "rights_review_required",
+        "notes"
+      ],
+      "properties": {
+        "source_policy_kind": {
+          "type": "string",
+          "enum": [
+            "no_source_call",
+            "manual_only",
+            "fixture_only",
+            "source_cache_only_future",
+            "live_metadata_probe_after_approval",
+            "local_offline_extraction_after_approval",
+            "unknown"
+          ]
+        },
+        "allowed_source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowed_source_families": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prohibited_source_families": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "live_probe_enabled": {
+          "type": "boolean",
+          "const": false
+        },
+        "source_rate_limit_policy_ref": {
+          "type": "string"
+        },
+        "source_terms_review_required": {
+          "type": "boolean"
+        },
+        "rights_review_required": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "input_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "query_observation_refs",
+        "search_result_cache_refs",
+        "search_miss_ledger_refs",
+        "search_need_refs"
+      ],
+      "properties": {
+        "query_observation_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input_ref"
+          }
+        },
+        "search_result_cache_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input_ref"
+          }
+        },
+        "search_miss_ledger_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input_ref"
+          }
+        },
+        "search_need_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input_ref"
+          }
+        },
+        "manual_observation_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input_ref"
+          }
+        },
+        "source_pack_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input_ref"
+          }
+        },
+        "evidence_pack_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input_ref"
+          }
+        }
+      }
+    },
+    "input_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref_id",
+        "ref_kind",
+        "status",
+        "privacy_classification",
+        "limitations"
+      ],
+      "properties": {
+        "ref_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ref_kind": {
+          "type": "string",
+          "enum": [
+            "query_observation",
+            "search_result_cache",
+            "search_miss_ledger",
+            "search_need",
+            "manual_observation_future",
+            "source_pack_future",
+            "evidence_pack_future"
+          ]
+        },
+        "status": {
+          "type": "string"
+        },
+        "privacy_classification": {
+          "type": "string",
+          "enum": [
+            "public_safe_aggregate",
+            "local_private",
+            "rejected_sensitive",
+            "redacted",
+            "unknown"
+          ]
+        },
+        "contribution_weight": {
+          "type": "number"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_kind",
+        "limitations"
+      ],
+      "properties": {
+        "target_kind": {
+          "type": "string",
+          "enum": [
+            "source_family",
+            "source_id",
+            "object_identity",
+            "software_version",
+            "driver",
+            "manual_or_documentation",
+            "source_code_release",
+            "package_metadata",
+            "web_capture",
+            "article_or_scan_segment",
+            "file_inside_container",
+            "compatibility_evidence",
+            "query_parser_gap",
+            "unknown"
+          ]
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "vendor": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "architecture": {
+          "type": "string"
+        },
+        "artifact_type": {
+          "type": "string"
+        },
+        "source_family": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "desired_evidence_kind": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "priority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "priority_class",
+        "priority_basis",
+        "demand_count_claimed",
+        "notes"
+      ],
+      "properties": {
+        "priority_class": {
+          "type": "string",
+          "enum": [
+            "example_only",
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "priority_basis": {
+          "type": "string",
+          "enum": [
+            "single_need_example",
+            "repeated_need_future",
+            "high_gap_future",
+            "manual_priority_future",
+            "source_policy_priority_future",
+            "safety_priority_future",
+            "unknown"
+          ]
+        },
+        "demand_count_claimed": {
+          "type": "boolean",
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "scheduling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schedule_status",
+        "earliest_run_policy",
+        "retry_policy",
+        "timeout_policy",
+        "notes"
+      ],
+      "properties": {
+        "schedule_status": {
+          "type": "string",
+          "enum": [
+            "not_scheduled_v0",
+            "future_manual",
+            "future_scheduled_worker",
+            "future_after_approval",
+            "blocked"
+          ]
+        },
+        "earliest_run_policy": {
+          "type": "string",
+          "enum": [
+            "not_applicable_v0",
+            "after_human_approval_future",
+            "after_operator_setup_future",
+            "after_source_policy_review_future"
+          ]
+        },
+        "retry_policy": {
+          "type": "string",
+          "enum": [
+            "none_v0",
+            "future_bounded_retry"
+          ]
+        },
+        "timeout_policy": {
+          "type": "string",
+          "enum": [
+            "none_v0",
+            "future_bounded_timeout"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "expected_outputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expected_output_kinds",
+        "output_destination_policy",
+        "public_output_allowed_after_review",
+        "requires_validation",
+        "requires_review",
+        "notes"
+      ],
+      "properties": {
+        "expected_output_kinds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "manual_observation",
+              "source_cache_record",
+              "evidence_record_candidate",
+              "candidate_index_record",
+              "absence_evidence",
+              "source_pack_request",
+              "evidence_pack_request",
+              "extraction_report",
+              "query_parser_issue",
+              "unknown"
+            ]
+          }
+        },
+        "output_destination_policy": {
+          "type": "string",
+          "enum": [
+            "no_output_v0",
+            "source_cache_future",
+            "evidence_ledger_future",
+            "candidate_index_future",
+            "manual_report_future",
+            "contribution_candidate_future"
+          ]
+        },
+        "public_output_allowed_after_review": {
+          "type": "boolean"
+        },
+        "requires_validation": {
+          "type": "boolean"
+        },
+        "requires_review": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "safety_requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rate_limit_required_future",
+        "retry_backoff_required_future",
+        "circuit_breaker_required_future",
+        "source_terms_review_required",
+        "robots_or_source_policy_review_required",
+        "cache_required_before_public_use",
+        "no_downloads",
+        "no_installs",
+        "no_execution",
+        "no_uploads",
+        "no_private_paths",
+        "no_credentials",
+        "no_arbitrary_url_fetch"
+      ],
+      "properties": {
+        "max_runtime_ms_future": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "rate_limit_required_future": {
+          "type": "boolean"
+        },
+        "retry_backoff_required_future": {
+          "type": "boolean"
+        },
+        "circuit_breaker_required_future": {
+          "type": "boolean"
+        },
+        "user_agent_required_future": {
+          "type": "boolean"
+        },
+        "source_terms_review_required": {
+          "type": "boolean"
+        },
+        "robots_or_source_policy_review_required": {
+          "type": "boolean"
+        },
+        "cache_required_before_public_use": {
+          "type": "boolean"
+        },
+        "no_downloads": {
+          "type": "boolean",
+          "const": true
+        },
+        "no_installs": {
+          "type": "boolean",
+          "const": true
+        },
+        "no_execution": {
+          "type": "boolean",
+          "const": true
+        },
+        "no_uploads": {
+          "type": "boolean",
+          "const": true
+        },
+        "no_private_paths": {
+          "type": "boolean",
+          "const": true
+        },
+        "no_credentials": {
+          "type": "boolean",
+          "const": true
+        },
+        "no_arbitrary_url_fetch": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "privacy_classification",
+        "contains_raw_query",
+        "contains_private_path",
+        "contains_secret",
+        "contains_private_url",
+        "contains_user_identifier",
+        "contains_ip_address",
+        "contains_local_result",
+        "publishable",
+        "public_aggregate_allowed",
+        "reasons"
+      ],
+      "properties": {
+        "privacy_classification": {
+          "type": "string",
+          "enum": [
+            "public_safe_aggregate",
+            "local_private",
+            "rejected_sensitive",
+            "redacted",
+            "unknown"
+          ]
+        },
+        "contains_raw_query": {
+          "type": "boolean"
+        },
+        "contains_private_path": {
+          "type": "boolean"
+        },
+        "contains_secret": {
+          "type": "boolean"
+        },
+        "contains_private_url": {
+          "type": "boolean"
+        },
+        "contains_user_identifier": {
+          "type": "boolean"
+        },
+        "contains_ip_address": {
+          "type": "boolean"
+        },
+        "contains_local_result": {
+          "type": "boolean"
+        },
+        "publishable": {
+          "type": "boolean"
+        },
+        "public_aggregate_allowed": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "retention_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_query_retention",
+        "probe_item_retention",
+        "deletion_supported_future",
+        "notes"
+      ],
+      "properties": {
+        "raw_query_retention": {
+          "type": "string",
+          "enum": [
+            "none",
+            "redacted_only"
+          ]
+        },
+        "probe_item_retention": {
+          "type": "string",
+          "enum": [
+            "example_only",
+            "until_completed_future",
+            "until_cancelled_future",
+            "review_required_future"
+          ]
+        },
+        "deletion_supported_future": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "aggregation_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aggregate_allowed",
+        "aggregate_fields_allowed",
+        "raw_query_aggregation_allowed",
+        "private_identifier_aggregation_allowed",
+        "notes"
+      ],
+      "properties": {
+        "aggregate_allowed": {
+          "type": "boolean"
+        },
+        "aggregate_fields_allowed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "probe_kind",
+              "source_family",
+              "target_kind",
+              "priority_class",
+              "approval_required",
+              "operator_required",
+              "human_required"
+            ]
+          }
+        },
+        "raw_query_aggregation_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "private_identifier_aggregation_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "no_execution_guarantees": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "probe_executed",
+        "live_source_called",
+        "external_calls_performed"
+      ],
+      "properties": {
+        "probe_executed": {
+          "type": "boolean",
+          "const": false
+        },
+        "live_source_called": {
+          "type": "boolean",
+          "const": false
+        },
+        "external_calls_performed": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "no_mutation_guarantees": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_cache_mutated",
+        "evidence_ledger_mutated",
+        "candidate_index_mutated",
+        "master_index_mutated",
+        "local_index_mutated",
+        "result_cache_mutated",
+        "miss_ledger_mutated",
+        "search_need_mutated",
+        "telemetry_exported"
+      ],
+      "properties": {
+        "source_cache_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "evidence_ledger_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "candidate_index_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "master_index_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "local_index_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "result_cache_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "miss_ledger_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "search_need_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "telemetry_exported": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_probe_queue_implemented": false,
+  "x-persistent_probe_queue_implemented": false,
+  "x-telemetry_implemented": false,
+  "x-public_query_logging_enabled": false,
+  "x-probe_execution_implemented": false,
+  "x-live_source_calls_allowed": false,
+  "x-source_cache_runtime_implemented": false,
+  "x-evidence_ledger_runtime_implemented": false,
+  "x-candidate_index_implemented": false,
+  "x-master_index_mutation_allowed": false,
+  "x-external_calls_allowed": false,
+  "x-live_probes_allowed": false
+}

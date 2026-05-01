@@ -103,6 +103,13 @@ after privacy and poisoning review. P62 defines that search need record
 contract-only path. P61 entries do not create search needs, enqueue probes,
 mutate a candidate index, or mutate the master index.
 
+## Relation To Probe Queue
+
+P63 defines probe queue items as contract-only future work requests. Miss ledger
+entries may be referenced by search needs and later probe queue items, but P61
+entries still do not create queue items, execute probes, mutate source cache,
+mutate evidence ledger, mutate candidates, or mutate the master index.
+
 Validate examples with:
 
 ```bash

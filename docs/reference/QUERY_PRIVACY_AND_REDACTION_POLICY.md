@@ -1,6 +1,6 @@
 # Query Privacy And Redaction Policy
 
-Status: P59-P62 contract policy only.
+Status: P59-P63 contract policy only.
 
 Query observations must prevent unsafe raw user data from becoming public
 evidence, telemetry, source truth, or master-index truth. Raw query retention
@@ -29,7 +29,8 @@ Public-safe query observations and examples must not contain:
 The same prohibited data categories apply to shared query/result cache entries,
 cache keys, cached result summaries, absence/gap summaries, and search miss
 ledger entries. P62 extends the same prohibited data posture to search need
-record examples and future search need aggregates.
+record examples and future search need aggregates. P63 extends it to probe
+queue items and future probe aggregate summaries.
 
 If any prohibited data is detected, the observation must be rejected by the
 privacy filter or redacted before it can be considered for aggregate learning.
@@ -67,3 +68,10 @@ default `none`, adds no runtime need store, no telemetry, no public query
 logging, no demand-count runtime, no probe enqueueing, no candidate-index
 mutation, no result-cache mutation, no miss-ledger mutation, no local-index
 mutation, and no master-index mutation.
+
+P63 adds a probe queue contract only. It keeps raw query retention default
+`none`, adds no runtime probe queue, no persistent probe queue, no telemetry, no
+public query logging, no probe execution, no live source call, no source cache
+mutation, no evidence ledger mutation, no candidate-index mutation, no
+search-need mutation, no result-cache mutation, no miss-ledger mutation, no
+local-index mutation, and no master-index mutation.

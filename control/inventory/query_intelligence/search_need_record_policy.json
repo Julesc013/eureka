@@ -18,6 +18,9 @@
   "probe_enqueue_allowed": false,
   "result_cache_mutation_allowed": false,
   "miss_ledger_mutation_allowed": false,
+  "probe_queue_status": "contract_only_p63",
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
   "external_calls_allowed": false,
   "live_probes_allowed": false,
   "next_contracts": [
@@ -30,6 +33,7 @@
   ],
   "notes": [
     "P62 defines search need records only. It does not implement a runtime need store, persistent need storage, telemetry, public query logging, demand-count runtime, probe enqueueing, candidate-index mutation, result-cache mutation, miss-ledger mutation, local-index mutation, or master-index mutation.",
+    "P63 defines probe queue items as contract-only future work requests; search needs still do not enqueue probes, mutate source cache, mutate evidence ledger, mutate candidates, or call external sources.",
     "Search needs are scoped, reviewable unresolved needs derived from privacy-filtered future inputs. They are not search results, miss ledger entries, probe jobs, candidate records, demand dashboards, or authoritative truth."
   ]
 }
