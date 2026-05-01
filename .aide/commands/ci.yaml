@@ -108,6 +108,18 @@ steps:
     run: python scripts/validate_local_staging_manifest.py --all-examples --json
   - id: local_staging_manifest_tests
     run: python -m unittest tests.operations.test_local_staging_manifest_format tests.scripts.test_validate_local_staging_manifest
+  - id: staged_pack_inspector_examples
+    run: python scripts/inspect_staged_pack.py --list-examples
+  - id: staged_pack_inspector
+    run: python scripts/inspect_staged_pack.py --all-examples
+  - id: staged_pack_inspector_json
+    run: python scripts/inspect_staged_pack.py --all-examples --json
+  - id: staged_pack_inspector_validator
+    run: python scripts/validate_staged_pack_inspector.py
+  - id: staged_pack_inspector_validator_json
+    run: python scripts/validate_staged_pack_inspector.py --json
+  - id: staged_pack_inspector_tests
+    run: python -m unittest tests.operations.test_staged_pack_inspector tests.scripts.test_inspect_staged_pack tests.scripts.test_validate_staged_pack_inspector
   - id: public_alpha_status
     run: python scripts/demo_http_api.py --mode public_alpha status
   - id: public_alpha_smoke

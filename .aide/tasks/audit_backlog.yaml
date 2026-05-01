@@ -528,8 +528,17 @@
         "local-staging-manifest-format-v0"
       ],
       "title": "Add a read-only staged pack inspector before any staging runtime writes local state",
+      "status": "addressed_by_staged_pack_inspector_v0",
+      "suggested_milestone": "Manual Observation Batch 0 Execution, human-operated"
+    },
+    {
+      "id": "audit-backlog-staged-pack-inspector",
+      "finding_refs": [
+        "staged-pack-inspector-v0"
+      ],
+      "title": "Review staged manifest inspection evidence before any local staging tool writes state",
       "status": "open_follow_up",
-      "suggested_milestone": "Staged Pack Inspector v0"
+      "suggested_milestone": "Manual Observation Batch 0 Execution, human-operated; AI-Assisted Evidence Drafting Plan v0 is the Codex-safe alternative"
     }
   ]
 }

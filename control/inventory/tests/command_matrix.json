@@ -161,6 +161,10 @@
         "staging_report_path_contract_validator",
         "local_staging_manifest_tests",
         "local_staging_manifest_validator",
+        "staged_pack_inspector_examples",
+        "staged_pack_inspector",
+        "staged_pack_inspector_validator",
+        "staged_pack_inspector_tests",
         "validate_only_pack_import_tool_tests"
       ],
       "required_status": "required",
@@ -318,6 +322,10 @@
         "staging_report_path_contract_validator",
         "local_staging_manifest_tests",
         "local_staging_manifest_validator",
+        "staged_pack_inspector_examples",
+        "staged_pack_inspector",
+        "staged_pack_inspector_validator",
+        "staged_pack_inspector_tests",
         "validate_only_pack_import_tool_tests"
       ],
       "required_status": "required",
@@ -447,6 +455,10 @@
         "staging_report_path_contract_validator",
         "local_staging_manifest_tests",
         "local_staging_manifest_validator",
+        "staged_pack_inspector_examples",
+        "staged_pack_inspector",
+        "staged_pack_inspector_validator",
+        "staged_pack_inspector_tests",
         "validate_only_pack_import_tool_tests"
       ],
       "required_status": "required",
@@ -666,6 +678,10 @@
         "staging_report_path_contract_validator",
         "local_staging_manifest_tests",
         "local_staging_manifest_validator",
+        "staged_pack_inspector_examples",
+        "staged_pack_inspector",
+        "staged_pack_inspector_validator",
+        "staged_pack_inspector_tests",
         "validate_only_pack_import_tool_tests"
       ],
       "required_status": "required",
@@ -714,6 +730,7 @@
     "Validate-Only Pack Import Tool v0 validates explicit pack roots or known examples and emits Pack Import Report v0 without import, staging, indexing, uploads, network calls, model calls, runtime mutation, public-search mutation, or master-index mutation.",
     "Local Quarantine/Staging Model v0 validation is planning-only: it checks local_private defaults, ignored future local-state roots, prohibited roots, reset/delete/export docs, and no staging runtime or search/master-index impact.",
     "Staging Report Path Contract v0 validation checks stdout defaults, explicit output path policy, forbidden committed roots, redaction docs, ignored local report roots, and no staging/report runtime.",
-    "Local Staging Manifest Format v0 validation checks the contract-only manifest schema, synthetic examples, hard no-mutation guarantees, staged candidate semantics, reset/delete/export policy, checksums, no private paths/secrets, and no staging runtime."
+    "Local Staging Manifest Format v0 validation checks the contract-only manifest schema, synthetic examples, hard no-mutation guarantees, staged candidate semantics, reset/delete/export policy, checksums, no private paths/secrets, and no staging runtime.",
+    "Staged Pack Inspector v0 validation checks read-only inspection of synthetic local staging manifests, JSON/human summaries, redaction, hard no-mutation flags, and no staging/import/index/upload/runtime/public-search/master-index side effects."
   ]
 }

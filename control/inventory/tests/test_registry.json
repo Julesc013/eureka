@@ -3538,6 +3538,90 @@
       "failure_means": "Local staging manifest validator CLI behavior, JSON output, example manifest, audit pack, docs, or negative no-mutation/privacy tests regressed.",
       "advisory_or_required": "required",
       "notes": "Covers hard no-mutation fields, staged entity candidate semantics, count consistency, reset/delete/export policy, secret/private-path rejection, docs, and absence of staging runtime or staged state."
+    },
+    {
+      "test_id": "staged_pack_inspector_examples",
+      "label": "Staged pack inspector example listing",
+      "command": "python scripts/inspect_staged_pack.py --list-examples",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Committed local staging manifest example discovery for staged inspection regressed.",
+      "advisory_or_required": "required",
+      "notes": "Lists only immediate committed synthetic example manifest roots; it does not recursively scan arbitrary directories or create staged state."
+    },
+    {
+      "test_id": "staged_pack_inspector",
+      "label": "Staged pack inspector",
+      "command": "python scripts/inspect_staged_pack.py --all-examples",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Read-only staged pack inspection over committed synthetic manifests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates and summarizes staged candidate manifests only; it creates no .eureka-local state, stages no packs, imports nothing, indexes nothing, uploads nothing, calls no network/model, and mutates neither public search nor the master index."
+    },
+    {
+      "test_id": "staged_pack_inspector_validator",
+      "label": "Staged pack inspector validator",
+      "command": "python scripts/validate_staged_pack_inspector.py",
+      "category": "contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Staged Pack Inspector v0 script, docs, audit pack, JSON flags, or no-runtime/no-directory posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Checks the read-only inspector boundary, hard false mutation flags, committed example inspection, docs, audit pack, and absence of runtime local staging directories."
+    },
+    {
+      "test_id": "staged_pack_inspector_tests",
+      "label": "Staged pack inspector tests",
+      "command": "python -m unittest tests.operations.test_staged_pack_inspector tests.scripts.test_inspect_staged_pack tests.scripts.test_validate_staged_pack_inspector",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary directories only for invalid manifest and redaction fixtures",
+      "expected_runtime": "seconds",
+      "failure_means": "Staged inspector CLI behavior, JSON/human output, validation, redaction, audit docs, or no-mutation claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers list/all examples, explicit manifest/root inspection, strict invalid-manifest failure, redaction of synthetic private paths and secrets, hard false mutation flags, and docs that inspection is not staging/import/index/master-index mutation."
     }
   ]
 }

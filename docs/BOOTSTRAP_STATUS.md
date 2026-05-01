@@ -501,6 +501,16 @@ provenance, no-mutation guarantees, and future reset/delete/export policy.
 No staging runtime exists, no staged state is created, and the format does not
 mutate public search, local indexes, runtime source registry state, uploads,
 or the master index.
+Staged Pack Inspector v0 is now implemented as read-only inspection tooling
+under `scripts/inspect_staged_pack.py`,
+`scripts/validate_staged_pack_inspector.py`,
+`docs/operations/STAGED_PACK_INSPECTION.md`, and
+`control/audits/staged-pack-inspector-v0/`. It inspects explicit Local
+Staging Manifest v0 files/roots or committed synthetic examples, validates
+before reading by default, emits human and JSON summaries, redacts obvious
+private paths/secrets, and creates no staging runtime, staged state, imports,
+local indexes, public-search mutation, runtime source registry mutation,
+uploads, network/model calls, or master-index mutation.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -731,15 +741,16 @@ local path search, accounts, telemetry, or production claims.
 The backend program should continue moving from bounded seam proof toward
 operational backend infrastructure in this order:
 
-1. Staged Pack Inspector v0
-2. Manual Observation Batch 0 Execution, human-operated
-3. Search Usefulness Baseline Comparison Report v0 after observations
-4. IA Metadata Live Probe Approval Pack v0 only after explicit approval
-5. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
-6. AI-Assisted Evidence Drafting Plan v0
+1. Manual Observation Batch 0 Execution, human-operated
+2. Search Usefulness Baseline Comparison Report v0 after observations
+3. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+4. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
+5. AI-Assisted Evidence Drafting Plan v0 as the Codex-safe alternative when
+   human observations are not being entered
+6. Local Quarantine/Staging Tool v0 only after explicit approval
 7. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
-8. Local Quarantine/Staging Tool v0 only after staged inspector planning
+8. Native Staging UI Planning v0 only after local staging tool approval
 9. Contribution Submission Tooling Plan v0
 10. Index Pack Import/Compare Tooling Plan v0
 11. Master Index Review Queue Runtime Planning v0

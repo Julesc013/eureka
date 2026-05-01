@@ -1500,3 +1500,32 @@ runtime, claim rights clearance, claim malware safety, claim canonical truth,
 or mutate the master index. The next Codex-safe milestone is Staged Pack
 Inspector v0; Manual Observation Batch 0 Execution remains human-operated
 parallel work.
+
+## ADR-128: Inspect Staged Manifests Read-Only Before Staging Tooling
+
+Status: accepted
+
+Staged Pack Inspector v0 adds `scripts/inspect_staged_pack.py`,
+`scripts/validate_staged_pack_inspector.py`,
+`docs/operations/STAGED_PACK_INSPECTION.md`, focused tests, local-state
+inventory references, and `control/audits/staged-pack-inspector-v0/`.
+
+The decision is to add a read-only inspector before any future local
+quarantine/staging tool writes state. The inspector reads explicit Local
+Staging Manifest v0 files, explicit manifest roots, or committed synthetic
+examples; validates manifests before inspection by default; emits human and
+JSON summaries; redacts obvious private paths and secret-like fields; and
+keeps staged source/evidence/index/contribution/AI entities as candidates, not
+canonical records or accepted public state.
+
+P48 deliberately does not implement staging runtime, create `.eureka-local/`
+state, create staged state, copy pack files, import source/evidence/index/
+contribution packs, import master-index queue entries, implement a local
+staging tool, mutate local indexes, mutate runtime source registry state,
+mutate public search, upload, submit, add moderation UI, add accounts or
+identity, call models, add API keys, call networks, load executable plugins,
+add live connectors, add native clients, add relay runtime, add snapshot reader
+runtime, claim rights clearance, claim malware safety, claim canonical truth,
+or mutate the master index. The immediate next milestone is Manual Observation
+Batch 0 Execution, human-operated; AI-Assisted Evidence Drafting Plan v0 is the
+Codex-safe alternative.

@@ -237,6 +237,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   posture, and future staged-inspector path without creating staging runtime,
   staged state, `.eureka-local/` state, imports, indexes, uploads, network
   calls, model calls, or master-index mutation.
+- `staged-pack-inspector-v0/`: read-only inspection audit pack for synthetic
+  Local Staging Manifest v0 examples and explicit manifests. It records
+  inspector command usage, JSON and human output models, redaction behavior,
+  no-mutation review, example results, and the future staging-tool boundary
+  without creating staging runtime, staged state, imports, indexes, uploads,
+  network calls, model calls, public-search mutation, or master-index
+  mutation.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

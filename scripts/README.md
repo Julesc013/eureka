@@ -354,6 +354,20 @@ Current scripts:
   local-index, runtime, upload, or master-index mutation claims. It does not
   create staging runtime, staged state, `.eureka-local/` state, pack imports,
   local indexes, network calls, or model calls.
+- `inspect_staged_pack.py`: read-only Staged Pack Inspector v0 for explicit
+  local staging manifests, manifest roots, or committed synthetic examples.
+  It supports `--manifest`, `--manifest-root`, `--all-examples`,
+  `--list-examples`, `--strict`, `--no-validate`, and `--json`; validates
+  manifests before inspection by default; emits human and JSON summaries of
+  staged candidate packs, staged entity counts, privacy/rights/risk posture,
+  reset/delete/export policy, and hard no-mutation guarantees; redacts obvious
+  private paths and secret-like fields; and does not stage, import, index,
+  upload, call networks, call models, mutate runtime state, mutate public
+  search, or mutate a master index.
+- `validate_staged_pack_inspector.py`: validates Staged Pack Inspector v0
+  wiring. It supports `--json`; checks that the inspector, docs, audit pack,
+  committed example inspection, hard false mutation flags, no-runtime claims,
+  and absence of `.eureka-local/` runtime staging directories remain intact.
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

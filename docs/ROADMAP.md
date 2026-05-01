@@ -155,8 +155,18 @@ validation-only work under `contracts/packs/local_staging_manifest.v0.json`,
 pack references, staged candidate entities, counts, provenance, no-mutation
 guarantees, and reset/delete/export policy while creating no staging runtime,
 staged state, public-search mutation, local-index mutation, runtime source
-registry mutation, upload, or master-index mutation. The next Codex-safe
-milestone is Staged Pack Inspector v0.
+registry mutation, upload, or master-index mutation.
+Staged Pack Inspector v0 is now implemented as read-only tooling under
+`scripts/inspect_staged_pack.py`, `scripts/validate_staged_pack_inspector.py`,
+`docs/operations/STAGED_PACK_INSPECTION.md`, and
+`control/audits/staged-pack-inspector-v0/`. It inspects explicit Local Staging
+Manifest v0 files/roots or committed synthetic examples, validates before
+reading by default, emits human and JSON summaries, redacts obvious private
+paths/secrets, and creates no staging runtime, staged state, import,
+public-search mutation, local-index mutation, runtime source registry
+mutation, upload, network/model call, or master-index mutation. The immediate
+next milestone is Manual Observation Batch 0 Execution, human-operated; the
+Codex-safe alternative is AI-Assisted Evidence Drafting Plan v0.
 
 ## Stage 3: Surface Skeletons
 

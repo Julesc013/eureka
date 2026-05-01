@@ -232,7 +232,7 @@
       "title": "Manual Observation Batch 0 Execution",
       "status": "human_operated_parallel",
       "priority": 77,
-      "notes": "Human-operated parallel follow-up after Validate-Only Pack Import Tool v0 to fill selected Batch 0 observation records manually; no scraping, automated querying, or fabricated baselines."
+      "notes": "Expected immediate next milestone after Staged Pack Inspector v0. Fill selected Batch 0 observation records manually; no scraping, automated querying, APIs, live probes, or fabricated baselines."
     },
     {
       "id": "compatibility_surface_strategy_v0",
@@ -538,9 +538,9 @@
     {
       "id": "ai_assisted_evidence_drafting_plan_v0",
       "title": "AI-Assisted Evidence Drafting Plan v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_codex_safe_alternative_after_p48",
       "priority": 83,
-      "notes": "Future planning only for using validated typed AI outputs to draft evidence/contribution candidates. Do not call models, accept outputs as truth, import into evidence packs automatically, or mutate local/master indexes."
+      "notes": "Codex-safe alternative after Staged Pack Inspector v0 if human observations are not being entered. Future planning only for using validated typed AI outputs to draft evidence/contribution candidates. Do not call models, accept outputs as truth, import into evidence packs automatically, or mutate local/master indexes."
     },
     {
       "id": "search_usefulness_baseline_comparison_report_v0",
@@ -573,9 +573,9 @@
     {
       "id": "staged_pack_inspector_v0",
       "title": "Staged Pack Inspector v0",
-      "status": "recommended_next_codex_safe",
+      "status": "completed",
       "priority": 79,
-      "notes": "Future read-only inspection of quarantined/staged pack metadata, staging manifests, and validation reports after Local Staging Manifest Format v0. Do not import into runtime, index records, upload, or submit to master-index review."
+      "notes": "Implemented read-only staged pack inspection for explicit Local Staging Manifest v0 files/roots and committed synthetic examples. The inspector validates before reading, emits human/JSON summaries, redacts obvious private paths/secrets, and adds no staging runtime, staged state, import, indexing, upload, network/model calls, public-search mutation, runtime mutation, or master-index mutation."
     },
     {
       "id": "source_pack_import_runtime_v0",
