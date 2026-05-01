@@ -1810,3 +1810,12 @@ absence, and future-only next steps, but no runtime ledger writes, persistent
 ledger storage, telemetry, public query logging, search need creation, probe
 enqueueing, result-cache mutation, candidate-index mutation, local-index
 mutation, or master-index mutation is implemented.
+
+## P62 Search Need Record Decision
+
+Decision: search need records are contract-only in P62. Need records summarize
+scoped unresolved needs with public-safe fingerprints, target objects, input
+refs, gap models, future-only next steps, and no-mutation guarantees. P62 adds
+no runtime need storage, telemetry, public query logging, demand-count runtime,
+probe enqueueing, candidate-index mutation, result-cache mutation,
+miss-ledger mutation, local-index mutation, or master-index mutation.

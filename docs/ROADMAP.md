@@ -768,3 +768,12 @@ telemetry, public query logging, search need creation, probe enqueueing,
 result-cache mutation, candidate-index mutation, local-index mutation, or
 master-index mutation was added. Next Codex-safe branch: P62 Search Need Record
 v0.
+
+## P62 Search Need Record v0
+
+Completed: search need record schema, lifecycle model, unresolved software and
+compatibility-evidence examples, dry-run helper, validators, docs, and audit
+evidence. No runtime need store, persistent need storage, telemetry, public
+query logging, demand-count runtime, probe enqueueing, candidate-index
+mutation, result-cache mutation, miss-ledger mutation, local-index mutation, or
+master-index mutation was added. Next Codex-safe branch: P63 Probe Queue v0.

@@ -305,3 +305,11 @@ P61 adds `contracts/query/search_miss_ledger_entry.v0.json` for future scoped
 miss records. Public search routes remain unchanged: they do not write miss
 ledger entries, persist ledger state, create search needs, enqueue probes,
 mutate result caches, mutate candidate indexes, or mutate master-index records.
+
+## P62 Search Need Record Boundary
+
+P62 adds `contracts/query/search_need_record.v0.json` for future scoped
+unresolved needs. Public search routes remain unchanged: they do not write need
+records, persist need state, claim demand counts, enqueue probes, mutate result
+caches or miss ledgers, mutate candidate indexes, or mutate master-index
+records.

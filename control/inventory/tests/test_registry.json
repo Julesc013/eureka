@@ -4852,6 +4852,133 @@
       "failure_means": "Focused P61 schema, examples, validators, dry-run, audit, docs, privacy, scoped absence, or no-mutation tests regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P61 tests; no telemetry, persistence, runtime ledger writes, query logging, search need creation, probe queue, result cache mutation, external calls, or index mutation."
+    },
+    {
+      "test_id": "search_need_record_examples_validator",
+      "label": "Search need record examples validator",
+      "command": "python scripts/validate_search_need_record.py --all-examples",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P62 search need examples, checksums, privacy flags, scoped context, future-only steps, demand-count policy, or no-mutation guarantees regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic search need examples only; no telemetry, persistence, runtime need store, probe enqueueing, candidate-index mutation, result cache mutation, miss ledger mutation, index mutation, or external calls."
+    },
+    {
+      "test_id": "search_need_record_examples_validator_json",
+      "label": "Search need record examples validator JSON",
+      "command": "python scripts/validate_search_need_record.py --all-examples --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P62 example validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON example validator output for P62."
+    },
+    {
+      "test_id": "search_need_record_contract_validator",
+      "label": "Search need record contract validator",
+      "command": "python scripts/validate_search_need_record_contract.py",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P62 contract schema, docs, audit pack, policy inventory, scoped need posture, or no-runtime/no-telemetry claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates P62 governance only; does not collect, persist, upload, publish, or runtime-write search need records."
+    },
+    {
+      "test_id": "search_need_record_contract_validator_json",
+      "label": "Search need record contract validator JSON",
+      "command": "python scripts/validate_search_need_record_contract.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P62 contract validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON contract validator output for P62."
+    },
+    {
+      "test_id": "search_need_record_dry_run_json",
+      "label": "Search need record dry-run JSON helper",
+      "command": "python scripts/dry_run_search_need_record.py --label \"Windows 7 compatible application\" --object-kind software_version --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "sub-second",
+      "failure_means": "P62 dry-run search need helper failed or stopped emitting a valid no-persistence record.",
+      "advisory_or_required": "required",
+      "notes": "Dry-run helper emits stdout only and writes no need store, query log, result cache, miss ledger, probe, candidate index, index, or telemetry state."
+    },
+    {
+      "test_id": "search_need_record_contract_tests",
+      "label": "Search need record contract tests",
+      "command": "python -m unittest tests.operations.test_search_need_record_contract tests.scripts.test_validate_search_need_record tests.scripts.test_validate_search_need_record_contract tests.scripts.test_dry_run_search_need_record",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P62 schema, examples, validators, dry-run, audit, docs, privacy, scoped need, or no-mutation tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P62 tests; no telemetry, persistence, runtime need store, query logging, probe queue, candidate-index mutation, result cache mutation, miss ledger mutation, external calls, or index mutation."
     }
   ]
 }

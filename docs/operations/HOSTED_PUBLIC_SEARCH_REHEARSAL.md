@@ -60,11 +60,12 @@ mutation, no pack import, no staging runtime, and no production claim.
 ## Next Step
 
 The next completed query-intelligence steps are P59 Query Observation Contract
-v0, P60 Shared Query/Result Cache v0, and P61 Search Miss Ledger v0. They
-define privacy-filtered observation, shared cache, and scoped miss contracts
-only: no telemetry, no persistent query logging, no public query observation
-feed, no cache writes, no runtime ledger writes, no search-need creation, no
-probe enqueueing, and no master-index mutation.
+v0, P60 Shared Query/Result Cache v0, P61 Search Miss Ledger v0, and P62 Search
+Need Record v0. They define privacy-filtered observation, shared cache, scoped
+miss, and scoped unresolved-need contracts only: no telemetry, no persistent
+query logging, no public query observation feed, no cache writes, no runtime
+ledger writes, no runtime need store, no demand-count runtime, no probe
+enqueueing, no candidate-index mutation, and no master-index mutation.
 
 Operator parallel work may deploy and verify the hosted wrapper, but public
 claims must not change until evidence exists.

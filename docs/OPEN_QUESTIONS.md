@@ -173,6 +173,12 @@ enqueue probes, mutate result caches, mutate candidate indexes, or mutate the
 master index. The next question is how P62 should represent durable search
 needs without turning misses into truth.
 
+P62 answer: search need records are contract-only scoped unresolved needs. They
+can later aggregate privacy-filtered observations, cache summaries, and miss
+ledger refs, but P62 adds no runtime need store, public demand counts, probes,
+candidate index, or master-index mutation. The next question is how P63 should
+define a probe queue without enabling live probes.
+
 - What aggregate threshold is required before public demand summaries may be published?
 - What retention and deletion controls are required before any hosted query observation runtime exists?
 - What poisoning and spam controls are required before query-derived demand can influence candidate work?

@@ -619,3 +619,17 @@ These P61 commands validate contract-only search miss ledger examples and docs,
 or emit a stdout-only dry-run miss entry. They do not persist ledger state, add
 telemetry, write query logs, create search needs, enqueue probes, mutate result
 caches, mutate candidate/local/master indexes, or call external services.
+
+## Search Need Record Contract
+
+- `python scripts/validate_search_need_record.py --all-examples`
+- `python scripts/validate_search_need_record.py --all-examples --json`
+- `python scripts/validate_search_need_record_contract.py`
+- `python scripts/validate_search_need_record_contract.py --json`
+- `python scripts/dry_run_search_need_record.py --label "Windows 7 compatible application" --object-kind software_version --json`
+
+These P62 commands validate contract-only search need examples and docs, or
+emit a stdout-only dry-run need record. They do not persist need state, add
+telemetry, write query logs, claim demand counts, enqueue probes, mutate result
+caches or miss ledgers, mutate candidate/local/master indexes, or call external
+services.

@@ -118,3 +118,11 @@ ambiguous, blocked, or incomplete public searches. The public search runtime and
 hosted wrapper still do not write miss ledger entries, persist ledger state,
 create search needs, enqueue probes, mutate result caches, mutate candidate
 indexes, mutate local indexes, or mutate the master index.
+
+## P62 Search Need Record Boundary
+
+P62 Search Need Record v0 defines future scoped unresolved-need records. The
+public search runtime and hosted wrapper still do not write need records,
+persist need state, claim demand counts, enqueue probes, mutate result caches or
+miss ledgers, mutate candidate indexes, mutate local indexes, or mutate the
+master index.

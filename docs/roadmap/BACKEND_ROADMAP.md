@@ -652,3 +652,11 @@ examples, validators, docs, and audit evidence. Backend runtime still does not
 write miss ledger entries, persist ledger state, emit telemetry, create search
 needs, enqueue probes, mutate result caches, mutate candidate records, or
 mutate master-index records. P62 should define Search Need Record v0 next.
+
+## P62 Search Need Record v0
+
+P62 defines search need records as contract-only schema, lifecycle model,
+examples, validators, docs, and audit evidence. Backend runtime still does not
+write need records, persist need state, emit telemetry, claim demand counts,
+enqueue probes, mutate candidate records, mutate result caches, mutate miss
+ledgers, or mutate master-index records. P63 should define Probe Queue v0 next.

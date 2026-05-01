@@ -122,8 +122,9 @@ P59 Query Observation Contract v0 keeps public query learning contract-only.
 shared query/result cache entries, miss ledger entries, probe jobs, candidate
 records, local indexes, or master-index records.
 
-P60 Shared Query/Result Cache v0 and P61 Search Miss Ledger v0 keep reusable
-query summaries and scoped misses contract-only. `local_index_only` search does
-not read or write result cache entries, write miss ledger entries, create search
-needs, enqueue probes, mutate candidate records, mutate local indexes, or mutate
-master-index records.
+P60 Shared Query/Result Cache v0, P61 Search Miss Ledger v0, and P62 Search
+Need Record v0 keep reusable summaries, scoped misses, and scoped unresolved
+needs contract-only. `local_index_only` search does not read or write result
+cache entries, write miss ledger entries, create search needs, claim demand
+counts, enqueue probes, mutate candidate records, mutate local indexes, or
+mutate master-index records.

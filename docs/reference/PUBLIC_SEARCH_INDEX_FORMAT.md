@@ -72,3 +72,9 @@ URL fetching remain blocked.
 P58 verifies that the hosted wrapper can read the generated public index during
 localhost rehearsal and that the static public index summary still matches the
 committed public-safe index counts.
+
+## P62 Search Need Compatibility
+
+P62 search need records may cite the public index build or snapshot as checked
+scope. They do not mutate the public index, import packs, stage packs, enqueue
+probes, create candidates, or mutate the master index.

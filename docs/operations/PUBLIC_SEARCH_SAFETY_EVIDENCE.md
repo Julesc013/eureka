@@ -61,6 +61,11 @@ writes, telemetry, public query logging, search need creation, probe
 enqueueing, result-cache mutation, candidate-index mutation, local-index
 mutation, or master-index mutation.
 
+P62 Search Need Record v0 remains contract-only. It adds no runtime need store,
+telemetry, public query logging, demand-count runtime, probe enqueueing,
+candidate-index mutation, result-cache mutation, miss-ledger mutation,
+local-index mutation, or master-index mutation.
+
 Human or operator parallel work may deploy the wrapper, configure a real
 backend URL, configure edge/rate limits, verify the static site, and execute
 Manual Observation Batch 0, but those actions require separate evidence.

@@ -298,8 +298,9 @@ uploads, accounts, telemetry, arbitrary URL fetch, or edge rate-limit claims.
 
 ## Query Intelligence Safety Boundary
 
-P59, P60, and P61 add contract-only query observation, shared result cache, and
-search miss ledger shapes. They do not add telemetry, persistent query logging,
-runtime cache writes, runtime ledger writes, search need creation, probe
-enqueueing, candidate-index mutation, local-index mutation, master-index
-mutation, or hosted query-intelligence runtime.
+P59, P60, P61, and P62 add contract-only query observation, shared result
+cache, search miss ledger, and search need shapes. They do not add telemetry,
+persistent query logging, runtime cache writes, runtime ledger writes, runtime
+need storage, demand-count runtime, probe enqueueing, candidate-index mutation,
+local-index mutation, master-index mutation, or hosted query-intelligence
+runtime.

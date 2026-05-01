@@ -932,3 +932,12 @@ docs, and an audit pack. Runtime ledger writes, persistent ledger storage,
 telemetry, public query logging, search need creation, probe enqueueing, result
 cache mutation, candidate-index mutation, local-index mutation, and
 master-index mutation remain unimplemented.
+
+## P62 Search Need Record v0
+
+P62 adds the search need record contract under `contracts/query/`, a lifecycle
+model, scoped synthetic unresolved software and compatibility-evidence examples,
+validators, docs, and an audit pack. Runtime need storage, persistent need
+storage, telemetry, public query logging, demand-count runtime, probe
+enqueueing, candidate-index mutation, result-cache mutation, miss-ledger
+mutation, local-index mutation, and master-index mutation remain unimplemented.

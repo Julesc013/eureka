@@ -631,9 +631,9 @@
         "query-observation-contract-v0"
       ],
       "title": "Govern cache, miss ledger, search need, probe, candidate, and aggregate-publication privacy before runtime query learning",
-      "status": "partially_addressed_by_p61",
+      "status": "partially_addressed_by_p62",
       "suggested_milestone": "P62 Search Need Record v0 through P67 Query Privacy and Poisoning Guard v0",
-      "addressed_by": "control/audits/search-miss-ledger-v0/search_miss_ledger_report.json"
+      "addressed_by": "control/audits/search-need-record-v0/search_need_record_report.json"
     },
     {
       "id": "audit-backlog-search-miss-ledger-contract",
@@ -645,6 +645,18 @@
       "status": "addressed_by_p61",
       "suggested_milestone": "P62 Search Need Record v0",
       "addressed_by": "control/audits/search-miss-ledger-v0/search_miss_ledger_report.json"
+    },
+    {
+      "id": "audit-backlog-search-need-record-contract",
+      "finding_refs": [
+        "search-miss-ledger-v0",
+        "shared-query-result-cache-v0",
+        "query-observation-contract-v0"
+      ],
+      "title": "Define scoped search need records before probe queue or candidate index work",
+      "status": "addressed_by_p62",
+      "suggested_milestone": "P63 Probe Queue v0",
+      "addressed_by": "control/audits/search-need-record-v0/search_need_record_report.json"
     }
   ]
 }

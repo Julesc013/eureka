@@ -60,7 +60,8 @@ operator deployment evidence exists.
 
 ## Query Intelligence Boundary
 
-P59 Query Observation, P60 Shared Query/Result Cache, and P61 Search Miss
-Ledger remain contract-only. Static search pages do not collect observations,
-write cache entries, write miss ledger entries, create search needs, enqueue
-probes, mutate indexes, or publish public demand counts.
+P59 Query Observation, P60 Shared Query/Result Cache, P61 Search Miss Ledger,
+and P62 Search Need Record remain contract-only. Static search pages do not
+collect observations, write cache entries, write miss ledger entries, create
+search needs, claim demand counts, enqueue probes, mutate indexes, or publish
+public demand counts.

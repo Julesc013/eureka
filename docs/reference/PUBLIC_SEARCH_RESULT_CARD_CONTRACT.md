@@ -295,3 +295,10 @@ P61 Search Miss Ledger v0 may reference public-safe result-card summaries as
 weak hits or near misses. A miss entry is not the full result card, not source
 evidence, not a search need, not a probe job, not telemetry, and not
 master-index truth.
+
+## Search Need Record Boundary
+
+P62 Search Need Record v0 may reference public-safe result-card summaries as
+context for a scoped unresolved need. A need record is not the full result card,
+not source evidence, not a probe job, not a candidate record, not telemetry, and
+not master-index truth.

@@ -842,6 +842,18 @@ steps:
     run: python scripts/dry_run_search_miss_ledger_entry.py --query "no-such-local-index-hit" --miss-type no_hits --json
   - id: search_miss_ledger_contract_tests
     run: python -m unittest tests.operations.test_search_miss_ledger_contract tests.scripts.test_validate_search_miss_ledger_entry tests.scripts.test_validate_search_miss_ledger_contract tests.scripts.test_dry_run_search_miss_ledger_entry
+  - id: search_need_record_examples_validator
+    run: python scripts/validate_search_need_record.py --all-examples
+  - id: search_need_record_examples_validator_json
+    run: python scripts/validate_search_need_record.py --all-examples --json
+  - id: search_need_record_contract_validator
+    run: python scripts/validate_search_need_record_contract.py
+  - id: search_need_record_contract_validator_json
+    run: python scripts/validate_search_need_record_contract.py --json
+  - id: search_need_record_dry_run_json
+    run: python scripts/dry_run_search_need_record.py --label "Windows 7 compatible application" --object-kind software_version --json
+  - id: search_need_record_contract_tests
+    run: python -m unittest tests.operations.test_search_need_record_contract tests.scripts.test_validate_search_need_record tests.scripts.test_validate_search_need_record_contract tests.scripts.test_dry_run_search_need_record
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
