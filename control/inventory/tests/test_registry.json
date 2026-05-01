@@ -5358,6 +5358,133 @@
       "failure_means": "P65 validator, dry-run helper, docs, policy, or hard-boundary tests regressed.",
       "advisory_or_required": "required",
       "notes": "Includes negative tests for promotion, truth, automatic decision, rights, malware, source-cache, evidence-ledger, and master-index mutation claims."
+    },
+    {
+      "test_id": "known_absence_page_examples_validator",
+      "label": "Known absence page examples validator",
+      "command": "python scripts/validate_known_absence_page.py --all-examples",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P66 known absence examples, checksums, scoped absence, privacy, safe actions, or no-mutation guarantees regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic known absence examples only; no telemetry, persistence, runtime pages, live probes, source-cache mutation, evidence-ledger mutation, candidate mutation, index mutation, or external calls."
+    },
+    {
+      "test_id": "known_absence_page_examples_validator_json",
+      "label": "Known absence page examples validator JSON",
+      "command": "python scripts/validate_known_absence_page.py --all-examples --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P66 example validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON output for P66 example validation."
+    },
+    {
+      "test_id": "known_absence_page_contract_validator",
+      "label": "Known absence page contract validator",
+      "command": "python scripts/validate_known_absence_page_contract.py",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P66 contract schema, docs, audit pack, policy inventory, no-global-absence, or no-runtime/no-mutation posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates P66 governance only; does not collect, persist, upload, publish, or runtime-write known absence pages."
+    },
+    {
+      "test_id": "known_absence_page_contract_validator_json",
+      "label": "Known absence page contract validator JSON",
+      "command": "python scripts/validate_known_absence_page_contract.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P66 contract validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON output for P66 contract validation."
+    },
+    {
+      "test_id": "known_absence_page_dry_run_json",
+      "label": "Known absence page dry-run JSON helper",
+      "command": "python scripts/dry_run_known_absence_page.py --query \"no-such-local-index-hit\" --absence-status scoped_absence --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "sub-second",
+      "failure_means": "P66 dry-run helper failed or stopped emitting a valid no-persistence known absence page.",
+      "advisory_or_required": "required",
+      "notes": "Dry-run helper emits stdout only and writes no page store, query log, telemetry, source cache, evidence ledger, candidate index, or index state."
+    },
+    {
+      "test_id": "known_absence_page_contract_tests",
+      "label": "Known absence page contract tests",
+      "command": "python -m unittest tests.operations.test_known_absence_page_contract tests.scripts.test_validate_known_absence_page tests.scripts.test_validate_known_absence_page_contract tests.scripts.test_dry_run_known_absence_page",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P66 schema, examples, validators, dry-run, docs, privacy, scoped absence, safe actions, or no-mutation tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P66 tests; no telemetry, persistence, runtime known absence pages, live probes, source-cache mutation, evidence-ledger mutation, external calls, or index mutation."
     }
   ]
 }

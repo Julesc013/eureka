@@ -694,6 +694,16 @@
       "status": "addressed_by_p65",
       "suggested_milestone": "P66 Known Absence Page v0",
       "addressed_by": "control/audits/candidate-promotion-policy-v0/candidate_promotion_policy_report.json"
+    },
+    {
+      "id": "audit-backlog-known-absence-page-contract",
+      "finding_refs": [
+        "P50-QI-008"
+      ],
+      "title": "Define scoped known absence explanations before any public no-result page runtime",
+      "status": "addressed_by_p66",
+      "suggested_milestone": "P67 Query Privacy and Poisoning Guard v0",
+      "addressed_by": "control/audits/known-absence-page-v0/known_absence_page_report.json"
     }
   ]
 }

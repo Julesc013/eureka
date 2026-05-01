@@ -783,14 +783,14 @@
     {
       "id": "known_absence_page_v0",
       "title": "P66 Known Absence Page v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed",
       "priority": 107,
-      "notes": "Expected next P66 milestone after candidate promotion policy. Define scoped known-absence explanation pages without global non-existence claims, runtime publication, telemetry, or master-index mutation."
+      "notes": "Implemented P66 Known Absence Page v0 with contract schema, synthetic scoped-absence examples, dry-run helper, validators, audit pack, docs, tests, and metadata. No runtime known absence pages, persistent store, telemetry, public query logging, live probes, downloads, uploads, installs, source-cache mutation, evidence-ledger mutation, candidate mutation, local/public/master-index mutation, external calls, or global absence claim was added."
     },
     {
       "id": "query_privacy_poisoning_guard_v0",
       "title": "P67 Query Privacy and Poisoning Guard v0",
-      "status": "queued_codex_safe",
+      "status": "queued_codex_safe_next",
       "priority": 108,
       "notes": "Future query-intelligence safety milestone after known absence work; no telemetry or public query learning runtime until privacy/poisoning boundaries are governed."
     },
@@ -849,6 +849,13 @@
       "status": "human_operator_gated_future",
       "priority": 116,
       "notes": "Future report only after Manual Observation Batch 0 evidence exists. Do not fabricate observations, scrape, call external APIs, or claim superiority from pending baselines."
+    },
+    {
+      "id": "object_page_contract_v0",
+      "title": "P76 Object Page Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 117,
+      "notes": "Future contract after known absence/privacy/demand/source-cache sequence; do not implement runtime pages or mutate indexes without governed contracts."
     }
   ]
 }

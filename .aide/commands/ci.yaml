@@ -544,6 +544,18 @@ steps:
     run: python scripts/dry_run_candidate_promotion_assessment.py --candidate-label "Firefox ESR Windows XP compatibility candidate" --candidate-type compatibility_claim_candidate --json
   - id: candidate_promotion_policy_tests
     run: python -m unittest tests.operations.test_candidate_promotion_policy tests.scripts.test_validate_candidate_promotion_assessment tests.scripts.test_validate_candidate_promotion_policy tests.scripts.test_dry_run_candidate_promotion_assessment
+  - id: known_absence_page_examples_validator
+    run: python scripts/validate_known_absence_page.py --all-examples
+  - id: known_absence_page_examples_validator_json
+    run: python scripts/validate_known_absence_page.py --all-examples --json
+  - id: known_absence_page_contract_validator
+    run: python scripts/validate_known_absence_page_contract.py
+  - id: known_absence_page_contract_validator_json
+    run: python scripts/validate_known_absence_page_contract.py --json
+  - id: known_absence_page_dry_run_json
+    run: python scripts/dry_run_known_absence_page.py --query "no-such-local-index-hit" --absence-status scoped_absence --json
+  - id: known_absence_page_contract_tests
+    run: python -m unittest tests.operations.test_known_absence_page_contract tests.scripts.test_validate_known_absence_page tests.scripts.test_validate_known_absence_page_contract tests.scripts.test_dry_run_known_absence_page
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.
@@ -602,3 +614,4 @@ notes:
   - Hosted Public Search Rehearsal v0 is stdlib-only localhost HTTP evidence using the hosted wrapper process; it adds no deployment, external calls, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, edge rate-limit claim, or production claim.
   - P63 Probe Queue v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, external calls, or index/master-index mutation.
   - P64 Candidate Index v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index/master-index mutation.
+  - P66 Known Absence Page v0 validation is stdlib-only and contract-only; it adds no runtime pages, telemetry, global absence claims, live probes, downloads, uploads, installs, external calls, or index/source/evidence/candidate mutation.
