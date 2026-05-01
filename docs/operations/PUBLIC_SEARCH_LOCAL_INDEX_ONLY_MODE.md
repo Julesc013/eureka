@@ -133,3 +133,9 @@ P63 Probe Queue v0 keeps future probe planning contract-only. `local_index_only`
 search does not create queue items, execute probes, call live sources, mutate
 source caches or evidence ledgers, mutate candidate records, or relax the
 server-owned index and source boundaries.
+## P64 Candidate Index Note
+
+Local-index-only public search does not read or write candidate records. P64
+candidate examples and dry-run output are validation artifacts only and do not
+change local index, public index, source cache, evidence ledger, or master
+index behavior.

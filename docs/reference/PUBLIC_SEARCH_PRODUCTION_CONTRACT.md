@@ -134,3 +134,9 @@ public search runtime and hosted wrapper still do not create queue items,
 persist queue state, execute probes, call live sources, mutate source caches,
 mutate evidence ledgers, mutate candidate indexes, mutate local indexes, or
 mutate the master index.
+## P64 Candidate Index Note
+
+Public Search Production Contract v0 remains local_index_only and
+candidate-free. P64 candidate index records are provisional contract artifacts
+only; they do not affect public search routes, result ranking, source cache,
+evidence ledger, or master-index truth.

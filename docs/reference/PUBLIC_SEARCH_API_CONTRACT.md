@@ -321,3 +321,8 @@ probe planning. Public search routes remain unchanged: they do not create queue
 items, persist queue state, execute probes, call live sources, mutate source
 caches, mutate evidence ledgers, mutate candidate indexes, or mutate
 master-index records.
+## P64 Candidate Index Note
+
+The public search API does not expose candidate creation, candidate lookup,
+candidate ranking, candidate path selection, candidate promotion, source-cache
+mutation, evidence-ledger mutation, or master-index mutation in P64.

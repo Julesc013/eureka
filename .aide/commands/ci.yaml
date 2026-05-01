@@ -520,6 +520,18 @@ steps:
     run: python scripts/dry_run_probe_queue_item.py --label "Check IA metadata for Windows 7 app query" --kind source_metadata_probe --json
   - id: probe_queue_contract_tests
     run: python -m unittest tests.operations.test_probe_queue_contract tests.scripts.test_validate_probe_queue_item tests.scripts.test_validate_probe_queue_contract tests.scripts.test_dry_run_probe_queue_item
+  - id: candidate_index_record_examples_validator
+    run: python scripts/validate_candidate_index_record.py --all-examples
+  - id: candidate_index_record_examples_validator_json
+    run: python scripts/validate_candidate_index_record.py --all-examples --json
+  - id: candidate_index_contract_validator
+    run: python scripts/validate_candidate_index_contract.py
+  - id: candidate_index_contract_validator_json
+    run: python scripts/validate_candidate_index_contract.py --json
+  - id: candidate_index_dry_run_json
+    run: python scripts/dry_run_candidate_index_record.py --label "Firefox ESR Windows XP compatibility candidate" --candidate-type compatibility_claim_candidate --json
+  - id: candidate_index_contract_tests
+    run: python -m unittest tests.operations.test_candidate_index_contract tests.scripts.test_validate_candidate_index_record tests.scripts.test_validate_candidate_index_contract tests.scripts.test_dry_run_candidate_index_record
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.
@@ -577,3 +589,4 @@ notes:
   - Public Search Safety Evidence v0 is stdlib-only local/public-alpha safety evidence using an in-process hosted-wrapper harness; it adds no deployment, live probes, external calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, index mutation, edge rate-limit claim, or production claim.
   - Hosted Public Search Rehearsal v0 is stdlib-only localhost HTTP evidence using the hosted wrapper process; it adds no deployment, external calls, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, edge rate-limit claim, or production claim.
   - P63 Probe Queue v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, external calls, or index/master-index mutation.
+  - P64 Candidate Index v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index/master-index mutation.

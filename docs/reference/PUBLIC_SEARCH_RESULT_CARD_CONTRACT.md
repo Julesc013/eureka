@@ -309,3 +309,8 @@ P63 Probe Queue v0 may reference public-safe result-card context only through
 query observation, cache, miss, or search-need refs. A probe queue item is not
 the full result card, not source evidence, not probe execution, not a candidate
 record, not telemetry, and not master-index truth.
+## P64 Candidate Index Note
+
+Result cards are not candidate records. P64 candidate examples are provisional
+contract artifacts and do not become public result cards, public action
+targets, evidence acceptance, or master-index records.

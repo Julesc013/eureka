@@ -68,3 +68,8 @@ hosted wrapper on `127.0.0.1` with safe hosted settings and checks the public
 route surface over local HTTP. This is still no deployment evidence: backend
 hosting, DNS/TLS, provider setup, edge rate limits, and hosted URL verification
 remain operator-gated.
+## P64 Candidate Index Note
+
+Candidate Index v0 does not change hosting readiness. Future hosted candidate
+behavior would require separate storage, privacy, poisoning, review, promotion,
+rate-limit, timeout, circuit-breaker, and operator evidence before deployment.

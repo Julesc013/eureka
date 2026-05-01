@@ -85,3 +85,8 @@ P63 probe queue items may cite public index build or snapshot refs as checked
 scope for a future work request. They do not mutate the public index, import
 packs, stage packs, run probes, mutate source caches or evidence ledgers, create
 candidates, or mutate the master index.
+## P64 Candidate Index Note
+
+The public index format remains generated from controlled public-safe index
+artifacts. P64 does not add candidate records to the public index, mutate the
+public index, or treat candidate confidence as ranking truth.

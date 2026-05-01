@@ -37,3 +37,9 @@ operator must be able to turn it off and keep the backend functional.
 No live probe is implemented. Internet Archive, Wayback, GitHub, Software
 Heritage, package registries, and Wikidata candidates are future-disabled.
 Google remains manual-baseline only.
+## P64 Candidate Index Note
+
+Candidate records may later reference approved probe outputs, but P64 runs no
+probes and calls no live sources. Any future live-probe-produced candidate
+requires source policy approval, cache/evidence review, rights/risk review,
+privacy review, and promotion policy before authoritative use.

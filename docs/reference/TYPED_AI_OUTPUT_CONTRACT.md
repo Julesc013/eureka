@@ -144,3 +144,8 @@ clearance, not malware safety, and not master-index acceptance.
 The plan remains planning/example/validation only. It adds no runtime AI, no
 model calls, no API keys, no telemetry, no provider loading, no public search
 mutation, no local index mutation, and no master-index mutation.
+## P64 Candidate Index Note
+
+Typed AI outputs, if approved in a future milestone, can only be candidate
+inputs until reviewed. P64 makes no model calls, adds no AI runtime, accepts no
+AI output as evidence, and mutates no candidate index or master index.

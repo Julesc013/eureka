@@ -371,3 +371,14 @@ fetch, or production safety claim.
 - Status: contract-only; no runtime queue, persistent queue, probe execution,
   live source calls, source cache mutation, evidence ledger mutation,
   candidate-index mutation, local-index mutation, or master-index mutation.
+
+## Candidate Index v0
+
+- Path: `control/audits/candidate-index-v0/`
+- Scope: P64 candidate index record contract, lifecycle model,
+  object/evidence/absence/conflict examples, validators, docs, and audit
+  evidence.
+- Status: contract-only; no runtime candidate index, persistent candidate
+  store, public search candidate injection, candidate promotion runtime, source
+  cache mutation, evidence ledger mutation, local-index mutation, or
+  master-index mutation.

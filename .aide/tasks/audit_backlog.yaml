@@ -631,9 +631,9 @@
         "query-observation-contract-v0"
       ],
       "title": "Govern cache, miss ledger, search need, probe, candidate, and aggregate-publication privacy before runtime query learning",
-      "status": "partially_addressed_by_p63",
+      "status": "partially_addressed_by_p64",
       "suggested_milestone": "P62 Search Need Record v0 through P67 Query Privacy and Poisoning Guard v0",
-      "addressed_by": "control/audits/probe-queue-v0/probe_queue_report.json"
+      "addressed_by": "control/audits/candidate-index-v0/candidate_index_report.json"
     },
     {
       "id": "audit-backlog-search-miss-ledger-contract",
@@ -670,6 +670,20 @@
       "status": "addressed_by_p63",
       "suggested_milestone": "P64 Candidate Index v0",
       "addressed_by": "control/audits/probe-queue-v0/probe_queue_report.json"
+    },
+    {
+      "id": "audit-backlog-candidate-index-contract",
+      "finding_refs": [
+        "probe-queue-v0",
+        "search-need-record-v0",
+        "search-miss-ledger-v0",
+        "shared-query-result-cache-v0",
+        "query-observation-contract-v0"
+      ],
+      "title": "Define provisional candidate records before promotion policy or public candidate surfacing work",
+      "status": "addressed_by_p64",
+      "suggested_milestone": "P65 Candidate Promotion Policy v0",
+      "addressed_by": "control/audits/candidate-index-v0/candidate_index_report.json"
     }
   ]
 }

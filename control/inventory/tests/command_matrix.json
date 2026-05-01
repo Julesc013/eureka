@@ -220,7 +220,11 @@
         "probe_queue_item_examples_validator",
         "probe_queue_contract_validator",
         "probe_queue_dry_run_json",
-        "probe_queue_contract_tests"
+        "probe_queue_contract_tests",
+        "candidate_index_record_examples_validator",
+        "candidate_index_contract_validator",
+        "candidate_index_dry_run_json",
+        "candidate_index_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -450,7 +454,13 @@
         "probe_queue_contract_validator",
         "probe_queue_contract_validator_json",
         "probe_queue_dry_run_json",
-        "probe_queue_contract_tests"
+        "probe_queue_contract_tests",
+        "candidate_index_record_examples_validator",
+        "candidate_index_record_examples_validator_json",
+        "candidate_index_contract_validator",
+        "candidate_index_contract_validator_json",
+        "candidate_index_dry_run_json",
+        "candidate_index_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -619,7 +629,10 @@
         "search_need_record_contract_tests",
         "probe_queue_item_examples_validator",
         "probe_queue_contract_validator",
-        "probe_queue_contract_tests"
+        "probe_queue_contract_tests",
+        "candidate_index_record_examples_validator",
+        "candidate_index_contract_validator",
+        "candidate_index_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -943,7 +956,13 @@
         "probe_queue_contract_validator",
         "probe_queue_contract_validator_json",
         "probe_queue_dry_run_json",
-        "probe_queue_contract_tests"
+        "probe_queue_contract_tests",
+        "candidate_index_record_examples_validator",
+        "candidate_index_record_examples_validator_json",
+        "candidate_index_contract_validator",
+        "candidate_index_contract_validator_json",
+        "candidate_index_dry_run_json",
+        "candidate_index_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -1004,6 +1023,7 @@
     "P60 Shared Query/Result Cache v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, runtime cache writes, public query logging, miss ledger mutation, search need mutation, probe enqueueing, external calls, or index/master-index mutation.",
     "P61 Search Miss Ledger v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, runtime ledger writes, public query logging, search need creation, probe enqueueing, result cache mutation, external calls, or index/master-index mutation.",
     "P62 Search Need Record v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, runtime need store, public query logging, demand-count runtime, probe enqueueing, candidate-index mutation, result cache mutation, miss ledger mutation, external calls, or index/master-index mutation.",
-    "P63 Probe Queue v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, external calls, or index/master-index mutation."
+    "P63 Probe Queue v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, external calls, or index/master-index mutation.",
+    "P64 Candidate Index v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index/master-index mutation."
   ]
 }

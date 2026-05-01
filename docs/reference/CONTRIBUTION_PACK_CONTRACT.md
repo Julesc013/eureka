@@ -252,3 +252,8 @@ arbitrary URL fetching, crawling or scraping, private cache sharing, raw SQLite
 or cache export, executable plugin loading, downloads or installers, native
 clients, relay runtime, snapshot reader runtime, production signing, malware
 safety, rights clearance, or production readiness.
+## P64 Candidate Index Note
+
+Candidate records may later reference contribution-pack candidates, but P64
+does not accept public submissions, import contribution packs, create accounts,
+upload files, publish candidate records, or mutate the master index.

@@ -950,3 +950,12 @@ examples, validators, docs, and an audit pack. Runtime queue storage,
 persistent queue storage, probe execution, live source calls, source cache
 mutation, evidence ledger mutation, candidate-index mutation, local-index
 mutation, and master-index mutation remain unimplemented.
+
+## P64 Candidate Index v0
+
+P64 adds the candidate index record contract under `contracts/query/`, a
+candidate lifecycle model, synthetic object/evidence/absence/conflict examples,
+validators, docs, and an audit pack. Runtime candidate storage, persistent
+candidate storage, public search candidate injection, candidate promotion
+runtime, source-cache mutation, evidence-ledger mutation, local-index mutation,
+and master-index mutation remain unimplemented.

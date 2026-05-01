@@ -786,3 +786,13 @@ validators, docs, and audit evidence. No runtime queue, persistent queue,
 probe execution, live source calls, source cache mutation, evidence ledger
 mutation, candidate-index mutation, local-index mutation, or master-index
 mutation was added. Next Codex-safe branch: P64 Candidate Index v0.
+
+## P64 Candidate Index v0
+
+Completed: candidate index record schema, lifecycle model, object/evidence/
+absence/conflict examples, dry-run helper, validators, docs, and audit
+evidence. Candidate records are provisional and confidence-not-truth. No
+runtime candidate index, persistent candidate store, public search candidate
+injection, candidate promotion runtime, source-cache mutation, evidence-ledger
+mutation, local-index mutation, or master-index mutation was added. Next
+Codex-safe branch: P65 Candidate Promotion Policy v0.

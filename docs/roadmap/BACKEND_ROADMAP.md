@@ -670,3 +670,12 @@ state, execute probes, call live sources, mutate source caches, mutate evidence
 ledgers, mutate candidate records, mutate search needs, mutate result caches,
 mutate miss ledgers, or mutate master-index records. P64 should define
 Candidate Index v0 next.
+
+## P64 Candidate Index v0
+
+P64 defines candidate index records as contract-only schema, lifecycle model,
+synthetic examples, validators, docs, and audit evidence. Backend runtime still
+does not create candidate records, persist candidate state, rank from
+candidates, promote candidates, call live sources, mutate source caches, mutate
+evidence ledgers, mutate public search results, or mutate master-index records.
+P65 should define Candidate Promotion Policy v0 next.

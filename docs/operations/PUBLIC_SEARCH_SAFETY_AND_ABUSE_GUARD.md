@@ -310,3 +310,9 @@ probe execution, live source calls, source-cache mutation, evidence-ledger
 mutation, candidate-index mutation, search-need mutation, local-index mutation,
 master-index mutation, or any change to the public-search blocked-parameter
 posture.
+## P64 Candidate Index Note
+
+Candidate records are not public search authority in P64. Safety and abuse
+guards must continue to block caller-selected candidate paths, source roots,
+local paths, URLs, live sources, uploads, downloads, installs, telemetry, and
+master-index mutation in any future candidate-aware work.

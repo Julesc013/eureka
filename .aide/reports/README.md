@@ -284,3 +284,7 @@ The P62 report lives at `control/audits/search-need-record-v0/search_need_record
 ## P63 Probe Queue v0
 
 The P63 report lives at `control/audits/probe-queue-v0/probe_queue_report.json`. It records probe queue contract/schema/example validation only and does not claim queue runtime, persistent queue storage, telemetry, public query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, index mutation, or hosted query intelligence runtime.
+
+## P64 Candidate Index v0
+
+The P64 report lives at `control/audits/candidate-index-v0/candidate_index_report.json`. It records candidate index contract/schema/example validation only and does not claim runtime candidate index, persistent candidate storage, telemetry, public query logging, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, index mutation, or hosted query intelligence runtime.

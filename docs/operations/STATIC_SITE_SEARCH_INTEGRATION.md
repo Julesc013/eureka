@@ -70,3 +70,8 @@ P63 Probe Queue also remains contract-only. Static search pages do not create
 probe queue items, execute probes, call live sources, mutate source caches,
 mutate evidence ledgers, mutate candidate indexes, or change hosted-backend
 verification status.
+## P64 Candidate Index Note
+
+Static search handoff remains honest about backend state. P64 candidate records
+are contract-only and are not included in static search config, result ranking,
+public index summaries, or backend URL handoff.

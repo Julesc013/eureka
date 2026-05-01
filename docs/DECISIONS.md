@@ -1829,3 +1829,15 @@ no-execution/no-mutation guarantees. P63 adds no runtime queue, persistent
 queue, probe execution, live source calls, source cache mutation, evidence
 ledger mutation, candidate-index mutation, local-index mutation, or
 master-index mutation.
+
+## P64 Candidate Index Decision
+
+Decision: candidate index records are contract-only in P64. Candidate records
+summarize provisional object, evidence, compatibility, absence, conflict,
+source, identity, extraction, and query-interpretation candidates with
+public-safe fingerprints, provenance refs, confidence-not-truth, review gates,
+conflict preservation, source/evidence/rights policy, visibility policy, and
+no-truth/no-mutation guarantees. P64 adds no runtime candidate index, persistent
+candidate store, public search candidate injection, candidate promotion
+runtime, source cache mutation, evidence ledger mutation, local-index mutation,
+or master-index mutation.

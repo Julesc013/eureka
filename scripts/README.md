@@ -648,3 +648,18 @@ probes, call live sources, add telemetry, write query logs, mutate source
 caches, evidence ledgers, candidate indexes, local indexes, master-index
 records, result caches, miss ledgers, or search needs, or call external
 services.
+
+## Candidate Index Contract
+
+- `python scripts/validate_candidate_index_record.py --all-examples`
+- `python scripts/validate_candidate_index_record.py --all-examples --json`
+- `python scripts/validate_candidate_index_contract.py`
+- `python scripts/validate_candidate_index_contract.py --json`
+- `python scripts/dry_run_candidate_index_record.py --label "Firefox ESR Windows XP compatibility candidate" --candidate-type compatibility_claim_candidate --json`
+
+These P64 commands validate contract-only candidate index examples and docs, or
+emit a stdout-only dry-run candidate record. They do not persist candidate
+state, promote candidates, inject candidates into public search, add telemetry,
+write query logs, mutate source caches, evidence ledgers, local indexes,
+master-index records, result caches, miss ledgers, search needs, or probe
+queues, or call external services.

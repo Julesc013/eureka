@@ -36,3 +36,9 @@ P58 performs no deployment, so there is no hosted rollback event. The local
 rehearsal starts a localhost wrapper process and terminates it after route and
 safety checks. Real rollback evidence remains operator-gated for a future
 hosted deployment.
+## P64 Candidate Index Note
+
+There is no P64 runtime candidate index to roll back. If a future milestone
+adds candidate runtime behavior, rollback must include candidate-store disable,
+public-search injection disable, promotion disable, and source/evidence write
+disable checks before operator use.

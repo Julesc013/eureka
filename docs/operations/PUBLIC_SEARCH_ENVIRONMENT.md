@@ -75,3 +75,8 @@ operator deployment: `EUREKA_PUBLIC_MODE=1`, `EUREKA_SEARCH_MODE=local_index_onl
 live probes/downloads/uploads/local paths/arbitrary URL fetch/install actions
 and telemetry set to `0`, max query length `160`, max results `20`, timeout
 budget `5000`, and kill switch `0`. The rehearsal binds only to localhost.
+## P64 Candidate Index Note
+
+No P64 environment variable enables candidate storage, candidate paths, source
+roots, external sources, live probes, public search candidate injection, or
+master-index mutation. Candidate index work remains contract-only.

@@ -74,3 +74,10 @@ hosted-wrapper rehearsal behavior.
 
 Operator parallel work may deploy and verify the hosted wrapper, but public
 claims must not change until evidence exists.
+## P64 Candidate Index Note
+
+Hosted public search rehearsal remains local-only and local_index_only. The P64
+candidate index contract adds no runtime candidate index, no public search
+candidate injection, no candidate promotion runtime, no source-cache mutation,
+no evidence-ledger mutation, no external calls, and no hosted query
+intelligence runtime.

@@ -5106,6 +5106,133 @@
       "failure_means": "Focused P63 schema, examples, validators, dry-run, audit, docs, privacy, source policy, approval, or no-execution tests regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P63 tests; no telemetry, persistence, query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, external calls, or index mutation."
+    },
+    {
+      "test_id": "candidate_index_record_examples_validator",
+      "label": "Candidate index record examples validator",
+      "command": "python scripts/validate_candidate_index_record.py --all-examples",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P64 candidate index examples, checksums, privacy flags, confidence-not-truth, review gates, conflict model, or no-truth/no-mutation guarantees regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic candidate index examples only; no telemetry, persistence, public search candidate injection, promotion runtime, source-cache mutation, evidence-ledger mutation, index mutation, or external calls."
+    },
+    {
+      "test_id": "candidate_index_record_examples_validator_json",
+      "label": "Candidate index record examples validator JSON",
+      "command": "python scripts/validate_candidate_index_record.py --all-examples --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P64 example validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON example validator output for P64."
+    },
+    {
+      "test_id": "candidate_index_contract_validator",
+      "label": "Candidate index contract validator",
+      "command": "python scripts/validate_candidate_index_contract.py",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P64 contract schema, docs, audit pack, policy inventory, no-runtime/no-promotion/no-truth claims, or no-mutation posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates P64 governance only; does not collect, persist, upload, publish, or runtime-write candidate records."
+    },
+    {
+      "test_id": "candidate_index_contract_validator_json",
+      "label": "Candidate index contract validator JSON",
+      "command": "python scripts/validate_candidate_index_contract.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P64 contract validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON contract validator output for P64."
+    },
+    {
+      "test_id": "candidate_index_dry_run_json",
+      "label": "Candidate index dry-run JSON helper",
+      "command": "python scripts/dry_run_candidate_index_record.py --label \"Firefox ESR Windows XP compatibility candidate\" --candidate-type compatibility_claim_candidate --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "sub-second",
+      "failure_means": "P64 dry-run candidate helper failed or stopped emitting a valid no-persistence record.",
+      "advisory_or_required": "required",
+      "notes": "Dry-run helper emits stdout only and writes no candidate index, source cache, evidence ledger, public search, index, or telemetry state."
+    },
+    {
+      "test_id": "candidate_index_contract_tests",
+      "label": "Candidate index contract tests",
+      "command": "python -m unittest tests.operations.test_candidate_index_contract tests.scripts.test_validate_candidate_index_record tests.scripts.test_validate_candidate_index_contract tests.scripts.test_dry_run_candidate_index_record",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P64 schema, examples, validators, dry-run, audit, docs, privacy, review, conflict, no-truth, or no-mutation tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P64 tests; no telemetry, persistence, query logging, public search candidate injection, promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index mutation."
     }
   ]
 }

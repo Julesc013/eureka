@@ -227,3 +227,9 @@ source probes or live connectors, arbitrary URL fetching, private cache sharing,
 executable plugin loading, downloads or installers, accounts, telemetry, auth,
 TLS, rate limiting, malware safety, rights clearance, or production extension
 support.
+## P64 Candidate Index Note
+
+Candidate evidence refs are not evidence-pack acceptance. A future candidate
+may point toward an evidence-pack candidate, but P64 imports no packs, writes no
+evidence ledger, claims no rights clearance, and accepts no candidate evidence
+as authoritative.

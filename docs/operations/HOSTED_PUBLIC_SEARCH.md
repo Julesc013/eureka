@@ -115,3 +115,9 @@ P63 Probe Queue v0 also remains contract-only. The hosted wrapper does not
 create queue items, persist queue state, execute probes, call live sources,
 mutate source caches, mutate evidence ledgers, mutate candidate indexes, mutate
 local indexes, or mutate the master index.
+## P64 Candidate Index Note
+
+The hosted wrapper remains local_index_only and deployment-gated. Candidate
+Index v0 adds no hosted candidate store, no public search candidate injection,
+no candidate promotion runtime, no live probes, no external source calls, and
+no production hosted query-intelligence claim.

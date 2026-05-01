@@ -769,14 +769,14 @@
     {
       "id": "candidate_index_v0",
       "title": "P64 Candidate Index v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed",
       "priority": 105,
-      "notes": "Define candidate index boundaries and validation gates without mutating the master index."
+      "notes": "Implemented P64 Candidate Index v0 with contract schema, lifecycle model, synthetic object/evidence/absence/conflict examples, dry-run helper, validators, audit pack, docs, tests, and metadata. No runtime candidate index, persistent candidate store, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, local-index mutation, master-index mutation, external calls, or live probes were added."
     },
     {
       "id": "candidate_promotion_policy_v0",
       "title": "P65 Candidate Promotion Policy v0",
-      "status": "queued_codex_safe",
+      "status": "queued_codex_safe_next",
       "priority": 106,
       "notes": "Define validation-gated promotion from candidate index toward authoritative records without public-query or AI-driven master-index mutation."
     },
@@ -835,6 +835,13 @@
       "status": "approval_gated_future",
       "priority": 114,
       "notes": "Future approval pack after candidate/query-intelligence and source-cache/evidence-ledger contracts; no live GitHub API calls or connector runtime without explicit approval."
+    },
+    {
+      "id": "public_hosted_deployment_evidence_v0",
+      "title": "P74 Public Hosted Deployment Evidence v0",
+      "status": "operator_gated_future",
+      "priority": 115,
+      "notes": "Future operator evidence pack after hosted wrapper deployment, backend URL configuration, edge/rate limits, and static-site verification. Codex must not fabricate hosted deployment evidence or call provider APIs."
     }
   ]
 }

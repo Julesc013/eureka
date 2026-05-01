@@ -189,3 +189,8 @@ Validator v0, Pack Import Report Format v0, Validate-Only Pack Import Tool v0,
 and AI-Assisted Evidence Drafting Plan v0 are now implemented as validation,
 tooling, or planning-only milestones. AI-assisted drafting remains candidate
 planning only and does not implement master-index queue runtime.
+## P64 Candidate Index Note
+
+Candidate Index v0 may later feed a master-index review queue only through a
+separate promotion policy. P64 itself creates no review queue item, accepts no
+candidate, and mutates no master-index record.

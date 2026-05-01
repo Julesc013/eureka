@@ -75,3 +75,9 @@ no master-index mutation.
 Human or operator parallel work may deploy the wrapper, configure a real
 backend URL, configure edge/rate limits, verify the static site, and execute
 Manual Observation Batch 0, but those actions require separate evidence.
+## P64 Candidate Index Note
+
+Candidate Index v0 is contract-only. Public search safety evidence remains
+local_index_only and does not write candidate records, rank with candidate
+records, promote candidates, mutate source cache, mutate evidence ledger, call
+external sources, or mutate the master index.

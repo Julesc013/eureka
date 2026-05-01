@@ -187,6 +187,14 @@ evidence-ledger mutation, no candidate-index mutation, and no master-index
 mutation. The next question is how P64 should model candidate records without
 turning probe plans into truth.
 
+P64 answer: candidate index records are contract-only provisional review
+records. They can later represent possible objects, evidence, compatibility,
+absence, conflicts, source matches, and identity candidates, but P64 adds no
+runtime candidate index, no public search candidate injection, no candidate
+promotion runtime, no source-cache or evidence-ledger mutation, and no
+master-index mutation. The next question is how P65 should define promotion
+policy without accepting candidates as truth too early.
+
 - What aggregate threshold is required before public demand summaries may be published?
 - What retention and deletion controls are required before any hosted query observation runtime exists?
 - What poisoning and spam controls are required before query-derived demand can influence candidate work?
