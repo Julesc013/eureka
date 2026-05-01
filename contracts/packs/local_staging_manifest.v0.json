@@ -1,0 +1,675 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/packs/local_staging_manifest.v0.json",
+  "title": "EurekaLocalStagingManifestV0",
+  "description": "Contract for future local/private quarantine staging manifests. This format records staged pack references, staged candidate entities, validate-only report provenance, no-mutation guarantees, and reset/delete/export policy. It does not implement staging runtime, local index mutation, public search mutation, upload, or master-index acceptance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "manifest_version",
+    "manifest_kind",
+    "status",
+    "created_by_tool",
+    "staging_mode",
+    "source_validate_report_ref",
+    "staged_pack_refs",
+    "staged_entities",
+    "counts",
+    "privacy_rights_risk_summary",
+    "provenance_summary",
+    "no_mutation_guarantees",
+    "reset_delete_export_policy",
+    "limitations",
+    "public_search_mutated",
+    "local_index_mutated",
+    "canonical_source_registry_mutated",
+    "runtime_state_mutated",
+    "master_index_mutated",
+    "upload_performed",
+    "live_network_performed",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "local_staging_manifest.v0"
+    },
+    "manifest_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{2,160}$"
+    },
+    "manifest_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([-.][A-Za-z0-9.]+)?$"
+    },
+    "manifest_kind": {
+      "const": "local_staging_manifest"
+    },
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "created_by_tool": {
+      "$ref": "#/$defs/created_by_tool"
+    },
+    "staging_mode": {
+      "$ref": "#/$defs/staging_mode"
+    },
+    "source_validate_report_ref": {
+      "$ref": "#/$defs/validate_report_ref"
+    },
+    "staged_pack_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/staged_pack_ref"
+      }
+    },
+    "staged_entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/staged_entity"
+      }
+    },
+    "counts": {
+      "$ref": "#/$defs/counts"
+    },
+    "privacy_rights_risk_summary": {
+      "$ref": "#/$defs/privacy_rights_risk_summary"
+    },
+    "provenance_summary": {
+      "$ref": "#/$defs/provenance_summary"
+    },
+    "no_mutation_guarantees": {
+      "$ref": "#/$defs/no_mutation_guarantees"
+    },
+    "reset_delete_export_policy": {
+      "$ref": "#/$defs/reset_delete_export_policy"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "public_search_mutated": {
+      "const": false
+    },
+    "local_index_mutated": {
+      "const": false
+    },
+    "canonical_source_registry_mutated": {
+      "const": false
+    },
+    "runtime_state_mutated": {
+      "const": false
+    },
+    "master_index_mutated": {
+      "const": false
+    },
+    "upload_performed": {
+      "const": false
+    },
+    "live_network_performed": {
+      "const": false
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned_example",
+        "local_private",
+        "staged_quarantine",
+        "inspectable",
+        "delete_requested",
+        "reset_requested",
+        "exported_report_only",
+        "superseded"
+      ]
+    },
+    "staging_mode": {
+      "type": "string",
+      "enum": [
+        "stage_local_quarantine",
+        "inspect_staged",
+        "local_index_candidate_future",
+        "contribution_queue_candidate_future"
+      ]
+    },
+    "created_by_tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool_id",
+        "tool_version",
+        "tool_status"
+      ],
+      "properties": {
+        "tool_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool_status": {
+          "type": "string",
+          "enum": [
+            "contract_example",
+            "future_local_tool"
+          ]
+        }
+      }
+    },
+    "validate_report_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "report_id",
+        "report_path_policy",
+        "report_status",
+        "report_created_by_tool",
+        "limitations"
+      ],
+      "properties": {
+        "report_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "report_path_policy": {
+          "type": "string",
+          "enum": [
+            "stdout_only",
+            "explicit_local_path",
+            "redacted",
+            "example_committed"
+          ]
+        },
+        "report_checksum": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "report_status": {
+          "type": "string",
+          "enum": [
+            "validate_only_passed",
+            "validate_only_failed",
+            "partial_validation",
+            "unsupported_pack_type",
+            "blocked_by_policy",
+            "unavailable_validator",
+            "future_import_not_performed"
+          ]
+        },
+        "report_created_by_tool": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "staged_pack_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "staged_pack_ref",
+        "pack_id",
+        "pack_version",
+        "pack_type",
+        "pack_checksum",
+        "pack_root_policy",
+        "validation_status",
+        "privacy_classification",
+        "rights_classification",
+        "risk_classification",
+        "limitations"
+      ],
+      "properties": {
+        "staged_pack_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pack_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pack_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pack_type": {
+          "$ref": "#/$defs/pack_type"
+        },
+        "pack_checksum": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "pack_root_policy": {
+          "type": "string",
+          "enum": [
+            "explicit_user_selected",
+            "example_committed",
+            "redacted_local"
+          ]
+        },
+        "validation_status": {
+          "type": "string",
+          "enum": [
+            "passed",
+            "failed",
+            "unavailable",
+            "unknown_type",
+            "skipped"
+          ]
+        },
+        "privacy_classification": {
+          "$ref": "#/$defs/privacy_classification"
+        },
+        "rights_classification": {
+          "$ref": "#/$defs/rights_classification"
+        },
+        "risk_classification": {
+          "$ref": "#/$defs/risk_classification"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "staged_entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "staged_entity_id",
+        "entity_type",
+        "public_safe",
+        "privacy_classification",
+        "rights_classification",
+        "risk_classification",
+        "review_status",
+        "summary",
+        "limitations",
+        "provenance_refs"
+      ],
+      "properties": {
+        "staged_entity_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "entity_type": {
+          "type": "string",
+          "enum": [
+            "staged_source_candidate",
+            "staged_evidence_candidate",
+            "staged_index_summary",
+            "staged_contribution_candidate",
+            "staged_ai_output_candidate",
+            "staged_issue",
+            "staged_decision_note"
+          ]
+        },
+        "source_pack_ref": {
+          "type": "string"
+        },
+        "evidence_pack_ref": {
+          "type": "string"
+        },
+        "index_pack_ref": {
+          "type": "string"
+        },
+        "contribution_pack_ref": {
+          "type": "string"
+        },
+        "ai_output_ref": {
+          "type": "string"
+        },
+        "subject_ref": {
+          "type": "string"
+        },
+        "public_safe": {
+          "type": "boolean"
+        },
+        "privacy_classification": {
+          "$ref": "#/$defs/privacy_classification"
+        },
+        "rights_classification": {
+          "$ref": "#/$defs/rights_classification"
+        },
+        "risk_classification": {
+          "$ref": "#/$defs/risk_classification"
+        },
+        "review_status": {
+          "$ref": "#/$defs/review_status"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limitations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "provenance_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "staged_pack_count",
+        "staged_entity_count",
+        "staged_source_candidate_count",
+        "staged_evidence_candidate_count",
+        "staged_index_summary_count",
+        "staged_contribution_candidate_count",
+        "staged_ai_output_candidate_count",
+        "issue_count",
+        "blocked_issue_count",
+        "private_record_count",
+        "public_safe_record_count"
+      ],
+      "properties": {
+        "staged_pack_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_entity_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_source_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_evidence_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_index_summary_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_contribution_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_ai_output_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "issue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_issue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "private_record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "public_safe_record_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "privacy_rights_risk_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_visibility",
+        "privacy_classification",
+        "rights_classification",
+        "risk_classification",
+        "private_paths_present",
+        "credentials_present",
+        "executable_payloads_present",
+        "raw_database_or_cache_present",
+        "rights_clearance_claimed",
+        "malware_safety_claimed",
+        "canonical_truth_claimed",
+        "notes"
+      ],
+      "properties": {
+        "default_visibility": {
+          "const": "local_private"
+        },
+        "privacy_classification": {
+          "$ref": "#/$defs/privacy_classification"
+        },
+        "rights_classification": {
+          "$ref": "#/$defs/rights_classification"
+        },
+        "risk_classification": {
+          "$ref": "#/$defs/risk_classification"
+        },
+        "private_paths_present": {
+          "const": false
+        },
+        "credentials_present": {
+          "const": false
+        },
+        "executable_payloads_present": {
+          "const": false
+        },
+        "raw_database_or_cache_present": {
+          "const": false
+        },
+        "rights_clearance_claimed": {
+          "const": false
+        },
+        "malware_safety_claimed": {
+          "const": false
+        },
+        "canonical_truth_claimed": {
+          "const": false
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "provenance_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "validate_report_linked",
+        "pack_checksums_recorded",
+        "pack_versions_recorded",
+        "validator_tool_ids_recorded",
+        "staged_entities_link_to_pack_refs",
+        "operator_action_required_future",
+        "notes"
+      ],
+      "properties": {
+        "validate_report_linked": {
+          "type": "boolean"
+        },
+        "pack_checksums_recorded": {
+          "type": "boolean"
+        },
+        "pack_versions_recorded": {
+          "type": "boolean"
+        },
+        "validator_tool_ids_recorded": {
+          "type": "boolean"
+        },
+        "staged_entities_link_to_pack_refs": {
+          "type": "boolean"
+        },
+        "operator_action_required_future": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "no_mutation_guarantees": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "public_search_mutated",
+        "local_index_mutated",
+        "canonical_source_registry_mutated",
+        "runtime_state_mutated",
+        "master_index_mutated",
+        "upload_performed",
+        "live_network_performed"
+      ],
+      "properties": {
+        "public_search_mutated": {
+          "const": false
+        },
+        "local_index_mutated": {
+          "const": false
+        },
+        "canonical_source_registry_mutated": {
+          "const": false
+        },
+        "runtime_state_mutated": {
+          "const": false
+        },
+        "master_index_mutated": {
+          "const": false
+        },
+        "upload_performed": {
+          "const": false
+        },
+        "live_network_performed": {
+          "const": false
+        }
+      }
+    },
+    "reset_delete_export_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "delete_staged_pack_supported_future",
+        "clear_all_staged_state_supported_future",
+        "export_manifest_supported_future",
+        "export_public_safe_report_supported_future",
+        "export_private_data_default",
+        "irreversible_delete_requires_confirmation_future",
+        "notes"
+      ],
+      "properties": {
+        "delete_staged_pack_supported_future": {
+          "type": "boolean"
+        },
+        "clear_all_staged_state_supported_future": {
+          "type": "boolean"
+        },
+        "export_manifest_supported_future": {
+          "type": "boolean"
+        },
+        "export_public_safe_report_supported_future": {
+          "type": "boolean"
+        },
+        "export_private_data_default": {
+          "const": false
+        },
+        "irreversible_delete_requires_confirmation_future": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pack_type": {
+      "type": "string",
+      "enum": [
+        "source_pack",
+        "evidence_pack",
+        "index_pack",
+        "contribution_pack",
+        "master_index_review_queue",
+        "ai_output_bundle"
+      ]
+    },
+    "privacy_classification": {
+      "type": "string",
+      "enum": [
+        "public_safe",
+        "local_private",
+        "review_required",
+        "restricted",
+        "unknown"
+      ]
+    },
+    "rights_classification": {
+      "type": "string",
+      "enum": [
+        "public_metadata_only",
+        "source_terms_apply",
+        "review_required",
+        "restricted",
+        "unknown"
+      ]
+    },
+    "risk_classification": {
+      "type": "string",
+      "enum": [
+        "metadata_only",
+        "private_data_risk",
+        "credential_risk",
+        "executable_reference",
+        "malware_review_required",
+        "unknown"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "validated_structure",
+        "quarantine_required",
+        "inspectable_local",
+        "local_index_candidate_future",
+        "contribution_candidate_future",
+        "rejected_local"
+      ]
+    }
+  }
+}

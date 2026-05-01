@@ -1,0 +1,197 @@
+{
+  "schema_version": "local_staging_manifest.v0",
+  "manifest_id": "example.local_staging_manifest.minimal_v0",
+  "manifest_version": "0.1.0",
+  "manifest_kind": "local_staging_manifest",
+  "status": "planned_example",
+  "created_by_tool": {
+    "tool_id": "example.local_staging_manifest_fixture",
+    "tool_version": "0.1.0",
+    "tool_status": "contract_example"
+  },
+  "staging_mode": "stage_local_quarantine",
+  "source_validate_report_ref": {
+    "report_id": "example.import_report.validate_only_all_examples",
+    "report_path_policy": "example_committed",
+    "report_checksum": "sha256:874058ba370cfbb7ca96a6795fb7eff6ae4ce95fb1db3c85c370a2e26c77a354",
+    "report_status": "validate_only_passed",
+    "report_created_by_tool": "validate_only_pack_import_tool_v0",
+    "limitations": [
+      "The referenced report is a synthetic committed example, not a local staging authorization record.",
+      "A future staging tool must require explicit operator choice after reviewing a validate-only report."
+    ]
+  },
+  "staged_pack_refs": [
+    {
+      "staged_pack_ref": "staged-pack-ref:example.minimal_recorded_source_pack_v0",
+      "pack_id": "example.minimal_recorded_source_pack_v0",
+      "pack_version": "0.1.0",
+      "pack_type": "source_pack",
+      "pack_checksum": "sha256:2a28f802656119d0110ba9c8daf01600ce6994fe52f9969af49652b1b37b79bd",
+      "pack_root_policy": "example_committed",
+      "validation_status": "passed",
+      "privacy_classification": "public_safe",
+      "rights_classification": "public_metadata_only",
+      "risk_classification": "metadata_only",
+      "limitations": [
+        "The pack reference is synthetic and remains a candidate, not canonical source truth."
+      ]
+    },
+    {
+      "staged_pack_ref": "staged-pack-ref:example.minimal_evidence_pack_v0",
+      "pack_id": "example.minimal_evidence_pack_v0",
+      "pack_version": "0.1.0",
+      "pack_type": "evidence_pack",
+      "pack_checksum": "sha256:6a0a51085f1d2065d3f281a1392f5eb3a15555beaa89121170623d9d9da4a27f",
+      "pack_root_policy": "example_committed",
+      "validation_status": "passed",
+      "privacy_classification": "public_safe",
+      "rights_classification": "review_required",
+      "risk_classification": "metadata_only",
+      "limitations": [
+        "The evidence pack reference is synthetic and remains review-required."
+      ]
+    }
+  ],
+  "staged_entities": [
+    {
+      "staged_entity_id": "staged-entity:source-candidate:synthetic-demo-app",
+      "entity_type": "staged_source_candidate",
+      "source_pack_ref": "staged-pack-ref:example.minimal_recorded_source_pack_v0",
+      "subject_ref": "source:example.synthetic_demo_app",
+      "public_safe": true,
+      "privacy_classification": "public_safe",
+      "rights_classification": "public_metadata_only",
+      "risk_classification": "metadata_only",
+      "review_status": "validated_structure",
+      "summary": "Synthetic source candidate retained in local staging as a candidate only.",
+      "limitations": [
+        "Not imported into the runtime source registry.",
+        "Does not establish canonical status."
+      ],
+      "provenance_refs": [
+        "report:example.import_report.validate_only_all_examples",
+        "staged-pack-ref:example.minimal_recorded_source_pack_v0"
+      ]
+    },
+    {
+      "staged_entity_id": "staged-entity:evidence-candidate:synthetic-demo-app-compat",
+      "entity_type": "staged_evidence_candidate",
+      "source_pack_ref": "staged-pack-ref:example.minimal_recorded_source_pack_v0",
+      "evidence_pack_ref": "staged-pack-ref:example.minimal_evidence_pack_v0",
+      "subject_ref": "source:example.synthetic_demo_app",
+      "public_safe": true,
+      "privacy_classification": "public_safe",
+      "rights_classification": "review_required",
+      "risk_classification": "metadata_only",
+      "review_status": "validated_structure",
+      "summary": "Synthetic evidence candidate remains review-required and local to the manifest example.",
+      "limitations": [
+        "Not imported into an evidence pack or contribution queue.",
+        "Does not prove compatibility, rights, malware safety, or source trust."
+      ],
+      "provenance_refs": [
+        "report:example.import_report.validate_only_all_examples",
+        "staged-pack-ref:example.minimal_evidence_pack_v0"
+      ]
+    },
+    {
+      "staged_entity_id": "staged-entity:issue:review-required",
+      "entity_type": "staged_issue",
+      "source_pack_ref": "staged-pack-ref:example.minimal_recorded_source_pack_v0",
+      "evidence_pack_ref": "staged-pack-ref:example.minimal_evidence_pack_v0",
+      "subject_ref": "source:example.synthetic_demo_app",
+      "public_safe": false,
+      "privacy_classification": "local_private",
+      "rights_classification": "review_required",
+      "risk_classification": "metadata_only",
+      "review_status": "quarantine_required",
+      "summary": "Rights and review posture must be inspected before any future export.",
+      "limitations": [
+        "This issue is a synthetic reminder and does not block validation of the example manifest."
+      ],
+      "provenance_refs": [
+        "report:example.import_report.validate_only_all_examples"
+      ]
+    }
+  ],
+  "counts": {
+    "staged_pack_count": 2,
+    "staged_entity_count": 3,
+    "staged_source_candidate_count": 1,
+    "staged_evidence_candidate_count": 1,
+    "staged_index_summary_count": 0,
+    "staged_contribution_candidate_count": 0,
+    "staged_ai_output_candidate_count": 0,
+    "issue_count": 1,
+    "blocked_issue_count": 1,
+    "private_record_count": 1,
+    "public_safe_record_count": 2
+  },
+  "privacy_rights_risk_summary": {
+    "default_visibility": "local_private",
+    "privacy_classification": "local_private",
+    "rights_classification": "review_required",
+    "risk_classification": "metadata_only",
+    "private_paths_present": false,
+    "credentials_present": false,
+    "executable_payloads_present": false,
+    "raw_database_or_cache_present": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "canonical_truth_claimed": false,
+    "notes": [
+      "The example is committed and synthetic, so it uses repo-relative references only.",
+      "Local staging remains private by default even when candidate records are public-safe."
+    ]
+  },
+  "provenance_summary": {
+    "validate_report_linked": true,
+    "pack_checksums_recorded": true,
+    "pack_versions_recorded": true,
+    "validator_tool_ids_recorded": true,
+    "staged_entities_link_to_pack_refs": true,
+    "operator_action_required_future": true,
+    "notes": [
+      "Future runtime manifests must link to the reviewed validate-only import report.",
+      "This example does not record an operator identity or user account."
+    ]
+  },
+  "no_mutation_guarantees": {
+    "public_search_mutated": false,
+    "local_index_mutated": false,
+    "canonical_source_registry_mutated": false,
+    "runtime_state_mutated": false,
+    "master_index_mutated": false,
+    "upload_performed": false,
+    "live_network_performed": false
+  },
+  "reset_delete_export_policy": {
+    "delete_staged_pack_supported_future": true,
+    "clear_all_staged_state_supported_future": true,
+    "export_manifest_supported_future": true,
+    "export_public_safe_report_supported_future": true,
+    "export_private_data_default": false,
+    "irreversible_delete_requires_confirmation_future": true,
+    "notes": [
+      "Future tooling must support list, inspect, delete, clear, and report-only export operations before staging runtime is accepted.",
+      "Private staged data must not export by default."
+    ]
+  },
+  "limitations": [
+    "This is a committed synthetic manifest example, not real staged state.",
+    "Manifest validation does not import packs, stage contents, mutate search, mutate the local index, or submit to the master index.",
+    "Manifest validity does not prove truth, rights clearance, malware safety, or public acceptance."
+  ],
+  "public_search_mutated": false,
+  "local_index_mutated": false,
+  "canonical_source_registry_mutated": false,
+  "runtime_state_mutated": false,
+  "master_index_mutated": false,
+  "upload_performed": false,
+  "live_network_performed": false,
+  "notes": [
+    "Local Staging Manifest Format v0 is contract/example/validation only.",
+    "Staged entities are local candidates and remain review-required."
+  ]
+}
