@@ -304,6 +304,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   hosted deployment, fake backend URLs, live probes, downloads, uploads,
   accounts, telemetry, arbitrary URL fetching, index mutation, pack import,
   staging runtime, AI runtime, or production search-quality claims.
+- `public-search-safety-evidence-v0/`: P57 public search safety evidence
+  checkpoint. It records safe-query, blocked-request, limit/status, static
+  handoff, public-index, hosted-wrapper, privacy/redaction, and
+  rate-limit/edge evidence without hosted deployment, live probes, downloads,
+  uploads, installs, accounts, telemetry, arbitrary URL fetching, source
+  connector runtime, AI runtime, index mutation, pack import, staging runtime,
+  or production safety claims.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

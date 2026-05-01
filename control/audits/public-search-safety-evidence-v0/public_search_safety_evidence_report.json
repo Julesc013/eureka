@@ -1,0 +1,1344 @@
+{
+  "report_id": "public_search_safety_evidence_v0",
+  "created_by_slice": "p57_public_search_safety_evidence_v0",
+  "repo_head": "ca72fc7859b3eafc86d06db395d6a363ea75d8b9",
+  "branch": "main",
+  "worktree_status": "dirty during P57 edits; final status recorded in final response",
+  "safety_evidence_script": "scripts/run_public_search_safety_evidence.py",
+  "safety_validator_script": "scripts/validate_public_search_safety_evidence.py",
+  "route_evidence": [
+    {
+      "check_id": "healthz",
+      "path": "/healthz",
+      "query_keys": [],
+      "response_kind": "json",
+      "observed_status": 200,
+      "expected": "safe successful public-search response",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "check_id": "status",
+      "path": "/status",
+      "query_keys": [],
+      "response_kind": "json",
+      "observed_status": 200,
+      "expected": "safe successful public-search response",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "check_id": "api_status",
+      "path": "/api/v1/status",
+      "query_keys": [],
+      "response_kind": "json",
+      "observed_status": 200,
+      "expected": "safe successful public-search response",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "check_id": "sources",
+      "path": "/api/v1/sources",
+      "query_keys": [],
+      "response_kind": "json",
+      "observed_status": 200,
+      "expected": "safe successful public-search response",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "check_id": "api_search_windows_7_apps",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q"
+      ],
+      "response_kind": "json",
+      "observed_status": 200,
+      "expected": "safe successful public-search response",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "check_id": "api_search_driver_inf",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q"
+      ],
+      "response_kind": "json",
+      "observed_status": 200,
+      "expected": "safe successful public-search response",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "check_id": "api_search_pc_magazine_ray_tracing",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q"
+      ],
+      "response_kind": "json",
+      "observed_status": 200,
+      "expected": "safe successful public-search response",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "check_id": "query_plan_windows_7_apps",
+      "path": "/api/v1/query-plan",
+      "query_keys": [
+        "q"
+      ],
+      "response_kind": "json",
+      "observed_status": 200,
+      "expected": "safe successful public-search response",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "check_id": "html_search_windows_7_apps",
+      "path": "/search",
+      "query_keys": [
+        "q"
+      ],
+      "response_kind": "html",
+      "observed_status": 200,
+      "expected": "safe successful public-search response",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    }
+  ],
+  "safe_query_evidence": [
+    {
+      "query": "windows 7 apps",
+      "observed_status": 200,
+      "result_count": 10,
+      "mode": "local_index_only",
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "result_cards_checked": 10,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "query": "driver.inf",
+      "observed_status": 200,
+      "result_count": 10,
+      "mode": "local_index_only",
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "result_cards_checked": 10,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "query": "pc magazine ray tracing",
+      "observed_status": 200,
+      "result_count": 9,
+      "mode": "local_index_only",
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "result_cards_checked": 9,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "query": "no-such-local-index-hit",
+      "observed_status": 200,
+      "result_count": 0,
+      "mode": "local_index_only",
+      "warnings_present": true,
+      "limitations_or_absence_present": true,
+      "result_cards_checked": 0,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    }
+  ],
+  "blocked_request_evidence": [
+    {
+      "case_id": "missing_q",
+      "category": "required_query",
+      "path": "/api/v1/search",
+      "query_keys": [],
+      "expected_error_code": "query_required",
+      "actual_error_code": "query_required",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "query_too_long",
+      "category": "query_limit",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q"
+      ],
+      "expected_error_code": "query_too_long",
+      "actual_error_code": "query_too_long",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "limit_too_large",
+      "category": "result_limit",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "limit",
+        "q"
+      ],
+      "expected_error_code": "limit_too_large",
+      "actual_error_code": "limit_too_large",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "mode_live_probe",
+      "category": "live_mode",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "mode",
+        "q"
+      ],
+      "expected_error_code": "live_probes_disabled",
+      "actual_error_code": "live_probes_disabled",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "mode_live_federated",
+      "category": "live_mode",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "mode",
+        "q"
+      ],
+      "expected_error_code": "live_probes_disabled",
+      "actual_error_code": "live_probes_disabled",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "include_raw_source_payload",
+      "category": "raw_payload",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "include",
+        "q"
+      ],
+      "expected_error_code": "unsupported_include",
+      "actual_error_code": "unsupported_include",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "index_path",
+      "category": "local_path",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "index_path",
+        "q"
+      ],
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "store_root",
+      "category": "local_path",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q",
+        "store_root"
+      ],
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "run_store_root",
+      "category": "local_path",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q",
+        "run_store_root"
+      ],
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "task_store_root",
+      "category": "local_path",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q",
+        "task_store_root"
+      ],
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "memory_store_root",
+      "category": "local_path",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "memory_store_root",
+        "q"
+      ],
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "local_path",
+      "category": "local_path",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "local_path",
+        "q"
+      ],
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "path",
+      "category": "local_path",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "path",
+        "q"
+      ],
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "file_path",
+      "category": "local_path",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "file_path",
+        "q"
+      ],
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "directory",
+      "category": "local_path",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "directory",
+        "q"
+      ],
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "root",
+      "category": "local_path",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q",
+        "root"
+      ],
+      "expected_error_code": "local_paths_forbidden",
+      "actual_error_code": "local_paths_forbidden",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "url",
+      "category": "url_fetch",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q",
+        "url"
+      ],
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "fetch_url",
+      "category": "url_fetch",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "fetch_url",
+        "q"
+      ],
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "crawl_url",
+      "category": "url_fetch",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "crawl_url",
+        "q"
+      ],
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "source_url",
+      "category": "url_fetch",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q",
+        "source_url"
+      ],
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "download",
+      "category": "download",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "download",
+        "q"
+      ],
+      "expected_error_code": "downloads_disabled",
+      "actual_error_code": "downloads_disabled",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "install",
+      "category": "install_execute",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "install",
+        "q"
+      ],
+      "expected_error_code": "installs_disabled",
+      "actual_error_code": "installs_disabled",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "execute",
+      "category": "install_execute",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "execute",
+        "q"
+      ],
+      "expected_error_code": "installs_disabled",
+      "actual_error_code": "installs_disabled",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "upload",
+      "category": "upload",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q",
+        "upload"
+      ],
+      "expected_error_code": "uploads_disabled",
+      "actual_error_code": "uploads_disabled",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "user_file",
+      "category": "upload",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q",
+        "user_file"
+      ],
+      "expected_error_code": "uploads_disabled",
+      "actual_error_code": "uploads_disabled",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "source_credentials",
+      "category": "credential",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "q",
+        "source_credentials"
+      ],
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "auth_token",
+      "category": "credential",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "auth_token",
+        "q"
+      ],
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "api_key",
+      "category": "credential",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "api_key",
+        "q"
+      ],
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "live_probe",
+      "category": "live_probe",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "live_probe",
+        "q"
+      ],
+      "expected_error_code": "live_probes_disabled",
+      "actual_error_code": "live_probes_disabled",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "live_source",
+      "category": "live_probe",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "live_source",
+        "q"
+      ],
+      "expected_error_code": "live_probes_disabled",
+      "actual_error_code": "live_probes_disabled",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "network",
+      "category": "url_fetch",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "network",
+        "q"
+      ],
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "arbitrary_source",
+      "category": "url_fetch",
+      "path": "/api/v1/search",
+      "query_keys": [
+        "arbitrary_source",
+        "q"
+      ],
+      "expected_error_code": "forbidden_parameter",
+      "actual_error_code": "forbidden_parameter",
+      "observed_status": 400,
+      "public_safe_error": true,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    }
+  ],
+  "forbidden_parameter_coverage": {
+    "required_categories": [
+      "credential",
+      "download",
+      "install_execute",
+      "live_mode",
+      "live_probe",
+      "local_path",
+      "query_limit",
+      "raw_payload",
+      "required_query",
+      "result_limit",
+      "upload",
+      "url_fetch"
+    ],
+    "covered_categories": [
+      "credential",
+      "download",
+      "install_execute",
+      "live_mode",
+      "live_probe",
+      "local_path",
+      "query_limit",
+      "raw_payload",
+      "required_query",
+      "result_limit",
+      "upload",
+      "url_fetch"
+    ],
+    "missing_categories": [],
+    "blocked_case_count": 32,
+    "passed_blocked_case_count": 32
+  },
+  "limit_and_timeout_evidence": [
+    {
+      "case_id": "query_at_max_length",
+      "query_keys": [
+        "q"
+      ],
+      "expected_status": 200,
+      "observed_status": 200,
+      "expected_error_code": null,
+      "actual_error_code": null,
+      "expected_behavior": "accepted",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "query_over_max_length",
+      "query_keys": [
+        "q"
+      ],
+      "expected_status": 400,
+      "observed_status": 400,
+      "expected_error_code": "query_too_long",
+      "actual_error_code": "query_too_long",
+      "expected_behavior": "rejected",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "limit_at_max",
+      "query_keys": [
+        "limit",
+        "q"
+      ],
+      "expected_status": 200,
+      "observed_status": 200,
+      "expected_error_code": null,
+      "actual_error_code": null,
+      "expected_behavior": "accepted",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "limit_over_max",
+      "query_keys": [
+        "limit",
+        "q"
+      ],
+      "expected_status": 400,
+      "observed_status": 400,
+      "expected_error_code": "limit_too_large",
+      "actual_error_code": "limit_too_large",
+      "expected_behavior": "rejected",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "limit_negative",
+      "query_keys": [
+        "limit",
+        "q"
+      ],
+      "expected_status": 400,
+      "observed_status": 400,
+      "expected_error_code": "bad_request",
+      "actual_error_code": "bad_request",
+      "expected_behavior": "rejected",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "limit_non_integer",
+      "query_keys": [
+        "limit",
+        "q"
+      ],
+      "expected_status": 400,
+      "observed_status": 400,
+      "expected_error_code": "bad_request",
+      "actual_error_code": "bad_request",
+      "expected_behavior": "rejected",
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "case_id": "timeout_simulation",
+      "expected_behavior": "contract_only",
+      "observed_status": null,
+      "passed": true,
+      "notes": [
+        "No safe timeout simulation is implemented in the local in-process harness."
+      ]
+    }
+  ],
+  "status_endpoint_evidence": [
+    {
+      "path": "/healthz",
+      "observed_status": 200,
+      "mode": "local_index_only",
+      "hosted_deployment_verified": false,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "path": "/status",
+      "observed_status": 200,
+      "mode": "local_index_only",
+      "hosted_deployment_verified": false,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "path": "/api/v1/status",
+      "observed_status": 200,
+      "mode": "local_index_only",
+      "hosted_deployment_verified": false,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    }
+  ],
+  "static_handoff_review": {
+    "status": "passed",
+    "backend_status": "backend_unconfigured",
+    "hosted_backend_verified": false,
+    "search_form_enabled": false,
+    "checked_files": [
+      "site/dist/search.html",
+      "site/dist/lite/search.html",
+      "site/dist/text/search.txt",
+      "site/dist/files/search.README.txt",
+      "site/dist/data/search_config.json",
+      "site/dist/data/search_config.json"
+    ],
+    "no_js_required": true,
+    "fake_hosted_url_detected": false
+  },
+  "public_index_safety_review": {
+    "artifact_root": "data/public_index",
+    "document_count": 584,
+    "stats_document_count": 584,
+    "summary_document_count": 584,
+    "source_count": 15,
+    "contains_live_data": false,
+    "contains_private_data": false,
+    "contains_executables": false,
+    "enabled_dangerous_action_count": 0,
+    "live_source_flag_count": 0,
+    "private_or_secret_marker_detected": false,
+    "passed": true,
+    "notes": [
+      "ok"
+    ]
+  },
+  "hosted_wrapper_safety_review": {
+    "status": "passed",
+    "harness": "in_process_hosted_public_search_wsgi_app",
+    "server_started": false,
+    "hosted_deployment_verified": false,
+    "hosted_deployment_claimed": false,
+    "mode": "local_index_only",
+    "safe_route_count": 9
+  },
+  "rate_limit_and_edge_status": {
+    "edge_rate_limit_status": "operator_gated",
+    "app_rate_limit_status": "contract_only",
+    "hosted_rate_limit_evidence": "unavailable",
+    "cloudflare_or_edge_claimed": false,
+    "notes": "No deployed edge exists in repo evidence. P57 records future hosted rehearsal requirements only."
+  },
+  "privacy_and_redaction_review": [
+    {
+      "check_id": "evidence_report_redaction",
+      "private_or_secret_marker_detected": false,
+      "stack_trace_detected": false,
+      "passed": true,
+      "notes": [
+        "ok"
+      ]
+    }
+  ],
+  "public_claim_review": {
+    "hosted_deployment_claimed": false,
+    "production_readiness_claimed": false,
+    "live_probe_claimed": false,
+    "download_upload_install_claimed": false,
+    "edge_rate_limit_claimed": false
+  },
+  "hard_booleans": {
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "installs_enabled": false,
+    "local_paths_enabled": false,
+    "arbitrary_url_fetch_enabled": false,
+    "telemetry_enabled": false,
+    "accounts_enabled": false,
+    "external_calls_performed": false,
+    "master_index_mutated": false,
+    "ai_runtime_enabled": false,
+    "hosted_deployment_claimed": false
+  },
+  "command_results": [
+    {
+      "command": "git status --short --branch",
+      "status": "pass",
+      "duration_ms": null,
+      "notes": "Initial P57 checkout was clean on main...origin/main before edits; final status is recorded separately."
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "status": "pass",
+      "duration_ms": null,
+      "notes": "Initial P57 head ca72fc7859b3eafc86d06db395d6a363ea75d8b9."
+    },
+    {
+      "command": "git rev-parse origin/main",
+      "status": "pass",
+      "duration_ms": null,
+      "notes": "origin/main matched initial head."
+    },
+    {
+      "command": "git log --oneline -n 50",
+      "status": "pass",
+      "duration_ms": null,
+      "notes": "P50 through P56 commits were present; P56 head was ca72fc7 before P57 work."
+    },
+    {
+      "command": "python scripts/run_public_search_safety_evidence.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 412,
+      "notes": "Passed 64/64 checks: 9 safe routes, 4 safe queries, 32/32 blocked requests, 584 public-index documents reviewed."
+    },
+    {
+      "command": "python scripts/run_public_search_safety_evidence.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 419,
+      "notes": "JSON evidence parsed; all hard booleans remained false."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety_evidence.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 409,
+      "notes": "P57 audit pack and local safety evidence validated."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety_evidence.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 418,
+      "notes": "Validator JSON parsed; 12 forbidden categories covered."
+    },
+    {
+      "command": "python scripts/validate_static_site_search_integration.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 57,
+      "notes": "P56 static handoff remained valid; backend_unconfigured and document_count 584."
+    },
+    {
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 785,
+      "notes": "P55 index-builder pack remained valid; document_count 584."
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 293,
+      "notes": "Public index remained valid with no private paths detected."
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 283,
+      "notes": "P54 hosted wrapper remained local_index_only and undeployed/unverified."
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 267,
+      "notes": "Hosted-wrapper local rehearsal passed."
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 215,
+      "notes": "Safe hosted-wrapper config passed under defaults."
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 57,
+      "notes": "P53 production contract remained valid."
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 55,
+      "notes": "P52 static deployment evidence pack remained valid."
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 56,
+      "notes": "P51 remediation pack remained valid."
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 55,
+      "notes": "P50 audit pack remained valid."
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 62,
+      "notes": "Public search API contract validator passed."
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 57,
+      "notes": "Public result-card contract validator passed."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 58,
+      "notes": "Existing public search safety validator passed."
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 55,
+      "notes": "Local public search runtime validator passed."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 544,
+      "notes": "Public search smoke passed 30/30 checks with 9 safe queries and 14 blocked requests."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 553,
+      "notes": "Public search smoke JSON parsed."
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --check",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 485,
+      "notes": "Public search index build drift check passed."
+    },
+    {
+      "command": "python site/build.py --check",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 950,
+      "notes": "Static site build check passed."
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 85,
+      "notes": "Static site validation passed."
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 65,
+      "notes": "Publication inventory validation passed."
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 81,
+      "notes": "Public static site validation passed."
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 152,
+      "notes": "site/dist static artifact check passed; no deployment evidence claimed."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 9455,
+      "notes": "Generated artifact drift guard passed for all 12 artifact groups."
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 634,
+      "notes": "Public alpha smoke passed 18/18 checks."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 330,
+      "notes": "Archive resolution evals passed: 6/6 satisfied."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 354,
+      "notes": "Archive resolution eval JSON parsed; satisfied=6."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 364,
+      "notes": "Search usefulness audit passed: covered=5, partial=40, source_gap=10, capability_gap=7, unknown=2."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 401,
+      "notes": "Search usefulness JSON parsed with all external baseline observations pending."
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 56,
+      "notes": "External baseline status parsed; batch_0 remains 39/39 pending manual observation."
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 917,
+      "notes": "Python oracle golden drift check passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 71631,
+      "notes": "tests/scripts unittest lane passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 7018,
+      "notes": "tests/operations unittest lane passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 5497,
+      "notes": "tests/hardening unittest lane passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 1472,
+      "notes": "tests/parity unittest lane passed."
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 4737,
+      "notes": "runtime unittest lane passed."
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 30659,
+      "notes": "surfaces unittest lane passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 93081,
+      "notes": "Full tests unittest discovery lane passed."
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 538,
+      "notes": "Architecture boundary checker passed."
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 81,
+      "notes": "No whitespace/conflict-marker issues detected."
+    },
+    {
+      "command": "cargo --version",
+      "status": "unavailable_or_failed_optional",
+      "exit_code": 127,
+      "duration_ms": 289,
+      "notes": "Cargo executable unavailable in this environment; recorded as optional/unavailable."
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "unavailable_or_failed_optional",
+      "exit_code": 127,
+      "duration_ms": 23,
+      "notes": "Cargo executable unavailable in this environment; workspace check not run."
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "unavailable_or_failed_optional",
+      "exit_code": 127,
+      "duration_ms": 22,
+      "notes": "Cargo executable unavailable in this environment; workspace tests not run."
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 48,
+      "notes": "Worktree still contained P57 edits at verification time."
+    }
+  ],
+  "remaining_blockers": [
+    "Hosted backend deployment evidence remains absent.",
+    "Edge/rate-limit evidence is operator-gated and unavailable locally.",
+    "Static backend URL remains unconfigured until a real hosted wrapper URL is verified.",
+    "External baselines remain manual pending.",
+    "Query intelligence, shared cache, and miss ledger remain future work."
+  ],
+  "next_recommended_branch": "P58 Hosted Public Search Rehearsal v0",
+  "notes": [
+    "P57 evidence is local/public-alpha safety evidence only.",
+    "No hosted deployment, provider API call, live source call, model call, credential, telemetry, account, upload, download, install, arbitrary URL fetch, index mutation, pack import, staging runtime, or production claim was added.",
+    "The in-process harness exercises the P54 hosted wrapper route surface without opening a public listener."
+  ]
+}
