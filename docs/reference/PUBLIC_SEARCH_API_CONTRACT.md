@@ -283,3 +283,10 @@ stability, or production readiness.
 The P58 rehearsal starts the hosted wrapper locally and checks the public API
 routes over HTTP. It verifies request limits and blocked parameters without
 claiming that the API is hosted or approved for production use.
+
+## P59 Query Observation Boundary
+
+P59 adds `contracts/query/query_observation.v0.json` for future query
+intelligence. Public search routes remain unchanged in P59: they do not write
+query observations, telemetry events, shared result caches, miss ledgers, probe
+jobs, candidate-index records, local indexes, or master-index records.

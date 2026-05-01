@@ -1,0 +1,157 @@
+{
+  "schema_version": "0.1.0",
+  "observation_id": "example.query_observation.windows_7_apps.v0",
+  "observation_kind": "query_observation",
+  "status": "dry_run_validated",
+  "created_by_tool": "p59_query_observation_contract_v0_example",
+  "raw_query_policy": {
+    "raw_query_retained": false,
+    "raw_query_retention_class": "not_retained",
+    "raw_query_redacted": true,
+    "raw_query_length": 14,
+    "redaction_reasons": [
+      "raw query retention is disabled by default for public-safe examples"
+    ],
+    "safe_to_publish_raw_query": false
+  },
+  "normalized_query": {
+    "text": "windows 7 apps",
+    "language": "en",
+    "tokens": [
+      "windows",
+      "7",
+      "apps"
+    ],
+    "normalized_terms": [
+      "windows",
+      "7",
+      "apps"
+    ],
+    "redaction_applied": false,
+    "redaction_notes": [],
+    "safe_public_terms": [
+      "windows",
+      "7",
+      "apps"
+    ]
+  },
+  "query_fingerprint": {
+    "algorithm": "sha256",
+    "normalized_basis": "normalized_query.text",
+    "value": "e2c6c7318b1705d3053bc3563ba2e89fdca7f2931854a07bd5900d31fe9ddd98",
+    "salt_policy": "unsalted_public_aggregate",
+    "reversible": false,
+    "notes": [
+      "Example hash is deterministic for validation; no salt value is included."
+    ]
+  },
+  "query_intent": {
+    "primary_intent": "find_software_version",
+    "confidence": "medium",
+    "secondary_intents": [
+      "check_compatibility"
+    ]
+  },
+  "destination": {
+    "primary_destination": "inspect",
+    "disabled_destination_intent_detected": false
+  },
+  "detected_entities": [
+    {
+      "entity_kind": "platform",
+      "value": "windows 7",
+      "normalized_value": "windows 7",
+      "confidence": "high",
+      "privacy_classification": "public_safe"
+    },
+    {
+      "entity_kind": "artifact_type",
+      "value": "apps",
+      "normalized_value": "applications",
+      "confidence": "medium",
+      "privacy_classification": "public_safe"
+    }
+  ],
+  "filters": {
+    "profile": "api_client",
+    "mode": "local_index_only",
+    "limit": 10
+  },
+  "result_summary": {
+    "result_count": 10,
+    "returned_count": 10,
+    "top_score": 1.0,
+    "confidence": "medium",
+    "hit_state": "hits",
+    "near_miss_count": 0,
+    "gap_types": [],
+    "warnings": [
+      "Fixture and recorded metadata coverage only; no live source checks were performed."
+    ],
+    "limitations": [
+      "Summary only; not a result cache.",
+      "Does not prove production search quality."
+    ]
+  },
+  "checked_scope": {
+    "checked_indexes": [
+      "public_index"
+    ],
+    "checked_sources": [
+      "data/public_index"
+    ],
+    "live_probes_attempted": false,
+    "external_calls_performed": false
+  },
+  "index_refs": {
+    "public_index_build_id": "eureka_public_search_index_v0",
+    "public_index_manifest_ref": "data/public_index/build_manifest.json",
+    "source_coverage_ref": "data/public_index/source_coverage.json"
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "pii_detected": false,
+    "secret_detected": false,
+    "private_path_detected": false,
+    "private_url_detected": false,
+    "credential_detected": false,
+    "local_identifier_detected": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe example; raw query is still not retained or published."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "aggregate_retention": "allowed",
+    "deletion_supported_future": true,
+    "notes": [
+      "P59 does not implement retention runtime."
+    ]
+  },
+  "probe_policy": {
+    "probe_enqueue_allowed": false,
+    "suggested_probe_kinds": [],
+    "reason": "P59 is contract-only and cannot enqueue source probes.",
+    "future_only": true
+  },
+  "limitations": [
+    "Synthetic example only; not collected from a real user.",
+    "No telemetry, persistence, cache mutation, miss ledger mutation, probe enqueue, candidate index mutation, local index mutation, or master-index mutation."
+  ],
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "candidate_index_mutated": false,
+    "probe_enqueued": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "telemetry_exported": false,
+    "external_calls_performed": false
+  },
+  "notes": [
+    "This example validates the query observation shape without creating runtime query logging.",
+    "Public aggregates may be allowed only after filtering; individual observations are not published by default."
+  ]
+}

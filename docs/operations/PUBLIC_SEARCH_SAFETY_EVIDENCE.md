@@ -44,8 +44,13 @@ mutation, no master-index mutation, and no production claim.
 
 ## Next Step
 
-P58 Hosted Public Search Rehearsal v0 is the next local hosted-mode evidence
-gate after P57. Human or operator parallel work may deploy the wrapper,
-configure a real backend URL, configure edge/rate limits, verify the static
-site, and execute Manual Observation Batch 0, but those actions require
-separate evidence.
+P58 Hosted Public Search Rehearsal v0 is the local hosted-mode evidence gate
+after P57. P59 Query Observation Contract v0 is the next Codex-safe query
+intelligence contract step. It defines privacy-filtered query observations as
+contract-only records and does not add telemetry, persistent query logging,
+cache mutation, miss-ledger mutation, probe enqueueing, or master-index
+mutation.
+
+Human or operator parallel work may deploy the wrapper, configure a real
+backend URL, configure edge/rate limits, verify the static site, and execute
+Manual Observation Batch 0, but those actions require separate evidence.

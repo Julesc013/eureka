@@ -97,3 +97,10 @@ Committing the wrapper, Dockerfile, or Render template is not deployment
 evidence. A later operator evidence pack must record the host, deployed URL,
 commit SHA, environment, route checks, and rollback plan before public claims
 change.
+## Query Observation Boundary
+
+P59 Query Observation Contract v0 is the first query-intelligence contract for
+future hosted search learning. The hosted wrapper does not persist query
+observations, emit telemetry, write shared caches, write miss ledgers, enqueue
+probes, mutate candidate indexes, mutate local indexes, or mutate the master
+index.

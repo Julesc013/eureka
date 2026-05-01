@@ -94,3 +94,11 @@ local rehearsal without deploying a backend or claiming production readiness.
 P58 exercises the production-facing public route contract through a local
 hosted wrapper process. The evidence remains local-only and does not convert
 the contract into hosted deployment or production readiness.
+
+## P59 Query Observation Boundary
+
+P59 Query Observation Contract v0 defines a future privacy-filtered learning
+record for public search demand. It is contract-only and does not wire public
+search routes to persist observations, add telemetry, mutate the public index,
+write a result cache, write a miss ledger, enqueue probes, mutate a candidate
+index, or mutate the master index.

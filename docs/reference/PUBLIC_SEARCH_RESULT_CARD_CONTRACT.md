@@ -275,3 +275,9 @@ stability, or production readiness.
 P58 safe-query checks verify that local hosted search responses still expose
 result-card safety shape, including source, evidence, compatibility, warnings,
 limitations, and blocked dangerous actions.
+## Query Observation Boundary
+
+P59 Query Observation Contract v0 records only summary-level result posture for
+future query intelligence. It does not copy result cards into a result cache,
+does not publish query observations, and does not mutate candidate, local, or
+master indexes.

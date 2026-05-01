@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eureka_query_observation_policy_v0",
+  "status": "contract_only",
+  "runtime_persistence_implemented": false,
+  "telemetry_implemented": false,
+  "public_query_logging_enabled": false,
+  "raw_query_retention_default": "none",
+  "query_fingerprint_supported": "contract_only",
+  "privacy_filter_required": true,
+  "public_aggregate_allowed_after_filter": true,
+  "master_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "probe_enqueue_allowed": false,
+  "result_cache_mutation_allowed": false,
+  "miss_ledger_mutation_allowed": false,
+  "external_calls_allowed": false,
+  "live_probes_allowed": false,
+  "next_contracts": [
+    "shared_query_result_cache",
+    "search_miss_ledger",
+    "search_need_record",
+    "probe_queue",
+    "candidate_index",
+    "candidate_promotion_policy",
+    "query_privacy_poisoning_guard"
+  ],
+  "notes": [
+    "P59 defines query observation records only. It does not implement runtime persistence, telemetry, public query logging, shared cache writes, miss ledger writes, probe enqueueing, candidate index mutation, local index mutation, or master-index mutation.",
+    "Raw query retention defaults to none. Future aggregate learning must pass privacy filtering before public reporting."
+  ]
+}
