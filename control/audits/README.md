@@ -342,3 +342,13 @@ fetch, or production safety claim.
   telemetry, public query logging, miss-ledger mutation, search-need mutation,
   probe enqueueing, candidate-index mutation, local-index mutation, or
   master-index mutation.
+
+## Search Miss Ledger v0
+
+- Path: `control/audits/search-miss-ledger-v0/`
+- Scope: P61 search miss ledger contract, miss classification taxonomy,
+  scoped no-hit and weak-hit examples, validators, docs, and audit evidence.
+- Status: contract-only; no runtime ledger writes, persistent ledger storage,
+  telemetry, public query logging, search-need creation, probe enqueueing,
+  result-cache mutation, candidate-index mutation, local-index mutation, or
+  master-index mutation.

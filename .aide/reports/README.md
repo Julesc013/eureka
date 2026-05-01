@@ -272,3 +272,7 @@ The P59 report lives at `control/audits/query-observation-contract-v0/query_obse
 ## P60 Shared Query/Result Cache v0
 
 The P60 report lives at `control/audits/shared-query-result-cache-v0/shared_query_result_cache_report.json`. It records shared cache contract/schema/example validation only and does not claim runtime cache writes, persistent cache storage, telemetry, public query logging, miss-ledger mutation, search-need mutation, probe enqueueing, index mutation, or hosted query intelligence runtime.
+
+## P61 Search Miss Ledger v0
+
+The P61 report lives at `control/audits/search-miss-ledger-v0/search_miss_ledger_report.json`. It records search miss ledger contract/schema/example validation only and does not claim runtime ledger writes, persistent ledger storage, telemetry, public query logging, search-need creation, probe enqueueing, result-cache mutation, index mutation, or hosted query intelligence runtime.
