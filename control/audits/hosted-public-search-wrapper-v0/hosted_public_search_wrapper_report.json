@@ -1,0 +1,371 @@
+{
+  "report_id": "hosted_public_search_wrapper_v0",
+  "created_by_slice": "p54_hosted_public_search_wrapper_v0",
+  "repo_head": "40db3221e2c470489e60aebf2821001c820238e9",
+  "branch": "main",
+  "worktree_status": "clean before P54 edits; final status recorded in final response",
+  "wrapper_script": "scripts/run_hosted_public_search.py",
+  "check_script": "scripts/check_hosted_public_search_wrapper.py",
+  "route_status": {
+    "/healthz": "implemented_local_prototype",
+    "/status": "implemented_local_prototype",
+    "/search": "implemented_local_prototype",
+    "/api/v1/status": "implemented_local_prototype",
+    "/api/v1/search": "implemented_local_prototype",
+    "/api/v1/query-plan": "implemented_local_prototype",
+    "/api/v1/sources": "implemented_local_prototype",
+    "/api/v1/source/{source_id}": "implemented_local_prototype",
+    "/api/v1/object/{id}": "contract_only",
+    "/api/v1/result/{id}": "contract_only",
+    "/api/v1/absence/{need_id}": "contract_only",
+    "/api/v1/capabilities": "contract_only"
+  },
+  "env_defaults": {
+    "PORT": "8080",
+    "EUREKA_PUBLIC_MODE": "1",
+    "EUREKA_SEARCH_MODE": "local_index_only",
+    "EUREKA_ALLOW_LIVE_PROBES": "0",
+    "EUREKA_ALLOW_DOWNLOADS": "0",
+    "EUREKA_ALLOW_UPLOADS": "0",
+    "EUREKA_ALLOW_LOCAL_PATHS": "0",
+    "EUREKA_ALLOW_ARBITRARY_URL_FETCH": "0",
+    "EUREKA_ALLOW_INSTALL_ACTIONS": "0",
+    "EUREKA_ALLOW_TELEMETRY": "0",
+    "EUREKA_MAX_QUERY_LEN": "160",
+    "EUREKA_MAX_RESULTS": "20",
+    "EUREKA_GLOBAL_TIMEOUT_MS": "5000",
+    "EUREKA_OPERATOR_KILL_SWITCH": "0"
+  },
+  "safety_defaults": {
+    "local_index_only": true,
+    "read_only": true,
+    "forbidden_parameters_rejected": true,
+    "no_external_calls": true,
+    "no_index_mutation": true,
+    "no_pack_import": true,
+    "no_staging_runtime": true
+  },
+  "deployment_templates": {
+    "dockerfile": "Dockerfile",
+    "dockerignore": ".dockerignore",
+    "render_template": "deploy/render/render.yaml",
+    "template_docs": "deploy/README.md",
+    "status": "template_only_operator_gated"
+  },
+  "hosted_wrapper_implemented": true,
+  "hosted_backend_implemented": true,
+  "implementation_scope": "deployable_wrapper_local_rehearsal_only",
+  "hosted_backend_deployed": false,
+  "hosted_deployment_verified": false,
+  "dynamic_backend_deployed": false,
+  "live_probes_enabled": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "local_paths_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "telemetry_enabled": false,
+  "accounts_enabled": false,
+  "external_calls_enabled": false,
+  "ai_runtime_enabled": false,
+  "public_search_mode": "local_index_only",
+  "command_results": [
+    {
+      "command": "git status --short --branch",
+      "status": "pass",
+      "notes": "Initial P54 status was clean on main...origin/main."
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "status": "pass",
+      "notes": "Initial head 40db3221e2c470489e60aebf2821001c820238e9."
+    },
+    {
+      "command": "git rev-parse origin/main",
+      "status": "pass",
+      "notes": "Initial origin/main matched head."
+    },
+    {
+      "command": "git log --oneline -n 50",
+      "status": "pass",
+      "notes": "P50 through P53 commits were present."
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "pass",
+      "notes": "Safe defaults accepted."
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config --json",
+      "status": "pass",
+      "notes": "JSON parsed and reported status valid."
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "pass",
+      "notes": "Local rehearsal passed 14/14 checks."
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py --json",
+      "status": "pass",
+      "notes": "JSON local rehearsal passed 14/14 checks."
+    },
+    {
+      "command": "EUREKA_ALLOW_LIVE_PROBES=1 python scripts/run_hosted_public_search.py --check-config",
+      "status": "pass_expected_failure",
+      "notes": "Config check refused prohibited live probes."
+    },
+    {
+      "command": "EUREKA_ALLOW_DOWNLOADS=1 python scripts/run_hosted_public_search.py --check-config",
+      "status": "pass_expected_failure",
+      "notes": "Config check refused prohibited downloads."
+    },
+    {
+      "command": "EUREKA_ALLOW_UPLOADS=1 python scripts/run_hosted_public_search.py --check-config",
+      "status": "pass_expected_failure",
+      "notes": "Config check refused prohibited uploads."
+    },
+    {
+      "command": "EUREKA_ALLOW_LOCAL_PATHS=1 python scripts/run_hosted_public_search.py --check-config",
+      "status": "pass_expected_failure",
+      "notes": "Config check refused prohibited local path access."
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "pass",
+      "notes": "P54 audit pack, wrapper, docs, inventory, and hard false booleans validated."
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py --json",
+      "status": "pass",
+      "notes": "JSON validator output parsed with status valid."
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "pass_after_repair",
+      "notes": "Initial run exposed stale static-host Dockerfile guard; after narrow P54 Dockerfile allowance, 235 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "pass_after_repair",
+      "notes": "Initial run exposed stale GitHub Pages provider-config guard; after safe-wrapper Dockerfile check, 414 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "pass",
+      "notes": "53 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "pass",
+      "notes": "25 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "pass",
+      "notes": "320 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "pass",
+      "notes": "168 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "notes": "818 tests passed."
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py && --json variant",
+      "status": "pass",
+      "notes": "Public search API contract remained valid; mode local_index_only and 26 forbidden parameters."
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py && --json variant",
+      "status": "pass",
+      "notes": "Result card contract remained valid with five examples."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py && --json variant",
+      "status": "pass",
+      "notes": "Safety guard remained valid; live/download/upload/install/local-path/url modes disabled."
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py && --json variant",
+      "status": "pass",
+      "notes": "Local public search runtime remained local_prototype_backend and local_index_only."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py && --json variant",
+      "status": "pass",
+      "notes": "Public search smoke passed 30/30 checks."
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "pass",
+      "notes": "Public alpha smoke passed 18/18 checks."
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py && --json variant",
+      "status": "pass",
+      "notes": "P53 production contract remained valid; hosted search still not claimed."
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "pass",
+      "notes": "P52 static deployment evidence remained valid and unverified."
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "pass",
+      "notes": "P51 remediation pack validator passed."
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "pass",
+      "notes": "P50 audit pack validator passed."
+    },
+    {
+      "command": "python site/build.py --check && python site/build.py --json && python site/validate.py && python site/validate.py --json",
+      "status": "pass",
+      "notes": "Static site generation and validation passed when run sequentially."
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "pass",
+      "notes": "Publication inventory remained valid with 49 registered routes."
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "pass",
+      "notes": "Public static site validation passed with 9 pages and 15 source IDs."
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "pass",
+      "notes": "GitHub Pages static artifact check passed."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "pass",
+      "notes": "Generated artifact drift guard passed all 10 artifacts."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py && --json variant",
+      "status": "pass",
+      "notes": "Archive resolution evals stayed satisfied: 6/6."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py && --json variant",
+      "status": "pass",
+      "notes": "Search usefulness counts: covered=5, partial=40, source_gap=10, capability_gap=7, unknown=2."
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "pass",
+      "notes": "External baselines remain manual/pending: 192 pending, 0 observed; batch_0 39 pending, 0 observed."
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "pass",
+      "notes": "Python oracle golden fixture pack remained current."
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "notes": "Architecture boundary checks passed."
+    },
+    {
+      "command": "python scripts/validate_live_backend_handoff.py && --json variant",
+      "status": "pass_after_repair",
+      "notes": "Validator now permits only the safe P54 wrapper Dockerfile while continuing to reject other backend/provider configs."
+    },
+    {
+      "command": "python scripts/validate_static_host_readiness.py && --json variant",
+      "status": "pass_after_repair",
+      "notes": "Static host readiness now permits only the safe P54 wrapper Dockerfile while preserving no-domain/no-DNS checks."
+    },
+    {
+      "command": "cargo --version",
+      "status": "unavailable",
+      "notes": "Cargo is not installed in this environment."
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "unavailable",
+      "notes": "Cargo is not installed in this environment."
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "unavailable",
+      "notes": "Cargo is not installed in this environment."
+    }
+  ],
+  "verification_summary": {
+    "hosted_wrapper_check": "passed 14/14",
+    "public_search_smoke": "passed 30/30",
+    "public_alpha_smoke": "passed 18/18",
+    "archive_resolution_evals": "satisfied 6/6",
+    "search_usefulness_counts": {
+      "covered": 5,
+      "partial": 40,
+      "source_gap": 10,
+      "capability_gap": 7,
+      "unknown": 2,
+      "total": 64
+    },
+    "external_baselines": {
+      "observed": 0,
+      "pending": 192,
+      "batch_0_observed": 0,
+      "batch_0_pending": 39
+    },
+    "cargo_status": "unavailable"
+  },
+  "local_rehearsal_results": {
+    "status": "passed",
+    "total_checks": 14,
+    "passed_checks": 14,
+    "failed_checks": 0,
+    "checked_routes": [
+      "/healthz",
+      "/status",
+      "/api/v1/status",
+      "/api/v1/search",
+      "/api/v1/query-plan",
+      "/api/v1/sources",
+      "/search"
+    ],
+    "blocked_parameters": [
+      "index_path",
+      "url",
+      "live_probe",
+      "download",
+      "upload"
+    ],
+    "too_long_query_rejected": true
+  },
+  "remaining_blockers": [
+    "Hosted deployment evidence is absent.",
+    "Rate-limit and abuse-control middleware remain future work.",
+    "Operator kill-switch procedure is documented but not exercised against a host.",
+    "Static-to-dynamic backend URL wiring remains future.",
+    "External baselines remain manual/pending."
+  ],
+  "operator_steps": [
+    "choose backend host",
+    "create service from repo or Dockerfile",
+    "set safe environment variables",
+    "deploy",
+    "check /healthz",
+    "check /api/v1/status",
+    "check /search?q=windows+7+apps",
+    "verify forbidden parameters",
+    "record deployment URL, commit, service revision, environment, and rollback evidence"
+  ],
+  "next_recommended_branch": "P55 Public Search Index Builder v0",
+  "notes": [
+    "P54 implements a deployable wrapper only; hosted deployment is still false.",
+    "GitHub Pages remains static-only and cannot run this Python backend.",
+    "Live probes, source connectors, downloads, uploads, accounts, telemetry, arbitrary URL fetch, AI runtime, index mutation, pack import, and staging runtime remain disabled or absent."
+  ]
+}

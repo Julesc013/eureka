@@ -280,6 +280,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   without adding hosted backend behavior, live probes, source connectors,
   telemetry runtime, accounts, uploads, downloads, installers, arbitrary URL
   fetching, index mutation, AI runtime, or hosted-search claims.
+- `hosted-public-search-wrapper-v0/`: P54 hosted public search wrapper
+  readiness checkpoint. It records the stdlib wrapper, local rehearsal check,
+  environment defaults, route status, Docker/Render templates, operator
+  deployment steps, and validation evidence without performing hosted
+  deployment, enabling live probes, downloads, uploads, accounts, telemetry,
+  arbitrary URL fetch, source connectors, AI runtime, index mutation, pack
+  import, staging runtime, or hosted availability claims.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,
