@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/source_cache_record.v0.json",
+  "title": "Eureka Source Cache Record v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-source_cache_runtime_implemented": false,
+  "x-cache_write_allowed": false,
+  "x-live_source_calls_allowed_now": false,
+  "x-arbitrary_url_cache_allowed": false,
+  "x-raw_payload_storage_allowed_now": false,
+  "x-private_data_storage_allowed_now": false,
+  "x-executable_payload_storage_allowed_now": false,
+  "x-evidence_ledger_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-master_index_mutation_allowed": false,
+  "x-telemetry_implemented": false,
+  "x-credentials_configured": false,
+  "required": [
+    "schema_version",
+    "source_cache_record_id",
+    "source_cache_record_kind",
+    "status",
+    "created_by_tool",
+    "source_ref",
+    "cache_identity",
+    "cache_kind",
+    "source_policy",
+    "acquisition_context",
+    "cached_payload_summary",
+    "normalized_metadata",
+    "freshness",
+    "provenance",
+    "fixity",
+    "privacy",
+    "rights_and_risk",
+    "limitations",
+    "no_runtime_guarantees",
+    "no_mutation_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Source Cache Record v0 field: schema_version."
+    },
+    "source_cache_record_id": {
+      "description": "Source Cache Record v0 field: source_cache_record_id."
+    },
+    "source_cache_record_kind": {
+      "description": "Source Cache Record v0 field: source_cache_record_kind."
+    },
+    "status": {
+      "description": "Source Cache Record v0 field: status."
+    },
+    "created_by_tool": {
+      "description": "Source Cache Record v0 field: created_by_tool."
+    },
+    "source_ref": {
+      "description": "Source Cache Record v0 field: source_ref."
+    },
+    "cache_identity": {
+      "description": "Source Cache Record v0 field: cache_identity."
+    },
+    "cache_kind": {
+      "description": "Source Cache Record v0 field: cache_kind."
+    },
+    "source_policy": {
+      "description": "Source Cache Record v0 field: source_policy."
+    },
+    "acquisition_context": {
+      "description": "Source Cache Record v0 field: acquisition_context."
+    },
+    "cached_payload_summary": {
+      "description": "Source Cache Record v0 field: cached_payload_summary."
+    },
+    "normalized_metadata": {
+      "description": "Source Cache Record v0 field: normalized_metadata."
+    },
+    "freshness": {
+      "description": "Source Cache Record v0 field: freshness."
+    },
+    "provenance": {
+      "description": "Source Cache Record v0 field: provenance."
+    },
+    "fixity": {
+      "description": "Source Cache Record v0 field: fixity."
+    },
+    "privacy": {
+      "description": "Source Cache Record v0 field: privacy."
+    },
+    "rights_and_risk": {
+      "description": "Source Cache Record v0 field: rights_and_risk."
+    },
+    "limitations": {
+      "description": "Source Cache Record v0 field: limitations."
+    },
+    "no_runtime_guarantees": {
+      "description": "Source Cache Record v0 field: no_runtime_guarantees."
+    },
+    "no_mutation_guarantees": {
+      "description": "Source Cache Record v0 field: no_mutation_guarantees."
+    },
+    "notes": {
+      "description": "Source Cache Record v0 field: notes."
+    }
+  }
+}

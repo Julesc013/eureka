@@ -1,0 +1,160 @@
+{
+  "schema_version": "0.1.0",
+  "evidence_ledger_record_id": "example.evidence_ledger.source_metadata.v0",
+  "evidence_ledger_record_kind": "evidence_ledger_record",
+  "status": "review_required",
+  "created_by_tool": "p70_evidence_ledger_example_builder_v0",
+  "evidence_identity": {
+    "evidence_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "example.evidence_ledger.source_metadata.v0:source_metadata_observation:source_identity:describes:v0",
+      "value": "1e9026e0437a620f108bffe28b0ddca91ef87e44297d558211c0b5ab8fd20746",
+      "reversible": false
+    },
+    "canonical_evidence_label": "Source metadata evidence observation",
+    "duplicate_of": null,
+    "supersedes": null
+  },
+  "evidence_kind": {
+    "kind": "source_metadata_observation",
+    "evidence_family": "source",
+    "accepted_evidence_now": false,
+    "review_required": true,
+    "limitations": [
+      "Evidence ledger entry is an observation, not accepted master-index truth."
+    ]
+  },
+  "subject_ref": {
+    "subject_kind": "source_identity",
+    "subject_id": "synthetic.subject.example.evidence_ledger.source_metadata.v0",
+    "subject_label": "Source metadata evidence observation",
+    "source_id": "synthetic_source",
+    "source_family": "recorded_fixture",
+    "limitations": [
+      "Synthetic public-safe subject reference."
+    ]
+  },
+  "claim": {
+    "claim_type": "describes",
+    "claim_value": "Synthetic source metadata describes a public-safe fixture summary.",
+    "claim_status": "review_required",
+    "global_absence_claimed": false,
+    "limitations": [
+      "Claim is observation-only and review-gated."
+    ]
+  },
+  "source_cache_refs": [
+    {
+      "source_cache_record_id": "example.source_cache.recorded_fixture.v0",
+      "ref_status": "synthetic_ref",
+      "limitations": [
+        "Reference only; no source cache lookup or mutation occurred."
+      ]
+    }
+  ],
+  "provenance": {
+    "provenance_kind": "source_cache_record",
+    "provenance_refs": [
+      "example.source_cache.recorded_fixture.v0"
+    ],
+    "validator_refs": [
+      "scripts/validate_evidence_ledger_record.py"
+    ],
+    "generated_by_tool": "p70_evidence_ledger_example_builder_v0",
+    "limitations": [
+      "Synthetic provenance for contract validation."
+    ]
+  },
+  "observation": {
+    "observation_text": "Synthetic observation for Source metadata evidence observation.",
+    "observation_data": {
+      "source": "synthetic_public_safe_example",
+      "claim_type": "describes"
+    },
+    "locator": "synthetic:evidence:example.evidence_ledger.source_metadata.v0",
+    "snippet": "Synthetic short metadata observation.",
+    "snippet_public_safe": true,
+    "observation_scope": "metadata_summary",
+    "checked_scope": [],
+    "not_checked_scope": [],
+    "limitations": [
+      "No raw payload dump or live source observation is included."
+    ]
+  },
+  "confidence": {
+    "confidence_class": "medium",
+    "confidence_basis": "source_cache_record",
+    "confidence_not_truth": true,
+    "limitations": [
+      "Confidence is not truth and cannot promote by itself."
+    ]
+  },
+  "review": {
+    "review_status": "human_review_required",
+    "promotion_policy_required": true,
+    "master_index_review_required": true,
+    "limitations": [
+      "Review is required before any authoritative use."
+    ]
+  },
+  "conflicts": {
+    "conflict_status": "none_known",
+    "conflicting_evidence_refs": [],
+    "preservation_policy": "preserve_conflict",
+    "destructive_merge_allowed": false,
+    "limitations": [
+      "Conflicts must be preserved for review."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "contains_local_result": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe evidence observation."
+    ]
+  },
+  "rights_and_risk": {
+    "rights_classification": "public_metadata_only",
+    "risk_classification": "metadata_only",
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "limitations": [
+      "No rights clearance or malware safety claim is made."
+    ]
+  },
+  "limitations": [
+    "Contract/example only; evidence ledger runtime is not implemented."
+  ],
+  "no_truth_guarantees": {
+    "accepted_as_truth": false
+  },
+  "no_runtime_guarantees": {
+    "evidence_ledger_runtime_implemented": false,
+    "ledger_write_performed": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "telemetry_exported": false,
+    "credentials_used": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "notes": [
+    "Evidence observations require candidate/promotion review before authoritative use."
+  ]
+}

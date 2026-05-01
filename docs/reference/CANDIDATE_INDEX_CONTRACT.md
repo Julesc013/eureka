@@ -179,3 +179,7 @@ Demand Dashboard v0 is future/contract-only. It can later summarize privacy-filt
 ## Source Sync Worker v0 Relation
 
 Source Sync Worker Contract v0 is future/contract-only. It may later consume probe queue and demand dashboard signals to plan approved, bounded source sync jobs, but P69 adds no connector runtime, source calls, public-query fanout, source cache mutation, evidence ledger mutation, candidate mutation, or index mutation.
+
+## P70 Source Cache And Evidence Ledger Relation
+
+Source cache records and evidence ledger observations may later become inputs for candidate records only after validation and review. P70 does not create candidates, promote candidates, or mutate candidate/public/local/master indexes.

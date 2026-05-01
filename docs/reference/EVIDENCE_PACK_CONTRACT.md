@@ -245,3 +245,7 @@ Known Absence Page v0 is contract-only. It defines scoped absence, not global ab
 ## Source Sync Worker v0 Relation
 
 Source Sync Worker Contract v0 is future/contract-only. It may later consume probe queue and demand dashboard signals to plan approved, bounded source sync jobs, but P69 adds no connector runtime, source calls, public-query fanout, source cache mutation, evidence ledger mutation, candidate mutation, or index mutation.
+
+## P70 Source Cache And Evidence Ledger Relation
+
+Evidence packs may later provide reviewed evidence references for Evidence Ledger Contract v0. P70 accepts no evidence as truth, imports no packs, and writes no runtime ledger state.

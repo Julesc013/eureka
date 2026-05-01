@@ -701,3 +701,7 @@ Demand Dashboard v0 is not a backend service. Backend work must wait for governe
 ## P69 Boundary
 
 Source Sync Worker Contract v0 is not backend worker runtime. Backend source sync execution must wait for source cache/evidence ledger contracts, connector approval packs, credentials policy, rate limits, timeouts, circuit breakers, and operator approval.
+
+## P70 Source Cache And Evidence Ledger v0
+
+Future backend work may implement approved source cache/evidence ledger runtime only after connector approval, source policy, User-Agent/contact policy, rate limits, timeouts, circuit breakers, and review gates. P70 adds no runtime.

@@ -1,0 +1,191 @@
+{
+  "schema_version": "0.1.0",
+  "source_cache_record_id": "example.source_cache.wayback_availability.v0",
+  "source_cache_record_kind": "source_cache_record",
+  "status": "cache_candidate_future",
+  "created_by_tool": "p70_source_cache_example_builder_v0",
+  "source_ref": {
+    "source_id": "wayback",
+    "source_family": "wayback",
+    "source_status": "approval_required",
+    "source_locator": "synthetic:wayback:synthetic-wayback-target",
+    "source_identifier": "synthetic-wayback-target",
+    "source_terms_ref": "future_source_terms_review",
+    "limitations": [
+      "Synthetic public-safe source reference; no arbitrary URL or private path is included."
+    ]
+  },
+  "cache_identity": {
+    "cache_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "example.source_cache.wayback_availability.v0:wayback:wayback_capture_metadata:synthetic-wayback-target:v0",
+      "value": "947aaedb2c7fc40c59ea4c9fa651637448e5454fe097eb1eeb2bc968bb60aec3",
+      "reversible": false
+    },
+    "cache_key_basis": {
+      "source_id": "wayback",
+      "source_identifier": "synthetic-wayback-target",
+      "bounded_query_future": null,
+      "fixture_record_id": null,
+      "recorded_fixture_id": null
+    },
+    "canonical_cache_label": "Wayback availability cache example",
+    "duplicate_of": null,
+    "supersedes": null
+  },
+  "cache_kind": {
+    "kind": "wayback_capture_metadata",
+    "payload_policy": "metadata_summary_only",
+    "raw_payload_allowed": false,
+    "public_safe_summary_allowed": true,
+    "limitations": [
+      "Metadata summary only; raw payload storage is not allowed in v0 examples."
+    ]
+  },
+  "source_policy": {
+    "source_policy_kind": "live_metadata_sync_after_approval_future",
+    "live_source_enabled_now": false,
+    "source_terms_review_required": true,
+    "robots_or_source_policy_review_required": true,
+    "user_agent_required_future": true,
+    "rate_limit_required_future": true,
+    "retry_backoff_required_future": true,
+    "circuit_breaker_required_future": true,
+    "cache_required_before_public_use": true,
+    "evidence_attribution_required": true,
+    "max_records_future": 100,
+    "max_runtime_ms_future": 30000,
+    "limitations": [
+      "Policy is contract-only; no live source, cache write, or external call is enabled."
+    ]
+  },
+  "acquisition_context": {
+    "acquisition_kind": "source_sync_worker_future",
+    "acquisition_ref": "example.acquisition.example.source_cache.wayback_availability.v0",
+    "source_sync_job_ref": "future.source_sync.job.synthetic",
+    "probe_queue_ref": null,
+    "manual_observation_ref": null,
+    "acquired_at_policy": "future_runtime",
+    "live_network_used": false,
+    "external_call_performed": false,
+    "credentials_used": false,
+    "limitations": [
+      "Reference-only acquisition context; no source sync worker executed."
+    ]
+  },
+  "cached_payload_summary": {
+    "payload_summary_kind": "availability_summary",
+    "field_count": 4,
+    "item_count": 1,
+    "summary_text": "Synthetic future Wayback availability summary; no live source data.",
+    "raw_payload_included": false,
+    "raw_payload_ref": null,
+    "public_safe": true,
+    "limitations": [
+      "Short synthetic metadata summary only."
+    ]
+  },
+  "normalized_metadata": {
+    "normalized_title": "Wayback availability cache example",
+    "normalized_identifier": "synthetic-wayback-target",
+    "normalized_version": null,
+    "normalized_platforms": [],
+    "normalized_artifact_types": [
+      "metadata_summary"
+    ],
+    "normalized_dates": [],
+    "normalized_source_terms": [],
+    "normalized_access_status": "available_future",
+    "normalized_member_count": 0,
+    "normalized_checksum_refs": [],
+    "limitations": [
+      "Normalization is example-only and not accepted source truth."
+    ]
+  },
+  "freshness": {
+    "freshness_status": "example_static",
+    "freshness_basis": "source_sync_time_future",
+    "ttl_policy": "none_for_example",
+    "stale_if_source_policy_changes": true,
+    "stale_if_connector_contract_changes": true,
+    "stale_if_rights_policy_changes": true,
+    "limitations": [
+      "Freshness is illustrative; no runtime invalidation exists."
+    ]
+  },
+  "provenance": {
+    "provenance_kind": "source_sync_worker_future",
+    "provenance_refs": [
+      "example.provenance.example.source_cache.wayback_availability.v0"
+    ],
+    "source_sync_job_ref": "future.source_sync.job.synthetic",
+    "validator_refs": [
+      "scripts/validate_source_cache_record.py"
+    ],
+    "generated_by_tool": "p70_source_cache_example_builder_v0",
+    "limitations": [
+      "Provenance is deterministic and synthetic."
+    ]
+  },
+  "fixity": {
+    "content_hash": "198edee12857e1ed0cbd48798ed84f4197ef1efba87a901b0acb9af92968cd46",
+    "hash_algorithm": "sha256",
+    "checksum_status": "present",
+    "checksum_scope": "metadata_summary",
+    "limitations": [
+      "Hash covers the synthetic summary basis, not a raw source payload."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "contains_local_result": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe metadata summary."
+    ]
+  },
+  "rights_and_risk": {
+    "rights_classification": "source_terms_apply",
+    "risk_classification": "metadata_only",
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "limitations": [
+      "No rights clearance or malware safety claim is made."
+    ]
+  },
+  "limitations": [
+    "Contract/example only; source cache runtime is not implemented."
+  ],
+  "no_runtime_guarantees": {
+    "source_cache_runtime_implemented": false,
+    "cache_write_performed": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "arbitrary_url_fetched": false,
+    "raw_payload_stored": false,
+    "private_data_stored": false,
+    "executable_payload_stored": false,
+    "telemetry_exported": false,
+    "credentials_used": false
+  },
+  "no_mutation_guarantees": {
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "notes": [
+    "Source cache records are source observations, not accepted truth."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "evidence_ledger_policy_v0",
+  "status": "contract_only",
+  "runtime_evidence_ledger_implemented": false,
+  "persistent_evidence_ledger_implemented": false,
+  "accepted_as_truth_by_default": false,
+  "automatic_promotion_allowed": false,
+  "telemetry_implemented": false,
+  "credentials_configured": false,
+  "ledger_mutation_allowed_now": false,
+  "source_cache_mutation_allowed_now": false,
+  "candidate_index_mutation_allowed_now": false,
+  "public_index_mutation_allowed_now": false,
+  "local_index_mutation_allowed_now": false,
+  "master_index_mutation_allowed": false,
+  "promotion_policy_required": true,
+  "master_index_review_required": true,
+  "evidence_review_required": true,
+  "rights_risk_review_required": true,
+  "conflict_review_required": true,
+  "destructive_merge_allowed": false,
+  "notes": [
+    "P70 is contract-only; evidence observations are not accepted truth."
+  ]
+}

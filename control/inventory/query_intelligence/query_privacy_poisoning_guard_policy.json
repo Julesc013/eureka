@@ -33,8 +33,10 @@
     "P67 is contract-only and defines future query privacy and poisoning guard decisions.",
     "No runtime guard, persistent store, telemetry, account tracking, IP tracking, public query logging, query-intelligence mutation, index mutation, external calls, or live probes are added.",
     "P68 demand dashboard remains future/contract-only and may use only privacy-filtered, poisoning-guarded aggregate inputs; no runtime aggregation, telemetry, real demand claim, or mutation is added.",
-    "P69 source sync workers remain future/contract-only; no public-query fanout, connector runtime, source cache/evidence ledger mutation, candidate mutation, or index mutation is added."
+    "P69 source sync workers remain future/contract-only; no public-query fanout, connector runtime, source cache/evidence ledger mutation, candidate mutation, or index mutation is added.",
+    "P70 source cache/evidence ledger remains future/contract-only and does not mutate query-intelligence records."
   ],
   "demand_dashboard_status": "contract_only_p68",
-  "source_sync_worker_status": "contract_only_p69"
+  "source_sync_worker_status": "contract_only_p69",
+  "source_cache_evidence_ledger_status": "contract_only_p70"
 }

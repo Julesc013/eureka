@@ -1863,3 +1863,7 @@ Demand summaries are prioritization hints only. P68 examples are synthetic, priv
 ## P69 Decision
 
 Source sync jobs are future bounded planning records only. They must be approval-gated, cache-first, evidence-attributed, rate-limited, timeout-bounded, and circuit-breaker protected before any live source access.
+
+## P70 Source Cache And Evidence Ledger Decision
+
+Source cache records are source observations, and evidence ledger records are evidence observations. Neither is accepted truth or master-index mutation by default.

@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "source_cache_policy_v0",
+  "status": "contract_only",
+  "runtime_source_cache_implemented": false,
+  "persistent_source_cache_implemented": false,
+  "live_sources_enabled_by_default": false,
+  "public_query_fanout_allowed": false,
+  "arbitrary_url_cache_allowed": false,
+  "raw_payload_storage_allowed_now": false,
+  "private_data_storage_allowed_now": false,
+  "executable_payload_storage_allowed_now": false,
+  "telemetry_implemented": false,
+  "credentials_configured": false,
+  "source_cache_mutation_allowed_now": false,
+  "evidence_ledger_mutation_allowed_now": false,
+  "candidate_index_mutation_allowed_now": false,
+  "master_index_mutation_allowed": false,
+  "approval_required_for_live_network_cache": true,
+  "source_policy_review_required": true,
+  "rate_limit_required_future": true,
+  "timeout_required_future": true,
+  "circuit_breaker_required_future": true,
+  "descriptive_user_agent_required_future": true,
+  "cache_required_before_public_use": true,
+  "evidence_attribution_required": true,
+  "notes": [
+    "P70 is contract-only; no source cache runtime or write path exists."
+  ]
+}

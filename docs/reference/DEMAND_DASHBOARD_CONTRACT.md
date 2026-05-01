@@ -41,3 +41,7 @@ Future source sync, source cache, evidence ledger, connector approvals, and any 
 ## Source Sync Worker v0 Relation
 
 Source Sync Worker Contract v0 is future/contract-only. It may later consume probe queue and demand dashboard signals to plan approved, bounded source sync jobs, but P69 adds no connector runtime, source calls, public-query fanout, source cache mutation, evidence ledger mutation, candidate mutation, or index mutation.
+
+## P70 Source Cache And Evidence Ledger Relation
+
+Demand dashboard source and capability priorities may later inform approved source sync work whose outputs enter Source Cache Contract v0 and Evidence Ledger Contract v0. P70 adds no dashboard aggregation runtime, no source calls, no cache/ledger mutation, and no real demand claims.

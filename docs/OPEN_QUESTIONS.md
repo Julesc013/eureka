@@ -221,3 +221,7 @@ Future work must define retention/deletion, operator review, source sync, source
 ## P69 Open Questions
 
 Future work must define source cache/evidence ledger schemas, source-specific User-Agent/contact policy, connector approval packs, credential handling, retention, and worker operations before live sync can run.
+
+## P70 Source Cache And Evidence Ledger Open Questions
+
+Decide future source cache retention, invalidation, source-specific User-Agent/contact policy, ledger review workflow, and source/evidence pack import boundaries before implementation.

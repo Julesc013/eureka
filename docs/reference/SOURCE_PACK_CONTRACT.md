@@ -279,3 +279,7 @@ P34 does not implement:
 ## Source Sync Worker v0 Relation
 
 Source Sync Worker Contract v0 is future/contract-only. It may later consume probe queue and demand dashboard signals to plan approved, bounded source sync jobs, but P69 adds no connector runtime, source calls, public-query fanout, source cache mutation, evidence ledger mutation, candidate mutation, or index mutation.
+
+## P70 Source Cache And Evidence Ledger Relation
+
+Source packs may later provide reviewed input references for Source Cache Contract v0 and Evidence Ledger Contract v0. P70 imports no packs, stages no packs, and writes no runtime cache or ledger state.

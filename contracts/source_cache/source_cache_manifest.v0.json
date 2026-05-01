@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/source_cache_manifest.v0.json",
+  "title": "Eureka Source Cache Manifest v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_implemented": false,
+  "x-live_sources_enabled_by_default": false,
+  "x-public_query_fanout_allowed": false,
+  "x-source_cache_mutation_allowed_now": false,
+  "x-evidence_ledger_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-master_index_mutation_allowed_now": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "manifest_kind",
+    "status",
+    "cache_scope",
+    "source_families",
+    "source_cache_records",
+    "freshness_policy",
+    "invalidation_policy",
+    "privacy_policy",
+    "rights_risk_policy",
+    "no_runtime_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Source Cache Manifest v0 field: schema_version."
+    },
+    "manifest_id": {
+      "description": "Source Cache Manifest v0 field: manifest_id."
+    },
+    "manifest_kind": {
+      "description": "Source Cache Manifest v0 field: manifest_kind."
+    },
+    "status": {
+      "description": "Source Cache Manifest v0 field: status."
+    },
+    "cache_scope": {
+      "description": "Source Cache Manifest v0 field: cache_scope."
+    },
+    "source_families": {
+      "description": "Source Cache Manifest v0 field: source_families."
+    },
+    "source_cache_records": {
+      "description": "Source Cache Manifest v0 field: source_cache_records."
+    },
+    "freshness_policy": {
+      "description": "Source Cache Manifest v0 field: freshness_policy."
+    },
+    "invalidation_policy": {
+      "description": "Source Cache Manifest v0 field: invalidation_policy."
+    },
+    "privacy_policy": {
+      "description": "Source Cache Manifest v0 field: privacy_policy."
+    },
+    "rights_risk_policy": {
+      "description": "Source Cache Manifest v0 field: rights_risk_policy."
+    },
+    "no_runtime_guarantees": {
+      "description": "Source Cache Manifest v0 field: no_runtime_guarantees."
+    },
+    "notes": {
+      "description": "Source Cache Manifest v0 field: notes."
+    }
+  }
+}

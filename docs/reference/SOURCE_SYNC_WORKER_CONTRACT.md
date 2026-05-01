@@ -25,3 +25,7 @@ Expected outputs are future-only. Source sync workers must feed source cache and
 ## Relations
 
 Probe queue and demand dashboard records may suggest future source sync work, but P69 does not enqueue jobs or wire public search to source fanout. Candidate index and promotion policy remain review-gated future consumers only.
+
+## P70 Source Cache And Evidence Ledger Relationship
+
+Source Cache Contract v0 and Evidence Ledger Contract v0 define future output destinations for approved source sync workers. P70 remains contract-only: no worker writes source cache or evidence ledger records, no live source call occurs, and no candidate/public/local/master index mutation occurs.

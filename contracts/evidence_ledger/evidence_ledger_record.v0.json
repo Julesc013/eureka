@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/evidence_ledger_record.v0.json",
+  "title": "Eureka Evidence Ledger Record v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-evidence_ledger_runtime_implemented": false,
+  "x-ledger_write_allowed": false,
+  "x-accepted_as_truth_by_default": false,
+  "x-source_cache_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-public_index_mutation_allowed_now": false,
+  "x-local_index_mutation_allowed_now": false,
+  "x-master_index_mutation_allowed": false,
+  "x-live_source_calls_allowed_now": false,
+  "x-telemetry_implemented": false,
+  "x-credentials_configured": false,
+  "required": [
+    "schema_version",
+    "evidence_ledger_record_id",
+    "evidence_ledger_record_kind",
+    "status",
+    "created_by_tool",
+    "evidence_identity",
+    "evidence_kind",
+    "subject_ref",
+    "claim",
+    "source_cache_refs",
+    "provenance",
+    "observation",
+    "confidence",
+    "review",
+    "conflicts",
+    "privacy",
+    "rights_and_risk",
+    "limitations",
+    "no_truth_guarantees",
+    "no_runtime_guarantees",
+    "no_mutation_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Evidence Ledger Record v0 field: schema_version."
+    },
+    "evidence_ledger_record_id": {
+      "description": "Evidence Ledger Record v0 field: evidence_ledger_record_id."
+    },
+    "evidence_ledger_record_kind": {
+      "description": "Evidence Ledger Record v0 field: evidence_ledger_record_kind."
+    },
+    "status": {
+      "description": "Evidence Ledger Record v0 field: status."
+    },
+    "created_by_tool": {
+      "description": "Evidence Ledger Record v0 field: created_by_tool."
+    },
+    "evidence_identity": {
+      "description": "Evidence Ledger Record v0 field: evidence_identity."
+    },
+    "evidence_kind": {
+      "description": "Evidence Ledger Record v0 field: evidence_kind."
+    },
+    "subject_ref": {
+      "description": "Evidence Ledger Record v0 field: subject_ref."
+    },
+    "claim": {
+      "description": "Evidence Ledger Record v0 field: claim."
+    },
+    "source_cache_refs": {
+      "description": "Evidence Ledger Record v0 field: source_cache_refs."
+    },
+    "provenance": {
+      "description": "Evidence Ledger Record v0 field: provenance."
+    },
+    "observation": {
+      "description": "Evidence Ledger Record v0 field: observation."
+    },
+    "confidence": {
+      "description": "Evidence Ledger Record v0 field: confidence."
+    },
+    "review": {
+      "description": "Evidence Ledger Record v0 field: review."
+    },
+    "conflicts": {
+      "description": "Evidence Ledger Record v0 field: conflicts."
+    },
+    "privacy": {
+      "description": "Evidence Ledger Record v0 field: privacy."
+    },
+    "rights_and_risk": {
+      "description": "Evidence Ledger Record v0 field: rights_and_risk."
+    },
+    "limitations": {
+      "description": "Evidence Ledger Record v0 field: limitations."
+    },
+    "no_truth_guarantees": {
+      "description": "Evidence Ledger Record v0 field: no_truth_guarantees."
+    },
+    "no_runtime_guarantees": {
+      "description": "Evidence Ledger Record v0 field: no_runtime_guarantees."
+    },
+    "no_mutation_guarantees": {
+      "description": "Evidence Ledger Record v0 field: no_mutation_guarantees."
+    },
+    "notes": {
+      "description": "Evidence Ledger Record v0 field: notes."
+    }
+  }
+}

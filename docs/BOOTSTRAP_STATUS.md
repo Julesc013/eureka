@@ -981,3 +981,7 @@ P68 adds the Demand Dashboard v0 contract, synthetic examples, validators, tests
 ## P69 Source Sync Worker Contract v0
 
 P69 adds source sync worker job and manifest contracts, synthetic examples, validators, tests, and audit pack. It remains contract-only and adds no source sync runtime, live source calls, connector runtime, credentials, telemetry, source cache mutation, evidence ledger mutation, candidate mutation, or index mutation.
+
+## P70 Source Cache And Evidence Ledger v0
+
+Source cache and evidence ledger are contract-only. No runtime persistence, source calls, cache writes, ledger writes, telemetry, credentials, or index mutation exists.

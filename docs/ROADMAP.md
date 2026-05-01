@@ -828,3 +828,7 @@ P68 completes the first Query Intelligence Plane contract sequence. Next recomme
 ## Source Ingestion After P69
 
 P69 starts the source-ingestion plane with a source sync worker contract. Next recommended branch: P70 Source Cache and Evidence Ledger v0. Do not implement live connectors before approval packs and source policy are governed.
+
+## P70 Source Cache And Evidence Ledger v0
+
+P70 completed contract-only source cache and evidence ledger definitions. Next recommended branch: P71 Internet Archive Metadata Connector Approval Pack v0.

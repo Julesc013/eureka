@@ -31,6 +31,10 @@
   ],
   "notes": [
     "P69 is contract-only and defines future source sync worker jobs and manifests.",
-    "No source sync runtime, worker queue persistence, telemetry, credentials, public-query fanout, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, or index mutation is added."
-  ]
+    "No source sync runtime, worker queue persistence, telemetry, credentials, public-query fanout, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, or index mutation is added.",
+    "P70 adds source cache and evidence ledger contracts as future output destinations only."
+  ],
+  "source_cache_contract": "contracts/source_cache/source_cache_record.v0.json",
+  "evidence_ledger_contract": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+  "future_output_destinations_only": true
 }

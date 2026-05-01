@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/evidence_ledger_manifest.v0.json",
+  "title": "Eureka Evidence Ledger Manifest v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_implemented": false,
+  "x-accepted_as_truth_by_default": false,
+  "x-master_index_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-public_index_mutation_allowed_now": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "manifest_kind",
+    "status",
+    "ledger_scope",
+    "evidence_records",
+    "source_cache_refs",
+    "privacy_policy",
+    "rights_risk_policy",
+    "review_policy",
+    "no_runtime_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Evidence Ledger Manifest v0 field: schema_version."
+    },
+    "manifest_id": {
+      "description": "Evidence Ledger Manifest v0 field: manifest_id."
+    },
+    "manifest_kind": {
+      "description": "Evidence Ledger Manifest v0 field: manifest_kind."
+    },
+    "status": {
+      "description": "Evidence Ledger Manifest v0 field: status."
+    },
+    "ledger_scope": {
+      "description": "Evidence Ledger Manifest v0 field: ledger_scope."
+    },
+    "evidence_records": {
+      "description": "Evidence Ledger Manifest v0 field: evidence_records."
+    },
+    "source_cache_refs": {
+      "description": "Evidence Ledger Manifest v0 field: source_cache_refs."
+    },
+    "privacy_policy": {
+      "description": "Evidence Ledger Manifest v0 field: privacy_policy."
+    },
+    "rights_risk_policy": {
+      "description": "Evidence Ledger Manifest v0 field: rights_risk_policy."
+    },
+    "review_policy": {
+      "description": "Evidence Ledger Manifest v0 field: review_policy."
+    },
+    "no_runtime_guarantees": {
+      "description": "Evidence Ledger Manifest v0 field: no_runtime_guarantees."
+    },
+    "notes": {
+      "description": "Evidence Ledger Manifest v0 field: notes."
+    }
+  }
+}
