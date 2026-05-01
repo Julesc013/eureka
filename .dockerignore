@@ -1,0 +1,17 @@
+.git
+.eureka-local
+.eureka-cache
+.eureka-staging
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+tmp/
+site/.cache/
+*.log
+*.sqlite
+*.db
+*.secret
+*.pem
+*.key

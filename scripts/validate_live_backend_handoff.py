@@ -377,7 +377,27 @@ def _validate_no_backend_deployment_config(repo_root: Path, errors: list[str]) -
     for relative in COMMON_BACKEND_DEPLOYMENT_CONFIG_PATHS:
         path = repo_root / relative
         if path.exists():
+            if relative == "Dockerfile" and _safe_p54_hosted_public_search_dockerfile(path):
+                continue
             errors.append(f"{relative}: backend/provider deployment config must not be added by this task.")
+
+
+def _safe_p54_hosted_public_search_dockerfile(path: Path) -> bool:
+    text = path.read_text(encoding="utf-8")
+    required = (
+        "scripts/run_hosted_public_search.py",
+        "EUREKA_SEARCH_MODE=local_index_only",
+        "EUREKA_ALLOW_LIVE_PROBES=0",
+        "EUREKA_ALLOW_DOWNLOADS=0",
+        "EUREKA_ALLOW_UPLOADS=0",
+        "EUREKA_ALLOW_LOCAL_PATHS=0",
+        "EUREKA_ALLOW_ARBITRARY_URL_FETCH=0",
+        "EUREKA_ALLOW_TELEMETRY=0",
+    )
+    if not all(item in text for item in required):
+        return False
+    lowered = text.casefold()
+    return not any(token in lowered for token in ("api_key", "auth_token", "password:", "secret:"))
 
 
 def _validate_no_positive_live_claims(path: Path, text: str, repo_root: Path, errors: list[str]) -> None:

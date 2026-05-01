@@ -275,8 +275,28 @@ def _validate_no_provider_config(repo_root: Path, errors: list[str]) -> list[str
         path = repo_root / relative
         checked.append(relative)
         if path.exists():
+            if relative == "Dockerfile" and _safe_p54_hosted_public_search_dockerfile(path):
+                continue
             errors.append(f"{relative}: custom-domain, DNS, backend, or alternate-host config must not be committed in this slice.")
     return checked
+
+
+def _safe_p54_hosted_public_search_dockerfile(path: Path) -> bool:
+    text = path.read_text(encoding="utf-8")
+    required = (
+        "scripts/run_hosted_public_search.py",
+        "EUREKA_SEARCH_MODE=local_index_only",
+        "EUREKA_ALLOW_LIVE_PROBES=0",
+        "EUREKA_ALLOW_DOWNLOADS=0",
+        "EUREKA_ALLOW_UPLOADS=0",
+        "EUREKA_ALLOW_LOCAL_PATHS=0",
+        "EUREKA_ALLOW_ARBITRARY_URL_FETCH=0",
+        "EUREKA_ALLOW_TELEMETRY=0",
+    )
+    if not all(item in text for item in required):
+        return False
+    lowered = text.casefold()
+    return not any(token in lowered for token in ("api_key", "auth_token", "password:", "secret:"))
 
 
 def _validate_no_root_relative_links(

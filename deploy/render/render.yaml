@@ -1,0 +1,34 @@
+# Render template for Eureka hosted public search wrapper.
+# Manual operator setup is required. This file is not deployment evidence.
+services:
+  - type: web
+    name: eureka-public-search-wrapper
+    runtime: docker
+    plan: starter
+    autoDeploy: false
+    healthCheckPath: /healthz
+    envVars:
+      - key: EUREKA_PUBLIC_MODE
+        value: "1"
+      - key: EUREKA_SEARCH_MODE
+        value: local_index_only
+      - key: EUREKA_ALLOW_LIVE_PROBES
+        value: "0"
+      - key: EUREKA_ALLOW_DOWNLOADS
+        value: "0"
+      - key: EUREKA_ALLOW_UPLOADS
+        value: "0"
+      - key: EUREKA_ALLOW_LOCAL_PATHS
+        value: "0"
+      - key: EUREKA_ALLOW_ARBITRARY_URL_FETCH
+        value: "0"
+      - key: EUREKA_ALLOW_INSTALL_ACTIONS
+        value: "0"
+      - key: EUREKA_ALLOW_TELEMETRY
+        value: "0"
+      - key: EUREKA_MAX_QUERY_LEN
+        value: "160"
+      - key: EUREKA_MAX_RESULTS
+        value: "20"
+      - key: EUREKA_GLOBAL_TIMEOUT_MS
+        value: "5000"

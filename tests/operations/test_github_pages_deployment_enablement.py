@@ -127,12 +127,31 @@ class GitHubPagesDeploymentEnablementTest(unittest.TestCase):
             REPO_ROOT / "fly.toml",
             REPO_ROOT / "render.yaml",
             REPO_ROOT / "wrangler.toml",
-            REPO_ROOT / "Dockerfile",
             REPO_ROOT / "docker-compose.yml",
         ]
         for path in forbidden_paths:
             with self.subTest(path=path):
                 self.assertFalse(path.exists())
+
+        dockerfile = REPO_ROOT / "Dockerfile"
+        if dockerfile.exists():
+            text = dockerfile.read_text(encoding="utf-8")
+            for phrase in (
+                "scripts/run_hosted_public_search.py",
+                "EUREKA_SEARCH_MODE=local_index_only",
+                "EUREKA_ALLOW_LIVE_PROBES=0",
+                "EUREKA_ALLOW_DOWNLOADS=0",
+                "EUREKA_ALLOW_UPLOADS=0",
+                "EUREKA_ALLOW_LOCAL_PATHS=0",
+                "EUREKA_ALLOW_ARBITRARY_URL_FETCH=0",
+                "EUREKA_ALLOW_TELEMETRY=0",
+            ):
+                with self.subTest(phrase=phrase):
+                    self.assertIn(phrase, text)
+            lowered = text.casefold()
+            for token in ("api_key", "auth_token", "password:", "secret:"):
+                with self.subTest(token=token):
+                    self.assertNotIn(token, lowered)
 
     def test_site_dist_contains_no_runtime_or_secret_files(self) -> None:
         forbidden_suffixes = {".py", ".pyc", ".pyo", ".sqlite", ".sqlite3", ".db"}
