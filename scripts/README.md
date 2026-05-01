@@ -418,6 +418,13 @@ Current scripts:
   status, pack-validator CLI remediation, GitHub Pages evidence honesty, Cargo
   status, remaining blockers, next branch recommendation, and no product
   behavior expansion claims; it supports `--json` and performs no network calls
+- `validate_static_deployment_evidence.py`: validates the P52 Static
+  Deployment Evidence / GitHub Pages Repair v0 pack under
+  `control/audits/static-deployment-evidence-v0/`, including required files,
+  JSON report shape, `site/dist` artifact root, Pages workflow upload path,
+  no deployment-success claim without evidence, operator steps for unverified
+  deployment, static-only public claims, and no hosted backend/live-probe/
+  dynamic-backend claims; it supports `--json` and performs no network calls
 - `validate_public_data_stability.py`: validates Public Data Contract
   Stability Review v0 under
   `control/audits/public-data-contract-stability-review-v0/`, including

@@ -3772,6 +3772,52 @@
       "failure_means": "P51 remediation pack existence, JSON parseability, required item IDs, root governance status, Pages/Cargo/pack CLI status, or validator CLI behavior regressed.",
       "advisory_or_required": "required",
       "notes": "Focused tests for the remediation pack and validator; they do not call external sources, mutate indexes, stage packs, deploy, or load AI providers."
+    },
+    {
+      "test_id": "static_deployment_evidence_validator",
+      "label": "Static deployment evidence validator",
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P52 static deployment evidence files, JSON report, workflow upload path, operator steps, or no-overclaim guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates the P52 static deployment evidence checkpoint only; it performs no network calls and adds no hosted backend, public search hosting, live probes, credentials, telemetry, accounts, uploads, downloads, installers, or deployment behavior."
+    },
+    {
+      "test_id": "static_deployment_evidence_tests",
+      "label": "Static deployment evidence tests",
+      "command": "python -m unittest tests.operations.test_static_deployment_evidence tests.scripts.test_validate_static_deployment_evidence",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P52 audit pack existence, JSON parseability, static-only posture, workflow upload path, or validator CLI behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused tests for the P52 evidence pack and validator; they do not call external sources, mutate indexes, stage packs, deploy, or query GitHub."
     }
   ]
 }
