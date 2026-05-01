@@ -296,3 +296,9 @@ P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate pr
 ## P66 Known Absence Page v0
 
 Known absence page reporting is contract-only and points to `control/audits/known-absence-page-v0/known_absence_page_report.json`.
+
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-START -->
+## P67 Query Privacy and Poisoning Guard
+
+P67 report: `control/audits/query-privacy-poisoning-guard-v0/query_privacy_poisoning_guard_report.json` records the contract-only guard posture, examples, validators, command evidence, blockers, and next branch P68.
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->

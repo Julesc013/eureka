@@ -1,0 +1,639 @@
+{
+  "report_id": "query_privacy_poisoning_guard_v0",
+  "created_by_slice": "P67 Query Privacy and Poisoning Guard v0",
+  "repo_head": "b9ec08d879999dfaaba70a92819392619b962e83",
+  "branch": "main",
+  "worktree_status": "## main...origin/main [ahead 2]\n M .aide/commands/ci.yaml\n M .aide/commands/dev.yaml\n M .aide/reports/README.md\n M .aide/tasks/audit_backlog.yaml\n M .aide/tasks/queue.yaml\n M control/audits/README.md\n M control/inventory/query_intelligence/candidate_index_policy.json\n M control/inventory/query_intelligence/candidate_promotion_policy.json\n M control/inventory/query_intelligence/known_absence_page_policy.json\n M control/inventory/query_intelligence/probe_queue_policy.json\n M control/inventory/query_intelligence/query_observation_policy.json\n M control/inventory/query_intelligence/search_miss_ledger_policy.json\n M control/inventory/query_intelligence/search_need_record_policy.json\n M control/inventory/query_intelligence/search_result_cache_policy.json\n M control/inventory/tests/command_matrix.json\n M control/inventory/tests/test_registry.json\n M docs/BOOTSTRAP_STATUS.md\n M docs/DECISIONS.md\n M docs/OPEN_QUESTIONS.md\n M docs/ROADMAP.md\n M docs/roadmap/BACKEND_ROADMAP.md\n?? control/audits/query-privacy-poisoning-guard-v0/",
+  "contract_file": "contracts/query/query_guard_decision.v0.json",
+  "validator_scripts": [
+    "scripts/validate_query_guard_decision.py",
+    "scripts/validate_query_privacy_poisoning_guard_contract.py",
+    "scripts/dry_run_query_guard.py"
+  ],
+  "example_guard_decisions": [
+    "examples/query_guard/minimal_fake_demand_throttled_v0",
+    "examples/query_guard/minimal_private_path_rejected_v0",
+    "examples/query_guard/minimal_public_safe_query_v0",
+    "examples/query_guard/minimal_secret_rejected_v0",
+    "examples/query_guard/minimal_source_stuffing_quarantined_v0"
+  ],
+  "query_guard_policy": "control/inventory/query_intelligence/query_privacy_poisoning_guard_policy.json",
+  "privacy_risk_taxonomy": [
+    "none_detected",
+    "raw_query_retention_risk",
+    "private_path_detected",
+    "credential_detected",
+    "api_key_detected",
+    "auth_token_detected",
+    "password_detected",
+    "private_key_detected",
+    "email_detected",
+    "phone_detected",
+    "ip_address_detected",
+    "account_identifier_detected",
+    "private_url_detected",
+    "local_identifier_detected",
+    "user_file_name_detected",
+    "long_sensitive_text_detected",
+    "copyrighted_text_dump_risk",
+    "executable_payload_reference_risk",
+    "unknown"
+  ],
+  "poisoning_risk_taxonomy": [
+    "none_detected",
+    "spam_query",
+    "repeated_fake_demand",
+    "source_stuffing",
+    "candidate_poisoning",
+    "malicious_identifier_stuffing",
+    "prompt_injection_like_text",
+    "policy_bypass_attempt",
+    "live_probe_forcing_attempt",
+    "arbitrary_url_fetch_attempt",
+    "download_install_execute_forcing_attempt",
+    "source_reputation_attack",
+    "rank_manipulation_attempt",
+    "near_duplicate_flood",
+    "unsupported_parameter_abuse",
+    "bot_like_pattern_future",
+    "unknown"
+  ],
+  "policy_action_model": [
+    "allow_public_safe",
+    "allow_redacted",
+    "keep_local_private",
+    "reject_sensitive",
+    "quarantine_for_review",
+    "exclude_from_public_aggregate",
+    "exclude_from_candidate_generation_future",
+    "exclude_from_probe_queue_future",
+    "throttle_future",
+    "require_human_review",
+    "require_policy_review",
+    "no_action"
+  ],
+  "redaction_model": [
+    "none",
+    "remove_raw_query",
+    "replace_private_path",
+    "replace_secret",
+    "replace_private_url",
+    "truncate_long_text",
+    "hash_identifier",
+    "reject_without_redaction"
+  ],
+  "aggregate_eligibility_model": {
+    "allowed_fields": [
+      "normalized_query_terms",
+      "query_intent",
+      "target_object_kind",
+      "platform",
+      "artifact_type",
+      "source_family",
+      "miss_type",
+      "gap_type",
+      "probe_kind",
+      "candidate_type",
+      "absence_status"
+    ],
+    "disallowed_fields": [
+      "raw_query",
+      "IP_address",
+      "account_identifier",
+      "private_path",
+      "secret",
+      "private_url",
+      "local_identifier",
+      "user_file_name"
+    ]
+  },
+  "fake_demand_spam_model": "Classifies spam and repeated fake demand for aggregate exclusion, quarantine, and future throttling without runtime tracking.",
+  "source_stuffing_candidate_poisoning_model": "Classifies source stuffing and candidate poisoning before future probe/candidate creation without mutating sources or candidates.",
+  "private_data_detection_policy": "Reject or redact private paths, secrets, credentials, IPs, account IDs, private URLs, local identifiers, and long sensitive text before public aggregation.",
+  "raw_query_retention_policy": "Raw query retention default none; examples retain no unsafe raw query data.",
+  "no_runtime_no_mutation_guarantees": {
+    "runtime_guard_implemented": false,
+    "persistent_guard_store_implemented": false,
+    "telemetry_implemented": false,
+    "account_tracking_implemented": false,
+    "ip_tracking_implemented": false,
+    "public_query_logging_enabled": false,
+    "raw_query_retention_default_none": true,
+    "automatic_acceptance_allowed": false,
+    "query_observation_mutation_allowed": false,
+    "result_cache_mutation_allowed": false,
+    "miss_ledger_mutation_allowed": false,
+    "search_need_mutation_allowed": false,
+    "probe_queue_mutation_allowed": false,
+    "candidate_index_mutation_allowed": false,
+    "known_absence_mutation_allowed": false,
+    "public_index_mutation_allowed": false,
+    "local_index_mutation_allowed": false,
+    "master_index_mutation_allowed": false,
+    "external_calls_performed": false,
+    "live_probes_enabled": false
+  },
+  "runtime_status": {
+    "public_search_runtime_wired": false,
+    "guard_runtime_implemented": false,
+    "persistent_store_implemented": false,
+    "telemetry_implemented": false,
+    "account_tracking_implemented": false,
+    "ip_tracking_implemented": false
+  },
+  "command_results": [
+    {
+      "command": "python scripts/validate_query_guard_decision.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_query_guard_decision.py --all-examples --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/dry_run_query_guard.py --query windows 7 apps --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_known_absence_page.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_known_absence_page_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_assessment.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_policy.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_candidate_index_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_candidate_index_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_probe_queue_item.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_probe_queue_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_search_need_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_search_need_record_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_entry.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_search_result_cache_entry.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_shared_query_result_cache_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_query_observation.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_query_observation_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/run_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.16,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.07,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/run_public_search_safety_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.4,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.4,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_static_site_search_integration.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.79,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.25,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.27,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.26,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.21,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_live_probe_gateway.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.23,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.53,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.53,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.48,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python site/build.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.99,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.15,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 9.43,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.58,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.31,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.31,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.34,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.36,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.87,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 8.64,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 5.45,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.43,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 4.8,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 31.02,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.51,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 87.89,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 109.98,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.07,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.07,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "cargo --version",
+      "status": "skipped_unavailable",
+      "returncode": null,
+      "duration_seconds": 0.0,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped_unavailable",
+      "returncode": null,
+      "duration_seconds": 0.0,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped_unavailable",
+      "returncode": null,
+      "duration_seconds": 0.0,
+      "output_tail": "omitted from audit report to avoid recording local absolute paths or environment-specific command text; status and return code are authoritative."
+    }
+  ],
+  "remaining_blockers": [
+    "Runtime guard implementation, persistence, deletion/export policy, and production abuse controls are future work.",
+    "Demand dashboard, source sync worker, and source cache/evidence ledger remain future contracts.",
+    "Hosted wrapper deployment, backend URL configuration, edge/rate limits, static-site verification, and Manual Observation Batch 0 remain human/operator parallel work."
+  ],
+  "next_recommended_branch": "P68 Demand Dashboard v0",
+  "notes": [
+    "P67 is contract/schema/example/validator work only.",
+    "No telemetry, account/IP tracking, public query logging, query-intelligence mutation, index mutation, external calls, or live probes were added."
+  ]
+}

@@ -390,3 +390,9 @@ P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate pr
 ## P66 Known Absence Page v0
 
 See `control/audits/known-absence-page-v0/` for the scoped absence contract/audit pack. It is not runtime known absence pages and makes no global absence claim.
+
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-START -->
+## P67 Query Privacy and Poisoning Guard
+
+See `control/audits/query-privacy-poisoning-guard-v0/` for the P67 privacy and poisoning guard contract/audit pack. It is not a runtime guard, telemetry system, WAF/rate-limit layer, account/IP tracker, query logger, or production abuse protection claim.
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
