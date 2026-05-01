@@ -7,6 +7,7 @@
   "public_query_logging_enabled": false,
   "raw_query_retention_default": "none",
   "query_fingerprint_supported": "contract_only",
+  "shared_query_result_cache_status": "contract_only_p60",
   "privacy_filter_required": true,
   "public_aggregate_allowed_after_filter": true,
   "master_index_mutation_allowed": false,
@@ -28,6 +29,7 @@
   ],
   "notes": [
     "P59 defines query observation records only. It does not implement runtime persistence, telemetry, public query logging, shared cache writes, miss ledger writes, probe enqueueing, candidate index mutation, local index mutation, or master-index mutation.",
+    "P60 defines the shared query/result cache contract as contract-only and still does not add runtime cache writes or persistent cache storage.",
     "Raw query retention defaults to none. Future aggregate learning must pass privacy filtering before public reporting."
   ]
 }

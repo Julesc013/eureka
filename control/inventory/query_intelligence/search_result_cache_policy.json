@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eureka_search_result_cache_policy_v0",
+  "status": "contract_only",
+  "runtime_cache_implemented": false,
+  "persistent_cache_implemented": false,
+  "telemetry_implemented": false,
+  "public_query_logging_enabled": false,
+  "raw_query_retention_default": "none",
+  "cache_key_supported": "contract_only",
+  "privacy_filter_required": true,
+  "public_aggregate_allowed_after_filter": true,
+  "master_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "miss_ledger_mutation_allowed": false,
+  "search_need_mutation_allowed": false,
+  "probe_enqueue_allowed": false,
+  "external_calls_allowed": false,
+  "live_probes_allowed": false,
+  "next_contracts": [
+    "search_miss_ledger",
+    "search_need_record",
+    "probe_queue",
+    "candidate_index",
+    "candidate_promotion_policy",
+    "known_absence_page",
+    "query_privacy_poisoning_guard"
+  ],
+  "notes": [
+    "P60 defines shared query/result cache entries only. It does not implement runtime cache writes, persistent cache storage, telemetry, public query logging, miss ledger writes, search need writes, probe enqueueing, candidate index mutation, local index mutation, or master-index mutation.",
+    "Cache entries are scoped to checked public index snapshots and source status summaries. Cached absence is scoped absence, not proof outside the checked scope."
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "schema_version": "0.1.0",
+  "cache_entry_id": "example.search_result_cache.windows_7_apps.v0",
+  "cache_entry_kind": "search_result_cache_entry",
+  "status": "draft_example",
+  "created_by_tool": "p60_shared_query_result_cache_v0_example",
+  "query_ref": {
+    "query_observation_id": "example.query_observation.windows_7_apps.v0",
+    "query_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "normalized_query.text",
+      "value": "e2c6c7318b1705d3053bc3563ba2e89fdca7f2931854a07bd5900d31fe9ddd98",
+      "salt_policy": "unsalted_public_aggregate",
+      "reversible": false
+    },
+    "normalized_query": {
+      "text": "windows 7 apps",
+      "safe_public_terms": [
+        "windows",
+        "7",
+        "apps"
+      ],
+      "redaction_applied": false
+    },
+    "raw_query_retained": false,
+    "raw_query_redacted": true,
+    "privacy_classification": "public_safe_aggregate",
+    "limitations": [
+      "Raw query text is not retained; normalized terms are public-safe example terms."
+    ]
+  },
+  "cache_key": {
+    "key_algorithm": "sha256",
+    "key_basis": "normalized_query_plus_profile_plus_index_snapshot",
+    "normalized_query_hash": "e2c6c7318b1705d3053bc3563ba2e89fdca7f2931854a07bd5900d31fe9ddd98",
+    "profile": "api_client",
+    "mode": "local_index_only",
+    "include_flags": [
+      "evidence",
+      "limitations"
+    ],
+    "index_snapshot_ref": "eureka_public_search_index_v0",
+    "privacy_classification": "public_safe_aggregate",
+    "reversible": false,
+    "salt_policy": "unsalted_public_aggregate",
+    "value": "3ca551f01ea42037f293991bf4aa638bf8236263729f71007e54fadb0a7605b6",
+    "notes": [
+      "Example key is deterministic for validation only; no salt value is included."
+    ]
+  },
+  "request_summary": {
+    "mode": "local_index_only",
+    "profile": "api_client",
+    "limit": 10,
+    "include": [
+      "evidence",
+      "limitations"
+    ],
+    "filters": {},
+    "forbidden_parameters_present": false,
+    "rejected_by_policy": false
+  },
+  "response_summary": {
+    "ok": true,
+    "result_count": 10,
+    "returned_count": 10,
+    "hit_state": "hits",
+    "top_score": 1.0,
+    "confidence": "medium",
+    "warning_count": 1,
+    "gap_count": 0,
+    "limitation_count": 2
+  },
+  "result_summaries": [
+    {
+      "result_ref": "public_index:windows_7_apps:example_result_1",
+      "title": "Windows 7 compatible application fixture summary",
+      "source_id": "synthetic-fixtures",
+      "source_family": "synthetic",
+      "result_lane": "installable_or_usable_now",
+      "user_cost": "inspect_metadata_only",
+      "evidence_count": 2,
+      "compatibility_summary": "Fixture metadata indicates Windows 7 compatibility posture; no installer or executable payload is included.",
+      "action_summary": {
+        "allowed_actions": [
+          "inspect",
+          "cite",
+          "view_provenance"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "live_probe"
+        ]
+      },
+      "warning_count": 1,
+      "limitation_count": 2,
+      "score": 1.0,
+      "public_safe": true
+    }
+  ],
+  "absence_summary": {
+    "absence_status": "not_absent",
+    "gap_types": [],
+    "checked": [
+      "data/public_index"
+    ],
+    "not_checked": [
+      "live sources",
+      "private local stores",
+      "future source cache"
+    ],
+    "near_miss_count": 0,
+    "next_actions": [
+      "Use future cache runtime only after privacy, freshness, and invalidation gates are implemented."
+    ],
+    "limitations": [
+      "Result summaries are scoped to the public index snapshot and are not authoritative truth."
+    ]
+  },
+  "checked_scope": {
+    "checked_indexes": [
+      "public_index"
+    ],
+    "checked_sources": [
+      "data/public_index"
+    ],
+    "live_probes_attempted": false,
+    "external_calls_performed": false
+  },
+  "index_refs": {
+    "public_index_build_id": "eureka_public_search_index_v0",
+    "public_index_manifest_ref": "data/public_index/build_manifest.json",
+    "source_coverage_ref": "data/public_index/source_coverage.json",
+    "index_snapshot_id": "eureka_public_search_index_v0"
+  },
+  "source_status_summary": {
+    "source_count": 15,
+    "source_families": [
+      "article_scan_recorded",
+      "github_releases",
+      "internet_archive_recorded",
+      "local_bundle_fixtures",
+      "manual_document_recorded",
+      "package_registry_recorded",
+      "review_description_recorded",
+      "software_heritage_recorded",
+      "sourceforge_recorded",
+      "synthetic",
+      "wayback_memento_recorded"
+    ],
+    "live_sources_used": false,
+    "limitations": [
+      "Fixture, recorded, and placeholder source posture only; no live source calls were performed."
+    ]
+  },
+  "freshness": {
+    "cache_scope": "local_public_index",
+    "index_snapshot_ref": "eureka_public_search_index_v0",
+    "build_manifest_ref": "data/public_index/build_manifest.json",
+    "ttl_policy": "none_for_example",
+    "stale_if_index_changes": true,
+    "stale_if_contract_changes": true,
+    "stale_if_source_status_changes": true
+  },
+  "invalidation": {
+    "invalidation_required_on": [
+      "public_index_rebuild",
+      "source_cache_refresh",
+      "contract_version_change",
+      "candidate_promotion",
+      "rights_policy_change",
+      "safety_policy_change"
+    ],
+    "invalidated": false
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe example; raw query text and user identifiers are not retained."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "cache_entry_retention": "example_only",
+    "deletion_supported_future": true,
+    "public_aggregate_allowed": true,
+    "notes": [
+      "P60 does not implement cache retention runtime."
+    ]
+  },
+  "limitations": [
+    "Synthetic cache entry only; not collected from a real user.",
+    "No persistent cache runtime, telemetry, miss ledger mutation, probe enqueue, candidate index mutation, local index mutation, or master-index mutation."
+  ],
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "candidate_index_mutated": false,
+    "query_observation_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "probe_enqueued": false,
+    "telemetry_exported": false,
+    "external_calls_performed": false
+  },
+  "notes": [
+    "This example validates the shared result cache entry shape without creating runtime cache writes.",
+    "Cached result summaries are reusable hints scoped to a public index snapshot, not source truth."
+  ]
+}

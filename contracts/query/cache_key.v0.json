@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/cache_key.v0.json",
+  "title": "EurekaQueryCacheKeyV0",
+  "description": "Non-reversible cache key model for future shared query/result cache entries. P60 is contract/example/validation only and adds no cache runtime, persistence, telemetry, or index mutation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "key_algorithm",
+    "key_basis",
+    "normalized_query_hash",
+    "profile",
+    "mode",
+    "include_flags",
+    "index_snapshot_ref",
+    "privacy_classification",
+    "reversible",
+    "salt_policy",
+    "value",
+    "notes"
+  ],
+  "properties": {
+    "key_algorithm": {
+      "type": "string",
+      "enum": [
+        "sha256"
+      ]
+    },
+    "key_basis": {
+      "type": "string",
+      "enum": [
+        "normalized_query",
+        "normalized_query_plus_profile",
+        "normalized_query_plus_profile_plus_index_snapshot"
+      ]
+    },
+    "normalized_query_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "local_index_only"
+      ]
+    },
+    "include_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "index_snapshot_ref": {
+      "type": "string"
+    },
+    "privacy_classification": {
+      "type": "string",
+      "enum": [
+        "public_safe_aggregate",
+        "local_private",
+        "rejected_sensitive",
+        "redacted",
+        "unknown"
+      ]
+    },
+    "reversible": {
+      "type": "boolean",
+      "const": false
+    },
+    "salt_policy": {
+      "type": "string",
+      "enum": [
+        "unsalted_public_aggregate",
+        "deployment_secret_salted_future",
+        "local_private_salted_future"
+      ]
+    },
+    "value": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-contract_id": "eureka_query_cache_key_v0",
+  "x-status": "contract_only",
+  "x-runtime_cache_implemented": false,
+  "x-persistent_cache_implemented": false,
+  "x-telemetry_implemented": false
+}

@@ -1,0 +1,183 @@
+{
+  "schema_version": "0.1.0",
+  "cache_entry_id": "example.search_result_cache.no_such_local_index_hit.v0",
+  "cache_entry_kind": "search_result_cache_entry",
+  "status": "draft_example",
+  "created_by_tool": "p60_shared_query_result_cache_v0_example",
+  "query_ref": {
+    "query_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "normalized_query.text",
+      "value": "31a29002acbb674476cc4685c50dd5989c7ab9b60803abc01f163dd927c66a1d",
+      "salt_policy": "unsalted_public_aggregate",
+      "reversible": false
+    },
+    "normalized_query": {
+      "text": "no-such-local-index-hit",
+      "safe_public_terms": [
+        "no-such-local-index-hit"
+      ],
+      "redaction_applied": false
+    },
+    "raw_query_retained": false,
+    "raw_query_redacted": true,
+    "privacy_classification": "public_safe_aggregate",
+    "limitations": [
+      "Raw query text is not retained; normalized synthetic terms are safe example terms."
+    ]
+  },
+  "cache_key": {
+    "key_algorithm": "sha256",
+    "key_basis": "normalized_query_plus_profile_plus_index_snapshot",
+    "normalized_query_hash": "31a29002acbb674476cc4685c50dd5989c7ab9b60803abc01f163dd927c66a1d",
+    "profile": "api_client",
+    "mode": "local_index_only",
+    "include_flags": [
+      "gaps",
+      "limitations"
+    ],
+    "index_snapshot_ref": "eureka_public_search_index_v0",
+    "privacy_classification": "public_safe_aggregate",
+    "reversible": false,
+    "salt_policy": "unsalted_public_aggregate",
+    "value": "8d68c76e7e92b51eead8b502a1ffdbe451563529355ec2ab455bf8fc47b0b5f2",
+    "notes": [
+      "Example key is deterministic for validation only; no salt value is included."
+    ]
+  },
+  "request_summary": {
+    "mode": "local_index_only",
+    "profile": "api_client",
+    "limit": 10,
+    "include": [
+      "gaps",
+      "limitations"
+    ],
+    "filters": {},
+    "forbidden_parameters_present": false,
+    "rejected_by_policy": false
+  },
+  "response_summary": {
+    "ok": true,
+    "result_count": 0,
+    "returned_count": 0,
+    "hit_state": "no_hits",
+    "confidence": "none",
+    "warning_count": 1,
+    "gap_count": 1,
+    "limitation_count": 2
+  },
+  "result_summaries": [],
+  "absence_summary": {
+    "absence_status": "scoped_absence",
+    "gap_types": [
+      "no_verified_result"
+    ],
+    "checked": [
+      "data/public_index"
+    ],
+    "not_checked": [
+      "live sources",
+      "private local stores",
+      "future source cache",
+      "future candidate index"
+    ],
+    "near_miss_count": 0,
+    "next_actions": [
+      "A future miss ledger may create a reusable search need after privacy and poisoning review."
+    ],
+    "limitations": [
+      "Scoped to the checked public index snapshot.",
+      "Does not assert absence outside the checked scope."
+    ]
+  },
+  "checked_scope": {
+    "checked_indexes": [
+      "public_index"
+    ],
+    "checked_sources": [
+      "data/public_index"
+    ],
+    "live_probes_attempted": false,
+    "external_calls_performed": false
+  },
+  "index_refs": {
+    "public_index_build_id": "eureka_public_search_index_v0",
+    "public_index_manifest_ref": "data/public_index/build_manifest.json",
+    "source_coverage_ref": "data/public_index/source_coverage.json",
+    "index_snapshot_id": "eureka_public_search_index_v0"
+  },
+  "source_status_summary": {
+    "source_count": 15,
+    "source_families": [
+      "public_index_fixture_and_recorded_sources"
+    ],
+    "live_sources_used": false,
+    "limitations": [
+      "Fixture, recorded, and placeholder source posture only; no live source calls were performed."
+    ]
+  },
+  "freshness": {
+    "cache_scope": "local_public_index",
+    "index_snapshot_ref": "eureka_public_search_index_v0",
+    "build_manifest_ref": "data/public_index/build_manifest.json",
+    "ttl_policy": "none_for_example",
+    "stale_if_index_changes": true,
+    "stale_if_contract_changes": true,
+    "stale_if_source_status_changes": true
+  },
+  "invalidation": {
+    "invalidation_required_on": [
+      "public_index_rebuild",
+      "source_cache_refresh",
+      "contract_version_change",
+      "candidate_promotion",
+      "rights_policy_change",
+      "safety_policy_change"
+    ],
+    "invalidated": false
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic absence example; raw query text and user identifiers are not retained."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "cache_entry_retention": "example_only",
+    "deletion_supported_future": true,
+    "public_aggregate_allowed": true,
+    "notes": [
+      "P60 does not implement cache retention runtime."
+    ]
+  },
+  "limitations": [
+    "Synthetic cache entry only; not collected from a real user.",
+    "Cached absence is scoped to checked indexes and sources and is not authoritative truth."
+  ],
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "candidate_index_mutated": false,
+    "query_observation_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "probe_enqueued": false,
+    "telemetry_exported": false,
+    "external_calls_performed": false
+  },
+  "notes": [
+    "This example validates the absence/gap cache shape without creating a miss ledger or search need.",
+    "Future reuse must be invalidated when the public index, source status, or safety policy changes."
+  ]
+}

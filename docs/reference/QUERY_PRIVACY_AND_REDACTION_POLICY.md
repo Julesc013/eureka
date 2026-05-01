@@ -26,6 +26,9 @@ Public-safe query observations and examples must not contain:
 - user-uploaded filenames without consent
 - local index hit identifiers that expose private state
 
+The same prohibited data categories apply to shared query/result cache entries,
+cache keys, cached result summaries, and absence/gap summaries.
+
 If any prohibited data is detected, the observation must be rejected by the
 privacy filter or redacted before it can be considered for aggregate learning.
 Individual observations are not public by default.
@@ -46,3 +49,7 @@ This policy does not implement telemetry, runtime persistence, query logs,
 uploads, accounts, edge analytics, result-cache writes, miss-ledger writes,
 probe enqueueing, candidate-index mutation, local-index mutation, or
 master-index mutation.
+
+P60 adds a shared query/result cache contract only. It keeps raw query retention
+default `none`, does not add runtime cache writes, and does not make cache
+entries publishable by default.

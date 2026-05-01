@@ -58,3 +58,11 @@ python scripts/validate_query_observation_contract.py --json
 
 Public search routes do not write query observations in P59. The dry-run helper
 prints a candidate observation to stdout only and writes no files.
+
+## Relation To Shared Result Cache
+
+P60 adds `contracts/query/search_result_cache_entry.v0.json` as the next
+contract-only Query Intelligence Plane layer. Cache entries may reference query
+observation fingerprints, but P60 still does not persist observations, write
+cache entries, publish query logs, mutate miss ledgers, enqueue probes, mutate
+candidate indexes, or mutate the master index.
