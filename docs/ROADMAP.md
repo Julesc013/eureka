@@ -167,6 +167,21 @@ public-search mutation, local-index mutation, runtime source registry
 mutation, upload, network/model call, or master-index mutation. The immediate
 next milestone is Manual Observation Batch 0 Execution, human-operated; the
 Codex-safe alternative is AI-Assisted Evidence Drafting Plan v0.
+AI-Assisted Evidence Drafting Plan v0 is now implemented as planning/example/
+validation-only work under
+`control/inventory/ai_providers/ai_assisted_drafting_policy.json`,
+`docs/architecture/AI_ASSISTED_EVIDENCE_DRAFTING.md`,
+`docs/reference/AI_ASSISTED_DRAFTING_CONTRACT.md`,
+`examples/ai_assisted_drafting/minimal_drafting_flow_v0/`,
+`scripts/validate_ai_assisted_drafting_plan.py`, and
+`control/audits/ai-assisted-evidence-drafting-plan-v0/`. It defines optional
+future AI drafting as candidate-only assistance, maps typed outputs to
+evidence/contribution candidates only after validation and required review, and
+adds no AI runtime, model calls, API keys, telemetry, evidence/contribution
+acceptance, public-search mutation, local-index mutation, or master-index
+mutation. Manual Observation Batch 0 Execution remains the expected immediate
+next milestone; Public Hosted Search Rehearsal Plan v0 is the Codex-safe
+alternative.
 
 ## Stage 3: Surface Skeletons
 

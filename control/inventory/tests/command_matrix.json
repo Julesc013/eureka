@@ -151,6 +151,9 @@
         "ai_provider_contract_validator",
         "typed_ai_output_validator_tests",
         "typed_ai_output_validator",
+        "ai_assisted_drafting_plan_tests",
+        "ai_assisted_drafting_plan_validator",
+        "ai_assisted_drafting_example_flow",
         "pack_import_report_format_tests",
         "pack_import_report_validator",
         "validate_only_pack_import_tool_examples",
@@ -312,6 +315,9 @@
         "ai_provider_contract_validator",
         "typed_ai_output_validator_tests",
         "typed_ai_output_validator",
+        "ai_assisted_drafting_plan_tests",
+        "ai_assisted_drafting_plan_validator",
+        "ai_assisted_drafting_example_flow",
         "pack_import_report_format_tests",
         "pack_import_report_validator",
         "validate_only_pack_import_tool_examples",
@@ -445,6 +451,9 @@
         "ai_provider_contract_validator",
         "typed_ai_output_validator_tests",
         "typed_ai_output_validator",
+        "ai_assisted_drafting_plan_tests",
+        "ai_assisted_drafting_plan_validator",
+        "ai_assisted_drafting_example_flow",
         "pack_import_report_format_tests",
         "pack_import_report_validator",
         "validate_only_pack_import_tool_examples",
@@ -668,6 +677,9 @@
         "ai_provider_contract_validator",
         "typed_ai_output_validator_tests",
         "typed_ai_output_validator",
+        "ai_assisted_drafting_plan_tests",
+        "ai_assisted_drafting_plan_validator",
+        "ai_assisted_drafting_example_flow",
         "pack_import_report_format_tests",
         "pack_import_report_validator",
         "validate_only_pack_import_tool_examples",
@@ -731,6 +743,7 @@
     "Local Quarantine/Staging Model v0 validation is planning-only: it checks local_private defaults, ignored future local-state roots, prohibited roots, reset/delete/export docs, and no staging runtime or search/master-index impact.",
     "Staging Report Path Contract v0 validation checks stdout defaults, explicit output path policy, forbidden committed roots, redaction docs, ignored local report roots, and no staging/report runtime.",
     "Local Staging Manifest Format v0 validation checks the contract-only manifest schema, synthetic examples, hard no-mutation guarantees, staged candidate semantics, reset/delete/export policy, checksums, no private paths/secrets, and no staging runtime.",
-    "Staged Pack Inspector v0 validation checks read-only inspection of synthetic local staging manifests, JSON/human summaries, redaction, hard no-mutation flags, and no staging/import/index/upload/runtime/public-search/master-index side effects."
+    "Staged Pack Inspector v0 validation checks read-only inspection of synthetic local staging manifests, JSON/human summaries, redaction, hard no-mutation flags, and no staging/import/index/upload/runtime/public-search/master-index side effects.",
+    "AI-Assisted Evidence Drafting Plan v0 validation checks disabled-by-default AI drafting policy, synthetic candidate-only flow examples, required typed output validation, required review, no model calls, no provider runtime, no API keys/secrets, no private-data remote defaults, and no public-search/local-index/master-index mutation."
   ]
 }

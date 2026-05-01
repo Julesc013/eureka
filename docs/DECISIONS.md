@@ -1529,3 +1529,36 @@ runtime, claim rights clearance, claim malware safety, claim canonical truth,
 or mutate the master index. The immediate next milestone is Manual Observation
 Batch 0 Execution, human-operated; AI-Assisted Evidence Drafting Plan v0 is the
 Codex-safe alternative.
+
+## ADR-129: Plan AI Drafting as Candidate Generation, Not Truth
+
+Status: accepted
+
+AI-Assisted Evidence Drafting Plan v0 adds
+`control/inventory/ai_providers/ai_assisted_drafting_policy.json`,
+`docs/architecture/AI_ASSISTED_EVIDENCE_DRAFTING.md`,
+`docs/reference/AI_ASSISTED_DRAFTING_CONTRACT.md`,
+`examples/ai_assisted_drafting/minimal_drafting_flow_v0/`,
+`scripts/validate_ai_assisted_drafting_plan.py`, focused tests, and
+`control/audits/ai-assisted-evidence-drafting-plan-v0/`.
+
+The decision is to define optional future AI evidence drafting before any AI
+runtime exists. AI may assist with drafting alias, metadata, compatibility,
+review-description, member-path, source-match, identity-match, explanation,
+absence, evidence-record, or contribution-item candidates only after explicit
+future task requests, typed output validation, provenance references where
+possible, and required review. AI output is candidate text or structured
+candidate data, not truth, rights clearance, malware safety, source trust,
+search ranking authority, local-index authority, or master-index acceptance.
+
+P49 deliberately does not implement AI provider runtime, call models, call
+remote or local model servers, add API keys, store credentials, add telemetry,
+log prompts at runtime, implement embeddings, vector search, LLM reranking, AI
+extraction runtime, evidence import, contribution import, public-search
+mutation, local-index mutation, runtime source registry mutation, master-index
+mutation, live source probes, external API calls, web scraping, downloads,
+installers, native clients, relay runtime, snapshot reader runtime, rights
+clearance claims, malware-safety claims, canonical truth claims, or production
+AI support. The immediate next milestone is Manual Observation Batch 0
+Execution, human-operated; Public Hosted Search Rehearsal Plan v0 is the
+Codex-safe alternative.

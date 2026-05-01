@@ -206,6 +206,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   runtime boundary without implementing provider runtime, API keys, telemetry,
   evidence import, contribution import, local-index mutation, public-search AI,
   upload, or master-index mutation.
+- `ai-assisted-evidence-drafting-plan-v0/`: planning/example/validation audit
+  pack for future optional AI-assisted evidence and contribution drafting. It
+  records allowed/forbidden drafting tasks, input context policy, typed-output
+  to candidate mappings, privacy/provider rules, required review, synthetic
+  example flow review, and runtime boundaries without implementing AI runtime,
+  model calls, API keys, telemetry, evidence/contribution acceptance,
+  public-search mutation, local-index mutation, or master-index mutation.
 - `pack-import-report-format-v0/`: format/validation/example-only audit pack
   for future validate-only import reports. It records the report schema,
   synthetic passed/failed/unknown examples, status/mode/pack-result/issue

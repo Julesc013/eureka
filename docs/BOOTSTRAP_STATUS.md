@@ -1,6 +1,6 @@
 # Bootstrap Status
 
-Current status: foundational scaffold plus sixty-six executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Rust Source Registry Parity Catch-up v0, the first isolated Rust query-planner parity candidate, Rust Local Index Parity Planning v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Public Search API Contract v0, Public Search Result Card Contract v0, Public Search Safety / Abuse Guard v0, Local Public Search Runtime v0, Public Search Static Handoff v0, Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Windows 7 WinForms Native Skeleton Planning v0, Post-Queue State Checkpoint v0, Relay Surface Design v0, Relay Prototype Planning v0, Full Project State Audit v0, Public Data Contract Stability Review v0, Generated Artifact Drift Guard v0, Repository Shape Consolidation v0, Static Artifact Promotion Review v0, GitHub Pages Run Evidence Review v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, and Hard Test Pack v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
+Current status: foundational scaffold plus sixty-seven executable local deterministic Python thin slices, a placeholder Rust migration skeleton, the first Python-oracle golden fixture pack, the first isolated Rust source-registry parity candidate, Rust Source Registry Parity Catch-up v0, the first isolated Rust query-planner parity candidate, Rust Local Index Parity Planning v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0, Search Usefulness Audit Delta v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, Public Alpha Rehearsal Evidence v0, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Public Search API Contract v0, Public Search Result Card Contract v0, Public Search Safety / Abuse Guard v0, Local Public Search Runtime v0, Public Search Static Handoff v0, Compatibility Surface Strategy v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Windows 7 WinForms Native Skeleton Planning v0, Post-Queue State Checkpoint v0, Relay Surface Design v0, Relay Prototype Planning v0, Full Project State Audit v0, Public Data Contract Stability Review v0, Generated Artifact Drift Guard v0, Repository Shape Consolidation v0, Static Artifact Promotion Review v0, GitHub Pages Run Evidence Review v0, Comprehensive Test/Eval Operating Layer and Repo Audit v0, Hard Test Pack v0, and AI-Assisted Evidence Drafting Plan v0, with draft contracts and concrete dependency boundary paths in place while broader product implementation remains intentionally deferred.
 
 The executable lane should now be read as a Python reference backend and
 architectural oracle rather than as a throwaway scaffold.
@@ -511,6 +511,19 @@ before reading by default, emits human and JSON summaries, redacts obvious
 private paths/secrets, and creates no staging runtime, staged state, imports,
 local indexes, public-search mutation, runtime source registry mutation,
 uploads, network/model calls, or master-index mutation.
+AI-Assisted Evidence Drafting Plan v0 is now implemented as planning/example/
+validation-only work under
+`control/inventory/ai_providers/ai_assisted_drafting_policy.json`,
+`docs/architecture/AI_ASSISTED_EVIDENCE_DRAFTING.md`,
+`docs/reference/AI_ASSISTED_DRAFTING_CONTRACT.md`,
+`examples/ai_assisted_drafting/minimal_drafting_flow_v0/`,
+`scripts/validate_ai_assisted_drafting_plan.py`, and
+`control/audits/ai-assisted-evidence-drafting-plan-v0/`. It defines allowed
+and forbidden drafting tasks, public-safe/local-private/forbidden input
+contexts, typed-output-to-evidence/contribution candidate mappings, required
+typed output validation, and required review. It adds no AI runtime, model
+calls, API keys, telemetry, evidence/contribution acceptance, public-search
+mutation, local-index mutation, or master-index mutation.
 
 Source Registry v0, Resolution Run Model v0, Query Planner v0, Local Index v0,
 Local Worker and Task Model v0, Resolution Memory v0, and Archive Resolution
@@ -745,27 +758,25 @@ operational backend infrastructure in this order:
 2. Search Usefulness Baseline Comparison Report v0 after observations
 3. IA Metadata Live Probe Approval Pack v0 only after explicit approval
 4. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
-5. AI-Assisted Evidence Drafting Plan v0 as the Codex-safe alternative when
-   human observations are not being entered
-6. Local Quarantine/Staging Tool v0 only after explicit approval
+5. Local Quarantine/Staging Tool v0 only after explicit approval
+6. AI-Assisted Evidence Drafting Runtime Planning v0 only after explicit
+   approval
 7. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
-8. Native Staging UI Planning v0 only after local staging tool approval
-9. Contribution Submission Tooling Plan v0
-10. Index Pack Import/Compare Tooling Plan v0
-11. Master Index Review Queue Runtime Planning v0
-12. Pack Import Report generator hardening only if the validate-only tool needs
+8. Native Static Data Viewer v0 if client work is prioritized
+9. Snapshot Consumer Tooling v0
+10. Rust Toolchain Verification Pack v0
+11. Contribution Submission Tooling Plan v0
+12. Master Index Review Queue Runtime Planning v0
+13. Pack Import Report generator hardening only if the validate-only tool needs
    additional schema coverage
-13. Rust Local Index Parity Candidate v0 only after planning review and Cargo
+14. Rust Local Index Parity Candidate v0 only after planning review and Cargo
    availability expectations are explicit
 15. Relay Prototype Implementation v0, only after explicit human approval and
    limited to the approved localhost-only/read-only/static relay scope
 16. Windows 7 WinForms Native Skeleton Implementation v0, only after explicit
    human approval and limited to the approved read-only static-data/snapshot-demo
    skeleton scope
-17. Manual Observation Batch 0 Execution (human-operated parallel work)
-18. Internet Archive Live Probe v0 only after explicit human approval and
-   separate implementation review
 
 ## Deferred Priorities
 

@@ -76,6 +76,14 @@ steps:
     run: python scripts/validate_ai_output.py --all-examples --json
   - id: typed_ai_output_validator_tests
     run: python -m unittest runtime.engine.ai.tests.test_typed_output_validator tests.operations.test_typed_ai_output_validator tests.scripts.test_validate_ai_output
+  - id: ai_assisted_drafting_plan_validator
+    run: python scripts/validate_ai_assisted_drafting_plan.py
+  - id: ai_assisted_drafting_plan_validator_json
+    run: python scripts/validate_ai_assisted_drafting_plan.py --json
+  - id: ai_assisted_drafting_example_flow
+    run: python scripts/validate_ai_assisted_drafting_plan.py --json
+  - id: ai_assisted_drafting_plan_tests
+    run: python -m unittest tests.operations.test_ai_assisted_evidence_drafting_plan tests.scripts.test_validate_ai_assisted_drafting_plan
   - id: pack_import_report_validator
     run: python scripts/validate_pack_import_report.py --all-examples
   - id: pack_import_report_validator_json
@@ -430,4 +438,5 @@ notes:
   - The test/eval operating layer and comprehensive audit pack checks are stdlib-only governance validations; they do not add product runtime behavior or production-readiness claims.
   - Hard Test Pack v0 checks are stdlib-only regression guards for eval truth, external baseline honesty, public-alpha path safety, route/docs/README drift, Python-oracle and Rust parity discipline, source placeholder honesty, memory path privacy, and AIDE/test registry consistency.
   - Rust workspace checking is intentionally not required here because normal Python verification must not depend on a Rust toolchain; use `cargo check --workspace --manifest-path crates/Cargo.toml` and `cargo test --workspace --manifest-path crates/Cargo.toml` as optional local checks.
+  - AI-Assisted Evidence Drafting Plan v0 validation is planning/example-only: it checks disabled AI defaults, typed output validation, candidate-only examples, required review, no model calls, no API keys/secrets, no telemetry, and no public-search/local-index/master-index mutation.
   - This command contract is repo-operating metadata, not proof of a local AIDE product CLI.

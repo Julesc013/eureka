@@ -232,7 +232,7 @@
       "title": "Manual Observation Batch 0 Execution",
       "status": "human_operated_parallel",
       "priority": 77,
-      "notes": "Expected immediate next milestone after Staged Pack Inspector v0. Fill selected Batch 0 observation records manually; no scraping, automated querying, APIs, live probes, or fabricated baselines."
+      "notes": "Expected immediate next milestone after AI-Assisted Evidence Drafting Plan v0. Fill selected Batch 0 observation records manually; no scraping, automated querying, APIs, live probes, or fabricated baselines."
     },
     {
       "id": "compatibility_surface_strategy_v0",
@@ -538,9 +538,9 @@
     {
       "id": "ai_assisted_evidence_drafting_plan_v0",
       "title": "AI-Assisted Evidence Drafting Plan v0",
-      "status": "recommended_codex_safe_alternative_after_p48",
+      "status": "completed",
       "priority": 83,
-      "notes": "Codex-safe alternative after Staged Pack Inspector v0 if human observations are not being entered. Future planning only for using validated typed AI outputs to draft evidence/contribution candidates. Do not call models, accept outputs as truth, import into evidence packs automatically, or mutate local/master indexes."
+      "notes": "Implemented planning/example/validation-only AI-assisted evidence drafting policy, docs, synthetic flow, validator, tests, and audit pack. Outputs remain candidates, typed output validation and required review are mandatory, remote providers/private data are disabled by default, and no AI runtime, model calls, API keys, telemetry, evidence/contribution acceptance, public-search mutation, local-index mutation, or master-index mutation was added."
     },
     {
       "id": "search_usefulness_baseline_comparison_report_v0",
@@ -559,9 +559,44 @@
     {
       "id": "public_hosted_search_rehearsal_plan_v0",
       "title": "Public Hosted Search Rehearsal Plan v0",
-      "status": "recommended_future_after_source_safety_confidence",
+      "status": "codex_safe_alternative_after_p49",
       "priority": 84,
       "notes": "Future hosted rehearsal plan only after source usefulness and safety confidence improve. Do not deploy, add provider files, enable live probes, or claim hosted public search before explicit approval and evidence."
+    },
+    {
+      "id": "local_quarantine_staging_tool_v0",
+      "title": "Local Quarantine/Staging Tool v0",
+      "status": "blocked_pending_explicit_approval",
+      "priority": 85,
+      "notes": "Future implementation only after explicit approval and staged-inspector review. Do not create local staging runtime state, copy pack files, import packs, mutate search/index/runtime/master state, upload, call networks, or call models without a new approved milestone."
+    },
+    {
+      "id": "ai_assisted_evidence_drafting_runtime_planning_v0",
+      "title": "AI-Assisted Evidence Drafting Runtime Planning v0",
+      "status": "blocked_pending_explicit_approval",
+      "priority": 86,
+      "notes": "Future planning only after explicit approval. Must preserve disabled-by-default providers, explicit task requests, no silent private-data processing, no model calls without approved runtime policy, required typed output validation, required review, and no public-search/local-index/master-index mutation."
+    },
+    {
+      "id": "native_static_data_viewer_v0",
+      "title": "Native Static Data Viewer v0",
+      "status": "recommended_if_client_work_is_prioritized",
+      "priority": 87,
+      "notes": "Future client work only if prioritized. Must remain read-only over static/public-safe data and avoid installers, downloads, telemetry, cache runtime, relay runtime, live probes, or production native claims."
+    },
+    {
+      "id": "snapshot_consumer_tooling_v0",
+      "title": "Snapshot Consumer Tooling v0",
+      "status": "codex_safe_future_option",
+      "priority": 88,
+      "notes": "Future static/offline tooling option that must not add snapshot reader runtime, relay/native runtime, production signing, executable downloads, live backend behavior, or live probes without approval."
+    },
+    {
+      "id": "rust_toolchain_verification_pack_v0",
+      "title": "Rust Toolchain Verification Pack v0",
+      "status": "codex_safe_future_option",
+      "priority": 89,
+      "notes": "Future verification pack may document local Cargo availability and optional Rust checks without making Cargo required for normal Python verification or wiring Rust into runtime/surfaces."
     },
     {
       "id": "local_quarantine_staging_model_v0",

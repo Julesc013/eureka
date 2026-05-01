@@ -481,8 +481,8 @@
         "CTEA-BEHAVIOR-001"
       ],
       "title": "Define disabled-by-default AI provider and typed output boundaries before any AI runtime or evidence drafting work",
-      "status": "addressed_by_ai_provider_contract_v0_and_typed_ai_output_validator_v0",
-      "suggested_milestone": "AI-Assisted Evidence Drafting Plan v0 after Validate-Only Pack Import Tool v0"
+      "status": "addressed_by_ai_provider_contract_v0_typed_ai_output_validator_v0_and_ai_assisted_evidence_drafting_plan_v0",
+      "suggested_milestone": "Manual Observation Batch 0 Execution, human-operated"
     },
     {
       "id": "audit-backlog-pack-import-report-format",
@@ -537,8 +537,17 @@
         "staged-pack-inspector-v0"
       ],
       "title": "Review staged manifest inspection evidence before any local staging tool writes state",
+      "status": "addressed_by_ai_assisted_evidence_drafting_plan_v0_for_codex_safe_alternative",
+      "suggested_milestone": "Manual Observation Batch 0 Execution, human-operated"
+    },
+    {
+      "id": "audit-backlog-ai-assisted-evidence-drafting-plan",
+      "finding_refs": [
+        "ai-assisted-evidence-drafting-plan-v0"
+      ],
+      "title": "Keep future AI drafting behind typed validation, review, and explicit runtime approval",
       "status": "open_follow_up",
-      "suggested_milestone": "Manual Observation Batch 0 Execution, human-operated; AI-Assisted Evidence Drafting Plan v0 is the Codex-safe alternative"
+      "suggested_milestone": "Manual Observation Batch 0 Execution, human-operated; Public Hosted Search Rehearsal Plan v0 is the Codex-safe alternative"
     }
   ]
 }

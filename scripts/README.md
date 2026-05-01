@@ -318,6 +318,13 @@ Current scripts:
   structured claims; and does not call models, load providers, import evidence,
   draft contributions, stage packs, mutate local indexes, upload, or mutate a
   master index
+- `validate_ai_assisted_drafting_plan.py`: validates AI-Assisted Evidence
+  Drafting Plan v0. It checks the disabled-by-default drafting policy,
+  synthetic example flow, typed output validation, evidence/contribution
+  candidate-only examples, audit pack, docs, forbidden truth/rights/malware/
+  auto-acceptance/web-fetch/scrape tasks, no API keys/secrets, no model calls,
+  no provider runtime, and no public-search/local-index/master-index mutation;
+  it supports `--json`
 - `validate_pack_import_report.py`: validates Pack Import Report Format v0
   examples or one explicit report. It supports `--report`, `--all-examples`,
   `--strict`, and `--json`; checks report status and mode values, pack-result

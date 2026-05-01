@@ -3309,6 +3309,72 @@
       "notes": "Covers required review, prohibited truth/rights/malware/auto-acceptance uses, private-path and secret rejection, provider disabled-default checks, and JSON side-effect flags."
     },
     {
+      "test_id": "ai_assisted_drafting_plan_validator",
+      "label": "AI-assisted evidence drafting plan validator",
+      "command": "python scripts/validate_ai_assisted_drafting_plan.py",
+      "category": "contract",
+      "owner_area": "control/inventory/ai_providers",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "AI-assisted drafting policy, docs, audit pack, example flow, candidate-only posture, or no-runtime/no-model-call boundaries regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates planning/example/governance only; it performs no model calls, provider loading, API-key handling, telemetry, evidence import, contribution import, public-search mutation, local-index mutation, or master-index mutation."
+    },
+    {
+      "test_id": "ai_assisted_drafting_example_flow",
+      "label": "AI-assisted drafting example flow validation",
+      "command": "python scripts/validate_ai_assisted_drafting_plan.py --json",
+      "category": "contract",
+      "owner_area": "examples/ai_assisted_drafting",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The synthetic example drafting flow stopped validating as candidate-only, review-required, no-model-call planning evidence.",
+      "advisory_or_required": "required",
+      "notes": "Covers the synthetic input context, typed AI output, evidence candidate, contribution candidate, checksums, no secrets/private paths, and no evidence/contribution/master-index acceptance."
+    },
+    {
+      "test_id": "ai_assisted_drafting_plan_tests",
+      "label": "AI-assisted evidence drafting plan tests",
+      "command": "python -m unittest tests.operations.test_ai_assisted_evidence_drafting_plan tests.scripts.test_validate_ai_assisted_drafting_plan",
+      "category": "contract",
+      "owner_area": "control/inventory/ai_providers",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary directories only for subprocess output handling",
+      "expected_runtime": "seconds",
+      "failure_means": "AI-assisted drafting validator behavior, JSON output, forbidden task coverage, example files, docs, or candidate/review requirements regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers disabled defaults, remote private-data defaults, forbidden truth/rights/malware/auto-acceptance/web-fetch/scrape tasks, no API keys/secrets, no model-call/runtime claims, and AI-is-not-truth docs."
+    },
+    {
       "test_id": "pack_import_report_validator",
       "label": "Pack import report validator",
       "command": "python scripts/validate_pack_import_report.py --all-examples",
