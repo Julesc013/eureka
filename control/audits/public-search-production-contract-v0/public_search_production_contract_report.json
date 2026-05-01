@@ -1,0 +1,627 @@
+{
+  "report_id": "public_search_production_contract_v0",
+  "created_by_slice": "p53_public_search_production_contract_v0",
+  "repo_head": "bba9af03b2295311f4081ea489721c7372f68860",
+  "branch": "main",
+  "worktree_status": "clean before P53 edits; final status recorded in final response",
+  "contract_status": "frozen_for_p54_hosted_wrapper",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/healthz",
+      "classification": "hosted_future"
+    },
+    {
+      "method": "GET",
+      "path": "/status",
+      "classification": "hosted_future"
+    },
+    {
+      "method": "GET",
+      "path": "/search",
+      "classification": "implemented_local_prototype"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/status",
+      "classification": "implemented_local_prototype"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/search",
+      "classification": "implemented_local_prototype"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/query-plan",
+      "classification": "implemented_local_prototype"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/sources",
+      "classification": "implemented_local_prototype"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/source/{source_id}",
+      "classification": "implemented_local_prototype"
+    },
+    {
+      "method": "GET",
+      "path": "/search.html",
+      "classification": "static_handoff"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/object/{id}",
+      "classification": "contract_only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/result/{id}",
+      "classification": "contract_only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/absence/{need_id}",
+      "classification": "contract_only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/compare",
+      "classification": "deferred"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/capabilities",
+      "classification": "contract_only"
+    }
+  ],
+  "active_mode": "local_index_only",
+  "future_modes": [
+    "cached_source_probe",
+    "live_probe",
+    "federated"
+  ],
+  "request_limits": {
+    "max_query_length": 160,
+    "default_limit": 10,
+    "max_limit": 25,
+    "hosted_timeout_ms": 5000,
+    "local_runtime_target_ms": 3000
+  },
+  "forbidden_parameters": [
+    "index_path",
+    "store_root",
+    "run_store_root",
+    "task_store_root",
+    "memory_store_root",
+    "local_path",
+    "path",
+    "file_path",
+    "directory",
+    "root",
+    "url",
+    "fetch_url",
+    "crawl_url",
+    "source_url",
+    "download",
+    "install",
+    "execute",
+    "upload",
+    "user_file",
+    "source_credentials",
+    "auth_token",
+    "api_key",
+    "live_probe",
+    "live_source",
+    "network",
+    "arbitrary_source"
+  ],
+  "response_contracts": {
+    "request_schema": "contracts/api/search_request.v0.json",
+    "response_schema": "contracts/api/search_response.v0.json",
+    "error_schema": "contracts/api/error_response.v0.json",
+    "result_card_schema": "contracts/api/search_result_card.v0.json",
+    "source_status_schema": "contracts/api/source_status.v0.json",
+    "evidence_summary_schema": "contracts/api/evidence_summary.v0.json",
+    "absence_report_schema": "contracts/api/absence_report.v0.json",
+    "public_search_status_schema": "contracts/api/public_search_status.v0.json"
+  },
+  "error_codes": [
+    "query_required",
+    "query_too_long",
+    "limit_too_large",
+    "unsupported_mode",
+    "unsupported_profile",
+    "unsupported_include",
+    "forbidden_parameter",
+    "local_paths_forbidden",
+    "arbitrary_url_fetch_forbidden",
+    "downloads_disabled",
+    "installs_disabled",
+    "uploads_disabled",
+    "live_probes_disabled",
+    "live_backend_unavailable",
+    "rate_limited",
+    "timeout",
+    "bad_request",
+    "internal_error_public_safe"
+  ],
+  "result_card_alignment": {
+    "status": "aligned",
+    "schema": "contracts/api/search_result_card.v0.json",
+    "blocked_or_future_gated_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "upload",
+      "live_probe",
+      "mirror",
+      "package_manager_handoff",
+      "emulator_handoff"
+    ]
+  },
+  "source_status_contract": "contracts/api/source_status.v0.json",
+  "evidence_summary_contract": "contracts/api/evidence_summary.v0.json",
+  "absence_contract": "contracts/api/absence_report.v0.json",
+  "safety_flags": {
+    "hosted_search_implemented": false,
+    "dynamic_backend_deployed": false,
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "installs_enabled": false,
+    "local_paths_enabled": false,
+    "arbitrary_url_fetch_enabled": false,
+    "telemetry_enabled": false,
+    "accounts_enabled": false
+  },
+  "hosted_search_implemented": false,
+  "dynamic_backend_deployed": false,
+  "live_probes_enabled": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "local_paths_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "telemetry_enabled": false,
+  "static_handoff_requirements": [
+    "static site remains useful without backend",
+    "backend URL must be inventory/config driven",
+    "no fake hosted URL",
+    "no hosted search claim without evidence",
+    "query input max length 160",
+    "no JavaScript required",
+    "lite/text/files limitations remain visible"
+  ],
+  "hosted_wrapper_requirements": [
+    "implement P53 routes in local_index_only mode",
+    "expose /healthz and /status",
+    "reject forbidden parameters",
+    "enforce query and result limits",
+    "emit public-safe errors",
+    "keep live probes disabled",
+    "keep downloads/uploads/installers disabled",
+    "keep local path access disabled",
+    "keep arbitrary URL fetch disabled",
+    "keep telemetry off by default",
+    "require rate-limit and operator kill-switch controls",
+    "record deployment evidence before any hosted claim"
+  ],
+  "command_results": [
+    {
+      "command": "git status --short --branch",
+      "status": "pass",
+      "duration_seconds": null,
+      "notes": "Initial P53 status was clean on main...origin/main."
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "status": "pass",
+      "duration_seconds": null,
+      "notes": "Initial head bba9af03b2295311f4081ea489721c7372f68860."
+    },
+    {
+      "command": "git rev-parse origin/main",
+      "status": "pass",
+      "duration_seconds": null,
+      "notes": "Initial origin/main bba9af03b2295311f4081ea489721c7372f68860."
+    },
+    {
+      "command": "git log --oneline -n 40",
+      "status": "pass",
+      "duration_seconds": null,
+      "notes": "P50, P51, and P52 commits were present before P53 edits."
+    },
+    {
+      "command": "python -m json.tool <modified schemas and P53 report>",
+      "status": "pass",
+      "duration_seconds": null,
+      "notes": "Modified/new API schemas and P53 report parsed as JSON."
+    },
+    {
+      "command": "python -m unittest runtime.gateway.tests.test_public_search_api runtime.gateway.tests.test_public_search_validation surfaces.web.tests.test_public_search_routes tests.scripts.test_public_search_smoke",
+      "status": "pass",
+      "duration_seconds": null,
+      "notes": "Targeted local public-search runtime tests passed before the broad verification pass."
+    },
+    {
+      "command": "python -m unittest tests.operations.test_public_search_production_contract tests.scripts.test_validate_public_search_production_contract",
+      "status": "pass",
+      "duration_seconds": null,
+      "notes": "P53 focused validator/tests passed."
+    },
+    {
+      "command": "python scripts/validate_live_backend_handoff.py --json (pre-repair)",
+      "status": "fail",
+      "exit_code": 1,
+      "duration_seconds": null,
+      "notes": "Failed because P53 reserved /healthz and /status before the live-backend handoff validator allowed top-level wrapper routes; repaired as metadata-only drift."
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "P53 validator passed."
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "P53 validator JSON output parsed and reported status valid."
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.07,
+      "notes": "P52 static deployment evidence validator still passes; Pages status remains unverified/operator-gated."
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.07,
+      "notes": "P51 remediation validator still passes."
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "P50 platform audit validator still passes."
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "Existing public search API contract validator passes."
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "Existing public search API contract validator JSON output passes."
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "Result-card contract validator passes."
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "Result-card contract validator JSON output passes."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.07,
+      "notes": "Safety/abuse guard validator passes."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "Safety/abuse guard validator JSON output passes."
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "Local/prototype public-search runtime validator passes."
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.07,
+      "notes": "Local/prototype public-search runtime validator JSON output passes."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.6,
+      "notes": "Public search smoke passed 30/30."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.56,
+      "notes": "Public search smoke JSON passed 30/30."
+    },
+    {
+      "command": "python site/build.py --check",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 1.02,
+      "notes": "Static site build check passed."
+    },
+    {
+      "command": "python site/build.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.91,
+      "notes": "Static site JSON build command passed."
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.16,
+      "notes": "Static site validator passed."
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.09,
+      "notes": "Publication inventory validator passed."
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.1,
+      "notes": "Public static site validator passed."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 6.99,
+      "notes": "Generated artifact drift guard passed."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.37,
+      "notes": "Archive-resolution eval runner passed; status_counts satisfied=6/6."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.35,
+      "notes": "Archive-resolution eval JSON passed; status_counts satisfied=6/6."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.38,
+      "notes": "Search usefulness audit passed; covered=5, partial=40, source_gap=10, capability_gap=7, unknown=2."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.4,
+      "notes": "Search usefulness audit JSON passed with 64 total queries and no external observations recorded."
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.07,
+      "notes": "External baselines remain pending/manual: global 192 pending/0 observed; batch_0 39 pending."
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "fail",
+      "exit_code": 1,
+      "duration_seconds": 62.17,
+      "notes": "Initial run failed on live-backend handoff route-reservation drift; rerun passed after metadata-only validator/docs repair."
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 3.97,
+      "notes": "Operations tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 5.56,
+      "notes": "Hardening tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 5.49,
+      "notes": "Runtime tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 31.84,
+      "notes": "Surface tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "fail",
+      "exit_code": 1,
+      "duration_seconds": 80.48,
+      "notes": "Initial full repo tests failed on live-backend handoff route-reservation drift; rerun passed after metadata-only validator/docs repair."
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.56,
+      "notes": "Architecture boundary checker passed."
+    },
+    {
+      "command": "cargo --version",
+      "status": "unavailable",
+      "exit_code": 1,
+      "duration_seconds": 0.02,
+      "notes": "Cargo is unavailable in this environment; command was not treated as hidden success."
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "unavailable",
+      "exit_code": 1,
+      "duration_seconds": 0.02,
+      "notes": "Cargo is unavailable in this environment; optional Rust check could not run."
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "unavailable",
+      "exit_code": 1,
+      "duration_seconds": 0.02,
+      "notes": "Cargo is unavailable in this environment; optional Rust tests could not run."
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.11,
+      "notes": "Whitespace diff check passed."
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.07,
+      "notes": "Final pre-commit status had expected P53 modifications only."
+    },
+    {
+      "command": "python scripts/validate_live_backend_handoff.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.11,
+      "notes": "Live-backend handoff validator passed after accepting P53 reserved top-level health/status and capability/absence routes as unhosted contract metadata."
+    },
+    {
+      "command": "python scripts/validate_live_backend_handoff.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.11,
+      "notes": "Live-backend handoff validator JSON output passed after P53 metadata repair."
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "P53 validator passed."
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "notes": "P53 validator JSON output parsed and reported status valid."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 6.95,
+      "notes": "Generated artifact drift guard passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 61.98,
+      "notes": "Initial run failed on live-backend handoff route-reservation drift; rerun passed after metadata-only validator/docs repair."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 79.63,
+      "notes": "Initial full repo tests failed on live-backend handoff route-reservation drift; rerun passed after metadata-only validator/docs repair."
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.12,
+      "notes": "Whitespace diff check passed."
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_seconds": 0.07,
+      "notes": "Final pre-commit status had expected P53 modifications only."
+    }
+  ],
+  "remaining_gaps": [
+    "No hosted backend is deployed.",
+    "GitHub Pages deployment evidence remains operator-gated from P52.",
+    "Rate limiting and operator kill switch are requirements for P54, not P53 implementations.",
+    "Query intelligence remains future.",
+    "Live connectors remain approval-gated/deferred.",
+    "External baselines remain manual/pending."
+  ],
+  "next_recommended_branch": "P54 Hosted Public Search Wrapper v0",
+  "notes": [
+    "P53 is a contract/schema/docs/validation milestone.",
+    "P53 does not add hosted backend behavior, source connector runtime, live probes, external API calls, scraping, AI runtime, telemetry, accounts, uploads, downloads, installers, arbitrary URL fetching, index mutation, pack staging, or pack import.",
+    "P54 may implement the hosted wrapper only under local_index_only safety defaults."
+  ],
+  "verification_summary": {
+    "archive_resolution_evals": {
+      "satisfied": 6,
+      "total": 6
+    },
+    "search_usefulness_counts": {
+      "covered": 5,
+      "partial": 40,
+      "source_gap": 10,
+      "capability_gap": 7,
+      "unknown": 2,
+      "total": 64
+    },
+    "external_baselines": {
+      "observed": 0,
+      "pending_manual_observation": 192,
+      "batch_0_pending_manual_observation": 39
+    },
+    "cargo_status": "unavailable",
+    "github_actions_status": "unverified"
+  }
+}
