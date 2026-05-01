@@ -1,0 +1,342 @@
+{
+  "report_id": "static_deployment_evidence_v0",
+  "created_by_slice": "p52_static_deployment_evidence_github_pages_repair_v0",
+  "repo_head": "9bbb451ed23b5a5725f1ca0592f19a0edd6fecc5",
+  "origin_main_head": "9bbb451ed23b5a5725f1ca0592f19a0edd6fecc5",
+  "branch": "main",
+  "worktree_status": "clean before P52 edits; final status recorded in final response",
+  "workflow_path": ".github/workflows/pages.yml",
+  "workflow_review": {
+    "status": "workflow_configured",
+    "runs_on_main_push": true,
+    "workflow_dispatch": true,
+    "permissions": {
+      "contents": "read",
+      "pages": "write",
+      "id-token": "write"
+    },
+    "validates_publication_inventory": true,
+    "validates_static_site": true,
+    "checks_github_pages_static_artifact": true,
+    "checks_generated_artifact_drift": true,
+    "upload_path": "site/dist",
+    "deploy_action_present": true,
+    "references_legacy_static_upload": false,
+    "repaired_in_p52": false
+  },
+  "artifact_root": "site/dist",
+  "static_artifact_review": {
+    "status": "valid",
+    "site_build_check": "passed",
+    "site_build_json": "passed",
+    "site_validate": "passed_after_serial_rerun",
+    "site_validate_json": "passed_after_serial_rerun",
+    "publication_inventory": "passed",
+    "public_static_site": "passed_after_serial_rerun",
+    "github_pages_static_artifact_check": "passed",
+    "static_site_dist_drift_guard": "passed",
+    "notes": [
+      "An initial concurrent validation attempt saw transient missing generated files while site/build.py --json was mutating site/dist.",
+      "The serial recheck passed and no persistent generated artifact drift remained."
+    ]
+  },
+  "github_pages_status": [
+    "workflow_configured",
+    "deployment_unverified",
+    "deployment_failed",
+    "pages_not_enabled",
+    "gh_unavailable",
+    "operator_gated"
+  ],
+  "github_actions_evidence": {
+    "gh_available": false,
+    "gh_auth_status": "unavailable",
+    "current_head_query_status": "unverified",
+    "committed_prior_evidence_available": true,
+    "prior_evidence_ref": "control/audits/github-pages-run-evidence-v0/github_pages_run_evidence_report.json",
+    "prior_run_id": 25171991131,
+    "prior_run_url": "https://github.com/Julesc013/eureka/actions/runs/25171991131",
+    "prior_run_head_sha": "8372ca71a3877de18503acfa34fb15d5685b38c6",
+    "prior_run_matches_current_head": false,
+    "prior_run_status": "completed",
+    "prior_run_conclusion": "failure",
+    "prior_failed_step": "Configure GitHub Pages",
+    "prior_failure_summary": "actions/configure-pages@v5 failed because the repository Pages site was not found/enabled for GitHub Actions."
+  },
+  "pages_api_evidence": {
+    "current_query_status": "unverified_gh_unavailable",
+    "committed_prior_pages_api_status": "404_not_found",
+    "notes": "No current Pages API query was possible because gh is unavailable locally."
+  },
+  "deployment_url": null,
+  "deployment_verified": false,
+  "deployment_success_claimed": false,
+  "operator_action_required": true,
+  "hosted_backend_claimed": false,
+  "live_search_claimed": false,
+  "live_probes_claimed": false,
+  "dynamic_backend_deployed": false,
+  "operator_steps": [
+    "Open repository Settings -> Pages.",
+    "Set Build and deployment Source to GitHub Actions.",
+    "Save the Pages setting.",
+    "Rerun or manually dispatch the Pages workflow.",
+    "Confirm Configure Pages, artifact upload, and deploy steps all succeed.",
+    "Record workflow run URL, deployment URL, deployed commit SHA, and timestamp.",
+    "Open root, status, sources, search handoff, lite, text, and files pages.",
+    "Commit a future evidence update with the run URL and deployed commit."
+  ],
+  "public_claim_review": {
+    "static_only": true,
+    "no_hosted_backend": true,
+    "hosted_search_available": false,
+    "local_public_search_only": true,
+    "no_live_probes": true,
+    "no_downloads_uploads_accounts": true,
+    "production_readiness_claimed": false,
+    "notes": "Static site deployment does not imply hosted backend or live search."
+  },
+  "command_results": [
+    {
+      "command": "git status --short --branch",
+      "status": "pass",
+      "notes": "Initial P52 status was clean on main...origin/main."
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "status": "pass",
+      "notes": "9bbb451ed23b5a5725f1ca0592f19a0edd6fecc5."
+    },
+    {
+      "command": "git rev-parse origin/main",
+      "status": "pass",
+      "notes": "9bbb451ed23b5a5725f1ca0592f19a0edd6fecc5."
+    },
+    {
+      "command": "python site/build.py --check",
+      "status": "pass",
+      "notes": "Static generator check valid."
+    },
+    {
+      "command": "python site/build.py --json",
+      "status": "pass",
+      "notes": "Mutating build completed; status valid."
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "transient_fail_then_pass",
+      "notes": "Concurrent first run observed transient missing generated files while build was mutating; serial rerun passed."
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "pass",
+      "notes": "49 registered routes."
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "transient_fail_then_pass",
+      "notes": "Concurrent first run invalid; serial rerun passed."
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "pass",
+      "notes": "Artifact valid."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py --artifact static_site_dist",
+      "status": "pass",
+      "notes": "static_site_dist group passed."
+    },
+    {
+      "command": "gh --version",
+      "status": "unavailable",
+      "notes": "gh command not found."
+    },
+    {
+      "command": "gh auth status",
+      "status": "unavailable",
+      "notes": "gh command not found."
+    },
+    {
+      "command": "gh workflow list",
+      "status": "unavailable_skipped",
+      "notes": "Skipped because gh is unavailable."
+    },
+    {
+      "command": "gh run list --workflow pages.yml --limit 10",
+      "status": "unavailable_skipped",
+      "notes": "Skipped because gh is unavailable."
+    },
+    {
+      "command": "gh api repos/Julesc013/eureka/pages",
+      "status": "unavailable_skipped",
+      "notes": "Skipped because gh is unavailable."
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "pass",
+      "notes": "P52 audit pack valid; deployment remains unverified and not claimed."
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py --json",
+      "status": "pass",
+      "notes": "JSON validator output parsed; status valid."
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "pass",
+      "notes": "P51 remediation pack still validates."
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "pass",
+      "notes": "P50 platform audit pack still validates."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "pass",
+      "notes": "10/10 generated artifact groups passed."
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "pass",
+      "notes": "Public search contract valid."
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "pass",
+      "notes": "Result card contract valid."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "pass",
+      "notes": "Safety/abuse guard valid."
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "pass",
+      "notes": "Local prototype runtime valid; hosted deployment false."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "pass",
+      "notes": "30/30 checks passed; 9 safe queries, 14 blocked requests."
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "pass",
+      "notes": "18/18 checks passed."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "pass",
+      "notes": "6 tasks satisfied."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "pass",
+      "notes": "JSON output produced; 6 tasks satisfied."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "pass",
+      "notes": "64 queries: covered 5, partial 40, source_gap 10, capability_gap 7, unknown 2."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "pass",
+      "notes": "JSON output produced for the same 64-query audit."
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "pass",
+      "notes": "192 pending / 0 observed; batch_0 39 pending / 0 observed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "pass",
+      "notes": "227 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "pass",
+      "notes": "402 tests passed earlier in the P52 run."
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "pass",
+      "notes": "53 tests passed earlier in the P52 run."
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "pass",
+      "notes": "320 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "pass",
+      "notes": "168 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "notes": "798 tests passed."
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "notes": "445 Python files checked; no boundary violations."
+    },
+    {
+      "command": "cargo --version",
+      "status": "unavailable",
+      "notes": "cargo command not found."
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "unavailable",
+      "notes": "cargo command not found."
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "unavailable",
+      "notes": "cargo command not found."
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass",
+      "notes": "No whitespace errors; PowerShell reported expected LF-to-CRLF working-copy warnings."
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "pass",
+      "notes": "Working tree contained only P52 edits before commit."
+    }
+  ],
+  "repaired_items": [
+    {
+      "item_id": "p52-pages-docs-operator-evidence",
+      "status": "updated",
+      "notes": "P52 records exact operator steps and current gh-unavailable evidence boundary."
+    },
+    {
+      "item_id": "p52-deployment-target-inventory",
+      "status": "updated",
+      "notes": "Deployment target metadata remains static-only and deployment-unverified."
+    }
+  ],
+  "remaining_blockers": [
+    "GitHub CLI is unavailable in this environment.",
+    "Current-head GitHub Actions status is unverified.",
+    "Current-head GitHub Pages API status is unverified.",
+    "Prior committed evidence records Pages configuration failure before artifact upload.",
+    "No deployment URL is recorded.",
+    "Operator must enable Pages GitHub Actions source and rerun the workflow."
+  ],
+  "next_recommended_branch": "p53-public-search-production-contract-v0",
+  "notes": [
+    "P52 does not add backend hosting, public search hosting, live probes, source connector runtime, AI runtime, credentials, telemetry, accounts, uploads, downloads, installers, index mutation, or deployment provider behavior.",
+    "P52 can proceed to P53 for contract work while Pages evidence remains operator-gated.",
+    "P52A GitHub Pages Operator Evidence Capture v0 remains the operator-parallel follow-up if deployment evidence is still needed before P53."
+  ]
+}
