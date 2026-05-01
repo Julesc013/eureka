@@ -135,6 +135,11 @@ by default. Relay surfaces must not expose private staged packs, import
 reports, local paths, or local quarantine contents unless a later reviewed
 public output explicitly allows it.
 
+Staging Report Path Contract v0 keeps local report roots private by default.
+Relay surfaces must not expose validate-only reports, staging reports, local
+staging manifests, or local paths unless a future reviewed public export
+explicitly redacts and allows them.
+
 AI Provider Contract v0 keeps AI providers and outputs out of relay surfaces by
 default. Relay must not expose private prompts, provider credentials, model
 logs, unreviewed AI suggestions, or AI-generated trust/rights/malware decisions

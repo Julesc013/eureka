@@ -224,6 +224,12 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   export requirements, native/relay/snapshot boundaries, and no-impact search
   and master-index defaults without creating staging runtime, staged state,
   local indexes, uploads, network calls, model calls, or master-index mutation.
+- `staging-report-path-contract-v0/`: planning/governance audit pack for
+  future report output locations. It records stdout defaults, explicit output
+  paths, allowed and forbidden roots, filename safety, redaction, `.gitignore`
+  protection, validate-only tool behavior, native/relay/snapshot impact, and
+  no public-search/master-index impact without creating report path runtime,
+  staging runtime, or staged state.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

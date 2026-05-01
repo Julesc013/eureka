@@ -575,7 +575,7 @@
       "title": "Staged Pack Inspector v0",
       "status": "recommended_follow_up_after_manifest_contract",
       "priority": 79,
-      "notes": "Future read-only inspection of quarantined/staged pack metadata and validation reports after path and manifest contracts. Do not import into runtime, index records, upload, or submit to master-index review."
+      "notes": "Future read-only inspection of quarantined/staged pack metadata, staging manifests, and validation reports after Local Staging Manifest Format v0. Do not import into runtime, index records, upload, or submit to master-index review."
     },
     {
       "id": "source_pack_import_runtime_v0",
@@ -615,16 +615,16 @@
     {
       "id": "staging_report_path_contract_v0",
       "title": "Staging Report Path Contract v0",
-      "status": "recommended_follow_up",
+      "status": "completed",
       "priority": 77,
-      "notes": "Codex-safe next milestone after Local Quarantine/Staging Model v0. Define where future staging reports may be written and referenced without creating staging runtime, staged state, import behavior, local index mutation, public-search mutation, uploads, or master-index mutation."
+      "notes": "Implemented planning/governance path contract for stdout-by-default report output, explicit output paths, allowed/forbidden report roots, future ignored local-private report roots, filename safety, redaction, validate-only output-root enforcement, validator, docs, audit pack, and tests. No staging runtime, staged state, import behavior, local index mutation, upload, public-search mutation, or master-index mutation was added."
     },
     {
       "id": "local_staging_manifest_format_v0",
       "title": "Local Staging Manifest Format v0",
-      "status": "recommended_follow_up",
+      "status": "recommended_next_codex_safe",
       "priority": 78,
-      "notes": "Alternative next milestone. Define a future local staging manifest envelope before any staging tool exists; do not create .eureka-local state, copy packs, import records, mutate search/index, or submit to the master index."
+      "notes": "Recommended next milestone after Staging Report Path Contract v0. Define the future local staging manifest envelope before any staging tool exists; do not create .eureka-local state, copy packs, import records, mutate search/index, upload, or submit to the master index."
     }
   ]
 }

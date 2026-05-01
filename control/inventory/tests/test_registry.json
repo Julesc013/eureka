@@ -3454,6 +3454,48 @@
       "failure_means": "Local staging model defaults, prohibited roots, ignored roots, audit docs, validator JSON, or no-runtime/no-directory checks regressed.",
       "advisory_or_required": "required",
       "notes": "Covers local_private defaults, no search/master-index impact, .eureka-local/.eureka-cache/.eureka-staging ignore policy, no committed runtime directories, reset/delete/export docs, and absence of staging runtime tooling."
+    },
+    {
+      "test_id": "staging_report_path_contract_validator",
+      "label": "Staging report path contract validator",
+      "command": "python scripts/validate_staging_report_path_contract.py",
+      "category": "contract",
+      "owner_area": "control/inventory/local_state",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Staging Report Path Contract v0 inventory, audit pack, docs, gitignore policy, or no-runtime/no-directory posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates stdout defaults, explicit output path policy, forbidden roots, ignored local-private report roots, redaction docs, validate-only output-root enforcement, and no staging/report runtime."
+    },
+    {
+      "test_id": "staging_report_path_contract_tests",
+      "label": "Staging report path contract tests",
+      "command": "python -m unittest tests.operations.test_staging_report_path_contract tests.scripts.test_validate_staging_report_path_contract",
+      "category": "contract",
+      "owner_area": "control/inventory/local_state",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Staging report path defaults, forbidden roots, redaction docs, gitignore local-state protection, audit pack, validator JSON, or validate-only tool path checks regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers default stdout, explicit output required, no report/staging runtime, no .eureka-local/.eureka-reports directories, no search/master-index impact, and forbidden output root enforcement."
     }
   ]
 }

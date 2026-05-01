@@ -339,6 +339,12 @@ Current scripts:
   search/master-index impact, prohibited roots, ignored future local-state
   roots, reset/delete/export requirements, and absence of `.eureka-local/`,
   `.eureka-cache/`, or `.eureka-staging/` runtime directories.
+- `validate_staging_report_path_contract.py`: validates Staging Report Path
+  Contract v0 inventory, audit pack, docs, `.gitignore` policy, validate-only
+  output-root enforcement, and no-runtime posture. It supports `--json`;
+  checks stdout defaults, explicit output path policy, forbidden committed
+  roots, ignored future local report roots, redaction documentation, and
+  absence of `.eureka-local/` or `.eureka-reports/` runtime directories.
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

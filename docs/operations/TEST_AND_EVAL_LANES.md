@@ -392,6 +392,20 @@ ignored future local-state roots, reset/delete/export documentation, native/
 relay/snapshot impact documentation, absence of `.eureka-local/` runtime
 state, and absence of staging runtime claims.
 
+Staging Report Path Contract v0 is validated with:
+
+```bash
+python scripts/validate_staging_report_path_contract.py
+python scripts/validate_staging_report_path_contract.py --json
+python -m unittest tests.operations.test_staging_report_path_contract tests.scripts.test_validate_staging_report_path_contract
+```
+
+The validation checks stdout defaults, explicit output path policy, forbidden
+committed/runtime/public roots, ignored future local report roots, redaction
+documentation, validate-only tool output-root enforcement, absence of
+`.eureka-local/` and `.eureka-reports/` runtime state, and no search or
+master-index impact.
+
 Manual External Baseline Observation Pack v0 is validated with:
 
 ```bash

@@ -136,7 +136,17 @@ under `control/inventory/local_state/`,
 `control/audits/local-quarantine-staging-model-v0/`. It creates no staging
 runtime or staged state, keeps future local state private by default, and
 preserves no-impact defaults for search and the master index. The next
-Codex-safe milestone is Staging Report Path Contract v0.
+Codex-safe milestone was Staging Report Path Contract v0.
+Staging Report Path Contract v0 is now implemented as planning/governance
+under `control/inventory/local_state/staging_report_path_contract.json`,
+`docs/reference/STAGING_REPORT_PATH_CONTRACT.md`,
+`docs/operations/LOCAL_REPORT_PATHS.md`,
+`scripts/validate_staging_report_path_contract.py`, and
+`control/audits/staging-report-path-contract-v0/`. It keeps report output on
+stdout by default, requires explicit output paths for file writes, blocks
+forbidden repo roots, requires redaction, and creates no report path runtime,
+staging runtime, staged state, search impact, or master-index impact. The next
+Codex-safe milestone is Local Staging Manifest Format v0.
 
 ## Stage 3: Surface Skeletons
 

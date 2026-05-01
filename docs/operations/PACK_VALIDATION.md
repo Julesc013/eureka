@@ -136,6 +136,11 @@ mutate runtime state, local indexes, public search, or the master index.
 Actual staging, local index candidate handling, contribution queue export,
 hosted submission, and master-index review remain separate future milestones.
 
+Staging Report Path Contract v0 now governs where future report files may be
+written. The safe default is stdout, file writes require explicit output paths,
+forbidden public/runtime/canonical roots are rejected, and private local paths
+must be redacted before reports are committed or exposed publicly.
+
 AI Provider Contract v0 is validated separately with
 `python scripts/validate_ai_provider_contract.py`. AI providers are not source,
 evidence, index, contribution, or review-queue packs. AI outputs may later help

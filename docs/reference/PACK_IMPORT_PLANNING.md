@@ -108,6 +108,13 @@ mutate public search or the master index. It defines future local/private root
 policy, staged entity vocabulary, report linking, and reset/delete/export
 requirements.
 
+Staging Report Path Contract v0 is now implemented as planning/governance
+only. It defines stdout-by-default report output, explicit output paths,
+forbidden committed/runtime/public roots, future ignored local-private report
+roots, filename safety, and redaction. It creates no report path runtime,
+staging runtime, staged state, import behavior, search impact, or master-index
+impact.
+
 AI Provider Contract v0 is separate from pack import. Typed AI outputs may
 later help draft pack/contribution candidates. Typed AI Output Validator v0 now
 validates those outputs through `scripts/validate_ai_output.py` before any

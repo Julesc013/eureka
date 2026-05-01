@@ -96,6 +96,12 @@ steps:
     run: python scripts/validate_local_quarantine_staging_model.py --json
   - id: local_quarantine_staging_model_tests
     run: python -m unittest tests.operations.test_local_quarantine_staging_model tests.scripts.test_validate_local_quarantine_staging_model
+  - id: staging_report_path_contract_validator
+    run: python scripts/validate_staging_report_path_contract.py
+  - id: staging_report_path_contract_validator_json
+    run: python scripts/validate_staging_report_path_contract.py --json
+  - id: staging_report_path_contract_tests
+    run: python -m unittest tests.operations.test_staging_report_path_contract tests.scripts.test_validate_staging_report_path_contract
   - id: public_alpha_status
     run: python scripts/demo_http_api.py --mode public_alpha status
   - id: public_alpha_smoke

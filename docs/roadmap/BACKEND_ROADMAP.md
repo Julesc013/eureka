@@ -315,12 +315,13 @@ The next backend sequence is:
 86. Pack Import Report Format v0 (implemented as report schema, synthetic passed/failed/unknown examples, stdlib validator, docs, audit pack, and tests; no import runtime, staging, indexing, uploads, runtime mutation, model calls, network behavior, or master-index mutation)
 87. Validate-Only Pack Import Tool v0 (implemented as explicit-root/all-examples preflight tooling that delegates to existing validators and emits Pack Import Report v0; no import, staging, indexing, upload, runtime mutation, network behavior, model calls, public-search mutation, or master-index mutation)
 88. Local Quarantine/Staging Model v0 (implemented as planning/governance local-state model, path policy, audit pack, validator, and tests; no staging runtime, staged state, pack copying, import, local index mutation, public-search mutation, upload, network/model calls, or master-index mutation)
+89. Staging Report Path Contract v0 (implemented as planning/governance report path contract, local-state inventory, docs, audit pack, validator, tests, and validate-only output-root enforcement; no report path runtime, staging runtime, staged state, import, local index mutation, public-search mutation, upload, or master-index mutation)
 
 ## Immediate Next Milestone
 
 The next implementation milestone should be:
 
-> Staging Report Path Contract v0
+> Local Staging Manifest Format v0
 
 Why this comes next:
 
@@ -455,9 +456,15 @@ Why this comes next:
   It defines future private roots, staged entity vocabulary, Pack Import
   Report v0 linking, reset/delete/export requirements, and native/relay/
   snapshot boundaries while creating no staging runtime or staged state and
-  preserving no-impact defaults for search and the master index. Staging
-  Report Path Contract v0 is the next Codex-safe milestone; Manual Observation
-  Batch 0 Execution remains human-operated parallel work.
+  preserving no-impact defaults for search and the master index.
+- Staging Report Path Contract v0 is implemented as planning/governance only.
+  It defines stdout-by-default report output, explicit output paths,
+  forbidden public/runtime/canonical roots, future ignored local-private report
+  roots, filename safety, redaction, and validate-only output-root enforcement
+  while creating no report path runtime, staging runtime, staged state, import,
+  search impact, or master-index impact. Local Staging Manifest Format v0 is
+  the next Codex-safe milestone; Manual Observation Batch 0 Execution remains
+  human-operated parallel work.
 - GitHub Pages Workflow Repair v0 remains an operator/Pages follow-up before
   any hosted deployment-success claim is made.
 - Native Client Project Readiness Review v0 now records the evidence decision

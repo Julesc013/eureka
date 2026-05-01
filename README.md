@@ -248,7 +248,18 @@ Local Quarantine/Staging Model v0 now adds
 staging runtime exists, no staged state is created, and future local state is
 private by default, ignored for development roots, resettable/deletable, and
 kept out of public search and the master index. The next Codex-safe milestone
-is Staging Report Path Contract v0.
+was Staging Report Path Contract v0.
+Staging Report Path Contract v0 now adds
+`control/inventory/local_state/staging_report_path_contract.json`,
+`docs/reference/STAGING_REPORT_PATH_CONTRACT.md`,
+`docs/operations/LOCAL_REPORT_PATHS.md`,
+`scripts/validate_staging_report_path_contract.py`, and
+`control/audits/staging-report-path-contract-v0/`. It keeps report output on
+stdout by default, requires explicit output paths for file writes, blocks
+forbidden public/runtime/canonical roots, requires redaction, and creates no
+report path runtime, staging runtime, staged state, search impact, or
+master-index impact. The next Codex-safe milestone is Local Staging Manifest
+Format v0.
 Public Search Result Card Contract v0 now defines the canonical contract-only
 result-card envelope under `contracts/api/search_result_card.v0.json`,
 `contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
@@ -799,12 +810,12 @@ Eureka is substantial, but it is still a prototype/reference backend:
 
 Accepted immediate next milestone:
 
-1. Staging Report Path Contract v0
-2. Local Staging Manifest Format v0
-3. Staged Pack Inspector v0
-4. Manual Observation Batch 0 Execution, human-operated parallel work
-5. Search Usefulness Baseline Comparison Report v0 after observations
-6. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+1. Local Staging Manifest Format v0
+2. Staged Pack Inspector v0
+3. Manual Observation Batch 0 Execution, human-operated parallel work
+4. Search Usefulness Baseline Comparison Report v0 after observations
+5. IA Metadata Live Probe Approval Pack v0 only after explicit approval
+6. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
 7. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
    deployment-success claim
 

@@ -17,6 +17,12 @@ is created, and any future native staging UI must remain local_private,
 resettable, deletable, and excluded from relay/snapshot/public-search output
 by default.
 
+Staging Report Path Contract v0 adds that future native report roots should use
+application-local private storage unless a user explicitly chooses another
+root. Validate-only report output remains stdout by default, file writes need
+explicit output paths, and private paths require redaction before reports are
+committed, exported, relayed, snapshotted, or submitted for review.
+
 Public cache and private cache must be separate:
 
 - public cache may contain already-public metadata and snapshot validation

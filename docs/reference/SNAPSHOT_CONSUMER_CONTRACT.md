@@ -244,6 +244,10 @@ and local. Snapshots may include pack-derived records only after separate
 review/publication milestones; validate-only or quarantined packs must not
 change snapshot contents by default.
 
+Staging Report Path Contract v0 keeps validate-only reports, staging reports,
+and local staging manifests out of snapshots by default. Snapshot examples must
+not contain private local report paths or unredacted local roots.
+
 AI Provider Contract v0 keeps AI output out of snapshots by default. Future
 snapshots may include AI-derived public records only after typed output
 validation, evidence review, provenance retention, and master-index/publication

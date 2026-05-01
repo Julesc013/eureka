@@ -1442,3 +1442,31 @@ claim canonical truth, or mutate the master index. The next Codex-safe
 milestone is Staging Report Path Contract v0; Local Staging Manifest Format v0
 is the alternative, while Manual Observation Batch 0 Execution remains
 human-operated parallel work.
+
+## ADR-126: Define Report Paths Before Local Staging Manifests
+
+Status: accepted
+
+Staging Report Path Contract v0 adds
+`control/inventory/local_state/staging_report_path_contract.json`,
+`docs/reference/STAGING_REPORT_PATH_CONTRACT.md`,
+`docs/operations/LOCAL_REPORT_PATHS.md`,
+`scripts/validate_staging_report_path_contract.py`, focused tests,
+`.eureka-reports/` ignore protection, validate-only output-root enforcement,
+and `control/audits/staging-report-path-contract-v0/`.
+
+The decision is to make report output stdout by default, require explicit
+output paths for file writes, reject forbidden public/runtime/canonical repo
+roots, define future ignored local-private report roots, and require redaction
+of private local paths before reports can be committed, published, projected by
+relay, included in snapshots, or used for contribution/master-index review.
+
+P46 deliberately does not implement report path runtime, staging runtime,
+staged state, source/evidence/index/contribution pack import, master-index
+queue import, local index mutation, runtime source registry mutation,
+public-search mutation, upload, submission, moderation UI, accounts, identity,
+model calls, API keys, live fetch, executable plugin loading, downloads,
+installers, native clients, relay runtime, snapshot reader runtime, rights
+clearance, malware-safety claims, canonical truth selection, or production
+support. The next Codex-safe milestone is Local Staging Manifest Format v0;
+Staged Pack Inspector v0 follows.
