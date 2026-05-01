@@ -382,3 +382,7 @@ fetch, or production safety claim.
   store, public search candidate injection, candidate promotion runtime, source
   cache mutation, evidence ledger mutation, local-index mutation, or
   master-index mutation.
+
+## Candidate Promotion Policy v0
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

@@ -1,0 +1,225 @@
+{
+  "report_id": "candidate_promotion_policy_v0",
+  "created_by_slice": "P65 Candidate Promotion Policy v0",
+  "repo_head": "adeb1174532be5682ce9a780d81872d392fa374c",
+  "branch": "main",
+  "worktree_status": "dirty_with_p65_changes_validated_pending_commit",
+  "contract_file": "contracts/query/candidate_promotion_assessment.v0.json",
+  "validator_scripts": [
+    "scripts/validate_candidate_promotion_assessment.py",
+    "scripts/validate_candidate_promotion_policy.py",
+    "scripts/dry_run_candidate_promotion_assessment.py"
+  ],
+  "example_promotion_assessments": [
+    "examples/candidate_promotion/minimal_promotion_review_required_v0/CANDIDATE_PROMOTION_ASSESSMENT.json",
+    "examples/candidate_promotion/minimal_rejection_assessment_v0/CANDIDATE_PROMOTION_ASSESSMENT.json",
+    "examples/candidate_promotion/minimal_quarantine_assessment_v0/CANDIDATE_PROMOTION_ASSESSMENT.json",
+    "examples/candidate_promotion/minimal_supersession_assessment_v0/CANDIDATE_PROMOTION_ASSESSMENT.json"
+  ],
+  "candidate_promotion_policy": "control/inventory/query_intelligence/candidate_promotion_policy.json",
+  "eligibility_gates": [
+    "structure_valid",
+    "candidate_type_allowed",
+    "source_policy_allowed",
+    "provenance_present",
+    "evidence_sufficient",
+    "privacy_safe",
+    "rights_review_complete",
+    "risk_review_complete",
+    "conflict_review_complete",
+    "duplicate_review_complete",
+    "compatibility_review_complete",
+    "member_evidence_present",
+    "checksum_or_identifier_present",
+    "human_review_complete",
+    "policy_review_complete",
+    "operator_review_complete",
+    "external_source_policy_complete"
+  ],
+  "evidence_sufficiency_model": [
+    "none",
+    "insufficient",
+    "candidate_only",
+    "source_backed",
+    "multi_source_backed",
+    "review_required",
+    "sufficient_for_review_future"
+  ],
+  "provenance_sufficiency_model": [
+    "missing",
+    "partial",
+    "pack_referenced",
+    "source_referenced",
+    "validation_report_referenced",
+    "review_queue_referenced_future",
+    "sufficient_for_review_future"
+  ],
+  "source_policy_gates": [
+    "allowed_fixture",
+    "allowed_recorded_fixture",
+    "allowed_source_cache_future",
+    "live_probe_after_approval_future",
+    "source_terms_review_required",
+    "source_disallowed",
+    "unknown"
+  ],
+  "privacy_rights_risk_gates": {
+    "privacy": [
+      "public_safe",
+      "redacted",
+      "local_private",
+      "restricted",
+      "rejected_sensitive",
+      "unknown"
+    ],
+    "rights": [
+      "public_metadata_only",
+      "source_terms_apply",
+      "review_required",
+      "restricted",
+      "unknown"
+    ],
+    "risk": [
+      "metadata_only",
+      "executable_reference",
+      "private_data_risk",
+      "credential_risk",
+      "malware_review_required",
+      "unknown"
+    ]
+  },
+  "conflict_duplicate_gates": {
+    "conflict_status": [
+      "none_known",
+      "possible_duplicate",
+      "identity_conflict",
+      "version_conflict",
+      "source_conflict",
+      "compatibility_conflict",
+      "evidence_conflict",
+      "rights_or_access_conflict",
+      "unresolved",
+      "unknown"
+    ],
+    "destructive_merge_allowed": false
+  },
+  "confidence_review_model": {
+    "confidence_not_truth_required": true,
+    "confidence_sufficient_for_promotion_in_examples": false,
+    "promotion_allowed_now": false,
+    "promotion_policy_required": true
+  },
+  "recommended_decision_taxonomy": [
+    "no_action",
+    "reject_candidate",
+    "quarantine_candidate",
+    "request_more_evidence",
+    "request_source_policy_review",
+    "request_rights_risk_review",
+    "mark_duplicate_candidate",
+    "supersede_candidate_future",
+    "eligible_for_review_queue_future",
+    "eligible_for_promotion_future",
+    "not_eligible"
+  ],
+  "no_auto_promotion_no_mutation_guarantees": {
+    "runtime_promotion_implemented": false,
+    "automatic_promotion_allowed": false,
+    "candidate_promotion_runtime_implemented": false,
+    "promotion_performed": false,
+    "accepted_as_truth": false,
+    "promoted_to_master_index": false,
+    "master_index_mutation_allowed": false,
+    "source_registry_mutation_allowed": false,
+    "source_cache_mutation_allowed": false,
+    "evidence_ledger_mutation_allowed": false,
+    "public_index_mutation_allowed": false,
+    "local_index_mutation_allowed": false,
+    "candidate_index_mutation_allowed": false,
+    "public_search_candidate_injection_allowed": false,
+    "telemetry_implemented": false,
+    "public_query_logging_enabled": false,
+    "external_calls_performed": false,
+    "live_probes_enabled": false
+  },
+  "runtime_status": {
+    "runtime_promotion_implemented": false,
+    "automatic_promotion_allowed": false,
+    "candidate_promotion_runtime_implemented": false,
+    "review_queue_runtime_implemented": false,
+    "candidate_index_runtime_implemented": false,
+    "source_cache_runtime_implemented": false,
+    "evidence_ledger_runtime_implemented": false,
+    "telemetry_implemented": false,
+    "public_search_runtime_wired": false
+  },
+  "command_results": {
+    "verified_at_local_date": "2026-05-02",
+    "p65_required": {
+      "python scripts/validate_candidate_promotion_assessment.py --all-examples": "passed",
+      "python scripts/validate_candidate_promotion_assessment.py --all-examples --json": "passed",
+      "python scripts/validate_candidate_promotion_policy.py": "passed",
+      "python scripts/validate_candidate_promotion_policy.py --json": "passed",
+      "python scripts/dry_run_candidate_promotion_assessment.py --candidate-label \"Firefox ESR Windows XP compatibility candidate\" --candidate-type compatibility_claim_candidate --json": "passed"
+    },
+    "p65_tests": {
+      "python -m unittest tests.operations.test_candidate_promotion_policy tests.scripts.test_validate_candidate_promotion_assessment tests.scripts.test_validate_candidate_promotion_policy tests.scripts.test_dry_run_candidate_promotion_assessment": "passed"
+    },
+    "regression_sweep": {
+      "total_commands": 60,
+      "passed_commands": 60,
+      "failed_commands": 0,
+      "skipped_missing_commands": 0,
+      "included_query_intelligence_regressions": true,
+      "included_public_search_static_and_runtime_regressions": true,
+      "included_unit_discovery_lanes": true,
+      "included_architecture_boundaries": true
+    },
+    "search_usefulness_and_archive_eval_status": {
+      "archive_resolution_evals": {
+        "status": "passed",
+        "status_counts": {
+          "satisfied": 6
+        }
+      },
+      "search_usefulness_audit": {
+        "status": "passed",
+        "eureka_status_counts": {
+          "covered": 5,
+          "partial": 40,
+          "source_gap": 10,
+          "capability_gap": 7,
+          "unknown": 2
+        }
+      },
+      "external_baseline_status": {
+        "status": "ready",
+        "global_pending_manual_observation_slots": 192,
+        "batch_0_pending_manual_observation_slots": 39,
+        "observed_slots": 0
+      }
+    },
+    "optional": {
+      "cargo --version": "unavailable: cargo is not recognized in this environment",
+      "cargo check --workspace --manifest-path crates/Cargo.toml": "not_run: cargo unavailable",
+      "cargo test --workspace --manifest-path crates/Cargo.toml": "not_run: cargo unavailable"
+    },
+    "final_local_checks": {
+      "git diff --check": "passed",
+      "git status --short --branch": "passed: dirty with P65 changes before commit"
+    }
+  },
+  "remaining_blockers": [
+    "Candidate promotion runtime is intentionally not implemented.",
+    "Automatic acceptance is intentionally forbidden.",
+    "Master index, public index, local index, source registry, source cache, and evidence ledger mutation remain unavailable.",
+    "Review queue runtime remains future work.",
+    "Rights clearance and malware safety are not claimed.",
+    "Hosted backend deployment remains operator-gated."
+  ],
+  "next_recommended_branch": "P66 Known Absence Page v0",
+  "notes": [
+    "P65 defines recommendation-only candidate promotion assessments.",
+    "No telemetry, runtime promotion, automatic acceptance, candidate mutation, source-cache mutation, evidence-ledger mutation, index mutation, external calls, or live probes were added."
+  ]
+}
