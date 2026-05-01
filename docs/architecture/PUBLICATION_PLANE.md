@@ -225,6 +225,12 @@ Repository Shape Consolidation v0 and Static Artifact Promotion Review v0 make
 `site/dist/` the active static artifact for local validation and Pages upload
 configuration. They do not add public search, backend hosting, live probes, or
 production claims.
+Static Deployment Evidence / GitHub Pages Repair v0 confirms the workflow still
+uploads `site/dist` and the local artifact validates, but current-head GitHub
+Actions/Pages status is unverified because `gh` is unavailable in the local
+environment. Prior committed evidence records a Pages configuration failure
+before artifact upload. This is an operator-gated deployment evidence gap, not
+a live backend or public search deployment.
 
 Generated Public Data Summaries v0 projects safe machine-readable files under
 `/data/` without live data or external observations. Those files prepare later

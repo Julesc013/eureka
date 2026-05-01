@@ -13,6 +13,9 @@
       "workflow_path": ".github/workflows/pages.yml",
       "workflow_configured": true,
       "deployment_success_claimed": false,
+      "deployment_verified": false,
+      "deployment_status": "workflow_configured_deployment_unverified",
+      "operator_action_required": true,
       "backend_supported": false,
       "live_probes_supported": false,
       "custom_domain_status": "future",
@@ -20,6 +23,7 @@
       "notes": [
         "Current static GitHub Pages target.",
         "The workflow uploads site/dist only.",
+        "P52 records current deployment evidence as unverified/operator-gated because gh is unavailable locally and prior committed evidence shows a Pages configuration failure.",
         "No backend, live probes, custom domain, or deployment-success claim is included."
       ]
     },

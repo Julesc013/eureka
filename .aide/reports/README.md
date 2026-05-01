@@ -209,3 +209,11 @@ bounded remediation governance only and does not add hosted backend behavior,
 live probes, source connectors, AI runtime, pack import, staging runtime,
 external observations, downloads, uploads, accounts, or deployment-success
 claims.
+
+Static Deployment Evidence / GitHub Pages Repair v0 records its committed
+audit pack under `control/audits/static-deployment-evidence-v0/`, plus a
+validator and tests under `scripts/` and `tests/`. No separate AIDE runtime
+report is needed; this is static deployment evidence governance only and does
+not add backend hosting, public search hosting, live probes, source connectors,
+credentials, telemetry, accounts, uploads, downloads, installers, or
+deployment-success claims.

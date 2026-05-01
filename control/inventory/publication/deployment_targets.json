@@ -18,13 +18,16 @@
       "deployment_workflow_path": ".github/workflows/pages.yml",
       "workflow_configured": true,
       "deployment_success_claimed": false,
+      "deployment_verified": false,
       "deployment_status": "workflow_configured_deployment_unverified",
+      "operator_action_required": true,
       "static_host_readiness_validator": "scripts/validate_static_host_readiness.py",
       "notes": [
         "Project Pages must not define public route architecture.",
         "The workflow validates generated public data freshness, publication inventory, and site/dist before uploading the artifact.",
         "Repository Shape Consolidation v0 makes site/dist the single generated static artifact uploaded by the workflow.",
         "Workflow configuration does not prove a GitHub Actions deployment run succeeded.",
+        "Static Deployment Evidence / GitHub Pages Repair v0 records current-head deployment as unverified because gh is unavailable locally; prior committed evidence records a Pages configuration failure before artifact upload.",
         "Custom Domain / Alternate Host Readiness v0 confirms this target remains project-path static hosting under /eureka/.",
         "No Python backend, live probes, custom domain, secrets, or generator deployment is added by this target."
       ]

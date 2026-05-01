@@ -670,3 +670,14 @@ unavailable, external baselines pending/manual, live probes disabled, AI
 runtime absent, and Rust optional/parity-only. The next branch is
 `p52-static-deployment-evidence-github-pages-repair-v0` unless Pages evidence
 is verified separately first.
+
+Static Deployment Evidence / GitHub Pages Repair v0 records the P52 checkpoint
+under `control/audits/static-deployment-evidence-v0/`. It verifies the local
+static deployment path as configured and valid for `site/dist`, records `gh` as
+unavailable in this environment, keeps current-head Pages deployment
+unverified/operator-gated, and preserves the prior committed evidence of a
+Pages configuration failure before artifact upload. It adds no hosted backend,
+public search hosting, live probes, credentials, telemetry, accounts, uploads,
+downloads, installers, or production claim. The Codex-safe next branch is
+`p53-public-search-production-contract-v0`; the operator-parallel follow-up is
+GitHub Pages evidence capture after repository Pages settings are enabled.

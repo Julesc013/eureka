@@ -678,9 +678,23 @@
     {
       "id": "static_deployment_evidence_github_pages_repair_v0",
       "title": "P52 Static Deployment Evidence / GitHub Pages Repair v0",
-      "status": "recommended_next_operator_gated",
+      "status": "completed_operator_gated",
       "priority": 92,
-      "notes": "Next branch should enable/verify GitHub Pages through operator settings and run evidence only. Do not add backend hosting, live probes, source connectors, custom domains, secrets, or production claims in this branch."
+      "notes": "Implemented P52 static deployment evidence under control/audits/static-deployment-evidence-v0 with validator/tests and metadata. Workflow remains configured for site/dist and local artifact checks pass, but gh is unavailable locally and current-head Pages status remains unverified/operator-gated. No backend hosting, public search hosting, live probes, source connectors, custom domains, secrets, telemetry, or production claims were added."
+    },
+    {
+      "id": "public_search_production_contract_v0",
+      "title": "P53 Public Search Production Contract v0",
+      "status": "recommended_next_codex_safe",
+      "priority": 93,
+      "notes": "Next Codex-safe branch should define production-facing public search contracts without hosting, live probes, source connector runtime, telemetry, accounts, uploads, downloads, AI runtime, or production claims. GitHub Pages operator evidence capture may proceed in parallel."
+    },
+    {
+      "id": "github_pages_operator_evidence_capture_v0",
+      "title": "P52A GitHub Pages Operator Evidence Capture v0",
+      "status": "operator_gated_parallel",
+      "priority": 94,
+      "notes": "Human/operator follow-up: enable Pages Source: GitHub Actions, rerun or dispatch the Pages workflow, record run URL, deployed URL, commit SHA, and page checks. Do not fabricate deployment evidence."
     }
   ]
 }

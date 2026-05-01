@@ -1612,3 +1612,28 @@ runtime indexes, mutate the master index, wire Rust into runtime, or claim
 production readiness. The next branch is
 `p52-static-deployment-evidence-github-pages-repair-v0` unless Pages deployment
 evidence is separately verified first.
+
+## ADR-132: Treat Static Deployment Evidence As Evidence, Not Hosting
+
+Status: accepted
+
+Static Deployment Evidence / GitHub Pages Repair v0 adds
+`control/audits/static-deployment-evidence-v0/`,
+`scripts/validate_static_deployment_evidence.py`, focused tests, and metadata
+updates.
+
+The decision is to verify and record the static GitHub Pages path without
+inventing deployment state. The Pages workflow is already configured for
+`site/dist`, local static artifact validation passes, and the static artifact
+checker accepts the current artifact. `gh` is unavailable in this environment,
+so current-head Actions and Pages API evidence are unverified. Prior committed
+evidence still records a Pages configuration failure before artifact upload and
+no deployment URL.
+
+P52 deliberately does not add hosted backend behavior, public search hosting,
+live probes, source connectors, external source calls, scraping, model calls,
+AI runtime, credentials, telemetry, accounts, uploads, downloads, installers,
+deployment provider config, custom-domain setup, index mutation, master-index
+mutation, or production readiness claims. The next Codex-safe branch is
+`p53-public-search-production-contract-v0`; GitHub Pages settings enablement
+and deployment evidence capture remain operator-parallel work.

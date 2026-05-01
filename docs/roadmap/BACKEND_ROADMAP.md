@@ -563,3 +563,12 @@ query intelligence runtime, live probes, deployment operations, and connector
 runtime remain future gated work. The next backend-facing branch is
 `p52-static-deployment-evidence-github-pages-repair-v0`, then Public Search
 Production Contract v0 after deployment evidence is resolved.
+
+Static Deployment Evidence / GitHub Pages Repair v0 records the P52 checkpoint
+under `control/audits/static-deployment-evidence-v0/`. The Pages workflow
+remains static-only and points at `site/dist`; the local artifact validates;
+`gh` is unavailable locally, so current-head Actions/Pages status is
+unverified; prior committed evidence still shows a Pages configuration failure
+before artifact upload. Backend behavior remains unchanged. The next
+backend-facing branch is `p53-public-search-production-contract-v0`, while
+GitHub Pages enablement and deployment evidence capture remain operator work.

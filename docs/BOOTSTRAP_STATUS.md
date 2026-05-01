@@ -798,6 +798,18 @@ mutation, external observations, or deployment-success claim. The next branch
 is `p52-static-deployment-evidence-github-pages-repair-v0` unless Pages
 deployment evidence is verified first.
 
+Static Deployment Evidence / GitHub Pages Repair v0 is recorded under
+`control/audits/static-deployment-evidence-v0/`. It confirms the Pages workflow
+is configured for `site/dist` and local static artifact validation passes, but
+`gh` is unavailable in this environment and current-head GitHub Actions/Pages
+status remains unverified. Prior committed evidence still records a Pages
+configuration failure before artifact upload. P52 adds no backend hosting,
+public search hosting, live probes, source connector runtime, credentials,
+telemetry, accounts, uploads, downloads, installers, or deployment-success
+claim. Codex-safe next work may proceed to
+`p53-public-search-production-contract-v0`; operator-parallel work remains
+GitHub Pages settings enablement and evidence capture.
+
 ## Deferred Priorities
 
 These are intentionally not the next milestone:

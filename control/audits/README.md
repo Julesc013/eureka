@@ -265,6 +265,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   remaining human/approval/operator gates without adding hosted backend
   behavior, live probes, source connectors, AI runtime, pack import, staging
   runtime, index mutation, external observations, or deployment-success claims.
+- `static-deployment-evidence-v0/`: P52 static deployment evidence checkpoint
+  for the GitHub Pages path. It records the configured `site/dist` workflow,
+  passing local static artifact checks, unavailable local `gh` tooling,
+  prior failed Pages configuration evidence, operator steps, and deployment
+  unverified status without adding hosted backend behavior, public search
+  hosting, live probes, credentials, telemetry, accounts, uploads, downloads,
+  installers, or deployment-success claims.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

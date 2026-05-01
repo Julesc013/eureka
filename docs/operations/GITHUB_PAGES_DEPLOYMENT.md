@@ -9,8 +9,8 @@ site/dist/
 
 It does not host the Python backend, does not enable live probes, make live
 Internet Archive calls, configure a custom domain, add deployment secrets,
-deploy generated `site/dist/`, or make Eureka production-ready. This is not
-production approval.
+prove that generated `site/dist/` has been deployed, or make Eureka
+production-ready. This is not production approval.
 
 Eureka is not production.
 
@@ -59,6 +59,11 @@ GitHub Pages Run Evidence Review v0 records that the current-head workflow run
 failed at `actions/configure-pages@v5` because the repository Pages site was
 not found/enabled for GitHub Actions. The static build and validation steps
 passed before that failure, but artifact upload and deployment were skipped.
+Static Deployment Evidence / GitHub Pages Repair v0 records that the workflow
+still targets `site/dist` and local artifact validation passes, but `gh` is not
+available in this environment. Current-head Actions and Pages API state are
+therefore unverified by P52, while the committed prior run evidence remains a
+failed Pages configuration run.
 
 ## Repository Settings
 
@@ -81,6 +86,10 @@ operator steps are:
    complete.
 6. Record the workflow run URL, deployment URL, deployed commit SHA, and
    timestamp in a future run-evidence audit.
+7. Open the deployed root page, status page, sources page, search handoff page,
+   lite surface, text surface, and files surface.
+8. Record screenshot or text evidence if desired, then update a future evidence
+   audit with the run URL and deployed commit.
 
 Until that evidence exists, the local state is `workflow_configured` and
 `deployment_unverified`; Pages enablement remains operator-gated.
