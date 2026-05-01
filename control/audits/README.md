@@ -320,3 +320,9 @@ separate audit pack. It constrains the local runtime and future hosted review,
 and adds no rate-limit middleware, auth/accounts, telemetry runtime, hosted
 backend, live probes, downloads, uploads, local path search, arbitrary URL
 fetch, or production safety claim.
+## Hosted Public Search Rehearsal v0
+
+- Path: `control/audits/hosted-public-search-rehearsal-v0/`
+- Scope: local hosted-mode public search rehearsal over localhost HTTP.
+- Status: local evidence only; no hosted deployment or production readiness
+  claim.
