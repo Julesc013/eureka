@@ -1,0 +1,279 @@
+{
+  "report_id": "post_p50_remediation_v0",
+  "created_by_slice": "post_p50_remediation_pack_v0",
+  "repo_head_before": "d26d093897e5c7b09cf233c5a2771186009e8bfb",
+  "repo_head_after": "25c47a626a3ecb01f45f0cc158cab107bb228058",
+  "branch": "main",
+  "worktree_status": "audit pack under construction after first remediation commit; final status recorded in final response",
+  "p50_audit_ref": "control/audits/post-p49-platform-audit-v0/post_p49_platform_audit_report.json",
+  "p50_findings_reviewed": [
+    "root governance docs absent",
+    "license not selected",
+    "individual pack validator --all-examples CLI drift",
+    "GitHub Pages deployment evidence blocked/unverified",
+    "command matrix and test registry need P51 entries",
+    "generated artifact drift needs recheck",
+    "Cargo unavailable",
+    "security/privacy/rights/ops gaps remain"
+  ],
+  "remediation_items": [
+    {
+      "item_id": "p51-root-contributing",
+      "finding": "Root CONTRIBUTING.md was absent.",
+      "action_taken": "Added minimal pre-production contribution guidance.",
+      "classification_before": "blocked",
+      "classification_after": "planning_only",
+      "fixed": "fixed",
+      "remaining_status": "fixed",
+      "notes": "Repository workflow only; no hosted contribution intake."
+    },
+    {
+      "item_id": "p51-root-security",
+      "finding": "Root SECURITY.md was absent.",
+      "action_taken": "Added conservative security guidance without a fabricated email.",
+      "classification_before": "blocked",
+      "classification_after": "planning_only",
+      "fixed": "fixed",
+      "remaining_status": "partially_fixed",
+      "notes": "Private contact remains pending."
+    },
+    {
+      "item_id": "p51-root-code-of-conduct",
+      "finding": "Root CODE_OF_CONDUCT.md was absent.",
+      "action_taken": "Added concise project-specific conduct standard.",
+      "classification_before": "blocked",
+      "classification_after": "planning_only",
+      "fixed": "fixed",
+      "remaining_status": "partially_fixed",
+      "notes": "Private reporting contact remains pending."
+    },
+    {
+      "item_id": "p51-license-selection",
+      "finding": "Root LICENSE absent and licensing not finalized.",
+      "action_taken": "Added docs/operations/LICENSE_SELECTION_REQUIRED.md and did not fabricate an OSI license.",
+      "classification_before": "blocked",
+      "classification_after": "blocked",
+      "fixed": "human_pending",
+      "remaining_status": "human_pending",
+      "notes": "README states no license file is present and licensing is not finalized."
+    },
+    {
+      "item_id": "p51-pack-validator-cli-drift",
+      "finding": "Individual pack validators did not accept --all-examples.",
+      "action_taken": "Added registry-backed --all-examples and --known-examples aliases to individual validators and tests.",
+      "classification_before": "blocked",
+      "classification_after": "fixed",
+      "fixed": "fixed",
+      "remaining_status": "fixed",
+      "notes": "No import, staging, indexing, upload, network, or master-index mutation behavior added."
+    },
+    {
+      "item_id": "p51-github-pages-evidence",
+      "finding": "GitHub Pages deployment evidence remained blocked/unverified.",
+      "action_taken": "Updated operator documentation with exact Pages source/rerun/evidence steps.",
+      "classification_before": "operator_gated",
+      "classification_after": "operator_gated",
+      "fixed": "operator_gated",
+      "remaining_status": "operator_gated",
+      "notes": "Workflow is configured for site/dist; no deployment success is claimed."
+    },
+    {
+      "item_id": "p51-command-matrix-drift",
+      "finding": "P51 validator and command metadata needed publication.",
+      "action_taken": "P51 command-matrix entries are added with validator/test commands.",
+      "classification_before": "blocked",
+      "classification_after": "fixed",
+      "fixed": "fixed",
+      "remaining_status": "fixed",
+      "notes": "Metadata only."
+    },
+    {
+      "item_id": "p51-test-registry-drift",
+      "finding": "P51 validator/tests needed test registry entries.",
+      "action_taken": "P51 validator and focused tests are registered.",
+      "classification_before": "blocked",
+      "classification_after": "fixed",
+      "fixed": "fixed",
+      "remaining_status": "fixed",
+      "notes": "Metadata only."
+    },
+    {
+      "item_id": "p51-generated-artifact-recheck",
+      "finding": "P50 required generated artifact recheck after remediation.",
+      "action_taken": "Static and generated artifact checks are recorded in command results.",
+      "classification_before": "blocked",
+      "classification_after": "fixed",
+      "fixed": "fixed",
+      "remaining_status": "fixed",
+      "notes": "No generated behavior change is claimed."
+    },
+    {
+      "item_id": "p51-cargo-unavailable",
+      "finding": "Cargo unavailable in P50 environment.",
+      "action_taken": "Rechecked Cargo and recorded unavailable status.",
+      "classification_before": "blocked",
+      "classification_after": "blocked",
+      "fixed": "blocked",
+      "remaining_status": "blocked",
+      "notes": "Rust remains optional/parity-only until toolchain is installed."
+    },
+    {
+      "item_id": "p51-security-privacy-rights-ops-gap",
+      "finding": "Full hosted security/privacy/rights/ops policy set is incomplete.",
+      "action_taken": "Added minimal root docs and recorded future policy milestones.",
+      "classification_before": "blocked",
+      "classification_after": "planning_only",
+      "fixed": "partially_fixed",
+      "remaining_status": "partially_fixed",
+      "notes": "Hosted privacy, takedown, incident, backup, observability, and cost/quota policies remain future work."
+    }
+  ],
+  "governance_docs_status": {
+    "contributing": "present_minimal_pre_production",
+    "security": "present_minimal_pre_production",
+    "code_of_conduct": "present_minimal_pre_production",
+    "license": "not_selected_no_root_license_added",
+    "license_selection_doc": "docs/operations/LICENSE_SELECTION_REQUIRED.md",
+    "private_contact": "pending"
+  },
+  "pack_validator_cli_status": {
+    "individual_all_examples": "fixed",
+    "known_examples_alias": "fixed",
+    "registry": "control/inventory/packs/example_packs.json",
+    "mutation_behavior_added": false,
+    "validators": [
+      "validate_source_pack.py",
+      "validate_evidence_pack.py",
+      "validate_index_pack.py",
+      "validate_contribution_pack.py",
+      "validate_master_index_review_queue.py",
+      "validate_pack_set.py",
+      "validate_only_pack_import.py"
+    ]
+  },
+  "github_pages_status": {
+    "workflow_configured": true,
+    "artifact_path": "site/dist",
+    "deployment_verified": false,
+    "deployment_success_claim": false,
+    "operator_gated_pages_enablement_required": true,
+    "evidence_missing": [
+      "successful workflow run URL",
+      "deployment URL",
+      "deployed commit SHA",
+      "deployment timestamp"
+    ]
+  },
+  "command_matrix_status": {
+    "p51_entries_added": true,
+    "cargo_marked_optional_unavailable": true,
+    "pack_validator_cli_aliases_recorded": true
+  },
+  "generated_artifact_status": {
+    "site_build_check": "pending_final_recheck",
+    "site_validate": "pending_final_recheck",
+    "publication_inventory": "pending_final_recheck",
+    "github_pages_artifact_check": "pending_final_recheck",
+    "generated_artifact_drift": "pending_final_recheck"
+  },
+  "cargo_status": {
+    "cargo_available": false,
+    "cargo_version_status": "unavailable",
+    "cargo_check_status": "unavailable",
+    "cargo_test_status": "unavailable",
+    "rust_runtime_wiring": false
+  },
+  "security_privacy_rights_status": {
+    "minimal_root_docs_added": true,
+    "hosted_privacy_policy": "future",
+    "rights_takedown_workflow": "future",
+    "malware_risk_policy": "future",
+    "incident_response": "future",
+    "backup_restore": "future",
+    "observability": "future",
+    "cost_quota_governance": "future"
+  },
+  "command_results": [
+    {"command": "python scripts/validate_post_p49_platform_audit.py", "status": "pass", "notes": "P50 audit pack valid."},
+    {"command": "python scripts/check_architecture_boundaries.py", "status": "pass", "notes": "445 Python files checked, no violations."},
+    {"command": "python scripts/run_archive_resolution_evals.py", "status": "pass", "notes": "6/6 satisfied."},
+    {"command": "python scripts/run_search_usefulness_audit.py", "status": "pass", "notes": "64 queries: 5 covered, 40 partial, 10 source_gap, 7 capability_gap, 2 unknown."},
+    {"command": "python scripts/report_external_baseline_status.py --json", "status": "pass", "notes": "192 pending, 0 observed; batch_0 39 pending, 0 observed."},
+    {"command": "cargo --version", "status": "unavailable", "notes": "Cargo command not found."},
+    {"command": "individual pack validators --all-examples --json", "status": "pass", "notes": "Source/evidence/index/contribution/review-queue examples passed."},
+    {"command": "python scripts/validate_pack_set.py --known-examples --json", "status": "pass", "notes": "5/5 examples passed."},
+    {"command": "python scripts/validate_only_pack_import.py --known-examples --json", "status": "pass", "notes": "5/5 examples passed, no mutation."},
+    {"command": "focused pack validator unittest set", "status": "pass", "notes": "54 tests passed."},
+    {"command": "git diff --check", "status": "pass", "notes": "No whitespace errors; line-ending warnings only."}
+  ],
+  "remaining_blockers": [
+    "GitHub Pages deployment evidence is operator-gated and unverified.",
+    "License selection is human/legal pending.",
+    "Cargo is unavailable in this environment.",
+    "External baseline observations remain 0 observed and require human operation.",
+    "Hosted backend and public search production operations remain unavailable.",
+    "Live connectors require explicit approval.",
+    "Query intelligence runtime remains unimplemented."
+  ],
+  "human_operated_work": [
+    "Manual Observation Batch 0 Execution",
+    "License selection",
+    "Private security/contact decision"
+  ],
+  "approval_gated_work": [
+    "Live connectors",
+    "AI runtime",
+    "Local staging runtime",
+    "Native implementation",
+    "Relay implementation",
+    "Downloads/installers/uploads/accounts",
+    "Hosted contribution intake"
+  ],
+  "operator_gated_work": [
+    "Enable and verify GitHub Pages source",
+    "Record deployment URL and workflow run evidence",
+    "Backend host/domain/Cloudflare decisions for future hosted search",
+    "DNS/TLS, monitoring, rollback, database, object storage, and worker setup"
+  ],
+  "recommended_next_branch": "p52-static-deployment-evidence-github-pages-repair-v0",
+  "next_milestones": [
+    "P52 Static Deployment Evidence / GitHub Pages Repair v0",
+    "Manual Observation Batch 0 Execution",
+    "P53 Public Search Production Contract v0",
+    "Hosted Public Search Wrapper v0",
+    "Public Search Index Builder v0",
+    "Static Site Search Integration v0",
+    "Public Search Safety Evidence v0",
+    "Hosted Public Search Rehearsal v0",
+    "Query Observation Contract v0",
+    "Shared Query/Result Cache v0",
+    "Search Miss Ledger v0",
+    "Search Need Record v0",
+    "Probe Queue v0",
+    "Candidate Index v0",
+    "Candidate Promotion Policy v0",
+    "Known Absence Page v0",
+    "Query Privacy and Poisoning Guard v0",
+    "Source Cache and Evidence Ledger v0",
+    "IA Metadata Live Probe Approval Pack v0",
+    "Rust Toolchain Verification Pack v0"
+  ],
+  "do_not_do_next": [
+    "Do not scrape.",
+    "Do not enable all APIs at once.",
+    "Do not perform unbounded live Internet Archive probing.",
+    "Do not add downloads or installers.",
+    "Do not add uploads or accounts.",
+    "Do not add AI runtime.",
+    "Do not replace Python with Rust.",
+    "Do not add public contribution intake.",
+    "Do not mutate the master index from public queries."
+  ],
+  "notes": [
+    "P51 is remediation and audit metadata only beyond bounded validator CLI consistency.",
+    "No external baselines were observed.",
+    "No hosted search is available.",
+    "Live probes remain disabled.",
+    "No AI runtime or model-call path exists."
+  ]
+}
