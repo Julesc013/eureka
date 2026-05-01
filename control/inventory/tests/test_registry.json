@@ -3496,6 +3496,48 @@
       "failure_means": "Staging report path defaults, forbidden roots, redaction docs, gitignore local-state protection, audit pack, validator JSON, or validate-only tool path checks regressed.",
       "advisory_or_required": "required",
       "notes": "Covers default stdout, explicit output required, no report/staging runtime, no .eureka-local/.eureka-reports directories, no search/master-index impact, and forbidden output root enforcement."
+    },
+    {
+      "test_id": "local_staging_manifest_validator",
+      "label": "Local staging manifest validator",
+      "command": "python scripts/validate_local_staging_manifest.py --all-examples",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Local Staging Manifest Format v0 schema, example manifest, checksums, no-mutation guarantees, candidate semantics, or privacy/path safety regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic local staging manifest examples only; it creates no .eureka-local state, stages no packs, imports nothing, indexes nothing, uploads nothing, calls no network/model, and mutates neither public search nor the master index."
+    },
+    {
+      "test_id": "local_staging_manifest_tests",
+      "label": "Local staging manifest format tests",
+      "command": "python -m unittest tests.operations.test_local_staging_manifest_format tests.scripts.test_validate_local_staging_manifest",
+      "category": "contract",
+      "owner_area": "contracts/packs",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary directories only for negative manifest fixtures",
+      "expected_runtime": "seconds",
+      "failure_means": "Local staging manifest validator CLI behavior, JSON output, example manifest, audit pack, docs, or negative no-mutation/privacy tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Covers hard no-mutation fields, staged entity candidate semantics, count consistency, reset/delete/export policy, secret/private-path rejection, docs, and absence of staging runtime or staged state."
     }
   ]
 }

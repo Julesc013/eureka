@@ -345,6 +345,15 @@ Current scripts:
   checks stdout defaults, explicit output path policy, forbidden committed
   roots, ignored future local report roots, redaction documentation, and
   absence of `.eureka-local/` or `.eureka-reports/` runtime directories.
+- `validate_local_staging_manifest.py`: validates Local Staging Manifest
+  Format v0 examples or one explicit manifest/root. It supports `--manifest`,
+  `--manifest-root`, `--all-examples`, `--strict`, and `--json`; checks
+  schema fields, hard no-mutation guarantees, staged entity candidate
+  semantics, count consistency, reset/delete/export policy, example
+  checksums, private-path redaction, secret rejection, and no public-search,
+  local-index, runtime, upload, or master-index mutation claims. It does not
+  create staging runtime, staged state, `.eureka-local/` state, pack imports,
+  local indexes, network calls, or model calls.
 - `demo_http_api.py public-search`, `public-query-plan`, `public-status`,
   `public-sources`, and `public-source`: exercise the local public search
   runtime through the existing demo HTTP API harness without live probes,

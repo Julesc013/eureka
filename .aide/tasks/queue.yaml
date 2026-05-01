@@ -573,7 +573,7 @@
     {
       "id": "staged_pack_inspector_v0",
       "title": "Staged Pack Inspector v0",
-      "status": "recommended_follow_up_after_manifest_contract",
+      "status": "recommended_next_codex_safe",
       "priority": 79,
       "notes": "Future read-only inspection of quarantined/staged pack metadata, staging manifests, and validation reports after Local Staging Manifest Format v0. Do not import into runtime, index records, upload, or submit to master-index review."
     },
@@ -622,9 +622,9 @@
     {
       "id": "local_staging_manifest_format_v0",
       "title": "Local Staging Manifest Format v0",
-      "status": "recommended_next_codex_safe",
+      "status": "completed",
       "priority": 78,
-      "notes": "Recommended next milestone after Staging Report Path Contract v0. Define the future local staging manifest envelope before any staging tool exists; do not create .eureka-local state, copy packs, import records, mutate search/index, upload, or submit to the master index."
+      "notes": "Implemented contract/example/validation-only local staging manifest format with schema, synthetic example, validator, docs, audit pack, and tests. No .eureka-local state, staging runtime, staged state, pack copying, import, search/index mutation, runtime source registry mutation, upload, network/model calls, or master-index mutation was added."
     }
   ]
 }

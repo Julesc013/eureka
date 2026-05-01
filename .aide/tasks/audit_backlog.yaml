@@ -519,8 +519,17 @@
         "staging-report-path-contract-v0"
       ],
       "title": "Define local staging manifest before any staging runtime writes local state",
+      "status": "addressed_by_local_staging_manifest_format_v0",
+      "suggested_milestone": "Staged Pack Inspector v0"
+    },
+    {
+      "id": "audit-backlog-local-staging-manifest-format",
+      "finding_refs": [
+        "local-staging-manifest-format-v0"
+      ],
+      "title": "Add a read-only staged pack inspector before any staging runtime writes local state",
       "status": "open_follow_up",
-      "suggested_milestone": "Local Staging Manifest Format v0"
+      "suggested_milestone": "Staged Pack Inspector v0"
     }
   ]
 }

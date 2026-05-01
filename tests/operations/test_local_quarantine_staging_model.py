@@ -93,6 +93,7 @@ class LocalQuarantineStagingModelOperationTestCase(unittest.TestCase):
         self.assertTrue(VALIDATOR.exists())
         allowed_validators = {
             "validate_local_quarantine_staging_model.py",
+            "validate_local_staging_manifest.py",
             "validate_staging_report_path_contract.py",
         }
         suspicious_scripts = [

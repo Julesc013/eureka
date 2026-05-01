@@ -154,6 +154,12 @@ steps:
     run: python scripts/validate_staging_report_path_contract.py --json
   - id: staging_report_path_contract_tests
     run: python -m unittest tests.operations.test_staging_report_path_contract tests.scripts.test_validate_staging_report_path_contract
+  - id: local_staging_manifest_validator
+    run: python scripts/validate_local_staging_manifest.py --all-examples
+  - id: local_staging_manifest_validator_json
+    run: python scripts/validate_local_staging_manifest.py --all-examples --json
+  - id: local_staging_manifest_tests
+    run: python -m unittest tests.operations.test_local_staging_manifest_format tests.scripts.test_validate_local_staging_manifest
   - id: public_search_demo
     run: python scripts/demo_http_api.py public-search "windows 7 apps" --limit 2
   - id: public_search_query_plan_demo
