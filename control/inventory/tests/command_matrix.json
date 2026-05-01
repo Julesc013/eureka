@@ -197,7 +197,10 @@
         "static_site_search_integration_tests",
         "public_search_safety_evidence_runner",
         "public_search_safety_evidence_validator",
-        "public_search_safety_evidence_tests"
+        "public_search_safety_evidence_tests",
+        "hosted_public_search_rehearsal_runner",
+        "hosted_public_search_rehearsal_validator",
+        "hosted_public_search_rehearsal_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -392,7 +395,12 @@
         "public_search_safety_evidence_validator",
         "public_search_safety_evidence_tests",
         "public_search_safety_evidence_runner_json",
-        "public_search_safety_evidence_validator_json"
+        "public_search_safety_evidence_validator_json",
+        "hosted_public_search_rehearsal_runner",
+        "hosted_public_search_rehearsal_validator",
+        "hosted_public_search_rehearsal_tests",
+        "hosted_public_search_rehearsal_runner_json",
+        "hosted_public_search_rehearsal_validator_json"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -604,7 +612,10 @@
         "static_site_search_integration_tests",
         "public_search_safety_evidence_runner",
         "public_search_safety_evidence_validator",
-        "public_search_safety_evidence_tests"
+        "public_search_safety_evidence_tests",
+        "hosted_public_search_rehearsal_runner",
+        "hosted_public_search_rehearsal_validator",
+        "hosted_public_search_rehearsal_tests"
       ],
       "required_status": "required",
       "when_to_run": "After web/API route-policy, status, route inventory, or hosting-pack changes.",
@@ -832,7 +843,12 @@
         "public_search_safety_evidence_validator",
         "public_search_safety_evidence_tests",
         "public_search_safety_evidence_runner_json",
-        "public_search_safety_evidence_validator_json"
+        "public_search_safety_evidence_validator_json",
+        "hosted_public_search_rehearsal_runner",
+        "hosted_public_search_rehearsal_validator",
+        "hosted_public_search_rehearsal_tests",
+        "hosted_public_search_rehearsal_runner_json",
+        "hosted_public_search_rehearsal_validator_json"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -887,6 +903,7 @@
     "Post-P50 Remediation Pack v0 validation is stdlib-only audit governance. It checks required files, remediation item IDs/statuses, governance docs, pack-validator CLI remediation, Pages evidence honesty, Cargo status, gated work lists, next branch, and no product behavior expansion claims.",
     "Static Deployment Evidence / GitHub Pages Repair v0 validation is stdlib-only audit governance. It checks required files, site/dist artifact discipline, Pages workflow upload path, operator steps for unverified deployment, static-only public claims, and no hosted-backend/live-probe/dynamic-backend/deployment-success overclaim.",
     "Hosted Public Search Wrapper v0 validation is stdlib-only local rehearsal and audit governance. It checks a deployable local_index_only wrapper, safe environment defaults, route smoke behavior, templates, and no deployed-hosted/backend/live-probe/download/upload/account/telemetry/index-mutation claims.",
-    "P57 Public Search Safety Evidence checks are stdlib-only local/public-alpha safety evidence; they use an in-process hosted-wrapper harness and add no deployment, live probes, external calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or production claim."
+    "P57 Public Search Safety Evidence checks are stdlib-only local/public-alpha safety evidence; they use an in-process hosted-wrapper harness and add no deployment, live probes, external calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or production claim.",
+    "P58 Hosted Public Search Rehearsal checks are stdlib-only localhost hosted-mode evidence; they start a local wrapper process and add no deployment, external calls, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or production claim."
   ]
 }

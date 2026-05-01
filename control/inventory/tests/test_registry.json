@@ -4368,6 +4368,109 @@
       "failure_means": "Focused P57 evidence, validator, audit pack, static handoff, public index, or hard false boolean tests regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P57 tests; no external calls, deployment, live probes, model calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or index mutation."
+    },
+    {
+      "test_id": "hosted_public_search_rehearsal_runner",
+      "label": "Hosted public search rehearsal runner",
+      "command": "python scripts/run_hosted_public_search_rehearsal.py",
+      "category": "hosted_rehearsal",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "localhost_only",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The local hosted-mode public search rehearsal failed to start or prove route, safe-query, blocked-request, static-handoff, public-index, or template compatibility.",
+      "advisory_or_required": "required",
+      "notes": "Added by P58; starts only a localhost wrapper process and performs no deployment, provider calls, external source calls, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or index mutation."
+    },
+    {
+      "test_id": "hosted_public_search_rehearsal_runner_json",
+      "label": "Hosted public search rehearsal runner JSON",
+      "command": "python scripts/run_hosted_public_search_rehearsal.py --json",
+      "category": "hosted_rehearsal",
+      "owner_area": "scripts",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "localhost_only",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Machine-readable hosted rehearsal evidence could not be produced.",
+      "advisory_or_required": "required",
+      "notes": "P58 JSON evidence for startup, health, route, blocked request, static handoff, public index, and template review."
+    },
+    {
+      "test_id": "hosted_public_search_rehearsal_validator",
+      "label": "Hosted public search rehearsal validator",
+      "command": "python scripts/validate_hosted_public_search_rehearsal.py",
+      "category": "audit_validation",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "localhost_only",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The P58 audit pack, hard false booleans, local rehearsal evidence, rate-limit honesty, or docs drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates P58 and reruns local rehearsal without external network or hosted deployment claims."
+    },
+    {
+      "test_id": "hosted_public_search_rehearsal_validator_json",
+      "label": "Hosted public search rehearsal validator JSON",
+      "command": "python scripts/validate_hosted_public_search_rehearsal.py --json",
+      "category": "audit_validation",
+      "owner_area": "scripts",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "localhost_only",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Machine-readable P58 validation output stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable validator for P58."
+    },
+    {
+      "test_id": "hosted_public_search_rehearsal_tests",
+      "label": "Hosted public search rehearsal tests",
+      "command": "python -m unittest tests.operations.test_hosted_public_search_rehearsal tests.scripts.test_run_hosted_public_search_rehearsal tests.scripts.test_validate_hosted_public_search_rehearsal",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "localhost_only",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P58 runner, validator, audit pack, local-only URL guard, static handoff, public index, or hard false boolean tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P58 tests; no deployment, external source calls, live probes, model calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or index mutation."
     }
   ]
 }
