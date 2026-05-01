@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/search_miss_classification.v0.json",
+  "title": "EurekaSearchMissClassificationV0",
+  "description": "Contract-only classification taxonomy for scoped search miss ledger entries. P61 adds no miss ledger runtime, telemetry, persistence, probe queue, search need creation, candidate index mutation, or master-index mutation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "miss_type",
+    "severity",
+    "confidence",
+    "scoped_absence",
+    "global_absence_claimed"
+  ],
+  "properties": {
+    "miss_type": {
+      "type": "string",
+      "enum": [
+        "no_hits",
+        "weak_hits",
+        "near_miss_only",
+        "blocked_by_policy",
+        "source_coverage_gap",
+        "capability_gap",
+        "compatibility_evidence_gap",
+        "member_access_gap",
+        "representation_gap",
+        "query_interpretation_gap",
+        "live_probe_disabled",
+        "external_baseline_pending",
+        "unknown"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "scoped_absence": {
+      "type": "boolean"
+    },
+    "global_absence_claimed": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-contract_id": "eureka_search_miss_classification_v0",
+  "x-status": "contract_only",
+  "x-runtime_ledger_implemented": false,
+  "x-telemetry_implemented": false,
+  "x-search_need_creation_implemented": false,
+  "x-probe_queue_implemented": false
+}

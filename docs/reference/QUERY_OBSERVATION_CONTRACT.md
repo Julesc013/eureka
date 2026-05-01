@@ -66,3 +66,11 @@ contract-only Query Intelligence Plane layer. Cache entries may reference query
 observation fingerprints, but P60 still does not persist observations, write
 cache entries, publish query logs, mutate miss ledgers, enqueue probes, mutate
 candidate indexes, or mutate the master index.
+
+## Relation To Search Miss Ledger
+
+P61 adds `contracts/query/search_miss_ledger_entry.v0.json` as the contract-only
+miss layer. Miss entries may reference query observation fingerprints and
+optional cache refs, but P61 still does not persist observations, write miss
+ledger entries at runtime, create search needs, enqueue probes, mutate result
+caches, mutate candidate indexes, or mutate the master index.

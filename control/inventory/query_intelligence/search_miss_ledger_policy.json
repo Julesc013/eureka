@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eureka_search_miss_ledger_policy_v0",
+  "status": "contract_only",
+  "runtime_ledger_implemented": false,
+  "persistent_ledger_implemented": false,
+  "telemetry_implemented": false,
+  "public_query_logging_enabled": false,
+  "raw_query_retention_default": "none",
+  "privacy_filter_required": true,
+  "public_aggregate_allowed_after_filter": true,
+  "scoped_absence_required": true,
+  "global_absence_claims_allowed": false,
+  "master_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "search_need_creation_allowed": false,
+  "probe_enqueue_allowed": false,
+  "result_cache_mutation_allowed": false,
+  "external_calls_allowed": false,
+  "live_probes_allowed": false,
+  "next_contracts": [
+    "search_need_record",
+    "probe_queue",
+    "candidate_index",
+    "candidate_promotion_policy",
+    "known_absence_page",
+    "query_privacy_poisoning_guard",
+    "demand_dashboard"
+  ],
+  "notes": [
+    "P61 defines search miss ledger entries only. It does not implement runtime ledger writes, persistent ledger storage, telemetry, public query logging, search need creation, probe enqueueing, result cache mutation, candidate index mutation, local index mutation, or master-index mutation.",
+    "Miss entries must preserve checked and not-checked scope. Scoped absence is not proof outside the checked indexes, sources, capabilities, and snapshots."
+  ]
+}

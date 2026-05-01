@@ -1,0 +1,253 @@
+{
+  "schema_version": "0.1.0",
+  "miss_entry_id": "example.search_miss_ledger.windows_7_apps_weak_hits.v0",
+  "miss_entry_kind": "search_miss_ledger_entry",
+  "status": "draft_example",
+  "created_by_tool": "p61_search_miss_ledger_v0_example",
+  "query_ref": {
+    "query_observation_id": "example.query_observation.windows_7_apps.v0",
+    "query_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "normalized_query.text",
+      "value": "e2c6c7318b1705d3053bc3563ba2e89fdca7f2931854a07bd5900d31fe9ddd98",
+      "salt_policy": "unsalted_public_aggregate",
+      "reversible": false
+    },
+    "normalized_query": {
+      "text": "windows 7 apps",
+      "safe_public_terms": [
+        "windows",
+        "7",
+        "apps"
+      ],
+      "redaction_applied": false
+    },
+    "raw_query_retained": false,
+    "raw_query_redacted": true,
+    "privacy_classification": "public_safe_aggregate",
+    "limitations": [
+      "Raw query text is not retained; normalized terms are public-safe example terms."
+    ]
+  },
+  "cache_ref": {
+    "cache_entry_id": "example.search_result_cache.windows_7_apps.v0",
+    "cache_hit_state": "weak_hits",
+    "limitations": [
+      "References the P60 result-cache example only; no cache runtime lookup was performed."
+    ]
+  },
+  "miss_classification": {
+    "miss_type": "weak_hits",
+    "severity": "low",
+    "confidence": "medium",
+    "scoped_absence": true,
+    "global_absence_claimed": false
+  },
+  "miss_causes": [
+    {
+      "cause_type": "compatibility_evidence_missing",
+      "source_id": "synthetic-fixtures",
+      "source_family": "synthetic",
+      "explanation": "The example result family has useful fixture metadata but not enough source-backed compatibility evidence to satisfy a production-quality answer.",
+      "evidence_refs": [
+        "data/public_index/search_documents.ndjson"
+      ],
+      "limitations": [
+        "P61 records the weak-hit shape only; it does not fetch new compatibility evidence."
+      ]
+    },
+    {
+      "cause_type": "result_shape_mismatch",
+      "source_id": "local-bundle-fixtures",
+      "source_family": "local_bundle_fixtures",
+      "explanation": "Some candidate results may point at parent bundles or text stand-ins instead of the smallest verified actionable unit.",
+      "evidence_refs": [
+        "data/public_index/source_coverage.json"
+      ],
+      "limitations": [
+        "Near-miss and weak-hit summaries are not full result payloads."
+      ]
+    }
+  ],
+  "checked_scope": {
+    "checked_indexes": [
+      "public_index",
+      "local_index_only"
+    ],
+    "checked_sources": [
+      "data/public_index"
+    ],
+    "checked_source_families": [
+      "synthetic",
+      "local_bundle_fixtures",
+      "internet_archive_recorded"
+    ],
+    "checked_capabilities": [
+      "lexical_public_index_search",
+      "result_card_projection",
+      "compatibility_summary"
+    ],
+    "checked_index_snapshot_refs": [
+      "eureka_public_search_index_v0"
+    ],
+    "live_probes_attempted": false,
+    "external_calls_performed": false
+  },
+  "not_checked_scope": {
+    "sources_not_checked": [
+      "future source cache",
+      "private local stores",
+      "approved live probes"
+    ],
+    "source_families_not_checked": [
+      "internet_archive_live_future",
+      "wayback_live_future",
+      "package_registry_live_future"
+    ],
+    "capabilities_not_checked": [
+      "live_probe",
+      "fresh_source_sync",
+      "candidate_index",
+      "manual_external_baseline"
+    ],
+    "reasons_not_checked": [
+      "disabled_by_policy",
+      "approval_gated",
+      "not_implemented"
+    ],
+    "limitations": [
+      "Weak-hit classification is scoped to checked local_index_only public search behavior."
+    ]
+  },
+  "near_misses": [
+    {
+      "result_ref": "public_index:windows_7_apps:parent_bundle_example",
+      "title": "Windows 7 utility bundle recorded fixture",
+      "source_id": "local-bundle-fixtures",
+      "source_family": "local_bundle_fixtures",
+      "reason": "parent_bundle_only",
+      "score": 0.42,
+      "limitations": [
+        "Parent bundle context is useful but not sufficient as an exact actionable result."
+      ]
+    }
+  ],
+  "weak_hits": [
+    {
+      "result_ref": "public_index:windows_7_apps:compatibility_summary_example",
+      "title": "Windows 7 compatible application fixture summary",
+      "source_id": "synthetic-fixtures",
+      "source_family": "synthetic",
+      "score": 0.58,
+      "weakness": "insufficient_evidence",
+      "limitations": [
+        "Compatibility signal is useful but still fixture-scoped and not production-quality evidence."
+      ]
+    }
+  ],
+  "result_summary": {
+    "result_count": 10,
+    "returned_count": 10,
+    "hit_state": "weak_hits",
+    "top_score": 0.58,
+    "gap_count": 2,
+    "warning_count": 1,
+    "limitation_count": 3
+  },
+  "absence_summary": {
+    "absence_status": "no_verified_result",
+    "scoped_to": [
+      "data/public_index",
+      "eureka_public_search_index_v0"
+    ],
+    "checked": [
+      "public_index",
+      "local_index_only"
+    ],
+    "not_checked": [
+      "future source cache",
+      "private local stores",
+      "approved live probes"
+    ],
+    "global_absence_claimed": false,
+    "limitations": [
+      "Weak hits do not prove absence; they show that the checked scope lacks a verified exact result.",
+      "The miss remains scoped to checked public index sources and capabilities."
+    ]
+  },
+  "suggested_next_steps": [
+    {
+      "step_type": "add_evidence_pack_future",
+      "reason": "Future source-backed compatibility evidence could strengthen this result family.",
+      "future_only": true,
+      "approval_required": false,
+      "human_required": false
+    },
+    {
+      "step_type": "create_search_need_future",
+      "reason": "Repeated weak hits may later become a search need after privacy and poisoning review.",
+      "future_only": true,
+      "approval_required": false,
+      "human_required": false
+    }
+  ],
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe weak-hit example; raw query text and user identifiers are not retained."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "miss_entry_retention": "example_only",
+    "deletion_supported_future": true,
+    "notes": [
+      "P61 does not implement miss ledger retention runtime."
+    ]
+  },
+  "aggregation_policy": {
+    "aggregate_allowed": true,
+    "aggregate_fields_allowed": [
+      "miss_type",
+      "cause_type",
+      "source_family",
+      "capability_gap",
+      "query_intent",
+      "platform",
+      "artifact_type"
+    ],
+    "raw_query_aggregation_allowed": false,
+    "private_identifier_aggregation_allowed": false,
+    "notes": [
+      "Aggregate counts are future-only and must exclude raw queries and private identifiers."
+    ]
+  },
+  "limitations": [
+    "Synthetic miss entry only; not collected from a real user.",
+    "No persistent miss ledger runtime, telemetry, search need creation, probe enqueueing, result cache mutation, candidate index mutation, local index mutation, or master-index mutation."
+  ],
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "candidate_index_mutated": false,
+    "search_need_created": false,
+    "probe_enqueued": false,
+    "result_cache_mutated": false,
+    "query_observation_mutated": false,
+    "telemetry_exported": false,
+    "external_calls_performed": false
+  },
+  "notes": [
+    "This example validates weak-hit and near-miss summaries without creating a search need.",
+    "Future conversion to candidate work belongs to P62 through P65."
+  ]
+}

@@ -17,9 +17,20 @@ Current contracts:
   mutation, or master-index mutation.
 - `cache_key.v0.json`: reusable non-reversible cache-key model for future
   cache entries and aggregate grouping.
+- `search_miss_ledger_entry.v0.json`: search miss ledger entry record for
+  future privacy-filtered tracking of no-hit, weak-hit, near-miss, blocked, and
+  incomplete searches. P61 defines scoped miss records without adding miss
+  ledger runtime writes, persistence, telemetry, search need creation, probe
+  enqueueing, result-cache mutation, candidate-index mutation, or master-index
+  mutation.
+- `search_miss_classification.v0.json`: reusable miss classification taxonomy
+  for scoped absence and weak-result categories. It forbids global absence
+  claims in v0.
 
 Query intelligence follows "fast learning, slow truth": public queries may
 eventually inform aggregate learning, but they must not mutate authoritative
 records, enqueue probes, publish raw private data, or become surveillance.
 Shared cache entries are summaries scoped to an index snapshot, never source
-truth or global absence proof.
+truth or proof outside the checked scope.
+Miss ledger entries are scoped learning records, not search needs, probe jobs,
+candidate records, source truth, or master-index truth.

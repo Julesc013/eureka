@@ -6,8 +6,8 @@ The v0 boundary is no runtime cache writes.
 
 This contract defines future shared query/result cache entries. It has no
 runtime cache writes. It also has no persistent cache storage, no telemetry runtime, no
-public query logging, and no mutation of query observations, miss ledgers,
-search needs, probe queues, candidate indexes, local indexes, or the master
+public query logging, and no mutation of query observations, search miss ledger
+entries, search needs, probe queues, candidate indexes, local indexes, or the master
 index.
 
 ## Purpose
@@ -78,10 +78,18 @@ download/install promises, user identifiers, or credentials.
 
 ## Absence And Gaps
 
-Cached absence is scoped absence, not global proof. An absence entry must state
+Cached absence is scoped absence, not proof outside the checked scope. An absence entry must state
 what was checked, what was not checked, near-miss count, next actions, and
 limitations. `scoped_absence` means only that the referenced public index
 snapshot did not yield a verified result.
+
+## Search Miss Ledger Relationship
+
+P61 adds the search miss ledger contract as the next contract-only layer after
+the shared result cache. Cache entries may summarize no-hit, weak-hit, and gap
+outcomes; miss ledger entries explain why those outcomes were scoped misses and
+what future-only work could follow. P60 still does not write miss ledger
+entries, and P61 does not write cache entries.
 
 ## Freshness And Invalidation
 

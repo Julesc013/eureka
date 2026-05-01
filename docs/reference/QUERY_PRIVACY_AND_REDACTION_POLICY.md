@@ -1,6 +1,6 @@
 # Query Privacy And Redaction Policy
 
-Status: P59 contract policy only.
+Status: P59-P61 contract policy only.
 
 Query observations must prevent unsafe raw user data from becoming public
 evidence, telemetry, source truth, or master-index truth. Raw query retention
@@ -27,7 +27,8 @@ Public-safe query observations and examples must not contain:
 - local index hit identifiers that expose private state
 
 The same prohibited data categories apply to shared query/result cache entries,
-cache keys, cached result summaries, and absence/gap summaries.
+cache keys, cached result summaries, absence/gap summaries, and search miss
+ledger entries.
 
 If any prohibited data is detected, the observation must be rejected by the
 privacy filter or redacted before it can be considered for aggregate learning.
@@ -53,3 +54,9 @@ master-index mutation.
 P60 adds a shared query/result cache contract only. It keeps raw query retention
 default `none`, does not add runtime cache writes, and does not make cache
 entries publishable by default.
+
+P61 adds a search miss ledger contract only. It keeps raw query retention
+default `none`, requires scoped absence instead of broad absence claims, and
+does not add runtime ledger writes, telemetry, search need creation, probe
+enqueueing, result-cache mutation, candidate-index mutation, local-index
+mutation, or master-index mutation.

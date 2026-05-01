@@ -59,3 +59,11 @@ validation lane.
 This policy does not implement telemetry, analytics, log upload, diagnostics
 upload, crash-report upload, accounts, source credentials, cloud memory, cloud
 sync, native clients, relay runtime, or production monitoring.
+
+## Query Intelligence Contracts
+
+P59 Query Observation, P60 Shared Query/Result Cache, and P61 Search Miss
+Ledger are contract-only. They add validators, examples, and docs, but no
+telemetry runtime, no public query logging, no persistent cache storage, no
+runtime ledger writes, no search need creation, no probe enqueueing, no
+candidate-index mutation, and no master-index mutation.

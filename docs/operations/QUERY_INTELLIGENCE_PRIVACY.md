@@ -1,11 +1,12 @@
 # Query Intelligence Privacy
 
-Status: P59/P60 contract-only operations guidance.
+Status: P59/P60/P61 contract-only operations guidance.
 
 Query intelligence is not telemetry. P59 adds no persistent query logging, no
 analytics, no IP storage, no account identifiers, no raw private-looking query
 retention, no public observation feed, and no runtime hook from public search.
 P60 adds no runtime cache writes and no persistent result cache.
+P61 adds no runtime ledger writes and no persistent miss ledger.
 
 ## Operator Posture
 
@@ -34,12 +35,22 @@ contract shape, not for collecting user data or writing cache state.
 examples and rejects private paths, private URLs, credential markers, IP
 addresses, account identifiers, hard mutation flags, and global absence claims.
 
+`scripts/dry_run_search_miss_ledger_entry.py` emits a non-persistent search
+miss ledger entry to stdout only. It is useful for validating scoped miss
+contract shape, not for collecting user data or writing ledger state.
+
+`scripts/validate_search_miss_ledger_entry.py` validates committed miss ledger
+examples and rejects private paths, private URLs, credential markers, IP
+addresses, account identifiers, broad absence claims, search need creation,
+probe enqueueing, result cache mutation, hard mutation flags, and public unsafe
+raw query retention.
+
 ## Operator-Gated Future Work
 
 Hosted deployment, edge/rate-limit evidence, public aggregate publication,
 retention/deletion controls, poisoning protection, and any query collection
 runtime remain operator-gated or future-milestone work.
 
-P59/P60 do not add probes, result cache runtime, miss ledgers, search needs,
-candidate indexes, telemetry, uploads, accounts, live source calls, or
-production public-query learning claims.
+P59/P60/P61 do not add probes, result cache runtime, miss ledger runtime,
+search needs, candidate indexes, telemetry, uploads, accounts, live source
+calls, or production public-query learning claims.

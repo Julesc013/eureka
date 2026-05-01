@@ -1,0 +1,218 @@
+{
+  "schema_version": "0.1.0",
+  "miss_entry_id": "example.search_miss_ledger.no_such_local_index_hit.v0",
+  "miss_entry_kind": "search_miss_ledger_entry",
+  "status": "draft_example",
+  "created_by_tool": "p61_search_miss_ledger_v0_example",
+  "query_ref": {
+    "query_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "normalized_query.text",
+      "value": "31a29002acbb674476cc4685c50dd5989c7ab9b60803abc01f163dd927c66a1d",
+      "salt_policy": "unsalted_public_aggregate",
+      "reversible": false
+    },
+    "normalized_query": {
+      "text": "no-such-local-index-hit",
+      "safe_public_terms": [
+        "no-such-local-index-hit"
+      ],
+      "redaction_applied": false
+    },
+    "raw_query_retained": false,
+    "raw_query_redacted": true,
+    "privacy_classification": "public_safe_aggregate",
+    "limitations": [
+      "Raw query text is not retained; normalized synthetic terms are safe example terms."
+    ]
+  },
+  "cache_ref": {
+    "cache_entry_id": "example.search_result_cache.no_such_local_index_hit.v0",
+    "cache_hit_state": "no_hits",
+    "limitations": [
+      "References the P60 scoped-absence example only; no cache runtime lookup was performed."
+    ]
+  },
+  "miss_classification": {
+    "miss_type": "no_hits",
+    "severity": "medium",
+    "confidence": "high",
+    "scoped_absence": true,
+    "global_absence_claimed": false
+  },
+  "miss_causes": [
+    {
+      "cause_type": "no_public_index_hit",
+      "explanation": "The checked public index snapshot produced no verified result for the synthetic query.",
+      "evidence_refs": [
+        "data/public_index/index_stats.json",
+        "data/public_index/search_documents.ndjson"
+      ],
+      "limitations": [
+        "This is scoped to the public index snapshot and does not cover future source cache, private local stores, or approved live probes."
+      ]
+    },
+    {
+      "cause_type": "source_not_covered",
+      "explanation": "Future source coverage may add a relevant source family, but P61 does not fetch or probe anything.",
+      "evidence_refs": [
+        "data/public_index/source_coverage.json"
+      ],
+      "limitations": [
+        "Source coverage gaps remain planning inputs, not truth claims."
+      ]
+    }
+  ],
+  "checked_scope": {
+    "checked_indexes": [
+      "public_index",
+      "local_index_only"
+    ],
+    "checked_sources": [
+      "data/public_index"
+    ],
+    "checked_source_families": [
+      "public_index_fixture_and_recorded_sources"
+    ],
+    "checked_capabilities": [
+      "lexical_public_index_search",
+      "absence_summary"
+    ],
+    "checked_index_snapshot_refs": [
+      "eureka_public_search_index_v0"
+    ],
+    "live_probes_attempted": false,
+    "external_calls_performed": false
+  },
+  "not_checked_scope": {
+    "sources_not_checked": [
+      "future source cache",
+      "private local stores",
+      "approved live probes"
+    ],
+    "source_families_not_checked": [
+      "internet_archive_live_future",
+      "wayback_live_future",
+      "software_heritage_live_future"
+    ],
+    "capabilities_not_checked": [
+      "live_probe",
+      "deep_source_refresh",
+      "candidate_index"
+    ],
+    "reasons_not_checked": [
+      "disabled_by_policy",
+      "approval_gated",
+      "not_implemented"
+    ],
+    "limitations": [
+      "Not-checked scope must travel with the miss so future readers do not treat it as global absence."
+    ]
+  },
+  "near_misses": [],
+  "weak_hits": [],
+  "result_summary": {
+    "result_count": 0,
+    "returned_count": 0,
+    "hit_state": "no_hits",
+    "gap_count": 1,
+    "warning_count": 1,
+    "limitation_count": 2
+  },
+  "absence_summary": {
+    "absence_status": "scoped_absence",
+    "scoped_to": [
+      "data/public_index",
+      "eureka_public_search_index_v0"
+    ],
+    "checked": [
+      "public_index",
+      "local_index_only"
+    ],
+    "not_checked": [
+      "future source cache",
+      "private local stores",
+      "approved live probes"
+    ],
+    "global_absence_claimed": false,
+    "limitations": [
+      "Scoped absence only; this miss is not proof outside the checked public index snapshot.",
+      "A future search need may reuse this miss only after privacy and poisoning review."
+    ]
+  },
+  "suggested_next_steps": [
+    {
+      "step_type": "create_search_need_future",
+      "reason": "A repeated scoped no-hit may later become a durable search need after policy review.",
+      "future_only": true,
+      "approval_required": false,
+      "human_required": false
+    },
+    {
+      "step_type": "run_manual_observation",
+      "reason": "Manual observation may help classify whether this synthetic gap maps to a real demand family.",
+      "future_only": true,
+      "approval_required": false,
+      "human_required": true
+    }
+  ],
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe no-hit example; raw query text and user identifiers are not retained."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "miss_entry_retention": "example_only",
+    "deletion_supported_future": true,
+    "notes": [
+      "P61 does not implement miss ledger retention runtime."
+    ]
+  },
+  "aggregation_policy": {
+    "aggregate_allowed": true,
+    "aggregate_fields_allowed": [
+      "miss_type",
+      "cause_type",
+      "source_family",
+      "capability_gap",
+      "query_intent",
+      "platform",
+      "artifact_type"
+    ],
+    "raw_query_aggregation_allowed": false,
+    "private_identifier_aggregation_allowed": false,
+    "notes": [
+      "Aggregate counts are future-only and must exclude raw queries and private identifiers."
+    ]
+  },
+  "limitations": [
+    "Synthetic miss entry only; not collected from a real user.",
+    "No persistent miss ledger runtime, telemetry, search need creation, probe enqueueing, result cache mutation, candidate index mutation, local index mutation, or master-index mutation."
+  ],
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "candidate_index_mutated": false,
+    "search_need_created": false,
+    "probe_enqueued": false,
+    "result_cache_mutated": false,
+    "query_observation_mutated": false,
+    "telemetry_exported": false,
+    "external_calls_performed": false
+  },
+  "notes": [
+    "This example validates a scoped no-hit miss without creating a search need.",
+    "Future conversion to a search need belongs to P62 or later."
+  ]
+}
