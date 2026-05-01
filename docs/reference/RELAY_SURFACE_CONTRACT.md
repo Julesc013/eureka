@@ -140,6 +140,12 @@ Relay surfaces must not expose validate-only reports, staging reports, local
 staging manifests, or local paths unless a future reviewed public export
 explicitly redacts and allows them.
 
+Local Staging Manifest Format v0 keeps staged records as local candidates.
+Relay surfaces must not read or expose Local Staging Manifest v0 data by
+default. No staging runtime exists, and manifest validation does not grant
+relay exposure, public search visibility, local index mutation, upload, or
+master-index acceptance.
+
 AI Provider Contract v0 keeps AI providers and outputs out of relay surfaces by
 default. Relay must not expose private prompts, provider credentials, model
 logs, unreviewed AI suggestions, or AI-generated trust/rights/malware decisions

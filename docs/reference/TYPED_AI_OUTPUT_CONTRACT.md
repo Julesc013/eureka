@@ -20,6 +20,11 @@ contribution pack, mutate search, call a model, or write the master index.
 Local Quarantine/Staging Model v0 may later stage typed AI outputs only as
 local_private review-required candidates. Staging does not make AI output
 evidence, truth, search ranking input, or master-index state.
+Local Staging Manifest Format v0 can represent future typed AI outputs only as
+`staged_ai_output_candidate` records after typed output validation. No staging
+runtime exists, and a manifest does not accept AI output into evidence,
+contribution packs, public search, local indexes, snapshots, relay, or the
+master index.
 
 ## Output Envelope
 

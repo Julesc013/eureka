@@ -166,6 +166,14 @@
     "acceptance_requires_review_queue": true,
     "conflicts_preserved": true
   },
+  "local_staging_manifest_format": {
+    "schema": "contracts/packs/local_staging_manifest.v0.json",
+    "example_manifest_root": "examples/local_staging_manifests/minimal_local_staging_manifest_v0",
+    "validator_command": "python scripts/validate_local_staging_manifest.py --all-examples",
+    "status": "contract_example_validation_only",
+    "staging_runtime_implemented": false,
+    "future_dependency": "Staged Pack Inspector v0"
+  },
   "created_by_slice": "local_quarantine_staging_model_v0",
   "notes": [
     "This model is planning-only and creates no runtime staging state.",

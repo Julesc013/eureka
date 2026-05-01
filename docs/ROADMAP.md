@@ -145,8 +145,18 @@ under `control/inventory/local_state/staging_report_path_contract.json`,
 `control/audits/staging-report-path-contract-v0/`. It keeps report output on
 stdout by default, requires explicit output paths for file writes, blocks
 forbidden repo roots, requires redaction, and creates no report path runtime,
-staging runtime, staged state, search impact, or master-index impact. The next
-Codex-safe milestone is Local Staging Manifest Format v0.
+staging runtime, staged state, search impact, or master-index impact.
+Local Staging Manifest Format v0 is now implemented as contract/example/
+validation-only work under `contracts/packs/local_staging_manifest.v0.json`,
+`examples/local_staging_manifests/minimal_local_staging_manifest_v0/`,
+`docs/reference/LOCAL_STAGING_MANIFEST_FORMAT.md`,
+`scripts/validate_local_staging_manifest.py`, and
+`control/audits/local-staging-manifest-format-v0/`. It defines future staged
+pack references, staged candidate entities, counts, provenance, no-mutation
+guarantees, and reset/delete/export policy while creating no staging runtime,
+staged state, public-search mutation, local-index mutation, runtime source
+registry mutation, upload, or master-index mutation. The next Codex-safe
+milestone is Staged Pack Inspector v0.
 
 ## Stage 3: Surface Skeletons
 

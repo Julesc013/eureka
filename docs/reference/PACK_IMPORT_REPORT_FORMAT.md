@@ -20,6 +20,11 @@ Staging Report Path Contract v0 governs where future report files may be
 written: stdout by default, explicit output path for file writes, no hidden
 state, no forbidden repo roots, and redaction of private local paths before
 reports become committed or public.
+Local Staging Manifest Format v0 defines the future manifest envelope that can
+link back to a reviewed Pack Import Report v0. It records staged candidate
+metadata and no-mutation guarantees only. No staging runtime exists, no staged
+state is created, and it does not mutate public search, local indexes, runtime
+source registry state, uploads, or the master index.
 
 ## Purpose
 

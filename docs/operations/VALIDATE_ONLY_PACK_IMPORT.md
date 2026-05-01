@@ -130,6 +130,12 @@ Future staged inspection may render report and pack metadata. Future local
 index candidate import may opt in to public-safe staged records. Future
 contribution and master-index review paths remain separate and review-gated.
 
+Local Staging Manifest Format v0 defines the future local/private manifest
+envelope that may link back to a reviewed Pack Import Report v0. The manifest
+format is contract/example/validation only. No staging runtime exists, no
+staged state is created, and it does not mutate public search, local indexes,
+runtime source registry state, uploads, or the master index.
+
 Typed AI outputs may be included only after Typed AI Output Validator v0 checks
 them. They remain suggestions/candidates and do not become evidence,
 contribution records, search ranking input, or master-index claims.

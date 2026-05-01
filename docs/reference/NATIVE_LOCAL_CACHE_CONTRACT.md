@@ -23,6 +23,12 @@ root. Validate-only report output remains stdout by default, file writes need
 explicit output paths, and private paths require redaction before reports are
 committed, exported, relayed, snapshotted, or submitted for review.
 
+Local Staging Manifest Format v0 defines the future native-readable envelope
+for staged candidate metadata. It is contract/example/validation only; no
+staging runtime exists, no native staging UI exists, and the manifest format
+does not create staged state, mutate public search, mutate a local index,
+expose relay or snapshot data, upload, or mutate the master index.
+
 Public cache and private cache must be separate:
 
 - public cache may contain already-public metadata and snapshot validation

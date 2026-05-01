@@ -248,6 +248,12 @@ Staging Report Path Contract v0 keeps validate-only reports, staging reports,
 and local staging manifests out of snapshots by default. Snapshot examples must
 not contain private local report paths or unredacted local roots.
 
+Local Staging Manifest Format v0 records staged candidate metadata for future
+local/private inspection only. Snapshots must not include Local Staging
+Manifest v0 records by default. No staging runtime exists, and manifest
+validation does not create staged state, mutate public search, mutate local
+indexes, upload, or mutate the master index.
+
 AI Provider Contract v0 keeps AI output out of snapshots by default. Future
 snapshots may include AI-derived public records only after typed output
 validation, evidence review, provenance retention, and master-index/publication

@@ -230,6 +230,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   protection, validate-only tool behavior, native/relay/snapshot impact, and
   no public-search/master-index impact without creating report path runtime,
   staging runtime, or staged state.
+- `local-staging-manifest-format-v0/`: contract/validation/example-only audit
+  pack for future local staging manifests. It records the manifest schema,
+  synthetic example, staged pack references, staged entity candidates,
+  no-mutation guarantees, reset/delete/export policy, privacy/rights/risk
+  posture, and future staged-inspector path without creating staging runtime,
+  staged state, `.eureka-local/` state, imports, indexes, uploads, network
+  calls, model calls, or master-index mutation.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

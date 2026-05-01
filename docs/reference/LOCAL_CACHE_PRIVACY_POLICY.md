@@ -56,6 +56,14 @@ forbidden committed/runtime/public roots, and must apply redaction to private
 absolute paths before a report is committed or exposed outside local-private
 storage.
 
+Local Staging Manifest Format v0 extends this posture to future local staging
+manifests. The format is contract/example/validation only; no staging runtime
+exists, no staged state is created, and manifest validation does not import,
+stage, index, upload, mutate public search, mutate a local index, expose relay
+or snapshot data, or mutate the master index. Future manifests remain
+local_private by default and must not contain unredacted private paths,
+credentials, raw caches, raw databases, or executable payloads.
+
 Private cache is future explicit user state. It may later hold user-selected
 artifacts, preferences, local strategy notes, private resolution memory, or
 native-client working state. Private cache is disabled by default and requires

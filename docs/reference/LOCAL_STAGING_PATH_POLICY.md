@@ -24,6 +24,13 @@ policy. It keeps report output on stdout by default, requires explicit output
 paths for file writes, blocks forbidden committed roots, and requires redaction
 of private absolute paths before reports can be committed or exposed publicly.
 
+Local Staging Manifest Format v0 adds the future manifest envelope for staged
+candidate metadata. The committed example under `examples/local_staging_manifests/`
+is synthetic and validated by `scripts/validate_local_staging_manifest.py`.
+No staging runtime exists, no `.eureka-local/` state is created, and the
+manifest format does not mutate public search, local indexes, runtime source
+registry state, or the master index.
+
 ## Prohibited Roots
 
 Future staging must not write under:
@@ -54,8 +61,8 @@ required ignore entries are:
 .eureka-reports/
 ```
 
-Committed examples may describe staging formats later, but they must be
-synthetic and must not contain private staged content.
+Committed examples may describe staging formats, but they must be synthetic and
+must not contain private staged content.
 
 ## Path Leakage
 

@@ -52,6 +52,13 @@ privacy/rights/risk posture, provenance, next actions, and hard false
 mutation-safety fields. They do not import, stage, index, upload, mutate
 runtime state, or mutate the master index.
 
+Local Staging Manifest Format v0 adds `local_staging_manifest.v0.json` as the
+future local/private manifest envelope for quarantined staged candidates after
+a validate-only report is reviewed. It is contract/example/validation only and
+does not implement staging runtime, create staged state, mutate public search,
+mutate a local index, mutate the runtime source registry, upload, or mutate the
+master index.
+
 AI Provider Contract v0 lives under `contracts/ai/`, not `contracts/packs/`.
 AI outputs may later draft pack or contribution candidates only as typed,
 review-required suggestions; they are not pack truth, rights clearance, malware

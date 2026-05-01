@@ -69,6 +69,14 @@ default, explicit output paths for file writes, ignored local-private report
 roots, forbidden committed/runtime/public roots, and redaction before any
 report path can be public or committed.
 
+Local Staging Manifest Format v0 adds the future manifest envelope after a
+validate-only report is reviewed and before any staged inspection or staging
+runtime. It records staged pack references, staged entity candidates, counts,
+provenance, hard no-mutation guarantees, and future reset/delete/export policy.
+No staging runtime exists; it does not create staged state, copy pack contents,
+mutate public search, mutate a local index, mutate runtime source registry
+state, upload, or mutate the master index.
+
 AI Provider Contract v0 is adjacent but not part of import runtime. Future AI
 outputs can be validated as typed suggestions through
 `scripts/validate_ai_output.py` before they draft contributions, but the import
@@ -84,8 +92,8 @@ Future staging roots are logical and private by default:
 - `.eureka-local/quarantine/`
 - `.eureka-local/import_reports/`
 
-These roots must not be under `site/dist`, `external`, or public data. P39 does
-not create these directories.
+These roots must not be under `site/dist`, `external`, or public data. P39 and
+later staging-planning milestones do not create these directories.
 
 ## Search And Index Boundaries
 

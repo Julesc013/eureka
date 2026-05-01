@@ -14,6 +14,10 @@ Current files:
 - `staging_report_path_contract.json`: planning-only contract for stdout
   defaults, explicit output paths, safe local report roots, forbidden committed
   roots, filename safety, and redaction.
+- `local_staging_manifest_format` references are recorded in the staging model
+  and path contract. The governed schema lives at
+  `contracts/packs/local_staging_manifest.v0.json`, with a synthetic example
+  under `examples/local_staging_manifests/`.
 
 Future local staging remains disabled by default. No `.eureka-local/`,
 `.eureka-cache/`, `.eureka-staging/`, or `.eureka-reports/` directory should

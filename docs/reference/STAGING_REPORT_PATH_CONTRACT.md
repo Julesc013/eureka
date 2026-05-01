@@ -110,6 +110,13 @@ The validate-only tool remains validation/reporting only. Report success is not
 import, staging, rights clearance, malware safety, canonical truth, public
 search eligibility, or master-index acceptance.
 
+Local Staging Manifest Format v0 now defines the future manifest envelope that
+could be written only by a later explicit local staging tool. The manifest
+schema and example are contract/example/validation only. No staging runtime
+exists, no staged state is created, and the manifest format has no public
+search, local index, runtime source registry, upload, relay, snapshot, or
+master index impact.
+
 ## Surface Impact
 
 Native clients may later choose app-local private report roots. Relay surfaces
@@ -119,7 +126,6 @@ output must not read report roots by default.
 
 ## Deferred
 
-Still future: local staging manifest format, staged pack inspector, local
-quarantine/staging tool, staging report writer runtime, local index candidate
-mode, contribution queue candidate export, native staging UI, and any hosted
-submission path.
+Still future: staged pack inspector, local quarantine/staging tool, staging
+report writer runtime, local index candidate mode, contribution queue candidate
+export, native staging UI, and any hosted submission path.

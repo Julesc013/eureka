@@ -128,10 +128,19 @@
   },
   "future_staging_tool_policy": {
     "requires_validate_only_report": true,
+    "requires_local_staging_manifest_format": true,
     "requires_local_private_root": true,
     "must_not_write_to_committed_roots": true,
     "must_not_create_staging_root_without_explicit_operator_choice": true,
     "must_not_copy_pack_payloads_by_default": true
+  },
+  "local_staging_manifest_format": {
+    "schema": "contracts/packs/local_staging_manifest.v0.json",
+    "example_manifest_root": "examples/local_staging_manifests/minimal_local_staging_manifest_v0",
+    "validator_command": "python scripts/validate_local_staging_manifest.py --all-examples",
+    "status": "contract_example_validation_only",
+    "staging_runtime_implemented": false,
+    "future_staged_inspector_dependency": true
   },
   "native_client_policy": {
     "future_native_roots": "application-local-data root only unless user overrides",

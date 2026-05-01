@@ -64,8 +64,16 @@ A valid report path means the output location follows policy. It does not mean
 the pack was imported, staged, indexed, submitted, accepted, rights-cleared,
 malware-safe, or canonical truth.
 
+## Local Staging Manifests
+
+Local Staging Manifest Format v0 defines the future manifest envelope for
+local/private staged candidates. The committed example is synthetic and lives
+under `examples/local_staging_manifests/`; future runtime manifests must use
+allowed ignored local/private roots. No staging runtime exists, and manifest
+validation does not create staged state, mutate public search, mutate a local
+index, upload, expose relay/snapshot data, or mutate the master index.
+
 ## Future Work
 
-Local Staging Manifest Format v0 should define the future manifest envelope.
 Staged Pack Inspector v0 should define read-only inspection. A staging tool
-must wait until those contracts exist.
+must wait until the inspector contract exists.

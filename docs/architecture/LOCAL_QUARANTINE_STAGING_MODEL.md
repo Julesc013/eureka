@@ -50,6 +50,15 @@ sets stdout as the default report output, requires explicit output paths for
 file writes, requires redaction of private local paths, and forbids local
 private reports under public/generated/runtime/canonical source roots.
 
+Local Staging Manifest Format v0 now defines the future manifest envelope for
+staged local/private candidates. It records validate-only report references,
+staged pack references, staged entity candidates, counts, provenance,
+privacy/rights/risk posture, hard no-mutation guarantees, and future
+reset/delete/export policy. It is contract/example/validation only; no staging
+runtime exists and it does not create staged state, copy pack contents, mutate
+public search, mutate a local index, mutate the runtime source registry, or
+mutate the master index.
+
 Forbidden roots include `site/dist`, `site/`, public data, `external`,
 `runtime`, canonical `control/inventory` source files, `evals`,
 `snapshots/examples`, `crates`, and `docs`.
@@ -113,7 +122,7 @@ in a future review-gated path.
 
 ## Deferred
 
-Still future: local staging manifest format, staged pack inspector, local
-quarantine/staging tool, staged delete/reset tool, local index candidate
-planning, contribution queue candidate export, native staging UI planning,
-hosted submission, and any staging runtime.
+Still future: staged pack inspector, local quarantine/staging tool, staged
+delete/reset tool, local index candidate planning, contribution queue
+candidate export, native staging UI planning, hosted submission, and any
+staging runtime.

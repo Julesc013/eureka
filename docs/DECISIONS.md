@@ -1470,3 +1470,33 @@ installers, native clients, relay runtime, snapshot reader runtime, rights
 clearance, malware-safety claims, canonical truth selection, or production
 support. The next Codex-safe milestone is Local Staging Manifest Format v0;
 Staged Pack Inspector v0 follows.
+
+## ADR-127: Define Local Staging Manifest Envelopes Before Staged Inspection
+
+Status: accepted
+
+Local Staging Manifest Format v0 adds
+`contracts/packs/local_staging_manifest.v0.json`,
+`examples/local_staging_manifests/minimal_local_staging_manifest_v0/`,
+`docs/reference/LOCAL_STAGING_MANIFEST_FORMAT.md`,
+`scripts/validate_local_staging_manifest.py`, focused tests, local-state
+inventory references, and `control/audits/local-staging-manifest-format-v0/`.
+
+The decision is to define the future local/private manifest envelope before
+any staged inspector or local staging runtime exists. The manifest records the
+reviewed validate-only report reference, staged pack references, staged entity
+candidates, counts, privacy/rights/risk posture, provenance, hard no-mutation
+guarantees, and future reset/delete/export policy. Staged records remain
+candidates and diagnostics, not canonical truth or accepted public state.
+
+P47 deliberately does not implement staging runtime, create `.eureka-local/`
+state, create staged state, copy pack files, import source/evidence/index/
+contribution packs, import master-index queue entries, implement a staged pack
+inspector runtime, mutate local indexes, mutate runtime source registry state,
+mutate public search, upload, submit, add moderation UI, add accounts or
+identity, call models, add API keys, call networks, load executable plugins,
+add live connectors, add native clients, add relay runtime, add snapshot reader
+runtime, claim rights clearance, claim malware safety, claim canonical truth,
+or mutate the master index. The next Codex-safe milestone is Staged Pack
+Inspector v0; Manual Observation Batch 0 Execution remains human-operated
+parallel work.

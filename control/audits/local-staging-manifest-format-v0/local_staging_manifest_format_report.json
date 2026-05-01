@@ -1,0 +1,62 @@
+{
+  "report_id": "local_staging_manifest_format_v0",
+  "created_by_slice": "local_staging_manifest_format_v0",
+  "status": "contract_only",
+  "staging_runtime_implemented": false,
+  "manifest_schema": "contracts/packs/local_staging_manifest.v0.json",
+  "example_manifest_path": "examples/local_staging_manifests/minimal_local_staging_manifest_v0/LOCAL_STAGING_MANIFEST.json",
+  "validator": "scripts/validate_local_staging_manifest.py",
+  "no_mutation_guarantees": {
+    "public_search_mutated": false,
+    "local_index_mutated": false,
+    "canonical_source_registry_mutated": false,
+    "runtime_state_mutated": false,
+    "master_index_mutated": false,
+    "upload_performed": false,
+    "live_network_performed": false
+  },
+  "staged_entity_types": [
+    "staged_source_candidate",
+    "staged_evidence_candidate",
+    "staged_index_summary",
+    "staged_contribution_candidate",
+    "staged_ai_output_candidate",
+    "staged_issue",
+    "staged_decision_note"
+  ],
+  "reset_delete_export_policy": {
+    "delete_staged_pack_supported_future": true,
+    "clear_all_staged_state_supported_future": true,
+    "export_manifest_supported_future": true,
+    "export_public_safe_report_supported_future": true,
+    "export_private_data_default": false,
+    "irreversible_delete_requires_confirmation_future": true
+  },
+  "privacy_rights_risk_policy": {
+    "default_visibility": "local_private",
+    "rights_uncertainty": "review_required",
+    "no_rights_clearance_claim": true,
+    "no_malware_safety_claim": true,
+    "no_canonical_truth_claim": true,
+    "no_private_paths_or_credentials_in_committed_examples": true
+  },
+  "prohibited_behaviors": [
+    "staging_runtime",
+    "runtime_staged_state_creation",
+    "pack_file_copying",
+    "pack_import",
+    "local_index_mutation",
+    "public_search_mutation",
+    "runtime_source_registry_mutation",
+    "upload",
+    "master_index_mutation",
+    "network_calls",
+    "model_calls"
+  ],
+  "next_recommended_milestone": "Staged Pack Inspector v0",
+  "notes": [
+    "Local Staging Manifest Format v0 is contract/example/validation only.",
+    "The example manifest is synthetic committed data and not runtime staged state.",
+    "Manifest validity is not truth, rights clearance, malware safety, public-search acceptance, local-index acceptance, or master-index acceptance."
+  ]
+}
