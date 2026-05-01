@@ -1,0 +1,191 @@
+{
+  "report_id": "probe_queue_v0",
+  "created_by_slice": "P63 Probe Queue v0",
+  "repo_head": "5cd38db1dabcbb2be619c16c17bb5cd05ae1b0a9",
+  "branch": "main",
+  "worktree_status": "dirty_with_p63_changes_verified_before_commit",
+  "contract_file": "contracts/query/probe_queue_item.v0.json",
+  "validator_scripts": [
+    "scripts/validate_probe_queue_item.py",
+    "scripts/validate_probe_queue_contract.py",
+    "scripts/dry_run_probe_queue_item.py"
+  ],
+  "example_probe_queue_items": [
+    "examples/probe_queue/minimal_manual_observation_probe_v0/PROBE_QUEUE_ITEM.json",
+    "examples/probe_queue/minimal_source_cache_probe_v0/PROBE_QUEUE_ITEM.json",
+    "examples/probe_queue/minimal_deep_extraction_probe_v0/PROBE_QUEUE_ITEM.json"
+  ],
+  "probe_queue_policy": "control/inventory/query_intelligence/probe_queue_policy.json",
+  "probe_kind_taxonomy": [
+    "manual_observation",
+    "source_cache_refresh",
+    "source_metadata_probe",
+    "source_identifier_probe",
+    "wayback_availability_probe",
+    "package_metadata_probe",
+    "repository_release_probe",
+    "deep_container_extraction",
+    "member_enumeration",
+    "OCR_or_scan_extraction",
+    "compatibility_evidence_request",
+    "source_pack_request",
+    "evidence_pack_request",
+    "index_pack_request",
+    "query_parser_improvement_request",
+    "unknown"
+  ],
+  "source_policy_model": {
+    "source_policy_kinds": [
+      "no_source_call",
+      "manual_only",
+      "fixture_only",
+      "source_cache_only_future",
+      "live_metadata_probe_after_approval",
+      "local_offline_extraction_after_approval",
+      "unknown"
+    ],
+    "live_probe_enabled": false,
+    "approval_required_for_live_network_probe": true,
+    "operator_required_for_worker_runtime": true
+  },
+  "priority_scheduling_model": {
+    "demand_count_claimed": false,
+    "schedule_created": false,
+    "worker_created": false
+  },
+  "input_reference_model": {
+    "query_observation_refs": "references_only",
+    "search_result_cache_refs": "references_only",
+    "search_miss_ledger_refs": "references_only",
+    "search_need_refs": "references_only",
+    "manual_source_evidence_refs": "future_only"
+  },
+  "expected_output_model": {
+    "future_only": true,
+    "requires_validation": true,
+    "requires_review": true,
+    "output_written_in_p63": false
+  },
+  "privacy_policy_summary": {
+    "raw_query_retention_default": "none",
+    "public_safe_examples": true,
+    "private_paths_allowed": false,
+    "ip_addresses_allowed": false,
+    "account_ids_allowed": false,
+    "sensitive_tokens_allowed": false,
+    "public_aggregate_requires_future_review": true
+  },
+  "no_execution_no_mutation_guarantees": {
+    "runtime_probe_queue_implemented": false,
+    "persistent_probe_queue_implemented": false,
+    "telemetry_implemented": false,
+    "public_query_logging_enabled": false,
+    "probe_executed": false,
+    "live_probe_execution_allowed": false,
+    "live_source_called": false,
+    "source_cache_mutation_allowed": false,
+    "evidence_ledger_mutation_allowed": false,
+    "candidate_index_mutation_allowed": false,
+    "master_index_mutation_allowed": false,
+    "local_index_mutation_allowed": false,
+    "search_need_mutation_allowed": false,
+    "result_cache_mutation_allowed": false,
+    "miss_ledger_mutation_allowed": false,
+    "external_calls_performed": false
+  },
+  "runtime_status": {
+    "runtime_probe_queue_implemented": false,
+    "persistent_probe_queue_implemented": false,
+    "telemetry_implemented": false,
+    "public_query_logging_enabled": false,
+    "probe_execution_implemented": false,
+    "source_cache_runtime_implemented": false,
+    "evidence_ledger_runtime_implemented": false,
+    "candidate_index_runtime_implemented": false,
+    "public_search_runtime_wired": false
+  },
+  "command_results": {
+    "verified_at_local_date": "2026-05-02",
+    "p63_required": {
+      "python scripts/validate_probe_queue_item.py --all-examples": "passed; 3 examples valid",
+      "python scripts/validate_probe_queue_item.py --all-examples --json": "passed; JSON parsed",
+      "python scripts/validate_probe_queue_contract.py": "passed; report_id probe_queue_v0 valid",
+      "python scripts/validate_probe_queue_contract.py --json": "passed; JSON parsed",
+      "python scripts/dry_run_probe_queue_item.py --label \"Check IA metadata for Windows 7 app query\" --kind source_metadata_probe --json": "passed; stdout-only dry-run item emitted"
+    },
+    "query_intelligence_regression": {
+      "python scripts/validate_search_need_record.py --all-examples": "passed",
+      "python scripts/validate_search_need_record_contract.py": "passed",
+      "python scripts/validate_search_miss_ledger_entry.py --all-examples": "passed",
+      "python scripts/validate_search_miss_ledger_contract.py": "passed",
+      "python scripts/validate_search_result_cache_entry.py --all-examples": "passed",
+      "python scripts/validate_shared_query_result_cache_contract.py": "passed",
+      "python scripts/validate_query_observation.py --all-examples": "passed",
+      "python scripts/validate_query_observation_contract.py": "passed"
+    },
+    "public_search_static_and_evals": {
+      "python scripts/run_hosted_public_search_rehearsal.py": "passed; 60/60 checks, 34/34 blocked requests, 584 public-index documents",
+      "python scripts/validate_hosted_public_search_rehearsal.py": "passed",
+      "python scripts/run_public_search_safety_evidence.py": "passed; 64/64 checks, 32/32 blocked requests",
+      "python scripts/validate_public_search_safety_evidence.py": "passed",
+      "python scripts/validate_static_site_search_integration.py": "passed",
+      "python scripts/validate_public_search_index_builder.py": "passed",
+      "python scripts/validate_public_search_index.py": "passed",
+      "python scripts/validate_hosted_public_search_wrapper.py": "passed",
+      "python scripts/check_hosted_public_search_wrapper.py": "passed",
+      "python scripts/run_hosted_public_search.py --check-config": "passed",
+      "python scripts/validate_public_search_production_contract.py": "passed",
+      "python scripts/validate_static_deployment_evidence.py": "passed",
+      "python scripts/validate_post_p50_remediation.py": "passed",
+      "python scripts/validate_post_p49_platform_audit.py": "passed",
+      "python scripts/validate_live_probe_gateway.py": "passed",
+      "python scripts/validate_public_search_contract.py": "passed",
+      "python scripts/validate_public_search_result_card_contract.py": "passed",
+      "python scripts/validate_public_search_safety.py": "passed",
+      "python scripts/validate_local_public_search_runtime.py": "passed",
+      "python scripts/public_search_smoke.py": "passed",
+      "python scripts/public_search_smoke.py --json": "passed",
+      "python scripts/build_public_search_index.py --check": "passed",
+      "python site/build.py --check": "passed",
+      "python site/validate.py": "passed",
+      "python scripts/validate_publication_inventory.py": "passed",
+      "python scripts/validate_public_static_site.py": "passed",
+      "python scripts/check_github_pages_static_artifact.py --path site/dist": "passed",
+      "python scripts/check_generated_artifact_drift.py": "passed",
+      "python scripts/public_alpha_smoke.py": "passed",
+      "python scripts/run_archive_resolution_evals.py": "passed; 6/6 tasks satisfied locally",
+      "python scripts/run_archive_resolution_evals.py --json": "passed",
+      "python scripts/run_search_usefulness_audit.py": "passed; 64 queries, mixed/partial status retained",
+      "python scripts/run_search_usefulness_audit.py --json": "passed",
+      "python scripts/report_external_baseline_status.py --json": "passed; 0 observed and 192 pending manual observation slots",
+      "python scripts/generate_python_oracle_golden.py --check": "passed"
+    },
+    "unit_and_boundary_checks": {
+      "python -m unittest discover -s tests/scripts -t .": "passed; 320 tests",
+      "python -m unittest discover -s tests/operations -t .": "passed; 467 tests",
+      "python -m unittest discover -s tests/hardening -t .": "passed; 53 tests",
+      "python -m unittest discover -s tests/parity -t .": "passed; 25 tests",
+      "python -m unittest discover -s runtime -t .": "passed; 320 tests",
+      "python -m unittest discover -s surfaces -t .": "passed; 168 tests",
+      "python -m unittest discover -s tests -t .": "passed; 956 tests",
+      "python scripts/check_architecture_boundaries.py": "passed",
+      "git diff --check": "passed with CRLF conversion warnings only"
+    },
+    "optional": {
+      "cargo --version": "unavailable; cargo check/test not run"
+    }
+  },
+  "remaining_blockers": [
+    "Probe queue runtime storage is intentionally not implemented.",
+    "Probe execution is intentionally not implemented.",
+    "Source cache and evidence ledger runtime remain future milestones.",
+    "Candidate index and promotion policy remain future milestones.",
+    "Live-network probes remain approval-gated future work.",
+    "Hosted backend deployment remains operator-gated."
+  ],
+  "next_recommended_branch": "P64 Candidate Index v0",
+  "notes": [
+    "P63 defines probe queue items as contract-only governance artifacts.",
+    "No telemetry, public query logging, runtime queue, persistent queue, probe execution, source cache mutation, evidence ledger mutation, candidate-index mutation, local-index mutation, master-index mutation, external calls, or live probes were added."
+  ]
+}

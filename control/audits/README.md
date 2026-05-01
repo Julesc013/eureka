@@ -362,3 +362,12 @@ fetch, or production safety claim.
   telemetry, public query logging, demand-count runtime, probe enqueueing,
   candidate-index mutation, result-cache mutation, miss-ledger mutation,
   local-index mutation, or master-index mutation.
+
+## Probe Queue v0
+
+- Path: `control/audits/probe-queue-v0/`
+- Scope: P63 probe queue item contract, probe kind taxonomy, source policy and
+  approval model, synthetic examples, validators, docs, and audit evidence.
+- Status: contract-only; no runtime queue, persistent queue, probe execution,
+  live source calls, source cache mutation, evidence ledger mutation,
+  candidate-index mutation, local-index mutation, or master-index mutation.
