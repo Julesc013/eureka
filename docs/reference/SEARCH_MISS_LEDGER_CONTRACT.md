@@ -131,3 +131,7 @@ Validate the whole contract pack with:
 python scripts/validate_search_miss_ledger_contract.py
 python scripts/validate_search_miss_ledger_contract.py --json
 ```
+
+## P65 Candidate Promotion Policy Relationship
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

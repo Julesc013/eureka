@@ -84,3 +84,7 @@ candidate promotion runtime, no public search candidate injection, no telemetry,
 no source cache mutation, no evidence ledger mutation, no probe queue mutation,
 no search-need mutation, no result-cache mutation, no miss-ledger mutation, no
 local-index mutation, and no master-index mutation.
+
+## P65 Candidate Promotion Privacy
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

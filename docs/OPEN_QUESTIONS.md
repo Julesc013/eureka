@@ -199,3 +199,7 @@ policy without accepting candidates as truth too early.
 - What retention and deletion controls are required before any hosted query observation runtime exists?
 - What poisoning and spam controls are required before query-derived demand can influence candidate work?
 - What operator evidence is required before hosted query-intelligence collection can be enabled?
+
+## P65 Open Questions
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

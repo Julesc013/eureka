@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eureka_candidate_promotion_policy_v0",
+  "status": "contract_only",
+  "runtime_promotion_implemented": false,
+  "automatic_promotion_allowed": false,
+  "candidate_promotion_runtime_implemented": false,
+  "master_index_mutation_allowed": false,
+  "source_registry_mutation_allowed": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "public_search_candidate_injection_allowed": false,
+  "telemetry_implemented": false,
+  "public_query_logging_enabled": false,
+  "privacy_filter_required": true,
+  "evidence_required_for_promotion_review": true,
+  "provenance_required_for_promotion_review": true,
+  "human_or_policy_review_required": true,
+  "rights_risk_review_required": true,
+  "conflict_review_required": true,
+  "destructive_merge_allowed": false,
+  "next_contracts": [
+    "known_absence_page",
+    "query_privacy_poisoning_guard",
+    "demand_dashboard",
+    "source_sync_worker",
+    "source_cache_evidence_ledger"
+  ],
+  "notes": [
+    "P65 defines recommendation-only promotion assessment policy and no runtime promotion, automatic acceptance, candidate-index mutation, source-cache mutation, evidence-ledger mutation, public-index mutation, local-index mutation, master-index mutation, telemetry, public query logging, external calls, or live probes.",
+    "Candidate confidence, AI output, probe output, pack output, and manual observation are not truth without future validation and review."
+  ]
+}

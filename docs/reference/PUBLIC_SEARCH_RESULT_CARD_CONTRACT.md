@@ -314,3 +314,7 @@ record, not telemetry, and not master-index truth.
 Result cards are not candidate records. P64 candidate examples are provisional
 contract artifacts and do not become public result cards, public action
 targets, evidence acceptance, or master-index records.
+
+## P65 Candidate Promotion Boundary
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

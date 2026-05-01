@@ -155,3 +155,9 @@ not write candidate records and do not use candidate records for ranking.
 Future runtime integration requires a separate candidate promotion policy,
 privacy and poisoning guard, source/evidence ledger contracts, review queue
 contract, and no-mutation verification.
+
+## P65 Candidate Promotion Policy Relationship
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.
+
+P65 does not implement candidate promotion runtime. Candidate confidence remains not truth, even when a future promotion assessment recommends review queue eligibility.

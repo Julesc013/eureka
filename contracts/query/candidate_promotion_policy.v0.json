@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/candidate_promotion_policy.v0.json",
+  "title": "EurekaCandidatePromotionPolicyV0",
+  "description": "Contract-only summary of candidate promotion gates.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "policy_id",
+    "status",
+    "required_gates",
+    "hard_booleans"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "required_gates": {
+      "type": "array"
+    },
+    "hard_booleans": {
+      "type": "object"
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_promotion_implemented": false,
+  "x-master_index_mutation_allowed": false
+}

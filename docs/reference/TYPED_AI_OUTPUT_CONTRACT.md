@@ -149,3 +149,7 @@ mutation, no local index mutation, and no master-index mutation.
 Typed AI outputs, if approved in a future milestone, can only be candidate
 inputs until reviewed. P64 makes no model calls, adds no AI runtime, accepts no
 AI output as evidence, and mutates no candidate index or master index.
+
+## P65 Candidate Promotion Boundary
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

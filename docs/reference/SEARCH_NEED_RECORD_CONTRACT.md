@@ -126,3 +126,7 @@ Search needs may later guide candidate creation through reviewed probe,
 manual-observation, pack, or source-cache outputs, but P62 records still do not
 create candidates, promote candidates, mutate source cache, mutate evidence
 ledger, inject candidates into public search, or mutate the master index.
+
+## P65 Candidate Promotion Policy Relationship
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

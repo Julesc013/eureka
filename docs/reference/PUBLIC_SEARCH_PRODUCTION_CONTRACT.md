@@ -140,3 +140,7 @@ Public Search Production Contract v0 remains local_index_only and
 candidate-free. P64 candidate index records are provisional contract artifacts
 only; they do not affect public search routes, result ranking, source cache,
 evidence ledger, or master-index truth.
+
+## P65 Candidate Promotion Boundary
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

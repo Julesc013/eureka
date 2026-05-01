@@ -113,3 +113,7 @@ not write probe queue items. Future runtime integration requires separate
 privacy/poisoning guards, source policy, approval evidence, rate limits,
 timeouts, circuit breakers, source cache/evidence ledger contracts, candidate
 contracts, and no-mutation review.
+
+## P65 Candidate Promotion Policy Relationship
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

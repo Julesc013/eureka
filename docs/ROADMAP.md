@@ -796,3 +796,17 @@ runtime candidate index, persistent candidate store, public search candidate
 injection, candidate promotion runtime, source-cache mutation, evidence-ledger
 mutation, local-index mutation, or master-index mutation was added. Next
 Codex-safe branch: P65 Candidate Promotion Policy v0.
+
+## P65 Candidate Promotion Policy v0
+
+Completed: candidate promotion assessment schema, recommendation-only decision
+taxonomy, eligibility gates, evidence/provenance/source/privacy/rights/risk/
+conflict review gates, review/rejection/quarantine/supersession examples,
+dry-run helper, validators, docs, and audit evidence. Candidate promotion
+policy is not promotion runtime, candidate confidence is not truth, automatic
+promotion is forbidden, destructive merge is forbidden, and rights clearance
+and malware safety are not claimed. No promotion runtime, automatic acceptance,
+review queue runtime, candidate-index mutation, source-cache mutation,
+evidence-ledger mutation, public-index mutation, local-index mutation,
+master-index mutation, telemetry, external calls, or live probes were added.
+Next Codex-safe branch: P66 Known Absence Page v0.

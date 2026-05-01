@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/candidate_promotion_assessment.v0.json",
+  "title": "EurekaCandidatePromotionAssessmentV0",
+  "description": "Candidate Promotion Policy v0 assessment contract. Contract/example/validation only; no promotion runtime, automatic acceptance, source/evidence/index mutation, telemetry, external calls, or live probes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "assessment_id",
+    "assessment_kind",
+    "status",
+    "created_by_tool",
+    "candidate_ref",
+    "candidate_summary",
+    "assessment_scope",
+    "eligibility_gates",
+    "evidence_sufficiency",
+    "provenance_sufficiency",
+    "source_policy_assessment",
+    "privacy_assessment",
+    "rights_and_risk_assessment",
+    "conflict_assessment",
+    "confidence_assessment",
+    "review_requirements",
+    "recommended_decision",
+    "decision_rationale",
+    "future_outputs",
+    "limitations",
+    "no_auto_promotion_guarantees",
+    "no_mutation_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "assessment_id": {
+      "type": "string"
+    },
+    "assessment_kind": {
+      "type": "string",
+      "const": "candidate_promotion_assessment"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "review_required",
+        "promotion_blocked",
+        "rejection_recommended",
+        "quarantine_recommended",
+        "supersession_recommended",
+        "promotion_eligible_future",
+        "promoted_future"
+      ]
+    },
+    "created_by_tool": {
+      "type": "string"
+    },
+    "candidate_ref": {
+      "type": "object"
+    },
+    "candidate_summary": {
+      "type": "object"
+    },
+    "assessment_scope": {
+      "type": "object"
+    },
+    "eligibility_gates": {
+      "type": "array"
+    },
+    "evidence_sufficiency": {
+      "type": "object"
+    },
+    "provenance_sufficiency": {
+      "type": "object"
+    },
+    "source_policy_assessment": {
+      "type": "object"
+    },
+    "privacy_assessment": {
+      "type": "object"
+    },
+    "rights_and_risk_assessment": {
+      "type": "object"
+    },
+    "conflict_assessment": {
+      "type": "object"
+    },
+    "confidence_assessment": {
+      "type": "object"
+    },
+    "review_requirements": {
+      "type": "object"
+    },
+    "recommended_decision": {
+      "type": "object"
+    },
+    "decision_rationale": {
+      "type": "array"
+    },
+    "future_outputs": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "no_auto_promotion_guarantees": {
+      "type": "object"
+    },
+    "no_mutation_guarantees": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "created_at": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "allowed_statuses": [
+      "draft_example",
+      "dry_run_validated",
+      "review_required",
+      "promotion_blocked",
+      "rejection_recommended",
+      "quarantine_recommended",
+      "supersession_recommended",
+      "promotion_eligible_future",
+      "promoted_future"
+    ],
+    "allowed_decisions": [
+      "no_action",
+      "reject_candidate",
+      "quarantine_candidate",
+      "request_more_evidence",
+      "request_source_policy_review",
+      "request_rights_risk_review",
+      "mark_duplicate_candidate",
+      "supersede_candidate_future",
+      "eligible_for_review_queue_future",
+      "eligible_for_promotion_future",
+      "not_eligible"
+    ],
+    "allowed_gate_types": [
+      "structure_valid",
+      "candidate_type_allowed",
+      "source_policy_allowed",
+      "provenance_present",
+      "evidence_sufficient",
+      "privacy_safe",
+      "rights_review_complete",
+      "risk_review_complete",
+      "conflict_review_complete",
+      "duplicate_review_complete",
+      "compatibility_review_complete",
+      "member_evidence_present",
+      "checksum_or_identifier_present",
+      "human_review_complete",
+      "policy_review_complete",
+      "operator_review_complete",
+      "external_source_policy_complete"
+    ],
+    "allowed_gate_statuses": [
+      "passed",
+      "failed",
+      "not_applicable",
+      "review_required",
+      "future_only"
+    ],
+    "allowed_assessed_for": [
+      "reject",
+      "quarantine",
+      "supersede",
+      "promote_to_review_queue_future",
+      "promote_to_evidence_candidate_future",
+      "promote_to_source_candidate_future",
+      "promote_to_master_index_future"
+    ],
+    "allowed_promotion_destinations": [
+      "none_v0",
+      "evidence_pack_candidate_future",
+      "contribution_pack_candidate_future",
+      "master_index_review_queue_future",
+      "source_cache_future",
+      "evidence_ledger_future",
+      "master_index_future"
+    ],
+    "allowed_evidence_statuses": [
+      "none",
+      "insufficient",
+      "candidate_only",
+      "source_backed",
+      "multi_source_backed",
+      "review_required",
+      "sufficient_for_review_future"
+    ],
+    "allowed_provenance_statuses": [
+      "missing",
+      "partial",
+      "pack_referenced",
+      "source_referenced",
+      "validation_report_referenced",
+      "review_queue_referenced_future",
+      "sufficient_for_review_future"
+    ],
+    "allowed_source_policy_statuses": [
+      "allowed_fixture",
+      "allowed_recorded_fixture",
+      "allowed_source_cache_future",
+      "live_probe_after_approval_future",
+      "source_terms_review_required",
+      "source_disallowed",
+      "unknown"
+    ],
+    "allowed_privacy_statuses": [
+      "public_safe",
+      "redacted",
+      "local_private",
+      "restricted",
+      "rejected_sensitive",
+      "unknown"
+    ],
+    "allowed_rights_statuses": [
+      "public_metadata_only",
+      "source_terms_apply",
+      "review_required",
+      "restricted",
+      "unknown"
+    ],
+    "allowed_risk_statuses": [
+      "metadata_only",
+      "executable_reference",
+      "private_data_risk",
+      "credential_risk",
+      "malware_review_required",
+      "unknown"
+    ],
+    "allowed_conflict_statuses": [
+      "none_known",
+      "possible_duplicate",
+      "identity_conflict",
+      "version_conflict",
+      "source_conflict",
+      "compatibility_conflict",
+      "evidence_conflict",
+      "rights_or_access_conflict",
+      "unresolved",
+      "unknown"
+    ],
+    "allowed_required_resolutions": [
+      "none",
+      "preserve_conflict",
+      "human_review_required",
+      "policy_review_required",
+      "future_merge_review_required"
+    ],
+    "allowed_future_outputs": [
+      "candidate_status_update_future",
+      "review_queue_entry_future",
+      "evidence_pack_candidate_future",
+      "contribution_pack_candidate_future",
+      "source_cache_candidate_future",
+      "evidence_ledger_candidate_future",
+      "master_index_candidate_future",
+      "rejection_record_future",
+      "quarantine_record_future"
+    ],
+    "allowed_candidate_types": [
+      "object_identity_candidate",
+      "software_version_candidate",
+      "source_record_candidate",
+      "evidence_record_candidate",
+      "representation_candidate",
+      "member_path_candidate",
+      "compatibility_claim_candidate",
+      "checksum_candidate",
+      "release_metadata_candidate",
+      "package_metadata_candidate",
+      "source_match_candidate",
+      "identity_match_candidate",
+      "alias_candidate",
+      "absence_candidate",
+      "extraction_candidate",
+      "OCR_text_candidate",
+      "query_interpretation_candidate",
+      "actionability_candidate",
+      "unknown"
+    ]
+  },
+  "x-status": "contract_only",
+  "x-runtime_promotion_implemented": false,
+  "x-automatic_promotion_allowed": false,
+  "x-candidate_promotion_runtime_implemented": false,
+  "x-master_index_mutation_allowed": false,
+  "x-source_registry_mutation_allowed": false,
+  "x-source_cache_mutation_allowed": false,
+  "x-evidence_ledger_mutation_allowed": false,
+  "x-public_index_mutation_allowed": false,
+  "x-local_index_mutation_allowed": false,
+  "x-candidate_index_mutation_allowed": false,
+  "x-public_search_candidate_injection_allowed": false,
+  "x-telemetry_implemented": false,
+  "x-external_calls_allowed": false,
+  "x-live_probes_allowed": false
+}

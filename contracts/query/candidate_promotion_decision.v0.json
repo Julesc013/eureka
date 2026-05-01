@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/candidate_promotion_decision.v0.json",
+  "title": "EurekaCandidatePromotionDecisionVocabularyV0",
+  "description": "Recommendation-only decision vocabulary for P65.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "decision_values",
+    "hard_booleans"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "decision_values": {
+      "type": "array"
+    },
+    "hard_booleans": {
+      "type": "object"
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_promotion_implemented": false,
+  "x-automatic_promotion_allowed": false
+}

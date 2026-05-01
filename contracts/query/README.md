@@ -68,3 +68,11 @@ cache/evidence/candidate mutation, and not master-index truth.
 Candidate index records are provisional review records, not evidence
 acceptance, not public search authority, not source/cache/evidence mutation,
 and not master-index truth.
+
+## Candidate Promotion Policy v0
+
+- `candidate_promotion_assessment.v0.json` defines recommendation-only candidate promotion assessments.
+- `candidate_promotion_decision.v0.json` defines decision vocabulary.
+- `candidate_promotion_policy.v0.json` summarizes required policy gates.
+
+These contracts add no promotion runtime, automatic acceptance, public-search authority, source/evidence/index mutation, telemetry, external calls, or live probes.

@@ -1,0 +1,337 @@
+{
+  "schema_version": "0.1.0",
+  "assessment_id": "example.candidate_promotion.rejection_assessment.v0",
+  "assessment_kind": "candidate_promotion_assessment",
+  "status": "rejection_recommended",
+  "created_by_tool": "p65_candidate_promotion_policy_v0",
+  "candidate_ref": {
+    "candidate_id": "example.candidate_index.rejection_assessment.v0",
+    "candidate_type": "source_record_candidate",
+    "candidate_status": "review_required",
+    "candidate_fingerprint": "1dc67208e26604f9a53de223fe9e065e132344020967d69f4abca99ff6ebb724",
+    "candidate_source": "candidate_index",
+    "candidate_ref_status": "referenced_only"
+  },
+  "candidate_summary": {
+    "label": "Synthetic unsupported source candidate",
+    "subject_kind": "software_version",
+    "source_family": "synthetic_policy_fixture",
+    "platform": "Windows 7",
+    "artifact_type": "metadata candidate",
+    "claim_types": [
+      "describes"
+    ],
+    "current_confidence": "low",
+    "review_status": "evidence_required",
+    "limitations": [
+      "Synthetic P65 example summary; no candidate record is changed."
+    ]
+  },
+  "assessment_scope": {
+    "assessment_mode": "policy_only_example",
+    "assessed_for": [
+      "reject"
+    ],
+    "promotion_destination": "none_v0",
+    "destination_runtime_implemented": false
+  },
+  "eligibility_gates": [
+    {
+      "gate_id": "gate.rejection_assessment.structure_valid",
+      "gate_type": "structure_valid",
+      "required": true,
+      "status": "passed",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    },
+    {
+      "gate_id": "gate.rejection_assessment.candidate_type_allowed",
+      "gate_type": "candidate_type_allowed",
+      "required": true,
+      "status": "passed",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    },
+    {
+      "gate_id": "gate.rejection_assessment.source_policy_allowed",
+      "gate_type": "source_policy_allowed",
+      "required": true,
+      "status": "failed",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    },
+    {
+      "gate_id": "gate.rejection_assessment.provenance_present",
+      "gate_type": "provenance_present",
+      "required": true,
+      "status": "passed",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [
+        "synthetic.assessment.context"
+      ],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    },
+    {
+      "gate_id": "gate.rejection_assessment.evidence_sufficient",
+      "gate_type": "evidence_sufficient",
+      "required": true,
+      "status": "failed",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [
+        "synthetic.assessment.context"
+      ],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    },
+    {
+      "gate_id": "gate.rejection_assessment.privacy_safe",
+      "gate_type": "privacy_safe",
+      "required": true,
+      "status": "passed",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    },
+    {
+      "gate_id": "gate.rejection_assessment.rights_review_complete",
+      "gate_type": "rights_review_complete",
+      "required": true,
+      "status": "review_required",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    },
+    {
+      "gate_id": "gate.rejection_assessment.risk_review_complete",
+      "gate_type": "risk_review_complete",
+      "required": true,
+      "status": "review_required",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    },
+    {
+      "gate_id": "gate.rejection_assessment.conflict_review_complete",
+      "gate_type": "conflict_review_complete",
+      "required": true,
+      "status": "passed",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    },
+    {
+      "gate_id": "gate.rejection_assessment.human_review_complete",
+      "gate_type": "human_review_complete",
+      "required": true,
+      "status": "future_only",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    },
+    {
+      "gate_id": "gate.rejection_assessment.policy_review_complete",
+      "gate_type": "policy_review_complete",
+      "required": true,
+      "status": "future_only",
+      "reason": "Gate result is recommendation-only and does not mutate state.",
+      "evidence_refs": [],
+      "limitations": [
+        "P65 examples do not complete human, policy, rights, risk, or operator review."
+      ]
+    }
+  ],
+  "evidence_sufficiency": {
+    "evidence_status": "insufficient",
+    "evidence_refs": [
+      "synthetic.evidence.ref"
+    ],
+    "required_evidence_kinds": [
+      "source-backed metadata",
+      "reviewed compatibility note"
+    ],
+    "missing_evidence_kinds": [
+      "reviewed source-backed evidence"
+    ],
+    "source_backed_required": true,
+    "snippets_public_safe": true,
+    "limitations": [
+      "Evidence sufficiency is for future review eligibility, not accepted truth."
+    ]
+  },
+  "provenance_sufficiency": {
+    "provenance_status": "partial",
+    "provenance_refs": [
+      "synthetic.provenance.ref"
+    ],
+    "validator_refs": [
+      "scripts/validate_candidate_promotion_assessment.py"
+    ],
+    "pack_refs": [],
+    "source_refs": [
+      "synthetic_policy_fixture"
+    ],
+    "limitations": [
+      "No pack import is performed."
+    ]
+  },
+  "source_policy_assessment": {
+    "source_policy_status": "source_disallowed",
+    "source_ids": [],
+    "source_families": [],
+    "live_source_called": false,
+    "live_probe_enabled": false,
+    "source_terms_review_required": true,
+    "limitations": [
+      "No live source is called; source policy review remains future work."
+    ]
+  },
+  "privacy_assessment": {
+    "privacy_status": "public_safe",
+    "raw_query_retained": false,
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "required_redactions": [],
+    "limitations": [
+      "No private data is present; publishing promotion assessments remains disabled."
+    ]
+  },
+  "rights_and_risk_assessment": {
+    "rights_status": "restricted",
+    "risk_status": "unknown",
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "limitations": [
+      "Rights and risk review are gates; no clearance or safety outcome is claimed."
+    ]
+  },
+  "conflict_assessment": {
+    "conflict_status": "none_known",
+    "conflict_refs": [],
+    "duplicate_candidate_refs": [],
+    "required_resolution": "none",
+    "destructive_merge_allowed": false,
+    "limitations": [
+      "Conflict handling is preservation-first and review-gated."
+    ]
+  },
+  "confidence_assessment": {
+    "confidence_class": "low",
+    "confidence_basis": [
+      "synthetic fixture",
+      "policy gate example"
+    ],
+    "confidence_not_truth": true,
+    "confidence_sufficient_for_review": false,
+    "confidence_sufficient_for_promotion": false,
+    "limitations": [
+      "Candidate confidence does not establish truth."
+    ]
+  },
+  "review_requirements": {
+    "required_review_kinds": [
+      "human_review",
+      "policy_review",
+      "evidence_review",
+      "provenance_review",
+      "rights_review",
+      "risk_review",
+      "conflict_review"
+    ],
+    "reviews_completed": [],
+    "reviews_missing": [
+      "human_review",
+      "policy_review",
+      "evidence_review",
+      "provenance_review",
+      "rights_review",
+      "risk_review"
+    ],
+    "promotion_allowed_now": false,
+    "promotion_policy_required": true,
+    "master_index_review_queue_required": true,
+    "limitations": [
+      "No review queue runtime is implemented in P65."
+    ]
+  },
+  "recommended_decision": {
+    "decision": "reject_candidate",
+    "decision_status": "recommendation_only",
+    "automatic": false,
+    "requires_human_or_policy_review": true,
+    "reasons": [
+      "Source policy is not allowed and evidence is insufficient."
+    ]
+  },
+  "decision_rationale": [
+    "Source policy is not allowed and evidence is insufficient."
+  ],
+  "future_outputs": [
+    {
+      "output_kind": "rejection_record_future",
+      "output_runtime_implemented": false,
+      "requires_validation": true,
+      "requires_review": true,
+      "limitations": [
+        "Future output is not emitted by P65."
+      ]
+    }
+  ],
+  "limitations": [
+    "P65 assessment is contract-only and does not mutate any index, source, evidence, queue, or candidate state."
+  ],
+  "no_auto_promotion_guarantees": {
+    "promotion_performed": false,
+    "accepted_as_truth": false,
+    "promoted_to_master_index": false
+  },
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "public_index_mutated": false,
+    "source_registry_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "probe_queue_mutated": false,
+    "telemetry_exported": false,
+    "external_calls_performed": false,
+    "live_source_called": false
+  },
+  "notes": [
+    "Recommendation-only P65 example; no promotion, acceptance, mutation, external call, or live probe."
+  ]
+}

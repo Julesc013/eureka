@@ -33,6 +33,8 @@
   ],
   "notes": [
     "P64 defines candidate index records only. It does not implement runtime candidate storage, persistent candidate storage, promotion runtime, public search candidate injection, source cache mutation, evidence ledger mutation, probe queue mutation, local index mutation, master-index mutation, telemetry, public query logging, external calls, or live probes.",
-    "Candidate records are provisional, reviewable, and conflict-preserving. They are not accepted evidence, public result authority, or master-index truth."
-  ]
+    "Candidate records are provisional, reviewable, and conflict-preserving. They are not accepted evidence, public result authority, or master-index truth.",
+    "P65 defines candidate promotion assessment policy as contract-only and adds no promotion runtime, automatic acceptance, candidate-index mutation, source-cache mutation, evidence-ledger mutation, public-index mutation, local-index mutation, master-index mutation, external calls, or live probes."
+  ],
+  "candidate_promotion_policy_status": "contract_only_p65"
 }

@@ -326,3 +326,7 @@ master-index records.
 The public search API does not expose candidate creation, candidate lookup,
 candidate ranking, candidate path selection, candidate promotion, source-cache
 mutation, evidence-ledger mutation, or master-index mutation in P64.
+
+## P65 Candidate Promotion Boundary
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

@@ -194,3 +194,7 @@ planning only and does not implement master-index queue runtime.
 Candidate Index v0 may later feed a master-index review queue only through a
 separate promotion policy. P64 itself creates no review queue item, accepts no
 candidate, and mutates no master-index record.
+
+## P65 Candidate Promotion Boundary
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

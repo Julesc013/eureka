@@ -81,3 +81,7 @@ candidate index contract adds no runtime candidate index, no public search
 candidate injection, no candidate promotion runtime, no source-cache mutation,
 no evidence-ledger mutation, no external calls, and no hosted query
 intelligence runtime.
+
+## P65 Candidate Promotion Rehearsal Boundary
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.
