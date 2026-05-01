@@ -132,3 +132,15 @@ output ingestion runtime, model calls, prompt capture, output cache,
 public-search display, contribution pack drafting, review queue submission,
 evidence-pack import, contribution-pack import, master-index mutation, rights
 clearance, malware safety, or production AI support.
+
+## AI-Assisted Drafting Relationship
+
+AI-Assisted Evidence Drafting Plan v0 uses this contract as its required gate.
+Future evidence candidates and contribution candidates can only use typed AI
+output after `scripts/validate_ai_output.py` passes. Typed output validation is
+not truth, not evidence acceptance, not contribution acceptance, not rights
+clearance, not malware safety, and not master-index acceptance.
+
+The plan remains planning/example/validation only. It adds no runtime AI, no
+model calls, no API keys, no telemetry, no provider loading, no public search
+mutation, no local index mutation, and no master-index mutation.

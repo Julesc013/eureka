@@ -1,10 +1,16 @@
 # AI-Assisted Drafting Contract
 
-AI-Assisted Drafting Contract v0 is a planning contract. It defines how future
-AI output may become an evidence or contribution candidate. It does not call
-models, load providers, store credentials, enable telemetry, process private
-data, import evidence, submit contributions, mutate search, mutate local
-indexes, or mutate the master index.
+AI-Assisted Drafting Contract v0 is a planning contract for AI-assisted
+evidence drafting. It defines how future AI output may become evidence
+candidates or contribution candidates. It does not call models, load
+providers, store credentials, enable telemetry, process private data, import
+evidence, submit contributions, mutate search, mutate local indexes, or mutate
+the master index.
+
+Boundary summary: there is no runtime, no model calls, no automatic acceptance,
+and AI output is not truth. Typed output validation and required review are
+mandatory before any future evidence candidates or contribution candidates can
+enter a review workflow.
 
 ## Workflow
 

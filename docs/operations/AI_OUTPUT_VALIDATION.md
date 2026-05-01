@@ -62,3 +62,11 @@ then preserve provider provenance, limitations, source refs, and evidence refs.
 Validated AI output still does not enter evidence packs, contribution packs, or
 the master index automatically. It remains a review-required candidate until a
 future contribution or review workflow explicitly handles it.
+
+AI-Assisted Evidence Drafting Plan v0 records that future path in
+`docs/architecture/AI_ASSISTED_EVIDENCE_DRAFTING.md` and
+`docs/reference/AI_ASSISTED_DRAFTING_CONTRACT.md`. The plan is
+planning/example/validation only: no runtime AI, no model calls, no API keys,
+no provider loading, no telemetry, no evidence acceptance, no contribution
+acceptance, no public search mutation, no local index mutation, and no
+master-index mutation.

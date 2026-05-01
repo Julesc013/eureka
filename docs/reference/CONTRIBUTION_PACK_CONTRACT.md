@@ -234,6 +234,14 @@ AI output only after output validation, evidence linking where possible, and
 review policy are in place. AI output does not enter contribution packs
 automatically and cannot trigger automatic acceptance or master-index mutation.
 
+AI-Assisted Evidence Drafting Plan v0 defines how future typed AI outputs may
+draft contribution candidates such as alias suggestions, evidence record
+candidates, compatibility suggestions, source record candidates,
+duplicate-or-identity candidates for review, absence reports, and review notes.
+Every candidate requires typed output validation and review. The plan adds no
+AI runtime, model calls, automatic contribution acceptance, upload,
+public-search mutation, local-index mutation, or master-index mutation.
+
 ## Not Implemented
 
 Contribution Pack Contract v0 does not implement contribution upload, source

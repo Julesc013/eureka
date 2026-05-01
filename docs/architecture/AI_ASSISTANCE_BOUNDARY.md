@@ -80,3 +80,14 @@ Future runtime work needs separate approval for provider loading, consent UI,
 credential handling, prompt/output logging policy, cache invalidation,
 private-data redaction, typed-output validation integration, contribution-pack
 drafting, review queue export, and any public-search display.
+
+## AI-Assisted Evidence Drafting Plan
+
+AI-Assisted Evidence Drafting Plan v0 defines a future workflow for evidence
+candidates and contribution candidates. The workflow still starts with
+disabled-by-default providers, explicit task requests, typed output validation,
+and required review. AI is an assistant, not authority and not truth.
+
+This planning slice adds no runtime AI, no model calls, no API keys, no
+telemetry, no provider loading, no evidence import, no contribution import, no
+public search mutation, no local index mutation, and no master-index mutation.

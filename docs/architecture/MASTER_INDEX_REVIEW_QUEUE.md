@@ -48,6 +48,11 @@ output shape, provider reference, required review, prohibited uses, and leakage
 checks passed; it does not enter evidence, contribution, queue, or master-index
 state automatically.
 
+AI-Assisted Evidence Drafting Plan v0 may only create future candidates after
+typed output validation and review. It does not implement model calls, queue
+submission, automatic acceptance, hosted moderation, public-search mutation,
+local-index mutation, or master-index mutation.
+
 Source/Evidence/Index Pack Import Planning v0 keeps import local and
 validate-only first. A staged pack is not submitted, uploaded, accepted,
 published, or merged into the master index. Future queue export must be a

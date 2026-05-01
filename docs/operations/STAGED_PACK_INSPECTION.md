@@ -99,6 +99,13 @@ Quarantine/Staging Tool v0. Future native staging UI may reuse its summary
 model, but no native client is implemented. Relay and snapshots must not expose
 local/private staged data by default. Public search remains unaffected.
 
+AI-Assisted Evidence Drafting Plan v0 may later inspect staged manifests as
+local/private context only after typed output validation and explicit future
+policy. Staged inspection does not send private staged data to remote providers
+by default, does not accept AI output as evidence or contribution truth, and
+does not mutate public search, local indexes, runtime source registry state, or
+the master index.
+
 ## Not Implemented
 
 The inspector does not create `.eureka-local/`, `.eureka-cache/`,

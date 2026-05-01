@@ -169,3 +169,17 @@ search, LLM reranking, AI extraction runtime, AI-generated evidence
 acceptance, local index mutation, public-search AI, uploads, accounts, relay
 runtime, native client runtime, master-index mutation, rights clearance,
 malware safety, or production AI support.
+
+## AI-Assisted Drafting Plan
+
+AI-Assisted Evidence Drafting Plan v0 is documented in
+`docs/architecture/AI_ASSISTED_EVIDENCE_DRAFTING.md` and
+`docs/reference/AI_ASSISTED_DRAFTING_CONTRACT.md`. It keeps providers disabled
+by default and defines only future candidate drafting. It adds no runtime AI,
+no model calls, no API keys, no telemetry, no provider loading, and no public
+search, local index, runtime, contribution, evidence, or master-index mutation.
+
+Future drafting must start from an explicit task request, run typed output
+validation, and preserve required review. Output remains a candidate, not
+truth, rights clearance, malware safety, source trust, automatic acceptance, or
+master-index acceptance.

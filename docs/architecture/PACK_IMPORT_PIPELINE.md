@@ -118,6 +118,14 @@ Pack import is local. Master-index review is separate. Accepted public records
 need Master Index Review Queue decisions, provenance, conflict handling, and
 policy review. Import never creates automatic acceptance.
 
+## AI-Assisted Drafting Boundary
+
+AI-Assisted Evidence Drafting Plan v0 may later produce evidence or
+contribution candidates only after typed output validation. It does not import
+AI output, stage AI output, mutate local indexes, mutate public search, mutate
+runtime source registry state, upload, submit, or mutate the master index.
+Private staged or pack context remains local/private by default.
+
 ## Not Implemented
 
 This plan does not implement source/evidence/index/contribution pack import,

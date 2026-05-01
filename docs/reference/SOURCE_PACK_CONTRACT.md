@@ -250,6 +250,11 @@ AI outputs may draft source-record candidates only as typed suggestions that
 require evidence links and review; they cannot bypass source-pack validation or
 canonical source-registry governance.
 
+AI-Assisted Evidence Drafting Plan v0 keeps source-match drafting as a future
+candidate-only workflow. It does not fetch URLs, scrape, crawl, call models,
+create source records, mutate runtime source registry state, mutate public
+search, mutate local indexes, or mutate the master index.
+
 ## Out Of Scope
 
 P34 does not implement:

@@ -211,6 +211,14 @@ where possible, and reviewed. It does not enter evidence packs automatically
 and cannot bypass evidence-pack validation, rights/privacy checks, contribution
 review, or master-index review.
 
+AI-Assisted Evidence Drafting Plan v0 defines that future candidate mapping in
+`docs/reference/AI_ASSISTED_DRAFTING_CONTRACT.md`. A metadata,
+compatibility, review-description, member-path, source-observation,
+OCR-cleanup, or absence candidate must pass typed output validation first and
+remain review-required. The plan adds no AI runtime, no model calls, no
+evidence import, no public search mutation, no local index mutation, and no
+master-index mutation.
+
 ## Not Implemented
 
 Evidence Pack Contract v0 does not implement evidence pack import, local or

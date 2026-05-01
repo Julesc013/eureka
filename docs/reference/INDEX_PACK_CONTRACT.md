@@ -226,6 +226,10 @@ remain coverage/build/record-summary metadata. AI output cannot become index
 truth, mutate a local index, change public search, or merge index summaries
 without separate validation and review.
 
+AI-Assisted Evidence Drafting Plan v0 does not allow AI output to mutate index
+packs or local indexes. Any future source-match, identity-match, or explanation
+draft remains a candidate that requires typed output validation and review.
+
 ## Not Implemented
 
 Index Pack Contract v0 does not implement index pack import, merge, local cache

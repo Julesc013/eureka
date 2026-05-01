@@ -6,6 +6,11 @@ provider loading, prompt logging, telemetry, model calls, evidence import,
 contribution import, public-search mutation, local-index mutation, or
 master-index mutation.
 
+Boundary summary: there is no runtime, no model calls, no automatic acceptance,
+and AI output is not truth. Typed output validation and required review are
+mandatory before any future evidence candidates or contribution candidates can
+enter a review workflow.
+
 The safe shape is:
 
 1. Start from validated source, evidence, result-card, staged-manifest, or pack

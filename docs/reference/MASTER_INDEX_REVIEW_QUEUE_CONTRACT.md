@@ -151,6 +151,12 @@ can cite a review-queue example or contribution candidate result, but it does
 not submit, accept, reject, supersede, publish, or mutate hosted/master-index
 state.
 
+AI-Assisted Evidence Drafting Plan v0 may later draft contribution or evidence
+candidates that eventually become review queue candidates through separate
+export tooling. AI output cannot auto-accept master-index records, decide
+canonical truth, rights clearance, malware safety, source trust, or identity
+merge. Typed output validation and human/governed review remain required.
+
 ## Validation Command
 
 ```powershell
@@ -179,6 +185,7 @@ The validator is stdlib-only and does not perform network calls.
 ## Next Work
 
 Pack Import Validator Aggregator v0, AI Provider Contract v0, Typed AI Output
-Validator v0, and Pack Import Report Format v0 are now implemented as
-validation/contract-only milestones. The next pack-import follow-up is
-Validate-Only Pack Import Tool v0.
+Validator v0, Pack Import Report Format v0, Validate-Only Pack Import Tool v0,
+and AI-Assisted Evidence Drafting Plan v0 are now implemented as validation,
+tooling, or planning-only milestones. AI-assisted drafting remains candidate
+planning only and does not implement master-index queue runtime.
