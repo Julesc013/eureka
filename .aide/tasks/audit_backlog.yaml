@@ -600,8 +600,17 @@
         "public-search-index-builder-v0"
       ],
       "title": "Wire the static search handoff to the generated public index and hosted wrapper only when honest backend evidence exists",
-      "status": "open_follow_up",
-      "suggested_milestone": "P56 Static Site Search Integration v0"
+      "status": "addressed_by_static_site_search_integration_v0_backend_still_unconfigured",
+      "suggested_milestone": "P57 Public Search Safety Evidence v0"
+    },
+    {
+      "id": "audit-backlog-static-search-backend-evidence",
+      "finding_refs": [
+        "static-site-search-integration-v0"
+      ],
+      "title": "Record verified hosted backend URL evidence before enabling static hosted search form submission",
+      "status": "operator_gated_follow_up",
+      "suggested_milestone": "P58 Hosted Public Search Rehearsal v0 after operator deployment evidence"
     }
   ]
 }

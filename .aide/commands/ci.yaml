@@ -412,6 +412,14 @@ steps:
     run: python scripts/check_generated_artifact_drift.py --artifact public_search_index
   - id: public_search_index_builder_tests
     run: python -m unittest tests.operations.test_public_search_index_builder tests.scripts.test_build_public_search_index tests.scripts.test_validate_public_search_index
+  - id: static_site_search_integration_validator
+    run: python scripts/validate_static_site_search_integration.py
+  - id: static_site_search_integration_validator_json
+    run: python scripts/validate_static_site_search_integration.py --json
+  - id: static_search_integration_drift_guard
+    run: python scripts/check_generated_artifact_drift.py --artifact static_search_integration
+  - id: static_site_search_integration_tests
+    run: python -m unittest tests.operations.test_static_site_search_integration tests.scripts.test_validate_static_site_search_integration
   - id: public_search_result_card_contract_validator
     run: python scripts/validate_public_search_result_card_contract.py
   - id: public_search_result_card_contract_tests

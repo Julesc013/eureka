@@ -190,7 +190,11 @@
         "public_search_index_builder_validator",
         "public_search_index_builder_validator_json",
         "public_search_index_drift_guard",
-        "public_search_index_builder_tests"
+        "public_search_index_builder_tests",
+        "static_site_search_integration_validator",
+        "static_site_search_integration_validator_json",
+        "static_search_integration_drift_guard",
+        "static_site_search_integration_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -376,7 +380,11 @@
         "public_search_index_builder_validator",
         "public_search_index_builder_validator_json",
         "public_search_index_drift_guard",
-        "public_search_index_builder_tests"
+        "public_search_index_builder_tests",
+        "static_site_search_integration_validator",
+        "static_site_search_integration_validator_json",
+        "static_search_integration_drift_guard",
+        "static_site_search_integration_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -526,7 +534,11 @@
         "staged_pack_inspector_tests",
         "validate_only_pack_import_tool_tests",
         "public_search_index_builder_validator",
-        "public_search_index_builder_validator_json"
+        "public_search_index_builder_validator_json",
+        "static_site_search_integration_validator",
+        "static_site_search_integration_validator_json",
+        "static_search_integration_drift_guard",
+        "static_site_search_integration_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -577,7 +589,11 @@
         "public_search_index_builder_validator",
         "public_search_index_builder_validator_json",
         "public_search_index_drift_guard",
-        "public_search_index_builder_tests"
+        "public_search_index_builder_tests",
+        "static_site_search_integration_validator",
+        "static_site_search_integration_validator_json",
+        "static_search_integration_drift_guard",
+        "static_site_search_integration_tests"
       ],
       "required_status": "required",
       "when_to_run": "After web/API route-policy, status, route inventory, or hosting-pack changes.",
@@ -658,7 +674,11 @@
         "docs_diff_check",
         "public_search_index_builder_check",
         "public_search_index_validator",
-        "public_search_index_drift_guard"
+        "public_search_index_drift_guard",
+        "static_site_search_integration_validator",
+        "static_site_search_integration_validator_json",
+        "static_search_integration_drift_guard",
+        "static_site_search_integration_tests"
       ],
       "required_status": "required",
       "when_to_run": "After publication inventory, public static site, generated static site, route/data/client contract, base-path, GitHub Pages workflow, repository layout, or future static-hosting preparation changes.",
@@ -792,7 +812,11 @@
         "public_search_index_builder_validator",
         "public_search_index_builder_validator_json",
         "public_search_index_drift_guard",
-        "public_search_index_builder_tests"
+        "public_search_index_builder_tests",
+        "static_site_search_integration_validator",
+        "static_site_search_integration_validator_json",
+        "static_search_integration_drift_guard",
+        "static_site_search_integration_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",

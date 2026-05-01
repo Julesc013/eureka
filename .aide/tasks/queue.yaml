@@ -713,16 +713,16 @@
     {
       "id": "static_site_search_integration_v0",
       "title": "P56 Static Site Search Integration v0",
-      "status": "queued_codex_safe",
+      "status": "completed",
       "priority": 97,
-      "notes": "Wire static handoff configuration to a verified backend URL only when evidence exists; keep GitHub Pages static-only and avoid fake hosted URLs."
+      "notes": "Implemented P56 static search integration with no-JS search surfaces, search_config.json, public_index_summary.json, backend-unconfigured default, audit pack, validator/tests, and generated artifact metadata. No hosted backend, fake URL, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, index mutation, pack import, staging runtime, AI runtime, or production claim was added."
     },
     {
       "id": "public_search_safety_evidence_v0",
       "title": "P57 Public Search Safety Evidence v0",
       "status": "queued_codex_safe",
       "priority": 98,
-      "notes": "Expand safety evidence for hosted wrapper behavior without enabling live probes, downloads, uploads, local paths, accounts, telemetry, or external calls."
+      "notes": "Next Codex-safe milestone after P56: expand public search safety evidence without enabling live probes, downloads, uploads, local paths, accounts, telemetry, arbitrary URL fetch, or external calls."
     },
     {
       "id": "hosted_public_search_rehearsal_v0",
@@ -779,6 +779,13 @@
       "status": "queued_codex_safe",
       "priority": 106,
       "notes": "Define validation-gated promotion from candidate index toward authoritative records without public-query or AI-driven master-index mutation."
+    },
+    {
+      "id": "known_absence_page_v0",
+      "title": "P66 Known Absence Page v0",
+      "status": "queued_codex_safe",
+      "priority": 107,
+      "notes": "Future static/dynamic absence explanation page after candidate and promotion policies; no master-index mutation or global non-existence claim."
     }
   ]
 }

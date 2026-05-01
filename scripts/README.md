@@ -98,6 +98,13 @@ Current scripts:
   query-length safety alignment, no-JS posture, no fake hosted URL, and no
   live-probe/download/install/upload/local-path claim; it supports `--json`,
   performs no network calls, starts no server, and deploys nothing
+- `validate_static_site_search_integration.py`: validates P56 static search
+  integration, including the audit pack, generated search page, lite/text/files
+  search surfaces, `data/search_config.json`, `data/public_index_summary.json`,
+  backend-unconfigured honesty, no-JS posture, disabled live/download/upload/
+  local-path/arbitrary-URL flags, docs, and public-index summary alignment; it
+  supports `--json`, performs no network calls, starts no backend, and deploys
+  nothing
 - `validate_compatibility_surfaces.py`: validates Compatibility Surface
   Strategy v0 inventories, including the surface capability matrix, route
   matrix, client-profile alignment, implemented static route roots, future
@@ -107,7 +114,8 @@ Current scripts:
   native clients, live backend routes, or live probes available
 - `generate_public_data_summaries.py`: generates, updates, or checks
   deterministic static JSON summaries under `site/dist/data/` by default,
-  including site, page-registry, source, eval, route, search-handoff, and build summaries; it
+  including site, page-registry, source, eval, route, search-handoff, static
+  search config, public index summary, and build summaries; it
   supports `--update`, `--check`, `--output-root`, and `--json`, performs no
   network calls, runs no live probes, records no external observations, starts
   no server, deploys nothing, and does not create live API semantics

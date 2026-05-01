@@ -4170,6 +4170,101 @@
       "command": "python -m unittest tests.operations.test_public_search_index_builder tests.scripts.test_build_public_search_index tests.scripts.test_validate_public_search_index",
       "failure_means": "Public search index builder tests failed.",
       "notes": "P55 local_index_only generated index validation; no live source calls, deployment, downloads, uploads, arbitrary URL fetching, or master-index mutation."
+    },
+    {
+      "test_id": "static_site_search_integration_validator",
+      "label": "Static site search integration validator",
+      "command": "python scripts/validate_static_site_search_integration.py",
+      "category": "publication_static_site",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P56 static search integration outputs, audit pack, config data, public index summary, or no-overclaim guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates static/no-JS search integration only; it performs no network calls, deploys no backend, enables no live probes, and does not mutate indexes."
+    },
+    {
+      "test_id": "static_site_search_integration_validator_json",
+      "label": "Static site search integration validator JSON",
+      "command": "python scripts/validate_static_site_search_integration.py --json",
+      "category": "publication_static_site",
+      "owner_area": "control/audits",
+      "required_for": [
+        "full",
+        "docs_only",
+        "publication_static_site",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P56 validator JSON output stopped being machine-readable.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable P56 validator output; no external calls, deployment, live probes, or product runtime expansion."
+    },
+    {
+      "test_id": "static_search_integration_drift_guard",
+      "label": "Static search integration generated artifact drift guard",
+      "command": "python scripts/check_generated_artifact_drift.py --artifact static_search_integration",
+      "category": "generated_artifact",
+      "owner_area": "site/dist",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Generated static search integration outputs drifted from their generator or validator.",
+      "advisory_or_required": "required",
+      "notes": "Checks P56 generated outputs without update commands; no backend hosting, live probes, external calls, or index mutation."
+    },
+    {
+      "test_id": "static_site_search_integration_tests",
+      "label": "Static site search integration tests",
+      "command": "python -m unittest tests.operations.test_static_site_search_integration tests.scripts.test_validate_static_site_search_integration",
+      "category": "publication_static_site",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "publication_static_site",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P56 audit pack, generated surfaces, config JSON, public index summary, or validator CLI behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P56 tests; they do not call external sources, deploy, mutate indexes, import packs, stage packs, or load AI providers."
     }
   ]
 }
