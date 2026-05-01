@@ -110,3 +110,11 @@ summaries and scoped absence/gap outcomes. The hosted wrapper and local runtime
 still do not read or write cache entries, persist cache state, publish cache
 entries, emit telemetry, write miss ledgers or search needs, enqueue probes,
 mutate candidate indexes, mutate local indexes, or mutate the master index.
+
+## P61 Search Miss Ledger Boundary
+
+P61 Search Miss Ledger v0 defines future scoped miss entries for failed, weak,
+ambiguous, blocked, or incomplete public searches. The public search runtime and
+hosted wrapper still do not write miss ledger entries, persist ledger state,
+create search needs, enqueue probes, mutate result caches, mutate candidate
+indexes, mutate local indexes, or mutate the master index.

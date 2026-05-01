@@ -923,3 +923,12 @@ an audit pack. Runtime cache reads/writes, persistent cache storage, telemetry,
 public query logging, miss ledger writes, search need writes, probe enqueueing,
 candidate-index mutation, local-index mutation, and master-index mutation remain
 unimplemented.
+
+## P61 Search Miss Ledger v0
+
+P61 adds the search miss ledger contract under `contracts/query/`, a
+classification taxonomy, synthetic no-hit and weak-hit examples, validators,
+docs, and an audit pack. Runtime ledger writes, persistent ledger storage,
+telemetry, public query logging, search need creation, probe enqueueing, result
+cache mutation, candidate-index mutation, local-index mutation, and
+master-index mutation remain unimplemented.

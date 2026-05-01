@@ -104,3 +104,8 @@ future hosted search learning. The hosted wrapper does not persist query
 observations, emit telemetry, write shared caches, write miss ledgers, enqueue
 probes, mutate candidate indexes, mutate local indexes, or mutate the master
 index.
+
+P60 Shared Query/Result Cache v0 and P61 Search Miss Ledger v0 remain
+contract-only. The hosted wrapper does not read or write cache entries, write
+miss ledger entries, create search needs, enqueue probes, mutate candidate
+indexes, mutate local indexes, or mutate the master index.

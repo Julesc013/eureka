@@ -288,3 +288,10 @@ P60 Shared Query/Result Cache v0 may summarize public-safe result-card fields
 for future reuse. A cache entry is not the full result card, not source
 evidence, not a download/install promise, not telemetry, and not master-index
 truth.
+
+## Search Miss Ledger Boundary
+
+P61 Search Miss Ledger v0 may reference public-safe result-card summaries as
+weak hits or near misses. A miss entry is not the full result card, not source
+evidence, not a search need, not a probe job, not telemetry, and not
+master-index truth.

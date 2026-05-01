@@ -7,8 +7,10 @@ for `local_index_only` public search.
 
 P60 shared query/result cache examples reference the public index build and
 manifest so future cached summaries can be invalidated when the index changes.
-The public index builder does not write query cache entries, miss ledgers,
-search needs, probes, candidate indexes, or master-index records.
+P61 search miss ledger examples reference the public index build and checked
+scope so scoped absence and weak hits stay tied to a concrete public index
+snapshot. The public index builder does not write query cache entries, miss
+ledgers, search needs, probes, candidate indexes, or master-index records.
 
 ## Artifact Root
 

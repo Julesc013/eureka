@@ -644,3 +644,11 @@ examples, validators, docs, and audit evidence. Backend runtime still does not
 read or write cache entries, persist cache state, emit telemetry, write miss
 ledger entries, create search needs, enqueue probes, mutate candidate records,
 or mutate master-index records. P61 should define Search Miss Ledger v0 next.
+
+## P61 Search Miss Ledger v0
+
+P61 defines the search miss ledger boundary as contract-only schema, taxonomy,
+examples, validators, docs, and audit evidence. Backend runtime still does not
+write miss ledger entries, persist ledger state, emit telemetry, create search
+needs, enqueue probes, mutate result caches, mutate candidate records, or
+mutate master-index records. P62 should define Search Need Record v0 next.

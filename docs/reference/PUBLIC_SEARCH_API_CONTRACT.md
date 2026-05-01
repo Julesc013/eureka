@@ -298,3 +298,10 @@ query/result cache entries. Public search routes remain unchanged: they do not
 read or write result cache entries, persist cache state, publish cache entries,
 write miss ledgers or search needs, enqueue probes, mutate candidate indexes,
 or mutate master-index records.
+
+## P61 Search Miss Ledger Boundary
+
+P61 adds `contracts/query/search_miss_ledger_entry.v0.json` for future scoped
+miss records. Public search routes remain unchanged: they do not write miss
+ledger entries, persist ledger state, create search needs, enqueue probes,
+mutate result caches, mutate candidate indexes, or mutate master-index records.

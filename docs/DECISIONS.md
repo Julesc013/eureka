@@ -1800,3 +1800,13 @@ snapshot, but no runtime cache writes, persistent cache storage, telemetry,
 public query logging, miss-ledger mutation, search-need mutation, probe
 enqueueing, candidate-index mutation, local-index mutation, or master-index
 mutation is implemented.
+
+## P61 Search Miss Ledger Decision
+
+Decision: search miss ledger is contract-only in P61. Miss entries summarize
+failed, weak, ambiguous, blocked, or incomplete searches with checked scope,
+not-checked scope, cause taxonomy, weak-hit/near-miss summaries, scoped
+absence, and future-only next steps, but no runtime ledger writes, persistent
+ledger storage, telemetry, public query logging, search need creation, probe
+enqueueing, result-cache mutation, candidate-index mutation, local-index
+mutation, or master-index mutation is implemented.

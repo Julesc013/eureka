@@ -758,3 +758,13 @@ audit evidence. No runtime cache writes, persistent cache storage, telemetry,
 miss ledger mutation, search need mutation, probe enqueue, candidate-index
 mutation, local-index mutation, or master-index mutation was added. Next
 Codex-safe branch: P61 Search Miss Ledger v0.
+
+## P61 Search Miss Ledger v0
+
+Completed: search miss ledger schema, miss classification taxonomy, scoped
+absence model, no-hit and weak-hit examples, dry-run helper, validators, docs,
+and audit evidence. No runtime ledger writes, persistent ledger storage,
+telemetry, public query logging, search need creation, probe enqueueing,
+result-cache mutation, candidate-index mutation, local-index mutation, or
+master-index mutation was added. Next Codex-safe branch: P62 Search Need Record
+v0.

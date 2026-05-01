@@ -208,7 +208,11 @@
         "search_result_cache_entry_examples_validator",
         "shared_query_result_cache_contract_validator",
         "search_result_cache_dry_run_json",
-        "shared_query_result_cache_contract_tests"
+        "shared_query_result_cache_contract_tests",
+        "search_miss_ledger_entry_examples_validator",
+        "search_miss_ledger_contract_validator",
+        "search_miss_ledger_dry_run_json",
+        "search_miss_ledger_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -420,7 +424,13 @@
         "shared_query_result_cache_contract_validator",
         "shared_query_result_cache_contract_validator_json",
         "search_result_cache_dry_run_json",
-        "shared_query_result_cache_contract_tests"
+        "shared_query_result_cache_contract_tests",
+        "search_miss_ledger_entry_examples_validator",
+        "search_miss_ledger_entry_examples_validator_json",
+        "search_miss_ledger_contract_validator",
+        "search_miss_ledger_contract_validator_json",
+        "search_miss_ledger_dry_run_json",
+        "search_miss_ledger_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -580,7 +590,10 @@
         "query_observation_contract_tests",
         "search_result_cache_entry_examples_validator",
         "shared_query_result_cache_contract_validator",
-        "shared_query_result_cache_contract_tests"
+        "shared_query_result_cache_contract_tests",
+        "search_miss_ledger_entry_examples_validator",
+        "search_miss_ledger_contract_validator",
+        "search_miss_ledger_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -886,7 +899,13 @@
         "shared_query_result_cache_contract_validator",
         "shared_query_result_cache_contract_validator_json",
         "search_result_cache_dry_run_json",
-        "shared_query_result_cache_contract_tests"
+        "shared_query_result_cache_contract_tests",
+        "search_miss_ledger_entry_examples_validator",
+        "search_miss_ledger_entry_examples_validator_json",
+        "search_miss_ledger_contract_validator",
+        "search_miss_ledger_contract_validator_json",
+        "search_miss_ledger_dry_run_json",
+        "search_miss_ledger_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -944,6 +963,7 @@
     "P57 Public Search Safety Evidence checks are stdlib-only local/public-alpha safety evidence; they use an in-process hosted-wrapper harness and add no deployment, live probes, external calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or production claim.",
     "P58 Hosted Public Search Rehearsal checks are stdlib-only localhost hosted-mode evidence; they start a local wrapper process and add no deployment, external calls, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or production claim.",
     "P59 Query Observation Contract v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public query logging, result-cache mutation, miss-ledger mutation, probe queue, external calls, or index/master-index mutation.",
-    "P60 Shared Query/Result Cache v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, runtime cache writes, public query logging, miss ledger mutation, search need mutation, probe enqueueing, external calls, or index/master-index mutation."
+    "P60 Shared Query/Result Cache v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, runtime cache writes, public query logging, miss ledger mutation, search need mutation, probe enqueueing, external calls, or index/master-index mutation.",
+    "P61 Search Miss Ledger v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, runtime ledger writes, public query logging, search need creation, probe enqueueing, result cache mutation, external calls, or index/master-index mutation."
   ]
 }

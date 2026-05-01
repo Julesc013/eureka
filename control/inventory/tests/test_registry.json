@@ -4725,6 +4725,133 @@
       "failure_means": "Focused P60 schema, examples, validators, dry-run, audit, docs, privacy, or scoped-absence tests regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P60 tests; no telemetry, persistence, runtime cache writes, query logging, miss ledger, search need, probe queue, external calls, or index mutation."
+    },
+    {
+      "test_id": "search_miss_ledger_entry_examples_validator",
+      "label": "Search miss ledger entry examples validator",
+      "command": "python scripts/validate_search_miss_ledger_entry.py --all-examples",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P61 search miss ledger examples, checksums, privacy flags, scoped absence, suggested next steps, or no-mutation guarantees regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic search miss ledger examples only; no telemetry, persistence, runtime ledger writes, search need creation, probes, result cache mutation, index mutation, or external calls."
+    },
+    {
+      "test_id": "search_miss_ledger_entry_examples_validator_json",
+      "label": "Search miss ledger entry examples validator JSON",
+      "command": "python scripts/validate_search_miss_ledger_entry.py --all-examples --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P61 example validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON example validator output for P61."
+    },
+    {
+      "test_id": "search_miss_ledger_contract_validator",
+      "label": "Search miss ledger contract validator",
+      "command": "python scripts/validate_search_miss_ledger_contract.py",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P61 contract schema, docs, audit pack, policy inventory, scoped absence, or no-runtime/no-telemetry claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates P61 governance only; does not collect, persist, upload, publish, or runtime-write search miss records."
+    },
+    {
+      "test_id": "search_miss_ledger_contract_validator_json",
+      "label": "Search miss ledger contract validator JSON",
+      "command": "python scripts/validate_search_miss_ledger_contract.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P61 contract validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON contract validator output for P61."
+    },
+    {
+      "test_id": "search_miss_ledger_dry_run_json",
+      "label": "Search miss ledger dry-run JSON helper",
+      "command": "python scripts/dry_run_search_miss_ledger_entry.py --query \"no-such-local-index-hit\" --miss-type no_hits --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "sub-second",
+      "failure_means": "P61 dry-run miss ledger helper failed or stopped emitting a valid no-persistence record.",
+      "advisory_or_required": "required",
+      "notes": "Dry-run helper emits stdout only and writes no ledger, query log, result cache, search need, probe, index, or telemetry state."
+    },
+    {
+      "test_id": "search_miss_ledger_contract_tests",
+      "label": "Search miss ledger contract tests",
+      "command": "python -m unittest tests.operations.test_search_miss_ledger_contract tests.scripts.test_validate_search_miss_ledger_entry tests.scripts.test_validate_search_miss_ledger_contract tests.scripts.test_dry_run_search_miss_ledger_entry",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P61 schema, examples, validators, dry-run, audit, docs, privacy, scoped absence, or no-mutation tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P61 tests; no telemetry, persistence, runtime ledger writes, query logging, search need creation, probe queue, result cache mutation, external calls, or index mutation."
     }
   ]
 }

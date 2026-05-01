@@ -295,3 +295,11 @@ P58 starts the hosted wrapper locally and verifies the same safety posture over
 HTTP: `local_index_only`, safe status routes, safe query responses, and blocked
 dangerous parameters. The rehearsal does not add live probes, downloads,
 uploads, accounts, telemetry, arbitrary URL fetch, or edge rate-limit claims.
+
+## Query Intelligence Safety Boundary
+
+P59, P60, and P61 add contract-only query observation, shared result cache, and
+search miss ledger shapes. They do not add telemetry, persistent query logging,
+runtime cache writes, runtime ledger writes, search need creation, probe
+enqueueing, candidate-index mutation, local-index mutation, master-index
+mutation, or hosted query-intelligence runtime.

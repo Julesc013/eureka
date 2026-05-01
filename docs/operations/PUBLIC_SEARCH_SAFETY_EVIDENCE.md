@@ -56,6 +56,11 @@ cache writes, telemetry, public query logging, miss ledger writes, search need
 writes, probes, candidate-index mutation, local-index mutation, or master-index
 mutation.
 
+P61 Search Miss Ledger v0 remains contract-only. It adds no runtime ledger
+writes, telemetry, public query logging, search need creation, probe
+enqueueing, result-cache mutation, candidate-index mutation, local-index
+mutation, or master-index mutation.
+
 Human or operator parallel work may deploy the wrapper, configure a real
 backend URL, configure edge/rate limits, verify the static site, and execute
 Manual Observation Batch 0, but those actions require separate evidence.

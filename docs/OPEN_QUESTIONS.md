@@ -165,6 +165,14 @@ miss ledger/search need/probe queue/candidate index, or mutate the master index.
 The next question is how P61 should classify and validate misses as ledger
 entries without treating them as truth.
 
+P61 answer: the search miss ledger is contract-only. It classifies no-hit,
+weak-hit, near-miss, blocked, and incomplete searches with checked/not-checked
+scope, cause records, privacy flags, scoped absence, and future-only suggested
+steps. Current runtime does not write miss ledger entries, create search needs,
+enqueue probes, mutate result caches, mutate candidate indexes, or mutate the
+master index. The next question is how P62 should represent durable search
+needs without turning misses into truth.
+
 - What aggregate threshold is required before public demand summaries may be published?
 - What retention and deletion controls are required before any hosted query observation runtime exists?
 - What poisoning and spam controls are required before query-derived demand can influence candidate work?

@@ -484,6 +484,18 @@ steps:
     run: python scripts/dry_run_search_result_cache_entry.py --query "windows 7 apps" --json
   - id: shared_query_result_cache_contract_tests
     run: python -m unittest tests.operations.test_shared_query_result_cache_contract tests.scripts.test_validate_search_result_cache_entry tests.scripts.test_validate_shared_query_result_cache_contract tests.scripts.test_dry_run_search_result_cache_entry
+  - id: search_miss_ledger_entry_examples_validator
+    run: python scripts/validate_search_miss_ledger_entry.py --all-examples
+  - id: search_miss_ledger_entry_examples_validator_json
+    run: python scripts/validate_search_miss_ledger_entry.py --all-examples --json
+  - id: search_miss_ledger_contract_validator
+    run: python scripts/validate_search_miss_ledger_contract.py
+  - id: search_miss_ledger_contract_validator_json
+    run: python scripts/validate_search_miss_ledger_contract.py --json
+  - id: search_miss_ledger_dry_run_json
+    run: python scripts/dry_run_search_miss_ledger_entry.py --query "no-such-local-index-hit" --miss-type no_hits --json
+  - id: search_miss_ledger_contract_tests
+    run: python -m unittest tests.operations.test_search_miss_ledger_contract tests.scripts.test_validate_search_miss_ledger_entry tests.scripts.test_validate_search_miss_ledger_contract tests.scripts.test_dry_run_search_miss_ledger_entry
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.

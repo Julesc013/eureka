@@ -57,3 +57,10 @@ P58 checks that the static search handoff remains backend-unconfigured while
 the hosted wrapper is rehearsed locally. `search_config.json` still has no
 verified hosted backend URL, and static form submission remains disabled until
 operator deployment evidence exists.
+
+## Query Intelligence Boundary
+
+P59 Query Observation, P60 Shared Query/Result Cache, and P61 Search Miss
+Ledger remain contract-only. Static search pages do not collect observations,
+write cache entries, write miss ledger entries, create search needs, enqueue
+probes, mutate indexes, or publish public demand counts.
