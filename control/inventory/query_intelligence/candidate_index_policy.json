@@ -37,10 +37,12 @@
     "P65 defines candidate promotion assessment policy as contract-only and adds no promotion runtime, automatic acceptance, candidate-index mutation, source-cache mutation, evidence-ledger mutation, public-index mutation, local-index mutation, master-index mutation, external calls, or live probes.",
     "P66 Known Absence Page v0 is future/contract-only and does not add runtime pages, telemetry, probes, or mutation.",
     "P67 Query Privacy and Poisoning Guard v0 is future/contract-only and adds no runtime guard, telemetry, account/IP tracking, query-intelligence mutation, index mutation, external calls, or live probes.",
-    "P68 demand dashboard remains future/contract-only and may use only privacy-filtered, poisoning-guarded aggregate inputs; no runtime aggregation, telemetry, real demand claim, or mutation is added."
+    "P68 demand dashboard remains future/contract-only and may use only privacy-filtered, poisoning-guarded aggregate inputs; no runtime aggregation, telemetry, real demand claim, or mutation is added.",
+    "P69 source sync workers remain future/contract-only; no public-query fanout, connector runtime, source cache/evidence ledger mutation, candidate mutation, or index mutation is added."
   ],
   "candidate_promotion_policy_status": "contract_only_p65",
   "known_absence_page_status": "contract_only_p66",
   "query_privacy_poisoning_guard_status": "contract_only_p67",
-  "demand_dashboard_status": "contract_only_p68"
+  "demand_dashboard_status": "contract_only_p68",
+  "source_sync_worker_status": "contract_only_p69"
 }

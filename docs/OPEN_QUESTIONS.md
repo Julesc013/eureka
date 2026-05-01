@@ -217,3 +217,7 @@ Open after P67: how future demand dashboard aggregation will prove privacy-filte
 ## P68 Open Questions
 
 Future work must define retention/deletion, operator review, source sync, source cache/evidence ledger, connector approvals, and production abuse controls before a real demand dashboard can exist.
+
+## P69 Open Questions
+
+Future work must define source cache/evidence ledger schemas, source-specific User-Agent/contact policy, connector approval packs, credential handling, retention, and worker operations before live sync can run.

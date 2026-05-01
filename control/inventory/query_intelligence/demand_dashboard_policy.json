@@ -33,6 +33,8 @@
   ],
   "notes": [
     "P68 is contract-only and defines future aggregate dashboard snapshots after privacy filtering and poisoning exclusion.",
-    "No runtime dashboard, persistent dashboard store, telemetry, account tracking, IP tracking, public query logging, query-intelligence mutation, index mutation, external calls, live probes, or real demand claims are added."
-  ]
+    "No runtime dashboard, persistent dashboard store, telemetry, account tracking, IP tracking, public query logging, query-intelligence mutation, index mutation, external calls, live probes, or real demand claims are added.",
+    "P69 source sync workers remain future/contract-only; no public-query fanout, connector runtime, source cache/evidence ledger mutation, candidate mutation, or index mutation is added."
+  ],
+  "source_sync_worker_status": "contract_only_p69"
 }

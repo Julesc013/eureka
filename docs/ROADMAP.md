@@ -824,3 +824,7 @@ After P67, the recommended next branch is P68 Demand Dashboard v0. Demand dashbo
 ## Query Intelligence After P68
 
 P68 completes the first Query Intelligence Plane contract sequence. Next recommended branch: P69 Source Sync Worker Contract v0. Do not turn demand dashboard examples into telemetry or real demand claims.
+
+## Source Ingestion After P69
+
+P69 starts the source-ingestion plane with a source sync worker contract. Next recommended branch: P70 Source Cache and Evidence Ledger v0. Do not implement live connectors before approval packs and source policy are governed.

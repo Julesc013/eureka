@@ -226,3 +226,7 @@ The guard classifies privacy risks, poisoning risks, policy actions, redaction, 
 ## Demand Dashboard v0
 
 Demand Dashboard v0 completes the first Query Intelligence Plane contract sequence with a future aggregate visibility layer for privacy-filtered aggregate demand. It is contract-only: no telemetry, account/IP tracking, persistent aggregation, public search mutation, query-intelligence mutation, source sync, candidate promotion, or index mutation is implemented.
+
+## Source Sync Worker v0 Relation
+
+Source Sync Worker Contract v0 is future/contract-only. It may later consume probe queue and demand dashboard signals to plan approved, bounded source sync jobs, but P69 adds no connector runtime, source calls, public-query fanout, source cache mutation, evidence ledger mutation, candidate mutation, or index mutation.

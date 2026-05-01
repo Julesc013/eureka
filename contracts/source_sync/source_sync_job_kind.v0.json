@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/source_sync/source_sync_job_kind.v0.json",
+  "title": "Eureka Source Sync Job Kind v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_source_sync_implemented": false,
+  "job_kinds": [
+    "manual_source_review",
+    "source_metadata_sync",
+    "source_identifier_lookup",
+    "source_availability_check",
+    "source_cache_refresh",
+    "source_record_normalization",
+    "connector_health_check",
+    "rate_limit_policy_check",
+    "deep_extraction_request",
+    "package_metadata_sync",
+    "repository_release_sync",
+    "wayback_availability_sync",
+    "internet_archive_metadata_sync",
+    "software_heritage_metadata_sync",
+    "wikidata_identity_sync",
+    "unknown"
+  ],
+  "execution_classes": [
+    "human_operated_future",
+    "scheduled_worker_future",
+    "approval_gated_live_sync_future",
+    "local_offline_normalization_future",
+    "no_execution_v0"
+  ]
+}

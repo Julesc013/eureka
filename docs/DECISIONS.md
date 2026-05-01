@@ -1859,3 +1859,7 @@ Decision: P67 defines query privacy and poisoning guard as contract-only governa
 ## P68 Decision
 
 Demand summaries are prioritization hints only. P68 examples are synthetic, privacy-filtered by policy, poisoning-aware, and not evidence of real public demand.
+
+## P69 Decision
+
+Source sync jobs are future bounded planning records only. They must be approval-gated, cache-first, evidence-attributed, rate-limited, timeout-bounded, and circuit-breaker protected before any live source access.

@@ -1,0 +1,355 @@
+{
+  "schema_version": "0.1.0",
+  "source_sync_job_id": "example.source_sync.github_releases.v0",
+  "source_sync_job_kind": "source_sync_worker_job",
+  "status": "approval_required",
+  "created_by_tool": "p69_source_sync_example_builder_v0",
+  "job_identity": {
+    "job_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "repository_release_sync:github_releases:synthetic-owner/synthetic-project:v0",
+      "value": "b9ab7eda0985fdec715c5e83f762fe2f9402f9c2103ac38e25a077f947f8bc4d",
+      "reversible": false,
+      "salt_policy": "unsalted_public_aggregate"
+    },
+    "canonical_job_label": "GitHub releases sync example",
+    "normalized_job_terms": [
+      "repository_release_sync",
+      "github_releases",
+      "single_identifier"
+    ],
+    "duplicate_of": null,
+    "supersedes": null
+  },
+  "job_kind": {
+    "kind": "repository_release_sync",
+    "execution_class": "approval_gated_live_sync_future",
+    "live_network_required_future": true,
+    "approval_required": true,
+    "operator_required": true,
+    "human_required": true
+  },
+  "source_target": {
+    "source_id": "github_releases",
+    "source_family": "github_releases",
+    "source_status": "approval_required",
+    "target_identifier": "synthetic-owner/synthetic-project",
+    "target_query": null,
+    "target_scope": "single_identifier",
+    "arbitrary_url_allowed": false,
+    "limitations": [
+      "Synthetic public-safe target only; no arbitrary URL, private path, credential, or live source call is included."
+    ]
+  },
+  "source_policy": {
+    "source_policy_kind": "live_metadata_sync_after_approval",
+    "live_source_enabled_now": false,
+    "source_terms_review_required": true,
+    "robots_or_source_policy_review_required": true,
+    "user_agent_required_future": true,
+    "rate_limit_required_future": true,
+    "retry_backoff_required_future": true,
+    "circuit_breaker_required_future": true,
+    "cache_required_before_public_use": true,
+    "evidence_attribution_required": true,
+    "max_records_future": 100,
+    "max_runtime_ms_future": 30000,
+    "allowed_source_ids": [
+      "github_releases"
+    ],
+    "allowed_source_families": [
+      "github_releases"
+    ],
+    "prohibited_source_families": [
+      "unknown"
+    ],
+    "limitations": [
+      "Policy is future-only; P69 does not enable live source calls or cache writes."
+    ]
+  },
+  "approval_gates": [
+    {
+      "gate_id": "gate.source_policy_review",
+      "gate_type": "source_policy_review",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.rights_review",
+      "gate_type": "rights_review",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.risk_review",
+      "gate_type": "risk_review",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.operator_approval",
+      "gate_type": "operator_approval",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.human_approval",
+      "gate_type": "human_approval",
+      "required": false,
+      "status": "not_applicable",
+      "reason": "Not required for this contract example.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.rate_limit_review",
+      "gate_type": "rate_limit_review",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.user_agent_review",
+      "gate_type": "user_agent_review",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.circuit_breaker_review",
+      "gate_type": "circuit_breaker_review",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.cache_policy_review",
+      "gate_type": "cache_policy_review",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.evidence_output_review",
+      "gate_type": "evidence_output_review",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.connector_contract_review",
+      "gate_type": "connector_contract_review",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    },
+    {
+      "gate_id": "gate.credential_policy_review",
+      "gate_type": "credential_policy_review",
+      "required": true,
+      "status": "review_required",
+      "reason": "Required before any future live or source-derived sync.",
+      "limitations": [
+        "Gate status is not approval; no worker execution is allowed by P69."
+      ]
+    }
+  ],
+  "scheduling": {
+    "schedule_status": "not_scheduled_v0",
+    "earliest_run_policy": "after_source_policy_review_future",
+    "recurrence_policy": "none_v0",
+    "notes": [
+      "No real schedule, queue, worker, or timer is created by P69."
+    ]
+  },
+  "retry_timeout_rate_limit": {
+    "retry_policy": "future_bounded_retry",
+    "max_retries_future": 2,
+    "timeout_policy": "future_bounded_timeout",
+    "max_runtime_ms_future": 30000,
+    "rate_limit_policy": "source_policy_required_future",
+    "per_source_qps_future": 0.2,
+    "circuit_breaker_policy": "future_required",
+    "limitations": [
+      "Retry, timeout, rate-limit, and circuit-breaker values are future policy hints only."
+    ]
+  },
+  "user_agent_and_terms": {
+    "user_agent_required_future": true,
+    "user_agent_value_current": null,
+    "descriptive_user_agent_required_future": true,
+    "contact_url_or_email_required_future": true,
+    "source_terms_review_required": true,
+    "robots_or_source_policy_review_required": true,
+    "retry_after_respect_required_future": true,
+    "notes": [
+      "No fake contact email, credentials, or User-Agent value is configured in P69."
+    ]
+  },
+  "input_refs": {
+    "query_observation_refs": [],
+    "search_result_cache_refs": [],
+    "search_miss_ledger_refs": [],
+    "search_need_refs": [
+      {
+        "ref_id": "example.search_need.source_gap",
+        "ref_kind": "search_need_record",
+        "status": "synthetic_ref",
+        "privacy_classification": "public_safe_example",
+        "limitations": []
+      }
+    ],
+    "probe_queue_refs": [
+      {
+        "ref_id": "example.probe_queue.source_sync_hint",
+        "ref_kind": "probe_queue_item",
+        "status": "synthetic_ref",
+        "privacy_classification": "public_safe_example",
+        "limitations": []
+      }
+    ],
+    "demand_dashboard_refs": [
+      {
+        "ref_id": "example.demand_dashboard.source_gap",
+        "ref_kind": "demand_dashboard_snapshot",
+        "status": "synthetic_ref",
+        "privacy_classification": "public_safe_example",
+        "limitations": []
+      }
+    ],
+    "source_inventory_refs": [
+      {
+        "ref_id": "control.inventory.sources.github_releases",
+        "ref_kind": "source_inventory",
+        "status": "future_or_fixture_ref",
+        "privacy_classification": "public_safe_example",
+        "limitations": []
+      }
+    ],
+    "source_pack_refs": [],
+    "evidence_pack_refs": []
+  },
+  "expected_outputs": {
+    "expected_output_kinds": [
+      "source_cache_record_future",
+      "evidence_ledger_record_future",
+      "candidate_index_record_future"
+    ],
+    "output_destination_policy": "source_cache_future",
+    "requires_validation": true,
+    "requires_review": true,
+    "public_output_allowed_after_review": false,
+    "limitations": [
+      "Expected outputs are future-only and do not mutate source cache, evidence ledger, candidates, or indexes in P69."
+    ]
+  },
+  "safety_requirements": {
+    "no_public_query_fanout": true,
+    "no_arbitrary_url_fetch": true,
+    "no_downloads": true,
+    "no_installs": true,
+    "no_execution": true,
+    "no_uploads": true,
+    "no_private_paths": true,
+    "no_credentials_in_examples": true,
+    "no_raw_payload_dump": true,
+    "source_cache_required_before_public_use": true,
+    "evidence_attribution_required": true,
+    "bounded_result_count_required_future": true,
+    "timeout_required_future": true,
+    "rate_limit_required_future": true,
+    "circuit_breaker_required_future": true,
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "notes": [
+      "Safety requirements are policy gates only; no sync worker executes."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe example with no private identifiers."
+    ]
+  },
+  "rights_and_risk": {
+    "rights_classification": "source_terms_apply",
+    "risk_classification": "metadata_only",
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "limitations": [
+      "No rights clearance, malware safety, download, install, or execution claim is made."
+    ]
+  },
+  "limitations": [
+    "Contract-only synthetic source sync worker job; no runtime, queue, connector, external call, or mutation exists."
+  ],
+  "no_execution_guarantees": {
+    "worker_runtime_implemented": false,
+    "job_executed": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "telemetry_exported": false,
+    "credentials_used": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "probe_queue_mutated": false,
+    "search_need_mutated": false,
+    "result_cache_mutated": false
+  },
+  "notes": [
+    "P69 describes future bounded source sync planning only."
+  ]
+}

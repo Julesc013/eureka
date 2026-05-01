@@ -697,3 +697,7 @@ Backend runtime must not wire query privacy and poisoning guard persistence unti
 ## P68 Boundary
 
 Demand Dashboard v0 is not a backend service. Backend work must wait for governed source sync, source cache/evidence ledger, retention, and abuse-control contracts before any runtime aggregation exists.
+
+## P69 Boundary
+
+Source Sync Worker Contract v0 is not backend worker runtime. Backend source sync execution must wait for source cache/evidence ledger contracts, connector approval packs, credentials policy, rate limits, timeouts, circuit breakers, and operator approval.

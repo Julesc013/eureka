@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/source_sync/source_sync_worker_manifest.v0.json",
+  "title": "Eureka Source Sync Worker Manifest v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_implemented": false,
+  "x-live_sources_enabled_by_default": false,
+  "x-public_query_fanout_allowed": false,
+  "x-source_cache_mutation_allowed_now": false,
+  "x-evidence_ledger_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-master_index_mutation_allowed_now": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "manifest_kind",
+    "status",
+    "worker_family",
+    "supported_job_kinds",
+    "allowed_source_families",
+    "default_policy",
+    "required_approvals",
+    "safety_defaults",
+    "output_policy",
+    "no_runtime_guarantees",
+    "notes"
+  ],
+  "$defs": {
+    "allowed_statuses": [
+      "draft_example",
+      "dry_run_validated",
+      "approval_required",
+      "operator_required",
+      "blocked_by_policy",
+      "disabled",
+      "scheduled_future",
+      "running_future",
+      "completed_future",
+      "failed_future",
+      "cancelled_future"
+    ],
+    "job_kinds": [
+      "manual_source_review",
+      "source_metadata_sync",
+      "source_identifier_lookup",
+      "source_availability_check",
+      "source_cache_refresh",
+      "source_record_normalization",
+      "connector_health_check",
+      "rate_limit_policy_check",
+      "deep_extraction_request",
+      "package_metadata_sync",
+      "repository_release_sync",
+      "wayback_availability_sync",
+      "internet_archive_metadata_sync",
+      "software_heritage_metadata_sync",
+      "wikidata_identity_sync",
+      "unknown"
+    ],
+    "execution_classes": [
+      "human_operated_future",
+      "scheduled_worker_future",
+      "approval_gated_live_sync_future",
+      "local_offline_normalization_future",
+      "no_execution_v0"
+    ],
+    "source_families": [
+      "internet_archive",
+      "wayback",
+      "github_releases",
+      "pypi",
+      "npm",
+      "software_heritage",
+      "wikidata_open_library",
+      "sourceforge",
+      "manual_source_pack",
+      "local_fixture",
+      "recorded_fixture",
+      "unknown"
+    ],
+    "source_statuses": [
+      "active_fixture",
+      "active_recorded_fixture",
+      "placeholder",
+      "future",
+      "disabled",
+      "approval_required",
+      "unknown"
+    ],
+    "target_scopes": [
+      "single_identifier",
+      "bounded_query",
+      "bounded_source_family",
+      "fixture_only",
+      "manual_review",
+      "unknown"
+    ],
+    "source_policy_kinds": [
+      "no_source_call",
+      "manual_only",
+      "fixture_only",
+      "recorded_fixture_only",
+      "source_cache_only_future",
+      "live_metadata_sync_after_approval",
+      "local_offline_normalization_after_approval",
+      "unknown"
+    ],
+    "gate_types": [
+      "source_policy_review",
+      "rights_review",
+      "risk_review",
+      "operator_approval",
+      "human_approval",
+      "rate_limit_review",
+      "user_agent_review",
+      "circuit_breaker_review",
+      "cache_policy_review",
+      "evidence_output_review",
+      "connector_contract_review",
+      "credential_policy_review"
+    ],
+    "gate_statuses": [
+      "passed",
+      "failed",
+      "review_required",
+      "future_required",
+      "not_applicable"
+    ],
+    "schedule_statuses": [
+      "not_scheduled_v0",
+      "future_manual",
+      "future_scheduled_worker",
+      "future_after_approval",
+      "blocked"
+    ],
+    "earliest_run_policies": [
+      "not_applicable_v0",
+      "after_human_approval_future",
+      "after_operator_setup_future",
+      "after_source_policy_review_future"
+    ],
+    "recurrence_policies": [
+      "none_v0",
+      "future_bounded_schedule"
+    ],
+    "retry_policies": [
+      "none_v0",
+      "future_bounded_retry"
+    ],
+    "timeout_policies": [
+      "none_v0",
+      "future_bounded_timeout"
+    ],
+    "rate_limit_policies": [
+      "none_v0",
+      "source_policy_required_future",
+      "future_bounded_rate_limit"
+    ],
+    "circuit_breaker_policies": [
+      "none_v0",
+      "future_required"
+    ],
+    "expected_output_kinds": [
+      "source_cache_record_future",
+      "evidence_ledger_record_future",
+      "candidate_index_record_future",
+      "connector_health_record_future",
+      "source_coverage_update_future",
+      "absence_evidence_future",
+      "manual_report_future",
+      "no_output_v0"
+    ],
+    "output_destination_policies": [
+      "no_output_v0",
+      "source_cache_future",
+      "evidence_ledger_future",
+      "candidate_index_future",
+      "connector_health_future",
+      "manual_report_future"
+    ]
+  }
+}

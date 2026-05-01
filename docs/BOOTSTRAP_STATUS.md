@@ -977,3 +977,7 @@ P67 Query Privacy and Poisoning Guard v0 is complete as contract/schema/example/
 ## P68 Demand Dashboard v0
 
 P68 adds the Demand Dashboard v0 contract, synthetic examples, validators, tests, and audit pack. It remains contract-only and does not implement analytics runtime, telemetry, account/IP tracking, real demand counts, source sync, or index mutation.
+
+## P69 Source Sync Worker Contract v0
+
+P69 adds source sync worker job and manifest contracts, synthetic examples, validators, tests, and audit pack. It remains contract-only and adds no source sync runtime, live source calls, connector runtime, credentials, telemetry, source cache mutation, evidence ledger mutation, candidate mutation, or index mutation.

@@ -275,3 +275,7 @@ P34 does not implement:
 - snapshot reader runtime
 - production signing
 - accounts, telemetry, auth, TLS, rate limiting, or process management
+
+## Source Sync Worker v0 Relation
+
+Source Sync Worker Contract v0 is future/contract-only. It may later consume probe queue and demand dashboard signals to plan approved, bounded source sync jobs, but P69 adds no connector runtime, source calls, public-query fanout, source cache mutation, evidence ledger mutation, candidate mutation, or index mutation.

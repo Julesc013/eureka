@@ -37,3 +37,7 @@ Public visibility requires caveats: contract-only, synthetic or future-filtered 
 Demand Dashboard v0 relates to query observations, shared result cache entries, miss ledger entries, search need records, probe queue items, candidate index records, candidate promotion assessments, known absence pages, and query privacy/poisoning guard decisions as future inputs only. P68 reads no runtime logs and writes no query-intelligence objects.
 
 Future source sync, source cache, evidence ledger, connector approvals, and any hosted dashboard require separate governed contracts and verification.
+
+## Source Sync Worker v0 Relation
+
+Source Sync Worker Contract v0 is future/contract-only. It may later consume probe queue and demand dashboard signals to plan approved, bounded source sync jobs, but P69 adds no connector runtime, source calls, public-query fanout, source cache mutation, evidence ledger mutation, candidate mutation, or index mutation.
