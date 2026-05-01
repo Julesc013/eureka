@@ -208,6 +208,19 @@ def _expect_json(
     if payload.get("mode") not in {None, "local_index_only"}:
         passed = False
         notes.append("mode was not local_index_only")
+    if check_id in {"status_top_level", "status_api", "api_search"}:
+        if payload.get("public_index_present") is not True:
+            passed = False
+            notes.append("public_index_present was not true")
+        if payload.get("index_status") not in {None, "generated_public_search_index"}:
+            passed = False
+            notes.append("index_status was not generated_public_search_index")
+        if "index_document_count" in payload and not (
+            isinstance(payload.get("index_document_count"), int)
+            and int(payload["index_document_count"]) > 0
+        ):
+            passed = False
+            notes.append("index_document_count was not positive")
     checks.append(
         CheckResult(
             check_id=check_id,

@@ -74,6 +74,7 @@ from runtime.gateway.public_api.representation_selection_boundary import (
 )
 from runtime.gateway.public_api.search_boundary import SearchPublicApi
 from runtime.gateway.public_api.public_search import PublicSearchPublicApi
+from runtime.gateway.public_api.public_search_index import load_public_search_index_records
 from runtime.gateway.public_api.source_registry_boundary import SourceRegistryPublicApi
 from runtime.gateway.public_api.stored_exports import StoredExportsPublicApi
 from runtime.gateway.public_api.subject_states_boundary import SubjectStatesPublicApi
@@ -108,13 +109,23 @@ def build_demo_search_public_api() -> SearchPublicApi:
 
 
 def build_demo_public_search_public_api() -> PublicSearchPublicApi:
-    catalog = _build_demo_normalized_catalog()
     source_registry = load_source_registry()
-    index_records = build_index_records(catalog, source_registry)
+    public_index = load_public_search_index_records()
+    if public_index.status == "valid" and public_index.records:
+        index_records = public_index.records
+        index_status = "generated_public_search_index"
+        index_document_count = public_index.document_count
+    else:
+        catalog = _build_demo_normalized_catalog()
+        index_records = build_index_records(catalog, source_registry)
+        index_status = "controlled_local_index_only_fallback"
+        index_document_count = len(index_records)
     return PublicSearchPublicApi(
         index_records=index_records,
         source_registry=source_registry,
         query_planner=DeterministicQueryPlannerService(),
+        index_status=index_status,
+        index_document_count=index_document_count,
     )
 
 

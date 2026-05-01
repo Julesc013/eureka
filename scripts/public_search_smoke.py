@@ -128,10 +128,13 @@ def run_public_search_smoke() -> dict[str, object]:
             lambda payload, text: (
                 payload.get("ok") is True
                 and payload.get("mode") == "local_index_only"
+                and payload.get("index_status") == "generated_public_search_index"
+                and isinstance(payload.get("index_document_count"), int)
+                and int(payload["index_document_count"]) > 0
                 and isinstance(payload.get("results"), list)
                 and len(payload["results"]) > 0
             ),
-            "200 governed public-search envelope with results",
+            "200 governed public-search envelope with generated-index results",
         ),
         _expect_json(
             app,
@@ -531,6 +534,9 @@ def _public_search_status_is_safe(payload: dict[str, object], text: str) -> bool
         and public_search.get("local_paths_enabled") is False
         and public_search.get("telemetry_enabled") is False
         and public_search.get("production_ready") is False
+        and payload.get("index_status") == "generated_public_search_index"
+        and isinstance(payload.get("index_document_count"), int)
+        and int(payload["index_document_count"]) > 0
         and _has_no_private_path(text)
     )
 

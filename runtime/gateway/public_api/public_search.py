@@ -116,10 +116,14 @@ class PublicSearchPublicApi:
         index_records: tuple[IndexRecord, ...],
         source_registry: SourceRegistry,
         query_planner: QueryPlannerService,
+        index_status: str = "controlled_local_index_only",
+        index_document_count: int | None = None,
     ) -> None:
         self._index_records = tuple(index_records)
         self._source_registry = source_registry
         self._query_planner = query_planner
+        self._index_status = index_status
+        self._index_document_count = index_document_count if index_document_count is not None else len(index_records)
 
     def search(
         self,
@@ -151,6 +155,8 @@ class PublicSearchPublicApi:
             checked_sources=_checked_sources(limited, self._source_registry),
             plan=_plan_to_public_dict(self._query_planner, request.normalized_query),
         )
+        body["index_status"] = self._index_status
+        body["index_document_count"] = self._index_document_count
         return PublicApiResponse(status_code=200, body=body)
 
     def query_plan(
@@ -223,7 +229,8 @@ class PublicSearchPublicApi:
                 "max_query_length": MAX_QUERY_LENGTH,
                 "default_limit": DEFAULT_RESULT_LIMIT,
                 "max_limit": MAX_RESULT_LIMIT,
-                "index_status": "controlled_local_index_only",
+                "index_status": self._index_status,
+                "index_document_count": self._index_document_count,
                 "source_status_summary": {
                     "source_count": source_count,
                     "live_enabled": False,

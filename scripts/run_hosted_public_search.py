@@ -36,6 +36,7 @@ from runtime.gateway.public_api.public_search import (  # noqa: E402
     PublicSearchPublicApi,
     public_search_error_response,
 )
+from runtime.gateway.public_api.public_search_index import public_search_index_exists  # noqa: E402
 from runtime.gateway.public_api.resolution_boundary import PublicApiResponse  # noqa: E402
 
 
@@ -83,6 +84,7 @@ class HostedPublicSearchConfig:
     global_timeout_ms: int
     hosted_deployment_verified: bool
     dynamic_backend_deployed: bool
+    public_index_present: bool
     parse_errors: tuple[str, ...] = ()
 
     def public_summary(self) -> dict[str, Any]:
@@ -111,6 +113,7 @@ class HostedPublicSearchConfig:
             "max_results": self.max_results,
             "global_timeout_ms": self.global_timeout_ms,
             "operator_kill_switch_tripped": self.operator_kill_switch,
+            "public_index_present": self.public_index_present,
         }
 
 
@@ -270,6 +273,7 @@ def load_hosted_public_search_config(
         global_timeout_ms=_parse_int(env.get("EUREKA_GLOBAL_TIMEOUT_MS", HOSTED_DEFAULT_TIMEOUT_MS), "EUREKA_GLOBAL_TIMEOUT_MS", HOSTED_DEFAULT_TIMEOUT_MS, errors),
         hosted_deployment_verified=_read_bool(env, "EUREKA_HOSTED_DEPLOYMENT_VERIFIED", False, errors),
         dynamic_backend_deployed=_read_bool(env, "EUREKA_DYNAMIC_BACKEND_DEPLOYED", False, errors),
+        public_index_present=public_search_index_exists(),
         parse_errors=tuple(errors),
     )
     return config
@@ -293,6 +297,8 @@ def validate_hosted_public_search_config(config: HostedPublicSearchConfig) -> di
         errors.append(f"EUREKA_GLOBAL_TIMEOUT_MS must be between 1 and {HOSTED_DEFAULT_TIMEOUT_MS}.")
     if config.operator_kill_switch:
         errors.append("EUREKA_OPERATOR_KILL_SWITCH is tripped; the wrapper must not start.")
+    if not config.public_index_present:
+        errors.append("data/public_index/search_documents.ndjson is required for hosted wrapper mode.")
     for attr, env_name in (
         ("allow_live_probes", "EUREKA_ALLOW_LIVE_PROBES"),
         ("allow_downloads", "EUREKA_ALLOW_DOWNLOADS"),
@@ -351,6 +357,7 @@ def _augment_payload(payload: Mapping[str, Any], config: HostedPublicSearchConfi
     body["accounts_enabled"] = False
     body["external_calls_enabled"] = False
     body["ai_runtime_enabled"] = False
+    body["public_index_present"] = config.public_index_present
     body["request_limits"] = _merged_request_limits(body.get("request_limits"), config)
     return body
 
