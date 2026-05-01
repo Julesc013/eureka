@@ -1,13 +1,14 @@
 # Query Intelligence Plane
 
-Status: contract-only through P64.
+Status: contract-only through P67.
 
 The Query Intelligence Plane is the future layer that lets Eureka learn from
 public search demand without turning public queries into surveillance or
 authoritative truth. Its first contracts are the P59 query observation record,
 the P60 shared query/result cache entry, the P61 search miss ledger entry, the
-P62 search need record, the P63 probe queue item, and the P64 candidate index
-record.
+P62 search need record, the P63 probe queue item, the P64 candidate index
+record, the P65 candidate promotion policy, the P66 known absence page, and the
+P67 query privacy and poisoning guard decision.
 
 The core doctrine is fast learning, slow truth:
 
@@ -213,3 +214,11 @@ P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate pr
 ## P66 Known Absence Page v0
 
 Known Absence Page v0 is contract-only. It defines scoped absence, not global absence, for future no-result explanations with checked/not-checked scope, near misses, weak hits, gap explanations, safe next actions, privacy redaction, and no download/install/upload/live fetch. Known absence page is not a runtime page yet, not evidence acceptance, not candidate promotion, not master-index mutation, and not telemetry.
+
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-START -->
+## P67 Query Privacy and Poisoning Guard
+
+P67 Query Privacy and Poisoning Guard v0 adds privacy before learning and poisoning defense before aggregation. It is contract-only: no runtime guard, no telemetry, no account tracking, no IP tracking, no public query logging, no query-intelligence mutation, no public/local/master index mutation, no external calls, and no live probes.
+
+The guard classifies privacy risks, poisoning risks, policy actions, redaction, aggregate eligibility, and future object eligibility for query observations, shared result cache entries, miss ledgers, search needs, probe queue items, candidate records, promotion assessments, and known absence pages.
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->

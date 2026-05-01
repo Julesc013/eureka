@@ -105,3 +105,9 @@ Known Absence Page v0 is contract-only. It defines scoped absence, not global ab
 ## P66 Known Absence Operations
 
 Known absence page work is contract-only and not telemetry. It adds no persistent query logging, no hosted query intelligence runtime, no source calls, and no mutation. Future user-facing absence explanations must stay scoped and public-safe.
+
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-START -->
+## P67 Query Privacy and Poisoning Guard
+
+The query privacy and poisoning guard is contract-only and not telemetry. It does not create persistent query logging, account tracking, IP tracking, analytics, WAF behavior, rate limiting, public search mutation, or query-intelligence mutation. It defines future decisions for redaction, rejection, quarantine, aggregate exclusion, and review before query learning.
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->

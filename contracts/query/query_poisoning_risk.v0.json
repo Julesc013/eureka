@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/query_poisoning_risk.v0.json",
+  "title": "Eureka Query Poisoning Risk Taxonomy v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_guard_implemented": false,
+  "x-telemetry_implemented": false,
+  "required": [
+    "schema_version",
+    "taxonomy_kind",
+    "risk_types",
+    "severity_values",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Taxonomy schema version."
+    },
+    "taxonomy_kind": {
+      "description": "poisoning risk taxonomy kind."
+    },
+    "risk_types": {
+      "description": "Allowed risk type strings."
+    },
+    "severity_values": {
+      "description": "Allowed severity strings."
+    },
+    "notes": {
+      "description": "Contract-only notes."
+    }
+  },
+  "$defs": {
+    "allowed_poisoning_risk_types": [
+      "none_detected",
+      "spam_query",
+      "repeated_fake_demand",
+      "source_stuffing",
+      "candidate_poisoning",
+      "malicious_identifier_stuffing",
+      "prompt_injection_like_text",
+      "policy_bypass_attempt",
+      "live_probe_forcing_attempt",
+      "arbitrary_url_fetch_attempt",
+      "download_install_execute_forcing_attempt",
+      "source_reputation_attack",
+      "rank_manipulation_attempt",
+      "near_duplicate_flood",
+      "unsupported_parameter_abuse",
+      "bot_like_pattern_future",
+      "unknown"
+    ],
+    "allowed_severity_values": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ]
+  }
+}

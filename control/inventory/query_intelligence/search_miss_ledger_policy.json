@@ -28,7 +28,6 @@
     "candidate_index",
     "candidate_promotion_policy",
     "known_absence_page",
-    "query_privacy_poisoning_guard",
     "demand_dashboard"
   ],
   "notes": [
@@ -37,7 +36,9 @@
     "P63 defines probe queue items as contract-only future work requests; P61 still enqueues no probes and mutates no source cache, evidence ledger, candidate index, local index, or master index.",
     "P64 defines candidate index records as contract-only provisional review items; P61 still mutates no candidate index and creates no accepted evidence or truth records.",
     "Miss entries must preserve checked and not-checked scope. Scoped absence is not proof outside the checked indexes, sources, capabilities, and snapshots.",
-    "P66 Known Absence Page v0 is future/contract-only and does not add runtime pages, telemetry, probes, or mutation."
+    "P66 Known Absence Page v0 is future/contract-only and does not add runtime pages, telemetry, probes, or mutation.",
+    "P67 Query Privacy and Poisoning Guard v0 is future/contract-only and adds no runtime guard, telemetry, account/IP tracking, query-intelligence mutation, index mutation, external calls, or live probes."
   ],
-  "known_absence_page_status": "contract_only_p66"
+  "known_absence_page_status": "contract_only_p66",
+  "query_privacy_poisoning_guard_status": "contract_only_p67"
 }

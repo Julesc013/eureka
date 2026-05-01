@@ -31,3 +31,9 @@ Raw query retention defaults to none. Public-safe examples must not contain raw 
 ## Relations
 
 Known absence pages can reference query observations, shared result cache entries, miss ledger entries, search needs, probe queue items, candidate records, and promotion-policy context. These references are explanatory only and do not create, update, or promote those records.
+
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-START -->
+## P67 Query Privacy and Poisoning Guard
+
+Query privacy and poisoning guard decisions are a future contract-only input for known absence pages. A known absence explanation should only use public-safe, privacy-filtered, poisoning-checked query context and must not let fake demand, source-stuffing, candidate-poisoning, private paths, secrets, IP addresses, account IDs, or private URLs into public aggregate learning. P67 does not create runtime known absence pages.
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->

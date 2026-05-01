@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/query_privacy_risk.v0.json",
+  "title": "Eureka Query Privacy Risk Taxonomy v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_guard_implemented": false,
+  "x-telemetry_implemented": false,
+  "required": [
+    "schema_version",
+    "taxonomy_kind",
+    "risk_types",
+    "severity_values",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Taxonomy schema version."
+    },
+    "taxonomy_kind": {
+      "description": "privacy risk taxonomy kind."
+    },
+    "risk_types": {
+      "description": "Allowed risk type strings."
+    },
+    "severity_values": {
+      "description": "Allowed severity strings."
+    },
+    "notes": {
+      "description": "Contract-only notes."
+    }
+  },
+  "$defs": {
+    "allowed_privacy_risk_types": [
+      "none_detected",
+      "raw_query_retention_risk",
+      "private_path_detected",
+      "credential_detected",
+      "api_key_detected",
+      "auth_token_detected",
+      "password_detected",
+      "private_key_detected",
+      "email_detected",
+      "phone_detected",
+      "ip_address_detected",
+      "account_identifier_detected",
+      "private_url_detected",
+      "local_identifier_detected",
+      "user_file_name_detected",
+      "long_sensitive_text_detected",
+      "copyrighted_text_dump_risk",
+      "executable_payload_reference_risk",
+      "unknown"
+    ],
+    "allowed_severity_values": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ]
+  }
+}

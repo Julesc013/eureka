@@ -21,13 +21,14 @@
   "candidate_promotion_runtime_implemented": false,
   "master_index_mutation_allowed": false,
   "next_contracts": [
-    "query_privacy_poisoning_guard",
     "demand_dashboard",
     "source_sync_worker",
     "source_cache_evidence_ledger"
   ],
   "notes": [
     "P66 is contract-only and defines future user-facing scoped absence explanations.",
-    "Known absence pages do not publish raw private query data, create search needs, enqueue probes, mutate candidates, or write indexes."
-  ]
+    "Known absence pages do not publish raw private query data, create search needs, enqueue probes, mutate candidates, or write indexes.",
+    "P67 Query Privacy and Poisoning Guard v0 is future/contract-only and adds no runtime guard, telemetry, account/IP tracking, query-intelligence mutation, index mutation, external calls, or live probes."
+  ],
+  "query_privacy_poisoning_guard_status": "contract_only_p67"
 }

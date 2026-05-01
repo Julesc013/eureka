@@ -316,3 +316,9 @@ Candidate records are not public search authority in P64. Safety and abuse
 guards must continue to block caller-selected candidate paths, source roots,
 local paths, URLs, live sources, uploads, downloads, installs, telemetry, and
 master-index mutation in any future candidate-aware work.
+
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-START -->
+## P67 Query Privacy and Poisoning Guard
+
+P67 Query Privacy and Poisoning Guard v0 is contract-only and complements the existing public search safety posture. It does not implement WAF behavior, rate limiting, telemetry, account tracking, IP tracking, runtime moderation, public query logging, or hosted abuse protection. Future public search may reference guard decisions only after explicit runtime wiring and verification.
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->

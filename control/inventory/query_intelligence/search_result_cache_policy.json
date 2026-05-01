@@ -23,13 +23,13 @@
   "external_calls_allowed": false,
   "live_probes_allowed": false,
   "next_contracts": [
+    "demand_dashboard",
     "search_miss_ledger",
     "search_need_record",
     "probe_queue",
     "candidate_index",
     "candidate_promotion_policy",
-    "known_absence_page",
-    "query_privacy_poisoning_guard"
+    "known_absence_page"
   ],
   "notes": [
     "P60 defines shared query/result cache entries only. It does not implement runtime cache writes, persistent cache storage, telemetry, public query logging, miss ledger writes, search need writes, probe enqueueing, candidate index mutation, local index mutation, or master-index mutation.",
@@ -38,7 +38,9 @@
     "P63 defines probe queue items as contract-only future work requests and still does not add queue persistence, probe execution, source cache mutation, evidence ledger mutation, candidate mutation, external calls, or live probes.",
     "P64 defines candidate index records as contract-only provisional review items and still does not add runtime candidate storage, promotion runtime, public search injection, source cache mutation, evidence ledger mutation, or master-index mutation.",
     "Cache entries are scoped to checked public index snapshots and source status summaries. Cached absence is scoped absence, not proof outside the checked scope.",
-    "P66 Known Absence Page v0 is future/contract-only and does not add runtime pages, telemetry, probes, or mutation."
+    "P66 Known Absence Page v0 is future/contract-only and does not add runtime pages, telemetry, probes, or mutation.",
+    "P67 Query Privacy and Poisoning Guard v0 is future/contract-only and adds no runtime guard, telemetry, account/IP tracking, query-intelligence mutation, index mutation, external calls, or live probes."
   ],
-  "known_absence_page_status": "contract_only_p66"
+  "known_absence_page_status": "contract_only_p66",
+  "query_privacy_poisoning_guard_status": "contract_only_p67"
 }

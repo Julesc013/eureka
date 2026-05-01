@@ -1,0 +1,183 @@
+{
+  "schema_version": "0.1.0",
+  "guard_decision_id": "example.query_guard.secret_rejected.v0",
+  "guard_decision_kind": "query_guard_decision",
+  "status": "rejected_sensitive",
+  "created_by_tool": "p67_query_privacy_poisoning_guard_scaffold",
+  "input_context": {
+    "input_kind": "public_search_request",
+    "raw_query_retained": false,
+    "raw_query_redacted": true,
+    "normalized_query": "lookup old utility using <redacted-secret>",
+    "query_fingerprint": "fb13fae264dea5c8b5ccef13fd2594bdb19d30f28b999f1ed44a386932ace2e7",
+    "source_object_ref": null,
+    "public_safe_context": false,
+    "limitations": [
+      "Synthetic example only; no public search runtime state is read or written."
+    ]
+  },
+  "privacy_risks": [
+    {
+      "risk_type": "credential_detected",
+      "severity": "critical",
+      "detected": true,
+      "redaction_required": true,
+      "rejection_required": true,
+      "reason": "Synthetic secret placeholder was detected and rejected.",
+      "field_refs": [
+        "input_context.normalized_query"
+      ],
+      "limitations": [
+        "Synthetic classifier example only."
+      ]
+    }
+  ],
+  "poisoning_risks": [
+    {
+      "risk_type": "policy_bypass_attempt",
+      "severity": "medium",
+      "detected": true,
+      "quarantine_required": true,
+      "throttling_required_future": false,
+      "aggregate_exclusion_required": true,
+      "reason": "Credential-like input is excluded from future public aggregate use.",
+      "limitations": [
+        "P67 does not implement bot detection, throttling, or production abuse controls."
+      ]
+    }
+  ],
+  "policy_actions": [
+    {
+      "action_type": "reject_sensitive",
+      "action_status": "applied_in_example",
+      "reason": "Secrets and credentials are rejected.",
+      "affects_public_search_response": true,
+      "affects_query_intelligence": true,
+      "limitations": [
+        "Decision output only; no persistent state is written."
+      ]
+    },
+    {
+      "action_type": "exclude_from_public_aggregate",
+      "action_status": "applied_in_example",
+      "reason": "Secret-bearing inputs cannot count as demand.",
+      "affects_public_search_response": false,
+      "affects_query_intelligence": true,
+      "limitations": [
+        "Decision output only; no persistent state is written."
+      ]
+    }
+  ],
+  "redaction": {
+    "redaction_applied": true,
+    "redaction_strategy": "replace_secret",
+    "redacted_fields": [
+      "input_context.normalized_query"
+    ],
+    "redaction_tokens": [
+      "<redacted-secret>"
+    ],
+    "residual_risk": "aggregate blocked",
+    "safe_to_publish_after_redaction": false,
+    "limitations": [
+      "Redaction examples use placeholders only; P67 does not store raw private inputs."
+    ]
+  },
+  "aggregate_eligibility": {
+    "public_aggregate_allowed": false,
+    "allowed_aggregate_fields": [],
+    "disallowed_aggregate_fields": [
+      "raw_query",
+      "IP_address",
+      "account_identifier",
+      "private_path",
+      "secret",
+      "private_url",
+      "local_identifier",
+      "user_file_name"
+    ],
+    "reason": "Blocked by high privacy or poisoning risk.",
+    "limitations": [
+      "Aggregate eligibility is a policy decision only and does not update any demand counter."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "guard_decision_retention": "example_only",
+    "deletion_supported_future": true,
+    "notes": [
+      "No retention runtime is implemented in P67."
+    ]
+  },
+  "query_intelligence_eligibility": {
+    "query_observation_allowed_future": false,
+    "result_cache_allowed_future": false,
+    "miss_ledger_allowed_future": false,
+    "search_need_allowed_future": false,
+    "probe_queue_allowed_future": false,
+    "candidate_index_allowed_future": false,
+    "known_absence_allowed_future": false,
+    "public_aggregate_allowed": false,
+    "required_redactions": [
+      "<redacted-secret>"
+    ],
+    "review_required": true,
+    "limitations": [
+      "Future eligibility flags do not create or mutate query-intelligence objects."
+    ]
+  },
+  "public_search_effect": {
+    "public_search_allowed": false,
+    "public_search_error_code": "query_privacy_rejected",
+    "response_redaction_required": true,
+    "status": "blocked_by_policy",
+    "limitations": [
+      "Policy projection only; P67 does not change public search runtime behavior."
+    ]
+  },
+  "review_requirements": {
+    "required_review_kinds": [
+      "privacy_review",
+      "security_review"
+    ],
+    "reviews_completed": [],
+    "reviews_missing": [
+      "privacy_review",
+      "security_review"
+    ],
+    "automatic_acceptance_allowed": false,
+    "limitations": [
+      "No automatic acceptance, source trust, candidate promotion, rights clearance, or malware safety decision is made."
+    ]
+  },
+  "limitations": [
+    "Contract/example artifact only.",
+    "No runtime guard, telemetry, account tracking, IP tracking, public query logging, or mutation is implemented."
+  ],
+  "no_runtime_guarantees": {
+    "runtime_guard_implemented": false,
+    "persistent_guard_store_implemented": false,
+    "telemetry_exported": false,
+    "account_tracking_performed": false,
+    "ip_tracking_performed": false,
+    "public_query_logging_enabled": false
+  },
+  "no_mutation_guarantees": {
+    "query_observation_mutated": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "probe_queue_mutated": false,
+    "candidate_index_mutated": false,
+    "known_absence_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "external_calls_performed": false,
+    "live_source_called": false
+  },
+  "notes": [
+    "Guard approval does not mean truth, source trust, candidate promotion, rights clearance, or malware safety.",
+    "Privacy before learning; poisoning defense before aggregation."
+  ]
+}

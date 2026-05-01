@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "query_privacy_poisoning_guard_policy_v0",
+  "status": "contract_only",
+  "runtime_guard_implemented": false,
+  "persistent_guard_store_implemented": false,
+  "telemetry_implemented": false,
+  "account_tracking_implemented": false,
+  "ip_tracking_implemented": false,
+  "public_query_logging_enabled": false,
+  "raw_query_retention_default": "none",
+  "privacy_filter_required": true,
+  "poisoning_guard_required_before_public_aggregation": true,
+  "automatic_acceptance_allowed": false,
+  "query_observation_mutation_allowed": false,
+  "result_cache_mutation_allowed": false,
+  "miss_ledger_mutation_allowed": false,
+  "search_need_mutation_allowed": false,
+  "probe_queue_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "known_absence_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "high_privacy_risk_public_aggregate_allowed": false,
+  "high_poisoning_risk_public_aggregate_allowed": false,
+  "next_contracts": [
+    "demand_dashboard",
+    "source_sync_worker",
+    "source_cache_evidence_ledger"
+  ],
+  "notes": [
+    "P67 is contract-only and defines future query privacy and poisoning guard decisions.",
+    "No runtime guard, persistent store, telemetry, account tracking, IP tracking, public query logging, query-intelligence mutation, index mutation, external calls, or live probes are added."
+  ]
+}

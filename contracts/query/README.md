@@ -76,3 +76,9 @@ and not master-index truth.
 - `candidate_promotion_policy.v0.json` summarizes required policy gates.
 
 These contracts add no promotion runtime, automatic acceptance, public-search authority, source/evidence/index mutation, telemetry, external calls, or live probes.
+
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-START -->
+## P67 Query Privacy and Poisoning Guard
+
+P67 adds `query_guard_decision.v0.json`, `query_privacy_risk.v0.json`, and `query_poisoning_risk.v0.json` for contract-only query privacy and poisoning guard decisions. The guard is not runtime, telemetry, account/IP tracking, public query logging, query-intelligence mutation, public search mutation, or master-index mutation.
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->

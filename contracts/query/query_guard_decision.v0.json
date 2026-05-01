@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/query_guard_decision.v0.json",
+  "title": "Eureka Query Privacy and Poisoning Guard Decision v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_guard_implemented": false,
+  "x-persistent_guard_store_implemented": false,
+  "x-telemetry_implemented": false,
+  "x-account_tracking_implemented": false,
+  "x-ip_tracking_implemented": false,
+  "x-public_query_logging_enabled": false,
+  "x-automatic_acceptance_allowed": false,
+  "x-query_intelligence_mutation_allowed": false,
+  "x-public_search_mutation_allowed": false,
+  "x-master_index_mutation_allowed": false,
+  "x-external_calls_allowed": false,
+  "required": [
+    "schema_version",
+    "guard_decision_id",
+    "guard_decision_kind",
+    "status",
+    "created_by_tool",
+    "input_context",
+    "privacy_risks",
+    "poisoning_risks",
+    "policy_actions",
+    "redaction",
+    "aggregate_eligibility",
+    "retention_policy",
+    "query_intelligence_eligibility",
+    "public_search_effect",
+    "review_requirements",
+    "limitations",
+    "no_runtime_guarantees",
+    "no_mutation_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Query Guard Decision v0 field: schema_version."
+    },
+    "guard_decision_id": {
+      "description": "Query Guard Decision v0 field: guard_decision_id."
+    },
+    "guard_decision_kind": {
+      "description": "Query Guard Decision v0 field: guard_decision_kind."
+    },
+    "status": {
+      "description": "Query Guard Decision v0 field: status."
+    },
+    "created_by_tool": {
+      "description": "Query Guard Decision v0 field: created_by_tool."
+    },
+    "input_context": {
+      "description": "Query Guard Decision v0 field: input_context."
+    },
+    "privacy_risks": {
+      "description": "Query Guard Decision v0 field: privacy_risks."
+    },
+    "poisoning_risks": {
+      "description": "Query Guard Decision v0 field: poisoning_risks."
+    },
+    "policy_actions": {
+      "description": "Query Guard Decision v0 field: policy_actions."
+    },
+    "redaction": {
+      "description": "Query Guard Decision v0 field: redaction."
+    },
+    "aggregate_eligibility": {
+      "description": "Query Guard Decision v0 field: aggregate_eligibility."
+    },
+    "retention_policy": {
+      "description": "Query Guard Decision v0 field: retention_policy."
+    },
+    "query_intelligence_eligibility": {
+      "description": "Query Guard Decision v0 field: query_intelligence_eligibility."
+    },
+    "public_search_effect": {
+      "description": "Query Guard Decision v0 field: public_search_effect."
+    },
+    "review_requirements": {
+      "description": "Query Guard Decision v0 field: review_requirements."
+    },
+    "limitations": {
+      "description": "Query Guard Decision v0 field: limitations."
+    },
+    "no_runtime_guarantees": {
+      "description": "Query Guard Decision v0 field: no_runtime_guarantees."
+    },
+    "no_mutation_guarantees": {
+      "description": "Query Guard Decision v0 field: no_mutation_guarantees."
+    },
+    "notes": {
+      "description": "Query Guard Decision v0 field: notes."
+    }
+  },
+  "$defs": {
+    "allowed_statuses": [
+      "draft_example",
+      "dry_run_validated",
+      "allowed_public_safe",
+      "allowed_redacted",
+      "local_private_only",
+      "rejected_sensitive",
+      "quarantined_poisoning_risk",
+      "throttled_future",
+      "blocked_by_policy"
+    ],
+    "allowed_input_kinds": [
+      "raw_query",
+      "normalized_query",
+      "query_observation",
+      "search_result_cache_entry",
+      "search_miss_ledger_entry",
+      "search_need_record",
+      "probe_queue_item",
+      "candidate_index_record",
+      "candidate_promotion_assessment",
+      "known_absence_page",
+      "public_search_request",
+      "unknown"
+    ],
+    "allowed_privacy_risks": [
+      "none_detected",
+      "raw_query_retention_risk",
+      "private_path_detected",
+      "credential_detected",
+      "api_key_detected",
+      "auth_token_detected",
+      "password_detected",
+      "private_key_detected",
+      "email_detected",
+      "phone_detected",
+      "ip_address_detected",
+      "account_identifier_detected",
+      "private_url_detected",
+      "local_identifier_detected",
+      "user_file_name_detected",
+      "long_sensitive_text_detected",
+      "copyrighted_text_dump_risk",
+      "executable_payload_reference_risk",
+      "unknown"
+    ],
+    "allowed_poisoning_risks": [
+      "none_detected",
+      "spam_query",
+      "repeated_fake_demand",
+      "source_stuffing",
+      "candidate_poisoning",
+      "malicious_identifier_stuffing",
+      "prompt_injection_like_text",
+      "policy_bypass_attempt",
+      "live_probe_forcing_attempt",
+      "arbitrary_url_fetch_attempt",
+      "download_install_execute_forcing_attempt",
+      "source_reputation_attack",
+      "rank_manipulation_attempt",
+      "near_duplicate_flood",
+      "unsupported_parameter_abuse",
+      "bot_like_pattern_future",
+      "unknown"
+    ],
+    "allowed_severities": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ],
+    "allowed_policy_actions": [
+      "allow_public_safe",
+      "allow_redacted",
+      "keep_local_private",
+      "reject_sensitive",
+      "quarantine_for_review",
+      "exclude_from_public_aggregate",
+      "exclude_from_candidate_generation_future",
+      "exclude_from_probe_queue_future",
+      "throttle_future",
+      "require_human_review",
+      "require_policy_review",
+      "no_action"
+    ],
+    "allowed_action_statuses": [
+      "recommendation_only",
+      "applied_in_example",
+      "future_only"
+    ],
+    "allowed_redaction_strategies": [
+      "none",
+      "remove_raw_query",
+      "replace_private_path",
+      "replace_secret",
+      "replace_private_url",
+      "truncate_long_text",
+      "hash_identifier",
+      "reject_without_redaction"
+    ],
+    "allowed_raw_query_retention": [
+      "none",
+      "redacted_only",
+      "local_private_future"
+    ],
+    "allowed_guard_decision_retention": [
+      "example_only",
+      "short_lived_future",
+      "review_required_future"
+    ],
+    "allowed_public_search_effect_statuses": [
+      "allowed",
+      "blocked_by_policy",
+      "allowed_with_redaction",
+      "local_private_only"
+    ],
+    "allowed_review_kinds": [
+      "privacy_review",
+      "security_review",
+      "poisoning_review",
+      "policy_review",
+      "human_review",
+      "operator_review"
+    ],
+    "allowed_aggregate_fields": [
+      "normalized_query_terms",
+      "query_intent",
+      "target_object_kind",
+      "platform",
+      "artifact_type",
+      "source_family",
+      "miss_type",
+      "gap_type",
+      "probe_kind",
+      "candidate_type",
+      "absence_status"
+    ],
+    "disallowed_aggregate_fields": [
+      "raw_query",
+      "IP_address",
+      "account_identifier",
+      "private_path",
+      "secret",
+      "private_url",
+      "local_identifier",
+      "user_file_name"
+    ],
+    "hard_no_runtime_false_fields": [
+      "runtime_guard_implemented",
+      "persistent_guard_store_implemented",
+      "telemetry_exported",
+      "account_tracking_performed",
+      "ip_tracking_performed",
+      "public_query_logging_enabled"
+    ],
+    "hard_no_mutation_false_fields": [
+      "query_observation_mutated",
+      "result_cache_mutated",
+      "miss_ledger_mutated",
+      "search_need_mutated",
+      "probe_queue_mutated",
+      "candidate_index_mutated",
+      "known_absence_mutated",
+      "public_index_mutated",
+      "local_index_mutated",
+      "master_index_mutated",
+      "external_calls_performed",
+      "live_source_called"
+    ]
+  }
+}
