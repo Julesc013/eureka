@@ -3688,6 +3688,48 @@
       "failure_means": "Staged inspector CLI behavior, JSON/human output, validation, redaction, audit docs, or no-mutation claims regressed.",
       "advisory_or_required": "required",
       "notes": "Covers list/all examples, explicit manifest/root inspection, strict invalid-manifest failure, redaction of synthetic private paths and secrets, hard false mutation flags, and docs that inspection is not staging/import/index/master-index mutation."
+    },
+    {
+      "test_id": "post_p49_platform_audit_validator",
+      "label": "Post-P49 platform audit validator",
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P50 audit pack files, JSON shape, classifications, command results, gated work lists, next milestones, or no-overclaim guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates the P50 audit checkpoint only; it performs no network calls and adds no hosted search, live probes, pack import, staging runtime, AI runtime, external observations, or product behavior."
+    },
+    {
+      "test_id": "post_p49_platform_audit_tests",
+      "label": "Post-P49 platform audit tests",
+      "command": "python -m unittest tests.operations.test_post_p49_platform_audit tests.scripts.test_validate_post_p49_platform_audit",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P50 audit pack existence, JSON parseability, classification values, absence facts, next milestones, language/runtime strategy, or validator CLI behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused tests for the audit pack and validator; they do not call external sources, mutate indexes, stage packs, deploy, or load AI providers."
     }
   ]
 }

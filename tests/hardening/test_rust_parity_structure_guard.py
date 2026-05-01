@@ -32,6 +32,7 @@ class RustParityStructureGuardTest(unittest.TestCase):
         forbidden = re.compile(r"eureka_core|source_registry_parity|crates[\\/]eureka-core")
         allowed_scripts = {
             "scripts\\check_rust_source_registry_parity.py",
+            "scripts\\validate_post_p49_platform_audit.py",
         }
         violations = []
         for path in iter_text_files(["runtime", "surfaces", "scripts"]):

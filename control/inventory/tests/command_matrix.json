@@ -105,6 +105,8 @@
         "post_queue_checkpoint_tests",
         "full_project_state_audit_validator",
         "full_project_state_audit_tests",
+        "post_p49_platform_audit_validator",
+        "post_p49_platform_audit_tests",
         "public_data_stability_validator",
         "public_data_stability_tests",
         "generated_artifact_drift_guard",
@@ -269,6 +271,8 @@
         "post_queue_checkpoint_tests",
         "full_project_state_audit_validator",
         "full_project_state_audit_tests",
+        "post_p49_platform_audit_validator",
+        "post_p49_platform_audit_tests",
         "public_data_stability_validator",
         "public_data_stability_tests",
         "generated_artifact_drift_guard",
@@ -408,6 +412,8 @@
         "post_queue_checkpoint_tests",
         "full_project_state_audit_validator",
         "full_project_state_audit_tests",
+        "post_p49_platform_audit_validator",
+        "post_p49_platform_audit_tests",
         "public_data_stability_validator",
         "public_data_stability_tests",
         "generated_artifact_drift_guard",
@@ -653,6 +659,8 @@
         "post_queue_checkpoint_tests",
         "full_project_state_audit_validator",
         "full_project_state_audit_tests",
+        "post_p49_platform_audit_validator",
+        "post_p49_platform_audit_tests",
         "public_search_rehearsal_validator",
         "public_search_rehearsal_tests",
         "source_expansion_v2_validator",
@@ -744,6 +752,7 @@
     "Staging Report Path Contract v0 validation checks stdout defaults, explicit output path policy, forbidden committed roots, redaction docs, ignored local report roots, and no staging/report runtime.",
     "Local Staging Manifest Format v0 validation checks the contract-only manifest schema, synthetic examples, hard no-mutation guarantees, staged candidate semantics, reset/delete/export policy, checksums, no private paths/secrets, and no staging runtime.",
     "Staged Pack Inspector v0 validation checks read-only inspection of synthetic local staging manifests, JSON/human summaries, redaction, hard no-mutation flags, and no staging/import/index/upload/runtime/public-search/master-index side effects.",
-    "AI-Assisted Evidence Drafting Plan v0 validation checks disabled-by-default AI drafting policy, synthetic candidate-only flow examples, required typed output validation, required review, no model calls, no provider runtime, no API keys/secrets, no private-data remote defaults, and no public-search/local-index/master-index mutation."
+    "AI-Assisted Evidence Drafting Plan v0 validation checks disabled-by-default AI drafting policy, synthetic candidate-only flow examples, required typed output validation, required review, no model calls, no provider runtime, no API keys/secrets, no private-data remote defaults, and no public-search/local-index/master-index mutation.",
+    "Post-P49 Platform Audit v0 validation is stdlib-only audit governance. It checks required files, classification values, command evidence, subsystem coverage, query-intelligence gaps, gated work lists, next milestones, and no positive hosted-search/live-probe/AI-runtime/external-baseline/production claims."
   ]
 }
