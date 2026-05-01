@@ -18,7 +18,8 @@ controlled local index records owned by the Eureka runtime.
 - expose result lanes, user-cost hints, compatibility summaries, evidence
   summaries, source summaries, warnings, and bounded absence reports;
 - emit result cards governed by Public Search Result Card Contract v0;
-- produce `standard_web`, `lite_html`, `text`, and `api_client` projections;
+- produce `standard_web`, `lite_html`, `text`, `api_client`, `snapshot`, and
+  `native_client` projections;
 - return the stable error envelope defined by Public Search API Contract v0.
 
 Operational summary: no live probes, no downloads, no installs, no uploads, no

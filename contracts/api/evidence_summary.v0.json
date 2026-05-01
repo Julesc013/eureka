@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/api/evidence_summary.v0.json",
+  "title": "EurekaPublicEvidenceSummaryV0",
+  "description": "Public-safe evidence summary for result cards and public search responses. No raw payloads, long copyrighted text, credentials, or private paths.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "evidence_kind",
+    "claim_type",
+    "source_id",
+    "source_family",
+    "subject_ref",
+    "locator",
+    "confidence",
+    "limitations",
+    "provenance_notes",
+    "privacy_classification",
+    "rights_classification",
+    "public_safe"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "locator": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 180
+    },
+    "snippet": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 280
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "unknown"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "privacy_classification": {
+      "type": "string",
+      "enum": [
+        "public",
+        "public_metadata_only",
+        "redacted",
+        "unknown"
+      ]
+    },
+    "rights_classification": {
+      "type": "string",
+      "enum": [
+        "metadata_only",
+        "source_terms_apply",
+        "unknown",
+        "review_required"
+      ]
+    },
+    "public_safe": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "x-contract_id": "eureka_public_evidence_summary_v0",
+  "x-status": "contract_only",
+  "x-forbidden_content": [
+    "long_copyrighted_text",
+    "private_paths",
+    "credentials",
+    "raw_source_payload",
+    "secret_values"
+  ]
+}

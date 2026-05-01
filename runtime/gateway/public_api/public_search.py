@@ -22,10 +22,18 @@ DEFAULT_RESULT_LIMIT = 10
 MAX_RESULT_LIMIT = 25
 MAX_INCLUDE_ITEMS = 8
 
-ALLOWED_PROFILES = frozenset({"standard_web", "lite_html", "text", "api_client"})
+ALLOWED_PROFILES = frozenset(
+    {"standard_web", "lite_html", "text", "api_client", "snapshot", "native_client"}
+)
 ALLOWED_INCLUDES = frozenset(
     {
+        "actions",
+        "compatibility",
+        "evidence",
+        "gaps",
+        "limitations",
         "query_plan",
+        "source_summary",
         "source_summaries",
         "evidence_summaries",
         "compatibility_summaries",
@@ -200,6 +208,25 @@ class PublicSearchPublicApi:
                     "local_paths_enabled": False,
                     "telemetry_enabled": False,
                     "production_ready": False,
+                },
+                "public_search_implemented": True,
+                "hosted_search_implemented": False,
+                "local_runtime_available": True,
+                "live_probes_enabled": False,
+                "downloads_enabled": False,
+                "uploads_enabled": False,
+                "installs_enabled": False,
+                "local_paths_enabled": False,
+                "arbitrary_url_fetch_enabled": False,
+                "telemetry_enabled": False,
+                "account_required": False,
+                "max_query_length": MAX_QUERY_LENGTH,
+                "default_limit": DEFAULT_RESULT_LIMIT,
+                "max_limit": MAX_RESULT_LIMIT,
+                "index_status": "controlled_local_index_only",
+                "source_status_summary": {
+                    "source_count": source_count,
+                    "live_enabled": False,
                 },
                 "source_count": source_count,
                 "contracts": {
@@ -410,12 +437,21 @@ def public_search_error_response(
                 "capability_required": capability_required,
                 "parameter": parameter,
                 "docs": "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+                "severity": "blocked" if status_code in {400, 403} else "error",
+                "remediation": (
+                    "Remove the unsafe or unsupported request parameter and retry "
+                    "with local_index_only mode."
+                ),
+                "public_safe": True,
             },
             "warnings": _global_warnings(),
             "limits": {
                 "query_length_limit": MAX_QUERY_LENGTH,
                 "max_result_limit": MAX_RESULT_LIMIT,
             },
+            "mode": MODE,
+            "limitations": _global_limitations(),
+            "request_limits": _request_limits(),
         },
     )
 
@@ -527,11 +563,30 @@ def _search_success_envelope(
             "result_limit": request.limit,
             "query_length_limit": MAX_QUERY_LENGTH,
         },
+        "result_count": len(results),
         "results": results,
         "checked_sources": checked_sources,
+        "checked": checked_sources,
         "gaps": gaps,
         "warnings": _global_warnings(),
+        "limitations": _global_limitations(),
         "absence_summary": absence_summary,
+        "absence": _absence_report_from_summary(absence_summary, checked_sources, gaps),
+        "source_status": _source_status_from_checked_sources(checked_sources),
+        "timing": {
+            "budget_ms": 5000,
+            "elapsed_ms": None,
+            "timed_out": False,
+        },
+        "request_limits": _request_limits(),
+        "next_actions": _next_actions_for_response(absence_summary),
+        "live_probes_enabled": False,
+        "downloads_enabled": False,
+        "uploads_enabled": False,
+        "installs_enabled": False,
+        "local_paths_enabled": False,
+        "arbitrary_url_fetch_enabled": False,
+        "telemetry_enabled": False,
         "generated_by": _generated_by("local_public_search_runtime_v0"),
         "stability": {
             "stable_draft": [
@@ -544,7 +599,14 @@ def _search_success_envelope(
                 "limits",
                 "results",
             ],
-            "experimental": ["checked_sources", "absence_summary", "links"],
+            "experimental": [
+                "checked_sources",
+                "checked",
+                "absence_summary",
+                "absence",
+                "links",
+                "timing.elapsed_ms",
+            ],
             "volatile": ["generated_by", "query.notices"],
             "future": ["debug"],
         },
@@ -1284,6 +1346,89 @@ def _global_limitations() -> list[str]:
         "no_telemetry",
         "not_production",
     ]
+
+
+def _request_limits() -> dict[str, int]:
+    return {
+        "max_query_length": MAX_QUERY_LENGTH,
+        "default_limit": DEFAULT_RESULT_LIMIT,
+        "max_limit": MAX_RESULT_LIMIT,
+        "timeout_ms": 5000,
+    }
+
+
+def _absence_report_from_summary(
+    summary: Mapping[str, Any] | None,
+    checked_sources: Sequence[Mapping[str, Any]],
+    gaps: Sequence[Mapping[str, Any]],
+) -> dict[str, Any]:
+    if not summary or summary.get("status") == "none":
+        status = "unknown"
+    else:
+        status = "no_verified_result"
+    return {
+        "absence_status": status,
+        "query_fingerprint": None,
+        "sources_checked": [
+            str(source.get("source_id"))
+            for source in checked_sources
+            if source.get("source_id")
+        ],
+        "near_misses": [],
+        "gaps": [
+            str(gap.get("gap_type") or gap.get("message"))
+            for gap in gaps
+            if gap.get("gap_type") or gap.get("message")
+        ],
+        "next_actions": list(_next_actions_for_response(summary)),
+        "limitations": _global_limitations(),
+        "privacy_classification": "public",
+    }
+
+
+def _source_status_from_checked_sources(
+    checked_sources: Sequence[Mapping[str, Any]],
+) -> list[dict[str, Any]]:
+    statuses: list[dict[str, Any]] = []
+    for source in checked_sources:
+        raw_status = str(source.get("status") or "placeholder")
+        status = "placeholder"
+        if raw_status in {"active_fixture", "fixture"}:
+            status = "active_fixture"
+        elif raw_status in {"active_recorded_fixture", "recorded_fixture"}:
+            status = "active_recorded_fixture"
+        elif raw_status in {"live_disabled", "live_deferred"}:
+            status = "live_disabled"
+        elif raw_status == "local_private_future":
+            status = "local_private_future"
+        statuses.append(
+            {
+                "source_id": str(source.get("source_id") or "unknown-source"),
+                "source_family": str(source.get("source_family") or "unknown"),
+                "label": str(source.get("source_label") or source.get("source_id") or "Unknown source"),
+                "status": status,
+                "coverage_depth": str(source.get("coverage_depth") or "unknown"),
+                "live_supported": False,
+                "live_enabled": False,
+                "network_required": False,
+                "last_checked": None,
+                "last_synced": None,
+                "limitations": list(source.get("limitations") or ["local_index_only"]),
+                "next_coverage_step": "future source coverage review",
+                "public_safe": True,
+                "health": None,
+            }
+        )
+    return statuses
+
+
+def _next_actions_for_response(summary: Mapping[str, Any] | None) -> list[str]:
+    if not summary:
+        return []
+    actions = summary.get("next_actions")
+    if isinstance(actions, list):
+        return [str(action) for action in actions]
+    return []
 
 
 def _mapping_or_empty(value: Any) -> Mapping[str, Any]:

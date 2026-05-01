@@ -23,7 +23,7 @@ class ValidateLiveBackendHandoffScriptTest(unittest.TestCase):
             text=True,
         )
         self.assertIn("status: valid", plain.stdout)
-        self.assertIn("reserved_endpoints: 11", plain.stdout)
+        self.assertIn("reserved_endpoints: 15", plain.stdout)
 
         completed = subprocess.run(
             [sys.executable, str(SCRIPT), "--json"],
@@ -35,7 +35,9 @@ class ValidateLiveBackendHandoffScriptTest(unittest.TestCase):
         payload = json.loads(completed.stdout)
         self.assertEqual(payload["status"], "valid")
         self.assertEqual(payload["errors"], [])
+        self.assertIn("/healthz", payload["registered_endpoints"])
         self.assertIn("/api/v1/status", payload["registered_endpoints"])
+        self.assertIn("/api/v1/capabilities", payload["registered_endpoints"])
         self.assertIn("live_backend", payload["disabled_live_capabilities"])
 
     def test_validator_rejects_enabled_live_probe_route(self) -> None:

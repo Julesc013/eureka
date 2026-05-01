@@ -21,6 +21,8 @@ ERROR_DOC = REPO_ROOT / "docs" / "reference" / "LIVE_BACKEND_ERROR_ENVELOPE.md"
 ARCH_DOC = REPO_ROOT / "docs" / "architecture" / "LIVE_BACKEND_HANDOFF.md"
 
 REQUIRED_ENDPOINTS = {
+    "/healthz",
+    "/status",
     "/api/v1/status",
     "/api/v1/search",
     "/api/v1/query-plan",
@@ -30,8 +32,14 @@ REQUIRED_ENDPOINTS = {
     "/api/v1/object/{object_id}",
     "/api/v1/result/{result_id}",
     "/api/v1/absence",
+    "/api/v1/absence/{need_id}",
     "/api/v1/compare",
+    "/api/v1/capabilities",
     "/api/v1/live-probe",
+}
+ALLOWED_TOP_LEVEL_ENDPOINTS = {
+    "/healthz",
+    "/status",
 }
 REQUIRED_CAPABILITIES = {
     "static_site",
@@ -250,7 +258,7 @@ def _validate_routes(payload: Any, errors: list[str]) -> dict[str, Any]:
         if isinstance(path, str):
             registered.append(path)
             by_path[path] = route
-            if not path.startswith("/api/v1/") and path != "/api/v1":
+            if path not in ALLOWED_TOP_LEVEL_ENDPOINTS and not path.startswith("/api/v1/") and path != "/api/v1":
                 errors.append(f"live_backend_routes.json: route {path} must use /api/v1.")
         if route.get("status") not in FUTURE_ROUTE_STATUSES:
             errors.append(f"live_backend_routes.json: route {path} must remain future/deferred/blocked, not {route.get('status')!r}.")

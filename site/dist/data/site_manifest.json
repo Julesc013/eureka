@@ -146,8 +146,40 @@
     "no_live_backend_implemented": true,
     "public_alpha_backend_future": true,
     "rate_limit_policy_status": "unresolved",
-    "reserved_endpoint_count": 11,
+    "reserved_endpoint_count": 15,
     "reserved_endpoints": [
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/healthz",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": false,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/status",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/absence/{need_id}",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
+      {
+        "live_probe_related": false,
+        "method": "GET",
+        "path_template": "/api/v1/capabilities",
+        "public_alpha_allowed": false,
+        "static_handoff_allowed": true,
+        "status": "planned"
+      },
       {
         "live_probe_related": false,
         "method": "GET",

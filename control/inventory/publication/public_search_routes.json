@@ -223,5 +223,45 @@
   ],
   "safety_policy": "control/inventory/publication/public_search_safety.json",
   "safety_doc": "docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md",
-  "runtime_readiness_checklist": "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md"
+  "runtime_readiness_checklist": "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md",
+  "production_contract": "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
+  "production_contract_status": "frozen_for_p54_hosted_wrapper",
+  "hosted_wrapper_next": "P54 Hosted Public Search Wrapper v0",
+  "future_hosted_routes": [
+    {
+      "method": "GET",
+      "path_template": "/healthz",
+      "classification": "hosted_future"
+    },
+    {
+      "method": "GET",
+      "path_template": "/status",
+      "classification": "hosted_future"
+    },
+    {
+      "method": "GET",
+      "path_template": "/api/v1/object/{id}",
+      "classification": "contract_only"
+    },
+    {
+      "method": "GET",
+      "path_template": "/api/v1/result/{id}",
+      "classification": "contract_only"
+    },
+    {
+      "method": "GET",
+      "path_template": "/api/v1/absence/{need_id}",
+      "classification": "contract_only"
+    },
+    {
+      "method": "GET",
+      "path_template": "/api/v1/compare",
+      "classification": "deferred"
+    },
+    {
+      "method": "GET",
+      "path_template": "/api/v1/capabilities",
+      "classification": "contract_only"
+    }
+  ]
 }

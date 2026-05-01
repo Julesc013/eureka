@@ -75,6 +75,15 @@ before runtime exists. It does not implement `/search` or `/api/v1/search`,
 host a backend, enable live probes, fetch URLs, scrape, download, install,
 upload, search local paths, or create a production API guarantee.
 
+Public Search Production Contract v0 now freezes the P54 hosted-wrapper
+contract by adding source-status, evidence-summary, absence-report, and
+public-search status schemas, tightening request/response/error/result-card
+alignment, reserving `/healthz`, `/status`, and `/api/v1` route families, and
+documenting static-to-dynamic handoff requirements. It is contract governance
+only: no backend is deployed, GitHub Pages remains static-only, and hosted
+search remains unavailable until a later wrapper milestone implements the
+contract honestly.
+
 Public Search Result Card Contract v0 adds
 `contracts/api/search_result_card.v0.json`, fixture-safe examples,
 `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`, and
@@ -257,9 +266,11 @@ local/prototype routes without hosted deployment. Public Search Static Handoff
 v0 now publishes static/no-JS `search.html`, lite/text/files handoff outputs,
 and `data/search_handoff.json` without making GitHub Pages dynamic or claiming
 hosted search. Public Search Safety / Abuse Guard v0 defines the safety and
-abuse policy around those surfaces. Live Probe Gateway Contract v0 now defines
-the disabled source-probe
-gateway policy before any external probe exists.
+abuse policy around those surfaces. Public Search Production Contract v0 now
+freezes the future P54 wrapper route, error, safety, source-status, evidence,
+absence, status, and versioning requirements while still adding no hosted
+runtime behavior. Live Probe Gateway Contract v0 now defines the disabled
+source-probe gateway policy before any external probe exists.
 Compatibility Surface Strategy v0 now records the cross-surface policy for
 old-browser, text, file-tree, snapshot, relay, API, CLI, web, and future native
 clients. Relay Surface Design v0 now records future local/LAN bridge policy

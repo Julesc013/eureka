@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/api/source_status.v0.json",
+  "title": "EurekaPublicSourceStatusV0",
+  "description": "Public-safe source status summary for local-index-only public search. This is contract/schema only and does not enable live connectors.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_id",
+    "source_family",
+    "label",
+    "status",
+    "coverage_depth",
+    "live_supported",
+    "live_enabled",
+    "network_required",
+    "limitations",
+    "next_coverage_step",
+    "public_safe"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active_fixture",
+        "active_recorded_fixture",
+        "placeholder",
+        "local_private_future",
+        "live_disabled",
+        "live_enabled_future"
+      ]
+    },
+    "coverage_depth": {
+      "type": "string",
+      "minLength": 1
+    },
+    "live_supported": {
+      "type": "boolean"
+    },
+    "live_enabled": {
+      "type": "boolean"
+    },
+    "network_required": {
+      "type": "boolean"
+    },
+    "last_checked": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_synced": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_coverage_step": {
+      "type": "string"
+    },
+    "public_safe": {
+      "type": "boolean",
+      "const": true
+    },
+    "health": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "x-contract_id": "eureka_public_source_status_v0",
+  "x-status": "contract_only",
+  "x-live_support_rule": "live_enabled must remain false unless a later approved live connector milestone records runtime evidence"
+}

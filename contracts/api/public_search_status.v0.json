@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/api/public_search_status.v0.json",
+  "title": "EurekaPublicSearchStatusV0",
+  "description": "Public-safe capability/status shape for local-index-only public search. Current hosted search is false.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "public_search_implemented",
+    "hosted_search_implemented",
+    "local_runtime_available",
+    "mode",
+    "live_probes_enabled",
+    "downloads_enabled",
+    "uploads_enabled",
+    "installs_enabled",
+    "local_paths_enabled",
+    "arbitrary_url_fetch_enabled",
+    "telemetry_enabled",
+    "account_required",
+    "max_query_length",
+    "default_limit",
+    "max_limit",
+    "index_status",
+    "source_status_summary",
+    "limitations"
+  ],
+  "properties": {
+    "public_search_implemented": {
+      "type": "boolean"
+    },
+    "hosted_search_implemented": {
+      "type": "boolean",
+      "const": false
+    },
+    "local_runtime_available": {
+      "type": "boolean"
+    },
+    "mode": {
+      "type": "string",
+      "const": "local_index_only"
+    },
+    "live_probes_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "downloads_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "uploads_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "installs_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "local_paths_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "arbitrary_url_fetch_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "telemetry_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "account_required": {
+      "type": "boolean",
+      "const": false
+    },
+    "max_query_length": {
+      "type": "integer",
+      "const": 160
+    },
+    "default_limit": {
+      "type": "integer",
+      "const": 10
+    },
+    "max_limit": {
+      "type": "integer",
+      "const": 25
+    },
+    "index_status": {
+      "type": "string"
+    },
+    "source_status_summary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-contract_id": "eureka_public_search_status_v0",
+  "x-status": "contract_only",
+  "x-current_expected_values": {
+    "hosted_search_implemented": false,
+    "local_runtime_available": true,
+    "mode": "local_index_only",
+    "live_probes_enabled": false
+  }
+}

@@ -268,7 +268,14 @@
         "surfaces/web/workbench/render_public_search.py",
         "scripts/public_search_smoke.py",
         "scripts/validate_public_search_rehearsal.py",
-        "control/audits/public-search-rehearsal-v0/public_search_rehearsal_report.json"
+        "control/audits/public-search-rehearsal-v0/public_search_rehearsal_report.json",
+        "contracts/api/source_status.v0.json",
+        "contracts/api/evidence_summary.v0.json",
+        "contracts/api/absence_report.v0.json",
+        "contracts/api/public_search_status.v0.json",
+        "docs/reference/PUBLIC_SEARCH_PRODUCTION_CONTRACT.md",
+        "scripts/validate_public_search_production_contract.py",
+        "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json"
       ],
       "reserved_paths": [
         "/search",
@@ -276,7 +283,13 @@
         "/api/v1/query-plan",
         "/api/v1/status",
         "/api/v1/sources",
-        "/api/v1/source/{source_id}"
+        "/api/v1/source/{source_id}",
+        "/healthz",
+        "/status",
+        "/api/v1/object/{id}",
+        "/api/v1/result/{id}",
+        "/api/v1/absence/{need_id}",
+        "/api/v1/capabilities"
       ],
       "requires_backend": true,
       "requires_javascript": false,
@@ -289,8 +302,8 @@
       "enabled_by_default": true,
       "requires_operator_signoff": true,
       "current_limitations": "Local/prototype backend runtime only with static handoff pages; no hosted backend, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
-      "next_step": "Search Usefulness Source Expansion v2, fixture-only.",
-      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0. Public Search Rehearsal v0 records local safe-query and blocked-request evidence."
+      "next_step": "P54 Hosted Public Search Wrapper v0, with local_index_only and hosted-search false until deployment evidence exists.",
+      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0. Public Search Rehearsal v0 records local safe-query and blocked-request evidence. P53 freezes the production-facing contract for P54 without deploying a hosted backend."
     },
     {
       "id": "public_search_static_handoff",

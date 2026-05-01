@@ -23,6 +23,12 @@ routes and any later hosted rehearsal.
 - Response schema: `contracts/api/search_response.v0.json`
 - Error schema: `contracts/api/error_response.v0.json`
 - Result-card schema: `contracts/api/search_result_card.v0.json`
+- Source-status schema: `contracts/api/source_status.v0.json`
+- Evidence-summary schema: `contracts/api/evidence_summary.v0.json`
+- Absence-report schema: `contracts/api/absence_report.v0.json`
+- Public-search status schema: `contracts/api/public_search_status.v0.json`
+- Production-facing contract summary:
+  `docs/reference/PUBLIC_SEARCH_PRODUCTION_CONTRACT.md`
 - Route inventory: `control/inventory/publication/public_search_routes.json`
 - Local-index-only mode: `docs/operations/PUBLIC_SEARCH_LOCAL_INDEX_ONLY_MODE.md`
 - Safety guard: `docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md`
@@ -49,10 +55,13 @@ Optional fields:
 - `limit`: integer, default 10, minimum 1, maximum 25.
 - `offset`: experimental integer offset, default 0.
 - `cursor`: future pagination token, not required by v0.
-- `profile`: one of `standard_web`, `lite_html`, `text`, or `api_client`.
+- `profile`: one of `standard_web`, `lite_html`, `text`, `api_client`,
+  `snapshot`, or `native_client`.
 - `mode`: `local_index_only` only.
 - `include`: optional summary expansions: `query_plan`, `source_summaries`,
-  `evidence_summaries`, `compatibility_summaries`, `absence_summary`.
+  `evidence_summaries`, `compatibility_summaries`, `absence_summary`,
+  `evidence`, `compatibility`, `source_summary`, `limitations`, `gaps`, or
+  `actions`.
 - `source_policy`: `local_index_only` only.
 
 Forbidden parameters include `index_path`, `store_root`, `run_store_root`,
@@ -79,6 +88,9 @@ The envelope includes:
 - `gaps`: bounded coverage gaps and possible next actions.
 - `warnings`: non-fatal warnings.
 - `absence_summary`: optional bounded absence explanation.
+- `result_count`, `checked`, `limitations`, `absence`, `source_status`,
+  `timing`, `request_limits`, `next_actions`, and disabled capability flags are
+  production-facing additive fields for the hosted wrapper contract.
 - `generated_by`: future implementation provenance.
 - `stability`: field-level stability categories.
 - `links` and `debug`: optional fields; `debug` is future/disabled by default.
@@ -116,6 +128,7 @@ Required v0 error codes are:
 - `unsupported_include`
 - `forbidden_parameter`
 - `local_paths_forbidden`
+- `arbitrary_url_fetch_forbidden`
 - `downloads_disabled`
 - `installs_disabled`
 - `uploads_disabled`
@@ -124,11 +137,13 @@ Required v0 error codes are:
 - `rate_limited`
 - `timeout`
 - `not_found`
+- `internal_error_public_safe`
 - `internal_error`
 
 These codes are the governed vocabulary. Local Public Search Runtime v0 uses
 the bounded request-validation errors for local/prototype routes; hosted runtime
-and production error policy remain future.
+must use the public-safe subset documented in
+`docs/reference/PUBLIC_ERROR_CONTRACT.md`.
 
 ## Local Runtime Routes
 

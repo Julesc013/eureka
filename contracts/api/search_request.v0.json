@@ -45,7 +45,9 @@
         "standard_web",
         "lite_html",
         "text",
-        "api_client"
+        "api_client",
+        "snapshot",
+        "native_client"
       ],
       "default": "standard_web",
       "description": "Response projection profile requested by the client."
@@ -68,7 +70,13 @@
           "source_summaries",
           "evidence_summaries",
           "compatibility_summaries",
-          "absence_summary"
+          "absence_summary",
+          "evidence",
+          "compatibility",
+          "source_summary",
+          "limitations",
+          "gaps",
+          "actions"
         ]
       },
       "default": [],
@@ -289,5 +297,25 @@
       "cursor"
     ],
     "volatile": []
+  },
+  "x-future_modes": [
+    "cached_source_probe",
+    "live_probe",
+    "federated"
+  ],
+  "x-production_contract": {
+    "status": "frozen_for_p54_hosted_wrapper",
+    "active_mode": "local_index_only",
+    "default_limit": 10,
+    "max_limit": 25,
+    "max_query_length": 160,
+    "hosted_runtime_implemented": false,
+    "live_probes_enabled": false
+  },
+  "x-include_aliases": {
+    "evidence": "evidence_summaries",
+    "compatibility": "compatibility_summaries",
+    "source_summary": "source_summaries",
+    "gaps": "absence_summary"
   }
 }

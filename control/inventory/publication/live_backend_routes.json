@@ -9,6 +9,86 @@
   "current_local_api_public_contract": false,
   "routes": [
     {
+      "path_template": "/healthz",
+      "method": "GET",
+      "status": "planned",
+      "stability": "experimental",
+      "current_implementation_status": "not_currently_hosted_publicly",
+      "static_handoff_allowed": false,
+      "requires_live_backend": true,
+      "requires_auth": false,
+      "live_probe_related": false,
+      "public_alpha_allowed": false,
+      "public_search_contract_route": true,
+      "allowed_modes": [
+        "local_index_only"
+      ],
+      "expected_response_kind": "public_safe_health",
+      "notes": "P53 reserves a future hosted wrapper health endpoint; no hosted backend is implemented by this registry entry.",
+      "public_search_safety_required": true,
+      "runtime_readiness_checklist_required": true
+    },
+    {
+      "path_template": "/status",
+      "method": "GET",
+      "status": "planned",
+      "stability": "experimental",
+      "current_implementation_status": "not_currently_hosted_publicly",
+      "static_handoff_allowed": true,
+      "requires_live_backend": true,
+      "requires_auth": false,
+      "live_probe_related": false,
+      "public_alpha_allowed": false,
+      "public_search_contract_route": true,
+      "allowed_modes": [
+        "local_index_only"
+      ],
+      "expected_response_kind": "public_search_status",
+      "notes": "P53 reserves a future top-level hosted wrapper status endpoint; GitHub Pages remains static-only.",
+      "public_search_safety_required": true,
+      "runtime_readiness_checklist_required": true
+    },
+    {
+      "path_template": "/api/v1/absence/{need_id}",
+      "method": "GET",
+      "status": "planned",
+      "stability": "experimental",
+      "current_implementation_status": "not_currently_hosted_publicly",
+      "static_handoff_allowed": true,
+      "requires_live_backend": true,
+      "requires_auth": false,
+      "live_probe_related": false,
+      "public_alpha_allowed": false,
+      "public_search_contract_route": true,
+      "allowed_modes": [
+        "local_index_only"
+      ],
+      "expected_response_kind": "absence_report",
+      "notes": "Future bounded absence report lookup by public-safe need id; query intelligence runtime is not implemented here.",
+      "public_search_safety_required": true,
+      "runtime_readiness_checklist_required": true
+    },
+    {
+      "path_template": "/api/v1/capabilities",
+      "method": "GET",
+      "status": "planned",
+      "stability": "experimental",
+      "current_implementation_status": "not_currently_hosted_publicly",
+      "static_handoff_allowed": true,
+      "requires_live_backend": true,
+      "requires_auth": false,
+      "live_probe_related": false,
+      "public_alpha_allowed": false,
+      "public_search_contract_route": true,
+      "allowed_modes": [
+        "local_index_only"
+      ],
+      "expected_response_kind": "capability_flags",
+      "notes": "Future capability flag endpoint; it must report disabled live probes, downloads, uploads, installs, local paths, arbitrary URL fetch, accounts, telemetry, and AI runtime until later gates change them.",
+      "public_search_safety_required": true,
+      "runtime_readiness_checklist_required": true
+    },
+    {
       "path_template": "/api/v1/status",
       "method": "GET",
       "status": "planned",
@@ -200,7 +280,7 @@
   "notes": [
     "All routes in this file are future reservations.",
     "The registry does not create route handlers, deploy a backend, or define a production-stable API.",
-    "Public Search Safety / Abuse Guard v0 constrains Local Public Search Runtime v0 while hosted backend routes remain undeployed.",
+    "Public Search Safety / Abuse Guard v0 constrains Local Public Search Runtime v0 while hosted backend routes remain undeployed. Public Search Production Contract v0 now freezes the P54 wrapper route and schema requirements without hosting them.",
     "No live backend, rate-limit middleware, live probes, downloads, uploads, local path search, or arbitrary URL fetch is implemented by the safety guard."
   ]
 }

@@ -11,12 +11,18 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
 ## Contract Gates
 
 - [x] `python scripts/validate_public_search_contract.py` passes locally.
+- [x] `python scripts/validate_public_search_production_contract.py` passes locally.
 - [x] `python scripts/validate_public_search_result_card_contract.py` passes locally.
 - [x] `python scripts/validate_public_search_safety.py` passes locally.
 - [x] `contracts/api/search_request.v0.json` remains `local_index_only` only.
 - [x] `contracts/api/search_response.v0.json` still aligns with result cards.
 - [x] `contracts/api/error_response.v0.json` contains required safety error
   codes.
+- [x] `contracts/api/source_status.v0.json`,
+  `contracts/api/evidence_summary.v0.json`,
+  `contracts/api/absence_report.v0.json`, and
+  `contracts/api/public_search_status.v0.json` exist for the P54 wrapper
+  contract.
 
 ## Runtime Boundary Gates
 

@@ -8,7 +8,10 @@
   "static_site_current": true,
   "public_alpha_backend_future": true,
   "endpoint_prefixes_reserved": [
+    "/healthz",
+    "/status",
     "/api/v1/status",
+    "/api/v1/capabilities",
     "/api/v1/search",
     "/api/v1/query-plan",
     "/api/v1/sources",
@@ -17,6 +20,7 @@
     "/api/v1/object/{object_id}",
     "/api/v1/result/{result_id}",
     "/api/v1/absence",
+    "/api/v1/absence/{need_id}",
     "/api/v1/compare",
     "/api/v1/live-probe"
   ],
@@ -108,9 +112,12 @@
     "Public Search Static Handoff v0 adds static /search.html and old-client handoff outputs that point to local runtime instructions while keeping hosted backend status unavailable.",
     "Public Search Result Card Contract v0 defines the result-card output used by the local runtime without adding live backend behavior.",
     "Compatibility Surface Strategy v0 treats /api/v1 as a future optional projection alongside static data, lite/text/files, snapshots, relay, CLI, and native-client plans.",
-    "Public Search Safety / Abuse Guard v0 now constrains local_index_only safety, abuse, privacy, and operator-control requirements; the live backend remains future and rate-limit middleware remains unimplemented."
+    "Public Search Safety / Abuse Guard v0 now constrains local_index_only safety, abuse, privacy, and operator-control requirements; the live backend remains future and rate-limit middleware remains unimplemented.",
+    "Public Search Production Contract v0 reserves top-level /healthz and /status plus /api/v1/capabilities and /api/v1/absence/{need_id} for the future hosted wrapper without implementing or hosting them."
   ],
   "public_search_safety_policy": "control/inventory/publication/public_search_safety.json",
   "public_search_safety_policy_status": "local_runtime_guard_active_hosted_disabled",
-  "public_search_runtime_readiness_checklist": "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md"
+  "public_search_runtime_readiness_checklist": "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md",
+  "public_search_production_contract": "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
+  "public_search_production_contract_status": "contract_frozen_hosted_wrapper_not_implemented"
 }

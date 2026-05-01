@@ -196,6 +196,7 @@ Hosted public search must provide controls equivalent to:
 - `EUREKA_PUBLIC_SEARCH_ENABLED=0`
 - `EUREKA_OPERATOR_KILL_SWITCH=1`
 
+The operator kill switch is required before any hosted wrapper can be exposed.
 These flags remain hosted-runtime requirements. This milestone adds no process
 manager, provider configuration, rate-limit middleware, or deployment runtime.
 

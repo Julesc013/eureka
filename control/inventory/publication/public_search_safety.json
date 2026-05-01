@@ -185,7 +185,12 @@
       "EUREKA_MAX_RESULTS": "25",
       "EUREKA_SEARCH_TIMEOUT_MS": "3000",
       "EUREKA_PUBLIC_SEARCH_ENABLED": "0",
-      "EUREKA_OPERATOR_KILL_SWITCH": "1"
+      "EUREKA_OPERATOR_KILL_SWITCH": "1",
+      "EUREKA_PUBLIC_MODE": "1",
+      "EUREKA_SEARCH_MODE": "local_index_only",
+      "EUREKA_ALLOW_UPLOADS": "0",
+      "EUREKA_ALLOW_ARBITRARY_URL_FETCH": "0",
+      "EUREKA_GLOBAL_TIMEOUT_MS": "5000"
     },
     "kill_switch_required": true,
     "default_public_search_enabled": false,
@@ -270,5 +275,7 @@
     "It does not implement rate-limit middleware, auth, sessions, telemetry, logging runtime, live probes, downloads, installers, uploads, local path ingestion, or backend hosting.",
     "Public Search Rehearsal v0 records local safe-query and blocked-request evidence.",
     "Hosted public search exposure remains blocked until the readiness checklist, operator controls, and hosted rehearsal gates are satisfied."
-  ]
+  ],
+  "production_contract": "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
+  "production_contract_status": "frozen_for_p54_hosted_wrapper"
 }

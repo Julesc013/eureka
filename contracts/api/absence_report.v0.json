@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/api/absence_report.v0.json",
+  "title": "EurekaPublicAbsenceReportV0",
+  "description": "Bounded absence/gap report for public search. Contract-only until query intelligence milestones implement durable miss handling.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "absence_status",
+    "sources_checked",
+    "near_misses",
+    "gaps",
+    "next_actions",
+    "limitations",
+    "privacy_classification"
+  ],
+  "properties": {
+    "absence_status": {
+      "type": "string",
+      "enum": [
+        "no_verified_result",
+        "known_unresolved_need",
+        "source_gap",
+        "capability_gap",
+        "policy_gap",
+        "unknown"
+      ]
+    },
+    "query_fingerprint": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
+    },
+    "sources_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "near_misses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "privacy_classification": {
+      "type": "string",
+      "enum": [
+        "public",
+        "aggregated",
+        "redacted",
+        "unknown"
+      ]
+    }
+  },
+  "x-contract_id": "eureka_public_absence_report_v0",
+  "x-status": "contract_only",
+  "x-query_intelligence_runtime_implemented": false
+}

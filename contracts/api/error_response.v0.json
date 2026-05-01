@@ -9,7 +9,10 @@
     "ok",
     "schema_version",
     "contract_id",
-    "error"
+    "error",
+    "mode",
+    "limitations",
+    "request_limits"
   ],
   "properties": {
     "ok": {
@@ -30,7 +33,8 @@
         "code",
         "message",
         "status",
-        "retryable"
+        "retryable",
+        "severity"
       ],
       "properties": {
         "code": {
@@ -53,7 +57,9 @@
             "rate_limited",
             "timeout",
             "not_found",
-            "internal_error"
+            "internal_error",
+            "arbitrary_url_fetch_forbidden",
+            "internal_error_public_safe"
           ]
         },
         "message": {
@@ -85,6 +91,25 @@
             "string",
             "null"
           ]
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "error",
+            "blocked"
+          ]
+        },
+        "remediation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "public_safe": {
+          "type": "boolean",
+          "const": true
         }
       }
     },
@@ -120,6 +145,43 @@
           "const": 25
         }
       }
+    },
+    "mode": {
+      "type": "string",
+      "const": "local_index_only"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "request_limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_query_length",
+        "default_limit",
+        "max_limit"
+      ],
+      "properties": {
+        "max_query_length": {
+          "type": "integer",
+          "const": 160
+        },
+        "default_limit": {
+          "type": "integer",
+          "const": 10
+        },
+        "max_limit": {
+          "type": "integer",
+          "const": 25
+        },
+        "timeout_ms": {
+          "type": "integer",
+          "const": 5000
+        }
+      }
     }
   },
   "x-contract_id": "eureka_public_search_error_response_v0",
@@ -143,11 +205,23 @@
     "rate_limited",
     "timeout",
     "not_found",
-    "internal_error"
+    "internal_error",
+    "arbitrary_url_fetch_forbidden",
+    "internal_error_public_safe"
   ],
   "x-notes": [
     "This envelope is reserved for future public search runtime behavior.",
     "The current milestone does not add route handlers or live backend hosting.",
     "live_backend_unavailable remains valid for static-only deployments."
-  ]
+  ],
+  "x-public_safe_error_rules": [
+    "no_stack_traces",
+    "no_private_local_paths",
+    "no_secret_values",
+    "no_raw_suspicious_query_echo",
+    "no_provider_or_host_internals"
+  ],
+  "x-aliases": {
+    "search_error.v0.json": "error_response.v0.json"
+  }
 }

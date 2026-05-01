@@ -221,6 +221,115 @@
         "null"
       ],
       "description": "Experimental diagnostic block disabled by default in future public runtimes."
+    },
+    "result_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "checked": {
+      "description": "Production-facing alias for checked_sources. P54 should emit both during compatibility window.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/checked_source"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "absence": {
+      "description": "Production-facing bounded absence alias. Use absence_report.v0.json for expanded reports.",
+      "anyOf": [
+        {
+          "$ref": "absence_report.v0.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_status": {
+      "type": "array",
+      "items": {
+        "$ref": "source_status.v0.json"
+      }
+    },
+    "timing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "budget_ms": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5000
+        },
+        "elapsed_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "timed_out": {
+          "type": "boolean"
+        }
+      }
+    },
+    "request_limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_query_length",
+        "default_limit",
+        "max_limit"
+      ],
+      "properties": {
+        "max_query_length": {
+          "type": "integer",
+          "const": 160
+        },
+        "default_limit": {
+          "type": "integer",
+          "const": 10
+        },
+        "max_limit": {
+          "type": "integer",
+          "const": 25
+        },
+        "timeout_ms": {
+          "type": "integer",
+          "const": 5000
+        }
+      }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "live_probes_enabled": {
+      "const": false
+    },
+    "downloads_enabled": {
+      "const": false
+    },
+    "uploads_enabled": {
+      "const": false
+    },
+    "installs_enabled": {
+      "const": false
+    },
+    "local_paths_enabled": {
+      "const": false
+    },
+    "arbitrary_url_fetch_enabled": {
+      "const": false
+    },
+    "telemetry_enabled": {
+      "const": false
     }
   },
   "$defs": {
@@ -642,7 +751,12 @@
     "download",
     "install",
     "upload",
-    "local_filesystem_ingestion"
+    "local_filesystem_ingestion",
+    "local_paths",
+    "downloads",
+    "uploads",
+    "installs",
+    "telemetry"
   ],
   "x-field_stability": {
     "stable_draft": [
@@ -673,7 +787,12 @@
       "results[].limitations",
       "checked_sources[]",
       "gaps[]",
-      "warnings[]"
+      "warnings[]",
+      "result_count",
+      "request_limits",
+      "limitations",
+      "source_status",
+      "next_actions"
     ],
     "experimental": [
       "results[].summary",
@@ -685,7 +804,10 @@
       "results[].representation",
       "results[].links",
       "links",
-      "absence_summary"
+      "absence_summary",
+      "checked",
+      "absence",
+      "timing"
     ],
     "volatile": [
       "generated_by",
@@ -694,5 +816,34 @@
     "future": [
       "debug"
     ]
-  }
+  },
+  "x-source_status_schema": "contracts/api/source_status.v0.json",
+  "x-evidence_summary_schema": "contracts/api/evidence_summary.v0.json",
+  "x-absence_report_schema": "contracts/api/absence_report.v0.json",
+  "x-public_search_status_schema": "contracts/api/public_search_status.v0.json",
+  "x-hosted_required_fields": [
+    "schema_version",
+    "contract_id",
+    "ok",
+    "mode",
+    "stability",
+    "query",
+    "result_count",
+    "results",
+    "checked",
+    "gaps",
+    "warnings",
+    "limitations",
+    "absence",
+    "source_status",
+    "timing",
+    "request_limits",
+    "next_actions",
+    "live_probes_enabled",
+    "downloads_enabled",
+    "uploads_enabled",
+    "installs_enabled",
+    "local_paths_enabled",
+    "arbitrary_url_fetch_enabled"
+  ]
 }

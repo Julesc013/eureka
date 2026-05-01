@@ -137,6 +137,7 @@ Blocked or future-gated concepts include:
 - `emulator_handoff`
 - `vm_handoff`
 - `execute`
+- `live_probe`
 - `restore_apply`
 - `uninstall`
 - `rollback`

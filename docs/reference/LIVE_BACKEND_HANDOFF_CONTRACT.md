@@ -15,6 +15,10 @@ The reserved future public-alpha backend prefix is:
 /api/v1/
 ```
 
+Public Search Production Contract v0 also reserves future top-level
+`/healthz` and `/status` wrapper endpoints. They are health/status handoff
+contracts only, not GitHub Pages routes and not hosted evidence.
+
 The current local stdlib helper routes under `/api` are local/prototype
 public-alpha routes. They are useful for local smoke checks and wrapper
 rehearsal, but they are not the stable public handoff contract.

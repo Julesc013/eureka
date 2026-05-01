@@ -20,7 +20,9 @@ without a live backend.
 ## Reserved Live Boundary
 
 Live Backend Handoff Contract v0 reserves `/api/v1/` for future hosted
-public-alpha backend routes. This prefix is not active on GitHub Pages, is not implemented, and is not a production API.
+public-alpha backend routes. Public Search Production Contract v0 also reserves
+future top-level `/healthz` and `/status` wrapper endpoints. These routes are
+not active on GitHub Pages, are not hosted, not implemented, and not a production API.
 
 Static pages may describe `/api/v1/` as future/reserved. They must not link to
 it as an available service, and clients must check capability flags before
