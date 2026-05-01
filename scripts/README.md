@@ -663,3 +663,18 @@ state, promote candidates, inject candidates into public search, add telemetry,
 write query logs, mutate source caches, evidence ledgers, local indexes,
 master-index records, result caches, miss ledgers, search needs, or probe
 queues, or call external services.
+
+## Candidate Promotion Policy Contract
+
+- `python scripts/validate_candidate_promotion_assessment.py --all-examples`
+- `python scripts/validate_candidate_promotion_assessment.py --all-examples --json`
+- `python scripts/validate_candidate_promotion_policy.py`
+- `python scripts/validate_candidate_promotion_policy.py --json`
+- `python scripts/dry_run_candidate_promotion_assessment.py --candidate-label "Firefox ESR Windows XP compatibility candidate" --candidate-type compatibility_claim_candidate --json`
+
+These P65 commands validate recommendation-only candidate promotion assessment
+examples and policy docs, or emit a stdout-only dry-run promotion assessment.
+They do not perform promotion, automatic acceptance, review queue writes,
+candidate-index mutation, source-cache mutation, evidence-ledger mutation,
+public-index mutation, local-index mutation, master-index mutation, telemetry,
+external calls, or live probes.

@@ -5233,6 +5233,131 @@
       "failure_means": "Focused P64 schema, examples, validators, dry-run, audit, docs, privacy, review, conflict, no-truth, or no-mutation tests regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P64 tests; no telemetry, persistence, query logging, public search candidate injection, promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index mutation."
+    },
+    {
+      "test_id": "candidate_promotion_assessment_examples_validator",
+      "label": "Candidate promotion assessment examples validator",
+      "command": "python scripts/validate_candidate_promotion_assessment.py --all-examples",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Candidate promotion assessment examples drifted from P65 no-auto-promotion/no-mutation policy.",
+      "advisory_or_required": "required",
+      "notes": "Stdlib-only contract/example validation; no promotion runtime, telemetry, external calls, or index/source/evidence mutation."
+    },
+    {
+      "test_id": "candidate_promotion_assessment_examples_validator_json",
+      "label": "Candidate promotion assessment examples validator JSON",
+      "command": "python scripts/validate_candidate_promotion_assessment.py --all-examples --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Machine-readable P65 assessment validation failed.",
+      "advisory_or_required": "required",
+      "notes": "JSON output for audit/report consumption only."
+    },
+    {
+      "test_id": "candidate_promotion_policy_validator",
+      "label": "Candidate promotion policy validator",
+      "command": "python scripts/validate_candidate_promotion_policy.py",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P65 contract, docs, policy inventory, examples, or audit pack drifted.",
+      "advisory_or_required": "required",
+      "notes": "Checks contract-only/no-runtime/no-automatic-promotion/no-mutation claims."
+    },
+    {
+      "test_id": "candidate_promotion_policy_validator_json",
+      "label": "Candidate promotion policy validator JSON",
+      "command": "python scripts/validate_candidate_promotion_policy.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Machine-readable P65 policy validation failed.",
+      "advisory_or_required": "required",
+      "notes": "JSON output for audit/report consumption only."
+    },
+    {
+      "test_id": "candidate_promotion_dry_run_json",
+      "label": "Candidate promotion dry-run JSON helper",
+      "command": "python scripts/dry_run_candidate_promotion_assessment.py --candidate-label \"Firefox ESR Windows XP compatibility candidate\" --candidate-type compatibility_claim_candidate --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "seconds",
+      "failure_means": "P65 dry-run helper no longer emits a safe hypothetical assessment.",
+      "advisory_or_required": "required",
+      "notes": "Stdout-only; no files, promotion, telemetry, external calls, or mutation."
+    },
+    {
+      "test_id": "candidate_promotion_policy_tests",
+      "label": "Candidate promotion policy tests",
+      "command": "python -m unittest tests.operations.test_candidate_promotion_policy tests.scripts.test_validate_candidate_promotion_assessment tests.scripts.test_validate_candidate_promotion_policy tests.scripts.test_dry_run_candidate_promotion_assessment",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P65 validator, dry-run helper, docs, policy, or hard-boundary tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Includes negative tests for promotion, truth, automatic decision, rights, malware, source-cache, evidence-ledger, and master-index mutation claims."
     }
   ]
 }

@@ -684,6 +684,16 @@
       "status": "addressed_by_p64",
       "suggested_milestone": "P65 Candidate Promotion Policy v0",
       "addressed_by": "control/audits/candidate-index-v0/candidate_index_report.json"
+    },
+    {
+      "id": "audit-backlog-candidate-promotion-policy",
+      "finding_refs": [
+        "P50-QI-007"
+      ],
+      "title": "Define candidate promotion gates before any candidate can approach authoritative records",
+      "status": "addressed_by_p65",
+      "suggested_milestone": "P66 Known Absence Page v0",
+      "addressed_by": "control/audits/candidate-promotion-policy-v0/candidate_promotion_policy_report.json"
     }
   ]
 }

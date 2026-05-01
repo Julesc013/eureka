@@ -532,6 +532,18 @@ steps:
     run: python scripts/dry_run_candidate_index_record.py --label "Firefox ESR Windows XP compatibility candidate" --candidate-type compatibility_claim_candidate --json
   - id: candidate_index_contract_tests
     run: python -m unittest tests.operations.test_candidate_index_contract tests.scripts.test_validate_candidate_index_record tests.scripts.test_validate_candidate_index_contract tests.scripts.test_dry_run_candidate_index_record
+  - id: candidate_promotion_assessment_examples_validator
+    run: python scripts/validate_candidate_promotion_assessment.py --all-examples
+  - id: candidate_promotion_assessment_examples_validator_json
+    run: python scripts/validate_candidate_promotion_assessment.py --all-examples --json
+  - id: candidate_promotion_policy_validator
+    run: python scripts/validate_candidate_promotion_policy.py
+  - id: candidate_promotion_policy_validator_json
+    run: python scripts/validate_candidate_promotion_policy.py --json
+  - id: candidate_promotion_dry_run_json
+    run: python scripts/dry_run_candidate_promotion_assessment.py --candidate-label "Firefox ESR Windows XP compatibility candidate" --candidate-type compatibility_claim_candidate --json
+  - id: candidate_promotion_policy_tests
+    run: python -m unittest tests.operations.test_candidate_promotion_policy tests.scripts.test_validate_candidate_promotion_assessment tests.scripts.test_validate_candidate_promotion_policy tests.scripts.test_dry_run_candidate_promotion_assessment
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.

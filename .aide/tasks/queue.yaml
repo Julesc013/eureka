@@ -776,16 +776,16 @@
     {
       "id": "candidate_promotion_policy_v0",
       "title": "P65 Candidate Promotion Policy v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed",
       "priority": 106,
-      "notes": "Define validation-gated promotion from candidate index toward authoritative records without public-query or AI-driven master-index mutation."
+      "notes": "Implemented P65 Candidate Promotion Policy v0 with contract schema, decision/policy vocabularies, synthetic review/rejection/quarantine/supersession examples, dry-run helper, validators, audit pack, docs, tests, and metadata. No promotion runtime, automatic acceptance, review queue runtime, candidate-index mutation, source-cache mutation, evidence-ledger mutation, public-index mutation, local-index mutation, master-index mutation, telemetry, external calls, or live probes were added."
     },
     {
       "id": "known_absence_page_v0",
       "title": "P66 Known Absence Page v0",
-      "status": "queued_codex_safe",
+      "status": "queued_codex_safe_next",
       "priority": 107,
-      "notes": "Future static/dynamic absence explanation page after candidate and promotion policies; no master-index mutation or global non-existence claim."
+      "notes": "Expected next P66 milestone after candidate promotion policy. Define scoped known-absence explanation pages without global non-existence claims, runtime publication, telemetry, or master-index mutation."
     },
     {
       "id": "query_privacy_poisoning_guard_v0",
@@ -842,6 +842,13 @@
       "status": "operator_gated_future",
       "priority": 115,
       "notes": "Future operator evidence pack after hosted wrapper deployment, backend URL configuration, edge/rate limits, and static-site verification. Codex must not fabricate hosted deployment evidence or call provider APIs."
+    },
+    {
+      "id": "external_baseline_comparison_report_v0",
+      "title": "P75 External Baseline Comparison Report v0 after Manual Batch 0",
+      "status": "human_operator_gated_future",
+      "priority": 116,
+      "notes": "Future report only after Manual Observation Batch 0 evidence exists. Do not fabricate observations, scrape, call external APIs, or claim superiority from pending baselines."
     }
   ]
 }

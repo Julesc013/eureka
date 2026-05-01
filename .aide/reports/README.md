@@ -288,3 +288,7 @@ The P63 report lives at `control/audits/probe-queue-v0/probe_queue_report.json`.
 ## P64 Candidate Index v0
 
 The P64 report lives at `control/audits/candidate-index-v0/candidate_index_report.json`. It records candidate index contract/schema/example validation only and does not claim runtime candidate index, persistent candidate storage, telemetry, public query logging, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, index mutation, or hosted query intelligence runtime.
+
+## P65 Candidate Promotion Policy v0
+
+P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.

@@ -224,7 +224,11 @@
         "candidate_index_record_examples_validator",
         "candidate_index_contract_validator",
         "candidate_index_dry_run_json",
-        "candidate_index_contract_tests"
+        "candidate_index_contract_tests",
+        "candidate_promotion_assessment_examples_validator",
+        "candidate_promotion_policy_validator",
+        "candidate_promotion_dry_run_json",
+        "candidate_promotion_policy_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -460,7 +464,13 @@
         "candidate_index_contract_validator",
         "candidate_index_contract_validator_json",
         "candidate_index_dry_run_json",
-        "candidate_index_contract_tests"
+        "candidate_index_contract_tests",
+        "candidate_promotion_assessment_examples_validator",
+        "candidate_promotion_assessment_examples_validator_json",
+        "candidate_promotion_policy_validator",
+        "candidate_promotion_policy_validator_json",
+        "candidate_promotion_dry_run_json",
+        "candidate_promotion_policy_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -632,7 +642,9 @@
         "probe_queue_contract_tests",
         "candidate_index_record_examples_validator",
         "candidate_index_contract_validator",
-        "candidate_index_contract_tests"
+        "candidate_index_contract_tests",
+        "candidate_promotion_policy_validator",
+        "candidate_promotion_policy_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -962,7 +974,13 @@
         "candidate_index_contract_validator",
         "candidate_index_contract_validator_json",
         "candidate_index_dry_run_json",
-        "candidate_index_contract_tests"
+        "candidate_index_contract_tests",
+        "candidate_promotion_assessment_examples_validator",
+        "candidate_promotion_assessment_examples_validator_json",
+        "candidate_promotion_policy_validator",
+        "candidate_promotion_policy_validator_json",
+        "candidate_promotion_dry_run_json",
+        "candidate_promotion_policy_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -1024,6 +1042,7 @@
     "P61 Search Miss Ledger v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, runtime ledger writes, public query logging, search need creation, probe enqueueing, result cache mutation, external calls, or index/master-index mutation.",
     "P62 Search Need Record v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, runtime need store, public query logging, demand-count runtime, probe enqueueing, candidate-index mutation, result cache mutation, miss ledger mutation, external calls, or index/master-index mutation.",
     "P63 Probe Queue v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, external calls, or index/master-index mutation.",
-    "P64 Candidate Index v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index/master-index mutation."
+    "P64 Candidate Index v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index/master-index mutation.",
+    "P65 Candidate Promotion Policy v0 validation is stdlib-only contract/example governance; it adds no promotion runtime, automatic acceptance, review queue runtime, candidate/source/evidence/index mutation, telemetry, external calls, or live probes."
   ]
 }
