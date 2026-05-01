@@ -547,3 +547,11 @@ recommendation is Public Data Contract Stability Review v0, with Generated
 Artifact Drift Guard v0 as the alternative. Rust Local Index Parity Candidate
 v0 remains blocked on review and Cargo availability; native and relay
 implementation remain blocked on explicit human approval.
+
+Post-P49 Platform Audit v0 records the P50 post-search-and-pack checkpoint
+under `control/audits/post-p49-platform-audit-v0/`. It confirms that the
+static artifact and local/prototype search paths validate, while hosted public
+search, live connectors, query-intelligence runtime, pack import/staging
+runtime, AI runtime, production ops, and external baseline observations remain
+blocked, gated, or deferred. The next Codex-safe branch is
+`p51-post-p50-remediation-pack-v0`.

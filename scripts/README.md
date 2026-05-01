@@ -405,6 +405,13 @@ Current scripts:
   external-baseline and eval/search status, risk register, next milestone plan,
   human-operated work, explicit deferrals, command results, and no-overclaim
   guardrails; it supports `--json` and adds no product behavior
+- `validate_post_p49_platform_audit.py`: validates the P50 Post-P49 Platform
+  Audit v0 pack under `control/audits/post-p49-platform-audit-v0/`, including
+  required files, structured classification values, subsystem coverage,
+  command results, query-intelligence gap recording, gated work lists, next 20
+  milestones, and no-overclaim guardrails for production status, hosted search,
+  live probes, external baselines, and AI runtime; it supports `--json` and
+  adds no product behavior
 - `validate_public_data_stability.py`: validates Public Data Contract
   Stability Review v0 under
   `control/audits/public-data-contract-stability-review-v0/`, including

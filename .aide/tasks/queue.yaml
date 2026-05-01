@@ -660,6 +660,13 @@
       "status": "completed",
       "priority": 78,
       "notes": "Implemented contract/example/validation-only local staging manifest format with schema, synthetic example, validator, docs, audit pack, and tests. No .eureka-local state, staging runtime, staged state, pack copying, import, search/index mutation, runtime source registry mutation, upload, network/model calls, or master-index mutation was added."
+    },
+    {
+      "id": "post_p49_platform_audit_v0",
+      "title": "P50 Post-P49 Platform Audit v0",
+      "status": "completed",
+      "priority": 90,
+      "notes": "Implemented audit/reporting checkpoint under control/audits/post-p49-platform-audit-v0 with validator and tests. It records current classifications, command evidence, blockers, query-intelligence gaps, human/approval/operator gates, and next milestones without adding hosted search, live probes, pack import, staging runtime, AI runtime, external observations, public search mutation, or master-index mutation."
     }
   ]
 }

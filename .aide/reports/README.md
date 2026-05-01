@@ -193,3 +193,11 @@ Repository Shape Consolidation v0 records no separate AIDE runtime report. It
 promotes `site/dist/` as the single generated static deployment artifact and
 confirms `external/` as the outside-reference root through active docs,
 inventories, validators, tests, and workflow metadata only.
+
+Post-P49 Platform Audit v0 records its committed audit pack under
+`control/audits/post-p49-platform-audit-v0/`, plus a validator and tests under
+`scripts/` and `tests/`. No separate AIDE runtime report is needed; this is
+audit/reporting governance only and does not add product runtime behavior,
+hosted search, live probes, external observations, pack import, staging
+runtime, AI runtime, deployment changes, downloads, uploads, accounts, or
+master-index mutation.

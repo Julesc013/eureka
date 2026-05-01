@@ -548,6 +548,15 @@
       "title": "Keep future AI drafting behind typed validation, review, and explicit runtime approval",
       "status": "open_follow_up",
       "suggested_milestone": "Manual Observation Batch 0 Execution, human-operated; Public Hosted Search Rehearsal Plan v0 is the Codex-safe alternative"
+    },
+    {
+      "id": "audit-backlog-post-p49-platform-audit",
+      "finding_refs": [
+        "post-p49-platform-audit-v0"
+      ],
+      "title": "Remediate P50 command drift, query-intelligence gaps, Pages evidence, and security/ops documentation gaps without adding product behavior",
+      "status": "open_follow_up",
+      "suggested_milestone": "P51 Post-P50 Remediation Pack"
     }
   ]
 }

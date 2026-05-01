@@ -251,6 +251,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   without creating staging runtime, staged state, imports, indexes, uploads,
   network calls, model calls, public-search mutation, or master-index
   mutation.
+- `post-p49-platform-audit-v0/`: P50 full platform checkpoint after the public
+  search, source, pack, staging, and AI-assistance queue through P49. It
+  records subsystem classifications, command evidence, blockers, human/
+  approval/operator gates, query-intelligence gaps, language/runtime strategy,
+  and next milestones without adding product runtime behavior, hosted search,
+  live probes, pack import, AI runtime, external observations, or production
+  claims.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

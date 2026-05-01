@@ -648,3 +648,13 @@ verification matrix, eval/audit posture, external-baseline pending state,
 publication/static/live-alpha/Rust/snapshot status, risks, and next planning
 under `control/audits/post-queue-state-checkpoint-v0/`. It is reporting only
 and does not add runtime behavior.
+
+## Post-P49 Platform Audit
+
+Post-P49 Platform Audit v0 records the P50 checkpoint under
+`control/audits/post-p49-platform-audit-v0/`. Current search-usefulness counts
+are `covered=5`, `partial=40`, `source_gap=10`, `capability_gap=7`, and
+`unknown=2`; archive-resolution hard evals remain `satisfied=6`; external
+baselines remain `192` pending and `0` observed. The next branch is
+`p51-post-p50-remediation-pack-v0`, with Manual Observation Batch 0 and
+GitHub Pages repair kept as human/operator work.

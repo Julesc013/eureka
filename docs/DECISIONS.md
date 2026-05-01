@@ -1562,3 +1562,28 @@ clearance claims, malware-safety claims, canonical truth claims, or production
 AI support. The immediate next milestone is Manual Observation Batch 0
 Execution, human-operated; Public Hosted Search Rehearsal Plan v0 is the
 Codex-safe alternative.
+
+## ADR-130: Audit Post-P49 State Before Query Learning Or Hosted Search
+
+Status: accepted
+
+Post-P49 Platform Audit v0 adds
+`control/audits/post-p49-platform-audit-v0/`,
+`scripts/validate_post_p49_platform_audit.py`, focused tests, and operating
+metadata entries.
+
+The decision is to treat P50 as an audit/consolidation checkpoint rather than
+a feature milestone. The audit classifies current repo state after the public
+search, source expansion, pack contract, staging, and AI planning queue. It
+keeps Python as the reference/oracle backend, `site/dist` as the active static
+artifact, public search as local/prototype only, pack import/staging as
+validate-only/planning/read-only, and AI as candidate-only planning/validation.
+
+P50 deliberately does not implement hosted public search, live connectors, live
+source probes, query-learning runtime, shared query cache, miss ledger, probe
+queue, candidate index, pack import runtime, local staging runtime, AI runtime,
+model calls, credentials, telemetry, accounts, uploads, downloads, installers,
+native GUI, relay runtime, Rust runtime replacement, public contribution
+intake, public-search mutation, local-index mutation, runtime-index mutation,
+master-index mutation, external API calls, scraping, or deployment changes.
+The next branch is `p51-post-p50-remediation-pack-v0`.

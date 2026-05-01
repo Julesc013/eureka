@@ -778,6 +778,16 @@ operational backend infrastructure in this order:
    human approval and limited to the approved read-only static-data/snapshot-demo
    skeleton scope
 
+Post-P49 Platform Audit v0 is recorded under
+`control/audits/post-p49-platform-audit-v0/`. It confirms the current posture:
+Python remains the reference/oracle backend, `site/dist` is the active static
+artifact, public search is local/prototype only, hosted public search and live
+connectors are unavailable, external baselines are still manual-pending, pack
+import/staging are validate-only/planning/read-only, and AI work is contract/
+planning-only with no provider runtime or model calls. The next Codex-safe
+branch is `p51-post-p50-remediation-pack-v0`; Manual Observation Batch 0 and
+GitHub Pages repair remain human/operator work.
+
 ## Deferred Priorities
 
 These are intentionally not the next milestone:
