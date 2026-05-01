@@ -678,3 +678,7 @@ They do not perform promotion, automatic acceptance, review queue writes,
 candidate-index mutation, source-cache mutation, evidence-ledger mutation,
 public-index mutation, local-index mutation, master-index mutation, telemetry,
 external calls, or live probes.
+
+## Known Absence Page Contract
+
+P66 adds stdlib-only validators and a stdout-only dry-run helper: `python scripts/validate_known_absence_page.py --all-examples`, `python scripts/validate_known_absence_page.py --all-examples --json`, `python scripts/validate_known_absence_page_contract.py`, `python scripts/validate_known_absence_page_contract.py --json`, and `python scripts/dry_run_known_absence_page.py --query "no-such-local-index-hit" --absence-status scoped_absence --json`. They write no ledger, page store, source cache, evidence ledger, candidate index, query log, telemetry, public index, local index, or master index state.
