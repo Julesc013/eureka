@@ -400,3 +400,7 @@ See `control/audits/query-privacy-poisoning-guard-v0/` for the P67 privacy and p
 ## Demand Dashboard v0
 
 `control/audits/demand-dashboard-v0/` records the P68 contract-only demand dashboard audit pack. It is not a production analytics, telemetry, or hosted-dashboard claim.
+
+## Source Sync Worker Contract v0
+
+`control/audits/source-sync-worker-contract-v0/` records the P69 contract-only source sync worker audit pack. It is not a worker runtime, connector, source-cache, evidence-ledger, or production-ops claim.

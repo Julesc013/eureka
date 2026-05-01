@@ -306,3 +306,7 @@ P67 report: `control/audits/query-privacy-poisoning-guard-v0/query_privacy_poiso
 ## P68 Demand Dashboard v0
 
 P68 report lives under `control/audits/demand-dashboard-v0/` and records synthetic aggregate-dashboard contract evidence only.
+
+## P69 Source Sync Worker Contract v0
+
+P69 report lives under `control/audits/source-sync-worker-contract-v0/` and records source sync worker contract evidence only.

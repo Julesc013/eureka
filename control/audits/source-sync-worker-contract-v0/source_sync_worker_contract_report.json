@@ -1,0 +1,629 @@
+{
+  "report_id": "source_sync_worker_contract_v0",
+  "created_by_slice": "P69 Source Sync Worker Contract v0",
+  "repo_head": "89f3d465757e360417c56ee8c9d35e364214b285",
+  "branch": "main",
+  "worktree_status": "## main...origin/main\n M .aide/commands/ci.yaml\n M .aide/commands/dev.yaml\n M .aide/reports/README.md\n M .aide/tasks/audit_backlog.yaml\n M .aide/tasks/queue.yaml\n M control/audits/README.md\n M control/inventory/query_intelligence/candidate_index_policy.json\n M control/inventory/query_intelligence/candidate_promotion_policy.json\n M control/inventory/query_intelligence/demand_dashboard_policy.json\n M control/inventory/query_intelligence/known_absence_page_policy.json\n M control/inventory/query_intelligence/probe_queue_policy.json\n M control/inventory/query_intelligence/query_observation_policy.json\n M control/inventory/query_intelligence/query_privacy_poisoning_guard_policy.json\n M control/inventory/query_intelligence/search_miss_ledger_policy.json\n M control/inventory/query_intelligence/search_need_record_policy.json\n M control/inventory/query_intelligence/search_result_cache_policy.json\n M control/inventory/tests/command_matrix.json\n M control/inventory/tests/test_registry.json\n M docs/BOOTSTRAP_STATUS.md\n M docs/DECISIONS.md\n M docs/OPEN_QUESTIONS.md\n M docs/ROADMAP.md\n M docs/architecture/QUERY_INTELLIGENCE_PLANE.md\n M docs/operations/HOSTED_PUBLIC_SEARCH_REHEARSAL.md\n M docs/operations/PUBLIC_SEARCH_SAFETY_EVIDENCE.md\n M docs/reference/CANDIDATE_INDEX_CONTRACT.md\n M docs/reference/CANDIDATE_PROMOTION_POLICY.md\n M docs/reference/DEMAND_DASHBOARD_CONTRACT.md\n M docs/reference/EVIDENCE_PACK_CONTRACT.md\n M docs/reference/PROBE_QUEUE_CONTRACT.md\n M docs/reference/PUBLIC_SEARCH_API_CONTRACT.md\n M docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md\n M docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md\n M docs/reference/SOURCE_PACK_CONTRACT.md\n M docs/roadmap/BACKEND_ROADMAP.md\n M scripts/README.md\n?? contracts/source_sync/\n?? control/audits/source-sync-worker-contract-v0/\n?? control/inventory/source_sync/\n?? docs/architecture/SOURCE_INGESTION_PLANE.md\n?? docs/reference/SOURCE_SYNC_SOURCE_POLICY.md\n?? docs/reference/SOURCE_SYNC_WORKER_CONTRACT.md\n?? examples/source_sync/\n?? scripts/dry_run_source_sync_worker_job.py\n?? scripts/validate_source_sync_worker_contract.py\n?? scripts/validate_source_sync_worker_job.py\n?? tests/operations/test_source_sync_worker_contract.py\n?? tests/scripts/test_dry_run_source_sync_worker_job.py\n?? tests/scripts/test_validate_source_sync_worker_contract.py\n?? tests/scripts/test_validate_source_sync_worker_job.py",
+  "contract_files": [
+    "contracts/source_sync/source_sync_worker_job.v0.json",
+    "contracts/source_sync/source_sync_worker_manifest.v0.json",
+    "contracts/source_sync/source_sync_job_kind.v0.json"
+  ],
+  "validator_scripts": [
+    "scripts/validate_source_sync_worker_job.py",
+    "scripts/validate_source_sync_worker_contract.py",
+    "scripts/dry_run_source_sync_worker_job.py"
+  ],
+  "example_source_sync_jobs": [
+    "examples/source_sync/minimal_manual_source_review_job_v0",
+    "examples/source_sync/minimal_ia_metadata_sync_job_v0",
+    "examples/source_sync/minimal_wayback_availability_sync_job_v0",
+    "examples/source_sync/minimal_github_releases_sync_job_v0"
+  ],
+  "source_sync_worker_policy": "control/inventory/source_sync/source_sync_worker_policy.json",
+  "sync_job_taxonomy": [
+    "manual_source_review",
+    "source_metadata_sync",
+    "source_identifier_lookup",
+    "source_availability_check",
+    "source_cache_refresh",
+    "source_record_normalization",
+    "connector_health_check",
+    "rate_limit_policy_check",
+    "deep_extraction_request",
+    "package_metadata_sync",
+    "repository_release_sync",
+    "wayback_availability_sync",
+    "internet_archive_metadata_sync",
+    "software_heritage_metadata_sync",
+    "wikidata_identity_sync",
+    "unknown"
+  ],
+  "source_policy_approval_gates": [
+    "source_policy_review",
+    "rights_review",
+    "risk_review",
+    "operator_approval",
+    "human_approval",
+    "rate_limit_review",
+    "user_agent_review",
+    "circuit_breaker_review",
+    "cache_policy_review",
+    "evidence_output_review",
+    "connector_contract_review",
+    "credential_policy_review"
+  ],
+  "scheduling_retry_timeout_model": "No schedule is created; future jobs require bounded retry, timeout, rate-limit, and circuit-breaker policy.",
+  "rate_limit_circuit_breaker_model": "Future live sync requires source-policy rate limits and circuit breakers before execution.",
+  "user_agent_source_terms_policy": "Future live sync requires descriptive User-Agent, source terms, robots/source-policy, and contact policy; no fake contact is configured.",
+  "input_reference_model": "Refs to query intelligence, probe queue, demand dashboard, source inventory, source packs, and evidence packs are references only.",
+  "expected_output_model": "Outputs are future-only and require validation/review before source cache, evidence ledger, or candidate use.",
+  "cache_evidence_ledger_relationship": "Cache-first and evidence-attributed future outputs; no source cache or evidence ledger mutation in P69.",
+  "query_intelligence_relationship": "Probe and demand signals may suggest future sync jobs; no public-query fanout or job enqueueing occurs.",
+  "privacy_policy_summary": "No private paths, secrets, credentials, IPs, account IDs, private URLs, local result IDs, or raw private queries in examples.",
+  "rights_risk_policy_summary": "Rights clearance and malware safety are not claimed; downloads, installs, and execution are disabled.",
+  "no_execution_no_mutation_guarantees": {
+    "runtime_source_sync_implemented": false,
+    "persistent_worker_queue_implemented": false,
+    "telemetry_implemented": false,
+    "credentials_configured": false,
+    "public_query_fanout_allowed": false,
+    "worker_runtime_implemented": false,
+    "job_executed": false,
+    "live_source_calls_allowed_now": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "source_cache_mutation_allowed_now": false,
+    "evidence_ledger_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "master_index_mutation_allowed": false,
+    "local_index_mutation_allowed": false,
+    "public_index_mutation_allowed": false
+  },
+  "runtime_status": {
+    "public_search_runtime_wired": false,
+    "source_sync_runtime_implemented": false,
+    "persistent_worker_queue_implemented": false,
+    "connector_runtime_implemented": false,
+    "telemetry_implemented": false,
+    "credentials_configured": false
+  },
+  "command_results": [
+    {
+      "command": "python scripts/validate_source_sync_worker_job.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.078
+    },
+    {
+      "command": "python scripts/validate_source_sync_worker_job.py --all-examples --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_source_sync_worker_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.078
+    },
+    {
+      "command": "python scripts/validate_source_sync_worker_contract.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.079
+    },
+    {
+      "command": "python scripts/dry_run_source_sync_worker_job.py --label \"IA metadata sync example\" --kind internet_archive_metadata_sync --source-family internet_archive --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.046
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_snapshot.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.078
+    },
+    {
+      "command": "python scripts/validate_query_guard_decision.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.078
+    },
+    {
+      "command": "python scripts/validate_known_absence_page.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_known_absence_page_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_assessment.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_policy.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_candidate_index_record.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_candidate_index_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_probe_queue_item.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_probe_queue_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_search_need_record.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_search_need_record_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_entry.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_search_result_cache_entry.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_shared_query_result_cache_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_query_observation.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_query_observation_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_live_probe_gateway.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.218
+    },
+    {
+      "command": "python scripts/run_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 1.016
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 1.0
+    },
+    {
+      "command": "python scripts/run_public_search_safety_evidence.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.406
+    },
+    {
+      "command": "python scripts/validate_public_search_safety_evidence.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.391
+    },
+    {
+      "command": "python scripts/validate_static_site_search_integration.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.828
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.25
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.266
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.25
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.219
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.531
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.531
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --check",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.469
+    },
+    {
+      "command": "python site/build.py --check",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.984
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.094
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.078
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.14
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 9.407
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.578
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.312
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.313
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.343
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.375
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.875
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 91.563
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 8.719
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 5.468
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 1.5
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 4.969
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 30.797
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 114.062
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.485
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.094
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.046
+    },
+    {
+      "command": "cargo --version",
+      "status": "skipped_unavailable",
+      "required": false,
+      "returncode": null,
+      "duration_seconds": 0.0
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped_unavailable",
+      "required": false,
+      "returncode": null,
+      "duration_seconds": 0.0
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped_unavailable",
+      "required": false,
+      "returncode": null,
+      "duration_seconds": 0.0
+    }
+  ],
+  "remaining_blockers": [
+    "No source cache/evidence ledger contract or runtime exists yet.",
+    "No connector approval packs, credentials policy, source-specific User-Agent/contact policy, or operator source sync deployment exists."
+  ],
+  "next_recommended_branch": "P70 Source Cache and Evidence Ledger v0",
+  "notes": [
+    "P69 starts the source-ingestion plane after the query-intelligence contract sequence.",
+    "No source sync execution occurred and no source-derived result is accepted as truth."
+  ],
+  "runtime_source_sync_implemented": false,
+  "persistent_worker_queue_implemented": false,
+  "telemetry_implemented": false,
+  "credentials_configured": false,
+  "public_query_fanout_allowed": false,
+  "worker_runtime_implemented": false,
+  "job_executed": false,
+  "live_source_calls_allowed_now": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "source_cache_mutation_allowed_now": false,
+  "evidence_ledger_mutation_allowed_now": false,
+  "candidate_index_mutation_allowed_now": false,
+  "master_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false
+}
