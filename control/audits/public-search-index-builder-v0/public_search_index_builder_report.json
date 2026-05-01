@@ -1,0 +1,377 @@
+{
+  "report_id": "public_search_index_builder_v0",
+  "created_by_slice": "p55_public_search_index_builder_v0",
+  "repo_head": "e11d95b02c60906920d66703b7fd5248d68c1243",
+  "branch": "main",
+  "worktree_status": "clean before P55 edits; final status recorded in final response",
+  "index_builder_script": "scripts/build_public_search_index.py",
+  "index_validator_script": "scripts/validate_public_search_index.py",
+  "output_root": "data/public_index",
+  "generated_artifacts": [
+    "data/public_index/build_manifest.json",
+    "data/public_index/source_coverage.json",
+    "data/public_index/index_stats.json",
+    "data/public_index/search_documents.ndjson",
+    "data/public_index/checksums.sha256"
+  ],
+  "input_sources": [
+    "control/inventory/sources/*.source.json",
+    "runtime/connectors/synthetic_software/fixtures/*",
+    "runtime/connectors/github_releases/fixtures/*",
+    "runtime/connectors/internet_archive_recorded/fixtures/*",
+    "runtime/connectors/local_bundle_fixtures/fixtures/*",
+    "runtime/connectors/article_scan_recorded/fixtures/*",
+    "runtime/connectors/source_expansion_recorded/fixtures/*"
+  ],
+  "source_family_counts": {
+    "article_scan_recorded": 10,
+    "github_releases": 23,
+    "internet_archive": 1,
+    "internet_archive_recorded": 129,
+    "local_bundle_fixtures": 292,
+    "local_files": 1,
+    "manual_document_recorded": 23,
+    "package_registry_recorded": 11,
+    "review_description_recorded": 19,
+    "software_heritage": 1,
+    "software_heritage_recorded": 7,
+    "sourceforge_recorded": 8,
+    "synthetic": 1,
+    "synthetic_fixture": 30,
+    "wayback_memento": 1,
+    "wayback_memento_recorded": 27
+  },
+  "document_count": 584,
+  "record_kind_counts": {
+    "evidence": 359,
+    "member": 33,
+    "representation": 67,
+    "resolved_object": 39,
+    "source_record": 15,
+    "state_or_release": 39,
+    "synthetic_member": 32
+  },
+  "sqlite_available": true,
+  "fts5_available": true,
+  "fts5_enabled": false,
+  "fallback_enabled": true,
+  "local_public_search_integrated": true,
+  "hosted_wrapper_compatible": true,
+  "live_sources_used": false,
+  "external_calls_performed": false,
+  "private_paths_detected": false,
+  "executable_payloads_included": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "local_paths_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "master_index_mutated": false,
+  "pack_import_performed": false,
+  "ai_runtime_enabled": false,
+  "command_results": [
+    {
+      "command": "git status --short --branch",
+      "status": "pass",
+      "notes": "Initial P55 status was clean on main...origin/main."
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "status": "pass",
+      "notes": "Initial head e11d95b02c60906920d66703b7fd5248d68c1243."
+    },
+    {
+      "command": "git rev-parse origin/main",
+      "status": "pass",
+      "notes": "origin/main matched initial head."
+    },
+    {
+      "command": "git log --oneline -n 50",
+      "status": "pass",
+      "notes": "P50 through P54 commits were present."
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --rebuild",
+      "status": "pass",
+      "notes": "Generated 584 documents under data/public_index."
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --check",
+      "status": "pass",
+      "notes": "Committed public index artifacts matched regenerated temp artifacts."
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --json",
+      "status": "pass",
+      "notes": "Preview JSON parsed; no repo mutation."
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py",
+      "status": "pass",
+      "notes": "Public index artifacts valid with 584 documents and no private paths."
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py --json",
+      "status": "pass",
+      "notes": "JSON validator output parsed with status valid."
+    },
+    {
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "status": "pass",
+      "notes": "P55 audit pack, artifacts, docs, drift entry, and hard false booleans validated."
+    },
+    {
+      "command": "python scripts/validate_public_search_index_builder.py --json",
+      "status": "pass",
+      "notes": "JSON validator output parsed with status valid."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py --artifact public_search_index",
+      "status": "pass",
+      "notes": "Public search index check and validators passed."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "pass",
+      "notes": "All 11 generated artifact groups passed, including public_search_index."
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "pass",
+      "notes": "Hosted wrapper safe config passed and required public index is present."
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "pass",
+      "notes": "Hosted wrapper local rehearsal passed 14/14."
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py --json",
+      "status": "pass",
+      "notes": "JSON output parsed with 14/14 passed checks."
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "pass",
+      "notes": "P54 wrapper validator still passes."
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "pass",
+      "notes": "P53 contract validator still passes."
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "pass",
+      "notes": "Public search API contract valid."
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py --json",
+      "status": "pass",
+      "notes": "JSON contract output parsed."
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "pass",
+      "notes": "Result-card contract valid."
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py --json",
+      "status": "pass",
+      "notes": "JSON result-card validator output parsed."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "pass",
+      "notes": "Safety guard valid; local_index_only, 160 query max, 25 result max."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py --json",
+      "status": "pass",
+      "notes": "JSON safety validator output parsed."
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "pass",
+      "notes": "Local public search runtime valid."
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py --json",
+      "status": "pass",
+      "notes": "JSON runtime validator output parsed."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "pass",
+      "notes": "Public search smoke passed 30/30 using generated_public_search_index."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "pass",
+      "notes": "JSON smoke output parsed; safe queries and blocked requests passed."
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "pass",
+      "notes": "Public alpha smoke passed 18/18."
+    },
+    {
+      "command": "python site/build.py --check",
+      "status": "pass",
+      "notes": "Static site generator check valid."
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "pass",
+      "notes": "Static site validation valid for 9 pages."
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "pass",
+      "notes": "Publication inventory valid."
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "pass",
+      "notes": "Public static site valid; 15 source ids checked."
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "pass",
+      "notes": "GitHub Pages static artifact valid locally; no deployment evidence claimed."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "pass",
+      "notes": "Archive resolution evals satisfied=6."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "pass",
+      "notes": "JSON archive eval output parsed; satisfied=6."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "pass",
+      "notes": "Counts: covered=5, partial=40, source_gap=10, capability_gap=7, unknown=2."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "pass",
+      "notes": "JSON search usefulness output parsed with same counts."
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "pass",
+      "notes": "External baselines remain 192 pending/0 observed; batch_0 39 pending/0 observed."
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "pass",
+      "notes": "Python oracle golden fixture pack passed with 40 files."
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "failed_then_fixed",
+      "notes": "Initial run found stale drift-guard expected count 10 vs 11; repaired test and reran successfully."
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "pass",
+      "notes": "239 tests passed after repair."
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "pass",
+      "notes": "418 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "pass",
+      "notes": "53 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "pass",
+      "notes": "25 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "pass",
+      "notes": "320 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "pass",
+      "notes": "168 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "notes": "826 tests passed."
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "notes": "446 Python files checked; no boundary violations."
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "pass",
+      "notes": "P50 validator passed."
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "pass",
+      "notes": "P51 validator passed."
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "pass",
+      "notes": "P52 validator passed; deployment remains unverified/operator-gated."
+    },
+    {
+      "command": "cargo --version",
+      "status": "unavailable",
+      "notes": "Cargo is not installed or not on PATH in this environment."
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "unavailable",
+      "notes": "Cargo is not installed or not on PATH in this environment."
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "unavailable",
+      "notes": "Cargo is not installed or not on PATH in this environment."
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass",
+      "notes": "Passed; PowerShell/Git emitted CRLF normalization warnings only."
+    }
+  ],
+  "search_smoke_summary": {
+    "status": "passed",
+    "checks": "30/30",
+    "known_result_queries": [
+      "windows 7 apps",
+      "driver.inf",
+      "pc magazine ray tracing"
+    ],
+    "absence_query": "no-such-local-index-hit"
+  },
+  "remaining_blockers": [
+    "Hosted deployment remains unverified/operator-gated.",
+    "Search quality remains bounded to committed fixture and recorded metadata.",
+    "Query intelligence and miss-ledger work remains future.",
+    "External baselines remain manual/pending."
+  ],
+  "next_recommended_branch": "P56 Static Site Search Integration v0",
+  "notes": [
+    "P55 builds a controlled public-safe index artifact, not a live source index.",
+    "The committed bundle is text-only JSON/NDJSON; no SQLite binary is committed.",
+    "Public requests cannot select index paths or source roots.",
+    "One stale generated-artifact drift test expectation was repaired from 10 to dynamic/all-current artifacts after adding public_search_index.",
+    "Cargo is unavailable in this environment; Rust remains parity/future lane only."
+  ]
+}
