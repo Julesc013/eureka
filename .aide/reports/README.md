@@ -314,3 +314,9 @@ P69 report lives under `control/audits/source-sync-worker-contract-v0/` and reco
 ## P70 Source Cache and Evidence Ledger v0
 
 Report: `control/audits/source-cache-evidence-ledger-v0/source_cache_evidence_ledger_report.json`.
+
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-START -->
+## P71 Internet Archive Metadata Connector Approval Pack v0
+
+The P71 audit pack is approval-only and records no connector execution, external calls, source cache mutation, evidence ledger mutation, or production readiness claim.
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->

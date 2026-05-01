@@ -408,3 +408,9 @@ See `control/audits/query-privacy-poisoning-guard-v0/` for the P67 privacy and p
 ## P70 Source Cache and Evidence Ledger v0
 
 See `control/audits/source-cache-evidence-ledger-v0/` for the contract-only source cache/evidence ledger audit pack.
+
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-START -->
+## P71 Internet Archive Metadata Connector Approval Pack v0
+
+See `control/audits/internet-archive-metadata-connector-approval-v0/` for the approval-only Internet Archive metadata connector pack. It is not a connector runtime, does not call Internet Archive, does not scrape or download, and does not mutate source cache, evidence ledger, candidate index, public/local/master indexes, telemetry, or credentials.
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->

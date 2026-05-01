@@ -1,0 +1,413 @@
+# Command Results
+
+- `python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples`: passed (returncode=0, 0.06s)
+  - status: valid
+  - example_count: 1
+- `python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples --json`: passed (returncode=0, 0.06s)
+  - {
+  -   "status": "valid",
+  -   "created_by": "internet_archive_metadata_connector_approval_validator_v0",
+  -   "example_count": 1,
+  -   "results": [
+- `python scripts/validate_internet_archive_metadata_connector_contract.py`: passed (returncode=0, 0.08s)
+  - status: valid
+  - example_count: 1
+  - contract_file: contracts/connectors/internet_archive_metadata_connector_approval.v0.json
+- `python scripts/validate_internet_archive_metadata_connector_contract.py --json`: passed (returncode=0, 0.08s)
+  - {
+  -   "status": "valid",
+  -   "created_by": "internet_archive_metadata_connector_contract_validator_v0",
+  -   "contract_file": "contracts/connectors/internet_archive_metadata_connector_approval.v0.json",
+  -   "example_count": 1,
+- `python scripts/dry_run_internet_archive_metadata_connector_approval.py --json`: passed (returncode=0, 0.05s)
+  - {
+  -   "schema_version": "0.1.0",
+  -   "approval_record_id": "dry_run.connector.internet_archive_metadata.approval.v0",
+  -   "approval_record_kind": "internet_archive_metadata_connector_approval",
+  -   "status": "draft_example",
+- `python scripts/validate_source_cache_record.py --all-examples`: passed (returncode=0, 0.05s)
+  - status: valid
+  - example_count: 3
+- `python scripts/validate_source_cache_contract.py`: passed (returncode=0, 0.06s)
+  - status: valid
+  - example_count: 3
+  - contract_file: contracts/source_cache/source_cache_record.v0.json
+- `python scripts/validate_evidence_ledger_record.py --all-examples`: passed (returncode=0, 0.06s)
+  - status: valid
+  - example_count: 3
+- `python scripts/validate_evidence_ledger_contract.py`: passed (returncode=0, 0.06s)
+  - status: valid
+  - example_count: 3
+  - contract_file: contracts/evidence_ledger/evidence_ledger_record.v0.json
+- `python scripts/validate_source_cache_evidence_ledger_contract.py`: passed (returncode=0, 0.06s)
+  - status: valid
+  - report_id: source_cache_evidence_ledger_v0
+- `python scripts/validate_source_sync_worker_job.py --all-examples`: passed (returncode=0, 0.06s)
+  - status: valid
+  - example_count: 4
+- `python scripts/validate_source_sync_worker_contract.py`: passed (returncode=0, 0.09s)
+  - status: valid
+  - contract_file: contracts/source_sync/source_sync_worker_job.v0.json
+  - example_count: 4
+- `python scripts/validate_demand_dashboard_snapshot.py --all-examples`: passed (returncode=0, 0.09s)
+  - status: valid
+  - example_count: 2
+- `python scripts/validate_demand_dashboard_contract.py`: passed (returncode=0, 0.11s)
+  - status: valid
+  - contract_file: contracts/query/demand_dashboard_snapshot.v0.json
+  - example_count: 2
+- `python scripts/validate_query_guard_decision.py --all-examples`: passed (returncode=0, 0.08s)
+  - Query Guard Decision validation
+  - status: valid
+  - example_count: 5
+  - warnings:
+  - - examples/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
+- `python scripts/validate_query_privacy_poisoning_guard_contract.py`: passed (returncode=0, 0.08s)
+  - Query Privacy and Poisoning Guard Contract validation
+  - status: valid
+  - contract_file: contracts/query/query_guard_decision.v0.json
+  - report_id: query_privacy_poisoning_guard_v0
+  - example_count: 5
+- `python scripts/validate_known_absence_page.py --all-examples`: passed (returncode=0, 0.06s)
+  - Known Absence Page validation
+  - status: valid
+  - example_count: 3
+  - warnings:
+  - - examples/known_absence_pages/minimal_near_miss_absence_v0: P66 validates contract/example artifacts only; runtime known absence pages remain deferred.
+- `python scripts/validate_known_absence_page_contract.py`: passed (returncode=0, 0.08s)
+  - Known Absence Page Contract validation
+  - status: valid
+  - contract_file: contracts/query/known_absence_page.v0.json
+  - report_id: known_absence_page_v0
+  - example_count: 3
+- `python scripts/validate_candidate_promotion_assessment.py --all-examples`: passed (returncode=0, 0.06s)
+  - Candidate Promotion Assessment validation
+  - status: valid
+  - example_count: 4
+- `python scripts/validate_candidate_promotion_policy.py`: passed (returncode=0, 0.06s)
+  - Candidate Promotion Policy validation
+  - status: valid
+  - contract_file: contracts/query/candidate_promotion_assessment.v0.json
+  - report_id: candidate_promotion_policy_v0
+  - example_count: 4
+- `python scripts/validate_candidate_index_record.py --all-examples`: passed (returncode=0, 0.06s)
+  - Candidate Index Record validation
+  - status: valid
+  - example_count: 4
+- `python scripts/validate_candidate_index_contract.py`: passed (returncode=0, 0.06s)
+  - Candidate Index Contract validation
+  - status: valid
+  - contract_file: contracts/query/candidate_index_record.v0.json
+  - report_id: candidate_index_v0
+  - example_count: 4
+- `python scripts/validate_probe_queue_item.py --all-examples`: passed (returncode=0, 0.08s)
+  - Probe Queue Item validation
+  - status: valid
+  - example_count: 3
+- `python scripts/validate_probe_queue_contract.py`: passed (returncode=0, 0.06s)
+  - Probe Queue Contract validation
+  - status: valid
+  - contract_file: contracts/query/probe_queue_item.v0.json
+  - report_id: probe_queue_v0
+  - example_count: 3
+- `python scripts/validate_search_need_record.py --all-examples`: passed (returncode=0, 0.05s)
+  - Search Need Record validation
+  - status: valid
+  - example_count: 2
+- `python scripts/validate_search_need_record_contract.py`: passed (returncode=0, 0.06s)
+  - Search Need Record Contract validation
+  - status: valid
+  - contract_file: contracts/query/search_need_record.v0.json
+  - report_id: search_need_record_v0
+  - example_count: 2
+- `python scripts/validate_search_miss_ledger_entry.py --all-examples`: passed (returncode=0, 0.06s)
+  - Search Miss Ledger Entry validation
+  - status: valid
+  - example_count: 2
+- `python scripts/validate_search_miss_ledger_contract.py`: passed (returncode=0, 0.06s)
+  - Search Miss Ledger Contract validation
+  - status: valid
+  - contract_file: contracts/query/search_miss_ledger_entry.v0.json
+  - report_id: search_miss_ledger_v0
+  - example_count: 2
+- `python scripts/validate_search_result_cache_entry.py --all-examples`: passed (returncode=0, 0.06s)
+  - Search Result Cache Entry validation
+  - status: valid
+  - example_count: 2
+- `python scripts/validate_shared_query_result_cache_contract.py`: passed (returncode=0, 0.06s)
+  - Shared Query/Result Cache Contract validation
+  - status: valid
+  - contract_file: contracts/query/search_result_cache_entry.v0.json
+  - report_id: shared_query_result_cache_v0
+  - example_count: 2
+- `python scripts/validate_query_observation.py --all-examples`: passed (returncode=0, 0.06s)
+  - Query Observation validation
+  - status: valid
+  - example_count: 1
+- `python scripts/validate_query_observation_contract.py`: passed (returncode=0, 0.06s)
+  - Query Observation Contract validation
+  - status: valid
+  - contract_file: contracts/query/query_observation.v0.json
+  - report_id: query_observation_contract_v0
+  - example_count: 1
+- `python scripts/validate_live_probe_gateway.py`: passed (returncode=0, 0.28s)
+  - Live probe gateway validation
+  - status: valid
+  - candidate_sources: 9
+  - disabled_sources: 9
+  - wrapper_live_probes_enabled: False
+- `python scripts/run_hosted_public_search_rehearsal.py`: passed (returncode=0, 1.0s)
+  - Hosted Public Search Rehearsal
+  - status: passed
+  - mode: hosted_local_rehearsal
+  - base_url: http://127.0.0.1:63276
+  - server_started: True
+- `python scripts/validate_hosted_public_search_rehearsal.py`: passed (returncode=0, 1.03s)
+  - Hosted Public Search Rehearsal validation
+  - status: valid
+  - report_id: hosted_public_search_rehearsal_v0
+  - routes: 9
+  - safe_queries: 5
+- `python scripts/run_public_search_safety_evidence.py`: passed (returncode=0, 0.44s)
+  - Public Search Safety Evidence
+  - status: passed
+  - mode: local_index_only
+  - checks: 64/64
+  - safe routes: 9
+- `python scripts/validate_public_search_safety_evidence.py`: passed (returncode=0, 0.5s)
+  - Public Search Safety Evidence validation
+  - status: valid
+  - report_id: public_search_safety_evidence_v0
+  - safe_query_count: 4
+  - blocked_request_count: 32
+- `python scripts/validate_static_site_search_integration.py`: passed (returncode=0, 0.06s)
+  - Static Site Search Integration validation
+  - status: valid
+  - report_id: static_site_search_integration_v0
+  - backend_status: backend_unconfigured
+  - document_count: 584
+- `python scripts/validate_public_search_index_builder.py`: passed (returncode=0, 0.83s)
+  - Public Search Index Builder validation
+  - status: valid
+  - report_id: public_search_index_builder_v0
+  - document_count: 584
+- `python scripts/validate_public_search_index.py`: passed (returncode=0, 0.27s)
+  - Public Search Index validation
+  - status: valid
+  - index_root: data/public_index
+  - document_count: 584
+  - private_paths_detected: False
+- `python scripts/validate_hosted_public_search_wrapper.py`: passed (returncode=0, 0.28s)
+  - Hosted public search wrapper validation
+  - status: valid
+  - report_id: hosted_public_search_wrapper_v0
+  - public_search_mode: local_index_only
+  - hosted_wrapper_implemented: True
+- `python scripts/check_hosted_public_search_wrapper.py`: passed (returncode=0, 0.3s)
+  - Hosted public search wrapper check
+  - status: passed
+  - mode: local_index_only
+  - checks: 14/14
+  - - PASS check_config: Safe defaults accepted.
+- `python scripts/run_hosted_public_search.py --check-config`: passed (returncode=0, 0.28s)
+  - Hosted public search wrapper config
+  - status: valid
+  - host: 127.0.0.1
+  - port: 8080
+  - mode: local_index_only
+- `python scripts/validate_public_search_production_contract.py`: passed (returncode=0, 0.06s)
+  - Public search production contract validation
+  - status: valid
+  - report_id: public_search_production_contract_v0
+  - active_mode: local_index_only
+  - hosted_search_implemented: False
+- `python scripts/validate_static_deployment_evidence.py`: passed (returncode=0, 0.05s)
+  - Static deployment evidence validation
+  - status: valid
+  - report_id: static_deployment_evidence_v0
+  - artifact_root: site/dist
+  - workflow_path: .github/workflows/pages.yml
+- `python scripts/validate_post_p50_remediation.py`: passed (returncode=0, 0.06s)
+  - post-p50 remediation validation passed: 17 required files checked
+- `python scripts/validate_post_p49_platform_audit.py`: passed (returncode=0, 0.05s)
+  - post-p49 platform audit validation passed: 28 required files checked
+- `python scripts/validate_public_search_contract.py`: passed (returncode=0, 0.06s)
+  - Public search contract validation
+  - status: valid
+  - contract_id: public_search_api_contract_v0
+  - first_allowed_mode: local_index_only
+  - runtime_routes_implemented: True
+- `python scripts/validate_public_search_result_card_contract.py`: passed (returncode=0, 0.06s)
+  - status: valid
+  - contract_id: public_search_result_card_contract_v0
+  - schema: contracts/api/search_result_card.v0.json
+  - response_schema: contracts/api/search_response.v0.json
+  - audit_pack: control/audits/public-search-result-card-contract-v0
+- `python scripts/validate_public_search_safety.py`: passed (returncode=0, 0.05s)
+  - Public Search Safety / Abuse Guard validation
+  - status: valid
+  - safety_policy_id: eureka-public-search-safety-abuse-guard-v0
+  - first_allowed_mode: local_index_only
+  - max_query_length: 160
+- `python scripts/validate_local_public_search_runtime.py`: passed (returncode=0, 0.06s)
+  - Local Public Search Runtime validation
+  - status: valid
+  - runtime_scope: local_prototype_backend
+  - mode: local_index_only
+  - routes: 6
+- `python scripts/public_search_smoke.py`: passed (returncode=0, 0.56s)
+  - Public Search Smoke
+  - status: passed
+  - mode: local_index_only
+  - checks: 30/30 passed
+  - safe queries: 9
+- `python scripts/public_search_smoke.py --json`: passed (returncode=0, 0.56s)
+  - {
+  -   "base_runtime_slice": "local_public_search_runtime_v0",
+  -   "blocked_request_results": [
+  -     {
+  -       "actual_error_code": "query_required",
+- `python scripts/build_public_search_index.py --check`: passed (returncode=0, 0.55s)
+  - Public Search Index Builder v0
+  - status: valid
+  - output_root: data/public_index
+  - document_count: 584
+  - fts5_available: True
+- `python site/build.py --check`: passed (returncode=0, 1.0s)
+  - Static site generator
+  - status: valid
+  - source_root: site
+  - deploy_artifact_current: site/dist
+- `python site/validate.py`: passed (returncode=0, 0.09s)
+  - Static site generator validation
+  - status: valid
+  - page_count: 9
+  - dist_validation: valid
+- `python scripts/validate_publication_inventory.py`: passed (returncode=0, 0.06s)
+  - Publication inventory validation
+  - status: valid
+  - registered_routes: 51
+  - current_static_artifact_pages: 9
+  - required_client_profiles: 9
+- `python scripts/validate_public_static_site.py`: passed (returncode=0, 0.08s)
+  - Public static site validation
+  - status: valid
+  - pages: 9
+  - source_ids_checked: 15
+- `python scripts/check_github_pages_static_artifact.py --path site/dist`: passed (returncode=0, 0.16s)
+  - GitHub Pages static artifact check
+  - status: valid
+  - site_dir: <repo-root>\site\dist
+  - static_site_validator: valid
+  - publication_inventory_validator: valid
+- `python scripts/check_generated_artifact_drift.py`: passed (returncode=0, 9.7s)
+  - Generated Artifact Drift Guard v0
+  - status: valid
+  - inventory: control/inventory/generated_artifacts/generated_artifacts.json
+  - policy: control/inventory/generated_artifacts/drift_policy.json
+  - strict: False
+- `python scripts/public_alpha_smoke.py`: passed (returncode=0, 0.67s)
+  - Public Alpha Smoke
+  - status: passed
+  - mode: public_alpha
+  - checks: 18/18 passed
+  - 
+- `python scripts/run_archive_resolution_evals.py`: passed (returncode=0, 0.33s)
+  - Archive resolution evals
+  - created_by_slice: archive_resolution_eval_runner_v0
+  - task_count: 6
+  - status_counts: satisfied=6
+  - 
+- `python scripts/run_archive_resolution_evals.py --json`: passed (returncode=0, 0.33s)
+  - {
+  -   "created_at": "2026-05-01T20:16:46.472759+00:00",
+  -   "created_by_slice": "archive_resolution_eval_runner_v0",
+  -   "load_errors": [],
+  -   "notices": [
+- `python scripts/run_search_usefulness_audit.py`: passed (returncode=0, 0.45s)
+  - Search usefulness audit
+  - created_by_slice: search_usefulness_audit_v0
+  - query_count: 64
+  - eureka_status_counts: capability_gap=7, covered=5, partial=40, source_gap=10, unknown=2
+  - external_pending_counts: google=64, internet_archive_full_text=64, internet_archive_metadata=64
+- `python scripts/run_search_usefulness_audit.py --json`: passed (returncode=0, 0.66s)
+  - {
+  -   "created_at": "2026-05-01T20:16:47.549261+00:00",
+  -   "created_by_slice": "search_usefulness_audit_v0",
+  -   "eureka_status_counts": {
+  -     "capability_gap": 7,
+- `python scripts/report_external_baseline_status.py --json`: passed (returncode=0, 0.06s)
+  - {
+  -   "batches": {
+  -     "batch_0": {
+  -       "completion_percent": 0.0,
+  -       "directory": "<repo-root>\\evals\\search_usefulness\\external_baselines\\batches\\batch_0",
+- `python scripts/generate_python_oracle_golden.py --check`: passed (returncode=0, 0.91s)
+  - Python oracle golden fixture pack
+  - status: passed
+  - fixture_pack_id: python_oracle_golden_v0
+  - fixture_pack_version: 0.1.0
+  - output_root: <repo-root>\tests\parity\golden\python_oracle\v0
+- `python -m unittest discover -s tests/scripts -t .`: passed (returncode=0, 98.41s)
+  - .........................................................................................................................................................................................................................................................................................................................................................................................................................................................
+  - ----------------------------------------------------------------------
+  - Ran 441 tests in 98.266s
+  - 
+  - OK
+- `python -m unittest discover -s tests/operations -t .`: passed (returncode=0, 9.41s)
+  - ........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+  - ----------------------------------------------------------------------
+  - Ran 504 tests in 9.105s
+  - 
+  - OK
+- `python -m unittest discover -s tests/hardening -t .`: passed (returncode=0, 6.03s)
+  - .....................................................
+  - ----------------------------------------------------------------------
+  - Ran 53 tests in 5.786s
+  - 
+  - OK
+- `python -m unittest discover -s tests/parity -t .`: passed (returncode=0, 1.61s)
+  - .........................
+  - ----------------------------------------------------------------------
+  - Ran 25 tests in 1.542s
+  - 
+  - OK
+- `python -m unittest discover -s runtime -t .`: passed (returncode=0, 5.41s)
+  - ................................................................................................................................................................................................................................................................................................................................
+  - ----------------------------------------------------------------------
+  - Ran 320 tests in 5.082s
+  - 
+  - OK
+- `python -m unittest discover -s surfaces -t .`: passed (returncode=0, 32.22s)
+  - ........................................................................................................................................................................
+  - ----------------------------------------------------------------------
+  - Ran 168 tests in 31.859s
+  - 
+  - OK
+- `python -m unittest discover -s tests -t .`: passed (returncode=0, 128.02s)
+  - ..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+  - ----------------------------------------------------------------------
+  - Ran 1114 tests in 127.525s
+  - 
+  - OK
+- `python scripts/check_architecture_boundaries.py`: passed (returncode=0, 0.62s)
+  - Checked 446 Python files under <repo-root>
+  - No architecture-boundary violations found.
+- `git diff --check`: passed (returncode=0, 0.09s)
+  - warning: in the working copy of 'control/inventory/sources/internet-archive-placeholder.source.json', LF will be replaced by CRLF the next time Git touches it
+  - warning: in the working copy of 'site/dist/assets/site.css', LF will be replaced by CRLF the next time Git touches it
+  - warning: in the working copy of 'site/dist/demo/README.txt', LF will be replaced by CRLF the next time Git touches it
+  - warning: in the working copy of 'site/dist/demo/absence-example.html', LF will be replaced by CRLF the next time Git touches it
+  - warning: in the working copy of 'site/dist/demo/comparison-example.html', LF will be replaced by CRLF the next time Git touches it
+- `git status --short --branch`: passed (returncode=0, 0.05s)
+  - ## main...origin/main
+  -  M .aide/commands/ci.yaml
+  -  M .aide/commands/dev.yaml
+  -  M .aide/reports/README.md
+  -  M .aide/tasks/audit_backlog.yaml
+- `cargo --version`: skipped_unavailable (returncode=None, 0.0s)
+  - [WinError 2] The system cannot find the file specified
+- `cargo check --workspace --manifest-path crates/Cargo.toml`: skipped_unavailable (returncode=None, 0.0s)
+  - [WinError 2] The system cannot find the file specified
+- `cargo test --workspace --manifest-path crates/Cargo.toml`: skipped_unavailable (returncode=None, 0.02s)
+  - [WinError 2] The system cannot find the file specified

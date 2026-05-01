@@ -1,0 +1,660 @@
+{
+  "report_id": "internet_archive_metadata_connector_approval_v0",
+  "created_by_slice": "p71_internet_archive_metadata_connector_approval_v0",
+  "repo_head": "08b721eb3dd5438ed3cca4b85918b9c4a778e0f8",
+  "branch": "main",
+  "worktree_status": "## main...origin/main\n M .aide/commands/ci.yaml\n M .aide/commands/dev.yaml\n M .aide/reports/README.md\n M .aide/tasks/audit_backlog.yaml\n M .aide/tasks/queue.yaml\n M control/audits/README.md\n M control/inventory/sources/internet-archive-placeholder.source.json\n M control/inventory/tests/command_matrix.json\n M control/inventory/tests/test_registry.json\n M docs/BOOTSTRAP_STATUS.md\n M docs/DECISIONS.md\n M docs/OPEN_QUESTIONS.md\n M docs/ROADMAP.md\n M docs/architecture/SOURCE_INGESTION_PLANE.md\n M docs/operations/HOSTED_PUBLIC_SEARCH_REHEARSAL.md\n M docs/operations/PUBLIC_SEARCH_SAFETY_EVIDENCE.md\n M docs/reference/CANDIDATE_INDEX_CONTRACT.md\n M docs/reference/CANDIDATE_PROMOTION_POLICY.md\n M docs/reference/DEMAND_DASHBOARD_CONTRACT.md\n M docs/reference/EVIDENCE_LEDGER_CONTRACT.md\n M docs/reference/EVIDENCE_PACK_CONTRACT.md\n M docs/reference/PROBE_QUEUE_CONTRACT.md\n M docs/reference/PUBLIC_SEARCH_API_CONTRACT.md\n M docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md\n M docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md\n M docs/reference/SOURCE_CACHE_CONTRACT.md\n M docs/reference/SOURCE_PACK_CONTRACT.md\n M docs/reference/SOURCE_SYNC_SOURCE_POLICY.md\n M docs/reference/SOURCE_SYNC_WORKER_CONTRACT.md\n M docs/roadmap/BACKEND_ROADMAP.md\n M scripts/README.md\n?? _p71_record_verification.py\n?? contracts/connectors/\n?? control/audits/internet-archive-metadata-connector-approval-v0/\n?? control/inventory/connectors/\n?? docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md\n?? examples/connectors/\n?? scripts/dry_run_internet_archive_metadata_connector_approval.py\n?? scripts/validate_internet_archive_metadata_connector_approval.py\n?? scripts/validate_internet_archive_metadata_connector_contract.py\n?? tests/operations/test_internet_archive_metadata_connector_approval.py\n?? tests/scripts/test_dry_run_internet_archive_metadata_connector_approval.py\n?? tests/scripts/test_validate_internet_archive_metadata_connector_approval.py\n?? tests/scripts/test_validate_internet_archive_metadata_connector_contract.py",
+  "contract_files": [
+    "contracts/connectors/internet_archive_metadata_connector_approval.v0.json",
+    "contracts/connectors/internet_archive_metadata_connector_manifest.v0.json"
+  ],
+  "validator_scripts": [
+    "scripts/validate_internet_archive_metadata_connector_approval.py",
+    "scripts/validate_internet_archive_metadata_connector_contract.py",
+    "scripts/dry_run_internet_archive_metadata_connector_approval.py"
+  ],
+  "example_approval_root": "examples/connectors/internet_archive_metadata_approval_v0/",
+  "connector_inventory_ref": "control/inventory/connectors/internet_archive_metadata_connector.json",
+  "source_inventory_ref": "control/inventory/sources/internet-archive-placeholder.source.json",
+  "connector_scope": "metadata_only_disabled_until_approval",
+  "allowed_metadata_capabilities": [
+    "item_metadata_lookup_future",
+    "bounded_item_search_metadata_future",
+    "file_listing_metadata_future",
+    "collection_metadata_summary_future",
+    "availability_metadata_future"
+  ],
+  "forbidden_capabilities": [
+    "file_download",
+    "mirroring",
+    "item_bulk_download",
+    "account_access",
+    "upload",
+    "install",
+    "execute",
+    "arbitrary_url_fetch",
+    "unbounded_crawl",
+    "scraping",
+    "bypass_access_restrictions",
+    "raw_payload_dump",
+    "malware_safety_decision",
+    "rights_clearance_decision"
+  ],
+  "source_policy_review": "review_required",
+  "user_agent_contact_policy": "required_future_no_values_configured",
+  "rate_limit_timeout_retry_circuit_breaker_policy": "required_future_operator_review",
+  "cache_first_policy": "source_cache_required_before_public_use_and_evidence_required_for_claims",
+  "expected_source_cache_outputs": [
+    "internet_archive_item_metadata_summary",
+    "internet_archive_file_listing_metadata_summary",
+    "internet_archive_collection_metadata_summary",
+    "internet_archive_availability_summary"
+  ],
+  "expected_evidence_ledger_outputs": [
+    "source_metadata_observation",
+    "availability_observation",
+    "file_listing_observation",
+    "release_or_item_metadata_observation",
+    "scoped_absence_observation"
+  ],
+  "query_intelligence_relationship": "future_references_only_no_mutation",
+  "public_search_boundary": "live_fanout_forbidden_cache_reads_future_only",
+  "rights_access_risk_policy": "source_terms_apply_metadata_only_no_rights_or_malware_claim",
+  "privacy_policy": "public_safe_metadata_policy_no_private_data",
+  "approval_checklist": "pending",
+  "operator_checklist": "pending",
+  "no_runtime_no_mutation_guarantees": "all hard booleans false",
+  "runtime_status": "connector runtime not implemented",
+  "command_results": [
+    {
+      "command": "python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "status: valid\nexample_count: 1"
+    },
+    {
+      "command": "python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "{\n  \"status\": \"valid\",\n  \"created_by\": \"internet_archive_metadata_connector_approval_validator_v0\",\n  \"example_count\": 1,\n  \"results\": [\n    {\n      \"status\": \"valid\",\n      \"created_by\": \"internet_archive_metadata_connector_approval_validator_v0\",\n... (10 more lines)"
+    },
+    {
+      "command": "python scripts/validate_internet_archive_metadata_connector_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "summary": "status: valid\nexample_count: 1\ncontract_file: contracts/connectors/internet_archive_metadata_connector_approval.v0.json"
+    },
+    {
+      "command": "python scripts/validate_internet_archive_metadata_connector_contract.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "summary": "{\n  \"status\": \"valid\",\n  \"created_by\": \"internet_archive_metadata_connector_contract_validator_v0\",\n  \"contract_file\": \"contracts/connectors/internet_archive_metadata_connector_approval.v0.json\",\n  \"example_count\": 1,\n  \"errors\": [],\n  \"warnings\": []\n}"
+    },
+    {
+      "command": "python scripts/dry_run_internet_archive_metadata_connector_approval.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "summary": "{\n  \"schema_version\": \"0.1.0\",\n  \"approval_record_id\": \"dry_run.connector.internet_archive_metadata.approval.v0\",\n  \"approval_record_kind\": \"internet_archive_metadata_connector_approval\",\n  \"status\": \"draft_example\",\n  \"created_by_tool\": \"dry_run_internet_archive_metadata_connector_approval_v0\",\n  \"connector_ref\": {\n    \"connector_id\": \"internet_archive_metadata_connector\",\n... (40 more lines)"
+    },
+    {
+      "command": "python scripts/validate_source_cache_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "summary": "status: valid\nexample_count: 3"
+    },
+    {
+      "command": "python scripts/validate_source_cache_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "status: valid\nexample_count: 3\ncontract_file: contracts/source_cache/source_cache_record.v0.json"
+    },
+    {
+      "command": "python scripts/validate_evidence_ledger_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "status: valid\nexample_count: 3"
+    },
+    {
+      "command": "python scripts/validate_evidence_ledger_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "status: valid\nexample_count: 3\ncontract_file: contracts/evidence_ledger/evidence_ledger_record.v0.json"
+    },
+    {
+      "command": "python scripts/validate_source_cache_evidence_ledger_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "status: valid\nreport_id: source_cache_evidence_ledger_v0"
+    },
+    {
+      "command": "python scripts/validate_source_sync_worker_job.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "status: valid\nexample_count: 4"
+    },
+    {
+      "command": "python scripts/validate_source_sync_worker_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "summary": "status: valid\ncontract_file: contracts/source_sync/source_sync_worker_job.v0.json\nexample_count: 4"
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_snapshot.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "summary": "status: valid\nexample_count: 2"
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.11,
+      "summary": "status: valid\ncontract_file: contracts/query/demand_dashboard_snapshot.v0.json\nexample_count: 2"
+    },
+    {
+      "command": "python scripts/validate_query_guard_decision.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "summary": "Query Guard Decision validation\nstatus: valid\nexample_count: 5\nwarnings:\n- examples/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n... (1 more lines)"
+    },
+    {
+      "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "summary": "Query Privacy and Poisoning Guard Contract validation\nstatus: valid\ncontract_file: contracts/query/query_guard_decision.v0.json\nreport_id: query_privacy_poisoning_guard_v0\nexample_count: 5\nwarnings:\n- P67 is contract-only; runtime query privacy and poisoning guard remains deferred."
+    },
+    {
+      "command": "python scripts/validate_known_absence_page.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Known Absence Page validation\nstatus: valid\nexample_count: 3\nwarnings:\n- examples/known_absence_pages/minimal_near_miss_absence_v0: P66 validates contract/example artifacts only; runtime known absence pages remain deferred.\n- examples/known_absence_pages/minimal_no_verified_result_v0: P66 validates contract/example artifacts only; runtime known absence pages remain deferred.\n- examples/known_absence_pages/minimal_policy_blocked_absence_v0: P66 validates contract/example artifacts only; runtime known absence pages remain deferred."
+    },
+    {
+      "command": "python scripts/validate_known_absence_page_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "summary": "Known Absence Page Contract validation\nstatus: valid\ncontract_file: contracts/query/known_absence_page.v0.json\nreport_id: known_absence_page_v0\nexample_count: 3\nwarnings:\n- P66 is contract-only; runtime known absence page serving remains deferred."
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_assessment.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Candidate Promotion Assessment validation\nstatus: valid\nexample_count: 4"
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_policy.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Candidate Promotion Policy validation\nstatus: valid\ncontract_file: contracts/query/candidate_promotion_assessment.v0.json\nreport_id: candidate_promotion_policy_v0\nexample_count: 4\nwarnings:\n- P65 is contract-only; candidate promotion runtime remains deferred."
+    },
+    {
+      "command": "python scripts/validate_candidate_index_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Candidate Index Record validation\nstatus: valid\nexample_count: 4"
+    },
+    {
+      "command": "python scripts/validate_candidate_index_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Candidate Index Contract validation\nstatus: valid\ncontract_file: contracts/query/candidate_index_record.v0.json\nreport_id: candidate_index_v0\nexample_count: 4\nwarnings:\n- P64 is contract-only; candidate index runtime and promotion remain deferred."
+    },
+    {
+      "command": "python scripts/validate_probe_queue_item.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "summary": "Probe Queue Item validation\nstatus: valid\nexample_count: 3"
+    },
+    {
+      "command": "python scripts/validate_probe_queue_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Probe Queue Contract validation\nstatus: valid\ncontract_file: contracts/query/probe_queue_item.v0.json\nreport_id: probe_queue_v0\nexample_count: 3\nwarnings:\n- P63 is contract-only; probe queue runtime and probe execution remain deferred."
+    },
+    {
+      "command": "python scripts/validate_search_need_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "summary": "Search Need Record validation\nstatus: valid\nexample_count: 2"
+    },
+    {
+      "command": "python scripts/validate_search_need_record_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Search Need Record Contract validation\nstatus: valid\ncontract_file: contracts/query/search_need_record.v0.json\nreport_id: search_need_record_v0\nexample_count: 2\nwarnings:\n- P62 is contract-only; search need runtime storage remains deferred."
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_entry.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Search Miss Ledger Entry validation\nstatus: valid\nexample_count: 2"
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Search Miss Ledger Contract validation\nstatus: valid\ncontract_file: contracts/query/search_miss_ledger_entry.v0.json\nreport_id: search_miss_ledger_v0\nexample_count: 2\nwarnings:\n- P61 is contract-only; miss ledger runtime writes remain deferred."
+    },
+    {
+      "command": "python scripts/validate_search_result_cache_entry.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Search Result Cache Entry validation\nstatus: valid\nexample_count: 2"
+    },
+    {
+      "command": "python scripts/validate_shared_query_result_cache_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Shared Query/Result Cache Contract validation\nstatus: valid\ncontract_file: contracts/query/search_result_cache_entry.v0.json\nreport_id: shared_query_result_cache_v0\nexample_count: 2\nwarnings:\n- P60 is contract-only; runtime cache reads/writes remain deferred."
+    },
+    {
+      "command": "python scripts/validate_query_observation.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Query Observation validation\nstatus: valid\nexample_count: 1"
+    },
+    {
+      "command": "python scripts/validate_query_observation_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Query Observation Contract validation\nstatus: valid\ncontract_file: contracts/query/query_observation.v0.json\nreport_id: query_observation_contract_v0\nexample_count: 1\nwarnings:\n- P59 is contract-only; runtime query observation collection remains deferred."
+    },
+    {
+      "command": "python scripts/validate_live_probe_gateway.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.28,
+      "summary": "Live probe gateway validation\nstatus: valid\ncandidate_sources: 9\ndisabled_sources: 9\nwrapper_live_probes_enabled: False\nwrapper_live_internet_archive_enabled: False"
+    },
+    {
+      "command": "python scripts/run_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.0,
+      "summary": "Hosted Public Search Rehearsal\nstatus: passed\nmode: hosted_local_rehearsal\nbase_url: http://127.0.0.1:63276\nserver_started: True\nchecks: 60/60\nsafe routes: 9\nsafe queries: 5\n... (2 more lines)"
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.03,
+      "summary": "Hosted Public Search Rehearsal validation\nstatus: valid\nreport_id: hosted_public_search_rehearsal_v0\nroutes: 9\nsafe_queries: 5\nblocked_requests: 34\nlive_rehearsal_status: passed\nwarnings:\n... (1 more lines)"
+    },
+    {
+      "command": "python scripts/run_public_search_safety_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.44,
+      "summary": "Public Search Safety Evidence\nstatus: passed\nmode: local_index_only\nchecks: 64/64\nsafe routes: 9\nsafe queries: 4\nblocked requests: 32/32\npublic index documents: 584"
+    },
+    {
+      "command": "python scripts/validate_public_search_safety_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.5,
+      "summary": "Public Search Safety Evidence validation\nstatus: valid\nreport_id: public_search_safety_evidence_v0\nsafe_query_count: 4\nblocked_request_count: 32"
+    },
+    {
+      "command": "python scripts/validate_static_site_search_integration.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Static Site Search Integration validation\nstatus: valid\nreport_id: static_site_search_integration_v0\nbackend_status: backend_unconfigured\ndocument_count: 584"
+    },
+    {
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.83,
+      "summary": "Public Search Index Builder validation\nstatus: valid\nreport_id: public_search_index_builder_v0\ndocument_count: 584"
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.27,
+      "summary": "Public Search Index validation\nstatus: valid\nindex_root: data/public_index\ndocument_count: 584\nprivate_paths_detected: False"
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.28,
+      "summary": "Hosted public search wrapper validation\nstatus: valid\nreport_id: hosted_public_search_wrapper_v0\npublic_search_mode: local_index_only\nhosted_wrapper_implemented: True\nhosted_backend_deployed: False\nhosted_deployment_verified: False"
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.3,
+      "summary": "Hosted public search wrapper check\nstatus: passed\nmode: local_index_only\nchecks: 14/14\n- PASS check_config: Safe defaults accepted.\n- PASS healthz: OK\n- PASS status_top_level: OK\n- PASS status_api: OK\n... (10 more lines)"
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.28,
+      "summary": "Hosted public search wrapper config\nstatus: valid\nhost: 127.0.0.1\nport: 8080\nmode: local_index_only\nhosted_deployment_verified: False\nlive_probes_enabled: False\ndownloads_enabled: False\n... (4 more lines)"
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Public search production contract validation\nstatus: valid\nreport_id: public_search_production_contract_v0\nactive_mode: local_index_only\nhosted_search_implemented: False\nlive_probes_enabled: False"
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "summary": "Static deployment evidence validation\nstatus: valid\nreport_id: static_deployment_evidence_v0\nartifact_root: site/dist\nworkflow_path: .github/workflows/pages.yml\ndeployment_verified: False\ndeployment_success_claimed: False"
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "post-p50 remediation validation passed: 17 required files checked"
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "summary": "post-p49 platform audit validation passed: 28 required files checked"
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Public search contract validation\nstatus: valid\ncontract_id: public_search_api_contract_v0\nfirst_allowed_mode: local_index_only\nruntime_routes_implemented: True\nregistered_routes: 6\nforbidden_parameters: 26"
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "status: valid\ncontract_id: public_search_result_card_contract_v0\nschema: contracts/api/search_result_card.v0.json\nresponse_schema: contracts/api/search_response.v0.json\naudit_pack: control/audits/public-search-result-card-contract-v0\nexamples: 5"
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "summary": "Public Search Safety / Abuse Guard validation\nstatus: valid\nsafety_policy_id: eureka-public-search-safety-abuse-guard-v0\nfirst_allowed_mode: local_index_only\nmax_query_length: 160\nmax_result_limit: 25\nmax_runtime_ms_contract: 3000\ntelemetry_default: off"
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Local Public Search Runtime validation\nstatus: valid\nruntime_scope: local_prototype_backend\nmode: local_index_only\nroutes: 6\nhosted_public_deployment: False\nstatic_search_handoff: True"
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.56,
+      "summary": "Public Search Smoke\nstatus: passed\nmode: local_index_only\nchecks: 30/30 passed\nsafe queries: 9\nblocked requests: 14\n\n[PASS] status: /api/v1/status (ok)\n... (29 more lines)"
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.56,
+      "summary": "{\n  \"base_runtime_slice\": \"local_public_search_runtime_v0\",\n  \"blocked_request_results\": [\n    {\n      \"actual_error_code\": \"query_required\",\n      \"expected_error_code\": \"query_required\",\n      \"message\": \"Check passed.\",\n      \"name\": \"missing q\",\n... (644 more lines)"
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.55,
+      "summary": "Public Search Index Builder v0\nstatus: valid\noutput_root: data/public_index\ndocument_count: 584\nfts5_available: True\nfts5_enabled: False\nfallback_enabled: True"
+    },
+    {
+      "command": "python site/build.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.0,
+      "summary": "Static site generator\nstatus: valid\nsource_root: site\ndeploy_artifact_current: site/dist"
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "summary": "Static site generator validation\nstatus: valid\npage_count: 9\ndist_validation: valid"
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "Publication inventory validation\nstatus: valid\nregistered_routes: 51\ncurrent_static_artifact_pages: 9\nrequired_client_profiles: 9\nrequired_public_data_paths: 14"
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "summary": "Public static site validation\nstatus: valid\npages: 9\nsource_ids_checked: 15"
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.16,
+      "summary": "GitHub Pages static artifact check\nstatus: valid\nsite_dir: <repo-root>\\site\\dist\nstatic_site_validator: valid\npublication_inventory_validator: valid"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 9.7,
+      "summary": "Generated Artifact Drift Guard v0\nstatus: valid\ninventory: control/inventory/generated_artifacts/generated_artifacts.json\npolicy: control/inventory/generated_artifacts/drift_policy.json\nstrict: False\nstatus_counts: {'passed': 12}\n- public_data_summaries: passed\n  - check_command: passed (python scripts/generate_public_data_summaries.py --check)\n... (42 more lines)"
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.67,
+      "summary": "Public Alpha Smoke\nstatus: passed\nmode: public_alpha\nchecks: 18/18 passed\n\n[PASS] status: /api/status (ok)\n[PASS] source list: /api/sources (ok)\n[PASS] query plan: /api/query-plan?q=Windows+7+apps (ok)\n... (15 more lines)"
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.33,
+      "summary": "Archive resolution evals\ncreated_by_slice: archive_resolution_eval_runner_v0\ntask_count: 6\nstatus_counts: satisfied=6\n\nTasks\n- article_inside_magazine_scan: satisfied (planner=satisfied, search=local_index, results=9)\n- driver_inside_support_cd: satisfied (planner=satisfied, search=local_index, results=50)\n... (4 more lines)"
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.33,
+      "summary": "{\n  \"created_at\": \"2026-05-01T20:16:46.472759+00:00\",\n  \"created_by_slice\": \"archive_resolution_eval_runner_v0\",\n  \"load_errors\": [],\n  \"notices\": [\n    {\n      \"code\": \"transient_local_index\",\n      \"message\": \"Built a transient Local Index v0 database for this eval run. The report omits the temporary path so JSON remains inspectable.\",\n... (7855 more lines)"
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.45,
+      "summary": "Search usefulness audit\ncreated_by_slice: search_usefulness_audit_v0\nquery_count: 64\neureka_status_counts: capability_gap=7, covered=5, partial=40, source_gap=10, unknown=2\nexternal_pending_counts: google=64, internet_archive_full_text=64, internet_archive_metadata=64\nfailure_mode_counts: absence_reasoning_gap=2, actionability_gap=2, compatibility_evidence_gap=25, decomposition_gap=12, external_baseline_pending=64, identity_cluster_gap=14, index_gap=2, live_source_gap=10, member_access_gap=12, planner_gap=24, query_interpretation_gap=21, ranking_gap=9, representation_gap=14, source_coverage_gap=49, surface_ux_gap=4\n\nTop future-work recommendations\n... (76 more lines)"
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.66,
+      "summary": "{\n  \"created_at\": \"2026-05-01T20:16:47.549261+00:00\",\n  \"created_by_slice\": \"search_usefulness_audit_v0\",\n  \"eureka_status_counts\": {\n    \"capability_gap\": 7,\n    \"covered\": 5,\n    \"partial\": 40,\n    \"source_gap\": 10,\n... (19411 more lines)"
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "summary": "{\n  \"batches\": {\n    \"batch_0\": {\n      \"completion_percent\": 0.0,\n      \"directory\": \"<repo-root>\\\\evals\\\\search_usefulness\\\\external_baselines\\\\batches\\\\batch_0\",\n      \"expected_observation_count\": 39,\n      \"missing_observation_slots\": [],\n      \"next_pending_slots\": [\n... (720 more lines)"
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.91,
+      "summary": "Python oracle golden fixture pack\nstatus: passed\nfixture_pack_id: python_oracle_golden_v0\nfixture_pack_version: 0.1.0\noutput_root: <repo-root>\\tests\\parity\\golden\\python_oracle\\v0\nfile_count: 40"
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 98.41,
+      "summary": ".........................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 441 tests in 98.266s\n\nOK"
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 9.41,
+      "summary": "........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 504 tests in 9.105s\n\nOK"
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 6.03,
+      "summary": ".....................................................\n----------------------------------------------------------------------\nRan 53 tests in 5.786s\n\nOK"
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.61,
+      "summary": ".........................\n----------------------------------------------------------------------\nRan 25 tests in 1.542s\n\nOK"
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 5.41,
+      "summary": "................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 320 tests in 5.082s\n\nOK"
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 32.22,
+      "summary": "........................................................................................................................................................................\n----------------------------------------------------------------------\nRan 168 tests in 31.859s\n\nOK"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 128.02,
+      "summary": "..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 1114 tests in 127.525s\n\nOK"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.62,
+      "summary": "Checked 446 Python files under <repo-root>\nNo architecture-boundary violations found."
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "summary": "warning: in the working copy of 'control/inventory/sources/internet-archive-placeholder.source.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/assets/site.css', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/demo/README.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/demo/absence-example.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/demo/comparison-example.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/demo/data/demo_snapshots.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/demo/eval-summary.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/demo/index.html', LF will be replaced by CRLF the next time Git touches it\n... (26 more lines)"
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.05,
+      "summary": "## main...origin/main\n M .aide/commands/ci.yaml\n M .aide/commands/dev.yaml\n M .aide/reports/README.md\n M .aide/tasks/audit_backlog.yaml\n M .aide/tasks/queue.yaml\n M control/audits/README.md\n M control/inventory/sources/internet-archive-placeholder.source.json\n... (37 more lines)"
+    },
+    {
+      "command": "cargo --version",
+      "status": "skipped_unavailable",
+      "returncode": null,
+      "duration_seconds": 0.0,
+      "summary": "[WinError 2] The system cannot find the file specified"
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped_unavailable",
+      "returncode": null,
+      "duration_seconds": 0.0,
+      "summary": "[WinError 2] The system cannot find the file specified"
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped_unavailable",
+      "returncode": null,
+      "duration_seconds": 0.02,
+      "summary": "[WinError 2] The system cannot find the file specified"
+    }
+  ],
+  "remaining_blockers": [
+    "Official IA automated access/source policy review is pending.",
+    "User-Agent/contact decision is pending.",
+    "Runtime connector, source sync worker execution, source cache runtime, and evidence ledger runtime remain future."
+  ],
+  "next_recommended_branch": "P72 Wayback/CDX/Memento Connector Approval Pack v0",
+  "notes": [
+    "No archive.org, Internet Archive API, Wayback, CDX, Memento, or other source calls were made by P71."
+  ],
+  "connector_runtime_implemented": false,
+  "connector_approved_now": false,
+  "live_enabled_by_default": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "public_query_fanout_allowed": false,
+  "public_search_live_fanout_enabled": false,
+  "source_cache_mutation_allowed_now": false,
+  "evidence_ledger_mutation_allowed_now": false,
+  "candidate_index_mutation_allowed_now": false,
+  "public_index_mutation_allowed_now": false,
+  "local_index_mutation_allowed_now": false,
+  "master_index_mutation_allowed": false,
+  "downloads_allowed": false,
+  "file_retrieval_allowed": false,
+  "mirroring_allowed": false,
+  "arbitrary_url_fetch_allowed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "telemetry_implemented": false,
+  "credentials_configured": false
+}
