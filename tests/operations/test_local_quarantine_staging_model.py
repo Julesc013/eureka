@@ -91,10 +91,14 @@ class LocalQuarantineStagingModelOperationTestCase(unittest.TestCase):
 
     def test_no_runtime_staging_tool_added(self) -> None:
         self.assertTrue(VALIDATOR.exists())
+        allowed_validators = {
+            "validate_local_quarantine_staging_model.py",
+            "validate_staging_report_path_contract.py",
+        }
         suspicious_scripts = [
             path.name
             for path in (REPO_ROOT / "scripts").glob("*staging*.py")
-            if path.name != "validate_local_quarantine_staging_model.py"
+            if path.name not in allowed_validators
         ]
         self.assertEqual(suspicious_scripts, [])
 
