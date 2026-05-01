@@ -1,0 +1,319 @@
+{
+  "schema_version": "0.1.0",
+  "absence_page_id": "example.known_absence.no_verified_result.v0",
+  "absence_page_kind": "known_absence_page",
+  "status": "public_safe_example",
+  "created_by_tool": "p66_known_absence_page_v0",
+  "query_context": {
+    "query_observation_ref": "synthetic.query_observation.5b58c25e607b",
+    "search_result_cache_ref": "synthetic.result_cache.9b33074d5267",
+    "search_miss_ledger_ref": "synthetic.miss_ledger.32a1a8a31c2c",
+    "search_need_ref": "synthetic.search_need.856f46f12aa4",
+    "normalized_query": "no-such-local-index-hit",
+    "query_fingerprint": "5b58c25e607b9b33074d526732a1a8a31c2c856f46f12aa4d01d0adf1f1da38d",
+    "raw_query_retained": false,
+    "query_intent": "locate verified public-safe result",
+    "target_object_summary": "Synthetic unresolved public search target.",
+    "privacy_classification": "public_safe_example",
+    "limitations": [
+      "Synthetic reference set only; no live query or private data was used."
+    ]
+  },
+  "absence_summary": {
+    "absence_status": "scoped_absence",
+    "scoped_to": [
+      "public_index",
+      "local_index_only"
+    ],
+    "confidence": "low",
+    "global_absence_claimed": false,
+    "exhaustive_search_claimed": false,
+    "summary_text": "No verified result was found in the checked public and local_index_only scope; this is scoped absence, not global absence.",
+    "limitations": [
+      "This is scoped to the checked indexes and capabilities and is not proof about the wider web or private collections."
+    ]
+  },
+  "checked_scope": {
+    "checked_indexes": [
+      "public_index",
+      "local_index_only"
+    ],
+    "checked_sources": [
+      "synthetic_public_index_snapshot"
+    ],
+    "checked_source_families": [
+      "fixture_metadata",
+      "recorded_public_metadata"
+    ],
+    "checked_capabilities": [
+      "text_metadata_search",
+      "local_index_only_lookup"
+    ],
+    "checked_index_snapshot_refs": [
+      "data/public_index/public_search_index.json"
+    ],
+    "checked_at_policy": "example_static",
+    "live_probes_attempted": false,
+    "external_calls_performed": false
+  },
+  "not_checked_scope": {
+    "sources_not_checked": [
+      "live_external_sources",
+      "source_cache_future",
+      "candidate_index_future"
+    ],
+    "source_families_not_checked": [
+      "live_external_sources",
+      "private_local_collections"
+    ],
+    "capabilities_not_checked": [
+      "live_probe",
+      "arbitrary_url_fetch",
+      "download",
+      "install",
+      "source_cache_runtime"
+    ],
+    "reasons_not_checked": [
+      "not_implemented",
+      "disabled_by_policy",
+      "approval_gated"
+    ],
+    "limitations": [
+      "Not-checked scope is explicit so absence is not treated as global."
+    ]
+  },
+  "near_misses": [],
+  "weak_hits": [],
+  "gap_explanations": [
+    {
+      "gap_id": "gap.no_verified.source_coverage",
+      "gap_type": "source_coverage_gap",
+      "explanation": "The checked public-safe index snapshot does not cover live external source families.",
+      "evidence_refs": [],
+      "related_source_families": [
+        "live_external_sources"
+      ],
+      "related_capabilities": [
+        "source_cache_runtime"
+      ],
+      "user_visible": true,
+      "limitations": [
+        "No source cache runtime or live source check was performed."
+      ]
+    }
+  ],
+  "source_status_summary": {
+    "source_count_checked": 1,
+    "source_count_not_checked": 3,
+    "checked_source_families": [
+      "fixture_metadata",
+      "recorded_public_metadata"
+    ],
+    "not_checked_source_families": [
+      "live_external_sources",
+      "private_local_collections"
+    ],
+    "live_sources_enabled": false,
+    "live_sources_disabled": true,
+    "placeholder_sources": [],
+    "fixture_sources": [
+      "synthetic_public_index_snapshot"
+    ],
+    "recorded_sources": [],
+    "limitations": [
+      "Counts are example scope only and do not claim public demand or exhaustive coverage."
+    ]
+  },
+  "evidence_context": {
+    "evidence_refs": [],
+    "evidence_status": "insufficient",
+    "limitations": [
+      "No accepted evidence record is created by a known absence page."
+    ]
+  },
+  "candidate_context": {
+    "candidate_refs": [],
+    "candidate_status": "none",
+    "candidate_index_runtime_implemented": false,
+    "candidate_promotion_runtime_implemented": false,
+    "limitations": [
+      "Candidate references are future context only and are not surfaced as truth."
+    ]
+  },
+  "safe_next_actions": [
+    {
+      "action_type": "refine_query",
+      "label": "Refine query",
+      "future_only": false,
+      "human_required": false,
+      "approval_required": false,
+      "operator_required": false,
+      "enabled_now": true,
+      "limitations": [
+        "Informational action only."
+      ]
+    },
+    {
+      "action_type": "view_checked_sources",
+      "label": "View checked sources",
+      "future_only": false,
+      "human_required": false,
+      "approval_required": false,
+      "operator_required": false,
+      "enabled_now": true,
+      "limitations": [
+        "Informational action only."
+      ]
+    },
+    {
+      "action_type": "run_manual_observation_future",
+      "label": "Manual observation after review",
+      "future_only": true,
+      "human_required": true,
+      "approval_required": false,
+      "operator_required": false,
+      "enabled_now": false,
+      "limitations": [
+        "Future-only action; P66 does not perform it."
+      ]
+    },
+    {
+      "action_type": "create_search_need_future",
+      "label": "Create a search need after privacy review",
+      "future_only": true,
+      "human_required": false,
+      "approval_required": true,
+      "operator_required": false,
+      "enabled_now": false,
+      "limitations": [
+        "Future-only action; P66 does not perform it."
+      ]
+    },
+    {
+      "action_type": "enqueue_probe_after_approval_future",
+      "label": "Queue a probe only after approval",
+      "future_only": true,
+      "human_required": false,
+      "approval_required": true,
+      "operator_required": true,
+      "enabled_now": false,
+      "limitations": [
+        "Future-only action; P66 does not perform it."
+      ]
+    }
+  ],
+  "user_facing_sections": {
+    "title": "No verified result in the checked scope",
+    "summary": "No verified result was found in the checked public and local_index_only scope; this is scoped absence, not global absence.",
+    "what_was_checked": [
+      "Public-safe index snapshot and local_index_only lookup capability."
+    ],
+    "what_was_not_checked": [
+      "Live external sources, arbitrary URLs, downloads, installs, uploads, and private local collections."
+    ],
+    "near_misses_section": [
+      "Near misses are shown only as public-safe metadata summaries."
+    ],
+    "gaps_section": [
+      "Gaps describe source, capability, policy, or evidence limits."
+    ],
+    "safe_next_actions_section": [
+      "Only refine query, view near misses, and view checked sources may be enabled now."
+    ],
+    "limitations_section": [
+      "This page is an example projection and not a hosted runtime page."
+    ],
+    "evidence_section": [
+      "No accepted evidence record is produced."
+    ],
+    "privacy_notice": "Raw private query data is not retained in this public-safe example.",
+    "no_global_absence_notice": "Scoped absence, not global absence: unchecked sources may still contain relevant material."
+  },
+  "api_projection": {
+    "response_kind": "known_absence_response",
+    "compatible_with_search_response": true,
+    "fields": [
+      "absence_summary",
+      "checked_scope",
+      "not_checked_scope",
+      "near_misses",
+      "weak_hits",
+      "gap_explanations",
+      "limitations"
+    ],
+    "error_response": false,
+    "ok": true,
+    "result_count": 0,
+    "gaps_included": true,
+    "absence_summary_included": true,
+    "near_misses_included": true,
+    "limitations_included": true
+  },
+  "static_projection": {
+    "static_demo_available": false,
+    "static_demo_path": null,
+    "generated_static_artifact": false,
+    "no_js_required": true,
+    "base_path_safe": true,
+    "old_client_safe": true,
+    "limitations": [
+      "P66 documents the static projection but does not generate or publish a runtime page."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe example with no raw private query, path, token, profile, or network address data."
+    ]
+  },
+  "rights_and_risk": {
+    "rights_classification": "public_metadata_only",
+    "risk_classification": "metadata_only",
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "limitations": [
+      "Metadata-only absence explanation; no rights clearance or malware safety decision is made."
+    ]
+  },
+  "limitations": [
+    "Known absence is bounded to checked scope.",
+    "No live probe, source cache, evidence ledger, candidate promotion, or master-index mutation occurred."
+  ],
+  "no_global_absence_guarantees": {
+    "global_absence_claimed": false,
+    "exhaustive_search_claimed": false,
+    "live_probes_performed": false,
+    "external_calls_performed": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "installs_enabled": false,
+    "arbitrary_url_fetch_enabled": false
+  },
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "candidate_index_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "probe_queue_mutated": false,
+    "telemetry_exported": false
+  },
+  "notes": [
+    "Synthetic public-safe P66 example; no real user query or public demand count is represented."
+  ]
+}

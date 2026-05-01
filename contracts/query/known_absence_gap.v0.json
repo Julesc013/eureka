@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/known_absence_gap.v0.json",
+  "title": "Eureka Known Absence Gap v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_known_absence_pages_implemented": false,
+  "x-global_absence_claims_allowed": false,
+  "required": [
+    "gap_id",
+    "gap_type",
+    "explanation",
+    "user_visible",
+    "limitations"
+  ],
+  "properties": {
+    "gap_id": {
+      "type": "string"
+    },
+    "gap_type": {
+      "enum": [
+        "source_coverage_gap",
+        "capability_gap",
+        "compatibility_evidence_gap",
+        "member_access_gap",
+        "representation_gap",
+        "query_interpretation_gap",
+        "live_probe_disabled",
+        "external_baseline_pending",
+        "deep_extraction_missing",
+        "OCR_missing",
+        "source_cache_missing",
+        "policy_blocked",
+        "unknown"
+      ]
+    },
+    "explanation": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array"
+    },
+    "related_source_families": {
+      "type": "array"
+    },
+    "related_capabilities": {
+      "type": "array"
+    },
+    "user_visible": {
+      "const": true
+    },
+    "limitations": {
+      "type": "array"
+    }
+  }
+}

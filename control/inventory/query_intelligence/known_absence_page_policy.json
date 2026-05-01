@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "known_absence_page_policy_v0",
+  "status": "contract_only",
+  "runtime_known_absence_pages_implemented": false,
+  "persistent_known_absence_store_implemented": false,
+  "telemetry_implemented": false,
+  "public_query_logging_enabled": false,
+  "raw_query_retention_default": "none",
+  "privacy_filter_required": true,
+  "scoped_absence_required": true,
+  "global_absence_claims_allowed": false,
+  "live_probe_execution_allowed": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "candidate_promotion_runtime_implemented": false,
+  "master_index_mutation_allowed": false,
+  "next_contracts": [
+    "query_privacy_poisoning_guard",
+    "demand_dashboard",
+    "source_sync_worker",
+    "source_cache_evidence_ledger"
+  ],
+  "notes": [
+    "P66 is contract-only and defines future user-facing scoped absence explanations.",
+    "Known absence pages do not publish raw private query data, create search needs, enqueue probes, mutate candidates, or write indexes."
+  ]
+}

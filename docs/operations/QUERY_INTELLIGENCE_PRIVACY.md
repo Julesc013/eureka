@@ -97,3 +97,11 @@ candidate summaries remain future work after privacy and poisoning review.
 ## P65 Candidate Promotion Privacy Boundary
 
 P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.
+
+## P66 Known Absence Page v0
+
+Known Absence Page v0 is contract-only. It defines scoped absence, not global absence, for future no-result explanations with checked/not-checked scope, near misses, weak hits, gap explanations, safe next actions, privacy redaction, and no download/install/upload/live fetch. Known absence page is not a runtime page yet, not evidence acceptance, not candidate promotion, not master-index mutation, and not telemetry.
+
+## P66 Known Absence Operations
+
+Known absence page work is contract-only and not telemetry. It adds no persistent query logging, no hosted query intelligence runtime, no source calls, and no mutation. Future user-facing absence explanations must stay scoped and public-safe.

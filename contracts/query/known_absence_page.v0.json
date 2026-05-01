@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/known_absence_page.v0.json",
+  "title": "Eureka Known Absence Page v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_known_absence_pages_implemented": false,
+  "x-persistent_known_absence_store_implemented": false,
+  "x-telemetry_implemented": false,
+  "x-public_query_logging_enabled": false,
+  "x-global_absence_claims_allowed": false,
+  "x-live_probe_execution_allowed": false,
+  "x-downloads_enabled": false,
+  "x-uploads_enabled": false,
+  "x-installs_enabled": false,
+  "x-arbitrary_url_fetch_enabled": false,
+  "x-source_cache_mutation_allowed": false,
+  "x-evidence_ledger_mutation_allowed": false,
+  "x-candidate_index_mutation_allowed": false,
+  "x-candidate_promotion_runtime_implemented": false,
+  "x-master_index_mutation_allowed": false,
+  "x-external_calls_allowed": false,
+  "required": [
+    "schema_version",
+    "absence_page_id",
+    "absence_page_kind",
+    "status",
+    "created_by_tool",
+    "query_context",
+    "absence_summary",
+    "checked_scope",
+    "not_checked_scope",
+    "near_misses",
+    "weak_hits",
+    "gap_explanations",
+    "source_status_summary",
+    "evidence_context",
+    "candidate_context",
+    "safe_next_actions",
+    "user_facing_sections",
+    "api_projection",
+    "static_projection",
+    "privacy",
+    "rights_and_risk",
+    "limitations",
+    "no_global_absence_guarantees",
+    "no_mutation_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Known Absence Page v0 field: schema_version."
+    },
+    "absence_page_id": {
+      "description": "Known Absence Page v0 field: absence_page_id."
+    },
+    "absence_page_kind": {
+      "description": "Known Absence Page v0 field: absence_page_kind."
+    },
+    "status": {
+      "description": "Known Absence Page v0 field: status."
+    },
+    "created_by_tool": {
+      "description": "Known Absence Page v0 field: created_by_tool."
+    },
+    "query_context": {
+      "description": "Known Absence Page v0 field: query_context."
+    },
+    "absence_summary": {
+      "description": "Known Absence Page v0 field: absence_summary."
+    },
+    "checked_scope": {
+      "description": "Known Absence Page v0 field: checked_scope."
+    },
+    "not_checked_scope": {
+      "description": "Known Absence Page v0 field: not_checked_scope."
+    },
+    "near_misses": {
+      "description": "Known Absence Page v0 field: near_misses."
+    },
+    "weak_hits": {
+      "description": "Known Absence Page v0 field: weak_hits."
+    },
+    "gap_explanations": {
+      "description": "Known Absence Page v0 field: gap_explanations."
+    },
+    "source_status_summary": {
+      "description": "Known Absence Page v0 field: source_status_summary."
+    },
+    "evidence_context": {
+      "description": "Known Absence Page v0 field: evidence_context."
+    },
+    "candidate_context": {
+      "description": "Known Absence Page v0 field: candidate_context."
+    },
+    "safe_next_actions": {
+      "description": "Known Absence Page v0 field: safe_next_actions."
+    },
+    "user_facing_sections": {
+      "description": "Known Absence Page v0 field: user_facing_sections."
+    },
+    "api_projection": {
+      "description": "Known Absence Page v0 field: api_projection."
+    },
+    "static_projection": {
+      "description": "Known Absence Page v0 field: static_projection."
+    },
+    "privacy": {
+      "description": "Known Absence Page v0 field: privacy."
+    },
+    "rights_and_risk": {
+      "description": "Known Absence Page v0 field: rights_and_risk."
+    },
+    "limitations": {
+      "description": "Known Absence Page v0 field: limitations."
+    },
+    "no_global_absence_guarantees": {
+      "description": "Known Absence Page v0 field: no_global_absence_guarantees."
+    },
+    "no_mutation_guarantees": {
+      "description": "Known Absence Page v0 field: no_mutation_guarantees."
+    },
+    "notes": {
+      "description": "Known Absence Page v0 field: notes."
+    }
+  },
+  "$defs": {
+    "allowed_statuses": [
+      "draft_example",
+      "dry_run_validated",
+      "scoped_absence_example",
+      "local_private",
+      "public_safe_example",
+      "rejected_by_privacy_filter",
+      "superseded_future",
+      "resolved_future"
+    ],
+    "allowed_absence_statuses": [
+      "no_verified_result",
+      "scoped_absence",
+      "no_public_index_hit",
+      "weak_hits_only",
+      "near_misses_only",
+      "blocked_by_policy",
+      "source_coverage_gap",
+      "capability_gap",
+      "unknown"
+    ],
+    "allowed_checked_indexes": [
+      "public_index",
+      "local_index_only",
+      "result_cache_future",
+      "candidate_index_future",
+      "source_cache_future",
+      "master_index_future"
+    ],
+    "allowed_gap_types": [
+      "source_coverage_gap",
+      "capability_gap",
+      "compatibility_evidence_gap",
+      "member_access_gap",
+      "representation_gap",
+      "query_interpretation_gap",
+      "live_probe_disabled",
+      "external_baseline_pending",
+      "deep_extraction_missing",
+      "OCR_missing",
+      "source_cache_missing",
+      "policy_blocked",
+      "unknown"
+    ],
+    "allowed_action_types": [
+      "refine_query",
+      "view_near_misses",
+      "view_checked_sources",
+      "run_manual_observation_future",
+      "submit_source_pack_future",
+      "submit_evidence_pack_future",
+      "create_search_need_future",
+      "enqueue_probe_after_approval_future",
+      "enable_live_probe_after_approval_future",
+      "deep_extract_container_future",
+      "OCR_scan_future",
+      "no_action"
+    ],
+    "hard_no_global_false_fields": [
+      "global_absence_claimed",
+      "exhaustive_search_claimed",
+      "live_probes_performed",
+      "external_calls_performed",
+      "downloads_enabled",
+      "uploads_enabled",
+      "installs_enabled",
+      "arbitrary_url_fetch_enabled"
+    ],
+    "hard_no_mutation_false_fields": [
+      "master_index_mutated",
+      "public_index_mutated",
+      "local_index_mutated",
+      "candidate_index_mutated",
+      "source_cache_mutated",
+      "evidence_ledger_mutated",
+      "result_cache_mutated",
+      "miss_ledger_mutated",
+      "search_need_mutated",
+      "probe_queue_mutated",
+      "telemetry_exported"
+    ]
+  }
+}

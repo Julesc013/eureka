@@ -36,6 +36,8 @@
     "P62 defines search need records only. It does not implement a runtime need store, persistent need storage, telemetry, public query logging, demand-count runtime, probe enqueueing, candidate-index mutation, result-cache mutation, miss-ledger mutation, local-index mutation, or master-index mutation.",
     "P63 defines probe queue items as contract-only future work requests; search needs still do not enqueue probes, mutate source cache, mutate evidence ledger, mutate candidates, or call external sources.",
     "P64 defines candidate index records as contract-only provisional review items; search needs still do not create candidates, promote candidates, mutate source cache, mutate evidence ledger, or mutate the master index.",
-    "Search needs are scoped, reviewable unresolved needs derived from privacy-filtered future inputs. They are not search results, miss ledger entries, probe jobs, candidate records, demand dashboards, or authoritative truth."
-  ]
+    "Search needs are scoped, reviewable unresolved needs derived from privacy-filtered future inputs. They are not search results, miss ledger entries, probe jobs, candidate records, demand dashboards, or authoritative truth.",
+    "P66 Known Absence Page v0 is future/contract-only and does not add runtime pages, telemetry, probes, or mutation."
+  ],
+  "known_absence_page_status": "contract_only_p66"
 }

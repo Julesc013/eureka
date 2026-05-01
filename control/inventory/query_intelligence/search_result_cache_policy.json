@@ -37,6 +37,8 @@
     "P62 defines search need records as contract-only future consumers of scoped cache summaries and still does not add runtime need storage, demand-count runtime, probe enqueueing, or candidate mutation.",
     "P63 defines probe queue items as contract-only future work requests and still does not add queue persistence, probe execution, source cache mutation, evidence ledger mutation, candidate mutation, external calls, or live probes.",
     "P64 defines candidate index records as contract-only provisional review items and still does not add runtime candidate storage, promotion runtime, public search injection, source cache mutation, evidence ledger mutation, or master-index mutation.",
-    "Cache entries are scoped to checked public index snapshots and source status summaries. Cached absence is scoped absence, not proof outside the checked scope."
-  ]
+    "Cache entries are scoped to checked public index snapshots and source status summaries. Cached absence is scoped absence, not proof outside the checked scope.",
+    "P66 Known Absence Page v0 is future/contract-only and does not add runtime pages, telemetry, probes, or mutation."
+  ],
+  "known_absence_page_status": "contract_only_p66"
 }

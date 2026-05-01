@@ -810,3 +810,7 @@ review queue runtime, candidate-index mutation, source-cache mutation,
 evidence-ledger mutation, public-index mutation, local-index mutation,
 master-index mutation, telemetry, external calls, or live probes were added.
 Next Codex-safe branch: P66 Known Absence Page v0.
+
+## P66 Known Absence Page v0
+
+Known Absence Page v0 is contract-only. It defines scoped absence, not global absence, for future no-result explanations with checked/not-checked scope, near misses, weak hits, gap explanations, safe next actions, privacy redaction, and no download/install/upload/live fetch. Known absence page is not a runtime page yet, not evidence acceptance, not candidate promotion, not master-index mutation, and not telemetry.

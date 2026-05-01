@@ -88,3 +88,11 @@ local-index mutation, and no master-index mutation.
 ## P65 Candidate Promotion Privacy
 
 P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.
+
+## P66 Known Absence Page v0
+
+Known Absence Page v0 is contract-only. It defines scoped absence, not global absence, for future no-result explanations with checked/not-checked scope, near misses, weak hits, gap explanations, safe next actions, privacy redaction, and no download/install/upload/live fetch. Known absence page is not a runtime page yet, not evidence acceptance, not candidate promotion, not master-index mutation, and not telemetry.
+
+## P66 Known Absence Privacy
+
+Known absence examples and future aggregates must reject or redact prohibited data: raw private queries, IP address values, account id values, private path strings, secrets, private URLs, local result identifiers, and credentials. Raw query retention defaults to none.

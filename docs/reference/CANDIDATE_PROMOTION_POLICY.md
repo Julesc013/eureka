@@ -27,3 +27,7 @@ Candidate confidence is not truth. Destructive merge is forbidden. Future output
 ## Relations
 
 This policy consumes Candidate Index v0 references and stays downstream of query observations, shared result cache entries, miss ledger entries, search needs, and probe queue items. It is upstream of future known absence pages, privacy/poisoning guard, demand dashboard, source sync worker, source cache/evidence ledger, and master index review queue work.
+
+## P66 Known Absence Page v0
+
+Known Absence Page v0 is contract-only. It defines scoped absence, not global absence, for future no-result explanations with checked/not-checked scope, near misses, weak hits, gap explanations, safe next actions, privacy redaction, and no download/install/upload/live fetch. Known absence page is not a runtime page yet, not evidence acceptance, not candidate promotion, not master-index mutation, and not telemetry.

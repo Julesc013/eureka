@@ -31,6 +31,8 @@
   ],
   "notes": [
     "P65 defines recommendation-only promotion assessment policy and no runtime promotion, automatic acceptance, candidate-index mutation, source-cache mutation, evidence-ledger mutation, public-index mutation, local-index mutation, master-index mutation, telemetry, public query logging, external calls, or live probes.",
-    "Candidate confidence, AI output, probe output, pack output, and manual observation are not truth without future validation and review."
-  ]
+    "Candidate confidence, AI output, probe output, pack output, and manual observation are not truth without future validation and review.",
+    "P66 Known Absence Page v0 is future/contract-only and does not add runtime pages, telemetry, probes, or mutation."
+  ],
+  "known_absence_page_status": "contract_only_p66"
 }
