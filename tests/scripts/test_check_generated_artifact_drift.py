@@ -34,7 +34,13 @@ class CheckGeneratedArtifactDriftScriptTest(unittest.TestCase):
         payload = json.loads(completed.stdout)
         self.assertEqual(payload["status"], "valid")
         self.assertEqual(payload["errors"], [])
-        self.assertEqual(payload["status_counts"]["passed"], 10)
+        passed_ids = {
+            item["artifact_id"]
+            for item in payload["artifact_results"]
+            if item["status"] == "passed"
+        }
+        self.assertEqual(payload["status_counts"]["passed"], len(payload["artifact_results"]))
+        self.assertIn("public_search_index", passed_ids)
 
     def test_default_passes(self) -> None:
         completed = subprocess.run(
@@ -63,4 +69,3 @@ class CheckGeneratedArtifactDriftScriptTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

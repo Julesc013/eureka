@@ -284,6 +284,40 @@
       "committed_output_policy": "AIDE metadata is committed repo-operating metadata only. It must stay parseable and aligned with the test registry where commands are referenced.",
       "update_command": "manual governed edit only",
       "notes": "AIDE metadata must not define product runtime behavior."
+    },
+    {
+      "artifact_id": "public_search_index",
+      "status": "generated_committed",
+      "artifact_paths": [
+        "data/public_index/build_manifest.json",
+        "data/public_index/source_coverage.json",
+        "data/public_index/index_stats.json",
+        "data/public_index/search_documents.ndjson",
+        "data/public_index/checksums.sha256"
+      ],
+      "generator_command": "python scripts/build_public_search_index.py --rebuild",
+      "check_command": "python scripts/build_public_search_index.py --check",
+      "validator_commands": [
+        "python scripts/validate_public_search_index.py",
+        "python scripts/validate_public_search_index_builder.py"
+      ],
+      "source_inputs": [
+        "control/inventory/sources/*.source.json",
+        "runtime/connectors/*/fixtures/*",
+        "runtime/gateway/public_api/public_search_index.py",
+        "scripts/build_public_search_index.py"
+      ],
+      "generated": true,
+      "manual_edits_allowed": false,
+      "deterministic": true,
+      "public_safe": true,
+      "contains_live_data": false,
+      "contains_private_data": false,
+      "contains_executables": false,
+      "volatile_fields": [],
+      "committed_output_policy": "Public search index artifacts are generated text artifacts. Manual edits are not allowed; update controlled fixture/source inputs or generator code and rebuild.",
+      "update_command": "python scripts/build_public_search_index.py --rebuild",
+      "notes": "P55 public index is local_index_only and fixture/recorded metadata only; it does not add live probes, downloads, uploads, arbitrary URL fetching, hosted deployment, or production search claims."
     }
   ]
 }
