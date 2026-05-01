@@ -1,0 +1,229 @@
+{
+  "schema_version": "0.1.0",
+  "candidate_id": "example.candidate_index.absence.no_such_local_hit.v0",
+  "candidate_kind": "candidate_index_record",
+  "status": "review_required",
+  "created_by_tool": "p64_candidate_index_v0_example",
+  "candidate_identity": {
+    "candidate_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "canonical_candidate_label|candidate_type|checked_scope",
+      "value": "3333333333333333333333333333333333333333333333333333333333333333",
+      "reversible": false,
+      "salt_policy": "unsalted_public_aggregate"
+    },
+    "canonical_candidate_label": "Scoped absence candidate for no such local index hit",
+    "normalized_terms": [
+      "scoped",
+      "absence",
+      "local",
+      "index",
+      "hit"
+    ],
+    "alias_terms": [
+      "known unresolved scoped absence candidate"
+    ]
+  },
+  "candidate_type": {
+    "type": "absence_candidate",
+    "type_family": "absence",
+    "allowed_future_destinations": [
+      "candidate_index_only",
+      "evidence_pack_candidate",
+      "master_index_review_queue_future"
+    ]
+  },
+  "candidate_subject": {
+    "subject_kind": "absence",
+    "product_name": "no such local index hit",
+    "artifact_type": "scoped absence",
+    "source_family": "public_index",
+    "limitations": [
+      "Absence is scoped to checked public-index examples only."
+    ]
+  },
+  "candidate_claims": [
+    {
+      "claim_id": "claim.absence.scoped",
+      "claim_type": "scoped_absence",
+      "claim_value": "No verified result in the checked public-index example scope.",
+      "claim_status": "review_required",
+      "confidence": "low",
+      "limitations": [
+        "This is not a broad non-existence claim."
+      ]
+    }
+  ],
+  "provenance": {
+    "provenance_kind": "query_intelligence",
+    "created_from": "synthetic_miss_ledger_reference",
+    "source_refs": [
+      "public_index_snapshot_example"
+    ],
+    "pack_refs": [],
+    "validator_refs": [
+      "scripts/validate_candidate_index_record.py"
+    ],
+    "tool_refs": [
+      "p64_candidate_index_v0_example"
+    ],
+    "limitations": [
+      "No live source or source cache check created this candidate."
+    ]
+  },
+  "input_refs": {
+    "query_observation_refs": [],
+    "search_result_cache_refs": [
+      {
+        "ref_id": "example.search_result_cache.no_such_local_index_hit.v0",
+        "ref_kind": "search_result_cache",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "limitations": [
+          "Synthetic scoped absence cache ref only."
+        ]
+      }
+    ],
+    "search_miss_ledger_refs": [
+      {
+        "ref_id": "example.search_miss_ledger.no_such_local_index_hit.v0",
+        "ref_kind": "search_miss_ledger",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "limitations": [
+          "Synthetic miss ledger ref only."
+        ]
+      }
+    ],
+    "search_need_refs": [],
+    "probe_queue_refs": []
+  },
+  "evidence_refs": [
+    {
+      "evidence_ref": "candidate.absence.public_index_scope",
+      "evidence_kind": "absence_context",
+      "evidence_status": "candidate",
+      "source_family": "public_index",
+      "limitations": [
+        "Evidence remains candidate-only and scoped."
+      ]
+    }
+  ],
+  "source_policy": {
+    "source_policy_kind": "no_source_call",
+    "live_source_called": false,
+    "live_probe_enabled": false,
+    "source_terms_review_required": false,
+    "rights_review_required": true,
+    "allowed_source_ids": [],
+    "allowed_source_families": [
+      "public_index"
+    ],
+    "limitations": [
+      "No source call is used for this scoped absence example."
+    ]
+  },
+  "confidence": {
+    "confidence_class": "low",
+    "confidence_basis": [
+      "insufficient_evidence",
+      "fixture_example"
+    ],
+    "confidence_notes": [
+      "Scoped absence cannot become truth without review."
+    ],
+    "confidence_not_truth": true
+  },
+  "review": {
+    "review_status": "evidence_required",
+    "required_reviews": [
+      "human_review",
+      "evidence_review",
+      "policy_review"
+    ],
+    "promotion_allowed_now": false,
+    "promotion_policy_required": true,
+    "reviewer_notes": [
+      "Known absence pages and promotion rules are future milestones."
+    ]
+  },
+  "conflicts": {
+    "conflict_status": "unknown",
+    "conflicting_candidate_refs": [],
+    "conflicting_source_refs": [],
+    "conflict_summary": "Unreviewed future evidence may conflict with this scoped absence candidate.",
+    "preservation_policy": "preserve_conflict"
+  },
+  "visibility": {
+    "visibility_class": "public_aggregate_only",
+    "public_result_visibility_allowed": false,
+    "public_candidate_visibility_allowed_future": false,
+    "public_label": "Scoped absence candidate",
+    "redaction_required": false,
+    "limitations": [
+      "Candidate is not shown as a current public result."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "raw_query_retained": false,
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic scoped absence candidate with no raw query retained."
+    ]
+  },
+  "rights_and_risk": {
+    "rights_classification": "public_metadata_only",
+    "risk_classification": "metadata_only",
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "limitations": [
+      "No payload or action is represented."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "candidate_record_retention": "example_only",
+    "deletion_supported_future": true,
+    "notes": [
+      "P64 implements no candidate retention runtime."
+    ]
+  },
+  "limitations": [
+    "Scoped absence candidate only.",
+    "No broad absence, source-cache mutation, evidence-ledger mutation, or master-index mutation occurred."
+  ],
+  "no_truth_guarantees": {
+    "accepted_as_truth": false,
+    "promoted_to_master_index": false
+  },
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "public_index_mutated": false,
+    "source_registry_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "probe_queue_mutated": false,
+    "telemetry_exported": false,
+    "external_calls_performed": false,
+    "live_source_called": false
+  },
+  "notes": [
+    "Absence candidates preserve checked scope and conflicts for future review."
+  ]
+}

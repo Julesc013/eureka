@@ -42,6 +42,16 @@ Current contracts:
 - `probe_kind.v0.json`: reusable probe kind taxonomy for future manual,
   source-cache, metadata, repository, extraction, evidence-pack, index-pack,
   and query-parser work requests.
+- `candidate_index_record.v0.json`: candidate index record contract for future
+  provisional object, evidence, compatibility, absence, conflict, source, and
+  identity candidates. P64 defines candidate identity, type taxonomy,
+  provenance refs, confidence-not-truth, conflict preservation, review gates,
+  source/evidence/rights policy, public visibility policy, and no-truth/no-
+  mutation guarantees without adding a runtime candidate index, public search
+  injection, promotion runtime, source-cache mutation, evidence-ledger mutation,
+  or master-index mutation.
+- `candidate_lifecycle.v0.json`: reusable lifecycle and review vocabulary for
+  future candidate review and promotion policy.
 
 Query intelligence follows "fast learning, slow truth": public queries may
 eventually inform aggregate learning, but they must not mutate authoritative
@@ -55,3 +65,6 @@ probe jobs, candidate records, demand counts, source truth, or master-index
 truth.
 Probe queue items are future work requests, not probe execution, not source
 cache/evidence/candidate mutation, and not master-index truth.
+Candidate index records are provisional review records, not evidence
+acceptance, not public search authority, not source/cache/evidence mutation,
+and not master-index truth.

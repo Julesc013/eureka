@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/candidate_lifecycle.v0.json",
+  "title": "EurekaCandidateLifecycleV0",
+  "description": "Candidate Index v0 lifecycle values. P64 is contract/example/validation only and adds no runtime candidate index, promotion runtime, telemetry, public search injection, source cache runtime, evidence ledger runtime, external calls, or master-index mutation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "review_status",
+    "promotion_allowed_now",
+    "promotion_policy_required"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "observed_future",
+        "normalized_future",
+        "candidate_future",
+        "review_required",
+        "quarantined",
+        "rejected_future",
+        "superseded_future",
+        "promoted_future"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "structurally_valid",
+        "evidence_required",
+        "human_review_required",
+        "policy_review_required",
+        "rights_review_required",
+        "risk_review_required",
+        "conflict_review_required",
+        "rejected_future",
+        "promoted_future"
+      ]
+    },
+    "promotion_allowed_now": {
+      "type": "boolean",
+      "const": false
+    },
+    "promotion_policy_required": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_candidate_index_implemented": false,
+  "x-candidate_promotion_runtime_implemented": false,
+  "x-master_index_mutation_allowed": false,
+  "x-external_calls_allowed": false
+}

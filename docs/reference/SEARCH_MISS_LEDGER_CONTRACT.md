@@ -110,6 +110,14 @@ entries may be referenced by search needs and later probe queue items, but P61
 entries still do not create queue items, execute probes, mutate source cache,
 mutate evidence ledger, mutate candidates, or mutate the master index.
 
+## Relation To Candidate Index
+
+P64 defines candidate index records as contract-only provisional records. Miss
+ledger entries may later contribute scoped absence, weak-hit, or near-miss
+context through search needs or probe results, but P61 entries still do not
+create candidates, promote candidates, mutate source cache, mutate evidence
+ledger, inject candidates into public search, or mutate the master index.
+
 Validate examples with:
 
 ```bash

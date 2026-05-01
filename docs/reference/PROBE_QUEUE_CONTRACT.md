@@ -88,6 +88,14 @@ Output destination policies are `no_output_v0`, `source_cache_future`,
 `contribution_candidate_future`. These names describe future review paths and do
 not mutate any store in P63.
 
+## Candidate Index Relationship
+
+P64 adds a candidate index contract-only layer for provisional review records.
+Probe queue items may later point toward candidate review through future-only
+expected output labels, but P63 does not create candidate index records, does
+not execute probes, and does not mutate source cache, evidence ledger, public
+search, or the master index.
+
 ## Privacy
 
 Raw query retention default is `none`. Public-safe probe queue items must not

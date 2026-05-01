@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eureka_candidate_index_policy_v0",
+  "status": "contract_only",
+  "runtime_candidate_index_implemented": false,
+  "persistent_candidate_index_implemented": false,
+  "telemetry_implemented": false,
+  "public_query_logging_enabled": false,
+  "raw_query_retention_default": "none",
+  "privacy_filter_required": true,
+  "public_aggregate_allowed_after_filter": true,
+  "candidate_promotion_runtime_implemented": false,
+  "public_search_candidate_injection_allowed": false,
+  "master_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "probe_queue_mutation_allowed": false,
+  "search_need_mutation_allowed": false,
+  "result_cache_mutation_allowed": false,
+  "miss_ledger_mutation_allowed": false,
+  "external_calls_allowed": false,
+  "live_probes_enabled": false,
+  "promotion_policy_required": true,
+  "next_contracts": [
+    "candidate_promotion_policy",
+    "known_absence_page",
+    "query_privacy_poisoning_guard",
+    "demand_dashboard",
+    "source_sync_worker",
+    "source_cache_evidence_ledger"
+  ],
+  "notes": [
+    "P64 defines candidate index records only. It does not implement runtime candidate storage, persistent candidate storage, promotion runtime, public search candidate injection, source cache mutation, evidence ledger mutation, probe queue mutation, local index mutation, master-index mutation, telemetry, public query logging, external calls, or live probes.",
+    "Candidate records are provisional, reviewable, and conflict-preserving. They are not accepted evidence, public result authority, or master-index truth."
+  ]
+}

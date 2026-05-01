@@ -11,6 +11,7 @@
   "search_miss_ledger_status": "contract_only_p61",
   "search_need_record_status": "contract_only_p62",
   "probe_queue_status": "contract_only_p63",
+  "candidate_index_status": "contract_only_p64",
   "privacy_filter_required": true,
   "public_aggregate_allowed_after_filter": true,
   "master_index_mutation_allowed": false,
@@ -36,6 +37,7 @@
     "P61 defines the search miss ledger contract as contract-only and still does not add runtime ledger writes, search need creation, probe enqueueing, result cache mutation, or persistent ledger storage.",
     "P62 defines search need records as contract-only future consumers of privacy-filtered observations and still does not add runtime need storage, telemetry, demand counts, probes, or candidate mutation.",
     "P63 defines probe queue items as contract-only future work requests and still does not add probe execution, queue persistence, source cache mutation, evidence ledger mutation, candidate mutation, external calls, or live probes.",
+    "P64 defines candidate index records as contract-only provisional review items and still does not add candidate persistence, promotion runtime, public search injection, source cache mutation, evidence ledger mutation, local-index mutation, or master-index mutation.",
     "Raw query retention defaults to none. Future aggregate learning must pass privacy filtering before public reporting."
   ]
 }

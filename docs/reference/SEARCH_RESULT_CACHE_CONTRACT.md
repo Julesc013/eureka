@@ -105,6 +105,14 @@ Shared cache entries may be referenced as context for future probe planning, but
 cache entries do not create queue items, execute probes, mutate source cache,
 mutate evidence ledger, mutate candidates, or become master-index truth.
 
+## Candidate Index Relationship
+
+P64 adds the candidate index as the next contract-only provisional record
+layer. Cache entries may provide scoped result or absence context for later
+candidate review, but cache entries do not create candidates, promote
+candidates, mutate source cache, mutate evidence ledger, inject candidates into
+public search, or become master-index truth.
+
 ## Freshness And Invalidation
 
 Future cache entries become stale when the public index is rebuilt, source

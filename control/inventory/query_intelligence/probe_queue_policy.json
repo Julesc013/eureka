@@ -21,6 +21,7 @@
   "external_calls_allowed": false,
   "approval_required_for_live_network_probe": true,
   "operator_required_for_worker_runtime": true,
+  "candidate_index_status": "contract_only_p64",
   "next_contracts": [
     "candidate_index",
     "candidate_promotion_policy",
@@ -32,6 +33,7 @@
   ],
   "notes": [
     "P63 defines probe queue items only. It does not implement a runtime queue, persistent queue, worker, connector execution, source cache mutation, evidence ledger mutation, candidate-index mutation, local-index mutation, master-index mutation, telemetry, public query logging, external calls, or live probe execution.",
+    "P64 defines candidate index records as contract-only provisional review items; probe queue items still do not create candidates, execute probes, mutate source cache, mutate evidence ledger, or mutate the master index.",
     "Probe queue items are future work requests derived from privacy-filtered search needs and other query-intelligence refs. They are not evidence, candidates, source truth, or authoritative truth."
   ]
 }

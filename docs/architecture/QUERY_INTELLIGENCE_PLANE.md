@@ -1,12 +1,13 @@
 # Query Intelligence Plane
 
-Status: contract-only through P63.
+Status: contract-only through P64.
 
 The Query Intelligence Plane is the future layer that lets Eureka learn from
 public search demand without turning public queries into surveillance or
 authoritative truth. Its first contracts are the P59 query observation record,
 the P60 shared query/result cache entry, the P61 search miss ledger entry, the
-P62 search need record, and the P63 probe queue item.
+P62 search need record, the P63 probe queue item, and the P64 candidate index
+record.
 
 The core doctrine is fast learning, slow truth:
 
@@ -26,6 +27,9 @@ The core doctrine is fast learning, slow truth:
 - Probe queue items are future work requests, not probe execution, not source
   cache or evidence ledger mutation, not candidate records, and not
   master-index truth.
+- Candidate index records are provisional, reviewable records. They are not
+  evidence acceptance, not public search authority, not source cache or
+  evidence ledger mutation, and not master-index truth.
 - Public query learning cannot become object truth without later evidence and
   validation gates.
 
@@ -162,10 +166,42 @@ Probe queue records may later guide approved source-cache, manual observation,
 deep extraction, evidence review, or candidate review work. P63 only defines the
 bounded contract and approval posture.
 
+## P64 Boundary
+
+P64 defines `contracts/query/candidate_index_record.v0.json` and
+`contracts/query/candidate_lifecycle.v0.json`, synthetic object, evidence,
+absence, and conflict examples, validators, docs, and an optional dry-run
+helper that writes nothing. It does not wire the public search runtime to
+create candidates, rank from candidates, promote candidates, or mutate any
+source/evidence/master store.
+
+Hard guarantees for P64:
+
+- no runtime candidate index
+- no persistent candidate index
+- no telemetry
+- no public query logging
+- no public search candidate injection
+- no candidate promotion runtime
+- no source cache mutation
+- no evidence ledger mutation
+- no probe queue mutation
+- no search need mutation
+- no result cache mutation
+- no miss ledger mutation
+- no local index mutation
+- no master-index mutation
+- no external calls or live probes
+
+Candidate records are contract-only, confidence-not-truth, conflict-preserving,
+and review-gated. They may later support candidate promotion policy, known
+absence pages, privacy/poisoning guardrails, demand dashboards, and
+source/evidence ledger contracts.
+
 ## Future Path
 
-Future milestones may define candidate index, candidate promotion policy, query
-privacy and poisoning guard, demand dashboard, source sync workers, and source
-cache/evidence ledger contracts. Each must preserve the separation between
-observed demand, reusable summaries, future work requests, candidate work, and
-accepted truth.
+Future milestones may define candidate promotion policy, known absence pages,
+query privacy and poisoning guard, demand dashboard, source sync workers, and
+source cache/evidence ledger contracts. Each must preserve the separation
+between observed demand, reusable summaries, future work requests, provisional
+candidates, and accepted truth.

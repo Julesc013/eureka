@@ -1,6 +1,6 @@
 # Query Intelligence Privacy
 
-Status: P59/P60/P61/P62/P63 contract-only operations guidance.
+Status: P59/P60/P61/P62/P63/P64 contract-only operations guidance.
 
 Query intelligence is not telemetry. P59 adds no persistent query logging, no
 analytics, no IP storage, no account identifiers, no raw private-looking query
@@ -10,6 +10,8 @@ P61 adds no runtime ledger writes and no persistent miss ledger.
 P62 adds no runtime need store and no persistent search need storage.
 P63 adds no runtime probe queue, no persistent probe queue, and no probe
 execution.
+P64 adds no runtime candidate index, no persistent candidate index, no public
+search candidate injection, and no candidate promotion runtime.
 
 ## Operator Posture
 
@@ -69,13 +71,25 @@ account identifiers, probe execution, live source calls, source cache mutation,
 evidence ledger mutation, candidate-index mutation, hard mutation flags, and
 unsafe raw query retention.
 
+`scripts/dry_run_candidate_index_record.py` emits a non-persistent candidate
+index record to stdout only. It is useful for validating candidate contract
+shape, not for collecting user data, writing candidate state, injecting public
+search results, or accepting truth.
+
+`scripts/validate_candidate_index_record.py` validates committed candidate
+examples and rejects private paths, private URLs, credential markers, IP
+addresses, account identifiers, accepted truth flags, promotion flags, live
+source calls, live probe flags, source cache mutation, evidence ledger mutation,
+hard mutation flags, and unsafe raw query retention.
+
 ## Operator-Gated Future Work
 
 Hosted deployment, edge/rate-limit evidence, public aggregate publication,
 retention/deletion controls, poisoning protection, and any query collection
 runtime remain operator-gated or future-milestone work.
 
-P59/P60/P61/P62/P63 add no result cache runtime, no miss ledger runtime, no
-search need runtime, no runtime probe queue, no candidate indexes, no
-telemetry, no uploads, no accounts, no live source calls, and no production
-public-query learning claims.
+P59/P60/P61/P62/P63/P64 add no result cache runtime, no miss ledger runtime, no
+search need runtime, no runtime probe queue, no runtime candidate index, no
+candidate promotion runtime, no telemetry, no uploads, no accounts, no live
+source calls, and no production public-query learning claims. Public aggregate
+candidate summaries remain future work after privacy and poisoning review.

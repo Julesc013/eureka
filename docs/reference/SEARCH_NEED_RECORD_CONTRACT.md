@@ -118,3 +118,11 @@ policy, and no-mutation review.
 Probe queue integration remains future-only and approval-gated. A search need
 record is still not a probe job, not evidence, not a candidate record, and not
 master-index truth.
+
+## Candidate Index Relationship
+
+P64 defines the candidate index contract as a future provisional record layer.
+Search needs may later guide candidate creation through reviewed probe,
+manual-observation, pack, or source-cache outputs, but P62 records still do not
+create candidates, promote candidates, mutate source cache, mutate evidence
+ledger, inject candidates into public search, or mutate the master index.

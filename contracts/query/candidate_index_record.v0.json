@@ -1,0 +1,1038 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/candidate_index_record.v0.json",
+  "title": "EurekaCandidateIndexRecordV0",
+  "description": "Candidate Index v0 contract for provisional, reviewable candidate records. P64 is contract/example/validation only and adds no runtime candidate index, persistence, promotion runtime, public search candidate injection, source cache runtime, evidence ledger runtime, telemetry, external calls, live probes, or master-index mutation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "candidate_kind",
+    "status",
+    "created_by_tool",
+    "candidate_identity",
+    "candidate_type",
+    "candidate_subject",
+    "candidate_claims",
+    "provenance",
+    "input_refs",
+    "evidence_refs",
+    "source_policy",
+    "confidence",
+    "review",
+    "conflicts",
+    "visibility",
+    "privacy",
+    "rights_and_risk",
+    "retention_policy",
+    "limitations",
+    "no_truth_guarantees",
+    "no_mutation_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_kind": {
+      "type": "string",
+      "const": "candidate_index_record"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "observed_future",
+        "normalized_future",
+        "candidate_future",
+        "review_required",
+        "quarantined",
+        "rejected_future",
+        "superseded_future",
+        "promoted_future"
+      ]
+    },
+    "created_by_tool": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "description": "Optional future timestamp. Examples should avoid volatile required timestamps."
+    },
+    "updated_at": {
+      "type": "string",
+      "description": "Optional future timestamp. Examples should avoid volatile required timestamps."
+    },
+    "candidate_identity": {
+      "$ref": "#/$defs/candidate_identity"
+    },
+    "candidate_type": {
+      "$ref": "#/$defs/candidate_type"
+    },
+    "candidate_subject": {
+      "$ref": "#/$defs/candidate_subject"
+    },
+    "candidate_claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate_claim"
+      }
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "input_refs": {
+      "$ref": "#/$defs/input_refs"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_ref"
+      }
+    },
+    "source_policy": {
+      "$ref": "#/$defs/source_policy"
+    },
+    "confidence": {
+      "$ref": "#/$defs/confidence"
+    },
+    "review": {
+      "$ref": "#/$defs/review"
+    },
+    "conflicts": {
+      "$ref": "#/$defs/conflicts"
+    },
+    "visibility": {
+      "$ref": "#/$defs/visibility"
+    },
+    "privacy": {
+      "$ref": "#/$defs/privacy"
+    },
+    "rights_and_risk": {
+      "$ref": "#/$defs/rights_and_risk"
+    },
+    "retention_policy": {
+      "$ref": "#/$defs/retention_policy"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "no_truth_guarantees": {
+      "$ref": "#/$defs/no_truth_guarantees"
+    },
+    "no_mutation_guarantees": {
+      "$ref": "#/$defs/no_mutation_guarantees"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "candidate_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_fingerprint",
+        "canonical_candidate_label",
+        "normalized_terms",
+        "alias_terms"
+      ],
+      "properties": {
+        "candidate_fingerprint": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "algorithm",
+            "normalized_basis",
+            "value",
+            "reversible",
+            "salt_policy"
+          ],
+          "properties": {
+            "algorithm": {
+              "type": "string",
+              "enum": [
+                "sha256"
+              ]
+            },
+            "normalized_basis": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "reversible": {
+              "type": "boolean",
+              "const": false
+            },
+            "salt_policy": {
+              "type": "string",
+              "enum": [
+                "unsalted_public_aggregate",
+                "deployment_secret_salted_future",
+                "local_private_salted_future"
+              ]
+            }
+          }
+        },
+        "canonical_candidate_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_terms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alias_terms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "duplicate_of": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": "string"
+        },
+        "equivalent_candidate_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "candidate_type": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "type_family",
+        "allowed_future_destinations"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "object_identity_candidate",
+            "software_version_candidate",
+            "source_record_candidate",
+            "evidence_record_candidate",
+            "representation_candidate",
+            "member_path_candidate",
+            "compatibility_claim_candidate",
+            "checksum_candidate",
+            "release_metadata_candidate",
+            "package_metadata_candidate",
+            "source_match_candidate",
+            "identity_match_candidate",
+            "alias_candidate",
+            "absence_candidate",
+            "extraction_candidate",
+            "OCR_text_candidate",
+            "query_interpretation_candidate",
+            "actionability_candidate",
+            "unknown"
+          ]
+        },
+        "type_family": {
+          "type": "string",
+          "enum": [
+            "object",
+            "source",
+            "evidence",
+            "representation",
+            "member",
+            "compatibility",
+            "identity",
+            "absence",
+            "extraction",
+            "query",
+            "actionability",
+            "unknown"
+          ]
+        },
+        "allowed_future_destinations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "evidence_pack_candidate",
+              "contribution_pack_candidate",
+              "candidate_index_only",
+              "master_index_review_queue_future",
+              "source_cache_future",
+              "evidence_ledger_future"
+            ]
+          }
+        }
+      }
+    },
+    "candidate_subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_kind",
+        "limitations"
+      ],
+      "properties": {
+        "subject_kind": {
+          "type": "string",
+          "enum": [
+            "software",
+            "software_version",
+            "driver",
+            "manual_or_documentation",
+            "source_code_release",
+            "package_metadata",
+            "web_capture",
+            "article_or_scan_segment",
+            "file_inside_container",
+            "compatibility_evidence",
+            "source_identity",
+            "query_interpretation",
+            "absence",
+            "unknown"
+          ]
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "vendor": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "architecture": {
+          "type": "string"
+        },
+        "artifact_type": {
+          "type": "string"
+        },
+        "source_family": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "member_path": {
+          "type": "string"
+        },
+        "representation_kind": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "candidate_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "claim_type",
+        "claim_value",
+        "claim_status",
+        "confidence",
+        "limitations"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string"
+        },
+        "claim_type": {
+          "type": "string",
+          "enum": [
+            "describes",
+            "same_as_candidate",
+            "variant_of_candidate",
+            "has_version",
+            "supports_platform",
+            "does_not_support_platform",
+            "contains_member",
+            "has_checksum",
+            "source_matches_query",
+            "source_missing",
+            "near_absence",
+            "scoped_absence",
+            "query_interpretation",
+            "actionability_hint",
+            "unknown"
+          ]
+        },
+        "claim_value": {
+          "type": "string"
+        },
+        "claim_status": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "structurally_valid",
+            "evidence_required",
+            "review_required",
+            "rejected_future",
+            "accepted_future"
+          ]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provenance_kind",
+        "created_from",
+        "source_refs",
+        "pack_refs",
+        "validator_refs",
+        "tool_refs",
+        "limitations"
+      ],
+      "properties": {
+        "provenance_kind": {
+          "type": "string",
+          "enum": [
+            "query_intelligence",
+            "source_cache_future",
+            "evidence_pack",
+            "source_pack",
+            "contribution_pack",
+            "AI_output_candidate",
+            "manual_observation",
+            "probe_result_future",
+            "fixture_example",
+            "unknown"
+          ]
+        },
+        "created_from": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array"
+        },
+        "pack_refs": {
+          "type": "array"
+        },
+        "validator_refs": {
+          "type": "array"
+        },
+        "tool_refs": {
+          "type": "array"
+        },
+        "limitations": {
+          "type": "array"
+        }
+      }
+    },
+    "input_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "query_observation_refs",
+        "search_result_cache_refs",
+        "search_miss_ledger_refs",
+        "search_need_refs",
+        "probe_queue_refs"
+      ],
+      "properties": {
+        "query_observation_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "search_result_cache_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "search_miss_ledger_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "search_need_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "probe_queue_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "typed_ai_output_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "manual_observation_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "source_pack_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "evidence_pack_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "contribution_pack_refs": {
+          "$ref": "#/$defs/ref_list"
+        }
+      }
+    },
+    "ref_list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/input_ref"
+      }
+    },
+    "input_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref_id",
+        "ref_kind",
+        "status",
+        "privacy_classification",
+        "limitations"
+      ],
+      "properties": {
+        "ref_id": {
+          "type": "string"
+        },
+        "ref_kind": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "privacy_classification": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array"
+        }
+      }
+    },
+    "evidence_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_ref",
+        "evidence_kind",
+        "evidence_status",
+        "limitations"
+      ],
+      "properties": {
+        "evidence_ref": {
+          "type": "string"
+        },
+        "evidence_kind": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "type": "string",
+          "enum": [
+            "none",
+            "candidate",
+            "source_backed",
+            "review_required",
+            "rejected_future"
+          ]
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "source_family": {
+          "type": "string"
+        },
+        "locator": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array"
+        }
+      }
+    },
+    "source_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_policy_kind",
+        "live_source_called",
+        "live_probe_enabled",
+        "source_terms_review_required",
+        "rights_review_required",
+        "allowed_source_ids",
+        "allowed_source_families",
+        "limitations"
+      ],
+      "properties": {
+        "source_policy_kind": {
+          "type": "string",
+          "enum": [
+            "no_source_call",
+            "fixture_only",
+            "recorded_fixture",
+            "source_cache_future",
+            "evidence_pack_reference",
+            "source_pack_reference",
+            "live_probe_after_approval_future",
+            "unknown"
+          ]
+        },
+        "live_source_called": {
+          "type": "boolean",
+          "const": false
+        },
+        "live_probe_enabled": {
+          "type": "boolean",
+          "const": false
+        },
+        "source_terms_review_required": {
+          "type": "boolean"
+        },
+        "rights_review_required": {
+          "type": "boolean"
+        },
+        "allowed_source_ids": {
+          "type": "array"
+        },
+        "allowed_source_families": {
+          "type": "array"
+        },
+        "limitations": {
+          "type": "array"
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "confidence_class",
+        "confidence_basis",
+        "confidence_notes",
+        "confidence_not_truth"
+      ],
+      "properties": {
+        "confidence_class": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "confidence_basis": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "lexical_match",
+              "source_backed_evidence",
+              "compatibility_evidence",
+              "member_evidence",
+              "manual_observation",
+              "AI_output_candidate",
+              "fixture_example",
+              "insufficient_evidence",
+              "unknown"
+            ]
+          }
+        },
+        "confidence_notes": {
+          "type": "array"
+        },
+        "confidence_not_truth": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_status",
+        "required_reviews",
+        "promotion_allowed_now",
+        "promotion_policy_required"
+      ],
+      "properties": {
+        "review_status": {
+          "type": "string"
+        },
+        "required_reviews": {
+          "type": "array"
+        },
+        "promotion_allowed_now": {
+          "type": "boolean",
+          "const": false
+        },
+        "promotion_policy_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "reviewer_notes": {
+          "type": "array"
+        }
+      }
+    },
+    "conflicts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conflict_status",
+        "conflicting_candidate_refs",
+        "conflicting_source_refs",
+        "conflict_summary",
+        "preservation_policy"
+      ],
+      "properties": {
+        "conflict_status": {
+          "type": "string",
+          "enum": [
+            "none_known",
+            "possible_duplicate",
+            "identity_conflict",
+            "version_conflict",
+            "source_conflict",
+            "compatibility_conflict",
+            "evidence_conflict",
+            "rights_or_access_conflict",
+            "unknown"
+          ]
+        },
+        "conflicting_candidate_refs": {
+          "type": "array"
+        },
+        "conflicting_source_refs": {
+          "type": "array"
+        },
+        "conflict_summary": {
+          "type": "string"
+        },
+        "preservation_policy": {
+          "type": "string",
+          "enum": [
+            "preserve_conflict",
+            "review_required",
+            "not_applicable"
+          ]
+        }
+      }
+    },
+    "visibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "visibility_class",
+        "public_result_visibility_allowed",
+        "public_candidate_visibility_allowed_future",
+        "public_label",
+        "redaction_required",
+        "limitations"
+      ],
+      "properties": {
+        "visibility_class": {
+          "type": "string",
+          "enum": [
+            "local_private",
+            "public_safe_candidate",
+            "public_aggregate_only",
+            "review_required",
+            "restricted"
+          ]
+        },
+        "public_result_visibility_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "public_candidate_visibility_allowed_future": {
+          "type": "boolean"
+        },
+        "public_label": {
+          "type": "string"
+        },
+        "redaction_required": {
+          "type": "boolean"
+        },
+        "limitations": {
+          "type": "array"
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "privacy_classification",
+        "raw_query_retained",
+        "contains_raw_query",
+        "contains_private_path",
+        "contains_secret",
+        "contains_private_url",
+        "contains_user_identifier",
+        "contains_ip_address",
+        "contains_local_result",
+        "publishable",
+        "public_aggregate_allowed",
+        "reasons"
+      ],
+      "properties": {
+        "privacy_classification": {
+          "type": "string"
+        },
+        "raw_query_retained": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_raw_query": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_private_path": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_secret": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_private_url": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_user_identifier": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_ip_address": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_local_result": {
+          "type": "boolean",
+          "const": false
+        },
+        "publishable": {
+          "type": "boolean"
+        },
+        "public_aggregate_allowed": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array"
+        }
+      }
+    },
+    "rights_and_risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rights_classification",
+        "risk_classification",
+        "downloads_enabled",
+        "installs_enabled",
+        "execution_enabled",
+        "rights_clearance_claimed",
+        "malware_safety_claimed",
+        "limitations"
+      ],
+      "properties": {
+        "rights_classification": {
+          "type": "string"
+        },
+        "risk_classification": {
+          "type": "string"
+        },
+        "downloads_enabled": {
+          "type": "boolean",
+          "const": false
+        },
+        "installs_enabled": {
+          "type": "boolean",
+          "const": false
+        },
+        "execution_enabled": {
+          "type": "boolean",
+          "const": false
+        },
+        "rights_clearance_claimed": {
+          "type": "boolean",
+          "const": false
+        },
+        "malware_safety_claimed": {
+          "type": "boolean",
+          "const": false
+        },
+        "limitations": {
+          "type": "array"
+        }
+      }
+    },
+    "retention_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_query_retention",
+        "candidate_record_retention",
+        "deletion_supported_future",
+        "notes"
+      ],
+      "properties": {
+        "raw_query_retention": {
+          "type": "string",
+          "enum": [
+            "none",
+            "redacted_only"
+          ]
+        },
+        "candidate_record_retention": {
+          "type": "string"
+        },
+        "deletion_supported_future": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array"
+        }
+      }
+    },
+    "no_truth_guarantees": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accepted_as_truth",
+        "promoted_to_master_index"
+      ],
+      "properties": {
+        "accepted_as_truth": {
+          "type": "boolean",
+          "const": false
+        },
+        "promoted_to_master_index": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "no_mutation_guarantees": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "master_index_mutated",
+        "local_index_mutated",
+        "public_index_mutated",
+        "source_registry_mutated",
+        "source_cache_mutated",
+        "evidence_ledger_mutated",
+        "result_cache_mutated",
+        "miss_ledger_mutated",
+        "search_need_mutated",
+        "probe_queue_mutated",
+        "telemetry_exported",
+        "external_calls_performed",
+        "live_source_called"
+      ],
+      "properties": {
+        "master_index_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "local_index_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "public_index_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "source_registry_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "source_cache_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "evidence_ledger_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "result_cache_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "miss_ledger_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "search_need_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "probe_queue_mutated": {
+          "type": "boolean",
+          "const": false
+        },
+        "telemetry_exported": {
+          "type": "boolean",
+          "const": false
+        },
+        "external_calls_performed": {
+          "type": "boolean",
+          "const": false
+        },
+        "live_source_called": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_candidate_index_implemented": false,
+  "x-persistent_candidate_index_implemented": false,
+  "x-candidate_promotion_runtime_implemented": false,
+  "x-public_search_candidate_injection_allowed": false,
+  "x-telemetry_implemented": false,
+  "x-source_cache_runtime_implemented": false,
+  "x-evidence_ledger_runtime_implemented": false,
+  "x-master_index_mutation_allowed": false,
+  "x-external_calls_allowed": false,
+  "x-live_probes_allowed": false
+}

@@ -1,0 +1,222 @@
+{
+  "schema_version": "0.1.0",
+  "candidate_id": "example.candidate_index.object.windows_7_application.v0",
+  "candidate_kind": "candidate_index_record",
+  "status": "review_required",
+  "created_by_tool": "p64_candidate_index_v0_example",
+  "candidate_identity": {
+    "candidate_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "canonical_candidate_label|candidate_type|candidate_subject",
+      "value": "1111111111111111111111111111111111111111111111111111111111111111",
+      "reversible": false,
+      "salt_policy": "unsalted_public_aggregate"
+    },
+    "canonical_candidate_label": "Windows 7 compatible application candidate",
+    "normalized_terms": [
+      "windows",
+      "7",
+      "compatible",
+      "application"
+    ],
+    "alias_terms": [
+      "old windows application candidate"
+    ]
+  },
+  "candidate_type": {
+    "type": "software_version_candidate",
+    "type_family": "object",
+    "allowed_future_destinations": [
+      "candidate_index_only",
+      "master_index_review_queue_future"
+    ]
+  },
+  "candidate_subject": {
+    "subject_kind": "software_version",
+    "product_name": "Windows 7 compatible application",
+    "platform": "Windows 7",
+    "artifact_type": "application",
+    "limitations": [
+      "Synthetic provisional object only; no source artifact is accepted."
+    ]
+  },
+  "candidate_claims": [
+    {
+      "claim_id": "claim.object.describes",
+      "claim_type": "describes",
+      "claim_value": "A provisional old-platform application identity may exist.",
+      "claim_status": "evidence_required",
+      "confidence": "low",
+      "limitations": [
+        "Claim is derived from synthetic search need context only."
+      ]
+    },
+    {
+      "claim_id": "claim.object.platform",
+      "claim_type": "supports_platform",
+      "claim_value": "Windows 7",
+      "claim_status": "review_required",
+      "confidence": "low",
+      "limitations": [
+        "Compatibility support is not accepted."
+      ]
+    }
+  ],
+  "provenance": {
+    "provenance_kind": "query_intelligence",
+    "created_from": "synthetic_search_need_reference",
+    "source_refs": [],
+    "pack_refs": [],
+    "validator_refs": [
+      "scripts/validate_candidate_index_record.py"
+    ],
+    "tool_refs": [
+      "p64_candidate_index_v0_example"
+    ],
+    "limitations": [
+      "No public query log, probe result, or source cache record created this candidate."
+    ]
+  },
+  "input_refs": {
+    "query_observation_refs": [],
+    "search_result_cache_refs": [],
+    "search_miss_ledger_refs": [],
+    "search_need_refs": [
+      {
+        "ref_id": "example.search_need.windows_7_compatible_application.v0",
+        "ref_kind": "search_need",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "limitations": [
+          "Synthetic search need ref only."
+        ]
+      }
+    ],
+    "probe_queue_refs": []
+  },
+  "evidence_refs": [
+    {
+      "evidence_ref": "none.current",
+      "evidence_kind": "object_identity",
+      "evidence_status": "none",
+      "limitations": [
+        "Evidence is required before review can proceed."
+      ]
+    }
+  ],
+  "source_policy": {
+    "source_policy_kind": "no_source_call",
+    "live_source_called": false,
+    "live_probe_enabled": false,
+    "source_terms_review_required": true,
+    "rights_review_required": true,
+    "allowed_source_ids": [],
+    "allowed_source_families": [],
+    "limitations": [
+      "P64 performs no source call."
+    ]
+  },
+  "confidence": {
+    "confidence_class": "low",
+    "confidence_basis": [
+      "insufficient_evidence",
+      "fixture_example"
+    ],
+    "confidence_notes": [
+      "Confidence is a review hint and not accepted truth."
+    ],
+    "confidence_not_truth": true
+  },
+  "review": {
+    "review_status": "evidence_required",
+    "required_reviews": [
+      "human_review",
+      "evidence_review",
+      "rights_review"
+    ],
+    "promotion_allowed_now": false,
+    "promotion_policy_required": true,
+    "reviewer_notes": [
+      "Candidate promotion policy is required before any acceptance path."
+    ]
+  },
+  "conflicts": {
+    "conflict_status": "none_known",
+    "conflicting_candidate_refs": [],
+    "conflicting_source_refs": [],
+    "conflict_summary": "No conflict is known in this synthetic example.",
+    "preservation_policy": "not_applicable"
+  },
+  "visibility": {
+    "visibility_class": "review_required",
+    "public_result_visibility_allowed": false,
+    "public_candidate_visibility_allowed_future": false,
+    "public_label": "Windows 7 compatible application candidate",
+    "redaction_required": false,
+    "limitations": [
+      "Candidate is not current public search authority."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "raw_query_retained": false,
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe candidate with no raw query retained."
+    ]
+  },
+  "rights_and_risk": {
+    "rights_classification": "review_required",
+    "risk_classification": "metadata_only",
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "limitations": [
+      "Metadata-only candidate; no payload is included."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "candidate_record_retention": "example_only",
+    "deletion_supported_future": true,
+    "notes": [
+      "P64 implements no candidate storage runtime."
+    ]
+  },
+  "limitations": [
+    "Synthetic candidate only.",
+    "No master-index, public-index, local-index, source-cache, or evidence-ledger mutation occurred."
+  ],
+  "no_truth_guarantees": {
+    "accepted_as_truth": false,
+    "promoted_to_master_index": false
+  },
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "public_index_mutated": false,
+    "source_registry_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "probe_queue_mutated": false,
+    "telemetry_exported": false,
+    "external_calls_performed": false,
+    "live_source_called": false
+  },
+  "notes": [
+    "Candidate records are provisional review inputs, not authoritative records."
+  ]
+}

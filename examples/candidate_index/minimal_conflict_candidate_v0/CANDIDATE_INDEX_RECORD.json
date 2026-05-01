@@ -1,0 +1,252 @@
+{
+  "schema_version": "0.1.0",
+  "candidate_id": "example.candidate_index.conflict.old_tool_version.v0",
+  "candidate_kind": "candidate_index_record",
+  "status": "quarantined",
+  "created_by_tool": "p64_candidate_index_v0_example",
+  "candidate_identity": {
+    "candidate_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "canonical_candidate_label|candidate_type|conflict_status",
+      "value": "4444444444444444444444444444444444444444444444444444444444444444",
+      "reversible": false,
+      "salt_policy": "unsalted_public_aggregate"
+    },
+    "canonical_candidate_label": "Old utility version conflict candidate",
+    "normalized_terms": [
+      "old",
+      "utility",
+      "version",
+      "conflict"
+    ],
+    "alias_terms": [
+      "duplicate old utility candidate"
+    ],
+    "equivalent_candidate_refs": [
+      "example.candidate_index.object.old_utility_alt.v0"
+    ]
+  },
+  "candidate_type": {
+    "type": "identity_match_candidate",
+    "type_family": "identity",
+    "allowed_future_destinations": [
+      "candidate_index_only",
+      "contribution_pack_candidate",
+      "master_index_review_queue_future"
+    ]
+  },
+  "candidate_subject": {
+    "subject_kind": "software_version",
+    "product_name": "Old utility",
+    "version": "1.x",
+    "platform": "Windows",
+    "artifact_type": "application",
+    "limitations": [
+      "Synthetic conflict candidate only."
+    ]
+  },
+  "candidate_claims": [
+    {
+      "claim_id": "claim.identity.possible_duplicate",
+      "claim_type": "same_as_candidate",
+      "claim_value": "This candidate may duplicate another old utility candidate.",
+      "claim_status": "review_required",
+      "confidence": "low",
+      "limitations": [
+        "Conflict is preserved until review."
+      ]
+    },
+    {
+      "claim_id": "claim.version.variant",
+      "claim_type": "variant_of_candidate",
+      "claim_value": "Version label may represent a variant rather than the same object.",
+      "claim_status": "review_required",
+      "confidence": "low",
+      "limitations": [
+        "No destructive merge is allowed."
+      ]
+    }
+  ],
+  "provenance": {
+    "provenance_kind": "fixture_example",
+    "created_from": "synthetic_conflict_review_reference",
+    "source_refs": [],
+    "pack_refs": [],
+    "validator_refs": [
+      "scripts/validate_candidate_index_record.py"
+    ],
+    "tool_refs": [
+      "p64_candidate_index_v0_example"
+    ],
+    "limitations": [
+      "No contribution pack import or AI output acceptance created this candidate."
+    ]
+  },
+  "input_refs": {
+    "query_observation_refs": [],
+    "search_result_cache_refs": [
+      {
+        "ref_id": "example.search_result_cache.old_utility_variants.v0",
+        "ref_kind": "search_result_cache",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "limitations": [
+          "Synthetic cache ref only."
+        ]
+      }
+    ],
+    "search_miss_ledger_refs": [],
+    "search_need_refs": [
+      {
+        "ref_id": "example.search_need.old_utility_identity.v0",
+        "ref_kind": "search_need",
+        "status": "draft_example",
+        "privacy_classification": "public_safe_aggregate",
+        "limitations": [
+          "Synthetic search need ref only."
+        ]
+      }
+    ],
+    "probe_queue_refs": [],
+    "contribution_pack_refs": [
+      {
+        "ref_id": "future.contribution_pack.identity_candidate.example",
+        "ref_kind": "contribution_pack_future",
+        "status": "future_only",
+        "privacy_classification": "public_safe_aggregate",
+        "limitations": [
+          "Future reference only; no pack was imported."
+        ]
+      }
+    ]
+  },
+  "evidence_refs": [
+    {
+      "evidence_ref": "candidate.identity.conflict.context",
+      "evidence_kind": "identity_context",
+      "evidence_status": "candidate",
+      "limitations": [
+        "Identity context is unreviewed."
+      ]
+    }
+  ],
+  "source_policy": {
+    "source_policy_kind": "fixture_only",
+    "live_source_called": false,
+    "live_probe_enabled": false,
+    "source_terms_review_required": true,
+    "rights_review_required": true,
+    "allowed_source_ids": [],
+    "allowed_source_families": [
+      "synthetic_fixture"
+    ],
+    "limitations": [
+      "No source cache or external source is consulted."
+    ]
+  },
+  "confidence": {
+    "confidence_class": "low",
+    "confidence_basis": [
+      "lexical_match",
+      "fixture_example"
+    ],
+    "confidence_notes": [
+      "Low-confidence conflict hint only."
+    ],
+    "confidence_not_truth": true
+  },
+  "review": {
+    "review_status": "conflict_review_required",
+    "required_reviews": [
+      "human_review",
+      "conflict_review",
+      "evidence_review"
+    ],
+    "promotion_allowed_now": false,
+    "promotion_policy_required": true,
+    "reviewer_notes": [
+      "Conflict must be preserved until later candidate promotion policy exists."
+    ]
+  },
+  "conflicts": {
+    "conflict_status": "possible_duplicate",
+    "conflicting_candidate_refs": [
+      "example.candidate_index.object.old_utility_alt.v0"
+    ],
+    "conflicting_source_refs": [],
+    "conflict_summary": "Possible duplicate or version conflict; no merge is performed.",
+    "preservation_policy": "preserve_conflict"
+  },
+  "visibility": {
+    "visibility_class": "restricted",
+    "public_result_visibility_allowed": false,
+    "public_candidate_visibility_allowed_future": false,
+    "public_label": "Old utility conflict candidate",
+    "redaction_required": false,
+    "limitations": [
+      "Restricted until conflict review completes."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_aggregate",
+    "raw_query_retained": false,
+    "contains_raw_query": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_local_result": false,
+    "publishable": false,
+    "public_aggregate_allowed": false,
+    "reasons": [
+      "Conflict candidate requires review before aggregate use."
+    ]
+  },
+  "rights_and_risk": {
+    "rights_classification": "review_required",
+    "risk_classification": "metadata_only",
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "limitations": [
+      "Conflict review has no payload action."
+    ]
+  },
+  "retention_policy": {
+    "raw_query_retention": "none",
+    "candidate_record_retention": "example_only",
+    "deletion_supported_future": true,
+    "notes": [
+      "P64 implements no candidate retention runtime."
+    ]
+  },
+  "limitations": [
+    "Synthetic conflict candidate only.",
+    "No destructive merge, source-cache mutation, evidence-ledger mutation, or master-index mutation occurred."
+  ],
+  "no_truth_guarantees": {
+    "accepted_as_truth": false,
+    "promoted_to_master_index": false
+  },
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "local_index_mutated": false,
+    "public_index_mutated": false,
+    "source_registry_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "result_cache_mutated": false,
+    "miss_ledger_mutated": false,
+    "search_need_mutated": false,
+    "probe_queue_mutated": false,
+    "telemetry_exported": false,
+    "external_calls_performed": false,
+    "live_source_called": false
+  },
+  "notes": [
+    "Candidate conflicts are preserved until reviewed."
+  ]
+}
