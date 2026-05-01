@@ -1716,3 +1716,33 @@ fetching, private local ingestion, executable payloads, downloads, uploads,
 telemetry, AI runtime, pack import, staging runtime, local/runtime/master-index
 mutation, hosted deployment, or production search-quality claims. The next
 Codex-safe branch is `p56-static-site-search-integration-v0`.
+
+## ADR-136: Keep Static Search Handoff Honest Until Backend Evidence Exists
+
+Status: accepted
+
+Static Site Search Integration v0 adds
+`control/inventory/publication/static_search_config.json`, generated
+`site/dist/search.html`, `site/dist/lite/search.html`,
+`site/dist/text/search.txt`, `site/dist/files/search.README.txt`,
+`site/dist/data/search_config.json`,
+`site/dist/data/public_index_summary.json`,
+`docs/operations/STATIC_SITE_SEARCH_INTEGRATION.md`,
+`scripts/validate_static_site_search_integration.py`, focused tests, generated
+artifact metadata, and `control/audits/static-site-search-integration-v0/`.
+
+The decision is to make the static site a no-JS front door for search without
+claiming hosted search. The default status is `backend_unconfigured`; hosted
+form submission stays disabled; local wrapper instructions and public index
+summary data are visible; and a real backend URL may be enabled only after
+operator evidence records the URL, commit, environment, and route checks.
+
+P56 deliberately does not deploy a backend, call hosting provider APIs,
+configure DNS, hardcode a fake hosted URL, enable live probes, call external
+source APIs, scrape, add source connector runtime, add model calls or AI
+runtime, add credentials, telemetry, accounts, uploads, downloads, installers,
+arbitrary URL fetching, local path access, local/runtime/master-index mutation,
+pack import, staging runtime, or production search-quality claims. The next
+Codex-safe branch is `p57-public-search-safety-evidence-v0`; operator-parallel
+work remains deploying and verifying the hosted wrapper plus static deployment
+evidence capture.

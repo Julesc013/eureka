@@ -21,7 +21,8 @@ the active repo-local static publication artifact, pending GitHub Actions run
 evidence before any hosted deployment-success claim.
 
 `site/dist/data/` contains Generated Public Data Summaries v0: deterministic
-static JSON projections of site, page, source, eval, route, and build state.
+static JSON projections of site, page, source, eval, route, search handoff,
+static search configuration, public index summary, and build state.
 `site/build.py` also emits matching summaries into `site/dist/data/` for
 generated-output validation. These files are not a live API.
 Public Data Contract Stability Review v0 now classifies generated public data
@@ -90,6 +91,11 @@ local/prototype stdlib wrapper over the gateway public search API. It is
 static-only, and the wrapper does not enable live probes, downloads, uploads,
 accounts, telemetry, arbitrary URL fetch, source connectors, AI runtime, index
 mutation, pack import, or staging runtime.
+
+Static Site Search Integration v0 now publishes the static search front door,
+`data/search_config.json`, and `data/public_index_summary.json`. The default
+backend status is `backend_unconfigured`, hosted form submission is disabled,
+and no hosted backend URL is exposed without operator evidence.
 
 Public Search Result Card Contract v0 adds
 `contracts/api/search_result_card.v0.json`, fixture-safe examples,
@@ -272,7 +278,10 @@ local-index-only search envelopes and Local Public Search Runtime v0 implements
 local/prototype routes without hosted deployment. Public Search Static Handoff
 v0 now publishes static/no-JS `search.html`, lite/text/files handoff outputs,
 and `data/search_handoff.json` without making GitHub Pages dynamic or claiming
-hosted search. Public Search Safety / Abuse Guard v0 defines the safety and
+hosted search. Static Site Search Integration v0 extends that static handoff
+with `data/search_config.json` and `data/public_index_summary.json`, again
+without making GitHub Pages dynamic or claiming hosted search. Public Search
+Safety / Abuse Guard v0 defines the safety and
 abuse policy around those surfaces. Public Search Production Contract v0 now
 freezes the future P54 wrapper route, error, safety, source-status, evidence,
 absence, status, and versioning requirements while still adding no hosted

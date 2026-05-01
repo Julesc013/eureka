@@ -79,3 +79,8 @@ plus committed fixture/recorded metadata only, and it does not authorize
 request-selected index paths, live source fanout, private local ingestion,
 pack import, staging runtime, master-index mutation, or hosted deployment
 claims.
+
+P56 adds the static handoff layer for this contract. Static pages publish
+`search_config.json` and `public_index_summary.json` with backend status
+`backend_unconfigured`; the hosted search form stays disabled until a later
+operator evidence pack records a verified backend URL.

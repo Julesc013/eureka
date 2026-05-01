@@ -258,6 +258,13 @@ store root, local path, URL, live source, or credential. Missing or stale index
 artifacts are build/validation problems, not permission to fan out to live
 sources.
 
+Static Site Search Integration v0 publishes
+`site/dist/data/search_config.json` and
+`site/dist/data/public_index_summary.json` so the static site can describe the
+search path honestly. The default backend status is `backend_unconfigured`,
+hosted form submission remains disabled, and no hosted URL may be surfaced
+until operator evidence verifies it.
+
 ## Out Of Scope
 
 This contract and local runtime do not implement hosted backend deployment,

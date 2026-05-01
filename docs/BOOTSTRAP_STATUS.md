@@ -845,6 +845,16 @@ pack import, staging runtime, master-index mutation, hosted deployment, or
 production search-quality claim. The next Codex-safe branch is
 `p56-static-site-search-integration-v0`.
 
+Static Site Search Integration v0 is recorded under
+`control/audits/static-site-search-integration-v0/`. It adds generated static
+search handoff configuration and public-index summary data, keeps
+`site/dist/search.html` plus lite/text/files search surfaces no-JS compatible,
+and leaves the hosted backend `backend_unconfigured` because no verified
+backend URL exists. It adds no hosted deployment, live probes, downloads,
+uploads, accounts, telemetry, arbitrary URL fetching, AI runtime, index
+mutation, pack import, staging runtime, or production search-quality claim. The
+next Codex-safe branch is `p57-public-search-safety-evidence-v0`.
+
 ## Deferred Priorities
 
 These are intentionally not the next milestone:

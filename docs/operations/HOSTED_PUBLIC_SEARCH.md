@@ -43,6 +43,11 @@ python scripts/build_public_search_index.py --check
 python scripts/validate_public_search_index.py
 ```
 
+P56 adds static search integration for the publication site. The static site
+now publishes `data/search_config.json` and
+`data/public_index_summary.json`, but the hosted backend remains unconfigured
+and no verified backend URL is written into `site/dist`.
+
 ## Safety Posture
 
 The wrapper is read-only and keeps these disabled:

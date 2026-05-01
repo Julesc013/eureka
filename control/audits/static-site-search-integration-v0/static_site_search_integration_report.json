@@ -1,0 +1,317 @@
+{
+  "report_id": "static_site_search_integration_v0",
+  "created_by_slice": "p56_static_site_search_integration_v0",
+  "repo_head": "e9bfbf0b41966c56f02311fc9448e6182cc95770",
+  "branch": "main",
+  "worktree_status": "dirty during P56 edits; final status recorded in final response",
+  "backend_status": "backend_unconfigured",
+  "hosted_backend_url": null,
+  "hosted_backend_verified": false,
+  "search_form_enabled": false,
+  "static_pages": [
+    "site/dist/search.html"
+  ],
+  "lite_text_files_surfaces": [
+    "site/dist/lite/search.html",
+    "site/dist/text/search.txt",
+    "site/dist/files/search.README.txt"
+  ],
+  "public_data_files": [
+    "site/dist/data/search_config.json",
+    "site/dist/data/public_index_summary.json"
+  ],
+  "public_index_summary": {
+    "artifact_root": "data/public_index",
+    "document_count": 584,
+    "source_count": 15,
+    "contains_live_data": false,
+    "contains_private_data": false,
+    "contains_executables": false
+  },
+  "no_js_required": true,
+  "base_path_safe": true,
+  "live_probes_enabled": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "local_paths_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "production_claimed": false,
+  "dynamic_backend_deployed_by_this_milestone": false,
+  "command_results": [
+    {
+      "command": "git status --short --branch",
+      "status": "pass",
+      "notes": "Initial P56 checkout was main...origin/main; final pre-commit status had expected P56 edits."
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "status": "pass",
+      "notes": "Initial P56 head e9bfbf0b41966c56f02311fc9448e6182cc95770."
+    },
+    {
+      "command": "git rev-parse origin/main",
+      "status": "pass",
+      "notes": "origin/main matched the initial head."
+    },
+    {
+      "command": "git log --oneline -n 50",
+      "status": "pass",
+      "notes": "P50 through P55 commits were present."
+    },
+    {
+      "command": "python site/build.py --json",
+      "status": "pass",
+      "notes": "Generated P56 search config, public index summary, and static search surfaces."
+    },
+    {
+      "command": "python scripts/generate_public_data_summaries.py --check",
+      "status": "pass",
+      "notes": "Public data summaries matched generated outputs."
+    },
+    {
+      "command": "python scripts/generate_compatibility_surfaces.py --check",
+      "status": "pass",
+      "notes": "Lite/text/files surfaces matched generated outputs."
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "pass",
+      "notes": "Static site validation passed."
+    },
+    {
+      "command": "python site/validate.py --json",
+      "status": "pass",
+      "notes": "Static site JSON validation passed."
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "pass",
+      "notes": "Public static site validation passed."
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "pass",
+      "notes": "Publication inventory validation passed with 51 routes and 14 required public data paths."
+    },
+    {
+      "command": "python scripts/validate_public_data_stability.py",
+      "status": "pass",
+      "notes": "Public data stability validation passed after adding search_config and public_index_summary."
+    },
+    {
+      "command": "python scripts/validate_static_site_search_integration.py",
+      "status": "pass",
+      "notes": "P56 validator passed."
+    },
+    {
+      "command": "python scripts/validate_static_site_search_integration.py --json",
+      "status": "pass",
+      "notes": "P56 validator JSON passed; document_count=584; backend_unconfigured; search_form_enabled=false."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py --artifact static_search_integration",
+      "status": "pass",
+      "notes": "Static search integration drift guard passed."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "pass",
+      "notes": "Full drift guard passed after regenerating the static snapshot example for new public data/page registry metadata."
+    },
+    {
+      "command": "python scripts/generate_static_snapshot.py --update --json",
+      "status": "pass",
+      "notes": "Repaired bounded generated snapshot drift caused by new static search data/page registry entries."
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --check",
+      "status": "pass",
+      "notes": "Public search index check passed; document_count=584; fallback enabled."
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py",
+      "status": "pass",
+      "notes": "Public search index validation passed; no private paths detected."
+    },
+    {
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "status": "pass",
+      "notes": "P55 index builder validator passed."
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "pass",
+      "notes": "Hosted wrapper safe defaults passed; local_index_only and hard safety flags false."
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "pass",
+      "notes": "Hosted wrapper local rehearsal passed 14/14 checks."
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "pass",
+      "notes": "Hosted wrapper validator passed; backend deployed/verified false."
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "pass",
+      "notes": "P53 public search production contract validator passed."
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "pass",
+      "notes": "P52 static deployment evidence validator passed; deployment_verified false."
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "pass",
+      "notes": "P51 remediation validator passed."
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "pass",
+      "notes": "P50 platform audit validator passed."
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "pass",
+      "notes": "Public search contract validator passed."
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "pass",
+      "notes": "Public result card contract validator passed."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "pass",
+      "notes": "Public search safety validator passed; max query length 160; telemetry default off."
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "pass",
+      "notes": "Local public search runtime validator passed; local_index_only; hosted deployment false."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "pass",
+      "notes": "Public search smoke passed 30/30 checks."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "pass",
+      "notes": "Public search smoke JSON passed; safe queries 9; blocked requests 14."
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "pass",
+      "notes": "GitHub Pages static artifact check passed locally for site/dist."
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "pass",
+      "notes": "Public alpha smoke passed 18/18 checks."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "pass",
+      "notes": "Archive resolution evals passed: satisfied=6."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "pass",
+      "notes": "Archive resolution eval JSON passed: satisfied=6."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "pass",
+      "notes": "Search usefulness audit passed: covered=5, partial=40, source_gap=10, capability_gap=7, unknown=2."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "pass",
+      "notes": "Search usefulness audit JSON passed with the same status counts."
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "pass",
+      "notes": "External baseline status valid: 192 pending, 0 observed; batch_0 39 pending, 0 observed."
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "pass",
+      "notes": "Python oracle golden check passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "pass",
+      "notes": "Ran 241 tests; OK."
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "pass",
+      "notes": "Ran 425 tests; OK."
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "pass",
+      "notes": "Ran 53 tests; OK."
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "pass",
+      "notes": "Ran 25 tests; OK."
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "pass",
+      "notes": "Ran 320 tests; OK."
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "pass",
+      "notes": "Ran 168 tests; OK."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "notes": "Ran 835 tests; OK."
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "notes": "Checked 446 Python files; no boundary violations."
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass",
+      "notes": "No whitespace errors; Git reported line-ending conversion warnings only."
+    },
+    {
+      "command": "cargo --version",
+      "status": "unavailable",
+      "notes": "Optional Rust toolchain check unavailable: cargo command not found."
+    }
+  ],
+  "generated_artifact_status": {
+    "static_search_integration": "passed",
+    "static_snapshot_example": "regenerated_after_p56_publication_metadata_change",
+    "manual_edits_allowed": false,
+    "check_command": "python scripts/check_generated_artifact_drift.py --artifact static_search_integration",
+    "full_drift_guard": "passed"
+  },
+  "remaining_blockers": [
+    "Hosted public search backend is not deployed or verified.",
+    "Backend URL remains unconfigured until operator evidence exists.",
+    "GitHub Pages deployment evidence remains operator-gated/unverified unless later evidence proves otherwise.",
+    "External baselines remain manual pending.",
+    "Query intelligence and miss-ledger work remain future."
+  ],
+  "next_recommended_branch": "P57 Public Search Safety Evidence v0",
+  "notes": [
+    "P56 is static publication integration only.",
+    "No hosted backend, live probe, source connector, AI runtime, download/upload/account, index mutation, pack import, staging runtime, or production-readiness behavior was added.",
+    "The static site exposes public index summary metadata, not dynamic search execution."
+  ]
+}

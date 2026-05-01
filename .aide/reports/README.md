@@ -242,3 +242,12 @@ local_index_only index generation only and does not add live source calls,
 private local ingestion, executable payloads, downloads, uploads, arbitrary URL
 fetching, AI runtime, pack import, staging runtime, master-index mutation, or
 hosted deployment evidence.
+
+Static Site Search Integration v0 records its committed audit pack under
+`control/audits/static-site-search-integration-v0/`, plus generated no-JS
+search surfaces, `data/search_config.json`, `data/public_index_summary.json`,
+docs, validator, generated-artifact metadata, and tests. No separate AIDE
+runtime report is needed; this is static publication integration only and does
+not deploy a backend, configure a verified URL, enable live probes, add
+downloads/uploads/accounts/telemetry, fetch arbitrary URLs, mutate indexes,
+import packs, stage packs, or claim production search quality.

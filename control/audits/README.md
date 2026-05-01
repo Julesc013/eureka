@@ -296,6 +296,14 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   payloads, downloads, uploads, AI runtime, pack import, staging runtime,
   master-index mutation, hosted deployment, or production search-quality
   claims.
+- `static-site-search-integration-v0/`: P56 static search integration
+  checkpoint. It records generated `site/dist/search.html`, lite/text/files
+  search surfaces, `data/search_config.json`, `data/public_index_summary.json`,
+  backend-unconfigured status, no-JS/base-path posture, public claim review,
+  generated artifact ownership, validation evidence, and next steps without
+  hosted deployment, fake backend URLs, live probes, downloads, uploads,
+  accounts, telemetry, arbitrary URL fetching, index mutation, pack import,
+  staging runtime, AI runtime, or production search-quality claims.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

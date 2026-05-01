@@ -604,3 +604,13 @@ committed runtime requirement. Live probes, external source calls, private path
 ingestion, executable payloads, downloads, uploads, telemetry, AI runtime,
 pack import, staging runtime, and master-index mutation remain absent. The
 next backend-facing branch is `p56-static-site-search-integration-v0`.
+
+Static Site Search Integration v0 records the P56 checkpoint under
+`control/audits/static-site-search-integration-v0/`. It connects the static
+publication plane to public search through generated search pages,
+lite/text/files projections, `data/search_config.json`, and
+`data/public_index_summary.json` while preserving `backend_unconfigured` as the
+default. It does not deploy the P54 wrapper, configure DNS, hardcode a backend
+URL, enable live probes, or mutate indexes. The next Codex-safe branch is
+`p57-public-search-safety-evidence-v0`; operator work remains backend
+deployment, backend URL verification, and static deployment evidence capture.

@@ -15,6 +15,9 @@ accounts, and no telemetry by default.
 - `scripts/run_hosted_public_search.py` is the backend wrapper entrypoint.
 - `data/public_index` is the generated public-safe search index bundle used by
   the wrapper and local public-search runtime.
+- `site/dist/data/search_config.json` records static search handoff status.
+- `site/dist/data/public_index_summary.json` records the static summary of the
+  generated public index.
 - Static pages may hand off to a configured backend only after a later evidence
   pack records the deployed URL and commit.
 - The static site must not hardcode localhost as a public backend URL.
@@ -41,6 +44,7 @@ accounts, and no telemetry by default.
     route evidence in a later audit pack.
 
 These steps are instructions only. They have not been performed by P54 or P55.
+P56 also does not perform them; it keeps static backend status unconfigured.
 
 ## Deployment Templates
 

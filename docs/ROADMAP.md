@@ -713,3 +713,12 @@ the committed artifact; the runtime remains deterministic lexical
 local_index_only search. The next Codex-safe branch is
 `p56-static-site-search-integration-v0`; hosted deployment evidence remains
 operator-gated.
+
+Static Site Search Integration v0 records the P56 checkpoint under
+`control/audits/static-site-search-integration-v0/`. It wires the static
+publication site to the public search path through generated no-JS search
+surfaces, `data/search_config.json`, and `data/public_index_summary.json`
+while keeping hosted backend status `backend_unconfigured` and hosted form
+submission disabled until operator evidence exists. The next Codex-safe branch
+is `p57-public-search-safety-evidence-v0`; hosted deployment and backend URL
+verification remain operator-gated.

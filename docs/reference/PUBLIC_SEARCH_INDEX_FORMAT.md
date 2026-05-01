@@ -39,6 +39,10 @@ The index must not include absolute local paths, credentials, executable
 payloads, private cache roots, raw user uploads, live API responses, or raw
 copyrighted payload dumps.
 
+P56 exposes a static summary of this bundle at
+`site/dist/data/public_index_summary.json`. That summary is publication data,
+not dynamic search execution and not a hosted backend claim.
+
 ## Runtime Contract
 
 Public search may load this bundle from the repository-owned
