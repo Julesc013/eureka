@@ -246,7 +246,13 @@
         "demand_dashboard_contract_validator",
         "demand_dashboard_contract_validator_json",
         "demand_dashboard_dry_run_json",
-        "demand_dashboard_contract_tests"
+        "demand_dashboard_contract_tests",
+        "source_sync_worker_job_examples_validator",
+        "source_sync_worker_job_examples_validator_json",
+        "source_sync_worker_contract_validator",
+        "source_sync_worker_contract_validator_json",
+        "source_sync_worker_dry_run_json",
+        "source_sync_worker_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -506,7 +512,13 @@
         "demand_dashboard_contract_validator",
         "demand_dashboard_contract_validator_json",
         "demand_dashboard_dry_run_json",
-        "demand_dashboard_contract_tests"
+        "demand_dashboard_contract_tests",
+        "source_sync_worker_job_examples_validator",
+        "source_sync_worker_job_examples_validator_json",
+        "source_sync_worker_contract_validator",
+        "source_sync_worker_contract_validator_json",
+        "source_sync_worker_dry_run_json",
+        "source_sync_worker_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -692,7 +704,13 @@
         "demand_dashboard_contract_validator",
         "demand_dashboard_contract_validator_json",
         "demand_dashboard_dry_run_json",
-        "demand_dashboard_contract_tests"
+        "demand_dashboard_contract_tests",
+        "source_sync_worker_job_examples_validator",
+        "source_sync_worker_job_examples_validator_json",
+        "source_sync_worker_contract_validator",
+        "source_sync_worker_contract_validator_json",
+        "source_sync_worker_dry_run_json",
+        "source_sync_worker_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -1046,7 +1064,13 @@
         "demand_dashboard_contract_validator",
         "demand_dashboard_contract_validator_json",
         "demand_dashboard_dry_run_json",
-        "demand_dashboard_contract_tests"
+        "demand_dashboard_contract_tests",
+        "source_sync_worker_job_examples_validator",
+        "source_sync_worker_job_examples_validator_json",
+        "source_sync_worker_contract_validator",
+        "source_sync_worker_contract_validator_json",
+        "source_sync_worker_dry_run_json",
+        "source_sync_worker_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",

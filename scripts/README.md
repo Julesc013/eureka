@@ -692,3 +692,7 @@ P67 adds `validate_query_guard_decision.py`, `validate_query_privacy_poisoning_g
 ## Demand Dashboard v0 Validators
 
 P68 adds `validate_demand_dashboard_snapshot.py`, `validate_demand_dashboard_contract.py`, and `dry_run_demand_dashboard_snapshot.py`. Commands: `python scripts/validate_demand_dashboard_snapshot.py --all-examples`, `python scripts/validate_demand_dashboard_snapshot.py --all-examples --json`, `python scripts/validate_demand_dashboard_contract.py`, `python scripts/validate_demand_dashboard_contract.py --json`, and `python scripts/dry_run_demand_dashboard_snapshot.py --json`. They are stdlib-only and write no dashboard store, telemetry, account/IP tracking, query logs, query-intelligence records, indexes, external calls, or live probes.
+
+## Source Sync Worker v0 Validators
+
+P69 adds `validate_source_sync_worker_job.py`, `validate_source_sync_worker_contract.py`, and `dry_run_source_sync_worker_job.py`. Commands: `python scripts/validate_source_sync_worker_job.py --all-examples`, `python scripts/validate_source_sync_worker_job.py --all-examples --json`, `python scripts/validate_source_sync_worker_contract.py`, `python scripts/validate_source_sync_worker_contract.py --json`, and `python scripts/dry_run_source_sync_worker_job.py --label "IA metadata sync example" --kind internet_archive_metadata_sync --source-family internet_archive --json`. They are stdlib-only and write no worker queue, telemetry, credentials, source cache, evidence ledger, candidate index, public/local/master indexes, external calls, or live probes.

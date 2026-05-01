@@ -721,6 +721,14 @@
       "status": "addressed",
       "addressed_by": "control/audits/demand-dashboard-v0/demand_dashboard_report.json",
       "notes": "Contract-only synthetic demand dashboard pack; no telemetry, account/IP tracking, real demand claims, or runtime aggregation."
+    },
+    {
+      "id": "audit-backlog-source-sync-worker-contract-v0",
+      "title": "P69 Source Sync Worker Contract v0 audit pack",
+      "status": "addressed",
+      "priority": 0,
+      "notes": "Addressed by control/audits/source-sync-worker-contract-v0/source_sync_worker_contract_report.json.",
+      "addressed_by": "control/audits/source-sync-worker-contract-v0/source_sync_worker_contract_report.json"
     }
   ]
 }

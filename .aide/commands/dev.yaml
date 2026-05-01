@@ -1016,3 +1016,15 @@ notes:
     run: python scripts/dry_run_demand_dashboard_snapshot.py --json
   - id: demand_dashboard_contract_tests
     run: python -m unittest tests.operations.test_demand_dashboard_contract tests.scripts.test_validate_demand_dashboard_snapshot tests.scripts.test_validate_demand_dashboard_contract tests.scripts.test_dry_run_demand_dashboard_snapshot
+  - id: source_sync_worker_job_examples_validator
+    run: python scripts/validate_source_sync_worker_job.py --all-examples
+  - id: source_sync_worker_job_examples_validator_json
+    run: python scripts/validate_source_sync_worker_job.py --all-examples --json
+  - id: source_sync_worker_contract_validator
+    run: python scripts/validate_source_sync_worker_contract.py
+  - id: source_sync_worker_contract_validator_json
+    run: python scripts/validate_source_sync_worker_contract.py --json
+  - id: source_sync_worker_dry_run_json
+    run: python scripts/dry_run_source_sync_worker_job.py --label "IA metadata sync example" --kind internet_archive_metadata_sync --source-family internet_archive --json
+  - id: source_sync_worker_contract_tests
+    run: python -m unittest tests.operations.test_source_sync_worker_contract tests.scripts.test_validate_source_sync_worker_job tests.scripts.test_validate_source_sync_worker_contract tests.scripts.test_dry_run_source_sync_worker_job

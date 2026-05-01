@@ -5744,6 +5744,138 @@
       "failure_means": "Focused P68 schema, examples, validators, dry-run, docs, privacy, poisoning, aggregate, or no-mutation tests regressed.",
       "advisory_or_required": "required",
       "notes": "P68 demand dashboard contract validation; no telemetry, persistence, account/IP tracking, real demand claims, external calls, live probes, or index mutation."
+    },
+    {
+      "test_id": "source_sync_worker_job_examples_validator",
+      "label": "Source sync worker job examples validator",
+      "command": "python scripts/validate_source_sync_worker_job.py --all-examples",
+      "category": "source_sync_contract",
+      "owner_area": "contracts/source_sync",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P69 source sync worker examples failed validation.",
+      "advisory_or_required": "required",
+      "notes": "P69 source sync worker contract validation; no runtime worker, persistence, credentials, telemetry, external calls, live probes, source cache/evidence ledger mutation, or index mutation."
+    },
+    {
+      "test_id": "source_sync_worker_job_examples_validator_json",
+      "label": "Source sync worker job examples validator JSON",
+      "command": "python scripts/validate_source_sync_worker_job.py --all-examples --json",
+      "category": "source_sync_contract",
+      "owner_area": "contracts/source_sync",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P69 job validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "P69 source sync worker contract validation; no runtime worker, persistence, credentials, telemetry, external calls, live probes, source cache/evidence ledger mutation, or index mutation."
+    },
+    {
+      "test_id": "source_sync_worker_contract_validator",
+      "label": "Source sync worker contract validator",
+      "command": "python scripts/validate_source_sync_worker_contract.py",
+      "category": "source_sync_contract",
+      "owner_area": "contracts/source_sync",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P69 contract, manifest, docs, policy, audit pack, or examples drifted.",
+      "advisory_or_required": "required",
+      "notes": "P69 source sync worker contract validation; no runtime worker, persistence, credentials, telemetry, external calls, live probes, source cache/evidence ledger mutation, or index mutation."
+    },
+    {
+      "test_id": "source_sync_worker_contract_validator_json",
+      "label": "Source sync worker contract validator JSON",
+      "command": "python scripts/validate_source_sync_worker_contract.py --json",
+      "category": "source_sync_contract",
+      "owner_area": "contracts/source_sync",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P69 contract validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "P69 source sync worker contract validation; no runtime worker, persistence, credentials, telemetry, external calls, live probes, source cache/evidence ledger mutation, or index mutation."
+    },
+    {
+      "test_id": "source_sync_worker_dry_run_json",
+      "label": "Source sync worker dry-run JSON helper",
+      "command": "python scripts/dry_run_source_sync_worker_job.py --label \"IA metadata sync example\" --kind internet_archive_metadata_sync --source-family internet_archive --json",
+      "category": "source_sync_contract",
+      "owner_area": "contracts/source_sync",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "sub-second",
+      "failure_means": "P69 dry-run helper failed or stopped emitting safe stdout-only job output.",
+      "advisory_or_required": "required",
+      "notes": "P69 source sync worker contract validation; no runtime worker, persistence, credentials, telemetry, external calls, live probes, source cache/evidence ledger mutation, or index mutation."
+    },
+    {
+      "test_id": "source_sync_worker_contract_tests",
+      "label": "Source sync worker contract tests",
+      "command": "python -m unittest tests.operations.test_source_sync_worker_contract tests.scripts.test_validate_source_sync_worker_job tests.scripts.test_validate_source_sync_worker_contract tests.scripts.test_dry_run_source_sync_worker_job",
+      "category": "source_sync_contract",
+      "owner_area": "contracts/source_sync",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P69 schema, examples, validators, dry-run, docs, policy, approval, or no-mutation tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "P69 source sync worker contract validation; no runtime worker, persistence, credentials, telemetry, external calls, live probes, source cache/evidence ledger mutation, or index mutation."
     }
   ],
   "notes": [
