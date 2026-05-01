@@ -737,6 +737,14 @@
       "priority": 0,
       "notes": "Addressed by control/audits/source-cache-evidence-ledger-v0/source_cache_evidence_ledger_report.json.",
       "addressed_by": "control/audits/source-cache-evidence-ledger-v0/source_cache_evidence_ledger_report.json"
+    },
+    {
+      "id": "audit-backlog-internet-archive-metadata-connector-approval-v0",
+      "title": "P71 Internet Archive Metadata Connector Approval Pack v0 audit pack",
+      "status": "addressed",
+      "priority": 0,
+      "notes": "Addressed by control/audits/internet-archive-metadata-connector-approval-v0/internet_archive_metadata_connector_approval_report.json.",
+      "addressed_by": "control/audits/internet-archive-metadata-connector-approval-v0/internet_archive_metadata_connector_approval_report.json"
     }
   ]
 }

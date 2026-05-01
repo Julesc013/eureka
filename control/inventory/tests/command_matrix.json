@@ -265,7 +265,13 @@
         "source_cache_evidence_ledger_contract_validator_json",
         "source_cache_dry_run_json",
         "evidence_ledger_dry_run_json",
-        "source_cache_evidence_ledger_contract_tests"
+        "source_cache_evidence_ledger_contract_tests",
+        "ia_metadata_connector_approval_examples_validator",
+        "ia_metadata_connector_approval_examples_validator_json",
+        "ia_metadata_connector_contract_validator",
+        "ia_metadata_connector_contract_validator_json",
+        "ia_metadata_connector_dry_run_json",
+        "ia_metadata_connector_approval_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -544,7 +550,13 @@
         "source_cache_evidence_ledger_contract_validator_json",
         "source_cache_dry_run_json",
         "evidence_ledger_dry_run_json",
-        "source_cache_evidence_ledger_contract_tests"
+        "source_cache_evidence_ledger_contract_tests",
+        "ia_metadata_connector_approval_examples_validator",
+        "ia_metadata_connector_approval_examples_validator_json",
+        "ia_metadata_connector_contract_validator",
+        "ia_metadata_connector_contract_validator_json",
+        "ia_metadata_connector_dry_run_json",
+        "ia_metadata_connector_approval_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1187,6 +1199,7 @@
     "P64 Candidate Index v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index/master-index mutation.",
     "P65 Candidate Promotion Policy v0 validation is stdlib-only contract/example governance; it adds no promotion runtime, automatic acceptance, review queue runtime, candidate/source/evidence/index mutation, telemetry, external calls, or live probes.",
     "P66 Known Absence Page v0 validation is stdlib-only contract/example governance; it adds no runtime pages, telemetry, persistent query logging, global absence claims, live probes, downloads, uploads, installs, source-cache mutation, evidence-ledger mutation, candidate mutation, external calls, or index/master-index mutation.",
-    "P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only contract/example governance; it adds no runtime guard, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation."
+    "P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only contract/example governance; it adds no runtime guard, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation.",
+    "P71 Internet Archive Metadata Connector Approval Pack v0 commands are approval-only and perform no IA calls, downloads, connector runtime, cache/ledger mutation, or public-query fanout."
   ]
 }

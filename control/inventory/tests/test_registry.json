@@ -6136,9 +6136,130 @@
       "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
       "advisory_or_required": "required",
       "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "ia_metadata_connector_approval_examples_validator",
+      "label": "Ia Metadata Connector Approval Examples Validator",
+      "command": "python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P71 Internet Archive metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P71 approval-only validation; no IA calls, connector runtime, telemetry, credentials, downloads, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "ia_metadata_connector_approval_examples_validator_json",
+      "label": "Ia Metadata Connector Approval Examples Validator Json",
+      "command": "python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P71 Internet Archive metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P71 approval-only validation; no IA calls, connector runtime, telemetry, credentials, downloads, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "ia_metadata_connector_contract_validator",
+      "label": "Ia Metadata Connector Contract Validator",
+      "command": "python scripts/validate_internet_archive_metadata_connector_contract.py",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P71 Internet Archive metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P71 approval-only validation; no IA calls, connector runtime, telemetry, credentials, downloads, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "ia_metadata_connector_contract_validator_json",
+      "label": "Ia Metadata Connector Contract Validator Json",
+      "command": "python scripts/validate_internet_archive_metadata_connector_contract.py --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P71 Internet Archive metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P71 approval-only validation; no IA calls, connector runtime, telemetry, credentials, downloads, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "ia_metadata_connector_dry_run_json",
+      "label": "Ia Metadata Connector Dry Run Json",
+      "command": "python scripts/dry_run_internet_archive_metadata_connector_approval.py --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P71 Internet Archive metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P71 approval-only validation; no IA calls, connector runtime, telemetry, credentials, downloads, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "ia_metadata_connector_approval_tests",
+      "label": "Ia Metadata Connector Approval Tests",
+      "command": "python -m unittest tests.operations.test_internet_archive_metadata_connector_approval tests.scripts.test_validate_internet_archive_metadata_connector_approval tests.scripts.test_validate_internet_archive_metadata_connector_contract tests.scripts.test_dry_run_internet_archive_metadata_connector_approval",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P71 Internet Archive metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P71 approval-only validation; no IA calls, connector runtime, telemetry, credentials, downloads, cache/ledger runtime, or index mutation."
     }
   ],
   "notes": [
-    "P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only contract/example governance; it adds no runtime guard, persistence, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation."
+    "P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only contract/example governance; it adds no runtime guard, persistence, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation.",
+    "P71 Internet Archive Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no connector runtime, external calls, IA live access, downloads, source cache/evidence ledger mutation, or public-query fanout."
   ]
 }

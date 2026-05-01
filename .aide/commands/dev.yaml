@@ -1054,3 +1054,18 @@ notes:
     run: python scripts/dry_run_evidence_ledger_record.py --label "Windows XP compatibility evidence example" --evidence-kind compatibility_observation --json
   - id: source_cache_evidence_ledger_contract_tests
     run: python -m unittest tests.operations.test_source_cache_evidence_ledger_contract tests.scripts.test_validate_source_cache_record tests.scripts.test_validate_source_cache_contract tests.scripts.test_validate_evidence_ledger_record tests.scripts.test_validate_evidence_ledger_contract tests.scripts.test_validate_source_cache_evidence_ledger_contract tests.scripts.test_dry_run_source_cache_record tests.scripts.test_dry_run_evidence_ledger_record
+
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-START -->
+  - id: ia_metadata_connector_approval_examples_validator
+    run: python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples
+  - id: ia_metadata_connector_approval_examples_validator_json
+    run: python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples --json
+  - id: ia_metadata_connector_contract_validator
+    run: python scripts/validate_internet_archive_metadata_connector_contract.py
+  - id: ia_metadata_connector_contract_validator_json
+    run: python scripts/validate_internet_archive_metadata_connector_contract.py --json
+  - id: ia_metadata_connector_dry_run_json
+    run: python scripts/dry_run_internet_archive_metadata_connector_approval.py --json
+  - id: ia_metadata_connector_approval_tests
+    run: python -m unittest tests.operations.test_internet_archive_metadata_connector_approval tests.scripts.test_validate_internet_archive_metadata_connector_approval tests.scripts.test_validate_internet_archive_metadata_connector_contract tests.scripts.test_dry_run_internet_archive_metadata_connector_approval
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->
