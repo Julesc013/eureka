@@ -51,3 +51,9 @@ P57 expands public search safety evidence and checks this static handoff stays
 honest: backend unconfigured by default, no fake hosted URL, no live probes,
 and no downloads/uploads/local paths/arbitrary URL fetch. P58 may rehearse
 hosted search only after an operator-hosted wrapper URL and evidence exist.
+## P58 Hosted Rehearsal Compatibility
+
+P58 checks that the static search handoff remains backend-unconfigured while
+the hosted wrapper is rehearsed locally. `search_config.json` still has no
+verified hosted backend URL, and static form submission remains disabled until
+operator deployment evidence exists.

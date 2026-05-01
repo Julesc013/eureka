@@ -732,3 +732,10 @@ no hosted deployment, live probes, downloads, uploads, installs, accounts,
 telemetry, arbitrary URL fetching, AI runtime, index mutation, or production
 claim. The next Codex-safe branch is
 `p58-hosted-public-search-rehearsal-v0`.
+## P58 Hosted Public Search Rehearsal v0
+
+P58 completes the local hosted-mode rehearsal for the public search wrapper
+without deploying it. The next Codex-safe branch is P59 Query Observation
+Contract v0; operator parallel work remains hosted deployment evidence, backend
+URL configuration after evidence, edge/rate limits, static-site verification,
+and Manual Observation Batch 0.

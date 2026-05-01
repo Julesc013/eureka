@@ -61,3 +61,10 @@ do not call any hosting provider API.
 - rollback evidence
 - static-to-dynamic backend URL configuration
 - hosted rehearsal evidence
+## P58 Local Hosted Rehearsal
+
+P58 adds `scripts/run_hosted_public_search_rehearsal.py`, which starts the
+hosted wrapper on `127.0.0.1` with safe hosted settings and checks the public
+route surface over local HTTP. This is still no deployment evidence: backend
+hosting, DNS/TLS, provider setup, edge rate limits, and hosted URL verification
+remain operator-gated.

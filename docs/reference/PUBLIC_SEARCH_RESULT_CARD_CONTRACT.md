@@ -270,3 +270,8 @@ queries, arbitrary URL fetch, crawling, downloads, installers, uploads,
 accounts, telemetry, native clients, relay runtime, snapshot reader runtime,
 TLS, auth, rate limiting, process management, custom domains, production API
 stability, or production readiness.
+## P58 Rehearsal Alignment
+
+P58 safe-query checks verify that local hosted search responses still expose
+result-card safety shape, including source, evidence, compatibility, warnings,
+limitations, and blocked dangerous actions.

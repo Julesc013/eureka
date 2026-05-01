@@ -89,3 +89,8 @@ P57 adds local safety evidence for this contract. The evidence runner verifies
 safe query behavior, blocked dangerous request parameters, limit behavior,
 status honesty, static handoff safety, public index safety, and hosted-wrapper
 local rehearsal without deploying a backend or claiming production readiness.
+## P58 Rehearsal Evidence
+
+P58 exercises the production-facing public route contract through a local
+hosted wrapper process. The evidence remains local-only and does not convert
+the contract into hosted deployment or production readiness.

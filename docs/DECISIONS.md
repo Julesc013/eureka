@@ -1771,3 +1771,18 @@ local path access, local/runtime/master-index mutation, pack import, staging
 runtime, edge rate-limit claims, hosted availability claims, or production
 safety claims. The next Codex-safe branch is
 `p58-hosted-public-search-rehearsal-v0`.
+## ADR-138: Hosted Public Search Rehearsal Is Local Evidence Only
+
+Date: 2026-05-02
+
+Decision: P58 may start `scripts/run_hosted_public_search.py` on localhost and
+exercise public search routes over HTTP, but it must not claim hosted
+deployment, production readiness, edge rate limits, or a public backend URL.
+
+Rationale: local hosted-mode rehearsal is useful evidence before operator
+deployment, while static Pages and public-search claims must remain honest until
+real deployment evidence exists.
+
+Consequences: the next Codex-safe branch is P59 Query Observation Contract v0.
+Operator deployment, backend URL configuration, DNS/TLS, edge/rate limits, and
+hosted evidence capture remain separate work.

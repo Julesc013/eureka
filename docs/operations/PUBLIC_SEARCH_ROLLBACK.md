@@ -30,3 +30,9 @@ no uploads, no accounts, no telemetry, and no arbitrary URL fetch.
 - No rollback has been exercised against a hosted provider.
 
 The next hosted rehearsal milestone must turn this checklist into evidence.
+## P58 Rehearsal Rollback Status
+
+P58 performs no deployment, so there is no hosted rollback event. The local
+rehearsal starts a localhost wrapper process and terminates it after route and
+safety checks. Real rollback evidence remains operator-gated for a future
+hosted deployment.

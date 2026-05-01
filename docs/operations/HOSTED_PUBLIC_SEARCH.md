@@ -54,6 +54,12 @@ request cases, checks static handoff and public index safety, and records
 edge/rate-limit evidence as operator-gated. It does not deploy the wrapper or
 claim hosted availability.
 
+P58 adds a local hosted-mode rehearsal that starts the wrapper on `127.0.0.1`,
+checks public routes over HTTP, verifies safe queries and 34 blocked request
+cases, reviews static handoff/public-index compatibility, and shuts the local
+process down. It remains no deployment evidence and does not configure a hosted
+URL.
+
 ## Safety Posture
 
 The wrapper is read-only and keeps these disabled:
@@ -77,10 +83,13 @@ Use the in-process rehearsal command before operator deployment:
 ```powershell
 python scripts/check_hosted_public_search_wrapper.py
 python scripts/check_hosted_public_search_wrapper.py --json
+python scripts/run_hosted_public_search_rehearsal.py
+python scripts/run_hosted_public_search_rehearsal.py --json
 ```
 
-The rehearsal checks status routes, HTML search, JSON search, query planning,
-source listing, and blocked unsafe parameters without opening a public listener.
+The wrapper check uses an in-process harness. The hosted rehearsal starts a
+localhost-only HTTP process to exercise the same public route surface under
+hosted-safe environment settings.
 
 ## Deployment Evidence
 

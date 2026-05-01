@@ -902,3 +902,10 @@ These are intentionally not the next milestone:
 - serious Visual Studio/Xcode/native app shell work before backend infrastructure is stronger
 - Rust production implementation work before parity planning and backend-roadmap prerequisites are met
 - release automation and packaging implementation
+## P58 Hosted Public Search Rehearsal v0
+
+Status: completed locally. P58 starts the hosted public search wrapper on
+localhost, verifies health/status/search/query-plan/source routes, safe queries,
+34 blocked request cases, static handoff compatibility, public index
+compatibility, and deployment-template safety. Hosted deployment, backend URL,
+edge/rate limits, and production readiness remain unverified/operator-gated.

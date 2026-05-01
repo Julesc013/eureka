@@ -58,3 +58,8 @@ Result cards remain governed by `PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`.
 Actions stay safe: inspect, view source, view provenance, and read public-safe
 summary text. Downloads, uploads, installs, execution, live probes, and arbitrary
 URL fetching remain blocked.
+## P58 Hosted Rehearsal Compatibility
+
+P58 verifies that the hosted wrapper can read the generated public index during
+localhost rehearsal and that the static public index summary still matches the
+committed public-safe index counts.

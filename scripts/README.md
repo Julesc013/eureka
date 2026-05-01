@@ -572,3 +572,13 @@ crawling, live Internet Archive API access, arbitrary local filesystem
 ingestion, or full
 investigation-planning architecture. Live GitHub acquisition remains
 intentionally deferred.
+## Hosted Public Search Rehearsal
+
+- `python scripts/run_hosted_public_search_rehearsal.py`
+- `python scripts/run_hosted_public_search_rehearsal.py --json`
+- `python scripts/validate_hosted_public_search_rehearsal.py`
+- `python scripts/validate_hosted_public_search_rehearsal.py --json`
+
+These commands run and validate P58 local hosted-mode rehearsal evidence. They
+start only a localhost wrapper process and do not deploy, call external source
+APIs, enable live probes, or mutate indexes.

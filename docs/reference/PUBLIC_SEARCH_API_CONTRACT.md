@@ -278,3 +278,8 @@ queries, arbitrary URL fetch, crawling, downloads, installers, uploads,
 accounts, telemetry, native clients, relay runtime, snapshot reader runtime,
 TLS, auth, rate limiting, process management, custom domains, production API
 stability, or production readiness.
+## P58 Local Hosted Rehearsal
+
+The P58 rehearsal starts the hosted wrapper locally and checks the public API
+routes over HTTP. It verifies request limits and blocked parameters without
+claiming that the API is hosted or approved for production use.

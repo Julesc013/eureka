@@ -68,3 +68,10 @@ python scripts/run_hosted_public_search.py --public-mode --host 0.0.0.0
 Binding to `0.0.0.0` is only a hosting bind choice. It is not deployment
 evidence or approval for live probes, downloads, uploads, accounts, telemetry,
 or source connectors.
+## P58 Rehearsal Environment
+
+The P58 hosted rehearsal uses the same safe environment expected for future
+operator deployment: `EUREKA_PUBLIC_MODE=1`, `EUREKA_SEARCH_MODE=local_index_only`,
+live probes/downloads/uploads/local paths/arbitrary URL fetch/install actions
+and telemetry set to `0`, max query length `160`, max results `20`, timeout
+budget `5000`, and kill switch `0`. The rehearsal binds only to localhost.

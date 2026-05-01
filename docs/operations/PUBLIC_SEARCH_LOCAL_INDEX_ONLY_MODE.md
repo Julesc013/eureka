@@ -109,3 +109,9 @@ may describe local runtime usage, but they must not claim hosted public search
 exists. Native
 clients, relay surfaces, and snapshots may consume stable fields only after
 their own contracts allow it.
+## P58 Hosted Rehearsal
+
+P58 confirms that the hosted wrapper can serve the public search route surface
+locally while preserving `local_index_only` mode. Public requests still cannot
+select index paths, store roots, local paths, URLs, credentials, live sources,
+or live probe behavior.

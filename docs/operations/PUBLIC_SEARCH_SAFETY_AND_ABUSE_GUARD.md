@@ -289,3 +289,9 @@ Implemented static publication only:
 - Public Search Index Builder v0 adds the generated `data/public_index` bundle
   and validates it without live source calls, private path ingestion,
   executable payloads, downloads, uploads, or master-index mutation.
+## P58 Hosted Rehearsal Evidence
+
+P58 starts the hosted wrapper locally and verifies the same safety posture over
+HTTP: `local_index_only`, safe status routes, safe query responses, and blocked
+dangerous parameters. The rehearsal does not add live probes, downloads,
+uploads, accounts, telemetry, arbitrary URL fetch, or edge rate-limit claims.

@@ -31,8 +31,9 @@ source APIs, scrape, browse, call models, use credentials, or mutate indexes.
 Rate-limit and edge evidence remains operator-gated. P57 does not claim
 Cloudflare, provider, TLS, DNS, hosted service, edge rate-limit, or production
 deployment evidence. App-level rate-limit behavior remains contract-only for
-this checkpoint and must be revisited during P58 Hosted Public Search Rehearsal
-v0 or a later operator deployment milestone.
+this checkpoint. P58 Hosted Public Search Rehearsal v0 records a localhost HTTP
+rehearsal of the wrapper, but edge and provider rate-limit evidence remains
+operator-gated until real deployment evidence exists.
 
 ## Hard Non-Goals
 
@@ -43,7 +44,8 @@ mutation, no master-index mutation, and no production claim.
 
 ## Next Step
 
-The next Codex-safe branch is P58 Hosted Public Search Rehearsal v0. Human or
-operator parallel work may deploy the wrapper, configure a real backend URL,
-configure edge/rate limits, verify the static site, and execute Manual
-Observation Batch 0, but those actions require separate evidence.
+P58 Hosted Public Search Rehearsal v0 is the next local hosted-mode evidence
+gate after P57. Human or operator parallel work may deploy the wrapper,
+configure a real backend URL, configure edge/rate limits, verify the static
+site, and execute Manual Observation Batch 0, but those actions require
+separate evidence.

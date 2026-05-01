@@ -624,3 +624,10 @@ not deploy a backend, configure edge services, enable live probes, add
 downloads/uploads/installers/accounts/telemetry, fetch arbitrary URLs, or mutate
 indexes. The next backend-facing branch is
 `p58-hosted-public-search-rehearsal-v0`.
+## P58 Hosted Public Search Rehearsal v0
+
+The hosted public search wrapper now has a local HTTP rehearsal that starts the
+server on `127.0.0.1`, checks contracted routes, safe queries, blocked request
+coverage, static handoff compatibility, public index compatibility, and
+deployment templates. The backend is still not deployed; P59 should define the
+query observation contract before query-intelligence runtime work.
