@@ -682,3 +682,9 @@ external calls, or live probes.
 ## Known Absence Page Contract
 
 P66 adds stdlib-only validators and a stdout-only dry-run helper: `python scripts/validate_known_absence_page.py --all-examples`, `python scripts/validate_known_absence_page.py --all-examples --json`, `python scripts/validate_known_absence_page_contract.py`, `python scripts/validate_known_absence_page_contract.py --json`, and `python scripts/dry_run_known_absence_page.py --query "no-such-local-index-hit" --absence-status scoped_absence --json`. They write no ledger, page store, source cache, evidence ledger, candidate index, query log, telemetry, public index, local index, or master index state.
+
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-START -->
+## P67 Query Privacy and Poisoning Guard
+
+P67 adds `validate_query_guard_decision.py`, `validate_query_privacy_poisoning_guard_contract.py`, and `dry_run_query_guard.py`. The commands are `python scripts/validate_query_guard_decision.py --all-examples`, `python scripts/validate_query_guard_decision.py --all-examples --json`, `python scripts/validate_query_privacy_poisoning_guard_contract.py`, `python scripts/validate_query_privacy_poisoning_guard_contract.py --json`, and `python scripts/dry_run_query_guard.py --query "windows 7 apps" --json`. They are stdlib-only and write no guard store, telemetry, account/IP tracking, query logs, query-intelligence records, indexes, external calls, or live probes.
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
