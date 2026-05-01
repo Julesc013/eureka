@@ -688,3 +688,7 @@ P66 adds stdlib-only validators and a stdout-only dry-run helper: `python script
 
 P67 adds `validate_query_guard_decision.py`, `validate_query_privacy_poisoning_guard_contract.py`, and `dry_run_query_guard.py`. The commands are `python scripts/validate_query_guard_decision.py --all-examples`, `python scripts/validate_query_guard_decision.py --all-examples --json`, `python scripts/validate_query_privacy_poisoning_guard_contract.py`, `python scripts/validate_query_privacy_poisoning_guard_contract.py --json`, and `python scripts/dry_run_query_guard.py --query "windows 7 apps" --json`. They are stdlib-only and write no guard store, telemetry, account/IP tracking, query logs, query-intelligence records, indexes, external calls, or live probes.
 <!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->
+
+## Demand Dashboard v0 Validators
+
+P68 adds `validate_demand_dashboard_snapshot.py`, `validate_demand_dashboard_contract.py`, and `dry_run_demand_dashboard_snapshot.py`. Commands: `python scripts/validate_demand_dashboard_snapshot.py --all-examples`, `python scripts/validate_demand_dashboard_snapshot.py --all-examples --json`, `python scripts/validate_demand_dashboard_contract.py`, `python scripts/validate_demand_dashboard_contract.py --json`, and `python scripts/dry_run_demand_dashboard_snapshot.py --json`. They are stdlib-only and write no dashboard store, telemetry, account/IP tracking, query logs, query-intelligence records, indexes, external calls, or live probes.

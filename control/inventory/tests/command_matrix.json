@@ -240,7 +240,13 @@
         "query_privacy_poisoning_guard_contract_validator",
         "query_privacy_poisoning_guard_contract_validator_json",
         "query_guard_dry_run_json",
-        "query_privacy_poisoning_guard_contract_tests"
+        "query_privacy_poisoning_guard_contract_tests",
+        "demand_dashboard_snapshot_examples_validator",
+        "demand_dashboard_snapshot_examples_validator_json",
+        "demand_dashboard_contract_validator",
+        "demand_dashboard_contract_validator_json",
+        "demand_dashboard_dry_run_json",
+        "demand_dashboard_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -494,7 +500,13 @@
         "query_privacy_poisoning_guard_contract_validator",
         "query_privacy_poisoning_guard_contract_validator_json",
         "query_guard_dry_run_json",
-        "query_privacy_poisoning_guard_contract_tests"
+        "query_privacy_poisoning_guard_contract_tests",
+        "demand_dashboard_snapshot_examples_validator",
+        "demand_dashboard_snapshot_examples_validator_json",
+        "demand_dashboard_contract_validator",
+        "demand_dashboard_contract_validator_json",
+        "demand_dashboard_dry_run_json",
+        "demand_dashboard_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -674,7 +686,13 @@
         "known_absence_page_contract_tests",
         "query_guard_decision_examples_validator",
         "query_privacy_poisoning_guard_contract_validator",
-        "query_privacy_poisoning_guard_contract_tests"
+        "query_privacy_poisoning_guard_contract_tests",
+        "demand_dashboard_snapshot_examples_validator",
+        "demand_dashboard_snapshot_examples_validator_json",
+        "demand_dashboard_contract_validator",
+        "demand_dashboard_contract_validator_json",
+        "demand_dashboard_dry_run_json",
+        "demand_dashboard_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -1022,7 +1040,13 @@
         "query_privacy_poisoning_guard_contract_validator",
         "query_privacy_poisoning_guard_contract_validator_json",
         "query_guard_dry_run_json",
-        "query_privacy_poisoning_guard_contract_tests"
+        "query_privacy_poisoning_guard_contract_tests",
+        "demand_dashboard_snapshot_examples_validator",
+        "demand_dashboard_snapshot_examples_validator_json",
+        "demand_dashboard_contract_validator",
+        "demand_dashboard_contract_validator_json",
+        "demand_dashboard_dry_run_json",
+        "demand_dashboard_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",

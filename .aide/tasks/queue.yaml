@@ -797,21 +797,21 @@
     {
       "id": "demand_dashboard_v0",
       "title": "P68 Demand Dashboard v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed",
       "priority": 109,
-      "notes": "Expected next branch P68 after privacy/poisoning guard. Must remain aggregate-contract-only unless explicitly governed; no telemetry, public query logging, account/IP tracking, or fabricated demand counts."
+      "notes": "Implemented P68 Demand Dashboard v0 with contract schema, synthetic dashboard examples, dry-run helper, validators, audit pack, docs, tests, and metadata. No dashboard runtime, telemetry, account/IP tracking, public query logging, real demand claims, query-intelligence mutation, index mutation, external calls, or live probes were added."
     },
     {
       "id": "source_sync_worker_contract_v0",
       "title": "P69 Source Sync Worker Contract v0",
-      "status": "queued_codex_safe_after_query_sequence",
+      "status": "queued_codex_safe_next",
       "priority": 110,
       "notes": "Future contract only after query intelligence privacy, cache, miss ledger, need record, probe queue, candidate index, and promotion policy are governed; no live connector runtime without approval."
     },
     {
       "id": "source_cache_evidence_ledger_v0",
       "title": "P70 Source Cache and Evidence Ledger v0",
-      "status": "queued_codex_safe_after_query_sequence",
+      "status": "queued_codex_safe_after_p69",
       "priority": 111,
       "notes": "Future source cache/evidence ledger contract after query-intelligence sequence; no live connector runtime without approval."
     },
@@ -863,6 +863,13 @@
       "status": "queued_codex_safe_future",
       "priority": 118,
       "notes": "Future contract after object page work; do not implement runtime pages, live source calls, downloads, uploads, or index mutation without governed contracts."
+    },
+    {
+      "id": "cross_source_identity_resolution_contract_v0",
+      "title": "P78 Cross-Source Identity Resolution Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 119,
+      "notes": "Future identity resolution contract after source page work; no runtime identity authority, source trust, or master-index mutation without governed review."
     }
   ]
 }

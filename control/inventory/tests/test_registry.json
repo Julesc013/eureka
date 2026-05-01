@@ -5612,6 +5612,138 @@
       "failure_means": "Focused P67 schema, examples, validators, dry-run, docs, privacy, poisoning, aggregate eligibility, or no-mutation tests regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P67 tests; no telemetry, persistence, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index mutation."
+    },
+    {
+      "test_id": "demand_dashboard_snapshot_examples_validator",
+      "label": "Demand dashboard snapshot examples validator",
+      "command": "python scripts/validate_demand_dashboard_snapshot.py --all-examples",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P68 dashboard snapshot examples failed validation.",
+      "advisory_or_required": "required",
+      "notes": "P68 demand dashboard contract validation; no telemetry, persistence, account/IP tracking, real demand claims, external calls, live probes, or index mutation."
+    },
+    {
+      "test_id": "demand_dashboard_snapshot_examples_validator_json",
+      "label": "Demand dashboard snapshot examples validator JSON",
+      "command": "python scripts/validate_demand_dashboard_snapshot.py --all-examples --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P68 snapshot example validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "P68 demand dashboard contract validation; no telemetry, persistence, account/IP tracking, real demand claims, external calls, live probes, or index mutation."
+    },
+    {
+      "test_id": "demand_dashboard_contract_validator",
+      "label": "Demand dashboard contract validator",
+      "command": "python scripts/validate_demand_dashboard_contract.py",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P68 contract, docs, policy, audit pack, or examples drifted.",
+      "advisory_or_required": "required",
+      "notes": "P68 demand dashboard contract validation; no telemetry, persistence, account/IP tracking, real demand claims, external calls, live probes, or index mutation."
+    },
+    {
+      "test_id": "demand_dashboard_contract_validator_json",
+      "label": "Demand dashboard contract validator JSON",
+      "command": "python scripts/validate_demand_dashboard_contract.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P68 contract validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "P68 demand dashboard contract validation; no telemetry, persistence, account/IP tracking, real demand claims, external calls, live probes, or index mutation."
+    },
+    {
+      "test_id": "demand_dashboard_dry_run_json",
+      "label": "Demand dashboard dry-run JSON helper",
+      "command": "python scripts/dry_run_demand_dashboard_snapshot.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "sub-second",
+      "failure_means": "P68 dry-run helper failed or stopped emitting safe stdout-only synthetic dashboard output.",
+      "advisory_or_required": "required",
+      "notes": "P68 demand dashboard contract validation; no telemetry, persistence, account/IP tracking, real demand claims, external calls, live probes, or index mutation."
+    },
+    {
+      "test_id": "demand_dashboard_contract_tests",
+      "label": "Demand dashboard contract tests",
+      "command": "python -m unittest tests.operations.test_demand_dashboard_contract tests.scripts.test_validate_demand_dashboard_snapshot tests.scripts.test_validate_demand_dashboard_contract tests.scripts.test_dry_run_demand_dashboard_snapshot",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P68 schema, examples, validators, dry-run, docs, privacy, poisoning, aggregate, or no-mutation tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "P68 demand dashboard contract validation; no telemetry, persistence, account/IP tracking, real demand claims, external calls, live probes, or index mutation."
     }
   ],
   "notes": [

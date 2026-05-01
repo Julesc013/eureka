@@ -628,3 +628,15 @@ notes:
   - P64 Candidate Index v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index/master-index mutation.
   - P66 Known Absence Page v0 validation is stdlib-only and contract-only; it adds no runtime pages, telemetry, global absence claims, live probes, downloads, uploads, installs, external calls, or index/source/evidence/candidate mutation.
   - P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only and contract-only; it adds no runtime guard, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation.
+  - id: demand_dashboard_snapshot_examples_validator
+    run: python scripts/validate_demand_dashboard_snapshot.py --all-examples
+  - id: demand_dashboard_snapshot_examples_validator_json
+    run: python scripts/validate_demand_dashboard_snapshot.py --all-examples --json
+  - id: demand_dashboard_contract_validator
+    run: python scripts/validate_demand_dashboard_contract.py
+  - id: demand_dashboard_contract_validator_json
+    run: python scripts/validate_demand_dashboard_contract.py --json
+  - id: demand_dashboard_dry_run_json
+    run: python scripts/dry_run_demand_dashboard_snapshot.py --json
+  - id: demand_dashboard_contract_tests
+    run: python -m unittest tests.operations.test_demand_dashboard_contract tests.scripts.test_validate_demand_dashboard_snapshot tests.scripts.test_validate_demand_dashboard_contract tests.scripts.test_dry_run_demand_dashboard_snapshot
