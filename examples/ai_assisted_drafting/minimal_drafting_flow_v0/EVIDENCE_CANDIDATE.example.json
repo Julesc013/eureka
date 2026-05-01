@@ -1,0 +1,33 @@
+{
+  "schema_version": "ai_drafted_evidence_candidate_example.v0",
+  "candidate_id": "example.ai_drafted_evidence_candidate.metadata_v0",
+  "candidate_kind": "evidence_pack_record_candidate",
+  "target_evidence_kind": "metadata_claim",
+  "target_claim_type": "has_version",
+  "subject_ref": "synthetic:software:example-browser@1.2.0",
+  "derived_from_typed_ai_output": "example.ai_assisted_drafting.metadata_candidate.v0",
+  "source_refs": [
+    "source-pack:example.minimal_recorded_source_pack_v0#source.synthetic_browser"
+  ],
+  "evidence_refs": [
+    "evidence-pack:example.minimal_evidence_pack_v0#ev.example-browser.metadata"
+  ],
+  "claim_value": {
+    "version": "1.2.0",
+    "candidate_field": "version"
+  },
+  "summary": "Review-required synthetic evidence candidate drafted from validated typed AI output.",
+  "review_status": "review_required",
+  "required_review": true,
+  "candidate_only": true,
+  "accepted_as_evidence": false,
+  "automatic_acceptance": false,
+  "privacy_classification": "public_safe",
+  "rights_classification": "synthetic_self_authored",
+  "risk_classification": "metadata_only",
+  "limitations": [
+    "Synthetic example only.",
+    "Typed output validation is required before future use.",
+    "Candidate review is required before any evidence pack inclusion."
+  ]
+}

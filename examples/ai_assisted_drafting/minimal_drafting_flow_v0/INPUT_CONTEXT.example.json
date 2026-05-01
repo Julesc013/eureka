@@ -1,0 +1,33 @@
+{
+  "schema_version": "ai_drafting_input_context_example.v0",
+  "context_id": "example.ai_drafting.context.public_safe_metadata_v0",
+  "context_class": "public_evidence_summary",
+  "privacy_classification": "public_safe",
+  "rights_classification": "synthetic_self_authored",
+  "risk_classification": "metadata_only",
+  "subject_ref": "synthetic:software:example-browser@1.2.0",
+  "source_refs": [
+    "source-pack:example.minimal_recorded_source_pack_v0#source.synthetic_browser"
+  ],
+  "evidence_refs": [
+    "evidence-pack:example.minimal_evidence_pack_v0#ev.example-browser.metadata"
+  ],
+  "summary": "Synthetic public-safe evidence summary for Example Browser version metadata.",
+  "snippets": [
+    {
+      "snippet_id": "snippet.synthetic.example_browser.version",
+      "text": "Example Browser 1.2.0 is listed in this synthetic release note fixture.",
+      "snippet_policy": "short_synthetic_self_authored"
+    }
+  ],
+  "remote_provider_default_allowed": false,
+  "local_private_required": false,
+  "contains_private_paths": false,
+  "contains_credentials": false,
+  "contains_long_copyrighted_text": false,
+  "contains_executable_payload": false,
+  "notes": [
+    "This context is synthetic and committed for planning validation.",
+    "Remote provider use remains disabled by default despite public-safe classification."
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "schema_version": "ai_assisted_drafting_policy.v0",
+  "policy_id": "eureka_ai_assisted_evidence_drafting_plan_v0",
+  "status": "planning_only",
+  "drafting_runtime_implemented": false,
+  "model_calls_implemented": false,
+  "default_enabled": false,
+  "remote_providers_enabled_by_default": false,
+  "private_data_allowed_by_default": false,
+  "telemetry_enabled_by_default": false,
+  "allowed_drafting_tasks": [
+    "draft_alias_candidate",
+    "draft_metadata_claim_candidate",
+    "draft_compatibility_claim_candidate",
+    "draft_review_description_claim_candidate",
+    "draft_member_path_claim_candidate",
+    "draft_source_match_candidate",
+    "draft_identity_match_candidate_for_review",
+    "draft_explanation_text",
+    "draft_absence_explanation",
+    "draft_contribution_item_candidate",
+    "draft_evidence_pack_record_candidate"
+  ],
+  "forbidden_drafting_tasks": [
+    "decide_canonical_truth",
+    "decide_rights_clearance",
+    "decide_malware_safety",
+    "decide_source_trust",
+    "auto_merge_identity",
+    "auto_accept_master_index",
+    "auto_mutate_public_search",
+    "auto_mutate_local_index",
+    "fetch_arbitrary_url",
+    "scrape_web",
+    "process_private_data_remotely_by_default",
+    "extract_credentials",
+    "execute_installer",
+    "download_artifact"
+  ],
+  "allowed_input_contexts": [
+    "public_search_result_card",
+    "public_source_summary",
+    "public_evidence_summary",
+    "public_snippet_allowed_by_evidence_policy",
+    "public_static_demo_record",
+    "synthetic_fixture_record",
+    "public_safe_pack_record"
+  ],
+  "restricted_input_contexts": [
+    "local_staged_pack_manifest",
+    "local_private_source_pack",
+    "local_private_evidence_pack",
+    "local_cache_metadata",
+    "user_notes",
+    "local_file_metadata",
+    "user_selected_private_snippets"
+  ],
+  "forbidden_input_contexts": [
+    "private_local_paths_for_remote_provider_default",
+    "credential_values",
+    "raw_private_files",
+    "raw_local_caches",
+    "long_copyrighted_text",
+    "executable_payloads",
+    "unredacted_user_search_history",
+    "unreviewed_private_source_records"
+  ],
+  "output_validation_required": true,
+  "required_review": true,
+  "evidence_acceptance_automatic": false,
+  "contribution_acceptance_automatic": false,
+  "master_index_acceptance_automatic": false,
+  "public_search_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "privacy_policy": {
+    "local_private_by_default": true,
+    "remote_private_processing_default": false,
+    "private_context_requires_explicit_future_policy": true,
+    "committed_examples_must_be_synthetic": true,
+    "private_paths_must_be_redacted": true,
+    "credential_values_must_never_be_sent_or_logged": true,
+    "notes": [
+      "Public-safe contexts may be considered for future drafting only after provider and task request policy exists.",
+      "Restricted contexts require local/private mode unless a later explicit approval policy says otherwise.",
+      "Remote providers stay disabled by default."
+    ]
+  },
+  "rights_policy": {
+    "rights_clearance_authority": false,
+    "long_copyrighted_text_allowed_by_default": false,
+    "short_snippets_follow_evidence_pack_policy": true,
+    "review_required_for_uncertain_rights": true,
+    "notes": [
+      "AI output can suggest a rights review note but cannot decide rights clearance.",
+      "Example flow uses synthetic self-authored text only."
+    ]
+  },
+  "risk_policy": {
+    "malware_safety_authority": false,
+    "executable_processing_allowed": false,
+    "download_or_install_allowed": false,
+    "source_trust_authority": false,
+    "notes": [
+      "Drafting plans never execute installers, fetch artifacts, or scan malware.",
+      "Risk classifications remain review inputs only."
+    ]
+  },
+  "relation_to_pack_contracts": {
+    "evidence_pack": "typed AI output may later draft evidence record candidates after validation and review",
+    "contribution_pack": "typed AI output may later draft contribution item candidates after validation and review",
+    "index_pack": "AI output must not mutate index packs or local indexes",
+    "source_pack": "AI output may suggest source-match candidates but cannot create source truth",
+    "pack_import_report": "future tooling may record AI validation results but report success is not import or acceptance"
+  },
+  "relation_to_review_queue": {
+    "master_index_review_queue_candidates_future": true,
+    "auto_acceptance_allowed": false,
+    "human_review_required": true,
+    "notes": [
+      "AI-assisted candidates can reach a review queue only through future explicit export tooling.",
+      "The review queue contract, not AI output, governs acceptance decisions."
+    ]
+  },
+  "created_by_slice": "ai_assisted_evidence_drafting_plan_v0",
+  "notes": [
+    "This policy is planning-only.",
+    "No AI-assisted drafting runtime exists.",
+    "No model calls, provider loading, credential storage, telemetry, public-search mutation, local-index mutation, or master-index mutation are implemented.",
+    "Typed AI output validation is mandatory before any future evidence or contribution candidate drafting workflow can use model output."
+  ]
+}

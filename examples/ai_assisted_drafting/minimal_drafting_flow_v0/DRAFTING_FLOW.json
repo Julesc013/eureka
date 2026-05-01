@@ -1,0 +1,38 @@
+{
+  "schema_version": "ai_assisted_drafting_flow_example.v0",
+  "flow_id": "example.ai_assisted_drafting.minimal_v0",
+  "status": "synthetic_example",
+  "created_by_slice": "ai_assisted_evidence_drafting_plan_v0",
+  "drafting_runtime_implemented": false,
+  "model_call_performed": false,
+  "provider_runtime_loaded": false,
+  "private_data_processed": false,
+  "telemetry_performed": false,
+  "evidence_acceptance_performed": false,
+  "contribution_acceptance_performed": false,
+  "public_search_mutated": false,
+  "local_index_mutated": false,
+  "runtime_state_mutated": false,
+  "master_index_mutated": false,
+  "input_context": "INPUT_CONTEXT.example.json",
+  "typed_ai_output": "TYPED_AI_OUTPUT.example.json",
+  "evidence_candidate": "EVIDENCE_CANDIDATE.example.json",
+  "contribution_candidate": "CONTRIBUTION_CANDIDATE.example.json",
+  "workflow_steps": [
+    "select_public_safe_synthetic_context",
+    "prepare_future_task_request_shape",
+    "produce_hand_authored_typed_output_fixture",
+    "validate_typed_output",
+    "map_to_review_required_evidence_candidate",
+    "map_to_review_required_contribution_candidate",
+    "stop_before_acceptance_or_mutation"
+  ],
+  "required_review": true,
+  "candidate_only": true,
+  "limitations": [
+    "Synthetic planning example only.",
+    "No model call was performed.",
+    "No AI-assisted drafting runtime exists.",
+    "Candidates are not accepted truth, rights clearance, malware safety, or master-index acceptance."
+  ]
+}

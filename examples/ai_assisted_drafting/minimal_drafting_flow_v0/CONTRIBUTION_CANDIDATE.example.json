@@ -1,0 +1,29 @@
+{
+  "schema_version": "ai_drafted_contribution_candidate_example.v0",
+  "candidate_id": "example.ai_drafted_contribution_candidate.metadata_v0",
+  "candidate_kind": "contribution_item_candidate",
+  "contribution_type": "evidence_record_candidate",
+  "target_ref": "synthetic:software:example-browser@1.2.0",
+  "derived_from_typed_ai_output": "example.ai_assisted_drafting.metadata_candidate.v0",
+  "proposed_action": "add_candidate",
+  "summary": "Suggest a review-required contribution item for a synthetic version metadata evidence candidate.",
+  "evidence_candidate_ref": "example.ai_drafted_evidence_candidate.metadata_v0",
+  "evidence_refs": [
+    "evidence-pack:example.minimal_evidence_pack_v0#ev.example-browser.metadata"
+  ],
+  "confidence": "low",
+  "review_status": "review_required",
+  "required_review": true,
+  "candidate_only": true,
+  "accepted_as_contribution": false,
+  "automatic_acceptance": false,
+  "master_index_acceptance": false,
+  "privacy_classification": "public_safe",
+  "rights_classification": "synthetic_self_authored",
+  "risk_classification": "metadata_only",
+  "limitations": [
+    "Synthetic example only.",
+    "Contribution candidate is not submitted or accepted.",
+    "Master-index review would require a separate future workflow."
+  ]
+}
