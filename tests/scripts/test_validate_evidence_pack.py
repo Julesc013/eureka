@@ -48,6 +48,28 @@ class ValidateEvidencePackScriptTestCase(unittest.TestCase):
         )
         self.assertIn("status: valid", strict.stdout)
 
+    def test_validator_supports_all_examples_aliases(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, str(VALIDATOR), "--all-examples", "--json"],
+            cwd=REPO_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        payload = json.loads(completed.stdout)
+        self.assertEqual(payload["status"], "valid")
+        self.assertEqual(payload["mode"], "all_examples")
+        self.assertEqual(payload["example_count"], 1)
+
+        alias = subprocess.run(
+            [sys.executable, str(VALIDATOR), "--known-examples"],
+            cwd=REPO_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        self.assertIn("mode: all_examples", alias.stdout)
+
     def test_validator_fails_for_missing_manifest(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / "missing_manifest"

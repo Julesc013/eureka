@@ -51,6 +51,19 @@ class ValidateOnlyPackImportScriptTestCase(unittest.TestCase):
         _assert_no_mutation(self, payload)
         self.assertTrue(_report_validates(payload))
 
+    def test_known_examples_alias_passes(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, str(TOOL), "--known-examples", "--json"],
+            cwd=REPO_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        payload = json.loads(completed.stdout)
+        self.assertEqual(payload["report_status"], "validate_only_passed")
+        self.assertEqual(payload["validation_summary"]["total"], 5)
+        _assert_no_mutation(self, payload)
+
     def test_include_ai_outputs_adds_ai_output_bundle_without_model_calls(self) -> None:
         completed = subprocess.run(
             [sys.executable, str(TOOL), "--all-examples", "--include-ai-outputs", "--json"],

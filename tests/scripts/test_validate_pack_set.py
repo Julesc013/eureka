@@ -69,6 +69,19 @@ class ValidatePackSetScriptTestCase(unittest.TestCase):
         self.assertFalse(payload["indexing_performed"])
         self.assertFalse(payload["network_performed"])
 
+    def test_known_examples_alias_passes(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, str(VALIDATOR), "--known-examples", "--json"],
+            cwd=REPO_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        payload = json.loads(completed.stdout)
+        self.assertTrue(payload["ok"])
+        self.assertEqual(payload["mode"], "all_examples")
+        self.assertEqual(payload["summary"]["total"], 5)
+
     def test_each_registered_example_validates_explicitly(self) -> None:
         registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
         for example in registry["examples"]:

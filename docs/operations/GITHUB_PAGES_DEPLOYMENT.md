@@ -70,6 +70,21 @@ for GitHub Actions in the GitHub repository UI:
 Settings -> Pages -> Build and deployment -> Source: GitHub Actions
 ```
 
+P51 local remediation does not change repository settings. The remaining
+operator steps are:
+
+1. Open the GitHub repository settings.
+2. Go to `Settings -> Pages`.
+3. Set `Build and deployment -> Source` to `GitHub Actions`.
+4. Re-run the Pages workflow for the commit being verified.
+5. Confirm that `Configure GitHub Pages`, artifact upload, and deploy steps all
+   complete.
+6. Record the workflow run URL, deployment URL, deployed commit SHA, and
+   timestamp in a future run-evidence audit.
+
+Until that evidence exists, the local state is `workflow_configured` and
+`deployment_unverified`; Pages enablement remains operator-gated.
+
 This repository does not add custom domain configuration in this milestone.
 No `CNAME` file is added.
 

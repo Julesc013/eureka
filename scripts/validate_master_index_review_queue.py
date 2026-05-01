@@ -8,6 +8,8 @@ import re
 import sys
 from typing import Any, Mapping, Sequence, TextIO
 
+from pack_validator_examples import argument_error, format_all_examples, validate_all_examples
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_QUEUE_ROOT = REPO_ROOT / "examples" / "master_index_review_queue" / "minimal_review_queue_v0"
@@ -203,17 +205,50 @@ FORBIDDEN_CLAIM_PHRASES = (
 
 def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> int:
     parser = argparse.ArgumentParser(description="Validate a Eureka Master Index Review Queue v0 example.")
-    parser.add_argument("--queue-root", default=str(DEFAULT_QUEUE_ROOT), help="Review queue directory to validate.")
+    parser.add_argument("--queue-root", help="Review queue directory to validate.")
+    parser.add_argument(
+        "--all-examples",
+        "--known-examples",
+        dest="all_examples",
+        action="store_true",
+        help="Validate all registered review queue examples.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON report.")
     parser.add_argument("--strict", action="store_true", help="Require checksum coverage for every queue file.")
     args = parser.parse_args(list(argv) if argv is not None else None)
 
-    report = validate_master_index_review_queue(Path(args.queue_root), strict=args.strict)
+    if args.all_examples and args.queue_root:
+        report = argument_error(
+            "validate_master_index_review_queue",
+            "--queue-root cannot be combined with --all-examples.",
+        )
+    elif args.all_examples:
+        report = validate_all_examples(
+            pack_type="master_index_review_queue",
+            created_by="validate_master_index_review_queue",
+            root_field="queue_root",
+            strict=args.strict,
+            validate_one=lambda root: validate_master_index_review_queue(root, strict=args.strict),
+        )
+    else:
+        report = validate_master_index_review_queue(
+            Path(args.queue_root) if args.queue_root else DEFAULT_QUEUE_ROOT,
+            strict=args.strict,
+        )
     output = stdout or sys.stdout
     if args.json:
         output.write(json.dumps(report, indent=2, sort_keys=True) + "\n")
     else:
-        output.write(_format_plain(report))
+        if report.get("mode") in {"all_examples", "argument_error"}:
+            output.write(
+                format_all_examples(
+                    report,
+                    title="Master Index Review Queue v0 validation",
+                    root_field="queue_root",
+                )
+            )
+        else:
+            output.write(_format_plain(report))
     return 0 if report["status"] == "valid" else 1
 
 

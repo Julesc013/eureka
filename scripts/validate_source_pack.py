@@ -8,6 +8,8 @@ import re
 import sys
 from typing import Any, Iterable, Mapping, Sequence, TextIO
 
+from pack_validator_examples import argument_error, format_all_examples, validate_all_examples
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PACK_ROOT = REPO_ROOT / "examples" / "source_packs" / "minimal_recorded_source_pack_v0"
@@ -134,17 +136,38 @@ PRIVATE_PATH_PATTERNS = (
 
 def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> int:
     parser = argparse.ArgumentParser(description="Validate a Eureka Source Pack v0 directory.")
-    parser.add_argument("--pack-root", default=str(DEFAULT_PACK_ROOT), help="Source pack directory to validate.")
+    parser.add_argument("--pack-root", help="Source pack directory to validate.")
+    parser.add_argument(
+        "--all-examples",
+        "--known-examples",
+        dest="all_examples",
+        action="store_true",
+        help="Validate all registered source pack examples.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON report.")
     parser.add_argument("--strict", action="store_true", help="Require checksum coverage for every pack file.")
     args = parser.parse_args(list(argv) if argv is not None else None)
 
-    report = validate_source_pack(Path(args.pack_root), strict=args.strict)
+    if args.all_examples and args.pack_root:
+        report = argument_error("validate_source_pack", "--pack-root cannot be combined with --all-examples.")
+    elif args.all_examples:
+        report = validate_all_examples(
+            pack_type="source_pack",
+            created_by="validate_source_pack",
+            root_field="pack_root",
+            strict=args.strict,
+            validate_one=lambda root: validate_source_pack(root, strict=args.strict),
+        )
+    else:
+        report = validate_source_pack(Path(args.pack_root) if args.pack_root else DEFAULT_PACK_ROOT, strict=args.strict)
     output = stdout or sys.stdout
     if args.json:
         output.write(json.dumps(report, indent=2, sort_keys=True) + "\n")
     else:
-        output.write(_format_plain(report))
+        if report.get("mode") in {"all_examples", "argument_error"}:
+            output.write(format_all_examples(report, title="Source Pack v0 validation", root_field="pack_root"))
+        else:
+            output.write(_format_plain(report))
     return 0 if report["status"] == "valid" else 1
 
 

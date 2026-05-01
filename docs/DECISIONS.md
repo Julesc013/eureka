@@ -1587,3 +1587,28 @@ native GUI, relay runtime, Rust runtime replacement, public contribution
 intake, public-search mutation, local-index mutation, runtime-index mutation,
 master-index mutation, external API calls, scraping, or deployment changes.
 The next branch is `p51-post-p50-remediation-pack-v0`.
+
+## ADR-131: Remediate P50 Drift Without Expanding Product Behavior
+
+Status: accepted
+
+Post-P50 Remediation Pack v0 adds minimal root governance placeholders,
+license-selection guidance, pack-validator CLI alignment, GitHub Pages
+operator-evidence guidance, a remediation audit pack, and validator/test
+coverage for that audit.
+
+The decision is to fix bounded P50 drift without turning any contract,
+prototype, fixture, or planning surface into product behavior. Individual pack
+validators may accept `--all-examples` and `--known-examples` as registry-backed
+validation aliases, but validation still does not import, stage, index, upload,
+mutate runtime state, mutate public search, or accept master-index records.
+
+P51 deliberately does not select a license, add hosted backend behavior, enable
+GitHub Pages settings, fabricate deployment evidence, add live probes, add
+live source connectors, call external APIs, scrape, add AI runtime, add model
+calls, add credentials, add telemetry, add accounts, add uploads, add
+downloads, add installers, stage real packs, import packs, mutate local or
+runtime indexes, mutate the master index, wire Rust into runtime, or claim
+production readiness. The next branch is
+`p52-static-deployment-evidence-github-pages-repair-v0` unless Pages deployment
+evidence is separately verified first.

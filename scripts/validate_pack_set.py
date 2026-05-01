@@ -57,7 +57,13 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
     )
     parser.add_argument("--json", action="store_true", help="Emit structured JSON.")
     parser.add_argument("--strict", action="store_true", help="Pass strict mode through to individual validators.")
-    parser.add_argument("--all-examples", action="store_true", help="Validate all known repo example packs.")
+    parser.add_argument(
+        "--all-examples",
+        "--known-examples",
+        dest="all_examples",
+        action="store_true",
+        help="Validate all known repo example packs.",
+    )
     parser.add_argument("--pack-root", help="Validate one explicit pack or review-queue root.")
     parser.add_argument(
         "--pack-type",

@@ -8,6 +8,8 @@ import re
 import sys
 from typing import Any, Iterable, Mapping, Sequence, TextIO
 
+from pack_validator_examples import argument_error, format_all_examples, validate_all_examples
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PACK_ROOT = REPO_ROOT / "examples" / "evidence_packs" / "minimal_evidence_pack_v0"
@@ -191,17 +193,38 @@ SNIPPET_MAX_CHARS = 500
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Validate an Evidence Pack Contract v0 directory.")
-    parser.add_argument("--pack-root", default=str(DEFAULT_PACK_ROOT), help="Evidence pack directory to validate.")
+    parser.add_argument("--pack-root", help="Evidence pack directory to validate.")
+    parser.add_argument(
+        "--all-examples",
+        "--known-examples",
+        dest="all_examples",
+        action="store_true",
+        help="Validate all registered evidence pack examples.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit machine-readable JSON.")
     parser.add_argument("--strict", action="store_true", help="Require exact checksum coverage and strict public-safe posture.")
     args = parser.parse_args(argv)
 
-    result = validate_pack(Path(args.pack_root), strict=args.strict)
+    if args.all_examples and args.pack_root:
+        result = argument_error("validate_evidence_pack", "--pack-root cannot be combined with --all-examples.")
+    elif args.all_examples:
+        result = validate_all_examples(
+            pack_type="evidence_pack",
+            created_by="validate_evidence_pack",
+            root_field="pack_root",
+            strict=args.strict,
+            validate_one=lambda root: validate_pack(root, strict=args.strict),
+        )
+    else:
+        result = validate_pack(Path(args.pack_root) if args.pack_root else DEFAULT_PACK_ROOT, strict=args.strict)
     if args.json:
         json.dump(result, sys.stdout, indent=2, sort_keys=True)
         sys.stdout.write("\n")
     else:
-        _print_human(result, sys.stdout)
+        if result.get("mode") in {"all_examples", "argument_error"}:
+            sys.stdout.write(format_all_examples(result, title="Evidence Pack v0 validation", root_field="pack_root"))
+        else:
+            _print_human(result, sys.stdout)
     return 0 if result["status"] == "valid" else 1
 
 

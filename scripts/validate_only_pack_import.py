@@ -57,7 +57,13 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None, std
         description="Run validate-only pack import preflight and emit Pack Import Report v0."
     )
     parser.add_argument("--pack-root", action="append", default=[], help="Explicit pack or review-queue root.")
-    parser.add_argument("--all-examples", action="store_true", help="Validate all known repo example packs.")
+    parser.add_argument(
+        "--all-examples",
+        "--known-examples",
+        dest="all_examples",
+        action="store_true",
+        help="Validate all known repo example packs.",
+    )
     parser.add_argument(
         "--include-ai-outputs",
         action="store_true",
