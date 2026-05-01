@@ -326,3 +326,9 @@ fetch, or production safety claim.
 - Scope: local hosted-mode public search rehearsal over localhost HTTP.
 - Status: local evidence only; no hosted deployment or production readiness
   claim.
+
+## Query Observation Contract v0
+
+- Path: `control/audits/query-observation-contract-v0/`
+- Scope: P59 privacy-filtered query observation contract, example, validators, docs, and audit evidence.
+- Status: contract-only; no telemetry, runtime persistence, public query logging, cache mutation, miss-ledger mutation, probe enqueueing, index mutation, or master-index mutation.
