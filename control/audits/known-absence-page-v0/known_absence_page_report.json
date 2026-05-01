@@ -1,0 +1,202 @@
+{
+  "report_id": "known_absence_page_v0",
+  "created_by_slice": "P66 Known Absence Page v0",
+  "repo_head": "491eb07f9e23efe0bf1e8df0be26aefcd141cd5d",
+  "branch": "main",
+  "worktree_status": "dirty_with_p66_changes_pending_verification",
+  "contract_file": "contracts/query/known_absence_page.v0.json",
+  "validator_scripts": [
+    "scripts/validate_known_absence_page.py",
+    "scripts/validate_known_absence_page_contract.py",
+    "scripts/dry_run_known_absence_page.py"
+  ],
+  "example_known_absence_pages": [
+    "examples/known_absence_pages/minimal_no_verified_result_v0/KNOWN_ABSENCE_PAGE.json",
+    "examples/known_absence_pages/minimal_near_miss_absence_v0/KNOWN_ABSENCE_PAGE.json",
+    "examples/known_absence_pages/minimal_policy_blocked_absence_v0/KNOWN_ABSENCE_PAGE.json"
+  ],
+  "known_absence_page_policy": "control/inventory/query_intelligence/known_absence_page_policy.json",
+  "scoped_absence_model": [
+    "no_verified_result",
+    "scoped_absence",
+    "no_public_index_hit",
+    "weak_hits_only",
+    "near_misses_only",
+    "blocked_by_policy",
+    "source_coverage_gap",
+    "capability_gap",
+    "unknown"
+  ],
+  "checked_not_checked_model": {
+    "checked_indexes": [
+      "public_index",
+      "local_index_only",
+      "result_cache_future",
+      "candidate_index_future",
+      "source_cache_future",
+      "master_index_future"
+    ],
+    "not_checked_reasons": [
+      "not_implemented",
+      "disabled_by_policy",
+      "approval_gated",
+      "operator_gated",
+      "source_not_available",
+      "unknown"
+    ]
+  },
+  "near_miss_model": [
+    "wrong_version",
+    "wrong_platform",
+    "wrong_artifact_type",
+    "parent_bundle_only",
+    "documentation_only",
+    "weak_identity_match",
+    "no_member_evidence",
+    "no_compatibility_evidence",
+    "source_unverified",
+    "unknown"
+  ],
+  "gap_explanation_model": [
+    "source_coverage_gap",
+    "capability_gap",
+    "compatibility_evidence_gap",
+    "member_access_gap",
+    "representation_gap",
+    "query_interpretation_gap",
+    "live_probe_disabled",
+    "external_baseline_pending",
+    "deep_extraction_missing",
+    "OCR_missing",
+    "source_cache_missing",
+    "policy_blocked",
+    "unknown"
+  ],
+  "safe_next_action_model": [
+    "refine_query",
+    "view_near_misses",
+    "view_checked_sources",
+    "run_manual_observation_future",
+    "submit_source_pack_future",
+    "submit_evidence_pack_future",
+    "create_search_need_future",
+    "enqueue_probe_after_approval_future",
+    "enable_live_probe_after_approval_future",
+    "deep_extract_container_future",
+    "OCR_scan_future",
+    "no_action"
+  ],
+  "static_demo_projection": {
+    "static_demo_available": false,
+    "generated_static_artifact": false,
+    "deferred_reason": "Docs/examples/contract projection only; no runtime or static page generated."
+  },
+  "privacy_policy_summary": "Raw query retention defaults to none; public-safe examples exclude private paths, secrets, account IDs, IPs, private URLs, and local result identifiers.",
+  "rights_risk_policy": {
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "installs_enabled": false
+  },
+  "no_global_absence_no_mutation_guarantees": {
+    "runtime_known_absence_pages_implemented": false,
+    "persistent_known_absence_store_implemented": false,
+    "global_absence_claims_allowed": false,
+    "global_absence_claimed": false,
+    "exhaustive_search_claimed": false,
+    "live_probe_execution_allowed": false,
+    "live_probes_performed": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "installs_enabled": false,
+    "arbitrary_url_fetch_enabled": false,
+    "telemetry_implemented": false,
+    "public_query_logging_enabled": false,
+    "source_cache_mutation_allowed": false,
+    "evidence_ledger_mutation_allowed": false,
+    "candidate_index_mutation_allowed": false,
+    "candidate_promotion_runtime_implemented": false,
+    "master_index_mutation_allowed": false,
+    "external_calls_performed": false
+  },
+  "runtime_status": {
+    "runtime_known_absence_pages_implemented": false,
+    "public_search_runtime_wired": false,
+    "persistent_known_absence_store_implemented": false,
+    "candidate_index_runtime_implemented": false,
+    "candidate_promotion_runtime_implemented": false,
+    "source_cache_runtime_implemented": false,
+    "evidence_ledger_runtime_implemented": false,
+    "telemetry_implemented": false
+  },
+  "command_results": {
+    "verified_at_local_date": "2026-05-02",
+    "p66_required": {
+      "python scripts/validate_known_absence_page.py --all-examples": "passed",
+      "python scripts/validate_known_absence_page.py --all-examples --json": "passed",
+      "python scripts/validate_known_absence_page_contract.py": "passed",
+      "python scripts/validate_known_absence_page_contract.py --json": "passed",
+      "python scripts/dry_run_known_absence_page.py --query \"no-such-local-index-hit\" --absence-status scoped_absence --json": "passed"
+    },
+    "p66_tests": {
+      "python -m unittest tests.operations.test_known_absence_page_contract tests.scripts.test_validate_known_absence_page tests.scripts.test_validate_known_absence_page_contract tests.scripts.test_dry_run_known_absence_page": "passed"
+    },
+    "regression_sweep": {
+      "total_commands": 63,
+      "passed_commands": 63,
+      "failed_commands": 0,
+      "skipped_missing_commands": 0,
+      "included_query_intelligence_regressions": true,
+      "included_public_search_static_and_runtime_regressions": true,
+      "included_unit_discovery_lanes": true,
+      "included_architecture_boundaries": true
+    },
+    "search_usefulness_and_archive_eval_status": {
+      "archive_resolution_evals": {
+        "status": "passed",
+        "status_counts": {
+          "satisfied": 6
+        }
+      },
+      "search_usefulness_audit": {
+        "status": "passed",
+        "eureka_status_counts": {
+          "covered": 5,
+          "partial": 40,
+          "source_gap": 10,
+          "capability_gap": 7,
+          "unknown": 2
+        }
+      },
+      "external_baseline_status": {
+        "status": "ready",
+        "global_pending_manual_observation_slots": 192,
+        "batch_0_pending_manual_observation_slots": 39,
+        "observed_slots": 0
+      }
+    },
+    "optional": {
+      "cargo --version": "unavailable: cargo is not recognized in this environment",
+      "cargo check --workspace --manifest-path crates/Cargo.toml": "not_run: cargo unavailable",
+      "cargo test --workspace --manifest-path crates/Cargo.toml": "not_run: cargo unavailable"
+    },
+    "final_local_checks": {
+      "git diff --check": "passed",
+      "git status --short --branch": "passed: dirty with P66 changes before commit"
+    }
+  },
+  "remaining_blockers": [
+    "Known absence runtime pages are intentionally not implemented.",
+    "Persistent absence records and public query logging are intentionally absent.",
+    "Live probes, arbitrary URL fetch, downloads, uploads, installs, and execution remain disabled.",
+    "Source cache, evidence ledger, candidate index, candidate promotion, public index, local index, and master index mutation remain unavailable.",
+    "Query Privacy and Poisoning Guard v0 remains the next contract layer.",
+    "Hosted deployment evidence remains operator-gated."
+  ],
+  "next_recommended_branch": "P67 Query Privacy and Poisoning Guard v0",
+  "notes": [
+    "P66 makes no global absence claim.",
+    "No telemetry, persistence, live probes, source/cache/evidence/candidate/index mutation, external calls, or deployment were added."
+  ]
+}

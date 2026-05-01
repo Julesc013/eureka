@@ -386,3 +386,7 @@ fetch, or production safety claim.
 ## Candidate Promotion Policy v0
 
 P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.
+
+## P66 Known Absence Page v0
+
+See `control/audits/known-absence-page-v0/` for the scoped absence contract/audit pack. It is not runtime known absence pages and makes no global absence claim.
