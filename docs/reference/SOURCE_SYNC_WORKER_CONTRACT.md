@@ -29,3 +29,11 @@ Probe queue and demand dashboard records may suggest future source sync work, bu
 ## P70 Source Cache And Evidence Ledger Relationship
 
 Source Cache Contract v0 and Evidence Ledger Contract v0 define future output destinations for approved source sync workers. P70 remains contract-only: no worker writes source cache or evidence ledger records, no live source call occurs, and no candidate/public/local/master index mutation occurs.
+
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-START -->
+## P71 Internet Archive Metadata Connector Approval
+
+`docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md` defines an approval-only, metadata-only future Internet Archive connector pack. It is not runtime, makes no external calls, enables no public-query fanout, performs no downloads/file retrieval/mirroring, and mutates no source cache, evidence ledger, candidate index, public/local/master index, telemetry, or credentials. Future work is blocked on official source policy review, User-Agent/contact policy, rate limits, timeouts, retry/backoff, circuit breakers, cache-first source cache output, and evidence ledger attribution.
+
+This cross-reference keeps `docs/reference/SOURCE_SYNC_WORKER_CONTRACT.md` aligned with the source-ingestion boundary: IA metadata may become future reviewed cache/evidence input, never direct truth or live public search fanout.
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->

@@ -116,3 +116,11 @@ Source Sync Worker Contract v0 is future/contract-only. It may later consume pro
 ## P70 Source Cache And Evidence Ledger Relation
 
 Source cache records and evidence ledger observations are future-reviewed inputs only. The public search index format is not mutated by P70, and public search must not expose cache or ledger records as accepted truth without governed review.
+
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-START -->
+## P71 Internet Archive Metadata Connector Approval
+
+`docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md` defines an approval-only, metadata-only future Internet Archive connector pack. It is not runtime, makes no external calls, enables no public-query fanout, performs no downloads/file retrieval/mirroring, and mutates no source cache, evidence ledger, candidate index, public/local/master index, telemetry, or credentials. Future work is blocked on official source policy review, User-Agent/contact policy, rate limits, timeouts, retry/backoff, circuit breakers, cache-first source cache output, and evidence ledger attribution.
+
+This cross-reference keeps `docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md` aligned with the source-ingestion boundary: IA metadata may become future reviewed cache/evidence input, never direct truth or live public search fanout.
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->

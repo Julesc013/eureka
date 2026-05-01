@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1.0",
+  "connector_id": "internet_archive_metadata_connector",
+  "connector_kind": "internet_archive_metadata_connector",
+  "status": "approval_required",
+  "source_family": "internet_archive",
+  "supported_capabilities": [
+    "item_metadata_lookup_future",
+    "bounded_item_search_metadata_future",
+    "file_listing_metadata_future",
+    "collection_metadata_summary_future",
+    "availability_metadata_future"
+  ],
+  "disabled_capabilities": [
+    "file_download",
+    "mirroring",
+    "item_bulk_download",
+    "account_access",
+    "upload",
+    "install",
+    "execute",
+    "arbitrary_url_fetch",
+    "unbounded_crawl",
+    "scraping",
+    "bypass_access_restrictions",
+    "raw_payload_dump",
+    "malware_safety_decision",
+    "rights_clearance_decision"
+  ],
+  "default_policy": {
+    "mode": "disabled_until_approval",
+    "metadata_only_scope": true,
+    "approval_required_for_live_network_access": true,
+    "source_policy_review_required": true,
+    "cache_first_required": true,
+    "evidence_attribution_required": true
+  },
+  "source_sync_worker_relationship": {
+    "worker_contract_ref": "contracts/source_sync/source_sync_worker_job.v0.json",
+    "source_sync_worker_runtime_required_future": true,
+    "source_sync_worker_runtime_implemented_now": false
+  },
+  "source_cache_relationship": {
+    "source_cache_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+    "source_cache_runtime_implemented_now": false,
+    "source_cache_mutation_allowed_now": false
+  },
+  "evidence_ledger_relationship": {
+    "evidence_ledger_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+    "evidence_ledger_runtime_implemented_now": false,
+    "evidence_ledger_mutation_allowed_now": false
+  },
+  "safety_defaults": {
+    "no_downloads": true,
+    "no_file_retrieval": true,
+    "no_mirroring": true,
+    "no_arbitrary_url_fetch": true,
+    "no_public_query_fanout": true,
+    "no_credentials": true,
+    "no_telemetry": true
+  },
+  "no_runtime_guarantees": {
+    "runtime_implemented": false,
+    "live_enabled_by_default": false,
+    "public_query_fanout_allowed": false,
+    "downloads_allowed": false,
+    "arbitrary_url_fetch_allowed": false,
+    "source_cache_mutation_allowed_now": false,
+    "evidence_ledger_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "master_index_mutation_allowed_now": false
+  },
+  "notes": [
+    "Manifest is an approval-contract projection only; it is not a connector module."
+  ]
+}

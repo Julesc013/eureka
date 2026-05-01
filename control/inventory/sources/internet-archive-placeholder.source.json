@@ -90,5 +90,16 @@
     ],
     "next_coverage_step": "Add recorded metadata and item-file fixtures for a small governed Internet Archive slice."
   },
-  "notes": "Planning placeholder only. This record must not be read as an implemented connector."
+  "notes": "Planning placeholder only. This record must not be read as an implemented connector.",
+  "connector_approval": {
+    "status": "approval_required",
+    "connector_id": "internet_archive_metadata_connector",
+    "approval_pack_ref": "control/audits/internet-archive-metadata-connector-approval-v0/",
+    "connector_inventory_ref": "control/inventory/connectors/internet_archive_metadata_connector.json",
+    "runtime_implemented": false,
+    "live_enabled": false,
+    "limitations": [
+      "P71 approval pack exists, but the placeholder remains unimplemented and live access remains deferred."
+    ]
+  }
 }

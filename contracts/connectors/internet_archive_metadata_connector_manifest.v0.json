@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/internet_archive_metadata_connector_manifest.v0.json",
+  "title": "Eureka Internet Archive Metadata Connector Manifest v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_implemented": false,
+  "x-live_enabled_by_default": false,
+  "x-public_query_fanout_allowed": false,
+  "x-downloads_allowed": false,
+  "x-arbitrary_url_fetch_allowed": false,
+  "x-source_cache_mutation_allowed_now": false,
+  "x-evidence_ledger_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-master_index_mutation_allowed_now": false,
+  "required": [
+    "schema_version",
+    "connector_id",
+    "connector_kind",
+    "status",
+    "source_family",
+    "supported_capabilities",
+    "disabled_capabilities",
+    "default_policy",
+    "source_sync_worker_relationship",
+    "source_cache_relationship",
+    "evidence_ledger_relationship",
+    "safety_defaults",
+    "no_runtime_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Internet Archive metadata connector manifest v0 field: schema_version."
+    },
+    "connector_id": {
+      "description": "Internet Archive metadata connector manifest v0 field: connector_id."
+    },
+    "connector_kind": {
+      "description": "Internet Archive metadata connector manifest v0 field: connector_kind."
+    },
+    "status": {
+      "description": "Internet Archive metadata connector manifest v0 field: status."
+    },
+    "source_family": {
+      "description": "Internet Archive metadata connector manifest v0 field: source_family."
+    },
+    "supported_capabilities": {
+      "description": "Internet Archive metadata connector manifest v0 field: supported_capabilities."
+    },
+    "disabled_capabilities": {
+      "description": "Internet Archive metadata connector manifest v0 field: disabled_capabilities."
+    },
+    "default_policy": {
+      "description": "Internet Archive metadata connector manifest v0 field: default_policy."
+    },
+    "source_sync_worker_relationship": {
+      "description": "Internet Archive metadata connector manifest v0 field: source_sync_worker_relationship."
+    },
+    "source_cache_relationship": {
+      "description": "Internet Archive metadata connector manifest v0 field: source_cache_relationship."
+    },
+    "evidence_ledger_relationship": {
+      "description": "Internet Archive metadata connector manifest v0 field: evidence_ledger_relationship."
+    },
+    "safety_defaults": {
+      "description": "Internet Archive metadata connector manifest v0 field: safety_defaults."
+    },
+    "no_runtime_guarantees": {
+      "description": "Internet Archive metadata connector manifest v0 field: no_runtime_guarantees."
+    },
+    "notes": {
+      "description": "Internet Archive metadata connector manifest v0 field: notes."
+    }
+  },
+  "$defs": {
+    "statuses": [
+      "draft_example",
+      "approval_required",
+      "runtime_future",
+      "disabled"
+    ],
+    "connector_kind": [
+      "internet_archive_metadata_connector"
+    ]
+  }
+}

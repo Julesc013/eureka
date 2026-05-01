@@ -45,3 +45,11 @@ Source Sync Worker Contract v0 is future/contract-only. It may later consume pro
 ## P70 Source Cache And Evidence Ledger Relation
 
 Demand dashboard source and capability priorities may later inform approved source sync work whose outputs enter Source Cache Contract v0 and Evidence Ledger Contract v0. P70 adds no dashboard aggregation runtime, no source calls, no cache/ledger mutation, and no real demand claims.
+
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-START -->
+## P71 Internet Archive Metadata Connector Approval
+
+`docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md` defines an approval-only, metadata-only future Internet Archive connector pack. It is not runtime, makes no external calls, enables no public-query fanout, performs no downloads/file retrieval/mirroring, and mutates no source cache, evidence ledger, candidate index, public/local/master index, telemetry, or credentials. Future work is blocked on official source policy review, User-Agent/contact policy, rate limits, timeouts, retry/backoff, circuit breakers, cache-first source cache output, and evidence ledger attribution.
+
+This cross-reference keeps `docs/reference/DEMAND_DASHBOARD_CONTRACT.md` aligned with the source-ingestion boundary: IA metadata may become future reviewed cache/evidence input, never direct truth or live public search fanout.
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->

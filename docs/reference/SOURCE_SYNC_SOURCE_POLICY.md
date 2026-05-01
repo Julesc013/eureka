@@ -7,3 +7,11 @@ P69 does not configure credentials, contact emails, source-specific User-Agent v
 ## P70 Cache And Ledger Policy
 
 Future source cache and evidence ledger outputs must preserve source policy, freshness, provenance, fixity, privacy, rights/risk, and evidence attribution. No public-query fanout, arbitrary URL cache, raw payload store, private data store, executable payload store, or current mutation is allowed.
+
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-START -->
+## P71 Internet Archive Metadata Connector Approval
+
+`docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md` defines an approval-only, metadata-only future Internet Archive connector pack. It is not runtime, makes no external calls, enables no public-query fanout, performs no downloads/file retrieval/mirroring, and mutates no source cache, evidence ledger, candidate index, public/local/master index, telemetry, or credentials. Future work is blocked on official source policy review, User-Agent/contact policy, rate limits, timeouts, retry/backoff, circuit breakers, cache-first source cache output, and evidence ledger attribution.
+
+This cross-reference keeps `docs/reference/SOURCE_SYNC_SOURCE_POLICY.md` aligned with the source-ingestion boundary: IA metadata may become future reviewed cache/evidence input, never direct truth or live public search fanout.
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->

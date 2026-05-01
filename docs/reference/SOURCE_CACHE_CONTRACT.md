@@ -7,3 +7,11 @@ Source cache records preserve source refs, cache identity, cache kind, source po
 Future live source cache entries require approved source sync workers, source policy review, rate limits, timeouts, circuit breakers, descriptive User-Agent policy, source terms review, cache-first handling, and evidence attribution. Public queries must not fan out live to source cache writes.
 
 Source cache records may feed the future evidence ledger, candidate index, public index builder, or master index review queue only after validation, review, promotion policy, and contract-specific runtime work. P70 performs no source cache mutation, evidence ledger mutation, candidate mutation, public/local/master index mutation, telemetry, credentials, downloads, installs, execution, or external calls.
+
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-START -->
+## P71 Internet Archive Metadata Connector Approval
+
+`docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md` defines an approval-only, metadata-only future Internet Archive connector pack. It is not runtime, makes no external calls, enables no public-query fanout, performs no downloads/file retrieval/mirroring, and mutates no source cache, evidence ledger, candidate index, public/local/master index, telemetry, or credentials. Future work is blocked on official source policy review, User-Agent/contact policy, rate limits, timeouts, retry/backoff, circuit breakers, cache-first source cache output, and evidence ledger attribution.
+
+This cross-reference keeps `docs/reference/SOURCE_CACHE_CONTRACT.md` aligned with the source-ingestion boundary: IA metadata may become future reviewed cache/evidence input, never direct truth or live public search fanout.
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->

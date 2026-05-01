@@ -7,3 +7,11 @@ Future live source sync requires approval, source policy review, rate limits, ti
 ## P70 Source Cache And Evidence Ledger v0
 
 P70 adds Source Cache Contract v0 and Evidence Ledger Contract v0 as contract-only storage models. They are not runtime, not public-query fanout, not arbitrary URL cache, not raw payload store, not private data store, and not source/evidence/candidate/public/local/master index mutation. Future approved source sync workers may write cache-first, evidence-attributed metadata only after approval, source policy, rate limits, timeouts, circuit breakers, and descriptive User-Agent policy.
+
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-START -->
+## P71 Internet Archive Metadata Connector Approval Pack v0
+
+P71 adds an approval pack for a future Internet Archive metadata connector. The connector is not implemented, no external calls occur, public queries do not fan out to Internet Archive, and source cache/evidence ledger/candidate/public/local/master indexes are not mutated. Scope is metadata-only after approval: item metadata, bounded metadata query summaries, collection summaries, file-listing metadata summaries, and availability metadata. Downloads, file retrieval, mirroring, arbitrary URL fetch, scraping, full-text scrape, access-restricted downloads, installs, execution, rights clearance, and malware safety decisions are forbidden.
+
+Future implementation requires official source policy review, User-Agent/contact policy, rate limits, timeouts, retry/backoff, circuit breakers, cache-first output to source cache, evidence attribution to the evidence ledger, and operator approval.
+<!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->
