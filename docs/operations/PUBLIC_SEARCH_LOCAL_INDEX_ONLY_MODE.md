@@ -128,3 +128,8 @@ needs contract-only. `local_index_only` search does not read or write result
 cache entries, write miss ledger entries, create search needs, claim demand
 counts, enqueue probes, mutate candidate records, mutate local indexes, or
 mutate master-index records.
+
+P63 Probe Queue v0 keeps future probe planning contract-only. `local_index_only`
+search does not create queue items, execute probes, call live sources, mutate
+source caches or evidence ledgers, mutate candidate records, or relax the
+server-owned index and source boundaries.

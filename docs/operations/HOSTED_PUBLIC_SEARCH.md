@@ -110,3 +110,8 @@ Need Record v0 remain contract-only. The hosted wrapper does not read or write
 cache entries, write miss ledger entries, create search needs, claim demand
 counts, enqueue probes, mutate candidate indexes, mutate local indexes, or
 mutate the master index.
+
+P63 Probe Queue v0 also remains contract-only. The hosted wrapper does not
+create queue items, persist queue state, execute probes, call live sources,
+mutate source caches, mutate evidence ledgers, mutate candidate indexes, mutate
+local indexes, or mutate the master index.

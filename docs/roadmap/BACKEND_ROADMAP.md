@@ -660,3 +660,13 @@ examples, validators, docs, and audit evidence. Backend runtime still does not
 write need records, persist need state, emit telemetry, claim demand counts,
 enqueue probes, mutate candidate records, mutate result caches, mutate miss
 ledgers, or mutate master-index records. P63 should define Probe Queue v0 next.
+
+## P63 Probe Queue v0
+
+P63 defines probe queue items as contract-only schema, probe kind taxonomy,
+source policy/approval model, synthetic examples, validators, docs, and audit
+evidence. Backend runtime still does not create queue items, persist queue
+state, execute probes, call live sources, mutate source caches, mutate evidence
+ledgers, mutate candidate records, mutate search needs, mutate result caches,
+mutate miss ledgers, or mutate master-index records. P64 should define
+Candidate Index v0 next.

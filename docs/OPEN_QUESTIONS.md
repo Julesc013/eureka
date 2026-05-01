@@ -179,6 +179,14 @@ ledger refs, but P62 adds no runtime need store, public demand counts, probes,
 candidate index, or master-index mutation. The next question is how P63 should
 define a probe queue without enabling live probes.
 
+P63 answer: probe queue items are contract-only future work requests. They may
+later point from search needs toward manual observation, source-cache work,
+deep extraction, or approval-gated source metadata checks, but P63 adds no
+runtime queue, no probe execution, no live source calls, no source-cache or
+evidence-ledger mutation, no candidate-index mutation, and no master-index
+mutation. The next question is how P64 should model candidate records without
+turning probe plans into truth.
+
 - What aggregate threshold is required before public demand summaries may be published?
 - What retention and deletion controls are required before any hosted query observation runtime exists?
 - What poisoning and spam controls are required before query-derived demand can influence candidate work?

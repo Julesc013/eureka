@@ -762,14 +762,14 @@
     {
       "id": "probe_queue_v0",
       "title": "P63 Probe Queue v0",
-      "status": "queued_codex_safe_contract_only",
+      "status": "completed",
       "priority": 104,
-      "notes": "Define probe queue records and safety gates as contract-only before any live probe runtime; keep connectors disabled until explicit approval."
+      "notes": "Implemented P63 Probe Queue v0 with contract schema, probe kind taxonomy, synthetic manual/source-cache/deep-extraction examples, dry-run helper, validators, audit pack, docs, tests, and metadata. No runtime probe queue, persistent queue storage, telemetry, public query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, local-index mutation, master-index mutation, external calls, or live probes were added."
     },
     {
       "id": "candidate_index_v0",
       "title": "P64 Candidate Index v0",
-      "status": "queued_codex_safe",
+      "status": "queued_codex_safe_next",
       "priority": 105,
       "notes": "Define candidate index boundaries and validation gates without mutating the master index."
     },
@@ -828,6 +828,13 @@
       "status": "approval_gated_future",
       "priority": 113,
       "notes": "Future approval pack after query-intelligence and source-cache/evidence-ledger contracts; no live Wayback, CDX, or Memento calls or connector runtime without explicit approval."
+    },
+    {
+      "id": "github_releases_connector_approval_pack_v0",
+      "title": "P73 GitHub Releases Connector Approval Pack v0",
+      "status": "approval_gated_future",
+      "priority": 114,
+      "notes": "Future approval pack after candidate/query-intelligence and source-cache/evidence-ledger contracts; no live GitHub API calls or connector runtime without explicit approval."
     }
   ]
 }

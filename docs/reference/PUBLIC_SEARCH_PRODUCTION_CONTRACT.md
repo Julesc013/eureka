@@ -126,3 +126,11 @@ public search runtime and hosted wrapper still do not write need records,
 persist need state, claim demand counts, enqueue probes, mutate result caches or
 miss ledgers, mutate candidate indexes, mutate local indexes, or mutate the
 master index.
+
+## P63 Probe Queue Boundary
+
+P63 Probe Queue v0 defines future policy-gated probe planning records. The
+public search runtime and hosted wrapper still do not create queue items,
+persist queue state, execute probes, call live sources, mutate source caches,
+mutate evidence ledgers, mutate candidate indexes, mutate local indexes, or
+mutate the master index.

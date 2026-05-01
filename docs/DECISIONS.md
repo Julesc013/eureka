@@ -1819,3 +1819,13 @@ refs, gap models, future-only next steps, and no-mutation guarantees. P62 adds
 no runtime need storage, telemetry, public query logging, demand-count runtime,
 probe enqueueing, candidate-index mutation, result-cache mutation,
 miss-ledger mutation, local-index mutation, or master-index mutation.
+
+## P63 Probe Queue Decision
+
+Decision: probe queue items are contract-only in P63. Queue items summarize
+future work requests with public-safe fingerprints, probe kind taxonomy, source
+policy, approval gates, expected outputs, safety requirements, and
+no-execution/no-mutation guarantees. P63 adds no runtime queue, persistent
+queue, probe execution, live source calls, source cache mutation, evidence
+ledger mutation, candidate-index mutation, local-index mutation, or
+master-index mutation.

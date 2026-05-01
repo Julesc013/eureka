@@ -941,3 +941,12 @@ validators, docs, and an audit pack. Runtime need storage, persistent need
 storage, telemetry, public query logging, demand-count runtime, probe
 enqueueing, candidate-index mutation, result-cache mutation, miss-ledger
 mutation, local-index mutation, and master-index mutation remain unimplemented.
+
+## P63 Probe Queue v0
+
+P63 adds the probe queue item contract under `contracts/query/`, a probe kind
+taxonomy, source policy and approval model, synthetic manual/source/deepening
+examples, validators, docs, and an audit pack. Runtime queue storage,
+persistent queue storage, probe execution, live source calls, source cache
+mutation, evidence ledger mutation, candidate-index mutation, local-index
+mutation, and master-index mutation remain unimplemented.

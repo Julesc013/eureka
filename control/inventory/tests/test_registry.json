@@ -4979,6 +4979,133 @@
       "failure_means": "Focused P62 schema, examples, validators, dry-run, audit, docs, privacy, scoped need, or no-mutation tests regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P62 tests; no telemetry, persistence, runtime need store, query logging, probe queue, candidate-index mutation, result cache mutation, miss ledger mutation, external calls, or index mutation."
+    },
+    {
+      "test_id": "probe_queue_item_examples_validator",
+      "label": "Probe queue item examples validator",
+      "command": "python scripts/validate_probe_queue_item.py --all-examples",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P63 probe queue examples, checksums, privacy flags, source policy, future-only outputs, safety requirements, or no-execution guarantees regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic probe queue examples only; no telemetry, persistence, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, index mutation, or external calls."
+    },
+    {
+      "test_id": "probe_queue_item_examples_validator_json",
+      "label": "Probe queue item examples validator JSON",
+      "command": "python scripts/validate_probe_queue_item.py --all-examples --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P63 example validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON example validator output for P63."
+    },
+    {
+      "test_id": "probe_queue_contract_validator",
+      "label": "Probe queue contract validator",
+      "command": "python scripts/validate_probe_queue_contract.py",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P63 contract schema, docs, audit pack, policy inventory, approval-gated source policy, or no-runtime/no-execution claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates P63 governance only; does not collect, persist, upload, publish, or runtime-write probe queue items."
+    },
+    {
+      "test_id": "probe_queue_contract_validator_json",
+      "label": "Probe queue contract validator JSON",
+      "command": "python scripts/validate_probe_queue_contract.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P63 contract validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON contract validator output for P63."
+    },
+    {
+      "test_id": "probe_queue_dry_run_json",
+      "label": "Probe queue dry-run JSON helper",
+      "command": "python scripts/dry_run_probe_queue_item.py --label \"Check IA metadata for Windows 7 app query\" --kind source_metadata_probe --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "sub-second",
+      "failure_means": "P63 dry-run probe queue helper failed or stopped emitting a valid no-persistence item.",
+      "advisory_or_required": "required",
+      "notes": "Dry-run helper emits stdout only and writes no probe queue, source cache, evidence ledger, candidate index, index, or telemetry state."
+    },
+    {
+      "test_id": "probe_queue_contract_tests",
+      "label": "Probe queue contract tests",
+      "command": "python -m unittest tests.operations.test_probe_queue_contract tests.scripts.test_validate_probe_queue_item tests.scripts.test_validate_probe_queue_contract tests.scripts.test_dry_run_probe_queue_item",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P63 schema, examples, validators, dry-run, audit, docs, privacy, source policy, approval, or no-execution tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P63 tests; no telemetry, persistence, query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, external calls, or index mutation."
     }
   ]
 }

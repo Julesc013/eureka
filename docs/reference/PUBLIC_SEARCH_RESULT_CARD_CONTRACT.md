@@ -302,3 +302,10 @@ P62 Search Need Record v0 may reference public-safe result-card summaries as
 context for a scoped unresolved need. A need record is not the full result card,
 not source evidence, not a probe job, not a candidate record, not telemetry, and
 not master-index truth.
+
+## Probe Queue Boundary
+
+P63 Probe Queue v0 may reference public-safe result-card context only through
+query observation, cache, miss, or search-need refs. A probe queue item is not
+the full result card, not source evidence, not probe execution, not a candidate
+record, not telemetry, and not master-index truth.

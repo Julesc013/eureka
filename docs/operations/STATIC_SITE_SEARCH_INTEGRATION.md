@@ -65,3 +65,8 @@ and P62 Search Need Record remain contract-only. Static search pages do not
 collect observations, write cache entries, write miss ledger entries, create
 search needs, claim demand counts, enqueue probes, mutate indexes, or publish
 public demand counts.
+
+P63 Probe Queue also remains contract-only. Static search pages do not create
+probe queue items, execute probes, call live sources, mutate source caches,
+mutate evidence ledgers, mutate candidate indexes, or change hosted-backend
+verification status.

@@ -304,3 +304,9 @@ persistent query logging, runtime cache writes, runtime ledger writes, runtime
 need storage, demand-count runtime, probe enqueueing, candidate-index mutation,
 local-index mutation, master-index mutation, or hosted query-intelligence
 runtime.
+
+P63 adds contract-only probe queue shapes. It does not add a runtime queue,
+probe execution, live source calls, source-cache mutation, evidence-ledger
+mutation, candidate-index mutation, search-need mutation, local-index mutation,
+master-index mutation, or any change to the public-search blocked-parameter
+posture.

@@ -777,3 +777,12 @@ evidence. No runtime need store, persistent need storage, telemetry, public
 query logging, demand-count runtime, probe enqueueing, candidate-index
 mutation, result-cache mutation, miss-ledger mutation, local-index mutation, or
 master-index mutation was added. Next Codex-safe branch: P63 Probe Queue v0.
+
+## P63 Probe Queue v0
+
+Completed: probe queue item schema, probe kind taxonomy, source policy and
+approval model, manual/source-cache/deep-extraction examples, dry-run helper,
+validators, docs, and audit evidence. No runtime queue, persistent queue,
+probe execution, live source calls, source cache mutation, evidence ledger
+mutation, candidate-index mutation, local-index mutation, or master-index
+mutation was added. Next Codex-safe branch: P64 Candidate Index v0.

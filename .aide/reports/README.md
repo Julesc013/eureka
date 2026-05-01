@@ -280,3 +280,7 @@ The P61 report lives at `control/audits/search-miss-ledger-v0/search_miss_ledger
 ## P62 Search Need Record v0
 
 The P62 report lives at `control/audits/search-need-record-v0/search_need_record_report.json`. It records search need contract/schema/example validation only and does not claim runtime need storage, persistent need storage, telemetry, public query logging, demand-count runtime, probe enqueueing, candidate-index mutation, result-cache mutation, miss-ledger mutation, index mutation, or hosted query intelligence runtime.
+
+## P63 Probe Queue v0
+
+The P63 report lives at `control/audits/probe-queue-v0/probe_queue_report.json`. It records probe queue contract/schema/example validation only and does not claim queue runtime, persistent queue storage, telemetry, public query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, index mutation, or hosted query intelligence runtime.

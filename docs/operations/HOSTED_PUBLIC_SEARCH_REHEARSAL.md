@@ -67,5 +67,10 @@ query logging, no public query observation feed, no cache writes, no runtime
 ledger writes, no runtime need store, no demand-count runtime, no probe
 enqueueing, no candidate-index mutation, and no master-index mutation.
 
+P63 Probe Queue v0 extends that chain with contract-only future probe items. It
+does not create a runtime queue, execute probes, call live sources, mutate
+source caches or evidence ledgers, mutate candidate indexes, or change the
+hosted-wrapper rehearsal behavior.
+
 Operator parallel work may deploy and verify the hosted wrapper, but public
 claims must not change until evidence exists.

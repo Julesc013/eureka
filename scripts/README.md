@@ -633,3 +633,18 @@ emit a stdout-only dry-run need record. They do not persist need state, add
 telemetry, write query logs, claim demand counts, enqueue probes, mutate result
 caches or miss ledgers, mutate candidate/local/master indexes, or call external
 services.
+
+## Probe Queue Contract
+
+- `python scripts/validate_probe_queue_item.py --all-examples`
+- `python scripts/validate_probe_queue_item.py --all-examples --json`
+- `python scripts/validate_probe_queue_contract.py`
+- `python scripts/validate_probe_queue_contract.py --json`
+- `python scripts/dry_run_probe_queue_item.py --label "Check IA metadata for Windows 7 app query" --kind source_metadata_probe --json`
+
+These P63 commands validate contract-only probe queue examples and docs, or
+emit a stdout-only dry-run probe item. They do not persist queue state, execute
+probes, call live sources, add telemetry, write query logs, mutate source
+caches, evidence ledgers, candidate indexes, local indexes, master-index
+records, result caches, miss ledgers, or search needs, or call external
+services.

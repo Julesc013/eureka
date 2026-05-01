@@ -66,6 +66,12 @@ telemetry, public query logging, demand-count runtime, probe enqueueing,
 candidate-index mutation, result-cache mutation, miss-ledger mutation,
 local-index mutation, or master-index mutation.
 
+P63 Probe Queue v0 remains contract-only. It adds no runtime probe queue, no
+probe execution, no live source calls, no source-cache mutation, no
+evidence-ledger mutation, no candidate-index mutation, no search-need mutation,
+no result-cache mutation, no miss-ledger mutation, no local-index mutation, and
+no master-index mutation.
+
 Human or operator parallel work may deploy the wrapper, configure a real
 backend URL, configure edge/rate limits, verify the static site, and execute
 Manual Observation Batch 0, but those actions require separate evidence.

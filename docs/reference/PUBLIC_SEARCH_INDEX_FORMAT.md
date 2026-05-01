@@ -78,3 +78,10 @@ committed public-safe index counts.
 P62 search need records may cite the public index build or snapshot as checked
 scope. They do not mutate the public index, import packs, stage packs, enqueue
 probes, create candidates, or mutate the master index.
+
+## P63 Probe Queue Compatibility
+
+P63 probe queue items may cite public index build or snapshot refs as checked
+scope for a future work request. They do not mutate the public index, import
+packs, stage packs, run probes, mutate source caches or evidence ledgers, create
+candidates, or mutate the master index.
