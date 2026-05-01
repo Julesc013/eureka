@@ -667,6 +667,20 @@
       "status": "completed",
       "priority": 90,
       "notes": "Implemented audit/reporting checkpoint under control/audits/post-p49-platform-audit-v0 with validator and tests. It records current classifications, command evidence, blockers, query-intelligence gaps, human/approval/operator gates, and next milestones without adding hosted search, live probes, pack import, staging runtime, AI runtime, external observations, public search mutation, or master-index mutation."
+    },
+    {
+      "id": "post_p50_remediation_pack_v0",
+      "title": "P51 Post-P50 Remediation Pack v0",
+      "status": "completed",
+      "priority": 91,
+      "notes": "Implemented bounded remediation under control/audits/post-p50-remediation-v0 with minimal root governance docs, license-selection guidance, pack-validator CLI alignment, GitHub Pages operator-evidence guidance, validator/tests, and metadata updates. It adds no hosted backend, live probes, connector runtime, AI runtime, pack import, staging runtime, index mutation, external observations, or deployment-success claim."
+    },
+    {
+      "id": "static_deployment_evidence_github_pages_repair_v0",
+      "title": "P52 Static Deployment Evidence / GitHub Pages Repair v0",
+      "status": "recommended_next_operator_gated",
+      "priority": 92,
+      "notes": "Next branch should enable/verify GitHub Pages through operator settings and run evidence only. Do not add backend hosting, live probes, source connectors, custom domains, secrets, or production claims in this branch."
     }
   ]
 }

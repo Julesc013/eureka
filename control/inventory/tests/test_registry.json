@@ -3730,6 +3730,48 @@
       "failure_means": "P50 audit pack existence, JSON parseability, classification values, absence facts, next milestones, language/runtime strategy, or validator CLI behavior regressed.",
       "advisory_or_required": "required",
       "notes": "Focused tests for the audit pack and validator; they do not call external sources, mutate indexes, stage packs, deploy, or load AI providers."
+    },
+    {
+      "test_id": "post_p50_remediation_validator",
+      "label": "Post-P50 remediation validator",
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P51 remediation audit files, JSON shape, remediation item IDs/statuses, governance status, Pages evidence honesty, Cargo status, or no-product-expansion guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates the P51 remediation checkpoint only; it performs no network calls and adds no hosted backend, live probes, AI runtime, pack import, staging runtime, external observations, or deployment behavior."
+    },
+    {
+      "test_id": "post_p50_remediation_tests",
+      "label": "Post-P50 remediation tests",
+      "command": "python -m unittest tests.operations.test_post_p50_remediation tests.scripts.test_validate_post_p50_remediation",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P51 remediation pack existence, JSON parseability, required item IDs, root governance status, Pages/Cargo/pack CLI status, or validator CLI behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused tests for the remediation pack and validator; they do not call external sources, mutate indexes, stage packs, deploy, or load AI providers."
     }
   ]
 }

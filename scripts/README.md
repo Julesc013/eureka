@@ -412,6 +412,12 @@ Current scripts:
   milestones, and no-overclaim guardrails for production status, hosted search,
   live probes, external baselines, and AI runtime; it supports `--json` and
   adds no product behavior
+- `validate_post_p50_remediation.py`: validates the P51 Post-P50 Remediation
+  Pack v0 under `control/audits/post-p50-remediation-v0/`, including required
+  files, remediation item IDs/statuses, P50 audit reference, root governance
+  status, pack-validator CLI remediation, GitHub Pages evidence honesty, Cargo
+  status, remaining blockers, next branch recommendation, and no product
+  behavior expansion claims; it supports `--json` and performs no network calls
 - `validate_public_data_stability.py`: validates Public Data Contract
   Stability Review v0 under
   `control/audits/public-data-contract-stability-review-v0/`, including

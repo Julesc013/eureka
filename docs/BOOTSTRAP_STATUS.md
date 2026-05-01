@@ -788,6 +788,16 @@ planning-only with no provider runtime or model calls. The next Codex-safe
 branch is `p51-post-p50-remediation-pack-v0`; Manual Observation Batch 0 and
 GitHub Pages repair remain human/operator work.
 
+Post-P50 Remediation Pack v0 is recorded under
+`control/audits/post-p50-remediation-v0/`. It adds minimal root governance
+placeholders, records license selection as pending, repairs individual pack
+validator example flags, records Pages evidence as operator-gated, and adds P51
+validator/test metadata. It adds no hosted backend, live probes, source
+connector runtime, AI runtime, pack import runtime, staging runtime, index
+mutation, external observations, or deployment-success claim. The next branch
+is `p52-static-deployment-evidence-github-pages-repair-v0` unless Pages
+deployment evidence is verified first.
+
 ## Deferred Priorities
 
 These are intentionally not the next milestone:

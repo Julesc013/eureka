@@ -201,3 +201,11 @@ audit/reporting governance only and does not add product runtime behavior,
 hosted search, live probes, external observations, pack import, staging
 runtime, AI runtime, deployment changes, downloads, uploads, accounts, or
 master-index mutation.
+
+Post-P50 Remediation Pack v0 records its committed audit pack under
+`control/audits/post-p50-remediation-v0/`, plus a validator and tests under
+`scripts/` and `tests/`. No separate AIDE runtime report is needed; this is
+bounded remediation governance only and does not add hosted backend behavior,
+live probes, source connectors, AI runtime, pack import, staging runtime,
+external observations, downloads, uploads, accounts, or deployment-success
+claims.

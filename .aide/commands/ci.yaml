@@ -340,6 +340,12 @@ steps:
     run: python scripts/validate_post_p49_platform_audit.py --json
   - id: post_p49_platform_audit_tests
     run: python -m unittest tests.operations.test_post_p49_platform_audit tests.scripts.test_validate_post_p49_platform_audit
+  - id: post_p50_remediation_validator
+    run: python scripts/validate_post_p50_remediation.py
+  - id: post_p50_remediation_validator_json
+    run: python scripts/validate_post_p50_remediation.py --json
+  - id: post_p50_remediation_tests
+    run: python -m unittest tests.operations.test_post_p50_remediation tests.scripts.test_validate_post_p50_remediation
   - id: public_data_stability_validator
     run: python scripts/validate_public_data_stability.py
   - id: public_data_stability_validator_json

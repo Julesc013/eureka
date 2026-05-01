@@ -658,3 +658,15 @@ are `covered=5`, `partial=40`, `source_gap=10`, `capability_gap=7`, and
 baselines remain `192` pending and `0` observed. The next branch is
 `p51-post-p50-remediation-pack-v0`, with Manual Observation Batch 0 and
 GitHub Pages repair kept as human/operator work.
+
+## Post-P50 Remediation
+
+Post-P50 Remediation Pack v0 records the P51 checkpoint under
+`control/audits/post-p50-remediation-v0/`. It fixes bounded repo-local drift:
+minimal root governance docs, license-selection guidance, pack-validator
+`--all-examples`/`--known-examples` alignment, P51 validator/tests, and
+operator-facing GitHub Pages evidence steps. It keeps hosted search
+unavailable, external baselines pending/manual, live probes disabled, AI
+runtime absent, and Rust optional/parity-only. The next branch is
+`p52-static-deployment-evidence-github-pages-repair-v0` unless Pages evidence
+is verified separately first.

@@ -555,8 +555,17 @@
         "post-p49-platform-audit-v0"
       ],
       "title": "Remediate P50 command drift, query-intelligence gaps, Pages evidence, and security/ops documentation gaps without adding product behavior",
-      "status": "open_follow_up",
+      "status": "addressed_by_post_p50_remediation_pack_v0",
       "suggested_milestone": "P51 Post-P50 Remediation Pack"
+    },
+    {
+      "id": "audit-backlog-post-p50-pages-evidence",
+      "finding_refs": [
+        "post-p50-remediation-v0"
+      ],
+      "title": "Resolve operator-gated GitHub Pages deployment evidence without adding backend behavior",
+      "status": "open_follow_up",
+      "suggested_milestone": "P52 Static Deployment Evidence / GitHub Pages Repair v0"
     }
   ]
 }

@@ -258,6 +258,13 @@ backend, fake hosted URL, live probes, downloads, uploads, or production claim.
   and next milestones without adding product runtime behavior, hosted search,
   live probes, pack import, AI runtime, external observations, or production
   claims.
+- `post-p50-remediation-v0/`: P51 bounded remediation checkpoint for concrete
+  P50 drift. It records minimal root governance docs, license selection as
+  pending, pack-validator CLI alignment, GitHub Pages operator evidence gaps,
+  command/test metadata updates, generated artifact rechecks, Cargo status, and
+  remaining human/approval/operator gates without adding hosted backend
+  behavior, live probes, source connectors, AI runtime, pack import, staging
+  runtime, index mutation, external observations, or deployment-success claims.
 
 Public Search Safety / Abuse Guard v0 is governed under
 `control/inventory/publication/public_search_safety.json`,

@@ -555,3 +555,11 @@ search, live connectors, query-intelligence runtime, pack import/staging
 runtime, AI runtime, production ops, and external baseline observations remain
 blocked, gated, or deferred. The next Codex-safe branch is
 `p51-post-p50-remediation-pack-v0`.
+
+Post-P50 Remediation Pack v0 records the P51 cleanup checkpoint under
+`control/audits/post-p50-remediation-v0/`. It fixes governance/doc and
+pack-validator command drift without adding backend behavior. Hosted search,
+query intelligence runtime, live probes, deployment operations, and connector
+runtime remain future gated work. The next backend-facing branch is
+`p52-static-deployment-evidence-github-pages-repair-v0`, then Public Search
+Production Contract v0 after deployment evidence is resolved.
