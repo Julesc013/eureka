@@ -310,3 +310,7 @@ P68 report lives under `control/audits/demand-dashboard-v0/` and records synthet
 ## P69 Source Sync Worker Contract v0
 
 P69 report lives under `control/audits/source-sync-worker-contract-v0/` and records source sync worker contract evidence only.
+
+## P70 Source Cache and Evidence Ledger v0
+
+Report: `control/audits/source-cache-evidence-ledger-v0/source_cache_evidence_ledger_report.json`.

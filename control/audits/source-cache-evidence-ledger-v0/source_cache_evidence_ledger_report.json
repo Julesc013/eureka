@@ -1,0 +1,695 @@
+{
+  "report_id": "source_cache_evidence_ledger_v0",
+  "created_by_slice": "P70 Source Cache and Evidence Ledger v0",
+  "repo_head": "e2dfdf5f0f32134e119f377872b905f0f66ccfb6",
+  "branch": "main",
+  "worktree_status": "## main...origin/main\n M .aide/commands/ci.yaml\n M .aide/commands/dev.yaml\n M .aide/reports/README.md\n M .aide/tasks/audit_backlog.yaml\n M .aide/tasks/queue.yaml\n M control/audits/README.md\n M control/inventory/query_intelligence/candidate_index_policy.json\n M control/inventory/query_intelligence/candidate_promotion_policy.json\n M control/inventory/query_intelligence/demand_dashboard_policy.json\n M control/inventory/query_intelligence/known_absence_page_policy.json\n M control/inventory/query_intelligence/probe_queue_policy.json\n M control/inventory/query_intelligence/query_observation_policy.json\n M control/inventory/query_intelligence/query_privacy_poisoning_guard_policy.json\n M control/inventory/query_intelligence/search_miss_ledger_policy.json\n M control/inventory/query_intelligence/search_need_record_policy.json\n M control/inventory/query_intelligence/search_result_cache_policy.json\n M control/inventory/source_sync/source_sync_worker_policy.json\n M control/inventory/tests/command_matrix.json\n M control/inventory/tests/test_registry.json\n M docs/BOOTSTRAP_STATUS.md\n M docs/DECISIONS.md\n M docs/OPEN_QUESTIONS.md\n M docs/ROADMAP.md\n M docs/architecture/QUERY_INTELLIGENCE_PLANE.md\n M docs/architecture/SOURCE_INGESTION_PLANE.md\n M docs/operations/HOSTED_PUBLIC_SEARCH_REHEARSAL.md\n M docs/operations/PUBLIC_SEARCH_SAFETY_EVIDENCE.md\n M docs/reference/CANDIDATE_INDEX_CONTRACT.md\n M docs/reference/CANDIDATE_PROMOTION_POLICY.md\n M docs/reference/DEMAND_DASHBOARD_CONTRACT.md\n M docs/reference/EVIDENCE_PACK_CONTRACT.md\n M docs/reference/PROBE_QUEUE_CONTRACT.md\n M docs/reference/PUBLIC_SEARCH_API_CONTRACT.md\n M docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md\n M docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md\n M docs/reference/SOURCE_PACK_CONTRACT.md\n M docs/reference/SOURCE_SYNC_SOURCE_POLICY.md\n M docs/reference/SOURCE_SYNC_WORKER_CONTRACT.md\n M docs/roadmap/BACKEND_ROADMAP.md\n M scripts/README.md\n?? _p70_record_verification.py\n?? contracts/evidence_ledger/\n?? contracts/source_cache/\n?? control/audits/source-cache-evidence-ledger-v0/\n?? control/inventory/evidence_ledger/\n?? control/inventory/source_cache/\n?? docs/reference/EVIDENCE_LEDGER_CONTRACT.md\n?? docs/reference/SOURCE_CACHE_CONTRACT.md\n?? examples/evidence_ledger/\n?? examples/source_cache/\n?? scripts/_p70_contract_common.py\n?? scripts/dry_run_evidence_ledger_record.py\n?? scripts/dry_run_source_cache_record.py\n?? scripts/validate_evidence_ledger_contract.py\n?? scripts/validate_evidence_ledger_record.py\n?? scripts/validate_source_cache_contract.py\n?? scripts/validate_source_cache_evidence_ledger_contract.py\n?? scripts/validate_source_cache_record.py\n?? tests/operations/test_source_cache_evidence_ledger_contract.py\n?? tests/scripts/test_dry_run_evidence_ledger_record.py\n?? tests/scripts/test_dry_run_source_cache_record.py\n?? tests/scripts/test_validate_evidence_ledger_contract.py\n?? tests/scripts/test_validate_evidence_ledger_record.py\n?? tests/scripts/test_validate_source_cache_contract.py\n?? tests/scripts/test_validate_source_cache_evidence_ledger_contract.py\n?? tests/scripts/test_validate_source_cache_record.py",
+  "contract_files": [
+    "contracts/source_cache/source_cache_record.v0.json",
+    "contracts/source_cache/source_cache_manifest.v0.json",
+    "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+    "contracts/evidence_ledger/evidence_ledger_manifest.v0.json"
+  ],
+  "validator_scripts": [
+    "scripts/validate_source_cache_record.py",
+    "scripts/validate_source_cache_contract.py",
+    "scripts/validate_evidence_ledger_record.py",
+    "scripts/validate_evidence_ledger_contract.py",
+    "scripts/validate_source_cache_evidence_ledger_contract.py",
+    "scripts/dry_run_source_cache_record.py",
+    "scripts/dry_run_evidence_ledger_record.py"
+  ],
+  "example_source_cache_records": [
+    "examples/source_cache/minimal_recorded_fixture_cache_record_v0",
+    "examples/source_cache/minimal_ia_metadata_cache_record_v0",
+    "examples/source_cache/minimal_wayback_availability_cache_record_v0"
+  ],
+  "example_evidence_ledger_records": [
+    "examples/evidence_ledger/minimal_source_metadata_evidence_v0",
+    "examples/evidence_ledger/minimal_compatibility_evidence_observation_v0",
+    "examples/evidence_ledger/minimal_absence_evidence_observation_v0"
+  ],
+  "source_cache_policy": "control/inventory/source_cache/source_cache_policy.json",
+  "evidence_ledger_policy": "control/inventory/evidence_ledger/evidence_ledger_policy.json",
+  "cache_lifecycle_model": "draft, fixture, future cached, stale, invalidated, rejected, quarantined.",
+  "evidence_lifecycle_model": "draft, fixture, candidate, source-backed future, review required, rejected, superseded, promoted future.",
+  "source_policy_approval_gates": "Future live cache entries require approval, source policy, rate limits, timeouts, circuit breakers, User-Agent/source terms, cache-first policy, and evidence attribution.",
+  "freshness_invalidation_model": "Records become stale when source policy, connector contract, or rights policy changes.",
+  "provenance_fixity_checksum_model": "Source/evidence records carry refs, validators, generated-by tools, SHA-256 fixity, checksum status, checksum scope, and limitations.",
+  "normalized_evidence_observation_model": "Evidence observations normalize subject, claim, cache refs, short public-safe snippets, confidence-not-truth, review posture, and conflicts.",
+  "privacy_policy_summary": "No private paths, secrets, private URLs, IPs, user/account IDs, raw private queries, local result IDs, raw payload dumps, or executable payloads.",
+  "rights_risk_policy_summary": "Rights clearance and malware safety are not claimed; downloads, installs, and execution are disabled.",
+  "candidate_public_index_relationship": "Future inputs only after validation/review; P70 mutates no candidate or public index.",
+  "master_index_relationship": "Evidence observations are not truth and require promotion policy plus master-index review.",
+  "source_sync_worker_relationship": "Approved future workers may produce cache-first/evidence-attributed records; P70 runs none.",
+  "query_intelligence_relationship": "Probe and demand signals may guide future work; P70 adds no query logging, telemetry, or public-query fanout.",
+  "no_runtime_no_mutation_guarantees": {
+    "runtime_source_cache_implemented": false,
+    "persistent_source_cache_implemented": false,
+    "runtime_evidence_ledger_implemented": false,
+    "persistent_evidence_ledger_implemented": false,
+    "source_cache_runtime_implemented": false,
+    "evidence_ledger_runtime_implemented": false,
+    "cache_write_performed": false,
+    "ledger_write_performed": false,
+    "live_sources_enabled_by_default": false,
+    "public_query_fanout_allowed": false,
+    "arbitrary_url_cache_allowed": false,
+    "raw_payload_storage_allowed_now": false,
+    "private_data_storage_allowed_now": false,
+    "executable_payload_storage_allowed_now": false,
+    "accepted_as_truth_by_default": false,
+    "automatic_promotion_allowed": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "source_cache_mutation_allowed_now": false,
+    "evidence_ledger_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "public_index_mutation_allowed_now": false,
+    "local_index_mutation_allowed_now": false,
+    "master_index_mutation_allowed": false,
+    "telemetry_implemented": false,
+    "credentials_configured": false
+  },
+  "runtime_status": {
+    "source_cache_runtime_implemented": false,
+    "evidence_ledger_runtime_implemented": false,
+    "persistent_source_cache_implemented": false,
+    "persistent_evidence_ledger_implemented": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "telemetry_implemented": false,
+    "credentials_configured": false
+  },
+  "command_results": [
+    {
+      "command": "python scripts/validate_source_cache_record.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_source_cache_record.py --all-examples --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_source_cache_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_source_cache_contract.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.046
+    },
+    {
+      "command": "python scripts/validate_evidence_ledger_record.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_evidence_ledger_record.py --all-examples --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_evidence_ledger_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_evidence_ledger_contract.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_source_cache_evidence_ledger_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_source_cache_evidence_ledger_contract.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/dry_run_source_cache_record.py --label \"IA metadata cache example\" --source-family internet_archive --kind source_metadata --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/dry_run_evidence_ledger_record.py --label \"Windows XP compatibility evidence example\" --evidence-kind compatibility_observation --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_source_sync_worker_job.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_source_sync_worker_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.188
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_snapshot.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.078
+    },
+    {
+      "command": "python scripts/validate_query_guard_decision.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_known_absence_page.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_known_absence_page_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.078
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_assessment.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_policy.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_candidate_index_record.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_candidate_index_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_probe_queue_item.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_probe_queue_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_search_need_record.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_search_need_record_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_entry.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_search_result_cache_entry.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_shared_query_result_cache_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_query_observation.py --all-examples",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.046
+    },
+    {
+      "command": "python scripts/validate_query_observation_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_live_probe_gateway.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.234
+    },
+    {
+      "command": "python scripts/run_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.985
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 1.062
+    },
+    {
+      "command": "python scripts/run_public_search_safety_evidence.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.406
+    },
+    {
+      "command": "python scripts/validate_public_search_safety_evidence.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.407
+    },
+    {
+      "command": "python scripts/validate_static_site_search_integration.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.797
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.25
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.266
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.265
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.203
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.062
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.046
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.531
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.531
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --check",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.485
+    },
+    {
+      "command": "python site/build.py --check",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.969
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.093
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.078
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.141
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 9.375
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.578
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.313
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.328
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.343
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.375
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.063
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.937
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 94.157
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 8.75
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 5.703
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 1.484
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 4.813
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 31.328
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 116.359
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.5
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.078
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "passed",
+      "required": true,
+      "returncode": 0,
+      "duration_seconds": 0.047
+    },
+    {
+      "command": "cargo --version",
+      "status": "skipped_unavailable",
+      "required": false,
+      "returncode": null,
+      "duration_seconds": 0.0
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped_unavailable",
+      "required": false,
+      "returncode": null,
+      "duration_seconds": 0.0
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped_unavailable",
+      "required": false,
+      "returncode": null,
+      "duration_seconds": 0.0
+    }
+  ],
+  "remaining_blockers": [
+    "No live connector approval packs exist yet.",
+    "No source-specific User-Agent/contact policy or storage runtime design exists.",
+    "No source cache/evidence ledger runtime or review queue implementation exists."
+  ],
+  "next_recommended_branch": "P71 Internet Archive Metadata Connector Approval Pack v0",
+  "notes": [
+    "P70 is contract-only; source cache records are source observations and evidence ledger records are evidence observations, not truth."
+  ],
+  "runtime_source_cache_implemented": false,
+  "persistent_source_cache_implemented": false,
+  "runtime_evidence_ledger_implemented": false,
+  "persistent_evidence_ledger_implemented": false,
+  "source_cache_runtime_implemented": false,
+  "evidence_ledger_runtime_implemented": false,
+  "cache_write_performed": false,
+  "ledger_write_performed": false,
+  "live_sources_enabled_by_default": false,
+  "public_query_fanout_allowed": false,
+  "arbitrary_url_cache_allowed": false,
+  "raw_payload_storage_allowed_now": false,
+  "private_data_storage_allowed_now": false,
+  "executable_payload_storage_allowed_now": false,
+  "accepted_as_truth_by_default": false,
+  "automatic_promotion_allowed": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "source_cache_mutation_allowed_now": false,
+  "evidence_ledger_mutation_allowed_now": false,
+  "candidate_index_mutation_allowed_now": false,
+  "public_index_mutation_allowed_now": false,
+  "local_index_mutation_allowed_now": false,
+  "master_index_mutation_allowed": false,
+  "telemetry_implemented": false,
+  "credentials_configured": false
+}

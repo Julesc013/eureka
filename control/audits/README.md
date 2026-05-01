@@ -404,3 +404,7 @@ See `control/audits/query-privacy-poisoning-guard-v0/` for the P67 privacy and p
 ## Source Sync Worker Contract v0
 
 `control/audits/source-sync-worker-contract-v0/` records the P69 contract-only source sync worker audit pack. It is not a worker runtime, connector, source-cache, evidence-ledger, or production-ops claim.
+
+## P70 Source Cache and Evidence Ledger v0
+
+See `control/audits/source-cache-evidence-ledger-v0/` for the contract-only source cache/evidence ledger audit pack.
