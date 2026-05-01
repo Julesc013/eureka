@@ -1,0 +1,222 @@
+{
+  "report_id": "candidate_index_v0",
+  "created_by_slice": "P64 Candidate Index v0",
+  "repo_head": "debb1417a5045e718a2300390c38827c8d2d5acb",
+  "branch": "main",
+  "worktree_status": "dirty_with_p64_changes_verified_before_commit",
+  "contract_file": "contracts/query/candidate_index_record.v0.json",
+  "validator_scripts": [
+    "scripts/validate_candidate_index_record.py",
+    "scripts/validate_candidate_index_contract.py",
+    "scripts/dry_run_candidate_index_record.py"
+  ],
+  "example_candidate_records": [
+    "examples/candidate_index/minimal_object_candidate_v0/CANDIDATE_INDEX_RECORD.json",
+    "examples/candidate_index/minimal_evidence_candidate_v0/CANDIDATE_INDEX_RECORD.json",
+    "examples/candidate_index/minimal_absence_candidate_v0/CANDIDATE_INDEX_RECORD.json",
+    "examples/candidate_index/minimal_conflict_candidate_v0/CANDIDATE_INDEX_RECORD.json"
+  ],
+  "candidate_index_policy": "control/inventory/query_intelligence/candidate_index_policy.json",
+  "candidate_type_taxonomy": [
+    "object_identity_candidate",
+    "software_version_candidate",
+    "source_record_candidate",
+    "evidence_record_candidate",
+    "representation_candidate",
+    "member_path_candidate",
+    "compatibility_claim_candidate",
+    "checksum_candidate",
+    "release_metadata_candidate",
+    "package_metadata_candidate",
+    "source_match_candidate",
+    "identity_match_candidate",
+    "alias_candidate",
+    "absence_candidate",
+    "extraction_candidate",
+    "OCR_text_candidate",
+    "query_interpretation_candidate",
+    "actionability_candidate",
+    "unknown"
+  ],
+  "lifecycle_model": {
+    "contract_file": "contracts/query/candidate_lifecycle.v0.json",
+    "promotion_allowed_now": false,
+    "promotion_policy_required": true,
+    "promoted_future_is_current_acceptance": false
+  },
+  "confidence_review_model": {
+    "confidence_not_truth_required": true,
+    "promotion_allowed_now": false,
+    "promotion_policy_required": true,
+    "required_reviews": [
+      "human_review",
+      "evidence_review",
+      "rights_review",
+      "risk_review",
+      "conflict_review"
+    ]
+  },
+  "provenance_input_ref_model": {
+    "query_observation_refs": "references_only",
+    "search_result_cache_refs": "references_only",
+    "search_miss_ledger_refs": "references_only",
+    "search_need_refs": "references_only",
+    "probe_queue_refs": "references_only",
+    "pack_and_ai_refs": "future_only"
+  },
+  "conflict_duplicate_model": {
+    "conflicts_preserved": true,
+    "destructive_merge_allowed": false,
+    "review_required_for_conflicts": true
+  },
+  "privacy_policy_summary": {
+    "raw_query_retention_default": "none",
+    "public_safe_examples": true,
+    "private_paths_allowed": false,
+    "ip_addresses_allowed": false,
+    "account_ids_allowed": false,
+    "sensitive_tokens_allowed": false,
+    "public_aggregate_requires_future_review": true
+  },
+  "source_evidence_rights_policy": {
+    "live_source_called": false,
+    "live_probe_enabled": false,
+    "source_cache_write_allowed": false,
+    "evidence_ledger_write_allowed": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false
+  },
+  "public_visibility_policy": {
+    "public_result_visibility_allowed": false,
+    "public_candidate_visibility_allowed_now": false,
+    "public_aggregate_allowed_after_filter_future": true
+  },
+  "no_truth_no_mutation_guarantees": {
+    "runtime_candidate_index_implemented": false,
+    "persistent_candidate_index_implemented": false,
+    "candidate_promotion_runtime_implemented": false,
+    "accepted_as_truth": false,
+    "promoted_to_master_index": false,
+    "telemetry_implemented": false,
+    "public_query_logging_enabled": false,
+    "public_search_candidate_injection_allowed": false,
+    "master_index_mutation_allowed": false,
+    "local_index_mutation_allowed": false,
+    "public_index_mutation_allowed": false,
+    "source_cache_mutation_allowed": false,
+    "evidence_ledger_mutation_allowed": false,
+    "probe_queue_mutation_allowed": false,
+    "search_need_mutation_allowed": false,
+    "result_cache_mutation_allowed": false,
+    "miss_ledger_mutation_allowed": false,
+    "external_calls_performed": false,
+    "live_probes_enabled": false
+  },
+  "runtime_status": {
+    "runtime_candidate_index_implemented": false,
+    "persistent_candidate_index_implemented": false,
+    "candidate_promotion_runtime_implemented": false,
+    "telemetry_implemented": false,
+    "public_query_logging_enabled": false,
+    "public_search_runtime_wired": false,
+    "source_cache_runtime_implemented": false,
+    "evidence_ledger_runtime_implemented": false,
+    "master_index_mutation_path_added": false
+  },
+  "command_results": {
+    "verified_at_local_date": "2026-05-02",
+    "p64_required": {
+      "python scripts/validate_candidate_index_record.py --all-examples": "passed; 4 candidate examples valid",
+      "python scripts/validate_candidate_index_record.py --all-examples --json": "passed; JSON output parsed",
+      "python scripts/validate_candidate_index_contract.py": "passed; report_id candidate_index_v0",
+      "python scripts/validate_candidate_index_contract.py --json": "passed; JSON output parsed",
+      "python scripts/dry_run_candidate_index_record.py --label \"Firefox ESR Windows XP compatibility candidate\" --candidate-type compatibility_claim_candidate --json": "passed; stdout-only dry-run record emitted"
+    },
+    "query_intelligence_regression": {
+      "python scripts/validate_probe_queue_item.py --all-examples": "passed; 3 examples valid",
+      "python scripts/validate_probe_queue_contract.py": "passed",
+      "python scripts/validate_search_need_record.py --all-examples": "passed; 2 examples valid",
+      "python scripts/validate_search_need_record_contract.py": "passed",
+      "python scripts/validate_search_miss_ledger_entry.py --all-examples": "passed; 2 examples valid",
+      "python scripts/validate_search_miss_ledger_contract.py": "passed",
+      "python scripts/validate_search_result_cache_entry.py --all-examples": "passed; 2 examples valid",
+      "python scripts/validate_shared_query_result_cache_contract.py": "passed",
+      "python scripts/validate_query_observation.py --all-examples": "passed; 1 example valid",
+      "python scripts/validate_query_observation_contract.py": "passed"
+    },
+    "public_search_static_and_safety_regression": {
+      "python scripts/run_hosted_public_search_rehearsal.py": "passed; 60/60 checks, 9 safe routes, 5 safe queries, 34/34 blocked requests, 584 public-index documents",
+      "python scripts/validate_hosted_public_search_rehearsal.py": "passed",
+      "python scripts/run_public_search_safety_evidence.py": "passed; 64/64 checks, 32/32 blocked requests, 584 public-index documents",
+      "python scripts/validate_public_search_safety_evidence.py": "passed",
+      "python scripts/validate_static_site_search_integration.py": "passed",
+      "python scripts/validate_public_search_index_builder.py": "passed; 584 documents",
+      "python scripts/validate_public_search_index.py": "passed; 584 documents",
+      "python scripts/validate_hosted_public_search_wrapper.py": "passed; local_index_only and deployed false",
+      "python scripts/check_hosted_public_search_wrapper.py": "passed; 14/14 checks",
+      "python scripts/run_hosted_public_search.py --check-config": "passed; hosted deployment not verified and live/source/write capabilities false",
+      "python scripts/validate_public_search_production_contract.py": "passed",
+      "python scripts/validate_static_deployment_evidence.py": "passed",
+      "python scripts/validate_post_p50_remediation.py": "passed; 17 files",
+      "python scripts/validate_post_p49_platform_audit.py": "passed; 28 files",
+      "python scripts/validate_live_probe_gateway.py": "passed; disabled live-probe gateway state valid",
+      "python scripts/validate_public_search_contract.py": "passed",
+      "python scripts/validate_public_search_result_card_contract.py": "passed; 5 examples",
+      "python scripts/validate_public_search_safety.py": "passed",
+      "python scripts/validate_local_public_search_runtime.py": "passed",
+      "python scripts/public_search_smoke.py": "passed; 30/30 checks, 9 safe, 14 blocked",
+      "python scripts/public_search_smoke.py --json": "passed; JSON output parsed",
+      "python scripts/build_public_search_index.py --check": "passed; 584 documents, FTS5 available, fallback enabled",
+      "python site/build.py --check": "passed",
+      "python site/validate.py": "passed; page_count 9",
+      "python scripts/validate_publication_inventory.py": "passed; 51 routes",
+      "python scripts/validate_public_static_site.py": "passed",
+      "python scripts/check_github_pages_static_artifact.py --path site/dist": "passed",
+      "python scripts/check_generated_artifact_drift.py": "passed; 12 generated-artifact checks",
+      "python scripts/public_alpha_smoke.py": "passed; 18/18 checks"
+    },
+    "eval_status": {
+      "python scripts/run_archive_resolution_evals.py": "passed; 6/6 tasks satisfied",
+      "python scripts/run_archive_resolution_evals.py --json": "passed; JSON output parsed, 6/6 tasks satisfied",
+      "python scripts/run_search_usefulness_audit.py": "passed; 64 queries, covered 5, partial 40, source_gap 10, capability_gap 7, unknown 2",
+      "python scripts/run_search_usefulness_audit.py --json": "passed; JSON output parsed with external baselines manual-pending",
+      "python scripts/report_external_baseline_status.py --json": "passed; 192 manual-pending baseline slots, 0 observed external baselines",
+      "python scripts/generate_python_oracle_golden.py --check": "passed; 40 golden files"
+    },
+    "unit_and_boundary_checks": {
+      "python -m unittest discover -s tests/scripts -t .": "passed; 337 tests",
+      "python -m unittest discover -s tests/operations -t .": "passed; 473 tests",
+      "python -m unittest discover -s tests/hardening -t .": "passed; 53 tests",
+      "python -m unittest discover -s tests/parity -t .": "passed; 25 tests",
+      "python -m unittest discover -s runtime -t .": "passed; 320 tests",
+      "python -m unittest discover -s surfaces -t .": "passed; 168 tests",
+      "python -m unittest discover -s tests -t .": "passed; 979 tests",
+      "python scripts/check_architecture_boundaries.py": "passed; 446 Python files checked"
+    },
+    "optional_commands": {
+      "cargo --version": "unavailable; cargo is not installed in this environment",
+      "cargo check --workspace --manifest-path crates/Cargo.toml": "not run; cargo unavailable",
+      "cargo test --workspace --manifest-path crates/Cargo.toml": "not run; cargo unavailable"
+    },
+    "final_sanity": {
+      "git diff --check": "passed; line-ending warnings only, no whitespace errors",
+      "git status --short --branch": "dirty with P64 changes before commit; branch main tracking origin/main"
+    }
+  },
+  "remaining_blockers": [
+    "Runtime candidate index storage is intentionally not implemented.",
+    "Candidate promotion policy is intentionally not implemented until P65.",
+    "Public search candidate injection is intentionally not implemented.",
+    "Source cache and evidence ledger runtime remain future milestones.",
+    "Live probes and connector execution remain approval-gated future work.",
+    "Hosted backend deployment remains operator-gated."
+  ],
+  "next_recommended_branch": "P65 Candidate Promotion Policy v0",
+  "notes": [
+    "P64 defines candidate index records as contract-only provisional governance artifacts.",
+    "No telemetry, public query logging, runtime candidate index, persistent candidate index, candidate promotion runtime, public search candidate injection, source-cache mutation, evidence-ledger mutation, local-index mutation, master-index mutation, external calls, or live probes were added."
+  ]
+}
