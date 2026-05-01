@@ -1,0 +1,819 @@
+{
+  "report_id": "wayback_cdx_memento_connector_approval_v0",
+  "created_by_slice": "p72_wayback_cdx_memento_connector_approval_v0",
+  "repo_head": "8a5bf4232b8f6a6fb14d5b374976d2a7f3fce291",
+  "branch": "main",
+  "worktree_status": [
+    "## main...origin/main",
+    " M .aide/commands/ci.yaml",
+    " M .aide/commands/dev.yaml",
+    " M .aide/reports/README.md",
+    " M .aide/tasks/audit_backlog.yaml",
+    " M .aide/tasks/queue.yaml",
+    " M contracts/connectors/README.md",
+    " M control/audits/README.md",
+    " M control/inventory/sources/wayback-memento-placeholder.source.json",
+    " M control/inventory/tests/command_matrix.json",
+    " M control/inventory/tests/test_registry.json",
+    " M docs/BOOTSTRAP_STATUS.md",
+    " M docs/DECISIONS.md",
+    " M docs/OPEN_QUESTIONS.md",
+    " M docs/ROADMAP.md",
+    " M docs/architecture/SOURCE_INGESTION_PLANE.md",
+    " M docs/operations/HOSTED_PUBLIC_SEARCH_REHEARSAL.md",
+    " M docs/operations/PUBLIC_SEARCH_SAFETY_EVIDENCE.md",
+    " M docs/reference/CANDIDATE_INDEX_CONTRACT.md",
+    " M docs/reference/CANDIDATE_PROMOTION_POLICY.md",
+    " M docs/reference/DEMAND_DASHBOARD_CONTRACT.md",
+    " M docs/reference/EVIDENCE_LEDGER_CONTRACT.md",
+    " M docs/reference/EVIDENCE_PACK_CONTRACT.md",
+    " M docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md",
+    " M docs/reference/PROBE_QUEUE_CONTRACT.md",
+    " M docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+    " M docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md",
+    " M docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+    " M docs/reference/SOURCE_CACHE_CONTRACT.md",
+    " M docs/reference/SOURCE_PACK_CONTRACT.md",
+    " M docs/reference/SOURCE_SYNC_SOURCE_POLICY.md",
+    " M docs/reference/SOURCE_SYNC_WORKER_CONTRACT.md",
+    " M docs/roadmap/BACKEND_ROADMAP.md",
+    " M scripts/README.md",
+    "?? contracts/connectors/wayback_cdx_memento_connector_approval.v0.json",
+    "?? contracts/connectors/wayback_cdx_memento_connector_manifest.v0.json",
+    "?? control/audits/wayback-cdx-memento-connector-approval-v0/",
+    "?? control/inventory/connectors/wayback_cdx_memento_connector.json",
+    "?? docs/reference/WAYBACK_CDX_MEMENTO_CONNECTOR_APPROVAL.md",
+    "?? examples/connectors/wayback_cdx_memento_approval_v0/",
+    "?? scripts/dry_run_wayback_cdx_memento_connector_approval.py",
+    "?? scripts/validate_wayback_cdx_memento_connector_approval.py",
+    "?? scripts/validate_wayback_cdx_memento_connector_contract.py",
+    "?? tests/operations/test_wayback_cdx_memento_connector_approval.py",
+    "?? tests/scripts/test_dry_run_wayback_cdx_memento_connector_approval.py",
+    "?? tests/scripts/test_validate_wayback_cdx_memento_connector_approval.py",
+    "?? tests/scripts/test_validate_wayback_cdx_memento_connector_contract.py"
+  ],
+  "contract_files": [
+    "contracts/connectors/wayback_cdx_memento_connector_approval.v0.json",
+    "contracts/connectors/wayback_cdx_memento_connector_manifest.v0.json"
+  ],
+  "validator_scripts": [
+    "scripts/validate_wayback_cdx_memento_connector_approval.py",
+    "scripts/validate_wayback_cdx_memento_connector_contract.py",
+    "scripts/dry_run_wayback_cdx_memento_connector_approval.py"
+  ],
+  "example_approval_root": "examples/connectors/wayback_cdx_memento_approval_v0",
+  "connector_inventory_ref": "control/inventory/connectors/wayback_cdx_memento_connector.json",
+  "source_inventory_ref": "control/inventory/sources/wayback-memento-placeholder.source.json",
+  "connector_scope": "availability_and_capture_metadata_only",
+  "allowed_metadata_capabilities": [
+    "url_availability_metadata_future",
+    "cdx_capture_metadata_future",
+    "memento_timemap_metadata_future",
+    "memento_timegate_metadata_future",
+    "capture_timestamp_summary_future",
+    "status_code_mimetype_digest_summary_future",
+    "nearest_capture_metadata_future"
+  ],
+  "forbidden_capabilities": [
+    "arbitrary_url_fetch",
+    "direct_public_query_fanout",
+    "archived_page_content_fetch",
+    "capture_replay",
+    "warc_download",
+    "file_download",
+    "mirroring",
+    "screenshot_capture",
+    "account_access",
+    "upload",
+    "install",
+    "execute",
+    "unbounded_crawl",
+    "scraping",
+    "bypass_access_restrictions",
+    "raw_payload_dump",
+    "malware_safety_decision",
+    "rights_clearance_decision"
+  ],
+  "url_and_uri_policy": "URI-R review required; arbitrary public query URLs, private URLs, credentialed URLs, local URLs, raw URL publication, capture replay, and WARC download are forbidden.",
+  "source_policy_review": "review_required",
+  "user_agent_contact_policy": "operator_pending_no_values_configured",
+  "rate_limit_timeout_retry_circuit_breaker_policy": "required_future_values_pending",
+  "cache_first_policy": "source_cache_and_evidence_ledger_required_before_public_use_future",
+  "expected_source_cache_outputs": [
+    "wayback_url_availability_summary",
+    "cdx_capture_metadata_summary",
+    "memento_timemap_summary",
+    "capture_timestamp_distribution_summary",
+    "capture_status_mimetype_digest_summary",
+    "nearest_capture_metadata_summary"
+  ],
+  "expected_evidence_ledger_outputs": [
+    "availability_observation",
+    "capture_presence_observation",
+    "capture_absence_observation",
+    "capture_metadata_observation",
+    "historical_access_path_observation",
+    "scoped_absence_observation"
+  ],
+  "query_intelligence_relationship": "future references only; no query-intelligence mutation",
+  "public_search_boundary": "no live fanout and no arbitrary URL param; future cache-read only after approval",
+  "rights_access_risk_policy": "metadata_only_no_rights_clearance_no_malware_safety",
+  "privacy_policy": "uri_review_required_no_private_or_credentialed_urls",
+  "approval_checklist": "pending",
+  "operator_checklist": "pending",
+  "no_runtime_no_mutation_guarantees": "all hard booleans false",
+  "runtime_status": "not implemented",
+  "command_results": [
+    {
+      "command": "python scripts/validate_wayback_cdx_memento_connector_approval.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "status: valid\nexample_count: 1\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_wayback_cdx_memento_connector_approval.py --all-examples --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "{\n  \"status\": \"valid\",\n  \"created_by\": \"wayback_cdx_memento_connector_approval_validator_v0\",\n  \"example_count\": 1,\n  \"results\": [\n    {\n      \"status\": \"valid\",\n      \"created_by\": \"wayback_cdx_memento_connector_approval_validator_v0\",\n      \"approval\": \"examples\\\\connectors\\\\wayback_cdx_memento_approval_v0\\\\WAYBACK_CDX_MEMENTO_CONNECTOR_APPROVAL.json\",\n      \"approval_record_id\": \"example.connector.wayback_cdx_memento.approval.v0\",\n      \"errors\": [],\n      \"warnings\": [],\n      \"approval_root\": \"examples\\\\connectors\\\\wayback_cdx_memento_approval_v0\"\n    }\n  ],\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_wayback_cdx_memento_connector_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "status: valid\nexample_count: 1\ncontract_file: contracts/connectors/wayback_cdx_memento_connector_approval.v0.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_wayback_cdx_memento_connector_contract.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "{\n  \"status\": \"valid\",\n  \"created_by\": \"wayback_cdx_memento_connector_contract_validator_v0\",\n  \"contract_file\": \"contracts/connectors/wayback_cdx_memento_connector_approval.v0.json\",\n  \"example_count\": 1,\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/dry_run_wayback_cdx_memento_connector_approval.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.07,
+      "stdout_tail": "chema_version\": \"0.1.0\",\n  \"approval_record_id\": \"dry_run.connector.wayback_cdx_memento.approval.v0\",\n  \"approval_record_kind\": \"wayback_cdx_memento_connector_approval\",\n  \"status\": \"draft_example\",\n  \"created_by_tool\": \"dry_run_wayback_cdx_memento_connector_approval_v0\",\n  \"connector_ref\": {\n    \"connector_id\": \"wayback_cdx_memento_connector\",\n    \"connector_label\": \"Wayback/CDX/Memento metadata connector\",\n    \"source_family\": \"wayback_cdx_memento\",\n    \"connector_version\": \"dry-run\",\n    \"source_inventory_ref\": \"control/inventory/sources/wayback-memento-placeholder.source.json\",\n    \"source_status\": \"approval_required\",\n    \"limitations\": [\n      \"Dry-run only; no connector execution.\"\n    ]\n  },\n  \"approval_checklist_status\": \"pending\",\n  \"operator_checklist_status\": \"pending\",\n  \"uri_privacy_review_required\": true,\n  \"source_policy_review_required\": true,\n  \"user_agent_contact_required_future\": true,\n  \"rate_limit_required_future\": true,\n  \"timeout_required_future\": true,\n  \"retry_backoff_required_future\": true,\n  \"circuit_breaker_required_future\": true,\n  \"cache_first_required\": true,\n  \"connector_runtime_implemented\": false,\n  \"connector_approved_now\": false,\n  \"live_source_called\": false,\n  \"external_calls_performed\": false,\n  \"archived_content_fetched\": false,\n  \"capture_replayed\": false,\n  \"warc_downloaded\": false,\n  \"public_search_live_fanout_enabled\": false,\n  \"arbitrary_url_fetch_allowed\": false,\n  \"source_cache_mutated\": false,\n  \"evidence_ledger_mutated\": false,\n  \"candidate_index_mutated\": false,\n  \"public_index_mutated\": false,\n  \"local_index_mutated\": false,\n  \"master_index_mutated\": false,\n  \"downloads_enabled\": false,\n  \"file_retrieval_enabled\": false,\n  \"mirroring_enabled\": false,\n  \"installs_enabled\": false,\n  \"execution_enabled\": false,\n  \"credentials_used\": false,\n  \"telemetry_exported\": false,\n  \"notes\": [\n    \"Stdout-only dry run. No files are written, no network is used, and no connector/source/cache/ledger/index runtime is called.\"\n  ]\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "status: valid\nexample_count: 1\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_internet_archive_metadata_connector_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "status: valid\nexample_count: 1\ncontract_file: contracts/connectors/internet_archive_metadata_connector_approval.v0.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_source_cache_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "status: valid\nexample_count: 3\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_source_cache_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "status: valid\nexample_count: 3\ncontract_file: contracts/source_cache/source_cache_record.v0.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_evidence_ledger_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "status: valid\nexample_count: 3\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_evidence_ledger_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "status: valid\nexample_count: 3\ncontract_file: contracts/evidence_ledger/evidence_ledger_record.v0.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_source_cache_evidence_ledger_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "status: valid\nreport_id: source_cache_evidence_ledger_v0\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_source_sync_worker_job.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "status: valid\nexample_count: 4\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_source_sync_worker_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1,
+      "stdout_tail": "status: valid\ncontract_file: contracts/source_sync/source_sync_worker_job.v0.json\nexample_count: 4\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_snapshot.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "status: valid\nexample_count: 2\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_demand_dashboard_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.13,
+      "stdout_tail": "status: valid\ncontract_file: contracts/query/demand_dashboard_snapshot.v0.json\nexample_count: 2\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_query_guard_decision.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1,
+      "stdout_tail": "Query Guard Decision validation\nstatus: valid\nexample_count: 5\nwarnings:\n- examples/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_source_stuffing_quarantined_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "Query Privacy and Poisoning Guard Contract validation\nstatus: valid\ncontract_file: contracts/query/query_guard_decision.v0.json\nreport_id: query_privacy_poisoning_guard_v0\nexample_count: 5\nwarnings:\n- P67 is contract-only; runtime query privacy and poisoning guard remains deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_known_absence_page.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "Known Absence Page validation\nstatus: valid\nexample_count: 3\nwarnings:\n- examples/known_absence_pages/minimal_near_miss_absence_v0: P66 validates contract/example artifacts only; runtime known absence pages remain deferred.\n- examples/known_absence_pages/minimal_no_verified_result_v0: P66 validates contract/example artifacts only; runtime known absence pages remain deferred.\n- examples/known_absence_pages/minimal_policy_blocked_absence_v0: P66 validates contract/example artifacts only; runtime known absence pages remain deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_known_absence_page_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "Known Absence Page Contract validation\nstatus: valid\ncontract_file: contracts/query/known_absence_page.v0.json\nreport_id: known_absence_page_v0\nexample_count: 3\nwarnings:\n- P66 is contract-only; runtime known absence page serving remains deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_assessment.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Candidate Promotion Assessment validation\nstatus: valid\nexample_count: 4\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_candidate_promotion_policy.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "Candidate Promotion Policy validation\nstatus: valid\ncontract_file: contracts/query/candidate_promotion_assessment.v0.json\nreport_id: candidate_promotion_policy_v0\nexample_count: 4\nwarnings:\n- P65 is contract-only; candidate promotion runtime remains deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_candidate_index_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Candidate Index Record validation\nstatus: valid\nexample_count: 4\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_candidate_index_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Candidate Index Contract validation\nstatus: valid\ncontract_file: contracts/query/candidate_index_record.v0.json\nreport_id: candidate_index_v0\nexample_count: 4\nwarnings:\n- P64 is contract-only; candidate index runtime and promotion remain deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_probe_queue_item.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Probe Queue Item validation\nstatus: valid\nexample_count: 3\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_probe_queue_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Probe Queue Contract validation\nstatus: valid\ncontract_file: contracts/query/probe_queue_item.v0.json\nreport_id: probe_queue_v0\nexample_count: 3\nwarnings:\n- P63 is contract-only; probe queue runtime and probe execution remain deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_search_need_record.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Search Need Record validation\nstatus: valid\nexample_count: 2\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_search_need_record_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1,
+      "stdout_tail": "Search Need Record Contract validation\nstatus: valid\ncontract_file: contracts/query/search_need_record.v0.json\nreport_id: search_need_record_v0\nexample_count: 2\nwarnings:\n- P62 is contract-only; search need runtime storage remains deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_entry.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Search Miss Ledger Entry validation\nstatus: valid\nexample_count: 2\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_search_miss_ledger_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Search Miss Ledger Contract validation\nstatus: valid\ncontract_file: contracts/query/search_miss_ledger_entry.v0.json\nreport_id: search_miss_ledger_v0\nexample_count: 2\nwarnings:\n- P61 is contract-only; miss ledger runtime writes remain deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_search_result_cache_entry.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "Search Result Cache Entry validation\nstatus: valid\nexample_count: 2\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_shared_query_result_cache_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1,
+      "stdout_tail": "Shared Query/Result Cache Contract validation\nstatus: valid\ncontract_file: contracts/query/search_result_cache_entry.v0.json\nreport_id: shared_query_result_cache_v0\nexample_count: 2\nwarnings:\n- P60 is contract-only; runtime cache reads/writes remain deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_query_observation.py --all-examples",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Query Observation validation\nstatus: valid\nexample_count: 1\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_query_observation_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Query Observation Contract validation\nstatus: valid\ncontract_file: contracts/query/query_observation.v0.json\nreport_id: query_observation_contract_v0\nexample_count: 1\nwarnings:\n- P59 is contract-only; runtime query observation collection remains deferred.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_live_probe_gateway.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.26,
+      "stdout_tail": "Live probe gateway validation\nstatus: valid\ncandidate_sources: 9\ndisabled_sources: 9\nwrapper_live_probes_enabled: False\nwrapper_live_internet_archive_enabled: False\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.13,
+      "stdout_tail": "Hosted Public Search Rehearsal\nstatus: passed\nmode: hosted_local_rehearsal\nbase_url: <local-url>\nserver_started: True\nchecks: 60/60\nsafe routes: 9\nsafe queries: 5\nblocked requests: 34/34\npublic index documents: 584\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.09,
+      "stdout_tail": "Hosted Public Search Rehearsal validation\nstatus: valid\nreport_id: hosted_public_search_rehearsal_v0\nroutes: 9\nsafe_queries: 5\nblocked_requests: 34\nlive_rehearsal_status: passed\nwarnings:\n- hosted deployment remains operator-gated/unverified.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_public_search_safety_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.44,
+      "stdout_tail": "Public Search Safety Evidence\nstatus: passed\nmode: local_index_only\nchecks: 64/64\nsafe routes: 9\nsafe queries: 4\nblocked requests: 32/32\npublic index documents: 584\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_public_search_safety_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.46,
+      "stdout_tail": "Public Search Safety Evidence validation\nstatus: valid\nreport_id: public_search_safety_evidence_v0\nsafe_query_count: 4\nblocked_request_count: 32\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_static_site_search_integration.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Static Site Search Integration validation\nstatus: valid\nreport_id: static_site_search_integration_v0\nbackend_status: backend_unconfigured\ndocument_count: 584\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.84,
+      "stdout_tail": "Public Search Index Builder validation\nstatus: valid\nreport_id: public_search_index_builder_v0\ndocument_count: 584\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.28,
+      "stdout_tail": "Public Search Index validation\nstatus: valid\nindex_root: data/public_index\ndocument_count: 584\nprivate_paths_detected: False\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.3,
+      "stdout_tail": "Hosted public search wrapper validation\nstatus: valid\nreport_id: hosted_public_search_wrapper_v0\npublic_search_mode: local_index_only\nhosted_wrapper_implemented: True\nhosted_backend_deployed: False\nhosted_deployment_verified: False\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.29,
+      "stdout_tail": "Hosted public search wrapper check\nstatus: passed\nmode: local_index_only\nchecks: 14/14\n- PASS check_config: Safe defaults accepted.\n- PASS healthz: OK\n- PASS status_top_level: OK\n- PASS status_api: OK\n- PASS api_search: OK\n- PASS query_plan: OK\n- PASS sources: OK\n- PASS html_search: OK\n- PASS blocked_index_path: OK\n- PASS blocked_url: OK\n- PASS blocked_live_probe: OK\n- PASS blocked_download: OK\n- PASS blocked_upload: OK\n- PASS blocked_too_long_query: OK\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.27,
+      "stdout_tail": "Hosted public search wrapper config\nstatus: valid\nhost: 127.0.0.1\nport: 8080\nmode: local_index_only\nhosted_deployment_verified: False\nlive_probes_enabled: False\ndownloads_enabled: False\nuploads_enabled: False\nlocal_paths_enabled: False\narbitrary_url_fetch_enabled: False\ntelemetry_enabled: False\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Public search production contract validation\nstatus: valid\nreport_id: public_search_production_contract_v0\nactive_mode: local_index_only\nhosted_search_implemented: False\nlive_probes_enabled: False\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Static deployment evidence validation\nstatus: valid\nreport_id: static_deployment_evidence_v0\nartifact_root: site/dist\nworkflow_path: .github/workflows/pages.yml\ndeployment_verified: False\ndeployment_success_claimed: False\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.07,
+      "stdout_tail": "post-p50 remediation validation passed: 17 required files checked\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.07,
+      "stdout_tail": "post-p49 platform audit validation passed: 28 required files checked\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "Public search contract validation\nstatus: valid\ncontract_id: public_search_api_contract_v0\nfirst_allowed_mode: local_index_only\nruntime_routes_implemented: True\nregistered_routes: 6\nforbidden_parameters: 26\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "status: valid\ncontract_id: public_search_result_card_contract_v0\nschema: contracts/api/search_result_card.v0.json\nresponse_schema: contracts/api/search_response.v0.json\naudit_pack: control/audits/public-search-result-card-contract-v0\nexamples: 5\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.07,
+      "stdout_tail": "Public Search Safety / Abuse Guard validation\nstatus: valid\nsafety_policy_id: eureka-public-search-safety-abuse-guard-v0\nfirst_allowed_mode: local_index_only\nmax_query_length: 160\nmax_result_limit: 25\nmax_runtime_ms_contract: 3000\ntelemetry_default: off\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.07,
+      "stdout_tail": "Local Public Search Runtime validation\nstatus: valid\nruntime_scope: local_prototype_backend\nmode: local_index_only\nroutes: 6\nhosted_public_deployment: False\nstatic_search_handoff: True\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.58,
+      "stdout_tail": "registry+repair (ok)\n[PASS] safe query: blue ftp: /api/v1/search?q=blue+ftp (ok)\n[PASS] safe query: pc magazine ray tracing: /api/v1/search?q=pc+magazine+ray+tracing (ok)\n[PASS] safe query: archive: /api/v1/search?q=archive (ok)\n[PASS] safe query: no-such-local-index-hit: /api/v1/search?q=no-such-local-index-hit (ok)\n[PASS] blocked request: missing q: /api/v1/search (query_required)\n[PASS] blocked request: query too long: /api/v1/search?q=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (query_too_long)\n[PASS] blocked request: limit too large: /api/v1/search?q=windows&limit=26 (limit_too_large)\n[PASS] blocked request: unsupported mode live_probe: /api/v1/search?q=windows&mode=live_probe (live_probes_disabled)\n[PASS] blocked request: forbidden index_path: /api/v1/search?q=windows&index_path=blocked-local-index (local_paths_forbidden)\n[PASS] blocked request: forbidden store_root: /api/v1/search?q=windows&store_root=blocked-store-root (local_paths_forbidden)\n[PASS] blocked request: forbidden url: /api/v1/search?q=windows&url=https%3A%2F%2Fexample.invalid%2F (forbidden_parameter)\n[PASS] blocked request: forbidden fetch_url: /api/v1/search?q=windows&fetch_url=https%3A%2F%2Fexample.invalid%2F (forbidden_parameter)\n[PASS] blocked request: download disabled: /api/v1/search?q=windows&download=true (downloads_disabled)\n[PASS] blocked request: install disabled: /api/v1/search?q=windows&install=true (installs_disabled)\n[PASS] blocked request: upload disabled: /api/v1/search?q=windows&upload=true (uploads_disabled)\n[PASS] blocked request: source credentials forbidden: /api/v1/search?q=windows&source_credentials=redacted (forbidden_parameter)\n[PASS] blocked request: api key forbidden: /api/v1/search?q=windows&api_key=redacted (forbidden_parameter)\n[PASS] blocked request: live source disabled: /api/v1/search?q=windows&live_source=internet_archive (live_probes_disabled)\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.57,
+      "stdout_tail": "erved_status\": 200,\n      \"ok\": true,\n      \"passed\": true,\n      \"query\": \"registry repair\",\n      \"result_cards_contract_ok\": true,\n      \"result_count\": 10,\n      \"route\": \"/api/v1/search?q=registry+repair\",\n      \"warnings_present\": true\n    },\n    {\n      \"envelope_ok\": true,\n      \"limitations_or_absence_present\": true,\n      \"message\": \"Check passed.\",\n      \"no_private_path_leakage\": true,\n      \"observed_status\": 200,\n      \"ok\": true,\n      \"passed\": true,\n      \"query\": \"blue ftp\",\n      \"result_cards_contract_ok\": true,\n      \"result_count\": 10,\n      \"route\": \"/api/v1/search?q=blue+ftp\",\n      \"warnings_present\": true\n    },\n    {\n      \"envelope_ok\": true,\n      \"limitations_or_absence_present\": true,\n      \"message\": \"Check passed.\",\n      \"no_private_path_leakage\": true,\n      \"observed_status\": 200,\n      \"ok\": true,\n      \"passed\": true,\n      \"query\": \"pc magazine ray tracing\",\n      \"result_cards_contract_ok\": true,\n      \"result_count\": 9,\n      \"route\": \"/api/v1/search?q=pc+magazine+ray+tracing\",\n      \"warnings_present\": true\n    },\n    {\n      \"envelope_ok\": true,\n      \"limitations_or_absence_present\": true,\n      \"message\": \"Check passed.\",\n      \"no_private_path_leakage\": true,\n      \"observed_status\": 200,\n      \"ok\": true,\n      \"passed\": true,\n      \"query\": \"archive\",\n      \"result_cards_contract_ok\": true,\n      \"result_count\": 10,\n      \"route\": \"/api/v1/search?q=archive\",\n      \"warnings_present\": true\n    },\n    {\n      \"envelope_ok\": true,\n      \"limitations_or_absence_present\": true,\n      \"message\": \"Check passed.\",\n      \"no_private_path_leakage\": true,\n      \"observed_status\": 200,\n      \"ok\": true,\n      \"passed\": true,\n      \"query\": \"no-such-local-index-hit\",\n      \"result_cards_contract_ok\": true,\n      \"result_count\": 0,\n      \"route\": \"/api/v1/search?q=no-such-local-index-hit\",\n      \"warnings_present\": true\n    }\n  ],\n  \"status\": \"passed\",\n  \"telemetry_enabled\": false,\n  \"total_checks\": 30,\n  \"uploads_enabled\": false\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/build_public_search_index.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.56,
+      "stdout_tail": "Public Search Index Builder v0\nstatus: valid\noutput_root: data/public_index\ndocument_count: 584\nfts5_available: True\nfts5_enabled: False\nfallback_enabled: True\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python site/build.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.99,
+      "stdout_tail": "Static site generator\nstatus: valid\nsource_root: site\ndeploy_artifact_current: site/dist\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python site/validate.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1,
+      "stdout_tail": "Static site generator validation\nstatus: valid\npage_count: 9\ndist_validation: valid\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout_tail": "Publication inventory validation\nstatus: valid\nregistered_routes: 51\ncurrent_static_artifact_pages: 9\nrequired_client_profiles: 9\nrequired_public_data_paths: 14\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1,
+      "stdout_tail": "Public static site validation\nstatus: valid\npages: 9\nsource_ids_checked: 15\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.17,
+      "stdout_tail": "GitHub Pages static artifact check\nstatus: valid\nsite_dir: <repo-root>\\site\\dist\nstatic_site_validator: valid\npublication_inventory_validator: valid\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 9.49,
+      "stdout_tail": ": passed\n  - check_command: passed (python site/build.py --check)\n  - validator_command: passed (python site/validate.py)\n  - validator_command: passed (python scripts/check_github_pages_static_artifact.py --path site/dist)\n  - validator_command: passed (python scripts/validate_public_search_static_handoff.py)\n- python_oracle_goldens: passed\n  - check_command: passed (python scripts/generate_python_oracle_golden.py --check)\n  - validator_command: passed (python -m unittest tests.hardening.test_python_oracle_golden_guard)\n- public_alpha_rehearsal_evidence: passed\n  - check_command: passed (python scripts/generate_public_alpha_rehearsal_evidence.py --check)\n  - validator_command: passed (python scripts/public_alpha_smoke.py)\n- publication_inventory: passed\n  - check_command: passed (python scripts/validate_publication_inventory.py)\n  - validator_command: passed (python scripts/validate_publication_inventory.py --json)\n  - validator_command: passed (python scripts/validate_public_static_site.py)\n- test_registry: passed\n  - check_command: passed (python -m unittest tests.operations.test_test_eval_operating_layer)\n  - validator_command: passed (python -m unittest tests.hardening.test_aide_test_registry_consistency)\n- aide_metadata: passed\n  - check_command: passed (python -m unittest tests.hardening.test_aide_test_registry_consistency)\n  - validator_command: passed (python -m unittest tests.operations.test_test_eval_operating_layer)\n- public_search_index: passed\n  - check_command: passed (python scripts/build_public_search_index.py --check)\n  - validator_command: passed (python scripts/validate_public_search_index.py)\n  - validator_command: passed (python scripts/validate_public_search_index_builder.py)\n- static_search_integration: passed\n  - check_command: passed (python site/build.py --check)\n  - validator_command: passed (python scripts/validate_static_site_search_integration.py)\n  - validator_command: passed (python scripts/validate_public_static_site.py)\nerrors: []\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.66,
+      "stdout_tail": "Public Alpha Smoke\nstatus: passed\nmode: public_alpha\nchecks: 18/18 passed\n\n[PASS] status: /api/status (ok)\n[PASS] source list: /api/sources (ok)\n[PASS] query plan: /api/query-plan?q=Windows+7+apps (ok)\n[PASS] search: /api/search?q=synthetic (ok)\n[PASS] public search status: /api/v1/status (ok)\n[PASS] public search: /api/v1/search?q=windows+7+apps (ok)\n[PASS] public query plan: /api/v1/query-plan?q=windows+7+apps (ok)\n[PASS] archive resolution evals: /api/evals/archive-resolution (ok)\n[PASS] local index path: /api/index/status?index_path=D%3A%2Fprivate%2Feureka-index.sqlite3 (local_path_parameters_blocked)\n[PASS] run store root: /api/runs?run_store_root=D%3A%2Fprivate%2Feureka-runs (local_path_parameters_blocked)\n[PASS] task store root: /api/tasks?task_store_root=D%3A%2Fprivate%2Feureka-tasks (local_path_parameters_blocked)\n[PASS] memory store root: /api/memories?memory_store_root=D%3A%2Fprivate%2Feureka-memory (local_path_parameters_blocked)\n[PASS] bundle path inspection: /api/inspect/bundle?bundle_path=D%3A%2Fprivate%2Feureka-bundle.zip (local_path_parameters_blocked)\n[PASS] stored export root: /api/stored?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&store_root=D%3A%2Fprivate%2Feureka-store (local_path_parameters_blocked)\n[PASS] arbitrary output path: /api/status?output=D%3A%2Fprivate%2Foutput.json (local_path_parameters_blocked)\n[PASS] fixture byte fetch: /api/fetch?target_ref=fixture%3Asoftware%2Fsynthetic-demo-app%401.0.0&representation_id=rep.synthetic-demo-app.source (route_disabled_in_public_alpha)\n[PASS] public search arbitrary url: /api/v1/search?q=archive&url=https%3A%2F%2Fexample.invalid%2F (forbidden_parameter)\n[PASS] public search live probe: /api/v1/search?q=archive&live_probe=1 (live_probes_disabled)\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.35,
+      "stdout_tail": "Archive resolution evals\ncreated_by_slice: archive_resolution_eval_runner_v0\ntask_count: 6\nstatus_counts: satisfied=6\n\nTasks\n- article_inside_magazine_scan: satisfied (planner=satisfied, search=local_index, results=9)\n- driver_inside_support_cd: satisfied (planner=satisfied, search=local_index, results=50)\n- latest_firefox_before_xp_drop: satisfied (planner=satisfied, search=local_index, results=50)\n- old_blue_ftp_client_xp: satisfied (planner=satisfied, search=local_index, results=44)\n- win98_registry_repair: satisfied (planner=satisfied, search=local_index, results=26)\n- windows_7_apps: satisfied (planner=satisfied, search=local_index, results=29)\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.36,
+      "stdout_tail": "er; compatibility_note internet_archive_recorded source_metadata Internet Archive Recorded Fixtures\",\n            \"file_listing portable-app-package/README-windows7.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures\",\n            \"file_listing portable-app-package/individual-application-installer.exe.txt internet_archive_recorded file_listing Internet Archive Recorded Fixtures\"\n          ],\n          \"index_record_id\": \"resolved_object:internet-archive-recorded:ia-win7-portable-apps-fixture\",\n          \"label\": \"Windows 7 portable apps archive recorded fixture\",\n          \"primary_lane\": \"preservation\",\n          \"record_kind\": \"resolved_object\",\n          \"representation_id\": \"rep.internet-archive-recorded.ia.win7.portable.apps.fixture.metadata\",\n          \"resolved_resource_id\": \"obj.internet-archive-recorded.ia.win7.portable.apps.fixture\",\n          \"result_lanes\": [\n            \"preservation\"\n          ],\n          \"route_hints\": {\n            \"record_kind\": \"resolved_object\",\n            \"surface_route\": \"/\",\n            \"target_ref\": \"internet-archive-recorded:ia-win7-portable-apps-fixture\"\n          },\n          \"source_family\": \"internet_archive_recorded\",\n          \"source_id\": \"internet-archive-recorded-fixtures\",\n          \"source_label\": \"Internet Archive Recorded Fixtures\",\n          \"subject_key\": \"obj.internet-archive-recorded.ia.win7.portable.apps.fixture\",\n          \"summary\": \"software from Internet Archive Recorded Fixtures\",\n          \"target_ref\": \"internet-archive-recorded:ia-win7-portable-apps-fixture\",\n          \"usefulness_summary\": \"preservation; user cost 3; why: preservation_source; source_evidence_present\",\n          \"user_cost_reasons\": [\n            \"preservation_source\",\n            \"source_evidence_present\"\n          ],\n          \"user_cost_score\": 3,\n          \"version_or_state\": \"state.internet-archive-recorded.ia.win7.portable.apps.fixture.recorded\"\n        }\n      ]\n    }\n  ],\n  \"total_task_count\": 6\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.38,
+      "stdout_tail": "amily=package_container_member, search=local_index, results=1)\n- software_heritage_snapshot_old_project: partial (family=source_code_package_release, search=local_index, results=6)\n- sound_blaster_live_ct4830_driver_windows_98: source_gap (family=driver_hardware_support, search=local_index, results=0)\n- sound_blaster_live_manual: partial (family=manual_documentation, search=local_index, results=5)\n- source_registry_synthetic_fixtures: covered (family=current_covered_sanity, search=local_index, results=4)\n- support_cd_member_driver: partial (family=package_container_member, search=local_index, results=10)\n- synthetic_demo_app_exact: covered (family=current_covered_sanity, search=local_index, results=10)\n- synthetic_package_member_readme: covered (family=current_covered_sanity, search=local_index, results=2)\n- thinkpad_t42_hardware_maintenance_manual: partial (family=manual_documentation, search=local_index, results=5)\n- threecom_3c905_windows_95_driver: partial (family=driver_hardware_support, search=local_index, results=20)\n- unsupported_platform_query: unknown (family=negative_absence, search=local_index, results=0)\n- visual_cpp_6_service_pack_download: partial (family=package_container_member, search=local_index, results=2)\n- visual_cpp_6_sp_readme: partial (family=manual_documentation, search=local_index, results=4)\n- windows_2000_antivirus: partial (family=platform_software, search=local_index, results=6)\n- windows_7_apps: partial (family=platform_software, search=local_index, results=11)\n- windows_7_portable_apps_archive: partial (family=platform_software, search=local_index, results=11)\n- windows_98_registry_repair: partial (family=platform_software, search=local_index, results=28)\n- windows_98_resource_kit_pdf: partial (family=manual_documentation, search=local_index, results=6)\n- windows_xp_ftp_clients: partial (family=platform_software, search=local_index, results=31)\n- windows_xp_software: partial (family=platform_software, search=local_index, results=21)\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.4,
+      "stdout_tail": "ount\": 28\n    },\n    {\n      \"eureka_status\": \"partial\",\n      \"expected_eureka_current_status\": \"source_gap\",\n      \"failure_modes\": [\n        \"source_coverage_gap\",\n        \"live_source_gap\",\n        \"representation_gap\",\n        \"external_baseline_pending\"\n      ],\n      \"future_work_labels\": [\n        \"source_coverage_gap\",\n        \"representation_gap\",\n        \"live_source_gap\"\n      ],\n      \"planner_observed_task_kind\": \"find_documentation\",\n      \"query\": \"Windows 98 resource kit PDF\",\n      \"query_family\": \"manual_documentation\",\n      \"query_id\": \"windows_98_resource_kit_pdf\",\n      \"search_mode\": \"local_index\",\n      \"search_result_count\": 6\n    },\n    {\n      \"eureka_status\": \"partial\",\n      \"expected_eureka_current_status\": \"source_gap\",\n      \"failure_modes\": [\n        \"source_coverage_gap\",\n        \"compatibility_evidence_gap\",\n        \"ranking_gap\",\n        \"identity_cluster_gap\",\n        \"external_baseline_pending\"\n      ],\n      \"future_work_labels\": [\n        \"source_coverage_gap\",\n        \"compatibility_evidence_gap\",\n        \"ranking_gap\",\n        \"identity_cluster_gap\"\n      ],\n      \"planner_observed_task_kind\": \"browse_software\",\n      \"query\": \"Windows XP FTP clients\",\n      \"query_family\": \"platform_software\",\n      \"query_id\": \"windows_xp_ftp_clients\",\n      \"search_mode\": \"local_index\",\n      \"search_result_count\": 31\n    },\n    {\n      \"eureka_status\": \"partial\",\n      \"expected_eureka_current_status\": \"source_gap\",\n      \"failure_modes\": [\n        \"source_coverage_gap\",\n        \"compatibility_evidence_gap\",\n        \"external_baseline_pending\"\n      ],\n      \"future_work_labels\": [\n        \"source_coverage_gap\",\n        \"compatibility_evidence_gap\"\n      ],\n      \"planner_observed_task_kind\": \"browse_software\",\n      \"query\": \"Windows XP software\",\n      \"query_family\": \"platform_software\",\n      \"query_id\": \"windows_xp_software\",\n      \"search_mode\": \"local_index\",\n      \"search_result_count\": 21\n    }\n  ],\n  \"total_query_count\": 64\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "stdout_tail": "_95_driver\"\n      ],\n      \"selected_system_count\": 3,\n      \"selected_system_ids\": [\n        \"google_web_search\",\n        \"internet_archive_metadata_search\",\n        \"internet_archive_full_text_search\"\n      ],\n      \"status\": \"pending_manual_observation\",\n      \"status_counts\": {\n        \"pending_manual_observation\": 39\n      }\n    }\n  },\n  \"created_by\": \"manual_external_baseline_status_report_v0\",\n  \"errors\": [],\n  \"global_slot_counts\": {\n    \"observed\": 0,\n    \"pending_manual_observation\": 192\n  },\n  \"limitations\": [\n    \"Pending slots are not observed baselines.\",\n    \"This report performs no external querying or scraping.\",\n    \"Future observed records are manual, time-sensitive, and not global truth.\"\n  ],\n  \"missing_observation_slots\": {\n    \"google_web_search\": 64,\n    \"internet_archive_full_text_search\": 64,\n    \"internet_archive_metadata_search\": 64\n  },\n  \"next_pending_slots\": [],\n  \"observed_query_ids\": {\n    \"google_web_search\": 0,\n    \"internet_archive_full_text_search\": 0,\n    \"internet_archive_metadata_search\": 0\n  },\n  \"query_count\": 64,\n  \"query_coverage\": {\n    \"google_web_search\": {\n      \"expected_query_count\": 64,\n      \"observed_query_count\": 0,\n      \"pending_slots\": 64\n    },\n    \"internet_archive_full_text_search\": {\n      \"expected_query_count\": 64,\n      \"observed_query_count\": 0,\n      \"pending_slots\": 64\n    },\n    \"internet_archive_metadata_search\": {\n      \"expected_query_count\": 64,\n      \"observed_query_count\": 0,\n      \"pending_slots\": 64\n    }\n  },\n  \"selected_batch\": null,\n  \"status\": \"ready\",\n  \"status_counts_by_system\": {\n    \"google_web_search\": {\n      \"pending_manual_observation\": 64\n    },\n    \"internet_archive_full_text_search\": {\n      \"pending_manual_observation\": 64\n    },\n    \"internet_archive_metadata_search\": {\n      \"pending_manual_observation\": 64\n    }\n  },\n  \"systems\": [\n    \"google_web_search\",\n    \"internet_archive_full_text_search\",\n    \"internet_archive_metadata_search\"\n  ],\n  \"validation_status\": \"valid\"\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.02,
+      "stdout_tail": "Python oracle golden fixture pack\nstatus: passed\nfixture_pack_id: python_oracle_golden_v0\nfixture_pack_version: 0.1.0\noutput_root: <repo-root>\\tests\\parity\\golden\\python_oracle\\v0\nfile_count: 40\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 98.54,
+      "stdout_tail": "",
+      "stderr_tail": ".................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 449 tests in 98.370s\n\nOK\n"
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 9.02,
+      "stdout_tail": "",
+      "stderr_tail": "............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 508 tests in 8.687s\n\nOK\n"
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 5.82,
+      "stdout_tail": "",
+      "stderr_tail": ".....................................................\n----------------------------------------------------------------------\nRan 53 tests in 5.453s\n\nOK\n"
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 1.49,
+      "stdout_tail": "",
+      "stderr_tail": ".........................\n----------------------------------------------------------------------\nRan 25 tests in 1.402s\n\nOK\n"
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 5.06,
+      "stdout_tail": "",
+      "stderr_tail": "................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 320 tests in 4.726s\n\nOK\n"
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 30.93,
+      "stdout_tail": "",
+      "stderr_tail": "........................................................................................................................................................................\n----------------------------------------------------------------------\nRan 168 tests in 30.662s\n\nOK\n"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 119.96,
+      "stdout_tail": "",
+      "stderr_tail": "......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 1126 tests in 119.554s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.53,
+      "stdout_tail": "Checked 446 Python files under <repo-root>\nNo architecture-boundary violations found.\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.1,
+      "stdout_tail": "",
+      "stderr_tail": "iles/index.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/files/manifest.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/files/search.README.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/lite/README.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/lite/demo-queries.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/lite/evals.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/lite/index.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/lite/limitations.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/lite/search.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/lite/sources.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/text/README.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/text/demo-queries.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/text/evals.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/text/index.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/text/limitations.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/text/search.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'site/dist/text/sources.txt', LF will be replaced by CRLF the next time Git touches it\n"
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "passed",
+      "returncode": 0,
+      "duration_seconds": 0.07,
+      "stdout_tail": "ADME.md\n M control/inventory/sources/wayback-memento-placeholder.source.json\n M control/inventory/tests/command_matrix.json\n M control/inventory/tests/test_registry.json\n M docs/BOOTSTRAP_STATUS.md\n M docs/DECISIONS.md\n M docs/OPEN_QUESTIONS.md\n M docs/ROADMAP.md\n M docs/architecture/SOURCE_INGESTION_PLANE.md\n M docs/operations/HOSTED_PUBLIC_SEARCH_REHEARSAL.md\n M docs/operations/PUBLIC_SEARCH_SAFETY_EVIDENCE.md\n M docs/reference/CANDIDATE_INDEX_CONTRACT.md\n M docs/reference/CANDIDATE_PROMOTION_POLICY.md\n M docs/reference/DEMAND_DASHBOARD_CONTRACT.md\n M docs/reference/EVIDENCE_LEDGER_CONTRACT.md\n M docs/reference/EVIDENCE_PACK_CONTRACT.md\n M docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md\n M docs/reference/PROBE_QUEUE_CONTRACT.md\n M docs/reference/PUBLIC_SEARCH_API_CONTRACT.md\n M docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md\n M docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md\n M docs/reference/SOURCE_CACHE_CONTRACT.md\n M docs/reference/SOURCE_PACK_CONTRACT.md\n M docs/reference/SOURCE_SYNC_SOURCE_POLICY.md\n M docs/reference/SOURCE_SYNC_WORKER_CONTRACT.md\n M docs/roadmap/BACKEND_ROADMAP.md\n M scripts/README.md\n?? contracts/connectors/wayback_cdx_memento_connector_approval.v0.json\n?? contracts/connectors/wayback_cdx_memento_connector_manifest.v0.json\n?? control/audits/wayback-cdx-memento-connector-approval-v0/\n?? control/inventory/connectors/wayback_cdx_memento_connector.json\n?? docs/reference/WAYBACK_CDX_MEMENTO_CONNECTOR_APPROVAL.md\n?? examples/connectors/wayback_cdx_memento_approval_v0/\n?? scripts/dry_run_wayback_cdx_memento_connector_approval.py\n?? scripts/validate_wayback_cdx_memento_connector_approval.py\n?? scripts/validate_wayback_cdx_memento_connector_contract.py\n?? tests/operations/test_wayback_cdx_memento_connector_approval.py\n?? tests/scripts/test_dry_run_wayback_cdx_memento_connector_approval.py\n?? tests/scripts/test_validate_wayback_cdx_memento_connector_approval.py\n?? tests/scripts/test_validate_wayback_cdx_memento_connector_contract.py\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "cargo --version",
+      "status": "skipped_unavailable",
+      "returncode": null,
+      "duration_seconds": 0,
+      "stdout_tail": "",
+      "stderr_tail": "command or prerequisite unavailable"
+    },
+    {
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped_unavailable",
+      "returncode": null,
+      "duration_seconds": 0,
+      "stdout_tail": "",
+      "stderr_tail": "command or prerequisite unavailable"
+    },
+    {
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped_unavailable",
+      "returncode": null,
+      "duration_seconds": 0,
+      "stdout_tail": "",
+      "stderr_tail": "command or prerequisite unavailable"
+    }
+  ],
+  "remaining_blockers": [
+    "Official Wayback/CDX/Memento source policy review pending",
+    "User-Agent/contact decision pending",
+    "URI privacy filter implementation pending",
+    "Rate-limit/timeout/retry/circuit values pending",
+    "Connector approval pending"
+  ],
+  "next_recommended_branch": "P73 GitHub Releases Connector Approval Pack v0",
+  "notes": [
+    "P72 is approval-only and performs no external calls."
+  ],
+  "connector_runtime_implemented": false,
+  "connector_approved_now": false,
+  "live_enabled_by_default": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "public_query_fanout_allowed": false,
+  "public_search_live_fanout_enabled": false,
+  "arbitrary_url_fetch_allowed": false,
+  "archived_content_fetch_allowed": false,
+  "capture_replay_allowed": false,
+  "warc_download_allowed": false,
+  "downloads_allowed": false,
+  "file_retrieval_allowed": false,
+  "mirroring_allowed": false,
+  "source_cache_mutation_allowed_now": false,
+  "evidence_ledger_mutation_allowed_now": false,
+  "candidate_index_mutation_allowed_now": false,
+  "public_index_mutation_allowed_now": false,
+  "local_index_mutation_allowed_now": false,
+  "master_index_mutation_allowed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "telemetry_implemented": false,
+  "credentials_configured": false
+}

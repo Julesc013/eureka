@@ -414,3 +414,7 @@ See `control/audits/source-cache-evidence-ledger-v0/` for the contract-only sour
 
 See `control/audits/internet-archive-metadata-connector-approval-v0/` for the approval-only Internet Archive metadata connector pack. It is not a connector runtime, does not call Internet Archive, does not scrape or download, and does not mutate source cache, evidence ledger, candidate index, public/local/master indexes, telemetry, or credentials.
 <!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->
+
+## P72 Wayback/CDX/Memento Connector Approval Pack v0
+
+Completed as an approval-only contract pack. It adds no Wayback/CDX/Memento connector runtime, no external calls, no archived content fetch, no capture replay, no WARC download, no public-query fanout, no telemetry, no credentials, and no source cache/evidence ledger/candidate/index mutation. Next recommended branch: P73 GitHub Releases Connector Approval Pack v0.
