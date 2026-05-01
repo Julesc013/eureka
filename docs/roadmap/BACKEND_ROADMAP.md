@@ -631,3 +631,8 @@ server on `127.0.0.1`, checks contracted routes, safe queries, blocked request
 coverage, static handoff compatibility, public index compatibility, and
 deployment templates. The backend is still not deployed; P59 should define the
 query observation contract before query-intelligence runtime work.
+
+
+## P59 Query Observation Contract v0
+
+P59 starts the query-intelligence sequence with contract-only query observations. Backend runtime does not persist observations, telemetry, shared cache entries, miss ledger entries, search needs, probe jobs, candidate records, or master-index records. P60 should define the shared query/result cache boundary next.

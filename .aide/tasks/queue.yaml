@@ -734,16 +734,16 @@
     {
       "id": "query_observation_contract_v0",
       "title": "P59 Query Observation Contract v0",
-      "status": "queued_codex_safe",
+      "status": "completed",
       "priority": 100,
-      "notes": "Define privacy-filtered query observation records before any runtime query intelligence collection exists."
+      "notes": "Implemented P59 Query Observation Contract v0 with contract schema, privacy policy, synthetic example, dry-run helper, validators, audit pack, docs, tests, and metadata. No telemetry, persistent query logging, result-cache mutation, miss-ledger mutation, probe enqueueing, candidate-index mutation, local-index mutation, master-index mutation, external calls, or hosted query intelligence runtime was added."
     },
     {
       "id": "shared_query_result_cache_v0",
       "title": "P60 Shared Query/Result Cache v0",
       "status": "queued_codex_safe",
       "priority": 101,
-      "notes": "Plan or implement controlled cache behavior only after query observation contract boundaries are clear."
+      "notes": "Next Codex-safe branch after P59; must remain contract/cache-boundary work and preserve privacy/no-mutation guarantees."
     },
     {
       "id": "search_miss_ledger_v0",
@@ -800,6 +800,13 @@
       "status": "queued_codex_safe",
       "priority": 109,
       "notes": "Future query-intelligence visibility milestone after privacy/poisoning guard; no telemetry or public query learning runtime until governed."
+    },
+    {
+      "id": "source_sync_worker_contract_v0",
+      "title": "P69 Source Sync Worker Contract v0",
+      "status": "queued_codex_safe_after_query_sequence",
+      "priority": 110,
+      "notes": "Future contract only after query intelligence privacy, cache, miss ledger, need record, probe queue, candidate index, and promotion policy are governed; no live connector runtime without approval."
     }
   ]
 }

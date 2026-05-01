@@ -739,3 +739,8 @@ without deploying it. The next Codex-safe branch is P59 Query Observation
 Contract v0; operator parallel work remains hosted deployment evidence, backend
 URL configuration after evidence, edge/rate limits, static-site verification,
 and Manual Observation Batch 0.
+
+
+## P59 Query Observation Contract v0
+
+Completed: privacy-filtered query observation contract and validation. Next Codex-safe branch: P60 Shared Query/Result Cache v0. Human/operator parallel work remains hosted wrapper deployment evidence, backend URL configuration, edge/rate-limit setup, static site verification, and Manual Observation Batch 0 Execution.

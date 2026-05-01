@@ -200,7 +200,11 @@
         "public_search_safety_evidence_tests",
         "hosted_public_search_rehearsal_runner",
         "hosted_public_search_rehearsal_validator",
-        "hosted_public_search_rehearsal_tests"
+        "hosted_public_search_rehearsal_tests",
+        "query_observation_examples_validator",
+        "query_observation_contract_validator",
+        "query_observation_dry_run_json",
+        "query_observation_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -400,7 +404,13 @@
         "hosted_public_search_rehearsal_validator",
         "hosted_public_search_rehearsal_tests",
         "hosted_public_search_rehearsal_runner_json",
-        "hosted_public_search_rehearsal_validator_json"
+        "hosted_public_search_rehearsal_validator_json",
+        "query_observation_examples_validator",
+        "query_observation_examples_validator_json",
+        "query_observation_contract_validator",
+        "query_observation_contract_validator_json",
+        "query_observation_dry_run_json",
+        "query_observation_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -554,7 +564,10 @@
         "static_site_search_integration_validator",
         "static_site_search_integration_validator_json",
         "static_search_integration_drift_guard",
-        "static_site_search_integration_tests"
+        "static_site_search_integration_tests",
+        "query_observation_examples_validator",
+        "query_observation_contract_validator",
+        "query_observation_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -848,7 +861,13 @@
         "hosted_public_search_rehearsal_validator",
         "hosted_public_search_rehearsal_tests",
         "hosted_public_search_rehearsal_runner_json",
-        "hosted_public_search_rehearsal_validator_json"
+        "hosted_public_search_rehearsal_validator_json",
+        "query_observation_examples_validator",
+        "query_observation_examples_validator_json",
+        "query_observation_contract_validator",
+        "query_observation_contract_validator_json",
+        "query_observation_dry_run_json",
+        "query_observation_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -904,6 +923,7 @@
     "Static Deployment Evidence / GitHub Pages Repair v0 validation is stdlib-only audit governance. It checks required files, site/dist artifact discipline, Pages workflow upload path, operator steps for unverified deployment, static-only public claims, and no hosted-backend/live-probe/dynamic-backend/deployment-success overclaim.",
     "Hosted Public Search Wrapper v0 validation is stdlib-only local rehearsal and audit governance. It checks a deployable local_index_only wrapper, safe environment defaults, route smoke behavior, templates, and no deployed-hosted/backend/live-probe/download/upload/account/telemetry/index-mutation claims.",
     "P57 Public Search Safety Evidence checks are stdlib-only local/public-alpha safety evidence; they use an in-process hosted-wrapper harness and add no deployment, live probes, external calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or production claim.",
-    "P58 Hosted Public Search Rehearsal checks are stdlib-only localhost hosted-mode evidence; they start a local wrapper process and add no deployment, external calls, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or production claim."
+    "P58 Hosted Public Search Rehearsal checks are stdlib-only localhost hosted-mode evidence; they start a local wrapper process and add no deployment, external calls, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or production claim.",
+    "P59 Query Observation Contract v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public query logging, result-cache mutation, miss-ledger mutation, probe queue, external calls, or index/master-index mutation."
   ]
 }

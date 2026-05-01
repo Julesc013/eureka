@@ -582,3 +582,13 @@ intentionally deferred.
 These commands run and validate P58 local hosted-mode rehearsal evidence. They
 start only a localhost wrapper process and do not deploy, call external source
 APIs, enable live probes, or mutate indexes.
+
+## Query Observation Contract
+
+- `python scripts/validate_query_observation.py --all-examples`
+- `python scripts/validate_query_observation.py --all-examples --json`
+- `python scripts/validate_query_observation_contract.py`
+- `python scripts/validate_query_observation_contract.py --json`
+- `python scripts/dry_run_query_observation.py --query "windows 7 apps" --json`
+
+These P59 commands validate contract-only query observation examples and docs, or emit a stdout-only dry-run observation. They do not persist query logs, add telemetry, mutate caches, write miss ledgers, enqueue probes, mutate indexes, or call external services.

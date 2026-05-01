@@ -4471,6 +4471,133 @@
       "failure_means": "Focused P58 runner, validator, audit pack, local-only URL guard, static handoff, public index, or hard false boolean tests regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P58 tests; no deployment, external source calls, live probes, model calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or index mutation."
+    },
+    {
+      "test_id": "query_observation_examples_validator",
+      "label": "Query observation examples validator",
+      "command": "python scripts/validate_query_observation.py --all-examples",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P59 query observation examples, checksums, privacy flags, or no-mutation guarantees regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic query observation examples only; no telemetry, persistence, cache mutation, miss ledger, probes, index mutation, or external calls."
+    },
+    {
+      "test_id": "query_observation_examples_validator_json",
+      "label": "Query observation examples validator JSON",
+      "command": "python scripts/validate_query_observation.py --all-examples --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P59 example validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON example validator output for P59."
+    },
+    {
+      "test_id": "query_observation_contract_validator",
+      "label": "Query observation contract validator",
+      "command": "python scripts/validate_query_observation_contract.py",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P59 contract schema, docs, audit pack, policy inventory, or no-runtime/no-telemetry claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates P59 governance only; does not collect, persist, upload, or publish query observations."
+    },
+    {
+      "test_id": "query_observation_contract_validator_json",
+      "label": "Query observation contract validator JSON",
+      "command": "python scripts/validate_query_observation_contract.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P59 contract validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON contract validator output for P59."
+    },
+    {
+      "test_id": "query_observation_dry_run_json",
+      "label": "Query observation dry-run JSON helper",
+      "command": "python scripts/dry_run_query_observation.py --query \"windows 7 apps\" --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "sub-second",
+      "failure_means": "P59 dry-run observation helper failed or stopped emitting a valid no-persistence record.",
+      "advisory_or_required": "required",
+      "notes": "Dry-run helper emits stdout only and writes no query log, cache, miss ledger, probe, index, or telemetry state."
+    },
+    {
+      "test_id": "query_observation_contract_tests",
+      "label": "Query observation contract tests",
+      "command": "python -m unittest tests.operations.test_query_observation_contract tests.scripts.test_validate_query_observation tests.scripts.test_validate_query_observation_contract tests.scripts.test_dry_run_query_observation",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P59 schema, example, validator, dry-run, audit, docs, or privacy tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P59 tests; no telemetry, persistence, runtime query logging, cache mutation, miss ledger, probe queue, external calls, or index mutation."
     }
   ]
 }

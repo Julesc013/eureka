@@ -1786,3 +1786,8 @@ real deployment evidence exists.
 Consequences: the next Codex-safe branch is P59 Query Observation Contract v0.
 Operator deployment, backend URL configuration, DNS/TLS, edge/rate limits, and
 hosted evidence capture remain separate work.
+
+
+## P59 Query Observation Decision
+
+Decision: query observation is contract-only in P59. Raw query retention defaults to none, individual observations are not public by default, and no telemetry, runtime persistence, public query logging, result-cache mutation, miss-ledger mutation, probe enqueueing, candidate-index mutation, local-index mutation, or master-index mutation is implemented.

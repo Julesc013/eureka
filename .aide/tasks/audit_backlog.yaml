@@ -614,6 +614,25 @@
       "status": "operator_gated_after_p58",
       "suggested_milestone": "P58 Hosted Public Search Rehearsal v0 after operator deployment evidence",
       "addressed_by": "control/audits/hosted-public-search-rehearsal-v0/hosted_public_search_rehearsal_report.json"
+    },
+    {
+      "id": "audit-backlog-query-observation-contract",
+      "finding_refs": [
+        "query-observation-contract-v0"
+      ],
+      "title": "Define privacy-filtered query observation records before runtime query intelligence collection",
+      "status": "addressed_by_p59",
+      "suggested_milestone": "P60 Shared Query/Result Cache v0",
+      "addressed_by": "control/audits/query-observation-contract-v0/query_observation_contract_report.json"
+    },
+    {
+      "id": "audit-backlog-query-intelligence-runtime-privacy",
+      "finding_refs": [
+        "query-observation-contract-v0"
+      ],
+      "title": "Govern cache, miss ledger, search need, probe, candidate, and aggregate-publication privacy before runtime query learning",
+      "status": "open_follow_up",
+      "suggested_milestone": "P60 Shared Query/Result Cache v0 through P67 Query Privacy and Poisoning Guard v0"
     }
   ]
 }

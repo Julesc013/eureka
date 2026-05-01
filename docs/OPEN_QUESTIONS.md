@@ -154,3 +154,11 @@ These questions are intentionally left open during bootstrap:
 149. What local safety evidence should exist before hosted public-search rehearsal? Answered for Public Search Safety Evidence v0: add `scripts/run_public_search_safety_evidence.py`, `scripts/validate_public_search_safety_evidence.py`, `control/audits/public-search-safety-evidence-v0/`, docs, tests, and metadata. The evidence covers safe queries, 32 blocked request cases, limits, status endpoints, static handoff safety, public index safety, hosted-wrapper local rehearsal, privacy/redaction, and operator-gated rate-limit/edge status without deployment, live probes, external calls, downloads, uploads, installers, accounts, telemetry, arbitrary URL fetching, AI runtime, index mutation, or production claim.
 149. How should the static site connect users to search before a hosted backend URL exists? Answered for Static Site Search Integration v0: keep the default backend status `backend_unconfigured`, generate no-JS `search.html`, `lite/search.html`, `text/search.txt`, and `files/search.README.txt`, publish `data/search_config.json` and `data/public_index_summary.json`, show local wrapper instructions and sample queries, and disable hosted form submission until operator evidence records a verified backend URL. This adds no hosted deployment, fake URL, live probes, external source calls, downloads, uploads, accounts, telemetry, arbitrary URL fetching, AI runtime, index mutation, pack import, staging runtime, or production search-quality claim.
 150. Answered by P58: the hosted wrapper can start locally under hosted-safe settings and pass route, safe-query, blocked-request, static handoff, public-index, and template checks. Still open/operator-gated: real hosted deployment evidence, backend URL configuration, edge/rate limits, and production readiness.
+
+
+## P59 Query Intelligence Open Questions
+
+- What aggregate threshold is required before public demand summaries may be published?
+- What retention and deletion controls are required before any hosted query observation runtime exists?
+- What poisoning and spam controls are required before query-derived demand can influence candidate work?
+- What operator evidence is required before hosted query-intelligence collection can be enabled?

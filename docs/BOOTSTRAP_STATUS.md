@@ -909,3 +909,8 @@ localhost, verifies health/status/search/query-plan/source routes, safe queries,
 34 blocked request cases, static handoff compatibility, public index
 compatibility, and deployment-template safety. Hosted deployment, backend URL,
 edge/rate limits, and production readiness remain unverified/operator-gated.
+
+
+## P59 Query Observation Contract v0
+
+P59 adds the first Query Intelligence Plane contract under `contracts/query/`, a privacy policy inventory, a synthetic query observation example, validators, docs, and an audit pack. Runtime query observation persistence, telemetry, public query logging, cache writes, miss ledger writes, probe enqueueing, candidate-index mutation, local-index mutation, and master-index mutation remain unimplemented.

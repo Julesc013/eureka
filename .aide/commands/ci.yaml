@@ -460,6 +460,18 @@ steps:
     run: python scripts/validate_hosted_public_search_rehearsal.py --json
   - id: hosted_public_search_rehearsal_tests
     run: python -m unittest tests.operations.test_hosted_public_search_rehearsal tests.scripts.test_run_hosted_public_search_rehearsal tests.scripts.test_validate_hosted_public_search_rehearsal
+  - id: query_observation_examples_validator
+    run: python scripts/validate_query_observation.py --all-examples
+  - id: query_observation_examples_validator_json
+    run: python scripts/validate_query_observation.py --all-examples --json
+  - id: query_observation_contract_validator
+    run: python scripts/validate_query_observation_contract.py
+  - id: query_observation_contract_validator_json
+    run: python scripts/validate_query_observation_contract.py --json
+  - id: query_observation_dry_run_json
+    run: python scripts/dry_run_query_observation.py --query "windows 7 apps" --json
+  - id: query_observation_contract_tests
+    run: python -m unittest tests.operations.test_query_observation_contract tests.scripts.test_validate_query_observation tests.scripts.test_validate_query_observation_contract tests.scripts.test_dry_run_query_observation
 notes:
   - Checks run only against the local deterministic Python stdlib thin slices.
   - The architecture-boundary check remains intentionally narrow and Python import focused.
