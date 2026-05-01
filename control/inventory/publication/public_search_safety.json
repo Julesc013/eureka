@@ -227,7 +227,10 @@
     "static_search_handoff_added": true,
     "hosted_form_enabled": false,
     "live_backend_required": false,
-    "notes": "Static pages include a no-JS disabled search handoff for local/prototype instructions. They must not claim hosted public search exists."
+    "notes": "Static pages include a no-JS disabled search handoff, backend-unconfigured search_config.json, and public_index_summary.json. They must not claim hosted public search exists.",
+    "search_config_added": true,
+    "public_index_summary_added": true,
+    "backend_status": "backend_unconfigured"
   },
   "live_backend_dependency": {
     "contract": "control/inventory/publication/live_backend_handoff.json",
@@ -281,7 +284,8 @@
     "It does not implement rate-limit middleware, auth, sessions, telemetry, logging runtime, live probes, downloads, installers, uploads, local path ingestion, or backend hosting.",
     "Public Search Rehearsal v0 records local safe-query and blocked-request evidence.",
     "Hosted public search exposure remains blocked until the readiness checklist, operator controls, and hosted rehearsal gates are satisfied.",
-    "Hosted Public Search Wrapper v0 adds local/prototype wrapper readiness and rehearsal checks for local_index_only routes only. It does not deploy hosted search, enable live probes, add telemetry, add accounts, or change no_hosted_public_search_live."
+    "Hosted Public Search Wrapper v0 adds local/prototype wrapper readiness and rehearsal checks for local_index_only routes only. It does not deploy hosted search, enable live probes, add telemetry, add accounts, or change no_hosted_public_search_live.",
+    "Static Site Search Integration v0 adds no-JS search surfaces and public data summaries while preserving disabled hosted search, live probes, downloads, uploads, local paths, arbitrary URL fetch, accounts, and telemetry."
   ],
   "production_contract": "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
   "production_contract_status": "frozen_for_p54_hosted_wrapper",

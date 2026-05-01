@@ -23,6 +23,13 @@
       "/data/search_handoff.json:first_mode",
       "/data/search_handoff.json:backend_url",
       "/data/search_handoff.json:disabled_behaviors.*",
+      "/data/search_config.json:hosted_backend_status",
+      "/data/search_config.json:hosted_backend_verified",
+      "/data/search_config.json:search_form_enabled",
+      "/data/search_config.json:mode",
+      "/data/public_index_summary.json:document_count",
+      "/data/public_index_summary.json:source_count",
+      "/data/public_index_summary.json:contains_live_data",
       "/data/build_manifest.json:data_files[]",
       "/data/build_manifest.json:disabled behavior flags"
     ],
@@ -151,6 +158,58 @@
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_public_data_summaries.py",
       "notes": "Machine-readable static public search handoff summary. It records that hosted backend search is unavailable/unverified, the default backend mode is not_configured, local runtime instructions are localhost/prototype only, and live probes/downloads/installs/uploads/local paths remain disabled."
+    },
+    {
+      "path": "/data/search_config.json",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "schema_version": "0.1.0",
+      "producer": "Generated Public Data Summaries v0",
+      "source_inputs": [
+        "control/inventory/publication/static_search_config.json",
+        "control/inventory/publication/public_search_handoff.json",
+        "control/inventory/publication/public_search_safety.json"
+      ],
+      "consumer_profiles": [
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree",
+        "api_client",
+        "native_client",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "generated_by": "scripts/generate_public_data_summaries.py",
+      "notes": "Machine-readable static search configuration for P56. It records backend_unconfigured status, no verified hosted backend URL, disabled hosted form, local_index_only mode, and disabled live probes/downloads/uploads/local paths/arbitrary URL fetch."
+    },
+    {
+      "path": "/data/public_index_summary.json",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "schema_version": "0.1.0",
+      "producer": "Generated Public Data Summaries v0",
+      "source_inputs": [
+        "data/public_index/build_manifest.json",
+        "data/public_index/index_stats.json",
+        "data/public_index/source_coverage.json"
+      ],
+      "consumer_profiles": [
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree",
+        "api_client",
+        "native_client",
+        "snapshot"
+      ],
+      "contains_live_data": false,
+      "contains_external_observations": false,
+      "safe_for_static_hosting": true,
+      "generated_by": "scripts/generate_public_data_summaries.py",
+      "notes": "Machine-readable summary of the controlled public-safe search index under data/public_index. It exposes counts and safety posture only; the static site does not execute search or expose raw index internals as a production API."
     },
     {
       "path": "/data/page_registry.json",

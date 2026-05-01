@@ -131,6 +131,48 @@
       "next_guard": "Public Search Static Handoff v0 validator"
     },
     {
+      "file_name": "search_config.json",
+      "path": "/data/search_config.json",
+      "stability_class": "stable_draft",
+      "field_stability_profile": "stable_draft backend status, form enablement, local_index_only mode, and disabled safety flags; internal source inputs",
+      "intended_consumers": [
+        "static clients",
+        "old-client handoff pages",
+        "future rehearsal tooling",
+        "snapshot consumers",
+        "future native and relay planning"
+      ],
+      "allowed_client_use": "Display backend-unconfigured status, hosted_backend_verified false, disabled hosted form, local_index_only mode, and query limits.",
+      "prohibited_client_use": "Do not treat localhost hints as public deployment evidence or enable a static form without verified backend evidence.",
+      "breaking_change_sensitivity": "High for hosted backend status, verification, search form enablement, safety flags, query limits, and mode.",
+      "current_gaps": [
+        "Hosted backend remains unconfigured/unverified.",
+        "Operator deployment evidence is still required before a hosted form can be enabled."
+      ],
+      "next_guard": "Static Site Search Integration v0 validator"
+    },
+    {
+      "file_name": "public_index_summary.json",
+      "path": "/data/public_index_summary.json",
+      "stability_class": "stable_draft",
+      "field_stability_profile": "stable_draft public-safe index counts and no-live/private/executable flags; experimental source-family/detail counts",
+      "intended_consumers": [
+        "static clients",
+        "old-client handoff pages",
+        "future rehearsal tooling",
+        "snapshot consumers",
+        "future native and relay planning"
+      ],
+      "allowed_client_use": "Display public index artifact root, document count, source count, and safety flags.",
+      "prohibited_client_use": "Do not treat index counts as production search quality, hosted search availability, global recall, or raw index access.",
+      "breaking_change_sensitivity": "High for safety flags and count field names; low for count values as the controlled corpus evolves.",
+      "current_gaps": [
+        "Static site publishes a summary only and does not execute search.",
+        "Public index remains fixture/recorded metadata and local_index_only."
+      ],
+      "next_guard": "Static Site Search Integration v0 validator"
+    },
+    {
       "file_name": "build_manifest.json",
       "path": "/data/build_manifest.json",
       "stability_class": "volatile",
@@ -581,6 +623,148 @@
         "notes": "Repo path list."
       }
     ],
+    "search_config.json": [
+      {
+        "field_path": "schema_version",
+        "stability": "stable_draft",
+        "consumer_guidance": "Check before interpreting the file.",
+        "notes": "Current version is 0.1.0."
+      },
+      {
+        "field_path": "generated_by",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display or validate generator provenance.",
+        "notes": "Static generator only."
+      },
+      {
+        "field_path": "hosted_backend_status",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display backend availability honestly.",
+        "notes": "Currently backend_unconfigured."
+      },
+      {
+        "field_path": "hosted_backend_verified",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until operator evidence exists.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "search_form_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Use to decide whether static clients may show a live hosted form.",
+        "notes": "Currently false."
+      },
+      {
+        "field_path": "mode",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display current public search mode.",
+        "notes": "Currently local_index_only."
+      },
+      {
+        "field_path": "max_query_length",
+        "stability": "stable_draft",
+        "consumer_guidance": "Use for static form maxlength and old-client guidance.",
+        "notes": "Must align with public search safety policy."
+      },
+      {
+        "field_path": "live_probes_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until explicit future approval.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "downloads_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until explicit future approval.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "uploads_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until explicit future approval.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "local_paths_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until explicit future approval.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "arbitrary_url_fetch_enabled",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until explicit future approval.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "generated_from[]",
+        "stability": "internal",
+        "consumer_guidance": "Diagnostic only.",
+        "notes": "Repo path list."
+      }
+    ],
+    "public_index_summary.json": [
+      {
+        "field_path": "schema_version",
+        "stability": "stable_draft",
+        "consumer_guidance": "Check before interpreting the file.",
+        "notes": "Current version is 0.1.0."
+      },
+      {
+        "field_path": "generated_by",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display or validate generator provenance.",
+        "notes": "Static generator only."
+      },
+      {
+        "field_path": "artifact_root",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display controlled public index artifact root.",
+        "notes": "Repo-relative path only."
+      },
+      {
+        "field_path": "document_count",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display current generated public index document count.",
+        "notes": "Value may change as controlled fixtures evolve."
+      },
+      {
+        "field_path": "source_count",
+        "stability": "stable_draft",
+        "consumer_guidance": "Display current generated public index source count.",
+        "notes": "Value may change as controlled fixtures evolve."
+      },
+      {
+        "field_path": "contains_live_data",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false until a later enabling milestone.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "contains_private_data",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false for public static data.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "contains_executables",
+        "stability": "stable_draft",
+        "consumer_guidance": "Must remain false for public static data.",
+        "notes": "Safety flag."
+      },
+      {
+        "field_path": "source_family_counts",
+        "stability": "experimental",
+        "consumer_guidance": "Display current source-family distribution only.",
+        "notes": "Keys and counts may evolve."
+      },
+      {
+        "field_path": "record_kind_counts",
+        "stability": "experimental",
+        "consumer_guidance": "Display current record-kind distribution only.",
+        "notes": "Keys and counts may evolve."
+      }
+    ],
     "build_manifest.json": [
       {
         "field_path": "schema_version",
@@ -712,6 +896,26 @@
       "field_path": "no_hosted_search_claim"
     },
     {
+      "file_name": "search_config.json",
+      "field_path": "hosted_backend_status"
+    },
+    {
+      "file_name": "search_config.json",
+      "field_path": "hosted_backend_verified"
+    },
+    {
+      "file_name": "search_config.json",
+      "field_path": "search_form_enabled"
+    },
+    {
+      "file_name": "public_index_summary.json",
+      "field_path": "document_count"
+    },
+    {
+      "file_name": "public_index_summary.json",
+      "field_path": "contains_live_data"
+    },
+    {
       "file_name": "build_manifest.json",
       "field_path": "data_files[]"
     },
@@ -730,7 +934,9 @@
     "eval_summary.search_usefulness",
     "route_summary.review_required_routes[]",
     "search_handoff.local_runtime_instructions",
-    "search_handoff.backend_routes[]"
+    "search_handoff.backend_routes[]",
+    "public_index_summary.source_family_counts",
+    "public_index_summary.record_kind_counts"
   ],
   "volatile_fields": [
     "build_manifest.commit",

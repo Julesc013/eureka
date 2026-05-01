@@ -44,7 +44,9 @@
     "/data/build_manifest.json",
     "/data/eval_summary.json",
     "/data/page_registry.json",
+    "/data/public_index_summary.json",
     "/data/route_summary.json",
+    "/data/search_config.json",
     "/data/search_handoff.json",
     "/data/site_manifest.json",
     "/data/source_summary.json"
@@ -95,6 +97,7 @@
     "control/inventory/publication/live_probe_gateway.json",
     "control/inventory/publication/public_search_routes.json",
     "control/inventory/publication/public_search_handoff.json",
+    "control/inventory/publication/static_search_config.json",
     "control/inventory/publication/relay_surface.json",
     "control/inventory/publication/snapshot_contract.json",
     "control/inventory/publication/static_hosting_targets.json",
@@ -102,6 +105,9 @@
     "control/inventory/publication/surface_route_matrix.json",
     "control/inventory/sources/*.source.json",
     "control/inventory/public_alpha_routes.json",
+    "data/public_index/build_manifest.json",
+    "data/public_index/index_stats.json",
+    "data/public_index/source_coverage.json",
     "scripts/run_archive_resolution_evals.py --json",
     "scripts/run_search_usefulness_audit.py --json",
     "scripts/report_external_baseline_status.py --json"

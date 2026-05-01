@@ -3,7 +3,7 @@
   "contains_live_backend": false,
   "contains_live_probes": false,
   "generated_by": "scripts/generate_public_data_summaries.py",
-  "implemented_route_count": 10,
+  "implemented_route_count": 12,
   "limitations": [
     "Future reserved routes are included so clients can avoid assuming implementation.",
     "This is a static route summary, not a live router or API discovery document."
@@ -544,6 +544,44 @@
     {
       "client_profiles": [
         "api_client",
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree",
+        "native_client",
+        "snapshot"
+      ],
+      "path": "/data/search_config.json",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/data/search_config.json",
+      "stability": "stable_draft",
+      "status": "implemented",
+      "title": "Static Search Configuration Data",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "api_client",
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree",
+        "native_client",
+        "snapshot"
+      ],
+      "path": "/data/public_index_summary.json",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/data/public_index_summary.json",
+      "stability": "stable_draft",
+      "status": "implemented",
+      "title": "Public Index Summary Data",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "api_client",
         "native_client",
         "snapshot"
       ],
@@ -686,7 +724,7 @@
   ],
   "registry_id": "eureka-public-page-registry",
   "reserved_route_count": 39,
-  "route_count": 49,
+  "route_count": 51,
   "schema_version": "0.1.0",
   "source_inputs": [
     "control/inventory/publication/page_registry.json"

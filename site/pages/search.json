@@ -16,6 +16,8 @@
     "roadmap.html",
     "local-quickstart.html",
     "data/search_handoff.json",
+    "data/search_config.json",
+    "data/public_index_summary.json",
     "lite/search.html",
     "text/search.txt",
     "files/search.README.txt",
@@ -63,7 +65,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The static handoff publishes data/search_handoff.json so old clients, static readers, and future rehearsal tooling can tell that hosted search is unavailable, local runtime instructions exist, local_index_only is the first mode, and unsafe behavior remains disabled."
+      "text": "The static handoff publishes data/search_handoff.json, data/search_config.json, and data/public_index_summary.json so old clients, static readers, and future rehearsal tooling can tell that hosted search is unavailable, local runtime instructions exist, local_index_only is the first mode, the controlled public index exists, and unsafe behavior remains disabled."
     },
     {
       "type": "list",

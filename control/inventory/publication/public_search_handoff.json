@@ -140,8 +140,8 @@
   "local_runtime_instructions": {
     "status": "available_for_local_prototype",
     "commands": [
-      "python scripts/run_public_alpha_server.py --check-config",
-      "python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080"
+      "python scripts/run_hosted_public_search.py --check-config",
+      "python scripts/run_hosted_public_search.py --host 127.0.0.1 --port 8080"
     ],
     "sample_urls": [
       "http://127.0.0.1:8080/search?q=windows+7+apps",

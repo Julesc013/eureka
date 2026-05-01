@@ -7,13 +7,16 @@ Hosted public search is not configured.
 This static text file does not run Python and does not perform live search.
 handoff_status: implemented_static_handoff
 hosted_backend_status: unavailable
+static_config_status: backend_unconfigured
 first_mode: local_index_only
 max_query_length: 160
 default_result_limit: 10
+public_index_document_count: 584
+public_index_source_count: 15
 
 Local runtime instructions:
-- python scripts/run_public_alpha_server.py --check-config
-- python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080
+- python scripts/run_hosted_public_search.py --check-config
+- python scripts/run_hosted_public_search.py --host 127.0.0.1 --port 8080
 - http://127.0.0.1:8080/search?q=windows+7+apps
 - http://127.0.0.1:8080/api/v1/search?q=windows+7+apps
 
@@ -36,4 +39,6 @@ Disabled behavior:
 - no telemetry
 
 machine_readable: ../data/search_handoff.json
+machine_readable_config: ../data/search_config.json
+machine_readable_index_summary: ../data/public_index_summary.json
 

@@ -24,6 +24,8 @@ REQUIRED_DATA_FILES = {
     "route_summary.json",
     "build_manifest.json",
     "search_handoff.json",
+    "search_config.json",
+    "public_index_summary.json",
 }
 
 

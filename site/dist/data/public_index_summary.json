@@ -1,0 +1,60 @@
+{
+  "artifact_root": "data/public_index",
+  "build_manifest_ref": "data/public_index/build_manifest.json",
+  "contains_executables": false,
+  "contains_live_data": false,
+  "contains_private_data": false,
+  "document_count": 584,
+  "external_calls_performed": false,
+  "fallback_enabled": true,
+  "fts5_available": true,
+  "fts5_enabled": false,
+  "generated_artifacts": [
+    "data/public_index/build_manifest.json",
+    "data/public_index/checksums.sha256",
+    "data/public_index/index_stats.json",
+    "data/public_index/search_documents.ndjson",
+    "data/public_index/source_coverage.json"
+  ],
+  "generated_by": "scripts/generate_public_data_summaries.py",
+  "index_stats_ref": "data/public_index/index_stats.json",
+  "index_status": "generated_public_safe_local_index_only",
+  "limitations": [
+    "Summary only; the static site does not execute search.",
+    "The committed public index is fixture/recorded metadata only and local_index_only.",
+    "No live source calls, private local paths, executables, downloads, uploads, model calls, or hosted deployment are included."
+  ],
+  "live_sources_used": false,
+  "local_index_only": true,
+  "record_kind_counts": {
+    "evidence": 359,
+    "member": 33,
+    "representation": 67,
+    "resolved_object": 39,
+    "source_record": 15,
+    "state_or_release": 39,
+    "synthetic_member": 32
+  },
+  "schema_version": "0.1.0",
+  "source_count": 15,
+  "source_coverage_ref": "data/public_index/source_coverage.json",
+  "source_family_counts": {
+    "article_scan_recorded": 10,
+    "github_releases": 23,
+    "internet_archive": 1,
+    "internet_archive_recorded": 129,
+    "local_bundle_fixtures": 292,
+    "local_files": 1,
+    "manual_document_recorded": 23,
+    "package_registry_recorded": 11,
+    "review_description_recorded": 19,
+    "software_heritage": 1,
+    "software_heritage_recorded": 7,
+    "sourceforge_recorded": 8,
+    "synthetic": 1,
+    "synthetic_fixture": 30,
+    "wayback_memento": 1,
+    "wayback_memento_recorded": 27
+  },
+  "sqlite_available": true
+}

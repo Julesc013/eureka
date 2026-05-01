@@ -20,6 +20,8 @@ REQUIRED_DATA_FILES = {
     "eval_summary.json",
     "route_summary.json",
     "search_handoff.json",
+    "search_config.json",
+    "public_index_summary.json",
     "build_manifest.json",
 }
 
@@ -169,7 +171,11 @@ class GeneratedPublicDataSummariesTest(unittest.TestCase):
             "status.html": ["data/site_manifest.json", "data/page_registry.json"],
             "sources.html": ["data/source_summary.json"],
             "evals.html": ["data/eval_summary.json"],
-            "search.html": ["data/search_handoff.json"],
+            "search.html": [
+                "data/search_handoff.json",
+                "data/search_config.json",
+                "data/public_index_summary.json",
+            ],
             "roadmap.html": ["data/build_manifest.json", "data/route_summary.json"],
         }
         for page, links in expected_links.items():

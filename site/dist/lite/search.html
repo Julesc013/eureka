@@ -23,7 +23,7 @@
 <p><label for="q">Search query</label> <input id="q" name="q" maxlength="160" disabled></p>
 <p><button type="submit" disabled>Hosted search not configured</button></p>
 </form>
-<p>For local prototype use, run <code>python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080</code> from a checkout and open <code>http://127.0.0.1:8080/search?q=windows+7+apps</code>.</p>
+<p>For local prototype use, run <code>python scripts/run_hosted_public_search.py --check-config</code> and <code>python scripts/run_hosted_public_search.py --host 127.0.0.1 --port 8080</code> from a checkout, then open <code>http://127.0.0.1:8080/search?q=windows+7+apps</code>.</p>
 <ul>
 <li>windows 7 apps</li>
 <li>latest firefox before xp support ended</li>
@@ -32,6 +32,7 @@
 <li>pc magazine ray tracing</li>
 </ul>
 <p>Machine-readable handoff: <a href="../data/search_handoff.json">../data/search_handoff.json</a></p>
+<p>Machine-readable config and index summary: <a href="../data/search_config.json">../data/search_config.json</a> and <a href="../data/public_index_summary.json">../data/public_index_summary.json</a></p>
   <hr>
   <p>Eureka is a Python reference backend prototype, not production. This surface uses no scraping, performs no live source probes, and makes no external search calls. external baselines pending/manual; source placeholders remain placeholders.</p>
 </body>

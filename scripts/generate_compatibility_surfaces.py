@@ -27,6 +27,8 @@ PUBLIC_DATA_FILES = (
     "eval_summary.json",
     "route_summary.json",
     "search_handoff.json",
+    "search_config.json",
+    "public_index_summary.json",
     "build_manifest.json",
 )
 CHECKSUM_PATHS = (
@@ -36,6 +38,8 @@ CHECKSUM_PATHS = (
     "data/eval_summary.json",
     "data/route_summary.json",
     "data/search_handoff.json",
+    "data/search_config.json",
+    "data/public_index_summary.json",
     "data/build_manifest.json",
     "files/manifest.json",
     "files/index.txt",
@@ -182,6 +186,8 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
     evals = data["eval_summary.json"]
     route = data["route_summary.json"]
     handoff = data["search_handoff.json"]
+    search_config = data["search_config.json"]
+    index_summary = data["public_index_summary.json"]
     sources = list(source.get("sources", []))
 
     index_body = [
@@ -204,12 +210,14 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         f"<li>Search audit queries: {escape(str(_mapping(evals.get('search_usefulness')).get('query_count', 'unknown')))}</li>",
         f"<li>Public-alpha routes summarized: {escape(str(_mapping(route.get('route_counts')).get('total', 'unknown')))}</li>",
         f"<li>Hosted search backend: {escape(str(handoff.get('hosted_backend_status', 'unknown')))}</li>",
+        f"<li>Static search configuration: {escape(str(search_config.get('hosted_backend_status', 'unknown')))}</li>",
+        f"<li>Public index documents: {escape(str(index_summary.get('document_count', 'unknown')))}</li>",
         f"<li>Future live backend endpoints reserved: {escape(str(_mapping(site.get('live_backend_handoff')).get('reserved_endpoint_count', 0)))}</li>",
         f"<li>Future live probe candidates disabled: {escape(str(_mapping(site.get('live_probe_gateway')).get('candidate_source_count', 0)))}</li>",
         "</ul>",
         "<p>The reserved /api/v1 route family is not live in this static artifact.</p>",
         "<p>Live Probe Gateway Contract v0 is policy only; no live probes or network calls are implemented.</p>",
-        "<p>Machine-readable summaries: <a href=\"../data/site_manifest.json\">site</a>, <a href=\"../data/source_summary.json\">sources</a>, <a href=\"../data/eval_summary.json\">evals</a>, <a href=\"../data/route_summary.json\">routes</a>.</p>",
+        "<p>Machine-readable summaries: <a href=\"../data/site_manifest.json\">site</a>, <a href=\"../data/source_summary.json\">sources</a>, <a href=\"../data/eval_summary.json\">evals</a>, <a href=\"../data/route_summary.json\">routes</a>, <a href=\"../data/search_config.json\">search config</a>, <a href=\"../data/public_index_summary.json\">public index</a>.</p>",
     ]
 
     source_rows = []
@@ -270,11 +278,12 @@ def _build_lite_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         f'<p><label for="q">Search query</label> <input id="q" name="q" maxlength="{escape(str(handoff.get("max_query_length", 160)))}" disabled></p>',
         '<p><button type="submit" disabled>Hosted search not configured</button></p>',
         "</form>",
-        "<p>For local prototype use, run <code>python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080</code> from a checkout and open <code>http://127.0.0.1:8080/search?q=windows+7+apps</code>.</p>",
+        "<p>For local prototype use, run <code>python scripts/run_hosted_public_search.py --check-config</code> and <code>python scripts/run_hosted_public_search.py --host 127.0.0.1 --port 8080</code> from a checkout, then open <code>http://127.0.0.1:8080/search?q=windows+7+apps</code>.</p>",
         "<ul>",
         *(f"<li>{escape(query)}</li>" for query in sample_queries),
         "</ul>",
         '<p>Machine-readable handoff: <a href="../data/search_handoff.json">../data/search_handoff.json</a></p>',
+        '<p>Machine-readable config and index summary: <a href="../data/search_config.json">../data/search_config.json</a> and <a href="../data/public_index_summary.json">../data/public_index_summary.json</a></p>',
     ]
 
     limitations = list(site.get("limitations", []))
@@ -319,6 +328,8 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
     evals = data["eval_summary.json"]
     route = data["route_summary.json"]
     handoff = data["search_handoff.json"]
+    search_config = data["search_config.json"]
+    index_summary = data["public_index_summary.json"]
     build = data["build_manifest.json"]
     sources = [item for item in source.get("sources", []) if isinstance(item, Mapping)]
     archive = _mapping(evals.get("archive_resolution"))
@@ -351,6 +362,8 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
             "- ../data/eval_summary.json",
             "- ../data/route_summary.json",
             "- ../data/search_handoff.json",
+            "- ../data/search_config.json",
+            "- ../data/public_index_summary.json",
         ],
     )
     source_lines = [
@@ -396,13 +409,16 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "This static text file does not run Python and does not perform live search.",
         f"handoff_status: {handoff.get('search_handoff_status', 'unknown')}",
         f"hosted_backend_status: {handoff.get('hosted_backend_status', 'unknown')}",
+        f"static_config_status: {search_config.get('hosted_backend_status', 'unknown')}",
         f"first_mode: {handoff.get('first_mode', 'local_index_only')}",
         f"max_query_length: {handoff.get('max_query_length', 160)}",
         f"default_result_limit: {handoff.get('default_result_limit', 10)}",
+        f"public_index_document_count: {index_summary.get('document_count', 'unknown')}",
+        f"public_index_source_count: {index_summary.get('source_count', 'unknown')}",
         "",
         "Local runtime instructions:",
-        "- python scripts/run_public_alpha_server.py --check-config",
-        "- python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080",
+        "- python scripts/run_hosted_public_search.py --check-config",
+        "- python scripts/run_hosted_public_search.py --host 127.0.0.1 --port 8080",
         "- http://127.0.0.1:8080/search?q=windows+7+apps",
         "- http://127.0.0.1:8080/api/v1/search?q=windows+7+apps",
         "",
@@ -425,6 +441,8 @@ def _build_text_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str]
         "- no telemetry",
         "",
         "machine_readable: ../data/search_handoff.json",
+        "machine_readable_config: ../data/search_config.json",
+        "machine_readable_index_summary: ../data/public_index_summary.json",
     ]
     limitation_lines = [
         "Limitations:",
@@ -512,6 +530,8 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "site/dist/data/eval_summary.json",
             "site/dist/data/route_summary.json",
             "site/dist/data/search_handoff.json",
+            "site/dist/data/search_config.json",
+            "site/dist/data/public_index_summary.json",
             "site/dist/data/build_manifest.json",
         ],
         "limitations": [
@@ -569,11 +589,12 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
         [
             "Dynamic search is not part of this static file tree.",
             "Public Search Static Handoff v0 publishes search.html, lite/search.html, text/search.txt, files/search.README.txt, and data/search_handoff.json.",
+            "P56 also publishes data/search_config.json and data/public_index_summary.json so static clients can see backend-unconfigured status and controlled public-index counts.",
             "Hosted public search is not configured and no backend URL is verified.",
             "The static site does not run Python.",
             "The local/prototype runtime can be started from a checkout with:",
-            "python scripts/run_public_alpha_server.py --check-config",
-            "python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080",
+            "python scripts/run_hosted_public_search.py --check-config",
+            "python scripts/run_hosted_public_search.py --host 127.0.0.1 --port 8080",
             "",
             "Local examples:",
             "http://127.0.0.1:8080/search?q=windows+7+apps",
@@ -589,6 +610,8 @@ def _build_files_surface(data: Mapping[str, Mapping[str, Any]]) -> dict[str, str
             "Static demos and data:",
             "../demo/index.html",
             "../data/search_handoff.json",
+            "../data/search_config.json",
+            "../data/public_index_summary.json",
             "../data/site_manifest.json",
             "",
             "No live probes run from the static handoff.",

@@ -20,6 +20,7 @@ REQUIRED_JSON_FILES = {
     "redirects.json",
     "relay_surface.json",
     "snapshot_contract.json",
+    "static_search_config.json",
 }
 REQUIRED_STATUS_VALUES = {
     "implemented",
@@ -68,6 +69,8 @@ REQUIRED_PUBLIC_DATA_PATHS = {
     "/data/route_summary.json",
     "/data/build_manifest.json",
     "/data/search_handoff.json",
+    "/data/search_config.json",
+    "/data/public_index_summary.json",
     "/files/manifest.json",
     "/files/index.txt",
     "/files/search.README.txt",
@@ -82,6 +85,8 @@ REQUIRED_GENERATED_PUBLIC_DATA_PATHS = {
     "/data/route_summary.json",
     "/data/build_manifest.json",
     "/data/search_handoff.json",
+    "/data/search_config.json",
+    "/data/public_index_summary.json",
 }
 REQUIRED_FILE_SURFACE_PATHS = {
     "/files/manifest.json",

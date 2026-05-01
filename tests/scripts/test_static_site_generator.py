@@ -63,6 +63,8 @@ class StaticSiteGeneratorScriptTest(unittest.TestCase):
                 "local-quickstart.html",
                 "site_manifest.json",
                 "data/search_handoff.json",
+                "data/search_config.json",
+                "data/public_index_summary.json",
                 "assets/site.css",
                 "lite/index.html",
                 "lite/search.html",

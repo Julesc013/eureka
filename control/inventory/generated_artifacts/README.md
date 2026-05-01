@@ -14,6 +14,10 @@ path directly.
 Public Search Static Handoff v0 extends that artifact with no-JS search
 handoff pages and `data/search_handoff.json`; hosted backend search remains
 unavailable/unverified and the handoff validator is static-only.
+Static Site Search Integration v0 adds the `static_search_integration` artifact
+group for generated `search.html`, lite/text/files search surfaces,
+`data/search_config.json`, and `data/public_index_summary.json`. The default
+backend status remains unconfigured and no hosted backend is deployed.
 
 The guard is validation-only. It delegates to existing generator `--check`
 commands, validators, and governance tests. It does not run update commands,

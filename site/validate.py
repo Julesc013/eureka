@@ -34,6 +34,8 @@ REQUIRED_DIST_DATA_FILES = (
     "data/eval_summary.json",
     "data/route_summary.json",
     "data/search_handoff.json",
+    "data/search_config.json",
+    "data/public_index_summary.json",
     "data/build_manifest.json",
 )
 REQUIRED_DIST_COMPATIBILITY_FILES = (

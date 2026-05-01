@@ -15,6 +15,7 @@ PUBLIC_SITE_ROOT = REPO_ROOT / "site/dist"
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
 SOURCE_INVENTORY_DIR = REPO_ROOT / "control" / "inventory" / "sources"
 PUBLIC_ALPHA_ROUTES = REPO_ROOT / "control" / "inventory" / "public_alpha_routes.json"
+PUBLIC_INDEX_ROOT = REPO_ROOT / "data" / "public_index"
 
 SCHEMA_VERSION = "0.1.0"
 GENERATED_BY = "scripts/generate_public_data_summaries.py"
@@ -27,6 +28,8 @@ REQUIRED_DATA_FILES = (
     "eval_summary.json",
     "route_summary.json",
     "search_handoff.json",
+    "search_config.json",
+    "public_index_summary.json",
     "build_manifest.json",
 )
 PUBLIC_DATA_PATHS = tuple(f"/data/{name}" for name in REQUIRED_DATA_FILES)
@@ -101,6 +104,7 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
     public_search_handoff = _load_json(PUBLICATION_DIR / "public_search_handoff.json")
     public_search_routes = _load_json(PUBLICATION_DIR / "public_search_routes.json")
     public_search_safety = _load_json(PUBLICATION_DIR / "public_search_safety.json")
+    static_search_config = _load_json(PUBLICATION_DIR / "static_search_config.json")
     relay_surface = _load_json(PUBLICATION_DIR / "relay_surface.json")
     snapshot_contract = _load_json(PUBLICATION_DIR / "snapshot_contract.json")
     static_hosting_targets = _load_json(PUBLICATION_DIR / "static_hosting_targets.json")
@@ -118,6 +122,12 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
         public_search_routes,
         deployment_targets,
     )
+    search_config = _build_search_config_summary(
+        static_search_config,
+        public_search_handoff,
+        public_search_safety,
+    )
+    public_index_summary = _build_public_index_summary()
     build_manifest = _build_build_manifest(
         public_data_contract, action_policy, local_cache_privacy_policy
     )
@@ -147,6 +157,8 @@ def generate_public_data_summaries() -> dict[str, dict[str, Any]]:
         "eval_summary.json": eval_summary,
         "route_summary.json": route_summary,
         "search_handoff.json": search_handoff,
+        "search_config.json": search_config,
+        "public_index_summary.json": public_index_summary,
         "build_manifest.json": build_manifest,
     }
 
@@ -513,11 +525,15 @@ def _build_data_site_manifest(
             "control/inventory/publication/public_data_contract.json",
             "control/inventory/publication/public_search_handoff.json",
             "control/inventory/publication/public_search_routes.json",
+            "control/inventory/publication/static_search_config.json",
             "control/inventory/publication/relay_surface.json",
             "control/inventory/publication/snapshot_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
             "control/inventory/publication/surface_capabilities.json",
             "control/inventory/publication/surface_route_matrix.json",
+            "data/public_index/build_manifest.json",
+            "data/public_index/index_stats.json",
+            "data/public_index/source_coverage.json",
         ],
     }
 
@@ -838,6 +854,132 @@ def _build_search_handoff_summary(
     }
 
 
+def _build_search_config_summary(
+    config: Mapping[str, Any],
+    handoff: Mapping[str, Any],
+    safety: Mapping[str, Any],
+) -> dict[str, Any]:
+    backend_policy = _mapping(handoff.get("backend_url_policy"))
+    form_policy = _mapping(handoff.get("form_policy"))
+    disabled = _mapping(handoff.get("disabled_behaviors"))
+    configured_policy = _mapping(config.get("search_form_policy"))
+    request_limits = _mapping(safety.get("request_limits"))
+    result_limits = _mapping(safety.get("result_limits"))
+    hosted_backend_verified = bool(config.get("hosted_backend_verified"))
+    hosted_backend_url = config.get("hosted_backend_url")
+    search_form_enabled = bool(configured_policy.get("hosted_form_enabled"))
+    if not hosted_backend_verified:
+        hosted_backend_url = None
+        search_form_enabled = False
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "generated_by": GENERATED_BY,
+        "config_id": config.get("config_id", "eureka-static-search-config-v0"),
+        "hosted_backend_status": config.get("status", "backend_unconfigured"),
+        "hosted_backend_url": hosted_backend_url,
+        "hosted_backend_verified": hosted_backend_verified,
+        "hosted_backend_evidence_ref": config.get("hosted_backend_evidence_ref"),
+        "search_form_enabled": search_form_enabled,
+        "no_js_required": bool(config.get("no_js_required", True)),
+        "mode": config.get(
+            "public_search_mode",
+            form_policy.get("mode", "local_index_only"),
+        ),
+        "default_mode": config.get("default_mode", "backend_unconfigured"),
+        "max_query_length": config.get(
+            "max_query_length",
+            request_limits.get("max_query_length", form_policy.get("query_maxlength", 160)),
+        ),
+        "default_result_limit": config.get(
+            "default_result_limit",
+            result_limits.get("default_result_limit", form_policy.get("default_limit", 10)),
+        ),
+        "local_runtime_url_hint": config.get(
+            "local_runtime_url_hint",
+            backend_policy.get("local_runtime_url"),
+        ),
+        "local_runtime_url_is_public_deployment": False,
+        "live_probes_enabled": bool(config.get("live_probes_enabled", False)),
+        "downloads_enabled": bool(config.get("downloads_enabled", False)),
+        "uploads_enabled": bool(config.get("uploads_enabled", False)),
+        "local_paths_enabled": bool(
+            config.get("local_paths_enabled", disabled.get("local_path_search_enabled", False))
+        ),
+        "arbitrary_url_fetch_enabled": bool(
+            config.get(
+                "arbitrary_url_fetch_enabled",
+                disabled.get("arbitrary_url_fetch_enabled", False),
+            )
+        ),
+        "contains_live_backend": False,
+        "contains_live_probes": False,
+        "contains_live_data": False,
+        "contains_external_observations": False,
+        "deployment_performed": False,
+        "generated_from": [
+            "control/inventory/publication/static_search_config.json",
+            "control/inventory/publication/public_search_handoff.json",
+            "control/inventory/publication/public_search_safety.json",
+        ],
+        "limitations": [
+            "Static configuration only; GitHub Pages does not run Python.",
+            "Hosted backend URL remains absent until operator evidence verifies one.",
+            "Local runtime URL is a localhost/prototype hint, not deployment evidence.",
+            "No live probes, downloads, uploads, local path search, arbitrary URL fetch, scraping, crawling, accounts, or telemetry are enabled.",
+        ],
+    }
+
+
+def _build_public_index_summary() -> dict[str, Any]:
+    stats = _load_json(PUBLIC_INDEX_ROOT / "index_stats.json")
+    coverage = _load_json(PUBLIC_INDEX_ROOT / "source_coverage.json")
+    manifest = _load_json(PUBLIC_INDEX_ROOT / "build_manifest.json")
+    sources = [item for item in coverage.get("sources", []) if isinstance(item, Mapping)]
+    generated_files = [
+        f"data/public_index/{name}"
+        for name in manifest.get(
+            "generated_files",
+            [
+                "build_manifest.json",
+                "source_coverage.json",
+                "index_stats.json",
+                "search_documents.ndjson",
+                "checksums.sha256",
+            ],
+        )
+        if isinstance(name, str)
+    ]
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "generated_by": GENERATED_BY,
+        "index_status": "generated_public_safe_local_index_only",
+        "artifact_root": manifest.get("artifact_root", "data/public_index"),
+        "document_count": stats.get("document_count", manifest.get("document_count", 0)),
+        "source_count": manifest.get("source_count", len(sources)),
+        "source_family_counts": stats.get("source_family_counts", {}),
+        "record_kind_counts": stats.get("record_kind_counts", {}),
+        "generated_artifacts": sorted(generated_files),
+        "build_manifest_ref": "data/public_index/build_manifest.json",
+        "source_coverage_ref": "data/public_index/source_coverage.json",
+        "index_stats_ref": "data/public_index/index_stats.json",
+        "contains_live_data": bool(stats.get("live_sources_used", False)),
+        "contains_private_data": bool(stats.get("private_paths_detected", False)),
+        "contains_executables": bool(stats.get("executable_payloads_included", False)),
+        "external_calls_performed": bool(stats.get("external_calls_performed", False)),
+        "live_sources_used": bool(stats.get("live_sources_used", False)),
+        "local_index_only": bool(manifest.get("local_index_only", True)),
+        "sqlite_available": bool(stats.get("sqlite_available", False)),
+        "fts5_available": bool(stats.get("fts5_available", False)),
+        "fts5_enabled": bool(stats.get("fts5_enabled", False)),
+        "fallback_enabled": bool(stats.get("fallback_enabled", True)),
+        "limitations": [
+            "Summary only; the static site does not execute search.",
+            "The committed public index is fixture/recorded metadata only and local_index_only.",
+            "No live source calls, private local paths, executables, downloads, uploads, model calls, or hosted deployment are included.",
+        ],
+    }
+
+
 def _route_projection(route: Mapping[str, Any]) -> dict[str, Any]:
     return {
         "method": route.get("method"),
@@ -922,6 +1064,7 @@ def _build_build_manifest(
             "control/inventory/publication/live_probe_gateway.json",
             "control/inventory/publication/public_search_routes.json",
             "control/inventory/publication/public_search_handoff.json",
+            "control/inventory/publication/static_search_config.json",
             "control/inventory/publication/relay_surface.json",
             "control/inventory/publication/snapshot_contract.json",
             "control/inventory/publication/static_hosting_targets.json",
@@ -929,6 +1072,9 @@ def _build_build_manifest(
             "control/inventory/publication/surface_route_matrix.json",
             "control/inventory/sources/*.source.json",
             "control/inventory/public_alpha_routes.json",
+            "data/public_index/build_manifest.json",
+            "data/public_index/index_stats.json",
+            "data/public_index/source_coverage.json",
             "scripts/run_archive_resolution_evals.py --json",
             "scripts/run_search_usefulness_audit.py --json",
             "scripts/report_external_baseline_status.py --json",

@@ -671,6 +671,50 @@
       "notes": "Static data only. Hosted backend remains unavailable unless future evidence updates the handoff inventory."
     },
     {
+      "path": "/data/search_config.json",
+      "title": "Static Search Configuration Data",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "site/dist/data/search_config.json",
+      "client_profiles": [
+        "api_client",
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree",
+        "native_client",
+        "snapshot"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "machine-readable backend-unconfigured search handoff configuration",
+      "notes": "Static data only. Hosted backend URL remains null until verified operator evidence exists."
+    },
+    {
+      "path": "/data/public_index_summary.json",
+      "title": "Public Index Summary Data",
+      "status": "implemented",
+      "stability": "stable_draft",
+      "source_file": "site/dist/data/public_index_summary.json",
+      "client_profiles": [
+        "api_client",
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree",
+        "native_client",
+        "snapshot"
+      ],
+      "requires_javascript": false,
+      "requires_css": false,
+      "works_under_project_base_path": true,
+      "safe_for_static_hosting": true,
+      "public_claim_scope": "machine-readable summary of the controlled generated public index",
+      "notes": "Summarizes P55 data/public_index artifacts; it is not dynamic search execution and contains no live/private/executable data."
+    },
+    {
       "path": "/data/",
       "title": "Future Public Data Root",
       "status": "planned",

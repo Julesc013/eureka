@@ -31,6 +31,8 @@ REQUIRED_FILES = {
     "data/page_registry.json",
     "data/route_summary.json",
     "data/search_handoff.json",
+    "data/search_config.json",
+    "data/public_index_summary.json",
     "data/site_manifest.json",
     "data/source_summary.json",
     "files/README.txt",
@@ -73,6 +75,8 @@ REQUIRED_PUBLIC_DATA_FILES = (
     "data/eval_summary.json",
     "data/route_summary.json",
     "data/search_handoff.json",
+    "data/search_config.json",
+    "data/public_index_summary.json",
     "data/build_manifest.json",
 )
 REQUIRED_COMPATIBILITY_FILES = (
@@ -584,6 +588,8 @@ def _validate_sha256sums(site_dir: Path, sha_path: Path, errors: list[str]) -> l
         "data/eval_summary.json",
         "data/route_summary.json",
         "data/search_handoff.json",
+        "data/search_config.json",
+        "data/public_index_summary.json",
         "data/build_manifest.json",
         "files/manifest.json",
         "files/index.txt",

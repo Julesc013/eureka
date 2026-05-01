@@ -45,8 +45,8 @@
       <div class="panel">
         <h2>Use The Local Runtime</h2>
         <p>From a checkout, validate the public-alpha wrapper and start the local workbench. The commands are local-only and do not deploy Eureka.</p>
-        <pre><code>python scripts/run_public_alpha_server.py --check-config
-python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080</code></pre>
+        <pre><code>python scripts/run_hosted_public_search.py --check-config
+python scripts/run_hosted_public_search.py --host 127.0.0.1 --port 8080</code></pre>
         <p>Then open <code>http://127.0.0.1:8080/search?q=windows+7+apps</code> or <code>http://127.0.0.1:8080/api/v1/search?q=windows+7+apps</code>.</p>
       </div>
       <div class="panel">
@@ -69,6 +69,8 @@ python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port
           <li><a href="text/search.txt">Text search handoff</a></li>
           <li><a href="files/search.README.txt">Files search handoff note</a></li>
           <li><a href="data/search_handoff.json">Search handoff data</a></li>
+          <li><a href="data/search_config.json">Search configuration data</a></li>
+          <li><a href="data/public_index_summary.json">Public index summary data</a></li>
         </ul>
       </div>
       <div class="panel">
@@ -81,7 +83,7 @@ python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port
       </div>
     </section>
     <h2>Published Capability Data</h2>
-    <p>The static handoff publishes data/search_handoff.json so old clients, static readers, and future rehearsal tooling can tell that hosted search is unavailable, local runtime instructions exist, local_index_only is the first mode, and unsafe behavior remains disabled.</p>
+    <p>The static handoff publishes data/search_handoff.json, data/search_config.json, and data/public_index_summary.json so old clients, static readers, and future rehearsal tooling can tell that hosted search is unavailable, local runtime instructions exist, local_index_only is the first mode, the controlled public index exists, and unsafe behavior remains disabled.</p>
     <ul>
       <li>Static site does not run Python.</li>
       <li>Hosted backend status is unavailable or unverified unless future evidence says otherwise.</li>

@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1.0",
+  "config_id": "eureka-static-search-config-v0",
+  "status": "backend_unconfigured",
+  "default_mode": "backend_unconfigured",
+  "public_search_mode": "local_index_only",
+  "hosted_backend_url": null,
+  "hosted_backend_verified": false,
+  "hosted_backend_evidence_ref": null,
+  "local_runtime_url_hint": "http://127.0.0.1:8080",
+  "search_form_policy": {
+    "no_js_required": true,
+    "hosted_form_enabled": false,
+    "disabled_static_form_rendered": true,
+    "form_action_when_unconfigured": "",
+    "query_parameter": "q",
+    "query_maxlength": 160,
+    "method": "get",
+    "mode": "local_index_only"
+  },
+  "no_js_required": true,
+  "max_query_length": 160,
+  "default_result_limit": 10,
+  "live_probes_enabled": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "local_paths_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "notes": [
+    "Default static publication mode keeps hosted backend search unconfigured until operator evidence verifies a backend URL.",
+    "The localhost URL is a local/prototype instruction only and is not public deployment evidence.",
+    "GitHub Pages remains static-only and cannot run the Python public search runtime.",
+    "Live probes, downloads, uploads, local path search, arbitrary URL fetch, scraping, crawling, accounts, and telemetry remain disabled."
+  ]
+}

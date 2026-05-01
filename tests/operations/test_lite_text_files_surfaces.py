@@ -82,6 +82,8 @@ class LiteTextFilesSurfacesTest(unittest.TestCase):
             "data/eval_summary.json",
             "data/route_summary.json",
             "data/search_handoff.json",
+            "data/search_config.json",
+            "data/public_index_summary.json",
         ):
             with self.subTest(relative=relative):
                 self.assertIn(relative, combined)

@@ -75,7 +75,7 @@
   "public_search_runtime_implemented": true,
   "public_search_runtime_scope": "local_prototype_backend",
   "public_search_static_handoff": "control/inventory/publication/public_search_handoff.json",
-  "public_search_static_handoff_status": "implemented_static_handoff_hosted_backend_unavailable",
+  "public_search_static_handoff_status": "implemented_static_search_integration_backend_unconfigured",
   "hosted_public_search_runtime_implemented": false,
   "hosted_public_search_wrapper_status": "implemented_local_prototype",
   "hosted_public_search_wrapper": "scripts/run_hosted_public_search.py",
@@ -86,7 +86,7 @@
   "dynamic_backend_deployed": false,
   "operator_gated": true,
   "public_search_mode": "local_index_only",
-  "required_next": "Deploy the wrapper to an operator-selected host and record hosted evidence.",
+  "required_next": "P57 Public Search Safety Evidence v0; deploy the wrapper only through operator-gated work and record hosted evidence before configuring a backend URL.",
   "client_profiles": [
     "standard_web",
     "modern_web",
@@ -124,7 +124,8 @@
     "Compatibility Surface Strategy v0 treats /api/v1 as a future optional projection alongside static data, lite/text/files, snapshots, relay, CLI, and native-client plans.",
     "Public Search Safety / Abuse Guard v0 now constrains local_index_only safety, abuse, privacy, and operator-control requirements; the live backend remains future and rate-limit middleware remains unimplemented.",
     "Public Search Production Contract v0 reserves top-level /healthz and /status plus /api/v1/capabilities and /api/v1/absence/{need_id} for the future hosted wrapper without implementing or hosting them.",
-    "Hosted Public Search Wrapper v0 adds a local/prototype deployable wrapper script and local rehearsal check for local_index_only only. It does not deploy a backend, verify hosted deployment, enable live probes, add rate-limit middleware, or change GitHub Pages static-only status."
+    "Hosted Public Search Wrapper v0 adds a local/prototype deployable wrapper script and local rehearsal check for local_index_only only. It does not deploy a backend, verify hosted deployment, enable live probes, add rate-limit middleware, or change GitHub Pages static-only status.",
+    "Static Site Search Integration v0 adds generated no-JS static search surfaces, search_config.json, and public_index_summary.json while keeping hosted backend status unconfigured and GitHub Pages static-only."
   ],
   "public_search_safety_policy": "control/inventory/publication/public_search_safety.json",
   "public_search_safety_policy_status": "local_runtime_guard_active_hosted_disabled",
@@ -132,5 +133,9 @@
   "public_search_production_contract": "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
   "public_search_production_contract_status": "contract_frozen_hosted_wrapper_not_implemented",
   "hosted_public_search_wrapper_report": "control/audits/hosted-public-search-wrapper-v0/hosted_public_search_wrapper_report.json",
-  "hosted_public_search_wrapper_report_status": "implemented_local_prototype_not_deployed"
+  "hosted_public_search_wrapper_report_status": "implemented_local_prototype_not_deployed",
+  "static_search_config": "control/inventory/publication/static_search_config.json",
+  "static_search_config_status": "backend_unconfigured_hosted_url_null",
+  "static_search_integration_report": "control/audits/static-site-search-integration-v0/static_site_search_integration_report.json",
+  "static_search_integration_status": "implemented_static_artifact_no_hosted_backend"
 }

@@ -29,7 +29,8 @@
         "Workflow configuration does not prove a GitHub Actions deployment run succeeded.",
         "Static Deployment Evidence / GitHub Pages Repair v0 records current-head deployment as unverified because gh is unavailable locally; prior committed evidence records a Pages configuration failure before artifact upload.",
         "Custom Domain / Alternate Host Readiness v0 confirms this target remains project-path static hosting under /eureka/.",
-        "No Python backend, live probes, custom domain, secrets, or generator deployment is added by this target."
+        "No Python backend, live probes, custom domain, secrets, or generator deployment is added by this target.",
+        "P56 static search integration publishes backend-unconfigured search_config.json and public_index_summary.json as static data only; no dynamic backend is deployed by Pages."
       ]
     },
     {
@@ -111,8 +112,11 @@
         "The only current URL is a localhost local-runtime hint, not public deployment evidence.",
         "Hosted Public Search Wrapper v0 adds a deployable local/prototype wrapper and template files only.",
         "Hosted search must remain unavailable until a later rehearsal/deployment milestone records approved configuration and evidence.",
-        "Live probes, downloads, installs, uploads, local paths, accounts, and telemetry remain disabled."
-      ]
+        "Live probes, downloads, installs, uploads, local paths, accounts, and telemetry remain disabled.",
+        "Static Site Search Integration v0 keeps hosted_backend_url null and hosted form submission disabled until operator deployment evidence exists."
+      ],
+      "static_search_config": "control/inventory/publication/static_search_config.json",
+      "static_search_config_status": "backend_unconfigured"
     }
   ]
 }

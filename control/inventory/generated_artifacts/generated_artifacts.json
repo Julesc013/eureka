@@ -318,6 +318,46 @@
       "committed_output_policy": "Public search index artifacts are generated text artifacts. Manual edits are not allowed; update controlled fixture/source inputs or generator code and rebuild.",
       "update_command": "python scripts/build_public_search_index.py --rebuild",
       "notes": "P55 public index is local_index_only and fixture/recorded metadata only; it does not add live probes, downloads, uploads, arbitrary URL fetching, hosted deployment, or production search claims."
+    },
+    {
+      "artifact_id": "static_search_integration",
+      "status": "generated_committed",
+      "artifact_paths": [
+        "site/dist/search.html",
+        "site/dist/lite/search.html",
+        "site/dist/text/search.txt",
+        "site/dist/files/search.README.txt",
+        "site/dist/data/search_config.json",
+        "site/dist/data/public_index_summary.json"
+      ],
+      "generator_command": "python site/build.py",
+      "check_command": "python site/build.py --check",
+      "validator_commands": [
+        "python scripts/validate_static_site_search_integration.py",
+        "python scripts/validate_public_static_site.py"
+      ],
+      "source_inputs": [
+        "site/pages/search.json",
+        "site/build.py",
+        "scripts/generate_public_data_summaries.py",
+        "scripts/generate_compatibility_surfaces.py",
+        "control/inventory/publication/static_search_config.json",
+        "control/inventory/publication/public_search_handoff.json",
+        "data/public_index/build_manifest.json",
+        "data/public_index/source_coverage.json",
+        "data/public_index/index_stats.json"
+      ],
+      "generated": true,
+      "manual_edits_allowed": false,
+      "deterministic": true,
+      "public_safe": true,
+      "contains_live_data": false,
+      "contains_private_data": false,
+      "contains_executables": false,
+      "volatile_fields": [],
+      "committed_output_policy": "Static search integration outputs are generated publication artifacts. Manual edits are not allowed; update source inputs and regenerate.",
+      "update_command": "python site/build.py",
+      "notes": "P56 static search integration keeps backend status unconfigured by default and adds no hosted backend, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, or production search claims."
     }
   ]
 }

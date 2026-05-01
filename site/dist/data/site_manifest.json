@@ -1005,6 +1005,44 @@
     {
       "client_profiles": [
         "api_client",
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree",
+        "native_client",
+        "snapshot"
+      ],
+      "path": "/data/search_config.json",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/data/search_config.json",
+      "stability": "stable_draft",
+      "status": "implemented",
+      "title": "Static Search Configuration Data",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "api_client",
+        "standard_web",
+        "lite_html",
+        "text",
+        "file_tree",
+        "native_client",
+        "snapshot"
+      ],
+      "path": "/data/public_index_summary.json",
+      "requires_javascript": false,
+      "safe_for_static_hosting": true,
+      "source_file": "site/dist/data/public_index_summary.json",
+      "stability": "stable_draft",
+      "status": "implemented",
+      "title": "Public Index Summary Data",
+      "works_under_project_base_path": true
+    },
+    {
+      "client_profiles": [
+        "api_client",
         "native_client",
         "snapshot"
       ],
@@ -1149,7 +1187,9 @@
     "/data/build_manifest.json",
     "/data/eval_summary.json",
     "/data/page_registry.json",
+    "/data/public_index_summary.json",
     "/data/route_summary.json",
+    "/data/search_config.json",
     "/data/search_handoff.json",
     "/data/site_manifest.json",
     "/data/source_summary.json"
@@ -1430,11 +1470,15 @@
     "control/inventory/publication/public_data_contract.json",
     "control/inventory/publication/public_search_handoff.json",
     "control/inventory/publication/public_search_routes.json",
+    "control/inventory/publication/static_search_config.json",
     "control/inventory/publication/relay_surface.json",
     "control/inventory/publication/snapshot_contract.json",
     "control/inventory/publication/static_hosting_targets.json",
     "control/inventory/publication/surface_capabilities.json",
-    "control/inventory/publication/surface_route_matrix.json"
+    "control/inventory/publication/surface_route_matrix.json",
+    "data/public_index/build_manifest.json",
+    "data/public_index/index_stats.json",
+    "data/public_index/source_coverage.json"
   ],
   "static_hosting_targets": [
     {

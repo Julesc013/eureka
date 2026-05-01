@@ -1,0 +1,38 @@
+{
+  "arbitrary_url_fetch_enabled": false,
+  "config_id": "eureka-static-search-config-v0",
+  "contains_external_observations": false,
+  "contains_live_backend": false,
+  "contains_live_data": false,
+  "contains_live_probes": false,
+  "default_mode": "backend_unconfigured",
+  "default_result_limit": 10,
+  "deployment_performed": false,
+  "downloads_enabled": false,
+  "generated_by": "scripts/generate_public_data_summaries.py",
+  "generated_from": [
+    "control/inventory/publication/static_search_config.json",
+    "control/inventory/publication/public_search_handoff.json",
+    "control/inventory/publication/public_search_safety.json"
+  ],
+  "hosted_backend_evidence_ref": null,
+  "hosted_backend_status": "backend_unconfigured",
+  "hosted_backend_url": null,
+  "hosted_backend_verified": false,
+  "limitations": [
+    "Static configuration only; GitHub Pages does not run Python.",
+    "Hosted backend URL remains absent until operator evidence verifies one.",
+    "Local runtime URL is a localhost/prototype hint, not deployment evidence.",
+    "No live probes, downloads, uploads, local path search, arbitrary URL fetch, scraping, crawling, accounts, or telemetry are enabled."
+  ],
+  "live_probes_enabled": false,
+  "local_paths_enabled": false,
+  "local_runtime_url_hint": "http://127.0.0.1:8080",
+  "local_runtime_url_is_public_deployment": false,
+  "max_query_length": 160,
+  "mode": "local_index_only",
+  "no_js_required": true,
+  "schema_version": "0.1.0",
+  "search_form_enabled": false,
+  "uploads_enabled": false
+}

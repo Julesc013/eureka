@@ -162,7 +162,9 @@
         "file_tree"
       ],
       "implemented_paths": [
-        "site/dist/data/"
+        "site/dist/data/",
+        "site/dist/data/search_config.json",
+        "site/dist/data/public_index_summary.json"
       ],
       "reserved_paths": [
         "/data/"
@@ -177,9 +179,9 @@
       "supports_external_sources": false,
       "enabled_by_default": true,
       "requires_operator_signoff": false,
-      "current_limitations": "Static JSON summaries only; not a stable production API.",
+      "current_limitations": "Static JSON summaries only, including backend-unconfigured search config and public index summary; not a stable production API.",
       "next_step": "Use as input for snapshots, text/files projections, relay design, and future native consumers.",
-      "notes": "Generated Public Data Summaries v0 seeded site/dist/data."
+      "notes": "Generated Public Data Summaries v0 seeded site/dist/data; P56 adds search_config.json and public_index_summary.json."
     },
     {
       "id": "demo",
@@ -283,7 +285,9 @@
         "docs/operations/PUBLIC_SEARCH_HOSTING.md",
         "docs/operations/PUBLIC_SEARCH_ENVIRONMENT.md",
         "docs/operations/PUBLIC_SEARCH_ROLLBACK.md",
-        "control/audits/hosted-public-search-wrapper-v0/hosted_public_search_wrapper_report.json"
+        "control/audits/hosted-public-search-wrapper-v0/hosted_public_search_wrapper_report.json",
+        "runtime/gateway/public_api/public_search_index.py",
+        "data/public_index/search_documents.ndjson"
       ],
       "reserved_paths": [
         "/search",
@@ -310,7 +314,7 @@
       "enabled_by_default": true,
       "requires_operator_signoff": true,
       "current_limitations": "Local/prototype backend runtime plus P54 hosted wrapper readiness only; no deployed hosted backend, verified hosted URL, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
-      "next_step": "P55 Public Search Index Builder v0, while hosted wrapper deployment evidence remains operator-gated.",
+      "next_step": "P57 Public Search Safety Evidence v0, while hosted wrapper deployment evidence remains operator-gated.",
       "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0. Public Search Rehearsal v0 records local safe-query and blocked-request evidence. P53 freezes the production-facing contract for P54 without deploying a hosted backend. P54 adds a deployable wrapper and local rehearsal only; hosted deployment remains unverified."
     },
     {
@@ -332,14 +336,22 @@
         "site/dist/files/search.README.txt",
         "site/dist/data/search_handoff.json",
         "control/inventory/publication/public_search_handoff.json",
-        "scripts/validate_public_search_static_handoff.py"
+        "scripts/validate_public_search_static_handoff.py",
+        "site/dist/data/search_config.json",
+        "site/dist/data/public_index_summary.json",
+        "control/inventory/publication/static_search_config.json",
+        "docs/operations/STATIC_SITE_SEARCH_INTEGRATION.md",
+        "scripts/validate_static_site_search_integration.py",
+        "control/audits/static-site-search-integration-v0/static_site_search_integration_report.json"
       ],
       "reserved_paths": [
         "/search.html",
         "/lite/search.html",
         "/text/search.txt",
         "/files/search.README.txt",
-        "/data/search_handoff.json"
+        "/data/search_handoff.json",
+        "/data/search_config.json",
+        "/data/public_index_summary.json"
       ],
       "requires_backend": false,
       "requires_javascript": false,
@@ -351,9 +363,9 @@
       "supports_external_sources": false,
       "enabled_by_default": true,
       "requires_operator_signoff": false,
-      "current_limitations": "Static handoff and local-runtime instructions only; hosted backend URL is unavailable/unverified and the form is disabled until a future approved backend exists.",
-      "next_step": "Search Usefulness Source Expansion v2, fixture-only.",
-      "notes": "No JavaScript, no hosted search claim, no live probes, no downloads, no installs, no uploads, no local path search, and no telemetry."
+      "current_limitations": "Static handoff and local-runtime instructions only; hosted backend URL is unconfigured/unverified and hosted form submission is disabled until future operator evidence exists.",
+      "next_step": "P57 Public Search Safety Evidence v0; backend URL verification remains operator-gated.",
+      "notes": "P56 adds backend-unconfigured search_config.json and public_index_summary.json. No JavaScript, hosted search claim, live probes, downloads, installs, uploads, local path search, telemetry, or production claim."
     },
     {
       "id": "snapshots",
@@ -900,6 +912,7 @@
     "Signed Snapshot Format v0 adds a repo-local seed snapshot example and contract, while the public /snapshots/ route remains deferred.",
     "Production signed snapshots, real signing keys, executable downloads, relay services, and native clients remain future work.",
     "Public Search Safety / Abuse Guard v0 constrains Local Public Search Runtime v0 with limits, forbidden parameters, privacy defaults, and operator controls while hosted search remains future.",
-    "Public Search Rehearsal v0 validates the local/prototype route stack and static handoff without enabling hosted or live behavior."
+    "Public Search Rehearsal v0 validates the local/prototype route stack and static handoff without enabling hosted or live behavior.",
+    "Static Site Search Integration v0 adds backend-unconfigured search_config.json and public_index_summary.json without hosted deployment."
   ]
 }
