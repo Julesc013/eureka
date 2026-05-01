@@ -1,0 +1,138 @@
+{
+  "report_id": "search_need_record_v0",
+  "created_by_slice": "P62 Search Need Record v0",
+  "repo_head": "7d2bee1bfdbda72341e44e67a253702daa392b0a",
+  "branch": "main",
+  "worktree_status": "dirty_with_p62_changes_before_commit",
+  "contract_file": "contracts/query/search_need_record.v0.json",
+  "validator_scripts": [
+    "scripts/validate_search_need_record.py",
+    "scripts/validate_search_need_record_contract.py",
+    "scripts/dry_run_search_need_record.py"
+  ],
+  "example_search_need_records": [
+    "examples/search_needs/minimal_unresolved_software_need_v0/SEARCH_NEED_RECORD.json",
+    "examples/search_needs/minimal_compatibility_evidence_need_v0/SEARCH_NEED_RECORD.json"
+  ],
+  "search_need_policy": "control/inventory/query_intelligence/search_need_record_policy.json",
+  "need_identity_model": {
+    "fingerprint_algorithm": "sha256",
+    "reversible": false,
+    "salt_policy": "unsalted_public_aggregate for examples; deployment/local salted policies are future-only",
+    "raw_query_included": false
+  },
+  "target_object_model": {
+    "object_kinds": [
+      "software",
+      "software_version",
+      "driver",
+      "manual_or_documentation",
+      "source_code_release",
+      "package_metadata",
+      "web_capture",
+      "article_or_scan_segment",
+      "file_inside_container",
+      "compatibility_evidence",
+      "source_identity",
+      "unknown"
+    ],
+    "download_install_actions_enabled": false
+  },
+  "aggregation_model": {
+    "runtime_aggregation_implemented": false,
+    "example_occurrence_count_policy": "single_example",
+    "demand_counts_runtime_implemented": false,
+    "raw_query_aggregation_allowed": false,
+    "private_identifier_aggregation_allowed": false
+  },
+  "source_capability_gap_model": [
+    "source_coverage_gap",
+    "capability_gap",
+    "compatibility_evidence_gap",
+    "member_access_gap",
+    "representation_gap",
+    "query_interpretation_gap",
+    "live_probe_disabled",
+    "external_baseline_pending",
+    "deep_extraction_missing",
+    "OCR_missing",
+    "source_cache_missing",
+    "unknown"
+  ],
+  "input_reference_model": {
+    "query_observation_refs": "references_only",
+    "search_miss_ledger_refs": "references_only",
+    "search_result_cache_refs": "references_only",
+    "manual_source_evidence_refs": "future_only"
+  },
+  "privacy_policy_summary": {
+    "raw_query_retention_default": "none",
+    "public_safe_examples": true,
+    "private_paths_allowed": false,
+    "ip_addresses_allowed": false,
+    "account_ids_allowed": false,
+    "sensitive_tokens_allowed": false,
+    "public_aggregate_requires_future_review": true
+  },
+  "scoped_absence_policy": {
+    "scoped_absence_required": true,
+    "broad_absence_claims_allowed": false,
+    "checked_scope_required": true,
+    "not_checked_scope_required": true
+  },
+  "hard_no_mutation_guarantees": {
+    "runtime_need_store_implemented": false,
+    "persistent_need_store_implemented": false,
+    "telemetry_implemented": false,
+    "public_query_logging_enabled": false,
+    "demand_counts_runtime_implemented": false,
+    "master_index_mutation_allowed": false,
+    "local_index_mutation_allowed": false,
+    "candidate_index_mutation_allowed": false,
+    "probe_enqueue_allowed": false,
+    "result_cache_mutation_allowed": false,
+    "miss_ledger_mutation_allowed": false,
+    "external_calls_performed": false,
+    "live_probes_enabled": false
+  },
+  "runtime_status": {
+    "runtime_need_store_implemented": false,
+    "persistent_need_store_implemented": false,
+    "telemetry_implemented": false,
+    "public_query_logging_enabled": false,
+    "demand_counts_runtime_implemented": false,
+    "public_search_runtime_wired": false
+  },
+  "command_results": {
+    "initial_example_validator": "passed",
+    "initial_dry_run": "passed",
+    "p62_validator": "passed",
+    "p62_validator_json": "passed",
+    "p62_contract_validator": "passed",
+    "p62_contract_validator_json": "passed",
+    "p62_dry_run": "passed",
+    "prior_query_intelligence_contracts": "passed",
+    "hosted_public_search_rehearsal": "passed",
+    "public_search_safety_evidence": "passed",
+    "static_publication_and_drift": "passed",
+    "archive_resolution_evals": "satisfied_6",
+    "search_usefulness_audit": "covered_5_partial_40_source_gap_10_capability_gap_7_unknown_2",
+    "external_baseline_status": "pending_manual_observation_only",
+    "python_unittest_discover": "passed_935_tests",
+    "architecture_boundaries": "passed",
+    "git_diff_check": "passed_with_line_ending_warnings_only",
+    "optional_cargo": "unavailable_cargo_not_installed",
+    "final_required_verification": "passed"
+  },
+  "remaining_blockers": [
+    "Search need runtime storage is intentionally not implemented.",
+    "Demand-count runtime is intentionally not implemented.",
+    "Probe queue, candidate index, candidate promotion policy, known absence page, privacy/poisoning guard, and demand dashboard remain future milestones.",
+    "Hosted backend deployment and verified static backend configuration remain operator-gated."
+  ],
+  "next_recommended_branch": "P63 Probe Queue v0",
+  "notes": [
+    "P62 defines search need records as contract-only governance artifacts.",
+    "No telemetry, public query logging, runtime need store, probe enqueueing, candidate-index mutation, local-index mutation, master-index mutation, external calls, or live probes were added."
+  ]
+}
