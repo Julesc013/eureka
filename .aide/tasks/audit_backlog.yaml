@@ -729,6 +729,14 @@
       "priority": 0,
       "notes": "Addressed by control/audits/source-sync-worker-contract-v0/source_sync_worker_contract_report.json.",
       "addressed_by": "control/audits/source-sync-worker-contract-v0/source_sync_worker_contract_report.json"
+    },
+    {
+      "id": "audit-backlog-source-cache-evidence-ledger-v0",
+      "title": "P70 Source Cache and Evidence Ledger v0 audit pack",
+      "status": "addressed",
+      "priority": 0,
+      "notes": "Addressed by control/audits/source-cache-evidence-ledger-v0/source_cache_evidence_ledger_report.json.",
+      "addressed_by": "control/audits/source-cache-evidence-ledger-v0/source_cache_evidence_ledger_report.json"
     }
   ]
 }

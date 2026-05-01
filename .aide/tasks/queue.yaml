@@ -599,18 +599,18 @@
       "notes": "Future runtime only after validate-only import tooling and local quarantine/staging model. Do not implement import, indexing, uploads, live connectors, arbitrary local ingestion, or master-index acceptance before those milestones."
     },
     {
-      "id": "local_quarantine_staging_tool_v0",
-      "title": "Local Quarantine/Staging Tool v0",
-      "status": "blocked_pending_explicit_approval",
-      "priority": 85,
-      "notes": "Future implementation only after explicit approval and staged-inspector review. Do not create local staging runtime state, copy pack files, import packs, mutate search/index/runtime/master state, upload, call networks, or call models without a new approved milestone."
-    },
-    {
       "id": "contribution_submission_tooling_plan_v0",
       "title": "Contribution Submission Tooling Plan v0",
       "status": "recommended_follow_up",
       "priority": 85,
       "notes": "Future planning only for local contribution submission tooling after review queue contracts. Do not add uploads, accounts, identity, moderation runtime, automatic acceptance, or hosted intake behavior."
+    },
+    {
+      "id": "local_quarantine_staging_tool_v0",
+      "title": "Local Quarantine/Staging Tool v0",
+      "status": "blocked_pending_explicit_approval",
+      "priority": 85,
+      "notes": "Future implementation only after explicit approval and staged-inspector review. Do not create local staging runtime state, copy pack files, import packs, mutate search/index/runtime/master state, upload, call networks, or call models without a new approved milestone."
     },
     {
       "id": "ai_assisted_evidence_drafting_runtime_planning_v0",
@@ -627,13 +627,6 @@
       "notes": "Future planning only for comparing index-pack summaries against source/evidence provenance. Do not merge raw databases, export caches, import packs, or accept index summaries as canonical truth."
     },
     {
-      "id": "native_static_data_viewer_v0",
-      "title": "Native Static Data Viewer v0",
-      "status": "recommended_if_client_work_is_prioritized",
-      "priority": 87,
-      "notes": "Future client work only if prioritized. Must remain read-only over static/public-safe data and avoid installers, downloads, telemetry, cache runtime, relay runtime, live probes, or production native claims."
-    },
-    {
       "id": "ai_runtime_integration_planning_v0",
       "title": "AI Runtime Integration Planning v0",
       "status": "blocked_pending_explicit_approval",
@@ -641,11 +634,11 @@
       "notes": "Future planning only after explicit approval, typed output validation maturity, provider policy, consent, credential, privacy, and logging policy. Do not implement model calls, provider loading, telemetry, public-search AI, evidence acceptance, or master-index mutation without approval."
     },
     {
-      "id": "snapshot_consumer_tooling_v0",
-      "title": "Snapshot Consumer Tooling v0",
-      "status": "codex_safe_future_option",
-      "priority": 88,
-      "notes": "Future static/offline tooling option that must not add snapshot reader runtime, relay/native runtime, production signing, executable downloads, live backend behavior, or live probes without approval."
+      "id": "native_static_data_viewer_v0",
+      "title": "Native Static Data Viewer v0",
+      "status": "recommended_if_client_work_is_prioritized",
+      "priority": 87,
+      "notes": "Future client work only if prioritized. Must remain read-only over static/public-safe data and avoid installers, downloads, telemetry, cache runtime, relay runtime, live probes, or production native claims."
     },
     {
       "id": "master_index_review_queue_runtime_planning_v0",
@@ -653,6 +646,13 @@
       "status": "recommended_future_after_import_planning",
       "priority": 88,
       "notes": "Future planning only after import planning and AI/manual-observation governance. Do not implement hosted queue runtime, uploads, accounts, moderation UI, master-index writes, automatic acceptance, live probes, or production claims."
+    },
+    {
+      "id": "snapshot_consumer_tooling_v0",
+      "title": "Snapshot Consumer Tooling v0",
+      "status": "codex_safe_future_option",
+      "priority": 88,
+      "notes": "Future static/offline tooling option that must not add snapshot reader runtime, relay/native runtime, production signing, executable downloads, live backend behavior, or live probes without approval."
     },
     {
       "id": "rust_toolchain_verification_pack_v0",
@@ -811,9 +811,9 @@
     {
       "id": "source_cache_evidence_ledger_v0",
       "title": "P70 Source Cache and Evidence Ledger v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed",
       "priority": 111,
-      "notes": "Future source cache/evidence ledger contract after query-intelligence sequence; no live connector runtime without approval."
+      "notes": "Implemented P70 Source Cache and Evidence Ledger v0 with contracts, synthetic examples, dry-run helpers, validators, audit pack, docs, tests, and metadata. No runtime cache/ledger, persistence, live source calls, external calls, raw payload store, private data store, credentials, telemetry, candidate/public/local/master-index mutation, or accepted-truth semantics were added."
     },
     {
       "id": "internet_archive_metadata_connector_approval_pack_v0",

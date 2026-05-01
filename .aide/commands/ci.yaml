@@ -652,3 +652,29 @@ notes:
     run: python scripts/dry_run_source_sync_worker_job.py --label "IA metadata sync example" --kind internet_archive_metadata_sync --source-family internet_archive --json
   - id: source_sync_worker_contract_tests
     run: python -m unittest tests.operations.test_source_sync_worker_contract tests.scripts.test_validate_source_sync_worker_job tests.scripts.test_validate_source_sync_worker_contract tests.scripts.test_dry_run_source_sync_worker_job
+  - id: source_cache_record_examples_validator
+    run: python scripts/validate_source_cache_record.py --all-examples
+  - id: source_cache_record_examples_validator_json
+    run: python scripts/validate_source_cache_record.py --all-examples --json
+  - id: source_cache_contract_validator
+    run: python scripts/validate_source_cache_contract.py
+  - id: source_cache_contract_validator_json
+    run: python scripts/validate_source_cache_contract.py --json
+  - id: evidence_ledger_record_examples_validator
+    run: python scripts/validate_evidence_ledger_record.py --all-examples
+  - id: evidence_ledger_record_examples_validator_json
+    run: python scripts/validate_evidence_ledger_record.py --all-examples --json
+  - id: evidence_ledger_contract_validator
+    run: python scripts/validate_evidence_ledger_contract.py
+  - id: evidence_ledger_contract_validator_json
+    run: python scripts/validate_evidence_ledger_contract.py --json
+  - id: source_cache_evidence_ledger_contract_validator
+    run: python scripts/validate_source_cache_evidence_ledger_contract.py
+  - id: source_cache_evidence_ledger_contract_validator_json
+    run: python scripts/validate_source_cache_evidence_ledger_contract.py --json
+  - id: source_cache_dry_run_json
+    run: python scripts/dry_run_source_cache_record.py --label "IA metadata cache example" --source-family internet_archive --kind source_metadata --json
+  - id: evidence_ledger_dry_run_json
+    run: python scripts/dry_run_evidence_ledger_record.py --label "Windows XP compatibility evidence example" --evidence-kind compatibility_observation --json
+  - id: source_cache_evidence_ledger_contract_tests
+    run: python -m unittest tests.operations.test_source_cache_evidence_ledger_contract tests.scripts.test_validate_source_cache_record tests.scripts.test_validate_source_cache_contract tests.scripts.test_validate_evidence_ledger_record tests.scripts.test_validate_evidence_ledger_contract tests.scripts.test_validate_source_cache_evidence_ledger_contract tests.scripts.test_dry_run_source_cache_record tests.scripts.test_dry_run_evidence_ledger_record

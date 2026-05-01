@@ -5876,6 +5876,266 @@
       "failure_means": "Focused P69 schema, examples, validators, dry-run, docs, policy, approval, or no-mutation tests regressed.",
       "advisory_or_required": "required",
       "notes": "P69 source sync worker contract validation; no runtime worker, persistence, credentials, telemetry, external calls, live probes, source cache/evidence ledger mutation, or index mutation."
+    },
+    {
+      "test_id": "source_cache_record_examples_validator",
+      "label": "Source Cache Record Examples Validator",
+      "command": "python scripts/validate_source_cache_record.py --all-examples",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "source_cache_record_examples_validator_json",
+      "label": "Source Cache Record Examples Validator Json",
+      "command": "python scripts/validate_source_cache_record.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "source_cache_contract_validator",
+      "label": "Source Cache Contract Validator",
+      "command": "python scripts/validate_source_cache_contract.py",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "source_cache_contract_validator_json",
+      "label": "Source Cache Contract Validator Json",
+      "command": "python scripts/validate_source_cache_contract.py --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "evidence_ledger_record_examples_validator",
+      "label": "Evidence Ledger Record Examples Validator",
+      "command": "python scripts/validate_evidence_ledger_record.py --all-examples",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "evidence_ledger_record_examples_validator_json",
+      "label": "Evidence Ledger Record Examples Validator Json",
+      "command": "python scripts/validate_evidence_ledger_record.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "evidence_ledger_contract_validator",
+      "label": "Evidence Ledger Contract Validator",
+      "command": "python scripts/validate_evidence_ledger_contract.py",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "evidence_ledger_contract_validator_json",
+      "label": "Evidence Ledger Contract Validator Json",
+      "command": "python scripts/validate_evidence_ledger_contract.py --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "source_cache_evidence_ledger_contract_validator",
+      "label": "Source Cache Evidence Ledger Contract Validator",
+      "command": "python scripts/validate_source_cache_evidence_ledger_contract.py",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "source_cache_evidence_ledger_contract_validator_json",
+      "label": "Source Cache Evidence Ledger Contract Validator Json",
+      "command": "python scripts/validate_source_cache_evidence_ledger_contract.py --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "source_cache_dry_run_json",
+      "label": "Source Cache Dry Run Json",
+      "command": "python scripts/dry_run_source_cache_record.py --label \"IA metadata cache example\" --source-family internet_archive --kind source_metadata --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "evidence_ledger_dry_run_json",
+      "label": "Evidence Ledger Dry Run Json",
+      "command": "python scripts/dry_run_evidence_ledger_record.py --label \"Windows XP compatibility evidence example\" --evidence-kind compatibility_observation --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "source_cache_evidence_ledger_contract_tests",
+      "label": "Source Cache Evidence Ledger Contract Tests",
+      "command": "python -m unittest tests.operations.test_source_cache_evidence_ledger_contract tests.scripts.test_validate_source_cache_record tests.scripts.test_validate_source_cache_contract tests.scripts.test_validate_evidence_ledger_record tests.scripts.test_validate_evidence_ledger_contract tests.scripts.test_validate_source_cache_evidence_ledger_contract tests.scripts.test_dry_run_source_cache_record tests.scripts.test_dry_run_evidence_ledger_record",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P70 source cache/evidence ledger contract drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P70 contract-only validation; no source calls, persistence, telemetry, credentials, cache/ledger runtime, or index mutation."
     }
   ],
   "notes": [
