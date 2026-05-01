@@ -258,3 +258,9 @@ validator, docs, and tests. No separate AIDE runtime report is needed; this is
 local/public-alpha safety evidence only and does not deploy a backend, enable
 live probes, add downloads/uploads/installs/accounts/telemetry, fetch arbitrary
 URLs, mutate indexes, or claim edge rate limits or production safety.
+## P58 Hosted Public Search Rehearsal v0
+
+The P58 report lives at
+`control/audits/hosted-public-search-rehearsal-v0/hosted_public_search_rehearsal_report.json`.
+It records localhost hosted-wrapper rehearsal only and does not claim a deployed
+backend.

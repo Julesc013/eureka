@@ -591,8 +591,9 @@
         "hosted-public-search-wrapper-v0"
       ],
       "title": "Deploy the hosted public search wrapper to an operator-selected backend and record evidence",
-      "status": "operator_gated_follow_up",
-      "suggested_milestone": "P58 Hosted Public Search Rehearsal v0"
+      "status": "addressed_by_p58",
+      "suggested_milestone": "P58 Hosted Public Search Rehearsal v0",
+      "addressed_by": "control/audits/hosted-public-search-rehearsal-v0/hosted_public_search_rehearsal_report.json"
     },
     {
       "id": "audit-backlog-public-search-index-static-integration",
@@ -610,8 +611,9 @@
         "static-site-search-integration-v0"
       ],
       "title": "Record verified hosted backend URL evidence before enabling static hosted search form submission",
-      "status": "operator_gated_follow_up",
-      "suggested_milestone": "P58 Hosted Public Search Rehearsal v0 after operator deployment evidence"
+      "status": "operator_gated_after_p58",
+      "suggested_milestone": "P58 Hosted Public Search Rehearsal v0 after operator deployment evidence",
+      "addressed_by": "control/audits/hosted-public-search-rehearsal-v0/hosted_public_search_rehearsal_report.json"
     }
   ]
 }

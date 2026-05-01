@@ -113,10 +113,13 @@
         "Hosted Public Search Wrapper v0 adds a deployable local/prototype wrapper and template files only.",
         "Hosted search must remain unavailable until a later rehearsal/deployment milestone records approved configuration and evidence.",
         "Live probes, downloads, installs, uploads, local paths, accounts, and telemetry remain disabled.",
-        "Static Site Search Integration v0 keeps hosted_backend_url null and hosted form submission disabled until operator deployment evidence exists."
+        "Static Site Search Integration v0 keeps hosted_backend_url null and hosted form submission disabled until operator deployment evidence exists.",
+        "Hosted Public Search Rehearsal v0 proves localhost wrapper startup and route checks only; it does not deploy this target or set a hosted URL."
       ],
       "static_search_config": "control/inventory/publication/static_search_config.json",
-      "static_search_config_status": "backend_unconfigured"
+      "static_search_config_status": "backend_unconfigured",
+      "hosted_rehearsal_report": "control/audits/hosted-public-search-rehearsal-v0/hosted_public_search_rehearsal_report.json",
+      "hosted_rehearsal_status": "passed_local_hosted_rehearsal_not_deployed"
     }
   ]
 }

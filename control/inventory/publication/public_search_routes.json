@@ -229,14 +229,15 @@
     "Public Search Rehearsal v0 exercised local/prototype safe and blocked routes without enabling hosted search, live probes, downloads, uploads, installs, telemetry, accounts, or caller-provided local paths.",
     "Hosted Public Search Wrapper v0 adds a deployable local/prototype wrapper for the same local_index_only routes plus /healthz and /status. The wrapper is not deployed, not verified as hosted, and does not make hosted_public_runtime_implemented true for public exposure.",
     "Static Site Search Integration v0 keeps the static search front door backend-unconfigured and publishes search_config.json plus public_index_summary.json without making hosted public search live.",
-    "Public Search Safety Evidence v0 records local safe-query, blocked-request, limit/status, static handoff, public index, hosted-wrapper, privacy/redaction, and operator-gated rate-limit evidence without hosted deployment or live probes."
+    "Public Search Safety Evidence v0 records local safe-query, blocked-request, limit/status, static handoff, public index, hosted-wrapper, privacy/redaction, and operator-gated rate-limit evidence without hosted deployment or live probes.",
+    "Hosted Public Search Rehearsal v0 records localhost hosted-wrapper route evidence; hosted deployment remains unverified and operator-gated."
   ],
   "safety_policy": "control/inventory/publication/public_search_safety.json",
   "safety_doc": "docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md",
   "runtime_readiness_checklist": "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md",
   "production_contract": "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
   "production_contract_status": "frozen_for_p54_hosted_wrapper",
-  "hosted_wrapper_next": "P58 Hosted Public Search Rehearsal v0",
+  "hosted_wrapper_next": "P59 Query Observation Contract v0",
   "hosted_wrapper_report": "control/audits/hosted-public-search-wrapper-v0/hosted_public_search_wrapper_report.json",
   "hosted_wrapper_report_status": "implemented_local_prototype_not_deployed",
   "future_hosted_routes": [
@@ -280,5 +281,7 @@
   "static_search_config_status": "backend_unconfigured",
   "static_search_integration_report": "control/audits/static-site-search-integration-v0/static_site_search_integration_report.json",
   "safety_evidence_report": "control/audits/public-search-safety-evidence-v0/public_search_safety_evidence_report.json",
-  "safety_evidence_status": "passed_local_public_alpha"
+  "safety_evidence_status": "passed_local_public_alpha",
+  "hosted_rehearsal_report": "control/audits/hosted-public-search-rehearsal-v0/hosted_public_search_rehearsal_report.json",
+  "hosted_rehearsal_status": "passed_local_hosted_rehearsal_not_deployed"
 }

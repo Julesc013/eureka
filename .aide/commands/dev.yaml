@@ -796,6 +796,16 @@ steps:
     run: python scripts/validate_public_search_safety_evidence.py --json
   - id: public_search_safety_evidence_tests
     run: python -m unittest tests.operations.test_public_search_safety_evidence tests.scripts.test_run_public_search_safety_evidence tests.scripts.test_validate_public_search_safety_evidence
+  - id: hosted_public_search_rehearsal_runner
+    run: python scripts/run_hosted_public_search_rehearsal.py
+  - id: hosted_public_search_rehearsal_runner_json
+    run: python scripts/run_hosted_public_search_rehearsal.py --json
+  - id: hosted_public_search_rehearsal_validator
+    run: python scripts/validate_hosted_public_search_rehearsal.py
+  - id: hosted_public_search_rehearsal_validator_json
+    run: python scripts/validate_hosted_public_search_rehearsal.py --json
+  - id: hosted_public_search_rehearsal_tests
+    run: python -m unittest tests.operations.test_hosted_public_search_rehearsal tests.scripts.test_run_hosted_public_search_rehearsal tests.scripts.test_validate_hosted_public_search_rehearsal
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
@@ -881,3 +891,4 @@ notes:
   - AI-Assisted Evidence Drafting Plan v0 is planning/example/validation-only: it defines optional AI drafting as candidate-only assistance behind typed output validation and required review, with disabled remote providers/private data by default and no model calls, API keys, telemetry, search/index, or master-index mutation.
   - This command contract is repo-operating metadata, not runtime behavior or proof of a local AIDE product CLI.
   - Public Search Safety Evidence v0 is stdlib-only local/public-alpha safety evidence using an in-process hosted-wrapper harness; it adds no deployment, live probes, external calls, downloads, uploads, accounts, telemetry, arbitrary URL fetch, index mutation, edge rate-limit claim, or production claim.
+  - Hosted Public Search Rehearsal v0 is stdlib-only localhost HTTP evidence using the hosted wrapper process; it adds no deployment, external calls, live probes, downloads, uploads, accounts, telemetry, arbitrary URL fetch, edge rate-limit claim, or production claim.

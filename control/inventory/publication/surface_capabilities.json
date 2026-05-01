@@ -290,7 +290,10 @@
         "data/public_index/search_documents.ndjson",
         "scripts/run_public_search_safety_evidence.py",
         "scripts/validate_public_search_safety_evidence.py",
-        "control/audits/public-search-safety-evidence-v0/public_search_safety_evidence_report.json"
+        "control/audits/public-search-safety-evidence-v0/public_search_safety_evidence_report.json",
+        "scripts/run_hosted_public_search_rehearsal.py",
+        "scripts/validate_hosted_public_search_rehearsal.py",
+        "control/audits/hosted-public-search-rehearsal-v0/hosted_public_search_rehearsal_report.json"
       ],
       "reserved_paths": [
         "/search",
@@ -317,8 +320,8 @@
       "enabled_by_default": true,
       "requires_operator_signoff": true,
       "current_limitations": "Local/prototype backend runtime plus P54 hosted wrapper readiness only; no deployed hosted backend, verified hosted URL, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
-      "next_step": "P58 Hosted Public Search Rehearsal v0, while hosted deployment and edge/rate-limit evidence remain operator-gated.",
-      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0. Public Search Rehearsal v0 records local safe-query and blocked-request evidence. P53 freezes the production-facing contract for P54 without deploying a hosted backend. P54 adds a deployable wrapper and local rehearsal only; hosted deployment remains unverified. P57 records local safety evidence across safe queries, blocked dangerous parameters, status, static handoff, public index, and wrapper rehearsal."
+      "next_step": "P59 Query Observation Contract v0, while hosted deployment and edge/rate-limit evidence remain operator-gated.",
+      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0. Public Search Rehearsal v0 records local safe-query and blocked-request evidence. P53 freezes the production-facing contract for P54 without deploying a hosted backend. P54 adds a deployable wrapper and local rehearsal only; hosted deployment remains unverified. P57 records local safety evidence across safe queries, blocked dangerous parameters, status, static handoff, public index, and wrapper rehearsal. P58 records localhost hosted-mode rehearsal evidence without deployment."
     },
     {
       "id": "public_search_static_handoff",
@@ -367,8 +370,8 @@
       "enabled_by_default": true,
       "requires_operator_signoff": false,
       "current_limitations": "Static handoff and local-runtime instructions only; hosted backend URL is unconfigured/unverified and hosted form submission is disabled until future operator evidence exists.",
-      "next_step": "P58 Hosted Public Search Rehearsal v0 after P57 safety evidence; backend URL verification remains operator-gated.",
-      "notes": "P56 adds backend-unconfigured search_config.json and public_index_summary.json. No JavaScript, hosted search claim, live probes, downloads, installs, uploads, local path search, telemetry, or production claim. P57 verifies the static handoff remains honest and backend-unconfigured."
+      "next_step": "P59 Query Observation Contract v0 after P58 local hosted rehearsal; backend URL verification remains operator-gated.",
+      "notes": "P56 adds backend-unconfigured search_config.json and public_index_summary.json. No JavaScript, hosted search claim, live probes, downloads, installs, uploads, local path search, telemetry, or production claim. P57 verifies the static handoff remains honest and backend-unconfigured. P58 verifies static handoff compatibility during localhost hosted rehearsal."
     },
     {
       "id": "snapshots",
