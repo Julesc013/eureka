@@ -268,3 +268,7 @@ backend.
 ## P59 Query Observation Contract v0
 
 The P59 report lives at `control/audits/query-observation-contract-v0/query_observation_contract_report.json`. It records query observation contract/schema/example validation only and does not claim telemetry, persistence, public query logging, cache mutation, miss-ledger mutation, probe enqueueing, index mutation, or hosted query intelligence runtime.
+
+## P60 Shared Query/Result Cache v0
+
+The P60 report lives at `control/audits/shared-query-result-cache-v0/shared_query_result_cache_report.json`. It records shared cache contract/schema/example validation only and does not claim runtime cache writes, persistent cache storage, telemetry, public query logging, miss-ledger mutation, search-need mutation, probe enqueueing, index mutation, or hosted query intelligence runtime.

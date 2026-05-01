@@ -332,3 +332,13 @@ fetch, or production safety claim.
 - Path: `control/audits/query-observation-contract-v0/`
 - Scope: P59 privacy-filtered query observation contract, example, validators, docs, and audit evidence.
 - Status: contract-only; no telemetry, runtime persistence, public query logging, cache mutation, miss-ledger mutation, probe enqueueing, index mutation, or master-index mutation.
+
+## Shared Query/Result Cache v0
+
+- Path: `control/audits/shared-query-result-cache-v0/`
+- Scope: P60 shared query/result cache contract, cache key model, examples,
+  validators, docs, and audit evidence.
+- Status: contract-only; no runtime cache writes, persistent cache storage,
+  telemetry, public query logging, miss-ledger mutation, search-need mutation,
+  probe enqueueing, candidate-index mutation, local-index mutation, or
+  master-index mutation.

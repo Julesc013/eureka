@@ -1,0 +1,237 @@
+{
+  "report_id": "shared_query_result_cache_v0",
+  "created_by_slice": "P60 Shared Query/Result Cache v0",
+  "repo_head": "79ab23c6570c00eca2bdcdb4388125758b13f4cb",
+  "branch": "main",
+  "worktree_status": "dirty_with_p60_changes_before_commit",
+  "contract_file": "contracts/query/search_result_cache_entry.v0.json",
+  "validator_scripts": [
+    "scripts/validate_search_result_cache_entry.py",
+    "scripts/validate_shared_query_result_cache_contract.py",
+    "scripts/dry_run_search_result_cache_entry.py"
+  ],
+  "example_cache_entries": [
+    "examples/query_result_cache/minimal_cache_entry_v0/SEARCH_RESULT_CACHE_ENTRY.json",
+    "examples/query_result_cache/minimal_absence_cache_entry_v0/SEARCH_RESULT_CACHE_ENTRY.json"
+  ],
+  "cache_policy": "control/inventory/query_intelligence/search_result_cache_policy.json",
+  "cache_key_policy": {
+    "algorithm": "sha256",
+    "basis": "normalized_query_plus_profile_plus_index_snapshot",
+    "reversible": false,
+    "salt_policy": "unsalted_public_aggregate_for_examples"
+  },
+  "privacy_policy_summary": {
+    "raw_query_retention_default": "none",
+    "public_aggregate_allowed_after_filter": true,
+    "individual_entries_publishable_by_default": false,
+    "prohibited_data": [
+      "ip_address",
+      "account_id",
+      "email",
+      "phone_number",
+      "api_key",
+      "auth_token",
+      "password",
+      "private_key",
+      "private_path",
+      "private_url",
+      "private_local_result_identifier"
+    ]
+  },
+  "freshness_invalidation_policy": {
+    "ttl_policy": "none_for_example",
+    "stale_on": [
+      "public_index_rebuild",
+      "source_cache_refresh",
+      "contract_version_change",
+      "candidate_promotion",
+      "rights_policy_change",
+      "safety_policy_change"
+    ]
+  },
+  "absence_gap_policy": {
+    "cached_absence_is_scoped": true,
+    "global_absence_claim_allowed": false,
+    "future_miss_ledger_required": true
+  },
+  "hard_no_mutation_guarantees": {
+    "runtime_cache_implemented": false,
+    "persistent_cache_implemented": false,
+    "telemetry_implemented": false,
+    "public_query_logging_enabled": false,
+    "master_index_mutation_allowed": false,
+    "local_index_mutation_allowed": false,
+    "candidate_index_mutation_allowed": false,
+    "miss_ledger_mutation_allowed": false,
+    "search_need_mutation_allowed": false,
+    "probe_enqueue_allowed": false,
+    "external_calls_performed": false,
+    "live_probes_enabled": false
+  },
+  "runtime_status": {
+    "runtime_cache_implemented": false,
+    "persistent_cache_implemented": false,
+    "telemetry_implemented": false,
+    "public_query_logging_enabled": false,
+    "public_search_runtime_wired_to_cache": false
+  },
+  "command_results": {
+    "p60_contract_checks": [
+      {
+        "command": "python scripts/validate_search_result_cache_entry.py --all-examples",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/validate_search_result_cache_entry.py --all-examples --json",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/validate_shared_query_result_cache_contract.py",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/validate_shared_query_result_cache_contract.py --json",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/dry_run_search_result_cache_entry.py --query \"windows 7 apps\" --json",
+        "status": "passed"
+      }
+    ],
+    "compatibility_checks": [
+      {
+        "command": "python scripts/validate_query_observation.py --all-examples",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/validate_query_observation_contract.py",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/run_hosted_public_search_rehearsal.py",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/run_public_search_safety_evidence.py",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/validate_static_site_search_integration.py",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/validate_public_search_index_builder.py",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/validate_hosted_public_search_wrapper.py",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/validate_public_search_production_contract.py",
+        "status": "passed"
+      }
+    ],
+    "site_and_eval_checks": [
+      {
+        "command": "python scripts/public_search_smoke.py",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/build_public_search_index.py --check",
+        "status": "passed"
+      },
+      {
+        "command": "python site/build.py --check",
+        "status": "passed"
+      },
+      {
+        "command": "python site/validate.py",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/check_generated_artifact_drift.py",
+        "status": "passed"
+      },
+      {
+        "command": "python scripts/run_archive_resolution_evals.py",
+        "status": "passed",
+        "summary": "6 satisfied"
+      },
+      {
+        "command": "python scripts/run_search_usefulness_audit.py",
+        "status": "passed",
+        "summary": "covered=5, partial=40, source_gap=10, capability_gap=7, unknown=2"
+      },
+      {
+        "command": "python scripts/report_external_baseline_status.py --json",
+        "status": "passed",
+        "summary": "192 pending manual observations"
+      }
+    ],
+    "test_lanes": [
+      {
+        "command": "python -m unittest discover -s tests/scripts -t .",
+        "status": "passed",
+        "summary": "274 tests"
+      },
+      {
+        "command": "python -m unittest discover -s tests/operations -t .",
+        "status": "passed",
+        "summary": "449 tests"
+      },
+      {
+        "command": "python -m unittest discover -s tests/hardening -t .",
+        "status": "passed",
+        "summary": "53 tests"
+      },
+      {
+        "command": "python -m unittest discover -s tests/parity -t .",
+        "status": "passed",
+        "summary": "25 tests"
+      },
+      {
+        "command": "python -m unittest discover -s runtime -t .",
+        "status": "passed",
+        "summary": "320 tests"
+      },
+      {
+        "command": "python -m unittest discover -s surfaces -t .",
+        "status": "passed",
+        "summary": "168 tests"
+      },
+      {
+        "command": "python -m unittest discover -s tests -t .",
+        "status": "passed",
+        "summary": "892 tests"
+      }
+    ],
+    "final_checks": [
+      {
+        "command": "python scripts/check_architecture_boundaries.py",
+        "status": "passed"
+      },
+      {
+        "command": "git diff --check",
+        "status": "passed"
+      },
+      {
+        "command": "cargo --version",
+        "status": "unavailable",
+        "summary": "cargo was not installed in PATH"
+      }
+    ]
+  },
+  "remaining_blockers": [
+    "Runtime result cache reads/writes are intentionally not implemented in P60.",
+    "Persistent cache storage is intentionally not implemented in P60.",
+    "Miss ledger, search need record, probe queue, candidate index, and promotion policy remain future contracts.",
+    "Hosted deployment, backend URL configuration, and edge/rate-limit evidence remain operator-gated."
+  ],
+  "next_recommended_branch": "P61 Search Miss Ledger v0",
+  "notes": [
+    "P60 is contract/example/validation only.",
+    "Cache entries are scoped summaries tied to public index snapshots, not authoritative truth."
+  ]
+}
