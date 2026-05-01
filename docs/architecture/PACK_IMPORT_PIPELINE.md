@@ -64,6 +64,11 @@ mutate public search or the master index. It defines future private roots,
 staged entity vocabulary, provenance links, and delete/reset/export
 requirements.
 
+Staging Report Path Contract v0 adds the report-location policy: stdout by
+default, explicit output paths for file writes, ignored local-private report
+roots, forbidden committed/runtime/public roots, and redaction before any
+report path can be public or committed.
+
 AI Provider Contract v0 is adjacent but not part of import runtime. Future AI
 outputs can be validated as typed suggestions through
 `scripts/validate_ai_output.py` before they draft contributions, but the import

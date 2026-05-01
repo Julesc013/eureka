@@ -41,8 +41,14 @@ root classes are:
 - repo-local ignored development root
 
 The suggested development-only root is `.eureka-local/`. It is ignored in
-`.gitignore` together with `.eureka-cache/` and `.eureka-staging/`, but this
-milestone does not create those directories.
+`.gitignore` together with `.eureka-cache/`, `.eureka-staging/`, and
+`.eureka-reports/`, but this milestone does not create those directories.
+
+Staging Report Path Contract v0 now defines where future validate-only reports,
+future staging reports, and future local staging manifests may be written. It
+sets stdout as the default report output, requires explicit output paths for
+file writes, requires redaction of private local paths, and forbids local
+private reports under public/generated/runtime/canonical source roots.
 
 Forbidden roots include `site/dist`, `site/`, public data, `external`,
 `runtime`, canonical `control/inventory` source files, `evals`,
@@ -107,7 +113,7 @@ in a future review-gated path.
 
 ## Deferred
 
-Still future: staging report path contract, local staging manifest format,
-staged pack inspector, local quarantine/staging tool, staged delete/reset tool,
-local index candidate planning, contribution queue candidate export, native
-staging UI planning, hosted submission, and any staging runtime.
+Still future: local staging manifest format, staged pack inspector, local
+quarantine/staging tool, staged delete/reset tool, local index candidate
+planning, contribution queue candidate export, native staging UI planning,
+hosted submission, and any staging runtime.

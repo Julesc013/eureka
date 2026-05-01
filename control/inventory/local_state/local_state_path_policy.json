@@ -10,7 +10,8 @@
   "suggested_dev_root": ".eureka-local/",
   "additional_ignored_dev_roots": [
     ".eureka-cache/",
-    ".eureka-staging/"
+    ".eureka-staging/",
+    ".eureka-reports/"
   ],
   "prohibited_roots": [
     "site/dist",
@@ -30,7 +31,8 @@
     "gitignore_entries_required": [
       ".eureka-local/",
       ".eureka-cache/",
-      ".eureka-staging/"
+      ".eureka-staging/",
+      ".eureka-reports/"
     ]
   },
   "path_leakage_policy": {

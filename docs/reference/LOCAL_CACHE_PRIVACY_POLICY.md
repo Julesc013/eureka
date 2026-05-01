@@ -49,6 +49,13 @@ local_private by default and must be resettable, deletable, and excluded from
 public reports unless validated and redacted.
 No staging runtime exists in Local Quarantine/Staging Model v0, and it does not create, does not import, does not stage, does not index, does not upload, and does not mutate public search or the master index.
 
+Staging Report Path Contract v0 extends this privacy posture to report
+locations. Validate-only reports use stdout by default. File output requires an
+explicit output path, must not silently create local state roots, must avoid
+forbidden committed/runtime/public roots, and must apply redaction to private
+absolute paths before a report is committed or exposed outside local-private
+storage.
+
 Private cache is future explicit user state. It may later hold user-selected
 artifacts, preferences, local strategy notes, private resolution memory, or
 native-client working state. Private cache is disabled by default and requires

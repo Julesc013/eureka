@@ -62,6 +62,14 @@ python scripts/validate_only_pack_import.py --all-examples --output tmp/report.j
 The tool does not create the output parent directory. This prevents accidental
 creation of staging, quarantine, cache, or import roots.
 
+Staging Report Path Contract v0 governs report output locations. The tool
+defaults to stdout, writes files only for an explicit output path, rejects
+forbidden committed/runtime/public roots, and redacts local absolute paths in
+report content. This redaction boundary applies before any report is committed
+or exposed publicly. Report path success is still not import, staging,
+indexing, rights clearance, malware safety, public-search eligibility, or
+master-index acceptance.
+
 ## Input Scope
 
 The tool accepts only:

@@ -11,6 +11,10 @@ Current files:
   quarantine/staging after validate-only pack reports.
 - `local_state_path_policy.json`: future path policy and prohibited roots for
   private/local state.
+- `staging_report_path_contract.json`: planning-only contract for stdout
+  defaults, explicit output paths, safe local report roots, forbidden committed
+  roots, filename safety, and redaction.
 
 Future local staging remains disabled by default. No `.eureka-local/`,
-`.eureka-cache/`, or `.eureka-staging/` directory should be committed.
+`.eureka-cache/`, `.eureka-staging/`, or `.eureka-reports/` directory should
+be committed.

@@ -26,6 +26,21 @@ HARD_FALSE_FIELDS = (
     "runtime_mutation_performed",
     "network_performed",
 )
+FORBIDDEN_OUTPUT_REPO_ROOTS = (
+    ".aide",
+    ".github",
+    "contracts",
+    "control/inventory",
+    "crates",
+    "docs",
+    "evals",
+    "external",
+    "runtime",
+    "site",
+    "site/dist",
+    "snapshots/examples",
+    "surfaces",
+)
 PRIVATE_PATH_RE = re.compile(
     r"([A-Za-z]:[\\/](Users|Documents and Settings|Projects)[\\/]|"
     r"\\\\[^\\/\s]+[\\/][^\\/\s]+[\\/]|"
@@ -62,6 +77,11 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None, std
         resolved_output = _resolve(output_path)
         if not resolved_output.parent.exists():
             payload = _argument_error(f"--output parent does not exist: {_safe_path(resolved_output.parent)}")
+            _emit(payload, json_output=args.json, output=out)
+            return 2
+        policy_error = _output_path_policy_error(resolved_output)
+        if policy_error:
+            payload = _argument_error(policy_error)
             _emit(payload, json_output=args.json, output=out)
             return 2
     else:
@@ -752,6 +772,18 @@ def _excerpt(value: str | None) -> str:
 
 def _resolve(path: Path) -> Path:
     return path if path.is_absolute() else (REPO_ROOT / path).resolve()
+
+
+def _output_path_policy_error(path: Path) -> str:
+    try:
+        relative = path.resolve().relative_to(REPO_ROOT)
+    except ValueError:
+        return ""
+    relative_text = relative.as_posix()
+    for root in sorted(FORBIDDEN_OUTPUT_REPO_ROOTS, key=len, reverse=True):
+        if relative_text == root or relative_text.startswith(f"{root}/"):
+            return f"--output is under a forbidden repo root: {root}"
+    return ""
 
 
 def _emit(payload: Mapping[str, Any], *, json_output: bool, output: TextIO) -> None:

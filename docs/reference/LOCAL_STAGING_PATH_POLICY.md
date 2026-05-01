@@ -15,9 +15,14 @@ Future local state may use:
 - a repo-local ignored root for development only
 
 The suggested development root is `.eureka-local/`. The companion ignored roots
-are `.eureka-cache/` and `.eureka-staging/`. These entries are ignored to
-protect private state from accidental commits, but this milestone creates no
-such directories.
+are `.eureka-cache/`, `.eureka-staging/`, and `.eureka-reports/`. These entries
+are ignored to protect private state from accidental commits, but this
+milestone creates no such directories.
+
+Staging Report Path Contract v0 adds the report-path layer on top of this
+policy. It keeps report output on stdout by default, requires explicit output
+paths for file writes, blocks forbidden committed roots, and requires redaction
+of private absolute paths before reports can be committed or exposed publicly.
 
 ## Prohibited Roots
 
@@ -46,6 +51,7 @@ required ignore entries are:
 .eureka-local/
 .eureka-cache/
 .eureka-staging/
+.eureka-reports/
 ```
 
 Committed examples may describe staging formats later, but they must be

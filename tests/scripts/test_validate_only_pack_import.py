@@ -164,6 +164,23 @@ class ValidateOnlyPackImportScriptTestCase(unittest.TestCase):
         self.assertFalse(payload["staging_performed"])
         self.assertIn("parent does not exist", payload["error"])
 
+    def test_forbidden_repo_output_root_fails_without_writing(self) -> None:
+        output_path = REPO_ROOT / "site" / "dist" / "forbidden-pack-report.json"
+        if output_path.exists():
+            output_path.unlink()
+        completed = subprocess.run(
+            [sys.executable, str(TOOL), "--all-examples", "--output", str(output_path), "--json"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(completed.returncode, 2)
+        self.assertFalse(output_path.exists())
+        payload = json.loads(completed.stdout)
+        self.assertFalse(payload["import_performed"])
+        self.assertFalse(payload["staging_performed"])
+        self.assertIn("forbidden repo root", payload["error"])
+
 
 def _assert_no_mutation(testcase: unittest.TestCase, payload: dict) -> None:
     for field in [

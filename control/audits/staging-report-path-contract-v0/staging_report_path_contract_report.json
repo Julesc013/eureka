@@ -1,0 +1,71 @@
+{
+  "report_id": "staging_report_path_contract_v0",
+  "created_by_slice": "staging_report_path_contract_v0",
+  "status": "planning_only",
+  "report_path_runtime_implemented": false,
+  "staging_runtime_implemented": false,
+  "default_output_mode": "stdout",
+  "explicit_output_required_for_file_write": true,
+  "local_private_by_default": true,
+  "allowed_committed_report_roots": [
+    "control/audits/*",
+    "examples/import_reports/",
+    "docs/ hand-authored docs only",
+    "tests/fixtures/ synthetic only"
+  ],
+  "forbidden_committed_roots": [
+    "site/",
+    "site/dist/",
+    "external/",
+    "runtime/",
+    "surfaces/",
+    "control/inventory/",
+    "contracts/",
+    "docs/ except hand-authored docs",
+    "snapshots/examples/",
+    "evals/",
+    "crates/",
+    ".github/",
+    ".aide/ except deliberate repo-operating metadata",
+    "canonical source trees"
+  ],
+  "future_local_report_roots": [
+    ".eureka-local/reports/",
+    ".eureka-local/staging/",
+    ".eureka-local/quarantine/",
+    ".eureka-local/import-reports/",
+    ".eureka-reports/",
+    "application-local-data root for native clients",
+    "user-configured cache or staging root outside repo",
+    "temp directory for tests"
+  ],
+  "gitignore_patterns_required": [
+    ".eureka-local/",
+    ".eureka-cache/",
+    ".eureka-staging/",
+    ".eureka-reports/"
+  ],
+  "filename_policy_summary": {
+    "recommended_pattern": "import-report__<pack_id_sanitized>__<short_sha256>__<mode>.json",
+    "max_filename_length_recommended": 180,
+    "forbidden_components": [
+      "raw_user_query_text",
+      "raw_local_path",
+      "full_source_url",
+      "credential_or_secret"
+    ]
+  },
+  "redaction_policy_summary": {
+    "absolute_local_paths_redacted_in_committed_reports": true,
+    "home_directories_redacted": true,
+    "drive_letters_redacted": true,
+    "credentials_never_emitted": true,
+    "api_keys_never_emitted": true,
+    "pack_root_relative_paths_preferred": true
+  },
+  "next_recommended_milestone": "Local Staging Manifest Format v0",
+  "notes": [
+    "This audit pack is synthetic/governance evidence only.",
+    "No local report directory, staging runtime, staged state, import behavior, indexing, upload, public-search mutation, or master-index mutation was added."
+  ]
+}

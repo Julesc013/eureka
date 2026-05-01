@@ -34,3 +34,4 @@ tmp/
 .eureka-local/
 .eureka-cache/
 .eureka-staging/
+.eureka-reports/

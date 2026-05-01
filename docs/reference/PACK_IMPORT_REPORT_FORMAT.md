@@ -16,6 +16,10 @@ Local Quarantine/Staging Model v0 is planning-only. No staging runtime exists,
 it does not create staged state, and it does not import, does not stage, does
 not index, does not upload, and does not mutate public search or the master
 index. Future staged metadata must link back to Pack Import Report v0.
+Staging Report Path Contract v0 governs where future report files may be
+written: stdout by default, explicit output path for file writes, no hidden
+state, no forbidden repo roots, and redaction of private local paths before
+reports become committed or public.
 
 ## Purpose
 

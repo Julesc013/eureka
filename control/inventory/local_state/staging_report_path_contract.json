@@ -1,0 +1,160 @@
+{
+  "schema_version": "staging_report_path_contract.v0",
+  "contract_id": "staging_report_path_contract_v0",
+  "status": "planning_only",
+  "stability": "experimental",
+  "report_path_runtime_implemented": false,
+  "staging_runtime_implemented": false,
+  "default_output_mode": "stdout",
+  "explicit_output_required_for_file_write": true,
+  "auto_create_parent_directories_default": false,
+  "local_private_by_default": true,
+  "committed_report_roots_allowed": [
+    {
+      "root": "control/audits/*",
+      "allowed_use": "synthetic_or_audit_safe_reports_only"
+    },
+    {
+      "root": "examples/import_reports/",
+      "allowed_use": "synthetic_examples_only"
+    },
+    {
+      "root": "docs/",
+      "allowed_use": "hand_authored_documentation_only"
+    },
+    {
+      "root": "tests/fixtures/",
+      "allowed_use": "synthetic_test_fixtures_only"
+    }
+  ],
+  "committed_report_roots_forbidden": [
+    "site/",
+    "site/dist/",
+    "external/",
+    "runtime/",
+    "surfaces/",
+    "control/inventory/",
+    "contracts/",
+    "docs/ except hand-authored docs",
+    "snapshots/examples/",
+    "evals/",
+    "crates/",
+    "tests/ except test-created temp dirs and synthetic fixtures",
+    ".github/",
+    ".aide/ except deliberate repo-operating metadata",
+    "any canonical runtime source tree"
+  ],
+  "local_report_roots_allowed_future": [
+    ".eureka-local/reports/",
+    ".eureka-local/staging/",
+    ".eureka-local/quarantine/",
+    ".eureka-local/import-reports/",
+    ".eureka-reports/",
+    "application-local-data root for native clients",
+    "user-configured cache or staging root outside repo",
+    "temp directory for tests"
+  ],
+  "local_report_roots_ignored_by_git": [
+    ".eureka-local/",
+    ".eureka-cache/",
+    ".eureka-staging/",
+    ".eureka-reports/"
+  ],
+  "local_report_roots_forbidden": [
+    "site/",
+    "site/dist/",
+    "external/",
+    "runtime/",
+    "surfaces/",
+    "control/inventory/",
+    "contracts/",
+    "docs/",
+    "snapshots/examples/",
+    "evals/",
+    "crates/",
+    ".github/",
+    ".aide/",
+    "canonical source trees"
+  ],
+  "filename_policy": {
+    "machine_report_extension": ".json",
+    "human_summary_extensions_allowed_future": [
+      ".txt",
+      ".md"
+    ],
+    "recommended_pattern": "import-report__<pack_id_sanitized>__<short_sha256>__<mode>.json",
+    "safe_components": [
+      "sanitized_pack_id",
+      "short_sha256",
+      "mode",
+      "timestamp_or_run_id"
+    ],
+    "forbidden_components": [
+      "raw_user_query_text",
+      "raw_local_path",
+      "full_source_url",
+      "path_separator_from_pack_id",
+      "credential_or_secret"
+    ],
+    "max_filename_length_recommended": 180
+  },
+  "redaction_policy": {
+    "absolute_local_paths_redacted_in_committed_reports": true,
+    "home_directories_redacted": true,
+    "drive_letters_redacted": true,
+    "usernames_redacted_where_possible": true,
+    "credentials_never_emitted": true,
+    "api_keys_never_emitted": true,
+    "pack_root_relative_paths_preferred": true,
+    "local_private_reports_may_include_local_paths_only_when_classified_local_private": true
+  },
+  "path_leakage_policy": {
+    "committed_examples_must_not_contain_private_absolute_paths": true,
+    "public_reports_must_redact_private_absolute_paths": true,
+    "private_paths_forbidden_in_site_dist": true,
+    "private_paths_forbidden_in_snapshots_examples": true,
+    "private_paths_forbidden_in_control_inventory": true
+  },
+  "validate_only_tool_policy": {
+    "default_output_mode": "stdout",
+    "file_write_requires_explicit_output_argument": true,
+    "output_parent_must_exist": true,
+    "auto_create_parent_directories": false,
+    "hidden_state_allowed": false,
+    "staging_allowed": false,
+    "index_mutation_allowed": false,
+    "forbidden_repo_roots_rejected": true,
+    "report_must_validate_as_pack_import_report_v0": true
+  },
+  "future_staging_tool_policy": {
+    "requires_validate_only_report": true,
+    "requires_local_private_root": true,
+    "must_not_write_to_committed_roots": true,
+    "must_not_create_staging_root_without_explicit_operator_choice": true,
+    "must_not_copy_pack_payloads_by_default": true
+  },
+  "native_client_policy": {
+    "future_native_roots": "application-local-data root only unless user overrides",
+    "private_by_default": true,
+    "must_not_sync_or_upload_by_default": true
+  },
+  "relay_policy": {
+    "relay_exposes_reports_by_default": false,
+    "relay_exposes_local_paths_by_default": false
+  },
+  "snapshot_policy": {
+    "snapshots_include_local_reports_by_default": false,
+    "snapshots_include_private_paths_by_default": false
+  },
+  "public_search_policy": {
+    "public_search_reads_report_roots_by_default": false,
+    "site_dist_report_output_allowed": false,
+    "master_index_mutation_allowed": false
+  },
+  "created_by_slice": "staging_report_path_contract_v0",
+  "notes": [
+    "This contract is planning-only and creates no runtime local report or staging directories.",
+    "Validate-only tools should print to stdout by default and write files only when an explicit output path is supplied.",
+    "Report path success is not import, staging, rights clearance, malware safety, canonical truth, or master-index acceptance."
+  ]
+}
