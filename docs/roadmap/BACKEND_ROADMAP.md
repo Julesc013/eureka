@@ -583,3 +583,12 @@ explicit disabled flags for live probes, downloads, uploads, installs, local
 paths, arbitrary URL fetch, accounts, and telemetry. Backend behavior remains
 unchanged. The next backend-facing branch is
 `p54-hosted-public-search-wrapper-v0`.
+
+Hosted Public Search Wrapper v0 records the P54 checkpoint under
+`control/audits/hosted-public-search-wrapper-v0/`. It adds a stdlib wrapper for
+the P53 route family, config validation, local rehearsal checks, operation docs,
+and inert deployment templates. The wrapper is read-only, local_index_only, and
+not deployed. Live probes, downloads, uploads, installs, local paths, arbitrary
+URL fetch, accounts, telemetry, source connectors, AI runtime, and index
+mutation remain disabled or absent. The next backend-facing branch is
+`p55-public-search-index-builder-v0`.

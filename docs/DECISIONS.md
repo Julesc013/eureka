@@ -1662,3 +1662,29 @@ downloads, installers, arbitrary URL fetching, local path access, index
 mutation, master-index mutation, or a hosted-search claim. The next Codex-safe
 branch is `p54-hosted-public-search-wrapper-v0`; GitHub Pages settings
 enablement and deployment evidence capture remain operator-parallel work.
+
+## ADR-134: Add Hosted Public Search Wrapper Without Deploying It
+
+Status: accepted
+
+Hosted Public Search Wrapper v0 adds `scripts/run_hosted_public_search.py`,
+`scripts/check_hosted_public_search_wrapper.py`,
+`scripts/validate_hosted_public_search_wrapper.py`, focused tests, hosted
+operation docs, inert Docker/Render templates, inventory updates, and
+`control/audits/hosted-public-search-wrapper-v0/`.
+
+The decision is to implement the P53 route contract as a narrow stdlib wrapper
+over the existing gateway public search API while keeping the active mode
+`local_index_only`. The wrapper exposes `/healthz`, `/status`, `/search`,
+`/api/v1/status`, `/api/v1/search`, `/api/v1/query-plan`, `/api/v1/sources`,
+and `/api/v1/source/{source_id}` for local rehearsal and later operator
+deployment. It rejects forbidden public parameters and records disabled flags
+for live probes, downloads, uploads, install actions, local paths, arbitrary URL
+fetch, accounts, telemetry, external calls, and AI runtime.
+
+P54 deliberately does not deploy a backend, call hosting provider APIs, configure
+DNS/TLS, add credentials, enable live probes, add source connector runtime,
+mutate indexes, import packs, stage packs, add telemetry/accounts/uploads/
+downloads/installers, add model calls, or claim hosted availability. The next
+Codex-safe branch is `p55-public-search-index-builder-v0`; operator-parallel
+work is deploying the wrapper and recording hosted evidence.

@@ -1,6 +1,6 @@
 # Public Search Runtime Readiness Checklist
 
-Status: local runtime implemented; hosted checklist unsigned.
+Status: local runtime implemented; P54 wrapper local-rehearsed; hosted deployment unsigned.
 
 This checklist records Local Public Search Runtime v0 and gates future hosted
 public-search rehearsal. It is not approval to add hosted backend deployment,
@@ -23,6 +23,7 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
   `contracts/api/absence_report.v0.json`, and
   `contracts/api/public_search_status.v0.json` exist for the P54 wrapper
   contract.
+- [x] `python scripts/validate_hosted_public_search_wrapper.py` passes locally.
 
 ## Runtime Boundary Gates
 
@@ -51,9 +52,9 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
 
 ## Operator And Privacy Gates
 
-- [ ] `EUREKA_PUBLIC_SEARCH_ENABLED` defaults off until rehearsal approval.
-- [ ] `EUREKA_OPERATOR_KILL_SWITCH` or equivalent fails closed.
-- [ ] Live probes, downloads, installs, local paths, uploads, and telemetry flags
+- [ ] `EUREKA_PUBLIC_SEARCH_ENABLED` defaults off until hosted deployment approval.
+- [x] P54 local config check fails closed when `EUREKA_OPERATOR_KILL_SWITCH=1`.
+- [x] Live probes, downloads, installs, local paths, uploads, and telemetry flags
   default disabled.
 - [ ] Logging/privacy posture is accepted before any hosted rehearsal.
 - [ ] Raw query logging is disabled by default or sanitized with short retention
@@ -66,17 +67,20 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
 - [x] Public search safety tests exist for disabled modes and forbidden
   parameters.
 - [x] Public-alpha smoke tests remain compatible.
-- [ ] Architecture-boundary checks pass.
-- [ ] Generated static artifact checks pass.
+- [x] Hosted wrapper local rehearsal passes.
+- [ ] Architecture-boundary checks pass for the current final verification run.
+- [ ] Generated static artifact checks pass for the current final verification run.
 - [x] No documentation claims hosted deployment success.
 - [ ] No documentation claims production API stability or production readiness.
 
 ## Approval State
 
-- checklist_status: `local_runtime_implemented_hosted_unsigned`
+- checklist_status: `local_runtime_implemented_wrapper_rehearsed_hosted_unsigned`
 - local_runtime_implemented: true
 - implementation_approved: true
 - Static handoff is implemented by Public Search Static Handoff v0.
+- hosted_wrapper_implemented: true
+- hosted_wrapper_deployment_verified: false
 - hosted_public_runtime_approved: false
 - static_search_handoff_implemented: true
 - hosted_search_handoff_approved: false

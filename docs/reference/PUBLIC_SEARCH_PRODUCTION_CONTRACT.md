@@ -1,6 +1,6 @@
 # Public Search Production Contract v0
 
-Status: contract frozen for P54 hosted-wrapper implementation.
+Status: contract frozen; P54 hosted wrapper implemented for local rehearsal.
 
 Public Search Production Contract v0 hardens Eureka's first production-facing
 public search API shape while keeping current behavior local/prototype only.
@@ -61,3 +61,13 @@ Hosted wrapper defaults must keep these flags false:
 P54 may implement a hosted wrapper for `local_index_only` only. Live connectors,
 query intelligence, index building, and public contribution intake remain later
 milestones.
+
+P54 now implements the wrapper entrypoint and local rehearsal check:
+
+- `scripts/run_hosted_public_search.py`
+- `scripts/check_hosted_public_search_wrapper.py`
+- `scripts/validate_hosted_public_search_wrapper.py`
+
+The wrapper remains deployment-unverified. It does not enable live probes,
+downloads, uploads, installs, local paths, arbitrary URL fetch, telemetry,
+accounts, source connectors, AI runtime, or index mutation.

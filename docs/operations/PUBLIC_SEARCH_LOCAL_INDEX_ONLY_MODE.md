@@ -71,6 +71,12 @@ honesty, and public-alpha posture without hosted deployment, live probes,
 downloads, installs, uploads, local path search, accounts, telemetry, or
 external calls.
 
+Hosted Public Search Wrapper v0 now exposes this same mode through
+`scripts/run_hosted_public_search.py` for local rehearsal and later
+operator-controlled hosting. It does not change the mode contract or enable
+live probes, downloads, uploads, local paths, arbitrary URL fetch, accounts,
+telemetry, or source connectors.
+
 ## Privacy And Logging Notes
 
 Future public search logs must avoid private local paths, credentials, uploaded

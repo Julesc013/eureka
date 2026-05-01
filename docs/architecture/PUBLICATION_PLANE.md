@@ -84,6 +84,13 @@ only: no backend is deployed, GitHub Pages remains static-only, and hosted
 search remains unavailable until a later wrapper milestone implements the
 contract honestly.
 
+Hosted Public Search Wrapper v0 now implements that route family as a
+local/prototype stdlib wrapper over the gateway public search API. It is
+`local_index_only`, read-only, and deployment-unverified. GitHub Pages remains
+static-only, and the wrapper does not enable live probes, downloads, uploads,
+accounts, telemetry, arbitrary URL fetch, source connectors, AI runtime, index
+mutation, pack import, or staging runtime.
+
 Public Search Result Card Contract v0 adds
 `contracts/api/search_result_card.v0.json`, fixture-safe examples,
 `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`, and

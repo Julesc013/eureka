@@ -691,3 +691,14 @@ fetch, credentials, live probes, downloads, installs, uploads, and execution,
 and P54 wrapper requirements are documented. The next Codex-safe branch is
 `p54-hosted-public-search-wrapper-v0`; the wrapper must still implement
 local_index_only only and preserve all disabled capability flags.
+
+Hosted Public Search Wrapper v0 records the P54 checkpoint under
+`control/audits/hosted-public-search-wrapper-v0/`. It adds a stdlib wrapper,
+safe environment validation, in-process route rehearsal, Docker/Render
+templates, hosted-operation docs, and metadata for local_index_only public
+search only. Hosted deployment remains unverified and operator-gated; no live
+probes, source connectors, downloads, uploads, accounts, telemetry, arbitrary
+URL fetch, AI runtime, index mutation, pack import, staging runtime, or hosted
+availability claim is added. The next Codex-safe branch is
+`p55-public-search-index-builder-v0`; operator-parallel work is backend host
+deployment evidence capture.

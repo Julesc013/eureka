@@ -822,6 +822,16 @@ runtime, index mutation, or hosted-search claim. The next Codex-safe branch is
 `p54-hosted-public-search-wrapper-v0`; GitHub Pages evidence capture remains
 operator-parallel work.
 
+Hosted Public Search Wrapper v0 is recorded under
+`control/audits/hosted-public-search-wrapper-v0/`. It adds the stdlib
+`scripts/run_hosted_public_search.py` wrapper, config validation, local
+rehearsal checks, template deployment files, operations docs, validator/tests,
+and metadata for local_index_only public search only. It is not deployed and
+does not enable live probes, source connector runtime, telemetry, accounts,
+uploads, downloads, installers, arbitrary URL fetching, AI runtime, index
+mutation, pack import, staging runtime, or hosted-search evidence. The next
+Codex-safe branch is `p55-public-search-index-builder-v0`.
+
 ## Deferred Priorities
 
 These are intentionally not the next milestone:

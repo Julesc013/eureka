@@ -46,6 +46,11 @@ The policy records `status: local_runtime_guard_active`,
 `hosted_public_search_runtime_implemented: false`, and
 `no_hosted_public_search_live: true`.
 
+Hosted Public Search Wrapper v0 adds a local/prototype wrapper around the same
+guarded public search API. The wrapper keeps `local_index_only`, no live probes,
+no downloads, no uploads, no local paths, no arbitrary URL fetch, no telemetry,
+and no accounts; hosted deployment evidence remains a later operator step.
+
 ## Allowed Mode
 
 The only allowed v0 mode is:
