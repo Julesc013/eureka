@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/wayback_cdx_memento_connector_approval.v0.json",
+  "title": "Eureka Wayback CDX Memento Connector Approval v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-connector_runtime_implemented": false,
+  "x-connector_approved_now": false,
+  "x-live_source_calls_allowed_now": false,
+  "x-external_calls_allowed_now": false,
+  "x-archived_content_fetch_allowed": false,
+  "x-capture_replay_allowed": false,
+  "x-warc_download_allowed": false,
+  "x-public_search_live_fanout_allowed": false,
+  "x-arbitrary_url_fetch_allowed": false,
+  "x-source_cache_mutation_allowed_now": false,
+  "x-evidence_ledger_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-public_index_mutation_allowed_now": false,
+  "x-local_index_mutation_allowed_now": false,
+  "x-master_index_mutation_allowed": false,
+  "x-downloads_allowed": false,
+  "x-file_retrieval_allowed": false,
+  "x-mirroring_allowed": false,
+  "x-telemetry_implemented": false,
+  "x-credentials_configured": false,
+  "required": [
+    "schema_version",
+    "approval_record_id",
+    "approval_record_kind",
+    "status",
+    "created_by_tool",
+    "connector_ref",
+    "connector_scope",
+    "allowed_capabilities",
+    "forbidden_capabilities",
+    "url_and_uri_policy",
+    "source_policy_review",
+    "user_agent_and_contact_policy",
+    "rate_limit_timeout_retry_circuit_breaker_policy",
+    "cache_first_policy",
+    "expected_source_cache_outputs",
+    "expected_evidence_ledger_outputs",
+    "query_intelligence_relationship",
+    "public_search_boundary",
+    "rights_access_and_risk_policy",
+    "privacy_policy",
+    "approval_checklist",
+    "operator_checklist",
+    "implementation_prerequisites",
+    "limitations",
+    "no_runtime_guarantees",
+    "no_mutation_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: schema_version."
+    },
+    "approval_record_id": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: approval_record_id."
+    },
+    "approval_record_kind": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: approval_record_kind."
+    },
+    "status": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: status."
+    },
+    "created_by_tool": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: created_by_tool."
+    },
+    "connector_ref": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: connector_ref."
+    },
+    "connector_scope": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: connector_scope."
+    },
+    "allowed_capabilities": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: allowed_capabilities."
+    },
+    "forbidden_capabilities": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: forbidden_capabilities."
+    },
+    "url_and_uri_policy": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: url_and_uri_policy."
+    },
+    "source_policy_review": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: source_policy_review."
+    },
+    "user_agent_and_contact_policy": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: user_agent_and_contact_policy."
+    },
+    "rate_limit_timeout_retry_circuit_breaker_policy": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: rate_limit_timeout_retry_circuit_breaker_policy."
+    },
+    "cache_first_policy": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: cache_first_policy."
+    },
+    "expected_source_cache_outputs": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: expected_source_cache_outputs."
+    },
+    "expected_evidence_ledger_outputs": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: expected_evidence_ledger_outputs."
+    },
+    "query_intelligence_relationship": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: query_intelligence_relationship."
+    },
+    "public_search_boundary": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: public_search_boundary."
+    },
+    "rights_access_and_risk_policy": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: rights_access_and_risk_policy."
+    },
+    "privacy_policy": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: privacy_policy."
+    },
+    "approval_checklist": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: approval_checklist."
+    },
+    "operator_checklist": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: operator_checklist."
+    },
+    "implementation_prerequisites": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: implementation_prerequisites."
+    },
+    "limitations": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: limitations."
+    },
+    "no_runtime_guarantees": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: no_runtime_guarantees."
+    },
+    "no_mutation_guarantees": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: no_mutation_guarantees."
+    },
+    "notes": {
+      "description": "Wayback/CDX/Memento connector approval v0 field: notes."
+    }
+  },
+  "$defs": {
+    "statuses": [
+      "draft_example",
+      "approval_required",
+      "operator_required",
+      "blocked_by_policy",
+      "approved_future",
+      "rejected_future",
+      "superseded_future"
+    ],
+    "source_family": [
+      "wayback_cdx_memento"
+    ],
+    "allowed_capabilities": [
+      "url_availability_metadata_future",
+      "cdx_capture_metadata_future",
+      "memento_timemap_metadata_future",
+      "memento_timegate_metadata_future",
+      "capture_timestamp_summary_future",
+      "status_code_mimetype_digest_summary_future",
+      "nearest_capture_metadata_future"
+    ],
+    "forbidden_capabilities": [
+      "arbitrary_url_fetch",
+      "direct_public_query_fanout",
+      "archived_page_content_fetch",
+      "capture_replay",
+      "warc_download",
+      "file_download",
+      "mirroring",
+      "screenshot_capture",
+      "account_access",
+      "upload",
+      "install",
+      "execute",
+      "unbounded_crawl",
+      "scraping",
+      "bypass_access_restrictions",
+      "raw_payload_dump",
+      "malware_safety_decision",
+      "rights_clearance_decision"
+    ]
+  }
+}

@@ -37,3 +37,7 @@ IA metadata is not rights clearance and not malware safety. The approval pack is
 ## Future Path
 
 Before runtime work: complete official source-policy review, choose approved User-Agent/contact policy, define rate/timeout/retry/circuit-breaker values, approve source sync worker output destinations, and review source cache/evidence ledger integration. P71 itself is not production readiness.
+
+## P72 Wayback/CDX/Memento Connector Approval Pack v0
+
+P72 defines a future availability/capture-metadata-only Wayback/CDX/Memento connector approval pack. The connector is not implemented, no external calls are made, public queries do not fan out to Wayback/CDX/Memento, arbitrary URL fetch is forbidden, archived content fetch/capture replay/WARC download are forbidden, and future outputs must be cache-first/evidence-first after URI privacy review and approval.

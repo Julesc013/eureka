@@ -85,5 +85,17 @@
     ],
     "next_coverage_step": "Add recorded temporal capture metadata fixtures before any live probing is considered."
   },
-  "notes": "Planning placeholder only. This record should guide future registry growth, not imply live replay support."
+  "notes": "Planning placeholder only. This record should guide future registry growth, not imply live replay support.",
+  "connector_approval": {
+    "status": "approval_required",
+    "connector_inventory_ref": "control/inventory/connectors/wayback_cdx_memento_connector.json",
+    "approval_audit_ref": "control/audits/wayback-cdx-memento-connector-approval-v0/wayback_cdx_memento_connector_approval_report.json",
+    "connector_runtime_implemented": false,
+    "live_enabled_by_default": false,
+    "source_cache_populated_from_live_calls": false,
+    "evidence_ledger_populated_from_live_calls": false,
+    "limitations": [
+      "P72 references this placeholder only; it does not enable live Wayback/CDX/Memento access."
+    ]
+  }
 }

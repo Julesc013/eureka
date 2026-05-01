@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/wayback_cdx_memento_connector_manifest.v0.json",
+  "title": "Eureka Wayback CDX Memento Connector Manifest v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_implemented": false,
+  "x-live_enabled_by_default": false,
+  "x-public_query_fanout_allowed": false,
+  "x-downloads_allowed": false,
+  "x-arbitrary_url_fetch_allowed": false,
+  "x-archived_content_fetch_allowed": false,
+  "x-capture_replay_allowed": false,
+  "x-warc_download_allowed": false,
+  "x-source_cache_mutation_allowed_now": false,
+  "x-evidence_ledger_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-master_index_mutation_allowed_now": false,
+  "required": [
+    "schema_version",
+    "connector_id",
+    "connector_kind",
+    "status",
+    "source_family",
+    "supported_capabilities",
+    "disabled_capabilities",
+    "default_policy",
+    "source_sync_worker_relationship",
+    "source_cache_relationship",
+    "evidence_ledger_relationship",
+    "safety_defaults",
+    "no_runtime_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: schema_version."
+    },
+    "connector_id": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: connector_id."
+    },
+    "connector_kind": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: connector_kind."
+    },
+    "status": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: status."
+    },
+    "source_family": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: source_family."
+    },
+    "supported_capabilities": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: supported_capabilities."
+    },
+    "disabled_capabilities": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: disabled_capabilities."
+    },
+    "default_policy": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: default_policy."
+    },
+    "source_sync_worker_relationship": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: source_sync_worker_relationship."
+    },
+    "source_cache_relationship": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: source_cache_relationship."
+    },
+    "evidence_ledger_relationship": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: evidence_ledger_relationship."
+    },
+    "safety_defaults": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: safety_defaults."
+    },
+    "no_runtime_guarantees": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: no_runtime_guarantees."
+    },
+    "notes": {
+      "description": "Wayback/CDX/Memento connector manifest v0 field: notes."
+    }
+  },
+  "$defs": {
+    "statuses": [
+      "draft_example",
+      "approval_required",
+      "runtime_future",
+      "disabled"
+    ],
+    "source_family": [
+      "wayback_cdx_memento"
+    ],
+    "supported_capabilities": [
+      "url_availability_metadata_future",
+      "cdx_capture_metadata_future",
+      "memento_timemap_metadata_future",
+      "memento_timegate_metadata_future",
+      "capture_timestamp_summary_future",
+      "status_code_mimetype_digest_summary_future",
+      "nearest_capture_metadata_future"
+    ],
+    "disabled_capabilities": [
+      "arbitrary_url_fetch",
+      "direct_public_query_fanout",
+      "archived_page_content_fetch",
+      "capture_replay",
+      "warc_download",
+      "file_download",
+      "mirroring",
+      "screenshot_capture",
+      "account_access",
+      "upload",
+      "install",
+      "execute",
+      "unbounded_crawl",
+      "scraping",
+      "bypass_access_restrictions",
+      "raw_payload_dump",
+      "malware_safety_decision",
+      "rights_clearance_decision"
+    ]
+  }
+}

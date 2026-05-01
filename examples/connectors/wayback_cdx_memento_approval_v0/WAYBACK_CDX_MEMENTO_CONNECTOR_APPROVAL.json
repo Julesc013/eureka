@@ -1,0 +1,793 @@
+{
+  "schema_version": "0.1.0",
+  "approval_record_id": "example.connector.wayback_cdx_memento.approval.v0",
+  "approval_record_kind": "wayback_cdx_memento_connector_approval",
+  "status": "draft_example",
+  "created_by_tool": "p72_wayback_cdx_memento_connector_approval_builder_v0",
+  "connector_ref": {
+    "connector_id": "wayback_cdx_memento_connector",
+    "connector_label": "Wayback/CDX/Memento metadata connector",
+    "source_family": "wayback_cdx_memento",
+    "connector_version": "v0-approval-pack",
+    "source_inventory_ref": "control/inventory/sources/wayback-memento-placeholder.source.json",
+    "source_status": "approval_required",
+    "limitations": [
+      "Approval reference only; no connector implementation or live source access exists."
+    ]
+  },
+  "connector_scope": {
+    "scope_kind": "availability_and_capture_metadata_only",
+    "allowed_target_types": [
+      "uri_r_from_reviewed_source_record",
+      "uri_r_from_approved_search_need_future",
+      "uri_r_from_source_pack_future",
+      "bounded_capture_metadata_query_future",
+      "memento_timeline_summary_future"
+    ],
+    "prohibited_target_types": [
+      "arbitrary_public_query_url",
+      "private_url",
+      "credentialed_url",
+      "account_private_url",
+      "archived_page_content",
+      "capture_replay",
+      "warc_download",
+      "full_text_scrape",
+      "screenshot_capture",
+      "bulk_crawl",
+      "access_restricted_content",
+      "executable_download"
+    ],
+    "default_mode": "disabled_until_approval",
+    "notes": [
+      "P72 permits only future availability and capture metadata summaries after explicit approval."
+    ]
+  },
+  "allowed_capabilities": [
+    {
+      "capability": "url_availability_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_uri_privacy_review": true,
+      "limitations": [
+        "Future only and disabled now; no capability is implemented by P72."
+      ]
+    },
+    {
+      "capability": "cdx_capture_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_uri_privacy_review": true,
+      "limitations": [
+        "Future only and disabled now; no capability is implemented by P72."
+      ]
+    },
+    {
+      "capability": "memento_timemap_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_uri_privacy_review": true,
+      "limitations": [
+        "Future only and disabled now; no capability is implemented by P72."
+      ]
+    },
+    {
+      "capability": "memento_timegate_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_uri_privacy_review": true,
+      "limitations": [
+        "Future only and disabled now; no capability is implemented by P72."
+      ]
+    },
+    {
+      "capability": "capture_timestamp_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_uri_privacy_review": true,
+      "limitations": [
+        "Future only and disabled now; no capability is implemented by P72."
+      ]
+    },
+    {
+      "capability": "status_code_mimetype_digest_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_uri_privacy_review": true,
+      "limitations": [
+        "Future only and disabled now; no capability is implemented by P72."
+      ]
+    },
+    {
+      "capability": "nearest_capture_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_uri_privacy_review": true,
+      "limitations": [
+        "Future only and disabled now; no capability is implemented by P72."
+      ]
+    }
+  ],
+  "forbidden_capabilities": [
+    {
+      "capability": "arbitrary_url_fetch",
+      "reason": "arbitrary_url_fetch is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "direct_public_query_fanout",
+      "reason": "direct_public_query_fanout is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "archived_page_content_fetch",
+      "reason": "archived_page_content_fetch is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "capture_replay",
+      "reason": "capture_replay is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "warc_download",
+      "reason": "warc_download is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "file_download",
+      "reason": "file_download is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "mirroring",
+      "reason": "mirroring is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "screenshot_capture",
+      "reason": "screenshot_capture is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "account_access",
+      "reason": "account_access is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "upload",
+      "reason": "upload is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "install",
+      "reason": "install is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "execute",
+      "reason": "execute is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "unbounded_crawl",
+      "reason": "unbounded_crawl is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "scraping",
+      "reason": "scraping is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "bypass_access_restrictions",
+      "reason": "bypass_access_restrictions is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "raw_payload_dump",
+      "reason": "raw_payload_dump is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "malware_safety_decision",
+      "reason": "malware_safety_decision is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "rights_clearance_decision",
+      "reason": "rights_clearance_decision is outside P72 availability-and-capture-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    }
+  ],
+  "url_and_uri_policy": {
+    "uri_r_review_required": true,
+    "arbitrary_public_query_url_allowed": false,
+    "private_url_allowed": false,
+    "credentialed_url_allowed": false,
+    "local_url_allowed": false,
+    "localhost_url_allowed": false,
+    "file_url_allowed": false,
+    "data_url_allowed": false,
+    "javascript_url_allowed": false,
+    "raw_url_publication_allowed": false,
+    "normalized_url_publication_allowed_after_review": true,
+    "url_hashing_allowed_future": true,
+    "url_redaction_required_for_sensitive_inputs": true,
+    "allowed_uri_sources": [
+      "source_record",
+      "source_pack_future",
+      "reviewed_search_need_future",
+      "manual_observation_future",
+      "fixture_example"
+    ],
+    "prohibited_uri_sources": [
+      "raw_public_query_parameter",
+      "user_private_url",
+      "credentialed_url",
+      "local_path",
+      "uploaded_file"
+    ],
+    "example_uri_r": "https://example.invalid/software",
+    "notes": [
+      "Example URI-R is a synthetic non-resolving placeholder and is never fetched."
+    ]
+  },
+  "source_policy_review": {
+    "official_policy_review_required": true,
+    "source_terms_review_required": true,
+    "robots_or_source_policy_review_required": true,
+    "automated_access_policy_review_required": true,
+    "memento_cdx_policy_review_required": true,
+    "rate_limit_policy_review_required": true,
+    "retry_after_policy_review_required": true,
+    "cache_policy_review_required": true,
+    "rights_access_policy_review_required": true,
+    "review_status": "review_required",
+    "authoritative_docs_refs": [
+      "docs/reference/SOURCE_SYNC_SOURCE_POLICY.md",
+      "docs/reference/WAYBACK_CDX_MEMENTO_CONNECTOR_APPROVAL.md"
+    ],
+    "notes": [
+      "Official Wayback/CDX/Memento automated access and source policy review is pending; P72 intentionally performs no web browsing or source calls."
+    ]
+  },
+  "user_agent_and_contact_policy": {
+    "descriptive_user_agent_required_future": true,
+    "contact_policy_required_future": true,
+    "contact_value_configured_now": false,
+    "contact_value": null,
+    "fake_contact_forbidden": true,
+    "user_agent_value_configured_now": false,
+    "user_agent_value": null,
+    "operator_decision_required": true,
+    "notes": [
+      "No contact value or User-Agent string is configured by P72; operator decision is required before any future connector implementation."
+    ]
+  },
+  "rate_limit_timeout_retry_circuit_breaker_policy": {
+    "rate_limit_required_future": true,
+    "timeout_required_future": true,
+    "retry_backoff_required_future": true,
+    "retry_after_respect_required_future": true,
+    "circuit_breaker_required_future": true,
+    "cache_required_before_public_use": true,
+    "max_results_per_request_future": null,
+    "max_runtime_ms_future": null,
+    "concurrent_request_limit_future": null,
+    "per_source_qps_future": null,
+    "policy_values_configured_now": false,
+    "operator_review_required": true,
+    "notes": [
+      "Concrete values are operator/source-policy decisions, not fabricated in P72."
+    ]
+  },
+  "cache_first_policy": {
+    "source_cache_required_before_public_use": true,
+    "evidence_ledger_required_for_claims": true,
+    "public_search_reads_cache_not_live_source_future": true,
+    "public_query_fanout_forbidden": true,
+    "cache_invalidation_required_future": true,
+    "freshness_policy_required_future": true,
+    "no_raw_capture_payload_cache": true,
+    "no_archived_content_cache": true,
+    "notes": [
+      "Future public search may only read reviewed cache/evidence outputs, never call Wayback/CDX/Memento live."
+    ]
+  },
+  "expected_source_cache_outputs": [
+    {
+      "output_kind": "wayback_url_availability_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "archived_content_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "cdx_capture_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "archived_content_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "memento_timemap_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "archived_content_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "capture_timestamp_distribution_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "archived_content_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "capture_status_mimetype_digest_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "archived_content_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "nearest_capture_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "archived_content_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    }
+  ],
+  "expected_evidence_ledger_outputs": [
+    {
+      "output_kind": "availability_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "capture_presence_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "capture_absence_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "capture_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "historical_access_path_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "scoped_absence_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    }
+  ],
+  "query_intelligence_relationship": {
+    "demand_dashboard_can_prioritize_future": true,
+    "search_need_can_reference_future": true,
+    "probe_queue_can_request_future": true,
+    "candidate_index_can_receive_future_after_review": true,
+    "known_absence_can_reference_future": true,
+    "query_observation_mutation_allowed_now": false,
+    "result_cache_mutation_allowed_now": false,
+    "miss_ledger_mutation_allowed_now": false,
+    "search_need_mutation_allowed_now": false,
+    "probe_queue_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "notes": [
+      "Query intelligence may only reference this approval pack as future work; P72 mutates no query intelligence object."
+    ]
+  },
+  "public_search_boundary": {
+    "public_search_live_fanout_allowed": false,
+    "public_search_may_read_source_cache_future": true,
+    "public_search_may_read_live_connector_now": false,
+    "public_search_may_accept_arbitrary_url_param": false,
+    "static_site_claim_allowed_now": false,
+    "hosted_backend_claim_allowed_now": false,
+    "limitations": [
+      "No public search route is changed and no Wayback/CDX/Memento live search is enabled."
+    ]
+  },
+  "rights_access_and_risk_policy": {
+    "rights_classification": "source_terms_apply",
+    "access_policy": [
+      "metadata_only",
+      "no_capture_replay",
+      "no_downloads",
+      "no_access_restricted_downloads",
+      "no_raw_content"
+    ],
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "capture_replay_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "risk_review_required": true,
+    "limitations": [
+      "Availability/capture metadata observations are not rights clearance or malware safety."
+    ]
+  },
+  "privacy_policy": {
+    "privacy_classification": "uri_review_required",
+    "private_data_allowed": false,
+    "credentials_required_now": false,
+    "account_access_allowed": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_private_uri": false,
+    "publishable": true,
+    "limitations": [
+      "P72 examples contain no private paths, credentials, accounts, private URLs, or credentialed URI-R values."
+    ]
+  },
+  "approval_checklist": [
+    {
+      "checklist_id": "approval.source_policy_review",
+      "item": "source_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.official_docs_review",
+      "item": "official_docs_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.uri_privacy_policy_review",
+      "item": "uri_privacy_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.user_agent_contact_decision",
+      "item": "user_agent_contact_decision",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.rate_limit_timeout_retry_policy",
+      "item": "rate_limit_timeout_retry_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.circuit_breaker_policy",
+      "item": "circuit_breaker_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.cache_output_contract_review",
+      "item": "cache_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.evidence_output_contract_review",
+      "item": "evidence_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.rights_access_risk_review",
+      "item": "rights_access_risk_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.privacy_review",
+      "item": "privacy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.public_search_boundary_review",
+      "item": "public_search_boundary_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.operator_approval",
+      "item": "operator_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "approval.human_approval",
+      "item": "human_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P72 does not approve or configure the connector."
+    }
+  ],
+  "operator_checklist": [
+    {
+      "checklist_id": "operator.configure_user_agent",
+      "item": "configure_user_agent",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.configure_contact_policy",
+      "item": "configure_contact_policy",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.configure_timeout",
+      "item": "configure_timeout",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.configure_rate_limit",
+      "item": "configure_rate_limit",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.configure_retry_backoff",
+      "item": "configure_retry_backoff",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.configure_circuit_breaker",
+      "item": "configure_circuit_breaker",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.configure_cache_destination",
+      "item": "configure_cache_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.configure_evidence_destination",
+      "item": "configure_evidence_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.configure_uri_privacy_filter",
+      "item": "configure_uri_privacy_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.enable_connector_flag_future",
+      "item": "enable_connector_flag_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.monitor_connector_health_future",
+      "item": "monitor_connector_health_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    },
+    {
+      "checklist_id": "operator.record_approval_evidence",
+      "item": "record_approval_evidence",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P72 does not approve or configure the connector."
+    }
+  ],
+  "implementation_prerequisites": [
+    "Official source policy review",
+    "URI privacy policy review",
+    "User-Agent and contact decision",
+    "Bounded rate-limit, timeout, retry, and circuit-breaker values",
+    "Source sync worker runtime approval",
+    "Source cache and evidence ledger runtime approval",
+    "Connector implementation review"
+  ],
+  "limitations": [
+    "Approval pack only; no connector runtime, source call, capture replay, WARC download, cache write, evidence write, or index mutation is implemented."
+  ],
+  "no_runtime_guarantees": {
+    "connector_runtime_implemented": false,
+    "connector_approved_now": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "archived_content_fetched": false,
+    "capture_replayed": false,
+    "warc_downloaded": false,
+    "public_search_live_fanout_enabled": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "mirroring_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "credentials_used": false,
+    "telemetry_exported": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "notes": [
+    "Fast learning, slow truth: Wayback/CDX/Memento metadata may become evidence only after approval, URI review, cache, review, and promotion gates."
+  ]
+}

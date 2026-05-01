@@ -15,3 +15,7 @@ P71 adds an approval pack for a future Internet Archive metadata connector. The 
 
 Future implementation requires official source policy review, User-Agent/contact policy, rate limits, timeouts, retry/backoff, circuit breakers, cache-first output to source cache, evidence attribution to the evidence ledger, and operator approval.
 <!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->
+
+## P72 Wayback/CDX/Memento Connector Approval Pack v0
+
+P72 defines a future availability/capture-metadata-only Wayback/CDX/Memento connector approval pack. The connector is not implemented, no external calls are made, public queries do not fan out to Wayback/CDX/Memento, arbitrary URL fetch is forbidden, archived content fetch/capture replay/WARC download are forbidden, and future outputs must be cache-first/evidence-first after URI privacy review and approval.

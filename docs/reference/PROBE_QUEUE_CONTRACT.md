@@ -147,3 +147,7 @@ Probe queue items may later suggest approved source sync work whose outputs ente
 
 This cross-reference keeps `docs/reference/PROBE_QUEUE_CONTRACT.md` aligned with the source-ingestion boundary: IA metadata may become future reviewed cache/evidence input, never direct truth or live public search fanout.
 <!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->
+
+## P72 Wayback/CDX/Memento Connector Approval Pack v0
+
+P72 defines a future availability/capture-metadata-only Wayback/CDX/Memento connector approval pack. The connector is not implemented, no external calls are made, public queries do not fan out to Wayback/CDX/Memento, arbitrary URL fetch is forbidden, archived content fetch/capture replay/WARC download are forbidden, and future outputs must be cache-first/evidence-first after URI privacy review and approval.
