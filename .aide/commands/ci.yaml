@@ -388,6 +388,14 @@ steps:
     run: python scripts/validate_public_search_production_contract.py
   - id: public_search_production_contract_tests
     run: python -m unittest tests.operations.test_public_search_production_contract tests.scripts.test_validate_public_search_production_contract
+  - id: hosted_public_search_config_check
+    run: python scripts/run_hosted_public_search.py --check-config
+  - id: hosted_public_search_wrapper_check
+    run: python scripts/check_hosted_public_search_wrapper.py
+  - id: hosted_public_search_wrapper_validator
+    run: python scripts/validate_hosted_public_search_wrapper.py
+  - id: hosted_public_search_wrapper_tests
+    run: python -m unittest tests.operations.test_hosted_public_search_wrapper tests.scripts.test_validate_hosted_public_search_wrapper tests.scripts.test_check_hosted_public_search_wrapper
   - id: public_search_result_card_contract_validator
     run: python scripts/validate_public_search_result_card_contract.py
   - id: public_search_result_card_contract_tests
@@ -413,7 +421,7 @@ notes:
   - The architecture-boundary check remains intentionally narrow and Python import focused.
   - The Python-oracle golden check is stdlib-only and verifies committed future-Rust parity fixtures without requiring Rust tooling.
   - The search-usefulness audit is stdlib-only and keeps external baselines as pending manual observations; it does not scrape Google, Internet Archive, or any other external source.
-  - Public Search API Contract v0 validation is stdlib-only and contract-first; Public Search Production Contract v0 validation freezes P54 wrapper route/schema requirements; Local Public Search Runtime v0 remains local/prototype only and does not host `/search` or `/api/v1/search`, enable live probes, fetch URLs, scrape, download, install, upload, add accounts/telemetry, or search local paths.
+  - Public Search API Contract v0 validation is stdlib-only and contract-first; Public Search Production Contract v0 validation freezes P54 wrapper route/schema requirements; Hosted Public Search Wrapper v0 validation checks a local_index_only wrapper and local rehearsal only; Local Public Search Runtime v0 remains local/prototype and hosted deployment evidence remains operator-gated, with no live probes, URL fetches, scraping, downloads, installs, uploads, accounts/telemetry, or caller local path search.
   - Public Search Result Card Contract v0 validation is stdlib-only and contract-only; it does not emit live result cards, add runtime routes, enable downloads, installs, execution, uploads, malware-safety claims, rights-clearance claims, or production ranking guarantees.
   - Public Search Safety / Abuse Guard v0 validation is stdlib-only and constrains the local runtime; it does not implement rate-limit middleware, telemetry runtime, auth/accounts, hosted backend, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, or production safety claims.
   - Local Public Search Runtime v0 validation is stdlib-only local/prototype backend verification; it opens no public listener, deploys nothing, calls no external sources, and adds no hosted backend, downloads, installs, uploads, accounts, telemetry, live probes, or production claims.

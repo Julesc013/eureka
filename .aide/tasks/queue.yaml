@@ -699,9 +699,79 @@
     {
       "id": "hosted_public_search_wrapper_v0",
       "title": "P54 Hosted Public Search Wrapper v0",
-      "status": "recommended_next_codex_safe",
+      "status": "completed_operator_gated",
       "priority": 95,
-      "notes": "Next Codex-safe branch should implement the P53 contract as a hosted wrapper in local_index_only mode only, preserving disabled live probes, downloads, uploads, installs, local paths, arbitrary URL fetch, accounts, telemetry, AI runtime, source connector runtime, and no production claim."
+      "notes": "Implemented P54 hosted public search wrapper readiness under control/audits/hosted-public-search-wrapper-v0 with stdlib wrapper, config validation, local rehearsal check, docs, Docker/Render templates, validator/tests, and metadata. It remains local_index_only, not deployed, and preserves disabled live probes, downloads, uploads, installs, local paths, arbitrary URL fetch, accounts, telemetry, AI runtime, source connector runtime, index mutation, pack import, staging runtime, and no hosted availability claim."
+    },
+    {
+      "id": "public_search_index_builder_v0",
+      "title": "P55 Public Search Index Builder v0",
+      "status": "recommended_next_codex_safe",
+      "priority": 96,
+      "notes": "Build the controlled public search index path for the hosted wrapper without live probes, arbitrary URL fetching, downloads, uploads, accounts, telemetry, or master-index mutation."
+    },
+    {
+      "id": "static_site_search_integration_v0",
+      "title": "P56 Static Site Search Integration v0",
+      "status": "queued_codex_safe",
+      "priority": 97,
+      "notes": "Wire static handoff configuration to a verified backend URL only when evidence exists; keep GitHub Pages static-only and avoid fake hosted URLs."
+    },
+    {
+      "id": "public_search_safety_evidence_v0",
+      "title": "P57 Public Search Safety Evidence v0",
+      "status": "queued_codex_safe",
+      "priority": 98,
+      "notes": "Expand safety evidence for hosted wrapper behavior without enabling live probes, downloads, uploads, local paths, accounts, telemetry, or external calls."
+    },
+    {
+      "id": "hosted_public_search_rehearsal_v0",
+      "title": "P58 Hosted Public Search Rehearsal v0",
+      "status": "operator_gated_future",
+      "priority": 99,
+      "notes": "Requires an operator-hosted wrapper URL and recorded deployment evidence before rehearsal can claim hosted behavior."
+    },
+    {
+      "id": "query_observation_contract_v0",
+      "title": "P59 Query Observation Contract v0",
+      "status": "queued_codex_safe",
+      "priority": 100,
+      "notes": "Define privacy-filtered query observation records before any runtime query intelligence collection exists."
+    },
+    {
+      "id": "shared_query_result_cache_v0",
+      "title": "P60 Shared Query/Result Cache v0",
+      "status": "queued_codex_safe",
+      "priority": 101,
+      "notes": "Plan or implement controlled cache behavior only after query observation contract boundaries are clear."
+    },
+    {
+      "id": "search_miss_ledger_v0",
+      "title": "P61 Search Miss Ledger v0",
+      "status": "queued_codex_safe",
+      "priority": 102,
+      "notes": "Record bounded misses as reusable search needs without mutating authoritative truth."
+    },
+    {
+      "id": "search_need_record_v0",
+      "title": "P62 Search Need Record v0",
+      "status": "queued_codex_safe",
+      "priority": 103,
+      "notes": "Define durable search need records for future candidate generation and evidence-gated promotion."
+    },
+    {
+      "id": "probe_queue_v0",
+      "title": "P63 Probe Queue v0",
+      "status": "approval_gated_future",
+      "priority": 104,
+      "notes": "Define queue semantics before any live probe runtime; keep connectors disabled until explicit approval."
+    },
+    {
+      "id": "candidate_index_v0",
+      "title": "P64 Candidate Index v0",
+      "status": "queued_codex_safe",
+      "priority": 105,
+      "notes": "Define candidate index boundaries and validation gates without mutating the master index."
     }
   ]
 }

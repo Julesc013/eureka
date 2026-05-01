@@ -582,8 +582,17 @@
         "public-search-production-contract-v0"
       ],
       "title": "Implement the P53 public search production contract as a hosted local-index wrapper only after preserving disabled capability flags",
-      "status": "open_follow_up",
+      "status": "addressed_by_hosted_public_search_wrapper_v0_operator_deployment_pending",
       "suggested_milestone": "P54 Hosted Public Search Wrapper v0"
+    },
+    {
+      "id": "audit-backlog-hosted-public-search-deployment-evidence",
+      "finding_refs": [
+        "hosted-public-search-wrapper-v0"
+      ],
+      "title": "Deploy the hosted public search wrapper to an operator-selected backend and record evidence",
+      "status": "operator_gated_follow_up",
+      "suggested_milestone": "P58 Hosted Public Search Rehearsal v0"
     }
   ]
 }

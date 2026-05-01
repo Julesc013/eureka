@@ -7,6 +7,12 @@
   "no_live_backend_implemented": true,
   "current_local_api_prefix": "/api",
   "current_local_api_public_contract": false,
+  "hosted_public_search_wrapper_status": "implemented_local_prototype",
+  "hosted_public_search_wrapper": "scripts/run_hosted_public_search.py",
+  "hosted_public_search_wrapper_check": "scripts/check_hosted_public_search_wrapper.py",
+  "hosted_public_deployment_verified": false,
+  "hosted_backend_deployed": false,
+  "public_search_mode": "local_index_only",
   "routes": [
     {
       "path_template": "/healthz",
@@ -281,6 +287,7 @@
     "All routes in this file are future reservations.",
     "The registry does not create route handlers, deploy a backend, or define a production-stable API.",
     "Public Search Safety / Abuse Guard v0 constrains Local Public Search Runtime v0 while hosted backend routes remain undeployed. Public Search Production Contract v0 now freezes the P54 wrapper route and schema requirements without hosting them.",
-    "No live backend, rate-limit middleware, live probes, downloads, uploads, local path search, or arbitrary URL fetch is implemented by the safety guard."
+    "No live backend, rate-limit middleware, live probes, downloads, uploads, local path search, or arbitrary URL fetch is implemented by the safety guard.",
+    "Hosted Public Search Wrapper v0 adds a local/prototype wrapper script for selected public search routes while preserving no deployed live backend and no verified hosted deployment."
   ]
 }

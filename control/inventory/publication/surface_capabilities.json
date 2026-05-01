@@ -275,7 +275,15 @@
         "contracts/api/public_search_status.v0.json",
         "docs/reference/PUBLIC_SEARCH_PRODUCTION_CONTRACT.md",
         "scripts/validate_public_search_production_contract.py",
-        "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json"
+        "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
+        "scripts/run_hosted_public_search.py",
+        "scripts/check_hosted_public_search_wrapper.py",
+        "scripts/validate_hosted_public_search_wrapper.py",
+        "docs/operations/HOSTED_PUBLIC_SEARCH.md",
+        "docs/operations/PUBLIC_SEARCH_HOSTING.md",
+        "docs/operations/PUBLIC_SEARCH_ENVIRONMENT.md",
+        "docs/operations/PUBLIC_SEARCH_ROLLBACK.md",
+        "control/audits/hosted-public-search-wrapper-v0/hosted_public_search_wrapper_report.json"
       ],
       "reserved_paths": [
         "/search",
@@ -301,9 +309,9 @@
       "supports_external_sources": false,
       "enabled_by_default": true,
       "requires_operator_signoff": true,
-      "current_limitations": "Local/prototype backend runtime only with static handoff pages; no hosted backend, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
-      "next_step": "P54 Hosted Public Search Wrapper v0, with local_index_only and hosted-search false until deployment evidence exists.",
-      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0. Public Search Rehearsal v0 records local safe-query and blocked-request evidence. P53 freezes the production-facing contract for P54 without deploying a hosted backend."
+      "current_limitations": "Local/prototype backend runtime plus P54 hosted wrapper readiness only; no deployed hosted backend, verified hosted URL, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
+      "next_step": "P55 Public Search Index Builder v0, while hosted wrapper deployment evidence remains operator-gated.",
+      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0. Public Search Rehearsal v0 records local safe-query and blocked-request evidence. P53 freezes the production-facing contract for P54 without deploying a hosted backend. P54 adds a deployable wrapper and local rehearsal only; hosted deployment remains unverified."
     },
     {
       "id": "public_search_static_handoff",

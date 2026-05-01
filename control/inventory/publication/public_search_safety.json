@@ -6,6 +6,12 @@
   "no_runtime_implemented": false,
   "local_public_search_runtime_implemented": true,
   "hosted_public_search_runtime_implemented": false,
+  "hosted_public_search_wrapper_status": "implemented_local_prototype",
+  "hosted_public_search_wrapper": "scripts/run_hosted_public_search.py",
+  "hosted_public_search_wrapper_check": "scripts/check_hosted_public_search_wrapper.py",
+  "hosted_public_search_wrapper_validator": "scripts/validate_hosted_public_search_wrapper.py",
+  "hosted_public_deployment_verified": false,
+  "hosted_public_backend_deployed": false,
   "local_rehearsal_status": "completed",
   "local_rehearsal": "control/audits/public-search-rehearsal-v0/public_search_rehearsal_report.json",
   "no_public_search_live": true,
@@ -274,8 +280,11 @@
     "Public Search Safety / Abuse Guard v0 is now enforced by Local Public Search Runtime v0 for local/prototype routes.",
     "It does not implement rate-limit middleware, auth, sessions, telemetry, logging runtime, live probes, downloads, installers, uploads, local path ingestion, or backend hosting.",
     "Public Search Rehearsal v0 records local safe-query and blocked-request evidence.",
-    "Hosted public search exposure remains blocked until the readiness checklist, operator controls, and hosted rehearsal gates are satisfied."
+    "Hosted public search exposure remains blocked until the readiness checklist, operator controls, and hosted rehearsal gates are satisfied.",
+    "Hosted Public Search Wrapper v0 adds local/prototype wrapper readiness and rehearsal checks for local_index_only routes only. It does not deploy hosted search, enable live probes, add telemetry, add accounts, or change no_hosted_public_search_live."
   ],
   "production_contract": "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
-  "production_contract_status": "frozen_for_p54_hosted_wrapper"
+  "production_contract_status": "frozen_for_p54_hosted_wrapper",
+  "hosted_wrapper_report": "control/audits/hosted-public-search-wrapper-v0/hosted_public_search_wrapper_report.json",
+  "hosted_wrapper_report_status": "implemented_local_prototype_not_deployed"
 }

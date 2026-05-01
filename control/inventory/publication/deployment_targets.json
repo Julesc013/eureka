@@ -83,6 +83,13 @@
       "base_url": null,
       "hosted_url": null,
       "local_dev_url": "http://127.0.0.1:8080/search",
+      "wrapper_script": "scripts/run_hosted_public_search.py",
+      "wrapper_check": "scripts/check_hosted_public_search_wrapper.py",
+      "wrapper_validator": "scripts/validate_hosted_public_search_wrapper.py",
+      "wrapper_status": "implemented_local_prototype",
+      "hosted_deployment_verified": false,
+      "hosted_backend_deployed": false,
+      "public_search_mode": "local_index_only",
       "deployment_approved": false,
       "workflow_configured": false,
       "deployment_success_claimed": false,
@@ -102,6 +109,7 @@
       "notes": [
         "Public Search Static Handoff v0 does not configure or deploy this backend.",
         "The only current URL is a localhost local-runtime hint, not public deployment evidence.",
+        "Hosted Public Search Wrapper v0 adds a deployable local/prototype wrapper and template files only.",
         "Hosted search must remain unavailable until a later rehearsal/deployment milestone records approved configuration and evidence.",
         "Live probes, downloads, installs, uploads, local paths, accounts, and telemetry remain disabled."
       ]

@@ -3866,6 +3866,134 @@
       "failure_means": "P52 audit pack existence, JSON parseability, static-only posture, workflow upload path, or validator CLI behavior regressed.",
       "advisory_or_required": "required",
       "notes": "Focused tests for the P52 evidence pack and validator; they do not call external sources, mutate indexes, stage packs, deploy, or query GitHub."
+    },
+    {
+      "test_id": "hosted_public_search_config_check",
+      "label": "Hosted public search wrapper config check",
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "category": "public_alpha",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The P54 hosted wrapper safe environment defaults or fail-closed guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates local_index_only, disabled live probes/downloads/uploads/local paths/arbitrary URL fetch/install actions/telemetry, and no deployment evidence claims."
+    },
+    {
+      "test_id": "hosted_public_search_wrapper_check",
+      "label": "Hosted public search wrapper local rehearsal",
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "category": "public_alpha",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The P54 wrapper route rehearsal or forbidden-parameter rejection regressed.",
+      "advisory_or_required": "required",
+      "notes": "Runs in-process against the stdlib wrapper; it opens no public listener, deploys nothing, calls no external sources, and enables no live probes/downloads/uploads/accounts/telemetry."
+    },
+    {
+      "test_id": "hosted_public_search_wrapper_check_json",
+      "label": "Hosted public search wrapper local rehearsal JSON",
+      "command": "python scripts/check_hosted_public_search_wrapper.py --json",
+      "category": "public_alpha",
+      "owner_area": "scripts",
+      "required_for": [
+        "full",
+        "public_alpha"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The P54 wrapper JSON rehearsal output stopped reporting route and hard-boolean evidence.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable local rehearsal evidence only; no hosted deployment is performed."
+    },
+    {
+      "test_id": "hosted_public_search_wrapper_validator",
+      "label": "Hosted public search wrapper validator",
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The P54 audit pack, scripts, docs, inventory posture, templates, or no-overclaim guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates hosted-wrapper readiness only; it performs no network calls and does not deploy, enable live probes, add telemetry/accounts, mutate indexes, import packs, or stage packs."
+    },
+    {
+      "test_id": "hosted_public_search_wrapper_validator_json",
+      "label": "Hosted public search wrapper validator JSON",
+      "command": "python scripts/validate_hosted_public_search_wrapper.py --json",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "The P54 validator JSON report stopped being machine-readable.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable validator output for P54 wrapper readiness."
+    },
+    {
+      "test_id": "hosted_public_search_wrapper_tests",
+      "label": "Hosted public search wrapper tests",
+      "command": "python -m unittest tests.operations.test_hosted_public_search_wrapper tests.scripts.test_validate_hosted_public_search_wrapper tests.scripts.test_check_hosted_public_search_wrapper",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P54 wrapper scripts, audit pack, deployment-template safety, or validator CLI behavior regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P54 tests; they do not call external sources, deploy, mutate indexes, import packs, stage packs, or load AI providers."
     }
   ]
 }

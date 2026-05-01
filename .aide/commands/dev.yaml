@@ -732,6 +732,18 @@ steps:
     run: python scripts/validate_public_search_production_contract.py --json
   - id: public_search_production_contract_tests
     run: python -m unittest tests.operations.test_public_search_production_contract tests.scripts.test_validate_public_search_production_contract
+  - id: hosted_public_search_config_check
+    run: python scripts/run_hosted_public_search.py --check-config
+  - id: hosted_public_search_wrapper_check
+    run: python scripts/check_hosted_public_search_wrapper.py
+  - id: hosted_public_search_wrapper_check_json
+    run: python scripts/check_hosted_public_search_wrapper.py --json
+  - id: hosted_public_search_wrapper_validator
+    run: python scripts/validate_hosted_public_search_wrapper.py
+  - id: hosted_public_search_wrapper_validator_json
+    run: python scripts/validate_hosted_public_search_wrapper.py --json
+  - id: hosted_public_search_wrapper_tests
+    run: python -m unittest tests.operations.test_hosted_public_search_wrapper tests.scripts.test_validate_hosted_public_search_wrapper tests.scripts.test_check_hosted_public_search_wrapper
   - id: public_search_result_card_contract_validator
     run: python scripts/validate_public_search_result_card_contract.py
   - id: public_search_result_card_contract_validator_json
@@ -767,7 +779,7 @@ notes:
   - Bundle inspection remains a local bootstrap readback seam; path-based inspection is a demo choice and not a final upload or import contract.
   - The native CLI proof remains bootstrap-scale and does not imply a final CLI, TUI, GUI, or packaging direction.
   - The local stdlib HTTP API proof remains bootstrap-scale and does not imply final auth, HTTPS/TLS, deployment, or durable public route semantics.
-  - Public Search API Contract v0 is contract-first, Local Public Search Runtime v0 implements local/prototype backend `/search` and `/api/v1` search routes, Public Search Static Handoff v0 adds static/no-JS `site/dist` handoff outputs, Public Search Rehearsal v0 records local safe-query and blocked-request evidence, and Public Search Production Contract v0 freezes the P54 wrapper schema/route requirements without hosted deployment, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, accounts, telemetry, or production API claims.
+  - Public Search API Contract v0 is contract-first, Local Public Search Runtime v0 implements local/prototype backend `/search` and `/api/v1` search routes, Public Search Static Handoff v0 adds static/no-JS `site/dist` handoff outputs, Public Search Rehearsal v0 records local safe-query and blocked-request evidence, Public Search Production Contract v0 freezes the P54 wrapper schema/route requirements, and Hosted Public Search Wrapper v0 adds a deployable local_index_only wrapper without hosted deployment evidence, live probes, downloads, installs, uploads, local path search, arbitrary URL fetch, accounts, telemetry, or production API claims.
   - Search Usefulness Source Expansion v2 is fixture-only: it adds six recorded fixture source families and 15 tiny metadata records to the local corpus, moving selected broad audit gaps without live calls, scraping, crawling, external observations, real binaries, download/install/upload actions, local path search, hosted search, or production relevance claims.
   - Search Usefulness Delta v2 is audit-only: it measures Source Expansion v2 status deltas, selected query movement, source-family impact, hard-eval status, public-search smoke status, and pending/manual external baselines without adding retrieval behavior or external observations.
   - Public Search Result Card Contract v0 is contract-only. It defines future result-card semantics without making public search live, adding route handlers, enabling downloads, installs, execution, uploads, malware-safety claims, rights-clearance claims, or production ranking guarantees.

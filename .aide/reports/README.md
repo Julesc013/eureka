@@ -225,3 +225,11 @@ this is contract governance for the future hosted local-index wrapper only and
 does not add backend hosting, live probes, source connectors, telemetry
 runtime, accounts, uploads, downloads, installers, arbitrary URL fetching,
 index mutation, AI runtime, or hosted-search claims.
+
+Hosted Public Search Wrapper v0 records its committed audit pack under
+`control/audits/hosted-public-search-wrapper-v0/`, plus wrapper, checker,
+validator, docs, templates, and tests. No separate AIDE runtime report is
+needed; this is local wrapper readiness and rehearsal only and does not deploy
+a backend, verify hosted availability, enable live probes, downloads, uploads,
+accounts, telemetry, arbitrary URL fetch, source connectors, AI runtime, index
+mutation, pack import, or staging runtime.
