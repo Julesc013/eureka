@@ -790,16 +790,16 @@
     {
       "id": "query_privacy_poisoning_guard_v0",
       "title": "P67 Query Privacy and Poisoning Guard v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed",
       "priority": 108,
-      "notes": "Future query-intelligence safety milestone after known absence work; no telemetry or public query learning runtime until privacy/poisoning boundaries are governed."
+      "notes": "Implemented P67 Query Privacy and Poisoning Guard v0 with contract schema, risk taxonomies, synthetic public-safe/rejected/quarantined/throttled examples, dry-run helper, validators, audit pack, docs, tests, and metadata. No runtime guard, persistence, telemetry, account/IP tracking, public query logging, query-intelligence mutation, index mutation, external calls, or live probes were added."
     },
     {
       "id": "demand_dashboard_v0",
       "title": "P68 Demand Dashboard v0",
-      "status": "queued_codex_safe",
+      "status": "queued_codex_safe_next",
       "priority": 109,
-      "notes": "Future query-intelligence visibility milestone after privacy/poisoning guard; no telemetry or public query learning runtime until governed."
+      "notes": "Expected next branch P68 after privacy/poisoning guard. Must remain aggregate-contract-only unless explicitly governed; no telemetry, public query logging, account/IP tracking, or fabricated demand counts."
     },
     {
       "id": "source_sync_worker_contract_v0",
@@ -856,6 +856,13 @@
       "status": "queued_codex_safe_future",
       "priority": 117,
       "notes": "Future contract after known absence/privacy/demand/source-cache sequence; do not implement runtime pages or mutate indexes without governed contracts."
+    },
+    {
+      "id": "source_page_contract_v0",
+      "title": "P77 Source Page Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 118,
+      "notes": "Future contract after object page work; do not implement runtime pages, live source calls, downloads, uploads, or index mutation without governed contracts."
     }
   ]
 }

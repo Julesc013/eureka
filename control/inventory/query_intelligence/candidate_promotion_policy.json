@@ -23,6 +23,7 @@
   "conflict_review_required": true,
   "destructive_merge_allowed": false,
   "next_contracts": [
+    "query_privacy_poisoning_guard",
     "known_absence_page",
     "demand_dashboard",
     "source_sync_worker",

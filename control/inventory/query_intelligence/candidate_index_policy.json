@@ -24,6 +24,7 @@
   "live_probes_enabled": false,
   "promotion_policy_required": true,
   "next_contracts": [
+    "query_privacy_poisoning_guard",
     "candidate_promotion_policy",
     "known_absence_page",
     "demand_dashboard",

@@ -5485,6 +5485,136 @@
       "failure_means": "Focused P66 schema, examples, validators, dry-run, docs, privacy, scoped absence, safe actions, or no-mutation tests regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P66 tests; no telemetry, persistence, runtime known absence pages, live probes, source-cache mutation, evidence-ledger mutation, external calls, or index mutation."
+    },
+    {
+      "test_id": "query_guard_decision_examples_validator",
+      "label": "Query guard decision examples validator",
+      "command": "python scripts/validate_query_guard_decision.py --all-examples",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P67 query guard examples, checksums, privacy risks, poisoning risks, aggregate eligibility, redaction, or no-mutation guarantees regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic query guard examples only; no runtime guard, telemetry, account/IP tracking, query logging, query-intelligence mutation, index mutation, external calls, or live probes."
+    },
+    {
+      "test_id": "query_guard_decision_examples_validator_json",
+      "label": "Query guard decision examples validator JSON",
+      "command": "python scripts/validate_query_guard_decision.py --all-examples --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P67 example validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON output for P67 example validation."
+    },
+    {
+      "test_id": "query_privacy_poisoning_guard_contract_validator",
+      "label": "Query privacy and poisoning guard contract validator",
+      "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P67 contract schema, docs, audit pack, policy inventory, no-runtime, no-telemetry, no-tracking, or no-mutation posture regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates P67 governance only; no runtime guard, telemetry, account/IP tracking, query logging, query-intelligence mutation, public search mutation, index mutation, external calls, or live probes."
+    },
+    {
+      "test_id": "query_privacy_poisoning_guard_contract_validator_json",
+      "label": "Query privacy and poisoning guard contract validator JSON",
+      "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P67 contract validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON output for P67 contract validation."
+    },
+    {
+      "test_id": "query_guard_dry_run_json",
+      "label": "Query guard dry-run JSON helper",
+      "command": "python scripts/dry_run_query_guard.py --query \"windows 7 apps\" --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "sub-second",
+      "failure_means": "P67 dry-run helper failed or stopped emitting a safe stdout-only guard decision.",
+      "advisory_or_required": "required",
+      "notes": "Dry-run helper emits stdout only and writes no guard store, query log, telemetry, account/IP tracking, query-intelligence records, indexes, or external calls."
+    },
+    {
+      "test_id": "query_privacy_poisoning_guard_contract_tests",
+      "label": "Query privacy and poisoning guard contract tests",
+      "command": "python -m unittest tests.operations.test_query_privacy_poisoning_guard_contract tests.scripts.test_validate_query_guard_decision tests.scripts.test_validate_query_privacy_poisoning_guard_contract tests.scripts.test_dry_run_query_guard",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P67 schema, examples, validators, dry-run, docs, privacy, poisoning, aggregate eligibility, or no-mutation tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P67 tests; no telemetry, persistence, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index mutation."
     }
+  ],
+  "notes": [
+    "P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only contract/example governance; it adds no runtime guard, persistence, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation."
   ]
 }

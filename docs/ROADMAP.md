@@ -814,3 +814,9 @@ Next Codex-safe branch: P66 Known Absence Page v0.
 ## P66 Known Absence Page v0
 
 Known Absence Page v0 is contract-only. It defines scoped absence, not global absence, for future no-result explanations with checked/not-checked scope, near misses, weak hits, gap explanations, safe next actions, privacy redaction, and no download/install/upload/live fetch. Known absence page is not a runtime page yet, not evidence acceptance, not candidate promotion, not master-index mutation, and not telemetry.
+
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-START -->
+## P67 Query Privacy and Poisoning Guard
+
+After P67, the recommended next branch is P68 Demand Dashboard v0. Demand dashboard work must remain governed by privacy/poisoning guard outputs and must not fabricate demand counts, add telemetry, track accounts/IPs, or treat aggregate demand as truth.
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->

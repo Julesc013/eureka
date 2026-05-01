@@ -967,3 +967,9 @@ P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate pr
 ## P66 Known Absence Page v0
 
 Known Absence Page v0 is contract-only. It defines scoped absence, not global absence, for future no-result explanations with checked/not-checked scope, near misses, weak hits, gap explanations, safe next actions, privacy redaction, and no download/install/upload/live fetch. Known absence page is not a runtime page yet, not evidence acceptance, not candidate promotion, not master-index mutation, and not telemetry.
+
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-START -->
+## P67 Query Privacy and Poisoning Guard
+
+P67 Query Privacy and Poisoning Guard v0 is complete as contract/schema/example/validator work. It keeps raw query retention default none, classifies privacy and poisoning risk, blocks unsafe public aggregation, and adds no runtime guard, telemetry, account/IP tracking, query logging, external calls, or index mutation.
+<!-- P67-QUERY-PRIVACY-AND-POISONING-GUARD-END -->

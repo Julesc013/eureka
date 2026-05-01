@@ -21,6 +21,7 @@
   "candidate_promotion_runtime_implemented": false,
   "master_index_mutation_allowed": false,
   "next_contracts": [
+    "query_privacy_poisoning_guard",
     "demand_dashboard",
     "source_sync_worker",
     "source_cache_evidence_ledger"

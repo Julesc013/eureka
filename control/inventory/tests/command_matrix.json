@@ -234,7 +234,13 @@
         "known_absence_page_contract_validator",
         "known_absence_page_contract_validator_json",
         "known_absence_page_dry_run_json",
-        "known_absence_page_contract_tests"
+        "known_absence_page_contract_tests",
+        "query_guard_decision_examples_validator",
+        "query_guard_decision_examples_validator_json",
+        "query_privacy_poisoning_guard_contract_validator",
+        "query_privacy_poisoning_guard_contract_validator_json",
+        "query_guard_dry_run_json",
+        "query_privacy_poisoning_guard_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -482,7 +488,13 @@
         "known_absence_page_contract_validator",
         "known_absence_page_contract_validator_json",
         "known_absence_page_dry_run_json",
-        "known_absence_page_contract_tests"
+        "known_absence_page_contract_tests",
+        "query_guard_decision_examples_validator",
+        "query_guard_decision_examples_validator_json",
+        "query_privacy_poisoning_guard_contract_validator",
+        "query_privacy_poisoning_guard_contract_validator_json",
+        "query_guard_dry_run_json",
+        "query_privacy_poisoning_guard_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -659,7 +671,10 @@
         "candidate_promotion_policy_tests",
         "known_absence_page_examples_validator",
         "known_absence_page_contract_validator",
-        "known_absence_page_contract_tests"
+        "known_absence_page_contract_tests",
+        "query_guard_decision_examples_validator",
+        "query_privacy_poisoning_guard_contract_validator",
+        "query_privacy_poisoning_guard_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -1001,7 +1016,13 @@
         "known_absence_page_contract_validator",
         "known_absence_page_contract_validator_json",
         "known_absence_page_dry_run_json",
-        "known_absence_page_contract_tests"
+        "known_absence_page_contract_tests",
+        "query_guard_decision_examples_validator",
+        "query_guard_decision_examples_validator_json",
+        "query_privacy_poisoning_guard_contract_validator",
+        "query_privacy_poisoning_guard_contract_validator_json",
+        "query_guard_dry_run_json",
+        "query_privacy_poisoning_guard_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -1065,6 +1086,7 @@
     "P63 Probe Queue v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, external calls, or index/master-index mutation.",
     "P64 Candidate Index v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index/master-index mutation.",
     "P65 Candidate Promotion Policy v0 validation is stdlib-only contract/example governance; it adds no promotion runtime, automatic acceptance, review queue runtime, candidate/source/evidence/index mutation, telemetry, external calls, or live probes.",
-    "P66 Known Absence Page v0 validation is stdlib-only contract/example governance; it adds no runtime pages, telemetry, persistent query logging, global absence claims, live probes, downloads, uploads, installs, source-cache mutation, evidence-ledger mutation, candidate mutation, external calls, or index/master-index mutation."
+    "P66 Known Absence Page v0 validation is stdlib-only contract/example governance; it adds no runtime pages, telemetry, persistent query logging, global absence claims, live probes, downloads, uploads, installs, source-cache mutation, evidence-ledger mutation, candidate mutation, external calls, or index/master-index mutation.",
+    "P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only contract/example governance; it adds no runtime guard, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation."
   ]
 }

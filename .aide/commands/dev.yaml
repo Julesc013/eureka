@@ -902,6 +902,18 @@ steps:
     run: python scripts/dry_run_known_absence_page.py --query "no-such-local-index-hit" --absence-status scoped_absence --json
   - id: known_absence_page_contract_tests
     run: python -m unittest tests.operations.test_known_absence_page_contract tests.scripts.test_validate_known_absence_page tests.scripts.test_validate_known_absence_page_contract tests.scripts.test_dry_run_known_absence_page
+  - id: query_guard_decision_examples_validator
+    run: python scripts/validate_query_guard_decision.py --all-examples
+  - id: query_guard_decision_examples_validator_json
+    run: python scripts/validate_query_guard_decision.py --all-examples --json
+  - id: query_privacy_poisoning_guard_contract_validator
+    run: python scripts/validate_query_privacy_poisoning_guard_contract.py
+  - id: query_privacy_poisoning_guard_contract_validator_json
+    run: python scripts/validate_query_privacy_poisoning_guard_contract.py --json
+  - id: query_guard_dry_run_json
+    run: python scripts/dry_run_query_guard.py --query "windows 7 apps" --json
+  - id: query_privacy_poisoning_guard_contract_tests
+    run: python -m unittest tests.operations.test_query_privacy_poisoning_guard_contract tests.scripts.test_validate_query_guard_decision tests.scripts.test_validate_query_privacy_poisoning_guard_contract tests.scripts.test_dry_run_query_guard
 notes:
   - No product dev server is defined yet.
   - The Python demo command is a local deterministic bootstrap lane, not a final stack commitment.
@@ -991,3 +1003,4 @@ notes:
   - P63 Probe Queue v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public query logging, probe execution, live source calls, source-cache mutation, evidence-ledger mutation, candidate-index mutation, external calls, or index/master-index mutation.
   - P64 Candidate Index v0 validation is stdlib-only contract/example governance; it adds no telemetry, persistence, public search candidate injection, candidate promotion runtime, source-cache mutation, evidence-ledger mutation, external calls, or index/master-index mutation.
   - P66 Known Absence Page v0 validation is stdlib-only and contract-only; it adds no runtime pages, telemetry, global absence claims, live probes, downloads, uploads, installs, external calls, or index/source/evidence/candidate mutation.
+  - P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only and contract-only; it adds no runtime guard, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation.

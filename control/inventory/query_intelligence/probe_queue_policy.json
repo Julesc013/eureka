@@ -23,6 +23,7 @@
   "operator_required_for_worker_runtime": true,
   "candidate_index_status": "contract_only_p64",
   "next_contracts": [
+    "query_privacy_poisoning_guard",
     "candidate_index",
     "candidate_promotion_policy",
     "known_absence_page",

@@ -23,6 +23,7 @@
   "external_calls_allowed": false,
   "live_probes_allowed": false,
   "next_contracts": [
+    "query_privacy_poisoning_guard",
     "search_need_record",
     "probe_queue",
     "candidate_index",

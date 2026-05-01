@@ -23,6 +23,7 @@
   "external_calls_allowed": false,
   "live_probes_allowed": false,
   "next_contracts": [
+    "query_privacy_poisoning_guard",
     "demand_dashboard",
     "search_miss_ledger",
     "search_need_record",
