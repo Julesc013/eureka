@@ -706,3 +706,7 @@ P70 adds `validate_source_cache_record.py`, `validate_source_cache_contract.py`,
 
 P71 adds `validate_internet_archive_metadata_connector_approval.py`, `validate_internet_archive_metadata_connector_contract.py`, and `dry_run_internet_archive_metadata_connector_approval.py`. Commands: `python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples`, `python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples --json`, `python scripts/validate_internet_archive_metadata_connector_contract.py`, `python scripts/validate_internet_archive_metadata_connector_contract.py --json`, and `python scripts/dry_run_internet_archive_metadata_connector_approval.py --json`. They are stdlib-only and write no connector runtime, telemetry, credentials, source cache, evidence ledger, candidate index, public/local/master indexes, external calls, live IA calls, downloads, file retrieval, mirroring, installs, or execution.
 <!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->
+
+## P72 Wayback/CDX/Memento Connector Approval Pack v0
+
+Completed as an approval-only contract pack. It adds no Wayback/CDX/Memento connector runtime, no external calls, no archived content fetch, no capture replay, no WARC download, no public-query fanout, no telemetry, no credentials, and no source cache/evidence ledger/candidate/index mutation. Next recommended branch: P73 GitHub Releases Connector Approval Pack v0.

@@ -745,6 +745,14 @@
       "priority": 0,
       "notes": "Addressed by control/audits/internet-archive-metadata-connector-approval-v0/internet_archive_metadata_connector_approval_report.json.",
       "addressed_by": "control/audits/internet-archive-metadata-connector-approval-v0/internet_archive_metadata_connector_approval_report.json"
+    },
+    {
+      "id": "audit-backlog-wayback-cdx-memento-connector-approval-v0",
+      "title": "P72 Wayback/CDX/Memento Connector Approval Pack v0 audit pack",
+      "status": "addressed",
+      "priority": 0,
+      "notes": "Addressed by control/audits/wayback-cdx-memento-connector-approval-v0/wayback_cdx_memento_connector_approval_report.json. Approval-only; no live calls, capture replay, WARC download, connector runtime, cache/ledger mutation, or public-query fanout.",
+      "addressed_by": "control/audits/wayback-cdx-memento-connector-approval-v0/wayback_cdx_memento_connector_approval_report.json"
     }
   ]
 }

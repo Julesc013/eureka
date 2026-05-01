@@ -825,16 +825,16 @@
     {
       "id": "wayback_cdx_memento_connector_approval_pack_v0",
       "title": "P72 Wayback/CDX/Memento Connector Approval Pack v0",
-      "status": "queued_codex_safe_future",
+      "status": "completed",
       "priority": 113,
-      "notes": "Next recommended branch after P71; approval pack only, with no live Wayback/CDX/Memento calls or connector runtime without explicit approval."
+      "notes": "Completed P72 as an approval-only availability/capture metadata connector pack; no Wayback/CDX/Memento calls, connector runtime, capture replay, WARC download, source cache/evidence ledger mutation, or public-query fanout."
     },
     {
       "id": "github_releases_connector_approval_pack_v0",
       "title": "P73 GitHub Releases Connector Approval Pack v0",
-      "status": "approval_gated_future",
+      "status": "queued_codex_safe_future",
       "priority": 114,
-      "notes": "Future approval pack after candidate/query-intelligence and source-cache/evidence-ledger contracts; no live GitHub API calls or connector runtime without explicit approval."
+      "notes": "Next recommended branch after P72; approval pack only, with no live GitHub API calls or connector runtime without explicit approval."
     },
     {
       "id": "pypi_metadata_connector_approval_pack_v0",
@@ -862,28 +862,28 @@
       "title": "P77 Public Hosted Deployment Evidence v0",
       "status": "operator_gated_future",
       "priority": 118,
-      "notes": "Future operator evidence pack after hosted wrapper deployment, backend URL configuration, edge/rate limits, and static-site verification. Codex must not fabricate hosted deployment evidence or call provider APIs."
+      "notes": "Future operator evidence pack; do not fabricate hosted deployment evidence or call provider APIs."
     },
     {
       "id": "external_baseline_comparison_report_v0",
       "title": "P78 External Baseline Comparison Report v0 after Manual Batch 0",
       "status": "human_operator_gated_future",
       "priority": 119,
-      "notes": "Future report only after Manual Observation Batch 0 evidence exists. Do not fabricate observations, scrape, call external APIs, or claim superiority from pending baselines."
+      "notes": "Future report only after Manual Observation Batch 0 evidence exists."
     },
     {
       "id": "object_page_contract_v0",
       "title": "P79 Object Page Contract v0",
       "status": "queued_codex_safe_future",
       "priority": 120,
-      "notes": "Future contract after known absence/privacy/demand/source-cache sequence; do not implement runtime pages or mutate indexes without governed contracts."
+      "notes": "Future contract; do not implement runtime pages or mutate indexes without governed contracts."
     },
     {
       "id": "source_page_contract_v0",
       "title": "P80 Source Page Contract v0",
       "status": "queued_codex_safe_future",
       "priority": 121,
-      "notes": "Future contract after object page work; do not implement runtime pages, live source calls, downloads, uploads, or index mutation without governed contracts."
+      "notes": "Future contract; do not implement runtime pages, live source calls, downloads, or index mutation without governed contracts."
     },
     {
       "id": "cross_source_identity_resolution_contract_v0",
@@ -891,6 +891,20 @@
       "status": "queued_codex_safe_future",
       "priority": 122,
       "notes": "Future identity resolution contract after source page work; no runtime identity authority, source trust, or master-index mutation without governed review."
+    },
+    {
+      "id": "ia_metadata_connector_runtime_planning_v0",
+      "title": "P81 IA Metadata Connector Runtime Planning v0 only after approval",
+      "status": "blocked_pending_explicit_approval",
+      "priority": 122,
+      "notes": "Future runtime planning only after IA metadata connector approval, source policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
+    },
+    {
+      "id": "wayback_cdx_memento_connector_runtime_planning_v0",
+      "title": "P82 Wayback/CDX/Memento Connector Runtime Planning v0 only after approval",
+      "status": "blocked_pending_explicit_approval",
+      "priority": 123,
+      "notes": "Future runtime planning only after Wayback/CDX/Memento approval, URI privacy, source policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
     }
   ]
 }

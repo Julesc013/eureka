@@ -693,3 +693,17 @@ notes:
   - id: ia_metadata_connector_approval_tests
     run: python -m unittest tests.operations.test_internet_archive_metadata_connector_approval tests.scripts.test_validate_internet_archive_metadata_connector_approval tests.scripts.test_validate_internet_archive_metadata_connector_contract tests.scripts.test_dry_run_internet_archive_metadata_connector_approval
 <!-- P71-INTERNET-ARCHIVE-METADATA-CONNECTOR-APPROVAL-END -->
+<!-- P72-WAYBACK-CDX-MEMENTO-CONNECTOR-APPROVAL-START -->
+  - id: wayback_cdx_memento_connector_approval_examples_validator
+    run: python scripts/validate_wayback_cdx_memento_connector_approval.py --all-examples
+  - id: wayback_cdx_memento_connector_approval_examples_validator_json
+    run: python scripts/validate_wayback_cdx_memento_connector_approval.py --all-examples --json
+  - id: wayback_cdx_memento_connector_contract_validator
+    run: python scripts/validate_wayback_cdx_memento_connector_contract.py
+  - id: wayback_cdx_memento_connector_contract_validator_json
+    run: python scripts/validate_wayback_cdx_memento_connector_contract.py --json
+  - id: wayback_cdx_memento_connector_dry_run_json
+    run: python scripts/dry_run_wayback_cdx_memento_connector_approval.py --json
+  - id: wayback_cdx_memento_connector_approval_tests
+    run: python -m unittest tests.operations.test_wayback_cdx_memento_connector_approval tests.scripts.test_validate_wayback_cdx_memento_connector_approval tests.scripts.test_validate_wayback_cdx_memento_connector_contract tests.scripts.test_dry_run_wayback_cdx_memento_connector_approval
+<!-- P72-WAYBACK-CDX-MEMENTO-CONNECTOR-APPROVAL-END -->

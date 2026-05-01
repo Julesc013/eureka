@@ -6256,10 +6256,131 @@
       "failure_means": "P71 Internet Archive metadata connector approval drifted or boundary guarantees weakened.",
       "advisory_or_required": "required",
       "notes": "P71 approval-only validation; no IA calls, connector runtime, telemetry, credentials, downloads, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "wayback_cdx_memento_connector_approval_examples_validator",
+      "label": "Wayback CDX Memento connector approval examples validator",
+      "command": "python scripts/validate_wayback_cdx_memento_connector_approval.py --all-examples",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P72 Wayback/CDX/Memento connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P72 approval-only validation; no Wayback/CDX/Memento calls, connector runtime, telemetry, credentials, downloads, capture replay, WARC download, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "wayback_cdx_memento_connector_approval_examples_validator_json",
+      "label": "Wayback CDX Memento connector approval examples validator JSON",
+      "command": "python scripts/validate_wayback_cdx_memento_connector_approval.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P72 Wayback/CDX/Memento connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P72 approval-only validation; no Wayback/CDX/Memento calls, connector runtime, telemetry, credentials, downloads, capture replay, WARC download, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "wayback_cdx_memento_connector_contract_validator",
+      "label": "Wayback CDX Memento connector contract validator",
+      "command": "python scripts/validate_wayback_cdx_memento_connector_contract.py",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P72 Wayback/CDX/Memento connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P72 approval-only validation; no Wayback/CDX/Memento calls, connector runtime, telemetry, credentials, downloads, capture replay, WARC download, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "wayback_cdx_memento_connector_contract_validator_json",
+      "label": "Wayback CDX Memento connector contract validator JSON",
+      "command": "python scripts/validate_wayback_cdx_memento_connector_contract.py --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P72 Wayback/CDX/Memento connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P72 approval-only validation; no Wayback/CDX/Memento calls, connector runtime, telemetry, credentials, downloads, capture replay, WARC download, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "wayback_cdx_memento_connector_dry_run_json",
+      "label": "Wayback CDX Memento connector dry-run JSON",
+      "command": "python scripts/dry_run_wayback_cdx_memento_connector_approval.py --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "seconds",
+      "failure_means": "P72 Wayback/CDX/Memento connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P72 approval-only validation; no Wayback/CDX/Memento calls, connector runtime, telemetry, credentials, downloads, capture replay, WARC download, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "wayback_cdx_memento_connector_approval_tests",
+      "label": "Wayback CDX Memento connector approval tests",
+      "command": "python -m unittest tests.operations.test_wayback_cdx_memento_connector_approval tests.scripts.test_validate_wayback_cdx_memento_connector_approval tests.scripts.test_validate_wayback_cdx_memento_connector_contract tests.scripts.test_dry_run_wayback_cdx_memento_connector_approval",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P72 Wayback/CDX/Memento connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P72 approval-only validation; no Wayback/CDX/Memento calls, connector runtime, telemetry, credentials, downloads, capture replay, WARC download, cache/ledger runtime, or index mutation."
     }
   ],
   "notes": [
     "P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only contract/example governance; it adds no runtime guard, persistence, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation.",
-    "P71 Internet Archive Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no connector runtime, external calls, IA live access, downloads, source cache/evidence ledger mutation, or public-query fanout."
+    "P71 Internet Archive Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no connector runtime, external calls, IA live access, downloads, source cache/evidence ledger mutation, or public-query fanout.",
+    "P72 Wayback/CDX/Memento Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no connector runtime, external calls, capture replay, WARC download, cache/ledger mutation, or public-query fanout."
   ]
 }
