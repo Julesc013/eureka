@@ -158,6 +158,13 @@ These questions are intentionally left open during bootstrap:
 
 ## P59 Query Intelligence Open Questions
 
+P60 answer: the shared query/result cache is contract-only. It may later reuse
+safe result summaries and scoped absence outcomes, but current runtime does not
+write cache entries, persist cache state, publish query cache entries, mutate a
+miss ledger/search need/probe queue/candidate index, or mutate the master index.
+The next question is how P61 should classify and validate misses as ledger
+entries without treating them as truth.
+
 - What aggregate threshold is required before public demand summaries may be published?
 - What retention and deletion controls are required before any hosted query observation runtime exists?
 - What poisoning and spam controls are required before query-derived demand can influence candidate work?

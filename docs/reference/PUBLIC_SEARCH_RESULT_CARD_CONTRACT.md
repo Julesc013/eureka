@@ -281,3 +281,10 @@ P59 Query Observation Contract v0 records only summary-level result posture for
 future query intelligence. It does not copy result cards into a result cache,
 does not publish query observations, and does not mutate candidate, local, or
 master indexes.
+
+## Shared Result Cache Boundary
+
+P60 Shared Query/Result Cache v0 may summarize public-safe result-card fields
+for future reuse. A cache entry is not the full result card, not source
+evidence, not a download/install promise, not telemetry, and not master-index
+truth.

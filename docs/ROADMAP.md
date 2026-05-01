@@ -743,4 +743,18 @@ and Manual Observation Batch 0.
 
 ## P59 Query Observation Contract v0
 
-Completed: privacy-filtered query observation contract and validation. Next Codex-safe branch: P60 Shared Query/Result Cache v0. Human/operator parallel work remains hosted wrapper deployment evidence, backend URL configuration, edge/rate-limit setup, static site verification, and Manual Observation Batch 0 Execution.
+Completed: privacy-filtered query observation contract and validation. P60 now
+defines the shared query/result cache contract without runtime persistence.
+Next Codex-safe branch: P61 Search Miss Ledger v0. Human/operator parallel work
+remains hosted wrapper deployment evidence, backend URL configuration,
+edge/rate-limit setup, static site verification, and Manual Observation Batch 0
+Execution.
+
+## P60 Shared Query/Result Cache v0
+
+Completed: shared cache entry schema, cache key model, scoped cached result and
+absence examples, privacy/freshness/invalidation policy, validators, docs, and
+audit evidence. No runtime cache writes, persistent cache storage, telemetry,
+miss ledger mutation, search need mutation, probe enqueue, candidate-index
+mutation, local-index mutation, or master-index mutation was added. Next
+Codex-safe branch: P61 Search Miss Ledger v0.

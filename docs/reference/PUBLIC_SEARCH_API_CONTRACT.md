@@ -290,3 +290,11 @@ P59 adds `contracts/query/query_observation.v0.json` for future query
 intelligence. Public search routes remain unchanged in P59: they do not write
 query observations, telemetry events, shared result caches, miss ledgers, probe
 jobs, candidate-index records, local indexes, or master-index records.
+
+## P60 Shared Result Cache Boundary
+
+P60 adds `contracts/query/search_result_cache_entry.v0.json` for future shared
+query/result cache entries. Public search routes remain unchanged: they do not
+read or write result cache entries, persist cache state, publish cache entries,
+write miss ledgers or search needs, enqueue probes, mutate candidate indexes,
+or mutate master-index records.

@@ -741,9 +741,9 @@
     {
       "id": "shared_query_result_cache_v0",
       "title": "P60 Shared Query/Result Cache v0",
-      "status": "queued_codex_safe",
+      "status": "completed",
       "priority": 101,
-      "notes": "Next Codex-safe branch after P59; must remain contract/cache-boundary work and preserve privacy/no-mutation guarantees."
+      "notes": "Implemented P60 Shared Query/Result Cache v0 with contract schema, cache key model, synthetic result and scoped-absence examples, dry-run helper, validators, audit pack, docs, tests, and metadata. No runtime cache writes, persistent cache storage, telemetry, public query logging, miss-ledger mutation, search-need mutation, probe enqueueing, candidate-index mutation, local-index mutation, master-index mutation, external calls, or live probes were added."
     },
     {
       "id": "search_miss_ledger_v0",
@@ -807,6 +807,13 @@
       "status": "queued_codex_safe_after_query_sequence",
       "priority": 110,
       "notes": "Future contract only after query intelligence privacy, cache, miss ledger, need record, probe queue, candidate index, and promotion policy are governed; no live connector runtime without approval."
+    },
+    {
+      "id": "source_cache_evidence_ledger_v0",
+      "title": "P70 Source Cache and Evidence Ledger v0",
+      "status": "queued_codex_safe_after_query_sequence",
+      "priority": 111,
+      "notes": "Future source cache/evidence ledger contract after query-intelligence sequence; no live connector runtime without approval."
     }
   ]
 }

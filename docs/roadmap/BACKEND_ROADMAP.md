@@ -635,4 +635,12 @@ query observation contract before query-intelligence runtime work.
 
 ## P59 Query Observation Contract v0
 
-P59 starts the query-intelligence sequence with contract-only query observations. Backend runtime does not persist observations, telemetry, shared cache entries, miss ledger entries, search needs, probe jobs, candidate records, or master-index records. P60 should define the shared query/result cache boundary next.
+P59 starts the query-intelligence sequence with contract-only query observations. Backend runtime does not persist observations, telemetry, shared cache entries, miss ledger entries, search needs, probe jobs, candidate records, or master-index records.
+
+## P60 Shared Query/Result Cache v0
+
+P60 defines the shared query/result cache boundary as contract-only schema,
+examples, validators, docs, and audit evidence. Backend runtime still does not
+read or write cache entries, persist cache state, emit telemetry, write miss
+ledger entries, create search needs, enqueue probes, mutate candidate records,
+or mutate master-index records. P61 should define Search Miss Ledger v0 next.

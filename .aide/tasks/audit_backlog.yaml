@@ -621,9 +621,9 @@
         "query-observation-contract-v0"
       ],
       "title": "Define privacy-filtered query observation records before runtime query intelligence collection",
-      "status": "addressed_by_p59",
-      "suggested_milestone": "P60 Shared Query/Result Cache v0",
-      "addressed_by": "control/audits/query-observation-contract-v0/query_observation_contract_report.json"
+      "status": "addressed_by_p60",
+      "suggested_milestone": "P61 Search Miss Ledger v0",
+      "addressed_by": "control/audits/shared-query-result-cache-v0/shared_query_result_cache_report.json"
     },
     {
       "id": "audit-backlog-query-intelligence-runtime-privacy",
@@ -631,8 +631,9 @@
         "query-observation-contract-v0"
       ],
       "title": "Govern cache, miss ledger, search need, probe, candidate, and aggregate-publication privacy before runtime query learning",
-      "status": "open_follow_up",
-      "suggested_milestone": "P60 Shared Query/Result Cache v0 through P67 Query Privacy and Poisoning Guard v0"
+      "status": "partially_addressed_by_p60",
+      "suggested_milestone": "P61 Search Miss Ledger v0 through P67 Query Privacy and Poisoning Guard v0",
+      "addressed_by": "control/audits/shared-query-result-cache-v0/shared_query_result_cache_report.json"
     }
   ]
 }

@@ -592,3 +592,17 @@ APIs, enable live probes, or mutate indexes.
 - `python scripts/dry_run_query_observation.py --query "windows 7 apps" --json`
 
 These P59 commands validate contract-only query observation examples and docs, or emit a stdout-only dry-run observation. They do not persist query logs, add telemetry, mutate caches, write miss ledgers, enqueue probes, mutate indexes, or call external services.
+
+## Shared Query/Result Cache Contract
+
+- `python scripts/validate_search_result_cache_entry.py --all-examples`
+- `python scripts/validate_search_result_cache_entry.py --all-examples --json`
+- `python scripts/validate_shared_query_result_cache_contract.py`
+- `python scripts/validate_shared_query_result_cache_contract.py --json`
+- `python scripts/dry_run_search_result_cache_entry.py --query "windows 7 apps" --json`
+
+These P60 commands validate contract-only shared query/result cache examples and
+docs, or emit a stdout-only dry-run cache entry. They do not persist cache
+state, add telemetry, write query logs, mutate miss ledgers or search needs,
+enqueue probes, mutate candidate/local/master indexes, or call external
+services.

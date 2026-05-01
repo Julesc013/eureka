@@ -1791,3 +1791,12 @@ hosted evidence capture remain separate work.
 ## P59 Query Observation Decision
 
 Decision: query observation is contract-only in P59. Raw query retention defaults to none, individual observations are not public by default, and no telemetry, runtime persistence, public query logging, result-cache mutation, miss-ledger mutation, probe enqueueing, candidate-index mutation, local-index mutation, or master-index mutation is implemented.
+
+## P60 Shared Query/Result Cache Decision
+
+Decision: shared query/result cache is contract-only in P60. Cache entries
+summarize public-safe result and scoped absence outcomes against an index
+snapshot, but no runtime cache writes, persistent cache storage, telemetry,
+public query logging, miss-ledger mutation, search-need mutation, probe
+enqueueing, candidate-index mutation, local-index mutation, or master-index
+mutation is implemented.

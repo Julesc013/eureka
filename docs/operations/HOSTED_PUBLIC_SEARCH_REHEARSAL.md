@@ -59,10 +59,12 @@ mutation, no pack import, no staging runtime, and no production claim.
 
 ## Next Step
 
-The next Codex-safe branch is P59 Query Observation Contract v0. It defines
-query observation shape and privacy policy only: no telemetry, no persistent
-query logging, no public query observation feed, no result-cache mutation, no
-miss-ledger mutation, no probe enqueueing, and no master-index mutation.
+The next completed query-intelligence steps are P59 Query Observation Contract
+v0 and P60 Shared Query/Result Cache v0. They define privacy-filtered
+observation and shared cache contracts only: no telemetry, no persistent query
+logging, no public query observation feed, no cache writes, no miss-ledger
+mutation, no search-need mutation, no probe enqueueing, and no master-index
+mutation.
 
 Operator parallel work may deploy and verify the hosted wrapper, but public
 claims must not change until evidence exists.

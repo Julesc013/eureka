@@ -3,6 +3,13 @@
 Public Search Index v0 is a committed, deterministic, public-safe index bundle
 for `local_index_only` public search.
 
+## Query Intelligence Cache Boundary
+
+P60 shared query/result cache examples reference the public index build and
+manifest so future cached summaries can be invalidated when the index changes.
+The public index builder does not write query cache entries, miss ledgers,
+search needs, probes, candidate indexes, or master-index records.
+
 ## Artifact Root
 
 `data/public_index/`

@@ -4598,6 +4598,133 @@
       "failure_means": "Focused P59 schema, example, validator, dry-run, audit, docs, or privacy tests regressed.",
       "advisory_or_required": "required",
       "notes": "Focused P59 tests; no telemetry, persistence, runtime query logging, cache mutation, miss ledger, probe queue, external calls, or index mutation."
+    },
+    {
+      "test_id": "search_result_cache_entry_examples_validator",
+      "label": "Search result cache entry examples validator",
+      "command": "python scripts/validate_search_result_cache_entry.py --all-examples",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P60 shared result cache examples, checksums, privacy flags, scoped absence, freshness, or no-mutation guarantees regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic shared query/result cache examples only; no telemetry, persistence, cache runtime writes, miss ledger, search needs, probes, index mutation, or external calls."
+    },
+    {
+      "test_id": "search_result_cache_entry_examples_validator_json",
+      "label": "Search result cache entry examples validator JSON",
+      "command": "python scripts/validate_search_result_cache_entry.py --all-examples --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "contracts/query",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P60 example validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON example validator output for P60."
+    },
+    {
+      "test_id": "shared_query_result_cache_contract_validator",
+      "label": "Shared query/result cache contract validator",
+      "command": "python scripts/validate_shared_query_result_cache_contract.py",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "P60 contract schema, docs, audit pack, policy inventory, or no-runtime/no-telemetry claims regressed.",
+      "advisory_or_required": "required",
+      "notes": "Validates P60 governance only; does not collect, persist, upload, publish, or runtime-cache search results."
+    },
+    {
+      "test_id": "shared_query_result_cache_contract_validator_json",
+      "label": "Shared query/result cache contract validator JSON",
+      "command": "python scripts/validate_shared_query_result_cache_contract.py --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "control/audits",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "sub-second",
+      "failure_means": "Machine-readable P60 contract validation stopped parsing.",
+      "advisory_or_required": "required",
+      "notes": "JSON contract validator output for P60."
+    },
+    {
+      "test_id": "search_result_cache_dry_run_json",
+      "label": "Search result cache dry-run JSON helper",
+      "command": "python scripts/dry_run_search_result_cache_entry.py --query \"windows 7 apps\" --json",
+      "category": "query_intelligence_contract",
+      "owner_area": "scripts",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "sub-second",
+      "failure_means": "P60 dry-run cache helper failed or stopped emitting a valid no-persistence record.",
+      "advisory_or_required": "required",
+      "notes": "Dry-run helper emits stdout only and writes no cache, query log, miss ledger, search need, probe, index, or telemetry state."
+    },
+    {
+      "test_id": "shared_query_result_cache_contract_tests",
+      "label": "Shared query/result cache contract tests",
+      "command": "python -m unittest tests.operations.test_shared_query_result_cache_contract tests.scripts.test_validate_search_result_cache_entry tests.scripts.test_validate_shared_query_result_cache_contract tests.scripts.test_dry_run_search_result_cache_entry",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "docs_only",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Focused P60 schema, examples, validators, dry-run, audit, docs, privacy, or scoped-absence tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "Focused P60 tests; no telemetry, persistence, runtime cache writes, query logging, miss ledger, search need, probe queue, external calls, or index mutation."
     }
   ]
 }

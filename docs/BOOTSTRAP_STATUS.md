@@ -914,3 +914,12 @@ edge/rate limits, and production readiness remain unverified/operator-gated.
 ## P59 Query Observation Contract v0
 
 P59 adds the first Query Intelligence Plane contract under `contracts/query/`, a privacy policy inventory, a synthetic query observation example, validators, docs, and an audit pack. Runtime query observation persistence, telemetry, public query logging, cache writes, miss ledger writes, probe enqueueing, candidate-index mutation, local-index mutation, and master-index mutation remain unimplemented.
+
+## P60 Shared Query/Result Cache v0
+
+P60 adds the shared query/result cache contract under `contracts/query/`, cache
+key schema, synthetic result and scoped-absence examples, validators, docs, and
+an audit pack. Runtime cache reads/writes, persistent cache storage, telemetry,
+public query logging, miss ledger writes, search need writes, probe enqueueing,
+candidate-index mutation, local-index mutation, and master-index mutation remain
+unimplemented.

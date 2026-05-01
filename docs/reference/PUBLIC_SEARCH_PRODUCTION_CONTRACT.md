@@ -102,3 +102,11 @@ record for public search demand. It is contract-only and does not wire public
 search routes to persist observations, add telemetry, mutate the public index,
 write a result cache, write a miss ledger, enqueue probes, mutate a candidate
 index, or mutate the master index.
+
+## P60 Shared Result Cache Boundary
+
+P60 Shared Query/Result Cache v0 defines future cache entries for safe result
+summaries and scoped absence/gap outcomes. The hosted wrapper and local runtime
+still do not read or write cache entries, persist cache state, publish cache
+entries, emit telemetry, write miss ledgers or search needs, enqueue probes,
+mutate candidate indexes, mutate local indexes, or mutate the master index.

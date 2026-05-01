@@ -51,6 +51,11 @@ contract-only records and does not add telemetry, persistent query logging,
 cache mutation, miss-ledger mutation, probe enqueueing, or master-index
 mutation.
 
+P60 Shared Query/Result Cache v0 remains contract-only. It adds no runtime
+cache writes, telemetry, public query logging, miss ledger writes, search need
+writes, probes, candidate-index mutation, local-index mutation, or master-index
+mutation.
+
 Human or operator parallel work may deploy the wrapper, configure a real
 backend URL, configure edge/rate limits, verify the static site, and execute
 Manual Observation Batch 0, but those actions require separate evidence.
