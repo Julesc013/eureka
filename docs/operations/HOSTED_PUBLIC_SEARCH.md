@@ -48,6 +48,12 @@ now publishes `data/search_config.json` and
 `data/public_index_summary.json`, but the hosted backend remains unconfigured
 and no verified backend URL is written into `site/dist`.
 
+P57 adds local safety evidence for the wrapper before hosted rehearsal. The
+evidence runner uses the wrapper in-process, verifies safe routes and 32 blocked
+request cases, checks static handoff and public index safety, and records
+edge/rate-limit evidence as operator-gated. It does not deploy the wrapper or
+claim hosted availability.
+
 ## Safety Posture
 
 The wrapper is read-only and keeps these disabled:

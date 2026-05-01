@@ -855,6 +855,16 @@ uploads, accounts, telemetry, arbitrary URL fetching, AI runtime, index
 mutation, pack import, staging runtime, or production search-quality claim. The
 next Codex-safe branch is `p57-public-search-safety-evidence-v0`.
 
+Public Search Safety Evidence v0 is recorded under
+`control/audits/public-search-safety-evidence-v0/`. It adds a local in-process
+hosted-wrapper evidence runner, validator, docs, tests, and audit report for
+safe queries, blocked request categories, limit/status checks, static handoff
+safety, public-index safety, privacy/redaction, and operator-gated
+rate-limit/edge status. It adds no hosted deployment, live probes, downloads,
+uploads, installs, accounts, telemetry, arbitrary URL fetching, AI runtime,
+index mutation, pack import, staging runtime, or production claim. The next
+Codex-safe branch is `p58-hosted-public-search-rehearsal-v0`.
+
 ## Deferred Priorities
 
 These are intentionally not the next milestone:

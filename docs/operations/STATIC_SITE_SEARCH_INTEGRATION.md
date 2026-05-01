@@ -47,5 +47,7 @@ The static handoff keeps:
 - no AI runtime
 - no production claim
 
-P57 should expand public search safety evidence. P58 may rehearse hosted search
-only after an operator-hosted wrapper URL and evidence exist.
+P57 expands public search safety evidence and checks this static handoff stays
+honest: backend unconfigured by default, no fake hosted URL, no live probes,
+and no downloads/uploads/local paths/arbitrary URL fetch. P58 may rehearse
+hosted search only after an operator-hosted wrapper URL and evidence exist.

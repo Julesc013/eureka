@@ -257,6 +257,11 @@ absence cases. It adds no hosted backend, live probes, downloads, installers,
 uploads, execution, malware-safety claim, rights-clearance claim, telemetry, or
 production ranking guarantee.
 
+Public Search Safety Evidence v0 adds a broader pre-hosted safety check. It
+verifies local result-card safety shape for safe public-search queries while
+downloads, installs, execution, uploads, live probes, and local path access
+remain blocked or disabled.
+
 ## Out Of Scope
 
 This contract and local runtime do not implement hosted backend deployment,

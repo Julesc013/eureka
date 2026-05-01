@@ -84,3 +84,8 @@ P56 adds the static handoff layer for this contract. Static pages publish
 `search_config.json` and `public_index_summary.json` with backend status
 `backend_unconfigured`; the hosted search form stays disabled until a later
 operator evidence pack records a verified backend URL.
+
+P57 adds local safety evidence for this contract. The evidence runner verifies
+safe query behavior, blocked dangerous request parameters, limit behavior,
+status honesty, static handoff safety, public index safety, and hosted-wrapper
+local rehearsal without deploying a backend or claiming production readiness.

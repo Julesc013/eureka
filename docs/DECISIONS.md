@@ -1746,3 +1746,28 @@ pack import, staging runtime, or production search-quality claims. The next
 Codex-safe branch is `p57-public-search-safety-evidence-v0`; operator-parallel
 work remains deploying and verifying the hosted wrapper plus static deployment
 evidence capture.
+
+## ADR-137: Record Public Search Safety Evidence Before Hosted Rehearsal
+
+Status: accepted
+
+Public Search Safety Evidence v0 adds
+`scripts/run_public_search_safety_evidence.py`,
+`scripts/validate_public_search_safety_evidence.py`, focused tests,
+`docs/operations/PUBLIC_SEARCH_SAFETY_EVIDENCE.md`, metadata updates, and
+`control/audits/public-search-safety-evidence-v0/`.
+
+The decision is to require executable local evidence before hosted rehearsal.
+The evidence runner uses the P54 hosted wrapper in-process and checks safe
+queries, 32 blocked dangerous request cases, limits, status endpoints, static
+handoff safety, public index safety, hosted-wrapper safety, privacy/redaction,
+and operator-gated rate-limit/edge status.
+
+P57 deliberately does not deploy a backend, call hosting provider APIs,
+configure DNS, enable live probes, call external source APIs, scrape, add
+source connector runtime, add model calls or AI runtime, add credentials,
+telemetry, accounts, uploads, downloads, installers, arbitrary URL fetching,
+local path access, local/runtime/master-index mutation, pack import, staging
+runtime, edge rate-limit claims, hosted availability claims, or production
+safety claims. The next Codex-safe branch is
+`p58-hosted-public-search-rehearsal-v0`.

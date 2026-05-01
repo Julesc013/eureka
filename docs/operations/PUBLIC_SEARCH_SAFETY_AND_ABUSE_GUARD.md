@@ -12,6 +12,16 @@ downloads, installers, execution, uploads, local path search, or deployment
 provider configuration.
 It does not enable live probes.
 
+## P57 Safety Evidence
+
+Public Search Safety Evidence v0 adds executable local evidence for this guard.
+`python scripts/run_public_search_safety_evidence.py` exercises the hosted
+wrapper in-process, verifies safe queries, rejects 32 blocked request cases,
+checks limits/status/static handoff/public index posture, and records that edge
+rate-limit evidence remains operator-gated. It adds no live probes, downloads,
+uploads, installs, accounts, telemetry, arbitrary URL fetching, hosted
+deployment, or production claim.
+
 ## Why This Exists
 
 Public search accepts user input. The repo needs fixed boundaries for request

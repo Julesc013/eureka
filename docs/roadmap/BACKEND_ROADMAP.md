@@ -614,3 +614,13 @@ default. It does not deploy the P54 wrapper, configure DNS, hardcode a backend
 URL, enable live probes, or mutate indexes. The next Codex-safe branch is
 `p57-public-search-safety-evidence-v0`; operator work remains backend
 deployment, backend URL verification, and static deployment evidence capture.
+
+Public Search Safety Evidence v0 records the P57 checkpoint under
+`control/audits/public-search-safety-evidence-v0/`. It runs the local
+hosted-wrapper safety matrix for safe queries, 32 blocked dangerous request
+cases, query/result limits, status honesty, static handoff safety, public index
+safety, privacy/redaction, and operator-gated rate-limit/edge status. It does
+not deploy a backend, configure edge services, enable live probes, add
+downloads/uploads/installers/accounts/telemetry, fetch arbitrary URLs, or mutate
+indexes. The next backend-facing branch is
+`p58-hosted-public-search-rehearsal-v0`.

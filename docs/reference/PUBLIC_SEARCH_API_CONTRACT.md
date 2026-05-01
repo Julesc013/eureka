@@ -17,6 +17,11 @@ It does not claim production API stability.
 Public Search Safety / Abuse Guard v0 remains the safety source for these local
 routes and any later hosted rehearsal.
 
+Public Search Safety Evidence v0 records executable local evidence for this
+contract: safe queries work, dangerous parameters are rejected, result/query
+limits are enforced, status endpoints stay honest, and the static handoff plus
+public index remain public-safe. This evidence is not hosted deployment proof.
+
 ## Contract Files
 
 - Request schema: `contracts/api/search_request.v0.json`

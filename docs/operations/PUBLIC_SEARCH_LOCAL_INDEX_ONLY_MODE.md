@@ -77,6 +77,12 @@ operator-controlled hosting. It does not change the mode contract or enable
 live probes, downloads, uploads, local paths, arbitrary URL fetch, accounts,
 telemetry, or source connectors.
 
+Public Search Safety Evidence v0 records local proof that this mode is
+preserved across safe queries, blocked dangerous parameters, limit/status
+checks, the hosted-wrapper in-process harness, static handoff files, and the
+generated public index. That evidence remains local/public-alpha only and does
+not make a hosted backend live.
+
 Public Search Index Builder v0 now provides the preferred controlled input for
 this mode under `data/public_index`. The runtime loads
 `search_documents.ndjson` when present and reports

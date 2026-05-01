@@ -722,3 +722,13 @@ while keeping hosted backend status `backend_unconfigured` and hosted form
 submission disabled until operator evidence exists. The next Codex-safe branch
 is `p57-public-search-safety-evidence-v0`; hosted deployment and backend URL
 verification remain operator-gated.
+
+Public Search Safety Evidence v0 records the P57 checkpoint under
+`control/audits/public-search-safety-evidence-v0/`. It runs a local in-process
+hosted-wrapper safety matrix for safe queries, blocked dangerous parameters,
+query/result limits, status honesty, static handoff safety, public index
+safety, privacy/redaction, and operator-gated rate-limit/edge status. It adds
+no hosted deployment, live probes, downloads, uploads, installs, accounts,
+telemetry, arbitrary URL fetching, AI runtime, index mutation, or production
+claim. The next Codex-safe branch is
+`p58-hosted-public-search-rehearsal-v0`.

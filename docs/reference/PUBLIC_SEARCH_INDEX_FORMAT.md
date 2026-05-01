@@ -39,6 +39,11 @@ The index must not include absolute local paths, credentials, executable
 payloads, private cache roots, raw user uploads, live API responses, or raw
 copyrighted payload dumps.
 
+P57 Public Search Safety Evidence v0 validates this bundle as a public-safe
+artifact: document counts match the static summary, live/private/executable
+flags are false, dangerous actions are not enabled, and no private path or
+secret marker is recorded in the evidence output.
+
 P56 exposes a static summary of this bundle at
 `site/dist/data/public_index_summary.json`. That summary is publication data,
 not dynamic search execution and not a hosted backend claim.

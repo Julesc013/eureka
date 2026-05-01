@@ -105,6 +105,16 @@ Current scripts:
   local-path/arbitrary-URL flags, docs, and public-index summary alignment; it
   supports `--json`, performs no network calls, starts no backend, and deploys
   nothing
+- `run_public_search_safety_evidence.py`: collects P57 local public-search
+  safety evidence through the hosted-wrapper in-process harness, including safe
+  queries, blocked requests, limit checks, status checks, static handoff safety,
+  public index safety, and privacy/redaction checks; it performs no external
+  calls, starts no public listener, and deploys nothing
+- `validate_public_search_safety_evidence.py`: validates the P57 audit pack,
+  runner output, forbidden-parameter category coverage, hard false booleans,
+  static handoff review, public index review, and operator-gated rate-limit/edge
+  status; it supports `--json`, performs no network calls, and makes no hosted
+  backend or production claim
 - `validate_compatibility_surfaces.py`: validates Compatibility Surface
   Strategy v0 inventories, including the surface capability matrix, route
   matrix, client-profile alignment, implemented static route roots, future
