@@ -73,3 +73,7 @@ remain operator-gated.
 Candidate Index v0 does not change hosting readiness. Future hosted candidate
 behavior would require separate storage, privacy, poisoning, review, promotion,
 rate-limit, timeout, circuit-breaker, and operator evidence before deployment.
+
+## P77 Evidence Status
+
+The repo-configured static URL was checked and returned 404 for required static routes. No hosted public search backend URL is configured. Hosting remains operator-gated; deploy and verify the backend separately before updating static handoff.

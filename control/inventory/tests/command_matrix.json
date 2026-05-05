@@ -301,7 +301,12 @@
         "software_heritage_connector_contract_validator",
         "software_heritage_connector_contract_validator_json",
         "software_heritage_connector_dry_run_json",
-        "software_heritage_connector_approval_tests"
+        "software_heritage_connector_approval_tests",
+        "public_hosted_deployment_verifier_repo_config_json",
+        "public_hosted_deployment_verifier_env_json",
+        "public_hosted_deployment_evidence_validator",
+        "public_hosted_deployment_evidence_validator_json",
+        "public_hosted_deployment_evidence_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -616,7 +621,12 @@
         "software_heritage_connector_contract_validator",
         "software_heritage_connector_contract_validator_json",
         "software_heritage_connector_dry_run_json",
-        "software_heritage_connector_approval_tests"
+        "software_heritage_connector_approval_tests",
+        "public_hosted_deployment_verifier_repo_config_json",
+        "public_hosted_deployment_verifier_env_json",
+        "public_hosted_deployment_evidence_validator",
+        "public_hosted_deployment_evidence_validator_json",
+        "public_hosted_deployment_evidence_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -882,7 +892,12 @@
         "public_search_safety_evidence_tests",
         "hosted_public_search_rehearsal_runner",
         "hosted_public_search_rehearsal_validator",
-        "hosted_public_search_rehearsal_tests"
+        "hosted_public_search_rehearsal_tests",
+        "public_hosted_deployment_verifier_repo_config_json",
+        "public_hosted_deployment_verifier_env_json",
+        "public_hosted_deployment_evidence_validator",
+        "public_hosted_deployment_evidence_validator_json",
+        "public_hosted_deployment_evidence_tests"
       ],
       "required_status": "required",
       "when_to_run": "After web/API route-policy, status, route inventory, or hosting-pack changes.",
@@ -1200,7 +1215,12 @@
         "software_heritage_connector_contract_validator",
         "software_heritage_connector_contract_validator_json",
         "software_heritage_connector_dry_run_json",
-        "software_heritage_connector_approval_tests"
+        "software_heritage_connector_approval_tests",
+        "public_hosted_deployment_verifier_repo_config_json",
+        "public_hosted_deployment_verifier_env_json",
+        "public_hosted_deployment_evidence_validator",
+        "public_hosted_deployment_evidence_validator_json",
+        "public_hosted_deployment_evidence_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -1271,6 +1291,7 @@
     "P73 GitHub Releases Connector Approval Pack v0 commands are approval-only and perform no GitHub API calls, repository clone, release asset/source archive download, token use, connector runtime, cache/ledger mutation, or public-query fanout.",
     "P74 PyPI Metadata Connector Approval Pack v0 commands are approval-only and perform no PyPI API calls, package downloads, installs, dependency resolution, connector runtime, cache/ledger mutation, or public-query fanout.",
     "P75 npm Metadata Connector Approval Pack v0 commands are approval-only and perform no npm registry API calls, npm/yarn/pnpm CLI calls, package downloads, installs, dependency resolution, lifecycle script execution, npm audit, connector runtime, cache/ledger mutation, or public-query fanout.",
-    "P76 Software Heritage Connector Approval Pack v0 commands are approval-only and perform no Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, token use, connector runtime, cache/ledger mutation, or public-query fanout."
+    "P76 Software Heritage Connector Approval Pack v0 commands are approval-only and perform no Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, token use, connector runtime, cache/ledger mutation, or public-query fanout.",
+    "P77 Public Hosted Deployment Evidence adds verifier/validator commands; repo-config verifier may perform HTTP only to configured Eureka URLs and makes no deployment claim."
   ]
 }

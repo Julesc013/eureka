@@ -230,7 +230,8 @@
     "Hosted Public Search Wrapper v0 adds a deployable local/prototype wrapper for the same local_index_only routes plus /healthz and /status. The wrapper is not deployed, not verified as hosted, and does not make hosted_public_runtime_implemented true for public exposure.",
     "Static Site Search Integration v0 keeps the static search front door backend-unconfigured and publishes search_config.json plus public_index_summary.json without making hosted public search live.",
     "Public Search Safety Evidence v0 records local safe-query, blocked-request, limit/status, static handoff, public index, hosted-wrapper, privacy/redaction, and operator-gated rate-limit evidence without hosted deployment or live probes.",
-    "Hosted Public Search Rehearsal v0 records localhost hosted-wrapper route evidence; hosted deployment remains unverified and operator-gated."
+    "Hosted Public Search Rehearsal v0 records localhost hosted-wrapper route evidence; hosted deployment remains unverified and operator-gated.",
+    "P77 records configured static URL failure and missing hosted backend URL; no hosted claim or live-source behavior is enabled."
   ],
   "safety_policy": "control/inventory/publication/public_search_safety.json",
   "safety_doc": "docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md",
@@ -283,5 +284,10 @@
   "safety_evidence_report": "control/audits/public-search-safety-evidence-v0/public_search_safety_evidence_report.json",
   "safety_evidence_status": "passed_local_public_alpha",
   "hosted_rehearsal_report": "control/audits/hosted-public-search-rehearsal-v0/hosted_public_search_rehearsal_report.json",
-  "hosted_rehearsal_status": "passed_local_hosted_rehearsal_not_deployed"
+  "hosted_rehearsal_status": "passed_local_hosted_rehearsal_not_deployed",
+  "p77_public_hosted_deployment_evidence": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json",
+  "p77_static_site_status": "verified_failed",
+  "p77_hosted_backend_status": "not_configured",
+  "hosted_deployment_verified": false,
+  "hosted_backend_deployed": false
 }

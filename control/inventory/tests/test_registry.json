@@ -6856,6 +6856,116 @@
       "label": "Software Heritage Connector Approval Tests",
       "command": "python -m unittest tests.operations.test_software_heritage_connector_approval tests.scripts.test_validate_software_heritage_connector_approval tests.scripts.test_validate_software_heritage_connector_contract tests.scripts.test_dry_run_software_heritage_connector_approval",
       "writes": "temporary files only"
+    },
+    {
+      "test_id": "public_hosted_deployment_verifier_repo_config_json",
+      "label": "Public Hosted Deployment Verifier Repo Config JSON",
+      "command": "python scripts/verify_public_hosted_deployment.py --from-repo-config --json",
+      "category": "deployment_evidence",
+      "owner_area": "publication",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "configured Eureka URLs only",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P77 hosted deployment evidence drifted or made an unsupported deployment claim.",
+      "advisory_or_required": "required",
+      "notes": "P77 evidence validation; no deployment, provider mutation, external source calls, live probes, telemetry, downloads, uploads, accounts, or index/cache/ledger mutation."
+    },
+    {
+      "test_id": "public_hosted_deployment_verifier_env_json",
+      "label": "Public Hosted Deployment Verifier Env JSON",
+      "command": "python scripts/verify_public_hosted_deployment.py --from-env --json",
+      "category": "deployment_evidence",
+      "owner_area": "publication",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "configured Eureka URL env vars only",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P77 hosted deployment evidence drifted or made an unsupported deployment claim.",
+      "advisory_or_required": "required",
+      "notes": "P77 evidence validation; no deployment, provider mutation, external source calls, live probes, telemetry, downloads, uploads, accounts, or index/cache/ledger mutation."
+    },
+    {
+      "test_id": "public_hosted_deployment_evidence_validator",
+      "label": "Public Hosted Deployment Evidence Validator",
+      "command": "python scripts/validate_public_hosted_deployment_evidence.py",
+      "category": "deployment_evidence",
+      "owner_area": "publication",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P77 hosted deployment evidence drifted or made an unsupported deployment claim.",
+      "advisory_or_required": "required",
+      "notes": "P77 evidence validation; no deployment, provider mutation, external source calls, live probes, telemetry, downloads, uploads, accounts, or index/cache/ledger mutation."
+    },
+    {
+      "test_id": "public_hosted_deployment_evidence_validator_json",
+      "label": "Public Hosted Deployment Evidence Validator JSON",
+      "command": "python scripts/validate_public_hosted_deployment_evidence.py --json",
+      "category": "deployment_evidence",
+      "owner_area": "publication",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P77 hosted deployment evidence drifted or made an unsupported deployment claim.",
+      "advisory_or_required": "required",
+      "notes": "P77 evidence validation; no deployment, provider mutation, external source calls, live probes, telemetry, downloads, uploads, accounts, or index/cache/ledger mutation."
+    },
+    {
+      "test_id": "public_hosted_deployment_evidence_tests",
+      "label": "Public Hosted Deployment Evidence Tests",
+      "command": "python -m unittest tests.operations.test_public_hosted_deployment_evidence tests.scripts.test_verify_public_hosted_deployment tests.scripts.test_validate_public_hosted_deployment_evidence",
+      "category": "deployment_evidence",
+      "owner_area": "publication",
+      "required_for": [
+        "standard",
+        "full",
+        "public_alpha",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P77 hosted deployment evidence drifted or made an unsupported deployment claim.",
+      "advisory_or_required": "required",
+      "notes": "P77 evidence validation; no deployment, provider mutation, external source calls, live probes, telemetry, downloads, uploads, accounts, or index/cache/ledger mutation."
     }
   ],
   "notes": [
@@ -6865,6 +6975,7 @@
     "P73 GitHub Releases Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, GitHub API calls, repository clone, release asset/source archive download, token use, cache/ledger mutation, or public-query fanout.",
     "P74 PyPI Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, PyPI API calls, package download/install, dependency resolution, token use, cache/ledger mutation, or public-query fanout.",
     "P75 npm Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, npm registry API calls, npm/yarn/pnpm CLI calls, package download/install, dependency resolution, lifecycle script execution, npm audit, token use, cache/ledger mutation, or public-query fanout.",
-    "P76 Software Heritage Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, token use, cache/ledger mutation, or public-query fanout."
+    "P76 Software Heritage Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, token use, cache/ledger mutation, or public-query fanout.",
+    "P77 Public Hosted Deployment Evidence commands are evidence-only; verifier may check only configured Eureka static/backend URLs and performs no deployment or external-source fanout."
   ]
 }

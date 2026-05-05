@@ -165,6 +165,12 @@
     "GitHub Pages remains static-only and does not run Python.",
     "Hosted public search remains unavailable until a later rehearsal/deployment milestone records real evidence.",
     "Public Search Rehearsal v0 confirms the local runtime and static handoff work together without hosted search.",
-    "Live probes, downloads, installs, uploads, accounts, local path search, arbitrary URL fetch, scraping, crawling, and telemetry remain disabled."
-  ]
+    "Live probes, downloads, installs, uploads, accounts, local path search, arbitrary URL fetch, scraping, crawling, and telemetry remain disabled.",
+    "P77 records configured static URL failure and missing hosted backend URL; no hosted claim or live-source behavior is enabled."
+  ],
+  "p77_public_hosted_deployment_evidence": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json",
+  "p77_static_site_status": "verified_failed",
+  "p77_hosted_backend_status": "not_configured",
+  "hosted_deployment_verified": false,
+  "hosted_backend_deployed": false
 }

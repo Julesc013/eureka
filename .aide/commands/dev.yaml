@@ -1141,3 +1141,16 @@ notes:
   - id: software_heritage_connector_approval_tests
     run: python -m unittest tests.operations.test_software_heritage_connector_approval tests.scripts.test_validate_software_heritage_connector_approval tests.scripts.test_validate_software_heritage_connector_contract tests.scripts.test_dry_run_software_heritage_connector_approval
 <!-- P76-SOFTWARE-HERITAGE-CONNECTOR-APPROVAL-END -->
+
+<!-- P77-PUBLIC-HOSTED-DEPLOYMENT-EVIDENCE-START -->
+  - id: public_hosted_deployment_verifier_repo_config_json
+    run: python scripts/verify_public_hosted_deployment.py --from-repo-config --json
+  - id: public_hosted_deployment_verifier_env_json
+    run: python scripts/verify_public_hosted_deployment.py --from-env --json
+  - id: public_hosted_deployment_evidence_validator
+    run: python scripts/validate_public_hosted_deployment_evidence.py
+  - id: public_hosted_deployment_evidence_validator_json
+    run: python scripts/validate_public_hosted_deployment_evidence.py --json
+  - id: public_hosted_deployment_evidence_tests
+    run: python -m unittest tests.operations.test_public_hosted_deployment_evidence tests.scripts.test_verify_public_hosted_deployment tests.scripts.test_validate_public_hosted_deployment_evidence
+<!-- P77-PUBLIC-HOSTED-DEPLOYMENT-EVIDENCE-END -->

@@ -287,7 +287,8 @@
     "Hosted Public Search Wrapper v0 adds local/prototype wrapper readiness and rehearsal checks for local_index_only routes only. It does not deploy hosted search, enable live probes, add telemetry, add accounts, or change no_hosted_public_search_live.",
     "Static Site Search Integration v0 adds no-JS search surfaces and public data summaries while preserving disabled hosted search, live probes, downloads, uploads, local paths, arbitrary URL fetch, accounts, and telemetry.",
     "Public Search Safety Evidence v0 records local safe-query, blocked-request, limit/status, static handoff, public index, hosted-wrapper, privacy/redaction, and operator-gated rate-limit evidence without hosted deployment or live probes.",
-    "Hosted Public Search Rehearsal v0 starts the wrapper on localhost and records safe-query, blocked-request, route, static handoff, public index, and template evidence without hosted deployment or live probes."
+    "Hosted Public Search Rehearsal v0 starts the wrapper on localhost and records safe-query, blocked-request, route, static handoff, public index, and template evidence without hosted deployment or live probes.",
+    "P77 records configured static URL failure and missing hosted backend URL; no hosted claim or live-source behavior is enabled."
   ],
   "production_contract": "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
   "production_contract_status": "frozen_for_p54_hosted_wrapper",
@@ -305,5 +306,10 @@
   "hosted_rehearsal_runner": "scripts/run_hosted_public_search_rehearsal.py",
   "hosted_rehearsal_validator": "scripts/validate_hosted_public_search_rehearsal.py",
   "hosted_rehearsal_blocked_request_count": 34,
-  "hosted_rehearsal_safe_query_count": 5
+  "hosted_rehearsal_safe_query_count": 5,
+  "p77_public_hosted_deployment_evidence": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json",
+  "p77_static_site_status": "verified_failed",
+  "p77_hosted_backend_status": "not_configured",
+  "hosted_deployment_verified": false,
+  "hosted_backend_deployed": false
 }

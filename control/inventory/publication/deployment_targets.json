@@ -30,8 +30,11 @@
         "Static Deployment Evidence / GitHub Pages Repair v0 records current-head deployment as unverified because gh is unavailable locally; prior committed evidence records a Pages configuration failure before artifact upload.",
         "Custom Domain / Alternate Host Readiness v0 confirms this target remains project-path static hosting under /eureka/.",
         "No Python backend, live probes, custom domain, secrets, or generator deployment is added by this target.",
-        "P56 static search integration publishes backend-unconfigured search_config.json and public_index_summary.json as static data only; no dynamic backend is deployed by Pages."
-      ]
+        "P56 static search integration publishes backend-unconfigured search_config.json and public_index_summary.json as static data only; no dynamic backend is deployed by Pages.",
+        "P77 verified the configured Pages URL returned HTTP 404 for root, search.html, search_config.json, and public_index_summary.json; static-live claim remains blocked."
+      ],
+      "p77_evidence_ref": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json",
+      "p77_static_site_status": "verified_failed"
     },
     {
       "id": "custom_domain_static",
@@ -114,12 +117,16 @@
         "Hosted search must remain unavailable until a later rehearsal/deployment milestone records approved configuration and evidence.",
         "Live probes, downloads, installs, uploads, local paths, accounts, and telemetry remain disabled.",
         "Static Site Search Integration v0 keeps hosted_backend_url null and hosted form submission disabled until operator deployment evidence exists.",
-        "Hosted Public Search Rehearsal v0 proves localhost wrapper startup and route checks only; it does not deploy this target or set a hosted URL."
+        "Hosted Public Search Rehearsal v0 proves localhost wrapper startup and route checks only; it does not deploy this target or set a hosted URL.",
+        "P77 found no hosted backend URL in repo config or environment; route and safety verification remain operator-gated."
       ],
       "static_search_config": "control/inventory/publication/static_search_config.json",
       "static_search_config_status": "backend_unconfigured",
       "hosted_rehearsal_report": "control/audits/hosted-public-search-rehearsal-v0/hosted_public_search_rehearsal_report.json",
-      "hosted_rehearsal_status": "passed_local_hosted_rehearsal_not_deployed"
+      "hosted_rehearsal_status": "passed_local_hosted_rehearsal_not_deployed",
+      "p77_evidence_ref": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json",
+      "p77_hosted_backend_status": "not_configured",
+      "operator_action_required": true
     }
   ]
 }

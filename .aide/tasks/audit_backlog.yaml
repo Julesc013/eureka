@@ -785,6 +785,14 @@
       "priority": 0,
       "notes": "Addressed by control/audits/software-heritage-connector-approval-v0/software_heritage_connector_approval_report.json. Approval-only; no live Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, token use, cache/ledger mutation, or public-query fanout.",
       "addressed_by": "control/audits/software-heritage-connector-approval-v0/software_heritage_connector_approval_report.json"
+    },
+    {
+      "id": "audit-backlog-public-hosted-deployment-evidence-v0",
+      "title": "P77 Public Hosted Deployment Evidence v0 audit pack",
+      "status": "addressed_operator_gated_static_failed",
+      "priority": 0,
+      "notes": "Addressed by P77. Configured static URL returned 404, hosted backend URL is not configured, and no production/live-hosted claim is made.",
+      "addressed_by": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json"
     }
   ]
 }

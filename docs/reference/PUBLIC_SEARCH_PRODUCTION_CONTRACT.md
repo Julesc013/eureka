@@ -158,3 +158,7 @@ Query Privacy and Poisoning Guard v0 is future/contract-only. Public search docs
 ## Demand Dashboard v0 Relation
 
 Demand Dashboard v0 is future/contract-only. It can later summarize privacy-filtered and poisoning-guarded aggregate demand, but P68 adds no telemetry, public query logging, account/IP tracking, real demand claims, runtime dashboard, candidate promotion, source sync, source cache/evidence ledger mutation, public-search ranking change, or index mutation.
+
+## P77 Hosted Evidence Boundary
+
+P77 does not make hosted public search live. The production-facing contract remains `local_index_only` for any future verified backend and requires blocked-request, route, rate-limit, and no-live-source evidence before public claims.

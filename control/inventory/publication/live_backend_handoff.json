@@ -127,7 +127,8 @@
     "Hosted Public Search Wrapper v0 adds a local/prototype deployable wrapper script and local rehearsal check for local_index_only only. It does not deploy a backend, verify hosted deployment, enable live probes, add rate-limit middleware, or change GitHub Pages static-only status.",
     "Static Site Search Integration v0 adds generated no-JS static search surfaces, search_config.json, and public_index_summary.json while keeping hosted backend status unconfigured and GitHub Pages static-only.",
     "Public Search Safety Evidence v0 records local safe-query, blocked-request, limit/status, static handoff, public index, hosted-wrapper, privacy/redaction, and operator-gated rate-limit evidence without hosted deployment or live probes.",
-    "Hosted Public Search Rehearsal v0 starts the wrapper on localhost and proves route/safety compatibility without deployment, edge rate limits, live probes, or hosted URL evidence."
+    "Hosted Public Search Rehearsal v0 starts the wrapper on localhost and proves route/safety compatibility without deployment, edge rate limits, live probes, or hosted URL evidence.",
+    "P77 records configured static URL failure and missing hosted backend URL; no hosted claim or live-source behavior is enabled."
   ],
   "public_search_safety_policy": "control/inventory/publication/public_search_safety.json",
   "public_search_safety_policy_status": "local_runtime_guard_active_hosted_disabled",
@@ -143,5 +144,8 @@
   "public_search_safety_evidence_report": "control/audits/public-search-safety-evidence-v0/public_search_safety_evidence_report.json",
   "public_search_safety_evidence_status": "passed_local_public_alpha",
   "hosted_public_search_rehearsal_report": "control/audits/hosted-public-search-rehearsal-v0/hosted_public_search_rehearsal_report.json",
-  "hosted_public_search_rehearsal_status": "passed_local_hosted_rehearsal_not_deployed"
+  "hosted_public_search_rehearsal_status": "passed_local_hosted_rehearsal_not_deployed",
+  "p77_public_hosted_deployment_evidence": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json",
+  "p77_static_site_status": "verified_failed",
+  "p77_hosted_backend_status": "not_configured"
 }

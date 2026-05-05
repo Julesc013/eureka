@@ -348,3 +348,9 @@ Completed as an approval-only package metadata connector pack. It adds no live n
 
 Completed as an approval-only software identity/archive metadata connector pack. It adds no live Software Heritage connector runtime, no external calls, no Software Heritage API calls, no SWHID resolution, no origin/visit/snapshot/release/revision/directory/content lookup, no source code download, no repository clone, no source archive download, no source file retrieval, no public-query fanout, no telemetry, no credentials or tokens, and no source cache/evidence ledger/candidate/index mutation. It requires SWHID/origin/repository identity review, source-code-content risk policy, source policy review, User-Agent/contact decisions, and cache-first evidence outputs. Next recommended branch: P77 Public Hosted Deployment Evidence v0.
 <!-- P76-SOFTWARE-HERITAGE-SUMMARY-END -->
+
+<!-- P77-PUBLIC-HOSTED-DEPLOYMENT-EVIDENCE-START -->
+## P77 Public Hosted Deployment Evidence v0
+
+Completed as evidence-only deployment review. It adds no deployment, provider mutation, DNS changes, credentials, live source calls, hosted backend runtime, telemetry, accounts, downloads, uploads, or index/cache/ledger mutation. The configured GitHub Pages URL returned 404 for required routes, and no hosted backend URL is configured. Next recommended branch: P78 External Baseline Comparison Report v0 after Manual Batch 0, or P79 Object Page Contract v0 if the manual batch remains pending.
+<!-- P77-PUBLIC-HOSTED-DEPLOYMENT-EVIDENCE-END -->

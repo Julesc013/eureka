@@ -319,9 +319,11 @@
       "supports_external_sources": false,
       "enabled_by_default": true,
       "requires_operator_signoff": true,
-      "current_limitations": "Local/prototype backend runtime plus P54 hosted wrapper readiness only; no deployed hosted backend, verified hosted URL, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists.",
+      "current_limitations": "Local/prototype backend runtime plus P54 hosted wrapper readiness only; no deployed hosted backend, verified hosted URL, live probes, rate-limit middleware, auth/accounts, telemetry runtime, downloads, uploads, local path search, arbitrary URL fetch, malware-safety claim, rights-clearance claim, production ranking guarantee, or production API guarantee exists. P77 found no configured hosted backend URL.",
       "next_step": "P59 Query Observation Contract v0, while hosted deployment and edge/rate-limit evidence remain operator-gated.",
-      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0. Public Search Rehearsal v0 records local safe-query and blocked-request evidence. P53 freezes the production-facing contract for P54 without deploying a hosted backend. P54 adds a deployable wrapper and local rehearsal only; hosted deployment remains unverified. P57 records local safety evidence across safe queries, blocked dangerous parameters, status, static handoff, public index, and wrapper rehearsal. P58 records localhost hosted-mode rehearsal evidence without deployment."
+      "notes": "First allowed mode is local_index_only. Public Search Safety / Abuse Guard v0 governs limits, forbidden parameters, error mapping, privacy posture, and operator controls for Local Public Search Runtime v0. Public Search Rehearsal v0 records local safe-query and blocked-request evidence. P53 freezes the production-facing contract for P54 without deploying a hosted backend. P54 adds a deployable wrapper and local rehearsal only; hosted deployment remains unverified. P57 records local safety evidence across safe queries, blocked dangerous parameters, status, static handoff, public index, and wrapper rehearsal. P58 records localhost hosted-mode rehearsal evidence without deployment.",
+      "hosted_deployment_verified": false,
+      "p77_evidence_ref": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json"
     },
     {
       "id": "public_search_static_handoff",
@@ -369,9 +371,11 @@
       "supports_external_sources": false,
       "enabled_by_default": true,
       "requires_operator_signoff": false,
-      "current_limitations": "Static handoff and local-runtime instructions only; hosted backend URL is unconfigured/unverified and hosted form submission is disabled until future operator evidence exists.",
+      "current_limitations": "Static handoff and local-runtime instructions only; hosted backend URL is unconfigured/unverified and hosted form submission is disabled until future operator evidence exists. P77 found no configured hosted backend URL.",
       "next_step": "P59 Query Observation Contract v0 after P58 local hosted rehearsal; backend URL verification remains operator-gated.",
-      "notes": "P56 adds backend-unconfigured search_config.json and public_index_summary.json. No JavaScript, hosted search claim, live probes, downloads, installs, uploads, local path search, telemetry, or production claim. P57 verifies the static handoff remains honest and backend-unconfigured. P58 verifies static handoff compatibility during localhost hosted rehearsal."
+      "notes": "P56 adds backend-unconfigured search_config.json and public_index_summary.json. No JavaScript, hosted search claim, live probes, downloads, installs, uploads, local path search, telemetry, or production claim. P57 verifies the static handoff remains honest and backend-unconfigured. P58 verifies static handoff compatibility during localhost hosted rehearsal.",
+      "hosted_deployment_verified": false,
+      "p77_evidence_ref": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json"
     },
     {
       "id": "snapshots",
@@ -507,9 +511,12 @@
       "supports_external_sources": false,
       "enabled_by_default": true,
       "requires_operator_signoff": false,
-      "current_limitations": "Static publication artifact only; no backend or deployment success claim.",
+      "current_limitations": "Static publication artifact only; no backend or deployment success claim. P77 found the configured public URL returns 404; static-live claim remains blocked.",
       "next_step": "Keep site/dist as current deploy artifact until a later explicit migration.",
-      "notes": "GitHub Pages workflow uploads site/dist as static artifact after validation."
+      "notes": "GitHub Pages workflow uploads site/dist as static artifact after validation.",
+      "deployment_status": "verified_failed_http_404",
+      "deployment_verified": false,
+      "p77_evidence_ref": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json"
     },
     {
       "id": "public_alpha_wrapper",
@@ -565,9 +572,11 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "Contract-only; no hosted backend exists.",
+      "current_limitations": "Contract-only; no hosted backend exists. P77 found no configured hosted backend URL.",
       "next_step": "Implement only after backend handoff, deployment config, abuse controls, and operator signoff.",
-      "notes": "Must remain disabled in static publication."
+      "notes": "Must remain disabled in static publication.",
+      "hosted_deployment_verified": false,
+      "p77_evidence_ref": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json"
     },
     {
       "id": "live_probe_gateway",
@@ -621,9 +630,12 @@
       "supports_external_sources": false,
       "enabled_by_default": true,
       "requires_operator_signoff": false,
-      "current_limitations": "Legacy capability ID retained for earlier validators.",
+      "current_limitations": "Legacy capability ID retained for earlier validators. P77 found the configured public URL returns 404; static-live claim remains blocked.",
       "next_step": "Prefer public_static_site in new compatibility-surface docs.",
-      "notes": "Alias of public_static_site."
+      "notes": "Alias of public_static_site.",
+      "deployment_status": "verified_failed_http_404",
+      "deployment_verified": false,
+      "p77_evidence_ref": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json"
     },
     {
       "id": "generated_public_data",
@@ -799,9 +811,11 @@
       "supports_external_sources": false,
       "enabled_by_default": false,
       "requires_operator_signoff": true,
-      "current_limitations": "Future hosted live backend search only; static site has no live search. Local Public Search Runtime v0 exists separately as local_index_only prototype runtime.",
+      "current_limitations": "Future hosted live backend search only; static site has no live search. Local Public Search Runtime v0 exists separately as local_index_only prototype runtime. P77 found no configured hosted backend URL.",
       "next_step": "Requires hosted rehearsal, rate-limit policy, live backend handoff review, and operator signoff before any hosted use.",
-      "notes": "No live probes are enabled by live search, hosted /api/v1/search is not deployed, and safety policy keeps public search local_index_only with live/external behavior disabled."
+      "notes": "No live probes are enabled by live search, hosted /api/v1/search is not deployed, and safety policy keeps public search local_index_only with live/external behavior disabled.",
+      "hosted_deployment_verified": false,
+      "p77_evidence_ref": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json"
     },
     {
       "id": "internet_archive_live_probe",
@@ -919,6 +933,7 @@
     "Production signed snapshots, real signing keys, executable downloads, relay services, and native clients remain future work.",
     "Public Search Safety / Abuse Guard v0 constrains Local Public Search Runtime v0 with limits, forbidden parameters, privacy defaults, and operator controls while hosted search remains future.",
     "Public Search Rehearsal v0 validates the local/prototype route stack and static handoff without enabling hosted or live behavior.",
-    "Static Site Search Integration v0 adds backend-unconfigured search_config.json and public_index_summary.json without hosted deployment."
+    "Static Site Search Integration v0 adds backend-unconfigured search_config.json and public_index_summary.json without hosted deployment.",
+    "P77 Public Hosted Deployment Evidence records static URL verified_failed and hosted backend not_configured; no production or hosted-live claim is made."
   ]
 }

@@ -121,3 +121,7 @@ The hosted wrapper remains local_index_only and deployment-gated. Candidate
 Index v0 adds no hosted candidate store, no public search candidate injection,
 no candidate promotion runtime, no live probes, no external source calls, and
 no production hosted query-intelligence claim.
+
+## P77 Hosted Deployment Evidence
+
+P77 records that no hosted backend URL is configured. The wrapper remains local/prototype until an operator deploys it, records a URL, configures rate limits, and reruns `scripts/verify_public_hosted_deployment.py`. No production readiness or live-source claim is made.

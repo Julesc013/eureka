@@ -860,23 +860,23 @@
     {
       "id": "public_hosted_deployment_evidence_v0",
       "title": "P77 Public Hosted Deployment Evidence v0",
-      "status": "operator_gated_future",
+      "status": "completed_operator_gated_static_failed",
       "priority": 118,
-      "notes": "Expected next branch after P76; operator evidence pack only. Do not fabricate hosted deployment evidence or call provider APIs."
+      "notes": "P77 evidence pack added. Repo-configured static URL returned 404 for required routes, hosted backend URL is not configured, route/safety/rate-limit evidence remains operator-gated, and no production claim was made."
     },
     {
       "id": "external_baseline_comparison_report_v0",
       "title": "P78 External Baseline Comparison Report v0 after Manual Batch 0",
       "status": "human_operator_gated_future",
       "priority": 119,
-      "notes": "Future report only after Manual Observation Batch 0 evidence exists."
+      "notes": "Future report only after Manual Observation Batch 0 evidence exists; P77 leaves hosted backend unverified."
     },
     {
       "id": "object_page_contract_v0",
       "title": "P79 Object Page Contract v0",
       "status": "queued_codex_safe_future",
       "priority": 120,
-      "notes": "Future contract; do not implement runtime pages or mutate indexes without governed contracts."
+      "notes": "Codex-safe next branch if Manual Batch 0 remains pending; contract-only, no runtime pages or index mutation."
     },
     {
       "id": "source_page_contract_v0",

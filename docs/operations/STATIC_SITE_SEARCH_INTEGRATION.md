@@ -75,3 +75,7 @@ verification status.
 Static search handoff remains honest about backend state. P64 candidate records
 are contract-only and are not included in static search config, result ranking,
 public index summaries, or backend URL handoff.
+
+## P77 Deployment Evidence
+
+P77 found the configured GitHub Pages URL returning 404 and no hosted backend URL configured. The repo-local search handoff remains backend-unconfigured and must not point to a fake URL.

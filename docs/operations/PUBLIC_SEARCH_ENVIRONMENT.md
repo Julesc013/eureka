@@ -80,3 +80,7 @@ budget `5000`, and kill switch `0`. The rehearsal binds only to localhost.
 No P64 environment variable enables candidate storage, candidate paths, source
 roots, external sources, live probes, public search candidate injection, or
 master-index mutation. Candidate index work remains contract-only.
+
+## P77 URL Evidence Variables
+
+`EUREKA_PUBLIC_STATIC_URL`, `EUREKA_STATIC_SITE_URL`, `EUREKA_PUBLIC_BACKEND_URL`, and `EUREKA_HOSTED_BACKEND_URL` are evidence inputs for the verifier only. They do not deploy services, enable live probes, or authorize index/cache/ledger mutation.

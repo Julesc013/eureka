@@ -42,3 +42,7 @@ There is no P64 runtime candidate index to roll back. If a future milestone
 adds candidate runtime behavior, rollback must include candidate-store disable,
 public-search injection disable, promotion disable, and source/evidence write
 disable checks before operator use.
+
+## P77 Rollback Posture
+
+If hosted evidence fails, remove or leave unset the hosted backend URL, keep static handoff backend-unconfigured, and keep public claims limited to verified static artifacts. Do not weaken safety flags to make a failing deployment appear live.

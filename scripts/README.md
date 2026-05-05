@@ -732,3 +732,9 @@ P75 adds `validate_npm_metadata_connector_approval.py`, `validate_npm_metadata_c
 
 P76 adds `validate_software_heritage_connector_approval.py`, `validate_software_heritage_connector_contract.py`, and `dry_run_software_heritage_connector_approval.py`. Commands: `python scripts/validate_software_heritage_connector_approval.py --all-examples`, `python scripts/validate_software_heritage_connector_approval.py --all-examples --json`, `python scripts/validate_software_heritage_connector_contract.py`, `python scripts/validate_software_heritage_connector_contract.py --json`, and `python scripts/dry_run_software_heritage_connector_approval.py --json`. They are stdlib-only and write no connector runtime, telemetry, credentials, source cache, evidence ledger, candidate index, public/local/master indexes, external calls, live Software Heritage API calls, SWHID resolution, origin lookup, source content/blob/directory fetch, repository clone, source archive download, source file retrieval, file retrieval, mirroring, installs, or execution.
 <!-- P76-SOFTWARE-HERITAGE-CONNECTOR-APPROVAL-END -->
+
+## Public Hosted Deployment Evidence
+
+- `python scripts/verify_public_hosted_deployment.py --from-repo-config --json` checks only explicitly configured Eureka static/backend URLs and writes no files.
+- `python scripts/verify_public_hosted_deployment.py --from-env --json` checks only URL environment variables.
+- `python scripts/validate_public_hosted_deployment_evidence.py` validates the P77 audit pack without network calls.

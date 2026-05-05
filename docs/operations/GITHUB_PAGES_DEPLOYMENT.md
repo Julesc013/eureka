@@ -205,3 +205,7 @@ files.
 - Current evidence shows the workflow fails before artifact upload until the
   repository Pages site is enabled/configured for GitHub Actions or the
   workflow is repaired under an approved follow-up.
+
+## P77 Pages Evidence
+
+P77 checked `https://julesc013.github.io/eureka/` from repo config and received 404 responses for root, `search.html`, `data/search_config.json`, and `data/public_index_summary.json`. Pages/static hosting needs operator repair or verification before a static-live claim.
