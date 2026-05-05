@@ -410,3 +410,9 @@ Report: `control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_
 
 Audit pack: `control/audits/compatibility-aware-ranking-contract-v0/`.
 <!-- P85-COMPATIBILITY-AWARE-RANKING-END -->
+
+<!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-START -->
+## P86 Public Query Observation Runtime Planning v0
+
+Audit report: `control/audits/public-query-observation-runtime-planning-v0/public_query_observation_runtime_planning_report.json`.
+<!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-END -->

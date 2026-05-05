@@ -8142,6 +8142,69 @@
       "failure_means": "Compatibility-Aware Ranking v0 examples, contracts, docs, audit, or no-runtime/no-ranking-change/no-action/no-mutation guarantees drifted.",
       "advisory_or_required": "required",
       "notes": "P85 contract-only validation; no runtime compatibility ranking, public search order change, hidden suppression, installability/dependency-safety/malware-safety claim, package manager invocation, emulator/VM launch, live source calls, telemetry, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "public_query_observation_runtime_plan_validator",
+      "label": "Public Query Observation Runtime Plan Validator",
+      "command": "python scripts/validate_public_query_observation_runtime_plan.py",
+      "category": "planning",
+      "owner_area": "query_intelligence",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P86 public query observation runtime planning artifacts, readiness gate, privacy policy, or no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P86 planning-only validation; no runtime observation writes, storage, telemetry, raw query retention, public aggregates, public search mutation, or index/cache/ledger/candidate/master mutation."
+    },
+    {
+      "test_id": "public_query_observation_runtime_plan_validator_json",
+      "label": "Public Query Observation Runtime Plan Validator JSON",
+      "command": "python scripts/validate_public_query_observation_runtime_plan.py --json",
+      "category": "planning",
+      "owner_area": "query_intelligence",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P86 public query observation runtime planning artifacts, readiness gate, privacy policy, or no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P86 planning-only validation; no runtime observation writes, storage, telemetry, raw query retention, public aggregates, public search mutation, or index/cache/ledger/candidate/master mutation."
+    },
+    {
+      "test_id": "public_query_observation_runtime_plan_tests",
+      "label": "Public Query Observation Runtime Plan Tests",
+      "command": "python -m unittest tests.operations.test_public_query_observation_runtime_plan tests.scripts.test_validate_public_query_observation_runtime_plan",
+      "category": "planning",
+      "owner_area": "query_intelligence",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P86 public query observation runtime planning artifacts, readiness gate, privacy policy, or no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P86 planning-only validation; no runtime observation writes, storage, telemetry, raw query retention, public aggregates, public search mutation, or index/cache/ledger/candidate/master mutation."
     }
   ],
   "notes": [

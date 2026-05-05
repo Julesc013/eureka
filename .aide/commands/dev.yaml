@@ -1291,3 +1291,12 @@ notes:
   - id: compatibility_aware_ranking_contract_tests
     run: python -m unittest tests.operations.test_compatibility_aware_ranking_contract tests.scripts.test_validate_compatibility_target_profile tests.scripts.test_validate_compatibility_aware_ranking_assessment tests.scripts.test_validate_compatibility_explanation tests.scripts.test_validate_compatibility_aware_ranking_contract tests.scripts.test_dry_run_compatibility_aware_ranking
 <!-- P85-COMPATIBILITY-AWARE-RANKING-END -->
+
+<!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-START -->
+  - id: public_query_observation_runtime_plan_validator
+    run: python scripts/validate_public_query_observation_runtime_plan.py
+  - id: public_query_observation_runtime_plan_validator_json
+    run: python scripts/validate_public_query_observation_runtime_plan.py --json
+  - id: public_query_observation_runtime_plan_tests
+    run: python -m unittest tests.operations.test_public_query_observation_runtime_plan tests.scripts.test_validate_public_query_observation_runtime_plan
+<!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-END -->

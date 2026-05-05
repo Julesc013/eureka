@@ -857,6 +857,14 @@
       "priority": 0,
       "notes": "Addressed by control/audits/compatibility-aware-ranking-contract-v0/compatibility_aware_ranking_report.json. Contract-only; no runtime compatibility ranking, public search order change, hidden suppression, installability claim, dependency safety claim, emulator or VM launch, package-manager invocation, telemetry, candidate promotion, or index/cache/ledger/master-index mutation.",
       "addressed_by": "control/audits/compatibility-aware-ranking-contract-v0/compatibility_aware_ranking_report.json"
+    },
+    {
+      "id": "audit-backlog-public-query-observation-runtime-planning-v0",
+      "title": "P86 Public Query Observation Runtime Planning v0 audit pack",
+      "status": "addressed_planning_blocked_hosted_deployment_unverified",
+      "priority": 0,
+      "notes": "Addressed by control/audits/public-query-observation-runtime-planning-v0/public_query_observation_runtime_planning_report.json. Planning-only; no runtime observation writes, storage, telemetry, raw query retention, public aggregates, public search mutation, or index/cache/ledger/candidate/master mutation.",
+      "addressed_by": "control/audits/public-query-observation-runtime-planning-v0/public_query_observation_runtime_planning_report.json"
     }
   ]
 }

@@ -844,3 +844,12 @@ These are contract-only checks. They perform no network calls, implement no runt
 
 These are contract-only checks. They perform no network calls, implement no runtime compatibility ranking, change no public search order, suppress no results, claim no installability/dependency safety/malware safety, invoke no package managers, launch no emulators/VMs, mutate no index/cache/ledger, and enable no downloads, installs, or execution.
 <!-- P85-COMPATIBILITY-AWARE-RANKING-END -->
+
+<!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-START -->
+## P86 Public Query Observation Runtime Planning
+
+- `python scripts/validate_public_query_observation_runtime_plan.py`
+- `python scripts/validate_public_query_observation_runtime_plan.py --json`
+
+Planning-only validation; no runtime observation writes, telemetry, raw query retention, public aggregates, or index/cache/ledger/candidate/master mutations are added.
+<!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-END -->

@@ -936,10 +936,10 @@
     },
     {
       "id": "public_query_observation_runtime_planning_v0",
-      "title": "P86 Public Query Observation Runtime Planning v0 only after hosted deployment",
-      "status": "blocked_pending_hosted_deployment",
+      "title": "P86 Public Query Observation Runtime Planning v0",
+      "status": "completed_planning_blocked_hosted_deployment_unverified",
       "priority": 127,
-      "notes": "Expected next as planning only if hosted deployment remains unverified; preserve hosted-deployment, privacy, and logging gates."
+      "notes": "P86 completed as planning/audit/validator work only. Readiness is blocked_hosted_deployment_unverified; no runtime observation writes, storage, telemetry, raw query retention, public aggregate, public search mutation, or index/cache/ledger/candidate/master mutation was added."
     },
     {
       "id": "software_heritage_connector_runtime_planning_v0",
@@ -974,7 +974,7 @@
       "title": "P90 Object/Source/Comparison Page Runtime Planning v0",
       "status": "queued_codex_safe_future",
       "priority": 131,
-      "notes": "Future planning only; no runtime page implementation until identity/merge/ranking contracts are governed."
+      "notes": "Future planning only; no runtime page implementation until hosted/runtime gates and page contracts are governed."
     },
     {
       "id": "pack_import_runtime_planning_v0",
@@ -1010,6 +1010,13 @@
       "status": "queued_codex_safe_future",
       "priority": 136,
       "notes": "Future contract for governed compatibility evidence packs after ranking/page contracts."
+    },
+    {
+      "id": "hosted_deployment_remediation_v0",
+      "title": "Hosted Deployment Remediation v0 if P77 remains failed",
+      "status": "blocked_pending_operator_hosted_deployment",
+      "priority": 128,
+      "notes": "Operator deploys hosted wrapper, configures backend URL, edge/rate limits, and verifies static site before query observation runtime."
     }
   ]
 }
