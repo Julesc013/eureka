@@ -1,0 +1,165 @@
+{
+  "report_id": "public_search_ranking_runtime_planning_v0",
+  "created_by_slice": "P97 Public Search Ranking Runtime Planning v0",
+  "repo_head": "63a7d96770f36e24c51a6ca40ec9a0176dfaac41",
+  "branch": "main",
+  "worktree_status": "## main...origin/main\n M .aide/commands/ci.yaml\n M .aide/commands/dev.yaml\n M .aide/reports/README.md\n M .aide/tasks/audit_backlog.yaml\n M .aide/tasks/queue.yaml\n M control/audits/README.md\n M control/inventory/tests/command_matrix.json\n M control/inventory/tests/test_registry.json\n M scripts/README.md\n?? control/audits/public-search-ranking-runtime-planning-v0/\n?? control/inventory/search/public_search_ranking_runtime_plan.json\n?? docs/operations/PUBLIC_SEARCH_RANKING_RUNTIME_PLAN.md\n?? scripts/validate_public_search_ranking_runtime_plan.py\n?? tests/operations/test_public_search_ranking_runtime_plan.py\n?? tests/scripts/test_validate_public_search_ranking_runtime_plan.py",
+  "readiness_decision": "ready_for_local_dry_run_runtime_after_operator_approval",
+  "ranking_contract_gate_review": {
+    "evidence_weighted_ranking_contract_status": "valid",
+    "compatibility_aware_ranking_contract_status": "valid",
+    "result_merge_deduplication_contract_status": "valid",
+    "identity_resolution_contract_status": "valid",
+    "search_result_explanation_contract_status": "valid",
+    "public_result_card_contract_status": "valid",
+    "validators_present": true,
+    "examples_present": true,
+    "no_runtime_no_mutation_policy_status": "preserved",
+    "gaps": [
+      "Runtime implementation remains gated; P97 plans only."
+    ]
+  },
+  "public_search_index_gate_review": {
+    "public_search_api_contract_status": "valid",
+    "public_result_card_contract_status": "valid",
+    "public_search_safety_status": "valid",
+    "public_index_format_status": "valid",
+    "public_index_artifacts_status": "present; 584 documents at inspection",
+    "local_public_search_runtime_status": "valid local/prototype runtime",
+    "current_ordering_behavior": "current local public search ordering remains unchanged by P97",
+    "current_explanation_support_status": "P96 contract exists; no runtime explanation generation is implemented",
+    "blocked_request_safety_status": "valid",
+    "gaps": [
+      "No ranking runtime integration yet.",
+      "No public search response/order change allowed in P97."
+    ]
+  },
+  "eval_baseline_gate_review": {
+    "archive_resolution_eval_status": "passed; status_counts {satisfied: 6}",
+    "search_usefulness_audit_status": "passed; 64 queries",
+    "external_baseline_comparison_status": "not eligible for production-quality claims; 0 observed records",
+    "manual_observation_batch_status": "Batch 0 has 0 observed / 39 pending",
+    "current_counts": {
+      "covered": 5,
+      "partial": 40,
+      "source_gap": 10,
+      "capability_gap": 7,
+      "unknown": 2
+    },
+    "ranking_regression_tests_sufficient": false,
+    "production_quality_claims_eligible": false,
+    "gaps": [
+      "Dedicated ranking regression corpus is not defined.",
+      "Manual external baseline observations remain pending.",
+      "Production quality claims are ineligible."
+    ]
+  },
+  "hosted_deployment_gate_review": {
+    "p77_status": "present but hosted/static verification not production-ready",
+    "static_deployment_verified": false,
+    "static_deployment_status": "verified_failed",
+    "hosted_backend_verified": false,
+    "hosted_backend_status": "not_configured",
+    "route_evidence": "not_configured for hosted backend",
+    "safe_query_evidence": "operator_gated for hosted mode",
+    "blocked_request_evidence": "operator_gated for hosted mode",
+    "hosted_ranking_runtime_immediate_next_step": false,
+    "gaps": [
+      "Hosted backend URL is not configured.",
+      "Configured static deployment verification is failed.",
+      "Hosted staging ranking must remain blocked."
+    ]
+  },
+  "runtime_boundary": "No ranking runtime, public search order/response change, hidden score, suppression, telemetry, model call, live source call, or mutation.",
+  "ranking_runtime_architecture_plan": "Future modules only under runtime/engine/ranking and runtime/gateway/public_api/ranking; no runtime files created in P97.",
+  "ranking_input_output_model": "Inputs are public-safe result envelope fields only; outputs are same result set plus proposed order and explanations, with current-order fallback.",
+  "ranking_pipeline_plan": "Validate request, read candidates, extract factors, compute evidence/compatibility factors, attach cautions, tie-break, explain, fallback, no mutation.",
+  "evidence_weighted_integration_plan": "Use evidence/provenance/source/freshness/conflict/provisional/gap/action/risk factors without treating them as truth.",
+  "compatibility_aware_integration_plan": "Use optional public-safe target profile and compatibility evidence; no installability or dependency-safety claims.",
+  "result_merge_identity_integration_plan": "Use identity and merge refs for grouping signals only; preserve alternatives and conflicts; no destructive merge.",
+  "search_result_explanation_integration_plan": "Every ranked result needs explanation; hidden numeric scores and raw private query text are forbidden.",
+  "eval_regression_plan": "Archive/search usefulness evals plus future ranking regression corpus and external baseline evidence before runtime/quality claims.",
+  "safe_fallback_rollback_model": "Disabled by default, current-order fallback, kill switch, ranking/explanation failure returns current order.",
+  "privacy_no_telemetry_no_hidden_score_policy": "No raw query retention, IP/account/session/user-profile/ad/telemetry/model signal, hidden score, or private path/URL factor.",
+  "security_abuse_review": "Caps, no selector params, no local files, no live/model calls, no ranking-store writes, no telemetry, operator kill switch.",
+  "implementation_phases": [
+    "Phase 0 disabled planning",
+    "Phase 1 local dry-run",
+    "Phase 2 shadow ranking test report only",
+    "Phase 3 local visible dev ranking",
+    "Phase 4 hosted staging gated",
+    "Phase 5 public alpha gated"
+  ],
+  "acceptance_criteria": [
+    "evidence-weighted ranking contract valid",
+    "compatibility-aware ranking contract valid",
+    "result merge/deduplication contract valid",
+    "identity resolution contract valid",
+    "search result explanation contract valid",
+    "public search contract valid",
+    "public result-card contract valid",
+    "public search safety valid",
+    "public index contract valid",
+    "archive evals pass",
+    "search usefulness audit baseline recorded",
+    "external baseline status recorded",
+    "ranking regression corpus defined",
+    "deterministic tie-break policy accepted",
+    "no-hidden-score policy accepted",
+    "no telemetry/user-profile/ad/model signals accepted",
+    "no result suppression accepted",
+    "explanation integration accepted",
+    "current-order fallback accepted",
+    "hosted deployment evidence required for hosted mode",
+    "operator approval"
+  ],
+  "command_results": {
+    "p97_validators": {
+      "validate_public_search_ranking_runtime_plan": "passed",
+      "validate_public_search_ranking_runtime_plan_json": "passed",
+      "focused_tests": "passed tests.operations.test_public_search_ranking_runtime_plan and tests.scripts.test_validate_public_search_ranking_runtime_plan"
+    },
+    "adjacent_validators": "requested search explanation, extraction, pack/page/source-runtime, connector-runtime, public query observation, compatibility/evidence/ranking, result merge, identity, page, baseline, hosted deployment, public search, safety, rehearsal, static site, publication, and generated-artifact checks passed when present",
+    "eval_status": "archive resolution evals passed with status_counts {satisfied: 6}; search usefulness audit ran 64 queries with counts {covered: 5, partial: 40, source_gap: 10, capability_gap: 7, unknown: 2}",
+    "external_baseline_status": "Manual Observation Batch 0 remains 0 observed / 39 pending; production-quality ranking claims remain ineligible",
+    "hosted_deployment_status": "verify_public_hosted_deployment passed as evidence; static_site_status=verified_failed, hosted_backend_status=not_configured, route_verification_status=not_configured, safety/search handoff operator-gated",
+    "full_python_lanes": "tests/scripts, tests/operations, tests/hardening, tests/parity, runtime, surfaces, and full tests discovery passed",
+    "public_search_and_static": "public search contract/card/safety/local runtime/smoke/safety evidence/hosted rehearsal plus site/build/site validation/publication/static artifact checks passed",
+    "architecture_boundaries": "passed",
+    "git_diff_check": "passed",
+    "optional_cargo": "cargo unavailable on PATH; cargo check/test skipped as optional",
+    "all_required_commands": "passed"
+  },
+  "remaining_blockers": [
+    "Hosted staging blocked by P77 static/backend deployment evidence.",
+    "Production quality claims blocked by missing manual external baseline observations.",
+    "Runtime implementation blocked until operator approval and ranking regression corpus."
+  ],
+  "next_recommended_branch": "P98 Source Cache Local Dry-Run Runtime v0 only after approval",
+  "notes": [
+    "P97 is planning/audit/validator work only.",
+    "Current public search ordering and responses remain unchanged."
+  ],
+  "runtime_ranking_implemented": false,
+  "public_search_ranking_enabled": false,
+  "public_search_order_changed": false,
+  "public_search_response_changed": false,
+  "persistent_ranking_store_implemented": false,
+  "ranking_applied_to_live_search": false,
+  "hidden_scores_enabled": false,
+  "result_suppression_enabled": false,
+  "telemetry_signal_enabled": false,
+  "popularity_signal_enabled": false,
+  "user_profile_signal_enabled": false,
+  "ad_signal_enabled": false,
+  "model_call_enabled": false,
+  "live_source_calls_enabled": false,
+  "external_calls_performed": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "candidate_promotion_performed": false
+}

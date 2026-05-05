@@ -1,0 +1,23 @@
+# Acceptance Criteria
+
+- evidence-weighted ranking contract valid
+- compatibility-aware ranking contract valid
+- result merge/deduplication contract valid
+- identity resolution contract valid
+- search result explanation contract valid
+- public search contract valid
+- public result-card contract valid
+- public search safety valid
+- public index contract valid
+- archive evals pass
+- search usefulness audit baseline recorded
+- external baseline status recorded
+- ranking regression corpus defined
+- deterministic tie-break policy accepted
+- no-hidden-score policy accepted
+- no telemetry/user-profile/ad/model signals accepted
+- no result suppression accepted
+- explanation integration accepted
+- current-order fallback accepted
+- hosted deployment evidence required for hosted mode
+- operator approval
