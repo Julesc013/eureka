@@ -1,0 +1,103 @@
+{
+  "OCR_performed": false,
+  "URL_fetched": false,
+  "archive_unpacked": false,
+  "candidate_index_mutated": false,
+  "container_hints": [
+    {
+      "container_kind": "package_archive",
+      "container_label": "Synthetic package archive",
+      "container_status": "synthetic_example",
+      "executable_risk_present": false,
+      "limitations": [
+        "Container is described as metadata only; no file was opened or unpacked."
+      ],
+      "nested_container_present": false,
+      "payload_included": false
+    }
+  ],
+  "created_by_tool": "P95_deep_extraction_contract_v0",
+  "emulator_vm_launched": false,
+  "evidence_ledger_mutated": false,
+  "expected_outputs": [
+    "extraction_result_summary_candidate",
+    "source_cache_output_candidate_future",
+    "evidence_ledger_output_candidate_future"
+  ],
+  "external_calls_performed": false,
+  "extraction_executed": false,
+  "extraction_policy_ref": "minimal_package_metadata_summary_v0_policy",
+  "extraction_request_id": "minimal_package_metadata_summary_v0_request",
+  "extraction_request_kind": "deep_extraction_request",
+  "files_opened": false,
+  "installer_executed": false,
+  "limitations": [
+    "Contract-only request; no extraction runtime exists.",
+    "No raw payload, OCR output, transcription output, source-cache record, or evidence-ledger record is created."
+  ],
+  "live_source_called": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "no_mutation_guarantees": [
+    "No source cache, evidence ledger, candidate index, public index, local index, or master index mutation occurs."
+  ],
+  "no_runtime_guarantees": [
+    "No archive is opened or unpacked.",
+    "No payload is executed.",
+    "No OCR or transcription is performed.",
+    "No URL is fetched."
+  ],
+  "notes": [
+    "Synthetic example for validator coverage and future runtime planning only."
+  ],
+  "package_manager_invoked": false,
+  "payload_executed": false,
+  "privacy": {
+    "absolute_paths_allowed": false,
+    "credentials_allowed": false,
+    "private_paths_allowed": false,
+    "public_safe_example": true,
+    "raw_private_query_data_allowed": false
+  },
+  "public_index_mutated": false,
+  "request_scope": {
+    "contract_only": true,
+    "runtime_allowed_now": false,
+    "scope_kind": "contract_fixture"
+  },
+  "requested_tiers": [
+    "tier_0_outer_metadata",
+    "tier_2_manifest_extraction",
+    "tier_3_selective_text_summary"
+  ],
+  "rights_risk": {
+    "malware_safety_claimed": false,
+    "payload_safety_known": false,
+    "review_required_before_public_use": true,
+    "rights_clearance_claimed": false
+  },
+  "runtime_extraction_implemented": false,
+  "safety_requirements": {
+    "execution_disabled_required": true,
+    "network_disabled_required": true,
+    "operator_approval_required": true,
+    "resource_limits_required": true,
+    "sandbox_required_before_runtime": true
+  },
+  "schema_version": "0.1.0",
+  "source_cache_mutated": false,
+  "status": "synthetic_example",
+  "target_ref": {
+    "limitations": [
+      "Synthetic public-safe contract fixture; no payload exists."
+    ],
+    "target_identifier": "synthetic:package:metadata-summary",
+    "target_kind": "synthetic_example",
+    "target_label": "Synthetic package metadata archive",
+    "target_path_public_safe": "synthetic/synthetic/package/metadata-summary",
+    "target_payload_available": false,
+    "target_status": "synthetic_example"
+  },
+  "telemetry_exported": false,
+  "transcription_performed": false
+}

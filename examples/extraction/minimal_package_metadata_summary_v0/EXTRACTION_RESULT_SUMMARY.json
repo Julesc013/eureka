@@ -1,0 +1,201 @@
+{
+  "OCR_performed": false,
+  "OCR_transcription_summaries": {
+    "OCR_hook_defined": false,
+    "OCR_output_accepted_as_truth": false,
+    "OCR_performed": false,
+    "OCR_runtime_implemented": false,
+    "limitations": [
+      "Hook metadata only; no OCR or transcription runtime is implemented."
+    ],
+    "review_required": true,
+    "transcription_hook_defined": false,
+    "transcription_output_accepted_as_truth": false,
+    "transcription_performed": false,
+    "transcription_runtime_implemented": false
+  },
+  "accepted_as_truth": false,
+  "candidate_index_mutated": false,
+  "container_summary": {
+    "container_kind": "package_archive",
+    "container_label": "Synthetic package archive",
+    "container_status": "synthetic_example",
+    "executable_risk_present": false,
+    "limitations": [
+      "Container is described as metadata only; no file was opened or unpacked."
+    ],
+    "nested_container_present": false,
+    "payload_included": false
+  },
+  "created_by_tool": "P95_deep_extraction_contract_v0",
+  "evidence_ledger_mutated": false,
+  "evidence_ledger_output_candidates": [
+    {
+      "accepted_as_truth": false,
+      "candidate_kind": "extraction_observation_future",
+      "evidence_ledger_mutated": false,
+      "review_required": true
+    }
+  ],
+  "extraction_executed": false,
+  "extraction_policy_ref": "minimal_package_metadata_summary_v0_policy",
+  "extraction_result_from_runtime": false,
+  "extraction_result_summary_id": "minimal_package_metadata_summary_v0_result_summary",
+  "extraction_result_summary_kind": "extraction_result_summary",
+  "extraction_tiers_reported": [
+    "tier_0_outer_metadata",
+    "tier_2_manifest_extraction",
+    "tier_3_selective_text_summary"
+  ],
+  "limitations": [
+    "Result summary is synthetic and contract-only.",
+    "No extraction, OCR, transcription, execution, download, or mutation occurred."
+  ],
+  "malware_safety_claimed": false,
+  "manifest_summaries": [
+    {
+      "fields_summarized": [
+        "name",
+        "version_bucket",
+        "dependency_metadata_classes"
+      ],
+      "limitations": [
+        "Synthetic manifest summary only; raw manifest is not included."
+      ],
+      "manifest_kind": "package_manifest",
+      "manifest_status": "synthetic_example",
+      "raw_manifest_included": false
+    },
+    {
+      "fields_summarized": [
+        "package_url_fingerprint"
+      ],
+      "limitations": [
+        "Synthetic manifest summary only; raw manifest is not included."
+      ],
+      "manifest_kind": "PURL_metadata",
+      "manifest_status": "synthetic_example",
+      "raw_manifest_included": false
+    }
+  ],
+  "master_index_mutated": false,
+  "member_summaries": [
+    {
+      "limitations": [
+        "Listed as synthetic metadata only; no member payload is included."
+      ],
+      "member_checksum_refs": [],
+      "member_id": "member_package_manifest",
+      "member_kind": "manifest",
+      "member_label": "Package manifest",
+      "member_mime_type": "metadata-only/synthetic",
+      "member_path_public_safe": "package/package.json",
+      "member_size_bucket": "tiny_synthetic",
+      "member_status": "listed_only",
+      "payload_executed": false,
+      "payload_included": false,
+      "private_path_detected": false,
+      "risk_labels": []
+    },
+    {
+      "limitations": [
+        "Listed as synthetic metadata only; no member payload is included."
+      ],
+      "member_checksum_refs": [],
+      "member_id": "member_package_readme",
+      "member_kind": "text_segment",
+      "member_label": "Package readme summary",
+      "member_mime_type": "metadata-only/synthetic",
+      "member_path_public_safe": "package/README-summary.txt",
+      "member_size_bucket": "tiny_synthetic",
+      "member_status": "listed_only",
+      "payload_executed": false,
+      "payload_included": false,
+      "private_path_detected": false,
+      "risk_labels": []
+    }
+  ],
+  "no_mutation_guarantees": [
+    "No source cache, evidence ledger, candidate index, public index, local index, or master index mutation occurs."
+  ],
+  "no_runtime_guarantees": [
+    "No runtime extraction result exists.",
+    "No files were opened.",
+    "No payload was executed."
+  ],
+  "no_truth_guarantees": [
+    "Member enumeration is not payload trust.",
+    "Manifest extraction is not rights clearance.",
+    "OCR or transcription output would not be accepted as truth without review."
+  ],
+  "notes": [
+    "Synthetic example summary for P95 validator coverage."
+  ],
+  "payload_executed": false,
+  "privacy": {
+    "private_path_detected": false,
+    "public_safe_example": true,
+    "raw_private_query_data_included": false,
+    "secrets_detected": false
+  },
+  "public_index_mutated": false,
+  "raw_payload_included": false,
+  "raw_text_dump_included": false,
+  "rights_clearance_claimed": false,
+  "rights_risk": {
+    "malware_safety_claimed": false,
+    "payload_safety_known": false,
+    "review_required_before_public_use": true,
+    "rights_clearance_claimed": false
+  },
+  "safety_review": {
+    "executable_payload_risk_label": "not_detected_in_synthetic_summary",
+    "executable_payload_risk_present": false,
+    "malware_safety_claimed": false,
+    "sandbox_required_before_runtime": true
+  },
+  "schema_version": "0.1.0",
+  "source_cache_mutated": false,
+  "source_cache_output_candidates": [
+    {
+      "candidate_kind": "deep_extraction_summary_future",
+      "review_required": true,
+      "source_cache_mutated": false
+    }
+  ],
+  "source_request_ref": "minimal_package_metadata_summary_v0_request",
+  "status": "synthetic_example",
+  "synthetic_record_candidates": [
+    {
+      "candidate_kind": "generated_from_extraction_future",
+      "candidate_status": "provisional",
+      "mutated_now": false,
+      "review_required": true
+    }
+  ],
+  "target_ref": {
+    "limitations": [
+      "Synthetic public-safe contract fixture; no payload exists."
+    ],
+    "target_identifier": "synthetic:package:metadata-summary",
+    "target_kind": "synthetic_example",
+    "target_label": "Synthetic package metadata archive",
+    "target_path_public_safe": "synthetic/synthetic/package/metadata-summary",
+    "target_payload_available": false,
+    "target_status": "synthetic_example"
+  },
+  "text_summaries": [
+    {
+      "copyright_review_required": true,
+      "limitations": [
+        "Short synthetic summary only; no raw copyrighted text dump."
+      ],
+      "raw_text_dump_included": false,
+      "raw_text_included": false,
+      "summary_text": "Synthetic package metadata summary; dependency metadata is not dependency resolution.",
+      "text_source_kind": "README_text_future",
+      "text_summary_status": "summary_only"
+    }
+  ],
+  "transcription_performed": false
+}

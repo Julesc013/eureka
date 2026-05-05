@@ -84,3 +84,10 @@ Before implementation: all pack contracts, validators, validate-only import, qua
 ## Next Steps
 
 Recommended next branch: P95 Deep Extraction Contract v0. Do not start pack import local dry-run runtime until explicit operator approval and mutation/promotion gates exist.
+<!-- P95-DEEP-EXTRACTION-CONTRACT-START -->
+## P95 Deep Extraction Contract v0
+
+P95 adds Deep Extraction Contract v0 as contract/schema/example/validator work only. It defines metadata-first extraction requests, result summaries, policies, tiers, container/member/manifest/text/OCR hooks, sandbox/resource requirements, privacy/path/secret rejection, executable-risk labels, provenance, synthetic-record boundaries, and future relationships to source cache, evidence ledger, candidate records, public search, object pages, comparison pages, and result explanations.
+
+No extraction runtime is implemented. No files are opened, archives unpacked, payloads executed, package managers invoked, emulators or VMs launched, OCR/transcription performed, URLs fetched, live sources called, source/evidence/candidate/index records mutated, or candidates promoted.
+<!-- P95-DEEP-EXTRACTION-CONTRACT-END -->

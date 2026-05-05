@@ -1,0 +1,145 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_policy.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "allowed_tiers": {
+      "items": {
+        "enum": [
+          "tier_0_outer_metadata",
+          "tier_1_container_member_listing",
+          "tier_2_manifest_extraction",
+          "tier_3_selective_text_summary",
+          "tier_4_recursive_deep_extraction",
+          "tier_5_on_demand_deepening",
+          "OCR_hook_future",
+          "transcription_hook_future",
+          "unknown"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "arbitrary_path_access_allowed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "arbitrary_url_fetch_allowed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "candidate_index_mutation_allowed_now": {
+      "const": false,
+      "type": "boolean"
+    },
+    "emulator_vm_launch_allowed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "evidence_ledger_mutation_allowed_now": {
+      "const": false,
+      "type": "boolean"
+    },
+    "extraction_policy_id": {
+      "type": "string"
+    },
+    "extraction_policy_kind": {
+      "const": "extraction_policy",
+      "type": "string"
+    },
+    "forbidden_actions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "installer_execution_allowed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "master_index_mutation_allowed_now": {
+      "const": false,
+      "type": "boolean"
+    },
+    "mutation_policy": {
+      "type": "object"
+    },
+    "notes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "output_policy": {
+      "type": "object"
+    },
+    "package_manager_invocation_allowed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "payload_execution_allowed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "privacy_policy": {
+      "type": "object"
+    },
+    "resource_limits": {
+      "type": "object"
+    },
+    "rights_risk_policy": {
+      "type": "object"
+    },
+    "runtime_extraction_enabled": {
+      "const": false,
+      "type": "boolean"
+    },
+    "sandbox_policy": {
+      "type": "object"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "source_cache_mutation_allowed_now": {
+      "const": false,
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "draft_example",
+        "contract_only",
+        "runtime_future",
+        "disabled"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "extraction_policy_id",
+    "extraction_policy_kind",
+    "status",
+    "allowed_tiers",
+    "forbidden_actions",
+    "sandbox_policy",
+    "resource_limits",
+    "privacy_policy",
+    "rights_risk_policy",
+    "output_policy",
+    "mutation_policy",
+    "notes",
+    "runtime_extraction_enabled",
+    "arbitrary_path_access_allowed",
+    "arbitrary_url_fetch_allowed",
+    "payload_execution_allowed",
+    "installer_execution_allowed",
+    "package_manager_invocation_allowed",
+    "emulator_vm_launch_allowed",
+    "source_cache_mutation_allowed_now",
+    "evidence_ledger_mutation_allowed_now",
+    "candidate_index_mutation_allowed_now",
+    "master_index_mutation_allowed_now"
+  ],
+  "title": "Eureka Deep Extraction Policy v0",
+  "type": "object"
+}

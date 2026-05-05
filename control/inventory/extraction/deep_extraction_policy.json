@@ -1,0 +1,33 @@
+{
+  "OCR_runtime_implemented": false,
+  "arbitrary_local_path_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "candidate_index_mutation_allowed": false,
+  "emulator_vm_launch_enabled": false,
+  "evidence_ledger_mutation_allowed": false,
+  "executable_payload_policy_required": true,
+  "extraction_queue_implemented": false,
+  "extraction_store_implemented": false,
+  "installer_execution_enabled": false,
+  "master_index_mutation_allowed": false,
+  "next_runtime_branch_recommendation": "P96 Search Result Explanation Contract v0",
+  "notes": [
+    "P95 is contract-only. No extraction runtime, payload opening, OCR, transcription, source cache mutation, evidence ledger mutation, candidate promotion, index mutation, telemetry, or external calls are enabled.",
+    "Future Deep Extraction Runtime Planning v0 must wait for sandbox and payload safety policy approval."
+  ],
+  "operator_approval_required": true,
+  "package_manager_invocation_enabled": false,
+  "payload_execution_enabled": false,
+  "policy_id": "deep_extraction_policy_v0",
+  "privacy_path_secret_policy_required": true,
+  "public_index_mutation_allowed": false,
+  "recursive_extraction_enabled": false,
+  "resource_limits_required_before_runtime": true,
+  "runtime_extraction_implemented": false,
+  "sandbox_required_before_runtime": true,
+  "sandbox_runtime_implemented": false,
+  "schema_version": "0.1.0",
+  "source_cache_mutation_allowed": false,
+  "status": "contract_only",
+  "transcription_runtime_implemented": false
+}

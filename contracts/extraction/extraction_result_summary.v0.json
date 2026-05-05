@@ -1,0 +1,452 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_result_summary.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "OCR_performed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "OCR_transcription_summaries": {
+      "type": "object"
+    },
+    "accepted_as_truth": {
+      "const": false,
+      "type": "boolean"
+    },
+    "candidate_index_mutated": {
+      "const": false,
+      "type": "boolean"
+    },
+    "container_summary": {
+      "additionalProperties": false,
+      "properties": {
+        "container_kind": {
+          "enum": [
+            "zip_archive",
+            "tar_archive",
+            "gzip_archive",
+            "seven_zip_archive",
+            "ISO_image",
+            "disk_image",
+            "installer",
+            "package_archive",
+            "wheel",
+            "sdist",
+            "npm_tarball",
+            "WARC",
+            "WACZ",
+            "PDF",
+            "scanned_volume",
+            "source_bundle",
+            "repository_snapshot",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "container_label": {
+          "type": "string"
+        },
+        "container_status": {
+          "enum": [
+            "synthetic_example",
+            "metadata_only",
+            "fixture_summary",
+            "future_runtime",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "executable_risk_present": {
+          "type": "boolean"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "nested_container_present": {
+          "type": "boolean"
+        },
+        "payload_included": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "container_kind",
+        "container_label",
+        "container_status",
+        "payload_included",
+        "executable_risk_present",
+        "nested_container_present",
+        "limitations"
+      ],
+      "type": "object"
+    },
+    "created_by_tool": {
+      "type": "string"
+    },
+    "evidence_ledger_mutated": {
+      "const": false,
+      "type": "boolean"
+    },
+    "evidence_ledger_output_candidates": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "extraction_executed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "extraction_policy_ref": {
+      "type": "string"
+    },
+    "extraction_result_from_runtime": {
+      "const": false,
+      "type": "boolean"
+    },
+    "extraction_result_summary_id": {
+      "type": "string"
+    },
+    "extraction_result_summary_kind": {
+      "const": "extraction_result_summary",
+      "type": "string"
+    },
+    "extraction_tiers_reported": {
+      "items": {
+        "enum": [
+          "tier_0_outer_metadata",
+          "tier_1_container_member_listing",
+          "tier_2_manifest_extraction",
+          "tier_3_selective_text_summary",
+          "tier_4_recursive_deep_extraction",
+          "tier_5_on_demand_deepening",
+          "OCR_hook_future",
+          "transcription_hook_future",
+          "unknown"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "malware_safety_claimed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "manifest_summaries": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "master_index_mutated": {
+      "const": false,
+      "type": "boolean"
+    },
+    "member_summaries": {
+      "items": {
+        "$id": "eureka.contracts.extraction.extraction_member.v0",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "properties": {
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "member_checksum_refs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "member_id": {
+            "type": "string"
+          },
+          "member_kind": {
+            "enum": [
+              "file",
+              "directory",
+              "manifest",
+              "metadata_record",
+              "capture_record",
+              "OCR_layer",
+              "text_segment",
+              "image",
+              "executable",
+              "installer_member",
+              "nested_archive",
+              "source_file",
+              "unknown"
+            ],
+            "type": "string"
+          },
+          "member_label": {
+            "type": "string"
+          },
+          "member_mime_type": {
+            "type": "string"
+          },
+          "member_path_public_safe": {
+            "type": "string"
+          },
+          "member_size_bucket": {
+            "type": "string"
+          },
+          "member_status": {
+            "enum": [
+              "synthetic_example",
+              "listed_only",
+              "metadata_only",
+              "future_runtime",
+              "rejected_by_policy"
+            ],
+            "type": "string"
+          },
+          "payload_executed": {
+            "const": false,
+            "type": "boolean"
+          },
+          "payload_included": {
+            "const": false,
+            "type": "boolean"
+          },
+          "private_path_detected": {
+            "const": false,
+            "type": "boolean"
+          },
+          "risk_labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "member_id",
+          "member_kind",
+          "member_label",
+          "member_path_public_safe",
+          "member_status",
+          "payload_included",
+          "payload_executed",
+          "private_path_detected",
+          "limitations"
+        ],
+        "title": "Eureka Extraction Member Summary v0",
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "no_mutation_guarantees": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "no_runtime_guarantees": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "no_truth_guarantees": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "notes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "payload_executed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "privacy": {
+      "type": "object"
+    },
+    "public_index_mutated": {
+      "const": false,
+      "type": "boolean"
+    },
+    "raw_payload_included": {
+      "const": false,
+      "type": "boolean"
+    },
+    "raw_text_dump_included": {
+      "const": false,
+      "type": "boolean"
+    },
+    "rights_clearance_claimed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "rights_risk": {
+      "type": "object"
+    },
+    "safety_review": {
+      "type": "object"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "source_cache_mutated": {
+      "const": false,
+      "type": "boolean"
+    },
+    "source_cache_output_candidates": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "source_request_ref": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "synthetic_example",
+        "public_safe_example",
+        "fixture_summary",
+        "review_required",
+        "rejected_by_policy",
+        "runtime_future"
+      ],
+      "type": "string"
+    },
+    "synthetic_record_candidates": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "target_ref": {
+      "additionalProperties": false,
+      "properties": {
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "target_identifier": {
+          "type": "string"
+        },
+        "target_kind": {
+          "enum": [
+            "public_index_document",
+            "object_page_record",
+            "source_cache_record_future",
+            "evidence_pack_record",
+            "source_pack_record",
+            "pack_member",
+            "static_fixture",
+            "synthetic_example",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "target_label": {
+          "type": "string"
+        },
+        "target_path_public_safe": {
+          "type": "string"
+        },
+        "target_payload_available": {
+          "const": false,
+          "type": "boolean"
+        },
+        "target_status": {
+          "enum": [
+            "synthetic_example",
+            "fixture",
+            "reviewed_future",
+            "candidate",
+            "unknown"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "target_kind",
+        "target_label",
+        "target_identifier",
+        "target_status",
+        "target_payload_available",
+        "limitations"
+      ],
+      "type": "object"
+    },
+    "text_summaries": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "transcription_performed": {
+      "const": false,
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema_version",
+    "extraction_result_summary_id",
+    "extraction_result_summary_kind",
+    "status",
+    "created_by_tool",
+    "source_request_ref",
+    "extraction_policy_ref",
+    "target_ref",
+    "extraction_tiers_reported",
+    "container_summary",
+    "member_summaries",
+    "manifest_summaries",
+    "text_summaries",
+    "OCR_transcription_summaries",
+    "synthetic_record_candidates",
+    "source_cache_output_candidates",
+    "evidence_ledger_output_candidates",
+    "safety_review",
+    "privacy",
+    "rights_risk",
+    "limitations",
+    "no_truth_guarantees",
+    "no_runtime_guarantees",
+    "no_mutation_guarantees",
+    "notes",
+    "extraction_result_from_runtime",
+    "extraction_executed",
+    "raw_payload_included",
+    "raw_text_dump_included",
+    "OCR_performed",
+    "transcription_performed",
+    "payload_executed",
+    "source_cache_mutated",
+    "evidence_ledger_mutated",
+    "candidate_index_mutated",
+    "public_index_mutated",
+    "master_index_mutated",
+    "accepted_as_truth",
+    "rights_clearance_claimed",
+    "malware_safety_claimed"
+  ],
+  "title": "Eureka Extraction Result Summary v0",
+  "type": "object"
+}

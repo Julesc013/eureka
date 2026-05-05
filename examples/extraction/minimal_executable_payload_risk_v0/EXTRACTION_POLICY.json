@@ -1,0 +1,98 @@
+{
+  "allowed_tiers": [
+    "tier_0_outer_metadata",
+    "tier_1_container_member_listing"
+  ],
+  "arbitrary_path_access_allowed": false,
+  "arbitrary_url_fetch_allowed": false,
+  "candidate_index_mutation_allowed_now": false,
+  "emulator_vm_launch_allowed": false,
+  "evidence_ledger_mutation_allowed_now": false,
+  "extraction_policy_id": "minimal_executable_payload_risk_v0_policy",
+  "extraction_policy_kind": "extraction_policy",
+  "forbidden_actions": [
+    "runtime extraction",
+    "arbitrary path access",
+    "arbitrary URL fetch",
+    "archive unpacking now",
+    "payload execution",
+    "installer execution",
+    "package manager invocation",
+    "emulator or VM launch",
+    "OCR runtime",
+    "transcription runtime",
+    "source cache mutation",
+    "evidence ledger mutation",
+    "candidate promotion",
+    "index mutation"
+  ],
+  "installer_execution_allowed": false,
+  "master_index_mutation_allowed_now": false,
+  "mutation_policy": {
+    "candidate_index_mutation_allowed_now": false,
+    "evidence_ledger_mutation_allowed_now": false,
+    "master_index_mutation_allowed_now": false,
+    "reports_before_mutation": true,
+    "source_cache_mutation_allowed_now": false
+  },
+  "notes": [
+    "Policy is contract-only. It keeps future extraction disabled until sandbox, resource, privacy, and payload-safety gates are approved."
+  ],
+  "output_policy": {
+    "candidate_outputs_only_future": true,
+    "metadata_summaries_only": true,
+    "raw_payload_included_allowed": false,
+    "raw_text_dump_allowed": false
+  },
+  "package_manager_invocation_allowed": false,
+  "payload_execution_allowed": false,
+  "privacy_policy": {
+    "logical_member_paths_only": true,
+    "reject_absolute_paths": true,
+    "reject_credentials": true,
+    "reject_home_user_paths": true,
+    "reject_path_traversal": true,
+    "reject_private_cache_roots": true,
+    "reject_private_urls": true
+  },
+  "resource_limits": {
+    "archive_traversal_guard_required": true,
+    "decompression_bomb_guard_required": true,
+    "limitations": [
+      "Concrete runtime limits require operator approval before implementation."
+    ],
+    "max_OCR_pages_future": 0,
+    "max_depth_future": 3,
+    "max_member_size_future": "operator_defined",
+    "max_members_future": 1000,
+    "max_runtime_ms_future": 5000,
+    "max_text_bytes_future": 4096,
+    "max_total_uncompressed_size_future": "operator_defined",
+    "recursive_extraction_enabled_now": false,
+    "symlink_guard_required": true,
+    "tier_4_requires_sandbox": true,
+    "tier_5_requires_on_demand_approval": true
+  },
+  "rights_risk_policy": {
+    "malware_safety_claimed": false,
+    "manual_review_required_before_promotion": true,
+    "metadata_is_not_rights_clearance": true,
+    "payload_safety_unknown": true
+  },
+  "runtime_extraction_enabled": false,
+  "sandbox_policy": {
+    "cleanup_required": true,
+    "execution_disabled_required": true,
+    "filesystem_scope_limited_required": true,
+    "limitations": [
+      "Sandbox requirements are contract-only in P95."
+    ],
+    "network_disabled_required": true,
+    "runtime_sandbox_implemented": false,
+    "sandbox_required_future": true,
+    "temporary_workspace_required": true
+  },
+  "schema_version": "0.1.0",
+  "source_cache_mutation_allowed_now": false,
+  "status": "contract_only"
+}

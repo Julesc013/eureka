@@ -1,0 +1,93 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_member.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "member_checksum_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "member_id": {
+      "type": "string"
+    },
+    "member_kind": {
+      "enum": [
+        "file",
+        "directory",
+        "manifest",
+        "metadata_record",
+        "capture_record",
+        "OCR_layer",
+        "text_segment",
+        "image",
+        "executable",
+        "installer_member",
+        "nested_archive",
+        "source_file",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "member_label": {
+      "type": "string"
+    },
+    "member_mime_type": {
+      "type": "string"
+    },
+    "member_path_public_safe": {
+      "type": "string"
+    },
+    "member_size_bucket": {
+      "type": "string"
+    },
+    "member_status": {
+      "enum": [
+        "synthetic_example",
+        "listed_only",
+        "metadata_only",
+        "future_runtime",
+        "rejected_by_policy"
+      ],
+      "type": "string"
+    },
+    "payload_executed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "payload_included": {
+      "const": false,
+      "type": "boolean"
+    },
+    "private_path_detected": {
+      "const": false,
+      "type": "boolean"
+    },
+    "risk_labels": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "member_id",
+    "member_kind",
+    "member_label",
+    "member_path_public_safe",
+    "member_status",
+    "payload_included",
+    "payload_executed",
+    "private_path_detected",
+    "limitations"
+  ],
+  "title": "Eureka Extraction Member Summary v0",
+  "type": "object"
+}
