@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/result_merge_relation.v0.json",
+  "title": "EurekaResultMergeRelationV0",
+  "description": "Reusable result merge relation taxonomy. Relation claims are not truth and never authorize destructive merge.",
+  "type": "object",
+  "required": [
+    "relation_type",
+    "relation_status",
+    "relation_claim_not_truth",
+    "destructive_merge_allowed",
+    "limitations"
+  ],
+  "properties": {
+    "relation_type": {
+      "type": "string",
+      "enum": [
+        "exact_duplicate_result",
+        "near_duplicate_result",
+        "variant_result",
+        "same_object_different_source",
+        "same_object_different_representation",
+        "same_version_different_representation",
+        "same_source_duplicate",
+        "parent_child_result",
+        "member_of_result",
+        "source_mirror_result",
+        "conflicting_duplicate_claim",
+        "not_duplicate",
+        "unknown"
+      ]
+    },
+    "relation_status": {
+      "type": "string",
+      "enum": [
+        "asserted_example",
+        "candidate",
+        "review_required",
+        "conflicted",
+        "rejected",
+        "future"
+      ]
+    },
+    "relation_claim_not_truth": {
+      "type": "boolean",
+      "const": true
+    },
+    "destructive_merge_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-relation_claim_not_truth_required": true,
+  "x-destructive_merge_allowed": false,
+  "x-ranking_changed_allowed": false
+}

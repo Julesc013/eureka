@@ -1,0 +1,361 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "result_merge_group_id",
+    "result_merge_group_kind",
+    "status",
+    "created_by_tool",
+    "merge_group_identity",
+    "group_relation",
+    "grouped_results",
+    "canonical_display_record",
+    "collapsed_results",
+    "transparency",
+    "grouping_criteria",
+    "identity_resolution_refs",
+    "source_evidence_provenance",
+    "conflicts",
+    "user_facing_behavior",
+    "result_card_projection",
+    "api_projection",
+    "privacy",
+    "limitations",
+    "no_destructive_merge_guarantees",
+    "no_ranking_promotion_mutation_guarantees",
+    "no_runtime_guarantees",
+    "notes",
+    "runtime_result_merge_implemented",
+    "persistent_merge_group_store_implemented",
+    "public_search_runtime_grouping_enabled",
+    "public_search_ranking_changed",
+    "records_merged",
+    "duplicates_deleted",
+    "results_hidden_without_explanation",
+    "destructive_merge_performed",
+    "canonical_record_claimed_as_truth",
+    "candidate_promotion_performed",
+    "master_index_mutated",
+    "public_index_mutated",
+    "local_index_mutated",
+    "source_cache_mutated",
+    "evidence_ledger_mutated",
+    "candidate_index_mutated",
+    "live_source_called",
+    "external_calls_performed",
+    "downloads_enabled",
+    "installs_enabled",
+    "execution_enabled",
+    "telemetry_exported"
+  ],
+  "properties": {
+    "$id": "https://eureka.local/contracts/search/result_merge_group.v0.json",
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "result_merge_group_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result_merge_group_kind": {
+      "type": "string",
+      "const": "result_merge_group"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "synthetic_example",
+        "public_safe_example",
+        "exact_duplicate_group",
+        "near_duplicate_group",
+        "variant_group",
+        "conflict_preserving_group",
+        "review_required",
+        "runtime_future",
+        "rejected_by_policy"
+      ]
+    },
+    "created_by_tool": {
+      "type": "string"
+    },
+    "merge_group_identity": {
+      "type": "object"
+    },
+    "group_relation": {
+      "$ref": "#/$defs/relation"
+    },
+    "grouped_results": {
+      "type": "array",
+      "minItems": 2
+    },
+    "canonical_display_record": {
+      "type": "object"
+    },
+    "collapsed_results": {
+      "type": "object"
+    },
+    "transparency": {
+      "type": "object"
+    },
+    "grouping_criteria": {
+      "type": "array",
+      "minItems": 1
+    },
+    "identity_resolution_refs": {
+      "type": "array"
+    },
+    "source_evidence_provenance": {
+      "type": "object"
+    },
+    "conflicts": {
+      "type": "object"
+    },
+    "user_facing_behavior": {
+      "type": "object"
+    },
+    "result_card_projection": {
+      "type": "object"
+    },
+    "api_projection": {
+      "type": "object"
+    },
+    "privacy": {
+      "$ref": "#/$defs/privacy"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "no_destructive_merge_guarantees": {
+      "type": "object"
+    },
+    "no_ranking_promotion_mutation_guarantees": {
+      "type": "object"
+    },
+    "no_runtime_guarantees": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "runtime_result_merge_implemented": {
+      "type": "boolean",
+      "const": false
+    },
+    "persistent_merge_group_store_implemented": {
+      "type": "boolean",
+      "const": false
+    },
+    "public_search_runtime_grouping_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "public_search_ranking_changed": {
+      "type": "boolean",
+      "const": false
+    },
+    "records_merged": {
+      "type": "boolean",
+      "const": false
+    },
+    "duplicates_deleted": {
+      "type": "boolean",
+      "const": false
+    },
+    "results_hidden_without_explanation": {
+      "type": "boolean",
+      "const": false
+    },
+    "destructive_merge_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "canonical_record_claimed_as_truth": {
+      "type": "boolean",
+      "const": false
+    },
+    "candidate_promotion_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "master_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "public_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "local_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "source_cache_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "evidence_ledger_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "candidate_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "live_source_called": {
+      "type": "boolean",
+      "const": false
+    },
+    "external_calls_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "downloads_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "installs_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "execution_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "telemetry_exported": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "$defs": {
+    "relation": {
+      "type": "object",
+      "required": [
+        "relation_type",
+        "relation_status",
+        "relation_claim_not_truth",
+        "destructive_merge_allowed",
+        "limitations"
+      ],
+      "properties": {
+        "relation_type": {
+          "type": "string",
+          "enum": [
+            "exact_duplicate_result",
+            "near_duplicate_result",
+            "variant_result",
+            "same_object_different_source",
+            "same_object_different_representation",
+            "same_version_different_representation",
+            "same_source_duplicate",
+            "parent_child_result",
+            "member_of_result",
+            "source_mirror_result",
+            "conflicting_duplicate_claim",
+            "not_duplicate",
+            "unknown"
+          ]
+        },
+        "relation_status": {
+          "type": "string",
+          "enum": [
+            "asserted_example",
+            "candidate",
+            "review_required",
+            "conflicted",
+            "rejected",
+            "future"
+          ]
+        },
+        "relation_claim_not_truth": {
+          "type": "boolean",
+          "const": true
+        },
+        "destructive_merge_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "required": [
+        "privacy_classification",
+        "contains_private_path",
+        "contains_secret",
+        "contains_private_url",
+        "contains_user_identifier",
+        "contains_ip_address",
+        "contains_raw_private_query",
+        "publishable",
+        "public_aggregate_allowed",
+        "reasons"
+      ],
+      "properties": {
+        "privacy_classification": {
+          "type": "string",
+          "enum": [
+            "public_safe_example",
+            "public_safe_metadata",
+            "local_private",
+            "rejected_sensitive",
+            "redacted",
+            "unknown"
+          ]
+        },
+        "contains_private_path": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_secret": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_private_url": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_user_identifier": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_ip_address": {
+          "type": "boolean",
+          "const": false
+        },
+        "contains_raw_private_query": {
+          "type": "boolean",
+          "const": false
+        },
+        "publishable": {
+          "type": "boolean"
+        },
+        "public_aggregate_allowed": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

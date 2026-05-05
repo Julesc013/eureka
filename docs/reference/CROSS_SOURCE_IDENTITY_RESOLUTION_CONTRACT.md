@@ -67,3 +67,11 @@ Public examples contain no private absolute paths, private URLs, private reposit
 Identity resolution relates to object pages, source pages, comparison pages, public search, public index, source cache, evidence ledger, candidate index, candidate promotion policy, known absence pages, result merge/deduplication, evidence-weighted ranking, and compatibility-aware ranking.
 
 Runtime identity resolution, persistent identity stores, canonicalization, destructive deduplication, record merging, candidate promotion, master-index updates, public-search identity badges, and hosted routes remain future work.
+
+<!-- P83-RESULT-MERGE-DEDUPLICATION-START -->
+## P83 Result Merge and Deduplication Contract v0
+
+P83 defines contract-only search-result grouping and deduplication semantics. It preserves alternatives, conflicts, source/evidence/provenance refs, and user-visible explanations while forbidding runtime grouping, result suppression, ranking changes, destructive merge, candidate promotion, live source calls, telemetry, and index/cache/ledger mutation.
+
+Future public search, object/source/comparison pages, cross-source identity resolution, and ranking contracts may reference P83 only after governed runtime planning.
+<!-- P83-RESULT-MERGE-DEDUPLICATION-END -->

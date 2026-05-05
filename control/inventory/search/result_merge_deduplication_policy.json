@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "result_merge_deduplication_policy_v0",
+  "status": "contract_only",
+  "runtime_result_merge_implemented": false,
+  "runtime_deduplication_implemented": false,
+  "persistent_merge_group_store_implemented": false,
+  "public_search_runtime_grouping_enabled": false,
+  "public_search_ranking_changed": false,
+  "records_merged": false,
+  "duplicates_deleted": false,
+  "destructive_merge_allowed": false,
+  "conflict_hiding_allowed": false,
+  "hidden_without_explanation_allowed": false,
+  "canonical_display_is_truth": false,
+  "candidate_promotion_allowed": false,
+  "master_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "exact_duplicate_requires_strong_identifier_or_review": true,
+  "weak_name_match_not_sufficient_for_exact_duplicate": true,
+  "conflict_preservation_required": true,
+  "next_contracts": [
+    "evidence_weighted_ranking_contract",
+    "compatibility_aware_ranking_contract",
+    "public_search_runtime_merge_planning"
+  ],
+  "notes": [
+    "P83 is contract-only. No runtime merge/deduplication, ranking change, suppression, promotion, or mutation is implemented."
+  ]
+}

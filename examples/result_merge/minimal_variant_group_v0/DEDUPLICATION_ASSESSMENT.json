@@ -1,0 +1,180 @@
+{
+  "schema_version": "0.1.0",
+  "deduplication_assessment_id": "deduplication_assessment_minimal_variant_group_v0",
+  "deduplication_assessment_kind": "deduplication_assessment",
+  "status": "variant",
+  "created_by_tool": "p83_result_merge_deduplication_contract_v0",
+  "assessment_scope": {
+    "scope_kind": "public_search_result_grouping",
+    "assessment_basis": "synthetic_example",
+    "limitations": [
+      "No live search result was grouped."
+    ]
+  },
+  "assessed_results": [
+    {
+      "result_ref": "synthetic:result:minimal_variant_group_v0:left",
+      "result_kind": "public_search_result",
+      "result_title": "Example App 1.0",
+      "result_status": "candidate",
+      "source_id": "synthetic:local_fixture",
+      "source_family": "local_fixture",
+      "object_ref": "synthetic:object:left",
+      "representation_ref": "synthetic:representation:left",
+      "member_ref": null,
+      "evidence_refs": [
+        "synthetic:evidence:left"
+      ],
+      "identity_resolution_refs": [],
+      "limitations": [
+        "Synthetic result only; not live search output."
+      ]
+    },
+    {
+      "result_ref": "synthetic:result:minimal_variant_group_v0:right",
+      "result_kind": "public_search_result",
+      "result_title": "ExampleApp v1.0",
+      "result_status": "candidate",
+      "source_id": "synthetic:recorded_fixture",
+      "source_family": "recorded_fixture",
+      "object_ref": "synthetic:object:right",
+      "representation_ref": "synthetic:representation:right",
+      "member_ref": null,
+      "evidence_refs": [
+        "synthetic:evidence:right"
+      ],
+      "identity_resolution_refs": [],
+      "limitations": [
+        "Synthetic result only; not live search output."
+      ]
+    }
+  ],
+  "asserted_relation": {
+    "relation_type": "same_object_different_representation",
+    "relation_status": "candidate",
+    "relation_claim_not_truth": true,
+    "destructive_merge_allowed": false,
+    "limitations": [
+      "Scoped presentation relation only; not identity truth or destructive merge authorization."
+    ]
+  },
+  "relation_evidence": [
+    {
+      "evidence_ref": "synthetic:evidence:minimal_variant_group_v0",
+      "evidence_kind": "synthetic_grouping_note",
+      "confidence_not_truth": true,
+      "limitations": [
+        "No source fetch or evidence ledger write."
+      ]
+    }
+  ],
+  "grouping_decision": {
+    "grouping_recommended_future": true,
+    "grouping_applied_now": false,
+    "decision_not_truth": true,
+    "limitations": [
+      "No runtime grouping applied."
+    ]
+  },
+  "display_decision": {
+    "canonical_display_ref": "synthetic:result:minimal_variant_group_v0:left",
+    "canonical_record_claimed_as_truth": false,
+    "alternative_results_preserved": true,
+    "results_hidden_without_explanation": false,
+    "limitations": [
+      "Display decision is future UI convenience only."
+    ]
+  },
+  "conflict_review": {
+    "conflict_status": "none_known",
+    "disagreement_preserved": true,
+    "conflict_results_must_remain_expandable": true,
+    "limitations": [
+      "Conflict review remains future work."
+    ]
+  },
+  "confidence": {
+    "confidence_class": "medium",
+    "confidence_basis": "weak_or_mixed_evidence",
+    "confidence_not_truth": true,
+    "confidence_sufficient_for_merge_now": false,
+    "limitations": [
+      "Confidence is not deduplication truth."
+    ]
+  },
+  "review": {
+    "review_status": "human_review_required",
+    "required_reviews": [
+      "human_review",
+      "identity_resolution_review",
+      "promotion_policy_review"
+    ],
+    "destructive_merge_forbidden": true,
+    "ranking_change_forbidden": true,
+    "limitations": [
+      "Review required before runtime merge planning."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe result titles and refs only."
+    ]
+  },
+  "limitations": [
+    "Contract-only synthetic assessment.",
+    "No live deduplication or suppression applied."
+  ],
+  "no_destructive_merge_guarantees": {
+    "records_merged": false,
+    "results_suppressed": false,
+    "results_hidden_without_explanation": false,
+    "destructive_merge_performed": false
+  },
+  "no_runtime_guarantees": {
+    "runtime_deduplication_implemented": false,
+    "deduplication_applied_to_live_search": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "telemetry_exported": false
+  },
+  "no_mutation_guarantees": {
+    "ranking_changed": false,
+    "candidate_promotion_performed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false
+  },
+  "notes": [
+    "Assessment is not runtime deduplication.",
+    "No result is hidden."
+  ],
+  "runtime_deduplication_implemented": false,
+  "deduplication_applied_to_live_search": false,
+  "records_merged": false,
+  "results_suppressed": false,
+  "results_hidden_without_explanation": false,
+  "destructive_merge_performed": false,
+  "ranking_changed": false,
+  "candidate_promotion_performed": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "telemetry_exported": false
+}

@@ -434,3 +434,11 @@ Boundary notes:
 - Public search, object pages, source pages, and comparison pages may reference identity relation labels only after future governed integration; P82 does not mutate public search or public index.
 - Identity confidence is not identity truth; names and aliases alone are weak evidence; conflicts are preserved.
 <!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-END -->
+
+<!-- P83-RESULT-MERGE-DEDUPLICATION-START -->
+## P83 Result Merge and Deduplication Contract v0
+
+P83 defines contract-only search-result grouping and deduplication semantics. It preserves alternatives, conflicts, source/evidence/provenance refs, and user-visible explanations while forbidding runtime grouping, result suppression, ranking changes, destructive merge, candidate promotion, live source calls, telemetry, and index/cache/ledger mutation.
+
+Future public search, object/source/comparison pages, cross-source identity resolution, and ranking contracts may reference P83 only after governed runtime planning.
+<!-- P83-RESULT-MERGE-DEDUPLICATION-END -->

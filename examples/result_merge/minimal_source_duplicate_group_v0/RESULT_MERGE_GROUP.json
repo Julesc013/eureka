@@ -1,0 +1,288 @@
+{
+  "schema_version": "0.1.0",
+  "result_merge_group_id": "result_merge_group_minimal_source_duplicate_group_v0",
+  "result_merge_group_kind": "result_merge_group",
+  "status": "public_safe_example",
+  "created_by_tool": "p83_result_merge_deduplication_contract_v0",
+  "merge_group_identity": {
+    "merge_group_fingerprint": {
+      "algorithm": "sha256",
+      "normalized_basis": "synthetic-example-basis",
+      "value": "4d9463c197098f99e8896f580f3b8394e1947de4223515db7a848eda4e076c95",
+      "reversible": false
+    },
+    "canonical_group_label": "minimal source duplicate group v0",
+    "group_label_policy": "synthetic_example",
+    "group_label_not_truth": true,
+    "duplicate_of": null,
+    "supersedes": null,
+    "limitations": [
+      "Synthetic group label; not identity truth."
+    ]
+  },
+  "group_relation": {
+    "relation_type": "same_source_duplicate",
+    "relation_status": "candidate",
+    "relation_claim_not_truth": true,
+    "destructive_merge_allowed": false,
+    "limitations": [
+      "Scoped presentation relation only; not identity truth or destructive merge authorization."
+    ]
+  },
+  "grouped_results": [
+    {
+      "result_ref": "synthetic:result:minimal_source_duplicate_group_v0:left",
+      "result_kind": "public_search_result",
+      "result_title": "Example App 1.0",
+      "result_status": "candidate",
+      "source_id": "synthetic:local_fixture",
+      "source_family": "local_fixture",
+      "object_ref": "synthetic:object:left",
+      "representation_ref": "synthetic:representation:left",
+      "member_ref": null,
+      "evidence_refs": [
+        "synthetic:evidence:left"
+      ],
+      "identity_resolution_refs": [],
+      "limitations": [
+        "Synthetic result only; not live search output."
+      ]
+    },
+    {
+      "result_ref": "synthetic:result:minimal_source_duplicate_group_v0:right",
+      "result_kind": "public_search_result",
+      "result_title": "ExampleApp v1.0",
+      "result_status": "candidate",
+      "source_id": "synthetic:recorded_fixture",
+      "source_family": "recorded_fixture",
+      "object_ref": "synthetic:object:right",
+      "representation_ref": "synthetic:representation:right",
+      "member_ref": null,
+      "evidence_refs": [
+        "synthetic:evidence:right"
+      ],
+      "identity_resolution_refs": [],
+      "limitations": [
+        "Synthetic result only; not live search output."
+      ]
+    }
+  ],
+  "canonical_display_record": {
+    "selected_result_ref": "synthetic:result:minimal_source_duplicate_group_v0:left",
+    "selection_policy": "first_result_example",
+    "selection_reason": "Synthetic example chooses the first card for display only.",
+    "canonical_record_claimed_as_truth": false,
+    "alternative_results_preserved": true,
+    "limitations": [
+      "Canonical display is UI convenience, not truth."
+    ]
+  },
+  "collapsed_results": {
+    "collapsed_count": 0,
+    "collapsed_result_refs": [],
+    "collapse_allowed_future": true,
+    "collapse_applied_now": false,
+    "user_expand_available_future": true,
+    "hidden_without_explanation": false,
+    "explanation_required": true,
+    "conflict_results_must_not_be_hidden": true,
+    "limitations": [
+      "No current runtime result is collapsed or hidden."
+    ]
+  },
+  "transparency": {
+    "all_results_visible_now": true,
+    "grouping_explanation_visible_future": true,
+    "user_can_expand_future": true,
+    "conflict_warning_visible_future": false,
+    "limitations": [
+      "Transparency is contract-only in P83."
+    ]
+  },
+  "grouping_criteria": [
+    {
+      "criterion_id": "source-native-id",
+      "criterion_type": "source_native_id_match",
+      "strength": "strong",
+      "passed": true,
+      "evidence_refs": [
+        "synthetic:evidence:source-native-id"
+      ],
+      "limitations": [
+        "Synthetic grouping criterion; no runtime deduplication applied."
+      ]
+    },
+    {
+      "criterion_id": "source-family",
+      "criterion_type": "source_family_match",
+      "strength": "medium",
+      "passed": true,
+      "evidence_refs": [
+        "synthetic:evidence:source-family"
+      ],
+      "limitations": [
+        "Synthetic grouping criterion; no runtime deduplication applied."
+      ]
+    }
+  ],
+  "identity_resolution_refs": [
+    {
+      "identity_assessment_ref": "synthetic:identity-assessment:future",
+      "identity_cluster_ref": null,
+      "relation_type": "possible_same_object",
+      "relation_status": "candidate",
+      "confidence": "medium",
+      "confidence_not_truth": true,
+      "destructive_merge_allowed": false,
+      "limitations": [
+        "Identity evidence may inform grouping but does not authorize merge."
+      ]
+    }
+  ],
+  "source_evidence_provenance": {
+    "source_refs": [
+      "synthetic:source:left",
+      "synthetic:source:right"
+    ],
+    "evidence_refs": [
+      "synthetic:evidence:minimal_source_duplicate_group_v0"
+    ],
+    "provenance_refs": [
+      "synthetic:provenance:fixture"
+    ],
+    "source_diversity_summary": "Synthetic fixture and recorded-fixture sources are preserved.",
+    "evidence_strength_summary": "Evidence strength is scoped to the synthetic criteria.",
+    "conflicts_preserved": true,
+    "source_trust_claimed": false,
+    "accepted_as_truth": false,
+    "limitations": [
+      "No source trust or evidence acceptance claim."
+    ]
+  },
+  "conflicts": {
+    "conflict_status": "none_known",
+    "conflicts": [],
+    "disagreement_preserved": true,
+    "conflict_results_must_remain_expandable": true,
+    "destructive_merge_allowed": false,
+    "limitations": [
+      "Conflicts remain visible for review."
+    ]
+  },
+  "user_facing_behavior": {
+    "display_mode": "expandable_group_future",
+    "user_can_expand_group_future": true,
+    "user_can_view_all_sources_future": true,
+    "user_can_view_grouping_reason_future": true,
+    "user_can_disable_grouping_future": true,
+    "conflict_warning_required": false,
+    "uncertainty_notice_required": true,
+    "limitations": [
+      "No runtime UI grouping is enabled now."
+    ]
+  },
+  "result_card_projection": {
+    "result_card_contract_ref": "contracts/api/search_result_card.v0.json",
+    "can_project_to_result_card_group": true,
+    "group_badge_label": "same source duplicate",
+    "group_count_label": "2 related results",
+    "canonical_title": "Example App 1.0",
+    "grouped_source_summary": "2 synthetic sources preserved",
+    "evidence_summary": "Synthetic criteria only",
+    "warning_summary": "Review required; not identity truth",
+    "limitations_summary": "No runtime grouping applied",
+    "expand_link_future": "/api/v1/result-group/{group_id}",
+    "object_page_refs": [],
+    "source_page_refs": [],
+    "comparison_page_refs": [],
+    "limitations": [
+      "Projection is future/contract-only."
+    ]
+  },
+  "api_projection": {
+    "response_kind": "result_merge_group_response",
+    "route_future": [
+      "/api/v1/search",
+      "/api/v1/result-group/{group_id}"
+    ],
+    "implemented_now": false,
+    "compatible_with_public_search_response": true,
+    "included_sections": [
+      "grouped_results",
+      "grouping_criteria",
+      "conflicts",
+      "transparency"
+    ],
+    "limitations": [
+      "No API route is implemented by P83."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe result titles and refs only."
+    ]
+  },
+  "limitations": [
+    "Contract-only synthetic example.",
+    "No runtime grouping, ranking, suppression, merge, promotion, or mutation."
+  ],
+  "no_destructive_merge_guarantees": {
+    "records_merged": false,
+    "duplicates_deleted": false,
+    "destructive_merge_performed": false,
+    "canonical_record_claimed_as_truth": false
+  },
+  "no_ranking_promotion_mutation_guarantees": {
+    "public_search_ranking_changed": false,
+    "candidate_promotion_performed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false
+  },
+  "no_runtime_guarantees": {
+    "runtime_result_merge_implemented": false,
+    "persistent_merge_group_store_implemented": false,
+    "public_search_runtime_grouping_enabled": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "telemetry_exported": false
+  },
+  "notes": [
+    "Fast learning, slow truth.",
+    "Grouping is not record merging."
+  ],
+  "runtime_result_merge_implemented": false,
+  "persistent_merge_group_store_implemented": false,
+  "public_search_runtime_grouping_enabled": false,
+  "public_search_ranking_changed": false,
+  "records_merged": false,
+  "duplicates_deleted": false,
+  "results_hidden_without_explanation": false,
+  "destructive_merge_performed": false,
+  "canonical_record_claimed_as_truth": false,
+  "candidate_promotion_performed": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "downloads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "telemetry_exported": false
+}
