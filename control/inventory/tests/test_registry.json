@@ -6496,12 +6496,133 @@
       "failure_means": "P73 GitHub Releases connector approval drifted or boundary guarantees weakened.",
       "advisory_or_required": "required",
       "notes": "P73 approval-only validation; no GitHub API calls, connector runtime, telemetry, credentials, tokens, repository clone, release asset/source archive download, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "pypi_metadata_connector_approval_examples_validator",
+      "label": "PyPI Metadata Connector Approval Examples Validator",
+      "command": "python scripts/validate_pypi_metadata_connector_approval.py --all-examples",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P74 PyPI metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P74 approval-only validation; no PyPI API calls, connector runtime, telemetry, credentials, tokens, package download/install, dependency resolution, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "pypi_metadata_connector_approval_examples_validator_json",
+      "label": "PyPI Metadata Connector Approval Examples Validator JSON",
+      "command": "python scripts/validate_pypi_metadata_connector_approval.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P74 PyPI metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P74 approval-only validation; no PyPI API calls, connector runtime, telemetry, credentials, tokens, package download/install, dependency resolution, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "pypi_metadata_connector_contract_validator",
+      "label": "PyPI Metadata Connector Contract Validator",
+      "command": "python scripts/validate_pypi_metadata_connector_contract.py",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P74 PyPI metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P74 approval-only validation; no PyPI API calls, connector runtime, telemetry, credentials, tokens, package download/install, dependency resolution, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "pypi_metadata_connector_contract_validator_json",
+      "label": "PyPI Metadata Connector Contract Validator JSON",
+      "command": "python scripts/validate_pypi_metadata_connector_contract.py --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P74 PyPI metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P74 approval-only validation; no PyPI API calls, connector runtime, telemetry, credentials, tokens, package download/install, dependency resolution, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "pypi_metadata_connector_dry_run_json",
+      "label": "PyPI Metadata Connector Dry Run JSON",
+      "command": "python scripts/dry_run_pypi_metadata_connector_approval.py --json",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "seconds",
+      "failure_means": "P74 PyPI metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P74 approval-only validation; no PyPI API calls, connector runtime, telemetry, credentials, tokens, package download/install, dependency resolution, cache/ledger runtime, or index mutation."
+    },
+    {
+      "test_id": "pypi_metadata_connector_approval_tests",
+      "label": "PyPI Metadata Connector Approval Tests",
+      "command": "python -m unittest tests.operations.test_pypi_metadata_connector_approval tests.scripts.test_validate_pypi_metadata_connector_approval tests.scripts.test_validate_pypi_metadata_connector_contract tests.scripts.test_dry_run_pypi_metadata_connector_approval",
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P74 PyPI metadata connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P74 approval-only validation; no PyPI API calls, connector runtime, telemetry, credentials, tokens, package download/install, dependency resolution, cache/ledger runtime, or index mutation."
     }
   ],
   "notes": [
     "P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only contract/example governance; it adds no runtime guard, persistence, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation.",
     "P71 Internet Archive Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no connector runtime, external calls, IA live access, downloads, source cache/evidence ledger mutation, or public-query fanout.",
     "P72 Wayback/CDX/Memento Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no connector runtime, external calls, capture replay, WARC download, cache/ledger mutation, or public-query fanout.",
-    "P73 GitHub Releases Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, GitHub API calls, repository clone, release asset/source archive download, token use, cache/ledger mutation, or public-query fanout."
+    "P73 GitHub Releases Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, GitHub API calls, repository clone, release asset/source archive download, token use, cache/ledger mutation, or public-query fanout.",
+    "P74 PyPI Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, PyPI API calls, package download/install, dependency resolution, token use, cache/ledger mutation, or public-query fanout."
   ]
 }

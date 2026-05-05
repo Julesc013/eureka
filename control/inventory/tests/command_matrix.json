@@ -283,7 +283,13 @@
         "github_releases_connector_contract_validator",
         "github_releases_connector_contract_validator_json",
         "github_releases_connector_dry_run_json",
-        "github_releases_connector_approval_tests"
+        "github_releases_connector_approval_tests",
+        "pypi_metadata_connector_approval_examples_validator",
+        "pypi_metadata_connector_approval_examples_validator_json",
+        "pypi_metadata_connector_contract_validator",
+        "pypi_metadata_connector_contract_validator_json",
+        "pypi_metadata_connector_dry_run_json",
+        "pypi_metadata_connector_approval_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -580,7 +586,13 @@
         "github_releases_connector_contract_validator",
         "github_releases_connector_contract_validator_json",
         "github_releases_connector_dry_run_json",
-        "github_releases_connector_approval_tests"
+        "github_releases_connector_approval_tests",
+        "pypi_metadata_connector_approval_examples_validator",
+        "pypi_metadata_connector_approval_examples_validator_json",
+        "pypi_metadata_connector_contract_validator",
+        "pypi_metadata_connector_contract_validator_json",
+        "pypi_metadata_connector_dry_run_json",
+        "pypi_metadata_connector_approval_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1226,6 +1238,7 @@
     "P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only contract/example governance; it adds no runtime guard, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation.",
     "P71 Internet Archive Metadata Connector Approval Pack v0 commands are approval-only and perform no IA calls, downloads, connector runtime, cache/ledger mutation, or public-query fanout.",
     "P72 Wayback/CDX/Memento Connector Approval Pack v0 commands are approval-only and perform no Wayback/CDX/Memento calls, capture replay, WARC download, connector runtime, cache/ledger mutation, or public-query fanout.",
-    "P73 GitHub Releases Connector Approval Pack v0 commands are approval-only and perform no GitHub API calls, repository clone, release asset/source archive download, token use, connector runtime, cache/ledger mutation, or public-query fanout."
+    "P73 GitHub Releases Connector Approval Pack v0 commands are approval-only and perform no GitHub API calls, repository clone, release asset/source archive download, token use, connector runtime, cache/ledger mutation, or public-query fanout.",
+    "P74 PyPI Metadata Connector Approval Pack v0 commands are approval-only and perform no PyPI API calls, package downloads, installs, dependency resolution, connector runtime, cache/ledger mutation, or public-query fanout."
   ]
 }

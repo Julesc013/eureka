@@ -722,3 +722,18 @@ notes:
   - id: github_releases_connector_approval_tests
     run: python -m unittest tests.operations.test_github_releases_connector_approval tests.scripts.test_validate_github_releases_connector_approval tests.scripts.test_validate_github_releases_connector_contract tests.scripts.test_dry_run_github_releases_connector_approval
 <!-- P73-GITHUB-RELEASES-CONNECTOR-APPROVAL-END -->
+
+<!-- P74-PYPI-METADATA-CONNECTOR-APPROVAL-START -->
+  - id: pypi_metadata_connector_approval_examples_validator
+    run: python scripts/validate_pypi_metadata_connector_approval.py --all-examples
+  - id: pypi_metadata_connector_approval_examples_validator_json
+    run: python scripts/validate_pypi_metadata_connector_approval.py --all-examples --json
+  - id: pypi_metadata_connector_contract_validator
+    run: python scripts/validate_pypi_metadata_connector_contract.py
+  - id: pypi_metadata_connector_contract_validator_json
+    run: python scripts/validate_pypi_metadata_connector_contract.py --json
+  - id: pypi_metadata_connector_dry_run_json
+    run: python scripts/dry_run_pypi_metadata_connector_approval.py --json
+  - id: pypi_metadata_connector_approval_tests
+    run: python -m unittest tests.operations.test_pypi_metadata_connector_approval tests.scripts.test_validate_pypi_metadata_connector_approval tests.scripts.test_validate_pypi_metadata_connector_contract tests.scripts.test_dry_run_pypi_metadata_connector_approval
+<!-- P74-PYPI-METADATA-CONNECTOR-APPROVAL-END -->
