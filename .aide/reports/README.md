@@ -392,3 +392,9 @@ P81 reports comparison-page governance only. The validation commands are stdlib-
 
 P82 reports identity-resolution governance only. Validation is stdlib-only and local-only; runtime identity resolution remains future work.
 <!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-END -->
+
+<!-- P83-RESULT-MERGE-DEDUPLICATION-START -->
+## P83 Result Merge and Deduplication Contract v0
+
+Report: `control/audits/result-merge-deduplication-contract-v0/result_merge_deduplication_report.json`.
+<!-- P83-RESULT-MERGE-DEDUPLICATION-END -->

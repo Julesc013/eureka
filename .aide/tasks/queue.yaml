@@ -902,16 +902,16 @@
     {
       "id": "result_merge_and_deduplication_contract_v0",
       "title": "P83 Result Merge and Deduplication Contract v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed_contract_only",
       "priority": 124,
-      "notes": "Next contract after identity resolution; preserve conflicts and avoid destructive merges without governed review."
+      "notes": "P83 completed as contract/schema/validator/example/audit work only; no runtime result grouping, deduplication, ranking change, result suppression, destructive merge, candidate promotion, live source calls, source trust, rights clearance, malware safety, or index/cache/ledger mutation was added."
     },
     {
       "id": "evidence_weighted_ranking_contract_v0",
       "title": "P84 Evidence-Weighted Ranking Contract v0",
-      "status": "queued_codex_safe_future",
+      "status": "queued_codex_safe_next",
       "priority": 125,
-      "notes": "Future ranking contract; no production ranking authority without governed evidence weighting and validation."
+      "notes": "Next contract after result merge/deduplication; ranking must remain evidence-scoped and non-production until governed."
     },
     {
       "id": "pypi_metadata_connector_runtime_planning_v0",
@@ -989,6 +989,13 @@
       "status": "queued_codex_safe_future",
       "priority": 133,
       "notes": "Future contract only; no extraction runtime or payload retrieval without governed policy."
+    },
+    {
+      "id": "search_result_explanation_contract_v0",
+      "title": "P93 Search Result Explanation Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 134,
+      "notes": "Future contract for explaining search result ordering, grouping, evidence, gaps, and safe action posture."
     }
   ]
 }

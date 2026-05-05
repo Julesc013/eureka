@@ -800,3 +800,17 @@ These are contract-only comparison-page governance checks. They make no network 
 
 These are contract-only identity governance checks. They make no network calls, implement no identity resolver, merge no records, promote no candidates, mutate no cache/ledger/index, and enable no live sources, downloads, installs, or execution.
 <!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-END -->
+
+<!-- P83-RESULT-MERGE-DEDUPLICATION-START -->
+## P83 Result Merge and Deduplication Contract v0
+
+- `python scripts/validate_result_merge_group.py --all-examples`
+- `python scripts/validate_result_merge_group.py --all-examples --json`
+- `python scripts/validate_deduplication_assessment.py --all-examples`
+- `python scripts/validate_deduplication_assessment.py --all-examples --json`
+- `python scripts/validate_result_merge_deduplication_contract.py`
+- `python scripts/validate_result_merge_deduplication_contract.py --json`
+- `python scripts/dry_run_result_merge_group.py --left-title "Example App 1.0" --right-title "ExampleApp v1.0" --relation-type near_duplicate_result --json`
+
+These are contract-only result merge/deduplication checks. They make no network calls, implement no runtime grouping/deduplication, hide no results, change no ranking, merge no records, promote no candidates, mutate no cache/ledger/index, and enable no downloads, installs, or execution.
+<!-- P83-RESULT-MERGE-DEDUPLICATION-END -->

@@ -854,3 +854,22 @@ notes:
   - id: cross_source_identity_resolution_contract_tests
     run: python -m unittest tests.operations.test_cross_source_identity_resolution_contract tests.scripts.test_validate_identity_resolution_assessment tests.scripts.test_validate_identity_cluster tests.scripts.test_validate_cross_source_identity_resolution_contract tests.scripts.test_dry_run_identity_resolution_assessment
 <!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-END -->
+
+<!-- P83-RESULT-MERGE-DEDUPLICATION-START -->
+  - id: result_merge_group_examples_validator
+    run: python scripts/validate_result_merge_group.py --all-examples
+  - id: result_merge_group_examples_validator_json
+    run: python scripts/validate_result_merge_group.py --all-examples --json
+  - id: deduplication_assessment_examples_validator
+    run: python scripts/validate_deduplication_assessment.py --all-examples
+  - id: deduplication_assessment_examples_validator_json
+    run: python scripts/validate_deduplication_assessment.py --all-examples --json
+  - id: result_merge_deduplication_contract_validator
+    run: python scripts/validate_result_merge_deduplication_contract.py
+  - id: result_merge_deduplication_contract_validator_json
+    run: python scripts/validate_result_merge_deduplication_contract.py --json
+  - id: result_merge_dry_run_json
+    run: python scripts/dry_run_result_merge_group.py --left-title "Example App 1.0" --right-title "ExampleApp v1.0" --relation-type near_duplicate_result --json
+  - id: result_merge_deduplication_contract_tests
+    run: python -m unittest tests.operations.test_result_merge_deduplication_contract tests.scripts.test_validate_result_merge_group tests.scripts.test_validate_deduplication_assessment tests.scripts.test_validate_result_merge_deduplication_contract tests.scripts.test_dry_run_result_merge_group
+<!-- P83-RESULT-MERGE-DEDUPLICATION-END -->

@@ -834,6 +834,14 @@
       "priority": 0,
       "notes": "Addressed by control/audits/cross-source-identity-resolution-contract-v0/cross_source_identity_resolution_report.json. Contract-only; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, source trust, rights clearance, malware safety, or index/cache/ledger/master-index mutation.",
       "addressed_by": "control/audits/cross-source-identity-resolution-contract-v0/cross_source_identity_resolution_report.json"
+    },
+    {
+      "id": "audit-backlog-result-merge-deduplication-contract-v0",
+      "title": "P83 Result Merge and Deduplication Contract v0 audit pack",
+      "status": "addressed_contract_only",
+      "priority": 0,
+      "notes": "Addressed by control/audits/result-merge-deduplication-contract-v0/result_merge_deduplication_report.json. Contract-only; no runtime grouping/deduplication/ranking/suppression/merge/promotion/mutation.",
+      "addressed_by": "control/audits/result-merge-deduplication-contract-v0/result_merge_deduplication_report.json"
     }
   ]
 }

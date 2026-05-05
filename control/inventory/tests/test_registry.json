@@ -7596,6 +7596,174 @@
       "failure_means": "Cross-Source Identity Resolution v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-mutation guarantees drifted.",
       "advisory_or_required": "required",
       "notes": "P82 contract-only validation; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "result_merge_group_examples_validator",
+      "label": "Result Merge Group Examples Validator",
+      "command": "python scripts/validate_result_merge_group.py --all-examples",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Result Merge and Deduplication v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-ranking/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P83 contract-only validation; no runtime result grouping, deduplication, ranking changes, suppression, destructive merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "result_merge_group_examples_validator_json",
+      "label": "Result Merge Group Examples Validator JSON",
+      "command": "python scripts/validate_result_merge_group.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Result Merge and Deduplication v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-ranking/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P83 contract-only validation; no runtime result grouping, deduplication, ranking changes, suppression, destructive merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "deduplication_assessment_examples_validator",
+      "label": "Deduplication Assessment Examples Validator",
+      "command": "python scripts/validate_deduplication_assessment.py --all-examples",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Result Merge and Deduplication v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-ranking/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P83 contract-only validation; no runtime result grouping, deduplication, ranking changes, suppression, destructive merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "deduplication_assessment_examples_validator_json",
+      "label": "Deduplication Assessment Examples Validator JSON",
+      "command": "python scripts/validate_deduplication_assessment.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Result Merge and Deduplication v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-ranking/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P83 contract-only validation; no runtime result grouping, deduplication, ranking changes, suppression, destructive merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "result_merge_deduplication_contract_validator",
+      "label": "Result Merge Deduplication Contract Validator",
+      "command": "python scripts/validate_result_merge_deduplication_contract.py",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Result Merge and Deduplication v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-ranking/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P83 contract-only validation; no runtime result grouping, deduplication, ranking changes, suppression, destructive merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "result_merge_deduplication_contract_validator_json",
+      "label": "Result Merge Deduplication Contract Validator JSON",
+      "command": "python scripts/validate_result_merge_deduplication_contract.py --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Result Merge and Deduplication v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-ranking/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P83 contract-only validation; no runtime result grouping, deduplication, ranking changes, suppression, destructive merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "result_merge_dry_run_json",
+      "label": "Result Merge Dry Run JSON",
+      "command": "python scripts/dry_run_result_merge_group.py --left-title \"Example App 1.0\" --right-title \"ExampleApp v1.0\" --relation-type near_duplicate_result --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Result Merge and Deduplication v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-ranking/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P83 contract-only validation; no runtime result grouping, deduplication, ranking changes, suppression, destructive merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "result_merge_deduplication_contract_tests",
+      "label": "Result Merge Deduplication Contract Tests",
+      "command": "python -m unittest tests.operations.test_result_merge_deduplication_contract tests.scripts.test_validate_result_merge_group tests.scripts.test_validate_deduplication_assessment tests.scripts.test_validate_result_merge_deduplication_contract tests.scripts.test_dry_run_result_merge_group",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Result Merge and Deduplication v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-ranking/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P83 contract-only validation; no runtime result grouping, deduplication, ranking changes, suppression, destructive merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, or index/cache/ledger/candidate/master-index mutation."
     }
   ],
   "notes": [
