@@ -1,0 +1,418 @@
+{
+  "report_id": "object_source_comparison_page_runtime_planning_v0",
+  "created_by_slice": "P93 Object/Source/Comparison Page Runtime Planning v0",
+  "repo_head": "412a23dd686404d571f83f2391f38cb8988fbaed",
+  "branch": "main",
+  "worktree_status": [
+    "## main...origin/main",
+    "?? _p93_generate_artifacts.py",
+    "P93 artifacts generated after initial clean inspection."
+  ],
+  "readiness_decision": "ready_for_local_dry_run_runtime_after_operator_approval",
+  "page_contract_gate_review": {
+    "object_page_contract_valid": true,
+    "source_page_contract_valid": true,
+    "comparison_page_contract_valid": true,
+    "validators_present": true,
+    "examples_present": true,
+    "hard_no_runtime_no_mutation_policy_present": true,
+    "page_inventory_present": true,
+    "gaps": [
+      "runtime page assembler not implemented",
+      "runtime routes not implemented",
+      "operator approval pending"
+    ]
+  },
+  "public_search_index_gate_review": {
+    "public_search_contract_valid": true,
+    "public_result_card_contract_valid": true,
+    "public_index_format_valid": true,
+    "public_index_artifacts_valid": true,
+    "local_public_search_runtime_valid": true,
+    "blocked_request_safety_valid": true,
+    "page_links_enabled_now": false,
+    "gaps": [
+      "page refs must remain disabled or absent until runtime verified"
+    ]
+  },
+  "hosted_deployment_gate_review": {
+    "p77_present": true,
+    "static_deployment_verified": false,
+    "hosted_backend_verified": false,
+    "route_evidence_status": "operator_gated",
+    "safe_query_evidence_status": "operator_gated",
+    "blocked_request_evidence_status": "operator_gated",
+    "hosted_page_runtime_immediate_next_step": false,
+    "gaps": [
+      "hosted backend not configured",
+      "configured static deployment verification failed"
+    ]
+  },
+  "routing_identifier_policy": {
+    "safe_routes": [
+      "/object/{object_id}",
+      "/source/{source_id}",
+      "/comparison/{comparison_id}",
+      "/api/v1/object/{object_id}",
+      "/api/v1/source-page/{source_id}",
+      "/api/v1/comparison/{comparison_id}"
+    ],
+    "allowed_ids": [
+      "public-index object IDs",
+      "public-index source IDs",
+      "public-index comparison IDs",
+      "reviewed page IDs",
+      "generated stable slugs derived from reviewed records"
+    ],
+    "forbidden_ids": [
+      "local paths",
+      "absolute paths",
+      "arbitrary URLs",
+      "raw source URLs",
+      "unreviewed package names",
+      "unreviewed repository names",
+      "unreviewed SWHIDs",
+      "unreviewed URI-R values",
+      "uploaded filenames",
+      "private cache keys",
+      "secrets/tokens",
+      "database paths"
+    ],
+    "rules": [
+      "IDs must be normalized, bounded, public-safe, and not interpreted as filesystem paths.",
+      "Unknown IDs return stable error envelope or absence/unknown page, not file access.",
+      "Page route parameters must never trigger live source calls."
+    ]
+  },
+  "runtime_boundary": [
+    "P93 does not implement page runtime.",
+    "No /object, /source, or /comparison routes are added.",
+    "No runtime page renderer is added.",
+    "No DB tables are added.",
+    "No persistent page store is added.",
+    "No public search behavior changes.",
+    "No live source calls occur.",
+    "No source-cache/evidence-ledger/candidate/public/master mutation occurs.",
+    "No downloads/installers/execution are enabled.",
+    "No telemetry/accounts are enabled."
+  ],
+  "page_runtime_architecture_plan": [
+    "future runtime/pages/object_page.py object page assembler",
+    "future runtime/pages/source_page.py source page assembler",
+    "future runtime/pages/comparison_page.py comparison page assembler",
+    "future runtime/pages/identifiers.py safe ID/slug resolver",
+    "future runtime/pages/render.py HTML/text/JSON helpers",
+    "future runtime/pages/policy.py privacy/action/source policy guard",
+    "future runtime/pages/errors.py stable error envelope",
+    "future runtime/gateway/public_api/pages.py API route adapter"
+  ],
+  "object_page_runtime_plan": {
+    "input": "object_id from public index or reviewed page record only",
+    "outputs": [
+      "HTML page",
+      "text/lite page",
+      "JSON API response"
+    ],
+    "sections": [
+      "identity",
+      "status/lane",
+      "versions/states/releases",
+      "representations",
+      "members",
+      "sources",
+      "evidence",
+      "compatibility",
+      "rights/risk/action posture",
+      "conflicts",
+      "absence/gaps",
+      "limitations"
+    ],
+    "constraints": [
+      "no live source calls",
+      "no downloads/installers/execution",
+      "no rights/malware claims",
+      "no candidate promotion",
+      "no index mutation"
+    ]
+  },
+  "source_page_runtime_plan": {
+    "input": "source_id from source inventory, public index, or reviewed page record only",
+    "outputs": [
+      "HTML page",
+      "text/lite page",
+      "JSON API response"
+    ],
+    "sections": [
+      "source identity",
+      "source status",
+      "coverage",
+      "connector posture",
+      "source policy/approval gates",
+      "source cache/evidence ledger posture",
+      "public search posture",
+      "limitations/gaps",
+      "rights/risk/action posture"
+    ],
+    "constraints": [
+      "no connector calls",
+      "no live source probing",
+      "no source trust overclaim",
+      "no download/mirror/install/execute",
+      "no mutation"
+    ]
+  },
+  "comparison_page_runtime_plan": {
+    "input": "comparison_id from public index or reviewed comparison record only",
+    "outputs": [
+      "HTML page",
+      "text/lite page",
+      "JSON API response"
+    ],
+    "sections": [
+      "subjects",
+      "criteria",
+      "matrix",
+      "identity/version/representation/source/evidence/compatibility comparisons",
+      "rights/risk/action comparison",
+      "conflicts/disagreements",
+      "absence/gaps",
+      "limitations"
+    ],
+    "constraints": [
+      "no arbitrary compare of unreviewed objects",
+      "no live source calls",
+      "no winner without scoped evidence",
+      "no candidate promotion",
+      "no mutation"
+    ]
+  },
+  "data_input_model": {
+    "allowed": [
+      "public index documents",
+      "generated public page records",
+      "reviewed source inventory records",
+      "reviewed connector approval records",
+      "reviewed source cache records future",
+      "reviewed evidence ledger records future",
+      "candidate records only if labelled candidate/review-required",
+      "known absence pages",
+      "static fixture examples"
+    ],
+    "forbidden": [
+      "arbitrary local paths",
+      "arbitrary URLs",
+      "private cache roots",
+      "credentials",
+      "user-uploaded files",
+      "live source responses from request path",
+      "raw unreviewed connector responses",
+      "private query observations",
+      "raw telemetry"
+    ]
+  },
+  "response_rendering_model": {
+    "html_baseline": true,
+    "text_lite_output": true,
+    "json_api_response": true,
+    "stable_error_envelope": true,
+    "no_required_javascript": true,
+    "bounded_page_size": true,
+    "no_private_path_leakage": true,
+    "no_raw_payload_dumps": true
+  },
+  "static_lite_fallback_model": [
+    "static demo pages remain available",
+    "lite/text pages work without JS",
+    "generated static pages can be built from public-safe artifacts later",
+    "hosted runtime pages must degrade to static/lite explanations",
+    "if backend unavailable, static search/site explains limitations"
+  ],
+  "public_search_integration_plan": [
+    "future result cards may include object_page_ref/source_page_ref/comparison_page_ref",
+    "result cards must not include live-source links unless reviewed",
+    "clicking page link reads controlled page runtime only",
+    "page runtime must not trigger new search or live probes",
+    "failed page lookup returns stable error or absence/gap explanation",
+    "page links remain disabled or absent until runtime verified"
+  ],
+  "source_evidence_candidate_boundary": [
+    "source cache records are observations, not truth",
+    "evidence ledger records are evidence observations, not truth",
+    "candidate records are provisional",
+    "page runtime may render candidates only with labels",
+    "page runtime must not promote candidates",
+    "page runtime must not mutate source/evidence/candidate records",
+    "master index review remains separate"
+  ],
+  "privacy_rights_risk_review": "Public-safe data only; no private paths, secrets, private URLs, raw private query data, credentials, raw payload dumps, downloads, installers, execution, rights clearance, malware safety, installability claim, or unsafe action posture.",
+  "security_abuse_review": "Requires route ID length cap, charset policy, no path traversal, no arbitrary URL fetch, no local file access, no live source selector, no private cache access, stable error envelope, hosted rate-limit/edge requirements, telemetry/accounts off by default, and operator kill switch.",
+  "implementation_phases": [
+    "phase_0_disabled_planning_validation",
+    "phase_1_local_dry_run_synthetic_examples_no_runtime_routes",
+    "phase_2_local_read_only_runtime_routes_public_index_only_no_hosted",
+    "phase_3_hosted_staging_safe_route_ids_blocked_parameter_tests_no_live_sources",
+    "phase_4_public_alpha_page_runtime_links_from_public_search_no_downloads_installs_execution",
+    "phase_5_generated_static_page_snapshots_for_high_value_records_and_offline_lite_clients"
+  ],
+  "acceptance_criteria": [
+    "object page contract valid",
+    "source page contract valid",
+    "comparison page contract valid",
+    "public search contract valid",
+    "public search safety valid",
+    "public index contract valid",
+    "safe page ID policy accepted",
+    "source/evidence/candidate boundary accepted",
+    "privacy/action policy accepted",
+    "hosted deployment evidence for hosted runtime",
+    "route tests for path traversal/arbitrary URL/source selector blocked",
+    "no downloads/install/execution",
+    "no live source fanout",
+    "no source/evidence/candidate/master mutation",
+    "operator approval"
+  ],
+  "command_results": {
+    "initial_inspection": {
+      "status": "completed",
+      "summary": "P79-P81 page contracts, public search contracts, public index artifacts, page inventories, static demo artifacts, and validators were present. P77 hosted deployment evidence remains unverified."
+    },
+    "p93_plan_validation": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_page_runtime_plan.py",
+        "python scripts/validate_page_runtime_plan.py --json",
+        "python -m unittest tests.operations.test_page_runtime_plan tests.scripts.test_validate_page_runtime_plan"
+      ],
+      "summary": "P93 validator and focused tests passed; readiness is ready_for_local_dry_run_runtime_after_operator_approval, with hosted runtime blocked by deployment evidence."
+    },
+    "page_contracts_and_public_index": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_object_page_contract.py",
+        "python scripts/validate_source_page_contract.py",
+        "python scripts/validate_comparison_page_contract.py",
+        "python scripts/validate_public_search_index.py"
+      ],
+      "summary": "Object/source/comparison page contracts and public search index validated. Public index document count is 584 and private paths were not detected."
+    },
+    "related_runtime_plans_and_contracts": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_software_heritage_connector_runtime_plan.py",
+        "python scripts/validate_npm_metadata_connector_runtime_plan.py",
+        "python scripts/validate_pypi_metadata_connector_runtime_plan.py",
+        "python scripts/validate_github_releases_connector_runtime_plan.py",
+        "python scripts/validate_wayback_cdx_memento_connector_runtime_plan.py",
+        "python scripts/validate_internet_archive_metadata_connector_runtime_plan.py",
+        "python scripts/validate_public_query_observation_runtime_plan.py",
+        "python scripts/validate_compatibility_aware_ranking_contract.py",
+        "python scripts/validate_evidence_weighted_ranking_contract.py",
+        "python scripts/validate_result_merge_deduplication_contract.py",
+        "python scripts/validate_cross_source_identity_resolution_contract.py"
+      ],
+      "summary": "P82-P92 identity/merge/ranking/query-observation and connector runtime planning gates remained valid."
+    },
+    "public_search_static_and_safety": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_public_search_contract.py",
+        "python scripts/validate_public_search_result_card_contract.py",
+        "python scripts/validate_public_search_safety.py",
+        "python scripts/validate_local_public_search_runtime.py",
+        "python scripts/public_search_smoke.py",
+        "python scripts/public_search_smoke.py --json",
+        "python scripts/run_public_search_safety_evidence.py",
+        "python scripts/validate_public_search_safety_evidence.py",
+        "python scripts/run_hosted_public_search_rehearsal.py",
+        "python scripts/validate_hosted_public_search_rehearsal.py",
+        "python site/build.py --check",
+        "python site/validate.py",
+        "python scripts/validate_publication_inventory.py",
+        "python scripts/validate_public_static_site.py",
+        "python scripts/check_github_pages_static_artifact.py --path site/dist",
+        "python scripts/check_generated_artifact_drift.py"
+      ],
+      "summary": "Local public-search safety/static lanes passed. No page runtime links, route behavior, live-source calls, or public-search mutations were added."
+    },
+    "hosted_deployment_and_baseline": {
+      "status": "passed_with_blockers_recorded",
+      "commands": [
+        "python scripts/verify_public_hosted_deployment.py --from-repo-config --json",
+        "python scripts/validate_public_hosted_deployment_evidence.py",
+        "python scripts/run_external_baseline_comparison.py --batch batch_0 --json",
+        "python scripts/validate_external_baseline_comparison_report.py",
+        "python scripts/report_external_baseline_status.py --json"
+      ],
+      "summary": "Hosted backend remains not configured, configured static route verification remains failed, and Manual Observation Batch 0 remains 0 observed / 39 pending."
+    },
+    "evals_and_full_tests": {
+      "status": "passed",
+      "commands": [
+        "python scripts/run_archive_resolution_evals.py",
+        "python scripts/run_archive_resolution_evals.py --json",
+        "python scripts/run_search_usefulness_audit.py",
+        "python scripts/run_search_usefulness_audit.py --json",
+        "python scripts/generate_python_oracle_golden.py --check",
+        "python -m unittest discover -s tests/scripts -t .",
+        "python -m unittest discover -s tests/operations -t .",
+        "python -m unittest discover -s tests/hardening -t .",
+        "python -m unittest discover -s tests/parity -t .",
+        "python -m unittest discover -s runtime -t .",
+        "python -m unittest discover -s surfaces -t .",
+        "python -m unittest discover -s tests -t .",
+        "python scripts/check_architecture_boundaries.py",
+        "git diff --check",
+        "git status --short --branch"
+      ],
+      "summary": "Archive evals passed 6/6. Search usefulness remains 64 queries with capability_gap=7, covered=5, partial=40, source_gap=10, unknown=2. Full unit discovers passed: tests/scripts 610, tests/operations 584, tests/hardening 53, tests/parity 25, runtime 320, surfaces 168, tests 1363. Architecture and diff checks passed."
+    },
+    "optional": {
+      "status": "skipped_unavailable",
+      "commands": [
+        "gh availability",
+        "cargo availability"
+      ],
+      "summary": "Optional gh and cargo commands were unavailable because the executables are not installed."
+    }
+  },
+  "remaining_blockers": [
+    "Operator approval is required before even local dry-run runtime work.",
+    "Hosted deployment remains unverified, so hosted page runtime is blocked.",
+    "Configured static deployment evidence remains failed and hosted backend remains not configured.",
+    "Page runtime routes, renderer, and page store remain unimplemented by design.",
+    "Safe page ID policy must be accepted before implementation.",
+    "Route tests for traversal, arbitrary URL, source selector, local path, and private cache access remain future.",
+    "Source/evidence/candidate rendering labels must remain explicit before candidates can be displayed.",
+    "Manual Observation Batch 0 remains pending for external baseline comparison."
+  ],
+  "next_recommended_branch": "P94 Pack Import Runtime Planning v0",
+  "notes": [
+    "No page runtime routes, renderers, stores, public-search changes, external calls, source calls, model calls, deployments, telemetry, downloads, accounts, credentials, or index/cache/ledger/candidate/master mutations were added.",
+    "Fast learning, slow truth."
+  ],
+  "execution_enabled": false,
+  "candidate_index_mutated": false,
+  "source_cache_mutated": false,
+  "installs_enabled": false,
+  "candidate_promotion_performed": false,
+  "public_index_mutated": false,
+  "evidence_ledger_mutated": false,
+  "runtime_page_implementation_enabled": false,
+  "telemetry_enabled": false,
+  "downloads_enabled": false,
+  "hosted_page_runtime_verified": false,
+  "accounts_enabled": false,
+  "comparison_page_runtime_implemented": false,
+  "source_page_runtime_implemented": false,
+  "arbitrary_url_fetch_enabled": false,
+  "public_search_page_links_enabled_now": false,
+  "persistent_page_store_implemented": false,
+  "object_page_runtime_implemented": false,
+  "local_path_access_enabled": false,
+  "live_source_calls_enabled": false,
+  "master_index_mutated": false,
+  "uploads_enabled": false,
+  "external_calls_performed": false,
+  "public_search_runtime_mutated": false,
+  "local_index_mutated": false
+}
