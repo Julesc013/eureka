@@ -1,0 +1,73 @@
+{
+  "schema_version": "page_runtime_dry_run.v0",
+  "page_id": "page-dry-run-source-preview",
+  "page_kind": "source_page",
+  "page_status": "synthetic_example",
+  "lane": "demo",
+  "title": "Synthetic Source Preview",
+  "summary": "Synthetic source page preview showing source posture, connector gates, coverage gaps, and disabled live calls.",
+  "source_identity": {
+    "source_id": "synthetic-source-preview",
+    "source_family": "local_fixture",
+    "identity_status": "fixture_backed"
+  },
+  "source_status": {
+    "live_supported": false,
+    "live_enabled": false,
+    "connector_runtime_implemented": false,
+    "public_search_live_fanout_allowed": false
+  },
+  "connector_posture": {
+    "connector_status": "planning_only",
+    "operator_approval_required": true,
+    "forbidden_capabilities": [
+      "live_probe",
+      "download",
+      "install",
+      "execute",
+      "upload"
+    ]
+  },
+  "coverage": {
+    "coverage_depth": "synthetic_preview_only",
+    "source_gap_types": [
+      "source_cache_read_disabled",
+      "evidence_ledger_read_disabled"
+    ],
+    "coverage_limitations": [
+      "No live source was checked.",
+      "No authoritative source cache or evidence ledger was read."
+    ]
+  },
+  "conflicts": [],
+  "gaps": [
+    "Connector runtime is not enabled.",
+    "Hosted source page runtime is not enabled."
+  ],
+  "limitations": [
+    "Synthetic public-safe dry-run example."
+  ],
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "action_status": "risky_actions_disabled",
+  "allowed_actions": [
+    "inspect_source_metadata",
+    "view_source_limitations",
+    "cite_source_page"
+  ],
+  "disabled_actions": [
+    "live_probe",
+    "download",
+    "upload",
+    "install",
+    "execute"
+  ],
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "live_source_called": false,
+  "external_calls_performed": false
+}

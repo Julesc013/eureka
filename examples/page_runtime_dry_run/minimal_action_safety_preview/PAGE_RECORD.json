@@ -1,0 +1,56 @@
+{
+  "schema_version": "page_runtime_dry_run.v0",
+  "page_id": "page-dry-run-action-safety-preview",
+  "page_kind": "source_page",
+  "page_status": "synthetic_example",
+  "lane": "demo",
+  "title": "Synthetic Action Safety Preview",
+  "summary": "Synthetic page preview focused on disabled download, upload, install, execute, package-manager, emulator, and VM actions.",
+  "source_identity": {
+    "source_id": "synthetic-action-safety-source",
+    "source_family": "local_fixture",
+    "identity_status": "fixture_backed"
+  },
+  "safe_actions": [
+    "inspect_metadata",
+    "compare",
+    "cite"
+  ],
+  "disabled_actions": [
+    "download",
+    "upload",
+    "install",
+    "execute",
+    "package_manager",
+    "emulator",
+    "vm"
+  ],
+  "rights_risk_caveats": [
+    "No rights clearance is claimed.",
+    "No malware safety is claimed.",
+    "No installability proof is claimed."
+  ],
+  "conflicts": [],
+  "gaps": [
+    "Risk review remains future work.",
+    "Hosted runtime remains disabled."
+  ],
+  "limitations": [
+    "Synthetic public-safe dry-run example.",
+    "Risky actions stay disabled."
+  ],
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "action_status": "risky_actions_disabled",
+  "allowed_actions": [
+    "inspect_metadata",
+    "compare",
+    "cite"
+  ],
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false
+}

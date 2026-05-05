@@ -1,0 +1,54 @@
+{
+  "schema_version": "page_runtime_dry_run.v0",
+  "page_id": "page-dry-run-conflict-gap-preview",
+  "page_kind": "object_page",
+  "page_status": "conflicted",
+  "lane": "conflicted",
+  "title": "Synthetic Conflict and Gap Preview",
+  "summary": "Synthetic preview preserving a visible conflict and gap without resolving, suppressing, or hiding either.",
+  "identity": {
+    "object_id": "synthetic-conflict-gap-object",
+    "canonical_label": "Synthetic Conflict and Gap Preview",
+    "identity_status": "candidate"
+  },
+  "conflicts": [
+    {
+      "conflict_id": "synthetic-version-conflict",
+      "label": "Synthetic version label conflict",
+      "status": "review_required",
+      "limitations": [
+        "Conflict is synthetic and unresolved."
+      ]
+    }
+  ],
+  "gaps": [
+    "No reviewed evidence ledger record is available.",
+    "No source-cache-backed conflict resolution is available."
+  ],
+  "limitations": [
+    "Conflict remains visible.",
+    "Gap remains visible.",
+    "Dry-run rendering does not accept either claim as truth."
+  ],
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "action_status": "risky_actions_disabled",
+  "allowed_actions": [
+    "inspect_metadata",
+    "view_evidence",
+    "compare",
+    "cite"
+  ],
+  "disabled_actions": [
+    "download",
+    "upload",
+    "install",
+    "execute"
+  ],
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false
+}

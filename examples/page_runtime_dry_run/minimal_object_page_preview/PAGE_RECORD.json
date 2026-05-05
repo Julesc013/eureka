@@ -1,0 +1,65 @@
+{
+  "schema_version": "page_runtime_dry_run.v0",
+  "page_id": "page-dry-run-object-preview",
+  "page_kind": "object_page",
+  "page_status": "synthetic_example",
+  "lane": "demo",
+  "title": "Synthetic Object Preview",
+  "summary": "Synthetic object page preview showing candidate identity, evidence labels, unknown compatibility, visible gaps, and disabled risky actions.",
+  "identity": {
+    "object_id": "synthetic-object-preview",
+    "canonical_label": "Synthetic Object Preview",
+    "identity_status": "candidate",
+    "identity_not_truth": true
+  },
+  "source_refs": [
+    {
+      "label": "Synthetic fixture source",
+      "source_family": "local_fixture"
+    }
+  ],
+  "evidence_refs": [
+    {
+      "label": "Synthetic metadata evidence",
+      "evidence_kind": "metadata_summary",
+      "accepted_as_truth": false
+    }
+  ],
+  "compatibility": {
+    "compatibility_status": "unknown",
+    "limitations": [
+      "Compatibility remains unknown in dry-run preview."
+    ]
+  },
+  "conflicts": [],
+  "gaps": [
+    "No authoritative source cache record is read.",
+    "No authoritative evidence ledger record is read."
+  ],
+  "limitations": [
+    "Synthetic public-safe dry-run example.",
+    "Dry-run rendering is not truth and is not public runtime."
+  ],
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "action_status": "risky_actions_disabled",
+  "allowed_actions": [
+    "inspect_metadata",
+    "view_sources",
+    "view_evidence",
+    "compare",
+    "cite"
+  ],
+  "disabled_actions": [
+    "download",
+    "upload",
+    "install",
+    "execute"
+  ],
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false
+}

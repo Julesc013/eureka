@@ -1,0 +1,68 @@
+{
+  "schema_version": "page_runtime_dry_run.v0",
+  "page_id": "page-dry-run-comparison-preview",
+  "page_kind": "comparison_page",
+  "page_status": "synthetic_example",
+  "lane": "demo",
+  "title": "Synthetic Comparison Preview",
+  "summary": "Synthetic comparison page preview showing two provisional subjects, scoped criteria, no winner, and visible evidence limitations.",
+  "subjects": [
+    {
+      "subject_ref": "synthetic-comparison-a",
+      "subject_label": "Synthetic Subject A",
+      "subject_status": "candidate"
+    },
+    {
+      "subject_ref": "synthetic-comparison-b",
+      "subject_label": "Synthetic Subject B",
+      "subject_status": "candidate"
+    }
+  ],
+  "criteria": [
+    {
+      "criterion_id": "identity",
+      "criterion_label": "Identity relation",
+      "evidence_required": true
+    },
+    {
+      "criterion_id": "compatibility",
+      "criterion_label": "Compatibility posture",
+      "evidence_required": true
+    }
+  ],
+  "comparison_outcome": {
+    "winner_allowed": false,
+    "winner_selected_now": false,
+    "accepted_as_truth": false
+  },
+  "conflicts": [],
+  "gaps": [
+    "Evidence is insufficient for winner selection.",
+    "Compatibility remains unknown."
+  ],
+  "limitations": [
+    "Synthetic public-safe dry-run example.",
+    "No merge, ranking, or promotion decision is made."
+  ],
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "action_status": "risky_actions_disabled",
+  "allowed_actions": [
+    "compare",
+    "view_evidence",
+    "cite"
+  ],
+  "disabled_actions": [
+    "download",
+    "upload",
+    "install",
+    "execute"
+  ],
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "comparison_winner_claimed": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false
+}
