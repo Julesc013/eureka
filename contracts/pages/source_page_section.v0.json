@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/pages/source_page_section.v0.json",
+  "title": "EurekaSourcePageSectionV0",
+  "description": "Optional helper schema for future source-page section rendering. Contract-only; no runtime source pages.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "section_kind",
+    "title",
+    "body",
+    "warnings",
+    "limitations",
+    "implemented_now"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "section_id": {
+      "type": "string"
+    },
+    "section_kind": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "implemented_now": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_source_page_implemented": false
+}

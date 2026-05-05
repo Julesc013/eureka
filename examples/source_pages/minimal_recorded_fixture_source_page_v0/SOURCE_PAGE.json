@@ -1,0 +1,369 @@
+{
+  "schema_version": "0.1.0",
+  "source_page_id": "source_page_recorded_fixture_v0",
+  "source_page_kind": "source_page",
+  "status": "recorded_fixture_source",
+  "created_by_tool": "p80_source_page_contract_v0",
+  "source_identity": {
+    "source_id": "internet-archive-recorded-fixtures",
+    "source_family": "recorded_fixture",
+    "canonical_label": "Recorded Fixture Source",
+    "aliases": [],
+    "source_homepage_ref": null,
+    "source_inventory_ref": "control/inventory/sources/internet-archive-placeholder.source.json",
+    "connector_inventory_ref": null,
+    "source_pack_refs": [],
+    "evidence_pack_refs": [],
+    "identity_status": "recorded_fixture_backed",
+    "limitations": [
+      "Public-safe synthetic page example; no source homepage was fetched."
+    ]
+  },
+  "source_status": {
+    "status_class": "active_recorded_fixture",
+    "live_supported": false,
+    "live_enabled": false,
+    "connector_approved": false,
+    "connector_runtime_implemented": false,
+    "source_cache_runtime_implemented": false,
+    "evidence_ledger_runtime_implemented": false,
+    "public_search_live_fanout_allowed": false,
+    "public_index_included": true,
+    "limitations": [
+      "Status is page-contract posture, not live source health."
+    ]
+  },
+  "title": "Recorded Fixture Source",
+  "summary": "Synthetic Source Page v0 example describing source posture, coverage, approval gates, and limitations without live calls.",
+  "coverage": {
+    "coverage_depth": "recorded_fixture",
+    "covered_record_kinds": [
+      "metadata_summary"
+    ],
+    "covered_capabilities": [
+      "inspect source metadata",
+      "view bounded source limitations",
+      "use committed fixture metadata in local index"
+    ],
+    "uncovered_capabilities": [
+      "live probe",
+      "download",
+      "mirror",
+      "install",
+      "execute",
+      "upload",
+      "arbitrary URL fetch"
+    ],
+    "source_gap_types": [
+      "evidence_ledger_missing"
+    ],
+    "query_families_supported": [
+      "old_platform_search"
+    ],
+    "object_families_supported": [
+      "software",
+      "driver",
+      "documentation"
+    ],
+    "representation_families_supported": [
+      "metadata_record"
+    ],
+    "member_access_supported": false,
+    "compatibility_evidence_supported": true,
+    "coverage_limitations": [
+      "Coverage is bounded and non-exhaustive.",
+      "No live source was checked for this page."
+    ],
+    "source_coverage_claim_not_exhaustive": true
+  },
+  "connector_posture": {
+    "connector_id": null,
+    "connector_status": "fixture_only",
+    "connector_approval_refs": [],
+    "allowed_capabilities": [
+      "inspect source metadata",
+      "view bounded source limitations",
+      "use committed fixture metadata in local index"
+    ],
+    "forbidden_capabilities": [
+      "live probe",
+      "download",
+      "mirror",
+      "install",
+      "execute",
+      "upload",
+      "arbitrary URL fetch"
+    ],
+    "source_policy_review_required": false,
+    "operator_approval_required": false,
+    "human_approval_required": false,
+    "user_agent_contact_required_future": false,
+    "rate_limit_required_future": false,
+    "timeout_required_future": false,
+    "circuit_breaker_required_future": false,
+    "limitations": [
+      "Connector posture is descriptive only and does not implement or enable a connector."
+    ]
+  },
+  "source_policy": {
+    "source_policy_status": "fixture_only",
+    "source_terms_review_required": false,
+    "automated_access_review_required": false,
+    "rights_access_review_required": false,
+    "privacy_review_required": false,
+    "risk_review_required": false,
+    "approval_checklist_refs": [],
+    "operator_checklist_refs": [],
+    "limitations": [
+      "No source policy was fetched during P80."
+    ]
+  },
+  "source_cache_projection": {
+    "source_cache_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+    "source_cache_status": "not_implemented",
+    "source_cache_record_refs": [],
+    "source_cache_record_count_policy": "none",
+    "freshness_status": "not_applicable",
+    "source_cache_mutation_allowed_now": false,
+    "limitations": [
+      "Source pages may describe future cache outputs but cannot mutate source cache."
+    ]
+  },
+  "evidence_ledger_projection": {
+    "evidence_ledger_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+    "evidence_ledger_status": "not_implemented",
+    "evidence_ledger_record_refs": [],
+    "evidence_count_policy": "none",
+    "evidence_review_status": "future_or_fixture_only",
+    "evidence_ledger_mutation_allowed_now": false,
+    "limitations": [
+      "Source pages may cite evidence later but cannot write an evidence ledger."
+    ]
+  },
+  "public_index_projection": {
+    "included_in_public_index": true,
+    "public_index_refs": [
+      "data/public_index/source_coverage.json"
+    ],
+    "public_index_document_count_policy": "generated_current",
+    "indexed_fields_summary": [
+      "source_id",
+      "source_family",
+      "status",
+      "coverage_depth"
+    ],
+    "public_index_mutation_allowed_now": false,
+    "limitations": [
+      "P80 does not rebuild or mutate the public index."
+    ]
+  },
+  "public_search_projection": {
+    "appears_in_public_search": true,
+    "source_filter_supported_future": true,
+    "result_card_source_badge_supported_future": true,
+    "public_search_live_fanout_allowed": false,
+    "public_search_reads_cache_future": false,
+    "public_search_reads_live_connector_now": false,
+    "limitations": [
+      "Public search remains local_index_only and must not fan out to sources."
+    ]
+  },
+  "query_intelligence_projection": {
+    "search_need_refs": [],
+    "probe_queue_refs": [],
+    "demand_dashboard_refs": [],
+    "known_absence_refs": [],
+    "candidate_refs": [],
+    "query_intelligence_status": "contract_only",
+    "query_intelligence_mutation_allowed_now": false,
+    "limitations": [
+      "No query-intelligence store is mutated by source pages."
+    ]
+  },
+  "limitations_and_gaps": {
+    "limitations": [
+      "Contract-only source page example.",
+      "No live source calls or runtime page route."
+    ],
+    "gaps": [
+      {
+        "gap_type": "evidence_ledger_missing",
+        "explanation": "Source cache and evidence ledger remain contract-only; this page does not write either store.",
+        "future_next_step": "Use future approved source sync and evidence-ledger runtime only after review.",
+        "limitations": [
+          "No source page runtime exists in P80."
+        ]
+      }
+    ],
+    "source_gaps": [
+      "live source coverage unavailable"
+    ],
+    "capability_gaps": [
+      "member access unavailable",
+      "runtime evidence projection unavailable"
+    ],
+    "approval_gaps": [],
+    "operator_gaps": [],
+    "evidence_gaps": [
+      "source cache runtime missing",
+      "evidence ledger runtime missing"
+    ],
+    "public_search_gaps": [
+      "source page links are future-only"
+    ]
+  },
+  "trust_and_provenance_caution": {
+    "source_trust_claimed": false,
+    "source_authority_status": "fixture_only",
+    "provenance_summary": "This page describes source posture; it does not certify source authority, trust, or completeness.",
+    "provenance_refs": [
+      "control/inventory/sources/internet-archive-placeholder.source.json"
+    ],
+    "source_disagreement_preserved": true,
+    "limitations": [
+      "Source trust is not authoritative."
+    ]
+  },
+  "rights_access_risk_posture": {
+    "rights_classification": "public_metadata_only",
+    "access_classification": "fixture_only",
+    "risk_classification": "metadata_only",
+    "allowed_actions": [
+      "inspect_source_metadata",
+      "view_source_limitations",
+      "view_related_results",
+      "view_evidence",
+      "cite_source_page"
+    ],
+    "disabled_actions": [
+      "live_probe",
+      "download",
+      "mirror",
+      "install",
+      "execute",
+      "upload",
+      "arbitrary_url_fetch"
+    ],
+    "downloads_enabled": false,
+    "mirroring_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "uploads_enabled": false,
+    "arbitrary_url_fetch_enabled": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "limitations": [
+      "Metadata-only posture; no rights clearance or malware safety claim."
+    ]
+  },
+  "result_card_source_badge_projection": {
+    "source_badge_contract_ref": null,
+    "can_project_to_source_badge": true,
+    "badge_label": "Recorded Fixture Source",
+    "badge_status": "recorded_fixture",
+    "badge_warnings": [
+      "Fixture-backed only"
+    ],
+    "badge_limitations": [
+      "Source badge projection is future-only."
+    ],
+    "result_card_contract_ref": "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+    "limitations": [
+      "Public search result cards are not mutated by P80."
+    ]
+  },
+  "api_projection": {
+    "response_kind": "source_page_response",
+    "route_future": [
+      "/source/{source_id}",
+      "/api/v1/source/{source_id}"
+    ],
+    "implemented_now": false,
+    "compatible_with_public_search_sources_response": true,
+    "included_sections": [
+      "identity",
+      "status",
+      "coverage",
+      "connector_posture",
+      "source_policy",
+      "cache",
+      "evidence",
+      "gaps"
+    ],
+    "limitations": [
+      "Runtime source page routes are future work."
+    ]
+  },
+  "static_projection": {
+    "static_demo_available": false,
+    "static_demo_path": null,
+    "generated_static_artifact": false,
+    "no_js_required": true,
+    "base_path_safe": true,
+    "old_client_safe": true,
+    "limitations": [
+      "No static demo artifact was generated in P80."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe metadata only."
+    ]
+  },
+  "no_runtime_guarantees": {
+    "runtime_source_page_implemented": false,
+    "persistent_source_page_store_implemented": false,
+    "source_page_generated_from_live_source": false,
+    "connector_runtime_implemented": false,
+    "connector_live_enabled": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "source_sync_worker_executed": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "candidate_promotion_performed": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "notes": [
+    "Fast learning, slow truth.",
+    "P80 defines source page contract shape only."
+  ],
+  "runtime_source_page_implemented": false,
+  "persistent_source_page_store_implemented": false,
+  "source_page_generated_from_live_source": false,
+  "connector_runtime_implemented": false,
+  "connector_live_enabled": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "source_sync_worker_executed": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "candidate_promotion_performed": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "source_trust_claimed": false,
+  "telemetry_exported": false
+}
