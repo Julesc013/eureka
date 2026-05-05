@@ -1,0 +1,573 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/identity/identity_resolution_assessment.v0.json",
+  "title": "EurekaIdentityResolutionAssessmentV0",
+  "description": "Contract-only cross-source identity relation assessment. It defines future identity-resolution decisions without runtime identity resolution, destructive merge, candidate promotion, live source calls, or index/cache/ledger mutation.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "assessment_id",
+    "assessment_kind",
+    "status",
+    "created_by_tool",
+    "assessment_scope",
+    "subjects",
+    "asserted_relation",
+    "relation_evidence",
+    "identifier_evidence",
+    "alias_name_evidence",
+    "version_platform_architecture_evidence",
+    "source_provenance_evidence",
+    "hash_checksum_intrinsic_id_model",
+    "package_repository_archive_capture_identity",
+    "representation_member_evidence",
+    "conflicts",
+    "confidence",
+    "review",
+    "promotion_and_merge_boundary",
+    "public_projection",
+    "privacy",
+    "limitations",
+    "no_runtime_guarantees",
+    "no_mutation_guarantees",
+    "notes",
+    "runtime_identity_resolution_implemented",
+    "persistent_identity_store_implemented",
+    "identity_cluster_created",
+    "records_merged",
+    "destructive_merge_performed",
+    "candidate_promotion_performed",
+    "master_index_mutated",
+    "public_index_mutated",
+    "local_index_mutated",
+    "source_cache_mutated",
+    "evidence_ledger_mutated",
+    "candidate_index_mutated",
+    "live_source_called",
+    "external_calls_performed",
+    "telemetry_exported"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "assessment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assessment_kind": {
+      "type": "string",
+      "const": "identity_resolution_assessment"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "synthetic_example",
+        "public_safe_example",
+        "candidate_relation",
+        "review_required",
+        "conflicted",
+        "rejected_by_policy",
+        "runtime_future"
+      ]
+    },
+    "created_by_tool": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "assessment_scope": {
+      "$ref": "#/$defs/assessment_scope"
+    },
+    "subjects": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/$defs/subject"
+      }
+    },
+    "asserted_relation": {
+      "$ref": "#/$defs/asserted_relation"
+    },
+    "relation_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation_evidence"
+      }
+    },
+    "identifier_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/identifier_evidence"
+      }
+    },
+    "alias_name_evidence": {
+      "$ref": "#/$defs/alias_name_evidence"
+    },
+    "version_platform_architecture_evidence": {
+      "$ref": "#/$defs/version_platform_architecture_evidence"
+    },
+    "source_provenance_evidence": {
+      "$ref": "#/$defs/source_provenance_evidence"
+    },
+    "hash_checksum_intrinsic_id_model": {
+      "$ref": "#/$defs/hash_checksum_intrinsic_id_model"
+    },
+    "package_repository_archive_capture_identity": {
+      "$ref": "#/$defs/package_repository_archive_capture_identity"
+    },
+    "representation_member_evidence": {
+      "$ref": "#/$defs/representation_member_evidence"
+    },
+    "conflicts": {
+      "$ref": "#/$defs/conflicts"
+    },
+    "confidence": {
+      "$ref": "#/$defs/confidence"
+    },
+    "review": {
+      "$ref": "#/$defs/review"
+    },
+    "promotion_and_merge_boundary": {
+      "$ref": "#/$defs/promotion_and_merge_boundary"
+    },
+    "public_projection": {
+      "$ref": "#/$defs/public_projection"
+    },
+    "privacy": {
+      "$ref": "#/$defs/privacy"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "no_runtime_guarantees": {
+      "type": "object"
+    },
+    "no_mutation_guarantees": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "runtime_identity_resolution_implemented": {
+      "type": "boolean",
+      "const": false
+    },
+    "persistent_identity_store_implemented": {
+      "type": "boolean",
+      "const": false
+    },
+    "identity_cluster_created": {
+      "type": "boolean",
+      "const": false
+    },
+    "records_merged": {
+      "type": "boolean",
+      "const": false
+    },
+    "destructive_merge_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "candidate_promotion_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "master_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "public_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "local_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "source_cache_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "evidence_ledger_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "candidate_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "live_source_called": {
+      "type": "boolean",
+      "const": false
+    },
+    "external_calls_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "telemetry_exported": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "$defs": {
+    "assessment_scope": {
+      "type": "object",
+      "required": [
+        "scope_kind",
+        "assessment_basis",
+        "relation_goal",
+        "limitations"
+      ],
+      "properties": {
+        "scope_kind": {
+          "type": "string",
+          "enum": [
+            "object_identity",
+            "version_identity",
+            "representation_identity",
+            "member_identity",
+            "source_identity",
+            "package_identity",
+            "repository_identity",
+            "archive_capture_identity",
+            "compatibility_claim_identity",
+            "candidate_identity",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "assessment_basis": {
+          "type": "string",
+          "enum": [
+            "synthetic_example",
+            "fixture_backed",
+            "recorded_fixture_backed",
+            "public_index_future",
+            "source_cache_future",
+            "evidence_ledger_future",
+            "candidate_index_future",
+            "manual_review_future",
+            "unknown"
+          ]
+        },
+        "relation_goal": {
+          "type": "string",
+          "enum": [
+            "determine_same",
+            "determine_variant",
+            "determine_version_relation",
+            "determine_representation_relation",
+            "determine_member_relation",
+            "determine_conflict",
+            "preserve_uncertainty",
+            "unknown"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "required": [
+        "subject_ref",
+        "subject_kind",
+        "subject_label",
+        "subject_status",
+        "limitations"
+      ],
+      "properties": {
+        "subject_ref": {
+          "type": "string"
+        },
+        "subject_kind": {
+          "type": "string",
+          "enum": [
+            "object_page",
+            "source_page",
+            "comparison_page",
+            "public_search_result",
+            "public_index_document",
+            "source_cache_record",
+            "evidence_ledger_record",
+            "candidate_index_record",
+            "source_pack_record",
+            "evidence_pack_record",
+            "synthetic_example",
+            "unknown"
+          ]
+        },
+        "subject_label": {
+          "type": "string"
+        },
+        "subject_status": {
+          "type": "string",
+          "enum": [
+            "fixture_backed",
+            "recorded_fixture_backed",
+            "candidate",
+            "review_required",
+            "placeholder",
+            "future",
+            "conflicted",
+            "unknown"
+          ]
+        },
+        "object_kind": {
+          "type": "string"
+        },
+        "source_family": {
+          "type": "string"
+        },
+        "package_family": {
+          "type": "string"
+        },
+        "repository_family": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "architecture": {
+          "type": "string"
+        },
+        "representation_kind": {
+          "type": "string"
+        },
+        "member_path_public_safe": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "asserted_relation": {
+      "type": "object",
+      "required": [
+        "relation_type",
+        "relation_status",
+        "symmetric_relation",
+        "transitive_relation",
+        "relation_claim_not_truth",
+        "global_merge_allowed",
+        "limitations"
+      ],
+      "properties": {
+        "relation_type": {
+          "type": "string",
+          "enum": [
+            "exact_same_object",
+            "likely_same_object",
+            "possible_same_object",
+            "variant_of",
+            "version_of",
+            "release_of",
+            "representation_of",
+            "member_of",
+            "source_record_for",
+            "package_record_for",
+            "repository_record_for",
+            "capture_of",
+            "alias_of",
+            "near_match",
+            "different_object",
+            "conflicting_identity",
+            "unknown"
+          ]
+        },
+        "relation_status": {
+          "type": "string",
+          "enum": [
+            "asserted_example",
+            "candidate",
+            "review_required",
+            "conflicted",
+            "rejected",
+            "future"
+          ]
+        },
+        "symmetric_relation": {
+          "type": "boolean"
+        },
+        "transitive_relation": {
+          "type": "boolean"
+        },
+        "relation_claim_not_truth": {
+          "type": "boolean",
+          "const": true
+        },
+        "global_merge_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "relation_evidence": {
+      "type": "object"
+    },
+    "identifier_evidence": {
+      "type": "object",
+      "required": [
+        "identifier_kind",
+        "identifier_value",
+        "identifier_value_public_safe",
+        "identifier_status",
+        "strength",
+        "source_refs",
+        "evidence_refs",
+        "limitations"
+      ],
+      "properties": {
+        "identifier_kind": {
+          "type": "string",
+          "enum": [
+            "sha256",
+            "sha1",
+            "md5",
+            "checksum",
+            "DOI",
+            "ISBN",
+            "package_url",
+            "SWHID",
+            "GitHub_owner_repo",
+            "package_name",
+            "version_string",
+            "archive_item_identifier",
+            "wayback_uri_r",
+            "file_name",
+            "member_path",
+            "source_native_id",
+            "unknown"
+          ]
+        },
+        "identifier_value": {
+          "type": "string"
+        },
+        "identifier_value_public_safe": {
+          "type": "boolean"
+        },
+        "identifier_status": {
+          "type": "string",
+          "enum": [
+            "exact_match",
+            "normalized_match",
+            "conflicting",
+            "missing",
+            "not_applicable",
+            "review_required"
+          ]
+        },
+        "strength": {
+          "type": "string",
+          "enum": [
+            "intrinsic_strong",
+            "strong",
+            "medium",
+            "weak",
+            "unknown"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "alias_name_evidence": {
+      "type": "object"
+    },
+    "version_platform_architecture_evidence": {
+      "type": "object"
+    },
+    "source_provenance_evidence": {
+      "type": "object"
+    },
+    "hash_checksum_intrinsic_id_model": {
+      "type": "object"
+    },
+    "package_repository_archive_capture_identity": {
+      "type": "object"
+    },
+    "representation_member_evidence": {
+      "type": "object"
+    },
+    "conflicts": {
+      "type": "object"
+    },
+    "confidence": {
+      "type": "object"
+    },
+    "review": {
+      "type": "object"
+    },
+    "promotion_and_merge_boundary": {
+      "type": "object"
+    },
+    "public_projection": {
+      "type": "object"
+    },
+    "privacy": {
+      "type": "object"
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_identity_resolution_implemented": false,
+  "x-persistent_identity_store_implemented": false,
+  "x-merge_runtime_implemented": false,
+  "x-destructive_merge_allowed": false,
+  "x-candidate_promotion_allowed": false,
+  "x-master_index_mutation_allowed": false,
+  "x-public_index_mutation_allowed": false,
+  "x-source_cache_mutation_allowed": false,
+  "x-evidence_ledger_mutation_allowed": false,
+  "x-candidate_index_mutation_allowed": false,
+  "x-live_source_calls_allowed": false,
+  "x-telemetry_implemented": false
+}

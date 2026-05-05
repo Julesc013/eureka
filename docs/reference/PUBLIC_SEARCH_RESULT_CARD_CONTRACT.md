@@ -422,3 +422,15 @@ Boundary notes:
 - Public search may reference comparison links only after a future governed integration; P81 does not mutate public search result cards or the public index.
 - Comparison pages explain evidence-backed similarity, difference, conflict, and gaps; they are not ranking authority, candidate promotion, source API proxies, download pages, installer pages, or production comparison services.
 <!-- P81-COMPARISON-PAGE-CONTRACT-END -->
+
+<!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-START -->
+## P82 Cross-Source Identity Resolution Contract v0
+
+Cross-Source Identity Resolution Contract v0 is contract-only and evidence-first. It defines future identity relation assessments and provisional clusters for exact, likely, possible, variant, version, release, representation, member, package, repository, capture, alias, near-match, different, conflicting, and unknown relations.
+
+Boundary notes:
+
+- No runtime identity resolver, persistent identity store, cluster runtime, merge runtime, destructive deduplication, records merged, candidate promotion, master-index mutation, public-index mutation, source-cache mutation, evidence-ledger mutation, candidate-index mutation, live source fanout, downloads, installs, execution, telemetry, accounts, source trust, rights clearance, malware safety claim, or identity truth overclaim are added.
+- Public search, object pages, source pages, and comparison pages may reference identity relation labels only after future governed integration; P82 does not mutate public search or public index.
+- Identity confidence is not identity truth; names and aliases alone are weak evidence; conflicts are preserved.
+<!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-END -->

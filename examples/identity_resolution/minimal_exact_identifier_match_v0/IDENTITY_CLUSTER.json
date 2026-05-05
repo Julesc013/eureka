@@ -1,0 +1,137 @@
+{
+  "schema_version": "0.1.0",
+  "identity_cluster_id": "identity_cluster_exact_identifier_match_v0",
+  "identity_cluster_kind": "identity_cluster",
+  "status": "candidate_cluster",
+  "created_by_tool": "p82_cross_source_identity_resolution_contract_v0",
+  "cluster_identity": {
+    "cluster_label": "Example App 1.0",
+    "cluster_basis": "synthetic_example",
+    "cluster_claim_not_truth": true,
+    "limitations": [
+      "Provisional cluster only; not accepted identity truth."
+    ]
+  },
+  "cluster_members": [
+    {
+      "member_ref": "synthetic:identity:example-app-1-0:left",
+      "member_label": "Example App 1.0",
+      "member_status": "candidate",
+      "relation_to_cluster": "exact_same_object",
+      "limitations": [
+        "Synthetic cluster member; not accepted truth."
+      ]
+    },
+    {
+      "member_ref": "synthetic:identity:exampleapp-v1-0:right",
+      "member_label": "ExampleApp v1.0",
+      "member_status": "review_required",
+      "relation_to_cluster": "exact_same_object",
+      "limitations": [
+        "Synthetic cluster member; not accepted truth."
+      ]
+    }
+  ],
+  "cluster_relations": [
+    {
+      "relation_ref": "identity_assessment_exact_identifier_match_v0",
+      "relation_type": "exact_same_object",
+      "relation_claim_not_truth": true,
+      "global_merge_allowed": false,
+      "limitations": [
+        "No merge or promotion."
+      ]
+    }
+  ],
+  "canonicalization_policy": {
+    "canonicalization_allowed_now": false,
+    "canonical_label_selected_now": false,
+    "canonical_member_ref": null,
+    "canonicalization_review_required": true,
+    "limitations": [
+      "No canonical identity is selected in v0."
+    ]
+  },
+  "conflicts": {
+    "conflict_status": "none_known",
+    "conflicts": [],
+    "disagreement_preserved": true,
+    "destructive_merge_allowed": false,
+    "limitations": [
+      "Conflicts are preserved for review."
+    ]
+  },
+  "confidence": {
+    "confidence_class": "high",
+    "confidence_basis": "package_url_match",
+    "confidence_not_truth": true,
+    "confidence_sufficient_for_merge_now": false,
+    "limitations": [
+      "Confidence is not identity truth and is not sufficient for merge now."
+    ]
+  },
+  "review": {
+    "review_status": "human_review_required",
+    "required_reviews": [
+      "human_review",
+      "promotion_policy_review",
+      "source_evidence_review"
+    ],
+    "promotion_policy_required": true,
+    "destructive_merge_forbidden": true,
+    "limitations": [
+      "Review is required before promotion or merge planning."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "contains_private_repository": false,
+    "contains_private_package": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic labels and identifiers only."
+    ]
+  },
+  "limitations": [
+    "Synthetic cluster only.",
+    "No persistent store or runtime cluster creation."
+  ],
+  "no_runtime_guarantees": {
+    "runtime_identity_cluster_implemented": false,
+    "persistent_cluster_store_implemented": false
+  },
+  "no_mutation_guarantees": {
+    "cluster_accepted_as_truth": false,
+    "records_merged": false,
+    "destructive_merge_performed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false
+  },
+  "notes": [
+    "Candidate cluster is not truth.",
+    "No destructive merge."
+  ],
+  "runtime_identity_cluster_implemented": false,
+  "persistent_cluster_store_implemented": false,
+  "cluster_accepted_as_truth": false,
+  "records_merged": false,
+  "destructive_merge_performed": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "telemetry_exported": false
+}

@@ -1,0 +1,368 @@
+{
+  "schema_version": "0.1.0",
+  "assessment_id": "identity_assessment_conflicting_identity_v0",
+  "assessment_kind": "identity_resolution_assessment",
+  "status": "conflicted",
+  "created_by_tool": "p82_cross_source_identity_resolution_contract_v0",
+  "assessment_scope": {
+    "scope_kind": "mixed",
+    "assessment_basis": "synthetic_example",
+    "relation_goal": "determine_conflict",
+    "limitations": [
+      "Synthetic public-safe assessment; no runtime identity resolver executed."
+    ]
+  },
+  "subjects": [
+    {
+      "subject_ref": "synthetic:identity:example-app-1-0:left",
+      "subject_kind": "object_page",
+      "subject_label": "Example App 1.0",
+      "subject_status": "candidate",
+      "object_kind": "software_version",
+      "source_family": "local_fixture",
+      "package_family": "pypi",
+      "repository_family": "github",
+      "version": "1.0",
+      "platform": "Windows 7",
+      "architecture": "unknown",
+      "representation_kind": "metadata_record",
+      "member_path_public_safe": null,
+      "evidence_status": "candidate",
+      "limitations": [
+        "Synthetic public-safe subject; not identity truth."
+      ]
+    },
+    {
+      "subject_ref": "synthetic:identity:different-example-app-1-0:right",
+      "subject_kind": "object_page",
+      "subject_label": "Different Example App 1.0",
+      "subject_status": "review_required",
+      "object_kind": "software_version",
+      "source_family": "recorded_fixture",
+      "package_family": "pypi",
+      "repository_family": "github",
+      "version": "1.0",
+      "platform": "Windows 7",
+      "architecture": "unknown",
+      "representation_kind": "metadata_record",
+      "member_path_public_safe": null,
+      "evidence_status": "review_required",
+      "limitations": [
+        "Synthetic public-safe subject; not identity truth."
+      ]
+    }
+  ],
+  "asserted_relation": {
+    "relation_type": "conflicting_identity",
+    "relation_status": "conflicted",
+    "symmetric_relation": true,
+    "transitive_relation": false,
+    "relation_claim_not_truth": true,
+    "global_merge_allowed": false,
+    "limitations": [
+      "Relation is a scoped candidate assessment, not accepted identity truth."
+    ]
+  },
+  "relation_evidence": [
+    {
+      "evidence_ref": "synthetic:evidence:relation-note",
+      "evidence_kind": "synthetic_metadata_note",
+      "evidence_status": "candidate",
+      "claim_summary": "Synthetic conflicting identity: conflicting_identity",
+      "confidence_not_truth": true,
+      "limitations": [
+        "No live source call or evidence ledger write."
+      ]
+    }
+  ],
+  "identifier_evidence": [
+    {
+      "identifier_kind": "package_name",
+      "identifier_value": "example-app",
+      "identifier_value_public_safe": true,
+      "identifier_status": "normalized_match",
+      "strength": "weak",
+      "source_refs": [
+        "synthetic:source:name-note"
+      ],
+      "evidence_refs": [
+        "synthetic:evidence:name-note"
+      ],
+      "limitations": [
+        "Name/package labels alone are weak evidence and not sufficient for identity truth."
+      ]
+    }
+  ],
+  "alias_name_evidence": {
+    "names_compared": [
+      "Example App 1.0",
+      "Different Example App 1.0"
+    ],
+    "aliases_compared": [
+      [
+        "Example App"
+      ],
+      [
+        "ExampleApp"
+      ]
+    ],
+    "normalized_names": [
+      "example app",
+      "example app"
+    ],
+    "normalization_steps": [
+      "case_fold",
+      "punctuation_fold",
+      "whitespace_fold"
+    ],
+    "name_similarity_status": "conflicting_names",
+    "name_match_strength": "weak",
+    "name_match_not_sufficient_alone": true,
+    "limitations": [
+      "Names and aliases alone are weak evidence."
+    ]
+  },
+  "version_platform_architecture_evidence": {
+    "version_relation": "same_version",
+    "platform_relation": "same_platform",
+    "architecture_relation": "unknown",
+    "version_evidence_refs": [
+      "synthetic:evidence:version-note"
+    ],
+    "platform_evidence_refs": [
+      "synthetic:evidence:platform-note"
+    ],
+    "architecture_evidence_refs": [],
+    "limitations": [
+      "Version/platform labels are scoped synthetic metadata."
+    ]
+  },
+  "source_provenance_evidence": {
+    "source_refs": [
+      "synthetic:source:left",
+      "synthetic:source:right"
+    ],
+    "provenance_refs": [
+      "synthetic:provenance:fixture-note"
+    ],
+    "source_relation": "source_only_match",
+    "provenance_status": "candidate",
+    "source_trust_claimed": false,
+    "provenance_not_truth": true,
+    "limitations": [
+      "Source provenance is evidence input, not source trust."
+    ]
+  },
+  "hash_checksum_intrinsic_id_model": {
+    "intrinsic_identifier_present": false,
+    "exact_hash_match_present": false,
+    "checksum_conflict_present": false,
+    "intrinsic_id_conflict_present": false,
+    "collision_or_weak_hash_caution_required": true,
+    "strongest_identifier_kind": "package_name",
+    "strongest_identifier_status": "normalized_match",
+    "limitations": [
+      "Hash or intrinsic IDs are scoped to representation/object semantics and are not product truth by themselves."
+    ]
+  },
+  "package_repository_archive_capture_identity": {
+    "package_identity": {
+      "package_family": "pypi",
+      "package_name": "example-app",
+      "package_version": "1.0.0",
+      "package_url": null,
+      "package_name_review_required": true,
+      "limitations": [
+        "Synthetic package metadata only."
+      ]
+    },
+    "repository_identity": {
+      "repository_family": "github",
+      "owner_repo": "example/example-app",
+      "origin_url_public_safe": null,
+      "SWHID": null,
+      "repository_identity_review_required": true,
+      "limitations": [
+        "No repository was fetched or cloned."
+      ]
+    },
+    "archive_identity": {
+      "archive_family": "local_fixture",
+      "archive_identifier": "synthetic-example-archive-item",
+      "item_identifier_review_required": true,
+      "limitations": [
+        "No archive was fetched."
+      ]
+    },
+    "capture_identity": {
+      "capture_family": "unknown",
+      "uri_r_public_safe": null,
+      "capture_timestamp": null,
+      "URI_privacy_review_required": true,
+      "limitations": [
+        "No capture lookup was performed."
+      ]
+    },
+    "relation_summary": "Synthetic package/repository/archive/capture identity posture only.",
+    "cautions": [
+      "Package, repository, archive, and capture identity can diverge."
+    ],
+    "limitations": [
+      "No live source calls."
+    ]
+  },
+  "representation_member_evidence": {
+    "representation_relation": "unknown",
+    "member_relation": "unknown",
+    "container_relation": "unknown",
+    "member_path_public_safe": null,
+    "payload_included": false,
+    "downloads_enabled": false,
+    "limitations": [
+      "No payload, archive member, or download is included."
+    ]
+  },
+  "conflicts": {
+    "conflict_status": "identity_conflict",
+    "conflicts": [
+      {
+        "conflict_id": "identity_assessment_conflicting_identity_v0:conflict",
+        "conflict_type": "identity_conflict",
+        "summary": "Synthetic conflict preserved for review.",
+        "conflicting_subject_refs": [
+          "synthetic:identity:example-app-1-0:left",
+          "synthetic:identity:different-example-app-1-0:right"
+        ],
+        "conflicting_identifier_refs": [
+          "synthetic:identifier:conflict-note"
+        ],
+        "conflicting_evidence_refs": [
+          "synthetic:evidence:conflict-note"
+        ],
+        "future_resolution_path": "human review before any merge or promotion",
+        "limitations": [
+          "No destructive merge is allowed."
+        ]
+      }
+    ],
+    "disagreement_preserved": true,
+    "destructive_merge_allowed": false,
+    "limitations": [
+      "Conflicts are preserved for review."
+    ]
+  },
+  "confidence": {
+    "confidence_class": "low",
+    "confidence_basis": "conflicting",
+    "confidence_not_truth": true,
+    "confidence_sufficient_for_merge_now": false,
+    "limitations": [
+      "Confidence is not identity truth and is not sufficient for merge now."
+    ]
+  },
+  "review": {
+    "review_status": "conflict_review_required",
+    "required_reviews": [
+      "human_review",
+      "promotion_policy_review",
+      "source_evidence_review"
+    ],
+    "promotion_policy_required": true,
+    "destructive_merge_forbidden": true,
+    "limitations": [
+      "Review is required before promotion or merge planning."
+    ]
+  },
+  "promotion_and_merge_boundary": {
+    "candidate_promotion_required": true,
+    "master_index_review_required": true,
+    "merge_runtime_implemented": false,
+    "merge_allowed_now": false,
+    "destructive_merge_allowed": false,
+    "canonicalization_allowed_now": false,
+    "public_index_update_allowed_now": false,
+    "future_destinations": [
+      "candidate_index_future",
+      "master_index_review_queue_future",
+      "public_index_future_after_review"
+    ],
+    "limitations": [
+      "No promotion, canonicalization, or merge occurs in P82."
+    ]
+  },
+  "public_projection": {
+    "public_search_projection": "future caveated relation label only",
+    "result_card_projection": "future identity badge only after review",
+    "object_page_projection": "future object relation section",
+    "source_page_projection": "future source relation section",
+    "comparison_page_projection": "future comparison page relation input",
+    "public_visibility": "public_safe_example",
+    "user_visible_relation_label": "conflicting identity",
+    "caveats_required": [
+      "candidate relation",
+      "not identity truth",
+      "no destructive merge"
+    ],
+    "limitations": [
+      "No public search runtime mutation."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "contains_private_repository": false,
+    "contains_private_package": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic labels and identifiers only."
+    ]
+  },
+  "limitations": [
+    "Contract-only synthetic example.",
+    "No runtime identity resolution, live source call, merge, promotion, or mutation."
+  ],
+  "no_runtime_guarantees": {
+    "runtime_identity_resolution_implemented": false,
+    "persistent_identity_store_implemented": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "telemetry_exported": false
+  },
+  "no_mutation_guarantees": {
+    "identity_cluster_created": false,
+    "records_merged": false,
+    "destructive_merge_performed": false,
+    "candidate_promotion_performed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false
+  },
+  "notes": [
+    "Fast learning, slow truth.",
+    "Identity confidence is not identity truth."
+  ],
+  "runtime_identity_resolution_implemented": false,
+  "persistent_identity_store_implemented": false,
+  "identity_cluster_created": false,
+  "records_merged": false,
+  "destructive_merge_performed": false,
+  "candidate_promotion_performed": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "telemetry_exported": false
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/identity/identity_relation.v0.json",
+  "title": "EurekaIdentityRelationV0",
+  "description": "Reusable identity relation taxonomy for Cross-Source Identity Resolution Contract v0.",
+  "type": "object",
+  "required": [
+    "relation_type",
+    "relation_status",
+    "relation_claim_not_truth",
+    "global_merge_allowed",
+    "limitations"
+  ],
+  "properties": {
+    "relation_type": {
+      "type": "string",
+      "enum": [
+        "exact_same_object",
+        "likely_same_object",
+        "possible_same_object",
+        "variant_of",
+        "version_of",
+        "release_of",
+        "representation_of",
+        "member_of",
+        "source_record_for",
+        "package_record_for",
+        "repository_record_for",
+        "capture_of",
+        "alias_of",
+        "near_match",
+        "different_object",
+        "conflicting_identity",
+        "unknown"
+      ]
+    },
+    "relation_status": {
+      "type": "string",
+      "enum": [
+        "asserted_example",
+        "candidate",
+        "review_required",
+        "conflicted",
+        "rejected",
+        "future"
+      ]
+    },
+    "symmetric_relation": {
+      "type": "boolean"
+    },
+    "transitive_relation": {
+      "type": "boolean"
+    },
+    "relation_claim_not_truth": {
+      "type": "boolean",
+      "const": true
+    },
+    "global_merge_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-status": "contract_only",
+  "x-relation_claim_not_truth_required": true,
+  "x-global_merge_allowed": false,
+  "x-destructive_merge_allowed": false
+}

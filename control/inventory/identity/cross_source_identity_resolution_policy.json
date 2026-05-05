@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "cross_source_identity_resolution_policy_v0",
+  "status": "contract_only",
+  "runtime_identity_resolution_implemented": false,
+  "persistent_identity_store_implemented": false,
+  "identity_cluster_runtime_implemented": false,
+  "merge_runtime_implemented": false,
+  "destructive_merge_allowed": false,
+  "candidate_promotion_allowed": false,
+  "master_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "public_search_identity_resolution_enabled_now": false,
+  "confidence_not_truth_required": true,
+  "exact_identity_requires_strong_identifier_or_review": true,
+  "name_match_not_sufficient_alone": true,
+  "conflict_preservation_required": true,
+  "next_contracts": [
+    "result_merge_deduplication_contract",
+    "evidence_weighted_ranking_contract",
+    "compatibility_aware_ranking_contract"
+  ],
+  "notes": [
+    "P82 is contract-only. No runtime identity resolver, merge, promotion, or mutation is implemented."
+  ]
+}
